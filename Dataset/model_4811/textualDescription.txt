@@ -1,0 +1,297 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 65 main class(es).
+
+'model_OrJunction' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModelNote' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModelConnection' represents an important domain concept.
+It has the following attributes: 'type', which is of type int; 'lineDecoration', which is of type str; 'text', which is of type str.
+
+'model_BorderObject' represents an important domain concept.
+It has one attribute: 'borderColor', which is of type str.
+
+'DiagramModel' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BasicRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModelImageProvider' represents an important domain concept.
+It has one attribute: 'imagePath', which is of type str.
+
+'model_DiagramModelZentaConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModelGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModelBendpoint' represents an important domain concept.
+It has the following attributes: 'endY', which is of type int; 'endX', which is of type int; 'startX', which is of type int; 'startY', which is of type int.
+
+'model_SketchModel' represents an important domain concept.
+It has one attribute: 'background', which is of type int.
+
+'model_Identifier' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'model_SketchModelSticky' represents an important domain concept.
+It does not declare any attributes.
+
+'ZentaModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Documentable' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModelComponent' represents an important domain concept.
+It has the following attributes: 'lineColor', which is of type str; 'lineWidth', which is of type int.
+
+'DiagramModelContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'model_JunctionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Cloneable' represents an important domain concept.
+It does not declare any attributes.
+
+'model_SketchModelActor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ZentaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Junction' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Adapter' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Folder' represents an important domain concept.
+It does not declare any attributes.
+
+'TextContent' represents an important domain concept.
+It does not declare any attributes.
+
+'Cloneable' represents an important domain concept.
+It does not declare any attributes.
+
+'Nameable' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ZentaModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AndJunction' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModelImage' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Nameable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_TextContent' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'DiagramModelComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Documentable' represents an important domain concept.
+It has one attribute: 'documentation', which is of type str.
+
+'model_DiagramModelReference' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicObject' represents an important domain concept.
+It does not declare any attributes.
+
+'FolderContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'model_InterfaceElement' represents an important domain concept.
+It has one attribute: 'interfaceType', which is of type int.
+
+'model_Bounds' represents an important domain concept.
+It has the following attributes: 'y', which is of type int; 'height', which is of type int; 'x', which is of type int; 'width', which is of type int.
+
+'Properties' represents an important domain concept.
+It does not declare any attributes.
+
+'BorderObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModelObject' represents an important domain concept.
+It has the following attributes: 'elementShape', which is of type str; 'fillColor', which is of type str.
+
+'ZentaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModelZentaObject' represents an important domain concept.
+It has one attribute: 'type', which is of type int.
+
+'model_Properties' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Property' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'generated', which is of type bool; 'value', which is of type str.
+
+'FontAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModelContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Attribute' represents an important domain concept.
+It has the following attributes: 'minOccurs', which is of type int; 'maxOccurs', which is of type int.
+
+'DiagramModelImageProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagramModelObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Template' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'JunctionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ZentaModel' represents an important domain concept.
+It has the following attributes: 'file', which is of type str; 'version', which is of type str.
+
+'model_Lockable' represents an important domain concept.
+It has one attribute: 'locked', which is of type bool.
+
+'model_BasicObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model_FolderContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'Adapter' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModel' represents an important domain concept.
+It has one attribute: 'connectionRouterType', which is of type int.
+
+'model_Metamodel' represents an important domain concept.
+It does not declare any attributes.
+
+'model_FontAttribute' represents an important domain concept.
+It has the following attributes: 'font', which is of type str; 'fontColor', which is of type str; 'textPosition', which is of type int; 'textAlignment', which is of type int.
+
+'Folder' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagramModelConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ZentaDiagramModel' represents an important domain concept.
+It has one attribute: 'viewpoint', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'model_Identifier' is a specialization of 'Nameable'.
+The class 'model_ZentaModelElement' is a specialization of 'Adapter'.
+The class 'model_Folder' is a specialization of 'ZentaModelElement'.
+The class 'model_Folder' is a specialization of 'FolderContainer'.
+The class 'model_Folder' is a specialization of 'Nameable'.
+The class 'model_Folder' is a specialization of 'Identifier'.
+The class 'model_Folder' is a specialization of 'Documentable'.
+The class 'model_Folder' is a specialization of 'Properties'.
+The class 'model_JunctionElement' is a specialization of 'ZentaElement'.
+The class 'model_InterfaceElement' is a specialization of 'ZentaElement'.
+The class 'model_Junction' is a specialization of 'JunctionElement'.
+The class 'model_AndJunction' is a specialization of 'JunctionElement'.
+The class 'model_OrJunction' is a specialization of 'JunctionElement'.
+The class 'model_DiagramModelComponent' is a specialization of 'Identifier'.
+The class 'model_DiagramModelComponent' is a specialization of 'Cloneable'.
+The class 'model_DiagramModelComponent' is a specialization of 'Adapter'.
+The class 'model_DiagramModelComponent' is a specialization of 'Nameable'.
+The class 'model_DiagramModelContainer' is a specialization of 'DiagramModelComponent'.
+The class 'model_DiagramModelReference' is a specialization of 'DiagramModelObject'.
+The class 'model_DiagramModelObject' is a specialization of 'DiagramModelComponent'.
+The class 'model_DiagramModelObject' is a specialization of 'FontAttribute'.
+The class 'model_DiagramModelGroup' is a specialization of 'DiagramModelObject'.
+The class 'model_DiagramModelGroup' is a specialization of 'DiagramModelContainer'.
+The class 'model_DiagramModelGroup' is a specialization of 'Documentable'.
+The class 'model_DiagramModelGroup' is a specialization of 'Properties'.
+The class 'model_DiagramModelNote' is a specialization of 'DiagramModelObject'.
+The class 'model_DiagramModelNote' is a specialization of 'TextContent'.
+The class 'model_DiagramModelImage' is a specialization of 'DiagramModelObject'.
+The class 'model_DiagramModelImage' is a specialization of 'BorderObject'.
+The class 'model_DiagramModelImage' is a specialization of 'DiagramModelImageProvider'.
+The class 'model_DiagramModelConnection' is a specialization of 'DiagramModelComponent'.
+The class 'model_DiagramModelConnection' is a specialization of 'FontAttribute'.
+The class 'model_DiagramModelConnection' is a specialization of 'Properties'.
+The class 'model_DiagramModelConnection' is a specialization of 'Documentable'.
+The class 'model_DiagramModelBendpoint' is a specialization of 'Cloneable'.
+The class 'model_ZentaDiagramModel' is a specialization of 'DiagramModel'.
+The class 'model_DiagramModelZentaObject' is a specialization of 'DiagramModelObject'.
+The class 'model_DiagramModelZentaObject' is a specialization of 'DiagramModelContainer'.
+The class 'model_DiagramModelZentaConnection' is a specialization of 'DiagramModelConnection'.
+The class 'model_SketchModel' is a specialization of 'DiagramModel'.
+The class 'model_SketchModelSticky' is a specialization of 'DiagramModelObject'.
+The class 'model_SketchModelSticky' is a specialization of 'DiagramModelContainer'.
+The class 'model_SketchModelSticky' is a specialization of 'TextContent'.
+The class 'model_SketchModelSticky' is a specialization of 'Properties'.
+The class 'model_SketchModelActor' is a specialization of 'DiagramModelObject'.
+The class 'model_SketchModelActor' is a specialization of 'Documentable'.
+The class 'model_SketchModelActor' is a specialization of 'Properties'.
+The class 'model_DiagramModel' is a specialization of 'ZentaModelElement'.
+The class 'model_DiagramModel' is a specialization of 'DiagramModelContainer'.
+The class 'model_DiagramModel' is a specialization of 'Documentable'.
+The class 'model_DiagramModel' is a specialization of 'Properties'.
+The class 'model_ZentaModel' is a specialization of 'FolderContainer'.
+The class 'model_ZentaModel' is a specialization of 'Nameable'.
+The class 'model_ZentaModel' is a specialization of 'Identifier'.
+The class 'model_ZentaModel' is a specialization of 'ZentaModelElement'.
+The class 'model_ZentaModel' is a specialization of 'Properties'.
+The class 'model_ZentaModel' is a specialization of 'Documentable'.
+The class 'model_ZentaModel' is a specialization of 'Folder'.
+The class 'model_ZentaElement' is a specialization of 'ZentaModelElement'.
+The class 'model_ZentaElement' is a specialization of 'Identifier'.
+The class 'model_ZentaElement' is a specialization of 'Cloneable'.
+The class 'model_ZentaElement' is a specialization of 'Nameable'.
+The class 'model_ZentaElement' is a specialization of 'Documentable'.
+The class 'model_ZentaElement' is a specialization of 'Properties'.
+The class 'model_BasicObject' is a specialization of 'ZentaElement'.
+The class 'model_BasicRelationship' is a specialization of 'BasicObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Properties' and 'model_Property'. From 'model_Properties', the role 'model_Properties' has cardinality 0..*, and from 'model_Property', the role 'model_Property' has cardinality 0..*.
+An association connects 'model_FolderContainer' and 'model_Folder'. From 'model_FolderContainer', the role 'model_FolderContainer' has cardinality 0..*, and from 'model_Folder', the role 'model_Folder' has cardinality 0..*.
+An association connects 'model_ZentaModelElement' and 'model_ZentaModel'. From 'model_ZentaModelElement', the role 'model_ZentaModelElement' has cardinality 0..*, and from 'model_ZentaModel', the role 'model_ZentaModel' has cardinality 0..*.
+An association connects 'model_Nameable' and 'model_Folder'. From 'model_Nameable', the role 'model_Nameable' has cardinality 0..*, and from 'model_Folder', the role 'model_Folder4' has cardinality 0..*.
+An association connects 'model_DiagramModelComponent' and 'model_DiagramModel'. From 'model_DiagramModelComponent', the role 'model_DiagramModelComponent' has cardinality 0..*, and from 'model_DiagramModel', the role 'model_DiagramModel' has cardinality 0..*.
+An association connects 'model_DiagramModelContainer' and 'model_DiagramModelObject'. From 'model_DiagramModelContainer', the role 'model_DiagramModelContainer' has cardinality 0..*, and from 'model_DiagramModelObject', the role 'model_DiagramModelObject' has cardinality 0..*.
+An association connects 'model_DiagramModelReference' and 'model_DiagramModel'. From 'model_DiagramModelReference', the role 'model_DiagramModelReference' has cardinality 0..*, and from 'model_DiagramModel', the role 'model_DiagramModel8' has cardinality 0..*.
+An association connects 'model_Bounds' and 'model_DiagramModelObject'. From 'model_Bounds', the role 'model_Bounds' has cardinality 0..*, and from 'model_DiagramModelObject', the role 'model_DiagramModelObject10' has cardinality 0..*.
+An association connects 'model_DiagramModelConnection' and 'model_DiagramModelObject'. From 'model_DiagramModelConnection', the role 'model_DiagramModelConnection' has cardinality 0..*, and from 'model_DiagramModelObject', the role 'model_DiagramModelObject12' has cardinality 0..*.
+An association connects 'model_DiagramModelConnection' and 'model_DiagramModelObject'. From 'model_DiagramModelConnection', the role 'model_DiagramModelConnection15' has cardinality 0..*, and from 'model_DiagramModelObject', the role 'model_DiagramModelObject14' has cardinality 0..*.
+An association connects 'model_DiagramModelConnection' and 'model_DiagramModelObject'. From 'model_DiagramModelConnection', the role 'model_DiagramModelConnection17' has cardinality 0..*, and from 'model_DiagramModelObject', the role 'model_DiagramModelObject18' has cardinality 0..*.
+An association connects 'model_DiagramModelObject' and 'model_DiagramModelConnection'. From 'model_DiagramModelObject', the role 'model_DiagramModelObject21' has cardinality 0..*, and from 'model_DiagramModelConnection', the role 'model_DiagramModelConnection20' has cardinality 0..*.
+An association connects 'model_DiagramModelBendpoint' and 'model_DiagramModelConnection'. From 'model_DiagramModelBendpoint', the role 'model_DiagramModelBendpoint' has cardinality 0..*, and from 'model_DiagramModelConnection', the role 'model_DiagramModelConnection23' has cardinality 0..*.
+An association connects 'model_DiagramModelZentaObject' and 'model_ZentaElement'. From 'model_DiagramModelZentaObject', the role 'diagObjects' has cardinality 0..*, and from 'model_ZentaElement', the role 'ZentaElement' has cardinality 0..*.
+An association connects 'model_BasicRelationship' and 'model_DiagramModelZentaConnection'. From 'model_BasicRelationship', the role 'BasicRelationship' has cardinality 0..*, and from 'model_DiagramModelZentaConnection', the role 'diagConnections' has cardinality 0..*.
+An association connects 'model_Template' and 'model_Metamodel'. From 'model_Template', the role 'Template' has cardinality 0..*, and from 'model_Metamodel', the role 'metamodel' has cardinality 0..*.
+An association connects 'model_Template' and 'model_BasicObject'. From 'model_Template', the role 'template' has cardinality 0..*, and from 'model_BasicObject', the role 'BasicObject' has cardinality 0..*.
+An association connects 'model_Template' and 'model_Metamodel'. From 'model_Template', the role 'templates' has cardinality 0..*, and from 'model_Metamodel', the role 'Metamodel' has cardinality 0..*.
+An association connects 'model_Template' and 'model_DiagramModel'. From 'model_Template', the role 'model_Template' has cardinality 0..*, and from 'model_DiagramModel', the role 'model_DiagramModel30' has cardinality 0..*.
+An association connects 'model_DiagramModelZentaObject' and 'model_ZentaElement'. From 'model_DiagramModelZentaObject', the role 'DiagramModelZentaObject' has cardinality 0..*, and from 'model_ZentaElement', the role 'zentaElement' has cardinality 0..*.
+An association connects 'model_BasicObject' and 'model_Attribute'. From 'model_BasicObject', the role 'model_BasicObject' has cardinality 0..*, and from 'model_Attribute', the role 'model_Attribute' has cardinality 0..*.
+An association connects 'model_BasicObject' and 'model_BasicObject'. From 'model_BasicObject', the role 'BasicObject35' has cardinality 0..*, and from 'model_BasicObject', the role 'children' has cardinality 0..*.
+An association connects 'model_BasicObject' and 'model_BasicObject'. From 'model_BasicObject', the role 'BasicObject38' has cardinality 0..*, and from 'model_BasicObject', the role 'ancestor' has cardinality 0..*.
+An association connects 'model_Template' and 'model_BasicObject'. From 'model_Template', the role 'Template40' has cardinality 0..*, and from 'model_BasicObject', the role 'classes' has cardinality 0..*.
+An association connects 'model_ZentaElement' and 'model_BasicRelationship'. From 'model_ZentaElement', the role 'model_ZentaElement' has cardinality 0..*, and from 'model_BasicRelationship', the role 'model_BasicRelationship' has cardinality 0..*.
+An association connects 'model_ZentaElement' and 'model_BasicRelationship'. From 'model_ZentaElement', the role 'model_ZentaElement44' has cardinality 0..*, and from 'model_BasicRelationship', the role 'model_BasicRelationship43' has cardinality 0..*.
+An association connects 'model_BasicRelationship' and 'model_DiagramModelZentaConnection'. From 'model_BasicRelationship', the role 'relationship' has cardinality 0..*, and from 'model_DiagramModelZentaConnection', the role 'DiagramModelZentaConnection' has cardinality 0..*.
+An association connects 'model_BasicRelationship' and 'model_Attribute'. From 'model_BasicRelationship', the role 'model_BasicRelationship48' has cardinality 0..*, and from 'model_Attribute', the role 'model_Attribute47' has cardinality 0..*.
+An association connects 'model_Attribute' and 'model_BasicObject'. From 'model_Attribute', the role 'model_Attribute50' has cardinality 0..*, and from 'model_BasicObject', the role 'model_BasicObject51' has cardinality 0..*.

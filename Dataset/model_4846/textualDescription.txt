@@ -1,0 +1,217 @@
+The domain model 'sipme' describes the core structural elements and their relationships within the system.
+
+The model defines 33 main class(es).
+
+'sipme_Capacity' represents an important domain concept.
+It has the following attributes: 'value', which is of type float; 'unit', which is of type str.
+
+'sipme_EnterpriseObject' represents an important domain concept.
+It has the following attributes: 'reference', which is of type str; 'properties', which is of type str.
+
+'EnterpriseObject' represents an important domain concept.
+It does not declare any attributes.
+
+'sipme_OrganisationCell' represents an important domain concept.
+It has one attribute: 'organisationLevel', which is of type int.
+
+'sipme_Event' represents an important domain concept.
+It has the following attributes: 'source', which is of type str; 'frequency', which is of type str; 'occurenceProbability', which is of type str; 'timeStamp', which is of type date.
+
+'sipme_Stakeholder' represents an important domain concept.
+It has the following attributes: 'stakeholderType', which is of type str; 'stakeholderOrganism', which is of type str.
+
+'sipme_EnterpriseResource' represents an important domain concept.
+It has one attribute: 'resourceOrigin', which is of type str.
+
+'sipme_Role_Function' represents an important domain concept.
+It has one attribute: 'roleType', which is of type str.
+
+'sipme_Objective' represents an important domain concept.
+It has the following attributes: 'objectiveType', which is of type str; 'objectiveNature', which is of type str.
+
+'sipme_Device_Machine' represents an important domain concept.
+It has the following attributes: 'machineMaintainer', which is of type str; 'manufacturer', which is of type str.
+
+'sipme_Activity' represents an important domain concept.
+It has the following attributes: 'ActivityDuration', which is of type int; 'endingStatus', which is of type str.
+
+'sipme_Workstation' represents an important domain concept.
+It has one attribute: 'ProfileDeescription', which is of type str.
+
+'sipme_Domain' represents an important domain concept.
+It has the following attributes: 'domainCharacterization', which is of type str; 'performanceIndicators', which is of type float.
+
+'sipme_Capability' represents an important domain concept.
+It has one attribute: 'capabilityType', which is of type str.
+
+'sipme_Task' represents an important domain concept.
+It has one attribute: 'taskDuration', which is of type int.
+
+'sipme_Application' represents an important domain concept.
+It has the following attributes: 'applicationEditor', which is of type str; 'applicationMaintainer', which is of type str.
+
+'OrganisationCell' represents an important domain concept.
+It does not declare any attributes.
+
+'Stakeholder' represents an important domain concept.
+It does not declare any attributes.
+
+'sipme_SIPME_object' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str; 'UUID', which is of type str.
+
+'sipme_ObjectsFileView' represents an important domain concept.
+It has the following attributes: 'filePriority', which is of type int; 'fileState', which is of type str.
+
+'sipme_EnterpriseProcessor' represents an important domain concept.
+It has one attribute: 'processorOrigin', which is of type str.
+
+'sipme_CompanyMember' represents an important domain concept.
+It has the following attributes: 'socialSecurityNumber', which is of type int; 'fullName', which is of type str; 'address', which is of type str.
+
+'sipme_EnterpriseProduct' represents an important domain concept.
+It has the following attributes: 'productNarure', which is of type str; 'productState', which is of type str.
+
+'sipme_BusinessRules' represents an important domain concept.
+It does not declare any attributes.
+
+'sipme_EnterpriseService' represents an important domain concept.
+It has one attribute: 'serviceState', which is of type str.
+
+'SIPME_object' represents an important domain concept.
+It does not declare any attributes.
+
+'EnterpriseProcessor' represents an important domain concept.
+It does not declare any attributes.
+
+'sipme_Enterprise' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'acronym', which is of type str.
+
+'sipme_Requirement' represents an important domain concept.
+It has the following attributes: 'requirementVersion', which is of type str; 'requirementOrigin', which is of type str; 'requirementMaturity', which is of type int; 'requirementStatus', which is of type str; 'requirementStatement', which is of type str; 'requirementPriority', which is of type int; 'requirementDate', which is of type date; 'requirementNature', which is of type str.
+
+'ObjectView' represents an important domain concept.
+It does not declare any attributes.
+
+'sipme_BusinessProcess' represents an important domain concept.
+It has one attribute: 'ProcessPriority', which is of type int.
+
+'EnterpriseResource' represents an important domain concept.
+It does not declare any attributes.
+
+'sipme_ObjectView' represents an important domain concept.
+It has one attribute: 'viewPoint', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ProductState' defines the following possible values: 'Ready_for_customer', 'None', 'Intermediary'.
+The enumeration 'StakeholderType' defines a single possible value: 'EEnumLiteral0'.
+The enumeration 'ObjectiveNature' defines the following possible values: 'Quality', 'Economical', 'Other', 'Legacy', 'Performance', 'Human', 'None', 'Environmental', 'Delay', 'Cost'.
+The enumeration 'Origin' defines the following possible values: 'None', 'Internal_provider', 'External_provider'.
+The enumeration 'ProductNature' defines the following possible values: 'Information', 'Physical', 'None'.
+The enumeration 'ServiceState' defines the following possible values: 'For_internal_usage', 'For_external_customer'.
+The enumeration 'RequirementOrigin' defines the following possible values: 'Expectation', 'None', 'System_requirement', 'Stackeholder_requirement'.
+The enumeration 'RoleType' defines the following possible values: 'Transformation', 'Controle', 'Decision', 'Composite'.
+The enumeration 'CapabilityType' defines the following possible values: 'Operational', 'ObjectRelated', 'Performance', 'Functional'.
+The enumeration 'EnterpriseObjectiveType' defines the following possible values: 'Strategic', 'Operational', 'None', 'Tactic'.
+The enumeration 'RequirementNature' defines the following possible values: 'Functional', 'Constraint', 'Non_functional', 'Verification_and_Validation', 'None'.
+
+The model also captures inheritance relationships between classes.
+The class 'sipme_Activity' is a specialization of 'EnterpriseProcessor'.
+The class 'sipme_Application' is a specialization of 'EnterpriseResource'.
+The class 'sipme_BusinessProcess' is a specialization of 'EnterpriseProcessor'.
+The class 'sipme_BusinessRules' is a specialization of 'EnterpriseObject'.
+The class 'sipme_Capability' is a specialization of 'EnterpriseObject'.
+The class 'sipme_Capacity' is a specialization of 'EnterpriseObject'.
+The class 'sipme_CompanyMember' is a specialization of 'EnterpriseResource'.
+The class 'sipme_CompanyMember' is a specialization of 'Stakeholder'.
+The class 'sipme_Device_Machine' is a specialization of 'EnterpriseResource'.
+The class 'sipme_Domain' is a specialization of 'SIPME_object'.
+The class 'sipme_Domain' is a specialization of 'EnterpriseProcessor'.
+The class 'sipme_Domain' is a specialization of 'OrganisationCell'.
+The class 'sipme_Enterprise' is a specialization of 'EnterpriseProcessor'.
+The class 'sipme_EnterpriseObject' is a specialization of 'SIPME_object'.
+The class 'sipme_EnterpriseProcessor' is a specialization of 'EnterpriseObject'.
+The class 'sipme_EnterpriseProduct' is a specialization of 'EnterpriseObject'.
+The class 'sipme_EnterpriseResource' is a specialization of 'EnterpriseObject'.
+The class 'sipme_EnterpriseService' is a specialization of 'EnterpriseObject'.
+The class 'sipme_Event' is a specialization of 'SIPME_object'.
+The class 'sipme_Objective' is a specialization of 'EnterpriseObject'.
+The class 'sipme_ObjectView' is a specialization of 'SIPME_object'.
+The class 'sipme_OrganisationCell' is a specialization of 'EnterpriseProcessor'.
+The class 'sipme_ObjectsFileView' is a specialization of 'ObjectView'.
+The class 'sipme_Requirement' is a specialization of 'SIPME_object'.
+The class 'sipme_Role_Function' is a specialization of 'EnterpriseProcessor'.
+The class 'sipme_Stakeholder' is a specialization of 'SIPME_object'.
+The class 'sipme_Task' is a specialization of 'EnterpriseProcessor'.
+The class 'sipme_Workstation' is a specialization of 'EnterpriseProcessor'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sipme_Task' and 'sipme_Activity'. From 'sipme_Task', the role 'Task' has cardinality 0..*, and from 'sipme_Activity', the role 'taskOf' has cardinality 0..*.
+An association connects 'sipme_Activity' and 'sipme_BusinessProcess'. From 'sipme_Activity', the role 'activities' has cardinality 0..*, and from 'sipme_BusinessProcess', the role 'BusinessProcess' has cardinality 0..*.
+An association connects 'sipme_Activity' and 'sipme_BusinessProcess'. From 'sipme_Activity', the role 'Activity' has cardinality 0..*, and from 'sipme_BusinessProcess', the role 'activityOf' has cardinality 0..*.
+An association connects 'sipme_Domain' and 'sipme_BusinessProcess'. From 'sipme_Domain', the role 'sipme_Domain' has cardinality 0..*, and from 'sipme_BusinessProcess', the role 'sipme_BusinessProcess' has cardinality 0..*.
+An association connects 'sipme_BusinessRules' and 'sipme_EnterpriseObject'. From 'sipme_BusinessRules', the role 'sipme_BusinessRules' has cardinality 0..*, and from 'sipme_EnterpriseObject', the role 'sipme_EnterpriseObject' has cardinality 0..*.
+An association connects 'sipme_BusinessRules' and 'sipme_EnterpriseObject'. From 'sipme_BusinessRules', the role 'sipme_BusinessRules6' has cardinality 0..*, and from 'sipme_EnterpriseObject', the role 'sipme_EnterpriseObject7' has cardinality 0..*.
+An association connects 'sipme_Capacity' and 'sipme_Capability'. From 'sipme_Capacity', the role 'sipme_Capacity' has cardinality 0..*, and from 'sipme_Capability', the role 'sipme_Capability' has cardinality 0..*.
+An association connects 'sipme_CompanyMember' and 'sipme_Workstation'. From 'sipme_CompanyMember', the role 'owners' has cardinality 0..*, and from 'sipme_Workstation', the role 'Workstation' has cardinality 0..*.
+An association connects 'sipme_Workstation' and 'sipme_CompanyMember'. From 'sipme_Workstation', the role 'Workstation11' has cardinality 0..*, and from 'sipme_CompanyMember', the role 'responsible' has cardinality 0..*.
+An association connects 'sipme_OrganisationCell' and 'sipme_CompanyMember'. From 'sipme_OrganisationCell', the role 'OrganisationCell' has cardinality 0..*, and from 'sipme_CompanyMember', the role 'cellResponsible' has cardinality 0..*.
+An association connects 'sipme_CompanyMember' and 'sipme_ObjectsFileView'. From 'sipme_CompanyMember', the role 'fileResponsible' has cardinality 0..*, and from 'sipme_ObjectsFileView', the role 'ObjectsFileView' has cardinality 0..*.
+An association connects 'sipme_Domain' and 'sipme_BusinessProcess'. From 'sipme_Domain', the role 'sipme_Domain15' has cardinality 0..*, and from 'sipme_BusinessProcess', the role 'sipme_BusinessProcess16' has cardinality 0..*.
+An association connects 'sipme_OrganisationCell' and 'sipme_Domain'. From 'sipme_OrganisationCell', the role 'OrganisationCell18' has cardinality 0..*, and from 'sipme_Domain', the role 'covers' has cardinality 0..*.
+An association connects 'sipme_BusinessRules' and 'sipme_Domain'. From 'sipme_BusinessRules', the role 'sipme_BusinessRules21' has cardinality 0..*, and from 'sipme_Domain', the role 'sipme_Domain20' has cardinality 0..*.
+An association connects 'sipme_Enterprise' and 'sipme_Objective'. From 'sipme_Enterprise', the role 'sipme_Enterprise' has cardinality 0..*, and from 'sipme_Objective', the role 'sipme_Objective' has cardinality 0..*.
+An association connects 'sipme_Enterprise' and 'sipme_Domain'. From 'sipme_Enterprise', the role 'sipme_Enterprise24' has cardinality 0..*, and from 'sipme_Domain', the role 'sipme_Domain25' has cardinality 0..*.
+An association connects 'sipme_Enterprise' and 'sipme_EnterpriseObject'. From 'sipme_Enterprise', the role 'sipme_Enterprise27' has cardinality 0..*, and from 'sipme_EnterpriseObject', the role 'sipme_EnterpriseObject28' has cardinality 0..*.
+An association connects 'sipme_Enterprise' and 'sipme_EnterpriseService'. From 'sipme_Enterprise', the role 'sipme_Enterprise30' has cardinality 0..*, and from 'sipme_EnterpriseService', the role 'sipme_EnterpriseService' has cardinality 0..*.
+An association connects 'sipme_Enterprise' and 'sipme_EnterpriseProduct'. From 'sipme_Enterprise', the role 'sipme_Enterprise32' has cardinality 0..*, and from 'sipme_EnterpriseProduct', the role 'sipme_EnterpriseProduct' has cardinality 0..*.
+An association connects 'sipme_CompanyMember' and 'sipme_Enterprise'. From 'sipme_CompanyMember', the role 'sipme_CompanyMember' has cardinality 0..*, and from 'sipme_Enterprise', the role 'sipme_Enterprise34' has cardinality 0..*.
+An association connects 'sipme_OrganisationCell' and 'sipme_Enterprise'. From 'sipme_OrganisationCell', the role 'sipme_OrganisationCell' has cardinality 0..*, and from 'sipme_Enterprise', the role 'sipme_Enterprise36' has cardinality 0..*.
+An association connects 'sipme_EnterpriseObject' and 'sipme_EnterpriseObject'. From 'sipme_EnterpriseObject', the role 'decomposedIn' has cardinality 0..*, and from 'sipme_EnterpriseObject', the role 'EnterpriseObject' has cardinality 0..*.
+An association connects 'sipme_ObjectView' and 'sipme_EnterpriseObject'. From 'sipme_ObjectView', the role 'ObjectView' has cardinality 0..*, and from 'sipme_EnterpriseObject', the role 'represents' has cardinality 0..*.
+An association connects 'sipme_EnterpriseObject' and 'sipme_EnterpriseObject'. From 'sipme_EnterpriseObject', the role 'partOf' has cardinality 0..*, and from 'sipme_EnterpriseObject', the role 'EnterpriseObject42' has cardinality 0..*.
+An association connects 'sipme_Event' and 'sipme_EnterpriseProcessor'. From 'sipme_Event', the role 'Event' has cardinality 0..*, and from 'sipme_EnterpriseProcessor', the role 'generatedBy' has cardinality 0..*.
+An association connects 'sipme_EnterpriseProcessor' and 'sipme_ObjectView'. From 'sipme_EnterpriseProcessor', the role 'sipme_EnterpriseProcessor' has cardinality 0..*, and from 'sipme_ObjectView', the role 'sipme_ObjectView' has cardinality 0..*.
+An association connects 'sipme_ObjectView' and 'sipme_EnterpriseProcessor'. From 'sipme_ObjectView', the role 'sipme_ObjectView47' has cardinality 0..*, and from 'sipme_EnterpriseProcessor', the role 'sipme_EnterpriseProcessor46' has cardinality 0..*.
+An association connects 'sipme_EnterpriseProcessor' and 'sipme_Event'. From 'sipme_EnterpriseProcessor', the role 'initiates' has cardinality 0..*, and from 'sipme_Event', the role 'Event49' has cardinality 0..*.
+An association connects 'sipme_EnterpriseProcessor' and 'sipme_ObjectView'. From 'sipme_EnterpriseProcessor', the role 'sipme_EnterpriseProcessor51' has cardinality 0..*, and from 'sipme_ObjectView', the role 'sipme_ObjectView52' has cardinality 0..*.
+An association connects 'sipme_EnterpriseProcessor' and 'sipme_Role_Function'. From 'sipme_EnterpriseProcessor', the role 'implementedBy' has cardinality 0..*, and from 'sipme_Role_Function', the role 'Role_Function' has cardinality 0..*.
+An association connects 'sipme_Capacity' and 'sipme_EnterpriseProcessor'. From 'sipme_Capacity', the role 'sipme_Capacity56' has cardinality 0..*, and from 'sipme_EnterpriseProcessor', the role 'sipme_EnterpriseProcessor55' has cardinality 0..*.
+An association connects 'sipme_EnterpriseProcessor' and 'sipme_Capability'. From 'sipme_EnterpriseProcessor', the role 'sipme_EnterpriseProcessor58' has cardinality 0..*, and from 'sipme_Capability', the role 'sipme_Capability59' has cardinality 0..*.
+An association connects 'sipme_Task' and 'sipme_EnterpriseResource'. From 'sipme_Task', the role 'sipme_Task' has cardinality 0..*, and from 'sipme_EnterpriseResource', the role 'sipme_EnterpriseResource' has cardinality 0..*.
+An association connects 'sipme_Role_Function' and 'sipme_EnterpriseResource'. From 'sipme_Role_Function', the role 'Role_Function62' has cardinality 0..*, and from 'sipme_EnterpriseResource', the role 'playedBy' has cardinality 0..*.
+An association connects 'sipme_Role_Function' and 'sipme_EnterpriseResource'. From 'sipme_Role_Function', the role 'Role_Function64' has cardinality 0..*, and from 'sipme_EnterpriseResource', the role 'canBePlayedBy' has cardinality 0..*.
+An association connects 'sipme_Capability' and 'sipme_EnterpriseResource'. From 'sipme_Capability', the role 'sipme_Capability67' has cardinality 0..*, and from 'sipme_EnterpriseResource', the role 'sipme_EnterpriseResource66' has cardinality 0..*.
+An association connects 'sipme_Event' and 'sipme_EnterpriseProcessor'. From 'sipme_Event', the role 'generates' has cardinality 0..*, and from 'sipme_EnterpriseProcessor', the role 'EnterpriseProcessor' has cardinality 0..*.
+An association connects 'sipme_Event' and 'sipme_EnterpriseProcessor'. From 'sipme_Event', the role 'initiatedBy' has cardinality 0..*, and from 'sipme_EnterpriseProcessor', the role 'EnterpriseProcessor70' has cardinality 0..*.
+An association connects 'sipme_Event' and 'sipme_Event'. From 'sipme_Event', the role 'sipme_Event71' has cardinality 0..*, and from 'sipme_Event', the role 'sipme_Event' has cardinality 0..*.
+An association connects 'sipme_ObjectView' and 'sipme_Event'. From 'sipme_ObjectView', the role 'ObjectView74' has cardinality 0..*, and from 'sipme_Event', the role 'events' has cardinality 0..*.
+An association connects 'sipme_Objective' and 'sipme_Objective'. From 'sipme_Objective', the role 'refines' has cardinality 0..*, and from 'sipme_Objective', the role 'Objective' has cardinality 0..*.
+An association connects 'sipme_Objective' and 'sipme_Objective'. From 'sipme_Objective', the role 'subObjectives' has cardinality 0..*, and from 'sipme_Objective', the role 'Objective79' has cardinality 0..*.
+An association connects 'sipme_Requirement' and 'sipme_Objective'. From 'sipme_Requirement', the role 'Requirement' has cardinality 0..*, and from 'sipme_Objective', the role 'associatedObjective' has cardinality 0..*.
+An association connects 'sipme_EnterpriseObject' and 'sipme_ObjectView'. From 'sipme_EnterpriseObject', the role 'EnterpriseObject82' has cardinality 0..*, and from 'sipme_ObjectView', the role 'representedBy' has cardinality 0..*.
+An association connects 'sipme_Event' and 'sipme_ObjectView'. From 'sipme_Event', the role 'Event84' has cardinality 0..*, and from 'sipme_ObjectView', the role 'hasAssociatedEvents' has cardinality 0..*.
+An association connects 'sipme_Workstation' and 'sipme_OrganisationCell'. From 'sipme_Workstation', the role 'Workstation86' has cardinality 0..*, and from 'sipme_OrganisationCell', the role 'organisationCell' has cardinality 0..*.
+An association connects 'sipme_OrganisationCell' and 'sipme_Domain'. From 'sipme_OrganisationCell', the role 'coveredBy' has cardinality 0..*, and from 'sipme_Domain', the role 'Domain' has cardinality 0..*.
+An association connects 'sipme_CompanyMember' and 'sipme_OrganisationCell'. From 'sipme_CompanyMember', the role 'CompanyMember' has cardinality 0..*, and from 'sipme_OrganisationCell', the role 'responsibleOfCell' has cardinality 0..*.
+An association connects 'sipme_OrganisationCell' and 'sipme_OrganisationCell'. From 'sipme_OrganisationCell', the role 'sipme_OrganisationCell89' has cardinality 0..*, and from 'sipme_OrganisationCell', the role 'sipme_OrganisationCell91' has cardinality 0..*.
+An association connects 'sipme_ObjectView' and 'sipme_ObjectsFileView'. From 'sipme_ObjectView', the role 'sipme_ObjectView93' has cardinality 0..*, and from 'sipme_ObjectsFileView', the role 'sipme_ObjectsFileView' has cardinality 0..*.
+An association connects 'sipme_ObjectsFileView' and 'sipme_ObjectsFileView'. From 'sipme_ObjectsFileView', the role 'sipme_ObjectsFileView96' has cardinality 0..*, and from 'sipme_ObjectsFileView', the role 'sipme_ObjectsFileView94' has cardinality 0..*.
+An association connects 'sipme_ObjectsFileView' and 'sipme_CompanyMember'. From 'sipme_ObjectsFileView', the role 'responsibleOfFile' has cardinality 0..*, and from 'sipme_CompanyMember', the role 'CompanyMember98' has cardinality 0..*.
+An association connects 'sipme_Objective' and 'sipme_Requirement'. From 'sipme_Objective', the role 'Objective100' has cardinality 0..*, and from 'sipme_Requirement', the role 'takenIntoAccountBy' has cardinality 0..*.
+An association connects 'sipme_Requirement' and 'sipme_Stakeholder'. From 'sipme_Requirement', the role 'sipme_Requirement' has cardinality 0..*, and from 'sipme_Stakeholder', the role 'sipme_Stakeholder' has cardinality 0..*.
+An association connects 'sipme_Requirement' and 'sipme_Requirement'. From 'sipme_Requirement', the role 'sipme_Requirement104' has cardinality 0..*, and from 'sipme_Requirement', the role 'sipme_Requirement102' has cardinality 0..*.
+An association connects 'sipme_Requirement' and 'sipme_EnterpriseResource'. From 'sipme_Requirement', the role 'sipme_Requirement106' has cardinality 0..*, and from 'sipme_EnterpriseResource', the role 'sipme_EnterpriseResource107' has cardinality 0..*.
+An association connects 'sipme_Requirement' and 'sipme_EnterpriseProcessor'. From 'sipme_Requirement', the role 'sipme_Requirement109' has cardinality 0..*, and from 'sipme_EnterpriseProcessor', the role 'sipme_EnterpriseProcessor110' has cardinality 0..*.
+An association connects 'sipme_Activity' and 'sipme_Requirement'. From 'sipme_Activity', the role 'sipme_Activity' has cardinality 0..*, and from 'sipme_Requirement', the role 'sipme_Requirement112' has cardinality 0..*.
+An association connects 'sipme_Role_Function' and 'sipme_Task'. From 'sipme_Role_Function', the role 'sipme_Role_Function' has cardinality 0..*, and from 'sipme_Task', the role 'sipme_Task114' has cardinality 0..*.
+An association connects 'sipme_EnterpriseResource' and 'sipme_Role_Function'. From 'sipme_EnterpriseResource', the role 'EnterpriseResource' has cardinality 0..*, and from 'sipme_Role_Function', the role 'plays' has cardinality 0..*.
+An association connects 'sipme_EnterpriseResource' and 'sipme_Role_Function'. From 'sipme_EnterpriseResource', the role 'EnterpriseResource117' has cardinality 0..*, and from 'sipme_Role_Function', the role 'isAbleToPlay' has cardinality 0..*.
+An association connects 'sipme_Role_Function' and 'sipme_EnterpriseProcessor'. From 'sipme_Role_Function', the role 'implements' has cardinality 0..*, and from 'sipme_EnterpriseProcessor', the role 'EnterpriseProcessor119' has cardinality 0..*.
+An association connects 'sipme_Role_Function' and 'sipme_BusinessRules'. From 'sipme_Role_Function', the role 'sipme_Role_Function121' has cardinality 0..*, and from 'sipme_BusinessRules', the role 'sipme_BusinessRules122' has cardinality 0..*.
+An association connects 'sipme_Requirement' and 'sipme_Stakeholder'. From 'sipme_Requirement', the role 'sipme_Requirement125' has cardinality 0..*, and from 'sipme_Stakeholder', the role 'sipme_Stakeholder124' has cardinality 0..*.
+An association connects 'sipme_BusinessRules' and 'sipme_Task'. From 'sipme_BusinessRules', the role 'sipme_BusinessRules128' has cardinality 0..*, and from 'sipme_Task', the role 'sipme_Task127' has cardinality 0..*.
+An association connects 'sipme_Activity' and 'sipme_Task'. From 'sipme_Activity', the role 'Activity130' has cardinality 0..*, and from 'sipme_Task', the role 'tasks' has cardinality 0..*.
+An association connects 'sipme_Task' and 'sipme_Task'. From 'sipme_Task', the role 'sipme_Task131' has cardinality 0..*, and from 'sipme_Task', the role 'sipme_Task133' has cardinality 0..*.
+An association connects 'sipme_OrganisationCell' and 'sipme_Workstation'. From 'sipme_OrganisationCell', the role 'OrganisationCell135' has cardinality 0..*, and from 'sipme_Workstation', the role 'workstations' has cardinality 0..*.
+An association connects 'sipme_Workstation' and 'sipme_CompanyMember'. From 'sipme_Workstation', the role 'responsibleOf' has cardinality 0..*, and from 'sipme_CompanyMember', the role 'CompanyMember137' has cardinality 0..*.
+An association connects 'sipme_CompanyMember' and 'sipme_Workstation'. From 'sipme_CompanyMember', the role 'CompanyMember139' has cardinality 0..*, and from 'sipme_Workstation', the role 'inChargeOf' has cardinality 0..*.

@@ -1,0 +1,12 @@
+The domain model 'c' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'c_D' represents an important domain concept.
+It does not declare any attributes.
+
+'c_C' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'c_C' and 'c_D'. From 'c_C', the role 'c_C' has cardinality 0..*, and from 'c_D', the role 'c_D' has cardinality 0..*.

@@ -1,0 +1,150 @@
+The domain model 'feature' describes the core structural elements and their relationships within the system.
+
+The model defines 33 main class(es).
+
+'feature_Identifiable' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'feature_NestedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_AttributeComparisonExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'feature_ExcludesExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Group' represents an important domain concept.
+It has the following attributes: 'minCardinality', which is of type int; 'maxCardinality', which is of type int.
+
+'feature_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_AtomicExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'AtomicExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_FeatureModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'feature_AttributeOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_AttributeValueLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'feature_AttributeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Interval' represents an important domain concept.
+It has the following attributes: 'lowerBound', which is of type int; 'upperBound', which is of type int.
+
+'feature_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'AttributeOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_ImpliesExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_NotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_FeatureReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Feature' represents an important domain concept.
+It has the following attributes: 'selected', which is of type str; 'name', which is of type str.
+
+'feature_OrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_ContinuousDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_EnumDomain' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AttributeComparisonOperator' defines the following possible values: 'greaterThan', 'lessThan', 'lessThanOrEqual', 'equal', 'unequal', 'greaterThanOrEqual'.
+The enumeration 'SelectedState' defines the following possible values: 'deselected', 'undetermined', 'selected'.
+
+The model also captures inheritance relationships between classes.
+The class 'feature_Feature' is a specialization of 'Identifiable'.
+The class 'feature_Group' is a specialization of 'Identifiable'.
+The class 'feature_Constraint' is a specialization of 'Identifiable'.
+The class 'feature_EnumDomain' is a specialization of 'Domain'.
+The class 'feature_ContinuousDomain' is a specialization of 'Domain'.
+The class 'feature_UnaryExpression' is a specialization of 'Expression'.
+The class 'feature_BinaryExpression' is a specialization of 'Expression'.
+The class 'feature_AtomicExpression' is a specialization of 'Expression'.
+The class 'feature_FeatureReference' is a specialization of 'AtomicExpression'.
+The class 'feature_NotExpression' is a specialization of 'UnaryExpression'.
+The class 'feature_AndExpression' is a specialization of 'BinaryExpression'.
+The class 'feature_OrExpression' is a specialization of 'BinaryExpression'.
+The class 'feature_ImpliesExpression' is a specialization of 'BinaryExpression'.
+The class 'feature_NestedExpression' is a specialization of 'UnaryExpression'.
+The class 'feature_AttributeComparisonExpression' is a specialization of 'AtomicExpression'.
+The class 'feature_ExcludesExpression' is a specialization of 'BinaryExpression'.
+The class 'feature_AttributeReference' is a specialization of 'AttributeOperand'.
+The class 'feature_AttributeValueLiteral' is a specialization of 'AttributeOperand'.
+
+Relationships between classes are modeled using associations.
+An association connects 'feature_FeatureModel' and 'feature_FeatureModel'. From 'feature_FeatureModel', the role 'FeatureModel' has cardinality 0..*, and from 'feature_FeatureModel', the role 'children' has cardinality 0..*.
+An association connects 'feature_FeatureModel' and 'feature_FeatureModel'. From 'feature_FeatureModel', the role 'FeatureModel4' has cardinality 0..*, and from 'feature_FeatureModel', the role 'parent' has cardinality 0..*.
+An association connects 'feature_FeatureModel' and 'feature_Feature'. From 'feature_FeatureModel', the role 'feature_FeatureModel' has cardinality 0..*, and from 'feature_Feature', the role 'feature_Feature' has cardinality 0..*.
+An association connects 'feature_FeatureModel' and 'feature_Constraint'. From 'feature_FeatureModel', the role 'feature_FeatureModel7' has cardinality 0..*, and from 'feature_Constraint', the role 'feature_Constraint' has cardinality 0..*.
+An association connects 'feature_Attribute' and 'feature_Feature'. From 'feature_Attribute', the role 'Attribute' has cardinality 0..*, and from 'feature_Feature', the role 'feature' has cardinality 0..*.
+An association connects 'feature_Group' and 'feature_Feature'. From 'feature_Group', the role 'Group' has cardinality 0..*, and from 'feature_Feature', the role 'parentFeature' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_Group'. From 'feature_Feature', the role 'childFeatures' has cardinality 0..*, and from 'feature_Group', the role 'Group11' has cardinality 0..*.
+An association connects 'feature_Annotation' and 'feature_Feature'. From 'feature_Annotation', the role 'Annotation' has cardinality 0..*, and from 'feature_Feature', the role 'feature13' has cardinality 0..*.
+An association connects 'feature_Group' and 'feature_Feature'. From 'feature_Group', the role 'groups' has cardinality 0..*, and from 'feature_Feature', the role 'Feature' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_Group'. From 'feature_Feature', the role 'Feature16' has cardinality 0..*, and from 'feature_Group', the role 'parentGroup' has cardinality 0..*.
+An association connects 'feature_Constraint' and 'feature_Expression'. From 'feature_Constraint', the role 'feature_Constraint18' has cardinality 0..*, and from 'feature_Expression', the role 'feature_Expression' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_Attribute'. From 'feature_Feature', the role 'Feature20' has cardinality 0..*, and from 'feature_Attribute', the role 'attributes' has cardinality 0..*.
+An association connects 'feature_Attribute' and 'feature_Domain'. From 'feature_Attribute', the role 'feature_Attribute' has cardinality 0..*, and from 'feature_Domain', the role 'feature_Domain' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_Annotation'. From 'feature_Feature', the role 'Feature23' has cardinality 0..*, and from 'feature_Annotation', the role 'annotations' has cardinality 0..*.
+An association connects 'feature_ContinuousDomain' and 'feature_Interval'. From 'feature_ContinuousDomain', the role 'feature_ContinuousDomain' has cardinality 0..*, and from 'feature_Interval', the role 'feature_Interval' has cardinality 0..*.
+An association connects 'feature_UnaryExpression' and 'feature_Expression'. From 'feature_UnaryExpression', the role 'feature_UnaryExpression' has cardinality 0..*, and from 'feature_Expression', the role 'feature_Expression26' has cardinality 0..*.
+An association connects 'feature_Expression' and 'feature_BinaryExpression'. From 'feature_Expression', the role 'feature_Expression28' has cardinality 0..*, and from 'feature_BinaryExpression', the role 'feature_BinaryExpression' has cardinality 0..*.
+An association connects 'feature_BinaryExpression' and 'feature_Expression'. From 'feature_BinaryExpression', the role 'feature_BinaryExpression30' has cardinality 0..*, and from 'feature_Expression', the role 'feature_Expression31' has cardinality 0..*.
+An association connects 'feature_FeatureReference' and 'feature_Feature'. From 'feature_FeatureReference', the role 'feature_FeatureReference' has cardinality 0..*, and from 'feature_Feature', the role 'feature_Feature33' has cardinality 0..*.
+An association connects 'feature_AttributeComparisonExpression' and 'feature_AttributeOperand'. From 'feature_AttributeComparisonExpression', the role 'feature_AttributeComparisonExpression' has cardinality 0..*, and from 'feature_AttributeOperand', the role 'feature_AttributeOperand' has cardinality 0..*.
+An association connects 'feature_AttributeComparisonExpression' and 'feature_AttributeOperand'. From 'feature_AttributeComparisonExpression', the role 'feature_AttributeComparisonExpression36' has cardinality 0..*, and from 'feature_AttributeOperand', the role 'feature_AttributeOperand37' has cardinality 0..*.
+An association connects 'feature_AttributeReference' and 'feature_Attribute'. From 'feature_AttributeReference', the role 'feature_AttributeReference' has cardinality 0..*, and from 'feature_Attribute', the role 'feature_Attribute39' has cardinality 0..*.

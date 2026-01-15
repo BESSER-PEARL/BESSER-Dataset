@@ -1,0 +1,69 @@
+The domain model 'linkinher' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'T' represents an important domain concept.
+It does not declare any attributes.
+
+'linkinher_S' represents an important domain concept.
+It does not declare any attributes.
+
+'linkinher_E' represents an important domain concept.
+It does not declare any attributes.
+
+'S' represents an important domain concept.
+It does not declare any attributes.
+
+'linkinher_L' represents an important domain concept.
+It does not declare any attributes.
+
+'linkinher_N' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'C' represents an important domain concept.
+It does not declare any attributes.
+
+'linkinher_T' represents an important domain concept.
+It does not declare any attributes.
+
+'linkinher_M' represents an important domain concept.
+It does not declare any attributes.
+
+'linkinher_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'linkinher_X' represents an important domain concept.
+It does not declare any attributes.
+
+'E' represents an important domain concept.
+It does not declare any attributes.
+
+'linkinher_K' represents an important domain concept.
+It does not declare any attributes.
+
+'linkinher_C' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'linkinher_E' is a specialization of 'Named'.
+The class 'linkinher_N' is a specialization of 'Named'.
+The class 'linkinher_N' is a specialization of 'T'.
+The class 'linkinher_N' is a specialization of 'S'.
+The class 'linkinher_L' is a specialization of 'C'.
+The class 'linkinher_L' is a specialization of 'T'.
+The class 'linkinher_M' is a specialization of 'E'.
+The class 'linkinher_K' is a specialization of 'C'.
+The class 'linkinher_S' is a specialization of 'Named'.
+The class 'linkinher_C' is a specialization of 'S'.
+The class 'linkinher_C' is a specialization of 'E'.
+
+Relationships between classes are modeled using associations.
+An association connects 'linkinher_E' and 'linkinher_N'. From 'linkinher_E', the role 'linkinher_E' has cardinality 0..*, and from 'linkinher_N', the role 'linkinher_N' has cardinality 0..*.
+An association connects 'linkinher_E' and 'linkinher_N'. From 'linkinher_E', the role 'linkinher_E2' has cardinality 0..*, and from 'linkinher_N', the role 'linkinher_N3' has cardinality 0..*.
+An association connects 'linkinher_N' and 'linkinher_E'. From 'linkinher_N', the role 'linkinher_N5' has cardinality 0..*, and from 'linkinher_E', the role 'linkinher_E6' has cardinality 0..*.
+An association connects 'linkinher_Named' and 'linkinher_X'. From 'linkinher_Named', the role 'linkinher_Named' has cardinality 0..*, and from 'linkinher_X', the role 'linkinher_X' has cardinality 0..*.
+An association connects 'linkinher_X' and 'linkinher_N'. From 'linkinher_X', the role 'linkinher_X9' has cardinality 0..*, and from 'linkinher_N', the role 'linkinher_N10' has cardinality 0..*.
+An association connects 'linkinher_S' and 'linkinher_N'. From 'linkinher_S', the role 'linkinher_S' has cardinality 0..*, and from 'linkinher_N', the role 'linkinher_N12' has cardinality 0..*.

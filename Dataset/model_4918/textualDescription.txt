@@ -1,0 +1,43 @@
+The domain model 'services' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'services_services_EndPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseElement' represents an important domain concept.
+It does not declare any attributes.
+
+'services_services_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'services_services_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Error' represents an important domain concept.
+It does not declare any attributes.
+
+'services_services_Interface' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RootElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Message' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'services_services_EndPoint' is a specialization of 'RootElement'.
+The class 'services_services_Interface' is a specialization of 'RootElement'.
+The class 'services_services_Operation' is a specialization of 'BaseElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'services_services_Interface' and 'Operation'. From 'services_services_Interface', the role 'services_services_Interface' has cardinality 0..*, and from 'Operation', the role 'Operation' has cardinality 0..*.
+An association connects 'services_services_EObject' and 'services_services_Interface'. From 'services_services_EObject', the role 'services_services_EObject' has cardinality 0..*, and from 'services_services_Interface', the role 'services_services_Interface2' has cardinality 0..*.
+An association connects 'services_services_Operation' and 'Message'. From 'services_services_Operation', the role 'services_services_Operation' has cardinality 0..*, and from 'Message', the role 'Message' has cardinality 0..*.
+An association connects 'Message' and 'services_services_Operation'. From 'Message', the role 'Message6' has cardinality 0..*, and from 'services_services_Operation', the role 'services_services_Operation5' has cardinality 0..*.
+An association connects 'Error' and 'services_services_Operation'. From 'Error', the role 'Error' has cardinality 0..*, and from 'services_services_Operation', the role 'services_services_Operation8' has cardinality 0..*.
+An association connects 'services_services_Operation' and 'services_services_EObject'. From 'services_services_Operation', the role 'services_services_Operation10' has cardinality 0..*, and from 'services_services_EObject', the role 'services_services_EObject11' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/OpenRTM/OpenRTP-aist/jp.go.aist.rtm.toolscommon/src/jp/go/aist/rtm/toolscommon/model/component.ecore

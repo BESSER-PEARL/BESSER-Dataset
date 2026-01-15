@@ -1,0 +1,29 @@
+The domain model 'testPackage' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'testPackage_SecondClass' represents an important domain concept.
+It does not declare any attributes.
+
+'testPackage_SecondSubClass' represents an important domain concept.
+It does not declare any attributes.
+
+'FirstClass' represents an important domain concept.
+It does not declare any attributes.
+
+'testPackage_FirstSubClass' represents an important domain concept.
+It does not declare any attributes.
+
+'SecondClass' represents an important domain concept.
+It does not declare any attributes.
+
+'testPackage_FirstClass' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'testPackage_FirstSubClass' is a specialization of 'FirstClass'.
+The class 'testPackage_SecondSubClass' is a specialization of 'SecondClass'.
+
+Relationships between classes are modeled using associations.
+An association connects 'testPackage_FirstClass' and 'testPackage_SecondClass'. From 'testPackage_FirstClass', the role 'testPackage_FirstClass' has cardinality 0..*, and from 'testPackage_SecondClass', the role 'testPackage_SecondClass' has cardinality 0..*.
+An association connects 'testPackage_SecondSubClass' and 'testPackage_FirstSubClass'. From 'testPackage_SecondSubClass', the role 'testPackage_SecondSubClass' has cardinality 0..*, and from 'testPackage_FirstSubClass', the role 'testPackage_FirstSubClass' has cardinality 0..*.

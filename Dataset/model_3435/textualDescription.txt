@@ -1,0 +1,21 @@
+The domain model 'school' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'school_Student' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'school_Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+'school_Classroom' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'school_School' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'school_Classroom' and 'school_Student'. From 'school_Classroom', the role 'school_Classroom' has cardinality 0..*, and from 'school_Student', the role 'school_Student' has cardinality 0..*.
+An association connects 'school_Diagram' and 'school_School'. From 'school_Diagram', the role 'school_Diagram' has cardinality 0..*, and from 'school_School', the role 'school_School' has cardinality 0..*.
+An association connects 'school_Classroom' and 'school_School'. From 'school_Classroom', the role 'school_Classroom4' has cardinality 0..*, and from 'school_School', the role 'school_School3' has cardinality 0..*.
+An association connects 'school_Student' and 'school_Student'. From 'school_Student', the role 'school_Student5' has cardinality 0..*, and from 'school_Student', the role 'school_Student7' has cardinality 0..*.

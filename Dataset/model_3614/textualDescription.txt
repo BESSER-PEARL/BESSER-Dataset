@@ -1,0 +1,821 @@
+The domain model 'r1' describes the core structural elements and their relationships within the system.
+
+The model defines 183 main class(es).
+
+'r1_Today' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Is' represents an important domain concept.
+It has one attribute: 'isType', which is of type str.
+
+'r1_Ln' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Ends' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_As' represents an important domain concept.
+It has the following attributes: 'strict', which is of type str; 'asType', which is of type str.
+
+'r1_Expand' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Variance' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Less' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_DurationBetween' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_TupleElementDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'r1_Starts' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_Concept' represents an important domain concept.
+It has one attribute: 'display', which is of type str.
+
+'r1_Subtract' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Successor' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Overlaps' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_Avg' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_IsTrue' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_ValueSetRef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'libraryName', which is of type str.
+
+'r1_IdentifierRef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'libraryName', which is of type str.
+
+'r1_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Property' represents an important domain concept.
+It has the following attributes: 'path', which is of type str; 'scope', which is of type str.
+
+'NaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_OverlapsAfter' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_ValueSetDef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'accessLevel', which is of type str; 'id', which is of type str; 'version', which is of type str.
+
+'r1_First' represents an important domain concept.
+It has one attribute: 'orderBy', which is of type str.
+
+'r1_TypeSpecifier' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Times' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Tuple' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_DateFrom' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_TupleElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'r1_Time' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_QueryDefineRef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'r1_Count' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Filter' represents an important domain concept.
+It has one attribute: 'scope', which is of type str.
+
+'r1_Sort' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Round' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_InstanceElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'r1_Element' represents an important domain concept.
+It has one attribute: 'localId', which is of type str.
+
+'r1_Predecessor' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_RelationshipClause' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_DateTime' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_ProperIn' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_StdDev' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_ProperContains' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_If' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_OperandRef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'r1_Coalesce' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_CodeSystemRef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'libraryName', which is of type str.
+
+'r1_Literal' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'valueType', which is of type str.
+
+'r1_SameAs' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_AliasRef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'r1_GreaterOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Modulo' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Case' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Before' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_With' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_IndexOf' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_ForEach' represents an important domain concept.
+It has one attribute: 'scope', which is of type str.
+
+'r1_Except' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpressionRef' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Truncate' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Indexer' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_PositionOf' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Multiply' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Sum' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_SameOrAfter' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'ExpressionDef' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_End' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Intersect' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_ExpressionRef' represents an important domain concept.
+It has the following attributes: 'libraryName', which is of type str; 'name', which is of type str.
+
+'r1_Concatenate' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Power' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Log' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_TimeFrom' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_NaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_TruncatedDivide' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Length' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Without' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Interval' represents an important domain concept.
+It has the following attributes: 'lowClosed', which is of type str; 'highClosed', which is of type str.
+
+'r1_Collapse' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_IncludedIn' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_CaseItem' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Divide' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_CalculateAge' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_Add' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_IsFalse' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_PopulationVariance' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_IsNull' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Null' represents an important domain concept.
+It has one attribute: 'valueType', which is of type str.
+
+'r1_Combine' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_InCodeSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Meets' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_TimeOfDay' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_In' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_AliasedQuerySource' represents an important domain concept.
+It has one attribute: 'alias', which is of type str.
+
+'r1_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_FunctionRef' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Current' represents an important domain concept.
+It has one attribute: 'scope', which is of type str.
+
+'r1_FunctionDef' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_And' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_ByColumn' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'r1_TernaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_AggregateExpression' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_List' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_PopulationStdDev' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Xor' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_ListTypeSpecifier' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Distinct' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_MeetsAfter' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_Max' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_AnyTrue' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Now' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Retrieve' represents an important domain concept.
+It has the following attributes: 'dateProperty', which is of type str; 'dataType', which is of type str; 'dateHighProperty', which is of type str; 'scope', which is of type str; 'codeProperty', which is of type str; 'templateId', which is of type str; 'idProperty', which is of type str; 'dateLowProperty', which is of type str.
+
+'r1_ReturnClause' represents an important domain concept.
+It has one attribute: 'distinct', which is of type str.
+
+'r1_CodeSystemDef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'version', which is of type str; 'accessLevel', which is of type str; 'id', which is of type str.
+
+'r1_SortClause' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Min' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Upper' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Convert' represents an important domain concept.
+It has one attribute: 'toType', which is of type str.
+
+'r1_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Mode' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_MaxValue' represents an important domain concept.
+It has one attribute: 'valueType', which is of type str.
+
+'r1_IntervalTypeSpecifier' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_MeetsBefore' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_DefineClause' represents an important domain concept.
+It has one attribute: 'identifier', which is of type str.
+
+'r1_Exists' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Contains' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_Includes' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_After' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_TimezoneFrom' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_SameOrBefore' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_ByDirection' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Matches' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_DateTimeComponentFrom' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_Substring' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Lower' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_ParameterDef' represents an important domain concept.
+It has the following attributes: 'accessLevel', which is of type str; 'parameterType', which is of type str; 'name', which is of type str.
+
+'r1_Width' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_ParameterRef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'libraryName', which is of type str.
+
+'r1_OperandDef' represents an important domain concept.
+It has the following attributes: 'operandType', which is of type str; 'name', which is of type str.
+
+'AliasedQuerySource' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationshipClause' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeSpecifier' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Negate' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_TupleTypeSpecifier' represents an important domain concept.
+It does not declare any attributes.
+
+'SortByItem' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Abs' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_OverlapsBefore' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_Union' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_ProperIncludedIn' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_Ceiling' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_SingletonFrom' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_NamedTypeSpecifier' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'r1_AllTrue' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_CalculateAgeAt' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_Instance' represents an important domain concept.
+It has one attribute: 'classType', which is of type str.
+
+'r1_Last' represents an important domain concept.
+It has one attribute: 'orderBy', which is of type str.
+
+'r1_NotEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Floor' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_MinValue' represents an important domain concept.
+It has one attribute: 'valueType', which is of type str.
+
+'r1_Median' represents an important domain concept.
+It does not declare any attributes.
+
+'AggregateExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_LessOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_DifferenceBetween' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_ProperIncludes' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'r1_Split' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Code' represents an important domain concept.
+It has the following attributes: 'display', which is of type str; 'code', which is of type str.
+
+'r1_ExpressionDef' represents an important domain concept.
+It has the following attributes: 'context', which is of type str; 'accessLevel', which is of type str; 'name', which is of type str.
+
+'r1_Quantity' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'unit', which is of type str.
+
+'r1_SortByItem' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'r1_ByExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_Query' represents an important domain concept.
+It does not declare any attributes.
+
+'r1_InValueSet' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DateTimePrecision' defines the following possible values: 'Millisecond', 'Hour', 'Year', 'Day', 'Week', 'Minute', 'Second', 'Month'.
+The enumeration 'AccessModifier' defines the following possible values: 'Private', 'Public'.
+The enumeration 'SortDirection' defines the following possible values: 'ascending', 'desc', 'descending', 'asc'.
+
+The model also captures inheritance relationships between classes.
+The class 'r1_Abs' is a specialization of 'UnaryExpression'.
+The class 'r1_Add' is a specialization of 'BinaryExpression'.
+The class 'r1_After' is a specialization of 'BinaryExpression'.
+The class 'r1_AggregateExpression' is a specialization of 'Expression'.
+The class 'r1_AliasedQuerySource' is a specialization of 'Element'.
+The class 'r1_AliasRef' is a specialization of 'Expression'.
+The class 'r1_AllTrue' is a specialization of 'AggregateExpression'.
+The class 'r1_And' is a specialization of 'BinaryExpression'.
+The class 'r1_AnyTrue' is a specialization of 'AggregateExpression'.
+The class 'r1_As' is a specialization of 'UnaryExpression'.
+The class 'r1_Avg' is a specialization of 'AggregateExpression'.
+The class 'r1_Before' is a specialization of 'BinaryExpression'.
+The class 'r1_BinaryExpression' is a specialization of 'Expression'.
+The class 'r1_ByColumn' is a specialization of 'SortByItem'.
+The class 'r1_ByDirection' is a specialization of 'SortByItem'.
+The class 'r1_ByExpression' is a specialization of 'SortByItem'.
+The class 'r1_CalculateAge' is a specialization of 'UnaryExpression'.
+The class 'r1_CalculateAgeAt' is a specialization of 'BinaryExpression'.
+The class 'r1_Case' is a specialization of 'Expression'.
+The class 'r1_CaseItem' is a specialization of 'Element'.
+The class 'r1_Ceiling' is a specialization of 'UnaryExpression'.
+The class 'r1_Coalesce' is a specialization of 'NaryExpression'.
+The class 'r1_Code' is a specialization of 'Expression'.
+The class 'r1_CodeSystemDef' is a specialization of 'Element'.
+The class 'r1_CodeSystemRef' is a specialization of 'Expression'.
+The class 'r1_Collapse' is a specialization of 'UnaryExpression'.
+The class 'r1_Combine' is a specialization of 'Expression'.
+The class 'r1_Concatenate' is a specialization of 'NaryExpression'.
+The class 'r1_Concept' is a specialization of 'Expression'.
+The class 'r1_Contains' is a specialization of 'BinaryExpression'.
+The class 'r1_Convert' is a specialization of 'UnaryExpression'.
+The class 'r1_Count' is a specialization of 'AggregateExpression'.
+The class 'r1_Current' is a specialization of 'Expression'.
+The class 'r1_DateFrom' is a specialization of 'UnaryExpression'.
+The class 'r1_DateTime' is a specialization of 'Expression'.
+The class 'r1_DateTimeComponentFrom' is a specialization of 'UnaryExpression'.
+The class 'r1_DefineClause' is a specialization of 'Element'.
+The class 'r1_DifferenceBetween' is a specialization of 'BinaryExpression'.
+The class 'r1_Distinct' is a specialization of 'UnaryExpression'.
+The class 'r1_Divide' is a specialization of 'BinaryExpression'.
+The class 'r1_DurationBetween' is a specialization of 'BinaryExpression'.
+The class 'r1_End' is a specialization of 'UnaryExpression'.
+The class 'r1_Ends' is a specialization of 'BinaryExpression'.
+The class 'r1_Equal' is a specialization of 'BinaryExpression'.
+The class 'r1_Except' is a specialization of 'BinaryExpression'.
+The class 'r1_Exists' is a specialization of 'UnaryExpression'.
+The class 'r1_Expand' is a specialization of 'UnaryExpression'.
+The class 'r1_Expression' is a specialization of 'Element'.
+The class 'r1_ExpressionDef' is a specialization of 'Element'.
+The class 'r1_ExpressionRef' is a specialization of 'Expression'.
+The class 'r1_Filter' is a specialization of 'Expression'.
+The class 'r1_First' is a specialization of 'Expression'.
+The class 'r1_Floor' is a specialization of 'UnaryExpression'.
+The class 'r1_ForEach' is a specialization of 'Expression'.
+The class 'r1_FunctionDef' is a specialization of 'ExpressionDef'.
+The class 'r1_FunctionRef' is a specialization of 'ExpressionRef'.
+The class 'r1_Greater' is a specialization of 'BinaryExpression'.
+The class 'r1_GreaterOrEqual' is a specialization of 'BinaryExpression'.
+The class 'r1_IdentifierRef' is a specialization of 'Expression'.
+The class 'r1_If' is a specialization of 'Expression'.
+The class 'r1_In' is a specialization of 'BinaryExpression'.
+The class 'r1_IncludedIn' is a specialization of 'BinaryExpression'.
+The class 'r1_Includes' is a specialization of 'BinaryExpression'.
+The class 'r1_InCodeSystem' is a specialization of 'Expression'.
+The class 'r1_Indexer' is a specialization of 'BinaryExpression'.
+The class 'r1_IndexOf' is a specialization of 'Expression'.
+The class 'r1_Instance' is a specialization of 'Expression'.
+The class 'r1_Intersect' is a specialization of 'BinaryExpression'.
+The class 'r1_Interval' is a specialization of 'Expression'.
+The class 'r1_IntervalTypeSpecifier' is a specialization of 'TypeSpecifier'.
+The class 'r1_InValueSet' is a specialization of 'Expression'.
+The class 'r1_Is' is a specialization of 'UnaryExpression'.
+The class 'r1_IsFalse' is a specialization of 'UnaryExpression'.
+The class 'r1_IsNull' is a specialization of 'UnaryExpression'.
+The class 'r1_IsTrue' is a specialization of 'UnaryExpression'.
+The class 'r1_Last' is a specialization of 'Expression'.
+The class 'r1_Length' is a specialization of 'UnaryExpression'.
+The class 'r1_Less' is a specialization of 'BinaryExpression'.
+The class 'r1_LessOrEqual' is a specialization of 'BinaryExpression'.
+The class 'r1_List' is a specialization of 'Expression'.
+The class 'r1_ListTypeSpecifier' is a specialization of 'TypeSpecifier'.
+The class 'r1_Literal' is a specialization of 'Expression'.
+The class 'r1_Ln' is a specialization of 'UnaryExpression'.
+The class 'r1_Log' is a specialization of 'BinaryExpression'.
+The class 'r1_Lower' is a specialization of 'UnaryExpression'.
+The class 'r1_Matches' is a specialization of 'BinaryExpression'.
+The class 'r1_Max' is a specialization of 'AggregateExpression'.
+The class 'r1_MaxValue' is a specialization of 'Expression'.
+The class 'r1_Median' is a specialization of 'AggregateExpression'.
+The class 'r1_Meets' is a specialization of 'BinaryExpression'.
+The class 'r1_MeetsAfter' is a specialization of 'BinaryExpression'.
+The class 'r1_MeetsBefore' is a specialization of 'BinaryExpression'.
+The class 'r1_Min' is a specialization of 'AggregateExpression'.
+The class 'r1_MinValue' is a specialization of 'Expression'.
+The class 'r1_Mode' is a specialization of 'AggregateExpression'.
+The class 'r1_Modulo' is a specialization of 'BinaryExpression'.
+The class 'r1_Multiply' is a specialization of 'BinaryExpression'.
+The class 'r1_NamedTypeSpecifier' is a specialization of 'TypeSpecifier'.
+The class 'r1_NaryExpression' is a specialization of 'Expression'.
+The class 'r1_Negate' is a specialization of 'UnaryExpression'.
+The class 'r1_Not' is a specialization of 'UnaryExpression'.
+The class 'r1_NotEqual' is a specialization of 'BinaryExpression'.
+The class 'r1_Now' is a specialization of 'Expression'.
+The class 'r1_Null' is a specialization of 'Expression'.
+The class 'r1_OperandDef' is a specialization of 'Element'.
+The class 'r1_OperandRef' is a specialization of 'Expression'.
+The class 'r1_Or' is a specialization of 'BinaryExpression'.
+The class 'r1_Overlaps' is a specialization of 'BinaryExpression'.
+The class 'r1_OverlapsAfter' is a specialization of 'BinaryExpression'.
+The class 'r1_OverlapsBefore' is a specialization of 'BinaryExpression'.
+The class 'r1_ParameterDef' is a specialization of 'Element'.
+The class 'r1_ParameterRef' is a specialization of 'Expression'.
+The class 'r1_PopulationStdDev' is a specialization of 'AggregateExpression'.
+The class 'r1_PopulationVariance' is a specialization of 'AggregateExpression'.
+The class 'r1_PositionOf' is a specialization of 'Expression'.
+The class 'r1_Power' is a specialization of 'BinaryExpression'.
+The class 'r1_Predecessor' is a specialization of 'UnaryExpression'.
+The class 'r1_ProperContains' is a specialization of 'BinaryExpression'.
+The class 'r1_ProperIn' is a specialization of 'BinaryExpression'.
+The class 'r1_ProperIncludedIn' is a specialization of 'BinaryExpression'.
+The class 'r1_ProperIncludes' is a specialization of 'BinaryExpression'.
+The class 'r1_Property' is a specialization of 'Expression'.
+The class 'r1_Quantity' is a specialization of 'Expression'.
+The class 'r1_Query' is a specialization of 'Expression'.
+The class 'r1_QueryDefineRef' is a specialization of 'Expression'.
+The class 'r1_RelationshipClause' is a specialization of 'AliasedQuerySource'.
+The class 'r1_Retrieve' is a specialization of 'Expression'.
+The class 'r1_ReturnClause' is a specialization of 'Element'.
+The class 'r1_Round' is a specialization of 'Expression'.
+The class 'r1_SameAs' is a specialization of 'BinaryExpression'.
+The class 'r1_SameOrAfter' is a specialization of 'BinaryExpression'.
+The class 'r1_SameOrBefore' is a specialization of 'BinaryExpression'.
+The class 'r1_SingletonFrom' is a specialization of 'UnaryExpression'.
+The class 'r1_Sort' is a specialization of 'Expression'.
+The class 'r1_SortByItem' is a specialization of 'Element'.
+The class 'r1_SortClause' is a specialization of 'Element'.
+The class 'r1_Split' is a specialization of 'Expression'.
+The class 'r1_Start' is a specialization of 'UnaryExpression'.
+The class 'r1_Starts' is a specialization of 'BinaryExpression'.
+The class 'r1_StdDev' is a specialization of 'AggregateExpression'.
+The class 'r1_Substring' is a specialization of 'Expression'.
+The class 'r1_Subtract' is a specialization of 'BinaryExpression'.
+The class 'r1_Successor' is a specialization of 'UnaryExpression'.
+The class 'r1_Sum' is a specialization of 'AggregateExpression'.
+The class 'r1_TernaryExpression' is a specialization of 'Expression'.
+The class 'r1_Time' is a specialization of 'Expression'.
+The class 'r1_TimeFrom' is a specialization of 'UnaryExpression'.
+The class 'r1_TimeOfDay' is a specialization of 'Expression'.
+The class 'r1_Times' is a specialization of 'BinaryExpression'.
+The class 'r1_TimezoneFrom' is a specialization of 'UnaryExpression'.
+The class 'r1_Today' is a specialization of 'Expression'.
+The class 'r1_Truncate' is a specialization of 'UnaryExpression'.
+The class 'r1_TruncatedDivide' is a specialization of 'BinaryExpression'.
+The class 'r1_Tuple' is a specialization of 'Expression'.
+The class 'r1_TupleElementDefinition' is a specialization of 'Element'.
+The class 'r1_TupleTypeSpecifier' is a specialization of 'TypeSpecifier'.
+The class 'r1_TypeSpecifier' is a specialization of 'Element'.
+The class 'r1_UnaryExpression' is a specialization of 'Expression'.
+The class 'r1_Union' is a specialization of 'BinaryExpression'.
+The class 'r1_Upper' is a specialization of 'UnaryExpression'.
+The class 'r1_ValueSetDef' is a specialization of 'Element'.
+The class 'r1_ValueSetRef' is a specialization of 'Expression'.
+The class 'r1_Variance' is a specialization of 'AggregateExpression'.
+The class 'r1_Width' is a specialization of 'UnaryExpression'.
+The class 'r1_With' is a specialization of 'RelationshipClause'.
+The class 'r1_Without' is a specialization of 'RelationshipClause'.
+The class 'r1_Xor' is a specialization of 'BinaryExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'r1_AggregateExpression' and 'r1_Expression'. From 'r1_AggregateExpression', the role 'r1_AggregateExpression' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression' has cardinality 0..*.
+An association connects 'r1_AliasedQuerySource' and 'r1_Expression'. From 'r1_AliasedQuerySource', the role 'r1_AliasedQuerySource' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression2' has cardinality 0..*.
+An association connects 'r1_TypeSpecifier' and 'r1_As'. From 'r1_TypeSpecifier', the role 'r1_TypeSpecifier' has cardinality 0..*, and from 'r1_As', the role 'r1_As' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_BinaryExpression'. From 'r1_Expression', the role 'r1_Expression5' has cardinality 0..*, and from 'r1_BinaryExpression', the role 'r1_BinaryExpression' has cardinality 0..*.
+An association connects 'r1_ByExpression' and 'r1_Expression'. From 'r1_ByExpression', the role 'r1_ByExpression' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression7' has cardinality 0..*.
+An association connects 'r1_Case' and 'r1_Expression'. From 'r1_Case', the role 'r1_Case' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression9' has cardinality 0..*.
+An association connects 'r1_CaseItem' and 'r1_Case'. From 'r1_CaseItem', the role 'r1_CaseItem' has cardinality 0..*, and from 'r1_Case', the role 'r1_Case11' has cardinality 0..*.
+An association connects 'r1_Case' and 'r1_Expression'. From 'r1_Case', the role 'r1_Case13' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression14' has cardinality 0..*.
+An association connects 'r1_CaseItem' and 'r1_Expression'. From 'r1_CaseItem', the role 'r1_CaseItem16' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression17' has cardinality 0..*.
+An association connects 'r1_CaseItem' and 'r1_Expression'. From 'r1_CaseItem', the role 'r1_CaseItem19' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression20' has cardinality 0..*.
+An association connects 'r1_CodeSystemRef' and 'r1_Code'. From 'r1_CodeSystemRef', the role 'r1_CodeSystemRef' has cardinality 0..*, and from 'r1_Code', the role 'r1_Code' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_Combine'. From 'r1_Expression', the role 'r1_Expression23' has cardinality 0..*, and from 'r1_Combine', the role 'r1_Combine' has cardinality 0..*.
+An association connects 'r1_Combine' and 'r1_Expression'. From 'r1_Combine', the role 'r1_Combine25' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression26' has cardinality 0..*.
+An association connects 'r1_Code' and 'r1_Concept'. From 'r1_Code', the role 'r1_Code28' has cardinality 0..*, and from 'r1_Concept', the role 'r1_Concept' has cardinality 0..*.
+An association connects 'r1_TypeSpecifier' and 'r1_Convert'. From 'r1_TypeSpecifier', the role 'r1_TypeSpecifier30' has cardinality 0..*, and from 'r1_Convert', the role 'r1_Convert' has cardinality 0..*.
+An association connects 'r1_DateTime' and 'r1_Expression'. From 'r1_DateTime', the role 'r1_DateTime' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression32' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_DateTime'. From 'r1_Expression', the role 'r1_Expression35' has cardinality 0..*, and from 'r1_DateTime', the role 'r1_DateTime34' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_DateTime'. From 'r1_Expression', the role 'r1_Expression38' has cardinality 0..*, and from 'r1_DateTime', the role 'r1_DateTime37' has cardinality 0..*.
+An association connects 'r1_DateTime' and 'r1_Expression'. From 'r1_DateTime', the role 'r1_DateTime40' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression41' has cardinality 0..*.
+An association connects 'r1_DateTime' and 'r1_Expression'. From 'r1_DateTime', the role 'r1_DateTime43' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression44' has cardinality 0..*.
+An association connects 'r1_DateTime' and 'r1_Expression'. From 'r1_DateTime', the role 'r1_DateTime46' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression47' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_DateTime'. From 'r1_Expression', the role 'r1_Expression50' has cardinality 0..*, and from 'r1_DateTime', the role 'r1_DateTime49' has cardinality 0..*.
+An association connects 'r1_DateTime' and 'r1_Expression'. From 'r1_DateTime', the role 'r1_DateTime52' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression53' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_DefineClause'. From 'r1_Expression', the role 'r1_Expression55' has cardinality 0..*, and from 'r1_DefineClause', the role 'r1_DefineClause' has cardinality 0..*.
+An association connects 'r1_EObject' and 'r1_Element'. From 'r1_EObject', the role 'r1_EObject' has cardinality 0..*, and from 'r1_Element', the role 'r1_Element' has cardinality 0..*.
+An association connects 'r1_ExpressionDef' and 'r1_Expression'. From 'r1_ExpressionDef', the role 'r1_ExpressionDef' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression58' has cardinality 0..*.
+An association connects 'r1_Filter' and 'r1_Expression'. From 'r1_Filter', the role 'r1_Filter' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression60' has cardinality 0..*.
+An association connects 'r1_Filter' and 'r1_Expression'. From 'r1_Filter', the role 'r1_Filter62' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression63' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_First'. From 'r1_Expression', the role 'r1_Expression65' has cardinality 0..*, and from 'r1_First', the role 'r1_First' has cardinality 0..*.
+An association connects 'r1_ForEach' and 'r1_Expression'. From 'r1_ForEach', the role 'r1_ForEach' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression67' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_ForEach'. From 'r1_Expression', the role 'r1_Expression70' has cardinality 0..*, and from 'r1_ForEach', the role 'r1_ForEach69' has cardinality 0..*.
+An association connects 'r1_FunctionDef' and 'r1_OperandDef'. From 'r1_FunctionDef', the role 'r1_FunctionDef' has cardinality 0..*, and from 'r1_OperandDef', the role 'r1_OperandDef' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_FunctionRef'. From 'r1_Expression', the role 'r1_Expression73' has cardinality 0..*, and from 'r1_FunctionRef', the role 'r1_FunctionRef' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_If'. From 'r1_Expression', the role 'r1_Expression75' has cardinality 0..*, and from 'r1_If', the role 'r1_If' has cardinality 0..*.
+An association connects 'r1_If' and 'r1_Expression'. From 'r1_If', the role 'r1_If77' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression78' has cardinality 0..*.
+An association connects 'r1_If' and 'r1_Expression'. From 'r1_If', the role 'r1_If80' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression81' has cardinality 0..*.
+An association connects 'r1_InCodeSystem' and 'r1_Expression'. From 'r1_InCodeSystem', the role 'r1_InCodeSystem' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression83' has cardinality 0..*.
+An association connects 'r1_InCodeSystem' and 'r1_CodeSystemRef'. From 'r1_InCodeSystem', the role 'r1_InCodeSystem85' has cardinality 0..*, and from 'r1_CodeSystemRef', the role 'r1_CodeSystemRef86' has cardinality 0..*.
+An association connects 'r1_IndexOf' and 'r1_Expression'. From 'r1_IndexOf', the role 'r1_IndexOf' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression88' has cardinality 0..*.
+An association connects 'r1_IndexOf' and 'r1_Expression'. From 'r1_IndexOf', the role 'r1_IndexOf90' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression91' has cardinality 0..*.
+An association connects 'r1_InstanceElement' and 'r1_Instance'. From 'r1_InstanceElement', the role 'r1_InstanceElement' has cardinality 0..*, and from 'r1_Instance', the role 'r1_Instance' has cardinality 0..*.
+An association connects 'r1_InstanceElement' and 'r1_Expression'. From 'r1_InstanceElement', the role 'r1_InstanceElement94' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression95' has cardinality 0..*.
+An association connects 'r1_Interval' and 'r1_Expression'. From 'r1_Interval', the role 'r1_Interval' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression97' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_Interval'. From 'r1_Expression', the role 'r1_Expression100' has cardinality 0..*, and from 'r1_Interval', the role 'r1_Interval99' has cardinality 0..*.
+An association connects 'r1_Interval' and 'r1_Expression'. From 'r1_Interval', the role 'r1_Interval102' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression103' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_Interval'. From 'r1_Expression', the role 'r1_Expression106' has cardinality 0..*, and from 'r1_Interval', the role 'r1_Interval105' has cardinality 0..*.
+An association connects 'r1_IntervalTypeSpecifier' and 'r1_TypeSpecifier'. From 'r1_IntervalTypeSpecifier', the role 'r1_IntervalTypeSpecifier' has cardinality 0..*, and from 'r1_TypeSpecifier', the role 'r1_TypeSpecifier108' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_InValueSet'. From 'r1_Expression', the role 'r1_Expression110' has cardinality 0..*, and from 'r1_InValueSet', the role 'r1_InValueSet' has cardinality 0..*.
+An association connects 'r1_InValueSet' and 'r1_ValueSetRef'. From 'r1_InValueSet', the role 'r1_InValueSet112' has cardinality 0..*, and from 'r1_ValueSetRef', the role 'r1_ValueSetRef' has cardinality 0..*.
+An association connects 'r1_Is' and 'r1_TypeSpecifier'. From 'r1_Is', the role 'r1_Is' has cardinality 0..*, and from 'r1_TypeSpecifier', the role 'r1_TypeSpecifier114' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_Last'. From 'r1_Expression', the role 'r1_Expression116' has cardinality 0..*, and from 'r1_Last', the role 'r1_Last' has cardinality 0..*.
+An association connects 'r1_TypeSpecifier' and 'r1_List'. From 'r1_TypeSpecifier', the role 'r1_TypeSpecifier118' has cardinality 0..*, and from 'r1_List', the role 'r1_List' has cardinality 0..*.
+An association connects 'r1_List' and 'r1_Expression'. From 'r1_List', the role 'r1_List120' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression121' has cardinality 0..*.
+An association connects 'r1_ListTypeSpecifier' and 'r1_TypeSpecifier'. From 'r1_ListTypeSpecifier', the role 'r1_ListTypeSpecifier' has cardinality 0..*, and from 'r1_TypeSpecifier', the role 'r1_TypeSpecifier123' has cardinality 0..*.
+An association connects 'r1_NaryExpression' and 'r1_Expression'. From 'r1_NaryExpression', the role 'r1_NaryExpression' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression125' has cardinality 0..*.
+An association connects 'r1_TypeSpecifier' and 'r1_OperandDef'. From 'r1_TypeSpecifier', the role 'r1_TypeSpecifier128' has cardinality 0..*, and from 'r1_OperandDef', the role 'r1_OperandDef127' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_ParameterDef'. From 'r1_Expression', the role 'r1_Expression130' has cardinality 0..*, and from 'r1_ParameterDef', the role 'r1_ParameterDef' has cardinality 0..*.
+An association connects 'r1_TypeSpecifier' and 'r1_ParameterDef'. From 'r1_TypeSpecifier', the role 'r1_TypeSpecifier133' has cardinality 0..*, and from 'r1_ParameterDef', the role 'r1_ParameterDef132' has cardinality 0..*.
+An association connects 'r1_PositionOf' and 'r1_Expression'. From 'r1_PositionOf', the role 'r1_PositionOf' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression135' has cardinality 0..*.
+An association connects 'r1_PositionOf' and 'r1_Expression'. From 'r1_PositionOf', the role 'r1_PositionOf137' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression138' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_Property'. From 'r1_Expression', the role 'r1_Expression140' has cardinality 0..*, and from 'r1_Property', the role 'r1_Property' has cardinality 0..*.
+An association connects 'r1_AliasedQuerySource' and 'r1_Query'. From 'r1_AliasedQuerySource', the role 'r1_AliasedQuerySource142' has cardinality 0..*, and from 'r1_Query', the role 'r1_Query' has cardinality 0..*.
+An association connects 'r1_Query' and 'r1_DefineClause'. From 'r1_Query', the role 'r1_Query144' has cardinality 0..*, and from 'r1_DefineClause', the role 'r1_DefineClause145' has cardinality 0..*.
+An association connects 'r1_RelationshipClause' and 'r1_Query'. From 'r1_RelationshipClause', the role 'r1_RelationshipClause' has cardinality 0..*, and from 'r1_Query', the role 'r1_Query147' has cardinality 0..*.
+An association connects 'r1_Query' and 'r1_Expression'. From 'r1_Query', the role 'r1_Query149' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression150' has cardinality 0..*.
+An association connects 'r1_Query' and 'r1_ReturnClause'. From 'r1_Query', the role 'r1_Query152' has cardinality 0..*, and from 'r1_ReturnClause', the role 'r1_ReturnClause' has cardinality 0..*.
+An association connects 'r1_SortClause' and 'r1_Query'. From 'r1_SortClause', the role 'r1_SortClause' has cardinality 0..*, and from 'r1_Query', the role 'r1_Query154' has cardinality 0..*.
+An association connects 'r1_RelationshipClause' and 'r1_Expression'. From 'r1_RelationshipClause', the role 'r1_RelationshipClause156' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression157' has cardinality 0..*.
+An association connects 'r1_Retrieve' and 'r1_Expression'. From 'r1_Retrieve', the role 'r1_Retrieve' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression159' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_Retrieve'. From 'r1_Expression', the role 'r1_Expression162' has cardinality 0..*, and from 'r1_Retrieve', the role 'r1_Retrieve161' has cardinality 0..*.
+An association connects 'r1_ReturnClause' and 'r1_Expression'. From 'r1_ReturnClause', the role 'r1_ReturnClause164' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression165' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_Round'. From 'r1_Expression', the role 'r1_Expression167' has cardinality 0..*, and from 'r1_Round', the role 'r1_Round' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_Round'. From 'r1_Expression', the role 'r1_Expression170' has cardinality 0..*, and from 'r1_Round', the role 'r1_Round169' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_Sort'. From 'r1_Expression', the role 'r1_Expression172' has cardinality 0..*, and from 'r1_Sort', the role 'r1_Sort' has cardinality 0..*.
+An association connects 'r1_Sort' and 'r1_SortByItem'. From 'r1_Sort', the role 'r1_Sort174' has cardinality 0..*, and from 'r1_SortByItem', the role 'r1_SortByItem' has cardinality 0..*.
+An association connects 'r1_SortClause' and 'r1_SortByItem'. From 'r1_SortClause', the role 'r1_SortClause176' has cardinality 0..*, and from 'r1_SortByItem', the role 'r1_SortByItem177' has cardinality 0..*.
+An association connects 'r1_Split' and 'r1_Expression'. From 'r1_Split', the role 'r1_Split' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression179' has cardinality 0..*.
+An association connects 'r1_Split' and 'r1_Expression'. From 'r1_Split', the role 'r1_Split181' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression182' has cardinality 0..*.
+An association connects 'r1_EObject' and 'r1_Substring'. From 'r1_EObject', the role 'r1_EObject184' has cardinality 0..*, and from 'r1_Substring', the role 'r1_Substring' has cardinality 0..*.
+An association connects 'r1_EObject' and 'r1_Substring'. From 'r1_EObject', the role 'r1_EObject187' has cardinality 0..*, and from 'r1_Substring', the role 'r1_Substring186' has cardinality 0..*.
+An association connects 'r1_EObject' and 'r1_Substring'. From 'r1_EObject', the role 'r1_EObject190' has cardinality 0..*, and from 'r1_Substring', the role 'r1_Substring189' has cardinality 0..*.
+An association connects 'r1_TernaryExpression' and 'r1_Expression'. From 'r1_TernaryExpression', the role 'r1_TernaryExpression' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression192' has cardinality 0..*.
+An association connects 'r1_Time' and 'r1_Expression'. From 'r1_Time', the role 'r1_Time' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression194' has cardinality 0..*.
+An association connects 'r1_Time' and 'r1_Expression'. From 'r1_Time', the role 'r1_Time196' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression197' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_Time'. From 'r1_Expression', the role 'r1_Expression200' has cardinality 0..*, and from 'r1_Time', the role 'r1_Time199' has cardinality 0..*.
+An association connects 'r1_Time' and 'r1_Expression'. From 'r1_Time', the role 'r1_Time202' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression203' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_Time'. From 'r1_Expression', the role 'r1_Expression206' has cardinality 0..*, and from 'r1_Time', the role 'r1_Time205' has cardinality 0..*.
+An association connects 'r1_Tuple' and 'r1_TupleElement'. From 'r1_Tuple', the role 'r1_Tuple' has cardinality 0..*, and from 'r1_TupleElement', the role 'r1_TupleElement' has cardinality 0..*.
+An association connects 'r1_Expression' and 'r1_TupleElement'. From 'r1_Expression', the role 'r1_Expression210' has cardinality 0..*, and from 'r1_TupleElement', the role 'r1_TupleElement209' has cardinality 0..*.
+An association connects 'r1_TupleElementDefinition' and 'r1_TypeSpecifier'. From 'r1_TupleElementDefinition', the role 'r1_TupleElementDefinition' has cardinality 0..*, and from 'r1_TypeSpecifier', the role 'r1_TypeSpecifier212' has cardinality 0..*.
+An association connects 'r1_TupleElementDefinition' and 'r1_TupleTypeSpecifier'. From 'r1_TupleElementDefinition', the role 'r1_TupleElementDefinition214' has cardinality 0..*, and from 'r1_TupleTypeSpecifier', the role 'r1_TupleTypeSpecifier' has cardinality 0..*.
+An association connects 'r1_UnaryExpression' and 'r1_Expression'. From 'r1_UnaryExpression', the role 'r1_UnaryExpression' has cardinality 0..*, and from 'r1_Expression', the role 'r1_Expression216' has cardinality 0..*.
+An association connects 'r1_CodeSystemRef' and 'r1_ValueSetDef'. From 'r1_CodeSystemRef', the role 'r1_CodeSystemRef218' has cardinality 0..*, and from 'r1_ValueSetDef', the role 'r1_ValueSetDef' has cardinality 0..*.

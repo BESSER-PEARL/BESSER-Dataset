@@ -1,0 +1,12 @@
+The domain model 'lazyBuilder' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'lazyBuilder_A' represents an important domain concept.
+It does not declare any attributes.
+
+'lazyBuilder_B' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'lazyBuilder_B' and 'lazyBuilder_A'. From 'lazyBuilder_B', the role 'lazyBuilder_B' has cardinality 0..*, and from 'lazyBuilder_A', the role 'lazyBuilder_A' has cardinality 0..*.

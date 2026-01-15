@@ -1,0 +1,528 @@
+The domain model 'vM' describes the core structural elements and their relationships within the system.
+
+The model defines 114 main class(es).
+
+'vM_Constraints' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_BooleanExpression_List' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_LeftImplication' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_StringExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'vM_Objectives' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_BasicAttrValuation' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'vM_TableBasedValuationByAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_IntegerAttrDef' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_RealAttrDefUnbounded' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Abstract_ATT_ID' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_VmBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_CardinalityBased' represents an important domain concept.
+It has the following attributes: 'max', which is of type str; 'all', which is of type bool; 'min', which is of type str.
+
+'vM_Integer_ATT_ID' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Relationships' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_PackageDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'vM_IntegerDefaultDef' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'vM_Lessequal' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Enum_String_ATT_ID' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Inequality' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_IntegerAttrDefComplement' represents an important domain concept.
+It has the following attributes: 'min', which is of type str; 'max', which is of type str.
+
+'vM_FeaturesGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'ComplexExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'RealAttrDef' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtendedValuation' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_RightImplication' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_RealAttrDef' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Objective' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'op', which is of type str.
+
+'vM_BiImplication' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_BooleanExpression' represents an important domain concept.
+It has the following attributes: 'op', which is of type str; 'value', which is of type str.
+
+'vM_Constraint' represents an important domain concept.
+It has the following attributes: 'not', which is of type bool; 'name', which is of type str.
+
+'vM_EnumStringDef' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Excludes' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_RealDefaultDef' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'vM_EnumIntegerDef' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_PrimitiveExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_FeatureHierarchy' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_AttHead' represents an important domain concept.
+It has one attribute: 'forAllFeatures', which is of type bool.
+
+'vM_RealDeltaDef' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'vM_BoolDefaultDef' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'vM_TableBasedValuationByFeatureAndClone' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'vM_RealAttrDefComplement' represents an important domain concept.
+It has the following attributes: 'max', which is of type str; 'min', which is of type str.
+
+'vM_PairFeatureInteger' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'vM_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Email' represents an important domain concept.
+It has the following attributes: 'username', which is of type str; 'domain', which is of type str.
+
+'vM_AdvancedAttrValuation' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Multiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_AttributeDescription' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'vM_StringAttrDef' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'vM_ComplexExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_NumericExpression' represents an important domain concept.
+It has the following attributes: 'op', which is of type str; 'value', which is of type str.
+
+'vM_And' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_IntegerAttrDefUnbounded' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'vM_BooleanAttrValuation' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Orgroup' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Configurations' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_TableBasedValuationByAttributeForReal' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_FeatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_IntegerDeltaDef' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'vM_ObjectiveExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'vM_TableBasedValuationByFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_String_ATT_ID' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_IntegerAttrValuation' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Abstract_ATT_ID' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'BasicAttrValuation' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_BooleanValuation' represents an important domain concept.
+It has one attribute: 'notSelected', which is of type bool.
+
+'vM_Less' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicAttrDef' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_RealAttrDefBounded' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Descriptions' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Attributes' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerAttrDef' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Configuration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'vM_StringDefaultDef' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'vM_EnumAttrDef' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'vM_BooleanAttrDef' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'vM_Enum_Real_ATT_ID' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Equality' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_MetaDataDeclaration' represents an important domain concept.
+It has the following attributes: 'date', which is of type str; 'name', which is of type str; 'organization', which is of type str; 'author', which is of type str; 'publication', which is of type str; 'description', which is of type str.
+
+'vM_Requires' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_SpecialExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'vM_Feature' represents an important domain concept.
+It has the following attributes: 'max', which is of type str; 'notDecidable', which is of type bool; 'min', which is of type str; 'notTranslatable', which is of type bool; 'optional', which is of type bool; 'runTime', which is of type bool; 'name', which is of type str.
+
+'vM_IntegerAttrDefBounded' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_EnumRealDef' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumAttrDef' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Enum_Integer_ATT_ID' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_FeatureDescription' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'FeaturesGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_RealAttrValuation' represents an important domain concept.
+It does not declare any attributes.
+
+'TableBasedValuationByAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Version' represents an important domain concept.
+It has the following attributes: 'main', which is of type int; 'tail', which is of type int.
+
+'VmBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_StringAttrValuation' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_BrackedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_If' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Real_ATT_ID' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_PairFeatureReal' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'vM_AttrDef' represents an important domain concept.
+It has the following attributes: 'notDecidable', which is of type bool; 'notTranslatable', which is of type bool; 'runTime', which is of type bool.
+
+'vM_Boolean_ATT_ID' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_ExtendedValuation' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_TableBasedValuationByAttributeForInteger' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Greaterequal' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_PairAttributeValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'vM_ImportDeclaration' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'vM_BasicAttrDef' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_NumericExpression_List' represents an important domain concept.
+It does not declare any attributes.
+
+'vM_Xorgroup' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'vM_PackageDeclaration' is a specialization of 'VmBlock'.
+The class 'vM_ImportDeclaration' is a specialization of 'VmBlock'.
+The class 'vM_MetaDataDeclaration' is a specialization of 'VmBlock'.
+The class 'vM_Relationships' is a specialization of 'VmBlock'.
+The class 'vM_FeatureHierarchy' is a specialization of 'FeatureDefinition'.
+The class 'vM_Feature' is a specialization of 'FeatureDefinition'.
+The class 'vM_FeaturesGroup' is a specialization of 'FeatureDefinition'.
+The class 'vM_Xorgroup' is a specialization of 'FeaturesGroup'.
+The class 'vM_Orgroup' is a specialization of 'FeaturesGroup'.
+The class 'vM_CardinalityBased' is a specialization of 'FeaturesGroup'.
+The class 'vM_Attributes' is a specialization of 'VmBlock'.
+The class 'vM_BooleanAttrDef' is a specialization of 'BasicAttrDef'.
+The class 'vM_StringAttrDef' is a specialization of 'BasicAttrDef'.
+The class 'vM_IntegerAttrDef' is a specialization of 'BasicAttrDef'.
+The class 'vM_IntegerAttrDefBounded' is a specialization of 'IntegerAttrDef'.
+The class 'vM_IntegerAttrDefUnbounded' is a specialization of 'IntegerAttrDef'.
+The class 'vM_RealAttrDef' is a specialization of 'BasicAttrDef'.
+The class 'vM_RealAttrDefBounded' is a specialization of 'RealAttrDef'.
+The class 'vM_RealAttrDefUnbounded' is a specialization of 'RealAttrDef'.
+The class 'vM_EnumStringDef' is a specialization of 'EnumAttrDef'.
+The class 'vM_EnumIntegerDef' is a specialization of 'EnumAttrDef'.
+The class 'vM_EnumRealDef' is a specialization of 'EnumAttrDef'.
+The class 'vM_Descriptions' is a specialization of 'VmBlock'.
+The class 'vM_Constraints' is a specialization of 'VmBlock'.
+The class 'vM_Expression' is a specialization of 'ComplexExpression'.
+The class 'vM_SpecialExpression' is a specialization of 'Expression'.
+The class 'vM_StringExpression' is a specialization of 'Expression'.
+The class 'vM_PrimitiveExpression' is a specialization of 'Expression'.
+The class 'vM_BooleanExpression' is a specialization of 'Expression'.
+The class 'vM_BrackedExpression' is a specialization of 'Expression'.
+The class 'vM_NumericExpression' is a specialization of 'Expression'.
+The class 'vM_Objectives' is a specialization of 'VmBlock'.
+The class 'vM_Configurations' is a specialization of 'VmBlock'.
+The class 'vM_BasicAttrValuation' is a specialization of 'ExtendedValuation'.
+The class 'vM_RealAttrValuation' is a specialization of 'BasicAttrValuation'.
+The class 'vM_IntegerAttrValuation' is a specialization of 'BasicAttrValuation'.
+The class 'vM_BooleanAttrValuation' is a specialization of 'BasicAttrValuation'.
+The class 'vM_StringAttrValuation' is a specialization of 'BasicAttrValuation'.
+The class 'vM_AdvancedAttrValuation' is a specialization of 'ExtendedValuation'.
+The class 'vM_TableBasedValuationByAttributeForInteger' is a specialization of 'TableBasedValuationByAttribute'.
+The class 'vM_TableBasedValuationByAttributeForReal' is a specialization of 'TableBasedValuationByAttribute'.
+The class 'vM_Boolean_ATT_ID' is a specialization of 'Abstract_ATT_ID'.
+The class 'vM_String_ATT_ID' is a specialization of 'Abstract_ATT_ID'.
+The class 'vM_Integer_ATT_ID' is a specialization of 'Abstract_ATT_ID'.
+The class 'vM_Real_ATT_ID' is a specialization of 'Abstract_ATT_ID'.
+The class 'vM_Enum_String_ATT_ID' is a specialization of 'Abstract_ATT_ID'.
+The class 'vM_Enum_Integer_ATT_ID' is a specialization of 'Abstract_ATT_ID'.
+The class 'vM_Enum_Real_ATT_ID' is a specialization of 'Abstract_ATT_ID'.
+The class 'vM_If' is a specialization of 'ComplexExpression'.
+The class 'vM_LeftImplication' is a specialization of 'ComplexExpression'.
+The class 'vM_RightImplication' is a specialization of 'ComplexExpression'.
+The class 'vM_BiImplication' is a specialization of 'ComplexExpression'.
+The class 'vM_Or' is a specialization of 'ComplexExpression'.
+The class 'vM_And' is a specialization of 'ComplexExpression'.
+The class 'vM_Equality' is a specialization of 'ComplexExpression'.
+The class 'vM_Inequality' is a specialization of 'ComplexExpression'.
+The class 'vM_Less' is a specialization of 'ComplexExpression'.
+The class 'vM_Lessequal' is a specialization of 'ComplexExpression'.
+The class 'vM_Greater' is a specialization of 'ComplexExpression'.
+The class 'vM_Greaterequal' is a specialization of 'ComplexExpression'.
+The class 'vM_Plus' is a specialization of 'ComplexExpression'.
+The class 'vM_Minus' is a specialization of 'ComplexExpression'.
+The class 'vM_Multiplication' is a specialization of 'ComplexExpression'.
+The class 'vM_Division' is a specialization of 'ComplexExpression'.
+The class 'vM_Excludes' is a specialization of 'ComplexExpression'.
+The class 'vM_Requires' is a specialization of 'ComplexExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'vM_Model' and 'vM_VmBlock'. From 'vM_Model', the role 'vM_Model' has cardinality 0..*, and from 'vM_VmBlock', the role 'vM_VmBlock' has cardinality 0..*.
+An association connects 'vM_VmBlock' and 'vM_PackageDeclaration'. From 'vM_VmBlock', the role 'vM_VmBlock2' has cardinality 0..*, and from 'vM_PackageDeclaration', the role 'vM_PackageDeclaration' has cardinality 0..*.
+An association connects 'vM_Version' and 'vM_MetaDataDeclaration'. From 'vM_Version', the role 'vM_Version' has cardinality 0..*, and from 'vM_MetaDataDeclaration', the role 'vM_MetaDataDeclaration' has cardinality 0..*.
+An association connects 'vM_Email' and 'vM_MetaDataDeclaration'. From 'vM_Email', the role 'vM_Email' has cardinality 0..*, and from 'vM_MetaDataDeclaration', the role 'vM_MetaDataDeclaration5' has cardinality 0..*.
+An association connects 'vM_Relationships' and 'vM_FeatureHierarchy'. From 'vM_Relationships', the role 'vM_Relationships' has cardinality 0..*, and from 'vM_FeatureHierarchy', the role 'vM_FeatureHierarchy' has cardinality 0..*.
+An association connects 'vM_Feature' and 'vM_FeatureHierarchy'. From 'vM_Feature', the role 'vM_Feature' has cardinality 0..*, and from 'vM_FeatureHierarchy', the role 'vM_FeatureHierarchy8' has cardinality 0..*.
+An association connects 'vM_FeatureHierarchy' and 'vM_FeatureDefinition'. From 'vM_FeatureHierarchy', the role 'vM_FeatureHierarchy10' has cardinality 0..*, and from 'vM_FeatureDefinition', the role 'vM_FeatureDefinition' has cardinality 0..*.
+An association connects 'vM_FeaturesGroup' and 'vM_FeatureDefinition'. From 'vM_FeaturesGroup', the role 'vM_FeaturesGroup' has cardinality 0..*, and from 'vM_FeatureDefinition', the role 'vM_FeatureDefinition12' has cardinality 0..*.
+An association connects 'vM_Attributes' and 'vM_AttrDef'. From 'vM_Attributes', the role 'vM_Attributes' has cardinality 0..*, and from 'vM_AttrDef', the role 'vM_AttrDef' has cardinality 0..*.
+An association connects 'vM_Attributes' and 'vM_BasicAttrValuation'. From 'vM_Attributes', the role 'vM_Attributes15' has cardinality 0..*, and from 'vM_BasicAttrValuation', the role 'vM_BasicAttrValuation' has cardinality 0..*.
+An association connects 'vM_BasicAttrDef' and 'vM_AttrDef'. From 'vM_BasicAttrDef', the role 'vM_BasicAttrDef' has cardinality 0..*, and from 'vM_AttrDef', the role 'vM_AttrDef17' has cardinality 0..*.
+An association connects 'vM_AttrDef' and 'vM_EnumAttrDef'. From 'vM_AttrDef', the role 'vM_AttrDef19' has cardinality 0..*, and from 'vM_EnumAttrDef', the role 'vM_EnumAttrDef' has cardinality 0..*.
+An association connects 'vM_BooleanAttrDef' and 'vM_Boolean_ATT_ID'. From 'vM_BooleanAttrDef', the role 'vM_BooleanAttrDef' has cardinality 0..*, and from 'vM_Boolean_ATT_ID', the role 'vM_Boolean_ATT_ID' has cardinality 0..*.
+An association connects 'vM_BooleanAttrDef' and 'vM_BoolDefaultDef'. From 'vM_BooleanAttrDef', the role 'vM_BooleanAttrDef22' has cardinality 0..*, and from 'vM_BoolDefaultDef', the role 'vM_BoolDefaultDef' has cardinality 0..*.
+An association connects 'vM_String_ATT_ID' and 'vM_StringAttrDef'. From 'vM_String_ATT_ID', the role 'vM_String_ATT_ID' has cardinality 0..*, and from 'vM_StringAttrDef', the role 'vM_StringAttrDef' has cardinality 0..*.
+An association connects 'vM_StringAttrDef' and 'vM_StringDefaultDef'. From 'vM_StringAttrDef', the role 'vM_StringAttrDef25' has cardinality 0..*, and from 'vM_StringDefaultDef', the role 'vM_StringDefaultDef' has cardinality 0..*.
+An association connects 'vM_IntegerAttrDef' and 'vM_Integer_ATT_ID'. From 'vM_IntegerAttrDef', the role 'vM_IntegerAttrDef' has cardinality 0..*, and from 'vM_Integer_ATT_ID', the role 'vM_Integer_ATT_ID' has cardinality 0..*.
+An association connects 'vM_IntegerAttrDef' and 'vM_IntegerDefaultDef'. From 'vM_IntegerAttrDef', the role 'vM_IntegerAttrDef28' has cardinality 0..*, and from 'vM_IntegerDefaultDef', the role 'vM_IntegerDefaultDef' has cardinality 0..*.
+An association connects 'vM_IntegerAttrDefComplement' and 'vM_IntegerAttrDefBounded'. From 'vM_IntegerAttrDefComplement', the role 'vM_IntegerAttrDefComplement' has cardinality 0..*, and from 'vM_IntegerAttrDefBounded', the role 'vM_IntegerAttrDefBounded' has cardinality 0..*.
+An association connects 'vM_IntegerAttrDefComplement' and 'vM_IntegerAttrDefBounded'. From 'vM_IntegerAttrDefComplement', the role 'vM_IntegerAttrDefComplement32' has cardinality 0..*, and from 'vM_IntegerAttrDefBounded', the role 'vM_IntegerAttrDefBounded31' has cardinality 0..*.
+An association connects 'vM_IntegerDeltaDef' and 'vM_IntegerAttrDefComplement'. From 'vM_IntegerDeltaDef', the role 'vM_IntegerDeltaDef' has cardinality 0..*, and from 'vM_IntegerAttrDefComplement', the role 'vM_IntegerAttrDefComplement34' has cardinality 0..*.
+An association connects 'vM_Real_ATT_ID' and 'vM_RealAttrDef'. From 'vM_Real_ATT_ID', the role 'vM_Real_ATT_ID' has cardinality 0..*, and from 'vM_RealAttrDef', the role 'vM_RealAttrDef' has cardinality 0..*.
+An association connects 'vM_RealDefaultDef' and 'vM_RealAttrDef'. From 'vM_RealDefaultDef', the role 'vM_RealDefaultDef' has cardinality 0..*, and from 'vM_RealAttrDef', the role 'vM_RealAttrDef37' has cardinality 0..*.
+An association connects 'vM_RealAttrDefComplement' and 'vM_RealAttrDefBounded'. From 'vM_RealAttrDefComplement', the role 'vM_RealAttrDefComplement' has cardinality 0..*, and from 'vM_RealAttrDefBounded', the role 'vM_RealAttrDefBounded' has cardinality 0..*.
+An association connects 'vM_RealAttrDefComplement' and 'vM_RealDeltaDef'. From 'vM_RealAttrDefComplement', the role 'vM_RealAttrDefComplement40' has cardinality 0..*, and from 'vM_RealDeltaDef', the role 'vM_RealDeltaDef' has cardinality 0..*.
+An association connects 'vM_EnumStringDef' and 'vM_Enum_String_ATT_ID'. From 'vM_EnumStringDef', the role 'vM_EnumStringDef' has cardinality 0..*, and from 'vM_Enum_String_ATT_ID', the role 'vM_Enum_String_ATT_ID' has cardinality 0..*.
+An association connects 'vM_StringDefaultDef' and 'vM_EnumStringDef'. From 'vM_StringDefaultDef', the role 'vM_StringDefaultDef44' has cardinality 0..*, and from 'vM_EnumStringDef', the role 'vM_EnumStringDef43' has cardinality 0..*.
+An association connects 'vM_Enum_Integer_ATT_ID' and 'vM_EnumIntegerDef'. From 'vM_Enum_Integer_ATT_ID', the role 'vM_Enum_Integer_ATT_ID' has cardinality 0..*, and from 'vM_EnumIntegerDef', the role 'vM_EnumIntegerDef' has cardinality 0..*.
+An association connects 'vM_IntegerDefaultDef' and 'vM_EnumIntegerDef'. From 'vM_IntegerDefaultDef', the role 'vM_IntegerDefaultDef48' has cardinality 0..*, and from 'vM_EnumIntegerDef', the role 'vM_EnumIntegerDef47' has cardinality 0..*.
+An association connects 'vM_Enum_Real_ATT_ID' and 'vM_EnumRealDef'. From 'vM_Enum_Real_ATT_ID', the role 'vM_Enum_Real_ATT_ID' has cardinality 0..*, and from 'vM_EnumRealDef', the role 'vM_EnumRealDef' has cardinality 0..*.
+An association connects 'vM_RealDefaultDef' and 'vM_EnumRealDef'. From 'vM_RealDefaultDef', the role 'vM_RealDefaultDef52' has cardinality 0..*, and from 'vM_EnumRealDef', the role 'vM_EnumRealDef51' has cardinality 0..*.
+An association connects 'vM_FeatureDescription' and 'vM_Descriptions'. From 'vM_FeatureDescription', the role 'vM_FeatureDescription' has cardinality 0..*, and from 'vM_Descriptions', the role 'vM_Descriptions' has cardinality 0..*.
+An association connects 'vM_Descriptions' and 'vM_AttributeDescription'. From 'vM_Descriptions', the role 'vM_Descriptions55' has cardinality 0..*, and from 'vM_AttributeDescription', the role 'vM_AttributeDescription' has cardinality 0..*.
+An association connects 'vM_FeatureDescription' and 'vM_Feature'. From 'vM_FeatureDescription', the role 'vM_FeatureDescription57' has cardinality 0..*, and from 'vM_Feature', the role 'vM_Feature58' has cardinality 0..*.
+An association connects 'vM_Feature' and 'vM_AttributeDescription'. From 'vM_Feature', the role 'vM_Feature61' has cardinality 0..*, and from 'vM_AttributeDescription', the role 'vM_AttributeDescription60' has cardinality 0..*.
+An association connects 'vM_AttributeDescription' and 'vM_Abstract_ATT_ID'. From 'vM_AttributeDescription', the role 'vM_AttributeDescription63' has cardinality 0..*, and from 'vM_Abstract_ATT_ID', the role 'vM_Abstract_ATT_ID' has cardinality 0..*.
+An association connects 'vM_Constraints' and 'vM_Constraint'. From 'vM_Constraints', the role 'vM_Constraints' has cardinality 0..*, and from 'vM_Constraint', the role 'vM_Constraint' has cardinality 0..*.
+An association connects 'vM_ComplexExpression' and 'vM_Constraint'. From 'vM_ComplexExpression', the role 'vM_ComplexExpression' has cardinality 0..*, and from 'vM_Constraint', the role 'vM_Constraint66' has cardinality 0..*.
+An association connects 'vM_Feature' and 'vM_SpecialExpression'. From 'vM_Feature', the role 'vM_Feature68' has cardinality 0..*, and from 'vM_SpecialExpression', the role 'vM_SpecialExpression' has cardinality 0..*.
+An association connects 'vM_PrimitiveExpression' and 'vM_Feature'. From 'vM_PrimitiveExpression', the role 'vM_PrimitiveExpression' has cardinality 0..*, and from 'vM_Feature', the role 'vM_Feature70' has cardinality 0..*.
+An association connects 'vM_PrimitiveExpression' and 'vM_AttHead'. From 'vM_PrimitiveExpression', the role 'vM_PrimitiveExpression72' has cardinality 0..*, and from 'vM_AttHead', the role 'vM_AttHead' has cardinality 0..*.
+An association connects 'vM_Abstract_ATT_ID' and 'vM_PrimitiveExpression'. From 'vM_Abstract_ATT_ID', the role 'vM_Abstract_ATT_ID75' has cardinality 0..*, and from 'vM_PrimitiveExpression', the role 'vM_PrimitiveExpression74' has cardinality 0..*.
+An association connects 'vM_BooleanExpression' and 'vM_BooleanExpression'. From 'vM_BooleanExpression', the role 'vM_BooleanExpression' has cardinality 0..*, and from 'vM_BooleanExpression', the role 'vM_BooleanExpression76' has cardinality 0..*.
+An association connects 'vM_BooleanExpression_List' and 'vM_BooleanExpression'. From 'vM_BooleanExpression_List', the role 'vM_BooleanExpression_List' has cardinality 0..*, and from 'vM_BooleanExpression', the role 'vM_BooleanExpression79' has cardinality 0..*.
+An association connects 'vM_ComplexExpression' and 'vM_BrackedExpression'. From 'vM_ComplexExpression', the role 'vM_ComplexExpression81' has cardinality 0..*, and from 'vM_BrackedExpression', the role 'vM_BrackedExpression' has cardinality 0..*.
+An association connects 'vM_NumericExpression' and 'vM_NumericExpression'. From 'vM_NumericExpression', the role 'vM_NumericExpression' has cardinality 0..*, and from 'vM_NumericExpression', the role 'vM_NumericExpression82' has cardinality 0..*.
+An association connects 'vM_NumericExpression' and 'vM_NumericExpression_List'. From 'vM_NumericExpression', the role 'vM_NumericExpression85' has cardinality 0..*, and from 'vM_NumericExpression_List', the role 'vM_NumericExpression_List' has cardinality 0..*.
+An association connects 'vM_NumericExpression_List' and 'vM_NumericExpression'. From 'vM_NumericExpression_List', the role 'vM_NumericExpression_List87' has cardinality 0..*, and from 'vM_NumericExpression', the role 'vM_NumericExpression88' has cardinality 0..*.
+An association connects 'vM_BooleanExpression' and 'vM_BooleanExpression_List'. From 'vM_BooleanExpression', the role 'vM_BooleanExpression91' has cardinality 0..*, and from 'vM_BooleanExpression_List', the role 'vM_BooleanExpression_List90' has cardinality 0..*.
+An association connects 'vM_Objective' and 'vM_Objectives'. From 'vM_Objective', the role 'vM_Objective' has cardinality 0..*, and from 'vM_Objectives', the role 'vM_Objectives' has cardinality 0..*.
+An association connects 'vM_ObjectiveExpression' and 'vM_Objective'. From 'vM_ObjectiveExpression', the role 'vM_ObjectiveExpression' has cardinality 0..*, and from 'vM_Objective', the role 'vM_Objective94' has cardinality 0..*.
+An association connects 'vM_PrimitiveExpression' and 'vM_ObjectiveExpression'. From 'vM_PrimitiveExpression', the role 'vM_PrimitiveExpression97' has cardinality 0..*, and from 'vM_ObjectiveExpression', the role 'vM_ObjectiveExpression96' has cardinality 0..*.
+An association connects 'vM_Configurations' and 'vM_Configuration'. From 'vM_Configurations', the role 'vM_Configurations' has cardinality 0..*, and from 'vM_Configuration', the role 'vM_Configuration' has cardinality 0..*.
+An association connects 'vM_BooleanValuation' and 'vM_Configuration'. From 'vM_BooleanValuation', the role 'vM_BooleanValuation' has cardinality 0..*, and from 'vM_Configuration', the role 'vM_Configuration100' has cardinality 0..*.
+An association connects 'vM_ExtendedValuation' and 'vM_Configuration'. From 'vM_ExtendedValuation', the role 'vM_ExtendedValuation' has cardinality 0..*, and from 'vM_Configuration', the role 'vM_Configuration102' has cardinality 0..*.
+An association connects 'vM_BooleanValuation' and 'vM_Feature'. From 'vM_BooleanValuation', the role 'vM_BooleanValuation104' has cardinality 0..*, and from 'vM_Feature', the role 'vM_Feature105' has cardinality 0..*.
+An association connects 'vM_AttHead' and 'vM_BasicAttrValuation'. From 'vM_AttHead', the role 'vM_AttHead108' has cardinality 0..*, and from 'vM_BasicAttrValuation', the role 'vM_BasicAttrValuation107' has cardinality 0..*.
+An association connects 'vM_RealAttrValuation' and 'vM_Real_ATT_ID'. From 'vM_RealAttrValuation', the role 'vM_RealAttrValuation' has cardinality 0..*, and from 'vM_Real_ATT_ID', the role 'vM_Real_ATT_ID110' has cardinality 0..*.
+An association connects 'vM_Integer_ATT_ID' and 'vM_IntegerAttrValuation'. From 'vM_Integer_ATT_ID', the role 'vM_Integer_ATT_ID112' has cardinality 0..*, and from 'vM_IntegerAttrValuation', the role 'vM_IntegerAttrValuation' has cardinality 0..*.
+An association connects 'vM_BooleanAttrValuation' and 'vM_Boolean_ATT_ID'. From 'vM_BooleanAttrValuation', the role 'vM_BooleanAttrValuation' has cardinality 0..*, and from 'vM_Boolean_ATT_ID', the role 'vM_Boolean_ATT_ID114' has cardinality 0..*.
+An association connects 'vM_String_ATT_ID' and 'vM_StringAttrValuation'. From 'vM_String_ATT_ID', the role 'vM_String_ATT_ID116' has cardinality 0..*, and from 'vM_StringAttrValuation', the role 'vM_StringAttrValuation' has cardinality 0..*.
+An association connects 'vM_AdvancedAttrValuation' and 'vM_TableBasedValuationByFeature'. From 'vM_AdvancedAttrValuation', the role 'vM_AdvancedAttrValuation' has cardinality 0..*, and from 'vM_TableBasedValuationByFeature', the role 'vM_TableBasedValuationByFeature' has cardinality 0..*.
+An association connects 'vM_AdvancedAttrValuation' and 'vM_TableBasedValuationByAttribute'. From 'vM_AdvancedAttrValuation', the role 'vM_AdvancedAttrValuation119' has cardinality 0..*, and from 'vM_TableBasedValuationByAttribute', the role 'vM_TableBasedValuationByAttribute' has cardinality 0..*.
+An association connects 'vM_TableBasedValuationByFeatureAndClone' and 'vM_AdvancedAttrValuation'. From 'vM_TableBasedValuationByFeatureAndClone', the role 'vM_TableBasedValuationByFeatureAndClone' has cardinality 0..*, and from 'vM_AdvancedAttrValuation', the role 'vM_AdvancedAttrValuation121' has cardinality 0..*.
+An association connects 'vM_Feature' and 'vM_TableBasedValuationByFeatureAndClone'. From 'vM_Feature', the role 'vM_Feature124' has cardinality 0..*, and from 'vM_TableBasedValuationByFeatureAndClone', the role 'vM_TableBasedValuationByFeatureAndClone123' has cardinality 0..*.
+An association connects 'vM_TableBasedValuationByFeatureAndClone' and 'vM_PairAttributeValue'. From 'vM_TableBasedValuationByFeatureAndClone', the role 'vM_TableBasedValuationByFeatureAndClone126' has cardinality 0..*, and from 'vM_PairAttributeValue', the role 'vM_PairAttributeValue' has cardinality 0..*.
+An association connects 'vM_Feature' and 'vM_TableBasedValuationByFeature'. From 'vM_Feature', the role 'vM_Feature129' has cardinality 0..*, and from 'vM_TableBasedValuationByFeature', the role 'vM_TableBasedValuationByFeature128' has cardinality 0..*.
+An association connects 'vM_PairAttributeValue' and 'vM_TableBasedValuationByFeature'. From 'vM_PairAttributeValue', the role 'vM_PairAttributeValue132' has cardinality 0..*, and from 'vM_TableBasedValuationByFeature', the role 'vM_TableBasedValuationByFeature131' has cardinality 0..*.
+An association connects 'vM_PairAttributeValue' and 'vM_Abstract_ATT_ID'. From 'vM_PairAttributeValue', the role 'vM_PairAttributeValue134' has cardinality 0..*, and from 'vM_Abstract_ATT_ID', the role 'vM_Abstract_ATT_ID135' has cardinality 0..*.
+An association connects 'vM_TableBasedValuationByAttributeForInteger' and 'vM_Integer_ATT_ID'. From 'vM_TableBasedValuationByAttributeForInteger', the role 'vM_TableBasedValuationByAttributeForInteger' has cardinality 0..*, and from 'vM_Integer_ATT_ID', the role 'vM_Integer_ATT_ID137' has cardinality 0..*.
+An association connects 'vM_PairFeatureInteger' and 'vM_TableBasedValuationByAttributeForInteger'. From 'vM_PairFeatureInteger', the role 'vM_PairFeatureInteger' has cardinality 0..*, and from 'vM_TableBasedValuationByAttributeForInteger', the role 'vM_TableBasedValuationByAttributeForInteger139' has cardinality 0..*.
+An association connects 'vM_Feature' and 'vM_PairFeatureInteger'. From 'vM_Feature', the role 'vM_Feature142' has cardinality 0..*, and from 'vM_PairFeatureInteger', the role 'vM_PairFeatureInteger141' has cardinality 0..*.
+An association connects 'vM_TableBasedValuationByAttributeForReal' and 'vM_Real_ATT_ID'. From 'vM_TableBasedValuationByAttributeForReal', the role 'vM_TableBasedValuationByAttributeForReal' has cardinality 0..*, and from 'vM_Real_ATT_ID', the role 'vM_Real_ATT_ID144' has cardinality 0..*.
+An association connects 'vM_PairFeatureReal' and 'vM_TableBasedValuationByAttributeForReal'. From 'vM_PairFeatureReal', the role 'vM_PairFeatureReal' has cardinality 0..*, and from 'vM_TableBasedValuationByAttributeForReal', the role 'vM_TableBasedValuationByAttributeForReal146' has cardinality 0..*.
+An association connects 'vM_PairFeatureReal' and 'vM_Feature'. From 'vM_PairFeatureReal', the role 'vM_PairFeatureReal148' has cardinality 0..*, and from 'vM_Feature', the role 'vM_Feature149' has cardinality 0..*.
+An association connects 'vM_AttHead' and 'vM_Feature'. From 'vM_AttHead', the role 'vM_AttHead151' has cardinality 0..*, and from 'vM_Feature', the role 'vM_Feature152' has cardinality 0..*.
+An association connects 'vM_Abstract_ATT_ID' and 'vM_AttHead'. From 'vM_Abstract_ATT_ID', the role 'vM_Abstract_ATT_ID154' has cardinality 0..*, and from 'vM_AttHead', the role 'vM_AttHead155' has cardinality 0..*.
+An association connects 'vM_If' and 'vM_ComplexExpression'. From 'vM_If', the role 'vM_If' has cardinality 0..*, and from 'vM_ComplexExpression', the role 'vM_ComplexExpression157' has cardinality 0..*.
+An association connects 'vM_If' and 'vM_ComplexExpression'. From 'vM_If', the role 'vM_If159' has cardinality 0..*, and from 'vM_ComplexExpression', the role 'vM_ComplexExpression160' has cardinality 0..*.
+An association connects 'vM_LeftImplication' and 'vM_ComplexExpression'. From 'vM_LeftImplication', the role 'vM_LeftImplication' has cardinality 0..*, and from 'vM_ComplexExpression', the role 'vM_ComplexExpression162' has cardinality 0..*.
+An association connects 'vM_LeftImplication' and 'vM_ComplexExpression'. From 'vM_LeftImplication', the role 'vM_LeftImplication164' has cardinality 0..*, and from 'vM_ComplexExpression', the role 'vM_ComplexExpression165' has cardinality 0..*.
+An association connects 'vM_RightImplication' and 'vM_ComplexExpression'. From 'vM_RightImplication', the role 'vM_RightImplication' has cardinality 0..*, and from 'vM_ComplexExpression', the role 'vM_ComplexExpression167' has cardinality 0..*.
+An association connects 'vM_ComplexExpression' and 'vM_RightImplication'. From 'vM_ComplexExpression', the role 'vM_ComplexExpression170' has cardinality 0..*, and from 'vM_RightImplication', the role 'vM_RightImplication169' has cardinality 0..*.
+An association connects 'vM_BiImplication' and 'vM_ComplexExpression'. From 'vM_BiImplication', the role 'vM_BiImplication' has cardinality 0..*, and from 'vM_ComplexExpression', the role 'vM_ComplexExpression172' has cardinality 0..*.
+An association connects 'vM_ComplexExpression' and 'vM_BiImplication'. From 'vM_ComplexExpression', the role 'vM_ComplexExpression175' has cardinality 0..*, and from 'vM_BiImplication', the role 'vM_BiImplication174' has cardinality 0..*.
+An association connects 'vM_Or' and 'vM_ComplexExpression'. From 'vM_Or', the role 'vM_Or' has cardinality 0..*, and from 'vM_ComplexExpression', the role 'vM_ComplexExpression177' has cardinality 0..*.
+An association connects 'vM_ComplexExpression' and 'vM_Or'. From 'vM_ComplexExpression', the role 'vM_ComplexExpression180' has cardinality 0..*, and from 'vM_Or', the role 'vM_Or179' has cardinality 0..*.
+An association connects 'vM_And' and 'vM_ComplexExpression'. From 'vM_And', the role 'vM_And' has cardinality 0..*, and from 'vM_ComplexExpression', the role 'vM_ComplexExpression182' has cardinality 0..*.
+An association connects 'vM_ComplexExpression' and 'vM_And'. From 'vM_ComplexExpression', the role 'vM_ComplexExpression185' has cardinality 0..*, and from 'vM_And', the role 'vM_And184' has cardinality 0..*.
+An association connects 'vM_Equality' and 'vM_ComplexExpression'. From 'vM_Equality', the role 'vM_Equality' has cardinality 0..*, and from 'vM_ComplexExpression', the role 'vM_ComplexExpression187' has cardinality 0..*.
+An association connects 'vM_ComplexExpression' and 'vM_Equality'. From 'vM_ComplexExpression', the role 'vM_ComplexExpression190' has cardinality 0..*, and from 'vM_Equality', the role 'vM_Equality189' has cardinality 0..*.
+An association connects 'vM_ComplexExpression' and 'vM_Inequality'. From 'vM_ComplexExpression', the role 'vM_ComplexExpression192' has cardinality 0..*, and from 'vM_Inequality', the role 'vM_Inequality' has cardinality 0..*.
+An association connects 'vM_Inequality' and 'vM_ComplexExpression'. From 'vM_Inequality', the role 'vM_Inequality194' has cardinality 0..*, and from 'vM_ComplexExpression', the role 'vM_ComplexExpression195' has cardinality 0..*.
+An association connects 'vM_Less' and 'vM_ComplexExpression'. From 'vM_Less', the role 'vM_Less' has cardinality 0..*, and from 'vM_ComplexExpression', the role 'vM_ComplexExpression197' has cardinality 0..*.
+An association connects 'vM_Less' and 'vM_ComplexExpression'. From 'vM_Less', the role 'vM_Less199' has cardinality 0..*, and from 'vM_ComplexExpression', the role 'vM_ComplexExpression200' has cardinality 0..*.
+An association connects 'vM_Lessequal' and 'vM_Less'. From 'vM_Lessequal', the role 'vM_Lessequal' has cardinality 0..*, and from 'vM_Less', the role 'vM_Less202' has cardinality 0..*.
+An association connects 'vM_ComplexExpression' and 'vM_Lessequal'. From 'vM_ComplexExpression', the role 'vM_ComplexExpression205' has cardinality 0..*, and from 'vM_Lessequal', the role 'vM_Lessequal204' has cardinality 0..*.
+An association connects 'vM_ComplexExpression' and 'vM_Greater'. From 'vM_ComplexExpression', the role 'vM_ComplexExpression207' has cardinality 0..*, and from 'vM_Greater', the role 'vM_Greater' has cardinality 0..*.
+An association connects 'vM_ComplexExpression' and 'vM_Greater'. From 'vM_ComplexExpression', the role 'vM_ComplexExpression210' has cardinality 0..*, and from 'vM_Greater', the role 'vM_Greater209' has cardinality 0..*.
+An association connects 'vM_Greaterequal' and 'vM_Greater'. From 'vM_Greaterequal', the role 'vM_Greaterequal' has cardinality 0..*, and from 'vM_Greater', the role 'vM_Greater212' has cardinality 0..*.
+An association connects 'vM_Greaterequal' and 'vM_ComplexExpression'. From 'vM_Greaterequal', the role 'vM_Greaterequal214' has cardinality 0..*, and from 'vM_ComplexExpression', the role 'vM_ComplexExpression215' has cardinality 0..*.
+An association connects 'vM_ComplexExpression' and 'vM_Plus'. From 'vM_ComplexExpression', the role 'vM_ComplexExpression217' has cardinality 0..*, and from 'vM_Plus', the role 'vM_Plus' has cardinality 0..*.
+An association connects 'vM_ComplexExpression' and 'vM_Plus'. From 'vM_ComplexExpression', the role 'vM_ComplexExpression220' has cardinality 0..*, and from 'vM_Plus', the role 'vM_Plus219' has cardinality 0..*.
+An association connects 'vM_Minus' and 'vM_ComplexExpression'. From 'vM_Minus', the role 'vM_Minus' has cardinality 0..*, and from 'vM_ComplexExpression', the role 'vM_ComplexExpression222' has cardinality 0..*.
+An association connects 'vM_Minus' and 'vM_ComplexExpression'. From 'vM_Minus', the role 'vM_Minus224' has cardinality 0..*, and from 'vM_ComplexExpression', the role 'vM_ComplexExpression225' has cardinality 0..*.
+An association connects 'vM_Multiplication' and 'vM_ComplexExpression'. From 'vM_Multiplication', the role 'vM_Multiplication' has cardinality 0..*, and from 'vM_ComplexExpression', the role 'vM_ComplexExpression227' has cardinality 0..*.
+An association connects 'vM_Multiplication' and 'vM_ComplexExpression'. From 'vM_Multiplication', the role 'vM_Multiplication229' has cardinality 0..*, and from 'vM_ComplexExpression', the role 'vM_ComplexExpression230' has cardinality 0..*.
+An association connects 'vM_ComplexExpression' and 'vM_Division'. From 'vM_ComplexExpression', the role 'vM_ComplexExpression232' has cardinality 0..*, and from 'vM_Division', the role 'vM_Division' has cardinality 0..*.
+An association connects 'vM_Division' and 'vM_ComplexExpression'. From 'vM_Division', the role 'vM_Division234' has cardinality 0..*, and from 'vM_ComplexExpression', the role 'vM_ComplexExpression235' has cardinality 0..*.
+An association connects 'vM_ComplexExpression' and 'vM_Excludes'. From 'vM_ComplexExpression', the role 'vM_ComplexExpression237' has cardinality 0..*, and from 'vM_Excludes', the role 'vM_Excludes' has cardinality 0..*.
+An association connects 'vM_Excludes' and 'vM_Expression'. From 'vM_Excludes', the role 'vM_Excludes239' has cardinality 0..*, and from 'vM_Expression', the role 'vM_Expression' has cardinality 0..*.
+An association connects 'vM_ComplexExpression' and 'vM_Requires'. From 'vM_ComplexExpression', the role 'vM_ComplexExpression241' has cardinality 0..*, and from 'vM_Requires', the role 'vM_Requires' has cardinality 0..*.
+An association connects 'vM_Requires' and 'vM_Expression'. From 'vM_Requires', the role 'vM_Requires243' has cardinality 0..*, and from 'vM_Expression', the role 'vM_Expression244' has cardinality 0..*.

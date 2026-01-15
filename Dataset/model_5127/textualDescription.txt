@@ -1,0 +1,45 @@
+The domain model 'xunit' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'xunit_ExpectedValue' represents an important domain concept.
+It does not declare any attributes.
+
+'xunit_TestCase' represents an important domain concept.
+It does not declare any attributes.
+
+'xunit_Action' represents an important domain concept.
+It has one attribute: 'desc', which is of type str.
+
+'xunit_Assertion' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'xunit_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DataValue' represents an important domain concept.
+It does not declare any attributes.
+
+'xunit_TestSuite' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'xunit_DataValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'xunit_TestSuite' is a specialization of 'NamedElement'.
+The class 'xunit_TestCase' is a specialization of 'NamedElement'.
+The class 'xunit_Assertion' is a specialization of 'NamedElement'.
+The class 'xunit_ExpectedValue' is a specialization of 'DataValue'.
+
+Relationships between classes are modeled using associations.
+An association connects 'xunit_TestCase' and 'xunit_TestSuite'. From 'xunit_TestCase', the role 'xunit_TestCase' has cardinality 0..*, and from 'xunit_TestSuite', the role 'xunit_TestSuite' has cardinality 0..*.
+An association connects 'xunit_TestCase' and 'xunit_Assertion'. From 'xunit_TestCase', the role 'xunit_TestCase2' has cardinality 0..*, and from 'xunit_Assertion', the role 'xunit_Assertion' has cardinality 0..*.
+An association connects 'xunit_TestCase' and 'xunit_TestSuite'. From 'xunit_TestCase', the role 'xunit_TestCase4' has cardinality 0..*, and from 'xunit_TestSuite', the role 'xunit_TestSuite5' has cardinality 0..*.
+An association connects 'xunit_Assertion' and 'xunit_ExpectedValue'. From 'xunit_Assertion', the role 'xunit_Assertion7' has cardinality 0..*, and from 'xunit_ExpectedValue', the role 'xunit_ExpectedValue' has cardinality 0..*.
+An association connects 'xunit_Action' and 'xunit_Assertion'. From 'xunit_Action', the role 'xunit_Action' has cardinality 0..*, and from 'xunit_Assertion', the role 'xunit_Assertion9' has cardinality 0..*.
+An association connects 'xunit_Assertion' and 'xunit_TestCase'. From 'xunit_Assertion', the role 'xunit_Assertion11' has cardinality 0..*, and from 'xunit_TestCase', the role 'xunit_TestCase12' has cardinality 0..*.
+An association connects 'xunit_Assertion' and 'xunit_ExpectedValue'. From 'xunit_Assertion', the role 'xunit_Assertion15' has cardinality 0..*, and from 'xunit_ExpectedValue', the role 'xunit_ExpectedValue14' has cardinality 0..*.

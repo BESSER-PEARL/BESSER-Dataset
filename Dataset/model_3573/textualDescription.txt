@@ -1,0 +1,113 @@
+The domain model 'expressions' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'expressions_FloatingPointLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'expressions_CharacterLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'expressions_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'expressions_ConstExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'FileRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_FixedPtLiteral' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'integerPart', which is of type int; 'decimalPart', which is of type int.
+
+'expressions_UnaryExpression' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'expressions_XOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ShiftExpression' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'expressions_ScopeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_WideCharacterLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'expressions_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'expressions_OrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_WideStringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'expressions_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_MultExpression' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'expressions_IdlTypeDcl' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_AddExpression' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'expressions_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'expressions_DoubleLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AddType' defines the following possible values: 'ADDITION', 'SUBTRACTION'.
+The enumeration 'UnaryType' defines the following possible values: 'NEGATIVE', 'POSITIVE', 'TILDE'.
+The enumeration 'ShiftType' defines the following possible values: 'RIGHT', 'LEFT'.
+The enumeration 'MultiType' defines the following possible values: 'MODULATION', 'DIVISION', 'MULTIPLICATION'.
+
+The model also captures inheritance relationships between classes.
+The class 'expressions_Expression' is a specialization of 'FileRegion'.
+The class 'expressions_ConstExpression' is a specialization of 'Expression'.
+The class 'expressions_OrExpression' is a specialization of 'Expression'.
+The class 'expressions_XOrExpression' is a specialization of 'Expression'.
+The class 'expressions_AndExpression' is a specialization of 'Expression'.
+The class 'expressions_ShiftExpression' is a specialization of 'Expression'.
+The class 'expressions_AddExpression' is a specialization of 'Expression'.
+The class 'expressions_MultExpression' is a specialization of 'Expression'.
+The class 'expressions_UnaryExpression' is a specialization of 'Expression'.
+The class 'expressions_ScopeLiteral' is a specialization of 'Expression'.
+The class 'expressions_IntegerLiteral' is a specialization of 'Expression'.
+The class 'expressions_StringLiteral' is a specialization of 'Expression'.
+The class 'expressions_CharacterLiteral' is a specialization of 'Expression'.
+The class 'expressions_FloatingPointLiteral' is a specialization of 'Expression'.
+The class 'expressions_DoubleLiteral' is a specialization of 'Expression'.
+The class 'expressions_BooleanLiteral' is a specialization of 'Expression'.
+The class 'expressions_FixedPtLiteral' is a specialization of 'Expression'.
+The class 'expressions_WideStringLiteral' is a specialization of 'Expression'.
+The class 'expressions_WideCharacterLiteral' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'expressions_Expression' and 'expressions_ConstExpression'. From 'expressions_Expression', the role 'expressions_Expression' has cardinality 0..*, and from 'expressions_ConstExpression', the role 'expressions_ConstExpression' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_OrExpression'. From 'expressions_Expression', the role 'expressions_Expression2' has cardinality 0..*, and from 'expressions_OrExpression', the role 'expressions_OrExpression' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_OrExpression'. From 'expressions_Expression', the role 'expressions_Expression5' has cardinality 0..*, and from 'expressions_OrExpression', the role 'expressions_OrExpression4' has cardinality 0..*.
+An association connects 'expressions_XOrExpression' and 'expressions_Expression'. From 'expressions_XOrExpression', the role 'expressions_XOrExpression' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression7' has cardinality 0..*.
+An association connects 'expressions_XOrExpression' and 'expressions_Expression'. From 'expressions_XOrExpression', the role 'expressions_XOrExpression9' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression10' has cardinality 0..*.
+An association connects 'expressions_AndExpression' and 'expressions_Expression'. From 'expressions_AndExpression', the role 'expressions_AndExpression' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression12' has cardinality 0..*.
+An association connects 'expressions_AndExpression' and 'expressions_Expression'. From 'expressions_AndExpression', the role 'expressions_AndExpression14' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression15' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_ShiftExpression'. From 'expressions_Expression', the role 'expressions_Expression17' has cardinality 0..*, and from 'expressions_ShiftExpression', the role 'expressions_ShiftExpression' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_ShiftExpression'. From 'expressions_Expression', the role 'expressions_Expression20' has cardinality 0..*, and from 'expressions_ShiftExpression', the role 'expressions_ShiftExpression19' has cardinality 0..*.
+An association connects 'expressions_AddExpression' and 'expressions_Expression'. From 'expressions_AddExpression', the role 'expressions_AddExpression' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression22' has cardinality 0..*.
+An association connects 'expressions_AddExpression' and 'expressions_Expression'. From 'expressions_AddExpression', the role 'expressions_AddExpression24' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression25' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_MultExpression'. From 'expressions_Expression', the role 'expressions_Expression27' has cardinality 0..*, and from 'expressions_MultExpression', the role 'expressions_MultExpression' has cardinality 0..*.
+An association connects 'expressions_MultExpression' and 'expressions_Expression'. From 'expressions_MultExpression', the role 'expressions_MultExpression29' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression30' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_UnaryExpression'. From 'expressions_Expression', the role 'expressions_Expression32' has cardinality 0..*, and from 'expressions_UnaryExpression', the role 'expressions_UnaryExpression' has cardinality 0..*.
+An association connects 'expressions_ScopeLiteral' and 'expressions_IdlTypeDcl'. From 'expressions_ScopeLiteral', the role 'expressions_ScopeLiteral' has cardinality 0..*, and from 'expressions_IdlTypeDcl', the role 'expressions_IdlTypeDcl' has cardinality 0..*.

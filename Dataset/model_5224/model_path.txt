@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/upohl/eloquent/tests/org.muml.eloquent.ocl.vql.tests/src/org/muml/eloquent/ocl/vql/tests/fixtures/model.ecore

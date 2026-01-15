@@ -1,0 +1,72 @@
+The domain model 'refinher3' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'refinher3_M' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'refinher3_CE' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher3_E' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher3_Foobar' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher3_DNamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'refinher3_BB' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher3_DG' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher3_A' represents an important domain concept.
+It does not declare any attributes.
+
+'DNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher3_DR' represents an important domain concept.
+It does not declare any attributes.
+
+'CE' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher3_DL' represents an important domain concept.
+It does not declare any attributes.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher3_N' represents an important domain concept.
+It has one attribute: 'nam', which is of type str.
+
+'refinher3_DC' represents an important domain concept.
+It does not declare any attributes.
+
+'E' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'refinher3_E' is a specialization of 'DNamedElement'.
+The class 'refinher3_DL' is a specialization of 'CE'.
+The class 'refinher3_DR' is a specialization of 'E'.
+The class 'refinher3_DC' is a specialization of 'CE'.
+The class 'refinher3_A' is a specialization of 'DNamedElement'.
+The class 'refinher3_CE' is a specialization of 'A'.
+The class 'refinher3_CE' is a specialization of 'E'.
+The class 'refinher3_BB' is a specialization of 'DNamedElement'.
+The class 'refinher3_Foobar' is a specialization of 'DNamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'refinher3_E' and 'refinher3_N'. From 'refinher3_E', the role 'refinher3_E' has cardinality 0..*, and from 'refinher3_N', the role 'refinher3_N' has cardinality 0..*.
+An association connects 'refinher3_E' and 'refinher3_N'. From 'refinher3_E', the role 'refinher3_E2' has cardinality 0..*, and from 'refinher3_N', the role 'refinher3_N3' has cardinality 0..*.
+An association connects 'refinher3_BB' and 'refinher3_DL'. From 'refinher3_BB', the role 'refinher3_BB' has cardinality 0..*, and from 'refinher3_DL', the role 'refinher3_DL' has cardinality 0..*.
+An association connects 'refinher3_BB' and 'refinher3_DG'. From 'refinher3_BB', the role 'refinher3_BB6' has cardinality 0..*, and from 'refinher3_DG', the role 'refinher3_DG' has cardinality 0..*.
+An association connects 'refinher3_N' and 'refinher3_DG'. From 'refinher3_N', the role 'refinher3_N9' has cardinality 0..*, and from 'refinher3_DG', the role 'refinher3_DG8' has cardinality 0..*.
+An association connects 'refinher3_M' and 'refinher3_DG'. From 'refinher3_M', the role 'refinher3_M' has cardinality 0..*, and from 'refinher3_DG', the role 'refinher3_DG11' has cardinality 0..*.
+An association connects 'refinher3_E' and 'refinher3_M'. From 'refinher3_E', the role 'refinher3_E14' has cardinality 0..*, and from 'refinher3_M', the role 'refinher3_M13' has cardinality 0..*.
+An association connects 'refinher3_Foobar' and 'refinher3_M'. From 'refinher3_Foobar', the role 'refinher3_Foobar' has cardinality 0..*, and from 'refinher3_M', the role 'refinher3_M16' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/wibeck/ex1-mdsd/model/componentModel.ecore

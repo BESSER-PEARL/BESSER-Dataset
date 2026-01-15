@@ -1,0 +1,107 @@
+The domain model 'effbd902' describes the core structural elements and their relationships within the system.
+
+The model defines 24 main class(es).
+
+'effbd902_Iteration' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd902_ProcessNode' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'effbd902_LoopExit' represents an important domain concept.
+It does not declare any attributes.
+
+'SequenceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd902_Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd902_AbstractFunction' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'effbd902_Function' represents an important domain concept.
+It has one attribute: 'domain', which is of type str.
+
+'effbd902_Final' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd902_SequenceNode' represents an important domain concept.
+It has the following attributes: 'tMin', which is of type int; 'tMax', which is of type int; 'name', which is of type str.
+
+'effbd902_OutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd902_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd902_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd902_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd902_And' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd902_Port' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'effbd902_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessNode' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd902_Item' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'effbd902_InputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd902_Description' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'effbd902_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FunctionDomain' defines the following possible values: 'form', 'time', 'space'.
+
+The model also captures inheritance relationships between classes.
+The class 'effbd902_Function' is a specialization of 'SequenceNode'.
+The class 'effbd902_Function' is a specialization of 'ProcessNode'.
+The class 'effbd902_Function' is a specialization of 'AbstractFunction'.
+The class 'effbd902_Sequence' is a specialization of 'SequenceNode'.
+The class 'effbd902_And' is a specialization of 'Sequence'.
+The class 'effbd902_Or' is a specialization of 'Sequence'.
+The class 'effbd902_Start' is a specialization of 'Sequence'.
+The class 'effbd902_Final' is a specialization of 'Sequence'.
+The class 'effbd902_Loop' is a specialization of 'Sequence'.
+The class 'effbd902_InputPort' is a specialization of 'Port'.
+The class 'effbd902_Flow' is a specialization of 'ProcessNode'.
+The class 'effbd902_OutputPort' is a specialization of 'Port'.
+The class 'effbd902_LoopExit' is a specialization of 'Sequence'.
+The class 'effbd902_Iteration' is a specialization of 'Sequence'.
+
+Relationships between classes are modeled using associations.
+An association connects 'effbd902_Function' and 'effbd902_AbstractFunction'. From 'effbd902_Function', the role 'effbd902_Function' has cardinality 0..*, and from 'effbd902_AbstractFunction', the role 'effbd902_AbstractFunction' has cardinality 0..*.
+An association connects 'effbd902_Sequence' and 'effbd902_Function'. From 'effbd902_Sequence', the role 'effbd902_Sequence' has cardinality 0..*, and from 'effbd902_Function', the role 'effbd902_Function2' has cardinality 0..*.
+An association connects 'effbd902_Function' and 'effbd902_Flow'. From 'effbd902_Function', the role 'effbd902_Function4' has cardinality 0..*, and from 'effbd902_Flow', the role 'effbd902_Flow' has cardinality 0..*.
+An association connects 'effbd902_OutputPort' and 'effbd902_Function'. From 'effbd902_OutputPort', the role 'effbd902_OutputPort' has cardinality 0..*, and from 'effbd902_Function', the role 'effbd902_Function6' has cardinality 0..*.
+An association connects 'effbd902_Function' and 'effbd902_InputPort'. From 'effbd902_Function', the role 'effbd902_Function8' has cardinality 0..*, and from 'effbd902_InputPort', the role 'effbd902_InputPort' has cardinality 0..*.
+An association connects 'effbd902_Function' and 'effbd902_Description'. From 'effbd902_Function', the role 'effbd902_Function10' has cardinality 0..*, and from 'effbd902_Description', the role 'effbd902_Description' has cardinality 0..*.
+An association connects 'effbd902_Function' and 'effbd902_Token'. From 'effbd902_Function', the role 'effbd902_Function12' has cardinality 0..*, and from 'effbd902_Token', the role 'effbd902_Token' has cardinality 0..*.
+An association connects 'effbd902_SequenceNode' and 'effbd902_SequenceNode'. From 'effbd902_SequenceNode', the role 'effbd902_SequenceNode13' has cardinality 0..*, and from 'effbd902_SequenceNode', the role 'effbd902_SequenceNode' has cardinality 0..*.
+An association connects 'effbd902_Flow' and 'effbd902_InputPort'. From 'effbd902_Flow', the role 'effbd902_Flow16' has cardinality 0..*, and from 'effbd902_InputPort', the role 'effbd902_InputPort17' has cardinality 0..*.
+An association connects 'effbd902_Item' and 'effbd902_Flow'. From 'effbd902_Item', the role 'effbd902_Item' has cardinality 0..*, and from 'effbd902_Flow', the role 'effbd902_Flow19' has cardinality 0..*.
+An association connects 'effbd902_OutputPort' and 'effbd902_Flow'. From 'effbd902_OutputPort', the role 'effbd902_OutputPort21' has cardinality 0..*, and from 'effbd902_Flow', the role 'effbd902_Flow22' has cardinality 0..*.

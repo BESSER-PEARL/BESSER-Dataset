@@ -1,0 +1,36 @@
+The domain model 'adlsimple' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'adlsimple_Provided' represents an important domain concept.
+It does not declare any attributes.
+
+'adlsimple_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'adlsimple_Base' represents an important domain concept.
+It does not declare any attributes.
+
+'adlsimple_Interface' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'signature', which is of type str.
+
+'adlsimple_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adlsimple_Required' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'adlsimple_Required' is a specialization of 'Interface'.
+The class 'adlsimple_Provided' is a specialization of 'Interface'.
+
+Relationships between classes are modeled using associations.
+An association connects 'adlsimple_Required' and 'adlsimple_Component'. From 'adlsimple_Required', the role 'adlsimple_Required' has cardinality 0..*, and from 'adlsimple_Component', the role 'adlsimple_Component' has cardinality 0..*.
+An association connects 'adlsimple_Component' and 'adlsimple_Provided'. From 'adlsimple_Component', the role 'adlsimple_Component2' has cardinality 0..*, and from 'adlsimple_Provided', the role 'adlsimple_Provided' has cardinality 0..*.
+An association connects 'adlsimple_Interface' and 'adlsimple_Binding'. From 'adlsimple_Interface', the role 'adlsimple_Interface' has cardinality 0..*, and from 'adlsimple_Binding', the role 'adlsimple_Binding' has cardinality 0..*.
+An association connects 'adlsimple_Interface' and 'adlsimple_Binding'. From 'adlsimple_Interface', the role 'adlsimple_Interface6' has cardinality 0..*, and from 'adlsimple_Binding', the role 'adlsimple_Binding5' has cardinality 0..*.
+An association connects 'adlsimple_Interface' and 'adlsimple_Binding'. From 'adlsimple_Interface', the role 'adlsimple_Interface9' has cardinality 0..*, and from 'adlsimple_Binding', the role 'adlsimple_Binding8' has cardinality 0..*.
+An association connects 'adlsimple_Component' and 'adlsimple_Base'. From 'adlsimple_Component', the role 'adlsimple_Component11' has cardinality 0..*, and from 'adlsimple_Base', the role 'adlsimple_Base' has cardinality 0..*.

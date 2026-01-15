@@ -1,0 +1,44 @@
+The domain model 'Lims' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'Lims_Individual' represents an important domain concept.
+It has the following attributes: 'gender', which is of type str; 'name', which is of type str.
+
+'Lims_Sequenced' represents an important domain concept.
+It does not declare any attributes.
+
+'Lims_Family' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Lims_Sample' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Lims_Laboratory' represents an important domain concept.
+It does not declare any attributes.
+
+'Lims_Sequencer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Lims_Run' represents an important domain concept.
+It has the following attributes: 'date', which is of type date; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Gender' defines the following possible values: 'MALE', 'FEMALE', 'UNKNOWN'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Lims_Individual' and 'Lims_Family'. From 'Lims_Individual', the role 'Individual' has cardinality 0..*, and from 'Lims_Family', the role 'family' has cardinality 0..*.
+An association connects 'Lims_Family' and 'Lims_Laboratory'. From 'Lims_Family', the role 'families' has cardinality 0..*, and from 'Lims_Laboratory', the role 'Laboratory' has cardinality 0..*.
+An association connects 'Lims_Family' and 'Lims_Laboratory'. From 'Lims_Family', the role 'Family' has cardinality 0..*, and from 'Lims_Laboratory', the role 'laboratory' has cardinality 0..*.
+An association connects 'Lims_Laboratory' and 'Lims_Sequencer'. From 'Lims_Laboratory', the role 'laboratory4' has cardinality 0..*, and from 'Lims_Sequencer', the role 'Sequencer' has cardinality 0..*.
+An association connects 'Lims_Family' and 'Lims_Individual'. From 'Lims_Family', the role 'Family6' has cardinality 0..*, and from 'Lims_Individual', the role 'individuals' has cardinality 0..*.
+An association connects 'Lims_Individual' and 'Lims_Individual'. From 'Lims_Individual', the role 'Lims_Individual' has cardinality 0..*, and from 'Lims_Individual', the role 'Lims_Individual7' has cardinality 0..*.
+An association connects 'Lims_Individual' and 'Lims_Individual'. From 'Lims_Individual', the role 'Lims_Individual11' has cardinality 0..*, and from 'Lims_Individual', the role 'Lims_Individual9' has cardinality 0..*.
+An association connects 'Lims_Sample' and 'Lims_Individual'. From 'Lims_Sample', the role 'Sample' has cardinality 0..*, and from 'Lims_Individual', the role 'individual' has cardinality 0..*.
+An association connects 'Lims_Run' and 'Lims_Sequencer'. From 'Lims_Run', the role 'Run' has cardinality 0..*, and from 'Lims_Sequencer', the role 'sequencer' has cardinality 0..*.
+An association connects 'Lims_Sequencer' and 'Lims_Laboratory'. From 'Lims_Sequencer', the role 'sequencers' has cardinality 0..*, and from 'Lims_Laboratory', the role 'Laboratory15' has cardinality 0..*.
+An association connects 'Lims_Sequenced' and 'Lims_Run'. From 'Lims_Sequenced', the role 'Sequenced' has cardinality 0..*, and from 'Lims_Run', the role 'run' has cardinality 0..*.
+An association connects 'Lims_Sequencer' and 'Lims_Run'. From 'Lims_Sequencer', the role 'Sequencer18' has cardinality 0..*, and from 'Lims_Run', the role 'runs' has cardinality 0..*.
+An association connects 'Lims_Sample' and 'Lims_Individual'. From 'Lims_Sample', the role 'samples' has cardinality 0..*, and from 'Lims_Individual', the role 'Individual20' has cardinality 0..*.
+An association connects 'Lims_Sequenced' and 'Lims_Run'. From 'Lims_Sequenced', the role 'sequenced' has cardinality 0..*, and from 'Lims_Run', the role 'Run22' has cardinality 0..*.
+An association connects 'Lims_Sample' and 'Lims_Sequenced'. From 'Lims_Sample', the role 'Lims_Sample' has cardinality 0..*, and from 'Lims_Sequenced', the role 'Lims_Sequenced' has cardinality 0..*.

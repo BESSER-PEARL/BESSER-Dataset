@@ -1,0 +1,22 @@
+The domain model 'testmerge' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'testmerge_A3' represents an important domain concept.
+It does not declare any attributes.
+
+'testmerge_B3' represents an important domain concept.
+It does not declare any attributes.
+
+'testmerge_SuperA3' represents an important domain concept.
+It does not declare any attributes.
+
+'SuperA3' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'testmerge_A3' is a specialization of 'SuperA3'.
+
+Relationships between classes are modeled using associations.
+An association connects 'testmerge_A3' and 'testmerge_B3'. From 'testmerge_A3', the role 'toA3' has cardinality 0..*, and from 'testmerge_B3', the role 'B3' has cardinality 0..*.
+An association connects 'testmerge_B3' and 'testmerge_A3'. From 'testmerge_B3', the role 'toB3' has cardinality 0..*, and from 'testmerge_A3', the role 'A3' has cardinality 0..*.

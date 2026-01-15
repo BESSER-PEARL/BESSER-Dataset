@@ -1,0 +1,25 @@
+The domain model 'FamiliesWithSiblings' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'FamiliesWithSiblings_Family' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'FamiliesWithSiblings_FamilyMember' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'FamiliesWithSiblings_FamilyRegister' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'FamiliesWithSiblings_Family' and 'FamiliesWithSiblings_FamilyRegister'. From 'FamiliesWithSiblings_Family', the role 'Family' has cardinality 0..*, and from 'FamiliesWithSiblings_FamilyRegister', the role 'familiesInverse' has cardinality 0..*.
+An association connects 'FamiliesWithSiblings_Family' and 'FamiliesWithSiblings_FamilyMember'. From 'FamiliesWithSiblings_Family', the role 'fatherInverse' has cardinality 0..*, and from 'FamiliesWithSiblings_FamilyMember', the role 'FamilyMember' has cardinality 0..*.
+An association connects 'FamiliesWithSiblings_FamilyMember' and 'FamiliesWithSiblings_Family'. From 'FamiliesWithSiblings_FamilyMember', the role 'FamilyMember3' has cardinality 0..*, and from 'FamiliesWithSiblings_Family', the role 'motherInverse' has cardinality 0..*.
+An association connects 'FamiliesWithSiblings_FamilyMember' and 'FamiliesWithSiblings_Family'. From 'FamiliesWithSiblings_FamilyMember', the role 'FamilyMember5' has cardinality 0..*, and from 'FamiliesWithSiblings_Family', the role 'sonsInverse' has cardinality 0..*.
+An association connects 'FamiliesWithSiblings_Family' and 'FamiliesWithSiblings_FamilyMember'. From 'FamiliesWithSiblings_Family', the role 'daughtersInverse' has cardinality 0..*, and from 'FamiliesWithSiblings_FamilyMember', the role 'FamilyMember7' has cardinality 0..*.
+An association connects 'FamiliesWithSiblings_FamilyRegister' and 'FamiliesWithSiblings_Family'. From 'FamiliesWithSiblings_FamilyRegister', the role 'FamilyRegister' has cardinality 0..*, and from 'FamiliesWithSiblings_Family', the role 'families' has cardinality 0..*.
+An association connects 'FamiliesWithSiblings_Family' and 'FamiliesWithSiblings_Family'. From 'FamiliesWithSiblings_Family', the role 'FamiliesWithSiblings_Family9' has cardinality 0..*, and from 'FamiliesWithSiblings_Family', the role 'FamiliesWithSiblings_Family' has cardinality 0..*.
+An association connects 'FamiliesWithSiblings_Family' and 'FamiliesWithSiblings_FamilyMember'. From 'FamiliesWithSiblings_Family', the role 'Family12' has cardinality 0..*, and from 'FamiliesWithSiblings_FamilyMember', the role 'father' has cardinality 0..*.
+An association connects 'FamiliesWithSiblings_Family' and 'FamiliesWithSiblings_FamilyMember'. From 'FamiliesWithSiblings_Family', the role 'Family14' has cardinality 0..*, and from 'FamiliesWithSiblings_FamilyMember', the role 'mother' has cardinality 0..*.
+An association connects 'FamiliesWithSiblings_FamilyMember' and 'FamiliesWithSiblings_Family'. From 'FamiliesWithSiblings_FamilyMember', the role 'sons' has cardinality 0..*, and from 'FamiliesWithSiblings_Family', the role 'Family16' has cardinality 0..*.
+An association connects 'FamiliesWithSiblings_Family' and 'FamiliesWithSiblings_FamilyMember'. From 'FamiliesWithSiblings_Family', the role 'Family18' has cardinality 0..*, and from 'FamiliesWithSiblings_FamilyMember', the role 'daughters' has cardinality 0..*.

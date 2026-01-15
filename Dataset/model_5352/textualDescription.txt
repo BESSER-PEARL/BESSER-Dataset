@@ -1,0 +1,38 @@
+The domain model 'p2' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'p2_Configuration' represents an important domain concept.
+It has the following attributes: 'wS', which is of type str; 'oS', which is of type str; 'arch', which is of type str.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_ProfileDefinition' represents an important domain concept.
+It has one attribute: 'includeSourceBundles', which is of type bool.
+
+'p2_RepositoryList' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'p2_Requirement' represents an important domain concept.
+It has the following attributes: 'iD', which is of type str; 'versionRange', which is of type str; 'type', which is of type str; 'name', which is of type str; 'filter', which is of type str; 'optional', which is of type bool; 'namespace', which is of type str.
+
+'p2_Repository' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'uRL', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VersionSegment' defines the following possible values: 'Qualifier', 'Minor', 'Micro', 'Major'.
+The enumeration 'RequirementType' defines the following possible values: 'NONE', 'PROJECT', 'FEATURE'.
+The enumeration 'RepositoryType' defines the following possible values: 'Metadata', 'Artifact', 'Combined'.
+
+The model also captures inheritance relationships between classes.
+The class 'p2_ProfileDefinition' is a specialization of 'ModelElement'.
+The class 'p2_Configuration' is a specialization of 'ModelElement'.
+The class 'p2_Requirement' is a specialization of 'ModelElement'.
+The class 'p2_RepositoryList' is a specialization of 'ModelElement'.
+The class 'p2_Repository' is a specialization of 'ModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'p2_Requirement' and 'p2_ProfileDefinition'. From 'p2_Requirement', the role 'p2_Requirement' has cardinality 0..*, and from 'p2_ProfileDefinition', the role 'p2_ProfileDefinition' has cardinality 0..*.
+An association connects 'p2_Repository' and 'p2_ProfileDefinition'. From 'p2_Repository', the role 'p2_Repository' has cardinality 0..*, and from 'p2_ProfileDefinition', the role 'p2_ProfileDefinition2' has cardinality 0..*.
+An association connects 'p2_RepositoryList' and 'p2_Repository'. From 'p2_RepositoryList', the role 'p2_RepositoryList' has cardinality 0..*, and from 'p2_Repository', the role 'p2_Repository4' has cardinality 0..*.

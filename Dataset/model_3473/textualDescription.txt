@@ -1,0 +1,52 @@
+The domain model 'myDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'myDsl_ParentChildConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_MandatoryTreeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_FM' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_OptionalTreeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_CrossTreeConstraint' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'myDsl_FeatureAttribute' represents an important domain concept.
+It has the following attributes: 'nullValue', which is of type int; 'minValue', which is of type int; 'attributeType', which is of type str; 'maxValue', which is of type int; 'defaultValue', which is of type int.
+
+'myDsl_Feature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_TreeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_OrAlternativeTreeConstraint' represents an important domain concept.
+It has the following attributes: 'min', which is of type int; 'max', which is of type int.
+
+'TreeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'myDsl_MandatoryTreeConstraint' is a specialization of 'TreeConstraint'.
+The class 'myDsl_OptionalTreeConstraint' is a specialization of 'TreeConstraint'.
+The class 'myDsl_OrAlternativeTreeConstraint' is a specialization of 'TreeConstraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl_FM' and 'myDsl_Feature'. From 'myDsl_FM', the role 'myDsl_FM' has cardinality 0..*, and from 'myDsl_Feature', the role 'myDsl_Feature' has cardinality 0..*.
+An association connects 'myDsl_ParentChildConstraint' and 'myDsl_FM'. From 'myDsl_ParentChildConstraint', the role 'myDsl_ParentChildConstraint' has cardinality 0..*, and from 'myDsl_FM', the role 'myDsl_FM2' has cardinality 0..*.
+An association connects 'myDsl_FeatureAttribute' and 'myDsl_FM'. From 'myDsl_FeatureAttribute', the role 'myDsl_FeatureAttribute' has cardinality 0..*, and from 'myDsl_FM', the role 'myDsl_FM4' has cardinality 0..*.
+An association connects 'myDsl_FM' and 'myDsl_CrossTreeConstraint'. From 'myDsl_FM', the role 'myDsl_FM6' has cardinality 0..*, and from 'myDsl_CrossTreeConstraint', the role 'myDsl_CrossTreeConstraint' has cardinality 0..*.
+An association connects 'myDsl_ParentChildConstraint' and 'myDsl_Feature'. From 'myDsl_ParentChildConstraint', the role 'myDsl_ParentChildConstraint8' has cardinality 0..*, and from 'myDsl_Feature', the role 'myDsl_Feature9' has cardinality 0..*.
+An association connects 'myDsl_ParentChildConstraint' and 'myDsl_TreeConstraint'. From 'myDsl_ParentChildConstraint', the role 'myDsl_ParentChildConstraint11' has cardinality 0..*, and from 'myDsl_TreeConstraint', the role 'myDsl_TreeConstraint' has cardinality 0..*.
+An association connects 'myDsl_Feature' and 'myDsl_MandatoryTreeConstraint'. From 'myDsl_Feature', the role 'myDsl_Feature13' has cardinality 0..*, and from 'myDsl_MandatoryTreeConstraint', the role 'myDsl_MandatoryTreeConstraint' has cardinality 0..*.
+An association connects 'myDsl_Feature' and 'myDsl_OptionalTreeConstraint'. From 'myDsl_Feature', the role 'myDsl_Feature15' has cardinality 0..*, and from 'myDsl_OptionalTreeConstraint', the role 'myDsl_OptionalTreeConstraint' has cardinality 0..*.
+An association connects 'myDsl_Feature' and 'myDsl_OrAlternativeTreeConstraint'. From 'myDsl_Feature', the role 'myDsl_Feature17' has cardinality 0..*, and from 'myDsl_OrAlternativeTreeConstraint', the role 'myDsl_OrAlternativeTreeConstraint' has cardinality 0..*.
+An association connects 'myDsl_CrossTreeConstraint' and 'myDsl_Feature'. From 'myDsl_CrossTreeConstraint', the role 'myDsl_CrossTreeConstraint19' has cardinality 0..*, and from 'myDsl_Feature', the role 'myDsl_Feature20' has cardinality 0..*.
+An association connects 'myDsl_Feature' and 'myDsl_CrossTreeConstraint'. From 'myDsl_Feature', the role 'myDsl_Feature23' has cardinality 0..*, and from 'myDsl_CrossTreeConstraint', the role 'myDsl_CrossTreeConstraint22' has cardinality 0..*.
+An association connects 'myDsl_Feature' and 'myDsl_FeatureAttribute'. From 'myDsl_Feature', the role 'myDsl_Feature26' has cardinality 0..*, and from 'myDsl_FeatureAttribute', the role 'myDsl_FeatureAttribute25' has cardinality 0..*.

@@ -1,0 +1,9 @@
+The domain model 'p2' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'p2_C2' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_C1' represents an important domain concept.
+It does not declare any attributes.

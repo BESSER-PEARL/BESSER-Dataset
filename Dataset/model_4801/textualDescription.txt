@@ -1,0 +1,13 @@
+The domain model 'types' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'types_ManyTypes' represents an important domain concept.
+It has the following attributes: 'stringArray', which is of type str; 'floatObject', which is of type str; 'integerObject', which is of type str; 'byteObject', which is of type str; 'string', which is of type str; 'date', which is of type date; 'longArray', which is of type str; 'bigDecimal', which is of type str; 'byteArray', which is of type str; 'doubleObject', which is of type str; 'clazz', which is of type str; 'bigInteger', which is of type str; 'long', which is of type str; 'charObject', which is of type str; 'enum', which is of type str.
+
+'types_SingleTypes' represents an important domain concept.
+It has the following attributes: 'date', which is of type date; 'byte', which is of type str; 'bigInteger', which is of type str; 'integer', which is of type int; 'nextEnum', which is of type str; 'char', which is of type str; 'clazz', which is of type str; 'bigDecimal', which is of type str; 'longArray', which is of type str; 'charObject', which is of type str; 'enum', which is of type str; 'string', which is of type str; 'float', which is of type float; 'integerObject', which is of type str; 'double', which is of type float; 'longObject', which is of type str; 'floatObject', which is of type str; 'long', which is of type str; 'byteArray', which is of type str; 'byteObject', which is of type str; 'stringArray', which is of type str; 'doubleObject', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TestEnum' defines the following possible values: 'Enum2', 'Enum0', 'Enum1'.
+The enumeration 'TestNextEnum' defines the following possible values: 'Enum2', 'Enum1'.

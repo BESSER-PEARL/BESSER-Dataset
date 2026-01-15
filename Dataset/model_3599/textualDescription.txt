@@ -1,0 +1,212 @@
+The domain model 'SMTlib2extended' describes the core structural elements and their relationships within the system.
+
+The model defines 51 main class(es).
+
+'SMTlib2extended_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_ModExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'CardExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_Bitvector' represents an important domain concept.
+It has one attribute: 'width', which is of type int.
+
+'SMTlib2extended_CardGtExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_CardEqExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_NandExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_BvXorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_SubExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_CardLtExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_NAryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_VariableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_ConcatExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_GreaterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_CardExpression' represents an important domain concept.
+It has one attribute: 'k', which is of type int.
+
+'ConstExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_MulExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_AddExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_BitstringExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'SMTlib2extended_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_LessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_NotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SMTlib2extended_BvOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'NAryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_DivExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_ExtractIndexExpression' represents an important domain concept.
+It has the following attributes: 'end', which is of type int; 'start', which is of type int.
+
+'SMTlib2extended_ConstIntegerExpression' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'width', which is of type int.
+
+'SMTlib2extended_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_EqualsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_OneHotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_BvNotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_Instance' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_CardGeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_ConstExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_LessEqualsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_OrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_IteExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_ConstBooleanExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'SMTlib2extended_Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_GreaterEqualsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_BvAndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_CardLeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SMTlib2extended_ImpliesExpression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'SMTlib2extended_Variable' is a specialization of 'NamedElement'.
+The class 'SMTlib2extended_Predicate' is a specialization of 'Variable'.
+The class 'SMTlib2extended_Bitvector' is a specialization of 'Variable'.
+The class 'SMTlib2extended_Expression' is a specialization of 'NamedElement'.
+The class 'SMTlib2extended_VariableExpression' is a specialization of 'Expression'.
+The class 'SMTlib2extended_ConstExpression' is a specialization of 'Expression'.
+The class 'SMTlib2extended_ConstBooleanExpression' is a specialization of 'ConstExpression'.
+The class 'SMTlib2extended_ConstIntegerExpression' is a specialization of 'ConstExpression'.
+The class 'SMTlib2extended_BitstringExpression' is a specialization of 'ConstExpression'.
+The class 'SMTlib2extended_NAryExpression' is a specialization of 'Expression'.
+The class 'SMTlib2extended_AndExpression' is a specialization of 'NAryExpression'.
+The class 'SMTlib2extended_OrExpression' is a specialization of 'NAryExpression'.
+The class 'SMTlib2extended_ConcatExpression' is a specialization of 'NAryExpression'.
+The class 'SMTlib2extended_BinaryExpression' is a specialization of 'Expression'.
+The class 'SMTlib2extended_AddExpression' is a specialization of 'BinaryExpression'.
+The class 'SMTlib2extended_DivExpression' is a specialization of 'BinaryExpression'.
+The class 'SMTlib2extended_SubExpression' is a specialization of 'BinaryExpression'.
+The class 'SMTlib2extended_MulExpression' is a specialization of 'BinaryExpression'.
+The class 'SMTlib2extended_ModExpression' is a specialization of 'BinaryExpression'.
+The class 'SMTlib2extended_EqualsExpression' is a specialization of 'BinaryExpression'.
+The class 'SMTlib2extended_GreaterExpression' is a specialization of 'BinaryExpression'.
+The class 'SMTlib2extended_GreaterEqualsExpression' is a specialization of 'BinaryExpression'.
+The class 'SMTlib2extended_ImpliesExpression' is a specialization of 'BinaryExpression'.
+The class 'SMTlib2extended_LessExpression' is a specialization of 'BinaryExpression'.
+The class 'SMTlib2extended_LessEqualsExpression' is a specialization of 'BinaryExpression'.
+The class 'SMTlib2extended_NandExpression' is a specialization of 'BinaryExpression'.
+The class 'SMTlib2extended_UnaryExpression' is a specialization of 'Expression'.
+The class 'SMTlib2extended_NotExpression' is a specialization of 'UnaryExpression'.
+The class 'SMTlib2extended_OneHotExpression' is a specialization of 'UnaryExpression'.
+The class 'SMTlib2extended_ExtractIndexExpression' is a specialization of 'UnaryExpression'.
+The class 'SMTlib2extended_BvNotExpression' is a specialization of 'UnaryExpression'.
+The class 'SMTlib2extended_BvOrExpression' is a specialization of 'BinaryExpression'.
+The class 'SMTlib2extended_BvAndExpression' is a specialization of 'BinaryExpression'.
+The class 'SMTlib2extended_BvXorExpression' is a specialization of 'BinaryExpression'.
+The class 'SMTlib2extended_IteExpression' is a specialization of 'Expression'.
+The class 'SMTlib2extended_CardExpression' is a specialization of 'Expression'.
+The class 'SMTlib2extended_CardEqExpression' is a specialization of 'CardExpression'.
+The class 'SMTlib2extended_CardGeExpression' is a specialization of 'CardExpression'.
+The class 'SMTlib2extended_CardGtExpression' is a specialization of 'CardExpression'.
+The class 'SMTlib2extended_CardLeExpression' is a specialization of 'CardExpression'.
+The class 'SMTlib2extended_CardLtExpression' is a specialization of 'CardExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SMTlib2extended_Variable' and 'SMTlib2extended_Instance'. From 'SMTlib2extended_Variable', the role 'SMTlib2extended_Variable' has cardinality 0..*, and from 'SMTlib2extended_Instance', the role 'SMTlib2extended_Instance' has cardinality 0..*.
+An association connects 'SMTlib2extended_Expression' and 'SMTlib2extended_Instance'. From 'SMTlib2extended_Expression', the role 'SMTlib2extended_Expression' has cardinality 0..*, and from 'SMTlib2extended_Instance', the role 'SMTlib2extended_Instance2' has cardinality 0..*.
+An association connects 'SMTlib2extended_Variable' and 'SMTlib2extended_VariableExpression'. From 'SMTlib2extended_Variable', the role 'SMTlib2extended_Variable4' has cardinality 0..*, and from 'SMTlib2extended_VariableExpression', the role 'SMTlib2extended_VariableExpression' has cardinality 0..*.
+An association connects 'SMTlib2extended_Expression' and 'SMTlib2extended_NAryExpression'. From 'SMTlib2extended_Expression', the role 'SMTlib2extended_Expression6' has cardinality 0..*, and from 'SMTlib2extended_NAryExpression', the role 'SMTlib2extended_NAryExpression' has cardinality 0..*.
+An association connects 'SMTlib2extended_BinaryExpression' and 'SMTlib2extended_Expression'. From 'SMTlib2extended_BinaryExpression', the role 'SMTlib2extended_BinaryExpression' has cardinality 0..*, and from 'SMTlib2extended_Expression', the role 'SMTlib2extended_Expression8' has cardinality 0..*.
+An association connects 'SMTlib2extended_BinaryExpression' and 'SMTlib2extended_Expression'. From 'SMTlib2extended_BinaryExpression', the role 'SMTlib2extended_BinaryExpression10' has cardinality 0..*, and from 'SMTlib2extended_Expression', the role 'SMTlib2extended_Expression11' has cardinality 0..*.
+An association connects 'SMTlib2extended_Expression' and 'SMTlib2extended_UnaryExpression'. From 'SMTlib2extended_Expression', the role 'SMTlib2extended_Expression13' has cardinality 0..*, and from 'SMTlib2extended_UnaryExpression', the role 'SMTlib2extended_UnaryExpression' has cardinality 0..*.
+An association connects 'SMTlib2extended_Expression' and 'SMTlib2extended_IteExpression'. From 'SMTlib2extended_Expression', the role 'SMTlib2extended_Expression15' has cardinality 0..*, and from 'SMTlib2extended_IteExpression', the role 'SMTlib2extended_IteExpression' has cardinality 0..*.
+An association connects 'SMTlib2extended_IteExpression' and 'SMTlib2extended_Expression'. From 'SMTlib2extended_IteExpression', the role 'SMTlib2extended_IteExpression17' has cardinality 0..*, and from 'SMTlib2extended_Expression', the role 'SMTlib2extended_Expression18' has cardinality 0..*.
+An association connects 'SMTlib2extended_Expression' and 'SMTlib2extended_IteExpression'. From 'SMTlib2extended_Expression', the role 'SMTlib2extended_Expression21' has cardinality 0..*, and from 'SMTlib2extended_IteExpression', the role 'SMTlib2extended_IteExpression20' has cardinality 0..*.
+An association connects 'SMTlib2extended_CardExpression' and 'SMTlib2extended_Expression'. From 'SMTlib2extended_CardExpression', the role 'SMTlib2extended_CardExpression' has cardinality 0..*, and from 'SMTlib2extended_Expression', the role 'SMTlib2extended_Expression23' has cardinality 0..*.

@@ -1,0 +1,44 @@
+The domain model 'school' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'school_Academy' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Matter' represents an important domain concept.
+It does not declare any attributes.
+
+'school_Matter' represents an important domain concept.
+It does not declare any attributes.
+
+'school_ClassRoom' represents an important domain concept.
+It has one attribute: 'number', which is of type int.
+
+'school_Teacher' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'school_School' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'rank', which is of type int.
+
+'school_Student' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'age', which is of type int.
+
+'school_Notation' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'school_Math' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'school_Math' is a specialization of 'Matter'.
+
+Relationships between classes are modeled using associations.
+An association connects 'school_Academy' and 'school_Teacher'. From 'school_Academy', the role 'school_Academy' has cardinality 0..*, and from 'school_Teacher', the role 'school_Teacher' has cardinality 0..*.
+An association connects 'school_Student' and 'school_Academy'. From 'school_Student', the role 'school_Student' has cardinality 0..*, and from 'school_Academy', the role 'school_Academy2' has cardinality 0..*.
+An association connects 'school_School' and 'school_Academy'. From 'school_School', the role 'school_School' has cardinality 0..*, and from 'school_Academy', the role 'school_Academy4' has cardinality 0..*.
+An association connects 'school_ClassRoom' and 'school_School'. From 'school_ClassRoom', the role 'school_ClassRoom' has cardinality 0..*, and from 'school_School', the role 'school_School6' has cardinality 0..*.
+An association connects 'school_Teacher' and 'school_School'. From 'school_Teacher', the role 'school_Teacher9' has cardinality 0..*, and from 'school_School', the role 'school_School8' has cardinality 0..*.
+An association connects 'school_Student' and 'school_School'. From 'school_Student', the role 'school_Student12' has cardinality 0..*, and from 'school_School', the role 'school_School11' has cardinality 0..*.
+An association connects 'school_Teacher' and 'school_ClassRoom'. From 'school_Teacher', the role 'school_Teacher15' has cardinality 0..*, and from 'school_ClassRoom', the role 'school_ClassRoom14' has cardinality 0..*.
+An association connects 'school_Student' and 'school_ClassRoom'. From 'school_Student', the role 'school_Student18' has cardinality 0..*, and from 'school_ClassRoom', the role 'school_ClassRoom17' has cardinality 0..*.
+An association connects 'school_Notation' and 'school_Student'. From 'school_Notation', the role 'school_Notation' has cardinality 0..*, and from 'school_Student', the role 'school_Student20' has cardinality 0..*.

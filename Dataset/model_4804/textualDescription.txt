@@ -1,0 +1,24 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'model_INetwork' represents an important domain concept.
+It does not declare any attributes.
+
+'model_IServiceInfo' represents an important domain concept.
+It has the following attributes: 'ecfServiceInfo', which is of type str; 'ecfName', which is of type str; 'ecfPriority', which is of type int; 'ecfWeight', which is of type int; 'ecfLocation', which is of type str.
+
+'model_IServiceTypeID' represents an important domain concept.
+It has the following attributes: 'ecfServiceTypeID', which is of type str; 'ecfProtocols', which is of type str; 'ecfScopes', which is of type str; 'ecfServices', which is of type str; 'ecfNamingAuthority', which is of type str; 'ecfServiceName', which is of type str.
+
+'model_IHost' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'address', which is of type str.
+
+'model_IServiceID' represents an important domain concept.
+It has the following attributes: 'ecfServiceID', which is of type str; 'ecfServiceName', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_IServiceInfo' and 'model_IServiceID'. From 'model_IServiceInfo', the role 'model_IServiceInfo' has cardinality 0..*, and from 'model_IServiceID', the role 'model_IServiceID' has cardinality 0..*.
+An association connects 'model_IHost' and 'model_INetwork'. From 'model_IHost', the role 'model_IHost' has cardinality 0..*, and from 'model_INetwork', the role 'model_INetwork' has cardinality 0..*.
+An association connects 'model_IHost' and 'model_IServiceInfo'. From 'model_IHost', the role 'model_IHost3' has cardinality 0..*, and from 'model_IServiceInfo', the role 'model_IServiceInfo4' has cardinality 0..*.
+An association connects 'model_IServiceTypeID' and 'model_IServiceID'. From 'model_IServiceTypeID', the role 'model_IServiceTypeID' has cardinality 0..*, and from 'model_IServiceID', the role 'model_IServiceID6' has cardinality 0..*.

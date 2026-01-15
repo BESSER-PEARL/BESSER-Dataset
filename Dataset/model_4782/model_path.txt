@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/huybuidac20593/yakindu/BASE/tags/22_RELEASE_2_4_0/plugins/org.yakindu.base.types/model/types.ecore

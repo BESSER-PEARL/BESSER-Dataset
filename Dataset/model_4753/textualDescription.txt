@@ -1,0 +1,90 @@
+The domain model 'myffbd' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'myffbd_Port' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'myffbd_Item' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myffbd_Description' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'myffbd_Iteration' represents an important domain concept.
+It does not declare any attributes.
+
+'myffbd_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'myffbd_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'myffbd_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'myffbd_PortType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'myffbd_Function' represents an important domain concept.
+It has the following attributes: 'tMax', which is of type int; 'tMin', which is of type int; 'domain', which is of type str.
+
+'myffbd_InputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'myffbd_And' represents an important domain concept.
+It does not declare any attributes.
+
+'myffbd_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'myffbd_Final' represents an important domain concept.
+It does not declare any attributes.
+
+'myffbd_OutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'myffbd_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'myffbd_SequenceNode' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'SequenceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'myffbd_LoopExit' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FunctionDomain' defines the following possible values: 'form', 'space', 'time'.
+
+The model also captures inheritance relationships between classes.
+The class 'myffbd_Function' is a specialization of 'SequenceNode'.
+The class 'myffbd_And' is a specialization of 'SequenceNode'.
+The class 'myffbd_Or' is a specialization of 'SequenceNode'.
+The class 'myffbd_Start' is a specialization of 'SequenceNode'.
+The class 'myffbd_Final' is a specialization of 'SequenceNode'.
+The class 'myffbd_Loop' is a specialization of 'SequenceNode'.
+The class 'myffbd_InputPort' is a specialization of 'Port'.
+The class 'myffbd_OutputPort' is a specialization of 'Port'.
+The class 'myffbd_LoopExit' is a specialization of 'SequenceNode'.
+The class 'myffbd_Iteration' is a specialization of 'SequenceNode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myffbd_Function' and 'myffbd_Function'. From 'myffbd_Function', the role 'myffbd_Function0' has cardinality 0..*, and from 'myffbd_Function', the role 'myffbd_Function' has cardinality 0..*.
+An association connects 'myffbd_Function' and 'myffbd_SequenceNode'. From 'myffbd_Function', the role 'myffbd_Function3' has cardinality 0..*, and from 'myffbd_SequenceNode', the role 'myffbd_SequenceNode' has cardinality 0..*.
+An association connects 'myffbd_Function' and 'myffbd_OutputPort'. From 'myffbd_Function', the role 'myffbd_Function5' has cardinality 0..*, and from 'myffbd_OutputPort', the role 'myffbd_OutputPort' has cardinality 0..*.
+An association connects 'myffbd_Function' and 'myffbd_InputPort'. From 'myffbd_Function', the role 'myffbd_Function7' has cardinality 0..*, and from 'myffbd_InputPort', the role 'myffbd_InputPort' has cardinality 0..*.
+An association connects 'myffbd_Description' and 'myffbd_Function'. From 'myffbd_Description', the role 'myffbd_Description' has cardinality 0..*, and from 'myffbd_Function', the role 'myffbd_Function9' has cardinality 0..*.
+An association connects 'myffbd_Function' and 'myffbd_Token'. From 'myffbd_Function', the role 'myffbd_Function11' has cardinality 0..*, and from 'myffbd_Token', the role 'myffbd_Token' has cardinality 0..*.
+An association connects 'myffbd_Function' and 'myffbd_PortType'. From 'myffbd_Function', the role 'myffbd_Function13' has cardinality 0..*, and from 'myffbd_PortType', the role 'myffbd_PortType' has cardinality 0..*.
+An association connects 'myffbd_SequenceNode' and 'myffbd_SequenceNode'. From 'myffbd_SequenceNode', the role 'myffbd_SequenceNode14' has cardinality 0..*, and from 'myffbd_SequenceNode', the role 'myffbd_SequenceNode16' has cardinality 0..*.
+An association connects 'myffbd_Flow' and 'myffbd_Port'. From 'myffbd_Flow', the role 'myffbd_Flow' has cardinality 0..*, and from 'myffbd_Port', the role 'myffbd_Port' has cardinality 0..*.
+An association connects 'myffbd_PortType' and 'myffbd_Port'. From 'myffbd_PortType', the role 'myffbd_PortType20' has cardinality 0..*, and from 'myffbd_Port', the role 'myffbd_Port19' has cardinality 0..*.
+An association connects 'myffbd_Flow' and 'myffbd_Port'. From 'myffbd_Flow', the role 'myffbd_Flow22' has cardinality 0..*, and from 'myffbd_Port', the role 'myffbd_Port23' has cardinality 0..*.
+An association connects 'myffbd_Flow' and 'myffbd_Item'. From 'myffbd_Flow', the role 'myffbd_Flow25' has cardinality 0..*, and from 'myffbd_Item', the role 'myffbd_Item' has cardinality 0..*.
+An association connects 'myffbd_Port' and 'myffbd_Flow'. From 'myffbd_Port', the role 'myffbd_Port28' has cardinality 0..*, and from 'myffbd_Flow', the role 'myffbd_Flow27' has cardinality 0..*.

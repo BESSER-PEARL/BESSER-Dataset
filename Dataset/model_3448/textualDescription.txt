@@ -1,0 +1,63 @@
+The domain model 'fopramodel' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'fopramodel_FoPra' represents an important domain concept.
+It has the following attributes: 'maxNumberOfStudents', which is of type int; 'start', which is of type date; 'status', which is of type str; 'description', which is of type str; 'end', which is of type date; 'title', which is of type str.
+
+'fopramodel_Student' represents an important domain concept.
+It has the following attributes: 'course', which is of type str; 'matrikel', which is of type str.
+
+'fopramodel_ResearchGroup' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fopramodel_ExternalAdvisor' represents an important domain concept.
+It has one attribute: 'information', which is of type str.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'fopramodel_Professor' represents an important domain concept.
+It does not declare any attributes.
+
+'fopramodel_Person' represents an important domain concept.
+It has the following attributes: 'lastname', which is of type str; 'forename', which is of type str.
+
+'fopramodel_Associate' represents an important domain concept.
+It does not declare any attributes.
+
+'fopramodel_Auxiliary' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'description', which is of type str.
+
+'fopramodel_FoPraManagementSystem' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Status' defines the following possible values: 'completed', 'pending', 'inprocess', 'cancelled'.
+The enumeration 'Course' defines the following possible values: 'InfoPostGraduate', 'InfoBSc', 'InfoDiplom', 'InfoMinorSubject', 'InfoMSc'.
+The enumeration 'AuxiliaryKind' defines the following possible values: 'Method', 'Tool', 'ProgrammingLanguage'.
+
+The model also captures inheritance relationships between classes.
+The class 'fopramodel_Student' is a specialization of 'Person'.
+The class 'fopramodel_Professor' is a specialization of 'Person'.
+The class 'fopramodel_Associate' is a specialization of 'Person'.
+The class 'fopramodel_ExternalAdvisor' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fopramodel_FoPra' and 'fopramodel_Student'. From 'fopramodel_FoPra', the role 'fopras' has cardinality 0..*, and from 'fopramodel_Student', the role 'Student' has cardinality 0..*.
+An association connects 'fopramodel_FoPra' and 'fopramodel_ResearchGroup'. From 'fopramodel_FoPra', the role 'fopras2' has cardinality 0..*, and from 'fopramodel_ResearchGroup', the role 'ResearchGroup' has cardinality 0..*.
+An association connects 'fopramodel_Associate' and 'fopramodel_FoPra'. From 'fopramodel_Associate', the role 'Associate' has cardinality 0..*, and from 'fopramodel_FoPra', the role 'fopras4' has cardinality 0..*.
+An association connects 'fopramodel_FoPra' and 'fopramodel_ExternalAdvisor'. From 'fopramodel_FoPra', the role 'fopras6' has cardinality 0..*, and from 'fopramodel_ExternalAdvisor', the role 'ExternalAdvisor' has cardinality 0..*.
+An association connects 'fopramodel_FoPra' and 'fopramodel_Auxiliary'. From 'fopramodel_FoPra', the role 'fopras8' has cardinality 0..*, and from 'fopramodel_Auxiliary', the role 'Auxiliary' has cardinality 0..*.
+An association connects 'fopramodel_FoPraManagementSystem' and 'fopramodel_FoPra'. From 'fopramodel_FoPraManagementSystem', the role 'fopramodel_FoPraManagementSystem' has cardinality 0..*, and from 'fopramodel_FoPra', the role 'fopramodel_FoPra' has cardinality 0..*.
+An association connects 'fopramodel_Person' and 'fopramodel_FoPraManagementSystem'. From 'fopramodel_Person', the role 'fopramodel_Person' has cardinality 0..*, and from 'fopramodel_FoPraManagementSystem', the role 'fopramodel_FoPraManagementSystem11' has cardinality 0..*.
+An association connects 'fopramodel_FoPraManagementSystem' and 'fopramodel_Auxiliary'. From 'fopramodel_FoPraManagementSystem', the role 'fopramodel_FoPraManagementSystem13' has cardinality 0..*, and from 'fopramodel_Auxiliary', the role 'fopramodel_Auxiliary' has cardinality 0..*.
+An association connects 'fopramodel_Student' and 'fopramodel_FoPra'. From 'fopramodel_Student', the role 'students' has cardinality 0..*, and from 'fopramodel_FoPra', the role 'FoPra' has cardinality 0..*.
+An association connects 'fopramodel_ResearchGroup' and 'fopramodel_Professor'. From 'fopramodel_ResearchGroup', the role 'ResearchGroup16' has cardinality 0..*, and from 'fopramodel_Professor', the role 'professor' has cardinality 0..*.
+An association connects 'fopramodel_FoPra' and 'fopramodel_ResearchGroup'. From 'fopramodel_FoPra', the role 'FoPra18' has cardinality 0..*, and from 'fopramodel_ResearchGroup', the role 'rg' has cardinality 0..*.
+An association connects 'fopramodel_Professor' and 'fopramodel_ResearchGroup'. From 'fopramodel_Professor', the role 'Professor' has cardinality 0..*, and from 'fopramodel_ResearchGroup', the role 'rg20' has cardinality 0..*.
+An association connects 'fopramodel_Associate' and 'fopramodel_ResearchGroup'. From 'fopramodel_Associate', the role 'Associate23' has cardinality 0..*, and from 'fopramodel_ResearchGroup', the role 'rg22' has cardinality 0..*.
+An association connects 'fopramodel_Associate' and 'fopramodel_ResearchGroup'. From 'fopramodel_Associate', the role 'associate' has cardinality 0..*, and from 'fopramodel_ResearchGroup', the role 'ResearchGroup25' has cardinality 0..*.
+An association connects 'fopramodel_FoPra' and 'fopramodel_Associate'. From 'fopramodel_FoPra', the role 'FoPra27' has cardinality 0..*, and from 'fopramodel_Associate', the role 'supervisor' has cardinality 0..*.
+An association connects 'fopramodel_ExternalAdvisor' and 'fopramodel_FoPra'. From 'fopramodel_ExternalAdvisor', the role 'advisor' has cardinality 0..*, and from 'fopramodel_FoPra', the role 'FoPra29' has cardinality 0..*.
+An association connects 'fopramodel_Auxiliary' and 'fopramodel_FoPra'. From 'fopramodel_Auxiliary', the role 'auxiliaries' has cardinality 0..*, and from 'fopramodel_FoPra', the role 'FoPra31' has cardinality 0..*.

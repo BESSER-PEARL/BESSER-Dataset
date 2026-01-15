@@ -1,0 +1,131 @@
+The domain model 'behaviouralProgramMM' describes the core structural elements and their relationships within the system.
+
+The model defines 29 main class(es).
+
+'behaviouralProgramMM_ReadLine' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviouralProgramMM_Variable' represents an important domain concept.
+It has one attribute: 'VarName', which is of type str.
+
+'behaviouralProgramMM_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviouralProgramMM_ComparsionOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviouralProgramMM_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviouralProgramMM_Literal' represents an important domain concept.
+It has one attribute: 'Value', which is of type str.
+
+'behaviouralProgramMM_Function' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'behaviouralProgramMM_FunctionCallStatement' represents an important domain concept.
+It has one attribute: 'FuncName', which is of type str.
+
+'behaviouralProgramMM_Equals' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviouralProgramMM_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviouralProgramMM_TryCatch' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviouralProgramMM_ReadLineStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviouralProgramMM_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviouralProgramMM_Behaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviouralProgramMM_FunctionCall' represents an important domain concept.
+It has one attribute: 'FuncName', which is of type str.
+
+'behaviouralProgramMM_ArithmeticInfixOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'ComparsionOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviouralProgramMM_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviouralProgramMM_RaiseException' represents an important domain concept.
+It does not declare any attributes.
+
+'ArithmeticInfixOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionCallStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviouralProgramMM_BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviouralProgramMM_WriteLineStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviouralProgramMM_Instantiation' represents an important domain concept.
+It has the following attributes: 'VarType', which is of type str; 'VarName', which is of type str.
+
+'behaviouralProgramMM_Assignment' represents an important domain concept.
+It has one attribute: 'VariableName', which is of type str.
+
+'behaviouralProgramMM_ConditionalBranch' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'behaviouralProgramMM_Assignment' is a specialization of 'Statement'.
+The class 'behaviouralProgramMM_ConditionalBranch' is a specialization of 'Statement'.
+The class 'behaviouralProgramMM_Loop' is a specialization of 'Statement'.
+The class 'behaviouralProgramMM_FunctionCall' is a specialization of 'Expression'.
+The class 'behaviouralProgramMM_Instantiation' is a specialization of 'Statement'.
+The class 'behaviouralProgramMM_Return' is a specialization of 'Statement'.
+The class 'behaviouralProgramMM_TryCatch' is a specialization of 'Statement'.
+The class 'behaviouralProgramMM_RaiseException' is a specialization of 'Statement'.
+The class 'behaviouralProgramMM_ReadLine' is a specialization of 'Expression'.
+The class 'behaviouralProgramMM_ArithmeticInfixOperator' is a specialization of 'BinaryOperator'.
+The class 'behaviouralProgramMM_Plus' is a specialization of 'ArithmeticInfixOperator'.
+The class 'behaviouralProgramMM_FunctionCallStatement' is a specialization of 'Statement'.
+The class 'behaviouralProgramMM_ReadLineStatement' is a specialization of 'FunctionCallStatement'.
+The class 'behaviouralProgramMM_WriteLineStatement' is a specialization of 'FunctionCallStatement'.
+The class 'behaviouralProgramMM_ComparsionOperator' is a specialization of 'BinaryOperator'.
+The class 'behaviouralProgramMM_Equals' is a specialization of 'ComparsionOperator'.
+The class 'behaviouralProgramMM_Variable' is a specialization of 'Expression'.
+The class 'behaviouralProgramMM_Literal' is a specialization of 'Expression'.
+The class 'behaviouralProgramMM_BinaryOperator' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'behaviouralProgramMM_Behaviour' and 'behaviouralProgramMM_Function'. From 'behaviouralProgramMM_Behaviour', the role 'behaviouralProgramMM_Behaviour' has cardinality 0..*, and from 'behaviouralProgramMM_Function', the role 'behaviouralProgramMM_Function' has cardinality 0..*.
+An association connects 'behaviouralProgramMM_Function' and 'behaviouralProgramMM_Behaviour'. From 'behaviouralProgramMM_Function', the role 'behaviouralProgramMM_Function3' has cardinality 0..*, and from 'behaviouralProgramMM_Behaviour', the role 'behaviouralProgramMM_Behaviour2' has cardinality 0..*.
+An association connects 'behaviouralProgramMM_Statement' and 'behaviouralProgramMM_Function'. From 'behaviouralProgramMM_Statement', the role 'behaviouralProgramMM_Statement' has cardinality 0..*, and from 'behaviouralProgramMM_Function', the role 'behaviouralProgramMM_Function5' has cardinality 0..*.
+An association connects 'behaviouralProgramMM_Expression' and 'behaviouralProgramMM_Assignment'. From 'behaviouralProgramMM_Expression', the role 'behaviouralProgramMM_Expression' has cardinality 0..*, and from 'behaviouralProgramMM_Assignment', the role 'behaviouralProgramMM_Assignment' has cardinality 0..*.
+An association connects 'behaviouralProgramMM_Statement' and 'behaviouralProgramMM_ConditionalBranch'. From 'behaviouralProgramMM_Statement', the role 'behaviouralProgramMM_Statement8' has cardinality 0..*, and from 'behaviouralProgramMM_ConditionalBranch', the role 'behaviouralProgramMM_ConditionalBranch' has cardinality 0..*.
+An association connects 'behaviouralProgramMM_ConditionalBranch' and 'behaviouralProgramMM_Statement'. From 'behaviouralProgramMM_ConditionalBranch', the role 'behaviouralProgramMM_ConditionalBranch10' has cardinality 0..*, and from 'behaviouralProgramMM_Statement', the role 'behaviouralProgramMM_Statement11' has cardinality 0..*.
+An association connects 'behaviouralProgramMM_Expression' and 'behaviouralProgramMM_ConditionalBranch'. From 'behaviouralProgramMM_Expression', the role 'behaviouralProgramMM_Expression14' has cardinality 0..*, and from 'behaviouralProgramMM_ConditionalBranch', the role 'behaviouralProgramMM_ConditionalBranch13' has cardinality 0..*.
+An association connects 'behaviouralProgramMM_Statement' and 'behaviouralProgramMM_Loop'. From 'behaviouralProgramMM_Statement', the role 'behaviouralProgramMM_Statement16' has cardinality 0..*, and from 'behaviouralProgramMM_Loop', the role 'behaviouralProgramMM_Loop' has cardinality 0..*.
+An association connects 'behaviouralProgramMM_Loop' and 'behaviouralProgramMM_Expression'. From 'behaviouralProgramMM_Loop', the role 'behaviouralProgramMM_Loop18' has cardinality 0..*, and from 'behaviouralProgramMM_Expression', the role 'behaviouralProgramMM_Expression19' has cardinality 0..*.
+An association connects 'behaviouralProgramMM_FunctionCall' and 'behaviouralProgramMM_Expression'. From 'behaviouralProgramMM_FunctionCall', the role 'behaviouralProgramMM_FunctionCall' has cardinality 0..*, and from 'behaviouralProgramMM_Expression', the role 'behaviouralProgramMM_Expression21' has cardinality 0..*.
+An association connects 'behaviouralProgramMM_Instantiation' and 'behaviouralProgramMM_Expression'. From 'behaviouralProgramMM_Instantiation', the role 'behaviouralProgramMM_Instantiation' has cardinality 0..*, and from 'behaviouralProgramMM_Expression', the role 'behaviouralProgramMM_Expression23' has cardinality 0..*.
+An association connects 'behaviouralProgramMM_Expression' and 'behaviouralProgramMM_Return'. From 'behaviouralProgramMM_Expression', the role 'behaviouralProgramMM_Expression25' has cardinality 0..*, and from 'behaviouralProgramMM_Return', the role 'behaviouralProgramMM_Return' has cardinality 0..*.
+An association connects 'behaviouralProgramMM_Statement' and 'behaviouralProgramMM_TryCatch'. From 'behaviouralProgramMM_Statement', the role 'behaviouralProgramMM_Statement27' has cardinality 0..*, and from 'behaviouralProgramMM_TryCatch', the role 'behaviouralProgramMM_TryCatch' has cardinality 0..*.
+An association connects 'behaviouralProgramMM_TryCatch' and 'behaviouralProgramMM_Statement'. From 'behaviouralProgramMM_TryCatch', the role 'behaviouralProgramMM_TryCatch29' has cardinality 0..*, and from 'behaviouralProgramMM_Statement', the role 'behaviouralProgramMM_Statement30' has cardinality 0..*.
+An association connects 'behaviouralProgramMM_RaiseException' and 'behaviouralProgramMM_Expression'. From 'behaviouralProgramMM_RaiseException', the role 'behaviouralProgramMM_RaiseException' has cardinality 0..*, and from 'behaviouralProgramMM_Expression', the role 'behaviouralProgramMM_Expression32' has cardinality 0..*.
+An association connects 'behaviouralProgramMM_FunctionCallStatement' and 'behaviouralProgramMM_Expression'. From 'behaviouralProgramMM_FunctionCallStatement', the role 'behaviouralProgramMM_FunctionCallStatement' has cardinality 0..*, and from 'behaviouralProgramMM_Expression', the role 'behaviouralProgramMM_Expression34' has cardinality 0..*.
+An association connects 'behaviouralProgramMM_BinaryOperator' and 'behaviouralProgramMM_Expression'. From 'behaviouralProgramMM_BinaryOperator', the role 'behaviouralProgramMM_BinaryOperator' has cardinality 0..*, and from 'behaviouralProgramMM_Expression', the role 'behaviouralProgramMM_Expression36' has cardinality 0..*.
+An association connects 'behaviouralProgramMM_Expression' and 'behaviouralProgramMM_BinaryOperator'. From 'behaviouralProgramMM_Expression', the role 'behaviouralProgramMM_Expression39' has cardinality 0..*, and from 'behaviouralProgramMM_BinaryOperator', the role 'behaviouralProgramMM_BinaryOperator38' has cardinality 0..*.

@@ -1,0 +1,45 @@
+The domain model 'adlold' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'adlold_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'adlold_Interface' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'signature', which is of type str.
+
+'adlold_Required' represents an important domain concept.
+It does not declare any attributes.
+
+'adlold_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'adlold_AbstractComponent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adlold_Content' represents an important domain concept.
+It has the following attributes: 'expression', which is of type str; 'language', which is of type str.
+
+'adlold_Provided' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'adlold_Required' is a specialization of 'Interface'.
+The class 'adlold_Provided' is a specialization of 'Interface'.
+The class 'adlold_Component' is a specialization of 'AbstractComponent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'adlold_AbstractComponent' and 'adlold_Content'. From 'adlold_AbstractComponent', the role 'adlold_AbstractComponent' has cardinality 0..*, and from 'adlold_Content', the role 'adlold_Content' has cardinality 0..*.
+An association connects 'adlold_AbstractComponent' and 'adlold_Required'. From 'adlold_AbstractComponent', the role 'adlold_AbstractComponent2' has cardinality 0..*, and from 'adlold_Required', the role 'adlold_Required' has cardinality 0..*.
+An association connects 'adlold_AbstractComponent' and 'adlold_Provided'. From 'adlold_AbstractComponent', the role 'adlold_AbstractComponent4' has cardinality 0..*, and from 'adlold_Provided', the role 'adlold_Provided' has cardinality 0..*.
+An association connects 'adlold_Binding' and 'adlold_Interface'. From 'adlold_Binding', the role 'adlold_Binding' has cardinality 0..*, and from 'adlold_Interface', the role 'adlold_Interface' has cardinality 0..*.
+An association connects 'adlold_Interface' and 'adlold_Binding'. From 'adlold_Interface', the role 'adlold_Interface8' has cardinality 0..*, and from 'adlold_Binding', the role 'adlold_Binding7' has cardinality 0..*.
+An association connects 'adlold_Binding' and 'adlold_Interface'. From 'adlold_Binding', the role 'adlold_Binding10' has cardinality 0..*, and from 'adlold_Interface', the role 'adlold_Interface11' has cardinality 0..*.
+An association connects 'adlold_AbstractComponent' and 'adlold_Content'. From 'adlold_AbstractComponent', the role 'adlold_AbstractComponent14' has cardinality 0..*, and from 'adlold_Content', the role 'adlold_Content13' has cardinality 0..*.
+An association connects 'adlold_Component' and 'adlold_Component'. From 'adlold_Component', the role 'adlold_Component' has cardinality 0..*, and from 'adlold_Component', the role 'adlold_Component15' has cardinality 0..*.

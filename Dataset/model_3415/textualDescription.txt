@@ -1,0 +1,66 @@
+The domain model 'fair' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'fair_Department' represents an important domain concept.
+It has the following attributes: 'comments', which is of type str; 'description', which is of type str; 'name', which is of type str.
+
+'fair_Premises' represents an important domain concept.
+It does not declare any attributes.
+
+'fair_Exhibit' represents an important domain concept.
+It has the following attributes: 'number', which is of type int; 'inAuction', which is of type bool; 'name', which is of type str; 'award', which is of type str; 'comments', which is of type str; 'salesOrder', which is of type int.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'fair_YoungPerson' represents an important domain concept.
+It does not declare any attributes.
+
+'fair_Person' represents an important domain concept.
+It has the following attributes: 'street', which is of type str; 'phone', which is of type str; 'lastName', which is of type str; 'firstName', which is of type str; 'salesOrder', which is of type int; 'pin', which is of type str; 'comments', which is of type str; 'city', which is of type str; 'state', which is of type str; 'name', which is of type str; 'zipCode', which is of type str; 'email', which is of type str; 'exhibitorNumber', which is of type int.
+
+'fair_Animal' represents an important domain concept.
+It does not declare any attributes.
+
+'fair_Fair' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comments', which is of type str.
+
+'fair_Lot' represents an important domain concept.
+It has the following attributes: 'comments', which is of type str; 'description', which is of type str; 'name', which is of type str.
+
+'fair_Class' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comments', which is of type str; 'description', which is of type str.
+
+'fair_YouthClub' represents an important domain concept.
+It has the following attributes: 'comments', which is of type str; 'name', which is of type str.
+
+'fair_Division' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str; 'comments', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Award' defines the following possible values: 'Unspecified', 'BlueRibbon', 'GrandChampion', 'RedRibbon', 'WhiteRibbon', 'PinkRibbon', 'ReserveChampion'.
+
+The model also captures inheritance relationships between classes.
+The class 'fair_YoungPerson' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fair_Fair' and 'fair_YouthClub'. From 'fair_Fair', the role 'fair_Fair' has cardinality 0..*, and from 'fair_YouthClub', the role 'fair_YouthClub' has cardinality 0..*.
+An association connects 'fair_Division' and 'fair_Fair'. From 'fair_Division', the role 'fair_Division' has cardinality 0..*, and from 'fair_Fair', the role 'fair_Fair2' has cardinality 0..*.
+An association connects 'fair_Premises' and 'fair_Fair'. From 'fair_Premises', the role 'fair_Premises' has cardinality 0..*, and from 'fair_Fair', the role 'fair_Fair4' has cardinality 0..*.
+An association connects 'fair_Person' and 'fair_Fair'. From 'fair_Person', the role 'fair_Person' has cardinality 0..*, and from 'fair_Fair', the role 'fair_Fair6' has cardinality 0..*.
+An association connects 'fair_Exhibit' and 'fair_Animal'. From 'fair_Exhibit', the role 'fair_Exhibit' has cardinality 0..*, and from 'fair_Animal', the role 'fair_Animal' has cardinality 0..*.
+An association connects 'fair_Exhibit' and 'fair_Person'. From 'fair_Exhibit', the role 'fair_Exhibit9' has cardinality 0..*, and from 'fair_Person', the role 'fair_Person10' has cardinality 0..*.
+An association connects 'fair_Lot' and 'fair_Exhibit'. From 'fair_Lot', the role 'Lot' has cardinality 0..*, and from 'fair_Exhibit', the role 'exhibits' has cardinality 0..*.
+An association connects 'fair_YouthClub' and 'fair_Person'. From 'fair_YouthClub', the role 'fair_YouthClub13' has cardinality 0..*, and from 'fair_Person', the role 'fair_Person14' has cardinality 0..*.
+An association connects 'fair_Department' and 'fair_Division'. From 'fair_Department', the role 'Department' has cardinality 0..*, and from 'fair_Division', the role 'division' has cardinality 0..*.
+An association connects 'fair_Class' and 'fair_Department'. From 'fair_Class', the role 'Class' has cardinality 0..*, and from 'fair_Department', the role 'department' has cardinality 0..*.
+An association connects 'fair_Person' and 'fair_Department'. From 'fair_Person', the role 'fair_Person18' has cardinality 0..*, and from 'fair_Department', the role 'fair_Department' has cardinality 0..*.
+An association connects 'fair_Department' and 'fair_Division'. From 'fair_Department', the role 'departments' has cardinality 0..*, and from 'fair_Division', the role 'Division' has cardinality 0..*.
+An association connects 'fair_Lot' and 'fair_Class'. From 'fair_Lot', the role 'Lot21' has cardinality 0..*, and from 'fair_Class', the role 'class' has cardinality 0..*.
+An association connects 'fair_Class' and 'fair_Person'. From 'fair_Class', the role 'fair_Class' has cardinality 0..*, and from 'fair_Person', the role 'fair_Person23' has cardinality 0..*.
+An association connects 'fair_Class' and 'fair_Department'. From 'fair_Class', the role 'classes' has cardinality 0..*, and from 'fair_Department', the role 'Department25' has cardinality 0..*.
+An association connects 'fair_Exhibit' and 'fair_Lot'. From 'fair_Exhibit', the role 'Exhibit' has cardinality 0..*, and from 'fair_Lot', the role 'lot' has cardinality 0..*.
+An association connects 'fair_Class' and 'fair_Lot'. From 'fair_Class', the role 'Class28' has cardinality 0..*, and from 'fair_Lot', the role 'lots' has cardinality 0..*.
+An association connects 'fair_YoungPerson' and 'fair_Person'. From 'fair_YoungPerson', the role 'fair_YoungPerson' has cardinality 0..*, and from 'fair_Person', the role 'fair_Person30' has cardinality 0..*.
+An association connects 'fair_YouthClub' and 'fair_YoungPerson'. From 'fair_YouthClub', the role 'fair_YouthClub33' has cardinality 0..*, and from 'fair_YoungPerson', the role 'fair_YoungPerson32' has cardinality 0..*.

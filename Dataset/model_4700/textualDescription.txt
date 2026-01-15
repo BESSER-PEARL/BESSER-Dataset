@@ -1,0 +1,200 @@
+The domain model 'myDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 33 main class(es).
+
+'myDsl_This' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_ArithOpTimes' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_BoolOpOr' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_ArithOpDivide' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_BoolOpAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_CmpOpLess' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Assign' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_ArithOpMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_BObject' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_ArithOpRemainder' represents an important domain concept.
+It does not declare any attributes.
+
+'TopLevelCmd' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_If' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_CmpOpEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Skip' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Project' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Var' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_File' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_CmpOpUnequal' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_App' represents an important domain concept.
+It does not declare any attributes.
+
+'Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Def' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Let' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Seq' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Fun' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Field' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Int' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'myDsl_Bool' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'myDsl_Copy' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_ArithOpPlus' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_TopLevelCmd' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_With' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Not' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'myDsl_Def' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_App' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_App' is a specialization of 'Expr'.
+The class 'myDsl_Var' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_Var' is a specialization of 'Expr'.
+The class 'myDsl_This' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_This' is a specialization of 'Expr'.
+The class 'myDsl_Bool' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_Bool' is a specialization of 'Expr'.
+The class 'myDsl_Int' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_Int' is a specialization of 'Expr'.
+The class 'myDsl_Skip' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_Skip' is a specialization of 'Expr'.
+The class 'myDsl_Project' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_Project' is a specialization of 'Expr'.
+The class 'myDsl_BObject' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_BObject' is a specialization of 'Expr'.
+The class 'myDsl_Copy' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_Copy' is a specialization of 'Expr'.
+The class 'myDsl_With' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_With' is a specialization of 'Expr'.
+The class 'myDsl_Not' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_Not' is a specialization of 'Expr'.
+The class 'myDsl_If' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_If' is a specialization of 'Expr'.
+The class 'myDsl_Let' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_Let' is a specialization of 'Expr'.
+The class 'myDsl_Fun' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_Fun' is a specialization of 'Expr'.
+The class 'myDsl_Assign' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_Assign' is a specialization of 'Expr'.
+The class 'myDsl_ArithOpPlus' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_ArithOpPlus' is a specialization of 'Expr'.
+The class 'myDsl_ArithOpMinus' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_ArithOpMinus' is a specialization of 'Expr'.
+The class 'myDsl_ArithOpTimes' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_ArithOpTimes' is a specialization of 'Expr'.
+The class 'myDsl_ArithOpDivide' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_ArithOpDivide' is a specialization of 'Expr'.
+The class 'myDsl_ArithOpRemainder' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_ArithOpRemainder' is a specialization of 'Expr'.
+The class 'myDsl_BoolOpAnd' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_BoolOpAnd' is a specialization of 'Expr'.
+The class 'myDsl_BoolOpOr' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_BoolOpOr' is a specialization of 'Expr'.
+The class 'myDsl_Seq' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_Seq' is a specialization of 'Expr'.
+The class 'myDsl_CmpOpEqual' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_CmpOpEqual' is a specialization of 'Expr'.
+The class 'myDsl_CmpOpUnequal' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_CmpOpUnequal' is a specialization of 'Expr'.
+The class 'myDsl_CmpOpLess' is a specialization of 'TopLevelCmd'.
+The class 'myDsl_CmpOpLess' is a specialization of 'Expr'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl_TopLevelCmd' and 'myDsl_File'. From 'myDsl_TopLevelCmd', the role 'myDsl_TopLevelCmd' has cardinality 0..*, and from 'myDsl_File', the role 'myDsl_File' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_Def'. From 'myDsl_Expr', the role 'myDsl_Expr' has cardinality 0..*, and from 'myDsl_Def', the role 'myDsl_Def' has cardinality 0..*.
+An association connects 'myDsl_App' and 'myDsl_Expr'. From 'myDsl_App', the role 'myDsl_App' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr3' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_App'. From 'myDsl_Expr', the role 'myDsl_Expr6' has cardinality 0..*, and from 'myDsl_App', the role 'myDsl_App5' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_Project'. From 'myDsl_Expr', the role 'myDsl_Expr8' has cardinality 0..*, and from 'myDsl_Project', the role 'myDsl_Project' has cardinality 0..*.
+An association connects 'myDsl_Field' and 'myDsl_BObject'. From 'myDsl_Field', the role 'myDsl_Field' has cardinality 0..*, and from 'myDsl_BObject', the role 'myDsl_BObject' has cardinality 0..*.
+An association connects 'myDsl_Copy' and 'myDsl_Expr'. From 'myDsl_Copy', the role 'myDsl_Copy' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr11' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_With'. From 'myDsl_Expr', the role 'myDsl_Expr13' has cardinality 0..*, and from 'myDsl_With', the role 'myDsl_With' has cardinality 0..*.
+An association connects 'myDsl_With' and 'myDsl_Expr'. From 'myDsl_With', the role 'myDsl_With15' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr16' has cardinality 0..*.
+An association connects 'myDsl_Not' and 'myDsl_Expr'. From 'myDsl_Not', the role 'myDsl_Not' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr18' has cardinality 0..*.
+An association connects 'myDsl_If' and 'myDsl_Expr'. From 'myDsl_If', the role 'myDsl_If' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr20' has cardinality 0..*.
+An association connects 'myDsl_If' and 'myDsl_Expr'. From 'myDsl_If', the role 'myDsl_If22' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr23' has cardinality 0..*.
+An association connects 'myDsl_If' and 'myDsl_Expr'. From 'myDsl_If', the role 'myDsl_If25' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr26' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_Let'. From 'myDsl_Expr', the role 'myDsl_Expr28' has cardinality 0..*, and from 'myDsl_Let', the role 'myDsl_Let' has cardinality 0..*.
+An association connects 'myDsl_Let' and 'myDsl_Expr'. From 'myDsl_Let', the role 'myDsl_Let30' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr31' has cardinality 0..*.
+An association connects 'myDsl_Fun' and 'myDsl_Expr'. From 'myDsl_Fun', the role 'myDsl_Fun' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr33' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_Assign'. From 'myDsl_Expr', the role 'myDsl_Expr35' has cardinality 0..*, and from 'myDsl_Assign', the role 'myDsl_Assign' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_Assign'. From 'myDsl_Expr', the role 'myDsl_Expr38' has cardinality 0..*, and from 'myDsl_Assign', the role 'myDsl_Assign37' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_ArithOpPlus'. From 'myDsl_Expr', the role 'myDsl_Expr40' has cardinality 0..*, and from 'myDsl_ArithOpPlus', the role 'myDsl_ArithOpPlus' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_ArithOpPlus'. From 'myDsl_Expr', the role 'myDsl_Expr43' has cardinality 0..*, and from 'myDsl_ArithOpPlus', the role 'myDsl_ArithOpPlus42' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_ArithOpMinus'. From 'myDsl_Expr', the role 'myDsl_Expr45' has cardinality 0..*, and from 'myDsl_ArithOpMinus', the role 'myDsl_ArithOpMinus' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_ArithOpMinus'. From 'myDsl_Expr', the role 'myDsl_Expr48' has cardinality 0..*, and from 'myDsl_ArithOpMinus', the role 'myDsl_ArithOpMinus47' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_ArithOpTimes'. From 'myDsl_Expr', the role 'myDsl_Expr50' has cardinality 0..*, and from 'myDsl_ArithOpTimes', the role 'myDsl_ArithOpTimes' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_ArithOpTimes'. From 'myDsl_Expr', the role 'myDsl_Expr53' has cardinality 0..*, and from 'myDsl_ArithOpTimes', the role 'myDsl_ArithOpTimes52' has cardinality 0..*.
+An association connects 'myDsl_ArithOpDivide' and 'myDsl_Expr'. From 'myDsl_ArithOpDivide', the role 'myDsl_ArithOpDivide' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr55' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_ArithOpDivide'. From 'myDsl_Expr', the role 'myDsl_Expr58' has cardinality 0..*, and from 'myDsl_ArithOpDivide', the role 'myDsl_ArithOpDivide57' has cardinality 0..*.
+An association connects 'myDsl_ArithOpRemainder' and 'myDsl_Expr'. From 'myDsl_ArithOpRemainder', the role 'myDsl_ArithOpRemainder' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr60' has cardinality 0..*.
+An association connects 'myDsl_ArithOpRemainder' and 'myDsl_Expr'. From 'myDsl_ArithOpRemainder', the role 'myDsl_ArithOpRemainder62' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr63' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_BoolOpAnd'. From 'myDsl_Expr', the role 'myDsl_Expr65' has cardinality 0..*, and from 'myDsl_BoolOpAnd', the role 'myDsl_BoolOpAnd' has cardinality 0..*.
+An association connects 'myDsl_BoolOpAnd' and 'myDsl_Expr'. From 'myDsl_BoolOpAnd', the role 'myDsl_BoolOpAnd67' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr68' has cardinality 0..*.
+An association connects 'myDsl_BoolOpOr' and 'myDsl_Expr'. From 'myDsl_BoolOpOr', the role 'myDsl_BoolOpOr' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr70' has cardinality 0..*.
+An association connects 'myDsl_BoolOpOr' and 'myDsl_Expr'. From 'myDsl_BoolOpOr', the role 'myDsl_BoolOpOr72' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr73' has cardinality 0..*.
+An association connects 'myDsl_Seq' and 'myDsl_Expr'. From 'myDsl_Seq', the role 'myDsl_Seq' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr75' has cardinality 0..*.
+An association connects 'myDsl_Seq' and 'myDsl_Expr'. From 'myDsl_Seq', the role 'myDsl_Seq77' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr78' has cardinality 0..*.
+An association connects 'myDsl_CmpOpEqual' and 'myDsl_Expr'. From 'myDsl_CmpOpEqual', the role 'myDsl_CmpOpEqual' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr80' has cardinality 0..*.
+An association connects 'myDsl_CmpOpEqual' and 'myDsl_Expr'. From 'myDsl_CmpOpEqual', the role 'myDsl_CmpOpEqual82' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr83' has cardinality 0..*.
+An association connects 'myDsl_CmpOpUnequal' and 'myDsl_Expr'. From 'myDsl_CmpOpUnequal', the role 'myDsl_CmpOpUnequal' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr85' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_CmpOpUnequal'. From 'myDsl_Expr', the role 'myDsl_Expr88' has cardinality 0..*, and from 'myDsl_CmpOpUnequal', the role 'myDsl_CmpOpUnequal87' has cardinality 0..*.
+An association connects 'myDsl_CmpOpLess' and 'myDsl_Expr'. From 'myDsl_CmpOpLess', the role 'myDsl_CmpOpLess' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr90' has cardinality 0..*.
+An association connects 'myDsl_CmpOpLess' and 'myDsl_Expr'. From 'myDsl_CmpOpLess', the role 'myDsl_CmpOpLess92' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr93' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_Field'. From 'myDsl_Expr', the role 'myDsl_Expr96' has cardinality 0..*, and from 'myDsl_Field', the role 'myDsl_Field95' has cardinality 0..*.

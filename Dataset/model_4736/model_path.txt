@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ModelEngineeringBooks/MDSEBook/Chapter_7_AS/mdse.book.swml/model/sWML.ecore

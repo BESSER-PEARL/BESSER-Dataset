@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gemoc/ale-lang-compiler/archive/plzoo-workspace/testtypesystem/src/testtypesystem.ecore

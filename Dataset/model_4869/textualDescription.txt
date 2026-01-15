@@ -1,0 +1,54 @@
+The domain model 'FlowDesigner' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'FlowDesigner_Target' represents an important domain concept.
+It does not declare any attributes.
+
+'FlowDesigner_Event' represents an important domain concept.
+It has the following attributes: 'guard', which is of type str; 'event', which is of type str; 'action', which is of type str.
+
+'FlowDesigner_NamedState' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'activity', which is of type str; 'exit', which is of type str; 'entry', which is of type str.
+
+'FlowDesigner_ViewState' represents an important domain concept.
+It has one attribute: 'view', which is of type str.
+
+'FlowDesigner_ActionState' represents an important domain concept.
+It does not declare any attributes.
+
+'Source' represents an important domain concept.
+It does not declare any attributes.
+
+'Target' represents an important domain concept.
+It does not declare any attributes.
+
+'FlowDesigner_InitialState' represents an important domain concept.
+It has one attribute: 'initialize', which is of type str.
+
+'FlowDesigner_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'FlowDesigner_Source' represents an important domain concept.
+It does not declare any attributes.
+
+'FlowDesigner_FinalState' represents an important domain concept.
+It has one attribute: 'finalize', which is of type str.
+
+'NamedState' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'FlowDesigner_InitialState' is a specialization of 'Source'.
+The class 'FlowDesigner_FinalState' is a specialization of 'Target'.
+The class 'FlowDesigner_ActionState' is a specialization of 'NamedState'.
+The class 'FlowDesigner_ViewState' is a specialization of 'NamedState'.
+The class 'FlowDesigner_NamedState' is a specialization of 'Source'.
+The class 'FlowDesigner_NamedState' is a specialization of 'Target'.
+
+Relationships between classes are modeled using associations.
+An association connects 'FlowDesigner_Target' and 'FlowDesigner_Event'. From 'FlowDesigner_Target', the role 'FlowDesigner_Target' has cardinality 0..*, and from 'FlowDesigner_Event', the role 'FlowDesigner_Event' has cardinality 0..*.
+An association connects 'FlowDesigner_Event' and 'FlowDesigner_Source'. From 'FlowDesigner_Event', the role 'FlowDesigner_Event2' has cardinality 0..*, and from 'FlowDesigner_Source', the role 'FlowDesigner_Source' has cardinality 0..*.
+An association connects 'FlowDesigner_InitialState' and 'FlowDesigner_Flow'. From 'FlowDesigner_InitialState', the role 'FlowDesigner_InitialState' has cardinality 0..*, and from 'FlowDesigner_Flow', the role 'FlowDesigner_Flow' has cardinality 0..*.
+An association connects 'FlowDesigner_NamedState' and 'FlowDesigner_Flow'. From 'FlowDesigner_NamedState', the role 'FlowDesigner_NamedState' has cardinality 0..*, and from 'FlowDesigner_Flow', the role 'FlowDesigner_Flow5' has cardinality 0..*.
+An association connects 'FlowDesigner_FinalState' and 'FlowDesigner_Flow'. From 'FlowDesigner_FinalState', the role 'FlowDesigner_FinalState' has cardinality 0..*, and from 'FlowDesigner_Flow', the role 'FlowDesigner_Flow7' has cardinality 0..*.

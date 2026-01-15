@@ -1,0 +1,513 @@
+The domain model 'build' describes the core structural elements and their relationships within the system.
+
+The model defines 128 main class(es).
+
+'build_runtime_UpToDateExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'IMaterializer' represents an important domain concept.
+It does not declare any attributes.
+
+'build_command_NewInstanceAdvice' represents an important domain concept.
+It has one attribute: 'clazz', which is of type str.
+
+'build_materializer_IMaterializer' represents an important domain concept.
+It does not declare any attributes.
+
+'IResolution' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IResultingParts' represents an important domain concept.
+It does not declare any attributes.
+
+'context_build_IRequiredCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IBuildUnit' represents an important domain concept.
+It has the following attributes: 'instanceLocation', which is of type str; 'circularityAllowed', which is of type bool; 'filter', which is of type str.
+
+'build_IClosurePart' represents an important domain concept.
+It does not declare any attributes.
+
+'ContextNodeSelector' represents an important domain concept.
+It does not declare any attributes.
+
+'MetaDataTranslatorFactoryExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'build_runtime_MetaDataTranslatorFactoryExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'SinglePropertyFilter' represents an important domain concept.
+It does not declare any attributes.
+
+'build_command_VersionRangeAdvice' represents an important domain concept.
+It has one attribute: 'versionRange', which is of type str.
+
+'UpToDateExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'MaterializerExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'IExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'FilterGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'resolver_DefaultResolver' represents an important domain concept.
+It does not declare any attributes.
+
+'build_runtime_MaterializerExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'build_context_IBuildContext' represents an important domain concept.
+It does not declare any attributes.
+
+'build_properties_IFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'build_properties_Literal' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'build_PropertyScope' represents an important domain concept.
+It has one attribute: 'unsetProperties', which is of type str.
+
+'build_resolver_IResolver' represents an important domain concept.
+It has the following attributes: 'filter', which is of type str; 'failOnError', which is of type bool.
+
+'build_resolver_BestChoice' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IProvidedCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'build_filter_SinglePropertyFilter' represents an important domain concept.
+It has one attribute: 'property', which is of type str.
+
+'build_command_IUnitRequest' represents an important domain concept.
+It has the following attributes: 'range', which is of type str; 'name', which is of type str; 'nameSpace', which is of type str.
+
+'build_filter_OrFilter' represents an important domain concept.
+It does not declare any attributes.
+
+'build_runtime_IExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'build_filter_RegexpFilter' represents an important domain concept.
+It does not declare any attributes.
+
+'AdviceGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'build_materializer_WorkspaceMaterializer' represents an important domain concept.
+It does not declare any attributes.
+
+'IPrerequisites' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IUpToDatePolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'resolver_IEFSBasedAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'build_resolver_EFSResolver' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IRequirement' represents an important domain concept.
+It has the following attributes: 'memberName', which is of type str; 'includePattern', which is of type str; 'alias', which is of type str; 'filter', which is of type str; 'excludePattern', which is of type str; 'contributor', which is of type bool.
+
+'build_command_BooleanAdvice' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'EFSResolver' represents an important domain concept.
+It does not declare any attributes.
+
+'build_runtime_ResolverExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'build_filter_OSGiBasedFilter' represents an important domain concept.
+It does not declare any attributes.
+
+'build_properties_ToUpper' represents an important domain concept.
+It does not declare any attributes.
+
+'build_resolver_FirstChoice' represents an important domain concept.
+It does not declare any attributes.
+
+'IHumanSelectable' represents an important domain concept.
+It does not declare any attributes.
+
+'build_properties_toLower' represents an important domain concept.
+It does not declare any attributes.
+
+'IBuildPart' represents an important domain concept.
+It does not declare any attributes.
+
+'build_resolver_IResolutionContext' represents an important domain concept.
+It does not declare any attributes.
+
+'build_properties_replace' represents an important domain concept.
+It does not declare any attributes.
+
+'build_properties_Split' represents an important domain concept.
+It has the following attributes: 'pattern', which is of type str; 'limit', which is of type int; 'style', which is of type str.
+
+'ResolverExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'IActionResult' represents an important domain concept.
+It does not declare any attributes.
+
+'build_resolver_ResolverGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'runtime_build_IUpToDatePolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'build_command_VersionAdvice' represents an important domain concept.
+It has one attribute: 'version', which is of type str.
+
+'IUnitRequest' represents an important domain concept.
+It does not declare any attributes.
+
+'ResolutionOptions' represents an important domain concept.
+It does not declare any attributes.
+
+'build_filter_FilterGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'build_PartCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'build_resolver_ILocation' represents an important domain concept.
+It does not declare any attributes.
+
+'build_PartRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'build_command_ImportCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'build_materializer_FileSystemMaterializer' represents an important domain concept.
+It does not declare any attributes.
+
+'build_properties_Match' represents an important domain concept.
+It has the following attributes: 'pattern', which is of type str; 'replacement', which is of type str; 'quotePattern', which is of type bool.
+
+'build_resolver_DefaultResolver' represents an important domain concept.
+It does not declare any attributes.
+
+'IRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'IResolver' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IGenericUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'build_resolver_IResourceMap' represents an important domain concept.
+It does not declare any attributes.
+
+'build_ICapability' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'version', which is of type str; 'namespace', which is of type str.
+
+'build_resolver_IMetaDataTranslatorFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IActionResult' represents an important domain concept.
+It does not declare any attributes.
+
+'build_resolver_WorspaceResolver' represents an important domain concept.
+It does not declare any attributes.
+
+'build_command_StringAdvice' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'context_build_IBuildUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'BuildUnitCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'build_runtime_IHumanSelectable' represents an important domain concept.
+It has the following attributes: 'typeName', which is of type str; 'label', which is of type str.
+
+'build_filter_SimplePatternFIlter' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IArtifactsPart' represents an important domain concept.
+It does not declare any attributes.
+
+'build_command_IAdvise' represents an important domain concept.
+It does not declare any attributes.
+
+'IAdvise' represents an important domain concept.
+It does not declare any attributes.
+
+'IClosure' represents an important domain concept.
+It does not declare any attributes.
+
+'build_materializer_P2Materializer' represents an important domain concept.
+It does not declare any attributes.
+
+'context_build_ICapability' represents an important domain concept.
+It does not declare any attributes.
+
+'IExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'build_resolver_P2Resolver' represents an important domain concept.
+It does not declare any attributes.
+
+'build_resolver_IEFSBasedAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'build_command_AdviceGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'IGenericUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'build_Requirement' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IRequiredCapability' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'filter', which is of type str; 'namespace', which is of type str; 'range', which is of type str.
+
+'ImportOptions' represents an important domain concept.
+It does not declare any attributes.
+
+'build_properties_IExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IBuildPart' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'build_command_UnsetAdvice' represents an important domain concept.
+It does not declare any attributes.
+
+'IMetaDataTranslatorFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'ResolverGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'IFilter' represents an important domain concept.
+It does not declare any attributes.
+
+'Match' represents an important domain concept.
+It does not declare any attributes.
+
+'build_filter_IFilter' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IClosure' represents an important domain concept.
+It has one attribute: 'executeOnce', which is of type bool.
+
+'build_context_ImportOptions' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'expand', which is of type bool; 'unpack', which is of type bool; 'conflictResolution', which is of type str; 'suffix', which is of type str; 'resourcePath', which is of type str.
+
+'build_command_PropertyAdvice' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IPrerequisites' represents an important domain concept.
+It has the following attributes: 'rebasePath', which is of type str; 'alias', which is of type str.
+
+'build_StringProperties' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'immutable', which is of type bool; 'value', which is of type str.
+
+'build_filter_AndFilter' represents an important domain concept.
+It does not declare any attributes.
+
+'build_command_FilterAdvice' represents an important domain concept.
+It has one attribute: 'filterOp', which is of type str.
+
+'build_IProducedPart' represents an important domain concept.
+It does not declare any attributes.
+
+'build_command_BuildUnitCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'IMetaDataTranslator' represents an important domain concept.
+It does not declare any attributes.
+
+'IFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'ICapability' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IPartGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'command_build_PropertyScope' represents an important domain concept.
+It does not declare any attributes.
+
+'build_resolver_IMetaDataTranslator' represents an important domain concept.
+It does not declare any attributes.
+
+'build_context_IResolution' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IActionPart' represents an important domain concept.
+It does not declare any attributes.
+
+'build_context_ResolutionOptions' represents an important domain concept.
+It has the following attributes: 'includeParts', which is of type str; 'overlayPath', which is of type str; 'revision', which is of type str; 'excludeParts', which is of type str; 'filterGroups', which is of type bool; 'prune', which is of type bool; 'resolverFilter', which is of type str; 'mutable', which is of type str; 'timestamp', which is of type str; 'source', which is of type str; 'branchTagPath', which is of type str.
+
+'build_properties_PropertyRef' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyScope' represents an important domain concept.
+It does not declare any attributes.
+
+'build_command_ContextNodeSelector' represents an important domain concept.
+It does not declare any attributes.
+
+'build_command_InvokeCommand' represents an important domain concept.
+It has one attribute: 'action', which is of type str.
+
+'build_runtime_BuildRuntime' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IPathGroup' represents an important domain concept.
+It has the following attributes: 'basePath', which is of type str; 'paths', which is of type str.
+
+'build_properties_Format' represents an important domain concept.
+It has one attribute: 'formatString', which is of type str.
+
+'build_ResultingPathGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'IClosurePart' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Disposition' defines the following possible values: 'desired', 'required', 'unbiassed', 'rejected', 'undesired'.
+The enumeration 'SplitStyle' defines the following possible values: 'unquoted', 'quoted', 'groups'.
+The enumeration 'FilterAdviceOperation' defines the following possible values: 'AND', 'REPLACE', 'OR'.
+The enumeration 'ConflictResolution' defines the following possible values: 'keep', 'update', 'fail', 'replace'.
+
+The model also captures inheritance relationships between classes.
+The class 'build_IBuildUnit' is a specialization of 'ICapability'.
+The class 'build_IBuildUnit' is a specialization of 'PropertyScope'.
+The class 'build_IBuildUnit' is a specialization of 'IGenericUnit'.
+The class 'build_IArtifactsPart' is a specialization of 'IBuildPart'.
+The class 'build_IActionPart' is a specialization of 'IClosurePart'.
+The class 'build_IClosure' is a specialization of 'IPrerequisites'.
+The class 'build_IClosure' is a specialization of 'PropertyScope'.
+The class 'build_IPrerequisites' is a specialization of 'IBuildPart'.
+The class 'build_IPartGroup' is a specialization of 'IClosurePart'.
+The class 'build_PartRequirement' is a specialization of 'IRequirement'.
+The class 'build_IProducedPart' is a specialization of 'IClosurePart'.
+The class 'build_IResultingParts' is a specialization of 'IActionResult'.
+The class 'build_IClosurePart' is a specialization of 'IClosure'.
+The class 'build_IClosurePart' is a specialization of 'IBuildPart'.
+The class 'build_Requirement' is a specialization of 'IRequirement'.
+The class 'build_ResultingPathGroup' is a specialization of 'IActionResult'.
+The class 'build_PartCapability' is a specialization of 'ICapability'.
+The class 'build_runtime_UpToDateExtension' is a specialization of 'IHumanSelectable'.
+The class 'build_runtime_IHumanSelectable' is a specialization of 'IExtension'.
+The class 'build_runtime_MaterializerExtension' is a specialization of 'IHumanSelectable'.
+The class 'build_runtime_MetaDataTranslatorFactoryExtension' is a specialization of 'IExtension'.
+The class 'build_runtime_ResolverExtension' is a specialization of 'IHumanSelectable'.
+The class 'build_resolver_ResolverGroup' is a specialization of 'IResolver'.
+The class 'build_resolver_FirstChoice' is a specialization of 'ResolverGroup'.
+The class 'build_resolver_BestChoice' is a specialization of 'ResolverGroup'.
+The class 'build_resolver_DefaultResolver' is a specialization of 'IResolver'.
+The class 'build_resolver_WorspaceResolver' is a specialization of 'EFSResolver'.
+The class 'build_resolver_EFSResolver' is a specialization of 'resolver_DefaultResolver'.
+The class 'build_resolver_EFSResolver' is a specialization of 'resolver_IEFSBasedAccess'.
+The class 'build_resolver_P2Resolver' is a specialization of 'IResolver'.
+The class 'build_materializer_FileSystemMaterializer' is a specialization of 'IMaterializer'.
+The class 'build_materializer_P2Materializer' is a specialization of 'IMaterializer'.
+The class 'build_materializer_WorkspaceMaterializer' is a specialization of 'IMaterializer'.
+The class 'build_properties_Literal' is a specialization of 'IExpr'.
+The class 'build_properties_IFunction' is a specialization of 'IExpr'.
+The class 'build_properties_PropertyRef' is a specialization of 'IFunction'.
+The class 'build_properties_Format' is a specialization of 'IFunction'.
+The class 'build_properties_ToUpper' is a specialization of 'IFunction'.
+The class 'build_properties_toLower' is a specialization of 'IFunction'.
+The class 'build_properties_replace' is a specialization of 'IFunction'.
+The class 'build_properties_Split' is a specialization of 'IFunction'.
+The class 'build_command_ImportCommand' is a specialization of 'BuildUnitCommand'.
+The class 'build_command_PropertyAdvice' is a specialization of 'IAdvise'.
+The class 'build_command_StringAdvice' is a specialization of 'IAdvise'.
+The class 'build_command_VersionAdvice' is a specialization of 'IAdvise'.
+The class 'build_command_VersionRangeAdvice' is a specialization of 'IAdvise'.
+The class 'build_command_BooleanAdvice' is a specialization of 'IAdvise'.
+The class 'build_command_UnsetAdvice' is a specialization of 'IAdvise'.
+The class 'build_command_NewInstanceAdvice' is a specialization of 'AdviceGroup'.
+The class 'build_command_InvokeCommand' is a specialization of 'BuildUnitCommand'.
+The class 'build_command_FilterAdvice' is a specialization of 'IAdvise'.
+The class 'build_filter_OSGiBasedFilter' is a specialization of 'IFilter'.
+The class 'build_filter_AndFilter' is a specialization of 'FilterGroup'.
+The class 'build_filter_OrFilter' is a specialization of 'FilterGroup'.
+The class 'build_filter_FilterGroup' is a specialization of 'IFilter'.
+The class 'build_filter_RegexpFilter' is a specialization of 'SinglePropertyFilter'.
+The class 'build_filter_SinglePropertyFilter' is a specialization of 'IFilter'.
+The class 'build_filter_SimplePatternFIlter' is a specialization of 'SinglePropertyFilter'.
+
+Relationships between classes are modeled using associations.
+An association connects 'build_IBuildUnit' and 'build_IBuildPart'. From 'build_IBuildUnit', the role 'buildUnit' has cardinality 0..*, and from 'build_IBuildPart', the role 'IBuildPart' has cardinality 0..*.
+An association connects 'build_IBuildUnit' and 'build_IRequiredCapability'. From 'build_IBuildUnit', the role 'build_IBuildUnit' has cardinality 0..*, and from 'build_IRequiredCapability', the role 'build_IRequiredCapability' has cardinality 0..*.
+An association connects 'build_IRequiredCapability' and 'build_IBuildUnit'. From 'build_IRequiredCapability', the role 'build_IRequiredCapability4' has cardinality 0..*, and from 'build_IBuildUnit', the role 'build_IBuildUnit3' has cardinality 0..*.
+An association connects 'build_IBuildUnit' and 'build_IRequiredCapability'. From 'build_IBuildUnit', the role 'build_IBuildUnit6' has cardinality 0..*, and from 'build_IRequiredCapability', the role 'build_IRequiredCapability7' has cardinality 0..*.
+An association connects 'build_ICapability' and 'build_IBuildUnit'. From 'build_ICapability', the role 'build_ICapability' has cardinality 0..*, and from 'build_IBuildUnit', the role 'build_IBuildUnit9' has cardinality 0..*.
+An association connects 'build_IBuildUnit' and 'build_IBuildUnit'. From 'build_IBuildUnit', the role 'build_IBuildUnit10' has cardinality 0..*, and from 'build_IBuildUnit', the role 'build_IBuildUnit12' has cardinality 0..*.
+An association connects 'build_PartCapability' and 'build_IBuildUnit'. From 'build_PartCapability', the role 'build_PartCapability' has cardinality 0..*, and from 'build_IBuildUnit', the role 'build_IBuildUnit14' has cardinality 0..*.
+An association connects 'build_PartCapability' and 'build_IBuildPart'. From 'build_PartCapability', the role 'PartCapability' has cardinality 0..*, and from 'build_IBuildPart', the role 'buildPart' has cardinality 0..*.
+An association connects 'build_IBuildUnit' and 'build_IBuildPart'. From 'build_IBuildUnit', the role 'IBuildUnit' has cardinality 0..*, and from 'build_IBuildPart', the role 'parts' has cardinality 0..*.
+An association connects 'build_IArtifactsPart' and 'build_IPathGroup'. From 'build_IArtifactsPart', the role 'build_IArtifactsPart' has cardinality 0..*, and from 'build_IPathGroup', the role 'build_IPathGroup' has cardinality 0..*.
+An association connects 'build_IActionPart' and 'build_IActionResult'. From 'build_IActionPart', the role 'producedBy' has cardinality 0..*, and from 'build_IActionResult', the role 'IActionResult' has cardinality 0..*.
+An association connects 'build_IUpToDatePolicy' and 'build_IActionPart'. From 'build_IUpToDatePolicy', the role 'build_IUpToDatePolicy' has cardinality 0..*, and from 'build_IActionPart', the role 'build_IActionPart' has cardinality 0..*.
+An association connects 'IAdvise' and 'build_IClosure'. From 'IAdvise', the role 'IAdvise' has cardinality 0..*, and from 'build_IClosure', the role 'build_IClosure' has cardinality 0..*.
+An association connects 'build_IRequirement' and 'build_IPrerequisites'. From 'build_IRequirement', the role 'build_IRequirement' has cardinality 0..*, and from 'build_IPrerequisites', the role 'build_IPrerequisites' has cardinality 0..*.
+An association connects 'build_PartRequirement' and 'build_IBuildPart'. From 'build_PartRequirement', the role 'build_PartRequirement' has cardinality 0..*, and from 'build_IBuildPart', the role 'build_IBuildPart' has cardinality 0..*.
+An association connects 'build_IActionResult' and 'build_IActionPart'. From 'build_IActionResult', the role 'produces' has cardinality 0..*, and from 'build_IActionPart', the role 'IActionPart' has cardinality 0..*.
+An association connects 'build_IPathGroup' and 'build_IProducedPart'. From 'build_IPathGroup', the role 'build_IPathGroup25' has cardinality 0..*, and from 'build_IProducedPart', the role 'build_IProducedPart' has cardinality 0..*.
+An association connects 'build_IProducedPart' and 'build_IResultingParts'. From 'build_IProducedPart', the role 'producedParts' has cardinality 0..*, and from 'build_IResultingParts', the role 'IResultingParts' has cardinality 0..*.
+An association connects 'build_IProducedPart' and 'build_IResultingParts'. From 'build_IProducedPart', the role 'IProducedPart' has cardinality 0..*, and from 'build_IResultingParts', the role 'producedBy28' has cardinality 0..*.
+An association connects 'build_Requirement' and 'build_IRequiredCapability'. From 'build_Requirement', the role 'build_Requirement' has cardinality 0..*, and from 'build_IRequiredCapability', the role 'build_IRequiredCapability30' has cardinality 0..*.
+An association connects 'build_IPathGroup' and 'build_ResultingPathGroup'. From 'build_IPathGroup', the role 'build_IPathGroup32' has cardinality 0..*, and from 'build_ResultingPathGroup', the role 'build_ResultingPathGroup' has cardinality 0..*.
+An association connects 'build_IBuildPart' and 'build_PartCapability'. From 'build_IBuildPart', the role 'IBuildPart34' has cardinality 0..*, and from 'build_PartCapability', the role 'publishedCapabilities' has cardinality 0..*.
+An association connects 'build_PropertyScope' and 'build_StringProperties'. From 'build_PropertyScope', the role 'build_PropertyScope' has cardinality 0..*, and from 'build_StringProperties', the role 'build_StringProperties' has cardinality 0..*.
+An association connects 'build_IGenericUnit' and 'build_IPathGroup'. From 'build_IGenericUnit', the role 'build_IGenericUnit' has cardinality 0..*, and from 'build_IPathGroup', the role 'build_IPathGroup37' has cardinality 0..*.
+An association connects 'build_context_IBuildContext' and 'IUnitRequest'. From 'build_context_IBuildContext', the role 'build_context_IBuildContext' has cardinality 0..*, and from 'IUnitRequest', the role 'IUnitRequest' has cardinality 0..*.
+An association connects 'IResolution' and 'build_context_IBuildContext'. From 'IResolution', the role 'IResolution' has cardinality 0..*, and from 'build_context_IBuildContext', the role 'build_context_IBuildContext40' has cardinality 0..*.
+An association connects 'build_context_IBuildContext' and 'context_build_IBuildUnit'. From 'build_context_IBuildContext', the role 'build_context_IBuildContext42' has cardinality 0..*, and from 'context_build_IBuildUnit', the role 'context_build_IBuildUnit' has cardinality 0..*.
+An association connects 'IAdvise' and 'build_context_IBuildContext'. From 'IAdvise', the role 'IAdvise45' has cardinality 0..*, and from 'build_context_IBuildContext', the role 'build_context_IBuildContext44' has cardinality 0..*.
+An association connects 'build_context_IBuildContext' and 'IResolver'. From 'build_context_IBuildContext', the role 'build_context_IBuildContext47' has cardinality 0..*, and from 'IResolver', the role 'IResolver' has cardinality 0..*.
+An association connects 'build_context_IResolution' and 'context_build_IRequiredCapability'. From 'build_context_IResolution', the role 'build_context_IResolution' has cardinality 0..*, and from 'context_build_IRequiredCapability', the role 'context_build_IRequiredCapability' has cardinality 0..*.
+An association connects 'build_context_IResolution' and 'context_build_ICapability'. From 'build_context_IResolution', the role 'build_context_IResolution50' has cardinality 0..*, and from 'context_build_ICapability', the role 'context_build_ICapability' has cardinality 0..*.
+An association connects 'IResolution' and 'build_context_IResolution'. From 'IResolution', the role 'IResolution53' has cardinality 0..*, and from 'build_context_IResolution', the role 'build_context_IResolution52' has cardinality 0..*.
+An association connects 'ImportOptions' and 'build_context_IResolution'. From 'ImportOptions', the role 'ImportOptions' has cardinality 0..*, and from 'build_context_IResolution', the role 'build_context_IResolution55' has cardinality 0..*.
+An association connects 'build_context_ImportOptions' and 'IMaterializer'. From 'build_context_ImportOptions', the role 'build_context_ImportOptions' has cardinality 0..*, and from 'IMaterializer', the role 'IMaterializer' has cardinality 0..*.
+An association connects 'build_runtime_BuildRuntime' and 'UpToDateExtension'. From 'build_runtime_BuildRuntime', the role 'build_runtime_BuildRuntime' has cardinality 0..*, and from 'UpToDateExtension', the role 'UpToDateExtension' has cardinality 0..*.
+An association connects 'build_runtime_BuildRuntime' and 'MaterializerExtension'. From 'build_runtime_BuildRuntime', the role 'build_runtime_BuildRuntime59' has cardinality 0..*, and from 'MaterializerExtension', the role 'MaterializerExtension' has cardinality 0..*.
+An association connects 'MetaDataTranslatorFactoryExtension' and 'build_runtime_BuildRuntime'. From 'MetaDataTranslatorFactoryExtension', the role 'MetaDataTranslatorFactoryExtension' has cardinality 0..*, and from 'build_runtime_BuildRuntime', the role 'build_runtime_BuildRuntime61' has cardinality 0..*.
+An association connects 'build_runtime_BuildRuntime' and 'ResolverExtension'. From 'build_runtime_BuildRuntime', the role 'build_runtime_BuildRuntime63' has cardinality 0..*, and from 'ResolverExtension', the role 'ResolverExtension' has cardinality 0..*.
+An association connects 'runtime_build_IUpToDatePolicy' and 'build_runtime_UpToDateExtension'. From 'runtime_build_IUpToDatePolicy', the role 'runtime_build_IUpToDatePolicy' has cardinality 0..*, and from 'build_runtime_UpToDateExtension', the role 'build_runtime_UpToDateExtension' has cardinality 0..*.
+An association connects 'IMaterializer' and 'build_runtime_MaterializerExtension'. From 'IMaterializer', the role 'IMaterializer66' has cardinality 0..*, and from 'build_runtime_MaterializerExtension', the role 'build_runtime_MaterializerExtension' has cardinality 0..*.
+An association connects 'IMetaDataTranslatorFactory' and 'build_runtime_MetaDataTranslatorFactoryExtension'. From 'IMetaDataTranslatorFactory', the role 'IMetaDataTranslatorFactory' has cardinality 0..*, and from 'build_runtime_MetaDataTranslatorFactoryExtension', the role 'build_runtime_MetaDataTranslatorFactoryExtension' has cardinality 0..*.
+An association connects 'IResolver' and 'build_runtime_ResolverExtension'. From 'IResolver', the role 'IResolver69' has cardinality 0..*, and from 'build_runtime_ResolverExtension', the role 'build_runtime_ResolverExtension' has cardinality 0..*.
+An association connects 'build_resolver_IResolver' and 'IExpr'. From 'build_resolver_IResolver', the role 'build_resolver_IResolver' has cardinality 0..*, and from 'IExpr', the role 'IExpr' has cardinality 0..*.
+An association connects 'IResolver' and 'build_resolver_ResolverGroup'. From 'IResolver', the role 'IResolver72' has cardinality 0..*, and from 'build_resolver_ResolverGroup', the role 'build_resolver_ResolverGroup' has cardinality 0..*.
+An association connects 'IMetaDataTranslator' and 'build_resolver_DefaultResolver'. From 'IMetaDataTranslator', the role 'IMetaDataTranslator' has cardinality 0..*, and from 'build_resolver_DefaultResolver', the role 'build_resolver_DefaultResolver' has cardinality 0..*.
+An association connects 'IExpr' and 'build_properties_IFunction'. From 'IExpr', the role 'IExpr75' has cardinality 0..*, and from 'build_properties_IFunction', the role 'build_properties_IFunction' has cardinality 0..*.
+An association connects 'Match' and 'build_properties_replace'. From 'Match', the role 'Match' has cardinality 0..*, and from 'build_properties_replace', the role 'build_properties_replace' has cardinality 0..*.
+An association connects 'build_command_IUnitRequest' and 'ResolutionOptions'. From 'build_command_IUnitRequest', the role 'build_command_IUnitRequest' has cardinality 0..*, and from 'ResolutionOptions', the role 'ResolutionOptions' has cardinality 0..*.
+An association connects 'IUnitRequest' and 'build_command_BuildUnitCommand'. From 'IUnitRequest', the role 'IUnitRequest79' has cardinality 0..*, and from 'build_command_BuildUnitCommand', the role 'build_command_BuildUnitCommand' has cardinality 0..*.
+An association connects 'command_build_PropertyScope' and 'build_command_BuildUnitCommand'. From 'command_build_PropertyScope', the role 'command_build_PropertyScope' has cardinality 0..*, and from 'build_command_BuildUnitCommand', the role 'build_command_BuildUnitCommand81' has cardinality 0..*.
+An association connects 'IResolver' and 'build_command_BuildUnitCommand'. From 'IResolver', the role 'IResolver84' has cardinality 0..*, and from 'build_command_BuildUnitCommand', the role 'build_command_BuildUnitCommand83' has cardinality 0..*.
+An association connects 'IAdvise' and 'build_command_BuildUnitCommand'. From 'IAdvise', the role 'IAdvise87' has cardinality 0..*, and from 'build_command_BuildUnitCommand', the role 'build_command_BuildUnitCommand86' has cardinality 0..*.
+An association connects 'ContextNodeSelector' and 'build_command_IAdvise'. From 'ContextNodeSelector', the role 'ContextNodeSelector' has cardinality 0..*, and from 'build_command_IAdvise', the role 'build_command_IAdvise' has cardinality 0..*.
+An association connects 'build_command_PropertyAdvice' and 'command_build_PropertyScope'. From 'build_command_PropertyAdvice', the role 'build_command_PropertyAdvice' has cardinality 0..*, and from 'command_build_PropertyScope', the role 'command_build_PropertyScope90' has cardinality 0..*.
+An association connects 'build_command_FilterAdvice' and 'IFilter'. From 'build_command_FilterAdvice', the role 'build_command_FilterAdvice' has cardinality 0..*, and from 'IFilter', the role 'IFilter' has cardinality 0..*.
+An association connects 'IFilter' and 'build_command_FilterAdvice'. From 'IFilter', the role 'IFilter94' has cardinality 0..*, and from 'build_command_FilterAdvice', the role 'build_command_FilterAdvice93' has cardinality 0..*.
+An association connects 'build_command_AdviceGroup' and 'IAdvise'. From 'build_command_AdviceGroup', the role 'build_command_AdviceGroup' has cardinality 0..*, and from 'IAdvise', the role 'IAdvise96' has cardinality 0..*.
+An association connects 'IFilter' and 'build_filter_FilterGroup'. From 'IFilter', the role 'IFilter98' has cardinality 0..*, and from 'build_filter_FilterGroup', the role 'build_filter_FilterGroup' has cardinality 0..*.

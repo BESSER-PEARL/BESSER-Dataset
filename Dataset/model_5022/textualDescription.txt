@@ -1,0 +1,67 @@
+The domain model 'ordersystem' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'ordersystem_Product' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'price', which is of type float; 'sku', which is of type str.
+
+'Product' represents an important domain concept.
+It does not declare any attributes.
+
+'ordersystem_Warehouse' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ordersystem_special_PreferredCustomer' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'ordersystem_Customer' represents an important domain concept.
+It has the following attributes: 'lastName', which is of type str; 'firstName', which is of type str.
+
+'ordersystem_Order' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'filledOn', which is of type str; 'placedOn', which is of type str; 'completed', which is of type bool.
+
+'ordersystem_OrderSystem' represents an important domain concept.
+It has one attribute: 'version', which is of type int.
+
+'ordersystem_Account' represents an important domain concept.
+It has the following attributes: 'accountNumber', which is of type str; 'paymentMethod', which is of type str.
+
+'ordersystem_Address' represents an important domain concept.
+It has the following attributes: 'number', which is of type str; 'apartment', which is of type str; 'country', which is of type str; 'city', which is of type str; 'postalCode', which is of type str; 'street', which is of type str; 'province', which is of type str.
+
+'ordersystem_special_LimitedEditionProduct' represents an important domain concept.
+It has one attribute: 'availableUntil', which is of type str.
+
+'ordersystem_InventoryItem' represents an important domain concept.
+It has the following attributes: 'nextStockDate', which is of type str; 'inStock', which is of type int; 'restockThreshold', which is of type int.
+
+'ordersystem_LineItem' represents an important domain concept.
+It has the following attributes: 'quantity', which is of type int; 'discount', which is of type float.
+
+'Customer' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ordersystem_special_PreferredCustomer' is a specialization of 'Customer'.
+The class 'ordersystem_special_LimitedEditionProduct' is a specialization of 'Product'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ordersystem_Order' and 'ordersystem_Customer'. From 'ordersystem_Order', the role 'order' has cardinality 0..*, and from 'ordersystem_Customer', the role 'Customer' has cardinality 0..*.
+An association connects 'ordersystem_Order' and 'ordersystem_LineItem'. From 'ordersystem_Order', the role 'owner' has cardinality 0..*, and from 'ordersystem_LineItem', the role 'LineItem' has cardinality 0..*.
+An association connects 'ordersystem_Product' and 'ordersystem_OrderSystem'. From 'ordersystem_Product', the role 'product' has cardinality 0..*, and from 'ordersystem_OrderSystem', the role 'OrderSystem' has cardinality 0..*.
+An association connects 'ordersystem_Warehouse' and 'ordersystem_OrderSystem'. From 'ordersystem_Warehouse', the role 'warehouse' has cardinality 0..*, and from 'ordersystem_OrderSystem', the role 'OrderSystem4' has cardinality 0..*.
+An association connects 'ordersystem_Warehouse' and 'ordersystem_InventoryItem'. From 'ordersystem_Warehouse', the role 'Warehouse' has cardinality 0..*, and from 'ordersystem_InventoryItem', the role 'InventoryItem' has cardinality 0..*.
+An association connects 'ordersystem_Warehouse' and 'ordersystem_Address'. From 'ordersystem_Warehouse', the role 'ordersystem_Warehouse' has cardinality 0..*, and from 'ordersystem_Address', the role 'ordersystem_Address' has cardinality 0..*.
+An association connects 'ordersystem_OrderSystem' and 'ordersystem_Customer'. From 'ordersystem_OrderSystem', the role 'owner8' has cardinality 0..*, and from 'ordersystem_Customer', the role 'Customer9' has cardinality 0..*.
+An association connects 'ordersystem_OrderSystem' and 'ordersystem_Product'. From 'ordersystem_OrderSystem', the role 'owner11' has cardinality 0..*, and from 'ordersystem_Product', the role 'Product' has cardinality 0..*.
+An association connects 'ordersystem_Warehouse' and 'ordersystem_OrderSystem'. From 'ordersystem_Warehouse', the role 'Warehouse14' has cardinality 0..*, and from 'ordersystem_OrderSystem', the role 'owner13' has cardinality 0..*.
+An association connects 'ordersystem_LineItem' and 'ordersystem_Order'. From 'ordersystem_LineItem', the role 'item' has cardinality 0..*, and from 'ordersystem_Order', the role 'Order' has cardinality 0..*.
+An association connects 'ordersystem_Product' and 'ordersystem_LineItem'. From 'ordersystem_Product', the role 'ordersystem_Product' has cardinality 0..*, and from 'ordersystem_LineItem', the role 'ordersystem_LineItem' has cardinality 0..*.
+An association connects 'ordersystem_InventoryItem' and 'ordersystem_Warehouse'. From 'ordersystem_InventoryItem', the role 'item18' has cardinality 0..*, and from 'ordersystem_Warehouse', the role 'Warehouse19' has cardinality 0..*.
+An association connects 'ordersystem_Product' and 'ordersystem_InventoryItem'. From 'ordersystem_Product', the role 'ordersystem_Product21' has cardinality 0..*, and from 'ordersystem_InventoryItem', the role 'ordersystem_InventoryItem' has cardinality 0..*.
+An association connects 'ordersystem_OrderSystem' and 'ordersystem_Customer'. From 'ordersystem_OrderSystem', the role 'OrderSystem23' has cardinality 0..*, and from 'ordersystem_Customer', the role 'customer' has cardinality 0..*.
+An association connects 'ordersystem_Account' and 'ordersystem_Customer'. From 'ordersystem_Account', the role 'Account' has cardinality 0..*, and from 'ordersystem_Customer', the role 'owner25' has cardinality 0..*.
+An association connects 'ordersystem_Customer' and 'ordersystem_Order'. From 'ordersystem_Customer', the role 'owner27' has cardinality 0..*, and from 'ordersystem_Order', the role 'Order28' has cardinality 0..*.
+An association connects 'ordersystem_Account' and 'ordersystem_Customer'. From 'ordersystem_Account', the role 'account' has cardinality 0..*, and from 'ordersystem_Customer', the role 'Customer30' has cardinality 0..*.
+An association connects 'ordersystem_Address' and 'ordersystem_Account'. From 'ordersystem_Address', the role 'ordersystem_Address32' has cardinality 0..*, and from 'ordersystem_Account', the role 'ordersystem_Account' has cardinality 0..*.
+An association connects 'ordersystem_Account' and 'ordersystem_Address'. From 'ordersystem_Account', the role 'ordersystem_Account34' has cardinality 0..*, and from 'ordersystem_Address', the role 'ordersystem_Address35' has cardinality 0..*.

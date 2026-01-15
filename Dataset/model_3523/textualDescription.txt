@@ -1,0 +1,24 @@
+The domain model 'emapvselistentry' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'emapvselistentry_NewEClass1' represents an important domain concept.
+It does not declare any attributes.
+
+'emapvselistentry_NewEClass2' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'emapvselistentry_NewEClass5' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'emapvselistentry_NewEClass4' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'emapvselistentry_NewEClass3' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'emapvselistentry_NewEClass2' and 'emapvselistentry_NewEClass1'. From 'emapvselistentry_NewEClass2', the role 'emapvselistentry_NewEClass2' has cardinality 0..*, and from 'emapvselistentry_NewEClass1', the role 'emapvselistentry_NewEClass1' has cardinality 0..*.
+An association connects 'emapvselistentry_NewEClass1' and 'emapvselistentry_NewEClass3'. From 'emapvselistentry_NewEClass1', the role 'emapvselistentry_NewEClass12' has cardinality 0..*, and from 'emapvselistentry_NewEClass3', the role 'emapvselistentry_NewEClass3' has cardinality 0..*.
+An association connects 'emapvselistentry_NewEClass4' and 'emapvselistentry_NewEClass1'. From 'emapvselistentry_NewEClass4', the role 'emapvselistentry_NewEClass4' has cardinality 0..*, and from 'emapvselistentry_NewEClass1', the role 'emapvselistentry_NewEClass14' has cardinality 0..*.
+An association connects 'emapvselistentry_NewEClass5' and 'emapvselistentry_NewEClass1'. From 'emapvselistentry_NewEClass5', the role 'emapvselistentry_NewEClass5' has cardinality 0..*, and from 'emapvselistentry_NewEClass1', the role 'emapvselistentry_NewEClass16' has cardinality 0..*.

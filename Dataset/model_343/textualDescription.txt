@@ -1,0 +1,97 @@
+The domain model 'extlibrary' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'Item' represents an important domain concept.
+It does not declare any attributes.
+
+'CirculatingItem' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_BookOnTape' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_Book' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'pages', which is of type int; 'category', which is of type str.
+
+'extlibrary_Person' represents an important domain concept.
+It has the following attributes: 'lastName', which is of type str; 'firstName', which is of type str.
+
+'extlibrary_Periodical' represents an important domain concept.
+It has the following attributes: 'issuesPerYear', which is of type int; 'title', which is of type str.
+
+'extlibrary_Lendable' represents an important domain concept.
+It has one attribute: 'copies', which is of type int.
+
+'extlibrary_Employee' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_Writer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'AudioVisualItem' represents an important domain concept.
+It does not declare any attributes.
+
+'Addressable' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_VideoCassette' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_Addressable' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_CirculatingItem' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_Item' represents an important domain concept.
+It has one attribute: 'publicationDate', which is of type date.
+
+'extlibrary_Library' represents an important domain concept.
+It has the following attributes: 'people', which is of type str; 'name', which is of type str.
+
+'extlibrary_Borrower' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_AudioVisualItem' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'minutesLength', which is of type int; 'damaged', which is of type bool.
+
+'Lendable' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BookCategory' defines the following possible values: 'Biography', 'Mystery', 'ScienceFiction'.
+
+The model also captures inheritance relationships between classes.
+The class 'extlibrary_Book' is a specialization of 'CirculatingItem'.
+The class 'extlibrary_Library' is a specialization of 'Addressable'.
+The class 'extlibrary_Writer' is a specialization of 'Person'.
+The class 'extlibrary_CirculatingItem' is a specialization of 'Item'.
+The class 'extlibrary_CirculatingItem' is a specialization of 'Lendable'.
+The class 'extlibrary_Periodical' is a specialization of 'Item'.
+The class 'extlibrary_AudioVisualItem' is a specialization of 'CirculatingItem'.
+The class 'extlibrary_BookOnTape' is a specialization of 'AudioVisualItem'.
+The class 'extlibrary_VideoCassette' is a specialization of 'AudioVisualItem'.
+The class 'extlibrary_Borrower' is a specialization of 'Person'.
+The class 'extlibrary_Person' is a specialization of 'Addressable'.
+The class 'extlibrary_Employee' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'extlibrary_Book' and 'extlibrary_Writer'. From 'extlibrary_Book', the role 'books' has cardinality 0..*, and from 'extlibrary_Writer', the role 'Writer' has cardinality 0..*.
+An association connects 'extlibrary_Writer' and 'extlibrary_Library'. From 'extlibrary_Writer', the role 'extlibrary_Writer' has cardinality 0..*, and from 'extlibrary_Library', the role 'extlibrary_Library' has cardinality 0..*.
+An association connects 'extlibrary_Employee' and 'extlibrary_Library'. From 'extlibrary_Employee', the role 'extlibrary_Employee' has cardinality 0..*, and from 'extlibrary_Library', the role 'extlibrary_Library3' has cardinality 0..*.
+An association connects 'extlibrary_Library' and 'extlibrary_Borrower'. From 'extlibrary_Library', the role 'extlibrary_Library5' has cardinality 0..*, and from 'extlibrary_Borrower', the role 'extlibrary_Borrower' has cardinality 0..*.
+An association connects 'extlibrary_Item' and 'extlibrary_Library'. From 'extlibrary_Item', the role 'extlibrary_Item' has cardinality 0..*, and from 'extlibrary_Library', the role 'extlibrary_Library7' has cardinality 0..*.
+An association connects 'extlibrary_Book' and 'extlibrary_Library'. From 'extlibrary_Book', the role 'extlibrary_Book' has cardinality 0..*, and from 'extlibrary_Library', the role 'extlibrary_Library9' has cardinality 0..*.
+An association connects 'extlibrary_Library' and 'extlibrary_Library'. From 'extlibrary_Library', the role 'parentBranch' has cardinality 0..*, and from 'extlibrary_Library', the role 'Library' has cardinality 0..*.
+An association connects 'extlibrary_Library' and 'extlibrary_Library'. From 'extlibrary_Library', the role 'Library14' has cardinality 0..*, and from 'extlibrary_Library', the role 'branches' has cardinality 0..*.
+An association connects 'extlibrary_Book' and 'extlibrary_Writer'. From 'extlibrary_Book', the role 'Book' has cardinality 0..*, and from 'extlibrary_Writer', the role 'author' has cardinality 0..*.
+An association connects 'extlibrary_Lendable' and 'extlibrary_Borrower'. From 'extlibrary_Lendable', the role 'borrowed' has cardinality 0..*, and from 'extlibrary_Borrower', the role 'Borrower' has cardinality 0..*.
+An association connects 'extlibrary_Person' and 'extlibrary_BookOnTape'. From 'extlibrary_Person', the role 'extlibrary_Person' has cardinality 0..*, and from 'extlibrary_BookOnTape', the role 'extlibrary_BookOnTape' has cardinality 0..*.
+An association connects 'extlibrary_Writer' and 'extlibrary_BookOnTape'. From 'extlibrary_Writer', the role 'extlibrary_Writer20' has cardinality 0..*, and from 'extlibrary_BookOnTape', the role 'extlibrary_BookOnTape19' has cardinality 0..*.
+An association connects 'extlibrary_Person' and 'extlibrary_VideoCassette'. From 'extlibrary_Person', the role 'extlibrary_Person22' has cardinality 0..*, and from 'extlibrary_VideoCassette', the role 'extlibrary_VideoCassette' has cardinality 0..*.
+An association connects 'extlibrary_Lendable' and 'extlibrary_Borrower'. From 'extlibrary_Lendable', the role 'Lendable' has cardinality 0..*, and from 'extlibrary_Borrower', the role 'borrowers' has cardinality 0..*.
+An association connects 'extlibrary_Employee' and 'extlibrary_Employee'. From 'extlibrary_Employee', the role 'extlibrary_Employee24' has cardinality 0..*, and from 'extlibrary_Employee', the role 'extlibrary_Employee26' has cardinality 0..*.

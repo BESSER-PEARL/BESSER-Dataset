@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/emf.compare/plugins/org.eclipse.emf.compare.tests/src/org/eclipse/emf/compare/tests/fullcomparison/data/distance/package-add-deletev2.ecore

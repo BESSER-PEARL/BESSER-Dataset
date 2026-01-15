@@ -1,0 +1,197 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 44 main class(es).
+
+'model_MClassInvariant' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'positionInModel', which is of type int.
+
+'model_MClass' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MModelElementEx' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_MAssociationEnd' represents an important domain concept.
+It has one attribute: 'mClassName', which is of type str.
+
+'model_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'MClass' represents an important domain concept.
+It does not declare any attributes.
+
+'model_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_VarDeclList' represents an important domain concept.
+It does not declare any attributes.
+
+'MModelElementEx' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MAssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Part' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'MAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_VarDecl' represents an important domain concept.
+It has one attribute: 'var', which is of type str.
+
+'model_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MMVisitor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Comparable' represents an important domain concept.
+It does not declare any attributes.
+
+'model_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MMultiplicity' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ObjectType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'model_EnumType' represents an important domain concept.
+It has the following attributes: 'literals', which is of type str; 'name', which is of type str.
+
+'MModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MAggregationKind' represents an important domain concept.
+It has the following attributes: 'kind', which is of type int; 'name', which is of type str.
+
+'model_MRange' represents an important domain concept.
+It has the following attributes: 'upper', which is of type int; 'lower', which is of type int.
+
+'model_MModel' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Type' represents an important domain concept.
+It has the following attributes: 'typeId', which is of type int; 'typeName', which is of type str.
+
+'model_MPrePostCondition' represents an important domain concept.
+It has one attribute: 'positionInModel', which is of type int.
+
+'model_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'model_OclAnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TupleType' represents an important domain concept.
+It has one attribute: 'parts', which is of type str.
+
+'model_BasicType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MNavigableElement' represents an important domain concept.
+It has one attribute: 'nameAsRolename', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'model_BasicType' is a specialization of 'Type'.
+The class 'model_IntegerType' is a specialization of 'BasicType'.
+The class 'model_MAttribute' is a specialization of 'MModelElementEx'.
+The class 'model_MClass' is a specialization of 'MModelElementEx'.
+The class 'model_MModel' is a specialization of 'MModelElementEx'.
+The class 'model_MModelElementEx' is a specialization of 'MModelElement'.
+The class 'model_MOperation' is a specialization of 'MModelElementEx'.
+The class 'model_RealType' is a specialization of 'BasicType'.
+The class 'model_StringType' is a specialization of 'BasicType'.
+The class 'model_CollectionType' is a specialization of 'Type'.
+The class 'model_SetType' is a specialization of 'CollectionType'.
+The class 'model_ObjectType' is a specialization of 'Type'.
+The class 'model_BagType' is a specialization of 'CollectionType'.
+The class 'model_EnumType' is a specialization of 'Type'.
+The class 'model_OclAnyType' is a specialization of 'Type'.
+The class 'model_SequenceType' is a specialization of 'CollectionType'.
+The class 'model_BooleanType' is a specialization of 'BasicType'.
+The class 'model_MAssociation' is a specialization of 'MModelElementEx'.
+The class 'model_MAssociationEnd' is a specialization of 'MModelElementEx'.
+The class 'model_MAssociationClass' is a specialization of 'MClass'.
+The class 'model_MAssociationClass' is a specialization of 'MAssociation'.
+The class 'model_MClassInvariant' is a specialization of 'MModelElement'.
+The class 'model_MPrePostCondition' is a specialization of 'MModelElement'.
+The class 'model_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'model_TupleType' is a specialization of 'Type'.
+The class 'model_VoidType' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_MClass' and 'model_MAttribute'. From 'model_MClass', the role 'model_MClass' has cardinality 0..*, and from 'model_MAttribute', the role 'model_MAttribute' has cardinality 0..*.
+An association connects 'model_MAttribute' and 'model_Type'. From 'model_MAttribute', the role 'model_MAttribute2' has cardinality 0..*, and from 'model_Type', the role 'model_Type' has cardinality 0..*.
+An association connects 'model_MAttribute' and 'model_MClass'. From 'model_MAttribute', the role 'model_MAttribute5' has cardinality 0..*, and from 'model_MClass', the role 'model_MClass4' has cardinality 0..*.
+An association connects 'model_MOperation' and 'model_MClass'. From 'model_MOperation', the role 'model_MOperation' has cardinality 0..*, and from 'model_MClass', the role 'model_MClass7' has cardinality 0..*.
+An association connects 'model_MClass' and 'model_MAssociation'. From 'model_MClass', the role 'model_MClass9' has cardinality 0..*, and from 'model_MAssociation', the role 'model_MAssociation' has cardinality 0..*.
+An association connects 'model_MClass' and 'model_MClass'. From 'model_MClass', the role 'model_MClass10' has cardinality 0..*, and from 'model_MClass', the role 'model_MClass12' has cardinality 0..*.
+An association connects 'model_MClass' and 'model_MClass'. From 'model_MClass', the role 'model_MClass13' has cardinality 0..*, and from 'model_MClass', the role 'model_MClass15' has cardinality 0..*.
+An association connects 'model_MClass' and 'model_MModel'. From 'model_MClass', the role 'model_MClass17' has cardinality 0..*, and from 'model_MModel', the role 'model_MModel' has cardinality 0..*.
+An association connects 'model_MModel' and 'model_MClassInvariant'. From 'model_MModel', the role 'model_MModel19' has cardinality 0..*, and from 'model_MClassInvariant', the role 'model_MClassInvariant' has cardinality 0..*.
+An association connects 'model_MPrePostCondition' and 'model_MModel'. From 'model_MPrePostCondition', the role 'model_MPrePostCondition' has cardinality 0..*, and from 'model_MModel', the role 'model_MModel21' has cardinality 0..*.
+An association connects 'model_MOperation' and 'model_MClass'. From 'model_MOperation', the role 'model_MOperation23' has cardinality 0..*, and from 'model_MClass', the role 'model_MClass24' has cardinality 0..*.
+An association connects 'model_MOperation' and 'model_Type'. From 'model_MOperation', the role 'model_MOperation26' has cardinality 0..*, and from 'model_Type', the role 'model_Type27' has cardinality 0..*.
+An association connects 'model_MOperation' and 'model_VarDecl'. From 'model_MOperation', the role 'model_MOperation29' has cardinality 0..*, and from 'model_VarDecl', the role 'model_VarDecl' has cardinality 0..*.
+An association connects 'model_Type' and 'model_VarDecl'. From 'model_Type', the role 'model_Type32' has cardinality 0..*, and from 'model_VarDecl', the role 'model_VarDecl31' has cardinality 0..*.
+An association connects 'model_CollectionType' and 'model_Type'. From 'model_CollectionType', the role 'model_CollectionType' has cardinality 0..*, and from 'model_Type', the role 'model_Type34' has cardinality 0..*.
+An association connects 'model_ObjectType' and 'model_MClass'. From 'model_ObjectType', the role 'model_ObjectType' has cardinality 0..*, and from 'model_MClass', the role 'model_MClass36' has cardinality 0..*.
+An association connects 'model_MAssociation' and 'model_MAssociationEnd'. From 'model_MAssociation', the role 'model_MAssociation38' has cardinality 0..*, and from 'model_MAssociationEnd', the role 'model_MAssociationEnd' has cardinality 0..*.
+An association connects 'model_MAggregationKind' and 'model_MAssociation'. From 'model_MAggregationKind', the role 'model_MAggregationKind' has cardinality 0..*, and from 'model_MAssociation', the role 'model_MAssociation40' has cardinality 0..*.
+An association connects 'model_MAssociation' and 'model_MAssociationEnd'. From 'model_MAssociation', the role 'model_MAssociation43' has cardinality 0..*, and from 'model_MAssociationEnd', the role 'model_MAssociationEnd42' has cardinality 0..*.
+An association connects 'model_MAssociationEnd' and 'model_MClass'. From 'model_MAssociationEnd', the role 'model_MAssociationEnd45' has cardinality 0..*, and from 'model_MClass', the role 'model_MClass46' has cardinality 0..*.
+An association connects 'model_MAssociationEnd' and 'model_MMultiplicity'. From 'model_MAssociationEnd', the role 'model_MAssociationEnd48' has cardinality 0..*, and from 'model_MMultiplicity', the role 'model_MMultiplicity' has cardinality 0..*.
+An association connects 'model_MAssociationEnd' and 'model_MAggregationKind'. From 'model_MAssociationEnd', the role 'model_MAssociationEnd50' has cardinality 0..*, and from 'model_MAggregationKind', the role 'model_MAggregationKind51' has cardinality 0..*.
+An association connects 'model_MRange' and 'model_MMultiplicity'. From 'model_MRange', the role 'model_MRange' has cardinality 0..*, and from 'model_MMultiplicity', the role 'model_MMultiplicity53' has cardinality 0..*.
+An association connects 'model_MNavigableElement' and 'model_MClass'. From 'model_MNavigableElement', the role 'model_MNavigableElement' has cardinality 0..*, and from 'model_MClass', the role 'model_MClass55' has cardinality 0..*.
+An association connects 'model_MNavigableElement' and 'model_MAssociation'. From 'model_MNavigableElement', the role 'model_MNavigableElement57' has cardinality 0..*, and from 'model_MAssociation', the role 'model_MAssociation58' has cardinality 0..*.
+An association connects 'model_VarDeclList' and 'model_MClassInvariant'. From 'model_VarDeclList', the role 'model_VarDeclList' has cardinality 0..*, and from 'model_MClassInvariant', the role 'model_MClassInvariant60' has cardinality 0..*.
+An association connects 'model_MClass' and 'model_MClassInvariant'. From 'model_MClass', the role 'model_MClass63' has cardinality 0..*, and from 'model_MClassInvariant', the role 'model_MClassInvariant62' has cardinality 0..*.
+An association connects 'model_MClassInvariant' and 'model_Expression'. From 'model_MClassInvariant', the role 'model_MClassInvariant65' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression' has cardinality 0..*.
+An association connects 'model_MClassInvariant' and 'model_Expression'. From 'model_MClassInvariant', the role 'model_MClassInvariant67' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression68' has cardinality 0..*.
+An association connects 'model_MOperation' and 'model_MPrePostCondition'. From 'model_MOperation', the role 'model_MOperation71' has cardinality 0..*, and from 'model_MPrePostCondition', the role 'model_MPrePostCondition70' has cardinality 0..*.
+An association connects 'model_MPrePostCondition' and 'model_Expression'. From 'model_MPrePostCondition', the role 'model_MPrePostCondition73' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression74' has cardinality 0..*.
+An association connects 'model_Type' and 'model_Part'. From 'model_Type', the role 'model_Type76' has cardinality 0..*, and from 'model_Part', the role 'model_Part' has cardinality 0..*.

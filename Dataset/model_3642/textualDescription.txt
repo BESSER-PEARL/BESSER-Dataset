@@ -1,0 +1,23 @@
+The domain model 'employee' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'employee_Department' represents an important domain concept.
+It has the following attributes: 'deptID', which is of type int; 'name', which is of type str.
+
+'employee_Company' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'employee_Employee' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isManager', which is of type bool; 'empID', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'employee_Employee' and 'employee_Company'. From 'employee_Employee', the role 'Employee' has cardinality 0..*, and from 'employee_Company', the role 'company' has cardinality 0..*.
+An association connects 'employee_Department' and 'employee_Company'. From 'employee_Department', the role 'Department' has cardinality 0..*, and from 'employee_Company', the role 'company2' has cardinality 0..*.
+An association connects 'employee_Department' and 'employee_Employee'. From 'employee_Department', the role 'employee_Department' has cardinality 0..*, and from 'employee_Employee', the role 'employee_Employee' has cardinality 0..*.
+An association connects 'employee_Employee' and 'employee_Department'. From 'employee_Employee', the role 'Employee5' has cardinality 0..*, and from 'employee_Department', the role 'department' has cardinality 0..*.
+An association connects 'employee_Company' and 'employee_Department'. From 'employee_Company', the role 'Company' has cardinality 0..*, and from 'employee_Department', the role 'departments' has cardinality 0..*.
+An association connects 'employee_Employee' and 'employee_Department'. From 'employee_Employee', the role 'employees' has cardinality 0..*, and from 'employee_Department', the role 'Department8' has cardinality 0..*.
+An association connects 'employee_Employee' and 'employee_Employee'. From 'employee_Employee', the role 'Employee11' has cardinality 0..*, and from 'employee_Employee', the role 'directReports' has cardinality 0..*.
+An association connects 'employee_Employee' and 'employee_Employee'. From 'employee_Employee', the role 'Employee14' has cardinality 0..*, and from 'employee_Employee', the role 'manager' has cardinality 0..*.
+An association connects 'employee_Company' and 'employee_Employee'. From 'employee_Company', the role 'Company17' has cardinality 0..*, and from 'employee_Employee', the role 'employees16' has cardinality 0..*.

@@ -1,0 +1,79 @@
+The domain model 'featureDiagram' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'featureDiagram_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'featureDiagram_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'featureDiagram_Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'featureDiagram_Feature' represents an important domain concept.
+It has the following attributes: 'selected', which is of type str; 'optional', which is of type str; 'name', which is of type str.
+
+'featureDiagram_ConstraintEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'featureDiagram_And' represents an important domain concept.
+It does not declare any attributes.
+
+'featureDiagram_Opt' represents an important domain concept.
+It does not declare any attributes.
+
+'featureDiagram_Xor' represents an important domain concept.
+It does not declare any attributes.
+
+'featureDiagram_PrimitiveFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'featureDiagram_Card' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'featureDiagram_Require' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'featureDiagram_Mutex' represents an important domain concept.
+It does not declare any attributes.
+
+'featureDiagram_FeatureDiagram' represents an important domain concept.
+It has one attribute: 'graphTypeTree', which is of type str.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'featureDiagram_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'featureDiagram_PrimitiveFeature' is a specialization of 'Feature'.
+The class 'featureDiagram_Opt' is a specialization of 'Operator'.
+The class 'featureDiagram_And' is a specialization of 'Operator'.
+The class 'featureDiagram_Or' is a specialization of 'Operator'.
+The class 'featureDiagram_Xor' is a specialization of 'Operator'.
+The class 'featureDiagram_Card' is a specialization of 'Operator'.
+The class 'featureDiagram_Require' is a specialization of 'Constraint'.
+The class 'featureDiagram_Mutex' is a specialization of 'Constraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'featureDiagram_Feature' and 'featureDiagram_FeatureDiagram'. From 'featureDiagram_Feature', the role 'Feature' has cardinality 0..*, and from 'featureDiagram_FeatureDiagram', the role 'owningFeatureDiagram' has cardinality 0..*.
+An association connects 'featureDiagram_Feature' and 'featureDiagram_FeatureDiagram'. From 'featureDiagram_Feature', the role 'featureDiagram_Feature' has cardinality 0..*, and from 'featureDiagram_FeatureDiagram', the role 'featureDiagram_FeatureDiagram' has cardinality 0..*.
+An association connects 'featureDiagram_ConstraintEdge' and 'featureDiagram_FeatureDiagram'. From 'featureDiagram_ConstraintEdge', the role 'featureDiagram_ConstraintEdge' has cardinality 0..*, and from 'featureDiagram_FeatureDiagram', the role 'featureDiagram_FeatureDiagram3' has cardinality 0..*.
+An association connects 'featureDiagram_FeatureDiagram' and 'featureDiagram_Feature'. From 'featureDiagram_FeatureDiagram', the role 'FeatureDiagram' has cardinality 0..*, and from 'featureDiagram_Feature', the role 'features' has cardinality 0..*.
+An association connects 'featureDiagram_Feature' and 'featureDiagram_Operator'. From 'featureDiagram_Feature', the role 'owningFeature' has cardinality 0..*, and from 'featureDiagram_Operator', the role 'Operator' has cardinality 0..*.
+An association connects 'featureDiagram_Model' and 'featureDiagram_Feature'. From 'featureDiagram_Model', the role 'featureDiagram_Model' has cardinality 0..*, and from 'featureDiagram_Feature', the role 'featureDiagram_Feature7' has cardinality 0..*.
+An association connects 'featureDiagram_Feature' and 'featureDiagram_Feature'. From 'featureDiagram_Feature', the role 'parents' has cardinality 0..*, and from 'featureDiagram_Feature', the role 'Feature10' has cardinality 0..*.
+An association connects 'featureDiagram_Feature' and 'featureDiagram_Feature'. From 'featureDiagram_Feature', the role 'children' has cardinality 0..*, and from 'featureDiagram_Feature', the role 'Feature13' has cardinality 0..*.
+An association connects 'featureDiagram_ConstraintEdge' and 'featureDiagram_Feature'. From 'featureDiagram_ConstraintEdge', the role 'featureDiagram_ConstraintEdge15' has cardinality 0..*, and from 'featureDiagram_Feature', the role 'featureDiagram_Feature16' has cardinality 0..*.
+An association connects 'featureDiagram_ConstraintEdge' and 'featureDiagram_Constraint'. From 'featureDiagram_ConstraintEdge', the role 'owningCE' has cardinality 0..*, and from 'featureDiagram_Constraint', the role 'Constraint' has cardinality 0..*.
+An association connects 'featureDiagram_Feature' and 'featureDiagram_ConstraintEdge'. From 'featureDiagram_Feature', the role 'featureDiagram_Feature20' has cardinality 0..*, and from 'featureDiagram_ConstraintEdge', the role 'featureDiagram_ConstraintEdge19' has cardinality 0..*.
+An association connects 'featureDiagram_Feature' and 'featureDiagram_Operator'. From 'featureDiagram_Feature', the role 'Feature22' has cardinality 0..*, and from 'featureDiagram_Operator', the role 'operator' has cardinality 0..*.
+An association connects 'featureDiagram_ConstraintEdge' and 'featureDiagram_Constraint'. From 'featureDiagram_ConstraintEdge', the role 'ConstraintEdge' has cardinality 0..*, and from 'featureDiagram_Constraint', the role 'constraint' has cardinality 0..*.

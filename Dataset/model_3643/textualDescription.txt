@@ -1,0 +1,20 @@
+The domain model 'noreflectioncompany' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'noreflectioncompany_Company' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'size', which is of type str.
+
+'noreflectioncompany_Employee' represents an important domain concept.
+It has the following attributes: 'hasNameAsAttribute', which is of type bool; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CompanySizeKind' defines the following possible values: 'medium', 'large', 'small'.
+
+Relationships between classes are modeled using associations.
+An association connects 'noreflectioncompany_Company' and 'noreflectioncompany_Employee'. From 'noreflectioncompany_Company', the role 'company' has cardinality 0..*, and from 'noreflectioncompany_Employee', the role 'Employee' has cardinality 0..*.
+An association connects 'noreflectioncompany_Employee' and 'noreflectioncompany_Employee'. From 'noreflectioncompany_Employee', the role 'noreflectioncompany_Employee' has cardinality 0..*, and from 'noreflectioncompany_Employee', the role 'noreflectioncompany_Employee1' has cardinality 0..*.
+An association connects 'noreflectioncompany_Company' and 'noreflectioncompany_Employee'. From 'noreflectioncompany_Company', the role 'Company' has cardinality 0..*, and from 'noreflectioncompany_Employee', the role 'employees' has cardinality 0..*.
+An association connects 'noreflectioncompany_Employee' and 'noreflectioncompany_Employee'. From 'noreflectioncompany_Employee', the role 'noreflectioncompany_Employee6' has cardinality 0..*, and from 'noreflectioncompany_Employee', the role 'noreflectioncompany_Employee4' has cardinality 0..*.
+An association connects 'noreflectioncompany_Employee' and 'noreflectioncompany_Employee'. From 'noreflectioncompany_Employee', the role 'noreflectioncompany_Employee9' has cardinality 0..*, and from 'noreflectioncompany_Employee', the role 'noreflectioncompany_Employee7' has cardinality 0..*.
+An association connects 'noreflectioncompany_Employee' and 'noreflectioncompany_Employee'. From 'noreflectioncompany_Employee', the role 'noreflectioncompany_Employee10' has cardinality 0..*, and from 'noreflectioncompany_Employee', the role 'noreflectioncompany_Employee12' has cardinality 0..*.

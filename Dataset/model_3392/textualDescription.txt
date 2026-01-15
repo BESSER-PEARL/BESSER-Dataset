@@ -1,0 +1,32 @@
+The domain model 'mindmap' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'mindmap_MindMap' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'mindmap_CentralTopic' represents an important domain concept.
+It does not declare any attributes.
+
+'mindmap_SubTopic' represents an important domain concept.
+It does not declare any attributes.
+
+'Topic' represents an important domain concept.
+It does not declare any attributes.
+
+'mindmap_MainTopic' represents an important domain concept.
+It does not declare any attributes.
+
+'mindmap_Topic' represents an important domain concept.
+It has the following attributes: 'marker', which is of type int; 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'mindmap_CentralTopic' is a specialization of 'Topic'.
+The class 'mindmap_MainTopic' is a specialization of 'Topic'.
+The class 'mindmap_SubTopic' is a specialization of 'Topic'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mindmap_MindMap' and 'mindmap_CentralTopic'. From 'mindmap_MindMap', the role 'mindmap_MindMap' has cardinality 0..*, and from 'mindmap_CentralTopic', the role 'mindmap_CentralTopic' has cardinality 0..*.
+An association connects 'mindmap_MainTopic' and 'mindmap_CentralTopic'. From 'mindmap_MainTopic', the role 'mindmap_MainTopic' has cardinality 0..*, and from 'mindmap_CentralTopic', the role 'mindmap_CentralTopic2' has cardinality 0..*.
+An association connects 'mindmap_SubTopic' and 'mindmap_MainTopic'. From 'mindmap_SubTopic', the role 'mindmap_SubTopic' has cardinality 0..*, and from 'mindmap_MainTopic', the role 'mindmap_MainTopic4' has cardinality 0..*.
+An association connects 'mindmap_SubTopic' and 'mindmap_SubTopic'. From 'mindmap_SubTopic', the role 'mindmap_SubTopic5' has cardinality 0..*, and from 'mindmap_SubTopic', the role 'mindmap_SubTopic7' has cardinality 0..*.

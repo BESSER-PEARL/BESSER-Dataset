@@ -1,0 +1,125 @@
+The domain model 'type' describes the core structural elements and their relationships within the system.
+
+The model defines 26 main class(es).
+
+'type_Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'TypePointer' represents an important domain concept.
+It does not declare any attributes.
+
+'type_Parameter' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str; 'order', which is of type int.
+
+'type_EnumAttribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str; 'uid', which is of type str.
+
+'type_References' represents an important domain concept.
+It does not declare any attributes.
+
+'type_MethodPointer' represents an important domain concept.
+It does not declare any attributes.
+
+'type_TypeGroup' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'Secured' represents an important domain concept.
+It does not declare any attributes.
+
+'type_Relationship' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'type_TypePointer' represents an important domain concept.
+It does not declare any attributes.
+
+'type_TypeElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'Categorized' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'type_Operation' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'type_PackagePointer' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'type_Link' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'type_PrimitivesGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'type_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'type_AttributePointer' represents an important domain concept.
+It does not declare any attributes.
+
+'type_Assosiation' represents an important domain concept.
+It has the following attributes: 'containment', which is of type str; 'internal', which is of type bool; 'type', which is of type str; 'sourceOperation', which is of type str; 'targetOperation', which is of type str.
+
+'type_ReturnValue' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'type_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'type_Enumerator' represents an important domain concept.
+It does not declare any attributes.
+
+'type_Generalization' represents an important domain concept.
+It does not declare any attributes.
+
+'type_Attribute' represents an important domain concept.
+It has the following attributes: 'pk', which is of type bool; 'uid', which is of type str; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Containment' defines the following possible values: 'Non', 'Target', 'Source'.
+The enumeration 'RelationType' defines the following possible values: 'One2Many', 'One2One', 'Many2Many'.
+
+The model also captures inheritance relationships between classes.
+The class 'type_Relationship' is a specialization of 'Categorized'.
+The class 'type_References' is a specialization of 'Relationship'.
+The class 'type_Generalization' is a specialization of 'Relationship'.
+The class 'type_Assosiation' is a specialization of 'Relationship'.
+The class 'type_Attribute' is a specialization of 'TypePointer'.
+The class 'type_Attribute' is a specialization of 'Categorized'.
+The class 'type_Operation' is a specialization of 'Secured'.
+The class 'type_Operation' is a specialization of 'Categorized'.
+The class 'type_Primitive' is a specialization of 'TypeElement'.
+The class 'type_Type' is a specialization of 'TypeElement'.
+The class 'type_Type' is a specialization of 'Categorized'.
+The class 'type_TypeReference' is a specialization of 'TypeElement'.
+The class 'type_TypeReference' is a specialization of 'TypePointer'.
+The class 'type_Parameter' is a specialization of 'TypePointer'.
+The class 'type_ReturnValue' is a specialization of 'TypePointer'.
+The class 'type_Enumerator' is a specialization of 'TypeElement'.
+The class 'type_Enumerator' is a specialization of 'Categorized'.
+The class 'type_EnumAttribute' is a specialization of 'Categorized'.
+
+Relationships between classes are modeled using associations.
+An association connects 'type_TypeGroup' and 'type_TypeElement'. From 'type_TypeGroup', the role 'type_TypeGroup' has cardinality 0..*, and from 'type_TypeElement', the role 'type_TypeElement' has cardinality 0..*.
+An association connects 'type_TypeGroup' and 'type_Relationship'. From 'type_TypeGroup', the role 'type_TypeGroup2' has cardinality 0..*, and from 'type_Relationship', the role 'type_Relationship' has cardinality 0..*.
+An association connects 'type_PrimitivesGroup' and 'type_Primitive'. From 'type_PrimitivesGroup', the role 'type_PrimitivesGroup' has cardinality 0..*, and from 'type_Primitive', the role 'type_Primitive' has cardinality 0..*.
+An association connects 'type_TypeElement' and 'type_Relationship'. From 'type_TypeElement', the role 'type_TypeElement6' has cardinality 0..*, and from 'type_Relationship', the role 'type_Relationship5' has cardinality 0..*.
+An association connects 'type_Relationship' and 'type_TypeElement'. From 'type_Relationship', the role 'type_Relationship8' has cardinality 0..*, and from 'type_TypeElement', the role 'type_TypeElement9' has cardinality 0..*.
+An association connects 'type_TypeElement' and 'type_TypePointer'. From 'type_TypeElement', the role 'type_TypeElement11' has cardinality 0..*, and from 'type_TypePointer', the role 'type_TypePointer' has cardinality 0..*.
+An association connects 'type_PackagePointer' and 'type_TypeGroup'. From 'type_PackagePointer', the role 'type_PackagePointer' has cardinality 0..*, and from 'type_TypeGroup', the role 'type_TypeGroup13' has cardinality 0..*.
+An association connects 'type_Link' and 'type_Assosiation'. From 'type_Link', the role 'type_Link' has cardinality 0..*, and from 'type_Assosiation', the role 'type_Assosiation' has cardinality 0..*.
+An association connects 'type_TypePointer' and 'type_Assosiation'. From 'type_TypePointer', the role 'type_TypePointer17' has cardinality 0..*, and from 'type_Assosiation', the role 'type_Assosiation16' has cardinality 0..*.
+An association connects 'type_Link' and 'type_Attribute'. From 'type_Link', the role 'type_Link19' has cardinality 0..*, and from 'type_Attribute', the role 'type_Attribute' has cardinality 0..*.
+An association connects 'type_Link' and 'type_Attribute'. From 'type_Link', the role 'type_Link21' has cardinality 0..*, and from 'type_Attribute', the role 'type_Attribute22' has cardinality 0..*.
+An association connects 'type_Parameter' and 'type_Operation'. From 'type_Parameter', the role 'type_Parameter' has cardinality 0..*, and from 'type_Operation', the role 'type_Operation' has cardinality 0..*.
+An association connects 'type_ReturnValue' and 'type_Operation'. From 'type_ReturnValue', the role 'type_ReturnValue' has cardinality 0..*, and from 'type_Operation', the role 'type_Operation25' has cardinality 0..*.
+An association connects 'type_Attribute' and 'type_Type'. From 'type_Attribute', the role 'type_Attribute27' has cardinality 0..*, and from 'type_Type', the role 'type_Type' has cardinality 0..*.
+An association connects 'type_Operation' and 'type_Type'. From 'type_Operation', the role 'type_Operation30' has cardinality 0..*, and from 'type_Type', the role 'type_Type29' has cardinality 0..*.
+An association connects 'type_Enumerator' and 'type_EnumAttribute'. From 'type_Enumerator', the role 'type_Enumerator' has cardinality 0..*, and from 'type_EnumAttribute', the role 'type_EnumAttribute' has cardinality 0..*.
+An association connects 'type_Operation' and 'type_MethodPointer'. From 'type_Operation', the role 'type_Operation33' has cardinality 0..*, and from 'type_MethodPointer', the role 'type_MethodPointer' has cardinality 0..*.
+An association connects 'type_AttributePointer' and 'type_Attribute'. From 'type_AttributePointer', the role 'type_AttributePointer' has cardinality 0..*, and from 'type_Attribute', the role 'type_Attribute35' has cardinality 0..*.

@@ -1,0 +1,74 @@
+The domain model 'alldatatypes' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'alldatatypes_Strings' represents an important domain concept.
+It has the following attributes: 'text_01_EmptyDefault', which is of type str; 'link_01', which is of type str; 'html_01', which is of type str; 'notEditableText_01', which is of type str; 'textarea', which is of type str; 'text_1', which is of type str; 'text_01', which is of type str.
+
+'alldatatypes_Shorts' represents an important domain concept.
+It has the following attributes: 'short_1', which is of type str; 'short_01_EmptyDefault', which is of type str; 'notEditableShort_01', which is of type str; 'short_01', which is of type str.
+
+'alldatatypes_BigDecimals' represents an important domain concept.
+It has the following attributes: 'bigDecimals', which is of type str; 'notEditableBigDecimal_01', which is of type str; 'bigDecimal_01', which is of type str; 'bigDecimal_1', which is of type str; 'bigDecimal_01_EmptyDefault', which is of type str.
+
+'alldatatypes_Integers' represents an important domain concept.
+It has the following attributes: 'hiddenInt_01', which is of type int; 'int_01_EmptyDefault', which is of type int; 'notEditableInt_01', which is of type int; 'int_01', which is of type int; 'ints', which is of type int; 'int_1', which is of type int.
+
+'alldatatypes_BigIntegers' represents an important domain concept.
+It has the following attributes: 'notEditableBigInt_01', which is of type str; 'bigInt_01', which is of type str; 'bigInt_01_EmptyDefault', which is of type str; 'bigInt_1', which is of type str; 'bigInts', which is of type str.
+
+'alldatatypes_Element' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'alldatatypes_Booleans' represents an important domain concept.
+It has the following attributes: 'boolean_01', which is of type bool; 'notEditableBoolean_01', which is of type bool; 'boolean_1', which is of type bool; 'boolean_01_EmptyDefault', which is of type bool.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'alldatatypes_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'alldatatypes_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'alldatatypes_Doubles' represents an important domain concept.
+It has the following attributes: 'double_1', which is of type float; 'double_01', which is of type float; 'double_01_EmptyDefault', which is of type float; 'notEditableDouble_01', which is of type float.
+
+'alldatatypes_Floats' represents an important domain concept.
+It has the following attributes: 'notEditableFloat_01', which is of type float; 'float_1', which is of type float; 'float_01_EmptyDefault', which is of type float; 'float_01', which is of type float.
+
+'alldatatypes_Dates' represents an important domain concept.
+It has the following attributes: 'dates', which is of type date; 'date_01', which is of type date; 'date_01_HM', which is of type date; 'date_1', which is of type date; 'date_01_HMS', which is of type date; 'notEditableDate_01', which is of type date; 'dateEmptyDefault_01', which is of type date; 'date_01_HMSms', which is of type date.
+
+'alldatatypes_Longs' represents an important domain concept.
+It has the following attributes: 'notEditableLong_01', which is of type str; 'long_01_EmptyDefault', which is of type str; 'long_1', which is of type str; 'long_01', which is of type str.
+
+'alldatatypes_Enums' represents an important domain concept.
+It has the following attributes: 'states', which is of type str; 'enum_01', which is of type str; 'enums', which is of type str; 'enum_01_EmptyDefault', which is of type str; 'statesMin1Max2', which is of type str; 'statesMax2', which is of type str; 'heavy', which is of type str; 'notEditableEnum_01', which is of type str; 'enum_1', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AEnum' defines the following possible values: 'ENUM0', 'ENUM1'.
+The enumeration 'Heavy' defines the following possible values: 'OPEN3', 'DELETE1', 'OPEN2', 'OPEN1', 'CLOSE4', 'CLOSE2', 'DELETE4', 'MOVE', 'OPEN4', 'CLOSE', 'DELETE', 'CLOSE3', 'MOVE2', 'MOVE1', 'MOVE3', 'MOVING3', 'MOVING4', 'DELETE3', 'MOVE4', 'CLOS1E', 'OPEN', 'MOVING', 'DELETE2', 'MOVING2', 'MOVING1'.
+The enumeration 'StateWithoutDefault' defines the following possible values: 'OPEN', 'MOVING', 'CLOSE', 'MOVE', 'DELETE'.
+
+The model also captures inheritance relationships between classes.
+The class 'alldatatypes_Root' is a specialization of 'Element'.
+The class 'alldatatypes_Type' is a specialization of 'Element'.
+The class 'alldatatypes_Strings' is a specialization of 'Type'.
+The class 'alldatatypes_Dates' is a specialization of 'Type'.
+The class 'alldatatypes_Enums' is a specialization of 'Type'.
+The class 'alldatatypes_Booleans' is a specialization of 'Type'.
+The class 'alldatatypes_Integers' is a specialization of 'Type'.
+The class 'alldatatypes_Longs' is a specialization of 'Type'.
+The class 'alldatatypes_Shorts' is a specialization of 'Type'.
+The class 'alldatatypes_Doubles' is a specialization of 'Type'.
+The class 'alldatatypes_Floats' is a specialization of 'Type'.
+The class 'alldatatypes_BigIntegers' is a specialization of 'Type'.
+The class 'alldatatypes_BigDecimals' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'alldatatypes_Type' and 'alldatatypes_Root'. From 'alldatatypes_Type', the role 'alldatatypes_Type' has cardinality 0..*, and from 'alldatatypes_Root', the role 'alldatatypes_Root' has cardinality 0..*.

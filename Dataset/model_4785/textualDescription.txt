@@ -1,0 +1,81 @@
+The domain model 'types' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'types_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'types_EnumerationType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Enumerator' represents an important domain concept.
+It has one attribute: 'literalValue', which is of type str.
+
+'types_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ComplexType' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_TypeConstraint' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'types_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'types_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'types_Type' is a specialization of 'NamedElement'.
+The class 'types_Feature' is a specialization of 'TypedElement'.
+The class 'types_Feature' is a specialization of 'NamedElement'.
+The class 'types_Operation' is a specialization of 'Feature'.
+The class 'types_Property' is a specialization of 'Feature'.
+The class 'types_Parameter' is a specialization of 'TypedElement'.
+The class 'types_Parameter' is a specialization of 'NamedElement'.
+The class 'types_Event' is a specialization of 'Feature'.
+The class 'types_EnumerationType' is a specialization of 'PrimitiveType'.
+The class 'types_PrimitiveType' is a specialization of 'Type'.
+The class 'types_ComplexType' is a specialization of 'Type'.
+The class 'types_Enumerator' is a specialization of 'NamedElement'.
+The class 'types_TypeConstraint' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'types_TypeConstraint' and 'types_Type'. From 'types_TypeConstraint', the role 'types_TypeConstraint' has cardinality 0..*, and from 'types_Type', the role 'types_Type' has cardinality 0..*.
+An association connects 'types_Feature' and 'types_ComplexType'. From 'types_Feature', the role 'features' has cardinality 0..*, and from 'types_ComplexType', the role 'ComplexType' has cardinality 0..*.
+An association connects 'types_Operation' and 'types_Parameter'. From 'types_Operation', the role 'owningOperation' has cardinality 0..*, and from 'types_Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'types_Operation' and 'types_Parameter'. From 'types_Operation', the role 'Operation' has cardinality 0..*, and from 'types_Parameter', the role 'parameters' has cardinality 0..*.
+An association connects 'types_TypedElement' and 'types_Type'. From 'types_TypedElement', the role 'types_TypedElement' has cardinality 0..*, and from 'types_Type', the role 'types_Type5' has cardinality 0..*.
+An association connects 'types_EnumerationType' and 'types_Enumerator'. From 'types_EnumerationType', the role 'owningEnumeration' has cardinality 0..*, and from 'types_Enumerator', the role 'Enumerator' has cardinality 0..*.
+An association connects 'types_PrimitiveType' and 'types_PrimitiveType'. From 'types_PrimitiveType', the role 'types_PrimitiveType7' has cardinality 0..*, and from 'types_PrimitiveType', the role 'types_PrimitiveType' has cardinality 0..*.
+An association connects 'types_ComplexType' and 'types_Feature'. From 'types_ComplexType', the role 'owningType' has cardinality 0..*, and from 'types_Feature', the role 'Feature' has cardinality 0..*.
+An association connects 'types_ComplexType' and 'types_ComplexType'. From 'types_ComplexType', the role 'types_ComplexType' has cardinality 0..*, and from 'types_ComplexType', the role 'types_ComplexType10' has cardinality 0..*.
+An association connects 'types_EnumerationType' and 'types_Enumerator'. From 'types_EnumerationType', the role 'EnumerationType' has cardinality 0..*, and from 'types_Enumerator', the role 'enumerator' has cardinality 0..*.

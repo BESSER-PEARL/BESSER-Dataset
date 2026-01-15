@@ -1,0 +1,104 @@
+The domain model 'profile' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'profile_ConceptDomainConstraint' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'identifier', which is of type str.
+
+'profile_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'profile_ConceptDomain' represents an important domain concept.
+It has the following attributes: 'identifier', which is of type str; 'fullName', which is of type str; 'status', which is of type str; 'statusDate', which is of type str.
+
+'profile_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'profile_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'profile_ValueSetConstraints' represents an important domain concept.
+It does not declare any attributes.
+
+'profile_CR' represents an important domain concept.
+It has one attribute: 'inverted', which is of type str.
+
+'profile_Context' represents an important domain concept.
+It does not declare any attributes.
+
+'profile_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'profile_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'profile_CodeSystemConstraint' represents an important domain concept.
+It has the following attributes: 'displayName', which is of type str; 'code', which is of type str; 'name', which is of type str; 'binding', which is of type str; 'identifier', which is of type str; 'version', which is of type str.
+
+'profile_ValueSetVersion' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'effectiveDate', which is of type str; 'binding', which is of type str; 'source', which is of type str; 'url', which is of type str; 'identifier', which is of type str; 'version', which is of type str; 'fullName', which is of type str; 'releaseDate', which is of type str; 'statusDate', which is of type str; 'expirationDate', which is of type str; 'revisionDate', which is of type str; 'status', which is of type str; 'definition', which is of type str.
+
+'profile_ContextToValueSet' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'profile_CodedType' represents an important domain concept.
+It does not declare any attributes.
+
+'profile_CD' represents an important domain concept.
+It has the following attributes: 'codeSystemVersion', which is of type str; 'codeSystem', which is of type str; 'codeSystemName', which is of type str; 'code', which is of type str; 'displayName', which is of type str.
+
+'profile_ValueSetConstraint' represents an important domain concept.
+It has the following attributes: 'extensibility', which is of type str; 'version', which is of type str; 'name', which is of type str; 'identifier', which is of type str; 'guidance', which is of type str; 'uri', which is of type str; 'binding', which is of type str.
+
+'profile_NullValueSetConstraint' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'name', which is of type str; 'identifier', which is of type str; 'binding', which is of type str.
+
+'profile_UsageContext' represents an important domain concept.
+It has the following attributes: 'identifier', which is of type str; 'status', which is of type str; 'statusDate', which is of type str.
+
+'profile_CodeSystemVersion' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'effectiveDate', which is of type str; 'source', which is of type str; 'identifier', which is of type str; 'statusDate', which is of type str; 'version', which is of type str; 'url', which is of type str; 'releaseDate', which is of type str; 'fullName', which is of type str.
+
+'profile_ValueSetCode' represents an important domain concept.
+It has the following attributes: 'usageNote', which is of type str; 'conceptName', which is of type str.
+
+'profile_ValueSetContextBinding' represents an important domain concept.
+It has one attribute: 'effectiveDate', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Extensibility' defines the following possible values: 'CEA', 'NEA'.
+The enumeration 'ValueSetType' defines the following possible values: 'Intensional', 'Extensional'.
+The enumeration 'BindingKind' defines the following possible values: 'Static', 'Dynamic'.
+The enumeration 'ValueSetBinding' defines the following possible values: 'Indirect', 'Direct'.
+The enumeration 'Guidance' defines the following possible values: 'OPEN', 'RESTRICT', 'CLOSED', 'EXTEND', 'FIXED'.
+The enumeration 'StatusKind' defines the following possible values: 'Inactive', 'Active'.
+
+Relationships between classes are modeled using associations.
+An association connects 'profile_CR' and 'profile_CD'. From 'profile_CR', the role 'profile_CR' has cardinality 0..*, and from 'profile_CD', the role 'profile_CD' has cardinality 0..*.
+An association connects 'profile_CD' and 'profile_CD'. From 'profile_CD', the role 'profile_CD3' has cardinality 0..*, and from 'profile_CD', the role 'profile_CD1' has cardinality 0..*.
+An association connects 'profile_CD' and 'profile_CR'. From 'profile_CD', the role 'profile_CD6' has cardinality 0..*, and from 'profile_CR', the role 'profile_CR5' has cardinality 0..*.
+An association connects 'profile_CD' and 'profile_CR'. From 'profile_CD', the role 'profile_CD9' has cardinality 0..*, and from 'profile_CR', the role 'profile_CR8' has cardinality 0..*.
+An association connects 'profile_ConceptDomainConstraint' and 'profile_ConceptDomain'. From 'profile_ConceptDomainConstraint', the role 'profile_ConceptDomainConstraint' has cardinality 0..*, and from 'profile_ConceptDomain', the role 'profile_ConceptDomain' has cardinality 0..*.
+An association connects 'profile_Property' and 'profile_ConceptDomainConstraint'. From 'profile_Property', the role 'profile_Property' has cardinality 0..*, and from 'profile_ConceptDomainConstraint', the role 'profile_ConceptDomainConstraint12' has cardinality 0..*.
+An association connects 'profile_ConceptDomain' and 'profile_Class'. From 'profile_ConceptDomain', the role 'profile_ConceptDomain14' has cardinality 0..*, and from 'profile_Class', the role 'profile_Class' has cardinality 0..*.
+An association connects 'profile_CodeSystemVersion' and 'profile_CodeSystemConstraint'. From 'profile_CodeSystemVersion', the role 'profile_CodeSystemVersion' has cardinality 0..*, and from 'profile_CodeSystemConstraint', the role 'profile_CodeSystemConstraint' has cardinality 0..*.
+An association connects 'profile_CodeSystemConstraint' and 'profile_CR'. From 'profile_CodeSystemConstraint', the role 'profile_CodeSystemConstraint17' has cardinality 0..*, and from 'profile_CR', the role 'profile_CR18' has cardinality 0..*.
+An association connects 'profile_Property' and 'profile_CodeSystemConstraint'. From 'profile_Property', the role 'profile_Property21' has cardinality 0..*, and from 'profile_CodeSystemConstraint', the role 'profile_CodeSystemConstraint20' has cardinality 0..*.
+An association connects 'profile_CodeSystemVersion' and 'profile_Enumeration'. From 'profile_CodeSystemVersion', the role 'profile_CodeSystemVersion23' has cardinality 0..*, and from 'profile_Enumeration', the role 'profile_Enumeration' has cardinality 0..*.
+An association connects 'profile_ValueSetConstraint' and 'profile_ValueSetVersion'. From 'profile_ValueSetConstraint', the role 'profile_ValueSetConstraint' has cardinality 0..*, and from 'profile_ValueSetVersion', the role 'profile_ValueSetVersion' has cardinality 0..*.
+An association connects 'profile_Property' and 'profile_ValueSetConstraint'. From 'profile_Property', the role 'profile_Property27' has cardinality 0..*, and from 'profile_ValueSetConstraint', the role 'profile_ValueSetConstraint26' has cardinality 0..*.
+An association connects 'profile_CodeSystemVersion' and 'profile_ValueSetVersion'. From 'profile_CodeSystemVersion', the role 'profile_CodeSystemVersion30' has cardinality 0..*, and from 'profile_ValueSetVersion', the role 'profile_ValueSetVersion29' has cardinality 0..*.
+An association connects 'profile_ValueSetVersion' and 'profile_Enumeration'. From 'profile_ValueSetVersion', the role 'profile_ValueSetVersion32' has cardinality 0..*, and from 'profile_Enumeration', the role 'profile_Enumeration33' has cardinality 0..*.
+An association connects 'profile_ValueSetCode' and 'profile_CodeSystemVersion'. From 'profile_ValueSetCode', the role 'profile_ValueSetCode' has cardinality 0..*, and from 'profile_CodeSystemVersion', the role 'profile_CodeSystemVersion35' has cardinality 0..*.
+An association connects 'profile_EnumerationLiteral' and 'profile_ValueSetCode'. From 'profile_EnumerationLiteral', the role 'profile_EnumerationLiteral' has cardinality 0..*, and from 'profile_ValueSetCode', the role 'profile_ValueSetCode37' has cardinality 0..*.
+An association connects 'profile_ConceptDomain' and 'profile_ValueSetContextBinding'. From 'profile_ConceptDomain', the role 'profile_ConceptDomain39' has cardinality 0..*, and from 'profile_ValueSetContextBinding', the role 'profile_ValueSetContextBinding' has cardinality 0..*.
+An association connects 'profile_ValueSetContextBinding' and 'profile_ValueSetVersion'. From 'profile_ValueSetContextBinding', the role 'profile_ValueSetContextBinding41' has cardinality 0..*, and from 'profile_ValueSetVersion', the role 'profile_ValueSetVersion42' has cardinality 0..*.
+An association connects 'profile_ValueSetContextBinding' and 'profile_UsageContext'. From 'profile_ValueSetContextBinding', the role 'profile_ValueSetContextBinding44' has cardinality 0..*, and from 'profile_UsageContext', the role 'profile_UsageContext' has cardinality 0..*.
+An association connects 'profile_Class' and 'profile_ValueSetContextBinding'. From 'profile_Class', the role 'profile_Class47' has cardinality 0..*, and from 'profile_ValueSetContextBinding', the role 'profile_ValueSetContextBinding46' has cardinality 0..*.
+An association connects 'profile_Class' and 'profile_UsageContext'. From 'profile_Class', the role 'profile_Class50' has cardinality 0..*, and from 'profile_UsageContext', the role 'profile_UsageContext49' has cardinality 0..*.
+An association connects 'profile_ValueSetConstraints' and 'profile_Property'. From 'profile_ValueSetConstraints', the role 'profile_ValueSetConstraints' has cardinality 0..*, and from 'profile_Property', the role 'profile_Property52' has cardinality 0..*.
+An association connects 'profile_ValueSetConstraints' and 'profile_ContextToValueSet'. From 'profile_ValueSetConstraints', the role 'profile_ValueSetConstraints54' has cardinality 0..*, and from 'profile_ContextToValueSet', the role 'profile_ContextToValueSet' has cardinality 0..*.
+An association connects 'profile_ValueSetVersion' and 'profile_NullValueSetConstraint'. From 'profile_ValueSetVersion', the role 'profile_ValueSetVersion56' has cardinality 0..*, and from 'profile_NullValueSetConstraint', the role 'profile_NullValueSetConstraint' has cardinality 0..*.
+An association connects 'profile_NullValueSetConstraint' and 'profile_Property'. From 'profile_NullValueSetConstraint', the role 'profile_NullValueSetConstraint58' has cardinality 0..*, and from 'profile_Property', the role 'profile_Property59' has cardinality 0..*.
+An association connects 'profile_Enumeration' and 'profile_Context'. From 'profile_Enumeration', the role 'profile_Enumeration61' has cardinality 0..*, and from 'profile_Context', the role 'profile_Context' has cardinality 0..*.
+An association connects 'profile_CodedType' and 'profile_Classifier'. From 'profile_CodedType', the role 'profile_CodedType' has cardinality 0..*, and from 'profile_Classifier', the role 'profile_Classifier' has cardinality 0..*.

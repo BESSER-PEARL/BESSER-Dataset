@@ -1,0 +1,16 @@
+The domain model 'A' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'A_A1' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'A_A' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'A_A2' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'A_A' and 'A_A1'. From 'A_A', the role 'A_A' has cardinality 0..*, and from 'A_A1', the role 'A_A1' has cardinality 0..*.
+An association connects 'A_A1' and 'A_A2'. From 'A_A1', the role 'A_A12' has cardinality 0..*, and from 'A_A2', the role 'A_A2' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ObeoNetwork/GraphQLEMF/src/main/resources/metamodels/BPMN20.ecore

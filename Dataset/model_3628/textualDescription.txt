@@ -1,0 +1,54 @@
+The domain model 'stateChart' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'stateChart_SimpleState' represents an important domain concept.
+It does not declare any attributes.
+
+'stateChart_PseudoState' represents an important domain concept.
+It has one attribute: 'PseudoStateType', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'stateChart_State' represents an important domain concept.
+It has the following attributes: 'exit', which is of type str; 'action', which is of type str; 'entry', which is of type str.
+
+'stateChart_Region' represents an important domain concept.
+It has the following attributes: 'note', which is of type str; 'name', which is of type str.
+
+'stateChart_Vertex' represents an important domain concept.
+It has the following attributes: 'note', which is of type str; 'isActive', which is of type bool; 'name', which is of type str.
+
+'stateChart_Transient' represents an important domain concept.
+It has the following attributes: 'trigger', which is of type str; 'priority', which is of type int; 'guard', which is of type str; 'name', which is of type str; 'effect', which is of type str.
+
+'stateChart_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'stateChart_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'stateChart_CompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PseudoStateType' defines the following possible values: 'ExitPoint', 'Initial', 'ShadowHistory', 'Join', 'EntryPoint', 'DeepHistory', 'Choice', 'Terminate', 'Junction', 'Fork'.
+
+The model also captures inheritance relationships between classes.
+The class 'stateChart_PseudoState' is a specialization of 'Vertex'.
+The class 'stateChart_State' is a specialization of 'Vertex'.
+The class 'stateChart_SimpleState' is a specialization of 'State'.
+The class 'stateChart_FinalState' is a specialization of 'State'.
+The class 'stateChart_CompositeState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'stateChart_Region' and 'stateChart_Transient'. From 'stateChart_Region', the role 'stateChart_Region' has cardinality 0..*, and from 'stateChart_Transient', the role 'stateChart_Transient' has cardinality 0..*.
+An association connects 'stateChart_Vertex' and 'stateChart_Region'. From 'stateChart_Vertex', the role 'stateChart_Vertex' has cardinality 0..*, and from 'stateChart_Region', the role 'stateChart_Region2' has cardinality 0..*.
+An association connects 'stateChart_Transient' and 'stateChart_Vertex'. From 'stateChart_Transient', the role 'stateChart_Transient4' has cardinality 0..*, and from 'stateChart_Vertex', the role 'stateChart_Vertex5' has cardinality 0..*.
+An association connects 'stateChart_Transient' and 'stateChart_Vertex'. From 'stateChart_Transient', the role 'stateChart_Transient7' has cardinality 0..*, and from 'stateChart_Vertex', the role 'stateChart_Vertex8' has cardinality 0..*.
+An association connects 'stateChart_StateMachine' and 'stateChart_Region'. From 'stateChart_StateMachine', the role 'stateChart_StateMachine' has cardinality 0..*, and from 'stateChart_Region', the role 'stateChart_Region10' has cardinality 0..*.
+An association connects 'stateChart_CompositeState' and 'stateChart_Region'. From 'stateChart_CompositeState', the role 'stateChart_CompositeState' has cardinality 0..*, and from 'stateChart_Region', the role 'stateChart_Region12' has cardinality 0..*.

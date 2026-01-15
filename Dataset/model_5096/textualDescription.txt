@@ -1,0 +1,56 @@
+The domain model 'adl' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'adl_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'adl_Type' represents an important domain concept.
+It has one attribute: 'signature', which is of type str.
+
+'adl_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adl_AbstractComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'adl_Provided' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'adl_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'adl_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'adl_Required' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'adl_Interface' is a specialization of 'NamedElement'.
+The class 'adl_Binding' is a specialization of 'NamedElement'.
+The class 'adl_Required' is a specialization of 'Type'.
+The class 'adl_Provided' is a specialization of 'Type'.
+The class 'adl_Component' is a specialization of 'AbstractComponent'.
+The class 'adl_Component' is a specialization of 'NamedElement'.
+The class 'adl_Type' is a specialization of 'Interface'.
+
+Relationships between classes are modeled using associations.
+An association connects 'adl_Required' and 'adl_AbstractComponent'. From 'adl_Required', the role 'adl_Required' has cardinality 0..*, and from 'adl_AbstractComponent', the role 'adl_AbstractComponent' has cardinality 0..*.
+An association connects 'adl_Provided' and 'adl_AbstractComponent'. From 'adl_Provided', the role 'adl_Provided' has cardinality 0..*, and from 'adl_AbstractComponent', the role 'adl_AbstractComponent2' has cardinality 0..*.
+An association connects 'adl_Binding' and 'adl_Interface'. From 'adl_Binding', the role 'adl_Binding' has cardinality 0..*, and from 'adl_Interface', the role 'adl_Interface' has cardinality 0..*.
+An association connects 'adl_Binding' and 'adl_Interface'. From 'adl_Binding', the role 'adl_Binding5' has cardinality 0..*, and from 'adl_Interface', the role 'adl_Interface6' has cardinality 0..*.
+An association connects 'adl_Interface' and 'adl_Binding'. From 'adl_Interface', the role 'adl_Interface9' has cardinality 0..*, and from 'adl_Binding', the role 'adl_Binding8' has cardinality 0..*.
+An association connects 'adl_Component' and 'adl_Component'. From 'adl_Component', the role 'adl_Component' has cardinality 0..*, and from 'adl_Component', the role 'adl_Component10' has cardinality 0..*.

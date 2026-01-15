@@ -1,0 +1,381 @@
+The domain model 'xhtml' describes the core structural elements and their relationships within the system.
+
+The model defines 57 main class(es).
+
+'xhtml_Tr' represents an important domain concept.
+It has the following attributes: 'align', which is of type str; 'charoff', which is of type str; 'class', which is of type str; 'lang', which is of type str; 'valign', which is of type str; 'char', which is of type str; 'style', which is of type str; 'group', which is of type str.
+
+'xhtml_Object' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'mixed', which is of type str; 'group', which is of type str; 'hl7Id', which is of type str.
+
+'xhtml_B' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'lang', which is of type str; 'class', which is of type str.
+
+'xhtml_Tfoot' represents an important domain concept.
+It has the following attributes: 'class', which is of type str; 'charoff', which is of type str; 'valign', which is of type str; 'char', which is of type str; 'lang', which is of type str; 'style', which is of type str; 'align', which is of type str.
+
+'xhtml_Dt' represents an important domain concept.
+It has the following attributes: 'lang', which is of type str; 'style', which is of type str; 'class', which is of type str.
+
+'xhtml_Div' represents an important domain concept.
+It has the following attributes: 'hl7Id', which is of type str; 'style', which is of type str; 'title', which is of type str; 'class', which is of type str; 'lang', which is of type str.
+
+'xhtml_Th' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'rowspan', which is of type str; 'colspan', which is of type str; 'valign', which is of type str; 'class', which is of type str; 'charoff', which is of type str; 'char', which is of type str; 'align', which is of type str; 'lang', which is of type str.
+
+'AContent' represents an important domain concept.
+It does not declare any attributes.
+
+'xhtml_Blockquote' represents an important domain concept.
+It has the following attributes: 'cite', which is of type str; 'lang', which is of type str; 'style', which is of type str; 'class', which is of type str.
+
+'xhtml_Acronym' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'lang', which is of type str; 'class', which is of type str.
+
+'xhtml_Table' represents an important domain concept.
+It has the following attributes: 'rules', which is of type str; 'style', which is of type str; 'width', which is of type str; 'lang', which is of type str; 'hl7Id', which is of type str; 'cellspacing', which is of type str; 'cellpadding', which is of type str; 'class', which is of type str; 'border', which is of type str; 'frame', which is of type str.
+
+'xhtml_Tt' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'class', which is of type str; 'lang', which is of type str.
+
+'xhtml_Strong' represents an important domain concept.
+It has the following attributes: 'lang', which is of type str; 'class', which is of type str; 'style', which is of type str.
+
+'xhtml_Abbr' represents an important domain concept.
+It has the following attributes: 'class', which is of type str; 'lang', which is of type str; 'style', which is of type str.
+
+'xhtml_Ins' represents an important domain concept.
+It does not declare any attributes.
+
+'PreContent' represents an important domain concept.
+It does not declare any attributes.
+
+'xhtml_I' represents an important domain concept.
+It has the following attributes: 'class', which is of type str; 'lang', which is of type str; 'style', which is of type str.
+
+'xhtml_Big' represents an important domain concept.
+It has the following attributes: 'class', which is of type str; 'lang', which is of type str; 'style', which is of type str.
+
+'xhtml_Sub' represents an important domain concept.
+It has the following attributes: 'class', which is of type str; 'style', which is of type str; 'lang', which is of type str.
+
+'xhtml_Ol' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'class', which is of type str; 'li', which is of type str; 'lang', which is of type str.
+
+'xhtml_Samp' represents an important domain concept.
+It has the following attributes: 'lang', which is of type str; 'style', which is of type str; 'class', which is of type str.
+
+'xhtml_Span' represents an important domain concept.
+It has the following attributes: 'lang', which is of type str; 'style', which is of type str; 'class', which is of type str.
+
+'xhtml_Thead' represents an important domain concept.
+It has the following attributes: 'char', which is of type str; 'lang', which is of type str; 'class', which is of type str; 'valign', which is of type str; 'style', which is of type str; 'charoff', which is of type str; 'align', which is of type str.
+
+'xhtml_Param' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'xhtml_Em' represents an important domain concept.
+It has the following attributes: 'lang', which is of type str; 'style', which is of type str; 'class', which is of type str.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'xhtml_Tbody' represents an important domain concept.
+It has the following attributes: 'align', which is of type str; 'valign', which is of type str; 'char', which is of type str; 'lang', which is of type str; 'style', which is of type str; 'charoff', which is of type str; 'class', which is of type str.
+
+'xhtml_Sup' represents an important domain concept.
+It has the following attributes: 'lang', which is of type str; 'class', which is of type str; 'style', which is of type str.
+
+'xhtml_Q' represents an important domain concept.
+It has the following attributes: 'lang', which is of type str; 'style', which is of type str; 'class', which is of type str; 'cite1', which is of type str.
+
+'xhtml_Colgroup' represents an important domain concept.
+It has the following attributes: 'lang', which is of type str; 'valign', which is of type str; 'width', which is of type str; 'char', which is of type str; 'class', which is of type str; 'charoff', which is of type str; 'style', which is of type str; 'span', which is of type str; 'align', which is of type str.
+
+'xhtml_Dfn' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'class', which is of type str; 'lang', which is of type str.
+
+'xhtml_Cite' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'class', which is of type str; 'lang', which is of type str.
+
+'xhtml_Var' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'class', which is of type str; 'lang', which is of type str.
+
+'xhtml_Dl' represents an important domain concept.
+It has the following attributes: 'class', which is of type str; 'lang', which is of type str; 'group', which is of type str; 'style', which is of type str.
+
+'xhtml_Small' represents an important domain concept.
+It has the following attributes: 'class', which is of type str; 'lang', which is of type str; 'style', which is of type str.
+
+'xhtml_PreContent' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'mixed', which is of type str.
+
+'xhtml_Pre' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'class', which is of type str; 'lang', which is of type str; 'space', which is of type str.
+
+'xhtml_A' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'lang', which is of type str; 'class', which is of type str; 'coords', which is of type str; 'name', which is of type str; 'type', which is of type str; 'href', which is of type str; 'shape', which is of type str.
+
+'xhtml_Block' represents an important domain concept.
+It has the following attributes: 'block', which is of type str; 'mixed', which is of type str.
+
+'xhtml_Inline' represents an important domain concept.
+It has the following attributes: 'inline', which is of type str; 'mixed', which is of type str.
+
+'xhtml_Li' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'lang', which is of type str; 'class', which is of type str.
+
+'xhtml_P' represents an important domain concept.
+It has the following attributes: 'lang', which is of type str; 'style', which is of type str; 'class', which is of type str.
+
+'xhtml_Hr' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'lang', which is of type str; 'class', which is of type str.
+
+'xhtml_Del' represents an important domain concept.
+It does not declare any attributes.
+
+'xhtml_Col' represents an important domain concept.
+It has the following attributes: 'charoff', which is of type str; 'lang', which is of type str; 'align', which is of type str; 'char', which is of type str; 'valign', which is of type str; 'style', which is of type str; 'class', which is of type str; 'width', which is of type str; 'span', which is of type str.
+
+'Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'xhtml_Code' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'class', which is of type str; 'lang', which is of type str.
+
+'xhtml_Ul' represents an important domain concept.
+It has the following attributes: 'li', which is of type str; 'lang', which is of type str; 'class', which is of type str; 'style', which is of type str.
+
+'xhtml_Flow' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'group', which is of type str.
+
+'Inline' represents an important domain concept.
+It does not declare any attributes.
+
+'xhtml_Td' represents an important domain concept.
+It has the following attributes: 'rowspan', which is of type str; 'char', which is of type str; 'valign', which is of type str; 'colspan', which is of type str; 'charoff', which is of type str; 'class', which is of type str; 'style', which is of type str; 'align', which is of type str; 'lang', which is of type str.
+
+'xhtml_AContent' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'group', which is of type str.
+
+'xhtml_Br' represents an important domain concept.
+It has the following attributes: 'class', which is of type str; 'style', which is of type str.
+
+'xhtml_Kbd' represents an important domain concept.
+It has the following attributes: 'class', which is of type str; 'lang', which is of type str; 'style', which is of type str.
+
+'xhtml_Caption' represents an important domain concept.
+It has the following attributes: 'class', which is of type str; 'style', which is of type str; 'lang', which is of type str.
+
+'xhtml_Img' represents an important domain concept.
+It has the following attributes: 'height', which is of type str; 'src', which is of type str; 'style', which is of type str; 'hl7Id', which is of type str; 'width', which is of type str; 'class', which is of type str; 'lang', which is of type str; 'alt', which is of type str; 'imageType', which is of type str.
+
+'xhtml_Dd' represents an important domain concept.
+It has the following attributes: 'lang', which is of type str; 'style', which is of type str; 'class', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MifClassType' defines the following possible values: 'inserted', 'changed', 'deleted'.
+The enumeration 'StyleSheet' defines the following possible values: 'BackgroundLime', 'BackgroundYellow', 'Note', 'NonNumbered', 'BackgroundAqua', 'Indent', 'BackgroundPink', 'Requirement'.
+The enumeration 'TFrame' defines the following possible values: 'border', 'rhs', 'vsides', 'hsides', 'above', 'box', 'lhs', 'below', 'void'.
+The enumeration 'ObjectName' defines the following possible values: 'transitionRef', 'externalSpecRef', 'requirementRef', 'packageRef', 'staticModelRef', 'itemName', 'storyboardRef', 'annotationRef', 'testScenarioRef', 'vocabularyValueSetRef', 'vocabularyCodeSystemRef', 'applicationRoleRef', 'interactionRef', 'constructedElement', 'artifactGroupRef', 'publicationRef', 'glossaryTermRef', 'datatypeRef', 'footnote', 'domainInstanceExampleRef', 'figureRef', 'classRef', 'attributeRef', 'vocabularyModelRef', 'vocabularyCodeRef', 'associationEndRef', 'datatypeModelRef', 'propertyRef', 'subjectAreaRef', 'testCaseRef', 'triggerEventRef', 'freehandDocumentRef', 'stateRef', 'domainAnalysisModelRef', 'glossaryRef', 'conceptDomainRef', 'tableRef'.
+The enumeration 'AlignType' defines the following possible values: 'center', 'char', 'left', 'justify', 'right'.
+The enumeration 'Shape' defines the following possible values: 'circle', 'rect', 'default', 'poly'.
+The enumeration 'TRules' defines the following possible values: 'rows', 'cols', 'none', 'groups', 'all'.
+The enumeration 'ImageKind' defines the following possible values: 'applicationSvgXml', 'applicationPostscript', 'applicationPng', 'applicationPdf', 'applicationJpeg', 'imageGif'.
+The enumeration 'MediaType' defines the following possible values: 'imagePng', 'textXml', 'videoMpeg', 'applicationMsword', 'applicationPdf', 'imageJpeg', 'textHtml', 'audioMpeg', 'imageGif', 'textPlain', 'textRtf'.
+The enumeration 'ParamName' defines the following possible values: 'linkToEnd', 'subArtifact', 'subjectAreaName', 'item', 'className', 'stateTransitionName', 'artifactName', 'version', 'codeSystemId', 'withinClassName', 'supplierBindingArgumentDatatype', 'id', 'group', 'attributeName', 'termName', 'domain', 'propertyName', 'root', 'conversionDatatype', 'datatypeName', 'artifact', 'realmNamespace', 'constructType', 'annotationKind', 'code', 'name', 'stateName', 'relationshipName'.
+The enumeration 'ValignType' defines the following possible values: 'top', 'bottom', 'baseline', 'middle'.
+
+The model also captures inheritance relationships between classes.
+The class 'xhtml_A' is a specialization of 'AContent'.
+The class 'xhtml_Abbr' is a specialization of 'Inline'.
+The class 'xhtml_Acronym' is a specialization of 'Inline'.
+The class 'xhtml_B' is a specialization of 'Inline'.
+The class 'xhtml_Big' is a specialization of 'Inline'.
+The class 'xhtml_Blockquote' is a specialization of 'Block'.
+The class 'xhtml_Caption' is a specialization of 'Inline'.
+The class 'xhtml_Cite' is a specialization of 'Inline'.
+The class 'xhtml_Code' is a specialization of 'Inline'.
+The class 'xhtml_Dd' is a specialization of 'Flow'.
+The class 'xhtml_Del' is a specialization of 'Flow'.
+The class 'xhtml_Dfn' is a specialization of 'Inline'.
+The class 'xhtml_Div' is a specialization of 'Flow'.
+The class 'xhtml_Dt' is a specialization of 'Inline'.
+The class 'xhtml_Em' is a specialization of 'Inline'.
+The class 'xhtml_I' is a specialization of 'Inline'.
+The class 'xhtml_Ins' is a specialization of 'Flow'.
+The class 'xhtml_Kbd' is a specialization of 'Inline'.
+The class 'xhtml_Li' is a specialization of 'Flow'.
+The class 'xhtml_P' is a specialization of 'Inline'.
+The class 'xhtml_Pre' is a specialization of 'PreContent'.
+The class 'xhtml_Q' is a specialization of 'Inline'.
+The class 'xhtml_Samp' is a specialization of 'Inline'.
+The class 'xhtml_Small' is a specialization of 'Inline'.
+The class 'xhtml_Span' is a specialization of 'Inline'.
+The class 'xhtml_Strong' is a specialization of 'Inline'.
+The class 'xhtml_Sub' is a specialization of 'Inline'.
+The class 'xhtml_Sup' is a specialization of 'Inline'.
+The class 'xhtml_Td' is a specialization of 'Flow'.
+The class 'xhtml_Th' is a specialization of 'Flow'.
+The class 'xhtml_Tt' is a specialization of 'Inline'.
+The class 'xhtml_Var' is a specialization of 'Inline'.
+
+Relationships between classes are modeled using associations.
+An association connects 'xhtml_Br' and 'xhtml_AContent'. From 'xhtml_Br', the role 'xhtml_Br' has cardinality 0..*, and from 'xhtml_AContent', the role 'xhtml_AContent' has cardinality 0..*.
+An association connects 'xhtml_Span' and 'xhtml_AContent'. From 'xhtml_Span', the role 'xhtml_Span' has cardinality 0..*, and from 'xhtml_AContent', the role 'xhtml_AContent2' has cardinality 0..*.
+An association connects 'xhtml_AContent' and 'xhtml_Object'. From 'xhtml_AContent', the role 'xhtml_AContent4' has cardinality 0..*, and from 'xhtml_Object', the role 'xhtml_Object' has cardinality 0..*.
+An association connects 'xhtml_Img' and 'xhtml_AContent'. From 'xhtml_Img', the role 'xhtml_Img' has cardinality 0..*, and from 'xhtml_AContent', the role 'xhtml_AContent6' has cardinality 0..*.
+An association connects 'xhtml_Tt' and 'xhtml_AContent'. From 'xhtml_Tt', the role 'xhtml_Tt' has cardinality 0..*, and from 'xhtml_AContent', the role 'xhtml_AContent8' has cardinality 0..*.
+An association connects 'xhtml_AContent' and 'xhtml_I'. From 'xhtml_AContent', the role 'xhtml_AContent10' has cardinality 0..*, and from 'xhtml_I', the role 'xhtml_I' has cardinality 0..*.
+An association connects 'xhtml_B' and 'xhtml_AContent'. From 'xhtml_B', the role 'xhtml_B' has cardinality 0..*, and from 'xhtml_AContent', the role 'xhtml_AContent12' has cardinality 0..*.
+An association connects 'xhtml_AContent' and 'xhtml_Big'. From 'xhtml_AContent', the role 'xhtml_AContent14' has cardinality 0..*, and from 'xhtml_Big', the role 'xhtml_Big' has cardinality 0..*.
+An association connects 'xhtml_AContent' and 'xhtml_Small'. From 'xhtml_AContent', the role 'xhtml_AContent16' has cardinality 0..*, and from 'xhtml_Small', the role 'xhtml_Small' has cardinality 0..*.
+An association connects 'xhtml_AContent' and 'xhtml_Em'. From 'xhtml_AContent', the role 'xhtml_AContent18' has cardinality 0..*, and from 'xhtml_Em', the role 'xhtml_Em' has cardinality 0..*.
+An association connects 'xhtml_Strong' and 'xhtml_AContent'. From 'xhtml_Strong', the role 'xhtml_Strong' has cardinality 0..*, and from 'xhtml_AContent', the role 'xhtml_AContent20' has cardinality 0..*.
+An association connects 'xhtml_Dfn' and 'xhtml_AContent'. From 'xhtml_Dfn', the role 'xhtml_Dfn' has cardinality 0..*, and from 'xhtml_AContent', the role 'xhtml_AContent22' has cardinality 0..*.
+An association connects 'xhtml_AContent' and 'xhtml_Code'. From 'xhtml_AContent', the role 'xhtml_AContent24' has cardinality 0..*, and from 'xhtml_Code', the role 'xhtml_Code' has cardinality 0..*.
+An association connects 'xhtml_Q' and 'xhtml_AContent'. From 'xhtml_Q', the role 'xhtml_Q' has cardinality 0..*, and from 'xhtml_AContent', the role 'xhtml_AContent26' has cardinality 0..*.
+An association connects 'xhtml_AContent' and 'xhtml_Samp'. From 'xhtml_AContent', the role 'xhtml_AContent28' has cardinality 0..*, and from 'xhtml_Samp', the role 'xhtml_Samp' has cardinality 0..*.
+An association connects 'xhtml_AContent' and 'xhtml_Kbd'. From 'xhtml_AContent', the role 'xhtml_AContent30' has cardinality 0..*, and from 'xhtml_Kbd', the role 'xhtml_Kbd' has cardinality 0..*.
+An association connects 'xhtml_AContent' and 'xhtml_Var'. From 'xhtml_AContent', the role 'xhtml_AContent32' has cardinality 0..*, and from 'xhtml_Var', the role 'xhtml_Var' has cardinality 0..*.
+An association connects 'xhtml_AContent' and 'xhtml_Cite'. From 'xhtml_AContent', the role 'xhtml_AContent34' has cardinality 0..*, and from 'xhtml_Cite', the role 'xhtml_Cite' has cardinality 0..*.
+An association connects 'xhtml_AContent' and 'xhtml_Abbr'. From 'xhtml_AContent', the role 'xhtml_AContent36' has cardinality 0..*, and from 'xhtml_Abbr', the role 'xhtml_Abbr' has cardinality 0..*.
+An association connects 'xhtml_AContent' and 'xhtml_Acronym'. From 'xhtml_AContent', the role 'xhtml_AContent38' has cardinality 0..*, and from 'xhtml_Acronym', the role 'xhtml_Acronym' has cardinality 0..*.
+An association connects 'xhtml_AContent' and 'xhtml_Sub'. From 'xhtml_AContent', the role 'xhtml_AContent40' has cardinality 0..*, and from 'xhtml_Sub', the role 'xhtml_Sub' has cardinality 0..*.
+An association connects 'xhtml_Sup' and 'xhtml_AContent'. From 'xhtml_Sup', the role 'xhtml_Sup' has cardinality 0..*, and from 'xhtml_AContent', the role 'xhtml_AContent42' has cardinality 0..*.
+An association connects 'xhtml_P' and 'xhtml_Block'. From 'xhtml_P', the role 'xhtml_P' has cardinality 0..*, and from 'xhtml_Block', the role 'xhtml_Block' has cardinality 0..*.
+An association connects 'xhtml_Div' and 'xhtml_Block'. From 'xhtml_Div', the role 'xhtml_Div' has cardinality 0..*, and from 'xhtml_Block', the role 'xhtml_Block45' has cardinality 0..*.
+An association connects 'xhtml_Block' and 'xhtml_Ul'. From 'xhtml_Block', the role 'xhtml_Block47' has cardinality 0..*, and from 'xhtml_Ul', the role 'xhtml_Ul' has cardinality 0..*.
+An association connects 'xhtml_Block' and 'xhtml_Ol'. From 'xhtml_Block', the role 'xhtml_Block49' has cardinality 0..*, and from 'xhtml_Ol', the role 'xhtml_Ol' has cardinality 0..*.
+An association connects 'xhtml_Block' and 'xhtml_Dl'. From 'xhtml_Block', the role 'xhtml_Block51' has cardinality 0..*, and from 'xhtml_Dl', the role 'xhtml_Dl' has cardinality 0..*.
+An association connects 'xhtml_Block' and 'xhtml_Pre'. From 'xhtml_Block', the role 'xhtml_Block53' has cardinality 0..*, and from 'xhtml_Pre', the role 'xhtml_Pre' has cardinality 0..*.
+An association connects 'xhtml_Hr' and 'xhtml_Block'. From 'xhtml_Hr', the role 'xhtml_Hr' has cardinality 0..*, and from 'xhtml_Block', the role 'xhtml_Block55' has cardinality 0..*.
+An association connects 'xhtml_Block' and 'xhtml_Blockquote'. From 'xhtml_Block', the role 'xhtml_Block57' has cardinality 0..*, and from 'xhtml_Blockquote', the role 'xhtml_Blockquote' has cardinality 0..*.
+An association connects 'xhtml_Block' and 'xhtml_Table'. From 'xhtml_Block', the role 'xhtml_Block59' has cardinality 0..*, and from 'xhtml_Table', the role 'xhtml_Table' has cardinality 0..*.
+An association connects 'xhtml_Col' and 'xhtml_Colgroup'. From 'xhtml_Col', the role 'xhtml_Col' has cardinality 0..*, and from 'xhtml_Colgroup', the role 'xhtml_Colgroup' has cardinality 0..*.
+An association connects 'xhtml_Dl' and 'xhtml_Dt'. From 'xhtml_Dl', the role 'xhtml_Dl62' has cardinality 0..*, and from 'xhtml_Dt', the role 'xhtml_Dt' has cardinality 0..*.
+An association connects 'xhtml_Dl' and 'xhtml_Dd'. From 'xhtml_Dl', the role 'xhtml_Dl64' has cardinality 0..*, and from 'xhtml_Dd', the role 'xhtml_Dd' has cardinality 0..*.
+An association connects 'xhtml_Flow' and 'xhtml_P'. From 'xhtml_Flow', the role 'xhtml_Flow' has cardinality 0..*, and from 'xhtml_P', the role 'xhtml_P66' has cardinality 0..*.
+An association connects 'xhtml_Flow' and 'xhtml_Div'. From 'xhtml_Flow', the role 'xhtml_Flow68' has cardinality 0..*, and from 'xhtml_Div', the role 'xhtml_Div69' has cardinality 0..*.
+An association connects 'xhtml_Flow' and 'xhtml_Ul'. From 'xhtml_Flow', the role 'xhtml_Flow71' has cardinality 0..*, and from 'xhtml_Ul', the role 'xhtml_Ul72' has cardinality 0..*.
+An association connects 'xhtml_Flow' and 'xhtml_Ol'. From 'xhtml_Flow', the role 'xhtml_Flow74' has cardinality 0..*, and from 'xhtml_Ol', the role 'xhtml_Ol75' has cardinality 0..*.
+An association connects 'xhtml_Flow' and 'xhtml_Dl'. From 'xhtml_Flow', the role 'xhtml_Flow77' has cardinality 0..*, and from 'xhtml_Dl', the role 'xhtml_Dl78' has cardinality 0..*.
+An association connects 'xhtml_Flow' and 'xhtml_Pre'. From 'xhtml_Flow', the role 'xhtml_Flow80' has cardinality 0..*, and from 'xhtml_Pre', the role 'xhtml_Pre81' has cardinality 0..*.
+An association connects 'xhtml_Flow' and 'xhtml_Hr'. From 'xhtml_Flow', the role 'xhtml_Flow83' has cardinality 0..*, and from 'xhtml_Hr', the role 'xhtml_Hr84' has cardinality 0..*.
+An association connects 'xhtml_Blockquote' and 'xhtml_Flow'. From 'xhtml_Blockquote', the role 'xhtml_Blockquote87' has cardinality 0..*, and from 'xhtml_Flow', the role 'xhtml_Flow86' has cardinality 0..*.
+An association connects 'xhtml_Flow' and 'xhtml_Table'. From 'xhtml_Flow', the role 'xhtml_Flow89' has cardinality 0..*, and from 'xhtml_Table', the role 'xhtml_Table90' has cardinality 0..*.
+An association connects 'xhtml_Flow' and 'xhtml_A'. From 'xhtml_Flow', the role 'xhtml_Flow92' has cardinality 0..*, and from 'xhtml_A', the role 'xhtml_A' has cardinality 0..*.
+An association connects 'xhtml_Flow' and 'xhtml_Br'. From 'xhtml_Flow', the role 'xhtml_Flow94' has cardinality 0..*, and from 'xhtml_Br', the role 'xhtml_Br95' has cardinality 0..*.
+An association connects 'xhtml_Flow' and 'xhtml_Span'. From 'xhtml_Flow', the role 'xhtml_Flow97' has cardinality 0..*, and from 'xhtml_Span', the role 'xhtml_Span98' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_Flow'. From 'xhtml_Object', the role 'xhtml_Object101' has cardinality 0..*, and from 'xhtml_Flow', the role 'xhtml_Flow100' has cardinality 0..*.
+An association connects 'xhtml_Img' and 'xhtml_Flow'. From 'xhtml_Img', the role 'xhtml_Img104' has cardinality 0..*, and from 'xhtml_Flow', the role 'xhtml_Flow103' has cardinality 0..*.
+An association connects 'xhtml_Flow' and 'xhtml_Tt'. From 'xhtml_Flow', the role 'xhtml_Flow106' has cardinality 0..*, and from 'xhtml_Tt', the role 'xhtml_Tt107' has cardinality 0..*.
+An association connects 'xhtml_Flow' and 'xhtml_I'. From 'xhtml_Flow', the role 'xhtml_Flow109' has cardinality 0..*, and from 'xhtml_I', the role 'xhtml_I110' has cardinality 0..*.
+An association connects 'xhtml_B' and 'xhtml_Flow'. From 'xhtml_B', the role 'xhtml_B113' has cardinality 0..*, and from 'xhtml_Flow', the role 'xhtml_Flow112' has cardinality 0..*.
+An association connects 'xhtml_Big' and 'xhtml_Flow'. From 'xhtml_Big', the role 'xhtml_Big116' has cardinality 0..*, and from 'xhtml_Flow', the role 'xhtml_Flow115' has cardinality 0..*.
+An association connects 'xhtml_Small' and 'xhtml_Flow'. From 'xhtml_Small', the role 'xhtml_Small119' has cardinality 0..*, and from 'xhtml_Flow', the role 'xhtml_Flow118' has cardinality 0..*.
+An association connects 'xhtml_Flow' and 'xhtml_Em'. From 'xhtml_Flow', the role 'xhtml_Flow121' has cardinality 0..*, and from 'xhtml_Em', the role 'xhtml_Em122' has cardinality 0..*.
+An association connects 'xhtml_Flow' and 'xhtml_Strong'. From 'xhtml_Flow', the role 'xhtml_Flow124' has cardinality 0..*, and from 'xhtml_Strong', the role 'xhtml_Strong125' has cardinality 0..*.
+An association connects 'xhtml_Dfn' and 'xhtml_Flow'. From 'xhtml_Dfn', the role 'xhtml_Dfn128' has cardinality 0..*, and from 'xhtml_Flow', the role 'xhtml_Flow127' has cardinality 0..*.
+An association connects 'xhtml_Code' and 'xhtml_Flow'. From 'xhtml_Code', the role 'xhtml_Code131' has cardinality 0..*, and from 'xhtml_Flow', the role 'xhtml_Flow130' has cardinality 0..*.
+An association connects 'xhtml_Q' and 'xhtml_Flow'. From 'xhtml_Q', the role 'xhtml_Q134' has cardinality 0..*, and from 'xhtml_Flow', the role 'xhtml_Flow133' has cardinality 0..*.
+An association connects 'xhtml_Samp' and 'xhtml_Flow'. From 'xhtml_Samp', the role 'xhtml_Samp137' has cardinality 0..*, and from 'xhtml_Flow', the role 'xhtml_Flow136' has cardinality 0..*.
+An association connects 'xhtml_Flow' and 'xhtml_Kbd'. From 'xhtml_Flow', the role 'xhtml_Flow139' has cardinality 0..*, and from 'xhtml_Kbd', the role 'xhtml_Kbd140' has cardinality 0..*.
+An association connects 'xhtml_Flow' and 'xhtml_Var'. From 'xhtml_Flow', the role 'xhtml_Flow142' has cardinality 0..*, and from 'xhtml_Var', the role 'xhtml_Var143' has cardinality 0..*.
+An association connects 'xhtml_Cite' and 'xhtml_Flow'. From 'xhtml_Cite', the role 'xhtml_Cite146' has cardinality 0..*, and from 'xhtml_Flow', the role 'xhtml_Flow145' has cardinality 0..*.
+An association connects 'xhtml_Abbr' and 'xhtml_Flow'. From 'xhtml_Abbr', the role 'xhtml_Abbr149' has cardinality 0..*, and from 'xhtml_Flow', the role 'xhtml_Flow148' has cardinality 0..*.
+An association connects 'xhtml_Acronym' and 'xhtml_Flow'. From 'xhtml_Acronym', the role 'xhtml_Acronym152' has cardinality 0..*, and from 'xhtml_Flow', the role 'xhtml_Flow151' has cardinality 0..*.
+An association connects 'xhtml_Sub' and 'xhtml_Flow'. From 'xhtml_Sub', the role 'xhtml_Sub155' has cardinality 0..*, and from 'xhtml_Flow', the role 'xhtml_Flow154' has cardinality 0..*.
+An association connects 'xhtml_Flow' and 'xhtml_Sup'. From 'xhtml_Flow', the role 'xhtml_Flow157' has cardinality 0..*, and from 'xhtml_Sup', the role 'xhtml_Sup158' has cardinality 0..*.
+An association connects 'xhtml_Img' and 'xhtml_Img'. From 'xhtml_Img', the role 'xhtml_Img161' has cardinality 0..*, and from 'xhtml_Img', the role 'xhtml_Img159' has cardinality 0..*.
+An association connects 'xhtml_Inline' and 'xhtml_A'. From 'xhtml_Inline', the role 'xhtml_Inline' has cardinality 0..*, and from 'xhtml_A', the role 'xhtml_A163' has cardinality 0..*.
+An association connects 'xhtml_Inline' and 'xhtml_Br'. From 'xhtml_Inline', the role 'xhtml_Inline165' has cardinality 0..*, and from 'xhtml_Br', the role 'xhtml_Br166' has cardinality 0..*.
+An association connects 'xhtml_Span' and 'xhtml_Inline'. From 'xhtml_Span', the role 'xhtml_Span169' has cardinality 0..*, and from 'xhtml_Inline', the role 'xhtml_Inline168' has cardinality 0..*.
+An association connects 'xhtml_Inline' and 'xhtml_Object'. From 'xhtml_Inline', the role 'xhtml_Inline171' has cardinality 0..*, and from 'xhtml_Object', the role 'xhtml_Object172' has cardinality 0..*.
+An association connects 'xhtml_Inline' and 'xhtml_Img'. From 'xhtml_Inline', the role 'xhtml_Inline174' has cardinality 0..*, and from 'xhtml_Img', the role 'xhtml_Img175' has cardinality 0..*.
+An association connects 'xhtml_Tt' and 'xhtml_Inline'. From 'xhtml_Tt', the role 'xhtml_Tt178' has cardinality 0..*, and from 'xhtml_Inline', the role 'xhtml_Inline177' has cardinality 0..*.
+An association connects 'xhtml_I' and 'xhtml_Inline'. From 'xhtml_I', the role 'xhtml_I181' has cardinality 0..*, and from 'xhtml_Inline', the role 'xhtml_Inline180' has cardinality 0..*.
+An association connects 'xhtml_Inline' and 'xhtml_B'. From 'xhtml_Inline', the role 'xhtml_Inline183' has cardinality 0..*, and from 'xhtml_B', the role 'xhtml_B184' has cardinality 0..*.
+An association connects 'xhtml_Big' and 'xhtml_Inline'. From 'xhtml_Big', the role 'xhtml_Big187' has cardinality 0..*, and from 'xhtml_Inline', the role 'xhtml_Inline186' has cardinality 0..*.
+An association connects 'xhtml_Inline' and 'xhtml_Small'. From 'xhtml_Inline', the role 'xhtml_Inline189' has cardinality 0..*, and from 'xhtml_Small', the role 'xhtml_Small190' has cardinality 0..*.
+An association connects 'xhtml_Inline' and 'xhtml_Em'. From 'xhtml_Inline', the role 'xhtml_Inline192' has cardinality 0..*, and from 'xhtml_Em', the role 'xhtml_Em193' has cardinality 0..*.
+An association connects 'xhtml_Inline' and 'xhtml_Strong'. From 'xhtml_Inline', the role 'xhtml_Inline195' has cardinality 0..*, and from 'xhtml_Strong', the role 'xhtml_Strong196' has cardinality 0..*.
+An association connects 'xhtml_Inline' and 'xhtml_Dfn'. From 'xhtml_Inline', the role 'xhtml_Inline198' has cardinality 0..*, and from 'xhtml_Dfn', the role 'xhtml_Dfn199' has cardinality 0..*.
+An association connects 'xhtml_Code' and 'xhtml_Inline'. From 'xhtml_Code', the role 'xhtml_Code202' has cardinality 0..*, and from 'xhtml_Inline', the role 'xhtml_Inline201' has cardinality 0..*.
+An association connects 'xhtml_Q' and 'xhtml_Inline'. From 'xhtml_Q', the role 'xhtml_Q205' has cardinality 0..*, and from 'xhtml_Inline', the role 'xhtml_Inline204' has cardinality 0..*.
+An association connects 'xhtml_Inline' and 'xhtml_Samp'. From 'xhtml_Inline', the role 'xhtml_Inline207' has cardinality 0..*, and from 'xhtml_Samp', the role 'xhtml_Samp208' has cardinality 0..*.
+An association connects 'xhtml_Kbd' and 'xhtml_Inline'. From 'xhtml_Kbd', the role 'xhtml_Kbd211' has cardinality 0..*, and from 'xhtml_Inline', the role 'xhtml_Inline210' has cardinality 0..*.
+An association connects 'xhtml_Var' and 'xhtml_Inline'. From 'xhtml_Var', the role 'xhtml_Var214' has cardinality 0..*, and from 'xhtml_Inline', the role 'xhtml_Inline213' has cardinality 0..*.
+An association connects 'xhtml_Inline' and 'xhtml_Cite'. From 'xhtml_Inline', the role 'xhtml_Inline216' has cardinality 0..*, and from 'xhtml_Cite', the role 'xhtml_Cite217' has cardinality 0..*.
+An association connects 'xhtml_Abbr' and 'xhtml_Inline'. From 'xhtml_Abbr', the role 'xhtml_Abbr220' has cardinality 0..*, and from 'xhtml_Inline', the role 'xhtml_Inline219' has cardinality 0..*.
+An association connects 'xhtml_Inline' and 'xhtml_Acronym'. From 'xhtml_Inline', the role 'xhtml_Inline222' has cardinality 0..*, and from 'xhtml_Acronym', the role 'xhtml_Acronym223' has cardinality 0..*.
+An association connects 'xhtml_Inline' and 'xhtml_Sub'. From 'xhtml_Inline', the role 'xhtml_Inline225' has cardinality 0..*, and from 'xhtml_Sub', the role 'xhtml_Sub226' has cardinality 0..*.
+An association connects 'xhtml_Sup' and 'xhtml_Inline'. From 'xhtml_Sup', the role 'xhtml_Sup229' has cardinality 0..*, and from 'xhtml_Inline', the role 'xhtml_Inline228' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_Param'. From 'xhtml_Object', the role 'xhtml_Object231' has cardinality 0..*, and from 'xhtml_Param', the role 'xhtml_Param' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_P'. From 'xhtml_Object', the role 'xhtml_Object233' has cardinality 0..*, and from 'xhtml_P', the role 'xhtml_P234' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_Div'. From 'xhtml_Object', the role 'xhtml_Object236' has cardinality 0..*, and from 'xhtml_Div', the role 'xhtml_Div237' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_Ul'. From 'xhtml_Object', the role 'xhtml_Object239' has cardinality 0..*, and from 'xhtml_Ul', the role 'xhtml_Ul240' has cardinality 0..*.
+An association connects 'xhtml_Ol' and 'xhtml_Object'. From 'xhtml_Ol', the role 'xhtml_Ol243' has cardinality 0..*, and from 'xhtml_Object', the role 'xhtml_Object242' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_Dl'. From 'xhtml_Object', the role 'xhtml_Object245' has cardinality 0..*, and from 'xhtml_Dl', the role 'xhtml_Dl246' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_Pre'. From 'xhtml_Object', the role 'xhtml_Object248' has cardinality 0..*, and from 'xhtml_Pre', the role 'xhtml_Pre249' has cardinality 0..*.
+An association connects 'xhtml_Hr' and 'xhtml_Object'. From 'xhtml_Hr', the role 'xhtml_Hr252' has cardinality 0..*, and from 'xhtml_Object', the role 'xhtml_Object251' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_Blockquote'. From 'xhtml_Object', the role 'xhtml_Object254' has cardinality 0..*, and from 'xhtml_Blockquote', the role 'xhtml_Blockquote255' has cardinality 0..*.
+An association connects 'xhtml_Table' and 'xhtml_Object'. From 'xhtml_Table', the role 'xhtml_Table258' has cardinality 0..*, and from 'xhtml_Object', the role 'xhtml_Object257' has cardinality 0..*.
+An association connects 'xhtml_A' and 'xhtml_Object'. From 'xhtml_A', the role 'xhtml_A261' has cardinality 0..*, and from 'xhtml_Object', the role 'xhtml_Object260' has cardinality 0..*.
+An association connects 'xhtml_Br' and 'xhtml_Object'. From 'xhtml_Br', the role 'xhtml_Br264' has cardinality 0..*, and from 'xhtml_Object', the role 'xhtml_Object263' has cardinality 0..*.
+An association connects 'xhtml_Span' and 'xhtml_Object'. From 'xhtml_Span', the role 'xhtml_Span267' has cardinality 0..*, and from 'xhtml_Object', the role 'xhtml_Object266' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_Object'. From 'xhtml_Object', the role 'xhtml_Object270' has cardinality 0..*, and from 'xhtml_Object', the role 'xhtml_Object268' has cardinality 0..*.
+An association connects 'xhtml_Img' and 'xhtml_Object'. From 'xhtml_Img', the role 'xhtml_Img273' has cardinality 0..*, and from 'xhtml_Object', the role 'xhtml_Object272' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_Tt'. From 'xhtml_Object', the role 'xhtml_Object275' has cardinality 0..*, and from 'xhtml_Tt', the role 'xhtml_Tt276' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_I'. From 'xhtml_Object', the role 'xhtml_Object278' has cardinality 0..*, and from 'xhtml_I', the role 'xhtml_I279' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_B'. From 'xhtml_Object', the role 'xhtml_Object281' has cardinality 0..*, and from 'xhtml_B', the role 'xhtml_B282' has cardinality 0..*.
+An association connects 'xhtml_Big' and 'xhtml_Object'. From 'xhtml_Big', the role 'xhtml_Big285' has cardinality 0..*, and from 'xhtml_Object', the role 'xhtml_Object284' has cardinality 0..*.
+An association connects 'xhtml_Small' and 'xhtml_Object'. From 'xhtml_Small', the role 'xhtml_Small288' has cardinality 0..*, and from 'xhtml_Object', the role 'xhtml_Object287' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_Em'. From 'xhtml_Object', the role 'xhtml_Object290' has cardinality 0..*, and from 'xhtml_Em', the role 'xhtml_Em291' has cardinality 0..*.
+An association connects 'xhtml_Strong' and 'xhtml_Object'. From 'xhtml_Strong', the role 'xhtml_Strong294' has cardinality 0..*, and from 'xhtml_Object', the role 'xhtml_Object293' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_Dfn'. From 'xhtml_Object', the role 'xhtml_Object296' has cardinality 0..*, and from 'xhtml_Dfn', the role 'xhtml_Dfn297' has cardinality 0..*.
+An association connects 'xhtml_Code' and 'xhtml_Object'. From 'xhtml_Code', the role 'xhtml_Code300' has cardinality 0..*, and from 'xhtml_Object', the role 'xhtml_Object299' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_Q'. From 'xhtml_Object', the role 'xhtml_Object302' has cardinality 0..*, and from 'xhtml_Q', the role 'xhtml_Q303' has cardinality 0..*.
+An association connects 'xhtml_Samp' and 'xhtml_Object'. From 'xhtml_Samp', the role 'xhtml_Samp306' has cardinality 0..*, and from 'xhtml_Object', the role 'xhtml_Object305' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_Kbd'. From 'xhtml_Object', the role 'xhtml_Object308' has cardinality 0..*, and from 'xhtml_Kbd', the role 'xhtml_Kbd309' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_Var'. From 'xhtml_Object', the role 'xhtml_Object311' has cardinality 0..*, and from 'xhtml_Var', the role 'xhtml_Var312' has cardinality 0..*.
+An association connects 'xhtml_Cite' and 'xhtml_Object'. From 'xhtml_Cite', the role 'xhtml_Cite315' has cardinality 0..*, and from 'xhtml_Object', the role 'xhtml_Object314' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_Abbr'. From 'xhtml_Object', the role 'xhtml_Object317' has cardinality 0..*, and from 'xhtml_Abbr', the role 'xhtml_Abbr318' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_Acronym'. From 'xhtml_Object', the role 'xhtml_Object320' has cardinality 0..*, and from 'xhtml_Acronym', the role 'xhtml_Acronym321' has cardinality 0..*.
+An association connects 'xhtml_Object' and 'xhtml_Sub'. From 'xhtml_Object', the role 'xhtml_Object323' has cardinality 0..*, and from 'xhtml_Sub', the role 'xhtml_Sub324' has cardinality 0..*.
+An association connects 'xhtml_Sup' and 'xhtml_Object'. From 'xhtml_Sup', the role 'xhtml_Sup327' has cardinality 0..*, and from 'xhtml_Object', the role 'xhtml_Object326' has cardinality 0..*.
+An association connects 'xhtml_Ol' and 'xhtml_Li'. From 'xhtml_Ol', the role 'xhtml_Ol329' has cardinality 0..*, and from 'xhtml_Li', the role 'xhtml_Li' has cardinality 0..*.
+An association connects 'xhtml_A' and 'xhtml_PreContent'. From 'xhtml_A', the role 'xhtml_A331' has cardinality 0..*, and from 'xhtml_PreContent', the role 'xhtml_PreContent' has cardinality 0..*.
+An association connects 'xhtml_Tt' and 'xhtml_PreContent'. From 'xhtml_Tt', the role 'xhtml_Tt334' has cardinality 0..*, and from 'xhtml_PreContent', the role 'xhtml_PreContent333' has cardinality 0..*.
+An association connects 'xhtml_I' and 'xhtml_PreContent'. From 'xhtml_I', the role 'xhtml_I337' has cardinality 0..*, and from 'xhtml_PreContent', the role 'xhtml_PreContent336' has cardinality 0..*.
+An association connects 'xhtml_B' and 'xhtml_PreContent'. From 'xhtml_B', the role 'xhtml_B340' has cardinality 0..*, and from 'xhtml_PreContent', the role 'xhtml_PreContent339' has cardinality 0..*.
+An association connects 'xhtml_PreContent' and 'xhtml_Big'. From 'xhtml_PreContent', the role 'xhtml_PreContent342' has cardinality 0..*, and from 'xhtml_Big', the role 'xhtml_Big343' has cardinality 0..*.
+An association connects 'xhtml_Small' and 'xhtml_PreContent'. From 'xhtml_Small', the role 'xhtml_Small346' has cardinality 0..*, and from 'xhtml_PreContent', the role 'xhtml_PreContent345' has cardinality 0..*.
+An association connects 'xhtml_Em' and 'xhtml_PreContent'. From 'xhtml_Em', the role 'xhtml_Em349' has cardinality 0..*, and from 'xhtml_PreContent', the role 'xhtml_PreContent348' has cardinality 0..*.
+An association connects 'xhtml_PreContent' and 'xhtml_Strong'. From 'xhtml_PreContent', the role 'xhtml_PreContent351' has cardinality 0..*, and from 'xhtml_Strong', the role 'xhtml_Strong352' has cardinality 0..*.
+An association connects 'xhtml_Dfn' and 'xhtml_PreContent'. From 'xhtml_Dfn', the role 'xhtml_Dfn355' has cardinality 0..*, and from 'xhtml_PreContent', the role 'xhtml_PreContent354' has cardinality 0..*.
+An association connects 'xhtml_Code' and 'xhtml_PreContent'. From 'xhtml_Code', the role 'xhtml_Code358' has cardinality 0..*, and from 'xhtml_PreContent', the role 'xhtml_PreContent357' has cardinality 0..*.
+An association connects 'xhtml_Q' and 'xhtml_PreContent'. From 'xhtml_Q', the role 'xhtml_Q361' has cardinality 0..*, and from 'xhtml_PreContent', the role 'xhtml_PreContent360' has cardinality 0..*.
+An association connects 'xhtml_Samp' and 'xhtml_PreContent'. From 'xhtml_Samp', the role 'xhtml_Samp364' has cardinality 0..*, and from 'xhtml_PreContent', the role 'xhtml_PreContent363' has cardinality 0..*.
+An association connects 'xhtml_Kbd' and 'xhtml_PreContent'. From 'xhtml_Kbd', the role 'xhtml_Kbd367' has cardinality 0..*, and from 'xhtml_PreContent', the role 'xhtml_PreContent366' has cardinality 0..*.
+An association connects 'xhtml_Var' and 'xhtml_PreContent'. From 'xhtml_Var', the role 'xhtml_Var370' has cardinality 0..*, and from 'xhtml_PreContent', the role 'xhtml_PreContent369' has cardinality 0..*.
+An association connects 'xhtml_Cite' and 'xhtml_PreContent'. From 'xhtml_Cite', the role 'xhtml_Cite373' has cardinality 0..*, and from 'xhtml_PreContent', the role 'xhtml_PreContent372' has cardinality 0..*.
+An association connects 'xhtml_Abbr' and 'xhtml_PreContent'. From 'xhtml_Abbr', the role 'xhtml_Abbr376' has cardinality 0..*, and from 'xhtml_PreContent', the role 'xhtml_PreContent375' has cardinality 0..*.
+An association connects 'xhtml_PreContent' and 'xhtml_Acronym'. From 'xhtml_PreContent', the role 'xhtml_PreContent378' has cardinality 0..*, and from 'xhtml_Acronym', the role 'xhtml_Acronym379' has cardinality 0..*.
+An association connects 'xhtml_Sub' and 'xhtml_PreContent'. From 'xhtml_Sub', the role 'xhtml_Sub382' has cardinality 0..*, and from 'xhtml_PreContent', the role 'xhtml_PreContent381' has cardinality 0..*.
+An association connects 'xhtml_Sup' and 'xhtml_PreContent'. From 'xhtml_Sup', the role 'xhtml_Sup385' has cardinality 0..*, and from 'xhtml_PreContent', the role 'xhtml_PreContent384' has cardinality 0..*.
+An association connects 'xhtml_PreContent' and 'xhtml_Br'. From 'xhtml_PreContent', the role 'xhtml_PreContent387' has cardinality 0..*, and from 'xhtml_Br', the role 'xhtml_Br388' has cardinality 0..*.
+An association connects 'xhtml_PreContent' and 'xhtml_Span'. From 'xhtml_PreContent', the role 'xhtml_PreContent390' has cardinality 0..*, and from 'xhtml_Span', the role 'xhtml_Span391' has cardinality 0..*.
+An association connects 'xhtml_Caption' and 'xhtml_Table'. From 'xhtml_Caption', the role 'xhtml_Caption' has cardinality 0..*, and from 'xhtml_Table', the role 'xhtml_Table393' has cardinality 0..*.
+An association connects 'xhtml_Col' and 'xhtml_Table'. From 'xhtml_Col', the role 'xhtml_Col396' has cardinality 0..*, and from 'xhtml_Table', the role 'xhtml_Table395' has cardinality 0..*.
+An association connects 'xhtml_Table' and 'xhtml_Colgroup'. From 'xhtml_Table', the role 'xhtml_Table398' has cardinality 0..*, and from 'xhtml_Colgroup', the role 'xhtml_Colgroup399' has cardinality 0..*.
+An association connects 'xhtml_Table' and 'xhtml_Thead'. From 'xhtml_Table', the role 'xhtml_Table401' has cardinality 0..*, and from 'xhtml_Thead', the role 'xhtml_Thead' has cardinality 0..*.
+An association connects 'xhtml_Tfoot' and 'xhtml_Table'. From 'xhtml_Tfoot', the role 'xhtml_Tfoot' has cardinality 0..*, and from 'xhtml_Table', the role 'xhtml_Table403' has cardinality 0..*.
+An association connects 'xhtml_Tbody' and 'xhtml_Table'. From 'xhtml_Tbody', the role 'xhtml_Tbody' has cardinality 0..*, and from 'xhtml_Table', the role 'xhtml_Table405' has cardinality 0..*.
+An association connects 'xhtml_Tr' and 'xhtml_Table'. From 'xhtml_Tr', the role 'xhtml_Tr' has cardinality 0..*, and from 'xhtml_Table', the role 'xhtml_Table407' has cardinality 0..*.
+An association connects 'xhtml_Tbody' and 'xhtml_Tr'. From 'xhtml_Tbody', the role 'xhtml_Tbody409' has cardinality 0..*, and from 'xhtml_Tr', the role 'xhtml_Tr410' has cardinality 0..*.
+An association connects 'xhtml_Tr' and 'xhtml_Tfoot'. From 'xhtml_Tr', the role 'xhtml_Tr413' has cardinality 0..*, and from 'xhtml_Tfoot', the role 'xhtml_Tfoot412' has cardinality 0..*.
+An association connects 'xhtml_Thead' and 'xhtml_Tr'. From 'xhtml_Thead', the role 'xhtml_Thead415' has cardinality 0..*, and from 'xhtml_Tr', the role 'xhtml_Tr416' has cardinality 0..*.
+An association connects 'xhtml_Th' and 'xhtml_Tr'. From 'xhtml_Th', the role 'xhtml_Th' has cardinality 0..*, and from 'xhtml_Tr', the role 'xhtml_Tr418' has cardinality 0..*.
+An association connects 'xhtml_Tr' and 'xhtml_Td'. From 'xhtml_Tr', the role 'xhtml_Tr420' has cardinality 0..*, and from 'xhtml_Td', the role 'xhtml_Td' has cardinality 0..*.
+An association connects 'xhtml_Ul' and 'xhtml_Li'. From 'xhtml_Ul', the role 'xhtml_Ul422' has cardinality 0..*, and from 'xhtml_Li', the role 'xhtml_Li423' has cardinality 0..*.

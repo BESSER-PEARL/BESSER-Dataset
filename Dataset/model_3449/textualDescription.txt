@@ -1,0 +1,375 @@
+The domain model 'org_sgiusa_model' describes the core structural elements and their relationships within the system.
+
+The model defines 80 main class(es).
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'org_sgiusa_model_LeadershipRole' represents an important domain concept.
+It has the following attributes: 'startDate', which is of type str; 'level', which is of type str; 'subDivision', which is of type str; 'division', which is of type str; 'endDate', which is of type str; 'lastUpdate', which is of type str; 'id', which is of type str; 'active', which is of type str; 'activityGroup', which is of type str; 'position', which is of type str.
+
+'GohonzonInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'EmailMessage' represents an important domain concept.
+It does not declare any attributes.
+
+'LeadershipRole' represents an important domain concept.
+It does not declare any attributes.
+
+'Organization' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'org_aries_common_Properties' represents an important domain concept.
+It does not declare any attributes.
+
+'org_aries_common_MapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'StudyDeptInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'org_aries_common_EmailAddressList' represents an important domain concept.
+It has the following attributes: 'emailAddress', which is of type str; 'name', which is of type str.
+
+'org_sgiusa_model_Preferences' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'userId', which is of type str; 'enableTooltips', which is of type str; 'selectedView', which is of type str; 'selectedNode', which is of type str; 'openViews', which is of type str; 'openNodes', which is of type str; 'themeId', which is of type str.
+
+'org_sgiusa_model_LeadershipInfo' represents an important domain concept.
+It has the following attributes: 'examPassedDate', which is of type str; 'manualSigned', which is of type str; 'lastUpdate', which is of type str; 'manualSignedDate', which is of type str; 'id', which is of type str; 'examPassed', which is of type str.
+
+'MembershipInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'org_aries_common_PersonName' represents an important domain concept.
+It has the following attributes: 'middleInitial', which is of type str; 'firstName', which is of type str; 'lastName', which is of type str.
+
+'org_aries_common_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'org_aries_common_EmailMessage' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'sendAsHtml', which is of type str; 'content', which is of type str; 'subject', which is of type str; 'smtpPort', which is of type str; 'sourceId', which is of type str; 'smtpHost', which is of type str; 'timestamp', which is of type str.
+
+'Map' represents an important domain concept.
+It does not declare any attributes.
+
+'org_sgiusa_model_Organization' represents an important domain concept.
+It has the following attributes: 'lastUpdate', which is of type str; 'label', which is of type str; 'level', which is of type str; 'abbrv', which is of type str; 'permissionId', which is of type str; 'type', which is of type str; 'id', which is of type str; 'zipCodes', which is of type str; 'creationDate', which is of type str; 'organizationId', which is of type str; 'name', which is of type str.
+
+'User' represents an important domain concept.
+It does not declare any attributes.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'org_sgiusa_model_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+'org_aries_common_EmailAccount' represents an important domain concept.
+It has the following attributes: 'password', which is of type str; 'userId', which is of type str; 'enabled', which is of type str; 'id', which is of type str; 'firstName', which is of type str; 'lastName', which is of type str.
+
+'org_aries_common_Note' represents an important domain concept.
+It has the following attributes: 'creationDate', which is of type str; 'id', which is of type str; 'text', which is of type str; 'lastUpdate', which is of type str.
+
+'org_sgiusa_model_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'org_sgiusa_model_User' represents an important domain concept.
+It has the following attributes: 'userId', which is of type str; 'id', which is of type str; 'firstName', which is of type str; 'enabled', which is of type str; 'password', which is of type str; 'role', which is of type str; 'lastName', which is of type str.
+
+'org_sgiusa_model_View' represents an important domain concept.
+It has the following attributes: 'userId', which is of type str; 'viewType', which is of type str; 'id', which is of type str.
+
+'MemberSearchCriteria' represents an important domain concept.
+It does not declare any attributes.
+
+'org_sgiusa_model_Event' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'status', which is of type str; 'subDivisions', which is of type str; 'divisions', which is of type str; 'userId', which is of type str.
+
+'org_aries_common_Attachment' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str; 'fileData', which is of type str; 'contentType', which is of type str; 'size', which is of type str; 'fileName', which is of type str.
+
+'EmailBox' represents an important domain concept.
+It does not declare any attributes.
+
+'org_aries_common_Person' represents an important domain concept.
+It has the following attributes: 'userId', which is of type str; 'id', which is of type str.
+
+'org_sgiusa_model_MembershipInfo' represents an important domain concept.
+It has the following attributes: 'notLocatable', which is of type str; 'friendOfSgi', which is of type str; 'notActivated', which is of type str; 'receivedCertificate', which is of type str; 'id', which is of type str; 'lastUpdate', which is of type str.
+
+'Permission' represents an important domain concept.
+It does not declare any attributes.
+
+'org_sgiusa_model_FamilyMember' represents an important domain concept.
+It has the following attributes: 'lastUpdate', which is of type str; 'personName', which is of type str; 'sgiMember', which is of type str; 'familyRelation', which is of type str; 'id', which is of type str.
+
+'PersonName' represents an important domain concept.
+It does not declare any attributes.
+
+'org_sgiusa_model_Permission' represents an important domain concept.
+It has the following attributes: 'enabled', which is of type str; 'activityGroups', which is of type str; 'divisions', which is of type str; 'capabilities', which is of type str; 'id', which is of type str; 'subDivisions', which is of type str; 'userId', which is of type str.
+
+'LeadershipInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'PhoneNumber' represents an important domain concept.
+It does not declare any attributes.
+
+'Attachment' represents an important domain concept.
+It does not declare any attributes.
+
+'org_aries_common_ZipCode' represents an important domain concept.
+It has the following attributes: 'extension', which is of type str; 'number', which is of type str; 'country', which is of type str.
+
+'ZipCode' represents an important domain concept.
+It does not declare any attributes.
+
+'org_sgiusa_model_EmailList' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'divisions', which is of type str; 'enabled', which is of type str; 'subDivisions', which is of type str; 'activityGroups', which is of type str.
+
+'EmailAddress' represents an important domain concept.
+It does not declare any attributes.
+
+'org_aries_common_EmailBox' represents an important domain concept.
+It has the following attributes: 'lastUpdate', which is of type str; 'type', which is of type str; 'id', which is of type str; 'name', which is of type str; 'creationDate', which is of type str.
+
+'org_sgiusa_model_Members' represents an important domain concept.
+It does not declare any attributes.
+
+'SchoolInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'org_sgiusa_model_Registration' represents an important domain concept.
+It has the following attributes: 'cancelled', which is of type str; 'date', which is of type str; 'id', which is of type str; 'aborted', which is of type str.
+
+'View' represents an important domain concept.
+It does not declare any attributes.
+
+'org_aries_common_Event' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'StudyDeptExam' represents an important domain concept.
+It does not declare any attributes.
+
+'org_sgiusa_model_SchoolInfo' represents an important domain concept.
+It has the following attributes: 'endDate', which is of type str; 'lastUpdate', which is of type str; 'id', which is of type str; 'schoolName', which is of type str; 'startDate', which is of type str; 'fieldOfStudy', which is of type str; 'schoolType', which is of type str.
+
+'EmailAccount' represents an important domain concept.
+It does not declare any attributes.
+
+'Note' represents an important domain concept.
+It does not declare any attributes.
+
+'org_aries_common_Property' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'value', which is of type str; 'name', which is of type str; 'mixed', which is of type str.
+
+'org_sgiusa_model_MemberSearchCriteria' represents an important domain concept.
+It has the following attributes: 'activityGroups', which is of type str; 'subDivisions', which is of type str; 'divisions', which is of type str.
+
+'Properties' represents an important domain concept.
+It does not declare any attributes.
+
+'MapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'org_sgiusa_model_StudyDeptInfo' represents an important domain concept.
+It has the following attributes: 'lastUpdate', which is of type str; 'id', which is of type str.
+
+'EmailAddressList' represents an important domain concept.
+It does not declare any attributes.
+
+'org_sgiusa_model_StudyDeptExam' represents an important domain concept.
+It has the following attributes: 'current', which is of type str; 'examLocation', which is of type str; 'lastUpdate', which is of type str; 'examDate', which is of type str; 'id', which is of type str; 'examLanguage', which is of type str; 'examLevel', which is of type str.
+
+'org_aries_common_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'org_aries_common_User' represents an important domain concept.
+It has the following attributes: 'enabled', which is of type str; 'id', which is of type str; 'firstName', which is of type str; 'lastName', which is of type str; 'password', which is of type str; 'userId', which is of type str.
+
+'org_sgiusa_model_Users' represents an important domain concept.
+It does not declare any attributes.
+
+'Registration' represents an important domain concept.
+It does not declare any attributes.
+
+'EmailList' represents an important domain concept.
+It does not declare any attributes.
+
+'Members' represents an important domain concept.
+It does not declare any attributes.
+
+'org_aries_common_EmailAddress' represents an important domain concept.
+It has the following attributes: 'url', which is of type str; 'firstName', which is of type str; 'organization', which is of type str; 'id', which is of type str; 'lastUpdate', which is of type str; 'enabled', which is of type str; 'creationDate', which is of type str; 'userId', which is of type str; 'lastName', which is of type str.
+
+'org_sgiusa_model_Note' represents an important domain concept.
+It has the following attributes: 'creationDate', which is of type str; 'id', which is of type str; 'text', which is of type str; 'lastUpdate', which is of type str.
+
+'org_sgiusa_model_Member' represents an important domain concept.
+It has the following attributes: 'visible', which is of type str; 'middleInitial', which is of type str; 'archived', which is of type str; 'birthDate', which is of type str; 'interests', which is of type str; 'languages', which is of type str; 'locatable', which is of type str; 'employer', which is of type str; 'extraField1', which is of type str; 'occupation', which is of type str; 'joinDate', which is of type str; 'subDivision', which is of type str; 'extraField2', which is of type str; 'division', which is of type str; 'statusProfile', which is of type str; 'lastName', which is of type str; 'firstName', which is of type str; 'id', which is of type str; 'activityGroups', which is of type str.
+
+'org_aries_common_PhoneNumber' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'extension', which is of type str; 'country', which is of type str; 'type', which is of type str; 'number', which is of type str; 'area', which is of type str; 'id', which is of type str.
+
+'org_aries_common_Map' represents an important domain concept.
+It does not declare any attributes.
+
+'org_aries_common_StreetAddress' represents an important domain concept.
+It has the following attributes: 'longitude', which is of type str; 'id', which is of type str; 'latitude', which is of type str; 'street', which is of type str; 'city', which is of type str; 'country', which is of type str; 'state', which is of type str.
+
+'StreetAddress' represents an important domain concept.
+It does not declare any attributes.
+
+'org_sgiusa_model_GohonzonInfo' represents an important domain concept.
+It has the following attributes: 'gohonzonType', which is of type str; 'lastUpdate', which is of type str; 'id', which is of type str; 'receiveDate', which is of type str; 'returnDate', which is of type str; 'returned', which is of type str.
+
+'org_aries_common_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'Users' represents an important domain concept.
+It does not declare any attributes.
+
+'Preferences' represents an important domain concept.
+It does not declare any attributes.
+
+'FamilyMember' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StudyDeptExamLevel' defines the following possible values: 'ADVANCED', 'GRADUATE', 'ELEMENTARY', 'ENTRANCE', 'INTERMEDIATE', 'OTHER', 'POSTGRADUATE'.
+The enumeration 'RoleType' defines the following possible values: 'HOST', 'USER', 'MANAGER'.
+The enumeration 'ViewType' defines the following possible values: 'ORGANIZATIONNODE', 'USERLIST', 'MEMBERLIST'.
+The enumeration 'Country' defines the following possible values: 'USA', 'PR', 'CAN', 'MEX'.
+The enumeration 'StudyDeptLanguage' defines the following possible values: 'CHINESE', 'FRENCH', 'PORTUGUESE', 'KOREAN', 'OTHER', 'THAI', 'SPANISH', 'JAPANESE', 'ITALIAN', 'ENGLISH', 'GERMAN', 'VIETNAMESE'.
+The enumeration 'Role' defines the following possible values: 'USER', 'MANAGER', 'HOST'.
+The enumeration 'SchoolType' defines the following possible values: 'OTHER', 'JRHIGHSCHOOL', 'GRADUATE', 'HIGHSCHOOL', 'GRAMMER', 'ELEMENTARY', 'COLLEGE'.
+The enumeration 'ActivityGroup' defines the following possible values: 'PHONETOBAN', 'SOKAGROUP', 'GOLDENSTAGECREW', 'CENTRALEXECUTIVECOMMITTEE', 'BOOKSTORETOBAN', 'YOUTHMUSICCORP', 'STUDYGROUP', 'CULTUREDEPT', 'BUILDINGCOMMITTEE', 'SECRETARIET', 'WELCOMINGCOMMITTEE', 'GAJOKAI', 'YOUTHPEACEGROUP', 'YOUTHSUPPORTGROUP', 'SOKASPIRITGROUP', 'CLEANUPCOMMITTEE', 'NONE', 'FIFEANDDRUMCORP', 'CHORUSGROUP', 'BYAKUREN'.
+The enumeration 'Capability' defines the following possible values: 'PRINT', 'CREATE', 'READ', 'EMAIL', 'NONE', 'UPDATE', 'EXPORT', 'DELETE', 'ALL'.
+The enumeration 'SubDivision' defines the following possible values: 'JRHIGHSCHOOL', 'ALL', 'HIGHSCHOOL', 'CHILDREN', 'STUDENT', 'ELEMENTARYSCHOOL'.
+The enumeration 'PositionName' defines the following possible values: 'SeniorViceLeader', 'MembershipDatabaseAdministrator', 'Advisor', 'ViceLeader', 'ViceGeneralDirector', 'CultureDeptCoordinator', 'PublicationsRepresentative', 'SokaSpiritCoordinator', 'SeniorViceGeneralDirector', 'MembershipStatisticsAdministrator', 'GeneralDirector', 'Leader', 'MemberCareAdvisor', 'Guidance'.
+The enumeration 'GohonzonType' defines the following possible values: 'OKATAGI', 'LARGE', 'FAMILY', 'OMOMORI', 'REGULAR', 'SMALL'.
+The enumeration 'FamilyRelation' defines the following possible values: 'UNCLE', 'FATHER', 'SONINLAW', 'DAUGHTERINLAW', 'COUSIN', 'FATHERINLAW', 'GRANDFATHER', 'NIECE', 'SISTER', 'STEPBROTHER', 'SON', 'GRANDSON', 'HUSBAND', 'MOTHER', 'DAUGHTER', 'GRANDDAUGHTER', 'GRANDMOTHER', 'AUNT', 'MOTHERINLAW', 'WIFE', 'EXWIFE', 'STEPSISTER', 'BROTHER', 'OTHER', 'EXHUSBAND', 'NEPHEW'.
+The enumeration 'State' defines the following possible values: 'NH', 'AK', 'AR', 'CT', 'SC', 'MN', 'OR', 'HI', 'MS', 'MT', 'PA', 'KY', 'WV', 'TX', 'ND', 'LA', 'AL', 'VT', 'NY', 'WA', 'IA', 'MO', 'OH', 'FL', 'GA', 'CA', 'WY', 'VA', 'SD', 'AZ', 'IL', 'DE', 'NE', 'RI', 'NV', 'OK', 'NJ', 'KS', 'ME', 'MD', 'MI', 'ID', 'NM', 'WI', 'IN', 'NC', 'UT', 'CO', 'TN', 'MA'.
+The enumeration 'PhoneNumberType' defines the following possible values: 'HOME', 'CELL', 'OTHER', 'WORK', 'FAX'.
+The enumeration 'OrganizationLevel' defines the following possible values: 'SGIUSA', 'UNIT', 'DISTRICT', 'ZONE', 'AREA', 'TEAM', 'GROUP', 'CHAPTER', 'REGION'.
+The enumeration 'Language' defines the following possible values: 'JAPANESE', 'PORTUGUESE', 'VIETNAMESE', 'THAI', 'FRENCH', 'CHINESE', 'OTHER', 'SPANISH', 'ITALIAN', 'GERMAN', 'KOREAN', 'ENGLISH'.
+The enumeration 'DivisionName' defines the following possible values: 'YouthDivision', 'MenSDivision', 'YoungMenSDivision', 'none', 'WomanSDivision', 'AllDivisions', 'YoungWomenSDivision'.
+The enumeration 'Status' defines the following possible values: 'WARNING', 'PROMPT', 'INFO', 'ERROR'.
+The enumeration 'Division' defines the following possible values: 'YD', 'WD', 'YMD', 'MD', 'ALL', 'NONE', 'YWD'.
+The enumeration 'EventStatus' defines the following possible values: 'HOST', 'MANAGER', 'USER'.
+The enumeration 'Position' defines the following possible values: 'GENERALDIRECTOR', 'GUIDANCE', 'SOKASPIRITCOORDINATOR', 'ADVISOR', 'VICEGENERALDIRECTOR', 'CULTUREDEPTCOORDINATOR', 'SENIORVICELEADER', 'MEMBERCAREADVISOR', 'MEMBERSHIPSTATISTICSADMINISTRATOR', 'SENIORVICEGENERALDIRECTOR', 'MEMBERSHIPDATABASEADMINISTRATOR', 'PUBLICATIONSREPRESENTATIVE', 'VICELEADER', 'LEADER'.
+The enumeration 'SubDivisionName' defines the following possible values: 'ElementarySchoolDivision', 'ChildrenSDivision', 'HighSchoolDivision', 'StudentDivision', 'JrHighSchoolDivision', 'ALLSubDivisions'.
+The enumeration 'ActivityGroupName' defines the following possible values: 'CentralExecutiveCommittee', 'YouthMusicCorp', 'Gajokai', 'FifeAndDrumCorp', 'SokaSpiritGroup', 'GoldenStageCrew', 'BuildingCommittee', 'WelcomingCommittee', 'YouthSupportGroup', 'ChorusGroup', 'none', 'StudyGroup', 'Secretariet', 'CleanupCommittee', 'BookstoreToban', 'Byakuren', 'YouthPeaceGroup', 'CultureDept', 'SokaGroup', 'PhoneToban'.
+
+Relationships between classes are modeled using associations.
+An association connects 'org_aries_common_DocumentRoot' and 'org_aries_common_EStringToStringMapEntry'. From 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot' has cardinality 0..*, and from 'org_aries_common_EStringToStringMapEntry', the role 'org_aries_common_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'org_aries_common_DocumentRoot' and 'org_aries_common_EStringToStringMapEntry'. From 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot2' has cardinality 0..*, and from 'org_aries_common_EStringToStringMapEntry', the role 'org_aries_common_EStringToStringMapEntry3' has cardinality 0..*.
+An association connects 'org_aries_common_DocumentRoot' and 'Attachment'. From 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot5' has cardinality 0..*, and from 'Attachment', the role 'Attachment' has cardinality 0..*.
+An association connects 'org_aries_common_DocumentRoot' and 'EmailAccount'. From 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot7' has cardinality 0..*, and from 'EmailAccount', the role 'EmailAccount' has cardinality 0..*.
+An association connects 'EmailAddress' and 'org_aries_common_DocumentRoot'. From 'EmailAddress', the role 'EmailAddress' has cardinality 0..*, and from 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot9' has cardinality 0..*.
+An association connects 'EmailAddressList' and 'org_aries_common_DocumentRoot'. From 'EmailAddressList', the role 'EmailAddressList' has cardinality 0..*, and from 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot11' has cardinality 0..*.
+An association connects 'EmailBox' and 'org_aries_common_DocumentRoot'. From 'EmailBox', the role 'EmailBox' has cardinality 0..*, and from 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot13' has cardinality 0..*.
+An association connects 'EmailMessage' and 'org_aries_common_DocumentRoot'. From 'EmailMessage', the role 'EmailMessage' has cardinality 0..*, and from 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot15' has cardinality 0..*.
+An association connects 'Event' and 'org_aries_common_DocumentRoot'. From 'Event', the role 'Event' has cardinality 0..*, and from 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot17' has cardinality 0..*.
+An association connects 'org_aries_common_DocumentRoot' and 'Map'. From 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot19' has cardinality 0..*, and from 'Map', the role 'Map' has cardinality 0..*.
+An association connects 'org_aries_common_DocumentRoot' and 'MapEntry'. From 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot21' has cardinality 0..*, and from 'MapEntry', the role 'MapEntry' has cardinality 0..*.
+An association connects 'org_aries_common_DocumentRoot' and 'Note'. From 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot23' has cardinality 0..*, and from 'Note', the role 'Note' has cardinality 0..*.
+An association connects 'org_aries_common_DocumentRoot' and 'Person'. From 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot25' has cardinality 0..*, and from 'Person', the role 'Person' has cardinality 0..*.
+An association connects 'org_aries_common_DocumentRoot' and 'PersonName'. From 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot27' has cardinality 0..*, and from 'PersonName', the role 'PersonName' has cardinality 0..*.
+An association connects 'PhoneNumber' and 'org_aries_common_DocumentRoot'. From 'PhoneNumber', the role 'PhoneNumber' has cardinality 0..*, and from 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot29' has cardinality 0..*.
+An association connects 'org_aries_common_DocumentRoot' and 'Properties'. From 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot31' has cardinality 0..*, and from 'Properties', the role 'Properties' has cardinality 0..*.
+An association connects 'Property' and 'org_aries_common_DocumentRoot'. From 'Property', the role 'Property' has cardinality 0..*, and from 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot33' has cardinality 0..*.
+An association connects 'StreetAddress' and 'org_aries_common_DocumentRoot'. From 'StreetAddress', the role 'StreetAddress' has cardinality 0..*, and from 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot35' has cardinality 0..*.
+An association connects 'User' and 'org_aries_common_DocumentRoot'. From 'User', the role 'User' has cardinality 0..*, and from 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot37' has cardinality 0..*.
+An association connects 'ZipCode' and 'org_aries_common_DocumentRoot'. From 'ZipCode', the role 'ZipCode' has cardinality 0..*, and from 'org_aries_common_DocumentRoot', the role 'org_aries_common_DocumentRoot39' has cardinality 0..*.
+An association connects 'EmailBox' and 'org_aries_common_EmailAccount'. From 'EmailBox', the role 'EmailBox41' has cardinality 0..*, and from 'org_aries_common_EmailAccount', the role 'org_aries_common_EmailAccount' has cardinality 0..*.
+An association connects 'PhoneNumber' and 'org_aries_common_EmailAddress'. From 'PhoneNumber', the role 'PhoneNumber43' has cardinality 0..*, and from 'org_aries_common_EmailAddress', the role 'org_aries_common_EmailAddress' has cardinality 0..*.
+An association connects 'org_aries_common_EmailBox' and 'EmailAccount'. From 'org_aries_common_EmailBox', the role 'org_aries_common_EmailBox' has cardinality 0..*, and from 'EmailAccount', the role 'EmailAccount45' has cardinality 0..*.
+An association connects 'EmailBox' and 'org_aries_common_EmailBox'. From 'EmailBox', the role 'EmailBox48' has cardinality 0..*, and from 'org_aries_common_EmailBox', the role 'org_aries_common_EmailBox47' has cardinality 0..*.
+An association connects 'org_aries_common_EmailBox' and 'EmailMessage'. From 'org_aries_common_EmailBox', the role 'org_aries_common_EmailBox50' has cardinality 0..*, and from 'EmailMessage', the role 'EmailMessage51' has cardinality 0..*.
+An association connects 'EmailAddress' and 'org_aries_common_EmailMessage'. From 'EmailAddress', the role 'EmailAddress53' has cardinality 0..*, and from 'org_aries_common_EmailMessage', the role 'org_aries_common_EmailMessage' has cardinality 0..*.
+An association connects 'org_aries_common_EmailMessage' and 'EmailAddressList'. From 'org_aries_common_EmailMessage', the role 'org_aries_common_EmailMessage55' has cardinality 0..*, and from 'EmailAddressList', the role 'EmailAddressList56' has cardinality 0..*.
+An association connects 'EmailAddressList' and 'org_aries_common_EmailMessage'. From 'EmailAddressList', the role 'EmailAddressList59' has cardinality 0..*, and from 'org_aries_common_EmailMessage', the role 'org_aries_common_EmailMessage58' has cardinality 0..*.
+An association connects 'EmailAddressList' and 'org_aries_common_EmailMessage'. From 'EmailAddressList', the role 'EmailAddressList62' has cardinality 0..*, and from 'org_aries_common_EmailMessage', the role 'org_aries_common_EmailMessage61' has cardinality 0..*.
+An association connects 'EmailAddressList' and 'org_aries_common_EmailMessage'. From 'EmailAddressList', the role 'EmailAddressList65' has cardinality 0..*, and from 'org_aries_common_EmailMessage', the role 'org_aries_common_EmailMessage64' has cardinality 0..*.
+An association connects 'EmailAddressList' and 'org_aries_common_EmailMessage'. From 'EmailAddressList', the role 'EmailAddressList68' has cardinality 0..*, and from 'org_aries_common_EmailMessage', the role 'org_aries_common_EmailMessage67' has cardinality 0..*.
+An association connects 'Attachment' and 'org_aries_common_EmailMessage'. From 'Attachment', the role 'Attachment71' has cardinality 0..*, and from 'org_aries_common_EmailMessage', the role 'org_aries_common_EmailMessage70' has cardinality 0..*.
+An association connects 'org_aries_common_Event' and 'User'. From 'org_aries_common_Event', the role 'org_aries_common_Event' has cardinality 0..*, and from 'User', the role 'User73' has cardinality 0..*.
+An association connects 'MapEntry' and 'org_aries_common_Map'. From 'MapEntry', the role 'MapEntry75' has cardinality 0..*, and from 'org_aries_common_Map', the role 'org_aries_common_Map' has cardinality 0..*.
+An association connects 'org_aries_common_EObject' and 'org_aries_common_MapEntry'. From 'org_aries_common_EObject', the role 'org_aries_common_EObject' has cardinality 0..*, and from 'org_aries_common_MapEntry', the role 'org_aries_common_MapEntry' has cardinality 0..*.
+An association connects 'org_aries_common_MapEntry' and 'org_aries_common_EObject'. From 'org_aries_common_MapEntry', the role 'org_aries_common_MapEntry78' has cardinality 0..*, and from 'org_aries_common_EObject', the role 'org_aries_common_EObject79' has cardinality 0..*.
+An association connects 'User' and 'org_aries_common_Note'. From 'User', the role 'User81' has cardinality 0..*, and from 'org_aries_common_Note', the role 'org_aries_common_Note' has cardinality 0..*.
+An association connects 'org_aries_common_Person' and 'PersonName'. From 'org_aries_common_Person', the role 'org_aries_common_Person' has cardinality 0..*, and from 'PersonName', the role 'PersonName83' has cardinality 0..*.
+An association connects 'PhoneNumber' and 'org_aries_common_Person'. From 'PhoneNumber', the role 'PhoneNumber86' has cardinality 0..*, and from 'org_aries_common_Person', the role 'org_aries_common_Person85' has cardinality 0..*.
+An association connects 'org_aries_common_Person' and 'EmailAddress'. From 'org_aries_common_Person', the role 'org_aries_common_Person88' has cardinality 0..*, and from 'EmailAddress', the role 'EmailAddress89' has cardinality 0..*.
+An association connects 'StreetAddress' and 'org_aries_common_Person'. From 'StreetAddress', the role 'StreetAddress92' has cardinality 0..*, and from 'org_aries_common_Person', the role 'org_aries_common_Person91' has cardinality 0..*.
+An association connects 'org_aries_common_Properties' and 'Property'. From 'org_aries_common_Properties', the role 'org_aries_common_Properties' has cardinality 0..*, and from 'Property', the role 'Property94' has cardinality 0..*.
+An association connects 'org_aries_common_StreetAddress' and 'ZipCode'. From 'org_aries_common_StreetAddress', the role 'org_aries_common_StreetAddress' has cardinality 0..*, and from 'ZipCode', the role 'ZipCode96' has cardinality 0..*.
+An association connects 'org_aries_common_User' and 'PhoneNumber'. From 'org_aries_common_User', the role 'org_aries_common_User' has cardinality 0..*, and from 'PhoneNumber', the role 'PhoneNumber98' has cardinality 0..*.
+An association connects 'EmailAddress' and 'org_aries_common_User'. From 'EmailAddress', the role 'EmailAddress101' has cardinality 0..*, and from 'org_aries_common_User', the role 'org_aries_common_User100' has cardinality 0..*.
+An association connects 'org_sgiusa_model_EStringToStringMapEntry' and 'org_sgiusa_model_DocumentRoot'. From 'org_sgiusa_model_EStringToStringMapEntry', the role 'org_sgiusa_model_EStringToStringMapEntry' has cardinality 0..*, and from 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot' has cardinality 0..*.
+An association connects 'org_sgiusa_model_DocumentRoot' and 'org_sgiusa_model_EStringToStringMapEntry'. From 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot104' has cardinality 0..*, and from 'org_sgiusa_model_EStringToStringMapEntry', the role 'org_sgiusa_model_EStringToStringMapEntry105' has cardinality 0..*.
+An association connects 'EmailList' and 'org_sgiusa_model_DocumentRoot'. From 'EmailList', the role 'EmailList' has cardinality 0..*, and from 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot107' has cardinality 0..*.
+An association connects 'Event' and 'org_sgiusa_model_DocumentRoot'. From 'Event', the role 'Event110' has cardinality 0..*, and from 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot109' has cardinality 0..*.
+An association connects 'org_sgiusa_model_DocumentRoot' and 'FamilyMember'. From 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot112' has cardinality 0..*, and from 'FamilyMember', the role 'FamilyMember' has cardinality 0..*.
+An association connects 'GohonzonInfo' and 'org_sgiusa_model_DocumentRoot'. From 'GohonzonInfo', the role 'GohonzonInfo' has cardinality 0..*, and from 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot114' has cardinality 0..*.
+An association connects 'LeadershipInfo' and 'org_sgiusa_model_DocumentRoot'. From 'LeadershipInfo', the role 'LeadershipInfo' has cardinality 0..*, and from 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot116' has cardinality 0..*.
+An association connects 'LeadershipRole' and 'org_sgiusa_model_DocumentRoot'. From 'LeadershipRole', the role 'LeadershipRole' has cardinality 0..*, and from 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot118' has cardinality 0..*.
+An association connects 'org_sgiusa_model_DocumentRoot' and 'Member'. From 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot120' has cardinality 0..*, and from 'Member', the role 'Member' has cardinality 0..*.
+An association connects 'org_sgiusa_model_DocumentRoot' and 'Members'. From 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot122' has cardinality 0..*, and from 'Members', the role 'Members' has cardinality 0..*.
+An association connects 'org_sgiusa_model_DocumentRoot' and 'MemberSearchCriteria'. From 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot124' has cardinality 0..*, and from 'MemberSearchCriteria', the role 'MemberSearchCriteria' has cardinality 0..*.
+An association connects 'MembershipInfo' and 'org_sgiusa_model_DocumentRoot'. From 'MembershipInfo', the role 'MembershipInfo' has cardinality 0..*, and from 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot126' has cardinality 0..*.
+An association connects 'org_sgiusa_model_DocumentRoot' and 'Note'. From 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot128' has cardinality 0..*, and from 'Note', the role 'Note129' has cardinality 0..*.
+An association connects 'Organization' and 'org_sgiusa_model_DocumentRoot'. From 'Organization', the role 'Organization' has cardinality 0..*, and from 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot131' has cardinality 0..*.
+An association connects 'Permission' and 'org_sgiusa_model_DocumentRoot'. From 'Permission', the role 'Permission' has cardinality 0..*, and from 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot133' has cardinality 0..*.
+An association connects 'org_sgiusa_model_DocumentRoot' and 'Preferences'. From 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot135' has cardinality 0..*, and from 'Preferences', the role 'Preferences' has cardinality 0..*.
+An association connects 'Registration' and 'org_sgiusa_model_DocumentRoot'. From 'Registration', the role 'Registration' has cardinality 0..*, and from 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot137' has cardinality 0..*.
+An association connects 'org_sgiusa_model_DocumentRoot' and 'SchoolInfo'. From 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot139' has cardinality 0..*, and from 'SchoolInfo', the role 'SchoolInfo' has cardinality 0..*.
+An association connects 'org_sgiusa_model_DocumentRoot' and 'StudyDeptExam'. From 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot141' has cardinality 0..*, and from 'StudyDeptExam', the role 'StudyDeptExam' has cardinality 0..*.
+An association connects 'StudyDeptInfo' and 'org_sgiusa_model_DocumentRoot'. From 'StudyDeptInfo', the role 'StudyDeptInfo' has cardinality 0..*, and from 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot143' has cardinality 0..*.
+An association connects 'User' and 'org_sgiusa_model_DocumentRoot'. From 'User', the role 'User146' has cardinality 0..*, and from 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot145' has cardinality 0..*.
+An association connects 'Users' and 'org_sgiusa_model_DocumentRoot'. From 'Users', the role 'Users' has cardinality 0..*, and from 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot148' has cardinality 0..*.
+An association connects 'View' and 'org_sgiusa_model_DocumentRoot'. From 'View', the role 'View' has cardinality 0..*, and from 'org_sgiusa_model_DocumentRoot', the role 'org_sgiusa_model_DocumentRoot150' has cardinality 0..*.
+An association connects 'org_sgiusa_model_EmailList' and 'Organization'. From 'org_sgiusa_model_EmailList', the role 'org_sgiusa_model_EmailList' has cardinality 0..*, and from 'Organization', the role 'Organization152' has cardinality 0..*.
+An association connects 'org_sgiusa_model_EmailList' and 'User'. From 'org_sgiusa_model_EmailList', the role 'org_sgiusa_model_EmailList154' has cardinality 0..*, and from 'User', the role 'User155' has cardinality 0..*.
+An association connects 'org_sgiusa_model_Event' and 'Organization'. From 'org_sgiusa_model_Event', the role 'org_sgiusa_model_Event' has cardinality 0..*, and from 'Organization', the role 'Organization157' has cardinality 0..*.
+An association connects 'org_sgiusa_model_LeadershipInfo' and 'LeadershipRole'. From 'org_sgiusa_model_LeadershipInfo', the role 'org_sgiusa_model_LeadershipInfo' has cardinality 0..*, and from 'LeadershipRole', the role 'LeadershipRole159' has cardinality 0..*.
+An association connects 'EmailAddress' and 'org_sgiusa_model_Member'. From 'EmailAddress', the role 'EmailAddress161' has cardinality 0..*, and from 'org_sgiusa_model_Member', the role 'org_sgiusa_model_Member' has cardinality 0..*.
+An association connects 'StreetAddress' and 'org_sgiusa_model_Member'. From 'StreetAddress', the role 'StreetAddress164' has cardinality 0..*, and from 'org_sgiusa_model_Member', the role 'org_sgiusa_model_Member163' has cardinality 0..*.
+An association connects 'org_sgiusa_model_Member' and 'PhoneNumber'. From 'org_sgiusa_model_Member', the role 'org_sgiusa_model_Member166' has cardinality 0..*, and from 'PhoneNumber', the role 'PhoneNumber167' has cardinality 0..*.
+An association connects 'PhoneNumber' and 'org_sgiusa_model_Member'. From 'PhoneNumber', the role 'PhoneNumber170' has cardinality 0..*, and from 'org_sgiusa_model_Member', the role 'org_sgiusa_model_Member169' has cardinality 0..*.
+An association connects 'PhoneNumber' and 'org_sgiusa_model_Member'. From 'PhoneNumber', the role 'PhoneNumber173' has cardinality 0..*, and from 'org_sgiusa_model_Member', the role 'org_sgiusa_model_Member172' has cardinality 0..*.
+An association connects 'org_sgiusa_model_Member' and 'PhoneNumber'. From 'org_sgiusa_model_Member', the role 'org_sgiusa_model_Member175' has cardinality 0..*, and from 'PhoneNumber', the role 'PhoneNumber176' has cardinality 0..*.
+An association connects 'org_sgiusa_model_Member' and 'Organization'. From 'org_sgiusa_model_Member', the role 'org_sgiusa_model_Member178' has cardinality 0..*, and from 'Organization', the role 'Organization179' has cardinality 0..*.
+An association connects 'LeadershipInfo' and 'org_sgiusa_model_Member'. From 'LeadershipInfo', the role 'LeadershipInfo182' has cardinality 0..*, and from 'org_sgiusa_model_Member', the role 'org_sgiusa_model_Member181' has cardinality 0..*.
+An association connects 'org_sgiusa_model_Member' and 'StudyDeptInfo'. From 'org_sgiusa_model_Member', the role 'org_sgiusa_model_Member184' has cardinality 0..*, and from 'StudyDeptInfo', the role 'StudyDeptInfo185' has cardinality 0..*.
+An association connects 'Note' and 'org_sgiusa_model_Member'. From 'Note', the role 'Note188' has cardinality 0..*, and from 'org_sgiusa_model_Member', the role 'org_sgiusa_model_Member187' has cardinality 0..*.
+An association connects 'FamilyMember' and 'org_sgiusa_model_Member'. From 'FamilyMember', the role 'FamilyMember191' has cardinality 0..*, and from 'org_sgiusa_model_Member', the role 'org_sgiusa_model_Member190' has cardinality 0..*.
+An association connects 'org_sgiusa_model_Members' and 'Member'. From 'org_sgiusa_model_Members', the role 'org_sgiusa_model_Members' has cardinality 0..*, and from 'Member', the role 'Member193' has cardinality 0..*.
+An association connects 'org_sgiusa_model_MemberSearchCriteria' and 'Organization'. From 'org_sgiusa_model_MemberSearchCriteria', the role 'org_sgiusa_model_MemberSearchCriteria' has cardinality 0..*, and from 'Organization', the role 'Organization195' has cardinality 0..*.
+An association connects 'GohonzonInfo' and 'org_sgiusa_model_MembershipInfo'. From 'GohonzonInfo', the role 'GohonzonInfo197' has cardinality 0..*, and from 'org_sgiusa_model_MembershipInfo', the role 'org_sgiusa_model_MembershipInfo' has cardinality 0..*.
+An association connects 'org_sgiusa_model_Note' and 'User'. From 'org_sgiusa_model_Note', the role 'org_sgiusa_model_Note' has cardinality 0..*, and from 'User', the role 'User199' has cardinality 0..*.
+An association connects 'org_sgiusa_model_Organization' and 'Organization'. From 'org_sgiusa_model_Organization', the role 'org_sgiusa_model_Organization' has cardinality 0..*, and from 'Organization', the role 'Organization201' has cardinality 0..*.
+An association connects 'Organization' and 'org_sgiusa_model_Organization'. From 'Organization', the role 'Organization204' has cardinality 0..*, and from 'org_sgiusa_model_Organization', the role 'org_sgiusa_model_Organization203' has cardinality 0..*.
+An association connects 'User' and 'org_sgiusa_model_Organization'. From 'User', the role 'User207' has cardinality 0..*, and from 'org_sgiusa_model_Organization', the role 'org_sgiusa_model_Organization206' has cardinality 0..*.
+An association connects 'User' and 'org_sgiusa_model_Organization'. From 'User', the role 'User210' has cardinality 0..*, and from 'org_sgiusa_model_Organization', the role 'org_sgiusa_model_Organization209' has cardinality 0..*.
+An association connects 'org_sgiusa_model_Organization' and 'User'. From 'org_sgiusa_model_Organization', the role 'org_sgiusa_model_Organization212' has cardinality 0..*, and from 'User', the role 'User213' has cardinality 0..*.
+An association connects 'Organization' and 'org_sgiusa_model_Permission'. From 'Organization', the role 'Organization215' has cardinality 0..*, and from 'org_sgiusa_model_Permission', the role 'org_sgiusa_model_Permission' has cardinality 0..*.
+An association connects 'User' and 'org_sgiusa_model_Registration'. From 'User', the role 'User217' has cardinality 0..*, and from 'org_sgiusa_model_Registration', the role 'org_sgiusa_model_Registration' has cardinality 0..*.
+An association connects 'StudyDeptExam' and 'org_sgiusa_model_StudyDeptInfo'. From 'StudyDeptExam', the role 'StudyDeptExam219' has cardinality 0..*, and from 'org_sgiusa_model_StudyDeptInfo', the role 'org_sgiusa_model_StudyDeptInfo' has cardinality 0..*.
+An association connects 'org_sgiusa_model_User' and 'EmailAccount'. From 'org_sgiusa_model_User', the role 'org_sgiusa_model_User' has cardinality 0..*, and from 'EmailAccount', the role 'EmailAccount221' has cardinality 0..*.
+An association connects 'org_sgiusa_model_User' and 'EmailAddress'. From 'org_sgiusa_model_User', the role 'org_sgiusa_model_User223' has cardinality 0..*, and from 'EmailAddress', the role 'EmailAddress224' has cardinality 0..*.
+An association connects 'StreetAddress' and 'org_sgiusa_model_User'. From 'StreetAddress', the role 'StreetAddress227' has cardinality 0..*, and from 'org_sgiusa_model_User', the role 'org_sgiusa_model_User226' has cardinality 0..*.
+An association connects 'PhoneNumber' and 'org_sgiusa_model_User'. From 'PhoneNumber', the role 'PhoneNumber230' has cardinality 0..*, and from 'org_sgiusa_model_User', the role 'org_sgiusa_model_User229' has cardinality 0..*.
+An association connects 'org_sgiusa_model_User' and 'PhoneNumber'. From 'org_sgiusa_model_User', the role 'org_sgiusa_model_User232' has cardinality 0..*, and from 'PhoneNumber', the role 'PhoneNumber233' has cardinality 0..*.
+An association connects 'org_sgiusa_model_User' and 'Permission'. From 'org_sgiusa_model_User', the role 'org_sgiusa_model_User235' has cardinality 0..*, and from 'Permission', the role 'Permission236' has cardinality 0..*.
+An association connects 'org_sgiusa_model_User' and 'Preferences'. From 'org_sgiusa_model_User', the role 'org_sgiusa_model_User238' has cardinality 0..*, and from 'Preferences', the role 'Preferences239' has cardinality 0..*.
+An association connects 'org_sgiusa_model_Users' and 'User'. From 'org_sgiusa_model_Users', the role 'org_sgiusa_model_Users' has cardinality 0..*, and from 'User', the role 'User241' has cardinality 0..*.
+An association connects 'org_sgiusa_model_View' and 'Organization'. From 'org_sgiusa_model_View', the role 'org_sgiusa_model_View' has cardinality 0..*, and from 'Organization', the role 'Organization243' has cardinality 0..*.

@@ -1,0 +1,27 @@
+The domain model 'pmtest' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'pmtest_C' represents an important domain concept.
+It does not declare any attributes.
+
+'pmtest_B' represents an important domain concept.
+It does not declare any attributes.
+
+'pmtest_D' represents an important domain concept.
+It has one attribute: 'j', which is of type int.
+
+'pmtest_A' represents an important domain concept.
+It has one attribute: 'i', which is of type int.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'pmtest_B' is a specialization of 'A'.
+The class 'pmtest_C' is a specialization of 'A'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pmtest_A' and 'pmtest_A'. From 'pmtest_A', the role 'A' has cardinality 0..*, and from 'pmtest_A', the role 's' has cardinality 0..*.
+An association connects 'pmtest_A' and 'pmtest_A'. From 'pmtest_A', the role 't' has cardinality 0..*, and from 'pmtest_A', the role 'A4' has cardinality 0..*.
+An association connects 'pmtest_A' and 'pmtest_D'. From 'pmtest_A', the role 'pmtest_A' has cardinality 0..*, and from 'pmtest_D', the role 'pmtest_D' has cardinality 0..*.

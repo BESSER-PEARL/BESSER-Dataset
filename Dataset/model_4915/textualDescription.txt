@@ -1,0 +1,410 @@
+The domain model 'service' describes the core structural elements and their relationships within the system.
+
+The model defines 95 main class(es).
+
+'Message' represents an important domain concept.
+It does not declare any attributes.
+
+'service_semantics_ServiceInput' represents an important domain concept.
+It does not declare any attributes.
+
+'semantics_service_Antecedent' represents an important domain concept.
+It does not declare any attributes.
+
+'service_template_IfThenElse' represents an important domain concept.
+It does not declare any attributes.
+
+'service_ServiceImplemetation' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'uri', which is of type str.
+
+'service_architecture_ServiceMatchmaker' represents an important domain concept.
+It does not declare any attributes.
+
+'service_template_Choice' represents an important domain concept.
+It does not declare any attributes.
+
+'Agent' represents an important domain concept.
+It does not declare any attributes.
+
+'service_template_ServiceTemplate' represents an important domain concept.
+It has one attribute: 'URI', which is of type str.
+
+'OperationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'service_architecture_TemplateRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'syntax_service_SchemaType' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlConstruct' represents an important domain concept.
+It does not declare any attributes.
+
+'service_syntax_Message' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'architecture_ServiceMatchmaker' represents an important domain concept.
+It does not declare any attributes.
+
+'service_architecture_ServiceFramework' represents an important domain concept.
+It does not declare any attributes.
+
+'service_template_BoundProcessModel' represents an important domain concept.
+It does not declare any attributes.
+
+'service_template_TemplateFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'service_template_RepeatUntil' represents an important domain concept.
+It does not declare any attributes.
+
+'service_semantics_ServiceResult' represents an important domain concept.
+It does not declare any attributes.
+
+'service_SL' represents an important domain concept.
+It does not declare any attributes.
+
+'syntax_service_ServiceImplemetation' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlConstructList' represents an important domain concept.
+It does not declare any attributes.
+
+'service_syntax_InterfaceDescription' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'service_template_AbstractProcessModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ServiceCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'service_semantics_ServiceCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'IOEP' represents an important domain concept.
+It does not declare any attributes.
+
+'service_ServiceConsumer' represents an important domain concept.
+It has one attribute: 'isType', which is of type str.
+
+'service_architecture_ExecutionFramework' represents an important domain concept.
+It has one attribute: 'container', which is of type str.
+
+'InterfaceDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'service_architecture_DeployedService' represents an important domain concept.
+It has one attribute: 'artifact', which is of type str.
+
+'ProcessModel' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceCategory' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceGrounding' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'BoundTemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'service_template_TemplateConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlConstructBag' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceTemplateMatchmaker' represents an important domain concept.
+It does not declare any attributes.
+
+'service_template_Iterate' represents an important domain concept.
+It does not declare any attributes.
+
+'template_service_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'service_template_GroundTemplate' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TemplateConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'syntax_service_TopLevelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'service_template_ControlConstruct' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceInput' represents an important domain concept.
+It does not declare any attributes.
+
+'service_semantics_ServiceGrounding' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'bindParams', which is of type str.
+
+'service_semantics_ServiceParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'semantics_service_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'service_ServiceProvider' represents an important domain concept.
+It has one attribute: 'isType', which is of type str.
+
+'service_template_RepeatWhile' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceTemplate' represents an important domain concept.
+It does not declare any attributes.
+
+'service_semantics_ServiceProfile' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'serviceClassification', which is of type str.
+
+'service_template_BoundTemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'service_semantics_ServiceCategory' represents an important domain concept.
+It has the following attributes: 'taxonomy', which is of type str; 'value', which is of type str; 'name', which is of type str; 'code', which is of type str.
+
+'DeployedService' represents an important domain concept.
+It does not declare any attributes.
+
+'service_template_Split' represents an important domain concept.
+It does not declare any attributes.
+
+'template_service_Antecedent' represents an important domain concept.
+It does not declare any attributes.
+
+'service_semantics_IOEP' represents an important domain concept.
+It does not declare any attributes.
+
+'Endpoint' represents an important domain concept.
+It does not declare any attributes.
+
+'service_syntax_Binding' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'style', which is of type str; 'transport', which is of type str.
+
+'service_syntax_OperationDescription' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'IntervalThing' represents an important domain concept.
+It does not declare any attributes.
+
+'service_template_Perform' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceFramework' represents an important domain concept.
+It does not declare any attributes.
+
+'syntax_service_TopLevelComplexType' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceOutput' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecutionFramework' represents an important domain concept.
+It does not declare any attributes.
+
+'service_template_ControlConstructList' represents an important domain concept.
+It does not declare any attributes.
+
+'service_template_ControlConstructBag' represents an important domain concept.
+It does not declare any attributes.
+
+'GroundTemplate' represents an important domain concept.
+It does not declare any attributes.
+
+'service_Service' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str; 'namespace', which is of type str.
+
+'semantics_service_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'service_architecture_TemplateMatchmaker' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceProfile' represents an important domain concept.
+It does not declare any attributes.
+
+'service_architecture_ServiceTemplateMatchmaker' represents an important domain concept.
+It does not declare any attributes.
+
+'service_template_IntervalThing' represents an important domain concept.
+It does not declare any attributes.
+
+'service_template_AnyOrder' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_TemplateMatchmaker' represents an important domain concept.
+It does not declare any attributes.
+
+'BoundProcessModel' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceDirectory' represents an important domain concept.
+It does not declare any attributes.
+
+'service_semantics_ProcessModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'service_architecture_ServiceDirectory' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceResult' represents an important domain concept.
+It does not declare any attributes.
+
+'service_template_Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'Iterate' represents an important domain concept.
+It does not declare any attributes.
+
+'service_syntax_Endpoint' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'location', which is of type str.
+
+'service_template_SplitJoin' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractProcessModel' represents an important domain concept.
+It does not declare any attributes.
+
+'semantics_service_Consequent' represents an important domain concept.
+It does not declare any attributes.
+
+'service_semantics_ServiceOutput' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StyleEncoding' defines the following possible values: 'RPC_Encoded', 'Document_Literal'.
+The enumeration 'ServiceImpLanguage' defines the following possible values: 'Java_JSP', 'Java_EJB'.
+The enumeration 'TransportProtocol' defines the following possible values: 'SOAP', 'HTTP', 'MIME'.
+The enumeration 'ServiceType' defines the following possible values: 'external', 'internal'.
+The enumeration 'ContainerType' defines a single possible value: 'axis'.
+
+The model also captures inheritance relationships between classes.
+The class 'service_ServiceProvider' is a specialization of 'Agent'.
+The class 'service_ServiceConsumer' is a specialization of 'Agent'.
+The class 'service_semantics_ProcessModel' is a specialization of 'IOEP'.
+The class 'service_semantics_ServiceInput' is a specialization of 'ServiceParameter'.
+The class 'service_semantics_ServiceOutput' is a specialization of 'ServiceParameter'.
+The class 'service_template_AbstractProcessModel' is a specialization of 'IOEP'.
+The class 'service_template_AnyOrder' is a specialization of 'ControlConstruct'.
+The class 'service_template_Choice' is a specialization of 'ControlConstruct'.
+The class 'service_template_IfThenElse' is a specialization of 'ControlConstruct'.
+The class 'service_template_Iterate' is a specialization of 'ControlConstruct'.
+The class 'service_template_Perform' is a specialization of 'ControlConstruct'.
+The class 'service_template_RepeatUntil' is a specialization of 'Iterate'.
+The class 'service_template_RepeatWhile' is a specialization of 'Iterate'.
+The class 'service_template_Sequence' is a specialization of 'ControlConstruct'.
+The class 'service_template_Split' is a specialization of 'ControlConstruct'.
+The class 'service_template_SplitJoin' is a specialization of 'ControlConstruct'.
+The class 'service_architecture_ServiceTemplateMatchmaker' is a specialization of 'architecture_ServiceMatchmaker'.
+The class 'service_architecture_ServiceTemplateMatchmaker' is a specialization of 'architecture_TemplateMatchmaker'.
+
+Relationships between classes are modeled using associations.
+An association connects 'service_Service' and 'Endpoint'. From 'service_Service', the role 'service_Service' has cardinality 0..*, and from 'Endpoint', the role 'Endpoint' has cardinality 0..*.
+An association connects 'service_Service' and 'InterfaceDescription'. From 'service_Service', the role 'service_Service2' has cardinality 0..*, and from 'InterfaceDescription', the role 'InterfaceDescription' has cardinality 0..*.
+An association connects 'service_Service' and 'ServiceProfile'. From 'service_Service', the role 'ServiceProfile' has cardinality 0..*, and from 'ServiceProfile', the role 'semantics' has cardinality 0..*.
+An association connects 'service_Service' and 'ServiceGrounding'. From 'service_Service', the role 'ServiceGrounding' has cardinality 0..*, and from 'ServiceGrounding', the role 'semantics5' has cardinality 0..*.
+An association connects 'ProcessModel' and 'service_Service'. From 'ProcessModel', the role 'semantics7' has cardinality 0..*, and from 'service_Service', the role 'ProcessModel' has cardinality 0..*.
+An association connects 'GroundTemplate' and 'service_Service'. From 'GroundTemplate', the role 'template' has cardinality 0..*, and from 'service_Service', the role 'GroundTemplate' has cardinality 0..*.
+An association connects 'service_ServiceProvider' and 'service_Service'. From 'service_ServiceProvider', the role 'service_ServiceProvider' has cardinality 0..*, and from 'service_Service', the role 'service_Service10' has cardinality 0..*.
+An association connects 'service_ServiceProvider' and 'service_ServiceImplemetation'. From 'service_ServiceProvider', the role 'service_ServiceProvider12' has cardinality 0..*, and from 'service_ServiceImplemetation', the role 'service_ServiceImplemetation' has cardinality 0..*.
+An association connects 'service_ServiceConsumer' and 'service_Service'. From 'service_ServiceConsumer', the role 'service_ServiceConsumer' has cardinality 0..*, and from 'service_Service', the role 'service_Service14' has cardinality 0..*.
+An association connects 'service_SL' and 'service_Service'. From 'service_SL', the role 'service_SL' has cardinality 0..*, and from 'service_Service', the role 'service_Service16' has cardinality 0..*.
+An association connects 'service_ServiceProvider' and 'service_SL'. From 'service_ServiceProvider', the role 'service_ServiceProvider19' has cardinality 0..*, and from 'service_SL', the role 'service_SL18' has cardinality 0..*.
+An association connects 'service_ServiceConsumer' and 'service_SL'. From 'service_ServiceConsumer', the role 'service_ServiceConsumer22' has cardinality 0..*, and from 'service_SL', the role 'service_SL21' has cardinality 0..*.
+An association connects 'ServiceFramework' and 'service_SL'. From 'ServiceFramework', the role 'ServiceFramework' has cardinality 0..*, and from 'service_SL', the role 'service_SL24' has cardinality 0..*.
+An association connects 'OperationDescription' and 'service_syntax_InterfaceDescription'. From 'OperationDescription', the role 'OperationDescription' has cardinality 0..*, and from 'service_syntax_InterfaceDescription', the role 'service_syntax_InterfaceDescription' has cardinality 0..*.
+An association connects 'service_syntax_InterfaceDescription' and 'Binding'. From 'service_syntax_InterfaceDescription', the role 'Binding' has cardinality 0..*, and from 'Binding', the role 'syntax' has cardinality 0..*.
+An association connects 'syntax_service_SchemaType' and 'service_syntax_InterfaceDescription'. From 'syntax_service_SchemaType', the role 'syntax_service_SchemaType' has cardinality 0..*, and from 'service_syntax_InterfaceDescription', the role 'service_syntax_InterfaceDescription28' has cardinality 0..*.
+An association connects 'syntax_service_SchemaType' and 'service_syntax_InterfaceDescription'. From 'syntax_service_SchemaType', the role 'syntax_service_SchemaType31' has cardinality 0..*, and from 'service_syntax_InterfaceDescription', the role 'service_syntax_InterfaceDescription30' has cardinality 0..*.
+An association connects 'Message' and 'service_syntax_OperationDescription'. From 'Message', the role 'Message' has cardinality 0..*, and from 'service_syntax_OperationDescription', the role 'service_syntax_OperationDescription' has cardinality 0..*.
+An association connects 'service_syntax_OperationDescription' and 'Message'. From 'service_syntax_OperationDescription', the role 'service_syntax_OperationDescription34' has cardinality 0..*, and from 'Message', the role 'Message35' has cardinality 0..*.
+An association connects 'service_syntax_OperationDescription' and 'Message'. From 'service_syntax_OperationDescription', the role 'service_syntax_OperationDescription37' has cardinality 0..*, and from 'Message', the role 'Message38' has cardinality 0..*.
+An association connects 'service_syntax_Message' and 'syntax_service_TopLevelComplexType'. From 'service_syntax_Message', the role 'service_syntax_Message' has cardinality 0..*, and from 'syntax_service_TopLevelComplexType', the role 'syntax_service_TopLevelComplexType' has cardinality 0..*.
+An association connects 'syntax_service_TopLevelElement' and 'service_syntax_Message'. From 'syntax_service_TopLevelElement', the role 'syntax_service_TopLevelElement' has cardinality 0..*, and from 'service_syntax_Message', the role 'service_syntax_Message41' has cardinality 0..*.
+An association connects 'Binding' and 'service_syntax_Endpoint'. From 'Binding', the role 'Binding43' has cardinality 0..*, and from 'service_syntax_Endpoint', the role 'service_syntax_Endpoint' has cardinality 0..*.
+An association connects 'service_syntax_Endpoint' and 'syntax_service_ServiceImplemetation'. From 'service_syntax_Endpoint', the role 'service_syntax_Endpoint45' has cardinality 0..*, and from 'syntax_service_ServiceImplemetation', the role 'syntax_service_ServiceImplemetation' has cardinality 0..*.
+An association connects 'service_syntax_Endpoint' and 'DeployedService'. From 'service_syntax_Endpoint', the role 'service_syntax_Endpoint47' has cardinality 0..*, and from 'DeployedService', the role 'DeployedService' has cardinality 0..*.
+An association connects 'InterfaceDescription' and 'service_syntax_Binding'. From 'InterfaceDescription', the role 'syntax50' has cardinality 0..*, and from 'service_syntax_Binding', the role 'InterfaceDescription49' has cardinality 0..*.
+An association connects 'service_semantics_ServiceProfile' and 'semantics_service_Service'. From 'service_semantics_ServiceProfile', the role 'presents' has cardinality 0..*, and from 'semantics_service_Service', the role 'Service' has cardinality 0..*.
+An association connects 'service_semantics_ServiceProfile' and 'ProcessModel'. From 'service_semantics_ServiceProfile', the role 'service_semantics_ServiceProfile' has cardinality 0..*, and from 'ProcessModel', the role 'ProcessModel53' has cardinality 0..*.
+An association connects 'service_semantics_ServiceProfile' and 'ServiceCategory'. From 'service_semantics_ServiceProfile', the role 'service_semantics_ServiceProfile55' has cardinality 0..*, and from 'ServiceCategory', the role 'ServiceCategory' has cardinality 0..*.
+An association connects 'service_semantics_ServiceProfile' and 'ServiceInput'. From 'service_semantics_ServiceProfile', the role 'service_semantics_ServiceProfile57' has cardinality 0..*, and from 'ServiceInput', the role 'ServiceInput' has cardinality 0..*.
+An association connects 'ServiceOutput' and 'service_semantics_ServiceProfile'. From 'ServiceOutput', the role 'ServiceOutput' has cardinality 0..*, and from 'service_semantics_ServiceProfile', the role 'service_semantics_ServiceProfile59' has cardinality 0..*.
+An association connects 'ServiceResult' and 'service_semantics_ServiceProfile'. From 'ServiceResult', the role 'ServiceResult' has cardinality 0..*, and from 'service_semantics_ServiceProfile', the role 'service_semantics_ServiceProfile61' has cardinality 0..*.
+An association connects 'service_semantics_ServiceProfile' and 'ServiceCondition'. From 'service_semantics_ServiceProfile', the role 'service_semantics_ServiceProfile63' has cardinality 0..*, and from 'ServiceCondition', the role 'ServiceCondition' has cardinality 0..*.
+An association connects 'semantics_service_Service' and 'service_semantics_ServiceGrounding'. From 'semantics_service_Service', the role 'Service65' has cardinality 0..*, and from 'service_semantics_ServiceGrounding', the role 'supports' has cardinality 0..*.
+An association connects 'service_semantics_ServiceGrounding' and 'ProcessModel'. From 'service_semantics_ServiceGrounding', the role 'service_semantics_ServiceGrounding' has cardinality 0..*, and from 'ProcessModel', the role 'ProcessModel67' has cardinality 0..*.
+An association connects 'InterfaceDescription' and 'service_semantics_ServiceGrounding'. From 'InterfaceDescription', the role 'InterfaceDescription70' has cardinality 0..*, and from 'service_semantics_ServiceGrounding', the role 'service_semantics_ServiceGrounding69' has cardinality 0..*.
+An association connects 'service_semantics_ProcessModel' and 'semantics_service_Service'. From 'service_semantics_ProcessModel', the role 'describedBy' has cardinality 0..*, and from 'semantics_service_Service', the role 'Service72' has cardinality 0..*.
+An association connects 'service_semantics_ServiceParameter' and 'semantics_service_EObject'. From 'service_semantics_ServiceParameter', the role 'service_semantics_ServiceParameter' has cardinality 0..*, and from 'semantics_service_EObject', the role 'semantics_service_EObject' has cardinality 0..*.
+An association connects 'semantics_service_Antecedent' and 'service_semantics_ServiceCondition'. From 'semantics_service_Antecedent', the role 'semantics_service_Antecedent' has cardinality 0..*, and from 'service_semantics_ServiceCondition', the role 'service_semantics_ServiceCondition' has cardinality 0..*.
+An association connects 'service_semantics_ServiceResult' and 'semantics_service_Antecedent'. From 'service_semantics_ServiceResult', the role 'service_semantics_ServiceResult' has cardinality 0..*, and from 'semantics_service_Antecedent', the role 'semantics_service_Antecedent76' has cardinality 0..*.
+An association connects 'semantics_service_Consequent' and 'service_semantics_ServiceResult'. From 'semantics_service_Consequent', the role 'semantics_service_Consequent' has cardinality 0..*, and from 'service_semantics_ServiceResult', the role 'service_semantics_ServiceResult78' has cardinality 0..*.
+An association connects 'ServiceInput' and 'service_semantics_IOEP'. From 'ServiceInput', the role 'ServiceInput80' has cardinality 0..*, and from 'service_semantics_IOEP', the role 'service_semantics_IOEP' has cardinality 0..*.
+An association connects 'ServiceCondition' and 'service_semantics_IOEP'. From 'ServiceCondition', the role 'ServiceCondition83' has cardinality 0..*, and from 'service_semantics_IOEP', the role 'service_semantics_IOEP82' has cardinality 0..*.
+An association connects 'service_semantics_IOEP' and 'ServiceOutput'. From 'service_semantics_IOEP', the role 'service_semantics_IOEP85' has cardinality 0..*, and from 'ServiceOutput', the role 'ServiceOutput86' has cardinality 0..*.
+An association connects 'service_semantics_IOEP' and 'ServiceResult'. From 'service_semantics_IOEP', the role 'service_semantics_IOEP88' has cardinality 0..*, and from 'ServiceResult', the role 'ServiceResult89' has cardinality 0..*.
+An association connects 'service_template_ServiceTemplate' and 'TemplateFlow'. From 'service_template_ServiceTemplate', the role 'service_template_ServiceTemplate' has cardinality 0..*, and from 'TemplateFlow', the role 'TemplateFlow' has cardinality 0..*.
+An association connects 'service_template_ServiceTemplate' and 'ServiceParameter'. From 'service_template_ServiceTemplate', the role 'service_template_ServiceTemplate92' has cardinality 0..*, and from 'ServiceParameter', the role 'ServiceParameter' has cardinality 0..*.
+An association connects 'AbstractProcessModel' and 'service_template_ServiceTemplate'. From 'AbstractProcessModel', the role 'AbstractProcessModel' has cardinality 0..*, and from 'service_template_ServiceTemplate', the role 'service_template_ServiceTemplate94' has cardinality 0..*.
+An association connects 'TemplateConstraint' and 'service_template_ServiceTemplate'. From 'TemplateConstraint', the role 'TemplateConstraint' has cardinality 0..*, and from 'service_template_ServiceTemplate', the role 'service_template_ServiceTemplate96' has cardinality 0..*.
+An association connects 'service_template_TemplateFlow' and 'ControlConstruct'. From 'service_template_TemplateFlow', the role 'service_template_TemplateFlow' has cardinality 0..*, and from 'ControlConstruct', the role 'ControlConstruct' has cardinality 0..*.
+An association connects 'service_template_GroundTemplate' and 'ServiceTemplate'. From 'service_template_GroundTemplate', the role 'service_template_GroundTemplate' has cardinality 0..*, and from 'ServiceTemplate', the role 'ServiceTemplate' has cardinality 0..*.
+An association connects 'service_template_GroundTemplate' and 'BoundTemplateParameter'. From 'service_template_GroundTemplate', the role 'service_template_GroundTemplate100' has cardinality 0..*, and from 'BoundTemplateParameter', the role 'BoundTemplateParameter' has cardinality 0..*.
+An association connects 'BoundProcessModel' and 'service_template_GroundTemplate'. From 'BoundProcessModel', the role 'BoundProcessModel' has cardinality 0..*, and from 'service_template_GroundTemplate', the role 'service_template_GroundTemplate102' has cardinality 0..*.
+An association connects 'service_template_GroundTemplate' and 'template_service_Service'. From 'service_template_GroundTemplate', the role 'adaptedBy' has cardinality 0..*, and from 'template_service_Service', the role 'Service104' has cardinality 0..*.
+An association connects 'service_template_BoundTemplateParameter' and 'ServiceParameter'. From 'service_template_BoundTemplateParameter', the role 'service_template_BoundTemplateParameter' has cardinality 0..*, and from 'ServiceParameter', the role 'ServiceParameter106' has cardinality 0..*.
+An association connects 'ServiceParameter' and 'service_template_BoundTemplateParameter'. From 'ServiceParameter', the role 'ServiceParameter109' has cardinality 0..*, and from 'service_template_BoundTemplateParameter', the role 'service_template_BoundTemplateParameter108' has cardinality 0..*.
+An association connects 'service_template_BoundProcessModel' and 'AbstractProcessModel'. From 'service_template_BoundProcessModel', the role 'service_template_BoundProcessModel' has cardinality 0..*, and from 'AbstractProcessModel', the role 'AbstractProcessModel111' has cardinality 0..*.
+An association connects 'ProcessModel' and 'service_template_BoundProcessModel'. From 'ProcessModel', the role 'ProcessModel114' has cardinality 0..*, and from 'service_template_BoundProcessModel', the role 'service_template_BoundProcessModel113' has cardinality 0..*.
+An association connects 'service_template_TemplateConstraint' and 'template_service_Antecedent'. From 'service_template_TemplateConstraint', the role 'service_template_TemplateConstraint' has cardinality 0..*, and from 'template_service_Antecedent', the role 'template_service_Antecedent' has cardinality 0..*.
+An association connects 'IntervalThing' and 'service_template_ControlConstruct'. From 'IntervalThing', the role 'IntervalThing' has cardinality 0..*, and from 'service_template_ControlConstruct', the role 'service_template_ControlConstruct' has cardinality 0..*.
+An association connects 'service_template_AnyOrder' and 'ControlConstructBag'. From 'service_template_AnyOrder', the role 'service_template_AnyOrder' has cardinality 0..*, and from 'ControlConstructBag', the role 'ControlConstructBag' has cardinality 0..*.
+An association connects 'service_template_Choice' and 'ControlConstructBag'. From 'service_template_Choice', the role 'service_template_Choice' has cardinality 0..*, and from 'ControlConstructBag', the role 'ControlConstructBag119' has cardinality 0..*.
+An association connects 'template_service_Antecedent' and 'service_template_IfThenElse'. From 'template_service_Antecedent', the role 'template_service_Antecedent121' has cardinality 0..*, and from 'service_template_IfThenElse', the role 'service_template_IfThenElse' has cardinality 0..*.
+An association connects 'ControlConstruct' and 'service_template_IfThenElse'. From 'ControlConstruct', the role 'ControlConstruct124' has cardinality 0..*, and from 'service_template_IfThenElse', the role 'service_template_IfThenElse123' has cardinality 0..*.
+An association connects 'service_template_IfThenElse' and 'ControlConstruct'. From 'service_template_IfThenElse', the role 'service_template_IfThenElse126' has cardinality 0..*, and from 'ControlConstruct', the role 'ControlConstruct127' has cardinality 0..*.
+An association connects 'AbstractProcessModel' and 'service_template_Perform'. From 'AbstractProcessModel', the role 'AbstractProcessModel129' has cardinality 0..*, and from 'service_template_Perform', the role 'service_template_Perform' has cardinality 0..*.
+An association connects 'AbstractProcessModel' and 'service_template_Perform'. From 'AbstractProcessModel', the role 'AbstractProcessModel132' has cardinality 0..*, and from 'service_template_Perform', the role 'service_template_Perform131' has cardinality 0..*.
+An association connects 'service_template_Perform' and 'ServiceParameter'. From 'service_template_Perform', the role 'service_template_Perform134' has cardinality 0..*, and from 'ServiceParameter', the role 'ServiceParameter135' has cardinality 0..*.
+An association connects 'service_template_Perform' and 'ServiceTemplate'. From 'service_template_Perform', the role 'service_template_Perform137' has cardinality 0..*, and from 'ServiceTemplate', the role 'ServiceTemplate138' has cardinality 0..*.
+An association connects 'template_service_Antecedent' and 'service_template_RepeatUntil'. From 'template_service_Antecedent', the role 'template_service_Antecedent140' has cardinality 0..*, and from 'service_template_RepeatUntil', the role 'service_template_RepeatUntil' has cardinality 0..*.
+An association connects 'service_template_RepeatUntil' and 'ControlConstruct'. From 'service_template_RepeatUntil', the role 'service_template_RepeatUntil142' has cardinality 0..*, and from 'ControlConstruct', the role 'ControlConstruct143' has cardinality 0..*.
+An association connects 'template_service_Antecedent' and 'service_template_RepeatWhile'. From 'template_service_Antecedent', the role 'template_service_Antecedent145' has cardinality 0..*, and from 'service_template_RepeatWhile', the role 'service_template_RepeatWhile' has cardinality 0..*.
+An association connects 'service_template_RepeatWhile' and 'ControlConstruct'. From 'service_template_RepeatWhile', the role 'service_template_RepeatWhile147' has cardinality 0..*, and from 'ControlConstruct', the role 'ControlConstruct148' has cardinality 0..*.
+An association connects 'service_template_Sequence' and 'ControlConstructList'. From 'service_template_Sequence', the role 'service_template_Sequence' has cardinality 0..*, and from 'ControlConstructList', the role 'ControlConstructList' has cardinality 0..*.
+An association connects 'ControlConstructBag' and 'service_template_Split'. From 'ControlConstructBag', the role 'ControlConstructBag151' has cardinality 0..*, and from 'service_template_Split', the role 'service_template_Split' has cardinality 0..*.
+An association connects 'ControlConstructBag' and 'service_template_SplitJoin'. From 'ControlConstructBag', the role 'ControlConstructBag153' has cardinality 0..*, and from 'service_template_SplitJoin', the role 'service_template_SplitJoin' has cardinality 0..*.
+An association connects 'service_template_ControlConstructList' and 'ControlConstruct'. From 'service_template_ControlConstructList', the role 'service_template_ControlConstructList' has cardinality 0..*, and from 'ControlConstruct', the role 'ControlConstruct155' has cardinality 0..*.
+An association connects 'service_template_ControlConstructList' and 'ControlConstructList'. From 'service_template_ControlConstructList', the role 'service_template_ControlConstructList157' has cardinality 0..*, and from 'ControlConstructList', the role 'ControlConstructList158' has cardinality 0..*.
+An association connects 'service_template_ControlConstructBag' and 'ControlConstruct'. From 'service_template_ControlConstructBag', the role 'service_template_ControlConstructBag' has cardinality 0..*, and from 'ControlConstruct', the role 'ControlConstruct160' has cardinality 0..*.
+An association connects 'ControlConstructBag' and 'service_template_ControlConstructBag'. From 'ControlConstructBag', the role 'ControlConstructBag163' has cardinality 0..*, and from 'service_template_ControlConstructBag', the role 'service_template_ControlConstructBag162' has cardinality 0..*.
+An association connects 'service_architecture_ServiceFramework' and 'ServiceTemplateMatchmaker'. From 'service_architecture_ServiceFramework', the role 'service_architecture_ServiceFramework' has cardinality 0..*, and from 'ServiceTemplateMatchmaker', the role 'ServiceTemplateMatchmaker' has cardinality 0..*.
+An association connects 'service_architecture_ServiceFramework' and 'ExecutionFramework'. From 'service_architecture_ServiceFramework', the role 'service_architecture_ServiceFramework166' has cardinality 0..*, and from 'ExecutionFramework', the role 'ExecutionFramework' has cardinality 0..*.
+An association connects 'ServiceDirectory' and 'service_architecture_ServiceFramework'. From 'ServiceDirectory', the role 'ServiceDirectory' has cardinality 0..*, and from 'service_architecture_ServiceFramework', the role 'service_architecture_ServiceFramework168' has cardinality 0..*.
+An association connects 'service_architecture_ServiceFramework' and 'TemplateRepository'. From 'service_architecture_ServiceFramework', the role 'service_architecture_ServiceFramework170' has cardinality 0..*, and from 'TemplateRepository', the role 'TemplateRepository' has cardinality 0..*.
+An association connects 'service_architecture_TemplateRepository' and 'ServiceTemplate'. From 'service_architecture_TemplateRepository', the role 'service_architecture_TemplateRepository' has cardinality 0..*, and from 'ServiceTemplate', the role 'ServiceTemplate172' has cardinality 0..*.
+An association connects 'service_architecture_TemplateRepository' and 'GroundTemplate'. From 'service_architecture_TemplateRepository', the role 'service_architecture_TemplateRepository174' has cardinality 0..*, and from 'GroundTemplate', the role 'GroundTemplate175' has cardinality 0..*.
+An association connects 'service_architecture_TemplateMatchmaker' and 'TemplateRepository'. From 'service_architecture_TemplateMatchmaker', the role 'service_architecture_TemplateMatchmaker' has cardinality 0..*, and from 'TemplateRepository', the role 'TemplateRepository177' has cardinality 0..*.
+An association connects 'service_architecture_ServiceMatchmaker' and 'ServiceDirectory'. From 'service_architecture_ServiceMatchmaker', the role 'service_architecture_ServiceMatchmaker' has cardinality 0..*, and from 'ServiceDirectory', the role 'ServiceDirectory179' has cardinality 0..*.
+An association connects 'Endpoint' and 'service_architecture_ServiceDirectory'. From 'Endpoint', the role 'Endpoint181' has cardinality 0..*, and from 'service_architecture_ServiceDirectory', the role 'service_architecture_ServiceDirectory' has cardinality 0..*.
+An association connects 'service_architecture_ServiceDirectory' and 'ServiceProfile'. From 'service_architecture_ServiceDirectory', the role 'service_architecture_ServiceDirectory183' has cardinality 0..*, and from 'ServiceProfile', the role 'ServiceProfile184' has cardinality 0..*.
+An association connects 'InterfaceDescription' and 'service_architecture_ServiceDirectory'. From 'InterfaceDescription', the role 'InterfaceDescription187' has cardinality 0..*, and from 'service_architecture_ServiceDirectory', the role 'service_architecture_ServiceDirectory186' has cardinality 0..*.
+An association connects 'service_architecture_ExecutionFramework' and 'DeployedService'. From 'service_architecture_ExecutionFramework', the role 'DeployedService189' has cardinality 0..*, and from 'DeployedService', the role 'architecture' has cardinality 0..*.
+An association connects 'service_architecture_DeployedService' and 'ExecutionFramework'. From 'service_architecture_DeployedService', the role 'ExecutionFramework191' has cardinality 0..*, and from 'ExecutionFramework', the role 'architecture192' has cardinality 0..*.

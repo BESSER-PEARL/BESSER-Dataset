@@ -1,0 +1,390 @@
+The domain model 'logiclanguage' describes the core structural elements and their relationships within the system.
+
+The model defines 87 main class(es).
+
+'logiclanguage_TermDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_AssertionAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'logiclanguage_Distinct' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Min' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_MoreOrEqualThan' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_BoolLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'logiclanguage_IfThenElse' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_ProjectedAggregateExpression' represents an important domain concept.
+It has one attribute: 'projectionIndex', which is of type int.
+
+'logiclanguage_Impl' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_NumericOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'ProjectedAggregateExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_MoreThan' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Forall' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_RealLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'logiclanguage_AggregateExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Sum' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_BoolOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_SymbolicValue' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Count' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_ConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_FunctionDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_FunctionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_RelationDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_IntLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'PrimitiveTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_TransitiveClosure' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'Constant' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_TypeDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_ConstantDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'Term' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Divison' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_AtomicTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Pow' represents an important domain concept.
+It does not declare any attributes.
+
+'AtomicTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'SymbolicDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_RelationAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Multiply' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_RelationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_SymbolicDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'AggregateExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Iff' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_ComplexTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_ConstantAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Equals' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_AggregatedParameterSubstitution' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Assertion' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'logiclanguage_BoolTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Mod' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_PrimitiveRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_PrimitiveTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_IntTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_RealTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Function' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_And' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_LessThan' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_LessOrEqualThan' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_DefinedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_UnknownBecauseUninterpreted' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'QuantifiedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_StringTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Exists' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_InstanceOf' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Type' represents an important domain concept.
+It has the following attributes: 'isAbstract', which is of type bool; 'name', which is of type str.
+
+'logiclanguage_FunctionAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Max' represents an important domain concept.
+It does not declare any attributes.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'BoolOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'TermDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Term' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Constant' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_QuantifiedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'logiclanguage_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'logiclanguage_Type' is a specialization of 'TypeDescriptor'.
+The class 'logiclanguage_DefinedElement' is a specialization of 'SymbolicDeclaration'.
+The class 'logiclanguage_TypeDefinition' is a specialization of 'Type'.
+The class 'logiclanguage_TypeReference' is a specialization of 'TypeDescriptor'.
+The class 'logiclanguage_ComplexTypeReference' is a specialization of 'TypeReference'.
+The class 'logiclanguage_PrimitiveTypeReference' is a specialization of 'TypeReference'.
+The class 'logiclanguage_IntTypeReference' is a specialization of 'PrimitiveTypeReference'.
+The class 'logiclanguage_BoolTypeReference' is a specialization of 'PrimitiveTypeReference'.
+The class 'logiclanguage_RealTypeReference' is a specialization of 'PrimitiveTypeReference'.
+The class 'logiclanguage_Function' is a specialization of 'SymbolicDeclaration'.
+The class 'logiclanguage_Term' is a specialization of 'TermDescription'.
+The class 'logiclanguage_SymbolicDeclaration' is a specialization of 'TermDescription'.
+The class 'logiclanguage_SymbolicValue' is a specialization of 'Term'.
+The class 'logiclanguage_AtomicTerm' is a specialization of 'Term'.
+The class 'logiclanguage_IntLiteral' is a specialization of 'AtomicTerm'.
+The class 'logiclanguage_BoolLiteral' is a specialization of 'AtomicTerm'.
+The class 'logiclanguage_RealLiteral' is a specialization of 'AtomicTerm'.
+The class 'logiclanguage_Variable' is a specialization of 'SymbolicDeclaration'.
+The class 'logiclanguage_QuantifiedExpression' is a specialization of 'Term'.
+The class 'logiclanguage_Exists' is a specialization of 'QuantifiedExpression'.
+The class 'logiclanguage_Forall' is a specialization of 'QuantifiedExpression'.
+The class 'logiclanguage_BoolOperation' is a specialization of 'Term'.
+The class 'logiclanguage_And' is a specialization of 'BoolOperation'.
+The class 'logiclanguage_Or' is a specialization of 'BoolOperation'.
+The class 'logiclanguage_Impl' is a specialization of 'BoolOperation'.
+The class 'logiclanguage_Not' is a specialization of 'BoolOperation'.
+The class 'logiclanguage_Iff' is a specialization of 'BoolOperation'.
+The class 'logiclanguage_PrimitiveRelation' is a specialization of 'Term'.
+The class 'logiclanguage_Equals' is a specialization of 'PrimitiveRelation'.
+The class 'logiclanguage_Distinct' is a specialization of 'PrimitiveRelation'.
+The class 'logiclanguage_LessThan' is a specialization of 'PrimitiveRelation'.
+The class 'logiclanguage_MoreThan' is a specialization of 'PrimitiveRelation'.
+The class 'logiclanguage_LessOrEqualThan' is a specialization of 'PrimitiveRelation'.
+The class 'logiclanguage_MoreOrEqualThan' is a specialization of 'PrimitiveRelation'.
+The class 'logiclanguage_NumericOperation' is a specialization of 'Term'.
+The class 'logiclanguage_Plus' is a specialization of 'NumericOperation'.
+The class 'logiclanguage_Minus' is a specialization of 'NumericOperation'.
+The class 'logiclanguage_Multiply' is a specialization of 'NumericOperation'.
+The class 'logiclanguage_Divison' is a specialization of 'NumericOperation'.
+The class 'logiclanguage_Mod' is a specialization of 'NumericOperation'.
+The class 'logiclanguage_Relation' is a specialization of 'SymbolicDeclaration'.
+The class 'logiclanguage_Constant' is a specialization of 'SymbolicDeclaration'.
+The class 'logiclanguage_ConstantDefinition' is a specialization of 'Constant'.
+The class 'logiclanguage_RelationDefinition' is a specialization of 'Relation'.
+The class 'logiclanguage_FunctionDefinition' is a specialization of 'Function'.
+The class 'logiclanguage_IfThenElse' is a specialization of 'Term'.
+The class 'logiclanguage_ConstantDeclaration' is a specialization of 'Constant'.
+The class 'logiclanguage_RelationDeclaration' is a specialization of 'Relation'.
+The class 'logiclanguage_FunctionDeclaration' is a specialization of 'Function'.
+The class 'logiclanguage_TypeDeclaration' is a specialization of 'Type'.
+The class 'logiclanguage_UnknownBecauseUninterpreted' is a specialization of 'Term'.
+The class 'logiclanguage_InstanceOf' is a specialization of 'Term'.
+The class 'logiclanguage_StringTypeReference' is a specialization of 'PrimitiveTypeReference'.
+The class 'logiclanguage_StringLiteral' is a specialization of 'AtomicTerm'.
+The class 'logiclanguage_TransitiveClosure' is a specialization of 'Term'.
+The class 'logiclanguage_Pow' is a specialization of 'NumericOperation'.
+The class 'logiclanguage_AggregateExpression' is a specialization of 'Term'.
+The class 'logiclanguage_Sum' is a specialization of 'ProjectedAggregateExpression'.
+The class 'logiclanguage_Count' is a specialization of 'AggregateExpression'.
+The class 'logiclanguage_Min' is a specialization of 'ProjectedAggregateExpression'.
+The class 'logiclanguage_Max' is a specialization of 'ProjectedAggregateExpression'.
+The class 'logiclanguage_ProjectedAggregateExpression' is a specialization of 'AggregateExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'logiclanguage_Type' and 'logiclanguage_Type'. From 'logiclanguage_Type', the role 'Type' has cardinality 0..*, and from 'logiclanguage_Type', the role 'supertypes' has cardinality 0..*.
+An association connects 'logiclanguage_Type' and 'logiclanguage_Type'. From 'logiclanguage_Type', the role 'Type4' has cardinality 0..*, and from 'logiclanguage_Type', the role 'subtypes' has cardinality 0..*.
+An association connects 'logiclanguage_TypeDefinition' and 'logiclanguage_DefinedElement'. From 'logiclanguage_TypeDefinition', the role 'TypeDefinition' has cardinality 0..*, and from 'logiclanguage_DefinedElement', the role 'elements' has cardinality 0..*.
+An association connects 'logiclanguage_TypeDefinition' and 'logiclanguage_DefinedElement'. From 'logiclanguage_TypeDefinition', the role 'definedInType' has cardinality 0..*, and from 'logiclanguage_DefinedElement', the role 'DefinedElement' has cardinality 0..*.
+An association connects 'logiclanguage_TypeDeclaration' and 'logiclanguage_TypeDefinition'. From 'logiclanguage_TypeDeclaration', the role 'logiclanguage_TypeDeclaration' has cardinality 0..*, and from 'logiclanguage_TypeDefinition', the role 'logiclanguage_TypeDefinition' has cardinality 0..*.
+An association connects 'logiclanguage_Type' and 'logiclanguage_ComplexTypeReference'. From 'logiclanguage_Type', the role 'logiclanguage_Type' has cardinality 0..*, and from 'logiclanguage_ComplexTypeReference', the role 'logiclanguage_ComplexTypeReference' has cardinality 0..*.
+An association connects 'logiclanguage_TypeReference' and 'logiclanguage_Function'. From 'logiclanguage_TypeReference', the role 'logiclanguage_TypeReference' has cardinality 0..*, and from 'logiclanguage_Function', the role 'logiclanguage_Function' has cardinality 0..*.
+An association connects 'logiclanguage_Function' and 'logiclanguage_TypeReference'. From 'logiclanguage_Function', the role 'logiclanguage_Function11' has cardinality 0..*, and from 'logiclanguage_TypeReference', the role 'logiclanguage_TypeReference12' has cardinality 0..*.
+An association connects 'logiclanguage_FunctionAnnotation' and 'logiclanguage_Function'. From 'logiclanguage_FunctionAnnotation', the role 'logicproblem.ecoreFunctionAnnotation' has cardinality 0..*, and from 'logiclanguage_Function', the role 'target' has cardinality 0..*.
+An association connects 'logiclanguage_SymbolicValue' and 'logiclanguage_SymbolicDeclaration'. From 'logiclanguage_SymbolicValue', the role 'logiclanguage_SymbolicValue' has cardinality 0..*, and from 'logiclanguage_SymbolicDeclaration', the role 'logiclanguage_SymbolicDeclaration' has cardinality 0..*.
+An association connects 'logiclanguage_Term' and 'logiclanguage_SymbolicValue'. From 'logiclanguage_Term', the role 'logiclanguage_Term' has cardinality 0..*, and from 'logiclanguage_SymbolicValue', the role 'logiclanguage_SymbolicValue16' has cardinality 0..*.
+An association connects 'logiclanguage_Variable' and 'logiclanguage_TypeReference'. From 'logiclanguage_Variable', the role 'logiclanguage_Variable' has cardinality 0..*, and from 'logiclanguage_TypeReference', the role 'logiclanguage_TypeReference18' has cardinality 0..*.
+An association connects 'logiclanguage_Variable' and 'logiclanguage_QuantifiedExpression'. From 'logiclanguage_Variable', the role 'logiclanguage_Variable20' has cardinality 0..*, and from 'logiclanguage_QuantifiedExpression', the role 'logiclanguage_QuantifiedExpression' has cardinality 0..*.
+An association connects 'logiclanguage_QuantifiedExpression' and 'logiclanguage_Term'. From 'logiclanguage_QuantifiedExpression', the role 'logiclanguage_QuantifiedExpression22' has cardinality 0..*, and from 'logiclanguage_Term', the role 'logiclanguage_Term23' has cardinality 0..*.
+An association connects 'logiclanguage_And' and 'logiclanguage_Term'. From 'logiclanguage_And', the role 'logiclanguage_And' has cardinality 0..*, and from 'logiclanguage_Term', the role 'logiclanguage_Term25' has cardinality 0..*.
+An association connects 'logiclanguage_Term' and 'logiclanguage_Or'. From 'logiclanguage_Term', the role 'logiclanguage_Term27' has cardinality 0..*, and from 'logiclanguage_Or', the role 'logiclanguage_Or' has cardinality 0..*.
+An association connects 'logiclanguage_Impl' and 'logiclanguage_Term'. From 'logiclanguage_Impl', the role 'logiclanguage_Impl' has cardinality 0..*, and from 'logiclanguage_Term', the role 'logiclanguage_Term29' has cardinality 0..*.
+An association connects 'logiclanguage_Term' and 'logiclanguage_Impl'. From 'logiclanguage_Term', the role 'logiclanguage_Term32' has cardinality 0..*, and from 'logiclanguage_Impl', the role 'logiclanguage_Impl31' has cardinality 0..*.
+An association connects 'logiclanguage_Term' and 'logiclanguage_Not'. From 'logiclanguage_Term', the role 'logiclanguage_Term34' has cardinality 0..*, and from 'logiclanguage_Not', the role 'logiclanguage_Not' has cardinality 0..*.
+An association connects 'logiclanguage_Iff' and 'logiclanguage_Term'. From 'logiclanguage_Iff', the role 'logiclanguage_Iff' has cardinality 0..*, and from 'logiclanguage_Term', the role 'logiclanguage_Term36' has cardinality 0..*.
+An association connects 'logiclanguage_Iff' and 'logiclanguage_Term'. From 'logiclanguage_Iff', the role 'logiclanguage_Iff38' has cardinality 0..*, and from 'logiclanguage_Term', the role 'logiclanguage_Term39' has cardinality 0..*.
+An association connects 'logiclanguage_Equals' and 'logiclanguage_Term'. From 'logiclanguage_Equals', the role 'logiclanguage_Equals' has cardinality 0..*, and from 'logiclanguage_Term', the role 'logiclanguage_Term41' has cardinality 0..*.
+An association connects 'logiclanguage_Equals' and 'logiclanguage_Term'. From 'logiclanguage_Equals', the role 'logiclanguage_Equals43' has cardinality 0..*, and from 'logiclanguage_Term', the role 'logiclanguage_Term44' has cardinality 0..*.
+An association connects 'logiclanguage_Distinct' and 'logiclanguage_Term'. From 'logiclanguage_Distinct', the role 'logiclanguage_Distinct' has cardinality 0..*, and from 'logiclanguage_Term', the role 'logiclanguage_Term46' has cardinality 0..*.
+An association connects 'logiclanguage_LessThan' and 'logiclanguage_Term'. From 'logiclanguage_LessThan', the role 'logiclanguage_LessThan' has cardinality 0..*, and from 'logiclanguage_Term', the role 'logiclanguage_Term48' has cardinality 0..*.
+An association connects 'logiclanguage_Term' and 'logiclanguage_LessThan'. From 'logiclanguage_Term', the role 'logiclanguage_Term51' has cardinality 0..*, and from 'logiclanguage_LessThan', the role 'logiclanguage_LessThan50' has cardinality 0..*.
+An association connects 'logiclanguage_Term' and 'logiclanguage_MoreThan'. From 'logiclanguage_Term', the role 'logiclanguage_Term53' has cardinality 0..*, and from 'logiclanguage_MoreThan', the role 'logiclanguage_MoreThan' has cardinality 0..*.
+An association connects 'logiclanguage_MoreThan' and 'logiclanguage_Term'. From 'logiclanguage_MoreThan', the role 'logiclanguage_MoreThan55' has cardinality 0..*, and from 'logiclanguage_Term', the role 'logiclanguage_Term56' has cardinality 0..*.
+An association connects 'logiclanguage_LessOrEqualThan' and 'logiclanguage_Term'. From 'logiclanguage_LessOrEqualThan', the role 'logiclanguage_LessOrEqualThan' has cardinality 0..*, and from 'logiclanguage_Term', the role 'logiclanguage_Term58' has cardinality 0..*.
+An association connects 'logiclanguage_LessOrEqualThan' and 'logiclanguage_Term'. From 'logiclanguage_LessOrEqualThan', the role 'logiclanguage_LessOrEqualThan60' has cardinality 0..*, and from 'logiclanguage_Term', the role 'logiclanguage_Term61' has cardinality 0..*.
+An association connects 'logiclanguage_Term' and 'logiclanguage_MoreOrEqualThan'. From 'logiclanguage_Term', the role 'logiclanguage_Term63' has cardinality 0..*, and from 'logiclanguage_MoreOrEqualThan', the role 'logiclanguage_MoreOrEqualThan' has cardinality 0..*.
+An association connects 'logiclanguage_Term' and 'logiclanguage_MoreOrEqualThan'. From 'logiclanguage_Term', the role 'logiclanguage_Term66' has cardinality 0..*, and from 'logiclanguage_MoreOrEqualThan', the role 'logiclanguage_MoreOrEqualThan65' has cardinality 0..*.
+An association connects 'logiclanguage_NumericOperation' and 'logiclanguage_Term'. From 'logiclanguage_NumericOperation', the role 'logiclanguage_NumericOperation' has cardinality 0..*, and from 'logiclanguage_Term', the role 'logiclanguage_Term68' has cardinality 0..*.
+An association connects 'logiclanguage_Term' and 'logiclanguage_NumericOperation'. From 'logiclanguage_Term', the role 'logiclanguage_Term71' has cardinality 0..*, and from 'logiclanguage_NumericOperation', the role 'logiclanguage_NumericOperation70' has cardinality 0..*.
+An association connects 'logiclanguage_Term' and 'logiclanguage_Assertion'. From 'logiclanguage_Term', the role 'logiclanguage_Term73' has cardinality 0..*, and from 'logiclanguage_Assertion', the role 'logiclanguage_Assertion' has cardinality 0..*.
+An association connects 'logiclanguage_AssertionAnnotation' and 'logiclanguage_Assertion'. From 'logiclanguage_AssertionAnnotation', the role 'logicproblem.ecoreAssertionAnnotation' has cardinality 0..*, and from 'logiclanguage_Assertion', the role 'target75' has cardinality 0..*.
+An association connects 'logiclanguage_TypeReference' and 'logiclanguage_Relation'. From 'logiclanguage_TypeReference', the role 'logiclanguage_TypeReference77' has cardinality 0..*, and from 'logiclanguage_Relation', the role 'logiclanguage_Relation' has cardinality 0..*.
+An association connects 'logiclanguage_Relation' and 'logiclanguage_RelationAnnotation'. From 'logiclanguage_Relation', the role 'target79' has cardinality 0..*, and from 'logiclanguage_RelationAnnotation', the role 'logicproblem.ecoreRelationAnnotation' has cardinality 0..*.
+An association connects 'logiclanguage_Constant' and 'logiclanguage_TypeReference'. From 'logiclanguage_Constant', the role 'logiclanguage_Constant' has cardinality 0..*, and from 'logiclanguage_TypeReference', the role 'logiclanguage_TypeReference81' has cardinality 0..*.
+An association connects 'logiclanguage_ConstantAnnotation' and 'logiclanguage_Constant'. From 'logiclanguage_ConstantAnnotation', the role 'logicproblem.ecoreConstantAnnotation' has cardinality 0..*, and from 'logiclanguage_Constant', the role 'target83' has cardinality 0..*.
+An association connects 'logiclanguage_ConstantDefinition' and 'logiclanguage_Term'. From 'logiclanguage_ConstantDefinition', the role 'logiclanguage_ConstantDefinition' has cardinality 0..*, and from 'logiclanguage_Term', the role 'logiclanguage_Term85' has cardinality 0..*.
+An association connects 'logiclanguage_ConstantDefinition' and 'logiclanguage_ConstantDeclaration'. From 'logiclanguage_ConstantDefinition', the role 'logiclanguage_ConstantDefinition87' has cardinality 0..*, and from 'logiclanguage_ConstantDeclaration', the role 'logiclanguage_ConstantDeclaration' has cardinality 0..*.
+An association connects 'logiclanguage_RelationDefinition' and 'logiclanguage_Variable'. From 'logiclanguage_RelationDefinition', the role 'logiclanguage_RelationDefinition' has cardinality 0..*, and from 'logiclanguage_Variable', the role 'logiclanguage_Variable89' has cardinality 0..*.
+An association connects 'logiclanguage_RelationDefinition' and 'logiclanguage_Term'. From 'logiclanguage_RelationDefinition', the role 'logiclanguage_RelationDefinition91' has cardinality 0..*, and from 'logiclanguage_Term', the role 'logiclanguage_Term92' has cardinality 0..*.
+An association connects 'logiclanguage_RelationDefinition' and 'logiclanguage_RelationDeclaration'. From 'logiclanguage_RelationDefinition', the role 'logiclanguage_RelationDefinition94' has cardinality 0..*, and from 'logiclanguage_RelationDeclaration', the role 'logiclanguage_RelationDeclaration' has cardinality 0..*.
+An association connects 'logiclanguage_Variable' and 'logiclanguage_FunctionDefinition'. From 'logiclanguage_Variable', the role 'logiclanguage_Variable96' has cardinality 0..*, and from 'logiclanguage_FunctionDefinition', the role 'logiclanguage_FunctionDefinition' has cardinality 0..*.
+An association connects 'logiclanguage_FunctionDefinition' and 'logiclanguage_FunctionDeclaration'. From 'logiclanguage_FunctionDefinition', the role 'logiclanguage_FunctionDefinition98' has cardinality 0..*, and from 'logiclanguage_FunctionDeclaration', the role 'logiclanguage_FunctionDeclaration' has cardinality 0..*.
+An association connects 'logiclanguage_Term' and 'logiclanguage_FunctionDefinition'. From 'logiclanguage_Term', the role 'logiclanguage_Term101' has cardinality 0..*, and from 'logiclanguage_FunctionDefinition', the role 'logiclanguage_FunctionDefinition100' has cardinality 0..*.
+An association connects 'logiclanguage_Term' and 'logiclanguage_IfThenElse'. From 'logiclanguage_Term', the role 'logiclanguage_Term103' has cardinality 0..*, and from 'logiclanguage_IfThenElse', the role 'logiclanguage_IfThenElse' has cardinality 0..*.
+An association connects 'logiclanguage_IfThenElse' and 'logiclanguage_Term'. From 'logiclanguage_IfThenElse', the role 'logiclanguage_IfThenElse105' has cardinality 0..*, and from 'logiclanguage_Term', the role 'logiclanguage_Term106' has cardinality 0..*.
+An association connects 'logiclanguage_IfThenElse' and 'logiclanguage_Term'. From 'logiclanguage_IfThenElse', the role 'logiclanguage_IfThenElse108' has cardinality 0..*, and from 'logiclanguage_Term', the role 'logiclanguage_Term109' has cardinality 0..*.
+An association connects 'logiclanguage_InstanceOf' and 'logiclanguage_Term'. From 'logiclanguage_InstanceOf', the role 'logiclanguage_InstanceOf' has cardinality 0..*, and from 'logiclanguage_Term', the role 'logiclanguage_Term111' has cardinality 0..*.
+An association connects 'logiclanguage_TypeReference' and 'logiclanguage_InstanceOf'. From 'logiclanguage_TypeReference', the role 'logiclanguage_TypeReference114' has cardinality 0..*, and from 'logiclanguage_InstanceOf', the role 'logiclanguage_InstanceOf113' has cardinality 0..*.
+An association connects 'logiclanguage_Term' and 'logiclanguage_TransitiveClosure'. From 'logiclanguage_Term', the role 'logiclanguage_Term116' has cardinality 0..*, and from 'logiclanguage_TransitiveClosure', the role 'logiclanguage_TransitiveClosure' has cardinality 0..*.
+An association connects 'logiclanguage_Term' and 'logiclanguage_TransitiveClosure'. From 'logiclanguage_Term', the role 'logiclanguage_Term119' has cardinality 0..*, and from 'logiclanguage_TransitiveClosure', the role 'logiclanguage_TransitiveClosure118' has cardinality 0..*.
+An association connects 'logiclanguage_Relation' and 'logiclanguage_TransitiveClosure'. From 'logiclanguage_Relation', the role 'logiclanguage_Relation122' has cardinality 0..*, and from 'logiclanguage_TransitiveClosure', the role 'logiclanguage_TransitiveClosure121' has cardinality 0..*.
+An association connects 'logiclanguage_AggregateExpression' and 'logiclanguage_Relation'. From 'logiclanguage_AggregateExpression', the role 'logiclanguage_AggregateExpression' has cardinality 0..*, and from 'logiclanguage_Relation', the role 'logiclanguage_Relation124' has cardinality 0..*.
+An association connects 'logiclanguage_AggregatedParameterSubstitution' and 'logiclanguage_AggregateExpression'. From 'logiclanguage_AggregatedParameterSubstitution', the role 'logiclanguage_AggregatedParameterSubstitution' has cardinality 0..*, and from 'logiclanguage_AggregateExpression', the role 'logiclanguage_AggregateExpression126' has cardinality 0..*.
+An association connects 'logiclanguage_AggregateExpression' and 'logiclanguage_Variable'. From 'logiclanguage_AggregateExpression', the role 'logiclanguage_AggregateExpression128' has cardinality 0..*, and from 'logiclanguage_Variable', the role 'logiclanguage_Variable129' has cardinality 0..*.
+An association connects 'logiclanguage_AggregatedParameterSubstitution' and 'logiclanguage_Variable'. From 'logiclanguage_AggregatedParameterSubstitution', the role 'logiclanguage_AggregatedParameterSubstitution131' has cardinality 0..*, and from 'logiclanguage_Variable', the role 'logiclanguage_Variable132' has cardinality 0..*.

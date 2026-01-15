@@ -1,0 +1,18 @@
+The domain model 'Fragmentos' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'Fragmentos_Aplicacion' represents an important domain concept.
+It does not declare any attributes.
+
+'Fragmentos_Fragmento' represents an important domain concept.
+It has the following attributes: 'numLinea', which is of type int; 'texto', which is of type str; 'posCaracter', which is of type int.
+
+'Fragmentos_Fichero' represents an important domain concept.
+It has one attribute: 'nombre', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Fragmentos_Aplicacion' and 'Fragmentos_Fichero'. From 'Fragmentos_Aplicacion', the role 'Fragmentos_Aplicacion' has cardinality 0..*, and from 'Fragmentos_Fichero', the role 'Fragmentos_Fichero' has cardinality 0..*.
+An association connects 'Fragmentos_Fragmento' and 'Fragmentos_Fichero'. From 'Fragmentos_Fragmento', the role 'Fragmentos_Fragmento' has cardinality 0..*, and from 'Fragmentos_Fichero', the role 'Fragmentos_Fichero2' has cardinality 0..*.
+An association connects 'Fragmentos_Fichero' and 'Fragmentos_Fragmento'. From 'Fragmentos_Fichero', the role 'Fragmentos_Fichero4' has cardinality 0..*, and from 'Fragmentos_Fragmento', the role 'Fragmentos_Fragmento5' has cardinality 0..*.
+An association connects 'Fragmentos_Fragmento' and 'Fragmentos_Fragmento'. From 'Fragmentos_Fragmento', the role 'Fragmentos_Fragmento6' has cardinality 0..*, and from 'Fragmentos_Fragmento', the role 'Fragmentos_Fragmento8' has cardinality 0..*.

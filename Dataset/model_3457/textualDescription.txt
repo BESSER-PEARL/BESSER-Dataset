@@ -1,0 +1,93 @@
+The domain model 'featureModel' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'featureModel_IntValue' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_Feature' represents an important domain concept.
+It has the following attributes: 'mandatory', which is of type bool; 'unselected', which is of type bool; 'name', which is of type str; 'selected', which is of type bool.
+
+'featureModel_Excludes' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_FeatureModel' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_Condition' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'featureModel_Attribute' represents an important domain concept.
+It has the following attributes: 'runtime', which is of type bool; 'name', which is of type str.
+
+'Alternative' represents an important domain concept.
+It does not declare any attributes.
+
+'FMConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_BooleanConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_Exclusive' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_FMConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_AdaptationRule' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_Implies' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_VariabilityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'VariabilityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_Action' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'featureModel_Alternative' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SelectionOperator' defines the following possible values: 'deselect', 'select'.
+The enumeration 'ComparisonOperator' defines the following possible values: 'equal', 'geq', 'lt', 'gt', 'leq'.
+
+The model also captures inheritance relationships between classes.
+The class 'featureModel_Feature' is a specialization of 'VariabilityElement'.
+The class 'featureModel_Exclusive' is a specialization of 'Alternative'.
+The class 'featureModel_Alternative' is a specialization of 'Feature'.
+The class 'featureModel_Attribute' is a specialization of 'VariabilityElement'.
+The class 'featureModel_BooleanConstraint' is a specialization of 'FMConstraint'.
+The class 'featureModel_Implies' is a specialization of 'BooleanConstraint'.
+The class 'featureModel_Excludes' is a specialization of 'BooleanConstraint'.
+The class 'featureModel_AdaptationRule' is a specialization of 'FMConstraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'featureModel_FMConstraint' and 'featureModel_FeatureModel'. From 'featureModel_FMConstraint', the role 'featureModel_FMConstraint' has cardinality 0..*, and from 'featureModel_FeatureModel', the role 'featureModel_FeatureModel' has cardinality 0..*.
+An association connects 'featureModel_FeatureModel' and 'featureModel_Feature'. From 'featureModel_FeatureModel', the role 'featureModel_FeatureModel2' has cardinality 0..*, and from 'featureModel_Feature', the role 'featureModel_Feature' has cardinality 0..*.
+An association connects 'featureModel_Feature' and 'featureModel_Attribute'. From 'featureModel_Feature', the role 'featureModel_Feature4' has cardinality 0..*, and from 'featureModel_Attribute', the role 'featureModel_Attribute' has cardinality 0..*.
+An association connects 'featureModel_Feature' and 'featureModel_Feature'. From 'featureModel_Feature', the role 'featureModel_Feature7' has cardinality 0..*, and from 'featureModel_Feature', the role 'featureModel_Feature5' has cardinality 0..*.
+An association connects 'featureModel_Alternative' and 'featureModel_Feature'. From 'featureModel_Alternative', the role 'featureModel_Alternative' has cardinality 0..*, and from 'featureModel_Feature', the role 'featureModel_Feature9' has cardinality 0..*.
+An association connects 'featureModel_Attribute' and 'featureModel_Value'. From 'featureModel_Attribute', the role 'featureModel_Attribute11' has cardinality 0..*, and from 'featureModel_Value', the role 'featureModel_Value' has cardinality 0..*.
+An association connects 'featureModel_BooleanConstraint' and 'featureModel_Feature'. From 'featureModel_BooleanConstraint', the role 'featureModel_BooleanConstraint' has cardinality 0..*, and from 'featureModel_Feature', the role 'featureModel_Feature13' has cardinality 0..*.
+An association connects 'featureModel_Feature' and 'featureModel_BooleanConstraint'. From 'featureModel_Feature', the role 'featureModel_Feature16' has cardinality 0..*, and from 'featureModel_BooleanConstraint', the role 'featureModel_BooleanConstraint15' has cardinality 0..*.
+An association connects 'featureModel_Condition' and 'featureModel_AdaptationRule'. From 'featureModel_Condition', the role 'featureModel_Condition' has cardinality 0..*, and from 'featureModel_AdaptationRule', the role 'featureModel_AdaptationRule' has cardinality 0..*.
+An association connects 'featureModel_Action' and 'featureModel_AdaptationRule'. From 'featureModel_Action', the role 'featureModel_Action' has cardinality 0..*, and from 'featureModel_AdaptationRule', the role 'featureModel_AdaptationRule19' has cardinality 0..*.
+An association connects 'featureModel_Condition' and 'featureModel_Attribute'. From 'featureModel_Condition', the role 'featureModel_Condition21' has cardinality 0..*, and from 'featureModel_Attribute', the role 'featureModel_Attribute22' has cardinality 0..*.
+An association connects 'featureModel_Condition' and 'featureModel_IntValue'. From 'featureModel_Condition', the role 'featureModel_Condition24' has cardinality 0..*, and from 'featureModel_IntValue', the role 'featureModel_IntValue' has cardinality 0..*.
+An association connects 'featureModel_Feature' and 'featureModel_Condition'. From 'featureModel_Feature', the role 'featureModel_Feature27' has cardinality 0..*, and from 'featureModel_Condition', the role 'featureModel_Condition26' has cardinality 0..*.
+An association connects 'featureModel_Action' and 'featureModel_Feature'. From 'featureModel_Action', the role 'featureModel_Action29' has cardinality 0..*, and from 'featureModel_Feature', the role 'featureModel_Feature30' has cardinality 0..*.

@@ -1,0 +1,60 @@
+The domain model 'Example' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'Example_RaceDog' represents an important domain concept.
+It does not declare any attributes.
+
+'Example_Dog' represents an important domain concept.
+It does not declare any attributes.
+
+'Dog' represents an important domain concept.
+It does not declare any attributes.
+
+'Example_Daughter' represents an important domain concept.
+It does not declare any attributes.
+
+'Example_HuntingDog' represents an important domain concept.
+It does not declare any attributes.
+
+'Example_Family' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'Pet' represents an important domain concept.
+It does not declare any attributes.
+
+'Example_Parent' represents an important domain concept.
+It does not declare any attributes.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+'Example_Cat' represents an important domain concept.
+It does not declare any attributes.
+
+'Example_Son' represents an important domain concept.
+It does not declare any attributes.
+
+'Example_Member' represents an important domain concept.
+It has the following attributes: 'lastName', which is of type str; 'firstName', which is of type str.
+
+'Example_Pet' represents an important domain concept.
+It has the following attributes: 'breed', which is of type str; 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'Example_Parent' is a specialization of 'Member'.
+The class 'Example_Son' is a specialization of 'Member'.
+The class 'Example_Daughter' is a specialization of 'Member'.
+The class 'Example_Dog' is a specialization of 'Pet'.
+The class 'Example_Cat' is a specialization of 'Pet'.
+The class 'Example_RaceDog' is a specialization of 'Dog'.
+The class 'Example_HuntingDog' is a specialization of 'Dog'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Example_Parent' and 'Example_Family'. From 'Example_Parent', the role 'Parent' has cardinality 0..*, and from 'Example_Family', the role 'family' has cardinality 0..*.
+An association connects 'Example_Son' and 'Example_Family'. From 'Example_Son', the role 'Son' has cardinality 0..*, and from 'Example_Family', the role 'family2' has cardinality 0..*.
+An association connects 'Example_Daughter' and 'Example_Family'. From 'Example_Daughter', the role 'Daughter' has cardinality 0..*, and from 'Example_Family', the role 'family4' has cardinality 0..*.
+An association connects 'Example_Pet' and 'Example_Family'. From 'Example_Pet', the role 'Example_Pet' has cardinality 0..*, and from 'Example_Family', the role 'Example_Family' has cardinality 0..*.
+An association connects 'Example_Family' and 'Example_Parent'. From 'Example_Family', the role 'Family' has cardinality 0..*, and from 'Example_Parent', the role 'parents' has cardinality 0..*.
+An association connects 'Example_Son' and 'Example_Family'. From 'Example_Son', the role 'sons' has cardinality 0..*, and from 'Example_Family', the role 'Family8' has cardinality 0..*.
+An association connects 'Example_Family' and 'Example_Daughter'. From 'Example_Family', the role 'Family10' has cardinality 0..*, and from 'Example_Daughter', the role 'daughters' has cardinality 0..*.

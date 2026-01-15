@@ -1,0 +1,58 @@
+The domain model 'collection' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'collection_Item' represents an important domain concept.
+It does not declare any attributes.
+
+'collection_ItemsCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'collection_Tag' represents an important domain concept.
+It does not declare any attributes.
+
+'collection_DataSet' represents an important domain concept.
+It does not declare any attributes.
+
+'collection_RemoteCollection' represents an important domain concept.
+It has one attribute: 'remoteURL', which is of type str.
+
+'collection_SmartInformationObjectCollection' represents an important domain concept.
+It has the following attributes: 'includeOrganisations', which is of type str; 'includePersons', which is of type str; 'minimumAge', which is of type date; 'includeContents', which is of type str.
+
+'collection_MetaTag' represents an important domain concept.
+It does not declare any attributes.
+
+'ItemsCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'collection_Person' represents an important domain concept.
+It does not declare any attributes.
+
+'collection_Category' represents an important domain concept.
+It does not declare any attributes.
+
+'collection_Organisation' represents an important domain concept.
+It does not declare any attributes.
+
+'collection_ManualCollection' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'collection_SmartInformationObjectCollection' is a specialization of 'ItemsCollection'.
+The class 'collection_ManualCollection' is a specialization of 'ItemsCollection'.
+The class 'collection_RemoteCollection' is a specialization of 'ItemsCollection'.
+
+Relationships between classes are modeled using associations.
+An association connects 'collection_Item' and 'collection_ItemsCollection'. From 'collection_Item', the role 'collection_Item' has cardinality 0..*, and from 'collection_ItemsCollection', the role 'collection_ItemsCollection' has cardinality 0..*.
+An association connects 'collection_DataSet' and 'collection_ItemsCollection'. From 'collection_DataSet', the role 'collection_DataSet' has cardinality 0..*, and from 'collection_ItemsCollection', the role 'collection_ItemsCollection2' has cardinality 0..*.
+An association connects 'collection_Tag' and 'collection_SmartInformationObjectCollection'. From 'collection_Tag', the role 'collection_Tag' has cardinality 0..*, and from 'collection_SmartInformationObjectCollection', the role 'collection_SmartInformationObjectCollection' has cardinality 0..*.
+An association connects 'collection_SmartInformationObjectCollection' and 'collection_Tag'. From 'collection_SmartInformationObjectCollection', the role 'collection_SmartInformationObjectCollection5' has cardinality 0..*, and from 'collection_Tag', the role 'collection_Tag6' has cardinality 0..*.
+An association connects 'collection_MetaTag' and 'collection_SmartInformationObjectCollection'. From 'collection_MetaTag', the role 'collection_MetaTag' has cardinality 0..*, and from 'collection_SmartInformationObjectCollection', the role 'collection_SmartInformationObjectCollection8' has cardinality 0..*.
+An association connects 'collection_SmartInformationObjectCollection' and 'collection_Category'. From 'collection_SmartInformationObjectCollection', the role 'collection_SmartInformationObjectCollection10' has cardinality 0..*, and from 'collection_Category', the role 'collection_Category' has cardinality 0..*.
+An association connects 'collection_Person' and 'collection_SmartInformationObjectCollection'. From 'collection_Person', the role 'collection_Person' has cardinality 0..*, and from 'collection_SmartInformationObjectCollection', the role 'collection_SmartInformationObjectCollection12' has cardinality 0..*.
+An association connects 'collection_SmartInformationObjectCollection' and 'collection_MetaTag'. From 'collection_SmartInformationObjectCollection', the role 'collection_SmartInformationObjectCollection14' has cardinality 0..*, and from 'collection_MetaTag', the role 'collection_MetaTag15' has cardinality 0..*.
+An association connects 'collection_Category' and 'collection_SmartInformationObjectCollection'. From 'collection_Category', the role 'collection_Category18' has cardinality 0..*, and from 'collection_SmartInformationObjectCollection', the role 'collection_SmartInformationObjectCollection17' has cardinality 0..*.
+An association connects 'collection_Person' and 'collection_SmartInformationObjectCollection'. From 'collection_Person', the role 'collection_Person21' has cardinality 0..*, and from 'collection_SmartInformationObjectCollection', the role 'collection_SmartInformationObjectCollection20' has cardinality 0..*.
+An association connects 'collection_Organisation' and 'collection_SmartInformationObjectCollection'. From 'collection_Organisation', the role 'collection_Organisation' has cardinality 0..*, and from 'collection_SmartInformationObjectCollection', the role 'collection_SmartInformationObjectCollection23' has cardinality 0..*.
+An association connects 'collection_Organisation' and 'collection_SmartInformationObjectCollection'. From 'collection_Organisation', the role 'collection_Organisation26' has cardinality 0..*, and from 'collection_SmartInformationObjectCollection', the role 'collection_SmartInformationObjectCollection25' has cardinality 0..*.

@@ -1,0 +1,54 @@
+The domain model 'toe' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'AllBase' represents an important domain concept.
+It does not declare any attributes.
+
+'toe_Employee' represents an important domain concept.
+It has the following attributes: 'salary', which is of type int; 'name', which is of type str.
+
+'toe_AllBase' represents an important domain concept.
+It does not declare any attributes.
+
+'toe_AllHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'Employee' represents an important domain concept.
+It does not declare any attributes.
+
+'toe_Department' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'toe_Project' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'departmentWide', which is of type bool.
+
+'toe_Contribution' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'toe_Manager' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'toe_Employee' is a specialization of 'AllBase'.
+The class 'toe_Manager' is a specialization of 'Employee'.
+The class 'toe_Contribution' is a specialization of 'AllBase'.
+The class 'toe_Department' is a specialization of 'AllBase'.
+The class 'toe_Project' is a specialization of 'AllBase'.
+
+Relationships between classes are modeled using associations.
+An association connects 'toe_AllHolder' and 'toe_AllBase'. From 'toe_AllHolder', the role 'toe_AllHolder' has cardinality 0..*, and from 'toe_AllBase', the role 'toe_AllBase' has cardinality 0..*.
+An association connects 'toe_Project' and 'toe_Employee'. From 'toe_Project', the role 'Project' has cardinality 0..*, and from 'toe_Employee', the role 'projectTeam' has cardinality 0..*.
+An association connects 'toe_Department' and 'toe_Employee'. From 'toe_Department', the role 'Department' has cardinality 0..*, and from 'toe_Employee', the role 'employees' has cardinality 0..*.
+An association connects 'toe_Employee' and 'toe_Contribution'. From 'toe_Employee', the role 'employee' has cardinality 0..*, and from 'toe_Contribution', the role 'Contribution' has cardinality 0..*.
+An association connects 'toe_Project' and 'toe_Manager'. From 'toe_Project', the role 'Project5' has cardinality 0..*, and from 'toe_Manager', the role 'lead' has cardinality 0..*.
+An association connects 'toe_Manager' and 'toe_Department'. From 'toe_Manager', the role 'manager' has cardinality 0..*, and from 'toe_Department', the role 'Department7' has cardinality 0..*.
+An association connects 'toe_Employee' and 'toe_Contribution'. From 'toe_Employee', the role 'Employee' has cardinality 0..*, and from 'toe_Contribution', the role 'contributions' has cardinality 0..*.
+An association connects 'toe_Project' and 'toe_Contribution'. From 'toe_Project', the role 'Project11' has cardinality 0..*, and from 'toe_Contribution', the role 'contributions10' has cardinality 0..*.
+An association connects 'toe_Department' and 'toe_Department'. From 'toe_Department', the role 'Department14' has cardinality 0..*, and from 'toe_Department', the role 'parentDepartment' has cardinality 0..*.
+An association connects 'toe_Department' and 'toe_Employee'. From 'toe_Department', the role 'department' has cardinality 0..*, and from 'toe_Employee', the role 'Employee16' has cardinality 0..*.
+An association connects 'toe_Department' and 'toe_Department'. From 'toe_Department', the role 'Department19' has cardinality 0..*, and from 'toe_Department', the role 'subDepartments' has cardinality 0..*.
+An association connects 'toe_Manager' and 'toe_Department'. From 'toe_Manager', the role 'Manager' has cardinality 0..*, and from 'toe_Department', the role 'managedDepartment' has cardinality 0..*.
+An association connects 'toe_Project' and 'toe_Employee'. From 'toe_Project', the role 'projects' has cardinality 0..*, and from 'toe_Employee', the role 'Employee22' has cardinality 0..*.
+An association connects 'toe_Manager' and 'toe_Project'. From 'toe_Manager', the role 'Manager24' has cardinality 0..*, and from 'toe_Project', the role 'leads' has cardinality 0..*.
+An association connects 'toe_Contribution' and 'toe_Project'. From 'toe_Contribution', the role 'Contribution26' has cardinality 0..*, and from 'toe_Project', the role 'project' has cardinality 0..*.

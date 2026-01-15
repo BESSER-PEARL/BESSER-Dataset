@@ -1,0 +1,22 @@
+The domain model 'School' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'School_SchoolRoom' represents an important domain concept.
+It does not declare any attributes.
+
+'School_Clock' represents an important domain concept.
+It does not declare any attributes.
+
+'School_Buzzer' represents an important domain concept.
+It does not declare any attributes.
+
+'School_School' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'School_School' and 'School_SchoolRoom'. From 'School_School', the role 'School_School' has cardinality 0..*, and from 'School_SchoolRoom', the role 'School_SchoolRoom' has cardinality 0..*.
+An association connects 'School_Clock' and 'School_School'. From 'School_Clock', the role 'School_Clock' has cardinality 0..*, and from 'School_School', the role 'School_School2' has cardinality 0..*.
+An association connects 'School_SchoolRoom' and 'School_Buzzer'. From 'School_SchoolRoom', the role 'School_SchoolRoom4' has cardinality 0..*, and from 'School_Buzzer', the role 'School_Buzzer' has cardinality 0..*.
+An association connects 'School_Buzzer' and 'School_Clock'. From 'School_Buzzer', the role 'alarm' has cardinality 0..*, and from 'School_Clock', the role 'Clock' has cardinality 0..*.
+An association connects 'School_Clock' and 'School_Buzzer'. From 'School_Clock', the role 'ring' has cardinality 0..*, and from 'School_Buzzer', the role 'Buzzer' has cardinality 0..*.

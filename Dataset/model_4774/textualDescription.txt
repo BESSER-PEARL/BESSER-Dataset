@@ -1,0 +1,179 @@
+The domain model 'types' describes the core structural elements and their relationships within the system.
+
+The model defines 42 main class(es).
+
+'types_Char' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Struct' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isDcpsDataType', which is of type bool.
+
+'FloatingPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Union' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'types_Typedef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'types_ULong' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Enum' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'literals', which is of type str.
+
+'Int' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'types_WString' represents an important domain concept.
+It does not declare any attributes.
+
+'types_DataLib' represents an important domain concept.
+It does not declare any attributes.
+
+'types_SignedInt' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Key' represents an important domain concept.
+It does not declare any attributes.
+
+'types_UShort' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Array' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Field' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'types_UnsignedInt' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Collection' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'types_LongDouble' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Double' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ULongLong' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'SignedInt' represents an important domain concept.
+It does not declare any attributes.
+
+'types_LongLong' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Float' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Long' represents an important domain concept.
+It does not declare any attributes.
+
+'types_WChar' represents an important domain concept.
+It does not declare any attributes.
+
+'types_String' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Collection' represents an important domain concept.
+It has one attribute: 'length', which is of type str.
+
+'types_Case' represents an important domain concept.
+It has one attribute: 'literal', which is of type str.
+
+'Simple' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Branch' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Simple' represents an important domain concept.
+It does not declare any attributes.
+
+'UnsignedInt' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Boolean' represents an important domain concept.
+It does not declare any attributes.
+
+'types_FloatingPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'OpenDDSLib' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Octet' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Int' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Short' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'types_Array' is a specialization of 'Collection'.
+The class 'types_Boolean' is a specialization of 'Simple'.
+The class 'types_Branch' is a specialization of 'Element'.
+The class 'types_Case' is a specialization of 'Element'.
+The class 'types_Char' is a specialization of 'Simple'.
+The class 'types_Collection' is a specialization of 'Type'.
+The class 'types_Double' is a specialization of 'FloatingPoint'.
+The class 'types_Enum' is a specialization of 'Simple'.
+The class 'types_Field' is a specialization of 'Element'.
+The class 'types_Float' is a specialization of 'FloatingPoint'.
+The class 'types_FloatingPoint' is a specialization of 'Simple'.
+The class 'types_Int' is a specialization of 'Simple'.
+The class 'types_Key' is a specialization of 'Element'.
+The class 'types_Long' is a specialization of 'SignedInt'.
+The class 'types_LongDouble' is a specialization of 'FloatingPoint'.
+The class 'types_LongLong' is a specialization of 'SignedInt'.
+The class 'types_Octet' is a specialization of 'Simple'.
+The class 'types_Sequence' is a specialization of 'Collection'.
+The class 'types_Short' is a specialization of 'SignedInt'.
+The class 'types_SignedInt' is a specialization of 'Int'.
+The class 'types_Simple' is a specialization of 'Type'.
+The class 'types_String' is a specialization of 'Collection'.
+The class 'types_Struct' is a specialization of 'Type'.
+The class 'types_Type' is a specialization of 'Element'.
+The class 'types_Typedef' is a specialization of 'Type'.
+The class 'types_ULong' is a specialization of 'UnsignedInt'.
+The class 'types_ULongLong' is a specialization of 'UnsignedInt'.
+The class 'types_UShort' is a specialization of 'UnsignedInt'.
+The class 'types_Union' is a specialization of 'Type'.
+The class 'types_UnsignedInt' is a specialization of 'Int'.
+The class 'types_WChar' is a specialization of 'Simple'.
+The class 'types_WString' is a specialization of 'Collection'.
+The class 'types_DataLib' is a specialization of 'OpenDDSLib'.
+
+Relationships between classes are modeled using associations.
+An association connects 'types_Array' and 'types_Type'. From 'types_Array', the role 'types_Array' has cardinality 0..*, and from 'types_Type', the role 'types_Type' has cardinality 0..*.
+An association connects 'types_Branch' and 'types_Field'. From 'types_Branch', the role 'types_Branch' has cardinality 0..*, and from 'types_Field', the role 'types_Field' has cardinality 0..*.
+An association connects 'types_Case' and 'types_Branch'. From 'types_Case', the role 'types_Case' has cardinality 0..*, and from 'types_Branch', the role 'types_Branch3' has cardinality 0..*.
+An association connects 'types_Field' and 'types_Type'. From 'types_Field', the role 'types_Field5' has cardinality 0..*, and from 'types_Type', the role 'types_Type6' has cardinality 0..*.
+An association connects 'types_Key' and 'types_Field'. From 'types_Key', the role 'types_Key' has cardinality 0..*, and from 'types_Field', the role 'types_Field8' has cardinality 0..*.
+An association connects 'types_Type' and 'types_Sequence'. From 'types_Type', the role 'types_Type10' has cardinality 0..*, and from 'types_Sequence', the role 'types_Sequence' has cardinality 0..*.
+An association connects 'types_Struct' and 'types_Field'. From 'types_Struct', the role 'types_Struct' has cardinality 0..*, and from 'types_Field', the role 'types_Field12' has cardinality 0..*.
+An association connects 'types_Key' and 'types_Struct'. From 'types_Key', the role 'types_Key15' has cardinality 0..*, and from 'types_Struct', the role 'types_Struct14' has cardinality 0..*.
+An association connects 'types_Type' and 'types_Typedef'. From 'types_Type', the role 'types_Type17' has cardinality 0..*, and from 'types_Typedef', the role 'types_Typedef' has cardinality 0..*.
+An association connects 'types_Branch' and 'types_Union'. From 'types_Branch', the role 'types_Branch19' has cardinality 0..*, and from 'types_Union', the role 'types_Union' has cardinality 0..*.
+An association connects 'types_Union' and 'types_Type'. From 'types_Union', the role 'types_Union21' has cardinality 0..*, and from 'types_Type', the role 'types_Type22' has cardinality 0..*.
+An association connects 'types_Union' and 'types_Field'. From 'types_Union', the role 'types_Union24' has cardinality 0..*, and from 'types_Field', the role 'types_Field25' has cardinality 0..*.
+An association connects 'types_DataLib' and 'types_Type'. From 'types_DataLib', the role 'types_DataLib' has cardinality 0..*, and from 'types_Type', the role 'types_Type27' has cardinality 0..*.

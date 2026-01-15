@@ -1,0 +1,37 @@
+The domain model 'eShop' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'eShop_Product' represents an important domain concept.
+It has the following attributes: 'stock', which is of type int; 'price', which is of type int.
+
+'eShop_Portal' represents an important domain concept.
+It has the following attributes: 'url', which is of type str; 'name', which is of type str.
+
+'eShop_Customer' represents an important domain concept.
+It has one attribute: 'name', which is of type int.
+
+'eShop_Sale' represents an important domain concept.
+It has the following attributes: 'amount', which is of type int; 'paid', which is of type bool; 'id', which is of type int.
+
+'eShop_SaleLine' represents an important domain concept.
+It has one attribute: 'quantity', which is of type int.
+
+'eShop_GoldCustomer' represents an important domain concept.
+It does not declare any attributes.
+
+'Customer' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'eShop_GoldCustomer' is a specialization of 'Customer'.
+
+Relationships between classes are modeled using associations.
+An association connects 'eShop_Customer' and 'eShop_Portal'. From 'eShop_Customer', the role 'customers' has cardinality 0..*, and from 'eShop_Portal', the role 'Portal' has cardinality 0..*.
+An association connects 'eShop_Customer' and 'eShop_Sale'. From 'eShop_Customer', the role 'purchaser' has cardinality 0..*, and from 'eShop_Sale', the role 'Sale' has cardinality 0..*.
+An association connects 'eShop_Portal' and 'eShop_Customer'. From 'eShop_Portal', the role 'portal' has cardinality 0..*, and from 'eShop_Customer', the role 'Customer' has cardinality 0..*.
+An association connects 'eShop_Customer' and 'eShop_Sale'. From 'eShop_Customer', the role 'Customer4' has cardinality 0..*, and from 'eShop_Sale', the role 'sale' has cardinality 0..*.
+An association connects 'eShop_Sale' and 'eShop_SaleLine'. From 'eShop_Sale', the role 'sale6' has cardinality 0..*, and from 'eShop_SaleLine', the role 'SaleLine' has cardinality 0..*.
+An association connects 'eShop_SaleLine' and 'eShop_Sale'. From 'eShop_SaleLine', the role 'lines' has cardinality 0..*, and from 'eShop_Sale', the role 'Sale8' has cardinality 0..*.
+An association connects 'eShop_Product' and 'eShop_SaleLine'. From 'eShop_Product', the role 'Product' has cardinality 0..*, and from 'eShop_SaleLine', the role 'salesLines' has cardinality 0..*.
+An association connects 'eShop_Product' and 'eShop_SaleLine'. From 'eShop_Product', the role 'product' has cardinality 0..*, and from 'eShop_SaleLine', the role 'SaleLine11' has cardinality 0..*.

@@ -1,0 +1,22 @@
+The domain model 'hExample_6_RHS' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'hExample_6_RHS_X' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'hExample_6_RHS_Z' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'hExample_6_RHS_Y' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'hExample_6_RHS_model' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'hExample_6_RHS_model' and 'hExample_6_RHS_X'. From 'hExample_6_RHS_model', the role 'hExample_6_RHS_model' has cardinality 0..*, and from 'hExample_6_RHS_X', the role 'hExample_6_RHS_X' has cardinality 0..*.
+An association connects 'hExample_6_RHS_Y' and 'hExample_6_RHS_model'. From 'hExample_6_RHS_Y', the role 'hExample_6_RHS_Y' has cardinality 0..*, and from 'hExample_6_RHS_model', the role 'hExample_6_RHS_model2' has cardinality 0..*.
+An association connects 'hExample_6_RHS_Z' and 'hExample_6_RHS_model'. From 'hExample_6_RHS_Z', the role 'hExample_6_RHS_Z' has cardinality 0..*, and from 'hExample_6_RHS_model', the role 'hExample_6_RHS_model4' has cardinality 0..*.
+An association connects 'hExample_6_RHS_X' and 'hExample_6_RHS_Y'. From 'hExample_6_RHS_X', the role 'hExample_6_RHS_X6' has cardinality 0..*, and from 'hExample_6_RHS_Y', the role 'hExample_6_RHS_Y7' has cardinality 0..*.
+An association connects 'hExample_6_RHS_X' and 'hExample_6_RHS_Z'. From 'hExample_6_RHS_X', the role 'hExample_6_RHS_X9' has cardinality 0..*, and from 'hExample_6_RHS_Z', the role 'hExample_6_RHS_Z10' has cardinality 0..*.

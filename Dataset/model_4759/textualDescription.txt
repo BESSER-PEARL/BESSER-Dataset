@@ -1,0 +1,222 @@
+The domain model 'effbdpattern' describes the core structural elements and their relationships within the system.
+
+The model defines 43 main class(es).
+
+'effbdpattern_Impact' represents an important domain concept.
+It has the following attributes: 'scale', which is of type int; 'value', which is of type int.
+
+'effbdpattern_Condition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'effbdpattern_Final' represents an important domain concept.
+It does not declare any attributes.
+
+'effbdpattern_AbstractModel' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'version', which is of type str.
+
+'effbdpattern_Force' represents an important domain concept.
+It has the following attributes: 'scale', which is of type int; 'value', which is of type int; 'description', which is of type str.
+
+'effbdpattern_PatternCatalog' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'effbdpattern_Iteration' represents an important domain concept.
+It does not declare any attributes.
+
+'effbdpattern_OutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'effbdpattern_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'effbdpattern_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'effbdpattern_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'effbdpattern_Indexable' represents an important domain concept.
+It does not declare any attributes.
+
+'effbdpattern_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'effbdpattern_And' represents an important domain concept.
+It does not declare any attributes.
+
+'Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'effbdpattern_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'effbdpattern_Function' represents an important domain concept.
+It has one attribute: 'domain', which is of type str.
+
+'effbdpattern_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'effbdpattern_Keyword' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'effbdpattern_LoopExit' represents an important domain concept.
+It does not declare any attributes.
+
+'effbdpattern_Flow' represents an important domain concept.
+It has one attribute: 'flowName', which is of type str.
+
+'effbdpattern_SystemPattern' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'challeng', which is of type str; 'description', which is of type str; 'patternId', which is of type int; 'creationDate', which is of type date; 'alias', which is of type str; 'knownApplications', which is of type str.
+
+'effbdpattern_Problem' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str.
+
+'effbdpattern_Feature' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str.
+
+'effbdpattern_Port' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'effbdpattern_FunctionProperty' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'effbdpattern_Context' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'effbdpattern_Allocation' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'redundant', which is of type bool.
+
+'effbdpattern_Workbench' represents an important domain concept.
+It does not declare any attributes.
+
+'effbdpattern_Item' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'effbdpattern_ModelElement' represents an important domain concept.
+It has the following attributes: 'modelId', which is of type int; 'modelName', which is of type str.
+
+'AbstractModel' represents an important domain concept.
+It does not declare any attributes.
+
+'SequenceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'effbdpattern_SequenceNode' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'tMax', which is of type int; 'tMin', which is of type int.
+
+'Indexable' represents an important domain concept.
+It does not declare any attributes.
+
+'effbdpattern_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'effbdpattern_Domain' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str.
+
+'effbdpattern_PatternModel' represents an important domain concept.
+It does not declare any attributes.
+
+'effbdpattern_Description' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'effbdpattern_Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'effbdpattern_InputPort' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FunctionDomain' defines the following possible values: 'form', 'space', 'time'.
+
+The model also captures inheritance relationships between classes.
+The class 'effbdpattern_Function' is a specialization of 'SequenceNode'.
+The class 'effbdpattern_Function' is a specialization of 'ModelElement'.
+The class 'effbdpattern_Sequence' is a specialization of 'SequenceNode'.
+The class 'effbdpattern_And' is a specialization of 'Sequence'.
+The class 'effbdpattern_Or' is a specialization of 'Sequence'.
+The class 'effbdpattern_Start' is a specialization of 'Sequence'.
+The class 'effbdpattern_Final' is a specialization of 'Sequence'.
+The class 'effbdpattern_Loop' is a specialization of 'Sequence'.
+The class 'effbdpattern_InputPort' is a specialization of 'Port'.
+The class 'effbdpattern_OutputPort' is a specialization of 'Port'.
+The class 'effbdpattern_LoopExit' is a specialization of 'Sequence'.
+The class 'effbdpattern_Iteration' is a specialization of 'Sequence'.
+The class 'effbdpattern_ModelElement' is a specialization of 'Indexable'.
+The class 'effbdpattern_Context' is a specialization of 'Indexable'.
+The class 'effbdpattern_PatternModel' is a specialization of 'AbstractModel'.
+The class 'effbdpattern_Component' is a specialization of 'ModelElement'.
+The class 'effbdpattern_Domain' is a specialization of 'Indexable'.
+The class 'effbdpattern_AbstractModel' is a specialization of 'Indexable'.
+The class 'effbdpattern_Problem' is a specialization of 'Indexable'.
+The class 'effbdpattern_SystemPattern' is a specialization of 'Indexable'.
+The class 'effbdpattern_Model' is a specialization of 'AbstractModel'.
+
+Relationships between classes are modeled using associations.
+An association connects 'effbdpattern_Function' and 'effbdpattern_Function'. From 'effbdpattern_Function', the role 'parent' has cardinality 0..*, and from 'effbdpattern_Function', the role 'Function' has cardinality 0..*.
+An association connects 'effbdpattern_Function' and 'effbdpattern_Sequence'. From 'effbdpattern_Function', the role 'effbdpattern_Function' has cardinality 0..*, and from 'effbdpattern_Sequence', the role 'effbdpattern_Sequence' has cardinality 0..*.
+An association connects 'effbdpattern_Function' and 'effbdpattern_Flow'. From 'effbdpattern_Function', the role 'effbdpattern_Function4' has cardinality 0..*, and from 'effbdpattern_Flow', the role 'effbdpattern_Flow' has cardinality 0..*.
+An association connects 'effbdpattern_Function' and 'effbdpattern_OutputPort'. From 'effbdpattern_Function', the role 'effbdpattern_Function6' has cardinality 0..*, and from 'effbdpattern_OutputPort', the role 'effbdpattern_OutputPort' has cardinality 0..*.
+An association connects 'effbdpattern_Function' and 'effbdpattern_InputPort'. From 'effbdpattern_Function', the role 'effbdpattern_Function8' has cardinality 0..*, and from 'effbdpattern_InputPort', the role 'effbdpattern_InputPort' has cardinality 0..*.
+An association connects 'effbdpattern_Function' and 'effbdpattern_Description'. From 'effbdpattern_Function', the role 'effbdpattern_Function10' has cardinality 0..*, and from 'effbdpattern_Description', the role 'effbdpattern_Description' has cardinality 0..*.
+An association connects 'effbdpattern_Function' and 'effbdpattern_Token'. From 'effbdpattern_Function', the role 'effbdpattern_Function12' has cardinality 0..*, and from 'effbdpattern_Token', the role 'effbdpattern_Token' has cardinality 0..*.
+An association connects 'effbdpattern_FunctionProperty' and 'effbdpattern_Function'. From 'effbdpattern_FunctionProperty', the role 'effbdpattern_FunctionProperty' has cardinality 0..*, and from 'effbdpattern_Function', the role 'effbdpattern_Function14' has cardinality 0..*.
+An association connects 'effbdpattern_Function' and 'effbdpattern_Function'. From 'effbdpattern_Function', the role 'decompositions' has cardinality 0..*, and from 'effbdpattern_Function', the role 'Function17' has cardinality 0..*.
+An association connects 'effbdpattern_SequenceNode' and 'effbdpattern_SequenceNode'. From 'effbdpattern_SequenceNode', the role 'effbdpattern_SequenceNode' has cardinality 0..*, and from 'effbdpattern_SequenceNode', the role 'effbdpattern_SequenceNode18' has cardinality 0..*.
+An association connects 'effbdpattern_Port' and 'effbdpattern_Port'. From 'effbdpattern_Port', the role 'effbdpattern_Port20' has cardinality 0..*, and from 'effbdpattern_Port', the role 'effbdpattern_Port' has cardinality 0..*.
+An association connects 'effbdpattern_Flow' and 'effbdpattern_InputPort'. From 'effbdpattern_Flow', the role 'effbdpattern_Flow23' has cardinality 0..*, and from 'effbdpattern_InputPort', the role 'effbdpattern_InputPort24' has cardinality 0..*.
+An association connects 'effbdpattern_Flow' and 'effbdpattern_Item'. From 'effbdpattern_Flow', the role 'effbdpattern_Flow26' has cardinality 0..*, and from 'effbdpattern_Item', the role 'effbdpattern_Item' has cardinality 0..*.
+An association connects 'effbdpattern_Flow' and 'effbdpattern_OutputPort'. From 'effbdpattern_Flow', the role 'effbdpattern_Flow29' has cardinality 0..*, and from 'effbdpattern_OutputPort', the role 'effbdpattern_OutputPort28' has cardinality 0..*.
+An association connects 'effbdpattern_FunctionProperty' and 'effbdpattern_FunctionProperty'. From 'effbdpattern_FunctionProperty', the role 'effbdpattern_FunctionProperty32' has cardinality 0..*, and from 'effbdpattern_FunctionProperty', the role 'effbdpattern_FunctionProperty30' has cardinality 0..*.
+An association connects 'effbdpattern_Function' and 'effbdpattern_PatternCatalog'. From 'effbdpattern_Function', the role 'effbdpattern_Function34' has cardinality 0..*, and from 'effbdpattern_PatternCatalog', the role 'effbdpattern_PatternCatalog' has cardinality 0..*.
+An association connects 'effbdpattern_SystemPattern' and 'effbdpattern_PatternCatalog'. From 'effbdpattern_SystemPattern', the role 'effbdpattern_SystemPattern' has cardinality 0..*, and from 'effbdpattern_PatternCatalog', the role 'effbdpattern_PatternCatalog36' has cardinality 0..*.
+An association connects 'effbdpattern_Workbench' and 'effbdpattern_FunctionProperty'. From 'effbdpattern_Workbench', the role 'effbdpattern_Workbench' has cardinality 0..*, and from 'effbdpattern_FunctionProperty', the role 'effbdpattern_FunctionProperty38' has cardinality 0..*.
+An association connects 'effbdpattern_Workbench' and 'effbdpattern_Problem'. From 'effbdpattern_Workbench', the role 'effbdpattern_Workbench40' has cardinality 0..*, and from 'effbdpattern_Problem', the role 'effbdpattern_Problem' has cardinality 0..*.
+An association connects 'effbdpattern_Domain' and 'effbdpattern_Workbench'. From 'effbdpattern_Domain', the role 'effbdpattern_Domain' has cardinality 0..*, and from 'effbdpattern_Workbench', the role 'effbdpattern_Workbench42' has cardinality 0..*.
+An association connects 'effbdpattern_Workbench' and 'effbdpattern_Keyword'. From 'effbdpattern_Workbench', the role 'effbdpattern_Workbench44' has cardinality 0..*, and from 'effbdpattern_Keyword', the role 'effbdpattern_Keyword' has cardinality 0..*.
+An association connects 'effbdpattern_Workbench' and 'effbdpattern_Feature'. From 'effbdpattern_Workbench', the role 'effbdpattern_Workbench46' has cardinality 0..*, and from 'effbdpattern_Feature', the role 'effbdpattern_Feature' has cardinality 0..*.
+An association connects 'effbdpattern_Workbench' and 'effbdpattern_Condition'. From 'effbdpattern_Workbench', the role 'effbdpattern_Workbench48' has cardinality 0..*, and from 'effbdpattern_Condition', the role 'effbdpattern_Condition' has cardinality 0..*.
+An association connects 'effbdpattern_Workbench' and 'effbdpattern_Context'. From 'effbdpattern_Workbench', the role 'effbdpattern_Workbench50' has cardinality 0..*, and from 'effbdpattern_Context', the role 'effbdpattern_Context' has cardinality 0..*.
+An association connects 'effbdpattern_Model' and 'effbdpattern_Workbench'. From 'effbdpattern_Model', the role 'effbdpattern_Model' has cardinality 0..*, and from 'effbdpattern_Workbench', the role 'effbdpattern_Workbench52' has cardinality 0..*.
+An association connects 'effbdpattern_Workbench' and 'effbdpattern_PatternCatalog'. From 'effbdpattern_Workbench', the role 'effbdpattern_Workbench54' has cardinality 0..*, and from 'effbdpattern_PatternCatalog', the role 'effbdpattern_PatternCatalog55' has cardinality 0..*.
+An association connects 'effbdpattern_Workbench' and 'effbdpattern_Allocation'. From 'effbdpattern_Workbench', the role 'effbdpattern_Workbench57' has cardinality 0..*, and from 'effbdpattern_Allocation', the role 'effbdpattern_Allocation' has cardinality 0..*.
+An association connects 'effbdpattern_ModelElement' and 'effbdpattern_SystemPattern'. From 'effbdpattern_ModelElement', the role 'modelElement' has cardinality 0..*, and from 'effbdpattern_SystemPattern', the role 'SystemPattern' has cardinality 0..*.
+An association connects 'effbdpattern_Indexable' and 'effbdpattern_Keyword'. From 'effbdpattern_Indexable', the role 'effbdpattern_Indexable' has cardinality 0..*, and from 'effbdpattern_Keyword', the role 'effbdpattern_Keyword60' has cardinality 0..*.
+An association connects 'effbdpattern_Parameter' and 'effbdpattern_ModelElement'. From 'effbdpattern_Parameter', the role 'effbdpattern_Parameter' has cardinality 0..*, and from 'effbdpattern_ModelElement', the role 'effbdpattern_ModelElement' has cardinality 0..*.
+An association connects 'effbdpattern_Parameter' and 'effbdpattern_ModelElement'. From 'effbdpattern_Parameter', the role 'effbdpattern_Parameter63' has cardinality 0..*, and from 'effbdpattern_ModelElement', the role 'effbdpattern_ModelElement64' has cardinality 0..*.
+An association connects 'effbdpattern_Context' and 'effbdpattern_Condition'. From 'effbdpattern_Context', the role 'effbdpattern_Context66' has cardinality 0..*, and from 'effbdpattern_Condition', the role 'effbdpattern_Condition67' has cardinality 0..*.
+An association connects 'effbdpattern_Function' and 'effbdpattern_PatternModel'. From 'effbdpattern_Function', the role 'effbdpattern_Function69' has cardinality 0..*, and from 'effbdpattern_PatternModel', the role 'effbdpattern_PatternModel' has cardinality 0..*.
+An association connects 'effbdpattern_Component' and 'effbdpattern_PatternModel'. From 'effbdpattern_Component', the role 'effbdpattern_Component' has cardinality 0..*, and from 'effbdpattern_PatternModel', the role 'effbdpattern_PatternModel71' has cardinality 0..*.
+An association connects 'effbdpattern_Component' and 'effbdpattern_Component'. From 'effbdpattern_Component', the role 'Component' has cardinality 0..*, and from 'effbdpattern_Component', the role 'parent74' has cardinality 0..*.
+An association connects 'effbdpattern_Component' and 'effbdpattern_Component'. From 'effbdpattern_Component', the role 'decompositions77' has cardinality 0..*, and from 'effbdpattern_Component', the role 'Component78' has cardinality 0..*.
+An association connects 'effbdpattern_Domain' and 'effbdpattern_AbstractModel'. From 'effbdpattern_Domain', the role 'effbdpattern_Domain80' has cardinality 0..*, and from 'effbdpattern_AbstractModel', the role 'effbdpattern_AbstractModel' has cardinality 0..*.
+An association connects 'effbdpattern_AbstractModel' and 'effbdpattern_AbstractModel'. From 'effbdpattern_AbstractModel', the role 'AbstractModel' has cardinality 0..*, and from 'effbdpattern_AbstractModel', the role 'fragments' has cardinality 0..*.
+An association connects 'effbdpattern_AbstractModel' and 'effbdpattern_AbstractModel'. From 'effbdpattern_AbstractModel', the role 'parent85' has cardinality 0..*, and from 'effbdpattern_AbstractModel', the role 'AbstractModel86' has cardinality 0..*.
+An association connects 'effbdpattern_Force' and 'effbdpattern_Problem'. From 'effbdpattern_Force', the role 'forces' has cardinality 0..*, and from 'effbdpattern_Problem', the role 'Problem' has cardinality 0..*.
+An association connects 'effbdpattern_Force' and 'effbdpattern_Condition'. From 'effbdpattern_Force', the role 'effbdpattern_Force' has cardinality 0..*, and from 'effbdpattern_Condition', the role 'effbdpattern_Condition89' has cardinality 0..*.
+An association connects 'effbdpattern_PatternModel' and 'effbdpattern_Problem'. From 'effbdpattern_PatternModel', the role 'effbdpattern_PatternModel92' has cardinality 0..*, and from 'effbdpattern_Problem', the role 'effbdpattern_Problem91' has cardinality 0..*.
+An association connects 'effbdpattern_Problem' and 'effbdpattern_Feature'. From 'effbdpattern_Problem', the role 'effbdpattern_Problem94' has cardinality 0..*, and from 'effbdpattern_Feature', the role 'effbdpattern_Feature95' has cardinality 0..*.
+An association connects 'effbdpattern_Problem' and 'effbdpattern_Force'. From 'effbdpattern_Problem', the role 'problem' has cardinality 0..*, and from 'effbdpattern_Force', the role 'Force' has cardinality 0..*.
+An association connects 'effbdpattern_Feature' and 'effbdpattern_Impact'. From 'effbdpattern_Feature', the role 'effbdpattern_Feature98' has cardinality 0..*, and from 'effbdpattern_Impact', the role 'effbdpattern_Impact' has cardinality 0..*.
+An association connects 'effbdpattern_Impact' and 'effbdpattern_SystemPattern'. From 'effbdpattern_Impact', the role 'impacts' has cardinality 0..*, and from 'effbdpattern_SystemPattern', the role 'SystemPattern100' has cardinality 0..*.
+An association connects 'effbdpattern_SystemPattern' and 'effbdpattern_Parameter'. From 'effbdpattern_SystemPattern', the role 'effbdpattern_SystemPattern102' has cardinality 0..*, and from 'effbdpattern_Parameter', the role 'effbdpattern_Parameter103' has cardinality 0..*.
+An association connects 'effbdpattern_SystemPattern' and 'effbdpattern_Context'. From 'effbdpattern_SystemPattern', the role 'effbdpattern_SystemPattern105' has cardinality 0..*, and from 'effbdpattern_Context', the role 'effbdpattern_Context106' has cardinality 0..*.
+An association connects 'effbdpattern_Problem' and 'effbdpattern_SystemPattern'. From 'effbdpattern_Problem', the role 'effbdpattern_Problem109' has cardinality 0..*, and from 'effbdpattern_SystemPattern', the role 'effbdpattern_SystemPattern108' has cardinality 0..*.
+An association connects 'effbdpattern_Domain' and 'effbdpattern_SystemPattern'. From 'effbdpattern_Domain', the role 'effbdpattern_Domain112' has cardinality 0..*, and from 'effbdpattern_SystemPattern', the role 'effbdpattern_SystemPattern111' has cardinality 0..*.
+An association connects 'effbdpattern_SystemPattern' and 'effbdpattern_SystemPattern'. From 'effbdpattern_SystemPattern', the role 'effbdpattern_SystemPattern113' has cardinality 0..*, and from 'effbdpattern_SystemPattern', the role 'effbdpattern_SystemPattern115' has cardinality 0..*.
+An association connects 'effbdpattern_SystemPattern' and 'effbdpattern_SystemPattern'. From 'effbdpattern_SystemPattern', the role 'effbdpattern_SystemPattern118' has cardinality 0..*, and from 'effbdpattern_SystemPattern', the role 'effbdpattern_SystemPattern116' has cardinality 0..*.
+An association connects 'effbdpattern_SystemPattern' and 'effbdpattern_SystemPattern'. From 'effbdpattern_SystemPattern', the role 'effbdpattern_SystemPattern121' has cardinality 0..*, and from 'effbdpattern_SystemPattern', the role 'effbdpattern_SystemPattern119' has cardinality 0..*.
+An association connects 'effbdpattern_SystemPattern' and 'effbdpattern_SystemPattern'. From 'effbdpattern_SystemPattern', the role 'effbdpattern_SystemPattern122' has cardinality 0..*, and from 'effbdpattern_SystemPattern', the role 'effbdpattern_SystemPattern124' has cardinality 0..*.
+An association connects 'effbdpattern_PatternModel' and 'effbdpattern_SystemPattern'. From 'effbdpattern_PatternModel', the role 'effbdpattern_PatternModel127' has cardinality 0..*, and from 'effbdpattern_SystemPattern', the role 'effbdpattern_SystemPattern126' has cardinality 0..*.
+An association connects 'effbdpattern_SystemPattern' and 'effbdpattern_Impact'. From 'effbdpattern_SystemPattern', the role 'pattern' has cardinality 0..*, and from 'effbdpattern_Impact', the role 'Impact' has cardinality 0..*.
+An association connects 'effbdpattern_ModelElement' and 'effbdpattern_SystemPattern'. From 'effbdpattern_ModelElement', the role 'ModelElement' has cardinality 0..*, and from 'effbdpattern_SystemPattern', the role 'pattern130' has cardinality 0..*.
+An association connects 'effbdpattern_Model' and 'effbdpattern_Model'. From 'effbdpattern_Model', the role 'effbdpattern_Model131' has cardinality 0..*, and from 'effbdpattern_Model', the role 'effbdpattern_Model133' has cardinality 0..*.
+An association connects 'effbdpattern_Function' and 'effbdpattern_Model'. From 'effbdpattern_Function', the role 'effbdpattern_Function136' has cardinality 0..*, and from 'effbdpattern_Model', the role 'effbdpattern_Model135' has cardinality 0..*.
+An association connects 'effbdpattern_Component' and 'effbdpattern_Model'. From 'effbdpattern_Component', the role 'effbdpattern_Component139' has cardinality 0..*, and from 'effbdpattern_Model', the role 'effbdpattern_Model138' has cardinality 0..*.
+An association connects 'effbdpattern_Allocation' and 'effbdpattern_Function'. From 'effbdpattern_Allocation', the role 'effbdpattern_Allocation141' has cardinality 0..*, and from 'effbdpattern_Function', the role 'effbdpattern_Function142' has cardinality 0..*.
+An association connects 'effbdpattern_Component' and 'effbdpattern_Allocation'. From 'effbdpattern_Component', the role 'effbdpattern_Component145' has cardinality 0..*, and from 'effbdpattern_Allocation', the role 'effbdpattern_Allocation144' has cardinality 0..*.

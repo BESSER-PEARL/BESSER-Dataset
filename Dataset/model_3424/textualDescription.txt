@@ -1,0 +1,109 @@
+The domain model 'ecvi' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'ecvi_GroupLot' represents an important domain concept.
+It has the following attributes: 'quantity', which is of type str; 'species', which is of type str; 'unit', which is of type str; 'age', which is of type str; 'sexDetail', which is of type str; 'sex', which is of type str; 'breed', which is of type str; 'description', which is of type str.
+
+'ecvi_Accessions' represents an important domain concept.
+It does not declare any attributes.
+
+'ecvi_AnimalTag' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'number', which is of type str; 'brandImage', which is of type str.
+
+'ecvi_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'ecvi_Test' represents an important domain concept.
+It has the following attributes: 'idref', which is of type str; 'testCode', which is of type str.
+
+'ecvi_Accession' represents an important domain concept.
+It has the following attributes: 'infieldTest', which is of type str; 'id', which is of type str.
+
+'ecvi_Address' represents an important domain concept.
+It has the following attributes: 'line1', which is of type str; 'line2', which is of type str; 'state', which is of type str; 'country', which is of type str; 'zIP', which is of type str; 'county', which is of type str; 'town', which is of type str.
+
+'ecvi_ProgramStatus' represents an important domain concept.
+It has the following attributes: 'valueOther', which is of type str; 'value', which is of type str; 'name', which is of type str.
+
+'ecvi_Ecvi' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'group1', which is of type str; 'shipmentDate', which is of type str; 'cviNumber', which is of type str; 'speciesCode', which is of type str; 'expirationDate', which is of type str; 'issueDate', which is of type str; 'entryPermitNumber', which is of type str.
+
+'ecvi_Contact' represents an important domain concept.
+It has the following attributes: 'premId', which is of type str; 'premName', which is of type str.
+
+'ecvi_PhoneNum' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'number', which is of type str; 'comment', which is of type str.
+
+'ecvi_ResultValue' represents an important domain concept.
+It has the following attributes: 'resultFloat', which is of type str; 'resultInteger', which is of type str; 'resultString', which is of type str; 'resultName', which is of type str.
+
+'ecvi_MovementPurposes' represents an important domain concept.
+It has one attribute: 'movementPurpose', which is of type str.
+
+'ecvi_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ecvi_Attachement' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'filename', which is of type str; 'mimeType', which is of type str; 'payload', which is of type str; 'docType', which is of type str.
+
+'ecvi_Laboratory' represents an important domain concept.
+It has the following attributes: 'labName', which is of type str; 'premId', which is of type str; 'accessionNumber', which is of type str; 'accessionDate', which is of type str.
+
+'ecvi_Premises' represents an important domain concept.
+It has the following attributes: 'premName', which is of type str; 'premId', which is of type str.
+
+'ecvi_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'ecvi_Animal' represents an important domain concept.
+It has the following attributes: 'breed', which is of type str; 'sexDetail', which is of type str; 'age', which is of type str; 'sex', which is of type str; 'inspectionDate', which is of type str.
+
+'ecvi_Veterinarian' represents an important domain concept.
+It has the following attributes: 'licenseNumber', which is of type str; 'nationalAccreditationNumber', which is of type str; 'licenseIssueState', which is of type str.
+
+'ecvi_GeoPoint' represents an important domain concept.
+It has the following attributes: 'lng', which is of type str; 'lat', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SpeciesCode' defines the following possible values: 'CER', 'POR', 'UNK', 'EQU', 'CAP', 'OVI', 'BOV'.
+The enumeration 'ProgramStatusValue' defines the following possible values: 'Other', 'Free', 'ModifiedAdvancedAccredited', 'ModifiedAccredited'.
+The enumeration 'ISO3166Country' defines a single possible value: 'USA'.
+The enumeration 'PhoneDevice' defines the following possible values: 'Cellphone', 'Fax', 'Landline', 'Unknown'.
+The enumeration 'MovementPurpose' defines the following possible values: 'grazing', 'medicalTreatment', 'feeding', 'slaughter', 'training', 'rodeo', 'pet', 'other', 'race', 'breeding', 'sale', 'show'.
+The enumeration 'ProgramStatusName' defines the following possible values: 'BrucellosisState', 'BrucellosisHerd', 'BovineTuberculosis'.
+The enumeration 'DocType' defines the following possible values: 'PDFCVI', 'ScannedTestChart', 'ScannedPaperCVI', 'Other', 'PDFTestChart'.
+The enumeration 'UsState' defines the following possible values: 'TN', 'CA', 'MN', 'NC', 'MD', 'PW', 'NH', 'WY', 'SD', 'ID', 'AA', 'ND', 'MI', 'AS', 'AK', 'FM', 'MO', 'VA', 'VT', 'AZ', 'GA', 'NV', 'VI', 'AE', 'CO', 'UT', 'OH', 'NY', 'PA', 'CT', 'PR', 'LA', 'ME', 'MA', 'AL', 'OR', 'OK', 'KY', 'HI', 'NM', 'WV', 'MT', 'GU', 'AP', 'SC', 'WA', 'NE', 'WI', 'MP', 'KS', 'IL', 'DE', 'DC', 'NJ', 'FL', 'MS', 'AR', 'IN', 'MH', 'IA', 'TX', 'RI'.
+The enumeration 'ResultName' defines the following possible values: 'RESULT', 'COMMENT'.
+The enumeration 'TagType' defines the following possible values: 'NPIN', 'BT', 'OFORID', 'MGT', 'IMP', 'AIN', 'AMID', 'NUES9', 'NAME', 'UN', 'TAT', 'BRANDIMAGE', 'BRAND', 'NUES8', 'SGFLID', 'N840RFID', 'OTH'.
+The enumeration 'Sex' defines the following possible values: 'SpayedFemale', 'GenderUnknown', 'TrueHermaphrodite', 'Other', 'Male', 'NeuteredMale', 'Female'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ecvi_Accession' and 'ecvi_Laboratory'. From 'ecvi_Accession', the role 'ecvi_Accession' has cardinality 0..*, and from 'ecvi_Laboratory', the role 'ecvi_Laboratory' has cardinality 0..*.
+An association connects 'ecvi_Accession' and 'ecvi_Accessions'. From 'ecvi_Accession', the role 'ecvi_Accession2' has cardinality 0..*, and from 'ecvi_Accessions', the role 'ecvi_Accessions' has cardinality 0..*.
+An association connects 'ecvi_Address' and 'ecvi_GeoPoint'. From 'ecvi_Address', the role 'ecvi_Address' has cardinality 0..*, and from 'ecvi_GeoPoint', the role 'ecvi_GeoPoint' has cardinality 0..*.
+An association connects 'ecvi_Animal' and 'ecvi_AnimalTag'. From 'ecvi_Animal', the role 'ecvi_Animal' has cardinality 0..*, and from 'ecvi_AnimalTag', the role 'ecvi_AnimalTag' has cardinality 0..*.
+An association connects 'ecvi_Animal' and 'ecvi_Test'. From 'ecvi_Animal', the role 'ecvi_Animal6' has cardinality 0..*, and from 'ecvi_Test', the role 'ecvi_Test' has cardinality 0..*.
+An association connects 'ecvi_Address' and 'ecvi_Contact'. From 'ecvi_Address', the role 'ecvi_Address8' has cardinality 0..*, and from 'ecvi_Contact', the role 'ecvi_Contact' has cardinality 0..*.
+An association connects 'ecvi_Contact' and 'ecvi_Person'. From 'ecvi_Contact', the role 'ecvi_Contact10' has cardinality 0..*, and from 'ecvi_Person', the role 'ecvi_Person' has cardinality 0..*.
+An association connects 'ecvi_DocumentRoot' and 'ecvi_EStringToStringMapEntry'. From 'ecvi_DocumentRoot', the role 'ecvi_DocumentRoot' has cardinality 0..*, and from 'ecvi_EStringToStringMapEntry', the role 'ecvi_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'ecvi_EStringToStringMapEntry' and 'ecvi_DocumentRoot'. From 'ecvi_EStringToStringMapEntry', the role 'ecvi_EStringToStringMapEntry14' has cardinality 0..*, and from 'ecvi_DocumentRoot', the role 'ecvi_DocumentRoot13' has cardinality 0..*.
+An association connects 'ecvi_DocumentRoot' and 'ecvi_Ecvi'. From 'ecvi_DocumentRoot', the role 'ecvi_DocumentRoot16' has cardinality 0..*, and from 'ecvi_Ecvi', the role 'ecvi_Ecvi' has cardinality 0..*.
+An association connects 'ecvi_Ecvi' and 'ecvi_Veterinarian'. From 'ecvi_Ecvi', the role 'ecvi_Ecvi18' has cardinality 0..*, and from 'ecvi_Veterinarian', the role 'ecvi_Veterinarian' has cardinality 0..*.
+An association connects 'ecvi_Ecvi' and 'ecvi_MovementPurposes'. From 'ecvi_Ecvi', the role 'ecvi_Ecvi20' has cardinality 0..*, and from 'ecvi_MovementPurposes', the role 'ecvi_MovementPurposes' has cardinality 0..*.
+An association connects 'ecvi_Ecvi' and 'ecvi_Premises'. From 'ecvi_Ecvi', the role 'ecvi_Ecvi22' has cardinality 0..*, and from 'ecvi_Premises', the role 'ecvi_Premises' has cardinality 0..*.
+An association connects 'ecvi_Ecvi' and 'ecvi_Premises'. From 'ecvi_Ecvi', the role 'ecvi_Ecvi24' has cardinality 0..*, and from 'ecvi_Premises', the role 'ecvi_Premises25' has cardinality 0..*.
+An association connects 'ecvi_Contact' and 'ecvi_Ecvi'. From 'ecvi_Contact', the role 'ecvi_Contact28' has cardinality 0..*, and from 'ecvi_Ecvi', the role 'ecvi_Ecvi27' has cardinality 0..*.
+An association connects 'ecvi_Contact' and 'ecvi_Ecvi'. From 'ecvi_Contact', the role 'ecvi_Contact31' has cardinality 0..*, and from 'ecvi_Ecvi', the role 'ecvi_Ecvi30' has cardinality 0..*.
+An association connects 'ecvi_Ecvi' and 'ecvi_Accessions'. From 'ecvi_Ecvi', the role 'ecvi_Ecvi33' has cardinality 0..*, and from 'ecvi_Accessions', the role 'ecvi_Accessions34' has cardinality 0..*.
+An association connects 'ecvi_Animal' and 'ecvi_Ecvi'. From 'ecvi_Animal', the role 'ecvi_Animal37' has cardinality 0..*, and from 'ecvi_Ecvi', the role 'ecvi_Ecvi36' has cardinality 0..*.
+An association connects 'ecvi_GroupLot' and 'ecvi_Ecvi'. From 'ecvi_GroupLot', the role 'ecvi_GroupLot' has cardinality 0..*, and from 'ecvi_Ecvi', the role 'ecvi_Ecvi39' has cardinality 0..*.
+An association connects 'ecvi_Ecvi' and 'ecvi_Attachement'. From 'ecvi_Ecvi', the role 'ecvi_Ecvi41' has cardinality 0..*, and from 'ecvi_Attachement', the role 'ecvi_Attachement' has cardinality 0..*.
+An association connects 'ecvi_Laboratory' and 'ecvi_Address'. From 'ecvi_Laboratory', the role 'ecvi_Laboratory43' has cardinality 0..*, and from 'ecvi_Address', the role 'ecvi_Address44' has cardinality 0..*.
+An association connects 'ecvi_PhoneNum' and 'ecvi_Person'. From 'ecvi_PhoneNum', the role 'ecvi_PhoneNum' has cardinality 0..*, and from 'ecvi_Person', the role 'ecvi_Person46' has cardinality 0..*.
+An association connects 'ecvi_Address' and 'ecvi_Premises'. From 'ecvi_Address', the role 'ecvi_Address49' has cardinality 0..*, and from 'ecvi_Premises', the role 'ecvi_Premises48' has cardinality 0..*.
+An association connects 'ecvi_Premises' and 'ecvi_ProgramStatus'. From 'ecvi_Premises', the role 'ecvi_Premises51' has cardinality 0..*, and from 'ecvi_ProgramStatus', the role 'ecvi_ProgramStatus' has cardinality 0..*.
+An association connects 'ecvi_Premises' and 'ecvi_Person'. From 'ecvi_Premises', the role 'ecvi_Premises53' has cardinality 0..*, and from 'ecvi_Person', the role 'ecvi_Person54' has cardinality 0..*.
+An association connects 'ecvi_ResultValue' and 'ecvi_Test'. From 'ecvi_ResultValue', the role 'ecvi_ResultValue' has cardinality 0..*, and from 'ecvi_Test', the role 'ecvi_Test56' has cardinality 0..*.
+An association connects 'ecvi_Person' and 'ecvi_Veterinarian'. From 'ecvi_Person', the role 'ecvi_Person59' has cardinality 0..*, and from 'ecvi_Veterinarian', the role 'ecvi_Veterinarian58' has cardinality 0..*.
+An association connects 'ecvi_Veterinarian' and 'ecvi_Address'. From 'ecvi_Veterinarian', the role 'ecvi_Veterinarian61' has cardinality 0..*, and from 'ecvi_Address', the role 'ecvi_Address62' has cardinality 0..*.

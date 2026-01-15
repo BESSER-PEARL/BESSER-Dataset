@@ -1,0 +1,39 @@
+The domain model 'testup' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'E' represents an important domain concept.
+It does not declare any attributes.
+
+'testup_B' represents an important domain concept.
+It has one attribute: 'newAttribute', which is of type str.
+
+'AUp' represents an important domain concept.
+It does not declare any attributes.
+
+'testup_AUp' represents an important domain concept.
+It does not declare any attributes.
+
+'G' represents an important domain concept.
+It does not declare any attributes.
+
+'testup_E' represents an important domain concept.
+It has one attribute: 'newAttribute', which is of type str.
+
+'testup_D' represents an important domain concept.
+It has one attribute: 'newAttribute', which is of type str.
+
+'testup_G' represents an important domain concept.
+It does not declare any attributes.
+
+'testup_F' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'testup_E' is a specialization of 'AUp'.
+The class 'testup_F' is a specialization of 'E'.
+The class 'testup_F' is a specialization of 'G'.
+
+Relationships between classes are modeled using associations.
+An association connects 'testup_AUp' and 'testup_B'. From 'testup_AUp', the role 'testup_AUp' has cardinality 0..*, and from 'testup_B', the role 'testup_B' has cardinality 0..*.
+An association connects 'testup_AUp' and 'testup_D'. From 'testup_AUp', the role 'testup_AUp2' has cardinality 0..*, and from 'testup_D', the role 'testup_D' has cardinality 0..*.

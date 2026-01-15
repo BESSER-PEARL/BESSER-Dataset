@@ -1,0 +1,111 @@
+The domain model 'prolog' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'prolog_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'prolog_Tail' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_Part' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_Predicate' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'prolog_Power' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_PrologProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_Clause' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_Conjunction' represents an important domain concept.
+It does not declare any attributes.
+
+'Term' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_Negation' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'prolog_Numeral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'prolog_Term' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_String' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'prolog_Additive' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'prolog_BracketExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_List' represents an important domain concept.
+It does not declare any attributes.
+
+'Part' represents an important domain concept.
+It does not declare any attributes.
+
+'Tail' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_Multiplicative' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'prolog_VariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_AnonymousVariable' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ADDITIVE_OPERATOR' defines the following possible values: 'minus', 'plus'.
+The enumeration 'MULTIPLICATIVE_OPERATOR' defines the following possible values: 'mult', 'div'.
+
+The model also captures inheritance relationships between classes.
+The class 'prolog_Numeral' is a specialization of 'Term'.
+The class 'prolog_Variable' is a specialization of 'Term'.
+The class 'prolog_Variable' is a specialization of 'Tail'.
+The class 'prolog_String' is a specialization of 'Term'.
+The class 'prolog_List' is a specialization of 'Term'.
+The class 'prolog_List' is a specialization of 'Tail'.
+The class 'prolog_Predicate' is a specialization of 'Part'.
+The class 'prolog_Predicate' is a specialization of 'Term'.
+The class 'prolog_VariableReference' is a specialization of 'Term'.
+The class 'prolog_AnonymousVariable' is a specialization of 'Term'.
+The class 'prolog_Assignment' is a specialization of 'Part'.
+The class 'prolog_Additive' is a specialization of 'Term'.
+The class 'prolog_Multiplicative' is a specialization of 'Term'.
+The class 'prolog_Power' is a specialization of 'Term'.
+The class 'prolog_Negation' is a specialization of 'Term'.
+The class 'prolog_BracketExpression' is a specialization of 'Term'.
+
+Relationships between classes are modeled using associations.
+An association connects 'prolog_Clause' and 'prolog_PrologProgram'. From 'prolog_Clause', the role 'prolog_Clause' has cardinality 0..*, and from 'prolog_PrologProgram', the role 'prolog_PrologProgram' has cardinality 0..*.
+An association connects 'prolog_Clause' and 'prolog_Predicate'. From 'prolog_Clause', the role 'prolog_Clause2' has cardinality 0..*, and from 'prolog_Predicate', the role 'prolog_Predicate' has cardinality 0..*.
+An association connects 'prolog_Clause' and 'prolog_Conjunction'. From 'prolog_Clause', the role 'prolog_Clause4' has cardinality 0..*, and from 'prolog_Conjunction', the role 'prolog_Conjunction' has cardinality 0..*.
+An association connects 'prolog_List' and 'prolog_Term'. From 'prolog_List', the role 'prolog_List' has cardinality 0..*, and from 'prolog_Term', the role 'prolog_Term' has cardinality 0..*.
+An association connects 'prolog_Tail' and 'prolog_List'. From 'prolog_Tail', the role 'prolog_Tail' has cardinality 0..*, and from 'prolog_List', the role 'prolog_List7' has cardinality 0..*.
+An association connects 'prolog_Term' and 'prolog_Predicate'. From 'prolog_Term', the role 'prolog_Term10' has cardinality 0..*, and from 'prolog_Predicate', the role 'prolog_Predicate9' has cardinality 0..*.
+An association connects 'prolog_VariableReference' and 'prolog_Variable'. From 'prolog_VariableReference', the role 'prolog_VariableReference' has cardinality 0..*, and from 'prolog_Variable', the role 'prolog_Variable' has cardinality 0..*.
+An association connects 'prolog_Assignment' and 'prolog_VariableReference'. From 'prolog_Assignment', the role 'prolog_Assignment' has cardinality 0..*, and from 'prolog_VariableReference', the role 'prolog_VariableReference13' has cardinality 0..*.
+An association connects 'prolog_Term' and 'prolog_Assignment'. From 'prolog_Term', the role 'prolog_Term16' has cardinality 0..*, and from 'prolog_Assignment', the role 'prolog_Assignment15' has cardinality 0..*.
+An association connects 'prolog_Conjunction' and 'prolog_Part'. From 'prolog_Conjunction', the role 'prolog_Conjunction18' has cardinality 0..*, and from 'prolog_Part', the role 'prolog_Part' has cardinality 0..*.
+An association connects 'prolog_Additive' and 'prolog_Term'. From 'prolog_Additive', the role 'prolog_Additive' has cardinality 0..*, and from 'prolog_Term', the role 'prolog_Term20' has cardinality 0..*.
+An association connects 'prolog_Term' and 'prolog_Additive'. From 'prolog_Term', the role 'prolog_Term23' has cardinality 0..*, and from 'prolog_Additive', the role 'prolog_Additive22' has cardinality 0..*.
+An association connects 'prolog_Term' and 'prolog_Multiplicative'. From 'prolog_Term', the role 'prolog_Term25' has cardinality 0..*, and from 'prolog_Multiplicative', the role 'prolog_Multiplicative' has cardinality 0..*.
+An association connects 'prolog_Multiplicative' and 'prolog_Term'. From 'prolog_Multiplicative', the role 'prolog_Multiplicative27' has cardinality 0..*, and from 'prolog_Term', the role 'prolog_Term28' has cardinality 0..*.
+An association connects 'prolog_Term' and 'prolog_Power'. From 'prolog_Term', the role 'prolog_Term30' has cardinality 0..*, and from 'prolog_Power', the role 'prolog_Power' has cardinality 0..*.
+An association connects 'prolog_Term' and 'prolog_Power'. From 'prolog_Term', the role 'prolog_Term33' has cardinality 0..*, and from 'prolog_Power', the role 'prolog_Power32' has cardinality 0..*.
+An association connects 'prolog_Negation' and 'prolog_Term'. From 'prolog_Negation', the role 'prolog_Negation' has cardinality 0..*, and from 'prolog_Term', the role 'prolog_Term35' has cardinality 0..*.
+An association connects 'prolog_BracketExpression' and 'prolog_Term'. From 'prolog_BracketExpression', the role 'prolog_BracketExpression' has cardinality 0..*, and from 'prolog_Term', the role 'prolog_Term37' has cardinality 0..*.

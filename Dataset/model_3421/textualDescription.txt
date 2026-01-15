@@ -1,0 +1,15 @@
+The domain model 'location' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'location_Location' represents an important domain concept.
+It has the following attributes: 'state', which is of type str; 'postalCode', which is of type str; 'city', which is of type str; 'phoneNumber', which is of type str; 'description', which is of type str; 'altitudeMode', which is of type str; 'street', which is of type str; 'longitude', which is of type float; 'comments', which is of type str; 'altitude', which is of type float; 'latitude', which is of type float; 'name', which is of type str; 'country', which is of type str.
+
+'location_Area' represents an important domain concept.
+It has the following attributes: 'boundary', which is of type str; 'comments', which is of type str; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AltitudeMode' defines the following possible values: 'clampToGround', 'relativeToGround', 'absolute'.
+
+Relationships between classes are modeled using associations.
+An association connects 'location_Location' and 'location_Area'. From 'location_Location', the role 'location_Location' has cardinality 0..*, and from 'location_Area', the role 'location_Area' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/chris-walker/archi/plugins/com.archimatetool.model_4.6.0.201911111111/model/archimate.ecore

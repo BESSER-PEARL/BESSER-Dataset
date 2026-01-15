@@ -1,0 +1,241 @@
+The domain model 'SOS' describes the core structural elements and their relationships within the system.
+
+The model defines 55 main class(es).
+
+'SOS_AlgebraicCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_set_ForAllIn' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_Conclusion' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_set_SetOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_set_SetMembership' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_adtmm_AbstractEquation' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_set_ExistsIn' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_adtmm_ADT' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SortDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_set_ModelRelation' represents an important domain concept.
+It has one attribute: 'referenceName', which is of type str.
+
+'AbstractOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_adtmm_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SOS_adtmm_VariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_set_SetConstructor' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_TypeJudment' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_adtmm_SortDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SOS_Semantics' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'set_SOS_AlgebraicConditionList' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_adtmm_CTerm' represents an important domain concept.
+It has one attribute: 'iter', which is of type int.
+
+'Term' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_adtmm_AtomicSort' represents an important domain concept.
+It does not declare any attributes.
+
+'Equation' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_set_ModelSort' represents an important domain concept.
+It has the following attributes: 'packageName', which is of type str; 'className', which is of type str.
+
+'SetOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_adtmm_Equation' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_adtmm_AbstractOperation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ADT' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_adtmm_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_set_ModelClassAttribute' represents an important domain concept.
+It has one attribute: 'attributeName', which is of type str.
+
+'SOS_set_Set' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_adtmm_CondEquation' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractEquation' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_PremisseList' represents an important domain concept.
+It does not declare any attributes.
+
+'SetTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'SetMembership' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_adtmm_Inequation' represents an important domain concept.
+It does not declare any attributes.
+
+'Sort' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_set_ModelSet' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_set_Union' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_set_Excluding' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_set_Intersection' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_adtmm_Sort' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_set_SetTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_adtmm_AbstractGenericOp' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_AlgebraicConditionList' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_adtmm_AbstractSort' represents an important domain concept.
+It does not declare any attributes.
+
+'CondEquation' represents an important domain concept.
+It does not declare any attributes.
+
+'SOS_adtmm_Term' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'SOS_Transition' is a specialization of 'Condition'.
+The class 'SOS_TypeJudment' is a specialization of 'Condition'.
+The class 'SOS_AlgebraicCondition' is a specialization of 'Condition'.
+The class 'SOS_adtmm_Operation' is a specialization of 'AbstractOperation'.
+The class 'SOS_adtmm_VariableRef' is a specialization of 'Term'.
+The class 'SOS_adtmm_CTerm' is a specialization of 'Term'.
+The class 'SOS_adtmm_Equation' is a specialization of 'AbstractEquation'.
+The class 'SOS_adtmm_Inequation' is a specialization of 'AbstractEquation'.
+The class 'SOS_adtmm_AtomicSort' is a specialization of 'Sort'.
+The class 'SOS_adtmm_AbstractGenericOp' is a specialization of 'AbstractOperation'.
+The class 'SOS_set_ModelSort' is a specialization of 'Sort'.
+The class 'SOS_set_SetMembership' is a specialization of 'SetTerm'.
+The class 'SOS_set_SetTerm' is a specialization of 'Term'.
+The class 'SOS_set_ModelSet' is a specialization of 'SetTerm'.
+The class 'SOS_set_SetOperator' is a specialization of 'SetTerm'.
+The class 'SOS_set_SetConstructor' is a specialization of 'SetTerm'.
+The class 'SOS_set_Union' is a specialization of 'SetOperator'.
+The class 'SOS_set_Excluding' is a specialization of 'SetOperator'.
+The class 'SOS_set_Intersection' is a specialization of 'SetOperator'.
+The class 'SOS_set_ModelRelation' is a specialization of 'Term'.
+The class 'SOS_set_ModelClassAttribute' is a specialization of 'Term'.
+The class 'SOS_set_Set' is a specialization of 'Sort'.
+The class 'SOS_set_ExistsIn' is a specialization of 'SetMembership'.
+The class 'SOS_set_ForAllIn' is a specialization of 'SetMembership'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SOS_Rule' and 'SOS_Semantics'. From 'SOS_Rule', the role 'SOS_Rule' has cardinality 0..*, and from 'SOS_Semantics', the role 'SOS_Semantics' has cardinality 0..*.
+An association connects 'ADT' and 'SOS_Semantics'. From 'ADT', the role 'ADT' has cardinality 0..*, and from 'SOS_Semantics', the role 'SOS_Semantics2' has cardinality 0..*.
+An association connects 'SOS_PremisseList' and 'SOS_Rule'. From 'SOS_PremisseList', the role 'SOS_PremisseList' has cardinality 0..*, and from 'SOS_Rule', the role 'SOS_Rule4' has cardinality 0..*.
+An association connects 'SOS_Conclusion' and 'SOS_Rule'. From 'SOS_Conclusion', the role 'SOS_Conclusion' has cardinality 0..*, and from 'SOS_Rule', the role 'SOS_Rule6' has cardinality 0..*.
+An association connects 'Variable' and 'SOS_Rule'. From 'Variable', the role 'Variable' has cardinality 0..*, and from 'SOS_Rule', the role 'SOS_Rule8' has cardinality 0..*.
+An association connects 'SOS_PremisseList' and 'SOS_Condition'. From 'SOS_PremisseList', the role 'SOS_PremisseList10' has cardinality 0..*, and from 'SOS_Condition', the role 'SOS_Condition' has cardinality 0..*.
+An association connects 'SOS_PremisseList' and 'SOS_PremisseList'. From 'SOS_PremisseList', the role 'SOS_PremisseList11' has cardinality 0..*, and from 'SOS_PremisseList', the role 'SOS_PremisseList13' has cardinality 0..*.
+An association connects 'SOS_Transition' and 'SOS_Conclusion'. From 'SOS_Transition', the role 'SOS_Transition' has cardinality 0..*, and from 'SOS_Conclusion', the role 'SOS_Conclusion15' has cardinality 0..*.
+An association connects 'SOS_Transition' and 'Term'. From 'SOS_Transition', the role 'SOS_Transition17' has cardinality 0..*, and from 'Term', the role 'Term' has cardinality 0..*.
+An association connects 'SOS_Transition' and 'Term'. From 'SOS_Transition', the role 'SOS_Transition19' has cardinality 0..*, and from 'Term', the role 'Term20' has cardinality 0..*.
+An association connects 'Term' and 'SOS_Transition'. From 'Term', the role 'Term23' has cardinality 0..*, and from 'SOS_Transition', the role 'SOS_Transition22' has cardinality 0..*.
+An association connects 'SOS_Transition' and 'Term'. From 'SOS_Transition', the role 'SOS_Transition25' has cardinality 0..*, and from 'Term', the role 'Term26' has cardinality 0..*.
+An association connects 'SOS_TypeJudment' and 'Term'. From 'SOS_TypeJudment', the role 'SOS_TypeJudment' has cardinality 0..*, and from 'Term', the role 'Term28' has cardinality 0..*.
+An association connects 'Term' and 'SOS_TypeJudment'. From 'Term', the role 'Term31' has cardinality 0..*, and from 'SOS_TypeJudment', the role 'SOS_TypeJudment30' has cardinality 0..*.
+An association connects 'SOS_TypeJudment' and 'Term'. From 'SOS_TypeJudment', the role 'SOS_TypeJudment33' has cardinality 0..*, and from 'Term', the role 'Term34' has cardinality 0..*.
+An association connects 'AbstractEquation' and 'SOS_AlgebraicCondition'. From 'AbstractEquation', the role 'AbstractEquation' has cardinality 0..*, and from 'SOS_AlgebraicCondition', the role 'SOS_AlgebraicCondition' has cardinality 0..*.
+An association connects 'SOS_AlgebraicConditionList' and 'SOS_AlgebraicCondition'. From 'SOS_AlgebraicConditionList', the role 'SOS_AlgebraicConditionList' has cardinality 0..*, and from 'SOS_AlgebraicCondition', the role 'SOS_AlgebraicCondition37' has cardinality 0..*.
+An association connects 'SOS_AlgebraicConditionList' and 'SOS_AlgebraicConditionList'. From 'SOS_AlgebraicConditionList', the role 'SOS_AlgebraicConditionList38' has cardinality 0..*, and from 'SOS_AlgebraicConditionList', the role 'SOS_AlgebraicConditionList40' has cardinality 0..*.
+An association connects 'SOS_adtmm_ADT' and 'SortDeclaration'. From 'SOS_adtmm_ADT', the role 'SOS_adtmm_ADT' has cardinality 0..*, and from 'SortDeclaration', the role 'SortDeclaration' has cardinality 0..*.
+An association connects 'Operation' and 'SOS_adtmm_ADT'. From 'Operation', the role 'Operation' has cardinality 0..*, and from 'SOS_adtmm_ADT', the role 'SOS_adtmm_ADT43' has cardinality 0..*.
+An association connects 'Operation' and 'SOS_adtmm_ADT'. From 'Operation', the role 'Operation46' has cardinality 0..*, and from 'SOS_adtmm_ADT', the role 'SOS_adtmm_ADT45' has cardinality 0..*.
+An association connects 'SOS_adtmm_ADT' and 'Variable'. From 'SOS_adtmm_ADT', the role 'SOS_adtmm_ADT48' has cardinality 0..*, and from 'Variable', the role 'Variable49' has cardinality 0..*.
+An association connects 'SOS_adtmm_ADT' and 'CondEquation'. From 'SOS_adtmm_ADT', the role 'SOS_adtmm_ADT51' has cardinality 0..*, and from 'CondEquation', the role 'CondEquation' has cardinality 0..*.
+An association connects 'SOS_adtmm_Operation' and 'Sort'. From 'SOS_adtmm_Operation', the role 'SOS_adtmm_Operation' has cardinality 0..*, and from 'Sort', the role 'Sort' has cardinality 0..*.
+An association connects 'SOS_adtmm_Operation' and 'Sort'. From 'SOS_adtmm_Operation', the role 'SOS_adtmm_Operation54' has cardinality 0..*, and from 'Sort', the role 'Sort55' has cardinality 0..*.
+An association connects 'SOS_adtmm_Variable' and 'Sort'. From 'SOS_adtmm_Variable', the role 'SOS_adtmm_Variable' has cardinality 0..*, and from 'Sort', the role 'Sort57' has cardinality 0..*.
+An association connects 'SOS_adtmm_CondEquation' and 'AbstractEquation'. From 'SOS_adtmm_CondEquation', the role 'SOS_adtmm_CondEquation' has cardinality 0..*, and from 'AbstractEquation', the role 'AbstractEquation59' has cardinality 0..*.
+An association connects 'SOS_adtmm_CondEquation' and 'Equation'. From 'SOS_adtmm_CondEquation', the role 'SOS_adtmm_CondEquation61' has cardinality 0..*, and from 'Equation', the role 'Equation' has cardinality 0..*.
+An association connects 'Variable' and 'SOS_adtmm_VariableRef'. From 'Variable', the role 'Variable63' has cardinality 0..*, and from 'SOS_adtmm_VariableRef', the role 'SOS_adtmm_VariableRef' has cardinality 0..*.
+An association connects 'SOS_adtmm_CTerm' and 'Term'. From 'SOS_adtmm_CTerm', the role 'SOS_adtmm_CTerm' has cardinality 0..*, and from 'Term', the role 'Term65' has cardinality 0..*.
+An association connects 'SOS_adtmm_CTerm' and 'Operation'. From 'SOS_adtmm_CTerm', the role 'SOS_adtmm_CTerm67' has cardinality 0..*, and from 'Operation', the role 'Operation68' has cardinality 0..*.
+An association connects 'SOS_adtmm_CTerm' and 'Term'. From 'SOS_adtmm_CTerm', the role 'SOS_adtmm_CTerm70' has cardinality 0..*, and from 'Term', the role 'Term71' has cardinality 0..*.
+An association connects 'SOS_adtmm_AbstractEquation' and 'Term'. From 'SOS_adtmm_AbstractEquation', the role 'SOS_adtmm_AbstractEquation' has cardinality 0..*, and from 'Term', the role 'Term73' has cardinality 0..*.
+An association connects 'SOS_adtmm_AbstractEquation' and 'Term'. From 'SOS_adtmm_AbstractEquation', the role 'SOS_adtmm_AbstractEquation75' has cardinality 0..*, and from 'Term', the role 'Term76' has cardinality 0..*.
+An association connects 'SOS_adtmm_AtomicSort' and 'SortDeclaration'. From 'SOS_adtmm_AtomicSort', the role 'SOS_adtmm_AtomicSort' has cardinality 0..*, and from 'SortDeclaration', the role 'SortDeclaration78' has cardinality 0..*.
+An association connects 'Term' and 'SOS_set_SetMembership'. From 'Term', the role 'Term80' has cardinality 0..*, and from 'SOS_set_SetMembership', the role 'SOS_set_SetMembership' has cardinality 0..*.
+An association connects 'SOS_set_SetMembership' and 'Term'. From 'SOS_set_SetMembership', the role 'SOS_set_SetMembership82' has cardinality 0..*, and from 'Term', the role 'Term83' has cardinality 0..*.
+An association connects 'Term' and 'SOS_set_SetOperator'. From 'Term', the role 'Term85' has cardinality 0..*, and from 'SOS_set_SetOperator', the role 'SOS_set_SetOperator' has cardinality 0..*.
+An association connects 'SOS_set_SetOperator' and 'Term'. From 'SOS_set_SetOperator', the role 'SOS_set_SetOperator87' has cardinality 0..*, and from 'Term', the role 'Term88' has cardinality 0..*.
+An association connects 'set_SOS_AlgebraicConditionList' and 'SOS_set_SetConstructor'. From 'set_SOS_AlgebraicConditionList', the role 'set_SOS_AlgebraicConditionList' has cardinality 0..*, and from 'SOS_set_SetConstructor', the role 'SOS_set_SetConstructor' has cardinality 0..*.
+An association connects 'SOS_set_SetConstructor' and 'Term'. From 'SOS_set_SetConstructor', the role 'SOS_set_SetConstructor91' has cardinality 0..*, and from 'Term', the role 'Term92' has cardinality 0..*.
+An association connects 'VariableRef' and 'SOS_set_ModelRelation'. From 'VariableRef', the role 'VariableRef' has cardinality 0..*, and from 'SOS_set_ModelRelation', the role 'SOS_set_ModelRelation' has cardinality 0..*.
+An association connects 'VariableRef' and 'SOS_set_ModelRelation'. From 'VariableRef', the role 'VariableRef96' has cardinality 0..*, and from 'SOS_set_ModelRelation', the role 'SOS_set_ModelRelation95' has cardinality 0..*.
+An association connects 'VariableRef' and 'SOS_set_ModelClassAttribute'. From 'VariableRef', the role 'VariableRef98' has cardinality 0..*, and from 'SOS_set_ModelClassAttribute', the role 'SOS_set_ModelClassAttribute' has cardinality 0..*.
+An association connects 'Sort' and 'SOS_set_Set'. From 'Sort', the role 'Sort100' has cardinality 0..*, and from 'SOS_set_Set', the role 'SOS_set_Set' has cardinality 0..*.

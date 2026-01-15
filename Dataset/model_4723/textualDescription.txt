@@ -1,0 +1,162 @@
+The domain model 'basic' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'basic_TElementWithId' represents an important domain concept.
+It has one attribute: 'ID', which is of type int.
+
+'basic_TAnnotationType' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_TSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'TMember' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_TMethod' represents an important domain concept.
+It has one attribute: 'tName', which is of type str.
+
+'basic_TAnnotatable' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_TAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_TClass' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_TMethodDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_TFieldDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TAnnotatable' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_TFieldSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_TMethodSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_TField' represents an important domain concept.
+It has one attribute: 'tName', which is of type str.
+
+'basic_TParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_TAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_TypeGraph' represents an important domain concept.
+It has one attribute: 'tName', which is of type str.
+
+'basic_TInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_TAbstractType' represents an important domain concept.
+It has the following attributes: 'tName', which is of type str; 'tLib', which is of type bool.
+
+'TSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_TParameterList' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_TMember' represents an important domain concept.
+It does not declare any attributes.
+
+'TAbstractType' represents an important domain concept.
+It does not declare any attributes.
+
+'TElementWithId' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_TPackage' represents an important domain concept.
+It has one attribute: 'tName', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'basic_TAccess' is a specialization of 'TElementWithId'.
+The class 'basic_TAnnotation' is a specialization of 'TElementWithId'.
+The class 'basic_TClass' is a specialization of 'TAbstractType'.
+The class 'basic_TField' is a specialization of 'TElementWithId'.
+The class 'basic_TFieldDefinition' is a specialization of 'TMember'.
+The class 'basic_TFieldSignature' is a specialization of 'TSignature'.
+The class 'basic_TMember' is a specialization of 'TElementWithId'.
+The class 'basic_TMember' is a specialization of 'TAnnotatable'.
+The class 'basic_TMethod' is a specialization of 'TElementWithId'.
+The class 'basic_TMethodDefinition' is a specialization of 'TMember'.
+The class 'basic_TMethodSignature' is a specialization of 'TSignature'.
+The class 'basic_TPackage' is a specialization of 'TAnnotatable'.
+The class 'basic_TPackage' is a specialization of 'TElementWithId'.
+The class 'basic_TParameter' is a specialization of 'TElementWithId'.
+The class 'basic_TParameterList' is a specialization of 'TElementWithId'.
+The class 'basic_TSignature' is a specialization of 'TAnnotatable'.
+The class 'basic_TSignature' is a specialization of 'TElementWithId'.
+The class 'basic_TypeGraph' is a specialization of 'TElementWithId'.
+The class 'basic_TInterface' is a specialization of 'TAbstractType'.
+The class 'basic_TAbstractType' is a specialization of 'TElementWithId'.
+The class 'basic_TAbstractType' is a specialization of 'TAnnotatable'.
+The class 'basic_TAnnotationType' is a specialization of 'TAbstractType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'basic_TMember' and 'basic_TAccess'. From 'basic_TMember', the role '1' has cardinality 0..*, and from 'basic_TAccess', the role 'unnamed role' has cardinality 0..*.
+An association connects 'basic_TAccess' and 'basic_TMember'. From 'basic_TAccess', the role '3' has cardinality 0..*, and from 'basic_TMember', the role '4' has cardinality 0..*.
+An association connects 'basic_TAnnotatable' and 'basic_TAnnotation'. From 'basic_TAnnotatable', the role '6' has cardinality 0..*, and from 'basic_TAnnotation', the role '7' has cardinality 0..*.
+An association connects 'basic_TAnnotation' and 'basic_TAnnotatable'. From 'basic_TAnnotation', the role '9' has cardinality 0..*, and from 'basic_TAnnotatable', the role '10' has cardinality 0..*.
+An association connects 'basic_TAnnotation' and 'basic_TAnnotationType'. From 'basic_TAnnotation', the role '12' has cardinality 0..*, and from 'basic_TAnnotationType', the role '13' has cardinality 0..*.
+An association connects 'basic_TClass' and 'basic_TClass'. From 'basic_TClass', the role '16' has cardinality 0..*, and from 'basic_TClass', the role '17' has cardinality 0..*.
+An association connects 'basic_TClass' and 'basic_TClass'. From 'basic_TClass', the role '21' has cardinality 0..*, and from 'basic_TClass', the role '20' has cardinality 0..*.
+An association connects 'basic_TInterface' and 'basic_TClass'. From 'basic_TInterface', the role '24' has cardinality 0..*, and from 'basic_TClass', the role '23' has cardinality 0..*.
+An association connects 'basic_TField' and 'basic_TFieldSignature'. From 'basic_TField', the role '26' has cardinality 0..*, and from 'basic_TFieldSignature', the role '27' has cardinality 0..*.
+An association connects 'basic_TypeGraph' and 'basic_TField'. From 'basic_TypeGraph', the role '30' has cardinality 0..*, and from 'basic_TField', the role '29' has cardinality 0..*.
+An association connects 'basic_TFieldDefinition' and 'basic_TFieldSignature'. From 'basic_TFieldDefinition', the role '32' has cardinality 0..*, and from 'basic_TFieldSignature', the role '33' has cardinality 0..*.
+An association connects 'basic_TFieldDefinition' and 'basic_TFieldDefinition'. From 'basic_TFieldDefinition', the role '37' has cardinality 0..*, and from 'basic_TFieldDefinition', the role '36' has cardinality 0..*.
+An association connects 'basic_TFieldDefinition' and 'basic_TFieldDefinition'. From 'basic_TFieldDefinition', the role '41' has cardinality 0..*, and from 'basic_TFieldDefinition', the role '40' has cardinality 0..*.
+An association connects 'basic_TFieldDefinition' and 'basic_TFieldSignature'. From 'basic_TFieldDefinition', the role '44' has cardinality 0..*, and from 'basic_TFieldSignature', the role '43' has cardinality 0..*.
+An association connects 'basic_TField' and 'basic_TFieldSignature'. From 'basic_TField', the role '47' has cardinality 0..*, and from 'basic_TFieldSignature', the role '46' has cardinality 0..*.
+An association connects 'basic_TFieldSignature' and 'basic_TAbstractType'. From 'basic_TFieldSignature', the role 'basic_TFieldSignature' has cardinality 0..*, and from 'basic_TAbstractType', the role 'basic_TAbstractType' has cardinality 0..*.
+An association connects 'basic_TMember' and 'basic_TAbstractType'. From 'basic_TMember', the role '50' has cardinality 0..*, and from 'basic_TAbstractType', the role '51' has cardinality 0..*.
+An association connects 'basic_TMember' and 'basic_TAccess'. From 'basic_TMember', the role '53' has cardinality 0..*, and from 'basic_TAccess', the role '54' has cardinality 0..*.
+An association connects 'basic_TAccess' and 'basic_TMember'. From 'basic_TAccess', the role '57' has cardinality 0..*, and from 'basic_TMember', the role '56' has cardinality 0..*.
+An association connects 'basic_TypeGraph' and 'basic_TMethod'. From 'basic_TypeGraph', the role '60' has cardinality 0..*, and from 'basic_TMethod', the role '59' has cardinality 0..*.
+An association connects 'basic_TMethod' and 'basic_TMethodSignature'. From 'basic_TMethod', the role '62' has cardinality 0..*, and from 'basic_TMethodSignature', the role '63' has cardinality 0..*.
+An association connects 'basic_TMethodSignature' and 'basic_TMethodDefinition'. From 'basic_TMethodSignature', the role '66' has cardinality 0..*, and from 'basic_TMethodDefinition', the role '65' has cardinality 0..*.
+An association connects 'basic_TMethodDefinition' and 'basic_TMethodDefinition'. From 'basic_TMethodDefinition', the role '69' has cardinality 0..*, and from 'basic_TMethodDefinition', the role '70' has cardinality 0..*.
+An association connects 'basic_TMethodDefinition' and 'basic_TMethodDefinition'. From 'basic_TMethodDefinition', the role '74' has cardinality 0..*, and from 'basic_TMethodDefinition', the role '73' has cardinality 0..*.
+An association connects 'basic_TMethodDefinition' and 'basic_TMethodDefinition'. From 'basic_TMethodDefinition', the role '77' has cardinality 0..*, and from 'basic_TMethodDefinition', the role '78' has cardinality 0..*.
+An association connects 'basic_TMethodDefinition' and 'basic_TMethodDefinition'. From 'basic_TMethodDefinition', the role '81' has cardinality 0..*, and from 'basic_TMethodDefinition', the role '82' has cardinality 0..*.
+An association connects 'basic_TMethodDefinition' and 'basic_TAbstractType'. From 'basic_TMethodDefinition', the role 'basic_TMethodDefinition' has cardinality 0..*, and from 'basic_TAbstractType', the role 'basic_TAbstractType84' has cardinality 0..*.
+An association connects 'basic_TMethodSignature' and 'basic_TMethod'. From 'basic_TMethodSignature', the role '86' has cardinality 0..*, and from 'basic_TMethod', the role '87' has cardinality 0..*.
+An association connects 'basic_TParameterList' and 'basic_TMethodSignature'. From 'basic_TParameterList', the role 'basic_TParameterList' has cardinality 0..*, and from 'basic_TMethodSignature', the role 'basic_TMethodSignature' has cardinality 0..*.
+An association connects 'basic_TMethodDefinition' and 'basic_TMethodSignature'. From 'basic_TMethodDefinition', the role '91' has cardinality 0..*, and from 'basic_TMethodSignature', the role '90' has cardinality 0..*.
+An association connects 'basic_TAbstractType' and 'basic_TMethodSignature'. From 'basic_TAbstractType', the role 'basic_TAbstractType94' has cardinality 0..*, and from 'basic_TMethodSignature', the role 'basic_TMethodSignature93' has cardinality 0..*.
+An association connects 'basic_TPackage' and 'basic_TypeGraph'. From 'basic_TPackage', the role '96' has cardinality 0..*, and from 'basic_TypeGraph', the role '97' has cardinality 0..*.
+An association connects 'basic_TPackage' and 'basic_TPackage'. From 'basic_TPackage', the role '100' has cardinality 0..*, and from 'basic_TPackage', the role '101' has cardinality 0..*.
+An association connects 'basic_TPackage' and 'basic_TPackage'. From 'basic_TPackage', the role '105' has cardinality 0..*, and from 'basic_TPackage', the role '104' has cardinality 0..*.
+An association connects 'basic_TClass' and 'basic_TPackage'. From 'basic_TClass', the role 'basic_TClass' has cardinality 0..*, and from 'basic_TPackage', the role 'basic_TPackage' has cardinality 0..*.
+An association connects 'basic_TPackage' and 'basic_TInterface'. From 'basic_TPackage', the role 'basic_TPackage108' has cardinality 0..*, and from 'basic_TInterface', the role 'basic_TInterface' has cardinality 0..*.
+An association connects 'basic_TAbstractType' and 'basic_TPackage'. From 'basic_TAbstractType', the role '111' has cardinality 0..*, and from 'basic_TPackage', the role '110' has cardinality 0..*.
+An association connects 'basic_TypeGraph' and 'basic_TPackage'. From 'basic_TypeGraph', the role 'basic_TypeGraph' has cardinality 0..*, and from 'basic_TPackage', the role 'basic_TPackage113' has cardinality 0..*.
+An association connects 'basic_TParameter' and 'basic_TParameter'. From 'basic_TParameter', the role '116' has cardinality 0..*, and from 'basic_TParameter', the role '117' has cardinality 0..*.
+An association connects 'basic_TParameter' and 'basic_TParameter'. From 'basic_TParameter', the role '120' has cardinality 0..*, and from 'basic_TParameter', the role '121' has cardinality 0..*.
+An association connects 'basic_TAbstractType' and 'basic_TParameter'. From 'basic_TAbstractType', the role 'basic_TAbstractType123' has cardinality 0..*, and from 'basic_TParameter', the role 'basic_TParameter' has cardinality 0..*.
+An association connects 'basic_TParameter' and 'basic_TParameterList'. From 'basic_TParameter', the role 'basic_TParameter126' has cardinality 0..*, and from 'basic_TParameterList', the role 'basic_TParameterList125' has cardinality 0..*.
+An association connects 'basic_TParameterList' and 'basic_TParameter'. From 'basic_TParameterList', the role 'basic_TParameterList128' has cardinality 0..*, and from 'basic_TParameter', the role 'basic_TParameter129' has cardinality 0..*.
+An association connects 'basic_TypeGraph' and 'basic_TPackage'. From 'basic_TypeGraph', the role '131' has cardinality 0..*, and from 'basic_TPackage', the role '132' has cardinality 0..*.
+An association connects 'basic_TMethod' and 'basic_TypeGraph'. From 'basic_TMethod', the role '135' has cardinality 0..*, and from 'basic_TypeGraph', the role '134' has cardinality 0..*.
+An association connects 'basic_TypeGraph' and 'basic_TField'. From 'basic_TypeGraph', the role '137' has cardinality 0..*, and from 'basic_TField', the role '138' has cardinality 0..*.
+An association connects 'basic_TypeGraph' and 'basic_TClass'. From 'basic_TypeGraph', the role 'basic_TypeGraph140' has cardinality 0..*, and from 'basic_TClass', the role 'basic_TClass141' has cardinality 0..*.
+An association connects 'basic_TypeGraph' and 'basic_TInterface'. From 'basic_TypeGraph', the role 'basic_TypeGraph143' has cardinality 0..*, and from 'basic_TInterface', the role 'basic_TInterface144' has cardinality 0..*.
+An association connects 'basic_TAbstractType' and 'basic_TypeGraph'. From 'basic_TAbstractType', the role '147' has cardinality 0..*, and from 'basic_TypeGraph', the role '146' has cardinality 0..*.
+An association connects 'basic_TAnnotationType' and 'basic_TypeGraph'. From 'basic_TAnnotationType', the role 'basic_TAnnotationType' has cardinality 0..*, and from 'basic_TypeGraph', the role 'basic_TypeGraph149' has cardinality 0..*.
+An association connects 'basic_TClass' and 'basic_TInterface'. From 'basic_TClass', the role '152' has cardinality 0..*, and from 'basic_TInterface', the role '151' has cardinality 0..*.
+An association connects 'basic_TInterface' and 'basic_TInterface'. From 'basic_TInterface', the role '155' has cardinality 0..*, and from 'basic_TInterface', the role '156' has cardinality 0..*.
+An association connects 'basic_TInterface' and 'basic_TInterface'. From 'basic_TInterface', the role '160' has cardinality 0..*, and from 'basic_TInterface', the role '159' has cardinality 0..*.
+An association connects 'basic_TAbstractType' and 'basic_TypeGraph'. From 'basic_TAbstractType', the role '162' has cardinality 0..*, and from 'basic_TypeGraph', the role '163' has cardinality 0..*.
+An association connects 'basic_TAbstractType' and 'basic_TPackage'. From 'basic_TAbstractType', the role '165' has cardinality 0..*, and from 'basic_TPackage', the role '166' has cardinality 0..*.
+An association connects 'basic_TAbstractType' and 'basic_TSignature'. From 'basic_TAbstractType', the role 'basic_TAbstractType168' has cardinality 0..*, and from 'basic_TSignature', the role 'basic_TSignature' has cardinality 0..*.
+An association connects 'basic_TMember' and 'basic_TAbstractType'. From 'basic_TMember', the role '171' has cardinality 0..*, and from 'basic_TAbstractType', the role '170' has cardinality 0..*.
+An association connects 'basic_TAnnotationType' and 'basic_TAnnotation'. From 'basic_TAnnotationType', the role '173' has cardinality 0..*, and from 'basic_TAnnotation', the role '174' has cardinality 0..*.

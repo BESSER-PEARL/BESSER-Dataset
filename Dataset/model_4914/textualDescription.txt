@@ -1,0 +1,80 @@
+The domain model 'services' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'services_CIID' represents an important domain concept.
+It has the following attributes: 'commonCIID', which is of type str; 'localCIID', which is of type str.
+
+'services_ServiceProfile' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'services_ServiceInterrest' represents an important domain concept.
+It has the following attributes: 'interrestKind', which is of type str; 'contactUnit', which is of type str.
+
+'services_Service' represents an important domain concept.
+It has the following attributes: 'serviceKind', which is of type str; 'serviceSupport1', which is of type str; 'serviceCategory', which is of type str; 'serviceClass', which is of type str; 'ssDomain', which is of type str; 'serviceCharacterCommon', which is of type str; 'mostTopService', which is of type str.
+
+'services_ServiceSupport' represents an important domain concept.
+It has the following attributes: 'supportHours', which is of type str; 'supportDays', which is of type str.
+
+'services_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'services_ServiceIncidentMgt' represents an important domain concept.
+It has the following attributes: 'businessImpact', which is of type str; 'maintenance', which is of type str; 'monitoring', which is of type str; 'maintenanceWindow', which is of type str.
+
+'services_CFSService' represents an important domain concept.
+It has the following attributes: 'provider', which is of type str; 'scenario', which is of type str.
+
+'services_ServiceSecurityMgt' represents an important domain concept.
+It has the following attributes: 'drPlanContact', which is of type str; 'drPlanRepository', which is of type str; 'securityRating', which is of type str; 'drRecoveryPlan', which is of type str.
+
+'services_RFSService' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'functionalCategory', which is of type str.
+
+'services_ServiceAdditional' represents an important domain concept.
+It has the following attributes: 'costCenter', which is of type str; 'history', which is of type str; 'kpi', which is of type str; 'usageState', which is of type str; 'link', which is of type str; 'report', which is of type str; 'lifeCycleState', which is of type str.
+
+'Service' represents an important domain concept.
+It does not declare any attributes.
+
+'services_ServiceDescription' represents an important domain concept.
+It has the following attributes: 'serviceDescriptionNational', which is of type str; 'serviceDescriptionCommon', which is of type str.
+
+'services_ServiceContract' represents an important domain concept.
+It has the following attributes: 'uC', which is of type str; 'wLA', which is of type str; 'sLA', which is of type str; 'oLA', which is of type str.
+
+'services_ServiceName' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'index', which is of type str; 'identifier', which is of type str; 'alias', which is of type str.
+
+'services_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'UsageStateType' defines the following possible values: 'Disabled', 'Free', 'Reserved', 'Assigned'.
+The enumeration 'MaintenanceType' defines the following possible values: '_2ndLineMaintenance', '_1stLineMaintenance'.
+The enumeration 'LifeCycleStateType' defines the following possible values: 'Removed', 'Planned', 'Active'.
+The enumeration 'ServiceClassType' defines the following possible values: 'Sold', 'Silver', 'Bronze'.
+The enumeration 'SecurityRatingType' defines the following possible values: 'Medium', 'Low', 'High'.
+The enumeration 'ServiceKindType' defines the following possible values: 'RFS', 'CFS'.
+The enumeration 'InterrestKindType' defines the following possible values: 'ProductManagement', 'Escallation', 'Reporting', 'FinancialManagement', 'SalesManagement', 'ServiceManagement'.
+
+The model also captures inheritance relationships between classes.
+The class 'services_CFSService' is a specialization of 'Service'.
+The class 'services_RFSService' is a specialization of 'Service'.
+
+Relationships between classes are modeled using associations.
+An association connects 'services_EObject' and 'services_CFSService'. From 'services_EObject', the role 'services_EObject' has cardinality 0..*, and from 'services_CFSService', the role 'services_CFSService' has cardinality 0..*.
+An association connects 'services_RFSService' and 'services_EObject'. From 'services_RFSService', the role 'services_RFSService' has cardinality 0..*, and from 'services_EObject', the role 'services_EObject2' has cardinality 0..*.
+An association connects 'services_RFSService' and 'services_ServiceProfile'. From 'services_RFSService', the role 'services_RFSService4' has cardinality 0..*, and from 'services_ServiceProfile', the role 'services_ServiceProfile' has cardinality 0..*.
+An association connects 'services_Service' and 'services_ServiceName'. From 'services_Service', the role 'services_Service' has cardinality 0..*, and from 'services_ServiceName', the role 'services_ServiceName' has cardinality 0..*.
+An association connects 'services_Service' and 'services_ServiceDescription'. From 'services_Service', the role 'services_Service7' has cardinality 0..*, and from 'services_ServiceDescription', the role 'services_ServiceDescription' has cardinality 0..*.
+An association connects 'services_ServiceSecurityMgt' and 'services_Service'. From 'services_ServiceSecurityMgt', the role 'services_ServiceSecurityMgt' has cardinality 0..*, and from 'services_Service', the role 'services_Service9' has cardinality 0..*.
+An association connects 'services_Service' and 'services_ServiceIncidentMgt'. From 'services_Service', the role 'services_Service11' has cardinality 0..*, and from 'services_ServiceIncidentMgt', the role 'services_ServiceIncidentMgt' has cardinality 0..*.
+An association connects 'services_CIID' and 'services_Service'. From 'services_CIID', the role 'services_CIID' has cardinality 0..*, and from 'services_Service', the role 'services_Service13' has cardinality 0..*.
+An association connects 'services_Service' and 'services_ServiceInterrest'. From 'services_Service', the role 'services_Service15' has cardinality 0..*, and from 'services_ServiceInterrest', the role 'services_ServiceInterrest' has cardinality 0..*.
+An association connects 'services_ServiceContract' and 'services_Service'. From 'services_ServiceContract', the role 'services_ServiceContract' has cardinality 0..*, and from 'services_Service', the role 'services_Service17' has cardinality 0..*.
+An association connects 'services_Service' and 'services_ServiceSupport'. From 'services_Service', the role 'services_Service19' has cardinality 0..*, and from 'services_ServiceSupport', the role 'services_ServiceSupport' has cardinality 0..*.
+An association connects 'services_Service' and 'services_ServiceAdditional'. From 'services_Service', the role 'services_Service21' has cardinality 0..*, and from 'services_ServiceAdditional', the role 'services_ServiceAdditional' has cardinality 0..*.
+An association connects 'services_Service' and 'services_Service'. From 'services_Service', the role 'services_Service22' has cardinality 0..*, and from 'services_Service', the role 'services_Service24' has cardinality 0..*.
+An association connects 'services_ServiceProfile' and 'services_Parameter'. From 'services_ServiceProfile', the role 'services_ServiceProfile26' has cardinality 0..*, and from 'services_Parameter', the role 'services_Parameter' has cardinality 0..*.

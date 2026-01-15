@@ -1,0 +1,31 @@
+The domain model 'PrimitiveTypes' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'MMA_A' represents an important domain concept.
+It does not declare any attributes.
+
+'Root' represents an important domain concept.
+It does not declare any attributes.
+
+'MMA_Element' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MMA_B' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'MMA_Root' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'MMA_A' is a specialization of 'Element'.
+The class 'MMA_B' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'MMA_Root' and 'Element'. From 'MMA_Root', the role '0' has cardinality 0..*, and from 'Element', the role 'unnamed role' has cardinality 0..*.
+An association connects 'MMA_Element' and 'Element'. From 'MMA_Element', the role '02' has cardinality 0..*, and from 'Element', the role '3' has cardinality 0..*.
+An association connects 'MMA_Element' and 'Element'. From 'MMA_Element', the role '05' has cardinality 0..*, and from 'Element', the role '6' has cardinality 0..*.
+An association connects 'Root' and 'MMA_Element'. From 'Root', the role '9' has cardinality 0..*, and from 'MMA_Element', the role '08' has cardinality 0..*.

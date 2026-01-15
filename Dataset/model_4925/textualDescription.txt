@@ -1,0 +1,424 @@
+The domain model 'becontent' describes the core structural elements and their relationships within the system.
+
+The model defines 100 main class(es).
+
+'becontent_Channel' represents an important domain concept.
+It has the following attributes: 'parameters', which is of type str; '_id_model', which is of type str.
+
+'becontent_SystemAttributeDate' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_SystemAttributeFileToFolder' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_Year' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'start', which is of type int; 'label', which is of type str; 'end', which is of type int; 'isMandatory', which is of type bool.
+
+'EntityField' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_Section' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'name', which is of type str.
+
+'becontent_Validation' represents an important domain concept.
+It has the following attributes: 'condition', which is of type str; '_id_model', which is of type str; 'message', which is of type str.
+
+'ContentCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_Hidden' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'values', which is of type str.
+
+'becontent_Content' represents an important domain concept.
+It has the following attributes: 'joinCondition', which is of type str; 'presentationFields', which is of type str; '_id_model', which is of type str; 'style', which is of type str; 'limit', which is of type int; 'template', which is of type str; 'orderFields', which is of type str; 'filter', which is of type str.
+
+'becontent_SelectFromReference' represents an important domain concept.
+It has the following attributes: 'isMandatory', which is of type bool; 'name', which is of type str; 'label', which is of type str; 'restrictCondition', which is of type str.
+
+'becontent_AttributeFileToFolder' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_Entity' represents an important domain concept.
+It has the following attributes: 'isOwned', which is of type bool; 'rssFilter', which is of type str; 'name', which is of type str; 'variableName', which is of type str; 'presentationString', which is of type str.
+
+'becontent_BeContentElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DefinitionItem' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_SystemAttributeLongDate' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_Skin' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'becontent_EntityField' represents an important domain concept.
+It has the following attributes: 'isSearchPresentationHead', which is of type bool; 'isSearchPresentationBody', which is of type bool; 'isTextSearch', which is of type bool; 'isPresented', which is of type bool.
+
+'becontent_JoinEntity' represents an important domain concept.
+It has one attribute: '_id_model', which is of type str.
+
+'becontent_AttributeFile' represents an important domain concept.
+It does not declare any attributes.
+
+'NotStructuredElement' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_AttributeDate' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_ApplyCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_ExtendedForm' represents an important domain concept.
+It has one attribute: 'className', which is of type str.
+
+'Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_Link' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isMandatory', which is of type bool; 'size', which is of type int; 'label', which is of type str; 'maxLength', which is of type int.
+
+'becontent_SystemAttributePassword' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_SystemAttributeImage' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_NotStructuredElement' represents an important domain concept.
+It has one attribute: 'helper', which is of type str.
+
+'becontent_TypedAttribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isMandatory', which is of type bool.
+
+'becontent_SystemAttributeVarchar' represents an important domain concept.
+It has the following attributes: 'isPrimaryKey', which is of type bool; 'length', which is of type int.
+
+'ViewItem' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_Template' represents an important domain concept.
+It has the following attributes: 'path', which is of type str; '_id_model', which is of type str.
+
+'becontent_FileToFolder' represents an important domain concept.
+It has the following attributes: 'isMandatory', which is of type bool; 'extension', which is of type str; 'label', which is of type str; 'name', which is of type str; 'extensionMessage', which is of type str.
+
+'becontent_Password' represents an important domain concept.
+It has the following attributes: 'isMandatory', which is of type bool; 'label', which is of type str; 'maxLength', which is of type int; 'name', which is of type str; 'size', which is of type int.
+
+'becontent_SystemAttributePosition' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_ApplyIndexed' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_Position' represents an important domain concept.
+It has the following attributes: 'isMandatory', which is of type bool; 'name', which is of type str; 'label', which is of type str; 'size', which is of type int; 'controlledField', which is of type str.
+
+'becontent_SystemRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_BeContentModel' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_SystemEntityField' represents an important domain concept.
+It has the following attributes: 'isPresented', which is of type bool; 'isSearchPresentationHead', which is of type bool; 'isSearchPresentationBody', which is of type bool; 'isTextSearch', which is of type bool.
+
+'becontent_FormElement' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_ViewItem' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_FileToFolderExtension' represents an important domain concept.
+It has the following attributes: 'extensionKey', which is of type str; '_id_model', which is of type str; 'extensionValue', which is of type str.
+
+'becontent_UnsetParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'becontent_ApplyItem' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'prefix', which is of type str.
+
+'becontent_SystemAttributeColor' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_Color' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'defaultColor', which is of type str; 'name', which is of type str.
+
+'becontent_RelationManager' represents an important domain concept.
+It has the following attributes: 'orientation', which is of type str; 'restrictCondition', which is of type str; 'label', which is of type str; 'name', which is of type str.
+
+'becontent_TypedSystemAttribute' represents an important domain concept.
+It has the following attributes: 'isMandatory', which is of type bool; 'name', which is of type str.
+
+'ApplyCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_CustomRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_Parameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'becontent_RadioFromReference' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'label', which is of type str; 'restrictCondition', which is of type str; 'isMandatory', which is of type bool.
+
+'becontent_AttributeLongDate' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_AttributeText' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_AttributeVarchar' represents an important domain concept.
+It has the following attributes: 'length', which is of type int; 'isPrimaryKey', which is of type bool.
+
+'becontent_Image' represents an important domain concept.
+It has the following attributes: 'isMandatory', which is of type bool; 'name', which is of type str; 'label', which is of type str.
+
+'becontent_SystemAttributeText' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_ConditionalTemplate' represents an important domain concept.
+It has the following attributes: 'conditionExp', which is of type str; 'falseTemplate', which is of type str; '_id_model', which is of type str; 'fieldName', which is of type str; 'trueTemplate', which is of type str.
+
+'becontent_Checkbox' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isChecked', which is of type bool; 'label', which is of type str; 'value', which is of type str.
+
+'TypedSystemAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'BeContentElement' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_AttributeInteger' represents an important domain concept.
+It has one attribute: 'isPrimaryKey', which is of type bool.
+
+'becontent_SystemReference' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'becontent_SystemAttributeFile' represents an important domain concept.
+It does not declare any attributes.
+
+'FormElement' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_Editor' represents an important domain concept.
+It has the following attributes: 'isMandatory', which is of type bool; 'name', which is of type str; 'columns', which is of type int; 'rows', which is of type int; 'label', which is of type str.
+
+'becontent_CustomPager' represents an important domain concept.
+It has the following attributes: 'className', which is of type str; 'template', which is of type str; 'filter', which is of type str; 'query', which is of type str; '_id_model', which is of type str; 'order', which is of type str; 'length', which is of type int.
+
+'becontent_Propagate' represents an important domain concept.
+It has the following attributes: 'fieldName1', which is of type str; 'fieldName2', which is of type str.
+
+'becontent_LongDate' represents an important domain concept.
+It has the following attributes: 'isMandatory', which is of type bool; 'name', which is of type str; 'label', which is of type str.
+
+'becontent_Text' represents an important domain concept.
+It has the following attributes: 'isMandatory', which is of type bool; 'size', which is of type int; 'name', which is of type str; 'label', which is of type str; 'maxLength', which is of type int.
+
+'becontent_Skinlet' represents an important domain concept.
+It has the following attributes: 'template', which is of type str; '_id_model', which is of type str.
+
+'becontent_Textarea' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'isMandatory', which is of type bool; 'columns', which is of type int; 'rows', which is of type int; 'name', which is of type str.
+
+'becontent_DefinitionItem' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_Relation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'variableName', which is of type str.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_ContentCommand' represents an important domain concept.
+It has one attribute: '_id_model', which is of type str.
+
+'becontent_SystemAttributeInteger' represents an important domain concept.
+It has one attribute: 'isPrimaryKey', which is of type bool.
+
+'becontent_Form' represents an important domain concept.
+It has the following attributes: 'method', which is of type str; 'name', which is of type str; 'description', which is of type str.
+
+'becontent_Select' represents an important domain concept.
+It has the following attributes: 'values', which is of type str; 'isMandatory', which is of type bool; 'name', which is of type str; 'label', which is of type str.
+
+'becontent_SystemEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_CustomEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'Form' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_File' represents an important domain concept.
+It has the following attributes: 'extensionMessage', which is of type str; 'extension', which is of type str; 'isMandatory', which is of type bool; 'name', which is of type str; 'label', which is of type str.
+
+'becontent_HierarchicalPosition' represents an important domain concept.
+It has the following attributes: 'size', which is of type int; 'controlledField', which is of type str; 'label', which is of type str; 'name', which is of type str; 'referenceField', which is of type str.
+
+'becontent_RadioButton' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'name', which is of type str; 'values', which is of type str.
+
+'becontent_Trigger' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'becontent_Reference' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'becontent_Apply' represents an important domain concept.
+It has one attribute: 'prefix', which is of type str.
+
+'becontent_Handler' represents an important domain concept.
+It has the following attributes: 'mainSkinWithPager', which is of type bool; 'fileName', which is of type str; 'mainSkinPagerLength', which is of type int; 'mainSkinPlaceholder', which is of type str.
+
+'becontent_Date' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'name', which is of type str; 'isMandatory', which is of type bool.
+
+'becontent_EntityManagerPage' represents an important domain concept.
+It has the following attributes: 'fileName', which is of type str; 'skin', which is of type str.
+
+'becontent_AttributePassword' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_AttributePosition' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_Copy' represents an important domain concept.
+It has the following attributes: 'fieldName1', which is of type str; 'fieldName2', which is of type str.
+
+'becontent_AttributeImage' represents an important domain concept.
+It does not declare any attributes.
+
+'SystemEntityField' represents an important domain concept.
+It does not declare any attributes.
+
+'becontent_AttributeColor' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FormMethodType' defines the following possible values: 'post', 'get'.
+The enumeration 'OrientationType' defines the following possible values: 'right', 'left'.
+The enumeration 'ContentStyle' defines the following possible values: 'hierarchical', 'normal'.
+The enumeration 'ConditionalTemplateExpType' defines a single possible value: 'isNotEmpty'.
+The enumeration 'ConditionType' defines the following possible values: 'dateLessEqual', 'implies', 'equal'.
+
+The model also captures inheritance relationships between classes.
+The class 'becontent_DefinitionItem' is a specialization of 'BeContentElement'.
+The class 'becontent_Entity' is a specialization of 'DefinitionItem'.
+The class 'becontent_CustomEntity' is a specialization of 'Entity'.
+The class 'becontent_SystemEntity' is a specialization of 'Entity'.
+The class 'becontent_Relation' is a specialization of 'DefinitionItem'.
+The class 'becontent_CustomRelation' is a specialization of 'Relation'.
+The class 'becontent_SystemRelation' is a specialization of 'Relation'.
+The class 'becontent_Reference' is a specialization of 'EntityField'.
+The class 'becontent_TypedAttribute' is a specialization of 'EntityField'.
+The class 'becontent_AttributeColor' is a specialization of 'TypedAttribute'.
+The class 'becontent_AttributeDate' is a specialization of 'TypedAttribute'.
+The class 'becontent_AttributeLongDate' is a specialization of 'TypedAttribute'.
+The class 'becontent_AttributeText' is a specialization of 'TypedAttribute'.
+The class 'becontent_AttributePassword' is a specialization of 'TypedAttribute'.
+The class 'becontent_AttributePosition' is a specialization of 'TypedAttribute'.
+The class 'becontent_AttributeImage' is a specialization of 'TypedAttribute'.
+The class 'becontent_AttributeInteger' is a specialization of 'TypedAttribute'.
+The class 'becontent_AttributeVarchar' is a specialization of 'TypedAttribute'.
+The class 'becontent_AttributeFile' is a specialization of 'TypedAttribute'.
+The class 'becontent_AttributeFileToFolder' is a specialization of 'TypedAttribute'.
+The class 'becontent_SystemReference' is a specialization of 'SystemEntityField'.
+The class 'becontent_TypedSystemAttribute' is a specialization of 'SystemEntityField'.
+The class 'becontent_SystemAttributeColor' is a specialization of 'TypedSystemAttribute'.
+The class 'becontent_SystemAttributeDate' is a specialization of 'TypedSystemAttribute'.
+The class 'becontent_SystemAttributeLongDate' is a specialization of 'TypedSystemAttribute'.
+The class 'becontent_SystemAttributeText' is a specialization of 'TypedSystemAttribute'.
+The class 'becontent_SystemAttributePassword' is a specialization of 'TypedSystemAttribute'.
+The class 'becontent_SystemAttributePosition' is a specialization of 'TypedSystemAttribute'.
+The class 'becontent_SystemAttributeImage' is a specialization of 'TypedSystemAttribute'.
+The class 'becontent_SystemAttributeInteger' is a specialization of 'TypedSystemAttribute'.
+The class 'becontent_SystemAttributeVarchar' is a specialization of 'TypedSystemAttribute'.
+The class 'becontent_SystemAttributeFile' is a specialization of 'TypedSystemAttribute'.
+The class 'becontent_SystemAttributeFileToFolder' is a specialization of 'TypedSystemAttribute'.
+The class 'becontent_FileToFolderExtension' is a specialization of 'BeContentElement'.
+The class 'becontent_Channel' is a specialization of 'BeContentElement'.
+The class 'becontent_Handler' is a specialization of 'BeContentElement'.
+The class 'becontent_Template' is a specialization of 'ViewItem'.
+The class 'becontent_Skinlet' is a specialization of 'ViewItem'.
+The class 'becontent_Skin' is a specialization of 'ViewItem'.
+The class 'becontent_Content' is a specialization of 'ViewItem'.
+The class 'becontent_Parameter' is a specialization of 'ContentCommand'.
+The class 'becontent_UnsetParameter' is a specialization of 'ContentCommand'.
+The class 'becontent_Copy' is a specialization of 'ContentCommand'.
+The class 'becontent_Propagate' is a specialization of 'ContentCommand'.
+The class 'becontent_Trigger' is a specialization of 'ContentCommand'.
+The class 'becontent_ApplyCommand' is a specialization of 'ContentCommand'.
+The class 'becontent_Apply' is a specialization of 'ApplyCommand'.
+The class 'becontent_ApplyItem' is a specialization of 'ApplyCommand'.
+The class 'becontent_ApplyIndexed' is a specialization of 'ApplyCommand'.
+The class 'becontent_EntityManagerPage' is a specialization of 'BeContentElement'.
+The class 'becontent_Form' is a specialization of 'FormElement'.
+The class 'becontent_ExtendedForm' is a specialization of 'Form'.
+The class 'becontent_NotStructuredElement' is a specialization of 'FormElement'.
+The class 'becontent_Section' is a specialization of 'NotStructuredElement'.
+The class 'becontent_Text' is a specialization of 'NotStructuredElement'.
+The class 'becontent_RadioButton' is a specialization of 'NotStructuredElement'.
+The class 'becontent_Checkbox' is a specialization of 'NotStructuredElement'.
+The class 'becontent_Select' is a specialization of 'NotStructuredElement'.
+The class 'becontent_Textarea' is a specialization of 'NotStructuredElement'.
+The class 'becontent_Editor' is a specialization of 'NotStructuredElement'.
+The class 'becontent_Link' is a specialization of 'NotStructuredElement'.
+The class 'becontent_Password' is a specialization of 'NotStructuredElement'.
+The class 'becontent_Date' is a specialization of 'NotStructuredElement'.
+The class 'becontent_LongDate' is a specialization of 'NotStructuredElement'.
+The class 'becontent_File' is a specialization of 'NotStructuredElement'.
+The class 'becontent_FileToFolder' is a specialization of 'NotStructuredElement'.
+The class 'becontent_Image' is a specialization of 'NotStructuredElement'.
+The class 'becontent_Color' is a specialization of 'NotStructuredElement'.
+The class 'becontent_RelationManager' is a specialization of 'NotStructuredElement'.
+The class 'becontent_Position' is a specialization of 'NotStructuredElement'.
+The class 'becontent_HierarchicalPosition' is a specialization of 'NotStructuredElement'.
+The class 'becontent_SelectFromReference' is a specialization of 'NotStructuredElement'.
+The class 'becontent_RadioFromReference' is a specialization of 'NotStructuredElement'.
+The class 'becontent_Year' is a specialization of 'NotStructuredElement'.
+The class 'becontent_Hidden' is a specialization of 'NotStructuredElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'becontent_BeContentElement' and 'becontent_BeContentModel'. From 'becontent_BeContentElement', the role 'becontent_BeContentElement' has cardinality 0..*, and from 'becontent_BeContentModel', the role 'becontent_BeContentModel' has cardinality 0..*.
+An association connects 'becontent_EntityField' and 'becontent_Entity'. From 'becontent_EntityField', the role 'becontent_EntityField' has cardinality 0..*, and from 'becontent_Entity', the role 'becontent_Entity' has cardinality 0..*.
+An association connects 'becontent_Channel' and 'becontent_Entity'. From 'becontent_Channel', the role 'becontent_Channel' has cardinality 0..*, and from 'becontent_Entity', the role 'becontent_Entity3' has cardinality 0..*.
+An association connects 'becontent_Entity' and 'becontent_Handler'. From 'becontent_Entity', the role 'becontent_Entity5' has cardinality 0..*, and from 'becontent_Handler', the role 'becontent_Handler' has cardinality 0..*.
+An association connects 'becontent_SystemEntity' and 'becontent_SystemEntityField'. From 'becontent_SystemEntity', the role 'becontent_SystemEntity' has cardinality 0..*, and from 'becontent_SystemEntityField', the role 'becontent_SystemEntityField' has cardinality 0..*.
+An association connects 'becontent_CustomRelation' and 'becontent_Entity'. From 'becontent_CustomRelation', the role 'becontent_CustomRelation' has cardinality 0..*, and from 'becontent_Entity', the role 'becontent_Entity8' has cardinality 0..*.
+An association connects 'becontent_CustomRelation' and 'becontent_Entity'. From 'becontent_CustomRelation', the role 'becontent_CustomRelation10' has cardinality 0..*, and from 'becontent_Entity', the role 'becontent_Entity11' has cardinality 0..*.
+An association connects 'becontent_SystemEntity' and 'becontent_SystemRelation'. From 'becontent_SystemEntity', the role 'becontent_SystemEntity13' has cardinality 0..*, and from 'becontent_SystemRelation', the role 'becontent_SystemRelation' has cardinality 0..*.
+An association connects 'becontent_SystemRelation' and 'becontent_SystemEntity'. From 'becontent_SystemRelation', the role 'becontent_SystemRelation15' has cardinality 0..*, and from 'becontent_SystemEntity', the role 'becontent_SystemEntity16' has cardinality 0..*.
+An association connects 'becontent_Reference' and 'becontent_Entity'. From 'becontent_Reference', the role 'becontent_Reference' has cardinality 0..*, and from 'becontent_Entity', the role 'becontent_Entity18' has cardinality 0..*.
+An association connects 'becontent_AttributeFileToFolder' and 'becontent_FileToFolderExtension'. From 'becontent_AttributeFileToFolder', the role 'becontent_AttributeFileToFolder' has cardinality 0..*, and from 'becontent_FileToFolderExtension', the role 'becontent_FileToFolderExtension' has cardinality 0..*.
+An association connects 'becontent_SystemReference' and 'becontent_SystemEntity'. From 'becontent_SystemReference', the role 'becontent_SystemReference' has cardinality 0..*, and from 'becontent_SystemEntity', the role 'becontent_SystemEntity21' has cardinality 0..*.
+An association connects 'becontent_SystemAttributeFileToFolder' and 'becontent_FileToFolderExtension'. From 'becontent_SystemAttributeFileToFolder', the role 'becontent_SystemAttributeFileToFolder' has cardinality 0..*, and from 'becontent_FileToFolderExtension', the role 'becontent_FileToFolderExtension23' has cardinality 0..*.
+An association connects 'becontent_Entity' and 'becontent_Channel'. From 'becontent_Entity', the role 'becontent_Entity26' has cardinality 0..*, and from 'becontent_Channel', the role 'becontent_Channel25' has cardinality 0..*.
+An association connects 'becontent_Handler' and 'becontent_ViewItem'. From 'becontent_Handler', the role 'becontent_Handler28' has cardinality 0..*, and from 'becontent_ViewItem', the role 'becontent_ViewItem' has cardinality 0..*.
+An association connects 'becontent_Skin' and 'becontent_Handler'. From 'becontent_Skin', the role 'becontent_Skin' has cardinality 0..*, and from 'becontent_Handler', the role 'becontent_Handler30' has cardinality 0..*.
+An association connects 'becontent_Handler' and 'becontent_ViewItem'. From 'becontent_Handler', the role 'becontent_Handler32' has cardinality 0..*, and from 'becontent_ViewItem', the role 'becontent_ViewItem33' has cardinality 0..*.
+An association connects 'becontent_Entity' and 'becontent_Content'. From 'becontent_Entity', the role 'becontent_Entity35' has cardinality 0..*, and from 'becontent_Content', the role 'becontent_Content' has cardinality 0..*.
+An association connects 'becontent_Content' and 'becontent_JoinEntity'. From 'becontent_Content', the role 'becontent_Content37' has cardinality 0..*, and from 'becontent_JoinEntity', the role 'becontent_JoinEntity' has cardinality 0..*.
+An association connects 'becontent_ContentCommand' and 'becontent_Content'. From 'becontent_ContentCommand', the role 'becontent_ContentCommand' has cardinality 0..*, and from 'becontent_Content', the role 'becontent_Content39' has cardinality 0..*.
+An association connects 'becontent_ConditionalTemplate' and 'becontent_Content'. From 'becontent_ConditionalTemplate', the role 'becontent_ConditionalTemplate' has cardinality 0..*, and from 'becontent_Content', the role 'becontent_Content41' has cardinality 0..*.
+An association connects 'becontent_JoinEntity' and 'becontent_JoinEntity'. From 'becontent_JoinEntity', the role 'becontent_JoinEntity42' has cardinality 0..*, and from 'becontent_JoinEntity', the role 'becontent_JoinEntity44' has cardinality 0..*.
+An association connects 'becontent_JoinEntity' and 'becontent_Entity'. From 'becontent_JoinEntity', the role 'becontent_JoinEntity46' has cardinality 0..*, and from 'becontent_Entity', the role 'becontent_Entity47' has cardinality 0..*.
+An association connects 'becontent_ViewItem' and 'becontent_ApplyCommand'. From 'becontent_ViewItem', the role 'becontent_ViewItem49' has cardinality 0..*, and from 'becontent_ApplyCommand', the role 'becontent_ApplyCommand' has cardinality 0..*.
+An association connects 'becontent_EntityManagerPage' and 'becontent_Form'. From 'becontent_EntityManagerPage', the role 'becontent_EntityManagerPage' has cardinality 0..*, and from 'becontent_Form', the role 'becontent_Form' has cardinality 0..*.
+An association connects 'becontent_CustomPager' and 'becontent_EntityManagerPage'. From 'becontent_CustomPager', the role 'becontent_CustomPager' has cardinality 0..*, and from 'becontent_EntityManagerPage', the role 'becontent_EntityManagerPage52' has cardinality 0..*.
+An association connects 'becontent_Validation' and 'becontent_EntityManagerPage'. From 'becontent_Validation', the role 'becontent_Validation' has cardinality 0..*, and from 'becontent_EntityManagerPage', the role 'becontent_EntityManagerPage54' has cardinality 0..*.
+An association connects 'becontent_DefinitionItem' and 'becontent_Form'. From 'becontent_DefinitionItem', the role 'becontent_DefinitionItem' has cardinality 0..*, and from 'becontent_Form', the role 'becontent_Form56' has cardinality 0..*.
+An association connects 'becontent_Form' and 'becontent_FormElement'. From 'becontent_Form', the role 'becontent_Form58' has cardinality 0..*, and from 'becontent_FormElement', the role 'becontent_FormElement' has cardinality 0..*.
+An association connects 'becontent_Form' and 'becontent_CustomPager'. From 'becontent_Form', the role 'becontent_Form60' has cardinality 0..*, and from 'becontent_CustomPager', the role 'becontent_CustomPager61' has cardinality 0..*.
+An association connects 'becontent_Form' and 'becontent_Validation'. From 'becontent_Form', the role 'becontent_Form63' has cardinality 0..*, and from 'becontent_Validation', the role 'becontent_Validation64' has cardinality 0..*.
+An association connects 'becontent_Validation' and 'becontent_NotStructuredElement'. From 'becontent_Validation', the role 'becontent_Validation66' has cardinality 0..*, and from 'becontent_NotStructuredElement', the role 'becontent_NotStructuredElement' has cardinality 0..*.
+An association connects 'becontent_Validation' and 'becontent_NotStructuredElement'. From 'becontent_Validation', the role 'becontent_Validation68' has cardinality 0..*, and from 'becontent_NotStructuredElement', the role 'becontent_NotStructuredElement69' has cardinality 0..*.
+An association connects 'becontent_Entity' and 'becontent_SelectFromReference'. From 'becontent_Entity', the role 'becontent_Entity71' has cardinality 0..*, and from 'becontent_SelectFromReference', the role 'becontent_SelectFromReference' has cardinality 0..*.
+An association connects 'becontent_Entity' and 'becontent_RadioFromReference'. From 'becontent_Entity', the role 'becontent_Entity73' has cardinality 0..*, and from 'becontent_RadioFromReference', the role 'becontent_RadioFromReference' has cardinality 0..*.

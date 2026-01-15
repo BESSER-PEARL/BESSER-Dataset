@@ -1,0 +1,77 @@
+The domain model 'bootstrap' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'bootstrap_Video' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'bootstrap_TextArea' represents an important domain concept.
+It does not declare any attributes.
+
+'bootstrap_Page' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'description', which is of type str; 'name', which is of type str.
+
+'bootstrap_Section' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'title', which is of type str.
+
+'bootstrap_ImagesBlock' represents an important domain concept.
+It has one attribute: 'imagesPath', which is of type str.
+
+'bootstrap_Gallery' represents an important domain concept.
+It has one attribute: 'imagesPath', which is of type str.
+
+'bootstrap_CheckBox' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'bootstrap_MainPage' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'title', which is of type str.
+
+'Widget' represents an important domain concept.
+It does not declare any attributes.
+
+'bootstrap_Text' represents an important domain concept.
+It has one attribute: 'columnNumber', which is of type int.
+
+'FormWidget' represents an important domain concept.
+It does not declare any attributes.
+
+'bootstrap_Site' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'bootstrap_Widget' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'bootstrap_FormWidget' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'bootstrap_Spinner' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'bootstrap_Form' represents an important domain concept.
+It does not declare any attributes.
+
+'bootstrap_Table' represents an important domain concept.
+It has the following attributes: 'striped', which is of type bool; 'rowNames', which is of type str; 'columnNames', which is of type str; 'bordered', which is of type bool.
+
+The model also captures inheritance relationships between classes.
+The class 'bootstrap_Form' is a specialization of 'Widget'.
+The class 'bootstrap_Table' is a specialization of 'Widget'.
+The class 'bootstrap_Text' is a specialization of 'Widget'.
+The class 'bootstrap_Video' is a specialization of 'Widget'.
+The class 'bootstrap_Gallery' is a specialization of 'Widget'.
+The class 'bootstrap_ImagesBlock' is a specialization of 'Widget'.
+The class 'bootstrap_TextArea' is a specialization of 'FormWidget'.
+The class 'bootstrap_Spinner' is a specialization of 'FormWidget'.
+The class 'bootstrap_CheckBox' is a specialization of 'FormWidget'.
+
+Relationships between classes are modeled using associations.
+An association connects 'bootstrap_Page' and 'bootstrap_Site'. From 'bootstrap_Page', the role 'Page' has cardinality 0..*, and from 'bootstrap_Site', the role 'site' has cardinality 0..*.
+An association connects 'bootstrap_MainPage' and 'bootstrap_Site'. From 'bootstrap_MainPage', the role 'MainPage' has cardinality 0..*, and from 'bootstrap_Site', the role 'site2' has cardinality 0..*.
+An association connects 'bootstrap_Page' and 'bootstrap_Section'. From 'bootstrap_Page', the role 'page' has cardinality 0..*, and from 'bootstrap_Section', the role 'Section' has cardinality 0..*.
+An association connects 'bootstrap_Page' and 'bootstrap_Site'. From 'bootstrap_Page', the role 'pages' has cardinality 0..*, and from 'bootstrap_Site', the role 'Site' has cardinality 0..*.
+An association connects 'bootstrap_MainPage' and 'bootstrap_Site'. From 'bootstrap_MainPage', the role 'mainPage' has cardinality 0..*, and from 'bootstrap_Site', the role 'Site6' has cardinality 0..*.
+An association connects 'bootstrap_Section' and 'bootstrap_Widget'. From 'bootstrap_Section', the role 'section' has cardinality 0..*, and from 'bootstrap_Widget', the role 'Widget' has cardinality 0..*.
+An association connects 'bootstrap_Page' and 'bootstrap_Section'. From 'bootstrap_Page', the role 'Page9' has cardinality 0..*, and from 'bootstrap_Section', the role 'sections' has cardinality 0..*.
+An association connects 'bootstrap_Section' and 'bootstrap_Widget'. From 'bootstrap_Section', the role 'Section11' has cardinality 0..*, and from 'bootstrap_Widget', the role 'widgets' has cardinality 0..*.
+An association connects 'bootstrap_Form' and 'bootstrap_FormWidget'. From 'bootstrap_Form', the role 'form' has cardinality 0..*, and from 'bootstrap_FormWidget', the role 'FormWidget' has cardinality 0..*.
+An association connects 'bootstrap_FormWidget' and 'bootstrap_Form'. From 'bootstrap_FormWidget', the role 'formWidgets' has cardinality 0..*, and from 'bootstrap_Form', the role 'Form' has cardinality 0..*.

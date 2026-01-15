@@ -1,0 +1,68 @@
+The domain model 'adt' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'adt_ASort' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adt_Sort' represents an important domain concept.
+It does not declare any attributes.
+
+'ASort' represents an important domain concept.
+It does not declare any attributes.
+
+'ATerm' represents an important domain concept.
+It does not declare any attributes.
+
+'adt_ATerm' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'adt_Equation' represents an important domain concept.
+It does not declare any attributes.
+
+'adt_SubSort' represents an important domain concept.
+It does not declare any attributes.
+
+'adt_Signature' represents an important domain concept.
+It has one attribute: 'ops', which is of type str.
+
+'adt_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adt_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adt_Term' represents an important domain concept.
+It does not declare any attributes.
+
+'adt_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'adt_ADT' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'adt_SubSort' is a specialization of 'ASort'.
+The class 'adt_Sort' is a specialization of 'ASort'.
+The class 'adt_Term' is a specialization of 'ATerm'.
+The class 'adt_Variable' is a specialization of 'ATerm'.
+
+Relationships between classes are modeled using associations.
+An association connects 'adt_Signature' and 'adt_ADT'. From 'adt_Signature', the role 'adt_Signature' has cardinality 0..*, and from 'adt_ADT', the role 'adt_ADT' has cardinality 0..*.
+An association connects 'adt_ADT' and 'adt_VariableDeclaration'. From 'adt_ADT', the role 'adt_ADT2' has cardinality 0..*, and from 'adt_VariableDeclaration', the role 'adt_VariableDeclaration' has cardinality 0..*.
+An association connects 'adt_ADT' and 'adt_Equation'. From 'adt_ADT', the role 'adt_ADT4' has cardinality 0..*, and from 'adt_Equation', the role 'adt_Equation' has cardinality 0..*.
+An association connects 'adt_SubSort' and 'adt_ASort'. From 'adt_SubSort', the role 'adt_SubSort' has cardinality 0..*, and from 'adt_ASort', the role 'adt_ASort' has cardinality 0..*.
+An association connects 'adt_Signature' and 'adt_Operation'. From 'adt_Signature', the role 'adt_Signature7' has cardinality 0..*, and from 'adt_Operation', the role 'adt_Operation' has cardinality 0..*.
+An association connects 'adt_Signature' and 'adt_ASort'. From 'adt_Signature', the role 'adt_Signature9' has cardinality 0..*, and from 'adt_ASort', the role 'adt_ASort10' has cardinality 0..*.
+An association connects 'adt_Signature' and 'adt_Operation'. From 'adt_Signature', the role 'adt_Signature12' has cardinality 0..*, and from 'adt_Operation', the role 'adt_Operation13' has cardinality 0..*.
+An association connects 'adt_Operation' and 'adt_Signature'. From 'adt_Operation', the role 'adt_Operation16' has cardinality 0..*, and from 'adt_Signature', the role 'adt_Signature15' has cardinality 0..*.
+An association connects 'adt_VariableDeclaration' and 'adt_ASort'. From 'adt_VariableDeclaration', the role 'adt_VariableDeclaration18' has cardinality 0..*, and from 'adt_ASort', the role 'adt_ASort19' has cardinality 0..*.
+An association connects 'adt_ASort' and 'adt_Operation'. From 'adt_ASort', the role 'adt_ASort22' has cardinality 0..*, and from 'adt_Operation', the role 'adt_Operation21' has cardinality 0..*.
+An association connects 'adt_ASort' and 'adt_Operation'. From 'adt_ASort', the role 'adt_ASort25' has cardinality 0..*, and from 'adt_Operation', the role 'adt_Operation24' has cardinality 0..*.
+An association connects 'adt_ATerm' and 'adt_ADT'. From 'adt_ATerm', the role 'adt_ATerm' has cardinality 0..*, and from 'adt_ADT', the role 'adt_ADT27' has cardinality 0..*.
+An association connects 'adt_ATerm' and 'adt_ASort'. From 'adt_ATerm', the role 'adt_ATerm29' has cardinality 0..*, and from 'adt_ASort', the role 'adt_ASort30' has cardinality 0..*.
+An association connects 'adt_Operation' and 'adt_Term'. From 'adt_Operation', the role 'adt_Operation32' has cardinality 0..*, and from 'adt_Term', the role 'adt_Term' has cardinality 0..*.
+An association connects 'adt_Term' and 'adt_ATerm'. From 'adt_Term', the role 'adt_Term34' has cardinality 0..*, and from 'adt_ATerm', the role 'adt_ATerm35' has cardinality 0..*.
+An association connects 'adt_VariableDeclaration' and 'adt_Variable'. From 'adt_VariableDeclaration', the role 'adt_VariableDeclaration37' has cardinality 0..*, and from 'adt_Variable', the role 'adt_Variable' has cardinality 0..*.
+An association connects 'adt_ATerm' and 'adt_Equation'. From 'adt_ATerm', the role 'adt_ATerm40' has cardinality 0..*, and from 'adt_Equation', the role 'adt_Equation39' has cardinality 0..*.
+An association connects 'adt_Equation' and 'adt_ATerm'. From 'adt_Equation', the role 'adt_Equation42' has cardinality 0..*, and from 'adt_ATerm', the role 'adt_ATerm43' has cardinality 0..*.

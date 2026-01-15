@@ -1,0 +1,54 @@
+The domain model 'epo2' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'GlobalLocation' represents an important domain concept.
+It does not declare any attributes.
+
+'epo2_USAddress' represents an important domain concept.
+It has the following attributes: 'street', which is of type str; 'zip', which is of type str; 'state', which is of type str; 'city', which is of type str.
+
+'epo2_Customer' represents an important domain concept.
+It has one attribute: 'customerID', which is of type int.
+
+'epo2_GlobalLocation' represents an important domain concept.
+It has one attribute: 'countryCode', which is of type int.
+
+'epo2_GlobalAddress' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'epo2_Address' represents an important domain concept.
+It has the following attributes: 'country', which is of type str; 'name', which is of type str.
+
+'epo2_PurchaseOrder' represents an important domain concept.
+It has the following attributes: 'orderDate', which is of type date; 'comment', which is of type str; 'status', which is of type str; 'totalAmount', which is of type int.
+
+'Address' represents an important domain concept.
+It does not declare any attributes.
+
+'epo2_Supplier' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'epo2_Item' represents an important domain concept.
+It has the following attributes: 'productName', which is of type str; 'shipDate', which is of type date; 'quantity', which is of type int; 'partNum', which is of type str; 'usPrice', which is of type int; 'comment', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'OrderStatus' defines the following possible values: 'Complete', 'Pending', 'BackOrder'.
+
+The model also captures inheritance relationships between classes.
+The class 'epo2_USAddress' is a specialization of 'Address'.
+The class 'epo2_GlobalAddress' is a specialization of 'Address'.
+The class 'epo2_GlobalAddress' is a specialization of 'GlobalLocation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'epo2_PurchaseOrder' and 'epo2_Supplier'. From 'epo2_PurchaseOrder', the role 'epo2_PurchaseOrder' has cardinality 0..*, and from 'epo2_Supplier', the role 'epo2_Supplier' has cardinality 0..*.
+An association connects 'epo2_Supplier' and 'epo2_PurchaseOrder'. From 'epo2_Supplier', the role 'epo2_Supplier2' has cardinality 0..*, and from 'epo2_PurchaseOrder', the role 'epo2_PurchaseOrder3' has cardinality 0..*.
+An association connects 'epo2_PurchaseOrder' and 'epo2_Supplier'. From 'epo2_PurchaseOrder', the role 'epo2_PurchaseOrder6' has cardinality 0..*, and from 'epo2_Supplier', the role 'epo2_Supplier5' has cardinality 0..*.
+An association connects 'epo2_Supplier' and 'epo2_Customer'. From 'epo2_Supplier', the role 'epo2_Supplier8' has cardinality 0..*, and from 'epo2_Customer', the role 'epo2_Customer' has cardinality 0..*.
+An association connects 'epo2_Customer' and 'epo2_PurchaseOrder'. From 'epo2_Customer', the role 'Customer' has cardinality 0..*, and from 'epo2_PurchaseOrder', the role 'orders' has cardinality 0..*.
+An association connects 'epo2_PurchaseOrder' and 'epo2_PurchaseOrder'. From 'epo2_PurchaseOrder', the role 'epo2_PurchaseOrder10' has cardinality 0..*, and from 'epo2_PurchaseOrder', the role 'epo2_PurchaseOrder12' has cardinality 0..*.
+An association connects 'epo2_Item' and 'epo2_PurchaseOrder'. From 'epo2_Item', the role 'Item' has cardinality 0..*, and from 'epo2_PurchaseOrder', the role 'order' has cardinality 0..*.
+An association connects 'epo2_PurchaseOrder' and 'epo2_Address'. From 'epo2_PurchaseOrder', the role 'epo2_PurchaseOrder15' has cardinality 0..*, and from 'epo2_Address', the role 'epo2_Address' has cardinality 0..*.
+An association connects 'epo2_Address' and 'epo2_PurchaseOrder'. From 'epo2_Address', the role 'epo2_Address18' has cardinality 0..*, and from 'epo2_PurchaseOrder', the role 'epo2_PurchaseOrder17' has cardinality 0..*.
+An association connects 'epo2_PurchaseOrder' and 'epo2_Customer'. From 'epo2_PurchaseOrder', the role 'PurchaseOrder' has cardinality 0..*, and from 'epo2_Customer', the role 'customer' has cardinality 0..*.
+An association connects 'epo2_PurchaseOrder' and 'epo2_Item'. From 'epo2_PurchaseOrder', the role 'PurchaseOrder21' has cardinality 0..*, and from 'epo2_Item', the role 'items' has cardinality 0..*.

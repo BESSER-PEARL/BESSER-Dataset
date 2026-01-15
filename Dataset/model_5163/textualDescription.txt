@@ -1,0 +1,25 @@
+The domain model 'FaultyUMLmodel4' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'FaultyUMLmodel4_A' represents an important domain concept.
+It has the following attributes: 'v', which is of type int; 'w', which is of type bool.
+
+'FaultyUMLmodel4_C' represents an important domain concept.
+It has one attribute: 'u', which is of type int.
+
+'FaultyUMLmodel4_D' represents an important domain concept.
+It has one attribute: 'z', which is of type bool.
+
+'FaultyUMLmodel4_B' represents an important domain concept.
+It has the following attributes: 'x', which is of type int; 'y', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'FaultyUMLmodel4_A' and 'FaultyUMLmodel4_B'. From 'FaultyUMLmodel4_A', the role 'BA' has cardinality 0..*, and from 'FaultyUMLmodel4_B', the role 'B' has cardinality 0..*.
+An association connects 'FaultyUMLmodel4_A' and 'FaultyUMLmodel4_C'. From 'FaultyUMLmodel4_A', the role 'CA' has cardinality 0..*, and from 'FaultyUMLmodel4_C', the role 'C' has cardinality 0..*.
+An association connects 'FaultyUMLmodel4_B' and 'FaultyUMLmodel4_A'. From 'FaultyUMLmodel4_B', the role 'AB' has cardinality 0..*, and from 'FaultyUMLmodel4_A', the role 'A' has cardinality 0..*.
+An association connects 'FaultyUMLmodel4_C' and 'FaultyUMLmodel4_B'. From 'FaultyUMLmodel4_C', the role 'C4' has cardinality 0..*, and from 'FaultyUMLmodel4_B', the role 'CB' has cardinality 0..*.
+An association connects 'FaultyUMLmodel4_A' and 'FaultyUMLmodel4_C'. From 'FaultyUMLmodel4_A', the role 'A6' has cardinality 0..*, and from 'FaultyUMLmodel4_C', the role 'AC' has cardinality 0..*.
+An association connects 'FaultyUMLmodel4_C' and 'FaultyUMLmodel4_B'. From 'FaultyUMLmodel4_C', the role 'BC' has cardinality 0..*, and from 'FaultyUMLmodel4_B', the role 'B8' has cardinality 0..*.
+An association connects 'FaultyUMLmodel4_C' and 'FaultyUMLmodel4_D'. From 'FaultyUMLmodel4_C', the role 'DC' has cardinality 0..*, and from 'FaultyUMLmodel4_D', the role 'D' has cardinality 0..*.
+An association connects 'FaultyUMLmodel4_D' and 'FaultyUMLmodel4_C'. From 'FaultyUMLmodel4_D', the role 'CD' has cardinality 0..*, and from 'FaultyUMLmodel4_C', the role 'C11' has cardinality 0..*.

@@ -1,0 +1,158 @@
+The domain model 'selflet' describes the core structural elements and their relationships within the system.
+
+The model defines 36 main class(es).
+
+'selflet_IntermediateState' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_Methods' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_Active' represents an important domain concept.
+It has one attribute: 'mainService', which is of type str.
+
+'selflet_Behavior' represents an important domain concept.
+It has the following attributes: 'elementaryBehaviorCost', which is of type str; 'isDefaultBehavior', which is of type str; 'fileName', which is of type str; 'elementaryBehaviorCPUTime', which is of type str; 'name', which is of type str.
+
+'selflet_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_SelfletResources' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_Conditions' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_Services' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_SelfletProperties' represents an important domain concept.
+It has the following attributes: 'limePort', which is of type str; 'description', which is of type str; 'enableOptimizationPolicy', which is of type str; 'author', which is of type str; 'enableCloudOptimizationPolicy', which is of type str.
+
+'selflet_Input' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_TypeKnowledge' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_ElementaryBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_GeneralKnowledge' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_ComplexBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_Empty' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_Rule' represents an important domain concept.
+It has one attribute: 'file', which is of type str.
+
+'selflet_Reds' represents an important domain concept.
+It has the following attributes: 'ipAddress', which is of type str; 'port', which is of type str.
+
+'selflet_Service' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'active', which is of type str; 'maxResponseTime', which is of type str; 'revenue', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_Abilities' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_Parameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'selflet_Ability' represents an important domain concept.
+It has the following attributes: 'service', which is of type str; 'file', which is of type str.
+
+'selflet_Method' represents an important domain concept.
+It has the following attributes: 'paramType', which is of type str; 'name', which is of type str.
+
+'selflet_Output' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_Selflet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'selflet_AbilityState' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_Condition' represents an important domain concept.
+It has one attribute: 'file', which is of type str.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_OfferMode' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'selflet_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'selflet_CPUUtilization' represents an important domain concept.
+It has the following attributes: 'lowerBound', which is of type str; 'upperBound', which is of type str.
+
+'selflet_Actions' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_Rules' represents an important domain concept.
+It does not declare any attributes.
+
+'selflet_SelfLetProperty' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'type', which is of type str; 'name', which is of type str.
+
+'selflet_Action' represents an important domain concept.
+It has one attribute: 'file', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Mode' defines the following possible values: 'KnowsWhoCanTeach', 'CanTeach', 'Both', 'None', 'KnowsWhoCanBoth', 'CanDo', 'KnowsWhoCanDo'.
+The enumeration 'Type' defines the following possible values: 'Double1', 'String1', 'ServiceAskMode', 'ServiceOfferMode', 'Integer1', 'boolean', 'string', 'Boolean1', 'double', 'integer'.
+
+The model also captures inheritance relationships between classes.
+The class 'selflet_ElementaryBehavior' is a specialization of 'Behavior'.
+The class 'selflet_ComplexBehavior' is a specialization of 'Behavior'.
+The class 'selflet_InitialState' is a specialization of 'State'.
+The class 'selflet_FinalState' is a specialization of 'State'.
+The class 'selflet_AbilityState' is a specialization of 'State'.
+The class 'selflet_IntermediateState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'selflet_Abilities' and 'selflet_Ability'. From 'selflet_Abilities', the role 'selflet_Abilities' has cardinality 0..*, and from 'selflet_Ability', the role 'selflet_Ability' has cardinality 0..*.
+An association connects 'selflet_Methods' and 'selflet_Ability'. From 'selflet_Methods', the role 'selflet_Methods' has cardinality 0..*, and from 'selflet_Ability', the role 'selflet_Ability2' has cardinality 0..*.
+An association connects 'selflet_Action' and 'selflet_Actions'. From 'selflet_Action', the role 'selflet_Action' has cardinality 0..*, and from 'selflet_Actions', the role 'selflet_Actions' has cardinality 0..*.
+An association connects 'selflet_Behavior' and 'selflet_Service'. From 'selflet_Behavior', the role 'selflet_Behavior' has cardinality 0..*, and from 'selflet_Service', the role 'selflet_Service' has cardinality 0..*.
+An association connects 'selflet_Condition' and 'selflet_Conditions'. From 'selflet_Condition', the role 'selflet_Condition' has cardinality 0..*, and from 'selflet_Conditions', the role 'selflet_Conditions' has cardinality 0..*.
+An association connects 'selflet_SelfLetProperty' and 'selflet_GeneralKnowledge'. From 'selflet_SelfLetProperty', the role 'selflet_SelfLetProperty' has cardinality 0..*, and from 'selflet_GeneralKnowledge', the role 'selflet_GeneralKnowledge' has cardinality 0..*.
+An association connects 'selflet_Parameter' and 'selflet_Input'. From 'selflet_Parameter', the role 'selflet_Parameter' has cardinality 0..*, and from 'selflet_Input', the role 'selflet_Input' has cardinality 0..*.
+An association connects 'selflet_Methods' and 'selflet_Method'. From 'selflet_Methods', the role 'selflet_Methods9' has cardinality 0..*, and from 'selflet_Method', the role 'selflet_Method' has cardinality 0..*.
+An association connects 'selflet_Output' and 'selflet_Parameter'. From 'selflet_Output', the role 'selflet_Output' has cardinality 0..*, and from 'selflet_Parameter', the role 'selflet_Parameter11' has cardinality 0..*.
+An association connects 'selflet_Rules' and 'selflet_Rule'. From 'selflet_Rules', the role 'selflet_Rules' has cardinality 0..*, and from 'selflet_Rule', the role 'selflet_Rule' has cardinality 0..*.
+An association connects 'selflet_Selflet' and 'selflet_SelfletProperties'. From 'selflet_Selflet', the role 'selflet_Selflet' has cardinality 0..*, and from 'selflet_SelfletProperties', the role 'selflet_SelfletProperties' has cardinality 0..*.
+An association connects 'selflet_Selflet' and 'selflet_SelfletResources'. From 'selflet_Selflet', the role 'selflet_Selflet15' has cardinality 0..*, and from 'selflet_SelfletResources', the role 'selflet_SelfletResources' has cardinality 0..*.
+An association connects 'selflet_Empty' and 'selflet_SelfletProperties'. From 'selflet_Empty', the role 'selflet_Empty' has cardinality 0..*, and from 'selflet_SelfletProperties', the role 'selflet_SelfletProperties17' has cardinality 0..*.
+An association connects 'selflet_Active' and 'selflet_SelfletProperties'. From 'selflet_Active', the role 'selflet_Active' has cardinality 0..*, and from 'selflet_SelfletProperties', the role 'selflet_SelfletProperties19' has cardinality 0..*.
+An association connects 'selflet_Reds' and 'selflet_SelfletProperties'. From 'selflet_Reds', the role 'selflet_Reds' has cardinality 0..*, and from 'selflet_SelfletProperties', the role 'selflet_SelfletProperties21' has cardinality 0..*.
+An association connects 'selflet_SelfletProperties' and 'selflet_GeneralKnowledge'. From 'selflet_SelfletProperties', the role 'selflet_SelfletProperties23' has cardinality 0..*, and from 'selflet_GeneralKnowledge', the role 'selflet_GeneralKnowledge24' has cardinality 0..*.
+An association connects 'selflet_TypeKnowledge' and 'selflet_SelfletProperties'. From 'selflet_TypeKnowledge', the role 'selflet_TypeKnowledge' has cardinality 0..*, and from 'selflet_SelfletProperties', the role 'selflet_SelfletProperties26' has cardinality 0..*.
+An association connects 'selflet_Abilities' and 'selflet_SelfletResources'. From 'selflet_Abilities', the role 'selflet_Abilities29' has cardinality 0..*, and from 'selflet_SelfletResources', the role 'selflet_SelfletResources28' has cardinality 0..*.
+An association connects 'selflet_Actions' and 'selflet_SelfletResources'. From 'selflet_Actions', the role 'selflet_Actions32' has cardinality 0..*, and from 'selflet_SelfletResources', the role 'selflet_SelfletResources31' has cardinality 0..*.
+An association connects 'selflet_Conditions' and 'selflet_SelfletResources'. From 'selflet_Conditions', the role 'selflet_Conditions35' has cardinality 0..*, and from 'selflet_SelfletResources', the role 'selflet_SelfletResources34' has cardinality 0..*.
+An association connects 'selflet_Services' and 'selflet_SelfletResources'. From 'selflet_Services', the role 'selflet_Services' has cardinality 0..*, and from 'selflet_SelfletResources', the role 'selflet_SelfletResources37' has cardinality 0..*.
+An association connects 'selflet_SelfletResources' and 'selflet_Rules'. From 'selflet_SelfletResources', the role 'selflet_SelfletResources39' has cardinality 0..*, and from 'selflet_Rules', the role 'selflet_Rules40' has cardinality 0..*.
+An association connects 'selflet_Services' and 'selflet_Service'. From 'selflet_Services', the role 'selflet_Services42' has cardinality 0..*, and from 'selflet_Service', the role 'selflet_Service43' has cardinality 0..*.
+An association connects 'selflet_Service' and 'selflet_Input'. From 'selflet_Service', the role 'selflet_Service45' has cardinality 0..*, and from 'selflet_Input', the role 'selflet_Input46' has cardinality 0..*.
+An association connects 'selflet_Output' and 'selflet_Service'. From 'selflet_Output', the role 'selflet_Output49' has cardinality 0..*, and from 'selflet_Service', the role 'selflet_Service48' has cardinality 0..*.
+An association connects 'selflet_OfferMode' and 'selflet_Service'. From 'selflet_OfferMode', the role 'selflet_OfferMode' has cardinality 0..*, and from 'selflet_Service', the role 'selflet_Service51' has cardinality 0..*.
+An association connects 'selflet_Behavior' and 'selflet_Service'. From 'selflet_Behavior', the role 'selflet_Behavior54' has cardinality 0..*, and from 'selflet_Service', the role 'selflet_Service53' has cardinality 0..*.
+An association connects 'selflet_TypeKnowledge' and 'selflet_SelfLetProperty'. From 'selflet_TypeKnowledge', the role 'selflet_TypeKnowledge56' has cardinality 0..*, and from 'selflet_SelfLetProperty', the role 'selflet_SelfLetProperty57' has cardinality 0..*.
+An association connects 'selflet_ElementaryBehavior' and 'selflet_State'. From 'selflet_ElementaryBehavior', the role 'selflet_ElementaryBehavior' has cardinality 0..*, and from 'selflet_State', the role 'selflet_State' has cardinality 0..*.
+An association connects 'selflet_ComplexBehavior' and 'selflet_State'. From 'selflet_ComplexBehavior', the role 'selflet_ComplexBehavior' has cardinality 0..*, and from 'selflet_State', the role 'selflet_State60' has cardinality 0..*.
+An association connects 'selflet_State' and 'selflet_State'. From 'selflet_State', the role 'selflet_State61' has cardinality 0..*, and from 'selflet_State', the role 'selflet_State63' has cardinality 0..*.
+An association connects 'selflet_AbilityState' and 'selflet_Action'. From 'selflet_AbilityState', the role 'selflet_AbilityState' has cardinality 0..*, and from 'selflet_Action', the role 'selflet_Action65' has cardinality 0..*.
+An association connects 'selflet_IntermediateState' and 'selflet_Service'. From 'selflet_IntermediateState', the role 'selflet_IntermediateState' has cardinality 0..*, and from 'selflet_Service', the role 'selflet_Service67' has cardinality 0..*.

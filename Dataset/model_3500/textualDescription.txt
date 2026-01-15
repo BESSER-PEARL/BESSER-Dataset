@@ -1,0 +1,34 @@
+The domain model 'sourcecode' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'sourcecode_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'sourcecode_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'sourcecode_Statement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'sourcecode_Decision' represents an important domain concept.
+It does not declare any attributes.
+
+'sourcecode_While' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'sourcecode_Assignment' is a specialization of 'Statement'.
+The class 'sourcecode_Decision' is a specialization of 'Statement'.
+The class 'sourcecode_While' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sourcecode_Statement' and 'sourcecode_Statement'. From 'sourcecode_Statement', the role 'sourcecode_Statement0' has cardinality 0..*, and from 'sourcecode_Statement', the role 'sourcecode_Statement' has cardinality 0..*.
+An association connects 'sourcecode_Decision' and 'sourcecode_Statement'. From 'sourcecode_Decision', the role 'sourcecode_Decision' has cardinality 0..*, and from 'sourcecode_Statement', the role 'sourcecode_Statement3' has cardinality 0..*.
+An association connects 'sourcecode_Statement' and 'sourcecode_Decision'. From 'sourcecode_Statement', the role 'sourcecode_Statement6' has cardinality 0..*, and from 'sourcecode_Decision', the role 'sourcecode_Decision5' has cardinality 0..*.
+An association connects 'sourcecode_While' and 'sourcecode_Statement'. From 'sourcecode_While', the role 'sourcecode_While' has cardinality 0..*, and from 'sourcecode_Statement', the role 'sourcecode_Statement8' has cardinality 0..*.
+An association connects 'sourcecode_Statement' and 'sourcecode_While'. From 'sourcecode_Statement', the role 'sourcecode_Statement11' has cardinality 0..*, and from 'sourcecode_While', the role 'sourcecode_While10' has cardinality 0..*.
+An association connects 'sourcecode_Program' and 'sourcecode_Statement'. From 'sourcecode_Program', the role 'sourcecode_Program' has cardinality 0..*, and from 'sourcecode_Statement', the role 'sourcecode_Statement13' has cardinality 0..*.

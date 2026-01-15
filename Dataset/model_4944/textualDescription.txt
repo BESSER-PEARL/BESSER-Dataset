@@ -1,0 +1,52 @@
+The domain model 'forms' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'ItemType' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_Option' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'text', which is of type str.
+
+'forms_Item' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'explanation', which is of type str.
+
+'forms_FreeText' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_Group' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'forms_Choice' represents an important domain concept.
+It has one attribute: 'multiple', which is of type bool.
+
+'forms_ItemType' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_Form' represents an important domain concept.
+It has one attribute: 'caption', which is of type str.
+
+'forms_Date' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_Number' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_Decision' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'forms_FreeText' is a specialization of 'ItemType'.
+The class 'forms_Choice' is a specialization of 'ItemType'.
+The class 'forms_Date' is a specialization of 'ItemType'.
+The class 'forms_Number' is a specialization of 'ItemType'.
+The class 'forms_Decision' is a specialization of 'ItemType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'forms_Group' and 'forms_Form'. From 'forms_Group', the role 'Group' has cardinality 0..*, and from 'forms_Form', the role 'form' has cardinality 0..*.
+An association connects 'forms_ItemType' and 'forms_Item'. From 'forms_ItemType', the role 'forms_ItemType' has cardinality 0..*, and from 'forms_Item', the role 'forms_Item' has cardinality 0..*.
+An association connects 'forms_Item' and 'forms_Option'. From 'forms_Item', the role 'forms_Item3' has cardinality 0..*, and from 'forms_Option', the role 'forms_Option' has cardinality 0..*.
+An association connects 'forms_Choice' and 'forms_Option'. From 'forms_Choice', the role 'forms_Choice' has cardinality 0..*, and from 'forms_Option', the role 'forms_Option5' has cardinality 0..*.
+An association connects 'forms_Item' and 'forms_Group'. From 'forms_Item', the role 'forms_Item7' has cardinality 0..*, and from 'forms_Group', the role 'forms_Group' has cardinality 0..*.
+An association connects 'forms_Form' and 'forms_Group'. From 'forms_Form', the role 'Form' has cardinality 0..*, and from 'forms_Group', the role 'groups' has cardinality 0..*.
+An association connects 'forms_Option' and 'forms_Decision'. From 'forms_Option', the role 'forms_Option10' has cardinality 0..*, and from 'forms_Decision', the role 'forms_Decision' has cardinality 0..*.

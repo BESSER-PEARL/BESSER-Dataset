@@ -1,0 +1,129 @@
+The domain model 'picojava' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'picojava_PrimitiveDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'Access' represents an important domain concept.
+It does not declare any attributes.
+
+'picojava_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'BlockStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'picojava_Decl' represents an important domain concept.
+It has the following attributes: 'isUnknown', which is of type bool; 'Name', which is of type str.
+
+'IdUse' represents an important domain concept.
+It does not declare any attributes.
+
+'picojava_IdUse' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'isQualified', which is of type bool.
+
+'picojava_Use' represents an important domain concept.
+It does not declare any attributes.
+
+'picojava_ClassDecl' represents an important domain concept.
+It has one attribute: 'hasCycleOnSuperclassChain', which is of type bool.
+
+'TypeDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'picojava_VarDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'picojava_Exp' represents an important domain concept.
+It has one attribute: 'isValue', which is of type bool.
+
+'picojava_BlockStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'picojava_TypeDecl' represents an important domain concept.
+It has one attribute: 'isQualified', which is of type bool.
+
+'picojava_UnknownDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'picojava_AssignStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'picojava_WhileStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'picojava_Access' represents an important domain concept.
+It does not declare any attributes.
+
+'picojava_TypeUse' represents an important domain concept.
+It does not declare any attributes.
+
+'picojava_Stmt' represents an important domain concept.
+It does not declare any attributes.
+
+'picojava_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'Decl' represents an important domain concept.
+It does not declare any attributes.
+
+'picojava_VariableUse' represents an important domain concept.
+It does not declare any attributes.
+
+'Stmt' represents an important domain concept.
+It does not declare any attributes.
+
+'picojava_Dot' represents an important domain concept.
+It does not declare any attributes.
+
+'picojava_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'Value', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'picojava_Stmt' is a specialization of 'BlockStmt'.
+The class 'picojava_Decl' is a specialization of 'BlockStmt'.
+The class 'picojava_TypeDecl' is a specialization of 'Decl'.
+The class 'picojava_ClassDecl' is a specialization of 'TypeDecl'.
+The class 'picojava_VarDecl' is a specialization of 'Decl'.
+The class 'picojava_AssignStmt' is a specialization of 'Stmt'.
+The class 'picojava_WhileStmt' is a specialization of 'Stmt'.
+The class 'picojava_Access' is a specialization of 'Exp'.
+The class 'picojava_IdUse' is a specialization of 'Access'.
+The class 'picojava_Use' is a specialization of 'IdUse'.
+The class 'picojava_Dot' is a specialization of 'Access'.
+The class 'picojava_BooleanLiteral' is a specialization of 'Exp'.
+The class 'picojava_PrimitiveDecl' is a specialization of 'TypeDecl'.
+The class 'picojava_UnknownDecl' is a specialization of 'TypeDecl'.
+The class 'picojava_TypeUse' is a specialization of 'IdUse'.
+The class 'picojava_VariableUse' is a specialization of 'IdUse'.
+
+Relationships between classes are modeled using associations.
+An association connects 'picojava_Program' and 'picojava_Block'. From 'picojava_Program', the role 'picojava_Program' has cardinality 0..*, and from 'picojava_Block', the role 'picojava_Block' has cardinality 0..*.
+An association connects 'picojava_Program' and 'picojava_TypeDecl'. From 'picojava_Program', the role 'picojava_Program2' has cardinality 0..*, and from 'picojava_TypeDecl', the role 'picojava_TypeDecl' has cardinality 0..*.
+An association connects 'picojava_Program' and 'picojava_UnknownDecl'. From 'picojava_Program', the role 'picojava_Program4' has cardinality 0..*, and from 'picojava_UnknownDecl', the role 'picojava_UnknownDecl' has cardinality 0..*.
+An association connects 'picojava_PrimitiveDecl' and 'picojava_Program'. From 'picojava_PrimitiveDecl', the role 'picojava_PrimitiveDecl' has cardinality 0..*, and from 'picojava_Program', the role 'picojava_Program6' has cardinality 0..*.
+An association connects 'picojava_BlockStmt' and 'picojava_Block'. From 'picojava_BlockStmt', the role 'picojava_BlockStmt' has cardinality 0..*, and from 'picojava_Block', the role 'picojava_Block8' has cardinality 0..*.
+An association connects 'picojava_Block' and 'picojava_Decl'. From 'picojava_Block', the role 'picojava_Block10' has cardinality 0..*, and from 'picojava_Decl', the role 'picojava_Decl' has cardinality 0..*.
+An association connects 'picojava_TypeDecl' and 'picojava_Decl'. From 'picojava_TypeDecl', the role 'picojava_TypeDecl13' has cardinality 0..*, and from 'picojava_Decl', the role 'picojava_Decl12' has cardinality 0..*.
+An association connects 'picojava_PrimitiveDecl' and 'picojava_Decl'. From 'picojava_PrimitiveDecl', the role 'picojava_PrimitiveDecl16' has cardinality 0..*, and from 'picojava_Decl', the role 'picojava_Decl15' has cardinality 0..*.
+An association connects 'picojava_TypeDecl' and 'picojava_Access'. From 'picojava_TypeDecl', the role 'picojava_TypeDecl18' has cardinality 0..*, and from 'picojava_Access', the role 'picojava_Access' has cardinality 0..*.
+An association connects 'picojava_TypeDecl' and 'picojava_Decl'. From 'picojava_TypeDecl', the role 'picojava_TypeDecl20' has cardinality 0..*, and from 'picojava_Decl', the role 'picojava_Decl21' has cardinality 0..*.
+An association connects 'picojava_IdUse' and 'picojava_ClassDecl'. From 'picojava_IdUse', the role 'picojava_IdUse' has cardinality 0..*, and from 'picojava_ClassDecl', the role 'picojava_ClassDecl' has cardinality 0..*.
+An association connects 'picojava_Block' and 'picojava_ClassDecl'. From 'picojava_Block', the role 'picojava_Block25' has cardinality 0..*, and from 'picojava_ClassDecl', the role 'picojava_ClassDecl24' has cardinality 0..*.
+An association connects 'picojava_ClassDecl' and 'picojava_ClassDecl'. From 'picojava_ClassDecl', the role 'picojava_ClassDecl26' has cardinality 0..*, and from 'picojava_ClassDecl', the role 'picojava_ClassDecl28' has cardinality 0..*.
+An association connects 'picojava_VarDecl' and 'picojava_Access'. From 'picojava_VarDecl', the role 'picojava_VarDecl' has cardinality 0..*, and from 'picojava_Access', the role 'picojava_Access30' has cardinality 0..*.
+An association connects 'picojava_Access' and 'picojava_AssignStmt'. From 'picojava_Access', the role 'picojava_Access32' has cardinality 0..*, and from 'picojava_AssignStmt', the role 'picojava_AssignStmt' has cardinality 0..*.
+An association connects 'picojava_Exp' and 'picojava_AssignStmt'. From 'picojava_Exp', the role 'picojava_Exp' has cardinality 0..*, and from 'picojava_AssignStmt', the role 'picojava_AssignStmt34' has cardinality 0..*.
+An association connects 'picojava_WhileStmt' and 'picojava_Exp'. From 'picojava_WhileStmt', the role 'picojava_WhileStmt' has cardinality 0..*, and from 'picojava_Exp', the role 'picojava_Exp36' has cardinality 0..*.
+An association connects 'picojava_Stmt' and 'picojava_WhileStmt'. From 'picojava_Stmt', the role 'picojava_Stmt' has cardinality 0..*, and from 'picojava_WhileStmt', the role 'picojava_WhileStmt38' has cardinality 0..*.
+An association connects 'picojava_PrimitiveDecl' and 'picojava_WhileStmt'. From 'picojava_PrimitiveDecl', the role 'picojava_PrimitiveDecl41' has cardinality 0..*, and from 'picojava_WhileStmt', the role 'picojava_WhileStmt40' has cardinality 0..*.
+An association connects 'picojava_Exp' and 'picojava_TypeDecl'. From 'picojava_Exp', the role 'picojava_Exp43' has cardinality 0..*, and from 'picojava_TypeDecl', the role 'picojava_TypeDecl44' has cardinality 0..*.
+An association connects 'picojava_Access' and 'picojava_Decl'. From 'picojava_Access', the role 'picojava_Access46' has cardinality 0..*, and from 'picojava_Decl', the role 'picojava_Decl47' has cardinality 0..*.
+An association connects 'picojava_IdUse' and 'picojava_Access'. From 'picojava_IdUse', the role 'picojava_IdUse49' has cardinality 0..*, and from 'picojava_Access', the role 'picojava_Access50' has cardinality 0..*.
+An association connects 'picojava_Access' and 'picojava_Dot'. From 'picojava_Access', the role 'picojava_Access52' has cardinality 0..*, and from 'picojava_Dot', the role 'picojava_Dot' has cardinality 0..*.
+An association connects 'picojava_IdUse' and 'picojava_Dot'. From 'picojava_IdUse', the role 'picojava_IdUse55' has cardinality 0..*, and from 'picojava_Dot', the role 'picojava_Dot54' has cardinality 0..*.
+An association connects 'picojava_BooleanLiteral' and 'picojava_PrimitiveDecl'. From 'picojava_BooleanLiteral', the role 'picojava_BooleanLiteral' has cardinality 0..*, and from 'picojava_PrimitiveDecl', the role 'picojava_PrimitiveDecl57' has cardinality 0..*.

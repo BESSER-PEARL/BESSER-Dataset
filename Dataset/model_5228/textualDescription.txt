@@ -1,0 +1,57 @@
+The domain model 'ilp' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'ilp_LiteralExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ilp_BinaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'ilp_Variable' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'dataType', which is of type str.
+
+'ilp_IntegerLinearProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ilp_ConstraintExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ilp_Expression' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'ilp_ObjectiveFunctionExpression' represents an important domain concept.
+It has one attribute: 'goal', which is of type str.
+
+'ilp_ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ilp_VariableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ObjectiveGoal' defines the following possible values: 'MIN', 'MAX'.
+The enumeration 'Operator' defines the following possible values: 'LESS_THAN_OR_EQUAL_TO', 'PLUS', 'GREATER_THAN_OR_EQUAL_TO', 'EQUAL_TO', 'MINUS', 'TIMES'.
+The enumeration 'ILPDataType' defines the following possible values: 'REAL', 'INTEGER', 'BINARY'.
+
+The model also captures inheritance relationships between classes.
+The class 'ilp_LiteralExpression' is a specialization of 'Expression'.
+The class 'ilp_BinaryExpression' is a specialization of 'Expression'.
+The class 'ilp_ConstraintExpression' is a specialization of 'BinaryExpression'.
+The class 'ilp_ArithmeticExpression' is a specialization of 'BinaryExpression'.
+The class 'ilp_VariableExpression' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ilp_Variable' and 'ilp_IntegerLinearProgram'. From 'ilp_Variable', the role 'ilp_Variable' has cardinality 0..*, and from 'ilp_IntegerLinearProgram', the role 'ilp_IntegerLinearProgram' has cardinality 0..*.
+An association connects 'ilp_IntegerLinearProgram' and 'ilp_ConstraintExpression'. From 'ilp_IntegerLinearProgram', the role 'ilp_IntegerLinearProgram2' has cardinality 0..*, and from 'ilp_ConstraintExpression', the role 'ilp_ConstraintExpression' has cardinality 0..*.
+An association connects 'ilp_IntegerLinearProgram' and 'ilp_ObjectiveFunctionExpression'. From 'ilp_IntegerLinearProgram', the role 'ilp_IntegerLinearProgram4' has cardinality 0..*, and from 'ilp_ObjectiveFunctionExpression', the role 'ilp_ObjectiveFunctionExpression' has cardinality 0..*.
+An association connects 'ilp_BinaryExpression' and 'ilp_Expression'. From 'ilp_BinaryExpression', the role 'ilp_BinaryExpression' has cardinality 0..*, and from 'ilp_Expression', the role 'ilp_Expression' has cardinality 0..*.
+An association connects 'ilp_BinaryExpression' and 'ilp_Expression'. From 'ilp_BinaryExpression', the role 'ilp_BinaryExpression7' has cardinality 0..*, and from 'ilp_Expression', the role 'ilp_Expression8' has cardinality 0..*.
+An association connects 'ilp_Variable' and 'ilp_VariableExpression'. From 'ilp_Variable', the role 'ilp_Variable10' has cardinality 0..*, and from 'ilp_VariableExpression', the role 'ilp_VariableExpression' has cardinality 0..*.
+An association connects 'ilp_ObjectiveFunctionExpression' and 'ilp_Expression'. From 'ilp_ObjectiveFunctionExpression', the role 'ilp_ObjectiveFunctionExpression12' has cardinality 0..*, and from 'ilp_Expression', the role 'ilp_Expression13' has cardinality 0..*.

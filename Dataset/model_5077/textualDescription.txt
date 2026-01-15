@@ -1,0 +1,62 @@
+The domain model 'CarRental2' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'CarRental2_CarGroup' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'CarRental2_Check' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'CarRental2_Customer' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'CarRental2_Branch' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'CarRental2_Employee' represents an important domain concept.
+It has one attribute: 'salary', which is of type int.
+
+'CarRental2_Rental' represents an important domain concept.
+It has the following attributes: 'fromDate', which is of type str; 'untilDate', which is of type str.
+
+'CarRental2_Person' represents an important domain concept.
+It has the following attributes: 'lastname', which is of type str; 'firstname', which is of type str; 'age', which is of type int; 'isMarried', which is of type bool.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'CarRental2_Car' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'CarRental2_ServiceDepot' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'CarRental2_Customer' is a specialization of 'Person'.
+The class 'CarRental2_Employee' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'CarRental2_Customer' and 'CarRental2_Rental'. From 'CarRental2_Customer', the role 'Booking_Customer' has cardinality 0..*, and from 'CarRental2_Rental', the role 'Rental' has cardinality 0..*.
+An association connects 'CarRental2_Branch' and 'CarRental2_Employee'. From 'CarRental2_Branch', the role 'Branch' has cardinality 0..*, and from 'CarRental2_Employee', the role 'Management_Employee_role_manager' has cardinality 0..*.
+An association connects 'CarRental2_Employee' and 'CarRental2_Branch'. From 'CarRental2_Employee', the role 'Employment_Employee_role_employee' has cardinality 0..*, and from 'CarRental2_Branch', the role 'Branch3' has cardinality 0..*.
+An association connects 'CarRental2_Branch' and 'CarRental2_Employee'. From 'CarRental2_Branch', the role 'Management_Branch_role_managedBranch' has cardinality 0..*, and from 'CarRental2_Employee', the role 'Employee' has cardinality 0..*.
+An association connects 'CarRental2_Employee' and 'CarRental2_Branch'. From 'CarRental2_Employee', the role 'Employee6' has cardinality 0..*, and from 'CarRental2_Branch', the role 'Employment_Branch_role_employer' has cardinality 0..*.
+An association connects 'CarRental2_Car' and 'CarRental2_Branch'. From 'CarRental2_Car', the role 'Car' has cardinality 0..*, and from 'CarRental2_Branch', the role 'Fleet_Branch' has cardinality 0..*.
+An association connects 'CarRental2_CarGroup' and 'CarRental2_Branch'. From 'CarRental2_CarGroup', the role 'CarGroup' has cardinality 0..*, and from 'CarRental2_Branch', the role 'Offers_Branch' has cardinality 0..*.
+An association connects 'CarRental2_Rental' and 'CarRental2_Branch'. From 'CarRental2_Rental', the role 'Rental10' has cardinality 0..*, and from 'CarRental2_Branch', the role 'Provider_Branch' has cardinality 0..*.
+An association connects 'CarRental2_Customer' and 'CarRental2_Rental'. From 'CarRental2_Customer', the role 'Customer' has cardinality 0..*, and from 'CarRental2_Rental', the role 'Booking_Rental' has cardinality 0..*.
+An association connects 'CarRental2_Rental' and 'CarRental2_Branch'. From 'CarRental2_Rental', the role 'Provider_Rental' has cardinality 0..*, and from 'CarRental2_Branch', the role 'Branch13' has cardinality 0..*.
+An association connects 'CarRental2_CarGroup' and 'CarRental2_Rental'. From 'CarRental2_CarGroup', the role 'CarGroup15' has cardinality 0..*, and from 'CarRental2_Rental', the role 'Reservation_Rental' has cardinality 0..*.
+An association connects 'CarRental2_Car' and 'CarRental2_Rental'. From 'CarRental2_Car', the role 'Car17' has cardinality 0..*, and from 'CarRental2_Rental', the role 'Assignment_Rental' has cardinality 0..*.
+An association connects 'CarRental2_CarGroup' and 'CarRental2_Branch'. From 'CarRental2_CarGroup', the role 'Offers_CarGroup' has cardinality 0..*, and from 'CarRental2_Branch', the role 'Branch19' has cardinality 0..*.
+An association connects 'CarRental2_Car' and 'CarRental2_CarGroup'. From 'CarRental2_Car', the role 'Car21' has cardinality 0..*, and from 'CarRental2_CarGroup', the role 'Classification_CarGroup' has cardinality 0..*.
+An association connects 'CarRental2_CarGroup' and 'CarRental2_Rental'. From 'CarRental2_CarGroup', the role 'Reservation_CarGroup' has cardinality 0..*, and from 'CarRental2_Rental', the role 'Rental23' has cardinality 0..*.
+An association connects 'CarRental2_CarGroup' and 'CarRental2_CarGroup'. From 'CarRental2_CarGroup', the role 'Quality_CarGroup_role_higher' has cardinality 0..*, and from 'CarRental2_CarGroup', the role 'CarGroup26' has cardinality 0..*.
+An association connects 'CarRental2_CarGroup' and 'CarRental2_CarGroup'. From 'CarRental2_CarGroup', the role 'CarGroup29' has cardinality 0..*, and from 'CarRental2_CarGroup', the role 'Quality_CarGroup_role_lower' has cardinality 0..*.
+An association connects 'CarRental2_Branch' and 'CarRental2_Car'. From 'CarRental2_Branch', the role 'Branch31' has cardinality 0..*, and from 'CarRental2_Car', the role 'Fleet_Car' has cardinality 0..*.
+An association connects 'CarRental2_CarGroup' and 'CarRental2_Car'. From 'CarRental2_CarGroup', the role 'CarGroup33' has cardinality 0..*, and from 'CarRental2_Car', the role 'Classification_Car' has cardinality 0..*.
+An association connects 'CarRental2_Rental' and 'CarRental2_Car'. From 'CarRental2_Rental', the role 'Rental35' has cardinality 0..*, and from 'CarRental2_Car', the role 'Assignment_Car' has cardinality 0..*.
+An association connects 'CarRental2_Car' and 'CarRental2_ServiceDepot'. From 'CarRental2_Car', the role 'Maintenance_Car' has cardinality 0..*, and from 'CarRental2_ServiceDepot', the role 'ServiceDepot' has cardinality 0..*.
+An association connects 'CarRental2_Car' and 'CarRental2_ServiceDepot'. From 'CarRental2_Car', the role 'Car38' has cardinality 0..*, and from 'CarRental2_ServiceDepot', the role 'Maintenance_ServiceDepot' has cardinality 0..*.
+An association connects 'CarRental2_Check' and 'CarRental2_ServiceDepot'. From 'CarRental2_Check', the role 'CarRental2_Check' has cardinality 0..*, and from 'CarRental2_ServiceDepot', the role 'CarRental2_ServiceDepot' has cardinality 0..*.

@@ -1,0 +1,26 @@
+The domain model 'testPackage' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'testPackage_SuperType' represents an important domain concept.
+It does not declare any attributes.
+
+'testPackage_AnotherType2' represents an important domain concept.
+It does not declare any attributes.
+
+'testPackage_SubType' represents an important domain concept.
+It does not declare any attributes.
+
+'testPackage_AnotherType' represents an important domain concept.
+It does not declare any attributes.
+
+'SuperType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'testPackage_SubType' is a specialization of 'SuperType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'testPackage_AnotherType' and 'testPackage_SuperType'. From 'testPackage_AnotherType', the role 'testPackage_AnotherType' has cardinality 0..*, and from 'testPackage_SuperType', the role 'testPackage_SuperType' has cardinality 0..*.
+An association connects 'testPackage_AnotherType' and 'testPackage_AnotherType2'. From 'testPackage_AnotherType', the role 'testPackage_AnotherType2' has cardinality 0..*, and from 'testPackage_AnotherType2', the role 'testPackage_AnotherType23' has cardinality 0..*.
+An association connects 'testPackage_AnotherType2' and 'testPackage_SubType'. From 'testPackage_AnotherType2', the role 'testPackage_AnotherType25' has cardinality 0..*, and from 'testPackage_SubType', the role 'testPackage_SubType' has cardinality 0..*.

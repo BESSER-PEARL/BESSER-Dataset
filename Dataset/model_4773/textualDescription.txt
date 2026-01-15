@@ -1,0 +1,126 @@
+The domain model 'types' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'ComplexType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_CollectionType' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+'NamedType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'types_CharLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'types_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'types_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'types_EnumerationLiteral' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'types_MappedByReference' represents an important domain concept.
+It does not declare any attributes.
+
+'types_EntityRelationship' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'DeclarationTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'types_MapType' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+'types_NumberLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'types_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'types_PropertyReference' represents an important domain concept.
+It does not declare any attributes.
+
+'types_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'types_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Property' represents an important domain concept.
+It has the following attributes: 'storageModifier', which is of type str; 'name', which is of type str.
+
+'types_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_EnumerationType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_NamedType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'types_ComplexType' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'types_EntityType' represents an important domain concept.
+It has one attribute: 'storageModifier', which is of type str.
+
+'types_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'types_DeclarationTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PropertyStorageModifier' defines the following possible values: 'TRANSIENT', 'VARIABLE', 'VALUE'.
+The enumeration 'EntityRelationshipKind' defines the following possible values: 'UNIQUE', 'MANY'.
+The enumeration 'TypeStorageModifier' defines the following possible values: 'STORABLE', 'EMBEDDABLE'.
+
+The model also captures inheritance relationships between classes.
+The class 'types_NamedType' is a specialization of 'Type'.
+The class 'types_CollectionType' is a specialization of 'Type'.
+The class 'types_CollectionType' is a specialization of 'DeclarationTypeReference'.
+The class 'types_MapType' is a specialization of 'Type'.
+The class 'types_MapType' is a specialization of 'DeclarationTypeReference'.
+The class 'types_TypeReference' is a specialization of 'DeclarationTypeReference'.
+The class 'types_PrimitiveType' is a specialization of 'NamedType'.
+The class 'types_ComplexType' is a specialization of 'NamedType'.
+The class 'types_EnumerationType' is a specialization of 'ComplexType'.
+The class 'types_EntityType' is a specialization of 'ComplexType'.
+The class 'types_StringLiteral' is a specialization of 'Literal'.
+The class 'types_CharLiteral' is a specialization of 'Literal'.
+The class 'types_NumberLiteral' is a specialization of 'Literal'.
+The class 'types_BooleanLiteral' is a specialization of 'Literal'.
+The class 'types_PropertyReference' is a specialization of 'Literal'.
+
+Relationships between classes are modeled using associations.
+An association connects 'types_Model' and 'types_Import'. From 'types_Model', the role 'types_Model' has cardinality 0..*, and from 'types_Import', the role 'types_Import' has cardinality 0..*.
+An association connects 'types_ComplexType' and 'types_Model'. From 'types_ComplexType', the role 'types_ComplexType' has cardinality 0..*, and from 'types_Model', the role 'types_Model2' has cardinality 0..*.
+An association connects 'types_TypeReference' and 'types_CollectionType'. From 'types_TypeReference', the role 'types_TypeReference' has cardinality 0..*, and from 'types_CollectionType', the role 'types_CollectionType' has cardinality 0..*.
+An association connects 'types_TypeReference' and 'types_MapType'. From 'types_TypeReference', the role 'types_TypeReference5' has cardinality 0..*, and from 'types_MapType', the role 'types_MapType' has cardinality 0..*.
+An association connects 'types_MapType' and 'types_TypeReference'. From 'types_MapType', the role 'types_MapType7' has cardinality 0..*, and from 'types_TypeReference', the role 'types_TypeReference8' has cardinality 0..*.
+An association connects 'types_NamedType' and 'types_TypeReference'. From 'types_NamedType', the role 'types_NamedType' has cardinality 0..*, and from 'types_TypeReference', the role 'types_TypeReference10' has cardinality 0..*.
+An association connects 'types_ComplexType' and 'types_ComplexType'. From 'types_ComplexType', the role 'types_ComplexType11' has cardinality 0..*, and from 'types_ComplexType', the role 'types_ComplexType13' has cardinality 0..*.
+An association connects 'types_EnumerationLiteral' and 'types_EnumerationType'. From 'types_EnumerationLiteral', the role 'types_EnumerationLiteral' has cardinality 0..*, and from 'types_EnumerationType', the role 'types_EnumerationType' has cardinality 0..*.
+An association connects 'types_EntityType' and 'types_Property'. From 'types_EntityType', the role 'types_EntityType' has cardinality 0..*, and from 'types_Property', the role 'types_Property' has cardinality 0..*.
+An association connects 'types_DeclarationTypeReference' and 'types_Property'. From 'types_DeclarationTypeReference', the role 'types_DeclarationTypeReference' has cardinality 0..*, and from 'types_Property', the role 'types_Property17' has cardinality 0..*.
+An association connects 'types_EntityRelationship' and 'types_Property'. From 'types_EntityRelationship', the role 'types_EntityRelationship' has cardinality 0..*, and from 'types_Property', the role 'types_Property19' has cardinality 0..*.
+An association connects 'types_PropertyReference' and 'types_Property'. From 'types_PropertyReference', the role 'types_PropertyReference' has cardinality 0..*, and from 'types_Property', the role 'types_Property21' has cardinality 0..*.
+An association connects 'types_PropertyReference' and 'types_Property'. From 'types_PropertyReference', the role 'types_PropertyReference24' has cardinality 0..*, and from 'types_Property', the role 'types_Property23' has cardinality 0..*.
+An association connects 'types_Literal' and 'types_Property'. From 'types_Literal', the role 'types_Literal' has cardinality 0..*, and from 'types_Property', the role 'types_Property26' has cardinality 0..*.
+An association connects 'types_MappedByReference' and 'types_EntityRelationship'. From 'types_MappedByReference', the role 'types_MappedByReference' has cardinality 0..*, and from 'types_EntityRelationship', the role 'types_EntityRelationship28' has cardinality 0..*.
+An association connects 'types_MappedByReference' and 'types_Property'. From 'types_MappedByReference', the role 'types_MappedByReference30' has cardinality 0..*, and from 'types_Property', the role 'types_Property31' has cardinality 0..*.
+An association connects 'types_MappedByReference' and 'types_MappedByReference'. From 'types_MappedByReference', the role 'types_MappedByReference32' has cardinality 0..*, and from 'types_MappedByReference', the role 'types_MappedByReference34' has cardinality 0..*.
+An association connects 'types_PropertyReference' and 'types_Property'. From 'types_PropertyReference', the role 'types_PropertyReference36' has cardinality 0..*, and from 'types_Property', the role 'types_Property37' has cardinality 0..*.

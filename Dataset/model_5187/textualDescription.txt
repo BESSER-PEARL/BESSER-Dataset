@@ -1,0 +1,46 @@
+The domain model 'ecore' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'ecore_Y' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_A' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_EOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_B' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'C' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_C' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_X' represents an important domain concept.
+It does not declare any attributes.
+
+'Y' represents an important domain concept.
+It does not declare any attributes.
+
+'EOperation' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ecore_A' is a specialization of 'EOperation'.
+The class 'ecore_C' is a specialization of 'B'.
+The class 'ecore_C' is a specialization of 'Y'.
+The class 'ecore_EClass' is a specialization of 'C'.
+The class 'ecore_X' is a specialization of 'A'.

@@ -1,0 +1,69 @@
+The domain model 'fragdial101' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'fragdial101_Interface' represents an important domain concept.
+It has the following attributes: 'signature', which is of type str; 'name', which is of type str; 'startProperty', which is of type str; 'contingency', which is of type str; 'cardinality', which is of type str.
+
+'fragdial101_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'fragdial101_AbstractComponent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fragdial101_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'AbstractComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'fragdial101_Include' represents an important domain concept.
+It has one attribute: 'file', which is of type str.
+
+'fragdial101_Content' represents an important domain concept.
+It has the following attributes: 'class', which is of type str; 'language', which is of type str.
+
+'fragdial101_Provided' represents an important domain concept.
+It does not declare any attributes.
+
+'fragdial101_Attributes' represents an important domain concept.
+It has one attribute: 'signature', which is of type str.
+
+'fragdial101_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'fragdial101_Required' represents an important domain concept.
+It does not declare any attributes.
+
+'fragdial101_Ldflag' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'fragdial101_Controller' represents an important domain concept.
+It has the following attributes: 'descriptor', which is of type str; 'language', which is of type str.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'fragdial101_Output' represents an important domain concept.
+It has one attribute: 'format', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'fragdial101_Required' is a specialization of 'Interface'.
+The class 'fragdial101_Provided' is a specialization of 'Interface'.
+The class 'fragdial101_Component' is a specialization of 'AbstractComponent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fragdial101_Content' and 'fragdial101_AbstractComponent'. From 'fragdial101_Content', the role 'fragdial101_Content' has cardinality 0..*, and from 'fragdial101_AbstractComponent', the role 'fragdial101_AbstractComponent' has cardinality 0..*.
+An association connects 'fragdial101_AbstractComponent' and 'fragdial101_Attributes'. From 'fragdial101_AbstractComponent', the role 'fragdial101_AbstractComponent2' has cardinality 0..*, and from 'fragdial101_Attributes', the role 'fragdial101_Attributes' has cardinality 0..*.
+An association connects 'fragdial101_AbstractComponent' and 'fragdial101_Output'. From 'fragdial101_AbstractComponent', the role 'fragdial101_AbstractComponent4' has cardinality 0..*, and from 'fragdial101_Output', the role 'fragdial101_Output' has cardinality 0..*.
+An association connects 'fragdial101_AbstractComponent' and 'fragdial101_Controller'. From 'fragdial101_AbstractComponent', the role 'fragdial101_AbstractComponent6' has cardinality 0..*, and from 'fragdial101_Controller', the role 'fragdial101_Controller' has cardinality 0..*.
+An association connects 'fragdial101_Required' and 'fragdial101_AbstractComponent'. From 'fragdial101_Required', the role 'fragdial101_Required' has cardinality 0..*, and from 'fragdial101_AbstractComponent', the role 'fragdial101_AbstractComponent8' has cardinality 0..*.
+An association connects 'fragdial101_AbstractComponent' and 'fragdial101_Provided'. From 'fragdial101_AbstractComponent', the role 'fragdial101_AbstractComponent10' has cardinality 0..*, and from 'fragdial101_Provided', the role 'fragdial101_Provided' has cardinality 0..*.
+An association connects 'fragdial101_Binding' and 'fragdial101_Interface'. From 'fragdial101_Binding', the role 'fragdial101_Binding' has cardinality 0..*, and from 'fragdial101_Interface', the role 'fragdial101_Interface' has cardinality 0..*.
+An association connects 'fragdial101_Interface' and 'fragdial101_Binding'. From 'fragdial101_Interface', the role 'fragdial101_Interface14' has cardinality 0..*, and from 'fragdial101_Binding', the role 'fragdial101_Binding13' has cardinality 0..*.
+An association connects 'fragdial101_Interface' and 'fragdial101_Binding'. From 'fragdial101_Interface', the role 'fragdial101_Interface17' has cardinality 0..*, and from 'fragdial101_Binding', the role 'fragdial101_Binding16' has cardinality 0..*.
+An association connects 'fragdial101_Content' and 'fragdial101_AbstractComponent'. From 'fragdial101_Content', the role 'fragdial101_Content19' has cardinality 0..*, and from 'fragdial101_AbstractComponent', the role 'fragdial101_AbstractComponent20' has cardinality 0..*.
+An association connects 'fragdial101_Content' and 'fragdial101_Include'. From 'fragdial101_Content', the role 'fragdial101_Content22' has cardinality 0..*, and from 'fragdial101_Include', the role 'fragdial101_Include' has cardinality 0..*.
+An association connects 'fragdial101_Ldflag' and 'fragdial101_Content'. From 'fragdial101_Ldflag', the role 'fragdial101_Ldflag' has cardinality 0..*, and from 'fragdial101_Content', the role 'fragdial101_Content24' has cardinality 0..*.
+An association connects 'fragdial101_Attributes' and 'fragdial101_Attribute'. From 'fragdial101_Attributes', the role 'fragdial101_Attributes26' has cardinality 0..*, and from 'fragdial101_Attribute', the role 'fragdial101_Attribute' has cardinality 0..*.
+An association connects 'fragdial101_Component' and 'fragdial101_Component'. From 'fragdial101_Component', the role 'fragdial101_Component' has cardinality 0..*, and from 'fragdial101_Component', the role 'fragdial101_Component27' has cardinality 0..*.

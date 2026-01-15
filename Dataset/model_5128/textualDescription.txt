@@ -1,0 +1,95 @@
+The domain model 'caracteristica' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'caracteristica_ElementoCaracteristico' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_CaracteristicaOpcional' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_Elemento' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'PontoDeVariacao' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_Variante' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_CaracteristicaRaiz' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_Variacao' represents an important domain concept.
+It has the following attributes: 'cardinalidadeMaxima', which is of type str; 'cardinalidadeMinima', which is of type str.
+
+'caracteristica_CaracteristicaAgrupada' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_CaracteristicaMandatoria' represents an important domain concept.
+It does not declare any attributes.
+
+'Elemento' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_Caracteristica' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_VariacaoDois' represents an important domain concept.
+It has the following attributes: 'cardinalidadeMaxima', which is of type str; 'cardinalidadeMinimaOr', which is of type str; 'cardinalidadeMaximaOr', which is of type str.
+
+'caracteristica_LPS' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'ElementoCaracteristico' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_Atributo' represents an important domain concept.
+It has one attribute: 'tipoValor', which is of type str.
+
+'Caracteristica' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_PontoDeVariacao' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Origem' defines the following possible values: 'Usuario', 'Derivada', 'Perfil', 'Sentida'.
+The enumeration 'Validade' defines the following possible values: 'Frequente', 'Raramente', 'Permanente', 'Volatil'.
+The enumeration 'OperadorLogico' defines the following possible values: 'AND', 'OR'.
+The enumeration 'OperadorRelacional' defines the following possible values: 'DIFERENTE', 'IGUAL', 'MAIORIGUAL', 'MENOR', 'MAIOR', 'MENORIGUAL'.
+The enumeration 'OperadorAcaoLogico' defines a single possible value: 'AND'.
+The enumeration 'Qualidade' defines the following possible values: 'Baixo', 'Alto'.
+The enumeration 'TipoValor' defines the following possible values: 'TInteger', 'TString', 'TFloat', 'TBoolean'.
+The enumeration 'Presenca' defines the following possible values: 'AUSENTE', 'PRESENTE'.
+The enumeration 'CardinalidadeMaxima' defines the following possible values: 'OR', 'XOR'.
+
+The model also captures inheritance relationships between classes.
+The class 'caracteristica_ElementoCaracteristico' is a specialization of 'Elemento'.
+The class 'caracteristica_Atributo' is a specialization of 'Elemento'.
+The class 'caracteristica_Caracteristica' is a specialization of 'Elemento'.
+The class 'caracteristica_CaracteristicaRaiz' is a specialization of 'Caracteristica'.
+The class 'caracteristica_CaracteristicaOpcional' is a specialization of 'Caracteristica'.
+The class 'caracteristica_CaracteristicaOpcional' is a specialization of 'ElementoCaracteristico'.
+The class 'caracteristica_CaracteristicaAgrupada' is a specialization of 'Caracteristica'.
+The class 'caracteristica_CaracteristicaAgrupada' is a specialization of 'ElementoCaracteristico'.
+The class 'caracteristica_CaracteristicaMandatoria' is a specialization of 'Caracteristica'.
+The class 'caracteristica_VariacaoDois' is a specialization of 'Caracteristica'.
+The class 'caracteristica_VariacaoDois' is a specialization of 'ElementoCaracteristico'.
+The class 'caracteristica_Variacao' is a specialization of 'PontoDeVariacao'.
+The class 'caracteristica_Variacao' is a specialization of 'Elemento'.
+The class 'caracteristica_Variante' is a specialization of 'PontoDeVariacao'.
+The class 'caracteristica_Variante' is a specialization of 'ElementoCaracteristico'.
+The class 'caracteristica_Variante' is a specialization of 'Caracteristica'.
+
+Relationships between classes are modeled using associations.
+An association connects 'caracteristica_LPS' and 'caracteristica_Elemento'. From 'caracteristica_LPS', the role 'caracteristica_LPS' has cardinality 0..*, and from 'caracteristica_Elemento', the role 'caracteristica_Elemento' has cardinality 0..*.
+An association connects 'caracteristica_Caracteristica' and 'caracteristica_Atributo'. From 'caracteristica_Caracteristica', the role 'Caracteristica' has cardinality 0..*, and from 'caracteristica_Atributo', the role 'atributo' has cardinality 0..*.
+An association connects 'caracteristica_Caracteristica' and 'caracteristica_Caracteristica'. From 'caracteristica_Caracteristica', the role 'caracteristicaFilha' has cardinality 0..*, and from 'caracteristica_Caracteristica', the role 'Caracteristica4' has cardinality 0..*.
+An association connects 'caracteristica_Caracteristica' and 'caracteristica_Caracteristica'. From 'caracteristica_Caracteristica', the role 'caracteristicaPai' has cardinality 0..*, and from 'caracteristica_Caracteristica', the role 'Caracteristica7' has cardinality 0..*.
+An association connects 'caracteristica_Variacao' and 'caracteristica_Caracteristica'. From 'caracteristica_Variacao', the role 'Variacao' has cardinality 0..*, and from 'caracteristica_Caracteristica', the role 'caracteristicaPai9' has cardinality 0..*.
+An association connects 'caracteristica_Atributo' and 'caracteristica_Caracteristica'. From 'caracteristica_Atributo', the role 'Atributo' has cardinality 0..*, and from 'caracteristica_Caracteristica', the role 'caracteristicaPai11' has cardinality 0..*.
+An association connects 'caracteristica_CaracteristicaRaiz' and 'caracteristica_LPS'. From 'caracteristica_CaracteristicaRaiz', the role 'caracteristica_CaracteristicaRaiz' has cardinality 0..*, and from 'caracteristica_LPS', the role 'caracteristica_LPS13' has cardinality 0..*.
+An association connects 'caracteristica_Variante' and 'caracteristica_Variacao'. From 'caracteristica_Variante', the role 'Variante' has cardinality 0..*, and from 'caracteristica_Variacao', the role 'variacaoPai' has cardinality 0..*.
+An association connects 'caracteristica_Variacao' and 'caracteristica_Caracteristica'. From 'caracteristica_Variacao', the role 'variacoes' has cardinality 0..*, and from 'caracteristica_Caracteristica', the role 'Caracteristica16' has cardinality 0..*.
+An association connects 'caracteristica_Variacao' and 'caracteristica_Variante'. From 'caracteristica_Variacao', the role 'Variacao18' has cardinality 0..*, and from 'caracteristica_Variante', the role 'variantes' has cardinality 0..*.

@@ -1,0 +1,229 @@
+The domain model 'core' describes the core structural elements and their relationships within the system.
+
+The model defines 41 main class(es).
+
+'core_Interaction' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'AbstractRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_RefExpressionCollectedModelElements' represents an important domain concept.
+It does not declare any attributes.
+
+'core_TraceModelElementReference' represents an important domain concept.
+It has one attribute: 'container', which is of type bool.
+
+'core_Variable' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'core_AbstractRequirement' represents an important domain concept.
+It has one attribute: 'risk', which is of type str.
+
+'core_VerifiableElement' represents an important domain concept.
+It has one attribute: 'verified', which is of type str.
+
+'core_ModelElementReference' represents an important domain concept.
+It has the following attributes: 'satisfactionLevel', which is of type str; 'reason', which is of type str; 'verifies', which is of type str; 'weight', which is of type str.
+
+'core_Requirement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Uncertainty' represents an important domain concept.
+It has the following attributes: 'volatility', which is of type str; 'riskIndex', which is of type str; 'maturityIndex', which is of type str; 'propRiskIndex', which is of type str; 'scheduleImpact', which is of type str; 'precedence', which is of type str; 'costsImpact', which is of type str.
+
+'core_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'core_RequirementsContainer' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'core_ConstraintLanguagesSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Category' represents an important domain concept.
+It does not declare any attributes.
+
+'core_IdentifiedElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str; 'id', which is of type str.
+
+'ModelElementReference' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Specification' represents an important domain concept.
+It has one attribute: 'version', which is of type str.
+
+'core_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Rationale' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Actor' represents an important domain concept.
+It has the following attributes: 'email', which is of type str; 'address', which is of type str; 'phoneNumber', which is of type str.
+
+'VerifiableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_SystemOverview' represents an important domain concept.
+It has the following attributes: 'purpose', which is of type str; 'capabilities', which is of type str.
+
+'core_RefDerivedModelElements' represents an important domain concept.
+It does not declare any attributes.
+
+'Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Conflict' represents an important domain concept.
+It has one attribute: 'degree', which is of type str.
+
+'core_Goal' represents an important domain concept.
+It has one attribute: 'priority', which is of type str.
+
+'core_RequirementsGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'core_ReferencedModelElements' represents an important domain concept.
+It has one attribute: 'agregationType', which is of type str.
+
+'core_VerificationActivity' represents an important domain concept.
+It has the following attributes: 'passed', which is of type bool; 'verificationMethod', which is of type str.
+
+'core_Assumption' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'ContractualElement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'core_StakeHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'core_SystemContext' represents an important domain concept.
+It does not declare any attributes.
+
+'RequirementsCoverageData' represents an important domain concept.
+It does not declare any attributes.
+
+'core_RequirementsCoverageData' represents an important domain concept.
+It has the following attributes: 'verificationLevel', which is of type str; 'nbRequirements', which is of type int.
+
+'core_ContractualElement' represents an important domain concept.
+It has the following attributes: 'scheduleDate', which is of type str; 'droppingReason', which is of type str; 'timeCriticality', which is of type str; 'originDate', which is of type str; 'dropped', which is of type bool; 'satisfactionLevel', which is of type str; 'sources', which is of type str.
+
+'core_FormalLanguageExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'IdentifiedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ReferencedModelElements' represents an important domain concept.
+It does not declare any attributes.
+
+'core_RefUserSelectedModelElements' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VerificationMethod' defines the following possible values: 'Demonstration', 'Test', 'Analysis', 'Inspection'.
+The enumeration 'AgregationType' defines the following possible values: 'Alternative', 'Composition'.
+The enumeration 'RiskKind' defines the following possible values: 'High', 'Medium', 'Low'.
+The enumeration 'AssumptionType' defines the following possible values: 'Technical', 'Organizational', 'Managerial'.
+The enumeration 'ContainerType' defines the following possible values: 'And', 'Or'.
+The enumeration 'Direction' defines the following possible values: 'In', 'Out', 'InOut'.
+The enumeration 'VariableType' defines the following possible values: 'Controlled', 'Monitored', 'Both'.
+
+The model also captures inheritance relationships between classes.
+The class 'core_ContractualElement' is a specialization of 'IdentifiedElement'.
+The class 'core_Uncertainty' is a specialization of 'IdentifiedElement'.
+The class 'core_VerifiableElement' is a specialization of 'ContractualElement'.
+The class 'core_Specification' is a specialization of 'VerifiableElement'.
+The class 'core_SystemOverview' is a specialization of 'ContractualElement'.
+The class 'core_SystemContext' is a specialization of 'IdentifiedElement'.
+The class 'core_Actor' is a specialization of 'IdentifiedElement'.
+The class 'core_Interaction' is a specialization of 'IdentifiedElement'.
+The class 'core_Goal' is a specialization of 'ContractualElement'.
+The class 'core_Conflict' is a specialization of 'IdentifiedElement'.
+The class 'core_StakeHolder' is a specialization of 'Actor'.
+The class 'core_RequirementsGroup' is a specialization of 'VerifiableElement'.
+The class 'core_AbstractRequirement' is a specialization of 'VerifiableElement'.
+The class 'core_Requirement' is a specialization of 'AbstractRequirement'.
+The class 'core_Assumption' is a specialization of 'AbstractRequirement'.
+The class 'core_VerificationActivity' is a specialization of 'IdentifiedElement'.
+The class 'core_RefExpressionCollectedModelElements' is a specialization of 'ReferencedModelElements'.
+The class 'core_RefUserSelectedModelElements' is a specialization of 'ReferencedModelElements'.
+The class 'core_ReferencedModelElements' is a specialization of 'IdentifiedElement'.
+The class 'core_ModelElementReference' is a specialization of 'IdentifiedElement'.
+The class 'core_Trace' is a specialization of 'ReferencedModelElements'.
+The class 'core_TraceModelElementReference' is a specialization of 'ModelElementReference'.
+The class 'core_TraceModelElementReference' is a specialization of 'RequirementsCoverageData'.
+The class 'core_RequirementsCoverageData' is a specialization of 'IdentifiedElement'.
+The class 'core_Variable' is a specialization of 'IdentifiedElement'.
+The class 'core_RefDerivedModelElements' is a specialization of 'ReferencedModelElements'.
+The class 'core_Rationale' is a specialization of 'IdentifiedElement'.
+The class 'core_RequirementsContainer' is a specialization of 'IdentifiedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'core_ContractualElement' and 'core_Uncertainty'. From 'core_ContractualElement', the role 'core_ContractualElement' has cardinality 0..*, and from 'core_Uncertainty', the role 'core_Uncertainty' has cardinality 0..*.
+An association connects 'core_StakeHolder' and 'core_ContractualElement'. From 'core_StakeHolder', the role 'StakeHolder' has cardinality 0..*, and from 'core_ContractualElement', the role 'contractualElements' has cardinality 0..*.
+An association connects 'core_ContractualElement' and 'core_ContractualElement'. From 'core_ContractualElement', the role 'core_ContractualElement4' has cardinality 0..*, and from 'core_ContractualElement', the role 'core_ContractualElement2' has cardinality 0..*.
+An association connects 'core_ContractualElement' and 'core_EObject'. From 'core_ContractualElement', the role 'core_ContractualElement6' has cardinality 0..*, and from 'core_EObject', the role 'core_EObject' has cardinality 0..*.
+An association connects 'core_Category' and 'core_ContractualElement'. From 'core_Category', the role 'core_Category' has cardinality 0..*, and from 'core_ContractualElement', the role 'core_ContractualElement8' has cardinality 0..*.
+An association connects 'core_ReferencedModelElements' and 'core_ContractualElement'. From 'core_ReferencedModelElements', the role 'core_ReferencedModelElements' has cardinality 0..*, and from 'core_ContractualElement', the role 'core_ContractualElement10' has cardinality 0..*.
+An association connects 'core_ContractualElement' and 'core_EObject'. From 'core_ContractualElement', the role 'core_ContractualElement12' has cardinality 0..*, and from 'core_EObject', the role 'core_EObject13' has cardinality 0..*.
+An association connects 'core_ContractualElement' and 'core_EObject'. From 'core_ContractualElement', the role 'core_ContractualElement15' has cardinality 0..*, and from 'core_EObject', the role 'core_EObject16' has cardinality 0..*.
+An association connects 'core_Rationale' and 'core_ContractualElement'. From 'core_Rationale', the role 'Rationale' has cardinality 0..*, and from 'core_ContractualElement', the role 'contract' has cardinality 0..*.
+An association connects 'core_Actor' and 'core_ContractualElement'. From 'core_Actor', the role 'core_Actor' has cardinality 0..*, and from 'core_ContractualElement', the role 'core_ContractualElement19' has cardinality 0..*.
+An association connects 'core_Expression' and 'core_ContractualElement'. From 'core_Expression', the role 'core_Expression' has cardinality 0..*, and from 'core_ContractualElement', the role 'core_ContractualElement21' has cardinality 0..*.
+An association connects 'core_ContractualElement' and 'core_Expression'. From 'core_ContractualElement', the role 'core_ContractualElement23' has cardinality 0..*, and from 'core_Expression', the role 'core_Expression24' has cardinality 0..*.
+An association connects 'core_ContractualElement' and 'core_EObject'. From 'core_ContractualElement', the role 'core_ContractualElement26' has cardinality 0..*, and from 'core_EObject', the role 'core_EObject27' has cardinality 0..*.
+An association connects 'core_Actor' and 'core_Specification'. From 'core_Actor', the role 'core_Actor29' has cardinality 0..*, and from 'core_Specification', the role 'core_Specification' has cardinality 0..*.
+An association connects 'core_Specification' and 'core_SystemOverview'. From 'core_Specification', the role 'core_Specification31' has cardinality 0..*, and from 'core_SystemOverview', the role 'core_SystemOverview' has cardinality 0..*.
+An association connects 'core_Specification' and 'core_RequirementsGroup'. From 'core_Specification', the role 'specification' has cardinality 0..*, and from 'core_RequirementsGroup', the role 'RequirementsGroup' has cardinality 0..*.
+An association connects 'core_VerificationActivity' and 'core_Specification'. From 'core_VerificationActivity', the role 'core_VerificationActivity' has cardinality 0..*, and from 'core_Specification', the role 'core_Specification34' has cardinality 0..*.
+An association connects 'core_Specification' and 'core_Conflict'. From 'core_Specification', the role 'core_Specification36' has cardinality 0..*, and from 'core_Conflict', the role 'core_Conflict' has cardinality 0..*.
+An association connects 'core_ConstraintLanguagesSpecification' and 'core_Specification'. From 'core_ConstraintLanguagesSpecification', the role 'core_ConstraintLanguagesSpecification' has cardinality 0..*, and from 'core_Specification', the role 'core_Specification38' has cardinality 0..*.
+An association connects 'core_Specification' and 'core_EObject'. From 'core_Specification', the role 'core_Specification40' has cardinality 0..*, and from 'core_EObject', the role 'core_EObject41' has cardinality 0..*.
+An association connects 'core_EObject' and 'core_Specification'. From 'core_EObject', the role 'core_EObject44' has cardinality 0..*, and from 'core_Specification', the role 'core_Specification43' has cardinality 0..*.
+An association connects 'core_Goal' and 'core_SystemOverview'. From 'core_Goal', the role 'core_Goal' has cardinality 0..*, and from 'core_SystemOverview', the role 'core_SystemOverview46' has cardinality 0..*.
+An association connects 'core_SystemOverview' and 'core_EObject'. From 'core_SystemOverview', the role 'core_SystemOverview48' has cardinality 0..*, and from 'core_EObject', the role 'core_EObject49' has cardinality 0..*.
+An association connects 'core_SystemOverview' and 'core_SystemContext'. From 'core_SystemOverview', the role 'core_SystemOverview51' has cardinality 0..*, and from 'core_SystemContext', the role 'core_SystemContext' has cardinality 0..*.
+An association connects 'core_SystemOverview' and 'core_Variable'. From 'core_SystemOverview', the role 'core_SystemOverview53' has cardinality 0..*, and from 'core_Variable', the role 'core_Variable' has cardinality 0..*.
+An association connects 'core_EObject' and 'core_SystemContext'. From 'core_EObject', the role 'core_EObject56' has cardinality 0..*, and from 'core_SystemContext', the role 'core_SystemContext55' has cardinality 0..*.
+An association connects 'core_Actor' and 'core_SystemContext'. From 'core_Actor', the role 'core_Actor59' has cardinality 0..*, and from 'core_SystemContext', the role 'core_SystemContext58' has cardinality 0..*.
+An association connects 'core_Variable' and 'core_SystemContext'. From 'core_Variable', the role 'core_Variable62' has cardinality 0..*, and from 'core_SystemContext', the role 'core_SystemContext61' has cardinality 0..*.
+An association connects 'core_SystemContext' and 'core_EObject'. From 'core_SystemContext', the role 'core_SystemContext64' has cardinality 0..*, and from 'core_EObject', the role 'core_EObject65' has cardinality 0..*.
+An association connects 'core_EObject' and 'core_Actor'. From 'core_EObject', the role 'core_EObject68' has cardinality 0..*, and from 'core_Actor', the role 'core_Actor67' has cardinality 0..*.
+An association connects 'core_Interaction' and 'core_Actor'. From 'core_Interaction', the role 'core_Interaction' has cardinality 0..*, and from 'core_Actor', the role 'core_Actor70' has cardinality 0..*.
+An association connects 'core_Interaction' and 'core_EObject'. From 'core_Interaction', the role 'core_Interaction72' has cardinality 0..*, and from 'core_EObject', the role 'core_EObject73' has cardinality 0..*.
+An association connects 'core_Conflict' and 'core_Goal'. From 'core_Conflict', the role 'Conflict' has cardinality 0..*, and from 'core_Goal', the role 'goals' has cardinality 0..*.
+An association connects 'core_Goal' and 'core_Conflict'. From 'core_Goal', the role 'Goal' has cardinality 0..*, and from 'core_Conflict', the role 'conflicts' has cardinality 0..*.
+An association connects 'core_ContractualElement' and 'core_StakeHolder'. From 'core_ContractualElement', the role 'ContractualElement' has cardinality 0..*, and from 'core_StakeHolder', the role 'stakeholders' has cardinality 0..*.
+An association connects 'core_StakeHolder' and 'core_Rationale'. From 'core_StakeHolder', the role 'core_StakeHolder' has cardinality 0..*, and from 'core_Rationale', the role 'core_Rationale' has cardinality 0..*.
+An association connects 'core_RequirementsGroup' and 'core_AbstractRequirement'. From 'core_RequirementsGroup', the role 'group' has cardinality 0..*, and from 'core_AbstractRequirement', the role 'AbstractRequirement' has cardinality 0..*.
+An association connects 'core_RequirementsGroup' and 'core_Specification'. From 'core_RequirementsGroup', the role 'requirementGroups' has cardinality 0..*, and from 'core_Specification', the role 'Specification' has cardinality 0..*.
+An association connects 'core_AbstractRequirement' and 'core_AbstractRequirement'. From 'core_AbstractRequirement', the role 'core_AbstractRequirement80' has cardinality 0..*, and from 'core_AbstractRequirement', the role 'core_AbstractRequirement' has cardinality 0..*.
+An association connects 'core_AbstractRequirement' and 'core_VerificationActivity'. From 'core_AbstractRequirement', the role 'requirement' has cardinality 0..*, and from 'core_VerificationActivity', the role 'VerificationActivity' has cardinality 0..*.
+An association connects 'core_AbstractRequirement' and 'core_RequirementsGroup'. From 'core_AbstractRequirement', the role 'requirements' has cardinality 0..*, and from 'core_RequirementsGroup', the role 'RequirementsGroup84' has cardinality 0..*.
+An association connects 'core_AbstractRequirement' and 'core_Variable'. From 'core_AbstractRequirement', the role 'core_AbstractRequirement86' has cardinality 0..*, and from 'core_Variable', the role 'core_Variable87' has cardinality 0..*.
+An association connects 'core_Variable' and 'core_AbstractRequirement'. From 'core_Variable', the role 'core_Variable90' has cardinality 0..*, and from 'core_AbstractRequirement', the role 'core_AbstractRequirement89' has cardinality 0..*.
+An association connects 'core_Requirement' and 'core_Requirement'. From 'core_Requirement', the role 'core_Requirement' has cardinality 0..*, and from 'core_Requirement', the role 'core_Requirement91' has cardinality 0..*.
+An association connects 'core_Assumption' and 'core_Requirement'. From 'core_Assumption', the role 'Assumption' has cardinality 0..*, and from 'core_Requirement', the role 'requirements94' has cardinality 0..*.
+An association connects 'core_Assumption' and 'core_Requirement'. From 'core_Assumption', the role 'Assumption96' has cardinality 0..*, and from 'core_Requirement', the role 'imageRequirement' has cardinality 0..*.
+An association connects 'core_Requirement' and 'core_Requirement'. From 'core_Requirement', the role 'core_Requirement97' has cardinality 0..*, and from 'core_Requirement', the role 'core_Requirement99' has cardinality 0..*.
+An association connects 'core_Requirement' and 'core_RequirementsContainer'. From 'core_Requirement', the role 'core_Requirement101' has cardinality 0..*, and from 'core_RequirementsContainer', the role 'core_RequirementsContainer' has cardinality 0..*.
+An association connects 'core_Requirement' and 'core_Assumption'. From 'core_Requirement', the role 'Requirement' has cardinality 0..*, and from 'core_Assumption', the role 'assumptions' has cardinality 0..*.
+An association connects 'core_Requirement' and 'core_Assumption'. From 'core_Requirement', the role 'Requirement104' has cardinality 0..*, and from 'core_Assumption', the role 'imageAssumption' has cardinality 0..*.
+An association connects 'core_AbstractRequirement' and 'core_VerificationActivity'. From 'core_AbstractRequirement', the role 'AbstractRequirement106' has cardinality 0..*, and from 'core_VerificationActivity', the role 'verifiedBy' has cardinality 0..*.
+An association connects 'core_VerificationActivity' and 'core_EObject'. From 'core_VerificationActivity', the role 'core_VerificationActivity108' has cardinality 0..*, and from 'core_EObject', the role 'core_EObject109' has cardinality 0..*.
+An association connects 'core_VerificationActivity' and 'core_Expression'. From 'core_VerificationActivity', the role 'core_VerificationActivity111' has cardinality 0..*, and from 'core_Expression', the role 'core_Expression112' has cardinality 0..*.
+An association connects 'core_RefExpressionCollectedModelElements' and 'core_FormalLanguageExpression'. From 'core_RefExpressionCollectedModelElements', the role 'core_RefExpressionCollectedModelElements' has cardinality 0..*, and from 'core_FormalLanguageExpression', the role 'core_FormalLanguageExpression' has cardinality 0..*.
+An association connects 'core_ReferencedModelElements' and 'core_ModelElementReference'. From 'core_ReferencedModelElements', the role 'parent' has cardinality 0..*, and from 'core_ModelElementReference', the role 'ModelElementReference' has cardinality 0..*.
+An association connects 'core_EObject' and 'core_ModelElementReference'. From 'core_EObject', the role 'core_EObject116' has cardinality 0..*, and from 'core_ModelElementReference', the role 'core_ModelElementReference' has cardinality 0..*.
+An association connects 'core_ReferencedModelElements' and 'core_ModelElementReference'. From 'core_ReferencedModelElements', the role 'ReferencedModelElements' has cardinality 0..*, and from 'core_ModelElementReference', the role 'modelElementReferences' has cardinality 0..*.
+An association connects 'core_Trace' and 'core_Specification'. From 'core_Trace', the role 'core_Trace' has cardinality 0..*, and from 'core_Specification', the role 'core_Specification119' has cardinality 0..*.
+An association connects 'core_Variable' and 'core_EObject'. From 'core_Variable', the role 'core_Variable121' has cardinality 0..*, and from 'core_EObject', the role 'core_EObject122' has cardinality 0..*.
+An association connects 'core_Rationale' and 'core_ContractualElement'. From 'core_Rationale', the role 'rationales' has cardinality 0..*, and from 'core_ContractualElement', the role 'ContractualElement124' has cardinality 0..*.
+An association connects 'core_Requirement' and 'core_RequirementsContainer'. From 'core_Requirement', the role 'core_Requirement127' has cardinality 0..*, and from 'core_RequirementsContainer', the role 'core_RequirementsContainer126' has cardinality 0..*.
+An association connects 'core_RequirementsContainer' and 'core_Requirement'. From 'core_RequirementsContainer', the role 'core_RequirementsContainer129' has cardinality 0..*, and from 'core_Requirement', the role 'core_Requirement130' has cardinality 0..*.

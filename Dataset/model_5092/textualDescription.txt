@@ -1,0 +1,44 @@
+The domain model 'adl201' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'adl201_Provided' represents an important domain concept.
+It does not declare any attributes.
+
+'adl201_Interface' represents an important domain concept.
+It has the following attributes: 'signature', which is of type str; 'name', which is of type str.
+
+'adl201_Content' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'expression', which is of type str.
+
+'adl201_Required' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'adl201_Binding' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adl201_BindingAttributes' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'adl201_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'adl201_Required' is a specialization of 'Interface'.
+The class 'adl201_Provided' is a specialization of 'Interface'.
+
+Relationships between classes are modeled using associations.
+An association connects 'adl201_Content' and 'adl201_Component'. From 'adl201_Content', the role 'adl201_Content' has cardinality 0..*, and from 'adl201_Component', the role 'adl201_Component' has cardinality 0..*.
+An association connects 'adl201_Component' and 'adl201_Required'. From 'adl201_Component', the role 'adl201_Component2' has cardinality 0..*, and from 'adl201_Required', the role 'adl201_Required' has cardinality 0..*.
+An association connects 'adl201_Component' and 'adl201_Provided'. From 'adl201_Component', the role 'adl201_Component4' has cardinality 0..*, and from 'adl201_Provided', the role 'adl201_Provided' has cardinality 0..*.
+An association connects 'adl201_Component' and 'adl201_Binding'. From 'adl201_Component', the role 'adl201_Component6' has cardinality 0..*, and from 'adl201_Binding', the role 'adl201_Binding' has cardinality 0..*.
+An association connects 'adl201_Component' and 'adl201_Component'. From 'adl201_Component', the role 'adl201_Component9' has cardinality 0..*, and from 'adl201_Component', the role 'adl201_Component7' has cardinality 0..*.
+An association connects 'adl201_Required' and 'adl201_Binding'. From 'adl201_Required', the role 'adl201_Required12' has cardinality 0..*, and from 'adl201_Binding', the role 'adl201_Binding11' has cardinality 0..*.
+An association connects 'adl201_Binding' and 'adl201_BindingAttributes'. From 'adl201_Binding', the role 'adl201_Binding14' has cardinality 0..*, and from 'adl201_BindingAttributes', the role 'adl201_BindingAttributes' has cardinality 0..*.
+An association connects 'adl201_Binding' and 'adl201_Provided'. From 'adl201_Binding', the role 'adl201_Binding16' has cardinality 0..*, and from 'adl201_Provided', the role 'adl201_Provided17' has cardinality 0..*.
+An association connects 'adl201_Component' and 'adl201_Content'. From 'adl201_Component', the role 'adl201_Component20' has cardinality 0..*, and from 'adl201_Content', the role 'adl201_Content19' has cardinality 0..*.
+An association connects 'adl201_Provided' and 'adl201_Binding'. From 'adl201_Provided', the role 'adl201_Provided22' has cardinality 0..*, and from 'adl201_Binding', the role 'adl201_Binding23' has cardinality 0..*.
+An association connects 'adl201_Required' and 'adl201_Provided'. From 'adl201_Required', the role 'adl201_Required26' has cardinality 0..*, and from 'adl201_Provided', the role 'adl201_Provided25' has cardinality 0..*.

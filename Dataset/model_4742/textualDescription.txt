@@ -1,0 +1,74 @@
+The domain model 'swml_v2' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'swml_v2_IndexPage' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+'DynamicPage' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_v2_DynamicPage' represents an important domain concept.
+It does not declare any attributes.
+
+'Link' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_v2_Class' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'swml_v2_Page' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'swml_v2_Attribute' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'Page' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_v2_NCLink' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_v2_NavigationLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_v2_ContentLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_v2_WebModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'swml_v2_StaticPage' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_v2_DetailsPage' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_v2_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_v2_CLink' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SWMLTypes' defines the following possible values: 'Integer', 'Email', 'Float', 'Boolean', 'String'.
+
+The model also captures inheritance relationships between classes.
+The class 'swml_v2_IndexPage' is a specialization of 'DynamicPage'.
+The class 'swml_v2_DetailsPage' is a specialization of 'DynamicPage'.
+The class 'swml_v2_DynamicPage' is a specialization of 'Page'.
+The class 'swml_v2_StaticPage' is a specialization of 'Page'.
+The class 'swml_v2_NCLink' is a specialization of 'Link'.
+The class 'swml_v2_CLink' is a specialization of 'Link'.
+
+Relationships between classes are modeled using associations.
+An association connects 'swml_v2_WebModel' and 'swml_v2_NavigationLayer'. From 'swml_v2_WebModel', the role 'swml_v2_WebModel' has cardinality 0..*, and from 'swml_v2_NavigationLayer', the role 'swml_v2_NavigationLayer' has cardinality 0..*.
+An association connects 'swml_v2_WebModel' and 'swml_v2_ContentLayer'. From 'swml_v2_WebModel', the role 'swml_v2_WebModel2' has cardinality 0..*, and from 'swml_v2_ContentLayer', the role 'swml_v2_ContentLayer' has cardinality 0..*.
+An association connects 'swml_v2_NavigationLayer' and 'swml_v2_Page'. From 'swml_v2_NavigationLayer', the role 'swml_v2_NavigationLayer4' has cardinality 0..*, and from 'swml_v2_Page', the role 'swml_v2_Page' has cardinality 0..*.
+An association connects 'swml_v2_Page' and 'swml_v2_NavigationLayer'. From 'swml_v2_Page', the role 'swml_v2_Page7' has cardinality 0..*, and from 'swml_v2_NavigationLayer', the role 'swml_v2_NavigationLayer6' has cardinality 0..*.
+An association connects 'swml_v2_Class' and 'swml_v2_ContentLayer'. From 'swml_v2_Class', the role 'swml_v2_Class' has cardinality 0..*, and from 'swml_v2_ContentLayer', the role 'swml_v2_ContentLayer9' has cardinality 0..*.
+An association connects 'swml_v2_Attribute' and 'swml_v2_Class'. From 'swml_v2_Attribute', the role 'swml_v2_Attribute' has cardinality 0..*, and from 'swml_v2_Class', the role 'swml_v2_Class11' has cardinality 0..*.
+An association connects 'swml_v2_Attribute' and 'swml_v2_Class'. From 'swml_v2_Attribute', the role 'swml_v2_Attribute14' has cardinality 0..*, and from 'swml_v2_Class', the role 'swml_v2_Class13' has cardinality 0..*.
+An association connects 'swml_v2_Page' and 'swml_v2_Link'. From 'swml_v2_Page', the role 'swml_v2_Page16' has cardinality 0..*, and from 'swml_v2_Link', the role 'swml_v2_Link' has cardinality 0..*.
+An association connects 'swml_v2_DynamicPage' and 'swml_v2_Class'. From 'swml_v2_DynamicPage', the role 'swml_v2_DynamicPage' has cardinality 0..*, and from 'swml_v2_Class', the role 'swml_v2_Class18' has cardinality 0..*.
+An association connects 'swml_v2_Page' and 'swml_v2_Link'. From 'swml_v2_Page', the role 'swml_v2_Page21' has cardinality 0..*, and from 'swml_v2_Link', the role 'swml_v2_Link20' has cardinality 0..*.

@@ -1,0 +1,6 @@
+The domain model 'p1_1' describes the core structural elements and their relationships within the system.
+
+The model defines 1 main class(es).
+
+'p1_1_EClass1' represents an important domain concept.
+It does not declare any attributes.

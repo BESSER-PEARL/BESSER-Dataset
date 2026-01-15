@@ -1,0 +1,15 @@
+The domain model 'm' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'m_pa_A' represents an important domain concept.
+It does not declare any attributes.
+
+'m_pa_C' represents an important domain concept.
+It does not declare any attributes.
+
+'m_ToplevelClass' represents an important domain concept.
+It does not declare any attributes.
+
+'m_pa_B' represents an important domain concept.
+It does not declare any attributes.

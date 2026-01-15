@@ -1,0 +1,889 @@
+The domain model 'smif' describes the core structural elements and their relationships within the system.
+
+The model defines 206 main class(es).
+
+'smif_constraints_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_patterns_VariableBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_values_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'toplevel_ActualEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_constraints_Disjoint' represents an important domain concept.
+It does not declare any attributes.
+
+'situations_Situation' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_values_UnitValue' represents an important domain concept.
+It has one attribute: 'hasValue', which is of type str.
+
+'identifiers_UniqueTextIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+'patterns_PatternVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_identifiers_Term' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_values_StructuredValueType' represents an important domain concept.
+It does not declare any attributes.
+
+'PatternMatch' represents an important domain concept.
+It does not declare any attributes.
+
+'situations_SituationType' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'TemporalEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_patterns_PatternVariable' represents an important domain concept.
+It has the following attributes: 'qualification', which is of type str; 'explicit', which is of type str.
+
+'situations_ActualSituation' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_mapping_Facade' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_associations_AssociationType' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_identifiers_Name' represents an important domain concept.
+It does not declare any attributes.
+
+'OwnedPropertyBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'identifiers_UniqueIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_lexicalscope_MOFPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'PatternVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'GeneralizationConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'toplevel_TemporalEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_properties_OwnedPropertyBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_expressions_ExpressionNode' represents an important domain concept.
+It has the following attributes: 'expressionText', which is of type str; 'expressionTextLanguage', which is of type str.
+
+'smif_records_Record' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_identifiers_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_lexicalscope_LexicalScope' represents an important domain concept.
+It does not declare any attributes.
+
+'UniquenessConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'PropositionVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_constraints_Enumerated' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_patterns_PropositionVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_mapping_ComputedFacade' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_lexicalscope_Prefix' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_patterns_FocusVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'identifiers_Name' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_patterns_Computed' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_constraints_FacetClassificationConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_situations_Situation' represents an important domain concept.
+It does not declare any attributes.
+
+'Proposition' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_expressions_FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_properties_CharacteristicType' represents an important domain concept.
+It does not declare any attributes.
+
+'EntityType' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_constraints_PropertyTypeConstraint' represents an important domain concept.
+It has one attribute: 'prerequisiteType', which is of type str.
+
+'metadata_Metadata' represents an important domain concept.
+It does not declare any attributes.
+
+'patterns_Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_metadata_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_properties_AnnotationProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'properties_PropertyOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_expressions_Equality' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_lexicalscope_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'LexicalReference' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_constraints_PropertyTransitivityConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpressionContext' represents an important domain concept.
+It does not declare any attributes.
+
+'toplevel_Proposition' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_constraints_GeneralizationConstraint' represents an important domain concept.
+It has one attribute: 'redefines', which is of type str.
+
+'FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'TypePatternVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'IdentifiableEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_constraints_Equivalent' represents an important domain concept.
+It does not declare any attributes.
+
+'Record' represents an important domain concept.
+It does not declare any attributes.
+
+'Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'values_ValueType' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_patterns_ExpressionVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyTypeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_properties_OwnedPropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'lexicalscope_LexicalScope' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_patterns_Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_properties_PropertyBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_values_UnitType' represents an important domain concept.
+It has the following attributes: 'offset', which is of type str; 'ratio', which is of type str; 'symbol', which is of type str.
+
+'smif_properties_PropertyOwnerType' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_facets_Category' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_constraints_UniquenessConstraint' represents an important domain concept.
+It has one attribute: 'isPrimaryIdentity', which is of type str.
+
+'smif_patterns_TypePatternVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_metadata_Metadata' represents an important domain concept.
+It does not declare any attributes.
+
+'Traversal' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_toplevel_Context' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'RepresentationRule' represents an important domain concept.
+It does not declare any attributes.
+
+'Context' represents an important domain concept.
+It does not declare any attributes.
+
+'constraints_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_toplevel_ActualEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'ActualSituation' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Evaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_identifiers_TechnicalIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstantReference' represents an important domain concept.
+It does not declare any attributes.
+
+'properties_PropertyOwnerType' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_patterns_PatternOfType' represents an important domain concept.
+It does not declare any attributes.
+
+'UnitType' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_constraints_ConditionalRule' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_facets_Facet' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_types_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_situations_ActualSituation' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_patterns_PartVariable' represents an important domain concept.
+It has one attribute: 'isBoundaryPart', which is of type str.
+
+'RecordType' represents an important domain concept.
+It does not declare any attributes.
+
+'Term' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_expressions_ConstantReference' represents an important domain concept.
+It does not declare any attributes.
+
+'facets_Facet' represents an important domain concept.
+It does not declare any attributes.
+
+'Thing' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_identifiers_Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_lexicalscope_Include' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_identifiers_TextIdentifier' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'smif_metadata_Definition' represents an important domain concept.
+It has the following attributes: 'summaryDescription', which is of type str; 'textDefinition', which is of type str.
+
+'properties_PropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'CharacteristicType' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_associations_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_facets_Phase' represents an important domain concept.
+It does not declare any attributes.
+
+'MatchRule' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionType' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_relationships_RelationshipType' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_identifiers_UniqueTextIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_lexicalscope_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'properties_PropertyBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'PatternOfType' represents an important domain concept.
+It does not declare any attributes.
+
+'MatchEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_properties_PropertyOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_types_EntityType' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpressionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'constraints_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'InformationSource' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_mapping_RepresentationRule' represents an important domain concept.
+It has one attribute: 'mapAll', which is of type str.
+
+'CoveringConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'LexicalScope' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueType' represents an important domain concept.
+It does not declare any attributes.
+
+'IRIIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ExpressionContext' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_facets_FacetOfEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalRule' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_Repository' represents an important domain concept.
+It does not declare any attributes.
+
+'UniqueIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_properties_PropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_records_RecordType' represents an important domain concept.
+It does not declare any attributes.
+
+'Equality' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_lexicalscope_LexicalReference' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ExpressionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_constraints_MultiplicityConstraint' represents an important domain concept.
+It has the following attributes: 'isSufficent', which is of type str; 'maximumNumber', which is of type str; 'mininumNumber', which is of type str; 'atOnce', which is of type str.
+
+'smif_constraints_PropertyConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'properties_OwnedPropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_toplevel_TemporalEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_types_IntersectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_values_SystemOfUnits' represents an important domain concept.
+It does not declare any attributes.
+
+'Situation' represents an important domain concept.
+It does not declare any attributes.
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_toplevel_Thing' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_values_ScalarQuantity' represents an important domain concept.
+It has one attribute: '_unnamed_ScalarQuantity', which is of type str.
+
+'values_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectOperationType' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_relationships_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'TextIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_identifiers_UniqueIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Facade' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_patterns_PatternMatch' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_mapping_Mapping' represents an important domain concept.
+It has one attribute: 'strength', which is of type str.
+
+'smif_facets_Role' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_properties_CharacteristicBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_constraints_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_values_QuantityKind' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_toplevel_IdentifiableEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_constraints_TypeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_lexicalscope_MappingPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_values_StructuredValue' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_lexicalscope_LogicalPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyOwnerType' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_constraints_CoveringConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'TechnicalIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'patterns_Computed' represents an important domain concept.
+It does not declare any attributes.
+
+'Facet' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_values_ValueType' represents an important domain concept.
+It does not declare any attributes.
+
+'SystemOfUnits' represents an important domain concept.
+It does not declare any attributes.
+
+'toplevel_Context' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_situations_SituationType' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_expressions_ExpressionContext' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_values_BaseUnitType' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_expressions_Evaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_mapping_MatchRule' represents an important domain concept.
+It has one attribute: 'coerce', which is of type str.
+
+'smif_mapping_MatchEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_identifiers_IRIIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'identifiers_TextIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_toplevel_Proposition' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_expressions_FunctionType' represents an important domain concept.
+It does not declare any attributes.
+
+'Prefix' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_lexicalscope_PhysicalPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'UnitValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Name' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_metadata_InformationSource' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_expressions_ObjectOperationType' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_types_UnionType' represents an important domain concept.
+It does not declare any attributes.
+
+'Metadata' represents an important domain concept.
+It does not declare any attributes.
+
+'smif_expressions_Traversal' represents an important domain concept.
+It has the following attributes: 'traverseToRelation', which is of type str; 'inverse', which is of type str.
+
+'UniqueTextIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AssertionStrength' defines the following possible values: 'Global', 'Local'.
+The enumeration 'VariableQualification' defines the following possible values: 'Optional', 'ThereExists', 'Select', 'ExactlyOne', 'Assert', 'All', 'Negate'.
+
+The model also captures inheritance relationships between classes.
+The class 'smif_types_Type' is a specialization of 'lexicalscope_LexicalScope'.
+The class 'smif_types_Type' is a specialization of 'toplevel_Context'.
+The class 'smif_types_IntersectionType' is a specialization of 'Type'.
+The class 'smif_types_UnionType' is a specialization of 'Type'.
+The class 'smif_types_EntityType' is a specialization of 'Type'.
+The class 'smif_situations_SituationType' is a specialization of 'EntityType'.
+The class 'smif_situations_Situation' is a specialization of 'toplevel_Proposition'.
+The class 'smif_situations_Situation' is a specialization of 'toplevel_TemporalEntity'.
+The class 'smif_situations_Situation' is a specialization of 'toplevel_Context'.
+The class 'smif_situations_Situation' is a specialization of 'lexicalscope_LexicalScope'.
+The class 'smif_situations_ActualSituation' is a specialization of 'toplevel_ActualEntity'.
+The class 'smif_situations_ActualSituation' is a specialization of 'situations_Situation'.
+The class 'smif_values_QuantityKind' is a specialization of 'ValueType'.
+The class 'smif_values_UnitType' is a specialization of 'ValueType'.
+The class 'smif_values_BaseUnitType' is a specialization of 'UnitType'.
+The class 'smif_values_ValueType' is a specialization of 'Type'.
+The class 'smif_values_Value' is a specialization of 'Thing'.
+The class 'smif_values_SystemOfUnits' is a specialization of 'Context'.
+The class 'smif_values_StructuredValueType' is a specialization of 'values_ValueType'.
+The class 'smif_values_StructuredValueType' is a specialization of 'properties_PropertyOwnerType'.
+The class 'smif_values_StructuredValue' is a specialization of 'values_Value'.
+The class 'smif_values_StructuredValue' is a specialization of 'properties_PropertyOwner'.
+The class 'smif_values_UnitValue' is a specialization of 'Value'.
+The class 'smif_values_ScalarQuantity' is a specialization of 'UnitValue'.
+The class 'smif_identifiers_UniqueIdentifier' is a specialization of 'Identifier'.
+The class 'smif_identifiers_IRIIdentifier' is a specialization of 'TechnicalIdentifier'.
+The class 'smif_identifiers_Term' is a specialization of 'identifiers_Name'.
+The class 'smif_identifiers_Term' is a specialization of 'identifiers_UniqueTextIdentifier'.
+The class 'smif_identifiers_UniqueTextIdentifier' is a specialization of 'identifiers_UniqueIdentifier'.
+The class 'smif_identifiers_UniqueTextIdentifier' is a specialization of 'identifiers_TextIdentifier'.
+The class 'smif_identifiers_Identifier' is a specialization of 'Value'.
+The class 'smif_identifiers_Namespace' is a specialization of 'Context'.
+The class 'smif_identifiers_TextIdentifier' is a specialization of 'Identifier'.
+The class 'smif_identifiers_Name' is a specialization of 'TextIdentifier'.
+The class 'smif_identifiers_TechnicalIdentifier' is a specialization of 'UniqueTextIdentifier'.
+The class 'smif_expressions_FunctionType' is a specialization of 'properties_PropertyOwnerType'.
+The class 'smif_expressions_FunctionType' is a specialization of 'expressions_ExpressionContext'.
+The class 'smif_expressions_ConstantReference' is a specialization of 'ExpressionNode'.
+The class 'smif_expressions_ExpressionNode' is a specialization of 'ExpressionContext'.
+The class 'smif_expressions_FunctionCall' is a specialization of 'expressions_ExpressionNode'.
+The class 'smif_expressions_FunctionCall' is a specialization of 'properties_PropertyOwner'.
+The class 'smif_expressions_Traversal' is a specialization of 'expressions_ExpressionNode'.
+The class 'smif_expressions_Traversal' is a specialization of 'properties_PropertyOwner'.
+The class 'smif_expressions_ObjectOperationType' is a specialization of 'FunctionType'.
+The class 'smif_expressions_Equality' is a specialization of 'ExpressionNode'.
+The class 'smif_expressions_Evaluation' is a specialization of 'ExpressionContext'.
+The class 'smif_expressions_ExpressionContext' is a specialization of 'IdentifiableEntity'.
+The class 'smif_relationships_Relationship' is a specialization of 'situations_ActualSituation'.
+The class 'smif_relationships_Relationship' is a specialization of 'properties_PropertyOwner'.
+The class 'smif_relationships_RelationshipType' is a specialization of 'situations_SituationType'.
+The class 'smif_relationships_RelationshipType' is a specialization of 'properties_PropertyOwnerType'.
+The class 'smif_constraints_Rule' is a specialization of 'Proposition'.
+The class 'smif_constraints_MultiplicityConstraint' is a specialization of 'TypeConstraint'.
+The class 'smif_constraints_UniquenessConstraint' is a specialization of 'TypeConstraint'.
+The class 'smif_constraints_ConditionalRule' is a specialization of 'constraints_Rule'.
+The class 'smif_constraints_ConditionalRule' is a specialization of 'constraints_Conditional'.
+The class 'smif_constraints_TypeConstraint' is a specialization of 'Rule'.
+The class 'smif_constraints_Equivalent' is a specialization of 'Rule'.
+The class 'smif_constraints_Disjoint' is a specialization of 'Rule'.
+The class 'smif_constraints_Enumerated' is a specialization of 'Rule'.
+The class 'smif_constraints_GeneralizationConstraint' is a specialization of 'TypeConstraint'.
+The class 'smif_constraints_PropertyConstraint' is a specialization of 'Rule'.
+The class 'smif_constraints_PropertyTransitivityConstraint' is a specialization of 'PropertyConstraint'.
+The class 'smif_constraints_PropertyTypeConstraint' is a specialization of 'PropertyConstraint'.
+The class 'smif_constraints_CoveringConstraint' is a specialization of 'TypeConstraint'.
+The class 'smif_constraints_FacetClassificationConstraint' is a specialization of 'GeneralizationConstraint'.
+The class 'smif_toplevel_IdentifiableEntity' is a specialization of 'Thing'.
+The class 'smif_toplevel_Context' is a specialization of 'IdentifiableEntity'.
+The class 'smif_toplevel_Proposition' is a specialization of 'IdentifiableEntity'.
+The class 'smif_toplevel_ActualEntity' is a specialization of 'TemporalEntity'.
+The class 'smif_toplevel_TemporalEntity' is a specialization of 'IdentifiableEntity'.
+The class 'smif_patterns_Pattern' is a specialization of 'situations_SituationType'.
+The class 'smif_patterns_Pattern' is a specialization of 'situations_Situation'.
+The class 'smif_patterns_Pattern' is a specialization of 'lexicalscope_LexicalScope'.
+The class 'smif_patterns_Pattern' is a specialization of 'properties_PropertyOwner'.
+The class 'smif_patterns_PatternVariable' is a specialization of 'properties_OwnedPropertyType'.
+The class 'smif_patterns_PatternVariable' is a specialization of 'constraints_Conditional'.
+The class 'smif_patterns_PropositionVariable' is a specialization of 'PatternVariable'.
+The class 'smif_patterns_ExpressionVariable' is a specialization of 'patterns_PatternVariable'.
+The class 'smif_patterns_ExpressionVariable' is a specialization of 'patterns_Computed'.
+The class 'smif_patterns_PartVariable' is a specialization of 'TypePatternVariable'.
+The class 'smif_patterns_FocusVariable' is a specialization of 'TypePatternVariable'.
+The class 'smif_patterns_TypePatternVariable' is a specialization of 'PatternVariable'.
+The class 'smif_patterns_PatternOfType' is a specialization of 'Pattern'.
+The class 'smif_patterns_PatternMatch' is a specialization of 'ActualSituation'.
+The class 'smif_patterns_VariableBinding' is a specialization of 'OwnedPropertyBinding'.
+The class 'smif_mapping_MatchRule' is a specialization of 'Rule'.
+The class 'smif_mapping_MatchEnd' is a specialization of 'constraints_Conditional'.
+The class 'smif_mapping_MatchEnd' is a specialization of 'patterns_Computed'.
+The class 'smif_mapping_Mapping' is a specialization of 'patterns_Pattern'.
+The class 'smif_mapping_Mapping' is a specialization of 'constraints_Rule'.
+The class 'smif_mapping_Facade' is a specialization of 'RecordType'.
+The class 'smif_mapping_ComputedFacade' is a specialization of 'Facade'.
+The class 'smif_mapping_RepresentationRule' is a specialization of 'ConditionalRule'.
+The class 'smif_lexicalscope_Model' is a specialization of 'Package'.
+The class 'smif_lexicalscope_LexicalScope' is a specialization of 'Namespace'.
+The class 'smif_lexicalscope_LexicalReference' is a specialization of 'Context'.
+The class 'smif_lexicalscope_Include' is a specialization of 'LexicalReference'.
+The class 'smif_lexicalscope_Package' is a specialization of 'LexicalScope'.
+The class 'smif_lexicalscope_MOFPackage' is a specialization of 'Package'.
+The class 'smif_lexicalscope_LogicalPackage' is a specialization of 'Package'.
+The class 'smif_lexicalscope_PhysicalPackage' is a specialization of 'Package'.
+The class 'smif_lexicalscope_MappingPackage' is a specialization of 'Package'.
+The class 'smif_lexicalscope_Prefix' is a specialization of 'UniqueTextIdentifier'.
+The class 'smif_associations_AssociationType' is a specialization of 'PropertyOwnerType'.
+The class 'smif_associations_Association' is a specialization of 'properties_PropertyOwner'.
+The class 'smif_associations_Association' is a specialization of 'toplevel_Proposition'.
+The class 'smif_metadata_Statement' is a specialization of 'Metadata'.
+The class 'smif_metadata_InformationSource' is a specialization of 'toplevel_ActualEntity'.
+The class 'smif_metadata_InformationSource' is a specialization of 'metadata_Metadata'.
+The class 'smif_metadata_Metadata' is a specialization of 'Record'.
+The class 'smif_metadata_Definition' is a specialization of 'Metadata'.
+The class 'smif_properties_PropertyBinding' is a specialization of 'Thing'.
+The class 'smif_properties_PropertyType' is a specialization of 'Type'.
+The class 'smif_properties_CharacteristicType' is a specialization of 'properties_PropertyType'.
+The class 'smif_properties_CharacteristicType' is a specialization of 'situations_SituationType'.
+The class 'smif_properties_CharacteristicBinding' is a specialization of 'properties_PropertyBinding'.
+The class 'smif_properties_CharacteristicBinding' is a specialization of 'situations_ActualSituation'.
+The class 'smif_properties_AnnotationProperty' is a specialization of 'CharacteristicType'.
+The class 'smif_properties_OwnedPropertyType' is a specialization of 'PropertyType'.
+The class 'smif_properties_PropertyOwnerType' is a specialization of 'Type'.
+The class 'smif_properties_OwnedPropertyBinding' is a specialization of 'PropertyBinding'.
+The class 'smif_properties_PropertyOwner' is a specialization of 'Thing'.
+The class 'smif_facets_FacetOfEntity' is a specialization of 'Relationship'.
+The class 'smif_facets_Phase' is a specialization of 'facets_Facet'.
+The class 'smif_facets_Phase' is a specialization of 'situations_SituationType'.
+The class 'smif_facets_Role' is a specialization of 'Facet'.
+The class 'smif_facets_Facet' is a specialization of 'Type'.
+The class 'smif_facets_Category' is a specialization of 'Facet'.
+The class 'smif_records_Record' is a specialization of 'situations_ActualSituation'.
+The class 'smif_records_Record' is a specialization of 'properties_PropertyOwner'.
+The class 'smif_records_RecordType' is a specialization of 'situations_SituationType'.
+The class 'smif_records_RecordType' is a specialization of 'properties_PropertyOwnerType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'LexicalScope' and 'smif_Repository'. From 'LexicalScope', the role 'LexicalScope' has cardinality 0..*, and from 'smif_Repository', the role 'smif_Repository' has cardinality 0..*.
+An association connects 'Thing' and 'smif_types_Type'. From 'Thing', the role 'toplevel' has cardinality 0..*, and from 'smif_types_Type', the role 'Thing' has cardinality 0..*.
+An association connects 'PropertyType' and 'smif_types_Type'. From 'PropertyType', the role 'properties' has cardinality 0..*, and from 'smif_types_Type', the role 'PropertyType' has cardinality 0..*.
+An association connects 'PatternOfType' and 'smif_types_Type'. From 'PatternOfType', the role 'patterns' has cardinality 0..*, and from 'smif_types_Type', the role 'PatternOfType' has cardinality 0..*.
+An association connects 'smif_types_Type' and 'CoveringConstraint'. From 'smif_types_Type', the role 'CoveringConstraint' has cardinality 0..*, and from 'CoveringConstraint', the role 'constraints' has cardinality 0..*.
+An association connects 'GeneralizationConstraint' and 'smif_types_Type'. From 'GeneralizationConstraint', the role 'constraints6' has cardinality 0..*, and from 'smif_types_Type', the role 'GeneralizationConstraint' has cardinality 0..*.
+An association connects 'MultiplicityConstraint' and 'smif_types_Type'. From 'MultiplicityConstraint', the role 'constraints8' has cardinality 0..*, and from 'smif_types_Type', the role 'MultiplicityConstraint' has cardinality 0..*.
+An association connects 'PropertyTypeConstraint' and 'smif_types_Type'. From 'PropertyTypeConstraint', the role 'constraints10' has cardinality 0..*, and from 'smif_types_Type', the role 'PropertyTypeConstraint' has cardinality 0..*.
+An association connects 'smif_types_Type' and 'RecordType'. From 'smif_types_Type', the role 'RecordType' has cardinality 0..*, and from 'RecordType', the role 'records' has cardinality 0..*.
+An association connects 'GeneralizationConstraint' and 'smif_types_Type'. From 'GeneralizationConstraint', the role 'constraints14' has cardinality 0..*, and from 'smif_types_Type', the role 'GeneralizationConstraint13' has cardinality 0..*.
+An association connects 'smif_types_Type' and 'ExpressionContext'. From 'smif_types_Type', the role 'ExpressionContext' has cardinality 0..*, and from 'ExpressionContext', the role 'expressions' has cardinality 0..*.
+An association connects 'MultiplicityConstraint' and 'smif_types_Type'. From 'MultiplicityConstraint', the role 'constraints18' has cardinality 0..*, and from 'smif_types_Type', the role 'MultiplicityConstraint17' has cardinality 0..*.
+An association connects 'MatchEnd' and 'smif_types_Type'. From 'MatchEnd', the role 'mapping' has cardinality 0..*, and from 'smif_types_Type', the role 'MatchEnd' has cardinality 0..*.
+An association connects 'RepresentationRule' and 'smif_types_Type'. From 'RepresentationRule', the role 'mapping21' has cardinality 0..*, and from 'smif_types_Type', the role 'RepresentationRule' has cardinality 0..*.
+An association connects 'smif_types_Type' and 'RepresentationRule'. From 'smif_types_Type', the role 'RepresentationRule23' has cardinality 0..*, and from 'RepresentationRule', the role 'mapping24' has cardinality 0..*.
+An association connects 'smif_situations_Situation' and 'PatternMatch'. From 'smif_situations_Situation', the role 'PatternMatch' has cardinality 0..*, and from 'PatternMatch', the role 'patterns26' has cardinality 0..*.
+An association connects 'Definition' and 'smif_values_UnitType'. From 'Definition', the role 'Definition' has cardinality 0..*, and from 'smif_values_UnitType', the role 'smif_values_UnitType' has cardinality 0..*.
+An association connects 'SystemOfUnits' and 'smif_values_UnitType'. From 'SystemOfUnits', the role 'values' has cardinality 0..*, and from 'smif_values_UnitType', the role 'SystemOfUnits' has cardinality 0..*.
+An association connects 'UnitType' and 'smif_values_SystemOfUnits'. From 'UnitType', the role 'values30' has cardinality 0..*, and from 'smif_values_SystemOfUnits', the role 'UnitType' has cardinality 0..*.
+An association connects 'smif_identifiers_UniqueIdentifier' and 'Namespace'. From 'smif_identifiers_UniqueIdentifier', the role 'Namespace' has cardinality 0..*, and from 'Namespace', the role 'identifiers' has cardinality 0..*.
+An association connects 'IdentifiableEntity' and 'smif_identifiers_Identifier'. From 'IdentifiableEntity', the role 'toplevel33' has cardinality 0..*, and from 'smif_identifiers_Identifier', the role 'IdentifiableEntity' has cardinality 0..*.
+An association connects 'IdentifiableEntity' and 'smif_identifiers_Identifier'. From 'IdentifiableEntity', the role 'toplevel36' has cardinality 0..*, and from 'smif_identifiers_Identifier', the role 'IdentifiableEntity35' has cardinality 0..*.
+An association connects 'UniqueIdentifier' and 'smif_identifiers_Namespace'. From 'UniqueIdentifier', the role 'identifiers38' has cardinality 0..*, and from 'smif_identifiers_Namespace', the role 'UniqueIdentifier' has cardinality 0..*.
+An association connects 'IdentifiableEntity' and 'smif_identifiers_Name'. From 'IdentifiableEntity', the role 'toplevel41' has cardinality 0..*, and from 'smif_identifiers_Name', the role 'IdentifiableEntity40' has cardinality 0..*.
+An association connects 'ExpressionNode' and 'smif_expressions_FunctionType'. From 'ExpressionNode', the role 'expressions43' has cardinality 0..*, and from 'smif_expressions_FunctionType', the role 'ExpressionNode' has cardinality 0..*.
+An association connects 'FunctionCall' and 'smif_expressions_FunctionType'. From 'FunctionCall', the role 'expressions45' has cardinality 0..*, and from 'smif_expressions_FunctionType', the role 'FunctionCall' has cardinality 0..*.
+An association connects 'Thing' and 'smif_expressions_ConstantReference'. From 'Thing', the role 'toplevel48' has cardinality 0..*, and from 'smif_expressions_ConstantReference', the role 'Thing47' has cardinality 0..*.
+An association connects 'Evaluation' and 'smif_expressions_ExpressionNode'. From 'Evaluation', the role 'expressions50' has cardinality 0..*, and from 'smif_expressions_ExpressionNode', the role 'Evaluation' has cardinality 0..*.
+An association connects 'FunctionType' and 'smif_expressions_ExpressionNode'. From 'FunctionType', the role 'expressions52' has cardinality 0..*, and from 'smif_expressions_ExpressionNode', the role 'FunctionType' has cardinality 0..*.
+An association connects 'FunctionType' and 'smif_expressions_FunctionCall'. From 'FunctionType', the role 'expressions55' has cardinality 0..*, and from 'smif_expressions_FunctionCall', the role 'FunctionType54' has cardinality 0..*.
+An association connects 'PropertyType' and 'smif_expressions_Traversal'. From 'PropertyType', the role 'properties58' has cardinality 0..*, and from 'smif_expressions_Traversal', the role 'PropertyType57' has cardinality 0..*.
+An association connects 'smif_expressions_ObjectOperationType' and 'PropertyType'. From 'smif_expressions_ObjectOperationType', the role 'PropertyType60' has cardinality 0..*, and from 'PropertyType', the role 'properties61' has cardinality 0..*.
+An association connects 'Thing' and 'smif_expressions_Equality'. From 'Thing', the role 'toplevel64' has cardinality 0..*, and from 'smif_expressions_Equality', the role 'Thing63' has cardinality 0..*.
+An association connects 'smif_expressions_Evaluation' and 'ExpressionNode'. From 'smif_expressions_Evaluation', the role 'ExpressionNode66' has cardinality 0..*, and from 'ExpressionNode', the role 'expressions67' has cardinality 0..*.
+An association connects 'smif_expressions_ExpressionContext' and 'Context'. From 'smif_expressions_ExpressionContext', the role 'Context' has cardinality 0..*, and from 'Context', the role 'toplevel69' has cardinality 0..*.
+An association connects 'smif_expressions_ExpressionContext' and 'Type'. From 'smif_expressions_ExpressionContext', the role 'Type' has cardinality 0..*, and from 'Type', the role 'types' has cardinality 0..*.
+An association connects 'smif_constraints_Rule' and 'IdentifiableEntity'. From 'smif_constraints_Rule', the role 'IdentifiableEntity72' has cardinality 0..*, and from 'IdentifiableEntity', the role 'toplevel73' has cardinality 0..*.
+An association connects 'Rule' and 'smif_constraints_Rule'. From 'Rule', the role 'constraints75' has cardinality 0..*, and from 'smif_constraints_Rule', the role 'Rule' has cardinality 0..*.
+An association connects 'smif_constraints_Rule' and 'Rule'. From 'smif_constraints_Rule', the role 'Rule77' has cardinality 0..*, and from 'Rule', the role 'constraints78' has cardinality 0..*.
+An association connects 'smif_constraints_MultiplicityConstraint' and 'Type'. From 'smif_constraints_MultiplicityConstraint', the role 'Type80' has cardinality 0..*, and from 'Type', the role 'types81' has cardinality 0..*.
+An association connects 'smif_constraints_MultiplicityConstraint' and 'Type'. From 'smif_constraints_MultiplicityConstraint', the role 'Type83' has cardinality 0..*, and from 'Type', the role 'types84' has cardinality 0..*.
+An association connects 'smif_constraints_UniquenessConstraint' and 'PropertyType'. From 'smif_constraints_UniquenessConstraint', the role 'PropertyType86' has cardinality 0..*, and from 'PropertyType', the role 'properties87' has cardinality 0..*.
+An association connects 'smif_constraints_GeneralizationConstraint' and 'Type'. From 'smif_constraints_GeneralizationConstraint', the role 'Type89' has cardinality 0..*, and from 'Type', the role 'types90' has cardinality 0..*.
+An association connects 'Type' and 'smif_constraints_GeneralizationConstraint'. From 'Type', the role 'types93' has cardinality 0..*, and from 'smif_constraints_GeneralizationConstraint', the role 'Type92' has cardinality 0..*.
+An association connects 'Type' and 'smif_constraints_PropertyTypeConstraint'. From 'Type', the role 'types96' has cardinality 0..*, and from 'smif_constraints_PropertyTypeConstraint', the role 'Type95' has cardinality 0..*.
+An association connects 'Type' and 'smif_constraints_CoveringConstraint'. From 'Type', the role 'types99' has cardinality 0..*, and from 'smif_constraints_CoveringConstraint', the role 'Type98' has cardinality 0..*.
+An association connects 'ExpressionNode' and 'smif_constraints_Conditional'. From 'ExpressionNode', the role 'ExpressionNode101' has cardinality 0..*, and from 'smif_constraints_Conditional', the role 'smif_constraints_Conditional' has cardinality 0..*.
+An association connects 'Statement' and 'smif_toplevel_IdentifiableEntity'. From 'Statement', the role 'metadata' has cardinality 0..*, and from 'smif_toplevel_IdentifiableEntity', the role 'Statement' has cardinality 0..*.
+An association connects 'Identifier' and 'smif_toplevel_IdentifiableEntity'. From 'Identifier', the role 'identifiers104' has cardinality 0..*, and from 'smif_toplevel_IdentifiableEntity', the role 'Identifier' has cardinality 0..*.
+An association connects 'Definition' and 'smif_toplevel_IdentifiableEntity'. From 'Definition', the role 'metadata107' has cardinality 0..*, and from 'smif_toplevel_IdentifiableEntity', the role 'Definition106' has cardinality 0..*.
+An association connects 'smif_toplevel_IdentifiableEntity' and 'Identifier'. From 'smif_toplevel_IdentifiableEntity', the role 'Identifier109' has cardinality 0..*, and from 'Identifier', the role 'identifiers110' has cardinality 0..*.
+An association connects 'Metadata' and 'smif_toplevel_IdentifiableEntity'. From 'Metadata', the role 'metadata112' has cardinality 0..*, and from 'smif_toplevel_IdentifiableEntity', the role 'Metadata' has cardinality 0..*.
+An association connects 'Name' and 'smif_toplevel_IdentifiableEntity'. From 'Name', the role 'identifiers114' has cardinality 0..*, and from 'smif_toplevel_IdentifiableEntity', the role 'Name' has cardinality 0..*.
+An association connects 'Record' and 'smif_toplevel_IdentifiableEntity'. From 'Record', the role 'records116' has cardinality 0..*, and from 'smif_toplevel_IdentifiableEntity', the role 'Record' has cardinality 0..*.
+An association connects 'smif_toplevel_IdentifiableEntity' and 'Rule'. From 'smif_toplevel_IdentifiableEntity', the role 'Rule118' has cardinality 0..*, and from 'Rule', the role 'constraints119' has cardinality 0..*.
+An association connects 'smif_toplevel_IdentifiableEntity' and 'InformationSource'. From 'smif_toplevel_IdentifiableEntity', the role 'InformationSource' has cardinality 0..*, and from 'InformationSource', the role 'metadata121' has cardinality 0..*.
+An association connects 'PropertyBinding' and 'smif_toplevel_IdentifiableEntity'. From 'PropertyBinding', the role 'properties123' has cardinality 0..*, and from 'smif_toplevel_IdentifiableEntity', the role 'PropertyBinding' has cardinality 0..*.
+An association connects 'smif_toplevel_Thing' and 'LexicalScope'. From 'smif_toplevel_Thing', the role 'smif_toplevel_Thing' has cardinality 0..*, and from 'LexicalScope', the role 'LexicalScope125' has cardinality 0..*.
+An association connects 'Context' and 'smif_toplevel_Thing'. From 'Context', the role 'toplevel128' has cardinality 0..*, and from 'smif_toplevel_Thing', the role 'Context127' has cardinality 0..*.
+An association connects 'smif_toplevel_Thing' and 'Type'. From 'smif_toplevel_Thing', the role 'Type130' has cardinality 0..*, and from 'Type', the role 'types131' has cardinality 0..*.
+An association connects 'LexicalScope' and 'smif_toplevel_Thing'. From 'LexicalScope', the role 'lexicalscope' has cardinality 0..*, and from 'smif_toplevel_Thing', the role 'LexicalScope133' has cardinality 0..*.
+An association connects 'ConstantReference' and 'smif_toplevel_Thing'. From 'ConstantReference', the role 'expressions135' has cardinality 0..*, and from 'smif_toplevel_Thing', the role 'ConstantReference' has cardinality 0..*.
+An association connects 'Equality' and 'smif_toplevel_Thing'. From 'Equality', the role 'expressions137' has cardinality 0..*, and from 'smif_toplevel_Thing', the role 'Equality' has cardinality 0..*.
+An association connects 'smif_toplevel_Thing' and 'PropertyBinding'. From 'smif_toplevel_Thing', the role 'PropertyBinding139' has cardinality 0..*, and from 'PropertyBinding', the role 'properties140' has cardinality 0..*.
+An association connects 'smif_toplevel_Context' and 'Proposition'. From 'smif_toplevel_Context', the role 'Proposition' has cardinality 0..*, and from 'Proposition', the role 'toplevel142' has cardinality 0..*.
+An association connects 'smif_toplevel_Context' and 'Thing'. From 'smif_toplevel_Context', the role 'Thing144' has cardinality 0..*, and from 'Thing', the role 'toplevel145' has cardinality 0..*.
+An association connects 'smif_toplevel_Context' and 'Proposition'. From 'smif_toplevel_Context', the role 'Proposition147' has cardinality 0..*, and from 'Proposition', the role 'toplevel148' has cardinality 0..*.
+An association connects 'smif_toplevel_Context' and 'ExpressionContext'. From 'smif_toplevel_Context', the role 'ExpressionContext150' has cardinality 0..*, and from 'ExpressionContext', the role 'expressions151' has cardinality 0..*.
+An association connects 'smif_toplevel_Context' and 'LexicalReference'. From 'smif_toplevel_Context', the role 'LexicalReference' has cardinality 0..*, and from 'LexicalReference', the role 'lexicalscope153' has cardinality 0..*.
+An association connects 'smif_toplevel_Proposition' and 'Context'. From 'smif_toplevel_Proposition', the role 'Context155' has cardinality 0..*, and from 'Context', the role 'toplevel156' has cardinality 0..*.
+An association connects 'smif_toplevel_Proposition' and 'Context'. From 'smif_toplevel_Proposition', the role 'Context158' has cardinality 0..*, and from 'Context', the role 'toplevel159' has cardinality 0..*.
+An association connects 'smif_toplevel_Proposition' and 'PropositionVariable'. From 'smif_toplevel_Proposition', the role 'PropositionVariable' has cardinality 0..*, and from 'PropositionVariable', the role 'patterns161' has cardinality 0..*.
+An association connects 'smif_patterns_Pattern' and 'PatternVariable'. From 'smif_patterns_Pattern', the role 'PatternVariable' has cardinality 0..*, and from 'PatternVariable', the role 'patterns163' has cardinality 0..*.
+An association connects 'PatternMatch' and 'smif_patterns_Pattern'. From 'PatternMatch', the role 'patterns166' has cardinality 0..*, and from 'smif_patterns_Pattern', the role 'PatternMatch165' has cardinality 0..*.
+An association connects 'smif_patterns_PatternVariable' and 'Pattern'. From 'smif_patterns_PatternVariable', the role 'Pattern' has cardinality 0..*, and from 'Pattern', the role 'patterns168' has cardinality 0..*.
+An association connects 'smif_patterns_PatternVariable' and 'PatternVariable'. From 'smif_patterns_PatternVariable', the role 'PatternVariable170' has cardinality 0..*, and from 'PatternVariable', the role 'patterns171' has cardinality 0..*.
+An association connects 'MatchEnd' and 'smif_patterns_PatternVariable'. From 'MatchEnd', the role 'mapping174' has cardinality 0..*, and from 'smif_patterns_PatternVariable', the role 'MatchEnd173' has cardinality 0..*.
+An association connects 'PatternVariable' and 'smif_patterns_PatternVariable'. From 'PatternVariable', the role 'patterns177' has cardinality 0..*, and from 'smif_patterns_PatternVariable', the role 'PatternVariable176' has cardinality 0..*.
+An association connects 'smif_patterns_PatternVariable' and 'PatternVariable'. From 'smif_patterns_PatternVariable', the role 'PatternVariable179' has cardinality 0..*, and from 'PatternVariable', the role 'patterns180' has cardinality 0..*.
+An association connects 'smif_patterns_PatternVariable' and 'PatternVariable'. From 'smif_patterns_PatternVariable', the role 'PatternVariable182' has cardinality 0..*, and from 'PatternVariable', the role 'patterns183' has cardinality 0..*.
+An association connects 'smif_patterns_PatternVariable' and 'Mapping'. From 'smif_patterns_PatternVariable', the role 'Mapping' has cardinality 0..*, and from 'Mapping', the role 'mapping185' has cardinality 0..*.
+An association connects 'smif_patterns_PatternVariable' and 'Mapping'. From 'smif_patterns_PatternVariable', the role 'Mapping187' has cardinality 0..*, and from 'Mapping', the role 'mapping188' has cardinality 0..*.
+An association connects 'smif_patterns_PropositionVariable' and 'Proposition'. From 'smif_patterns_PropositionVariable', the role 'Proposition190' has cardinality 0..*, and from 'Proposition', the role 'toplevel191' has cardinality 0..*.
+An association connects 'Type' and 'smif_patterns_PatternOfType'. From 'Type', the role 'types194' has cardinality 0..*, and from 'smif_patterns_PatternOfType', the role 'Type193' has cardinality 0..*.
+An association connects 'smif_patterns_PatternMatch' and 'VariableBinding'. From 'smif_patterns_PatternMatch', the role 'VariableBinding' has cardinality 0..*, and from 'VariableBinding', the role 'patterns196' has cardinality 0..*.
+An association connects 'smif_patterns_PatternMatch' and 'Pattern'. From 'smif_patterns_PatternMatch', the role 'Pattern198' has cardinality 0..*, and from 'Pattern', the role 'patterns199' has cardinality 0..*.
+An association connects 'Situation' and 'smif_patterns_PatternMatch'. From 'Situation', the role 'situations' has cardinality 0..*, and from 'smif_patterns_PatternMatch', the role 'Situation' has cardinality 0..*.
+An association connects 'smif_patterns_VariableBinding' and 'PatternMatch'. From 'smif_patterns_VariableBinding', the role 'PatternMatch202' has cardinality 0..*, and from 'PatternMatch', the role 'patterns203' has cardinality 0..*.
+An association connects 'ExpressionNode' and 'smif_patterns_Computed'. From 'ExpressionNode', the role 'ExpressionNode205' has cardinality 0..*, and from 'smif_patterns_Computed', the role 'smif_patterns_Computed' has cardinality 0..*.
+An association connects 'smif_mapping_MatchRule' and 'MatchEnd'. From 'smif_mapping_MatchRule', the role 'MatchEnd207' has cardinality 0..*, and from 'MatchEnd', the role 'mapping208' has cardinality 0..*.
+An association connects 'MatchEnd' and 'smif_mapping_MatchRule'. From 'MatchEnd', the role 'mapping211' has cardinality 0..*, and from 'smif_mapping_MatchRule', the role 'MatchEnd210' has cardinality 0..*.
+An association connects 'Mapping' and 'smif_mapping_MatchRule'. From 'Mapping', the role 'mapping214' has cardinality 0..*, and from 'smif_mapping_MatchRule', the role 'Mapping213' has cardinality 0..*.
+An association connects 'Type' and 'smif_mapping_MatchEnd'. From 'Type', the role 'types217' has cardinality 0..*, and from 'smif_mapping_MatchEnd', the role 'Type216' has cardinality 0..*.
+An association connects 'smif_mapping_MatchEnd' and 'PatternVariable'. From 'smif_mapping_MatchEnd', the role 'PatternVariable219' has cardinality 0..*, and from 'PatternVariable', the role 'patterns220' has cardinality 0..*.
+An association connects 'smif_mapping_MatchEnd' and 'MatchRule'. From 'smif_mapping_MatchEnd', the role 'MatchRule' has cardinality 0..*, and from 'MatchRule', the role 'mapping222' has cardinality 0..*.
+An association connects 'smif_mapping_MatchEnd' and 'MatchRule'. From 'smif_mapping_MatchEnd', the role 'MatchRule224' has cardinality 0..*, and from 'MatchRule', the role 'mapping225' has cardinality 0..*.
+An association connects 'PatternVariable' and 'smif_mapping_Mapping'. From 'PatternVariable', the role 'patterns228' has cardinality 0..*, and from 'smif_mapping_Mapping', the role 'PatternVariable227' has cardinality 0..*.
+An association connects 'smif_mapping_Mapping' and 'MatchRule'. From 'smif_mapping_Mapping', the role 'MatchRule230' has cardinality 0..*, and from 'MatchRule', the role 'mapping231' has cardinality 0..*.
+An association connects 'smif_mapping_Mapping' and 'PatternVariable'. From 'smif_mapping_Mapping', the role 'PatternVariable233' has cardinality 0..*, and from 'PatternVariable', the role 'patterns234' has cardinality 0..*.
+An association connects 'Type' and 'smif_mapping_RepresentationRule'. From 'Type', the role 'types237' has cardinality 0..*, and from 'smif_mapping_RepresentationRule', the role 'Type236' has cardinality 0..*.
+An association connects 'smif_mapping_RepresentationRule' and 'Type'. From 'smif_mapping_RepresentationRule', the role 'Type239' has cardinality 0..*, and from 'Type', the role 'types240' has cardinality 0..*.
+An association connects 'smif_lexicalscope_LexicalScope' and 'Thing'. From 'smif_lexicalscope_LexicalScope', the role 'smif_lexicalscope_LexicalScope' has cardinality 0..*, and from 'Thing', the role 'Thing242' has cardinality 0..*.
+An association connects 'LexicalReference' and 'smif_lexicalscope_LexicalScope'. From 'LexicalReference', the role 'lexicalscope245' has cardinality 0..*, and from 'smif_lexicalscope_LexicalScope', the role 'LexicalReference244' has cardinality 0..*.
+An association connects 'smif_lexicalscope_LexicalScope' and 'Thing'. From 'smif_lexicalscope_LexicalScope', the role 'Thing247' has cardinality 0..*, and from 'Thing', the role 'toplevel248' has cardinality 0..*.
+An association connects 'Context' and 'smif_lexicalscope_LexicalReference'. From 'Context', the role 'toplevel251' has cardinality 0..*, and from 'smif_lexicalscope_LexicalReference', the role 'Context250' has cardinality 0..*.
+An association connects 'LexicalScope' and 'smif_lexicalscope_LexicalReference'. From 'LexicalScope', the role 'lexicalscope254' has cardinality 0..*, and from 'smif_lexicalscope_LexicalReference', the role 'LexicalScope253' has cardinality 0..*.
+An association connects 'smif_lexicalscope_Package' and 'Prefix'. From 'smif_lexicalscope_Package', the role 'Prefix' has cardinality 0..*, and from 'Prefix', the role 'lexicalscope256' has cardinality 0..*.
+An association connects 'smif_lexicalscope_Prefix' and 'Package'. From 'smif_lexicalscope_Prefix', the role 'Package' has cardinality 0..*, and from 'Package', the role 'lexicalscope258' has cardinality 0..*.
+An association connects 'smif_metadata_Statement' and 'ValueType'. From 'smif_metadata_Statement', the role 'smif_metadata_Statement' has cardinality 0..*, and from 'ValueType', the role 'ValueType' has cardinality 0..*.
+An association connects 'ValueType' and 'smif_metadata_Statement'. From 'ValueType', the role 'ValueType262' has cardinality 0..*, and from 'smif_metadata_Statement', the role 'smif_metadata_Statement261' has cardinality 0..*.
+An association connects 'ValueType' and 'smif_metadata_Statement'. From 'ValueType', the role 'ValueType265' has cardinality 0..*, and from 'smif_metadata_Statement', the role 'smif_metadata_Statement264' has cardinality 0..*.
+An association connects 'IdentifiableEntity' and 'smif_metadata_Statement'. From 'IdentifiableEntity', the role 'toplevel268' has cardinality 0..*, and from 'smif_metadata_Statement', the role 'IdentifiableEntity267' has cardinality 0..*.
+An association connects 'smif_metadata_InformationSource' and 'IdentifiableEntity'. From 'smif_metadata_InformationSource', the role 'IdentifiableEntity270' has cardinality 0..*, and from 'IdentifiableEntity', the role 'toplevel271' has cardinality 0..*.
+An association connects 'IdentifiableEntity' and 'smif_metadata_Metadata'. From 'IdentifiableEntity', the role 'toplevel274' has cardinality 0..*, and from 'smif_metadata_Metadata', the role 'IdentifiableEntity273' has cardinality 0..*.
+An association connects 'IRIIdentifier' and 'smif_metadata_Definition'. From 'IRIIdentifier', the role 'IRIIdentifier' has cardinality 0..*, and from 'smif_metadata_Definition', the role 'smif_metadata_Definition' has cardinality 0..*.
+An association connects 'Term' and 'smif_metadata_Definition'. From 'Term', the role 'Term' has cardinality 0..*, and from 'smif_metadata_Definition', the role 'smif_metadata_Definition277' has cardinality 0..*.
+An association connects 'smif_metadata_Definition' and 'IdentifiableEntity'. From 'smif_metadata_Definition', the role 'IdentifiableEntity279' has cardinality 0..*, and from 'IdentifiableEntity', the role 'toplevel280' has cardinality 0..*.
+An association connects 'Thing' and 'smif_properties_PropertyBinding'. From 'Thing', the role 'toplevel283' has cardinality 0..*, and from 'smif_properties_PropertyBinding', the role 'Thing282' has cardinality 0..*.
+An association connects 'smif_properties_PropertyBinding' and 'PropertyType'. From 'smif_properties_PropertyBinding', the role 'PropertyType285' has cardinality 0..*, and from 'PropertyType', the role 'properties286' has cardinality 0..*.
+An association connects 'smif_properties_PropertyBinding' and 'IdentifiableEntity'. From 'smif_properties_PropertyBinding', the role 'IdentifiableEntity288' has cardinality 0..*, and from 'IdentifiableEntity', the role 'toplevel289' has cardinality 0..*.
+An association connects 'Type' and 'smif_properties_PropertyType'. From 'Type', the role 'types292' has cardinality 0..*, and from 'smif_properties_PropertyType', the role 'Type291' has cardinality 0..*.
+An association connects 'Traversal' and 'smif_properties_PropertyType'. From 'Traversal', the role 'expressions294' has cardinality 0..*, and from 'smif_properties_PropertyType', the role 'Traversal' has cardinality 0..*.
+An association connects 'ObjectOperationType' and 'smif_properties_PropertyType'. From 'ObjectOperationType', the role 'expressions296' has cardinality 0..*, and from 'smif_properties_PropertyType', the role 'ObjectOperationType' has cardinality 0..*.
+An association connects 'UniquenessConstraint' and 'smif_properties_PropertyType'. From 'UniquenessConstraint', the role 'constraints298' has cardinality 0..*, and from 'smif_properties_PropertyType', the role 'UniquenessConstraint' has cardinality 0..*.
+An association connects 'smif_properties_PropertyType' and 'PropertyBinding'. From 'smif_properties_PropertyType', the role 'PropertyBinding300' has cardinality 0..*, and from 'PropertyBinding', the role 'properties301' has cardinality 0..*.
+An association connects 'IdentifiableEntity' and 'smif_records_Record'. From 'IdentifiableEntity', the role 'toplevel304' has cardinality 0..*, and from 'smif_records_Record', the role 'IdentifiableEntity303' has cardinality 0..*.
+An association connects 'smif_records_RecordType' and 'Type'. From 'smif_records_RecordType', the role 'Type306' has cardinality 0..*, and from 'Type', the role 'types307' has cardinality 0..*.

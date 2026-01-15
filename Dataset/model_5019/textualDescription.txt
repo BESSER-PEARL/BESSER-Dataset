@@ -1,0 +1,17 @@
+The domain model 'purchaseOrder' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'purchaseOrder_PurchaseOrder' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'orderDate', which is of type str.
+
+'purchaseOrder_USAddress' represents an important domain concept.
+It has the following attributes: 'country', which is of type str; 'zip', which is of type int; 'state', which is of type str; 'street', which is of type str; 'name', which is of type str; 'city', which is of type str.
+
+'purchaseOrder_Item' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'productName', which is of type str; 'USPrice', which is of type int; 'shipDate', which is of type str; 'partNum', which is of type str; 'quantity', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'purchaseOrder_USAddress' and 'purchaseOrder_PurchaseOrder'. From 'purchaseOrder_USAddress', the role 'purchaseOrder_USAddress' has cardinality 0..*, and from 'purchaseOrder_PurchaseOrder', the role 'purchaseOrder_PurchaseOrder' has cardinality 0..*.
+An association connects 'purchaseOrder_USAddress' and 'purchaseOrder_PurchaseOrder'. From 'purchaseOrder_USAddress', the role 'purchaseOrder_USAddress3' has cardinality 0..*, and from 'purchaseOrder_PurchaseOrder', the role 'purchaseOrder_PurchaseOrder2' has cardinality 0..*.
+An association connects 'purchaseOrder_Item' and 'purchaseOrder_PurchaseOrder'. From 'purchaseOrder_Item', the role 'purchaseOrder_Item' has cardinality 0..*, and from 'purchaseOrder_PurchaseOrder', the role 'purchaseOrder_PurchaseOrder5' has cardinality 0..*.

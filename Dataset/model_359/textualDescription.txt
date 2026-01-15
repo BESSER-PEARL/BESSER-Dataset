@@ -1,0 +1,44 @@
+The domain model 'libraryExample' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'Asset' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryExample_SchoolBook' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryExample_Writer' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'lastname', which is of type str.
+
+'Library' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryExample_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'libraryExample_SchoolLibrary' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'Book' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryExample_Book' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'category', which is of type str; 'pages', which is of type int.
+
+'libraryExample_Asset' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BookCategory' defines the following possible values: 'ScienceFiction', 'Biography', 'Mystery'.
+
+The model also captures inheritance relationships between classes.
+The class 'libraryExample_SchoolLibrary' is a specialization of 'Library'.
+The class 'libraryExample_SchoolBook' is a specialization of 'Book'.
+The class 'libraryExample_SchoolBook' is a specialization of 'Asset'.
+
+Relationships between classes are modeled using associations.
+An association connects 'libraryExample_Book' and 'libraryExample_Library'. From 'libraryExample_Book', the role 'libraryExample_Book' has cardinality 0..*, and from 'libraryExample_Library', the role 'libraryExample_Library' has cardinality 0..*.
+An association connects 'libraryExample_Writer' and 'libraryExample_Library'. From 'libraryExample_Writer', the role 'libraryExample_Writer' has cardinality 0..*, and from 'libraryExample_Library', the role 'libraryExample_Library2' has cardinality 0..*.
+An association connects 'libraryExample_Book' and 'libraryExample_Writer'. From 'libraryExample_Book', the role 'books' has cardinality 0..*, and from 'libraryExample_Writer', the role 'Writer' has cardinality 0..*.
+An association connects 'libraryExample_Writer' and 'libraryExample_Book'. From 'libraryExample_Writer', the role 'writer' has cardinality 0..*, and from 'libraryExample_Book', the role 'Book' has cardinality 0..*.

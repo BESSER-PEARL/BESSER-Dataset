@@ -1,0 +1,35 @@
+The domain model 'BinaryCalculator' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'BinaryCalculator_BinaryCalculator' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'BinaryCalculator_Bit' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'BitSeq' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryCalculator_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryCalculator_L' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryCalculator_BitSeq' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryCalculator_Value' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'BinaryCalculator_L' is a specialization of 'BitSeq'.
+The class 'BinaryCalculator_Bit' is a specialization of 'BitSeq'.
+
+Relationships between classes are modeled using associations.
+An association connects 'BinaryCalculator_BinaryCalculator' and 'BinaryCalculator_Model'. From 'BinaryCalculator_BinaryCalculator', the role 'BinaryCalculator_BinaryCalculator' has cardinality 0..*, and from 'BinaryCalculator_Model', the role 'BinaryCalculator_Model' has cardinality 0..*.
+An association connects 'BinaryCalculator_BinaryCalculator' and 'BinaryCalculator_BitSeq'. From 'BinaryCalculator_BinaryCalculator', the role 'BinaryCalculator_BinaryCalculator2' has cardinality 0..*, and from 'BinaryCalculator_BitSeq', the role 'BinaryCalculator_BitSeq' has cardinality 0..*.
+An association connects 'BinaryCalculator_BinaryCalculator' and 'BinaryCalculator_Value'. From 'BinaryCalculator_BinaryCalculator', the role 'BinaryCalculator_BinaryCalculator4' has cardinality 0..*, and from 'BinaryCalculator_Value', the role 'BinaryCalculator_Value' has cardinality 0..*.
+An association connects 'BinaryCalculator_BitSeq' and 'BinaryCalculator_L'. From 'BinaryCalculator_BitSeq', the role 'BinaryCalculator_BitSeq6' has cardinality 0..*, and from 'BinaryCalculator_L', the role 'BinaryCalculator_L' has cardinality 0..*.
+An association connects 'BinaryCalculator_Bit' and 'BinaryCalculator_L'. From 'BinaryCalculator_Bit', the role 'BinaryCalculator_Bit' has cardinality 0..*, and from 'BinaryCalculator_L', the role 'BinaryCalculator_L8' has cardinality 0..*.

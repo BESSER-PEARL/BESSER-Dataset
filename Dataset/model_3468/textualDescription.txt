@@ -1,0 +1,95 @@
+The domain model 'featuremodel' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'featuremodel_AttributeValueString' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'featuremodel_AttributeType' represents an important domain concept.
+It does not declare any attributes.
+
+'featuremodel_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str; 'setable', which is of type bool.
+
+'featuremodel_Feature' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'type', which is of type str; 'name', which is of type str.
+
+'featuremodel_AttributeTypeEObject' represents an important domain concept.
+It does not declare any attributes.
+
+'featuremodel_Rule' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'language', which is of type str.
+
+'featuremodel_Group' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'lower', which is of type int; 'upper', which is of type int.
+
+'featuremodel_AttributeTypeString' represents an important domain concept.
+It does not declare any attributes.
+
+'featuremodel_AttributeValueBoolean' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'featuremodel_AttributeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'featuremodel_FeatureModel' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'id', which is of type str.
+
+'featuremodel_AttributeValueEObject' represents an important domain concept.
+It does not declare any attributes.
+
+'featuremodel_Constraint' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'featuremodel_AttributeTypeInt' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeType' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'featuremodel_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'featuremodel_Description' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'id', which is of type str.
+
+'featuremodel_AttributeValueInt' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'featuremodel_AttributeTypeBoolean' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VariabilityType' defines the following possible values: 'alternative', 'or', 'mandatory', 'optional'.
+
+The model also captures inheritance relationships between classes.
+The class 'featuremodel_Constraint' is a specialization of 'Rule'.
+The class 'featuremodel_AttributeTypeInt' is a specialization of 'AttributeType'.
+The class 'featuremodel_AttributeTypeString' is a specialization of 'AttributeType'.
+The class 'featuremodel_AttributeTypeBoolean' is a specialization of 'AttributeType'.
+The class 'featuremodel_AttributeTypeEObject' is a specialization of 'AttributeType'.
+The class 'featuremodel_AttributeValueInt' is a specialization of 'AttributeValue'.
+The class 'featuremodel_AttributeValueString' is a specialization of 'AttributeValue'.
+The class 'featuremodel_AttributeValueBoolean' is a specialization of 'AttributeValue'.
+The class 'featuremodel_AttributeValueEObject' is a specialization of 'AttributeValue'.
+
+Relationships between classes are modeled using associations.
+An association connects 'featuremodel_FeatureModel' and 'featuremodel_Description'. From 'featuremodel_FeatureModel', the role 'featuremodel_FeatureModel' has cardinality 0..*, and from 'featuremodel_Description', the role 'featuremodel_Description' has cardinality 0..*.
+An association connects 'featuremodel_Attribute' and 'featuremodel_FeatureModel'. From 'featuremodel_Attribute', the role 'featuremodel_Attribute' has cardinality 0..*, and from 'featuremodel_FeatureModel', the role 'featuremodel_FeatureModel2' has cardinality 0..*.
+An association connects 'featuremodel_FeatureModel' and 'featuremodel_Feature'. From 'featuremodel_FeatureModel', the role 'featuremodel_FeatureModel4' has cardinality 0..*, and from 'featuremodel_Feature', the role 'featuremodel_Feature' has cardinality 0..*.
+An association connects 'featuremodel_Constraint' and 'featuremodel_FeatureModel'. From 'featuremodel_Constraint', the role 'featuremodel_Constraint' has cardinality 0..*, and from 'featuremodel_FeatureModel', the role 'featuremodel_FeatureModel6' has cardinality 0..*.
+An association connects 'featuremodel_Constraint' and 'featuremodel_Description'. From 'featuremodel_Constraint', the role 'featuremodel_Constraint8' has cardinality 0..*, and from 'featuremodel_Description', the role 'featuremodel_Description9' has cardinality 0..*.
+An association connects 'featuremodel_Group' and 'featuremodel_Feature'. From 'featuremodel_Group', the role 'featuremodel_Group' has cardinality 0..*, and from 'featuremodel_Feature', the role 'featuremodel_Feature11' has cardinality 0..*.
+An association connects 'featuremodel_Feature' and 'featuremodel_Description'. From 'featuremodel_Feature', the role 'featuremodel_Feature13' has cardinality 0..*, and from 'featuremodel_Description', the role 'featuremodel_Description14' has cardinality 0..*.
+An association connects 'featuremodel_Feature' and 'featuremodel_Attribute'. From 'featuremodel_Feature', the role 'featuremodel_Feature16' has cardinality 0..*, and from 'featuremodel_Attribute', the role 'featuremodel_Attribute17' has cardinality 0..*.
+An association connects 'featuremodel_Feature' and 'featuremodel_Group'. From 'featuremodel_Feature', the role 'featuremodel_Feature19' has cardinality 0..*, and from 'featuremodel_Group', the role 'featuremodel_Group20' has cardinality 0..*.
+An association connects 'featuremodel_Description' and 'featuremodel_Attribute'. From 'featuremodel_Description', the role 'featuremodel_Description23' has cardinality 0..*, and from 'featuremodel_Attribute', the role 'featuremodel_Attribute22' has cardinality 0..*.
+An association connects 'featuremodel_AttributeValue' and 'featuremodel_Attribute'. From 'featuremodel_AttributeValue', the role 'featuremodel_AttributeValue' has cardinality 0..*, and from 'featuremodel_Attribute', the role 'featuremodel_Attribute25' has cardinality 0..*.
+An association connects 'featuremodel_AttributeType' and 'featuremodel_Attribute'. From 'featuremodel_AttributeType', the role 'featuremodel_AttributeType' has cardinality 0..*, and from 'featuremodel_Attribute', the role 'featuremodel_Attribute27' has cardinality 0..*.
+An association connects 'featuremodel_EObject' and 'featuremodel_AttributeValueEObject'. From 'featuremodel_EObject', the role 'featuremodel_EObject' has cardinality 0..*, and from 'featuremodel_AttributeValueEObject', the role 'featuremodel_AttributeValueEObject' has cardinality 0..*.

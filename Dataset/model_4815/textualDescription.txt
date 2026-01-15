@@ -1,0 +1,533 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 127 main class(es).
+
+'model_DiagramModelGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'model_SystemSoftware' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ApplicationComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'FolderContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'BusinessLayerElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BusinessRole' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModelContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'model_SketchModel' represents an important domain concept.
+It has one attribute: 'background', which is of type int.
+
+'model_DiagramModelConnection' represents an important domain concept.
+It has the following attributes: 'lineWidth', which is of type int; 'lineColor', which is of type str; 'type', which is of type int; 'text', which is of type str.
+
+'FontAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Documentable' represents an important domain concept.
+It has one attribute: 'documentation', which is of type str.
+
+'model_Principle' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfaceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_InfrastructureService' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Product' represents an important domain concept.
+It does not declare any attributes.
+
+'model_SketchModelSticky' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TriggeringRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'model_WorkPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'TechnologyLayerElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagramModelObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Requirement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ApplicationService' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ArchimateModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_InfrastructureInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AndJunction' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Goal' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AggregationRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'model_UsedByRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Adapter' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModelObject' represents an important domain concept.
+It has one attribute: 'fillColor', which is of type str.
+
+'model_DiagramModelBendpoint' represents an important domain concept.
+It has the following attributes: 'startY', which is of type int; 'endX', which is of type int; 'startX', which is of type int; 'endY', which is of type int.
+
+'model_Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Assessment' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DataObject' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagramModelConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModelImage' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Cloneable' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Properties' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ImplementationMigrationElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BusinessInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AssociationRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MotivationElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Meaning' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Driver' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagramModel' represents an important domain concept.
+It does not declare any attributes.
+
+'model_InterfaceElement' represents an important domain concept.
+It has one attribute: 'interfaceType', which is of type int.
+
+'ApplicationLayerElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BusinessService' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ApplicationInteraction' represents an important domain concept.
+It does not declare any attributes.
+
+'TextContent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_SketchModelActor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BorderObject' represents an important domain concept.
+It has one attribute: 'borderColor', which is of type str.
+
+'model_BusinessObject' represents an important domain concept.
+It does not declare any attributes.
+
+'Documentable' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Property' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'model_Identifier' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Adapter' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModelArchimateObject' represents an important domain concept.
+It has one attribute: 'type', which is of type int.
+
+'model_Folder' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'model_BusinessCollaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_FlowRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ApplicationInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AccessRelationship' represents an important domain concept.
+It has one attribute: 'accessType', which is of type int.
+
+'model_DiagramModelReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ArchimateModel' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'file', which is of type str; 'purpose', which is of type str.
+
+'model_ApplicationLayerElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'model_InfrastructureFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'JunctionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Device' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Plateau' represents an important domain concept.
+It does not declare any attributes.
+
+'model_FontAttribute' represents an important domain concept.
+It has the following attributes: 'fontColor', which is of type str; 'textAlignment', which is of type int; 'font', which is of type str; 'textPosition', which is of type int.
+
+'model_SpecialisationRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Network' represents an important domain concept.
+It does not declare any attributes.
+
+'model_RealisationRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'Nameable' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagramModelImageProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagramModelComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Deliverable' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Nameable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_BusinessLayerElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_JunctionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BusinessProcess' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagramModelContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Bounds' represents an important domain concept.
+It has the following attributes: 'x', which is of type int; 'y', which is of type int; 'width', which is of type int; 'height', which is of type int.
+
+'model_Lockable' represents an important domain concept.
+It has one attribute: 'locked', which is of type bool.
+
+'BorderObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModelNote' represents an important domain concept.
+It does not declare any attributes.
+
+'Properties' represents an important domain concept.
+It does not declare any attributes.
+
+'Cloneable' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Junction' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BusinessFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BusinessInteraction' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BusinessActor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Representation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TextContent' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'model_ArchimateDiagramModel' represents an important domain concept.
+It has one attribute: 'viewpoint', which is of type int.
+
+'model_Gap' represents an important domain concept.
+It does not declare any attributes.
+
+'model_InfluenceRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BusinessEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModelComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_OrJunction' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CommunicationPath' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModelArchimateConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Stakeholder' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CompositionRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'MotivationElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BusinessActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'model_FolderContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AssignmentRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Contract' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ApplicationFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModel' represents an important domain concept.
+It has one attribute: 'connectionRouterType', which is of type int.
+
+'model_ApplicationCollaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Location' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ArchimateElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramModelImageProvider' represents an important domain concept.
+It has one attribute: 'imagePath', which is of type str.
+
+'ImplementationMigrationElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TechnologyLayerElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FolderType' defines the following possible values: 'user', 'business', 'technology', 'connectors', 'application', 'derived', 'relations', 'implementation_migration', 'motivation', 'diagrams'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_ArchimateModel' is a specialization of 'FolderContainer'.
+The class 'model_ArchimateModel' is a specialization of 'Nameable'.
+The class 'model_ArchimateModel' is a specialization of 'Identifier'.
+The class 'model_ArchimateModel' is a specialization of 'ArchimateModelElement'.
+The class 'model_ArchimateModel' is a specialization of 'Properties'.
+The class 'model_ArchimateModelElement' is a specialization of 'Adapter'.
+The class 'model_Folder' is a specialization of 'ArchimateModelElement'.
+The class 'model_Folder' is a specialization of 'FolderContainer'.
+The class 'model_Folder' is a specialization of 'Nameable'.
+The class 'model_Folder' is a specialization of 'Identifier'.
+The class 'model_Folder' is a specialization of 'Documentable'.
+The class 'model_Folder' is a specialization of 'Properties'.
+The class 'model_ArchimateElement' is a specialization of 'ArchimateModelElement'.
+The class 'model_ArchimateElement' is a specialization of 'Identifier'.
+The class 'model_ArchimateElement' is a specialization of 'Cloneable'.
+The class 'model_ArchimateElement' is a specialization of 'Nameable'.
+The class 'model_ArchimateElement' is a specialization of 'Documentable'.
+The class 'model_ArchimateElement' is a specialization of 'Properties'.
+The class 'model_JunctionElement' is a specialization of 'ArchimateElement'.
+The class 'model_InterfaceElement' is a specialization of 'ArchimateElement'.
+The class 'model_Junction' is a specialization of 'JunctionElement'.
+The class 'model_AndJunction' is a specialization of 'JunctionElement'.
+The class 'model_OrJunction' is a specialization of 'JunctionElement'.
+The class 'model_Relationship' is a specialization of 'ArchimateElement'.
+The class 'model_AccessRelationship' is a specialization of 'Relationship'.
+The class 'model_AggregationRelationship' is a specialization of 'Relationship'.
+The class 'model_AssignmentRelationship' is a specialization of 'Relationship'.
+The class 'model_AssociationRelationship' is a specialization of 'Relationship'.
+The class 'model_CompositionRelationship' is a specialization of 'Relationship'.
+The class 'model_FlowRelationship' is a specialization of 'Relationship'.
+The class 'model_RealisationRelationship' is a specialization of 'Relationship'.
+The class 'model_SpecialisationRelationship' is a specialization of 'Relationship'.
+The class 'model_TriggeringRelationship' is a specialization of 'Relationship'.
+The class 'model_UsedByRelationship' is a specialization of 'Relationship'.
+The class 'model_InfluenceRelationship' is a specialization of 'Relationship'.
+The class 'model_BusinessLayerElement' is a specialization of 'ArchimateElement'.
+The class 'model_BusinessActivity' is a specialization of 'BusinessLayerElement'.
+The class 'model_BusinessActor' is a specialization of 'BusinessLayerElement'.
+The class 'model_BusinessCollaboration' is a specialization of 'BusinessLayerElement'.
+The class 'model_Contract' is a specialization of 'BusinessLayerElement'.
+The class 'model_BusinessEvent' is a specialization of 'BusinessLayerElement'.
+The class 'model_BusinessFunction' is a specialization of 'BusinessLayerElement'.
+The class 'model_BusinessInteraction' is a specialization of 'BusinessLayerElement'.
+The class 'model_BusinessInterface' is a specialization of 'BusinessLayerElement'.
+The class 'model_BusinessInterface' is a specialization of 'InterfaceElement'.
+The class 'model_Meaning' is a specialization of 'BusinessLayerElement'.
+The class 'model_BusinessObject' is a specialization of 'BusinessLayerElement'.
+The class 'model_BusinessProcess' is a specialization of 'BusinessLayerElement'.
+The class 'model_Product' is a specialization of 'BusinessLayerElement'.
+The class 'model_Representation' is a specialization of 'BusinessLayerElement'.
+The class 'model_BusinessRole' is a specialization of 'BusinessLayerElement'.
+The class 'model_BusinessService' is a specialization of 'BusinessLayerElement'.
+The class 'model_Value' is a specialization of 'BusinessLayerElement'.
+The class 'model_Location' is a specialization of 'BusinessLayerElement'.
+The class 'model_ApplicationLayerElement' is a specialization of 'ArchimateElement'.
+The class 'model_ApplicationCollaboration' is a specialization of 'ApplicationLayerElement'.
+The class 'model_ApplicationComponent' is a specialization of 'ApplicationLayerElement'.
+The class 'model_ApplicationFunction' is a specialization of 'ApplicationLayerElement'.
+The class 'model_ApplicationInteraction' is a specialization of 'ApplicationLayerElement'.
+The class 'model_ApplicationInterface' is a specialization of 'ApplicationLayerElement'.
+The class 'model_ApplicationInterface' is a specialization of 'InterfaceElement'.
+The class 'model_DataObject' is a specialization of 'ApplicationLayerElement'.
+The class 'model_ApplicationService' is a specialization of 'ApplicationLayerElement'.
+The class 'model_TechnologyLayerElement' is a specialization of 'ArchimateElement'.
+The class 'model_Artifact' is a specialization of 'TechnologyLayerElement'.
+The class 'model_CommunicationPath' is a specialization of 'TechnologyLayerElement'.
+The class 'model_Network' is a specialization of 'TechnologyLayerElement'.
+The class 'model_InfrastructureInterface' is a specialization of 'TechnologyLayerElement'.
+The class 'model_InfrastructureInterface' is a specialization of 'InterfaceElement'.
+The class 'model_InfrastructureService' is a specialization of 'TechnologyLayerElement'.
+The class 'model_InfrastructureFunction' is a specialization of 'TechnologyLayerElement'.
+The class 'model_Node' is a specialization of 'TechnologyLayerElement'.
+The class 'model_SystemSoftware' is a specialization of 'TechnologyLayerElement'.
+The class 'model_Device' is a specialization of 'TechnologyLayerElement'.
+The class 'model_MotivationElement' is a specialization of 'ArchimateElement'.
+The class 'model_Stakeholder' is a specialization of 'MotivationElement'.
+The class 'model_Driver' is a specialization of 'MotivationElement'.
+The class 'model_Assessment' is a specialization of 'MotivationElement'.
+The class 'model_Goal' is a specialization of 'MotivationElement'.
+The class 'model_Requirement' is a specialization of 'MotivationElement'.
+The class 'model_Constraint' is a specialization of 'MotivationElement'.
+The class 'model_Principle' is a specialization of 'MotivationElement'.
+The class 'model_ImplementationMigrationElement' is a specialization of 'ArchimateElement'.
+The class 'model_WorkPackage' is a specialization of 'ImplementationMigrationElement'.
+The class 'model_Deliverable' is a specialization of 'ImplementationMigrationElement'.
+The class 'model_Plateau' is a specialization of 'ImplementationMigrationElement'.
+The class 'model_Gap' is a specialization of 'ImplementationMigrationElement'.
+The class 'model_DiagramModelComponent' is a specialization of 'Identifier'.
+The class 'model_DiagramModelComponent' is a specialization of 'Cloneable'.
+The class 'model_DiagramModelComponent' is a specialization of 'Adapter'.
+The class 'model_DiagramModelComponent' is a specialization of 'Nameable'.
+The class 'model_DiagramModelContainer' is a specialization of 'DiagramModelComponent'.
+The class 'model_DiagramModel' is a specialization of 'ArchimateModelElement'.
+The class 'model_DiagramModel' is a specialization of 'DiagramModelContainer'.
+The class 'model_DiagramModel' is a specialization of 'Documentable'.
+The class 'model_DiagramModel' is a specialization of 'Properties'.
+The class 'model_DiagramModelReference' is a specialization of 'DiagramModelObject'.
+The class 'model_DiagramModelObject' is a specialization of 'DiagramModelComponent'.
+The class 'model_DiagramModelObject' is a specialization of 'FontAttribute'.
+The class 'model_DiagramModelGroup' is a specialization of 'DiagramModelObject'.
+The class 'model_DiagramModelGroup' is a specialization of 'DiagramModelContainer'.
+The class 'model_DiagramModelGroup' is a specialization of 'Documentable'.
+The class 'model_DiagramModelGroup' is a specialization of 'Properties'.
+The class 'model_DiagramModelNote' is a specialization of 'DiagramModelObject'.
+The class 'model_DiagramModelNote' is a specialization of 'TextContent'.
+The class 'model_DiagramModelImage' is a specialization of 'DiagramModelObject'.
+The class 'model_DiagramModelImage' is a specialization of 'BorderObject'.
+The class 'model_DiagramModelImage' is a specialization of 'DiagramModelImageProvider'.
+The class 'model_DiagramModelConnection' is a specialization of 'DiagramModelComponent'.
+The class 'model_DiagramModelConnection' is a specialization of 'FontAttribute'.
+The class 'model_DiagramModelConnection' is a specialization of 'Properties'.
+The class 'model_DiagramModelConnection' is a specialization of 'Documentable'.
+The class 'model_DiagramModelBendpoint' is a specialization of 'Cloneable'.
+The class 'model_ArchimateDiagramModel' is a specialization of 'DiagramModel'.
+The class 'model_DiagramModelArchimateObject' is a specialization of 'DiagramModelObject'.
+The class 'model_DiagramModelArchimateObject' is a specialization of 'DiagramModelContainer'.
+The class 'model_DiagramModelArchimateConnection' is a specialization of 'DiagramModelConnection'.
+The class 'model_SketchModel' is a specialization of 'DiagramModel'.
+The class 'model_SketchModelSticky' is a specialization of 'DiagramModelObject'.
+The class 'model_SketchModelSticky' is a specialization of 'DiagramModelContainer'.
+The class 'model_SketchModelSticky' is a specialization of 'TextContent'.
+The class 'model_SketchModelSticky' is a specialization of 'Properties'.
+The class 'model_SketchModelActor' is a specialization of 'DiagramModelObject'.
+The class 'model_SketchModelActor' is a specialization of 'Documentable'.
+The class 'model_SketchModelActor' is a specialization of 'Properties'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Property' and 'model_Properties'. From 'model_Property', the role 'model_Property' has cardinality 0..*, and from 'model_Properties', the role 'model_Properties' has cardinality 0..*.
+An association connects 'model_FolderContainer' and 'model_Folder'. From 'model_FolderContainer', the role 'model_FolderContainer' has cardinality 0..*, and from 'model_Folder', the role 'model_Folder' has cardinality 0..*.
+An association connects 'model_ArchimateModelElement' and 'model_ArchimateModel'. From 'model_ArchimateModelElement', the role 'model_ArchimateModelElement' has cardinality 0..*, and from 'model_ArchimateModel', the role 'model_ArchimateModel' has cardinality 0..*.
+An association connects 'model_EObject' and 'model_Folder'. From 'model_EObject', the role 'model_EObject' has cardinality 0..*, and from 'model_Folder', the role 'model_Folder4' has cardinality 0..*.
+An association connects 'model_ArchimateElement' and 'model_Relationship'. From 'model_ArchimateElement', the role 'model_ArchimateElement' has cardinality 0..*, and from 'model_Relationship', the role 'model_Relationship' has cardinality 0..*.
+An association connects 'model_ArchimateElement' and 'model_Relationship'. From 'model_ArchimateElement', the role 'model_ArchimateElement8' has cardinality 0..*, and from 'model_Relationship', the role 'model_Relationship7' has cardinality 0..*.
+An association connects 'model_DiagramModel' and 'model_DiagramModelComponent'. From 'model_DiagramModel', the role 'model_DiagramModel' has cardinality 0..*, and from 'model_DiagramModelComponent', the role 'model_DiagramModelComponent' has cardinality 0..*.
+An association connects 'model_DiagramModelObject' and 'model_DiagramModelContainer'. From 'model_DiagramModelObject', the role 'model_DiagramModelObject' has cardinality 0..*, and from 'model_DiagramModelContainer', the role 'model_DiagramModelContainer' has cardinality 0..*.
+An association connects 'model_DiagramModel' and 'model_DiagramModelReference'. From 'model_DiagramModel', the role 'model_DiagramModel12' has cardinality 0..*, and from 'model_DiagramModelReference', the role 'model_DiagramModelReference' has cardinality 0..*.
+An association connects 'model_Bounds' and 'model_DiagramModelObject'. From 'model_Bounds', the role 'model_Bounds' has cardinality 0..*, and from 'model_DiagramModelObject', the role 'model_DiagramModelObject14' has cardinality 0..*.
+An association connects 'model_DiagramModelConnection' and 'model_DiagramModelObject'. From 'model_DiagramModelConnection', the role 'model_DiagramModelConnection' has cardinality 0..*, and from 'model_DiagramModelObject', the role 'model_DiagramModelObject16' has cardinality 0..*.
+An association connects 'model_DiagramModelConnection' and 'model_DiagramModelObject'. From 'model_DiagramModelConnection', the role 'model_DiagramModelConnection19' has cardinality 0..*, and from 'model_DiagramModelObject', the role 'model_DiagramModelObject18' has cardinality 0..*.
+An association connects 'model_DiagramModelObject' and 'model_DiagramModelConnection'. From 'model_DiagramModelObject', the role 'model_DiagramModelObject22' has cardinality 0..*, and from 'model_DiagramModelConnection', the role 'model_DiagramModelConnection21' has cardinality 0..*.
+An association connects 'model_DiagramModelConnection' and 'model_DiagramModelObject'. From 'model_DiagramModelConnection', the role 'model_DiagramModelConnection24' has cardinality 0..*, and from 'model_DiagramModelObject', the role 'model_DiagramModelObject25' has cardinality 0..*.
+An association connects 'model_DiagramModelConnection' and 'model_DiagramModelBendpoint'. From 'model_DiagramModelConnection', the role 'model_DiagramModelConnection27' has cardinality 0..*, and from 'model_DiagramModelBendpoint', the role 'model_DiagramModelBendpoint' has cardinality 0..*.
+An association connects 'model_ArchimateElement' and 'model_DiagramModelArchimateObject'. From 'model_ArchimateElement', the role 'model_ArchimateElement29' has cardinality 0..*, and from 'model_DiagramModelArchimateObject', the role 'model_DiagramModelArchimateObject' has cardinality 0..*.
+An association connects 'model_Relationship' and 'model_DiagramModelArchimateConnection'. From 'model_Relationship', the role 'model_Relationship31' has cardinality 0..*, and from 'model_DiagramModelArchimateConnection', the role 'model_DiagramModelArchimateConnection' has cardinality 0..*.

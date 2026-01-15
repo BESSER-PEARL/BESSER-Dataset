@@ -1,0 +1,25 @@
+The domain model 'DML' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'DML_InsertInto' represents an important domain concept.
+It has one attribute: 'tableName', which is of type str.
+
+'DML_Column' represents an important domain concept.
+It has one attribute: 'columnName', which is of type str.
+
+'DML_Registry' represents an important domain concept.
+It does not declare any attributes.
+
+'DML_Value' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'DML_InsertsStatements' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'DML_InsertsStatements' and 'DML_InsertInto'. From 'DML_InsertsStatements', the role 'DML_InsertsStatements' has cardinality 0..*, and from 'DML_InsertInto', the role 'DML_InsertInto' has cardinality 0..*.
+An association connects 'DML_InsertInto' and 'DML_Registry'. From 'DML_InsertInto', the role 'DML_InsertInto2' has cardinality 0..*, and from 'DML_Registry', the role 'DML_Registry' has cardinality 0..*.
+An association connects 'DML_InsertInto' and 'DML_Column'. From 'DML_InsertInto', the role 'DML_InsertInto4' has cardinality 0..*, and from 'DML_Column', the role 'DML_Column' has cardinality 0..*.
+An association connects 'DML_Registry' and 'DML_Value'. From 'DML_Registry', the role 'DML_Registry6' has cardinality 0..*, and from 'DML_Value', the role 'DML_Value' has cardinality 0..*.
+An association connects 'DML_Value' and 'DML_Column'. From 'DML_Value', the role 'DML_Value8' has cardinality 0..*, and from 'DML_Column', the role 'DML_Column9' has cardinality 0..*.

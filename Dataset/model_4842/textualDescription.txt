@@ -1,0 +1,105 @@
+The domain model 'ArchimateTechnology' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'ArchimateTechnology_Junction' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_Aggregation' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_Access' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_Device' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_Grouping' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_Composition' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_InfrastructureFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'NodeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_InfrastructureInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_Specialization' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_NodeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_Triggering' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_UsedBy' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_CommunicationPath' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_Network' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_InfrastructureService' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateTechnology_SystemSoftware' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ArchimateTechnology_Node' is a specialization of 'NodeElement'.
+The class 'ArchimateTechnology_Device' is a specialization of 'NodeElement'.
+The class 'ArchimateTechnology_Network' is a specialization of 'NodeElement'.
+The class 'ArchimateTechnology_CommunicationPath' is a specialization of 'NodeElement'.
+The class 'ArchimateTechnology_InfrastructureInterface' is a specialization of 'NodeElement'.
+The class 'ArchimateTechnology_SystemSoftware' is a specialization of 'NodeElement'.
+The class 'ArchimateTechnology_InfrastructureFunction' is a specialization of 'NodeElement'.
+The class 'ArchimateTechnology_InfrastructureService' is a specialization of 'NodeElement'.
+The class 'ArchimateTechnology_Artifact' is a specialization of 'NodeElement'.
+The class 'ArchimateTechnology_Grouping' is a specialization of 'NodeElement'.
+The class 'ArchimateTechnology_Junction' is a specialization of 'Relationship'.
+The class 'ArchimateTechnology_Association' is a specialization of 'Relationship'.
+The class 'ArchimateTechnology_Access' is a specialization of 'Relationship'.
+The class 'ArchimateTechnology_UsedBy' is a specialization of 'Relationship'.
+The class 'ArchimateTechnology_Realization' is a specialization of 'Relationship'.
+The class 'ArchimateTechnology_Assignment' is a specialization of 'Relationship'.
+The class 'ArchimateTechnology_Aggregation' is a specialization of 'Relationship'.
+The class 'ArchimateTechnology_Composition' is a specialization of 'Relationship'.
+The class 'ArchimateTechnology_Flow' is a specialization of 'Relationship'.
+The class 'ArchimateTechnology_Triggering' is a specialization of 'Relationship'.
+The class 'ArchimateTechnology_Specialization' is a specialization of 'Relationship'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ArchimateTechnology_NodeElement' and 'ArchimateTechnology_Relationship'. From 'ArchimateTechnology_NodeElement', the role 'ArchimateTechnology_NodeElement' has cardinality 0..*, and from 'ArchimateTechnology_Relationship', the role 'ArchimateTechnology_Relationship' has cardinality 0..*.
+An association connects 'ArchimateTechnology_NodeElement' and 'ArchimateTechnology_Relationship'. From 'ArchimateTechnology_NodeElement', the role 'ArchimateTechnology_NodeElement3' has cardinality 0..*, and from 'ArchimateTechnology_Relationship', the role 'ArchimateTechnology_Relationship2' has cardinality 0..*.

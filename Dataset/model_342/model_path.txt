@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/kitalpha/accuracy/examples/plugins/org.eclipse.emf.examples.library/model/extlibrary.ecore

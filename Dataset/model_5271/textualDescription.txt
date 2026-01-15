@@ -1,0 +1,10 @@
+The domain model 'input' describes the core structural elements and their relationships within the system.
+
+The model defines 1 main class(es).
+
+'input_A' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'input_A' and 'input_A'. From 'input_A', the role 'input_A' has cardinality 0..*, and from 'input_A', the role 'input_A0' has cardinality 0..*.
+An association connects 'input_A' and 'input_A'. From 'input_A', the role 'input_A4' has cardinality 0..*, and from 'input_A', the role 'input_A2' has cardinality 0..*.

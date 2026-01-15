@@ -1,0 +1,54 @@
+The domain model 'boolExpEnv' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'boolExpEnv_And' represents an important domain concept.
+It does not declare any attributes.
+
+'Lit' represents an important domain concept.
+It does not declare any attributes.
+
+'boolExpEnv_Tru' represents an important domain concept.
+It does not declare any attributes.
+
+'boolExpEnv_Fals' represents an important domain concept.
+It does not declare any attributes.
+
+'boolExpEnv_Lit' represents an important domain concept.
+It does not declare any attributes.
+
+'boolExpEnv_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'boolExpEnv_VarRef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'BinExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'boolExpEnv_Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'boolExpEnv_BinExp' represents an important domain concept.
+It does not declare any attributes.
+
+'boolExpEnv_Not' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'boolExpEnv_BinExp' is a specialization of 'Exp'.
+The class 'boolExpEnv_Lit' is a specialization of 'Exp'.
+The class 'boolExpEnv_Tru' is a specialization of 'Lit'.
+The class 'boolExpEnv_Fals' is a specialization of 'Lit'.
+The class 'boolExpEnv_Not' is a specialization of 'Exp'.
+The class 'boolExpEnv_And' is a specialization of 'BinExp'.
+The class 'boolExpEnv_Or' is a specialization of 'BinExp'.
+The class 'boolExpEnv_VarRef' is a specialization of 'Exp'.
+
+Relationships between classes are modeled using associations.
+An association connects 'boolExpEnv_BinExp' and 'boolExpEnv_Exp'. From 'boolExpEnv_BinExp', the role 'boolExpEnv_BinExp' has cardinality 0..*, and from 'boolExpEnv_Exp', the role 'boolExpEnv_Exp' has cardinality 0..*.
+An association connects 'boolExpEnv_BinExp' and 'boolExpEnv_Exp'. From 'boolExpEnv_BinExp', the role 'boolExpEnv_BinExp2' has cardinality 0..*, and from 'boolExpEnv_Exp', the role 'boolExpEnv_Exp3' has cardinality 0..*.
+An association connects 'boolExpEnv_Exp' and 'boolExpEnv_Not'. From 'boolExpEnv_Exp', the role 'boolExpEnv_Exp5' has cardinality 0..*, and from 'boolExpEnv_Not', the role 'boolExpEnv_Not' has cardinality 0..*.

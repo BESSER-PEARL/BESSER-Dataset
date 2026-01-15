@@ -1,0 +1,21 @@
+The domain model 'Families' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'Families_Families' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_Family' represents an important domain concept.
+It has one attribute: 'lastname', which is of type str.
+
+'Families_Member' represents an important domain concept.
+It has the following attributes: 'gender', which is of type str; 'firstname', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'GenderType' defines the following possible values: 'male', 'female'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Families_Families' and 'Families_Family'. From 'Families_Families', the role 'container' has cardinality 0..*, and from 'Families_Family', the role 'Family' has cardinality 0..*.
+An association connects 'Families_Family' and 'Families_Families'. From 'Families_Family', the role 'families' has cardinality 0..*, and from 'Families_Families', the role 'Families' has cardinality 0..*.
+An association connects 'Families_Member' and 'Families_Family'. From 'Families_Member', the role 'Member' has cardinality 0..*, and from 'Families_Family', the role 'family' has cardinality 0..*.
+An association connects 'Families_Member' and 'Families_Family'. From 'Families_Member', the role 'members' has cardinality 0..*, and from 'Families_Family', the role 'Family4' has cardinality 0..*.

@@ -1,0 +1,170 @@
+The domain model 'EFM' describes the core structural elements and their relationships within the system.
+
+The model defines 35 main class(es).
+
+'EFM_Cardinality' represents an important domain concept.
+It has the following attributes: 'cardinalityMin', which is of type int; 'cardinalityMax', which is of type int; 'configValue', which is of type int.
+
+'EFM_FMConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'EFM_ValueOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'EFM_ResourceVerification' represents an important domain concept.
+It does not declare any attributes.
+
+'EFM_NodeFeatureElement' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'EFM_RangeOperation' represents an important domain concept.
+It has the following attributes: 'min', which is of type int; 'max', which is of type int.
+
+'EFM_NodeFeature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EFM_Exclusive' represents an important domain concept.
+It does not declare any attributes.
+
+'EFM_Implies' represents an important domain concept.
+It does not declare any attributes.
+
+'EFM_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'Cardinality' represents an important domain concept.
+It does not declare any attributes.
+
+'EFM_NotHostedBy' represents an important domain concept.
+It does not declare any attributes.
+
+'EFM_Alternative' represents an important domain concept.
+It does not declare any attributes.
+
+'EFM_FMElement' represents an important domain concept.
+It does not declare any attributes.
+
+'EFM_FeatureModel' represents an important domain concept.
+It does not declare any attributes.
+
+'NodeFeatureElement' represents an important domain concept.
+It does not declare any attributes.
+
+'FMElement' represents an important domain concept.
+It does not declare any attributes.
+
+'EFM_IntValue' represents an important domain concept.
+It does not declare any attributes.
+
+'EFM_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'EFM_BooleanConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'EFM_HostedBy' represents an important domain concept.
+It does not declare any attributes.
+
+'FMConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'EFM_Comparison' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Alternative' represents an important domain concept.
+It does not declare any attributes.
+
+'EFM_Feature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EFM_FeatCardinality' represents an important domain concept.
+It does not declare any attributes.
+
+'EFM_Colocated' represents an important domain concept.
+It does not declare any attributes.
+
+'EFM_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EFM_Requires' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'EFM_Functional' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'value', which is of type int.
+
+'EFM_Separated' represents an important domain concept.
+It does not declare any attributes.
+
+'EFM_Excludes' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Operator' defines the following possible values: 'multiply', 'divide', 'select', 'remove', 'add'.
+The enumeration 'ComparisonOperator' defines the following possible values: 'leq', 'lt', 'gt', 'equal', 'geq'.
+The enumeration 'LogicalOperator' defines the following possible values: 'or', 'void', 'and'.
+
+The model also captures inheritance relationships between classes.
+The class 'EFM_Feature' is a specialization of 'FMElement'.
+The class 'EFM_Exclusive' is a specialization of 'Alternative'.
+The class 'EFM_Alternative' is a specialization of 'Feature'.
+The class 'EFM_Attribute' is a specialization of 'FMElement'.
+The class 'EFM_BooleanConstraint' is a specialization of 'FMConstraint'.
+The class 'EFM_FeatCardinality' is a specialization of 'Cardinality'.
+The class 'EFM_Implies' is a specialization of 'BooleanConstraint'.
+The class 'EFM_Excludes' is a specialization of 'BooleanConstraint'.
+The class 'EFM_Requires' is a specialization of 'FMConstraint'.
+The class 'EFM_Functional' is a specialization of 'FMConstraint'.
+The class 'EFM_Comparison' is a specialization of 'FMConstraint'.
+The class 'EFM_RangeOperation' is a specialization of 'Operation'.
+The class 'EFM_ValueOperation' is a specialization of 'Operation'.
+The class 'EFM_Colocated' is a specialization of 'FMConstraint'.
+The class 'EFM_NodeFeature' is a specialization of 'NodeFeatureElement'.
+The class 'EFM_HostedBy' is a specialization of 'FMConstraint'.
+The class 'EFM_Separated' is a specialization of 'FMConstraint'.
+The class 'EFM_ResourceVerification' is a specialization of 'FMConstraint'.
+The class 'EFM_NotHostedBy' is a specialization of 'FMConstraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'EFM_FMConstraint' and 'EFM_FeatureModel'. From 'EFM_FMConstraint', the role 'EFM_FMConstraint' has cardinality 0..*, and from 'EFM_FeatureModel', the role 'EFM_FeatureModel' has cardinality 0..*.
+An association connects 'EFM_FeatureModel' and 'EFM_Feature'. From 'EFM_FeatureModel', the role 'EFM_FeatureModel2' has cardinality 0..*, and from 'EFM_Feature', the role 'EFM_Feature' has cardinality 0..*.
+An association connects 'EFM_Feature' and 'EFM_Attribute'. From 'EFM_Feature', the role 'EFM_Feature4' has cardinality 0..*, and from 'EFM_Attribute', the role 'EFM_Attribute' has cardinality 0..*.
+An association connects 'EFM_Feature' and 'EFM_Feature'. From 'EFM_Feature', the role 'EFM_Feature7' has cardinality 0..*, and from 'EFM_Feature', the role 'EFM_Feature5' has cardinality 0..*.
+An association connects 'EFM_Feature' and 'EFM_FeatCardinality'. From 'EFM_Feature', the role 'EFM_Feature9' has cardinality 0..*, and from 'EFM_FeatCardinality', the role 'EFM_FeatCardinality' has cardinality 0..*.
+An association connects 'EFM_Feature' and 'EFM_NodeFeature'. From 'EFM_Feature', the role 'EFM_Feature11' has cardinality 0..*, and from 'EFM_NodeFeature', the role 'EFM_NodeFeature' has cardinality 0..*.
+An association connects 'EFM_Alternative' and 'EFM_Feature'. From 'EFM_Alternative', the role 'EFM_Alternative' has cardinality 0..*, and from 'EFM_Feature', the role 'EFM_Feature13' has cardinality 0..*.
+An association connects 'EFM_Attribute' and 'EFM_Value'. From 'EFM_Attribute', the role 'EFM_Attribute15' has cardinality 0..*, and from 'EFM_Value', the role 'EFM_Value' has cardinality 0..*.
+An association connects 'EFM_Feature' and 'EFM_BooleanConstraint'. From 'EFM_Feature', the role 'EFM_Feature17' has cardinality 0..*, and from 'EFM_BooleanConstraint', the role 'EFM_BooleanConstraint' has cardinality 0..*.
+An association connects 'EFM_Feature' and 'EFM_BooleanConstraint'. From 'EFM_Feature', the role 'EFM_Feature20' has cardinality 0..*, and from 'EFM_BooleanConstraint', the role 'EFM_BooleanConstraint19' has cardinality 0..*.
+An association connects 'EFM_Requires' and 'EFM_Operation'. From 'EFM_Requires', the role 'EFM_Requires' has cardinality 0..*, and from 'EFM_Operation', the role 'EFM_Operation' has cardinality 0..*.
+An association connects 'EFM_Requires' and 'EFM_Operation'. From 'EFM_Requires', the role 'EFM_Requires23' has cardinality 0..*, and from 'EFM_Operation', the role 'EFM_Operation24' has cardinality 0..*.
+An association connects 'EFM_Feature' and 'EFM_Functional'. From 'EFM_Feature', the role 'EFM_Feature26' has cardinality 0..*, and from 'EFM_Functional', the role 'EFM_Functional' has cardinality 0..*.
+An association connects 'EFM_Functional' and 'EFM_Feature'. From 'EFM_Functional', the role 'EFM_Functional28' has cardinality 0..*, and from 'EFM_Feature', the role 'EFM_Feature29' has cardinality 0..*.
+An association connects 'EFM_Comparison' and 'EFM_FMElement'. From 'EFM_Comparison', the role 'EFM_Comparison' has cardinality 0..*, and from 'EFM_FMElement', the role 'EFM_FMElement' has cardinality 0..*.
+An association connects 'EFM_FMElement' and 'EFM_Comparison'. From 'EFM_FMElement', the role 'EFM_FMElement33' has cardinality 0..*, and from 'EFM_Comparison', the role 'EFM_Comparison32' has cardinality 0..*.
+An association connects 'EFM_Operation' and 'EFM_Feature'. From 'EFM_Operation', the role 'EFM_Operation35' has cardinality 0..*, and from 'EFM_Feature', the role 'EFM_Feature36' has cardinality 0..*.
+An association connects 'EFM_Attribute' and 'EFM_RangeOperation'. From 'EFM_Attribute', the role 'EFM_Attribute38' has cardinality 0..*, and from 'EFM_RangeOperation', the role 'EFM_RangeOperation' has cardinality 0..*.
+An association connects 'EFM_ValueOperation' and 'EFM_Attribute'. From 'EFM_ValueOperation', the role 'EFM_ValueOperation' has cardinality 0..*, and from 'EFM_Attribute', the role 'EFM_Attribute40' has cardinality 0..*.
+An association connects 'EFM_IntValue' and 'EFM_ValueOperation'. From 'EFM_IntValue', the role 'EFM_IntValue' has cardinality 0..*, and from 'EFM_ValueOperation', the role 'EFM_ValueOperation42' has cardinality 0..*.
+An association connects 'EFM_Colocated' and 'EFM_Feature'. From 'EFM_Colocated', the role 'EFM_Colocated' has cardinality 0..*, and from 'EFM_Feature', the role 'EFM_Feature44' has cardinality 0..*.
+An association connects 'EFM_Feature' and 'EFM_Colocated'. From 'EFM_Feature', the role 'EFM_Feature47' has cardinality 0..*, and from 'EFM_Colocated', the role 'EFM_Colocated46' has cardinality 0..*.
+An association connects 'EFM_NodeFeature' and 'EFM_Attribute'. From 'EFM_NodeFeature', the role 'EFM_NodeFeature49' has cardinality 0..*, and from 'EFM_Attribute', the role 'EFM_Attribute50' has cardinality 0..*.
+An association connects 'EFM_NodeFeature' and 'EFM_FeatCardinality'. From 'EFM_NodeFeature', the role 'EFM_NodeFeature52' has cardinality 0..*, and from 'EFM_FeatCardinality', the role 'EFM_FeatCardinality53' has cardinality 0..*.
+An association connects 'EFM_HostedBy' and 'EFM_NodeFeature'. From 'EFM_HostedBy', the role 'EFM_HostedBy' has cardinality 0..*, and from 'EFM_NodeFeature', the role 'EFM_NodeFeature55' has cardinality 0..*.
+An association connects 'EFM_NodeFeature' and 'EFM_NotHostedBy'. From 'EFM_NodeFeature', the role 'EFM_NodeFeature57' has cardinality 0..*, and from 'EFM_NotHostedBy', the role 'EFM_NotHostedBy' has cardinality 0..*.
+An association connects 'EFM_HostedBy' and 'EFM_Feature'. From 'EFM_HostedBy', the role 'EFM_HostedBy59' has cardinality 0..*, and from 'EFM_Feature', the role 'EFM_Feature60' has cardinality 0..*.
+An association connects 'EFM_HostedBy' and 'EFM_NodeFeature'. From 'EFM_HostedBy', the role 'EFM_HostedBy62' has cardinality 0..*, and from 'EFM_NodeFeature', the role 'EFM_NodeFeature63' has cardinality 0..*.
+An association connects 'EFM_Separated' and 'EFM_Feature'. From 'EFM_Separated', the role 'EFM_Separated' has cardinality 0..*, and from 'EFM_Feature', the role 'EFM_Feature65' has cardinality 0..*.
+An association connects 'EFM_Feature' and 'EFM_Separated'. From 'EFM_Feature', the role 'EFM_Feature68' has cardinality 0..*, and from 'EFM_Separated', the role 'EFM_Separated67' has cardinality 0..*.
+An association connects 'EFM_Attribute' and 'EFM_ResourceVerification'. From 'EFM_Attribute', the role 'EFM_Attribute70' has cardinality 0..*, and from 'EFM_ResourceVerification', the role 'EFM_ResourceVerification' has cardinality 0..*.
+An association connects 'EFM_ResourceVerification' and 'EFM_Attribute'. From 'EFM_ResourceVerification', the role 'EFM_ResourceVerification72' has cardinality 0..*, and from 'EFM_Attribute', the role 'EFM_Attribute73' has cardinality 0..*.
+An association connects 'EFM_NodeFeature' and 'EFM_NotHostedBy'. From 'EFM_NodeFeature', the role 'EFM_NodeFeature76' has cardinality 0..*, and from 'EFM_NotHostedBy', the role 'EFM_NotHostedBy75' has cardinality 0..*.
+An association connects 'EFM_NotHostedBy' and 'EFM_Feature'. From 'EFM_NotHostedBy', the role 'EFM_NotHostedBy78' has cardinality 0..*, and from 'EFM_Feature', the role 'EFM_Feature79' has cardinality 0..*.

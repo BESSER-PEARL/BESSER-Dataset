@@ -1,0 +1,12 @@
+The domain model 'TestMerge' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'TestMerge_B' represents an important domain concept.
+It does not declare any attributes.
+
+'TestMerge_A' represents an important domain concept.
+It has one attribute: 'attr1', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'TestMerge_A' and 'TestMerge_B'. From 'TestMerge_A', the role 'TestMerge_A' has cardinality 0..*, and from 'TestMerge_B', the role 'TestMerge_B' has cardinality 0..*.

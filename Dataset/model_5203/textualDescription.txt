@@ -1,0 +1,39 @@
+The domain model 'custostorage' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'custostorage_EAbstract' represents an important domain concept.
+It does not declare any attributes.
+
+'custostorage_D' represents an important domain concept.
+It does not declare any attributes.
+
+'custostorage_A' represents an important domain concept.
+It does not declare any attributes.
+
+'custostorage_AAbstract' represents an important domain concept.
+It does not declare any attributes.
+
+'custostorage_C' represents an important domain concept.
+It does not declare any attributes.
+
+'custostorage_BAbstract' represents an important domain concept.
+It does not declare any attributes.
+
+'custostorage_DAbstract' represents an important domain concept.
+It does not declare any attributes.
+
+'custostorage_E' represents an important domain concept.
+It does not declare any attributes.
+
+'custostorage_F' represents an important domain concept.
+It does not declare any attributes.
+
+'custostorage_B' represents an important domain concept.
+It does not declare any attributes.
+
+'custostorage_CAbstract' represents an important domain concept.
+It does not declare any attributes.
+
+'custostorage_FAbstract' represents an important domain concept.
+It does not declare any attributes.

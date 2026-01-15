@@ -1,0 +1,66 @@
+The domain model 'hairDressersRegSys' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'hairDressersRegSys_Haircuts' represents an important domain concept.
+It has the following attributes: 'IsCut', which is of type bool; 'IsShave', which is of type bool; 'IsWash', which is of type bool.
+
+'hairDressersRegSys_Payment' represents an important domain concept.
+It has the following attributes: 'Date', which is of type date; 'AmountPaid', which is of type str; 'PaymentMethod', which is of type str.
+
+'hairDressersRegSys_Appointment' represents an important domain concept.
+It has the following attributes: 'EndTime', which is of type date; 'Date', which is of type date; 'StartTime', which is of type date.
+
+'hairDressersRegSys_Invoice' represents an important domain concept.
+It has the following attributes: 'InvoiceNumber', which is of type int; 'Total', which is of type str; 'Date', which is of type str.
+
+'hairDressersRegSys_Person' represents an important domain concept.
+It has the following attributes: 'FirstName', which is of type str; 'LastName', which is of type str; 'DateOfBirth', which is of type date; 'Address', which is of type str.
+
+'Service' represents an important domain concept.
+It does not declare any attributes.
+
+'hairDressersRegSys_Customer' represents an important domain concept.
+It has one attribute: 'CustomerId', which is of type int.
+
+'hairDressersRegSys_Styling' represents an important domain concept.
+It has one attribute: 'IsWash', which is of type bool.
+
+'hairDressersRegSys_Discounts' represents an important domain concept.
+It has the following attributes: 'Percentage', which is of type int; 'Name', which is of type str; 'Description', which is of type str.
+
+'hairDressersRegSys_Other' represents an important domain concept.
+It has one attribute: 'AdditionalInformation', which is of type str.
+
+'hairDressersRegSys_Products' represents an important domain concept.
+It has the following attributes: 'Description', which is of type str; 'Name', which is of type str; 'Price', which is of type str.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'hairDressersRegSys_Service' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'Time', which is of type date; 'Description', which is of type str; 'CostPerHour', which is of type str.
+
+'hairDressersRegSys_ServiceEmployee' represents an important domain concept.
+It has the following attributes: 'Role', which is of type str; 'EmployeeId', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'hairDressersRegSys_Styling' is a specialization of 'Service'.
+The class 'hairDressersRegSys_Haircuts' is a specialization of 'Service'.
+The class 'hairDressersRegSys_Other' is a specialization of 'Service'.
+The class 'hairDressersRegSys_Customer' is a specialization of 'Person'.
+The class 'hairDressersRegSys_ServiceEmployee' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'hairDressersRegSys_Appointment' and 'hairDressersRegSys_Service'. From 'hairDressersRegSys_Appointment', the role 'hairDressersRegSys_Appointment' has cardinality 0..*, and from 'hairDressersRegSys_Service', the role 'hairDressersRegSys_Service' has cardinality 0..*.
+An association connects 'hairDressersRegSys_Invoice' and 'hairDressersRegSys_Appointment'. From 'hairDressersRegSys_Invoice', the role 'hairDressersRegSys_Invoice' has cardinality 0..*, and from 'hairDressersRegSys_Appointment', the role 'hairDressersRegSys_Appointment2' has cardinality 0..*.
+An association connects 'hairDressersRegSys_Products' and 'hairDressersRegSys_Invoice'. From 'hairDressersRegSys_Products', the role 'products' has cardinality 0..*, and from 'hairDressersRegSys_Invoice', the role 'Invoice' has cardinality 0..*.
+An association connects 'hairDressersRegSys_Invoice' and 'hairDressersRegSys_Products'. From 'hairDressersRegSys_Invoice', the role 'invoice' has cardinality 0..*, and from 'hairDressersRegSys_Products', the role 'Products' has cardinality 0..*.
+An association connects 'hairDressersRegSys_Discounts' and 'hairDressersRegSys_Invoice'. From 'hairDressersRegSys_Discounts', the role 'Discounts' has cardinality 0..*, and from 'hairDressersRegSys_Invoice', the role 'invoice6' has cardinality 0..*.
+An association connects 'hairDressersRegSys_Invoice' and 'hairDressersRegSys_Payment'. From 'hairDressersRegSys_Invoice', the role 'invoice8' has cardinality 0..*, and from 'hairDressersRegSys_Payment', the role 'Payment' has cardinality 0..*.
+An association connects 'hairDressersRegSys_Customer' and 'hairDressersRegSys_Discounts'. From 'hairDressersRegSys_Customer', the role 'Customer' has cardinality 0..*, and from 'hairDressersRegSys_Discounts', the role 'discounts' has cardinality 0..*.
+An association connects 'hairDressersRegSys_Discounts' and 'hairDressersRegSys_Invoice'. From 'hairDressersRegSys_Discounts', the role 'discounts11' has cardinality 0..*, and from 'hairDressersRegSys_Invoice', the role 'Invoice12' has cardinality 0..*.
+An association connects 'hairDressersRegSys_Appointment' and 'hairDressersRegSys_Customer'. From 'hairDressersRegSys_Appointment', the role 'hairDressersRegSys_Appointment14' has cardinality 0..*, and from 'hairDressersRegSys_Customer', the role 'hairDressersRegSys_Customer' has cardinality 0..*.
+An association connects 'hairDressersRegSys_Discounts' and 'hairDressersRegSys_Customer'. From 'hairDressersRegSys_Discounts', the role 'Discounts16' has cardinality 0..*, and from 'hairDressersRegSys_Customer', the role 'customer' has cardinality 0..*.
+An association connects 'hairDressersRegSys_ServiceEmployee' and 'hairDressersRegSys_Appointment'. From 'hairDressersRegSys_ServiceEmployee', the role 'hairDressersRegSys_ServiceEmployee' has cardinality 0..*, and from 'hairDressersRegSys_Appointment', the role 'hairDressersRegSys_Appointment18' has cardinality 0..*.
+An association connects 'hairDressersRegSys_Payment' and 'hairDressersRegSys_Invoice'. From 'hairDressersRegSys_Payment', the role 'payment' has cardinality 0..*, and from 'hairDressersRegSys_Invoice', the role 'Invoice20' has cardinality 0..*.

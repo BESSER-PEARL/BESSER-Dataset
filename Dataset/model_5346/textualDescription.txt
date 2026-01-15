@@ -1,0 +1,16 @@
+The domain model 'ale1' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'ale1_RA1' represents an important domain concept.
+It does not declare any attributes.
+
+'ale1_A1' represents an important domain concept.
+It does not declare any attributes.
+
+'ale1_RA2' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'ale1_A1' and 'ale1_RA1'. From 'ale1_A1', the role 'ale1_A1' has cardinality 0..*, and from 'ale1_RA1', the role 'ale1_RA1' has cardinality 0..*.
+An association connects 'ale1_A1' and 'ale1_RA2'. From 'ale1_A1', the role 'ale1_A12' has cardinality 0..*, and from 'ale1_RA2', the role 'ale1_RA2' has cardinality 0..*.

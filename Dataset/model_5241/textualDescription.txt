@@ -1,0 +1,33 @@
+The domain model 'genericsGoCrazy' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'genericsGoCrazy_Car' represents an important domain concept.
+It has the following attributes: 'fullName', which is of type str; 'color', which is of type str; 'name', which is of type str; 'doors', which is of type str.
+
+'genericsGoCrazy_Comp' represents an important domain concept.
+It does not declare any attributes.
+
+'Car' represents an important domain concept.
+It does not declare any attributes.
+
+'genericsGoCrazy_MySubClass' represents an important domain concept.
+It does not declare any attributes.
+
+'genericsGoCrazy_SubCar' represents an important domain concept.
+It does not declare any attributes.
+
+'genericsGoCrazy_MyClass' represents an important domain concept.
+It has the following attributes: 'aMap', which is of type str; 'a2', which is of type str; 'a3', which is of type str; 'theEObject', which is of type str; 'a1', which is of type str.
+
+'genericsGoCrazy_OtherClass' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Color' defines the following possible values: 'RED', 'BLUE'.
+
+The model also captures inheritance relationships between classes.
+The class 'genericsGoCrazy_SubCar' is a specialization of 'Car'.
+
+Relationships between classes are modeled using associations.
+An association connects 'genericsGoCrazy_Car' and 'genericsGoCrazy_Car'. From 'genericsGoCrazy_Car', the role 'genericsGoCrazy_Car' has cardinality 0..*, and from 'genericsGoCrazy_Car', the role 'genericsGoCrazy_Car0' has cardinality 0..*.

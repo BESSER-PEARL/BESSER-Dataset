@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/AlmazNasibullin/GitTestProject/org.eclipse.emf.examples.library/model/extlibrary.ecore

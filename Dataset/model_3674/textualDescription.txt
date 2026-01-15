@@ -1,0 +1,62 @@
+The domain model 'Company' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'Company_Division' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Company_CompanyModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'Company_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'Division' represents an important domain concept.
+It does not declare any attributes.
+
+'Company_Organisation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'city', which is of type str; 'completeAddress', which is of type str.
+
+'Company_Category' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Company_Topic' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Company_Employee' represents an important domain concept.
+It does not declare any attributes.
+
+'Company_Project' represents an important domain concept.
+It has the following attributes: 'budget', which is of type int; 'name', which is of type str.
+
+'Company_ServiceLine' represents an important domain concept.
+It does not declare any attributes.
+
+'Company_Person' represents an important domain concept.
+It has one attribute: 'fullName', which is of type str.
+
+'Company_Client' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Company_Employee' is a specialization of 'Person'.
+The class 'Company_Client' is a specialization of 'Person'.
+The class 'Company_Unit' is a specialization of 'Division'.
+The class 'Company_ServiceLine' is a specialization of 'Division'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Company_Person' and 'Company_Project'. From 'Company_Person', the role 'Company_Person' has cardinality 0..*, and from 'Company_Project', the role 'Company_Project' has cardinality 0..*.
+An association connects 'Company_Person' and 'Company_Unit'. From 'Company_Person', the role 'Company_Person2' has cardinality 0..*, and from 'Company_Unit', the role 'Company_Unit' has cardinality 0..*.
+An association connects 'Company_Person' and 'Company_Organisation'. From 'Company_Person', the role 'Company_Person4' has cardinality 0..*, and from 'Company_Organisation', the role 'Company_Organisation' has cardinality 0..*.
+An association connects 'Company_Project' and 'Company_Organisation'. From 'Company_Project', the role 'Company_Project7' has cardinality 0..*, and from 'Company_Organisation', the role 'Company_Organisation6' has cardinality 0..*.
+An association connects 'Company_Division' and 'Company_Organisation'. From 'Company_Division', the role 'Company_Division' has cardinality 0..*, and from 'Company_Organisation', the role 'Company_Organisation9' has cardinality 0..*.
+An association connects 'Company_Project' and 'Company_Topic'. From 'Company_Project', the role 'Company_Project11' has cardinality 0..*, and from 'Company_Topic', the role 'Company_Topic' has cardinality 0..*.
+An association connects 'Company_Category' and 'Company_Topic'. From 'Company_Category', the role 'category' has cardinality 0..*, and from 'Company_Topic', the role 'Topic' has cardinality 0..*.
+An association connects 'Company_Topic' and 'Company_Category'. From 'Company_Topic', the role 'topics' has cardinality 0..*, and from 'Company_Category', the role 'Category' has cardinality 0..*.
+An association connects 'Company_CompanyModel' and 'Company_Organisation'. From 'Company_CompanyModel', the role 'Company_CompanyModel' has cardinality 0..*, and from 'Company_Organisation', the role 'Company_Organisation15' has cardinality 0..*.
+An association connects 'Company_Category' and 'Company_CompanyModel'. From 'Company_Category', the role 'Company_Category' has cardinality 0..*, and from 'Company_CompanyModel', the role 'Company_CompanyModel17' has cardinality 0..*.
+An association connects 'Company_Topic' and 'Company_CompanyModel'. From 'Company_Topic', the role 'Company_Topic20' has cardinality 0..*, and from 'Company_CompanyModel', the role 'Company_CompanyModel19' has cardinality 0..*.
+An association connects 'Company_Division' and 'Company_CompanyModel'. From 'Company_Division', the role 'Company_Division23' has cardinality 0..*, and from 'Company_CompanyModel', the role 'Company_CompanyModel22' has cardinality 0..*.

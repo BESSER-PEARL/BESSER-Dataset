@@ -1,0 +1,36 @@
+The domain model 'pickupnet' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'pickupnet_GeoLocation' represents an important domain concept.
+It has the following attributes: 'lat', which is of type float; 'lon', which is of type float.
+
+'pickupnet_Driver' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'pickupnet_Customer' represents an important domain concept.
+It has the following attributes: 'twitterUserName', which is of type str; 'id', which is of type str; 'name', which is of type str.
+
+'pickupnet_Shipment' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'status', which is of type str.
+
+'pickupnet_Station' represents an important domain concept.
+It does not declare any attributes.
+
+'pickupnet_Address' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ShipmentStatus' defines the following possible values: 'DELIVERED', 'NEW', 'ASSIGNED', 'UNDERWAY'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pickupnet_Station' and 'pickupnet_Customer'. From 'pickupnet_Station', the role 'pickupnet_Station' has cardinality 0..*, and from 'pickupnet_Customer', the role 'pickupnet_Customer' has cardinality 0..*.
+An association connects 'pickupnet_Station' and 'pickupnet_Driver'. From 'pickupnet_Station', the role 'pickupnet_Station2' has cardinality 0..*, and from 'pickupnet_Driver', the role 'pickupnet_Driver' has cardinality 0..*.
+An association connects 'pickupnet_Shipment' and 'pickupnet_Station'. From 'pickupnet_Shipment', the role 'pickupnet_Shipment' has cardinality 0..*, and from 'pickupnet_Station', the role 'pickupnet_Station4' has cardinality 0..*.
+An association connects 'pickupnet_Driver' and 'pickupnet_Shipment'. From 'pickupnet_Driver', the role 'driver' has cardinality 0..*, and from 'pickupnet_Shipment', the role 'Shipment' has cardinality 0..*.
+An association connects 'pickupnet_Shipment' and 'pickupnet_Customer'. From 'pickupnet_Shipment', the role 'Shipment7' has cardinality 0..*, and from 'pickupnet_Customer', the role 'orderer' has cardinality 0..*.
+An association connects 'pickupnet_Shipment' and 'pickupnet_Driver'. From 'pickupnet_Shipment', the role 'assignments' has cardinality 0..*, and from 'pickupnet_Driver', the role 'Driver' has cardinality 0..*.
+An association connects 'pickupnet_Shipment' and 'pickupnet_Customer'. From 'pickupnet_Shipment', the role 'orders' has cardinality 0..*, and from 'pickupnet_Customer', the role 'Customer' has cardinality 0..*.
+An association connects 'pickupnet_Shipment' and 'pickupnet_Address'. From 'pickupnet_Shipment', the role 'pickupnet_Shipment11' has cardinality 0..*, and from 'pickupnet_Address', the role 'pickupnet_Address' has cardinality 0..*.
+An association connects 'pickupnet_Address' and 'pickupnet_Shipment'. From 'pickupnet_Address', the role 'pickupnet_Address14' has cardinality 0..*, and from 'pickupnet_Shipment', the role 'pickupnet_Shipment13' has cardinality 0..*.
+An association connects 'pickupnet_GeoLocation' and 'pickupnet_Address'. From 'pickupnet_GeoLocation', the role 'pickupnet_GeoLocation' has cardinality 0..*, and from 'pickupnet_Address', the role 'pickupnet_Address16' has cardinality 0..*.

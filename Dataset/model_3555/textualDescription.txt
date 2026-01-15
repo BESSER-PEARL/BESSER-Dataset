@@ -1,0 +1,330 @@
+The domain model 'nuSMV' describes the core structural elements and their relationships within the system.
+
+The model defines 73 main class(es).
+
+'nuSMV_WordType' represents an important domain concept.
+It has one attribute: 'wordNumber', which is of type str.
+
+'nuSMV_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_UnsignedWordType' represents an important domain concept.
+It has one attribute: 'uWordNumber', which is of type str.
+
+'nuSMV_IVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_AsyncrProcessType' represents an important domain concept.
+It does not declare any attributes.
+
+'FairnessConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_InitConstraint' represents an important domain concept.
+It has one attribute: 'semicolon', which is of type bool.
+
+'nuSMV_TransConstraint' represents an important domain concept.
+It has one attribute: 'semicolon', which is of type bool.
+
+'ModuleType' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_ModuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_NuSmvModel' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_NextBody' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_CtlSpecification' represents an important domain concept.
+It has the following attributes: 'nameKeyWord', which is of type bool; 'semicolon', which is of type bool; 'name', which is of type str; 'specKeyWord', which is of type str.
+
+'nuSMV_RangeExpression' represents an important domain concept.
+It has the following attributes: 'upper', which is of type str; 'lower', which is of type str.
+
+'nuSMV_IsaDeclaration' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'nuSMV_CTLExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_ArrayType' represents an important domain concept.
+It has the following attributes: 'upperBound', which is of type str; 'lowerBound', which is of type str.
+
+'nuSMV_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_UnaryFunctionExpression' represents an important domain concept.
+It has one attribute: 'function', which is of type str.
+
+'nuSMV_EnumType' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_SingleRTCTLExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_FormalParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'nuSMV_ParsExpression' represents an important domain concept.
+It has one attribute: 'isNext', which is of type bool.
+
+'nuSMV_VarBodyAssign' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_DefineDeclaration' represents an important domain concept.
+It has one attribute: 'define', which is of type str.
+
+'nuSMV_AssignBody' represents an important domain concept.
+It has the following attributes: 'semicolon', which is of type bool; 'array', which is of type str.
+
+'nuSMV_ConstantsDeclaration' represents an important domain concept.
+It has the following attributes: 'constants', which is of type str; 'semicolon', which is of type bool.
+
+'nuSMV_DefineBody' represents an important domain concept.
+It has the following attributes: 'var', which is of type str; 'semicolon', which is of type bool.
+
+'nuSMV_LTLExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_UnaryRTCTLExpression' represents an important domain concept.
+It has one attribute: 'unary', which is of type str.
+
+'RTCTLExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_IntervalExpression' represents an important domain concept.
+It has the following attributes: 'upperBound', which is of type str; 'lowerBound', which is of type str.
+
+'nuSMV_CaseSimpleExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_JusticeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_SimpleExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_BinaryExpression' represents an important domain concept.
+It has the following attributes: 'operator', which is of type str; 'op', which is of type str.
+
+'nuSMV_SetValueParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_SetExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_CompassionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_UnaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'nuSMV_Module' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'nuSMV_FrozenVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_VarBody' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'semicolon', which is of type bool.
+
+'nuSMV_ModuleType' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_IntervalType' represents an important domain concept.
+It has the following attributes: 'low', which is of type str; 'high', which is of type str.
+
+'nuSMV_SignedWordType' represents an important domain concept.
+It has one attribute: 'signedNumber', which is of type str.
+
+'nuSMV_ValueExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'nuSMV_UntilCTLexpression' represents an important domain concept.
+It has one attribute: 'ea', which is of type str.
+
+'ModuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_Var' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_FairnessConstraint' represents an important domain concept.
+It has one attribute: 'semicolon', which is of type bool.
+
+'nuSMV_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_InvarConstraint' represents an important domain concept.
+It has one attribute: 'semicolon', which is of type bool.
+
+'nuSMV_SimpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_AssignConstraintElement' represents an important domain concept.
+It has one attribute: 'assign', which is of type str.
+
+'nuSMV_LtlSpecification' represents an important domain concept.
+It has the following attributes: 'semicolon', which is of type bool; 'name', which is of type str; 'nameId', which is of type bool.
+
+'AssignBody' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_SyncrProcessType' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_NextExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_Val' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'num', which is of type str.
+
+'nuSMV_SetElementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_FairnessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_InitBody' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_WordExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'nuSMV_RTCTLExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'nuSMV_InvarSpecification' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'semicolon', which is of type bool.
+
+'nuSMV_ComputeSpecification' represents an important domain concept.
+It has one attribute: 'minMax', which is of type str.
+
+'nuSMV_CaseSimpleAssignementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'operators' defines the following possible values: 'v', 's', 'and', 'le', 'u', 'dis', 'xnor', 'ge', 'or', 'xor', 'l', 't', 'g', 'equal'.
+
+The model also captures inheritance relationships between classes.
+The class 'nuSMV_VariableDeclaration' is a specialization of 'ModuleElement'.
+The class 'nuSMV_IVariableDeclaration' is a specialization of 'ModuleElement'.
+The class 'nuSMV_FrozenVariableDeclaration' is a specialization of 'ModuleElement'.
+The class 'nuSMV_DefineDeclaration' is a specialization of 'ModuleElement'.
+The class 'nuSMV_ConstantsDeclaration' is a specialization of 'ModuleElement'.
+The class 'nuSMV_AssignConstraintElement' is a specialization of 'ModuleElement'.
+The class 'nuSMV_VarBodyAssign' is a specialization of 'AssignBody'.
+The class 'nuSMV_InitBody' is a specialization of 'AssignBody'.
+The class 'nuSMV_NextBody' is a specialization of 'AssignBody'.
+The class 'nuSMV_TransConstraint' is a specialization of 'ModuleElement'.
+The class 'nuSMV_InitConstraint' is a specialization of 'ModuleElement'.
+The class 'nuSMV_InvarConstraint' is a specialization of 'ModuleElement'.
+The class 'nuSMV_FairnessConstraint' is a specialization of 'ModuleElement'.
+The class 'nuSMV_FairnessExpression' is a specialization of 'FairnessConstraint'.
+The class 'nuSMV_JusticeExpression' is a specialization of 'FairnessConstraint'.
+The class 'nuSMV_CompassionExpression' is a specialization of 'FairnessConstraint'.
+The class 'nuSMV_CtlSpecification' is a specialization of 'ModuleElement'.
+The class 'nuSMV_InvarSpecification' is a specialization of 'ModuleElement'.
+The class 'nuSMV_IsaDeclaration' is a specialization of 'ModuleElement'.
+The class 'nuSMV_LtlSpecification' is a specialization of 'ModuleElement'.
+The class 'nuSMV_SimpleType' is a specialization of 'Type'.
+The class 'nuSMV_ModuleType' is a specialization of 'Type'.
+The class 'nuSMV_CaseSimpleExpression' is a specialization of 'SimpleExpression'.
+The class 'nuSMV_ComputeSpecification' is a specialization of 'ModuleElement'.
+The class 'nuSMV_BooleanType' is a specialization of 'SimpleType'.
+The class 'nuSMV_WordType' is a specialization of 'SimpleType'.
+The class 'nuSMV_UnsignedWordType' is a specialization of 'SimpleType'.
+The class 'nuSMV_SignedWordType' is a specialization of 'SimpleType'.
+The class 'nuSMV_EnumType' is a specialization of 'SimpleType'.
+The class 'nuSMV_IntervalType' is a specialization of 'SimpleType'.
+The class 'nuSMV_ArrayType' is a specialization of 'SimpleType'.
+The class 'nuSMV_AsyncrProcessType' is a specialization of 'ModuleType'.
+The class 'nuSMV_SyncrProcessType' is a specialization of 'ModuleType'.
+The class 'nuSMV_BinaryExpression' is a specialization of 'SimpleExpression'.
+The class 'nuSMV_Not' is a specialization of 'SimpleExpression'.
+The class 'nuSMV_ParsExpression' is a specialization of 'SimpleExpression'.
+The class 'nuSMV_UnaryExpression' is a specialization of 'SimpleExpression'.
+The class 'nuSMV_ValueExpression' is a specialization of 'SimpleExpression'.
+The class 'nuSMV_Var' is a specialization of 'SimpleExpression'.
+The class 'nuSMV_SetElementExpression' is a specialization of 'SimpleExpression'.
+The class 'nuSMV_SetValueParameter' is a specialization of 'SimpleExpression'.
+The class 'nuSMV_SetExpression' is a specialization of 'SimpleExpression'.
+The class 'nuSMV_WordExpression' is a specialization of 'SimpleExpression'.
+The class 'nuSMV_IntervalExpression' is a specialization of 'SimpleExpression'.
+The class 'nuSMV_UntilCTLexpression' is a specialization of 'SimpleExpression'.
+The class 'nuSMV_UnaryFunctionExpression' is a specialization of 'SimpleExpression'.
+The class 'nuSMV_SingleRTCTLExpression' is a specialization of 'RTCTLExpression'.
+The class 'nuSMV_UnaryRTCTLExpression' is a specialization of 'RTCTLExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'nuSMV_Module' and 'nuSMV_NuSmvModel'. From 'nuSMV_Module', the role 'nuSMV_Module' has cardinality 0..*, and from 'nuSMV_NuSmvModel', the role 'nuSMV_NuSmvModel' has cardinality 0..*.
+An association connects 'nuSMV_FormalParameter' and 'nuSMV_Module'. From 'nuSMV_FormalParameter', the role 'nuSMV_FormalParameter' has cardinality 0..*, and from 'nuSMV_Module', the role 'nuSMV_Module2' has cardinality 0..*.
+An association connects 'nuSMV_ModuleElement' and 'nuSMV_Module'. From 'nuSMV_ModuleElement', the role 'nuSMV_ModuleElement' has cardinality 0..*, and from 'nuSMV_Module', the role 'nuSMV_Module4' has cardinality 0..*.
+An association connects 'nuSMV_VarBody' and 'nuSMV_VariableDeclaration'. From 'nuSMV_VarBody', the role 'nuSMV_VarBody' has cardinality 0..*, and from 'nuSMV_VariableDeclaration', the role 'nuSMV_VariableDeclaration' has cardinality 0..*.
+An association connects 'nuSMV_VarBody' and 'nuSMV_IVariableDeclaration'. From 'nuSMV_VarBody', the role 'nuSMV_VarBody7' has cardinality 0..*, and from 'nuSMV_IVariableDeclaration', the role 'nuSMV_IVariableDeclaration' has cardinality 0..*.
+An association connects 'nuSMV_FrozenVariableDeclaration' and 'nuSMV_VarBody'. From 'nuSMV_FrozenVariableDeclaration', the role 'nuSMV_FrozenVariableDeclaration' has cardinality 0..*, and from 'nuSMV_VarBody', the role 'nuSMV_VarBody9' has cardinality 0..*.
+An association connects 'nuSMV_VarBody' and 'nuSMV_Type'. From 'nuSMV_VarBody', the role 'nuSMV_VarBody11' has cardinality 0..*, and from 'nuSMV_Type', the role 'nuSMV_Type' has cardinality 0..*.
+An association connects 'nuSMV_DefineBody' and 'nuSMV_DefineDeclaration'. From 'nuSMV_DefineBody', the role 'nuSMV_DefineBody' has cardinality 0..*, and from 'nuSMV_DefineDeclaration', the role 'nuSMV_DefineDeclaration' has cardinality 0..*.
+An association connects 'nuSMV_DefineBody' and 'nuSMV_SimpleExpression'. From 'nuSMV_DefineBody', the role 'nuSMV_DefineBody14' has cardinality 0..*, and from 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression' has cardinality 0..*.
+An association connects 'nuSMV_AssignBody' and 'nuSMV_AssignConstraintElement'. From 'nuSMV_AssignBody', the role 'nuSMV_AssignBody' has cardinality 0..*, and from 'nuSMV_AssignConstraintElement', the role 'nuSMV_AssignConstraintElement' has cardinality 0..*.
+An association connects 'nuSMV_AssignBody' and 'nuSMV_EObject'. From 'nuSMV_AssignBody', the role 'nuSMV_AssignBody17' has cardinality 0..*, and from 'nuSMV_EObject', the role 'nuSMV_EObject' has cardinality 0..*.
+An association connects 'nuSMV_SimpleExpression' and 'nuSMV_AssignBody'. From 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression20' has cardinality 0..*, and from 'nuSMV_AssignBody', the role 'nuSMV_AssignBody19' has cardinality 0..*.
+An association connects 'nuSMV_VarBodyAssign' and 'nuSMV_SimpleExpression'. From 'nuSMV_VarBodyAssign', the role 'nuSMV_VarBodyAssign' has cardinality 0..*, and from 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression22' has cardinality 0..*.
+An association connects 'nuSMV_InitBody' and 'nuSMV_SimpleExpression'. From 'nuSMV_InitBody', the role 'nuSMV_InitBody' has cardinality 0..*, and from 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression24' has cardinality 0..*.
+An association connects 'nuSMV_NextExpression' and 'nuSMV_NextBody'. From 'nuSMV_NextExpression', the role 'nuSMV_NextExpression' has cardinality 0..*, and from 'nuSMV_NextBody', the role 'nuSMV_NextBody' has cardinality 0..*.
+An association connects 'nuSMV_TransConstraint' and 'nuSMV_SimpleExpression'. From 'nuSMV_TransConstraint', the role 'nuSMV_TransConstraint' has cardinality 0..*, and from 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression27' has cardinality 0..*.
+An association connects 'nuSMV_InitConstraint' and 'nuSMV_SimpleExpression'. From 'nuSMV_InitConstraint', the role 'nuSMV_InitConstraint' has cardinality 0..*, and from 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression29' has cardinality 0..*.
+An association connects 'nuSMV_InvarConstraint' and 'nuSMV_SimpleExpression'. From 'nuSMV_InvarConstraint', the role 'nuSMV_InvarConstraint' has cardinality 0..*, and from 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression31' has cardinality 0..*.
+An association connects 'nuSMV_SimpleExpression' and 'nuSMV_FairnessExpression'. From 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression33' has cardinality 0..*, and from 'nuSMV_FairnessExpression', the role 'nuSMV_FairnessExpression' has cardinality 0..*.
+An association connects 'nuSMV_SimpleExpression' and 'nuSMV_JusticeExpression'. From 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression35' has cardinality 0..*, and from 'nuSMV_JusticeExpression', the role 'nuSMV_JusticeExpression' has cardinality 0..*.
+An association connects 'nuSMV_SimpleExpression' and 'nuSMV_CompassionExpression'. From 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression37' has cardinality 0..*, and from 'nuSMV_CompassionExpression', the role 'nuSMV_CompassionExpression' has cardinality 0..*.
+An association connects 'nuSMV_SimpleExpression' and 'nuSMV_CompassionExpression'. From 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression40' has cardinality 0..*, and from 'nuSMV_CompassionExpression', the role 'nuSMV_CompassionExpression39' has cardinality 0..*.
+An association connects 'nuSMV_CtlSpecification' and 'nuSMV_CTLExpression'. From 'nuSMV_CtlSpecification', the role 'nuSMV_CtlSpecification' has cardinality 0..*, and from 'nuSMV_CTLExpression', the role 'nuSMV_CTLExpression' has cardinality 0..*.
+An association connects 'nuSMV_NextExpression' and 'nuSMV_InvarSpecification'. From 'nuSMV_NextExpression', the role 'nuSMV_NextExpression43' has cardinality 0..*, and from 'nuSMV_InvarSpecification', the role 'nuSMV_InvarSpecification' has cardinality 0..*.
+An association connects 'nuSMV_LtlSpecification' and 'nuSMV_LTLExpression'. From 'nuSMV_LtlSpecification', the role 'nuSMV_LtlSpecification' has cardinality 0..*, and from 'nuSMV_LTLExpression', the role 'nuSMV_LTLExpression' has cardinality 0..*.
+An association connects 'nuSMV_Module' and 'nuSMV_ModuleType'. From 'nuSMV_Module', the role 'nuSMV_Module46' has cardinality 0..*, and from 'nuSMV_ModuleType', the role 'nuSMV_ModuleType' has cardinality 0..*.
+An association connects 'nuSMV_SimpleExpression' and 'nuSMV_ModuleType'. From 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression49' has cardinality 0..*, and from 'nuSMV_ModuleType', the role 'nuSMV_ModuleType48' has cardinality 0..*.
+An association connects 'nuSMV_VarBody' and 'nuSMV_ModuleType'. From 'nuSMV_VarBody', the role 'nuSMV_VarBody52' has cardinality 0..*, and from 'nuSMV_ModuleType', the role 'nuSMV_ModuleType51' has cardinality 0..*.
+An association connects 'nuSMV_SimpleExpression' and 'nuSMV_NextExpression'. From 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression55' has cardinality 0..*, and from 'nuSMV_NextExpression', the role 'nuSMV_NextExpression54' has cardinality 0..*.
+An association connects 'nuSMV_CaseSimpleExpression' and 'nuSMV_CaseSimpleAssignementExpression'. From 'nuSMV_CaseSimpleExpression', the role 'nuSMV_CaseSimpleExpression' has cardinality 0..*, and from 'nuSMV_CaseSimpleAssignementExpression', the role 'nuSMV_CaseSimpleAssignementExpression' has cardinality 0..*.
+An association connects 'nuSMV_CaseSimpleAssignementExpression' and 'nuSMV_SimpleExpression'. From 'nuSMV_CaseSimpleAssignementExpression', the role 'nuSMV_CaseSimpleAssignementExpression58' has cardinality 0..*, and from 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression59' has cardinality 0..*.
+An association connects 'nuSMV_CaseSimpleAssignementExpression' and 'nuSMV_SimpleExpression'. From 'nuSMV_CaseSimpleAssignementExpression', the role 'nuSMV_CaseSimpleAssignementExpression61' has cardinality 0..*, and from 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression62' has cardinality 0..*.
+An association connects 'nuSMV_SimpleExpression' and 'nuSMV_CTLExpression'. From 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression65' has cardinality 0..*, and from 'nuSMV_CTLExpression', the role 'nuSMV_CTLExpression64' has cardinality 0..*.
+An association connects 'nuSMV_LTLExpression' and 'nuSMV_SimpleExpression'. From 'nuSMV_LTLExpression', the role 'nuSMV_LTLExpression67' has cardinality 0..*, and from 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression68' has cardinality 0..*.
+An association connects 'nuSMV_RTCTLExpression' and 'nuSMV_ComputeSpecification'. From 'nuSMV_RTCTLExpression', the role 'nuSMV_RTCTLExpression' has cardinality 0..*, and from 'nuSMV_ComputeSpecification', the role 'nuSMV_ComputeSpecification' has cardinality 0..*.
+An association connects 'nuSMV_RTCTLExpression' and 'nuSMV_ComputeSpecification'. From 'nuSMV_RTCTLExpression', the role 'nuSMV_RTCTLExpression72' has cardinality 0..*, and from 'nuSMV_ComputeSpecification', the role 'nuSMV_ComputeSpecification71' has cardinality 0..*.
+An association connects 'nuSMV_EnumType' and 'nuSMV_Val'. From 'nuSMV_EnumType', the role 'nuSMV_EnumType' has cardinality 0..*, and from 'nuSMV_Val', the role 'nuSMV_Val' has cardinality 0..*.
+An association connects 'nuSMV_ArrayType' and 'nuSMV_SimpleType'. From 'nuSMV_ArrayType', the role 'nuSMV_ArrayType' has cardinality 0..*, and from 'nuSMV_SimpleType', the role 'nuSMV_SimpleType' has cardinality 0..*.
+An association connects 'nuSMV_SimpleExpression' and 'nuSMV_BinaryExpression'. From 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression76' has cardinality 0..*, and from 'nuSMV_BinaryExpression', the role 'nuSMV_BinaryExpression' has cardinality 0..*.
+An association connects 'nuSMV_SimpleExpression' and 'nuSMV_BinaryExpression'. From 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression79' has cardinality 0..*, and from 'nuSMV_BinaryExpression', the role 'nuSMV_BinaryExpression78' has cardinality 0..*.
+An association connects 'nuSMV_SimpleExpression' and 'nuSMV_Not'. From 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression81' has cardinality 0..*, and from 'nuSMV_Not', the role 'nuSMV_Not' has cardinality 0..*.
+An association connects 'nuSMV_SimpleExpression' and 'nuSMV_ParsExpression'. From 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression83' has cardinality 0..*, and from 'nuSMV_ParsExpression', the role 'nuSMV_ParsExpression' has cardinality 0..*.
+An association connects 'nuSMV_SimpleExpression' and 'nuSMV_UnaryExpression'. From 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression85' has cardinality 0..*, and from 'nuSMV_UnaryExpression', the role 'nuSMV_UnaryExpression' has cardinality 0..*.
+An association connects 'nuSMV_Var' and 'nuSMV_VarBody'. From 'nuSMV_Var', the role 'nuSMV_Var' has cardinality 0..*, and from 'nuSMV_VarBody', the role 'nuSMV_VarBody87' has cardinality 0..*.
+An association connects 'nuSMV_Var' and 'nuSMV_SimpleExpression'. From 'nuSMV_Var', the role 'nuSMV_Var89' has cardinality 0..*, and from 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression90' has cardinality 0..*.
+An association connects 'nuSMV_SetElementExpression' and 'nuSMV_Val'. From 'nuSMV_SetElementExpression', the role 'nuSMV_SetElementExpression' has cardinality 0..*, and from 'nuSMV_Val', the role 'nuSMV_Val92' has cardinality 0..*.
+An association connects 'nuSMV_FormalParameter' and 'nuSMV_SetValueParameter'. From 'nuSMV_FormalParameter', the role 'nuSMV_FormalParameter94' has cardinality 0..*, and from 'nuSMV_SetValueParameter', the role 'nuSMV_SetValueParameter' has cardinality 0..*.
+An association connects 'nuSMV_SimpleExpression' and 'nuSMV_SetExpression'. From 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression96' has cardinality 0..*, and from 'nuSMV_SetExpression', the role 'nuSMV_SetExpression' has cardinality 0..*.
+An association connects 'nuSMV_SimpleExpression' and 'nuSMV_UntilCTLexpression'. From 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression98' has cardinality 0..*, and from 'nuSMV_UntilCTLexpression', the role 'nuSMV_UntilCTLexpression' has cardinality 0..*.
+An association connects 'nuSMV_UnaryFunctionExpression' and 'nuSMV_SimpleExpression'. From 'nuSMV_UnaryFunctionExpression', the role 'nuSMV_UnaryFunctionExpression' has cardinality 0..*, and from 'nuSMV_SimpleExpression', the role 'nuSMV_SimpleExpression100' has cardinality 0..*.
+An association connects 'nuSMV_CTLExpression' and 'nuSMV_SingleRTCTLExpression'. From 'nuSMV_CTLExpression', the role 'nuSMV_CTLExpression102' has cardinality 0..*, and from 'nuSMV_SingleRTCTLExpression', the role 'nuSMV_SingleRTCTLExpression' has cardinality 0..*.
+An association connects 'nuSMV_RangeExpression' and 'nuSMV_UnaryRTCTLExpression'. From 'nuSMV_RangeExpression', the role 'nuSMV_RangeExpression' has cardinality 0..*, and from 'nuSMV_UnaryRTCTLExpression', the role 'nuSMV_UnaryRTCTLExpression' has cardinality 0..*.
+An association connects 'nuSMV_UnaryRTCTLExpression' and 'nuSMV_RTCTLExpression'. From 'nuSMV_UnaryRTCTLExpression', the role 'nuSMV_UnaryRTCTLExpression105' has cardinality 0..*, and from 'nuSMV_RTCTLExpression', the role 'nuSMV_RTCTLExpression106' has cardinality 0..*.

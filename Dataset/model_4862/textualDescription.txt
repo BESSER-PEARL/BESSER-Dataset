@@ -1,0 +1,44 @@
+The domain model 'units' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'units_UnitPower' represents an important domain concept.
+It has one attribute: 'exponent', which is of type int.
+
+'units_UnitDivision' represents an important domain concept.
+It does not declare any attributes.
+
+'units_BaseUnit' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'units_UnitCarryingElement' represents an important domain concept.
+It does not declare any attributes.
+
+'units_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'units_UnitMultiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'units_UnitRepository' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'UnitNames' defines the following possible values: 'METER', 'UNITLESS', 'BYTE', 'SECOND'.
+
+The model also captures inheritance relationships between classes.
+The class 'units_BaseUnit' is a specialization of 'Unit'.
+The class 'units_UnitMultiplication' is a specialization of 'Unit'.
+The class 'units_UnitPower' is a specialization of 'Unit'.
+The class 'units_UnitDivision' is a specialization of 'Unit'.
+
+Relationships between classes are modeled using associations.
+An association connects 'units_Unit' and 'units_UnitCarryingElement'. From 'units_Unit', the role 'units_Unit' has cardinality 0..*, and from 'units_UnitCarryingElement', the role 'units_UnitCarryingElement' has cardinality 0..*.
+An association connects 'units_UnitRepository' and 'units_BaseUnit'. From 'units_UnitRepository', the role 'units_UnitRepository' has cardinality 0..*, and from 'units_BaseUnit', the role 'units_BaseUnit' has cardinality 0..*.
+An association connects 'units_UnitMultiplication' and 'units_Unit'. From 'units_UnitMultiplication', the role 'units_UnitMultiplication' has cardinality 0..*, and from 'units_Unit', the role 'units_Unit3' has cardinality 0..*.
+An association connects 'units_Unit' and 'units_UnitPower'. From 'units_Unit', the role 'units_Unit5' has cardinality 0..*, and from 'units_UnitPower', the role 'units_UnitPower' has cardinality 0..*.
+An association connects 'units_UnitDivision' and 'units_Unit'. From 'units_UnitDivision', the role 'units_UnitDivision' has cardinality 0..*, and from 'units_Unit', the role 'units_Unit7' has cardinality 0..*.
+An association connects 'units_Unit' and 'units_UnitDivision'. From 'units_Unit', the role 'units_Unit10' has cardinality 0..*, and from 'units_UnitDivision', the role 'units_UnitDivision9' has cardinality 0..*.

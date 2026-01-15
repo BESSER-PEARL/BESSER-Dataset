@@ -1,0 +1,25 @@
+The domain model 'test' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'test_A' represents an important domain concept.
+It does not declare any attributes.
+
+'N' represents an important domain concept.
+It does not declare any attributes.
+
+'test_test2_B' represents an important domain concept.
+It has the following attributes: 'nb', which is of type int; 'nb2', which is of type int.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'test_N' represents an important domain concept.
+It has one attribute: 'n', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'test_A' is a specialization of 'N'.
+The class 'test_test2_B' is a specialization of 'N'.
+
+Relationships between classes are modeled using associations.
+An association connects 'test_A' and 'B'. From 'test_A', the role 'test_A' has cardinality 0..*, and from 'B', the role 'B' has cardinality 0..*.

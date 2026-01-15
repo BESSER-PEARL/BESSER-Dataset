@@ -1,0 +1,239 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 49 main class(es).
+
+'model_ProductOptions' represents an important domain concept.
+It has the following attributes: 'attributeValue', which is of type str; 'sequenceNumber', which is of type str.
+
+'model_Document' represents an important domain concept.
+It has the following attributes: 'addressFirstLine', which is of type str; 'message2', which is of type str; 'dueDays', which is of type str; 'totalValue', which is of type str; 'deposit', which is of type str; 'printed', which is of type str; 'serviceDate', which is of type date; 'paid', which is of type str; 'message', which is of type str; 'printTemplate', which is of type str; 'documentDate', which is of type date; 'shippingAutoVat', which is of type str; 'customerRef', which is of type str; 'pdfPath', which is of type str; 'orderDate', which is of type date; 'odtPath', which is of type str; 'billingType', which is of type str; 'transactionId', which is of type str; 'payDate', which is of type date; 'itemsRebate', which is of type str; 'paidValue', which is of type str; 'netGross', which is of type str; 'vestingPeriodEnd', which is of type date; 'message3', which is of type str; 'vestingPeriodStart', which is of type date; 'progress', which is of type str; 'webshopId', which is of type str; 'shippingValue', which is of type str; 'webshopDate', which is of type date; 'consultant', which is of type str.
+
+'model_ItemListTypeCategory' represents an important domain concept.
+It does not declare any attributes.
+
+'model_IEntity' represents an important domain concept.
+It has the following attributes: 'validTo', which is of type date; 'name', which is of type str; 'deleted', which is of type str; 'validFrom', which is of type date; 'modified', which is of type date; 'dateAdded', which is of type date; 'modifiedBy', which is of type str; 'id', which is of type str.
+
+'model_Payment' represents an important domain concept.
+It has the following attributes: 'unpaidText', which is of type str; 'depositText', which is of type str; 'paidText', which is of type str; 'description', which is of type str; 'netDays', which is of type str; 'code', which is of type str; 'discountDays', which is of type str; 'discountValue', which is of type str.
+
+'model_Letter' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Confirmation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ProductCategory' represents an important domain concept.
+It does not declare any attributes.
+
+'model_VATCategory' represents an important domain concept.
+It does not declare any attributes.
+
+'Document' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Proforma' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Contact' represents an important domain concept.
+It has the following attributes: 'contactType', which is of type str; 'supplierNumber', which is of type str; 'reliability', which is of type str; 'firstName', which is of type str; 'discount', which is of type str; 'webshopName', which is of type str; 'useNetGross', which is of type str; 'mandateReference', which is of type str; 'gln', which is of type str; 'birthday', which is of type date; 'gender', which is of type str; 'note', which is of type str; 'vatNumber', which is of type str; 'customerNumber', which is of type str; 'mobile', which is of type str; 'useSalesEqualizationTax', which is of type str; 'company', which is of type str; 'email', which is of type str; 'vatNumberValid', which is of type str; 'fax', which is of type str; 'title', which is of type str; 'website', which is of type str; 'phone', which is of type str.
+
+'model_Creditor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Voucher' represents an important domain concept.
+It has the following attributes: 'totalValue', which is of type str; 'discounted', which is of type str; 'voucherDate', which is of type date; 'voucherNumber', which is of type str; 'paidValue', which is of type str; 'documentNumber', which is of type str; 'doNotBook', which is of type str; 'voucherType', which is of type str.
+
+'model_Invoice' represents an important domain concept.
+It does not declare any attributes.
+
+'model_UserProperty' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'global', which is of type str; 'user', which is of type str; 'default', which is of type str.
+
+'model_WebShop' represents an important domain concept.
+It has the following attributes: 'webshopVersion', which is of type str; 'webshopVendor', which is of type str.
+
+'model_WebshopStateMapping' represents an important domain concept.
+It has the following attributes: 'webshopState', which is of type str; 'fakturamaOrderState', which is of type str.
+
+'model_ShippingCategory' represents an important domain concept.
+It does not declare any attributes.
+
+'model_IndividualDocumentInfo' represents an important domain concept.
+It has the following attributes: 'shippingAutoVat', which is of type str; 'paymentText', which is of type str; 'noVatName', which is of type str; 'shippingValue', which is of type str; 'paymentDescription', which is of type str; 'shippingVatValue', which is of type str; 'shippingName', which is of type str; 'shippingDescription', which is of type str; 'noVatDescription', which is of type str; 'paymentName', which is of type str; 'shippingVatDescription', which is of type str.
+
+'model_ContactCategory' represents an important domain concept.
+It does not declare any attributes.
+
+'model_VAT' represents an important domain concept.
+It has the following attributes: 'salesEqualizationTax', which is of type str; 'taxValue', which is of type str; 'description', which is of type str.
+
+'model_Delivery' represents an important domain concept.
+It does not declare any attributes.
+
+'IDescribableEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'Contact' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractCategory' represents an important domain concept.
+It does not declare any attributes.
+
+'model_IDescribableEntity' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'model_Offer' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Shipping' represents an important domain concept.
+It has the following attributes: 'shippingValue', which is of type str; 'autoVat', which is of type str; 'code', which is of type str.
+
+'model_AbstractCategory' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Product' represents an important domain concept.
+It has the following attributes: 'cdf03', which is of type str; 'itemNumber', which is of type str; 'price2', which is of type str; 'block2', which is of type str; 'block1', which is of type str; 'quantityUnit', which is of type str; 'weight', which is of type str; 'costPrice', which is of type str; 'block3', which is of type str; 'webshopId', which is of type str; 'price3', which is of type str; 'price5', which is of type str; 'quantity', which is of type str; 'picture', which is of type str; 'gtin', which is of type str; 'cdf02', which is of type str; 'block5', which is of type str; 'cdf01', which is of type str; 'sellingUnit', which is of type str; 'price1', which is of type str; 'block4', which is of type str; 'price4', which is of type str.
+
+'model_Role' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DocumentItem' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'optional', which is of type str; 'vestingPeriodStart', which is of type date; 'itemRebate', which is of type str; 'originQuantity', which is of type str; 'quantity', which is of type str; 'tara', which is of type str; 'itemType', which is of type str; 'noVat', which is of type str; 'quantityUnit', which is of type str; 'price', which is of type str; 'picture', which is of type str; 'itemNumber', which is of type str; 'gtin', which is of type str; 'vestingPeriodEnd', which is of type date; 'weight', which is of type str; 'posNr', which is of type str.
+
+'model_TextModule' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'model_TextCategory' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Credit' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Address' represents an important domain concept.
+It has the following attributes: 'zip', which is of type str; 'street', which is of type str; 'city', which is of type str; 'manualAddress', which is of type str; 'cityAddon', which is of type str; 'countryCode', which is of type str.
+
+'model_Tenant' represents an important domain concept.
+It does not declare any attributes.
+
+'IEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'model_User' represents an important domain concept.
+It has the following attributes: 'password', which is of type str; 'userName', which is of type str.
+
+'model_VoucherCategory' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Debitor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Order' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CEFACTCode' represents an important domain concept.
+It has the following attributes: 'abbreviation_en', which is of type str; 'target', which is of type str; 'abbreviation_de', which is of type str; 'code', which is of type str; 'name_de', which is of type str.
+
+'model_VoucherItem' represents an important domain concept.
+It has the following attributes: 'price', which is of type str; 'posNr', which is of type str; 'itemVoucherType', which is of type str.
+
+'model_BankAccount' represents an important domain concept.
+It has the following attributes: 'iban', which is of type str; 'accountHolder', which is of type str; 'bankName', which is of type str; 'bankCode', which is of type str; 'bic', which is of type str.
+
+'model_ItemAccountType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'model_Dunning' represents an important domain concept.
+It has one attribute: 'dunningLevel', which is of type str.
+
+'model_ProductBlockPrice' represents an important domain concept.
+It has the following attributes: 'block', which is of type str; 'price', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BillingType' defines the following possible values: 'ORDER', 'OFFER', 'CONFIRMATION', 'INVOICE', 'DUNNING', 'NONE', 'CREDIT', 'LETTER', 'DELIVERY', 'PROFORMA'.
+The enumeration 'ContactType' defines the following possible values: 'DELIVERY', 'BILLING'.
+The enumeration 'ReliabilityType' defines the following possible values: 'MEDIUM', 'GOOD', 'NONE', 'POOR'.
+The enumeration 'VoucherType' defines the following possible values: 'EXPENDITURE', 'RECEIPTVOUCHER'.
+The enumeration 'ShippingVatType' defines the following possible values: 'SHIPPINGVATGROSS', 'SHIPPINGVATNET', 'SHIPPINGVATFIX'.
+The enumeration 'ItemType' defines the following possible values: 'POSITION', 'DELIVERY_PART', 'FREETEXT', 'SUBTOTAL'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_IDescribableEntity' is a specialization of 'IEntity'.
+The class 'model_AbstractCategory' is a specialization of 'IEntity'.
+The class 'model_VoucherCategory' is a specialization of 'AbstractCategory'.
+The class 'model_Address' is a specialization of 'IEntity'.
+The class 'model_Contact' is a specialization of 'IEntity'.
+The class 'model_ContactCategory' is a specialization of 'AbstractCategory'.
+The class 'model_Creditor' is a specialization of 'Contact'.
+The class 'model_Debitor' is a specialization of 'Contact'.
+The class 'model_BankAccount' is a specialization of 'IEntity'.
+The class 'model_Document' is a specialization of 'IEntity'.
+The class 'model_DocumentItem' is a specialization of 'IEntity'.
+The class 'model_Invoice' is a specialization of 'Document'.
+The class 'model_Order' is a specialization of 'Document'.
+The class 'model_Letter' is a specialization of 'Document'.
+The class 'model_Offer' is a specialization of 'Document'.
+The class 'model_Dunning' is a specialization of 'Document'.
+The class 'model_Credit' is a specialization of 'Document'.
+The class 'model_Delivery' is a specialization of 'Document'.
+The class 'model_Confirmation' is a specialization of 'Document'.
+The class 'model_Proforma' is a specialization of 'Document'.
+The class 'model_Voucher' is a specialization of 'IEntity'.
+The class 'model_VoucherItem' is a specialization of 'IEntity'.
+The class 'model_ItemAccountType' is a specialization of 'IEntity'.
+The class 'model_Payment' is a specialization of 'IEntity'.
+The class 'model_Product' is a specialization of 'IDescribableEntity'.
+The class 'model_ProductOptions' is a specialization of 'IEntity'.
+The class 'model_ProductBlockPrice' is a specialization of 'IEntity'.
+The class 'model_ProductCategory' is a specialization of 'AbstractCategory'.
+The class 'model_Shipping' is a specialization of 'IDescribableEntity'.
+The class 'model_ShippingCategory' is a specialization of 'AbstractCategory'.
+The class 'model_Tenant' is a specialization of 'IEntity'.
+The class 'model_TextModule' is a specialization of 'IEntity'.
+The class 'model_TextCategory' is a specialization of 'AbstractCategory'.
+The class 'model_IndividualDocumentInfo' is a specialization of 'IEntity'.
+The class 'model_User' is a specialization of 'IEntity'.
+The class 'model_Role' is a specialization of 'IEntity'.
+The class 'model_UserProperty' is a specialization of 'IEntity'.
+The class 'model_VAT' is a specialization of 'IEntity'.
+The class 'model_VATCategory' is a specialization of 'AbstractCategory'.
+The class 'model_ItemListTypeCategory' is a specialization of 'AbstractCategory'.
+The class 'model_CEFACTCode' is a specialization of 'IEntity'.
+The class 'model_WebShop' is a specialization of 'IEntity'.
+The class 'model_WebshopStateMapping' is a specialization of 'IEntity'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_AbstractCategory' and 'model_AbstractCategory'. From 'model_AbstractCategory', the role 'model_AbstractCategory' has cardinality 0..*, and from 'model_AbstractCategory', the role 'model_AbstractCategory0' has cardinality 0..*.
+An association connects 'model_Address' and 'model_Contact'. From 'model_Address', the role 'model_Address' has cardinality 0..*, and from 'model_Contact', the role 'model_Contact' has cardinality 0..*.
+An association connects 'model_Contact' and 'model_Contact'. From 'model_Contact', the role 'model_Contact5' has cardinality 0..*, and from 'model_Contact', the role 'model_Contact3' has cardinality 0..*.
+An association connects 'model_Contact' and 'model_ContactCategory'. From 'model_Contact', the role 'model_Contact7' has cardinality 0..*, and from 'model_ContactCategory', the role 'model_ContactCategory' has cardinality 0..*.
+An association connects 'model_Contact' and 'model_Payment'. From 'model_Contact', the role 'model_Contact9' has cardinality 0..*, and from 'model_Payment', the role 'model_Payment' has cardinality 0..*.
+An association connects 'model_BankAccount' and 'model_Contact'. From 'model_BankAccount', the role 'model_BankAccount' has cardinality 0..*, and from 'model_Contact', the role 'model_Contact11' has cardinality 0..*.
+An association connects 'model_IndividualDocumentInfo' and 'model_Document'. From 'model_IndividualDocumentInfo', the role 'model_IndividualDocumentInfo' has cardinality 0..*, and from 'model_Document', the role 'model_Document' has cardinality 0..*.
+An association connects 'model_Contact' and 'model_Document'. From 'model_Contact', the role 'model_Contact15' has cardinality 0..*, and from 'model_Document', the role 'model_Document14' has cardinality 0..*.
+An association connects 'model_Contact' and 'model_Document'. From 'model_Contact', the role 'model_Contact18' has cardinality 0..*, and from 'model_Document', the role 'model_Document17' has cardinality 0..*.
+An association connects 'model_Document' and 'model_Invoice'. From 'model_Document', the role 'model_Document20' has cardinality 0..*, and from 'model_Invoice', the role 'model_Invoice' has cardinality 0..*.
+An association connects 'model_Document' and 'model_DocumentItem'. From 'model_Document', the role 'model_Document22' has cardinality 0..*, and from 'model_DocumentItem', the role 'model_DocumentItem' has cardinality 0..*.
+An association connects 'model_Document' and 'model_VAT'. From 'model_Document', the role 'model_Document24' has cardinality 0..*, and from 'model_VAT', the role 'model_VAT' has cardinality 0..*.
+An association connects 'model_Payment' and 'model_Document'. From 'model_Payment', the role 'model_Payment27' has cardinality 0..*, and from 'model_Document', the role 'model_Document26' has cardinality 0..*.
+An association connects 'model_Document' and 'model_Shipping'. From 'model_Document', the role 'model_Document29' has cardinality 0..*, and from 'model_Shipping', the role 'model_Shipping' has cardinality 0..*.
+An association connects 'model_Document' and 'model_Document'. From 'model_Document', the role 'model_Document32' has cardinality 0..*, and from 'model_Document', the role 'model_Document30' has cardinality 0..*.
+An association connects 'model_Product' and 'model_DocumentItem'. From 'model_Product', the role 'model_Product' has cardinality 0..*, and from 'model_DocumentItem', the role 'model_DocumentItem34' has cardinality 0..*.
+An association connects 'model_DocumentItem' and 'model_VAT'. From 'model_DocumentItem', the role 'model_DocumentItem36' has cardinality 0..*, and from 'model_VAT', the role 'model_VAT37' has cardinality 0..*.
+An association connects 'model_Voucher' and 'model_VoucherCategory'. From 'model_Voucher', the role 'model_Voucher' has cardinality 0..*, and from 'model_VoucherCategory', the role 'model_VoucherCategory' has cardinality 0..*.
+An association connects 'model_VoucherItem' and 'model_Voucher'. From 'model_VoucherItem', the role 'model_VoucherItem' has cardinality 0..*, and from 'model_Voucher', the role 'model_Voucher40' has cardinality 0..*.
+An association connects 'model_VoucherItem' and 'model_ItemAccountType'. From 'model_VoucherItem', the role 'model_VoucherItem42' has cardinality 0..*, and from 'model_ItemAccountType', the role 'model_ItemAccountType' has cardinality 0..*.
+An association connects 'model_VAT' and 'model_VoucherItem'. From 'model_VAT', the role 'model_VAT45' has cardinality 0..*, and from 'model_VoucherItem', the role 'model_VoucherItem44' has cardinality 0..*.
+An association connects 'model_ItemListTypeCategory' and 'model_ItemAccountType'. From 'model_ItemListTypeCategory', the role 'model_ItemListTypeCategory' has cardinality 0..*, and from 'model_ItemAccountType', the role 'model_ItemAccountType47' has cardinality 0..*.
+An association connects 'model_VoucherCategory' and 'model_Payment'. From 'model_VoucherCategory', the role 'model_VoucherCategory50' has cardinality 0..*, and from 'model_Payment', the role 'model_Payment49' has cardinality 0..*.
+An association connects 'model_Product' and 'model_ProductCategory'. From 'model_Product', the role 'model_Product52' has cardinality 0..*, and from 'model_ProductCategory', the role 'model_ProductCategory' has cardinality 0..*.
+An association connects 'model_ProductOptions' and 'model_Product'. From 'model_ProductOptions', the role 'model_ProductOptions' has cardinality 0..*, and from 'model_Product', the role 'model_Product54' has cardinality 0..*.
+An association connects 'model_Product' and 'model_VAT'. From 'model_Product', the role 'model_Product56' has cardinality 0..*, and from 'model_VAT', the role 'model_VAT57' has cardinality 0..*.
+An association connects 'model_Product' and 'model_ProductBlockPrice'. From 'model_Product', the role 'model_Product59' has cardinality 0..*, and from 'model_ProductBlockPrice', the role 'model_ProductBlockPrice' has cardinality 0..*.
+An association connects 'model_Shipping' and 'model_VAT'. From 'model_Shipping', the role 'model_Shipping61' has cardinality 0..*, and from 'model_VAT', the role 'model_VAT62' has cardinality 0..*.
+An association connects 'model_ShippingCategory' and 'model_Shipping'. From 'model_ShippingCategory', the role 'model_ShippingCategory' has cardinality 0..*, and from 'model_Shipping', the role 'model_Shipping64' has cardinality 0..*.
+An association connects 'model_TextCategory' and 'model_TextModule'. From 'model_TextCategory', the role 'model_TextCategory' has cardinality 0..*, and from 'model_TextModule', the role 'model_TextModule' has cardinality 0..*.
+An association connects 'model_User' and 'model_Tenant'. From 'model_User', the role 'model_User' has cardinality 0..*, and from 'model_Tenant', the role 'model_Tenant' has cardinality 0..*.
+An association connects 'model_User' and 'model_Role'. From 'model_User', the role 'model_User68' has cardinality 0..*, and from 'model_Role', the role 'model_Role' has cardinality 0..*.
+An association connects 'model_VAT' and 'model_VATCategory'. From 'model_VAT', the role 'model_VAT70' has cardinality 0..*, and from 'model_VATCategory', the role 'model_VATCategory' has cardinality 0..*.
+An association connects 'model_WebshopStateMapping' and 'model_WebShop'. From 'model_WebshopStateMapping', the role 'model_WebshopStateMapping' has cardinality 0..*, and from 'model_WebShop', the role 'model_WebShop' has cardinality 0..*.

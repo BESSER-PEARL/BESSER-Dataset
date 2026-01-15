@@ -1,0 +1,19 @@
+The domain model 'FamilyRegister' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'FamilyRegister_FamilyRegister' represents an important domain concept.
+It does not declare any attributes.
+
+'FamilyRegister_Family' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'FamilyRegister_Member' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'FamilyRegister_FamilyRegister' and 'FamilyRegister_Family'. From 'FamilyRegister_FamilyRegister', the role 'FamilyRegister_FamilyRegister' has cardinality 0..*, and from 'FamilyRegister_Family', the role 'FamilyRegister_Family' has cardinality 0..*.
+An association connects 'FamilyRegister_Member' and 'FamilyRegister_Family'. From 'FamilyRegister_Member', the role 'FamilyRegister_Member' has cardinality 0..*, and from 'FamilyRegister_Family', the role 'FamilyRegister_Family2' has cardinality 0..*.
+An association connects 'FamilyRegister_Family' and 'FamilyRegister_Member'. From 'FamilyRegister_Family', the role 'FamilyRegister_Family4' has cardinality 0..*, and from 'FamilyRegister_Member', the role 'FamilyRegister_Member5' has cardinality 0..*.
+An association connects 'FamilyRegister_Member' and 'FamilyRegister_Family'. From 'FamilyRegister_Member', the role 'FamilyRegister_Member8' has cardinality 0..*, and from 'FamilyRegister_Family', the role 'FamilyRegister_Family7' has cardinality 0..*.
+An association connects 'FamilyRegister_Family' and 'FamilyRegister_Member'. From 'FamilyRegister_Family', the role 'FamilyRegister_Family10' has cardinality 0..*, and from 'FamilyRegister_Member', the role 'FamilyRegister_Member11' has cardinality 0..*.

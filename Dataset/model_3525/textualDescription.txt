@@ -1,0 +1,127 @@
+The domain model 'testmaprelations' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'testmaprelations_MapCA3ToCB3MapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CA0' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CB8' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_MapCA6ToCB6MapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_MapCA0ToCB0MapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CB6' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CB4' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_MapCA7ToCB7MapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CA5' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_MapCA5ToCB5MapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CA4' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CA9' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CB0' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CB5' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CA7' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CB7' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_MapCA9ToCB9MapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_MapCA4ToCB4MapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CB3' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CA6' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_MapCA1ToCB1MapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CA2' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CA3' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CA8' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CA1' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_MapCA2ToCB2MapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_MapCA8ToCB8MapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CB9' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CB2' represents an important domain concept.
+It does not declare any attributes.
+
+'testmaprelations_CB1' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'testmaprelations_MapCA0ToCB0MapEntry' and 'testmaprelations_CA0'. From 'testmaprelations_MapCA0ToCB0MapEntry', the role 'mapca0tocb0mapentry' has cardinality 0..*, and from 'testmaprelations_CA0', the role 'CA0' has cardinality 0..*.
+An association connects 'testmaprelations_CB0' and 'testmaprelations_MapCA0ToCB0MapEntry'. From 'testmaprelations_CB0', the role 'CB0' has cardinality 0..*, and from 'testmaprelations_MapCA0ToCB0MapEntry', the role 'mapca0tocb0mapentry2' has cardinality 0..*.
+An association connects 'testmaprelations_CA0' and 'testmaprelations_MapCA0ToCB0MapEntry'. From 'testmaprelations_CA0', the role 'key' has cardinality 0..*, and from 'testmaprelations_MapCA0ToCB0MapEntry', the role 'MapCA0ToCB0MapEntry' has cardinality 0..*.
+An association connects 'testmaprelations_MapCA0ToCB0MapEntry' and 'testmaprelations_CB0'. From 'testmaprelations_MapCA0ToCB0MapEntry', the role 'MapCA0ToCB0MapEntry5' has cardinality 0..*, and from 'testmaprelations_CB0', the role 'value' has cardinality 0..*.
+An association connects 'testmaprelations_MapCA1ToCB1MapEntry' and 'testmaprelations_CA1'. From 'testmaprelations_MapCA1ToCB1MapEntry', the role 'mapca0tocb0mapentry7' has cardinality 0..*, and from 'testmaprelations_CA1', the role 'CA1' has cardinality 0..*.
+An association connects 'testmaprelations_MapCA1ToCB1MapEntry' and 'testmaprelations_CB1'. From 'testmaprelations_MapCA1ToCB1MapEntry', the role 'mapca0tocb0mapentry9' has cardinality 0..*, and from 'testmaprelations_CB1', the role 'CB1' has cardinality 0..*.
+An association connects 'testmaprelations_CB1' and 'testmaprelations_MapCA1ToCB1MapEntry'. From 'testmaprelations_CB1', the role 'value11' has cardinality 0..*, and from 'testmaprelations_MapCA1ToCB1MapEntry', the role 'MapCA1ToCB1MapEntry' has cardinality 0..*.
+An association connects 'testmaprelations_MapCA1ToCB1MapEntry' and 'testmaprelations_CA1'. From 'testmaprelations_MapCA1ToCB1MapEntry', the role 'MapCA1ToCB1MapEntry14' has cardinality 0..*, and from 'testmaprelations_CA1', the role 'key13' has cardinality 0..*.
+An association connects 'testmaprelations_MapCA2ToCB2MapEntry' and 'testmaprelations_CA2'. From 'testmaprelations_MapCA2ToCB2MapEntry', the role 'MapCA2ToCB2MapEntry' has cardinality 0..*, and from 'testmaprelations_CA2', the role 'key16' has cardinality 0..*.
+An association connects 'testmaprelations_CB2' and 'testmaprelations_MapCA2ToCB2MapEntry'. From 'testmaprelations_CB2', the role 'value18' has cardinality 0..*, and from 'testmaprelations_MapCA2ToCB2MapEntry', the role 'MapCA2ToCB2MapEntry19' has cardinality 0..*.
+An association connects 'testmaprelations_MapCA2ToCB2MapEntry' and 'testmaprelations_CA2'. From 'testmaprelations_MapCA2ToCB2MapEntry', the role 'mapca0tocb0mapentry21' has cardinality 0..*, and from 'testmaprelations_CA2', the role 'CA2' has cardinality 0..*.
+An association connects 'testmaprelations_MapCA2ToCB2MapEntry' and 'testmaprelations_CB2'. From 'testmaprelations_MapCA2ToCB2MapEntry', the role 'mapca0tocb0mapentry23' has cardinality 0..*, and from 'testmaprelations_CB2', the role 'CB2' has cardinality 0..*.
+An association connects 'testmaprelations_MapCA3ToCB3MapEntry' and 'testmaprelations_CB3'. From 'testmaprelations_MapCA3ToCB3MapEntry', the role 'MapCA3ToCB3MapEntry' has cardinality 0..*, and from 'testmaprelations_CB3', the role 'value25' has cardinality 0..*.
+An association connects 'testmaprelations_MapCA3ToCB3MapEntry' and 'testmaprelations_CA3'. From 'testmaprelations_MapCA3ToCB3MapEntry', the role 'MapCA3ToCB3MapEntry28' has cardinality 0..*, and from 'testmaprelations_CA3', the role 'key27' has cardinality 0..*.
+An association connects 'testmaprelations_MapCA3ToCB3MapEntry' and 'testmaprelations_CA3'. From 'testmaprelations_MapCA3ToCB3MapEntry', the role 'mapca0tocb0mapentry30' has cardinality 0..*, and from 'testmaprelations_CA3', the role 'CA3' has cardinality 0..*.
+An association connects 'testmaprelations_CB3' and 'testmaprelations_MapCA3ToCB3MapEntry'. From 'testmaprelations_CB3', the role 'CB3' has cardinality 0..*, and from 'testmaprelations_MapCA3ToCB3MapEntry', the role 'mapca0tocb0mapentry32' has cardinality 0..*.
+An association connects 'testmaprelations_CA4' and 'testmaprelations_MapCA4ToCB4MapEntry'. From 'testmaprelations_CA4', the role 'key34' has cardinality 0..*, and from 'testmaprelations_MapCA4ToCB4MapEntry', the role 'MapCA4ToCB4MapEntry' has cardinality 0..*.
+An association connects 'testmaprelations_CA4' and 'testmaprelations_MapCA4ToCB4MapEntry'. From 'testmaprelations_CA4', the role 'CA4' has cardinality 0..*, and from 'testmaprelations_MapCA4ToCB4MapEntry', the role 'mapca0tocb0mapentry36' has cardinality 0..*.
+An association connects 'testmaprelations_CB4' and 'testmaprelations_MapCA4ToCB4MapEntry'. From 'testmaprelations_CB4', the role 'CB4' has cardinality 0..*, and from 'testmaprelations_MapCA4ToCB4MapEntry', the role 'mapca0tocb0mapentry38' has cardinality 0..*.
+An association connects 'testmaprelations_MapCA4ToCB4MapEntry' and 'testmaprelations_CB4'. From 'testmaprelations_MapCA4ToCB4MapEntry', the role 'MapCA4ToCB4MapEntry41' has cardinality 0..*, and from 'testmaprelations_CB4', the role 'value40' has cardinality 0..*.
+An association connects 'testmaprelations_CA5' and 'testmaprelations_MapCA5ToCB5MapEntry'. From 'testmaprelations_CA5', the role 'key43' has cardinality 0..*, and from 'testmaprelations_MapCA5ToCB5MapEntry', the role 'MapCA5ToCB5MapEntry' has cardinality 0..*.
+An association connects 'testmaprelations_MapCA5ToCB5MapEntry' and 'testmaprelations_CB5'. From 'testmaprelations_MapCA5ToCB5MapEntry', the role 'MapCA5ToCB5MapEntry46' has cardinality 0..*, and from 'testmaprelations_CB5', the role 'value45' has cardinality 0..*.
+An association connects 'testmaprelations_MapCA5ToCB5MapEntry' and 'testmaprelations_CA5'. From 'testmaprelations_MapCA5ToCB5MapEntry', the role 'mapca0tocb0mapentry48' has cardinality 0..*, and from 'testmaprelations_CA5', the role 'CA5' has cardinality 0..*.
+An association connects 'testmaprelations_MapCA5ToCB5MapEntry' and 'testmaprelations_CB5'. From 'testmaprelations_MapCA5ToCB5MapEntry', the role 'mapca0tocb0mapentry50' has cardinality 0..*, and from 'testmaprelations_CB5', the role 'CB5' has cardinality 0..*.
+An association connects 'testmaprelations_MapCA6ToCB6MapEntry' and 'testmaprelations_CA6'. From 'testmaprelations_MapCA6ToCB6MapEntry', the role 'testmaprelations_MapCA6ToCB6MapEntry' has cardinality 0..*, and from 'testmaprelations_CA6', the role 'testmaprelations_CA6' has cardinality 0..*.
+An association connects 'testmaprelations_CB6' and 'testmaprelations_MapCA6ToCB6MapEntry'. From 'testmaprelations_CB6', the role 'testmaprelations_CB6' has cardinality 0..*, and from 'testmaprelations_MapCA6ToCB6MapEntry', the role 'testmaprelations_MapCA6ToCB6MapEntry53' has cardinality 0..*.
+An association connects 'testmaprelations_CA7' and 'testmaprelations_MapCA7ToCB7MapEntry'. From 'testmaprelations_CA7', the role 'testmaprelations_CA7' has cardinality 0..*, and from 'testmaprelations_MapCA7ToCB7MapEntry', the role 'testmaprelations_MapCA7ToCB7MapEntry' has cardinality 0..*.
+An association connects 'testmaprelations_MapCA7ToCB7MapEntry' and 'testmaprelations_CB7'. From 'testmaprelations_MapCA7ToCB7MapEntry', the role 'testmaprelations_MapCA7ToCB7MapEntry56' has cardinality 0..*, and from 'testmaprelations_CB7', the role 'testmaprelations_CB7' has cardinality 0..*.
+An association connects 'testmaprelations_CA8' and 'testmaprelations_MapCA8ToCB8MapEntry'. From 'testmaprelations_CA8', the role 'testmaprelations_CA8' has cardinality 0..*, and from 'testmaprelations_MapCA8ToCB8MapEntry', the role 'testmaprelations_MapCA8ToCB8MapEntry' has cardinality 0..*.
+An association connects 'testmaprelations_MapCA8ToCB8MapEntry' and 'testmaprelations_CB8'. From 'testmaprelations_MapCA8ToCB8MapEntry', the role 'testmaprelations_MapCA8ToCB8MapEntry59' has cardinality 0..*, and from 'testmaprelations_CB8', the role 'testmaprelations_CB8' has cardinality 0..*.
+An association connects 'testmaprelations_CA9' and 'testmaprelations_MapCA9ToCB9MapEntry'. From 'testmaprelations_CA9', the role 'testmaprelations_CA9' has cardinality 0..*, and from 'testmaprelations_MapCA9ToCB9MapEntry', the role 'testmaprelations_MapCA9ToCB9MapEntry' has cardinality 0..*.
+An association connects 'testmaprelations_CB9' and 'testmaprelations_MapCA9ToCB9MapEntry'. From 'testmaprelations_CB9', the role 'testmaprelations_CB9' has cardinality 0..*, and from 'testmaprelations_MapCA9ToCB9MapEntry', the role 'testmaprelations_MapCA9ToCB9MapEntry62' has cardinality 0..*.

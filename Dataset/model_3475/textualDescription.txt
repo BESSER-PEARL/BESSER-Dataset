@@ -1,0 +1,48 @@
+The domain model 'feature' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'FeatureTreeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_FeatureModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'feature_FeatureTreeNode' represents an important domain concept.
+It has the following attributes: 'maxCardinality', which is of type int; 'minCardinality', which is of type int.
+
+'feature_Constraint' represents an important domain concept.
+It has the following attributes: 'expression', which is of type str; 'language', which is of type str.
+
+'feature_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Feature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'feature_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Attribute' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str; 'type', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'feature_Feature' is a specialization of 'FeatureTreeNode'.
+The class 'feature_Group' is a specialization of 'FeatureTreeNode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'feature_FeatureModel' and 'feature_Constraint'. From 'feature_FeatureModel', the role 'feature_FeatureModel' has cardinality 0..*, and from 'feature_Constraint', the role 'feature_Constraint' has cardinality 0..*.
+An association connects 'feature_FeatureModel' and 'feature_Feature'. From 'feature_FeatureModel', the role 'feature_FeatureModel2' has cardinality 0..*, and from 'feature_Feature', the role 'feature_Feature' has cardinality 0..*.
+An association connects 'feature_FeatureModel' and 'feature_FeatureModel'. From 'feature_FeatureModel', the role 'FeatureModel' has cardinality 0..*, and from 'feature_FeatureModel', the role 'parent' has cardinality 0..*.
+An association connects 'feature_FeatureModel' and 'feature_FeatureModel'. From 'feature_FeatureModel', the role 'FeatureModel7' has cardinality 0..*, and from 'feature_FeatureModel', the role 'children' has cardinality 0..*.
+An association connects 'feature_FeatureModel' and 'feature_FeatureModel'. From 'feature_FeatureModel', the role 'feature_FeatureModel10' has cardinality 0..*, and from 'feature_FeatureModel', the role 'feature_FeatureModel8' has cardinality 0..*.
+An association connects 'feature_Attribute' and 'feature_Feature'. From 'feature_Attribute', the role 'Attribute' has cardinality 0..*, and from 'feature_Feature', the role 'feature' has cardinality 0..*.
+An association connects 'feature_Group' and 'feature_Feature'. From 'feature_Group', the role 'Group' has cardinality 0..*, and from 'feature_Feature', the role 'parentFeature' has cardinality 0..*.
+An association connects 'feature_Group' and 'feature_Feature'. From 'feature_Group', the role 'Group14' has cardinality 0..*, and from 'feature_Feature', the role 'childFeatures' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_Annotation'. From 'feature_Feature', the role 'feature16' has cardinality 0..*, and from 'feature_Annotation', the role 'Annotation' has cardinality 0..*.
+An association connects 'feature_Constraint' and 'feature_Feature'. From 'feature_Constraint', the role 'Constraint' has cardinality 0..*, and from 'feature_Feature', the role 'constrainedFeatures' has cardinality 0..*.
+An association connects 'feature_Group' and 'feature_Feature'. From 'feature_Group', the role 'groups' has cardinality 0..*, and from 'feature_Feature', the role 'Feature' has cardinality 0..*.
+An association connects 'feature_Group' and 'feature_Feature'. From 'feature_Group', the role 'parentGroup' has cardinality 0..*, and from 'feature_Feature', the role 'Feature20' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_Constraint'. From 'feature_Feature', the role 'Feature22' has cardinality 0..*, and from 'feature_Constraint', the role 'constraints' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_Attribute'. From 'feature_Feature', the role 'Feature24' has cardinality 0..*, and from 'feature_Attribute', the role 'attributes' has cardinality 0..*.
+An association connects 'feature_Annotation' and 'feature_Feature'. From 'feature_Annotation', the role 'annotations' has cardinality 0..*, and from 'feature_Feature', the role 'Feature26' has cardinality 0..*.

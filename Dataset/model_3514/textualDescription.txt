@@ -1,0 +1,18 @@
+The domain model 'testtypesystem' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'testtypesystem_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'testtypesystem_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'testtypesystem_State' represents an important domain concept.
+It does not declare any attributes.
+
+'testtypesystem_Value' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'testtypesystem_Assignment' and 'testtypesystem_Expression'. From 'testtypesystem_Assignment', the role 'testtypesystem_Assignment' has cardinality 0..*, and from 'testtypesystem_Expression', the role 'testtypesystem_Expression' has cardinality 0..*.

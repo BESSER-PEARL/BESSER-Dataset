@@ -1,0 +1,119 @@
+The domain model 'dcmddandroid' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'ClassElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dcmddandroid_ClassElement' represents an important domain concept.
+It has the following attributes: 'final', which is of type bool; 'static', which is of type bool.
+
+'dcmddandroid_Composition' represents an important domain concept.
+It does not declare any attributes.
+
+'EVisibility' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractClass' represents an important domain concept.
+It does not declare any attributes.
+
+'dcmddandroid_Attribute' represents an important domain concept.
+It has the following attributes: 'secured', which is of type str; 'defaultValue', which is of type str; 'type', which is of type str.
+
+'dcmddandroid_Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+'dcmddandroid_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dcmddandroid_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'dcmddandroid_PersistentClass' represents an important domain concept.
+It does not declare any attributes.
+
+'dcmddandroid_Agregation' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dcmddandroid_Method' represents an important domain concept.
+It has the following attributes: 'isAbstract', which is of type bool; 'returns', which is of type str.
+
+'dcmddandroid_EVisibility' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'dcmddandroid_Association' represents an important domain concept.
+It has the following attributes: 'minMultiplicitySource', which is of type int; 'maxMultiplicitySource', which is of type int; 'minMultiplicityTarget', which is of type int; 'rolSource', which is of type str; 'maxMultiplicityTarget', which is of type int; 'rolTarget', which is of type str.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+'dcmddandroid_EnumValue' represents an important domain concept.
+It has one attribute: 'intValue', which is of type int.
+
+'dcmddandroid_Implements' represents an important domain concept.
+It does not declare any attributes.
+
+'dcmddandroid_CycleClass' represents an important domain concept.
+It does not declare any attributes.
+
+'dcmddandroid_AbstractClass' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'dcmddandroid_ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dcmddandroid_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dcmddandroid_Enum' represents an important domain concept.
+It does not declare any attributes.
+
+'dcmddandroid_Parameter' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Visibility' defines the following possible values: 'protected', 'private', 'public'.
+
+The model also captures inheritance relationships between classes.
+The class 'dcmddandroid_AbstractClass' is a specialization of 'ModelElement'.
+The class 'dcmddandroid_AbstractClass' is a specialization of 'EVisibility'.
+The class 'dcmddandroid_Class' is a specialization of 'AbstractClass'.
+The class 'dcmddandroid_CycleClass' is a specialization of 'AbstractClass'.
+The class 'dcmddandroid_PersistentClass' is a specialization of 'AbstractClass'.
+The class 'dcmddandroid_Interface' is a specialization of 'ModelElement'.
+The class 'dcmddandroid_Interface' is a specialization of 'EVisibility'.
+The class 'dcmddandroid_ClassElement' is a specialization of 'NamedElement'.
+The class 'dcmddandroid_ClassElement' is a specialization of 'EVisibility'.
+The class 'dcmddandroid_Method' is a specialization of 'ClassElement'.
+The class 'dcmddandroid_Attribute' is a specialization of 'ClassElement'.
+The class 'dcmddandroid_Diagram' is a specialization of 'NamedElement'.
+The class 'dcmddandroid_ModelElement' is a specialization of 'NamedElement'.
+The class 'dcmddandroid_Parameter' is a specialization of 'NamedElement'.
+The class 'dcmddandroid_Enum' is a specialization of 'ModelElement'.
+The class 'dcmddandroid_EnumValue' is a specialization of 'NamedElement'.
+The class 'dcmddandroid_Association' is a specialization of 'ModelElement'.
+The class 'dcmddandroid_Agregation' is a specialization of 'Association'.
+The class 'dcmddandroid_Composition' is a specialization of 'Association'.
+The class 'dcmddandroid_Implements' is a specialization of 'ModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dcmddandroid_Implements' and 'dcmddandroid_AbstractClass'. From 'dcmddandroid_Implements', the role 'Implements' has cardinality 0..*, and from 'dcmddandroid_AbstractClass', the role 'implements' has cardinality 0..*.
+An association connects 'dcmddandroid_AbstractClass' and 'dcmddandroid_Attribute'. From 'dcmddandroid_AbstractClass', the role 'dcmddandroid_AbstractClass' has cardinality 0..*, and from 'dcmddandroid_Attribute', the role 'dcmddandroid_Attribute' has cardinality 0..*.
+An association connects 'dcmddandroid_Method' and 'dcmddandroid_AbstractClass'. From 'dcmddandroid_Method', the role 'dcmddandroid_Method' has cardinality 0..*, and from 'dcmddandroid_AbstractClass', the role 'dcmddandroid_AbstractClass3' has cardinality 0..*.
+An association connects 'dcmddandroid_Association' and 'dcmddandroid_AbstractClass'. From 'dcmddandroid_Association', the role 'Association' has cardinality 0..*, and from 'dcmddandroid_AbstractClass', the role 'source' has cardinality 0..*.
+An association connects 'dcmddandroid_Association' and 'dcmddandroid_AbstractClass'. From 'dcmddandroid_Association', the role 'Association6' has cardinality 0..*, and from 'dcmddandroid_AbstractClass', the role 'target' has cardinality 0..*.
+An association connects 'dcmddandroid_Interface' and 'dcmddandroid_Interface'. From 'dcmddandroid_Interface', the role 'dcmddandroid_Interface' has cardinality 0..*, and from 'dcmddandroid_Interface', the role 'dcmddandroid_Interface7' has cardinality 0..*.
+An association connects 'dcmddandroid_Method' and 'dcmddandroid_Interface'. From 'dcmddandroid_Method', the role 'dcmddandroid_Method11' has cardinality 0..*, and from 'dcmddandroid_Interface', the role 'dcmddandroid_Interface10' has cardinality 0..*.
+An association connects 'dcmddandroid_Parameter' and 'dcmddandroid_Method'. From 'dcmddandroid_Parameter', the role 'dcmddandroid_Parameter' has cardinality 0..*, and from 'dcmddandroid_Method', the role 'dcmddandroid_Method13' has cardinality 0..*.
+An association connects 'dcmddandroid_Diagram' and 'dcmddandroid_ModelElement'. From 'dcmddandroid_Diagram', the role 'dcmddandroid_Diagram' has cardinality 0..*, and from 'dcmddandroid_ModelElement', the role 'dcmddandroid_ModelElement' has cardinality 0..*.
+An association connects 'dcmddandroid_EnumValue' and 'dcmddandroid_Enum'. From 'dcmddandroid_EnumValue', the role 'dcmddandroid_EnumValue' has cardinality 0..*, and from 'dcmddandroid_Enum', the role 'dcmddandroid_Enum' has cardinality 0..*.
+An association connects 'dcmddandroid_AbstractClass' and 'dcmddandroid_Association'. From 'dcmddandroid_AbstractClass', the role 'AbstractClass' has cardinality 0..*, and from 'dcmddandroid_Association', the role 'associationAsSource' has cardinality 0..*.
+An association connects 'dcmddandroid_AbstractClass' and 'dcmddandroid_Association'. From 'dcmddandroid_AbstractClass', the role 'AbstractClass18' has cardinality 0..*, and from 'dcmddandroid_Association', the role 'associationAsTarget' has cardinality 0..*.
+An association connects 'dcmddandroid_Implements' and 'dcmddandroid_Interface'. From 'dcmddandroid_Implements', the role 'dcmddandroid_Implements' has cardinality 0..*, and from 'dcmddandroid_Interface', the role 'dcmddandroid_Interface20' has cardinality 0..*.
+An association connects 'dcmddandroid_AbstractClass' and 'dcmddandroid_Implements'. From 'dcmddandroid_AbstractClass', the role 'AbstractClass23' has cardinality 0..*, and from 'dcmddandroid_Implements', the role 'implements22' has cardinality 0..*.

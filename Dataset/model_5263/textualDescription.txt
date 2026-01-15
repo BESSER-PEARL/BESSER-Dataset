@@ -1,0 +1,12 @@
+The domain model 'p' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'p_B' represents an important domain concept.
+It does not declare any attributes.
+
+'p_A' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'p_B' and 'p_A'. From 'p_B', the role 'p_B' has cardinality 0..*, and from 'p_A', the role 'p_A' has cardinality 0..*.

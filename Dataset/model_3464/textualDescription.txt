@@ -1,0 +1,50 @@
+The domain model 'featureModel' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'featureModel_ExcludeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_Feature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_Constraint' represents an important domain concept.
+It has the following attributes: 'nameB', which is of type str; 'nameA', which is of type str.
+
+'featureModel_PropFormula' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_Proposition' represents an important domain concept.
+It has the following attributes: 'nameA', which is of type str; 'nameRest', which is of type str.
+
+'featureModel_FeatureModel' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_ImplyConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Group' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_Constraints' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'featureModel_Feature' is a specialization of 'Group'.
+The class 'featureModel_ImplyConstraint' is a specialization of 'Constraint'.
+The class 'featureModel_ExcludeConstraint' is a specialization of 'Constraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'featureModel_Feature' and 'featureModel_FeatureModel'. From 'featureModel_Feature', the role 'featureModel_Feature' has cardinality 0..*, and from 'featureModel_FeatureModel', the role 'featureModel_FeatureModel' has cardinality 0..*.
+An association connects 'featureModel_Constraints' and 'featureModel_FeatureModel'. From 'featureModel_Constraints', the role 'featureModel_Constraints' has cardinality 0..*, and from 'featureModel_FeatureModel', the role 'featureModel_FeatureModel2' has cardinality 0..*.
+An association connects 'featureModel_PropFormula' and 'featureModel_FeatureModel'. From 'featureModel_PropFormula', the role 'featureModel_PropFormula' has cardinality 0..*, and from 'featureModel_FeatureModel', the role 'featureModel_FeatureModel4' has cardinality 0..*.
+An association connects 'featureModel_Feature' and 'featureModel_Group'. From 'featureModel_Feature', the role 'featureModel_Feature6' has cardinality 0..*, and from 'featureModel_Group', the role 'featureModel_Group' has cardinality 0..*.
+An association connects 'featureModel_Constraints' and 'featureModel_Constraint'. From 'featureModel_Constraints', the role 'featureModel_Constraints8' has cardinality 0..*, and from 'featureModel_Constraint', the role 'featureModel_Constraint' has cardinality 0..*.
+An association connects 'featureModel_PropFormula' and 'featureModel_Proposition'. From 'featureModel_PropFormula', the role 'featureModel_PropFormula10' has cardinality 0..*, and from 'featureModel_Proposition', the role 'featureModel_Proposition' has cardinality 0..*.
+An association connects 'featureModel_Proposition' and 'featureModel_PropFormula'. From 'featureModel_Proposition', the role 'featureModel_Proposition13' has cardinality 0..*, and from 'featureModel_PropFormula', the role 'featureModel_PropFormula12' has cardinality 0..*.

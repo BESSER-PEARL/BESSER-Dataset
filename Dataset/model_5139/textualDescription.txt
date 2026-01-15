@@ -1,0 +1,18 @@
+The domain model 'mytest' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'mytest_B' represents an important domain concept.
+It does not declare any attributes.
+
+'mytest_A' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mytest_MyRoot' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'mytest_A' and 'mytest_B'. From 'mytest_A', the role 'a' has cardinality 0..*, and from 'mytest_B', the role 'B' has cardinality 0..*.
+An association connects 'mytest_B' and 'mytest_A'. From 'mytest_B', the role 'b' has cardinality 0..*, and from 'mytest_A', the role 'A' has cardinality 0..*.
+An association connects 'mytest_A' and 'mytest_MyRoot'. From 'mytest_A', the role 'mytest_A' has cardinality 0..*, and from 'mytest_MyRoot', the role 'mytest_MyRoot' has cardinality 0..*.
+An association connects 'mytest_B' and 'mytest_MyRoot'. From 'mytest_B', the role 'mytest_B' has cardinality 0..*, and from 'mytest_MyRoot', the role 'mytest_MyRoot4' has cardinality 0..*.

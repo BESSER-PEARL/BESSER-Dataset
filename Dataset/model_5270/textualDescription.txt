@@ -1,0 +1,16 @@
+The domain model 'clazz' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'clazz_BRef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'clazz_B' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'clazz_Annotation' represents an important domain concept.
+It has one attribute: 'tag', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'clazz_B' and 'clazz_Annotation'. From 'clazz_B', the role 'clazz_B' has cardinality 0..*, and from 'clazz_Annotation', the role 'clazz_Annotation' has cardinality 0..*.
+An association connects 'clazz_BRef' and 'clazz_B'. From 'clazz_BRef', the role 'clazz_BRef' has cardinality 0..*, and from 'clazz_B', the role 'clazz_B2' has cardinality 0..*.

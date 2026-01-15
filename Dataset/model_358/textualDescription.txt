@@ -1,0 +1,21 @@
+The domain model 'lazy' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'lazy_Book' represents an important domain concept.
+It has the following attributes: 'pages', which is of type str; 'title', which is of type str; 'category', which is of type str.
+
+'lazy_Writer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'lazy_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BookCategory' defines the following possible values: 'Mystery', 'ScienceFiction', 'Biography'.
+
+Relationships between classes are modeled using associations.
+An association connects 'lazy_Writer' and 'lazy_Book'. From 'lazy_Writer', the role 'Writer' has cardinality 0..*, and from 'lazy_Book', the role 'books' has cardinality 0..*.
+An association connects 'lazy_Library' and 'lazy_Writer'. From 'lazy_Library', the role 'lazy_Library' has cardinality 0..*, and from 'lazy_Writer', the role 'lazy_Writer' has cardinality 0..*.
+An association connects 'lazy_Book' and 'lazy_Library'. From 'lazy_Book', the role 'lazy_Book' has cardinality 0..*, and from 'lazy_Library', the role 'lazy_Library3' has cardinality 0..*.
+An association connects 'lazy_Book' and 'lazy_Writer'. From 'lazy_Book', the role 'Book' has cardinality 0..*, and from 'lazy_Writer', the role 'author' has cardinality 0..*.

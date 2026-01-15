@@ -1,0 +1,27 @@
+The domain model 'Friends' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'Friends_Man' represents an important domain concept.
+It does not declare any attributes.
+
+'Friends_Classroom' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'Friends_Woman' represents an important domain concept.
+It does not declare any attributes.
+
+'Friends_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'Friends_Man' is a specialization of 'Person'.
+The class 'Friends_Woman' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Friends_Person' and 'Friends_Person'. From 'Friends_Person', the role 'Friends_Person0' has cardinality 0..*, and from 'Friends_Person', the role 'Friends_Person' has cardinality 0..*.
+An association connects 'Friends_Person' and 'Friends_Classroom'. From 'Friends_Person', the role 'Friends_Person3' has cardinality 0..*, and from 'Friends_Classroom', the role 'Friends_Classroom' has cardinality 0..*.
+An association connects 'Friends_Classroom' and 'Friends_Person'. From 'Friends_Classroom', the role 'Friends_Classroom5' has cardinality 0..*, and from 'Friends_Person', the role 'Friends_Person6' has cardinality 0..*.

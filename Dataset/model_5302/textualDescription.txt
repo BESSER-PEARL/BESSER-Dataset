@@ -1,0 +1,33 @@
+The domain model 'a' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'a_ca1' represents an important domain concept.
+It does not declare any attributes.
+
+'a_d_cd2' represents an important domain concept.
+It does not declare any attributes.
+
+'a_b_cb2' represents an important domain concept.
+It does not declare any attributes.
+
+'a_b_cb1' represents an important domain concept.
+It does not declare any attributes.
+
+'a_c_cc1' represents an important domain concept.
+It does not declare any attributes.
+
+'a_e_ce2' represents an important domain concept.
+It does not declare any attributes.
+
+'a_c_cc2' represents an important domain concept.
+It does not declare any attributes.
+
+'a_e_ce1' represents an important domain concept.
+It does not declare any attributes.
+
+'a_ca2' represents an important domain concept.
+It does not declare any attributes.
+
+'a_d_cd1' represents an important domain concept.
+It does not declare any attributes.

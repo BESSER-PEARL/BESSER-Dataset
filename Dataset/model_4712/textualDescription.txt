@@ -1,0 +1,626 @@
+The domain model 'NBVR' describes the core structural elements and their relationships within the system.
+
+The model defines 136 main class(es).
+
+'ModifiedTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_TypeNoun' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_LocalName' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_Keyword' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'ItemElement' represents an important domain concept.
+It does not declare any attributes.
+
+'LocalName' represents an important domain concept.
+It does not declare any attributes.
+
+'Nominalization' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_Intension' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_VocVerb' represents an important domain concept.
+It has one attribute: 'arity', which is of type int.
+
+'NBVR_Grammar_ParseElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_Parse' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'VocAdjective' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_Noun' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_LexicalInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'PartPhrase' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Logic_Argument' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_Question' represents an important domain concept.
+It has one attribute: 'query', which is of type str.
+
+'VocUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Logic_NominalConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_Adjunct' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_Word' represents an important domain concept.
+It does not declare any attributes.
+
+'Formulation' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_RolePhrase' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_Instance' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_VocNoun' represents an important domain concept.
+It has one attribute: 'massNoun', which is of type bool.
+
+'NBVR_Vocabulary_Terminology' represents an important domain concept.
+It does not declare any attributes.
+
+'SyntaxForm' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_Dimension' represents an important domain concept.
+It has one attribute: 'exponent', which is of type int.
+
+'NBVR_Grammar_ProperName' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_Condition' represents an important domain concept.
+It has one attribute: 'otherwise', which is of type bool.
+
+'NBVR_Logic_Constant' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'NBVR_Grammar_SimpleNounPhrase' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_SyntaxForm' represents an important domain concept.
+It has the following attributes: 'isAuxForm', which is of type bool; 'text', which is of type str.
+
+'FormElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_Dictionary' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_RoleElement' represents an important domain concept.
+It has one attribute: 'slot', which is of type int.
+
+'NBVR_Grammar_Sentence' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_WordForm' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'Quantifier' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_Pronoun' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_VocAdjective' represents an important domain concept.
+It does not declare any attributes.
+
+'FormulationForm' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_VocName' represents an important domain concept.
+It does not declare any attributes.
+
+'Constant' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_FormElement' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'NBVR_Vocabulary_VocUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'QueryPhrase' represents an important domain concept.
+It does not declare any attributes.
+
+'Particle' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_CompoundForm' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'RoleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_Particle' represents an important domain concept.
+It does not declare any attributes.
+
+'Proposition' represents an important domain concept.
+It does not declare any attributes.
+
+'QualifierChain' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Logic_RoleVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_VocProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_Qualifier' represents an important domain concept.
+It does not declare any attributes.
+
+'VerbPhrase' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Logic_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NBVR_Logic_QuantityValue' represents an important domain concept.
+It has the following attributes: 'unit', which is of type str; 'factor', which is of type str.
+
+'NBVR_Vocabulary_VerbRole' represents an important domain concept.
+It has one attribute: 'isRange', which is of type bool.
+
+'Qualifier' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_Term' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'Instance' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_GroupPhrase' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'RolePhrase' represents an important domain concept.
+It does not declare any attributes.
+
+'Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_VerbPhrase' represents an important domain concept.
+It has the following attributes: 'negated', which is of type bool; 'modality', which is of type str.
+
+'NBVR_Grammar_Modifier' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'ParseElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeNoun' represents an important domain concept.
+It does not declare any attributes.
+
+'RoleVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'Verb' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Logic_Implication' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_Name' represents an important domain concept.
+It does not declare any attributes.
+
+'VocNoun' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_DateTime' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_Verb' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Logic_ExtentConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'VocVerb' represents an important domain concept.
+It does not declare any attributes.
+
+'Modifier' represents an important domain concept.
+It does not declare any attributes.
+
+'VocProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'NumberWord' represents an important domain concept.
+It does not declare any attributes.
+
+'Argument' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_ImplicationForm' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'NBVR_Logic_Negation' represents an important domain concept.
+It does not declare any attributes.
+
+'Grammar_ParseElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Word' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleNounPhrase' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_ItemElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleQualifier' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Logic_Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_QueryPhrase' represents an important domain concept.
+It has one attribute: 'query', which is of type str.
+
+'NBVR_Vocabulary_NumberWord' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'decimal', which is of type bool.
+
+'VocabularyItem' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_Adjective' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_ModifiedTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'Set' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_SimpleForm' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_VocabularyItem' represents an important domain concept.
+It does not declare any attributes.
+
+'Sentence' represents an important domain concept.
+It does not declare any attributes.
+
+'Term' represents an important domain concept.
+It does not declare any attributes.
+
+'Quantification' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_Nominalization' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Logic_Quantification' represents an important domain concept.
+It has the following attributes: 'unique', which is of type bool; 'kind', which is of type str.
+
+'NBVR_Vocabulary_StringWord' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_QualifierChain' represents an important domain concept.
+It does not declare any attributes.
+
+'Question' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_FormulationForm' represents an important domain concept.
+It does not declare any attributes.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_PropertyNoun' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_DomainForm' represents an important domain concept.
+It has one attribute: 'modality', which is of type str.
+
+'NBVR_Grammar_SimpleQualifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Dimension' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtentConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Logic_Connection' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'WordForm' represents an important domain concept.
+It does not declare any attributes.
+
+'Keyword' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Logic_Set' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Logic_Proposition' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'NBVR_Logic_Modal' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'VerbRole' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Vocabulary_Formulation' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'text', which is of type str.
+
+'VocName' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Logic_ValueConstant' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NBVR_Vocabulary_IsVerb' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Logic_Predicate' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Quantity' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_Quantifier' represents an important domain concept.
+It has the following attributes: 'count', which is of type int; 'kind', which is of type str.
+
+'NBVR_Grammar_Quantity' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_PartPhrase' represents an important domain concept.
+It does not declare any attributes.
+
+'Vocabulary_FormulationForm' represents an important domain concept.
+It does not declare any attributes.
+
+'NBVR_Grammar_RoleNoun' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'QuantifierKind' defines the following possible values: 'AtMost1', 'AtLeastN', 'Q_Any', 'Exactly1', 'AtLeast1', 'Q_No', 'LessThanN', 'AtMostN', 'MoreThanN', 'Q_An', 'ExactlyN', 'Q_The', 'Q_All'.
+The enumeration 'Connective' defines the following possible values: 'Xor', 'Eqv', 'And', 'OnlyIf', 'Nor', 'Or', 'Unless', 'If'.
+The enumeration 'VocItemKind' defines the following possible values: 'VerbConcept', 'NounConcept', 'AdjectiveConcept', 'PropertyConcept', 'ProperName'.
+The enumeration 'GroupKind' defines the following possible values: 'All', 'Choice', 'Neither', 'Joint', 'Instead'.
+The enumeration 'PhraseType' defines the following possible values: 'Interrogative', 'Pronoun', 'TypeNoun', 'Anaphor', 'LocalName', 'Query', 'Property', 'Group', 'RoleNoun', 'Instance'.
+The enumeration 'ElementKind' defines the following possible values: 'Pronoun', 'Noun', 'Instance', 'Query', 'Property', 'Quantifier', 'Group', 'Condition', 'Role', 'Modifier', 'Sentence', 'Qualifier', 'None'.
+The enumeration 'QueryKind' defines the following possible values: 'How', 'HowMany', 'Whether', 'Why', 'When', 'Any', 'Where', 'What'.
+The enumeration 'FormElementKind' defines the following possible values: 'SubjectRole', 'ParticleRole', 'ObjectRole', 'ItemElement', 'ParticleElement'.
+The enumeration 'InstanceKind' defines the following possible values: 'Number', 'Query', 'Statement', 'Name', 'Concept', 'Question', 'Quantity', 'String'.
+The enumeration 'PropositionKind' defines the following possible values: 'Modal', 'Connection', 'Negation', 'Quantification', 'Relation', 'Implication'.
+The enumeration 'SentenceType' defines the following possible values: 'Implication', 'Domain', 'Simple', 'Compound', 'Equivalence', 'Modal', 'Other'.
+The enumeration 'KeywordKind' defines the following possible values: 'K_Must', 'K_For', 'K_Instead', 'K_Else', 'Adjunct', 'K_No', 'K_Least', 'K_May', 'K_Something', 'K_Why', 'K_Together', 'K_Many', 'K_Another', 'K_Nor', 'Genitive', 'K_Whether', 'K_How', 'K_Only', 'K_Exactly', 'K_Less', 'K_This', 'K_What', 'K_Both', 'K_At', 'Function', 'K_Self', 'K_Whose', 'K_Where', 'K_And', 'K_As', 'K_Of', 'K_Most', 'K_When', 'K_Any', 'K_Not', 'K_But', 'K_That', 'K_Either', 'K_Nothing', 'K_Same', 'Pronoun', 'K_An', 'K_One', 'K_More', 'K_Than', 'K_Neither', 'K_If', 'K_Always', 'K_None', 'K_Unless', 'K_Or', 'K_Different', 'Anaphor', 'K_Everything', 'K_Which', 'K_Then', 'K_All', 'K_The', 'K_Other', 'K_There', 'K_Anything'.
+The enumeration 'Modality' defines the following possible values: 'Obligation', 'Prohibition', 'Negation', 'Possibility', 'Impossibility', 'Antipreference', 'Nonpreference', 'None', 'PermittedNot', 'Preference', 'Permission'.
+
+The model also captures inheritance relationships between classes.
+The class 'NBVR_Vocabulary_Adjective' is a specialization of 'Word'.
+The class 'NBVR_Vocabulary_VocNoun' is a specialization of 'VocabularyItem'.
+The class 'NBVR_Vocabulary_VocVerb' is a specialization of 'VocabularyItem'.
+The class 'NBVR_Vocabulary_VocProperty' is a specialization of 'VocabularyItem'.
+The class 'NBVR_Vocabulary_NumberWord' is a specialization of 'Word'.
+The class 'NBVR_Vocabulary_VocUnit' is a specialization of 'VocName'.
+The class 'NBVR_Vocabulary_VocName' is a specialization of 'VocabularyItem'.
+The class 'NBVR_Vocabulary_VocAdjective' is a specialization of 'VocabularyItem'.
+The class 'NBVR_Vocabulary_Particle' is a specialization of 'FormElement'.
+The class 'NBVR_Vocabulary_RoleElement' is a specialization of 'FormElement'.
+The class 'NBVR_Vocabulary_Keyword' is a specialization of 'Word'.
+The class 'NBVR_Vocabulary_ItemElement' is a specialization of 'FormElement'.
+The class 'NBVR_Vocabulary_Adjunct' is a specialization of 'Word'.
+The class 'NBVR_Vocabulary_Noun' is a specialization of 'Word'.
+The class 'NBVR_Vocabulary_Name' is a specialization of 'Word'.
+The class 'NBVR_Vocabulary_Verb' is a specialization of 'Word'.
+The class 'NBVR_Vocabulary_StringWord' is a specialization of 'Word'.
+The class 'NBVR_Vocabulary_Definition' is a specialization of 'Formulation'.
+The class 'NBVR_Vocabulary_DateTime' is a specialization of 'Word'.
+The class 'NBVR_Vocabulary_IsVerb' is a specialization of 'Verb'.
+The class 'NBVR_Grammar_GroupPhrase' is a specialization of 'RolePhrase'.
+The class 'NBVR_Grammar_RolePhrase' is a specialization of 'Vocabulary_FormulationForm'.
+The class 'NBVR_Grammar_RolePhrase' is a specialization of 'Grammar_ParseElement'.
+The class 'NBVR_Grammar_SimpleNounPhrase' is a specialization of 'RolePhrase'.
+The class 'NBVR_Grammar_Condition' is a specialization of 'ParseElement'.
+The class 'NBVR_Grammar_SimpleQualifier' is a specialization of 'Qualifier'.
+The class 'NBVR_Grammar_Qualifier' is a specialization of 'ParseElement'.
+The class 'NBVR_Grammar_QualifierChain' is a specialization of 'Qualifier'.
+The class 'NBVR_Grammar_Sentence' is a specialization of 'Vocabulary_FormulationForm'.
+The class 'NBVR_Grammar_Sentence' is a specialization of 'Grammar_ParseElement'.
+The class 'NBVR_Grammar_TypeNoun' is a specialization of 'ModifiedTerm'.
+The class 'NBVR_Grammar_ModifiedTerm' is a specialization of 'SimpleNounPhrase'.
+The class 'NBVR_Grammar_Quantifier' is a specialization of 'ParseElement'.
+The class 'NBVR_Grammar_Quantity' is a specialization of 'Instance'.
+The class 'NBVR_Grammar_Instance' is a specialization of 'SimpleNounPhrase'.
+The class 'NBVR_Grammar_Modifier' is a specialization of 'ParseElement'.
+The class 'NBVR_Grammar_PropertyNoun' is a specialization of 'ModifiedTerm'.
+The class 'NBVR_Grammar_RoleNoun' is a specialization of 'SimpleNounPhrase'.
+The class 'NBVR_Grammar_SimpleForm' is a specialization of 'Sentence'.
+The class 'NBVR_Grammar_ImplicationForm' is a specialization of 'Sentence'.
+The class 'NBVR_Grammar_CompoundForm' is a specialization of 'Sentence'.
+The class 'NBVR_Grammar_LexicalInstance' is a specialization of 'Instance'.
+The class 'NBVR_Grammar_Nominalization' is a specialization of 'Instance'.
+The class 'NBVR_Grammar_Statement' is a specialization of 'Nominalization'.
+The class 'NBVR_Grammar_Question' is a specialization of 'Nominalization'.
+The class 'NBVR_Grammar_QueryPhrase' is a specialization of 'RolePhrase'.
+The class 'NBVR_Grammar_ProperName' is a specialization of 'Instance'.
+The class 'NBVR_Grammar_Pronoun' is a specialization of 'ModifiedTerm'.
+The class 'NBVR_Grammar_Intension' is a specialization of 'Instance'.
+The class 'NBVR_Grammar_DomainForm' is a specialization of 'Sentence'.
+The class 'NBVR_Grammar_LocalName' is a specialization of 'SimpleNounPhrase'.
+The class 'NBVR_Logic_Quantification' is a specialization of 'Proposition'.
+The class 'NBVR_Logic_Proposition' is a specialization of 'FormulationForm'.
+The class 'NBVR_Logic_Relation' is a specialization of 'Proposition'.
+The class 'NBVR_Logic_ExtentConstant' is a specialization of 'Constant'.
+The class 'NBVR_Logic_Connection' is a specialization of 'Proposition'.
+The class 'NBVR_Logic_Implication' is a specialization of 'Proposition'.
+The class 'NBVR_Logic_Modal' is a specialization of 'Proposition'.
+The class 'NBVR_Logic_Negation' is a specialization of 'Proposition'.
+The class 'NBVR_Logic_RoleVariable' is a specialization of 'Variable'.
+The class 'NBVR_Logic_ValueConstant' is a specialization of 'Constant'.
+The class 'NBVR_Logic_NominalConstant' is a specialization of 'Constant'.
+The class 'NBVR_Logic_QuantityValue' is a specialization of 'Constant'.
+
+Relationships between classes are modeled using associations.
+An association connects 'WordForm' and 'NBVR_Vocabulary_Word'. From 'WordForm', the role 'WordForm' has cardinality 0..*, and from 'NBVR_Vocabulary_Word', the role 'NBVR_Vocabulary_Word' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_Word' and 'Term'. From 'NBVR_Vocabulary_Word', the role 'NBVR_Vocabulary_Word2' has cardinality 0..*, and from 'Term', the role 'Term' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_Word' and 'Word'. From 'NBVR_Vocabulary_Word', the role 'NBVR_Vocabulary_Word4' has cardinality 0..*, and from 'Word', the role 'Word' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_WordForm' and 'WordForm'. From 'NBVR_Vocabulary_WordForm', the role 'NBVR_Vocabulary_WordForm' has cardinality 0..*, and from 'WordForm', the role 'WordForm6' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_WordForm' and 'Word'. From 'NBVR_Vocabulary_WordForm', the role 'NBVR_Vocabulary_WordForm8' has cardinality 0..*, and from 'Word', the role 'Word9' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_WordForm' and 'Word'. From 'NBVR_Vocabulary_WordForm', the role 'NBVR_Vocabulary_WordForm11' has cardinality 0..*, and from 'Word', the role 'Word12' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_Term' and 'VocabularyItem'. From 'NBVR_Vocabulary_Term', the role 'VocabularyItem' has cardinality 0..*, and from 'VocabularyItem', the role 'Vocabulary' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_Term' and 'VerbRole'. From 'NBVR_Vocabulary_Term', the role 'VerbRole' has cardinality 0..*, and from 'VerbRole', the role 'Vocabulary15' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_Term' and 'Particle'. From 'NBVR_Vocabulary_Term', the role 'Particle' has cardinality 0..*, and from 'Particle', the role 'Vocabulary17' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_Term' and 'Word'. From 'NBVR_Vocabulary_Term', the role 'NBVR_Vocabulary_Term' has cardinality 0..*, and from 'Word', the role 'Word19' has cardinality 0..*.
+An association connects 'VocabularyItem' and 'NBVR_Vocabulary_Term'. From 'VocabularyItem', the role 'VocabularyItem22' has cardinality 0..*, and from 'NBVR_Vocabulary_Term', the role 'NBVR_Vocabulary_Term21' has cardinality 0..*.
+An association connects 'ItemElement' and 'NBVR_Vocabulary_Term'. From 'ItemElement', the role 'Vocabulary24' has cardinality 0..*, and from 'NBVR_Vocabulary_Term', the role 'ItemElement' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_VocabularyItem' and 'Formulation'. From 'NBVR_Vocabulary_VocabularyItem', the role 'Formulation' has cardinality 0..*, and from 'Formulation', the role 'Vocabulary26' has cardinality 0..*.
+An association connects 'VocabularyItem' and 'NBVR_Vocabulary_VocabularyItem'. From 'VocabularyItem', the role 'VocabularyItem28' has cardinality 0..*, and from 'NBVR_Vocabulary_VocabularyItem', the role 'NBVR_Vocabulary_VocabularyItem' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_VocabularyItem' and 'VocabularyItem'. From 'NBVR_Vocabulary_VocabularyItem', the role 'NBVR_Vocabulary_VocabularyItem30' has cardinality 0..*, and from 'VocabularyItem', the role 'VocabularyItem31' has cardinality 0..*.
+An association connects 'Term' and 'NBVR_Vocabulary_VocabularyItem'. From 'Term', the role 'Vocabulary34' has cardinality 0..*, and from 'NBVR_Vocabulary_VocabularyItem', the role 'Term33' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_Formulation' and 'FormulationForm'. From 'NBVR_Vocabulary_Formulation', the role 'FormulationForm' has cardinality 0..*, and from 'FormulationForm', the role 'Vocabulary36' has cardinality 0..*.
+An association connects 'ParseElement' and 'NBVR_Vocabulary_Formulation'. From 'ParseElement', the role 'ParseElement' has cardinality 0..*, and from 'NBVR_Vocabulary_Formulation', the role 'NBVR_Vocabulary_Formulation' has cardinality 0..*.
+An association connects 'VocabularyItem' and 'NBVR_Vocabulary_Formulation'. From 'VocabularyItem', the role 'Vocabulary40' has cardinality 0..*, and from 'NBVR_Vocabulary_Formulation', the role 'VocabularyItem39' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_FormulationForm' and 'Formulation'. From 'NBVR_Vocabulary_FormulationForm', the role 'Formulation42' has cardinality 0..*, and from 'Formulation', the role 'Vocabulary43' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_VerbRole' and 'VocNoun'. From 'NBVR_Vocabulary_VerbRole', the role 'NBVR_Vocabulary_VerbRole' has cardinality 0..*, and from 'VocNoun', the role 'VocNoun' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_VerbRole' and 'VocVerb'. From 'NBVR_Vocabulary_VerbRole', the role 'VocVerb' has cardinality 0..*, and from 'VocVerb', the role 'Vocabulary46' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_VerbRole' and 'Term'. From 'NBVR_Vocabulary_VerbRole', the role 'Term48' has cardinality 0..*, and from 'Term', the role 'Vocabulary49' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_VocNoun' and 'VocVerb'. From 'NBVR_Vocabulary_VocNoun', the role 'NBVR_Vocabulary_VocNoun' has cardinality 0..*, and from 'VocVerb', the role 'VocVerb51' has cardinality 0..*.
+An association connects 'Predicate' and 'NBVR_Vocabulary_VocNoun'. From 'Predicate', the role 'Logic' has cardinality 0..*, and from 'NBVR_Vocabulary_VocNoun', the role 'Predicate' has cardinality 0..*.
+An association connects 'VerbRole' and 'NBVR_Vocabulary_VocVerb'. From 'VerbRole', the role 'Vocabulary55' has cardinality 0..*, and from 'NBVR_Vocabulary_VocVerb', the role 'VerbRole54' has cardinality 0..*.
+An association connects 'SyntaxForm' and 'NBVR_Vocabulary_VocVerb'. From 'SyntaxForm', the role 'Vocabulary57' has cardinality 0..*, and from 'NBVR_Vocabulary_VocVerb', the role 'SyntaxForm' has cardinality 0..*.
+An association connects 'Predicate' and 'NBVR_Vocabulary_VocVerb'. From 'Predicate', the role 'Logic60' has cardinality 0..*, and from 'NBVR_Vocabulary_VocVerb', the role 'Predicate59' has cardinality 0..*.
+An association connects 'FormElement' and 'NBVR_Vocabulary_SyntaxForm'. From 'FormElement', the role 'Vocabulary62' has cardinality 0..*, and from 'NBVR_Vocabulary_SyntaxForm', the role 'FormElement' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_SyntaxForm' and 'VocProperty'. From 'NBVR_Vocabulary_SyntaxForm', the role 'VocProperty' has cardinality 0..*, and from 'VocProperty', the role 'Vocabulary64' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_SyntaxForm' and 'VocVerb'. From 'NBVR_Vocabulary_SyntaxForm', the role 'VocVerb66' has cardinality 0..*, and from 'VocVerb', the role 'Vocabulary67' has cardinality 0..*.
+An association connects 'SyntaxForm' and 'NBVR_Vocabulary_FormElement'. From 'SyntaxForm', the role 'Vocabulary70' has cardinality 0..*, and from 'NBVR_Vocabulary_FormElement', the role 'SyntaxForm69' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_VocProperty' and 'VocNoun'. From 'NBVR_Vocabulary_VocProperty', the role 'NBVR_Vocabulary_VocProperty' has cardinality 0..*, and from 'VocNoun', the role 'VocNoun72' has cardinality 0..*.
+An association connects 'VocNoun' and 'NBVR_Vocabulary_VocProperty'. From 'VocNoun', the role 'VocNoun75' has cardinality 0..*, and from 'NBVR_Vocabulary_VocProperty', the role 'NBVR_Vocabulary_VocProperty74' has cardinality 0..*.
+An association connects 'VocVerb' and 'NBVR_Vocabulary_VocProperty'. From 'VocVerb', the role 'VocVerb78' has cardinality 0..*, and from 'NBVR_Vocabulary_VocProperty', the role 'NBVR_Vocabulary_VocProperty77' has cardinality 0..*.
+An association connects 'SyntaxForm' and 'NBVR_Vocabulary_VocProperty'. From 'SyntaxForm', the role 'Vocabulary81' has cardinality 0..*, and from 'NBVR_Vocabulary_VocProperty', the role 'SyntaxForm80' has cardinality 0..*.
+An association connects 'VocProperty' and 'NBVR_Vocabulary_VocUnit'. From 'VocProperty', the role 'VocProperty83' has cardinality 0..*, and from 'NBVR_Vocabulary_VocUnit', the role 'NBVR_Vocabulary_VocUnit' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_VocAdjective' and 'VocNoun'. From 'NBVR_Vocabulary_VocAdjective', the role 'NBVR_Vocabulary_VocAdjective' has cardinality 0..*, and from 'VocNoun', the role 'VocNoun85' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_VocAdjective' and 'VocVerb'. From 'NBVR_Vocabulary_VocAdjective', the role 'NBVR_Vocabulary_VocAdjective87' has cardinality 0..*, and from 'VocVerb', the role 'VocVerb88' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_Particle' and 'RoleElement'. From 'NBVR_Vocabulary_Particle', the role 'NBVR_Vocabulary_Particle' has cardinality 0..*, and from 'RoleElement', the role 'RoleElement' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_Particle' and 'Term'. From 'NBVR_Vocabulary_Particle', the role 'Term91' has cardinality 0..*, and from 'Term', the role 'Vocabulary92' has cardinality 0..*.
+An association connects 'VerbRole' and 'NBVR_Vocabulary_RoleElement'. From 'VerbRole', the role 'VerbRole94' has cardinality 0..*, and from 'NBVR_Vocabulary_RoleElement', the role 'NBVR_Vocabulary_RoleElement' has cardinality 0..*.
+An association connects 'Term' and 'NBVR_Vocabulary_ItemElement'. From 'Term', the role 'Vocabulary97' has cardinality 0..*, and from 'NBVR_Vocabulary_ItemElement', the role 'Term96' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_Noun' and 'WordForm'. From 'NBVR_Vocabulary_Noun', the role 'NBVR_Vocabulary_Noun' has cardinality 0..*, and from 'WordForm', the role 'WordForm99' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_Noun' and 'WordForm'. From 'NBVR_Vocabulary_Noun', the role 'NBVR_Vocabulary_Noun101' has cardinality 0..*, and from 'WordForm', the role 'WordForm102' has cardinality 0..*.
+An association connects 'WordForm' and 'NBVR_Vocabulary_Verb'. From 'WordForm', the role 'WordForm104' has cardinality 0..*, and from 'NBVR_Vocabulary_Verb', the role 'NBVR_Vocabulary_Verb' has cardinality 0..*.
+An association connects 'WordForm' and 'NBVR_Vocabulary_Verb'. From 'WordForm', the role 'WordForm107' has cardinality 0..*, and from 'NBVR_Vocabulary_Verb', the role 'NBVR_Vocabulary_Verb106' has cardinality 0..*.
+An association connects 'WordForm' and 'NBVR_Vocabulary_Verb'. From 'WordForm', the role 'WordForm110' has cardinality 0..*, and from 'NBVR_Vocabulary_Verb', the role 'NBVR_Vocabulary_Verb109' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_Verb' and 'WordForm'. From 'NBVR_Vocabulary_Verb', the role 'NBVR_Vocabulary_Verb112' has cardinality 0..*, and from 'WordForm', the role 'WordForm113' has cardinality 0..*.
+An association connects 'WordForm' and 'NBVR_Vocabulary_Verb'. From 'WordForm', the role 'WordForm116' has cardinality 0..*, and from 'NBVR_Vocabulary_Verb', the role 'NBVR_Vocabulary_Verb115' has cardinality 0..*.
+An association connects 'WordForm' and 'NBVR_Vocabulary_Verb'. From 'WordForm', the role 'WordForm119' has cardinality 0..*, and from 'NBVR_Vocabulary_Verb', the role 'NBVR_Vocabulary_Verb118' has cardinality 0..*.
+An association connects 'NBVR_Vocabulary_Dictionary' and 'Word'. From 'NBVR_Vocabulary_Dictionary', the role 'NBVR_Vocabulary_Dictionary' has cardinality 0..*, and from 'Word', the role 'Word121' has cardinality 0..*.
+An association connects 'VocabularyItem' and 'NBVR_Vocabulary_Terminology'. From 'VocabularyItem', the role 'VocabularyItem123' has cardinality 0..*, and from 'NBVR_Vocabulary_Terminology', the role 'NBVR_Vocabulary_Terminology' has cardinality 0..*.
+An association connects 'VocabularyItem' and 'NBVR_Vocabulary_Terminology'. From 'VocabularyItem', the role 'VocabularyItem126' has cardinality 0..*, and from 'NBVR_Vocabulary_Terminology', the role 'NBVR_Vocabulary_Terminology125' has cardinality 0..*.
+An association connects 'NBVR_Grammar_GroupPhrase' and 'SimpleNounPhrase'. From 'NBVR_Grammar_GroupPhrase', the role 'NBVR_Grammar_GroupPhrase' has cardinality 0..*, and from 'SimpleNounPhrase', the role 'SimpleNounPhrase' has cardinality 0..*.
+An association connects 'NBVR_Grammar_RolePhrase' and 'VerbRole'. From 'NBVR_Grammar_RolePhrase', the role 'NBVR_Grammar_RolePhrase' has cardinality 0..*, and from 'VerbRole', the role 'VerbRole129' has cardinality 0..*.
+An association connects 'NBVR_Grammar_RolePhrase' and 'Variable'. From 'NBVR_Grammar_RolePhrase', the role 'NBVR_Grammar_RolePhrase131' has cardinality 0..*, and from 'Variable', the role 'Variable' has cardinality 0..*.
+An association connects 'NBVR_Grammar_RolePhrase' and 'RolePhrase'. From 'NBVR_Grammar_RolePhrase', the role 'NBVR_Grammar_RolePhrase133' has cardinality 0..*, and from 'RolePhrase', the role 'RolePhrase' has cardinality 0..*.
+An association connects 'NBVR_Grammar_Condition' and 'SimpleQualifier'. From 'NBVR_Grammar_Condition', the role 'SimpleQualifier' has cardinality 0..*, and from 'SimpleQualifier', the role 'Grammar' has cardinality 0..*.
+An association connects 'Sentence' and 'NBVR_Grammar_Condition'. From 'Sentence', the role 'Sentence' has cardinality 0..*, and from 'NBVR_Grammar_Condition', the role 'NBVR_Grammar_Condition' has cardinality 0..*.
+An association connects 'NBVR_Grammar_SimpleQualifier' and 'QualifierChain'. From 'NBVR_Grammar_SimpleQualifier', the role 'QualifierChain' has cardinality 0..*, and from 'QualifierChain', the role 'Grammar137' has cardinality 0..*.
+An association connects 'NBVR_Grammar_SimpleQualifier' and 'Sentence'. From 'NBVR_Grammar_SimpleQualifier', the role 'NBVR_Grammar_SimpleQualifier' has cardinality 0..*, and from 'Sentence', the role 'Sentence139' has cardinality 0..*.
+An association connects 'Condition' and 'NBVR_Grammar_SimpleQualifier'. From 'Condition', the role 'Grammar141' has cardinality 0..*, and from 'NBVR_Grammar_SimpleQualifier', the role 'Condition' has cardinality 0..*.
+An association connects 'NBVR_Grammar_QualifierChain' and 'SimpleQualifier'. From 'NBVR_Grammar_QualifierChain', the role 'SimpleQualifier143' has cardinality 0..*, and from 'SimpleQualifier', the role 'Grammar144' has cardinality 0..*.
+An association connects 'RolePhrase' and 'NBVR_Grammar_Sentence'. From 'RolePhrase', the role 'RolePhrase146' has cardinality 0..*, and from 'NBVR_Grammar_Sentence', the role 'NBVR_Grammar_Sentence' has cardinality 0..*.
+An association connects 'Sentence' and 'NBVR_Grammar_Sentence'. From 'Sentence', the role 'Sentence149' has cardinality 0..*, and from 'NBVR_Grammar_Sentence', the role 'NBVR_Grammar_Sentence148' has cardinality 0..*.
+An association connects 'VocNoun' and 'NBVR_Grammar_TypeNoun'. From 'VocNoun', the role 'VocNoun151' has cardinality 0..*, and from 'NBVR_Grammar_TypeNoun', the role 'NBVR_Grammar_TypeNoun' has cardinality 0..*.
+An association connects 'NBVR_Grammar_ModifiedTerm' and 'Quantifier'. From 'NBVR_Grammar_ModifiedTerm', the role 'NBVR_Grammar_ModifiedTerm' has cardinality 0..*, and from 'Quantifier', the role 'Quantifier' has cardinality 0..*.
+An association connects 'NBVR_Grammar_ModifiedTerm' and 'Modifier'. From 'NBVR_Grammar_ModifiedTerm', the role 'NBVR_Grammar_ModifiedTerm154' has cardinality 0..*, and from 'Modifier', the role 'Modifier' has cardinality 0..*.
+An association connects 'Qualifier' and 'NBVR_Grammar_ModifiedTerm'. From 'Qualifier', the role 'Qualifier' has cardinality 0..*, and from 'NBVR_Grammar_ModifiedTerm', the role 'NBVR_Grammar_ModifiedTerm156' has cardinality 0..*.
+An association connects 'Quantity' and 'NBVR_Grammar_Quantifier'. From 'Quantity', the role 'Quantity' has cardinality 0..*, and from 'NBVR_Grammar_Quantifier', the role 'NBVR_Grammar_Quantifier' has cardinality 0..*.
+An association connects 'NBVR_Grammar_Quantity' and 'NumberWord'. From 'NBVR_Grammar_Quantity', the role 'NBVR_Grammar_Quantity' has cardinality 0..*, and from 'NumberWord', the role 'NumberWord' has cardinality 0..*.
+An association connects 'Dimension' and 'NBVR_Grammar_Quantity'. From 'Dimension', the role 'Dimension' has cardinality 0..*, and from 'NBVR_Grammar_Quantity', the role 'NBVR_Grammar_Quantity160' has cardinality 0..*.
+An association connects 'VocUnit' and 'NBVR_Grammar_Dimension'. From 'VocUnit', the role 'VocUnit' has cardinality 0..*, and from 'NBVR_Grammar_Dimension', the role 'NBVR_Grammar_Dimension' has cardinality 0..*.
+An association connects 'VocAdjective' and 'NBVR_Grammar_Modifier'. From 'VocAdjective', the role 'VocAdjective' has cardinality 0..*, and from 'NBVR_Grammar_Modifier', the role 'NBVR_Grammar_Modifier' has cardinality 0..*.
+An association connects 'RolePhrase' and 'NBVR_Grammar_Modifier'. From 'RolePhrase', the role 'RolePhrase165' has cardinality 0..*, and from 'NBVR_Grammar_Modifier', the role 'NBVR_Grammar_Modifier164' has cardinality 0..*.
+An association connects 'VocProperty' and 'NBVR_Grammar_PropertyNoun'. From 'VocProperty', the role 'VocProperty167' has cardinality 0..*, and from 'NBVR_Grammar_PropertyNoun', the role 'NBVR_Grammar_PropertyNoun' has cardinality 0..*.
+An association connects 'SimpleNounPhrase' and 'NBVR_Grammar_PropertyNoun'. From 'SimpleNounPhrase', the role 'SimpleNounPhrase170' has cardinality 0..*, and from 'NBVR_Grammar_PropertyNoun', the role 'NBVR_Grammar_PropertyNoun169' has cardinality 0..*.
+An association connects 'NBVR_Grammar_PropertyNoun' and 'TypeNoun'. From 'NBVR_Grammar_PropertyNoun', the role 'NBVR_Grammar_PropertyNoun172' has cardinality 0..*, and from 'TypeNoun', the role 'TypeNoun' has cardinality 0..*.
+An association connects 'VerbRole' and 'NBVR_Grammar_RoleNoun'. From 'VerbRole', the role 'VerbRole174' has cardinality 0..*, and from 'NBVR_Grammar_RoleNoun', the role 'NBVR_Grammar_RoleNoun' has cardinality 0..*.
+An association connects 'VocVerb' and 'NBVR_Grammar_VerbPhrase'. From 'VocVerb', the role 'VocVerb176' has cardinality 0..*, and from 'NBVR_Grammar_VerbPhrase', the role 'NBVR_Grammar_VerbPhrase' has cardinality 0..*.
+An association connects 'NBVR_Grammar_PartPhrase' and 'RolePhrase'. From 'NBVR_Grammar_PartPhrase', the role 'NBVR_Grammar_PartPhrase' has cardinality 0..*, and from 'RolePhrase', the role 'RolePhrase178' has cardinality 0..*.
+An association connects 'NBVR_Grammar_PartPhrase' and 'Particle'. From 'NBVR_Grammar_PartPhrase', the role 'NBVR_Grammar_PartPhrase180' has cardinality 0..*, and from 'Particle', the role 'Particle181' has cardinality 0..*.
+An association connects 'VerbPhrase' and 'NBVR_Grammar_SimpleForm'. From 'VerbPhrase', the role 'VerbPhrase' has cardinality 0..*, and from 'NBVR_Grammar_SimpleForm', the role 'NBVR_Grammar_SimpleForm' has cardinality 0..*.
+An association connects 'PartPhrase' and 'NBVR_Grammar_SimpleForm'. From 'PartPhrase', the role 'PartPhrase' has cardinality 0..*, and from 'NBVR_Grammar_SimpleForm', the role 'NBVR_Grammar_SimpleForm184' has cardinality 0..*.
+An association connects 'RolePhrase' and 'NBVR_Grammar_SimpleForm'. From 'RolePhrase', the role 'RolePhrase187' has cardinality 0..*, and from 'NBVR_Grammar_SimpleForm', the role 'NBVR_Grammar_SimpleForm186' has cardinality 0..*.
+An association connects 'NBVR_Grammar_SimpleForm' and 'RolePhrase'. From 'NBVR_Grammar_SimpleForm', the role 'NBVR_Grammar_SimpleForm189' has cardinality 0..*, and from 'RolePhrase', the role 'RolePhrase190' has cardinality 0..*.
+An association connects 'Sentence' and 'NBVR_Grammar_ImplicationForm'. From 'Sentence', the role 'Sentence192' has cardinality 0..*, and from 'NBVR_Grammar_ImplicationForm', the role 'NBVR_Grammar_ImplicationForm' has cardinality 0..*.
+An association connects 'NBVR_Grammar_ImplicationForm' and 'Sentence'. From 'NBVR_Grammar_ImplicationForm', the role 'NBVR_Grammar_ImplicationForm194' has cardinality 0..*, and from 'Sentence', the role 'Sentence195' has cardinality 0..*.
+An association connects 'Sentence' and 'NBVR_Grammar_ImplicationForm'. From 'Sentence', the role 'Sentence198' has cardinality 0..*, and from 'NBVR_Grammar_ImplicationForm', the role 'NBVR_Grammar_ImplicationForm197' has cardinality 0..*.
+An association connects 'NBVR_Grammar_CompoundForm' and 'Sentence'. From 'NBVR_Grammar_CompoundForm', the role 'NBVR_Grammar_CompoundForm' has cardinality 0..*, and from 'Sentence', the role 'Sentence200' has cardinality 0..*.
+An association connects 'NBVR_Grammar_LexicalInstance' and 'Word'. From 'NBVR_Grammar_LexicalInstance', the role 'NBVR_Grammar_LexicalInstance' has cardinality 0..*, and from 'Word', the role 'Word202' has cardinality 0..*.
+An association connects 'NBVR_Grammar_Nominalization' and 'Sentence'. From 'NBVR_Grammar_Nominalization', the role 'NBVR_Grammar_Nominalization' has cardinality 0..*, and from 'Sentence', the role 'Sentence204' has cardinality 0..*.
+An association connects 'NBVR_Grammar_Question' and 'QueryPhrase'. From 'NBVR_Grammar_Question', the role 'QueryPhrase' has cardinality 0..*, and from 'QueryPhrase', the role 'Grammar206' has cardinality 0..*.
+An association connects 'RolePhrase' and 'NBVR_Grammar_QueryPhrase'. From 'RolePhrase', the role 'RolePhrase208' has cardinality 0..*, and from 'NBVR_Grammar_QueryPhrase', the role 'NBVR_Grammar_QueryPhrase' has cardinality 0..*.
+An association connects 'Question' and 'NBVR_Grammar_QueryPhrase'. From 'Question', the role 'Grammar210' has cardinality 0..*, and from 'NBVR_Grammar_QueryPhrase', the role 'Question' has cardinality 0..*.
+An association connects 'VocName' and 'NBVR_Grammar_ProperName'. From 'VocName', the role 'VocName' has cardinality 0..*, and from 'NBVR_Grammar_ProperName', the role 'NBVR_Grammar_ProperName' has cardinality 0..*.
+An association connects 'NBVR_Grammar_Pronoun' and 'Keyword'. From 'NBVR_Grammar_Pronoun', the role 'NBVR_Grammar_Pronoun' has cardinality 0..*, and from 'Keyword', the role 'Keyword' has cardinality 0..*.
+An association connects 'NBVR_Grammar_Intension' and 'RolePhrase'. From 'NBVR_Grammar_Intension', the role 'NBVR_Grammar_Intension' has cardinality 0..*, and from 'RolePhrase', the role 'RolePhrase214' has cardinality 0..*.
+An association connects 'NBVR_Grammar_DomainForm' and 'Sentence'. From 'NBVR_Grammar_DomainForm', the role 'NBVR_Grammar_DomainForm' has cardinality 0..*, and from 'Sentence', the role 'Sentence216' has cardinality 0..*.
+An association connects 'Word' and 'NBVR_Grammar_LocalName'. From 'Word', the role 'Word218' has cardinality 0..*, and from 'NBVR_Grammar_LocalName', the role 'NBVR_Grammar_LocalName' has cardinality 0..*.
+An association connects 'LocalName' and 'NBVR_Grammar_LocalName'. From 'LocalName', the role 'LocalName' has cardinality 0..*, and from 'NBVR_Grammar_LocalName', the role 'NBVR_Grammar_LocalName220' has cardinality 0..*.
+An association connects 'ParseElement' and 'NBVR_Grammar_ParseElement'. From 'ParseElement', the role 'ParseElement222' has cardinality 0..*, and from 'NBVR_Grammar_ParseElement', the role 'NBVR_Grammar_ParseElement' has cardinality 0..*.
+An association connects 'Quantification' and 'NBVR_Logic_Variable'. From 'Quantification', the role 'Logic224' has cardinality 0..*, and from 'NBVR_Logic_Variable', the role 'Quantification' has cardinality 0..*.
+An association connects 'Proposition' and 'NBVR_Logic_Variable'. From 'Proposition', the role 'Proposition' has cardinality 0..*, and from 'NBVR_Logic_Variable', the role 'NBVR_Logic_Variable' has cardinality 0..*.
+An association connects 'Relation' and 'NBVR_Logic_Variable'. From 'Relation', the role 'Relation' has cardinality 0..*, and from 'NBVR_Logic_Variable', the role 'NBVR_Logic_Variable227' has cardinality 0..*.
+An association connects 'VocNoun' and 'NBVR_Logic_Variable'. From 'VocNoun', the role 'VocNoun230' has cardinality 0..*, and from 'NBVR_Logic_Variable', the role 'NBVR_Logic_Variable229' has cardinality 0..*.
+An association connects 'Set' and 'NBVR_Logic_Variable'. From 'Set', the role 'Logic232' has cardinality 0..*, and from 'NBVR_Logic_Variable', the role 'Set' has cardinality 0..*.
+An association connects 'NBVR_Logic_Quantification' and 'Proposition'. From 'NBVR_Logic_Quantification', the role 'NBVR_Logic_Quantification' has cardinality 0..*, and from 'Proposition', the role 'Proposition234' has cardinality 0..*.
+An association connects 'Variable' and 'NBVR_Logic_Quantification'. From 'Variable', the role 'Logic237' has cardinality 0..*, and from 'NBVR_Logic_Quantification', the role 'Variable236' has cardinality 0..*.
+An association connects 'NBVR_Logic_Proposition' and 'Proposition'. From 'NBVR_Logic_Proposition', the role 'NBVR_Logic_Proposition' has cardinality 0..*, and from 'Proposition', the role 'Proposition239' has cardinality 0..*.
+An association connects 'Argument' and 'NBVR_Logic_Relation'. From 'Argument', the role 'Logic241' has cardinality 0..*, and from 'NBVR_Logic_Relation', the role 'Argument' has cardinality 0..*.
+An association connects 'NBVR_Logic_Relation' and 'Predicate'. From 'NBVR_Logic_Relation', the role 'NBVR_Logic_Relation' has cardinality 0..*, and from 'Predicate', the role 'Predicate243' has cardinality 0..*.
+An association connects 'Argument' and 'NBVR_Logic_Argument'. From 'Argument', the role 'Argument245' has cardinality 0..*, and from 'NBVR_Logic_Argument', the role 'NBVR_Logic_Argument' has cardinality 0..*.
+An association connects 'NBVR_Logic_Argument' and 'Variable'. From 'NBVR_Logic_Argument', the role 'NBVR_Logic_Argument247' has cardinality 0..*, and from 'Variable', the role 'Variable248' has cardinality 0..*.
+An association connects 'RolePhrase' and 'NBVR_Logic_Argument'. From 'RolePhrase', the role 'RolePhrase251' has cardinality 0..*, and from 'NBVR_Logic_Argument', the role 'NBVR_Logic_Argument250' has cardinality 0..*.
+An association connects 'NBVR_Logic_Argument' and 'VerbRole'. From 'NBVR_Logic_Argument', the role 'NBVR_Logic_Argument253' has cardinality 0..*, and from 'VerbRole', the role 'VerbRole254' has cardinality 0..*.
+An association connects 'Constant' and 'NBVR_Logic_Argument'. From 'Constant', the role 'Constant' has cardinality 0..*, and from 'NBVR_Logic_Argument', the role 'NBVR_Logic_Argument256' has cardinality 0..*.
+An association connects 'NBVR_Logic_Argument' and 'Relation'. From 'NBVR_Logic_Argument', the role 'Relation258' has cardinality 0..*, and from 'Relation', the role 'Logic259' has cardinality 0..*.
+An association connects 'NBVR_Logic_Set' and 'ExtentConstant'. From 'NBVR_Logic_Set', the role 'ExtentConstant' has cardinality 0..*, and from 'ExtentConstant', the role 'Logic261' has cardinality 0..*.
+An association connects 'Variable' and 'NBVR_Logic_Set'. From 'Variable', the role 'Logic264' has cardinality 0..*, and from 'NBVR_Logic_Set', the role 'Variable263' has cardinality 0..*.
+An association connects 'NBVR_Logic_ExtentConstant' and 'Set'. From 'NBVR_Logic_ExtentConstant', the role 'Set266' has cardinality 0..*, and from 'Set', the role 'Logic267' has cardinality 0..*.
+An association connects 'Proposition' and 'NBVR_Logic_Connection'. From 'Proposition', the role 'Proposition269' has cardinality 0..*, and from 'NBVR_Logic_Connection', the role 'NBVR_Logic_Connection' has cardinality 0..*.
+An association connects 'NBVR_Logic_Implication' and 'Proposition'. From 'NBVR_Logic_Implication', the role 'NBVR_Logic_Implication' has cardinality 0..*, and from 'Proposition', the role 'Proposition271' has cardinality 0..*.
+An association connects 'NBVR_Logic_Implication' and 'Proposition'. From 'NBVR_Logic_Implication', the role 'NBVR_Logic_Implication273' has cardinality 0..*, and from 'Proposition', the role 'Proposition274' has cardinality 0..*.
+An association connects 'NBVR_Logic_Modal' and 'Proposition'. From 'NBVR_Logic_Modal', the role 'NBVR_Logic_Modal' has cardinality 0..*, and from 'Proposition', the role 'Proposition276' has cardinality 0..*.
+An association connects 'Proposition' and 'NBVR_Logic_Negation'. From 'Proposition', the role 'Proposition278' has cardinality 0..*, and from 'NBVR_Logic_Negation', the role 'NBVR_Logic_Negation' has cardinality 0..*.
+An association connects 'Predicate' and 'NBVR_Logic_RoleVariable'. From 'Predicate', the role 'Logic281' has cardinality 0..*, and from 'NBVR_Logic_RoleVariable', the role 'Predicate280' has cardinality 0..*.
+An association connects 'VerbRole' and 'NBVR_Logic_RoleVariable'. From 'VerbRole', the role 'VerbRole283' has cardinality 0..*, and from 'NBVR_Logic_RoleVariable', the role 'NBVR_Logic_RoleVariable' has cardinality 0..*.
+An association connects 'Proposition' and 'NBVR_Logic_NominalConstant'. From 'Proposition', the role 'Proposition285' has cardinality 0..*, and from 'NBVR_Logic_NominalConstant', the role 'NBVR_Logic_NominalConstant' has cardinality 0..*.
+An association connects 'NBVR_Logic_Predicate' and 'RoleVariable'. From 'NBVR_Logic_Predicate', the role 'RoleVariable' has cardinality 0..*, and from 'RoleVariable', the role 'Logic287' has cardinality 0..*.
+An association connects 'NBVR_Logic_Predicate' and 'VocNoun'. From 'NBVR_Logic_Predicate', the role 'VocNoun289' has cardinality 0..*, and from 'VocNoun', the role 'Vocabulary290' has cardinality 0..*.
+An association connects 'NBVR_Logic_Predicate' and 'VocVerb'. From 'NBVR_Logic_Predicate', the role 'VocVerb292' has cardinality 0..*, and from 'VocVerb', the role 'Vocabulary293' has cardinality 0..*.

@@ -1,0 +1,12 @@
+The domain model 'main' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'main_MainType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'main_sub2_Sub2Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'main_sub1_Sub1Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.

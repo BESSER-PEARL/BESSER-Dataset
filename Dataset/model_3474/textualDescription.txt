@@ -1,0 +1,52 @@
+The domain model 'sPLOT2CoCo' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'sPLOT2CoCo_FM' represents an important domain concept.
+It does not declare any attributes.
+
+'sPLOT2CoCo_OrAlternativeTreeConstraint' represents an important domain concept.
+It has the following attributes: 'max', which is of type int; 'min', which is of type int.
+
+'sPLOT2CoCo_ParentChildConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sPLOT2CoCo_TreeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sPLOT2CoCo_FeatureAttribute' represents an important domain concept.
+It has the following attributes: 'nullValue', which is of type int; 'defaultValue', which is of type int; 'attributeType', which is of type str; 'maxValue', which is of type int; 'minValue', which is of type int.
+
+'sPLOT2CoCo_OptionalTreeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sPLOT2CoCo_Feature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sPLOT2CoCo_CrossTreeConstraint' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'sPLOT2CoCo_MandatoryTreeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'TreeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'sPLOT2CoCo_MandatoryTreeConstraint' is a specialization of 'TreeConstraint'.
+The class 'sPLOT2CoCo_OptionalTreeConstraint' is a specialization of 'TreeConstraint'.
+The class 'sPLOT2CoCo_OrAlternativeTreeConstraint' is a specialization of 'TreeConstraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sPLOT2CoCo_FM' and 'sPLOT2CoCo_Feature'. From 'sPLOT2CoCo_FM', the role 'sPLOT2CoCo_FM' has cardinality 0..*, and from 'sPLOT2CoCo_Feature', the role 'sPLOT2CoCo_Feature' has cardinality 0..*.
+An association connects 'sPLOT2CoCo_ParentChildConstraint' and 'sPLOT2CoCo_FM'. From 'sPLOT2CoCo_ParentChildConstraint', the role 'sPLOT2CoCo_ParentChildConstraint' has cardinality 0..*, and from 'sPLOT2CoCo_FM', the role 'sPLOT2CoCo_FM2' has cardinality 0..*.
+An association connects 'sPLOT2CoCo_FM' and 'sPLOT2CoCo_FeatureAttribute'. From 'sPLOT2CoCo_FM', the role 'sPLOT2CoCo_FM4' has cardinality 0..*, and from 'sPLOT2CoCo_FeatureAttribute', the role 'sPLOT2CoCo_FeatureAttribute' has cardinality 0..*.
+An association connects 'sPLOT2CoCo_FM' and 'sPLOT2CoCo_CrossTreeConstraint'. From 'sPLOT2CoCo_FM', the role 'sPLOT2CoCo_FM6' has cardinality 0..*, and from 'sPLOT2CoCo_CrossTreeConstraint', the role 'sPLOT2CoCo_CrossTreeConstraint' has cardinality 0..*.
+An association connects 'sPLOT2CoCo_Feature' and 'sPLOT2CoCo_ParentChildConstraint'. From 'sPLOT2CoCo_Feature', the role 'sPLOT2CoCo_Feature9' has cardinality 0..*, and from 'sPLOT2CoCo_ParentChildConstraint', the role 'sPLOT2CoCo_ParentChildConstraint8' has cardinality 0..*.
+An association connects 'sPLOT2CoCo_ParentChildConstraint' and 'sPLOT2CoCo_TreeConstraint'. From 'sPLOT2CoCo_ParentChildConstraint', the role 'sPLOT2CoCo_ParentChildConstraint11' has cardinality 0..*, and from 'sPLOT2CoCo_TreeConstraint', the role 'sPLOT2CoCo_TreeConstraint' has cardinality 0..*.
+An association connects 'sPLOT2CoCo_Feature' and 'sPLOT2CoCo_MandatoryTreeConstraint'. From 'sPLOT2CoCo_Feature', the role 'sPLOT2CoCo_Feature13' has cardinality 0..*, and from 'sPLOT2CoCo_MandatoryTreeConstraint', the role 'sPLOT2CoCo_MandatoryTreeConstraint' has cardinality 0..*.
+An association connects 'sPLOT2CoCo_OptionalTreeConstraint' and 'sPLOT2CoCo_Feature'. From 'sPLOT2CoCo_OptionalTreeConstraint', the role 'sPLOT2CoCo_OptionalTreeConstraint' has cardinality 0..*, and from 'sPLOT2CoCo_Feature', the role 'sPLOT2CoCo_Feature15' has cardinality 0..*.
+An association connects 'sPLOT2CoCo_OrAlternativeTreeConstraint' and 'sPLOT2CoCo_Feature'. From 'sPLOT2CoCo_OrAlternativeTreeConstraint', the role 'sPLOT2CoCo_OrAlternativeTreeConstraint' has cardinality 0..*, and from 'sPLOT2CoCo_Feature', the role 'sPLOT2CoCo_Feature17' has cardinality 0..*.
+An association connects 'sPLOT2CoCo_Feature' and 'sPLOT2CoCo_CrossTreeConstraint'. From 'sPLOT2CoCo_Feature', the role 'sPLOT2CoCo_Feature20' has cardinality 0..*, and from 'sPLOT2CoCo_CrossTreeConstraint', the role 'sPLOT2CoCo_CrossTreeConstraint19' has cardinality 0..*.
+An association connects 'sPLOT2CoCo_CrossTreeConstraint' and 'sPLOT2CoCo_Feature'. From 'sPLOT2CoCo_CrossTreeConstraint', the role 'sPLOT2CoCo_CrossTreeConstraint22' has cardinality 0..*, and from 'sPLOT2CoCo_Feature', the role 'sPLOT2CoCo_Feature23' has cardinality 0..*.
+An association connects 'sPLOT2CoCo_Feature' and 'sPLOT2CoCo_FeatureAttribute'. From 'sPLOT2CoCo_Feature', the role 'sPLOT2CoCo_Feature26' has cardinality 0..*, and from 'sPLOT2CoCo_FeatureAttribute', the role 'sPLOT2CoCo_FeatureAttribute25' has cardinality 0..*.

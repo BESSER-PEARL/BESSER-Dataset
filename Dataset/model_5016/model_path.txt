@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/BackupTheBerlios/rcpviewer-svn/trunk/spikes/teds-workspace/de.berlios.rcpviewer.examples/src/ppo.ecore

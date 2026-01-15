@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jesusc/eclectic/tests/org.eclectic.test/fixtures/metamodels/Binary.ecore

@@ -1,0 +1,27 @@
+The domain model 'opposite1' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'opposite1_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'opposite1_ClassB' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractSuperClass' represents an important domain concept.
+It does not declare any attributes.
+
+'opposite1_ClassA' represents an important domain concept.
+It does not declare any attributes.
+
+'opposite1_AbstractSuperClass' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'opposite1_ClassA' is a specialization of 'AbstractSuperClass'.
+The class 'opposite1_ClassB' is a specialization of 'AbstractSuperClass'.
+
+Relationships between classes are modeled using associations.
+An association connects 'opposite1_Root' and 'opposite1_AbstractSuperClass'. From 'opposite1_Root', the role 'opposite1_Root' has cardinality 0..*, and from 'opposite1_AbstractSuperClass', the role 'opposite1_AbstractSuperClass' has cardinality 0..*.
+An association connects 'opposite1_ClassB' and 'opposite1_ClassA'. From 'opposite1_ClassB', the role 'ClassB' has cardinality 0..*, and from 'opposite1_ClassA', the role 'a' has cardinality 0..*.
+An association connects 'opposite1_ClassB' and 'opposite1_ClassA'. From 'opposite1_ClassB', the role 'b' has cardinality 0..*, and from 'opposite1_ClassA', the role 'ClassA' has cardinality 0..*.

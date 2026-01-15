@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/FAMILIAR-project/VM-language/fr.inria.lang.vm/model/generated/VM.ecore

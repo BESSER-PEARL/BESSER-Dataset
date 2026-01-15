@@ -1,0 +1,53 @@
+The domain model 'VorkursModel' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'VorkursModel_Notebook' represents an important domain concept.
+It has the following attributes: 'OperatingSystem', which is of type str; 'hasWLAN', which is of type bool.
+
+'VorkursModel_Room' represents an important domain concept.
+It has the following attributes: 'seats', which is of type int; 'hasComputers', which is of type bool; 'sockets', which is of type bool; 'roomNr', which is of type int.
+
+'VorkursModel_Qualification' represents an important domain concept.
+It has the following attributes: 'hasPCExperience', which is of type bool; 'hasProgrammingExperience', which is of type bool; 'programminLanguage', which is of type str; 'Language', which is of type str.
+
+'VorkursModel_Student' represents an important domain concept.
+It does not declare any attributes.
+
+'VorkursModel_Contact' represents an important domain concept.
+It has the following attributes: 'Email', which is of type str; 'phonenumber', which is of type str.
+
+'VorkursModel_Person' represents an important domain concept.
+It has the following attributes: 'gender', which is of type str; 'firstname', which is of type str; 'subject', which is of type str; 'lastname', which is of type str.
+
+'VorkursModel_RegistrationSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'VorkursModel_TeachingAssistant' represents an important domain concept.
+It does not declare any attributes.
+
+'VorkursModel_Address' represents an important domain concept.
+It has the following attributes: 'zip', which is of type str; 'street', which is of type str; 'city', which is of type str; 'state', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Gender' defines the following possible values: 'Male', 'Female'.
+The enumeration 'Nationality' defines the following possible values: 'German', 'French', 'other', 'Spanish', 'English'.
+The enumeration 'Subject' defines the following possible values: 'BusinessEngineering', 'Physics', 'AppliedGeographics', 'MechanicalEngineering', 'Mathematics', 'CES', 'ComputerScience'.
+The enumeration 'OperatingSystem' defines the following possible values: 'Windows', 'MacOS', 'other', 'Linux_Unix'.
+The enumeration 'ProgrammingLanguage' defines the following possible values: 'Pascal_Delphi', 'other', 'C_CPP', 'Java'.
+
+The model also captures inheritance relationships between classes.
+The class 'VorkursModel_TeachingAssistant' is a specialization of 'Person'.
+The class 'VorkursModel_Student' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'VorkursModel_RegistrationSystem' and 'VorkursModel_Student'. From 'VorkursModel_RegistrationSystem', the role 'VorkursModel_RegistrationSystem' has cardinality 0..*, and from 'VorkursModel_Student', the role 'VorkursModel_Student' has cardinality 0..*.
+An association connects 'VorkursModel_RegistrationSystem' and 'VorkursModel_TeachingAssistant'. From 'VorkursModel_RegistrationSystem', the role 'VorkursModel_RegistrationSystem2' has cardinality 0..*, and from 'VorkursModel_TeachingAssistant', the role 'VorkursModel_TeachingAssistant' has cardinality 0..*.
+An association connects 'VorkursModel_Person' and 'VorkursModel_Contact'. From 'VorkursModel_Person', the role 'VorkursModel_Person' has cardinality 0..*, and from 'VorkursModel_Contact', the role 'VorkursModel_Contact' has cardinality 0..*.
+An association connects 'VorkursModel_Notebook' and 'VorkursModel_Person'. From 'VorkursModel_Notebook', the role 'VorkursModel_Notebook' has cardinality 0..*, and from 'VorkursModel_Person', the role 'VorkursModel_Person5' has cardinality 0..*.
+An association connects 'VorkursModel_Qualification' and 'VorkursModel_Person'. From 'VorkursModel_Qualification', the role 'VorkursModel_Qualification' has cardinality 0..*, and from 'VorkursModel_Person', the role 'VorkursModel_Person7' has cardinality 0..*.
+An association connects 'VorkursModel_Address' and 'VorkursModel_Contact'. From 'VorkursModel_Address', the role 'VorkursModel_Address' has cardinality 0..*, and from 'VorkursModel_Contact', the role 'VorkursModel_Contact9' has cardinality 0..*.
+An association connects 'VorkursModel_Room' and 'VorkursModel_TeachingAssistant'. From 'VorkursModel_Room', the role 'VorkursModel_Room' has cardinality 0..*, and from 'VorkursModel_TeachingAssistant', the role 'VorkursModel_TeachingAssistant11' has cardinality 0..*.

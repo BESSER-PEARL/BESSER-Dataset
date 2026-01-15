@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/BestSolution-at/emap/at.bestsolution.emf.navi.tests.model/model/Sample.ecore

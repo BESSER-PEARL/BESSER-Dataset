@@ -1,0 +1,165 @@
+The domain model 'ddsm' describes the core structural elements and their relationships within the system.
+
+The model defines 37 main class(es).
+
+'ddsm_YarnResourceManager' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsm_StormNimbus' represents an important domain concept.
+It has the following attributes: 'supervisorTimeout', which is of type str; 'taskTimeout', which is of type str; 'retryTimes', which is of type str; 'retryInterval', which is of type str; 'queueSize', which is of type str; 'monitorFrequency', which is of type str.
+
+'ddsm_ClientNode' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'mainClass', which is of type str; 'artifactUrl', which is of type str.
+
+'ddsm_RequiredPort' represents an important domain concept.
+It has one attribute: 'isMandatory', which is of type bool.
+
+'ddsm_ProvidedExecutionPlatform' represents an important domain concept.
+It does not declare any attributes.
+
+'Resource' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsm_Port' represents an important domain concept.
+It has the following attributes: 'isLocal', which is of type bool; 'portNumber', which is of type str.
+
+'ddsm_ChefResource' represents an important domain concept.
+It has one attribute: 'cookbookId', which is of type str.
+
+'ddsm_VM' represents an important domain concept.
+It has the following attributes: 'providerSpecificTypeName', which is of type str; 'publicPorts', which is of type str; 'imageId', which is of type str; 'maxStorage', which is of type str; 'os', which is of type str; 'minRam', which is of type str; 'minCores', which is of type str; 'minStorage', which is of type str; 'privateKey', which is of type str; 'instances', which is of type str; 'genericSize', which is of type str; 'sshKey', which is of type str; 'securityGroup', which is of type str; 'is64os', which is of type str; 'publicAddress', which is of type str; 'maxCores', which is of type str; 'maxRam', which is of type str.
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsm_RequiredExecutionPlatform' represents an important domain concept.
+It has one attribute: 'isMandatory', which is of type bool.
+
+'ddsm_InternalComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsm_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsm_ExecutionPlatform' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsm_HDFSNameNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsm_CloudElement' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'elementId', which is of type str.
+
+'ExternalComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsm_StormSupervisor' represents an important domain concept.
+It has the following attributes: 'memoryCapacity', which is of type str; 'workerStartTimeout', which is of type str; 'cpuCapacity', which is of type str; 'heartbeatFrequency', which is of type str.
+
+'ddsm_Kafka' represents an important domain concept.
+It does not declare any attributes.
+
+'Cluster' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsm_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsm_Provider' represents an important domain concept.
+It has the following attributes: 'credentialsPath', which is of type str; 'type', which is of type str.
+
+'ddsm_ProvidedPort' represents an important domain concept.
+It does not declare any attributes.
+
+'InternalComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsm_YarnNodeManager' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsm_Cluster' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsm_Zookeeper' represents an important domain concept.
+It has the following attributes: 'tickTime', which is of type str; 'initLimit', which is of type str; 'syncLimit', which is of type str.
+
+'ddsm_DDSM' represents an important domain concept.
+It has the following attributes: 'modelId', which is of type str; 'description', which is of type str.
+
+'ddsm_StormCluster' represents an important domain concept.
+It has one attribute: 'number_of_workers', which is of type str.
+
+'ddsm_Resource' represents an important domain concept.
+It has the following attributes: 'createCommand', which is of type str; 'startCommand', which is of type str; 'resourceId', which is of type str; 'stopCommand', which is of type str; 'configureCommand', which is of type str; 'installCommand', which is of type str; 'downloadCommand', which is of type str.
+
+'ddsm_ExternalComponent' represents an important domain concept.
+It has the following attributes: 'login', which is of type str; 'region', which is of type str; 'serviceType', which is of type str; 'location', which is of type str; 'password', which is of type str.
+
+'ddsm_Property' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'propertyId', which is of type str.
+
+'CloudElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsm_ExecutionBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecutionPlatform' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsm_HDFSDataNode' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ProviderType' defines the following possible values: 'Openstack', 'Flexiant'.
+The enumeration 'VMSize' defines the following possible values: 'Large', 'Medium', 'Small'.
+
+The model also captures inheritance relationships between classes.
+The class 'ddsm_Component' is a specialization of 'CloudElement'.
+The class 'ddsm_InternalComponent' is a specialization of 'Component'.
+The class 'ddsm_ExecutionPlatform' is a specialization of 'CloudElement'.
+The class 'ddsm_Port' is a specialization of 'CloudElement'.
+The class 'ddsm_RequiredPort' is a specialization of 'Port'.
+The class 'ddsm_ProvidedPort' is a specialization of 'Port'.
+The class 'ddsm_RequiredExecutionPlatform' is a specialization of 'ExecutionPlatform'.
+The class 'ddsm_ProvidedExecutionPlatform' is a specialization of 'ExecutionPlatform'.
+The class 'ddsm_Relationship' is a specialization of 'CloudElement'.
+The class 'ddsm_ExecutionBinding' is a specialization of 'CloudElement'.
+The class 'ddsm_ExternalComponent' is a specialization of 'Component'.
+The class 'ddsm_Provider' is a specialization of 'CloudElement'.
+The class 'ddsm_VM' is a specialization of 'ExternalComponent'.
+The class 'ddsm_StormSupervisor' is a specialization of 'InternalComponent'.
+The class 'ddsm_StormNimbus' is a specialization of 'InternalComponent'.
+The class 'ddsm_Zookeeper' is a specialization of 'InternalComponent'.
+The class 'ddsm_Kafka' is a specialization of 'InternalComponent'.
+The class 'ddsm_Cluster' is a specialization of 'ExternalComponent'.
+The class 'ddsm_ClientNode' is a specialization of 'InternalComponent'.
+The class 'ddsm_YarnResourceManager' is a specialization of 'InternalComponent'.
+The class 'ddsm_YarnNodeManager' is a specialization of 'InternalComponent'.
+The class 'ddsm_HDFSNameNode' is a specialization of 'InternalComponent'.
+The class 'ddsm_HDFSDataNode' is a specialization of 'InternalComponent'.
+The class 'ddsm_ChefResource' is a specialization of 'Resource'.
+The class 'ddsm_StormCluster' is a specialization of 'Cluster'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ddsm_Resource' and 'ddsm_CloudElement'. From 'ddsm_Resource', the role 'ddsm_Resource' has cardinality 0..*, and from 'ddsm_CloudElement', the role 'ddsm_CloudElement' has cardinality 0..*.
+An association connects 'ddsm_Property' and 'ddsm_CloudElement'. From 'ddsm_Property', the role 'ddsm_Property' has cardinality 0..*, and from 'ddsm_CloudElement', the role 'ddsm_CloudElement2' has cardinality 0..*.
+An association connects 'ddsm_Component' and 'ddsm_ProvidedPort'. From 'ddsm_Component', the role 'ddsm_Component' has cardinality 0..*, and from 'ddsm_ProvidedPort', the role 'ddsm_ProvidedPort' has cardinality 0..*.
+An association connects 'ddsm_Component' and 'ddsm_ProvidedExecutionPlatform'. From 'ddsm_Component', the role 'ddsm_Component5' has cardinality 0..*, and from 'ddsm_ProvidedExecutionPlatform', the role 'ddsm_ProvidedExecutionPlatform' has cardinality 0..*.
+An association connects 'ddsm_RequiredPort' and 'ddsm_InternalComponent'. From 'ddsm_RequiredPort', the role 'ddsm_RequiredPort' has cardinality 0..*, and from 'ddsm_InternalComponent', the role 'ddsm_InternalComponent' has cardinality 0..*.
+An association connects 'ddsm_InternalComponent' and 'ddsm_InternalComponent'. From 'ddsm_InternalComponent', the role 'ddsm_InternalComponent7' has cardinality 0..*, and from 'ddsm_InternalComponent', the role 'ddsm_InternalComponent9' has cardinality 0..*.
+An association connects 'ddsm_InternalComponent' and 'ddsm_RequiredExecutionPlatform'. From 'ddsm_InternalComponent', the role 'ddsm_InternalComponent11' has cardinality 0..*, and from 'ddsm_RequiredExecutionPlatform', the role 'ddsm_RequiredExecutionPlatform' has cardinality 0..*.
+An association connects 'ddsm_Component' and 'ddsm_ProvidedPort'. From 'ddsm_Component', the role 'ddsm_Component14' has cardinality 0..*, and from 'ddsm_ProvidedPort', the role 'ddsm_ProvidedPort13' has cardinality 0..*.
+An association connects 'ddsm_ProvidedExecutionPlatform' and 'ddsm_Component'. From 'ddsm_ProvidedExecutionPlatform', the role 'ddsm_ProvidedExecutionPlatform16' has cardinality 0..*, and from 'ddsm_Component', the role 'ddsm_Component17' has cardinality 0..*.
+An association connects 'ddsm_Relationship' and 'ddsm_ProvidedPort'. From 'ddsm_Relationship', the role 'ddsm_Relationship' has cardinality 0..*, and from 'ddsm_ProvidedPort', the role 'ddsm_ProvidedPort19' has cardinality 0..*.
+An association connects 'ddsm_RequiredPort' and 'ddsm_Relationship'. From 'ddsm_RequiredPort', the role 'ddsm_RequiredPort22' has cardinality 0..*, and from 'ddsm_Relationship', the role 'ddsm_Relationship21' has cardinality 0..*.
+An association connects 'ddsm_RequiredExecutionPlatform' and 'ddsm_ExecutionBinding'. From 'ddsm_RequiredExecutionPlatform', the role 'ddsm_RequiredExecutionPlatform24' has cardinality 0..*, and from 'ddsm_ExecutionBinding', the role 'ddsm_ExecutionBinding' has cardinality 0..*.
+An association connects 'ddsm_ExecutionBinding' and 'ddsm_ProvidedExecutionPlatform'. From 'ddsm_ExecutionBinding', the role 'ddsm_ExecutionBinding26' has cardinality 0..*, and from 'ddsm_ProvidedExecutionPlatform', the role 'ddsm_ProvidedExecutionPlatform27' has cardinality 0..*.
+An association connects 'ddsm_ExternalComponent' and 'ddsm_Provider'. From 'ddsm_ExternalComponent', the role 'ddsm_ExternalComponent' has cardinality 0..*, and from 'ddsm_Provider', the role 'ddsm_Provider' has cardinality 0..*.
+An association connects 'ddsm_DDSM' and 'ddsm_CloudElement'. From 'ddsm_DDSM', the role 'ddsm_DDSM' has cardinality 0..*, and from 'ddsm_CloudElement', the role 'ddsm_CloudElement30' has cardinality 0..*.
+An association connects 'ddsm_DDSM' and 'ddsm_Property'. From 'ddsm_DDSM', the role 'ddsm_DDSM32' has cardinality 0..*, and from 'ddsm_Property', the role 'ddsm_Property33' has cardinality 0..*.
+An association connects 'ddsm_DDSM' and 'ddsm_Resource'. From 'ddsm_DDSM', the role 'ddsm_DDSM35' has cardinality 0..*, and from 'ddsm_Resource', the role 'ddsm_Resource36' has cardinality 0..*.
+An association connects 'ddsm_VM' and 'ddsm_Cluster'. From 'ddsm_VM', the role 'ddsm_VM' has cardinality 0..*, and from 'ddsm_Cluster', the role 'ddsm_Cluster' has cardinality 0..*.

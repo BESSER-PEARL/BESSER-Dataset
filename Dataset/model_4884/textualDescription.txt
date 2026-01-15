@@ -1,0 +1,567 @@
+The domain model 'build' describes the core structural elements and their relationships within the system.
+
+The model defines 124 main class(es).
+
+'build_UnitProvider' represents an important domain concept.
+It has one attribute: 'documentation', which is of type str.
+
+'BExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BNamePredicate' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuildCallOnDeclaredRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuilderWrapper' represents an important domain concept.
+It has the following attributes: 'sourceAdvised', which is of type bool; 'defaultPropertiesAdvised', which is of type bool; 'providesAdvised', which is of type bool; 'unitTypeAdvised', which is of type bool; 'inputAdvised', which is of type bool; 'outputAdvised', which is of type bool.
+
+'build_SwitchUnitProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'BFunctionWrapper' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BeeModelRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuildSet' represents an important domain concept.
+It has the following attributes: 'pathIterator', which is of type str; 'valueMap', which is of type str.
+
+'build_IBuildUnitContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'IBuildUnitContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'build_UnitRepositoryDescription' represents an important domain concept.
+It has one attribute: 'evaluatedOptions', which is of type str.
+
+'build_RepositoryUnitProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'build_VersionedCapability' represents an important domain concept.
+It has one attribute: 'version', which is of type str.
+
+'build_CompoundUnitProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'build_InputPredicate' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'build_UnitConcernContext' represents an important domain concept.
+It has the following attributes: 'outputLocation', which is of type str; 'sourceLocation', which is of type str.
+
+'build_BuildCallSingle' represents an important domain concept.
+It does not declare any attributes.
+
+'VersionedCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuilderCallFacade' represents an important domain concept.
+It has one attribute: 'aliases', which is of type str.
+
+'build_UnitResolutionInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuildUnit' represents an important domain concept.
+It has the following attributes: 'sourceLocation', which is of type str; 'documentation', which is of type str; 'outputLocation', which is of type str; 'executionMode', which is of type str; 'platformFilter', which is of type str.
+
+'build_UnitParameterDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'build_PathGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'build_ExecutionStackRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IBuilder' represents an important domain concept.
+It has one attribute: 'unitType', which is of type str.
+
+'build_EffectiveFacade' represents an important domain concept.
+It does not declare any attributes.
+
+'build_FragmentHost' represents an important domain concept.
+It does not declare any attributes.
+
+'build_EffectiveBuilderCallFacade' represents an important domain concept.
+It does not declare any attributes.
+
+'IFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'IProvidedCapabilityContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'IRequiredCapabilityContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'build_ResolutionInfo' represents an important domain concept.
+It has one attribute: 'status', which is of type str.
+
+'build_ImplementsPredicate' represents an important domain concept.
+It does not declare any attributes.
+
+'BuildCallMultiple' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuildConcernContext' represents an important domain concept.
+It has one attribute: 'defaultPropertiesRemovals', which is of type str.
+
+'build_BuildResultContext' represents an important domain concept.
+It does not declare any attributes.
+
+'BuilderInput' represents an important domain concept.
+It does not declare any attributes.
+
+'IEffectiveFacade' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuilderNamePredicate' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IProvidedCapabilityContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'build_EffectiveRequirementFacade' represents an important domain concept.
+It does not declare any attributes.
+
+'build_Branch' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'checkout', which is of type str; 'branchPointType', which is of type str; 'documentation', which is of type str; 'replace', which is of type str; 'acceptDirty', which is of type str; 'update', which is of type str; 'mergeStrategy', which is of type str.
+
+'build_BPropertySet' represents an important domain concept.
+It does not declare any attributes.
+
+'BuilderInputDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'build_RequiredCapability' represents an important domain concept.
+It has the following attributes: 'max', which is of type int; 'min', which is of type int; 'versionRange', which is of type str; 'greedy', which is of type bool.
+
+'build_CompoundBuildUnitRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'CompoundBuildUnitRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuildCallOnSelectedRequirements' represents an important domain concept.
+It does not declare any attributes.
+
+'IVarName' represents an important domain concept.
+It does not declare any attributes.
+
+'ITypedValueContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuilderInputDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuildUnitRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'EffectiveFacade' represents an important domain concept.
+It does not declare any attributes.
+
+'build_EffectiveUnitFacade' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BeeModel' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuilderCall' represents an important domain concept.
+It has one attribute: 'builderName', which is of type str.
+
+'BJavaFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'build_UnitNamePredicate' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuilderQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuilderInputCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'build_EffectiveCapabilityFacade' represents an important domain concept.
+It does not declare any attributes.
+
+'ResolutionInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'CapabilityPredicate' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BWithExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BConcern' represents an important domain concept.
+It does not declare any attributes.
+
+'BFunctionContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'build_ConditionalPathVector' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BExecutionContext' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuilderInputNameDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'build_PathGroupPredicate' represents an important domain concept.
+It does not declare any attributes.
+
+'IBuildUnitRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'build_PathVector' represents an important domain concept.
+It has the following attributes: 'paths', which is of type str; 'basePath', which is of type str.
+
+'build_BParameterPredicate' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuilderInputContextDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'BuilderCallFacade' represents an important domain concept.
+It does not declare any attributes.
+
+'build_OutputPredicate' represents an important domain concept.
+It does not declare any attributes.
+
+'build_FirstFoundUnitProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'INamedValue' represents an important domain concept.
+It does not declare any attributes.
+
+'IBuilder' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IEffectiveFacade' represents an important domain concept.
+It does not declare any attributes.
+
+'CompoundUnitProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IRequiredCapabilityContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'build_CapabilityPredicate' represents an important domain concept.
+It has one attribute: 'versionRange', which is of type str.
+
+'build_RequiresPredicate' represents an important domain concept.
+It has one attribute: 'meta', which is of type bool.
+
+'build_BParameterList' represents an important domain concept.
+It does not declare any attributes.
+
+'build_Builder' represents an important domain concept.
+It does not declare any attributes.
+
+'build_DelegatingUnitProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'BuildConcernContext' represents an important domain concept.
+It does not declare any attributes.
+
+'BuildCallSingle' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IBuildUnitRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'build_NameSpacePredicate' represents an important domain concept.
+It has one attribute: 'nameSpace', which is of type str.
+
+'BInnerContext' represents an important domain concept.
+It does not declare any attributes.
+
+'BuilderCall' represents an important domain concept.
+It does not declare any attributes.
+
+'BConcernContext' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuilderConcernContext' represents an important domain concept.
+It has the following attributes: 'removePostInputCondition', which is of type bool; 'removePreCondition', which is of type bool; 'outputAnnotationsRemovals', which is of type str; 'matchParameters', which is of type bool; 'varArgs', which is of type bool; 'sourceAnnotationsRemovals', which is of type str; 'removePostCondition', which is of type bool.
+
+'build_RepoOption' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'build_BeeHive' represents an important domain concept.
+It has one attribute: 'resolutions', which is of type str.
+
+'BParameterDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuilderJava' represents an important domain concept.
+It does not declare any attributes.
+
+'UnitProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'B3Function' represents an important domain concept.
+It does not declare any attributes.
+
+'build_Repository' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'handlerType', which is of type str; 'documentation', which is of type str.
+
+'build_ProvidesPredicate' represents an important domain concept.
+It does not declare any attributes.
+
+'build_SourcePredicate' represents an important domain concept.
+It does not declare any attributes.
+
+'build_CompoundFirstFoundRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'BuildUnitRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BSwitchExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuilderInput' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuildCallMultiple' represents an important domain concept.
+It does not declare any attributes.
+
+'BChainedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Capability' represents an important domain concept.
+It does not declare any attributes.
+
+'build_AliasedRequiredCapability' represents an important domain concept.
+It has one attribute: 'alias', which is of type str.
+
+'PathGroupPredicate' represents an important domain concept.
+It does not declare any attributes.
+
+'build_IType' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BuildCallOnReferencedRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'build_ContainerConfiguration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'documentation', which is of type str.
+
+'build_BuilderInputGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'build_BestFoundUnitProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'build_Capability' represents an important domain concept.
+It has one attribute: 'nameSpace', which is of type str.
+
+'build_Synchronization' represents an important domain concept.
+It does not declare any attributes.
+
+'RequiredCapability' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TriState' defines the following possible values: 'True', 'False', 'Default'.
+The enumeration 'MergeConflictStrategy' defines the following possible values: 'UseSCM', 'Default', 'Fail', 'UseWorkspace'.
+The enumeration 'BranchPointType' defines the following possible values: 'Tag', 'Revision', 'Timestamp', 'Latest'.
+
+The model also captures inheritance relationships between classes.
+The class 'build_BuildUnit' is a specialization of 'VersionedCapability'.
+The class 'build_BuildUnit' is a specialization of 'BFunctionContainer'.
+The class 'build_BuildUnit' is a specialization of 'IRequiredCapabilityContainer'.
+The class 'build_BuildUnit' is a specialization of 'IProvidedCapabilityContainer'.
+The class 'build_BuildUnit' is a specialization of 'IVarName'.
+The class 'build_IBuilder' is a specialization of 'IProvidedCapabilityContainer'.
+The class 'build_IBuilder' is a specialization of 'IFunction'.
+The class 'build_VersionedCapability' is a specialization of 'Capability'.
+The class 'build_BuilderInputDecorator' is a specialization of 'BuilderInput'.
+The class 'build_BuilderCall' is a specialization of 'BuilderInput'.
+The class 'build_Capability' is a specialization of 'INamedValue'.
+The class 'build_RequiredCapability' is a specialization of 'Capability'.
+The class 'build_UnitProvider' is a specialization of 'BExpression'.
+The class 'build_RepositoryUnitProvider' is a specialization of 'UnitProvider'.
+The class 'build_CompoundUnitProvider' is a specialization of 'UnitProvider'.
+The class 'build_FirstFoundUnitProvider' is a specialization of 'CompoundUnitProvider'.
+The class 'build_BestFoundUnitProvider' is a specialization of 'CompoundUnitProvider'.
+The class 'build_BuildConcernContext' is a specialization of 'BConcernContext'.
+The class 'build_BuildConcernContext' is a specialization of 'IProvidedCapabilityContainer'.
+The class 'build_RequiresPredicate' is a specialization of 'BExpression'.
+The class 'build_CapabilityPredicate' is a specialization of 'BExpression'.
+The class 'build_ImplementsPredicate' is a specialization of 'BExpression'.
+The class 'build_ProvidesPredicate' is a specialization of 'BExpression'.
+The class 'build_UnitNamePredicate' is a specialization of 'CapabilityPredicate'.
+The class 'build_BuilderNamePredicate' is a specialization of 'BExpression'.
+The class 'build_InputPredicate' is a specialization of 'BExpression'.
+The class 'build_UnitConcernContext' is a specialization of 'BuildConcernContext'.
+The class 'build_UnitConcernContext' is a specialization of 'IRequiredCapabilityContainer'.
+The class 'build_BuilderConcernContext' is a specialization of 'BuildConcernContext'.
+The class 'build_PathGroupPredicate' is a specialization of 'BExpression'.
+The class 'build_AliasedRequiredCapability' is a specialization of 'RequiredCapability'.
+The class 'build_Builder' is a specialization of 'B3Function'.
+The class 'build_Builder' is a specialization of 'IBuilder'.
+The class 'build_BuilderJava' is a specialization of 'BJavaFunction'.
+The class 'build_BuilderJava' is a specialization of 'IBuilder'.
+The class 'build_BuilderWrapper' is a specialization of 'BFunctionWrapper'.
+The class 'build_BuilderWrapper' is a specialization of 'IBuilder'.
+The class 'build_BeeModel' is a specialization of 'BChainedExpression'.
+The class 'build_BeeModel' is a specialization of 'IBuildUnitContainer'.
+The class 'build_EffectiveFacade' is a specialization of 'IEffectiveFacade'.
+The class 'build_EffectiveUnitFacade' is a specialization of 'EffectiveFacade'.
+The class 'build_EffectiveRequirementFacade' is a specialization of 'EffectiveFacade'.
+The class 'build_EffectiveCapabilityFacade' is a specialization of 'EffectiveFacade'.
+The class 'build_BuildSet' is a specialization of 'ITypedValueContainer'.
+The class 'build_BuildResultContext' is a specialization of 'BInnerContext'.
+The class 'build_OutputPredicate' is a specialization of 'PathGroupPredicate'.
+The class 'build_SourcePredicate' is a specialization of 'PathGroupPredicate'.
+The class 'build_BuildUnitRepository' is a specialization of 'IBuildUnitRepository'.
+The class 'build_CompoundBuildUnitRepository' is a specialization of 'BuildUnitRepository'.
+The class 'build_CompoundFirstFoundRepository' is a specialization of 'CompoundBuildUnitRepository'.
+The class 'build_ExecutionStackRepository' is a specialization of 'BuildUnitRepository'.
+The class 'build_BeeModelRepository' is a specialization of 'BuildUnitRepository'.
+The class 'build_UnitResolutionInfo' is a specialization of 'ResolutionInfo'.
+The class 'build_SwitchUnitProvider' is a specialization of 'UnitProvider'.
+The class 'build_Repository' is a specialization of 'BExpression'.
+The class 'build_DelegatingUnitProvider' is a specialization of 'UnitProvider'.
+The class 'build_UnitRepositoryDescription' is a specialization of 'BuildUnitRepository'.
+The class 'build_BuildCallOnSelectedRequirements' is a specialization of 'BuildCallMultiple'.
+The class 'build_BuilderInputNameDecorator' is a specialization of 'BuilderInputDecorator'.
+The class 'build_BuilderInputNameDecorator' is a specialization of 'INamedValue'.
+The class 'build_BuilderInputContextDecorator' is a specialization of 'BuilderInputDecorator'.
+The class 'build_BuilderInputCondition' is a specialization of 'BuilderInputDecorator'.
+The class 'build_BuildCallMultiple' is a specialization of 'BuilderCall'.
+The class 'build_BuildCallSingle' is a specialization of 'BuilderCall'.
+The class 'build_BuildCallOnDeclaredRequirement' is a specialization of 'BuildCallSingle'.
+The class 'build_BuildCallOnReferencedRequirement' is a specialization of 'BuildCallSingle'.
+The class 'build_BuilderInputGroup' is a specialization of 'BuilderInputDecorator'.
+The class 'build_EffectiveBuilderCallFacade' is a specialization of 'BuilderCallFacade'.
+The class 'build_EffectiveBuilderCallFacade' is a specialization of 'IEffectiveFacade'.
+The class 'build_UnitParameterDeclaration' is a specialization of 'BParameterDeclaration'.
+
+Relationships between classes are modeled using associations.
+An association connects 'build_IBuilder' and 'build_BuildUnit'. From 'build_IBuilder', the role 'build_IBuilder' has cardinality 0..*, and from 'build_BuildUnit', the role 'build_BuildUnit' has cardinality 0..*.
+An association connects 'build_BuildUnit' and 'build_RequiredCapability'. From 'build_BuildUnit', the role 'build_BuildUnit2' has cardinality 0..*, and from 'build_RequiredCapability', the role 'build_RequiredCapability' has cardinality 0..*.
+An association connects 'build_IType' and 'build_BuildUnit'. From 'build_IType', the role 'build_IType' has cardinality 0..*, and from 'build_BuildUnit', the role 'build_BuildUnit4' has cardinality 0..*.
+An association connects 'build_BConcern' and 'build_BuildUnit'. From 'build_BConcern', the role 'build_BConcern' has cardinality 0..*, and from 'build_BuildUnit', the role 'build_BuildUnit6' has cardinality 0..*.
+An association connects 'build_BuildUnit' and 'build_BPropertySet'. From 'build_BuildUnit', the role 'build_BuildUnit8' has cardinality 0..*, and from 'build_BPropertySet', the role 'build_BPropertySet' has cardinality 0..*.
+An association connects 'build_BuildUnit' and 'build_Synchronization'. From 'build_BuildUnit', the role 'build_BuildUnit10' has cardinality 0..*, and from 'build_Synchronization', the role 'build_Synchronization' has cardinality 0..*.
+An association connects 'build_Repository' and 'build_BuildUnit'. From 'build_Repository', the role 'build_Repository' has cardinality 0..*, and from 'build_BuildUnit', the role 'build_BuildUnit12' has cardinality 0..*.
+An association connects 'build_BuildUnit' and 'build_ContainerConfiguration'. From 'build_BuildUnit', the role 'build_BuildUnit14' has cardinality 0..*, and from 'build_ContainerConfiguration', the role 'build_ContainerConfiguration' has cardinality 0..*.
+An association connects 'build_BuildUnit' and 'build_BPropertySet'. From 'build_BuildUnit', the role 'build_BuildUnit16' has cardinality 0..*, and from 'build_BPropertySet', the role 'build_BPropertySet17' has cardinality 0..*.
+An association connects 'build_FirstFoundUnitProvider' and 'build_BuildUnit'. From 'build_FirstFoundUnitProvider', the role 'build_FirstFoundUnitProvider' has cardinality 0..*, and from 'build_BuildUnit', the role 'build_BuildUnit19' has cardinality 0..*.
+An association connects 'build_BuildUnit' and 'build_IBuildUnitContainer'. From 'build_BuildUnit', the role 'build_BuildUnit21' has cardinality 0..*, and from 'build_IBuildUnitContainer', the role 'build_IBuildUnitContainer' has cardinality 0..*.
+An association connects 'build_FragmentHost' and 'build_BuildUnit'. From 'build_FragmentHost', the role 'build_FragmentHost' has cardinality 0..*, and from 'build_BuildUnit', the role 'build_BuildUnit23' has cardinality 0..*.
+An association connects 'build_IBuilder' and 'build_BExpression'. From 'build_IBuilder', the role 'build_IBuilder25' has cardinality 0..*, and from 'build_BExpression', the role 'build_BExpression' has cardinality 0..*.
+An association connects 'build_IBuilder' and 'build_BExpression'. From 'build_IBuilder', the role 'build_IBuilder27' has cardinality 0..*, and from 'build_BExpression', the role 'build_BExpression28' has cardinality 0..*.
+An association connects 'build_IBuilder' and 'build_BuilderInput'. From 'build_IBuilder', the role 'build_IBuilder30' has cardinality 0..*, and from 'build_BuilderInput', the role 'build_BuilderInput' has cardinality 0..*.
+An association connects 'build_PathGroup' and 'build_IBuilder'. From 'build_PathGroup', the role 'build_PathGroup' has cardinality 0..*, and from 'build_IBuilder', the role 'build_IBuilder32' has cardinality 0..*.
+An association connects 'build_BPropertySet' and 'build_IBuilder'. From 'build_BPropertySet', the role 'build_BPropertySet35' has cardinality 0..*, and from 'build_IBuilder', the role 'build_IBuilder34' has cardinality 0..*.
+An association connects 'build_BExpression' and 'build_IBuilder'. From 'build_BExpression', the role 'build_BExpression38' has cardinality 0..*, and from 'build_IBuilder', the role 'build_IBuilder37' has cardinality 0..*.
+An association connects 'build_UnitParameterDeclaration' and 'build_IBuilder'. From 'build_UnitParameterDeclaration', the role 'build_UnitParameterDeclaration' has cardinality 0..*, and from 'build_IBuilder', the role 'build_IBuilder40' has cardinality 0..*.
+An association connects 'build_IBuilder' and 'build_PathGroup'. From 'build_IBuilder', the role 'build_IBuilder42' has cardinality 0..*, and from 'build_PathGroup', the role 'build_PathGroup43' has cardinality 0..*.
+An association connects 'build_PathGroup' and 'build_BPropertySet'. From 'build_PathGroup', the role 'build_PathGroup45' has cardinality 0..*, and from 'build_BPropertySet', the role 'build_BPropertySet46' has cardinality 0..*.
+An association connects 'build_PathGroup' and 'build_ConditionalPathVector'. From 'build_PathGroup', the role 'build_PathGroup48' has cardinality 0..*, and from 'build_ConditionalPathVector', the role 'build_ConditionalPathVector' has cardinality 0..*.
+An association connects 'build_BuilderInputDecorator' and 'build_BuilderInput'. From 'build_BuilderInputDecorator', the role 'build_BuilderInputDecorator' has cardinality 0..*, and from 'build_BuilderInput', the role 'build_BuilderInput50' has cardinality 0..*.
+An association connects 'build_BParameterList' and 'build_BuilderCall'. From 'build_BParameterList', the role 'build_BParameterList' has cardinality 0..*, and from 'build_BuilderCall', the role 'build_BuilderCall' has cardinality 0..*.
+An association connects 'build_Capability' and 'build_BExpression'. From 'build_Capability', the role 'build_Capability' has cardinality 0..*, and from 'build_BExpression', the role 'build_BExpression53' has cardinality 0..*.
+An association connects 'build_ConditionalPathVector' and 'build_BExpression'. From 'build_ConditionalPathVector', the role 'build_ConditionalPathVector55' has cardinality 0..*, and from 'build_BExpression', the role 'build_BExpression56' has cardinality 0..*.
+An association connects 'build_ConditionalPathVector' and 'build_PathVector'. From 'build_ConditionalPathVector', the role 'build_ConditionalPathVector58' has cardinality 0..*, and from 'build_PathVector', the role 'build_PathVector' has cardinality 0..*.
+An association connects 'build_BuilderQuery' and 'build_Synchronization'. From 'build_BuilderQuery', the role 'build_BuilderQuery' has cardinality 0..*, and from 'build_Synchronization', the role 'build_Synchronization60' has cardinality 0..*.
+An association connects 'build_Repository' and 'build_RepositoryUnitProvider'. From 'build_Repository', the role 'build_Repository62' has cardinality 0..*, and from 'build_RepositoryUnitProvider', the role 'build_RepositoryUnitProvider' has cardinality 0..*.
+An association connects 'build_RepoOption' and 'build_RepositoryUnitProvider'. From 'build_RepoOption', the role 'build_RepoOption' has cardinality 0..*, and from 'build_RepositoryUnitProvider', the role 'build_RepositoryUnitProvider64' has cardinality 0..*.
+An association connects 'build_RepositoryUnitProvider' and 'build_IBuildUnitRepository'. From 'build_RepositoryUnitProvider', the role 'build_RepositoryUnitProvider66' has cardinality 0..*, and from 'build_IBuildUnitRepository', the role 'build_IBuildUnitRepository' has cardinality 0..*.
+An association connects 'build_UnitProvider' and 'build_CompoundUnitProvider'. From 'build_UnitProvider', the role 'build_UnitProvider' has cardinality 0..*, and from 'build_CompoundUnitProvider', the role 'build_CompoundUnitProvider' has cardinality 0..*.
+An association connects 'build_IType' and 'build_ContainerConfiguration'. From 'build_IType', the role 'build_IType70' has cardinality 0..*, and from 'build_ContainerConfiguration', the role 'build_ContainerConfiguration69' has cardinality 0..*.
+An association connects 'build_BExpression' and 'build_ContainerConfiguration'. From 'build_BExpression', the role 'build_BExpression73' has cardinality 0..*, and from 'build_ContainerConfiguration', the role 'build_ContainerConfiguration72' has cardinality 0..*.
+An association connects 'build_BuildConcernContext' and 'build_BPropertySet'. From 'build_BuildConcernContext', the role 'build_BuildConcernContext' has cardinality 0..*, and from 'build_BPropertySet', the role 'build_BPropertySet75' has cardinality 0..*.
+An association connects 'build_CapabilityPredicate' and 'build_RequiresPredicate'. From 'build_CapabilityPredicate', the role 'build_CapabilityPredicate' has cardinality 0..*, and from 'build_RequiresPredicate', the role 'build_RequiresPredicate' has cardinality 0..*.
+An association connects 'build_CapabilityPredicate' and 'build_BNamePredicate'. From 'build_CapabilityPredicate', the role 'build_CapabilityPredicate78' has cardinality 0..*, and from 'build_BNamePredicate', the role 'build_BNamePredicate' has cardinality 0..*.
+An association connects 'build_CapabilityPredicate' and 'build_BNamePredicate'. From 'build_CapabilityPredicate', the role 'build_CapabilityPredicate80' has cardinality 0..*, and from 'build_BNamePredicate', the role 'build_BNamePredicate81' has cardinality 0..*.
+An association connects 'build_ImplementsPredicate' and 'build_IType'. From 'build_ImplementsPredicate', the role 'build_ImplementsPredicate' has cardinality 0..*, and from 'build_IType', the role 'build_IType83' has cardinality 0..*.
+An association connects 'build_CapabilityPredicate' and 'build_ProvidesPredicate'. From 'build_CapabilityPredicate', the role 'build_CapabilityPredicate85' has cardinality 0..*, and from 'build_ProvidesPredicate', the role 'build_ProvidesPredicate' has cardinality 0..*.
+An association connects 'build_BNamePredicate' and 'build_BuilderNamePredicate'. From 'build_BNamePredicate', the role 'build_BNamePredicate87' has cardinality 0..*, and from 'build_BuilderNamePredicate', the role 'build_BuilderNamePredicate' has cardinality 0..*.
+An association connects 'build_CapabilityPredicate' and 'build_InputPredicate'. From 'build_CapabilityPredicate', the role 'build_CapabilityPredicate89' has cardinality 0..*, and from 'build_InputPredicate', the role 'build_InputPredicate' has cardinality 0..*.
+An association connects 'build_InputPredicate' and 'build_BNamePredicate'. From 'build_InputPredicate', the role 'build_InputPredicate91' has cardinality 0..*, and from 'build_BNamePredicate', the role 'build_BNamePredicate92' has cardinality 0..*.
+An association connects 'build_BuilderConcernContext' and 'build_UnitConcernContext'. From 'build_BuilderConcernContext', the role 'build_BuilderConcernContext' has cardinality 0..*, and from 'build_UnitConcernContext', the role 'build_UnitConcernContext' has cardinality 0..*.
+An association connects 'build_UnitConcernContext' and 'build_BExpression'. From 'build_UnitConcernContext', the role 'build_UnitConcernContext95' has cardinality 0..*, and from 'build_BExpression', the role 'build_BExpression96' has cardinality 0..*.
+An association connects 'build_RequiresPredicate' and 'build_UnitConcernContext'. From 'build_RequiresPredicate', the role 'build_RequiresPredicate99' has cardinality 0..*, and from 'build_UnitConcernContext', the role 'build_UnitConcernContext98' has cardinality 0..*.
+An association connects 'build_ProvidesPredicate' and 'build_UnitConcernContext'. From 'build_ProvidesPredicate', the role 'build_ProvidesPredicate102' has cardinality 0..*, and from 'build_UnitConcernContext', the role 'build_UnitConcernContext101' has cardinality 0..*.
+An association connects 'build_UnitConcernContext' and 'build_CapabilityPredicate'. From 'build_UnitConcernContext', the role 'build_UnitConcernContext104' has cardinality 0..*, and from 'build_CapabilityPredicate', the role 'build_CapabilityPredicate105' has cardinality 0..*.
+An association connects 'build_BuilderConcernContext' and 'build_BExpression'. From 'build_BuilderConcernContext', the role 'build_BuilderConcernContext107' has cardinality 0..*, and from 'build_BExpression', the role 'build_BExpression108' has cardinality 0..*.
+An association connects 'build_BuilderConcernContext' and 'build_BuilderInput'. From 'build_BuilderConcernContext', the role 'build_BuilderConcernContext110' has cardinality 0..*, and from 'build_BuilderInput', the role 'build_BuilderInput111' has cardinality 0..*.
+An association connects 'build_InputPredicate' and 'build_BuilderConcernContext'. From 'build_InputPredicate', the role 'build_InputPredicate114' has cardinality 0..*, and from 'build_BuilderConcernContext', the role 'build_BuilderConcernContext113' has cardinality 0..*.
+An association connects 'build_ConditionalPathVector' and 'build_BuilderConcernContext'. From 'build_ConditionalPathVector', the role 'build_ConditionalPathVector117' has cardinality 0..*, and from 'build_BuilderConcernContext', the role 'build_BuilderConcernContext116' has cardinality 0..*.
+An association connects 'build_BuilderConcernContext' and 'build_OutputPredicate'. From 'build_BuilderConcernContext', the role 'build_BuilderConcernContext119' has cardinality 0..*, and from 'build_OutputPredicate', the role 'build_OutputPredicate' has cardinality 0..*.
+An association connects 'build_BuilderConcernContext' and 'build_BExpression'. From 'build_BuilderConcernContext', the role 'build_BuilderConcernContext121' has cardinality 0..*, and from 'build_BExpression', the role 'build_BExpression122' has cardinality 0..*.
+An association connects 'build_BuilderConcernContext' and 'build_BParameterPredicate'. From 'build_BuilderConcernContext', the role 'build_BuilderConcernContext124' has cardinality 0..*, and from 'build_BParameterPredicate', the role 'build_BParameterPredicate' has cardinality 0..*.
+An association connects 'build_BExpression' and 'build_BuilderConcernContext'. From 'build_BExpression', the role 'build_BExpression127' has cardinality 0..*, and from 'build_BuilderConcernContext', the role 'build_BuilderConcernContext126' has cardinality 0..*.
+An association connects 'build_BExpression' and 'build_BuilderConcernContext'. From 'build_BExpression', the role 'build_BExpression130' has cardinality 0..*, and from 'build_BuilderConcernContext', the role 'build_BuilderConcernContext129' has cardinality 0..*.
+An association connects 'build_BExpression' and 'build_BuilderConcernContext'. From 'build_BExpression', the role 'build_BExpression133' has cardinality 0..*, and from 'build_BuilderConcernContext', the role 'build_BuilderConcernContext132' has cardinality 0..*.
+An association connects 'build_ProvidesPredicate' and 'build_BuilderConcernContext'. From 'build_ProvidesPredicate', the role 'build_ProvidesPredicate136' has cardinality 0..*, and from 'build_BuilderConcernContext', the role 'build_BuilderConcernContext135' has cardinality 0..*.
+An association connects 'build_BuilderConcernContext' and 'build_BPropertySet'. From 'build_BuilderConcernContext', the role 'build_BuilderConcernContext138' has cardinality 0..*, and from 'build_BPropertySet', the role 'build_BPropertySet139' has cardinality 0..*.
+An association connects 'build_SourcePredicate' and 'build_BuilderConcernContext'. From 'build_SourcePredicate', the role 'build_SourcePredicate' has cardinality 0..*, and from 'build_BuilderConcernContext', the role 'build_BuilderConcernContext141' has cardinality 0..*.
+An association connects 'build_BuilderConcernContext' and 'build_ConditionalPathVector'. From 'build_BuilderConcernContext', the role 'build_BuilderConcernContext143' has cardinality 0..*, and from 'build_ConditionalPathVector', the role 'build_ConditionalPathVector144' has cardinality 0..*.
+An association connects 'build_BuilderConcernContext' and 'build_BPropertySet'. From 'build_BuilderConcernContext', the role 'build_BuilderConcernContext146' has cardinality 0..*, and from 'build_BPropertySet', the role 'build_BPropertySet147' has cardinality 0..*.
+An association connects 'build_PathGroupPredicate' and 'build_PathVector'. From 'build_PathGroupPredicate', the role 'build_PathGroupPredicate' has cardinality 0..*, and from 'build_PathVector', the role 'build_PathVector149' has cardinality 0..*.
+An association connects 'build_PathGroupPredicate' and 'build_BExpression'. From 'build_PathGroupPredicate', the role 'build_PathGroupPredicate151' has cardinality 0..*, and from 'build_BExpression', the role 'build_BExpression152' has cardinality 0..*.
+An association connects 'build_IRequiredCapabilityContainer' and 'build_RequiredCapability'. From 'build_IRequiredCapabilityContainer', the role 'build_IRequiredCapabilityContainer' has cardinality 0..*, and from 'build_RequiredCapability', the role 'build_RequiredCapability154' has cardinality 0..*.
+An association connects 'build_IRequiredCapabilityContainer' and 'build_CapabilityPredicate'. From 'build_IRequiredCapabilityContainer', the role 'build_IRequiredCapabilityContainer156' has cardinality 0..*, and from 'build_CapabilityPredicate', the role 'build_CapabilityPredicate157' has cardinality 0..*.
+An association connects 'build_Capability' and 'build_IProvidedCapabilityContainer'. From 'build_Capability', the role 'build_Capability159' has cardinality 0..*, and from 'build_IProvidedCapabilityContainer', the role 'build_IProvidedCapabilityContainer' has cardinality 0..*.
+An association connects 'build_BExpression' and 'build_BuilderQuery'. From 'build_BExpression', the role 'build_BExpression162' has cardinality 0..*, and from 'build_BuilderQuery', the role 'build_BuilderQuery161' has cardinality 0..*.
+An association connects 'build_BExpression' and 'build_BuilderQuery'. From 'build_BExpression', the role 'build_BExpression165' has cardinality 0..*, and from 'build_BuilderQuery', the role 'build_BuilderQuery164' has cardinality 0..*.
+An association connects 'build_BeeModel' and 'build_IType'. From 'build_BeeModel', the role 'build_BeeModel' has cardinality 0..*, and from 'build_IType', the role 'build_IType167' has cardinality 0..*.
+An association connects 'build_IFunction' and 'build_BeeModel'. From 'build_IFunction', the role 'build_IFunction' has cardinality 0..*, and from 'build_BeeModel', the role 'build_BeeModel169' has cardinality 0..*.
+An association connects 'build_BeeModel' and 'build_BConcern'. From 'build_BeeModel', the role 'build_BeeModel171' has cardinality 0..*, and from 'build_BConcern', the role 'build_BConcern172' has cardinality 0..*.
+An association connects 'build_BPropertySet' and 'build_BeeModel'. From 'build_BPropertySet', the role 'build_BPropertySet175' has cardinality 0..*, and from 'build_BeeModel', the role 'build_BeeModel174' has cardinality 0..*.
+An association connects 'build_BeeModel' and 'build_Repository'. From 'build_BeeModel', the role 'build_BeeModel177' has cardinality 0..*, and from 'build_Repository', the role 'build_Repository178' has cardinality 0..*.
+An association connects 'build_BeeModel' and 'build_FirstFoundUnitProvider'. From 'build_BeeModel', the role 'build_BeeModel180' has cardinality 0..*, and from 'build_FirstFoundUnitProvider', the role 'build_FirstFoundUnitProvider181' has cardinality 0..*.
+An association connects 'build_BPropertySet' and 'build_BeeModel'. From 'build_BPropertySet', the role 'build_BPropertySet184' has cardinality 0..*, and from 'build_BeeModel', the role 'build_BeeModel183' has cardinality 0..*.
+An association connects 'build_BeeModel' and 'build_BeeHive'. From 'build_BeeModel', the role 'build_BeeModel186' has cardinality 0..*, and from 'build_BeeHive', the role 'build_BeeHive' has cardinality 0..*.
+An association connects 'build_BeeHive' and 'build_BeeHive'. From 'build_BeeHive', the role 'build_BeeHive187' has cardinality 0..*, and from 'build_BeeHive', the role 'build_BeeHive189' has cardinality 0..*.
+An association connects 'build_EffectiveUnitFacade' and 'build_BuildUnit'. From 'build_EffectiveUnitFacade', the role 'build_EffectiveUnitFacade' has cardinality 0..*, and from 'build_BuildUnit', the role 'build_BuildUnit191' has cardinality 0..*.
+An association connects 'build_EffectiveUnitFacade' and 'build_EffectiveCapabilityFacade'. From 'build_EffectiveUnitFacade', the role 'build_EffectiveUnitFacade193' has cardinality 0..*, and from 'build_EffectiveCapabilityFacade', the role 'build_EffectiveCapabilityFacade' has cardinality 0..*.
+An association connects 'build_EffectiveUnitFacade' and 'build_EffectiveRequirementFacade'. From 'build_EffectiveUnitFacade', the role 'build_EffectiveUnitFacade195' has cardinality 0..*, and from 'build_EffectiveRequirementFacade', the role 'build_EffectiveRequirementFacade' has cardinality 0..*.
+An association connects 'build_EffectiveRequirementFacade' and 'build_EffectiveUnitFacade'. From 'build_EffectiveRequirementFacade', the role 'build_EffectiveRequirementFacade198' has cardinality 0..*, and from 'build_EffectiveUnitFacade', the role 'build_EffectiveUnitFacade197' has cardinality 0..*.
+An association connects 'build_EffectiveRequirementFacade' and 'build_EffectiveUnitFacade'. From 'build_EffectiveRequirementFacade', the role 'build_EffectiveRequirementFacade201' has cardinality 0..*, and from 'build_EffectiveUnitFacade', the role 'build_EffectiveUnitFacade200' has cardinality 0..*.
+An association connects 'build_EffectiveRequirementFacade' and 'build_RequiredCapability'. From 'build_EffectiveRequirementFacade', the role 'build_EffectiveRequirementFacade203' has cardinality 0..*, and from 'build_RequiredCapability', the role 'build_RequiredCapability204' has cardinality 0..*.
+An association connects 'build_EffectiveCapabilityFacade' and 'build_Capability'. From 'build_EffectiveCapabilityFacade', the role 'build_EffectiveCapabilityFacade206' has cardinality 0..*, and from 'build_Capability', the role 'build_Capability207' has cardinality 0..*.
+An association connects 'build_BuilderCallFacade' and 'build_BuilderCall'. From 'build_BuilderCallFacade', the role 'build_BuilderCallFacade' has cardinality 0..*, and from 'build_BuilderCall', the role 'build_BuilderCall209' has cardinality 0..*.
+An association connects 'build_RequiredCapability' and 'build_BuilderCallFacade'. From 'build_RequiredCapability', the role 'build_RequiredCapability212' has cardinality 0..*, and from 'build_BuilderCallFacade', the role 'build_BuilderCallFacade211' has cardinality 0..*.
+An association connects 'build_PathVector' and 'build_BuildSet'. From 'build_PathVector', the role 'build_PathVector214' has cardinality 0..*, and from 'build_BuildSet', the role 'build_BuildSet' has cardinality 0..*.
+An association connects 'build_CompoundBuildUnitRepository' and 'build_IBuildUnitRepository'. From 'build_CompoundBuildUnitRepository', the role 'build_CompoundBuildUnitRepository' has cardinality 0..*, and from 'build_IBuildUnitRepository', the role 'build_IBuildUnitRepository216' has cardinality 0..*.
+An association connects 'build_BeeModelRepository' and 'build_BeeModel'. From 'build_BeeModelRepository', the role 'build_BeeModelRepository' has cardinality 0..*, and from 'build_BeeModel', the role 'build_BeeModel218' has cardinality 0..*.
+An association connects 'build_UnitResolutionInfo' and 'build_BuildUnit'. From 'build_UnitResolutionInfo', the role 'build_UnitResolutionInfo' has cardinality 0..*, and from 'build_BuildUnit', the role 'build_BuildUnit220' has cardinality 0..*.
+An association connects 'build_UnitResolutionInfo' and 'build_BExecutionContext'. From 'build_UnitResolutionInfo', the role 'build_UnitResolutionInfo222' has cardinality 0..*, and from 'build_BExecutionContext', the role 'build_BExecutionContext' has cardinality 0..*.
+An association connects 'build_BSwitchExpression' and 'build_SwitchUnitProvider'. From 'build_BSwitchExpression', the role 'build_BSwitchExpression' has cardinality 0..*, and from 'build_SwitchUnitProvider', the role 'build_SwitchUnitProvider' has cardinality 0..*.
+An association connects 'build_Repository' and 'build_Branch'. From 'build_Repository', the role 'build_Repository225' has cardinality 0..*, and from 'build_Branch', the role 'build_Branch' has cardinality 0..*.
+An association connects 'build_Repository' and 'build_RepoOption'. From 'build_Repository', the role 'build_Repository227' has cardinality 0..*, and from 'build_RepoOption', the role 'build_RepoOption228' has cardinality 0..*.
+An association connects 'build_Repository' and 'build_IBuildUnitRepository'. From 'build_Repository', the role 'build_Repository230' has cardinality 0..*, and from 'build_IBuildUnitRepository', the role 'build_IBuildUnitRepository231' has cardinality 0..*.
+An association connects 'build_BExpression' and 'build_Repository'. From 'build_BExpression', the role 'build_BExpression234' has cardinality 0..*, and from 'build_Repository', the role 'build_Repository233' has cardinality 0..*.
+An association connects 'build_Branch' and 'build_BNamePredicate'. From 'build_Branch', the role 'build_Branch236' has cardinality 0..*, and from 'build_BNamePredicate', the role 'build_BNamePredicate237' has cardinality 0..*.
+An association connects 'build_BNamePredicate' and 'build_Branch'. From 'build_BNamePredicate', the role 'build_BNamePredicate240' has cardinality 0..*, and from 'build_Branch', the role 'build_Branch239' has cardinality 0..*.
+An association connects 'build_Branch' and 'build_BExpression'. From 'build_Branch', the role 'build_Branch242' has cardinality 0..*, and from 'build_BExpression', the role 'build_BExpression243' has cardinality 0..*.
+An association connects 'build_UnitProvider' and 'build_DelegatingUnitProvider'. From 'build_UnitProvider', the role 'build_UnitProvider245' has cardinality 0..*, and from 'build_DelegatingUnitProvider', the role 'build_DelegatingUnitProvider' has cardinality 0..*.
+An association connects 'build_BExpression' and 'build_RepoOption'. From 'build_BExpression', the role 'build_BExpression248' has cardinality 0..*, and from 'build_RepoOption', the role 'build_RepoOption247' has cardinality 0..*.
+An association connects 'build_Repository' and 'build_UnitRepositoryDescription'. From 'build_Repository', the role 'build_Repository250' has cardinality 0..*, and from 'build_UnitRepositoryDescription', the role 'build_UnitRepositoryDescription' has cardinality 0..*.
+An association connects 'build_BuildCallOnSelectedRequirements' and 'build_CapabilityPredicate'. From 'build_BuildCallOnSelectedRequirements', the role 'build_BuildCallOnSelectedRequirements' has cardinality 0..*, and from 'build_CapabilityPredicate', the role 'build_CapabilityPredicate252' has cardinality 0..*.
+An association connects 'build_BWithExpression' and 'build_BuilderInputContextDecorator'. From 'build_BWithExpression', the role 'build_BWithExpression' has cardinality 0..*, and from 'build_BuilderInputContextDecorator', the role 'build_BuilderInputContextDecorator' has cardinality 0..*.
+An association connects 'build_BExpression' and 'build_BuilderInputCondition'. From 'build_BExpression', the role 'build_BExpression255' has cardinality 0..*, and from 'build_BuilderInputCondition', the role 'build_BuilderInputCondition' has cardinality 0..*.
+An association connects 'build_RequiredCapability' and 'build_BuildCallSingle'. From 'build_RequiredCapability', the role 'build_RequiredCapability257' has cardinality 0..*, and from 'build_BuildCallSingle', the role 'build_BuildCallSingle' has cardinality 0..*.
+An association connects 'build_BuildCallOnDeclaredRequirement' and 'build_RequiredCapability'. From 'build_BuildCallOnDeclaredRequirement', the role 'build_BuildCallOnDeclaredRequirement' has cardinality 0..*, and from 'build_RequiredCapability', the role 'build_RequiredCapability259' has cardinality 0..*.
+An association connects 'build_RequiredCapability' and 'build_BuildCallOnReferencedRequirement'. From 'build_RequiredCapability', the role 'build_RequiredCapability261' has cardinality 0..*, and from 'build_BuildCallOnReferencedRequirement', the role 'build_BuildCallOnReferencedRequirement' has cardinality 0..*.
+An association connects 'build_IEffectiveFacade' and 'build_BExecutionContext'. From 'build_IEffectiveFacade', the role 'build_IEffectiveFacade' has cardinality 0..*, and from 'build_BExecutionContext', the role 'build_BExecutionContext263' has cardinality 0..*.
+An association connects 'build_BuildUnit' and 'build_IBuildUnitContainer'. From 'build_BuildUnit', the role 'build_BuildUnit266' has cardinality 0..*, and from 'build_IBuildUnitContainer', the role 'build_IBuildUnitContainer265' has cardinality 0..*.
+An association connects 'build_FragmentHost' and 'build_RequiredCapability'. From 'build_FragmentHost', the role 'build_FragmentHost268' has cardinality 0..*, and from 'build_RequiredCapability', the role 'build_RequiredCapability269' has cardinality 0..*.

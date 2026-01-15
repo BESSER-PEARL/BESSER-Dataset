@@ -1,0 +1,21 @@
+The domain model 'edd' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'edd_Block' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'edd_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'edd_TreeElement' represents an important domain concept.
+It has the following attributes: 'index', which is of type str; 'name', which is of type str.
+
+'edd_Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'edd_Model' and 'edd_Diagram'. From 'edd_Model', the role 'edd_Model' has cardinality 0..*, and from 'edd_Diagram', the role 'edd_Diagram' has cardinality 0..*.
+An association connects 'edd_Model' and 'edd_Block'. From 'edd_Model', the role 'edd_Model2' has cardinality 0..*, and from 'edd_Block', the role 'edd_Block' has cardinality 0..*.
+An association connects 'edd_TreeElement' and 'edd_TreeElement'. From 'edd_TreeElement', the role 'edd_TreeElement3' has cardinality 0..*, and from 'edd_TreeElement', the role 'edd_TreeElement' has cardinality 0..*.
+An association connects 'edd_Block' and 'edd_TreeElement'. From 'edd_Block', the role 'edd_Block6' has cardinality 0..*, and from 'edd_TreeElement', the role 'edd_TreeElement7' has cardinality 0..*.

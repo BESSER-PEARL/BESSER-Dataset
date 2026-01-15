@@ -1,0 +1,133 @@
+The domain model 'ArchimateImplementationAndMigration' describes the core structural elements and their relationships within the system.
+
+The model defines 32 main class(es).
+
+'ArchimateImplementationAndMigration_BusinessFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_Triggering' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_BusinessActor' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_BusinessEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_Access' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_NodeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_Representation' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_Meaning' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_Contract' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_Aggregation' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_BusinessRole' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_BusinessCollaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_BusinessService' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_Location' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_Junction' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_BusinessInteraction' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'NodeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_BusinessObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_Specialization' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_BusinessInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_Grouping' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_UsedBy' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_Product' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_BusinessProcess' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateImplementationAndMigration_Composition' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ArchimateImplementationAndMigration_BusinessActor' is a specialization of 'NodeElement'.
+The class 'ArchimateImplementationAndMigration_BusinessRole' is a specialization of 'NodeElement'.
+The class 'ArchimateImplementationAndMigration_BusinessCollaboration' is a specialization of 'NodeElement'.
+The class 'ArchimateImplementationAndMigration_BusinessInterface' is a specialization of 'NodeElement'.
+The class 'ArchimateImplementationAndMigration_Location' is a specialization of 'NodeElement'.
+The class 'ArchimateImplementationAndMigration_BusinessProcess' is a specialization of 'NodeElement'.
+The class 'ArchimateImplementationAndMigration_BusinessFunction' is a specialization of 'NodeElement'.
+The class 'ArchimateImplementationAndMigration_BusinessInteraction' is a specialization of 'NodeElement'.
+The class 'ArchimateImplementationAndMigration_BusinessEvent' is a specialization of 'NodeElement'.
+The class 'ArchimateImplementationAndMigration_BusinessService' is a specialization of 'NodeElement'.
+The class 'ArchimateImplementationAndMigration_BusinessObject' is a specialization of 'NodeElement'.
+The class 'ArchimateImplementationAndMigration_Representation' is a specialization of 'NodeElement'.
+The class 'ArchimateImplementationAndMigration_Meaning' is a specialization of 'NodeElement'.
+The class 'ArchimateImplementationAndMigration_Value' is a specialization of 'NodeElement'.
+The class 'ArchimateImplementationAndMigration_Product' is a specialization of 'NodeElement'.
+The class 'ArchimateImplementationAndMigration_Contract' is a specialization of 'NodeElement'.
+The class 'ArchimateImplementationAndMigration_Grouping' is a specialization of 'NodeElement'.
+The class 'ArchimateImplementationAndMigration_Junction' is a specialization of 'Relationship'.
+The class 'ArchimateImplementationAndMigration_Association' is a specialization of 'Relationship'.
+The class 'ArchimateImplementationAndMigration_Access' is a specialization of 'Relationship'.
+The class 'ArchimateImplementationAndMigration_UsedBy' is a specialization of 'Relationship'.
+The class 'ArchimateImplementationAndMigration_Realization' is a specialization of 'Relationship'.
+The class 'ArchimateImplementationAndMigration_Assignment' is a specialization of 'Relationship'.
+The class 'ArchimateImplementationAndMigration_Aggregation' is a specialization of 'Relationship'.
+The class 'ArchimateImplementationAndMigration_Composition' is a specialization of 'Relationship'.
+The class 'ArchimateImplementationAndMigration_Flow' is a specialization of 'Relationship'.
+The class 'ArchimateImplementationAndMigration_Triggering' is a specialization of 'Relationship'.
+The class 'ArchimateImplementationAndMigration_Specialization' is a specialization of 'Relationship'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ArchimateImplementationAndMigration_Relationship' and 'ArchimateImplementationAndMigration_NodeElement'. From 'ArchimateImplementationAndMigration_Relationship', the role 'ArchimateImplementationAndMigration_Relationship' has cardinality 0..*, and from 'ArchimateImplementationAndMigration_NodeElement', the role 'ArchimateImplementationAndMigration_NodeElement' has cardinality 0..*.
+An association connects 'ArchimateImplementationAndMigration_Relationship' and 'ArchimateImplementationAndMigration_NodeElement'. From 'ArchimateImplementationAndMigration_Relationship', the role 'ArchimateImplementationAndMigration_Relationship2' has cardinality 0..*, and from 'ArchimateImplementationAndMigration_NodeElement', the role 'ArchimateImplementationAndMigration_NodeElement3' has cardinality 0..*.

@@ -1,0 +1,47 @@
+The domain model 'autopl' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'autopl_Transition' represents an important domain concept.
+It has one attribute: 'probability', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'autopl_Alphabet' represents an important domain concept.
+It does not declare any attributes.
+
+'autopl_State' represents an important domain concept.
+It has the following attributes: 'isFinal', which is of type str; 'isInitial', which is of type str; 'name', which is of type str.
+
+'autopl_Automaton' represents an important domain concept.
+It does not declare any attributes.
+
+'autopl_HierarchicalState' represents an important domain concept.
+It does not declare any attributes.
+
+'autopl_Symbol' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AcceptanceKind' defines the following possible values: 'Probabilistic', 'Infinite', 'Finite'.
+
+The model also captures inheritance relationships between classes.
+The class 'autopl_HierarchicalState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'autopl_Automaton' and 'autopl_Alphabet'. From 'autopl_Automaton', the role 'autopl_Automaton' has cardinality 0..*, and from 'autopl_Alphabet', the role 'autopl_Alphabet' has cardinality 0..*.
+An association connects 'autopl_Alphabet' and 'autopl_Automaton'. From 'autopl_Alphabet', the role 'autopl_Alphabet3' has cardinality 0..*, and from 'autopl_Automaton', the role 'autopl_Automaton2' has cardinality 0..*.
+An association connects 'autopl_Alphabet' and 'autopl_Automaton'. From 'autopl_Alphabet', the role 'autopl_Alphabet6' has cardinality 0..*, and from 'autopl_Automaton', the role 'autopl_Automaton5' has cardinality 0..*.
+An association connects 'autopl_Automaton' and 'autopl_Symbol'. From 'autopl_Automaton', the role 'autopl_Automaton8' has cardinality 0..*, and from 'autopl_Symbol', the role 'autopl_Symbol' has cardinality 0..*.
+An association connects 'autopl_State' and 'autopl_Automaton'. From 'autopl_State', the role 'autopl_State' has cardinality 0..*, and from 'autopl_Automaton', the role 'autopl_Automaton10' has cardinality 0..*.
+An association connects 'autopl_Automaton' and 'autopl_Transition'. From 'autopl_Automaton', the role 'autopl_Automaton12' has cardinality 0..*, and from 'autopl_Transition', the role 'autopl_Transition' has cardinality 0..*.
+An association connects 'autopl_Symbol' and 'autopl_Alphabet'. From 'autopl_Symbol', the role 'autopl_Symbol15' has cardinality 0..*, and from 'autopl_Alphabet', the role 'autopl_Alphabet14' has cardinality 0..*.
+An association connects 'autopl_Symbol' and 'autopl_Transition'. From 'autopl_Symbol', the role 'autopl_Symbol18' has cardinality 0..*, and from 'autopl_Transition', the role 'autopl_Transition17' has cardinality 0..*.
+An association connects 'autopl_Transition' and 'autopl_Symbol'. From 'autopl_Transition', the role 'autopl_Transition20' has cardinality 0..*, and from 'autopl_Symbol', the role 'autopl_Symbol21' has cardinality 0..*.
+An association connects 'autopl_Symbol' and 'autopl_Transition'. From 'autopl_Symbol', the role 'autopl_Symbol24' has cardinality 0..*, and from 'autopl_Transition', the role 'autopl_Transition23' has cardinality 0..*.
+An association connects 'autopl_Transition' and 'autopl_Symbol'. From 'autopl_Transition', the role 'autopl_Transition26' has cardinality 0..*, and from 'autopl_Symbol', the role 'autopl_Symbol27' has cardinality 0..*.
+An association connects 'autopl_State' and 'autopl_Transition'. From 'autopl_State', the role 'autopl_State30' has cardinality 0..*, and from 'autopl_Transition', the role 'autopl_Transition29' has cardinality 0..*.
+An association connects 'autopl_State' and 'autopl_Transition'. From 'autopl_State', the role 'autopl_State33' has cardinality 0..*, and from 'autopl_Transition', the role 'autopl_Transition32' has cardinality 0..*.
+An association connects 'autopl_HierarchicalState' and 'autopl_State'. From 'autopl_HierarchicalState', the role 'autopl_HierarchicalState' has cardinality 0..*, and from 'autopl_State', the role 'autopl_State35' has cardinality 0..*.
+An association connects 'autopl_HierarchicalState' and 'autopl_Transition'. From 'autopl_HierarchicalState', the role 'autopl_HierarchicalState37' has cardinality 0..*, and from 'autopl_Transition', the role 'autopl_Transition38' has cardinality 0..*.

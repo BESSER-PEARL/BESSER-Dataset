@@ -1,0 +1,323 @@
+The domain model 'noop' describes the core structural elements and their relationships within the system.
+
+The model defines 59 main class(es).
+
+'noop_Storage' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'noop_SigNegExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_ComplementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_Length' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_BoolLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'noop_InstanceOfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_ByteLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'noop_Super' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_ContinueStatement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'noop_Member' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'noop_ForeverStatement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'noop_BAndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_IfStatement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'noop_ReturnStatement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'noop_SubExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_NoopClass' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'noop_LeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_This' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_LShiftExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_GtExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_RShiftExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_GeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_DecExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_ModExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_BOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_IncExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_MulExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_AssignmentExpression' represents an important domain concept.
+It has one attribute: 'assignment', which is of type str.
+
+'noop_SigPosExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_MemberRef' represents an important domain concept.
+It has one attribute: 'hasArgs', which is of type bool.
+
+'noop_CastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_DivExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_NotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_ForStatement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'noop_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'noop_ArrayLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_BreakStatement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'noop_MemberSelect' represents an important domain concept.
+It has one attribute: 'hasArgs', which is of type bool.
+
+'noop_NewInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_Constructor' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_LtExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_ConstructorField' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_AsmStatement' represents an important domain concept.
+It has one attribute: 'codes', which is of type str.
+
+'noop_OrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_Index' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_BXorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_EqualsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_AddExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_ElseStatement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'noop_DifferExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'noop_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StorageType' defines the following possible values: 'INESMIR', 'IRQ', 'NMI', 'PRGROM', 'MMC3CFG', 'INESMAPPER', 'RESET', 'CHRROM', 'INESPRG', 'INESCHR', 'INLINE', 'ZP'.
+The enumeration 'AssignmentType' defines the following possible values: 'DIV_ASSIGN', 'BOR_ASSIGN', 'BRS_ASSIGN', 'XOR_ASSIGN', 'MUL_ASSIGN', 'MOD_ASSIGN', 'BLS_ASSIGN', 'ASSIGN', 'BAN_ASSIGN', 'SUB_ASSIGN', 'ADD_ASSIGN'.
+
+The model also captures inheritance relationships between classes.
+The class 'noop_Variable' is a specialization of 'Member'.
+The class 'noop_Variable' is a specialization of 'Statement'.
+The class 'noop_Method' is a specialization of 'Member'.
+The class 'noop_ReturnStatement' is a specialization of 'Statement'.
+The class 'noop_IfStatement' is a specialization of 'Statement'.
+The class 'noop_ForStatement' is a specialization of 'Statement'.
+The class 'noop_ForeverStatement' is a specialization of 'Statement'.
+The class 'noop_ContinueStatement' is a specialization of 'Statement'.
+The class 'noop_BreakStatement' is a specialization of 'Statement'.
+The class 'noop_AsmStatement' is a specialization of 'Statement'.
+The class 'noop_Expression' is a specialization of 'Statement'.
+The class 'noop_AssignmentExpression' is a specialization of 'Expression'.
+The class 'noop_OrExpression' is a specialization of 'Expression'.
+The class 'noop_AndExpression' is a specialization of 'Expression'.
+The class 'noop_BOrExpression' is a specialization of 'Expression'.
+The class 'noop_BXorExpression' is a specialization of 'Expression'.
+The class 'noop_BAndExpression' is a specialization of 'Expression'.
+The class 'noop_EqualsExpression' is a specialization of 'Expression'.
+The class 'noop_DifferExpression' is a specialization of 'Expression'.
+The class 'noop_GtExpression' is a specialization of 'Expression'.
+The class 'noop_GeExpression' is a specialization of 'Expression'.
+The class 'noop_LtExpression' is a specialization of 'Expression'.
+The class 'noop_LeExpression' is a specialization of 'Expression'.
+The class 'noop_InstanceOfExpression' is a specialization of 'Expression'.
+The class 'noop_LShiftExpression' is a specialization of 'Expression'.
+The class 'noop_RShiftExpression' is a specialization of 'Expression'.
+The class 'noop_AddExpression' is a specialization of 'Expression'.
+The class 'noop_SubExpression' is a specialization of 'Expression'.
+The class 'noop_MulExpression' is a specialization of 'Expression'.
+The class 'noop_DivExpression' is a specialization of 'Expression'.
+The class 'noop_ModExpression' is a specialization of 'Expression'.
+The class 'noop_CastExpression' is a specialization of 'Expression'.
+The class 'noop_ComplementExpression' is a specialization of 'Expression'.
+The class 'noop_NotExpression' is a specialization of 'Expression'.
+The class 'noop_SigNegExpression' is a specialization of 'Expression'.
+The class 'noop_SigPosExpression' is a specialization of 'Expression'.
+The class 'noop_DecExpression' is a specialization of 'Expression'.
+The class 'noop_IncExpression' is a specialization of 'Expression'.
+The class 'noop_MemberSelect' is a specialization of 'Expression'.
+The class 'noop_ByteLiteral' is a specialization of 'Expression'.
+The class 'noop_BoolLiteral' is a specialization of 'Expression'.
+The class 'noop_StringLiteral' is a specialization of 'Expression'.
+The class 'noop_ArrayLiteral' is a specialization of 'Expression'.
+The class 'noop_This' is a specialization of 'Expression'.
+The class 'noop_Super' is a specialization of 'Expression'.
+The class 'noop_NewInstance' is a specialization of 'Expression'.
+The class 'noop_MemberRef' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'noop_NoopClass' and 'noop_NoopClass'. From 'noop_NoopClass', the role 'noop_NoopClass' has cardinality 0..*, and from 'noop_NoopClass', the role 'noop_NoopClass0' has cardinality 0..*.
+An association connects 'noop_Member' and 'noop_NoopClass'. From 'noop_Member', the role 'noop_Member' has cardinality 0..*, and from 'noop_NoopClass', the role 'noop_NoopClass3' has cardinality 0..*.
+An association connects 'noop_Storage' and 'noop_Member'. From 'noop_Storage', the role 'noop_Storage' has cardinality 0..*, and from 'noop_Member', the role 'noop_Member5' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_Storage'. From 'noop_Expression', the role 'noop_Expression' has cardinality 0..*, and from 'noop_Storage', the role 'noop_Storage7' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_Variable'. From 'noop_Expression', the role 'noop_Expression9' has cardinality 0..*, and from 'noop_Variable', the role 'noop_Variable' has cardinality 0..*.
+An association connects 'noop_NoopClass' and 'noop_Variable'. From 'noop_NoopClass', the role 'noop_NoopClass12' has cardinality 0..*, and from 'noop_Variable', the role 'noop_Variable11' has cardinality 0..*.
+An association connects 'noop_Variable' and 'noop_Length'. From 'noop_Variable', the role 'noop_Variable14' has cardinality 0..*, and from 'noop_Length', the role 'noop_Length' has cardinality 0..*.
+An association connects 'noop_Variable' and 'noop_Method'. From 'noop_Variable', the role 'noop_Variable16' has cardinality 0..*, and from 'noop_Method', the role 'noop_Method' has cardinality 0..*.
+An association connects 'noop_Block' and 'noop_Method'. From 'noop_Block', the role 'noop_Block' has cardinality 0..*, and from 'noop_Method', the role 'noop_Method18' has cardinality 0..*.
+An association connects 'noop_Statement' and 'noop_Block'. From 'noop_Statement', the role 'noop_Statement' has cardinality 0..*, and from 'noop_Block', the role 'noop_Block20' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_ReturnStatement'. From 'noop_Expression', the role 'noop_Expression22' has cardinality 0..*, and from 'noop_ReturnStatement', the role 'noop_ReturnStatement' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_IfStatement'. From 'noop_Expression', the role 'noop_Expression24' has cardinality 0..*, and from 'noop_IfStatement', the role 'noop_IfStatement' has cardinality 0..*.
+An association connects 'noop_IfStatement' and 'noop_Block'. From 'noop_IfStatement', the role 'noop_IfStatement26' has cardinality 0..*, and from 'noop_Block', the role 'noop_Block27' has cardinality 0..*.
+An association connects 'noop_ElseStatement' and 'noop_IfStatement'. From 'noop_ElseStatement', the role 'noop_ElseStatement' has cardinality 0..*, and from 'noop_IfStatement', the role 'noop_IfStatement29' has cardinality 0..*.
+An association connects 'noop_Block' and 'noop_ElseStatement'. From 'noop_Block', the role 'noop_Block32' has cardinality 0..*, and from 'noop_ElseStatement', the role 'noop_ElseStatement31' has cardinality 0..*.
+An association connects 'noop_IfStatement' and 'noop_ElseStatement'. From 'noop_IfStatement', the role 'noop_IfStatement35' has cardinality 0..*, and from 'noop_ElseStatement', the role 'noop_ElseStatement34' has cardinality 0..*.
+An association connects 'noop_ForStatement' and 'noop_Variable'. From 'noop_ForStatement', the role 'noop_ForStatement' has cardinality 0..*, and from 'noop_Variable', the role 'noop_Variable37' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_ForStatement'. From 'noop_Expression', the role 'noop_Expression40' has cardinality 0..*, and from 'noop_ForStatement', the role 'noop_ForStatement39' has cardinality 0..*.
+An association connects 'noop_ForStatement' and 'noop_Expression'. From 'noop_ForStatement', the role 'noop_ForStatement42' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression43' has cardinality 0..*.
+An association connects 'noop_ForStatement' and 'noop_Expression'. From 'noop_ForStatement', the role 'noop_ForStatement45' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression46' has cardinality 0..*.
+An association connects 'noop_Block' and 'noop_ForStatement'. From 'noop_Block', the role 'noop_Block49' has cardinality 0..*, and from 'noop_ForStatement', the role 'noop_ForStatement48' has cardinality 0..*.
+An association connects 'noop_Block' and 'noop_ForeverStatement'. From 'noop_Block', the role 'noop_Block51' has cardinality 0..*, and from 'noop_ForeverStatement', the role 'noop_ForeverStatement' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_AsmStatement'. From 'noop_Expression', the role 'noop_Expression53' has cardinality 0..*, and from 'noop_AsmStatement', the role 'noop_AsmStatement' has cardinality 0..*.
+An association connects 'noop_ConstructorField' and 'noop_Constructor'. From 'noop_ConstructorField', the role 'noop_ConstructorField' has cardinality 0..*, and from 'noop_Constructor', the role 'noop_Constructor' has cardinality 0..*.
+An association connects 'noop_Variable' and 'noop_ConstructorField'. From 'noop_Variable', the role 'noop_Variable57' has cardinality 0..*, and from 'noop_ConstructorField', the role 'noop_ConstructorField56' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_ConstructorField'. From 'noop_Expression', the role 'noop_Expression60' has cardinality 0..*, and from 'noop_ConstructorField', the role 'noop_ConstructorField59' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_Index'. From 'noop_Expression', the role 'noop_Expression62' has cardinality 0..*, and from 'noop_Index', the role 'noop_Index' has cardinality 0..*.
+An association connects 'noop_Length' and 'noop_Expression'. From 'noop_Length', the role 'noop_Length64' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression65' has cardinality 0..*.
+An association connects 'noop_AssignmentExpression' and 'noop_Expression'. From 'noop_AssignmentExpression', the role 'noop_AssignmentExpression' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression67' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_AssignmentExpression'. From 'noop_Expression', the role 'noop_Expression70' has cardinality 0..*, and from 'noop_AssignmentExpression', the role 'noop_AssignmentExpression69' has cardinality 0..*.
+An association connects 'noop_OrExpression' and 'noop_Expression'. From 'noop_OrExpression', the role 'noop_OrExpression' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression72' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_OrExpression'. From 'noop_Expression', the role 'noop_Expression75' has cardinality 0..*, and from 'noop_OrExpression', the role 'noop_OrExpression74' has cardinality 0..*.
+An association connects 'noop_AndExpression' and 'noop_Expression'. From 'noop_AndExpression', the role 'noop_AndExpression' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression77' has cardinality 0..*.
+An association connects 'noop_AndExpression' and 'noop_Expression'. From 'noop_AndExpression', the role 'noop_AndExpression79' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression80' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_BOrExpression'. From 'noop_Expression', the role 'noop_Expression82' has cardinality 0..*, and from 'noop_BOrExpression', the role 'noop_BOrExpression' has cardinality 0..*.
+An association connects 'noop_BOrExpression' and 'noop_Expression'. From 'noop_BOrExpression', the role 'noop_BOrExpression84' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression85' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_BXorExpression'. From 'noop_Expression', the role 'noop_Expression87' has cardinality 0..*, and from 'noop_BXorExpression', the role 'noop_BXorExpression' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_BXorExpression'. From 'noop_Expression', the role 'noop_Expression90' has cardinality 0..*, and from 'noop_BXorExpression', the role 'noop_BXorExpression89' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_BAndExpression'. From 'noop_Expression', the role 'noop_Expression92' has cardinality 0..*, and from 'noop_BAndExpression', the role 'noop_BAndExpression' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_BAndExpression'. From 'noop_Expression', the role 'noop_Expression95' has cardinality 0..*, and from 'noop_BAndExpression', the role 'noop_BAndExpression94' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_EqualsExpression'. From 'noop_Expression', the role 'noop_Expression97' has cardinality 0..*, and from 'noop_EqualsExpression', the role 'noop_EqualsExpression' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_EqualsExpression'. From 'noop_Expression', the role 'noop_Expression100' has cardinality 0..*, and from 'noop_EqualsExpression', the role 'noop_EqualsExpression99' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_DifferExpression'. From 'noop_Expression', the role 'noop_Expression102' has cardinality 0..*, and from 'noop_DifferExpression', the role 'noop_DifferExpression' has cardinality 0..*.
+An association connects 'noop_DifferExpression' and 'noop_Expression'. From 'noop_DifferExpression', the role 'noop_DifferExpression104' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression105' has cardinality 0..*.
+An association connects 'noop_GtExpression' and 'noop_Expression'. From 'noop_GtExpression', the role 'noop_GtExpression' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression107' has cardinality 0..*.
+An association connects 'noop_GtExpression' and 'noop_Expression'. From 'noop_GtExpression', the role 'noop_GtExpression109' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression110' has cardinality 0..*.
+An association connects 'noop_GeExpression' and 'noop_Expression'. From 'noop_GeExpression', the role 'noop_GeExpression' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression112' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_GeExpression'. From 'noop_Expression', the role 'noop_Expression115' has cardinality 0..*, and from 'noop_GeExpression', the role 'noop_GeExpression114' has cardinality 0..*.
+An association connects 'noop_LtExpression' and 'noop_Expression'. From 'noop_LtExpression', the role 'noop_LtExpression' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression117' has cardinality 0..*.
+An association connects 'noop_LtExpression' and 'noop_Expression'. From 'noop_LtExpression', the role 'noop_LtExpression119' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression120' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_LeExpression'. From 'noop_Expression', the role 'noop_Expression122' has cardinality 0..*, and from 'noop_LeExpression', the role 'noop_LeExpression' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_LeExpression'. From 'noop_Expression', the role 'noop_Expression125' has cardinality 0..*, and from 'noop_LeExpression', the role 'noop_LeExpression124' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_InstanceOfExpression'. From 'noop_Expression', the role 'noop_Expression127' has cardinality 0..*, and from 'noop_InstanceOfExpression', the role 'noop_InstanceOfExpression' has cardinality 0..*.
+An association connects 'noop_InstanceOfExpression' and 'noop_NoopClass'. From 'noop_InstanceOfExpression', the role 'noop_InstanceOfExpression129' has cardinality 0..*, and from 'noop_NoopClass', the role 'noop_NoopClass130' has cardinality 0..*.
+An association connects 'noop_LShiftExpression' and 'noop_Expression'. From 'noop_LShiftExpression', the role 'noop_LShiftExpression' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression132' has cardinality 0..*.
+An association connects 'noop_LShiftExpression' and 'noop_Expression'. From 'noop_LShiftExpression', the role 'noop_LShiftExpression134' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression135' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_RShiftExpression'. From 'noop_Expression', the role 'noop_Expression137' has cardinality 0..*, and from 'noop_RShiftExpression', the role 'noop_RShiftExpression' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_RShiftExpression'. From 'noop_Expression', the role 'noop_Expression140' has cardinality 0..*, and from 'noop_RShiftExpression', the role 'noop_RShiftExpression139' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_AddExpression'. From 'noop_Expression', the role 'noop_Expression142' has cardinality 0..*, and from 'noop_AddExpression', the role 'noop_AddExpression' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_AddExpression'. From 'noop_Expression', the role 'noop_Expression145' has cardinality 0..*, and from 'noop_AddExpression', the role 'noop_AddExpression144' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_SubExpression'. From 'noop_Expression', the role 'noop_Expression147' has cardinality 0..*, and from 'noop_SubExpression', the role 'noop_SubExpression' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_SubExpression'. From 'noop_Expression', the role 'noop_Expression150' has cardinality 0..*, and from 'noop_SubExpression', the role 'noop_SubExpression149' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_MulExpression'. From 'noop_Expression', the role 'noop_Expression152' has cardinality 0..*, and from 'noop_MulExpression', the role 'noop_MulExpression' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_MulExpression'. From 'noop_Expression', the role 'noop_Expression155' has cardinality 0..*, and from 'noop_MulExpression', the role 'noop_MulExpression154' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_DivExpression'. From 'noop_Expression', the role 'noop_Expression157' has cardinality 0..*, and from 'noop_DivExpression', the role 'noop_DivExpression' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_DivExpression'. From 'noop_Expression', the role 'noop_Expression160' has cardinality 0..*, and from 'noop_DivExpression', the role 'noop_DivExpression159' has cardinality 0..*.
+An association connects 'noop_ModExpression' and 'noop_Expression'. From 'noop_ModExpression', the role 'noop_ModExpression' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression162' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_ModExpression'. From 'noop_Expression', the role 'noop_Expression165' has cardinality 0..*, and from 'noop_ModExpression', the role 'noop_ModExpression164' has cardinality 0..*.
+An association connects 'noop_CastExpression' and 'noop_Expression'. From 'noop_CastExpression', the role 'noop_CastExpression' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression167' has cardinality 0..*.
+An association connects 'noop_CastExpression' and 'noop_NoopClass'. From 'noop_CastExpression', the role 'noop_CastExpression169' has cardinality 0..*, and from 'noop_NoopClass', the role 'noop_NoopClass170' has cardinality 0..*.
+An association connects 'noop_Index' and 'noop_CastExpression'. From 'noop_Index', the role 'noop_Index173' has cardinality 0..*, and from 'noop_CastExpression', the role 'noop_CastExpression172' has cardinality 0..*.
+An association connects 'noop_ComplementExpression' and 'noop_Expression'. From 'noop_ComplementExpression', the role 'noop_ComplementExpression' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression175' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_NotExpression'. From 'noop_Expression', the role 'noop_Expression177' has cardinality 0..*, and from 'noop_NotExpression', the role 'noop_NotExpression' has cardinality 0..*.
+An association connects 'noop_SigNegExpression' and 'noop_Expression'. From 'noop_SigNegExpression', the role 'noop_SigNegExpression' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression179' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_SigPosExpression'. From 'noop_Expression', the role 'noop_Expression181' has cardinality 0..*, and from 'noop_SigPosExpression', the role 'noop_SigPosExpression' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_DecExpression'. From 'noop_Expression', the role 'noop_Expression183' has cardinality 0..*, and from 'noop_DecExpression', the role 'noop_DecExpression' has cardinality 0..*.
+An association connects 'noop_IncExpression' and 'noop_Expression'. From 'noop_IncExpression', the role 'noop_IncExpression' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression185' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_MemberSelect'. From 'noop_Expression', the role 'noop_Expression187' has cardinality 0..*, and from 'noop_MemberSelect', the role 'noop_MemberSelect' has cardinality 0..*.
+An association connects 'noop_MemberSelect' and 'noop_Member'. From 'noop_MemberSelect', the role 'noop_MemberSelect189' has cardinality 0..*, and from 'noop_Member', the role 'noop_Member190' has cardinality 0..*.
+An association connects 'noop_MemberSelect' and 'noop_Expression'. From 'noop_MemberSelect', the role 'noop_MemberSelect192' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression193' has cardinality 0..*.
+An association connects 'noop_Index' and 'noop_MemberSelect'. From 'noop_Index', the role 'noop_Index196' has cardinality 0..*, and from 'noop_MemberSelect', the role 'noop_MemberSelect195' has cardinality 0..*.
+An association connects 'noop_ArrayLiteral' and 'noop_Expression'. From 'noop_ArrayLiteral', the role 'noop_ArrayLiteral' has cardinality 0..*, and from 'noop_Expression', the role 'noop_Expression198' has cardinality 0..*.
+An association connects 'noop_NewInstance' and 'noop_NoopClass'. From 'noop_NewInstance', the role 'noop_NewInstance' has cardinality 0..*, and from 'noop_NoopClass', the role 'noop_NoopClass200' has cardinality 0..*.
+An association connects 'noop_NewInstance' and 'noop_Constructor'. From 'noop_NewInstance', the role 'noop_NewInstance202' has cardinality 0..*, and from 'noop_Constructor', the role 'noop_Constructor203' has cardinality 0..*.
+An association connects 'noop_Index' and 'noop_NewInstance'. From 'noop_Index', the role 'noop_Index206' has cardinality 0..*, and from 'noop_NewInstance', the role 'noop_NewInstance205' has cardinality 0..*.
+An association connects 'noop_MemberRef' and 'noop_Member'. From 'noop_MemberRef', the role 'noop_MemberRef' has cardinality 0..*, and from 'noop_Member', the role 'noop_Member208' has cardinality 0..*.
+An association connects 'noop_Expression' and 'noop_MemberRef'. From 'noop_Expression', the role 'noop_Expression211' has cardinality 0..*, and from 'noop_MemberRef', the role 'noop_MemberRef210' has cardinality 0..*.
+An association connects 'noop_MemberRef' and 'noop_Index'. From 'noop_MemberRef', the role 'noop_MemberRef213' has cardinality 0..*, and from 'noop_Index', the role 'noop_Index214' has cardinality 0..*.

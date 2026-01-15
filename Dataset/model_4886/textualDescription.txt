@@ -1,0 +1,286 @@
+The domain model 'p2' describes the core structural elements and their relationships within the system.
+
+The model defines 74 main class(es).
+
+'ITouchpointType' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IMetadataRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_ITouchpointData' represents an important domain concept.
+It does not declare any attributes.
+
+'ICopyright' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_InstallableUnitFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'IRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_ProvidedCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_ILicense' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'location', which is of type str; 'UUID', which is of type str.
+
+'p2_TouchpointType' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_ITouchpointType' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'id', which is of type str.
+
+'ArtifactRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IRequiredCapability' represents an important domain concept.
+It has the following attributes: 'range', which is of type str; 'namespace', which is of type str; 'name', which is of type str.
+
+'ITouchpointInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IProcessingStepDescriptor' represents an important domain concept.
+It has the following attributes: 'data', which is of type str; 'required', which is of type bool; 'processorId', which is of type str.
+
+'p2_RepositoryReference' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IArtifactKey' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'classifier', which is of type str; 'version', which is of type str.
+
+'p2_MetadataRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'IProcessingStepDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_ArtifactRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'IProvidedCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'IInstallableUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IRepositoryReference' represents an important domain concept.
+It has the following attributes: 'type', which is of type int; 'location', which is of type str; 'options', which is of type int; 'nickname', which is of type str.
+
+'IRequiredCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IRequirementChange' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_RequirementChange' represents an important domain concept.
+It does not declare any attributes.
+
+'ITouchpointData' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_MappingRule' represents an important domain concept.
+It has the following attributes: 'filter', which is of type str; 'output', which is of type str.
+
+'Requirement' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_ArtifactKey' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_Property' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'p2_ArtifactDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IUpdateDescriptor' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'severity', which is of type int; 'description', which is of type str.
+
+'p2_IInstallableUnitPatch' represents an important domain concept.
+It does not declare any attributes.
+
+'IRepositoryReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ILicense' represents an important domain concept.
+It does not declare any attributes.
+
+'IArtifactRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_ITouchpointInstruction' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'importAttribute', which is of type str.
+
+'p2_RequiredCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IAdaptable' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IProvidedCapability' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'namespace', which is of type str; 'name', which is of type str.
+
+'IArtifactDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'IInstallableUnitPatch' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_UpdateDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'IInstallableUnitFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_SimpleArtifactRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_InstallableUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_ProcessingStepDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_InstallableUnitPatch' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_TouchpointInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IQueryable' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_TouchpointData' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IVersionedId' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'version', which is of type str.
+
+'ArtifactDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IFileArtifactRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'IFileArtifactRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_SimpleArtifactDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_Copyright' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_Comparable' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IArtifactDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'InstallableUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'IRequirementChange' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_ICopyright' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'location', which is of type str.
+
+'p2_Requirement' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IRepository' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'provider', which is of type str; 'name', which is of type str; 'description', which is of type str; 'provisioningAgent', which is of type str; 'version', which is of type str; 'type', which is of type str; 'modifiable', which is of type bool.
+
+'IUpdateDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'IArtifactKey' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IInstallableUnitFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_Repository' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IRequirement' represents an important domain concept.
+It has the following attributes: 'filter', which is of type str; 'min', which is of type str; 'description', which is of type str; 'matches', which is of type str; 'max', which is of type str; 'greedy', which is of type bool.
+
+'p2_ArtifactsByKey' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IArtifactRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IInstallableUnit' represents an important domain concept.
+It has the following attributes: 'filter', which is of type str; 'resolved', which is of type bool; 'singleton', which is of type bool.
+
+'p2_License' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_InstructionMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'p2_ArtifactKey' is a specialization of 'IArtifactKey'.
+The class 'p2_ArtifactDescriptor' is a specialization of 'IArtifactDescriptor'.
+The class 'p2_Copyright' is a specialization of 'ICopyright'.
+The class 'p2_IFileArtifactRepository' is a specialization of 'IArtifactRepository'.
+The class 'p2_IInstallableUnitFragment' is a specialization of 'IInstallableUnit'.
+The class 'p2_IInstallableUnitPatch' is a specialization of 'IInstallableUnit'.
+The class 'p2_InstallableUnit' is a specialization of 'IInstallableUnit'.
+The class 'p2_InstallableUnitFragment' is a specialization of 'InstallableUnit'.
+The class 'p2_InstallableUnitFragment' is a specialization of 'IInstallableUnitFragment'.
+The class 'p2_InstallableUnitPatch' is a specialization of 'InstallableUnit'.
+The class 'p2_InstallableUnitPatch' is a specialization of 'IInstallableUnitPatch'.
+The class 'p2_IRequiredCapability' is a specialization of 'IRequirement'.
+The class 'p2_License' is a specialization of 'ILicense'.
+The class 'p2_ProcessingStepDescriptor' is a specialization of 'IProcessingStepDescriptor'.
+The class 'p2_ProvidedCapability' is a specialization of 'IProvidedCapability'.
+The class 'p2_RepositoryReference' is a specialization of 'IRepositoryReference'.
+The class 'p2_RequiredCapability' is a specialization of 'Requirement'.
+The class 'p2_RequiredCapability' is a specialization of 'IRequiredCapability'.
+The class 'p2_Requirement' is a specialization of 'IRequirement'.
+The class 'p2_RequirementChange' is a specialization of 'IRequirementChange'.
+The class 'p2_SimpleArtifactRepository' is a specialization of 'ArtifactRepository'.
+The class 'p2_SimpleArtifactRepository' is a specialization of 'IFileArtifactRepository'.
+The class 'p2_SimpleArtifactDescriptor' is a specialization of 'ArtifactDescriptor'.
+The class 'p2_TouchpointData' is a specialization of 'ITouchpointData'.
+The class 'p2_TouchpointInstruction' is a specialization of 'ITouchpointInstruction'.
+The class 'p2_TouchpointType' is a specialization of 'ITouchpointType'.
+The class 'p2_UpdateDescriptor' is a specialization of 'IUpdateDescriptor'.
+
+Relationships between classes are modeled using associations.
+An association connects 'p2_Property' and 'p2_ArtifactDescriptor'. From 'p2_Property', the role 'p2_Property' has cardinality 0..*, and from 'p2_ArtifactDescriptor', the role 'p2_ArtifactDescriptor' has cardinality 0..*.
+An association connects 'p2_IProcessingStepDescriptor' and 'p2_ArtifactDescriptor'. From 'p2_IProcessingStepDescriptor', the role 'p2_IProcessingStepDescriptor' has cardinality 0..*, and from 'p2_ArtifactDescriptor', the role 'p2_ArtifactDescriptor2' has cardinality 0..*.
+An association connects 'p2_ArtifactsByKey' and 'p2_ArtifactRepository'. From 'p2_ArtifactsByKey', the role 'p2_ArtifactsByKey' has cardinality 0..*, and from 'p2_ArtifactRepository', the role 'p2_ArtifactRepository' has cardinality 0..*.
+An association connects 'p2_IArtifactKey' and 'p2_ArtifactsByKey'. From 'p2_IArtifactKey', the role 'p2_IArtifactKey' has cardinality 0..*, and from 'p2_ArtifactsByKey', the role 'p2_ArtifactsByKey5' has cardinality 0..*.
+An association connects 'p2_IArtifactDescriptor' and 'p2_ArtifactsByKey'. From 'p2_IArtifactDescriptor', the role 'p2_IArtifactDescriptor' has cardinality 0..*, and from 'p2_ArtifactsByKey', the role 'p2_ArtifactsByKey7' has cardinality 0..*.
+An association connects 'p2_IArtifactKey' and 'p2_IArtifactDescriptor'. From 'p2_IArtifactKey', the role 'p2_IArtifactKey10' has cardinality 0..*, and from 'p2_IArtifactDescriptor', the role 'p2_IArtifactDescriptor9' has cardinality 0..*.
+An association connects 'p2_IArtifactKey' and 'p2_IInstallableUnit'. From 'p2_IArtifactKey', the role 'p2_IArtifactKey12' has cardinality 0..*, and from 'p2_IInstallableUnit', the role 'p2_IInstallableUnit' has cardinality 0..*.
+An association connects 'p2_IInstallableUnit' and 'p2_ICopyright'. From 'p2_IInstallableUnit', the role 'p2_IInstallableUnit14' has cardinality 0..*, and from 'p2_ICopyright', the role 'p2_ICopyright' has cardinality 0..*.
+An association connects 'p2_IInstallableUnit' and 'p2_IInstallableUnitFragment'. From 'p2_IInstallableUnit', the role 'p2_IInstallableUnit16' has cardinality 0..*, and from 'p2_IInstallableUnitFragment', the role 'p2_IInstallableUnitFragment' has cardinality 0..*.
+An association connects 'p2_ILicense' and 'p2_IInstallableUnit'. From 'p2_ILicense', the role 'p2_ILicense' has cardinality 0..*, and from 'p2_IInstallableUnit', the role 'p2_IInstallableUnit18' has cardinality 0..*.
+An association connects 'p2_IRequirement' and 'p2_IInstallableUnit'. From 'p2_IRequirement', the role 'p2_IRequirement' has cardinality 0..*, and from 'p2_IInstallableUnit', the role 'p2_IInstallableUnit20' has cardinality 0..*.
+An association connects 'p2_IInstallableUnit' and 'p2_IProvidedCapability'. From 'p2_IInstallableUnit', the role 'p2_IInstallableUnit22' has cardinality 0..*, and from 'p2_IProvidedCapability', the role 'p2_IProvidedCapability' has cardinality 0..*.
+An association connects 'p2_IRequirement' and 'p2_IInstallableUnit'. From 'p2_IRequirement', the role 'p2_IRequirement25' has cardinality 0..*, and from 'p2_IInstallableUnit', the role 'p2_IInstallableUnit24' has cardinality 0..*.
+An association connects 'p2_IInstallableUnit' and 'p2_ITouchpointData'. From 'p2_IInstallableUnit', the role 'p2_IInstallableUnit27' has cardinality 0..*, and from 'p2_ITouchpointData', the role 'p2_ITouchpointData' has cardinality 0..*.
+An association connects 'p2_ITouchpointType' and 'p2_IInstallableUnit'. From 'p2_ITouchpointType', the role 'p2_ITouchpointType' has cardinality 0..*, and from 'p2_IInstallableUnit', the role 'p2_IInstallableUnit29' has cardinality 0..*.
+An association connects 'p2_IInstallableUnit' and 'p2_IUpdateDescriptor'. From 'p2_IInstallableUnit', the role 'p2_IInstallableUnit31' has cardinality 0..*, and from 'p2_IUpdateDescriptor', the role 'p2_IUpdateDescriptor' has cardinality 0..*.
+An association connects 'p2_IInstallableUnitPatch' and 'p2_IRequirementChange'. From 'p2_IInstallableUnitPatch', the role 'p2_IInstallableUnitPatch' has cardinality 0..*, and from 'p2_IRequirementChange', the role 'p2_IRequirementChange' has cardinality 0..*.
+An association connects 'p2_IRequirement' and 'p2_IInstallableUnitPatch'. From 'p2_IRequirement', the role 'p2_IRequirement35' has cardinality 0..*, and from 'p2_IInstallableUnitPatch', the role 'p2_IInstallableUnitPatch34' has cardinality 0..*.
+An association connects 'p2_IInstallableUnitPatch' and 'p2_IRequirement'. From 'p2_IInstallableUnitPatch', the role 'p2_IInstallableUnitPatch37' has cardinality 0..*, and from 'p2_IRequirement', the role 'p2_IRequirement38' has cardinality 0..*.
+An association connects 'p2_InstallableUnit' and 'p2_Property'. From 'p2_InstallableUnit', the role 'p2_InstallableUnit' has cardinality 0..*, and from 'p2_Property', the role 'p2_Property40' has cardinality 0..*.
+An association connects 'p2_IRequirement' and 'p2_InstallableUnitFragment'. From 'p2_IRequirement', the role 'p2_IRequirement42' has cardinality 0..*, and from 'p2_InstallableUnitFragment', the role 'p2_InstallableUnitFragment' has cardinality 0..*.
+An association connects 'p2_ITouchpointInstruction' and 'p2_InstructionMap'. From 'p2_ITouchpointInstruction', the role 'p2_ITouchpointInstruction' has cardinality 0..*, and from 'p2_InstructionMap', the role 'p2_InstructionMap' has cardinality 0..*.
+An association connects 'p2_IRequirementChange' and 'p2_IRequiredCapability'. From 'p2_IRequirementChange', the role 'p2_IRequirementChange45' has cardinality 0..*, and from 'p2_IRequiredCapability', the role 'p2_IRequiredCapability' has cardinality 0..*.
+An association connects 'p2_IRequirementChange' and 'p2_IRequiredCapability'. From 'p2_IRequirementChange', the role 'p2_IRequirementChange47' has cardinality 0..*, and from 'p2_IRequiredCapability', the role 'p2_IRequiredCapability48' has cardinality 0..*.
+An association connects 'p2_MetadataRepository' and 'p2_IInstallableUnit'. From 'p2_MetadataRepository', the role 'p2_MetadataRepository' has cardinality 0..*, and from 'p2_IInstallableUnit', the role 'p2_IInstallableUnit50' has cardinality 0..*.
+An association connects 'p2_MetadataRepository' and 'p2_IRepositoryReference'. From 'p2_MetadataRepository', the role 'p2_MetadataRepository52' has cardinality 0..*, and from 'p2_IRepositoryReference', the role 'p2_IRepositoryReference' has cardinality 0..*.
+An association connects 'p2_Repository' and 'p2_Property'. From 'p2_Repository', the role 'p2_Repository' has cardinality 0..*, and from 'p2_Property', the role 'p2_Property54' has cardinality 0..*.
+An association connects 'p2_MappingRule' and 'p2_SimpleArtifactRepository'. From 'p2_MappingRule', the role 'p2_MappingRule' has cardinality 0..*, and from 'p2_SimpleArtifactRepository', the role 'p2_SimpleArtifactRepository' has cardinality 0..*.
+An association connects 'p2_Property' and 'p2_SimpleArtifactDescriptor'. From 'p2_Property', the role 'p2_Property57' has cardinality 0..*, and from 'p2_SimpleArtifactDescriptor', the role 'p2_SimpleArtifactDescriptor' has cardinality 0..*.
+An association connects 'p2_TouchpointData' and 'p2_InstructionMap'. From 'p2_TouchpointData', the role 'p2_TouchpointData' has cardinality 0..*, and from 'p2_InstructionMap', the role 'p2_InstructionMap59' has cardinality 0..*.

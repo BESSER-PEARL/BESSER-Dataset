@@ -1,0 +1,31 @@
+The domain model 'Families' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'Families_Family' represents an important domain concept.
+It has one attribute: 'lastname', which is of type str.
+
+'Families_Families' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_Female' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_Male' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_Member' represents an important domain concept.
+It has one attribute: 'firstname', which is of type str.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Families_Male' is a specialization of 'Member'.
+The class 'Families_Female' is a specialization of 'Member'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Families_Families' and 'Families_Family'. From 'Families_Families', the role 'container' has cardinality 0..*, and from 'Families_Family', the role 'Family' has cardinality 0..*.
+An association connects 'Families_Families' and 'Families_Family'. From 'Families_Families', the role 'Families' has cardinality 0..*, and from 'Families_Family', the role 'families' has cardinality 0..*.
+An association connects 'Families_Family' and 'Families_Member'. From 'Families_Family', the role 'family' has cardinality 0..*, and from 'Families_Member', the role 'Member' has cardinality 0..*.
+An association connects 'Families_Family' and 'Families_Member'. From 'Families_Family', the role 'Family4' has cardinality 0..*, and from 'Families_Member', the role 'members' has cardinality 0..*.

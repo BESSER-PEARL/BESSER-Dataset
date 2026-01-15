@@ -1,0 +1,18 @@
+The domain model 'abc' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'abc_A' represents an important domain concept.
+It does not declare any attributes.
+
+'abc_B' represents an important domain concept.
+It does not declare any attributes.
+
+'abc_C' represents an important domain concept.
+It does not declare any attributes.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'abc_B' is a specialization of 'A'.

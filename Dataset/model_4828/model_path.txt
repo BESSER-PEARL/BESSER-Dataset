@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tgfranck/archifiguredelegates/com.archimatetool.model/model/archimate.ecore

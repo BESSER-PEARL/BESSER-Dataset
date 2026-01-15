@@ -1,0 +1,73 @@
+The domain model 'adlrecurs' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'adlrecurs_Required' represents an important domain concept.
+It does not declare any attributes.
+
+'adlrecurs_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'adlrecurs_Content' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'class', which is of type str.
+
+'AbstractComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'adlrecurs_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'adlrecurs_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'adlrecurs_Type' represents an important domain concept.
+It has one attribute: 'signature', which is of type str.
+
+'adlrecurs_Item' represents an important domain concept.
+It does not declare any attributes.
+
+'adlrecurs_Attributes' represents an important domain concept.
+It has one attribute: 'signature', which is of type str.
+
+'adlrecurs_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adlrecurs_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'adlrecurs_Provided' represents an important domain concept.
+It does not declare any attributes.
+
+'adlrecurs_AbstractComponent' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'adlrecurs_Interface' is a specialization of 'NamedElement'.
+The class 'adlrecurs_Binding' is a specialization of 'NamedElement'.
+The class 'adlrecurs_Required' is a specialization of 'Type'.
+The class 'adlrecurs_Provided' is a specialization of 'Type'.
+The class 'adlrecurs_Component' is a specialization of 'AbstractComponent'.
+The class 'adlrecurs_Component' is a specialization of 'NamedElement'.
+The class 'adlrecurs_Type' is a specialization of 'Interface'.
+The class 'adlrecurs_Item' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'adlrecurs_Content' and 'adlrecurs_AbstractComponent'. From 'adlrecurs_Content', the role 'adlrecurs_Content' has cardinality 0..*, and from 'adlrecurs_AbstractComponent', the role 'adlrecurs_AbstractComponent' has cardinality 0..*.
+An association connects 'adlrecurs_AbstractComponent' and 'adlrecurs_Attributes'. From 'adlrecurs_AbstractComponent', the role 'adlrecurs_AbstractComponent2' has cardinality 0..*, and from 'adlrecurs_Attributes', the role 'adlrecurs_Attributes' has cardinality 0..*.
+An association connects 'adlrecurs_Required' and 'adlrecurs_AbstractComponent'. From 'adlrecurs_Required', the role 'adlrecurs_Required' has cardinality 0..*, and from 'adlrecurs_AbstractComponent', the role 'adlrecurs_AbstractComponent4' has cardinality 0..*.
+An association connects 'adlrecurs_AbstractComponent' and 'adlrecurs_Provided'. From 'adlrecurs_AbstractComponent', the role 'adlrecurs_AbstractComponent6' has cardinality 0..*, and from 'adlrecurs_Provided', the role 'adlrecurs_Provided' has cardinality 0..*.
+An association connects 'adlrecurs_Binding' and 'adlrecurs_Interface'. From 'adlrecurs_Binding', the role 'adlrecurs_Binding' has cardinality 0..*, and from 'adlrecurs_Interface', the role 'adlrecurs_Interface' has cardinality 0..*.
+An association connects 'adlrecurs_Binding' and 'adlrecurs_Interface'. From 'adlrecurs_Binding', the role 'adlrecurs_Binding9' has cardinality 0..*, and from 'adlrecurs_Interface', the role 'adlrecurs_Interface10' has cardinality 0..*.
+An association connects 'adlrecurs_Binding' and 'adlrecurs_Interface'. From 'adlrecurs_Binding', the role 'adlrecurs_Binding12' has cardinality 0..*, and from 'adlrecurs_Interface', the role 'adlrecurs_Interface13' has cardinality 0..*.
+An association connects 'adlrecurs_Attributes' and 'adlrecurs_Attribute'. From 'adlrecurs_Attributes', the role 'adlrecurs_Attributes15' has cardinality 0..*, and from 'adlrecurs_Attribute', the role 'adlrecurs_Attribute' has cardinality 0..*.
+An association connects 'adlrecurs_Component' and 'adlrecurs_Component'. From 'adlrecurs_Component', the role 'adlrecurs_Component' has cardinality 0..*, and from 'adlrecurs_Component', the role 'adlrecurs_Component16' has cardinality 0..*.
+An association connects 'adlrecurs_Type' and 'adlrecurs_Item'. From 'adlrecurs_Type', the role 'adlrecurs_Type' has cardinality 0..*, and from 'adlrecurs_Item', the role 'adlrecurs_Item' has cardinality 0..*.

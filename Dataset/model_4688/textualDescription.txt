@@ -1,0 +1,57 @@
+The domain model 'simpleal' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'simpleal_ArithMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleal_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'Arith' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleal_Assign' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleal_Print' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleal_ArithPlus' represents an important domain concept.
+It does not declare any attributes.
+
+'ArithOp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleal_VarRef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleal_ArithOp' represents an important domain concept.
+It does not declare any attributes.
+
+'Stmt' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleal_Arith' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleal_ArithLit' represents an important domain concept.
+It has one attribute: 'val', which is of type int.
+
+'simpleal_Stmt' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simpleal_VarRef' is a specialization of 'Arith'.
+The class 'simpleal_ArithLit' is a specialization of 'Arith'.
+The class 'simpleal_ArithOp' is a specialization of 'Arith'.
+The class 'simpleal_ArithPlus' is a specialization of 'ArithOp'.
+The class 'simpleal_ArithMinus' is a specialization of 'ArithOp'.
+The class 'simpleal_Print' is a specialization of 'Stmt'.
+The class 'simpleal_Assign' is a specialization of 'Stmt'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleal_Block' and 'simpleal_Stmt'. From 'simpleal_Block', the role 'simpleal_Block' has cardinality 0..*, and from 'simpleal_Stmt', the role 'simpleal_Stmt' has cardinality 0..*.
+An association connects 'simpleal_Arith' and 'simpleal_ArithOp'. From 'simpleal_Arith', the role 'simpleal_Arith' has cardinality 0..*, and from 'simpleal_ArithOp', the role 'simpleal_ArithOp' has cardinality 0..*.
+An association connects 'simpleal_ArithOp' and 'simpleal_Arith'. From 'simpleal_ArithOp', the role 'simpleal_ArithOp3' has cardinality 0..*, and from 'simpleal_Arith', the role 'simpleal_Arith4' has cardinality 0..*.
+An association connects 'simpleal_Assign' and 'simpleal_Arith'. From 'simpleal_Assign', the role 'simpleal_Assign' has cardinality 0..*, and from 'simpleal_Arith', the role 'simpleal_Arith6' has cardinality 0..*.

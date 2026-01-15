@@ -1,0 +1,115 @@
+The domain model 'RoyalAndLoyal' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'RoyalAndLoyal_Service' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'pointsBurned', which is of type int; 'serviceNr', which is of type int; 'pointsEarned', which is of type int; 'condition', which is of type bool.
+
+'RoyalAndLoyal_TransactionReport' represents an important domain concept.
+It has the following attributes: 'totalEarned', which is of type int; 'balance', which is of type int; 'name', which is of type str; 'totalBurned', which is of type int; 'number', which is of type int.
+
+'RoyalAndLoyal_TransactionReportLine' represents an important domain concept.
+It has the following attributes: 'amount', which is of type float; 'partnerName', which is of type str; 'serviceDesc', which is of type str; 'points', which is of type int.
+
+'RoyalAndLoyal_LoyaltyProgram' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Transaction' represents an important domain concept.
+It does not declare any attributes.
+
+'RoyalAndLoyal_Burning' represents an important domain concept.
+It does not declare any attributes.
+
+'RoyalAndLoyal_Container_RandL' represents an important domain concept.
+It does not declare any attributes.
+
+'RoyalAndLoyal_Date' represents an important domain concept.
+It has the following attributes: 'year', which is of type int; 'day', which is of type int; 'month', which is of type int.
+
+'RoyalAndLoyal_ServiceLevel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RoyalAndLoyal_Transaction' represents an important domain concept.
+It has the following attributes: 'amount', which is of type float; 'points', which is of type int.
+
+'RoyalAndLoyal_Earning' represents an important domain concept.
+It does not declare any attributes.
+
+'RoyalAndLoyal_Membership' represents an important domain concept.
+It does not declare any attributes.
+
+'RoyalAndLoyal_ProgramPartner' represents an important domain concept.
+It has the following attributes: 'numberOfCustomers', which is of type int; 'name', which is of type str.
+
+'RoyalAndLoyal_Customer' represents an important domain concept.
+It has the following attributes: 'gender', which is of type str; 'isMale', which is of type bool; 'age', which is of type int; 'name', which is of type str; 'title', which is of type str.
+
+'RoyalAndLoyal_CustomerCard' represents an important domain concept.
+It has the following attributes: 'color', which is of type str; 'valid', which is of type bool; 'printedName', which is of type str.
+
+'RoyalAndLoyal_LoyaltyAccount' represents an important domain concept.
+It has the following attributes: 'number', which is of type int; 'totalPointsEarned', which is of type int; 'points', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Gender' defines the following possible values: 'male', 'female'.
+The enumeration 'RandLColor' defines the following possible values: 'gold', 'silver'.
+
+The model also captures inheritance relationships between classes.
+The class 'RoyalAndLoyal_Earning' is a specialization of 'Transaction'.
+The class 'RoyalAndLoyal_Burning' is a specialization of 'Transaction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'RoyalAndLoyal_ServiceLevel' and 'RoyalAndLoyal_LoyaltyProgram'. From 'RoyalAndLoyal_ServiceLevel', the role 'levels' has cardinality 0..*, and from 'RoyalAndLoyal_LoyaltyProgram', the role 'LoyaltyProgram' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_ServiceLevel' and 'RoyalAndLoyal_Service'. From 'RoyalAndLoyal_ServiceLevel', the role 'level' has cardinality 0..*, and from 'RoyalAndLoyal_Service', the role 'Service' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Membership' and 'RoyalAndLoyal_ServiceLevel'. From 'RoyalAndLoyal_Membership', the role 'Membership' has cardinality 0..*, and from 'RoyalAndLoyal_ServiceLevel', the role 'currentLevel' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Transaction' and 'RoyalAndLoyal_Date'. From 'RoyalAndLoyal_Transaction', the role 'RoyalAndLoyal_Transaction' has cardinality 0..*, and from 'RoyalAndLoyal_Date', the role 'RoyalAndLoyal_Date' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_LoyaltyAccount' and 'RoyalAndLoyal_Transaction'. From 'RoyalAndLoyal_LoyaltyAccount', the role 'LoyaltyAccount' has cardinality 0..*, and from 'RoyalAndLoyal_Transaction', the role 'transactions' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Service' and 'RoyalAndLoyal_Transaction'. From 'RoyalAndLoyal_Service', the role 'Service7' has cardinality 0..*, and from 'RoyalAndLoyal_Transaction', the role 'transactions6' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_CustomerCard' and 'RoyalAndLoyal_Transaction'. From 'RoyalAndLoyal_CustomerCard', the role 'CustomerCard' has cardinality 0..*, and from 'RoyalAndLoyal_Transaction', the role 'transactions9' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_LoyaltyAccount' and 'RoyalAndLoyal_Service'. From 'RoyalAndLoyal_LoyaltyAccount', the role 'RoyalAndLoyal_LoyaltyAccount' has cardinality 0..*, and from 'RoyalAndLoyal_Service', the role 'RoyalAndLoyal_Service' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_LoyaltyAccount' and 'RoyalAndLoyal_Membership'. From 'RoyalAndLoyal_LoyaltyAccount', the role 'account' has cardinality 0..*, and from 'RoyalAndLoyal_Membership', the role 'Membership12' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Transaction' and 'RoyalAndLoyal_LoyaltyAccount'. From 'RoyalAndLoyal_Transaction', the role 'Transaction' has cardinality 0..*, and from 'RoyalAndLoyal_LoyaltyAccount', the role 'account14' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_ProgramPartner' and 'RoyalAndLoyal_Service'. From 'RoyalAndLoyal_ProgramPartner', the role 'partner' has cardinality 0..*, and from 'RoyalAndLoyal_Service', the role 'Service16' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_LoyaltyProgram' and 'RoyalAndLoyal_ProgramPartner'. From 'RoyalAndLoyal_LoyaltyProgram', the role 'LoyaltyProgram18' has cardinality 0..*, and from 'RoyalAndLoyal_ProgramPartner', the role 'partners' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Date' and 'RoyalAndLoyal_TransactionReport'. From 'RoyalAndLoyal_Date', the role 'RoyalAndLoyal_Date20' has cardinality 0..*, and from 'RoyalAndLoyal_TransactionReport', the role 'RoyalAndLoyal_TransactionReport' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_TransactionReport' and 'RoyalAndLoyal_Date'. From 'RoyalAndLoyal_TransactionReport', the role 'RoyalAndLoyal_TransactionReport22' has cardinality 0..*, and from 'RoyalAndLoyal_Date', the role 'RoyalAndLoyal_Date23' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_TransactionReport' and 'RoyalAndLoyal_TransactionReportLine'. From 'RoyalAndLoyal_TransactionReport', the role 'report' has cardinality 0..*, and from 'RoyalAndLoyal_TransactionReportLine', the role 'TransactionReportLine' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_TransactionReport' and 'RoyalAndLoyal_CustomerCard'. From 'RoyalAndLoyal_TransactionReport', the role 'RoyalAndLoyal_TransactionReport26' has cardinality 0..*, and from 'RoyalAndLoyal_CustomerCard', the role 'RoyalAndLoyal_CustomerCard' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Date' and 'RoyalAndLoyal_CustomerCard'. From 'RoyalAndLoyal_Date', the role 'RoyalAndLoyal_Date29' has cardinality 0..*, and from 'RoyalAndLoyal_CustomerCard', the role 'RoyalAndLoyal_CustomerCard28' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_CustomerCard' and 'RoyalAndLoyal_Date'. From 'RoyalAndLoyal_CustomerCard', the role 'RoyalAndLoyal_CustomerCard31' has cardinality 0..*, and from 'RoyalAndLoyal_Date', the role 'RoyalAndLoyal_Date32' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_CustomerCard' and 'RoyalAndLoyal_ServiceLevel'. From 'RoyalAndLoyal_CustomerCard', the role 'RoyalAndLoyal_CustomerCard34' has cardinality 0..*, and from 'RoyalAndLoyal_ServiceLevel', the role 'RoyalAndLoyal_ServiceLevel' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Customer' and 'RoyalAndLoyal_CustomerCard'. From 'RoyalAndLoyal_Customer', the role 'Customer' has cardinality 0..*, and from 'RoyalAndLoyal_CustomerCard', the role 'cards' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Membership' and 'RoyalAndLoyal_CustomerCard'. From 'RoyalAndLoyal_Membership', the role 'Membership37' has cardinality 0..*, and from 'RoyalAndLoyal_CustomerCard', the role 'card' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Transaction' and 'RoyalAndLoyal_CustomerCard'. From 'RoyalAndLoyal_Transaction', the role 'Transaction40' has cardinality 0..*, and from 'RoyalAndLoyal_CustomerCard', the role 'card39' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Membership' and 'RoyalAndLoyal_ServiceLevel'. From 'RoyalAndLoyal_Membership', the role 'Membership42' has cardinality 0..*, and from 'RoyalAndLoyal_ServiceLevel', the role 'ServiceLevel' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_CustomerCard' and 'RoyalAndLoyal_Membership'. From 'RoyalAndLoyal_CustomerCard', the role 'CustomerCard45' has cardinality 0..*, and from 'RoyalAndLoyal_Membership', the role 'Membership44' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Membership' and 'RoyalAndLoyal_LoyaltyAccount'. From 'RoyalAndLoyal_Membership', the role 'Membership47' has cardinality 0..*, and from 'RoyalAndLoyal_LoyaltyAccount', the role 'LoyaltyAccount48' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_LoyaltyProgram' and 'RoyalAndLoyal_Membership'. From 'RoyalAndLoyal_LoyaltyProgram', the role 'RoyalAndLoyal_LoyaltyProgram' has cardinality 0..*, and from 'RoyalAndLoyal_Membership', the role 'RoyalAndLoyal_Membership' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Customer' and 'RoyalAndLoyal_Membership'. From 'RoyalAndLoyal_Customer', the role 'RoyalAndLoyal_Customer' has cardinality 0..*, and from 'RoyalAndLoyal_Membership', the role 'RoyalAndLoyal_Membership51' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Container_RandL' and 'RoyalAndLoyal_Customer'. From 'RoyalAndLoyal_Container_RandL', the role 'RoyalAndLoyal_Container_RandL' has cardinality 0..*, and from 'RoyalAndLoyal_Customer', the role 'RoyalAndLoyal_Customer53' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Container_RandL' and 'RoyalAndLoyal_Date'. From 'RoyalAndLoyal_Container_RandL', the role 'RoyalAndLoyal_Container_RandL55' has cardinality 0..*, and from 'RoyalAndLoyal_Date', the role 'RoyalAndLoyal_Date56' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_CustomerCard' and 'RoyalAndLoyal_Container_RandL'. From 'RoyalAndLoyal_CustomerCard', the role 'RoyalAndLoyal_CustomerCard59' has cardinality 0..*, and from 'RoyalAndLoyal_Container_RandL', the role 'RoyalAndLoyal_Container_RandL58' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Membership' and 'RoyalAndLoyal_Container_RandL'. From 'RoyalAndLoyal_Membership', the role 'RoyalAndLoyal_Membership62' has cardinality 0..*, and from 'RoyalAndLoyal_Container_RandL', the role 'RoyalAndLoyal_Container_RandL61' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Container_RandL' and 'RoyalAndLoyal_Service'. From 'RoyalAndLoyal_Container_RandL', the role 'RoyalAndLoyal_Container_RandL64' has cardinality 0..*, and from 'RoyalAndLoyal_Service', the role 'RoyalAndLoyal_Service65' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Container_RandL' and 'RoyalAndLoyal_LoyaltyProgram'. From 'RoyalAndLoyal_Container_RandL', the role 'RoyalAndLoyal_Container_RandL67' has cardinality 0..*, and from 'RoyalAndLoyal_LoyaltyProgram', the role 'RoyalAndLoyal_LoyaltyProgram68' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Earning' and 'RoyalAndLoyal_Container_RandL'. From 'RoyalAndLoyal_Earning', the role 'RoyalAndLoyal_Earning' has cardinality 0..*, and from 'RoyalAndLoyal_Container_RandL', the role 'RoyalAndLoyal_Container_RandL70' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Container_RandL' and 'RoyalAndLoyal_LoyaltyAccount'. From 'RoyalAndLoyal_Container_RandL', the role 'RoyalAndLoyal_Container_RandL72' has cardinality 0..*, and from 'RoyalAndLoyal_LoyaltyAccount', the role 'RoyalAndLoyal_LoyaltyAccount73' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_ServiceLevel' and 'RoyalAndLoyal_Container_RandL'. From 'RoyalAndLoyal_ServiceLevel', the role 'RoyalAndLoyal_ServiceLevel76' has cardinality 0..*, and from 'RoyalAndLoyal_Container_RandL', the role 'RoyalAndLoyal_Container_RandL75' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Container_RandL' and 'RoyalAndLoyal_TransactionReport'. From 'RoyalAndLoyal_Container_RandL', the role 'RoyalAndLoyal_Container_RandL78' has cardinality 0..*, and from 'RoyalAndLoyal_TransactionReport', the role 'RoyalAndLoyal_TransactionReport79' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Container_RandL' and 'RoyalAndLoyal_ProgramPartner'. From 'RoyalAndLoyal_Container_RandL', the role 'RoyalAndLoyal_Container_RandL81' has cardinality 0..*, and from 'RoyalAndLoyal_ProgramPartner', the role 'RoyalAndLoyal_ProgramPartner' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Burning' and 'RoyalAndLoyal_Container_RandL'. From 'RoyalAndLoyal_Burning', the role 'RoyalAndLoyal_Burning' has cardinality 0..*, and from 'RoyalAndLoyal_Container_RandL', the role 'RoyalAndLoyal_Container_RandL83' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_TransactionReportLine' and 'RoyalAndLoyal_Container_RandL'. From 'RoyalAndLoyal_TransactionReportLine', the role 'RoyalAndLoyal_TransactionReportLine' has cardinality 0..*, and from 'RoyalAndLoyal_Container_RandL', the role 'RoyalAndLoyal_Container_RandL85' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Service' and 'RoyalAndLoyal_ProgramPartner'. From 'RoyalAndLoyal_Service', the role 'deliveredServices' has cardinality 0..*, and from 'RoyalAndLoyal_ProgramPartner', the role 'ProgramPartner' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Service' and 'RoyalAndLoyal_Transaction'. From 'RoyalAndLoyal_Service', the role 'generatedBy' has cardinality 0..*, and from 'RoyalAndLoyal_Transaction', the role 'Transaction88' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Service' and 'RoyalAndLoyal_ServiceLevel'. From 'RoyalAndLoyal_Service', the role 'availableServices' has cardinality 0..*, and from 'RoyalAndLoyal_ServiceLevel', the role 'ServiceLevel90' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Date' and 'RoyalAndLoyal_Customer'. From 'RoyalAndLoyal_Date', the role 'RoyalAndLoyal_Date93' has cardinality 0..*, and from 'RoyalAndLoyal_Customer', the role 'RoyalAndLoyal_Customer92' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_LoyaltyProgram' and 'RoyalAndLoyal_Customer'. From 'RoyalAndLoyal_LoyaltyProgram', the role 'LoyaltyProgram95' has cardinality 0..*, and from 'RoyalAndLoyal_Customer', the role 'participants' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_CustomerCard' and 'RoyalAndLoyal_Customer'. From 'RoyalAndLoyal_CustomerCard', the role 'CustomerCard97' has cardinality 0..*, and from 'RoyalAndLoyal_Customer', the role 'owner' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Customer' and 'RoyalAndLoyal_Membership'. From 'RoyalAndLoyal_Customer', the role 'RoyalAndLoyal_Customer99' has cardinality 0..*, and from 'RoyalAndLoyal_Membership', the role 'RoyalAndLoyal_Membership100' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Date' and 'RoyalAndLoyal_TransactionReportLine'. From 'RoyalAndLoyal_Date', the role 'RoyalAndLoyal_Date103' has cardinality 0..*, and from 'RoyalAndLoyal_TransactionReportLine', the role 'RoyalAndLoyal_TransactionReportLine102' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_TransactionReportLine' and 'RoyalAndLoyal_Transaction'. From 'RoyalAndLoyal_TransactionReportLine', the role 'RoyalAndLoyal_TransactionReportLine105' has cardinality 0..*, and from 'RoyalAndLoyal_Transaction', the role 'RoyalAndLoyal_Transaction106' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_TransactionReportLine' and 'RoyalAndLoyal_TransactionReport'. From 'RoyalAndLoyal_TransactionReportLine', the role 'lines' has cardinality 0..*, and from 'RoyalAndLoyal_TransactionReport', the role 'TransactionReport' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_ProgramPartner' and 'RoyalAndLoyal_LoyaltyProgram'. From 'RoyalAndLoyal_ProgramPartner', the role 'ProgramPartner109' has cardinality 0..*, and from 'RoyalAndLoyal_LoyaltyProgram', the role 'programs' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_ServiceLevel' and 'RoyalAndLoyal_LoyaltyProgram'. From 'RoyalAndLoyal_ServiceLevel', the role 'ServiceLevel111' has cardinality 0..*, and from 'RoyalAndLoyal_LoyaltyProgram', the role 'program' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Customer' and 'RoyalAndLoyal_LoyaltyProgram'. From 'RoyalAndLoyal_Customer', the role 'Customer114' has cardinality 0..*, and from 'RoyalAndLoyal_LoyaltyProgram', the role 'programs113' has cardinality 0..*.
+An association connects 'RoyalAndLoyal_Membership' and 'RoyalAndLoyal_LoyaltyProgram'. From 'RoyalAndLoyal_Membership', the role 'RoyalAndLoyal_Membership117' has cardinality 0..*, and from 'RoyalAndLoyal_LoyaltyProgram', the role 'RoyalAndLoyal_LoyaltyProgram116' has cardinality 0..*.

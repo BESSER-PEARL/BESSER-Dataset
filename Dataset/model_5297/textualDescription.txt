@@ -1,0 +1,25 @@
+The domain model 'tderived' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'tderived_B2' represents an important domain concept.
+It has one attribute: 'anotherName', which is of type str.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'tderived_A2' represents an important domain concept.
+It does not declare any attributes.
+
+'tderived_D' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'tderived_A2' is a specialization of 'A'.
+The class 'tderived_B2' is a specialization of 'B'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tderived_D' and 'tderived_A2'. From 'tderived_D', the role 'tderived_D' has cardinality 0..*, and from 'tderived_A2', the role 'tderived_A2' has cardinality 0..*.

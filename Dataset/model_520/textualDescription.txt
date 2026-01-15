@@ -1,0 +1,113 @@
+The domain model 'Families' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'Families_Family' represents an important domain concept.
+It has the following attributes: 'address', which is of type str; 'lastName', which is of type str.
+
+'uncertainty_Families_FamilyRegistry' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_Member' represents an important domain concept.
+It has the following attributes: 'firstName', which is of type str; 'age', which is of type int.
+
+'uncertainty_Families_Member' represents an important domain concept.
+It does not declare any attributes.
+
+'uncertainty_ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_uncertainty_aFamilyRegistry' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_uncertainty_uFamilyRegistry' represents an important domain concept.
+It does not declare any attributes.
+
+'uncertainty_aFamilyRegistry' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_uncertainty_aFamily' represents an important domain concept.
+It does not declare any attributes.
+
+'uMember' represents an important domain concept.
+It does not declare any attributes.
+
+'uFamilyRegistry' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_uncertainty_aMember' represents an important domain concept.
+It does not declare any attributes.
+
+'uncertainty_aMember' represents an important domain concept.
+It does not declare any attributes.
+
+'aFamily' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_uncertainty_uMember' represents an important domain concept.
+It does not declare any attributes.
+
+'uFamily' represents an important domain concept.
+It does not declare any attributes.
+
+'uncertainty_aFamily' represents an important domain concept.
+It does not declare any attributes.
+
+'aMember' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_uncertainty_ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uncertainty_Families_Family' represents an important domain concept.
+It does not declare any attributes.
+
+'uncertainty_UData' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_uncertainty_uFamily' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_uncertainty_UData' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'utype', which is of type str.
+
+'Families_FamilyRegistry' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'OperatorType' defines the following possible values: 'OR', 'AND', 'XOR'.
+
+The model also captures inheritance relationships between classes.
+The class 'Families_Family' is a specialization of 'uncertainty_ModelElement'.
+The class 'Families_Family' is a specialization of 'uncertainty_aFamily'.
+The class 'Families_Member' is a specialization of 'uncertainty_ModelElement'.
+The class 'Families_Member' is a specialization of 'uncertainty_aMember'.
+The class 'Families_FamilyRegistry' is a specialization of 'uncertainty_ModelElement'.
+The class 'Families_FamilyRegistry' is a specialization of 'uncertainty_aFamilyRegistry'.
+The class 'Families_uncertainty_uFamily' is a specialization of 'uncertainty_aFamily'.
+The class 'Families_uncertainty_uFamily' is a specialization of 'uncertainty_UData'.
+The class 'Families_uncertainty_uMember' is a specialization of 'uncertainty_aMember'.
+The class 'Families_uncertainty_uMember' is a specialization of 'uncertainty_UData'.
+The class 'Families_uncertainty_uFamilyRegistry' is a specialization of 'uncertainty_aFamilyRegistry'.
+The class 'Families_uncertainty_uFamilyRegistry' is a specialization of 'uncertainty_UData'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Families_Family' and 'aMember'. From 'Families_Family', the role 'Families_Family' has cardinality 0..*, and from 'aMember', the role 'aMember' has cardinality 0..*.
+An association connects 'aMember' and 'Families_Family'. From 'aMember', the role 'aMember3' has cardinality 0..*, and from 'Families_Family', the role 'Families_Family2' has cardinality 0..*.
+An association connects 'Families_Family' and 'aMember'. From 'Families_Family', the role 'Families_Family5' has cardinality 0..*, and from 'aMember', the role 'aMember6' has cardinality 0..*.
+An association connects 'Families_Member' and 'aFamily'. From 'Families_Member', the role 'Families_Member' has cardinality 0..*, and from 'aFamily', the role 'aFamily' has cardinality 0..*.
+An association connects 'Families_FamilyRegistry' and 'aFamily'. From 'Families_FamilyRegistry', the role 'Families_FamilyRegistry' has cardinality 0..*, and from 'aFamily', the role 'aFamily9' has cardinality 0..*.
+An association connects 'Families_uncertainty_ModelElement' and 'ModelElement'. From 'Families_uncertainty_ModelElement', the role 'Families_uncertainty_ModelElement' has cardinality 0..*, and from 'ModelElement', the role 'ModelElement' has cardinality 0..*.
+An association connects 'ModelElement' and 'Families_uncertainty_ModelElement'. From 'ModelElement', the role 'ModelElement13' has cardinality 0..*, and from 'Families_uncertainty_ModelElement', the role 'Families_uncertainty_ModelElement12' has cardinality 0..*.
+An association connects 'uncertainty_Families_Family' and 'Families_uncertainty_uFamily'. From 'uncertainty_Families_Family', the role 'uncertainty_Families_Family' has cardinality 0..*, and from 'Families_uncertainty_uFamily', the role 'Families_uncertainty_uFamily' has cardinality 0..*.
+An association connects 'Families_uncertainty_uFamily' and 'uncertainty_Families_Family'. From 'Families_uncertainty_uFamily', the role 'Families_uncertainty_uFamily16' has cardinality 0..*, and from 'uncertainty_Families_Family', the role 'uncertainty_Families_Family17' has cardinality 0..*.
+An association connects 'uFamily' and 'Families_uncertainty_uFamily'. From 'uFamily', the role 'uFamily' has cardinality 0..*, and from 'Families_uncertainty_uFamily', the role 'Families_uncertainty_uFamily19' has cardinality 0..*.
+An association connects 'Families_uncertainty_uMember' and 'uncertainty_Families_Member'. From 'Families_uncertainty_uMember', the role 'Families_uncertainty_uMember' has cardinality 0..*, and from 'uncertainty_Families_Member', the role 'uncertainty_Families_Member' has cardinality 0..*.
+An association connects 'uncertainty_Families_Member' and 'Families_uncertainty_uMember'. From 'uncertainty_Families_Member', the role 'uncertainty_Families_Member23' has cardinality 0..*, and from 'Families_uncertainty_uMember', the role 'Families_uncertainty_uMember22' has cardinality 0..*.
+An association connects 'uMember' and 'Families_uncertainty_uMember'. From 'uMember', the role 'uMember' has cardinality 0..*, and from 'Families_uncertainty_uMember', the role 'Families_uncertainty_uMember25' has cardinality 0..*.
+An association connects 'uncertainty_Families_FamilyRegistry' and 'Families_uncertainty_uFamilyRegistry'. From 'uncertainty_Families_FamilyRegistry', the role 'uncertainty_Families_FamilyRegistry' has cardinality 0..*, and from 'Families_uncertainty_uFamilyRegistry', the role 'Families_uncertainty_uFamilyRegistry' has cardinality 0..*.
+An association connects 'Families_uncertainty_uFamilyRegistry' and 'uncertainty_Families_FamilyRegistry'. From 'Families_uncertainty_uFamilyRegistry', the role 'Families_uncertainty_uFamilyRegistry28' has cardinality 0..*, and from 'uncertainty_Families_FamilyRegistry', the role 'uncertainty_Families_FamilyRegistry29' has cardinality 0..*.
+An association connects 'uFamilyRegistry' and 'Families_uncertainty_uFamilyRegistry'. From 'uFamilyRegistry', the role 'uFamilyRegistry' has cardinality 0..*, and from 'Families_uncertainty_uFamilyRegistry', the role 'Families_uncertainty_uFamilyRegistry31' has cardinality 0..*.

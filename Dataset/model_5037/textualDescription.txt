@@ -1,0 +1,38 @@
+The domain model 'rental' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'rental_License' represents an important domain concept.
+It has the following attributes: 'validityDate', which is of type date; 'number', which is of type int.
+
+'rental_Rental' represents an important domain concept.
+It has the following attributes: 'startDate', which is of type date; 'endDate', which is of type date.
+
+'rental_RentalObject' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'ID', which is of type str; 'available', which is of type bool.
+
+'rental_RentalAgency' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rental_Address' represents an important domain concept.
+It has the following attributes: 'streetName', which is of type str; 'streetType', which is of type str; 'zipCode', which is of type str; 'city', which is of type str; 'number', which is of type int.
+
+'rental_Customer' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'firstName', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StreetType' defines the following possible values: 'Road', 'Street'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rental_Address' and 'rental_RentalAgency'. From 'rental_Address', the role 'rental_Address' has cardinality 0..*, and from 'rental_RentalAgency', the role 'rental_RentalAgency' has cardinality 0..*.
+An association connects 'rental_RentalObject' and 'rental_RentalAgency'. From 'rental_RentalObject', the role 'RentalObject' has cardinality 0..*, and from 'rental_RentalAgency', the role 'parentAgency' has cardinality 0..*.
+An association connects 'rental_Customer' and 'rental_RentalAgency'. From 'rental_Customer', the role 'Customer' has cardinality 0..*, and from 'rental_RentalAgency', the role 'parentAgency3' has cardinality 0..*.
+An association connects 'rental_RentalAgency' and 'rental_Rental'. From 'rental_RentalAgency', the role 'parentAgency5' has cardinality 0..*, and from 'rental_Rental', the role 'Rental' has cardinality 0..*.
+An association connects 'rental_Address' and 'rental_Customer'. From 'rental_Address', the role 'rental_Address7' has cardinality 0..*, and from 'rental_Customer', the role 'rental_Customer' has cardinality 0..*.
+An association connects 'rental_Customer' and 'rental_License'. From 'rental_Customer', the role 'owner' has cardinality 0..*, and from 'rental_License', the role 'License' has cardinality 0..*.
+An association connects 'rental_Customer' and 'rental_RentalAgency'. From 'rental_Customer', the role 'customers' has cardinality 0..*, and from 'rental_RentalAgency', the role 'RentalAgency' has cardinality 0..*.
+An association connects 'rental_RentalAgency' and 'rental_RentalObject'. From 'rental_RentalAgency', the role 'RentalAgency11' has cardinality 0..*, and from 'rental_RentalObject', the role 'objectsToRent' has cardinality 0..*.
+An association connects 'rental_Customer' and 'rental_License'. From 'rental_Customer', the role 'Customer13' has cardinality 0..*, and from 'rental_License', the role 'licenses' has cardinality 0..*.
+An association connects 'rental_Rental' and 'rental_Customer'. From 'rental_Rental', the role 'rental_Rental' has cardinality 0..*, and from 'rental_Customer', the role 'rental_Customer15' has cardinality 0..*.
+An association connects 'rental_Rental' and 'rental_RentalObject'. From 'rental_Rental', the role 'rental_Rental17' has cardinality 0..*, and from 'rental_RentalObject', the role 'rental_RentalObject' has cardinality 0..*.
+An association connects 'rental_RentalAgency' and 'rental_Rental'. From 'rental_RentalAgency', the role 'RentalAgency19' has cardinality 0..*, and from 'rental_Rental', the role 'rentals' has cardinality 0..*.

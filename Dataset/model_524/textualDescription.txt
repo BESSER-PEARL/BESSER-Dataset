@@ -1,0 +1,40 @@
+The domain model 'family' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'family_Man' represents an important domain concept.
+It does not declare any attributes.
+
+'EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'family_Person' represents an important domain concept.
+It has the following attributes: 'birthMonth', which is of type str; 'birthDay', which is of type int; 'lastName', which is of type str; 'birthYear', which is of type int; 'birthCity', which is of type str; 'firstName', which is of type str.
+
+'family_Woman' represents an important domain concept.
+It does not declare any attributes.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'family_Family' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Month' defines the following possible values: 'May', 'July', 'August', 'November', 'December', 'September', 'June', 'January', 'March', 'October', 'April', 'February'.
+
+The model also captures inheritance relationships between classes.
+The class 'family_Family' is a specialization of 'EModelElement'.
+The class 'family_Person' is a specialization of 'EModelElement'.
+The class 'family_Man' is a specialization of 'Person'.
+The class 'family_Woman' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'family_Family' and 'family_Man'. From 'family_Family', the role 'family_Family' has cardinality 0..*, and from 'family_Man', the role 'family_Man' has cardinality 0..*.
+An association connects 'family_Family' and 'family_Woman'. From 'family_Family', the role 'family_Family2' has cardinality 0..*, and from 'family_Woman', the role 'family_Woman' has cardinality 0..*.
+An association connects 'family_Family' and 'family_Family'. From 'family_Family', the role 'family_Family5' has cardinality 0..*, and from 'family_Family', the role 'family_Family3' has cardinality 0..*.
+An association connects 'family_Person' and 'family_Man'. From 'family_Person', the role 'family_Person' has cardinality 0..*, and from 'family_Man', the role 'family_Man7' has cardinality 0..*.
+An association connects 'family_Woman' and 'family_Person'. From 'family_Woman', the role 'family_Woman10' has cardinality 0..*, and from 'family_Person', the role 'family_Person9' has cardinality 0..*.
+An association connects 'family_Person' and 'family_Person'. From 'family_Person', the role 'family_Person13' has cardinality 0..*, and from 'family_Person', the role 'family_Person11' has cardinality 0..*.
+An association connects 'family_Man' and 'family_Woman'. From 'family_Man', the role 'family_Man15' has cardinality 0..*, and from 'family_Woman', the role 'family_Woman16' has cardinality 0..*.
+An association connects 'family_Woman' and 'family_Man'. From 'family_Woman', the role 'family_Woman18' has cardinality 0..*, and from 'family_Man', the role 'family_Man19' has cardinality 0..*.

@@ -1,0 +1,106 @@
+The domain model 'simpliC' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'simpliC_Stmt' represents an important domain concept.
+It does not declare any attributes.
+
+'simpliC_Decl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpliC_Args' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Stmt' represents an important domain concept.
+It does not declare any attributes.
+
+'simpliC_Expr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'simpliC_Typedef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpliC_TFact' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'simpliC_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'simpliC_Assign' represents an important domain concept.
+It has one attribute: 'var', which is of type str.
+
+'simpliC_Whilestmt' represents an important domain concept.
+It does not declare any attributes.
+
+'simpliC_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpliC_Function' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpliC_ExprCall' represents an important domain concept.
+It does not declare any attributes.
+
+'simpliC_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'simpliC_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'simpliC_Factor' represents an important domain concept.
+It does not declare any attributes.
+
+'simpliC_Call' represents an important domain concept.
+It does not declare any attributes.
+
+'simpliC_Ifstmt' represents an important domain concept.
+It does not declare any attributes.
+
+'simpliC_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'Factor' represents an important domain concept.
+It does not declare any attributes.
+
+'simpliC_IDuse' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simpliC_Block' is a specialization of 'Stmt'.
+The class 'simpliC_Call' is a specialization of 'Stmt'.
+The class 'simpliC_ExprCall' is a specialization of 'Factor'.
+The class 'simpliC_Ifstmt' is a specialization of 'Stmt'.
+The class 'simpliC_Whilestmt' is a specialization of 'Stmt'.
+The class 'simpliC_Return' is a specialization of 'Stmt'.
+The class 'simpliC_Decl' is a specialization of 'Stmt'.
+The class 'simpliC_Assign' is a specialization of 'Stmt'.
+The class 'simpliC_IDuse' is a specialization of 'Factor'.
+The class 'simpliC_Typedef' is a specialization of 'Stmt'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpliC_Model' and 'simpliC_Function'. From 'simpliC_Model', the role 'simpliC_Model' has cardinality 0..*, and from 'simpliC_Function', the role 'simpliC_Function' has cardinality 0..*.
+An association connects 'simpliC_Type' and 'simpliC_Function'. From 'simpliC_Type', the role 'simpliC_Type' has cardinality 0..*, and from 'simpliC_Function', the role 'simpliC_Function2' has cardinality 0..*.
+An association connects 'simpliC_Args' and 'simpliC_Function'. From 'simpliC_Args', the role 'simpliC_Args' has cardinality 0..*, and from 'simpliC_Function', the role 'simpliC_Function4' has cardinality 0..*.
+An association connects 'simpliC_Function' and 'simpliC_Block'. From 'simpliC_Function', the role 'simpliC_Function6' has cardinality 0..*, and from 'simpliC_Block', the role 'simpliC_Block' has cardinality 0..*.
+An association connects 'simpliC_Block' and 'simpliC_Stmt'. From 'simpliC_Block', the role 'simpliC_Block8' has cardinality 0..*, and from 'simpliC_Stmt', the role 'simpliC_Stmt' has cardinality 0..*.
+An association connects 'simpliC_Function' and 'simpliC_Call'. From 'simpliC_Function', the role 'simpliC_Function10' has cardinality 0..*, and from 'simpliC_Call', the role 'simpliC_Call' has cardinality 0..*.
+An association connects 'simpliC_Expr' and 'simpliC_Call'. From 'simpliC_Expr', the role 'simpliC_Expr' has cardinality 0..*, and from 'simpliC_Call', the role 'simpliC_Call12' has cardinality 0..*.
+An association connects 'simpliC_Function' and 'simpliC_ExprCall'. From 'simpliC_Function', the role 'simpliC_Function14' has cardinality 0..*, and from 'simpliC_ExprCall', the role 'simpliC_ExprCall' has cardinality 0..*.
+An association connects 'simpliC_Expr' and 'simpliC_ExprCall'. From 'simpliC_Expr', the role 'simpliC_Expr17' has cardinality 0..*, and from 'simpliC_ExprCall', the role 'simpliC_ExprCall16' has cardinality 0..*.
+An association connects 'simpliC_Expr' and 'simpliC_Ifstmt'. From 'simpliC_Expr', the role 'simpliC_Expr19' has cardinality 0..*, and from 'simpliC_Ifstmt', the role 'simpliC_Ifstmt' has cardinality 0..*.
+An association connects 'simpliC_Ifstmt' and 'simpliC_Block'. From 'simpliC_Ifstmt', the role 'simpliC_Ifstmt21' has cardinality 0..*, and from 'simpliC_Block', the role 'simpliC_Block22' has cardinality 0..*.
+An association connects 'simpliC_Ifstmt' and 'simpliC_Block'. From 'simpliC_Ifstmt', the role 'simpliC_Ifstmt24' has cardinality 0..*, and from 'simpliC_Block', the role 'simpliC_Block25' has cardinality 0..*.
+An association connects 'simpliC_Expr' and 'simpliC_Whilestmt'. From 'simpliC_Expr', the role 'simpliC_Expr27' has cardinality 0..*, and from 'simpliC_Whilestmt', the role 'simpliC_Whilestmt' has cardinality 0..*.
+An association connects 'simpliC_Block' and 'simpliC_Whilestmt'. From 'simpliC_Block', the role 'simpliC_Block30' has cardinality 0..*, and from 'simpliC_Whilestmt', the role 'simpliC_Whilestmt29' has cardinality 0..*.
+An association connects 'simpliC_Expr' and 'simpliC_Return'. From 'simpliC_Expr', the role 'simpliC_Expr32' has cardinality 0..*, and from 'simpliC_Return', the role 'simpliC_Return' has cardinality 0..*.
+An association connects 'simpliC_Decl' and 'simpliC_Type'. From 'simpliC_Decl', the role 'simpliC_Decl' has cardinality 0..*, and from 'simpliC_Type', the role 'simpliC_Type34' has cardinality 0..*.
+An association connects 'simpliC_Decl' and 'simpliC_Typedef'. From 'simpliC_Decl', the role 'simpliC_Decl36' has cardinality 0..*, and from 'simpliC_Typedef', the role 'simpliC_Typedef' has cardinality 0..*.
+An association connects 'simpliC_Expr' and 'simpliC_Decl'. From 'simpliC_Expr', the role 'simpliC_Expr39' has cardinality 0..*, and from 'simpliC_Decl', the role 'simpliC_Decl38' has cardinality 0..*.
+An association connects 'simpliC_Assign' and 'simpliC_Expr'. From 'simpliC_Assign', the role 'simpliC_Assign' has cardinality 0..*, and from 'simpliC_Expr', the role 'simpliC_Expr41' has cardinality 0..*.
+An association connects 'simpliC_EObject' and 'simpliC_Expr'. From 'simpliC_EObject', the role 'simpliC_EObject' has cardinality 0..*, and from 'simpliC_Expr', the role 'simpliC_Expr43' has cardinality 0..*.
+An association connects 'simpliC_Expr' and 'simpliC_EObject'. From 'simpliC_Expr', the role 'simpliC_Expr45' has cardinality 0..*, and from 'simpliC_EObject', the role 'simpliC_EObject46' has cardinality 0..*.
+An association connects 'simpliC_TFact' and 'simpliC_Expr'. From 'simpliC_TFact', the role 'simpliC_TFact' has cardinality 0..*, and from 'simpliC_Expr', the role 'simpliC_Expr48' has cardinality 0..*.
+An association connects 'simpliC_Expr' and 'simpliC_TFact'. From 'simpliC_Expr', the role 'simpliC_Expr51' has cardinality 0..*, and from 'simpliC_TFact', the role 'simpliC_TFact50' has cardinality 0..*.
+An association connects 'simpliC_IDuse' and 'simpliC_Decl'. From 'simpliC_IDuse', the role 'simpliC_IDuse' has cardinality 0..*, and from 'simpliC_Decl', the role 'simpliC_Decl53' has cardinality 0..*.
+An association connects 'simpliC_Type' and 'simpliC_Args'. From 'simpliC_Type', the role 'simpliC_Type56' has cardinality 0..*, and from 'simpliC_Args', the role 'simpliC_Args55' has cardinality 0..*.
+An association connects 'simpliC_Typedef' and 'simpliC_EObject'. From 'simpliC_Typedef', the role 'simpliC_Typedef58' has cardinality 0..*, and from 'simpliC_EObject', the role 'simpliC_EObject59' has cardinality 0..*.

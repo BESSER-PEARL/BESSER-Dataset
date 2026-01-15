@@ -1,0 +1,42 @@
+The domain model 'errors' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'errors_ColumnCk' represents an important domain concept.
+It has one attribute: 'columnName', which is of type str.
+
+'errors_ColumnFk' represents an important domain concept.
+It has one attribute: 'nameColumn', which is of type str.
+
+'Error' represents an important domain concept.
+It does not declare any attributes.
+
+'errors_ValueCk' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'errors_Errores' represents an important domain concept.
+It does not declare any attributes.
+
+'errors_ForeignError' represents an important domain concept.
+It has the following attributes: 'porcent', which is of type str; 'nameFk', which is of type str.
+
+'errors_Error' represents an important domain concept.
+It does not declare any attributes.
+
+'errors_CheckError' represents an important domain concept.
+It has the following attributes: 'nameTable', which is of type str; 'porcent', which is of type str; 'nameCk', which is of type str.
+
+'errors_Table' represents an important domain concept.
+It has one attribute: 'nameTable', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'errors_ForeignError' is a specialization of 'Error'.
+The class 'errors_CheckError' is a specialization of 'Error'.
+
+Relationships between classes are modeled using associations.
+An association connects 'errors_Error' and 'errors_Errores'. From 'errors_Error', the role 'errors_Error' has cardinality 0..*, and from 'errors_Errores', the role 'errors_Errores' has cardinality 0..*.
+An association connects 'errors_ForeignError' and 'errors_Table'. From 'errors_ForeignError', the role 'errors_ForeignError' has cardinality 0..*, and from 'errors_Table', the role 'errors_Table' has cardinality 0..*.
+An association connects 'errors_ForeignError' and 'errors_Table'. From 'errors_ForeignError', the role 'errors_ForeignError3' has cardinality 0..*, and from 'errors_Table', the role 'errors_Table4' has cardinality 0..*.
+An association connects 'errors_Table' and 'errors_ColumnFk'. From 'errors_Table', the role 'errors_Table6' has cardinality 0..*, and from 'errors_ColumnFk', the role 'errors_ColumnFk' has cardinality 0..*.
+An association connects 'errors_CheckError' and 'errors_ColumnCk'. From 'errors_CheckError', the role 'errors_CheckError' has cardinality 0..*, and from 'errors_ColumnCk', the role 'errors_ColumnCk' has cardinality 0..*.
+An association connects 'errors_ValueCk' and 'errors_ColumnCk'. From 'errors_ValueCk', the role 'errors_ValueCk' has cardinality 0..*, and from 'errors_ColumnCk', the role 'errors_ColumnCk9' has cardinality 0..*.

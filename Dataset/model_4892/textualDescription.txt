@@ -1,0 +1,581 @@
+The domain model 'aggregator' describes the core structural elements and their relationships within the system.
+
+The model defines 142 main class(es).
+
+'InstallableUnits' represents an important domain concept.
+It does not declare any attributes.
+
+'MetadataRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IRequiredCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_IUpdateDescriptor' represents an important domain concept.
+It has the following attributes: 'severity', which is of type int; 'range', which is of type str; 'description', which is of type str; 'id', which is of type str.
+
+'Products' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_Copyright' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_Product' represents an important domain concept.
+It does not declare any attributes.
+
+'InstructionMap' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_Features' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_IUPresentation' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'version', which is of type str; 'id', which is of type str; 'label', which is of type str; 'name', which is of type str; 'type', which is of type str.
+
+'aggregator_DescriptionProvider' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'p2_IRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'LabelProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'p2view_aggregator_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_ITouchpointType' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'id', which is of type str.
+
+'Product' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_IMetadataRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_IInstallableUnitFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_ITouchpointInstruction' represents an important domain concept.
+It has the following attributes: 'importAttribute', which is of type str; 'body', which is of type str.
+
+'StatusProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_MetadataRepositoryReference' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'nature', which is of type str.
+
+'aggregator_EnabledStatusProvider' represents an important domain concept.
+It has one attribute: 'enabled', which is of type bool.
+
+'ITouchpointInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_IUPresentationWithDetails' represents an important domain concept.
+It has one attribute: 'detailsResolved', which is of type str.
+
+'RequiredCapabilities' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_ProvidedCapabilityWrapper' represents an important domain concept.
+It does not declare any attributes.
+
+'Bundles' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IInstallableUnitFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IQueryable' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_ValidConfigurationsRule' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_InstallableUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_ProvidedCapabilities' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_Aggregator' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'sendmail', which is of type bool; 'packedStrategy', which is of type str; 'label', which is of type str; 'mavenResult', which is of type bool; 'buildRoot', which is of type str.
+
+'aggregator_Contact' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'email', which is of type str.
+
+'aggregator_p2view_RequiredCapabilities' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'DescriptionProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'MetadataRepositoryReference' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_MetadataRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_InstallableUnitRequest' represents an important domain concept.
+It has the following attributes: 'versionRange', which is of type str; 'name', which is of type str.
+
+'aggregator_p2_InstallableUnitFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_OtherIU' represents an important domain concept.
+It does not declare any attributes.
+
+'RequiredCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_IProvidedCapability' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'version', which is of type str; 'namespace', which is of type str.
+
+'ICopyright' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_Category' represents an important domain concept.
+It has one attribute: 'labelOverride', which is of type str.
+
+'IUDetails' represents an important domain concept.
+It does not declare any attributes.
+
+'EnabledStatusProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_InfosProvider' represents an important domain concept.
+It has the following attributes: 'errors', which is of type str; 'warnings', which is of type str; 'infos', which is of type str.
+
+'aggregator_p2view_InstallableUnits' represents an important domain concept.
+It does not declare any attributes.
+
+'IInstallableUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'p2view_IUDetails' represents an important domain concept.
+It does not declare any attributes.
+
+'ProvidedCapabilities' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_LabelProvider' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'Category' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_Categories' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_MavenMapping' represents an important domain concept.
+It has the following attributes: 'artifactId', which is of type str; 'namePattern', which is of type str; 'groupId', which is of type str.
+
+'aggregator_MavenItem' represents an important domain concept.
+It has the following attributes: 'artifactId', which is of type str; 'groupId', which is of type str.
+
+'aggregator_p2_ProvidedCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_Property' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'p2view_IUPresentation' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_IUDetails' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_Properties' represents an important domain concept.
+It does not declare any attributes.
+
+'Miscellaneous' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_Category' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_ChildrenProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'ILicense' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'InfosProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'ProvidedCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_RequiredCapabilityWrapper' represents an important domain concept.
+It does not declare any attributes.
+
+'InstallableUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_Bundle' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_InstructionMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'aggregator_ExclusionRule' represents an important domain concept.
+It does not declare any attributes.
+
+'InstallableUnitRequest' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_IQueryable' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_MappedRepository' represents an important domain concept.
+It has the following attributes: 'mirrorArtifacts', which is of type bool; 'categoryPrefix', which is of type str.
+
+'Properties' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IProvidedCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_IAdaptable' represents an important domain concept.
+It does not declare any attributes.
+
+'MapRule' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_Property' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'aggregator_p2view_Products' represents an important domain concept.
+It does not declare any attributes.
+
+'ITouchpointType' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_Comparable' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_Fragment' represents an important domain concept.
+It does not declare any attributes.
+
+'IAdaptable' represents an important domain concept.
+It does not declare any attributes.
+
+'TouchpointInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_Bundles' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_MetadataRepositoryStructuredView' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'loaded', which is of type bool.
+
+'aggregator_CustomCategory' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'identifier', which is of type str; 'description', which is of type str.
+
+'p2_InstallableUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'MappedUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'IMetadataRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'TouchpointData' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_Status' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'message', which is of type str.
+
+'Categories' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_License' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_RepositoryReference' represents an important domain concept.
+It has the following attributes: 'type', which is of type int; 'location', which is of type str; 'options', which is of type int; 'nickname', which is of type str.
+
+'OtherIU' represents an important domain concept.
+It does not declare any attributes.
+
+'ArtifactKey' represents an important domain concept.
+It does not declare any attributes.
+
+'Touchpoints' represents an important domain concept.
+It does not declare any attributes.
+
+'Fragments' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_RequiredCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'IUPresentation' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_IInstallableUnit' represents an important domain concept.
+It has the following attributes: 'singleton', which is of type bool; 'version', which is of type str; 'resolved', which is of type bool; 'filter', which is of type str; 'id', which is of type str.
+
+'IUPresentationWithDetails' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_Contribution' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'aggregator_p2_ICopyright' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'body', which is of type str.
+
+'aggregator_p2_UpdateDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'Features' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_Bundle' represents an important domain concept.
+It does not declare any attributes.
+
+'Fragment' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_Fragments' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_TouchpointType' represents an important domain concept.
+It does not declare any attributes.
+
+'ProvidedCapabilityWrapper' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_IRepository' represents an important domain concept.
+It has the following attributes: 'modifiable', which is of type bool; 'type', which is of type str; 'location', which is of type str; 'provider', which is of type str; 'version', which is of type str; 'name', which is of type str; 'description', which is of type str.
+
+'IProvidedCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_StatusProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_IRequiredCapability' represents an important domain concept.
+It has the following attributes: 'filter', which is of type str; 'range', which is of type str; 'greedy', which is of type bool; 'name', which is of type str; 'multiple', which is of type bool; 'selectorList', which is of type str; 'negation', which is of type bool; 'namespace', which is of type str; 'optional', which is of type bool.
+
+'Bundle' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_Touchpoints' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2view_Miscellaneous' represents an important domain concept.
+It does not declare any attributes.
+
+'IUpdateDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'RepositoryReference' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_ILicense' represents an important domain concept.
+It has the following attributes: 'digest', which is of type str; 'body', which is of type str; 'location', which is of type str.
+
+'aggregator_p2_IArtifactKey' represents an important domain concept.
+It has the following attributes: 'classifier', which is of type str; 'version', which is of type str; 'id', which is of type str.
+
+'RequiredCapabilityWrapper' represents an important domain concept.
+It does not declare any attributes.
+
+'IArtifactKey' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_TouchpointData' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_Product' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_ITouchpointData' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_MapRule' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_MappedUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_ArtifactKey' represents an important domain concept.
+It does not declare any attributes.
+
+'ITouchpointData' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_p2_TouchpointInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'IRequiredCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'aggregator_Configuration' represents an important domain concept.
+It has the following attributes: 'operatingSystem', which is of type str; 'windowSystem', which is of type str; 'architecture', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StatusCode' defines the following possible values: 'OK', 'BROKEN', 'WAITING'.
+The enumeration 'OperatingSystem' defines the following possible values: 'QNX', 'HPUX', 'Win32', 'Solaris', 'MacOSX', 'AIX', 'Linux'.
+The enumeration 'WindowSystem' defines the following possible values: 'Win32', 'Motif', 'Photon', 'Cocoa', 'GTK', 'Carbon'.
+The enumeration 'Architecture' defines the following possible values: 'IA64_32', 'Sparc', 'PPC64', 'S390', 'PPC', 'S390X', 'IA64', 'X86_64', 'X86'.
+The enumeration 'AggregationType' defines the following possible values: 'Integration', 'Nightly', 'Maintenance', 'Stable', 'Continuous', 'Release'.
+The enumeration 'InstallableUnitType' defines the following possible values: 'CATEGORY', 'OTHER', 'PRODUCT', 'BUNDLE', 'FRAGMENT', 'FEATURE'.
+The enumeration 'PackedStrategy' defines the following possible values: 'Skip', 'Copy', 'Verify', 'UnpackAsSibling', 'Unpack'.
+
+The model also captures inheritance relationships between classes.
+The class 'aggregator_Aggregator' is a specialization of 'DescriptionProvider'.
+The class 'aggregator_Aggregator' is a specialization of 'StatusProvider'.
+The class 'aggregator_Aggregator' is a specialization of 'InfosProvider'.
+The class 'aggregator_MappedRepository' is a specialization of 'MetadataRepositoryReference'.
+The class 'aggregator_MappedRepository' is a specialization of 'DescriptionProvider'.
+The class 'aggregator_Configuration' is a specialization of 'EnabledStatusProvider'.
+The class 'aggregator_Contribution' is a specialization of 'EnabledStatusProvider'.
+The class 'aggregator_Contribution' is a specialization of 'DescriptionProvider'.
+The class 'aggregator_Contribution' is a specialization of 'StatusProvider'.
+The class 'aggregator_Contribution' is a specialization of 'InfosProvider'.
+The class 'aggregator_Feature' is a specialization of 'MappedUnit'.
+The class 'aggregator_Bundle' is a specialization of 'MappedUnit'.
+The class 'aggregator_MappedUnit' is a specialization of 'InstallableUnitRequest'.
+The class 'aggregator_MappedUnit' is a specialization of 'EnabledStatusProvider'.
+The class 'aggregator_Product' is a specialization of 'MappedUnit'.
+The class 'aggregator_Category' is a specialization of 'MappedUnit'.
+The class 'aggregator_CustomCategory' is a specialization of 'StatusProvider'.
+The class 'aggregator_CustomCategory' is a specialization of 'InfosProvider'.
+The class 'aggregator_MapRule' is a specialization of 'InstallableUnitRequest'.
+The class 'aggregator_MapRule' is a specialization of 'DescriptionProvider'.
+The class 'aggregator_InstallableUnitRequest' is a specialization of 'StatusProvider'.
+The class 'aggregator_InstallableUnitRequest' is a specialization of 'InfosProvider'.
+The class 'aggregator_InstallableUnitRequest' is a specialization of 'DescriptionProvider'.
+The class 'aggregator_ExclusionRule' is a specialization of 'MapRule'.
+The class 'aggregator_ValidConfigurationsRule' is a specialization of 'MapRule'.
+The class 'aggregator_MetadataRepositoryReference' is a specialization of 'EnabledStatusProvider'.
+The class 'aggregator_MetadataRepositoryReference' is a specialization of 'StatusProvider'.
+The class 'aggregator_MetadataRepositoryReference' is a specialization of 'InfosProvider'.
+The class 'aggregator_MavenMapping' is a specialization of 'StatusProvider'.
+The class 'aggregator_MavenMapping' is a specialization of 'InfosProvider'.
+The class 'aggregator_p2_IInstallableUnitFragment' is a specialization of 'IInstallableUnit'.
+The class 'aggregator_p2_ArtifactKey' is a specialization of 'IArtifactKey'.
+The class 'aggregator_p2_Copyright' is a specialization of 'ICopyright'.
+The class 'aggregator_p2_MetadataRepository' is a specialization of 'IMetadataRepository'.
+The class 'aggregator_p2_InstallableUnit' is a specialization of 'IInstallableUnit'.
+The class 'aggregator_p2_InstallableUnitFragment' is a specialization of 'p2_InstallableUnit'.
+The class 'aggregator_p2_InstallableUnitFragment' is a specialization of 'p2_IInstallableUnitFragment'.
+The class 'aggregator_p2_License' is a specialization of 'ILicense'.
+The class 'aggregator_p2_ProvidedCapability' is a specialization of 'IProvidedCapability'.
+The class 'aggregator_p2_RequiredCapability' is a specialization of 'IRequiredCapability'.
+The class 'aggregator_p2_TouchpointData' is a specialization of 'ITouchpointData'.
+The class 'aggregator_p2_TouchpointInstruction' is a specialization of 'ITouchpointInstruction'.
+The class 'aggregator_p2_TouchpointType' is a specialization of 'ITouchpointType'.
+The class 'aggregator_p2_UpdateDescriptor' is a specialization of 'IUpdateDescriptor'.
+The class 'aggregator_p2_IMetadataRepository' is a specialization of 'p2_IQueryable'.
+The class 'aggregator_p2_IMetadataRepository' is a specialization of 'p2_IRepository'.
+The class 'aggregator_p2_IRepository' is a specialization of 'IAdaptable'.
+The class 'aggregator_p2view_IUPresentationWithDetails' is a specialization of 'p2view_IUPresentation'.
+The class 'aggregator_p2view_IUPresentationWithDetails' is a specialization of 'p2view_IUDetails'.
+The class 'aggregator_p2view_Category' is a specialization of 'IUPresentation'.
+The class 'aggregator_p2view_Feature' is a specialization of 'IUPresentationWithDetails'.
+The class 'aggregator_p2view_Product' is a specialization of 'IUPresentationWithDetails'.
+The class 'aggregator_p2view_Bundle' is a specialization of 'IUPresentationWithDetails'.
+The class 'aggregator_p2view_Fragment' is a specialization of 'Bundle'.
+The class 'aggregator_p2view_OtherIU' is a specialization of 'IUPresentationWithDetails'.
+The class 'aggregator_p2view_RequiredCapabilityWrapper' is a specialization of 'p2_IRequiredCapability'.
+The class 'aggregator_p2view_RequiredCapabilityWrapper' is a specialization of 'LabelProvider'.
+The class 'aggregator_p2view_ProvidedCapabilityWrapper' is a specialization of 'p2_IProvidedCapability'.
+The class 'aggregator_p2view_ProvidedCapabilityWrapper' is a specialization of 'LabelProvider'.
+
+Relationships between classes are modeled using associations.
+An association connects 'aggregator_Configuration' and 'aggregator_Aggregator'. From 'aggregator_Configuration', the role 'aggregator_Configuration' has cardinality 0..*, and from 'aggregator_Aggregator', the role 'aggregator_Aggregator' has cardinality 0..*.
+An association connects 'aggregator_Aggregator' and 'aggregator_Contribution'. From 'aggregator_Aggregator', the role 'aggregator_Aggregator2' has cardinality 0..*, and from 'aggregator_Contribution', the role 'aggregator_Contribution' has cardinality 0..*.
+An association connects 'aggregator_Contact' and 'aggregator_Aggregator'. From 'aggregator_Contact', the role 'aggregator_Contact' has cardinality 0..*, and from 'aggregator_Aggregator', the role 'aggregator_Aggregator4' has cardinality 0..*.
+An association connects 'aggregator_Contact' and 'aggregator_Aggregator'. From 'aggregator_Contact', the role 'Contact' has cardinality 0..*, and from 'aggregator_Aggregator', the role 'aggregator' has cardinality 0..*.
+An association connects 'aggregator_CustomCategory' and 'aggregator_Aggregator'. From 'aggregator_CustomCategory', the role 'aggregator_CustomCategory' has cardinality 0..*, and from 'aggregator_Aggregator', the role 'aggregator_Aggregator7' has cardinality 0..*.
+An association connects 'aggregator_Aggregator' and 'aggregator_MetadataRepositoryReference'. From 'aggregator_Aggregator', the role 'aggregator_Aggregator9' has cardinality 0..*, and from 'aggregator_MetadataRepositoryReference', the role 'aggregator_MetadataRepositoryReference' has cardinality 0..*.
+An association connects 'aggregator_Aggregator' and 'aggregator_MavenMapping'. From 'aggregator_Aggregator', the role 'aggregator_Aggregator11' has cardinality 0..*, and from 'aggregator_MavenMapping', the role 'aggregator_MavenMapping' has cardinality 0..*.
+An association connects 'aggregator_Product' and 'aggregator_MappedRepository'. From 'aggregator_Product', the role 'aggregator_Product' has cardinality 0..*, and from 'aggregator_MappedRepository', the role 'aggregator_MappedRepository' has cardinality 0..*.
+An association connects 'aggregator_MappedRepository' and 'aggregator_Bundle'. From 'aggregator_MappedRepository', the role 'aggregator_MappedRepository14' has cardinality 0..*, and from 'aggregator_Bundle', the role 'aggregator_Bundle' has cardinality 0..*.
+An association connects 'aggregator_MappedRepository' and 'aggregator_Feature'. From 'aggregator_MappedRepository', the role 'aggregator_MappedRepository16' has cardinality 0..*, and from 'aggregator_Feature', the role 'aggregator_Feature' has cardinality 0..*.
+An association connects 'aggregator_MappedRepository' and 'aggregator_Category'. From 'aggregator_MappedRepository', the role 'aggregator_MappedRepository18' has cardinality 0..*, and from 'aggregator_Category', the role 'aggregator_Category' has cardinality 0..*.
+An association connects 'aggregator_MappedRepository' and 'aggregator_MapRule'. From 'aggregator_MappedRepository', the role 'aggregator_MappedRepository20' has cardinality 0..*, and from 'aggregator_MapRule', the role 'aggregator_MapRule' has cardinality 0..*.
+An association connects 'aggregator_MappedRepository' and 'aggregator_Contribution'. From 'aggregator_MappedRepository', the role 'aggregator_MappedRepository23' has cardinality 0..*, and from 'aggregator_Contribution', the role 'aggregator_Contribution22' has cardinality 0..*.
+An association connects 'aggregator_Contribution' and 'aggregator_Contact'. From 'aggregator_Contribution', the role 'aggregator_Contribution25' has cardinality 0..*, and from 'aggregator_Contact', the role 'aggregator_Contact26' has cardinality 0..*.
+An association connects 'aggregator_Contribution' and 'aggregator_MavenMapping'. From 'aggregator_Contribution', the role 'aggregator_Contribution28' has cardinality 0..*, and from 'aggregator_MavenMapping', the role 'aggregator_MavenMapping29' has cardinality 0..*.
+An association connects 'aggregator_Contact' and 'aggregator_Aggregator'. From 'aggregator_Contact', the role 'contacts' has cardinality 0..*, and from 'aggregator_Aggregator', the role 'Aggregator' has cardinality 0..*.
+An association connects 'aggregator_Feature' and 'aggregator_CustomCategory'. From 'aggregator_Feature', the role 'features' has cardinality 0..*, and from 'aggregator_CustomCategory', the role 'CustomCategory' has cardinality 0..*.
+An association connects 'aggregator_MappedUnit' and 'aggregator_Configuration'. From 'aggregator_MappedUnit', the role 'aggregator_MappedUnit' has cardinality 0..*, and from 'aggregator_Configuration', the role 'aggregator_Configuration33' has cardinality 0..*.
+An association connects 'aggregator_CustomCategory' and 'aggregator_Feature'. From 'aggregator_CustomCategory', the role 'categories' has cardinality 0..*, and from 'aggregator_Feature', the role 'Feature' has cardinality 0..*.
+An association connects 'aggregator_Configuration' and 'aggregator_ValidConfigurationsRule'. From 'aggregator_Configuration', the role 'aggregator_Configuration36' has cardinality 0..*, and from 'aggregator_ValidConfigurationsRule', the role 'aggregator_ValidConfigurationsRule' has cardinality 0..*.
+An association connects 'aggregator_MetadataRepositoryReference' and 'MetadataRepository'. From 'aggregator_MetadataRepositoryReference', the role 'aggregator_MetadataRepositoryReference38' has cardinality 0..*, and from 'MetadataRepository', the role 'MetadataRepository' has cardinality 0..*.
+An association connects 'aggregator_Status' and 'aggregator_StatusProvider'. From 'aggregator_Status', the role 'aggregator_Status' has cardinality 0..*, and from 'aggregator_StatusProvider', the role 'aggregator_StatusProvider' has cardinality 0..*.
+An association connects 'ITouchpointType' and 'aggregator_p2_IInstallableUnit'. From 'ITouchpointType', the role 'ITouchpointType' has cardinality 0..*, and from 'aggregator_p2_IInstallableUnit', the role 'aggregator_p2_IInstallableUnit' has cardinality 0..*.
+An association connects 'IUpdateDescriptor' and 'aggregator_p2_IInstallableUnit'. From 'IUpdateDescriptor', the role 'IUpdateDescriptor' has cardinality 0..*, and from 'aggregator_p2_IInstallableUnit', the role 'aggregator_p2_IInstallableUnit42' has cardinality 0..*.
+An association connects 'aggregator_p2_IInstallableUnit' and 'ILicense'. From 'aggregator_p2_IInstallableUnit', the role 'aggregator_p2_IInstallableUnit44' has cardinality 0..*, and from 'ILicense', the role 'ILicense' has cardinality 0..*.
+An association connects 'aggregator_p2_IInstallableUnit' and 'ICopyright'. From 'aggregator_p2_IInstallableUnit', the role 'aggregator_p2_IInstallableUnit46' has cardinality 0..*, and from 'ICopyright', the role 'ICopyright' has cardinality 0..*.
+An association connects 'aggregator_p2_MetadataRepository' and 'InstallableUnit'. From 'aggregator_p2_MetadataRepository', the role 'aggregator_p2_MetadataRepository' has cardinality 0..*, and from 'InstallableUnit', the role 'InstallableUnit' has cardinality 0..*.
+An association connects 'RepositoryReference' and 'aggregator_p2_MetadataRepository'. From 'RepositoryReference', the role 'RepositoryReference' has cardinality 0..*, and from 'aggregator_p2_MetadataRepository', the role 'aggregator_p2_MetadataRepository49' has cardinality 0..*.
+An association connects 'Property' and 'aggregator_p2_MetadataRepository'. From 'Property', the role 'Property' has cardinality 0..*, and from 'aggregator_p2_MetadataRepository', the role 'aggregator_p2_MetadataRepository51' has cardinality 0..*.
+An association connects 'ArtifactKey' and 'aggregator_p2_InstallableUnit'. From 'ArtifactKey', the role 'ArtifactKey' has cardinality 0..*, and from 'aggregator_p2_InstallableUnit', the role 'aggregator_p2_InstallableUnit' has cardinality 0..*.
+An association connects 'aggregator_p2_InstallableUnit' and 'ProvidedCapability'. From 'aggregator_p2_InstallableUnit', the role 'aggregator_p2_InstallableUnit54' has cardinality 0..*, and from 'ProvidedCapability', the role 'ProvidedCapability' has cardinality 0..*.
+An association connects 'aggregator_p2_InstallableUnit' and 'RequiredCapability'. From 'aggregator_p2_InstallableUnit', the role 'aggregator_p2_InstallableUnit56' has cardinality 0..*, and from 'RequiredCapability', the role 'RequiredCapability' has cardinality 0..*.
+An association connects 'RequiredCapability' and 'aggregator_p2_InstallableUnit'. From 'RequiredCapability', the role 'RequiredCapability59' has cardinality 0..*, and from 'aggregator_p2_InstallableUnit', the role 'aggregator_p2_InstallableUnit58' has cardinality 0..*.
+An association connects 'aggregator_p2_InstallableUnit' and 'Property'. From 'aggregator_p2_InstallableUnit', the role 'aggregator_p2_InstallableUnit61' has cardinality 0..*, and from 'Property', the role 'Property62' has cardinality 0..*.
+An association connects 'aggregator_p2_InstallableUnit' and 'TouchpointData'. From 'aggregator_p2_InstallableUnit', the role 'aggregator_p2_InstallableUnit64' has cardinality 0..*, and from 'TouchpointData', the role 'TouchpointData' has cardinality 0..*.
+An association connects 'aggregator_p2_InstallableUnitFragment' and 'RequiredCapability'. From 'aggregator_p2_InstallableUnitFragment', the role 'aggregator_p2_InstallableUnitFragment' has cardinality 0..*, and from 'RequiredCapability', the role 'RequiredCapability66' has cardinality 0..*.
+An association connects 'InstructionMap' and 'aggregator_p2_TouchpointData'. From 'InstructionMap', the role 'InstructionMap' has cardinality 0..*, and from 'aggregator_p2_TouchpointData', the role 'aggregator_p2_TouchpointData' has cardinality 0..*.
+An association connects 'TouchpointInstruction' and 'aggregator_p2_InstructionMap'. From 'TouchpointInstruction', the role 'TouchpointInstruction' has cardinality 0..*, and from 'aggregator_p2_InstructionMap', the role 'aggregator_p2_InstructionMap' has cardinality 0..*.
+An association connects 'InstallableUnits' and 'aggregator_p2view_MetadataRepositoryStructuredView'. From 'InstallableUnits', the role 'InstallableUnits' has cardinality 0..*, and from 'aggregator_p2view_MetadataRepositoryStructuredView', the role 'aggregator_p2view_MetadataRepositoryStructuredView' has cardinality 0..*.
+An association connects 'aggregator_p2view_MetadataRepositoryStructuredView' and 'Properties'. From 'aggregator_p2view_MetadataRepositoryStructuredView', the role 'aggregator_p2view_MetadataRepositoryStructuredView71' has cardinality 0..*, and from 'Properties', the role 'Properties' has cardinality 0..*.
+An association connects 'aggregator_p2view_MetadataRepositoryStructuredView' and 'MetadataRepository'. From 'aggregator_p2view_MetadataRepositoryStructuredView', the role 'aggregator_p2view_MetadataRepositoryStructuredView73' has cardinality 0..*, and from 'MetadataRepository', the role 'MetadataRepository74' has cardinality 0..*.
+An association connects 'Categories' and 'aggregator_p2view_InstallableUnits'. From 'Categories', the role 'Categories' has cardinality 0..*, and from 'aggregator_p2view_InstallableUnits', the role 'aggregator_p2view_InstallableUnits' has cardinality 0..*.
+An association connects 'aggregator_p2view_InstallableUnits' and 'Features'. From 'aggregator_p2view_InstallableUnits', the role 'aggregator_p2view_InstallableUnits77' has cardinality 0..*, and from 'Features', the role 'Features' has cardinality 0..*.
+An association connects 'aggregator_p2view_InstallableUnits' and 'Products'. From 'aggregator_p2view_InstallableUnits', the role 'aggregator_p2view_InstallableUnits79' has cardinality 0..*, and from 'Products', the role 'Products' has cardinality 0..*.
+An association connects 'aggregator_p2view_InstallableUnits' and 'Bundles'. From 'aggregator_p2view_InstallableUnits', the role 'aggregator_p2view_InstallableUnits81' has cardinality 0..*, and from 'Bundles', the role 'Bundles' has cardinality 0..*.
+An association connects 'Fragments' and 'aggregator_p2view_InstallableUnits'. From 'Fragments', the role 'Fragments' has cardinality 0..*, and from 'aggregator_p2view_InstallableUnits', the role 'aggregator_p2view_InstallableUnits83' has cardinality 0..*.
+An association connects 'Miscellaneous' and 'aggregator_p2view_InstallableUnits'. From 'Miscellaneous', the role 'Miscellaneous' has cardinality 0..*, and from 'aggregator_p2view_InstallableUnits', the role 'aggregator_p2view_InstallableUnits85' has cardinality 0..*.
+An association connects 'aggregator_p2view_Categories' and 'Category'. From 'aggregator_p2view_Categories', the role 'aggregator_p2view_Categories' has cardinality 0..*, and from 'Category', the role 'Category' has cardinality 0..*.
+An association connects 'aggregator_p2view_Features' and 'Feature'. From 'aggregator_p2view_Features', the role 'aggregator_p2view_Features' has cardinality 0..*, and from 'Feature', the role 'Feature88' has cardinality 0..*.
+An association connects 'aggregator_p2view_Products' and 'Product'. From 'aggregator_p2view_Products', the role 'aggregator_p2view_Products' has cardinality 0..*, and from 'Product', the role 'Product' has cardinality 0..*.
+An association connects 'Bundle' and 'aggregator_p2view_Bundles'. From 'Bundle', the role 'Bundle' has cardinality 0..*, and from 'aggregator_p2view_Bundles', the role 'aggregator_p2view_Bundles' has cardinality 0..*.
+An association connects 'aggregator_p2view_Fragments' and 'Fragment'. From 'aggregator_p2view_Fragments', the role 'aggregator_p2view_Fragments' has cardinality 0..*, and from 'Fragment', the role 'Fragment' has cardinality 0..*.
+An association connects 'aggregator_p2view_Miscellaneous' and 'OtherIU'. From 'aggregator_p2view_Miscellaneous', the role 'aggregator_p2view_Miscellaneous' has cardinality 0..*, and from 'OtherIU', the role 'OtherIU' has cardinality 0..*.
+An association connects 'InstallableUnit' and 'aggregator_p2view_IUPresentation'. From 'InstallableUnit', the role 'InstallableUnit94' has cardinality 0..*, and from 'aggregator_p2view_IUPresentation', the role 'aggregator_p2view_IUPresentation' has cardinality 0..*.
+An association connects 'aggregator_p2view_Category' and 'Categories'. From 'aggregator_p2view_Category', the role 'aggregator_p2view_Category' has cardinality 0..*, and from 'Categories', the role 'Categories96' has cardinality 0..*.
+An association connects 'Features' and 'aggregator_p2view_Category'. From 'Features', the role 'Features99' has cardinality 0..*, and from 'aggregator_p2view_Category', the role 'aggregator_p2view_Category98' has cardinality 0..*.
+An association connects 'Products' and 'aggregator_p2view_Category'. From 'Products', the role 'Products102' has cardinality 0..*, and from 'aggregator_p2view_Category', the role 'aggregator_p2view_Category101' has cardinality 0..*.
+An association connects 'aggregator_p2view_Category' and 'Bundles'. From 'aggregator_p2view_Category', the role 'aggregator_p2view_Category104' has cardinality 0..*, and from 'Bundles', the role 'Bundles105' has cardinality 0..*.
+An association connects 'aggregator_p2view_Category' and 'Fragments'. From 'aggregator_p2view_Category', the role 'aggregator_p2view_Category107' has cardinality 0..*, and from 'Fragments', the role 'Fragments108' has cardinality 0..*.
+An association connects 'aggregator_p2view_Category' and 'IUDetails'. From 'aggregator_p2view_Category', the role 'aggregator_p2view_Category110' has cardinality 0..*, and from 'IUDetails', the role 'IUDetails' has cardinality 0..*.
+An association connects 'Features' and 'aggregator_p2view_Feature'. From 'Features', the role 'Features112' has cardinality 0..*, and from 'aggregator_p2view_Feature', the role 'aggregator_p2view_Feature' has cardinality 0..*.
+An association connects 'Bundles' and 'aggregator_p2view_Feature'. From 'Bundles', the role 'Bundles115' has cardinality 0..*, and from 'aggregator_p2view_Feature', the role 'aggregator_p2view_Feature114' has cardinality 0..*.
+An association connects 'Fragments' and 'aggregator_p2view_Feature'. From 'Fragments', the role 'Fragments118' has cardinality 0..*, and from 'aggregator_p2view_Feature', the role 'aggregator_p2view_Feature117' has cardinality 0..*.
+An association connects 'Features' and 'aggregator_p2view_Product'. From 'Features', the role 'Features120' has cardinality 0..*, and from 'aggregator_p2view_Product', the role 'aggregator_p2view_Product' has cardinality 0..*.
+An association connects 'Bundles' and 'aggregator_p2view_Product'. From 'Bundles', the role 'Bundles123' has cardinality 0..*, and from 'aggregator_p2view_Product', the role 'aggregator_p2view_Product122' has cardinality 0..*.
+An association connects 'aggregator_p2view_Product' and 'Fragments'. From 'aggregator_p2view_Product', the role 'aggregator_p2view_Product125' has cardinality 0..*, and from 'Fragments', the role 'Fragments126' has cardinality 0..*.
+An association connects 'aggregator_p2view_Properties' and 'p2view_aggregator_Property'. From 'aggregator_p2view_Properties', the role 'aggregator_p2view_Properties' has cardinality 0..*, and from 'p2view_aggregator_Property', the role 'p2view_aggregator_Property' has cardinality 0..*.
+An association connects 'RequiredCapabilityWrapper' and 'aggregator_p2view_RequiredCapabilities'. From 'RequiredCapabilityWrapper', the role 'RequiredCapabilityWrapper' has cardinality 0..*, and from 'aggregator_p2view_RequiredCapabilities', the role 'aggregator_p2view_RequiredCapabilities' has cardinality 0..*.
+An association connects 'aggregator_p2view_ProvidedCapabilities' and 'ProvidedCapabilityWrapper'. From 'aggregator_p2view_ProvidedCapabilities', the role 'aggregator_p2view_ProvidedCapabilities' has cardinality 0..*, and from 'ProvidedCapabilityWrapper', the role 'ProvidedCapabilityWrapper' has cardinality 0..*.
+An association connects 'ITouchpointType' and 'aggregator_p2view_Touchpoints'. From 'ITouchpointType', the role 'ITouchpointType131' has cardinality 0..*, and from 'aggregator_p2view_Touchpoints', the role 'aggregator_p2view_Touchpoints' has cardinality 0..*.
+An association connects 'aggregator_p2view_Touchpoints' and 'TouchpointData'. From 'aggregator_p2view_Touchpoints', the role 'aggregator_p2view_Touchpoints133' has cardinality 0..*, and from 'TouchpointData', the role 'TouchpointData134' has cardinality 0..*.
+An association connects 'RequiredCapabilities' and 'aggregator_p2view_IUDetails'. From 'RequiredCapabilities', the role 'RequiredCapabilities' has cardinality 0..*, and from 'aggregator_p2view_IUDetails', the role 'aggregator_p2view_IUDetails' has cardinality 0..*.
+An association connects 'ProvidedCapabilities' and 'aggregator_p2view_IUDetails'. From 'ProvidedCapabilities', the role 'ProvidedCapabilities' has cardinality 0..*, and from 'aggregator_p2view_IUDetails', the role 'aggregator_p2view_IUDetails137' has cardinality 0..*.
+An association connects 'Properties' and 'aggregator_p2view_IUDetails'. From 'Properties', the role 'Properties140' has cardinality 0..*, and from 'aggregator_p2view_IUDetails', the role 'aggregator_p2view_IUDetails139' has cardinality 0..*.
+An association connects 'Touchpoints' and 'aggregator_p2view_IUDetails'. From 'Touchpoints', the role 'Touchpoints' has cardinality 0..*, and from 'aggregator_p2view_IUDetails', the role 'aggregator_p2view_IUDetails142' has cardinality 0..*.
+An association connects 'IUpdateDescriptor' and 'aggregator_p2view_IUDetails'. From 'IUpdateDescriptor', the role 'IUpdateDescriptor145' has cardinality 0..*, and from 'aggregator_p2view_IUDetails', the role 'aggregator_p2view_IUDetails144' has cardinality 0..*.
+An association connects 'aggregator_p2view_IUDetails' and 'ICopyright'. From 'aggregator_p2view_IUDetails', the role 'aggregator_p2view_IUDetails147' has cardinality 0..*, and from 'ICopyright', the role 'ICopyright148' has cardinality 0..*.
+An association connects 'aggregator_p2view_IUDetails' and 'ILicense'. From 'aggregator_p2view_IUDetails', the role 'aggregator_p2view_IUDetails150' has cardinality 0..*, and from 'ILicense', the role 'ILicense151' has cardinality 0..*.
+An association connects 'RequiredCapability' and 'aggregator_p2view_RequiredCapabilityWrapper'. From 'RequiredCapability', the role 'RequiredCapability153' has cardinality 0..*, and from 'aggregator_p2view_RequiredCapabilityWrapper', the role 'aggregator_p2view_RequiredCapabilityWrapper' has cardinality 0..*.
+An association connects 'aggregator_p2view_ProvidedCapabilityWrapper' and 'ProvidedCapability'. From 'aggregator_p2view_ProvidedCapabilityWrapper', the role 'aggregator_p2view_ProvidedCapabilityWrapper' has cardinality 0..*, and from 'ProvidedCapability', the role 'ProvidedCapability155' has cardinality 0..*.

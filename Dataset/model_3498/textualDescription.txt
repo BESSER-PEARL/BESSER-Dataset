@@ -1,0 +1,55 @@
+The domain model 'FeatureModel' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'FeatureModel_RootFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureModel_ConfigConstraint' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'ConfigConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureModel_And' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureModel_FeatureModel' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureModel_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureModel_FeatureConstraint' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'FeatureModel_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureModel_Xor' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureModel_Feature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'kind' defines the following possible values: 'optional', 'mandatory'.
+The enumeration 'Type' defines the following possible values: 'exclude', 'require'.
+
+The model also captures inheritance relationships between classes.
+The class 'FeatureModel_FeatureConstraint' is a specialization of 'Constraint'.
+The class 'FeatureModel_ConfigConstraint' is a specialization of 'Constraint'.
+The class 'FeatureModel_And' is a specialization of 'ConfigConstraint'.
+The class 'FeatureModel_Or' is a specialization of 'ConfigConstraint'.
+The class 'FeatureModel_Xor' is a specialization of 'ConfigConstraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'FeatureModel_FeatureModel' and 'FeatureModel_RootFeature'. From 'FeatureModel_FeatureModel', the role 'FeatureModel_FeatureModel' has cardinality 0..*, and from 'FeatureModel_RootFeature', the role 'FeatureModel_RootFeature' has cardinality 0..*.
+An association connects 'FeatureModel_FeatureConstraint' and 'FeatureModel_FeatureModel'. From 'FeatureModel_FeatureConstraint', the role 'FeatureModel_FeatureConstraint' has cardinality 0..*, and from 'FeatureModel_FeatureModel', the role 'FeatureModel_FeatureModel2' has cardinality 0..*.
+An association connects 'FeatureModel_ConfigConstraint' and 'FeatureModel_RootFeature'. From 'FeatureModel_ConfigConstraint', the role 'FeatureModel_ConfigConstraint' has cardinality 0..*, and from 'FeatureModel_RootFeature', the role 'FeatureModel_RootFeature4' has cardinality 0..*.
+An association connects 'FeatureModel_Feature' and 'FeatureModel_FeatureConstraint'. From 'FeatureModel_Feature', the role 'FeatureModel_Feature' has cardinality 0..*, and from 'FeatureModel_FeatureConstraint', the role 'FeatureModel_FeatureConstraint6' has cardinality 0..*.
+An association connects 'FeatureModel_Feature' and 'FeatureModel_ConfigConstraint'. From 'FeatureModel_Feature', the role 'ConfFeatures' has cardinality 0..*, and from 'FeatureModel_ConfigConstraint', the role 'ConfigConstraint' has cardinality 0..*.
+An association connects 'FeatureModel_ConfigConstraint' and 'FeatureModel_Feature'. From 'FeatureModel_ConfigConstraint', the role 'Config' has cardinality 0..*, and from 'FeatureModel_Feature', the role 'Feature' has cardinality 0..*.

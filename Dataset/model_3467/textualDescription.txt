@@ -1,0 +1,126 @@
+The domain model 'coCoMM' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'coCoMM_Feature' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str; 'abstract', which is of type bool; 'mandatory', which is of type bool.
+
+'coCoMM_FeatureModel' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str; 'isDomain', which is of type bool.
+
+'coCoMM_HardLimitCC' represents an important domain concept.
+It does not declare any attributes.
+
+'coCoMM_OptimizationSC' represents an important domain concept.
+It has one attribute: 'funct', which is of type str.
+
+'coCoMM_CTConstraintExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'coCoMM_SolutionConstraint' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'coCoMM_HardLimitCCExpression' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'op', which is of type str.
+
+'coCoMM_Stakeholder' represents an important domain concept.
+It has the following attributes: 'job', which is of type str; 'name', which is of type str.
+
+'coCoMM_OptimizationCC' represents an important domain concept.
+It has one attribute: 'funct', which is of type str.
+
+'coCoMM_FeatureAttribute' represents an important domain concept.
+It has the following attributes: 'defaultValue', which is of type str; 'maxValue', which is of type str; 'minValue', which is of type str.
+
+'coCoMM_CMConstraintExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'coCoMM_CoCo' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'configScenario', which is of type str; 'id', which is of type str.
+
+'coCoMM_CrossModelConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ConfigurationConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'SolutionConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'coCoMM_TreeConstraint' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'coCoMM_AttributeType' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str; 'dataType', which is of type str.
+
+'coCoMM_SelectionStateCC' represents an important domain concept.
+It has one attribute: 'state', which is of type str.
+
+'coCoMM_AggregationFunction' represents an important domain concept.
+It has one attribute: 'operation', which is of type str.
+
+'coCoMM_Config' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'selected', which is of type bool.
+
+'coCoMM_Project' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'target', which is of type bool; 'date', which is of type date.
+
+'coCoMM_ConfigurationConstraint' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str; 'type', which is of type str.
+
+'coCoMM_CrossTreeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CCOptimizationOp' defines the following possible values: 'maximize', 'minimize'.
+The enumeration 'ConfigType' defines the following possible values: 'output', 'input'.
+The enumeration 'CTConstraintType' defines the following possible values: 'not', 'and', 'implies', 'or'.
+The enumeration 'OptimizationSCFunct' defines the following possible values: 'maximize', 'minimize'.
+The enumeration 'DataType' defines the following possible values: 'boolean', 'String', 'int', 'double'.
+The enumeration 'TreeConstraintType' defines the following possible values: 'And', 'Or', 'Alternative'.
+The enumeration 'SCType' defines the following possible values: 'optimization', 'hardLimit', 'selectionState', 'finiteDomain'.
+The enumeration 'AggregationOp' defines the following possible values: 'multiply', 'max', 'add', 'min'.
+The enumeration 'CCHardLimitOp' defines the following possible values: 'lt', 'eq', 'geq', 'leq', 'gt'.
+The enumeration 'CMConstraintType' defines the following possible values: 'implies', 'or', 'not', 'and'.
+The enumeration 'CCType' defines the following possible values: 'selectionState', 'optimization', 'hardLimit'.
+The enumeration 'CCSelectionStateType' defines the following possible values: 'preferred', 'forbidden', 'mandatory'.
+
+The model also captures inheritance relationships between classes.
+The class 'coCoMM_SelectionStateCC' is a specialization of 'ConfigurationConstraint'.
+The class 'coCoMM_HardLimitCC' is a specialization of 'ConfigurationConstraint'.
+The class 'coCoMM_OptimizationCC' is a specialization of 'ConfigurationConstraint'.
+The class 'coCoMM_OptimizationSC' is a specialization of 'SolutionConstraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'coCoMM_Feature' and 'coCoMM_FeatureModel'. From 'coCoMM_Feature', the role 'coCoMM_Feature' has cardinality 0..*, and from 'coCoMM_FeatureModel', the role 'coCoMM_FeatureModel' has cardinality 0..*.
+An association connects 'coCoMM_CrossTreeConstraint' and 'coCoMM_FeatureModel'. From 'coCoMM_CrossTreeConstraint', the role 'coCoMM_CrossTreeConstraint' has cardinality 0..*, and from 'coCoMM_FeatureModel', the role 'coCoMM_FeatureModel2' has cardinality 0..*.
+An association connects 'coCoMM_Feature' and 'coCoMM_TreeConstraint'. From 'coCoMM_Feature', the role 'coCoMM_Feature4' has cardinality 0..*, and from 'coCoMM_TreeConstraint', the role 'coCoMM_TreeConstraint' has cardinality 0..*.
+An association connects 'coCoMM_FeatureModel' and 'coCoMM_Feature'. From 'coCoMM_FeatureModel', the role 'coCoMM_FeatureModel7' has cardinality 0..*, and from 'coCoMM_Feature', the role 'coCoMM_Feature6' has cardinality 0..*.
+An association connects 'coCoMM_FeatureAttribute' and 'coCoMM_Feature'. From 'coCoMM_FeatureAttribute', the role 'coCoMM_FeatureAttribute' has cardinality 0..*, and from 'coCoMM_Feature', the role 'coCoMM_Feature9' has cardinality 0..*.
+An association connects 'coCoMM_TreeConstraint' and 'coCoMM_Feature'. From 'coCoMM_TreeConstraint', the role 'coCoMM_TreeConstraint11' has cardinality 0..*, and from 'coCoMM_Feature', the role 'coCoMM_Feature12' has cardinality 0..*.
+An association connects 'coCoMM_AttributeType' and 'coCoMM_FeatureAttribute'. From 'coCoMM_AttributeType', the role 'coCoMM_AttributeType' has cardinality 0..*, and from 'coCoMM_FeatureAttribute', the role 'coCoMM_FeatureAttribute14' has cardinality 0..*.
+An association connects 'coCoMM_CTConstraintExpression' and 'coCoMM_CrossTreeConstraint'. From 'coCoMM_CTConstraintExpression', the role 'coCoMM_CTConstraintExpression' has cardinality 0..*, and from 'coCoMM_CrossTreeConstraint', the role 'coCoMM_CrossTreeConstraint16' has cardinality 0..*.
+An association connects 'coCoMM_FeatureModel' and 'coCoMM_CoCo'. From 'coCoMM_FeatureModel', the role 'coCoMM_FeatureModel18' has cardinality 0..*, and from 'coCoMM_CoCo', the role 'coCoMM_CoCo' has cardinality 0..*.
+An association connects 'coCoMM_CrossModelConstraint' and 'coCoMM_CoCo'. From 'coCoMM_CrossModelConstraint', the role 'coCoMM_CrossModelConstraint' has cardinality 0..*, and from 'coCoMM_CoCo', the role 'coCoMM_CoCo20' has cardinality 0..*.
+An association connects 'coCoMM_SolutionConstraint' and 'coCoMM_CoCo'. From 'coCoMM_SolutionConstraint', the role 'coCoMM_SolutionConstraint' has cardinality 0..*, and from 'coCoMM_CoCo', the role 'coCoMM_CoCo22' has cardinality 0..*.
+An association connects 'coCoMM_ConfigurationConstraint' and 'coCoMM_CoCo'. From 'coCoMM_ConfigurationConstraint', the role 'coCoMM_ConfigurationConstraint' has cardinality 0..*, and from 'coCoMM_CoCo', the role 'coCoMM_CoCo24' has cardinality 0..*.
+An association connects 'coCoMM_AttributeType' and 'coCoMM_CoCo'. From 'coCoMM_AttributeType', the role 'coCoMM_AttributeType27' has cardinality 0..*, and from 'coCoMM_CoCo', the role 'coCoMM_CoCo26' has cardinality 0..*.
+An association connects 'coCoMM_Project' and 'coCoMM_CoCo'. From 'coCoMM_Project', the role 'coCoMM_Project' has cardinality 0..*, and from 'coCoMM_CoCo', the role 'coCoMM_CoCo29' has cardinality 0..*.
+An association connects 'coCoMM_CoCo' and 'coCoMM_Stakeholder'. From 'coCoMM_CoCo', the role 'coCoMM_CoCo31' has cardinality 0..*, and from 'coCoMM_Stakeholder', the role 'coCoMM_Stakeholder' has cardinality 0..*.
+An association connects 'coCoMM_CrossModelConstraint' and 'coCoMM_CMConstraintExpression'. From 'coCoMM_CrossModelConstraint', the role 'coCoMM_CrossModelConstraint33' has cardinality 0..*, and from 'coCoMM_CMConstraintExpression', the role 'coCoMM_CMConstraintExpression' has cardinality 0..*.
+An association connects 'coCoMM_SelectionStateCC' and 'coCoMM_FeatureModel'. From 'coCoMM_SelectionStateCC', the role 'coCoMM_SelectionStateCC' has cardinality 0..*, and from 'coCoMM_FeatureModel', the role 'coCoMM_FeatureModel35' has cardinality 0..*.
+An association connects 'coCoMM_Feature' and 'coCoMM_SelectionStateCC'. From 'coCoMM_Feature', the role 'coCoMM_Feature38' has cardinality 0..*, and from 'coCoMM_SelectionStateCC', the role 'coCoMM_SelectionStateCC37' has cardinality 0..*.
+An association connects 'coCoMM_HardLimitCCExpression' and 'coCoMM_HardLimitCC'. From 'coCoMM_HardLimitCCExpression', the role 'coCoMM_HardLimitCCExpression' has cardinality 0..*, and from 'coCoMM_HardLimitCC', the role 'coCoMM_HardLimitCC' has cardinality 0..*.
+An association connects 'coCoMM_AggregationFunction' and 'coCoMM_HardLimitCC'. From 'coCoMM_AggregationFunction', the role 'coCoMM_AggregationFunction' has cardinality 0..*, and from 'coCoMM_HardLimitCC', the role 'coCoMM_HardLimitCC41' has cardinality 0..*.
+An association connects 'coCoMM_OptimizationCC' and 'coCoMM_AggregationFunction'. From 'coCoMM_OptimizationCC', the role 'coCoMM_OptimizationCC' has cardinality 0..*, and from 'coCoMM_AggregationFunction', the role 'coCoMM_AggregationFunction43' has cardinality 0..*.
+An association connects 'coCoMM_Project' and 'coCoMM_ConfigurationConstraint'. From 'coCoMM_Project', the role 'coCoMM_Project45' has cardinality 0..*, and from 'coCoMM_ConfigurationConstraint', the role 'coCoMM_ConfigurationConstraint46' has cardinality 0..*.
+An association connects 'coCoMM_SolutionConstraint' and 'coCoMM_Project'. From 'coCoMM_SolutionConstraint', the role 'coCoMM_SolutionConstraint49' has cardinality 0..*, and from 'coCoMM_Project', the role 'coCoMM_Project48' has cardinality 0..*.
+An association connects 'coCoMM_Config' and 'coCoMM_Project'. From 'coCoMM_Config', the role 'coCoMM_Config' has cardinality 0..*, and from 'coCoMM_Project', the role 'coCoMM_Project51' has cardinality 0..*.
+An association connects 'coCoMM_Config' and 'coCoMM_Stakeholder'. From 'coCoMM_Config', the role 'coCoMM_Config53' has cardinality 0..*, and from 'coCoMM_Stakeholder', the role 'coCoMM_Stakeholder54' has cardinality 0..*.
+An association connects 'coCoMM_Config' and 'coCoMM_Feature'. From 'coCoMM_Config', the role 'coCoMM_Config56' has cardinality 0..*, and from 'coCoMM_Feature', the role 'coCoMM_Feature57' has cardinality 0..*.
+An association connects 'coCoMM_Feature' and 'coCoMM_CTConstraintExpression'. From 'coCoMM_Feature', the role 'coCoMM_Feature60' has cardinality 0..*, and from 'coCoMM_CTConstraintExpression', the role 'coCoMM_CTConstraintExpression59' has cardinality 0..*.
+An association connects 'coCoMM_CTConstraintExpression' and 'coCoMM_CTConstraintExpression'. From 'coCoMM_CTConstraintExpression', the role 'coCoMM_CTConstraintExpression61' has cardinality 0..*, and from 'coCoMM_CTConstraintExpression', the role 'coCoMM_CTConstraintExpression63' has cardinality 0..*.
+An association connects 'coCoMM_CMConstraintExpression' and 'coCoMM_Feature'. From 'coCoMM_CMConstraintExpression', the role 'coCoMM_CMConstraintExpression65' has cardinality 0..*, and from 'coCoMM_Feature', the role 'coCoMM_Feature66' has cardinality 0..*.
+An association connects 'coCoMM_CMConstraintExpression' and 'coCoMM_CMConstraintExpression'. From 'coCoMM_CMConstraintExpression', the role 'coCoMM_CMConstraintExpression67' has cardinality 0..*, and from 'coCoMM_CMConstraintExpression', the role 'coCoMM_CMConstraintExpression69' has cardinality 0..*.
+An association connects 'coCoMM_AttributeType' and 'coCoMM_AggregationFunction'. From 'coCoMM_AttributeType', the role 'coCoMM_AttributeType72' has cardinality 0..*, and from 'coCoMM_AggregationFunction', the role 'coCoMM_AggregationFunction71' has cardinality 0..*.
+An association connects 'coCoMM_OptimizationSC' and 'coCoMM_AttributeType'. From 'coCoMM_OptimizationSC', the role 'coCoMM_OptimizationSC' has cardinality 0..*, and from 'coCoMM_AttributeType', the role 'coCoMM_AttributeType74' has cardinality 0..*.

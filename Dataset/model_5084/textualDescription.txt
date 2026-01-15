@@ -1,0 +1,54 @@
+The domain model 'adl199' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'AbstractComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'adl199_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'adl199_Required' represents an important domain concept.
+It does not declare any attributes.
+
+'adl199_Provided' represents an important domain concept.
+It does not declare any attributes.
+
+'adl199_AtomicComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'adl199_Content' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'expression', which is of type str.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'adl199_Interface' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'signature', which is of type str.
+
+'adl199_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'adl199_AbstractComponent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adl199_Delegation' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'adl199_Required' is a specialization of 'Interface'.
+The class 'adl199_Provided' is a specialization of 'Interface'.
+The class 'adl199_Component' is a specialization of 'AbstractComponent'.
+The class 'adl199_Delegation' is a specialization of 'Interface'.
+The class 'adl199_AtomicComponent' is a specialization of 'AbstractComponent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'adl199_AbstractComponent' and 'adl199_Content'. From 'adl199_AbstractComponent', the role 'adl199_AbstractComponent' has cardinality 0..*, and from 'adl199_Content', the role 'adl199_Content' has cardinality 0..*.
+An association connects 'adl199_AbstractComponent' and 'adl199_Required'. From 'adl199_AbstractComponent', the role 'adl199_AbstractComponent2' has cardinality 0..*, and from 'adl199_Required', the role 'adl199_Required' has cardinality 0..*.
+An association connects 'adl199_Provided' and 'adl199_AbstractComponent'. From 'adl199_Provided', the role 'adl199_Provided' has cardinality 0..*, and from 'adl199_AbstractComponent', the role 'adl199_AbstractComponent4' has cardinality 0..*.
+An association connects 'adl199_AbstractComponent' and 'adl199_Delegation'. From 'adl199_AbstractComponent', the role 'adl199_AbstractComponent6' has cardinality 0..*, and from 'adl199_Delegation', the role 'adl199_Delegation' has cardinality 0..*.
+An association connects 'adl199_Binding' and 'adl199_Interface'. From 'adl199_Binding', the role 'adl199_Binding' has cardinality 0..*, and from 'adl199_Interface', the role 'adl199_Interface' has cardinality 0..*.
+An association connects 'adl199_Binding' and 'adl199_Interface'. From 'adl199_Binding', the role 'adl199_Binding9' has cardinality 0..*, and from 'adl199_Interface', the role 'adl199_Interface10' has cardinality 0..*.
+An association connects 'adl199_Interface' and 'adl199_Binding'. From 'adl199_Interface', the role 'adl199_Interface13' has cardinality 0..*, and from 'adl199_Binding', the role 'adl199_Binding12' has cardinality 0..*.
+An association connects 'adl199_Content' and 'adl199_AbstractComponent'. From 'adl199_Content', the role 'adl199_Content15' has cardinality 0..*, and from 'adl199_AbstractComponent', the role 'adl199_AbstractComponent16' has cardinality 0..*.
+An association connects 'adl199_Component' and 'adl199_AbstractComponent'. From 'adl199_Component', the role 'adl199_Component' has cardinality 0..*, and from 'adl199_AbstractComponent', the role 'adl199_AbstractComponent18' has cardinality 0..*.

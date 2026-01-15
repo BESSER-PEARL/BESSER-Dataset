@@ -1,0 +1,90 @@
+The domain model 'umlstatemachineselect' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'umlstatemachineselect_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'umlstatemachineselect_ConnectionPointReference' represents an important domain concept.
+It does not declare any attributes.
+
+'umlstatemachineselect_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'umlstatemachineselect_PseudoState' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'umlstatemachineselect_Transition' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'umlstatemachineselect_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'umlstatemachineselect_State' represents an important domain concept.
+It has the following attributes: 'isSimple', which is of type bool; 'isComposite', which is of type bool; 'isOrthogonal', which is of type bool; 'isSubmachineState', which is of type bool.
+
+'umlstatemachineselect_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'umlstatemachineselect_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'umlstatemachineselect_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'umlstatemachineselect_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'umlstatemachineselect_Region' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PseudostateKind' defines the following possible values: 'entryPoint', 'choice', 'deepHistory', 'terminate', 'join', 'exitPoint', 'initial', 'junction', 'fork', 'shallowHistory'.
+The enumeration 'TransitionKind' defines the following possible values: 'internal', 'external', 'local'.
+
+The model also captures inheritance relationships between classes.
+The class 'umlstatemachineselect_StateMachine' is a specialization of 'Behavior'.
+The class 'umlstatemachineselect_State' is a specialization of 'Vertex'.
+The class 'umlstatemachineselect_FinalState' is a specialization of 'State'.
+The class 'umlstatemachineselect_PseudoState' is a specialization of 'Vertex'.
+The class 'umlstatemachineselect_ConnectionPointReference' is a specialization of 'Vertex'.
+
+Relationships between classes are modeled using associations.
+An association connects 'umlstatemachineselect_StateMachine' and 'umlstatemachineselect_Region'. From 'umlstatemachineselect_StateMachine', the role 'stateMachine' has cardinality 0..*, and from 'umlstatemachineselect_Region', the role 'Region' has cardinality 0..*.
+An association connects 'umlstatemachineselect_StateMachine' and 'umlstatemachineselect_State'. From 'umlstatemachineselect_StateMachine', the role 'submachine' has cardinality 0..*, and from 'umlstatemachineselect_State', the role 'State' has cardinality 0..*.
+An association connects 'umlstatemachineselect_StateMachine' and 'umlstatemachineselect_PseudoState'. From 'umlstatemachineselect_StateMachine', the role 'stateMachine3' has cardinality 0..*, and from 'umlstatemachineselect_PseudoState', the role 'PseudoState' has cardinality 0..*.
+An association connects 'umlstatemachineselect_StateMachine' and 'umlstatemachineselect_Region'. From 'umlstatemachineselect_StateMachine', the role 'StateMachine' has cardinality 0..*, and from 'umlstatemachineselect_Region', the role 'region' has cardinality 0..*.
+An association connects 'umlstatemachineselect_Region' and 'umlstatemachineselect_Vertex'. From 'umlstatemachineselect_Region', the role 'container' has cardinality 0..*, and from 'umlstatemachineselect_Vertex', the role 'Vertex' has cardinality 0..*.
+An association connects 'umlstatemachineselect_Transition' and 'umlstatemachineselect_Region'. From 'umlstatemachineselect_Transition', the role 'Transition' has cardinality 0..*, and from 'umlstatemachineselect_Region', the role 'container7' has cardinality 0..*.
+An association connects 'umlstatemachineselect_State' and 'umlstatemachineselect_Region'. From 'umlstatemachineselect_State', the role 'State10' has cardinality 0..*, and from 'umlstatemachineselect_Region', the role 'region9' has cardinality 0..*.
+An association connects 'umlstatemachineselect_Vertex' and 'umlstatemachineselect_Region'. From 'umlstatemachineselect_Vertex', the role 'subvertex' has cardinality 0..*, and from 'umlstatemachineselect_Region', the role 'Region12' has cardinality 0..*.
+An association connects 'umlstatemachineselect_Vertex' and 'umlstatemachineselect_Transition'. From 'umlstatemachineselect_Vertex', the role 'source' has cardinality 0..*, and from 'umlstatemachineselect_Transition', the role 'Transition14' has cardinality 0..*.
+An association connects 'umlstatemachineselect_Vertex' and 'umlstatemachineselect_Transition'. From 'umlstatemachineselect_Vertex', the role 'target' has cardinality 0..*, and from 'umlstatemachineselect_Transition', the role 'Transition16' has cardinality 0..*.
+An association connects 'umlstatemachineselect_Region' and 'umlstatemachineselect_Transition'. From 'umlstatemachineselect_Region', the role 'Region18' has cardinality 0..*, and from 'umlstatemachineselect_Transition', the role 'transition' has cardinality 0..*.
+An association connects 'umlstatemachineselect_Transition' and 'umlstatemachineselect_Vertex'. From 'umlstatemachineselect_Transition', the role 'incoming' has cardinality 0..*, and from 'umlstatemachineselect_Vertex', the role 'Vertex20' has cardinality 0..*.
+An association connects 'umlstatemachineselect_Transition' and 'umlstatemachineselect_Vertex'. From 'umlstatemachineselect_Transition', the role 'outgoing' has cardinality 0..*, and from 'umlstatemachineselect_Vertex', the role 'Vertex22' has cardinality 0..*.
+An association connects 'umlstatemachineselect_Transition' and 'umlstatemachineselect_Behavior'. From 'umlstatemachineselect_Transition', the role 'umlstatemachineselect_Transition' has cardinality 0..*, and from 'umlstatemachineselect_Behavior', the role 'umlstatemachineselect_Behavior' has cardinality 0..*.
+An association connects 'umlstatemachineselect_Transition' and 'umlstatemachineselect_Constraint'. From 'umlstatemachineselect_Transition', the role 'umlstatemachineselect_Transition25' has cardinality 0..*, and from 'umlstatemachineselect_Constraint', the role 'umlstatemachineselect_Constraint' has cardinality 0..*.
+An association connects 'umlstatemachineselect_Transition' and 'umlstatemachineselect_Trigger'. From 'umlstatemachineselect_Transition', the role 'umlstatemachineselect_Transition27' has cardinality 0..*, and from 'umlstatemachineselect_Trigger', the role 'umlstatemachineselect_Trigger' has cardinality 0..*.
+An association connects 'umlstatemachineselect_Region' and 'umlstatemachineselect_State'. From 'umlstatemachineselect_Region', the role 'Region29' has cardinality 0..*, and from 'umlstatemachineselect_State', the role 'state' has cardinality 0..*.
+An association connects 'umlstatemachineselect_ConnectionPointReference' and 'umlstatemachineselect_State'. From 'umlstatemachineselect_ConnectionPointReference', the role 'ConnectionPointReference' has cardinality 0..*, and from 'umlstatemachineselect_State', the role 'state31' has cardinality 0..*.
+An association connects 'umlstatemachineselect_StateMachine' and 'umlstatemachineselect_State'. From 'umlstatemachineselect_StateMachine', the role 'StateMachine33' has cardinality 0..*, and from 'umlstatemachineselect_State', the role 'submachineState' has cardinality 0..*.
+An association connects 'umlstatemachineselect_Behavior' and 'umlstatemachineselect_State'. From 'umlstatemachineselect_Behavior', the role 'umlstatemachineselect_Behavior35' has cardinality 0..*, and from 'umlstatemachineselect_State', the role 'umlstatemachineselect_State' has cardinality 0..*.
+An association connects 'umlstatemachineselect_Behavior' and 'umlstatemachineselect_State'. From 'umlstatemachineselect_Behavior', the role 'umlstatemachineselect_Behavior38' has cardinality 0..*, and from 'umlstatemachineselect_State', the role 'umlstatemachineselect_State37' has cardinality 0..*.
+An association connects 'umlstatemachineselect_State' and 'umlstatemachineselect_Behavior'. From 'umlstatemachineselect_State', the role 'umlstatemachineselect_State40' has cardinality 0..*, and from 'umlstatemachineselect_Behavior', the role 'umlstatemachineselect_Behavior41' has cardinality 0..*.
+An association connects 'umlstatemachineselect_State' and 'umlstatemachineselect_Constraint'. From 'umlstatemachineselect_State', the role 'umlstatemachineselect_State43' has cardinality 0..*, and from 'umlstatemachineselect_Constraint', the role 'umlstatemachineselect_Constraint44' has cardinality 0..*.
+An association connects 'umlstatemachineselect_State' and 'umlstatemachineselect_Trigger'. From 'umlstatemachineselect_State', the role 'umlstatemachineselect_State46' has cardinality 0..*, and from 'umlstatemachineselect_Trigger', the role 'umlstatemachineselect_Trigger47' has cardinality 0..*.
+An association connects 'umlstatemachineselect_PseudoState' and 'umlstatemachineselect_StateMachine'. From 'umlstatemachineselect_PseudoState', the role 'connectionPoint' has cardinality 0..*, and from 'umlstatemachineselect_StateMachine', the role 'StateMachine49' has cardinality 0..*.
+An association connects 'umlstatemachineselect_ConnectionPointReference' and 'umlstatemachineselect_State'. From 'umlstatemachineselect_ConnectionPointReference', the role 'connection' has cardinality 0..*, and from 'umlstatemachineselect_State', the role 'State51' has cardinality 0..*.
+An association connects 'umlstatemachineselect_PseudoState' and 'umlstatemachineselect_ConnectionPointReference'. From 'umlstatemachineselect_PseudoState', the role 'umlstatemachineselect_PseudoState' has cardinality 0..*, and from 'umlstatemachineselect_ConnectionPointReference', the role 'umlstatemachineselect_ConnectionPointReference' has cardinality 0..*.
+An association connects 'umlstatemachineselect_PseudoState' and 'umlstatemachineselect_ConnectionPointReference'. From 'umlstatemachineselect_PseudoState', the role 'umlstatemachineselect_PseudoState55' has cardinality 0..*, and from 'umlstatemachineselect_ConnectionPointReference', the role 'umlstatemachineselect_ConnectionPointReference54' has cardinality 0..*.
+An association connects 'umlstatemachineselect_Event' and 'umlstatemachineselect_Trigger'. From 'umlstatemachineselect_Event', the role 'umlstatemachineselect_Event' has cardinality 0..*, and from 'umlstatemachineselect_Trigger', the role 'umlstatemachineselect_Trigger57' has cardinality 0..*.

@@ -1,0 +1,29 @@
+The domain model 'basicfamily' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'basicfamily_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'basicfamily_Family' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'basicfamily_Woman' represents an important domain concept.
+It does not declare any attributes.
+
+'basicfamily_Man' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'basicfamily_Man' is a specialization of 'Person'.
+The class 'basicfamily_Woman' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'basicfamily_Person' and 'basicfamily_Family'. From 'basicfamily_Person', the role 'basicfamily_Person' has cardinality 0..*, and from 'basicfamily_Family', the role 'basicfamily_Family' has cardinality 0..*.
+An association connects 'basicfamily_Person' and 'basicfamily_Person'. From 'basicfamily_Person', the role 'children' has cardinality 0..*, and from 'basicfamily_Person', the role 'Person' has cardinality 0..*.
+An association connects 'basicfamily_Person' and 'basicfamily_Person'. From 'basicfamily_Person', the role 'Person5' has cardinality 0..*, and from 'basicfamily_Person', the role 'parents' has cardinality 0..*.
+An association connects 'basicfamily_Person' and 'basicfamily_Woman'. From 'basicfamily_Person', the role 'basicfamily_Person7' has cardinality 0..*, and from 'basicfamily_Woman', the role 'basicfamily_Woman' has cardinality 0..*.
+An association connects 'basicfamily_Man' and 'basicfamily_Person'. From 'basicfamily_Man', the role 'basicfamily_Man' has cardinality 0..*, and from 'basicfamily_Person', the role 'basicfamily_Person9' has cardinality 0..*.

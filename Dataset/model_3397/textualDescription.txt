@@ -1,0 +1,16 @@
+The domain model 'StateMachine' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'StateMachine_PNTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_Arc' represents an important domain concept.
+It has the following attributes: 'toPlace', which is of type bool; 'weight', which is of type int.
+
+'StateMachine_Place' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'tokens', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'StateMachine_PNTransition' and 'StateMachine_Arc'. From 'StateMachine_PNTransition', the role 'StateMachine_PNTransition' has cardinality 0..*, and from 'StateMachine_Arc', the role 'StateMachine_Arc' has cardinality 0..*.
+An association connects 'StateMachine_Arc' and 'StateMachine_Place'. From 'StateMachine_Arc', the role 'StateMachine_Arc2' has cardinality 0..*, and from 'StateMachine_Place', the role 'StateMachine_Place' has cardinality 0..*.

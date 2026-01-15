@@ -1,0 +1,40 @@
+The domain model 'Families' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'Families_Father' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_Family' represents an important domain concept.
+It has one attribute: 'lastName', which is of type str.
+
+'Families_Member' represents an important domain concept.
+It has one attribute: 'firstName', which is of type str.
+
+'Families_Son' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_Mother' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_Daughter' represents an important domain concept.
+It does not declare any attributes.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Families_Father' is a specialization of 'Member'.
+The class 'Families_Mother' is a specialization of 'Member'.
+The class 'Families_Son' is a specialization of 'Member'.
+The class 'Families_Daughter' is a specialization of 'Member'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Families_Father' and 'Families_Family'. From 'Families_Father', the role 'Father' has cardinality 0..*, and from 'Families_Family', the role 'family' has cardinality 0..*.
+An association connects 'Families_Mother' and 'Families_Family'. From 'Families_Mother', the role 'Mother' has cardinality 0..*, and from 'Families_Family', the role 'family2' has cardinality 0..*.
+An association connects 'Families_Son' and 'Families_Family'. From 'Families_Son', the role 'Son' has cardinality 0..*, and from 'Families_Family', the role 'family4' has cardinality 0..*.
+An association connects 'Families_Family' and 'Families_Daughter'. From 'Families_Family', the role 'family6' has cardinality 0..*, and from 'Families_Daughter', the role 'Daughter' has cardinality 0..*.
+An association connects 'Families_Father' and 'Families_Family'. From 'Families_Father', the role 'father' has cardinality 0..*, and from 'Families_Family', the role 'Family' has cardinality 0..*.
+An association connects 'Families_Family' and 'Families_Mother'. From 'Families_Family', the role 'Family9' has cardinality 0..*, and from 'Families_Mother', the role 'mother' has cardinality 0..*.
+An association connects 'Families_Family' and 'Families_Son'. From 'Families_Family', the role 'Family11' has cardinality 0..*, and from 'Families_Son', the role 'sons' has cardinality 0..*.
+An association connects 'Families_Family' and 'Families_Daughter'. From 'Families_Family', the role 'Family13' has cardinality 0..*, and from 'Families_Daughter', the role 'daughters' has cardinality 0..*.

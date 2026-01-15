@@ -1,0 +1,34 @@
+The domain model 'errors' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'errors_Errores' represents an important domain concept.
+It does not declare any attributes.
+
+'errors_Fk' represents an important domain concept.
+It does not declare any attributes.
+
+'errors_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'Error' represents an important domain concept.
+It does not declare any attributes.
+
+'errors_ForeignError' represents an important domain concept.
+It has one attribute: 'porcent', which is of type int.
+
+'errors_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'errors_Error' represents an important domain concept.
+It has the following attributes: 'apply', which is of type bool; 'id', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'errors_ForeignError' is a specialization of 'Error'.
+
+Relationships between classes are modeled using associations.
+An association connects 'errors_Errores' and 'errors_Error'. From 'errors_Errores', the role 'errors_Errores' has cardinality 0..*, and from 'errors_Error', the role 'errors_Error' has cardinality 0..*.
+An association connects 'errors_ForeignError' and 'errors_Table'. From 'errors_ForeignError', the role 'errors_ForeignError' has cardinality 0..*, and from 'errors_Table', the role 'errors_Table' has cardinality 0..*.
+An association connects 'errors_Table' and 'errors_ForeignError'. From 'errors_Table', the role 'errors_Table4' has cardinality 0..*, and from 'errors_ForeignError', the role 'errors_ForeignError3' has cardinality 0..*.
+An association connects 'errors_Column' and 'errors_ForeignError'. From 'errors_Column', the role 'errors_Column' has cardinality 0..*, and from 'errors_ForeignError', the role 'errors_ForeignError6' has cardinality 0..*.
+An association connects 'errors_ForeignError' and 'errors_Fk'. From 'errors_ForeignError', the role 'errors_ForeignError8' has cardinality 0..*, and from 'errors_Fk', the role 'errors_Fk' has cardinality 0..*.

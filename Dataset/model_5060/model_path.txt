@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/behnaaz/BPMN2ATL/atttl/BPMN2/BPMN20.ecore

@@ -1,0 +1,101 @@
+The domain model 'web' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'web_GalleryContent' represents an important domain concept.
+It does not declare any attributes.
+
+'web_NewsFeedPage' represents an important domain concept.
+It does not declare any attributes.
+
+'web_FooterEntry' represents an important domain concept.
+It has the following attributes: 'link', which is of type str; 'name', which is of type str.
+
+'Page' represents an important domain concept.
+It does not declare any attributes.
+
+'web_HtmlContent' represents an important domain concept.
+It has one attribute: 'data', which is of type str.
+
+'web_Container' represents an important domain concept.
+It does not declare any attributes.
+
+'web_Release' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'alternateMsiName', which is of type str; 'date', which is of type date; 'releaseNotesLink', which is of type str; 'javadoc', which is of type bool; 'unqualifiedName', which is of type str; 'type', which is of type str; 'buildId', which is of type str.
+
+'web_NewsEntry' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'date', which is of type date; 'description', which is of type str.
+
+'web_SocialBar' represents an important domain concept.
+It does not declare any attributes.
+
+'web_Author' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'plusLink', which is of type str; 'email', which is of type str.
+
+'web_Site' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str.
+
+'web_ContentPage' represents an important domain concept.
+It does not declare any attributes.
+
+'Container' represents an important domain concept.
+It does not declare any attributes.
+
+'web_Version' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'state', which is of type str.
+
+'web_Link' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'target', which is of type str.
+
+'web_ReleaseSection' represents an important domain concept.
+It does not declare any attributes.
+
+'web_Content' represents an important domain concept.
+It does not declare any attributes.
+
+'web_Image' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'src', which is of type str.
+
+'web_SocialInformation' represents an important domain concept.
+It has the following attributes: 'url', which is of type str; 'twitterUrl', which is of type str; 'plusUrl', which is of type str; 'facebookUrl', which is of type str.
+
+'web_Gallery' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'Content' represents an important domain concept.
+It does not declare any attributes.
+
+'web_Page' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VersionState' defines the following possible values: 'RELEASED', 'PLANNED', 'IN_DEVELOPMENT'.
+The enumeration 'ReleaseType' defines the following possible values: 'release', 'nightly', 'milestone'.
+
+The model also captures inheritance relationships between classes.
+The class 'web_HtmlContent' is a specialization of 'Content'.
+The class 'web_NewsEntry' is a specialization of 'Container'.
+The class 'web_NewsFeedPage' is a specialization of 'Page'.
+The class 'web_ContentPage' is a specialization of 'Container'.
+The class 'web_ContentPage' is a specialization of 'Page'.
+The class 'web_ReleaseSection' is a specialization of 'Content'.
+The class 'web_GalleryContent' is a specialization of 'Content'.
+The class 'web_SocialBar' is a specialization of 'Content'.
+
+Relationships between classes are modeled using associations.
+An association connects 'web_Page' and 'web_Site'. From 'web_Page', the role 'Page' has cardinality 0..*, and from 'web_Site', the role 'site' has cardinality 0..*.
+An association connects 'web_Site' and 'web_FooterEntry'. From 'web_Site', the role 'web_Site' has cardinality 0..*, and from 'web_FooterEntry', the role 'web_FooterEntry' has cardinality 0..*.
+An association connects 'web_Site' and 'web_NewsEntry'. From 'web_Site', the role 'web_Site3' has cardinality 0..*, and from 'web_NewsEntry', the role 'web_NewsEntry' has cardinality 0..*.
+An association connects 'web_Author' and 'web_Site'. From 'web_Author', the role 'web_Author' has cardinality 0..*, and from 'web_Site', the role 'web_Site5' has cardinality 0..*.
+An association connects 'web_Site' and 'web_Link'. From 'web_Site', the role 'web_Site7' has cardinality 0..*, and from 'web_Link', the role 'web_Link' has cardinality 0..*.
+An association connects 'web_Site' and 'web_Version'. From 'web_Site', the role 'web_Site9' has cardinality 0..*, and from 'web_Version', the role 'web_Version' has cardinality 0..*.
+An association connects 'web_Gallery' and 'web_Site'. From 'web_Gallery', the role 'web_Gallery' has cardinality 0..*, and from 'web_Site', the role 'web_Site11' has cardinality 0..*.
+An association connects 'web_Site' and 'web_Page'. From 'web_Site', the role 'Site' has cardinality 0..*, and from 'web_Page', the role 'pages' has cardinality 0..*.
+An association connects 'web_Author' and 'web_NewsEntry'. From 'web_Author', the role 'web_Author15' has cardinality 0..*, and from 'web_NewsEntry', the role 'web_NewsEntry14' has cardinality 0..*.
+An association connects 'web_Content' and 'web_Container'. From 'web_Content', the role 'web_Content' has cardinality 0..*, and from 'web_Container', the role 'web_Container' has cardinality 0..*.
+An association connects 'web_Release' and 'web_Version'. From 'web_Release', the role 'releases' has cardinality 0..*, and from 'web_Version', the role 'Version' has cardinality 0..*.
+An association connects 'web_Release' and 'web_ReleaseSection'. From 'web_Release', the role 'web_Release' has cardinality 0..*, and from 'web_ReleaseSection', the role 'web_ReleaseSection' has cardinality 0..*.
+An association connects 'web_Release' and 'web_Version'. From 'web_Release', the role 'Release' has cardinality 0..*, and from 'web_Version', the role 'version' has cardinality 0..*.
+An association connects 'web_Gallery' and 'web_Image'. From 'web_Gallery', the role 'web_Gallery21' has cardinality 0..*, and from 'web_Image', the role 'web_Image' has cardinality 0..*.
+An association connects 'web_GalleryContent' and 'web_Gallery'. From 'web_GalleryContent', the role 'web_GalleryContent' has cardinality 0..*, and from 'web_Gallery', the role 'web_Gallery23' has cardinality 0..*.
+An association connects 'web_SocialBar' and 'web_SocialInformation'. From 'web_SocialBar', the role 'web_SocialBar' has cardinality 0..*, and from 'web_SocialInformation', the role 'web_SocialInformation' has cardinality 0..*.

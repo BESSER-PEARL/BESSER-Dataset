@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atlanmod/emfviews/tests/org.atlanmod.emfviews.tests/resources/metamodels/minimalB.ecore

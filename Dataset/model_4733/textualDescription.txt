@@ -1,0 +1,146 @@
+The domain model 'swml' describes the core structural elements and their relationships within the system.
+
+The model defines 32 main class(es).
+
+'swml_staticPage' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkKat1' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_Attribute' represents an important domain concept.
+It has the following attributes: 'Typ', which is of type str; 'name', which is of type str.
+
+'swml_ContentModel' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_HypertextModel' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_Literals' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dynamicPage' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_DeletePage' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_dynamicPage' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_KO' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_CreatePage' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_NonContextualLinks' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_WebPage' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'swml_IndexPages' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_Reference' represents an important domain concept.
+It has the following attributes: 'lowerBound', which is of type int; 'upperBound', which is of type int; 'rolename', which is of type str.
+
+'swml_EnumTyp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'swml_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'swml_Links' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'swml_OK' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_EntityPages' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_LinkParamater' represents an important domain concept.
+It has one attribute: 'Parameter', which is of type str.
+
+'EntityPages' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkKat2' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_UpdatePage' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_LinkKat1' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_WebModel' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_LinkJoinNode' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_LinkKat2' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_Enumeration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'swml_ContextualLinks' represents an important domain concept.
+It does not declare any attributes.
+
+'WebPage' represents an important domain concept.
+It does not declare any attributes.
+
+'Links' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Datentyp' defines the following possible values: 'String', 'Integer', 'Boolean', 'Date', 'Float', 'Email', 'Time'.
+
+The model also captures inheritance relationships between classes.
+The class 'swml_LinkJoinNode' is a specialization of 'WebPage'.
+The class 'swml_staticPage' is a specialization of 'WebPage'.
+The class 'swml_dynamicPage' is a specialization of 'WebPage'.
+The class 'swml_EntityPages' is a specialization of 'dynamicPage'.
+The class 'swml_IndexPages' is a specialization of 'dynamicPage'.
+The class 'swml_UpdatePage' is a specialization of 'EntityPages'.
+The class 'swml_DeletePage' is a specialization of 'EntityPages'.
+The class 'swml_CreatePage' is a specialization of 'EntityPages'.
+The class 'swml_NonContextualLinks' is a specialization of 'LinkKat2'.
+The class 'swml_ContextualLinks' is a specialization of 'LinkKat2'.
+The class 'swml_OK' is a specialization of 'LinkKat1'.
+The class 'swml_KO' is a specialization of 'LinkKat1'.
+The class 'swml_LinkKat1' is a specialization of 'Links'.
+The class 'swml_LinkKat2' is a specialization of 'Links'.
+
+Relationships between classes are modeled using associations.
+An association connects 'swml_WebModel' and 'swml_HypertextModel'. From 'swml_WebModel', the role 'swml_WebModel' has cardinality 0..*, and from 'swml_HypertextModel', the role 'swml_HypertextModel' has cardinality 0..*.
+An association connects 'swml_WebModel' and 'swml_ContentModel'. From 'swml_WebModel', the role 'swml_WebModel2' has cardinality 0..*, and from 'swml_ContentModel', the role 'swml_ContentModel' has cardinality 0..*.
+An association connects 'swml_Enumeration' and 'swml_ContentModel'. From 'swml_Enumeration', the role 'swml_Enumeration' has cardinality 0..*, and from 'swml_ContentModel', the role 'swml_ContentModel4' has cardinality 0..*.
+An association connects 'swml_Entity' and 'swml_ContentModel'. From 'swml_Entity', the role 'swml_Entity' has cardinality 0..*, and from 'swml_ContentModel', the role 'swml_ContentModel6' has cardinality 0..*.
+An association connects 'swml_Entity' and 'swml_EnumTyp'. From 'swml_Entity', the role 'swml_Entity8' has cardinality 0..*, and from 'swml_EnumTyp', the role 'swml_EnumTyp' has cardinality 0..*.
+An association connects 'swml_Entity' and 'swml_Attribute'. From 'swml_Entity', the role 'swml_Entity10' has cardinality 0..*, and from 'swml_Attribute', the role 'swml_Attribute' has cardinality 0..*.
+An association connects 'swml_Reference' and 'swml_Entity'. From 'swml_Reference', the role 'swml_Reference' has cardinality 0..*, and from 'swml_Entity', the role 'swml_Entity12' has cardinality 0..*.
+An association connects 'swml_Entity' and 'swml_Entity'. From 'swml_Entity', the role 'swml_Entity15' has cardinality 0..*, and from 'swml_Entity', the role 'swml_Entity13' has cardinality 0..*.
+An association connects 'swml_EnumTyp' and 'swml_Enumeration'. From 'swml_EnumTyp', the role 'swml_EnumTyp17' has cardinality 0..*, and from 'swml_Enumeration', the role 'swml_Enumeration18' has cardinality 0..*.
+An association connects 'swml_Reference' and 'swml_Reference'. From 'swml_Reference', the role 'swml_Reference19' has cardinality 0..*, and from 'swml_Reference', the role 'swml_Reference21' has cardinality 0..*.
+An association connects 'swml_Entity' and 'swml_Reference'. From 'swml_Entity', the role 'swml_Entity24' has cardinality 0..*, and from 'swml_Reference', the role 'swml_Reference23' has cardinality 0..*.
+An association connects 'swml_Enumeration' and 'swml_Literals'. From 'swml_Enumeration', the role 'swml_Enumeration26' has cardinality 0..*, and from 'swml_Literals', the role 'swml_Literals' has cardinality 0..*.
+An association connects 'swml_HypertextModel' and 'swml_WebPage'. From 'swml_HypertextModel', the role 'swml_HypertextModel28' has cardinality 0..*, and from 'swml_WebPage', the role 'swml_WebPage' has cardinality 0..*.
+An association connects 'swml_HypertextModel' and 'swml_staticPage'. From 'swml_HypertextModel', the role 'swml_HypertextModel30' has cardinality 0..*, and from 'swml_staticPage', the role 'swml_staticPage' has cardinality 0..*.
+An association connects 'swml_WebPage' and 'swml_LinkKat2'. From 'swml_WebPage', the role 'swml_WebPage32' has cardinality 0..*, and from 'swml_LinkKat2', the role 'swml_LinkKat2' has cardinality 0..*.
+An association connects 'swml_LinkJoinNode' and 'swml_LinkKat1'. From 'swml_LinkJoinNode', the role 'swml_LinkJoinNode' has cardinality 0..*, and from 'swml_LinkKat1', the role 'swml_LinkKat1' has cardinality 0..*.
+An association connects 'swml_Entity' and 'swml_dynamicPage'. From 'swml_Entity', the role 'swml_Entity35' has cardinality 0..*, and from 'swml_dynamicPage', the role 'swml_dynamicPage' has cardinality 0..*.
+An association connects 'swml_EntityPages' and 'swml_dynamicPage'. From 'swml_EntityPages', the role 'swml_EntityPages' has cardinality 0..*, and from 'swml_dynamicPage', the role 'swml_dynamicPage37' has cardinality 0..*.
+An association connects 'swml_OK' and 'swml_UpdatePage'. From 'swml_OK', the role 'swml_OK' has cardinality 0..*, and from 'swml_UpdatePage', the role 'swml_UpdatePage' has cardinality 0..*.
+An association connects 'swml_UpdatePage' and 'swml_KO'. From 'swml_UpdatePage', the role 'swml_UpdatePage40' has cardinality 0..*, and from 'swml_KO', the role 'swml_KO' has cardinality 0..*.
+An association connects 'swml_DeletePage' and 'swml_OK'. From 'swml_DeletePage', the role 'swml_DeletePage' has cardinality 0..*, and from 'swml_OK', the role 'swml_OK42' has cardinality 0..*.
+An association connects 'swml_KO' and 'swml_DeletePage'. From 'swml_KO', the role 'swml_KO45' has cardinality 0..*, and from 'swml_DeletePage', the role 'swml_DeletePage44' has cardinality 0..*.
+An association connects 'swml_CreatePage' and 'swml_OK'. From 'swml_CreatePage', the role 'swml_CreatePage' has cardinality 0..*, and from 'swml_OK', the role 'swml_OK47' has cardinality 0..*.
+An association connects 'swml_KO' and 'swml_CreatePage'. From 'swml_KO', the role 'swml_KO50' has cardinality 0..*, and from 'swml_CreatePage', the role 'swml_CreatePage49' has cardinality 0..*.
+An association connects 'swml_LinkParamater' and 'swml_Links'. From 'swml_LinkParamater', the role 'swml_LinkParamater' has cardinality 0..*, and from 'swml_Links', the role 'swml_Links' has cardinality 0..*.
+An association connects 'swml_Links' and 'swml_WebPage'. From 'swml_Links', the role 'swml_Links53' has cardinality 0..*, and from 'swml_WebPage', the role 'swml_WebPage54' has cardinality 0..*.

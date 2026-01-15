@@ -1,0 +1,87 @@
+The domain model 'types' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'types_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Type' represents an important domain concept.
+It has one attribute: 'inExtentDomain', which is of type bool.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_EnumType' represents an important domain concept.
+It does not declare any attributes.
+
+'NumberType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_EEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'types_MethodType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_NumberType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'types_FunctionType' represents an important domain concept.
+It has one attribute: 'optionalParameterCount', which is of type int.
+
+'types_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'types_RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_MapType' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ObjectType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'types_DataType' is a specialization of 'Type'.
+The class 'types_BooleanType' is a specialization of 'DataType'.
+The class 'types_NumberType' is a specialization of 'DataType'.
+The class 'types_IntegerType' is a specialization of 'RealType'.
+The class 'types_RealType' is a specialization of 'NumberType'.
+The class 'types_StringType' is a specialization of 'DataType'.
+The class 'types_ObjectType' is a specialization of 'Type'.
+The class 'types_CollectionType' is a specialization of 'Type'.
+The class 'types_MapType' is a specialization of 'Type'.
+The class 'types_FunctionType' is a specialization of 'Type'.
+The class 'types_MethodType' is a specialization of 'FunctionType'.
+The class 'types_EnumType' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'types_ObjectType' and 'types_EClass'. From 'types_ObjectType', the role 'types_ObjectType' has cardinality 0..*, and from 'types_EClass', the role 'types_EClass' has cardinality 0..*.
+An association connects 'types_CollectionType' and 'types_Type'. From 'types_CollectionType', the role 'types_CollectionType' has cardinality 0..*, and from 'types_Type', the role 'types_Type' has cardinality 0..*.
+An association connects 'types_Type' and 'types_MapType'. From 'types_Type', the role 'types_Type3' has cardinality 0..*, and from 'types_MapType', the role 'types_MapType' has cardinality 0..*.
+An association connects 'types_MapType' and 'types_Type'. From 'types_MapType', the role 'types_MapType5' has cardinality 0..*, and from 'types_Type', the role 'types_Type6' has cardinality 0..*.
+An association connects 'types_Type' and 'types_FunctionType'. From 'types_Type', the role 'types_Type8' has cardinality 0..*, and from 'types_FunctionType', the role 'types_FunctionType' has cardinality 0..*.
+An association connects 'types_Type' and 'types_FunctionType'. From 'types_Type', the role 'types_Type11' has cardinality 0..*, and from 'types_FunctionType', the role 'types_FunctionType10' has cardinality 0..*.
+An association connects 'types_MethodType' and 'types_Type'. From 'types_MethodType', the role 'types_MethodType' has cardinality 0..*, and from 'types_Type', the role 'types_Type13' has cardinality 0..*.
+An association connects 'types_EnumType' and 'types_EEnum'. From 'types_EnumType', the role 'types_EnumType' has cardinality 0..*, and from 'types_EEnum', the role 'types_EEnum' has cardinality 0..*.

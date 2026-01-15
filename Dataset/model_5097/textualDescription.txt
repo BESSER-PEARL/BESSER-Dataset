@@ -1,0 +1,22 @@
+The domain model 'testport' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'testport_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+'testport_Base' represents an important domain concept.
+It does not declare any attributes.
+
+'testport_Required' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'testport_Base' is a specialization of 'Component'.
+
+Relationships between classes are modeled using associations.
+An association connects 'testport_Required' and 'testport_Component'. From 'testport_Required', the role 'testport_Required' has cardinality 0..*, and from 'testport_Component', the role 'testport_Component' has cardinality 0..*.
+An association connects 'testport_Base' and 'testport_Base'. From 'testport_Base', the role 'testport_Base' has cardinality 0..*, and from 'testport_Base', the role 'testport_Base1' has cardinality 0..*.

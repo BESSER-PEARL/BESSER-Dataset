@@ -1,0 +1,12 @@
+The domain model 'Service' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'Service_Tool' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Service_JavaService' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'option', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Service_Tool' and 'Service_JavaService'. From 'Service_Tool', the role 'Service_Tool' has cardinality 0..*, and from 'Service_JavaService', the role 'Service_JavaService' has cardinality 0..*.

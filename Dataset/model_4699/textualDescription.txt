@@ -1,0 +1,14 @@
+The domain model 'genealogy' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'genealogy_Person' represents an important domain concept.
+It has the following attributes: 'age', which is of type int; 'name', which is of type str; 'alive', which is of type bool.
+
+'genealogy_Genealogy' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'genealogy_Genealogy' and 'genealogy_Person'. From 'genealogy_Genealogy', the role 'genealogy_Genealogy' has cardinality 0..*, and from 'genealogy_Person', the role 'genealogy_Person' has cardinality 0..*.
+An association connects 'genealogy_Person' and 'genealogy_Person'. From 'genealogy_Person', the role 'children' has cardinality 0..*, and from 'genealogy_Person', the role 'Person' has cardinality 0..*.
+An association connects 'genealogy_Person' and 'genealogy_Person'. From 'genealogy_Person', the role 'Person5' has cardinality 0..*, and from 'genealogy_Person', the role 'parents' has cardinality 0..*.

@@ -1,0 +1,115 @@
+The domain model 'service' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'service_BusinessOperation' represents an important domain concept.
+It has the following attributes: 'resultType', which is of type str; 'resultMimeType', which is of type str.
+
+'FormalParameterList' represents an important domain concept.
+It does not declare any attributes.
+
+'service_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedDisplayElement' represents an important domain concept.
+It does not declare any attributes.
+
+'service_Selection' represents an important domain concept.
+It has the following attributes: 'limit', which is of type int; 'methodName', which is of type str; 'distinct', which is of type bool.
+
+'service_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'service_Order' represents an important domain concept.
+It does not declare any attributes.
+
+'service_EntityOrView' represents an important domain concept.
+It does not declare any attributes.
+
+'service_Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'Order' represents an important domain concept.
+It does not declare any attributes.
+
+'service_ServiceFeatureReference' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'service_Asc' represents an important domain concept.
+It does not declare any attributes.
+
+'service_Constant' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'service_Filter' represents an important domain concept.
+It has one attribute: 'methodName', which is of type str.
+
+'service_Services' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'service_EntityAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'service_Desc' represents an important domain concept.
+It does not declare any attributes.
+
+'service_ConstantReference' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'service_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'service_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'service_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'OperationResultTypes' defines the following possible values: 'File', 'None'.
+
+The model also captures inheritance relationships between classes.
+The class 'service_Service' is a specialization of 'NamedElement'.
+The class 'service_Constant' is a specialization of 'NamedElement'.
+The class 'service_Selection' is a specialization of 'NamedElement'.
+The class 'service_Selection' is a specialization of 'FormalParameterList'.
+The class 'service_ConstantReference' is a specialization of 'Variable'.
+The class 'service_ServiceFeatureReference' is a specialization of 'Variable'.
+The class 'service_Asc' is a specialization of 'Order'.
+The class 'service_Desc' is a specialization of 'Order'.
+The class 'service_BusinessOperation' is a specialization of 'NamedElement'.
+The class 'service_BusinessOperation' is a specialization of 'FormalParameterList'.
+The class 'service_Filter' is a specialization of 'NamedDisplayElement'.
+The class 'service_Filter' is a specialization of 'FormalParameterList'.
+
+Relationships between classes are modeled using associations.
+An association connects 'service_Services' and 'service_Service'. From 'service_Services', the role 'service_Services' has cardinality 0..*, and from 'service_Service', the role 'service_Service' has cardinality 0..*.
+An association connects 'service_Service' and 'service_Constant'. From 'service_Service', the role 'definedBy' has cardinality 0..*, and from 'service_Constant', the role 'Constant' has cardinality 0..*.
+An association connects 'service_Service' and 'service_EntityOrView'. From 'service_Service', the role 'service_Service3' has cardinality 0..*, and from 'service_EntityOrView', the role 'service_EntityOrView' has cardinality 0..*.
+An association connects 'service_Service' and 'service_Selection'. From 'service_Service', the role 'usedBy' has cardinality 0..*, and from 'service_Selection', the role 'Selection' has cardinality 0..*.
+An association connects 'service_Selection' and 'service_Service'. From 'service_Selection', the role 'service_Selection' has cardinality 0..*, and from 'service_Service', the role 'service_Service6' has cardinality 0..*.
+An association connects 'service_Service' and 'service_Selection'. From 'service_Service', the role 'service_Service8' has cardinality 0..*, and from 'service_Selection', the role 'service_Selection9' has cardinality 0..*.
+An association connects 'service_BusinessOperation' and 'service_Service'. From 'service_BusinessOperation', the role 'BusinessOperation' has cardinality 0..*, and from 'service_Service', the role 'definedBy11' has cardinality 0..*.
+An association connects 'service_Service' and 'service_Service'. From 'service_Service', the role 'service_Service14' has cardinality 0..*, and from 'service_Service', the role 'service_Service12' has cardinality 0..*.
+An association connects 'service_Constant' and 'service_Service'. From 'service_Constant', the role 'constants' has cardinality 0..*, and from 'service_Service', the role 'Service' has cardinality 0..*.
+An association connects 'service_Expression' and 'service_Constant'. From 'service_Expression', the role 'service_Expression' has cardinality 0..*, and from 'service_Constant', the role 'service_Constant' has cardinality 0..*.
+An association connects 'service_Selection' and 'service_Service'. From 'service_Selection', the role 'selections' has cardinality 0..*, and from 'service_Service', the role 'Service18' has cardinality 0..*.
+An association connects 'service_Feature' and 'service_Selection'. From 'service_Feature', the role 'service_Feature' has cardinality 0..*, and from 'service_Selection', the role 'service_Selection20' has cardinality 0..*.
+An association connects 'service_Selection' and 'service_Association'. From 'service_Selection', the role 'service_Selection22' has cardinality 0..*, and from 'service_Association', the role 'service_Association' has cardinality 0..*.
+An association connects 'service_Predicate' and 'service_Selection'. From 'service_Predicate', the role 'service_Predicate' has cardinality 0..*, and from 'service_Selection', the role 'service_Selection24' has cardinality 0..*.
+An association connects 'service_Selection' and 'service_Filter'. From 'service_Selection', the role 'selection' has cardinality 0..*, and from 'service_Filter', the role 'Filter' has cardinality 0..*.
+An association connects 'service_Order' and 'service_Selection'. From 'service_Order', the role 'service_Order' has cardinality 0..*, and from 'service_Selection', the role 'service_Selection27' has cardinality 0..*.
+An association connects 'service_EntityAssociation' and 'service_Selection'. From 'service_EntityAssociation', the role 'service_EntityAssociation' has cardinality 0..*, and from 'service_Selection', the role 'service_Selection29' has cardinality 0..*.
+An association connects 'service_Order' and 'service_Variable'. From 'service_Order', the role 'service_Order31' has cardinality 0..*, and from 'service_Variable', the role 'service_Variable' has cardinality 0..*.
+An association connects 'service_Constant' and 'service_ConstantReference'. From 'service_Constant', the role 'service_Constant33' has cardinality 0..*, and from 'service_ConstantReference', the role 'service_ConstantReference' has cardinality 0..*.
+An association connects 'service_Feature' and 'service_ServiceFeatureReference'. From 'service_Feature', the role 'service_Feature35' has cardinality 0..*, and from 'service_ServiceFeatureReference', the role 'service_ServiceFeatureReference' has cardinality 0..*.
+An association connects 'service_Service' and 'service_BusinessOperation'. From 'service_Service', the role 'Service37' has cardinality 0..*, and from 'service_BusinessOperation', the role 'operations' has cardinality 0..*.
+An association connects 'service_Service' and 'service_BusinessOperation'. From 'service_Service', the role 'service_Service39' has cardinality 0..*, and from 'service_BusinessOperation', the role 'service_BusinessOperation' has cardinality 0..*.
+An association connects 'service_Selection' and 'service_Filter'. From 'service_Selection', the role 'Selection41' has cardinality 0..*, and from 'service_Filter', the role 'filters' has cardinality 0..*.
+An association connects 'service_Filter' and 'service_Predicate'. From 'service_Filter', the role 'service_Filter' has cardinality 0..*, and from 'service_Predicate', the role 'service_Predicate43' has cardinality 0..*.

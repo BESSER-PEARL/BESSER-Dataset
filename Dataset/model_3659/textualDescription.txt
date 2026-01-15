@@ -1,0 +1,44 @@
+The domain model 'Projects' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'Project' represents an important domain concept.
+It does not declare any attributes.
+
+'Projects_Company' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Projects_Project' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'size', which is of type str; 'status', which is of type str.
+
+'Projects_Worker' represents an important domain concept.
+It has the following attributes: 'salary', which is of type int; 'nickname', which is of type str.
+
+'Projects_Training' represents an important domain concept.
+It does not declare any attributes.
+
+'Projects_Qualification' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ProjectSize' defines the following possible values: 'big', 'small', 'medium'.
+The enumeration 'ProjectStatus' defines the following possible values: 'active', 'planned', 'finished', 'suspended'.
+
+The model also captures inheritance relationships between classes.
+The class 'Projects_Training' is a specialization of 'Project'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Projects_Project' and 'Projects_Company'. From 'Projects_Project', the role 'Project' has cardinality 0..*, and from 'Projects_Company', the role 'company' has cardinality 0..*.
+An association connects 'Projects_Worker' and 'Projects_Company'. From 'Projects_Worker', the role 'Worker' has cardinality 0..*, and from 'Projects_Company', the role 'employer' has cardinality 0..*.
+An association connects 'Projects_Company' and 'Projects_Worker'. From 'Projects_Company', the role 'Company' has cardinality 0..*, and from 'Projects_Worker', the role 'employees' has cardinality 0..*.
+An association connects 'Projects_Qualification' and 'Projects_Worker'. From 'Projects_Qualification', the role 'Qualification' has cardinality 0..*, and from 'Projects_Worker', the role 'workers' has cardinality 0..*.
+An association connects 'Projects_Worker' and 'Projects_Project'. From 'Projects_Worker', the role 'members' has cardinality 0..*, and from 'Projects_Project', the role 'Project5' has cardinality 0..*.
+An association connects 'Projects_Company' and 'Projects_Project'. From 'Projects_Company', the role 'Company7' has cardinality 0..*, and from 'Projects_Project', the role 'projects' has cardinality 0..*.
+An association connects 'Projects_Project' and 'Projects_Worker'. From 'Projects_Project', the role 'projects9' has cardinality 0..*, and from 'Projects_Worker', the role 'Worker10' has cardinality 0..*.
+An association connects 'Projects_Qualification' and 'Projects_Project'. From 'Projects_Qualification', the role 'Qualification13' has cardinality 0..*, and from 'Projects_Project', the role 'projects12' has cardinality 0..*.
+An association connects 'Projects_Project' and 'Projects_Project'. From 'Projects_Project', the role 'successors' has cardinality 0..*, and from 'Projects_Project', the role 'Project16' has cardinality 0..*.
+An association connects 'Projects_Project' and 'Projects_Project'. From 'Projects_Project', the role 'Project19' has cardinality 0..*, and from 'Projects_Project', the role 'predecessors' has cardinality 0..*.
+An association connects 'Projects_Worker' and 'Projects_Qualification'. From 'Projects_Worker', the role 'Worker21' has cardinality 0..*, and from 'Projects_Qualification', the role 'qualifications' has cardinality 0..*.
+An association connects 'Projects_Qualification' and 'Projects_Project'. From 'Projects_Qualification', the role 'requirements' has cardinality 0..*, and from 'Projects_Project', the role 'Project23' has cardinality 0..*.
+An association connects 'Projects_Qualification' and 'Projects_Training'. From 'Projects_Qualification', the role 'trained' has cardinality 0..*, and from 'Projects_Training', the role 'Training' has cardinality 0..*.
+An association connects 'Projects_Qualification' and 'Projects_Training'. From 'Projects_Qualification', the role 'Qualification26' has cardinality 0..*, and from 'Projects_Training', the role 'trainings' has cardinality 0..*.

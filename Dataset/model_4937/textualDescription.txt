@@ -1,0 +1,72 @@
+The domain model 'fml' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'fml_SelectionItem' represents an important domain concept.
+It has the following attributes: 'Text', which is of type str; 'selected', which is of type bool; 'preselected', which is of type bool.
+
+'fml_ListItem' represents an important domain concept.
+It has one attribute: 'Text', which is of type str.
+
+'fml_InputElement' represents an important domain concept.
+It has one attribute: 'isMandatory', which is of type bool.
+
+'fml_Form' represents an important domain concept.
+It does not declare any attributes.
+
+'fml_SelectField' represents an important domain concept.
+It has the following attributes: 'Type', which is of type str; 'Label', which is of type str.
+
+'fml_PageElement' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'fml_List' represents an important domain concept.
+It has one attribute: 'isOrdered', which is of type bool.
+
+'fml_DisplayElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DisplayElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fml_Heading' represents an important domain concept.
+It has the following attributes: 'Level', which is of type str; 'Text', which is of type str.
+
+'fml_Page' represents an important domain concept.
+It has the following attributes: 'Title', which is of type str; 'isWelcome', which is of type bool.
+
+'InputElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fml_TextInput' represents an important domain concept.
+It has the following attributes: 'Content', which is of type str; 'Label', which is of type str; 'Type', which is of type str.
+
+'fml_TextParagraph' represents an important domain concept.
+It has one attribute: 'Text', which is of type str.
+
+'PageElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TextInputType' defines the following possible values: 'TEXTAREA', 'TEXTFIELD', 'ENCRYPTED_TEXTFIELD'.
+The enumeration 'SelectionType' defines the following possible values: 'CHECKBOX', 'COMBOBOX', 'RADIO'.
+
+The model also captures inheritance relationships between classes.
+The class 'fml_DisplayElement' is a specialization of 'PageElement'.
+The class 'fml_Heading' is a specialization of 'DisplayElement'.
+The class 'fml_TextParagraph' is a specialization of 'DisplayElement'.
+The class 'fml_List' is a specialization of 'DisplayElement'.
+The class 'fml_InputElement' is a specialization of 'PageElement'.
+The class 'fml_TextInput' is a specialization of 'InputElement'.
+The class 'fml_SelectField' is a specialization of 'InputElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fml_Form' and 'fml_Page'. From 'fml_Form', the role 'fml_Form' has cardinality 0..*, and from 'fml_Page', the role 'fml_Page' has cardinality 0..*.
+An association connects 'fml_Page' and 'fml_Page'. From 'fml_Page', the role 'fml_Page3' has cardinality 0..*, and from 'fml_Page', the role 'fml_Page1' has cardinality 0..*.
+An association connects 'fml_PageElement' and 'fml_Page'. From 'fml_PageElement', the role 'PageElement' has cardinality 0..*, and from 'fml_Page', the role 'contained' has cardinality 0..*.
+An association connects 'fml_PageElement' and 'fml_Page'. From 'fml_PageElement', the role 'consists' has cardinality 0..*, and from 'fml_Page', the role 'Page' has cardinality 0..*.
+An association connects 'fml_SelectionItem' and 'fml_PageElement'. From 'fml_SelectionItem', the role 'SelectionItem' has cardinality 0..*, and from 'fml_PageElement', the role 'displayElementVisible' has cardinality 0..*.
+An association connects 'fml_ListItem' and 'fml_List'. From 'fml_ListItem', the role 'fml_ListItem' has cardinality 0..*, and from 'fml_List', the role 'fml_List' has cardinality 0..*.
+An association connects 'fml_SelectField' and 'fml_SelectionItem'. From 'fml_SelectField', the role 'contained9' has cardinality 0..*, and from 'fml_SelectionItem', the role 'SelectionItem10' has cardinality 0..*.
+An association connects 'fml_SelectField' and 'fml_SelectionItem'. From 'fml_SelectField', the role 'SelectField' has cardinality 0..*, and from 'fml_SelectionItem', the role 'consists12' has cardinality 0..*.
+An association connects 'fml_PageElement' and 'fml_SelectionItem'. From 'fml_PageElement', the role 'PageElement14' has cardinality 0..*, and from 'fml_SelectionItem', the role 'visibleIfSelected' has cardinality 0..*.

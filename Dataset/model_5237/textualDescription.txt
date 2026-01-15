@@ -1,0 +1,12 @@
+The domain model 'f' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'f_Y' represents an important domain concept.
+It has one attribute: 'a', which is of type str.
+
+'f_X' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'f_X' and 'f_Y'. From 'f_X', the role 'f_X' has cardinality 0..*, and from 'f_Y', the role 'f_Y' has cardinality 0..*.

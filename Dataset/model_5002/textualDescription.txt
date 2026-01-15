@@ -1,0 +1,239 @@
+The domain model 'componentModel' describes the core structural elements and their relationships within the system.
+
+The model defines 55 main class(es).
+
+'componentModel_Double' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_Long' represents an important domain concept.
+It does not declare any attributes.
+
+'ViewType' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_InternalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_Map' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_Branch' represents an important domain concept.
+It does not declare any attributes.
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_CompositeComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_ProvidedRole' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'componentModel_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_RepositoryViewType' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_String' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_Void' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterTyp' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_DelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_Date' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_ExternalCall' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'componentModel_ServiceEffectSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'DelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_SystemIndependentViewPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_InterfaceServiceMapTuple' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_ProvidedDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_Boolean' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_ViewPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_AssemblyContext' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ViewPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_AssemblyViewType' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_System' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_AssemblyConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_AllocationViewType' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_SimpleParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_ParameterTyp' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_Char' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_ComplexParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_ViewType' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_Interface' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'componentModel_AssemblyViewPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_Signature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'componentModel_RequiredRole' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'componentModel_RequiredDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'componentModel_Int' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_Repository' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_List' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_DeploymentViewPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'AssemblyViewType' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_EnvironmentViewType' represents an important domain concept.
+It does not declare any attributes.
+
+'componentModel_Float' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'componentModel_SystemIndependentViewPoint' is a specialization of 'ViewPoint'.
+The class 'componentModel_Repository' is a specialization of 'ViewType'.
+The class 'componentModel_Branch' is a specialization of 'Action'.
+The class 'componentModel_Loop' is a specialization of 'Action'.
+The class 'componentModel_ExternalCall' is a specialization of 'Action'.
+The class 'componentModel_InternalAction' is a specialization of 'Action'.
+The class 'componentModel_AssemblyViewPoint' is a specialization of 'ViewPoint'.
+The class 'componentModel_AssemblyContext' is a specialization of 'AssemblyViewType'.
+The class 'componentModel_RequiredDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'componentModel_ProvidedDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'componentModel_CompositeComponent' is a specialization of 'Component'.
+The class 'componentModel_AssemblyViewType' is a specialization of 'ViewType'.
+The class 'componentModel_DeploymentViewPoint' is a specialization of 'ViewPoint'.
+The class 'componentModel_RepositoryViewType' is a specialization of 'ViewType'.
+The class 'componentModel_EnvironmentViewType' is a specialization of 'ViewType'.
+The class 'componentModel_AllocationViewType' is a specialization of 'ViewType'.
+The class 'componentModel_Parameter' is a specialization of 'SimpleParameterType'.
+The class 'componentModel_Boolean' is a specialization of 'SimpleParameterType'.
+The class 'componentModel_Void' is a specialization of 'Type'.
+The class 'componentModel_ParameterTyp' is a specialization of 'Type'.
+The class 'componentModel_Char' is a specialization of 'SimpleParameterType'.
+The class 'componentModel_Date' is a specialization of 'SimpleParameterType'.
+The class 'componentModel_Float' is a specialization of 'SimpleParameterType'.
+The class 'componentModel_List' is a specialization of 'SimpleParameterType'.
+The class 'componentModel_Int' is a specialization of 'SimpleParameterType'.
+The class 'componentModel_Long' is a specialization of 'SimpleParameterType'.
+The class 'componentModel_Map' is a specialization of 'SimpleParameterType'.
+The class 'componentModel_String' is a specialization of 'SimpleParameterType'.
+The class 'componentModel_Double' is a specialization of 'SimpleParameterType'.
+The class 'componentModel_ComplexParameterType' is a specialization of 'ParameterTyp'.
+The class 'componentModel_SimpleParameterType' is a specialization of 'ParameterTyp'.
+
+Relationships between classes are modeled using associations.
+An association connects 'componentModel_Component' and 'componentModel_Repository'. From 'componentModel_Component', the role 'componentModel_Component' has cardinality 0..*, and from 'componentModel_Repository', the role 'componentModel_Repository' has cardinality 0..*.
+An association connects 'componentModel_Repository' and 'componentModel_Interface'. From 'componentModel_Repository', the role 'componentModel_Repository2' has cardinality 0..*, and from 'componentModel_Interface', the role 'componentModel_Interface' has cardinality 0..*.
+An association connects 'componentModel_ServiceEffectSpecification' and 'componentModel_Component'. From 'componentModel_ServiceEffectSpecification', the role 'componentModel_ServiceEffectSpecification' has cardinality 0..*, and from 'componentModel_Component', the role 'componentModel_Component4' has cardinality 0..*.
+An association connects 'componentModel_Component' and 'componentModel_InterfaceServiceMapTuple'. From 'componentModel_Component', the role 'componentModel_Component6' has cardinality 0..*, and from 'componentModel_InterfaceServiceMapTuple', the role 'componentModel_InterfaceServiceMapTuple' has cardinality 0..*.
+An association connects 'componentModel_Component' and 'componentModel_AssemblyConnector'. From 'componentModel_Component', the role 'componentModel_Component8' has cardinality 0..*, and from 'componentModel_AssemblyConnector', the role 'componentModel_AssemblyConnector' has cardinality 0..*.
+An association connects 'componentModel_DelegationConnector' and 'componentModel_Component'. From 'componentModel_DelegationConnector', the role 'componentModel_DelegationConnector' has cardinality 0..*, and from 'componentModel_Component', the role 'componentModel_Component10' has cardinality 0..*.
+An association connects 'componentModel_Interface' and 'componentModel_InterfaceServiceMapTuple'. From 'componentModel_Interface', the role 'componentModel_Interface13' has cardinality 0..*, and from 'componentModel_InterfaceServiceMapTuple', the role 'componentModel_InterfaceServiceMapTuple12' has cardinality 0..*.
+An association connects 'componentModel_InterfaceServiceMapTuple' and 'componentModel_Service'. From 'componentModel_InterfaceServiceMapTuple', the role 'componentModel_InterfaceServiceMapTuple15' has cardinality 0..*, and from 'componentModel_Service', the role 'componentModel_Service' has cardinality 0..*.
+An association connects 'componentModel_Action' and 'componentModel_ServiceEffectSpecification'. From 'componentModel_Action', the role 'componentModel_Action' has cardinality 0..*, and from 'componentModel_ServiceEffectSpecification', the role 'componentModel_ServiceEffectSpecification17' has cardinality 0..*.
+An association connects 'componentModel_Action' and 'componentModel_Branch'. From 'componentModel_Action', the role 'componentModel_Action19' has cardinality 0..*, and from 'componentModel_Branch', the role 'componentModel_Branch' has cardinality 0..*.
+An association connects 'componentModel_Loop' and 'componentModel_Action'. From 'componentModel_Loop', the role 'componentModel_Loop' has cardinality 0..*, and from 'componentModel_Action', the role 'componentModel_Action21' has cardinality 0..*.
+An association connects 'componentModel_ExternalCall' and 'componentModel_Service'. From 'componentModel_ExternalCall', the role 'componentModel_ExternalCall' has cardinality 0..*, and from 'componentModel_Service', the role 'componentModel_Service23' has cardinality 0..*.
+An association connects 'componentModel_Interface' and 'componentModel_Signature'. From 'componentModel_Interface', the role 'componentModel_Interface25' has cardinality 0..*, and from 'componentModel_Signature', the role 'componentModel_Signature' has cardinality 0..*.
+An association connects 'componentModel_AssemblyContext' and 'componentModel_ProvidedRole'. From 'componentModel_AssemblyContext', the role 'assemblycontext' has cardinality 0..*, and from 'componentModel_ProvidedRole', the role 'ProvidedRole' has cardinality 0..*.
+An association connects 'componentModel_AssemblyContext' and 'componentModel_RequiredRole'. From 'componentModel_AssemblyContext', the role 'assemblycontext28' has cardinality 0..*, and from 'componentModel_RequiredRole', the role 'RequiredRole' has cardinality 0..*.
+An association connects 'componentModel_AssemblyContext' and 'componentModel_Component'. From 'componentModel_AssemblyContext', the role 'componentModel_AssemblyContext' has cardinality 0..*, and from 'componentModel_Component', the role 'componentModel_Component30' has cardinality 0..*.
+An association connects 'componentModel_AssemblyConnector' and 'componentModel_ProvidedRole'. From 'componentModel_AssemblyConnector', the role 'componentModel_AssemblyConnector32' has cardinality 0..*, and from 'componentModel_ProvidedRole', the role 'componentModel_ProvidedRole' has cardinality 0..*.
+An association connects 'componentModel_AssemblyConnector' and 'componentModel_RequiredRole'. From 'componentModel_AssemblyConnector', the role 'componentModel_AssemblyConnector34' has cardinality 0..*, and from 'componentModel_RequiredRole', the role 'componentModel_RequiredRole' has cardinality 0..*.
+An association connects 'componentModel_RequiredRole' and 'componentModel_RequiredDelegationConnector'. From 'componentModel_RequiredRole', the role 'componentModel_RequiredRole36' has cardinality 0..*, and from 'componentModel_RequiredDelegationConnector', the role 'componentModel_RequiredDelegationConnector' has cardinality 0..*.
+An association connects 'componentModel_RequiredDelegationConnector' and 'componentModel_Interface'. From 'componentModel_RequiredDelegationConnector', the role 'componentModel_RequiredDelegationConnector38' has cardinality 0..*, and from 'componentModel_Interface', the role 'componentModel_Interface39' has cardinality 0..*.
+An association connects 'componentModel_Signature' and 'componentModel_Parameter'. From 'componentModel_Signature', the role 'componentModel_Signature41' has cardinality 0..*, and from 'componentModel_Parameter', the role 'componentModel_Parameter' has cardinality 0..*.
+An association connects 'componentModel_Signature' and 'componentModel_Type'. From 'componentModel_Signature', the role 'componentModel_Signature43' has cardinality 0..*, and from 'componentModel_Type', the role 'componentModel_Type' has cardinality 0..*.
+An association connects 'componentModel_Interface' and 'componentModel_Service'. From 'componentModel_Interface', the role 'componentModel_Interface46' has cardinality 0..*, and from 'componentModel_Service', the role 'componentModel_Service45' has cardinality 0..*.
+An association connects 'componentModel_Signature' and 'componentModel_Service'. From 'componentModel_Signature', the role 'componentModel_Signature49' has cardinality 0..*, and from 'componentModel_Service', the role 'componentModel_Service48' has cardinality 0..*.
+An association connects 'componentModel_AssemblyContext' and 'componentModel_System'. From 'componentModel_AssemblyContext', the role 'componentModel_AssemblyContext51' has cardinality 0..*, and from 'componentModel_System', the role 'componentModel_System' has cardinality 0..*.
+An association connects 'componentModel_Interface' and 'componentModel_System'. From 'componentModel_Interface', the role 'componentModel_Interface54' has cardinality 0..*, and from 'componentModel_System', the role 'componentModel_System53' has cardinality 0..*.
+An association connects 'componentModel_AssemblyContext' and 'componentModel_RequiredRole'. From 'componentModel_AssemblyContext', the role 'AssemblyContext' has cardinality 0..*, and from 'componentModel_RequiredRole', the role 'requiredrole' has cardinality 0..*.
+An association connects 'componentModel_Interface' and 'componentModel_RequiredRole'. From 'componentModel_Interface', the role 'componentModel_Interface58' has cardinality 0..*, and from 'componentModel_RequiredRole', the role 'componentModel_RequiredRole57' has cardinality 0..*.
+An association connects 'componentModel_ProvidedRole' and 'componentModel_AssemblyContext'. From 'componentModel_ProvidedRole', the role 'providedrole' has cardinality 0..*, and from 'componentModel_AssemblyContext', the role 'AssemblyContext60' has cardinality 0..*.
+An association connects 'componentModel_ProvidedRole' and 'componentModel_Interface'. From 'componentModel_ProvidedRole', the role 'componentModel_ProvidedRole62' has cardinality 0..*, and from 'componentModel_Interface', the role 'componentModel_Interface63' has cardinality 0..*.
+An association connects 'componentModel_ProvidedDelegationConnector' and 'componentModel_Interface'. From 'componentModel_ProvidedDelegationConnector', the role 'componentModel_ProvidedDelegationConnector' has cardinality 0..*, and from 'componentModel_Interface', the role 'componentModel_Interface65' has cardinality 0..*.
+An association connects 'componentModel_ProvidedRole' and 'componentModel_ProvidedDelegationConnector'. From 'componentModel_ProvidedRole', the role 'componentModel_ProvidedRole68' has cardinality 0..*, and from 'componentModel_ProvidedDelegationConnector', the role 'componentModel_ProvidedDelegationConnector67' has cardinality 0..*.
+An association connects 'componentModel_ViewType' and 'componentModel_ViewPoint'. From 'componentModel_ViewType', the role 'componentModel_ViewType' has cardinality 0..*, and from 'componentModel_ViewPoint', the role 'componentModel_ViewPoint' has cardinality 0..*.
+An association connects 'componentModel_CompositeComponent' and 'componentModel_AssemblyContext'. From 'componentModel_CompositeComponent', the role 'componentModel_CompositeComponent' has cardinality 0..*, and from 'componentModel_AssemblyContext', the role 'componentModel_AssemblyContext71' has cardinality 0..*.
+An association connects 'componentModel_Repository' and 'componentModel_RepositoryViewType'. From 'componentModel_Repository', the role 'componentModel_Repository73' has cardinality 0..*, and from 'componentModel_RepositoryViewType', the role 'componentModel_RepositoryViewType' has cardinality 0..*.
+An association connects 'componentModel_ParameterTyp' and 'componentModel_Parameter'. From 'componentModel_ParameterTyp', the role 'componentModel_ParameterTyp' has cardinality 0..*, and from 'componentModel_Parameter', the role 'componentModel_Parameter75' has cardinality 0..*.

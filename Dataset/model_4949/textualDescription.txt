@@ -1,0 +1,112 @@
+The domain model 'micro' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'micro_Step' represents an important domain concept.
+It does not declare any attributes.
+
+'micro_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'micro_Operation' represents an important domain concept.
+It has the following attributes: 'operationType', which is of type str; 'isMethodController', which is of type bool.
+
+'micro_API' represents an important domain concept.
+It does not declare any attributes.
+
+'micro_Attribute' represents an important domain concept.
+It has the following attributes: 'isGenerated', which is of type bool; 'isMany', which is of type bool; 'name', which is of type str; 'isId', which is of type bool.
+
+'micro_Saga' represents an important domain concept.
+It does not declare any attributes.
+
+'micro_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'micro_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'Service' represents an important domain concept.
+It does not declare any attributes.
+
+'micro_MicroserviceArchitecture' represents an important domain concept.
+It does not declare any attributes.
+
+'micro_Data' represents an important domain concept.
+It does not declare any attributes.
+
+'micro_Service' represents an important domain concept.
+It has the following attributes: 'fullname', which is of type str; 'shortname', which is of type str; 'description', which is of type str; 'port', which is of type int.
+
+'micro_PrimitiveTypeAttribute' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'micro_ViewService' represents an important domain concept.
+It does not declare any attributes.
+
+'micro_Command' represents an important domain concept.
+It has the following attributes: 'commandType', which is of type str; 'isReplyInfoMany', which is of type bool.
+
+'micro_AggregateService' represents an important domain concept.
+It does not declare any attributes.
+
+'micro_Info' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'micro_ReferenceAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CRUDOperation' defines the following possible values: 'delete', 'retrieve', 'update', 'create'.
+The enumeration 'CommandType' defines the following possible values: 'reply', 'compensate', 'invoke'.
+The enumeration 'AttributePrimitiveValue' defines the following possible values: 'long', 'String', 'int', 'boolean', 'char', 'short', 'float'.
+
+The model also captures inheritance relationships between classes.
+The class 'micro_MicroserviceArchitecture' is a specialization of 'NamedElement'.
+The class 'micro_Service' is a specialization of 'NamedElement'.
+The class 'micro_Model' is a specialization of 'NamedElement'.
+The class 'micro_AggregateService' is a specialization of 'Service'.
+The class 'micro_ViewService' is a specialization of 'Service'.
+The class 'micro_Operation' is a specialization of 'NamedElement'.
+The class 'micro_API' is a specialization of 'NamedElement'.
+The class 'micro_Command' is a specialization of 'NamedElement'.
+The class 'micro_Event' is a specialization of 'NamedElement'.
+The class 'micro_Info' is a specialization of 'NamedElement'.
+The class 'micro_Step' is a specialization of 'NamedElement'.
+The class 'micro_Saga' is a specialization of 'NamedElement'.
+The class 'micro_Data' is a specialization of 'NamedElement'.
+The class 'micro_ReferenceAttribute' is a specialization of 'Attribute'.
+The class 'micro_PrimitiveTypeAttribute' is a specialization of 'Attribute'.
+
+Relationships between classes are modeled using associations.
+An association connects 'micro_Service' and 'micro_MicroserviceArchitecture'. From 'micro_Service', the role 'micro_Service' has cardinality 0..*, and from 'micro_MicroserviceArchitecture', the role 'micro_MicroserviceArchitecture' has cardinality 0..*.
+An association connects 'micro_Model' and 'micro_Attribute'. From 'micro_Model', the role 'model' has cardinality 0..*, and from 'micro_Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'micro_AggregateService' and 'micro_Model'. From 'micro_AggregateService', the role 'AggregateService' has cardinality 0..*, and from 'micro_Model', the role 'models' has cardinality 0..*.
+An association connects 'micro_AggregateService' and 'micro_Operation'. From 'micro_AggregateService', the role 'aggregateService' has cardinality 0..*, and from 'micro_Operation', the role 'Operation' has cardinality 0..*.
+An association connects 'micro_API' and 'micro_AggregateService'. From 'micro_API', the role 'micro_API' has cardinality 0..*, and from 'micro_AggregateService', the role 'micro_AggregateService' has cardinality 0..*.
+An association connects 'micro_AggregateService' and 'micro_Model'. From 'micro_AggregateService', the role 'aggregateService6' has cardinality 0..*, and from 'micro_Model', the role 'Model' has cardinality 0..*.
+An association connects 'micro_AggregateService' and 'micro_ViewService'. From 'micro_AggregateService', the role 'micro_AggregateService8' has cardinality 0..*, and from 'micro_ViewService', the role 'micro_ViewService' has cardinality 0..*.
+An association connects 'micro_Event' and 'micro_Operation'. From 'micro_Event', the role 'micro_Event' has cardinality 0..*, and from 'micro_Operation', the role 'micro_Operation' has cardinality 0..*.
+An association connects 'micro_Operation' and 'micro_Saga'. From 'micro_Operation', the role 'micro_Operation11' has cardinality 0..*, and from 'micro_Saga', the role 'micro_Saga' has cardinality 0..*.
+An association connects 'micro_Operation' and 'micro_Model'. From 'micro_Operation', the role 'micro_Operation13' has cardinality 0..*, and from 'micro_Model', the role 'micro_Model' has cardinality 0..*.
+An association connects 'micro_AggregateService' and 'micro_Operation'. From 'micro_AggregateService', the role 'AggregateService15' has cardinality 0..*, and from 'micro_Operation', the role 'operation' has cardinality 0..*.
+An association connects 'micro_API' and 'micro_Event'. From 'micro_API', the role 'api' has cardinality 0..*, and from 'micro_Event', the role 'Event' has cardinality 0..*.
+An association connects 'micro_Command' and 'micro_API'. From 'micro_Command', the role 'Command' has cardinality 0..*, and from 'micro_API', the role 'api18' has cardinality 0..*.
+An association connects 'micro_Info' and 'micro_API'. From 'micro_Info', the role 'Info' has cardinality 0..*, and from 'micro_API', the role 'api20' has cardinality 0..*.
+An association connects 'micro_Info' and 'micro_Command'. From 'micro_Info', the role 'micro_Info' has cardinality 0..*, and from 'micro_Command', the role 'micro_Command' has cardinality 0..*.
+An association connects 'micro_Command' and 'micro_API'. From 'micro_Command', the role 'commands' has cardinality 0..*, and from 'micro_API', the role 'API' has cardinality 0..*.
+An association connects 'micro_API' and 'micro_Event'. From 'micro_API', the role 'API24' has cardinality 0..*, and from 'micro_Event', the role 'events' has cardinality 0..*.
+An association connects 'micro_Model' and 'micro_Info'. From 'micro_Model', the role 'micro_Model27' has cardinality 0..*, and from 'micro_Info', the role 'micro_Info26' has cardinality 0..*.
+An association connects 'micro_API' and 'micro_Info'. From 'micro_API', the role 'API29' has cardinality 0..*, and from 'micro_Info', the role 'infos' has cardinality 0..*.
+An association connects 'micro_Step' and 'micro_Command'. From 'micro_Step', the role 'micro_Step' has cardinality 0..*, and from 'micro_Command', the role 'micro_Command31' has cardinality 0..*.
+An association connects 'micro_Saga' and 'micro_Step'. From 'micro_Saga', the role 'micro_Saga33' has cardinality 0..*, and from 'micro_Step', the role 'micro_Step34' has cardinality 0..*.
+An association connects 'micro_Data' and 'micro_Saga'. From 'micro_Data', the role 'micro_Data' has cardinality 0..*, and from 'micro_Saga', the role 'micro_Saga36' has cardinality 0..*.
+An association connects 'micro_Model' and 'micro_Attribute'. From 'micro_Model', the role 'Model38' has cardinality 0..*, and from 'micro_Attribute', the role 'attributes' has cardinality 0..*.
+An association connects 'micro_ReferenceAttribute' and 'micro_Model'. From 'micro_ReferenceAttribute', the role 'micro_ReferenceAttribute' has cardinality 0..*, and from 'micro_Model', the role 'micro_Model40' has cardinality 0..*.
+An association connects 'micro_PrimitiveTypeAttribute' and 'micro_Model'. From 'micro_PrimitiveTypeAttribute', the role 'micro_PrimitiveTypeAttribute' has cardinality 0..*, and from 'micro_Model', the role 'micro_Model42' has cardinality 0..*.

@@ -1,0 +1,48 @@
+The domain model 'p2' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'p2_UnitType' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'id', which is of type str; 'state', which is of type str.
+
+'p2_RepositoryType' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'p2_IArtifactRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_LocationsType' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_IArtifactRepositoryManager' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'p2_IMetadataRepositoryManager' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_TargetType' represents an important domain concept.
+It has the following attributes: 'sequenceNumber', which is of type str; 'name', which is of type str.
+
+'p2_LocationType' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'includeConfigurePhase', which is of type str; 'includeSource', which is of type str; 'includeMode', which is of type str; 'includeAllPlatforms', which is of type str.
+
+'p2_IMetadataRepository' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'UnitVerificationState' defines the following possible values: 'UNKNOWN', 'UPGRADED', 'VERIFIED'.
+
+Relationships between classes are modeled using associations.
+An association connects 'p2_DocumentRoot' and 'p2_EStringToStringMapEntry'. From 'p2_DocumentRoot', the role 'p2_DocumentRoot' has cardinality 0..*, and from 'p2_EStringToStringMapEntry', the role 'p2_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'p2_DocumentRoot' and 'p2_EStringToStringMapEntry'. From 'p2_DocumentRoot', the role 'p2_DocumentRoot2' has cardinality 0..*, and from 'p2_EStringToStringMapEntry', the role 'p2_EStringToStringMapEntry3' has cardinality 0..*.
+An association connects 'p2_TargetType' and 'p2_DocumentRoot'. From 'p2_TargetType', the role 'p2_TargetType' has cardinality 0..*, and from 'p2_DocumentRoot', the role 'p2_DocumentRoot5' has cardinality 0..*.
+An association connects 'p2_LocationsType' and 'p2_LocationType'. From 'p2_LocationsType', the role 'p2_LocationsType' has cardinality 0..*, and from 'p2_LocationType', the role 'p2_LocationType' has cardinality 0..*.
+An association connects 'p2_UnitType' and 'p2_LocationType'. From 'p2_UnitType', the role 'p2_UnitType' has cardinality 0..*, and from 'p2_LocationType', the role 'p2_LocationType8' has cardinality 0..*.
+An association connects 'p2_RepositoryType' and 'p2_LocationType'. From 'p2_RepositoryType', the role 'p2_RepositoryType' has cardinality 0..*, and from 'p2_LocationType', the role 'p2_LocationType10' has cardinality 0..*.
+An association connects 'p2_LocationsType' and 'p2_TargetType'. From 'p2_LocationsType', the role 'p2_LocationsType13' has cardinality 0..*, and from 'p2_TargetType', the role 'p2_TargetType12' has cardinality 0..*.

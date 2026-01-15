@@ -1,0 +1,129 @@
+The domain model 'ca_rule' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'ca_rule_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_Max' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_Lower' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_Add' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_Mult' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_Mod' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_Min' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_CurrentCellPopulation' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_IntegerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'NeighborsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_CellularAutomata' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_UMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_PopulationRange' represents an important domain concept.
+It has the following attributes: 'lowerRange', which is of type int; 'upperRange', which is of type int.
+
+'ca_rule_And' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'ca_rule_NeighborsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_Sum' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_Size' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ca_rule_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ca_rule_Max' is a specialization of 'NeighborsExpression'.
+The class 'ca_rule_Add' is a specialization of 'BinaryExpression'.
+The class 'ca_rule_UnaryExpression' is a specialization of 'IntegerExpression'.
+The class 'ca_rule_And' is a specialization of 'BinaryExpression'.
+The class 'ca_rule_Or' is a specialization of 'BinaryExpression'.
+The class 'ca_rule_Not' is a specialization of 'UnaryExpression'.
+The class 'ca_rule_Greater' is a specialization of 'BinaryExpression'.
+The class 'ca_rule_Lower' is a specialization of 'BinaryExpression'.
+The class 'ca_rule_IntegerLiteral' is a specialization of 'IntegerExpression'.
+The class 'ca_rule_Conditional' is a specialization of 'IntegerExpression'.
+The class 'ca_rule_CurrentCellPopulation' is a specialization of 'IntegerExpression'.
+The class 'ca_rule_Size' is a specialization of 'NeighborsExpression'.
+The class 'ca_rule_NeighborsExpression' is a specialization of 'IntegerExpression'.
+The class 'ca_rule_Min' is a specialization of 'NeighborsExpression'.
+The class 'ca_rule_BinaryExpression' is a specialization of 'IntegerExpression'.
+The class 'ca_rule_Mult' is a specialization of 'BinaryExpression'.
+The class 'ca_rule_Div' is a specialization of 'BinaryExpression'.
+The class 'ca_rule_Sum' is a specialization of 'NeighborsExpression'.
+The class 'ca_rule_Mod' is a specialization of 'BinaryExpression'.
+The class 'ca_rule_UMinus' is a specialization of 'UnaryExpression'.
+The class 'ca_rule_Minus' is a specialization of 'BinaryExpression'.
+The class 'ca_rule_Equal' is a specialization of 'BinaryExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ca_rule_Rule' and 'ca_rule_IntegerExpression'. From 'ca_rule_Rule', the role 'ca_rule_Rule' has cardinality 0..*, and from 'ca_rule_IntegerExpression', the role 'ca_rule_IntegerExpression' has cardinality 0..*.
+An association connects 'ca_rule_Rule' and 'ca_rule_PopulationRange'. From 'ca_rule_Rule', the role 'ca_rule_Rule2' has cardinality 0..*, and from 'ca_rule_PopulationRange', the role 'ca_rule_PopulationRange' has cardinality 0..*.
+An association connects 'ca_rule_IntegerExpression' and 'ca_rule_UnaryExpression'. From 'ca_rule_IntegerExpression', the role 'ca_rule_IntegerExpression4' has cardinality 0..*, and from 'ca_rule_UnaryExpression', the role 'ca_rule_UnaryExpression' has cardinality 0..*.
+An association connects 'ca_rule_Conditional' and 'ca_rule_IntegerExpression'. From 'ca_rule_Conditional', the role 'ca_rule_Conditional' has cardinality 0..*, and from 'ca_rule_IntegerExpression', the role 'ca_rule_IntegerExpression6' has cardinality 0..*.
+An association connects 'ca_rule_Conditional' and 'ca_rule_IntegerExpression'. From 'ca_rule_Conditional', the role 'ca_rule_Conditional8' has cardinality 0..*, and from 'ca_rule_IntegerExpression', the role 'ca_rule_IntegerExpression9' has cardinality 0..*.
+An association connects 'ca_rule_Conditional' and 'ca_rule_IntegerExpression'. From 'ca_rule_Conditional', the role 'ca_rule_Conditional11' has cardinality 0..*, and from 'ca_rule_IntegerExpression', the role 'ca_rule_IntegerExpression12' has cardinality 0..*.
+An association connects 'ca_rule_NeighborsExpression' and 'ca_rule_PopulationRange'. From 'ca_rule_NeighborsExpression', the role 'ca_rule_NeighborsExpression' has cardinality 0..*, and from 'ca_rule_PopulationRange', the role 'ca_rule_PopulationRange14' has cardinality 0..*.
+An association connects 'ca_rule_IntegerExpression' and 'ca_rule_BinaryExpression'. From 'ca_rule_IntegerExpression', the role 'ca_rule_IntegerExpression16' has cardinality 0..*, and from 'ca_rule_BinaryExpression', the role 'ca_rule_BinaryExpression' has cardinality 0..*.
+An association connects 'ca_rule_IntegerExpression' and 'ca_rule_BinaryExpression'. From 'ca_rule_IntegerExpression', the role 'ca_rule_IntegerExpression19' has cardinality 0..*, and from 'ca_rule_BinaryExpression', the role 'ca_rule_BinaryExpression18' has cardinality 0..*.
+An association connects 'ca_rule_CellularAutomata' and 'ca_rule_Rule'. From 'ca_rule_CellularAutomata', the role 'ca_rule_CellularAutomata' has cardinality 0..*, and from 'ca_rule_Rule', the role 'ca_rule_Rule21' has cardinality 0..*.

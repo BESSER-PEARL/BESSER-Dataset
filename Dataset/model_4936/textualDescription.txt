@@ -1,0 +1,111 @@
+The domain model 'webapp' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'Control' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_EmailBox' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_FormButton' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'Page' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Control' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'TextBox' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_PasswordBox' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Page' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'title', which is of type str; 'default', which is of type bool.
+
+'webapp_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_NormalControl' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'webapp_RadioButton' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_TextBox' represents an important domain concept.
+It has the following attributes: 'size', which is of type int; 'maxLength', which is of type int; 'text', which is of type str; 'required', which is of type bool.
+
+'webapp_DynamicWebApp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'webapp_ListElement' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'webapp_DateBox' represents an important domain concept.
+It has one attribute: 'format', which is of type str.
+
+'webapp_DropDownList' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_ResetButton' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_NormalButton' represents an important domain concept.
+It does not declare any attributes.
+
+'FormButton' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_FormPage' represents an important domain concept.
+It has one attribute: 'persist', which is of type bool.
+
+'webapp_NormalPage' represents an important domain concept.
+It does not declare any attributes.
+
+'NormalControl' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_SubmitButton' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_CheckBox' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DateFormat' defines the following possible values: 'DayMonthYear', 'YearMonthDay'.
+
+The model also captures inheritance relationships between classes.
+The class 'webapp_FormPage' is a specialization of 'Page'.
+The class 'webapp_NormalPage' is a specialization of 'Page'.
+The class 'webapp_Label' is a specialization of 'Control'.
+The class 'webapp_Label' is a specialization of 'NormalControl'.
+The class 'webapp_Link' is a specialization of 'Control'.
+The class 'webapp_Link' is a specialization of 'NormalControl'.
+The class 'webapp_TextBox' is a specialization of 'Control'.
+The class 'webapp_DropDownList' is a specialization of 'Control'.
+The class 'webapp_RadioButton' is a specialization of 'Control'.
+The class 'webapp_CheckBox' is a specialization of 'Control'.
+The class 'webapp_NormalControl' is a specialization of 'Control'.
+The class 'webapp_FormButton' is a specialization of 'Control'.
+The class 'webapp_ResetButton' is a specialization of 'FormButton'.
+The class 'webapp_NormalButton' is a specialization of 'NormalControl'.
+The class 'webapp_PasswordBox' is a specialization of 'TextBox'.
+The class 'webapp_EmailBox' is a specialization of 'TextBox'.
+The class 'webapp_DateBox' is a specialization of 'TextBox'.
+The class 'webapp_SubmitButton' is a specialization of 'FormButton'.
+
+Relationships between classes are modeled using associations.
+An association connects 'webapp_Page' and 'webapp_FormPage'. From 'webapp_Page', the role 'webapp_Page' has cardinality 0..*, and from 'webapp_FormPage', the role 'webapp_FormPage' has cardinality 0..*.
+An association connects 'webapp_FormPage' and 'webapp_Page'. From 'webapp_FormPage', the role 'webapp_FormPage2' has cardinality 0..*, and from 'webapp_Page', the role 'webapp_Page3' has cardinality 0..*.
+An association connects 'webapp_FormPage' and 'webapp_Control'. From 'webapp_FormPage', the role 'webapp_FormPage5' has cardinality 0..*, and from 'webapp_Control', the role 'webapp_Control' has cardinality 0..*.
+An association connects 'webapp_NormalPage' and 'webapp_NormalControl'. From 'webapp_NormalPage', the role 'webapp_NormalPage' has cardinality 0..*, and from 'webapp_NormalControl', the role 'webapp_NormalControl' has cardinality 0..*.
+An association connects 'webapp_Page' and 'webapp_Link'. From 'webapp_Page', the role 'webapp_Page8' has cardinality 0..*, and from 'webapp_Link', the role 'webapp_Link' has cardinality 0..*.
+An association connects 'webapp_DropDownList' and 'webapp_ListElement'. From 'webapp_DropDownList', the role 'webapp_DropDownList' has cardinality 0..*, and from 'webapp_ListElement', the role 'webapp_ListElement' has cardinality 0..*.
+An association connects 'webapp_RadioButton' and 'webapp_ListElement'. From 'webapp_RadioButton', the role 'webapp_RadioButton' has cardinality 0..*, and from 'webapp_ListElement', the role 'webapp_ListElement11' has cardinality 0..*.
+An association connects 'webapp_Page' and 'webapp_DynamicWebApp'. From 'webapp_Page', the role 'webapp_Page13' has cardinality 0..*, and from 'webapp_DynamicWebApp', the role 'webapp_DynamicWebApp' has cardinality 0..*.

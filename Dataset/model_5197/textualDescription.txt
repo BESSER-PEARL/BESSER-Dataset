@@ -1,0 +1,18 @@
+The domain model 'dispatchroot' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'dispatchroot_A' represents an important domain concept.
+It does not declare any attributes.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'dispatchroot_C' represents an important domain concept.
+It does not declare any attributes.
+
+'dispatchroot_B' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'dispatchroot_B' is a specialization of 'A'.

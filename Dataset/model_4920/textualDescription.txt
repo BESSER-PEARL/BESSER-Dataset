@@ -1,0 +1,47 @@
+The domain model 'web_service' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'FunctionProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'web_service_Endpoint' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'web_service_MessageFormatter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'web_service_GenericDataRecogniser' represents an important domain concept.
+It does not declare any attributes.
+
+'web_service_DataRecogniser' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MessageFormatter' represents an important domain concept.
+It does not declare any attributes.
+
+'web_service_GenericMessageFormatter' represents an important domain concept.
+It does not declare any attributes.
+
+'web_service_GenericFunctionProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'web_service_FunctionProvider' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'web_service_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'DataRecogniser' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'web_service_GenericMessageFormatter' is a specialization of 'MessageFormatter'.
+The class 'web_service_GenericFunctionProvider' is a specialization of 'FunctionProvider'.
+The class 'web_service_GenericDataRecogniser' is a specialization of 'DataRecogniser'.
+
+Relationships between classes are modeled using associations.
+An association connects 'web_service_Service' and 'web_service_Endpoint'. From 'web_service_Service', the role 'web_service_Service' has cardinality 0..*, and from 'web_service_Endpoint', the role 'web_service_Endpoint' has cardinality 0..*.
+An association connects 'web_service_MessageFormatter' and 'web_service_Endpoint'. From 'web_service_MessageFormatter', the role 'web_service_MessageFormatter' has cardinality 0..*, and from 'web_service_Endpoint', the role 'web_service_Endpoint2' has cardinality 0..*.
+An association connects 'web_service_Endpoint' and 'web_service_FunctionProvider'. From 'web_service_Endpoint', the role 'web_service_Endpoint4' has cardinality 0..*, and from 'web_service_FunctionProvider', the role 'web_service_FunctionProvider' has cardinality 0..*.
+An association connects 'web_service_Endpoint' and 'web_service_DataRecogniser'. From 'web_service_Endpoint', the role 'web_service_Endpoint6' has cardinality 0..*, and from 'web_service_DataRecogniser', the role 'web_service_DataRecogniser' has cardinality 0..*.

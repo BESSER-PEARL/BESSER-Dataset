@@ -1,0 +1,212 @@
+The domain model 'tgg' describes the core structural elements and their relationships within the system.
+
+The model defines 43 main class(es).
+
+'tgg_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_Import' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tgg_Adornment' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'tgg_NamedElements' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tgg_EDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_Param' represents an important domain concept.
+It has one attribute: 'paramName', which is of type str.
+
+'tgg_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_AttributeAssignment' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'tgg_AttrCondDefLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_Schema' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_CorrVariablePattern' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_AttributeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElements' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_EEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'ParamValue' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_LocalVariable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tgg_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_Operator' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'tgg_NamePattern' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_ObjectVariablePattern' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_ContextLinkVariablePattern' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_AttributeConstraint' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'tgg_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_TripleGraphGrammarFile' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_ContextObjectVariablePattern' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NamePattern' represents an important domain concept.
+It does not declare any attributes.
+
+'OperatorPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_EEnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_CorrType' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_ParamValue' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_Using' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'tgg_Rule' represents an important domain concept.
+It has one attribute: 'abstractRule', which is of type bool.
+
+'tgg_AttrCond' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_LiteralExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'tgg_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_AttrCondDef' represents an important domain concept.
+It has one attribute: 'userDefined', which is of type bool.
+
+'tgg_OperatorPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_ComplementRule' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_EnumExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_LinkVariablePattern' represents an important domain concept.
+It does not declare any attributes.
+
+'tgg_Nac' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'tgg_Schema' is a specialization of 'NamedElements'.
+The class 'tgg_CorrType' is a specialization of 'NamedElements'.
+The class 'tgg_AttrCondDef' is a specialization of 'NamedElements'.
+The class 'tgg_Rule' is a specialization of 'NamedElements'.
+The class 'tgg_AttrCondDefLibrary' is a specialization of 'NamedElements'.
+The class 'tgg_LocalVariable' is a specialization of 'ParamValue'.
+The class 'tgg_CorrVariablePattern' is a specialization of 'NamePattern'.
+The class 'tgg_ObjectVariablePattern' is a specialization of 'NamePattern'.
+The class 'tgg_Expression' is a specialization of 'ParamValue'.
+The class 'tgg_EnumExpression' is a specialization of 'Expression'.
+The class 'tgg_AttributeExpression' is a specialization of 'Expression'.
+The class 'tgg_LiteralExpression' is a specialization of 'Expression'.
+The class 'tgg_LinkVariablePattern' is a specialization of 'OperatorPattern'.
+The class 'tgg_ComplementRule' is a specialization of 'NamedElements'.
+The class 'tgg_Nac' is a specialization of 'NamedElements'.
+The class 'tgg_NamePattern' is a specialization of 'OperatorPattern'.
+The class 'tgg_NamePattern' is a specialization of 'NamedElements'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tgg_TripleGraphGrammarFile' and 'tgg_Import'. From 'tgg_TripleGraphGrammarFile', the role 'tgg_TripleGraphGrammarFile' has cardinality 0..*, and from 'tgg_Import', the role 'tgg_Import' has cardinality 0..*.
+An association connects 'tgg_Using' and 'tgg_TripleGraphGrammarFile'. From 'tgg_Using', the role 'tgg_Using' has cardinality 0..*, and from 'tgg_TripleGraphGrammarFile', the role 'tgg_TripleGraphGrammarFile2' has cardinality 0..*.
+An association connects 'tgg_TripleGraphGrammarFile' and 'tgg_Schema'. From 'tgg_TripleGraphGrammarFile', the role 'tgg_TripleGraphGrammarFile4' has cardinality 0..*, and from 'tgg_Schema', the role 'tgg_Schema' has cardinality 0..*.
+An association connects 'tgg_TripleGraphGrammarFile' and 'tgg_Rule'. From 'tgg_TripleGraphGrammarFile', the role 'tgg_TripleGraphGrammarFile6' has cardinality 0..*, and from 'tgg_Rule', the role 'tgg_Rule' has cardinality 0..*.
+An association connects 'tgg_ComplementRule' and 'tgg_TripleGraphGrammarFile'. From 'tgg_ComplementRule', the role 'tgg_ComplementRule' has cardinality 0..*, and from 'tgg_TripleGraphGrammarFile', the role 'tgg_TripleGraphGrammarFile8' has cardinality 0..*.
+An association connects 'tgg_Nac' and 'tgg_TripleGraphGrammarFile'. From 'tgg_Nac', the role 'tgg_Nac' has cardinality 0..*, and from 'tgg_TripleGraphGrammarFile', the role 'tgg_TripleGraphGrammarFile10' has cardinality 0..*.
+An association connects 'tgg_TripleGraphGrammarFile' and 'tgg_AttrCondDefLibrary'. From 'tgg_TripleGraphGrammarFile', the role 'tgg_TripleGraphGrammarFile12' has cardinality 0..*, and from 'tgg_AttrCondDefLibrary', the role 'tgg_AttrCondDefLibrary' has cardinality 0..*.
+An association connects 'tgg_Schema' and 'tgg_EPackage'. From 'tgg_Schema', the role 'tgg_Schema14' has cardinality 0..*, and from 'tgg_EPackage', the role 'tgg_EPackage' has cardinality 0..*.
+An association connects 'tgg_EPackage' and 'tgg_Schema'. From 'tgg_EPackage', the role 'tgg_EPackage17' has cardinality 0..*, and from 'tgg_Schema', the role 'tgg_Schema16' has cardinality 0..*.
+An association connects 'tgg_Schema' and 'tgg_CorrType'. From 'tgg_Schema', the role 'tgg_Schema19' has cardinality 0..*, and from 'tgg_CorrType', the role 'tgg_CorrType' has cardinality 0..*.
+An association connects 'tgg_AttrCondDef' and 'tgg_Schema'. From 'tgg_AttrCondDef', the role 'tgg_AttrCondDef' has cardinality 0..*, and from 'tgg_Schema', the role 'tgg_Schema21' has cardinality 0..*.
+An association connects 'tgg_CorrType' and 'tgg_CorrType'. From 'tgg_CorrType', the role 'tgg_CorrType22' has cardinality 0..*, and from 'tgg_CorrType', the role 'tgg_CorrType24' has cardinality 0..*.
+An association connects 'tgg_CorrType' and 'tgg_EClass'. From 'tgg_CorrType', the role 'tgg_CorrType26' has cardinality 0..*, and from 'tgg_EClass', the role 'tgg_EClass' has cardinality 0..*.
+An association connects 'tgg_CorrType' and 'tgg_EClass'. From 'tgg_CorrType', the role 'tgg_CorrType28' has cardinality 0..*, and from 'tgg_EClass', the role 'tgg_EClass29' has cardinality 0..*.
+An association connects 'tgg_AttrCondDef' and 'tgg_Param'. From 'tgg_AttrCondDef', the role 'tgg_AttrCondDef31' has cardinality 0..*, and from 'tgg_Param', the role 'tgg_Param' has cardinality 0..*.
+An association connects 'tgg_Adornment' and 'tgg_AttrCondDef'. From 'tgg_Adornment', the role 'tgg_Adornment' has cardinality 0..*, and from 'tgg_AttrCondDef', the role 'tgg_AttrCondDef33' has cardinality 0..*.
+An association connects 'tgg_AttrCondDef' and 'tgg_Adornment'. From 'tgg_AttrCondDef', the role 'tgg_AttrCondDef35' has cardinality 0..*, and from 'tgg_Adornment', the role 'tgg_Adornment36' has cardinality 0..*.
+An association connects 'tgg_EDataType' and 'tgg_Param'. From 'tgg_EDataType', the role 'tgg_EDataType' has cardinality 0..*, and from 'tgg_Param', the role 'tgg_Param38' has cardinality 0..*.
+An association connects 'tgg_Rule' and 'tgg_Rule'. From 'tgg_Rule', the role 'tgg_Rule39' has cardinality 0..*, and from 'tgg_Rule', the role 'tgg_Rule41' has cardinality 0..*.
+An association connects 'tgg_Schema' and 'tgg_Rule'. From 'tgg_Schema', the role 'tgg_Schema44' has cardinality 0..*, and from 'tgg_Rule', the role 'tgg_Rule43' has cardinality 0..*.
+An association connects 'tgg_ObjectVariablePattern' and 'tgg_Rule'. From 'tgg_ObjectVariablePattern', the role 'tgg_ObjectVariablePattern' has cardinality 0..*, and from 'tgg_Rule', the role 'tgg_Rule46' has cardinality 0..*.
+An association connects 'tgg_Rule' and 'tgg_ObjectVariablePattern'. From 'tgg_Rule', the role 'tgg_Rule48' has cardinality 0..*, and from 'tgg_ObjectVariablePattern', the role 'tgg_ObjectVariablePattern49' has cardinality 0..*.
+An association connects 'tgg_CorrVariablePattern' and 'tgg_Rule'. From 'tgg_CorrVariablePattern', the role 'tgg_CorrVariablePattern' has cardinality 0..*, and from 'tgg_Rule', the role 'tgg_Rule51' has cardinality 0..*.
+An association connects 'tgg_AttrCond' and 'tgg_Rule'. From 'tgg_AttrCond', the role 'tgg_AttrCond' has cardinality 0..*, and from 'tgg_Rule', the role 'tgg_Rule53' has cardinality 0..*.
+An association connects 'tgg_AttrCondDef' and 'tgg_AttrCond'. From 'tgg_AttrCondDef', the role 'tgg_AttrCondDef56' has cardinality 0..*, and from 'tgg_AttrCond', the role 'tgg_AttrCond55' has cardinality 0..*.
+An association connects 'tgg_ParamValue' and 'tgg_AttrCond'. From 'tgg_ParamValue', the role 'tgg_ParamValue' has cardinality 0..*, and from 'tgg_AttrCond', the role 'tgg_AttrCond58' has cardinality 0..*.
+An association connects 'tgg_AttrCondDef' and 'tgg_AttrCondDefLibrary'. From 'tgg_AttrCondDef', the role 'tgg_AttrCondDef61' has cardinality 0..*, and from 'tgg_AttrCondDefLibrary', the role 'tgg_AttrCondDefLibrary60' has cardinality 0..*.
+An association connects 'tgg_CorrVariablePattern' and 'tgg_CorrType'. From 'tgg_CorrVariablePattern', the role 'tgg_CorrVariablePattern63' has cardinality 0..*, and from 'tgg_CorrType', the role 'tgg_CorrType64' has cardinality 0..*.
+An association connects 'tgg_CorrVariablePattern' and 'tgg_ObjectVariablePattern'. From 'tgg_CorrVariablePattern', the role 'tgg_CorrVariablePattern66' has cardinality 0..*, and from 'tgg_ObjectVariablePattern', the role 'tgg_ObjectVariablePattern67' has cardinality 0..*.
+An association connects 'tgg_CorrVariablePattern' and 'tgg_ObjectVariablePattern'. From 'tgg_CorrVariablePattern', the role 'tgg_CorrVariablePattern69' has cardinality 0..*, and from 'tgg_ObjectVariablePattern', the role 'tgg_ObjectVariablePattern70' has cardinality 0..*.
+An association connects 'tgg_EClass' and 'tgg_ObjectVariablePattern'. From 'tgg_EClass', the role 'tgg_EClass73' has cardinality 0..*, and from 'tgg_ObjectVariablePattern', the role 'tgg_ObjectVariablePattern72' has cardinality 0..*.
+An association connects 'tgg_AttributeAssignment' and 'tgg_ObjectVariablePattern'. From 'tgg_AttributeAssignment', the role 'tgg_AttributeAssignment' has cardinality 0..*, and from 'tgg_ObjectVariablePattern', the role 'tgg_ObjectVariablePattern75' has cardinality 0..*.
+An association connects 'tgg_ObjectVariablePattern' and 'tgg_AttributeConstraint'. From 'tgg_ObjectVariablePattern', the role 'tgg_ObjectVariablePattern77' has cardinality 0..*, and from 'tgg_AttributeConstraint', the role 'tgg_AttributeConstraint' has cardinality 0..*.
+An association connects 'tgg_LinkVariablePattern' and 'tgg_ObjectVariablePattern'. From 'tgg_LinkVariablePattern', the role 'tgg_LinkVariablePattern' has cardinality 0..*, and from 'tgg_ObjectVariablePattern', the role 'tgg_ObjectVariablePattern79' has cardinality 0..*.
+An association connects 'tgg_EClass' and 'tgg_ContextObjectVariablePattern'. From 'tgg_EClass', the role 'tgg_EClass81' has cardinality 0..*, and from 'tgg_ContextObjectVariablePattern', the role 'tgg_ContextObjectVariablePattern' has cardinality 0..*.
+An association connects 'tgg_ContextObjectVariablePattern' and 'tgg_AttributeConstraint'. From 'tgg_ContextObjectVariablePattern', the role 'tgg_ContextObjectVariablePattern83' has cardinality 0..*, and from 'tgg_AttributeConstraint', the role 'tgg_AttributeConstraint84' has cardinality 0..*.
+An association connects 'tgg_ContextLinkVariablePattern' and 'tgg_ContextObjectVariablePattern'. From 'tgg_ContextLinkVariablePattern', the role 'tgg_ContextLinkVariablePattern' has cardinality 0..*, and from 'tgg_ContextObjectVariablePattern', the role 'tgg_ContextObjectVariablePattern86' has cardinality 0..*.
+An association connects 'tgg_EAttribute' and 'tgg_AttributeConstraint'. From 'tgg_EAttribute', the role 'tgg_EAttribute' has cardinality 0..*, and from 'tgg_AttributeConstraint', the role 'tgg_AttributeConstraint88' has cardinality 0..*.
+An association connects 'tgg_AttributeConstraint' and 'tgg_Expression'. From 'tgg_AttributeConstraint', the role 'tgg_AttributeConstraint90' has cardinality 0..*, and from 'tgg_Expression', the role 'tgg_Expression' has cardinality 0..*.
+An association connects 'tgg_AttributeAssignment' and 'tgg_EAttribute'. From 'tgg_AttributeAssignment', the role 'tgg_AttributeAssignment92' has cardinality 0..*, and from 'tgg_EAttribute', the role 'tgg_EAttribute93' has cardinality 0..*.
+An association connects 'tgg_AttributeAssignment' and 'tgg_Expression'. From 'tgg_AttributeAssignment', the role 'tgg_AttributeAssignment95' has cardinality 0..*, and from 'tgg_Expression', the role 'tgg_Expression96' has cardinality 0..*.
+An association connects 'tgg_EEnum' and 'tgg_EnumExpression'. From 'tgg_EEnum', the role 'tgg_EEnum' has cardinality 0..*, and from 'tgg_EnumExpression', the role 'tgg_EnumExpression' has cardinality 0..*.
+An association connects 'tgg_EEnumLiteral' and 'tgg_EnumExpression'. From 'tgg_EEnumLiteral', the role 'tgg_EEnumLiteral' has cardinality 0..*, and from 'tgg_EnumExpression', the role 'tgg_EnumExpression99' has cardinality 0..*.
+An association connects 'tgg_AttributeExpression' and 'tgg_EObject'. From 'tgg_AttributeExpression', the role 'tgg_AttributeExpression' has cardinality 0..*, and from 'tgg_EObject', the role 'tgg_EObject' has cardinality 0..*.
+An association connects 'tgg_AttributeExpression' and 'tgg_EAttribute'. From 'tgg_AttributeExpression', the role 'tgg_AttributeExpression102' has cardinality 0..*, and from 'tgg_EAttribute', the role 'tgg_EAttribute103' has cardinality 0..*.
+An association connects 'tgg_EReference' and 'tgg_LinkVariablePattern'. From 'tgg_EReference', the role 'tgg_EReference' has cardinality 0..*, and from 'tgg_LinkVariablePattern', the role 'tgg_LinkVariablePattern105' has cardinality 0..*.
+An association connects 'tgg_ObjectVariablePattern' and 'tgg_LinkVariablePattern'. From 'tgg_ObjectVariablePattern', the role 'tgg_ObjectVariablePattern108' has cardinality 0..*, and from 'tgg_LinkVariablePattern', the role 'tgg_LinkVariablePattern107' has cardinality 0..*.
+An association connects 'tgg_EReference' and 'tgg_ContextLinkVariablePattern'. From 'tgg_EReference', the role 'tgg_EReference111' has cardinality 0..*, and from 'tgg_ContextLinkVariablePattern', the role 'tgg_ContextLinkVariablePattern110' has cardinality 0..*.
+An association connects 'tgg_ContextLinkVariablePattern' and 'tgg_ContextObjectVariablePattern'. From 'tgg_ContextLinkVariablePattern', the role 'tgg_ContextLinkVariablePattern113' has cardinality 0..*, and from 'tgg_ContextObjectVariablePattern', the role 'tgg_ContextObjectVariablePattern114' has cardinality 0..*.
+An association connects 'tgg_Rule' and 'tgg_ComplementRule'. From 'tgg_Rule', the role 'tgg_Rule117' has cardinality 0..*, and from 'tgg_ComplementRule', the role 'tgg_ComplementRule116' has cardinality 0..*.
+An association connects 'tgg_ObjectVariablePattern' and 'tgg_ComplementRule'. From 'tgg_ObjectVariablePattern', the role 'tgg_ObjectVariablePattern120' has cardinality 0..*, and from 'tgg_ComplementRule', the role 'tgg_ComplementRule119' has cardinality 0..*.
+An association connects 'tgg_ObjectVariablePattern' and 'tgg_ComplementRule'. From 'tgg_ObjectVariablePattern', the role 'tgg_ObjectVariablePattern123' has cardinality 0..*, and from 'tgg_ComplementRule', the role 'tgg_ComplementRule122' has cardinality 0..*.
+An association connects 'tgg_ComplementRule' and 'tgg_CorrVariablePattern'. From 'tgg_ComplementRule', the role 'tgg_ComplementRule125' has cardinality 0..*, and from 'tgg_CorrVariablePattern', the role 'tgg_CorrVariablePattern126' has cardinality 0..*.
+An association connects 'tgg_ComplementRule' and 'tgg_AttrCond'. From 'tgg_ComplementRule', the role 'tgg_ComplementRule128' has cardinality 0..*, and from 'tgg_AttrCond', the role 'tgg_AttrCond129' has cardinality 0..*.
+An association connects 'tgg_Rule' and 'tgg_Nac'. From 'tgg_Rule', the role 'tgg_Rule132' has cardinality 0..*, and from 'tgg_Nac', the role 'tgg_Nac131' has cardinality 0..*.
+An association connects 'tgg_Nac' and 'tgg_ContextObjectVariablePattern'. From 'tgg_Nac', the role 'tgg_Nac134' has cardinality 0..*, and from 'tgg_ContextObjectVariablePattern', the role 'tgg_ContextObjectVariablePattern135' has cardinality 0..*.
+An association connects 'tgg_Nac' and 'tgg_ContextObjectVariablePattern'. From 'tgg_Nac', the role 'tgg_Nac137' has cardinality 0..*, and from 'tgg_ContextObjectVariablePattern', the role 'tgg_ContextObjectVariablePattern138' has cardinality 0..*.
+An association connects 'tgg_Nac' and 'tgg_AttrCond'. From 'tgg_Nac', the role 'tgg_Nac140' has cardinality 0..*, and from 'tgg_AttrCond', the role 'tgg_AttrCond141' has cardinality 0..*.
+An association connects 'tgg_OperatorPattern' and 'tgg_Operator'. From 'tgg_OperatorPattern', the role 'tgg_OperatorPattern' has cardinality 0..*, and from 'tgg_Operator', the role 'tgg_Operator' has cardinality 0..*.

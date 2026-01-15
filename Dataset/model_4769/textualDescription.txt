@@ -1,0 +1,134 @@
+The domain model 'atl_types' describes the core structural elements and their relationships within the system.
+
+The model defines 31 main class(es).
+
+'atl_types_Unknown' represents an important domain concept.
+It does not declare any attributes.
+
+'atl_types_Type' represents an important domain concept.
+It has one attribute: 'multivalued', which is of type bool.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'atl_types_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'atl_types_UnionType' represents an important domain concept.
+It does not declare any attributes.
+
+'atl_types_MapType' represents an important domain concept.
+It does not declare any attributes.
+
+'atl_types_ReflectiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'RefType' represents an important domain concept.
+It does not declare any attributes.
+
+'atl_types_EmptyCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'atl_types_annotations_HelperAnnotation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'atl_types_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'atl_types_EnumType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'atl_types_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'atl_types_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'atl_types_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'atl_types_RefType' represents an important domain concept.
+It does not declare any attributes.
+
+'atl_types_ThisModuleType' represents an important domain concept.
+It does not declare any attributes.
+
+'annotations_atl_types_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'atl_types_annotations_BindingAnnotation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'atl_types_Metaclass' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'atl_types_FloatType' represents an important domain concept.
+It does not declare any attributes.
+
+'AtlAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'annotations_atl_types_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'atl_types_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'atl_types_annotations_ExpressionAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'atl_types_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'ReflectiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'atl_types_TupleAttribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'atl_types_annotations_AtlAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'atl_types_ReflectiveClass' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'atl_types_PrimitiveType' is a specialization of 'Type'.
+The class 'atl_types_BooleanType' is a specialization of 'PrimitiveType'.
+The class 'atl_types_IntegerType' is a specialization of 'PrimitiveType'.
+The class 'atl_types_StringType' is a specialization of 'PrimitiveType'.
+The class 'atl_types_FloatType' is a specialization of 'PrimitiveType'.
+The class 'atl_types_TupleType' is a specialization of 'Type'.
+The class 'atl_types_MapType' is a specialization of 'Type'.
+The class 'atl_types_RefType' is a specialization of 'Type'.
+The class 'atl_types_Unknown' is a specialization of 'RefType'.
+The class 'atl_types_EmptyCollection' is a specialization of 'Type'.
+The class 'atl_types_EnumType' is a specialization of 'Type'.
+The class 'atl_types_Metaclass' is a specialization of 'RefType'.
+The class 'atl_types_ReflectiveType' is a specialization of 'Type'.
+The class 'atl_types_UnionType' is a specialization of 'Type'.
+The class 'atl_types_ThisModuleType' is a specialization of 'Type'.
+The class 'atl_types_ReflectiveClass' is a specialization of 'ReflectiveType'.
+The class 'atl_types_annotations_HelperAnnotation' is a specialization of 'AtlAnnotation'.
+The class 'atl_types_annotations_BindingAnnotation' is a specialization of 'AtlAnnotation'.
+The class 'atl_types_annotations_ExpressionAnnotation' is a specialization of 'AtlAnnotation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'atl_types_TupleType' and 'atl_types_TupleAttribute'. From 'atl_types_TupleType', the role 'atl_types_TupleType' has cardinality 0..*, and from 'atl_types_TupleAttribute', the role 'atl_types_TupleAttribute' has cardinality 0..*.
+An association connects 'atl_types_Type' and 'atl_types_MapType'. From 'atl_types_Type', the role 'atl_types_Type' has cardinality 0..*, and from 'atl_types_MapType', the role 'atl_types_MapType' has cardinality 0..*.
+An association connects 'atl_types_Type' and 'atl_types_MapType'. From 'atl_types_Type', the role 'atl_types_Type4' has cardinality 0..*, and from 'atl_types_MapType', the role 'atl_types_MapType3' has cardinality 0..*.
+An association connects 'atl_types_TupleAttribute' and 'atl_types_Type'. From 'atl_types_TupleAttribute', the role 'atl_types_TupleAttribute6' has cardinality 0..*, and from 'atl_types_Type', the role 'atl_types_Type7' has cardinality 0..*.
+An association connects 'atl_types_EObject' and 'atl_types_EnumType'. From 'atl_types_EObject', the role 'atl_types_EObject' has cardinality 0..*, and from 'atl_types_EnumType', the role 'atl_types_EnumType' has cardinality 0..*.
+An association connects 'atl_types_EClass' and 'atl_types_Metaclass'. From 'atl_types_EClass', the role 'atl_types_EClass' has cardinality 0..*, and from 'atl_types_Metaclass', the role 'atl_types_Metaclass' has cardinality 0..*.
+An association connects 'atl_types_UnionType' and 'atl_types_Type'. From 'atl_types_UnionType', the role 'atl_types_UnionType' has cardinality 0..*, and from 'atl_types_Type', the role 'atl_types_Type11' has cardinality 0..*.
+An association connects 'atl_types_annotations_HelperAnnotation' and 'annotations_atl_types_EObject'. From 'atl_types_annotations_HelperAnnotation', the role 'atl_types_annotations_HelperAnnotation' has cardinality 0..*, and from 'annotations_atl_types_EObject', the role 'annotations_atl_types_EObject' has cardinality 0..*.
+An association connects 'annotations_atl_types_Type' and 'atl_types_annotations_HelperAnnotation'. From 'annotations_atl_types_Type', the role 'annotations_atl_types_Type' has cardinality 0..*, and from 'atl_types_annotations_HelperAnnotation', the role 'atl_types_annotations_HelperAnnotation14' has cardinality 0..*.
+An association connects 'atl_types_annotations_BindingAnnotation' and 'annotations_atl_types_EObject'. From 'atl_types_annotations_BindingAnnotation', the role 'atl_types_annotations_BindingAnnotation' has cardinality 0..*, and from 'annotations_atl_types_EObject', the role 'annotations_atl_types_EObject16' has cardinality 0..*.
+An association connects 'annotations_atl_types_EObject' and 'atl_types_annotations_BindingAnnotation'. From 'annotations_atl_types_EObject', the role 'annotations_atl_types_EObject19' has cardinality 0..*, and from 'atl_types_annotations_BindingAnnotation', the role 'atl_types_annotations_BindingAnnotation18' has cardinality 0..*.
+An association connects 'atl_types_annotations_BindingAnnotation' and 'annotations_atl_types_Type'. From 'atl_types_annotations_BindingAnnotation', the role 'atl_types_annotations_BindingAnnotation21' has cardinality 0..*, and from 'annotations_atl_types_Type', the role 'annotations_atl_types_Type22' has cardinality 0..*.
+An association connects 'atl_types_annotations_BindingAnnotation' and 'annotations_atl_types_Type'. From 'atl_types_annotations_BindingAnnotation', the role 'atl_types_annotations_BindingAnnotation24' has cardinality 0..*, and from 'annotations_atl_types_Type', the role 'annotations_atl_types_Type25' has cardinality 0..*.
+An association connects 'atl_types_annotations_ExpressionAnnotation' and 'annotations_atl_types_EObject'. From 'atl_types_annotations_ExpressionAnnotation', the role 'atl_types_annotations_ExpressionAnnotation' has cardinality 0..*, and from 'annotations_atl_types_EObject', the role 'annotations_atl_types_EObject27' has cardinality 0..*.
+An association connects 'annotations_atl_types_Type' and 'atl_types_annotations_ExpressionAnnotation'. From 'annotations_atl_types_Type', the role 'annotations_atl_types_Type30' has cardinality 0..*, and from 'atl_types_annotations_ExpressionAnnotation', the role 'atl_types_annotations_ExpressionAnnotation29' has cardinality 0..*.

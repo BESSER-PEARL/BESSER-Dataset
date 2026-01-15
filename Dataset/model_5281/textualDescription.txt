@@ -1,0 +1,14 @@
+The domain model 'astransast' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'astransast_AAS' represents an important domain concept.
+It does not declare any attributes.
+
+'astransast_BAS' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'astransast_BAS' and 'astransast_AAS'. From 'astransast_BAS', the role 'astransast_BAS' has cardinality 0..*, and from 'astransast_AAS', the role 'astransast_AAS' has cardinality 0..*.
+An association connects 'astransast_AAS' and 'astransast_BAS'. From 'astransast_AAS', the role 'astransast_AAS2' has cardinality 0..*, and from 'astransast_BAS', the role 'astransast_BAS3' has cardinality 0..*.
+An association connects 'astransast_BAS' and 'astransast_BAS'. From 'astransast_BAS', the role 'astransast_BAS4' has cardinality 0..*, and from 'astransast_BAS', the role 'astransast_BAS6' has cardinality 0..*.

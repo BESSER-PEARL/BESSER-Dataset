@@ -1,0 +1,59 @@
+The domain model 'JPA' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'JPA_EntityPk' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'JPA_Entity' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comment', which is of type str.
+
+'JPA_OneToOne' represents an important domain concept.
+It has the following attributes: 'updatable', which is of type bool; 'name', which is of type str; 'referencedColumnName', which is of type str.
+
+'JPA_Anotation' represents an important domain concept.
+It does not declare any attributes.
+
+'JPA_OneToMany' represents an important domain concept.
+It has the following attributes: 'cascade', which is of type str; 'fetch', which is of type str.
+
+'JPA_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'JPA_PersistenceUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'JPA_Column' represents an important domain concept.
+It has the following attributes: 'nullable', which is of type bool; 'name', which is of type str; 'fetch', which is of type str; 'type', which is of type str.
+
+'JPA_ManyToOne' represents an important domain concept.
+It has the following attributes: 'joinColumn', which is of type str; 'fetch', which is of type str; 'nullable', which is of type bool.
+
+'JPA_Property' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comment', which is of type str.
+
+'Anotation' represents an important domain concept.
+It does not declare any attributes.
+
+'JPA_ManyToMany' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'joinColumn', which is of type str; 'inverseJoinColumn', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Fetch' defines the following possible values: 'LAZY', 'EAGER'.
+The enumeration 'Cascade' defines the following possible values: 'REMOVE', 'MERGE', 'ALL', 'REFRESH', 'PERSIST'.
+
+The model also captures inheritance relationships between classes.
+The class 'JPA_EntityPk' is a specialization of 'Anotation'.
+The class 'JPA_Table' is a specialization of 'Anotation'.
+The class 'JPA_Column' is a specialization of 'Anotation'.
+The class 'JPA_OneToOne' is a specialization of 'Anotation'.
+The class 'JPA_OneToMany' is a specialization of 'Anotation'.
+The class 'JPA_ManyToOne' is a specialization of 'Anotation'.
+The class 'JPA_ManyToMany' is a specialization of 'Anotation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'JPA_Entity' and 'JPA_PersistenceUnit'. From 'JPA_Entity', the role 'JPA_Entity' has cardinality 0..*, and from 'JPA_PersistenceUnit', the role 'JPA_PersistenceUnit' has cardinality 0..*.
+An association connects 'JPA_Property' and 'JPA_Entity'. From 'JPA_Property', the role 'JPA_Property' has cardinality 0..*, and from 'JPA_Entity', the role 'JPA_Entity2' has cardinality 0..*.
+An association connects 'JPA_Anotation' and 'JPA_Entity'. From 'JPA_Anotation', the role 'JPA_Anotation' has cardinality 0..*, and from 'JPA_Entity', the role 'JPA_Entity4' has cardinality 0..*.
+An association connects 'JPA_Property' and 'JPA_Anotation'. From 'JPA_Property', the role 'JPA_Property6' has cardinality 0..*, and from 'JPA_Anotation', the role 'JPA_Anotation7' has cardinality 0..*.
+An association connects 'JPA_Property' and 'JPA_EntityPk'. From 'JPA_Property', the role 'JPA_Property9' has cardinality 0..*, and from 'JPA_EntityPk', the role 'JPA_EntityPk' has cardinality 0..*.

@@ -1,0 +1,200 @@
+The domain model 'simple_csp' describes the core structural elements and their relationships within the system.
+
+The model defines 48 main class(es).
+
+'simple_csp_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_BooleanLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryOp' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_Max' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_UnaryOp' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_Power' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_Sum' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_FalseValue' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_MinimizeGoal' represents an important domain concept.
+It does not declare any attributes.
+
+'Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'DescribedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SetOp' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_DescribedElement' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'simple_csp_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_VarOccurence' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'Goal' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simple_csp_TypedElement' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'simple_csp_IntegerDomain' represents an important domain concept.
+It has the following attributes: 'maxValue', which is of type str; 'minValue', which is of type str.
+
+'simple_csp_Less' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_TrueValue' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryOp' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_Min' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_MaximizeGoal' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_Goal' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_And' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_Times' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_LessEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_GreaterEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_Implies' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_Problem' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_BinaryOp' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_SetOp' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_csp_UnEqual' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Type' defines the following possible values: 'INTEGER', 'BOOLEAN'.
+
+The model also captures inheritance relationships between classes.
+The class 'simple_csp_Problem' is a specialization of 'NamedElement'.
+The class 'simple_csp_IntegerDomain' is a specialization of 'Domain'.
+The class 'simple_csp_Variable' is a specialization of 'NamedElement'.
+The class 'simple_csp_Variable' is a specialization of 'DescribedElement'.
+The class 'simple_csp_Variable' is a specialization of 'TypedElement'.
+The class 'simple_csp_Constraint' is a specialization of 'NamedElement'.
+The class 'simple_csp_Operator' is a specialization of 'Expression'.
+The class 'simple_csp_SetOp' is a specialization of 'Operator'.
+The class 'simple_csp_BinaryOp' is a specialization of 'Operator'.
+The class 'simple_csp_UnaryOp' is a specialization of 'Operator'.
+The class 'simple_csp_Not' is a specialization of 'UnaryOp'.
+The class 'simple_csp_And' is a specialization of 'BinaryOp'.
+The class 'simple_csp_Or' is a specialization of 'BinaryOp'.
+The class 'simple_csp_Implies' is a specialization of 'BinaryOp'.
+The class 'simple_csp_Equal' is a specialization of 'BinaryOp'.
+The class 'simple_csp_UnEqual' is a specialization of 'BinaryOp'.
+The class 'simple_csp_Less' is a specialization of 'BinaryOp'.
+The class 'simple_csp_LessEqual' is a specialization of 'BinaryOp'.
+The class 'simple_csp_Greater' is a specialization of 'BinaryOp'.
+The class 'simple_csp_GreaterEqual' is a specialization of 'BinaryOp'.
+The class 'simple_csp_Minus' is a specialization of 'BinaryOp'.
+The class 'simple_csp_Plus' is a specialization of 'BinaryOp'.
+The class 'simple_csp_Times' is a specialization of 'BinaryOp'.
+The class 'simple_csp_Power' is a specialization of 'BinaryOp'.
+The class 'simple_csp_Sum' is a specialization of 'SetOp'.
+The class 'simple_csp_Min' is a specialization of 'SetOp'.
+The class 'simple_csp_Max' is a specialization of 'SetOp'.
+The class 'simple_csp_VarOccurence' is a specialization of 'Expression'.
+The class 'simple_csp_BooleanLiteral' is a specialization of 'Expression'.
+The class 'simple_csp_TrueValue' is a specialization of 'BooleanLiteral'.
+The class 'simple_csp_FalseValue' is a specialization of 'BooleanLiteral'.
+The class 'simple_csp_Goal' is a specialization of 'NamedElement'.
+The class 'simple_csp_MaximizeGoal' is a specialization of 'Goal'.
+The class 'simple_csp_MinimizeGoal' is a specialization of 'Goal'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simple_csp_Problem' and 'simple_csp_Domain'. From 'simple_csp_Problem', the role 'simple_csp_Problem' has cardinality 0..*, and from 'simple_csp_Domain', the role 'simple_csp_Domain' has cardinality 0..*.
+An association connects 'simple_csp_Variable' and 'simple_csp_Problem'. From 'simple_csp_Variable', the role 'simple_csp_Variable' has cardinality 0..*, and from 'simple_csp_Problem', the role 'simple_csp_Problem2' has cardinality 0..*.
+An association connects 'simple_csp_Constraint' and 'simple_csp_Problem'. From 'simple_csp_Constraint', the role 'simple_csp_Constraint' has cardinality 0..*, and from 'simple_csp_Problem', the role 'simple_csp_Problem4' has cardinality 0..*.
+An association connects 'simple_csp_Problem' and 'simple_csp_Goal'. From 'simple_csp_Problem', the role 'simple_csp_Problem6' has cardinality 0..*, and from 'simple_csp_Goal', the role 'simple_csp_Goal' has cardinality 0..*.
+An association connects 'simple_csp_TypedElement' and 'simple_csp_Domain'. From 'simple_csp_TypedElement', the role 'simple_csp_TypedElement' has cardinality 0..*, and from 'simple_csp_Domain', the role 'simple_csp_Domain8' has cardinality 0..*.
+An association connects 'simple_csp_Expression' and 'simple_csp_Constraint'. From 'simple_csp_Expression', the role 'simple_csp_Expression' has cardinality 0..*, and from 'simple_csp_Constraint', the role 'simple_csp_Constraint10' has cardinality 0..*.
+An association connects 'simple_csp_SetOp' and 'simple_csp_Expression'. From 'simple_csp_SetOp', the role 'simple_csp_SetOp' has cardinality 0..*, and from 'simple_csp_Expression', the role 'simple_csp_Expression12' has cardinality 0..*.
+An association connects 'simple_csp_Expression' and 'simple_csp_BinaryOp'. From 'simple_csp_Expression', the role 'simple_csp_Expression14' has cardinality 0..*, and from 'simple_csp_BinaryOp', the role 'simple_csp_BinaryOp' has cardinality 0..*.
+An association connects 'simple_csp_Expression' and 'simple_csp_BinaryOp'. From 'simple_csp_Expression', the role 'simple_csp_Expression17' has cardinality 0..*, and from 'simple_csp_BinaryOp', the role 'simple_csp_BinaryOp16' has cardinality 0..*.
+An association connects 'simple_csp_UnaryOp' and 'simple_csp_Expression'. From 'simple_csp_UnaryOp', the role 'simple_csp_UnaryOp' has cardinality 0..*, and from 'simple_csp_Expression', the role 'simple_csp_Expression19' has cardinality 0..*.
+An association connects 'simple_csp_Variable' and 'simple_csp_VarOccurence'. From 'simple_csp_Variable', the role 'simple_csp_Variable21' has cardinality 0..*, and from 'simple_csp_VarOccurence', the role 'simple_csp_VarOccurence' has cardinality 0..*.
+An association connects 'simple_csp_Expression' and 'simple_csp_Goal'. From 'simple_csp_Expression', the role 'simple_csp_Expression24' has cardinality 0..*, and from 'simple_csp_Goal', the role 'simple_csp_Goal23' has cardinality 0..*.

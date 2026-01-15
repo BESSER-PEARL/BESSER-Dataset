@@ -1,0 +1,20 @@
+The domain model 'FaultyRelations' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'FaultyRelations_B' represents an important domain concept.
+It has the following attributes: 'y', which is of type int; 'x', which is of type int.
+
+'FaultyRelations_C' represents an important domain concept.
+It has one attribute: 'u', which is of type int.
+
+'FaultyRelations_A' represents an important domain concept.
+It has the following attributes: 'w', which is of type bool; 'v', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'FaultyRelations_A' and 'FaultyRelations_B'. From 'FaultyRelations_A', the role 'BA' has cardinality 0..*, and from 'FaultyRelations_B', the role 'B' has cardinality 0..*.
+An association connects 'FaultyRelations_C' and 'FaultyRelations_A'. From 'FaultyRelations_C', the role 'C' has cardinality 0..*, and from 'FaultyRelations_A', the role 'CA' has cardinality 0..*.
+An association connects 'FaultyRelations_A' and 'FaultyRelations_B'. From 'FaultyRelations_A', the role 'A' has cardinality 0..*, and from 'FaultyRelations_B', the role 'AB' has cardinality 0..*.
+An association connects 'FaultyRelations_C' and 'FaultyRelations_B'. From 'FaultyRelations_C', the role 'C4' has cardinality 0..*, and from 'FaultyRelations_B', the role 'CB' has cardinality 0..*.
+An association connects 'FaultyRelations_C' and 'FaultyRelations_A'. From 'FaultyRelations_C', the role 'AC' has cardinality 0..*, and from 'FaultyRelations_A', the role 'A6' has cardinality 0..*.
+An association connects 'FaultyRelations_B' and 'FaultyRelations_C'. From 'FaultyRelations_B', the role 'B8' has cardinality 0..*, and from 'FaultyRelations_C', the role 'BC' has cardinality 0..*.

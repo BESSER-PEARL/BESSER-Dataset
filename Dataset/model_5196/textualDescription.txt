@@ -1,0 +1,28 @@
+The domain model 'source' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'source_C' represents an important domain concept.
+It does not declare any attributes.
+
+'C' represents an important domain concept.
+It does not declare any attributes.
+
+'source_B' represents an important domain concept.
+It does not declare any attributes.
+
+'source_A' represents an important domain concept.
+It does not declare any attributes.
+
+'source_D' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'source_B' is a specialization of 'C'.
+The class 'source_D' is a specialization of 'B'.
+
+Relationships between classes are modeled using associations.
+An association connects 'source_A' and 'source_B'. From 'source_A', the role 'source_A' has cardinality 0..*, and from 'source_B', the role 'source_B' has cardinality 0..*.

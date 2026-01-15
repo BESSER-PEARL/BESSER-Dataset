@@ -1,0 +1,127 @@
+The domain model 'application' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'application_MashupContainer' represents an important domain concept.
+It has the following attributes: 'backupIntervall', which is of type str; 'immediateSave', which is of type str; 'createAccountsAtLoginTry', which is of type str; 'backupConfiguration', which is of type str; 'identCounter', which is of type str.
+
+'application_Interface' represents an important domain concept.
+It has the following attributes: 'frontEndCaching', which is of type str; 'urlSuffix', which is of type str.
+
+'Source' represents an important domain concept.
+It does not declare any attributes.
+
+'application_Database' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'application_Mashup' represents an important domain concept.
+It has the following attributes: 'cacheDataSet', which is of type str; 'cacheAttachments', which is of type str; 'keepDeletedItemsList', which is of type str; 'cacheDelay', which is of type str; 'sourceIdentCounter', which is of type str; 'workingDirectory', which is of type str; 'backupIntervall', which is of type str; 'backupDataSet', which is of type str.
+
+'application_MashupAdmin' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isConfigurationAdmin', which is of type str; 'email', which is of type str; 'provider', which is of type str; 'id', which is of type str; 'profileImage', which is of type str; 'localIdent', which is of type str.
+
+'Persistency' represents an important domain concept.
+It does not declare any attributes.
+
+'ConfigurableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'application_FEEDInterface' represents an important domain concept.
+It has the following attributes: 'allowOrganisationFiltering', which is of type str; 'allowCategoryFiltering', which is of type str; 'allowMetaTagFiltering', which is of type str; 'allowPersonFiltering', which is of type str; 'feedTitle', which is of type str; 'allowTypeFiltering', which is of type str; 'allowTagFiltering', which is of type str; 'language', which is of type str; 'feedType', which is of type str.
+
+'application_OCLRestrictedProperty' represents an important domain concept.
+It has one attribute: 'OCLRestriction', which is of type str.
+
+'application_RESTInterface' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'application_OAuthClientConfig' represents an important domain concept.
+It has the following attributes: 'accessTokenExpirationDate', which is of type date; 'clientID', which is of type str; 'clientSecret', which is of type str; 'forbiddenMetaTags', which is of type str; 'description', which is of type str; 'refreshToken', which is of type str; 'redirectionURL', which is of type str; 'accessToken', which is of type str; 'grantType', which is of type str; 'oAuthScopeLevel', which is of type str; 'accessTokenCreationDate', which is of type date; 'code', which is of type str; 'name', which is of type str; 'type', which is of type str; 'allowedMetaTags', which is of type str.
+
+'application_OAuthConfig' represents an important domain concept.
+It has one attribute: 'useScopeInterfaceOnRedirect', which is of type str.
+
+'application_OAuthAdmin' represents an important domain concept.
+It has the following attributes: 'passwordHash', which is of type str; 'username', which is of type str.
+
+'application_OAuthClientScope' represents an important domain concept.
+It has the following attributes: 'allowContents', which is of type str; 'positivePerson', which is of type str; 'negativeCategory', which is of type str; 'negativePerson', which is of type str; 'positiveCategory', which is of type str; 'allowPersons', which is of type str; 'negativeTag', which is of type str; 'negativeMetaTag', which is of type str; 'positiveOrganisation', which is of type str; 'negativeOrganisation', which is of type str; 'identSpecification', which is of type str; 'positiveTag', which is of type str; 'maximumAge', which is of type str; 'positiveMetaTag', which is of type str; 'allowOrganisations', which is of type str.
+
+'application_Configuration' represents an important domain concept.
+It does not declare any attributes.
+
+'application_Property' represents an important domain concept.
+It has the following attributes: 'required', which is of type str; 'changeable', which is of type str; 'Value', which is of type str; 'helpText', which is of type str; 'hidden', which is of type str; 'Key', which is of type str; 'propertyType', which is of type str; 'possibleValues', which is of type str.
+
+'application_Source' represents an important domain concept.
+It has the following attributes: 'activeState', which is of type str; 'removeDataOnStop', which is of type str; 'logLevel', which is of type str; 'bundleId', which is of type str; 'state', which is of type str; 'updateRound', which is of type str.
+
+'application_ConfigurableElement' represents an important domain concept.
+It has the following attributes: 'hidden', which is of type str; 'changeable', which is of type str; 'ident', which is of type str; 'description', which is of type str; 'name', which is of type str; 'configurationImage', which is of type str.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'application_XMLFile' represents an important domain concept.
+It does not declare any attributes.
+
+'application_MappingRule' represents an important domain concept.
+It does not declare any attributes.
+
+'application_Persistency' represents an important domain concept.
+It does not declare any attributes.
+
+'application_ApplicationKeyConfig' represents an important domain concept.
+It has one attribute: 'applicationKeys', which is of type str.
+
+'application_DataSet' represents an important domain concept.
+It does not declare any attributes.
+
+'application_Security' represents an important domain concept.
+It does not declare any attributes.
+
+'Security' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SourceState' defines the following possible values: 'Active', 'Stoped', 'Paused', 'Error'.
+The enumeration 'PropertyTypes' defines the following possible values: 'Date', 'Authorization', 'Boolean', 'UploadFile', 'String', 'Integer', 'Float', 'UploadZipFile'.
+The enumeration 'SourceActiveStates' defines the following possible values: 'Initialized', 'Updating', 'Initializing', 'Filling', 'Filled', 'Unknown', 'Enriching', 'WaitingForUpdate'.
+
+The model also captures inheritance relationships between classes.
+The class 'application_Source' is a specialization of 'ConfigurableElement'.
+The class 'application_Mashup' is a specialization of 'Source'.
+The class 'application_XMLFile' is a specialization of 'Persistency'.
+The class 'application_Database' is a specialization of 'Persistency'.
+The class 'application_OCLRestrictedProperty' is a specialization of 'Property'.
+The class 'application_Interface' is a specialization of 'ConfigurableElement'.
+The class 'application_RESTInterface' is a specialization of 'Interface'.
+The class 'application_FEEDInterface' is a specialization of 'Interface'.
+The class 'application_OAuthConfig' is a specialization of 'Security'.
+The class 'application_ApplicationKeyConfig' is a specialization of 'Security'.
+
+Relationships between classes are modeled using associations.
+An association connects 'application_Source' and 'application_Persistency'. From 'application_Source', the role 'application_Source' has cardinality 0..*, and from 'application_Persistency', the role 'application_Persistency' has cardinality 0..*.
+An association connects 'application_DataSet' and 'application_Source'. From 'application_DataSet', the role 'application_DataSet' has cardinality 0..*, and from 'application_Source', the role 'application_Source2' has cardinality 0..*.
+An association connects 'application_Mashup' and 'application_Source'. From 'application_Mashup', the role 'Mashup' has cardinality 0..*, and from 'application_Source', the role 'sources' has cardinality 0..*.
+An association connects 'application_Mashup' and 'application_MappingRule'. From 'application_Mashup', the role 'application_Mashup' has cardinality 0..*, and from 'application_MappingRule', the role 'application_MappingRule' has cardinality 0..*.
+An association connects 'application_Source' and 'application_Mashup'. From 'application_Source', the role 'Source' has cardinality 0..*, and from 'application_Mashup', the role 'mashup' has cardinality 0..*.
+An association connects 'application_Mashup' and 'application_Interface'. From 'application_Mashup', the role 'mashup7' has cardinality 0..*, and from 'application_Interface', the role 'Interface' has cardinality 0..*.
+An association connects 'application_MashupAdmin' and 'application_Mashup'. From 'application_MashupAdmin', the role 'MashupAdmin' has cardinality 0..*, and from 'application_Mashup', the role 'configurableMashups' has cardinality 0..*.
+An association connects 'application_Configuration' and 'application_Property'. From 'application_Configuration', the role 'application_Configuration' has cardinality 0..*, and from 'application_Property', the role 'application_Property' has cardinality 0..*.
+An association connects 'application_MashupContainer' and 'application_Mashup'. From 'application_MashupContainer', the role 'application_MashupContainer' has cardinality 0..*, and from 'application_Mashup', the role 'application_Mashup11' has cardinality 0..*.
+An association connects 'application_MashupContainer' and 'application_MashupAdmin'. From 'application_MashupContainer', the role 'application_MashupContainer13' has cardinality 0..*, and from 'application_MashupAdmin', the role 'application_MashupAdmin' has cardinality 0..*.
+An association connects 'application_MashupContainer' and 'application_Mashup'. From 'application_MashupContainer', the role 'application_MashupContainer15' has cardinality 0..*, and from 'application_Mashup', the role 'application_Mashup16' has cardinality 0..*.
+An association connects 'application_Mashup' and 'application_MashupContainer'. From 'application_Mashup', the role 'application_Mashup19' has cardinality 0..*, and from 'application_MashupContainer', the role 'application_MashupContainer18' has cardinality 0..*.
+An association connects 'application_MashupContainer' and 'application_Interface'. From 'application_MashupContainer', the role 'application_MashupContainer21' has cardinality 0..*, and from 'application_Interface', the role 'application_Interface' has cardinality 0..*.
+An association connects 'application_Security' and 'application_Interface'. From 'application_Security', the role 'Security' has cardinality 0..*, and from 'application_Interface', the role 'interface' has cardinality 0..*.
+An association connects 'application_Interface' and 'application_Mashup'. From 'application_Interface', the role 'interfaces' has cardinality 0..*, and from 'application_Mashup', the role 'Mashup24' has cardinality 0..*.
+An association connects 'application_Security' and 'application_Interface'. From 'application_Security', the role 'security' has cardinality 0..*, and from 'application_Interface', the role 'Interface26' has cardinality 0..*.
+An association connects 'application_OAuthClientConfig' and 'application_OAuthConfig'. From 'application_OAuthClientConfig', the role 'application_OAuthClientConfig' has cardinality 0..*, and from 'application_OAuthConfig', the role 'application_OAuthConfig' has cardinality 0..*.
+An association connects 'application_OAuthAdmin' and 'application_OAuthConfig'. From 'application_OAuthAdmin', the role 'application_OAuthAdmin' has cardinality 0..*, and from 'application_OAuthConfig', the role 'application_OAuthConfig29' has cardinality 0..*.
+An association connects 'application_OAuthClientConfig' and 'application_OAuthClientScope'. From 'application_OAuthClientConfig', the role 'application_OAuthClientConfig31' has cardinality 0..*, and from 'application_OAuthClientScope', the role 'application_OAuthClientScope' has cardinality 0..*.
+An association connects 'application_Mashup' and 'application_MashupAdmin'. From 'application_Mashup', the role 'Mashup33' has cardinality 0..*, and from 'application_MashupAdmin', the role 'mashupAdmins' has cardinality 0..*.
+An association connects 'application_ConfigurableElement' and 'application_Configuration'. From 'application_ConfigurableElement', the role 'application_ConfigurableElement' has cardinality 0..*, and from 'application_Configuration', the role 'application_Configuration35' has cardinality 0..*.

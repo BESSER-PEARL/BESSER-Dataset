@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/max-leuthaeuser/SCROLL/core/src/main/resources/crom_l1_composed.ecore

@@ -1,0 +1,38 @@
+The domain model 'sbase' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'sbase_SRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'sbase_SElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sbase_Y' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sbase_X' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sbase_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'SElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sbase_Z' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'sbase_X' is a specialization of 'SElement'.
+The class 'sbase_Y' is a specialization of 'SElement'.
+The class 'sbase_Z' is a specialization of 'SElement'.
+The class 'sbase_SRoot' is a specialization of 'SElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sbase_Y' and 'sbase_X'. From 'sbase_Y', the role 'Y' has cardinality 0..*, and from 'sbase_X', the role 'toX' has cardinality 0..*.
+An association connects 'sbase_Z' and 'sbase_Y'. From 'sbase_Z', the role 'Z' has cardinality 0..*, and from 'sbase_Y', the role 'toY' has cardinality 0..*.
+An association connects 'sbase_X' and 'sbase_Y'. From 'sbase_X', the role 'X' has cardinality 0..*, and from 'sbase_Y', the role 'ownsY' has cardinality 0..*.
+An association connects 'sbase_Y' and 'sbase_Z'. From 'sbase_Y', the role 'Y4' has cardinality 0..*, and from 'sbase_Z', the role 'ownsZ' has cardinality 0..*.
+An association connects 'sbase_SRoot' and 'sbase_X'. From 'sbase_SRoot', the role 'sbase_SRoot' has cardinality 0..*, and from 'sbase_X', the role 'sbase_X' has cardinality 0..*.
+An association connects 'sbase_SElement' and 'sbase_EObject'. From 'sbase_SElement', the role 'sbase_SElement' has cardinality 0..*, and from 'sbase_EObject', the role 'sbase_EObject' has cardinality 0..*.

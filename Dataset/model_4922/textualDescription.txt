@@ -1,0 +1,206 @@
+The domain model 'dsml' describes the core structural elements and their relationships within the system.
+
+The model defines 52 main class(es).
+
+'Form' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_Required' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_Link' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'dsml_web_ListField' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_EmailValidator' represents an important domain concept.
+It does not declare any attributes.
+
+'Item' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_Page' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'title', which is of type str.
+
+'dsml_web_Field' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_PasswordField' represents an important domain concept.
+It has the following attributes: 'size', which is of type int; 'maxlength', which is of type int.
+
+'dsml_web_Item' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'dsml_web_Website' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsml_web_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_BetweenValidator' represents an important domain concept.
+It has the following attributes: 'valueL', which is of type int; 'valueG', which is of type int.
+
+'dsml_web_LessThanValidator' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'Field' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_CheckBox' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_SubmitButton' represents an important domain concept.
+It does not declare any attributes.
+
+'Validator' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_RegexValidator' represents an important domain concept.
+It has one attribute: 'regex', which is of type str.
+
+'dsml_web_Error' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_TypeValidator' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'dsml_web_FormElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'dsml_web_Validator' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_visitor_ResourceVisitor' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_StringLengthValidator' represents an important domain concept.
+It has the following attributes: 'min', which is of type int; 'max', which is of type int.
+
+'dsml_web_URLValidator' represents an important domain concept.
+It does not declare any attributes.
+
+'Page' represents an important domain concept.
+It does not declare any attributes.
+
+'Text' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_Text' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'dsml_visitor_JSPVisitor' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_visitor_Visitor' represents an important domain concept.
+It has one attribute: 'tag', which is of type str.
+
+'dsml_web_GreaterThanValidator' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'dsml_web_TextField' represents an important domain concept.
+It has the following attributes: 'maxlength', which is of type int; 'size', which is of type int.
+
+'dsml_web_Hidden' represents an important domain concept.
+It does not declare any attributes.
+
+'Error' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_Button' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_Select' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+'FormElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_TextArea' represents an important domain concept.
+It has the following attributes: 'rows', which is of type int; 'cols', which is of type int.
+
+'Success' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_TimeValidator' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_Success' represents an important domain concept.
+It does not declare any attributes.
+
+'Visitor' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_visitor_POJOVisitor' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_CancelButton' represents an important domain concept.
+It does not declare any attributes.
+
+'Button' represents an important domain concept.
+It does not declare any attributes.
+
+'ListField' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_ResetButton' represents an important domain concept.
+It does not declare any attributes.
+
+'Link' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_DateValidator' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_RadioButton' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_web_Form' represents an important domain concept.
+It has one attribute: 'action', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Type' defines the following possible values: 'float', 'int'.
+
+The model also captures inheritance relationships between classes.
+The class 'dsml_web_Field' is a specialization of 'FormElement'.
+The class 'dsml_web_TextField' is a specialization of 'Field'.
+The class 'dsml_web_PasswordField' is a specialization of 'Field'.
+The class 'dsml_web_Label' is a specialization of 'FormElement'.
+The class 'dsml_web_Button' is a specialization of 'FormElement'.
+The class 'dsml_web_RadioButton' is a specialization of 'ListField'.
+The class 'dsml_web_CheckBox' is a specialization of 'FormElement'.
+The class 'dsml_web_SubmitButton' is a specialization of 'Button'.
+The class 'dsml_web_CancelButton' is a specialization of 'Button'.
+The class 'dsml_web_Select' is a specialization of 'ListField'.
+The class 'dsml_web_ListField' is a specialization of 'FormElement'.
+The class 'dsml_web_TextArea' is a specialization of 'Field'.
+The class 'dsml_web_ResetButton' is a specialization of 'Button'.
+The class 'dsml_web_Hidden' is a specialization of 'FormElement'.
+The class 'dsml_web_DateValidator' is a specialization of 'Validator'.
+The class 'dsml_web_EmailValidator' is a specialization of 'Validator'.
+The class 'dsml_web_Required' is a specialization of 'Validator'.
+The class 'dsml_web_TimeValidator' is a specialization of 'Validator'.
+The class 'dsml_web_URLValidator' is a specialization of 'Validator'.
+The class 'dsml_web_TypeValidator' is a specialization of 'Validator'.
+The class 'dsml_web_GreaterThanValidator' is a specialization of 'Validator'.
+The class 'dsml_web_LessThanValidator' is a specialization of 'Validator'.
+The class 'dsml_web_BetweenValidator' is a specialization of 'Validator'.
+The class 'dsml_web_RegexValidator' is a specialization of 'Validator'.
+The class 'dsml_web_StringLengthValidator' is a specialization of 'Validator'.
+The class 'dsml_visitor_JSPVisitor' is a specialization of 'Visitor'.
+The class 'dsml_visitor_ResourceVisitor' is a specialization of 'Visitor'.
+The class 'dsml_visitor_POJOVisitor' is a specialization of 'Visitor'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Page' and 'dsml_web_Website'. From 'Page', the role 'Page' has cardinality 0..*, and from 'dsml_web_Website', the role 'dsml_web_Website' has cardinality 0..*.
+An association connects 'dsml_web_Page' and 'Form'. From 'dsml_web_Page', the role 'dsml_web_Page' has cardinality 0..*, and from 'Form', the role 'Form' has cardinality 0..*.
+An association connects 'Text' and 'dsml_web_Page'. From 'Text', the role 'Text' has cardinality 0..*, and from 'dsml_web_Page', the role 'dsml_web_Page3' has cardinality 0..*.
+An association connects 'dsml_web_Page' and 'Link'. From 'dsml_web_Page', the role 'dsml_web_Page5' has cardinality 0..*, and from 'Link', the role 'Link' has cardinality 0..*.
+An association connects 'Validator' and 'dsml_web_Field'. From 'Validator', the role 'Validator' has cardinality 0..*, and from 'dsml_web_Field', the role 'dsml_web_Field' has cardinality 0..*.
+An association connects 'Item' and 'dsml_web_ListField'. From 'Item', the role 'Item' has cardinality 0..*, and from 'dsml_web_ListField', the role 'dsml_web_ListField' has cardinality 0..*.
+An association connects 'Page' and 'dsml_web_Link'. From 'Page', the role 'Page9' has cardinality 0..*, and from 'dsml_web_Link', the role 'dsml_web_Link' has cardinality 0..*.
+An association connects 'dsml_web_Form' and 'FormElement'. From 'dsml_web_Form', the role 'dsml_web_Form' has cardinality 0..*, and from 'FormElement', the role 'FormElement' has cardinality 0..*.
+An association connects 'dsml_web_Form' and 'Success'. From 'dsml_web_Form', the role 'dsml_web_Form12' has cardinality 0..*, and from 'Success', the role 'Success' has cardinality 0..*.
+An association connects 'dsml_web_Form' and 'Error'. From 'dsml_web_Form', the role 'dsml_web_Form14' has cardinality 0..*, and from 'Error', the role 'Error' has cardinality 0..*.
+An association connects 'dsml_web_Success' and 'Page'. From 'dsml_web_Success', the role 'dsml_web_Success' has cardinality 0..*, and from 'Page', the role 'Page16' has cardinality 0..*.
+An association connects 'Page' and 'dsml_web_Error'. From 'Page', the role 'Page18' has cardinality 0..*, and from 'dsml_web_Error', the role 'dsml_web_Error' has cardinality 0..*.

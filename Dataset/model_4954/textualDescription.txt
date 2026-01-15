@@ -1,0 +1,18 @@
+The domain model 'positionmm' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'positionmm_Counter' represents an important domain concept.
+It has the following attributes: 'position', which is of type int; 'script', which is of type str.
+
+'positionmm_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TypeScript' defines the following possible values: 'PostinstScript', 'PostrmScript', 'PreinstScript', 'PrermScript'.
+
+The model also captures inheritance relationships between classes.
+The class 'positionmm_Counter' is a specialization of 'NamedElement'.

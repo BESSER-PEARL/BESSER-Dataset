@@ -1,0 +1,32 @@
+The domain model 'nocollectionowner' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'nocollectionowner_Product' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str; 'number', which is of type str.
+
+'nocollectionowner_Customer' represents an important domain concept.
+It has the following attributes: 'familyName', which is of type str; 'surname', which is of type str; 'comments', which is of type str; 'hotel', which is of type str; 'address', which is of type str; 'telephoneNr', which is of type str.
+
+'nocollectionowner_Order' represents an important domain concept.
+It has the following attributes: 'number', which is of type str; 'comments', which is of type str.
+
+'nocollectionowner_PriceCategory' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'prices', which is of type float.
+
+'nocollectionowner_Transaction' represents an important domain concept.
+It has the following attributes: 'startDate', which is of type date; 'endDate', which is of type date; 'price', which is of type float; 'paidDate', which is of type date; 'number', which is of type str.
+
+'nocollectionowner_ProductCategory' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'nocollectionowner_Product' and 'nocollectionowner_ProductCategory'. From 'nocollectionowner_Product', the role 'products' has cardinality 0..*, and from 'nocollectionowner_ProductCategory', the role 'ProductCategory' has cardinality 0..*.
+An association connects 'nocollectionowner_PriceCategory' and 'nocollectionowner_Product'. From 'nocollectionowner_PriceCategory', the role 'nocollectionowner_PriceCategory' has cardinality 0..*, and from 'nocollectionowner_Product', the role 'nocollectionowner_Product' has cardinality 0..*.
+An association connects 'nocollectionowner_ProductCategory' and 'nocollectionowner_Product'. From 'nocollectionowner_ProductCategory', the role 'productCategory' has cardinality 0..*, and from 'nocollectionowner_Product', the role 'Product' has cardinality 0..*.
+An association connects 'nocollectionowner_ProductCategory' and 'nocollectionowner_ProductCategory'. From 'nocollectionowner_ProductCategory', the role 'parent' has cardinality 0..*, and from 'nocollectionowner_ProductCategory', the role 'ProductCategory5' has cardinality 0..*.
+An association connects 'nocollectionowner_ProductCategory' and 'nocollectionowner_ProductCategory'. From 'nocollectionowner_ProductCategory', the role 'subCategorys' has cardinality 0..*, and from 'nocollectionowner_ProductCategory', the role 'ProductCategory8' has cardinality 0..*.
+An association connects 'nocollectionowner_Transaction' and 'nocollectionowner_Order'. From 'nocollectionowner_Transaction', the role 'Transaction' has cardinality 0..*, and from 'nocollectionowner_Order', the role 'order' has cardinality 0..*.
+An association connects 'nocollectionowner_Order' and 'nocollectionowner_Customer'. From 'nocollectionowner_Order', the role 'nocollectionowner_Order' has cardinality 0..*, and from 'nocollectionowner_Customer', the role 'nocollectionowner_Customer' has cardinality 0..*.
+An association connects 'nocollectionowner_Order' and 'nocollectionowner_Transaction'. From 'nocollectionowner_Order', the role 'Order' has cardinality 0..*, and from 'nocollectionowner_Transaction', the role 'transactions' has cardinality 0..*.
+An association connects 'nocollectionowner_Transaction' and 'nocollectionowner_Product'. From 'nocollectionowner_Transaction', the role 'nocollectionowner_Transaction' has cardinality 0..*, and from 'nocollectionowner_Product', the role 'nocollectionowner_Product13' has cardinality 0..*.

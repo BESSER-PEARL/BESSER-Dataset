@@ -1,0 +1,53 @@
+The domain model 'form' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'form_Formulario' represents an important domain concept.
+It does not declare any attributes.
+
+'form_SelectionList' represents an important domain concept.
+It has one attribute: 'multiple', which is of type bool.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Editable' represents an important domain concept.
+It does not declare any attributes.
+
+'form_textArea' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'form_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'form_Orden' represents an important domain concept.
+It does not declare any attributes.
+
+'form_option' represents an important domain concept.
+It has the following attributes: 'content', which is of type str; 'value', which is of type str.
+
+'form_Label' represents an important domain concept.
+It has the following attributes: 'content', which is of type str; 'for', which is of type str.
+
+'form_Editable' represents an important domain concept.
+It has the following attributes: 'disabled', which is of type bool; 'name', which is of type str.
+
+'form_Input' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'value', which is of type str; 'checked', which is of type bool.
+
+The model also captures inheritance relationships between classes.
+The class 'form_Label' is a specialization of 'Element'.
+The class 'form_Editable' is a specialization of 'Element'.
+The class 'form_Input' is a specialization of 'Editable'.
+The class 'form_SelectionList' is a specialization of 'Editable'.
+The class 'form_textArea' is a specialization of 'Editable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'form_Element' and 'form_Formulario'. From 'form_Element', the role 'form_Element' has cardinality 0..*, and from 'form_Formulario', the role 'form_Formulario' has cardinality 0..*.
+An association connects 'form_Orden' and 'form_Formulario'. From 'form_Orden', the role 'form_Orden' has cardinality 0..*, and from 'form_Formulario', the role 'form_Formulario2' has cardinality 0..*.
+An association connects 'form_Editable' and 'form_Label'. From 'form_Editable', the role 'form_Editable' has cardinality 0..*, and from 'form_Label', the role 'form_Label' has cardinality 0..*.
+An association connects 'form_option' and 'form_SelectionList'. From 'form_option', the role 'form_option' has cardinality 0..*, and from 'form_SelectionList', the role 'form_SelectionList' has cardinality 0..*.
+An association connects 'form_Element' and 'form_Orden'. From 'form_Element', the role 'Element' has cardinality 0..*, and from 'form_Orden', the role 'salientes' has cardinality 0..*.
+An association connects 'form_Element' and 'form_Orden'. From 'form_Element', the role 'Element7' has cardinality 0..*, and from 'form_Orden', the role 'entrantes' has cardinality 0..*.
+An association connects 'form_Element' and 'form_Orden'. From 'form_Element', the role 'origen' has cardinality 0..*, and from 'form_Orden', the role 'Orden' has cardinality 0..*.
+An association connects 'form_Orden' and 'form_Element'. From 'form_Orden', the role 'Orden10' has cardinality 0..*, and from 'form_Element', the role 'destino' has cardinality 0..*.

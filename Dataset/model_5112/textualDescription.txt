@@ -1,0 +1,33 @@
+The domain model 'demo1' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'demo1_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'demo1_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'demo1_TestExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'demo1_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'demo1_RuleExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'demo1_RatioExpression' represents an important domain concept.
+It has one attribute: 'ratio', which is of type int.
+
+'demo1_Category' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'demo1_Model' and 'demo1_Category'. From 'demo1_Model', the role 'demo1_Model' has cardinality 0..*, and from 'demo1_Category', the role 'demo1_Category' has cardinality 0..*.
+An association connects 'demo1_Model' and 'demo1_Rule'. From 'demo1_Model', the role 'demo1_Model2' has cardinality 0..*, and from 'demo1_Rule', the role 'demo1_Rule' has cardinality 0..*.
+An association connects 'demo1_Rule' and 'demo1_RuleExpression'. From 'demo1_Rule', the role 'demo1_Rule4' has cardinality 0..*, and from 'demo1_RuleExpression', the role 'demo1_RuleExpression' has cardinality 0..*.
+An association connects 'demo1_Rule' and 'demo1_EObject'. From 'demo1_Rule', the role 'demo1_Rule6' has cardinality 0..*, and from 'demo1_EObject', the role 'demo1_EObject' has cardinality 0..*.
+An association connects 'demo1_TestExpression' and 'demo1_RuleExpression'. From 'demo1_TestExpression', the role 'demo1_TestExpression' has cardinality 0..*, and from 'demo1_RuleExpression', the role 'demo1_RuleExpression8' has cardinality 0..*.
+An association connects 'demo1_RatioExpression' and 'demo1_RuleExpression'. From 'demo1_RatioExpression', the role 'demo1_RatioExpression' has cardinality 0..*, and from 'demo1_RuleExpression', the role 'demo1_RuleExpression10' has cardinality 0..*.
+An association connects 'demo1_Category' and 'demo1_TestExpression'. From 'demo1_Category', the role 'demo1_Category13' has cardinality 0..*, and from 'demo1_TestExpression', the role 'demo1_TestExpression12' has cardinality 0..*.

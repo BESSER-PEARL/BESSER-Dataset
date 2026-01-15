@@ -1,0 +1,28 @@
+The domain model 'sample' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'SampleClassInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'sample_SampleClassC' represents an important domain concept.
+It does not declare any attributes.
+
+'sample_SampleClassB' represents an important domain concept.
+It does not declare any attributes.
+
+'sample_SampleClassInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'sample_SampleClassA' represents an important domain concept.
+It has one attribute: 'sampleAttribute', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Tristate' defines the following possible values: 'TRUE', 'FALSE', 'UNDEFINED'.
+
+The model also captures inheritance relationships between classes.
+The class 'sample_SampleClassA' is a specialization of 'SampleClassInterface'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sample_SampleClassA' and 'sample_SampleClassC'. From 'sample_SampleClassA', the role 'sample_SampleClassA' has cardinality 0..*, and from 'sample_SampleClassC', the role 'sample_SampleClassC' has cardinality 0..*.
+An association connects 'sample_SampleClassC' and 'sample_SampleClassB'. From 'sample_SampleClassC', the role 'sample_SampleClassC2' has cardinality 0..*, and from 'sample_SampleClassB', the role 'sample_SampleClassB' has cardinality 0..*.

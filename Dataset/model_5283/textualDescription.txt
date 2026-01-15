@@ -1,0 +1,26 @@
+The domain model 'mnoq' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'mnoq_M' represents an important domain concept.
+It has one attribute: 'x', which is of type int.
+
+'mnoq_N' represents an important domain concept.
+It has one attribute: 'x', which is of type int.
+
+'mnoq_Q' represents an important domain concept.
+It has one attribute: 'x', which is of type int.
+
+'mnoq_Foo' represents an important domain concept.
+It does not declare any attributes.
+
+'mnoq_O' represents an important domain concept.
+It has one attribute: 'x', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'mnoq_Q' and 'mnoq_N'. From 'mnoq_Q', the role 'unnamed role' has cardinality 0..*, and from 'mnoq_N', the role '1' has cardinality 0..*.
+An association connects 'mnoq_M' and 'mnoq_N'. From 'mnoq_M', the role '4' has cardinality 0..*, and from 'mnoq_N', the role '3' has cardinality 0..*.
+An association connects 'mnoq_N' and 'mnoq_Q'. From 'mnoq_N', the role '6' has cardinality 0..*, and from 'mnoq_Q', the role '7' has cardinality 0..*.
+An association connects 'mnoq_N' and 'mnoq_Foo'. From 'mnoq_N', the role 'mnoq_N' has cardinality 0..*, and from 'mnoq_Foo', the role 'mnoq_Foo' has cardinality 0..*.
+An association connects 'mnoq_N' and 'mnoq_M'. From 'mnoq_N', the role '11' has cardinality 0..*, and from 'mnoq_M', the role '10' has cardinality 0..*.
+An association connects 'mnoq_M' and 'mnoq_O'. From 'mnoq_M', the role 'mnoq_M' has cardinality 0..*, and from 'mnoq_O', the role 'mnoq_O' has cardinality 0..*.

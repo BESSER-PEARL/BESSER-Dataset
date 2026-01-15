@@ -1,0 +1,121 @@
+The domain model 'archimate' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'archimate_Assessment' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Goal' represents an important domain concept.
+It does not declare any attributes.
+
+'StrategyElement' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Meaning' represents an important domain concept.
+It does not declare any attributes.
+
+'BusinessElement' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Stakeholder' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Outcome' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Requirement' represents an important domain concept.
+It does not declare any attributes.
+
+'Requirement' represents an important domain concept.
+It does not declare any attributes.
+
+'ActiveStructureElement' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_MotivationElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'refinementType', which is of type str; 'relationType', which is of type str.
+
+'MotivationElement' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Resource' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_BusinessProcess' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Principle' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_BusinessElement' represents an important domain concept.
+It has the following attributes: 'refinementType', which is of type str; 'relationType', which is of type str; 'name', which is of type str.
+
+'archimate_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_StrategyElement' represents an important domain concept.
+It has the following attributes: 'relationType', which is of type str; 'refinementType', which is of type str; 'name', which is of type str.
+
+'archimate_Driver' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_ActiveStructureElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'archimate_ArchimateDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'refinement' defines the following possible values: 'AND', 'OR'.
+The enumeration 'relationType' defines the following possible values: 'composition', 'association', 'realization', 'trigger', 'influences'.
+
+The model also captures inheritance relationships between classes.
+The class 'archimate_Stakeholder' is a specialization of 'ActiveStructureElement'.
+The class 'archimate_Meaning' is a specialization of 'MotivationElement'.
+The class 'archimate_Value' is a specialization of 'MotivationElement'.
+The class 'archimate_Driver' is a specialization of 'MotivationElement'.
+The class 'archimate_Assessment' is a specialization of 'MotivationElement'.
+The class 'archimate_Goal' is a specialization of 'MotivationElement'.
+The class 'archimate_Outcome' is a specialization of 'MotivationElement'.
+The class 'archimate_Principle' is a specialization of 'MotivationElement'.
+The class 'archimate_Requirement' is a specialization of 'MotivationElement'.
+The class 'archimate_Constraint' is a specialization of 'Requirement'.
+The class 'archimate_Resource' is a specialization of 'StrategyElement'.
+The class 'archimate_BusinessProcess' is a specialization of 'BusinessElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'archimate_ArchimateDiagram' and 'archimate_ActiveStructureElement'. From 'archimate_ArchimateDiagram', the role 'archimate_ArchimateDiagram' has cardinality 0..*, and from 'archimate_ActiveStructureElement', the role 'archimate_ActiveStructureElement' has cardinality 0..*.
+An association connects 'archimate_ArchimateDiagram' and 'archimate_MotivationElement'. From 'archimate_ArchimateDiagram', the role 'archimate_ArchimateDiagram2' has cardinality 0..*, and from 'archimate_MotivationElement', the role 'archimate_MotivationElement' has cardinality 0..*.
+An association connects 'archimate_ArchimateDiagram' and 'archimate_BusinessElement'. From 'archimate_ArchimateDiagram', the role 'archimate_ArchimateDiagram4' has cardinality 0..*, and from 'archimate_BusinessElement', the role 'archimate_BusinessElement' has cardinality 0..*.
+An association connects 'archimate_StrategyElement' and 'archimate_ArchimateDiagram'. From 'archimate_StrategyElement', the role 'archimate_StrategyElement' has cardinality 0..*, and from 'archimate_ArchimateDiagram', the role 'archimate_ArchimateDiagram6' has cardinality 0..*.
+An association connects 'archimate_ActiveStructureElement' and 'archimate_ActiveStructureElement'. From 'archimate_ActiveStructureElement', the role 'archimate_ActiveStructureElement7' has cardinality 0..*, and from 'archimate_ActiveStructureElement', the role 'archimate_ActiveStructureElement9' has cardinality 0..*.
+An association connects 'archimate_ActiveStructureElement' and 'archimate_MotivationElement'. From 'archimate_ActiveStructureElement', the role 'archimate_ActiveStructureElement11' has cardinality 0..*, and from 'archimate_MotivationElement', the role 'archimate_MotivationElement12' has cardinality 0..*.
+An association connects 'archimate_Meaning' and 'archimate_Stakeholder'. From 'archimate_Meaning', the role 'Meaning' has cardinality 0..*, and from 'archimate_Stakeholder', the role 'stakeholder' has cardinality 0..*.
+An association connects 'archimate_Stakeholder' and 'archimate_Value'. From 'archimate_Stakeholder', the role 'stakeholder15' has cardinality 0..*, and from 'archimate_Value', the role 'Value' has cardinality 0..*.
+An association connects 'archimate_MotivationElement' and 'archimate_MotivationElement'. From 'archimate_MotivationElement', the role 'archimate_MotivationElement16' has cardinality 0..*, and from 'archimate_MotivationElement', the role 'archimate_MotivationElement18' has cardinality 0..*.
+An association connects 'archimate_MotivationElement' and 'archimate_MotivationElement'. From 'archimate_MotivationElement', the role 'archimate_MotivationElement21' has cardinality 0..*, and from 'archimate_MotivationElement', the role 'archimate_MotivationElement19' has cardinality 0..*.
+An association connects 'archimate_MotivationElement' and 'archimate_MotivationElement'. From 'archimate_MotivationElement', the role 'archimate_MotivationElement24' has cardinality 0..*, and from 'archimate_MotivationElement', the role 'archimate_MotivationElement22' has cardinality 0..*.
+An association connects 'archimate_Meaning' and 'archimate_Stakeholder'. From 'archimate_Meaning', the role 'meaning' has cardinality 0..*, and from 'archimate_Stakeholder', the role 'Stakeholder' has cardinality 0..*.
+An association connects 'archimate_Value' and 'archimate_Stakeholder'. From 'archimate_Value', the role 'value' has cardinality 0..*, and from 'archimate_Stakeholder', the role 'Stakeholder27' has cardinality 0..*.
+An association connects 'archimate_Outcome' and 'archimate_Value'. From 'archimate_Outcome', the role 'Outcome' has cardinality 0..*, and from 'archimate_Value', the role 'value29' has cardinality 0..*.
+An association connects 'archimate_Goal' and 'archimate_Driver'. From 'archimate_Goal', the role 'Goal' has cardinality 0..*, and from 'archimate_Driver', the role 'driver' has cardinality 0..*.
+An association connects 'archimate_Driver' and 'archimate_Assessment'. From 'archimate_Driver', the role 'driver32' has cardinality 0..*, and from 'archimate_Assessment', the role 'Assessment' has cardinality 0..*.
+An association connects 'archimate_Goal' and 'archimate_Assessment'. From 'archimate_Goal', the role 'Goal34' has cardinality 0..*, and from 'archimate_Assessment', the role 'assessment' has cardinality 0..*.
+An association connects 'archimate_Assessment' and 'archimate_Driver'. From 'archimate_Assessment', the role 'assessment36' has cardinality 0..*, and from 'archimate_Driver', the role 'Driver' has cardinality 0..*.
+An association connects 'archimate_Goal' and 'archimate_Driver'. From 'archimate_Goal', the role 'goal' has cardinality 0..*, and from 'archimate_Driver', the role 'Driver38' has cardinality 0..*.
+An association connects 'archimate_Assessment' and 'archimate_Goal'. From 'archimate_Assessment', the role 'Assessment41' has cardinality 0..*, and from 'archimate_Goal', the role 'goal40' has cardinality 0..*.
+An association connects 'archimate_Goal' and 'archimate_Outcome'. From 'archimate_Goal', the role 'archimate_Goal' has cardinality 0..*, and from 'archimate_Outcome', the role 'archimate_Outcome' has cardinality 0..*.
+An association connects 'archimate_Value' and 'archimate_Outcome'. From 'archimate_Value', the role 'Value44' has cardinality 0..*, and from 'archimate_Outcome', the role 'outcome' has cardinality 0..*.
+An association connects 'archimate_Outcome' and 'archimate_Principle'. From 'archimate_Outcome', the role 'archimate_Outcome46' has cardinality 0..*, and from 'archimate_Principle', the role 'archimate_Principle' has cardinality 0..*.
+An association connects 'archimate_Requirement' and 'archimate_Outcome'. From 'archimate_Requirement', the role 'archimate_Requirement' has cardinality 0..*, and from 'archimate_Outcome', the role 'archimate_Outcome48' has cardinality 0..*.
+An association connects 'archimate_Requirement' and 'archimate_Goal'. From 'archimate_Requirement', the role 'archimate_Requirement50' has cardinality 0..*, and from 'archimate_Goal', the role 'archimate_Goal51' has cardinality 0..*.
+An association connects 'archimate_StrategyElement' and 'archimate_StrategyElement'. From 'archimate_StrategyElement', the role 'archimate_StrategyElement54' has cardinality 0..*, and from 'archimate_StrategyElement', the role 'archimate_StrategyElement52' has cardinality 0..*.
+An association connects 'archimate_StrategyElement' and 'archimate_MotivationElement'. From 'archimate_StrategyElement', the role 'archimate_StrategyElement56' has cardinality 0..*, and from 'archimate_MotivationElement', the role 'archimate_MotivationElement57' has cardinality 0..*.
+An association connects 'archimate_BusinessElement' and 'archimate_BusinessElement'. From 'archimate_BusinessElement', the role 'archimate_BusinessElement60' has cardinality 0..*, and from 'archimate_BusinessElement', the role 'archimate_BusinessElement58' has cardinality 0..*.
+An association connects 'archimate_BusinessElement' and 'archimate_MotivationElement'. From 'archimate_BusinessElement', the role 'archimate_BusinessElement62' has cardinality 0..*, and from 'archimate_MotivationElement', the role 'archimate_MotivationElement63' has cardinality 0..*.
+An association connects 'archimate_MotivationElement' and 'archimate_BusinessElement'. From 'archimate_MotivationElement', the role 'archimate_MotivationElement66' has cardinality 0..*, and from 'archimate_BusinessElement', the role 'archimate_BusinessElement65' has cardinality 0..*.
+An association connects 'archimate_BusinessElement' and 'archimate_BusinessElement'. From 'archimate_BusinessElement', the role 'archimate_BusinessElement69' has cardinality 0..*, and from 'archimate_BusinessElement', the role 'archimate_BusinessElement67' has cardinality 0..*.
+An association connects 'archimate_MotivationElement' and 'archimate_BusinessElement'. From 'archimate_MotivationElement', the role 'archimate_MotivationElement72' has cardinality 0..*, and from 'archimate_BusinessElement', the role 'archimate_BusinessElement71' has cardinality 0..*.

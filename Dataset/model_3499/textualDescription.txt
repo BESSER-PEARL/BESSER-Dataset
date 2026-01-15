@@ -1,0 +1,93 @@
+The domain model 'while' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'while_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'BoolExp' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'while_VarExp' represents an important domain concept.
+It does not declare any attributes.
+
+'while_Val' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'while_EqExp' represents an important domain concept.
+It does not declare any attributes.
+
+'while_If' represents an important domain concept.
+It does not declare any attributes.
+
+'while_Var' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'while_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'while_BinaryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'while_Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'while_AndExp' represents an important domain concept.
+It does not declare any attributes.
+
+'while_BoolExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'while_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'while_NEqExp' represents an important domain concept.
+It does not declare any attributes.
+
+'while_Ret' represents an important domain concept.
+It does not declare any attributes.
+
+'while_While' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'while_While' is a specialization of 'Statement'.
+The class 'while_If' is a specialization of 'Statement'.
+The class 'while_EqExp' is a specialization of 'BinaryExp'.
+The class 'while_EqExp' is a specialization of 'BoolExp'.
+The class 'while_NEqExp' is a specialization of 'BinaryExp'.
+The class 'while_NEqExp' is a specialization of 'BoolExp'.
+The class 'while_BinaryExp' is a specialization of 'Exp'.
+The class 'while_BoolExp' is a specialization of 'Exp'.
+The class 'while_AndExp' is a specialization of 'BinaryExp'.
+The class 'while_AndExp' is a specialization of 'BoolExp'.
+The class 'while_VarExp' is a specialization of 'Exp'.
+The class 'while_Assignment' is a specialization of 'Statement'.
+The class 'while_Ret' is a specialization of 'Statement'.
+The class 'while_Val' is a specialization of 'Exp'.
+
+Relationships between classes are modeled using associations.
+An association connects 'while_Statement' and 'while_Program'. From 'while_Statement', the role 'while_Statement' has cardinality 0..*, and from 'while_Program', the role 'while_Program' has cardinality 0..*.
+An association connects 'while_Program' and 'while_Var'. From 'while_Program', the role 'while_Program2' has cardinality 0..*, and from 'while_Var', the role 'while_Var' has cardinality 0..*.
+An association connects 'while_Val' and 'while_Program'. From 'while_Val', the role 'while_Val' has cardinality 0..*, and from 'while_Program', the role 'while_Program4' has cardinality 0..*.
+An association connects 'while_While' and 'while_BoolExp'. From 'while_While', the role 'while_While' has cardinality 0..*, and from 'while_BoolExp', the role 'while_BoolExp' has cardinality 0..*.
+An association connects 'while_While' and 'while_Statement'. From 'while_While', the role 'while_While7' has cardinality 0..*, and from 'while_Statement', the role 'while_Statement8' has cardinality 0..*.
+An association connects 'while_Statement' and 'while_Statement'. From 'while_Statement', the role 'while_Statement11' has cardinality 0..*, and from 'while_Statement', the role 'while_Statement9' has cardinality 0..*.
+An association connects 'while_BoolExp' and 'while_If'. From 'while_BoolExp', the role 'while_BoolExp13' has cardinality 0..*, and from 'while_If', the role 'while_If' has cardinality 0..*.
+An association connects 'while_Statement' and 'while_If'. From 'while_Statement', the role 'while_Statement16' has cardinality 0..*, and from 'while_If', the role 'while_If15' has cardinality 0..*.
+An association connects 'while_If' and 'while_Statement'. From 'while_If', the role 'while_If18' has cardinality 0..*, and from 'while_Statement', the role 'while_Statement19' has cardinality 0..*.
+An association connects 'while_BinaryExp' and 'while_Exp'. From 'while_BinaryExp', the role 'while_BinaryExp' has cardinality 0..*, and from 'while_Exp', the role 'while_Exp' has cardinality 0..*.
+An association connects 'while_BinaryExp' and 'while_Exp'. From 'while_BinaryExp', the role 'while_BinaryExp22' has cardinality 0..*, and from 'while_Exp', the role 'while_Exp23' has cardinality 0..*.
+An association connects 'while_VarExp' and 'while_Var'. From 'while_VarExp', the role 'while_VarExp' has cardinality 0..*, and from 'while_Var', the role 'while_Var25' has cardinality 0..*.
+An association connects 'while_Var' and 'while_Assignment'. From 'while_Var', the role 'while_Var27' has cardinality 0..*, and from 'while_Assignment', the role 'while_Assignment' has cardinality 0..*.
+An association connects 'while_Assignment' and 'while_Exp'. From 'while_Assignment', the role 'while_Assignment29' has cardinality 0..*, and from 'while_Exp', the role 'while_Exp30' has cardinality 0..*.
+An association connects 'while_Exp' and 'while_Ret'. From 'while_Exp', the role 'while_Exp32' has cardinality 0..*, and from 'while_Ret', the role 'while_Ret' has cardinality 0..*.

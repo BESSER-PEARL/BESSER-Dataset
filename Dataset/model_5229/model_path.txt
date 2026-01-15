@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/arnobl/kompren/kompren-examples/examples.strictEcore/src/test/java/model/sample1.ecore

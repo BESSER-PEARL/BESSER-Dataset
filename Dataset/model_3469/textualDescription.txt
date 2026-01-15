@@ -1,0 +1,75 @@
+The domain model 'featureModel' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'featureModel_Number' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'featureModel_NULL' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_Identifier' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'featureModel_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_Feature' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_UnaryOperation' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'featureModel_Constant' represents an important domain concept.
+It does not declare any attributes.
+
+'Constant' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_GroupedFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_SolitaryFeature' represents an important domain concept.
+It has one attribute: 'required', which is of type str.
+
+'featureModel_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_BinaryOperation' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'featureModel_Group' represents an important domain concept.
+It has one attribute: 'inclusive', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BinaryOperator' defines the following possible values: 'And', 'Higher', 'Or', 'Divide', 'Multiply', 'Equals', 'Add', 'Lower', 'Subtract'.
+The enumeration 'SolitaryType' defines the following possible values: 'Optional', 'Mandatory'.
+The enumeration 'SimpleType' defines the following possible values: 'double', 'String', 'nulltype', 'boolean', 'int'.
+The enumeration 'UnaryOperator' defines the following possible values: 'Not', 'Minus'.
+
+The model also captures inheritance relationships between classes.
+The class 'featureModel_SolitaryFeature' is a specialization of 'Feature'.
+The class 'featureModel_GroupedFeature' is a specialization of 'Feature'.
+The class 'featureModel_BinaryOperation' is a specialization of 'Expression'.
+The class 'featureModel_UnaryOperation' is a specialization of 'Expression'.
+The class 'featureModel_Constant' is a specialization of 'Expression'.
+The class 'featureModel_NULL' is a specialization of 'Constant'.
+The class 'featureModel_Number' is a specialization of 'Constant'.
+The class 'featureModel_Identifier' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'featureModel_Feature' and 'featureModel_Group'. From 'featureModel_Feature', the role 'featureModel_Feature' has cardinality 0..*, and from 'featureModel_Group', the role 'featureModel_Group' has cardinality 0..*.
+An association connects 'featureModel_Feature' and 'featureModel_SolitaryFeature'. From 'featureModel_Feature', the role 'featureModel_Feature2' has cardinality 0..*, and from 'featureModel_SolitaryFeature', the role 'featureModel_SolitaryFeature' has cardinality 0..*.
+An association connects 'featureModel_Expression' and 'featureModel_Feature'. From 'featureModel_Expression', the role 'featureModel_Expression' has cardinality 0..*, and from 'featureModel_Feature', the role 'featureModel_Feature4' has cardinality 0..*.
+An association connects 'featureModel_Feature' and 'featureModel_Model'. From 'featureModel_Feature', the role 'featureModel_Feature6' has cardinality 0..*, and from 'featureModel_Model', the role 'featureModel_Model' has cardinality 0..*.
+An association connects 'featureModel_Group' and 'featureModel_GroupedFeature'. From 'featureModel_Group', the role 'featureModel_Group8' has cardinality 0..*, and from 'featureModel_GroupedFeature', the role 'featureModel_GroupedFeature' has cardinality 0..*.
+An association connects 'featureModel_BinaryOperation' and 'featureModel_Expression'. From 'featureModel_BinaryOperation', the role 'featureModel_BinaryOperation' has cardinality 0..*, and from 'featureModel_Expression', the role 'featureModel_Expression10' has cardinality 0..*.
+An association connects 'featureModel_Expression' and 'featureModel_BinaryOperation'. From 'featureModel_Expression', the role 'featureModel_Expression13' has cardinality 0..*, and from 'featureModel_BinaryOperation', the role 'featureModel_BinaryOperation12' has cardinality 0..*.
+An association connects 'featureModel_Expression' and 'featureModel_UnaryOperation'. From 'featureModel_Expression', the role 'featureModel_Expression15' has cardinality 0..*, and from 'featureModel_UnaryOperation', the role 'featureModel_UnaryOperation' has cardinality 0..*.
+An association connects 'featureModel_Feature' and 'featureModel_Identifier'. From 'featureModel_Feature', the role 'featureModel_Feature17' has cardinality 0..*, and from 'featureModel_Identifier', the role 'featureModel_Identifier' has cardinality 0..*.

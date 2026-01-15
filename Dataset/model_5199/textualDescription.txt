@@ -1,0 +1,37 @@
+The domain model 'ModeleTp3' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'pack1_ModeleTp3_Int' represents an important domain concept.
+It does not declare any attributes.
+
+'ModeleTp3_pack1_A' represents an important domain concept.
+It does not declare any attributes.
+
+'ModeleTp3_Int' represents an important domain concept.
+It does not declare any attributes.
+
+'ModeleTp3_pack2_D' represents an important domain concept.
+It does not declare any attributes.
+
+'C' represents an important domain concept.
+It does not declare any attributes.
+
+'ModeleTp3_pack1_B' represents an important domain concept.
+It does not declare any attributes.
+
+'pack2_ModeleTp3_Int' represents an important domain concept.
+It does not declare any attributes.
+
+'ModeleTp3_pack2_C' represents an important domain concept.
+It does not declare any attributes.
+
+'ModeleTp3_pack2_E' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ModeleTp3_pack2_D' is a specialization of 'C'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pack1_ModeleTp3_Int' and 'ModeleTp3_pack1_A'. From 'pack1_ModeleTp3_Int', the role 'pack1_ModeleTp3_Int' has cardinality 0..*, and from 'ModeleTp3_pack1_A', the role 'ModeleTp3_pack1_A' has cardinality 0..*.
+An association connects 'pack2_ModeleTp3_Int' and 'ModeleTp3_pack2_E'. From 'pack2_ModeleTp3_Int', the role 'pack2_ModeleTp3_Int' has cardinality 0..*, and from 'ModeleTp3_pack2_E', the role 'ModeleTp3_pack2_E' has cardinality 0..*.

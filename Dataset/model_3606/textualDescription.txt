@@ -1,0 +1,12 @@
+The domain model 'panamaNeo4j' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'panamaNeo4j_Officer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'panamaNeo4j_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'panamaNeo4j_Officer' and 'panamaNeo4j_Entity'. From 'panamaNeo4j_Officer', the role 'panamaNeo4j_Officer' has cardinality 0..*, and from 'panamaNeo4j_Entity', the role 'panamaNeo4j_Entity' has cardinality 0..*.

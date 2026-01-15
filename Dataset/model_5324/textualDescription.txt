@@ -1,0 +1,39 @@
+The domain model 'myPackage' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'subsub_Bar' represents an important domain concept.
+It does not declare any attributes.
+
+'MyClass' represents an important domain concept.
+It does not declare any attributes.
+
+'myPackage_subsub_Bar' represents an important domain concept.
+It has one attribute: 's', which is of type str.
+
+'myPackage_AThirdClass' represents an important domain concept.
+It has one attribute: 'thirdAttribute', which is of type str.
+
+'myPackage_MyOtherClass' represents an important domain concept.
+It has one attribute: 'otherAttribute', which is of type str.
+
+'myPackage_MyClass' represents an important domain concept.
+It has one attribute: 'myAttribute', which is of type str.
+
+'myPackage_subPackage_Foo' represents an important domain concept.
+It does not declare any attributes.
+
+'subPackage_Foo' represents an important domain concept.
+It does not declare any attributes.
+
+'myPackage_subsub_Baz' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'myPackage_AThirdClass' is a specialization of 'MyClass'.
+The class 'myPackage_subPackage_Foo' is a specialization of 'MyClass'.
+The class 'myPackage_subsub_Baz' is a specialization of 'subsub_Bar'.
+The class 'myPackage_subsub_Baz' is a specialization of 'subPackage_Foo'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myPackage_MyClass' and 'myPackage_MyOtherClass'. From 'myPackage_MyClass', the role 'myPackage_MyClass' has cardinality 0..*, and from 'myPackage_MyOtherClass', the role 'myPackage_MyOtherClass' has cardinality 0..*.

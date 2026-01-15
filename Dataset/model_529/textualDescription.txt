@@ -1,0 +1,15 @@
+The domain model 'household' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'household_Member' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'household_Family' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'household_Family' and 'household_Member'. From 'household_Family', the role 'household_Family' has cardinality 0..*, and from 'household_Member', the role 'household_Member' has cardinality 0..*.
+An association connects 'household_Family' and 'household_Member'. From 'household_Family', the role 'household_Family2' has cardinality 0..*, and from 'household_Member', the role 'household_Member3' has cardinality 0..*.
+An association connects 'household_Member' and 'household_Family'. From 'household_Member', the role 'household_Member6' has cardinality 0..*, and from 'household_Family', the role 'household_Family5' has cardinality 0..*.
+An association connects 'household_Family' and 'household_Member'. From 'household_Family', the role 'household_Family8' has cardinality 0..*, and from 'household_Member', the role 'household_Member9' has cardinality 0..*.

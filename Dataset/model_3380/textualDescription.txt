@@ -1,0 +1,47 @@
+The domain model 'Selects' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'Selects_Aplicacion' represents an important domain concept.
+It does not declare any attributes.
+
+'Selects_Tabla' represents an important domain concept.
+It has one attribute: 'tabAlias', which is of type str.
+
+'Selects_Operando' represents an important domain concept.
+It has the following attributes: 'tabla', which is of type str; 'columna', which is of type str.
+
+'Selects_NamedElement' represents an important domain concept.
+It has one attribute: 'nombre', which is of type str.
+
+'Selects_Where' represents an important domain concept.
+It does not declare any attributes.
+
+'Selects_Select' represents an important domain concept.
+It does not declare any attributes.
+
+'Selects_Fichero' represents an important domain concept.
+It does not declare any attributes.
+
+'Selects_From' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Selects_Join' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Selects_Fichero' is a specialization of 'NamedElement'.
+The class 'Selects_Tabla' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Selects_Fichero' and 'Selects_Aplicacion'. From 'Selects_Fichero', the role 'Selects_Fichero' has cardinality 0..*, and from 'Selects_Aplicacion', the role 'Selects_Aplicacion' has cardinality 0..*.
+An association connects 'Selects_Select' and 'Selects_Fichero'. From 'Selects_Select', the role 'Selects_Select' has cardinality 0..*, and from 'Selects_Fichero', the role 'Selects_Fichero2' has cardinality 0..*.
+An association connects 'Selects_From' and 'Selects_Select'. From 'Selects_From', the role 'Selects_From' has cardinality 0..*, and from 'Selects_Select', the role 'Selects_Select4' has cardinality 0..*.
+An association connects 'Selects_Select' and 'Selects_Where'. From 'Selects_Select', the role 'Selects_Select6' has cardinality 0..*, and from 'Selects_Where', the role 'Selects_Where' has cardinality 0..*.
+An association connects 'Selects_Tabla' and 'Selects_From'. From 'Selects_Tabla', the role 'Selects_Tabla' has cardinality 0..*, and from 'Selects_From', the role 'Selects_From8' has cardinality 0..*.
+An association connects 'Selects_Where' and 'Selects_Join'. From 'Selects_Where', the role 'Selects_Where10' has cardinality 0..*, and from 'Selects_Join', the role 'Selects_Join' has cardinality 0..*.
+An association connects 'Selects_Join' and 'Selects_Operando'. From 'Selects_Join', the role 'Selects_Join12' has cardinality 0..*, and from 'Selects_Operando', the role 'Selects_Operando' has cardinality 0..*.
+An association connects 'Selects_Operando' and 'Selects_Join'. From 'Selects_Operando', the role 'Selects_Operando15' has cardinality 0..*, and from 'Selects_Join', the role 'Selects_Join14' has cardinality 0..*.

@@ -1,0 +1,320 @@
+The domain model 'prolog' describes the core structural elements and their relationships within the system.
+
+The model defines 78 main class(es).
+
+'prolog_expressions_Xor' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_directives_PredicateIndicator' represents an important domain concept.
+It has the following attributes: 'arity', which is of type int; 'name', which is of type str.
+
+'prolog_directives_Discontiguous' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_SoftCut' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_directives_Volatile' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_Term' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_True' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_LogicalOr' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_AtomicQuotedString' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'prolog_expressions_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_Fail' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_Equivalence' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_directives_Multifile' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_Unification' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_Is' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_LessThan' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_directives_Dynamic' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_directives_Public' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_Power' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_Fact' represents an important domain concept.
+It does not declare any attributes.
+
+'Directive' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_LogicalAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_PositiveNumber' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_Cut' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_GreaterThan' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_False' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_As' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_NumberEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_NotProvable' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_directives_Directive' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'prolog_expressions_ParticalUnification' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_StructuralEquivalenceNotProvable' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlPredicate' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_BinaryAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'Term' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_List' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_LessOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_SubDict' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_Clause' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_BinaryOr' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_Rdiv' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_EqualOrStandardOrderBefore' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_BitwiseNegation' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_StructuralEquivalence' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_ModuleCall' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_directives_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'Clause' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_Disequality' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_Mod' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_IntegerDivision' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_GreaterOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_NegativeNumber' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_BitwiseShiftLeft' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_Univ' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_NotUnifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_StandardOrderBefore' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_Multiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_ControlPredicate' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_AtomicNumber' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_Comment' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'prolog_expressions_StandardOrderAfter' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_EqualOrStandardOrderAfter' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_NonEqualNumber' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_expressions_Rem' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'prolog_CompoundTerm' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'PredicateIndicator' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'prolog_Comment' is a specialization of 'Clause'.
+The class 'prolog_Term' is a specialization of 'Expression'.
+The class 'prolog_CompoundTerm' is a specialization of 'Clause'.
+The class 'prolog_CompoundTerm' is a specialization of 'Term'.
+The class 'prolog_AtomicNumber' is a specialization of 'Term'.
+The class 'prolog_AtomicQuotedString' is a specialization of 'Term'.
+The class 'prolog_List' is a specialization of 'Term'.
+The class 'prolog_Fact' is a specialization of 'Clause'.
+The class 'prolog_Rule' is a specialization of 'Clause'.
+The class 'prolog_ControlPredicate' is a specialization of 'Term'.
+The class 'prolog_True' is a specialization of 'ControlPredicate'.
+The class 'prolog_False' is a specialization of 'ControlPredicate'.
+The class 'prolog_Fail' is a specialization of 'ControlPredicate'.
+The class 'prolog_Cut' is a specialization of 'ControlPredicate'.
+The class 'prolog_directives_Directive' is a specialization of 'Clause'.
+The class 'prolog_directives_Dynamic' is a specialization of 'Directive'.
+The class 'prolog_directives_Discontiguous' is a specialization of 'Directive'.
+The class 'prolog_directives_Multifile' is a specialization of 'Directive'.
+The class 'prolog_directives_Public' is a specialization of 'Directive'.
+The class 'prolog_directives_Volatile' is a specialization of 'Directive'.
+The class 'prolog_directives_Table' is a specialization of 'Clause'.
+The class 'prolog_expressions_UnaryExpression' is a specialization of 'Expression'.
+The class 'prolog_expressions_BinaryExpression' is a specialization of 'Expression'.
+The class 'prolog_expressions_LogicalOr' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_Condition' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_SoftCut' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_LogicalAnd' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_NotProvable' is a specialization of 'UnaryExpression'.
+The class 'prolog_expressions_LessThan' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_Unification' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_Univ' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_StructuralEquivalence' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_StructuralEquivalenceNotProvable' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_NumberEqual' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_LessOrEqual' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_Equivalence' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_NonEqualNumber' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_GreaterThan' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_GreaterOrEqual' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_StandardOrderBefore' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_EqualOrStandardOrderBefore' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_StandardOrderAfter' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_EqualOrStandardOrderAfter' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_NotUnifiable' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_Disequality' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_As' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_Is' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_ParticalUnification' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_SubDict' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_ModuleCall' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_Plus' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_Minus' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_BinaryAnd' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_BinaryOr' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_Xor' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_Multiplication' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_Division' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_IntegerDivision' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_Div' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_Rdiv' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_BitwiseShiftLeft' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_Mod' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_Rem' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_Power' is a specialization of 'BinaryExpression'.
+The class 'prolog_expressions_PositiveNumber' is a specialization of 'UnaryExpression'.
+The class 'prolog_expressions_NegativeNumber' is a specialization of 'UnaryExpression'.
+The class 'prolog_expressions_BitwiseNegation' is a specialization of 'UnaryExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'prolog_Program' and 'prolog_Clause'. From 'prolog_Program', the role 'prolog_Program' has cardinality 0..*, and from 'prolog_Clause', the role 'prolog_Clause' has cardinality 0..*.
+An association connects 'Expression' and 'prolog_CompoundTerm'. From 'Expression', the role 'Expression' has cardinality 0..*, and from 'prolog_CompoundTerm', the role 'prolog_CompoundTerm' has cardinality 0..*.
+An association connects 'prolog_List' and 'Expression'. From 'prolog_List', the role 'prolog_List' has cardinality 0..*, and from 'Expression', the role 'Expression3' has cardinality 0..*.
+An association connects 'Expression' and 'prolog_List'. From 'Expression', the role 'Expression6' has cardinality 0..*, and from 'prolog_List', the role 'prolog_List5' has cardinality 0..*.
+An association connects 'prolog_Fact' and 'prolog_CompoundTerm'. From 'prolog_Fact', the role 'prolog_Fact' has cardinality 0..*, and from 'prolog_CompoundTerm', the role 'prolog_CompoundTerm8' has cardinality 0..*.
+An association connects 'prolog_Rule' and 'prolog_CompoundTerm'. From 'prolog_Rule', the role 'prolog_Rule' has cardinality 0..*, and from 'prolog_CompoundTerm', the role 'prolog_CompoundTerm10' has cardinality 0..*.
+An association connects 'prolog_Rule' and 'Expression'. From 'prolog_Rule', the role 'prolog_Rule12' has cardinality 0..*, and from 'Expression', the role 'Expression13' has cardinality 0..*.
+An association connects 'prolog_directives_Directive' and 'PredicateIndicator'. From 'prolog_directives_Directive', the role 'prolog_directives_Directive' has cardinality 0..*, and from 'PredicateIndicator', the role 'PredicateIndicator' has cardinality 0..*.
+An association connects 'prolog_directives_Table' and 'PredicateIndicator'. From 'prolog_directives_Table', the role 'prolog_directives_Table' has cardinality 0..*, and from 'PredicateIndicator', the role 'PredicateIndicator16' has cardinality 0..*.
+An association connects 'prolog_expressions_UnaryExpression' and 'Expression'. From 'prolog_expressions_UnaryExpression', the role 'prolog_expressions_UnaryExpression' has cardinality 0..*, and from 'Expression', the role 'Expression18' has cardinality 0..*.
+An association connects 'Expression' and 'prolog_expressions_BinaryExpression'. From 'Expression', the role 'Expression20' has cardinality 0..*, and from 'prolog_expressions_BinaryExpression', the role 'prolog_expressions_BinaryExpression' has cardinality 0..*.
+An association connects 'prolog_expressions_BinaryExpression' and 'Expression'. From 'prolog_expressions_BinaryExpression', the role 'prolog_expressions_BinaryExpression22' has cardinality 0..*, and from 'Expression', the role 'Expression23' has cardinality 0..*.

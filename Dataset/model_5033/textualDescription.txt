@@ -1,0 +1,48 @@
+The domain model 'CarRentalModel' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'CarRentalModel_Motorcycle' represents an important domain concept.
+It has one attribute: 'cm3', which is of type int.
+
+'CarRentalModel_CarRental' represents an important domain concept.
+It does not declare any attributes.
+
+'Craft' represents an important domain concept.
+It does not declare any attributes.
+
+'CarRentalModel_VipCustomer' represents an important domain concept.
+It has one attribute: 'discount', which is of type float.
+
+'CarRentalModel_Automobile' represents an important domain concept.
+It has one attribute: 'isCabrio', which is of type bool.
+
+'Customer' represents an important domain concept.
+It does not declare any attributes.
+
+'CarRentalModel_Agency' represents an important domain concept.
+It has the following attributes: 'street', which is of type str; 'place', which is of type str; 'zip', which is of type int.
+
+'CarRentalModel_Craft' represents an important domain concept.
+It has the following attributes: 'charge', which is of type float; 'vin', which is of type int; 'licenseNo', which is of type str.
+
+'CarRentalModel_Order' represents an important domain concept.
+It has the following attributes: 'price', which is of type float; 'orderDate', which is of type date.
+
+'CarRentalModel_Customer' represents an important domain concept.
+It has the following attributes: 'lastname', which is of type str; 'identifier', which is of type str; 'surname', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'CarRentalModel_VipCustomer' is a specialization of 'Customer'.
+The class 'CarRentalModel_Motorcycle' is a specialization of 'Craft'.
+The class 'CarRentalModel_Automobile' is a specialization of 'Craft'.
+
+Relationships between classes are modeled using associations.
+An association connects 'CarRentalModel_Customer' and 'CarRentalModel_CarRental'. From 'CarRentalModel_Customer', the role 'CarRentalModel_Customer' has cardinality 0..*, and from 'CarRentalModel_CarRental', the role 'CarRentalModel_CarRental' has cardinality 0..*.
+An association connects 'CarRentalModel_CarRental' and 'CarRentalModel_Agency'. From 'CarRentalModel_CarRental', the role 'CarRentalModel_CarRental2' has cardinality 0..*, and from 'CarRentalModel_Agency', the role 'CarRentalModel_Agency' has cardinality 0..*.
+An association connects 'CarRentalModel_CarRental' and 'CarRentalModel_Craft'. From 'CarRentalModel_CarRental', the role 'CarRentalModel_CarRental4' has cardinality 0..*, and from 'CarRentalModel_Craft', the role 'CarRentalModel_Craft' has cardinality 0..*.
+An association connects 'CarRentalModel_CarRental' and 'CarRentalModel_Agency'. From 'CarRentalModel_CarRental', the role 'CarRentalModel_CarRental6' has cardinality 0..*, and from 'CarRentalModel_Agency', the role 'CarRentalModel_Agency7' has cardinality 0..*.
+An association connects 'CarRentalModel_Order' and 'CarRentalModel_Customer'. From 'CarRentalModel_Order', the role 'Order' has cardinality 0..*, and from 'CarRentalModel_Customer', the role 'customer' has cardinality 0..*.
+An association connects 'CarRentalModel_Craft' and 'CarRentalModel_Order'. From 'CarRentalModel_Craft', the role 'Craft' has cardinality 0..*, and from 'CarRentalModel_Order', the role 'rentBy' has cardinality 0..*.
+An association connects 'CarRentalModel_Customer' and 'CarRentalModel_Order'. From 'CarRentalModel_Customer', the role 'Customer' has cardinality 0..*, and from 'CarRentalModel_Order', the role 'bestellungen' has cardinality 0..*.
+An association connects 'CarRentalModel_Craft' and 'CarRentalModel_Order'. From 'CarRentalModel_Craft', the role 'craft' has cardinality 0..*, and from 'CarRentalModel_Order', the role 'Order12' has cardinality 0..*.

@@ -1,0 +1,104 @@
+The domain model 'expression' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_TimeLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'expression_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'expression_PredicateIsEmpty' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_PredicateEqualityOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_Expression' represents an important domain concept.
+It has one attribute: 'suffixes', which is of type str.
+
+'expression_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_PredicateIsOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_PredicateLikeOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'expression_PredicateInOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_PredicateComparisonOperator' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'expression_Predicate' represents an important domain concept.
+It has one attribute: 'negated', which is of type bool.
+
+'expression_PredicateBooleanOperator' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'expression_PredicateIsNull' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BooleanOperator' defines the following possible values: 'Or', 'And'.
+The enumeration 'ComparisionOperator' defines the following possible values: 'GreaterThan', 'LessThan'.
+
+The model also captures inheritance relationships between classes.
+The class 'expression_Literal' is a specialization of 'Expression'.
+The class 'expression_NullLiteral' is a specialization of 'Literal'.
+The class 'expression_BooleanLiteral' is a specialization of 'Literal'.
+The class 'expression_IntegerLiteral' is a specialization of 'Literal'.
+The class 'expression_StringLiteral' is a specialization of 'Literal'.
+The class 'expression_TimeLiteral' is a specialization of 'Literal'.
+The class 'expression_Variable' is a specialization of 'Expression'.
+The class 'expression_Predicate' is a specialization of 'Expression'.
+The class 'expression_PredicateBooleanOperator' is a specialization of 'Predicate'.
+The class 'expression_PredicateEqualityOperator' is a specialization of 'Predicate'.
+The class 'expression_PredicateComparisonOperator' is a specialization of 'Predicate'.
+The class 'expression_PredicateInOperator' is a specialization of 'Predicate'.
+The class 'expression_PredicateIsOperator' is a specialization of 'Predicate'.
+The class 'expression_PredicateLikeOperator' is a specialization of 'Predicate'.
+The class 'expression_PredicateIsEmpty' is a specialization of 'Predicate'.
+The class 'expression_PredicateIsNull' is a specialization of 'Predicate'.
+
+Relationships between classes are modeled using associations.
+An association connects 'expression_Expression' and 'expression_EObject'. From 'expression_Expression', the role 'expression_Expression' has cardinality 0..*, and from 'expression_EObject', the role 'expression_EObject' has cardinality 0..*.
+An association connects 'expression_Predicate' and 'expression_PredicateBooleanOperator'. From 'expression_Predicate', the role 'expression_Predicate' has cardinality 0..*, and from 'expression_PredicateBooleanOperator', the role 'expression_PredicateBooleanOperator' has cardinality 0..*.
+An association connects 'expression_Expression' and 'expression_PredicateEqualityOperator'. From 'expression_Expression', the role 'expression_Expression3' has cardinality 0..*, and from 'expression_PredicateEqualityOperator', the role 'expression_PredicateEqualityOperator' has cardinality 0..*.
+An association connects 'expression_Expression' and 'expression_PredicateEqualityOperator'. From 'expression_Expression', the role 'expression_Expression6' has cardinality 0..*, and from 'expression_PredicateEqualityOperator', the role 'expression_PredicateEqualityOperator5' has cardinality 0..*.
+An association connects 'expression_Expression' and 'expression_PredicateComparisonOperator'. From 'expression_Expression', the role 'expression_Expression8' has cardinality 0..*, and from 'expression_PredicateComparisonOperator', the role 'expression_PredicateComparisonOperator' has cardinality 0..*.
+An association connects 'expression_PredicateComparisonOperator' and 'expression_Expression'. From 'expression_PredicateComparisonOperator', the role 'expression_PredicateComparisonOperator10' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression11' has cardinality 0..*.
+An association connects 'expression_PredicateInOperator' and 'expression_Expression'. From 'expression_PredicateInOperator', the role 'expression_PredicateInOperator' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression13' has cardinality 0..*.
+An association connects 'expression_PredicateInOperator' and 'expression_Expression'. From 'expression_PredicateInOperator', the role 'expression_PredicateInOperator15' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression16' has cardinality 0..*.
+An association connects 'expression_PredicateIsOperator' and 'expression_Expression'. From 'expression_PredicateIsOperator', the role 'expression_PredicateIsOperator' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression18' has cardinality 0..*.
+An association connects 'expression_Expression' and 'expression_PredicateIsOperator'. From 'expression_Expression', the role 'expression_Expression21' has cardinality 0..*, and from 'expression_PredicateIsOperator', the role 'expression_PredicateIsOperator20' has cardinality 0..*.
+An association connects 'expression_Expression' and 'expression_PredicateLikeOperator'. From 'expression_Expression', the role 'expression_Expression23' has cardinality 0..*, and from 'expression_PredicateLikeOperator', the role 'expression_PredicateLikeOperator' has cardinality 0..*.
+An association connects 'expression_PredicateLikeOperator' and 'expression_Expression'. From 'expression_PredicateLikeOperator', the role 'expression_PredicateLikeOperator25' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression26' has cardinality 0..*.
+An association connects 'expression_Variable' and 'expression_PredicateIsEmpty'. From 'expression_Variable', the role 'expression_Variable' has cardinality 0..*, and from 'expression_PredicateIsEmpty', the role 'expression_PredicateIsEmpty' has cardinality 0..*.
+An association connects 'expression_Variable' and 'expression_PredicateIsNull'. From 'expression_Variable', the role 'expression_Variable29' has cardinality 0..*, and from 'expression_PredicateIsNull', the role 'expression_PredicateIsNull' has cardinality 0..*.

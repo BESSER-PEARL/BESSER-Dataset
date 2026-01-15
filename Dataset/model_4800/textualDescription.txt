@@ -1,0 +1,39 @@
+The domain model 'testModel' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'Leafs' represents an important domain concept.
+It does not declare any attributes.
+
+'testModel_Leafs' represents an important domain concept.
+It does not declare any attributes.
+
+'testModel_Node' represents an important domain concept.
+It has the following attributes: 'bigint', which is of type str; 'bool', which is of type bool; 'byte', which is of type str; 'Boolean', which is of type str; 'name', which is of type str; 'bigdeci', which is of type str.
+
+'testModel_ContainedLeaf' represents an important domain concept.
+It has the following attributes: 'DoubleObj', which is of type str; 'float', which is of type float; 'byteObject', which is of type str; 'Character', which is of type str; 'name', which is of type str; 'byteArray', which is of type str; 'elementType', which is of type str; 'double', which is of type float; 'char', which is of type str; 'date', which is of type date.
+
+'testModel_upperBoundLeaf' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'testModel_referedLeaf' represents an important domain concept.
+It has the following attributes: 'long', which is of type str; 'Integer', which is of type str; 'Float', which is of type str; 'notChangeable', which is of type str; 'short', which is of type str; 'name', which is of type str; 'LongObj', which is of type str; 'int', which is of type int; 'ShortObj', which is of type str.
+
+'testModel_multiRefLeaf' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ElementType' defines the following possible values: 'Type2', 'Type1'.
+
+The model also captures inheritance relationships between classes.
+The class 'testModel_referedLeaf' is a specialization of 'Leafs'.
+The class 'testModel_multiRefLeaf' is a specialization of 'Leafs'.
+The class 'testModel_upperBoundLeaf' is a specialization of 'Leafs'.
+
+Relationships between classes are modeled using associations.
+An association connects 'testModel_Node' and 'testModel_Node'. From 'testModel_Node', the role 'testModel_Node' has cardinality 0..*, and from 'testModel_Node', the role 'testModel_Node0' has cardinality 0..*.
+An association connects 'testModel_ContainedLeaf' and 'testModel_Node'. From 'testModel_ContainedLeaf', the role 'testModel_ContainedLeaf' has cardinality 0..*, and from 'testModel_Node', the role 'testModel_Node3' has cardinality 0..*.
+An association connects 'testModel_ContainedLeaf' and 'testModel_referedLeaf'. From 'testModel_ContainedLeaf', the role 'testModel_ContainedLeaf5' has cardinality 0..*, and from 'testModel_referedLeaf', the role 'testModel_referedLeaf' has cardinality 0..*.
+An association connects 'testModel_upperBoundLeaf' and 'testModel_ContainedLeaf'. From 'testModel_upperBoundLeaf', the role 'testModel_upperBoundLeaf' has cardinality 0..*, and from 'testModel_ContainedLeaf', the role 'testModel_ContainedLeaf7' has cardinality 0..*.
+An association connects 'testModel_multiRefLeaf' and 'testModel_referedLeaf'. From 'testModel_multiRefLeaf', the role 'testModel_multiRefLeaf' has cardinality 0..*, and from 'testModel_referedLeaf', the role 'testModel_referedLeaf9' has cardinality 0..*.

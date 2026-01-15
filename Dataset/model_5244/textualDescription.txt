@@ -1,0 +1,46 @@
+The domain model 'surveillance' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'ProbableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'surveillance_MovingObject' represents an important domain concept.
+It has the following attributes: 'angle', which is of type float; 'width', which is of type float; 'speed', which is of type float.
+
+'MovingObject' represents an important domain concept.
+It does not declare any attributes.
+
+'surveillance_Drone' represents an important domain concept.
+It does not declare any attributes.
+
+'surveillance_UnidentifiedObject' represents an important domain concept.
+It does not declare any attributes.
+
+'surveillance_ProbableElement' represents an important domain concept.
+It has one attribute: 'confidence', which is of type float.
+
+'surveillance_Coordinate' represents an important domain concept.
+It has the following attributes: 'y', which is of type float; 'x', which is of type float.
+
+'surveillance_GunShot' represents an important domain concept.
+It has the following attributes: 'hitsTarget', which is of type bool; 'angle', which is of type float.
+
+'surveillance_Clock' represents an important domain concept.
+It has one attribute: 'now', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'surveillance_Drone' is a specialization of 'MovingObject'.
+The class 'surveillance_UnidentifiedObject' is a specialization of 'MovingObject'.
+The class 'surveillance_UnidentifiedObject' is a specialization of 'ProbableElement'.
+The class 'surveillance_GunShot' is a specialization of 'ProbableElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'surveillance_Coordinate' and 'surveillance_GunShot'. From 'surveillance_Coordinate', the role 'shootingPosition' has cardinality 0..*, and from 'surveillance_GunShot', the role 'GunShot' has cardinality 0..*.
+An association connects 'surveillance_Coordinate' and 'surveillance_MovingObject'. From 'surveillance_Coordinate', the role 'currentPosition' has cardinality 0..*, and from 'surveillance_MovingObject', the role 'MovingObject' has cardinality 0..*.
+An association connects 'surveillance_MovingObject' and 'surveillance_Coordinate'. From 'surveillance_MovingObject', the role 'object' has cardinality 0..*, and from 'surveillance_Coordinate', the role 'Coordinate' has cardinality 0..*.
+An association connects 'surveillance_Drone' and 'surveillance_GunShot'. From 'surveillance_Drone', the role 'drone' has cardinality 0..*, and from 'surveillance_GunShot', the role 'GunShot4' has cardinality 0..*.
+An association connects 'surveillance_UnidentifiedObject' and 'surveillance_GunShot'. From 'surveillance_UnidentifiedObject', the role 'target' has cardinality 0..*, and from 'surveillance_GunShot', the role 'GunShot6' has cardinality 0..*.
+An association connects 'surveillance_GunShot' and 'surveillance_Coordinate'. From 'surveillance_GunShot', the role 'shot' has cardinality 0..*, and from 'surveillance_Coordinate', the role 'Coordinate8' has cardinality 0..*.
+An association connects 'surveillance_Drone' and 'surveillance_GunShot'. From 'surveillance_Drone', the role 'Drone' has cardinality 0..*, and from 'surveillance_GunShot', the role 'shot10' has cardinality 0..*.
+An association connects 'surveillance_UnidentifiedObject' and 'surveillance_GunShot'. From 'surveillance_UnidentifiedObject', the role 'UnidentifiedObject' has cardinality 0..*, and from 'surveillance_GunShot', the role 'shot12' has cardinality 0..*.

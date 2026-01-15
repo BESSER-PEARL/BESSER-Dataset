@@ -1,0 +1,74 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'model_Node' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'model_ConcreteTypeTwo' represents an important domain concept.
+It has one attribute: 'propTypeTwo', which is of type str.
+
+'model_User' represents an important domain concept.
+It has the following attributes: 'birthDate', which is of type date; 'name', which is of type str; 'userId', which is of type str; 'sex', which is of type str.
+
+'model_PrimaryObject' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'featureMapAttributeCollection', which is of type str; 'featureMapAttributeType2', which is of type str; 'idAttribute', which is of type str; 'featureMapAttributeType1', which is of type str; 'unsettableAttribute', which is of type str; 'featureMapReferenceCollection', which is of type str; 'unsettableAttributeWithNonNullDefault', which is of type str.
+
+'model_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Container' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_ConcreteTypeOne' represents an important domain concept.
+It has one attribute: 'propTypeOne', which is of type str.
+
+'model_ObjectWithMap' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TargetObject' represents an important domain concept.
+It has the following attributes: 'arrayAttribute', which is of type str; 'singleAttribute', which is of type str.
+
+'model_ETypes' represents an important domain concept.
+It has the following attributes: 'eByteArray', which is of type str; 'eStrings', which is of type str; 'eFloat', which is of type float; 'eShort', which is of type str; 'eString', which is of type str; 'eBoolean', which is of type bool; 'eInts', which is of type int; 'doubleValue', which is of type str; 'eInt', which is of type int; 'eDouble', which is of type float; 'eDoubles', which is of type str; 'eLong', which is of type str; 'eDate', which is of type date; 'eByte', which is of type str; 'eChar', which is of type str; 'eBooleans', which is of type str; 'uris', which is of type str.
+
+'model_Address' represents an important domain concept.
+It has the following attributes: 'addId', which is of type str; 'city', which is of type str; 'street', which is of type str; 'number', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Sex' defines the following possible values: 'MALE', 'FEMALE'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_ConcreteTypeOne' is a specialization of 'AbstractType'.
+The class 'model_ConcreteTypeTwo' is a specialization of 'AbstractType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_User' and 'model_User'. From 'model_User', the role 'model_User0' has cardinality 0..*, and from 'model_User', the role 'model_User' has cardinality 0..*.
+An association connects 'model_User' and 'model_User'. From 'model_User', the role 'model_User4' has cardinality 0..*, and from 'model_User', the role 'model_User2' has cardinality 0..*.
+An association connects 'model_Address' and 'model_User'. From 'model_Address', the role 'model_Address' has cardinality 0..*, and from 'model_User', the role 'model_User6' has cardinality 0..*.
+An association connects 'model_TargetObject' and 'model_PrimaryObject'. From 'model_TargetObject', the role 'model_TargetObject' has cardinality 0..*, and from 'model_PrimaryObject', the role 'model_PrimaryObject' has cardinality 0..*.
+An association connects 'model_PrimaryObject' and 'model_PrimaryObject'. From 'model_PrimaryObject', the role 'model_PrimaryObject10' has cardinality 0..*, and from 'model_PrimaryObject', the role 'model_PrimaryObject8' has cardinality 0..*.
+An association connects 'model_TargetObject' and 'model_PrimaryObject'. From 'model_TargetObject', the role 'model_TargetObject13' has cardinality 0..*, and from 'model_PrimaryObject', the role 'model_PrimaryObject12' has cardinality 0..*.
+An association connects 'model_PrimaryObject' and 'model_TargetObject'. From 'model_PrimaryObject', the role 'model_PrimaryObject15' has cardinality 0..*, and from 'model_TargetObject', the role 'model_TargetObject16' has cardinality 0..*.
+An association connects 'model_PrimaryObject' and 'model_TargetObject'. From 'model_PrimaryObject', the role 'model_PrimaryObject18' has cardinality 0..*, and from 'model_TargetObject', the role 'model_TargetObject19' has cardinality 0..*.
+An association connects 'model_TargetObject' and 'model_PrimaryObject'. From 'model_TargetObject', the role 'model_TargetObject22' has cardinality 0..*, and from 'model_PrimaryObject', the role 'model_PrimaryObject21' has cardinality 0..*.
+An association connects 'model_TargetObject' and 'model_PrimaryObject'. From 'model_TargetObject', the role 'model_TargetObject25' has cardinality 0..*, and from 'model_PrimaryObject', the role 'model_PrimaryObject24' has cardinality 0..*.
+An association connects 'model_TargetObject' and 'model_PrimaryObject'. From 'model_TargetObject', the role 'model_TargetObject28' has cardinality 0..*, and from 'model_PrimaryObject', the role 'model_PrimaryObject27' has cardinality 0..*.
+An association connects 'model_TargetObject' and 'model_PrimaryObject'. From 'model_TargetObject', the role 'model_TargetObject31' has cardinality 0..*, and from 'model_PrimaryObject', the role 'model_PrimaryObject30' has cardinality 0..*.
+An association connects 'model_TargetObject' and 'model_PrimaryObject'. From 'model_TargetObject', the role 'model_TargetObject34' has cardinality 0..*, and from 'model_PrimaryObject', the role 'model_PrimaryObject33' has cardinality 0..*.
+An association connects 'model_PrimaryObject' and 'model_TargetObject'. From 'model_PrimaryObject', the role 'model_PrimaryObject36' has cardinality 0..*, and from 'model_TargetObject', the role 'model_TargetObject37' has cardinality 0..*.
+An association connects 'model_Container' and 'model_AbstractType'. From 'model_Container', the role 'model_Container' has cardinality 0..*, and from 'model_AbstractType', the role 'model_AbstractType' has cardinality 0..*.
+An association connects 'model_AbstractType' and 'model_AbstractType'. From 'model_AbstractType', the role 'model_AbstractType41' has cardinality 0..*, and from 'model_AbstractType', the role 'model_AbstractType39' has cardinality 0..*.
+An association connects 'model_Node' and 'model_Node'. From 'model_Node', the role 'Node' has cardinality 0..*, and from 'model_Node', the role 'source' has cardinality 0..*.
+An association connects 'model_Node' and 'model_Node'. From 'model_Node', the role 'target' has cardinality 0..*, and from 'model_Node', the role 'Node46' has cardinality 0..*.
+An association connects 'model_Node' and 'model_Node'. From 'model_Node', the role 'model_Node47' has cardinality 0..*, and from 'model_Node', the role 'model_Node' has cardinality 0..*.
+An association connects 'model_Node' and 'model_Node'. From 'model_Node', the role 'model_Node51' has cardinality 0..*, and from 'model_Node', the role 'model_Node49' has cardinality 0..*.
+An association connects 'model_Node' and 'model_Node'. From 'model_Node', the role 'model_Node54' has cardinality 0..*, and from 'model_Node', the role 'model_Node52' has cardinality 0..*.
+An association connects 'model_EStringToStringMapEntry' and 'model_ObjectWithMap'. From 'model_EStringToStringMapEntry', the role 'model_EStringToStringMapEntry' has cardinality 0..*, and from 'model_ObjectWithMap', the role 'model_ObjectWithMap' has cardinality 0..*.
+An association connects 'model_EStringToStringMapEntry' and 'model_ObjectWithMap'. From 'model_EStringToStringMapEntry', the role 'model_EStringToStringMapEntry58' has cardinality 0..*, and from 'model_ObjectWithMap', the role 'model_ObjectWithMap57' has cardinality 0..*.

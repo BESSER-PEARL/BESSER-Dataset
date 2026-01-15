@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/upohl/eloquent/examples/projectPlanning/plugins/de.fraunhofer.iem.projectPlanning/model/generated/ProjectPlanning.ecore

@@ -1,0 +1,16 @@
+The domain model 'emfdb' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'emfdb_C' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'emfdb_A' represents an important domain concept.
+It has one attribute: 'string', which is of type str.
+
+'emfdb_B' represents an important domain concept.
+It has one attribute: 'string', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'emfdb_A' and 'emfdb_B'. From 'emfdb_A', the role 'emfdb_A' has cardinality 0..*, and from 'emfdb_B', the role 'emfdb_B' has cardinality 0..*.
+An association connects 'emfdb_A' and 'emfdb_C'. From 'emfdb_A', the role 'emfdb_A2' has cardinality 0..*, and from 'emfdb_C', the role 'emfdb_C' has cardinality 0..*.

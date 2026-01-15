@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/RevyakinaDiana/Archi/Archi4/plugins/com.archimatetool.model_4.2.0.201801300957/model/archimate.ecore

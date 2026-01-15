@@ -1,0 +1,45 @@
+The domain model 'boolexp' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'boolexp_Tru' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'boolexp_Fals' represents an important domain concept.
+It does not declare any attributes.
+
+'boolexp_BinaryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'boolexp_And' represents an important domain concept.
+It does not declare any attributes.
+
+'boolexp_Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'boolexp_Lit' represents an important domain concept.
+It does not declare any attributes.
+
+'Lit' represents an important domain concept.
+It does not declare any attributes.
+
+'boolexp_Or' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'boolexp_BinaryExp' is a specialization of 'Exp'.
+The class 'boolexp_Lit' is a specialization of 'Exp'.
+The class 'boolexp_And' is a specialization of 'BinaryExp'.
+The class 'boolexp_Or' is a specialization of 'BinaryExp'.
+The class 'boolexp_Tru' is a specialization of 'Lit'.
+The class 'boolexp_Fals' is a specialization of 'Lit'.
+
+Relationships between classes are modeled using associations.
+An association connects 'boolexp_BinaryExp' and 'boolexp_Exp'. From 'boolexp_BinaryExp', the role 'boolexp_BinaryExp' has cardinality 0..*, and from 'boolexp_Exp', the role 'boolexp_Exp' has cardinality 0..*.
+An association connects 'boolexp_Exp' and 'boolexp_BinaryExp'. From 'boolexp_Exp', the role 'boolexp_Exp3' has cardinality 0..*, and from 'boolexp_BinaryExp', the role 'boolexp_BinaryExp2' has cardinality 0..*.

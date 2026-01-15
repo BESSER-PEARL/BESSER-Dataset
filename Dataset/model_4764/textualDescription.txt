@@ -1,0 +1,177 @@
+The domain model 'effbd2' describes the core structural elements and their relationships within the system.
+
+The model defines 41 main class(es).
+
+'effbd2_ControlFlowEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_FunctionDefinition' represents an important domain concept.
+It has one attribute: 'transformationDefinition', which is of type str.
+
+'effbd2_Transformer' represents an important domain concept.
+It does not declare any attributes.
+
+'In' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_Transformed' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_DataFlowOutputEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'DataPort' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_Merge' represents an important domain concept.
+It does not declare any attributes.
+
+'DataFlowEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'Transformed' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_DataPort' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'effbd2_FunctionSpecification' represents an important domain concept.
+It has the following attributes: 'minDuration', which is of type int; 'domain', which is of type str; 'maxDuration', which is of type int.
+
+'SequenceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_TriggerItem' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_IterationStart' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_EffbdElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'effbd2_LoopExit' represents an important domain concept.
+It does not declare any attributes.
+
+'EffbdElement' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_Join' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_LoopEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_Out' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_Decision' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_LoopStart' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_ContinuousFlowItem' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'Transformer' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_SequenceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_In' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_Final' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_Resource' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_DataFlowEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'EffbdNode' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_Fork' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_Control' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_DataFlowInputEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_Input' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_ItemContent' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'effbd2_IterationEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd2_EffbdNode' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FunctionDomain' defines the following possible values: 'form', 'space', 'time'.
+
+The model also captures inheritance relationships between classes.
+The class 'effbd2_Function' is a specialization of 'FunctionSpecification'.
+The class 'effbd2_DataFlowEdge' is a specialization of 'EffbdElement'.
+The class 'effbd2_EffbdNode' is a specialization of 'EffbdElement'.
+The class 'effbd2_SequenceNode' is a specialization of 'Transformer'.
+The class 'effbd2_FunctionSpecification' is a specialization of 'Transformer'.
+The class 'effbd2_Fork' is a specialization of 'SequenceNode'.
+The class 'effbd2_Decision' is a specialization of 'SequenceNode'.
+The class 'effbd2_Transformed' is a specialization of 'EffbdNode'.
+The class 'effbd2_ContinuousFlowItem' is a specialization of 'Transformed'.
+The class 'effbd2_TriggerItem' is a specialization of 'Transformed'.
+The class 'effbd2_In' is a specialization of 'DataPort'.
+The class 'effbd2_Out' is a specialization of 'DataPort'.
+The class 'effbd2_Resource' is a specialization of 'In'.
+The class 'effbd2_Control' is a specialization of 'In'.
+The class 'effbd2_Input' is a specialization of 'In'.
+The class 'effbd2_ControlFlowEdge' is a specialization of 'EffbdElement'.
+The class 'effbd2_Transformer' is a specialization of 'EffbdNode'.
+The class 'effbd2_DataFlowInputEdge' is a specialization of 'DataFlowEdge'.
+The class 'effbd2_DataFlowOutputEdge' is a specialization of 'DataFlowEdge'.
+The class 'effbd2_IterationStart' is a specialization of 'SequenceNode'.
+The class 'effbd2_LoopExit' is a specialization of 'SequenceNode'.
+The class 'effbd2_Join' is a specialization of 'SequenceNode'.
+The class 'effbd2_Merge' is a specialization of 'SequenceNode'.
+The class 'effbd2_Start' is a specialization of 'SequenceNode'.
+The class 'effbd2_Final' is a specialization of 'SequenceNode'.
+The class 'effbd2_LoopStart' is a specialization of 'SequenceNode'.
+The class 'effbd2_LoopEnd' is a specialization of 'SequenceNode'.
+The class 'effbd2_IterationEnd' is a specialization of 'SequenceNode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'effbd2_Function' and 'effbd2_DataFlowEdge'. From 'effbd2_Function', the role 'effbd2_Function' has cardinality 0..*, and from 'effbd2_DataFlowEdge', the role 'effbd2_DataFlowEdge' has cardinality 0..*.
+An association connects 'effbd2_Function' and 'effbd2_EffbdNode'. From 'effbd2_Function', the role 'effbd2_Function2' has cardinality 0..*, and from 'effbd2_EffbdNode', the role 'effbd2_EffbdNode' has cardinality 0..*.
+An association connects 'effbd2_ControlFlowEdge' and 'effbd2_Function'. From 'effbd2_ControlFlowEdge', the role 'effbd2_ControlFlowEdge' has cardinality 0..*, and from 'effbd2_Function', the role 'effbd2_Function4' has cardinality 0..*.
+An association connects 'effbd2_Function' and 'effbd2_Function'. From 'effbd2_Function', the role 'effbd2_Function5' has cardinality 0..*, and from 'effbd2_Function', the role 'effbd2_Function7' has cardinality 0..*.
+An association connects 'effbd2_Input' and 'effbd2_FunctionSpecification'. From 'effbd2_Input', the role 'effbd2_Input' has cardinality 0..*, and from 'effbd2_FunctionSpecification', the role 'effbd2_FunctionSpecification' has cardinality 0..*.
+An association connects 'effbd2_FunctionSpecification' and 'effbd2_Control'. From 'effbd2_FunctionSpecification', the role 'effbd2_FunctionSpecification10' has cardinality 0..*, and from 'effbd2_Control', the role 'effbd2_Control' has cardinality 0..*.
+An association connects 'effbd2_Resource' and 'effbd2_FunctionSpecification'. From 'effbd2_Resource', the role 'effbd2_Resource' has cardinality 0..*, and from 'effbd2_FunctionSpecification', the role 'effbd2_FunctionSpecification12' has cardinality 0..*.
+An association connects 'effbd2_FunctionSpecification' and 'effbd2_Out'. From 'effbd2_FunctionSpecification', the role 'effbd2_FunctionSpecification14' has cardinality 0..*, and from 'effbd2_Out', the role 'effbd2_Out' has cardinality 0..*.
+An association connects 'effbd2_FunctionSpecification' and 'effbd2_FunctionDefinition'. From 'effbd2_FunctionSpecification', the role 'effbd2_FunctionSpecification16' has cardinality 0..*, and from 'effbd2_FunctionDefinition', the role 'effbd2_FunctionDefinition' has cardinality 0..*.
+An association connects 'effbd2_Transformed' and 'effbd2_ItemContent'. From 'effbd2_Transformed', the role 'effbd2_Transformed' has cardinality 0..*, and from 'effbd2_ItemContent', the role 'effbd2_ItemContent' has cardinality 0..*.
+An association connects 'effbd2_ControlFlowEdge' and 'effbd2_Transformer'. From 'effbd2_ControlFlowEdge', the role 'effbd2_ControlFlowEdge19' has cardinality 0..*, and from 'effbd2_Transformer', the role 'effbd2_Transformer' has cardinality 0..*.
+An association connects 'effbd2_ControlFlowEdge' and 'effbd2_Transformer'. From 'effbd2_ControlFlowEdge', the role 'effbd2_ControlFlowEdge21' has cardinality 0..*, and from 'effbd2_Transformer', the role 'effbd2_Transformer22' has cardinality 0..*.
+An association connects 'effbd2_DataFlowInputEdge' and 'effbd2_Transformed'. From 'effbd2_DataFlowInputEdge', the role 'effbd2_DataFlowInputEdge' has cardinality 0..*, and from 'effbd2_Transformed', the role 'effbd2_Transformed24' has cardinality 0..*.
+An association connects 'effbd2_DataFlowInputEdge' and 'effbd2_In'. From 'effbd2_DataFlowInputEdge', the role 'effbd2_DataFlowInputEdge26' has cardinality 0..*, and from 'effbd2_In', the role 'effbd2_In' has cardinality 0..*.
+An association connects 'effbd2_DataFlowOutputEdge' and 'effbd2_Out'. From 'effbd2_DataFlowOutputEdge', the role 'effbd2_DataFlowOutputEdge' has cardinality 0..*, and from 'effbd2_Out', the role 'effbd2_Out28' has cardinality 0..*.
+An association connects 'effbd2_Transformed' and 'effbd2_DataFlowOutputEdge'. From 'effbd2_Transformed', the role 'effbd2_Transformed31' has cardinality 0..*, and from 'effbd2_DataFlowOutputEdge', the role 'effbd2_DataFlowOutputEdge30' has cardinality 0..*.

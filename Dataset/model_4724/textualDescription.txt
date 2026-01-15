@@ -1,0 +1,766 @@
+The domain model 'asmeta' describes the core structural elements and their relationships within the system.
+
+The model defines 175 main class(es).
+
+'asmeta_furtherterms_CaseTerm' represents an important domain concept.
+It has one attribute: 'resultTerms', which is of type str.
+
+'asmeta_domains_SequenceDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'DerivedRule' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_domains_UndefDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_furtherterms_LetTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'domains_ConcreteDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basictransitionrules_SkipRule' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basicterms_ConstantTerm' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'asmeta_domains_BagDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'basicterms_Term' represents an important domain concept.
+It does not declare any attributes.
+
+'Header' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basictransitionrules_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_structure_Asm' represents an important domain concept.
+It has one attribute: 'isAsynchr', which is of type str.
+
+'asmeta_domains_EnumElement' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'Body' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_turbotransitionrules_SeqRule' represents an important domain concept.
+It has one attribute: 'rules', which is of type str.
+
+'DomainDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_definitions_DerivedFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_furtherterms_SetCt' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basicterms_Term' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_derivedtransitionrules_TurboDerivedRule' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_domains_EnumTd' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_furtherterms_EnumTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basictransitionrules_TermAsRule' represents an important domain concept.
+It has one attribute: 'parameters', which is of type str.
+
+'AgentInitialization' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_furtherterms_StringTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'Initialization' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_domains_ConcreteDomain' represents an important domain concept.
+It has one attribute: 'isDynamic', which is of type str.
+
+'asmeta_furtherterms_NaturalTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_furtherterms_MapCt' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_furtherterms_FiniteQuantificationTerm' represents an important domain concept.
+It has one attribute: 'ranges', which is of type str.
+
+'asmeta_turbotransitionrules_TurboRule' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basictransitionrules_MacroCallRule' represents an important domain concept.
+It has one attribute: 'parameters', which is of type str.
+
+'asmeta_domains_MapDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTd' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basicterms_FunctionTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'basictransitionrules_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basicterms_BooleanTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_domains_AnyDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_turbotransitionrules_TryCatchRule' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basictransitionrules_LetRule' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'basicterms_TupleTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_furtherterms_BagTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_structure_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'asmeta_domains_PowersetDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_domains_AbstractTd' represents an important domain concept.
+It has one attribute: 'isDynamic', which is of type str.
+
+'VariableBindingTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_structure_Signature' represents an important domain concept.
+It does not declare any attributes.
+
+'turbotransitionrules_TurboCallRule' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_definitions_OutFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'ComplexDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basicterms_DomainTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'basicterms_VariableTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_domains_RuleDomain' represents an important domain concept.
+It has one attribute: 'domains', which is of type str.
+
+'asmeta_domains_ProductDomain' represents an important domain concept.
+It has one attribute: 'domains', which is of type str.
+
+'RuleDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_domains_CharDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basicterms_ExtendedTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_turbotransitionrules_TurboDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_definitions_BasicFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_definitions_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_domains_StringDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basicterms_RuleAsTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'turbotransitionrules_TurboDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicDerivedRule' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_turbotransitionrules_TurboCallRule' represents an important domain concept.
+It has one attribute: 'parameters', which is of type str.
+
+'asmeta_definitions_StaticFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_structure_Body' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_domains_BasicTd' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basicterms_LocationTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_furtherterms_ForallTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_structure_Header' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtendedTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'DynamicFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basictransitionrules_MacroDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_derivedtransitionrules_IterativeWhileRule' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredTd' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basicterms_TupleTerm' represents an important domain concept.
+It has the following attributes: 'arity', which is of type str; 'terms', which is of type str.
+
+'BasicRule' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_domains_AgentDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_furtherterms_BagCt' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basictransitionrules_ChooseRule' represents an important domain concept.
+It has one attribute: 'ranges', which is of type str.
+
+'asmeta_basicterms_BasicTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_derivedtransitionrules_RecursiveWhileRule' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'TurboDerivedRule' represents an important domain concept.
+It does not declare any attributes.
+
+'LocalFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_definitions_SharedFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_structure_DomainDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionInitialization' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_definitions_RuleDeclaration' represents an important domain concept.
+It has one attribute: 'arity', which is of type str.
+
+'DomainInitialization' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basictransitionrules_BlockRule' represents an important domain concept.
+It has one attribute: 'rules', which is of type str.
+
+'domains_EnumElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_domains_ComplexDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_furtherterms_IntegerTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basictransitionrules_ForallRule' represents an important domain concept.
+It has one attribute: 'ranges', which is of type str.
+
+'asmeta_domains_TypeDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_definitions_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'furtherterms_FiniteQuantificationTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_domains_NaturalDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'FiniteQuantificationTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_derivedtransitionrules_CaseRule' represents an important domain concept.
+It has one attribute: 'caseBranches', which is of type str.
+
+'asmeta_structure_ExportClause' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_derivedtransitionrules_DerivedRule' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basictransitionrules_UpdateRule' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_definitions_DynamicFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_domains_StructuredTd' represents an important domain concept.
+It does not declare any attributes.
+
+'ComprehensionTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_furtherterms_SequenceCt' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_domains_RealDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basictransitionrules_ConditionalRule' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basictransitionrules_BasicRule' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_structure_FunctionInitialization' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basicterms_UndefTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'basictransitionrules_MacroDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_furtherterms_ComprehensionTerm' represents an important domain concept.
+It has one attribute: 'ranges', which is of type str.
+
+'asmeta_furtherterms_ExistTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'Term' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_definitions_MonitoredFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'domains_TypeDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_structure_ImportClause' represents an important domain concept.
+It has one attribute: 'moduleName', which is of type str.
+
+'TurboRule' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_domains_IntegerDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_structure_AgentInitialization' represents an important domain concept.
+It does not declare any attributes.
+
+'basictransitionrules_TermAsRule' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_turbotransitionrules_TurboReturnRule' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_definitions_Invariant' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_furtherterms_SequenceTerm' represents an important domain concept.
+It has one attribute: 'terms', which is of type str.
+
+'asmeta_furtherterms_RealTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'Signature' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_domains_Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_domains_BooleanDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basicterms_VariableTerm' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'name', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'basictransitionrules_MacroCallRule' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_definitions_ControlledFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basicterms_SetTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basictransitionrules_ExtendRule' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicTd' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_furtherterms_ConditionalTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_derivedtransitionrules_BasicDerivedRule' represents an important domain concept.
+It does not declare any attributes.
+
+'ExportClause' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_definitions_LocalFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'domains_StructuredTd' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_furtherterms_ComplexTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'Invariant' represents an important domain concept.
+It does not declare any attributes.
+
+'RealDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_furtherterms_CharTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_structure_Initialization' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_turbotransitionrules_IterateRule' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_structure_FunctionDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_furtherterms_ExistUniqueTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'domains_Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'ImportClause' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_furtherterms_MapTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_domains_ReserveDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_basicterms_CollectionTerm' represents an important domain concept.
+It has one attribute: 'size', which is of type str.
+
+'asmeta_turbotransitionrules_TurboLocalStateRule' represents an important domain concept.
+It does not declare any attributes.
+
+'Function' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstantTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'Asm' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_furtherterms_VariableBindingTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'asmeta_definitions_Function' represents an important domain concept.
+It has one attribute: 'arity', which is of type str.
+
+'asmeta_structure_DomainInitialization' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VariableKind' defines the following possible values: 'logicalVar', 'ruleVar', 'locationVar'.
+
+The model also captures inheritance relationships between classes.
+The class 'asmeta_furtherterms_IntegerTerm' is a specialization of 'ConstantTerm'.
+The class 'asmeta_furtherterms_NaturalTerm' is a specialization of 'ConstantTerm'.
+The class 'asmeta_furtherterms_VariableBindingTerm' is a specialization of 'ExtendedTerm'.
+The class 'asmeta_furtherterms_StringTerm' is a specialization of 'ConstantTerm'.
+The class 'asmeta_furtherterms_SetCt' is a specialization of 'ComprehensionTerm'.
+The class 'asmeta_furtherterms_SequenceTerm' is a specialization of 'CollectionTerm'.
+The class 'asmeta_furtherterms_SequenceCt' is a specialization of 'ComprehensionTerm'.
+The class 'asmeta_furtherterms_RealTerm' is a specialization of 'ConstantTerm'.
+The class 'asmeta_furtherterms_MapTerm' is a specialization of 'CollectionTerm'.
+The class 'asmeta_furtherterms_MapCt' is a specialization of 'ComprehensionTerm'.
+The class 'asmeta_furtherterms_LetTerm' is a specialization of 'VariableBindingTerm'.
+The class 'asmeta_furtherterms_ForallTerm' is a specialization of 'FiniteQuantificationTerm'.
+The class 'asmeta_furtherterms_FiniteQuantificationTerm' is a specialization of 'VariableBindingTerm'.
+The class 'asmeta_furtherterms_ExistUniqueTerm' is a specialization of 'FiniteQuantificationTerm'.
+The class 'asmeta_furtherterms_ExistTerm' is a specialization of 'FiniteQuantificationTerm'.
+The class 'asmeta_furtherterms_EnumTerm' is a specialization of 'ConstantTerm'.
+The class 'asmeta_furtherterms_ConditionalTerm' is a specialization of 'ExtendedTerm'.
+The class 'asmeta_furtherterms_ComprehensionTerm' is a specialization of 'VariableBindingTerm'.
+The class 'asmeta_furtherterms_ComplexTerm' is a specialization of 'ConstantTerm'.
+The class 'asmeta_furtherterms_CharTerm' is a specialization of 'ConstantTerm'.
+The class 'asmeta_furtherterms_CaseTerm' is a specialization of 'ExtendedTerm'.
+The class 'asmeta_furtherterms_BagTerm' is a specialization of 'CollectionTerm'.
+The class 'asmeta_furtherterms_BagCt' is a specialization of 'ComprehensionTerm'.
+The class 'asmeta_basicterms_VariableTerm' is a specialization of 'BasicTerm'.
+The class 'asmeta_basicterms_UndefTerm' is a specialization of 'ConstantTerm'.
+The class 'asmeta_basicterms_TupleTerm' is a specialization of 'ExtendedTerm'.
+The class 'asmeta_basicterms_SetTerm' is a specialization of 'CollectionTerm'.
+The class 'asmeta_basicterms_RuleAsTerm' is a specialization of 'ExtendedTerm'.
+The class 'asmeta_basicterms_LocationTerm' is a specialization of 'FunctionTerm'.
+The class 'asmeta_basicterms_FunctionTerm' is a specialization of 'BasicTerm'.
+The class 'asmeta_basicterms_ExtendedTerm' is a specialization of 'Term'.
+The class 'asmeta_basicterms_DomainTerm' is a specialization of 'ExtendedTerm'.
+The class 'asmeta_basicterms_ConstantTerm' is a specialization of 'BasicTerm'.
+The class 'asmeta_basicterms_CollectionTerm' is a specialization of 'ExtendedTerm'.
+The class 'asmeta_basicterms_BooleanTerm' is a specialization of 'ConstantTerm'.
+The class 'asmeta_basicterms_BasicTerm' is a specialization of 'Term'.
+The class 'asmeta_structure_Initialization' is a specialization of 'NamedElement'.
+The class 'asmeta_structure_Asm' is a specialization of 'NamedElement'.
+The class 'asmeta_turbotransitionrules_TurboRule' is a specialization of 'Rule'.
+The class 'asmeta_turbotransitionrules_TurboDeclaration' is a specialization of 'RuleDeclaration'.
+The class 'asmeta_turbotransitionrules_SeqRule' is a specialization of 'TurboRule'.
+The class 'asmeta_turbotransitionrules_TurboLocalStateRule' is a specialization of 'TurboRule'.
+The class 'asmeta_turbotransitionrules_TurboCallRule' is a specialization of 'TurboRule'.
+The class 'asmeta_turbotransitionrules_TurboReturnRule' is a specialization of 'TurboRule'.
+The class 'asmeta_turbotransitionrules_TryCatchRule' is a specialization of 'TurboRule'.
+The class 'asmeta_turbotransitionrules_IterateRule' is a specialization of 'TurboRule'.
+The class 'asmeta_derivedtransitionrules_RecursiveWhileRule' is a specialization of 'TurboDerivedRule'.
+The class 'asmeta_derivedtransitionrules_IterativeWhileRule' is a specialization of 'TurboDerivedRule'.
+The class 'asmeta_derivedtransitionrules_DerivedRule' is a specialization of 'Rule'.
+The class 'asmeta_derivedtransitionrules_CaseRule' is a specialization of 'BasicDerivedRule'.
+The class 'asmeta_derivedtransitionrules_BasicDerivedRule' is a specialization of 'DerivedRule'.
+The class 'asmeta_derivedtransitionrules_TurboDerivedRule' is a specialization of 'DerivedRule'.
+The class 'asmeta_basictransitionrules_TermAsRule' is a specialization of 'Rule'.
+The class 'asmeta_basictransitionrules_BasicRule' is a specialization of 'Rule'.
+The class 'asmeta_basictransitionrules_ChooseRule' is a specialization of 'BasicRule'.
+The class 'asmeta_basictransitionrules_MacroCallRule' is a specialization of 'BasicRule'.
+The class 'asmeta_basictransitionrules_BlockRule' is a specialization of 'BasicRule'.
+The class 'asmeta_basictransitionrules_ConditionalRule' is a specialization of 'BasicRule'.
+The class 'asmeta_basictransitionrules_ForallRule' is a specialization of 'BasicRule'.
+The class 'asmeta_basictransitionrules_LetRule' is a specialization of 'BasicRule'.
+The class 'asmeta_basictransitionrules_ExtendRule' is a specialization of 'BasicRule'.
+The class 'asmeta_basictransitionrules_UpdateRule' is a specialization of 'BasicRule'.
+The class 'asmeta_basictransitionrules_SkipRule' is a specialization of 'BasicRule'.
+The class 'asmeta_basictransitionrules_MacroDeclaration' is a specialization of 'RuleDeclaration'.
+The class 'asmeta_definitions_RuleDeclaration' is a specialization of 'Classifier'.
+The class 'asmeta_definitions_LocalFunction' is a specialization of 'DynamicFunction'.
+The class 'asmeta_definitions_ControlledFunction' is a specialization of 'DynamicFunction'.
+The class 'asmeta_definitions_SharedFunction' is a specialization of 'DynamicFunction'.
+The class 'asmeta_definitions_MonitoredFunction' is a specialization of 'DynamicFunction'.
+The class 'asmeta_definitions_OutFunction' is a specialization of 'DynamicFunction'.
+The class 'asmeta_definitions_DynamicFunction' is a specialization of 'BasicFunction'.
+The class 'asmeta_definitions_StaticFunction' is a specialization of 'BasicFunction'.
+The class 'asmeta_definitions_DerivedFunction' is a specialization of 'Function'.
+The class 'asmeta_definitions_BasicFunction' is a specialization of 'Function'.
+The class 'asmeta_definitions_Invariant' is a specialization of 'Property'.
+The class 'asmeta_definitions_Function' is a specialization of 'Classifier'.
+The class 'asmeta_definitions_Classifier' is a specialization of 'NamedElement'.
+The class 'asmeta_definitions_Property' is a specialization of 'Classifier'.
+The class 'asmeta_domains_NaturalDomain' is a specialization of 'IntegerDomain'.
+The class 'asmeta_domains_UndefDomain' is a specialization of 'BasicTd'.
+The class 'asmeta_domains_TypeDomain' is a specialization of 'Domain'.
+The class 'asmeta_domains_StructuredTd' is a specialization of 'TypeDomain'.
+The class 'asmeta_domains_StringDomain' is a specialization of 'BasicTd'.
+The class 'asmeta_domains_SequenceDomain' is a specialization of 'StructuredTd'.
+The class 'asmeta_domains_RuleDomain' is a specialization of 'StructuredTd'.
+The class 'asmeta_domains_ReserveDomain' is a specialization of 'AbstractTd'.
+The class 'asmeta_domains_RealDomain' is a specialization of 'ComplexDomain'.
+The class 'asmeta_domains_ProductDomain' is a specialization of 'StructuredTd'.
+The class 'asmeta_domains_PowersetDomain' is a specialization of 'StructuredTd'.
+The class 'asmeta_domains_MapDomain' is a specialization of 'StructuredTd'.
+The class 'asmeta_domains_IntegerDomain' is a specialization of 'RealDomain'.
+The class 'asmeta_domains_EnumTd' is a specialization of 'TypeDomain'.
+The class 'asmeta_domains_Domain' is a specialization of 'Classifier'.
+The class 'asmeta_domains_ConcreteDomain' is a specialization of 'Domain'.
+The class 'asmeta_domains_ComplexDomain' is a specialization of 'BasicTd'.
+The class 'asmeta_domains_CharDomain' is a specialization of 'BasicTd'.
+The class 'asmeta_domains_BooleanDomain' is a specialization of 'BasicTd'.
+The class 'asmeta_domains_BasicTd' is a specialization of 'TypeDomain'.
+The class 'asmeta_domains_BagDomain' is a specialization of 'StructuredTd'.
+The class 'asmeta_domains_AnyDomain' is a specialization of 'TypeDomain'.
+The class 'asmeta_domains_AgentDomain' is a specialization of 'AbstractTd'.
+The class 'asmeta_domains_AbstractTd' is a specialization of 'TypeDomain'.
+
+Relationships between classes are modeled using associations.
+An association connects 'asmeta_furtherterms_MapTerm' and 'basicterms_TupleTerm'. From 'asmeta_furtherterms_MapTerm', the role 'asmeta_furtherterms_MapTerm' has cardinality 0..*, and from 'basicterms_TupleTerm', the role 'basicterms_TupleTerm' has cardinality 0..*.
+An association connects 'asmeta_furtherterms_LetTerm' and 'basicterms_VariableTerm'. From 'asmeta_furtherterms_LetTerm', the role 'asmeta_furtherterms_LetTerm' has cardinality 0..*, and from 'basicterms_VariableTerm', the role 'basicterms_VariableTerm' has cardinality 0..*.
+An association connects 'basicterms_Term' and 'asmeta_furtherterms_LetTerm'. From 'basicterms_Term', the role 'basicterms_Term' has cardinality 0..*, and from 'asmeta_furtherterms_LetTerm', the role 'asmeta_furtherterms_LetTerm3' has cardinality 0..*.
+An association connects 'basicterms_Term' and 'asmeta_furtherterms_LetTerm'. From 'basicterms_Term', the role 'basicterms_Term6' has cardinality 0..*, and from 'asmeta_furtherterms_LetTerm', the role 'asmeta_furtherterms_LetTerm5' has cardinality 0..*.
+An association connects 'basicterms_VariableTerm' and 'asmeta_furtherterms_FiniteQuantificationTerm'. From 'basicterms_VariableTerm', the role 'terms' has cardinality 0..*, and from 'asmeta_furtherterms_FiniteQuantificationTerm', the role 'basicterms' has cardinality 0..*.
+An association connects 'basicterms_Term' and 'asmeta_furtherterms_FiniteQuantificationTerm'. From 'basicterms_Term', the role 'basicterms_Term9' has cardinality 0..*, and from 'asmeta_furtherterms_FiniteQuantificationTerm', the role 'asmeta_furtherterms_FiniteQuantificationTerm' has cardinality 0..*.
+An association connects 'basicterms_Term' and 'asmeta_furtherterms_ConditionalTerm'. From 'basicterms_Term', the role 'basicterms_Term11' has cardinality 0..*, and from 'asmeta_furtherterms_ConditionalTerm', the role 'asmeta_furtherterms_ConditionalTerm' has cardinality 0..*.
+An association connects 'basicterms_Term' and 'asmeta_furtherterms_ConditionalTerm'. From 'basicterms_Term', the role 'basicterms_Term14' has cardinality 0..*, and from 'asmeta_furtherterms_ConditionalTerm', the role 'asmeta_furtherterms_ConditionalTerm13' has cardinality 0..*.
+An association connects 'asmeta_furtherterms_ConditionalTerm' and 'basicterms_Term'. From 'asmeta_furtherterms_ConditionalTerm', the role 'asmeta_furtherterms_ConditionalTerm16' has cardinality 0..*, and from 'basicterms_Term', the role 'basicterms_Term17' has cardinality 0..*.
+An association connects 'asmeta_furtherterms_ComprehensionTerm' and 'basicterms_VariableTerm'. From 'asmeta_furtherterms_ComprehensionTerm', the role 'asmeta_furtherterms_ComprehensionTerm' has cardinality 0..*, and from 'basicterms_VariableTerm', the role 'basicterms_VariableTerm19' has cardinality 0..*.
+An association connects 'basicterms_Term' and 'asmeta_furtherterms_ComprehensionTerm'. From 'basicterms_Term', the role 'basicterms_Term22' has cardinality 0..*, and from 'asmeta_furtherterms_ComprehensionTerm', the role 'asmeta_furtherterms_ComprehensionTerm21' has cardinality 0..*.
+An association connects 'asmeta_furtherterms_ComprehensionTerm' and 'basicterms_Term'. From 'asmeta_furtherterms_ComprehensionTerm', the role 'asmeta_furtherterms_ComprehensionTerm24' has cardinality 0..*, and from 'basicterms_Term', the role 'basicterms_Term25' has cardinality 0..*.
+An association connects 'asmeta_furtherterms_CaseTerm' and 'basicterms_Term'. From 'asmeta_furtherterms_CaseTerm', the role 'asmeta_furtherterms_CaseTerm' has cardinality 0..*, and from 'basicterms_Term', the role 'basicterms_Term27' has cardinality 0..*.
+An association connects 'asmeta_furtherterms_CaseTerm' and 'basicterms_Term'. From 'asmeta_furtherterms_CaseTerm', the role 'asmeta_furtherterms_CaseTerm29' has cardinality 0..*, and from 'basicterms_Term', the role 'basicterms_Term30' has cardinality 0..*.
+An association connects 'asmeta_furtherterms_CaseTerm' and 'basicterms_Term'. From 'asmeta_furtherterms_CaseTerm', the role 'asmeta_furtherterms_CaseTerm32' has cardinality 0..*, and from 'basicterms_Term', the role 'basicterms_Term33' has cardinality 0..*.
+An association connects 'asmeta_furtherterms_BagTerm' and 'basicterms_Term'. From 'asmeta_furtherterms_BagTerm', the role 'asmeta_furtherterms_BagTerm' has cardinality 0..*, and from 'basicterms_Term', the role 'basicterms_Term35' has cardinality 0..*.
+An association connects 'asmeta_basicterms_VariableTerm' and 'furtherterms_FiniteQuantificationTerm'. From 'asmeta_basicterms_VariableTerm', the role 'furtherterms' has cardinality 0..*, and from 'furtherterms_FiniteQuantificationTerm', the role 'terms37' has cardinality 0..*.
+An association connects 'basicterms_Term' and 'asmeta_basicterms_SetTerm'. From 'basicterms_Term', the role 'basicterms_Term39' has cardinality 0..*, and from 'asmeta_basicterms_SetTerm', the role 'asmeta_basicterms_SetTerm' has cardinality 0..*.
+An association connects 'asmeta_basicterms_RuleAsTerm' and 'RuleDeclaration'. From 'asmeta_basicterms_RuleAsTerm', the role 'asmeta_basicterms_RuleAsTerm' has cardinality 0..*, and from 'RuleDeclaration', the role 'RuleDeclaration' has cardinality 0..*.
+An association connects 'asmeta_basicterms_FunctionTerm' and 'basicterms_TupleTerm'. From 'asmeta_basicterms_FunctionTerm', the role 'asmeta_basicterms_FunctionTerm' has cardinality 0..*, and from 'basicterms_TupleTerm', the role 'basicterms_TupleTerm42' has cardinality 0..*.
+An association connects 'asmeta_basicterms_FunctionTerm' and 'Function'. From 'asmeta_basicterms_FunctionTerm', the role 'asmeta_basicterms_FunctionTerm44' has cardinality 0..*, and from 'Function', the role 'Function' has cardinality 0..*.
+An association connects 'asmeta_basicterms_Term' and 'domains_Domain'. From 'asmeta_basicterms_Term', the role 'asmeta_basicterms_Term' has cardinality 0..*, and from 'domains_Domain', the role 'domains_Domain' has cardinality 0..*.
+An association connects 'asmeta_basicterms_Term' and 'basictransitionrules_TermAsRule'. From 'asmeta_basicterms_Term', the role 'basictransitionrules' has cardinality 0..*, and from 'basictransitionrules_TermAsRule', the role 'transitionrules' has cardinality 0..*.
+An association connects 'basictransitionrules_MacroCallRule' and 'asmeta_structure_AgentInitialization'. From 'basictransitionrules_MacroCallRule', the role 'basictransitionrules_MacroCallRule' has cardinality 0..*, and from 'asmeta_structure_AgentInitialization', the role 'asmeta_structure_AgentInitialization' has cardinality 0..*.
+An association connects 'domains_Domain' and 'asmeta_structure_AgentInitialization'. From 'domains_Domain', the role 'domains_Domain50' has cardinality 0..*, and from 'asmeta_structure_AgentInitialization', the role 'asmeta_structure_AgentInitialization49' has cardinality 0..*.
+An association connects 'Initialization' and 'asmeta_structure_AgentInitialization'. From 'Initialization', the role 'structure' has cardinality 0..*, and from 'asmeta_structure_AgentInitialization', the role 'Initialization' has cardinality 0..*.
+An association connects 'asmeta_structure_Body' and 'FunctionDefinition'. From 'asmeta_structure_Body', the role 'asmeta_structure_Body' has cardinality 0..*, and from 'FunctionDefinition', the role 'FunctionDefinition' has cardinality 0..*.
+An association connects 'asmeta_structure_Body' and 'Property'. From 'asmeta_structure_Body', the role 'asmeta_structure_Body54' has cardinality 0..*, and from 'Property', the role 'Property' has cardinality 0..*.
+An association connects 'asmeta_structure_Body' and 'DomainDefinition'. From 'asmeta_structure_Body', the role 'asmeta_structure_Body56' has cardinality 0..*, and from 'DomainDefinition', the role 'DomainDefinition' has cardinality 0..*.
+An association connects 'asmeta_structure_Body' and 'RuleDeclaration'. From 'asmeta_structure_Body', the role 'RuleDeclaration58' has cardinality 0..*, and from 'RuleDeclaration', the role 'definitions' has cardinality 0..*.
+An association connects 'Asm' and 'asmeta_structure_Body'. From 'Asm', the role 'structure60' has cardinality 0..*, and from 'asmeta_structure_Body', the role 'Asm' has cardinality 0..*.
+An association connects 'asmeta_structure_FunctionInitialization' and 'Initialization'. From 'asmeta_structure_FunctionInitialization', the role 'Initialization62' has cardinality 0..*, and from 'Initialization', the role 'structure63' has cardinality 0..*.
+An association connects 'basicterms_Term' and 'asmeta_structure_FunctionInitialization'. From 'basicterms_Term', the role 'basicterms_Term65' has cardinality 0..*, and from 'asmeta_structure_FunctionInitialization', the role 'asmeta_structure_FunctionInitialization' has cardinality 0..*.
+An association connects 'asmeta_structure_FunctionInitialization' and 'DynamicFunction'. From 'asmeta_structure_FunctionInitialization', the role 'DynamicFunction' has cardinality 0..*, and from 'DynamicFunction', the role 'definitions67' has cardinality 0..*.
+An association connects 'basicterms_VariableTerm' and 'asmeta_structure_FunctionInitialization'. From 'basicterms_VariableTerm', the role 'basicterms_VariableTerm70' has cardinality 0..*, and from 'asmeta_structure_FunctionInitialization', the role 'asmeta_structure_FunctionInitialization69' has cardinality 0..*.
+An association connects 'domains_ConcreteDomain' and 'asmeta_structure_DomainInitialization'. From 'domains_ConcreteDomain', the role 'definitions72' has cardinality 0..*, and from 'asmeta_structure_DomainInitialization', the role 'domains' has cardinality 0..*.
+An association connects 'basicterms_Term' and 'asmeta_structure_DomainInitialization'. From 'basicterms_Term', the role 'basicterms_Term74' has cardinality 0..*, and from 'asmeta_structure_DomainInitialization', the role 'asmeta_structure_DomainInitialization' has cardinality 0..*.
+An association connects 'Initialization' and 'asmeta_structure_DomainInitialization'. From 'Initialization', the role 'structure77' has cardinality 0..*, and from 'asmeta_structure_DomainInitialization', the role 'Initialization76' has cardinality 0..*.
+An association connects 'asmeta_structure_Signature' and 'domains_Domain'. From 'asmeta_structure_Signature', the role 'domains79' has cardinality 0..*, and from 'domains_Domain', the role 'definitions80' has cardinality 0..*.
+An association connects 'Function' and 'asmeta_structure_Signature'. From 'Function', the role 'definitions83' has cardinality 0..*, and from 'asmeta_structure_Signature', the role 'Function82' has cardinality 0..*.
+An association connects 'asmeta_structure_Signature' and 'Header'. From 'asmeta_structure_Signature', the role 'Header' has cardinality 0..*, and from 'Header', the role 'structure85' has cardinality 0..*.
+An association connects 'asmeta_structure_Signature' and 'domains_StructuredTd'. From 'asmeta_structure_Signature', the role 'asmeta_structure_Signature' has cardinality 0..*, and from 'domains_StructuredTd', the role 'domains_StructuredTd' has cardinality 0..*.
+An association connects 'Function' and 'asmeta_structure_ExportClause'. From 'Function', the role 'Function88' has cardinality 0..*, and from 'asmeta_structure_ExportClause', the role 'asmeta_structure_ExportClause' has cardinality 0..*.
+An association connects 'domains_Domain' and 'asmeta_structure_ExportClause'. From 'domains_Domain', the role 'domains_Domain91' has cardinality 0..*, and from 'asmeta_structure_ExportClause', the role 'asmeta_structure_ExportClause90' has cardinality 0..*.
+An association connects 'RuleDeclaration' and 'asmeta_structure_ExportClause'. From 'RuleDeclaration', the role 'RuleDeclaration94' has cardinality 0..*, and from 'asmeta_structure_ExportClause', the role 'asmeta_structure_ExportClause93' has cardinality 0..*.
+An association connects 'domains_Domain' and 'asmeta_structure_ImportClause'. From 'domains_Domain', the role 'domains_Domain96' has cardinality 0..*, and from 'asmeta_structure_ImportClause', the role 'asmeta_structure_ImportClause' has cardinality 0..*.
+An association connects 'Function' and 'asmeta_structure_ImportClause'. From 'Function', the role 'Function99' has cardinality 0..*, and from 'asmeta_structure_ImportClause', the role 'asmeta_structure_ImportClause98' has cardinality 0..*.
+An association connects 'RuleDeclaration' and 'asmeta_structure_ImportClause'. From 'RuleDeclaration', the role 'RuleDeclaration102' has cardinality 0..*, and from 'asmeta_structure_ImportClause', the role 'asmeta_structure_ImportClause101' has cardinality 0..*.
+An association connects 'asmeta_structure_FunctionDefinition' and 'basicterms_Term'. From 'asmeta_structure_FunctionDefinition', the role 'asmeta_structure_FunctionDefinition' has cardinality 0..*, and from 'basicterms_Term', the role 'basicterms_Term104' has cardinality 0..*.
+An association connects 'asmeta_structure_FunctionDefinition' and 'basicterms_VariableTerm'. From 'asmeta_structure_FunctionDefinition', the role 'asmeta_structure_FunctionDefinition106' has cardinality 0..*, and from 'basicterms_VariableTerm', the role 'basicterms_VariableTerm107' has cardinality 0..*.
+An association connects 'asmeta_structure_FunctionDefinition' and 'Function'. From 'asmeta_structure_FunctionDefinition', the role 'Function109' has cardinality 0..*, and from 'Function', the role 'definitions110' has cardinality 0..*.
+An association connects 'asmeta_structure_DomainDefinition' and 'basicterms_Term'. From 'asmeta_structure_DomainDefinition', the role 'asmeta_structure_DomainDefinition' has cardinality 0..*, and from 'basicterms_Term', the role 'basicterms_Term112' has cardinality 0..*.
+An association connects 'asmeta_structure_DomainDefinition' and 'domains_ConcreteDomain'. From 'asmeta_structure_DomainDefinition', the role 'domains114' has cardinality 0..*, and from 'domains_ConcreteDomain', the role 'definitions115' has cardinality 0..*.
+An association connects 'DomainInitialization' and 'asmeta_structure_Initialization'. From 'DomainInitialization', the role 'structure117' has cardinality 0..*, and from 'asmeta_structure_Initialization', the role 'DomainInitialization' has cardinality 0..*.
+An association connects 'FunctionInitialization' and 'asmeta_structure_Initialization'. From 'FunctionInitialization', the role 'structure119' has cardinality 0..*, and from 'asmeta_structure_Initialization', the role 'FunctionInitialization' has cardinality 0..*.
+An association connects 'AgentInitialization' and 'asmeta_structure_Initialization'. From 'AgentInitialization', the role 'structure121' has cardinality 0..*, and from 'asmeta_structure_Initialization', the role 'AgentInitialization' has cardinality 0..*.
+An association connects 'asmeta_structure_Initialization' and 'Asm'. From 'asmeta_structure_Initialization', the role 'Asm123' has cardinality 0..*, and from 'Asm', the role 'structure124' has cardinality 0..*.
+An association connects 'asmeta_structure_Header' and 'ImportClause'. From 'asmeta_structure_Header', the role 'asmeta_structure_Header' has cardinality 0..*, and from 'ImportClause', the role 'ImportClause' has cardinality 0..*.
+An association connects 'Signature' and 'asmeta_structure_Header'. From 'Signature', the role 'structure127' has cardinality 0..*, and from 'asmeta_structure_Header', the role 'Signature' has cardinality 0..*.
+An association connects 'ExportClause' and 'asmeta_structure_Header'. From 'ExportClause', the role 'ExportClause' has cardinality 0..*, and from 'asmeta_structure_Header', the role 'asmeta_structure_Header129' has cardinality 0..*.
+An association connects 'asmeta_structure_Header' and 'Asm'. From 'asmeta_structure_Header', the role 'Asm131' has cardinality 0..*, and from 'Asm', the role 'structure132' has cardinality 0..*.
+An association connects 'Initialization' and 'asmeta_structure_Asm'. From 'Initialization', the role 'Initialization134' has cardinality 0..*, and from 'asmeta_structure_Asm', the role 'asmeta_structure_Asm' has cardinality 0..*.
+An association connects 'asmeta_structure_Asm' and 'Initialization'. From 'asmeta_structure_Asm', the role 'Initialization136' has cardinality 0..*, and from 'Initialization', the role 'structure137' has cardinality 0..*.
+An association connects 'Body' and 'asmeta_structure_Asm'. From 'Body', the role 'structure139' has cardinality 0..*, and from 'asmeta_structure_Asm', the role 'Body' has cardinality 0..*.
+An association connects 'asmeta_structure_Asm' and 'Header'. From 'asmeta_structure_Asm', the role 'Header141' has cardinality 0..*, and from 'Header', the role 'structure142' has cardinality 0..*.
+An association connects 'basictransitionrules_MacroDeclaration' and 'asmeta_structure_Asm'. From 'basictransitionrules_MacroDeclaration', the role 'basictransitionrules_MacroDeclaration' has cardinality 0..*, and from 'asmeta_structure_Asm', the role 'asmeta_structure_Asm144' has cardinality 0..*.
+An association connects 'asmeta_turbotransitionrules_TurboDeclaration' and 'domains_Domain'. From 'asmeta_turbotransitionrules_TurboDeclaration', the role 'asmeta_turbotransitionrules_TurboDeclaration' has cardinality 0..*, and from 'domains_Domain', the role 'domains_Domain146' has cardinality 0..*.
+An association connects 'basictransitionrules_Rule' and 'asmeta_turbotransitionrules_TurboLocalStateRule'. From 'basictransitionrules_Rule', the role 'basictransitionrules_Rule' has cardinality 0..*, and from 'asmeta_turbotransitionrules_TurboLocalStateRule', the role 'asmeta_turbotransitionrules_TurboLocalStateRule' has cardinality 0..*.
+An association connects 'asmeta_turbotransitionrules_TurboLocalStateRule' and 'basictransitionrules_Rule'. From 'asmeta_turbotransitionrules_TurboLocalStateRule', the role 'asmeta_turbotransitionrules_TurboLocalStateRule149' has cardinality 0..*, and from 'basictransitionrules_Rule', the role 'basictransitionrules_Rule150' has cardinality 0..*.
+An association connects 'LocalFunction' and 'asmeta_turbotransitionrules_TurboLocalStateRule'. From 'LocalFunction', the role 'LocalFunction' has cardinality 0..*, and from 'asmeta_turbotransitionrules_TurboLocalStateRule', the role 'asmeta_turbotransitionrules_TurboLocalStateRule152' has cardinality 0..*.
+An association connects 'turbotransitionrules_TurboDeclaration' and 'asmeta_turbotransitionrules_TurboCallRule'. From 'turbotransitionrules_TurboDeclaration', the role 'turbotransitionrules_TurboDeclaration' has cardinality 0..*, and from 'asmeta_turbotransitionrules_TurboCallRule', the role 'asmeta_turbotransitionrules_TurboCallRule' has cardinality 0..*.
+An association connects 'basicterms_Term' and 'asmeta_turbotransitionrules_TurboReturnRule'. From 'basicterms_Term', the role 'basicterms_Term155' has cardinality 0..*, and from 'asmeta_turbotransitionrules_TurboReturnRule', the role 'asmeta_turbotransitionrules_TurboReturnRule' has cardinality 0..*.
+An association connects 'turbotransitionrules_TurboCallRule' and 'asmeta_turbotransitionrules_TurboReturnRule'. From 'turbotransitionrules_TurboCallRule', the role 'turbotransitionrules_TurboCallRule' has cardinality 0..*, and from 'asmeta_turbotransitionrules_TurboReturnRule', the role 'asmeta_turbotransitionrules_TurboReturnRule157' has cardinality 0..*.
+An association connects 'basicterms_Term' and 'asmeta_turbotransitionrules_TryCatchRule'. From 'basicterms_Term', the role 'basicterms_Term159' has cardinality 0..*, and from 'asmeta_turbotransitionrules_TryCatchRule', the role 'asmeta_turbotransitionrules_TryCatchRule' has cardinality 0..*.
+An association connects 'asmeta_turbotransitionrules_TryCatchRule' and 'basictransitionrules_Rule'. From 'asmeta_turbotransitionrules_TryCatchRule', the role 'asmeta_turbotransitionrules_TryCatchRule161' has cardinality 0..*, and from 'basictransitionrules_Rule', the role 'basictransitionrules_Rule162' has cardinality 0..*.
+An association connects 'asmeta_turbotransitionrules_TryCatchRule' and 'basictransitionrules_Rule'. From 'asmeta_turbotransitionrules_TryCatchRule', the role 'asmeta_turbotransitionrules_TryCatchRule164' has cardinality 0..*, and from 'basictransitionrules_Rule', the role 'basictransitionrules_Rule165' has cardinality 0..*.
+An association connects 'asmeta_turbotransitionrules_IterateRule' and 'basictransitionrules_Rule'. From 'asmeta_turbotransitionrules_IterateRule', the role 'asmeta_turbotransitionrules_IterateRule' has cardinality 0..*, and from 'basictransitionrules_Rule', the role 'basictransitionrules_Rule167' has cardinality 0..*.
+An association connects 'basictransitionrules_Rule' and 'asmeta_derivedtransitionrules_RecursiveWhileRule'. From 'basictransitionrules_Rule', the role 'basictransitionrules_Rule169' has cardinality 0..*, and from 'asmeta_derivedtransitionrules_RecursiveWhileRule', the role 'asmeta_derivedtransitionrules_RecursiveWhileRule' has cardinality 0..*.
+An association connects 'asmeta_derivedtransitionrules_RecursiveWhileRule' and 'basicterms_Term'. From 'asmeta_derivedtransitionrules_RecursiveWhileRule', the role 'asmeta_derivedtransitionrules_RecursiveWhileRule171' has cardinality 0..*, and from 'basicterms_Term', the role 'basicterms_Term172' has cardinality 0..*.
+An association connects 'basicterms_Term' and 'asmeta_derivedtransitionrules_IterativeWhileRule'. From 'basicterms_Term', the role 'basicterms_Term174' has cardinality 0..*, and from 'asmeta_derivedtransitionrules_IterativeWhileRule', the role 'asmeta_derivedtransitionrules_IterativeWhileRule' has cardinality 0..*.
+An association connects 'basictransitionrules_Rule' and 'asmeta_derivedtransitionrules_IterativeWhileRule'. From 'basictransitionrules_Rule', the role 'basictransitionrules_Rule177' has cardinality 0..*, and from 'asmeta_derivedtransitionrules_IterativeWhileRule', the role 'asmeta_derivedtransitionrules_IterativeWhileRule176' has cardinality 0..*.
+An association connects 'asmeta_derivedtransitionrules_CaseRule' and 'basicterms_Term'. From 'asmeta_derivedtransitionrules_CaseRule', the role 'asmeta_derivedtransitionrules_CaseRule' has cardinality 0..*, and from 'basicterms_Term', the role 'basicterms_Term179' has cardinality 0..*.
+An association connects 'basicterms_Term' and 'asmeta_derivedtransitionrules_CaseRule'. From 'basicterms_Term', the role 'basicterms_Term182' has cardinality 0..*, and from 'asmeta_derivedtransitionrules_CaseRule', the role 'asmeta_derivedtransitionrules_CaseRule181' has cardinality 0..*.
+An association connects 'asmeta_derivedtransitionrules_CaseRule' and 'basictransitionrules_Rule'. From 'asmeta_derivedtransitionrules_CaseRule', the role 'asmeta_derivedtransitionrules_CaseRule184' has cardinality 0..*, and from 'basictransitionrules_Rule', the role 'basictransitionrules_Rule185' has cardinality 0..*.
+An association connects 'basicterms_Term' and 'asmeta_basictransitionrules_TermAsRule'. From 'basicterms_Term', the role 'terms188' has cardinality 0..*, and from 'asmeta_basictransitionrules_TermAsRule', the role 'basicterms187' has cardinality 0..*.
+An association connects 'basictransitionrules_Rule' and 'asmeta_basictransitionrules_ChooseRule'. From 'basictransitionrules_Rule', the role 'basictransitionrules_Rule190' has cardinality 0..*, and from 'asmeta_basictransitionrules_ChooseRule', the role 'asmeta_basictransitionrules_ChooseRule' has cardinality 0..*.
+An association connects 'asmeta_basictransitionrules_ChooseRule' and 'basictransitionrules_Rule'. From 'asmeta_basictransitionrules_ChooseRule', the role 'asmeta_basictransitionrules_ChooseRule192' has cardinality 0..*, and from 'basictransitionrules_Rule', the role 'basictransitionrules_Rule193' has cardinality 0..*.
+An association connects 'asmeta_basictransitionrules_ChooseRule' and 'basicterms_Term'. From 'asmeta_basictransitionrules_ChooseRule', the role 'asmeta_basictransitionrules_ChooseRule195' has cardinality 0..*, and from 'basicterms_Term', the role 'basicterms_Term196' has cardinality 0..*.
+An association connects 'asmeta_basictransitionrules_ChooseRule' and 'basicterms_VariableTerm'. From 'asmeta_basictransitionrules_ChooseRule', the role 'asmeta_basictransitionrules_ChooseRule198' has cardinality 0..*, and from 'basicterms_VariableTerm', the role 'basicterms_VariableTerm199' has cardinality 0..*.
+An association connects 'asmeta_basictransitionrules_MacroCallRule' and 'basictransitionrules_MacroDeclaration'. From 'asmeta_basictransitionrules_MacroCallRule', the role 'asmeta_basictransitionrules_MacroCallRule' has cardinality 0..*, and from 'basictransitionrules_MacroDeclaration', the role 'basictransitionrules_MacroDeclaration201' has cardinality 0..*.
+An association connects 'asmeta_basictransitionrules_ConditionalRule' and 'basicterms_Term'. From 'asmeta_basictransitionrules_ConditionalRule', the role 'asmeta_basictransitionrules_ConditionalRule' has cardinality 0..*, and from 'basicterms_Term', the role 'basicterms_Term203' has cardinality 0..*.
+An association connects 'asmeta_basictransitionrules_ConditionalRule' and 'basictransitionrules_Rule'. From 'asmeta_basictransitionrules_ConditionalRule', the role 'asmeta_basictransitionrules_ConditionalRule205' has cardinality 0..*, and from 'basictransitionrules_Rule', the role 'basictransitionrules_Rule206' has cardinality 0..*.
+An association connects 'asmeta_basictransitionrules_ConditionalRule' and 'basictransitionrules_Rule'. From 'asmeta_basictransitionrules_ConditionalRule', the role 'asmeta_basictransitionrules_ConditionalRule208' has cardinality 0..*, and from 'basictransitionrules_Rule', the role 'basictransitionrules_Rule209' has cardinality 0..*.
+An association connects 'basicterms_VariableTerm' and 'asmeta_basictransitionrules_ForallRule'. From 'basicterms_VariableTerm', the role 'basicterms_VariableTerm211' has cardinality 0..*, and from 'asmeta_basictransitionrules_ForallRule', the role 'asmeta_basictransitionrules_ForallRule' has cardinality 0..*.
+An association connects 'basicterms_Term' and 'asmeta_basictransitionrules_ForallRule'. From 'basicterms_Term', the role 'basicterms_Term214' has cardinality 0..*, and from 'asmeta_basictransitionrules_ForallRule', the role 'asmeta_basictransitionrules_ForallRule213' has cardinality 0..*.
+An association connects 'asmeta_basictransitionrules_ForallRule' and 'basictransitionrules_Rule'. From 'asmeta_basictransitionrules_ForallRule', the role 'asmeta_basictransitionrules_ForallRule216' has cardinality 0..*, and from 'basictransitionrules_Rule', the role 'basictransitionrules_Rule217' has cardinality 0..*.
+An association connects 'asmeta_basictransitionrules_LetRule' and 'basictransitionrules_Rule'. From 'asmeta_basictransitionrules_LetRule', the role 'asmeta_basictransitionrules_LetRule' has cardinality 0..*, and from 'basictransitionrules_Rule', the role 'basictransitionrules_Rule219' has cardinality 0..*.
+An association connects 'basicterms_Term' and 'asmeta_basictransitionrules_LetRule'. From 'basicterms_Term', the role 'basicterms_Term222' has cardinality 0..*, and from 'asmeta_basictransitionrules_LetRule', the role 'asmeta_basictransitionrules_LetRule221' has cardinality 0..*.
+An association connects 'asmeta_basictransitionrules_LetRule' and 'basicterms_VariableTerm'. From 'asmeta_basictransitionrules_LetRule', the role 'asmeta_basictransitionrules_LetRule224' has cardinality 0..*, and from 'basicterms_VariableTerm', the role 'basicterms_VariableTerm225' has cardinality 0..*.
+An association connects 'domains_Domain' and 'asmeta_basictransitionrules_ExtendRule'. From 'domains_Domain', the role 'domains_Domain227' has cardinality 0..*, and from 'asmeta_basictransitionrules_ExtendRule', the role 'asmeta_basictransitionrules_ExtendRule' has cardinality 0..*.
+An association connects 'asmeta_basictransitionrules_ExtendRule' and 'basicterms_VariableTerm'. From 'asmeta_basictransitionrules_ExtendRule', the role 'asmeta_basictransitionrules_ExtendRule229' has cardinality 0..*, and from 'basicterms_VariableTerm', the role 'basicterms_VariableTerm230' has cardinality 0..*.
+An association connects 'basictransitionrules_Rule' and 'asmeta_basictransitionrules_ExtendRule'. From 'basictransitionrules_Rule', the role 'basictransitionrules_Rule233' has cardinality 0..*, and from 'asmeta_basictransitionrules_ExtendRule', the role 'asmeta_basictransitionrules_ExtendRule232' has cardinality 0..*.
+An association connects 'basicterms_Term' and 'asmeta_basictransitionrules_UpdateRule'. From 'basicterms_Term', the role 'basicterms_Term235' has cardinality 0..*, and from 'asmeta_basictransitionrules_UpdateRule', the role 'asmeta_basictransitionrules_UpdateRule' has cardinality 0..*.
+An association connects 'basicterms_Term' and 'asmeta_basictransitionrules_UpdateRule'. From 'basicterms_Term', the role 'basicterms_Term238' has cardinality 0..*, and from 'asmeta_basictransitionrules_UpdateRule', the role 'asmeta_basictransitionrules_UpdateRule237' has cardinality 0..*.
+An association connects 'asmeta_definitions_RuleDeclaration' and 'basicterms_VariableTerm'. From 'asmeta_definitions_RuleDeclaration', the role 'asmeta_definitions_RuleDeclaration' has cardinality 0..*, and from 'basicterms_VariableTerm', the role 'basicterms_VariableTerm240' has cardinality 0..*.
+An association connects 'asmeta_definitions_RuleDeclaration' and 'Invariant'. From 'asmeta_definitions_RuleDeclaration', the role 'Invariant' has cardinality 0..*, and from 'Invariant', the role 'definitions242' has cardinality 0..*.
+An association connects 'basictransitionrules_Rule' and 'asmeta_definitions_RuleDeclaration'. From 'basictransitionrules_Rule', the role 'basictransitionrules_Rule245' has cardinality 0..*, and from 'asmeta_definitions_RuleDeclaration', the role 'asmeta_definitions_RuleDeclaration244' has cardinality 0..*.
+An association connects 'Body' and 'asmeta_definitions_RuleDeclaration'. From 'Body', the role 'structure248' has cardinality 0..*, and from 'asmeta_definitions_RuleDeclaration', the role 'Body247' has cardinality 0..*.
+An association connects 'asmeta_definitions_DynamicFunction' and 'FunctionInitialization'. From 'asmeta_definitions_DynamicFunction', the role 'FunctionInitialization250' has cardinality 0..*, and from 'FunctionInitialization', the role 'structure251' has cardinality 0..*.
+An association connects 'asmeta_definitions_Invariant' and 'domains_Domain'. From 'asmeta_definitions_Invariant', the role 'domains253' has cardinality 0..*, and from 'domains_Domain', the role 'definitions254' has cardinality 0..*.
+An association connects 'basicterms_Term' and 'asmeta_definitions_Invariant'. From 'basicterms_Term', the role 'basicterms_Term256' has cardinality 0..*, and from 'asmeta_definitions_Invariant', the role 'asmeta_definitions_Invariant' has cardinality 0..*.
+An association connects 'asmeta_definitions_Invariant' and 'RuleDeclaration'. From 'asmeta_definitions_Invariant', the role 'RuleDeclaration258' has cardinality 0..*, and from 'RuleDeclaration', the role 'definitions259' has cardinality 0..*.
+An association connects 'asmeta_definitions_Invariant' and 'Function'. From 'asmeta_definitions_Invariant', the role 'Function261' has cardinality 0..*, and from 'Function', the role 'definitions262' has cardinality 0..*.
+An association connects 'domains_Domain' and 'asmeta_definitions_Function'. From 'domains_Domain', the role 'domains_Domain264' has cardinality 0..*, and from 'asmeta_definitions_Function', the role 'asmeta_definitions_Function' has cardinality 0..*.
+An association connects 'asmeta_definitions_Function' and 'domains_Domain'. From 'asmeta_definitions_Function', the role 'asmeta_definitions_Function266' has cardinality 0..*, and from 'domains_Domain', the role 'domains_Domain267' has cardinality 0..*.
+An association connects 'asmeta_definitions_Function' and 'FunctionDefinition'. From 'asmeta_definitions_Function', the role 'FunctionDefinition269' has cardinality 0..*, and from 'FunctionDefinition', the role 'structure270' has cardinality 0..*.
+An association connects 'asmeta_definitions_Function' and 'Invariant'. From 'asmeta_definitions_Function', the role 'Invariant272' has cardinality 0..*, and from 'Invariant', the role 'definitions273' has cardinality 0..*.
+An association connects 'asmeta_definitions_Function' and 'Signature'. From 'asmeta_definitions_Function', the role 'Signature275' has cardinality 0..*, and from 'Signature', the role 'structure276' has cardinality 0..*.
+An association connects 'domains_Domain' and 'asmeta_domains_SequenceDomain'. From 'domains_Domain', the role 'domains_Domain278' has cardinality 0..*, and from 'asmeta_domains_SequenceDomain', the role 'asmeta_domains_SequenceDomain' has cardinality 0..*.
+An association connects 'domains_Domain' and 'asmeta_domains_PowersetDomain'. From 'domains_Domain', the role 'domains_Domain280' has cardinality 0..*, and from 'asmeta_domains_PowersetDomain', the role 'asmeta_domains_PowersetDomain' has cardinality 0..*.
+An association connects 'asmeta_domains_MapDomain' and 'domains_Domain'. From 'asmeta_domains_MapDomain', the role 'asmeta_domains_MapDomain' has cardinality 0..*, and from 'domains_Domain', the role 'domains_Domain282' has cardinality 0..*.
+An association connects 'domains_Domain' and 'asmeta_domains_MapDomain'. From 'domains_Domain', the role 'domains_Domain285' has cardinality 0..*, and from 'asmeta_domains_MapDomain', the role 'asmeta_domains_MapDomain284' has cardinality 0..*.
+An association connects 'domains_EnumElement' and 'asmeta_domains_EnumTd'. From 'domains_EnumElement', the role 'domains_EnumElement' has cardinality 0..*, and from 'asmeta_domains_EnumTd', the role 'asmeta_domains_EnumTd' has cardinality 0..*.
+An association connects 'Invariant' and 'asmeta_domains_Domain'. From 'Invariant', the role 'definitions289' has cardinality 0..*, and from 'asmeta_domains_Domain', the role 'Invariant288' has cardinality 0..*.
+An association connects 'asmeta_domains_Domain' and 'Signature'. From 'asmeta_domains_Domain', the role 'Signature291' has cardinality 0..*, and from 'Signature', the role 'structure292' has cardinality 0..*.
+An association connects 'asmeta_domains_ConcreteDomain' and 'DomainInitialization'. From 'asmeta_domains_ConcreteDomain', the role 'DomainInitialization294' has cardinality 0..*, and from 'DomainInitialization', the role 'structure295' has cardinality 0..*.
+An association connects 'DomainDefinition' and 'asmeta_domains_ConcreteDomain'. From 'DomainDefinition', the role 'structure298' has cardinality 0..*, and from 'asmeta_domains_ConcreteDomain', the role 'DomainDefinition297' has cardinality 0..*.
+An association connects 'domains_TypeDomain' and 'asmeta_domains_ConcreteDomain'. From 'domains_TypeDomain', the role 'domains_TypeDomain' has cardinality 0..*, and from 'asmeta_domains_ConcreteDomain', the role 'asmeta_domains_ConcreteDomain' has cardinality 0..*.
+An association connects 'asmeta_domains_BagDomain' and 'domains_Domain'. From 'asmeta_domains_BagDomain', the role 'asmeta_domains_BagDomain' has cardinality 0..*, and from 'domains_Domain', the role 'domains_Domain301' has cardinality 0..*.

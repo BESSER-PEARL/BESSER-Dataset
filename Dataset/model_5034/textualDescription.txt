@@ -1,0 +1,105 @@
+The domain model 'party' describes the core structural elements and their relationships within the system.
+
+The model defines 24 main class(es).
+
+'party_MatrixRelationship' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Tagged' represents an important domain concept.
+It does not declare any attributes.
+
+'party_Custom' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'party_EMail' represents an important domain concept.
+It does not declare any attributes.
+
+'party_Identity' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'type', which is of type str; 'value', which is of type str.
+
+'Address' represents an important domain concept.
+It does not declare any attributes.
+
+'party_DateEffectiveObject' represents an important domain concept.
+It has the following attributes: 'end', which is of type date; 'start', which is of type date.
+
+'URL' represents an important domain concept.
+It does not declare any attributes.
+
+'party_URL' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'party_Tag' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str; 'comment', which is of type str.
+
+'party_Tagged' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'party_CommonObject' represents an important domain concept.
+It does not declare any attributes.
+
+'party_ContactInfo' represents an important domain concept.
+It has one attribute: 'category', which is of type str.
+
+'party_Address' represents an important domain concept.
+It has one attribute: 'country', which is of type str.
+
+'DateEffectiveObject' represents an important domain concept.
+It does not declare any attributes.
+
+'party_Phone' represents an important domain concept.
+It has the following attributes: 'number', which is of type str; 'areaCode', which is of type int; 'countryCode', which is of type str.
+
+'party_Web' represents an important domain concept.
+It does not declare any attributes.
+
+'party_Organization' represents an important domain concept.
+It has one attribute: 'organizationType', which is of type str.
+
+'Party' represents an important domain concept.
+It does not declare any attributes.
+
+'party_USAddress' represents an important domain concept.
+It has the following attributes: 'recipient', which is of type str; 'city', which is of type str; 'street2', which is of type str; 'street1', which is of type str; 'state', which is of type str; 'zip', which is of type str.
+
+'ContactInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'party_Party' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'party_Role' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'party_Person' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'party_Party' is a specialization of 'Tagged'.
+The class 'party_DateEffectiveObject' is a specialization of 'Tagged'.
+The class 'party_ContactInfo' is a specialization of 'DateEffectiveObject'.
+The class 'party_Phone' is a specialization of 'ContactInfo'.
+The class 'party_Web' is a specialization of 'URL'.
+The class 'party_EMail' is a specialization of 'URL'.
+The class 'party_Address' is a specialization of 'ContactInfo'.
+The class 'party_Custom' is a specialization of 'ContactInfo'.
+The class 'party_USAddress' is a specialization of 'Address'.
+The class 'party_Organization' is a specialization of 'Party'.
+The class 'party_Person' is a specialization of 'Party'.
+The class 'party_Role' is a specialization of 'DateEffectiveObject'.
+The class 'party_URL' is a specialization of 'ContactInfo'.
+The class 'party_MatrixRelationship' is a specialization of 'DateEffectiveObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'party_Party' and 'party_ContactInfo'. From 'party_Party', the role 'owner' has cardinality 0..*, and from 'party_ContactInfo', the role 'ContactInfo' has cardinality 0..*.
+An association connects 'party_Party' and 'party_Identity'. From 'party_Party', the role 'party_Party' has cardinality 0..*, and from 'party_Identity', the role 'party_Identity' has cardinality 0..*.
+An association connects 'party_Party' and 'party_Organization'. From 'party_Party', the role 'children' has cardinality 0..*, and from 'party_Organization', the role 'Organization' has cardinality 0..*.
+An association connects 'party_Tagged' and 'party_Tag'. From 'party_Tagged', the role 'party_Tagged' has cardinality 0..*, and from 'party_Tag', the role 'party_Tag' has cardinality 0..*.
+An association connects 'party_ContactInfo' and 'party_Party'. From 'party_ContactInfo', the role 'contactInfo' has cardinality 0..*, and from 'party_Party', the role 'Party' has cardinality 0..*.
+An association connects 'party_Party' and 'party_Organization'. From 'party_Party', the role 'Party6' has cardinality 0..*, and from 'party_Organization', the role 'parent' has cardinality 0..*.
+An association connects 'party_Organization' and 'party_Party'. From 'party_Organization', the role 'party_Organization' has cardinality 0..*, and from 'party_Party', the role 'party_Party8' has cardinality 0..*.
+An association connects 'party_Organization' and 'party_MatrixRelationship'. From 'party_Organization', the role 'party_Organization10' has cardinality 0..*, and from 'party_MatrixRelationship', the role 'party_MatrixRelationship' has cardinality 0..*.
+An association connects 'party_Party' and 'party_Role'. From 'party_Party', the role 'party_Party12' has cardinality 0..*, and from 'party_Role', the role 'party_Role' has cardinality 0..*.
+An association connects 'party_Role' and 'party_CommonObject'. From 'party_Role', the role 'roles' has cardinality 0..*, and from 'party_CommonObject', the role 'CommonObject' has cardinality 0..*.
+An association connects 'party_Role' and 'party_CommonObject'. From 'party_Role', the role 'Role' has cardinality 0..*, and from 'party_CommonObject', the role 'owner15' has cardinality 0..*.
+An association connects 'party_MatrixRelationship' and 'party_Party'. From 'party_MatrixRelationship', the role 'party_MatrixRelationship17' has cardinality 0..*, and from 'party_Party', the role 'party_Party18' has cardinality 0..*.

@@ -1,0 +1,29 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'model_ConfigExpectedResultPair' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Scenario' represents an important domain concept.
+It has one attribute: 'scenarioFilePath', which is of type str.
+
+'model_Config' represents an important domain concept.
+It has the following attributes: 'requestURL', which is of type str; 'requestBody', which is of type str; 'name', which is of type str; 'httpVerb', which is of type str; 'contentType', which is of type str.
+
+'model_Response' represents an important domain concept.
+It has the following attributes: 'statusCode', which is of type str; 'responseTime', which is of type str; 'responseBody', which is of type str; 'contentType', which is of type str.
+
+'model_ExpectedResult' represents an important domain concept.
+It has the following attributes: 'contentType', which is of type str; 'responseBody', which is of type str; 'statusCode', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StatusCode' defines the following possible values: 'RESET_CONTENT', 'METHOD_NOT_ALLOWED', 'CONTINUE', 'MOVED_TEMPORARILY', 'NO_CONTENT', 'SEE_OTHER', 'INSUFFICIENT_SPACE_ON_RESOURCE', 'UNPROCESSABLE_ENTITY', 'LOCKED', 'OK', 'BAD_REQUEST', 'BAD_GATEWAY', 'CREATED', 'TEMPORARY_REDIRECT', 'PROCESSING', 'USE_PROXY', 'FORBIDDEN', 'INTERNAL_SERVER_ERROR', 'HTTP_VERSION_NOT_SUPPORTED', 'NOT_FOUND', 'PRECONDITION_FAILED', 'INSUFFICIENT_STORAGE', 'CONNECTION_EXCEPTION', 'MULTIPLE_CHOICES', 'UNSUPPORTED_MEDIA_TYPE', 'REQUEST_URI_TOO_LONG', 'SWITCHING_PROTOCOLS', 'MOVED_PERMANENTLY', 'NON_AUTHORITATIVE_INFORMATION', 'PARTIAL_CONTENT', 'NOT_MODIFIED', 'MULTI_STATUS', 'REQUEST_TIMEOUT', 'ACCEPTED', 'REQUESTED_RANGE_NOT_SATISFIABLE', 'GATEWAY_TIMEOUT', 'PAYMENT_REQUIRED', 'EXPECTATION_FAILED', 'SERVICE_UNAVAILABLE', 'UNAUTHORIZED', 'PROXY_AUTHENTICATION_REQUIRED', 'NOT_ACCEPTABLE', 'GONE', 'CONFLICT', 'REQUEST_TOO_LONG', 'NOT_IMPLEMENTED', 'LENGTH_REQUIRED', 'METHOD_FAILURE', 'FAILED_DEPENDENCY'.
+The enumeration 'ContentType' defines the following possible values: 'XML_APPLICATION', 'HTML', 'JAVA_LANG_EXCEPTION', 'XML_TEXT', 'TEXT', 'TEXT_PLAIN', 'JSON', 'JAVASCRIPT'.
+The enumeration 'HttpVerb' defines the following possible values: 'DELETE', 'PUT', 'GET', 'POST'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Config' and 'model_Response'. From 'model_Config', the role 'model_Config' has cardinality 0..*, and from 'model_Response', the role 'model_Response' has cardinality 0..*.
+An association connects 'model_ConfigExpectedResultPair' and 'model_Scenario'. From 'model_ConfigExpectedResultPair', the role 'model_ConfigExpectedResultPair' has cardinality 0..*, and from 'model_Scenario', the role 'model_Scenario' has cardinality 0..*.
+An association connects 'model_Config' and 'model_ConfigExpectedResultPair'. From 'model_Config', the role 'model_Config4' has cardinality 0..*, and from 'model_ConfigExpectedResultPair', the role 'model_ConfigExpectedResultPair3' has cardinality 0..*.
+An association connects 'model_ConfigExpectedResultPair' and 'model_ExpectedResult'. From 'model_ConfigExpectedResultPair', the role 'model_ConfigExpectedResultPair6' has cardinality 0..*, and from 'model_ExpectedResult', the role 'model_ExpectedResult' has cardinality 0..*.

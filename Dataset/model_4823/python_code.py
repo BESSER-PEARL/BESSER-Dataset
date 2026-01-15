@@ -1,0 +1,1624 @@
+from datetime import datetime, date, time
+from abc import ABC, abstractmethod
+
+from enum import Enum
+
+############################################
+# Definition of Enumerations
+############################################
+
+class FolderType(Enum):
+    business = "business"
+    application = "application"
+    technology = "technology"
+    relations = "relations"
+    other = "other"
+    diagrams = "diagrams"
+    motivation = "motivation"
+    implementation_migration = "implementation_migration"
+    user = "user"
+    strategy = "strategy"
+
+
+############################################
+# Definition of Classes
+############################################
+
+class DiagramModel:
+
+    pass
+class model_ArchimateDiagramModel(DiagramModel):
+
+    def __init__(self, viewpoint: str):
+        self.viewpoint = viewpoint
+        
+    @property
+    def viewpoint(self) -> str:
+        return self.__viewpoint
+
+    @viewpoint.setter
+    def viewpoint(self, viewpoint: str):
+        self.__viewpoint = viewpoint
+
+class model_Lockable(ABC):
+
+    def __init__(self, locked: bool):
+        self.locked = locked
+        
+    @property
+    def locked(self) -> bool:
+        return self.__locked
+
+    @locked.setter
+    def locked(self, locked: bool):
+        self.__locked = locked
+
+class model_DiagramModelImageProvider(ABC):
+
+    def __init__(self, imagePath: str):
+        self.imagePath = imagePath
+        
+    @property
+    def imagePath(self) -> str:
+        return self.__imagePath
+
+    @imagePath.setter
+    def imagePath(self, imagePath: str):
+        self.__imagePath = imagePath
+
+class model_BorderObject(ABC):
+
+    def __init__(self, borderColor: str):
+        self.borderColor = borderColor
+        
+    @property
+    def borderColor(self) -> str:
+        return self.__borderColor
+
+    @borderColor.setter
+    def borderColor(self, borderColor: str):
+        self.__borderColor = borderColor
+
+class model_TextAlignment(ABC):
+
+    def __init__(self, textAlignment: int):
+        self.textAlignment = textAlignment
+        
+    @property
+    def textAlignment(self) -> int:
+        return self.__textAlignment
+
+    @textAlignment.setter
+    def textAlignment(self, textAlignment: int):
+        self.__textAlignment = textAlignment
+
+class model_TextPosition(ABC):
+
+    def __init__(self, textPosition: int):
+        self.textPosition = textPosition
+        
+    @property
+    def textPosition(self) -> int:
+        return self.__textPosition
+
+    @textPosition.setter
+    def textPosition(self, textPosition: int):
+        self.__textPosition = textPosition
+
+class model_FontAttribute(ABC):
+
+    def __init__(self, font: str, fontColor: str):
+        self.font = font
+        self.fontColor = fontColor
+        
+    @property
+    def fontColor(self) -> str:
+        return self.__fontColor
+
+    @fontColor.setter
+    def fontColor(self, fontColor: str):
+        self.__fontColor = fontColor
+
+    @property
+    def font(self) -> str:
+        return self.__font
+
+    @font.setter
+    def font(self, font: str):
+        self.__font = font
+
+class model_SketchModel(DiagramModel):
+
+    def __init__(self, background: int):
+        self.background = background
+        
+    @property
+    def background(self) -> int:
+        return self.__background
+
+    @background.setter
+    def background(self, background: int):
+        self.__background = background
+
+class DiagramModelConnection:
+
+    pass
+class DiagramModelArchimateComponent:
+
+    pass
+class model_DiagramModelArchimateConnection(DiagramModelArchimateComponent, DiagramModelConnection):
+
+    pass
+class DiagramModelImageProvider:
+
+    pass
+class BorderObject:
+
+    pass
+class TextContent:
+
+    pass
+class model_Bounds:
+
+    def __init__(self, x: int, y: int, width: int, height: int, model_Bounds: "model_DiagramModelObject" = None):
+        self.x = x
+        self.y = y
+        self.width = width
+        self.height = height
+        self.model_Bounds = model_Bounds
+        
+    @property
+    def height(self) -> int:
+        return self.__height
+
+    @height.setter
+    def height(self, height: int):
+        self.__height = height
+
+    @property
+    def width(self) -> int:
+        return self.__width
+
+    @width.setter
+    def width(self, width: int):
+        self.__width = width
+
+    @property
+    def y(self) -> int:
+        return self.__y
+
+    @y.setter
+    def y(self, y: int):
+        self.__y = y
+
+    @property
+    def x(self) -> int:
+        return self.__x
+
+    @x.setter
+    def x(self, x: int):
+        self.__x = x
+
+    @property
+    def model_Bounds(self):
+        return self.__model_Bounds
+
+    @model_Bounds.setter
+    def model_Bounds(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_Bounds__model_Bounds", None)
+        self.__model_Bounds = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "model_DiagramModelObject19"):
+                opp_val = getattr(old_value, "model_DiagramModelObject19", None)
+                if opp_val == self:
+                    setattr(old_value, "model_DiagramModelObject19", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "model_DiagramModelObject19"):
+                opp_val = getattr(value, "model_DiagramModelObject19", None)
+                setattr(value, "model_DiagramModelObject19", self)
+
+    def setLocation(self, y: int, x: int):
+        # TODO: Implement setLocation method
+        pass
+
+    def setSize(self, height: int, width: int):
+        # TODO: Implement setSize method
+        pass
+
+    def getCopy(self) -> str:
+        # TODO: Implement getCopy method
+        pass
+
+class TextAlignment:
+
+    pass
+class LineObject:
+
+    pass
+class FontAttribute:
+
+    pass
+class Connectable:
+
+    pass
+class model_DiagramModelArchimateComponent(Connectable):
+
+    def __init__(self):
+        
+    def addArchimateConceptToModel(self, parent: str):
+        # TODO: Implement addArchimateConceptToModel method
+        pass
+
+    def setArchimateConcept(self, concept: ArchimateConcept):
+        # TODO: Implement setArchimateConcept method
+        pass
+
+    def removeArchimateConceptFromModel(self):
+        # TODO: Implement removeArchimateConceptFromModel method
+        pass
+
+    def getArchimateConcept(self) -> ArchimateConcept:
+        # TODO: Implement getArchimateConcept method
+        pass
+
+class model_LineObject(ABC):
+
+    def __init__(self, lineWidth: int, lineColor: str):
+        self.lineWidth = lineWidth
+        self.lineColor = lineColor
+        
+    @property
+    def lineWidth(self) -> int:
+        return self.__lineWidth
+
+    @lineWidth.setter
+    def lineWidth(self, lineWidth: int):
+        self.__lineWidth = lineWidth
+
+    @property
+    def lineColor(self) -> str:
+        return self.__lineColor
+
+    @lineColor.setter
+    def lineColor(self, lineColor: str):
+        self.__lineColor = lineColor
+
+class DynamicRelationship:
+
+    pass
+class model_TriggeringRelationship(DynamicRelationship):
+
+    pass
+class model_FlowRelationship(DynamicRelationship):
+
+    pass
+class OtherRelationship:
+
+    pass
+class model_SpecializationRelationship(OtherRelationship):
+
+    pass
+class model_AssociationRelationship(OtherRelationship):
+
+    pass
+class StructuralRelationship:
+
+    pass
+class model_CompositionRelationship(StructuralRelationship):
+
+    pass
+class model_RealizationRelationship(StructuralRelationship):
+
+    pass
+class model_AssignmentRelationship(StructuralRelationship):
+
+    pass
+class model_AggregationRelationship(StructuralRelationship):
+
+    pass
+class DependendencyRelationship:
+
+    pass
+class model_ServingRelationship(DependendencyRelationship):
+
+    pass
+class model_InfluenceRelationship(DependendencyRelationship):
+
+    def __init__(self, strength: str):
+        self.strength = strength
+        
+    @property
+    def strength(self) -> str:
+        return self.__strength
+
+    @strength.setter
+    def strength(self, strength: str):
+        self.__strength = strength
+
+class model_AccessRelationship(DependendencyRelationship):
+
+    def __init__(self, accessType: int):
+        self.accessType = accessType
+        
+    @property
+    def accessType(self) -> int:
+        return self.__accessType
+
+    @accessType.setter
+    def accessType(self, accessType: int):
+        self.__accessType = accessType
+
+class TextPosition:
+
+    pass
+class DiagramModelObject:
+
+    pass
+class model_DiagramModelNote(TextContent, DiagramModelObject, TextPosition):
+
+    def __init__(self, borderType: int):
+        self.borderType = borderType
+        
+    @property
+    def borderType(self) -> int:
+        return self.__borderType
+
+    @borderType.setter
+    def borderType(self, borderType: int):
+        self.__borderType = borderType
+
+class model_DiagramModelImage(BorderObject, DiagramModelObject, DiagramModelImageProvider):
+
+    pass
+class model_DiagramModelReference(DiagramModelObject, TextPosition):
+
+    pass
+class DiagramModelContainer:
+
+    pass
+class model_DiagramModelArchimateObject(DiagramModelContainer, DiagramModelArchimateComponent, DiagramModelObject, TextPosition):
+
+    def __init__(self, type: int, model_DiagramModelArchimateObject: "model_ArchimateElement" = None):
+        self.type = type
+        self.model_DiagramModelArchimateObject = model_DiagramModelArchimateObject
+        
+    @property
+    def type(self) -> int:
+        return self.__type
+
+    @type.setter
+    def type(self, type: int):
+        self.__type = type
+
+    @property
+    def model_DiagramModelArchimateObject(self):
+        return self.__model_DiagramModelArchimateObject
+
+    @model_DiagramModelArchimateObject.setter
+    def model_DiagramModelArchimateObject(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_DiagramModelArchimateObject__model_DiagramModelArchimateObject", None)
+        self.__model_DiagramModelArchimateObject = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "model_ArchimateElement"):
+                opp_val = getattr(old_value, "model_ArchimateElement", None)
+                if opp_val == self:
+                    setattr(old_value, "model_ArchimateElement", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "model_ArchimateElement"):
+                opp_val = getattr(value, "model_ArchimateElement", None)
+                setattr(value, "model_ArchimateElement", self)
+
+class model_DiagramModelObject(TextAlignment, Connectable, FontAttribute, LineObject):
+
+    def __init__(self, fillColor: str, model_DiagramModelObject: "model_DiagramModelContainer" = None, model_DiagramModelObject19: "model_Bounds" = None):
+        self.fillColor = fillColor
+        self.model_DiagramModelObject = model_DiagramModelObject
+        self.model_DiagramModelObject19 = model_DiagramModelObject19
+        
+    @property
+    def fillColor(self) -> str:
+        return self.__fillColor
+
+    @fillColor.setter
+    def fillColor(self, fillColor: str):
+        self.__fillColor = fillColor
+
+    @property
+    def model_DiagramModelObject19(self):
+        return self.__model_DiagramModelObject19
+
+    @model_DiagramModelObject19.setter
+    def model_DiagramModelObject19(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_DiagramModelObject__model_DiagramModelObject19", None)
+        self.__model_DiagramModelObject19 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "model_Bounds"):
+                opp_val = getattr(old_value, "model_Bounds", None)
+                if opp_val == self:
+                    setattr(old_value, "model_Bounds", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "model_Bounds"):
+                opp_val = getattr(value, "model_Bounds", None)
+                setattr(value, "model_Bounds", self)
+
+    @property
+    def model_DiagramModelObject(self):
+        return self.__model_DiagramModelObject
+
+    @model_DiagramModelObject.setter
+    def model_DiagramModelObject(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_DiagramModelObject__model_DiagramModelObject", None)
+        self.__model_DiagramModelObject = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "model_DiagramModelContainer"):
+                opp_val = getattr(old_value, "model_DiagramModelContainer", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "model_DiagramModelContainer"):
+                opp_val = getattr(value, "model_DiagramModelContainer", None)
+                if opp_val is None:
+                    setattr(value, "model_DiagramModelContainer", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+    def setBounds(self, x: int, width: int, height: int, y: int):
+        # TODO: Implement setBounds method
+        pass
+
+class DiagramModelComponent:
+
+    pass
+class model_DiagramModelContainer(DiagramModelComponent):
+
+    pass
+class model_Connectable(DiagramModelComponent):
+
+    def __init__(self, model_Connectable: set["model_DiagramModelConnection"] = None, model_Connectable14: set["model_DiagramModelConnection"] = None, model_Connectable22: "model_DiagramModelConnection" = None, model_Connectable25: "model_DiagramModelConnection" = None):
+        self.model_Connectable = model_Connectable if model_Connectable is not None else set()
+        self.model_Connectable14 = model_Connectable14 if model_Connectable14 is not None else set()
+        self.model_Connectable22 = model_Connectable22
+        self.model_Connectable25 = model_Connectable25
+        
+    @property
+    def model_Connectable14(self):
+        return self.__model_Connectable14
+
+    @model_Connectable14.setter
+    def model_Connectable14(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_Connectable__model_Connectable14", None)
+        self.__model_Connectable14 = value if value is not None else set()
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            for item in old_value:
+                if hasattr(item, "model_DiagramModelConnection15"):
+                    opp_val = getattr(item, "model_DiagramModelConnection15", None)
+                    
+                    if opp_val == self:
+                        setattr(item, "model_DiagramModelConnection15", None)
+                    
+        # Add self to new opposite end
+        if value is not None:
+            for item in value:
+                if hasattr(item, "model_DiagramModelConnection15"):
+                    opp_val = getattr(item, "model_DiagramModelConnection15", None)
+                    
+                    setattr(item, "model_DiagramModelConnection15", self)
+                    
+
+    @property
+    def model_Connectable22(self):
+        return self.__model_Connectable22
+
+    @model_Connectable22.setter
+    def model_Connectable22(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_Connectable__model_Connectable22", None)
+        self.__model_Connectable22 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "model_DiagramModelConnection21"):
+                opp_val = getattr(old_value, "model_DiagramModelConnection21", None)
+                if opp_val == self:
+                    setattr(old_value, "model_DiagramModelConnection21", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "model_DiagramModelConnection21"):
+                opp_val = getattr(value, "model_DiagramModelConnection21", None)
+                setattr(value, "model_DiagramModelConnection21", self)
+
+    @property
+    def model_Connectable(self):
+        return self.__model_Connectable
+
+    @model_Connectable.setter
+    def model_Connectable(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_Connectable__model_Connectable", None)
+        self.__model_Connectable = value if value is not None else set()
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            for item in old_value:
+                if hasattr(item, "model_DiagramModelConnection"):
+                    opp_val = getattr(item, "model_DiagramModelConnection", None)
+                    
+                    if opp_val == self:
+                        setattr(item, "model_DiagramModelConnection", None)
+                    
+        # Add self to new opposite end
+        if value is not None:
+            for item in value:
+                if hasattr(item, "model_DiagramModelConnection"):
+                    opp_val = getattr(item, "model_DiagramModelConnection", None)
+                    
+                    setattr(item, "model_DiagramModelConnection", self)
+                    
+
+    @property
+    def model_Connectable25(self):
+        return self.__model_Connectable25
+
+    @model_Connectable25.setter
+    def model_Connectable25(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_Connectable__model_Connectable25", None)
+        self.__model_Connectable25 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "model_DiagramModelConnection24"):
+                opp_val = getattr(old_value, "model_DiagramModelConnection24", None)
+                if opp_val == self:
+                    setattr(old_value, "model_DiagramModelConnection24", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "model_DiagramModelConnection24"):
+                opp_val = getattr(value, "model_DiagramModelConnection24", None)
+                setattr(value, "model_DiagramModelConnection24", self)
+
+    def removeConnection(self, connection: str):
+        # TODO: Implement removeConnection method
+        pass
+
+    def addConnection(self, connection: str):
+        # TODO: Implement addConnection method
+        pass
+
+class CompositeElement:
+
+    pass
+class model_Location(CompositeElement):
+
+    pass
+class model_Grouping(CompositeElement):
+
+    pass
+class PhysicalElement:
+
+    pass
+class ImplementationMigrationElement:
+
+    pass
+class model_ImplementationEvent(ImplementationMigrationElement):
+
+    pass
+class model_Plateau(ImplementationMigrationElement, CompositeElement):
+
+    pass
+class BehaviorElement:
+
+    pass
+class model_WorkPackage(BehaviorElement, ImplementationMigrationElement):
+
+    pass
+class ActiveStructureElement:
+
+    pass
+class model_Equipment(PhysicalElement, ActiveStructureElement):
+
+    pass
+class model_DistributionNetwork(PhysicalElement, ActiveStructureElement):
+
+    pass
+class model_Facility(PhysicalElement, ActiveStructureElement):
+
+    pass
+class ApplicationElement:
+
+    pass
+class model_ApplicationInterface(ApplicationElement, ActiveStructureElement):
+
+    pass
+class model_ApplicationProcess(ApplicationElement, BehaviorElement):
+
+    pass
+class model_ApplicationEvent(ApplicationElement, BehaviorElement):
+
+    pass
+class model_ApplicationFunction(ApplicationElement, BehaviorElement):
+
+    pass
+class model_ApplicationComponent(ApplicationElement, ActiveStructureElement):
+
+    pass
+class model_ApplicationInteraction(ApplicationElement, BehaviorElement):
+
+    pass
+class model_ApplicationCollaboration(ApplicationElement, ActiveStructureElement):
+
+    pass
+class JunctionElement:
+
+    pass
+class model_OrJunction(JunctionElement):
+
+    pass
+class model_AndJunction(JunctionElement):
+
+    pass
+class StrategyElement:
+
+    pass
+class model_CourseOfAction(BehaviorElement, StrategyElement):
+
+    pass
+class model_Capability(BehaviorElement, StrategyElement):
+
+    pass
+class BusinessElement:
+
+    pass
+class model_BusinessRole(BusinessElement, ActiveStructureElement):
+
+    pass
+class model_BusinessEvent(BehaviorElement, BusinessElement):
+
+    pass
+class model_BusinessFunction(BehaviorElement, BusinessElement):
+
+    pass
+class model_BusinessService(BehaviorElement, BusinessElement):
+
+    pass
+class model_BusinessInteraction(BehaviorElement, BusinessElement):
+
+    pass
+class model_Product(CompositeElement, BusinessElement):
+
+    pass
+class model_BusinessInterface(BusinessElement, ActiveStructureElement):
+
+    pass
+class model_BusinessCollaboration(BusinessElement, ActiveStructureElement):
+
+    pass
+class model_BusinessProcess(BehaviorElement, BusinessElement):
+
+    pass
+class model_BusinessActor(BusinessElement, ActiveStructureElement):
+
+    pass
+class MotivationElement:
+
+    pass
+class model_Requirement(MotivationElement):
+
+    pass
+class model_Goal(MotivationElement):
+
+    pass
+class model_Constraint(MotivationElement):
+
+    pass
+class model_Outcome(MotivationElement):
+
+    pass
+class model_Stakeholder(MotivationElement, ActiveStructureElement):
+
+    pass
+class model_Meaning(MotivationElement):
+
+    pass
+class model_Value(MotivationElement):
+
+    pass
+class model_Principle(MotivationElement):
+
+    pass
+class model_Driver(MotivationElement):
+
+    pass
+class model_Assessment(MotivationElement):
+
+    pass
+class TechnologyObject:
+
+    pass
+class model_Artifact(TechnologyObject):
+
+    pass
+class model_ApplicationService(ApplicationElement, BehaviorElement):
+
+    pass
+class ArchimateElement:
+
+    pass
+class model_StrategyElement(ArchimateElement):
+
+    pass
+class model_ApplicationElement(ArchimateElement):
+
+    pass
+class model_TechnologyElement(ArchimateElement):
+
+    pass
+class model_BusinessElement(ArchimateElement):
+
+    pass
+class model_JunctionElement(ArchimateElement):
+
+    pass
+class ArchimateConcept:
+
+    pass
+class model_ArchimateRelationship(ArchimateConcept):
+
+    def __init__(self, model_ArchimateRelationship: "model_ArchimateConcept" = None, model_ArchimateRelationship8: "model_ArchimateConcept" = None, model_ArchimateRelationship30: "model_DiagramModelArchimateConnection" = None):
+        self.model_ArchimateRelationship = model_ArchimateRelationship
+        self.model_ArchimateRelationship8 = model_ArchimateRelationship8
+        self.model_ArchimateRelationship30 = model_ArchimateRelationship30
+        
+    @property
+    def model_ArchimateRelationship8(self):
+        return self.__model_ArchimateRelationship8
+
+    @model_ArchimateRelationship8.setter
+    def model_ArchimateRelationship8(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_ArchimateRelationship__model_ArchimateRelationship8", None)
+        self.__model_ArchimateRelationship8 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "model_ArchimateConcept9"):
+                opp_val = getattr(old_value, "model_ArchimateConcept9", None)
+                if opp_val == self:
+                    setattr(old_value, "model_ArchimateConcept9", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "model_ArchimateConcept9"):
+                opp_val = getattr(value, "model_ArchimateConcept9", None)
+                setattr(value, "model_ArchimateConcept9", self)
+
+    @property
+    def model_ArchimateRelationship30(self):
+        return self.__model_ArchimateRelationship30
+
+    @model_ArchimateRelationship30.setter
+    def model_ArchimateRelationship30(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_ArchimateRelationship__model_ArchimateRelationship30", None)
+        self.__model_ArchimateRelationship30 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "model_DiagramModelArchimateConnection"):
+                opp_val = getattr(old_value, "model_DiagramModelArchimateConnection", None)
+                if opp_val == self:
+                    setattr(old_value, "model_DiagramModelArchimateConnection", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "model_DiagramModelArchimateConnection"):
+                opp_val = getattr(value, "model_DiagramModelArchimateConnection", None)
+                setattr(value, "model_DiagramModelArchimateConnection", self)
+
+    @property
+    def model_ArchimateRelationship(self):
+        return self.__model_ArchimateRelationship
+
+    @model_ArchimateRelationship.setter
+    def model_ArchimateRelationship(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_ArchimateRelationship__model_ArchimateRelationship", None)
+        self.__model_ArchimateRelationship = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "model_ArchimateConcept"):
+                opp_val = getattr(old_value, "model_ArchimateConcept", None)
+                if opp_val == self:
+                    setattr(old_value, "model_ArchimateConcept", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "model_ArchimateConcept"):
+                opp_val = getattr(value, "model_ArchimateConcept", None)
+                setattr(value, "model_ArchimateConcept", self)
+
+    def reconnect(self):
+        # TODO: Implement reconnect method
+        pass
+
+    def disconnect(self):
+        # TODO: Implement disconnect method
+        pass
+
+    def connect(self, source: ArchimateConcept, target: ArchimateConcept):
+        # TODO: Implement connect method
+        pass
+
+class model_ArchimateElement(ArchimateConcept):
+
+    pass
+class Cloneable:
+
+    pass
+class model_DiagramModelBendpoint(Cloneable):
+
+    def __init__(self, startX: int, startY: int, endX: int, endY: int, model_DiagramModelBendpoint: "model_DiagramModelConnection" = None):
+        self.startX = startX
+        self.startY = startY
+        self.endX = endX
+        self.endY = endY
+        self.model_DiagramModelBendpoint = model_DiagramModelBendpoint
+        
+    @property
+    def startY(self) -> int:
+        return self.__startY
+
+    @startY.setter
+    def startY(self, startY: int):
+        self.__startY = startY
+
+    @property
+    def endY(self) -> int:
+        return self.__endY
+
+    @endY.setter
+    def endY(self, endY: int):
+        self.__endY = endY
+
+    @property
+    def startX(self) -> int:
+        return self.__startX
+
+    @startX.setter
+    def startX(self, startX: int):
+        self.__startX = startX
+
+    @property
+    def endX(self) -> int:
+        return self.__endX
+
+    @endX.setter
+    def endX(self, endX: int):
+        self.__endX = endX
+
+    @property
+    def model_DiagramModelBendpoint(self):
+        return self.__model_DiagramModelBendpoint
+
+    @model_DiagramModelBendpoint.setter
+    def model_DiagramModelBendpoint(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_DiagramModelBendpoint__model_DiagramModelBendpoint", None)
+        self.__model_DiagramModelBendpoint = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "model_DiagramModelConnection27"):
+                opp_val = getattr(old_value, "model_DiagramModelConnection27", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "model_DiagramModelConnection27"):
+                opp_val = getattr(value, "model_DiagramModelConnection27", None)
+                if opp_val is None:
+                    setattr(value, "model_DiagramModelConnection27", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+class Identifier:
+
+    pass
+class Nameable:
+
+    pass
+class Adapter:
+
+    pass
+class model_DiagramModelComponent(Adapter, Identifier, Nameable, Cloneable):
+
+    def __init__(self):
+        
+    def getDiagramModel(self) -> str:
+        # TODO: Implement getDiagramModel method
+        pass
+
+class model_ArchimateModelObject(Adapter, Identifier, Nameable):
+
+    def __init__(self):
+        
+    def getArchimateModel(self) -> str:
+        # TODO: Implement getArchimateModel method
+        pass
+
+class ArchimateRelationship:
+
+    pass
+class model_OtherRelationship(ArchimateRelationship):
+
+    pass
+class model_DynamicRelationship(ArchimateRelationship):
+
+    pass
+class model_DependendencyRelationship(ArchimateRelationship):
+
+    pass
+class model_StructuralRelationship(ArchimateRelationship):
+
+    pass
+class StructureElement:
+
+    pass
+class model_Resource(StrategyElement, StructureElement):
+
+    pass
+class model_PassiveStructureElement(StructureElement):
+
+    pass
+class model_ActiveStructureElement(StructureElement):
+
+    pass
+class model_StructureElement(ArchimateElement):
+
+    pass
+class model_BehaviorElement(ArchimateElement):
+
+    pass
+class model_CompositeElement(ArchimateElement):
+
+    pass
+class model_ImplementationMigrationElement(ArchimateElement):
+
+    pass
+class model_MotivationElement(ArchimateElement):
+
+    pass
+class model_PhysicalElement(ArchimateElement):
+
+    pass
+class PassiveStructureElement:
+
+    pass
+class model_Deliverable(ImplementationMigrationElement, PassiveStructureElement):
+
+    pass
+class model_Gap(ImplementationMigrationElement, PassiveStructureElement):
+
+    pass
+class model_Representation(BusinessElement, PassiveStructureElement):
+
+    pass
+class model_Contract(BusinessElement, PassiveStructureElement):
+
+    pass
+class model_BusinessObject(BusinessElement, PassiveStructureElement):
+
+    pass
+class model_DataObject(ApplicationElement, PassiveStructureElement):
+
+    pass
+class model_Material(PhysicalElement, PassiveStructureElement):
+
+    pass
+class TechnologyElement:
+
+    pass
+class model_TechnologyEvent(BehaviorElement, TechnologyElement):
+
+    pass
+class model_TechnologyService(BehaviorElement, TechnologyElement):
+
+    pass
+class model_TechnologyFunction(BehaviorElement, TechnologyElement):
+
+    pass
+class model_CommunicationNetwork(TechnologyElement, ActiveStructureElement):
+
+    pass
+class model_TechnologyProcess(BehaviorElement, TechnologyElement):
+
+    pass
+class model_TechnologyCollaboration(TechnologyElement, ActiveStructureElement):
+
+    pass
+class model_Device(TechnologyElement, ActiveStructureElement):
+
+    pass
+class model_SystemSoftware(TechnologyElement, ActiveStructureElement):
+
+    pass
+class model_TechnologyInteraction(BehaviorElement, TechnologyElement):
+
+    pass
+class model_Node(TechnologyElement, ActiveStructureElement):
+
+    pass
+class model_Path(TechnologyElement):
+
+    pass
+class model_TechnologyInterface(TechnologyElement, ActiveStructureElement):
+
+    pass
+class model_TechnologyObject(TechnologyElement, PassiveStructureElement):
+
+    pass
+class model_Cloneable(ABC):
+
+    def __init__(self):
+        
+    def getCopy(self) -> str:
+        # TODO: Implement getCopy method
+        pass
+
+class model_Documentable(ABC):
+
+    def __init__(self, documentation: str):
+        self.documentation = documentation
+        
+    @property
+    def documentation(self) -> str:
+        return self.__documentation
+
+    @documentation.setter
+    def documentation(self, documentation: str):
+        self.__documentation = documentation
+
+class model_TextContent(ABC):
+
+    def __init__(self, content: str):
+        self.content = content
+        
+    @property
+    def content(self) -> str:
+        return self.__content
+
+    @content.setter
+    def content(self, content: str):
+        self.__content = content
+
+class model_Nameable(ABC):
+
+    def __init__(self, name: str):
+        self.name = name
+        
+    @property
+    def name(self) -> str:
+        return self.__name
+
+    @name.setter
+    def name(self, name: str):
+        self.__name = name
+
+class model_Metadata:
+
+    pass
+class model_EObject:
+
+    pass
+class Properties:
+
+    pass
+class model_SketchModelSticky(Properties, TextPosition, TextContent, DiagramModelContainer, DiagramModelObject):
+
+    pass
+class Documentable:
+
+    pass
+class model_DiagramModelGroup(DiagramModelContainer, Properties, Documentable, DiagramModelObject):
+
+    pass
+class model_SketchModelActor(Properties, Documentable, DiagramModelObject):
+
+    pass
+class model_DiagramModelConnection(LineObject, Properties, Documentable, Connectable, FontAttribute):
+
+    def __init__(self, text: str, textPosition: int, type: int, model_DiagramModelConnection: "model_Connectable" = None, model_DiagramModelConnection15: "model_Connectable" = None, model_DiagramModelConnection21: "model_Connectable" = None, model_DiagramModelConnection24: "model_Connectable" = None, model_DiagramModelConnection27: set["model_DiagramModelBendpoint"] = None):
+        self.text = text
+        self.textPosition = textPosition
+        self.type = type
+        self.model_DiagramModelConnection = model_DiagramModelConnection
+        self.model_DiagramModelConnection15 = model_DiagramModelConnection15
+        self.model_DiagramModelConnection21 = model_DiagramModelConnection21
+        self.model_DiagramModelConnection24 = model_DiagramModelConnection24
+        self.model_DiagramModelConnection27 = model_DiagramModelConnection27 if model_DiagramModelConnection27 is not None else set()
+        
+    @property
+    def type(self) -> int:
+        return self.__type
+
+    @type.setter
+    def type(self, type: int):
+        self.__type = type
+
+    @property
+    def textPosition(self) -> int:
+        return self.__textPosition
+
+    @textPosition.setter
+    def textPosition(self, textPosition: int):
+        self.__textPosition = textPosition
+
+    @property
+    def text(self) -> str:
+        return self.__text
+
+    @text.setter
+    def text(self, text: str):
+        self.__text = text
+
+    @property
+    def model_DiagramModelConnection21(self):
+        return self.__model_DiagramModelConnection21
+
+    @model_DiagramModelConnection21.setter
+    def model_DiagramModelConnection21(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_DiagramModelConnection__model_DiagramModelConnection21", None)
+        self.__model_DiagramModelConnection21 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "model_Connectable22"):
+                opp_val = getattr(old_value, "model_Connectable22", None)
+                if opp_val == self:
+                    setattr(old_value, "model_Connectable22", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "model_Connectable22"):
+                opp_val = getattr(value, "model_Connectable22", None)
+                setattr(value, "model_Connectable22", self)
+
+    @property
+    def model_DiagramModelConnection(self):
+        return self.__model_DiagramModelConnection
+
+    @model_DiagramModelConnection.setter
+    def model_DiagramModelConnection(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_DiagramModelConnection__model_DiagramModelConnection", None)
+        self.__model_DiagramModelConnection = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "model_Connectable"):
+                opp_val = getattr(old_value, "model_Connectable", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "model_Connectable"):
+                opp_val = getattr(value, "model_Connectable", None)
+                if opp_val is None:
+                    setattr(value, "model_Connectable", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+    @property
+    def model_DiagramModelConnection15(self):
+        return self.__model_DiagramModelConnection15
+
+    @model_DiagramModelConnection15.setter
+    def model_DiagramModelConnection15(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_DiagramModelConnection__model_DiagramModelConnection15", None)
+        self.__model_DiagramModelConnection15 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "model_Connectable14"):
+                opp_val = getattr(old_value, "model_Connectable14", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "model_Connectable14"):
+                opp_val = getattr(value, "model_Connectable14", None)
+                if opp_val is None:
+                    setattr(value, "model_Connectable14", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+    @property
+    def model_DiagramModelConnection24(self):
+        return self.__model_DiagramModelConnection24
+
+    @model_DiagramModelConnection24.setter
+    def model_DiagramModelConnection24(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_DiagramModelConnection__model_DiagramModelConnection24", None)
+        self.__model_DiagramModelConnection24 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "model_Connectable25"):
+                opp_val = getattr(old_value, "model_Connectable25", None)
+                if opp_val == self:
+                    setattr(old_value, "model_Connectable25", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "model_Connectable25"):
+                opp_val = getattr(value, "model_Connectable25", None)
+                setattr(value, "model_Connectable25", self)
+
+    @property
+    def model_DiagramModelConnection27(self):
+        return self.__model_DiagramModelConnection27
+
+    @model_DiagramModelConnection27.setter
+    def model_DiagramModelConnection27(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_DiagramModelConnection__model_DiagramModelConnection27", None)
+        self.__model_DiagramModelConnection27 = value if value is not None else set()
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            for item in old_value:
+                if hasattr(item, "model_DiagramModelBendpoint"):
+                    opp_val = getattr(item, "model_DiagramModelBendpoint", None)
+                    
+                    if opp_val == self:
+                        setattr(item, "model_DiagramModelBendpoint", None)
+                    
+        # Add self to new opposite end
+        if value is not None:
+            for item in value:
+                if hasattr(item, "model_DiagramModelBendpoint"):
+                    opp_val = getattr(item, "model_DiagramModelBendpoint", None)
+                    
+                    setattr(item, "model_DiagramModelBendpoint", self)
+                    
+
+    def reconnect(self):
+        # TODO: Implement reconnect method
+        pass
+
+    def disconnect(self):
+        # TODO: Implement disconnect method
+        pass
+
+    def connect(self, target: Connectable, source: Connectable):
+        # TODO: Implement connect method
+        pass
+
+class FolderContainer:
+
+    pass
+class ArchimateModelObject:
+
+    pass
+class model_ArchimateConcept(ArchimateModelObject, Properties, Documentable, Cloneable):
+
+    pass
+class model_ArchimateModel(ArchimateModelObject, Properties, FolderContainer):
+
+    def __init__(self, purpose: str, file: str, version: str, model_ArchimateModel: "model_Metadata" = None):
+        self.purpose = purpose
+        self.file = file
+        self.version = version
+        self.model_ArchimateModel = model_ArchimateModel
+        
+    @property
+    def version(self) -> str:
+        return self.__version
+
+    @version.setter
+    def version(self, version: str):
+        self.__version = version
+
+    @property
+    def purpose(self) -> str:
+        return self.__purpose
+
+    @purpose.setter
+    def purpose(self, purpose: str):
+        self.__purpose = purpose
+
+    @property
+    def file(self) -> str:
+        return self.__file
+
+    @file.setter
+    def file(self, file: str):
+        self.__file = file
+
+    @property
+    def model_ArchimateModel(self):
+        return self.__model_ArchimateModel
+
+    @model_ArchimateModel.setter
+    def model_ArchimateModel(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_ArchimateModel__model_ArchimateModel", None)
+        self.__model_ArchimateModel = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "model_Metadata11"):
+                opp_val = getattr(old_value, "model_Metadata11", None)
+                if opp_val == self:
+                    setattr(old_value, "model_Metadata11", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "model_Metadata11"):
+                opp_val = getattr(value, "model_Metadata11", None)
+                setattr(value, "model_Metadata11", self)
+
+    def setDefaults(self):
+        # TODO: Implement setDefaults method
+        pass
+
+    def getFolder(self, type: str) -> str:
+        # TODO: Implement getFolder method
+        pass
+
+    def getDefaultFolderForObject(self, object: str) -> str:
+        # TODO: Implement getDefaultFolderForObject method
+        pass
+
+    def getDiagramModels(self) -> str:
+        # TODO: Implement getDiagramModels method
+        pass
+
+    def getDefaultDiagramModel(self) -> str:
+        # TODO: Implement getDefaultDiagramModel method
+        pass
+
+class model_DiagramModel(ArchimateModelObject, Properties, DiagramModelContainer, Documentable):
+
+    def __init__(self, connectionRouterType: int, model_DiagramModel: "model_DiagramModelReference" = None):
+        self.connectionRouterType = connectionRouterType
+        self.model_DiagramModel = model_DiagramModel
+        
+    @property
+    def connectionRouterType(self) -> int:
+        return self.__connectionRouterType
+
+    @connectionRouterType.setter
+    def connectionRouterType(self, connectionRouterType: int):
+        self.__connectionRouterType = connectionRouterType
+
+    @property
+    def model_DiagramModel(self):
+        return self.__model_DiagramModel
+
+    @model_DiagramModel.setter
+    def model_DiagramModel(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_DiagramModel__model_DiagramModel", None)
+        self.__model_DiagramModel = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "model_DiagramModelReference"):
+                opp_val = getattr(old_value, "model_DiagramModelReference", None)
+                if opp_val == self:
+                    setattr(old_value, "model_DiagramModelReference", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "model_DiagramModelReference"):
+                opp_val = getattr(value, "model_DiagramModelReference", None)
+                setattr(value, "model_DiagramModelReference", self)
+
+class model_Folder(ArchimateModelObject, Properties, Documentable, FolderContainer):
+
+    def __init__(self, type: str, model_Folder: "model_FolderContainer" = None, model_Folder5: set["model_EObject"] = None):
+        self.type = type
+        self.model_Folder = model_Folder
+        self.model_Folder5 = model_Folder5 if model_Folder5 is not None else set()
+        
+    @property
+    def type(self) -> str:
+        return self.__type
+
+    @type.setter
+    def type(self, type: str):
+        self.__type = type
+
+    @property
+    def model_Folder5(self):
+        return self.__model_Folder5
+
+    @model_Folder5.setter
+    def model_Folder5(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_Folder__model_Folder5", None)
+        self.__model_Folder5 = value if value is not None else set()
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            for item in old_value:
+                if hasattr(item, "model_EObject"):
+                    opp_val = getattr(item, "model_EObject", None)
+                    
+                    if opp_val == self:
+                        setattr(item, "model_EObject", None)
+                    
+        # Add self to new opposite end
+        if value is not None:
+            for item in value:
+                if hasattr(item, "model_EObject"):
+                    opp_val = getattr(item, "model_EObject", None)
+                    
+                    setattr(item, "model_EObject", self)
+                    
+
+    @property
+    def model_Folder(self):
+        return self.__model_Folder
+
+    @model_Folder.setter
+    def model_Folder(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_Folder__model_Folder", None)
+        self.__model_Folder = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "model_FolderContainer"):
+                opp_val = getattr(old_value, "model_FolderContainer", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "model_FolderContainer"):
+                opp_val = getattr(value, "model_FolderContainer", None)
+                if opp_val is None:
+                    setattr(value, "model_FolderContainer", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+class model_FolderContainer(ABC):
+
+    pass
+class model_Properties(ABC):
+
+    pass
+class model_Property:
+
+    def __init__(self, key: str, value: str, model_Property: "model_Properties" = None, model_Property2: "model_Metadata" = None):
+        self.key = key
+        self.value = value
+        self.model_Property = model_Property
+        self.model_Property2 = model_Property2
+        
+    @property
+    def key(self) -> str:
+        return self.__key
+
+    @key.setter
+    def key(self, key: str):
+        self.__key = key
+
+    @property
+    def value(self) -> str:
+        return self.__value
+
+    @value.setter
+    def value(self, value: str):
+        self.__value = value
+
+    @property
+    def model_Property(self):
+        return self.__model_Property
+
+    @model_Property.setter
+    def model_Property(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_Property__model_Property", None)
+        self.__model_Property = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "model_Properties"):
+                opp_val = getattr(old_value, "model_Properties", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "model_Properties"):
+                opp_val = getattr(value, "model_Properties", None)
+                if opp_val is None:
+                    setattr(value, "model_Properties", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+    @property
+    def model_Property2(self):
+        return self.__model_Property2
+
+    @model_Property2.setter
+    def model_Property2(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_model_Property__model_Property2", None)
+        self.__model_Property2 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "model_Metadata"):
+                opp_val = getattr(old_value, "model_Metadata", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "model_Metadata"):
+                opp_val = getattr(value, "model_Metadata", None)
+                if opp_val is None:
+                    setattr(value, "model_Metadata", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+class model_Identifier(ABC):
+
+    def __init__(self, id: str):
+        self.id = id
+        
+    @property
+    def id(self) -> str:
+        return self.__id
+
+    @id.setter
+    def id(self, id: str):
+        self.__id = id
+
+class model_Adapter(ABC):
+
+    def __init__(self):
+        
+    def getAdapter(self, adapter: str) -> str:
+        # TODO: Implement getAdapter method
+        pass
+
+    def setAdapter(self, adapter: str, object: str):
+        # TODO: Implement setAdapter method
+        pass

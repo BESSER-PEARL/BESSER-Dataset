@@ -1,0 +1,94 @@
+The domain model 'aml' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'aml_SpeedFeature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type float.
+
+'aml_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'aml_SizeFeature' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'name', which is of type str.
+
+'aml_Aml' represents an important domain concept.
+It does not declare any attributes.
+
+'aml_TargetGroupFeature' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'aml_MinMax' represents an important domain concept.
+It does not declare any attributes.
+
+'SuperEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'aml_Cable' represents an important domain concept.
+It does not declare any attributes.
+
+'aml_Drive' represents an important domain concept.
+It does not declare any attributes.
+
+'aml_MaxFeature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type int.
+
+'aml_Feature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'aml_TypeFeature' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'AbstractElements' represents an important domain concept.
+It does not declare any attributes.
+
+'aml_PriceRule' represents an important domain concept.
+It does not declare any attributes.
+
+'aml_AbstractElements' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'aml_NetWorkFeature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'aml_LengthFeature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type float.
+
+'aml_SuperEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'aml_FormFeature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type int.
+
+'aml_ColorFeature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'aml_ProductPUIDFeature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'values', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Color' defines the following possible values: 'Black', 'Green', 'Red', 'Grey', 'White'.
+
+The model also captures inheritance relationships between classes.
+The class 'aml_MinMax' is a specialization of 'AbstractElements'.
+The class 'aml_Drive' is a specialization of 'SuperEntity'.
+The class 'aml_Cable' is a specialization of 'SuperEntity'.
+The class 'aml_PriceRule' is a specialization of 'AbstractElements'.
+The class 'aml_Entity' is a specialization of 'AbstractElements'.
+The class 'aml_SuperEntity' is a specialization of 'AbstractElements'.
+
+Relationships between classes are modeled using associations.
+An association connects 'aml_AbstractElements' and 'aml_Aml'. From 'aml_AbstractElements', the role 'aml_AbstractElements' has cardinality 0..*, and from 'aml_Aml', the role 'aml_Aml' has cardinality 0..*.
+An association connects 'aml_MinMax' and 'aml_TargetGroupFeature'. From 'aml_MinMax', the role 'aml_MinMax' has cardinality 0..*, and from 'aml_TargetGroupFeature', the role 'aml_TargetGroupFeature' has cardinality 0..*.
+An association connects 'aml_ProductPUIDFeature' and 'aml_MinMax'. From 'aml_ProductPUIDFeature', the role 'aml_ProductPUIDFeature' has cardinality 0..*, and from 'aml_MinMax', the role 'aml_MinMax3' has cardinality 0..*.
+An association connects 'aml_MaxFeature' and 'aml_MinMax'. From 'aml_MaxFeature', the role 'aml_MaxFeature' has cardinality 0..*, and from 'aml_MinMax', the role 'aml_MinMax5' has cardinality 0..*.
+An association connects 'aml_TypeFeature' and 'aml_Drive'. From 'aml_TypeFeature', the role 'aml_TypeFeature' has cardinality 0..*, and from 'aml_Drive', the role 'aml_Drive' has cardinality 0..*.
+An association connects 'aml_SizeFeature' and 'aml_Drive'. From 'aml_SizeFeature', the role 'aml_SizeFeature' has cardinality 0..*, and from 'aml_Drive', the role 'aml_Drive8' has cardinality 0..*.
+An association connects 'aml_SpeedFeature' and 'aml_Drive'. From 'aml_SpeedFeature', the role 'aml_SpeedFeature' has cardinality 0..*, and from 'aml_Drive', the role 'aml_Drive10' has cardinality 0..*.
+An association connects 'aml_FormFeature' and 'aml_Drive'. From 'aml_FormFeature', the role 'aml_FormFeature' has cardinality 0..*, and from 'aml_Drive', the role 'aml_Drive12' has cardinality 0..*.
+An association connects 'aml_Cable' and 'aml_ColorFeature'. From 'aml_Cable', the role 'aml_Cable' has cardinality 0..*, and from 'aml_ColorFeature', the role 'aml_ColorFeature' has cardinality 0..*.
+An association connects 'aml_NetWorkFeature' and 'aml_Cable'. From 'aml_NetWorkFeature', the role 'aml_NetWorkFeature' has cardinality 0..*, and from 'aml_Cable', the role 'aml_Cable15' has cardinality 0..*.
+An association connects 'aml_Cable' and 'aml_LengthFeature'. From 'aml_Cable', the role 'aml_Cable17' has cardinality 0..*, and from 'aml_LengthFeature', the role 'aml_LengthFeature' has cardinality 0..*.
+An association connects 'aml_PriceRule' and 'aml_MinMax'. From 'aml_PriceRule', the role 'aml_PriceRule' has cardinality 0..*, and from 'aml_MinMax', the role 'aml_MinMax19' has cardinality 0..*.
+An association connects 'aml_PriceRule' and 'aml_Feature'. From 'aml_PriceRule', the role 'aml_PriceRule21' has cardinality 0..*, and from 'aml_Feature', the role 'aml_Feature' has cardinality 0..*.
+An association connects 'aml_SuperEntity' and 'aml_Entity'. From 'aml_SuperEntity', the role 'aml_SuperEntity' has cardinality 0..*, and from 'aml_Entity', the role 'aml_Entity' has cardinality 0..*.
+An association connects 'aml_Entity' and 'aml_Feature'. From 'aml_Entity', the role 'aml_Entity24' has cardinality 0..*, and from 'aml_Feature', the role 'aml_Feature25' has cardinality 0..*.

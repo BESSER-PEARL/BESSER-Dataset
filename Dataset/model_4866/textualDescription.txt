@@ -1,0 +1,48 @@
+The domain model 'simpleExpressions' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'simpleExpressions_MethodCall' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'simpleExpressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleExpressions_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleExpressions_OrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleExpressions_NotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleExpressions_NumberLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'simpleExpressions_IfCondition' represents an important domain concept.
+It has one attribute: 'elseif', which is of type bool.
+
+'simpleExpressions_Comparison' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simpleExpressions_NumberLiteral' is a specialization of 'Expression'.
+The class 'simpleExpressions_MethodCall' is a specialization of 'Expression'.
+The class 'simpleExpressions_OrExpression' is a specialization of 'Expression'.
+The class 'simpleExpressions_AndExpression' is a specialization of 'Expression'.
+The class 'simpleExpressions_Comparison' is a specialization of 'Expression'.
+The class 'simpleExpressions_NotExpression' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleExpressions_Expression' and 'simpleExpressions_IfCondition'. From 'simpleExpressions_Expression', the role 'simpleExpressions_Expression' has cardinality 0..*, and from 'simpleExpressions_IfCondition', the role 'simpleExpressions_IfCondition' has cardinality 0..*.
+An association connects 'simpleExpressions_Expression' and 'simpleExpressions_OrExpression'. From 'simpleExpressions_Expression', the role 'simpleExpressions_Expression2' has cardinality 0..*, and from 'simpleExpressions_OrExpression', the role 'simpleExpressions_OrExpression' has cardinality 0..*.
+An association connects 'simpleExpressions_OrExpression' and 'simpleExpressions_Expression'. From 'simpleExpressions_OrExpression', the role 'simpleExpressions_OrExpression4' has cardinality 0..*, and from 'simpleExpressions_Expression', the role 'simpleExpressions_Expression5' has cardinality 0..*.
+An association connects 'simpleExpressions_AndExpression' and 'simpleExpressions_Expression'. From 'simpleExpressions_AndExpression', the role 'simpleExpressions_AndExpression' has cardinality 0..*, and from 'simpleExpressions_Expression', the role 'simpleExpressions_Expression7' has cardinality 0..*.
+An association connects 'simpleExpressions_Expression' and 'simpleExpressions_AndExpression'. From 'simpleExpressions_Expression', the role 'simpleExpressions_Expression10' has cardinality 0..*, and from 'simpleExpressions_AndExpression', the role 'simpleExpressions_AndExpression9' has cardinality 0..*.
+An association connects 'simpleExpressions_Comparison' and 'simpleExpressions_Expression'. From 'simpleExpressions_Comparison', the role 'simpleExpressions_Comparison' has cardinality 0..*, and from 'simpleExpressions_Expression', the role 'simpleExpressions_Expression12' has cardinality 0..*.
+An association connects 'simpleExpressions_Comparison' and 'simpleExpressions_Expression'. From 'simpleExpressions_Comparison', the role 'simpleExpressions_Comparison14' has cardinality 0..*, and from 'simpleExpressions_Expression', the role 'simpleExpressions_Expression15' has cardinality 0..*.
+An association connects 'simpleExpressions_Expression' and 'simpleExpressions_NotExpression'. From 'simpleExpressions_Expression', the role 'simpleExpressions_Expression17' has cardinality 0..*, and from 'simpleExpressions_NotExpression', the role 'simpleExpressions_NotExpression' has cardinality 0..*.

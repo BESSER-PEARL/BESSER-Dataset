@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/fmdkdd/monoge/emfviews-test/resources/metamodels/minimalref.ecore

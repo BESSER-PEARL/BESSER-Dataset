@@ -1,0 +1,20 @@
+The domain model 'ppo' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'ppo_PPOPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ppo_PurchaseOrder' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'orderDate', which is of type str.
+
+'ppo_USAddress' represents an important domain concept.
+It has the following attributes: 'city', which is of type str; 'country', which is of type str; 'zip', which is of type int; 'name', which is of type str; 'street', which is of type str; 'state', which is of type str.
+
+'ppo_Item' represents an important domain concept.
+It has the following attributes: 'partNum', which is of type str; 'shipDate', which is of type str; 'comment', which is of type str; 'quantity', which is of type int; 'uSPrice', which is of type int; 'productName', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'ppo_PurchaseOrder' and 'ppo_USAddress'. From 'ppo_PurchaseOrder', the role 'ppo_PurchaseOrder' has cardinality 0..*, and from 'ppo_USAddress', the role 'ppo_USAddress' has cardinality 0..*.
+An association connects 'ppo_PurchaseOrder' and 'ppo_USAddress'. From 'ppo_PurchaseOrder', the role 'ppo_PurchaseOrder2' has cardinality 0..*, and from 'ppo_USAddress', the role 'ppo_USAddress3' has cardinality 0..*.
+An association connects 'ppo_PurchaseOrder' and 'ppo_Item'. From 'ppo_PurchaseOrder', the role 'ppo_PurchaseOrder5' has cardinality 0..*, and from 'ppo_Item', the role 'ppo_Item' has cardinality 0..*.

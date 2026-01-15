@@ -1,0 +1,161 @@
+The domain model 'flowchartpck' describes the core structural elements and their relationships within the system.
+
+The model defines 35 main class(es).
+
+'flowchartpck_Decision' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_Assignation' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_End' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_RelationalExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'ConsoleOutput' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'flowchartpck_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_BoolLit' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_IntegerLit' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'flowchartpck_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_Println' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_RelationalConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_VarDecl' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'flowchartpck_Wait' represents an important domain concept.
+It has one attribute: 'miliseconds', which is of type str.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_ArithmeticExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'flowchartpck_ConsoleOutput' represents an important domain concept.
+It has one attribute: 'input', which is of type str.
+
+'flowchartpck_Print' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_StringLit' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'flowchartpck_Flowchart' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchartpck_VarReference' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ArithmeticOperator' defines the following possible values: 'div', 'mult', 'minus', 'plus'.
+The enumeration 'RelationalOperator' defines the following possible values: 'greaterThanOrEqualTo', 'notEqual', 'equals', 'lessThan', 'lessThanOrEqualTo', 'greaterThan'.
+
+The model also captures inheritance relationships between classes.
+The class 'flowchartpck_Flowchart' is a specialization of 'NamedElement'.
+The class 'flowchartpck_Node' is a specialization of 'NamedElement'.
+The class 'flowchartpck_Action' is a specialization of 'Node'.
+The class 'flowchartpck_Decision' is a specialization of 'Node'.
+The class 'flowchartpck_Start' is a specialization of 'Node'.
+The class 'flowchartpck_End' is a specialization of 'Node'.
+The class 'flowchartpck_RelationalConstraint' is a specialization of 'Constraint'.
+The class 'flowchartpck_Literal' is a specialization of 'Expression'.
+The class 'flowchartpck_IntegerLit' is a specialization of 'Literal'.
+The class 'flowchartpck_StringLit' is a specialization of 'Literal'.
+The class 'flowchartpck_BoolLit' is a specialization of 'Literal'.
+The class 'flowchartpck_ArithmeticExpression' is a specialization of 'Expression'.
+The class 'flowchartpck_RelationalExpression' is a specialization of 'Expression'.
+The class 'flowchartpck_VarReference' is a specialization of 'Expression'.
+The class 'flowchartpck_Program' is a specialization of 'Statement'.
+The class 'flowchartpck_Conditional' is a specialization of 'Statement'.
+The class 'flowchartpck_Loop' is a specialization of 'Statement'.
+The class 'flowchartpck_ConsoleOutput' is a specialization of 'Statement'.
+The class 'flowchartpck_Println' is a specialization of 'ConsoleOutput'.
+The class 'flowchartpck_Print' is a specialization of 'ConsoleOutput'.
+The class 'flowchartpck_Assignation' is a specialization of 'Statement'.
+The class 'flowchartpck_Wait' is a specialization of 'Statement'.
+The class 'flowchartpck_VarDecl' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'flowchartpck_Node' and 'flowchartpck_Flowchart'. From 'flowchartpck_Node', the role 'flowchartpck_Node' has cardinality 0..*, and from 'flowchartpck_Flowchart', the role 'flowchartpck_Flowchart' has cardinality 0..*.
+An association connects 'flowchartpck_Arc' and 'flowchartpck_Flowchart'. From 'flowchartpck_Arc', the role 'flowchartpck_Arc' has cardinality 0..*, and from 'flowchartpck_Flowchart', the role 'flowchartpck_Flowchart2' has cardinality 0..*.
+An association connects 'flowchartpck_Node' and 'flowchartpck_Arc'. From 'flowchartpck_Node', the role 'unnamed role' has cardinality 0..*, and from 'flowchartpck_Arc', the role '4' has cardinality 0..*.
+An association connects 'flowchartpck_Arc' and 'flowchartpck_Node'. From 'flowchartpck_Arc', the role '7' has cardinality 0..*, and from 'flowchartpck_Node', the role '6' has cardinality 0..*.
+An association connects 'flowchartpck_Node' and 'flowchartpck_Arc'. From 'flowchartpck_Node', the role '10' has cardinality 0..*, and from 'flowchartpck_Arc', the role '9' has cardinality 0..*.
+An association connects 'flowchartpck_Node' and 'flowchartpck_Arc'. From 'flowchartpck_Node', the role '13' has cardinality 0..*, and from 'flowchartpck_Arc', the role '12' has cardinality 0..*.
+An association connects 'flowchartpck_Program' and 'flowchartpck_Action'. From 'flowchartpck_Program', the role 'flowchartpck_Program' has cardinality 0..*, and from 'flowchartpck_Action', the role 'flowchartpck_Action' has cardinality 0..*.
+An association connects 'flowchartpck_Decision' and 'flowchartpck_Constraint'. From 'flowchartpck_Decision', the role 'flowchartpck_Decision' has cardinality 0..*, and from 'flowchartpck_Constraint', the role 'flowchartpck_Constraint' has cardinality 0..*.
+An association connects 'flowchartpck_Expression' and 'flowchartpck_RelationalConstraint'. From 'flowchartpck_Expression', the role 'flowchartpck_Expression' has cardinality 0..*, and from 'flowchartpck_RelationalConstraint', the role 'flowchartpck_RelationalConstraint' has cardinality 0..*.
+An association connects 'flowchartpck_Expression' and 'flowchartpck_ArithmeticExpression'. From 'flowchartpck_Expression', the role 'flowchartpck_Expression18' has cardinality 0..*, and from 'flowchartpck_ArithmeticExpression', the role 'flowchartpck_ArithmeticExpression' has cardinality 0..*.
+An association connects 'flowchartpck_ArithmeticExpression' and 'flowchartpck_Expression'. From 'flowchartpck_ArithmeticExpression', the role 'flowchartpck_ArithmeticExpression20' has cardinality 0..*, and from 'flowchartpck_Expression', the role 'flowchartpck_Expression21' has cardinality 0..*.
+An association connects 'flowchartpck_Expression' and 'flowchartpck_RelationalExpression'. From 'flowchartpck_Expression', the role 'flowchartpck_Expression23' has cardinality 0..*, and from 'flowchartpck_RelationalExpression', the role 'flowchartpck_RelationalExpression' has cardinality 0..*.
+An association connects 'flowchartpck_RelationalExpression' and 'flowchartpck_Expression'. From 'flowchartpck_RelationalExpression', the role 'flowchartpck_RelationalExpression25' has cardinality 0..*, and from 'flowchartpck_Expression', the role 'flowchartpck_Expression26' has cardinality 0..*.
+An association connects 'flowchartpck_Statement' and 'flowchartpck_Program'. From 'flowchartpck_Statement', the role 'flowchartpck_Statement' has cardinality 0..*, and from 'flowchartpck_Program', the role 'flowchartpck_Program28' has cardinality 0..*.
+An association connects 'flowchartpck_Program' and 'flowchartpck_Conditional'. From 'flowchartpck_Program', the role 'flowchartpck_Program30' has cardinality 0..*, and from 'flowchartpck_Conditional', the role 'flowchartpck_Conditional' has cardinality 0..*.
+An association connects 'flowchartpck_Conditional' and 'flowchartpck_Program'. From 'flowchartpck_Conditional', the role 'flowchartpck_Conditional32' has cardinality 0..*, and from 'flowchartpck_Program', the role 'flowchartpck_Program33' has cardinality 0..*.
+An association connects 'flowchartpck_Conditional' and 'flowchartpck_Expression'. From 'flowchartpck_Conditional', the role 'flowchartpck_Conditional35' has cardinality 0..*, and from 'flowchartpck_Expression', the role 'flowchartpck_Expression36' has cardinality 0..*.
+An association connects 'flowchartpck_Loop' and 'flowchartpck_Program'. From 'flowchartpck_Loop', the role 'flowchartpck_Loop' has cardinality 0..*, and from 'flowchartpck_Program', the role 'flowchartpck_Program38' has cardinality 0..*.
+An association connects 'flowchartpck_Expression' and 'flowchartpck_Loop'. From 'flowchartpck_Expression', the role 'flowchartpck_Expression41' has cardinality 0..*, and from 'flowchartpck_Loop', the role 'flowchartpck_Loop40' has cardinality 0..*.
+An association connects 'flowchartpck_Assignation' and 'flowchartpck_VarDecl'. From 'flowchartpck_Assignation', the role 'flowchartpck_Assignation' has cardinality 0..*, and from 'flowchartpck_VarDecl', the role 'flowchartpck_VarDecl' has cardinality 0..*.
+An association connects 'flowchartpck_Expression' and 'flowchartpck_Assignation'. From 'flowchartpck_Expression', the role 'flowchartpck_Expression45' has cardinality 0..*, and from 'flowchartpck_Assignation', the role 'flowchartpck_Assignation44' has cardinality 0..*.
+An association connects 'flowchartpck_VarDecl' and 'flowchartpck_Expression'. From 'flowchartpck_VarDecl', the role 'flowchartpck_VarDecl47' has cardinality 0..*, and from 'flowchartpck_Expression', the role 'flowchartpck_Expression48' has cardinality 0..*.

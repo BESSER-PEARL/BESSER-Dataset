@@ -1,0 +1,39 @@
+The domain model 'testModel' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'testModel_upperBound' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'testModel_ContainedElement' represents an important domain concept.
+It has the following attributes: 'DiagnosticChain', which is of type str; 'char', which is of type str; 'name', which is of type str; 'byteArray', which is of type str; 'elementType', which is of type str; 'Character', which is of type str; 'DoubleObj', which is of type str; 'float', which is of type float; 'byteObject', which is of type str; 'double', which is of type float; 'date', which is of type date.
+
+'testModel_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'testModel_multiRefElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'testModel_Kategorie' represents an important domain concept.
+It has the following attributes: 'Boolean', which is of type str; 'bool', which is of type bool; 'bigint', which is of type str; 'byte', which is of type str; 'name', which is of type str; 'bigdeci', which is of type str.
+
+'testModel_referenziertesElement' represents an important domain concept.
+It has the following attributes: 'short', which is of type str; 'notChangeable', which is of type str; 'int', which is of type int; 'LongObj', which is of type str; 'Integer', which is of type str; 'ShortObj', which is of type str; 'Float', which is of type str; 'long', which is of type str; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ElementType' defines the following possible values: 'Type1', 'Type2'.
+
+The model also captures inheritance relationships between classes.
+The class 'testModel_referenziertesElement' is a specialization of 'Element'.
+The class 'testModel_multiRefElement' is a specialization of 'Element'.
+The class 'testModel_upperBound' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'testModel_Kategorie' and 'testModel_Kategorie'. From 'testModel_Kategorie', the role 'testModel_Kategorie' has cardinality 0..*, and from 'testModel_Kategorie', the role 'testModel_Kategorie0' has cardinality 0..*.
+An association connects 'testModel_ContainedElement' and 'testModel_Kategorie'. From 'testModel_ContainedElement', the role 'testModel_ContainedElement' has cardinality 0..*, and from 'testModel_Kategorie', the role 'testModel_Kategorie3' has cardinality 0..*.
+An association connects 'testModel_referenziertesElement' and 'testModel_ContainedElement'. From 'testModel_referenziertesElement', the role 'testModel_referenziertesElement' has cardinality 0..*, and from 'testModel_ContainedElement', the role 'testModel_ContainedElement5' has cardinality 0..*.
+An association connects 'testModel_ContainedElement' and 'testModel_upperBound'. From 'testModel_ContainedElement', the role 'testModel_ContainedElement7' has cardinality 0..*, and from 'testModel_upperBound', the role 'testModel_upperBound' has cardinality 0..*.
+An association connects 'testModel_multiRefElement' and 'testModel_referenziertesElement'. From 'testModel_multiRefElement', the role 'testModel_multiRefElement' has cardinality 0..*, and from 'testModel_referenziertesElement', the role 'testModel_referenziertesElement9' has cardinality 0..*.

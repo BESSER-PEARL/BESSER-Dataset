@@ -1,0 +1,26 @@
+The domain model 'exo1' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'exo1_Project' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'budget', which is of type int.
+
+'exo1_Employee' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'salary', which is of type str.
+
+'exo1_Company' represents an important domain concept.
+It does not declare any attributes.
+
+'exo1_Departement' represents an important domain concept.
+It has the following attributes: 'budget', which is of type int; 'name', which is of type str; 'location', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'exo1_Project' and 'exo1_Departement'. From 'exo1_Project', the role 'Project' has cardinality 0..*, and from 'exo1_Departement', the role 'departement' has cardinality 0..*.
+An association connects 'exo1_Employee' and 'exo1_Departement'. From 'exo1_Employee', the role 'Employee' has cardinality 0..*, and from 'exo1_Departement', the role 'departements' has cardinality 0..*.
+An association connects 'exo1_Departement' and 'exo1_Project'. From 'exo1_Departement', the role 'Departement' has cardinality 0..*, and from 'exo1_Project', the role 'projects' has cardinality 0..*.
+An association connects 'exo1_Employee' and 'exo1_Project'. From 'exo1_Employee', the role 'Employee5' has cardinality 0..*, and from 'exo1_Project', the role 'projects4' has cardinality 0..*.
+An association connects 'exo1_Employee' and 'exo1_Project'. From 'exo1_Employee', the role 'employees' has cardinality 0..*, and from 'exo1_Project', the role 'Project7' has cardinality 0..*.
+An association connects 'exo1_Departement' and 'exo1_Employee'. From 'exo1_Departement', the role 'Departement10' has cardinality 0..*, and from 'exo1_Employee', the role 'employees9' has cardinality 0..*.
+An association connects 'exo1_Company' and 'exo1_Employee'. From 'exo1_Company', the role 'exo1_Company' has cardinality 0..*, and from 'exo1_Employee', the role 'exo1_Employee' has cardinality 0..*.
+An association connects 'exo1_Company' and 'exo1_Project'. From 'exo1_Company', the role 'exo1_Company13' has cardinality 0..*, and from 'exo1_Project', the role 'exo1_Project' has cardinality 0..*.
+An association connects 'exo1_Company' and 'exo1_Departement'. From 'exo1_Company', the role 'exo1_Company15' has cardinality 0..*, and from 'exo1_Departement', the role 'exo1_Departement' has cardinality 0..*.

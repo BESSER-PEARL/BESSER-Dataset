@@ -1,0 +1,28 @@
+The domain model 'testPackage' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'testPackage_Class1' represents an important domain concept.
+It does not declare any attributes.
+
+'testPackage_HubClass' represents an important domain concept.
+It does not declare any attributes.
+
+'testPackage_Class3' represents an important domain concept.
+It does not declare any attributes.
+
+'testPackage_Class2' represents an important domain concept.
+It does not declare any attributes.
+
+'testPackage_Class5' represents an important domain concept.
+It does not declare any attributes.
+
+'testPackage_Class4' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'testPackage_Class1' and 'testPackage_HubClass'. From 'testPackage_Class1', the role 'testPackage_Class1' has cardinality 0..*, and from 'testPackage_HubClass', the role 'testPackage_HubClass' has cardinality 0..*.
+An association connects 'testPackage_HubClass' and 'testPackage_Class2'. From 'testPackage_HubClass', the role 'testPackage_HubClass2' has cardinality 0..*, and from 'testPackage_Class2', the role 'testPackage_Class2' has cardinality 0..*.
+An association connects 'testPackage_HubClass' and 'testPackage_Class3'. From 'testPackage_HubClass', the role 'testPackage_HubClass4' has cardinality 0..*, and from 'testPackage_Class3', the role 'testPackage_Class3' has cardinality 0..*.
+An association connects 'testPackage_Class4' and 'testPackage_HubClass'. From 'testPackage_Class4', the role 'testPackage_Class4' has cardinality 0..*, and from 'testPackage_HubClass', the role 'testPackage_HubClass6' has cardinality 0..*.
+An association connects 'testPackage_Class5' and 'testPackage_HubClass'. From 'testPackage_Class5', the role 'testPackage_Class5' has cardinality 0..*, and from 'testPackage_HubClass', the role 'testPackage_HubClass8' has cardinality 0..*.

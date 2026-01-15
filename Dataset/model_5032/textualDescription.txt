@@ -1,0 +1,38 @@
+The domain model 'customers' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'customers_CreditCard' represents an important domain concept.
+It has the following attributes: 'ccNumber', which is of type str; 'expiresDate', which is of type date; 'type', which is of type str.
+
+'customers_Customer' represents an important domain concept.
+It has the following attributes: 'lastName', which is of type str; 'comment', which is of type str; 'firstName', which is of type str; 'dateOfBirth', which is of type date.
+
+'Address' represents an important domain concept.
+It does not declare any attributes.
+
+'customers_CanadaAddress' represents an important domain concept.
+It has one attribute: 'province', which is of type str.
+
+'customers_USAddress' represents an important domain concept.
+It has one attribute: 'state', which is of type str.
+
+'customers_Address' represents an important domain concept.
+It has the following attributes: 'zipCode', which is of type str; 'street', which is of type str; 'town', which is of type str.
+
+'customers_CustomersDB' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'USStates' defines the following possible values: 'AS', 'AR', 'CA', 'AL', 'AK', 'UNKNOWN', 'AZ', 'CO'.
+The enumeration 'CanadaProvinces' defines the following possible values: 'NB', 'BC', 'MB', 'UNKNOWN', 'NL', 'AB', 'NT'.
+
+The model also captures inheritance relationships between classes.
+The class 'customers_USAddress' is a specialization of 'Address'.
+The class 'customers_CanadaAddress' is a specialization of 'Address'.
+
+Relationships between classes are modeled using associations.
+An association connects 'customers_CreditCard' and 'customers_Customer'. From 'customers_CreditCard', the role 'CreditCard' has cardinality 0..*, and from 'customers_Customer', the role 'holder' has cardinality 0..*.
+An association connects 'customers_Customer' and 'customers_Address'. From 'customers_Customer', the role 'customers_Customer' has cardinality 0..*, and from 'customers_Address', the role 'customers_Address' has cardinality 0..*.
+An association connects 'customers_CreditCard' and 'customers_Customer'. From 'customers_CreditCard', the role 'creditCard' has cardinality 0..*, and from 'customers_Customer', the role 'Customer' has cardinality 0..*.
+An association connects 'customers_Customer' and 'customers_CustomersDB'. From 'customers_Customer', the role 'customers_Customer4' has cardinality 0..*, and from 'customers_CustomersDB', the role 'customers_CustomersDB' has cardinality 0..*.

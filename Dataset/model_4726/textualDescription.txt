@@ -1,0 +1,83 @@
+The domain model 'mprologTermReference' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'mprologTermReference_List' represents an important domain concept.
+It does not declare any attributes.
+
+'TermReference' represents an important domain concept.
+It does not declare any attributes.
+
+'mprologTermReference_FunctorReference' represents an important domain concept.
+It does not declare any attributes.
+
+'mprologTermReference_TermReference' represents an important domain concept.
+It does not declare any attributes.
+
+'mprologTermReference_Operator' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'mprologTermReference_QuotedAtom' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'mprologTermReference_Functor' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'mprologTermReference_Term' represents an important domain concept.
+It does not declare any attributes.
+
+'mprologTermReference_Parenthesis' represents an important domain concept.
+It does not declare any attributes.
+
+'mprologTermReference_Clause' represents an important domain concept.
+It does not declare any attributes.
+
+'mprologTermReference_Head' represents an important domain concept.
+It does not declare any attributes.
+
+'mprologTermReference_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Term' represents an important domain concept.
+It does not declare any attributes.
+
+'mprologTermReference_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mprologTermReference_Body' represents an important domain concept.
+It does not declare any attributes.
+
+'mprologTermReference_InfixExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mprologTermReference_VariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'mprologTermReference_Variable' is a specialization of 'Term'.
+The class 'mprologTermReference_Functor' is a specialization of 'Term'.
+The class 'mprologTermReference_QuotedAtom' is a specialization of 'Term'.
+The class 'mprologTermReference_List' is a specialization of 'Term'.
+The class 'mprologTermReference_InfixExpression' is a specialization of 'Term'.
+The class 'mprologTermReference_TermReference' is a specialization of 'Term'.
+The class 'mprologTermReference_FunctorReference' is a specialization of 'TermReference'.
+The class 'mprologTermReference_VariableReference' is a specialization of 'TermReference'.
+The class 'mprologTermReference_Parenthesis' is a specialization of 'Term'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mprologTermReference_Clause' and 'mprologTermReference_Model'. From 'mprologTermReference_Clause', the role 'mprologTermReference_Clause' has cardinality 0..*, and from 'mprologTermReference_Model', the role 'mprologTermReference_Model' has cardinality 0..*.
+An association connects 'mprologTermReference_Head' and 'mprologTermReference_Clause'. From 'mprologTermReference_Head', the role 'mprologTermReference_Head' has cardinality 0..*, and from 'mprologTermReference_Clause', the role 'mprologTermReference_Clause2' has cardinality 0..*.
+An association connects 'mprologTermReference_Clause' and 'mprologTermReference_Body'. From 'mprologTermReference_Clause', the role 'mprologTermReference_Clause4' has cardinality 0..*, and from 'mprologTermReference_Body', the role 'mprologTermReference_Body' has cardinality 0..*.
+An association connects 'mprologTermReference_Head' and 'mprologTermReference_Functor'. From 'mprologTermReference_Head', the role 'mprologTermReference_Head6' has cardinality 0..*, and from 'mprologTermReference_Functor', the role 'mprologTermReference_Functor' has cardinality 0..*.
+An association connects 'mprologTermReference_Term' and 'mprologTermReference_Term'. From 'mprologTermReference_Term', the role 'mprologTermReference_Term7' has cardinality 0..*, and from 'mprologTermReference_Term', the role 'mprologTermReference_Term' has cardinality 0..*.
+An association connects 'mprologTermReference_Term' and 'mprologTermReference_Body'. From 'mprologTermReference_Term', the role 'mprologTermReference_Term11' has cardinality 0..*, and from 'mprologTermReference_Body', the role 'mprologTermReference_Body10' has cardinality 0..*.
+An association connects 'mprologTermReference_Functor' and 'mprologTermReference_Term'. From 'mprologTermReference_Functor', the role 'mprologTermReference_Functor13' has cardinality 0..*, and from 'mprologTermReference_Term', the role 'mprologTermReference_Term14' has cardinality 0..*.
+An association connects 'mprologTermReference_Term' and 'mprologTermReference_List'. From 'mprologTermReference_Term', the role 'mprologTermReference_Term16' has cardinality 0..*, and from 'mprologTermReference_List', the role 'mprologTermReference_List' has cardinality 0..*.
+An association connects 'mprologTermReference_List' and 'mprologTermReference_Term'. From 'mprologTermReference_List', the role 'mprologTermReference_List18' has cardinality 0..*, and from 'mprologTermReference_Term', the role 'mprologTermReference_Term19' has cardinality 0..*.
+An association connects 'mprologTermReference_Term' and 'mprologTermReference_InfixExpression'. From 'mprologTermReference_Term', the role 'mprologTermReference_Term21' has cardinality 0..*, and from 'mprologTermReference_InfixExpression', the role 'mprologTermReference_InfixExpression' has cardinality 0..*.
+An association connects 'mprologTermReference_Term' and 'mprologTermReference_InfixExpression'. From 'mprologTermReference_Term', the role 'mprologTermReference_Term24' has cardinality 0..*, and from 'mprologTermReference_InfixExpression', the role 'mprologTermReference_InfixExpression23' has cardinality 0..*.
+An association connects 'mprologTermReference_InfixExpression' and 'mprologTermReference_Operator'. From 'mprologTermReference_InfixExpression', the role 'mprologTermReference_InfixExpression26' has cardinality 0..*, and from 'mprologTermReference_Operator', the role 'mprologTermReference_Operator' has cardinality 0..*.
+An association connects 'mprologTermReference_FunctorReference' and 'mprologTermReference_Functor'. From 'mprologTermReference_FunctorReference', the role 'mprologTermReference_FunctorReference' has cardinality 0..*, and from 'mprologTermReference_Functor', the role 'mprologTermReference_Functor28' has cardinality 0..*.
+An association connects 'mprologTermReference_Term' and 'mprologTermReference_FunctorReference'. From 'mprologTermReference_Term', the role 'mprologTermReference_Term31' has cardinality 0..*, and from 'mprologTermReference_FunctorReference', the role 'mprologTermReference_FunctorReference30' has cardinality 0..*.
+An association connects 'mprologTermReference_VariableReference' and 'mprologTermReference_Variable'. From 'mprologTermReference_VariableReference', the role 'mprologTermReference_VariableReference' has cardinality 0..*, and from 'mprologTermReference_Variable', the role 'mprologTermReference_Variable' has cardinality 0..*.
+An association connects 'mprologTermReference_Term' and 'mprologTermReference_Parenthesis'. From 'mprologTermReference_Term', the role 'mprologTermReference_Term34' has cardinality 0..*, and from 'mprologTermReference_Parenthesis', the role 'mprologTermReference_Parenthesis' has cardinality 0..*.

@@ -1,0 +1,164 @@
+The domain model 'types' describes the core structural elements and their relationships within the system.
+
+The model defines 39 main class(es).
+
+'types_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ReflectiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_EnumType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'types_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'types_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_UnresolvedTypeError' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Metaclass' represents an important domain concept.
+It has the following attributes: 'explicitOcurrence', which is of type bool; 'name', which is of type str.
+
+'types_EmptyCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Type' represents an important domain concept.
+It has the following attributes: 'mayBeUndefined', which is of type bool; 'multivalued', which is of type bool; 'metamodelRef', which is of type str.
+
+'types_TupleAttribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'types_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_EmptyCollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ReflectiveClass' represents an important domain concept.
+It does not declare any attributes.
+
+'types_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_OclUndefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'RefType' represents an important domain concept.
+It does not declare any attributes.
+
+'Metaclass' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeError' represents an important domain concept.
+It does not declare any attributes.
+
+'types_MetaModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'types_UnionType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_MapType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_TypeError' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'types_UnknownFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ThisModuleType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Unknown' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ReflectiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_FloatType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_RefType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'types_OclUndefinedType' is a specialization of 'Type'.
+The class 'types_PrimitiveType' is a specialization of 'Type'.
+The class 'types_BooleanType' is a specialization of 'PrimitiveType'.
+The class 'types_IntegerType' is a specialization of 'PrimitiveType'.
+The class 'types_StringType' is a specialization of 'PrimitiveType'.
+The class 'types_FloatType' is a specialization of 'PrimitiveType'.
+The class 'types_TupleType' is a specialization of 'Type'.
+The class 'types_MapType' is a specialization of 'Type'.
+The class 'types_RefType' is a specialization of 'Type'.
+The class 'types_Unknown' is a specialization of 'RefType'.
+The class 'types_EmptyCollectionType' is a specialization of 'Type'.
+The class 'types_TypeError' is a specialization of 'Type'.
+The class 'types_UnresolvedTypeError' is a specialization of 'TypeError'.
+The class 'types_UnresolvedTypeError' is a specialization of 'Metaclass'.
+The class 'types_UnknownFeature' is a specialization of 'EStructuralFeature'.
+The class 'types_EmptyCollection' is a specialization of 'Type'.
+The class 'types_EnumType' is a specialization of 'Type'.
+The class 'types_Metaclass' is a specialization of 'RefType'.
+The class 'types_ReflectiveType' is a specialization of 'Type'.
+The class 'types_UnionType' is a specialization of 'Type'.
+The class 'types_ThisModuleType' is a specialization of 'Type'.
+The class 'types_ReflectiveClass' is a specialization of 'ReflectiveType'.
+The class 'types_CollectionType' is a specialization of 'Type'.
+The class 'types_SequenceType' is a specialization of 'CollectionType'.
+The class 'types_BagType' is a specialization of 'CollectionType'.
+The class 'types_SetType' is a specialization of 'CollectionType'.
+The class 'types_OrderedSetType' is a specialization of 'CollectionType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'types_Type' and 'types_Type'. From 'types_Type', the role 'types_Type0' has cardinality 0..*, and from 'types_Type', the role 'types_Type' has cardinality 0..*.
+An association connects 'types_Metaclass' and 'types_BooleanType'. From 'types_Metaclass', the role 'types_Metaclass' has cardinality 0..*, and from 'types_BooleanType', the role 'types_BooleanType' has cardinality 0..*.
+An association connects 'types_TupleType' and 'types_TupleAttribute'. From 'types_TupleType', the role 'types_TupleType' has cardinality 0..*, and from 'types_TupleAttribute', the role 'types_TupleAttribute' has cardinality 0..*.
+An association connects 'types_MapType' and 'types_Type'. From 'types_MapType', the role 'types_MapType' has cardinality 0..*, and from 'types_Type', the role 'types_Type5' has cardinality 0..*.
+An association connects 'types_MapType' and 'types_Type'. From 'types_MapType', the role 'types_MapType7' has cardinality 0..*, and from 'types_Type', the role 'types_Type8' has cardinality 0..*.
+An association connects 'types_TupleAttribute' and 'types_Type'. From 'types_TupleAttribute', the role 'types_TupleAttribute10' has cardinality 0..*, and from 'types_Type', the role 'types_Type11' has cardinality 0..*.
+An association connects 'types_EObject' and 'types_TypeError'. From 'types_EObject', the role 'types_EObject' has cardinality 0..*, and from 'types_TypeError', the role 'types_TypeError' has cardinality 0..*.
+An association connects 'types_UnknownFeature' and 'types_EClass'. From 'types_UnknownFeature', the role 'types_UnknownFeature' has cardinality 0..*, and from 'types_EClass', the role 'types_EClass' has cardinality 0..*.
+An association connects 'types_EnumType' and 'types_EObject'. From 'types_EnumType', the role 'types_EnumType' has cardinality 0..*, and from 'types_EObject', the role 'types_EObject15' has cardinality 0..*.
+An association connects 'types_EClass' and 'types_Metaclass'. From 'types_EClass', the role 'types_EClass18' has cardinality 0..*, and from 'types_Metaclass', the role 'types_Metaclass17' has cardinality 0..*.
+An association connects 'types_Metaclass' and 'types_MetaModel'. From 'types_Metaclass', the role 'types_Metaclass20' has cardinality 0..*, and from 'types_MetaModel', the role 'types_MetaModel' has cardinality 0..*.
+An association connects 'types_Type' and 'types_UnionType'. From 'types_Type', the role 'types_Type22' has cardinality 0..*, and from 'types_UnionType', the role 'types_UnionType' has cardinality 0..*.
+An association connects 'types_CollectionType' and 'types_Type'. From 'types_CollectionType', the role 'types_CollectionType' has cardinality 0..*, and from 'types_Type', the role 'types_Type24' has cardinality 0..*.

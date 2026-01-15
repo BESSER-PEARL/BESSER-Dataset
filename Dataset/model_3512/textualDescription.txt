@@ -1,0 +1,33 @@
+The domain model 'testoperationbody' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'testoperationbody_ConceptA' represents an important domain concept.
+It does not declare any attributes.
+
+'testoperationbody_Parent' represents an important domain concept.
+It does not declare any attributes.
+
+'Parent' represents an important domain concept.
+It does not declare any attributes.
+
+'testoperationbody_ChildB' represents an important domain concept.
+It does not declare any attributes.
+
+'testoperationbody_ChildA' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'testoperationbody_Main' represents an important domain concept.
+It has the following attributes: 'listint', which is of type int; 'singlebool', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EnumA' defines the following possible values: 'CASE2', 'CASE1'.
+
+The model also captures inheritance relationships between classes.
+The class 'testoperationbody_ChildA' is a specialization of 'Parent'.
+The class 'testoperationbody_ChildB' is a specialization of 'Parent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'testoperationbody_Main' and 'testoperationbody_ConceptA'. From 'testoperationbody_Main', the role 'testoperationbody_Main' has cardinality 0..*, and from 'testoperationbody_ConceptA', the role 'testoperationbody_ConceptA' has cardinality 0..*.
+An association connects 'testoperationbody_Main' and 'testoperationbody_ConceptA'. From 'testoperationbody_Main', the role 'testoperationbody_Main2' has cardinality 0..*, and from 'testoperationbody_ConceptA', the role 'testoperationbody_ConceptA3' has cardinality 0..*.
+An association connects 'testoperationbody_Main' and 'testoperationbody_Parent'. From 'testoperationbody_Main', the role 'testoperationbody_Main5' has cardinality 0..*, and from 'testoperationbody_Parent', the role 'testoperationbody_Parent' has cardinality 0..*.

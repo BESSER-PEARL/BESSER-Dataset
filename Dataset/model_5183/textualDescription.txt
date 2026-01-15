@@ -1,0 +1,42 @@
+The domain model 'MultipleInheritance' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'Object' represents an important domain concept.
+It does not declare any attributes.
+
+'MultipleInheritance_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'MultipleInheritance_A' represents an important domain concept.
+It does not declare any attributes.
+
+'MultipleInheritance_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'MultipleInheritance_B' represents an important domain concept.
+It does not declare any attributes.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'MultipleInheritance_C' represents an important domain concept.
+It does not declare any attributes.
+
+'MultipleInheritance_D' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'MultipleInheritance_A' is a specialization of 'Object'.
+The class 'MultipleInheritance_B' is a specialization of 'Object'.
+The class 'MultipleInheritance_C' is a specialization of 'A'.
+The class 'MultipleInheritance_C' is a specialization of 'B'.
+The class 'MultipleInheritance_D' is a specialization of 'Object'.
+
+Relationships between classes are modeled using associations.
+An association connects 'MultipleInheritance_Model' and 'MultipleInheritance_Object'. From 'MultipleInheritance_Model', the role 'MultipleInheritance_Model' has cardinality 0..*, and from 'MultipleInheritance_Object', the role 'MultipleInheritance_Object' has cardinality 0..*.
+An association connects 'MultipleInheritance_D' and 'MultipleInheritance_A'. From 'MultipleInheritance_D', the role 'MultipleInheritance_D' has cardinality 0..*, and from 'MultipleInheritance_A', the role 'MultipleInheritance_A' has cardinality 0..*.
+An association connects 'MultipleInheritance_D' and 'MultipleInheritance_B'. From 'MultipleInheritance_D', the role 'MultipleInheritance_D3' has cardinality 0..*, and from 'MultipleInheritance_B', the role 'MultipleInheritance_B' has cardinality 0..*.

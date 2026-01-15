@@ -1,0 +1,21 @@
+The domain model 'oo_remove_empty' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'oo_remove_empty_B' represents an important domain concept.
+It does not declare any attributes.
+
+'oo_remove_empty_A' represents an important domain concept.
+It does not declare any attributes.
+
+'oo_remove_empty_C' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'oo_remove_empty_C' is a specialization of 'B'.
+
+Relationships between classes are modeled using associations.
+An association connects 'oo_remove_empty_A' and 'oo_remove_empty_B'. From 'oo_remove_empty_A', the role 'oo_remove_empty_A' has cardinality 0..*, and from 'oo_remove_empty_B', the role 'oo_remove_empty_B' has cardinality 0..*.

@@ -1,0 +1,276 @@
+The domain model 'HTML' describes the core structural elements and their relationships within the system.
+
+The model defines 71 main class(es).
+
+'HTML_PARAM' represents an important domain concept.
+It has the following attributes: 'paramValue', which is of type str; 'name', which is of type str.
+
+'HTML_PRE' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_FORM' represents an important domain concept.
+It has the following attributes: 'action', which is of type str; 'method', which is of type str.
+
+'HTML_OBJECT' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'classid', which is of type str; 'id', which is of type str; 'standby', which is of type str; 'data', which is of type str.
+
+'HTML_H1' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_TABLEElement' represents an important domain concept.
+It has the following attributes: 'bgcolor', which is of type str; 'background', which is of type str.
+
+'HTML_TITLE' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_BR' represents an important domain concept.
+It has one attribute: 'clear', which is of type str.
+
+'TABLE' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_BIG' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_NOFRAME' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_EM' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_TABLE' represents an important domain concept.
+It has the following attributes: 'cellspacing', which is of type str; 'width', which is of type str; 'border', which is of type str; 'cellpadding', which is of type str.
+
+'HTML_HTMLElement' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'HTML_I' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_EMBED' represents an important domain concept.
+It has the following attributes: 'width', which is of type str; 'src', which is of type str; 'align', which is of type str; 'border', which is of type str; 'hspace', which is of type str; 'height', which is of type str; 'vspace', which is of type str.
+
+'HTML_SUP' represents an important domain concept.
+It does not declare any attributes.
+
+'TD' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_AREA' represents an important domain concept.
+It has the following attributes: 'shape', which is of type str; 'ahref', which is of type str; 'coords', which is of type str.
+
+'HTML_H3' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_SUB' represents an important domain concept.
+It does not declare any attributes.
+
+'HEAD' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_INPUT' represents an important domain concept.
+It has the following attributes: 'maxlength', which is of type str; 'size', which is of type str; 'align', which is of type str; 'name', which is of type str; 'checked', which is of type str; 'inputValue', which is of type str; 'src', which is of type str; 'type', which is of type str.
+
+'HTML_HEAD' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_NOEMBED' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_MAP' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_IMG' represents an important domain concept.
+It has the following attributes: 'width', which is of type str; 'usemap', which is of type str; 'hspace', which is of type str; 'ismap', which is of type str; 'alt', which is of type str; 'src', which is of type str; 'align', which is of type str; 'border', which is of type str; 'vspace', which is of type str; 'height', which is of type str.
+
+'HTML_OPTION' represents an important domain concept.
+It has the following attributes: 'optionValue', which is of type str; 'selected', which is of type str.
+
+'HTML_B' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_STRIKE' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_H2' represents an important domain concept.
+It does not declare any attributes.
+
+'HEADElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_OL' represents an important domain concept.
+It has one attribute: 'start', which is of type str.
+
+'HTML_STRONG' represents an important domain concept.
+It does not declare any attributes.
+
+'ListElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_LINK' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'ahref', which is of type str; 'type', which is of type str; 'rel', which is of type str.
+
+'HTML_DIV' represents an important domain concept.
+It has one attribute: 'align', which is of type str.
+
+'BODY' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_SMALL' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_HTML' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_STYLE' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_TD' represents an important domain concept.
+It has the following attributes: 'colspan', which is of type str; 'width', which is of type str; 'align', which is of type str; 'valign', which is of type str; 'rowspan', which is of type str.
+
+'TABLEElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_LI' represents an important domain concept.
+It has one attribute: 'liValue', which is of type str.
+
+'HTML' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_TR' represents an important domain concept.
+It has the following attributes: 'align', which is of type str; 'valign', which is of type str.
+
+'HTML_A' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'ahref', which is of type str; 'name', which is of type str.
+
+'HTML_HEADElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_ListElement' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'HTML_DL' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_FRAME' represents an important domain concept.
+It has the following attributes: 'marginheight', which is of type str; 'name', which is of type str; 'marginwidth', which is of type str; 'noresize', which is of type str; 'src', which is of type str; 'scrolling', which is of type str.
+
+'HTML_SELECT' represents an important domain concept.
+It has the following attributes: 'size', which is of type str; 'multiple', which is of type str; 'name', which is of type str.
+
+'HTML_H4' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_TH' represents an important domain concept.
+It does not declare any attributes.
+
+'HTMLElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_TEXTAREA' represents an important domain concept.
+It has the following attributes: 'cols', which is of type str; 'name', which is of type str; 'rows', which is of type str.
+
+'BODYElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_DT' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_SPAN' represents an important domain concept.
+It has one attribute: 'style', which is of type str.
+
+'TR' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_BODY' represents an important domain concept.
+It has the following attributes: 'alink', which is of type str; 'vlink', which is of type str; 'bgcolor', which is of type str; 'text', which is of type str; 'background', which is of type str; 'link', which is of type str.
+
+'HTML_TT' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_FRAMESET' represents an important domain concept.
+It has the following attributes: 'frameborder', which is of type str; 'framespacing', which is of type str; 'border', which is of type str; 'rows', which is of type str; 'cols', which is of type str.
+
+'HTML_FONT' represents an important domain concept.
+It has the following attributes: 'size', which is of type str; 'face', which is of type str; 'color', which is of type str.
+
+'HTML_APPLET' represents an important domain concept.
+It has the following attributes: 'width', which is of type str; 'class', which is of type str; 'applet', which is of type str; 'align', which is of type str; 'height', which is of type str; 'src', which is of type str.
+
+'HTML_BODYElement' represents an important domain concept.
+It does not declare any attributes.
+
+'FRAME' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_DD' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_UL' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_IFRAME' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_P' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'HTML_HEAD' is a specialization of 'HTMLElement'.
+The class 'HTML_HEADElement' is a specialization of 'HTMLElement'.
+The class 'HTML_LINK' is a specialization of 'HEADElement'.
+The class 'HTML_TITLE' is a specialization of 'HEADElement'.
+The class 'HTML_BODY' is a specialization of 'HTMLElement'.
+The class 'HTML_BODYElement' is a specialization of 'HTMLElement'.
+The class 'HTML_H1' is a specialization of 'BODYElement'.
+The class 'HTML_H2' is a specialization of 'BODYElement'.
+The class 'HTML_H3' is a specialization of 'BODYElement'.
+The class 'HTML_H4' is a specialization of 'BODYElement'.
+The class 'HTML_EM' is a specialization of 'BODYElement'.
+The class 'HTML_STRONG' is a specialization of 'BODYElement'.
+The class 'HTML_B' is a specialization of 'BODYElement'.
+The class 'HTML_I' is a specialization of 'BODYElement'.
+The class 'HTML_TT' is a specialization of 'BODYElement'.
+The class 'HTML_PRE' is a specialization of 'BODYElement'.
+The class 'HTML_BIG' is a specialization of 'BODYElement'.
+The class 'HTML_SMALL' is a specialization of 'BODYElement'.
+The class 'HTML_SUB' is a specialization of 'BODYElement'.
+The class 'HTML_SUP' is a specialization of 'BODYElement'.
+The class 'HTML_STRIKE' is a specialization of 'BODYElement'.
+The class 'HTML_FONT' is a specialization of 'BODYElement'.
+The class 'HTML_IMG' is a specialization of 'BODYElement'.
+The class 'HTML_BR' is a specialization of 'BODYElement'.
+The class 'HTML_MAP' is a specialization of 'BODYElement'.
+The class 'HTML_AREA' is a specialization of 'BODYElement'.
+The class 'HTML_STYLE' is a specialization of 'BODYElement'.
+The class 'HTML_EMBED' is a specialization of 'BODYElement'.
+The class 'HTML_NOEMBED' is a specialization of 'BODYElement'.
+The class 'HTML_SPAN' is a specialization of 'BODYElement'.
+The class 'HTML_A' is a specialization of 'BODYElement'.
+The class 'HTML_DIV' is a specialization of 'BODYElement'.
+The class 'HTML_P' is a specialization of 'BODYElement'.
+The class 'HTML_TABLEElement' is a specialization of 'BODYElement'.
+The class 'HTML_TABLE' is a specialization of 'TABLEElement'.
+The class 'HTML_TR' is a specialization of 'TABLEElement'.
+The class 'HTML_TD' is a specialization of 'TABLEElement'.
+The class 'HTML_TH' is a specialization of 'TD'.
+The class 'HTML_OL' is a specialization of 'ListElement'.
+The class 'HTML_UL' is a specialization of 'ListElement'.
+The class 'HTML_LI' is a specialization of 'ListElement'.
+The class 'HTML_IFRAME' is a specialization of 'FRAME'.
+
+Relationships between classes are modeled using associations.
+An association connects 'HTML_HTML' and 'HEAD'. From 'HTML_HTML', the role '1' has cardinality 0..*, and from 'HEAD', the role '#' has cardinality 0..*.
+An association connects 'BODY' and 'HTML_HTML'. From 'BODY', the role '#3' has cardinality 0..*, and from 'HTML_HTML', the role '12' has cardinality 0..*.
+An association connects 'HTML_HTMLElement' and 'HTMLElement'. From 'HTML_HTMLElement', the role '15' has cardinality 0..*, and from 'HTMLElement', the role '#6' has cardinality 0..*.
+An association connects 'HTMLElement' and 'HTML_HTMLElement'. From 'HTMLElement', the role '#9' has cardinality 0..*, and from 'HTML_HTMLElement', the role '18' has cardinality 0..*.
+An association connects 'HTML_HEAD' and 'HEADElement'. From 'HTML_HEAD', the role '111' has cardinality 0..*, and from 'HEADElement', the role '#12' has cardinality 0..*.
+An association connects 'HTML_HEAD' and 'HTML'. From 'HTML_HEAD', the role '114' has cardinality 0..*, and from 'HTML', the role '#15' has cardinality 0..*.
+An association connects 'HTML_HEADElement' and 'HEAD'. From 'HTML_HEADElement', the role '117' has cardinality 0..*, and from 'HEAD', the role '#18' has cardinality 0..*.
+An association connects 'BODYElement' and 'HTML_BODY'. From 'BODYElement', the role '#21' has cardinality 0..*, and from 'HTML_BODY', the role '120' has cardinality 0..*.
+An association connects 'HTML_BODY' and 'HTML'. From 'HTML_BODY', the role '123' has cardinality 0..*, and from 'HTML', the role '#24' has cardinality 0..*.
+An association connects 'BODY' and 'HTML_BODYElement'. From 'BODY', the role '#27' has cardinality 0..*, and from 'HTML_BODYElement', the role '126' has cardinality 0..*.
+An association connects 'TR' and 'HTML_TABLE'. From 'TR', the role '#30' has cardinality 0..*, and from 'HTML_TABLE', the role '129' has cardinality 0..*.
+An association connects 'HTML_TR' and 'TABLE'. From 'HTML_TR', the role '132' has cardinality 0..*, and from 'TABLE', the role '#33' has cardinality 0..*.
+An association connects 'TD' and 'HTML_TR'. From 'TD', the role '#36' has cardinality 0..*, and from 'HTML_TR', the role '135' has cardinality 0..*.
+An association connects 'HTML_TD' and 'TR'. From 'HTML_TD', the role '138' has cardinality 0..*, and from 'TR', the role '#39' has cardinality 0..*.

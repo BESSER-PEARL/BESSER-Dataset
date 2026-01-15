@@ -1,0 +1,198 @@
+The domain model 'simulink' describes the core structural elements and their relationships within the system.
+
+The model defines 42 main class(es).
+
+'simulink_TriggerBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_ModelReference' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_VirtualBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_Parameter' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'value', which is of type str; 'readOnly', which is of type bool; 'name', which is of type str.
+
+'BusSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_BusSignalMapping' represents an important domain concept.
+It has the following attributes: 'incomplete', which is of type bool; 'mappingPath', which is of type str.
+
+'SimulinkReference' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_OutPortBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_GotoTagVisibility' represents an important domain concept.
+It does not declare any attributes.
+
+'InPort' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_EnableBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_SubSystem' represents an important domain concept.
+It has one attribute: 'tag', which is of type str.
+
+'simulink_MultiConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_InPortBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'OutPort' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_State' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_BusSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_Connection' represents an important domain concept.
+It has one attribute: 'lineName', which is of type str.
+
+'InPortBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_BusCreator' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_From' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_InPort' represents an important domain concept.
+It does not declare any attributes.
+
+'PortBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_Goto' represents an important domain concept.
+It has the following attributes: 'gotoTag', which is of type str; 'tagVisibility', which is of type str.
+
+'simulink_SimulinkModel' represents an important domain concept.
+It has the following attributes: 'file', which is of type str; 'library', which is of type bool; 'version', which is of type str.
+
+'simulink_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'SimulinkElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_SingleConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_Enable' represents an important domain concept.
+It has one attribute: 'statesWhenEnabling', which is of type str.
+
+'simulink_SimulinkElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simulink_SimulinkReference' represents an important domain concept.
+It has the following attributes: 'qualifier', which is of type str; 'name', which is of type str.
+
+'simulink_Trigger' represents an important domain concept.
+It has the following attributes: 'triggerType', which is of type str; 'statesWhenEnabling', which is of type str.
+
+'simulink_OutPort' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_PortBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_BusSelector' represents an important domain concept.
+It has one attribute: 'outputAsBus', which is of type bool.
+
+'simulink_IdentifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_LibraryLinkReference' represents an important domain concept.
+It has one attribute: 'disabled', which is of type bool.
+
+'VirtualBlock' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EnableStates' defines the following possible values: 'Held', 'Reset', 'Inherit'.
+The enumeration 'TriggerType' defines the following possible values: 'Either', 'Rising', 'FunctionCall', 'Falling'.
+The enumeration 'TagVisibility' defines the following possible values: 'Scoped', 'Local', 'Global'.
+
+The model also captures inheritance relationships between classes.
+The class 'simulink_Block' is a specialization of 'SimulinkElement'.
+The class 'simulink_Port' is a specialization of 'SimulinkElement'.
+The class 'simulink_InPort' is a specialization of 'Port'.
+The class 'simulink_OutPort' is a specialization of 'Port'.
+The class 'simulink_Connection' is a specialization of 'SimulinkElement'.
+The class 'simulink_Trigger' is a specialization of 'InPort'.
+The class 'simulink_Enable' is a specialization of 'InPort'.
+The class 'simulink_BusSelector' is a specialization of 'BusSpecification'.
+The class 'simulink_BusCreator' is a specialization of 'BusSpecification'.
+The class 'simulink_Goto' is a specialization of 'VirtualBlock'.
+The class 'simulink_VirtualBlock' is a specialization of 'Block'.
+The class 'simulink_From' is a specialization of 'VirtualBlock'.
+The class 'simulink_SimulinkModel' is a specialization of 'SimulinkElement'.
+The class 'simulink_MultiConnection' is a specialization of 'Connection'.
+The class 'simulink_SingleConnection' is a specialization of 'Connection'.
+The class 'simulink_PortBlock' is a specialization of 'VirtualBlock'.
+The class 'simulink_OutPortBlock' is a specialization of 'PortBlock'.
+The class 'simulink_InPortBlock' is a specialization of 'PortBlock'.
+The class 'simulink_TriggerBlock' is a specialization of 'InPortBlock'.
+The class 'simulink_EnableBlock' is a specialization of 'InPortBlock'.
+The class 'simulink_GotoTagVisibility' is a specialization of 'VirtualBlock'.
+The class 'simulink_SubSystem' is a specialization of 'Block'.
+The class 'simulink_ModelReference' is a specialization of 'Block'.
+The class 'simulink_BusSpecification' is a specialization of 'Block'.
+The class 'simulink_LibraryLinkReference' is a specialization of 'SimulinkReference'.
+The class 'simulink_IdentifierReference' is a specialization of 'SimulinkReference'.
+The class 'simulink_State' is a specialization of 'OutPort'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simulink_SimulinkElement' and 'simulink_IdentifierReference'. From 'simulink_SimulinkElement', the role 'simulink_SimulinkElement' has cardinality 0..*, and from 'simulink_IdentifierReference', the role 'simulink_IdentifierReference' has cardinality 0..*.
+An association connects 'simulink_Parameter' and 'simulink_Block'. From 'simulink_Parameter', the role 'simulink_Parameter' has cardinality 0..*, and from 'simulink_Block', the role 'simulink_Block' has cardinality 0..*.
+An association connects 'simulink_Port' and 'simulink_Block'. From 'simulink_Port', the role 'Port' has cardinality 0..*, and from 'simulink_Block', the role 'container' has cardinality 0..*.
+An association connects 'simulink_Trigger' and 'simulink_Block'. From 'simulink_Trigger', the role 'simulink_Trigger' has cardinality 0..*, and from 'simulink_Block', the role 'simulink_Block4' has cardinality 0..*.
+An association connects 'simulink_Enable' and 'simulink_Block'. From 'simulink_Enable', the role 'simulink_Enable' has cardinality 0..*, and from 'simulink_Block', the role 'simulink_Block6' has cardinality 0..*.
+An association connects 'simulink_InPort' and 'simulink_Block'. From 'simulink_InPort', the role 'simulink_InPort' has cardinality 0..*, and from 'simulink_Block', the role 'simulink_Block8' has cardinality 0..*.
+An association connects 'simulink_OutPort' and 'simulink_Block'. From 'simulink_OutPort', the role 'simulink_OutPort' has cardinality 0..*, and from 'simulink_Block', the role 'simulink_Block10' has cardinality 0..*.
+An association connects 'simulink_SubSystem' and 'simulink_Block'. From 'simulink_SubSystem', the role 'SubSystem' has cardinality 0..*, and from 'simulink_Block', the role 'subBlocks' has cardinality 0..*.
+An association connects 'simulink_Block' and 'simulink_Block'. From 'simulink_Block', the role 'simulink_Block12' has cardinality 0..*, and from 'simulink_Block', the role 'simulink_Block14' has cardinality 0..*.
+An association connects 'simulink_Block' and 'simulink_LibraryLinkReference'. From 'simulink_Block', the role 'simulink_Block16' has cardinality 0..*, and from 'simulink_LibraryLinkReference', the role 'simulink_LibraryLinkReference' has cardinality 0..*.
+An association connects 'simulink_Port' and 'simulink_Block'. From 'simulink_Port', the role 'ports' has cardinality 0..*, and from 'simulink_Block', the role 'Block' has cardinality 0..*.
+An association connects 'simulink_PortBlock' and 'simulink_Port'. From 'simulink_PortBlock', the role 'PortBlock' has cardinality 0..*, and from 'simulink_Port', the role 'port' has cardinality 0..*.
+An association connects 'simulink_Port' and 'simulink_Parameter'. From 'simulink_Port', the role 'simulink_Port' has cardinality 0..*, and from 'simulink_Parameter', the role 'simulink_Parameter20' has cardinality 0..*.
+An association connects 'simulink_InPort' and 'simulink_SingleConnection'. From 'simulink_InPort', the role 'to' has cardinality 0..*, and from 'simulink_SingleConnection', the role 'SingleConnection' has cardinality 0..*.
+An association connects 'simulink_OutPort' and 'simulink_Connection'. From 'simulink_OutPort', the role 'from' has cardinality 0..*, and from 'simulink_Connection', the role 'Connection' has cardinality 0..*.
+An association connects 'simulink_OutPort' and 'simulink_Connection'. From 'simulink_OutPort', the role 'OutPort' has cardinality 0..*, and from 'simulink_Connection', the role 'connection' has cardinality 0..*.
+An association connects 'simulink_BusSelector' and 'simulink_BusSignalMapping'. From 'simulink_BusSelector', the role 'selector' has cardinality 0..*, and from 'simulink_BusSignalMapping', the role 'BusSignalMapping' has cardinality 0..*.
+An association connects 'simulink_BusSelector' and 'simulink_BusSpecification'. From 'simulink_BusSelector', the role 'simulink_BusSelector' has cardinality 0..*, and from 'simulink_BusSpecification', the role 'simulink_BusSpecification' has cardinality 0..*.
+An association connects 'simulink_From' and 'simulink_Goto'. From 'simulink_From', the role 'From' has cardinality 0..*, and from 'simulink_Goto', the role 'gotoBlock' has cardinality 0..*.
+An association connects 'simulink_Goto' and 'simulink_From'. From 'simulink_Goto', the role 'Goto' has cardinality 0..*, and from 'simulink_From', the role 'fromBlocks' has cardinality 0..*.
+An association connects 'simulink_SimulinkModel' and 'simulink_Block'. From 'simulink_SimulinkModel', the role 'simulink_SimulinkModel' has cardinality 0..*, and from 'simulink_Block', the role 'simulink_Block29' has cardinality 0..*.
+An association connects 'simulink_SingleConnection' and 'simulink_MultiConnection'. From 'simulink_SingleConnection', the role 'SingleConnection31' has cardinality 0..*, and from 'simulink_MultiConnection', the role 'parent' has cardinality 0..*.
+An association connects 'simulink_MultiConnection' and 'simulink_SingleConnection'. From 'simulink_MultiConnection', the role 'MultiConnection' has cardinality 0..*, and from 'simulink_SingleConnection', the role 'connections' has cardinality 0..*.
+An association connects 'simulink_SingleConnection' and 'simulink_InPort'. From 'simulink_SingleConnection', the role 'connection34' has cardinality 0..*, and from 'simulink_InPort', the role 'InPort' has cardinality 0..*.
+An association connects 'simulink_PortBlock' and 'simulink_Port'. From 'simulink_PortBlock', the role 'portBlock' has cardinality 0..*, and from 'simulink_Port', the role 'Port36' has cardinality 0..*.
+An association connects 'simulink_SimulinkElement' and 'simulink_SimulinkReference'. From 'simulink_SimulinkElement', the role 'simulink_SimulinkElement38' has cardinality 0..*, and from 'simulink_SimulinkReference', the role 'simulink_SimulinkReference' has cardinality 0..*.
+An association connects 'simulink_Goto' and 'simulink_GotoTagVisibility'. From 'simulink_Goto', the role 'simulink_Goto' has cardinality 0..*, and from 'simulink_GotoTagVisibility', the role 'simulink_GotoTagVisibility' has cardinality 0..*.
+An association connects 'simulink_SubSystem' and 'simulink_Block'. From 'simulink_SubSystem', the role 'parent41' has cardinality 0..*, and from 'simulink_Block', the role 'Block42' has cardinality 0..*.
+An association connects 'simulink_SimulinkModel' and 'simulink_ModelReference'. From 'simulink_SimulinkModel', the role 'simulink_SimulinkModel44' has cardinality 0..*, and from 'simulink_ModelReference', the role 'simulink_ModelReference' has cardinality 0..*.
+An association connects 'simulink_ModelReference' and 'simulink_IdentifierReference'. From 'simulink_ModelReference', the role 'simulink_ModelReference46' has cardinality 0..*, and from 'simulink_IdentifierReference', the role 'simulink_IdentifierReference47' has cardinality 0..*.
+An association connects 'simulink_BusSignalMapping' and 'simulink_BusSelector'. From 'simulink_BusSignalMapping', the role 'mappings' has cardinality 0..*, and from 'simulink_BusSelector', the role 'BusSelector' has cardinality 0..*.
+An association connects 'simulink_OutPort' and 'simulink_BusSignalMapping'. From 'simulink_OutPort', the role 'simulink_OutPort50' has cardinality 0..*, and from 'simulink_BusSignalMapping', the role 'simulink_BusSignalMapping' has cardinality 0..*.
+An association connects 'simulink_BusSignalMapping' and 'simulink_OutPort'. From 'simulink_BusSignalMapping', the role 'simulink_BusSignalMapping52' has cardinality 0..*, and from 'simulink_OutPort', the role 'simulink_OutPort53' has cardinality 0..*.

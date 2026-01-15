@@ -1,0 +1,127 @@
+The domain model 'eol_types' describes the core structural elements and their relationships within the system.
+
+The model defines 31 main class(es).
+
+'eol_types_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'OrderedCollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_ModelElementType' represents an important domain concept.
+It has the following attributes: 'modelName', which is of type str; 'elementName', which is of type str.
+
+'eol_types_UniqueCollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_NativeType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'eol_types_MapType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_InvalidType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_SelfType' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_PseudoType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_ModelType' represents an important domain concept.
+It has one attribute: 'modelName', which is of type str.
+
+'PseudoType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_SelfContentType' represents an important domain concept.
+It does not declare any attributes.
+
+'UniqueCollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_OrderedCollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_types_AnyType' represents an important domain concept.
+It has one attribute: 'declared', which is of type bool.
+
+The model also captures inheritance relationships between classes.
+The class 'eol_types_AnyType' is a specialization of 'Type'.
+The class 'eol_types_ModelType' is a specialization of 'AnyType'.
+The class 'eol_types_ModelElementType' is a specialization of 'AnyType'.
+The class 'eol_types_PseudoType' is a specialization of 'AnyType'.
+The class 'eol_types_SelfType' is a specialization of 'PseudoType'.
+The class 'eol_types_SelfContentType' is a specialization of 'PseudoType'.
+The class 'eol_types_MapType' is a specialization of 'AnyType'.
+The class 'eol_types_NativeType' is a specialization of 'AnyType'.
+The class 'eol_types_VoidType' is a specialization of 'AnyType'.
+The class 'eol_types_InvalidType' is a specialization of 'AnyType'.
+The class 'eol_types_CollectionType' is a specialization of 'AnyType'.
+The class 'eol_types_BagType' is a specialization of 'CollectionType'.
+The class 'eol_types_OrderedCollectionType' is a specialization of 'CollectionType'.
+The class 'eol_types_UniqueCollectionType' is a specialization of 'CollectionType'.
+The class 'eol_types_SetType' is a specialization of 'UniqueCollectionType'.
+The class 'eol_types_OrderedSetType' is a specialization of 'UniqueCollectionType'.
+The class 'eol_types_OrderedSetType' is a specialization of 'OrderedCollectionType'.
+The class 'eol_types_SequenceType' is a specialization of 'OrderedCollectionType'.
+The class 'eol_types_PrimitiveType' is a specialization of 'AnyType'.
+The class 'eol_types_BooleanType' is a specialization of 'PrimitiveType'.
+The class 'eol_types_RealType' is a specialization of 'PrimitiveType'.
+The class 'eol_types_IntegerType' is a specialization of 'RealType'.
+The class 'eol_types_StringType' is a specialization of 'PrimitiveType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'eol_types_AnyType' and 'eol_types_Type'. From 'eol_types_AnyType', the role 'eol_types_AnyType' has cardinality 0..*, and from 'eol_types_Type', the role 'eol_types_Type' has cardinality 0..*.
+An association connects 'eol_types_MapType' and 'eol_types_AnyType'. From 'eol_types_MapType', the role 'eol_types_MapType' has cardinality 0..*, and from 'eol_types_AnyType', the role 'eol_types_AnyType2' has cardinality 0..*.
+An association connects 'eol_types_MapType' and 'eol_types_AnyType'. From 'eol_types_MapType', the role 'eol_types_MapType4' has cardinality 0..*, and from 'eol_types_AnyType', the role 'eol_types_AnyType5' has cardinality 0..*.
+An association connects 'eol_types_CollectionType' and 'eol_types_Type'. From 'eol_types_CollectionType', the role 'eol_types_CollectionType' has cardinality 0..*, and from 'eol_types_Type', the role 'eol_types_Type7' has cardinality 0..*.

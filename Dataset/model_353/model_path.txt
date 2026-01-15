@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/hallvard/emfblocks/no.hal.emfblocks.examples/src/no/hal/emfblocks/examples/library.ecore

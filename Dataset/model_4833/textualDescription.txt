@@ -1,0 +1,326 @@
+The domain model 'archimateC2' describes the core structural elements and their relationships within the system.
+
+The model defines 47 main class(es).
+
+'archimateC2_Network' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_BusinessService' represents an important domain concept.
+It does not declare any attributes.
+
+'BusinessBehaviorElement' represents an important domain concept.
+It does not declare any attributes.
+
+'BehaviorElement' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_CommunicationPath' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_ApplicationComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateElement' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_InfrastructureService' represents an important domain concept.
+It does not declare any attributes.
+
+'ApplicationComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_Representation' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_ActiveStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_BusinessInteraction' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_BusinessFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_Device' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_BusinessEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_Meaning' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_BusinessRole' represents an important domain concept.
+It has one attribute: 'rank', which is of type int.
+
+'archimateC2_ApplicationInteraction' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_BehaviorElement' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_BusinessBehaviorElement' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_BusinessProcess' represents an important domain concept.
+It has the following attributes: 'processFullName', which is of type str; 'processDesign', which is of type str; 'importance', which is of type int; 'processType', which is of type str; 'processID', which is of type str; 'missionary', which is of type bool.
+
+'archimateC2_Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_BusinessInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_ApplicationInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_ApplicationCollaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'ApplicationFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_PassiveStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'ActiveStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'PassiveStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_InfrastructureInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_SystemSoftware' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_ApplicationService' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_Location' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'archimateC2_BusinessActor' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_ArchimateModel' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_ArchimateElement' represents an important domain concept.
+It has the following attributes: 'elementName', which is of type str; 'description', which is of type str.
+
+'BusinessObject' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_DataObject' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_ApplicationFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'BusinessRole' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_Contract' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_Product' represents an important domain concept.
+It has one attribute: 'contract', which is of type str.
+
+'archimateC2_BusinessObject' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC2_BusinessCollaboration' represents an important domain concept.
+It has one attribute: 'collaboration', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'archimateC2_PassiveStructure' is a specialization of 'ArchimateElement'.
+The class 'archimateC2_BehaviorElement' is a specialization of 'ArchimateElement'.
+The class 'archimateC2_ActiveStructure' is a specialization of 'ArchimateElement'.
+The class 'archimateC2_Value' is a specialization of 'PassiveStructure'.
+The class 'archimateC2_Product' is a specialization of 'PassiveStructure'.
+The class 'archimateC2_Contract' is a specialization of 'BusinessObject'.
+The class 'archimateC2_BusinessObject' is a specialization of 'PassiveStructure'.
+The class 'archimateC2_Meaning' is a specialization of 'PassiveStructure'.
+The class 'archimateC2_Representation' is a specialization of 'PassiveStructure'.
+The class 'archimateC2_BusinessService' is a specialization of 'BehaviorElement'.
+The class 'archimateC2_BusinessBehaviorElement' is a specialization of 'BehaviorElement'.
+The class 'archimateC2_BusinessProcess' is a specialization of 'BusinessBehaviorElement'.
+The class 'archimateC2_BusinessFunction' is a specialization of 'BusinessBehaviorElement'.
+The class 'archimateC2_BusinessInteraction' is a specialization of 'BusinessBehaviorElement'.
+The class 'archimateC2_BusinessEvent' is a specialization of 'ArchimateElement'.
+The class 'archimateC2_Location' is a specialization of 'ActiveStructure'.
+The class 'archimateC2_BusinessInterface' is a specialization of 'ActiveStructure'.
+The class 'archimateC2_BusinessRole' is a specialization of 'ActiveStructure'.
+The class 'archimateC2_BusinessCollaboration' is a specialization of 'BusinessRole'.
+The class 'archimateC2_BusinessActor' is a specialization of 'ActiveStructure'.
+The class 'archimateC2_DataObject' is a specialization of 'ArchimateElement'.
+The class 'archimateC2_ApplicationService' is a specialization of 'ArchimateElement'.
+The class 'archimateC2_ApplicationFunction' is a specialization of 'ArchimateElement'.
+The class 'archimateC2_ApplicationInteraction' is a specialization of 'ApplicationFunction'.
+The class 'archimateC2_ApplicationInterface' is a specialization of 'ArchimateElement'.
+The class 'archimateC2_ApplicationComponent' is a specialization of 'ArchimateElement'.
+The class 'archimateC2_ApplicationCollaboration' is a specialization of 'ApplicationComponent'.
+The class 'archimateC2_Artifact' is a specialization of 'ArchimateElement'.
+The class 'archimateC2_InfrastructureService' is a specialization of 'ArchimateElement'.
+The class 'archimateC2_InfrastructureInterface' is a specialization of 'ArchimateElement'.
+The class 'archimateC2_Node' is a specialization of 'ArchimateElement'.
+The class 'archimateC2_SystemSoftware' is a specialization of 'Node'.
+The class 'archimateC2_Device' is a specialization of 'Node'.
+The class 'archimateC2_CommunicationPath' is a specialization of 'ArchimateElement'.
+The class 'archimateC2_Network' is a specialization of 'ArchimateElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'archimateC2_ArchimateModel' and 'archimateC2_ArchimateElement'. From 'archimateC2_ArchimateModel', the role 'archimateC2_ArchimateModel' has cardinality 0..*, and from 'archimateC2_ArchimateElement', the role 'archimateC2_ArchimateElement' has cardinality 0..*.
+An association connects 'archimateC2_ArchimateElement' and 'archimateC2_ArchimateElement'. From 'archimateC2_ArchimateElement', the role 'ArchimateElement' has cardinality 0..*, and from 'archimateC2_ArchimateElement', the role 'composesElementElement' has cardinality 0..*.
+An association connects 'archimateC2_ArchimateElement' and 'archimateC2_ArchimateElement'. From 'archimateC2_ArchimateElement', the role 'composedOfElementElement' has cardinality 0..*, and from 'archimateC2_ArchimateElement', the role 'ArchimateElement5' has cardinality 0..*.
+An association connects 'archimateC2_ArchimateElement' and 'archimateC2_ArchimateElement'. From 'archimateC2_ArchimateElement', the role 'aggregatedByElementElement' has cardinality 0..*, and from 'archimateC2_ArchimateElement', the role 'ArchimateElement8' has cardinality 0..*.
+An association connects 'archimateC2_ArchimateElement' and 'archimateC2_ArchimateElement'. From 'archimateC2_ArchimateElement', the role 'aggregatesElementElement' has cardinality 0..*, and from 'archimateC2_ArchimateElement', the role 'ArchimateElement11' has cardinality 0..*.
+An association connects 'archimateC2_Product' and 'archimateC2_Value'. From 'archimateC2_Product', the role 'Product' has cardinality 0..*, and from 'archimateC2_Value', the role 'associatedWithValueProduct' has cardinality 0..*.
+An association connects 'archimateC2_Product' and 'archimateC2_Value'. From 'archimateC2_Product', the role 'associatedWithProductValue' has cardinality 0..*, and from 'archimateC2_Value', the role 'Value' has cardinality 0..*.
+An association connects 'archimateC2_Product' and 'archimateC2_Contract'. From 'archimateC2_Product', the role 'aggregatedByProductContract' has cardinality 0..*, and from 'archimateC2_Contract', the role 'Contract' has cardinality 0..*.
+An association connects 'archimateC2_BusinessService' and 'archimateC2_Product'. From 'archimateC2_BusinessService', the role 'BusinessService' has cardinality 0..*, and from 'archimateC2_Product', the role 'aggregatedByProductBusinessService' has cardinality 0..*.
+An association connects 'archimateC2_Product' and 'archimateC2_ApplicationService'. From 'archimateC2_Product', the role 'aggregatesProductApplicationService' has cardinality 0..*, and from 'archimateC2_ApplicationService', the role 'ApplicationService' has cardinality 0..*.
+An association connects 'archimateC2_InfrastructureService' and 'archimateC2_Product'. From 'archimateC2_InfrastructureService', the role 'InfrastructureService' has cardinality 0..*, and from 'archimateC2_Product', the role 'aggregatesProductInfrastructureService' has cardinality 0..*.
+An association connects 'archimateC2_Product' and 'archimateC2_Contract'. From 'archimateC2_Product', the role 'Product19' has cardinality 0..*, and from 'archimateC2_Contract', the role 'aggregatesContractProduct' has cardinality 0..*.
+An association connects 'archimateC2_BusinessObject' and 'archimateC2_Meaning'. From 'archimateC2_BusinessObject', the role 'associatedWithBusinessObjectMeaning' has cardinality 0..*, and from 'archimateC2_Meaning', the role 'Meaning' has cardinality 0..*.
+An association connects 'archimateC2_BusinessObject' and 'archimateC2_Representation'. From 'archimateC2_BusinessObject', the role 'realizesBusinessObjectRepresentation' has cardinality 0..*, and from 'archimateC2_Representation', the role 'Representation' has cardinality 0..*.
+An association connects 'archimateC2_BusinessObject' and 'archimateC2_Location'. From 'archimateC2_BusinessObject', the role 'assignedFromBusinessObjectLocation' has cardinality 0..*, and from 'archimateC2_Location', the role 'Location' has cardinality 0..*.
+An association connects 'archimateC2_BusinessObject' and 'archimateC2_BusinessEvent'. From 'archimateC2_BusinessObject', the role 'accessedByBusinessObjectBusinessEvent' has cardinality 0..*, and from 'archimateC2_BusinessEvent', the role 'BusinessEvent' has cardinality 0..*.
+An association connects 'archimateC2_BusinessObject' and 'archimateC2_BusinessService'. From 'archimateC2_BusinessObject', the role 'accessesBusinessObjectBusinessService' has cardinality 0..*, and from 'archimateC2_BusinessService', the role 'BusinessService25' has cardinality 0..*.
+An association connects 'archimateC2_BusinessBehaviorElement' and 'archimateC2_BusinessObject'. From 'archimateC2_BusinessBehaviorElement', the role 'BusinessBehaviorElement' has cardinality 0..*, and from 'archimateC2_BusinessObject', the role 'accessesBusinessObjectBusinessBehaviorElement' has cardinality 0..*.
+An association connects 'archimateC2_BusinessObject' and 'archimateC2_DataObject'. From 'archimateC2_BusinessObject', the role 'realizedByBusinessObjectDataObject' has cardinality 0..*, and from 'archimateC2_DataObject', the role 'DataObject' has cardinality 0..*.
+An association connects 'archimateC2_Meaning' and 'archimateC2_BusinessObject'. From 'archimateC2_Meaning', the role 'associatedWithMeaningBusinessObject' has cardinality 0..*, and from 'archimateC2_BusinessObject', the role 'BusinessObject' has cardinality 0..*.
+An association connects 'archimateC2_BusinessObject' and 'archimateC2_Representation'. From 'archimateC2_BusinessObject', the role 'BusinessObject30' has cardinality 0..*, and from 'archimateC2_Representation', the role 'realizedByRepresentationBusinessObject' has cardinality 0..*.
+An association connects 'archimateC2_Representation' and 'archimateC2_Location'. From 'archimateC2_Representation', the role 'assignedFromRepresentationLocation' has cardinality 0..*, and from 'archimateC2_Location', the role 'Location32' has cardinality 0..*.
+An association connects 'archimateC2_BusinessService' and 'archimateC2_Product'. From 'archimateC2_BusinessService', the role 'aggregatesBusinessServiceProduct' has cardinality 0..*, and from 'archimateC2_Product', the role 'Product34' has cardinality 0..*.
+An association connects 'archimateC2_BusinessActor' and 'archimateC2_BusinessService'. From 'archimateC2_BusinessActor', the role 'BusinessActor' has cardinality 0..*, and from 'archimateC2_BusinessService', the role 'usesElementBusinessServiceBusinessActor' has cardinality 0..*.
+An association connects 'archimateC2_BusinessService' and 'archimateC2_BusinessBehaviorElement'. From 'archimateC2_BusinessService', the role 'realisesBusinessServiceBusinessBehaviorElement' has cardinality 0..*, and from 'archimateC2_BusinessBehaviorElement', the role 'BusinessBehaviorElement37' has cardinality 0..*.
+An association connects 'archimateC2_BusinessService' and 'archimateC2_BusinessBehaviorElement'. From 'archimateC2_BusinessService', the role 'usesBusinessServiceBusinessBehaviorElement' has cardinality 0..*, and from 'archimateC2_BusinessBehaviorElement', the role 'BusinessBehaviorElement39' has cardinality 0..*.
+An association connects 'archimateC2_BusinessService' and 'archimateC2_BusinessInterface'. From 'archimateC2_BusinessService', the role 'assignedToBusinessServiceBusinessInterface' has cardinality 0..*, and from 'archimateC2_BusinessInterface', the role 'BusinessInterface' has cardinality 0..*.
+An association connects 'archimateC2_BusinessObject' and 'archimateC2_BusinessService'. From 'archimateC2_BusinessObject', the role 'BusinessObject42' has cardinality 0..*, and from 'archimateC2_BusinessService', the role 'accessedByBusinessServiceBusinessObject' has cardinality 0..*.
+An association connects 'archimateC2_BusinessService' and 'archimateC2_BusinessRole'. From 'archimateC2_BusinessService', the role 'usesElementBusinessServiceBusinessRole' has cardinality 0..*, and from 'archimateC2_BusinessRole', the role 'BusinessRole' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationInterface' and 'archimateC2_BusinessService'. From 'archimateC2_ApplicationInterface', the role 'ApplicationInterface' has cardinality 0..*, and from 'archimateC2_BusinessService', the role 'assignedFromBusinessServiceApplicationInterface' has cardinality 0..*.
+An association connects 'archimateC2_BusinessBehaviorElement' and 'archimateC2_BusinessBehaviorElement'. From 'archimateC2_BusinessBehaviorElement', the role 'BusinessBehaviorElement47' has cardinality 0..*, and from 'archimateC2_BusinessBehaviorElement', the role 'triggeredByBusinessBehaviorElementBusinessBehaviorElement' has cardinality 0..*.
+An association connects 'archimateC2_BusinessBehaviorElement' and 'archimateC2_BusinessBehaviorElement'. From 'archimateC2_BusinessBehaviorElement', the role 'triggersToBusinessBehaviorElementBusinessBehaviorElement' has cardinality 0..*, and from 'archimateC2_BusinessBehaviorElement', the role 'BusinessBehaviorElement50' has cardinality 0..*.
+An association connects 'archimateC2_BusinessBehaviorElement' and 'archimateC2_BusinessBehaviorElement'. From 'archimateC2_BusinessBehaviorElement', the role 'flowsToBusinessBehaviorElementBusinessBehaviorElement' has cardinality 0..*, and from 'archimateC2_BusinessBehaviorElement', the role 'BusinessBehaviorElement53' has cardinality 0..*.
+An association connects 'archimateC2_BusinessBehaviorElement' and 'archimateC2_BusinessBehaviorElement'. From 'archimateC2_BusinessBehaviorElement', the role 'flowsFromBusinessBehaviorElementBusinessBehaviorElement' has cardinality 0..*, and from 'archimateC2_BusinessBehaviorElement', the role 'BusinessBehaviorElement56' has cardinality 0..*.
+An association connects 'archimateC2_BusinessBehaviorElement' and 'archimateC2_BusinessEvent'. From 'archimateC2_BusinessBehaviorElement', the role 'triggersByBusinessBehaviorElementBusinessEvent' has cardinality 0..*, and from 'archimateC2_BusinessEvent', the role 'BusinessEvent58' has cardinality 0..*.
+An association connects 'archimateC2_BusinessBehaviorElement' and 'archimateC2_BusinessEvent'. From 'archimateC2_BusinessBehaviorElement', the role 'triggersBusinessBehaviorElementBusinessEvent' has cardinality 0..*, and from 'archimateC2_BusinessEvent', the role 'BusinessEvent60' has cardinality 0..*.
+An association connects 'archimateC2_BusinessBehaviorElement' and 'archimateC2_BusinessService'. From 'archimateC2_BusinessBehaviorElement', the role 'realizedByBusinessBehaviorElementBusinessService' has cardinality 0..*, and from 'archimateC2_BusinessService', the role 'BusinessService62' has cardinality 0..*.
+An association connects 'archimateC2_BusinessBehaviorElement' and 'archimateC2_BusinessService'. From 'archimateC2_BusinessBehaviorElement', the role 'usedByBusinessBehaviorElementBusinessService' has cardinality 0..*, and from 'archimateC2_BusinessService', the role 'BusinessService64' has cardinality 0..*.
+An association connects 'archimateC2_BusinessObject' and 'archimateC2_BusinessBehaviorElement'. From 'archimateC2_BusinessObject', the role 'BusinessObject66' has cardinality 0..*, and from 'archimateC2_BusinessBehaviorElement', the role 'accessedByBusinessBehaviorElementBusinessObject' has cardinality 0..*.
+An association connects 'archimateC2_BusinessBehaviorElement' and 'archimateC2_BusinessRole'. From 'archimateC2_BusinessBehaviorElement', the role 'assignedToBusinessBehaviorElementBusinessRole' has cardinality 0..*, and from 'archimateC2_BusinessRole', the role 'BusinessRole68' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationService' and 'archimateC2_BusinessBehaviorElement'. From 'archimateC2_ApplicationService', the role 'ApplicationService70' has cardinality 0..*, and from 'archimateC2_BusinessBehaviorElement', the role 'usesBusinessBehaviorElementApplicationservice' has cardinality 0..*.
+An association connects 'archimateC2_BusinessBehaviorElement' and 'archimateC2_ApplicationComponent'. From 'archimateC2_BusinessBehaviorElement', the role 'assignedFromApplicationComponentBusinessBehaviorElement' has cardinality 0..*, and from 'archimateC2_ApplicationComponent', the role 'ApplicationComponent' has cardinality 0..*.
+An association connects 'archimateC2_BusinessBehaviorElement' and 'archimateC2_BusinessEvent'. From 'archimateC2_BusinessBehaviorElement', the role 'BusinessBehaviorElement73' has cardinality 0..*, and from 'archimateC2_BusinessEvent', the role 'triggersBusinessEventBusinessBehaviorElement' has cardinality 0..*.
+An association connects 'archimateC2_BusinessEvent' and 'archimateC2_BusinessBehaviorElement'. From 'archimateC2_BusinessEvent', the role 'triggersByBusinessEventBusinessBehaviorElement' has cardinality 0..*, and from 'archimateC2_BusinessBehaviorElement', the role 'BusinessBehaviorElement75' has cardinality 0..*.
+An association connects 'archimateC2_BusinessEvent' and 'archimateC2_BusinessObject'. From 'archimateC2_BusinessEvent', the role 'accessesBusinessEventBusinessObject' has cardinality 0..*, and from 'archimateC2_BusinessObject', the role 'BusinessObject77' has cardinality 0..*.
+An association connects 'archimateC2_BusinessActor' and 'archimateC2_Location'. From 'archimateC2_BusinessActor', the role 'BusinessActor79' has cardinality 0..*, and from 'archimateC2_Location', the role 'assignedToLocationBusinessActor' has cardinality 0..*.
+An association connects 'archimateC2_Location' and 'archimateC2_BusinessObject'. From 'archimateC2_Location', the role 'assignedToLocationBusinessObject' has cardinality 0..*, and from 'archimateC2_BusinessObject', the role 'BusinessObject81' has cardinality 0..*.
+An association connects 'archimateC2_Representation' and 'archimateC2_Location'. From 'archimateC2_Representation', the role 'Representation83' has cardinality 0..*, and from 'archimateC2_Location', the role 'assignedToLocationRepresentation' has cardinality 0..*.
+An association connects 'archimateC2_DataObject' and 'archimateC2_Location'. From 'archimateC2_DataObject', the role 'DataObject85' has cardinality 0..*, and from 'archimateC2_Location', the role 'assignedfromLocationDataObject' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationComponent' and 'archimateC2_Location'. From 'archimateC2_ApplicationComponent', the role 'ApplicationComponent87' has cardinality 0..*, and from 'archimateC2_Location', the role 'assignedToLocationApplicationComponent' has cardinality 0..*.
+An association connects 'archimateC2_Node' and 'archimateC2_Location'. From 'archimateC2_Node', the role 'Node' has cardinality 0..*, and from 'archimateC2_Location', the role 'assignedToLocationNode' has cardinality 0..*.
+An association connects 'archimateC2_Location' and 'archimateC2_Network'. From 'archimateC2_Location', the role 'archimateC2_Location' has cardinality 0..*, and from 'archimateC2_Network', the role 'archimateC2_Network' has cardinality 0..*.
+An association connects 'archimateC2_Location' and 'archimateC2_CommunicationPath'. From 'archimateC2_Location', the role 'archimateC2_Location91' has cardinality 0..*, and from 'archimateC2_CommunicationPath', the role 'archimateC2_CommunicationPath' has cardinality 0..*.
+An association connects 'archimateC2_Artifact' and 'archimateC2_Location'. From 'archimateC2_Artifact', the role 'Artifact' has cardinality 0..*, and from 'archimateC2_Location', the role 'assignedToLocationArtifact' has cardinality 0..*.
+An association connects 'archimateC2_BusinessInterface' and 'archimateC2_BusinessRole'. From 'archimateC2_BusinessInterface', the role 'composedOfBusinessInterfaceBusinessRole' has cardinality 0..*, and from 'archimateC2_BusinessRole', the role 'BusinessRole94' has cardinality 0..*.
+An association connects 'archimateC2_BusinessActor' and 'archimateC2_BusinessInterface'. From 'archimateC2_BusinessActor', the role 'BusinessActor96' has cardinality 0..*, and from 'archimateC2_BusinessInterface', the role 'usesBusinessInterfaceBusinessActor' has cardinality 0..*.
+An association connects 'archimateC2_BusinessInterface' and 'archimateC2_BusinessRole'. From 'archimateC2_BusinessInterface', the role 'usesBusinessInterfaceBusinessRole' has cardinality 0..*, and from 'archimateC2_BusinessRole', the role 'BusinessRole98' has cardinality 0..*.
+An association connects 'archimateC2_BusinessInterface' and 'archimateC2_BusinessService'. From 'archimateC2_BusinessInterface', the role 'assignedToBusinessInterfaceBusinessService' has cardinality 0..*, and from 'archimateC2_BusinessService', the role 'BusinessService100' has cardinality 0..*.
+An association connects 'archimateC2_BusinessRole' and 'archimateC2_BusinessInterface'. From 'archimateC2_BusinessRole', the role 'composesBusinessRoleBusinessInterface' has cardinality 0..*, and from 'archimateC2_BusinessInterface', the role 'BusinessInterface102' has cardinality 0..*.
+An association connects 'archimateC2_BusinessRole' and 'archimateC2_BusinessInterface'. From 'archimateC2_BusinessRole', the role 'usedByBusinessRoleBusinessInterface' has cardinality 0..*, and from 'archimateC2_BusinessInterface', the role 'BusinessInterface104' has cardinality 0..*.
+An association connects 'archimateC2_BusinessRole' and 'archimateC2_BusinessActor'. From 'archimateC2_BusinessRole', the role 'assignedToBusinessRoleBusinessActor' has cardinality 0..*, and from 'archimateC2_BusinessActor', the role 'BusinessActor106' has cardinality 0..*.
+An association connects 'archimateC2_BusinessRole' and 'archimateC2_BusinessCollaboration'. From 'archimateC2_BusinessRole', the role 'aggregatesBusinessRoleBusinessCollaboration' has cardinality 0..*, and from 'archimateC2_BusinessCollaboration', the role 'BusinessCollaboration' has cardinality 0..*.
+An association connects 'archimateC2_BusinessRole' and 'archimateC2_BusinessBehaviorElement'. From 'archimateC2_BusinessRole', the role 'assignedToBusinessRoleBusinessBehaviorElement' has cardinality 0..*, and from 'archimateC2_BusinessBehaviorElement', the role 'BusinessBehaviorElement109' has cardinality 0..*.
+An association connects 'archimateC2_BusinessService' and 'archimateC2_BusinessRole'. From 'archimateC2_BusinessService', the role 'BusinessService111' has cardinality 0..*, and from 'archimateC2_BusinessRole', the role 'usedByElementBusinessRoleBusinessService' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationService' and 'archimateC2_BusinessRole'. From 'archimateC2_ApplicationService', the role 'ApplicationService113' has cardinality 0..*, and from 'archimateC2_BusinessRole', the role 'usedByBusinessRoleApplicationService' has cardinality 0..*.
+An association connects 'archimateC2_BusinessRole' and 'archimateC2_ApplicationInterface'. From 'archimateC2_BusinessRole', the role 'usesBusinessRoleApplicationInterface' has cardinality 0..*, and from 'archimateC2_ApplicationInterface', the role 'ApplicationInterface115' has cardinality 0..*.
+An association connects 'archimateC2_BusinessCollaboration' and 'archimateC2_BusinessActor'. From 'archimateC2_BusinessCollaboration', the role 'aggregatesByBusinessCollaborationBusinessActor' has cardinality 0..*, and from 'archimateC2_BusinessActor', the role 'BusinessActor117' has cardinality 0..*.
+An association connects 'archimateC2_BusinessCollaboration' and 'archimateC2_BusinessRole'. From 'archimateC2_BusinessCollaboration', the role 'aggregatedByBusinessCollaborationBusinessRole' has cardinality 0..*, and from 'archimateC2_BusinessRole', the role 'BusinessRole119' has cardinality 0..*.
+An association connects 'archimateC2_BusinessActor' and 'archimateC2_BusinessCollaboration'. From 'archimateC2_BusinessActor', the role 'aggregatesBusinessActorBusinessCollaboration' has cardinality 0..*, and from 'archimateC2_BusinessCollaboration', the role 'BusinessCollaboration121' has cardinality 0..*.
+An association connects 'archimateC2_BusinessInterface' and 'archimateC2_BusinessActor'. From 'archimateC2_BusinessInterface', the role 'BusinessInterface123' has cardinality 0..*, and from 'archimateC2_BusinessActor', the role 'usedByBusinessActorBusinessInterface' has cardinality 0..*.
+An association connects 'archimateC2_BusinessRole' and 'archimateC2_BusinessActor'. From 'archimateC2_BusinessRole', the role 'BusinessRole125' has cardinality 0..*, and from 'archimateC2_BusinessActor', the role 'assignedToBusinessActorBusinessRole' has cardinality 0..*.
+An association connects 'archimateC2_BusinessService' and 'archimateC2_BusinessActor'. From 'archimateC2_BusinessService', the role 'BusinessService127' has cardinality 0..*, and from 'archimateC2_BusinessActor', the role 'usedByBusinessActorBusinessService' has cardinality 0..*.
+An association connects 'archimateC2_Location' and 'archimateC2_BusinessActor'. From 'archimateC2_Location', the role 'Location129' has cardinality 0..*, and from 'archimateC2_BusinessActor', the role 'assignedFromBusinessActorLocation' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationService' and 'archimateC2_BusinessActor'. From 'archimateC2_ApplicationService', the role 'ApplicationService131' has cardinality 0..*, and from 'archimateC2_BusinessActor', the role 'usedByBusinessActorApplicationService' has cardinality 0..*.
+An association connects 'archimateC2_BusinessActor' and 'archimateC2_ApplicationInterface'. From 'archimateC2_BusinessActor', the role 'usesBusinessActorApplicationInterface' has cardinality 0..*, and from 'archimateC2_ApplicationInterface', the role 'ApplicationInterface133' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationFunction' and 'archimateC2_DataObject'. From 'archimateC2_ApplicationFunction', the role 'ApplicationFunction' has cardinality 0..*, and from 'archimateC2_DataObject', the role 'accessesDataObjectApplicationFunction' has cardinality 0..*.
+An association connects 'archimateC2_DataObject' and 'archimateC2_ApplicationService'. From 'archimateC2_DataObject', the role 'accessesDataObjectApplicationService' has cardinality 0..*, and from 'archimateC2_ApplicationService', the role 'ApplicationService136' has cardinality 0..*.
+An association connects 'archimateC2_DataObject' and 'archimateC2_BusinessObject'. From 'archimateC2_DataObject', the role 'realizesBusinessObjectDataObject' has cardinality 0..*, and from 'archimateC2_BusinessObject', the role 'BusinessObject138' has cardinality 0..*.
+An association connects 'archimateC2_DataObject' and 'archimateC2_Location'. From 'archimateC2_DataObject', the role 'assignedToLocationDataObject' has cardinality 0..*, and from 'archimateC2_Location', the role 'Location140' has cardinality 0..*.
+An association connects 'archimateC2_DataObject' and 'archimateC2_Artifact'. From 'archimateC2_DataObject', the role 'realizesDataObjectArtifact' has cardinality 0..*, and from 'archimateC2_Artifact', the role 'Artifact142' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationService' and 'archimateC2_ApplicationFunction'. From 'archimateC2_ApplicationService', the role 'realizesApplicationServiceApplicationFunction' has cardinality 0..*, and from 'archimateC2_ApplicationFunction', the role 'ApplicationFunction144' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationFunction' and 'archimateC2_ApplicationService'. From 'archimateC2_ApplicationFunction', the role 'ApplicationFunction146' has cardinality 0..*, and from 'archimateC2_ApplicationService', the role 'usesApplicationServiceApplicationFunction' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationInterface' and 'archimateC2_ApplicationService'. From 'archimateC2_ApplicationInterface', the role 'ApplicationInterface148' has cardinality 0..*, and from 'archimateC2_ApplicationService', the role 'assignedToApplicationServiceApplicationInterface' has cardinality 0..*.
+An association connects 'archimateC2_DataObject' and 'archimateC2_ApplicationService'. From 'archimateC2_DataObject', the role 'DataObject150' has cardinality 0..*, and from 'archimateC2_ApplicationService', the role 'accessedByApplicationServiceDataObject' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationService' and 'archimateC2_Product'. From 'archimateC2_ApplicationService', the role 'aggregatedByProductApplicationService' has cardinality 0..*, and from 'archimateC2_Product', the role 'Product152' has cardinality 0..*.
+An association connects 'archimateC2_BusinessBehaviorElement' and 'archimateC2_ApplicationService'. From 'archimateC2_BusinessBehaviorElement', the role 'BusinessBehaviorElement154' has cardinality 0..*, and from 'archimateC2_ApplicationService', the role 'usedByBusinessBehaviorElementApplicationservice' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationService' and 'archimateC2_BusinessRole'. From 'archimateC2_ApplicationService', the role 'usesBusinessRoleApplicationService' has cardinality 0..*, and from 'archimateC2_BusinessRole', the role 'BusinessRole156' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationService' and 'archimateC2_BusinessActor'. From 'archimateC2_ApplicationService', the role 'usesBusinessActorApplicationService' has cardinality 0..*, and from 'archimateC2_BusinessActor', the role 'BusinessActor158' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationFunction' and 'archimateC2_ApplicationFunction'. From 'archimateC2_ApplicationFunction', the role 'ApplicationFunction161' has cardinality 0..*, and from 'archimateC2_ApplicationFunction', the role 'triggersToApplicationFunctionApplicationFunction' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationFunction' and 'archimateC2_ApplicationFunction'. From 'archimateC2_ApplicationFunction', the role 'ApplicationFunction164' has cardinality 0..*, and from 'archimateC2_ApplicationFunction', the role 'triggeredByApplicationFunctionApplicationFunction' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationFunction' and 'archimateC2_ApplicationFunction'. From 'archimateC2_ApplicationFunction', the role 'ApplicationFunction167' has cardinality 0..*, and from 'archimateC2_ApplicationFunction', the role 'flowsFromApplicationFunctionApplicationFunction' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationFunction' and 'archimateC2_ApplicationFunction'. From 'archimateC2_ApplicationFunction', the role 'ApplicationFunction170' has cardinality 0..*, and from 'archimateC2_ApplicationFunction', the role 'flowsToApplicationFunctionApplicationFunction' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationService' and 'archimateC2_ApplicationFunction'. From 'archimateC2_ApplicationService', the role 'ApplicationService172' has cardinality 0..*, and from 'archimateC2_ApplicationFunction', the role 'realizedByApplicationFunctionApplicationService' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationComponent' and 'archimateC2_ApplicationFunction'. From 'archimateC2_ApplicationComponent', the role 'ApplicationComponent174' has cardinality 0..*, and from 'archimateC2_ApplicationFunction', the role 'assignedToApplicationFunctionApplicationComponent' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationService' and 'archimateC2_ApplicationFunction'. From 'archimateC2_ApplicationService', the role 'ApplicationService176' has cardinality 0..*, and from 'archimateC2_ApplicationFunction', the role 'usedByApplicationFunctionApplicationService' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationFunction' and 'archimateC2_DataObject'. From 'archimateC2_ApplicationFunction', the role 'accessedByApplicationFunctionDataObject' has cardinality 0..*, and from 'archimateC2_DataObject', the role 'DataObject178' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationFunction' and 'archimateC2_InfrastructureService'. From 'archimateC2_ApplicationFunction', the role 'usedByApplicationFunctionInfrastructureService' has cardinality 0..*, and from 'archimateC2_InfrastructureService', the role 'InfrastructureService180' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationComponent' and 'archimateC2_ApplicationInterface'. From 'archimateC2_ApplicationComponent', the role 'ApplicationComponent182' has cardinality 0..*, and from 'archimateC2_ApplicationInterface', the role 'composedOfApplicationInterfaceApplicationComponent' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationComponent' and 'archimateC2_ApplicationInterface'. From 'archimateC2_ApplicationComponent', the role 'ApplicationComponent184' has cardinality 0..*, and from 'archimateC2_ApplicationInterface', the role 'usesApplicationInterfaceApplicationComponent' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationInterface' and 'archimateC2_ApplicationService'. From 'archimateC2_ApplicationInterface', the role 'assignedToApplicationInterfaceApplicationService' has cardinality 0..*, and from 'archimateC2_ApplicationService', the role 'ApplicationService186' has cardinality 0..*.
+An association connects 'archimateC2_BusinessActor' and 'archimateC2_ApplicationInterface'. From 'archimateC2_BusinessActor', the role 'BusinessActor188' has cardinality 0..*, and from 'archimateC2_ApplicationInterface', the role 'usedByBusinessActorApplicationInterface' has cardinality 0..*.
+An association connects 'archimateC2_BusinessRole' and 'archimateC2_ApplicationInterface'. From 'archimateC2_BusinessRole', the role 'BusinessRole190' has cardinality 0..*, and from 'archimateC2_ApplicationInterface', the role 'usedByBusinessRoleApplicationInterface' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationInterface' and 'archimateC2_BusinessService'. From 'archimateC2_ApplicationInterface', the role 'assigedToBusinessServiceApplicationInterface' has cardinality 0..*, and from 'archimateC2_BusinessService', the role 'BusinessService192' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationComponent' and 'archimateC2_ApplicationCollaboration'. From 'archimateC2_ApplicationComponent', the role 'aggregatesApplicationComponentApplicationCollaboration' has cardinality 0..*, and from 'archimateC2_ApplicationCollaboration', the role 'ApplicationCollaboration' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationComponent' and 'archimateC2_ApplicationFunction'. From 'archimateC2_ApplicationComponent', the role 'assignedToApplicationComponentApplicationFunction' has cardinality 0..*, and from 'archimateC2_ApplicationFunction', the role 'ApplicationFunction195' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationInterface' and 'archimateC2_ApplicationComponent'. From 'archimateC2_ApplicationInterface', the role 'ApplicationInterface197' has cardinality 0..*, and from 'archimateC2_ApplicationComponent', the role 'composesApplicationComponentApplicationInterface' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationInterface' and 'archimateC2_ApplicationComponent'. From 'archimateC2_ApplicationInterface', the role 'ApplicationInterface199' has cardinality 0..*, and from 'archimateC2_ApplicationComponent', the role 'usedByApplicationComponentApplicationInterface' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationComponent' and 'archimateC2_Location'. From 'archimateC2_ApplicationComponent', the role 'assignedFromLocationApplicationComponent' has cardinality 0..*, and from 'archimateC2_Location', the role 'Location201' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationComponent' and 'archimateC2_BusinessBehaviorElement'. From 'archimateC2_ApplicationComponent', the role 'assignedToApplicationComponentBusinessBehaviorElement' has cardinality 0..*, and from 'archimateC2_BusinessBehaviorElement', the role 'BusinessBehaviorElement203' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationComponent' and 'archimateC2_Artifact'. From 'archimateC2_ApplicationComponent', the role 'realizesApplicationComponentArtifact' has cardinality 0..*, and from 'archimateC2_Artifact', the role 'Artifact205' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationComponent' and 'archimateC2_InfrastructureInterface'. From 'archimateC2_ApplicationComponent', the role 'usedByApplicationComponentInfrastructureInterface' has cardinality 0..*, and from 'archimateC2_InfrastructureInterface', the role 'InfrastructureInterface' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationComponent' and 'archimateC2_InfrastructureService'. From 'archimateC2_ApplicationComponent', the role 'usedByApplicationComponentInfrastructureService' has cardinality 0..*, and from 'archimateC2_InfrastructureService', the role 'InfrastructureService208' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationCollaboration' and 'archimateC2_ApplicationComponent'. From 'archimateC2_ApplicationCollaboration', the role 'aggregatedByApplicationCollaborationApplicationComponent' has cardinality 0..*, and from 'archimateC2_ApplicationComponent', the role 'ApplicationComponent210' has cardinality 0..*.
+An association connects 'archimateC2_InfrastructureService' and 'archimateC2_Artifact'. From 'archimateC2_InfrastructureService', the role 'InfrastructureService212' has cardinality 0..*, and from 'archimateC2_Artifact', the role 'accessesArtifactInfrastructureService' has cardinality 0..*.
+An association connects 'archimateC2_Artifact' and 'archimateC2_Node'. From 'archimateC2_Artifact', the role 'assignedToArtifactNode' has cardinality 0..*, and from 'archimateC2_Node', the role 'Node214' has cardinality 0..*.
+An association connects 'archimateC2_Location' and 'archimateC2_Artifact'. From 'archimateC2_Location', the role 'Location216' has cardinality 0..*, and from 'archimateC2_Artifact', the role 'assignedFromLocationArtifact' has cardinality 0..*.
+An association connects 'archimateC2_DataObject' and 'archimateC2_Artifact'. From 'archimateC2_DataObject', the role 'DataObject218' has cardinality 0..*, and from 'archimateC2_Artifact', the role 'realizedByDataObjectArtifact' has cardinality 0..*.
+An association connects 'archimateC2_ApplicationComponent' and 'archimateC2_Artifact'. From 'archimateC2_ApplicationComponent', the role 'ApplicationComponent220' has cardinality 0..*, and from 'archimateC2_Artifact', the role 'realizedByApplicationComponentArtifact' has cardinality 0..*.
+An association connects 'archimateC2_InfrastructureService' and 'archimateC2_Artifact'. From 'archimateC2_InfrastructureService', the role 'accessedByInfrastructureServiceArtifact' has cardinality 0..*, and from 'archimateC2_Artifact', the role 'Artifact222' has cardinality 0..*.
+An association connects 'archimateC2_InfrastructureService' and 'archimateC2_InfrastructureInterface'. From 'archimateC2_InfrastructureService', the role 'assignedToInfrastructureServiceInfrastructureInterface' has cardinality 0..*, and from 'archimateC2_InfrastructureInterface', the role 'InfrastructureInterface224' has cardinality 0..*.
+An association connects 'archimateC2_InfrastructureService' and 'archimateC2_Node'. From 'archimateC2_InfrastructureService', the role 'usesInfrastructureServiceNode' has cardinality 0..*, and from 'archimateC2_Node', the role 'Node226' has cardinality 0..*.
+An association connects 'archimateC2_InfrastructureService' and 'archimateC2_Product'. From 'archimateC2_InfrastructureService', the role 'aggregatedByProductInfrastructureService' has cardinality 0..*, and from 'archimateC2_Product', the role 'Product228' has cardinality 0..*.
+An association connects 'archimateC2_InfrastructureService' and 'archimateC2_ApplicationComponent'. From 'archimateC2_InfrastructureService', the role 'usesApplicationComponentInfrastructureService' has cardinality 0..*, and from 'archimateC2_ApplicationComponent', the role 'ApplicationComponent230' has cardinality 0..*.
+An association connects 'archimateC2_InfrastructureService' and 'archimateC2_ApplicationFunction'. From 'archimateC2_InfrastructureService', the role 'usesApplicationFunctionInfrastructureService' has cardinality 0..*, and from 'archimateC2_ApplicationFunction', the role 'ApplicationFunction232' has cardinality 0..*.
+An association connects 'archimateC2_Node' and 'archimateC2_InfrastructureInterface'. From 'archimateC2_Node', the role 'Node234' has cardinality 0..*, and from 'archimateC2_InfrastructureInterface', the role 'composedOfInfrastructureInterfaceNode' has cardinality 0..*.
+An association connects 'archimateC2_InfrastructureInterface' and 'archimateC2_InfrastructureService'. From 'archimateC2_InfrastructureInterface', the role 'assignedToInfrastructureInterfaceInfrastructureService' has cardinality 0..*, and from 'archimateC2_InfrastructureService', the role 'InfrastructureService236' has cardinality 0..*.
+An association connects 'archimateC2_InfrastructureInterface' and 'archimateC2_Node'. From 'archimateC2_InfrastructureInterface', the role 'usesInfrastructureInterfaceNode' has cardinality 0..*, and from 'archimateC2_Node', the role 'Node238' has cardinality 0..*.
+An association connects 'archimateC2_InfrastructureInterface' and 'archimateC2_ApplicationComponent'. From 'archimateC2_InfrastructureInterface', the role 'usesApplicationComponentInfrastructureInterface' has cardinality 0..*, and from 'archimateC2_ApplicationComponent', the role 'ApplicationComponent240' has cardinality 0..*.
+An association connects 'archimateC2_CommunicationPath' and 'archimateC2_Node'. From 'archimateC2_CommunicationPath', the role 'CommunicationPath' has cardinality 0..*, and from 'archimateC2_Node', the role 'associatedWithNodeCommunicationPath' has cardinality 0..*.
+An association connects 'archimateC2_Artifact' and 'archimateC2_Node'. From 'archimateC2_Artifact', the role 'Artifact243' has cardinality 0..*, and from 'archimateC2_Node', the role 'assignedToNodeArtifact' has cardinality 0..*.
+An association connects 'archimateC2_Node' and 'archimateC2_InfrastructureInterface'. From 'archimateC2_Node', the role 'composesNodeInfrastructureInterface' has cardinality 0..*, and from 'archimateC2_InfrastructureInterface', the role 'InfrastructureInterface245' has cardinality 0..*.
+An association connects 'archimateC2_InfrastructureInterface' and 'archimateC2_Node'. From 'archimateC2_InfrastructureInterface', the role 'InfrastructureInterface247' has cardinality 0..*, and from 'archimateC2_Node', the role 'usedByNodeInfrastructureInterface' has cardinality 0..*.
+An association connects 'archimateC2_InfrastructureService' and 'archimateC2_Node'. From 'archimateC2_InfrastructureService', the role 'InfrastructureService249' has cardinality 0..*, and from 'archimateC2_Node', the role 'realizedByNodeInfrastructureService' has cardinality 0..*.
+An association connects 'archimateC2_Location' and 'archimateC2_Node'. From 'archimateC2_Location', the role 'Location251' has cardinality 0..*, and from 'archimateC2_Node', the role 'assignedFromLocationNode' has cardinality 0..*.
+An association connects 'archimateC2_SystemSoftware' and 'archimateC2_Device'. From 'archimateC2_SystemSoftware', the role 'assignedToSystemSoftwareDevice' has cardinality 0..*, and from 'archimateC2_Device', the role 'Device' has cardinality 0..*.
+An association connects 'archimateC2_Network' and 'archimateC2_Device'. From 'archimateC2_Network', the role 'Network' has cardinality 0..*, and from 'archimateC2_Device', the role 'associatedWithDeviceNetwork' has cardinality 0..*.
+An association connects 'archimateC2_SystemSoftware' and 'archimateC2_Device'. From 'archimateC2_SystemSoftware', the role 'SystemSoftware' has cardinality 0..*, and from 'archimateC2_Device', the role 'assignedToDeviceSystemSoftware' has cardinality 0..*.
+An association connects 'archimateC2_Node' and 'archimateC2_CommunicationPath'. From 'archimateC2_Node', the role 'Node256' has cardinality 0..*, and from 'archimateC2_CommunicationPath', the role 'associatedWithCommunicationPathNode' has cardinality 0..*.
+An association connects 'archimateC2_Network' and 'archimateC2_CommunicationPath'. From 'archimateC2_Network', the role 'Network258' has cardinality 0..*, and from 'archimateC2_CommunicationPath', the role 'realizesCommunicationPathNetwork' has cardinality 0..*.
+An association connects 'archimateC2_Location' and 'archimateC2_CommunicationPath'. From 'archimateC2_Location', the role 'archimateC2_Location261' has cardinality 0..*, and from 'archimateC2_CommunicationPath', the role 'archimateC2_CommunicationPath260' has cardinality 0..*.
+An association connects 'archimateC2_Network' and 'archimateC2_CommunicationPath'. From 'archimateC2_Network', the role 'realizedByNetworkCommunicationPath' has cardinality 0..*, and from 'archimateC2_CommunicationPath', the role 'CommunicationPath263' has cardinality 0..*.
+An association connects 'archimateC2_Device' and 'archimateC2_Network'. From 'archimateC2_Device', the role 'Device265' has cardinality 0..*, and from 'archimateC2_Network', the role 'associatedWithNetworkDevice' has cardinality 0..*.
+An association connects 'archimateC2_Location' and 'archimateC2_Network'. From 'archimateC2_Location', the role 'archimateC2_Location268' has cardinality 0..*, and from 'archimateC2_Network', the role 'archimateC2_Network267' has cardinality 0..*.

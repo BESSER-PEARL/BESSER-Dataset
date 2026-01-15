@@ -1,0 +1,163 @@
+The domain model 'jkind' describes the core structural elements and their relationships within the system.
+
+The model defines 34 main class(es).
+
+'jkind_VariableGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_AbbreviationType' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_BinaryExpr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'jkind_IntType' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_IntExpr' represents an important domain concept.
+It has one attribute: 'val', which is of type str.
+
+'jkind_NodeCallExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_SubrangeType' represents an important domain concept.
+It has the following attributes: 'low', which is of type str; 'high', which is of type str.
+
+'jkind_RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_Equation' represents an important domain concept.
+It does not declare any attributes.
+
+'Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_Typedef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jkind_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_Field' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jkind_RecordExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'IdRef' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_Constant' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_IdExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_IdRef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jkind_RealExpr' represents an important domain concept.
+It has one attribute: 'val', which is of type str.
+
+'jkind_IfThenElseExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_UnaryExpr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'jkind_BoolType' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_File' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_Assertion' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_ProjectionExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_Node' represents an important domain concept.
+It has the following attributes: 'main', which is of type str; 'name', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_BoolExpr' represents an important domain concept.
+It has one attribute: 'val', which is of type str.
+
+'Typedef' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_RecordType' represents an important domain concept.
+It does not declare any attributes.
+
+'jkind_UserType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'jkind_Constant' is a specialization of 'IdRef'.
+The class 'jkind_Variable' is a specialization of 'IdRef'.
+The class 'jkind_AbbreviationType' is a specialization of 'Typedef'.
+The class 'jkind_RecordType' is a specialization of 'Typedef'.
+The class 'jkind_IntType' is a specialization of 'Type'.
+The class 'jkind_BoolType' is a specialization of 'Type'.
+The class 'jkind_RealType' is a specialization of 'Type'.
+The class 'jkind_SubrangeType' is a specialization of 'Type'.
+The class 'jkind_UserType' is a specialization of 'Type'.
+The class 'jkind_BinaryExpr' is a specialization of 'Expr'.
+The class 'jkind_UnaryExpr' is a specialization of 'Expr'.
+The class 'jkind_ProjectionExpr' is a specialization of 'Expr'.
+The class 'jkind_IdExpr' is a specialization of 'Expr'.
+The class 'jkind_IntExpr' is a specialization of 'Expr'.
+The class 'jkind_RealExpr' is a specialization of 'Expr'.
+The class 'jkind_BoolExpr' is a specialization of 'Expr'.
+The class 'jkind_IfThenElseExpr' is a specialization of 'Expr'.
+The class 'jkind_NodeCallExpr' is a specialization of 'Expr'.
+The class 'jkind_RecordExpr' is a specialization of 'Expr'.
+
+Relationships between classes are modeled using associations.
+An association connects 'jkind_File' and 'jkind_Typedef'. From 'jkind_File', the role 'jkind_File' has cardinality 0..*, and from 'jkind_Typedef', the role 'jkind_Typedef' has cardinality 0..*.
+An association connects 'jkind_Constant' and 'jkind_File'. From 'jkind_Constant', the role 'jkind_Constant' has cardinality 0..*, and from 'jkind_File', the role 'jkind_File2' has cardinality 0..*.
+An association connects 'jkind_Node' and 'jkind_File'. From 'jkind_Node', the role 'jkind_Node' has cardinality 0..*, and from 'jkind_File', the role 'jkind_File4' has cardinality 0..*.
+An association connects 'jkind_Type' and 'jkind_Constant'. From 'jkind_Type', the role 'jkind_Type' has cardinality 0..*, and from 'jkind_Constant', the role 'jkind_Constant6' has cardinality 0..*.
+An association connects 'jkind_Expr' and 'jkind_Constant'. From 'jkind_Expr', the role 'jkind_Expr' has cardinality 0..*, and from 'jkind_Constant', the role 'jkind_Constant8' has cardinality 0..*.
+An association connects 'jkind_Node' and 'jkind_VariableGroup'. From 'jkind_Node', the role 'jkind_Node10' has cardinality 0..*, and from 'jkind_VariableGroup', the role 'jkind_VariableGroup' has cardinality 0..*.
+An association connects 'jkind_VariableGroup' and 'jkind_Node'. From 'jkind_VariableGroup', the role 'jkind_VariableGroup13' has cardinality 0..*, and from 'jkind_Node', the role 'jkind_Node12' has cardinality 0..*.
+An association connects 'jkind_Node' and 'jkind_VariableGroup'. From 'jkind_Node', the role 'jkind_Node15' has cardinality 0..*, and from 'jkind_VariableGroup', the role 'jkind_VariableGroup16' has cardinality 0..*.
+An association connects 'jkind_Equation' and 'jkind_Node'. From 'jkind_Equation', the role 'jkind_Equation' has cardinality 0..*, and from 'jkind_Node', the role 'jkind_Node18' has cardinality 0..*.
+An association connects 'jkind_Node' and 'jkind_Assertion'. From 'jkind_Node', the role 'jkind_Node20' has cardinality 0..*, and from 'jkind_Assertion', the role 'jkind_Assertion' has cardinality 0..*.
+An association connects 'jkind_Node' and 'jkind_Property'. From 'jkind_Node', the role 'jkind_Node22' has cardinality 0..*, and from 'jkind_Property', the role 'jkind_Property' has cardinality 0..*.
+An association connects 'jkind_Variable' and 'jkind_VariableGroup'. From 'jkind_Variable', the role 'jkind_Variable' has cardinality 0..*, and from 'jkind_VariableGroup', the role 'jkind_VariableGroup24' has cardinality 0..*.
+An association connects 'jkind_VariableGroup' and 'jkind_Type'. From 'jkind_VariableGroup', the role 'jkind_VariableGroup26' has cardinality 0..*, and from 'jkind_Type', the role 'jkind_Type27' has cardinality 0..*.
+An association connects 'jkind_Equation' and 'jkind_Variable'. From 'jkind_Equation', the role 'jkind_Equation29' has cardinality 0..*, and from 'jkind_Variable', the role 'jkind_Variable30' has cardinality 0..*.
+An association connects 'jkind_Expr' and 'jkind_Equation'. From 'jkind_Expr', the role 'jkind_Expr33' has cardinality 0..*, and from 'jkind_Equation', the role 'jkind_Equation32' has cardinality 0..*.
+An association connects 'jkind_Variable' and 'jkind_Property'. From 'jkind_Variable', the role 'jkind_Variable36' has cardinality 0..*, and from 'jkind_Property', the role 'jkind_Property35' has cardinality 0..*.
+An association connects 'jkind_Assertion' and 'jkind_Expr'. From 'jkind_Assertion', the role 'jkind_Assertion38' has cardinality 0..*, and from 'jkind_Expr', the role 'jkind_Expr39' has cardinality 0..*.
+An association connects 'jkind_AbbreviationType' and 'jkind_Type'. From 'jkind_AbbreviationType', the role 'jkind_AbbreviationType' has cardinality 0..*, and from 'jkind_Type', the role 'jkind_Type41' has cardinality 0..*.
+An association connects 'jkind_Field' and 'jkind_RecordType'. From 'jkind_Field', the role 'jkind_Field' has cardinality 0..*, and from 'jkind_RecordType', the role 'jkind_RecordType' has cardinality 0..*.
+An association connects 'jkind_Type' and 'jkind_RecordType'. From 'jkind_Type', the role 'jkind_Type45' has cardinality 0..*, and from 'jkind_RecordType', the role 'jkind_RecordType44' has cardinality 0..*.
+An association connects 'jkind_Typedef' and 'jkind_UserType'. From 'jkind_Typedef', the role 'jkind_Typedef47' has cardinality 0..*, and from 'jkind_UserType', the role 'jkind_UserType' has cardinality 0..*.
+An association connects 'jkind_BinaryExpr' and 'jkind_Expr'. From 'jkind_BinaryExpr', the role 'jkind_BinaryExpr' has cardinality 0..*, and from 'jkind_Expr', the role 'jkind_Expr49' has cardinality 0..*.
+An association connects 'jkind_Expr' and 'jkind_BinaryExpr'. From 'jkind_Expr', the role 'jkind_Expr52' has cardinality 0..*, and from 'jkind_BinaryExpr', the role 'jkind_BinaryExpr51' has cardinality 0..*.
+An association connects 'jkind_UnaryExpr' and 'jkind_Expr'. From 'jkind_UnaryExpr', the role 'jkind_UnaryExpr' has cardinality 0..*, and from 'jkind_Expr', the role 'jkind_Expr54' has cardinality 0..*.
+An association connects 'jkind_ProjectionExpr' and 'jkind_Expr'. From 'jkind_ProjectionExpr', the role 'jkind_ProjectionExpr' has cardinality 0..*, and from 'jkind_Expr', the role 'jkind_Expr56' has cardinality 0..*.
+An association connects 'jkind_ProjectionExpr' and 'jkind_Field'. From 'jkind_ProjectionExpr', the role 'jkind_ProjectionExpr58' has cardinality 0..*, and from 'jkind_Field', the role 'jkind_Field59' has cardinality 0..*.
+An association connects 'jkind_IdRef' and 'jkind_IdExpr'. From 'jkind_IdRef', the role 'jkind_IdRef' has cardinality 0..*, and from 'jkind_IdExpr', the role 'jkind_IdExpr' has cardinality 0..*.
+An association connects 'jkind_IfThenElseExpr' and 'jkind_Expr'. From 'jkind_IfThenElseExpr', the role 'jkind_IfThenElseExpr' has cardinality 0..*, and from 'jkind_Expr', the role 'jkind_Expr62' has cardinality 0..*.
+An association connects 'jkind_IfThenElseExpr' and 'jkind_Expr'. From 'jkind_IfThenElseExpr', the role 'jkind_IfThenElseExpr64' has cardinality 0..*, and from 'jkind_Expr', the role 'jkind_Expr65' has cardinality 0..*.
+An association connects 'jkind_IfThenElseExpr' and 'jkind_Expr'. From 'jkind_IfThenElseExpr', the role 'jkind_IfThenElseExpr67' has cardinality 0..*, and from 'jkind_Expr', the role 'jkind_Expr68' has cardinality 0..*.
+An association connects 'jkind_Node' and 'jkind_NodeCallExpr'. From 'jkind_Node', the role 'jkind_Node70' has cardinality 0..*, and from 'jkind_NodeCallExpr', the role 'jkind_NodeCallExpr' has cardinality 0..*.
+An association connects 'jkind_NodeCallExpr' and 'jkind_Expr'. From 'jkind_NodeCallExpr', the role 'jkind_NodeCallExpr72' has cardinality 0..*, and from 'jkind_Expr', the role 'jkind_Expr73' has cardinality 0..*.
+An association connects 'jkind_RecordType' and 'jkind_RecordExpr'. From 'jkind_RecordType', the role 'jkind_RecordType75' has cardinality 0..*, and from 'jkind_RecordExpr', the role 'jkind_RecordExpr' has cardinality 0..*.
+An association connects 'jkind_RecordExpr' and 'jkind_Field'. From 'jkind_RecordExpr', the role 'jkind_RecordExpr77' has cardinality 0..*, and from 'jkind_Field', the role 'jkind_Field78' has cardinality 0..*.
+An association connects 'jkind_RecordExpr' and 'jkind_Expr'. From 'jkind_RecordExpr', the role 'jkind_RecordExpr80' has cardinality 0..*, and from 'jkind_Expr', the role 'jkind_Expr81' has cardinality 0..*.

@@ -1,0 +1,165 @@
+The domain model 'WebApp' describes the core structural elements and their relationships within the system.
+
+The model defines 39 main class(es).
+
+'WebApp_PageS_Q' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_RSSFeed' represents an important domain concept.
+It has the following attributes: 'url', which is of type str; 'items_to_display', which is of type int; 'feedname', which is of type str; 'show_date', which is of type str.
+
+'ExternalSource' represents an important domain concept.
+It does not declare any attributes.
+
+'Question' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_Create' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_Questionnary' represents an important domain concept.
+It has one attribute: 'feedback', which is of type bool.
+
+'WebApp_TrueFalseForSurvey' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_MultipleForSurvey' represents an important domain concept.
+It does not declare any attributes.
+
+'WebPage' represents an important domain concept.
+It does not declare any attributes.
+
+'TrueFalse' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_Opened' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_Delete' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_CRUD' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_Multiple' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_Index' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleQuestion' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_MultipleForQuestionnary' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_Twitter' represents an important domain concept.
+It has one attribute: 'username', which is of type str.
+
+'WebApp_Home' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_WebApp' represents an important domain concept.
+It has the following attributes: 'User', which is of type str; 'Password', which is of type str; 'name', which is of type str.
+
+'WebApp_Details' represents an important domain concept.
+It does not declare any attributes.
+
+'EntityWebPage' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_QuestionBank' represents an important domain concept.
+It does not declare any attributes.
+
+'PageS_Q' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_EntityWebPage' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_TrueFalse' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_ExternalLink' represents an important domain concept.
+It has one attribute: 'url', which is of type str.
+
+'WebApp_SimpleQuestion' represents an important domain concept.
+It has the following attributes: 'QuestionText', which is of type str; 'visualRep', which is of type str.
+
+'WebApp_Option' represents an important domain concept.
+It has the following attributes: 'fraction', which is of type int; 'text', which is of type str.
+
+'WebApp_WebPage' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'WebApp_ExternalSource' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_GroupOfQuestions' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'WebApp_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'WebApp_TrueFalseForQuestionnary' represents an important domain concept.
+It has one attribute: 'correct', which is of type str.
+
+'WebApp_Survey' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_Question' represents an important domain concept.
+It does not declare any attributes.
+
+'Multiple' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_DataBase' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CorrectAnwser' defines the following possible values: 'True', 'False'.
+The enumeration 'MySqlType' defines the following possible values: 'VARCHAR', 'REAL', 'DATE', 'INT', 'BOOLEAN'.
+The enumeration 'VisualRepresentation' defines the following possible values: 'TEXTUAL', 'LINEAL_CHART', 'PIE_CHART', 'BAR_CHART'.
+
+The model also captures inheritance relationships between classes.
+The class 'WebApp_Opened' is a specialization of 'SimpleQuestion'.
+The class 'WebApp_PageS_Q' is a specialization of 'WebPage'.
+The class 'WebApp_Survey' is a specialization of 'PageS_Q'.
+The class 'WebApp_Questionnary' is a specialization of 'PageS_Q'.
+The class 'WebApp_Home' is a specialization of 'WebPage'.
+The class 'WebApp_Index' is a specialization of 'EntityWebPage'.
+The class 'WebApp_Details' is a specialization of 'EntityWebPage'.
+The class 'WebApp_Create' is a specialization of 'EntityWebPage'.
+The class 'WebApp_Delete' is a specialization of 'EntityWebPage'.
+The class 'WebApp_CRUD' is a specialization of 'EntityWebPage'.
+The class 'WebApp_GroupOfQuestions' is a specialization of 'Question'.
+The class 'WebApp_Multiple' is a specialization of 'SimpleQuestion'.
+The class 'WebApp_TrueFalse' is a specialization of 'SimpleQuestion'.
+The class 'WebApp_SimpleQuestion' is a specialization of 'Question'.
+The class 'WebApp_EntityWebPage' is a specialization of 'WebPage'.
+The class 'WebApp_TrueFalseForSurvey' is a specialization of 'TrueFalse'.
+The class 'WebApp_MultipleForSurvey' is a specialization of 'Multiple'.
+The class 'WebApp_TrueFalseForQuestionnary' is a specialization of 'TrueFalse'.
+The class 'WebApp_MultipleForQuestionnary' is a specialization of 'Multiple'.
+The class 'WebApp_Twitter' is a specialization of 'ExternalSource'.
+The class 'WebApp_RSSFeed' is a specialization of 'ExternalSource'.
+
+Relationships between classes are modeled using associations.
+An association connects 'WebApp_WebApp' and 'WebApp_WebPage'. From 'WebApp_WebApp', the role 'WebApp_WebApp' has cardinality 0..*, and from 'WebApp_WebPage', the role 'WebApp_WebPage' has cardinality 0..*.
+An association connects 'WebApp_DataBase' and 'WebApp_WebApp'. From 'WebApp_DataBase', the role 'WebApp_DataBase' has cardinality 0..*, and from 'WebApp_WebApp', the role 'WebApp_WebApp2' has cardinality 0..*.
+An association connects 'WebApp_WebApp' and 'WebApp_QuestionBank'. From 'WebApp_WebApp', the role 'WebApp_WebApp4' has cardinality 0..*, and from 'WebApp_QuestionBank', the role 'WebApp_QuestionBank' has cardinality 0..*.
+An association connects 'WebApp_Entity' and 'WebApp_Attribute'. From 'WebApp_Entity', the role 'WebApp_Entity' has cardinality 0..*, and from 'WebApp_Attribute', the role 'WebApp_Attribute' has cardinality 0..*.
+An association connects 'WebApp_Entity' and 'WebApp_Entity'. From 'WebApp_Entity', the role 'WebApp_Entity6' has cardinality 0..*, and from 'WebApp_Entity', the role 'WebApp_Entity8' has cardinality 0..*.
+An association connects 'WebApp_Question' and 'WebApp_PageS_Q'. From 'WebApp_Question', the role 'WebApp_Question' has cardinality 0..*, and from 'WebApp_PageS_Q', the role 'WebApp_PageS_Q' has cardinality 0..*.
+An association connects 'WebApp_WebPage' and 'WebApp_ExternalSource'. From 'WebApp_WebPage', the role 'WebApp_WebPage11' has cardinality 0..*, and from 'WebApp_ExternalSource', the role 'WebApp_ExternalSource' has cardinality 0..*.
+An association connects 'WebApp_WebPage' and 'WebApp_WebPage'. From 'WebApp_WebPage', the role 'WebApp_WebPage14' has cardinality 0..*, and from 'WebApp_WebPage', the role 'WebApp_WebPage12' has cardinality 0..*.
+An association connects 'WebApp_WebPage' and 'WebApp_ExternalLink'. From 'WebApp_WebPage', the role 'WebApp_WebPage16' has cardinality 0..*, and from 'WebApp_ExternalLink', the role 'WebApp_ExternalLink' has cardinality 0..*.
+An association connects 'WebApp_GroupOfQuestions' and 'WebApp_Question'. From 'WebApp_GroupOfQuestions', the role 'WebApp_GroupOfQuestions' has cardinality 0..*, and from 'WebApp_Question', the role 'WebApp_Question18' has cardinality 0..*.
+An association connects 'WebApp_Multiple' and 'WebApp_Option'. From 'WebApp_Multiple', the role 'WebApp_Multiple' has cardinality 0..*, and from 'WebApp_Option', the role 'WebApp_Option' has cardinality 0..*.
+An association connects 'WebApp_Entity' and 'WebApp_EntityWebPage'. From 'WebApp_Entity', the role 'WebApp_Entity21' has cardinality 0..*, and from 'WebApp_EntityWebPage', the role 'WebApp_EntityWebPage' has cardinality 0..*.
+An association connects 'WebApp_DataBase' and 'WebApp_Entity'. From 'WebApp_DataBase', the role 'WebApp_DataBase23' has cardinality 0..*, and from 'WebApp_Entity', the role 'WebApp_Entity24' has cardinality 0..*.
+An association connects 'WebApp_QuestionBank' and 'WebApp_Question'. From 'WebApp_QuestionBank', the role 'WebApp_QuestionBank26' has cardinality 0..*, and from 'WebApp_Question', the role 'WebApp_Question27' has cardinality 0..*.
+An association connects 'WebApp_Option' and 'WebApp_MultipleForQuestionnary'. From 'WebApp_Option', the role 'WebApp_Option29' has cardinality 0..*, and from 'WebApp_MultipleForQuestionnary', the role 'WebApp_MultipleForQuestionnary' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/aphung-coding/aphung.code.emfrcp/my.family/model/family.ecore

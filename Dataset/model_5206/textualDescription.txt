@@ -1,0 +1,15 @@
+The domain model 'ancestor' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'ancestor_C' represents an important domain concept.
+It does not declare any attributes.
+
+'ancestor_D' represents an important domain concept.
+It does not declare any attributes.
+
+'ancestor_A' represents an important domain concept.
+It does not declare any attributes.
+
+'ancestor_B' represents an important domain concept.
+It does not declare any attributes.

@@ -1,0 +1,259 @@
+The domain model 'aml' describes the core structural elements and their relationships within the system.
+
+The model defines 41 main class(es).
+
+'aml_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'aml_Answer' represents an important domain concept.
+It has the following attributes: 'rationale', which is of type str; 'questionId', which is of type str; 'group', which is of type str.
+
+'aml_Period' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'label', which is of type str.
+
+'aml_Start' represents an important domain concept.
+It has the following attributes: 'scheme', which is of type str; 'value', which is of type str.
+
+'aml_Dependent' represents an important domain concept.
+It has the following attributes: 'idRef', which is of type str; 'ordinal', which is of type str.
+
+'aml_List' represents an important domain concept.
+It has one attribute: 'group', which is of type str.
+
+'aml_Choice' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'symbol', which is of type str; 'description', which is of type str; 'ordinal', which is of type str.
+
+'aml_Collection' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'label1', which is of type str; 'objectType', which is of type str; 'label', which is of type str; 'id', which is of type str.
+
+'aml_Question' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'id', which is of type str; 'group', which is of type str; 'amplification', which is of type str; 'label', which is of type str.
+
+'aml_AmlDocument' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'version', which is of type str.
+
+'aml_Person' represents an important domain concept.
+It has the following attributes: 'organization', which is of type str; 'department', which is of type str; 'nickName', which is of type str; 'description', which is of type str; 'email', which is of type str; 'middleName', which is of type str; 'firstName', which is of type str; 'lastName', which is of type str; 'id', which is of type str.
+
+'aml_Reader' represents an important domain concept.
+It has the following attributes: 'objectType', which is of type str; 'description', which is of type str; 'idRef', which is of type str.
+
+'aml_Relevance' represents an important domain concept.
+It has the following attributes: 'ordinal', which is of type str; 'label', which is of type str; 'symbol', which is of type str; 'description', which is of type str.
+
+'aml_Interval' represents an important domain concept.
+It has the following attributes: 'min', which is of type str; 'max', which is of type str.
+
+'aml_Exhibit' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'aml_AggregationRule' represents an important domain concept.
+It does not declare any attributes.
+
+'aml_End' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'scheme', which is of type str.
+
+'aml_Publisher' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'objectType', which is of type str; 'idRef', which is of type str.
+
+'aml_NationState' represents an important domain concept.
+It has the following attributes: 'region', which is of type str; 'perspective', which is of type str; 'actor', which is of type str; 'event', which is of type str; 'group', which is of type str.
+
+'aml_QuestionRelationships' represents an important domain concept.
+It does not declare any attributes.
+
+'aml_Coverage' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'group', which is of type str.
+
+'aml_Memo' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'id', which is of type str; 'body', which is of type str; 'subject', which is of type str.
+
+'aml_Flag' represents an important domain concept.
+It has the following attributes: 'flagType', which is of type str; 'description', which is of type str; 'label', which is of type str.
+
+'aml_Template' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'aml_Creator' represents an important domain concept.
+It has the following attributes: 'objectType', which is of type str; 'description', which is of type str; 'idRef', which is of type str.
+
+'aml_DocumentRoot' represents an important domain concept.
+It has the following attributes: 'department', which is of type str; 'id', which is of type str; 'actor', which is of type str; 'subject', which is of type str; 'perspective', which is of type str; 'lastName', which is of type str; 'rationale', which is of type str; 'date', which is of type str; 'nickName', which is of type str; 'organization', which is of type str; 'symbol', which is of type str; 'event', which is of type str; 'label', which is of type str; 'mixed', which is of type str; 'firstName', which is of type str; 'middleName', which is of type str; 'label1', which is of type str; 'body', which is of type str; 'email', which is of type str; 'idRef', which is of type str; 'securityMarking', which is of type str; 'description1', which is of type str; 'title', which is of type str; 'url', which is of type str; 'region', which is of type str; 'description', which is of type str.
+
+'aml_Belief' represents an important domain concept.
+It has the following attributes: 'symbol', which is of type str; 'description', which is of type str; 'label', which is of type str; 'ordinal', which is of type str.
+
+'aml_EvidenceExhibit' represents an important domain concept.
+It has the following attributes: 'idRef', which is of type str; 'questionId', which is of type str; 'value', which is of type str.
+
+'aml_Evidence' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'ordinal', which is of type str; 'label', which is of type str.
+
+'aml_CollectionItem' represents an important domain concept.
+It has the following attributes: 'ordinal', which is of type str; 'objectType', which is of type str; 'idRef', which is of type str.
+
+'aml_Value' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'mixed', which is of type str; 'type', which is of type str; 'unit', which is of type str.
+
+'aml_ArgumentTemplate' represents an important domain concept.
+It has the following attributes: 'idRef', which is of type str; 'value', which is of type str.
+
+'aml_DiscoveryMethod' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'type', which is of type str; 'url', which is of type str; 'id', which is of type str; 'importType', which is of type str; 'label', which is of type str; 'autoTrigger', which is of type str.
+
+'aml_Witness' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'timestamp', which is of type str; 'idRef', which is of type str.
+
+'aml_Argument' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'aml_Parameter' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'aml_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'aml_Annotation' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'group', which is of type str; 'id', which is of type str.
+
+'aml_MetaData' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'date', which is of type str; 'group', which is of type str; 'securityMarking', which is of type str; 'subject', which is of type str; 'title', which is of type str.
+
+'aml_CreatingTool' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'label', which is of type str; 'toolType', which is of type str.
+
+'aml_Reliability' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'ordinal', which is of type str; 'symbol', which is of type str; 'description', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ObjectType3' defines the following possible values: 'memo', 'argument', 'discoveryMethod', 'template', 'person', 'exhibit', 'collection', 'group'.
+The enumeration 'ObjectType2' defines the following possible values: 'argument', 'SEQUENTIAL', 'MISC', 'group', 'template', 'VERSIONING'.
+The enumeration 'ObjectType1' defines the following possible values: 'collection', 'exhibit', 'template', 'group', 'memo', 'discoveryMethod', 'person', 'argument'.
+The enumeration 'Type' defines the following possible values: 'Urldir', 'Url', 'Template'.
+The enumeration 'ObjectType' defines the following possible values: 'group', 'memo', 'template', 'discoveryMethod', 'collection', 'exhibit', 'person', 'argument'.
+
+Relationships between classes are modeled using associations.
+An association connects 'aml_AggregationRule' and 'aml_EObject'. From 'aml_AggregationRule', the role 'aml_AggregationRule' has cardinality 0..*, and from 'aml_EObject', the role 'aml_EObject' has cardinality 0..*.
+An association connects 'aml_AggregationRule' and 'aml_Parameter'. From 'aml_AggregationRule', the role 'aml_AggregationRule2' has cardinality 0..*, and from 'aml_Parameter', the role 'aml_Parameter' has cardinality 0..*.
+An association connects 'aml_Template' and 'aml_AmlDocument'. From 'aml_Template', the role 'aml_Template' has cardinality 0..*, and from 'aml_AmlDocument', the role 'aml_AmlDocument' has cardinality 0..*.
+An association connects 'aml_AmlDocument' and 'aml_Argument'. From 'aml_AmlDocument', the role 'aml_AmlDocument5' has cardinality 0..*, and from 'aml_Argument', the role 'aml_Argument' has cardinality 0..*.
+An association connects 'aml_AmlDocument' and 'aml_Exhibit'. From 'aml_AmlDocument', the role 'aml_AmlDocument7' has cardinality 0..*, and from 'aml_Exhibit', the role 'aml_Exhibit' has cardinality 0..*.
+An association connects 'aml_Collection' and 'aml_AmlDocument'. From 'aml_Collection', the role 'aml_Collection' has cardinality 0..*, and from 'aml_AmlDocument', the role 'aml_AmlDocument9' has cardinality 0..*.
+An association connects 'aml_AmlDocument' and 'aml_Person'. From 'aml_AmlDocument', the role 'aml_AmlDocument11' has cardinality 0..*, and from 'aml_Person', the role 'aml_Person' has cardinality 0..*.
+An association connects 'aml_Memo' and 'aml_AmlDocument'. From 'aml_Memo', the role 'aml_Memo' has cardinality 0..*, and from 'aml_AmlDocument', the role 'aml_AmlDocument13' has cardinality 0..*.
+An association connects 'aml_AmlDocument' and 'aml_DiscoveryMethod'. From 'aml_AmlDocument', the role 'aml_AmlDocument15' has cardinality 0..*, and from 'aml_DiscoveryMethod', the role 'aml_DiscoveryMethod' has cardinality 0..*.
+An association connects 'aml_Annotation' and 'aml_Memo'. From 'aml_Annotation', the role 'aml_Annotation' has cardinality 0..*, and from 'aml_Memo', the role 'aml_Memo17' has cardinality 0..*.
+An association connects 'aml_Annotation' and 'aml_Flag'. From 'aml_Annotation', the role 'aml_Annotation19' has cardinality 0..*, and from 'aml_Flag', the role 'aml_Flag' has cardinality 0..*.
+An association connects 'aml_Belief' and 'aml_Answer'. From 'aml_Belief', the role 'aml_Belief' has cardinality 0..*, and from 'aml_Answer', the role 'aml_Answer' has cardinality 0..*.
+An association connects 'aml_Answer' and 'aml_Witness'. From 'aml_Answer', the role 'aml_Answer22' has cardinality 0..*, and from 'aml_Witness', the role 'aml_Witness' has cardinality 0..*.
+An association connects 'aml_Answer' and 'aml_Annotation'. From 'aml_Answer', the role 'aml_Answer24' has cardinality 0..*, and from 'aml_Annotation', the role 'aml_Annotation25' has cardinality 0..*.
+An association connects 'aml_Answer' and 'aml_AggregationRule'. From 'aml_Answer', the role 'aml_Answer27' has cardinality 0..*, and from 'aml_AggregationRule', the role 'aml_AggregationRule28' has cardinality 0..*.
+An association connects 'aml_Evidence' and 'aml_Answer'. From 'aml_Evidence', the role 'aml_Evidence' has cardinality 0..*, and from 'aml_Answer', the role 'aml_Answer30' has cardinality 0..*.
+An association connects 'aml_DiscoveryMethod' and 'aml_Answer'. From 'aml_DiscoveryMethod', the role 'aml_DiscoveryMethod33' has cardinality 0..*, and from 'aml_Answer', the role 'aml_Answer32' has cardinality 0..*.
+An association connects 'aml_MetaData' and 'aml_Argument'. From 'aml_MetaData', the role 'aml_MetaData' has cardinality 0..*, and from 'aml_Argument', the role 'aml_Argument35' has cardinality 0..*.
+An association connects 'aml_Argument' and 'aml_CreatingTool'. From 'aml_Argument', the role 'aml_Argument37' has cardinality 0..*, and from 'aml_CreatingTool', the role 'aml_CreatingTool' has cardinality 0..*.
+An association connects 'aml_Annotation' and 'aml_Argument'. From 'aml_Annotation', the role 'aml_Annotation40' has cardinality 0..*, and from 'aml_Argument', the role 'aml_Argument39' has cardinality 0..*.
+An association connects 'aml_ArgumentTemplate' and 'aml_Argument'. From 'aml_ArgumentTemplate', the role 'aml_ArgumentTemplate' has cardinality 0..*, and from 'aml_Argument', the role 'aml_Argument42' has cardinality 0..*.
+An association connects 'aml_Argument' and 'aml_Answer'. From 'aml_Argument', the role 'aml_Argument44' has cardinality 0..*, and from 'aml_Answer', the role 'aml_Answer45' has cardinality 0..*.
+An association connects 'aml_MetaData' and 'aml_Collection'. From 'aml_MetaData', the role 'aml_MetaData48' has cardinality 0..*, and from 'aml_Collection', the role 'aml_Collection47' has cardinality 0..*.
+An association connects 'aml_Collection' and 'aml_CreatingTool'. From 'aml_Collection', the role 'aml_Collection50' has cardinality 0..*, and from 'aml_CreatingTool', the role 'aml_CreatingTool51' has cardinality 0..*.
+An association connects 'aml_Annotation' and 'aml_Collection'. From 'aml_Annotation', the role 'aml_Annotation54' has cardinality 0..*, and from 'aml_Collection', the role 'aml_Collection53' has cardinality 0..*.
+An association connects 'aml_Question' and 'aml_Collection'. From 'aml_Question', the role 'aml_Question' has cardinality 0..*, and from 'aml_Collection', the role 'aml_Collection56' has cardinality 0..*.
+An association connects 'aml_Collection' and 'aml_ArgumentTemplate'. From 'aml_Collection', the role 'aml_Collection58' has cardinality 0..*, and from 'aml_ArgumentTemplate', the role 'aml_ArgumentTemplate59' has cardinality 0..*.
+An association connects 'aml_CollectionItem' and 'aml_Collection'. From 'aml_CollectionItem', the role 'aml_CollectionItem' has cardinality 0..*, and from 'aml_Collection', the role 'aml_Collection61' has cardinality 0..*.
+An association connects 'aml_Coverage' and 'aml_NationState'. From 'aml_Coverage', the role 'aml_Coverage' has cardinality 0..*, and from 'aml_NationState', the role 'aml_NationState' has cardinality 0..*.
+An association connects 'aml_ArgumentTemplate' and 'aml_DiscoveryMethod'. From 'aml_ArgumentTemplate', the role 'aml_ArgumentTemplate65' has cardinality 0..*, and from 'aml_DiscoveryMethod', the role 'aml_DiscoveryMethod64' has cardinality 0..*.
+An association connects 'aml_DiscoveryMethod' and 'aml_Annotation'. From 'aml_DiscoveryMethod', the role 'aml_DiscoveryMethod67' has cardinality 0..*, and from 'aml_Annotation', the role 'aml_Annotation68' has cardinality 0..*.
+An association connects 'aml_EStringToStringMapEntry' and 'aml_DocumentRoot'. From 'aml_EStringToStringMapEntry', the role 'aml_EStringToStringMapEntry' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot' has cardinality 0..*.
+An association connects 'aml_EStringToStringMapEntry' and 'aml_DocumentRoot'. From 'aml_EStringToStringMapEntry', the role 'aml_EStringToStringMapEntry72' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot71' has cardinality 0..*.
+An association connects 'aml_AggregationRule' and 'aml_DocumentRoot'. From 'aml_AggregationRule', the role 'aml_AggregationRule75' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot74' has cardinality 0..*.
+An association connects 'aml_AmlDocument' and 'aml_DocumentRoot'. From 'aml_AmlDocument', the role 'aml_AmlDocument78' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot77' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_Annotation'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot80' has cardinality 0..*, and from 'aml_Annotation', the role 'aml_Annotation81' has cardinality 0..*.
+An association connects 'aml_Answer' and 'aml_DocumentRoot'. From 'aml_Answer', the role 'aml_Answer84' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot83' has cardinality 0..*.
+An association connects 'aml_EObject' and 'aml_DocumentRoot'. From 'aml_EObject', the role 'aml_EObject87' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot86' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_Argument'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot89' has cardinality 0..*, and from 'aml_Argument', the role 'aml_Argument90' has cardinality 0..*.
+An association connects 'aml_ArgumentTemplate' and 'aml_DocumentRoot'. From 'aml_ArgumentTemplate', the role 'aml_ArgumentTemplate93' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot92' has cardinality 0..*.
+An association connects 'aml_Belief' and 'aml_DocumentRoot'. From 'aml_Belief', the role 'aml_Belief96' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot95' has cardinality 0..*.
+An association connects 'aml_Choice' and 'aml_DocumentRoot'. From 'aml_Choice', the role 'aml_Choice' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot98' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_Collection'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot100' has cardinality 0..*, and from 'aml_Collection', the role 'aml_Collection101' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_CollectionItem'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot103' has cardinality 0..*, and from 'aml_CollectionItem', the role 'aml_CollectionItem104' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_EObject'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot106' has cardinality 0..*, and from 'aml_EObject', the role 'aml_EObject107' has cardinality 0..*.
+An association connects 'aml_Coverage' and 'aml_DocumentRoot'. From 'aml_Coverage', the role 'aml_Coverage110' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot109' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_CreatingTool'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot112' has cardinality 0..*, and from 'aml_CreatingTool', the role 'aml_CreatingTool113' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_Creator'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot115' has cardinality 0..*, and from 'aml_Creator', the role 'aml_Creator' has cardinality 0..*.
+An association connects 'aml_Dependent' and 'aml_DocumentRoot'. From 'aml_Dependent', the role 'aml_Dependent' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot117' has cardinality 0..*.
+An association connects 'aml_DiscoveryMethod' and 'aml_DocumentRoot'. From 'aml_DiscoveryMethod', the role 'aml_DiscoveryMethod120' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot119' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_End'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot122' has cardinality 0..*, and from 'aml_End', the role 'aml_End' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_Evidence'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot124' has cardinality 0..*, and from 'aml_Evidence', the role 'aml_Evidence125' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_EvidenceExhibit'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot127' has cardinality 0..*, and from 'aml_EvidenceExhibit', the role 'aml_EvidenceExhibit' has cardinality 0..*.
+An association connects 'aml_Exhibit' and 'aml_DocumentRoot'. From 'aml_Exhibit', the role 'aml_Exhibit130' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot129' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_Flag'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot132' has cardinality 0..*, and from 'aml_Flag', the role 'aml_Flag133' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_EObject'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot135' has cardinality 0..*, and from 'aml_EObject', the role 'aml_EObject136' has cardinality 0..*.
+An association connects 'aml_EObject' and 'aml_DocumentRoot'. From 'aml_EObject', the role 'aml_EObject139' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot138' has cardinality 0..*.
+An association connects 'aml_EObject' and 'aml_DocumentRoot'. From 'aml_EObject', the role 'aml_EObject142' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot141' has cardinality 0..*.
+An association connects 'aml_Interval' and 'aml_DocumentRoot'. From 'aml_Interval', the role 'aml_Interval' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot144' has cardinality 0..*.
+An association connects 'aml_EObject' and 'aml_DocumentRoot'. From 'aml_EObject', the role 'aml_EObject147' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot146' has cardinality 0..*.
+An association connects 'aml_List' and 'aml_DocumentRoot'. From 'aml_List', the role 'aml_List' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot149' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_Memo'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot151' has cardinality 0..*, and from 'aml_Memo', the role 'aml_Memo152' has cardinality 0..*.
+An association connects 'aml_MetaData' and 'aml_DocumentRoot'. From 'aml_MetaData', the role 'aml_MetaData155' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot154' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_EObject'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot157' has cardinality 0..*, and from 'aml_EObject', the role 'aml_EObject158' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_NationState'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot160' has cardinality 0..*, and from 'aml_NationState', the role 'aml_NationState161' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_Parameter'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot163' has cardinality 0..*, and from 'aml_Parameter', the role 'aml_Parameter164' has cardinality 0..*.
+An association connects 'aml_Period' and 'aml_DocumentRoot'. From 'aml_Period', the role 'aml_Period' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot166' has cardinality 0..*.
+An association connects 'aml_Person' and 'aml_DocumentRoot'. From 'aml_Person', the role 'aml_Person169' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot168' has cardinality 0..*.
+An association connects 'aml_Publisher' and 'aml_DocumentRoot'. From 'aml_Publisher', the role 'aml_Publisher' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot171' has cardinality 0..*.
+An association connects 'aml_Question' and 'aml_DocumentRoot'. From 'aml_Question', the role 'aml_Question174' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot173' has cardinality 0..*.
+An association connects 'aml_QuestionRelationships' and 'aml_DocumentRoot'. From 'aml_QuestionRelationships', the role 'aml_QuestionRelationships' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot176' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_Reader'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot178' has cardinality 0..*, and from 'aml_Reader', the role 'aml_Reader' has cardinality 0..*.
+An association connects 'aml_EObject' and 'aml_DocumentRoot'. From 'aml_EObject', the role 'aml_EObject181' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot180' has cardinality 0..*.
+An association connects 'aml_Relevance' and 'aml_DocumentRoot'. From 'aml_Relevance', the role 'aml_Relevance' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot183' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_Reliability'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot185' has cardinality 0..*, and from 'aml_Reliability', the role 'aml_Reliability' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_EObject'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot187' has cardinality 0..*, and from 'aml_EObject', the role 'aml_EObject188' has cardinality 0..*.
+An association connects 'aml_DocumentRoot' and 'aml_EObject'. From 'aml_DocumentRoot', the role 'aml_DocumentRoot190' has cardinality 0..*, and from 'aml_EObject', the role 'aml_EObject191' has cardinality 0..*.
+An association connects 'aml_Start' and 'aml_DocumentRoot'. From 'aml_Start', the role 'aml_Start' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot193' has cardinality 0..*.
+An association connects 'aml_Template' and 'aml_DocumentRoot'. From 'aml_Template', the role 'aml_Template196' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot195' has cardinality 0..*.
+An association connects 'aml_EObject' and 'aml_DocumentRoot'. From 'aml_EObject', the role 'aml_EObject199' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot198' has cardinality 0..*.
+An association connects 'aml_Value' and 'aml_DocumentRoot'. From 'aml_Value', the role 'aml_Value' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot201' has cardinality 0..*.
+An association connects 'aml_Witness' and 'aml_DocumentRoot'. From 'aml_Witness', the role 'aml_Witness204' has cardinality 0..*, and from 'aml_DocumentRoot', the role 'aml_DocumentRoot203' has cardinality 0..*.
+An association connects 'aml_Evidence' and 'aml_EvidenceExhibit'. From 'aml_Evidence', the role 'aml_Evidence206' has cardinality 0..*, and from 'aml_EvidenceExhibit', the role 'aml_EvidenceExhibit207' has cardinality 0..*.
+An association connects 'aml_Evidence' and 'aml_Relevance'. From 'aml_Evidence', the role 'aml_Evidence209' has cardinality 0..*, and from 'aml_Relevance', the role 'aml_Relevance210' has cardinality 0..*.
+An association connects 'aml_Reliability' and 'aml_Evidence'. From 'aml_Reliability', the role 'aml_Reliability213' has cardinality 0..*, and from 'aml_Evidence', the role 'aml_Evidence212' has cardinality 0..*.
+An association connects 'aml_Evidence' and 'aml_Witness'. From 'aml_Evidence', the role 'aml_Evidence215' has cardinality 0..*, and from 'aml_Witness', the role 'aml_Witness216' has cardinality 0..*.
+An association connects 'aml_Annotation' and 'aml_Evidence'. From 'aml_Annotation', the role 'aml_Annotation219' has cardinality 0..*, and from 'aml_Evidence', the role 'aml_Evidence218' has cardinality 0..*.
+An association connects 'aml_EObject' and 'aml_Exhibit'. From 'aml_EObject', the role 'aml_EObject222' has cardinality 0..*, and from 'aml_Exhibit', the role 'aml_Exhibit221' has cardinality 0..*.
+An association connects 'aml_Exhibit' and 'aml_MetaData'. From 'aml_Exhibit', the role 'aml_Exhibit224' has cardinality 0..*, and from 'aml_MetaData', the role 'aml_MetaData225' has cardinality 0..*.
+An association connects 'aml_Exhibit' and 'aml_Annotation'. From 'aml_Exhibit', the role 'aml_Exhibit227' has cardinality 0..*, and from 'aml_Annotation', the role 'aml_Annotation228' has cardinality 0..*.
+An association connects 'aml_Flag' and 'aml_Witness'. From 'aml_Flag', the role 'aml_Flag230' has cardinality 0..*, and from 'aml_Witness', the role 'aml_Witness231' has cardinality 0..*.
+An association connects 'aml_List' and 'aml_EObject'. From 'aml_List', the role 'aml_List233' has cardinality 0..*, and from 'aml_EObject', the role 'aml_EObject234' has cardinality 0..*.
+An association connects 'aml_Creator' and 'aml_Memo'. From 'aml_Creator', the role 'aml_Creator237' has cardinality 0..*, and from 'aml_Memo', the role 'aml_Memo236' has cardinality 0..*.
+An association connects 'aml_Reader' and 'aml_Memo'. From 'aml_Reader', the role 'aml_Reader240' has cardinality 0..*, and from 'aml_Memo', the role 'aml_Memo239' has cardinality 0..*.
+An association connects 'aml_Creator' and 'aml_MetaData'. From 'aml_Creator', the role 'aml_Creator243' has cardinality 0..*, and from 'aml_MetaData', the role 'aml_MetaData242' has cardinality 0..*.
+An association connects 'aml_MetaData' and 'aml_Reader'. From 'aml_MetaData', the role 'aml_MetaData245' has cardinality 0..*, and from 'aml_Reader', the role 'aml_Reader246' has cardinality 0..*.
+An association connects 'aml_Publisher' and 'aml_MetaData'. From 'aml_Publisher', the role 'aml_Publisher249' has cardinality 0..*, and from 'aml_MetaData', the role 'aml_MetaData248' has cardinality 0..*.
+An association connects 'aml_MetaData' and 'aml_EObject'. From 'aml_MetaData', the role 'aml_MetaData251' has cardinality 0..*, and from 'aml_EObject', the role 'aml_EObject252' has cardinality 0..*.
+An association connects 'aml_MetaData' and 'aml_EObject'. From 'aml_MetaData', the role 'aml_MetaData254' has cardinality 0..*, and from 'aml_EObject', the role 'aml_EObject255' has cardinality 0..*.
+An association connects 'aml_EObject' and 'aml_MetaData'. From 'aml_EObject', the role 'aml_EObject258' has cardinality 0..*, and from 'aml_MetaData', the role 'aml_MetaData257' has cardinality 0..*.
+An association connects 'aml_EObject' and 'aml_MetaData'. From 'aml_EObject', the role 'aml_EObject261' has cardinality 0..*, and from 'aml_MetaData', the role 'aml_MetaData260' has cardinality 0..*.
+An association connects 'aml_EObject' and 'aml_MetaData'. From 'aml_EObject', the role 'aml_EObject264' has cardinality 0..*, and from 'aml_MetaData', the role 'aml_MetaData263' has cardinality 0..*.
+An association connects 'aml_MetaData' and 'aml_EObject'. From 'aml_MetaData', the role 'aml_MetaData266' has cardinality 0..*, and from 'aml_EObject', the role 'aml_EObject267' has cardinality 0..*.
+An association connects 'aml_EObject' and 'aml_MetaData'. From 'aml_EObject', the role 'aml_EObject270' has cardinality 0..*, and from 'aml_MetaData', the role 'aml_MetaData269' has cardinality 0..*.
+An association connects 'aml_Coverage' and 'aml_MetaData'. From 'aml_Coverage', the role 'aml_Coverage273' has cardinality 0..*, and from 'aml_MetaData', the role 'aml_MetaData272' has cardinality 0..*.
+An association connects 'aml_MetaData' and 'aml_EObject'. From 'aml_MetaData', the role 'aml_MetaData275' has cardinality 0..*, and from 'aml_EObject', the role 'aml_EObject276' has cardinality 0..*.
+An association connects 'aml_MetaData' and 'aml_EObject'. From 'aml_MetaData', the role 'aml_MetaData278' has cardinality 0..*, and from 'aml_EObject', the role 'aml_EObject279' has cardinality 0..*.
+An association connects 'aml_Period' and 'aml_NationState'. From 'aml_Period', the role 'aml_Period282' has cardinality 0..*, and from 'aml_NationState', the role 'aml_NationState281' has cardinality 0..*.
+An association connects 'aml_Value' and 'aml_Parameter'. From 'aml_Value', the role 'aml_Value285' has cardinality 0..*, and from 'aml_Parameter', the role 'aml_Parameter284' has cardinality 0..*.
+An association connects 'aml_Start' and 'aml_Period'. From 'aml_Start', the role 'aml_Start288' has cardinality 0..*, and from 'aml_Period', the role 'aml_Period287' has cardinality 0..*.
+An association connects 'aml_Period' and 'aml_End'. From 'aml_Period', the role 'aml_Period290' has cardinality 0..*, and from 'aml_End', the role 'aml_End291' has cardinality 0..*.
+An association connects 'aml_QuestionRelationships' and 'aml_Dependent'. From 'aml_QuestionRelationships', the role 'aml_QuestionRelationships293' has cardinality 0..*, and from 'aml_Dependent', the role 'aml_Dependent294' has cardinality 0..*.
+An association connects 'aml_EObject' and 'aml_Question'. From 'aml_EObject', the role 'aml_EObject297' has cardinality 0..*, and from 'aml_Question', the role 'aml_Question296' has cardinality 0..*.
+An association connects 'aml_Choice' and 'aml_Question'. From 'aml_Choice', the role 'aml_Choice300' has cardinality 0..*, and from 'aml_Question', the role 'aml_Question299' has cardinality 0..*.
+An association connects 'aml_Question' and 'aml_QuestionRelationships'. From 'aml_Question', the role 'aml_Question302' has cardinality 0..*, and from 'aml_QuestionRelationships', the role 'aml_QuestionRelationships303' has cardinality 0..*.
+An association connects 'aml_Question' and 'aml_AggregationRule'. From 'aml_Question', the role 'aml_Question305' has cardinality 0..*, and from 'aml_AggregationRule', the role 'aml_AggregationRule306' has cardinality 0..*.
+An association connects 'aml_DiscoveryMethod' and 'aml_Question'. From 'aml_DiscoveryMethod', the role 'aml_DiscoveryMethod309' has cardinality 0..*, and from 'aml_Question', the role 'aml_Question308' has cardinality 0..*.
+An association connects 'aml_Question' and 'aml_Annotation'. From 'aml_Question', the role 'aml_Question311' has cardinality 0..*, and from 'aml_Annotation', the role 'aml_Annotation312' has cardinality 0..*.
+An association connects 'aml_MetaData' and 'aml_Template'. From 'aml_MetaData', the role 'aml_MetaData315' has cardinality 0..*, and from 'aml_Template', the role 'aml_Template314' has cardinality 0..*.
+An association connects 'aml_Template' and 'aml_CreatingTool'. From 'aml_Template', the role 'aml_Template317' has cardinality 0..*, and from 'aml_CreatingTool', the role 'aml_CreatingTool318' has cardinality 0..*.
+An association connects 'aml_Annotation' and 'aml_Template'. From 'aml_Annotation', the role 'aml_Annotation321' has cardinality 0..*, and from 'aml_Template', the role 'aml_Template320' has cardinality 0..*.
+An association connects 'aml_Template' and 'aml_Question'. From 'aml_Template', the role 'aml_Template323' has cardinality 0..*, and from 'aml_Question', the role 'aml_Question324' has cardinality 0..*.
+An association connects 'aml_Interval' and 'aml_Value'. From 'aml_Interval', the role 'aml_Interval327' has cardinality 0..*, and from 'aml_Value', the role 'aml_Value326' has cardinality 0..*.
+An association connects 'aml_List' and 'aml_Value'. From 'aml_List', the role 'aml_List330' has cardinality 0..*, and from 'aml_Value', the role 'aml_Value329' has cardinality 0..*.

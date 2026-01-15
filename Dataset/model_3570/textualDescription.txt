@@ -1,0 +1,136 @@
+The domain model 'expression' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'expression_SwitchExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureCall' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_NullLiteral' represents an important domain concept.
+It has one attribute: 'val', which is of type str.
+
+'expression_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_ChainExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SyntaxElement' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_FeatureCall' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_CollectionExpression' represents an important domain concept.
+It has one attribute: 'var', which is of type str.
+
+'expression_OperationCall' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_LetExpression' represents an important domain concept.
+It has one attribute: 'identifier', which is of type str.
+
+'expression_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'val', which is of type int.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_IfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_Identifier' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'cl', which is of type str.
+
+'expression_TypeSelectExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_ListLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_GlobalVarExpression' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'expression_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'val', which is of type str.
+
+'expression_RealLiteral' represents an important domain concept.
+It has one attribute: 'val', which is of type str.
+
+'expression_StringLiteral' represents an important domain concept.
+It has one attribute: 'val', which is of type str.
+
+'expression_Case' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_ConstructorCallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_SyntaxElement' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_BooleanOperation' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'expression_CastedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'expression_Expression' is a specialization of 'SyntaxElement'.
+The class 'expression_LetExpression' is a specialization of 'Expression'.
+The class 'expression_CastedExpression' is a specialization of 'Expression'.
+The class 'expression_IfExpression' is a specialization of 'Expression'.
+The class 'expression_SwitchExpression' is a specialization of 'Expression'.
+The class 'expression_Case' is a specialization of 'SyntaxElement'.
+The class 'expression_OperationCall' is a specialization of 'Expression'.
+The class 'expression_OperationCall' is a specialization of 'FeatureCall'.
+The class 'expression_Literal' is a specialization of 'Expression'.
+The class 'expression_BooleanLiteral' is a specialization of 'Literal'.
+The class 'expression_IntegerLiteral' is a specialization of 'Literal'.
+The class 'expression_NullLiteral' is a specialization of 'Literal'.
+The class 'expression_RealLiteral' is a specialization of 'Literal'.
+The class 'expression_StringLiteral' is a specialization of 'Literal'.
+The class 'expression_GlobalVarExpression' is a specialization of 'Expression'.
+The class 'expression_FeatureCall' is a specialization of 'Expression'.
+The class 'expression_ListLiteral' is a specialization of 'Expression'.
+The class 'expression_ConstructorCallExpression' is a specialization of 'Expression'.
+The class 'expression_TypeSelectExpression' is a specialization of 'Expression'.
+The class 'expression_TypeSelectExpression' is a specialization of 'FeatureCall'.
+The class 'expression_CollectionExpression' is a specialization of 'Expression'.
+The class 'expression_CollectionExpression' is a specialization of 'FeatureCall'.
+The class 'expression_Identifier' is a specialization of 'SyntaxElement'.
+The class 'expression_ChainExpression' is a specialization of 'Expression'.
+The class 'expression_BooleanOperation' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'expression_LetExpression' and 'expression_Expression'. From 'expression_LetExpression', the role 'expression_LetExpression' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression' has cardinality 0..*.
+An association connects 'expression_Expression' and 'expression_LetExpression'. From 'expression_Expression', the role 'expression_Expression3' has cardinality 0..*, and from 'expression_LetExpression', the role 'expression_LetExpression2' has cardinality 0..*.
+An association connects 'expression_CastedExpression' and 'expression_Identifier'. From 'expression_CastedExpression', the role 'expression_CastedExpression' has cardinality 0..*, and from 'expression_Identifier', the role 'expression_Identifier' has cardinality 0..*.
+An association connects 'expression_CastedExpression' and 'expression_Expression'. From 'expression_CastedExpression', the role 'expression_CastedExpression6' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression7' has cardinality 0..*.
+An association connects 'expression_Expression' and 'expression_IfExpression'. From 'expression_Expression', the role 'expression_Expression9' has cardinality 0..*, and from 'expression_IfExpression', the role 'expression_IfExpression' has cardinality 0..*.
+An association connects 'expression_IfExpression' and 'expression_Expression'. From 'expression_IfExpression', the role 'expression_IfExpression11' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression12' has cardinality 0..*.
+An association connects 'expression_Expression' and 'expression_IfExpression'. From 'expression_Expression', the role 'expression_Expression15' has cardinality 0..*, and from 'expression_IfExpression', the role 'expression_IfExpression14' has cardinality 0..*.
+An association connects 'expression_Expression' and 'expression_SwitchExpression'. From 'expression_Expression', the role 'expression_Expression17' has cardinality 0..*, and from 'expression_SwitchExpression', the role 'expression_SwitchExpression' has cardinality 0..*.
+An association connects 'expression_SwitchExpression' and 'expression_Case'. From 'expression_SwitchExpression', the role 'expression_SwitchExpression19' has cardinality 0..*, and from 'expression_Case', the role 'expression_Case' has cardinality 0..*.
+An association connects 'expression_Expression' and 'expression_SwitchExpression'. From 'expression_Expression', the role 'expression_Expression22' has cardinality 0..*, and from 'expression_SwitchExpression', the role 'expression_SwitchExpression21' has cardinality 0..*.
+An association connects 'expression_Case' and 'expression_Expression'. From 'expression_Case', the role 'expression_Case24' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression25' has cardinality 0..*.
+An association connects 'expression_Case' and 'expression_Expression'. From 'expression_Case', the role 'expression_Case27' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression28' has cardinality 0..*.
+An association connects 'expression_Expression' and 'expression_OperationCall'. From 'expression_Expression', the role 'expression_Expression30' has cardinality 0..*, and from 'expression_OperationCall', the role 'expression_OperationCall' has cardinality 0..*.
+An association connects 'expression_FeatureCall' and 'expression_Expression'. From 'expression_FeatureCall', the role 'expression_FeatureCall' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression32' has cardinality 0..*.
+An association connects 'expression_FeatureCall' and 'expression_Identifier'. From 'expression_FeatureCall', the role 'expression_FeatureCall34' has cardinality 0..*, and from 'expression_Identifier', the role 'expression_Identifier35' has cardinality 0..*.
+An association connects 'expression_Expression' and 'expression_ListLiteral'. From 'expression_Expression', the role 'expression_Expression37' has cardinality 0..*, and from 'expression_ListLiteral', the role 'expression_ListLiteral' has cardinality 0..*.
+An association connects 'expression_Identifier' and 'expression_ConstructorCallExpression'. From 'expression_Identifier', the role 'expression_Identifier39' has cardinality 0..*, and from 'expression_ConstructorCallExpression', the role 'expression_ConstructorCallExpression' has cardinality 0..*.
+An association connects 'expression_CollectionExpression' and 'expression_Expression'. From 'expression_CollectionExpression', the role 'expression_CollectionExpression' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression41' has cardinality 0..*.
+An association connects 'expression_Identifier' and 'expression_Identifier'. From 'expression_Identifier', the role 'expression_Identifier42' has cardinality 0..*, and from 'expression_Identifier', the role 'expression_Identifier44' has cardinality 0..*.
+An association connects 'expression_ChainExpression' and 'expression_Expression'. From 'expression_ChainExpression', the role 'expression_ChainExpression' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression46' has cardinality 0..*.
+An association connects 'expression_Expression' and 'expression_ChainExpression'. From 'expression_Expression', the role 'expression_Expression49' has cardinality 0..*, and from 'expression_ChainExpression', the role 'expression_ChainExpression48' has cardinality 0..*.
+An association connects 'expression_BooleanOperation' and 'expression_Expression'. From 'expression_BooleanOperation', the role 'expression_BooleanOperation' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression51' has cardinality 0..*.
+An association connects 'expression_Expression' and 'expression_BooleanOperation'. From 'expression_Expression', the role 'expression_Expression54' has cardinality 0..*, and from 'expression_BooleanOperation', the role 'expression_BooleanOperation53' has cardinality 0..*.

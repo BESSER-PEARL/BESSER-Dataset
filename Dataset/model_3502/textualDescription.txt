@@ -1,0 +1,855 @@
+The domain model 'delphi' describes the core structural elements and their relationships within the system.
+
+The model defines 170 main class(es).
+
+'delphi_packageDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_designatorSubPart' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_constSection' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_usesClause' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_RecordConstExp' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_exportsStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_ident' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_objectType' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_arrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_classField' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'delphi_directive' represents an important domain concept.
+It has one attribute: 'dir', which is of type str.
+
+'delphi_classFieldList' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_procedureHeading' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_simpleFactor' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_varDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_classHeritage' represents an important domain concept.
+It does not declare any attributes.
+
+'structStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'pointerType' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_mainRule' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_classRefType' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_initSection' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_simpleExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_designatorPart' represents an important domain concept.
+It has the following attributes: 'id2', which is of type str; 'id', which is of type str.
+
+'delphi_term' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_fileType' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_classProperty' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'type' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_recVariant' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_addOp' represents an important domain concept.
+It does not declare any attributes.
+
+'restrictedType' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_ConstExp' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_classType' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'delphi_classMethodList' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_recType' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_loopStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_raiseStmt' represents an important domain concept.
+It has the following attributes: 'at', which is of type str; 'raise', which is of type str.
+
+'delphi_parameterList' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_programBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_unlabelledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_CSTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_functionHeading' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_conditionalStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_fieldList' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_stmtList' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_statement' represents an important domain concept.
+It has one attribute: 'labelId', which is of type str.
+
+'delphi_callStmnt' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_MultipleConstExp' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_inheritedStamnt' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_ordIdent' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_propertyParameterList' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_constExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_MultipleId' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'methodHeading' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_interfaceType' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_factor' represents an important domain concept.
+It has the following attributes: 'string', which is of type str; 'number', which is of type str.
+
+'delphi_forStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_exportedHeading' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_restrictedType' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_containsClause' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_objFieldList' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_assignmentStmnt' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'delphi_declSection' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_relExp' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_exprList' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_interfaceSection' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_methodList' represents an important domain concept.
+It does not declare any attributes.
+
+'constExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_variantType' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_simpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_caseStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_constantDecl' represents an important domain concept.
+It has one attribute: 'port', which is of type str.
+
+'objFieldList' represents an important domain concept.
+It does not declare any attributes.
+
+'file' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_fieldDecl' represents an important domain concept.
+It has one attribute: 'port', which is of type str.
+
+'delphi_parameterSimple' represents an important domain concept.
+It does not declare any attributes.
+
+'loopStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_objHeritage' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_stringType' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_whileStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_unitId' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'delphi_withStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_designator' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_caseLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_enumeratedType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_file' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_program' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_propertyList' represents an important domain concept.
+It has one attribute: 'port', which is of type str.
+
+'delphi_typeId' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_constructorHeading' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_classMethod' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'ident' represents an important domain concept.
+It does not declare any attributes.
+
+'expression' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_addExp' represents an important domain concept.
+It does not declare any attributes.
+
+'addOp' represents an important domain concept.
+It does not declare any attributes.
+
+'declSection' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_strucType' represents an important domain concept.
+It has one attribute: 'port', which is of type str.
+
+'delphi_labelDeclSection' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'delphi_assemblerStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_formalParm' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_block' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_recordFieldConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_pointerType' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_procedureDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_variantSection' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_multExp' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_ReservedId' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_setConstructor' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_ifStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_typeSection' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_relOp' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'procedureDeclSection' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_identList' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_arrayConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_functionDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_recordConstExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_typeDecl' represents an important domain concept.
+It has one attribute: 'port', which is of type str.
+
+'delphi_tryStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_type' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_interfaceHeritage' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_formalParameters' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_realType' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_simpleStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_library' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_Visitable' represents an important domain concept.
+It does not declare any attributes.
+
+'CSTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_unit' represents an important domain concept.
+It has one attribute: 'port', which is of type str.
+
+'delphi_setElement' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_reservedWord' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'delphi_procedureDeclSection' represents an important domain concept.
+It has one attribute: 'port', which is of type str.
+
+'delphi_enumeratedTypeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_caseSelector' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_methodHeading' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_propertySpecifiers' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_adOp' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'delphi_interfaceDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'conditionalStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_classPropertyList' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_requiresClause' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_recordConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_repeatStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_propertyInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_varSection' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_MineID' represents an important domain concept.
+It has the following attributes: 'second', which is of type str; 'first', which is of type str.
+
+'delphi_compoundStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_exportsItem' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_structStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_destructorHeading' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_mulOp' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'delphi_qualId' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_gotoStmnt' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'strucType' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_ordinalType' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_setType' represents an important domain concept.
+It does not declare any attributes.
+
+'ordinalType' represents an important domain concept.
+It does not declare any attributes.
+
+'unlabelledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'factor' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_exceptionBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_implementationSection' represents an important domain concept.
+It does not declare any attributes.
+
+'classHeritage' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_subrangeType' represents an important domain concept.
+It does not declare any attributes.
+
+'term' represents an important domain concept.
+It does not declare any attributes.
+
+'interfaceDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_procedureType' represents an important domain concept.
+It does not declare any attributes.
+
+'delphi_typedConstant' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'delphi_mainRule' is a specialization of 'CSTrace'.
+The class 'delphi_file' is a specialization of 'CSTrace'.
+The class 'delphi_program' is a specialization of 'file'.
+The class 'delphi_unit' is a specialization of 'file'.
+The class 'delphi_packageDecl' is a specialization of 'file'.
+The class 'delphi_library' is a specialization of 'file'.
+The class 'delphi_programBlock' is a specialization of 'CSTrace'.
+The class 'delphi_usesClause' is a specialization of 'CSTrace'.
+The class 'delphi_interfaceSection' is a specialization of 'CSTrace'.
+The class 'delphi_interfaceDecl' is a specialization of 'CSTrace'.
+The class 'delphi_exportedHeading' is a specialization of 'interfaceDecl'.
+The class 'delphi_implementationSection' is a specialization of 'CSTrace'.
+The class 'delphi_block' is a specialization of 'CSTrace'.
+The class 'delphi_exportsItem' is a specialization of 'CSTrace'.
+The class 'delphi_exportsStmt' is a specialization of 'CSTrace'.
+The class 'delphi_declSection' is a specialization of 'CSTrace'.
+The class 'delphi_labelDeclSection' is a specialization of 'declSection'.
+The class 'delphi_constSection' is a specialization of 'interfaceDecl'.
+The class 'delphi_constSection' is a specialization of 'declSection'.
+The class 'delphi_constantDecl' is a specialization of 'CSTrace'.
+The class 'delphi_typeSection' is a specialization of 'interfaceDecl'.
+The class 'delphi_typeSection' is a specialization of 'declSection'.
+The class 'delphi_typeDecl' is a specialization of 'CSTrace'.
+The class 'delphi_typedConstant' is a specialization of 'CSTrace'.
+The class 'delphi_arrayConstant' is a specialization of 'CSTrace'.
+The class 'delphi_recordConstant' is a specialization of 'CSTrace'.
+The class 'delphi_recordFieldConstant' is a specialization of 'CSTrace'.
+The class 'delphi_type' is a specialization of 'CSTrace'.
+The class 'delphi_restrictedType' is a specialization of 'CSTrace'.
+The class 'delphi_classRefType' is a specialization of 'type'.
+The class 'delphi_simpleType' is a specialization of 'type'.
+The class 'delphi_realType' is a specialization of 'simpleType'.
+The class 'delphi_ordinalType' is a specialization of 'simpleType'.
+The class 'delphi_ordIdent' is a specialization of 'ordinalType'.
+The class 'delphi_variantType' is a specialization of 'type'.
+The class 'delphi_subrangeType' is a specialization of 'ordinalType'.
+The class 'delphi_enumeratedType' is a specialization of 'ordinalType'.
+The class 'delphi_enumeratedTypeElement' is a specialization of 'CSTrace'.
+The class 'delphi_stringType' is a specialization of 'type'.
+The class 'delphi_strucType' is a specialization of 'type'.
+The class 'delphi_arrayType' is a specialization of 'strucType'.
+The class 'delphi_recType' is a specialization of 'strucType'.
+The class 'delphi_fieldList' is a specialization of 'CSTrace'.
+The class 'delphi_fieldDecl' is a specialization of 'CSTrace'.
+The class 'delphi_variantSection' is a specialization of 'CSTrace'.
+The class 'delphi_recVariant' is a specialization of 'CSTrace'.
+The class 'delphi_setType' is a specialization of 'strucType'.
+The class 'delphi_fileType' is a specialization of 'strucType'.
+The class 'delphi_pointerType' is a specialization of 'type'.
+The class 'delphi_procedureType' is a specialization of 'type'.
+The class 'delphi_varSection' is a specialization of 'interfaceDecl'.
+The class 'delphi_varSection' is a specialization of 'declSection'.
+The class 'delphi_varDecl' is a specialization of 'CSTrace'.
+The class 'delphi_expression' is a specialization of 'CSTrace'.
+The class 'delphi_simpleExpression' is a specialization of 'expression'.
+The class 'delphi_term' is a specialization of 'simpleExpression'.
+The class 'delphi_factor' is a specialization of 'term'.
+The class 'delphi_relOp' is a specialization of 'CSTrace'.
+The class 'delphi_addOp' is a specialization of 'CSTrace'.
+The class 'delphi_mulOp' is a specialization of 'CSTrace'.
+The class 'delphi_designator' is a specialization of 'CSTrace'.
+The class 'delphi_designatorSubPart' is a specialization of 'CSTrace'.
+The class 'delphi_designatorPart' is a specialization of 'CSTrace'.
+The class 'delphi_setConstructor' is a specialization of 'CSTrace'.
+The class 'delphi_setElement' is a specialization of 'CSTrace'.
+The class 'delphi_exprList' is a specialization of 'CSTrace'.
+The class 'delphi_stmtList' is a specialization of 'CSTrace'.
+The class 'delphi_statement' is a specialization of 'CSTrace'.
+The class 'delphi_unlabelledStatement' is a specialization of 'CSTrace'.
+The class 'delphi_simpleStatement' is a specialization of 'unlabelledStatement'.
+The class 'delphi_structStmt' is a specialization of 'unlabelledStatement'.
+The class 'delphi_compoundStmt' is a specialization of 'structStmt'.
+The class 'delphi_conditionalStmt' is a specialization of 'structStmt'.
+The class 'delphi_ifStmt' is a specialization of 'conditionalStmt'.
+The class 'delphi_caseStmt' is a specialization of 'conditionalStmt'.
+The class 'delphi_caseSelector' is a specialization of 'CSTrace'.
+The class 'delphi_caseLabel' is a specialization of 'CSTrace'.
+The class 'delphi_loopStmt' is a specialization of 'structStmt'.
+The class 'delphi_repeatStmt' is a specialization of 'loopStmt'.
+The class 'delphi_whileStmt' is a specialization of 'loopStmt'.
+The class 'delphi_forStmt' is a specialization of 'loopStmt'.
+The class 'delphi_withStmt' is a specialization of 'structStmt'.
+The class 'delphi_tryStmt' is a specialization of 'structStmt'.
+The class 'delphi_exceptionBlock' is a specialization of 'CSTrace'.
+The class 'delphi_raiseStmt' is a specialization of 'structStmt'.
+The class 'delphi_assemblerStmt' is a specialization of 'structStmt'.
+The class 'delphi_procedureDeclSection' is a specialization of 'declSection'.
+The class 'delphi_procedureDecl' is a specialization of 'procedureDeclSection'.
+The class 'delphi_functionDecl' is a specialization of 'procedureDeclSection'.
+The class 'delphi_functionHeading' is a specialization of 'methodHeading'.
+The class 'delphi_procedureHeading' is a specialization of 'methodHeading'.
+The class 'delphi_formalParameters' is a specialization of 'CSTrace'.
+The class 'delphi_formalParm' is a specialization of 'CSTrace'.
+The class 'delphi_parameter' is a specialization of 'CSTrace'.
+The class 'delphi_directive' is a specialization of 'CSTrace'.
+The class 'delphi_objectType' is a specialization of 'restrictedType'.
+The class 'delphi_objHeritage' is a specialization of 'CSTrace'.
+The class 'delphi_methodList' is a specialization of 'CSTrace'.
+The class 'delphi_methodHeading' is a specialization of 'CSTrace'.
+The class 'delphi_constructorHeading' is a specialization of 'methodHeading'.
+The class 'delphi_destructorHeading' is a specialization of 'methodHeading'.
+The class 'delphi_objFieldList' is a specialization of 'CSTrace'.
+The class 'delphi_initSection' is a specialization of 'CSTrace'.
+The class 'delphi_classType' is a specialization of 'restrictedType'.
+The class 'delphi_classHeritage' is a specialization of 'CSTrace'.
+The class 'delphi_classFieldList' is a specialization of 'CSTrace'.
+The class 'delphi_classField' is a specialization of 'CSTrace'.
+The class 'delphi_classMethodList' is a specialization of 'CSTrace'.
+The class 'delphi_classMethod' is a specialization of 'CSTrace'.
+The class 'delphi_classPropertyList' is a specialization of 'CSTrace'.
+The class 'delphi_classProperty' is a specialization of 'CSTrace'.
+The class 'delphi_propertyList' is a specialization of 'CSTrace'.
+The class 'delphi_propertyInterface' is a specialization of 'CSTrace'.
+The class 'delphi_propertyParameterList' is a specialization of 'CSTrace'.
+The class 'delphi_propertySpecifiers' is a specialization of 'CSTrace'.
+The class 'delphi_interfaceType' is a specialization of 'restrictedType'.
+The class 'delphi_interfaceHeritage' is a specialization of 'CSTrace'.
+The class 'delphi_requiresClause' is a specialization of 'CSTrace'.
+The class 'delphi_containsClause' is a specialization of 'CSTrace'.
+The class 'delphi_identList' is a specialization of 'objFieldList'.
+The class 'delphi_identList' is a specialization of 'classHeritage'.
+The class 'delphi_qualId' is a specialization of 'CSTrace'.
+The class 'delphi_typeId' is a specialization of 'type'.
+The class 'delphi_typeId' is a specialization of 'pointerType'.
+The class 'delphi_ident' is a specialization of 'CSTrace'.
+The class 'delphi_reservedWord' is a specialization of 'CSTrace'.
+The class 'delphi_constExpr' is a specialization of 'CSTrace'.
+The class 'delphi_recordConstExpr' is a specialization of 'CSTrace'.
+The class 'delphi_unitId' is a specialization of 'CSTrace'.
+The class 'delphi_relExp' is a specialization of 'expression'.
+The class 'delphi_addExp' is a specialization of 'simpleExpression'.
+The class 'delphi_multExp' is a specialization of 'term'.
+The class 'delphi_simpleFactor' is a specialization of 'factor'.
+The class 'delphi_adOp' is a specialization of 'addOp'.
+The class 'delphi_assignmentStmnt' is a specialization of 'simpleStatement'.
+The class 'delphi_callStmnt' is a specialization of 'simpleStatement'.
+The class 'delphi_inheritedStamnt' is a specialization of 'simpleStatement'.
+The class 'delphi_gotoStmnt' is a specialization of 'simpleStatement'.
+The class 'delphi_parameterList' is a specialization of 'parameter'.
+The class 'delphi_parameterSimple' is a specialization of 'parameter'.
+The class 'delphi_MultipleId' is a specialization of 'ident'.
+The class 'delphi_ReservedId' is a specialization of 'ident'.
+The class 'delphi_MineID' is a specialization of 'ident'.
+The class 'delphi_ConstExp' is a specialization of 'constExpr'.
+The class 'delphi_MultipleConstExp' is a specialization of 'constExpr'.
+The class 'delphi_RecordConstExp' is a specialization of 'constExpr'.
+
+Relationships between classes are modeled using associations.
+An association connects 'delphi_mainRule' and 'delphi_file'. From 'delphi_mainRule', the role 'delphi_mainRule' has cardinality 0..*, and from 'delphi_file', the role 'delphi_file' has cardinality 0..*.
+An association connects 'delphi_ident' and 'delphi_file'. From 'delphi_ident', the role 'delphi_ident' has cardinality 0..*, and from 'delphi_file', the role 'delphi_file2' has cardinality 0..*.
+An association connects 'delphi_identList' and 'delphi_program'. From 'delphi_identList', the role 'delphi_identList' has cardinality 0..*, and from 'delphi_program', the role 'delphi_program' has cardinality 0..*.
+An association connects 'delphi_programBlock' and 'delphi_program'. From 'delphi_programBlock', the role 'delphi_programBlock' has cardinality 0..*, and from 'delphi_program', the role 'delphi_program5' has cardinality 0..*.
+An association connects 'delphi_interfaceSection' and 'delphi_unit'. From 'delphi_interfaceSection', the role 'delphi_interfaceSection' has cardinality 0..*, and from 'delphi_unit', the role 'delphi_unit' has cardinality 0..*.
+An association connects 'delphi_implementationSection' and 'delphi_unit'. From 'delphi_implementationSection', the role 'delphi_implementationSection' has cardinality 0..*, and from 'delphi_unit', the role 'delphi_unit8' has cardinality 0..*.
+An association connects 'delphi_initSection' and 'delphi_unit'. From 'delphi_initSection', the role 'delphi_initSection' has cardinality 0..*, and from 'delphi_unit', the role 'delphi_unit10' has cardinality 0..*.
+An association connects 'delphi_packageDecl' and 'delphi_requiresClause'. From 'delphi_packageDecl', the role 'delphi_packageDecl' has cardinality 0..*, and from 'delphi_requiresClause', the role 'delphi_requiresClause' has cardinality 0..*.
+An association connects 'delphi_containsClause' and 'delphi_packageDecl'. From 'delphi_containsClause', the role 'delphi_containsClause' has cardinality 0..*, and from 'delphi_packageDecl', the role 'delphi_packageDecl13' has cardinality 0..*.
+An association connects 'delphi_library' and 'delphi_programBlock'. From 'delphi_library', the role 'delphi_library' has cardinality 0..*, and from 'delphi_programBlock', the role 'delphi_programBlock15' has cardinality 0..*.
+An association connects 'delphi_programBlock' and 'delphi_usesClause'. From 'delphi_programBlock', the role 'delphi_programBlock17' has cardinality 0..*, and from 'delphi_usesClause', the role 'delphi_usesClause' has cardinality 0..*.
+An association connects 'delphi_programBlock' and 'delphi_block'. From 'delphi_programBlock', the role 'delphi_programBlock19' has cardinality 0..*, and from 'delphi_block', the role 'delphi_block' has cardinality 0..*.
+An association connects 'delphi_usesClause' and 'delphi_identList'. From 'delphi_usesClause', the role 'delphi_usesClause21' has cardinality 0..*, and from 'delphi_identList', the role 'delphi_identList22' has cardinality 0..*.
+An association connects 'delphi_interfaceSection' and 'delphi_usesClause'. From 'delphi_interfaceSection', the role 'delphi_interfaceSection24' has cardinality 0..*, and from 'delphi_usesClause', the role 'delphi_usesClause25' has cardinality 0..*.
+An association connects 'delphi_interfaceSection' and 'delphi_interfaceDecl'. From 'delphi_interfaceSection', the role 'delphi_interfaceSection27' has cardinality 0..*, and from 'delphi_interfaceDecl', the role 'delphi_interfaceDecl' has cardinality 0..*.
+An association connects 'delphi_exportedHeading' and 'delphi_procedureHeading'. From 'delphi_exportedHeading', the role 'delphi_exportedHeading' has cardinality 0..*, and from 'delphi_procedureHeading', the role 'delphi_procedureHeading' has cardinality 0..*.
+An association connects 'delphi_directive' and 'delphi_exportedHeading'. From 'delphi_directive', the role 'delphi_directive' has cardinality 0..*, and from 'delphi_exportedHeading', the role 'delphi_exportedHeading30' has cardinality 0..*.
+An association connects 'delphi_exportedHeading' and 'delphi_functionHeading'. From 'delphi_exportedHeading', the role 'delphi_exportedHeading32' has cardinality 0..*, and from 'delphi_functionHeading', the role 'delphi_functionHeading' has cardinality 0..*.
+An association connects 'delphi_implementationSection' and 'delphi_usesClause'. From 'delphi_implementationSection', the role 'delphi_implementationSection34' has cardinality 0..*, and from 'delphi_usesClause', the role 'delphi_usesClause35' has cardinality 0..*.
+An association connects 'delphi_implementationSection' and 'delphi_declSection'. From 'delphi_implementationSection', the role 'delphi_implementationSection37' has cardinality 0..*, and from 'delphi_declSection', the role 'delphi_declSection' has cardinality 0..*.
+An association connects 'delphi_exportsStmt' and 'delphi_implementationSection'. From 'delphi_exportsStmt', the role 'delphi_exportsStmt' has cardinality 0..*, and from 'delphi_implementationSection', the role 'delphi_implementationSection39' has cardinality 0..*.
+An association connects 'delphi_declSection' and 'delphi_block'. From 'delphi_declSection', the role 'delphi_declSection42' has cardinality 0..*, and from 'delphi_block', the role 'delphi_block41' has cardinality 0..*.
+An association connects 'delphi_exportsStmt' and 'delphi_block'. From 'delphi_exportsStmt', the role 'delphi_exportsStmt45' has cardinality 0..*, and from 'delphi_block', the role 'delphi_block44' has cardinality 0..*.
+An association connects 'delphi_block' and 'delphi_compoundStmt'. From 'delphi_block', the role 'delphi_block47' has cardinality 0..*, and from 'delphi_compoundStmt', the role 'delphi_compoundStmt' has cardinality 0..*.
+An association connects 'delphi_ident' and 'delphi_exportsItem'. From 'delphi_ident', the role 'delphi_ident49' has cardinality 0..*, and from 'delphi_exportsItem', the role 'delphi_exportsItem' has cardinality 0..*.
+An association connects 'delphi_exportsItem' and 'delphi_constExpr'. From 'delphi_exportsItem', the role 'delphi_exportsItem51' has cardinality 0..*, and from 'delphi_constExpr', the role 'delphi_constExpr' has cardinality 0..*.
+An association connects 'delphi_exportsStmt' and 'delphi_exportsItem'. From 'delphi_exportsStmt', the role 'delphi_exportsStmt53' has cardinality 0..*, and from 'delphi_exportsItem', the role 'delphi_exportsItem54' has cardinality 0..*.
+An association connects 'delphi_constantDecl' and 'delphi_constSection'. From 'delphi_constantDecl', the role 'delphi_constantDecl' has cardinality 0..*, and from 'delphi_constSection', the role 'delphi_constSection' has cardinality 0..*.
+An association connects 'delphi_constantDecl' and 'delphi_ident'. From 'delphi_constantDecl', the role 'delphi_constantDecl57' has cardinality 0..*, and from 'delphi_ident', the role 'delphi_ident58' has cardinality 0..*.
+An association connects 'delphi_constExpr' and 'delphi_constantDecl'. From 'delphi_constExpr', the role 'delphi_constExpr61' has cardinality 0..*, and from 'delphi_constantDecl', the role 'delphi_constantDecl60' has cardinality 0..*.
+An association connects 'delphi_constantDecl' and 'delphi_typeId'. From 'delphi_constantDecl', the role 'delphi_constantDecl63' has cardinality 0..*, and from 'delphi_typeId', the role 'delphi_typeId' has cardinality 0..*.
+An association connects 'delphi_constantDecl' and 'delphi_typedConstant'. From 'delphi_constantDecl', the role 'delphi_constantDecl65' has cardinality 0..*, and from 'delphi_typedConstant', the role 'delphi_typedConstant' has cardinality 0..*.
+An association connects 'delphi_typeSection' and 'delphi_typeDecl'. From 'delphi_typeSection', the role 'delphi_typeSection' has cardinality 0..*, and from 'delphi_typeDecl', the role 'delphi_typeDecl' has cardinality 0..*.
+An association connects 'delphi_typeDecl' and 'delphi_ident'. From 'delphi_typeDecl', the role 'delphi_typeDecl68' has cardinality 0..*, and from 'delphi_ident', the role 'delphi_ident69' has cardinality 0..*.
+An association connects 'delphi_type' and 'delphi_typeDecl'. From 'delphi_type', the role 'delphi_type' has cardinality 0..*, and from 'delphi_typeDecl', the role 'delphi_typeDecl71' has cardinality 0..*.
+An association connects 'delphi_typeDecl' and 'delphi_restrictedType'. From 'delphi_typeDecl', the role 'delphi_typeDecl73' has cardinality 0..*, and from 'delphi_restrictedType', the role 'delphi_restrictedType' has cardinality 0..*.
+An association connects 'delphi_constExpr' and 'delphi_typedConstant'. From 'delphi_constExpr', the role 'delphi_constExpr76' has cardinality 0..*, and from 'delphi_typedConstant', the role 'delphi_typedConstant75' has cardinality 0..*.
+An association connects 'delphi_typedConstant' and 'delphi_arrayConstant'. From 'delphi_typedConstant', the role 'delphi_typedConstant78' has cardinality 0..*, and from 'delphi_arrayConstant', the role 'delphi_arrayConstant' has cardinality 0..*.
+An association connects 'delphi_recordConstant' and 'delphi_typedConstant'. From 'delphi_recordConstant', the role 'delphi_recordConstant' has cardinality 0..*, and from 'delphi_typedConstant', the role 'delphi_typedConstant80' has cardinality 0..*.
+An association connects 'delphi_typedConstant' and 'delphi_arrayConstant'. From 'delphi_typedConstant', the role 'delphi_typedConstant83' has cardinality 0..*, and from 'delphi_arrayConstant', the role 'delphi_arrayConstant82' has cardinality 0..*.
+An association connects 'delphi_recordFieldConstant' and 'delphi_recordConstant'. From 'delphi_recordFieldConstant', the role 'delphi_recordFieldConstant' has cardinality 0..*, and from 'delphi_recordConstant', the role 'delphi_recordConstant85' has cardinality 0..*.
+An association connects 'delphi_recordFieldConstant' and 'delphi_ident'. From 'delphi_recordFieldConstant', the role 'delphi_recordFieldConstant87' has cardinality 0..*, and from 'delphi_ident', the role 'delphi_ident88' has cardinality 0..*.
+An association connects 'delphi_recordFieldConstant' and 'delphi_typedConstant'. From 'delphi_recordFieldConstant', the role 'delphi_recordFieldConstant90' has cardinality 0..*, and from 'delphi_typedConstant', the role 'delphi_typedConstant91' has cardinality 0..*.
+An association connects 'delphi_classRefType' and 'delphi_typeId'. From 'delphi_classRefType', the role 'delphi_classRefType' has cardinality 0..*, and from 'delphi_typeId', the role 'delphi_typeId93' has cardinality 0..*.
+An association connects 'delphi_subrangeType' and 'delphi_constExpr'. From 'delphi_subrangeType', the role 'delphi_subrangeType' has cardinality 0..*, and from 'delphi_constExpr', the role 'delphi_constExpr95' has cardinality 0..*.
+An association connects 'delphi_constExpr' and 'delphi_subrangeType'. From 'delphi_constExpr', the role 'delphi_constExpr98' has cardinality 0..*, and from 'delphi_subrangeType', the role 'delphi_subrangeType97' has cardinality 0..*.
+An association connects 'delphi_enumeratedTypeElement' and 'delphi_enumeratedType'. From 'delphi_enumeratedTypeElement', the role 'delphi_enumeratedTypeElement' has cardinality 0..*, and from 'delphi_enumeratedType', the role 'delphi_enumeratedType' has cardinality 0..*.
+An association connects 'delphi_ident' and 'delphi_enumeratedTypeElement'. From 'delphi_ident', the role 'delphi_ident102' has cardinality 0..*, and from 'delphi_enumeratedTypeElement', the role 'delphi_enumeratedTypeElement101' has cardinality 0..*.
+An association connects 'delphi_constExpr' and 'delphi_enumeratedTypeElement'. From 'delphi_constExpr', the role 'delphi_constExpr105' has cardinality 0..*, and from 'delphi_enumeratedTypeElement', the role 'delphi_enumeratedTypeElement104' has cardinality 0..*.
+An association connects 'delphi_stringType' and 'delphi_constExpr'. From 'delphi_stringType', the role 'delphi_stringType' has cardinality 0..*, and from 'delphi_constExpr', the role 'delphi_constExpr107' has cardinality 0..*.
+An association connects 'delphi_ordinalType' and 'delphi_arrayType'. From 'delphi_ordinalType', the role 'delphi_ordinalType' has cardinality 0..*, and from 'delphi_arrayType', the role 'delphi_arrayType' has cardinality 0..*.
+An association connects 'delphi_ordinalType' and 'delphi_arrayType'. From 'delphi_ordinalType', the role 'delphi_ordinalType111' has cardinality 0..*, and from 'delphi_arrayType', the role 'delphi_arrayType110' has cardinality 0..*.
+An association connects 'delphi_type' and 'delphi_arrayType'. From 'delphi_type', the role 'delphi_type114' has cardinality 0..*, and from 'delphi_arrayType', the role 'delphi_arrayType113' has cardinality 0..*.
+An association connects 'delphi_recType' and 'delphi_fieldList'. From 'delphi_recType', the role 'delphi_recType' has cardinality 0..*, and from 'delphi_fieldList', the role 'delphi_fieldList' has cardinality 0..*.
+An association connects 'delphi_fieldList' and 'delphi_fieldDecl'. From 'delphi_fieldList', the role 'delphi_fieldList117' has cardinality 0..*, and from 'delphi_fieldDecl', the role 'delphi_fieldDecl' has cardinality 0..*.
+An association connects 'delphi_variantSection' and 'delphi_fieldList'. From 'delphi_variantSection', the role 'delphi_variantSection' has cardinality 0..*, and from 'delphi_fieldList', the role 'delphi_fieldList119' has cardinality 0..*.
+An association connects 'delphi_identList' and 'delphi_fieldDecl'. From 'delphi_identList', the role 'delphi_identList122' has cardinality 0..*, and from 'delphi_fieldDecl', the role 'delphi_fieldDecl121' has cardinality 0..*.
+An association connects 'delphi_fieldDecl' and 'delphi_type'. From 'delphi_fieldDecl', the role 'delphi_fieldDecl124' has cardinality 0..*, and from 'delphi_type', the role 'delphi_type125' has cardinality 0..*.
+An association connects 'delphi_variantSection' and 'delphi_ident'. From 'delphi_variantSection', the role 'delphi_variantSection127' has cardinality 0..*, and from 'delphi_ident', the role 'delphi_ident128' has cardinality 0..*.
+An association connects 'delphi_typeId' and 'delphi_variantSection'. From 'delphi_typeId', the role 'delphi_typeId131' has cardinality 0..*, and from 'delphi_variantSection', the role 'delphi_variantSection130' has cardinality 0..*.
+An association connects 'delphi_variantSection' and 'delphi_recVariant'. From 'delphi_variantSection', the role 'delphi_variantSection133' has cardinality 0..*, and from 'delphi_recVariant', the role 'delphi_recVariant' has cardinality 0..*.
+An association connects 'delphi_constExpr' and 'delphi_recVariant'. From 'delphi_constExpr', the role 'delphi_constExpr136' has cardinality 0..*, and from 'delphi_recVariant', the role 'delphi_recVariant135' has cardinality 0..*.
+An association connects 'delphi_fieldList' and 'delphi_recVariant'. From 'delphi_fieldList', the role 'delphi_fieldList139' has cardinality 0..*, and from 'delphi_recVariant', the role 'delphi_recVariant138' has cardinality 0..*.
+An association connects 'delphi_ordinalType' and 'delphi_setType'. From 'delphi_ordinalType', the role 'delphi_ordinalType141' has cardinality 0..*, and from 'delphi_setType', the role 'delphi_setType' has cardinality 0..*.
+An association connects 'delphi_fileType' and 'delphi_typeId'. From 'delphi_fileType', the role 'delphi_fileType' has cardinality 0..*, and from 'delphi_typeId', the role 'delphi_typeId143' has cardinality 0..*.
+An association connects 'delphi_procedureType' and 'delphi_procedureHeading'. From 'delphi_procedureType', the role 'delphi_procedureType' has cardinality 0..*, and from 'delphi_procedureHeading', the role 'delphi_procedureHeading145' has cardinality 0..*.
+An association connects 'delphi_procedureType' and 'delphi_functionHeading'. From 'delphi_procedureType', the role 'delphi_procedureType147' has cardinality 0..*, and from 'delphi_functionHeading', the role 'delphi_functionHeading148' has cardinality 0..*.
+An association connects 'delphi_varSection' and 'delphi_varDecl'. From 'delphi_varSection', the role 'delphi_varSection' has cardinality 0..*, and from 'delphi_varDecl', the role 'delphi_varDecl' has cardinality 0..*.
+An association connects 'delphi_varDecl' and 'delphi_identList'. From 'delphi_varDecl', the role 'delphi_varDecl151' has cardinality 0..*, and from 'delphi_identList', the role 'delphi_identList152' has cardinality 0..*.
+An association connects 'delphi_varDecl' and 'delphi_type'. From 'delphi_varDecl', the role 'delphi_varDecl154' has cardinality 0..*, and from 'delphi_type', the role 'delphi_type155' has cardinality 0..*.
+An association connects 'delphi_ident' and 'delphi_varDecl'. From 'delphi_ident', the role 'delphi_ident158' has cardinality 0..*, and from 'delphi_varDecl', the role 'delphi_varDecl157' has cardinality 0..*.
+An association connects 'delphi_constExpr' and 'delphi_varDecl'. From 'delphi_constExpr', the role 'delphi_constExpr161' has cardinality 0..*, and from 'delphi_varDecl', the role 'delphi_varDecl160' has cardinality 0..*.
+An association connects 'delphi_constExpr' and 'delphi_varDecl'. From 'delphi_constExpr', the role 'delphi_constExpr164' has cardinality 0..*, and from 'delphi_varDecl', the role 'delphi_varDecl163' has cardinality 0..*.
+An association connects 'delphi_factor' and 'delphi_designator'. From 'delphi_factor', the role 'delphi_factor' has cardinality 0..*, and from 'delphi_designator', the role 'delphi_designator' has cardinality 0..*.
+An association connects 'delphi_factor' and 'delphi_exprList'. From 'delphi_factor', the role 'delphi_factor167' has cardinality 0..*, and from 'delphi_exprList', the role 'delphi_exprList' has cardinality 0..*.
+An association connects 'delphi_expression' and 'delphi_factor'. From 'delphi_expression', the role 'delphi_expression' has cardinality 0..*, and from 'delphi_factor', the role 'delphi_factor169' has cardinality 0..*.
+An association connects 'delphi_expression' and 'delphi_factor'. From 'delphi_expression', the role 'delphi_expression172' has cardinality 0..*, and from 'delphi_factor', the role 'delphi_factor171' has cardinality 0..*.
+An association connects 'delphi_factor' and 'delphi_setConstructor'. From 'delphi_factor', the role 'delphi_factor174' has cardinality 0..*, and from 'delphi_setConstructor', the role 'delphi_setConstructor' has cardinality 0..*.
+An association connects 'delphi_factor' and 'delphi_typeId'. From 'delphi_factor', the role 'delphi_factor176' has cardinality 0..*, and from 'delphi_typeId', the role 'delphi_typeId177' has cardinality 0..*.
+An association connects 'delphi_designator' and 'delphi_designatorSubPart'. From 'delphi_designator', the role 'delphi_designator179' has cardinality 0..*, and from 'delphi_designatorSubPart', the role 'delphi_designatorSubPart' has cardinality 0..*.
+An association connects 'delphi_designator' and 'delphi_designator'. From 'delphi_designator', the role 'delphi_designator180' has cardinality 0..*, and from 'delphi_designator', the role 'delphi_designator182' has cardinality 0..*.
+An association connects 'delphi_designatorSubPart' and 'delphi_designatorPart'. From 'delphi_designatorSubPart', the role 'delphi_designatorSubPart184' has cardinality 0..*, and from 'delphi_designatorPart', the role 'delphi_designatorPart' has cardinality 0..*.
+An association connects 'delphi_exprList' and 'delphi_designatorSubPart'. From 'delphi_exprList', the role 'delphi_exprList187' has cardinality 0..*, and from 'delphi_designatorSubPart', the role 'delphi_designatorSubPart186' has cardinality 0..*.
+An association connects 'delphi_reservedWord' and 'delphi_designatorPart'. From 'delphi_reservedWord', the role 'delphi_reservedWord' has cardinality 0..*, and from 'delphi_designatorPart', the role 'delphi_designatorPart189' has cardinality 0..*.
+An association connects 'delphi_setConstructor' and 'delphi_setElement'. From 'delphi_setConstructor', the role 'delphi_setConstructor191' has cardinality 0..*, and from 'delphi_setElement', the role 'delphi_setElement' has cardinality 0..*.
+An association connects 'delphi_setElement' and 'delphi_expression'. From 'delphi_setElement', the role 'delphi_setElement193' has cardinality 0..*, and from 'delphi_expression', the role 'delphi_expression194' has cardinality 0..*.
+An association connects 'delphi_expression' and 'delphi_setElement'. From 'delphi_expression', the role 'delphi_expression197' has cardinality 0..*, and from 'delphi_setElement', the role 'delphi_setElement196' has cardinality 0..*.
+An association connects 'delphi_exprList' and 'delphi_expression'. From 'delphi_exprList', the role 'delphi_exprList199' has cardinality 0..*, and from 'delphi_expression', the role 'delphi_expression200' has cardinality 0..*.
+An association connects 'delphi_stmtList' and 'delphi_statement'. From 'delphi_stmtList', the role 'delphi_stmtList' has cardinality 0..*, and from 'delphi_statement', the role 'delphi_statement' has cardinality 0..*.
+An association connects 'delphi_unlabelledStatement' and 'delphi_statement'. From 'delphi_unlabelledStatement', the role 'delphi_unlabelledStatement' has cardinality 0..*, and from 'delphi_statement', the role 'delphi_statement203' has cardinality 0..*.
+An association connects 'delphi_compoundStmt' and 'delphi_stmtList'. From 'delphi_compoundStmt', the role 'delphi_compoundStmt205' has cardinality 0..*, and from 'delphi_stmtList', the role 'delphi_stmtList206' has cardinality 0..*.
+An association connects 'delphi_ifStmt' and 'delphi_expression'. From 'delphi_ifStmt', the role 'delphi_ifStmt' has cardinality 0..*, and from 'delphi_expression', the role 'delphi_expression208' has cardinality 0..*.
+An association connects 'delphi_statement' and 'delphi_ifStmt'. From 'delphi_statement', the role 'delphi_statement211' has cardinality 0..*, and from 'delphi_ifStmt', the role 'delphi_ifStmt210' has cardinality 0..*.
+An association connects 'delphi_statement' and 'delphi_ifStmt'. From 'delphi_statement', the role 'delphi_statement214' has cardinality 0..*, and from 'delphi_ifStmt', the role 'delphi_ifStmt213' has cardinality 0..*.
+An association connects 'delphi_caseStmt' and 'delphi_expression'. From 'delphi_caseStmt', the role 'delphi_caseStmt' has cardinality 0..*, and from 'delphi_expression', the role 'delphi_expression216' has cardinality 0..*.
+An association connects 'delphi_caseStmt' and 'delphi_caseSelector'. From 'delphi_caseStmt', the role 'delphi_caseStmt218' has cardinality 0..*, and from 'delphi_caseSelector', the role 'delphi_caseSelector' has cardinality 0..*.
+An association connects 'delphi_caseStmt' and 'delphi_stmtList'. From 'delphi_caseStmt', the role 'delphi_caseStmt220' has cardinality 0..*, and from 'delphi_stmtList', the role 'delphi_stmtList221' has cardinality 0..*.
+An association connects 'delphi_caseLabel' and 'delphi_caseSelector'. From 'delphi_caseLabel', the role 'delphi_caseLabel' has cardinality 0..*, and from 'delphi_caseSelector', the role 'delphi_caseSelector223' has cardinality 0..*.
+An association connects 'delphi_statement' and 'delphi_caseSelector'. From 'delphi_statement', the role 'delphi_statement226' has cardinality 0..*, and from 'delphi_caseSelector', the role 'delphi_caseSelector225' has cardinality 0..*.
+An association connects 'delphi_constExpr' and 'delphi_caseLabel'. From 'delphi_constExpr', the role 'delphi_constExpr229' has cardinality 0..*, and from 'delphi_caseLabel', the role 'delphi_caseLabel228' has cardinality 0..*.
+An association connects 'delphi_caseLabel' and 'delphi_constExpr'. From 'delphi_caseLabel', the role 'delphi_caseLabel231' has cardinality 0..*, and from 'delphi_constExpr', the role 'delphi_constExpr232' has cardinality 0..*.
+An association connects 'delphi_loopStmt' and 'delphi_statement'. From 'delphi_loopStmt', the role 'delphi_loopStmt' has cardinality 0..*, and from 'delphi_statement', the role 'delphi_statement234' has cardinality 0..*.
+An association connects 'delphi_expression' and 'delphi_loopStmt'. From 'delphi_expression', the role 'delphi_expression237' has cardinality 0..*, and from 'delphi_loopStmt', the role 'delphi_loopStmt236' has cardinality 0..*.
+An association connects 'delphi_forStmt' and 'delphi_qualId'. From 'delphi_forStmt', the role 'delphi_forStmt' has cardinality 0..*, and from 'delphi_qualId', the role 'delphi_qualId' has cardinality 0..*.
+An association connects 'delphi_forStmt' and 'delphi_expression'. From 'delphi_forStmt', the role 'delphi_forStmt240' has cardinality 0..*, and from 'delphi_expression', the role 'delphi_expression241' has cardinality 0..*.
+An association connects 'delphi_identList' and 'delphi_withStmt'. From 'delphi_identList', the role 'delphi_identList243' has cardinality 0..*, and from 'delphi_withStmt', the role 'delphi_withStmt' has cardinality 0..*.
+An association connects 'delphi_statement' and 'delphi_withStmt'. From 'delphi_statement', the role 'delphi_statement246' has cardinality 0..*, and from 'delphi_withStmt', the role 'delphi_withStmt245' has cardinality 0..*.
+An association connects 'delphi_tryStmt' and 'delphi_stmtList'. From 'delphi_tryStmt', the role 'delphi_tryStmt' has cardinality 0..*, and from 'delphi_stmtList', the role 'delphi_stmtList248' has cardinality 0..*.
+An association connects 'delphi_exceptionBlock' and 'delphi_tryStmt'. From 'delphi_exceptionBlock', the role 'delphi_exceptionBlock' has cardinality 0..*, and from 'delphi_tryStmt', the role 'delphi_tryStmt250' has cardinality 0..*.
+An association connects 'delphi_tryStmt' and 'delphi_stmtList'. From 'delphi_tryStmt', the role 'delphi_tryStmt252' has cardinality 0..*, and from 'delphi_stmtList', the role 'delphi_stmtList253' has cardinality 0..*.
+An association connects 'delphi_ident' and 'delphi_exceptionBlock'. From 'delphi_ident', the role 'delphi_ident256' has cardinality 0..*, and from 'delphi_exceptionBlock', the role 'delphi_exceptionBlock255' has cardinality 0..*.
+An association connects 'delphi_type' and 'delphi_exceptionBlock'. From 'delphi_type', the role 'delphi_type259' has cardinality 0..*, and from 'delphi_exceptionBlock', the role 'delphi_exceptionBlock258' has cardinality 0..*.
+An association connects 'delphi_statement' and 'delphi_exceptionBlock'. From 'delphi_statement', the role 'delphi_statement262' has cardinality 0..*, and from 'delphi_exceptionBlock', the role 'delphi_exceptionBlock261' has cardinality 0..*.
+An association connects 'delphi_stmtList' and 'delphi_exceptionBlock'. From 'delphi_stmtList', the role 'delphi_stmtList265' has cardinality 0..*, and from 'delphi_exceptionBlock', the role 'delphi_exceptionBlock264' has cardinality 0..*.
+An association connects 'delphi_procedureDeclSection' and 'delphi_directive'. From 'delphi_procedureDeclSection', the role 'delphi_procedureDeclSection' has cardinality 0..*, and from 'delphi_directive', the role 'delphi_directive267' has cardinality 0..*.
+An association connects 'delphi_procedureDeclSection' and 'delphi_block'. From 'delphi_procedureDeclSection', the role 'delphi_procedureDeclSection269' has cardinality 0..*, and from 'delphi_block', the role 'delphi_block270' has cardinality 0..*.
+An association connects 'delphi_procedureDecl' and 'delphi_procedureHeading'. From 'delphi_procedureDecl', the role 'delphi_procedureDecl' has cardinality 0..*, and from 'delphi_procedureHeading', the role 'delphi_procedureHeading272' has cardinality 0..*.
+An association connects 'delphi_functionHeading' and 'delphi_functionDecl'. From 'delphi_functionHeading', the role 'delphi_functionHeading274' has cardinality 0..*, and from 'delphi_functionDecl', the role 'delphi_functionDecl' has cardinality 0..*.
+An association connects 'delphi_type' and 'delphi_functionHeading'. From 'delphi_type', the role 'delphi_type277' has cardinality 0..*, and from 'delphi_functionHeading', the role 'delphi_functionHeading276' has cardinality 0..*.
+An association connects 'delphi_formalParameters' and 'delphi_formalParm'. From 'delphi_formalParameters', the role 'delphi_formalParameters' has cardinality 0..*, and from 'delphi_formalParm', the role 'delphi_formalParm' has cardinality 0..*.
+An association connects 'delphi_formalParm' and 'delphi_parameter'. From 'delphi_formalParm', the role 'delphi_formalParm280' has cardinality 0..*, and from 'delphi_parameter', the role 'delphi_parameter' has cardinality 0..*.
+An association connects 'delphi_parameter' and 'delphi_type'. From 'delphi_parameter', the role 'delphi_parameter282' has cardinality 0..*, and from 'delphi_type', the role 'delphi_type283' has cardinality 0..*.
+An association connects 'delphi_constExpr' and 'delphi_directive'. From 'delphi_constExpr', the role 'delphi_constExpr286' has cardinality 0..*, and from 'delphi_directive', the role 'delphi_directive285' has cardinality 0..*.
+An association connects 'delphi_objHeritage' and 'delphi_objectType'. From 'delphi_objHeritage', the role 'delphi_objHeritage' has cardinality 0..*, and from 'delphi_objectType', the role 'delphi_objectType' has cardinality 0..*.
+An association connects 'delphi_objFieldList' and 'delphi_objectType'. From 'delphi_objFieldList', the role 'delphi_objFieldList' has cardinality 0..*, and from 'delphi_objectType', the role 'delphi_objectType289' has cardinality 0..*.
+An association connects 'delphi_objectType' and 'delphi_methodList'. From 'delphi_objectType', the role 'delphi_objectType291' has cardinality 0..*, and from 'delphi_methodList', the role 'delphi_methodList' has cardinality 0..*.
+An association connects 'delphi_qualId' and 'delphi_objHeritage'. From 'delphi_qualId', the role 'delphi_qualId294' has cardinality 0..*, and from 'delphi_objHeritage', the role 'delphi_objHeritage293' has cardinality 0..*.
+An association connects 'delphi_methodList' and 'delphi_methodHeading'. From 'delphi_methodList', the role 'delphi_methodList296' has cardinality 0..*, and from 'delphi_methodHeading', the role 'delphi_methodHeading' has cardinality 0..*.
+An association connects 'delphi_directive' and 'delphi_methodList'. From 'delphi_directive', the role 'delphi_directive299' has cardinality 0..*, and from 'delphi_methodList', the role 'delphi_methodList298' has cardinality 0..*.
+An association connects 'delphi_ident' and 'delphi_methodHeading'. From 'delphi_ident', the role 'delphi_ident302' has cardinality 0..*, and from 'delphi_methodHeading', the role 'delphi_methodHeading301' has cardinality 0..*.
+An association connects 'delphi_methodHeading' and 'delphi_formalParameters'. From 'delphi_methodHeading', the role 'delphi_methodHeading304' has cardinality 0..*, and from 'delphi_formalParameters', the role 'delphi_formalParameters305' has cardinality 0..*.
+An association connects 'delphi_initSection' and 'delphi_stmtList'. From 'delphi_initSection', the role 'delphi_initSection307' has cardinality 0..*, and from 'delphi_stmtList', the role 'delphi_stmtList308' has cardinality 0..*.
+An association connects 'delphi_stmtList' and 'delphi_initSection'. From 'delphi_stmtList', the role 'delphi_stmtList311' has cardinality 0..*, and from 'delphi_initSection', the role 'delphi_initSection310' has cardinality 0..*.
+An association connects 'delphi_classHeritage' and 'delphi_classType'. From 'delphi_classHeritage', the role 'delphi_classHeritage' has cardinality 0..*, and from 'delphi_classType', the role 'delphi_classType' has cardinality 0..*.
+An association connects 'delphi_classType' and 'delphi_classFieldList'. From 'delphi_classType', the role 'delphi_classType314' has cardinality 0..*, and from 'delphi_classFieldList', the role 'delphi_classFieldList' has cardinality 0..*.
+An association connects 'delphi_classType' and 'delphi_classMethodList'. From 'delphi_classType', the role 'delphi_classType316' has cardinality 0..*, and from 'delphi_classMethodList', the role 'delphi_classMethodList' has cardinality 0..*.
+An association connects 'delphi_classType' and 'delphi_classPropertyList'. From 'delphi_classType', the role 'delphi_classType318' has cardinality 0..*, and from 'delphi_classPropertyList', the role 'delphi_classPropertyList' has cardinality 0..*.
+An association connects 'delphi_classField' and 'delphi_classFieldList'. From 'delphi_classField', the role 'delphi_classField' has cardinality 0..*, and from 'delphi_classFieldList', the role 'delphi_classFieldList320' has cardinality 0..*.
+An association connects 'delphi_classField' and 'delphi_objFieldList'. From 'delphi_classField', the role 'delphi_classField322' has cardinality 0..*, and from 'delphi_objFieldList', the role 'delphi_objFieldList323' has cardinality 0..*.
+An association connects 'delphi_classMethodList' and 'delphi_classMethod'. From 'delphi_classMethodList', the role 'delphi_classMethodList325' has cardinality 0..*, and from 'delphi_classMethod', the role 'delphi_classMethod' has cardinality 0..*.
+An association connects 'delphi_methodList' and 'delphi_classMethod'. From 'delphi_methodList', the role 'delphi_methodList328' has cardinality 0..*, and from 'delphi_classMethod', the role 'delphi_classMethod327' has cardinality 0..*.
+An association connects 'delphi_classProperty' and 'delphi_classPropertyList'. From 'delphi_classProperty', the role 'delphi_classProperty' has cardinality 0..*, and from 'delphi_classPropertyList', the role 'delphi_classPropertyList330' has cardinality 0..*.
+An association connects 'delphi_classProperty' and 'delphi_propertyList'. From 'delphi_classProperty', the role 'delphi_classProperty332' has cardinality 0..*, and from 'delphi_propertyList', the role 'delphi_propertyList' has cardinality 0..*.
+An association connects 'delphi_ident' and 'delphi_propertyList'. From 'delphi_ident', the role 'delphi_ident335' has cardinality 0..*, and from 'delphi_propertyList', the role 'delphi_propertyList334' has cardinality 0..*.
+An association connects 'delphi_propertyList' and 'delphi_propertyInterface'. From 'delphi_propertyList', the role 'delphi_propertyList337' has cardinality 0..*, and from 'delphi_propertyInterface', the role 'delphi_propertyInterface' has cardinality 0..*.
+An association connects 'delphi_propertyList' and 'delphi_propertySpecifiers'. From 'delphi_propertyList', the role 'delphi_propertyList339' has cardinality 0..*, and from 'delphi_propertySpecifiers', the role 'delphi_propertySpecifiers' has cardinality 0..*.
+An association connects 'delphi_propertyInterface' and 'delphi_propertyParameterList'. From 'delphi_propertyInterface', the role 'delphi_propertyInterface341' has cardinality 0..*, and from 'delphi_propertyParameterList', the role 'delphi_propertyParameterList' has cardinality 0..*.
+An association connects 'delphi_ident' and 'delphi_propertyInterface'. From 'delphi_ident', the role 'delphi_ident344' has cardinality 0..*, and from 'delphi_propertyInterface', the role 'delphi_propertyInterface343' has cardinality 0..*.
+An association connects 'delphi_propertyParameterList' and 'delphi_identList'. From 'delphi_propertyParameterList', the role 'delphi_propertyParameterList346' has cardinality 0..*, and from 'delphi_identList', the role 'delphi_identList347' has cardinality 0..*.
+An association connects 'delphi_typeId' and 'delphi_propertyParameterList'. From 'delphi_typeId', the role 'delphi_typeId350' has cardinality 0..*, and from 'delphi_propertyParameterList', the role 'delphi_propertyParameterList349' has cardinality 0..*.
+An association connects 'delphi_constExpr' and 'delphi_propertySpecifiers'. From 'delphi_constExpr', the role 'delphi_constExpr353' has cardinality 0..*, and from 'delphi_propertySpecifiers', the role 'delphi_propertySpecifiers352' has cardinality 0..*.
+An association connects 'delphi_ident' and 'delphi_propertySpecifiers'. From 'delphi_ident', the role 'delphi_ident356' has cardinality 0..*, and from 'delphi_propertySpecifiers', the role 'delphi_propertySpecifiers355' has cardinality 0..*.
+An association connects 'delphi_ident' and 'delphi_propertySpecifiers'. From 'delphi_ident', the role 'delphi_ident359' has cardinality 0..*, and from 'delphi_propertySpecifiers', the role 'delphi_propertySpecifiers358' has cardinality 0..*.
+An association connects 'delphi_propertySpecifiers' and 'delphi_ident'. From 'delphi_propertySpecifiers', the role 'delphi_propertySpecifiers361' has cardinality 0..*, and from 'delphi_ident', the role 'delphi_ident362' has cardinality 0..*.
+An association connects 'delphi_constExpr' and 'delphi_propertySpecifiers'. From 'delphi_constExpr', the role 'delphi_constExpr365' has cardinality 0..*, and from 'delphi_propertySpecifiers', the role 'delphi_propertySpecifiers364' has cardinality 0..*.
+An association connects 'delphi_constExpr' and 'delphi_propertySpecifiers'. From 'delphi_constExpr', the role 'delphi_constExpr368' has cardinality 0..*, and from 'delphi_propertySpecifiers', the role 'delphi_propertySpecifiers367' has cardinality 0..*.
+An association connects 'delphi_typeId' and 'delphi_propertySpecifiers'. From 'delphi_typeId', the role 'delphi_typeId371' has cardinality 0..*, and from 'delphi_propertySpecifiers', the role 'delphi_propertySpecifiers370' has cardinality 0..*.
+An association connects 'delphi_interfaceType' and 'delphi_interfaceHeritage'. From 'delphi_interfaceType', the role 'delphi_interfaceType' has cardinality 0..*, and from 'delphi_interfaceHeritage', the role 'delphi_interfaceHeritage' has cardinality 0..*.
+An association connects 'delphi_classMethodList' and 'delphi_interfaceType'. From 'delphi_classMethodList', the role 'delphi_classMethodList375' has cardinality 0..*, and from 'delphi_interfaceType', the role 'delphi_interfaceType374' has cardinality 0..*.
+An association connects 'delphi_classPropertyList' and 'delphi_interfaceType'. From 'delphi_classPropertyList', the role 'delphi_classPropertyList378' has cardinality 0..*, and from 'delphi_interfaceType', the role 'delphi_interfaceType377' has cardinality 0..*.
+An association connects 'delphi_identList' and 'delphi_interfaceHeritage'. From 'delphi_identList', the role 'delphi_identList381' has cardinality 0..*, and from 'delphi_interfaceHeritage', the role 'delphi_interfaceHeritage380' has cardinality 0..*.
+An association connects 'delphi_requiresClause' and 'delphi_identList'. From 'delphi_requiresClause', the role 'delphi_requiresClause383' has cardinality 0..*, and from 'delphi_identList', the role 'delphi_identList384' has cardinality 0..*.
+An association connects 'delphi_identList' and 'delphi_containsClause'. From 'delphi_identList', the role 'delphi_identList387' has cardinality 0..*, and from 'delphi_containsClause', the role 'delphi_containsClause386' has cardinality 0..*.
+An association connects 'delphi_type' and 'delphi_identList'. From 'delphi_type', the role 'delphi_type390' has cardinality 0..*, and from 'delphi_identList', the role 'delphi_identList389' has cardinality 0..*.
+An association connects 'delphi_ident' and 'delphi_identList'. From 'delphi_ident', the role 'delphi_ident393' has cardinality 0..*, and from 'delphi_identList', the role 'delphi_identList392' has cardinality 0..*.
+An association connects 'delphi_qualId' and 'delphi_unitId'. From 'delphi_qualId', the role 'delphi_qualId395' has cardinality 0..*, and from 'delphi_unitId', the role 'delphi_unitId' has cardinality 0..*.
+An association connects 'delphi_ident' and 'delphi_qualId'. From 'delphi_ident', the role 'delphi_ident398' has cardinality 0..*, and from 'delphi_qualId', the role 'delphi_qualId397' has cardinality 0..*.
+An association connects 'delphi_typeId' and 'delphi_unitId'. From 'delphi_typeId', the role 'delphi_typeId400' has cardinality 0..*, and from 'delphi_unitId', the role 'delphi_unitId401' has cardinality 0..*.
+An association connects 'delphi_qualId' and 'delphi_typeId'. From 'delphi_qualId', the role 'delphi_qualId404' has cardinality 0..*, and from 'delphi_typeId', the role 'delphi_typeId403' has cardinality 0..*.
+An association connects 'delphi_recordConstExpr' and 'delphi_ident'. From 'delphi_recordConstExpr', the role 'delphi_recordConstExpr' has cardinality 0..*, and from 'delphi_ident', the role 'delphi_ident406' has cardinality 0..*.
+An association connects 'delphi_constExpr' and 'delphi_recordConstExpr'. From 'delphi_constExpr', the role 'delphi_constExpr409' has cardinality 0..*, and from 'delphi_recordConstExpr', the role 'delphi_recordConstExpr408' has cardinality 0..*.
+An association connects 'delphi_expression' and 'delphi_relExp'. From 'delphi_expression', the role 'delphi_expression411' has cardinality 0..*, and from 'delphi_relExp', the role 'delphi_relExp' has cardinality 0..*.
+An association connects 'delphi_relOp' and 'delphi_relExp'. From 'delphi_relOp', the role 'delphi_relOp' has cardinality 0..*, and from 'delphi_relExp', the role 'delphi_relExp413' has cardinality 0..*.
+An association connects 'delphi_relExp' and 'delphi_simpleExpression'. From 'delphi_relExp', the role 'delphi_relExp415' has cardinality 0..*, and from 'delphi_simpleExpression', the role 'delphi_simpleExpression' has cardinality 0..*.
+An association connects 'delphi_addExp' and 'delphi_simpleExpression'. From 'delphi_addExp', the role 'delphi_addExp' has cardinality 0..*, and from 'delphi_simpleExpression', the role 'delphi_simpleExpression417' has cardinality 0..*.
+An association connects 'delphi_addExp' and 'delphi_addOp'. From 'delphi_addExp', the role 'delphi_addExp419' has cardinality 0..*, and from 'delphi_addOp', the role 'delphi_addOp' has cardinality 0..*.
+An association connects 'delphi_term' and 'delphi_addExp'. From 'delphi_term', the role 'delphi_term' has cardinality 0..*, and from 'delphi_addExp', the role 'delphi_addExp421' has cardinality 0..*.
+An association connects 'delphi_multExp' and 'delphi_term'. From 'delphi_multExp', the role 'delphi_multExp' has cardinality 0..*, and from 'delphi_term', the role 'delphi_term423' has cardinality 0..*.
+An association connects 'delphi_multExp' and 'delphi_mulOp'. From 'delphi_multExp', the role 'delphi_multExp425' has cardinality 0..*, and from 'delphi_mulOp', the role 'delphi_mulOp' has cardinality 0..*.
+An association connects 'delphi_factor' and 'delphi_multExp'. From 'delphi_factor', the role 'delphi_factor428' has cardinality 0..*, and from 'delphi_multExp', the role 'delphi_multExp427' has cardinality 0..*.
+An association connects 'delphi_designator' and 'delphi_assignmentStmnt'. From 'delphi_designator', the role 'delphi_designator430' has cardinality 0..*, and from 'delphi_assignmentStmnt', the role 'delphi_assignmentStmnt' has cardinality 0..*.
+An association connects 'delphi_expression' and 'delphi_assignmentStmnt'. From 'delphi_expression', the role 'delphi_expression433' has cardinality 0..*, and from 'delphi_assignmentStmnt', the role 'delphi_assignmentStmnt432' has cardinality 0..*.
+An association connects 'delphi_callStmnt' and 'delphi_designator'. From 'delphi_callStmnt', the role 'delphi_callStmnt' has cardinality 0..*, and from 'delphi_designator', the role 'delphi_designator435' has cardinality 0..*.
+An association connects 'delphi_exprList' and 'delphi_callStmnt'. From 'delphi_exprList', the role 'delphi_exprList438' has cardinality 0..*, and from 'delphi_callStmnt', the role 'delphi_callStmnt437' has cardinality 0..*.
+An association connects 'delphi_identList' and 'delphi_parameterList'. From 'delphi_identList', the role 'delphi_identList440' has cardinality 0..*, and from 'delphi_parameterList', the role 'delphi_parameterList' has cardinality 0..*.
+An association connects 'delphi_parameterSimple' and 'delphi_ident'. From 'delphi_parameterSimple', the role 'delphi_parameterSimple' has cardinality 0..*, and from 'delphi_ident', the role 'delphi_ident442' has cardinality 0..*.
+An association connects 'delphi_parameterSimple' and 'delphi_constExpr'. From 'delphi_parameterSimple', the role 'delphi_parameterSimple444' has cardinality 0..*, and from 'delphi_constExpr', the role 'delphi_constExpr445' has cardinality 0..*.
+An association connects 'delphi_ReservedId' and 'delphi_reservedWord'. From 'delphi_ReservedId', the role 'delphi_ReservedId' has cardinality 0..*, and from 'delphi_reservedWord', the role 'delphi_reservedWord447' has cardinality 0..*.
+An association connects 'delphi_ConstExp' and 'delphi_expression'. From 'delphi_ConstExp', the role 'delphi_ConstExp' has cardinality 0..*, and from 'delphi_expression', the role 'delphi_expression449' has cardinality 0..*.
+An association connects 'delphi_MultipleConstExp' and 'delphi_constExpr'. From 'delphi_MultipleConstExp', the role 'delphi_MultipleConstExp' has cardinality 0..*, and from 'delphi_constExpr', the role 'delphi_constExpr451' has cardinality 0..*.
+An association connects 'delphi_recordConstExpr' and 'delphi_RecordConstExp'. From 'delphi_recordConstExpr', the role 'delphi_recordConstExpr453' has cardinality 0..*, and from 'delphi_RecordConstExp', the role 'delphi_RecordConstExp' has cardinality 0..*.
+An association connects 'delphi_Visitable' and 'delphi_CSTrace'. From 'delphi_Visitable', the role 'delphi_Visitable' has cardinality 0..*, and from 'delphi_CSTrace', the role 'delphi_CSTrace' has cardinality 0..*.

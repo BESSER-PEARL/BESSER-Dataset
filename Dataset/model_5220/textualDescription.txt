@@ -1,0 +1,23 @@
+The domain model 'anytype' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'anytype_TestAny' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'myAny', which is of type str; 'a', which is of type str; 'any', which is of type str.
+
+'anytype_A' represents an important domain concept.
+It has the following attributes: 'lon', which is of type str; 'doub', which is of type str; 'name', which is of type str.
+
+'anytype_C' represents an important domain concept.
+It does not declare any attributes.
+
+'anytype_B' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'anytype_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'anytype_A' and 'anytype_B'. From 'anytype_A', the role 'anytype_A' has cardinality 0..*, and from 'anytype_B', the role 'anytype_B' has cardinality 0..*.
+An association connects 'anytype_TestAny' and 'anytype_EObject'. From 'anytype_TestAny', the role 'anytype_TestAny' has cardinality 0..*, and from 'anytype_EObject', the role 'anytype_EObject' has cardinality 0..*.
+An association connects 'anytype_TestAny' and 'anytype_EObject'. From 'anytype_TestAny', the role 'anytype_TestAny3' has cardinality 0..*, and from 'anytype_EObject', the role 'anytype_EObject4' has cardinality 0..*.

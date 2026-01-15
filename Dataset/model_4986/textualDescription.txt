@@ -1,0 +1,74 @@
+The domain model 'dslComponent' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'dslComponent_WTComponents' represents an important domain concept.
+It has the following attributes: 'author', which is of type str; 'id', which is of type str.
+
+'dslComponent_SimpleState' represents an important domain concept.
+It does not declare any attributes.
+
+'dslComponent_OutPort' represents an important domain concept.
+It does not declare any attributes.
+
+'dslComponent_ControlSubsystem' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dslComponent_Subsystem' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str.
+
+'dslComponent_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'DocumElt' represents an important domain concept.
+It does not declare any attributes.
+
+'dslComponent_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'dslComponent_InPort' represents an important domain concept.
+It does not declare any attributes.
+
+'dslComponent_Component' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'dslComponent_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'dslComponent_DocumElt' represents an important domain concept.
+It has the following attributes: 'desc', which is of type str; 'name', which is of type str.
+
+'dslComponent_Port' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dslComponent_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'dslComponent_Vertex' is a specialization of 'DocumElt'.
+The class 'dslComponent_Edge' is a specialization of 'DocumElt'.
+The class 'dslComponent_SimpleState' is a specialization of 'Vertex'.
+The class 'dslComponent_InitialState' is a specialization of 'Vertex'.
+The class 'dslComponent_InPort' is a specialization of 'Port'.
+The class 'dslComponent_OutPort' is a specialization of 'Port'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dslComponent_Subsystem' and 'dslComponent_WTComponents'. From 'dslComponent_Subsystem', the role 'dslComponent_Subsystem' has cardinality 0..*, and from 'dslComponent_WTComponents', the role 'dslComponent_WTComponents' has cardinality 0..*.
+An association connects 'dslComponent_Subsystem' and 'dslComponent_ControlSubsystem'. From 'dslComponent_Subsystem', the role 'dslComponent_Subsystem2' has cardinality 0..*, and from 'dslComponent_ControlSubsystem', the role 'dslComponent_ControlSubsystem' has cardinality 0..*.
+An association connects 'dslComponent_Subsystem' and 'dslComponent_Component'. From 'dslComponent_Subsystem', the role 'dslComponent_Subsystem4' has cardinality 0..*, and from 'dslComponent_Component', the role 'dslComponent_Component' has cardinality 0..*.
+An association connects 'dslComponent_Subsystem' and 'dslComponent_Subsystem'. From 'dslComponent_Subsystem', the role 'dslComponent_Subsystem5' has cardinality 0..*, and from 'dslComponent_Subsystem', the role 'dslComponent_Subsystem7' has cardinality 0..*.
+An association connects 'dslComponent_Port' and 'dslComponent_Component'. From 'dslComponent_Port', the role 'dslComponent_Port' has cardinality 0..*, and from 'dslComponent_Component', the role 'dslComponent_Component9' has cardinality 0..*.
+An association connects 'dslComponent_StateMachine' and 'dslComponent_Component'. From 'dslComponent_StateMachine', the role 'dslComponent_StateMachine' has cardinality 0..*, and from 'dslComponent_Component', the role 'dslComponent_Component11' has cardinality 0..*.
+An association connects 'dslComponent_StateMachine' and 'dslComponent_Vertex'. From 'dslComponent_StateMachine', the role 'dslComponent_StateMachine13' has cardinality 0..*, and from 'dslComponent_Vertex', the role 'dslComponent_Vertex' has cardinality 0..*.
+An association connects 'dslComponent_StateMachine' and 'dslComponent_Edge'. From 'dslComponent_StateMachine', the role 'dslComponent_StateMachine15' has cardinality 0..*, and from 'dslComponent_Edge', the role 'dslComponent_Edge' has cardinality 0..*.
+An association connects 'dslComponent_Edge' and 'dslComponent_Vertex'. From 'dslComponent_Edge', the role 'Edge' has cardinality 0..*, and from 'dslComponent_Vertex', the role 'target' has cardinality 0..*.
+An association connects 'dslComponent_Edge' and 'dslComponent_Vertex'. From 'dslComponent_Edge', the role 'Edge18' has cardinality 0..*, and from 'dslComponent_Vertex', the role 'source' has cardinality 0..*.
+An association connects 'dslComponent_Edge' and 'dslComponent_Vertex'. From 'dslComponent_Edge', the role 'outgoing' has cardinality 0..*, and from 'dslComponent_Vertex', the role 'Vertex' has cardinality 0..*.
+An association connects 'dslComponent_Edge' and 'dslComponent_Vertex'. From 'dslComponent_Edge', the role 'incoming' has cardinality 0..*, and from 'dslComponent_Vertex', the role 'Vertex21' has cardinality 0..*.
+An association connects 'dslComponent_StateMachine' and 'dslComponent_ControlSubsystem'. From 'dslComponent_StateMachine', the role 'dslComponent_StateMachine24' has cardinality 0..*, and from 'dslComponent_ControlSubsystem', the role 'dslComponent_ControlSubsystem23' has cardinality 0..*.

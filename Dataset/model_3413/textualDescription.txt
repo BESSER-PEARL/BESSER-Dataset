@@ -1,0 +1,19 @@
+The domain model 'people' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'people_Universe' represents an important domain concept.
+It does not declare any attributes.
+
+'people_Person' represents an important domain concept.
+It has the following attributes: 'gender', which is of type str; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Gender' defines the following possible values: 'MALE', 'FEMALE'.
+
+Relationships between classes are modeled using associations.
+An association connects 'people_Person' and 'people_Person'. From 'people_Person', the role 'people_Person0' has cardinality 0..*, and from 'people_Person', the role 'people_Person' has cardinality 0..*.
+An association connects 'people_Person' and 'people_Person'. From 'people_Person', the role 'people_Person4' has cardinality 0..*, and from 'people_Person', the role 'people_Person2' has cardinality 0..*.
+An association connects 'people_Person' and 'people_Person'. From 'people_Person', the role 'people_Person5' has cardinality 0..*, and from 'people_Person', the role 'people_Person7' has cardinality 0..*.
+An association connects 'people_Person' and 'people_Person'. From 'people_Person', the role 'people_Person10' has cardinality 0..*, and from 'people_Person', the role 'people_Person8' has cardinality 0..*.
+An association connects 'people_Person' and 'people_Universe'. From 'people_Person', the role 'people_Person12' has cardinality 0..*, and from 'people_Universe', the role 'people_Universe' has cardinality 0..*.

@@ -1,0 +1,57 @@
+The domain model 'ComponentLanguageDeep' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'ComponentLanguageDeep_InPort' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentLanguageDeep_PortInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentLanguageDeep_InPortInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentLanguageDeep_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentLanguageDeep_OutPortInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentLanguageDeep_OutPort' represents an important domain concept.
+It does not declare any attributes.
+
+'PortInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentLanguageDeep_ComponentInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentLanguageDeep_ConnectorInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentLanguageDeep_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentLanguageDeep_Port' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ComponentLanguageDeep_InPort' is a specialization of 'Port'.
+The class 'ComponentLanguageDeep_OutPort' is a specialization of 'Port'.
+The class 'ComponentLanguageDeep_InPortInstance' is a specialization of 'PortInstance'.
+The class 'ComponentLanguageDeep_OutPortInstance' is a specialization of 'PortInstance'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ComponentLanguageDeep_Component' and 'ComponentLanguageDeep_Port'. From 'ComponentLanguageDeep_Component', the role 'ComponentLanguageDeep_Component' has cardinality 0..*, and from 'ComponentLanguageDeep_Port', the role 'ComponentLanguageDeep_Port' has cardinality 0..*.
+An association connects 'ComponentLanguageDeep_Connector' and 'ComponentLanguageDeep_Port'. From 'ComponentLanguageDeep_Connector', the role 'ComponentLanguageDeep_Connector' has cardinality 0..*, and from 'ComponentLanguageDeep_Port', the role 'ComponentLanguageDeep_Port2' has cardinality 0..*.
+An association connects 'ComponentLanguageDeep_Port' and 'ComponentLanguageDeep_Connector'. From 'ComponentLanguageDeep_Port', the role 'ComponentLanguageDeep_Port5' has cardinality 0..*, and from 'ComponentLanguageDeep_Connector', the role 'ComponentLanguageDeep_Connector4' has cardinality 0..*.
+An association connects 'ComponentLanguageDeep_InPortInstance' and 'ComponentLanguageDeep_InPort'. From 'ComponentLanguageDeep_InPortInstance', the role 'ComponentLanguageDeep_InPortInstance' has cardinality 0..*, and from 'ComponentLanguageDeep_InPort', the role 'ComponentLanguageDeep_InPort' has cardinality 0..*.
+An association connects 'ComponentLanguageDeep_OutPort' and 'ComponentLanguageDeep_OutPortInstance'. From 'ComponentLanguageDeep_OutPort', the role 'ComponentLanguageDeep_OutPort' has cardinality 0..*, and from 'ComponentLanguageDeep_OutPortInstance', the role 'ComponentLanguageDeep_OutPortInstance' has cardinality 0..*.
+An association connects 'ComponentLanguageDeep_ComponentInstance' and 'ComponentLanguageDeep_PortInstance'. From 'ComponentLanguageDeep_ComponentInstance', the role 'ComponentLanguageDeep_ComponentInstance' has cardinality 0..*, and from 'ComponentLanguageDeep_PortInstance', the role 'ComponentLanguageDeep_PortInstance' has cardinality 0..*.
+An association connects 'ComponentLanguageDeep_Component' and 'ComponentLanguageDeep_ComponentInstance'. From 'ComponentLanguageDeep_Component', the role 'ComponentLanguageDeep_Component11' has cardinality 0..*, and from 'ComponentLanguageDeep_ComponentInstance', the role 'ComponentLanguageDeep_ComponentInstance10' has cardinality 0..*.
+An association connects 'ComponentLanguageDeep_ConnectorInstance' and 'ComponentLanguageDeep_PortInstance'. From 'ComponentLanguageDeep_ConnectorInstance', the role 'ComponentLanguageDeep_ConnectorInstance' has cardinality 0..*, and from 'ComponentLanguageDeep_PortInstance', the role 'ComponentLanguageDeep_PortInstance13' has cardinality 0..*.
+An association connects 'ComponentLanguageDeep_PortInstance' and 'ComponentLanguageDeep_ConnectorInstance'. From 'ComponentLanguageDeep_PortInstance', the role 'ComponentLanguageDeep_PortInstance16' has cardinality 0..*, and from 'ComponentLanguageDeep_ConnectorInstance', the role 'ComponentLanguageDeep_ConnectorInstance15' has cardinality 0..*.
+An association connects 'ComponentLanguageDeep_ConnectorInstance' and 'ComponentLanguageDeep_Connector'. From 'ComponentLanguageDeep_ConnectorInstance', the role 'ComponentLanguageDeep_ConnectorInstance18' has cardinality 0..*, and from 'ComponentLanguageDeep_Connector', the role 'ComponentLanguageDeep_Connector19' has cardinality 0..*.

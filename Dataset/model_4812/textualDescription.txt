@@ -1,0 +1,38 @@
+The domain model 'trip_model' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'trip_model_Trip' represents an important domain concept.
+It has the following attributes: 'End', which is of type date; 'name', which is of type str; 'Start', which is of type date.
+
+'trip_model_Service' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'Rating', which is of type int; 'Type', which is of type str; 'Cost', which is of type float; 'Duration', which is of type int.
+
+'trip_model_TravelService' represents an important domain concept.
+It does not declare any attributes.
+
+'trip_model_TripModel' represents an important domain concept.
+It does not declare any attributes.
+
+'trip_model_OtherService' represents an important domain concept.
+It does not declare any attributes.
+
+'Service' represents an important domain concept.
+It does not declare any attributes.
+
+'trip_model_location' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'trip_model_OtherService' is a specialization of 'Service'.
+The class 'trip_model_TravelService' is a specialization of 'Service'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trip_model_location' and 'trip_model_OtherService'. From 'trip_model_location', the role 'trip_model_location' has cardinality 0..*, and from 'trip_model_OtherService', the role 'trip_model_OtherService' has cardinality 0..*.
+An association connects 'trip_model_location' and 'trip_model_TravelService'. From 'trip_model_location', the role 'trip_model_location2' has cardinality 0..*, and from 'trip_model_TravelService', the role 'trip_model_TravelService' has cardinality 0..*.
+An association connects 'trip_model_location' and 'trip_model_TravelService'. From 'trip_model_location', the role 'trip_model_location5' has cardinality 0..*, and from 'trip_model_TravelService', the role 'trip_model_TravelService4' has cardinality 0..*.
+An association connects 'trip_model_Trip' and 'trip_model_Service'. From 'trip_model_Trip', the role 'trip_model_Trip' has cardinality 0..*, and from 'trip_model_Service', the role 'trip_model_Service' has cardinality 0..*.
+An association connects 'trip_model_Trip' and 'trip_model_location'. From 'trip_model_Trip', the role 'trip_model_Trip8' has cardinality 0..*, and from 'trip_model_location', the role 'trip_model_location9' has cardinality 0..*.
+An association connects 'trip_model_location' and 'trip_model_Trip'. From 'trip_model_location', the role 'trip_model_location12' has cardinality 0..*, and from 'trip_model_Trip', the role 'trip_model_Trip11' has cardinality 0..*.
+An association connects 'trip_model_Trip' and 'trip_model_TripModel'. From 'trip_model_Trip', the role 'trip_model_Trip14' has cardinality 0..*, and from 'trip_model_TripModel', the role 'trip_model_TripModel' has cardinality 0..*.
+An association connects 'trip_model_TripModel' and 'trip_model_location'. From 'trip_model_TripModel', the role 'trip_model_TripModel16' has cardinality 0..*, and from 'trip_model_location', the role 'trip_model_location17' has cardinality 0..*.

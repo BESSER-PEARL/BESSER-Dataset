@@ -1,0 +1,33 @@
+The domain model 'DFAAutomaton' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'DFAAutomaton_AlphabetSymbol' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'DFAAutomaton_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'DFAAutomaton_State' represents an important domain concept.
+It has the following attributes: 'isFinal', which is of type bool; 'isInitial', which is of type bool; 'name', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'DFAAutomaton_Automaton' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DFAAutomaton_CompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'DFAAutomaton_CompositeState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'DFAAutomaton_State' and 'DFAAutomaton_Automaton'. From 'DFAAutomaton_State', the role 'DFAAutomaton_State' has cardinality 0..*, and from 'DFAAutomaton_Automaton', the role 'DFAAutomaton_Automaton' has cardinality 0..*.
+An association connects 'DFAAutomaton_Automaton' and 'DFAAutomaton_Transition'. From 'DFAAutomaton_Automaton', the role 'DFAAutomaton_Automaton2' has cardinality 0..*, and from 'DFAAutomaton_Transition', the role 'DFAAutomaton_Transition' has cardinality 0..*.
+An association connects 'DFAAutomaton_AlphabetSymbol' and 'DFAAutomaton_Automaton'. From 'DFAAutomaton_AlphabetSymbol', the role 'DFAAutomaton_AlphabetSymbol' has cardinality 0..*, and from 'DFAAutomaton_Automaton', the role 'DFAAutomaton_Automaton4' has cardinality 0..*.
+An association connects 'DFAAutomaton_State' and 'DFAAutomaton_Transition'. From 'DFAAutomaton_State', the role 'to' has cardinality 0..*, and from 'DFAAutomaton_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'DFAAutomaton_State' and 'DFAAutomaton_Transition'. From 'DFAAutomaton_State', the role 'DFAAutomaton_State8' has cardinality 0..*, and from 'DFAAutomaton_Transition', the role 'DFAAutomaton_Transition7' has cardinality 0..*.
+An association connects 'DFAAutomaton_State' and 'DFAAutomaton_Transition'. From 'DFAAutomaton_State', the role 'State' has cardinality 0..*, and from 'DFAAutomaton_Transition', the role 'incoming' has cardinality 0..*.
+An association connects 'DFAAutomaton_Transition' and 'DFAAutomaton_AlphabetSymbol'. From 'DFAAutomaton_Transition', the role 'DFAAutomaton_Transition11' has cardinality 0..*, and from 'DFAAutomaton_AlphabetSymbol', the role 'DFAAutomaton_AlphabetSymbol12' has cardinality 0..*.

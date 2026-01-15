@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/antoniogarmendia/dsltao/org.dsltao.project/bundles/org.mondo.dsl/patterns/ComponentLanguageDeep.ecore

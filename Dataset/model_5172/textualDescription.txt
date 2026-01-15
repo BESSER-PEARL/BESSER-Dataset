@@ -1,0 +1,30 @@
+The domain model 'ABC' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'ABC_Element' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'ABC_A' represents an important domain concept.
+It has one attribute: 'a', which is of type str.
+
+'ABC_B' represents an important domain concept.
+It has one attribute: 'b', which is of type str.
+
+'ABC_C' represents an important domain concept.
+It has one attribute: 'c', which is of type str.
+
+'ABC_Root' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ABC_A' is a specialization of 'Element'.
+The class 'ABC_B' is a specialization of 'Element'.
+The class 'ABC_C' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ABC_Root' and 'ABC_Element'. From 'ABC_Root', the role 'ABC_Root' has cardinality 0..*, and from 'ABC_Element', the role 'ABC_Element' has cardinality 0..*.
+An association connects 'ABC_Element' and 'ABC_Element'. From 'ABC_Element', the role 'ABC_Element3' has cardinality 0..*, and from 'ABC_Element', the role 'ABC_Element1' has cardinality 0..*.

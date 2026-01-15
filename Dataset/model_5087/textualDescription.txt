@@ -1,0 +1,38 @@
+The domain model 'adl101' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'adl101_Required' represents an important domain concept.
+It does not declare any attributes.
+
+'adl101_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'adl101_Provided' represents an important domain concept.
+It does not declare any attributes.
+
+'adl101_Interface' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'signature', which is of type str.
+
+'adl101_Content' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'expression', which is of type str.
+
+'adl101_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'adl101_Required' is a specialization of 'Interface'.
+The class 'adl101_Provided' is a specialization of 'Interface'.
+
+Relationships between classes are modeled using associations.
+An association connects 'adl101_Binding' and 'adl101_Interface'. From 'adl101_Binding', the role 'adl101_Binding' has cardinality 0..*, and from 'adl101_Interface', the role 'adl101_Interface' has cardinality 0..*.
+An association connects 'adl101_Binding' and 'adl101_Interface'. From 'adl101_Binding', the role 'adl101_Binding2' has cardinality 0..*, and from 'adl101_Interface', the role 'adl101_Interface3' has cardinality 0..*.
+An association connects 'adl101_Binding' and 'adl101_Interface'. From 'adl101_Binding', the role 'adl101_Binding5' has cardinality 0..*, and from 'adl101_Interface', the role 'adl101_Interface6' has cardinality 0..*.
+An association connects 'adl101_Content' and 'adl101_Component'. From 'adl101_Content', the role 'content' has cardinality 0..*, and from 'adl101_Component', the role 'Component' has cardinality 0..*.
+An association connects 'adl101_Component' and 'adl101_Component'. From 'adl101_Component', the role 'adl101_Component8' has cardinality 0..*, and from 'adl101_Component', the role 'adl101_Component' has cardinality 0..*.
+An association connects 'adl101_Required' and 'adl101_Component'. From 'adl101_Required', the role 'adl101_Required' has cardinality 0..*, and from 'adl101_Component', the role 'adl101_Component11' has cardinality 0..*.
+An association connects 'adl101_Provided' and 'adl101_Component'. From 'adl101_Provided', the role 'adl101_Provided' has cardinality 0..*, and from 'adl101_Component', the role 'adl101_Component13' has cardinality 0..*.
+An association connects 'adl101_Content' and 'adl101_Component'. From 'adl101_Content', the role 'Content' has cardinality 0..*, and from 'adl101_Component', the role 'contentParent' has cardinality 0..*.

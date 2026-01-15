@@ -1,0 +1,12 @@
+The domain model 'testPackage' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'testPackage_SuperClass' represents an important domain concept.
+It does not declare any attributes.
+
+'testPackage_SubClass' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'testPackage_SuperClass' and 'testPackage_SubClass'. From 'testPackage_SuperClass', the role 'testPackage_SuperClass' has cardinality 0..*, and from 'testPackage_SubClass', the role 'testPackage_SubClass' has cardinality 0..*.

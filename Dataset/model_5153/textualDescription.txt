@@ -1,0 +1,43 @@
+The domain model 'example' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'example_A' represents an important domain concept.
+It does not declare any attributes.
+
+'example_B' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'a1' has cardinality 0..*, and from 'example_B', the role 'B' has cardinality 0..*.
+An association connects 'example_B' and 'example_A'. From 'example_B', the role 'B2' has cardinality 0..*, and from 'example_A', the role 'a2' has cardinality 0..*.
+An association connects 'example_B' and 'example_A'. From 'example_B', the role 'B4' has cardinality 0..*, and from 'example_A', the role 'a3' has cardinality 0..*.
+An association connects 'example_B' and 'example_A'. From 'example_B', the role 'B6' has cardinality 0..*, and from 'example_A', the role 'a4' has cardinality 0..*.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'a5' has cardinality 0..*, and from 'example_B', the role 'B8' has cardinality 0..*.
+An association connects 'example_B' and 'example_A'. From 'example_B', the role 'B10' has cardinality 0..*, and from 'example_A', the role 'a6' has cardinality 0..*.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'a7' has cardinality 0..*, and from 'example_B', the role 'B12' has cardinality 0..*.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'a8' has cardinality 0..*, and from 'example_B', the role 'B14' has cardinality 0..*.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'a9' has cardinality 0..*, and from 'example_B', the role 'B16' has cardinality 0..*.
+An association connects 'example_B' and 'example_A'. From 'example_B', the role 'B18' has cardinality 0..*, and from 'example_A', the role 'a10' has cardinality 0..*.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'a11' has cardinality 0..*, and from 'example_B', the role 'B20' has cardinality 0..*.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'a12' has cardinality 0..*, and from 'example_B', the role 'B22' has cardinality 0..*.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'a13' has cardinality 0..*, and from 'example_B', the role 'B24' has cardinality 0..*.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'a14' has cardinality 0..*, and from 'example_B', the role 'B26' has cardinality 0..*.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'a15' has cardinality 0..*, and from 'example_B', the role 'B28' has cardinality 0..*.
+An association connects 'example_B' and 'example_A'. From 'example_B', the role 'B30' has cardinality 0..*, and from 'example_A', the role 'a16' has cardinality 0..*.
+An association connects 'example_B' and 'example_A'. From 'example_B', the role 'b1' has cardinality 0..*, and from 'example_A', the role 'A' has cardinality 0..*.
+An association connects 'example_B' and 'example_A'. From 'example_B', the role 'b2' has cardinality 0..*, and from 'example_A', the role 'A33' has cardinality 0..*.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'A35' has cardinality 0..*, and from 'example_B', the role 'b3' has cardinality 0..*.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'A37' has cardinality 0..*, and from 'example_B', the role 'b4' has cardinality 0..*.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'A39' has cardinality 0..*, and from 'example_B', the role 'b5' has cardinality 0..*.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'A41' has cardinality 0..*, and from 'example_B', the role 'b6' has cardinality 0..*.
+An association connects 'example_B' and 'example_A'. From 'example_B', the role 'b7' has cardinality 0..*, and from 'example_A', the role 'A43' has cardinality 0..*.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'A45' has cardinality 0..*, and from 'example_B', the role 'b8' has cardinality 0..*.
+An association connects 'example_B' and 'example_A'. From 'example_B', the role 'b9' has cardinality 0..*, and from 'example_A', the role 'A47' has cardinality 0..*.
+An association connects 'example_B' and 'example_A'. From 'example_B', the role 'b10' has cardinality 0..*, and from 'example_A', the role 'A49' has cardinality 0..*.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'A51' has cardinality 0..*, and from 'example_B', the role 'b11' has cardinality 0..*.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'A53' has cardinality 0..*, and from 'example_B', the role 'b12' has cardinality 0..*.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'A55' has cardinality 0..*, and from 'example_B', the role 'b13' has cardinality 0..*.
+An association connects 'example_B' and 'example_A'. From 'example_B', the role 'b14' has cardinality 0..*, and from 'example_A', the role 'A57' has cardinality 0..*.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'A59' has cardinality 0..*, and from 'example_B', the role 'b15' has cardinality 0..*.
+An association connects 'example_A' and 'example_B'. From 'example_A', the role 'A61' has cardinality 0..*, and from 'example_B', the role 'b16' has cardinality 0..*.

@@ -1,0 +1,20 @@
+The domain model 'Company' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'Company_Project' represents an important domain concept.
+It has the following attributes: 'budget', which is of type int; 'name', which is of type str.
+
+'Company_Employee' represents an important domain concept.
+It has the following attributes: 'salary', which is of type int; 'name', which is of type str.
+
+'Company_Department' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'budget', which is of type int; 'location', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Company_Employee' and 'Company_Department'. From 'Company_Employee', the role 'unnamed role' has cardinality 0..*, and from 'Company_Department', the role '1' has cardinality 0..*.
+An association connects 'Company_Employee' and 'Company_Project'. From 'Company_Employee', the role '3' has cardinality 0..*, and from 'Company_Project', the role '4' has cardinality 0..*.
+An association connects 'Company_Department' and 'Company_Employee'. From 'Company_Department', the role '6' has cardinality 0..*, and from 'Company_Employee', the role '7' has cardinality 0..*.
+An association connects 'Company_Department' and 'Company_Project'. From 'Company_Department', the role '9' has cardinality 0..*, and from 'Company_Project', the role '10' has cardinality 0..*.
+An association connects 'Company_Project' and 'Company_Employee'. From 'Company_Project', the role '12' has cardinality 0..*, and from 'Company_Employee', the role '13' has cardinality 0..*.
+An association connects 'Company_Project' and 'Company_Department'. From 'Company_Project', the role '15' has cardinality 0..*, and from 'Company_Department', the role '16' has cardinality 0..*.

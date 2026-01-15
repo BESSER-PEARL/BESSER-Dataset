@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jagalindo/ViViD-2.0/fr.inria.lang.vm/model/generated/VM.ecore

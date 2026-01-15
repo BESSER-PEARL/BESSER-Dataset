@@ -1,0 +1,15 @@
+The domain model 'FaultyUMLmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'FaultyUMLmodel_D' represents an important domain concept.
+It has one attribute: 'z', which is of type bool.
+
+'FaultyUMLmodel_B' represents an important domain concept.
+It has the following attributes: 'x', which is of type int; 'y', which is of type int.
+
+'FaultyUMLmodel_A' represents an important domain concept.
+It has the following attributes: 'w', which is of type bool; 'v', which is of type int.
+
+'FaultyUMLmodel_C' represents an important domain concept.
+It has one attribute: 'u', which is of type int.

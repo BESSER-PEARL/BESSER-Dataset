@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atenearesearchgroup/lintra/lintra.examples.drones/drones.ecore

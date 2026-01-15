@@ -1,0 +1,115 @@
+The domain model 'feature' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'feature_HyFeatureModel' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_HyFeatureAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_HyFeature' represents an important domain concept.
+It has one attribute: 'deprecatedSince', which is of type date.
+
+'feature_HyBooleanAttribute' represents an important domain concept.
+It has one attribute: 'default', which is of type bool.
+
+'feature_HyEnumAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_HyGroupComposition' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_HyFeatureChild' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_HyNumberAttribute' represents an important domain concept.
+It has the following attributes: 'min', which is of type int; 'max', which is of type int; 'default', which is of type int.
+
+'feature_HyEnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_HyVersion' represents an important domain concept.
+It has one attribute: 'number', which is of type str.
+
+'HyNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_HyRootFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_HyStringAttribute' represents an important domain concept.
+It has one attribute: 'default', which is of type str.
+
+'feature_HyGroupType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'HyLinearTemporalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HyTemporalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_HyFeatureType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'feature_HyContextModel' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_HyGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'HyFeatureAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_HyEnum' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'HyGroupTypeEnum' defines the following possible values: 'OR', 'AND', 'ALTERNATIVE'.
+The enumeration 'HyFeatureTypeEnum' defines the following possible values: 'OPTIONAL', 'MANDATORY'.
+
+The model also captures inheritance relationships between classes.
+The class 'feature_HyFeature' is a specialization of 'HyTemporalElement'.
+The class 'feature_HyFeature' is a specialization of 'HyNamedElement'.
+The class 'feature_HyGroup' is a specialization of 'HyTemporalElement'.
+The class 'feature_HyVersion' is a specialization of 'HyTemporalElement'.
+The class 'feature_HyNumberAttribute' is a specialization of 'HyFeatureAttribute'.
+The class 'feature_HyBooleanAttribute' is a specialization of 'HyFeatureAttribute'.
+The class 'feature_HyStringAttribute' is a specialization of 'HyFeatureAttribute'.
+The class 'feature_HyEnumAttribute' is a specialization of 'HyFeatureAttribute'.
+The class 'feature_HyFeatureAttribute' is a specialization of 'HyTemporalElement'.
+The class 'feature_HyFeatureAttribute' is a specialization of 'HyNamedElement'.
+The class 'feature_HyRootFeature' is a specialization of 'HyLinearTemporalElement'.
+The class 'feature_HyGroupComposition' is a specialization of 'HyLinearTemporalElement'.
+The class 'feature_HyFeatureChild' is a specialization of 'HyLinearTemporalElement'.
+The class 'feature_HyFeatureType' is a specialization of 'HyLinearTemporalElement'.
+The class 'feature_HyGroupType' is a specialization of 'HyLinearTemporalElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'feature_HyRootFeature' and 'feature_HyFeatureModel'. From 'feature_HyRootFeature', the role 'feature_HyRootFeature' has cardinality 0..*, and from 'feature_HyFeatureModel', the role 'feature_HyFeatureModel' has cardinality 0..*.
+An association connects 'feature_HyFeature' and 'feature_HyFeatureModel'. From 'feature_HyFeature', the role 'HyFeature' has cardinality 0..*, and from 'feature_HyFeatureModel', the role 'featureModel' has cardinality 0..*.
+An association connects 'feature_HyFeatureModel' and 'feature_HyGroup'. From 'feature_HyFeatureModel', the role 'featureModel3' has cardinality 0..*, and from 'feature_HyGroup', the role 'HyGroup' has cardinality 0..*.
+An association connects 'feature_HyEnum' and 'feature_HyFeatureModel'. From 'feature_HyEnum', the role 'feature_HyEnum' has cardinality 0..*, and from 'feature_HyFeatureModel', the role 'feature_HyFeatureModel5' has cardinality 0..*.
+An association connects 'feature_HyFeatureModel' and 'feature_HyContextModel'. From 'feature_HyFeatureModel', the role 'feature_HyFeatureModel7' has cardinality 0..*, and from 'feature_HyContextModel', the role 'feature_HyContextModel' has cardinality 0..*.
+An association connects 'feature_HyVersion' and 'feature_HyFeature'. From 'feature_HyVersion', the role 'HyVersion' has cardinality 0..*, and from 'feature_HyFeature', the role 'feature' has cardinality 0..*.
+An association connects 'feature_HyGroupComposition' and 'feature_HyFeature'. From 'feature_HyGroupComposition', the role 'HyGroupComposition' has cardinality 0..*, and from 'feature_HyFeature', the role 'features' has cardinality 0..*.
+An association connects 'feature_HyFeatureChild' and 'feature_HyFeature'. From 'feature_HyFeatureChild', the role 'HyFeatureChild' has cardinality 0..*, and from 'feature_HyFeature', the role 'parent' has cardinality 0..*.
+An association connects 'feature_HyFeatureAttribute' and 'feature_HyFeature'. From 'feature_HyFeatureAttribute', the role 'HyFeatureAttribute' has cardinality 0..*, and from 'feature_HyFeature', the role 'feature12' has cardinality 0..*.
+An association connects 'feature_HyFeature' and 'feature_HyFeatureType'. From 'feature_HyFeature', the role 'feature_HyFeature' has cardinality 0..*, and from 'feature_HyFeatureType', the role 'feature_HyFeatureType' has cardinality 0..*.
+An association connects 'feature_HyFeatureModel' and 'feature_HyFeature'. From 'feature_HyFeatureModel', the role 'HyFeatureModel' has cardinality 0..*, and from 'feature_HyFeature', the role 'features15' has cardinality 0..*.
+An association connects 'feature_HyGroupComposition' and 'feature_HyGroup'. From 'feature_HyGroupComposition', the role 'HyGroupComposition17' has cardinality 0..*, and from 'feature_HyGroup', the role 'compositionOf' has cardinality 0..*.
+An association connects 'feature_HyGroup' and 'feature_HyFeatureChild'. From 'feature_HyGroup', the role 'childGroup' has cardinality 0..*, and from 'feature_HyFeatureChild', the role 'HyFeatureChild19' has cardinality 0..*.
+An association connects 'feature_HyGroup' and 'feature_HyGroupType'. From 'feature_HyGroup', the role 'feature_HyGroup' has cardinality 0..*, and from 'feature_HyGroupType', the role 'feature_HyGroupType' has cardinality 0..*.
+An association connects 'feature_HyGroup' and 'feature_HyFeatureModel'. From 'feature_HyGroup', the role 'groups' has cardinality 0..*, and from 'feature_HyFeatureModel', the role 'HyFeatureModel22' has cardinality 0..*.
+An association connects 'feature_HyVersion' and 'feature_HyFeature'. From 'feature_HyVersion', the role 'versions' has cardinality 0..*, and from 'feature_HyFeature', the role 'HyFeature24' has cardinality 0..*.
+An association connects 'feature_HyVersion' and 'feature_HyVersion'. From 'feature_HyVersion', the role 'HyVersion27' has cardinality 0..*, and from 'feature_HyVersion', the role 'supersededVersion' has cardinality 0..*.
+An association connects 'feature_HyVersion' and 'feature_HyVersion'. From 'feature_HyVersion', the role 'supersedingVersions' has cardinality 0..*, and from 'feature_HyVersion', the role 'HyVersion30' has cardinality 0..*.
+An association connects 'feature_HyEnum' and 'feature_HyEnumAttribute'. From 'feature_HyEnum', the role 'feature_HyEnum32' has cardinality 0..*, and from 'feature_HyEnumAttribute', the role 'feature_HyEnumAttribute' has cardinality 0..*.
+An association connects 'feature_HyEnumAttribute' and 'feature_HyEnumLiteral'. From 'feature_HyEnumAttribute', the role 'feature_HyEnumAttribute34' has cardinality 0..*, and from 'feature_HyEnumLiteral', the role 'feature_HyEnumLiteral' has cardinality 0..*.
+An association connects 'feature_HyFeature' and 'feature_HyFeatureAttribute'. From 'feature_HyFeature', the role 'HyFeature36' has cardinality 0..*, and from 'feature_HyFeatureAttribute', the role 'attributes' has cardinality 0..*.
+An association connects 'feature_HyFeature' and 'feature_HyRootFeature'. From 'feature_HyFeature', the role 'feature_HyFeature39' has cardinality 0..*, and from 'feature_HyRootFeature', the role 'feature_HyRootFeature38' has cardinality 0..*.
+An association connects 'feature_HyGroup' and 'feature_HyGroupComposition'. From 'feature_HyGroup', the role 'HyGroup41' has cardinality 0..*, and from 'feature_HyGroupComposition', the role 'parentOf' has cardinality 0..*.
+An association connects 'feature_HyFeature' and 'feature_HyGroupComposition'. From 'feature_HyFeature', the role 'HyFeature43' has cardinality 0..*, and from 'feature_HyGroupComposition', the role 'groupMembership' has cardinality 0..*.
+An association connects 'feature_HyFeature' and 'feature_HyFeatureChild'. From 'feature_HyFeature', the role 'HyFeature46' has cardinality 0..*, and from 'feature_HyFeatureChild', the role 'parentOf45' has cardinality 0..*.
+An association connects 'feature_HyFeatureChild' and 'feature_HyGroup'. From 'feature_HyFeatureChild', the role 'childOf' has cardinality 0..*, and from 'feature_HyGroup', the role 'HyGroup48' has cardinality 0..*.

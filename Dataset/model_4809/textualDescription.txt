@@ -1,0 +1,20 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'model_App' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Param' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'model_User' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'password', which is of type str.
+
+'model_Service' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'acceptedParams', which is of type str; 'methodName', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_User' and 'model_Service'. From 'model_User', the role 'model_User' has cardinality 0..*, and from 'model_Service', the role 'model_Service' has cardinality 0..*.
+An association connects 'model_User' and 'model_App'. From 'model_User', the role 'model_User2' has cardinality 0..*, and from 'model_App', the role 'model_App' has cardinality 0..*.
+An association connects 'model_App' and 'model_Service'. From 'model_App', the role 'model_App4' has cardinality 0..*, and from 'model_Service', the role 'model_Service5' has cardinality 0..*.

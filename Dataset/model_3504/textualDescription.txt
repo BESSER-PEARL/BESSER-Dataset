@@ -1,0 +1,340 @@
+The domain model 'ale' describes the core structural elements and their relationships within the system.
+
+The model defines 71 main class(es).
+
+'ale_ExpressionStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_binding' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ale_Int' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'ale_Comp' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'ale_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_classifierTypeRule' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_VarRef' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'ale_Collection' represents an important domain concept.
+It has the following attributes: 'min', which is of type int; 'max', which is of type int.
+
+'ale_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'typeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_OrderedSet' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_rOpposite' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ale_Mult' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'ale_Real' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ale_Call' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ale_IntType' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_rType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ale_Apply' represents an important domain concept.
+It has the following attributes: 'varName', which is of type str; 'name', which is of type str.
+
+'ale_Unit' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ale_ClassifierSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_Import' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'alias', which is of type str.
+
+'ale_ForEach' represents an important domain concept.
+It has one attribute: 'iterator', which is of type str.
+
+'ale_rSwitch' represents an important domain concept.
+It has one attribute: 'paramName', which is of type str.
+
+'ale_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_Attribute' represents an important domain concept.
+It has the following attributes: 'bounds', which is of type str; 'modifier', which is of type str; 'name', which is of type str.
+
+'ale_True' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_Remove' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ale_literal' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_BoolType' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'rType' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_Implie' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_Xor' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_While' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_And' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_Assign' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_VarDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ale_Service' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ale_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_False' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_Enum' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_BehavioredClass' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ale_Tag' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ale_String' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ale_Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_rCase' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_typeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_Lit' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioredClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_ExtendedClass' represents an important domain concept.
+It has one attribute: 'extends', which is of type str.
+
+'ale_RuntimeClass' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_If' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_SeqType' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_ClassifierType' represents an important domain concept.
+It has the following attributes: 'className', which is of type str; 'packageName', which is of type str.
+
+'ale_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_Insert' represents an important domain concept.
+It does not declare any attributes.
+
+'literal' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_Add' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'ale_Null' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_Min' represents an important domain concept.
+It does not declare any attributes.
+
+'classifierTypeRule' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_Let' represents an important domain concept.
+It does not declare any attributes.
+
+'ale_Feature' represents an important domain concept.
+It has one attribute: 'feature', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'ale_ExtendedClass' is a specialization of 'BehavioredClass'.
+The class 'ale_RuntimeClass' is a specialization of 'BehavioredClass'.
+The class 'ale_VarDecl' is a specialization of 'Statement'.
+The class 'ale_Assign' is a specialization of 'Statement'.
+The class 'ale_Insert' is a specialization of 'Statement'.
+The class 'ale_Remove' is a specialization of 'Statement'.
+The class 'ale_ForEach' is a specialization of 'Statement'.
+The class 'ale_If' is a specialization of 'Statement'.
+The class 'ale_While' is a specialization of 'Statement'.
+The class 'ale_ExpressionStmt' is a specialization of 'Statement'.
+The class 'ale_typeLiteral' is a specialization of 'literal'.
+The class 'ale_typeLiteral' is a specialization of 'rType'.
+The class 'ale_classifierTypeRule' is a specialization of 'typeLiteral'.
+The class 'ale_Call' is a specialization of 'Expression'.
+The class 'ale_Feature' is a specialization of 'Expression'.
+The class 'ale_Apply' is a specialization of 'Expression'.
+The class 'ale_Mult' is a specialization of 'Expression'.
+The class 'ale_Add' is a specialization of 'Expression'.
+The class 'ale_Comp' is a specialization of 'Expression'.
+The class 'ale_And' is a specialization of 'Expression'.
+The class 'ale_Or' is a specialization of 'Expression'.
+The class 'ale_Xor' is a specialization of 'Expression'.
+The class 'ale_Implie' is a specialization of 'Expression'.
+The class 'ale_Not' is a specialization of 'Expression'.
+The class 'ale_Min' is a specialization of 'Expression'.
+The class 'ale_VarRef' is a specialization of 'Expression'.
+The class 'ale_Lit' is a specialization of 'Expression'.
+The class 'ale_Conditional' is a specialization of 'Expression'.
+The class 'ale_Let' is a specialization of 'Expression'.
+The class 'ale_String' is a specialization of 'literal'.
+The class 'ale_Int' is a specialization of 'literal'.
+The class 'ale_Real' is a specialization of 'literal'.
+The class 'ale_True' is a specialization of 'literal'.
+The class 'ale_False' is a specialization of 'literal'.
+The class 'ale_Null' is a specialization of 'literal'.
+The class 'ale_Sequence' is a specialization of 'literal'.
+The class 'ale_OrderedSet' is a specialization of 'literal'.
+The class 'ale_Enum' is a specialization of 'literal'.
+The class 'ale_StringType' is a specialization of 'typeLiteral'.
+The class 'ale_IntType' is a specialization of 'typeLiteral'.
+The class 'ale_RealType' is a specialization of 'typeLiteral'.
+The class 'ale_BoolType' is a specialization of 'typeLiteral'.
+The class 'ale_SeqType' is a specialization of 'typeLiteral'.
+The class 'ale_SetType' is a specialization of 'typeLiteral'.
+The class 'ale_ClassifierSetType' is a specialization of 'typeLiteral'.
+The class 'ale_ClassifierType' is a specialization of 'classifierTypeRule'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ale_Unit' and 'ale_Import'. From 'ale_Unit', the role 'ale_Unit' has cardinality 0..*, and from 'ale_Import', the role 'ale_Import' has cardinality 0..*.
+An association connects 'ale_Service' and 'ale_Unit'. From 'ale_Service', the role 'ale_Service' has cardinality 0..*, and from 'ale_Unit', the role 'ale_Unit2' has cardinality 0..*.
+An association connects 'ale_BehavioredClass' and 'ale_Unit'. From 'ale_BehavioredClass', the role 'ale_BehavioredClass' has cardinality 0..*, and from 'ale_Unit', the role 'ale_Unit4' has cardinality 0..*.
+An association connects 'ale_BehavioredClass' and 'ale_Attribute'. From 'ale_BehavioredClass', the role 'ale_BehavioredClass6' has cardinality 0..*, and from 'ale_Attribute', the role 'ale_Attribute' has cardinality 0..*.
+An association connects 'ale_BehavioredClass' and 'ale_Operation'. From 'ale_BehavioredClass', the role 'ale_BehavioredClass8' has cardinality 0..*, and from 'ale_Operation', the role 'ale_Operation' has cardinality 0..*.
+An association connects 'ale_Operation' and 'ale_Tag'. From 'ale_Operation', the role 'ale_Operation10' has cardinality 0..*, and from 'ale_Tag', the role 'ale_Tag' has cardinality 0..*.
+An association connects 'ale_Operation' and 'ale_rType'. From 'ale_Operation', the role 'ale_Operation12' has cardinality 0..*, and from 'ale_rType', the role 'ale_rType' has cardinality 0..*.
+An association connects 'ale_Operation' and 'ale_Variable'. From 'ale_Operation', the role 'ale_Operation14' has cardinality 0..*, and from 'ale_Variable', the role 'ale_Variable' has cardinality 0..*.
+An association connects 'ale_Block' and 'ale_Operation'. From 'ale_Block', the role 'ale_Block' has cardinality 0..*, and from 'ale_Operation', the role 'ale_Operation16' has cardinality 0..*.
+An association connects 'ale_rType' and 'ale_Variable'. From 'ale_rType', the role 'ale_rType19' has cardinality 0..*, and from 'ale_Variable', the role 'ale_Variable18' has cardinality 0..*.
+An association connects 'ale_Attribute' and 'ale_rOpposite'. From 'ale_Attribute', the role 'ale_Attribute21' has cardinality 0..*, and from 'ale_rOpposite', the role 'ale_rOpposite' has cardinality 0..*.
+An association connects 'ale_Attribute' and 'ale_rType'. From 'ale_Attribute', the role 'ale_Attribute23' has cardinality 0..*, and from 'ale_rType', the role 'ale_rType24' has cardinality 0..*.
+An association connects 'ale_Attribute' and 'ale_ExpressionStmt'. From 'ale_Attribute', the role 'ale_Attribute26' has cardinality 0..*, and from 'ale_ExpressionStmt', the role 'ale_ExpressionStmt' has cardinality 0..*.
+An association connects 'ale_rType' and 'ale_VarDecl'. From 'ale_rType', the role 'ale_rType28' has cardinality 0..*, and from 'ale_VarDecl', the role 'ale_VarDecl' has cardinality 0..*.
+An association connects 'ale_ExpressionStmt' and 'ale_VarDecl'. From 'ale_ExpressionStmt', the role 'ale_ExpressionStmt31' has cardinality 0..*, and from 'ale_VarDecl', the role 'ale_VarDecl30' has cardinality 0..*.
+An association connects 'ale_Assign' and 'ale_Expression'. From 'ale_Assign', the role 'ale_Assign' has cardinality 0..*, and from 'ale_Expression', the role 'ale_Expression' has cardinality 0..*.
+An association connects 'ale_ExpressionStmt' and 'ale_Assign'. From 'ale_ExpressionStmt', the role 'ale_ExpressionStmt35' has cardinality 0..*, and from 'ale_Assign', the role 'ale_Assign34' has cardinality 0..*.
+An association connects 'ale_Insert' and 'ale_Expression'. From 'ale_Insert', the role 'ale_Insert' has cardinality 0..*, and from 'ale_Expression', the role 'ale_Expression37' has cardinality 0..*.
+An association connects 'ale_Insert' and 'ale_ExpressionStmt'. From 'ale_Insert', the role 'ale_Insert39' has cardinality 0..*, and from 'ale_ExpressionStmt', the role 'ale_ExpressionStmt40' has cardinality 0..*.
+An association connects 'ale_Remove' and 'ale_Expression'. From 'ale_Remove', the role 'ale_Remove' has cardinality 0..*, and from 'ale_Expression', the role 'ale_Expression42' has cardinality 0..*.
+An association connects 'ale_Remove' and 'ale_ExpressionStmt'. From 'ale_Remove', the role 'ale_Remove44' has cardinality 0..*, and from 'ale_ExpressionStmt', the role 'ale_ExpressionStmt45' has cardinality 0..*.
+An association connects 'ale_Collection' and 'ale_ForEach'. From 'ale_Collection', the role 'ale_Collection' has cardinality 0..*, and from 'ale_ForEach', the role 'ale_ForEach' has cardinality 0..*.
+An association connects 'ale_Block' and 'ale_ForEach'. From 'ale_Block', the role 'ale_Block49' has cardinality 0..*, and from 'ale_ForEach', the role 'ale_ForEach48' has cardinality 0..*.
+An association connects 'ale_Collection' and 'ale_ExpressionStmt'. From 'ale_Collection', the role 'ale_Collection51' has cardinality 0..*, and from 'ale_ExpressionStmt', the role 'ale_ExpressionStmt52' has cardinality 0..*.
+An association connects 'ale_Block' and 'ale_Statement'. From 'ale_Block', the role 'ale_Block54' has cardinality 0..*, and from 'ale_Statement', the role 'ale_Statement' has cardinality 0..*.
+An association connects 'ale_ExpressionStmt' and 'ale_If'. From 'ale_ExpressionStmt', the role 'ale_ExpressionStmt56' has cardinality 0..*, and from 'ale_If', the role 'ale_If' has cardinality 0..*.
+An association connects 'ale_If' and 'ale_Block'. From 'ale_If', the role 'ale_If58' has cardinality 0..*, and from 'ale_Block', the role 'ale_Block59' has cardinality 0..*.
+An association connects 'ale_Block' and 'ale_If'. From 'ale_Block', the role 'ale_Block62' has cardinality 0..*, and from 'ale_If', the role 'ale_If61' has cardinality 0..*.
+An association connects 'ale_If' and 'ale_If'. From 'ale_If', the role 'ale_If65' has cardinality 0..*, and from 'ale_If', the role 'ale_If63' has cardinality 0..*.
+An association connects 'ale_ExpressionStmt' and 'ale_While'. From 'ale_ExpressionStmt', the role 'ale_ExpressionStmt67' has cardinality 0..*, and from 'ale_While', the role 'ale_While' has cardinality 0..*.
+An association connects 'ale_While' and 'ale_Block'. From 'ale_While', the role 'ale_While69' has cardinality 0..*, and from 'ale_Block', the role 'ale_Block70' has cardinality 0..*.
+An association connects 'ale_rSwitch' and 'ale_ExpressionStmt'. From 'ale_rSwitch', the role 'ale_rSwitch' has cardinality 0..*, and from 'ale_ExpressionStmt', the role 'ale_ExpressionStmt72' has cardinality 0..*.
+An association connects 'ale_rCase' and 'ale_rSwitch'. From 'ale_rCase', the role 'ale_rCase' has cardinality 0..*, and from 'ale_rSwitch', the role 'ale_rSwitch74' has cardinality 0..*.
+An association connects 'ale_ExpressionStmt' and 'ale_rSwitch'. From 'ale_ExpressionStmt', the role 'ale_ExpressionStmt77' has cardinality 0..*, and from 'ale_rSwitch', the role 'ale_rSwitch76' has cardinality 0..*.
+An association connects 'ale_rCase' and 'ale_rType'. From 'ale_rCase', the role 'ale_rCase79' has cardinality 0..*, and from 'ale_rType', the role 'ale_rType80' has cardinality 0..*.
+An association connects 'ale_ExpressionStmt' and 'ale_rCase'. From 'ale_ExpressionStmt', the role 'ale_ExpressionStmt83' has cardinality 0..*, and from 'ale_rCase', the role 'ale_rCase82' has cardinality 0..*.
+An association connects 'ale_rCase' and 'ale_ExpressionStmt'. From 'ale_rCase', the role 'ale_rCase85' has cardinality 0..*, and from 'ale_ExpressionStmt', the role 'ale_ExpressionStmt86' has cardinality 0..*.
+An association connects 'ale_ExpressionStmt' and 'ale_EObject'. From 'ale_ExpressionStmt', the role 'ale_ExpressionStmt88' has cardinality 0..*, and from 'ale_EObject', the role 'ale_EObject' has cardinality 0..*.
+An association connects 'ale_typeLiteral' and 'ale_binding'. From 'ale_typeLiteral', the role 'ale_typeLiteral' has cardinality 0..*, and from 'ale_binding', the role 'ale_binding' has cardinality 0..*.
+An association connects 'ale_Expression' and 'ale_binding'. From 'ale_Expression', the role 'ale_Expression92' has cardinality 0..*, and from 'ale_binding', the role 'ale_binding91' has cardinality 0..*.
+An association connects 'ale_Call' and 'ale_Expression'. From 'ale_Call', the role 'ale_Call' has cardinality 0..*, and from 'ale_Expression', the role 'ale_Expression94' has cardinality 0..*.
+An association connects 'ale_Expression' and 'ale_Call'. From 'ale_Expression', the role 'ale_Expression97' has cardinality 0..*, and from 'ale_Call', the role 'ale_Call96' has cardinality 0..*.
+An association connects 'ale_Expression' and 'ale_Feature'. From 'ale_Expression', the role 'ale_Expression99' has cardinality 0..*, and from 'ale_Feature', the role 'ale_Feature' has cardinality 0..*.
+An association connects 'ale_Expression' and 'ale_Apply'. From 'ale_Expression', the role 'ale_Expression101' has cardinality 0..*, and from 'ale_Apply', the role 'ale_Apply' has cardinality 0..*.
+An association connects 'ale_typeLiteral' and 'ale_Apply'. From 'ale_typeLiteral', the role 'ale_typeLiteral104' has cardinality 0..*, and from 'ale_Apply', the role 'ale_Apply103' has cardinality 0..*.
+An association connects 'ale_Expression' and 'ale_Apply'. From 'ale_Expression', the role 'ale_Expression107' has cardinality 0..*, and from 'ale_Apply', the role 'ale_Apply106' has cardinality 0..*.
+An association connects 'ale_Apply' and 'ale_Expression'. From 'ale_Apply', the role 'ale_Apply109' has cardinality 0..*, and from 'ale_Expression', the role 'ale_Expression110' has cardinality 0..*.
+An association connects 'ale_Expression' and 'ale_Mult'. From 'ale_Expression', the role 'ale_Expression112' has cardinality 0..*, and from 'ale_Mult', the role 'ale_Mult' has cardinality 0..*.
+An association connects 'ale_Expression' and 'ale_Mult'. From 'ale_Expression', the role 'ale_Expression115' has cardinality 0..*, and from 'ale_Mult', the role 'ale_Mult114' has cardinality 0..*.
+An association connects 'ale_Expression' and 'ale_Add'. From 'ale_Expression', the role 'ale_Expression117' has cardinality 0..*, and from 'ale_Add', the role 'ale_Add' has cardinality 0..*.
+An association connects 'ale_Add' and 'ale_Expression'. From 'ale_Add', the role 'ale_Add119' has cardinality 0..*, and from 'ale_Expression', the role 'ale_Expression120' has cardinality 0..*.
+An association connects 'ale_Comp' and 'ale_Expression'. From 'ale_Comp', the role 'ale_Comp' has cardinality 0..*, and from 'ale_Expression', the role 'ale_Expression122' has cardinality 0..*.
+An association connects 'ale_Comp' and 'ale_Expression'. From 'ale_Comp', the role 'ale_Comp124' has cardinality 0..*, and from 'ale_Expression', the role 'ale_Expression125' has cardinality 0..*.
+An association connects 'ale_And' and 'ale_Expression'. From 'ale_And', the role 'ale_And' has cardinality 0..*, and from 'ale_Expression', the role 'ale_Expression127' has cardinality 0..*.
+An association connects 'ale_And' and 'ale_Expression'. From 'ale_And', the role 'ale_And129' has cardinality 0..*, and from 'ale_Expression', the role 'ale_Expression130' has cardinality 0..*.
+An association connects 'ale_Expression' and 'ale_Or'. From 'ale_Expression', the role 'ale_Expression132' has cardinality 0..*, and from 'ale_Or', the role 'ale_Or' has cardinality 0..*.
+An association connects 'ale_Expression' and 'ale_Or'. From 'ale_Expression', the role 'ale_Expression135' has cardinality 0..*, and from 'ale_Or', the role 'ale_Or134' has cardinality 0..*.
+An association connects 'ale_Expression' and 'ale_Xor'. From 'ale_Expression', the role 'ale_Expression137' has cardinality 0..*, and from 'ale_Xor', the role 'ale_Xor' has cardinality 0..*.
+An association connects 'ale_Xor' and 'ale_Expression'. From 'ale_Xor', the role 'ale_Xor139' has cardinality 0..*, and from 'ale_Expression', the role 'ale_Expression140' has cardinality 0..*.
+An association connects 'ale_Implie' and 'ale_Expression'. From 'ale_Implie', the role 'ale_Implie' has cardinality 0..*, and from 'ale_Expression', the role 'ale_Expression142' has cardinality 0..*.
+An association connects 'ale_Implie' and 'ale_Expression'. From 'ale_Implie', the role 'ale_Implie144' has cardinality 0..*, and from 'ale_Expression', the role 'ale_Expression145' has cardinality 0..*.
+An association connects 'ale_Not' and 'ale_Expression'. From 'ale_Not', the role 'ale_Not' has cardinality 0..*, and from 'ale_Expression', the role 'ale_Expression147' has cardinality 0..*.
+An association connects 'ale_Expression' and 'ale_Min'. From 'ale_Expression', the role 'ale_Expression149' has cardinality 0..*, and from 'ale_Min', the role 'ale_Min' has cardinality 0..*.
+An association connects 'ale_literal' and 'ale_Lit'. From 'ale_literal', the role 'ale_literal' has cardinality 0..*, and from 'ale_Lit', the role 'ale_Lit' has cardinality 0..*.
+An association connects 'ale_Expression' and 'ale_Conditional'. From 'ale_Expression', the role 'ale_Expression152' has cardinality 0..*, and from 'ale_Conditional', the role 'ale_Conditional' has cardinality 0..*.
+An association connects 'ale_Conditional' and 'ale_Expression'. From 'ale_Conditional', the role 'ale_Conditional154' has cardinality 0..*, and from 'ale_Expression', the role 'ale_Expression155' has cardinality 0..*.
+An association connects 'ale_Conditional' and 'ale_Expression'. From 'ale_Conditional', the role 'ale_Conditional157' has cardinality 0..*, and from 'ale_Expression', the role 'ale_Expression158' has cardinality 0..*.
+An association connects 'ale_binding' and 'ale_Let'. From 'ale_binding', the role 'ale_binding160' has cardinality 0..*, and from 'ale_Let', the role 'ale_Let' has cardinality 0..*.
+An association connects 'ale_Let' and 'ale_Expression'. From 'ale_Let', the role 'ale_Let162' has cardinality 0..*, and from 'ale_Expression', the role 'ale_Expression163' has cardinality 0..*.
+An association connects 'ale_Expression' and 'ale_Sequence'. From 'ale_Expression', the role 'ale_Expression165' has cardinality 0..*, and from 'ale_Sequence', the role 'ale_Sequence' has cardinality 0..*.
+An association connects 'ale_Expression' and 'ale_OrderedSet'. From 'ale_Expression', the role 'ale_Expression167' has cardinality 0..*, and from 'ale_OrderedSet', the role 'ale_OrderedSet' has cardinality 0..*.
+An association connects 'ale_SeqType' and 'ale_typeLiteral'. From 'ale_SeqType', the role 'ale_SeqType' has cardinality 0..*, and from 'ale_typeLiteral', the role 'ale_typeLiteral169' has cardinality 0..*.
+An association connects 'ale_typeLiteral' and 'ale_SetType'. From 'ale_typeLiteral', the role 'ale_typeLiteral171' has cardinality 0..*, and from 'ale_SetType', the role 'ale_SetType' has cardinality 0..*.
+An association connects 'ale_classifierTypeRule' and 'ale_ClassifierSetType'. From 'ale_classifierTypeRule', the role 'ale_classifierTypeRule' has cardinality 0..*, and from 'ale_ClassifierSetType', the role 'ale_ClassifierSetType' has cardinality 0..*.

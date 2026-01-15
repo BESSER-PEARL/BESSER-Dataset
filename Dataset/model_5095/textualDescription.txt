@@ -1,0 +1,33 @@
+The domain model 'adl200' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'adl200_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adl200_Provided' represents an important domain concept.
+It does not declare any attributes.
+
+'adl200_Interface' represents an important domain concept.
+It has the following attributes: 'signature', which is of type str; 'name', which is of type str.
+
+'adl200_Content' represents an important domain concept.
+It has the following attributes: 'expression', which is of type str; 'language', which is of type str.
+
+'adl200_Required' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'adl200_Required' is a specialization of 'Interface'.
+The class 'adl200_Provided' is a specialization of 'Interface'.
+
+Relationships between classes are modeled using associations.
+An association connects 'adl200_Content' and 'adl200_Component'. From 'adl200_Content', the role 'adl200_Content' has cardinality 0..*, and from 'adl200_Component', the role 'adl200_Component' has cardinality 0..*.
+An association connects 'adl200_Component' and 'adl200_Required'. From 'adl200_Component', the role 'adl200_Component2' has cardinality 0..*, and from 'adl200_Required', the role 'adl200_Required' has cardinality 0..*.
+An association connects 'adl200_Provided' and 'adl200_Component'. From 'adl200_Provided', the role 'adl200_Provided' has cardinality 0..*, and from 'adl200_Component', the role 'adl200_Component4' has cardinality 0..*.
+An association connects 'adl200_Component' and 'adl200_Component'. From 'adl200_Component', the role 'adl200_Component5' has cardinality 0..*, and from 'adl200_Component', the role 'adl200_Component7' has cardinality 0..*.
+An association connects 'adl200_Content' and 'adl200_Component'. From 'adl200_Content', the role 'adl200_Content9' has cardinality 0..*, and from 'adl200_Component', the role 'adl200_Component10' has cardinality 0..*.
+An association connects 'adl200_Required' and 'adl200_Provided'. From 'adl200_Required', the role 'adl200_Required13' has cardinality 0..*, and from 'adl200_Provided', the role 'adl200_Provided12' has cardinality 0..*.

@@ -1,0 +1,137 @@
+The domain model 'cloudml' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'NodeInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'WithProperties' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NodePort' represents an important domain concept.
+It does not declare any attributes.
+
+'CloudMLElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NodePortInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_core_ArtefactPortInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_core_NodePort' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_core_ArtefactPort' represents an important domain concept.
+It has one attribute: 'portNumber', which is of type int.
+
+'cloudml_core_NodePortInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'Artefact' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_core_Resource' represents an important domain concept.
+It has the following attributes: 'deployingCommand', which is of type str; 'startCommand', which is of type str; 'retrievingCommand', which is of type str; 'configurationCommand', which is of type str.
+
+'Provider' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_core_ArtefactInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_core_Composite' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_core_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ArtefactInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_core_Property' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Resource' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_core_Provider' represents an important domain concept.
+It has one attribute: 'credentials', which is of type str.
+
+'cloudml_core_NodeInstance' represents an important domain concept.
+It has one attribute: 'publicAddress', which is of type str.
+
+'ArtefactPort' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_core_Node' represents an important domain concept.
+It has the following attributes: 'securityGroup', which is of type str; 'is64os', which is of type bool; 'imageID', which is of type str; 'sshKey', which is of type str; 'privateKey', which is of type str; 'minCore', which is of type int; 'minRam', which is of type int; 'minDisk', which is of type int; 'groupName', which is of type str; 'location', which is of type str; 'OS', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'ArtefactPortInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_core_CloudMLElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_core_Artefact' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_core_DeploymentModel' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_core_WithProperties' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'cloudml_core_NamedElement' is a specialization of 'CloudMLElement'.
+The class 'cloudml_core_Property' is a specialization of 'NamedElement'.
+The class 'cloudml_core_WithProperties' is a specialization of 'NamedElement'.
+The class 'cloudml_core_Resource' is a specialization of 'WithProperties'.
+The class 'cloudml_core_Provider' is a specialization of 'WithProperties'.
+The class 'cloudml_core_DeploymentModel' is a specialization of 'WithProperties'.
+The class 'cloudml_core_ArtefactPort' is a specialization of 'WithProperties'.
+The class 'cloudml_core_Artefact' is a specialization of 'WithProperties'.
+The class 'cloudml_core_NodePort' is a specialization of 'WithProperties'.
+The class 'cloudml_core_Node' is a specialization of 'WithProperties'.
+The class 'cloudml_core_ArtefactPortInstance' is a specialization of 'WithProperties'.
+The class 'cloudml_core_ArtefactInstance' is a specialization of 'WithProperties'.
+The class 'cloudml_core_NodePortInstance' is a specialization of 'WithProperties'.
+The class 'cloudml_core_NodeInstance' is a specialization of 'WithProperties'.
+The class 'cloudml_core_Composite' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Property' and 'cloudml_core_WithProperties'. From 'Property', the role 'Property' has cardinality 0..*, and from 'cloudml_core_WithProperties', the role 'cloudml_core_WithProperties' has cardinality 0..*.
+An association connects 'Provider' and 'cloudml_core_DeploymentModel'. From 'Provider', the role 'Provider' has cardinality 0..*, and from 'cloudml_core_DeploymentModel', the role 'cloudml_core_DeploymentModel' has cardinality 0..*.
+An association connects 'Artefact' and 'cloudml_core_DeploymentModel'. From 'Artefact', the role 'Artefact' has cardinality 0..*, and from 'cloudml_core_DeploymentModel', the role 'cloudml_core_DeploymentModel3' has cardinality 0..*.
+An association connects 'Node' and 'cloudml_core_DeploymentModel'. From 'Node', the role 'Node' has cardinality 0..*, and from 'cloudml_core_DeploymentModel', the role 'cloudml_core_DeploymentModel5' has cardinality 0..*.
+An association connects 'ArtefactInstance' and 'cloudml_core_DeploymentModel'. From 'ArtefactInstance', the role 'ArtefactInstance' has cardinality 0..*, and from 'cloudml_core_DeploymentModel', the role 'cloudml_core_DeploymentModel7' has cardinality 0..*.
+An association connects 'cloudml_core_DeploymentModel' and 'NodeInstance'. From 'cloudml_core_DeploymentModel', the role 'cloudml_core_DeploymentModel9' has cardinality 0..*, and from 'NodeInstance', the role 'NodeInstance' has cardinality 0..*.
+An association connects 'cloudml_core_Artefact' and 'ArtefactPort'. From 'cloudml_core_Artefact', the role 'cloudml_core_Artefact' has cardinality 0..*, and from 'ArtefactPort', the role 'ArtefactPort' has cardinality 0..*.
+An association connects 'cloudml_core_Artefact' and 'Resource'. From 'cloudml_core_Artefact', the role 'cloudml_core_Artefact12' has cardinality 0..*, and from 'Resource', the role 'Resource' has cardinality 0..*.
+An association connects 'ArtefactPort' and 'cloudml_core_Artefact'. From 'ArtefactPort', the role 'ArtefactPort15' has cardinality 0..*, and from 'cloudml_core_Artefact', the role 'cloudml_core_Artefact14' has cardinality 0..*.
+An association connects 'cloudml_core_Artefact' and 'ArtefactPort'. From 'cloudml_core_Artefact', the role 'cloudml_core_Artefact17' has cardinality 0..*, and from 'ArtefactPort', the role 'ArtefactPort18' has cardinality 0..*.
+An association connects 'ArtefactPort' and 'cloudml_core_Artefact'. From 'ArtefactPort', the role 'ArtefactPort21' has cardinality 0..*, and from 'cloudml_core_Artefact', the role 'cloudml_core_Artefact20' has cardinality 0..*.
+An association connects 'ArtefactPort' and 'cloudml_core_Artefact'. From 'ArtefactPort', the role 'ArtefactPort24' has cardinality 0..*, and from 'cloudml_core_Artefact', the role 'cloudml_core_Artefact23' has cardinality 0..*.
+An association connects 'cloudml_core_Node' and 'NodePort'. From 'cloudml_core_Node', the role 'cloudml_core_Node' has cardinality 0..*, and from 'NodePort', the role 'NodePort' has cardinality 0..*.
+An association connects 'cloudml_core_Node' and 'Provider'. From 'cloudml_core_Node', the role 'cloudml_core_Node27' has cardinality 0..*, and from 'Provider', the role 'Provider28' has cardinality 0..*.
+An association connects 'ArtefactPort' and 'cloudml_core_ArtefactPortInstance'. From 'ArtefactPort', the role 'ArtefactPort30' has cardinality 0..*, and from 'cloudml_core_ArtefactPortInstance', the role 'cloudml_core_ArtefactPortInstance' has cardinality 0..*.
+An association connects 'Artefact' and 'cloudml_core_ArtefactInstance'. From 'Artefact', the role 'Artefact32' has cardinality 0..*, and from 'cloudml_core_ArtefactInstance', the role 'cloudml_core_ArtefactInstance' has cardinality 0..*.
+An association connects 'cloudml_core_ArtefactInstance' and 'NodePortInstance'. From 'cloudml_core_ArtefactInstance', the role 'cloudml_core_ArtefactInstance34' has cardinality 0..*, and from 'NodePortInstance', the role 'NodePortInstance' has cardinality 0..*.
+An association connects 'cloudml_core_ArtefactInstance' and 'ArtefactPortInstance'. From 'cloudml_core_ArtefactInstance', the role 'cloudml_core_ArtefactInstance36' has cardinality 0..*, and from 'ArtefactPortInstance', the role 'ArtefactPortInstance' has cardinality 0..*.
+An association connects 'cloudml_core_ArtefactInstance' and 'ArtefactPortInstance'. From 'cloudml_core_ArtefactInstance', the role 'cloudml_core_ArtefactInstance38' has cardinality 0..*, and from 'ArtefactPortInstance', the role 'ArtefactPortInstance39' has cardinality 0..*.
+An association connects 'ArtefactPortInstance' and 'cloudml_core_ArtefactInstance'. From 'ArtefactPortInstance', the role 'ArtefactPortInstance42' has cardinality 0..*, and from 'cloudml_core_ArtefactInstance', the role 'cloudml_core_ArtefactInstance41' has cardinality 0..*.
+An association connects 'cloudml_core_ArtefactInstance' and 'ArtefactPortInstance'. From 'cloudml_core_ArtefactInstance', the role 'cloudml_core_ArtefactInstance44' has cardinality 0..*, and from 'ArtefactPortInstance', the role 'ArtefactPortInstance45' has cardinality 0..*.
+An association connects 'NodePort' and 'cloudml_core_NodePortInstance'. From 'NodePort', the role 'NodePort47' has cardinality 0..*, and from 'cloudml_core_NodePortInstance', the role 'cloudml_core_NodePortInstance' has cardinality 0..*.
+An association connects 'Node' and 'cloudml_core_NodeInstance'. From 'Node', the role 'Node49' has cardinality 0..*, and from 'cloudml_core_NodeInstance', the role 'cloudml_core_NodeInstance' has cardinality 0..*.
+An association connects 'NodePortInstance' and 'cloudml_core_NodeInstance'. From 'NodePortInstance', the role 'NodePortInstance52' has cardinality 0..*, and from 'cloudml_core_NodeInstance', the role 'cloudml_core_NodeInstance51' has cardinality 0..*.
+An association connects 'cloudml_core_Composite' and 'ArtefactInstance'. From 'cloudml_core_Composite', the role 'cloudml_core_Composite' has cardinality 0..*, and from 'ArtefactInstance', the role 'ArtefactInstance54' has cardinality 0..*.

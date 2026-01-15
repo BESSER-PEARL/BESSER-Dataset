@@ -1,0 +1,145 @@
+The domain model 'typesystem' describes the core structural elements and their relationships within the system.
+
+The model defines 35 main class(es).
+
+'NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'typesystem_UnitDenominator' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_TensorType' represents an important domain concept.
+It has the following attributes: 'matrix', which is of type bool; 'vector', which is of type bool.
+
+'typesystem_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_UnitFactor' represents an important domain concept.
+It has the following attributes: 'symbol', which is of type str; 'exponent', which is of type int.
+
+'typesystem_NumericLiteral' represents an important domain concept.
+It has one attribute: 'modifier', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_ArrayDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_UnitType' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_AnyDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_RealLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'typesystem_UnitProduct' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_ComplexType' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'typesystem_InvalidDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_ArrayType' represents an important domain concept.
+It has the following attributes: 'dimensional', which is of type bool; 'multidimensional', which is of type bool; 'dimensionality', which is of type int.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'UnitProduct' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_GaussianType' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'true', which is of type bool.
+
+'typesystem_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_UnitNumerator' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'typesystem_Unit' represents an important domain concept.
+It has the following attributes: 'wildcard', which is of type bool; 'scale', which is of type int.
+
+'typesystem_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'OperatorKind' defines the following possible values: 'Multiply', 'LogicalNot', 'ElementWiseDivide', 'LessThanOrEqualTo', 'LogicalAnd', 'Transpose', 'Power', 'EqualTo', 'Add', 'GreaterThan', 'LogicalOr', 'LessThan', 'ElementWiseMultiply', 'NotEqualTo', 'Negate', 'Implies', 'ElementWisePower', 'Subtract', 'GreaterThanOrEqualTo', 'Divide', 'Root'.
+
+The model also captures inheritance relationships between classes.
+The class 'typesystem_InvalidDataType' is a specialization of 'DataType'.
+The class 'typesystem_AnyDataType' is a specialization of 'DataType'.
+The class 'typesystem_UnitType' is a specialization of 'DataType'.
+The class 'typesystem_PrimitiveType' is a specialization of 'DataType'.
+The class 'typesystem_NumericType' is a specialization of 'PrimitiveType'.
+The class 'typesystem_RealType' is a specialization of 'NumericType'.
+The class 'typesystem_IntegerType' is a specialization of 'NumericType'.
+The class 'typesystem_ComplexType' is a specialization of 'NumericType'.
+The class 'typesystem_GaussianType' is a specialization of 'NumericType'.
+The class 'typesystem_BooleanType' is a specialization of 'PrimitiveType'.
+The class 'typesystem_StringType' is a specialization of 'PrimitiveType'.
+The class 'typesystem_ArrayType' is a specialization of 'DataType'.
+The class 'typesystem_TensorType' is a specialization of 'ArrayType'.
+The class 'typesystem_UnitNumerator' is a specialization of 'UnitProduct'.
+The class 'typesystem_UnitDenominator' is a specialization of 'UnitProduct'.
+The class 'typesystem_Literal' is a specialization of 'Expression'.
+The class 'typesystem_NumericLiteral' is a specialization of 'Literal'.
+The class 'typesystem_RealLiteral' is a specialization of 'NumericLiteral'.
+The class 'typesystem_IntegerLiteral' is a specialization of 'NumericLiteral'.
+The class 'typesystem_BooleanLiteral' is a specialization of 'Literal'.
+The class 'typesystem_StringLiteral' is a specialization of 'Literal'.
+
+Relationships between classes are modeled using associations.
+An association connects 'typesystem_NumericType' and 'typesystem_Unit'. From 'typesystem_NumericType', the role 'typesystem_NumericType' has cardinality 0..*, and from 'typesystem_Unit', the role 'typesystem_Unit' has cardinality 0..*.
+An association connects 'typesystem_DataType' and 'typesystem_ArrayType'. From 'typesystem_DataType', the role 'typesystem_DataType' has cardinality 0..*, and from 'typesystem_ArrayType', the role 'typesystem_ArrayType' has cardinality 0..*.
+An association connects 'typesystem_DataType' and 'typesystem_ArrayType'. From 'typesystem_DataType', the role 'typesystem_DataType4' has cardinality 0..*, and from 'typesystem_ArrayType', the role 'typesystem_ArrayType3' has cardinality 0..*.
+An association connects 'typesystem_ArrayType' and 'typesystem_ArrayDimension'. From 'typesystem_ArrayType', the role 'typesystem_ArrayType6' has cardinality 0..*, and from 'typesystem_ArrayDimension', the role 'typesystem_ArrayDimension' has cardinality 0..*.
+An association connects 'typesystem_Expression' and 'typesystem_ArrayDimension'. From 'typesystem_Expression', the role 'typesystem_Expression' has cardinality 0..*, and from 'typesystem_ArrayDimension', the role 'typesystem_ArrayDimension8' has cardinality 0..*.
+An association connects 'typesystem_UnitNumerator' and 'typesystem_Unit'. From 'typesystem_UnitNumerator', the role 'typesystem_UnitNumerator' has cardinality 0..*, and from 'typesystem_Unit', the role 'typesystem_Unit10' has cardinality 0..*.
+An association connects 'typesystem_UnitDenominator' and 'typesystem_Unit'. From 'typesystem_UnitDenominator', the role 'typesystem_UnitDenominator' has cardinality 0..*, and from 'typesystem_Unit', the role 'typesystem_Unit12' has cardinality 0..*.
+An association connects 'typesystem_UnitFactor' and 'typesystem_UnitProduct'. From 'typesystem_UnitFactor', the role 'typesystem_UnitFactor' has cardinality 0..*, and from 'typesystem_UnitProduct', the role 'typesystem_UnitProduct' has cardinality 0..*.
+An association connects 'typesystem_Unit' and 'typesystem_NumericLiteral'. From 'typesystem_Unit', the role 'typesystem_Unit15' has cardinality 0..*, and from 'typesystem_NumericLiteral', the role 'typesystem_NumericLiteral' has cardinality 0..*.

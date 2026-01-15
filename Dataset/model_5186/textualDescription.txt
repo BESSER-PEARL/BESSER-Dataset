@@ -1,0 +1,27 @@
+The domain model 'doublemulti' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'doublemulti_C' represents an important domain concept.
+It does not declare any attributes.
+
+'doublemulti_D' represents an important domain concept.
+It does not declare any attributes.
+
+'doublemulti_A' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'doublemulti_B' represents an important domain concept.
+It does not declare any attributes.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'doublemulti_C' is a specialization of 'A'.
+The class 'doublemulti_C' is a specialization of 'B'.
+The class 'doublemulti_D' is a specialization of 'B'.
+The class 'doublemulti_D' is a specialization of 'A'.

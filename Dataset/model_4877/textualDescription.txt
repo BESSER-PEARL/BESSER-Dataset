@@ -1,0 +1,211 @@
+The domain model 'data' describes the core structural elements and their relationships within the system.
+
+The model defines 40 main class(es).
+
+'data_Image' represents an important domain concept.
+It does not declare any attributes.
+
+'data_Attachment' represents an important domain concept.
+It has the following attributes: 'cachedFileName', which is of type str; 'fileUrl', which is of type str; 'cachedOnly', which is of type str; 'fileIdentifier', which is of type str; 'fileExtension', which is of type str; 'cachedFileUrl', which is of type str.
+
+'InformationObject' represents an important domain concept.
+It does not declare any attributes.
+
+'data_Document' represents an important domain concept.
+It does not declare any attributes.
+
+'data_Video' represents an important domain concept.
+It does not declare any attributes.
+
+'data_InstantMessenger' represents an important domain concept.
+It has one attribute: 'username', which is of type str.
+
+'data_Event' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'Extension' represents an important domain concept.
+It does not declare any attributes.
+
+'data_Location' represents an important domain concept.
+It has the following attributes: 'zipCode', which is of type str; 'street', which is of type str; 'latitude', which is of type str; 'houseNumber', which is of type str; 'city', which is of type str; 'state', which is of type str; 'longitude', which is of type str; 'country', which is of type str.
+
+'data_InformationObject' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'data_Extension' represents an important domain concept.
+It does not declare any attributes.
+
+'data_Phone' represents an important domain concept.
+It has the following attributes: 'countryCode', which is of type str; 'number', which is of type str; 'areaCode', which is of type str.
+
+'data_Binary' represents an important domain concept.
+It has one attribute: 'bytes', which is of type str.
+
+'data_Organisation' represents an important domain concept.
+It does not declare any attributes.
+
+'data_WebAccount' represents an important domain concept.
+It has one attribute: 'username', which is of type str.
+
+'data_StarRanking' represents an important domain concept.
+It has one attribute: 'normalizedValue', which is of type str.
+
+'data_ThumbRanking' represents an important domain concept.
+It does not declare any attributes.
+
+'data_Ranking' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'data_DataSet' represents an important domain concept.
+It has the following attributes: 'lastModified', which is of type date; 'cacheFileAttachements', which is of type str; 'created', which is of type date; 'cacheFolder', which is of type str; 'logLevel', which is of type str; 'identPrefix', which is of type str; 'identCounter', which is of type str.
+
+'data_Transformation' represents an important domain concept.
+It does not declare any attributes.
+
+'data_ViewRanking' represents an important domain concept.
+It does not declare any attributes.
+
+'data_MetaTag' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'data_Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'Item' represents an important domain concept.
+It does not declare any attributes.
+
+'data_IndoorLocation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'data_Classification' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'data_MetaInformation' represents an important domain concept.
+It does not declare any attributes.
+
+'Classification' represents an important domain concept.
+It does not declare any attributes.
+
+'data_Mashup' represents an important domain concept.
+It does not declare any attributes.
+
+'data_WebSite' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'adress', which is of type str.
+
+'data_Content' represents an important domain concept.
+It has one attribute: 'locale', which is of type str.
+
+'data_Item' represents an important domain concept.
+It has the following attributes: 'stringValue', which is of type str; 'ident', which is of type str; 'created', which is of type date; 'uri', which is of type str; 'lastModified', which is of type date.
+
+'data_Email' represents an important domain concept.
+It has one attribute: 'adress', which is of type str.
+
+'Ranking' represents an important domain concept.
+It does not declare any attributes.
+
+'data_Person' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'firstname', which is of type str; 'lastname', which is of type str; 'dateOfBirth', which is of type date.
+
+'data_Category' represents an important domain concept.
+It does not declare any attributes.
+
+'MetaInformation' represents an important domain concept.
+It does not declare any attributes.
+
+'data_Tag' represents an important domain concept.
+It does not declare any attributes.
+
+'Attachment' represents an important domain concept.
+It does not declare any attributes.
+
+'data_Identifier' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'data_Person' is a specialization of 'InformationObject'.
+The class 'data_InformationObject' is a specialization of 'Item'.
+The class 'data_Content' is a specialization of 'InformationObject'.
+The class 'data_Extension' is a specialization of 'Item'.
+The class 'data_Classification' is a specialization of 'Item'.
+The class 'data_Category' is a specialization of 'Classification'.
+The class 'data_Tag' is a specialization of 'Classification'.
+The class 'data_Organisation' is a specialization of 'InformationObject'.
+The class 'data_MetaTag' is a specialization of 'Item'.
+The class 'data_Phone' is a specialization of 'MetaInformation'.
+The class 'data_InstantMessenger' is a specialization of 'MetaInformation'.
+The class 'data_Email' is a specialization of 'MetaInformation'.
+The class 'data_WebAccount' is a specialization of 'MetaInformation'.
+The class 'data_WebSite' is a specialization of 'MetaInformation'.
+The class 'data_Ranking' is a specialization of 'Extension'.
+The class 'data_Attachment' is a specialization of 'Extension'.
+The class 'data_Location' is a specialization of 'MetaInformation'.
+The class 'data_Image' is a specialization of 'Attachment'.
+The class 'data_Document' is a specialization of 'Attachment'.
+The class 'data_StarRanking' is a specialization of 'Ranking'.
+The class 'data_ViewRanking' is a specialization of 'Ranking'.
+The class 'data_ThumbRanking' is a specialization of 'Ranking'.
+The class 'data_Transformation' is a specialization of 'Attachment'.
+The class 'data_Video' is a specialization of 'Attachment'.
+The class 'data_Connection' is a specialization of 'Extension'.
+The class 'data_Binary' is a specialization of 'Attachment'.
+The class 'data_MetaInformation' is a specialization of 'Extension'.
+The class 'data_IndoorLocation' is a specialization of 'MetaInformation'.
+The class 'data_Identifier' is a specialization of 'Item'.
+The class 'data_Event' is a specialization of 'MetaInformation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'data_Person' and 'data_Organisation'. From 'data_Person', the role 'leader' has cardinality 0..*, and from 'data_Organisation', the role 'Organisation' has cardinality 0..*.
+An association connects 'data_Person' and 'data_Organisation'. From 'data_Person', the role 'participants' has cardinality 0..*, and from 'data_Organisation', the role 'Organisation2' has cardinality 0..*.
+An association connects 'data_Content' and 'data_Person'. From 'data_Content', the role 'Content' has cardinality 0..*, and from 'data_Person', the role 'author' has cardinality 0..*.
+An association connects 'data_Content' and 'data_Person'. From 'data_Content', the role 'Content5' has cardinality 0..*, and from 'data_Person', the role 'contributors' has cardinality 0..*.
+An association connects 'data_Person' and 'data_Person'. From 'data_Person', the role 'data_Person6' has cardinality 0..*, and from 'data_Person', the role 'data_Person' has cardinality 0..*.
+An association connects 'data_Ranking' and 'data_Person'. From 'data_Ranking', the role 'Ranking' has cardinality 0..*, and from 'data_Person', the role 'ranker' has cardinality 0..*.
+An association connects 'data_InformationObject' and 'data_Category'. From 'data_InformationObject', the role 'categorized' has cardinality 0..*, and from 'data_Category', the role 'Category' has cardinality 0..*.
+An association connects 'data_InformationObject' and 'data_Tag'. From 'data_InformationObject', the role 'tagged' has cardinality 0..*, and from 'data_Tag', the role 'Tag' has cardinality 0..*.
+An association connects 'data_InformationObject' and 'data_Image'. From 'data_InformationObject', the role 'data_InformationObject' has cardinality 0..*, and from 'data_Image', the role 'data_Image' has cardinality 0..*.
+An association connects 'data_StarRanking' and 'data_InformationObject'. From 'data_StarRanking', the role 'StarRanking' has cardinality 0..*, and from 'data_InformationObject', the role 'rankedInformationObject' has cardinality 0..*.
+An association connects 'data_ThumbRanking' and 'data_InformationObject'. From 'data_ThumbRanking', the role 'ThumbRanking' has cardinality 0..*, and from 'data_InformationObject', the role 'rankedInformationObject14' has cardinality 0..*.
+An association connects 'data_InformationObject' and 'data_ViewRanking'. From 'data_InformationObject', the role 'rankedInformationObject16' has cardinality 0..*, and from 'data_ViewRanking', the role 'ViewRanking' has cardinality 0..*.
+An association connects 'data_InformationObject' and 'data_Connection'. From 'data_InformationObject', the role 'from' has cardinality 0..*, and from 'data_Connection', the role 'Connection' has cardinality 0..*.
+An association connects 'data_Connection' and 'data_InformationObject'. From 'data_Connection', the role 'Connection19' has cardinality 0..*, and from 'data_InformationObject', the role 'to' has cardinality 0..*.
+An association connects 'data_InformationObject' and 'data_Binary'. From 'data_InformationObject', the role 'data_InformationObject21' has cardinality 0..*, and from 'data_Binary', the role 'data_Binary' has cardinality 0..*.
+An association connects 'data_InformationObject' and 'data_Category'. From 'data_InformationObject', the role 'mainCategorized' has cardinality 0..*, and from 'data_Category', the role 'Category23' has cardinality 0..*.
+An association connects 'data_MetaInformation' and 'data_InformationObject'. From 'data_MetaInformation', the role 'MetaInformation' has cardinality 0..*, and from 'data_InformationObject', the role 'informationObjects' has cardinality 0..*.
+An association connects 'data_Content' and 'data_Content'. From 'data_Content', the role 'Content27' has cardinality 0..*, and from 'data_Content', the role 'parentContent' has cardinality 0..*.
+An association connects 'data_Person' and 'data_Content'. From 'data_Person', the role 'Person' has cardinality 0..*, and from 'data_Content', the role 'contributed' has cardinality 0..*.
+An association connects 'data_Person' and 'data_Content'. From 'data_Person', the role 'Person30' has cardinality 0..*, and from 'data_Content', the role 'authored' has cardinality 0..*.
+An association connects 'data_Content' and 'data_Document'. From 'data_Content', the role 'data_Content' has cardinality 0..*, and from 'data_Document', the role 'data_Document' has cardinality 0..*.
+An association connects 'data_Content' and 'data_Content'. From 'data_Content', the role 'contents' has cardinality 0..*, and from 'data_Content', the role 'Content34' has cardinality 0..*.
+An association connects 'data_Content' and 'data_Transformation'. From 'data_Content', the role 'transformed' has cardinality 0..*, and from 'data_Transformation', the role 'Transformation' has cardinality 0..*.
+An association connects 'data_Video' and 'data_Content'. From 'data_Video', the role 'data_Video' has cardinality 0..*, and from 'data_Content', the role 'data_Content37' has cardinality 0..*.
+An association connects 'data_DataSet' and 'data_Item'. From 'data_DataSet', the role 'dataSet' has cardinality 0..*, and from 'data_Item', the role 'Item' has cardinality 0..*.
+An association connects 'data_Mashup' and 'data_DataSet'. From 'data_Mashup', the role 'data_Mashup' has cardinality 0..*, and from 'data_DataSet', the role 'data_DataSet' has cardinality 0..*.
+An association connects 'data_Item' and 'data_DataSet'. From 'data_Item', the role 'items' has cardinality 0..*, and from 'data_DataSet', the role 'DataSet' has cardinality 0..*.
+An association connects 'data_Item' and 'data_MetaTag'. From 'data_Item', the role 'metaTagged' has cardinality 0..*, and from 'data_MetaTag', the role 'MetaTag' has cardinality 0..*.
+An association connects 'data_Item' and 'data_Identifier'. From 'data_Item', the role 'identified' has cardinality 0..*, and from 'data_Identifier', the role 'Identifier' has cardinality 0..*.
+An association connects 'data_Item' and 'data_Item'. From 'data_Item', the role 'Item45' has cardinality 0..*, and from 'data_Item', the role 'deletedIfDeleted' has cardinality 0..*.
+An association connects 'data_Item' and 'data_Item'. From 'data_Item', the role 'deleteOnDelete' has cardinality 0..*, and from 'data_Item', the role 'Item48' has cardinality 0..*.
+An association connects 'data_Category' and 'data_InformationObject'. From 'data_Category', the role 'categories' has cardinality 0..*, and from 'data_InformationObject', the role 'InformationObject' has cardinality 0..*.
+An association connects 'data_Category' and 'data_Category'. From 'data_Category', the role 'categories52' has cardinality 0..*, and from 'data_Category', the role 'Category53' has cardinality 0..*.
+An association connects 'data_Category' and 'data_Category'. From 'data_Category', the role 'parentCategory' has cardinality 0..*, and from 'data_Category', the role 'Category56' has cardinality 0..*.
+An association connects 'data_InformationObject' and 'data_Category'. From 'data_InformationObject', the role 'InformationObject58' has cardinality 0..*, and from 'data_Category', the role 'mainCategory' has cardinality 0..*.
+An association connects 'data_Tag' and 'data_InformationObject'. From 'data_Tag', the role 'tags' has cardinality 0..*, and from 'data_InformationObject', the role 'InformationObject60' has cardinality 0..*.
+An association connects 'data_Organisation' and 'data_Organisation'. From 'data_Organisation', the role 'Organisation63' has cardinality 0..*, and from 'data_Organisation', the role 'organisations' has cardinality 0..*.
+An association connects 'data_Person' and 'data_Organisation'. From 'data_Person', the role 'Person65' has cardinality 0..*, and from 'data_Organisation', the role 'leaderOf' has cardinality 0..*.
+An association connects 'data_Organisation' and 'data_Person'. From 'data_Organisation', the role 'participates' has cardinality 0..*, and from 'data_Person', the role 'Person67' has cardinality 0..*.
+An association connects 'data_Organisation' and 'data_Organisation'. From 'data_Organisation', the role 'Organisation70' has cardinality 0..*, and from 'data_Organisation', the role 'parentOrganisation' has cardinality 0..*.
+An association connects 'data_Item' and 'data_MetaTag'. From 'data_Item', the role 'Item72' has cardinality 0..*, and from 'data_MetaTag', the role 'metaTags' has cardinality 0..*.
+An association connects 'data_Ranking' and 'data_Person'. From 'data_Ranking', the role 'ranked' has cardinality 0..*, and from 'data_Person', the role 'Person74' has cardinality 0..*.
+An association connects 'data_IndoorLocation' and 'data_Location'. From 'data_IndoorLocation', the role 'IndoorLocation' has cardinality 0..*, and from 'data_Location', the role 'location' has cardinality 0..*.
+An association connects 'data_StarRanking' and 'data_InformationObject'. From 'data_StarRanking', the role 'starRankings' has cardinality 0..*, and from 'data_InformationObject', the role 'InformationObject77' has cardinality 0..*.
+An association connects 'data_ViewRanking' and 'data_InformationObject'. From 'data_ViewRanking', the role 'viewRankings' has cardinality 0..*, and from 'data_InformationObject', the role 'InformationObject79' has cardinality 0..*.
+An association connects 'data_InformationObject' and 'data_ThumbRanking'. From 'data_InformationObject', the role 'InformationObject81' has cardinality 0..*, and from 'data_ThumbRanking', the role 'thumbRankings' has cardinality 0..*.
+An association connects 'data_Content' and 'data_Transformation'. From 'data_Content', the role 'Content83' has cardinality 0..*, and from 'data_Transformation', the role 'transformations' has cardinality 0..*.
+An association connects 'data_InformationObject' and 'data_Connection'. From 'data_InformationObject', the role 'InformationObject85' has cardinality 0..*, and from 'data_Connection', the role 'connectedTo' has cardinality 0..*.
+An association connects 'data_Connection' and 'data_InformationObject'. From 'data_Connection', the role 'connectedBy' has cardinality 0..*, and from 'data_InformationObject', the role 'InformationObject87' has cardinality 0..*.
+An association connects 'data_MetaInformation' and 'data_InformationObject'. From 'data_MetaInformation', the role 'metaInformations' has cardinality 0..*, and from 'data_InformationObject', the role 'InformationObject89' has cardinality 0..*.
+An association connects 'data_IndoorLocation' and 'data_Location'. From 'data_IndoorLocation', the role 'indoorLocations' has cardinality 0..*, and from 'data_Location', the role 'Location' has cardinality 0..*.
+An association connects 'data_IndoorLocation' and 'data_IndoorLocation'. From 'data_IndoorLocation', the role 'indoorLocations93' has cardinality 0..*, and from 'data_IndoorLocation', the role 'IndoorLocation94' has cardinality 0..*.
+An association connects 'data_IndoorLocation' and 'data_IndoorLocation'. From 'data_IndoorLocation', the role 'parentIndoorLocation' has cardinality 0..*, and from 'data_IndoorLocation', the role 'IndoorLocation97' has cardinality 0..*.
+An association connects 'data_Identifier' and 'data_Item'. From 'data_Identifier', the role 'identifiedBy' has cardinality 0..*, and from 'data_Item', the role 'Item99' has cardinality 0..*.

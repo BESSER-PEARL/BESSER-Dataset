@@ -1,0 +1,185 @@
+The domain model 'r2' describes the core structural elements and their relationships within the system.
+
+The model defines 37 main class(es).
+
+'r2_ADXP' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'r2_BL' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'r2_AD' represents an important domain concept.
+It has one attribute: 'use', which is of type str.
+
+'HXIT' represents an important domain concept.
+It does not declare any attributes.
+
+'XP' represents an important domain concept.
+It does not declare any attributes.
+
+'r2_INT' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'r2_XP' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'r2_PIVLTS' represents an important domain concept.
+It has the following attributes: 'isFlexible', which is of type str; 'alignment', which is of type str.
+
+'r2_II' represents an important domain concept.
+It has the following attributes: 'identifierName', which is of type str; 'extension', which is of type str; 'root', which is of type str.
+
+'r2_ED' represents an important domain concept.
+It has the following attributes: 'data', which is of type str; 'charset', which is of type str; 'integrityCheck', which is of type str; 'integrityCheckAlgorithm', which is of type str; 'value', which is of type str; 'mediaType', which is of type str; 'compression', which is of type str; 'language', which is of type str.
+
+'r2_IVLCO' represents an important domain concept.
+It has the following attributes: 'highClosed', which is of type str; 'lowClosed', which is of type str.
+
+'r2_IVLTS' represents an important domain concept.
+It has the following attributes: 'lowClosed', which is of type str; 'highClosed', which is of type str.
+
+'r2_CO' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'r2_RTO' represents an important domain concept.
+It does not declare any attributes.
+
+'r2_IVL' represents an important domain concept.
+It does not declare any attributes.
+
+'r2_HXIT' represents an important domain concept.
+It does not declare any attributes.
+
+'IVL' represents an important domain concept.
+It does not declare any attributes.
+
+'r2_REAL' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'r2_ST' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'r2_TS' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'r2_IVLPQ' represents an important domain concept.
+It has the following attributes: 'highClosed', which is of type str; 'lowClosed', which is of type str.
+
+'r2_IVLINT' represents an important domain concept.
+It has the following attributes: 'lowClosed', which is of type str; 'highClosed', which is of type str.
+
+'r2_PQ' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'unit', which is of type str.
+
+'r2_TEL' represents an important domain concept.
+It has the following attributes: 'capabilities', which is of type str; 'value', which is of type str; 'use', which is of type str.
+
+'r2_QSET' represents an important domain concept.
+It does not declare any attributes.
+
+'ANY' represents an important domain concept.
+It does not declare any attributes.
+
+'r2_ANY' represents an important domain concept.
+It does not declare any attributes.
+
+'r2_CD' represents an important domain concept.
+It has the following attributes: 'valueSetVersion', which is of type str; 'valueSet', which is of type str; 'codeSystemVersion', which is of type str; 'codeSystemName', which is of type str; 'code', which is of type str; 'codeSystem', which is of type str.
+
+'r2_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'r2_QTY' represents an important domain concept.
+It does not declare any attributes.
+
+'QSET' represents an important domain concept.
+It does not declare any attributes.
+
+'r2_IVLREAL' represents an important domain concept.
+It has the following attributes: 'lowClosed', which is of type str; 'highClosed', which is of type str.
+
+'r2_IVLQTY' represents an important domain concept.
+It has the following attributes: 'lowClosed', which is of type str; 'highClosed', which is of type str.
+
+'r2_ENXP' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'qualifier', which is of type str.
+
+'r2_EN' represents an important domain concept.
+It has one attribute: 'use', which is of type str.
+
+'r2_CS' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+'QTY' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CalendarCycle' defines the following possible values: 'DY', 'CD', 'HD', 'SN', 'CY', 'CN', 'CH', 'NH', 'CS', 'WM', 'DM', 'CW', 'WY', 'MY', 'CM', 'DW'.
+The enumeration 'PostalAddressUse' defines the following possible values: 'TMP', 'PUB', 'PST', 'ABC', 'SRCH', 'IDE', 'DIR', 'SNDX', 'BAD', 'H', 'PHYS', 'WP', 'HP', 'SYL', 'PHON', 'HV'.
+The enumeration 'EntityNameUse' defines the following possible values: 'M', 'IDE', 'I', 'SYL', 'DN', 'ABC', 'P', 'R', 'SRCH', 'C', 'ANON', 'OR', 'A', 'T', 'OLD', 'PHON'.
+The enumeration 'EntityNamePartQualifier' defines the following possible values: 'PFX', 'SFX', 'LS', 'AC', 'AD', 'IN', 'NB', 'MID', 'HON', 'BR', 'SP', 'PR', 'CL'.
+The enumeration 'TelecommunicationCapability' defines the following possible values: 'tty', 'data', 'sms', 'fax', 'voice'.
+The enumeration 'TelecommunicationAddressUse' defines the following possible values: 'TMP', 'AS', 'HV', 'DIR', 'EC', 'HP', 'H', 'WP', 'PG', 'MC', 'BAD', 'PUB'.
+The enumeration 'AddressPartType' defines the following possible values: 'DMODID', 'DPID', 'DAL', 'BNS', 'INT', 'CTY', 'STA', 'DINSTQ', 'DEL', 'CNT', 'SAL', 'DIR', 'ADL', 'CEN', 'POB', 'CPA', 'CAR', 'DMOD', 'PRE', 'AL', 'BNR', 'BNN', 'DINSTA', 'UNID', 'ZIP', 'STR', 'STB', 'UNIT', 'DINST', 'STTYP'.
+The enumeration 'IntegrityCheckAlgorithm' defines the following possible values: 'SHA1', 'SHA256'.
+The enumeration 'EntityNamePartType' defines the following possible values: 'FAM', 'GIV', 'TITLE', 'DEL'.
+The enumeration 'Compression' defines the following possible values: 'Z', 'ZL', 'DF', 'BZ', 'GZ', 'Z7'.
+
+The model also captures inheritance relationships between classes.
+The class 'r2_AD' is a specialization of 'ANY'.
+The class 'r2_ADXP' is a specialization of 'XP'.
+The class 'r2_ANY' is a specialization of 'HXIT'.
+The class 'r2_BL' is a specialization of 'ANY'.
+The class 'r2_CD' is a specialization of 'ANY'.
+The class 'r2_CO' is a specialization of 'QTY'.
+The class 'r2_CS' is a specialization of 'ANY'.
+The class 'r2_ED' is a specialization of 'ANY'.
+The class 'r2_EN' is a specialization of 'ANY'.
+The class 'r2_ENXP' is a specialization of 'XP'.
+The class 'r2_II' is a specialization of 'ANY'.
+The class 'r2_INT' is a specialization of 'QTY'.
+The class 'r2_IVL' is a specialization of 'QSET'.
+The class 'r2_IVLCO' is a specialization of 'IVL'.
+The class 'r2_IVLINT' is a specialization of 'IVL'.
+The class 'r2_IVLPQ' is a specialization of 'IVL'.
+The class 'r2_IVLQTY' is a specialization of 'IVL'.
+The class 'r2_IVLREAL' is a specialization of 'IVL'.
+The class 'r2_IVLTS' is a specialization of 'IVL'.
+The class 'r2_PIVLTS' is a specialization of 'QTY'.
+The class 'r2_PQ' is a specialization of 'QTY'.
+The class 'r2_QSET' is a specialization of 'ANY'.
+The class 'r2_QTY' is a specialization of 'ANY'.
+The class 'r2_REAL' is a specialization of 'QTY'.
+The class 'r2_RTO' is a specialization of 'QTY'.
+The class 'r2_ST' is a specialization of 'ANY'.
+The class 'r2_TEL' is a specialization of 'ANY'.
+The class 'r2_TS' is a specialization of 'QTY'.
+
+Relationships between classes are modeled using associations.
+An association connects 'r2_ADXP' and 'r2_AD'. From 'r2_ADXP', the role 'r2_ADXP' has cardinality 0..*, and from 'r2_AD', the role 'r2_AD' has cardinality 0..*.
+An association connects 'r2_ST' and 'r2_CD'. From 'r2_ST', the role 'r2_ST' has cardinality 0..*, and from 'r2_CD', the role 'r2_CD' has cardinality 0..*.
+An association connects 'r2_ST' and 'r2_CD'. From 'r2_ST', the role 'r2_ST4' has cardinality 0..*, and from 'r2_CD', the role 'r2_CD3' has cardinality 0..*.
+An association connects 'r2_CD' and 'r2_CD'. From 'r2_CD', the role 'r2_CD7' has cardinality 0..*, and from 'r2_CD', the role 'r2_CD5' has cardinality 0..*.
+An association connects 'r2_CD' and 'r2_CO'. From 'r2_CD', the role 'r2_CD9' has cardinality 0..*, and from 'r2_CO', the role 'r2_CO' has cardinality 0..*.
+An association connects 'r2_ED' and 'r2_EObject'. From 'r2_ED', the role 'r2_ED' has cardinality 0..*, and from 'r2_EObject', the role 'r2_EObject' has cardinality 0..*.
+An association connects 'r2_TEL' and 'r2_ED'. From 'r2_TEL', the role 'r2_TEL' has cardinality 0..*, and from 'r2_ED', the role 'r2_ED12' has cardinality 0..*.
+An association connects 'r2_ST' and 'r2_ED'. From 'r2_ST', the role 'r2_ST15' has cardinality 0..*, and from 'r2_ED', the role 'r2_ED14' has cardinality 0..*.
+An association connects 'r2_EN' and 'r2_ENXP'. From 'r2_EN', the role 'r2_EN' has cardinality 0..*, and from 'r2_ENXP', the role 'r2_ENXP' has cardinality 0..*.
+An association connects 'r2_CO' and 'r2_IVLCO'. From 'r2_CO', the role 'r2_CO18' has cardinality 0..*, and from 'r2_IVLCO', the role 'r2_IVLCO' has cardinality 0..*.
+An association connects 'r2_IVLCO' and 'r2_CO'. From 'r2_IVLCO', the role 'r2_IVLCO20' has cardinality 0..*, and from 'r2_CO', the role 'r2_CO21' has cardinality 0..*.
+An association connects 'r2_INT' and 'r2_IVLINT'. From 'r2_INT', the role 'r2_INT' has cardinality 0..*, and from 'r2_IVLINT', the role 'r2_IVLINT' has cardinality 0..*.
+An association connects 'r2_IVLINT' and 'r2_INT'. From 'r2_IVLINT', the role 'r2_IVLINT24' has cardinality 0..*, and from 'r2_INT', the role 'r2_INT25' has cardinality 0..*.
+An association connects 'r2_PQ' and 'r2_IVLPQ'. From 'r2_PQ', the role 'r2_PQ' has cardinality 0..*, and from 'r2_IVLPQ', the role 'r2_IVLPQ' has cardinality 0..*.
+An association connects 'r2_IVLPQ' and 'r2_PQ'. From 'r2_IVLPQ', the role 'r2_IVLPQ28' has cardinality 0..*, and from 'r2_PQ', the role 'r2_PQ29' has cardinality 0..*.
+An association connects 'r2_IVLQTY' and 'r2_QTY'. From 'r2_IVLQTY', the role 'r2_IVLQTY' has cardinality 0..*, and from 'r2_QTY', the role 'r2_QTY' has cardinality 0..*.
+An association connects 'r2_QTY' and 'r2_IVLQTY'. From 'r2_QTY', the role 'r2_QTY33' has cardinality 0..*, and from 'r2_IVLQTY', the role 'r2_IVLQTY32' has cardinality 0..*.
+An association connects 'r2_REAL' and 'r2_IVLREAL'. From 'r2_REAL', the role 'r2_REAL' has cardinality 0..*, and from 'r2_IVLREAL', the role 'r2_IVLREAL' has cardinality 0..*.
+An association connects 'r2_REAL' and 'r2_IVLREAL'. From 'r2_REAL', the role 'r2_REAL37' has cardinality 0..*, and from 'r2_IVLREAL', the role 'r2_IVLREAL36' has cardinality 0..*.
+An association connects 'r2_IVLTS' and 'r2_TS'. From 'r2_IVLTS', the role 'r2_IVLTS' has cardinality 0..*, and from 'r2_TS', the role 'r2_TS' has cardinality 0..*.
+An association connects 'r2_TS' and 'r2_IVLTS'. From 'r2_TS', the role 'r2_TS41' has cardinality 0..*, and from 'r2_IVLTS', the role 'r2_IVLTS40' has cardinality 0..*.
+An association connects 'r2_PIVLTS' and 'r2_IVLTS'. From 'r2_PIVLTS', the role 'r2_PIVLTS' has cardinality 0..*, and from 'r2_IVLTS', the role 'r2_IVLTS43' has cardinality 0..*.
+An association connects 'r2_PQ' and 'r2_PIVLTS'. From 'r2_PQ', the role 'r2_PQ46' has cardinality 0..*, and from 'r2_PIVLTS', the role 'r2_PIVLTS45' has cardinality 0..*.
+An association connects 'r2_PIVLTS' and 'r2_RTO'. From 'r2_PIVLTS', the role 'r2_PIVLTS48' has cardinality 0..*, and from 'r2_RTO', the role 'r2_RTO' has cardinality 0..*.
+An association connects 'r2_INT' and 'r2_PIVLTS'. From 'r2_INT', the role 'r2_INT51' has cardinality 0..*, and from 'r2_PIVLTS', the role 'r2_PIVLTS50' has cardinality 0..*.
+An association connects 'r2_QTY' and 'r2_RTO'. From 'r2_QTY', the role 'r2_QTY54' has cardinality 0..*, and from 'r2_RTO', the role 'r2_RTO53' has cardinality 0..*.
+An association connects 'r2_QTY' and 'r2_RTO'. From 'r2_QTY', the role 'r2_QTY57' has cardinality 0..*, and from 'r2_RTO', the role 'r2_RTO56' has cardinality 0..*.

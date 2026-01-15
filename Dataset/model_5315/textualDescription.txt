@@ -1,0 +1,90 @@
+The domain model 'refinher2' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'E' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher2_E' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher2_N' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher2_M' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher2_DL' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher2_BB' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher2_DNamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'refinher2_DR' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher2_DG' represents an important domain concept.
+It does not declare any attributes.
+
+'DNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher2_A' represents an important domain concept.
+It does not declare any attributes.
+
+'M' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher2_CE' represents an important domain concept.
+It does not declare any attributes.
+
+'N' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher2_Y' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher2_DC' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher2_AB' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher2_H' represents an important domain concept.
+It does not declare any attributes.
+
+'CE' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'refinher2_E' is a specialization of 'DNamedElement'.
+The class 'refinher2_DL' is a specialization of 'CE'.
+The class 'refinher2_DR' is a specialization of 'E'.
+The class 'refinher2_DC' is a specialization of 'CE'.
+The class 'refinher2_A' is a specialization of 'DNamedElement'.
+The class 'refinher2_CE' is a specialization of 'A'.
+The class 'refinher2_CE' is a specialization of 'E'.
+The class 'refinher2_N' is a specialization of 'DNamedElement'.
+The class 'refinher2_N' is a specialization of 'A'.
+The class 'refinher2_N' is a specialization of 'M'.
+The class 'refinher2_BB' is a specialization of 'DNamedElement'.
+The class 'refinher2_AB' is a specialization of 'DNamedElement'.
+The class 'refinher2_H' is a specialization of 'N'.
+The class 'refinher2_Y' is a specialization of 'N'.
+
+Relationships between classes are modeled using associations.
+An association connects 'refinher2_E' and 'refinher2_N'. From 'refinher2_E', the role 'refinher2_E' has cardinality 0..*, and from 'refinher2_N', the role 'refinher2_N' has cardinality 0..*.
+An association connects 'refinher2_M' and 'refinher2_E'. From 'refinher2_M', the role 'refinher2_M' has cardinality 0..*, and from 'refinher2_E', the role 'refinher2_E2' has cardinality 0..*.
+An association connects 'refinher2_DL' and 'refinher2_BB'. From 'refinher2_DL', the role 'refinher2_DL' has cardinality 0..*, and from 'refinher2_BB', the role 'refinher2_BB' has cardinality 0..*.
+An association connects 'refinher2_DG' and 'refinher2_N'. From 'refinher2_DG', the role 'refinher2_DG' has cardinality 0..*, and from 'refinher2_N', the role 'refinher2_N5' has cardinality 0..*.
+An association connects 'refinher2_BB' and 'refinher2_DG'. From 'refinher2_BB', the role 'refinher2_BB8' has cardinality 0..*, and from 'refinher2_DG', the role 'refinher2_DG7' has cardinality 0..*.
+An association connects 'refinher2_AB' and 'refinher2_DG'. From 'refinher2_AB', the role 'refinher2_AB' has cardinality 0..*, and from 'refinher2_DG', the role 'refinher2_DG10' has cardinality 0..*.
+An association connects 'refinher2_AB' and 'refinher2_A'. From 'refinher2_AB', the role 'refinher2_AB12' has cardinality 0..*, and from 'refinher2_A', the role 'refinher2_A' has cardinality 0..*.
+An association connects 'refinher2_N' and 'refinher2_A'. From 'refinher2_N', the role 'refinher2_N15' has cardinality 0..*, and from 'refinher2_A', the role 'refinher2_A14' has cardinality 0..*.
+An association connects 'refinher2_H' and 'refinher2_E'. From 'refinher2_H', the role 'refinher2_H' has cardinality 0..*, and from 'refinher2_E', the role 'refinher2_E17' has cardinality 0..*.

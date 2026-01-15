@@ -1,0 +1,54 @@
+The domain model 'TypeA' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'ObjectX' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectR' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeA_D' represents an important domain concept.
+It has one attribute: 'nameD', which is of type str.
+
+'TypeA_C' represents an important domain concept.
+It has one attribute: 'nameC', which is of type str.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeA_AA' represents an important domain concept.
+It has one attribute: 'nameA', which is of type str.
+
+'TypeA_ObjectS' represents an important domain concept.
+It has one attribute: 'nameS', which is of type str.
+
+'TypeA_ListElement' represents an important domain concept.
+It has one attribute: 'nameListElement', which is of type str.
+
+'TypeA_ObjectY' represents an important domain concept.
+It has one attribute: 'nameY', which is of type str.
+
+'TypeA_ObjectX' represents an important domain concept.
+It has one attribute: 'nameX', which is of type str.
+
+'TypeA_ObjectR' represents an important domain concept.
+It has one attribute: 'nameR', which is of type str.
+
+'AA' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeA_B' represents an important domain concept.
+It has one attribute: 'nameB', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'TypeA_B' is a specialization of 'AA'.
+The class 'TypeA_C' is a specialization of 'B'.
+The class 'TypeA_D' is a specialization of 'AA'.
+The class 'TypeA_ObjectY' is a specialization of 'ObjectX'.
+The class 'TypeA_ObjectS' is a specialization of 'ObjectR'.
+
+Relationships between classes are modeled using associations.
+An association connects 'TypeA_ListElement' and 'AA'. From 'TypeA_ListElement', the role 'TypeA_ListElement' has cardinality 0..*, and from 'AA', the role 'AA' has cardinality 0..*.
+An association connects 'TypeA_ListElement' and 'ObjectX'. From 'TypeA_ListElement', the role 'TypeA_ListElement2' has cardinality 0..*, and from 'ObjectX', the role 'ObjectX' has cardinality 0..*.
+An association connects 'ObjectR' and 'TypeA_ListElement'. From 'ObjectR', the role 'ObjectR' has cardinality 0..*, and from 'TypeA_ListElement', the role 'TypeA_ListElement4' has cardinality 0..*.

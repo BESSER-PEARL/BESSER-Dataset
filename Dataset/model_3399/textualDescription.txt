@@ -1,0 +1,111 @@
+The domain model 'guigraph' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'rules_IRealTimeConsumer' represents an important domain concept.
+It does not declare any attributes.
+
+'guigraph_InhibitorArc' represents an important domain concept.
+It does not declare any attributes.
+
+'GuiGraphNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Widget' represents an important domain concept.
+It does not declare any attributes.
+
+'guigraph_TimerTransition' represents an important domain concept.
+It has one attribute: 'duration', which is of type int.
+
+'guigraph_Form' represents an important domain concept.
+It does not declare any attributes.
+
+'guigraph_PreGenerationSequence' represents an important domain concept.
+It does not declare any attributes.
+
+'guigraph_Place' represents an important domain concept.
+It has one attribute: 'initialTokens', which is of type int.
+
+'guigraph_Page' represents an important domain concept.
+It does not declare any attributes.
+
+'ITimeConsumer' represents an important domain concept.
+It does not declare any attributes.
+
+'guigraph_StandardArc' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'guigraph_Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'guigraph_NoWidgetNode' represents an important domain concept.
+It does not declare any attributes.
+
+'guigraph_PageTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'Place' represents an important domain concept.
+It does not declare any attributes.
+
+'GuiGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'guigraph_Transition' represents an important domain concept.
+It has the following attributes: 'timeMax', which is of type str; 'timeMin', which is of type str; 'faultImpact', which is of type float; 'rate', which is of type int; 'timingType', which is of type str; 'terminates', which is of type bool; 'faultProbability', which is of type float.
+
+'AbstractModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'guigraph_Widget' represents an important domain concept.
+It has one attribute: 'image', which is of type str.
+
+'guigraph_GuiGraphNode' represents an important domain concept.
+It does not declare any attributes.
+
+'guigraph_GuiGraph' represents an important domain concept.
+It has one attribute: 'invariantText', which is of type str.
+
+'guigraph_ConditionActionTransition' represents an important domain concept.
+It has the following attributes: 'actionsText', which is of type str; 'applicationConditionText', which is of type str.
+
+'Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'Arc' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TimingType' defines the following possible values: 'Interval', 'DelayUntilStart'.
+
+The model also captures inheritance relationships between classes.
+The class 'guigraph_GuiGraph' is a specialization of 'AbstractModelElement'.
+The class 'guigraph_Page' is a specialization of 'GuiGraph'.
+The class 'guigraph_Widget' is a specialization of 'AbstractModelElement'.
+The class 'guigraph_Form' is a specialization of 'Widget'.
+The class 'guigraph_Form' is a specialization of 'Place'.
+The class 'guigraph_Transition' is a specialization of 'GuiGraphNode'.
+The class 'guigraph_Transition' is a specialization of 'rules_IRealTimeConsumer'.
+The class 'guigraph_GuiGraphNode' is a specialization of 'AbstractModelElement'.
+The class 'guigraph_NoWidgetNode' is a specialization of 'Place'.
+The class 'guigraph_Place' is a specialization of 'GuiGraphNode'.
+The class 'guigraph_ConditionActionTransition' is a specialization of 'Transition'.
+The class 'guigraph_TimerTransition' is a specialization of 'Transition'.
+The class 'guigraph_Arc' is a specialization of 'AbstractModelElement'.
+The class 'guigraph_StandardArc' is a specialization of 'Arc'.
+The class 'guigraph_InhibitorArc' is a specialization of 'Arc'.
+The class 'guigraph_PageTransition' is a specialization of 'Transition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'guigraph_Arc' and 'guigraph_GuiGraph'. From 'guigraph_Arc', the role 'guigraph_Arc' has cardinality 0..*, and from 'guigraph_GuiGraph', the role 'guigraph_GuiGraph' has cardinality 0..*.
+An association connects 'guigraph_GuiGraph' and 'guigraph_GuiGraphNode'. From 'guigraph_GuiGraph', the role 'guigraph_GuiGraph2' has cardinality 0..*, and from 'guigraph_GuiGraphNode', the role 'guigraph_GuiGraphNode' has cardinality 0..*.
+An association connects 'Predicate' and 'guigraph_GuiGraph'. From 'Predicate', the role 'Predicate' has cardinality 0..*, and from 'guigraph_GuiGraph', the role 'guigraph_GuiGraph4' has cardinality 0..*.
+An association connects 'guigraph_Widget' and 'guigraph_Widget'. From 'guigraph_Widget', the role 'guigraph_Widget5' has cardinality 0..*, and from 'guigraph_Widget', the role 'guigraph_Widget' has cardinality 0..*.
+An association connects 'Predicate' and 'guigraph_ConditionActionTransition'. From 'Predicate', the role 'Predicate8' has cardinality 0..*, and from 'guigraph_ConditionActionTransition', the role 'guigraph_ConditionActionTransition' has cardinality 0..*.
+An association connects 'guigraph_ConditionActionTransition' and 'guigraph_PreGenerationSequence'. From 'guigraph_ConditionActionTransition', the role 'guigraph_ConditionActionTransition10' has cardinality 0..*, and from 'guigraph_PreGenerationSequence', the role 'guigraph_PreGenerationSequence' has cardinality 0..*.
+An association connects 'ITimeConsumer' and 'guigraph_TimerTransition'. From 'ITimeConsumer', the role 'ITimeConsumer' has cardinality 0..*, and from 'guigraph_TimerTransition', the role 'guigraph_TimerTransition' has cardinality 0..*.
+An association connects 'guigraph_GuiGraphNode' and 'guigraph_Arc'. From 'guigraph_GuiGraphNode', the role 'guigraph_GuiGraphNode14' has cardinality 0..*, and from 'guigraph_Arc', the role 'guigraph_Arc13' has cardinality 0..*.
+An association connects 'guigraph_Arc' and 'guigraph_GuiGraphNode'. From 'guigraph_Arc', the role 'guigraph_Arc16' has cardinality 0..*, and from 'guigraph_GuiGraphNode', the role 'guigraph_GuiGraphNode17' has cardinality 0..*.
+An association connects 'guigraph_PageTransition' and 'guigraph_Page'. From 'guigraph_PageTransition', the role 'guigraph_PageTransition' has cardinality 0..*, and from 'guigraph_Page', the role 'guigraph_Page' has cardinality 0..*.

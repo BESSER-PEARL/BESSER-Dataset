@@ -1,0 +1,55 @@
+The domain model 'accounting' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'accounting_Employee' represents an important domain concept.
+It has one attribute: 'emails', which is of type str.
+
+'accounting_Invoice' represents an important domain concept.
+It has the following attributes: 'state', which is of type str; 'invoiceDate', which is of type date; 'unitAmount', which is of type float; 'id', which is of type str.
+
+'accounting_Deliverable' represents an important domain concept.
+It has the following attributes: 'dueDate', which is of type date; 'unitAmount', which is of type float.
+
+'accounting_Order' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'paymentOffset', which is of type int; 'pricePerUnit', which is of type float.
+
+'accounting_EmployeeDatabase' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'accounting_Project' represents an important domain concept.
+It does not declare any attributes.
+
+'accounting_Client' represents an important domain concept.
+It does not declare any attributes.
+
+'accounting_ClientDatabase' represents an important domain concept.
+It does not declare any attributes.
+
+'accounting_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'InvoiceState' defines the following possible values: 'Invoiced', 'Paid', 'New'.
+
+The model also captures inheritance relationships between classes.
+The class 'accounting_Client' is a specialization of 'NamedElement'.
+The class 'accounting_Project' is a specialization of 'NamedElement'.
+The class 'accounting_Employee' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'accounting_Order' and 'accounting_Project'. From 'accounting_Order', the role 'orders' has cardinality 0..*, and from 'accounting_Project', the role 'Project' has cardinality 0..*.
+An association connects 'accounting_Order' and 'accounting_Deliverable'. From 'accounting_Order', the role 'order' has cardinality 0..*, and from 'accounting_Deliverable', the role 'Deliverable' has cardinality 0..*.
+An association connects 'accounting_Invoice' and 'accounting_Order'. From 'accounting_Invoice', the role 'Invoice' has cardinality 0..*, and from 'accounting_Order', the role 'order3' has cardinality 0..*.
+An association connects 'accounting_Order' and 'accounting_Deliverable'. From 'accounting_Order', the role 'Order' has cardinality 0..*, and from 'accounting_Deliverable', the role 'deliverables' has cardinality 0..*.
+An association connects 'accounting_Employee' and 'accounting_Invoice'. From 'accounting_Employee', the role 'accounting_Employee' has cardinality 0..*, and from 'accounting_Invoice', the role 'accounting_Invoice' has cardinality 0..*.
+An association connects 'accounting_Invoice' and 'accounting_Order'. From 'accounting_Invoice', the role 'invoices' has cardinality 0..*, and from 'accounting_Order', the role 'Order7' has cardinality 0..*.
+An association connects 'accounting_Project' and 'accounting_Client'. From 'accounting_Project', the role 'Project9' has cardinality 0..*, and from 'accounting_Client', the role 'client' has cardinality 0..*.
+An association connects 'accounting_Client' and 'accounting_Project'. From 'accounting_Client', the role 'Client' has cardinality 0..*, and from 'accounting_Project', the role 'projects' has cardinality 0..*.
+An association connects 'accounting_Project' and 'accounting_Order'. From 'accounting_Project', the role 'project' has cardinality 0..*, and from 'accounting_Order', the role 'Order12' has cardinality 0..*.
+An association connects 'accounting_Employee' and 'accounting_Project'. From 'accounting_Employee', the role 'accounting_Employee14' has cardinality 0..*, and from 'accounting_Project', the role 'accounting_Project' has cardinality 0..*.
+An association connects 'accounting_ClientDatabase' and 'accounting_Client'. From 'accounting_ClientDatabase', the role 'accounting_ClientDatabase' has cardinality 0..*, and from 'accounting_Client', the role 'accounting_Client' has cardinality 0..*.
+An association connects 'accounting_EmployeeDatabase' and 'accounting_Employee'. From 'accounting_EmployeeDatabase', the role 'accounting_EmployeeDatabase' has cardinality 0..*, and from 'accounting_Employee', the role 'accounting_Employee17' has cardinality 0..*.

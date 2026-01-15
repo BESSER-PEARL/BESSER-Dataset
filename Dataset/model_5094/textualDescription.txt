@@ -1,0 +1,73 @@
+The domain model 'adl301' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'adl301_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'adl301_AbstractComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'adl301_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'adl301_Required' represents an important domain concept.
+It does not declare any attributes.
+
+'adl301_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'adl301_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'adl301_Type' represents an important domain concept.
+It has one attribute: 'signature', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'adl301_Attributes' represents an important domain concept.
+It has one attribute: 'signature', which is of type str.
+
+'adl301_Provided' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'adl301_Item' represents an important domain concept.
+It does not declare any attributes.
+
+'adl301_Content' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'class', which is of type str.
+
+'adl301_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'adl301_Interface' is a specialization of 'NamedElement'.
+The class 'adl301_Binding' is a specialization of 'NamedElement'.
+The class 'adl301_Required' is a specialization of 'Type'.
+The class 'adl301_Provided' is a specialization of 'Type'.
+The class 'adl301_Component' is a specialization of 'AbstractComponent'.
+The class 'adl301_Component' is a specialization of 'NamedElement'.
+The class 'adl301_Type' is a specialization of 'Interface'.
+The class 'adl301_Item' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'adl301_Content' and 'adl301_AbstractComponent'. From 'adl301_Content', the role 'adl301_Content' has cardinality 0..*, and from 'adl301_AbstractComponent', the role 'adl301_AbstractComponent' has cardinality 0..*.
+An association connects 'adl301_Attributes' and 'adl301_AbstractComponent'. From 'adl301_Attributes', the role 'adl301_Attributes' has cardinality 0..*, and from 'adl301_AbstractComponent', the role 'adl301_AbstractComponent2' has cardinality 0..*.
+An association connects 'adl301_Required' and 'adl301_AbstractComponent'. From 'adl301_Required', the role 'adl301_Required' has cardinality 0..*, and from 'adl301_AbstractComponent', the role 'adl301_AbstractComponent4' has cardinality 0..*.
+An association connects 'adl301_AbstractComponent' and 'adl301_Provided'. From 'adl301_AbstractComponent', the role 'adl301_AbstractComponent6' has cardinality 0..*, and from 'adl301_Provided', the role 'adl301_Provided' has cardinality 0..*.
+An association connects 'adl301_Binding' and 'adl301_Interface'. From 'adl301_Binding', the role 'adl301_Binding' has cardinality 0..*, and from 'adl301_Interface', the role 'adl301_Interface' has cardinality 0..*.
+An association connects 'adl301_Interface' and 'adl301_Binding'. From 'adl301_Interface', the role 'adl301_Interface10' has cardinality 0..*, and from 'adl301_Binding', the role 'adl301_Binding9' has cardinality 0..*.
+An association connects 'adl301_Binding' and 'adl301_Interface'. From 'adl301_Binding', the role 'adl301_Binding12' has cardinality 0..*, and from 'adl301_Interface', the role 'adl301_Interface13' has cardinality 0..*.
+An association connects 'adl301_Attributes' and 'adl301_Attribute'. From 'adl301_Attributes', the role 'adl301_Attributes15' has cardinality 0..*, and from 'adl301_Attribute', the role 'adl301_Attribute' has cardinality 0..*.
+An association connects 'adl301_Component' and 'adl301_Component'. From 'adl301_Component', the role 'adl301_Component16' has cardinality 0..*, and from 'adl301_Component', the role 'adl301_Component' has cardinality 0..*.
+An association connects 'adl301_Type' and 'adl301_Item'. From 'adl301_Type', the role 'adl301_Type' has cardinality 0..*, and from 'adl301_Item', the role 'adl301_Item' has cardinality 0..*.

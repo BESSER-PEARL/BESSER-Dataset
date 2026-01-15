@@ -1,0 +1,23 @@
+The domain model 'sample' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'sample_Department' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sample_Group' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sample_Company' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sample_Person' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'birthdate', which is of type date.
+
+Relationships between classes are modeled using associations.
+An association connects 'sample_Department' and 'sample_Company'. From 'sample_Department', the role 'Department' has cardinality 0..*, and from 'sample_Company', the role 'company' has cardinality 0..*.
+An association connects 'sample_Group' and 'sample_Department'. From 'sample_Group', the role 'Group' has cardinality 0..*, and from 'sample_Department', the role 'department' has cardinality 0..*.
+An association connects 'sample_Company' and 'sample_Department'. From 'sample_Company', the role 'Company' has cardinality 0..*, and from 'sample_Department', the role 'departments' has cardinality 0..*.
+An association connects 'sample_Person' and 'sample_Group'. From 'sample_Person', the role 'Person' has cardinality 0..*, and from 'sample_Group', the role 'group' has cardinality 0..*.
+An association connects 'sample_Group' and 'sample_Department'. From 'sample_Group', the role 'groups' has cardinality 0..*, and from 'sample_Department', the role 'Department5' has cardinality 0..*.
+An association connects 'sample_Person' and 'sample_Group'. From 'sample_Person', the role 'persons' has cardinality 0..*, and from 'sample_Group', the role 'Group7' has cardinality 0..*.

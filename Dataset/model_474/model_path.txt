@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/titouanc/softarch/assignment4/FamiliesToPerson/Families.ecore

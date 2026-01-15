@@ -1,0 +1,80 @@
+The domain model 'inherlink' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'R' represents an important domain concept.
+It does not declare any attributes.
+
+'inherlink_R' represents an important domain concept.
+It does not declare any attributes.
+
+'inherlink_L' represents an important domain concept.
+It does not declare any attributes.
+
+'inherlink_N' represents an important domain concept.
+It does not declare any attributes.
+
+'inherlink_G' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'inherlink_M' represents an important domain concept.
+It does not declare any attributes.
+
+'L' represents an important domain concept.
+It does not declare any attributes.
+
+'inherlink_X' represents an important domain concept.
+It does not declare any attributes.
+
+'inherlink_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'inherlink_P' represents an important domain concept.
+It does not declare any attributes.
+
+'inherlink_T' represents an important domain concept.
+It does not declare any attributes.
+
+'inherlink_W' represents an important domain concept.
+It does not declare any attributes.
+
+'inherlink_A' represents an important domain concept.
+It does not declare any attributes.
+
+'inherlink_K' represents an important domain concept.
+It does not declare any attributes.
+
+'inherlink_C' represents an important domain concept.
+It does not declare any attributes.
+
+'inherlink_Y' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'inherlink_R' is a specialization of 'Named'.
+The class 'inherlink_X' is a specialization of 'L'.
+The class 'inherlink_Y' is a specialization of 'R'.
+The class 'inherlink_M' is a specialization of 'L'.
+The class 'inherlink_N' is a specialization of 'R'.
+The class 'inherlink_K' is a specialization of 'R'.
+The class 'inherlink_W' is a specialization of 'L'.
+The class 'inherlink_L' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'inherlink_K' and 'inherlink_C'. From 'inherlink_K', the role 'inherlink_K' has cardinality 0..*, and from 'inherlink_C', the role 'inherlink_C' has cardinality 0..*.
+An association connects 'inherlink_M' and 'inherlink_C'. From 'inherlink_M', the role 'inherlink_M' has cardinality 0..*, and from 'inherlink_C', the role 'inherlink_C2' has cardinality 0..*.
+An association connects 'inherlink_X' and 'inherlink_C'. From 'inherlink_X', the role 'inherlink_X' has cardinality 0..*, and from 'inherlink_C', the role 'inherlink_C4' has cardinality 0..*.
+An association connects 'inherlink_C' and 'inherlink_N'. From 'inherlink_C', the role 'inherlink_C6' has cardinality 0..*, and from 'inherlink_N', the role 'inherlink_N' has cardinality 0..*.
+An association connects 'inherlink_Y' and 'inherlink_P'. From 'inherlink_Y', the role 'inherlink_Y' has cardinality 0..*, and from 'inherlink_P', the role 'inherlink_P' has cardinality 0..*.
+An association connects 'inherlink_Y' and 'inherlink_G'. From 'inherlink_Y', the role 'inherlink_Y9' has cardinality 0..*, and from 'inherlink_G', the role 'inherlink_G' has cardinality 0..*.
+An association connects 'inherlink_Y' and 'inherlink_T'. From 'inherlink_Y', the role 'inherlink_Y11' has cardinality 0..*, and from 'inherlink_T', the role 'inherlink_T' has cardinality 0..*.
+An association connects 'inherlink_W' and 'inherlink_K'. From 'inherlink_W', the role 'inherlink_W' has cardinality 0..*, and from 'inherlink_K', the role 'inherlink_K13' has cardinality 0..*.
+An association connects 'inherlink_Y' and 'inherlink_K'. From 'inherlink_Y', the role 'inherlink_Y16' has cardinality 0..*, and from 'inherlink_K', the role 'inherlink_K15' has cardinality 0..*.
+An association connects 'inherlink_A' and 'inherlink_L'. From 'inherlink_A', the role 'inherlink_A' has cardinality 0..*, and from 'inherlink_L', the role 'inherlink_L' has cardinality 0..*.
+An association connects 'inherlink_A' and 'inherlink_R'. From 'inherlink_A', the role 'inherlink_A19' has cardinality 0..*, and from 'inherlink_R', the role 'inherlink_R' has cardinality 0..*.
+An association connects 'inherlink_A' and 'inherlink_L'. From 'inherlink_A', the role 'inherlink_A21' has cardinality 0..*, and from 'inherlink_L', the role 'inherlink_L22' has cardinality 0..*.
+An association connects 'inherlink_G' and 'inherlink_P'. From 'inherlink_G', the role 'inherlink_G25' has cardinality 0..*, and from 'inherlink_P', the role 'inherlink_P24' has cardinality 0..*.
+An association connects 'inherlink_P' and 'inherlink_T'. From 'inherlink_P', the role 'inherlink_P27' has cardinality 0..*, and from 'inherlink_T', the role 'inherlink_T28' has cardinality 0..*.

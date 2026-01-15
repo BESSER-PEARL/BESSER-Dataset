@@ -1,0 +1,289 @@
+The domain model 'go' describes the core structural elements and their relationships within the system.
+
+The model defines 64 main class(es).
+
+'ElseIfCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'go_FunctionReturn' represents an important domain concept.
+It does not declare any attributes.
+
+'Operations' represents an important domain concept.
+It does not declare any attributes.
+
+'go_DecFunc' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'returnType', which is of type str.
+
+'go_ReAtrib' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'go_IfCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'SwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Decl' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'go_DecVars' represents an important domain concept.
+It has one attribute: 'vars', which is of type str.
+
+'go_OperationsOneEquals' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Y' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ElseIfCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Intg' represents an important domain concept.
+It has one attribute: 'i', which is of type int.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'I' represents an important domain concept.
+It does not declare any attributes.
+
+'go_F' represents an important domain concept.
+It does not declare any attributes.
+
+'CallFor' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationsOneEquals' represents an important domain concept.
+It does not declare any attributes.
+
+'go_CallFor' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Go' represents an important domain concept.
+It does not declare any attributes.
+
+'go_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'go_DecVar' represents an important domain concept.
+It does not declare any attributes.
+
+'go_OrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'T' represents an important domain concept.
+It does not declare any attributes.
+
+'go_I' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ElseCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Double' represents an important domain concept.
+It has one attribute: 'd', which is of type int.
+
+'go_Params' represents an important domain concept.
+It has the following attributes: 'params', which is of type str; 'type', which is of type str.
+
+'go_Atrib' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str; 'modifier', which is of type str.
+
+'go_Addition' represents an important domain concept.
+It does not declare any attributes.
+
+'go_SwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ComparisonExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'go_varFor' represents an important domain concept.
+It does not declare any attributes.
+
+'operationsOne' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Multiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'go_CallFunc' represents an important domain concept.
+It has one attribute: 'nameFunc', which is of type str.
+
+'Atri' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Bool' represents an important domain concept.
+It has one attribute: 'val', which is of type str.
+
+'Greeting' represents an important domain concept.
+It does not declare any attributes.
+
+'go_MultDecVars' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'go_Subtration' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Greeting' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Str' represents an important domain concept.
+It has one attribute: 's', which is of type str.
+
+'go_FunctionBody' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Atrib_Aux' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Operations' represents an important domain concept.
+It does not declare any attributes.
+
+'go_AtribVar' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'vars', which is of type str.
+
+'go_DataType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Atrib_Aux' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'go_operationsOne' represents an important domain concept.
+It does not declare any attributes.
+
+'varFor' represents an important domain concept.
+It does not declare any attributes.
+
+'F' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'go_TypeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'go_T' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Cases' represents an important domain concept.
+It does not declare any attributes.
+
+'go_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Atri' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Numbers' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'go_DecVar' is a specialization of 'Greeting'.
+The class 'go_Variable' is a specialization of 'Greeting'.
+The class 'go_Variable' is a specialization of 'Atrib_Aux'.
+The class 'go_Variable' is a specialization of 'SwitchCase'.
+The class 'go_Variable' is a specialization of 'OperationsOneEquals'.
+The class 'go_Variable' is a specialization of 'operationsOne'.
+The class 'go_Variable' is a specialization of 'Expression'.
+The class 'go_Atrib' is a specialization of 'varFor'.
+The class 'go_ReAtrib' is a specialization of 'varFor'.
+The class 'go_MultDecVars' is a specialization of 'Greeting'.
+The class 'go_SwitchCase' is a specialization of 'Greeting'.
+The class 'go_Atri' is a specialization of 'Atrib_Aux'.
+The class 'go_TypeValue' is a specialization of 'Atri'.
+The class 'go_Str' is a specialization of 'TypeValue'.
+The class 'go_Numbers' is a specialization of 'TypeValue'.
+The class 'go_Numbers' is a specialization of 'F'.
+The class 'go_Numbers' is a specialization of 'Expression'.
+The class 'go_Operations' is a specialization of 'Atrib_Aux'.
+The class 'go_T' is a specialization of 'Operations'.
+The class 'go_T' is a specialization of 'I'.
+The class 'go_F' is a specialization of 'T'.
+The class 'go_Condition' is a specialization of 'Greeting'.
+The class 'go_IfCondition' is a specialization of 'ElseIfCondition'.
+The class 'go_Expression' is a specialization of 'varFor'.
+The class 'go_CallFor' is a specialization of 'Greeting'.
+The class 'go_varFor' is a specialization of 'CallFor'.
+The class 'go_DecFunc' is a specialization of 'Greeting'.
+The class 'go_CallFunc' is a specialization of 'Greeting'.
+The class 'go_CallFunc' is a specialization of 'Atrib_Aux'.
+The class 'go_Bool' is a specialization of 'TypeValue'.
+The class 'go_DataType' is a specialization of 'Greeting'.
+The class 'go_Addition' is a specialization of 'Expression'.
+The class 'go_Subtration' is a specialization of 'Expression'.
+The class 'go_Multiplication' is a specialization of 'Expression'.
+The class 'go_Division' is a specialization of 'Expression'.
+The class 'go_OrExpression' is a specialization of 'Expression'.
+The class 'go_AndExpression' is a specialization of 'Expression'.
+The class 'go_ComparisonExpression' is a specialization of 'Expression'.
+The class 'go_Literal' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'go_Greeting' and 'go_Go'. From 'go_Greeting', the role 'go_Greeting' has cardinality 0..*, and from 'go_Go', the role 'go_Go' has cardinality 0..*.
+An association connects 'go_DecVar' and 'go_Decl'. From 'go_DecVar', the role 'go_DecVar' has cardinality 0..*, and from 'go_Decl', the role 'go_Decl' has cardinality 0..*.
+An association connects 'go_Atrib' and 'go_DecVar'. From 'go_Atrib', the role 'go_Atrib' has cardinality 0..*, and from 'go_DecVar', the role 'go_DecVar3' has cardinality 0..*.
+An association connects 'go_AtribVar' and 'go_DecVar'. From 'go_AtribVar', the role 'go_AtribVar' has cardinality 0..*, and from 'go_DecVar', the role 'go_DecVar5' has cardinality 0..*.
+An association connects 'go_DecVar' and 'go_ReAtrib'. From 'go_DecVar', the role 'go_DecVar7' has cardinality 0..*, and from 'go_ReAtrib', the role 'go_ReAtrib' has cardinality 0..*.
+An association connects 'go_AtribVar' and 'go_Atrib_Aux'. From 'go_AtribVar', the role 'go_AtribVar9' has cardinality 0..*, and from 'go_Atrib_Aux', the role 'go_Atrib_Aux' has cardinality 0..*.
+An association connects 'go_Variable' and 'go_Cases'. From 'go_Variable', the role 'go_Variable' has cardinality 0..*, and from 'go_Cases', the role 'go_Cases' has cardinality 0..*.
+An association connects 'go_Variable' and 'go_Greeting'. From 'go_Variable', the role 'go_Variable12' has cardinality 0..*, and from 'go_Greeting', the role 'go_Greeting13' has cardinality 0..*.
+An association connects 'go_Atrib' and 'go_Atrib_Aux'. From 'go_Atrib', the role 'go_Atrib15' has cardinality 0..*, and from 'go_Atrib_Aux', the role 'go_Atrib_Aux16' has cardinality 0..*.
+An association connects 'go_EObject' and 'go_Atrib'. From 'go_EObject', the role 'go_EObject' has cardinality 0..*, and from 'go_Atrib', the role 'go_Atrib18' has cardinality 0..*.
+An association connects 'go_ReAtrib' and 'go_Atrib_Aux'. From 'go_ReAtrib', the role 'go_ReAtrib20' has cardinality 0..*, and from 'go_Atrib_Aux', the role 'go_Atrib_Aux21' has cardinality 0..*.
+An association connects 'go_EObject' and 'go_ReAtrib'. From 'go_EObject', the role 'go_EObject24' has cardinality 0..*, and from 'go_ReAtrib', the role 'go_ReAtrib23' has cardinality 0..*.
+An association connects 'go_TypeValue' and 'go_MultDecVars'. From 'go_TypeValue', the role 'go_TypeValue' has cardinality 0..*, and from 'go_MultDecVars', the role 'go_MultDecVars' has cardinality 0..*.
+An association connects 'go_DecVars' and 'go_Atrib_Aux'. From 'go_DecVars', the role 'go_DecVars' has cardinality 0..*, and from 'go_Atrib_Aux', the role 'go_Atrib_Aux27' has cardinality 0..*.
+An association connects 'go_Cases' and 'go_Expression'. From 'go_Cases', the role 'go_Cases29' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression' has cardinality 0..*.
+An association connects 'go_Cases' and 'go_Greeting'. From 'go_Cases', the role 'go_Cases31' has cardinality 0..*, and from 'go_Greeting', the role 'go_Greeting32' has cardinality 0..*.
+An association connects 'go_Intg' and 'go_Numbers'. From 'go_Intg', the role 'go_Intg' has cardinality 0..*, and from 'go_Numbers', the role 'go_Numbers' has cardinality 0..*.
+An association connects 'go_Double' and 'go_Numbers'. From 'go_Double', the role 'go_Double' has cardinality 0..*, and from 'go_Numbers', the role 'go_Numbers35' has cardinality 0..*.
+An association connects 'go_T' and 'go_EObject'. From 'go_T', the role 'go_T' has cardinality 0..*, and from 'go_EObject', the role 'go_EObject37' has cardinality 0..*.
+An association connects 'go_Y' and 'go_EObject'. From 'go_Y', the role 'go_Y' has cardinality 0..*, and from 'go_EObject', the role 'go_EObject39' has cardinality 0..*.
+An association connects 'go_IfCondition' and 'go_Condition'. From 'go_IfCondition', the role 'go_IfCondition' has cardinality 0..*, and from 'go_Condition', the role 'go_Condition' has cardinality 0..*.
+An association connects 'go_ElseIfCondition' and 'go_Condition'. From 'go_ElseIfCondition', the role 'go_ElseIfCondition' has cardinality 0..*, and from 'go_Condition', the role 'go_Condition42' has cardinality 0..*.
+An association connects 'go_ElseCondition' and 'go_Condition'. From 'go_ElseCondition', the role 'go_ElseCondition' has cardinality 0..*, and from 'go_Condition', the role 'go_Condition44' has cardinality 0..*.
+An association connects 'go_Expression' and 'go_IfCondition'. From 'go_Expression', the role 'go_Expression47' has cardinality 0..*, and from 'go_IfCondition', the role 'go_IfCondition46' has cardinality 0..*.
+An association connects 'go_IfCondition' and 'go_Greeting'. From 'go_IfCondition', the role 'go_IfCondition49' has cardinality 0..*, and from 'go_Greeting', the role 'go_Greeting50' has cardinality 0..*.
+An association connects 'go_Greeting' and 'go_ElseCondition'. From 'go_Greeting', the role 'go_Greeting53' has cardinality 0..*, and from 'go_ElseCondition', the role 'go_ElseCondition52' has cardinality 0..*.
+An association connects 'go_Expression' and 'go_Expression'. From 'go_Expression', the role 'go_Expression56' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression54' has cardinality 0..*.
+An association connects 'go_Expression' and 'go_Expression'. From 'go_Expression', the role 'go_Expression59' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression57' has cardinality 0..*.
+An association connects 'go_Expression' and 'go_Expression'. From 'go_Expression', the role 'go_Expression60' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression62' has cardinality 0..*.
+An association connects 'go_EObject' and 'go_CallFor'. From 'go_EObject', the role 'go_EObject64' has cardinality 0..*, and from 'go_CallFor', the role 'go_CallFor' has cardinality 0..*.
+An association connects 'go_DecFunc' and 'go_Params'. From 'go_DecFunc', the role 'go_DecFunc' has cardinality 0..*, and from 'go_Params', the role 'go_Params' has cardinality 0..*.
+An association connects 'go_FunctionBody' and 'go_DecFunc'. From 'go_FunctionBody', the role 'go_FunctionBody' has cardinality 0..*, and from 'go_DecFunc', the role 'go_DecFunc67' has cardinality 0..*.
+An association connects 'go_FunctionBody' and 'go_Greeting'. From 'go_FunctionBody', the role 'go_FunctionBody69' has cardinality 0..*, and from 'go_Greeting', the role 'go_Greeting70' has cardinality 0..*.
+An association connects 'go_FunctionBody' and 'go_FunctionReturn'. From 'go_FunctionBody', the role 'go_FunctionBody72' has cardinality 0..*, and from 'go_FunctionReturn', the role 'go_FunctionReturn' has cardinality 0..*.
+An association connects 'go_FunctionReturn' and 'go_Atrib_Aux'. From 'go_FunctionReturn', the role 'go_FunctionReturn74' has cardinality 0..*, and from 'go_Atrib_Aux', the role 'go_Atrib_Aux75' has cardinality 0..*.
+An association connects 'go_CallFunc' and 'go_Params'. From 'go_CallFunc', the role 'go_CallFunc' has cardinality 0..*, and from 'go_Params', the role 'go_Params77' has cardinality 0..*.
+An association connects 'go_Addition' and 'go_Expression'. From 'go_Addition', the role 'go_Addition' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression79' has cardinality 0..*.
+An association connects 'go_Expression' and 'go_Addition'. From 'go_Expression', the role 'go_Expression82' has cardinality 0..*, and from 'go_Addition', the role 'go_Addition81' has cardinality 0..*.
+An association connects 'go_Subtration' and 'go_Expression'. From 'go_Subtration', the role 'go_Subtration' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression84' has cardinality 0..*.
+An association connects 'go_Expression' and 'go_Subtration'. From 'go_Expression', the role 'go_Expression87' has cardinality 0..*, and from 'go_Subtration', the role 'go_Subtration86' has cardinality 0..*.
+An association connects 'go_Expression' and 'go_Multiplication'. From 'go_Expression', the role 'go_Expression89' has cardinality 0..*, and from 'go_Multiplication', the role 'go_Multiplication' has cardinality 0..*.
+An association connects 'go_Expression' and 'go_Multiplication'. From 'go_Expression', the role 'go_Expression92' has cardinality 0..*, and from 'go_Multiplication', the role 'go_Multiplication91' has cardinality 0..*.
+An association connects 'go_Expression' and 'go_Division'. From 'go_Expression', the role 'go_Expression94' has cardinality 0..*, and from 'go_Division', the role 'go_Division' has cardinality 0..*.
+An association connects 'go_Division' and 'go_Expression'. From 'go_Division', the role 'go_Division96' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression97' has cardinality 0..*.
+An association connects 'go_OrExpression' and 'go_Expression'. From 'go_OrExpression', the role 'go_OrExpression' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression99' has cardinality 0..*.
+An association connects 'go_Expression' and 'go_OrExpression'. From 'go_Expression', the role 'go_Expression102' has cardinality 0..*, and from 'go_OrExpression', the role 'go_OrExpression101' has cardinality 0..*.
+An association connects 'go_Expression' and 'go_AndExpression'. From 'go_Expression', the role 'go_Expression104' has cardinality 0..*, and from 'go_AndExpression', the role 'go_AndExpression' has cardinality 0..*.
+An association connects 'go_Expression' and 'go_AndExpression'. From 'go_Expression', the role 'go_Expression107' has cardinality 0..*, and from 'go_AndExpression', the role 'go_AndExpression106' has cardinality 0..*.
+An association connects 'go_ComparisonExpression' and 'go_Expression'. From 'go_ComparisonExpression', the role 'go_ComparisonExpression' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression109' has cardinality 0..*.
+An association connects 'go_ComparisonExpression' and 'go_Expression'. From 'go_ComparisonExpression', the role 'go_ComparisonExpression111' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression112' has cardinality 0..*.
+An association connects 'go_Bool' and 'go_Literal'. From 'go_Bool', the role 'go_Bool' has cardinality 0..*, and from 'go_Literal', the role 'go_Literal' has cardinality 0..*.

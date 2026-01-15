@@ -1,0 +1,33 @@
+The domain model 'amazoninformational' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'amazoninformational_Payment' represents an important domain concept.
+It does not declare any attributes.
+
+'amazoninformational_Product' represents an important domain concept.
+It has one attribute: 'onHand', which is of type int.
+
+'amazoninformational_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'amazoninformational_Order' represents an important domain concept.
+It does not declare any attributes.
+
+'amazoninformational_Shipment' represents an important domain concept.
+It does not declare any attributes.
+
+'amazoninformational_Invoice' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'amazoninformational_Product' and 'amazoninformational_Order'. From 'amazoninformational_Product', the role 'amazoninformational_Product' has cardinality 0..*, and from 'amazoninformational_Order', the role 'amazoninformational_Order' has cardinality 0..*.
+An association connects 'amazoninformational_Shipment' and 'amazoninformational_Order'. From 'amazoninformational_Shipment', the role 'Shipment' has cardinality 0..*, and from 'amazoninformational_Order', the role 'order' has cardinality 0..*.
+An association connects 'amazoninformational_Order' and 'amazoninformational_Invoice'. From 'amazoninformational_Order', the role 'order3' has cardinality 0..*, and from 'amazoninformational_Invoice', the role 'Invoice' has cardinality 0..*.
+An association connects 'amazoninformational_Order' and 'amazoninformational_Package'. From 'amazoninformational_Order', the role 'order5' has cardinality 0..*, and from 'amazoninformational_Package', the role 'Package' has cardinality 0..*.
+An association connects 'amazoninformational_Product' and 'amazoninformational_Package'. From 'amazoninformational_Product', the role 'amazoninformational_Product7' has cardinality 0..*, and from 'amazoninformational_Package', the role 'amazoninformational_Package' has cardinality 0..*.
+An association connects 'amazoninformational_Order' and 'amazoninformational_Package'. From 'amazoninformational_Order', the role 'Order' has cardinality 0..*, and from 'amazoninformational_Package', the role 'packages' has cardinality 0..*.
+An association connects 'amazoninformational_Package' and 'amazoninformational_Shipment'. From 'amazoninformational_Package', the role 'amazoninformational_Package10' has cardinality 0..*, and from 'amazoninformational_Shipment', the role 'amazoninformational_Shipment' has cardinality 0..*.
+An association connects 'amazoninformational_Shipment' and 'amazoninformational_Order'. From 'amazoninformational_Shipment', the role 'shipment' has cardinality 0..*, and from 'amazoninformational_Order', the role 'Order12' has cardinality 0..*.
+An association connects 'amazoninformational_Order' and 'amazoninformational_Invoice'. From 'amazoninformational_Order', the role 'Order14' has cardinality 0..*, and from 'amazoninformational_Invoice', the role 'invoice' has cardinality 0..*.
+An association connects 'amazoninformational_Invoice' and 'amazoninformational_Payment'. From 'amazoninformational_Invoice', the role 'amazoninformational_Invoice' has cardinality 0..*, and from 'amazoninformational_Payment', the role 'amazoninformational_Payment' has cardinality 0..*.

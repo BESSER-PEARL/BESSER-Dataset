@@ -1,0 +1,30 @@
+The domain model 'factorydeclorder' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'factorydeclorder_A' represents an important domain concept.
+It has one attribute: 'fa', which is of type int.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'factorydeclorder_C' represents an important domain concept.
+It has one attribute: 'fc', which is of type bool.
+
+'factorydeclorder_B' represents an important domain concept.
+It has one attribute: 'fb', which is of type str.
+
+'D' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'factorydeclorder_D' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'factorydeclorder_C' is a specialization of 'B'.
+The class 'factorydeclorder_C' is a specialization of 'A'.
+The class 'factorydeclorder_A' is a specialization of 'D'.
+The class 'factorydeclorder_A' is a specialization of 'B'.

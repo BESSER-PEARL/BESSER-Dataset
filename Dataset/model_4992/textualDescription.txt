@@ -1,0 +1,812 @@
+The domain model 'avm' describes the core structural elements and their relationships within the system.
+
+The model defines 182 main class(es).
+
+'avm_SecurityClassification' represents an important domain concept.
+It has one attribute: 'Level', which is of type str.
+
+'WorkflowTaskBase' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_cad_Datum' represents an important domain concept.
+It has one attribute: 'DatumName', which is of type str.
+
+'avm_Design' represents an important domain concept.
+It has the following attributes: 'SchemaVersion', which is of type str; 'DesignSpaceSrcID', which is of type str; 'DesignID', which is of type str; 'Name', which is of type str.
+
+'avm_cad_GuideDatum' represents an important domain concept.
+It does not declare any attributes.
+
+'KinematicJointSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_eda_RelativeRangeLayoutConstraint' represents an important domain concept.
+It has the following attributes: 'XRelativeRangeMax', which is of type str; 'YRelativeRangeMax', which is of type str; 'XRelativeRangeMin', which is of type str; 'RelativeLayer', which is of type str; 'YRelativeRangeMin', which is of type str.
+
+'avm_ValueNode' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'avm_cad_Polygon' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'cad_avm_ComponentInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_DesignSpaceContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'ProbabilisticValue' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_cad_Sphere' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_ComponentConnectorInstance' represents an important domain concept.
+It has one attribute: 'IDinComponentModel', which is of type str.
+
+'avm_eda_Parameter' represents an important domain concept.
+It has one attribute: 'Locator', which is of type str.
+
+'avm_TestInjectionPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_ProbabilisticValue' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_ParametricEnumeratedValue' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_cad_CoordinateSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueExpressionType' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_eda_ExactLayoutConstraint' represents an important domain concept.
+It has the following attributes: 'Y', which is of type str; 'Rotation', which is of type str; 'Layer', which is of type str; 'X', which is of type str.
+
+'avm_DomainModelPort' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_adamsCar_FileReference' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'ID', which is of type str; 'FilePath', which is of type str.
+
+'avm_TopLevelSystemUnderTest' represents an important domain concept.
+It has one attribute: 'DesignID', which is of type str.
+
+'avm_NormalDistribution' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_Compound' represents an important domain concept.
+It does not declare any attributes.
+
+'DesignSpaceContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'SystemCPort' represents an important domain concept.
+It does not declare any attributes.
+
+'DomainModelParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_systemc_Parameter' represents an important domain concept.
+It has the following attributes: 'ParamPosition', which is of type str; 'ParamName', which is of type str.
+
+'avm_DomainModelParameter' represents an important domain concept.
+It has the following attributes: 'YPosition', which is of type str; 'XPosition', which is of type str; 'Notes', which is of type str.
+
+'adamsCar_avm_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_ComponentPrimitivePropertyInstance' represents an important domain concept.
+It has one attribute: 'IDinComponentModel', which is of type str.
+
+'DesignDomainFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_TestBenchValueBase' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'YPosition', which is of type str; 'XPosition', which is of type str; 'Notes', which is of type str; 'ID', which is of type str.
+
+'systemc_avm_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'spice_avm_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'Container' represents an important domain concept.
+It does not declare any attributes.
+
+'Geometry3D' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_Property' represents an important domain concept.
+It has the following attributes: 'ID', which is of type str; 'XPosition', which is of type str; 'YPosition', which is of type str; 'Definition', which is of type str; 'Name', which is of type str; 'Notes', which is of type str; 'OnDataSheet', which is of type str.
+
+'DomainModelPort' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_DoDDistributionStatement' represents an important domain concept.
+It has one attribute: 'Type', which is of type str.
+
+'avm_UniformDistribution' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_cad_Parameter' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'avm_spice_Parameter' represents an important domain concept.
+It has one attribute: 'Locator', which is of type str.
+
+'ValueNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CustomGeometryInput' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_Workflow' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'avm_ConnectorCompositionTarget' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'avm_Formula' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'YPosition', which is of type str; 'XPosition', which is of type str.
+
+'PointReference' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_schematic_Pin' represents an important domain concept.
+It has the following attributes: 'EDAGate', which is of type str; 'EDASymbolLocationX', which is of type str; 'EDASymbolLocationY', which is of type str; 'SPICEPortNumber', which is of type str; 'EDASymbolRotation', which is of type str.
+
+'DomainMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'eda_avm_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_cad_TranslationalJointSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'Geometry2D' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_systemc_SystemCModel' represents an important domain concept.
+It has one attribute: 'ModuleName', which is of type str.
+
+'avm_DomainModel' represents an important domain concept.
+It has the following attributes: 'YPosition', which is of type str; 'Name', which is of type str; 'Author', which is of type str; 'Notes', which is of type str; 'XPosition', which is of type str; 'ID', which is of type str.
+
+'avm_ContainerFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_spice_SPICEModel' represents an important domain concept.
+It has one attribute: 'Class', which is of type str.
+
+'avm_manufacturing_Metric' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'avm_cad_Geometry2D' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_AbstractPort' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_modelica_Parameter' represents an important domain concept.
+It has one attribute: 'Locator', which is of type str.
+
+'avm_domainmapping_CAD2EDATransform' represents an important domain concept.
+It has the following attributes: 'ScaleY', which is of type str; 'TranslationZ', which is of type str; 'TranslationX', which is of type str; 'TranslationY', which is of type str; 'ScaleZ', which is of type str; 'RotationY', which is of type str; 'ScaleX', which is of type str; 'RotationZ', which is of type str; 'RotationX', which is of type str.
+
+'ContainerFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_cad_Plane' represents an important domain concept.
+It does not declare any attributes.
+
+'FileReference' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_DomainMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_modelica_SolverSettings' represents an important domain concept.
+It has the following attributes: 'ToolSpecificAnnotations', which is of type str; 'StartTime', which is of type str; 'StopTime', which is of type str; 'NumberOfIntervals', which is of type str; 'Tolerance', which is of type str; 'IntervalLength', which is of type str; 'Solver', which is of type str; 'IntervalMethod', which is of type str; 'JobManagerToolSelection', which is of type str.
+
+'Settings' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_cad_AssemblyRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_Operand' represents an important domain concept.
+It has one attribute: 'Symbol', which is of type str.
+
+'avm_Connector' represents an important domain concept.
+It has the following attributes: 'YPosition', which is of type str; 'Name', which is of type str; 'Notes', which is of type str; 'XPosition', which is of type str; 'Definition', which is of type str.
+
+'Axis' represents an important domain concept.
+It does not declare any attributes.
+
+'Limit' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_AnalysisConstruct' represents an important domain concept.
+It does not declare any attributes.
+
+'TestBenchValueBase' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_cad_Point' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_eda_PcbLayoutConstraint' represents an important domain concept.
+It has the following attributes: 'Notes', which is of type str; 'XPosition', which is of type str; 'YPosition', which is of type str.
+
+'avm_cad_PlaneReference' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_adamsCar_Parameter' represents an important domain concept.
+It has the following attributes: 'ID', which is of type str; 'Name', which is of type str.
+
+'DomainModel' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_assemblyDetail' represents an important domain concept.
+It does not declare any attributes.
+
+'Plane' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_cad_CADModel' represents an important domain concept.
+It has one attribute: 'Format', which is of type str.
+
+'avm_cad_CustomGeometry' represents an important domain concept.
+It does not declare any attributes.
+
+'SchematicModel' represents an important domain concept.
+It does not declare any attributes.
+
+'DomainModelMetric' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_ComponentPortInstance' represents an important domain concept.
+It has one attribute: 'IDinComponentModel', which is of type str.
+
+'avm_cad_RevoluteJointSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectorCompositionTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_systemc_SystemCPort' represents an important domain concept.
+It has the following attributes: 'DataType', which is of type str; 'Directionality', which is of type str; 'DataTypeDimension', which is of type str; 'Function', which is of type str.
+
+'avm_adamsCar_AdamsCarModel' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_Port' represents an important domain concept.
+It has the following attributes: 'Definition', which is of type str; 'Name', which is of type str; 'YPosition', which is of type str; 'Notes', which is of type str; 'XPosition', which is of type str.
+
+'modelica_avm_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_eda_RelativeLayoutConstraint' represents an important domain concept.
+It has the following attributes: 'RelativeLayer', which is of type str; 'RelativeRotation', which is of type str; 'YOffset', which is of type str; 'XOffset', which is of type str.
+
+'Formula' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_cad_Metric' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'avm_cad_Surface' represents an important domain concept.
+It does not declare any attributes.
+
+'Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'manufacturing_avm_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_cad_Geometry3D' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_eda_GlobalLayoutConstraintException' represents an important domain concept.
+It has one attribute: 'Constraint', which is of type str.
+
+'avm_PortMapTarget' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'avm_ITAR' represents an important domain concept.
+It does not declare any attributes.
+
+'ContainerInstanceBase' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_Settings' represents an important domain concept.
+It does not declare any attributes.
+
+'Datum' represents an important domain concept.
+It does not declare any attributes.
+
+'Point' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_ComponentInstance' represents an important domain concept.
+It has the following attributes: 'YPosition', which is of type str; 'Name', which is of type str; 'ComponentID', which is of type str; 'XPosition', which is of type str; 'DesignSpaceSrcComponentID', which is of type str; 'ID', which is of type str.
+
+'avm_ConnectorFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_TestBench' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_cad_Axis' represents an important domain concept.
+It does not declare any attributes.
+
+'eda_avm_ComponentInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'PortMapTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_cad_Geometry' represents an important domain concept.
+It has the following attributes: 'PartIntersectionModifier', which is of type str; 'GeometryQualifier', which is of type str.
+
+'avm_modelica_Limit' represents an important domain concept.
+It has the following attributes: 'BoundType', which is of type str; 'ToleranceTimeWindow', which is of type str; 'VariableLocator', which is of type str; 'Notes', which is of type str; 'Name', which is of type str.
+
+'avm_modelica_ModelicaModel' represents an important domain concept.
+It has one attribute: 'Class', which is of type str.
+
+'avm_DesignDomainFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'PcbLayoutConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_DomainModelMetric' represents an important domain concept.
+It has the following attributes: 'ID', which is of type str; 'YPosition', which is of type str; 'XPosition', which is of type str; 'Notes', which is of type str.
+
+'avm_SimpleFormula' represents an important domain concept.
+It has one attribute: 'Operation', which is of type str.
+
+'avm_eda_RangeLayoutConstraint' represents an important domain concept.
+It has the following attributes: 'LayerRange', which is of type str; 'XRangeMax', which is of type str; 'Type', which is of type str; 'YRangeMin', which is of type str; 'XRangeMin', which is of type str; 'YRangeMax', which is of type str.
+
+'avm_Metric' represents an important domain concept.
+It does not declare any attributes.
+
+'cad_avm_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_cad_KinematicJointSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_cad_ExtrudedGeometry' represents an important domain concept.
+It does not declare any attributes.
+
+'Redeclare' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_modelica_Metric' represents an important domain concept.
+It has one attribute: 'Locator', which is of type str.
+
+'eda_avm_Container' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_InterpreterTask' represents an important domain concept.
+It has the following attributes: 'Parameters', which is of type str; 'COMName', which is of type str.
+
+'Geometry' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_cad_Circle' represents an important domain concept.
+It does not declare any attributes.
+
+'eda_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'PlaneReference' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_ValueExpressionType' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_eda_EDAModel' represents an important domain concept.
+It has the following attributes: 'DeviceSet', which is of type str; 'Package', which is of type str; 'HasMultiLayerFootprint', which is of type str; 'Device', which is of type str; 'Library', which is of type str.
+
+'avm_Proprietary' represents an important domain concept.
+It has one attribute: 'Organization', which is of type str.
+
+'avm_ExecutionTask' represents an important domain concept.
+It has the following attributes: 'Invocation', which is of type str; 'Description', which is of type str.
+
+'avm_modelica_Redeclare' represents an important domain concept.
+It has the following attributes: 'Locator', which is of type str; 'Type', which is of type str.
+
+'ConnectorFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'RFPort' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_modelica_Connector' represents an important domain concept.
+It has the following attributes: 'Class', which is of type str; 'Locator', which is of type str.
+
+'spice_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_cyber_CyberModel' represents an important domain concept.
+It has the following attributes: 'Type', which is of type str; 'Class', which is of type str; 'Locator', which is of type str.
+
+'avm_Container' represents an important domain concept.
+It has the following attributes: 'YPosition', which is of type str; 'Description', which is of type str; 'XPosition', which is of type str; 'Name', which is of type str; 'ID', which is of type str; 'Classifications', which is of type str.
+
+'avm_WorkflowTaskBase' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'avm_Alternative' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_FixedValue' represents an important domain concept.
+It has the following attributes: 'Value', which is of type str; 'Uncertainty', which is of type str.
+
+'avm_DataSource' represents an important domain concept.
+It has one attribute: 'Notes', which is of type str.
+
+'Metric' represents an important domain concept.
+It does not declare any attributes.
+
+'AnalysisConstruct' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_rf_RFPort' represents an important domain concept.
+It has the following attributes: 'Directionality', which is of type str; 'NominalImpedance', which is of type str.
+
+'avm_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_cad_CustomGeometryInput' represents an important domain concept.
+It has one attribute: 'Operation', which is of type str.
+
+'avm_eda_CircuitLayout' represents an important domain concept.
+It has one attribute: 'BoundingBoxes', which is of type str.
+
+'avm_DistributionRestriction' represents an important domain concept.
+It has one attribute: 'Notes', which is of type str.
+
+'avm_manufacturing_ManufacturingModel' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_Component' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'ID', which is of type str; 'Version', which is of type str; 'Supercedes', which is of type str; 'SchemaVersion', which is of type str; 'Classifications', which is of type str.
+
+'avm_manufacturing_Parameter' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'Locator', which is of type str.
+
+'avm_CompoundProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_Optional' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_ValueFlowMux' represents an important domain concept.
+It does not declare any attributes.
+
+'DistributionRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_DerivedValue' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_ComplexFormula' represents an important domain concept.
+It has one attribute: 'Expression', which is of type str.
+
+'avm_schematic_SchematicModel' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_Resource' represents an important domain concept.
+It has the following attributes: 'XPosition', which is of type str; 'YPosition', which is of type str; 'Notes', which is of type str; 'Name', which is of type str; 'Hash', which is of type str; 'Path', which is of type str; 'ID', which is of type str.
+
+'avm_ParametricValue' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_ContainerInstanceBase' represents an important domain concept.
+It has the following attributes: 'IDinSourceModel', which is of type str; 'XPosition', which is of type str; 'YPosition', which is of type str.
+
+'avm_rf_RFModel' represents an important domain concept.
+It has the following attributes: 'Rotation', which is of type str; 'X', which is of type str; 'Y', which is of type str.
+
+'avm_Value' represents an important domain concept.
+It has the following attributes: 'Dimensions', which is of type str; 'DataType', which is of type str; 'Unit', which is of type str; 'DimensionType', which is of type str.
+
+'eda_EDAModel' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_cad_PointReference' represents an important domain concept.
+It does not declare any attributes.
+
+'CADModel' represents an important domain concept.
+It does not declare any attributes.
+
+'avm_CalculatedValue' represents an important domain concept.
+It has the following attributes: 'Type', which is of type str; 'Expression', which is of type str.
+
+'avm_PrimitiveProperty' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'RedeclareTypeEnum' defines the following possible values: 'Package', 'Function', 'Model', 'Connector', 'Record', 'Block', 'Class'.
+The enumeration 'GlobalConstraintTypeEnum' defines a single possible value: 'BoardEdgeSpacing'.
+The enumeration 'BoundTypeEnum' defines the following possible values: 'MustNotMeetOrExceed', 'MustNotExceed', 'MustExceedOrEqual', 'MustExceed'.
+The enumeration 'GeometryQualifierEnum' defines the following possible values: 'InteriorOnly', 'InteriorAndBoundary', 'BoundaryOnly'.
+The enumeration 'ModelType' defines the following possible values: 'ESMoL', 'SignalFlow', 'Simulink'.
+The enumeration 'CalculationTypeEnum' defines the following possible values: 'Python', 'Declarative'.
+The enumeration 'CustomGeometryInputOperationEnum' defines the following possible values: 'Intersection', 'Union', 'Subtraction'.
+The enumeration 'RotationEnum' defines the following possible values: 'r180', 'r270', 'r0', 'r90'.
+The enumeration 'IntervalMethod' defines the following possible values: 'NumberOfIntervals', 'IntervalLength'.
+The enumeration 'SystemCDataTypeEnum' defines the following possible values: 'sc_logic', 'sc_uint', 'sc_int', 'sc_bit', 'bool'.
+The enumeration 'LayerEnum' defines the following possible values: 'Top', 'Bottom'.
+The enumeration 'PartIntersectionEnum' defines the following possible values: 'IntersectionWithAnyParts', 'IntersectionWithReferencedParts', 'None'.
+The enumeration 'DimensionTypeEnum' defines the following possible values: 'Vector', 'Matrix', 'Scalar'.
+The enumeration 'SimpleFormulaOperation' defines the following possible values: 'GeometricMean', 'ArithmeticMean', 'Addition', 'Minimum', 'Multiplication', 'Maximum'.
+The enumeration 'DataTypeEnum' defines the following possible values: 'String', 'Integer', 'Real', 'Boolean'.
+The enumeration 'JobManagerToolSelection' defines the following possible values: 'OpenModelica_latest', 'JModelica_1_12', 'Dymola_2014', 'Dymola_2013', 'Dymola_latest'.
+The enumeration 'DoDDistributionStatementEnum' defines the following possible values: 'StatementB', 'StatementD', 'StatementE', 'StatementA', 'StatementC'.
+The enumeration 'RelativeLayerEnum' defines the following possible values: 'Opposite', 'Same'.
+The enumeration 'PortDirectionality' defines the following possible values: 'in', 'out'.
+The enumeration 'FileFormat' defines the following possible values: 'AP_214', 'Creo', 'STL', 'AP_203'.
+The enumeration 'LayerRangeEnum' defines the following possible values: 'Top', 'Either', 'Bottom'.
+The enumeration 'RelativeRotationEnum' defines the following possible values: 'r90', 'r270', 'NoRestriction', 'r0', 'r180'.
+The enumeration 'FunctionEnum' defines the following possible values: 'reset_async', 'clock', 'normal', 'reset_sync'.
+The enumeration 'RangeConstraintTypeEnum' defines the following possible values: 'Inclusion', 'Exclusion'.
+The enumeration 'DirectionalityEnum' defines the following possible values: 'inout', 'out', 'not_applicable', 'in'.
+
+The model also captures inheritance relationships between classes.
+The class 'avm_Value' is a specialization of 'ValueNode'.
+The class 'avm_FixedValue' is a specialization of 'ValueExpressionType'.
+The class 'avm_CalculatedValue' is a specialization of 'ValueExpressionType'.
+The class 'avm_DerivedValue' is a specialization of 'ValueExpressionType'.
+The class 'avm_Connector' is a specialization of 'ConnectorCompositionTarget'.
+The class 'avm_Port' is a specialization of 'PortMapTarget'.
+The class 'avm_DomainModelPort' is a specialization of 'Port'.
+The class 'avm_ParametricValue' is a specialization of 'ValueExpressionType'.
+The class 'avm_ProbabilisticValue' is a specialization of 'ValueExpressionType'.
+The class 'avm_NormalDistribution' is a specialization of 'ProbabilisticValue'.
+The class 'avm_SecurityClassification' is a specialization of 'DistributionRestriction'.
+The class 'avm_Proprietary' is a specialization of 'DistributionRestriction'.
+The class 'avm_ITAR' is a specialization of 'DistributionRestriction'.
+The class 'avm_UniformDistribution' is a specialization of 'ProbabilisticValue'.
+The class 'avm_PrimitiveProperty' is a specialization of 'Property'.
+The class 'avm_CompoundProperty' is a specialization of 'Property'.
+The class 'avm_ParametricEnumeratedValue' is a specialization of 'ValueExpressionType'.
+The class 'avm_AbstractPort' is a specialization of 'Port'.
+The class 'avm_Compound' is a specialization of 'Container'.
+The class 'avm_Optional' is a specialization of 'DesignSpaceContainer'.
+The class 'avm_Alternative' is a specialization of 'DesignSpaceContainer'.
+The class 'avm_ComponentPortInstance' is a specialization of 'PortMapTarget'.
+The class 'avm_DesignSpaceContainer' is a specialization of 'Container'.
+The class 'avm_ComponentConnectorInstance' is a specialization of 'ConnectorCompositionTarget'.
+The class 'avm_Formula' is a specialization of 'ValueNode'.
+The class 'avm_SimpleFormula' is a specialization of 'Formula'.
+The class 'avm_ComplexFormula' is a specialization of 'Formula'.
+The class 'avm_DoDDistributionStatement' is a specialization of 'DistributionRestriction'.
+The class 'avm_TopLevelSystemUnderTest' is a specialization of 'ContainerInstanceBase'.
+The class 'avm_Parameter' is a specialization of 'TestBenchValueBase'.
+The class 'avm_Metric' is a specialization of 'TestBenchValueBase'.
+The class 'avm_TestInjectionPoint' is a specialization of 'ContainerInstanceBase'.
+The class 'avm_InterpreterTask' is a specialization of 'WorkflowTaskBase'.
+The class 'avm_ExecutionTask' is a specialization of 'WorkflowTaskBase'.
+The class 'avm_ValueFlowMux' is a specialization of 'ValueNode'.
+The class 'avm_modelica_ModelicaModel' is a specialization of 'DomainModel'.
+The class 'avm_modelica_Connector' is a specialization of 'DomainModelPort'.
+The class 'avm_modelica_Parameter' is a specialization of 'DomainModelParameter'.
+The class 'avm_modelica_Metric' is a specialization of 'DomainModelMetric'.
+The class 'avm_modelica_Redeclare' is a specialization of 'DomainModelParameter'.
+The class 'avm_modelica_SolverSettings' is a specialization of 'Settings'.
+The class 'avm_cad_CADModel' is a specialization of 'DomainModel'.
+The class 'avm_cad_Datum' is a specialization of 'DomainModelPort'.
+The class 'avm_cad_Parameter' is a specialization of 'DomainModelParameter'.
+The class 'avm_cad_Point' is a specialization of 'Datum'.
+The class 'avm_cad_Axis' is a specialization of 'Datum'.
+The class 'avm_cad_Plane' is a specialization of 'Datum'.
+The class 'avm_cad_CoordinateSystem' is a specialization of 'Datum'.
+The class 'avm_cad_Metric' is a specialization of 'DomainModelMetric'.
+The class 'avm_cad_Geometry' is a specialization of 'AnalysisConstruct'.
+The class 'avm_cad_Geometry2D' is a specialization of 'Geometry'.
+The class 'avm_cad_Geometry3D' is a specialization of 'Geometry'.
+The class 'avm_cad_Circle' is a specialization of 'Geometry2D'.
+The class 'avm_cad_Polygon' is a specialization of 'Geometry2D'.
+The class 'avm_cad_ExtrudedGeometry' is a specialization of 'Geometry3D'.
+The class 'avm_cad_Sphere' is a specialization of 'Geometry3D'.
+The class 'avm_cad_CustomGeometry' is a specialization of 'Geometry'.
+The class 'avm_cad_Surface' is a specialization of 'Geometry3D'.
+The class 'avm_cad_GuideDatum' is a specialization of 'ConnectorFeature'.
+The class 'avm_cad_AssemblyRoot' is a specialization of 'DesignDomainFeature'.
+The class 'avm_cad_KinematicJointSpec' is a specialization of 'ConnectorFeature'.
+The class 'avm_cad_RevoluteJointSpec' is a specialization of 'KinematicJointSpec'.
+The class 'avm_cad_TranslationalJointSpec' is a specialization of 'KinematicJointSpec'.
+The class 'avm_manufacturing_ManufacturingModel' is a specialization of 'DomainModel'.
+The class 'avm_manufacturing_Parameter' is a specialization of 'DomainModelParameter'.
+The class 'avm_manufacturing_Metric' is a specialization of 'DomainModelMetric'.
+The class 'avm_cyber_CyberModel' is a specialization of 'DomainModel'.
+The class 'avm_schematic_SchematicModel' is a specialization of 'DomainModel'.
+The class 'avm_schematic_Pin' is a specialization of 'DomainModelPort'.
+The class 'avm_eda_EDAModel' is a specialization of 'SchematicModel'.
+The class 'avm_eda_Parameter' is a specialization of 'DomainModelParameter'.
+The class 'avm_eda_PcbLayoutConstraint' is a specialization of 'ContainerFeature'.
+The class 'avm_eda_ExactLayoutConstraint' is a specialization of 'PcbLayoutConstraint'.
+The class 'avm_eda_RangeLayoutConstraint' is a specialization of 'PcbLayoutConstraint'.
+The class 'avm_eda_RelativeLayoutConstraint' is a specialization of 'PcbLayoutConstraint'.
+The class 'avm_eda_RelativeRangeLayoutConstraint' is a specialization of 'PcbLayoutConstraint'.
+The class 'avm_eda_GlobalLayoutConstraintException' is a specialization of 'PcbLayoutConstraint'.
+The class 'avm_eda_CircuitLayout' is a specialization of 'DomainModel'.
+The class 'avm_spice_SPICEModel' is a specialization of 'SchematicModel'.
+The class 'avm_spice_Parameter' is a specialization of 'DomainModelParameter'.
+The class 'avm_systemc_SystemCModel' is a specialization of 'DomainModel'.
+The class 'avm_systemc_Parameter' is a specialization of 'DomainModelParameter'.
+The class 'avm_systemc_SystemCPort' is a specialization of 'DomainModelPort'.
+The class 'avm_rf_RFModel' is a specialization of 'DomainModel'.
+The class 'avm_rf_RFPort' is a specialization of 'DomainModelPort'.
+The class 'avm_domainmapping_CAD2EDATransform' is a specialization of 'DomainMapping'.
+The class 'avm_adamsCar_AdamsCarModel' is a specialization of 'DomainModel'.
+The class 'avm_adamsCar_Parameter' is a specialization of 'DomainModelParameter'.
+
+Relationships between classes are modeled using associations.
+An association connects 'avm_DomainModel' and 'avm_Component'. From 'avm_DomainModel', the role 'avm_DomainModel' has cardinality 0..*, and from 'avm_Component', the role 'avm_Component' has cardinality 0..*.
+An association connects 'avm_Component' and 'avm_Property'. From 'avm_Component', the role 'avm_Component2' has cardinality 0..*, and from 'avm_Property', the role 'avm_Property' has cardinality 0..*.
+An association connects 'avm_Component' and 'avm_Resource'. From 'avm_Component', the role 'avm_Component4' has cardinality 0..*, and from 'avm_Resource', the role 'avm_Resource' has cardinality 0..*.
+An association connects 'avm_Component' and 'avm_Connector'. From 'avm_Component', the role 'avm_Component6' has cardinality 0..*, and from 'avm_Connector', the role 'avm_Connector' has cardinality 0..*.
+An association connects 'avm_DistributionRestriction' and 'avm_Component'. From 'avm_DistributionRestriction', the role 'avm_DistributionRestriction' has cardinality 0..*, and from 'avm_Component', the role 'avm_Component8' has cardinality 0..*.
+An association connects 'avm_Port' and 'avm_Component'. From 'avm_Port', the role 'avm_Port' has cardinality 0..*, and from 'avm_Component', the role 'avm_Component10' has cardinality 0..*.
+An association connects 'avm_AnalysisConstruct' and 'avm_Component'. From 'avm_AnalysisConstruct', the role 'avm_AnalysisConstruct' has cardinality 0..*, and from 'avm_Component', the role 'avm_Component12' has cardinality 0..*.
+An association connects 'avm_Formula' and 'avm_Component'. From 'avm_Formula', the role 'avm_Formula' has cardinality 0..*, and from 'avm_Component', the role 'avm_Component14' has cardinality 0..*.
+An association connects 'avm_Component' and 'avm_DomainMapping'. From 'avm_Component', the role 'avm_Component16' has cardinality 0..*, and from 'avm_DomainMapping', the role 'avm_DomainMapping' has cardinality 0..*.
+An association connects 'avm_Resource' and 'avm_DomainModel'. From 'avm_Resource', the role 'avm_Resource19' has cardinality 0..*, and from 'avm_DomainModel', the role 'avm_DomainModel18' has cardinality 0..*.
+An association connects 'avm_Value' and 'avm_ValueExpressionType'. From 'avm_Value', the role 'avm_Value' has cardinality 0..*, and from 'avm_ValueExpressionType', the role 'avm_ValueExpressionType' has cardinality 0..*.
+An association connects 'avm_Value' and 'avm_DataSource'. From 'avm_Value', the role 'avm_Value22' has cardinality 0..*, and from 'avm_DataSource', the role 'avm_DataSource' has cardinality 0..*.
+An association connects 'avm_DerivedValue' and 'avm_ValueNode'. From 'avm_DerivedValue', the role 'avm_DerivedValue' has cardinality 0..*, and from 'avm_ValueNode', the role 'avm_ValueNode' has cardinality 0..*.
+An association connects 'avm_Port' and 'avm_Connector'. From 'avm_Port', the role 'avm_Port26' has cardinality 0..*, and from 'avm_Connector', the role 'avm_Connector25' has cardinality 0..*.
+An association connects 'avm_Connector' and 'avm_Property'. From 'avm_Connector', the role 'avm_Connector28' has cardinality 0..*, and from 'avm_Property', the role 'avm_Property29' has cardinality 0..*.
+An association connects 'avm_Connector' and 'avm_assemblyDetail'. From 'avm_Connector', the role 'avm_Connector31' has cardinality 0..*, and from 'avm_assemblyDetail', the role 'avm_assemblyDetail' has cardinality 0..*.
+An association connects 'avm_Connector' and 'avm_Connector'. From 'avm_Connector', the role 'avm_Connector34' has cardinality 0..*, and from 'avm_Connector', the role 'avm_Connector32' has cardinality 0..*.
+An association connects 'avm_Connector' and 'avm_ConnectorFeature'. From 'avm_Connector', the role 'avm_Connector36' has cardinality 0..*, and from 'avm_ConnectorFeature', the role 'avm_ConnectorFeature' has cardinality 0..*.
+An association connects 'avm_ValueExpressionType' and 'avm_ParametricValue'. From 'avm_ValueExpressionType', the role 'avm_ValueExpressionType38' has cardinality 0..*, and from 'avm_ParametricValue', the role 'avm_ParametricValue' has cardinality 0..*.
+An association connects 'avm_ValueExpressionType' and 'avm_ParametricValue'. From 'avm_ValueExpressionType', the role 'avm_ValueExpressionType41' has cardinality 0..*, and from 'avm_ParametricValue', the role 'avm_ParametricValue40' has cardinality 0..*.
+An association connects 'avm_ParametricValue' and 'avm_ValueExpressionType'. From 'avm_ParametricValue', the role 'avm_ParametricValue43' has cardinality 0..*, and from 'avm_ValueExpressionType', the role 'avm_ValueExpressionType44' has cardinality 0..*.
+An association connects 'avm_ParametricValue' and 'avm_ValueExpressionType'. From 'avm_ParametricValue', the role 'avm_ParametricValue46' has cardinality 0..*, and from 'avm_ValueExpressionType', the role 'avm_ValueExpressionType47' has cardinality 0..*.
+An association connects 'avm_ValueExpressionType' and 'avm_NormalDistribution'. From 'avm_ValueExpressionType', the role 'avm_ValueExpressionType49' has cardinality 0..*, and from 'avm_NormalDistribution', the role 'avm_NormalDistribution' has cardinality 0..*.
+An association connects 'avm_ValueExpressionType' and 'avm_NormalDistribution'. From 'avm_ValueExpressionType', the role 'avm_ValueExpressionType52' has cardinality 0..*, and from 'avm_NormalDistribution', the role 'avm_NormalDistribution51' has cardinality 0..*.
+An association connects 'avm_DomainModelMetric' and 'avm_Value'. From 'avm_DomainModelMetric', the role 'avm_DomainModelMetric' has cardinality 0..*, and from 'avm_Value', the role 'avm_Value54' has cardinality 0..*.
+An association connects 'avm_Value' and 'avm_PrimitiveProperty'. From 'avm_Value', the role 'avm_Value56' has cardinality 0..*, and from 'avm_PrimitiveProperty', the role 'avm_PrimitiveProperty' has cardinality 0..*.
+An association connects 'avm_CompoundProperty' and 'avm_CompoundProperty'. From 'avm_CompoundProperty', the role 'avm_CompoundProperty57' has cardinality 0..*, and from 'avm_CompoundProperty', the role 'avm_CompoundProperty' has cardinality 0..*.
+An association connects 'avm_CompoundProperty' and 'avm_PrimitiveProperty'. From 'avm_CompoundProperty', the role 'avm_CompoundProperty60' has cardinality 0..*, and from 'avm_PrimitiveProperty', the role 'avm_PrimitiveProperty61' has cardinality 0..*.
+An association connects 'avm_FixedValue' and 'avm_ParametricEnumeratedValue'. From 'avm_FixedValue', the role 'avm_FixedValue' has cardinality 0..*, and from 'avm_ParametricEnumeratedValue', the role 'avm_ParametricEnumeratedValue' has cardinality 0..*.
+An association connects 'avm_ValueExpressionType' and 'avm_ParametricEnumeratedValue'. From 'avm_ValueExpressionType', the role 'avm_ValueExpressionType65' has cardinality 0..*, and from 'avm_ParametricEnumeratedValue', the role 'avm_ParametricEnumeratedValue64' has cardinality 0..*.
+An association connects 'avm_DataSource' and 'avm_Resource'. From 'avm_DataSource', the role 'avm_DataSource67' has cardinality 0..*, and from 'avm_Resource', the role 'avm_Resource68' has cardinality 0..*.
+An association connects 'avm_Container' and 'avm_Design'. From 'avm_Container', the role 'avm_Container' has cardinality 0..*, and from 'avm_Design', the role 'avm_Design' has cardinality 0..*.
+An association connects 'avm_DesignDomainFeature' and 'avm_Design'. From 'avm_DesignDomainFeature', the role 'avm_DesignDomainFeature' has cardinality 0..*, and from 'avm_Design', the role 'avm_Design71' has cardinality 0..*.
+An association connects 'avm_Resource' and 'avm_Design'. From 'avm_Resource', the role 'avm_Resource74' has cardinality 0..*, and from 'avm_Design', the role 'avm_Design73' has cardinality 0..*.
+An association connects 'avm_Container' and 'avm_Container'. From 'avm_Container', the role 'avm_Container77' has cardinality 0..*, and from 'avm_Container', the role 'avm_Container75' has cardinality 0..*.
+An association connects 'avm_Container' and 'avm_Property'. From 'avm_Container', the role 'avm_Container79' has cardinality 0..*, and from 'avm_Property', the role 'avm_Property80' has cardinality 0..*.
+An association connects 'avm_Container' and 'avm_ComponentInstance'. From 'avm_Container', the role 'avm_Container82' has cardinality 0..*, and from 'avm_ComponentInstance', the role 'avm_ComponentInstance' has cardinality 0..*.
+An association connects 'avm_Port' and 'avm_Container'. From 'avm_Port', the role 'avm_Port85' has cardinality 0..*, and from 'avm_Container', the role 'avm_Container84' has cardinality 0..*.
+An association connects 'avm_Container' and 'avm_Connector'. From 'avm_Container', the role 'avm_Container87' has cardinality 0..*, and from 'avm_Connector', the role 'avm_Connector88' has cardinality 0..*.
+An association connects 'avm_Container' and 'avm_assemblyDetail'. From 'avm_Container', the role 'avm_Container90' has cardinality 0..*, and from 'avm_assemblyDetail', the role 'avm_assemblyDetail91' has cardinality 0..*.
+An association connects 'avm_Formula' and 'avm_Container'. From 'avm_Formula', the role 'avm_Formula94' has cardinality 0..*, and from 'avm_Container', the role 'avm_Container93' has cardinality 0..*.
+An association connects 'avm_ContainerFeature' and 'avm_Container'. From 'avm_ContainerFeature', the role 'avm_ContainerFeature' has cardinality 0..*, and from 'avm_Container', the role 'avm_Container96' has cardinality 0..*.
+An association connects 'avm_Resource' and 'avm_Container'. From 'avm_Resource', the role 'avm_Resource99' has cardinality 0..*, and from 'avm_Container', the role 'avm_Container98' has cardinality 0..*.
+An association connects 'avm_DomainModel' and 'avm_Container'. From 'avm_DomainModel', the role 'avm_DomainModel102' has cardinality 0..*, and from 'avm_Container', the role 'avm_Container101' has cardinality 0..*.
+An association connects 'avm_Resource' and 'avm_Container'. From 'avm_Resource', the role 'avm_Resource105' has cardinality 0..*, and from 'avm_Container', the role 'avm_Container104' has cardinality 0..*.
+An association connects 'avm_ValueFlowMux' and 'avm_Alternative'. From 'avm_ValueFlowMux', the role 'avm_ValueFlowMux' has cardinality 0..*, and from 'avm_Alternative', the role 'avm_Alternative' has cardinality 0..*.
+An association connects 'avm_ComponentInstance' and 'avm_ComponentPortInstance'. From 'avm_ComponentInstance', the role 'avm_ComponentInstance108' has cardinality 0..*, and from 'avm_ComponentPortInstance', the role 'avm_ComponentPortInstance' has cardinality 0..*.
+An association connects 'avm_ComponentInstance' and 'avm_ComponentPrimitivePropertyInstance'. From 'avm_ComponentInstance', the role 'avm_ComponentInstance110' has cardinality 0..*, and from 'avm_ComponentPrimitivePropertyInstance', the role 'avm_ComponentPrimitivePropertyInstance' has cardinality 0..*.
+An association connects 'avm_ComponentConnectorInstance' and 'avm_ComponentInstance'. From 'avm_ComponentConnectorInstance', the role 'avm_ComponentConnectorInstance' has cardinality 0..*, and from 'avm_ComponentInstance', the role 'avm_ComponentInstance112' has cardinality 0..*.
+An association connects 'avm_ComponentPrimitivePropertyInstance' and 'avm_Value'. From 'avm_ComponentPrimitivePropertyInstance', the role 'avm_ComponentPrimitivePropertyInstance114' has cardinality 0..*, and from 'avm_Value', the role 'avm_Value115' has cardinality 0..*.
+An association connects 'avm_PortMapTarget' and 'avm_PortMapTarget'. From 'avm_PortMapTarget', the role 'avm_PortMapTarget116' has cardinality 0..*, and from 'avm_PortMapTarget', the role 'avm_PortMapTarget' has cardinality 0..*.
+An association connects 'avm_ConnectorCompositionTarget' and 'avm_ConnectorCompositionTarget'. From 'avm_ConnectorCompositionTarget', the role 'avm_ConnectorCompositionTarget118' has cardinality 0..*, and from 'avm_ConnectorCompositionTarget', the role 'avm_ConnectorCompositionTarget' has cardinality 0..*.
+An association connects 'avm_assemblyDetail' and 'avm_ConnectorCompositionTarget'. From 'avm_assemblyDetail', the role 'avm_assemblyDetail122' has cardinality 0..*, and from 'avm_ConnectorCompositionTarget', the role 'avm_ConnectorCompositionTarget121' has cardinality 0..*.
+An association connects 'avm_SimpleFormula' and 'avm_ValueNode'. From 'avm_SimpleFormula', the role 'avm_SimpleFormula' has cardinality 0..*, and from 'avm_ValueNode', the role 'avm_ValueNode124' has cardinality 0..*.
+An association connects 'avm_ComplexFormula' and 'avm_Operand'. From 'avm_ComplexFormula', the role 'avm_ComplexFormula' has cardinality 0..*, and from 'avm_Operand', the role 'avm_Operand' has cardinality 0..*.
+An association connects 'avm_ValueNode' and 'avm_Operand'. From 'avm_ValueNode', the role 'avm_ValueNode128' has cardinality 0..*, and from 'avm_Operand', the role 'avm_Operand127' has cardinality 0..*.
+An association connects 'avm_TopLevelSystemUnderTest' and 'avm_TestBench'. From 'avm_TopLevelSystemUnderTest', the role 'avm_TopLevelSystemUnderTest' has cardinality 0..*, and from 'avm_TestBench', the role 'avm_TestBench' has cardinality 0..*.
+An association connects 'avm_Parameter' and 'avm_TestBench'. From 'avm_Parameter', the role 'avm_Parameter' has cardinality 0..*, and from 'avm_TestBench', the role 'avm_TestBench131' has cardinality 0..*.
+An association connects 'avm_TestBench' and 'avm_Metric'. From 'avm_TestBench', the role 'avm_TestBench133' has cardinality 0..*, and from 'avm_Metric', the role 'avm_Metric' has cardinality 0..*.
+An association connects 'avm_TestInjectionPoint' and 'avm_TestBench'. From 'avm_TestInjectionPoint', the role 'avm_TestInjectionPoint' has cardinality 0..*, and from 'avm_TestBench', the role 'avm_TestBench135' has cardinality 0..*.
+An association connects 'avm_TestBench' and 'avm_ComponentInstance'. From 'avm_TestBench', the role 'avm_TestBench137' has cardinality 0..*, and from 'avm_ComponentInstance', the role 'avm_ComponentInstance138' has cardinality 0..*.
+An association connects 'avm_Workflow' and 'avm_TestBench'. From 'avm_Workflow', the role 'avm_Workflow' has cardinality 0..*, and from 'avm_TestBench', the role 'avm_TestBench140' has cardinality 0..*.
+An association connects 'avm_Settings' and 'avm_TestBench'. From 'avm_Settings', the role 'avm_Settings' has cardinality 0..*, and from 'avm_TestBench', the role 'avm_TestBench142' has cardinality 0..*.
+An association connects 'avm_TestBench' and 'avm_DomainModel'. From 'avm_TestBench', the role 'avm_TestBench144' has cardinality 0..*, and from 'avm_DomainModel', the role 'avm_DomainModel145' has cardinality 0..*.
+An association connects 'avm_TestBenchValueBase' and 'avm_Value'. From 'avm_TestBenchValueBase', the role 'avm_TestBenchValueBase' has cardinality 0..*, and from 'avm_Value', the role 'avm_Value147' has cardinality 0..*.
+An association connects 'avm_Workflow' and 'avm_WorkflowTaskBase'. From 'avm_Workflow', the role 'avm_Workflow149' has cardinality 0..*, and from 'avm_WorkflowTaskBase', the role 'avm_WorkflowTaskBase' has cardinality 0..*.
+An association connects 'avm_ValueNode' and 'avm_ValueFlowMux'. From 'avm_ValueNode', the role 'avm_ValueNode152' has cardinality 0..*, and from 'avm_ValueFlowMux', the role 'avm_ValueFlowMux151' has cardinality 0..*.
+An association connects 'Parameter' and 'avm_modelica_ModelicaModel'. From 'Parameter', the role 'Parameter' has cardinality 0..*, and from 'avm_modelica_ModelicaModel', the role 'avm_modelica_ModelicaModel' has cardinality 0..*.
+An association connects 'Connector' and 'avm_modelica_ModelicaModel'. From 'Connector', the role 'Connector' has cardinality 0..*, and from 'avm_modelica_ModelicaModel', the role 'avm_modelica_ModelicaModel155' has cardinality 0..*.
+An association connects 'avm_modelica_ModelicaModel' and 'Metric'. From 'avm_modelica_ModelicaModel', the role 'avm_modelica_ModelicaModel157' has cardinality 0..*, and from 'Metric', the role 'Metric' has cardinality 0..*.
+An association connects 'avm_modelica_ModelicaModel' and 'Limit'. From 'avm_modelica_ModelicaModel', the role 'avm_modelica_ModelicaModel159' has cardinality 0..*, and from 'Limit', the role 'Limit' has cardinality 0..*.
+An association connects 'Redeclare' and 'avm_modelica_ModelicaModel'. From 'Redeclare', the role 'Redeclare' has cardinality 0..*, and from 'avm_modelica_ModelicaModel', the role 'avm_modelica_ModelicaModel161' has cardinality 0..*.
+An association connects 'Parameter' and 'avm_modelica_Connector'. From 'Parameter', the role 'Parameter163' has cardinality 0..*, and from 'avm_modelica_Connector', the role 'avm_modelica_Connector' has cardinality 0..*.
+An association connects 'avm_modelica_Connector' and 'Redeclare'. From 'avm_modelica_Connector', the role 'avm_modelica_Connector165' has cardinality 0..*, and from 'Redeclare', the role 'Redeclare166' has cardinality 0..*.
+An association connects 'modelica_avm_Value' and 'avm_modelica_Parameter'. From 'modelica_avm_Value', the role 'modelica_avm_Value' has cardinality 0..*, and from 'avm_modelica_Parameter', the role 'avm_modelica_Parameter' has cardinality 0..*.
+An association connects 'avm_modelica_Limit' and 'modelica_avm_Value'. From 'avm_modelica_Limit', the role 'avm_modelica_Limit' has cardinality 0..*, and from 'modelica_avm_Value', the role 'modelica_avm_Value169' has cardinality 0..*.
+An association connects 'modelica_avm_Value' and 'avm_modelica_Redeclare'. From 'modelica_avm_Value', the role 'modelica_avm_Value171' has cardinality 0..*, and from 'avm_modelica_Redeclare', the role 'avm_modelica_Redeclare' has cardinality 0..*.
+An association connects 'avm_cad_CADModel' and 'Datum'. From 'avm_cad_CADModel', the role 'avm_cad_CADModel' has cardinality 0..*, and from 'Datum', the role 'Datum' has cardinality 0..*.
+An association connects 'Parameter' and 'avm_cad_CADModel'. From 'Parameter', the role 'Parameter175' has cardinality 0..*, and from 'avm_cad_CADModel', the role 'avm_cad_CADModel174' has cardinality 0..*.
+An association connects 'Metric' and 'avm_cad_CADModel'. From 'Metric', the role 'Metric178' has cardinality 0..*, and from 'avm_cad_CADModel', the role 'avm_cad_CADModel177' has cardinality 0..*.
+An association connects 'avm_cad_Datum' and 'Metric'. From 'avm_cad_Datum', the role 'avm_cad_Datum' has cardinality 0..*, and from 'Metric', the role 'Metric180' has cardinality 0..*.
+An association connects 'cad_avm_Value' and 'avm_cad_Parameter'. From 'cad_avm_Value', the role 'cad_avm_Value' has cardinality 0..*, and from 'avm_cad_Parameter', the role 'avm_cad_Parameter' has cardinality 0..*.
+An association connects 'avm_cad_Plane' and 'Plane'. From 'avm_cad_Plane', the role 'avm_cad_Plane' has cardinality 0..*, and from 'Plane', the role 'Plane' has cardinality 0..*.
+An association connects 'Metric' and 'avm_cad_CoordinateSystem'. From 'Metric', the role 'Metric184' has cardinality 0..*, and from 'avm_cad_CoordinateSystem', the role 'avm_cad_CoordinateSystem' has cardinality 0..*.
+An association connects 'PointReference' and 'avm_cad_Circle'. From 'PointReference', the role 'PointReference' has cardinality 0..*, and from 'avm_cad_Circle', the role 'avm_cad_Circle' has cardinality 0..*.
+An association connects 'PointReference' and 'avm_cad_Circle'. From 'PointReference', the role 'PointReference188' has cardinality 0..*, and from 'avm_cad_Circle', the role 'avm_cad_Circle187' has cardinality 0..*.
+An association connects 'avm_cad_Polygon' and 'PointReference'. From 'avm_cad_Polygon', the role 'avm_cad_Polygon' has cardinality 0..*, and from 'PointReference', the role 'PointReference190' has cardinality 0..*.
+An association connects 'avm_cad_ExtrudedGeometry' and 'PointReference'. From 'avm_cad_ExtrudedGeometry', the role 'avm_cad_ExtrudedGeometry' has cardinality 0..*, and from 'PointReference', the role 'PointReference192' has cardinality 0..*.
+An association connects 'avm_cad_ExtrudedGeometry' and 'Geometry2D'. From 'avm_cad_ExtrudedGeometry', the role 'avm_cad_ExtrudedGeometry194' has cardinality 0..*, and from 'Geometry2D', the role 'Geometry2D' has cardinality 0..*.
+An association connects 'PointReference' and 'avm_cad_ExtrudedGeometry'. From 'PointReference', the role 'PointReference197' has cardinality 0..*, and from 'avm_cad_ExtrudedGeometry', the role 'avm_cad_ExtrudedGeometry196' has cardinality 0..*.
+An association connects 'avm_cad_Sphere' and 'PointReference'. From 'avm_cad_Sphere', the role 'avm_cad_Sphere' has cardinality 0..*, and from 'PointReference', the role 'PointReference199' has cardinality 0..*.
+An association connects 'avm_cad_Sphere' and 'PointReference'. From 'avm_cad_Sphere', the role 'avm_cad_Sphere201' has cardinality 0..*, and from 'PointReference', the role 'PointReference202' has cardinality 0..*.
+An association connects 'avm_cad_CustomGeometry' and 'CustomGeometryInput'. From 'avm_cad_CustomGeometry', the role 'avm_cad_CustomGeometry' has cardinality 0..*, and from 'CustomGeometryInput', the role 'CustomGeometryInput' has cardinality 0..*.
+An association connects 'avm_cad_CustomGeometryInput' and 'Geometry'. From 'avm_cad_CustomGeometryInput', the role 'avm_cad_CustomGeometryInput' has cardinality 0..*, and from 'Geometry', the role 'Geometry' has cardinality 0..*.
+An association connects 'avm_cad_PointReference' and 'Point'. From 'avm_cad_PointReference', the role 'avm_cad_PointReference' has cardinality 0..*, and from 'Point', the role 'Point' has cardinality 0..*.
+An association connects 'avm_cad_Surface' and 'PlaneReference'. From 'avm_cad_Surface', the role 'avm_cad_Surface' has cardinality 0..*, and from 'PlaneReference', the role 'PlaneReference' has cardinality 0..*.
+An association connects 'Plane' and 'avm_cad_PlaneReference'. From 'Plane', the role 'Plane208' has cardinality 0..*, and from 'avm_cad_PlaneReference', the role 'avm_cad_PlaneReference' has cardinality 0..*.
+An association connects 'Datum' and 'avm_cad_GuideDatum'. From 'Datum', the role 'Datum210' has cardinality 0..*, and from 'avm_cad_GuideDatum', the role 'avm_cad_GuideDatum' has cardinality 0..*.
+An association connects 'avm_cad_AssemblyRoot' and 'cad_avm_ComponentInstance'. From 'avm_cad_AssemblyRoot', the role 'avm_cad_AssemblyRoot' has cardinality 0..*, and from 'cad_avm_ComponentInstance', the role 'cad_avm_ComponentInstance' has cardinality 0..*.
+An association connects 'Plane' and 'avm_cad_RevoluteJointSpec'. From 'Plane', the role 'Plane213' has cardinality 0..*, and from 'avm_cad_RevoluteJointSpec', the role 'avm_cad_RevoluteJointSpec' has cardinality 0..*.
+An association connects 'Axis' and 'avm_cad_RevoluteJointSpec'. From 'Axis', the role 'Axis' has cardinality 0..*, and from 'avm_cad_RevoluteJointSpec', the role 'avm_cad_RevoluteJointSpec215' has cardinality 0..*.
+An association connects 'avm_cad_RevoluteJointSpec' and 'Plane'. From 'avm_cad_RevoluteJointSpec', the role 'avm_cad_RevoluteJointSpec217' has cardinality 0..*, and from 'Plane', the role 'Plane218' has cardinality 0..*.
+An association connects 'avm_cad_RevoluteJointSpec' and 'cad_avm_Value'. From 'avm_cad_RevoluteJointSpec', the role 'avm_cad_RevoluteJointSpec220' has cardinality 0..*, and from 'cad_avm_Value', the role 'cad_avm_Value221' has cardinality 0..*.
+An association connects 'avm_cad_RevoluteJointSpec' and 'cad_avm_Value'. From 'avm_cad_RevoluteJointSpec', the role 'avm_cad_RevoluteJointSpec223' has cardinality 0..*, and from 'cad_avm_Value', the role 'cad_avm_Value224' has cardinality 0..*.
+An association connects 'avm_cad_RevoluteJointSpec' and 'cad_avm_Value'. From 'avm_cad_RevoluteJointSpec', the role 'avm_cad_RevoluteJointSpec226' has cardinality 0..*, and from 'cad_avm_Value', the role 'cad_avm_Value227' has cardinality 0..*.
+An association connects 'Plane' and 'avm_cad_TranslationalJointSpec'. From 'Plane', the role 'Plane229' has cardinality 0..*, and from 'avm_cad_TranslationalJointSpec', the role 'avm_cad_TranslationalJointSpec' has cardinality 0..*.
+An association connects 'avm_cad_TranslationalJointSpec' and 'Axis'. From 'avm_cad_TranslationalJointSpec', the role 'avm_cad_TranslationalJointSpec231' has cardinality 0..*, and from 'Axis', the role 'Axis232' has cardinality 0..*.
+An association connects 'avm_cad_TranslationalJointSpec' and 'cad_avm_Value'. From 'avm_cad_TranslationalJointSpec', the role 'avm_cad_TranslationalJointSpec234' has cardinality 0..*, and from 'cad_avm_Value', the role 'cad_avm_Value235' has cardinality 0..*.
+An association connects 'avm_cad_TranslationalJointSpec' and 'cad_avm_Value'. From 'avm_cad_TranslationalJointSpec', the role 'avm_cad_TranslationalJointSpec237' has cardinality 0..*, and from 'cad_avm_Value', the role 'cad_avm_Value238' has cardinality 0..*.
+An association connects 'cad_avm_Value' and 'avm_cad_TranslationalJointSpec'. From 'cad_avm_Value', the role 'cad_avm_Value241' has cardinality 0..*, and from 'avm_cad_TranslationalJointSpec', the role 'avm_cad_TranslationalJointSpec240' has cardinality 0..*.
+An association connects 'Plane' and 'avm_cad_TranslationalJointSpec'. From 'Plane', the role 'Plane244' has cardinality 0..*, and from 'avm_cad_TranslationalJointSpec', the role 'avm_cad_TranslationalJointSpec243' has cardinality 0..*.
+An association connects 'Parameter' and 'avm_manufacturing_ManufacturingModel'. From 'Parameter', the role 'Parameter246' has cardinality 0..*, and from 'avm_manufacturing_ManufacturingModel', the role 'avm_manufacturing_ManufacturingModel' has cardinality 0..*.
+An association connects 'avm_manufacturing_ManufacturingModel' and 'Metric'. From 'avm_manufacturing_ManufacturingModel', the role 'avm_manufacturing_ManufacturingModel248' has cardinality 0..*, and from 'Metric', the role 'Metric249' has cardinality 0..*.
+An association connects 'manufacturing_avm_Value' and 'avm_manufacturing_Parameter'. From 'manufacturing_avm_Value', the role 'manufacturing_avm_Value' has cardinality 0..*, and from 'avm_manufacturing_Parameter', the role 'avm_manufacturing_Parameter' has cardinality 0..*.
+An association connects 'Connector' and 'avm_cyber_CyberModel'. From 'Connector', the role 'Connector252' has cardinality 0..*, and from 'avm_cyber_CyberModel', the role 'avm_cyber_CyberModel' has cardinality 0..*.
+An association connects 'Parameter' and 'avm_cyber_CyberModel'. From 'Parameter', the role 'Parameter255' has cardinality 0..*, and from 'avm_cyber_CyberModel', the role 'avm_cyber_CyberModel254' has cardinality 0..*.
+An association connects 'Pin' and 'avm_schematic_SchematicModel'. From 'Pin', the role 'Pin' has cardinality 0..*, and from 'avm_schematic_SchematicModel', the role 'avm_schematic_SchematicModel' has cardinality 0..*.
+An association connects 'avm_eda_EDAModel' and 'eda_Parameter'. From 'avm_eda_EDAModel', the role 'avm_eda_EDAModel' has cardinality 0..*, and from 'eda_Parameter', the role 'eda_Parameter' has cardinality 0..*.
+An association connects 'eda_avm_Value' and 'avm_eda_Parameter'. From 'eda_avm_Value', the role 'eda_avm_Value' has cardinality 0..*, and from 'avm_eda_Parameter', the role 'avm_eda_Parameter' has cardinality 0..*.
+An association connects 'avm_eda_ExactLayoutConstraint' and 'eda_avm_ComponentInstance'. From 'avm_eda_ExactLayoutConstraint', the role 'avm_eda_ExactLayoutConstraint' has cardinality 0..*, and from 'eda_avm_ComponentInstance', the role 'eda_avm_ComponentInstance' has cardinality 0..*.
+An association connects 'avm_eda_ExactLayoutConstraint' and 'eda_avm_Container'. From 'avm_eda_ExactLayoutConstraint', the role 'avm_eda_ExactLayoutConstraint261' has cardinality 0..*, and from 'eda_avm_Container', the role 'eda_avm_Container' has cardinality 0..*.
+An association connects 'avm_eda_RangeLayoutConstraint' and 'eda_avm_ComponentInstance'. From 'avm_eda_RangeLayoutConstraint', the role 'avm_eda_RangeLayoutConstraint' has cardinality 0..*, and from 'eda_avm_ComponentInstance', the role 'eda_avm_ComponentInstance263' has cardinality 0..*.
+An association connects 'avm_eda_RangeLayoutConstraint' and 'eda_avm_Container'. From 'avm_eda_RangeLayoutConstraint', the role 'avm_eda_RangeLayoutConstraint265' has cardinality 0..*, and from 'eda_avm_Container', the role 'eda_avm_Container266' has cardinality 0..*.
+An association connects 'eda_avm_ComponentInstance' and 'avm_eda_RelativeLayoutConstraint'. From 'eda_avm_ComponentInstance', the role 'eda_avm_ComponentInstance268' has cardinality 0..*, and from 'avm_eda_RelativeLayoutConstraint', the role 'avm_eda_RelativeLayoutConstraint' has cardinality 0..*.
+An association connects 'eda_avm_ComponentInstance' and 'avm_eda_RelativeLayoutConstraint'. From 'eda_avm_ComponentInstance', the role 'eda_avm_ComponentInstance271' has cardinality 0..*, and from 'avm_eda_RelativeLayoutConstraint', the role 'avm_eda_RelativeLayoutConstraint270' has cardinality 0..*.
+An association connects 'eda_avm_Container' and 'avm_eda_RelativeLayoutConstraint'. From 'eda_avm_Container', the role 'eda_avm_Container274' has cardinality 0..*, and from 'avm_eda_RelativeLayoutConstraint', the role 'avm_eda_RelativeLayoutConstraint273' has cardinality 0..*.
+An association connects 'avm_eda_RelativeRangeLayoutConstraint' and 'eda_avm_Container'. From 'avm_eda_RelativeRangeLayoutConstraint', the role 'avm_eda_RelativeRangeLayoutConstraint' has cardinality 0..*, and from 'eda_avm_Container', the role 'eda_avm_Container276' has cardinality 0..*.
+An association connects 'eda_avm_ComponentInstance' and 'avm_eda_RelativeRangeLayoutConstraint'. From 'eda_avm_ComponentInstance', the role 'eda_avm_ComponentInstance279' has cardinality 0..*, and from 'avm_eda_RelativeRangeLayoutConstraint', the role 'avm_eda_RelativeRangeLayoutConstraint278' has cardinality 0..*.
+An association connects 'avm_eda_RelativeRangeLayoutConstraint' and 'eda_avm_ComponentInstance'. From 'avm_eda_RelativeRangeLayoutConstraint', the role 'avm_eda_RelativeRangeLayoutConstraint281' has cardinality 0..*, and from 'eda_avm_ComponentInstance', the role 'eda_avm_ComponentInstance282' has cardinality 0..*.
+An association connects 'eda_avm_ComponentInstance' and 'avm_eda_GlobalLayoutConstraintException'. From 'eda_avm_ComponentInstance', the role 'eda_avm_ComponentInstance284' has cardinality 0..*, and from 'avm_eda_GlobalLayoutConstraintException', the role 'avm_eda_GlobalLayoutConstraintException' has cardinality 0..*.
+An association connects 'eda_avm_Container' and 'avm_eda_GlobalLayoutConstraintException'. From 'eda_avm_Container', the role 'eda_avm_Container287' has cardinality 0..*, and from 'avm_eda_GlobalLayoutConstraintException', the role 'avm_eda_GlobalLayoutConstraintException286' has cardinality 0..*.
+An association connects 'avm_spice_SPICEModel' and 'spice_Parameter'. From 'avm_spice_SPICEModel', the role 'avm_spice_SPICEModel' has cardinality 0..*, and from 'spice_Parameter', the role 'spice_Parameter' has cardinality 0..*.
+An association connects 'spice_avm_Value' and 'avm_spice_Parameter'. From 'spice_avm_Value', the role 'spice_avm_Value' has cardinality 0..*, and from 'avm_spice_Parameter', the role 'avm_spice_Parameter' has cardinality 0..*.
+An association connects 'avm_systemc_SystemCModel' and 'SystemCPort'. From 'avm_systemc_SystemCModel', the role 'avm_systemc_SystemCModel' has cardinality 0..*, and from 'SystemCPort', the role 'SystemCPort' has cardinality 0..*.
+An association connects 'Parameter' and 'avm_systemc_SystemCModel'. From 'Parameter', the role 'Parameter293' has cardinality 0..*, and from 'avm_systemc_SystemCModel', the role 'avm_systemc_SystemCModel292' has cardinality 0..*.
+An association connects 'systemc_avm_Value' and 'avm_systemc_Parameter'. From 'systemc_avm_Value', the role 'systemc_avm_Value' has cardinality 0..*, and from 'avm_systemc_Parameter', the role 'avm_systemc_Parameter' has cardinality 0..*.
+An association connects 'avm_rf_RFModel' and 'RFPort'. From 'avm_rf_RFModel', the role 'avm_rf_RFModel' has cardinality 0..*, and from 'RFPort', the role 'RFPort' has cardinality 0..*.
+An association connects 'avm_domainmapping_CAD2EDATransform' and 'eda_EDAModel'. From 'avm_domainmapping_CAD2EDATransform', the role 'avm_domainmapping_CAD2EDATransform' has cardinality 0..*, and from 'eda_EDAModel', the role 'eda_EDAModel' has cardinality 0..*.
+An association connects 'avm_domainmapping_CAD2EDATransform' and 'CADModel'. From 'avm_domainmapping_CAD2EDATransform', the role 'avm_domainmapping_CAD2EDATransform298' has cardinality 0..*, and from 'CADModel', the role 'CADModel' has cardinality 0..*.
+An association connects 'Parameter' and 'avm_adamsCar_AdamsCarModel'. From 'Parameter', the role 'Parameter300' has cardinality 0..*, and from 'avm_adamsCar_AdamsCarModel', the role 'avm_adamsCar_AdamsCarModel' has cardinality 0..*.
+An association connects 'FileReference' and 'avm_adamsCar_AdamsCarModel'. From 'FileReference', the role 'FileReference' has cardinality 0..*, and from 'avm_adamsCar_AdamsCarModel', the role 'avm_adamsCar_AdamsCarModel302' has cardinality 0..*.
+An association connects 'avm_adamsCar_Parameter' and 'adamsCar_avm_Value'. From 'avm_adamsCar_Parameter', the role 'avm_adamsCar_Parameter' has cardinality 0..*, and from 'adamsCar_avm_Value', the role 'adamsCar_avm_Value' has cardinality 0..*.
+An association connects 'avm_adamsCar_FileReference' and 'Parameter'. From 'avm_adamsCar_FileReference', the role 'avm_adamsCar_FileReference' has cardinality 0..*, and from 'Parameter', the role 'Parameter305' has cardinality 0..*.
+An association connects 'avm_adamsCar_FileReference' and 'FileReference'. From 'avm_adamsCar_FileReference', the role 'avm_adamsCar_FileReference307' has cardinality 0..*, and from 'FileReference', the role 'FileReference308' has cardinality 0..*.

@@ -1,0 +1,104 @@
+The domain model 'Model' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'Model_EIC' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_AtomicDEVS' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_EOC' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_IntTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_ExtTrans' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_Phase' represents an important domain concept.
+It has the following attributes: 'timeAdvance', which is of type float; 'phaseID', which is of type str.
+
+'Model_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_CoupledDEVS' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_OPort' represents an important domain concept.
+It does not declare any attributes.
+
+'DEVS' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_DEVS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Model_Port' represents an important domain concept.
+It has one attribute: 'portId', which is of type str.
+
+'Model_PhaseTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_ConfTrans' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_IPort' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_IC' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PhaseTransition' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Model_AtomicDEVS' is a specialization of 'DEVS'.
+The class 'Model_CoupledDEVS' is a specialization of 'DEVS'.
+The class 'Model_IPort' is a specialization of 'Port'.
+The class 'Model_OPort' is a specialization of 'Port'.
+The class 'Model_IntTransition' is a specialization of 'PhaseTransition'.
+The class 'Model_ConfTrans' is a specialization of 'PhaseTransition'.
+The class 'Model_ExtTrans' is a specialization of 'PhaseTransition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Model_DEVS' and 'Model_DEVS'. From 'Model_DEVS', the role 'Model_DEVS0' has cardinality 0..*, and from 'Model_DEVS', the role 'Model_DEVS' has cardinality 0..*.
+An association connects 'Model_DEVS' and 'Model_IPort'. From 'Model_DEVS', the role 'Model_DEVS3' has cardinality 0..*, and from 'Model_IPort', the role 'Model_IPort' has cardinality 0..*.
+An association connects 'Model_DEVS' and 'Model_OPort'. From 'Model_DEVS', the role 'Model_DEVS5' has cardinality 0..*, and from 'Model_OPort', the role 'Model_OPort' has cardinality 0..*.
+An association connects 'Model_AtomicDEVS' and 'Model_IntTransition'. From 'Model_AtomicDEVS', the role 'Model_AtomicDEVS' has cardinality 0..*, and from 'Model_IntTransition', the role 'Model_IntTransition' has cardinality 0..*.
+An association connects 'Model_AtomicDEVS' and 'Model_ConfTrans'. From 'Model_AtomicDEVS', the role 'Model_AtomicDEVS8' has cardinality 0..*, and from 'Model_ConfTrans', the role 'Model_ConfTrans' has cardinality 0..*.
+An association connects 'Model_AtomicDEVS' and 'Model_ExtTrans'. From 'Model_AtomicDEVS', the role 'Model_AtomicDEVS10' has cardinality 0..*, and from 'Model_ExtTrans', the role 'Model_ExtTrans' has cardinality 0..*.
+An association connects 'Model_Phase' and 'Model_AtomicDEVS'. From 'Model_Phase', the role 'Model_Phase' has cardinality 0..*, and from 'Model_AtomicDEVS', the role 'Model_AtomicDEVS12' has cardinality 0..*.
+An association connects 'Model_AtomicDEVS' and 'Model_Variable'. From 'Model_AtomicDEVS', the role 'Model_AtomicDEVS14' has cardinality 0..*, and from 'Model_Variable', the role 'Model_Variable' has cardinality 0..*.
+An association connects 'Model_CoupledDEVS' and 'Model_DEVS'. From 'Model_CoupledDEVS', the role 'Model_CoupledDEVS' has cardinality 0..*, and from 'Model_DEVS', the role 'Model_DEVS16' has cardinality 0..*.
+An association connects 'Model_CoupledDEVS' and 'Model_EIC'. From 'Model_CoupledDEVS', the role 'Model_CoupledDEVS18' has cardinality 0..*, and from 'Model_EIC', the role 'Model_EIC' has cardinality 0..*.
+An association connects 'Model_IC' and 'Model_CoupledDEVS'. From 'Model_IC', the role 'Model_IC' has cardinality 0..*, and from 'Model_CoupledDEVS', the role 'Model_CoupledDEVS20' has cardinality 0..*.
+An association connects 'Model_EOC' and 'Model_CoupledDEVS'. From 'Model_EOC', the role 'Model_EOC' has cardinality 0..*, and from 'Model_CoupledDEVS', the role 'Model_CoupledDEVS22' has cardinality 0..*.
+An association connects 'Model_Port' and 'Model_DEVS'. From 'Model_Port', the role 'Model_Port' has cardinality 0..*, and from 'Model_DEVS', the role 'Model_DEVS24' has cardinality 0..*.
+An association connects 'Model_Port' and 'Model_EClassifier'. From 'Model_Port', the role 'Model_Port26' has cardinality 0..*, and from 'Model_EClassifier', the role 'Model_EClassifier' has cardinality 0..*.
+An association connects 'Model_IPort' and 'Model_EIC'. From 'Model_IPort', the role 'Model_IPort29' has cardinality 0..*, and from 'Model_EIC', the role 'Model_EIC28' has cardinality 0..*.
+An association connects 'Model_EIC' and 'Model_IPort'. From 'Model_EIC', the role 'Model_EIC31' has cardinality 0..*, and from 'Model_IPort', the role 'Model_IPort32' has cardinality 0..*.
+An association connects 'Model_IC' and 'Model_OPort'. From 'Model_IC', the role 'Model_IC34' has cardinality 0..*, and from 'Model_OPort', the role 'Model_OPort35' has cardinality 0..*.
+An association connects 'Model_IPort' and 'Model_IC'. From 'Model_IPort', the role 'Model_IPort38' has cardinality 0..*, and from 'Model_IC', the role 'Model_IC37' has cardinality 0..*.
+An association connects 'Model_OPort' and 'Model_EOC'. From 'Model_OPort', the role 'Model_OPort41' has cardinality 0..*, and from 'Model_EOC', the role 'Model_EOC40' has cardinality 0..*.
+An association connects 'Model_EOC' and 'Model_OPort'. From 'Model_EOC', the role 'Model_EOC43' has cardinality 0..*, and from 'Model_OPort', the role 'Model_OPort44' has cardinality 0..*.
+An association connects 'Model_Event' and 'Model_IntTransition'. From 'Model_Event', the role 'Model_Event' has cardinality 0..*, and from 'Model_IntTransition', the role 'Model_IntTransition46' has cardinality 0..*.
+An association connects 'Model_ConfTrans' and 'Model_Event'. From 'Model_ConfTrans', the role 'Model_ConfTrans48' has cardinality 0..*, and from 'Model_Event', the role 'Model_Event49' has cardinality 0..*.
+An association connects 'Model_ConfTrans' and 'Model_Event'. From 'Model_ConfTrans', the role 'Model_ConfTrans51' has cardinality 0..*, and from 'Model_Event', the role 'Model_Event52' has cardinality 0..*.
+An association connects 'Model_Event' and 'Model_ExtTrans'. From 'Model_Event', the role 'Model_Event55' has cardinality 0..*, and from 'Model_ExtTrans', the role 'Model_ExtTrans54' has cardinality 0..*.
+An association connects 'Model_Event' and 'Model_Port'. From 'Model_Event', the role 'Model_Event57' has cardinality 0..*, and from 'Model_Port', the role 'Model_Port58' has cardinality 0..*.
+An association connects 'Model_EClassifier' and 'Model_Event'. From 'Model_EClassifier', the role 'Model_EClassifier61' has cardinality 0..*, and from 'Model_Event', the role 'Model_Event60' has cardinality 0..*.
+An association connects 'Model_Variable' and 'Model_Phase'. From 'Model_Variable', the role 'Model_Variable64' has cardinality 0..*, and from 'Model_Phase', the role 'Model_Phase63' has cardinality 0..*.
+An association connects 'Model_Phase' and 'Model_PhaseTransition'. From 'Model_Phase', the role 'Model_Phase66' has cardinality 0..*, and from 'Model_PhaseTransition', the role 'Model_PhaseTransition' has cardinality 0..*.
+An association connects 'Model_PhaseTransition' and 'Model_Phase'. From 'Model_PhaseTransition', the role 'Model_PhaseTransition68' has cardinality 0..*, and from 'Model_Phase', the role 'Model_Phase69' has cardinality 0..*.
+An association connects 'Model_Variable' and 'Model_EClassifier'. From 'Model_Variable', the role 'Model_Variable71' has cardinality 0..*, and from 'Model_EClassifier', the role 'Model_EClassifier72' has cardinality 0..*.

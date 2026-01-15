@@ -1,0 +1,281 @@
+The domain model 'caracteristica' describes the core structural elements and their relationships within the system.
+
+The model defines 55 main class(es).
+
+'caracteristica_Antecedente' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_CaracteristicaRaiz' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_AtributoProduto' represents an important domain concept.
+It has the following attributes: 'valor', which is of type str; 'tipoValor', which is of type str.
+
+'caracteristica_CaracteristicaProduto' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_RegraDeContexto' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_RegraDeComposicao' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_VariacaoDoisProduto' represents an important domain concept.
+It has one attribute: 'cardinalidadeMaxima', which is of type str.
+
+'caracteristica_Evento' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementoDeProduto' represents an important domain concept.
+It does not declare any attributes.
+
+'Antecedente' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_CaracteristicaOpcional' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_VariacaoProduto' represents an important domain concept.
+It has the following attributes: 'cardinalidadeMaxima', which is of type str; 'cardinalidadeMinima', which is of type str.
+
+'caracteristica_Atributo' represents an important domain concept.
+It has one attribute: 'tipoValor', which is of type str.
+
+'caracteristica_RaizDeContexto' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_EntidadeDeContexto' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_Estado' represents an important domain concept.
+It has the following attributes: 'safe', which is of type bool; 'nome', which is of type str.
+
+'Regra' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_VariacaoDois' represents an important domain concept.
+It has the following attributes: 'cardinalidadeMaxima', which is of type str; 'cardinalidadeMaximaOr', which is of type str; 'cardinalidadeMinimaOr', which is of type str.
+
+'Expressao' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_InformacaoDeContexto' represents an important domain concept.
+It has the following attributes: 'validade', which is of type str; 'tipoValor', which is of type str; 'qualidade', which is of type str; 'valor', which is of type str; 'origem', which is of type str.
+
+'caracteristica_PontoDeVariacao' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_VarianteProduto' represents an important domain concept.
+It has one attribute: 'selecionado', which is of type str.
+
+'Caracteristica' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_EventoRelacional' represents an important domain concept.
+It has the following attributes: 'operadorRelacional', which is of type str; 'valor', which is of type str.
+
+'ElementoCaracteristico' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_ExpressaoLogica' represents an important domain concept.
+It has one attribute: 'operadorLogico', which is of type str.
+
+'caracteristica_LiteralComposicao' represents an important domain concept.
+It has one attribute: 'presenca', which is of type str.
+
+'caracteristica_Regra' represents an important domain concept.
+It has the following attributes: 'nome', which is of type str; 'conteudo', which is of type str.
+
+'caracteristica_Acao' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_Caracteristica' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_AcaoLogico' represents an important domain concept.
+It has one attribute: 'operadorAcaoLogico', which is of type str.
+
+'caracteristica_Designar' represents an important domain concept.
+It has the following attributes: 'tipoValor', which is of type str; 'valor', which is of type str.
+
+'caracteristica_Variante' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_Expressao' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'caracteristica_Elemento' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'Elemento' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_Variacao' represents an important domain concept.
+It has the following attributes: 'cardinalidadeMinima', which is of type str; 'cardinalidadeMaxima', which is of type str.
+
+'caracteristica_CaracteristicaOpcionalProduto' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_EventoLogico' represents an important domain concept.
+It has one attribute: 'operadorLogico', which is of type str.
+
+'caracteristica_InconsistenciaRegraAdaptacao' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_Produto' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_CaracteristicaMandatoria' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_CaracteristicaMandatoriaProduto' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_LPS' represents an important domain concept.
+It has the following attributes: 'erro', which is of type str; 'valoresContextuais', which is of type str; 'nome', which is of type str.
+
+'caracteristica_ElementoCaracteristico' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_LiteralAcao' represents an important domain concept.
+It has one attribute: 'presenca', which is of type str.
+
+'caracteristica_Simulacao' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'caracteristica_ElementoDeProduto' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'caracteristica_CaracteristicaAgrupada' represents an important domain concept.
+It does not declare any attributes.
+
+'PontoDeVariacao' represents an important domain concept.
+It does not declare any attributes.
+
+'Evento' represents an important domain concept.
+It does not declare any attributes.
+
+'CaracteristicaProduto' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_ExpressaoRelacional' represents an important domain concept.
+It has the following attributes: 'valor', which is of type str; 'operadorRelacional', which is of type str.
+
+'Acao' represents an important domain concept.
+It does not declare any attributes.
+
+'caracteristica_Transicao' represents an important domain concept.
+It has the following attributes: 'safe', which is of type bool; 'etiqueta', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Validade' defines the following possible values: 'Volatil', 'Raramente', 'Frequente', 'Permanente'.
+The enumeration 'OperadorLogico' defines the following possible values: 'AND', 'OR'.
+The enumeration 'CardinalidadeMaxima' defines the following possible values: 'OR', 'XOR'.
+The enumeration 'Origem' defines the following possible values: 'Perfil', 'Sentida', 'Derivada', 'Usuario'.
+The enumeration 'Qualidade' defines the following possible values: 'Baixo', 'Alto'.
+The enumeration 'OperadorRelacional' defines the following possible values: 'MENORIGUAL', 'MENOR', 'IGUAL', 'MAIORIGUAL', 'DIFERENTE', 'MAIOR'.
+The enumeration 'OperadorAcaoLogico' defines a single possible value: 'AND'.
+The enumeration 'Presenca' defines the following possible values: 'AUSENTE', 'PRESENTE'.
+The enumeration 'TipoValor' defines the following possible values: 'TFloat', 'TBoolean', 'TString', 'TInteger'.
+
+The model also captures inheritance relationships between classes.
+The class 'caracteristica_ElementoCaracteristico' is a specialization of 'Elemento'.
+The class 'caracteristica_Atributo' is a specialization of 'Elemento'.
+The class 'caracteristica_Caracteristica' is a specialization of 'Elemento'.
+The class 'caracteristica_CaracteristicaRaiz' is a specialization of 'Caracteristica'.
+The class 'caracteristica_CaracteristicaOpcional' is a specialization of 'Caracteristica'.
+The class 'caracteristica_CaracteristicaOpcional' is a specialization of 'ElementoCaracteristico'.
+The class 'caracteristica_CaracteristicaAgrupada' is a specialization of 'Caracteristica'.
+The class 'caracteristica_CaracteristicaAgrupada' is a specialization of 'ElementoCaracteristico'.
+The class 'caracteristica_CaracteristicaMandatoria' is a specialization of 'Caracteristica'.
+The class 'caracteristica_VariacaoDois' is a specialization of 'Caracteristica'.
+The class 'caracteristica_VariacaoDois' is a specialization of 'ElementoCaracteristico'.
+The class 'caracteristica_Variacao' is a specialization of 'PontoDeVariacao'.
+The class 'caracteristica_Variacao' is a specialization of 'Elemento'.
+The class 'caracteristica_Variante' is a specialization of 'PontoDeVariacao'.
+The class 'caracteristica_Variante' is a specialization of 'ElementoCaracteristico'.
+The class 'caracteristica_Variante' is a specialization of 'Caracteristica'.
+The class 'caracteristica_RaizDeContexto' is a specialization of 'Elemento'.
+The class 'caracteristica_EntidadeDeContexto' is a specialization of 'Elemento'.
+The class 'caracteristica_InformacaoDeContexto' is a specialization of 'Elemento'.
+The class 'caracteristica_CaracteristicaProduto' is a specialization of 'ElementoDeProduto'.
+The class 'caracteristica_AtributoProduto' is a specialization of 'ElementoDeProduto'.
+The class 'caracteristica_CaracteristicaMandatoriaProduto' is a specialization of 'CaracteristicaProduto'.
+The class 'caracteristica_CaracteristicaOpcionalProduto' is a specialization of 'CaracteristicaProduto'.
+The class 'caracteristica_VariacaoDoisProduto' is a specialization of 'ElementoDeProduto'.
+The class 'caracteristica_VariacaoDoisProduto' is a specialization of 'CaracteristicaProduto'.
+The class 'caracteristica_VariacaoProduto' is a specialization of 'ElementoDeProduto'.
+The class 'caracteristica_VarianteProduto' is a specialization of 'ElementoDeProduto'.
+The class 'caracteristica_Produto' is a specialization of 'CaracteristicaProduto'.
+The class 'caracteristica_RegraDeComposicao' is a specialization of 'Regra'.
+The class 'caracteristica_RegraDeContexto' is a specialization of 'Regra'.
+The class 'caracteristica_Evento' is a specialization of 'Expressao'.
+The class 'caracteristica_EventoLogico' is a specialization of 'Evento'.
+The class 'caracteristica_EventoRelacional' is a specialization of 'Evento'.
+The class 'caracteristica_Acao' is a specialization of 'Expressao'.
+The class 'caracteristica_AcaoLogico' is a specialization of 'Acao'.
+The class 'caracteristica_LiteralAcao' is a specialization of 'Acao'.
+The class 'caracteristica_Designar' is a specialization of 'Acao'.
+The class 'caracteristica_Antecedente' is a specialization of 'Expressao'.
+The class 'caracteristica_ExpressaoLogica' is a specialization of 'Antecedente'.
+The class 'caracteristica_ExpressaoRelacional' is a specialization of 'Antecedente'.
+The class 'caracteristica_LiteralComposicao' is a specialization of 'Antecedente'.
+
+Relationships between classes are modeled using associations.
+An association connects 'caracteristica_LPS' and 'caracteristica_PontoDeVariacao'. From 'caracteristica_LPS', the role 'caracteristica_LPS' has cardinality 0..*, and from 'caracteristica_PontoDeVariacao', the role 'caracteristica_PontoDeVariacao' has cardinality 0..*.
+An association connects 'caracteristica_LPS' and 'caracteristica_Elemento'. From 'caracteristica_LPS', the role 'caracteristica_LPS2' has cardinality 0..*, and from 'caracteristica_Elemento', the role 'caracteristica_Elemento' has cardinality 0..*.
+An association connects 'caracteristica_Regra' and 'caracteristica_LPS'. From 'caracteristica_Regra', the role 'caracteristica_Regra' has cardinality 0..*, and from 'caracteristica_LPS', the role 'caracteristica_LPS4' has cardinality 0..*.
+An association connects 'caracteristica_Produto' and 'caracteristica_LPS'. From 'caracteristica_Produto', the role 'caracteristica_Produto' has cardinality 0..*, and from 'caracteristica_LPS', the role 'caracteristica_LPS6' has cardinality 0..*.
+An association connects 'caracteristica_Expressao' and 'caracteristica_LPS'. From 'caracteristica_Expressao', the role 'caracteristica_Expressao' has cardinality 0..*, and from 'caracteristica_LPS', the role 'caracteristica_LPS8' has cardinality 0..*.
+An association connects 'caracteristica_LPS' and 'caracteristica_ElementoDeProduto'. From 'caracteristica_LPS', the role 'caracteristica_LPS10' has cardinality 0..*, and from 'caracteristica_ElementoDeProduto', the role 'caracteristica_ElementoDeProduto' has cardinality 0..*.
+An association connects 'caracteristica_LPS' and 'caracteristica_CaracteristicaRaiz'. From 'caracteristica_LPS', the role 'LpsDoSistema' has cardinality 0..*, and from 'caracteristica_CaracteristicaRaiz', the role 'CaracteristicaRaiz' has cardinality 0..*.
+An association connects 'caracteristica_LPS' and 'caracteristica_Atributo'. From 'caracteristica_LPS', the role 'caracteristica_LPS13' has cardinality 0..*, and from 'caracteristica_Atributo', the role 'caracteristica_Atributo' has cardinality 0..*.
+An association connects 'caracteristica_Simulacao' and 'caracteristica_LPS'. From 'caracteristica_Simulacao', the role 'caracteristica_Simulacao' has cardinality 0..*, and from 'caracteristica_LPS', the role 'caracteristica_LPS15' has cardinality 0..*.
+An association connects 'caracteristica_LPS' and 'caracteristica_InconsistenciaRegraAdaptacao'. From 'caracteristica_LPS', the role 'caracteristica_LPS17' has cardinality 0..*, and from 'caracteristica_InconsistenciaRegraAdaptacao', the role 'caracteristica_InconsistenciaRegraAdaptacao' has cardinality 0..*.
+An association connects 'caracteristica_Caracteristica' and 'caracteristica_Atributo'. From 'caracteristica_Caracteristica', the role 'Caracteristica' has cardinality 0..*, and from 'caracteristica_Atributo', the role 'atributo' has cardinality 0..*.
+An association connects 'caracteristica_Caracteristica' and 'caracteristica_Caracteristica'. From 'caracteristica_Caracteristica', the role 'caracteristicaFilha' has cardinality 0..*, and from 'caracteristica_Caracteristica', the role 'Caracteristica21' has cardinality 0..*.
+An association connects 'caracteristica_Caracteristica' and 'caracteristica_Caracteristica'. From 'caracteristica_Caracteristica', the role 'Caracteristica24' has cardinality 0..*, and from 'caracteristica_Caracteristica', the role 'caracteristicaPai' has cardinality 0..*.
+An association connects 'caracteristica_Caracteristica' and 'caracteristica_Variacao'. From 'caracteristica_Caracteristica', the role 'caracteristicaPai26' has cardinality 0..*, and from 'caracteristica_Variacao', the role 'Variacao' has cardinality 0..*.
+An association connects 'caracteristica_Caracteristica' and 'caracteristica_Atributo'. From 'caracteristica_Caracteristica', the role 'caracteristicaPai28' has cardinality 0..*, and from 'caracteristica_Atributo', the role 'Atributo' has cardinality 0..*.
+An association connects 'caracteristica_LPS' and 'caracteristica_CaracteristicaRaiz'. From 'caracteristica_LPS', the role 'LPS' has cardinality 0..*, and from 'caracteristica_CaracteristicaRaiz', the role 'sistema' has cardinality 0..*.
+An association connects 'caracteristica_Variacao' and 'caracteristica_Variante'. From 'caracteristica_Variacao', the role 'variacaoPai' has cardinality 0..*, and from 'caracteristica_Variante', the role 'Variante' has cardinality 0..*.
+An association connects 'caracteristica_Caracteristica' and 'caracteristica_Variacao'. From 'caracteristica_Caracteristica', the role 'Caracteristica32' has cardinality 0..*, and from 'caracteristica_Variacao', the role 'variacoes' has cardinality 0..*.
+An association connects 'caracteristica_Variacao' and 'caracteristica_Variante'. From 'caracteristica_Variacao', the role 'Variacao34' has cardinality 0..*, and from 'caracteristica_Variante', the role 'variantes' has cardinality 0..*.
+An association connects 'caracteristica_RaizDeContexto' and 'caracteristica_EntidadeDeContexto'. From 'caracteristica_RaizDeContexto', the role 'raiz' has cardinality 0..*, and from 'caracteristica_EntidadeDeContexto', the role 'EntidadeDeContexto' has cardinality 0..*.
+An association connects 'caracteristica_RaizDeContexto' and 'caracteristica_EntidadeDeContexto'. From 'caracteristica_RaizDeContexto', the role 'RaizDeContexto' has cardinality 0..*, and from 'caracteristica_EntidadeDeContexto', the role 'entidadesDeContexto' has cardinality 0..*.
+An association connects 'caracteristica_InformacaoDeContexto' and 'caracteristica_EntidadeDeContexto'. From 'caracteristica_InformacaoDeContexto', the role 'InformacaoDeContexto' has cardinality 0..*, and from 'caracteristica_EntidadeDeContexto', the role 'elementoPai' has cardinality 0..*.
+An association connects 'caracteristica_InformacaoDeContexto' and 'caracteristica_EntidadeDeContexto'. From 'caracteristica_InformacaoDeContexto', the role 'informacoesDeContexto' has cardinality 0..*, and from 'caracteristica_EntidadeDeContexto', the role 'EntidadeDeContexto39' has cardinality 0..*.
+An association connects 'caracteristica_ElementoDeProduto' and 'caracteristica_Elemento'. From 'caracteristica_ElementoDeProduto', the role 'caracteristica_ElementoDeProduto41' has cardinality 0..*, and from 'caracteristica_Elemento', the role 'caracteristica_Elemento42' has cardinality 0..*.
+An association connects 'caracteristica_CaracteristicaProduto' and 'caracteristica_CaracteristicaProduto'. From 'caracteristica_CaracteristicaProduto', the role 'caracteristicaProdutoFilha' has cardinality 0..*, and from 'caracteristica_CaracteristicaProduto', the role 'CaracteristicaProduto' has cardinality 0..*.
+An association connects 'caracteristica_CaracteristicaProduto' and 'caracteristica_CaracteristicaProduto'. From 'caracteristica_CaracteristicaProduto', the role 'CaracteristicaProduto47' has cardinality 0..*, and from 'caracteristica_CaracteristicaProduto', the role 'caracteristicaProdutoPai' has cardinality 0..*.
+An association connects 'caracteristica_CaracteristicaProduto' and 'caracteristica_AtributoProduto'. From 'caracteristica_CaracteristicaProduto', the role 'caracteristicaProdutoPai49' has cardinality 0..*, and from 'caracteristica_AtributoProduto', the role 'AtributoProduto' has cardinality 0..*.
+An association connects 'caracteristica_CaracteristicaProduto' and 'caracteristica_AtributoProduto'. From 'caracteristica_CaracteristicaProduto', the role 'CaracteristicaProduto51' has cardinality 0..*, and from 'caracteristica_AtributoProduto', the role 'atributoProduto' has cardinality 0..*.
+An association connects 'caracteristica_VariacaoProduto' and 'caracteristica_VarianteProduto'. From 'caracteristica_VariacaoProduto', the role 'variacaoProdutoPai' has cardinality 0..*, and from 'caracteristica_VarianteProduto', the role 'VarianteProduto' has cardinality 0..*.
+An association connects 'caracteristica_CaracteristicaProduto' and 'caracteristica_VariacaoProduto'. From 'caracteristica_CaracteristicaProduto', the role 'caracteristica_CaracteristicaProduto' has cardinality 0..*, and from 'caracteristica_VariacaoProduto', the role 'caracteristica_VariacaoProduto' has cardinality 0..*.
+An association connects 'caracteristica_VariacaoProduto' and 'caracteristica_VarianteProduto'. From 'caracteristica_VariacaoProduto', the role 'VariacaoProduto' has cardinality 0..*, and from 'caracteristica_VarianteProduto', the role 'variantesProduto' has cardinality 0..*.
+An association connects 'caracteristica_Produto' and 'caracteristica_CaracteristicaRaiz'. From 'caracteristica_Produto', the role 'caracteristica_Produto56' has cardinality 0..*, and from 'caracteristica_CaracteristicaRaiz', the role 'caracteristica_CaracteristicaRaiz' has cardinality 0..*.
+An association connects 'caracteristica_Antecedente' and 'caracteristica_RegraDeComposicao'. From 'caracteristica_Antecedente', the role 'caracteristica_Antecedente' has cardinality 0..*, and from 'caracteristica_RegraDeComposicao', the role 'caracteristica_RegraDeComposicao' has cardinality 0..*.
+An association connects 'caracteristica_Antecedente' and 'caracteristica_RegraDeComposicao'. From 'caracteristica_Antecedente', the role 'caracteristica_Antecedente60' has cardinality 0..*, and from 'caracteristica_RegraDeComposicao', the role 'caracteristica_RegraDeComposicao59' has cardinality 0..*.
+An association connects 'caracteristica_RegraDeContexto' and 'caracteristica_Evento'. From 'caracteristica_RegraDeContexto', the role 'caracteristica_RegraDeContexto' has cardinality 0..*, and from 'caracteristica_Evento', the role 'caracteristica_Evento' has cardinality 0..*.
+An association connects 'caracteristica_RegraDeContexto' and 'caracteristica_Acao'. From 'caracteristica_RegraDeContexto', the role 'caracteristica_RegraDeContexto63' has cardinality 0..*, and from 'caracteristica_Acao', the role 'caracteristica_Acao' has cardinality 0..*.
+An association connects 'caracteristica_Evento' and 'caracteristica_EventoLogico'. From 'caracteristica_Evento', the role 'caracteristica_Evento65' has cardinality 0..*, and from 'caracteristica_EventoLogico', the role 'caracteristica_EventoLogico' has cardinality 0..*.
+An association connects 'caracteristica_Evento' and 'caracteristica_EventoLogico'. From 'caracteristica_Evento', the role 'caracteristica_Evento68' has cardinality 0..*, and from 'caracteristica_EventoLogico', the role 'caracteristica_EventoLogico67' has cardinality 0..*.
+An association connects 'caracteristica_InformacaoDeContexto' and 'caracteristica_EventoRelacional'. From 'caracteristica_InformacaoDeContexto', the role 'caracteristica_InformacaoDeContexto' has cardinality 0..*, and from 'caracteristica_EventoRelacional', the role 'caracteristica_EventoRelacional' has cardinality 0..*.
+An association connects 'caracteristica_Acao' and 'caracteristica_AcaoLogico'. From 'caracteristica_Acao', the role 'caracteristica_Acao71' has cardinality 0..*, and from 'caracteristica_AcaoLogico', the role 'caracteristica_AcaoLogico' has cardinality 0..*.
+An association connects 'caracteristica_AcaoLogico' and 'caracteristica_Acao'. From 'caracteristica_AcaoLogico', the role 'caracteristica_AcaoLogico73' has cardinality 0..*, and from 'caracteristica_Acao', the role 'caracteristica_Acao74' has cardinality 0..*.
+An association connects 'caracteristica_ElementoCaracteristico' and 'caracteristica_LiteralAcao'. From 'caracteristica_ElementoCaracteristico', the role 'caracteristica_ElementoCaracteristico' has cardinality 0..*, and from 'caracteristica_LiteralAcao', the role 'caracteristica_LiteralAcao' has cardinality 0..*.
+An association connects 'caracteristica_Designar' and 'caracteristica_Atributo'. From 'caracteristica_Designar', the role 'caracteristica_Designar' has cardinality 0..*, and from 'caracteristica_Atributo', the role 'caracteristica_Atributo77' has cardinality 0..*.
+An association connects 'caracteristica_Antecedente' and 'caracteristica_ExpressaoLogica'. From 'caracteristica_Antecedente', the role 'caracteristica_Antecedente79' has cardinality 0..*, and from 'caracteristica_ExpressaoLogica', the role 'caracteristica_ExpressaoLogica' has cardinality 0..*.
+An association connects 'caracteristica_Antecedente' and 'caracteristica_ExpressaoLogica'. From 'caracteristica_Antecedente', the role 'caracteristica_Antecedente82' has cardinality 0..*, and from 'caracteristica_ExpressaoLogica', the role 'caracteristica_ExpressaoLogica81' has cardinality 0..*.
+An association connects 'caracteristica_Atributo' and 'caracteristica_ExpressaoRelacional'. From 'caracteristica_Atributo', the role 'caracteristica_Atributo84' has cardinality 0..*, and from 'caracteristica_ExpressaoRelacional', the role 'caracteristica_ExpressaoRelacional' has cardinality 0..*.
+An association connects 'caracteristica_LiteralComposicao' and 'caracteristica_ElementoCaracteristico'. From 'caracteristica_LiteralComposicao', the role 'caracteristica_LiteralComposicao' has cardinality 0..*, and from 'caracteristica_ElementoCaracteristico', the role 'caracteristica_ElementoCaracteristico86' has cardinality 0..*.
+An association connects 'caracteristica_Simulacao' and 'caracteristica_Transicao'. From 'caracteristica_Simulacao', the role 'caracteristica_Simulacao88' has cardinality 0..*, and from 'caracteristica_Transicao', the role 'caracteristica_Transicao' has cardinality 0..*.
+An association connects 'caracteristica_Estado' and 'caracteristica_Simulacao'. From 'caracteristica_Estado', the role 'caracteristica_Estado' has cardinality 0..*, and from 'caracteristica_Simulacao', the role 'caracteristica_Simulacao90' has cardinality 0..*.
+An association connects 'caracteristica_Estado' and 'caracteristica_Transicao'. From 'caracteristica_Estado', the role 'caracteristica_Estado93' has cardinality 0..*, and from 'caracteristica_Transicao', the role 'caracteristica_Transicao92' has cardinality 0..*.
+An association connects 'caracteristica_Transicao' and 'caracteristica_Estado'. From 'caracteristica_Transicao', the role 'caracteristica_Transicao95' has cardinality 0..*, and from 'caracteristica_Estado', the role 'caracteristica_Estado96' has cardinality 0..*.
+An association connects 'caracteristica_Transicao' and 'caracteristica_RegraDeComposicao'. From 'caracteristica_Transicao', the role 'caracteristica_Transicao98' has cardinality 0..*, and from 'caracteristica_RegraDeComposicao', the role 'caracteristica_RegraDeComposicao99' has cardinality 0..*.
+An association connects 'caracteristica_Transicao' and 'caracteristica_Acao'. From 'caracteristica_Transicao', the role 'caracteristica_Transicao101' has cardinality 0..*, and from 'caracteristica_Acao', the role 'caracteristica_Acao102' has cardinality 0..*.
+An association connects 'caracteristica_CaracteristicaProduto' and 'caracteristica_Estado'. From 'caracteristica_CaracteristicaProduto', the role 'caracteristica_CaracteristicaProduto105' has cardinality 0..*, and from 'caracteristica_Estado', the role 'caracteristica_Estado104' has cardinality 0..*.
+An association connects 'caracteristica_InconsistenciaRegraAdaptacao' and 'caracteristica_RegraDeContexto'. From 'caracteristica_InconsistenciaRegraAdaptacao', the role 'caracteristica_InconsistenciaRegraAdaptacao107' has cardinality 0..*, and from 'caracteristica_RegraDeContexto', the role 'caracteristica_RegraDeContexto108' has cardinality 0..*.
+An association connects 'caracteristica_LiteralAcao' and 'caracteristica_InconsistenciaRegraAdaptacao'. From 'caracteristica_LiteralAcao', the role 'caracteristica_LiteralAcao111' has cardinality 0..*, and from 'caracteristica_InconsistenciaRegraAdaptacao', the role 'caracteristica_InconsistenciaRegraAdaptacao110' has cardinality 0..*.
+An association connects 'caracteristica_Designar' and 'caracteristica_InconsistenciaRegraAdaptacao'. From 'caracteristica_Designar', the role 'caracteristica_Designar114' has cardinality 0..*, and from 'caracteristica_InconsistenciaRegraAdaptacao', the role 'caracteristica_InconsistenciaRegraAdaptacao113' has cardinality 0..*.

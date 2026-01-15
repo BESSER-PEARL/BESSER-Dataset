@@ -1,0 +1,124 @@
+The domain model 'extlibrary' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'extlibrary_TitledItem' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'extlibrary__15NQcW60EeGkd4g88tZXfA' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary__146VgG60EeGkd4g88tZXfA' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary__15N3gm60EeGkd4g88tZXfA' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_Borrower' represents an important domain concept.
+It does not declare any attributes.
+
+'_15OelG60EeGkd4g88tZXfA' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_Magazine' represents an important domain concept.
+It does not declare any attributes.
+
+'_15N3gm60EeGkd4g88tZXfA' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_Periodical' represents an important domain concept.
+It has one attribute: 'issuesPerYear', which is of type int.
+
+'_15LbQG60EeGkd4g88tZXfA' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_Addressable' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'extlibrary_Writer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'extlibrary__15IX8G60EeGkd4g88tZXfA' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_Library' represents an important domain concept.
+It has the following attributes: 'people', which is of type str; 'name', which is of type str.
+
+'_9M9ys29IEeGekPcBm25hwQ' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_Lendable' represents an important domain concept.
+It has one attribute: 'copies', which is of type int.
+
+'extlibrary_CirculatingItem' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary__15OekG60EeGkd4g88tZXfA' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_VideoCassette' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_Person' represents an important domain concept.
+It has the following attributes: 'firstName', which is of type str; 'familyName', which is of type str.
+
+'extlibrary_Book' represents an important domain concept.
+It has the following attributes: 'category', which is of type str; 'pages', which is of type int; 'subtitle', which is of type str.
+
+'extlibrary_Employee' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary__15CRUW60EeGkd4g88tZXfA' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary__15Hw4m60EeGkd4g88tZXfA' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_Item' represents an important domain concept.
+It has one attribute: 'publicationDate', which is of type date.
+
+'extlibrary_AudioVisualItem' represents an important domain concept.
+It has the following attributes: 'minutes', which is of type int; 'damaged', which is of type bool.
+
+'extlibrary_BookOnTape' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary__148KsW60EeGkd4g88tZXfA' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BookCategory' defines the following possible values: 'Manhwa', 'ScienceFiction', 'Mystery', 'Biography', 'Manga'.
+
+The model also captures inheritance relationships between classes.
+The class 'extlibrary_Book' is a specialization of '_15LbQG60EeGkd4g88tZXfA'.
+The class 'extlibrary_Book' is a specialization of '_9M9ys29IEeGekPcBm25hwQ'.
+The class 'extlibrary_Library' is a specialization of '_15OelG60EeGkd4g88tZXfA'.
+The class 'extlibrary_Writer' is a specialization of '_15N3gm60EeGkd4g88tZXfA'.
+The class 'extlibrary_CirculatingItem' is a specialization of 'extlibrary_Item'.
+The class 'extlibrary_CirculatingItem' is a specialization of 'extlibrary_Lendable'.
+The class 'extlibrary_Periodical' is a specialization of 'extlibrary_Item'.
+The class 'extlibrary_Periodical' is a specialization of '_9M9ys29IEeGekPcBm25hwQ'.
+The class 'extlibrary_AudioVisualItem' is a specialization of '_15LbQG60EeGkd4g88tZXfA'.
+The class 'extlibrary_AudioVisualItem' is a specialization of '_9M9ys29IEeGekPcBm25hwQ'.
+The class 'extlibrary_BookOnTape' is a specialization of 'extlibrary_AudioVisualItem'.
+The class 'extlibrary_VideoCassette' is a specialization of 'extlibrary_AudioVisualItem'.
+The class 'extlibrary_Borrower' is a specialization of '_15N3gm60EeGkd4g88tZXfA'.
+The class 'extlibrary_Person' is a specialization of '_15OelG60EeGkd4g88tZXfA'.
+The class 'extlibrary_Employee' is a specialization of '_15N3gm60EeGkd4g88tZXfA'.
+The class 'extlibrary_Magazine' is a specialization of 'extlibrary_Periodical'.
+
+Relationships between classes are modeled using associations.
+An association connects 'extlibrary_Book' and 'extlibrary__15CRUW60EeGkd4g88tZXfA'. From 'extlibrary_Book', the role 'extlibrary_Book' has cardinality 0..*, and from 'extlibrary__15CRUW60EeGkd4g88tZXfA', the role 'extlibrary__15CRUW60EeGkd4g88tZXfA' has cardinality 0..*.
+An association connects 'extlibrary_Library' and 'extlibrary__15CRUW60EeGkd4g88tZXfA'. From 'extlibrary_Library', the role 'extlibrary_Library' has cardinality 0..*, and from 'extlibrary__15CRUW60EeGkd4g88tZXfA', the role 'extlibrary__15CRUW60EeGkd4g88tZXfA2' has cardinality 0..*.
+An association connects 'extlibrary__15OekG60EeGkd4g88tZXfA' and 'extlibrary_Library'. From 'extlibrary__15OekG60EeGkd4g88tZXfA', the role 'extlibrary__15OekG60EeGkd4g88tZXfA' has cardinality 0..*, and from 'extlibrary_Library', the role 'extlibrary_Library4' has cardinality 0..*.
+An association connects 'extlibrary_Library' and 'extlibrary__15NQcW60EeGkd4g88tZXfA'. From 'extlibrary_Library', the role 'extlibrary_Library6' has cardinality 0..*, and from 'extlibrary__15NQcW60EeGkd4g88tZXfA', the role 'extlibrary__15NQcW60EeGkd4g88tZXfA' has cardinality 0..*.
+An association connects 'extlibrary_Library' and 'extlibrary__15Hw4m60EeGkd4g88tZXfA'. From 'extlibrary_Library', the role 'extlibrary_Library8' has cardinality 0..*, and from 'extlibrary__15Hw4m60EeGkd4g88tZXfA', the role 'extlibrary__15Hw4m60EeGkd4g88tZXfA' has cardinality 0..*.
+An association connects 'extlibrary_Library' and 'extlibrary__146VgG60EeGkd4g88tZXfA'. From 'extlibrary_Library', the role 'extlibrary_Library10' has cardinality 0..*, and from 'extlibrary__146VgG60EeGkd4g88tZXfA', the role 'extlibrary__146VgG60EeGkd4g88tZXfA' has cardinality 0..*.
+An association connects 'extlibrary_Library' and 'extlibrary__148KsW60EeGkd4g88tZXfA'. From 'extlibrary_Library', the role 'extlibrary_Library12' has cardinality 0..*, and from 'extlibrary__148KsW60EeGkd4g88tZXfA', the role 'extlibrary__148KsW60EeGkd4g88tZXfA' has cardinality 0..*.
+An association connects 'extlibrary__148KsW60EeGkd4g88tZXfA' and 'extlibrary_Library'. From 'extlibrary__148KsW60EeGkd4g88tZXfA', the role 'extlibrary__148KsW60EeGkd4g88tZXfA15' has cardinality 0..*, and from 'extlibrary_Library', the role 'extlibrary_Library14' has cardinality 0..*.
+An association connects 'extlibrary_Writer' and 'extlibrary__146VgG60EeGkd4g88tZXfA'. From 'extlibrary_Writer', the role 'extlibrary_Writer' has cardinality 0..*, and from 'extlibrary__146VgG60EeGkd4g88tZXfA', the role 'extlibrary__146VgG60EeGkd4g88tZXfA17' has cardinality 0..*.
+An association connects 'extlibrary__15NQcW60EeGkd4g88tZXfA' and 'extlibrary_Lendable'. From 'extlibrary__15NQcW60EeGkd4g88tZXfA', the role 'extlibrary__15NQcW60EeGkd4g88tZXfA19' has cardinality 0..*, and from 'extlibrary_Lendable', the role 'extlibrary_Lendable' has cardinality 0..*.
+An association connects 'extlibrary_BookOnTape' and 'extlibrary__15CRUW60EeGkd4g88tZXfA'. From 'extlibrary_BookOnTape', the role 'extlibrary_BookOnTape' has cardinality 0..*, and from 'extlibrary__15CRUW60EeGkd4g88tZXfA', the role 'extlibrary__15CRUW60EeGkd4g88tZXfA21' has cardinality 0..*.
+An association connects 'extlibrary_VideoCassette' and 'extlibrary__15N3gm60EeGkd4g88tZXfA'. From 'extlibrary_VideoCassette', the role 'extlibrary_VideoCassette' has cardinality 0..*, and from 'extlibrary__15N3gm60EeGkd4g88tZXfA', the role 'extlibrary__15N3gm60EeGkd4g88tZXfA' has cardinality 0..*.
+An association connects 'extlibrary_Borrower' and 'extlibrary__15IX8G60EeGkd4g88tZXfA'. From 'extlibrary_Borrower', the role 'extlibrary_Borrower' has cardinality 0..*, and from 'extlibrary__15IX8G60EeGkd4g88tZXfA', the role 'extlibrary__15IX8G60EeGkd4g88tZXfA' has cardinality 0..*.
+An association connects 'extlibrary__15OekG60EeGkd4g88tZXfA' and 'extlibrary_Employee'. From 'extlibrary__15OekG60EeGkd4g88tZXfA', the role 'extlibrary__15OekG60EeGkd4g88tZXfA25' has cardinality 0..*, and from 'extlibrary_Employee', the role 'extlibrary_Employee' has cardinality 0..*.

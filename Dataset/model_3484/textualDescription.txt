@@ -1,0 +1,72 @@
+The domain model 'featureModelMetamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'Selection' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModelMetamodel_ConfigurationModel' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModelMetamodel_Selection' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'state', which is of type str.
+
+'featureModelMetamodel_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModelMetamodel_ClonableFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModelMetamodel_Feature' represents an important domain concept.
+It has the following attributes: 'variabilityType', which is of type str; 'name', which is of type str; 'id', which is of type str.
+
+'Multiplicity' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModelMetamodel_ClonableSelection' represents an important domain concept.
+It has one attribute: 'instance', which is of type str.
+
+'featureModelMetamodel_Multiplicity' represents an important domain concept.
+It has the following attributes: 'upper', which is of type str; 'lower', which is of type str.
+
+'featureModelMetamodel_GroupMultiplicity' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModelMetamodel_FeatureModel' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModelMetamodel_AbstractFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModelMetamodel_Constraint' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'language', which is of type str; 'id', which is of type str.
+
+'featureModelMetamodel_VariableFeature' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SelectionState' defines the following possible values: 'unselected', 'selected'.
+The enumeration 'VariabilityType' defines the following possible values: 'alternative', 'or', 'mandatory', 'optional'.
+
+The model also captures inheritance relationships between classes.
+The class 'featureModelMetamodel_VariableFeature' is a specialization of 'Feature'.
+The class 'featureModelMetamodel_ClonableFeature' is a specialization of 'Feature'.
+The class 'featureModelMetamodel_AbstractFeature' is a specialization of 'Feature'.
+The class 'featureModelMetamodel_GroupMultiplicity' is a specialization of 'Multiplicity'.
+The class 'featureModelMetamodel_ClonableSelection' is a specialization of 'Selection'.
+
+Relationships between classes are modeled using associations.
+An association connects 'featureModelMetamodel_Feature' and 'featureModelMetamodel_Feature'. From 'featureModelMetamodel_Feature', the role 'featureModelMetamodel_Feature' has cardinality 0..*, and from 'featureModelMetamodel_Feature', the role 'featureModelMetamodel_Feature0' has cardinality 0..*.
+An association connects 'featureModelMetamodel_Feature' and 'featureModelMetamodel_GroupMultiplicity'. From 'featureModelMetamodel_Feature', the role 'featureModelMetamodel_Feature3' has cardinality 0..*, and from 'featureModelMetamodel_GroupMultiplicity', the role 'featureModelMetamodel_GroupMultiplicity' has cardinality 0..*.
+An association connects 'featureModelMetamodel_Attribute' and 'featureModelMetamodel_Feature'. From 'featureModelMetamodel_Attribute', the role 'featureModelMetamodel_Attribute' has cardinality 0..*, and from 'featureModelMetamodel_Feature', the role 'featureModelMetamodel_Feature5' has cardinality 0..*.
+An association connects 'featureModelMetamodel_Feature' and 'featureModelMetamodel_Feature'. From 'featureModelMetamodel_Feature', the role 'featureModelMetamodel_Feature8' has cardinality 0..*, and from 'featureModelMetamodel_Feature', the role 'featureModelMetamodel_Feature6' has cardinality 0..*.
+An association connects 'featureModelMetamodel_ClonableFeature' and 'featureModelMetamodel_Multiplicity'. From 'featureModelMetamodel_ClonableFeature', the role 'featureModelMetamodel_ClonableFeature' has cardinality 0..*, and from 'featureModelMetamodel_Multiplicity', the role 'featureModelMetamodel_Multiplicity' has cardinality 0..*.
+An association connects 'featureModelMetamodel_FeatureModel' and 'featureModelMetamodel_Feature'. From 'featureModelMetamodel_FeatureModel', the role 'featureModelMetamodel_FeatureModel' has cardinality 0..*, and from 'featureModelMetamodel_Feature', the role 'featureModelMetamodel_Feature11' has cardinality 0..*.
+An association connects 'featureModelMetamodel_FeatureModel' and 'featureModelMetamodel_Constraint'. From 'featureModelMetamodel_FeatureModel', the role 'featureModelMetamodel_FeatureModel13' has cardinality 0..*, and from 'featureModelMetamodel_Constraint', the role 'featureModelMetamodel_Constraint' has cardinality 0..*.
+An association connects 'featureModelMetamodel_FeatureModel' and 'featureModelMetamodel_Feature'. From 'featureModelMetamodel_FeatureModel', the role 'featureModelMetamodel_FeatureModel15' has cardinality 0..*, and from 'featureModelMetamodel_Feature', the role 'featureModelMetamodel_Feature16' has cardinality 0..*.
+An association connects 'featureModelMetamodel_GroupMultiplicity' and 'featureModelMetamodel_Feature'. From 'featureModelMetamodel_GroupMultiplicity', the role 'featureModelMetamodel_GroupMultiplicity18' has cardinality 0..*, and from 'featureModelMetamodel_Feature', the role 'featureModelMetamodel_Feature19' has cardinality 0..*.
+An association connects 'featureModelMetamodel_Feature' and 'featureModelMetamodel_Selection'. From 'featureModelMetamodel_Feature', the role 'featureModelMetamodel_Feature21' has cardinality 0..*, and from 'featureModelMetamodel_Selection', the role 'featureModelMetamodel_Selection' has cardinality 0..*.
+An association connects 'featureModelMetamodel_Selection' and 'featureModelMetamodel_ConfigurationModel'. From 'featureModelMetamodel_Selection', the role 'featureModelMetamodel_Selection23' has cardinality 0..*, and from 'featureModelMetamodel_ConfigurationModel', the role 'featureModelMetamodel_ConfigurationModel' has cardinality 0..*.

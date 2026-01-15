@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/AlFranzis/SmartMatcher/SmartMatcherTrunk/models/unittest/hExample_6/hExample_6_RHS.ecore

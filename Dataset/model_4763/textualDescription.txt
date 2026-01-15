@@ -1,0 +1,49 @@
+The domain model 'itemflow101' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'itemflow101_Port' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'itemflow101_InputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessNode' represents an important domain concept.
+It does not declare any attributes.
+
+'itemflow101_Description' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'itemflow101_ProcessNode' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'itemflow101_Item' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'itemflow101_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'itemflow101_OutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'itemflow101_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'itemflow101_Function' is a specialization of 'ProcessNode'.
+The class 'itemflow101_Flow' is a specialization of 'ProcessNode'.
+The class 'itemflow101_OutputPort' is a specialization of 'Port'.
+The class 'itemflow101_InputPort' is a specialization of 'Port'.
+
+Relationships between classes are modeled using associations.
+An association connects 'itemflow101_Flow' and 'itemflow101_Function'. From 'itemflow101_Flow', the role 'itemflow101_Flow' has cardinality 0..*, and from 'itemflow101_Function', the role 'itemflow101_Function' has cardinality 0..*.
+An association connects 'itemflow101_Function' and 'itemflow101_Function'. From 'itemflow101_Function', the role 'itemflow101_Function1' has cardinality 0..*, and from 'itemflow101_Function', the role 'itemflow101_Function3' has cardinality 0..*.
+An association connects 'itemflow101_Function' and 'itemflow101_OutputPort'. From 'itemflow101_Function', the role 'itemflow101_Function5' has cardinality 0..*, and from 'itemflow101_OutputPort', the role 'itemflow101_OutputPort' has cardinality 0..*.
+An association connects 'itemflow101_InputPort' and 'itemflow101_Function'. From 'itemflow101_InputPort', the role 'itemflow101_InputPort' has cardinality 0..*, and from 'itemflow101_Function', the role 'itemflow101_Function7' has cardinality 0..*.
+An association connects 'itemflow101_Description' and 'itemflow101_Function'. From 'itemflow101_Description', the role 'itemflow101_Description' has cardinality 0..*, and from 'itemflow101_Function', the role 'itemflow101_Function9' has cardinality 0..*.
+An association connects 'itemflow101_InputPort' and 'itemflow101_Flow'. From 'itemflow101_InputPort', the role 'itemflow101_InputPort12' has cardinality 0..*, and from 'itemflow101_Flow', the role 'itemflow101_Flow11' has cardinality 0..*.
+An association connects 'itemflow101_Item' and 'itemflow101_Flow'. From 'itemflow101_Item', the role 'itemflow101_Item' has cardinality 0..*, and from 'itemflow101_Flow', the role 'itemflow101_Flow14' has cardinality 0..*.
+An association connects 'itemflow101_OutputPort' and 'itemflow101_Flow'. From 'itemflow101_OutputPort', the role 'itemflow101_OutputPort16' has cardinality 0..*, and from 'itemflow101_Flow', the role 'itemflow101_Flow17' has cardinality 0..*.

@@ -1,0 +1,37 @@
+The domain model 'tinylibrary' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'tinylibrary_Employee' represents an important domain concept.
+It does not declare any attributes.
+
+'tinylibrary_Person' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'firstName', which is of type str; 'lastName', which is of type str.
+
+'tinylibrary_Writer' represents an important domain concept.
+It does not declare any attributes.
+
+'tinylibrary_Book' represents an important domain concept.
+It has the following attributes: 'damaged', which is of type str; 'isbn', which is of type str; 'category', which is of type str; 'pages', which is of type str; 'title', which is of type str; 'published', which is of type date.
+
+'tinylibrary_Library' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BookCategory' defines the following possible values: 'Biography', 'Mystery', 'ScienceFiction', 'Computing'.
+
+The model also captures inheritance relationships between classes.
+The class 'tinylibrary_Writer' is a specialization of 'Person'.
+The class 'tinylibrary_Employee' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tinylibrary_Library' and 'tinylibrary_Book'. From 'tinylibrary_Library', the role 'tinylibrary_Library' has cardinality 0..*, and from 'tinylibrary_Book', the role 'tinylibrary_Book' has cardinality 0..*.
+An association connects 'tinylibrary_Library' and 'tinylibrary_Employee'. From 'tinylibrary_Library', the role 'tinylibrary_Library2' has cardinality 0..*, and from 'tinylibrary_Employee', the role 'tinylibrary_Employee' has cardinality 0..*.
+An association connects 'tinylibrary_Writer' and 'tinylibrary_Library'. From 'tinylibrary_Writer', the role 'tinylibrary_Writer' has cardinality 0..*, and from 'tinylibrary_Library', the role 'tinylibrary_Library4' has cardinality 0..*.
+An association connects 'tinylibrary_Writer' and 'tinylibrary_Book'. From 'tinylibrary_Writer', the role 'authors' has cardinality 0..*, and from 'tinylibrary_Book', the role 'Book' has cardinality 0..*.
+An association connects 'tinylibrary_Employee' and 'tinylibrary_Employee'. From 'tinylibrary_Employee', the role 'managed' has cardinality 0..*, and from 'tinylibrary_Employee', the role 'Employee' has cardinality 0..*.
+An association connects 'tinylibrary_Employee' and 'tinylibrary_Employee'. From 'tinylibrary_Employee', the role 'manager' has cardinality 0..*, and from 'tinylibrary_Employee', the role 'Employee10' has cardinality 0..*.
+An association connects 'tinylibrary_Writer' and 'tinylibrary_Book'. From 'tinylibrary_Writer', the role 'Writer' has cardinality 0..*, and from 'tinylibrary_Book', the role 'books' has cardinality 0..*.

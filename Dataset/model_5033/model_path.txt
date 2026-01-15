@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/b-studios/henshin/plugins/org.eclipse.emf.henshin.examples/src/org/eclipse/emf/henshin/examples/ecore2rdb/CarRental.ecore

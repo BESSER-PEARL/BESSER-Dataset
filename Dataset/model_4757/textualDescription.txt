@@ -1,0 +1,100 @@
+The domain model 'effbd106' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'effbd106_Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd106_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd106_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd106_Port' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'effbd106_Function' represents an important domain concept.
+It has one attribute: 'domain', which is of type str.
+
+'effbd106_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd106_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd106_Iteration' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessNode' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd106_Description' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'effbd106_LoopExit' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd106_SequenceNode' represents an important domain concept.
+It has the following attributes: 'tMax', which is of type int; 'name', which is of type str; 'tMin', which is of type int.
+
+'Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd106_Final' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd106_InputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd106_And' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd106_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd106_Item' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'effbd106_ProcessNode' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'effbd106_OutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'SequenceNode' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FunctionDomain' defines the following possible values: 'form', 'time', 'space'.
+
+The model also captures inheritance relationships between classes.
+The class 'effbd106_Function' is a specialization of 'SequenceNode'.
+The class 'effbd106_Function' is a specialization of 'ProcessNode'.
+The class 'effbd106_Sequence' is a specialization of 'SequenceNode'.
+The class 'effbd106_And' is a specialization of 'Sequence'.
+The class 'effbd106_Or' is a specialization of 'Sequence'.
+The class 'effbd106_Start' is a specialization of 'Sequence'.
+The class 'effbd106_Final' is a specialization of 'Sequence'.
+The class 'effbd106_Loop' is a specialization of 'Sequence'.
+The class 'effbd106_InputPort' is a specialization of 'Port'.
+The class 'effbd106_Flow' is a specialization of 'ProcessNode'.
+The class 'effbd106_OutputPort' is a specialization of 'Port'.
+The class 'effbd106_LoopExit' is a specialization of 'Sequence'.
+The class 'effbd106_Iteration' is a specialization of 'Sequence'.
+
+Relationships between classes are modeled using associations.
+An association connects 'effbd106_Function' and 'effbd106_Function'. From 'effbd106_Function', the role 'effbd106_Function0' has cardinality 0..*, and from 'effbd106_Function', the role 'effbd106_Function' has cardinality 0..*.
+An association connects 'effbd106_Sequence' and 'effbd106_Function'. From 'effbd106_Sequence', the role 'effbd106_Sequence' has cardinality 0..*, and from 'effbd106_Function', the role 'effbd106_Function3' has cardinality 0..*.
+An association connects 'effbd106_Function' and 'effbd106_Flow'. From 'effbd106_Function', the role 'effbd106_Function5' has cardinality 0..*, and from 'effbd106_Flow', the role 'effbd106_Flow' has cardinality 0..*.
+An association connects 'effbd106_OutputPort' and 'effbd106_Function'. From 'effbd106_OutputPort', the role 'effbd106_OutputPort' has cardinality 0..*, and from 'effbd106_Function', the role 'effbd106_Function7' has cardinality 0..*.
+An association connects 'effbd106_InputPort' and 'effbd106_Function'. From 'effbd106_InputPort', the role 'effbd106_InputPort' has cardinality 0..*, and from 'effbd106_Function', the role 'effbd106_Function9' has cardinality 0..*.
+An association connects 'effbd106_Description' and 'effbd106_Function'. From 'effbd106_Description', the role 'effbd106_Description' has cardinality 0..*, and from 'effbd106_Function', the role 'effbd106_Function11' has cardinality 0..*.
+An association connects 'effbd106_Token' and 'effbd106_Function'. From 'effbd106_Token', the role 'effbd106_Token' has cardinality 0..*, and from 'effbd106_Function', the role 'effbd106_Function13' has cardinality 0..*.
+An association connects 'effbd106_SequenceNode' and 'effbd106_SequenceNode'. From 'effbd106_SequenceNode', the role 'effbd106_SequenceNode' has cardinality 0..*, and from 'effbd106_SequenceNode', the role 'effbd106_SequenceNode14' has cardinality 0..*.
+An association connects 'effbd106_Flow' and 'effbd106_InputPort'. From 'effbd106_Flow', the role 'effbd106_Flow17' has cardinality 0..*, and from 'effbd106_InputPort', the role 'effbd106_InputPort18' has cardinality 0..*.
+An association connects 'effbd106_Flow' and 'effbd106_Item'. From 'effbd106_Flow', the role 'effbd106_Flow20' has cardinality 0..*, and from 'effbd106_Item', the role 'effbd106_Item' has cardinality 0..*.
+An association connects 'effbd106_OutputPort' and 'effbd106_Flow'. From 'effbd106_OutputPort', the role 'effbd106_OutputPort22' has cardinality 0..*, and from 'effbd106_Flow', the role 'effbd106_Flow23' has cardinality 0..*.

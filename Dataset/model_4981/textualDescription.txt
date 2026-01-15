@@ -1,0 +1,221 @@
+The domain model 'cloudml' describes the core structural elements and their relationships within the system.
+
+The model defines 44 main class(es).
+
+'cloudml_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_Provider' represents an important domain concept.
+It has one attribute: 'credentials', which is of type str.
+
+'cloudml_ProvidedExecutionPlatformInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'Resource' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_Port' represents an important domain concept.
+It has the following attributes: 'isLocal', which is of type bool; 'portNumber', which is of type int.
+
+'cloudml_RelationshipInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_PuppetResource' represents an important domain concept.
+It has the following attributes: 'masterEndpoint', which is of type str; 'repositoryKey', which is of type str; 'username', which is of type str; 'manifestEntry', which is of type str; 'repositoryEndpoint', which is of type str; 'configureHostnameCommand', which is of type str; 'configurationFile', which is of type str.
+
+'ExecutionPlatform' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_ProvidedPort' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_VMInstance' represents an important domain concept.
+It has the following attributes: 'publicAddress', which is of type str; 'id', which is of type str.
+
+'ExecutionPlatformInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'CloudMLElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_InternalComponentInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_ProvidedPortInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_ExternalComponentInstance' represents an important domain concept.
+It has one attribute: 'ips', which is of type str.
+
+'cloudml_ExecutionPlatform' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_ComponentInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_RequiredExecutionPlatformInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_ProvidedExecutionPlatform' represents an important domain concept.
+It does not declare any attributes.
+
+'ExternalComponentInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_RequiredPortInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_Resource' represents an important domain concept.
+It has the following attributes: 'configureCommand', which is of type str; 'executeLocally', which is of type bool; 'stopCommand', which is of type str; 'downloadCommand', which is of type str; 'requireCredentials', which is of type bool; 'uploadCommand', which is of type str; 'installCommand', which is of type str; 'startCommand', which is of type str.
+
+'cloudml_Cloud' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_ExternalComponent' represents an important domain concept.
+It has the following attributes: 'Region', which is of type str; 'serviceType', which is of type str; 'login', which is of type str; 'location', which is of type str; 'endPoint', which is of type str; 'passwd', which is of type str.
+
+'cloudml_CloudMLElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PortInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_Property' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cloudml_VMPort' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_CloudMLElementWithProperties' represents an important domain concept.
+It does not declare any attributes.
+
+'CloudMLElementWithProperties' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_VM' represents an important domain concept.
+It has the following attributes: 'os', which is of type str; 'maxRam', which is of type int; 'groupName', which is of type str; 'providerSpecificTypeName', which is of type str; 'minStorage', which is of type int; 'sshKey', which is of type str; 'maxCores', which is of type int; 'maxStorage', which is of type int; 'is64os', which is of type bool; 'minCores', which is of type int; 'privateKey', which is of type str; 'minRam', which is of type int; 'imageId', which is of type str; 'securityGroup', which is of type str.
+
+'ComponentInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_ExecutionPlatformInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_InternalComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_VMPortInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_CloudMLModel' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_ExecuteInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_RequiredExecutionPlatform' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_PortInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'ExternalComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'cloudml_RequiredPort' represents an important domain concept.
+It has one attribute: 'isMandatory', which is of type bool.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'cloudml_Property' is a specialization of 'CloudMLElement'.
+The class 'cloudml_CloudMLElementWithProperties' is a specialization of 'CloudMLElement'.
+The class 'cloudml_Resource' is a specialization of 'CloudMLElementWithProperties'.
+The class 'cloudml_CloudMLModel' is a specialization of 'CloudMLElementWithProperties'.
+The class 'cloudml_VM' is a specialization of 'ExternalComponent'.
+The class 'cloudml_VMPort' is a specialization of 'CloudMLElementWithProperties'.
+The class 'cloudml_Provider' is a specialization of 'CloudMLElementWithProperties'.
+The class 'cloudml_Component' is a specialization of 'CloudMLElementWithProperties'.
+The class 'cloudml_InternalComponent' is a specialization of 'Component'.
+The class 'cloudml_Port' is a specialization of 'CloudMLElementWithProperties'.
+The class 'cloudml_RequiredPort' is a specialization of 'Port'.
+The class 'cloudml_ProvidedPort' is a specialization of 'Port'.
+The class 'cloudml_Relationship' is a specialization of 'CloudMLElementWithProperties'.
+The class 'cloudml_Cloud' is a specialization of 'CloudMLElementWithProperties'.
+The class 'cloudml_VMInstance' is a specialization of 'ExternalComponentInstance'.
+The class 'cloudml_VMPortInstance' is a specialization of 'CloudMLElementWithProperties'.
+The class 'cloudml_ComponentInstance' is a specialization of 'CloudMLElementWithProperties'.
+The class 'cloudml_InternalComponentInstance' is a specialization of 'ComponentInstance'.
+The class 'cloudml_PortInstance' is a specialization of 'CloudMLElementWithProperties'.
+The class 'cloudml_RequiredPortInstance' is a specialization of 'PortInstance'.
+The class 'cloudml_ProvidedPortInstance' is a specialization of 'PortInstance'.
+The class 'cloudml_RelationshipInstance' is a specialization of 'CloudMLElementWithProperties'.
+The class 'cloudml_ExternalComponent' is a specialization of 'Component'.
+The class 'cloudml_ExternalComponentInstance' is a specialization of 'ComponentInstance'.
+The class 'cloudml_ExecutionPlatform' is a specialization of 'CloudMLElementWithProperties'.
+The class 'cloudml_ExecutionPlatformInstance' is a specialization of 'CloudMLElementWithProperties'.
+The class 'cloudml_ProvidedExecutionPlatform' is a specialization of 'ExecutionPlatform'.
+The class 'cloudml_ProvidedExecutionPlatformInstance' is a specialization of 'ExecutionPlatformInstance'.
+The class 'cloudml_RequiredExecutionPlatform' is a specialization of 'ExecutionPlatform'.
+The class 'cloudml_RequiredExecutionPlatformInstance' is a specialization of 'ExecutionPlatformInstance'.
+The class 'cloudml_ExecuteInstance' is a specialization of 'CloudMLElementWithProperties'.
+The class 'cloudml_PuppetResource' is a specialization of 'Resource'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cloudml_CloudMLElementWithProperties' and 'cloudml_Property'. From 'cloudml_CloudMLElementWithProperties', the role 'cloudml_CloudMLElementWithProperties' has cardinality 0..*, and from 'cloudml_Property', the role 'cloudml_Property' has cardinality 0..*.
+An association connects 'cloudml_CloudMLElementWithProperties' and 'cloudml_Resource'. From 'cloudml_CloudMLElementWithProperties', the role 'cloudml_CloudMLElementWithProperties2' has cardinality 0..*, and from 'cloudml_Resource', the role 'cloudml_Resource' has cardinality 0..*.
+An association connects 'cloudml_PuppetResource' and 'cloudml_CloudMLElementWithProperties'. From 'cloudml_PuppetResource', the role 'cloudml_PuppetResource' has cardinality 0..*, and from 'cloudml_CloudMLElementWithProperties', the role 'cloudml_CloudMLElementWithProperties4' has cardinality 0..*.
+An association connects 'cloudml_Provider' and 'cloudml_CloudMLModel'. From 'cloudml_Provider', the role 'cloudml_Provider' has cardinality 0..*, and from 'cloudml_CloudMLModel', the role 'cloudml_CloudMLModel' has cardinality 0..*.
+An association connects 'cloudml_Component' and 'cloudml_CloudMLModel'. From 'cloudml_Component', the role 'cloudml_Component' has cardinality 0..*, and from 'cloudml_CloudMLModel', the role 'cloudml_CloudMLModel7' has cardinality 0..*.
+An association connects 'cloudml_CloudMLModel' and 'cloudml_Cloud'. From 'cloudml_CloudMLModel', the role 'cloudml_CloudMLModel9' has cardinality 0..*, and from 'cloudml_Cloud', the role 'cloudml_Cloud' has cardinality 0..*.
+An association connects 'cloudml_ComponentInstance' and 'cloudml_CloudMLModel'. From 'cloudml_ComponentInstance', the role 'cloudml_ComponentInstance' has cardinality 0..*, and from 'cloudml_CloudMLModel', the role 'cloudml_CloudMLModel11' has cardinality 0..*.
+An association connects 'cloudml_CloudMLModel' and 'cloudml_InternalComponent'. From 'cloudml_CloudMLModel', the role 'cloudml_CloudMLModel13' has cardinality 0..*, and from 'cloudml_InternalComponent', the role 'cloudml_InternalComponent' has cardinality 0..*.
+An association connects 'cloudml_ExternalComponent' and 'cloudml_CloudMLModel'. From 'cloudml_ExternalComponent', the role 'cloudml_ExternalComponent' has cardinality 0..*, and from 'cloudml_CloudMLModel', the role 'cloudml_CloudMLModel15' has cardinality 0..*.
+An association connects 'cloudml_InternalComponentInstance' and 'cloudml_CloudMLModel'. From 'cloudml_InternalComponentInstance', the role 'cloudml_InternalComponentInstance' has cardinality 0..*, and from 'cloudml_CloudMLModel', the role 'cloudml_CloudMLModel17' has cardinality 0..*.
+An association connects 'cloudml_ExternalComponentInstance' and 'cloudml_CloudMLModel'. From 'cloudml_ExternalComponentInstance', the role 'cloudml_ExternalComponentInstance' has cardinality 0..*, and from 'cloudml_CloudMLModel', the role 'cloudml_CloudMLModel19' has cardinality 0..*.
+An association connects 'cloudml_VM' and 'cloudml_CloudMLModel'. From 'cloudml_VM', the role 'cloudml_VM' has cardinality 0..*, and from 'cloudml_CloudMLModel', the role 'cloudml_CloudMLModel21' has cardinality 0..*.
+An association connects 'cloudml_CloudMLModel' and 'cloudml_VMInstance'. From 'cloudml_CloudMLModel', the role 'cloudml_CloudMLModel23' has cardinality 0..*, and from 'cloudml_VMInstance', the role 'cloudml_VMInstance' has cardinality 0..*.
+An association connects 'cloudml_CloudMLModel' and 'cloudml_Relationship'. From 'cloudml_CloudMLModel', the role 'cloudml_CloudMLModel25' has cardinality 0..*, and from 'cloudml_Relationship', the role 'cloudml_Relationship' has cardinality 0..*.
+An association connects 'cloudml_RelationshipInstance' and 'cloudml_CloudMLModel'. From 'cloudml_RelationshipInstance', the role 'cloudml_RelationshipInstance' has cardinality 0..*, and from 'cloudml_CloudMLModel', the role 'cloudml_CloudMLModel27' has cardinality 0..*.
+An association connects 'cloudml_ExecuteInstance' and 'cloudml_CloudMLModel'. From 'cloudml_ExecuteInstance', the role 'cloudml_ExecuteInstance' has cardinality 0..*, and from 'cloudml_CloudMLModel', the role 'cloudml_CloudMLModel29' has cardinality 0..*.
+An association connects 'cloudml_VMPort' and 'cloudml_VM'. From 'cloudml_VMPort', the role 'cloudml_VMPort' has cardinality 0..*, and from 'cloudml_VM', the role 'cloudml_VM31' has cardinality 0..*.
+An association connects 'cloudml_ProvidedPort' and 'cloudml_Component'. From 'cloudml_ProvidedPort', the role 'cloudml_ProvidedPort' has cardinality 0..*, and from 'cloudml_Component', the role 'cloudml_Component33' has cardinality 0..*.
+An association connects 'cloudml_Component' and 'cloudml_ProvidedExecutionPlatform'. From 'cloudml_Component', the role 'cloudml_Component35' has cardinality 0..*, and from 'cloudml_ProvidedExecutionPlatform', the role 'cloudml_ProvidedExecutionPlatform' has cardinality 0..*.
+An association connects 'cloudml_RequiredPort' and 'cloudml_InternalComponent'. From 'cloudml_RequiredPort', the role 'cloudml_RequiredPort' has cardinality 0..*, and from 'cloudml_InternalComponent', the role 'cloudml_InternalComponent37' has cardinality 0..*.
+An association connects 'cloudml_InternalComponent' and 'cloudml_InternalComponent'. From 'cloudml_InternalComponent', the role 'cloudml_InternalComponent38' has cardinality 0..*, and from 'cloudml_InternalComponent', the role 'cloudml_InternalComponent40' has cardinality 0..*.
+An association connects 'cloudml_RequiredExecutionPlatform' and 'cloudml_InternalComponent'. From 'cloudml_RequiredExecutionPlatform', the role 'cloudml_RequiredExecutionPlatform' has cardinality 0..*, and from 'cloudml_InternalComponent', the role 'cloudml_InternalComponent42' has cardinality 0..*.
+An association connects 'cloudml_Port' and 'cloudml_Component'. From 'cloudml_Port', the role 'cloudml_Port' has cardinality 0..*, and from 'cloudml_Component', the role 'cloudml_Component44' has cardinality 0..*.
+An association connects 'cloudml_Relationship' and 'cloudml_RequiredPort'. From 'cloudml_Relationship', the role 'cloudml_Relationship46' has cardinality 0..*, and from 'cloudml_RequiredPort', the role 'cloudml_RequiredPort47' has cardinality 0..*.
+An association connects 'cloudml_Relationship' and 'cloudml_ProvidedPort'. From 'cloudml_Relationship', the role 'cloudml_Relationship49' has cardinality 0..*, and from 'cloudml_ProvidedPort', the role 'cloudml_ProvidedPort50' has cardinality 0..*.
+An association connects 'cloudml_Resource' and 'cloudml_Relationship'. From 'cloudml_Resource', the role 'cloudml_Resource53' has cardinality 0..*, and from 'cloudml_Relationship', the role 'cloudml_Relationship52' has cardinality 0..*.
+An association connects 'cloudml_Resource' and 'cloudml_Relationship'. From 'cloudml_Resource', the role 'cloudml_Resource56' has cardinality 0..*, and from 'cloudml_Relationship', the role 'cloudml_Relationship55' has cardinality 0..*.
+An association connects 'cloudml_Cloud' and 'cloudml_VMInstance'. From 'cloudml_Cloud', the role 'cloudml_Cloud58' has cardinality 0..*, and from 'cloudml_VMInstance', the role 'cloudml_VMInstance59' has cardinality 0..*.
+An association connects 'cloudml_VMInstance' and 'cloudml_VMPortInstance'. From 'cloudml_VMInstance', the role 'cloudml_VMInstance61' has cardinality 0..*, and from 'cloudml_VMPortInstance', the role 'cloudml_VMPortInstance' has cardinality 0..*.
+An association connects 'cloudml_VMPort' and 'cloudml_VMPortInstance'. From 'cloudml_VMPort', the role 'cloudml_VMPort64' has cardinality 0..*, and from 'cloudml_VMPortInstance', the role 'cloudml_VMPortInstance63' has cardinality 0..*.
+An association connects 'cloudml_ProvidedPortInstance' and 'cloudml_ComponentInstance'. From 'cloudml_ProvidedPortInstance', the role 'cloudml_ProvidedPortInstance' has cardinality 0..*, and from 'cloudml_ComponentInstance', the role 'cloudml_ComponentInstance66' has cardinality 0..*.
+An association connects 'cloudml_ComponentInstance' and 'cloudml_Component'. From 'cloudml_ComponentInstance', the role 'cloudml_ComponentInstance68' has cardinality 0..*, and from 'cloudml_Component', the role 'cloudml_Component69' has cardinality 0..*.
+An association connects 'cloudml_ProvidedExecutionPlatformInstance' and 'cloudml_ComponentInstance'. From 'cloudml_ProvidedExecutionPlatformInstance', the role 'cloudml_ProvidedExecutionPlatformInstance' has cardinality 0..*, and from 'cloudml_ComponentInstance', the role 'cloudml_ComponentInstance71' has cardinality 0..*.
+An association connects 'cloudml_InternalComponentInstance' and 'cloudml_RequiredPortInstance'. From 'cloudml_InternalComponentInstance', the role 'cloudml_InternalComponentInstance73' has cardinality 0..*, and from 'cloudml_RequiredPortInstance', the role 'cloudml_RequiredPortInstance' has cardinality 0..*.
+An association connects 'cloudml_InternalComponentInstance' and 'cloudml_RequiredExecutionPlatformInstance'. From 'cloudml_InternalComponentInstance', the role 'cloudml_InternalComponentInstance75' has cardinality 0..*, and from 'cloudml_RequiredExecutionPlatformInstance', the role 'cloudml_RequiredExecutionPlatformInstance' has cardinality 0..*.
+An association connects 'cloudml_Port' and 'cloudml_PortInstance'. From 'cloudml_Port', the role 'cloudml_Port77' has cardinality 0..*, and from 'cloudml_PortInstance', the role 'cloudml_PortInstance' has cardinality 0..*.
+An association connects 'cloudml_ComponentInstance' and 'cloudml_PortInstance'. From 'cloudml_ComponentInstance', the role 'cloudml_ComponentInstance80' has cardinality 0..*, and from 'cloudml_PortInstance', the role 'cloudml_PortInstance79' has cardinality 0..*.
+An association connects 'cloudml_Relationship' and 'cloudml_RelationshipInstance'. From 'cloudml_Relationship', the role 'cloudml_Relationship83' has cardinality 0..*, and from 'cloudml_RelationshipInstance', the role 'cloudml_RelationshipInstance82' has cardinality 0..*.
+An association connects 'cloudml_RequiredPortInstance' and 'cloudml_RelationshipInstance'. From 'cloudml_RequiredPortInstance', the role 'cloudml_RequiredPortInstance86' has cardinality 0..*, and from 'cloudml_RelationshipInstance', the role 'cloudml_RelationshipInstance85' has cardinality 0..*.
+An association connects 'cloudml_RelationshipInstance' and 'cloudml_ProvidedPortInstance'. From 'cloudml_RelationshipInstance', the role 'cloudml_RelationshipInstance88' has cardinality 0..*, and from 'cloudml_ProvidedPortInstance', the role 'cloudml_ProvidedPortInstance89' has cardinality 0..*.
+An association connects 'cloudml_ExternalComponent' and 'cloudml_Provider'. From 'cloudml_ExternalComponent', the role 'cloudml_ExternalComponent91' has cardinality 0..*, and from 'cloudml_Provider', the role 'cloudml_Provider92' has cardinality 0..*.
+An association connects 'cloudml_ExternalComponent' and 'cloudml_VMPort'. From 'cloudml_ExternalComponent', the role 'cloudml_ExternalComponent94' has cardinality 0..*, and from 'cloudml_VMPort', the role 'cloudml_VMPort95' has cardinality 0..*.
+An association connects 'cloudml_ExternalComponentInstance' and 'cloudml_VMPortInstance'. From 'cloudml_ExternalComponentInstance', the role 'cloudml_ExternalComponentInstance97' has cardinality 0..*, and from 'cloudml_VMPortInstance', the role 'cloudml_VMPortInstance98' has cardinality 0..*.
+An association connects 'cloudml_ExecutionPlatform' and 'cloudml_Component'. From 'cloudml_ExecutionPlatform', the role 'cloudml_ExecutionPlatform' has cardinality 0..*, and from 'cloudml_Component', the role 'cloudml_Component100' has cardinality 0..*.
+An association connects 'cloudml_ComponentInstance' and 'cloudml_ExecutionPlatformInstance'. From 'cloudml_ComponentInstance', the role 'cloudml_ComponentInstance102' has cardinality 0..*, and from 'cloudml_ExecutionPlatformInstance', the role 'cloudml_ExecutionPlatformInstance' has cardinality 0..*.
+An association connects 'cloudml_ExecutionPlatformInstance' and 'cloudml_ExecutionPlatform'. From 'cloudml_ExecutionPlatformInstance', the role 'cloudml_ExecutionPlatformInstance104' has cardinality 0..*, and from 'cloudml_ExecutionPlatform', the role 'cloudml_ExecutionPlatform105' has cardinality 0..*.
+An association connects 'cloudml_Property' and 'cloudml_ProvidedExecutionPlatform'. From 'cloudml_Property', the role 'cloudml_Property108' has cardinality 0..*, and from 'cloudml_ProvidedExecutionPlatform', the role 'cloudml_ProvidedExecutionPlatform107' has cardinality 0..*.
+An association connects 'cloudml_RequiredExecutionPlatform' and 'cloudml_Property'. From 'cloudml_RequiredExecutionPlatform', the role 'cloudml_RequiredExecutionPlatform110' has cardinality 0..*, and from 'cloudml_Property', the role 'cloudml_Property111' has cardinality 0..*.
+An association connects 'cloudml_ProvidedExecutionPlatformInstance' and 'cloudml_ExecuteInstance'. From 'cloudml_ProvidedExecutionPlatformInstance', the role 'cloudml_ProvidedExecutionPlatformInstance114' has cardinality 0..*, and from 'cloudml_ExecuteInstance', the role 'cloudml_ExecuteInstance113' has cardinality 0..*.
+An association connects 'cloudml_RequiredExecutionPlatformInstance' and 'cloudml_ExecuteInstance'. From 'cloudml_RequiredExecutionPlatformInstance', the role 'cloudml_RequiredExecutionPlatformInstance117' has cardinality 0..*, and from 'cloudml_ExecuteInstance', the role 'cloudml_ExecuteInstance116' has cardinality 0..*.

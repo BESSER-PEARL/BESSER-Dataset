@@ -1,0 +1,87 @@
+The domain model 'HTML' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'HTML_B' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_S' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_HR' represents an important domain concept.
+It has one attribute: 'color', which is of type str.
+
+'HTML_I' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_TD' represents an important domain concept.
+It has the following attributes: 'width', which is of type str; 'align', which is of type str; 'bgcolor', which is of type str; 'height', which is of type str; 'valign', which is of type str; 'colspan', which is of type str; 'rowspan', which is of type str.
+
+'HTML_TR' represents an important domain concept.
+It has the following attributes: 'align', which is of type str; 'height', which is of type str; 'valign', which is of type str; 'bgcolor', which is of type str.
+
+'HTML_HTML' represents an important domain concept.
+It does not declare any attributes.
+
+'HTMLElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_BR' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_Style' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'HTML_HTMLElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_DIV' represents an important domain concept.
+It has one attribute: 'align', which is of type str.
+
+'HTML_P' represents an important domain concept.
+It has one attribute: 'align', which is of type str.
+
+'HTML_U' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML_FONT' represents an important domain concept.
+It has the following attributes: 'size', which is of type str; 'face', which is of type str; 'value', which is of type str; 'color', which is of type str.
+
+'HTML_IMG' represents an important domain concept.
+It has the following attributes: 'width', which is of type str; 'border', which is of type str; 'src', which is of type str; 'height', which is of type str.
+
+'HTML_A' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'HTML_TABLE' represents an important domain concept.
+It has the following attributes: 'border', which is of type int; 'align', which is of type str; 'bgcolor', which is of type str; 'width', which is of type str; 'cellspacing', which is of type str; 'cellpadding', which is of type str.
+
+'HTML_SPAN' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StyleKey' defines the following possible values: 'textAlign', 'backgroundColor', 'padding', 'textDecoration', 'display', 'color', 'lineHeight', 'width'.
+
+The model also captures inheritance relationships between classes.
+The class 'HTML_TABLE' is a specialization of 'HTMLElement'.
+The class 'HTML_TR' is a specialization of 'HTMLElement'.
+The class 'HTML_TD' is a specialization of 'HTMLElement'.
+The class 'HTML_DIV' is a specialization of 'HTMLElement'.
+The class 'HTML_SPAN' is a specialization of 'HTMLElement'.
+The class 'HTML_P' is a specialization of 'HTMLElement'.
+The class 'HTML_A' is a specialization of 'HTMLElement'.
+The class 'HTML_FONT' is a specialization of 'HTMLElement'.
+The class 'HTML_B' is a specialization of 'HTMLElement'.
+The class 'HTML_U' is a specialization of 'HTMLElement'.
+The class 'HTML_I' is a specialization of 'HTMLElement'.
+The class 'HTML_S' is a specialization of 'HTMLElement'.
+The class 'HTML_IMG' is a specialization of 'HTMLElement'.
+The class 'HTML_BR' is a specialization of 'HTMLElement'.
+The class 'HTML_HR' is a specialization of 'HTMLElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'HTML_HTML' and 'HTML_HTMLElement'. From 'HTML_HTML', the role 'HTML_HTML' has cardinality 0..*, and from 'HTML_HTMLElement', the role 'HTML_HTMLElement' has cardinality 0..*.
+An association connects 'HTML_HTMLElement' and 'HTML_HTMLElement'. From 'HTML_HTMLElement', the role 'HTML_HTMLElement3' has cardinality 0..*, and from 'HTML_HTMLElement', the role 'HTML_HTMLElement1' has cardinality 0..*.
+An association connects 'HTML_Style' and 'HTML_HTMLElement'. From 'HTML_Style', the role 'HTML_Style' has cardinality 0..*, and from 'HTML_HTMLElement', the role 'HTML_HTMLElement5' has cardinality 0..*.
+An association connects 'HTML_TABLE' and 'HTML_TR'. From 'HTML_TABLE', the role 'HTML_TABLE' has cardinality 0..*, and from 'HTML_TR', the role 'HTML_TR' has cardinality 0..*.
+An association connects 'HTML_TR' and 'HTML_TD'. From 'HTML_TR', the role 'HTML_TR8' has cardinality 0..*, and from 'HTML_TD', the role 'HTML_TD' has cardinality 0..*.

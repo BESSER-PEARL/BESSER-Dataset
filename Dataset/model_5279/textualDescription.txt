@@ -1,0 +1,32 @@
+The domain model 'MetamodelInheritance2' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'MetamodelInheritance2_ChildB' represents an important domain concept.
+It does not declare any attributes.
+
+'MetamodelInheritance2_ChildA' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseContaineeB' represents an important domain concept.
+It does not declare any attributes.
+
+'MetamodelInheritance2_ChildContaineeD' represents an important domain concept.
+It does not declare any attributes.
+
+'MetamodelInheritance2_BaseContaineeC' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseContaineeA' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'MetamodelInheritance2_ChildA' is a specialization of 'BaseContaineeA'.
+The class 'MetamodelInheritance2_ChildB' is a specialization of 'BaseContaineeB'.
+
+Relationships between classes are modeled using associations.
+An association connects 'MetamodelInheritance2_ChildB' and 'MetamodelInheritance2_ChildA'. From 'MetamodelInheritance2_ChildB', the role 'MetamodelInheritance2_ChildB' has cardinality 0..*, and from 'MetamodelInheritance2_ChildA', the role 'MetamodelInheritance2_ChildA' has cardinality 0..*.
+An association connects 'MetamodelInheritance2_ChildA' and 'MetamodelInheritance2_ChildContaineeD'. From 'MetamodelInheritance2_ChildA', the role 'MetamodelInheritance2_ChildA2' has cardinality 0..*, and from 'MetamodelInheritance2_ChildContaineeD', the role 'MetamodelInheritance2_ChildContaineeD' has cardinality 0..*.
+An association connects 'MetamodelInheritance2_ChildA' and 'MetamodelInheritance2_BaseContaineeC'. From 'MetamodelInheritance2_ChildA', the role 'MetamodelInheritance2_ChildA4' has cardinality 0..*, and from 'MetamodelInheritance2_BaseContaineeC', the role 'MetamodelInheritance2_BaseContaineeC' has cardinality 0..*.
+An association connects 'MetamodelInheritance2_ChildA' and 'MetamodelInheritance2_ChildB'. From 'MetamodelInheritance2_ChildA', the role 'MetamodelInheritance2_ChildA7' has cardinality 0..*, and from 'MetamodelInheritance2_ChildB', the role 'MetamodelInheritance2_ChildB6' has cardinality 0..*.
+An association connects 'MetamodelInheritance2_ChildContaineeD' and 'MetamodelInheritance2_ChildB'. From 'MetamodelInheritance2_ChildContaineeD', the role 'MetamodelInheritance2_ChildContaineeD10' has cardinality 0..*, and from 'MetamodelInheritance2_ChildB', the role 'MetamodelInheritance2_ChildB9' has cardinality 0..*.

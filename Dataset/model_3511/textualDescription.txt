@@ -1,0 +1,81 @@
+The domain model 'emfrelations' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'emfrelations_ConceptB9' represents an important domain concept.
+It does not declare any attributes.
+
+'emfrelations_ConceptA8' represents an important domain concept.
+It does not declare any attributes.
+
+'emfrelations_ConceptA4' represents an important domain concept.
+It does not declare any attributes.
+
+'emfrelations_ConceptA5' represents an important domain concept.
+It does not declare any attributes.
+
+'emfrelations_ConceptB1' represents an important domain concept.
+It does not declare any attributes.
+
+'emfrelations_ConceptA11' represents an important domain concept.
+It does not declare any attributes.
+
+'emfrelations_ConceptA9' represents an important domain concept.
+It does not declare any attributes.
+
+'emfrelations_ConceptA3' represents an important domain concept.
+It does not declare any attributes.
+
+'emfrelations_ConceptB8' represents an important domain concept.
+It does not declare any attributes.
+
+'emfrelations_ConceptB11' represents an important domain concept.
+It does not declare any attributes.
+
+'emfrelations_ConceptB0' represents an important domain concept.
+It does not declare any attributes.
+
+'emfrelations_ConceptA10' represents an important domain concept.
+It does not declare any attributes.
+
+'emfrelations_ConceptA2' represents an important domain concept.
+It does not declare any attributes.
+
+'emfrelations_ConceptB4' represents an important domain concept.
+It does not declare any attributes.
+
+'emfrelations_ConceptA1' represents an important domain concept.
+It does not declare any attributes.
+
+'emfrelations_ConceptB5' represents an important domain concept.
+It does not declare any attributes.
+
+'emfrelations_ConceptB3' represents an important domain concept.
+It does not declare any attributes.
+
+'emfrelations_ConceptB10' represents an important domain concept.
+It does not declare any attributes.
+
+'emfrelations_ConceptB2' represents an important domain concept.
+It does not declare any attributes.
+
+'emfrelations_ConceptA0' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'emfrelations_ConceptA0' and 'emfrelations_ConceptB0'. From 'emfrelations_ConceptA0', the role 'concepta0' has cardinality 0..*, and from 'emfrelations_ConceptB0', the role 'ConceptB0' has cardinality 0..*.
+An association connects 'emfrelations_ConceptA0' and 'emfrelations_ConceptB0'. From 'emfrelations_ConceptA0', the role 'ConceptA0' has cardinality 0..*, and from 'emfrelations_ConceptB0', the role 'conceptb0' has cardinality 0..*.
+An association connects 'emfrelations_ConceptB1' and 'emfrelations_ConceptA1'. From 'emfrelations_ConceptB1', the role 'ConceptB1' has cardinality 0..*, and from 'emfrelations_ConceptA1', the role 'concepta1' has cardinality 0..*.
+An association connects 'emfrelations_ConceptA1' and 'emfrelations_ConceptB1'. From 'emfrelations_ConceptA1', the role 'ConceptA1' has cardinality 0..*, and from 'emfrelations_ConceptB1', the role 'conceptb1' has cardinality 0..*.
+An association connects 'emfrelations_ConceptA2' and 'emfrelations_ConceptB2'. From 'emfrelations_ConceptA2', the role 'concepta2' has cardinality 0..*, and from 'emfrelations_ConceptB2', the role 'ConceptB2' has cardinality 0..*.
+An association connects 'emfrelations_ConceptA2' and 'emfrelations_ConceptB2'. From 'emfrelations_ConceptA2', the role 'ConceptA2' has cardinality 0..*, and from 'emfrelations_ConceptB2', the role 'conceptb2' has cardinality 0..*.
+An association connects 'emfrelations_ConceptA3' and 'emfrelations_ConceptB3'. From 'emfrelations_ConceptA3', the role 'concepta3' has cardinality 0..*, and from 'emfrelations_ConceptB3', the role 'ConceptB3' has cardinality 0..*.
+An association connects 'emfrelations_ConceptB3' and 'emfrelations_ConceptA3'. From 'emfrelations_ConceptB3', the role 'conceptb3' has cardinality 0..*, and from 'emfrelations_ConceptA3', the role 'ConceptA3' has cardinality 0..*.
+An association connects 'emfrelations_ConceptB4' and 'emfrelations_ConceptA4'. From 'emfrelations_ConceptB4', the role 'ConceptB4' has cardinality 0..*, and from 'emfrelations_ConceptA4', the role 'concepta4' has cardinality 0..*.
+An association connects 'emfrelations_ConceptA4' and 'emfrelations_ConceptB4'. From 'emfrelations_ConceptA4', the role 'ConceptA4' has cardinality 0..*, and from 'emfrelations_ConceptB4', the role 'conceptb4' has cardinality 0..*.
+An association connects 'emfrelations_ConceptB5' and 'emfrelations_ConceptA5'. From 'emfrelations_ConceptB5', the role 'ConceptB5' has cardinality 0..*, and from 'emfrelations_ConceptA5', the role 'concepta5' has cardinality 0..*.
+An association connects 'emfrelations_ConceptA5' and 'emfrelations_ConceptB5'. From 'emfrelations_ConceptA5', the role 'ConceptA5' has cardinality 0..*, and from 'emfrelations_ConceptB5', the role 'conceptb5' has cardinality 0..*.
+An association connects 'emfrelations_ConceptA8' and 'emfrelations_ConceptB8'. From 'emfrelations_ConceptA8', the role 'emfrelations_ConceptA8' has cardinality 0..*, and from 'emfrelations_ConceptB8', the role 'emfrelations_ConceptB8' has cardinality 0..*.
+An association connects 'emfrelations_ConceptA9' and 'emfrelations_ConceptB9'. From 'emfrelations_ConceptA9', the role 'emfrelations_ConceptA9' has cardinality 0..*, and from 'emfrelations_ConceptB9', the role 'emfrelations_ConceptB9' has cardinality 0..*.
+An association connects 'emfrelations_ConceptA10' and 'emfrelations_ConceptB10'. From 'emfrelations_ConceptA10', the role 'emfrelations_ConceptA10' has cardinality 0..*, and from 'emfrelations_ConceptB10', the role 'emfrelations_ConceptB10' has cardinality 0..*.
+An association connects 'emfrelations_ConceptA11' and 'emfrelations_ConceptB11'. From 'emfrelations_ConceptA11', the role 'emfrelations_ConceptA11' has cardinality 0..*, and from 'emfrelations_ConceptB11', the role 'emfrelations_ConceptB11' has cardinality 0..*.

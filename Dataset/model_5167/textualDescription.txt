@@ -1,0 +1,57 @@
+The domain model 'calculatrice' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'calculatrice_Calculatrice' represents an important domain concept.
+It does not declare any attributes.
+
+'calculatrice_BoolExpr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'CalcExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'calculatrice_Calc' represents an important domain concept.
+It has the following attributes: 'varName', which is of type str; 'decl', which is of type bool; 'boolName', which is of type str.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'calculatrice_VarCall' represents an important domain concept.
+It has one attribute: 'varCall', which is of type str.
+
+'Calc' represents an important domain concept.
+It does not declare any attributes.
+
+'BoolExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'calculatrice_Number' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'neg', which is of type bool.
+
+'calculatrice_CalcExpr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'calculatrice_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'calculatrice_Boolean' represents an important domain concept.
+It has one attribute: 'BoolValue', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'calculatrice_Condition' is a specialization of 'Calc'.
+The class 'calculatrice_BoolExpr' is a specialization of 'Condition'.
+The class 'calculatrice_Number' is a specialization of 'CalcExpr'.
+The class 'calculatrice_VarCall' is a specialization of 'CalcExpr'.
+The class 'calculatrice_Boolean' is a specialization of 'BoolExpr'.
+
+Relationships between classes are modeled using associations.
+An association connects 'calculatrice_Calc' and 'calculatrice_Calculatrice'. From 'calculatrice_Calc', the role 'calculatrice_Calc' has cardinality 0..*, and from 'calculatrice_Calculatrice', the role 'calculatrice_Calculatrice' has cardinality 0..*.
+An association connects 'calculatrice_BoolExpr' and 'calculatrice_Calc'. From 'calculatrice_BoolExpr', the role 'calculatrice_BoolExpr' has cardinality 0..*, and from 'calculatrice_Calc', the role 'calculatrice_Calc2' has cardinality 0..*.
+An association connects 'calculatrice_CalcExpr' and 'calculatrice_Calc'. From 'calculatrice_CalcExpr', the role 'calculatrice_CalcExpr' has cardinality 0..*, and from 'calculatrice_Calc', the role 'calculatrice_Calc4' has cardinality 0..*.
+An association connects 'calculatrice_CalcExpr' and 'calculatrice_CalcExpr'. From 'calculatrice_CalcExpr', the role 'calculatrice_CalcExpr7' has cardinality 0..*, and from 'calculatrice_CalcExpr', the role 'calculatrice_CalcExpr5' has cardinality 0..*.
+An association connects 'calculatrice_CalcExpr' and 'calculatrice_CalcExpr'. From 'calculatrice_CalcExpr', the role 'calculatrice_CalcExpr10' has cardinality 0..*, and from 'calculatrice_CalcExpr', the role 'calculatrice_CalcExpr8' has cardinality 0..*.
+An association connects 'calculatrice_Calc' and 'calculatrice_BoolExpr'. From 'calculatrice_Calc', the role 'calculatrice_Calc13' has cardinality 0..*, and from 'calculatrice_BoolExpr', the role 'calculatrice_BoolExpr12' has cardinality 0..*.
+An association connects 'calculatrice_Calc' and 'calculatrice_BoolExpr'. From 'calculatrice_Calc', the role 'calculatrice_Calc16' has cardinality 0..*, and from 'calculatrice_BoolExpr', the role 'calculatrice_BoolExpr15' has cardinality 0..*.
+An association connects 'calculatrice_BoolExpr' and 'calculatrice_BoolExpr'. From 'calculatrice_BoolExpr', the role 'calculatrice_BoolExpr19' has cardinality 0..*, and from 'calculatrice_BoolExpr', the role 'calculatrice_BoolExpr17' has cardinality 0..*.
+An association connects 'calculatrice_BoolExpr' and 'calculatrice_BoolExpr'. From 'calculatrice_BoolExpr', the role 'calculatrice_BoolExpr22' has cardinality 0..*, and from 'calculatrice_BoolExpr', the role 'calculatrice_BoolExpr20' has cardinality 0..*.

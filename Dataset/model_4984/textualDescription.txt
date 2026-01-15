@@ -1,0 +1,30 @@
+The domain model 'ComponentLanguageShallow' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'ComponentLanguageShallow_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentLanguageShallow_InPort' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentLanguageShallow_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentLanguageShallow_OutPort' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentLanguageShallow_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ComponentLanguageShallow_InPort' is a specialization of 'Port'.
+The class 'ComponentLanguageShallow_OutPort' is a specialization of 'Port'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ComponentLanguageShallow_Port' and 'ComponentLanguageShallow_Component'. From 'ComponentLanguageShallow_Port', the role 'ComponentLanguageShallow_Port' has cardinality 0..*, and from 'ComponentLanguageShallow_Component', the role 'ComponentLanguageShallow_Component' has cardinality 0..*.
+An association connects 'ComponentLanguageShallow_Connector' and 'ComponentLanguageShallow_Port'. From 'ComponentLanguageShallow_Connector', the role 'ComponentLanguageShallow_Connector' has cardinality 0..*, and from 'ComponentLanguageShallow_Port', the role 'ComponentLanguageShallow_Port2' has cardinality 0..*.
+An association connects 'ComponentLanguageShallow_Connector' and 'ComponentLanguageShallow_Port'. From 'ComponentLanguageShallow_Connector', the role 'ComponentLanguageShallow_Connector4' has cardinality 0..*, and from 'ComponentLanguageShallow_Port', the role 'ComponentLanguageShallow_Port5' has cardinality 0..*.

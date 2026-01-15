@@ -1,0 +1,56 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'model_ForAllContextualExpression' represents an important domain concept.
+It has one attribute: 'contextId', which is of type str.
+
+'model_Conjunction' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Implication' represents an important domain concept.
+It does not declare any attributes.
+
+'model_PrimaryExpression' represents an important domain concept.
+It has one attribute: 'featureId', which is of type str.
+
+'model_Equation' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Disjunction' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ExistsContextualExpression' represents an important domain concept.
+It has one attribute: 'contextId', which is of type str.
+
+'model_Negation' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'model_ForAllContextualExpression' is a specialization of 'Expression'.
+The class 'model_ExistsContextualExpression' is a specialization of 'Expression'.
+The class 'model_Equation' is a specialization of 'Expression'.
+The class 'model_Implication' is a specialization of 'Expression'.
+The class 'model_Disjunction' is a specialization of 'Expression'.
+The class 'model_Conjunction' is a specialization of 'Expression'.
+The class 'model_Negation' is a specialization of 'Expression'.
+The class 'model_PrimaryExpression' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_ForAllContextualExpression' and 'model_Expression'. From 'model_ForAllContextualExpression', the role 'model_ForAllContextualExpression' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression' has cardinality 0..*.
+An association connects 'model_ExistsContextualExpression' and 'model_Expression'. From 'model_ExistsContextualExpression', the role 'model_ExistsContextualExpression' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression2' has cardinality 0..*.
+An association connects 'model_Equation' and 'model_Expression'. From 'model_Equation', the role 'model_Equation' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression4' has cardinality 0..*.
+An association connects 'model_Expression' and 'model_Equation'. From 'model_Expression', the role 'model_Expression7' has cardinality 0..*, and from 'model_Equation', the role 'model_Equation6' has cardinality 0..*.
+An association connects 'model_Expression' and 'model_Implication'. From 'model_Expression', the role 'model_Expression9' has cardinality 0..*, and from 'model_Implication', the role 'model_Implication' has cardinality 0..*.
+An association connects 'model_Expression' and 'model_Implication'. From 'model_Expression', the role 'model_Expression12' has cardinality 0..*, and from 'model_Implication', the role 'model_Implication11' has cardinality 0..*.
+An association connects 'model_Disjunction' and 'model_Expression'. From 'model_Disjunction', the role 'model_Disjunction' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression14' has cardinality 0..*.
+An association connects 'model_Disjunction' and 'model_Expression'. From 'model_Disjunction', the role 'model_Disjunction16' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression17' has cardinality 0..*.
+An association connects 'model_Conjunction' and 'model_Expression'. From 'model_Conjunction', the role 'model_Conjunction' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression19' has cardinality 0..*.
+An association connects 'model_Expression' and 'model_Conjunction'. From 'model_Expression', the role 'model_Expression22' has cardinality 0..*, and from 'model_Conjunction', the role 'model_Conjunction21' has cardinality 0..*.
+An association connects 'model_Expression' and 'model_Negation'. From 'model_Expression', the role 'model_Expression24' has cardinality 0..*, and from 'model_Negation', the role 'model_Negation' has cardinality 0..*.

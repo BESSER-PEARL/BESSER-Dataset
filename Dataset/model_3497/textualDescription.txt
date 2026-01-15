@@ -1,0 +1,53 @@
+The domain model 'feaMo' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'feaMo_FeatureDef' represents an important domain concept.
+It does not declare any attributes.
+
+'feaMo_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'feaMo_FeatureDetails' represents an important domain concept.
+It does not declare any attributes.
+
+'feaMo_FeatureGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'feaMo_SimpleFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'feaMo_Feature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'feaMo_FeatureModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'feaMo_FeamoFSelector' represents an important domain concept.
+It does not declare any attributes.
+
+'feaMo_FeamoFeatureConfig' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'feaMo_FeatureConstraint' represents an important domain concept.
+It has one attribute: 'rel', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'feaMo_FeatureModel' and 'feaMo_Model'. From 'feaMo_FeatureModel', the role 'feaMo_FeatureModel' has cardinality 0..*, and from 'feaMo_Model', the role 'feaMo_Model' has cardinality 0..*.
+An association connects 'feaMo_Model' and 'feaMo_FeamoFeatureConfig'. From 'feaMo_Model', the role 'feaMo_Model2' has cardinality 0..*, and from 'feaMo_FeamoFeatureConfig', the role 'feaMo_FeamoFeatureConfig' has cardinality 0..*.
+An association connects 'feaMo_FeatureModel' and 'feaMo_FeatureDetails'. From 'feaMo_FeatureModel', the role 'feaMo_FeatureModel4' has cardinality 0..*, and from 'feaMo_FeatureDetails', the role 'feaMo_FeatureDetails' has cardinality 0..*.
+An association connects 'feaMo_FeatureDef' and 'feaMo_FeatureModel'. From 'feaMo_FeatureDef', the role 'feaMo_FeatureDef' has cardinality 0..*, and from 'feaMo_FeatureModel', the role 'feaMo_FeatureModel6' has cardinality 0..*.
+An association connects 'feaMo_FeatureConstraint' and 'feaMo_FeatureModel'. From 'feaMo_FeatureConstraint', the role 'feaMo_FeatureConstraint' has cardinality 0..*, and from 'feaMo_FeatureModel', the role 'feaMo_FeatureModel8' has cardinality 0..*.
+An association connects 'feaMo_FeatureGroup' and 'feaMo_FeatureDetails'. From 'feaMo_FeatureGroup', the role 'feaMo_FeatureGroup' has cardinality 0..*, and from 'feaMo_FeatureDetails', the role 'feaMo_FeatureDetails10' has cardinality 0..*.
+An association connects 'feaMo_FeatureGroup' and 'feaMo_SimpleFeature'. From 'feaMo_FeatureGroup', the role 'feaMo_FeatureGroup12' has cardinality 0..*, and from 'feaMo_SimpleFeature', the role 'feaMo_SimpleFeature' has cardinality 0..*.
+An association connects 'feaMo_SimpleFeature' and 'feaMo_FeatureGroup'. From 'feaMo_SimpleFeature', the role 'feaMo_SimpleFeature15' has cardinality 0..*, and from 'feaMo_FeatureGroup', the role 'feaMo_FeatureGroup14' has cardinality 0..*.
+An association connects 'feaMo_FeatureGroup' and 'feaMo_SimpleFeature'. From 'feaMo_FeatureGroup', the role 'feaMo_FeatureGroup17' has cardinality 0..*, and from 'feaMo_SimpleFeature', the role 'feaMo_SimpleFeature18' has cardinality 0..*.
+An association connects 'feaMo_Feature' and 'feaMo_SimpleFeature'. From 'feaMo_Feature', the role 'feaMo_Feature' has cardinality 0..*, and from 'feaMo_SimpleFeature', the role 'feaMo_SimpleFeature20' has cardinality 0..*.
+An association connects 'feaMo_SimpleFeature' and 'feaMo_Feature'. From 'feaMo_SimpleFeature', the role 'feaMo_SimpleFeature22' has cardinality 0..*, and from 'feaMo_Feature', the role 'feaMo_Feature23' has cardinality 0..*.
+An association connects 'feaMo_Feature' and 'feaMo_FeatureDef'. From 'feaMo_Feature', the role 'feaMo_Feature26' has cardinality 0..*, and from 'feaMo_FeatureDef', the role 'feaMo_FeatureDef25' has cardinality 0..*.
+An association connects 'feaMo_FeatureDef' and 'feaMo_FeatureDetails'. From 'feaMo_FeatureDef', the role 'feaMo_FeatureDef28' has cardinality 0..*, and from 'feaMo_FeatureDetails', the role 'feaMo_FeatureDetails29' has cardinality 0..*.
+An association connects 'feaMo_FeatureConstraint' and 'feaMo_Feature'. From 'feaMo_FeatureConstraint', the role 'feaMo_FeatureConstraint31' has cardinality 0..*, and from 'feaMo_Feature', the role 'feaMo_Feature32' has cardinality 0..*.
+An association connects 'feaMo_Feature' and 'feaMo_FeatureConstraint'. From 'feaMo_Feature', the role 'feaMo_Feature35' has cardinality 0..*, and from 'feaMo_FeatureConstraint', the role 'feaMo_FeatureConstraint34' has cardinality 0..*.
+An association connects 'feaMo_Feature' and 'feaMo_FeamoFSelector'. From 'feaMo_Feature', the role 'feaMo_Feature37' has cardinality 0..*, and from 'feaMo_FeamoFSelector', the role 'feaMo_FeamoFSelector' has cardinality 0..*.
+An association connects 'feaMo_FeamoFeatureConfig' and 'feaMo_FeatureModel'. From 'feaMo_FeamoFeatureConfig', the role 'feaMo_FeamoFeatureConfig39' has cardinality 0..*, and from 'feaMo_FeatureModel', the role 'feaMo_FeatureModel40' has cardinality 0..*.
+An association connects 'feaMo_FeamoFeatureConfig' and 'feaMo_Feature'. From 'feaMo_FeamoFeatureConfig', the role 'feaMo_FeamoFeatureConfig42' has cardinality 0..*, and from 'feaMo_Feature', the role 'feaMo_Feature43' has cardinality 0..*.

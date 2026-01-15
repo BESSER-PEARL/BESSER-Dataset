@@ -1,0 +1,22 @@
+The domain model 'epdemo' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'epdemo_Clazz' represents an important domain concept.
+It has the following attributes: 'Id', which is of type str; 'Name', which is of type str.
+
+'epdemo_Teacher' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'Id', which is of type str.
+
+'epdemo_Student' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'Id', which is of type str.
+
+'epdemo_School' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'Id', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'epdemo_School' and 'epdemo_Clazz'. From 'epdemo_School', the role 'epdemo_School' has cardinality 0..*, and from 'epdemo_Clazz', the role 'epdemo_Clazz' has cardinality 0..*.
+An association connects 'epdemo_School' and 'epdemo_Student'. From 'epdemo_School', the role 'epdemo_School2' has cardinality 0..*, and from 'epdemo_Student', the role 'epdemo_Student' has cardinality 0..*.
+An association connects 'epdemo_Teacher' and 'epdemo_School'. From 'epdemo_Teacher', the role 'epdemo_Teacher' has cardinality 0..*, and from 'epdemo_School', the role 'epdemo_School4' has cardinality 0..*.
+An association connects 'epdemo_Teacher' and 'epdemo_Clazz'. From 'epdemo_Teacher', the role 'epdemo_Teacher7' has cardinality 0..*, and from 'epdemo_Clazz', the role 'epdemo_Clazz6' has cardinality 0..*.
+An association connects 'epdemo_Student' and 'epdemo_Clazz'. From 'epdemo_Student', the role 'epdemo_Student10' has cardinality 0..*, and from 'epdemo_Clazz', the role 'epdemo_Clazz9' has cardinality 0..*.

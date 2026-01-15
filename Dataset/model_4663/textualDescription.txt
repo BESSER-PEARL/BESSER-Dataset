@@ -1,0 +1,88 @@
+The domain model 'di' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'di_BPMNLabelStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'di_BPMNDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'LabeledShape' represents an important domain concept.
+It does not declare any attributes.
+
+'di_DiagramElement' represents an important domain concept.
+It does not declare any attributes.
+
+'di_BPMNPlane' represents an important domain concept.
+It does not declare any attributes.
+
+'di_BPMNShape' represents an important domain concept.
+It has the following attributes: 'isHorizontal', which is of type bool; 'isMarkerVisible', which is of type bool; 'participantBandKind', which is of type str; 'isExpanded', which is of type bool; 'isMessageVisible', which is of type bool.
+
+'di_BPMNEdge' represents an important domain concept.
+It has one attribute: 'messageVisibleKind', which is of type str.
+
+'LabeledEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'Label' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Font' represents an important domain concept.
+It does not declare any attributes.
+
+'Style' represents an important domain concept.
+It does not declare any attributes.
+
+'Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+'di_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'di_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseElement' represents an important domain concept.
+It does not declare any attributes.
+
+'di_BPMNLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'Plane' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MessageVisibleKind' defines the following possible values: 'non_initiating', 'initiating'.
+The enumeration 'ParticipantBandKind' defines the following possible values: 'bottom_initiating', 'middle_initiating', 'bottom_non_initiating', 'middle_non_initiating', 'top_non_initiating', 'top_initiating'.
+
+The model also captures inheritance relationships between classes.
+The class 'di_BPMNDiagram' is a specialization of 'Diagram'.
+The class 'di_BPMNEdge' is a specialization of 'LabeledEdge'.
+The class 'di_BPMNLabel' is a specialization of 'Label'.
+The class 'di_BPMNLabelStyle' is a specialization of 'Style'.
+The class 'di_BPMNPlane' is a specialization of 'Plane'.
+The class 'di_BPMNShape' is a specialization of 'LabeledShape'.
+
+Relationships between classes are modeled using associations.
+An association connects 'di_EStringToStringMapEntry' and 'di_DocumentRoot'. From 'di_EStringToStringMapEntry', the role 'di_EStringToStringMapEntry' has cardinality 0..*, and from 'di_DocumentRoot', the role 'di_DocumentRoot' has cardinality 0..*.
+An association connects 'di_DocumentRoot' and 'di_EStringToStringMapEntry'. From 'di_DocumentRoot', the role 'di_DocumentRoot2' has cardinality 0..*, and from 'di_EStringToStringMapEntry', the role 'di_EStringToStringMapEntry3' has cardinality 0..*.
+An association connects 'di_DocumentRoot' and 'di_BPMNDiagram'. From 'di_DocumentRoot', the role 'di_DocumentRoot5' has cardinality 0..*, and from 'di_BPMNDiagram', the role 'di_BPMNDiagram' has cardinality 0..*.
+An association connects 'di_BPMNEdge' and 'di_DocumentRoot'. From 'di_BPMNEdge', the role 'di_BPMNEdge' has cardinality 0..*, and from 'di_DocumentRoot', the role 'di_DocumentRoot7' has cardinality 0..*.
+An association connects 'di_DocumentRoot' and 'di_BPMNLabel'. From 'di_DocumentRoot', the role 'di_DocumentRoot9' has cardinality 0..*, and from 'di_BPMNLabel', the role 'di_BPMNLabel' has cardinality 0..*.
+An association connects 'di_DocumentRoot' and 'di_BPMNLabelStyle'. From 'di_DocumentRoot', the role 'di_DocumentRoot11' has cardinality 0..*, and from 'di_BPMNLabelStyle', the role 'di_BPMNLabelStyle' has cardinality 0..*.
+An association connects 'di_BPMNPlane' and 'di_DocumentRoot'. From 'di_BPMNPlane', the role 'di_BPMNPlane' has cardinality 0..*, and from 'di_DocumentRoot', the role 'di_DocumentRoot13' has cardinality 0..*.
+An association connects 'di_BPMNShape' and 'di_DocumentRoot'. From 'di_BPMNShape', the role 'di_BPMNShape' has cardinality 0..*, and from 'di_DocumentRoot', the role 'di_DocumentRoot15' has cardinality 0..*.
+An association connects 'di_BPMNPlane' and 'di_BPMNDiagram'. From 'di_BPMNPlane', the role 'di_BPMNPlane18' has cardinality 0..*, and from 'di_BPMNDiagram', the role 'di_BPMNDiagram17' has cardinality 0..*.
+An association connects 'di_BPMNLabelStyle' and 'di_BPMNDiagram'. From 'di_BPMNLabelStyle', the role 'di_BPMNLabelStyle21' has cardinality 0..*, and from 'di_BPMNDiagram', the role 'di_BPMNDiagram20' has cardinality 0..*.
+An association connects 'di_BPMNEdge' and 'di_BPMNLabel'. From 'di_BPMNEdge', the role 'di_BPMNEdge23' has cardinality 0..*, and from 'di_BPMNLabel', the role 'di_BPMNLabel24' has cardinality 0..*.
+An association connects 'BaseElement' and 'di_BPMNEdge'. From 'BaseElement', the role 'BaseElement' has cardinality 0..*, and from 'di_BPMNEdge', the role 'di_BPMNEdge26' has cardinality 0..*.
+An association connects 'di_BPMNEdge' and 'di_DiagramElement'. From 'di_BPMNEdge', the role 'di_BPMNEdge28' has cardinality 0..*, and from 'di_DiagramElement', the role 'di_DiagramElement' has cardinality 0..*.
+An association connects 'di_DiagramElement' and 'di_BPMNEdge'. From 'di_DiagramElement', the role 'di_DiagramElement31' has cardinality 0..*, and from 'di_BPMNEdge', the role 'di_BPMNEdge30' has cardinality 0..*.
+An association connects 'di_BPMNLabelStyle' and 'di_BPMNLabel'. From 'di_BPMNLabelStyle', the role 'di_BPMNLabelStyle34' has cardinality 0..*, and from 'di_BPMNLabel', the role 'di_BPMNLabel33' has cardinality 0..*.
+An association connects 'di_Font' and 'di_BPMNLabelStyle'. From 'di_Font', the role 'di_Font' has cardinality 0..*, and from 'di_BPMNLabelStyle', the role 'di_BPMNLabelStyle36' has cardinality 0..*.
+An association connects 'BaseElement' and 'di_BPMNPlane'. From 'BaseElement', the role 'BaseElement39' has cardinality 0..*, and from 'di_BPMNPlane', the role 'di_BPMNPlane38' has cardinality 0..*.
+An association connects 'di_BPMNLabel' and 'di_BPMNShape'. From 'di_BPMNLabel', the role 'di_BPMNLabel42' has cardinality 0..*, and from 'di_BPMNShape', the role 'di_BPMNShape41' has cardinality 0..*.
+An association connects 'di_BPMNShape' and 'BaseElement'. From 'di_BPMNShape', the role 'di_BPMNShape44' has cardinality 0..*, and from 'BaseElement', the role 'BaseElement45' has cardinality 0..*.
+An association connects 'di_BPMNShape' and 'di_BPMNShape'. From 'di_BPMNShape', the role 'di_BPMNShape46' has cardinality 0..*, and from 'di_BPMNShape', the role 'di_BPMNShape48' has cardinality 0..*.

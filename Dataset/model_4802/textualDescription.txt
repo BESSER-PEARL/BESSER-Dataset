@@ -1,0 +1,119 @@
+The domain model 'pltest' describes the core structural elements and their relationships within the system.
+
+The model defines 29 main class(es).
+
+'Base' represents an important domain concept.
+It does not declare any attributes.
+
+'Common' represents an important domain concept.
+It does not declare any attributes.
+
+'pltest_GrandChild2' represents an important domain concept.
+It does not declare any attributes.
+
+'pltest_Child2' represents an important domain concept.
+It does not declare any attributes.
+
+'pltest_GrandGrandChildF' represents an important domain concept.
+It does not declare any attributes.
+
+'pltest_Common' represents an important domain concept.
+It does not declare any attributes.
+
+'GrandChildD' represents an important domain concept.
+It does not declare any attributes.
+
+'pltest_Child1' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pltest_Numbers' represents an important domain concept.
+It has the following attributes: 'float', which is of type float; 'double', which is of type float; 'int', which is of type int; 'long', which is of type str; 'bigDecimal', which is of type str; 'bigInt', which is of type str.
+
+'pltest_TestClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'pltest_GrandGrandChildE' represents an important domain concept.
+It does not declare any attributes.
+
+'pltest_TestPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'pltest_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'Child3' represents an important domain concept.
+It does not declare any attributes.
+
+'pltest_Red' represents an important domain concept.
+It has one attribute: 'redness', which is of type int.
+
+'pltest_GrandChild' represents an important domain concept.
+It does not declare any attributes.
+
+'pltest_TestClass' represents an important domain concept.
+It does not declare any attributes.
+
+'pltest_Circle' represents an important domain concept.
+It has the following attributes: 'diameter', which is of type str; 'circumference', which is of type float; 'area', which is of type float.
+
+'pltest_GrandChildD' represents an important domain concept.
+It does not declare any attributes.
+
+'TestClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'pltest_Base' represents an important domain concept.
+It does not declare any attributes.
+
+'pltest_WhatEver' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'pltest_TestInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'pltest_Child3' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Child1' represents an important domain concept.
+It does not declare any attributes.
+
+'pltest_TestPackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Child2' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'pltest_Common' is a specialization of 'Base'.
+The class 'pltest_Child1' is a specialization of 'Common'.
+The class 'pltest_Child1' is a specialization of 'Interface'.
+The class 'pltest_Child2' is a specialization of 'Common'.
+The class 'pltest_Child2' is a specialization of 'Interface'.
+The class 'pltest_Child2' is a specialization of 'Child3'.
+The class 'pltest_GrandChild' is a specialization of 'Child1'.
+The class 'pltest_GrandChild' is a specialization of 'Child3'.
+The class 'pltest_GrandChild2' is a specialization of 'Child2'.
+The class 'pltest_GrandChildD' is a specialization of 'Child3'.
+The class 'pltest_GrandGrandChildE' is a specialization of 'GrandChildD'.
+The class 'pltest_GrandGrandChildE' is a specialization of 'Child1'.
+The class 'pltest_GrandGrandChildF' is a specialization of 'GrandChildD'.
+The class 'pltest_GrandGrandChildF' is a specialization of 'Child2'.
+The class 'pltest_TestPackage' is a specialization of 'TestPackageableElement'.
+The class 'pltest_TestClass' is a specialization of 'TestClassifier'.
+The class 'pltest_TestInterface' is a specialization of 'TestClassifier'.
+The class 'pltest_TestClassifier' is a specialization of 'TestPackageableElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pltest_Common' and 'pltest_Child1'. From 'pltest_Common', the role 'pltest_Common' has cardinality 0..*, and from 'pltest_Child1', the role 'pltest_Child1' has cardinality 0..*.
+An association connects 'pltest_Common' and 'pltest_Child2'. From 'pltest_Common', the role 'pltest_Common2' has cardinality 0..*, and from 'pltest_Child2', the role 'pltest_Child2' has cardinality 0..*.
+An association connects 'pltest_Circle' and 'pltest_Red'. From 'pltest_Circle', the role 'pltest_Circle' has cardinality 0..*, and from 'pltest_Red', the role 'pltest_Red' has cardinality 0..*.
+An association connects 'pltest_Circle' and 'pltest_WhatEver'. From 'pltest_Circle', the role 'pltest_Circle5' has cardinality 0..*, and from 'pltest_WhatEver', the role 'pltest_WhatEver' has cardinality 0..*.
+An association connects 'pltest_TestPackageableElement' and 'pltest_TestPackage'. From 'pltest_TestPackageableElement', the role 'pltest_TestPackageableElement' has cardinality 0..*, and from 'pltest_TestPackage', the role 'pltest_TestPackage' has cardinality 0..*.
+An association connects 'pltest_TestPackage' and 'pltest_TestPackageableElement'. From 'pltest_TestPackage', the role 'pltest_TestPackage8' has cardinality 0..*, and from 'pltest_TestPackageableElement', the role 'pltest_TestPackageableElement9' has cardinality 0..*.
+An association connects 'pltest_TestClassifier' and 'pltest_TestClass'. From 'pltest_TestClassifier', the role 'pltest_TestClassifier' has cardinality 0..*, and from 'pltest_TestClass', the role 'pltest_TestClass' has cardinality 0..*.

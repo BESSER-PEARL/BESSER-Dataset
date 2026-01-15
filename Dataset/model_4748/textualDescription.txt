@@ -1,0 +1,89 @@
+The domain model 'FPath' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'FPath_UnaryOperatorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FPath_WildcardTest' represents an important domain concept.
+It does not declare any attributes.
+
+'FPath_Step' represents an important domain concept.
+It has one attribute: 'axis', which is of type str.
+
+'FPath_BinaryOperatorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'FPath_StringExp' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'FPath_FunctionCallExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'FPath_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'FPath_VariableExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'FPath_NameTest' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'FPath_PathExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'FPath_Test' represents an important domain concept.
+It does not declare any attributes.
+
+'Test' represents an important domain concept.
+It does not declare any attributes.
+
+'FPath_ContextExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FPath_LocatedElement' represents an important domain concept.
+It has the following attributes: 'commentsAfter', which is of type str; 'location', which is of type str; 'commentsBefore', which is of type str.
+
+'OperatorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FPath_OperatorExp' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'FPath_NumberExp' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Axis' defines the following possible values: 'attribute', 'parent', 'descendant', 'interface', 'child', 'binding', 'sibling', 'ancestororself', 'siblingorself', 'ancestor', 'component', 'descendantorself', 'internalinterface'.
+
+The model also captures inheritance relationships between classes.
+The class 'FPath_Expression' is a specialization of 'LocatedElement'.
+The class 'FPath_ContextExp' is a specialization of 'Expression'.
+The class 'FPath_VariableExp' is a specialization of 'Expression'.
+The class 'FPath_FunctionCallExp' is a specialization of 'Expression'.
+The class 'FPath_NumberExp' is a specialization of 'Expression'.
+The class 'FPath_StringExp' is a specialization of 'Expression'.
+The class 'FPath_PathExp' is a specialization of 'Expression'.
+The class 'FPath_OperatorExp' is a specialization of 'Expression'.
+The class 'FPath_BinaryOperatorExp' is a specialization of 'OperatorExp'.
+The class 'FPath_UnaryOperatorExp' is a specialization of 'OperatorExp'.
+The class 'FPath_Step' is a specialization of 'LocatedElement'.
+The class 'FPath_Test' is a specialization of 'LocatedElement'.
+The class 'FPath_WildcardTest' is a specialization of 'Test'.
+The class 'FPath_NameTest' is a specialization of 'Test'.
+
+Relationships between classes are modeled using associations.
+An association connects 'FPath_FunctionCallExp' and 'FPath_Expression'. From 'FPath_FunctionCallExp', the role 'FPath_FunctionCallExp' has cardinality 0..*, and from 'FPath_Expression', the role 'FPath_Expression' has cardinality 0..*.
+An association connects 'FPath_Expression' and 'FPath_PathExp'. From 'FPath_Expression', the role 'FPath_Expression2' has cardinality 0..*, and from 'FPath_PathExp', the role 'FPath_PathExp' has cardinality 0..*.
+An association connects 'FPath_PathExp' and 'FPath_Step'. From 'FPath_PathExp', the role 'FPath_PathExp4' has cardinality 0..*, and from 'FPath_Step', the role 'FPath_Step' has cardinality 0..*.
+An association connects 'FPath_Expression' and 'FPath_BinaryOperatorExp'. From 'FPath_Expression', the role 'FPath_Expression6' has cardinality 0..*, and from 'FPath_BinaryOperatorExp', the role 'FPath_BinaryOperatorExp' has cardinality 0..*.
+An association connects 'FPath_BinaryOperatorExp' and 'FPath_Expression'. From 'FPath_BinaryOperatorExp', the role 'FPath_BinaryOperatorExp8' has cardinality 0..*, and from 'FPath_Expression', the role 'FPath_Expression9' has cardinality 0..*.
+An association connects 'FPath_Expression' and 'FPath_UnaryOperatorExp'. From 'FPath_Expression', the role 'FPath_Expression11' has cardinality 0..*, and from 'FPath_UnaryOperatorExp', the role 'FPath_UnaryOperatorExp' has cardinality 0..*.
+An association connects 'FPath_Step' and 'FPath_Test'. From 'FPath_Step', the role 'FPath_Step13' has cardinality 0..*, and from 'FPath_Test', the role 'FPath_Test' has cardinality 0..*.
+An association connects 'FPath_Expression' and 'FPath_Step'. From 'FPath_Expression', the role 'FPath_Expression16' has cardinality 0..*, and from 'FPath_Step', the role 'FPath_Step15' has cardinality 0..*.

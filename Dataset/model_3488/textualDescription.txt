@@ -1,0 +1,54 @@
+The domain model 'fc' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'fc_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'fc_StringValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'fc_DoubleValue' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'fc_IntegerValue' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'fc_FeatureConfiguration' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'version', which is of type str; 'description', which is of type str; 'name', which is of type str.
+
+'fc_BooleanValue' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'AttributeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'fc_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'fc_Selection' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'comment', which is of type str; 'id', which is of type str; 'name', which is of type str; 'present', which is of type bool; 'enabled', which is of type bool; 'root', which is of type bool.
+
+'fc_FeatureModel' represents an important domain concept.
+It does not declare any attributes.
+
+'fc_AttributeValue' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comment', which is of type str; 'description', which is of type str; 'id', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'fc_BooleanValue' is a specialization of 'AttributeValue'.
+The class 'fc_IntegerValue' is a specialization of 'AttributeValue'.
+The class 'fc_DoubleValue' is a specialization of 'AttributeValue'.
+The class 'fc_StringValue' is a specialization of 'AttributeValue'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fc_FeatureModel' and 'fc_FeatureConfiguration'. From 'fc_FeatureModel', the role 'fc_FeatureModel' has cardinality 0..*, and from 'fc_FeatureConfiguration', the role 'fc_FeatureConfiguration' has cardinality 0..*.
+An association connects 'fc_FeatureModel' and 'fc_FeatureConfiguration'. From 'fc_FeatureModel', the role 'fc_FeatureModel3' has cardinality 0..*, and from 'fc_FeatureConfiguration', the role 'fc_FeatureConfiguration2' has cardinality 0..*.
+An association connects 'fc_Selection' and 'fc_FeatureConfiguration'. From 'fc_Selection', the role 'fc_Selection' has cardinality 0..*, and from 'fc_FeatureConfiguration', the role 'fc_FeatureConfiguration5' has cardinality 0..*.
+An association connects 'fc_Selection' and 'fc_Selection'. From 'fc_Selection', the role 'Selection' has cardinality 0..*, and from 'fc_Selection', the role 'selections' has cardinality 0..*.
+An association connects 'fc_Selection' and 'fc_AttributeValue'. From 'fc_Selection', the role 'selection' has cardinality 0..*, and from 'fc_AttributeValue', the role 'AttributeValue' has cardinality 0..*.
+An association connects 'fc_Selection' and 'fc_Selection'. From 'fc_Selection', the role 'parent' has cardinality 0..*, and from 'fc_Selection', the role 'Selection11' has cardinality 0..*.
+An association connects 'fc_Selection' and 'fc_FeatureConfiguration'. From 'fc_Selection', the role 'fc_Selection13' has cardinality 0..*, and from 'fc_FeatureConfiguration', the role 'fc_FeatureConfiguration14' has cardinality 0..*.
+An association connects 'fc_Selection' and 'fc_Feature'. From 'fc_Selection', the role 'fc_Selection16' has cardinality 0..*, and from 'fc_Feature', the role 'fc_Feature' has cardinality 0..*.
+An association connects 'fc_Selection' and 'fc_AttributeValue'. From 'fc_Selection', the role 'Selection18' has cardinality 0..*, and from 'fc_AttributeValue', the role 'values' has cardinality 0..*.
+An association connects 'fc_AttributeValue' and 'fc_Attribute'. From 'fc_AttributeValue', the role 'fc_AttributeValue' has cardinality 0..*, and from 'fc_Attribute', the role 'fc_Attribute' has cardinality 0..*.

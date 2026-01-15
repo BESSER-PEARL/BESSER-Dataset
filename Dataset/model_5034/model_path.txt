@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/rgruber1/atom-game-framework/AtomUtils/modelling/party/party.ecore

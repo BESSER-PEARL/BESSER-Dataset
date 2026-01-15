@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/sysord/MAD/examples/com.sysord.mad.demo.tinylibrary/model/tinylibrary.ecore

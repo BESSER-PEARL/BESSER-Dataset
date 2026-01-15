@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/audreykoz/NCSA-Archi/Archi_Mac_4.5.1/Archi_4.5.1.app/Contents/Eclipse/plugins/com.archimatetool.model_4.5.1.201908071603/model/archimate.ecore

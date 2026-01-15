@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/viatra/org.eclipse.incquery.examples/minilibrary/org.eclipse.incquery.examples.library/model/library.ecore

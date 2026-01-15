@@ -1,0 +1,392 @@
+The domain model 'contentfwk' describes the core structural elements and their relationships within the system.
+
+The model defines 55 main class(es).
+
+'contentfwk_Driver' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_Assumption' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_Contract' represents an important domain concept.
+It has the following attributes: 'reliabilityCharacteristics', which is of type str; 'locatabilityCharacteristics', which is of type str; 'credibilityCharacteristics', which is of type str; 'growth', which is of type str; 'growthPeriod', which is of type str; 'peakProfileShortTerm', which is of type str; 'servicesTimes', which is of type str; 'contractControlRequirements', which is of type str; 'internationalizationCharacteristics', which is of type str; 'qualityOfInformationRequired', which is of type str; 'portabilityCharacteristics', which is of type str; 'resultControlRequirements', which is of type str; 'ServiceNameCalled', which is of type str; 'serviceabilityCharacteristics', which is of type str; 'ServiceNameCaller', which is of type str; 'performanceCharacteristics', which is of type str; 'extensibilityCharacteristics', which is of type str; 'localizationCharacteristics', which is of type str; 'interoperabilityCharacteristics', which is of type str; 'peakProfileLongTerm', which is of type str; 'behaviorCharacteristics', which is of type str; 'recoverabilityCharacteristics', which is of type str; 'manageabilityCharacteristics', which is of type str; 'throughput', which is of type str; 'scalabilityCharacteristics', which is of type str; 'integrityCharacteristics', which is of type str; 'privacyCharacteristics', which is of type str; 'serviceQualityCharacteristics', which is of type str; 'availabilityQualityCharacteristics', which is of type str; 'capacityCharacteristics', which is of type str; 'throughputPeriod', which is of type str; 'responseCharacteristics', which is of type str; 'securityCharacteristics', which is of type str.
+
+'contentfwk_Objective' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Standard' represents an important domain concept.
+It does not declare any attributes.
+
+'StrategicElement' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_LogicalDataComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_ServiceQuality' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_DataComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_DataEntity' represents an important domain concept.
+It has the following attributes: 'retentionClassification', which is of type str; 'dataEntityCategory', which is of type str; 'privacyClassification', which is of type str.
+
+'contentfwk_Actor' represents an important domain concept.
+It has the following attributes: 'FTEs', which is of type str; 'actorTasks', which is of type str; 'actorGoal', which is of type str.
+
+'contentfwk_InformationSystemService' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_Container' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'contentfwk_Requirement' represents an important domain concept.
+It has the following attributes: 'acceptanceCriteria', which is of type str; 'statementOfRequirement', which is of type str; 'rationale', which is of type str.
+
+'contentfwk_Capability' represents an important domain concept.
+It has the following attributes: 'businessValue', which is of type str; 'increments', which is of type str.
+
+'contentfwk_Principle' represents an important domain concept.
+It has the following attributes: 'principleCategory', which is of type str; 'implication', which is of type str; 'metric', which is of type str; 'rationale', which is of type str; 'statementOfPrinciple', which is of type str; 'priority', which is of type str.
+
+'contentfwk_Measure' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_Standard' represents an important domain concept.
+It has the following attributes: 'nextStandardCreationDate', which is of type date; 'lastStandardCreationDate', which is of type date; 'standardClass', which is of type str; 'retireDate', which is of type str; 'standardCreationDate', which is of type date.
+
+'contentfwk_Gap' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_Goal' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_DataArchitecture' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_Product' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_LogicalTechnologyComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_EnterpriseArchitecture' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_LogicalApplicationComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_BusinessService' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_Control' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_BusinessArchitecture' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_WorkPackage' represents an important domain concept.
+It has one attribute: 'workPackageCategory', which is of type str.
+
+'contentfwk_StrategicElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TechnologyComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_ApplicationComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_PlatformService' represents an important domain concept.
+It does not declare any attributes.
+
+'Architecture' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_TechnologyComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_ApplicationArchitecture' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_PhysicalDataComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_PhysicalTechnologyComponent' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'moduleName', which is of type str; 'vendor', which is of type str; 'productName', which is of type str.
+
+'contentfwk_OrganizationUnit' represents an important domain concept.
+It has one attribute: 'headcount', which is of type str.
+
+'contentfwk_Location' represents an important domain concept.
+It does not declare any attributes.
+
+'Service' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_Role' represents an important domain concept.
+It has one attribute: 'estimatedFTEs', which is of type str.
+
+'contentfwk_Element' represents an important domain concept.
+It has the following attributes: 'category', which is of type str; 'description', which is of type str; 'ownerDescr', which is of type str; 'sourceDescr', which is of type str; 'ID', which is of type str; 'name', which is of type str.
+
+'DataComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_TechnologyArchitecture' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_PhysicalApplicationComponent' represents an important domain concept.
+It has the following attributes: 'localizationCharacteristics', which is of type str; 'interoperabilityCharacteristics', which is of type str; 'scalabilityCharacteristics', which is of type str; 'initialLiveDate', which is of type date; 'recoverabilityCharacteristics', which is of type str; 'throughput', which is of type str; 'dateOfNextRelease', which is of type date; 'servicesTimes', which is of type str; 'reliabilityCharacteristics', which is of type str; 'portabilityCharacteristics', which is of type str; 'integrityCharacteristics', which is of type str; 'lifeCycleStatus', which is of type str; 'growthPeriod', which is of type str; 'performanceCharacteristics', which is of type str; 'growth', which is of type str; 'internationalizationCharacteristics', which is of type str; 'peakProfileLongTerm', which is of type str; 'dateOfLastRelease', which is of type date; 'capacityCharacteristics', which is of type str; 'throughputPeriod', which is of type str; 'serviceabilityCharacteristics', which is of type str; 'securityCharacteristics', which is of type str; 'locatabilityCharacteristics', which is of type str; 'peakProfileShortTerm', which is of type str; 'extensibilityCharacteristics', which is of type str; 'credibilityCharacteristics', which is of type str; 'retirementDate', which is of type date; 'privacyCharacteristics', which is of type str; 'availabilityQualityCharacteristics', which is of type str; 'manageabilityCharacteristics', which is of type str.
+
+'contentfwk_Process' represents an important domain concept.
+It has the following attributes: 'processCritiality', which is of type str; 'processVolumetrics', which is of type str; 'isAutomated', which is of type bool.
+
+'contentfwk_StrategicArchitecture' represents an important domain concept.
+It does not declare any attributes.
+
+'contentfwk_Architecture' represents an important domain concept.
+It does not declare any attributes.
+
+'ApplicationComponent' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'WorkPackageCategory' defines the following possible values: 'WorkPackage', 'Project', 'Program', 'Portofolio', 'WorkStream'.
+The enumeration 'StandardsClass' defines the following possible values: 'Retired', 'PhasingOut', 'Provisional', 'Standard', 'Proposed', 'NonStandard'.
+The enumeration 'DataEntityCategory' defines the following possible values: 'Message', 'InternallyStoredEntity'.
+The enumeration 'PrincipleCategory' defines the following possible values: 'GuidingPrinciple', 'ApplicationPrinciple', 'IntegrationPrinciple', 'DataPrinciple', 'BusinessPrinciple', 'TechnologyPrinciple'.
+The enumeration 'LifeCycleStatus' defines the following possible values: 'Proposed', 'Retired', 'Live', 'PhasingOut', 'InDevelopment'.
+
+The model also captures inheritance relationships between classes.
+The class 'contentfwk_BusinessArchitecture' is a specialization of 'Architecture'.
+The class 'contentfwk_DataArchitecture' is a specialization of 'Architecture'.
+The class 'contentfwk_TechnologyArchitecture' is a specialization of 'Architecture'.
+The class 'contentfwk_Driver' is a specialization of 'Element'.
+The class 'contentfwk_Goal' is a specialization of 'Element'.
+The class 'contentfwk_Objective' is a specialization of 'Element'.
+The class 'contentfwk_OrganizationUnit' is a specialization of 'Element'.
+The class 'contentfwk_Actor' is a specialization of 'Element'.
+The class 'contentfwk_Role' is a specialization of 'Element'.
+The class 'contentfwk_DataEntity' is a specialization of 'Element'.
+The class 'contentfwk_LogicalApplicationComponent' is a specialization of 'Element'.
+The class 'contentfwk_LogicalApplicationComponent' is a specialization of 'ApplicationComponent'.
+The class 'contentfwk_Function' is a specialization of 'Element'.
+The class 'contentfwk_Function' is a specialization of 'Standard'.
+The class 'contentfwk_BusinessService' is a specialization of 'Element'.
+The class 'contentfwk_BusinessService' is a specialization of 'Service'.
+The class 'contentfwk_Process' is a specialization of 'Element'.
+The class 'contentfwk_Process' is a specialization of 'Standard'.
+The class 'contentfwk_PlatformService' is a specialization of 'Element'.
+The class 'contentfwk_PlatformService' is a specialization of 'Service'.
+The class 'contentfwk_PhysicalTechnologyComponent' is a specialization of 'Element'.
+The class 'contentfwk_PhysicalTechnologyComponent' is a specialization of 'TechnologyComponent'.
+The class 'contentfwk_Product' is a specialization of 'Element'.
+The class 'contentfwk_Measure' is a specialization of 'Element'.
+The class 'contentfwk_ServiceQuality' is a specialization of 'Element'.
+The class 'contentfwk_Contract' is a specialization of 'Element'.
+The class 'contentfwk_Event' is a specialization of 'Element'.
+The class 'contentfwk_Control' is a specialization of 'Element'.
+The class 'contentfwk_Location' is a specialization of 'Element'.
+The class 'contentfwk_Capability' is a specialization of 'Element'.
+The class 'contentfwk_StrategicElement' is a specialization of 'Element'.
+The class 'contentfwk_Principle' is a specialization of 'StrategicElement'.
+The class 'contentfwk_Constraint' is a specialization of 'StrategicElement'.
+The class 'contentfwk_Assumption' is a specialization of 'StrategicElement'.
+The class 'contentfwk_Requirement' is a specialization of 'StrategicElement'.
+The class 'contentfwk_Gap' is a specialization of 'StrategicElement'.
+The class 'contentfwk_WorkPackage' is a specialization of 'StrategicElement'.
+The class 'contentfwk_LogicalDataComponent' is a specialization of 'Element'.
+The class 'contentfwk_LogicalDataComponent' is a specialization of 'DataComponent'.
+The class 'contentfwk_PhysicalDataComponent' is a specialization of 'Element'.
+The class 'contentfwk_PhysicalDataComponent' is a specialization of 'DataComponent'.
+The class 'contentfwk_ApplicationArchitecture' is a specialization of 'Architecture'.
+The class 'contentfwk_PhysicalApplicationComponent' is a specialization of 'Element'.
+The class 'contentfwk_PhysicalApplicationComponent' is a specialization of 'ApplicationComponent'.
+The class 'contentfwk_LogicalTechnologyComponent' is a specialization of 'Element'.
+The class 'contentfwk_LogicalTechnologyComponent' is a specialization of 'TechnologyComponent'.
+The class 'contentfwk_StrategicArchitecture' is a specialization of 'Architecture'.
+The class 'contentfwk_Service' is a specialization of 'Standard'.
+The class 'contentfwk_ApplicationComponent' is a specialization of 'Standard'.
+The class 'contentfwk_InformationSystemService' is a specialization of 'Service'.
+The class 'contentfwk_InformationSystemService' is a specialization of 'Element'.
+The class 'contentfwk_DataComponent' is a specialization of 'Standard'.
+The class 'contentfwk_TechnologyComponent' is a specialization of 'Standard'.
+
+Relationships between classes are modeled using associations.
+An association connects 'contentfwk_Architecture' and 'contentfwk_EnterpriseArchitecture'. From 'contentfwk_Architecture', the role 'contentfwk_Architecture' has cardinality 0..*, and from 'contentfwk_EnterpriseArchitecture', the role 'contentfwk_EnterpriseArchitecture' has cardinality 0..*.
+An association connects 'contentfwk_Container' and 'contentfwk_EnterpriseArchitecture'. From 'contentfwk_Container', the role 'contentfwk_Container' has cardinality 0..*, and from 'contentfwk_EnterpriseArchitecture', the role 'contentfwk_EnterpriseArchitecture2' has cardinality 0..*.
+An association connects 'contentfwk_Driver' and 'contentfwk_BusinessArchitecture'. From 'contentfwk_Driver', the role 'contentfwk_Driver' has cardinality 0..*, and from 'contentfwk_BusinessArchitecture', the role 'contentfwk_BusinessArchitecture' has cardinality 0..*.
+An association connects 'contentfwk_Goal' and 'contentfwk_BusinessArchitecture'. From 'contentfwk_Goal', the role 'contentfwk_Goal' has cardinality 0..*, and from 'contentfwk_BusinessArchitecture', the role 'contentfwk_BusinessArchitecture5' has cardinality 0..*.
+An association connects 'contentfwk_BusinessArchitecture' and 'contentfwk_Objective'. From 'contentfwk_BusinessArchitecture', the role 'contentfwk_BusinessArchitecture7' has cardinality 0..*, and from 'contentfwk_Objective', the role 'contentfwk_Objective' has cardinality 0..*.
+An association connects 'contentfwk_BusinessArchitecture' and 'contentfwk_OrganizationUnit'. From 'contentfwk_BusinessArchitecture', the role 'contentfwk_BusinessArchitecture9' has cardinality 0..*, and from 'contentfwk_OrganizationUnit', the role 'contentfwk_OrganizationUnit' has cardinality 0..*.
+An association connects 'contentfwk_Actor' and 'contentfwk_BusinessArchitecture'. From 'contentfwk_Actor', the role 'contentfwk_Actor' has cardinality 0..*, and from 'contentfwk_BusinessArchitecture', the role 'contentfwk_BusinessArchitecture11' has cardinality 0..*.
+An association connects 'contentfwk_BusinessArchitecture' and 'contentfwk_Role'. From 'contentfwk_BusinessArchitecture', the role 'contentfwk_BusinessArchitecture13' has cardinality 0..*, and from 'contentfwk_Role', the role 'contentfwk_Role' has cardinality 0..*.
+An association connects 'contentfwk_Function' and 'contentfwk_BusinessArchitecture'. From 'contentfwk_Function', the role 'contentfwk_Function' has cardinality 0..*, and from 'contentfwk_BusinessArchitecture', the role 'contentfwk_BusinessArchitecture15' has cardinality 0..*.
+An association connects 'contentfwk_BusinessService' and 'contentfwk_BusinessArchitecture'. From 'contentfwk_BusinessService', the role 'contentfwk_BusinessService' has cardinality 0..*, and from 'contentfwk_BusinessArchitecture', the role 'contentfwk_BusinessArchitecture17' has cardinality 0..*.
+An association connects 'contentfwk_BusinessArchitecture' and 'contentfwk_Process'. From 'contentfwk_BusinessArchitecture', the role 'contentfwk_BusinessArchitecture19' has cardinality 0..*, and from 'contentfwk_Process', the role 'contentfwk_Process' has cardinality 0..*.
+An association connects 'contentfwk_BusinessArchitecture' and 'contentfwk_Control'. From 'contentfwk_BusinessArchitecture', the role 'contentfwk_BusinessArchitecture21' has cardinality 0..*, and from 'contentfwk_Control', the role 'contentfwk_Control' has cardinality 0..*.
+An association connects 'contentfwk_Event' and 'contentfwk_BusinessArchitecture'. From 'contentfwk_Event', the role 'contentfwk_Event' has cardinality 0..*, and from 'contentfwk_BusinessArchitecture', the role 'contentfwk_BusinessArchitecture23' has cardinality 0..*.
+An association connects 'contentfwk_Location' and 'contentfwk_BusinessArchitecture'. From 'contentfwk_Location', the role 'contentfwk_Location' has cardinality 0..*, and from 'contentfwk_BusinessArchitecture', the role 'contentfwk_BusinessArchitecture25' has cardinality 0..*.
+An association connects 'contentfwk_Product' and 'contentfwk_BusinessArchitecture'. From 'contentfwk_Product', the role 'contentfwk_Product' has cardinality 0..*, and from 'contentfwk_BusinessArchitecture', the role 'contentfwk_BusinessArchitecture27' has cardinality 0..*.
+An association connects 'contentfwk_Contract' and 'contentfwk_BusinessArchitecture'. From 'contentfwk_Contract', the role 'contentfwk_Contract' has cardinality 0..*, and from 'contentfwk_BusinessArchitecture', the role 'contentfwk_BusinessArchitecture29' has cardinality 0..*.
+An association connects 'contentfwk_BusinessArchitecture' and 'contentfwk_Measure'. From 'contentfwk_BusinessArchitecture', the role 'contentfwk_BusinessArchitecture31' has cardinality 0..*, and from 'contentfwk_Measure', the role 'contentfwk_Measure' has cardinality 0..*.
+An association connects 'contentfwk_BusinessArchitecture' and 'contentfwk_ServiceQuality'. From 'contentfwk_BusinessArchitecture', the role 'contentfwk_BusinessArchitecture33' has cardinality 0..*, and from 'contentfwk_ServiceQuality', the role 'contentfwk_ServiceQuality' has cardinality 0..*.
+An association connects 'contentfwk_DataEntity' and 'contentfwk_DataArchitecture'. From 'contentfwk_DataEntity', the role 'contentfwk_DataEntity' has cardinality 0..*, and from 'contentfwk_DataArchitecture', the role 'contentfwk_DataArchitecture' has cardinality 0..*.
+An association connects 'contentfwk_DataArchitecture' and 'contentfwk_LogicalDataComponent'. From 'contentfwk_DataArchitecture', the role 'contentfwk_DataArchitecture36' has cardinality 0..*, and from 'contentfwk_LogicalDataComponent', the role 'contentfwk_LogicalDataComponent' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalDataComponent' and 'contentfwk_DataArchitecture'. From 'contentfwk_PhysicalDataComponent', the role 'contentfwk_PhysicalDataComponent' has cardinality 0..*, and from 'contentfwk_DataArchitecture', the role 'contentfwk_DataArchitecture38' has cardinality 0..*.
+An association connects 'contentfwk_TechnologyArchitecture' and 'contentfwk_PlatformService'. From 'contentfwk_TechnologyArchitecture', the role 'contentfwk_TechnologyArchitecture' has cardinality 0..*, and from 'contentfwk_PlatformService', the role 'contentfwk_PlatformService' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalTechnologyComponent' and 'contentfwk_TechnologyArchitecture'. From 'contentfwk_PhysicalTechnologyComponent', the role 'contentfwk_PhysicalTechnologyComponent' has cardinality 0..*, and from 'contentfwk_TechnologyArchitecture', the role 'contentfwk_TechnologyArchitecture41' has cardinality 0..*.
+An association connects 'contentfwk_TechnologyArchitecture' and 'contentfwk_LogicalTechnologyComponent'. From 'contentfwk_TechnologyArchitecture', the role 'contentfwk_TechnologyArchitecture43' has cardinality 0..*, and from 'contentfwk_LogicalTechnologyComponent', the role 'contentfwk_LogicalTechnologyComponent' has cardinality 0..*.
+An association connects 'contentfwk_Driver' and 'contentfwk_Goal'. From 'contentfwk_Driver', the role 'unnamed role' has cardinality 0..*, and from 'contentfwk_Goal', the role '45' has cardinality 0..*.
+An association connects 'contentfwk_Driver' and 'contentfwk_OrganizationUnit'. From 'contentfwk_Driver', the role '47' has cardinality 0..*, and from 'contentfwk_OrganizationUnit', the role '48' has cardinality 0..*.
+An association connects 'contentfwk_Driver' and 'contentfwk_Driver'. From 'contentfwk_Driver', the role 'contentfwk_Driver49' has cardinality 0..*, and from 'contentfwk_Driver', the role 'contentfwk_Driver51' has cardinality 0..*.
+An association connects 'contentfwk_Driver' and 'contentfwk_Goal'. From 'contentfwk_Driver', the role '54' has cardinality 0..*, and from 'contentfwk_Goal', the role '53' has cardinality 0..*.
+An association connects 'contentfwk_Goal' and 'contentfwk_Objective'. From 'contentfwk_Goal', the role '56' has cardinality 0..*, and from 'contentfwk_Objective', the role '57' has cardinality 0..*.
+An association connects 'contentfwk_Goal' and 'contentfwk_Goal'. From 'contentfwk_Goal', the role 'contentfwk_Goal60' has cardinality 0..*, and from 'contentfwk_Goal', the role 'contentfwk_Goal58' has cardinality 0..*.
+An association connects 'contentfwk_Goal' and 'contentfwk_Objective'. From 'contentfwk_Goal', the role '63' has cardinality 0..*, and from 'contentfwk_Objective', the role '62' has cardinality 0..*.
+An association connects 'contentfwk_Measure' and 'contentfwk_Objective'. From 'contentfwk_Measure', the role '66' has cardinality 0..*, and from 'contentfwk_Objective', the role '65' has cardinality 0..*.
+An association connects 'contentfwk_Objective' and 'contentfwk_Objective'. From 'contentfwk_Objective', the role 'contentfwk_Objective69' has cardinality 0..*, and from 'contentfwk_Objective', the role 'contentfwk_Objective67' has cardinality 0..*.
+An association connects 'contentfwk_OrganizationUnit' and 'contentfwk_Service'. From 'contentfwk_OrganizationUnit', the role '71' has cardinality 0..*, and from 'contentfwk_Service', the role '72' has cardinality 0..*.
+An association connects 'contentfwk_OrganizationUnit' and 'contentfwk_Actor'. From 'contentfwk_OrganizationUnit', the role '74' has cardinality 0..*, and from 'contentfwk_Actor', the role '75' has cardinality 0..*.
+An association connects 'contentfwk_Function' and 'contentfwk_OrganizationUnit'. From 'contentfwk_Function', the role '78' has cardinality 0..*, and from 'contentfwk_OrganizationUnit', the role '77' has cardinality 0..*.
+An association connects 'contentfwk_OrganizationUnit' and 'contentfwk_Process'. From 'contentfwk_OrganizationUnit', the role '80' has cardinality 0..*, and from 'contentfwk_Process', the role '81' has cardinality 0..*.
+An association connects 'contentfwk_Driver' and 'contentfwk_OrganizationUnit'. From 'contentfwk_Driver', the role '84' has cardinality 0..*, and from 'contentfwk_OrganizationUnit', the role '83' has cardinality 0..*.
+An association connects 'contentfwk_Product' and 'contentfwk_OrganizationUnit'. From 'contentfwk_Product', the role '87' has cardinality 0..*, and from 'contentfwk_OrganizationUnit', the role '86' has cardinality 0..*.
+An association connects 'contentfwk_OrganizationUnit' and 'contentfwk_Location'. From 'contentfwk_OrganizationUnit', the role '89' has cardinality 0..*, and from 'contentfwk_Location', the role '90' has cardinality 0..*.
+An association connects 'contentfwk_Actor' and 'contentfwk_DataEntity'. From 'contentfwk_Actor', the role '92' has cardinality 0..*, and from 'contentfwk_DataEntity', the role '93' has cardinality 0..*.
+An association connects 'contentfwk_Actor' and 'contentfwk_DataEntity'. From 'contentfwk_Actor', the role '95' has cardinality 0..*, and from 'contentfwk_DataEntity', the role '96' has cardinality 0..*.
+An association connects 'contentfwk_Actor' and 'contentfwk_OrganizationUnit'. From 'contentfwk_Actor', the role '98' has cardinality 0..*, and from 'contentfwk_OrganizationUnit', the role '99' has cardinality 0..*.
+An association connects 'contentfwk_Function' and 'contentfwk_Actor'. From 'contentfwk_Function', the role '102' has cardinality 0..*, and from 'contentfwk_Actor', the role '101' has cardinality 0..*.
+An association connects 'contentfwk_Actor' and 'contentfwk_Role'. From 'contentfwk_Actor', the role '104' has cardinality 0..*, and from 'contentfwk_Role', the role '105' has cardinality 0..*.
+An association connects 'contentfwk_Process' and 'contentfwk_Actor'. From 'contentfwk_Process', the role '108' has cardinality 0..*, and from 'contentfwk_Actor', the role '107' has cardinality 0..*.
+An association connects 'contentfwk_Actor' and 'contentfwk_Service'. From 'contentfwk_Actor', the role 'contentfwk_Actor110' has cardinality 0..*, and from 'contentfwk_Service', the role 'contentfwk_Service' has cardinality 0..*.
+An association connects 'contentfwk_Event' and 'contentfwk_Actor'. From 'contentfwk_Event', the role '113' has cardinality 0..*, and from 'contentfwk_Actor', the role '112' has cardinality 0..*.
+An association connects 'contentfwk_Event' and 'contentfwk_Actor'. From 'contentfwk_Event', the role '116' has cardinality 0..*, and from 'contentfwk_Actor', the role '115' has cardinality 0..*.
+An association connects 'contentfwk_Actor' and 'contentfwk_Location'. From 'contentfwk_Actor', the role '118' has cardinality 0..*, and from 'contentfwk_Location', the role '119' has cardinality 0..*.
+An association connects 'contentfwk_Actor' and 'contentfwk_Function'. From 'contentfwk_Actor', the role '121' has cardinality 0..*, and from 'contentfwk_Function', the role '122' has cardinality 0..*.
+An association connects 'contentfwk_Actor' and 'contentfwk_Actor'. From 'contentfwk_Actor', the role 'contentfwk_Actor123' has cardinality 0..*, and from 'contentfwk_Actor', the role 'contentfwk_Actor125' has cardinality 0..*.
+An association connects 'contentfwk_Role' and 'contentfwk_Actor'. From 'contentfwk_Role', the role '127' has cardinality 0..*, and from 'contentfwk_Actor', the role '128' has cardinality 0..*.
+An association connects 'contentfwk_Role' and 'contentfwk_Function'. From 'contentfwk_Role', the role '130' has cardinality 0..*, and from 'contentfwk_Function', the role '131' has cardinality 0..*.
+An association connects 'contentfwk_Role' and 'contentfwk_Role'. From 'contentfwk_Role', the role 'contentfwk_Role132' has cardinality 0..*, and from 'contentfwk_Role', the role 'contentfwk_Role134' has cardinality 0..*.
+An association connects 'contentfwk_Actor' and 'contentfwk_DataEntity'. From 'contentfwk_Actor', the role '137' has cardinality 0..*, and from 'contentfwk_DataEntity', the role '136' has cardinality 0..*.
+An association connects 'contentfwk_Actor' and 'contentfwk_DataEntity'. From 'contentfwk_Actor', the role '140' has cardinality 0..*, and from 'contentfwk_DataEntity', the role '139' has cardinality 0..*.
+An association connects 'contentfwk_DataEntity' and 'contentfwk_Service'. From 'contentfwk_DataEntity', the role '142' has cardinality 0..*, and from 'contentfwk_Service', the role '143' has cardinality 0..*.
+An association connects 'contentfwk_DataEntity' and 'contentfwk_Service'. From 'contentfwk_DataEntity', the role '145' has cardinality 0..*, and from 'contentfwk_Service', the role '146' has cardinality 0..*.
+An association connects 'contentfwk_LogicalDataComponent' and 'contentfwk_DataEntity'. From 'contentfwk_LogicalDataComponent', the role '149' has cardinality 0..*, and from 'contentfwk_DataEntity', the role '148' has cardinality 0..*.
+An association connects 'contentfwk_DataEntity' and 'contentfwk_LogicalApplicationComponent'. From 'contentfwk_DataEntity', the role '151' has cardinality 0..*, and from 'contentfwk_LogicalApplicationComponent', the role '152' has cardinality 0..*.
+An association connects 'contentfwk_DataEntity' and 'contentfwk_DataEntity'. From 'contentfwk_DataEntity', the role 'contentfwk_DataEntity155' has cardinality 0..*, and from 'contentfwk_DataEntity', the role 'contentfwk_DataEntity153' has cardinality 0..*.
+An association connects 'contentfwk_DataEntity' and 'contentfwk_DataEntity'. From 'contentfwk_DataEntity', the role 'contentfwk_DataEntity156' has cardinality 0..*, and from 'contentfwk_DataEntity', the role 'contentfwk_DataEntity158' has cardinality 0..*.
+An association connects 'contentfwk_LogicalApplicationComponent' and 'contentfwk_Service'. From 'contentfwk_LogicalApplicationComponent', the role '160' has cardinality 0..*, and from 'contentfwk_Service', the role '161' has cardinality 0..*.
+An association connects 'contentfwk_LogicalApplicationComponent' and 'contentfwk_DataEntity'. From 'contentfwk_LogicalApplicationComponent', the role '163' has cardinality 0..*, and from 'contentfwk_DataEntity', the role '164' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalApplicationComponent' and 'contentfwk_LogicalApplicationComponent'. From 'contentfwk_PhysicalApplicationComponent', the role '167' has cardinality 0..*, and from 'contentfwk_LogicalApplicationComponent', the role '166' has cardinality 0..*.
+An association connects 'contentfwk_LogicalApplicationComponent' and 'contentfwk_LogicalApplicationComponent'. From 'contentfwk_LogicalApplicationComponent', the role 'contentfwk_LogicalApplicationComponent168' has cardinality 0..*, and from 'contentfwk_LogicalApplicationComponent', the role 'contentfwk_LogicalApplicationComponent' has cardinality 0..*.
+An association connects 'contentfwk_LogicalApplicationComponent' and 'contentfwk_LogicalApplicationComponent'. From 'contentfwk_LogicalApplicationComponent', the role 'contentfwk_LogicalApplicationComponent172' has cardinality 0..*, and from 'contentfwk_LogicalApplicationComponent', the role 'contentfwk_LogicalApplicationComponent170' has cardinality 0..*.
+An association connects 'contentfwk_Actor' and 'contentfwk_Function'. From 'contentfwk_Actor', the role '175' has cardinality 0..*, and from 'contentfwk_Function', the role '174' has cardinality 0..*.
+An association connects 'contentfwk_Function' and 'contentfwk_OrganizationUnit'. From 'contentfwk_Function', the role '177' has cardinality 0..*, and from 'contentfwk_OrganizationUnit', the role '178' has cardinality 0..*.
+An association connects 'contentfwk_Function' and 'contentfwk_Service'. From 'contentfwk_Function', the role '180' has cardinality 0..*, and from 'contentfwk_Service', the role '181' has cardinality 0..*.
+An association connects 'contentfwk_Process' and 'contentfwk_Function'. From 'contentfwk_Process', the role '184' has cardinality 0..*, and from 'contentfwk_Function', the role '183' has cardinality 0..*.
+An association connects 'contentfwk_Function' and 'contentfwk_Process'. From 'contentfwk_Function', the role '186' has cardinality 0..*, and from 'contentfwk_Process', the role '187' has cardinality 0..*.
+An association connects 'contentfwk_Function' and 'contentfwk_Role'. From 'contentfwk_Function', the role '189' has cardinality 0..*, and from 'contentfwk_Role', the role '190' has cardinality 0..*.
+An association connects 'contentfwk_Function' and 'contentfwk_Actor'. From 'contentfwk_Function', the role '192' has cardinality 0..*, and from 'contentfwk_Actor', the role '193' has cardinality 0..*.
+An association connects 'contentfwk_Function' and 'contentfwk_Function'. From 'contentfwk_Function', the role 'contentfwk_Function196' has cardinality 0..*, and from 'contentfwk_Function', the role 'contentfwk_Function194' has cardinality 0..*.
+An association connects 'contentfwk_Function' and 'contentfwk_Function'. From 'contentfwk_Function', the role 'contentfwk_Function197' has cardinality 0..*, and from 'contentfwk_Function', the role 'contentfwk_Function199' has cardinality 0..*.
+An association connects 'contentfwk_BusinessService' and 'contentfwk_Objective'. From 'contentfwk_BusinessService', the role 'contentfwk_BusinessService201' has cardinality 0..*, and from 'contentfwk_Objective', the role 'contentfwk_Objective202' has cardinality 0..*.
+An association connects 'contentfwk_Function' and 'contentfwk_Process'. From 'contentfwk_Function', the role '205' has cardinality 0..*, and from 'contentfwk_Process', the role '204' has cardinality 0..*.
+An association connects 'contentfwk_Function' and 'contentfwk_Process'. From 'contentfwk_Function', the role '208' has cardinality 0..*, and from 'contentfwk_Process', the role '207' has cardinality 0..*.
+An association connects 'contentfwk_Process' and 'contentfwk_OrganizationUnit'. From 'contentfwk_Process', the role '210' has cardinality 0..*, and from 'contentfwk_OrganizationUnit', the role '211' has cardinality 0..*.
+An association connects 'contentfwk_Service' and 'contentfwk_Process'. From 'contentfwk_Service', the role '214' has cardinality 0..*, and from 'contentfwk_Process', the role '213' has cardinality 0..*.
+An association connects 'contentfwk_Service' and 'contentfwk_Process'. From 'contentfwk_Service', the role '217' has cardinality 0..*, and from 'contentfwk_Process', the role '216' has cardinality 0..*.
+An association connects 'contentfwk_Process' and 'contentfwk_Actor'. From 'contentfwk_Process', the role '219' has cardinality 0..*, and from 'contentfwk_Actor', the role '220' has cardinality 0..*.
+An association connects 'contentfwk_Process' and 'contentfwk_Control'. From 'contentfwk_Process', the role '222' has cardinality 0..*, and from 'contentfwk_Control', the role '223' has cardinality 0..*.
+An association connects 'contentfwk_Process' and 'contentfwk_Event'. From 'contentfwk_Process', the role '225' has cardinality 0..*, and from 'contentfwk_Event', the role '226' has cardinality 0..*.
+An association connects 'contentfwk_Process' and 'contentfwk_Event'. From 'contentfwk_Process', the role '228' has cardinality 0..*, and from 'contentfwk_Event', the role '229' has cardinality 0..*.
+An association connects 'contentfwk_Product' and 'contentfwk_Process'. From 'contentfwk_Product', the role '232' has cardinality 0..*, and from 'contentfwk_Process', the role '231' has cardinality 0..*.
+An association connects 'contentfwk_Process' and 'contentfwk_Process'. From 'contentfwk_Process', the role 'contentfwk_Process235' has cardinality 0..*, and from 'contentfwk_Process', the role 'contentfwk_Process233' has cardinality 0..*.
+An association connects 'contentfwk_Process' and 'contentfwk_Process'. From 'contentfwk_Process', the role '238' has cardinality 0..*, and from 'contentfwk_Process', the role '239' has cardinality 0..*.
+An association connects 'contentfwk_Process' and 'contentfwk_Process'. From 'contentfwk_Process', the role '242' has cardinality 0..*, and from 'contentfwk_Process', the role '243' has cardinality 0..*.
+An association connects 'contentfwk_LogicalTechnologyComponent' and 'contentfwk_PlatformService'. From 'contentfwk_LogicalTechnologyComponent', the role '246' has cardinality 0..*, and from 'contentfwk_PlatformService', the role '245' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalTechnologyComponent' and 'contentfwk_PhysicalApplicationComponent'. From 'contentfwk_PhysicalTechnologyComponent', the role 'contentfwk_PhysicalTechnologyComponent248' has cardinality 0..*, and from 'contentfwk_PhysicalApplicationComponent', the role 'contentfwk_PhysicalApplicationComponent' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalTechnologyComponent' and 'contentfwk_LogicalTechnologyComponent'. From 'contentfwk_PhysicalTechnologyComponent', the role '250' has cardinality 0..*, and from 'contentfwk_LogicalTechnologyComponent', the role '251' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalTechnologyComponent' and 'contentfwk_Location'. From 'contentfwk_PhysicalTechnologyComponent', the role '253' has cardinality 0..*, and from 'contentfwk_Location', the role '254' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalTechnologyComponent' and 'contentfwk_PhysicalTechnologyComponent'. From 'contentfwk_PhysicalTechnologyComponent', the role 'contentfwk_PhysicalTechnologyComponent257' has cardinality 0..*, and from 'contentfwk_PhysicalTechnologyComponent', the role 'contentfwk_PhysicalTechnologyComponent255' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalTechnologyComponent' and 'contentfwk_PhysicalTechnologyComponent'. From 'contentfwk_PhysicalTechnologyComponent', the role 'contentfwk_PhysicalTechnologyComponent258' has cardinality 0..*, and from 'contentfwk_PhysicalTechnologyComponent', the role 'contentfwk_PhysicalTechnologyComponent260' has cardinality 0..*.
+An association connects 'contentfwk_Product' and 'contentfwk_OrganizationUnit'. From 'contentfwk_Product', the role '262' has cardinality 0..*, and from 'contentfwk_OrganizationUnit', the role '263' has cardinality 0..*.
+An association connects 'contentfwk_Product' and 'contentfwk_Process'. From 'contentfwk_Product', the role '265' has cardinality 0..*, and from 'contentfwk_Process', the role '266' has cardinality 0..*.
+An association connects 'contentfwk_Objective' and 'contentfwk_Measure'. From 'contentfwk_Objective', the role '269' has cardinality 0..*, and from 'contentfwk_Measure', the role '268' has cardinality 0..*.
+An association connects 'contentfwk_Measure' and 'contentfwk_Service'. From 'contentfwk_Measure', the role '271' has cardinality 0..*, and from 'contentfwk_Service', the role '272' has cardinality 0..*.
+An association connects 'contentfwk_Measure' and 'contentfwk_Measure'. From 'contentfwk_Measure', the role 'contentfwk_Measure275' has cardinality 0..*, and from 'contentfwk_Measure', the role 'contentfwk_Measure273' has cardinality 0..*.
+An association connects 'contentfwk_Service' and 'contentfwk_ServiceQuality'. From 'contentfwk_Service', the role '278' has cardinality 0..*, and from 'contentfwk_ServiceQuality', the role '277' has cardinality 0..*.
+An association connects 'contentfwk_ServiceQuality' and 'contentfwk_Contract'. From 'contentfwk_ServiceQuality', the role '280' has cardinality 0..*, and from 'contentfwk_Contract', the role '281' has cardinality 0..*.
+An association connects 'contentfwk_Contract' and 'contentfwk_Service'. From 'contentfwk_Contract', the role '283' has cardinality 0..*, and from 'contentfwk_Service', the role '284' has cardinality 0..*.
+An association connects 'contentfwk_Contract' and 'contentfwk_ServiceQuality'. From 'contentfwk_Contract', the role '286' has cardinality 0..*, and from 'contentfwk_ServiceQuality', the role '287' has cardinality 0..*.
+An association connects 'contentfwk_Event' and 'contentfwk_Service'. From 'contentfwk_Event', the role '289' has cardinality 0..*, and from 'contentfwk_Service', the role '290' has cardinality 0..*.
+An association connects 'contentfwk_Process' and 'contentfwk_Event'. From 'contentfwk_Process', the role '293' has cardinality 0..*, and from 'contentfwk_Event', the role '292' has cardinality 0..*.
+An association connects 'contentfwk_Process' and 'contentfwk_Event'. From 'contentfwk_Process', the role '296' has cardinality 0..*, and from 'contentfwk_Event', the role '295' has cardinality 0..*.
+An association connects 'contentfwk_Event' and 'contentfwk_Actor'. From 'contentfwk_Event', the role '298' has cardinality 0..*, and from 'contentfwk_Actor', the role '299' has cardinality 0..*.
+An association connects 'contentfwk_Event' and 'contentfwk_Actor'. From 'contentfwk_Event', the role '301' has cardinality 0..*, and from 'contentfwk_Actor', the role '302' has cardinality 0..*.
+An association connects 'contentfwk_Control' and 'contentfwk_Process'. From 'contentfwk_Control', the role '304' has cardinality 0..*, and from 'contentfwk_Process', the role '305' has cardinality 0..*.
+An association connects 'contentfwk_Element' and 'contentfwk_Element'. From 'contentfwk_Element', the role '309' has cardinality 0..*, and from 'contentfwk_Element', the role '308' has cardinality 0..*.
+An association connects 'contentfwk_Element' and 'contentfwk_Element'. From 'contentfwk_Element', the role '312' has cardinality 0..*, and from 'contentfwk_Element', the role '313' has cardinality 0..*.
+An association connects 'contentfwk_Container' and 'contentfwk_Element'. From 'contentfwk_Container', the role 'contentfwk_Container315' has cardinality 0..*, and from 'contentfwk_Element', the role 'contentfwk_Element' has cardinality 0..*.
+An association connects 'contentfwk_Actor' and 'contentfwk_Location'. From 'contentfwk_Actor', the role '318' has cardinality 0..*, and from 'contentfwk_Location', the role '317' has cardinality 0..*.
+An association connects 'contentfwk_OrganizationUnit' and 'contentfwk_Location'. From 'contentfwk_OrganizationUnit', the role '321' has cardinality 0..*, and from 'contentfwk_Location', the role '320' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalDataComponent' and 'contentfwk_Location'. From 'contentfwk_PhysicalDataComponent', the role '324' has cardinality 0..*, and from 'contentfwk_Location', the role '323' has cardinality 0..*.
+An association connects 'contentfwk_Location' and 'contentfwk_PhysicalApplicationComponent'. From 'contentfwk_Location', the role '326' has cardinality 0..*, and from 'contentfwk_PhysicalApplicationComponent', the role '327' has cardinality 0..*.
+An association connects 'contentfwk_Location' and 'contentfwk_PhysicalTechnologyComponent'. From 'contentfwk_Location', the role '329' has cardinality 0..*, and from 'contentfwk_PhysicalTechnologyComponent', the role '330' has cardinality 0..*.
+An association connects 'contentfwk_Location' and 'contentfwk_Location'. From 'contentfwk_Location', the role 'contentfwk_Location333' has cardinality 0..*, and from 'contentfwk_Location', the role 'contentfwk_Location331' has cardinality 0..*.
+An association connects 'contentfwk_WorkPackage' and 'contentfwk_Capability'. From 'contentfwk_WorkPackage', the role '336' has cardinality 0..*, and from 'contentfwk_Capability', the role '335' has cardinality 0..*.
+An association connects 'contentfwk_WorkPackage' and 'contentfwk_Capability'. From 'contentfwk_WorkPackage', the role '338' has cardinality 0..*, and from 'contentfwk_Capability', the role '339' has cardinality 0..*.
+An association connects 'contentfwk_DataEntity' and 'contentfwk_LogicalDataComponent'. From 'contentfwk_DataEntity', the role '342' has cardinality 0..*, and from 'contentfwk_LogicalDataComponent', the role '341' has cardinality 0..*.
+An association connects 'contentfwk_LogicalDataComponent' and 'contentfwk_PhysicalDataComponent'. From 'contentfwk_LogicalDataComponent', the role '344' has cardinality 0..*, and from 'contentfwk_PhysicalDataComponent', the role '345' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalDataComponent' and 'contentfwk_LogicalDataComponent'. From 'contentfwk_PhysicalDataComponent', the role '347' has cardinality 0..*, and from 'contentfwk_LogicalDataComponent', the role '348' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalDataComponent' and 'contentfwk_Location'. From 'contentfwk_PhysicalDataComponent', the role '350' has cardinality 0..*, and from 'contentfwk_Location', the role '351' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalDataComponent' and 'contentfwk_PhysicalDataComponent'. From 'contentfwk_PhysicalDataComponent', the role 'contentfwk_PhysicalDataComponent354' has cardinality 0..*, and from 'contentfwk_PhysicalDataComponent', the role 'contentfwk_PhysicalDataComponent352' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalApplicationComponent' and 'contentfwk_PhysicalDataComponent'. From 'contentfwk_PhysicalApplicationComponent', the role 'contentfwk_PhysicalApplicationComponent357' has cardinality 0..*, and from 'contentfwk_PhysicalDataComponent', the role 'contentfwk_PhysicalDataComponent356' has cardinality 0..*.
+An association connects 'contentfwk_ApplicationArchitecture' and 'contentfwk_LogicalApplicationComponent'. From 'contentfwk_ApplicationArchitecture', the role 'contentfwk_ApplicationArchitecture' has cardinality 0..*, and from 'contentfwk_LogicalApplicationComponent', the role 'contentfwk_LogicalApplicationComponent359' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalApplicationComponent' and 'contentfwk_ApplicationArchitecture'. From 'contentfwk_PhysicalApplicationComponent', the role 'contentfwk_PhysicalApplicationComponent362' has cardinality 0..*, and from 'contentfwk_ApplicationArchitecture', the role 'contentfwk_ApplicationArchitecture361' has cardinality 0..*.
+An association connects 'contentfwk_InformationSystemService' and 'contentfwk_ApplicationArchitecture'. From 'contentfwk_InformationSystemService', the role 'contentfwk_InformationSystemService' has cardinality 0..*, and from 'contentfwk_ApplicationArchitecture', the role 'contentfwk_ApplicationArchitecture364' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalApplicationComponent' and 'contentfwk_LogicalApplicationComponent'. From 'contentfwk_PhysicalApplicationComponent', the role '366' has cardinality 0..*, and from 'contentfwk_LogicalApplicationComponent', the role '367' has cardinality 0..*.
+An association connects 'contentfwk_Location' and 'contentfwk_PhysicalApplicationComponent'. From 'contentfwk_Location', the role '370' has cardinality 0..*, and from 'contentfwk_PhysicalApplicationComponent', the role '369' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalApplicationComponent' and 'contentfwk_PhysicalApplicationComponent'. From 'contentfwk_PhysicalApplicationComponent', the role 'contentfwk_PhysicalApplicationComponent373' has cardinality 0..*, and from 'contentfwk_PhysicalApplicationComponent', the role 'contentfwk_PhysicalApplicationComponent371' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalDataComponent' and 'contentfwk_PhysicalApplicationComponent'. From 'contentfwk_PhysicalDataComponent', the role 'contentfwk_PhysicalDataComponent376' has cardinality 0..*, and from 'contentfwk_PhysicalApplicationComponent', the role 'contentfwk_PhysicalApplicationComponent375' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalApplicationComponent' and 'contentfwk_PhysicalTechnologyComponent'. From 'contentfwk_PhysicalApplicationComponent', the role 'contentfwk_PhysicalApplicationComponent378' has cardinality 0..*, and from 'contentfwk_PhysicalTechnologyComponent', the role 'contentfwk_PhysicalTechnologyComponent379' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalApplicationComponent' and 'contentfwk_PhysicalApplicationComponent'. From 'contentfwk_PhysicalApplicationComponent', the role 'contentfwk_PhysicalApplicationComponent382' has cardinality 0..*, and from 'contentfwk_PhysicalApplicationComponent', the role 'contentfwk_PhysicalApplicationComponent380' has cardinality 0..*.
+An association connects 'contentfwk_LogicalTechnologyComponent' and 'contentfwk_Service'. From 'contentfwk_LogicalTechnologyComponent', the role '384' has cardinality 0..*, and from 'contentfwk_Service', the role '385' has cardinality 0..*.
+An association connects 'contentfwk_PlatformService' and 'contentfwk_LogicalTechnologyComponent'. From 'contentfwk_PlatformService', the role '388' has cardinality 0..*, and from 'contentfwk_LogicalTechnologyComponent', the role '387' has cardinality 0..*.
+An association connects 'contentfwk_PhysicalTechnologyComponent' and 'contentfwk_LogicalTechnologyComponent'. From 'contentfwk_PhysicalTechnologyComponent', the role '391' has cardinality 0..*, and from 'contentfwk_LogicalTechnologyComponent', the role '390' has cardinality 0..*.
+An association connects 'contentfwk_LogicalTechnologyComponent' and 'contentfwk_LogicalTechnologyComponent'. From 'contentfwk_LogicalTechnologyComponent', the role 'contentfwk_LogicalTechnologyComponent392' has cardinality 0..*, and from 'contentfwk_LogicalTechnologyComponent', the role 'contentfwk_LogicalTechnologyComponent394' has cardinality 0..*.
+An association connects 'contentfwk_LogicalTechnologyComponent' and 'contentfwk_LogicalTechnologyComponent'. From 'contentfwk_LogicalTechnologyComponent', the role 'contentfwk_LogicalTechnologyComponent397' has cardinality 0..*, and from 'contentfwk_LogicalTechnologyComponent', the role 'contentfwk_LogicalTechnologyComponent395' has cardinality 0..*.
+An association connects 'contentfwk_StrategicArchitecture' and 'contentfwk_Capability'. From 'contentfwk_StrategicArchitecture', the role 'contentfwk_StrategicArchitecture' has cardinality 0..*, and from 'contentfwk_Capability', the role 'contentfwk_Capability' has cardinality 0..*.
+An association connects 'contentfwk_StrategicElement' and 'contentfwk_StrategicArchitecture'. From 'contentfwk_StrategicElement', the role 'contentfwk_StrategicElement' has cardinality 0..*, and from 'contentfwk_StrategicArchitecture', the role 'contentfwk_StrategicArchitecture400' has cardinality 0..*.
+An association connects 'contentfwk_Actor' and 'contentfwk_Service'. From 'contentfwk_Actor', the role 'contentfwk_Actor403' has cardinality 0..*, and from 'contentfwk_Service', the role 'contentfwk_Service402' has cardinality 0..*.
+An association connects 'contentfwk_Function' and 'contentfwk_Service'. From 'contentfwk_Function', the role '406' has cardinality 0..*, and from 'contentfwk_Service', the role '405' has cardinality 0..*.
+An association connects 'contentfwk_DataEntity' and 'contentfwk_Service'. From 'contentfwk_DataEntity', the role '409' has cardinality 0..*, and from 'contentfwk_Service', the role '408' has cardinality 0..*.
+An association connects 'contentfwk_Service' and 'contentfwk_DataEntity'. From 'contentfwk_Service', the role '411' has cardinality 0..*, and from 'contentfwk_DataEntity', the role '412' has cardinality 0..*.
+An association connects 'contentfwk_Contract' and 'contentfwk_Service'. From 'contentfwk_Contract', the role '415' has cardinality 0..*, and from 'contentfwk_Service', the role '414' has cardinality 0..*.
+An association connects 'contentfwk_Event' and 'contentfwk_Service'. From 'contentfwk_Event', the role '418' has cardinality 0..*, and from 'contentfwk_Service', the role '417' has cardinality 0..*.
+An association connects 'contentfwk_Service' and 'contentfwk_LogicalTechnologyComponent'. From 'contentfwk_Service', the role '420' has cardinality 0..*, and from 'contentfwk_LogicalTechnologyComponent', the role '421' has cardinality 0..*.
+An association connects 'contentfwk_LogicalApplicationComponent' and 'contentfwk_Service'. From 'contentfwk_LogicalApplicationComponent', the role '424' has cardinality 0..*, and from 'contentfwk_Service', the role '423' has cardinality 0..*.
+An association connects 'contentfwk_Service' and 'contentfwk_OrganizationUnit'. From 'contentfwk_Service', the role '426' has cardinality 0..*, and from 'contentfwk_OrganizationUnit', the role '427' has cardinality 0..*.
+An association connects 'contentfwk_Measure' and 'contentfwk_Service'. From 'contentfwk_Measure', the role '430' has cardinality 0..*, and from 'contentfwk_Service', the role '429' has cardinality 0..*.
+An association connects 'contentfwk_Service' and 'contentfwk_Process'. From 'contentfwk_Service', the role '432' has cardinality 0..*, and from 'contentfwk_Process', the role '433' has cardinality 0..*.
+An association connects 'contentfwk_Service' and 'contentfwk_Process'. From 'contentfwk_Service', the role '435' has cardinality 0..*, and from 'contentfwk_Process', the role '436' has cardinality 0..*.
+An association connects 'contentfwk_Service' and 'contentfwk_ServiceQuality'. From 'contentfwk_Service', the role '438' has cardinality 0..*, and from 'contentfwk_ServiceQuality', the role '439' has cardinality 0..*.
+An association connects 'contentfwk_Service' and 'contentfwk_Service'. From 'contentfwk_Service', the role 'contentfwk_Service440' has cardinality 0..*, and from 'contentfwk_Service', the role 'contentfwk_Service442' has cardinality 0..*.
+An association connects 'contentfwk_Service' and 'contentfwk_Service'. From 'contentfwk_Service', the role 'contentfwk_Service445' has cardinality 0..*, and from 'contentfwk_Service', the role 'contentfwk_Service443' has cardinality 0..*.

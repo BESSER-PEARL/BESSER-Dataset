@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gemoc/ale-lang-compiler/tests/org.eclipse.emf.ecoretools.ale.compiler.test/test-results-legacy/visitor/testenums/visitor-comp/testenums.ecore

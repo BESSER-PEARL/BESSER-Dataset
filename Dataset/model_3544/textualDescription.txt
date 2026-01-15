@@ -1,0 +1,30 @@
+The domain model 'diamond' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'diamond_C' represents an important domain concept.
+It does not declare any attributes.
+
+'diamond_D' represents an important domain concept.
+It does not declare any attributes.
+
+'diamond_B' represents an important domain concept.
+It does not declare any attributes.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'C' represents an important domain concept.
+It does not declare any attributes.
+
+'diamond_A' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'diamond_B' is a specialization of 'A'.
+The class 'diamond_C' is a specialization of 'A'.
+The class 'diamond_D' is a specialization of 'B'.
+The class 'diamond_D' is a specialization of 'C'.

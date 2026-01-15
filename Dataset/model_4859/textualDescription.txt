@@ -1,0 +1,46 @@
+The domain model 'units_pc' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'units_pc_UnitCarryingElement' represents an important domain concept.
+It has one attribute: 'unitSpecification', which is of type str.
+
+'units_pc_UnitPower' represents an important domain concept.
+It has one attribute: 'exponent', which is of type int.
+
+'units_pc_Pointcut' represents an important domain concept.
+It does not declare any attributes.
+
+'units_pc_UnitLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'units_pc_UnitMultiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'units_pc_BaseUnit' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'units_pc_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'units_pc_UnitRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'units_pc_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'units_pc_UnitMultiplication' is a specialization of 'Unit'.
+The class 'units_pc_UnitPower' is a specialization of 'Unit'.
+The class 'units_pc_UnitLiteral' is a specialization of 'Unit'.
+
+Relationships between classes are modeled using associations.
+An association connects 'units_pc_UnitCarryingElement' and 'units_pc_Unit'. From 'units_pc_UnitCarryingElement', the role 'units_pc_UnitCarryingElement' has cardinality 0..*, and from 'units_pc_Unit', the role 'units_pc_Unit' has cardinality 0..*.
+An association connects 'units_pc_BaseUnit' and 'units_pc_UnitRepository'. From 'units_pc_BaseUnit', the role 'units_pc_BaseUnit' has cardinality 0..*, and from 'units_pc_UnitRepository', the role 'units_pc_UnitRepository' has cardinality 0..*.
+An association connects 'units_pc_UnitMultiplication' and 'units_pc_Unit'. From 'units_pc_UnitMultiplication', the role 'units_pc_UnitMultiplication' has cardinality 0..*, and from 'units_pc_Unit', the role 'units_pc_Unit3' has cardinality 0..*.
+An association connects 'units_pc_Unit' and 'units_pc_UnitPower'. From 'units_pc_Unit', the role 'units_pc_Unit5' has cardinality 0..*, and from 'units_pc_UnitPower', the role 'units_pc_UnitPower' has cardinality 0..*.
+An association connects 'units_pc_UnitLiteral' and 'units_pc_BaseUnit'. From 'units_pc_UnitLiteral', the role 'units_pc_UnitLiteral' has cardinality 0..*, and from 'units_pc_BaseUnit', the role 'units_pc_BaseUnit7' has cardinality 0..*.
+An association connects 'units_pc_Pointcut' and 'units_pc_EObject'. From 'units_pc_Pointcut', the role 'units_pc_Pointcut' has cardinality 0..*, and from 'units_pc_EObject', the role 'units_pc_EObject' has cardinality 0..*.

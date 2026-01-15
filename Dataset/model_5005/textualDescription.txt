@@ -1,0 +1,183 @@
+The domain model 'component' describes the core structural elements and their relationships within the system.
+
+The model defines 38 main class(es).
+
+'component_Port' represents an important domain concept.
+It has the following attributes: 'subscriptionType', which is of type str; 'interfaceType', which is of type str; 'interfaces', which is of type str; 'allowAnyDataflowType', which is of type bool; 'dataType', which is of type str; 'dataflowType', which is of type str; 'allowAnyDataType', which is of type bool; 'nameL', which is of type str; 'allowAnyInterfaceType', which is of type bool; 'allowAnySubscriptionType', which is of type bool; 'originalPortString', which is of type str.
+
+'component_CorbaContextHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'component_ContextHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'component_CorbaConnectorProfile' represents an important domain concept.
+It has one attribute: 'rtcConnectorProfile', which is of type str.
+
+'component_ConnectorProfile' represents an important domain concept.
+It has the following attributes: 'inportBufferLength', which is of type str; 'connectorId', which is of type str; 'outportBufferReadTimeout', which is of type str; 'inportBufferReadTimeout', which is of type str; 'skipCountAvailable', which is of type bool; 'name', which is of type str; 'skipCount', which is of type str; 'dataType', which is of type str; 'interfaceType', which is of type str; 'pushRate', which is of type str; 'targetString', which is of type str; 'inportBufferWriteTimeout', which is of type str; 'isReverse', which is of type bool; 'outportBufferLength', which is of type str; 'sourceString', which is of type str; 'inportBufferFullPolicy', which is of type str; 'inportSerializerType', which is of type str; 'outportBufferFullPolicy', which is of type str; 'pushPolicy', which is of type str; 'inportBufferEmptyPolicy', which is of type str; 'pushPolicyAvailable', which is of type bool; 'subscriptionTypeAvailable', which is of type bool; 'pushIntervalAvailable', which is of type bool; 'outportBufferEmptyPolicy', which is of type str; 'timestampPolicy', which is of type str; 'outportBufferWriteTimeout', which is of type str; 'subscriptionType', which is of type str; 'outportSerializerType', which is of type str; 'dataflowType', which is of type str.
+
+'component_ConfigurationSet' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'ConnectorProfile' represents an important domain concept.
+It does not declare any attributes.
+
+'WrapperObject' represents an important domain concept.
+It does not declare any attributes.
+
+'component_CorbaLogObserver' represents an important domain concept.
+It does not declare any attributes.
+
+'component_CorbaStatusObserver' represents an important domain concept.
+It does not declare any attributes.
+
+'ContextHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'ConfigurationSet' represents an important domain concept.
+It does not declare any attributes.
+
+'component_CorbaExecutionContext' represents an important domain concept.
+It has one attribute: 'rtcExecutionContextProfile', which is of type str.
+
+'IAdaptable' represents an important domain concept.
+It does not declare any attributes.
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+'component_EIntegerObjectToPointMapEntry' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'component_PortSynchronizer' represents an important domain concept.
+It has one attribute: 'originalPortString', which is of type str.
+
+'component_CorbaObserver' represents an important domain concept.
+It has the following attributes: 'servant', which is of type str; 'serviceProfile', which is of type str.
+
+'CorbaObserver' represents an important domain concept.
+It does not declare any attributes.
+
+'component_Component' represents an important domain concept.
+It has the following attributes: 'componentId', which is of type str; 'typeNameL', which is of type str; 'pathId', which is of type str; 'deActivation', which is of type str; 'instanceNameL', which is of type str; 'startUp', which is of type str; 'outportDirection', which is of type str; 'categoryL', which is of type str; 'activation', which is of type str; 'initialize', which is of type str; 'compositeTypeL', which is of type str; 'required', which is of type bool; 'resetting', which is of type str; 'venderL', which is of type str; 'finalize', which is of type str; 'shutDown', which is of type str; 'versionL', which is of type str; 'descriptionL', which is of type str.
+
+'ExecutionContext' represents an important domain concept.
+It does not declare any attributes.
+
+'CorbaWrapperObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PortSynchronizer' represents an important domain concept.
+It does not declare any attributes.
+
+'component_IPropertyMap' represents an important domain concept.
+It does not declare any attributes.
+
+'component_ExecutionContext' represents an important domain concept.
+It has the following attributes: 'rateL', which is of type str; 'stateL', which is of type int; 'kindL', which is of type int.
+
+'component_CorbaConfigurationSet' represents an important domain concept.
+It has one attribute: 'sDOConfigurationSet', which is of type str.
+
+'component_OutPort' represents an important domain concept.
+It does not declare any attributes.
+
+'component_NameValue' represents an important domain concept.
+It has the following attributes: 'typeName', which is of type str; 'name', which is of type str; 'value', which is of type str.
+
+'component_PortConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'component_ComponentSpecification' represents an important domain concept.
+It has the following attributes: 'aliasName', which is of type str; 'specUnLoad', which is of type bool; 'rtcType', which is of type str.
+
+'component_SystemDiagram' represents an important domain concept.
+It has the following attributes: 'ConnectorProcessing', which is of type bool; 'kind', which is of type str; 'updateDate', which is of type str; 'creationDate', which is of type str; 'systemId', which is of type str.
+
+'component_CorbaPortSynchronizer' represents an important domain concept.
+It has one attribute: 'rTCPortProfile', which is of type str.
+
+'component_InPort' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'component_ServicePort' represents an important domain concept.
+It does not declare any attributes.
+
+'IPropertyMap' represents an important domain concept.
+It does not declare any attributes.
+
+'component_CorbaComponent' represents an important domain concept.
+It has the following attributes: 'rTCComponentProfile', which is of type str; 'sDOOrganization', which is of type str; 'rTCRTObjects', which is of type str; 'componentState', which is of type int; 'sDOConfiguration', which is of type str; 'rTCParticipationContexts', which is of type str; 'rTCExecutionContexts', which is of type str; 'ior', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SystemDiagramKind' defines the following possible values: 'ONLINE', 'OFFLINE'.
+
+The model also captures inheritance relationships between classes.
+The class 'component_SystemDiagram' is a specialization of 'ModelElement'.
+The class 'component_SystemDiagram' is a specialization of 'IPropertyMap'.
+The class 'component_Component' is a specialization of 'WrapperObject'.
+The class 'component_Component' is a specialization of 'IPropertyMap'.
+The class 'component_ComponentSpecification' is a specialization of 'Component'.
+The class 'component_ExecutionContext' is a specialization of 'WrapperObject'.
+The class 'component_ExecutionContext' is a specialization of 'IPropertyMap'.
+The class 'component_ContextHandler' is a specialization of 'IAdaptable'.
+The class 'component_ConfigurationSet' is a specialization of 'WrapperObject'.
+The class 'component_NameValue' is a specialization of 'WrapperObject'.
+The class 'component_Port' is a specialization of 'WrapperObject'.
+The class 'component_InPort' is a specialization of 'Port'.
+The class 'component_OutPort' is a specialization of 'Port'.
+The class 'component_ServicePort' is a specialization of 'Port'.
+The class 'component_PortSynchronizer' is a specialization of 'IPropertyMap'.
+The class 'component_PortConnector' is a specialization of 'WrapperObject'.
+The class 'component_ConnectorProfile' is a specialization of 'WrapperObject'.
+The class 'component_ConnectorProfile' is a specialization of 'IPropertyMap'.
+The class 'component_IPropertyMap' is a specialization of 'IAdaptable'.
+The class 'component_CorbaComponent' is a specialization of 'Component'.
+The class 'component_CorbaComponent' is a specialization of 'CorbaWrapperObject'.
+The class 'component_CorbaPortSynchronizer' is a specialization of 'CorbaWrapperObject'.
+The class 'component_CorbaPortSynchronizer' is a specialization of 'PortSynchronizer'.
+The class 'component_CorbaConnectorProfile' is a specialization of 'ConnectorProfile'.
+The class 'component_CorbaConfigurationSet' is a specialization of 'ConfigurationSet'.
+The class 'component_CorbaExecutionContext' is a specialization of 'ExecutionContext'.
+The class 'component_CorbaExecutionContext' is a specialization of 'CorbaWrapperObject'.
+The class 'component_CorbaContextHandler' is a specialization of 'ContextHandler'.
+The class 'component_CorbaObserver' is a specialization of 'IPropertyMap'.
+The class 'component_CorbaObserver' is a specialization of 'IAdaptable'.
+The class 'component_CorbaStatusObserver' is a specialization of 'CorbaObserver'.
+The class 'component_CorbaLogObserver' is a specialization of 'CorbaObserver'.
+
+Relationships between classes are modeled using associations.
+An association connects 'component_Component' and 'component_SystemDiagram'. From 'component_Component', the role 'component_Component' has cardinality 0..*, and from 'component_SystemDiagram', the role 'component_SystemDiagram' has cardinality 0..*.
+An association connects 'component_SystemDiagram' and 'component_SystemDiagram'. From 'component_SystemDiagram', the role 'component_SystemDiagram1' has cardinality 0..*, and from 'component_SystemDiagram', the role 'component_SystemDiagram3' has cardinality 0..*.
+An association connects 'component_Component' and 'component_SystemDiagram'. From 'component_Component', the role 'component_Component6' has cardinality 0..*, and from 'component_SystemDiagram', the role 'component_SystemDiagram5' has cardinality 0..*.
+An association connects 'component_Component' and 'component_ConfigurationSet'. From 'component_Component', the role 'component_Component8' has cardinality 0..*, and from 'component_ConfigurationSet', the role 'component_ConfigurationSet' has cardinality 0..*.
+An association connects 'component_ConfigurationSet' and 'component_Component'. From 'component_ConfigurationSet', the role 'component_ConfigurationSet11' has cardinality 0..*, and from 'component_Component', the role 'component_Component10' has cardinality 0..*.
+An association connects 'component_Port' and 'component_Component'. From 'component_Port', the role 'component_Port' has cardinality 0..*, and from 'component_Component', the role 'component_Component13' has cardinality 0..*.
+An association connects 'component_InPort' and 'component_Component'. From 'component_InPort', the role 'component_InPort' has cardinality 0..*, and from 'component_Component', the role 'component_Component15' has cardinality 0..*.
+An association connects 'component_Component' and 'component_OutPort'. From 'component_Component', the role 'component_Component17' has cardinality 0..*, and from 'component_OutPort', the role 'component_OutPort' has cardinality 0..*.
+An association connects 'component_Component' and 'component_ServicePort'. From 'component_Component', the role 'component_Component19' has cardinality 0..*, and from 'component_ServicePort', the role 'component_ServicePort' has cardinality 0..*.
+An association connects 'component_Component' and 'component_Component'. From 'component_Component', the role 'component_Component20' has cardinality 0..*, and from 'component_Component', the role 'component_Component22' has cardinality 0..*.
+An association connects 'component_Component' and 'component_ExecutionContext'. From 'component_Component', the role 'component_Component24' has cardinality 0..*, and from 'component_ExecutionContext', the role 'component_ExecutionContext' has cardinality 0..*.
+An association connects 'component_ExecutionContext' and 'component_Component'. From 'component_ExecutionContext', the role 'component_ExecutionContext27' has cardinality 0..*, and from 'component_Component', the role 'component_Component26' has cardinality 0..*.
+An association connects 'component_Component' and 'component_ExecutionContext'. From 'component_Component', the role 'component_Component29' has cardinality 0..*, and from 'component_ExecutionContext', the role 'component_ExecutionContext30' has cardinality 0..*.
+An association connects 'component_Component' and 'component_ContextHandler'. From 'component_Component', the role 'component_Component32' has cardinality 0..*, and from 'component_ContextHandler', the role 'component_ContextHandler' has cardinality 0..*.
+An association connects 'component_Component' and 'component_ContextHandler'. From 'component_Component', the role 'component_Component34' has cardinality 0..*, and from 'component_ContextHandler', the role 'component_ContextHandler35' has cardinality 0..*.
+An association connects 'component_SystemDiagram' and 'component_Component'. From 'component_SystemDiagram', the role 'component_SystemDiagram38' has cardinality 0..*, and from 'component_Component', the role 'component_Component37' has cardinality 0..*.
+An association connects 'component_ExecutionContext' and 'component_Component'. From 'component_ExecutionContext', the role 'component_ExecutionContext40' has cardinality 0..*, and from 'component_Component', the role 'component_Component41' has cardinality 0..*.
+An association connects 'component_Component' and 'component_ExecutionContext'. From 'component_Component', the role 'component_Component44' has cardinality 0..*, and from 'component_ExecutionContext', the role 'component_ExecutionContext43' has cardinality 0..*.
+An association connects 'component_NameValue' and 'component_ConfigurationSet'. From 'component_NameValue', the role 'component_NameValue' has cardinality 0..*, and from 'component_ConfigurationSet', the role 'component_ConfigurationSet46' has cardinality 0..*.
+An association connects 'component_PortSynchronizer' and 'component_Port'. From 'component_PortSynchronizer', the role 'component_PortSynchronizer' has cardinality 0..*, and from 'component_Port', the role 'component_Port48' has cardinality 0..*.
+An association connects 'component_Port' and 'component_ConnectorProfile'. From 'component_Port', the role 'component_Port50' has cardinality 0..*, and from 'component_ConnectorProfile', the role 'component_ConnectorProfile' has cardinality 0..*.
+An association connects 'component_ConnectorProfile' and 'component_PortConnector'. From 'component_ConnectorProfile', the role 'component_ConnectorProfile52' has cardinality 0..*, and from 'component_PortConnector', the role 'component_PortConnector' has cardinality 0..*.
+An association connects 'component_PortConnector' and 'component_EIntegerObjectToPointMapEntry'. From 'component_PortConnector', the role 'component_PortConnector54' has cardinality 0..*, and from 'component_EIntegerObjectToPointMapEntry', the role 'component_EIntegerObjectToPointMapEntry' has cardinality 0..*.
+An association connects 'component_Port' and 'component_PortConnector'. From 'component_Port', the role 'component_Port57' has cardinality 0..*, and from 'component_PortConnector', the role 'component_PortConnector56' has cardinality 0..*.
+An association connects 'component_Port' and 'component_PortConnector'. From 'component_Port', the role 'component_Port60' has cardinality 0..*, and from 'component_PortConnector', the role 'component_PortConnector59' has cardinality 0..*.
+An association connects 'component_CorbaStatusObserver' and 'component_CorbaComponent'. From 'component_CorbaStatusObserver', the role 'component_CorbaStatusObserver' has cardinality 0..*, and from 'component_CorbaComponent', the role 'component_CorbaComponent' has cardinality 0..*.
+An association connects 'component_CorbaComponent' and 'component_CorbaLogObserver'. From 'component_CorbaComponent', the role 'component_CorbaComponent63' has cardinality 0..*, and from 'component_CorbaLogObserver', the role 'component_CorbaLogObserver' has cardinality 0..*.

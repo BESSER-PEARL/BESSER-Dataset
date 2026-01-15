@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tetrabox/minitl/plugins/org.tetrabox.example.minitl.model/examples/output.ecore

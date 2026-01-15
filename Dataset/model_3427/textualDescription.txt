@@ -1,0 +1,12 @@
+The domain model 'people' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'people_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'people_Model' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'people_Model' and 'people_Person'. From 'people_Model', the role 'people_Model' has cardinality 0..*, and from 'people_Person', the role 'people_Person' has cardinality 0..*.

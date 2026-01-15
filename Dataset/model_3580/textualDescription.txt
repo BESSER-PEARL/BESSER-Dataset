@@ -1,0 +1,13 @@
+The domain model 'typeA' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'typeA_BlockA' represents an important domain concept.
+It does not declare any attributes.
+
+'typeA_PortA' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'typeA_BlockA' and 'typeA_PortA'. From 'typeA_BlockA', the role 'typeA_BlockA' has cardinality 0..*, and from 'typeA_PortA', the role 'typeA_PortA' has cardinality 0..*.
+An association connects 'typeA_BlockA' and 'typeA_PortA'. From 'typeA_BlockA', the role 'typeA_BlockA2' has cardinality 0..*, and from 'typeA_PortA', the role 'typeA_PortA3' has cardinality 0..*.

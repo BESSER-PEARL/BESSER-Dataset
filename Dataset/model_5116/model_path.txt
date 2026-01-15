@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/SINTEF-9012/diva/diva.model/model/DiVA.ecore

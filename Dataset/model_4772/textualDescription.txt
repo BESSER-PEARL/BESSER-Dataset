@@ -1,0 +1,61 @@
+The domain model 'types' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'types_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Property' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ServiceType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'types_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'types_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ClassType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ArrayType' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'types_UserType' represents an important domain concept.
+It does not declare any attributes.
+
+'UserType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'types_PrimitiveType' is a specialization of 'Type'.
+The class 'types_UserType' is a specialization of 'Type'.
+The class 'types_ClassType' is a specialization of 'UserType'.
+The class 'types_ArrayType' is a specialization of 'TypeReference'.
+The class 'types_ServiceType' is a specialization of 'UserType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'types_ClassType' and 'types_ClassType'. From 'types_ClassType', the role 'types_ClassType0' has cardinality 0..*, and from 'types_ClassType', the role 'types_ClassType' has cardinality 0..*.
+An association connects 'types_Property' and 'types_ClassType'. From 'types_Property', the role 'types_Property' has cardinality 0..*, and from 'types_ClassType', the role 'types_ClassType3' has cardinality 0..*.
+An association connects 'types_Property' and 'types_TypeReference'. From 'types_Property', the role 'types_Property5' has cardinality 0..*, and from 'types_TypeReference', the role 'types_TypeReference' has cardinality 0..*.
+An association connects 'types_Type' and 'types_TypeReference'. From 'types_Type', the role 'types_Type' has cardinality 0..*, and from 'types_TypeReference', the role 'types_TypeReference7' has cardinality 0..*.
+An association connects 'types_TypeReference' and 'types_TypeReference'. From 'types_TypeReference', the role 'types_TypeReference8' has cardinality 0..*, and from 'types_TypeReference', the role 'types_TypeReference10' has cardinality 0..*.
+An association connects 'types_ServiceType' and 'types_Property'. From 'types_ServiceType', the role 'types_ServiceType' has cardinality 0..*, and from 'types_Property', the role 'types_Property12' has cardinality 0..*.
+An association connects 'types_Operation' and 'types_ServiceType'. From 'types_Operation', the role 'types_Operation' has cardinality 0..*, and from 'types_ServiceType', the role 'types_ServiceType14' has cardinality 0..*.
+An association connects 'types_Operation' and 'types_TypeReference'. From 'types_Operation', the role 'types_Operation16' has cardinality 0..*, and from 'types_TypeReference', the role 'types_TypeReference17' has cardinality 0..*.
+An association connects 'types_Property' and 'types_Operation'. From 'types_Property', the role 'types_Property20' has cardinality 0..*, and from 'types_Operation', the role 'types_Operation19' has cardinality 0..*.
+An association connects 'types_Operation' and 'types_EObject'. From 'types_Operation', the role 'types_Operation22' has cardinality 0..*, and from 'types_EObject', the role 'types_EObject' has cardinality 0..*.

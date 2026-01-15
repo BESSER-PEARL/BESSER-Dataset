@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tdegueul/ale-xbase/tests/testdata/multi/model/multi.ecore

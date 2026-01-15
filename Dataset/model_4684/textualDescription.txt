@@ -1,0 +1,76 @@
+The domain model 'rules_core' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'rules_core_Min' represents an important domain concept.
+It does not declare any attributes.
+
+'rules_core_Lower' represents an important domain concept.
+It does not declare any attributes.
+
+'rules_core_If' represents an important domain concept.
+It does not declare any attributes.
+
+'rules_core_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'rules_core_Constant' represents an important domain concept.
+It has one attribute: 'integerValue', which is of type int.
+
+'rules_core_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'rules_core_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'rules_core_BinaryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'rules_core_Max' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'rules_core_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'rules_core_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'rules_core_Mult' represents an important domain concept.
+It does not declare any attributes.
+
+'rules_core_Filter' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'rules_core_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'rules_core_Equals' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'rules_core_BinaryExp' is a specialization of 'Expression'.
+The class 'rules_core_Plus' is a specialization of 'BinaryExp'.
+The class 'rules_core_Minus' is a specialization of 'BinaryExp'.
+The class 'rules_core_Mult' is a specialization of 'BinaryExp'.
+The class 'rules_core_Div' is a specialization of 'BinaryExp'.
+The class 'rules_core_Max' is a specialization of 'BinaryExp'.
+The class 'rules_core_Min' is a specialization of 'BinaryExp'.
+The class 'rules_core_Greater' is a specialization of 'BinaryExp'.
+The class 'rules_core_Lower' is a specialization of 'BinaryExp'.
+The class 'rules_core_Equals' is a specialization of 'BinaryExp'.
+The class 'rules_core_Constant' is a specialization of 'Expression'.
+The class 'rules_core_If' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rules_core_Expression' and 'rules_core_Rule'. From 'rules_core_Expression', the role 'rules_core_Expression' has cardinality 0..*, and from 'rules_core_Rule', the role 'rules_core_Rule' has cardinality 0..*.
+An association connects 'rules_core_BinaryExp' and 'rules_core_Expression'. From 'rules_core_BinaryExp', the role 'rules_core_BinaryExp' has cardinality 0..*, and from 'rules_core_Expression', the role 'rules_core_Expression2' has cardinality 0..*.
+An association connects 'rules_core_BinaryExp' and 'rules_core_Expression'. From 'rules_core_BinaryExp', the role 'rules_core_BinaryExp4' has cardinality 0..*, and from 'rules_core_Expression', the role 'rules_core_Expression5' has cardinality 0..*.
+An association connects 'rules_core_If' and 'rules_core_Expression'. From 'rules_core_If', the role 'rules_core_If' has cardinality 0..*, and from 'rules_core_Expression', the role 'rules_core_Expression7' has cardinality 0..*.
+An association connects 'rules_core_If' and 'rules_core_Expression'. From 'rules_core_If', the role 'rules_core_If9' has cardinality 0..*, and from 'rules_core_Expression', the role 'rules_core_Expression10' has cardinality 0..*.
+An association connects 'rules_core_If' and 'rules_core_Expression'. From 'rules_core_If', the role 'rules_core_If12' has cardinality 0..*, and from 'rules_core_Expression', the role 'rules_core_Expression13' has cardinality 0..*.

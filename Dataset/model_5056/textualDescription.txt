@@ -1,0 +1,65 @@
+The domain model 'cbpmni' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'cbpmni_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmni_ProcessModel' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmni_ProcessInst' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmni_SplitInst' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmni_BranchInst' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmni_OCLConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'FlowNodeInst' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmni_ConstraintInst' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmni_FlowNode' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmni_ActivityInst' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmni_EventInst' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmni_Branch' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmni_FlowNodeInst' represents an important domain concept.
+It has one attribute: 'status', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FlowNodeStatusType' defines the following possible values: 'INACTIVE', 'COMPLETED', 'RUNNING', 'ABORTED', 'READY'.
+
+The model also captures inheritance relationships between classes.
+The class 'cbpmni_ActivityInst' is a specialization of 'FlowNodeInst'.
+The class 'cbpmni_EventInst' is a specialization of 'FlowNodeInst'.
+The class 'cbpmni_SplitInst' is a specialization of 'FlowNodeInst'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cbpmni_ProcessModel' and 'cbpmni_ProcessInst'. From 'cbpmni_ProcessModel', the role 'cbpmni_ProcessModel' has cardinality 0..*, and from 'cbpmni_ProcessInst', the role 'cbpmni_ProcessInst' has cardinality 0..*.
+An association connects 'cbpmni_FlowNodeInst' and 'cbpmni_ProcessInst'. From 'cbpmni_FlowNodeInst', the role 'cbpmni_FlowNodeInst' has cardinality 0..*, and from 'cbpmni_ProcessInst', the role 'cbpmni_ProcessInst2' has cardinality 0..*.
+An association connects 'cbpmni_FlowNodeInst' and 'cbpmni_ProcessInst'. From 'cbpmni_FlowNodeInst', the role 'cbpmni_FlowNodeInst5' has cardinality 0..*, and from 'cbpmni_ProcessInst', the role 'cbpmni_ProcessInst4' has cardinality 0..*.
+An association connects 'cbpmni_FlowNode' and 'cbpmni_FlowNodeInst'. From 'cbpmni_FlowNode', the role 'cbpmni_FlowNode' has cardinality 0..*, and from 'cbpmni_FlowNodeInst', the role 'cbpmni_FlowNodeInst7' has cardinality 0..*.
+An association connects 'cbpmni_FlowNodeInst' and 'cbpmni_FlowNodeInst'. From 'cbpmni_FlowNodeInst', the role 'cbpmni_FlowNodeInst10' has cardinality 0..*, and from 'cbpmni_FlowNodeInst', the role 'cbpmni_FlowNodeInst8' has cardinality 0..*.
+An association connects 'cbpmni_ActivityInst' and 'cbpmni_ConstraintInst'. From 'cbpmni_ActivityInst', the role 'cbpmni_ActivityInst' has cardinality 0..*, and from 'cbpmni_ConstraintInst', the role 'cbpmni_ConstraintInst' has cardinality 0..*.
+An association connects 'cbpmni_ActivityInst' and 'cbpmni_ConstraintInst'. From 'cbpmni_ActivityInst', the role 'cbpmni_ActivityInst13' has cardinality 0..*, and from 'cbpmni_ConstraintInst', the role 'cbpmni_ConstraintInst14' has cardinality 0..*.
+An association connects 'cbpmni_EObject' and 'cbpmni_ActivityInst'. From 'cbpmni_EObject', the role 'cbpmni_EObject' has cardinality 0..*, and from 'cbpmni_ActivityInst', the role 'cbpmni_ActivityInst16' has cardinality 0..*.
+An association connects 'cbpmni_ActivityInst' and 'cbpmni_EObject'. From 'cbpmni_ActivityInst', the role 'cbpmni_ActivityInst18' has cardinality 0..*, and from 'cbpmni_EObject', the role 'cbpmni_EObject19' has cardinality 0..*.
+An association connects 'cbpmni_BranchInst' and 'cbpmni_SplitInst'. From 'cbpmni_BranchInst', the role 'cbpmni_BranchInst' has cardinality 0..*, and from 'cbpmni_SplitInst', the role 'cbpmni_SplitInst' has cardinality 0..*.
+An association connects 'cbpmni_Branch' and 'cbpmni_BranchInst'. From 'cbpmni_Branch', the role 'cbpmni_Branch' has cardinality 0..*, and from 'cbpmni_BranchInst', the role 'cbpmni_BranchInst22' has cardinality 0..*.
+An association connects 'cbpmni_EObject' and 'cbpmni_ConstraintInst'. From 'cbpmni_EObject', the role 'cbpmni_EObject25' has cardinality 0..*, and from 'cbpmni_ConstraintInst', the role 'cbpmni_ConstraintInst24' has cardinality 0..*.
+An association connects 'cbpmni_ConstraintInst' and 'cbpmni_OCLConstraint'. From 'cbpmni_ConstraintInst', the role 'cbpmni_ConstraintInst27' has cardinality 0..*, and from 'cbpmni_OCLConstraint', the role 'cbpmni_OCLConstraint' has cardinality 0..*.

@@ -1,0 +1,314 @@
+The domain model 'form' describes the core structural elements and their relationships within the system.
+
+The model defines 65 main class(es).
+
+'form_Group' represents an important domain concept.
+It has the following attributes: 'showBorder', which is of type bool; 'useIterator', which is of type bool.
+
+'form_ComboFormField' represents an important domain concept.
+It does not declare any attributes.
+
+'form_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'form_Info' represents an important domain concept.
+It does not declare any attributes.
+
+'form_MessageInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'form_HtmlWidget' represents an important domain concept.
+It does not declare any attributes.
+
+'form_WidgetLayoutInfo' represents an important domain concept.
+It has the following attributes: 'line', which is of type int; 'column', which is of type int; 'horizontalSpan', which is of type int; 'verticalSpan', which is of type int.
+
+'form_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'form_FormField' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'exampleMessagePosition', which is of type str.
+
+'form_SelectFormField' represents an important domain concept.
+It does not declare any attributes.
+
+'form_Document' represents an important domain concept.
+It does not declare any attributes.
+
+'form_DynamicTable' represents an important domain concept.
+It has the following attributes: 'limitMaxNumberOfColumn', which is of type bool; 'limitMaxNumberOfRow', which is of type bool; 'allowAddRemoveColumn', which is of type bool; 'limitMinNumberOfRow', which is of type bool; 'allowAddRemoveRow', which is of type bool; 'limitMinNumberOfColumn', which is of type bool.
+
+'form_ListFormField' represents an important domain concept.
+It has one attribute: 'maxHeigth', which is of type int.
+
+'form_TextInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'form_DurationFormField' represents an important domain concept.
+It has the following attributes: 'hour', which is of type str; 'day', which is of type str; 'min', which is of type str; 'sec', which is of type str.
+
+'form_SingleValuatedFormField' represents an important domain concept.
+It does not declare any attributes.
+
+'SingleValuatedFormField' represents an important domain concept.
+It does not declare any attributes.
+
+'form_MandatoryFieldsCustomization' represents an important domain concept.
+It does not declare any attributes.
+
+'form_RadioFormField' represents an important domain concept.
+It does not declare any attributes.
+
+'form_Duplicable' represents an important domain concept.
+It has the following attributes: 'limitMinNumberOfDuplication', which is of type bool; 'limitNumberOfDuplication', which is of type bool; 'duplicate', which is of type bool.
+
+'form_NextFormButton' represents an important domain concept.
+It does not declare any attributes.
+
+'form_ViewForm' represents an important domain concept.
+It does not declare any attributes.
+
+'form_MultipleValuatedFormField' represents an important domain concept.
+It does not declare any attributes.
+
+'form_CheckBoxMultipleFormField' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'form_ItemContainer' represents an important domain concept.
+It has one attribute: 'itemClass', which is of type str.
+
+'form_GroupIterator' represents an important domain concept.
+It has one attribute: 'className', which is of type str.
+
+'form_WidgetDependency' represents an important domain concept.
+It has the following attributes: 'triggerRefreshOnModification', which is of type bool; 'eventTypes', which is of type str.
+
+'form_Column' represents an important domain concept.
+It has the following attributes: 'width', which is of type str; 'number', which is of type int.
+
+'form_SubmitFormButton' represents an important domain concept.
+It does not declare any attributes.
+
+'ItemContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'form_Table' represents an important domain concept.
+It has the following attributes: 'usePagination', which is of type bool; 'selectionModeIsMultiple', which is of type bool; 'allowSelection', which is of type bool.
+
+'FormField' represents an important domain concept.
+It does not declare any attributes.
+
+'form_Line' represents an important domain concept.
+It has the following attributes: 'height', which is of type str; 'number', which is of type int.
+
+'form_Form' represents an important domain concept.
+It has the following attributes: 'allowHTMLInPageLabel', which is of type bool; 'version', which is of type str; 'showPageLabel', which is of type str; 'nColumn', which is of type int; 'nLine', which is of type int.
+
+'form_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'form_TableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'form_ImageWidget' represents an important domain concept.
+It has one attribute: 'isADocument', which is of type bool.
+
+'form_IFrameWidget' represents an important domain concept.
+It does not declare any attributes.
+
+'form_FileWidget' represents an important domain concept.
+It has the following attributes: 'updateDocument', which is of type bool; 'intialResourceList', which is of type str; 'initialResourcePath', which is of type str; 'outputDocumentName', which is of type str; 'downloadOnly', which is of type bool; 'downloadType', which is of type str; 'usePreview', which is of type bool; 'inputType', which is of type str.
+
+'AbstractTable' represents an important domain concept.
+It does not declare any attributes.
+
+'form_HiddenWidget' represents an important domain concept.
+It does not declare any attributes.
+
+'Info' represents an important domain concept.
+It does not declare any attributes.
+
+'Widget' represents an important domain concept.
+It does not declare any attributes.
+
+'form_Validable' represents an important domain concept.
+It has the following attributes: 'useDefaultValidator', which is of type str; 'below', which is of type bool.
+
+'form_FormButton' represents an important domain concept.
+It has one attribute: 'labelBehavior', which is of type str.
+
+'form_SuggestBox' represents an important domain concept.
+It has the following attributes: 'useMaxItems', which is of type bool; 'maxItems', which is of type int; 'asynchronous', which is of type bool; 'delay', which is of type int.
+
+'Form' represents an important domain concept.
+It does not declare any attributes.
+
+'FormButton' represents an important domain concept.
+It does not declare any attributes.
+
+'form_DateFormField' represents an important domain concept.
+It has the following attributes: 'initialFormat', which is of type str; 'displayFormat', which is of type str.
+
+'form_TextAreaFormField' represents an important domain concept.
+It has the following attributes: 'maxLength', which is of type int; 'maxHeigth', which is of type int.
+
+'form_CSSCustomizable' represents an important domain concept.
+It does not declare any attributes.
+
+'CSSCustomizable' represents an important domain concept.
+It does not declare any attributes.
+
+'MultipleValuatedFormField' represents an important domain concept.
+It does not declare any attributes.
+
+'Duplicable' represents an important domain concept.
+It does not declare any attributes.
+
+'form_TextFormField' represents an important domain concept.
+It has one attribute: 'maxLength', which is of type int.
+
+'form_CheckBoxSingleFormField' represents an important domain concept.
+It does not declare any attributes.
+
+'form_Validator' represents an important domain concept.
+It has the following attributes: 'htmlClass', which is of type str; 'validatorClass', which is of type str; 'name', which is of type str; 'belowField', which is of type bool.
+
+'form_AbstractTable' represents an important domain concept.
+It has the following attributes: 'LastRowIsHeader', which is of type bool; 'rightColumnIsHeader', which is of type bool; 'leftColumnIsHeader', which is of type bool; 'initializedUsingCells', which is of type bool; 'firstRowIsHeader', which is of type bool; 'useVerticalHeader', which is of type bool; 'useHorizontalHeader', which is of type bool.
+
+'form_Widget' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'allowHTMLForDisplayLabel', which is of type bool; 'showDisplayLabel', which is of type str; 'mandatory', which is of type bool; 'returnTypeModifier', which is of type str; 'displayDependentWidgetOnlyOnEventTriggered', which is of type bool; 'readOnly', which is of type bool; 'labelPosition', which is of type str; 'injectWidgetCondition', which is of type bool; 'realHtmlAttributes', which is of type str.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'form_PasswordFormField' represents an important domain concept.
+It has one attribute: 'maxLength', which is of type int.
+
+'Validable' represents an important domain concept.
+It does not declare any attributes.
+
+'form_PreviousFormButton' represents an important domain concept.
+It does not declare any attributes.
+
+'form_RichTextAreaFormField' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FileWidgetInputType' defines the following possible values: 'Document', 'Resource', 'URL'.
+The enumeration 'LabelPosition' defines the following possible values: 'Left', 'Up', 'Down', 'Right'.
+The enumeration 'FileWidgetDownloadType' defines the following possible values: 'URL', 'Both', 'Browse'.
+The enumeration 'EventDependencyType' defines the following possible values: 'onChange', 'onValueChange', 'onClick', 'onBlur'.
+
+The model also captures inheritance relationships between classes.
+The class 'form_Form' is a specialization of 'ConnectableElement'.
+The class 'form_Form' is a specialization of 'Validable'.
+The class 'form_ViewForm' is a specialization of 'Form'.
+The class 'form_Widget' is a specialization of 'Element'.
+The class 'form_Widget' is a specialization of 'CSSCustomizable'.
+The class 'form_Group' is a specialization of 'Widget'.
+The class 'form_Group' is a specialization of 'Duplicable'.
+The class 'form_FormField' is a specialization of 'Widget'.
+The class 'form_FormField' is a specialization of 'Validable'.
+The class 'form_FormField' is a specialization of 'Duplicable'.
+The class 'form_MultipleValuatedFormField' is a specialization of 'FormField'.
+The class 'form_SingleValuatedFormField' is a specialization of 'FormField'.
+The class 'form_CheckBoxMultipleFormField' is a specialization of 'MultipleValuatedFormField'.
+The class 'form_CheckBoxMultipleFormField' is a specialization of 'ItemContainer'.
+The class 'form_ComboFormField' is a specialization of 'MultipleValuatedFormField'.
+The class 'form_DateFormField' is a specialization of 'SingleValuatedFormField'.
+The class 'form_ListFormField' is a specialization of 'MultipleValuatedFormField'.
+The class 'form_PasswordFormField' is a specialization of 'SingleValuatedFormField'.
+The class 'form_RadioFormField' is a specialization of 'MultipleValuatedFormField'.
+The class 'form_RadioFormField' is a specialization of 'ItemContainer'.
+The class 'form_SelectFormField' is a specialization of 'MultipleValuatedFormField'.
+The class 'form_TextFormField' is a specialization of 'SingleValuatedFormField'.
+The class 'form_TextAreaFormField' is a specialization of 'SingleValuatedFormField'.
+The class 'form_RichTextAreaFormField' is a specialization of 'SingleValuatedFormField'.
+The class 'form_FormButton' is a specialization of 'Widget'.
+The class 'form_SubmitFormButton' is a specialization of 'FormButton'.
+The class 'form_SubmitFormButton' is a specialization of 'ConnectableElement'.
+The class 'form_PreviousFormButton' is a specialization of 'FormButton'.
+The class 'form_NextFormButton' is a specialization of 'FormButton'.
+The class 'form_Info' is a specialization of 'Widget'.
+The class 'form_TextInfo' is a specialization of 'Info'.
+The class 'form_TextInfo' is a specialization of 'Duplicable'.
+The class 'form_MessageInfo' is a specialization of 'Info'.
+The class 'form_CheckBoxSingleFormField' is a specialization of 'SingleValuatedFormField'.
+The class 'form_FileWidget' is a specialization of 'SingleValuatedFormField'.
+The class 'form_FileWidget' is a specialization of 'Duplicable'.
+The class 'form_ImageWidget' is a specialization of 'Widget'.
+The class 'form_ImageWidget' is a specialization of 'Duplicable'.
+The class 'form_HiddenWidget' is a specialization of 'SingleValuatedFormField'.
+The class 'form_HiddenWidget' is a specialization of 'Duplicable'.
+The class 'form_DurationFormField' is a specialization of 'SingleValuatedFormField'.
+The class 'form_DurationFormField' is a specialization of 'ItemContainer'.
+The class 'form_AbstractTable' is a specialization of 'Widget'.
+The class 'form_AbstractTable' is a specialization of 'Duplicable'.
+The class 'form_Table' is a specialization of 'AbstractTable'.
+The class 'form_Table' is a specialization of 'MultipleValuatedFormField'.
+The class 'form_DynamicTable' is a specialization of 'AbstractTable'.
+The class 'form_DynamicTable' is a specialization of 'SingleValuatedFormField'.
+The class 'form_IFrameWidget' is a specialization of 'Info'.
+The class 'form_MandatoryFieldsCustomization' is a specialization of 'CSSCustomizable'.
+The class 'form_HtmlWidget' is a specialization of 'Info'.
+The class 'form_SuggestBox' is a specialization of 'MultipleValuatedFormField'.
+The class 'form_GroupIterator' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'form_Widget' and 'form_WidgetDependency'. From 'form_Widget', the role 'form_Widget' has cardinality 0..*, and from 'form_WidgetDependency', the role 'form_WidgetDependency' has cardinality 0..*.
+An association connects 'form_Validator' and 'form_Expression'. From 'form_Validator', the role 'form_Validator' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression' has cardinality 0..*.
+An association connects 'form_Expression' and 'form_Validator'. From 'form_Expression', the role 'form_Expression4' has cardinality 0..*, and from 'form_Validator', the role 'form_Validator3' has cardinality 0..*.
+An association connects 'form_Validable' and 'form_Validator'. From 'form_Validable', the role 'form_Validable' has cardinality 0..*, and from 'form_Validator', the role 'form_Validator6' has cardinality 0..*.
+An association connects 'form_Form' and 'form_EStringToStringMapEntry'. From 'form_Form', the role 'form_Form' has cardinality 0..*, and from 'form_EStringToStringMapEntry', the role 'form_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'form_Form' and 'form_Column'. From 'form_Form', the role 'form_Form9' has cardinality 0..*, and from 'form_Column', the role 'form_Column' has cardinality 0..*.
+An association connects 'form_Form' and 'form_Line'. From 'form_Form', the role 'form_Form11' has cardinality 0..*, and from 'form_Line', the role 'form_Line' has cardinality 0..*.
+An association connects 'form_Widget' and 'form_Form'. From 'form_Widget', the role 'form_Widget14' has cardinality 0..*, and from 'form_Form', the role 'form_Form13' has cardinality 0..*.
+An association connects 'form_Expression' and 'form_Form'. From 'form_Expression', the role 'form_Expression17' has cardinality 0..*, and from 'form_Form', the role 'form_Form16' has cardinality 0..*.
+An association connects 'form_Form' and 'form_Operation'. From 'form_Form', the role 'form_Form19' has cardinality 0..*, and from 'form_Operation', the role 'form_Operation' has cardinality 0..*.
+An association connects 'form_Duplicable' and 'form_Expression'. From 'form_Duplicable', the role 'form_Duplicable' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression21' has cardinality 0..*.
+An association connects 'form_Duplicable' and 'form_Expression'. From 'form_Duplicable', the role 'form_Duplicable23' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression24' has cardinality 0..*.
+An association connects 'form_Expression' and 'form_Duplicable'. From 'form_Expression', the role 'form_Expression27' has cardinality 0..*, and from 'form_Duplicable', the role 'form_Duplicable26' has cardinality 0..*.
+An association connects 'form_Duplicable' and 'form_Expression'. From 'form_Duplicable', the role 'form_Duplicable29' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression30' has cardinality 0..*.
+An association connects 'form_Duplicable' and 'form_Expression'. From 'form_Duplicable', the role 'form_Duplicable32' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression33' has cardinality 0..*.
+An association connects 'form_Duplicable' and 'form_Expression'. From 'form_Duplicable', the role 'form_Duplicable35' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression36' has cardinality 0..*.
+An association connects 'form_EStringToStringMapEntry' and 'form_CSSCustomizable'. From 'form_EStringToStringMapEntry', the role 'form_EStringToStringMapEntry38' has cardinality 0..*, and from 'form_CSSCustomizable', the role 'form_CSSCustomizable' has cardinality 0..*.
+An association connects 'form_WidgetLayoutInfo' and 'form_Widget'. From 'form_WidgetLayoutInfo', the role 'form_WidgetLayoutInfo' has cardinality 0..*, and from 'form_Widget', the role 'form_Widget40' has cardinality 0..*.
+An association connects 'form_WidgetDependency' and 'form_Widget'. From 'form_WidgetDependency', the role 'form_WidgetDependency43' has cardinality 0..*, and from 'form_Widget', the role 'form_Widget42' has cardinality 0..*.
+An association connects 'form_WidgetDependency' and 'form_Widget'. From 'form_WidgetDependency', the role 'form_WidgetDependency46' has cardinality 0..*, and from 'form_Widget', the role 'form_Widget45' has cardinality 0..*.
+An association connects 'form_Widget' and 'form_Expression'. From 'form_Widget', the role 'form_Widget48' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression49' has cardinality 0..*.
+An association connects 'form_Expression' and 'form_Widget'. From 'form_Expression', the role 'form_Expression52' has cardinality 0..*, and from 'form_Widget', the role 'form_Widget51' has cardinality 0..*.
+An association connects 'form_Expression' and 'form_Widget'. From 'form_Expression', the role 'form_Expression55' has cardinality 0..*, and from 'form_Widget', the role 'form_Widget54' has cardinality 0..*.
+An association connects 'form_Expression' and 'form_Widget'. From 'form_Expression', the role 'form_Expression58' has cardinality 0..*, and from 'form_Widget', the role 'form_Widget57' has cardinality 0..*.
+An association connects 'form_Expression' and 'form_Widget'. From 'form_Expression', the role 'form_Expression61' has cardinality 0..*, and from 'form_Widget', the role 'form_Widget60' has cardinality 0..*.
+An association connects 'form_Expression' and 'form_Widget'. From 'form_Expression', the role 'form_Expression64' has cardinality 0..*, and from 'form_Widget', the role 'form_Widget63' has cardinality 0..*.
+An association connects 'form_Widget' and 'form_Expression'. From 'form_Widget', the role 'form_Widget66' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression67' has cardinality 0..*.
+An association connects 'form_Widget' and 'form_Expression'. From 'form_Widget', the role 'form_Widget69' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression70' has cardinality 0..*.
+An association connects 'form_Operation' and 'form_Widget'. From 'form_Operation', the role 'form_Operation73' has cardinality 0..*, and from 'form_Widget', the role 'form_Widget72' has cardinality 0..*.
+An association connects 'form_Widget' and 'form_Group'. From 'form_Widget', the role 'form_Widget75' has cardinality 0..*, and from 'form_Group', the role 'form_Group' has cardinality 0..*.
+An association connects 'form_Column' and 'form_Group'. From 'form_Column', the role 'form_Column78' has cardinality 0..*, and from 'form_Group', the role 'form_Group77' has cardinality 0..*.
+An association connects 'form_Group' and 'form_Line'. From 'form_Group', the role 'form_Group80' has cardinality 0..*, and from 'form_Line', the role 'form_Line81' has cardinality 0..*.
+An association connects 'form_Group' and 'form_GroupIterator'. From 'form_Group', the role 'form_Group83' has cardinality 0..*, and from 'form_GroupIterator', the role 'form_GroupIterator' has cardinality 0..*.
+An association connects 'form_Expression' and 'form_FormField'. From 'form_Expression', the role 'form_Expression85' has cardinality 0..*, and from 'form_FormField', the role 'form_FormField' has cardinality 0..*.
+An association connects 'form_MultipleValuatedFormField' and 'form_Expression'. From 'form_MultipleValuatedFormField', the role 'form_MultipleValuatedFormField' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression87' has cardinality 0..*.
+An association connects 'form_MultipleValuatedFormField' and 'form_Expression'. From 'form_MultipleValuatedFormField', the role 'form_MultipleValuatedFormField89' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression90' has cardinality 0..*.
+An association connects 'form_SubmitFormButton' and 'form_Operation'. From 'form_SubmitFormButton', the role 'form_SubmitFormButton' has cardinality 0..*, and from 'form_Operation', the role 'form_Operation92' has cardinality 0..*.
+An association connects 'form_Document' and 'form_FileWidget'. From 'form_Document', the role 'form_Document' has cardinality 0..*, and from 'form_FileWidget', the role 'form_FileWidget' has cardinality 0..*.
+An association connects 'form_FileWidget' and 'form_Expression'. From 'form_FileWidget', the role 'form_FileWidget95' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression96' has cardinality 0..*.
+An association connects 'form_Document' and 'form_ImageWidget'. From 'form_Document', the role 'form_Document98' has cardinality 0..*, and from 'form_ImageWidget', the role 'form_ImageWidget' has cardinality 0..*.
+An association connects 'form_ImageWidget' and 'form_Expression'. From 'form_ImageWidget', the role 'form_ImageWidget100' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression101' has cardinality 0..*.
+An association connects 'form_Expression' and 'form_AbstractTable'. From 'form_Expression', the role 'form_Expression103' has cardinality 0..*, and from 'form_AbstractTable', the role 'form_AbstractTable' has cardinality 0..*.
+An association connects 'form_AbstractTable' and 'form_Expression'. From 'form_AbstractTable', the role 'form_AbstractTable105' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression106' has cardinality 0..*.
+An association connects 'form_TableExpression' and 'form_AbstractTable'. From 'form_TableExpression', the role 'form_TableExpression' has cardinality 0..*, and from 'form_AbstractTable', the role 'form_AbstractTable108' has cardinality 0..*.
+An association connects 'form_Table' and 'form_Expression'. From 'form_Table', the role 'form_Table' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression110' has cardinality 0..*.
+An association connects 'form_Table' and 'form_Expression'. From 'form_Table', the role 'form_Table112' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression113' has cardinality 0..*.
+An association connects 'form_Table' and 'form_Expression'. From 'form_Table', the role 'form_Table115' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression116' has cardinality 0..*.
+An association connects 'form_Expression' and 'form_DynamicTable'. From 'form_Expression', the role 'form_Expression118' has cardinality 0..*, and from 'form_DynamicTable', the role 'form_DynamicTable' has cardinality 0..*.
+An association connects 'form_DynamicTable' and 'form_Expression'. From 'form_DynamicTable', the role 'form_DynamicTable120' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression121' has cardinality 0..*.
+An association connects 'form_Expression' and 'form_DynamicTable'. From 'form_Expression', the role 'form_Expression124' has cardinality 0..*, and from 'form_DynamicTable', the role 'form_DynamicTable123' has cardinality 0..*.
+An association connects 'form_DynamicTable' and 'form_Expression'. From 'form_DynamicTable', the role 'form_DynamicTable126' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression127' has cardinality 0..*.
+An association connects 'form_MandatoryFieldsCustomization' and 'form_Expression'. From 'form_MandatoryFieldsCustomization', the role 'form_MandatoryFieldsCustomization' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression129' has cardinality 0..*.
+An association connects 'form_MandatoryFieldsCustomization' and 'form_Expression'. From 'form_MandatoryFieldsCustomization', the role 'form_MandatoryFieldsCustomization131' has cardinality 0..*, and from 'form_Expression', the role 'form_Expression132' has cardinality 0..*.

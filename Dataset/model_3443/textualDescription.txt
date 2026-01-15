@@ -1,0 +1,21 @@
+The domain model 'skol' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'skol_School' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'skol_Student' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'skol_Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+'skol_Classroom' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'skol_Classroom' and 'skol_Student'. From 'skol_Classroom', the role 'skol_Classroom' has cardinality 0..*, and from 'skol_Student', the role 'skol_Student' has cardinality 0..*.
+An association connects 'skol_Diagram' and 'skol_School'. From 'skol_Diagram', the role 'skol_Diagram' has cardinality 0..*, and from 'skol_School', the role 'skol_School' has cardinality 0..*.
+An association connects 'skol_School' and 'skol_Classroom'. From 'skol_School', the role 'skol_School3' has cardinality 0..*, and from 'skol_Classroom', the role 'skol_Classroom4' has cardinality 0..*.
+An association connects 'skol_Student' and 'skol_Student'. From 'skol_Student', the role 'skol_Student7' has cardinality 0..*, and from 'skol_Student', the role 'skol_Student5' has cardinality 0..*.

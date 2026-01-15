@@ -1,0 +1,305 @@
+The domain model 'diva' describes the core structural elements and their relationships within the system.
+
+The model defines 66 main class(es).
+
+'diva_PropertyLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'diva_EnumVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'NaryTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_Property' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'diva_PriorityRule' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_Configuration' represents an important domain concept.
+It has one attribute: 'verdict', which is of type str.
+
+'VariableTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'Term' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_PropertyPriority' represents an important domain concept.
+It has one attribute: 'priority', which is of type str.
+
+'diva_ContextModel' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_NotTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_BooleanTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_visitors_TopDownVisitor' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_NaryTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_Priority' represents an important domain concept.
+It has one attribute: 'priority', which is of type int.
+
+'diva_ScoredElement' represents an important domain concept.
+It has one attribute: 'totalScore', which is of type int.
+
+'diva_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_VariableTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_AspectModel' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_PropertyValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'VariableValue' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_OrTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_BoolVariableValue' represents an important domain concept.
+It has one attribute: 'bool', which is of type bool.
+
+'diva_Dimension' represents an important domain concept.
+It has the following attributes: 'upper', which is of type str; 'lower', which is of type str.
+
+'diva_Score' represents an important domain concept.
+It has one attribute: 'score', which is of type int.
+
+'diva_ConfigurationModel' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_VariantExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_ModelContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_VariableValue' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_Context' represents an important domain concept.
+It has one attribute: 'verdict', which is of type str.
+
+'diva_BooleanVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_Variant' represents an important domain concept.
+It has one attribute: 'weaveLevel', which is of type str.
+
+'diva_NamedElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'diva_EnumTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'DiVAModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_DiVAModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_SimulationModel' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_VariabilityModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Visitable' represents an important domain concept.
+It does not declare any attributes.
+
+'ScoredElement' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_Invariant' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_ContextExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_Term' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_visitors_Visitor' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_MultiplicityConstraint' represents an important domain concept.
+It has the following attributes: 'lower', which is of type str; 'upper', which is of type str.
+
+'diva_Model' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'diva_Annotation' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'diva_VariantTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_EnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_ConfigVariant' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_visitors_Visitable' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_Scenario' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_Expression' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'diva_AndTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_BaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_EnumVariableValue' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'Model' represents an important domain concept.
+It does not declare any attributes.
+
+'diva_SuitableConfiguration' represents an important domain concept.
+It has one attribute: 'score', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Verdict' defines the following possible values: 'none', 'pass', 'fail'.
+
+The model also captures inheritance relationships between classes.
+The class 'diva_VariabilityModel' is a specialization of 'ModelContainer'.
+The class 'diva_Invariant' is a specialization of 'Constraint'.
+The class 'diva_Variable' is a specialization of 'NamedElement'.
+The class 'diva_Model' is a specialization of 'DiVAModelElement'.
+The class 'diva_BaseModel' is a specialization of 'Model'.
+The class 'diva_AspectModel' is a specialization of 'Model'.
+The class 'diva_EnumVariable' is a specialization of 'Variable'.
+The class 'diva_BooleanVariable' is a specialization of 'Variable'.
+The class 'diva_Term' is a specialization of 'DiVAModelElement'.
+The class 'diva_AndTerm' is a specialization of 'NaryTerm'.
+The class 'diva_OrTerm' is a specialization of 'NaryTerm'.
+The class 'diva_NotTerm' is a specialization of 'Term'.
+The class 'diva_NaryTerm' is a specialization of 'Term'.
+The class 'diva_VariantTerm' is a specialization of 'Term'.
+The class 'diva_VariableTerm' is a specialization of 'Term'.
+The class 'diva_EnumTerm' is a specialization of 'VariableTerm'.
+The class 'diva_BooleanTerm' is a specialization of 'VariableTerm'.
+The class 'diva_Rule' is a specialization of 'NamedElement'.
+The class 'diva_EnumLiteral' is a specialization of 'NamedElement'.
+The class 'diva_NamedElement' is a specialization of 'DiVAModelElement'.
+The class 'diva_Constraint' is a specialization of 'NamedElement'.
+The class 'diva_Variant' is a specialization of 'NamedElement'.
+The class 'diva_Variant' is a specialization of 'ModelContainer'.
+The class 'diva_Dimension' is a specialization of 'NamedElement'.
+The class 'diva_Expression' is a specialization of 'DiVAModelElement'.
+The class 'diva_ContextExpression' is a specialization of 'Expression'.
+The class 'diva_VariantExpression' is a specialization of 'Expression'.
+The class 'diva_PriorityRule' is a specialization of 'Rule'.
+The class 'diva_Property' is a specialization of 'NamedElement'.
+The class 'diva_PropertyLiteral' is a specialization of 'NamedElement'.
+The class 'diva_PropertyValue' is a specialization of 'DiVAModelElement'.
+The class 'diva_PropertyPriority' is a specialization of 'DiVAModelElement'.
+The class 'diva_MultiplicityConstraint' is a specialization of 'Constraint'.
+The class 'diva_Annotation' is a specialization of 'Visitable'.
+The class 'diva_DiVAModelElement' is a specialization of 'Visitable'.
+The class 'diva_SimulationModel' is a specialization of 'DiVAModelElement'.
+The class 'diva_Context' is a specialization of 'NamedElement'.
+The class 'diva_Configuration' is a specialization of 'ScoredElement'.
+The class 'diva_ConfigVariant' is a specialization of 'ScoredElement'.
+The class 'diva_Scenario' is a specialization of 'NamedElement'.
+The class 'diva_ScoredElement' is a specialization of 'DiVAModelElement'.
+The class 'diva_Score' is a specialization of 'DiVAModelElement'.
+The class 'diva_Priority' is a specialization of 'DiVAModelElement'.
+The class 'diva_VariableValue' is a specialization of 'DiVAModelElement'.
+The class 'diva_BoolVariableValue' is a specialization of 'VariableValue'.
+The class 'diva_EnumVariableValue' is a specialization of 'VariableValue'.
+The class 'diva_ConfigurationModel' is a specialization of 'Visitable'.
+The class 'diva_SuitableConfiguration' is a specialization of 'Visitable'.
+The class 'diva_ContextModel' is a specialization of 'Visitable'.
+The class 'diva_ModelContainer' is a specialization of 'Visitable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'diva_VariabilityModel' and 'diva_Variable'. From 'diva_VariabilityModel', the role 'diva_VariabilityModel' has cardinality 0..*, and from 'diva_Variable', the role 'diva_Variable' has cardinality 0..*.
+An association connects 'diva_Property' and 'diva_VariabilityModel'. From 'diva_Property', the role 'diva_Property' has cardinality 0..*, and from 'diva_VariabilityModel', the role 'diva_VariabilityModel2' has cardinality 0..*.
+An association connects 'diva_Dimension' and 'diva_VariabilityModel'. From 'diva_Dimension', the role 'diva_Dimension' has cardinality 0..*, and from 'diva_VariabilityModel', the role 'diva_VariabilityModel4' has cardinality 0..*.
+An association connects 'diva_VariabilityModel' and 'diva_Rule'. From 'diva_VariabilityModel', the role 'diva_VariabilityModel6' has cardinality 0..*, and from 'diva_Rule', the role 'diva_Rule' has cardinality 0..*.
+An association connects 'diva_Constraint' and 'diva_VariabilityModel'. From 'diva_Constraint', the role 'diva_Constraint' has cardinality 0..*, and from 'diva_VariabilityModel', the role 'diva_VariabilityModel8' has cardinality 0..*.
+An association connects 'diva_VariabilityModel' and 'diva_SimulationModel'. From 'diva_VariabilityModel', the role 'model' has cardinality 0..*, and from 'diva_SimulationModel', the role 'SimulationModel' has cardinality 0..*.
+An association connects 'diva_Invariant' and 'diva_Expression'. From 'diva_Invariant', the role 'diva_Invariant' has cardinality 0..*, and from 'diva_Expression', the role 'diva_Expression' has cardinality 0..*.
+An association connects 'diva_EnumLiteral' and 'diva_EnumVariable'. From 'diva_EnumLiteral', the role 'diva_EnumLiteral' has cardinality 0..*, and from 'diva_EnumVariable', the role 'diva_EnumVariable' has cardinality 0..*.
+An association connects 'diva_NotTerm' and 'diva_Term'. From 'diva_NotTerm', the role 'diva_NotTerm' has cardinality 0..*, and from 'diva_Term', the role 'diva_Term' has cardinality 0..*.
+An association connects 'diva_Term' and 'diva_NaryTerm'. From 'diva_Term', the role 'diva_Term14' has cardinality 0..*, and from 'diva_NaryTerm', the role 'diva_NaryTerm' has cardinality 0..*.
+An association connects 'diva_Variant' and 'diva_VariantTerm'. From 'diva_Variant', the role 'diva_Variant' has cardinality 0..*, and from 'diva_VariantTerm', the role 'diva_VariantTerm' has cardinality 0..*.
+An association connects 'diva_VariableTerm' and 'diva_Variable'. From 'diva_VariableTerm', the role 'diva_VariableTerm' has cardinality 0..*, and from 'diva_Variable', the role 'diva_Variable17' has cardinality 0..*.
+An association connects 'diva_EnumTerm' and 'diva_EnumLiteral'. From 'diva_EnumTerm', the role 'diva_EnumTerm' has cardinality 0..*, and from 'diva_EnumLiteral', the role 'diva_EnumLiteral19' has cardinality 0..*.
+An association connects 'diva_Dimension' and 'diva_Variant'. From 'diva_Dimension', the role 'Dimension' has cardinality 0..*, and from 'diva_Variant', the role 'variant' has cardinality 0..*.
+An association connects 'diva_Variant' and 'diva_PropertyValue'. From 'diva_Variant', the role 'diva_Variant22' has cardinality 0..*, and from 'diva_PropertyValue', the role 'diva_PropertyValue' has cardinality 0..*.
+An association connects 'diva_Variant' and 'diva_VariantExpression'. From 'diva_Variant', the role 'diva_Variant24' has cardinality 0..*, and from 'diva_VariantExpression', the role 'diva_VariantExpression' has cardinality 0..*.
+An association connects 'diva_ContextExpression' and 'diva_Variant'. From 'diva_ContextExpression', the role 'diva_ContextExpression' has cardinality 0..*, and from 'diva_Variant', the role 'diva_Variant26' has cardinality 0..*.
+An association connects 'diva_Variant' and 'diva_ContextExpression'. From 'diva_Variant', the role 'diva_Variant28' has cardinality 0..*, and from 'diva_ContextExpression', the role 'diva_ContextExpression29' has cardinality 0..*.
+An association connects 'diva_Variant' and 'diva_Dimension'. From 'diva_Variant', the role 'Variant' has cardinality 0..*, and from 'diva_Dimension', the role 'type' has cardinality 0..*.
+An association connects 'diva_Property' and 'diva_Dimension'. From 'diva_Property', the role 'diva_Property33' has cardinality 0..*, and from 'diva_Dimension', the role 'diva_Dimension32' has cardinality 0..*.
+An association connects 'diva_Dimension' and 'diva_MultiplicityConstraint'. From 'diva_Dimension', the role 'diva_Dimension35' has cardinality 0..*, and from 'diva_MultiplicityConstraint', the role 'diva_MultiplicityConstraint' has cardinality 0..*.
+An association connects 'diva_Expression' and 'diva_Term'. From 'diva_Expression', the role 'diva_Expression37' has cardinality 0..*, and from 'diva_Term', the role 'diva_Term38' has cardinality 0..*.
+An association connects 'diva_PriorityRule' and 'diva_ContextExpression'. From 'diva_PriorityRule', the role 'diva_PriorityRule' has cardinality 0..*, and from 'diva_ContextExpression', the role 'diva_ContextExpression40' has cardinality 0..*.
+An association connects 'diva_PropertyPriority' and 'diva_PriorityRule'. From 'diva_PropertyPriority', the role 'diva_PropertyPriority' has cardinality 0..*, and from 'diva_PriorityRule', the role 'diva_PriorityRule42' has cardinality 0..*.
+An association connects 'diva_Property' and 'diva_PropertyLiteral'. From 'diva_Property', the role 'diva_Property44' has cardinality 0..*, and from 'diva_PropertyLiteral', the role 'diva_PropertyLiteral' has cardinality 0..*.
+An association connects 'diva_PropertyValue' and 'diva_Property'. From 'diva_PropertyValue', the role 'diva_PropertyValue46' has cardinality 0..*, and from 'diva_Property', the role 'diva_Property47' has cardinality 0..*.
+An association connects 'diva_PropertyPriority' and 'diva_Property'. From 'diva_PropertyPriority', the role 'diva_PropertyPriority49' has cardinality 0..*, and from 'diva_Property', the role 'diva_Property50' has cardinality 0..*.
+An association connects 'diva_MultiplicityConstraint' and 'diva_ContextExpression'. From 'diva_MultiplicityConstraint', the role 'diva_MultiplicityConstraint52' has cardinality 0..*, and from 'diva_ContextExpression', the role 'diva_ContextExpression53' has cardinality 0..*.
+An association connects 'diva_Annotation' and 'diva_DiVAModelElement'. From 'diva_Annotation', the role 'diva_Annotation' has cardinality 0..*, and from 'diva_DiVAModelElement', the role 'diva_DiVAModelElement' has cardinality 0..*.
+An association connects 'diva_SimulationModel' and 'diva_Scenario'. From 'diva_SimulationModel', the role 'diva_SimulationModel' has cardinality 0..*, and from 'diva_Scenario', the role 'diva_Scenario' has cardinality 0..*.
+An association connects 'diva_SimulationModel' and 'diva_VariabilityModel'. From 'diva_SimulationModel', the role 'simulation' has cardinality 0..*, and from 'diva_VariabilityModel', the role 'VariabilityModel' has cardinality 0..*.
+An association connects 'diva_Context' and 'diva_VariableValue'. From 'diva_Context', the role 'diva_Context' has cardinality 0..*, and from 'diva_VariableValue', the role 'diva_VariableValue' has cardinality 0..*.
+An association connects 'diva_Context' and 'diva_Configuration'. From 'diva_Context', the role 'diva_Context59' has cardinality 0..*, and from 'diva_Configuration', the role 'diva_Configuration' has cardinality 0..*.
+An association connects 'diva_Context' and 'diva_VariantExpression'. From 'diva_Context', the role 'diva_Context61' has cardinality 0..*, and from 'diva_VariantExpression', the role 'diva_VariantExpression62' has cardinality 0..*.
+An association connects 'diva_Context' and 'diva_Priority'. From 'diva_Context', the role 'diva_Context64' has cardinality 0..*, and from 'diva_Priority', the role 'diva_Priority' has cardinality 0..*.
+An association connects 'diva_Configuration' and 'diva_ConfigVariant'. From 'diva_Configuration', the role 'diva_Configuration66' has cardinality 0..*, and from 'diva_ConfigVariant', the role 'diva_ConfigVariant' has cardinality 0..*.
+An association connects 'diva_Variant' and 'diva_ConfigVariant'. From 'diva_Variant', the role 'diva_Variant69' has cardinality 0..*, and from 'diva_ConfigVariant', the role 'diva_ConfigVariant68' has cardinality 0..*.
+An association connects 'diva_Context' and 'diva_Scenario'. From 'diva_Context', the role 'diva_Context72' has cardinality 0..*, and from 'diva_Scenario', the role 'diva_Scenario71' has cardinality 0..*.
+An association connects 'diva_Score' and 'diva_ScoredElement'. From 'diva_Score', the role 'diva_Score' has cardinality 0..*, and from 'diva_ScoredElement', the role 'diva_ScoredElement' has cardinality 0..*.
+An association connects 'diva_Score' and 'diva_Property'. From 'diva_Score', the role 'diva_Score75' has cardinality 0..*, and from 'diva_Property', the role 'diva_Property76' has cardinality 0..*.
+An association connects 'diva_Priority' and 'diva_Property'. From 'diva_Priority', the role 'diva_Priority78' has cardinality 0..*, and from 'diva_Property', the role 'diva_Property79' has cardinality 0..*.
+An association connects 'diva_VariableValue' and 'diva_Variable'. From 'diva_VariableValue', the role 'diva_VariableValue81' has cardinality 0..*, and from 'diva_Variable', the role 'diva_Variable82' has cardinality 0..*.
+An association connects 'diva_EnumLiteral' and 'diva_EnumVariableValue'. From 'diva_EnumLiteral', the role 'diva_EnumLiteral84' has cardinality 0..*, and from 'diva_EnumVariableValue', the role 'diva_EnumVariableValue' has cardinality 0..*.
+An association connects 'diva_ConfigurationModel' and 'diva_SuitableConfiguration'. From 'diva_ConfigurationModel', the role 'diva_ConfigurationModel' has cardinality 0..*, and from 'diva_SuitableConfiguration', the role 'diva_SuitableConfiguration' has cardinality 0..*.
+An association connects 'diva_SuitableConfiguration' and 'diva_ConfigVariant'. From 'diva_SuitableConfiguration', the role 'diva_SuitableConfiguration87' has cardinality 0..*, and from 'diva_ConfigVariant', the role 'diva_ConfigVariant88' has cardinality 0..*.
+An association connects 'diva_ContextModel' and 'diva_VariableValue'. From 'diva_ContextModel', the role 'diva_ContextModel' has cardinality 0..*, and from 'diva_VariableValue', the role 'diva_VariableValue90' has cardinality 0..*.
+An association connects 'diva_ModelContainer' and 'diva_Model'. From 'diva_ModelContainer', the role 'diva_ModelContainer' has cardinality 0..*, and from 'diva_Model', the role 'diva_Model' has cardinality 0..*.

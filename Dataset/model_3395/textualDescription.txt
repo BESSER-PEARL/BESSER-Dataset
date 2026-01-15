@@ -1,0 +1,76 @@
+The domain model 'ramRoot' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'ramRoot_GenericNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ramRoot_MTpos__Element' represents an important domain concept.
+It does not declare any attributes.
+
+'ramRoot_MTpre__Element' represents an important domain concept.
+It has one attribute: 'MT__matchSubtype', which is of type bool.
+
+'ramRoot_MTpre__Classroom' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'ramRoot_MTpos__Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MTpre__Element' represents an important domain concept.
+It does not declare any attributes.
+
+'ramRoot_MTpos__Classroom' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'ramRoot_MTpre__Woman' represents an important domain concept.
+It does not declare any attributes.
+
+'MTpre__Person' represents an important domain concept.
+It does not declare any attributes.
+
+'ramRoot_MTpre__Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MTpos__Person' represents an important domain concept.
+It does not declare any attributes.
+
+'ramRoot_MTpos__Man' represents an important domain concept.
+It does not declare any attributes.
+
+'MTpos__Element' represents an important domain concept.
+It does not declare any attributes.
+
+'ramRoot_MTpos__Woman' represents an important domain concept.
+It does not declare any attributes.
+
+'MT__Element' represents an important domain concept.
+It does not declare any attributes.
+
+'ramRoot_MTpre__Man' represents an important domain concept.
+It does not declare any attributes.
+
+'ramRoot_MT__Element' represents an important domain concept.
+It has the following attributes: 'MT__isProcessed', which is of type bool; 'MT__label', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'ramRoot_MTpos__Element' is a specialization of 'MT__Element'.
+The class 'ramRoot_MTpre__Element' is a specialization of 'MT__Element'.
+The class 'ramRoot_GenericNode' is a specialization of 'MT__Element'.
+The class 'ramRoot_MTpos__Person' is a specialization of 'MTpos__Element'.
+The class 'ramRoot_MTpos__Man' is a specialization of 'MTpos__Person'.
+The class 'ramRoot_MTpos__Woman' is a specialization of 'MTpos__Person'.
+The class 'ramRoot_MTpos__Classroom' is a specialization of 'MTpos__Element'.
+The class 'ramRoot_MTpre__Person' is a specialization of 'MTpre__Element'.
+The class 'ramRoot_MTpre__Man' is a specialization of 'MTpre__Person'.
+The class 'ramRoot_MTpre__Woman' is a specialization of 'MTpre__Person'.
+The class 'ramRoot_MTpre__Classroom' is a specialization of 'MTpre__Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ramRoot_GenericNode' and 'ramRoot_MT__Element'. From 'ramRoot_GenericNode', the role 'ramRoot_GenericNode' has cardinality 0..*, and from 'ramRoot_MT__Element', the role 'ramRoot_MT__Element' has cardinality 0..*.
+An association connects 'ramRoot_MTpos__Classroom' and 'ramRoot_MTpos__Person'. From 'ramRoot_MTpos__Classroom', the role 'ramRoot_MTpos__Classroom' has cardinality 0..*, and from 'ramRoot_MTpos__Person', the role 'ramRoot_MTpos__Person' has cardinality 0..*.
+An association connects 'ramRoot_MTpos__Person' and 'ramRoot_MTpos__Person'. From 'ramRoot_MTpos__Person', the role 'ramRoot_MTpos__Person4' has cardinality 0..*, and from 'ramRoot_MTpos__Person', the role 'ramRoot_MTpos__Person2' has cardinality 0..*.
+An association connects 'ramRoot_MTpos__Person' and 'ramRoot_MTpos__Classroom'. From 'ramRoot_MTpos__Person', the role 'ramRoot_MTpos__Person7' has cardinality 0..*, and from 'ramRoot_MTpos__Classroom', the role 'ramRoot_MTpos__Classroom6' has cardinality 0..*.
+An association connects 'ramRoot_MTpre__Person' and 'ramRoot_MTpre__Classroom'. From 'ramRoot_MTpre__Person', the role 'ramRoot_MTpre__Person' has cardinality 0..*, and from 'ramRoot_MTpre__Classroom', the role 'ramRoot_MTpre__Classroom' has cardinality 0..*.
+An association connects 'ramRoot_MTpre__Person' and 'ramRoot_MTpre__Person'. From 'ramRoot_MTpre__Person', the role 'ramRoot_MTpre__Person9' has cardinality 0..*, and from 'ramRoot_MTpre__Person', the role 'ramRoot_MTpre__Person11' has cardinality 0..*.
+An association connects 'ramRoot_MTpre__Classroom' and 'ramRoot_MTpre__Person'. From 'ramRoot_MTpre__Classroom', the role 'ramRoot_MTpre__Classroom13' has cardinality 0..*, and from 'ramRoot_MTpre__Person', the role 'ramRoot_MTpre__Person14' has cardinality 0..*.

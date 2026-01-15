@@ -1,0 +1,291 @@
+The domain model 'DVE' describes the core structural elements and their relationships within the system.
+
+The model defines 67 main class(es).
+
+'DVE_model_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_Synchronous' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_SystemType' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_SystemProperties' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_VariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_StateReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_Synchronization' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_Process' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_UnaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'DVE_model_ProcessReference' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_IndexedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_ChannelReference' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_InputSynchronization' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_BinaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'DVE_model_ProcessVariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ChannelDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'Synchronization' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_ChannelDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'SystemType' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_PrefixedReference' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_System' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_ConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_NamedDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DVE_model_Asynchronous' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'System' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_NumberLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'DVE_model_ArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_ByteType' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_State' represents an important domain concept.
+It does not declare any attributes.
+
+'model_PrefixedReference' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_OutputSynchronization' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessReference' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_Reference' represents an important domain concept.
+It has one attribute: 'refName', which is of type str.
+
+'DVE_model_BooleanLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Process' represents an important domain concept.
+It does not declare any attributes.
+
+'ChannelReference' represents an important domain concept.
+It does not declare any attributes.
+
+'StateReference' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_ProcessStateReference' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_TrueLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_CompositeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_FalseLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'SystemProperties' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_TypedChannelDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_VariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_ArrayLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_StateReference' represents an important domain concept.
+It does not declare any attributes.
+
+'DVE_model_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'UnaryOperator' defines the following possible values: 'BNOT', 'NOT', 'MINUS'.
+The enumeration 'BinaryOperator' defines the following possible values: 'AND', 'EQ', 'MINUS', 'MOD', 'LEQ', 'BXOR', 'LT', 'PLUS', 'SHL', 'GT', 'OR', 'NEQ', 'MULT', 'GEQ', 'SHR', 'IMPLY', 'BOR', 'DIV', 'BAND'.
+
+The model also captures inheritance relationships between classes.
+The class 'DVE_model_Declaration' is a specialization of 'Element'.
+The class 'DVE_model_NamedDeclaration' is a specialization of 'Declaration'.
+The class 'DVE_model_CompositeDeclaration' is a specialization of 'NamedDeclaration'.
+The class 'DVE_model_System' is a specialization of 'CompositeDeclaration'.
+The class 'DVE_model_Type' is a specialization of 'Element'.
+The class 'DVE_model_IntegerType' is a specialization of 'Type'.
+The class 'DVE_model_ByteType' is a specialization of 'Type'.
+The class 'DVE_model_ArrayType' is a specialization of 'Type'.
+The class 'DVE_model_VariableDeclaration' is a specialization of 'NamedDeclaration'.
+The class 'DVE_model_ConstantDeclaration' is a specialization of 'VariableDeclaration'.
+The class 'DVE_model_ChannelDeclaration' is a specialization of 'NamedDeclaration'.
+The class 'DVE_model_TypedChannelDeclaration' is a specialization of 'ChannelDeclaration'.
+The class 'DVE_model_Process' is a specialization of 'CompositeDeclaration'.
+The class 'DVE_model_State' is a specialization of 'NamedDeclaration'.
+The class 'DVE_model_Transition' is a specialization of 'Declaration'.
+The class 'DVE_model_Synchronization' is a specialization of 'Element'.
+The class 'DVE_model_InputSynchronization' is a specialization of 'Synchronization'.
+The class 'DVE_model_OutputSynchronization' is a specialization of 'Synchronization'.
+The class 'DVE_model_SystemProperties' is a specialization of 'Element'.
+The class 'DVE_model_Assignment' is a specialization of 'Element'.
+The class 'DVE_model_SystemType' is a specialization of 'Element'.
+The class 'DVE_model_Synchronous' is a specialization of 'SystemType'.
+The class 'DVE_model_Asynchronous' is a specialization of 'SystemType'.
+The class 'DVE_model_Expression' is a specialization of 'Element'.
+The class 'DVE_model_UnaryExpression' is a specialization of 'Expression'.
+The class 'DVE_model_BinaryExpression' is a specialization of 'Expression'.
+The class 'DVE_model_Reference' is a specialization of 'Expression'.
+The class 'DVE_model_VariableReference' is a specialization of 'Reference'.
+The class 'DVE_model_ChannelReference' is a specialization of 'Reference'.
+The class 'DVE_model_ProcessReference' is a specialization of 'Reference'.
+The class 'DVE_model_StateReference' is a specialization of 'Reference'.
+The class 'DVE_model_PrefixedReference' is a specialization of 'Expression'.
+The class 'DVE_model_ProcessVariableReference' is a specialization of 'model_VariableReference'.
+The class 'DVE_model_ProcessVariableReference' is a specialization of 'model_PrefixedReference'.
+The class 'DVE_model_ProcessStateReference' is a specialization of 'model_StateReference'.
+The class 'DVE_model_ProcessStateReference' is a specialization of 'model_PrefixedReference'.
+The class 'DVE_model_IndexedExpression' is a specialization of 'Expression'.
+The class 'DVE_model_Literal' is a specialization of 'Expression'.
+The class 'DVE_model_BooleanLiteral' is a specialization of 'Literal'.
+The class 'DVE_model_TrueLiteral' is a specialization of 'BooleanLiteral'.
+The class 'DVE_model_FalseLiteral' is a specialization of 'BooleanLiteral'.
+The class 'DVE_model_NumberLiteral' is a specialization of 'Literal'.
+The class 'DVE_model_ArrayLiteral' is a specialization of 'Literal'.
+
+Relationships between classes are modeled using associations.
+An association connects 'DVE_model_CompositeDeclaration' and 'NamedDeclaration'. From 'DVE_model_CompositeDeclaration', the role 'DVE_model_CompositeDeclaration' has cardinality 0..*, and from 'NamedDeclaration', the role 'NamedDeclaration' has cardinality 0..*.
+An association connects 'Process' and 'DVE_model_System'. From 'Process', the role 'model' has cardinality 0..*, and from 'DVE_model_System', the role 'Process' has cardinality 0..*.
+An association connects 'SystemProperties' and 'DVE_model_System'. From 'SystemProperties', the role 'SystemProperties' has cardinality 0..*, and from 'DVE_model_System', the role 'DVE_model_System' has cardinality 0..*.
+An association connects 'Type' and 'DVE_model_ArrayType'. From 'Type', the role 'Type' has cardinality 0..*, and from 'DVE_model_ArrayType', the role 'DVE_model_ArrayType' has cardinality 0..*.
+An association connects 'DVE_model_ArrayType' and 'Expression'. From 'DVE_model_ArrayType', the role 'DVE_model_ArrayType5' has cardinality 0..*, and from 'Expression', the role 'Expression' has cardinality 0..*.
+An association connects 'Type' and 'DVE_model_VariableDeclaration'. From 'Type', the role 'Type7' has cardinality 0..*, and from 'DVE_model_VariableDeclaration', the role 'DVE_model_VariableDeclaration' has cardinality 0..*.
+An association connects 'DVE_model_VariableDeclaration' and 'Expression'. From 'DVE_model_VariableDeclaration', the role 'DVE_model_VariableDeclaration9' has cardinality 0..*, and from 'Expression', the role 'Expression10' has cardinality 0..*.
+An association connects 'Type' and 'DVE_model_TypedChannelDeclaration'. From 'Type', the role 'Type12' has cardinality 0..*, and from 'DVE_model_TypedChannelDeclaration', the role 'DVE_model_TypedChannelDeclaration' has cardinality 0..*.
+An association connects 'Expression' and 'DVE_model_TypedChannelDeclaration'. From 'Expression', the role 'Expression15' has cardinality 0..*, and from 'DVE_model_TypedChannelDeclaration', the role 'DVE_model_TypedChannelDeclaration14' has cardinality 0..*.
+An association connects 'DVE_model_Process' and 'System'. From 'DVE_model_Process', the role 'System' has cardinality 0..*, and from 'System', the role 'model17' has cardinality 0..*.
+An association connects 'State' and 'DVE_model_Process'. From 'State', the role 'State' has cardinality 0..*, and from 'DVE_model_Process', the role 'DVE_model_Process' has cardinality 0..*.
+An association connects 'DVE_model_Process' and 'StateReference'. From 'DVE_model_Process', the role 'DVE_model_Process20' has cardinality 0..*, and from 'StateReference', the role 'StateReference' has cardinality 0..*.
+An association connects 'StateReference' and 'DVE_model_Process'. From 'StateReference', the role 'StateReference23' has cardinality 0..*, and from 'DVE_model_Process', the role 'DVE_model_Process22' has cardinality 0..*.
+An association connects 'DVE_model_Process' and 'StateReference'. From 'DVE_model_Process', the role 'DVE_model_Process25' has cardinality 0..*, and from 'StateReference', the role 'StateReference26' has cardinality 0..*.
+An association connects 'DVE_model_Process' and 'Transition'. From 'DVE_model_Process', the role 'DVE_model_Process28' has cardinality 0..*, and from 'Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'DVE_model_Transition' and 'StateReference'. From 'DVE_model_Transition', the role 'DVE_model_Transition' has cardinality 0..*, and from 'StateReference', the role 'StateReference30' has cardinality 0..*.
+An association connects 'StateReference' and 'DVE_model_Transition'. From 'StateReference', the role 'StateReference33' has cardinality 0..*, and from 'DVE_model_Transition', the role 'DVE_model_Transition32' has cardinality 0..*.
+An association connects 'DVE_model_Transition' and 'Expression'. From 'DVE_model_Transition', the role 'DVE_model_Transition35' has cardinality 0..*, and from 'Expression', the role 'Expression36' has cardinality 0..*.
+An association connects 'DVE_model_Transition' and 'Synchronization'. From 'DVE_model_Transition', the role 'DVE_model_Transition38' has cardinality 0..*, and from 'Synchronization', the role 'Synchronization' has cardinality 0..*.
+An association connects 'DVE_model_Transition' and 'Assignment'. From 'DVE_model_Transition', the role 'DVE_model_Transition40' has cardinality 0..*, and from 'Assignment', the role 'Assignment' has cardinality 0..*.
+An association connects 'DVE_model_Synchronization' and 'ChannelReference'. From 'DVE_model_Synchronization', the role 'DVE_model_Synchronization' has cardinality 0..*, and from 'ChannelReference', the role 'ChannelReference' has cardinality 0..*.
+An association connects 'Expression' and 'DVE_model_Synchronization'. From 'Expression', the role 'Expression44' has cardinality 0..*, and from 'DVE_model_Synchronization', the role 'DVE_model_Synchronization43' has cardinality 0..*.
+An association connects 'DVE_model_SystemProperties' and 'SystemType'. From 'DVE_model_SystemProperties', the role 'DVE_model_SystemProperties' has cardinality 0..*, and from 'SystemType', the role 'SystemType' has cardinality 0..*.
+An association connects 'ProcessReference' and 'DVE_model_SystemProperties'. From 'ProcessReference', the role 'ProcessReference' has cardinality 0..*, and from 'DVE_model_SystemProperties', the role 'DVE_model_SystemProperties47' has cardinality 0..*.
+An association connects 'DVE_model_Assignment' and 'Expression'. From 'DVE_model_Assignment', the role 'DVE_model_Assignment' has cardinality 0..*, and from 'Expression', the role 'Expression49' has cardinality 0..*.
+An association connects 'Expression' and 'DVE_model_Assignment'. From 'Expression', the role 'Expression52' has cardinality 0..*, and from 'DVE_model_Assignment', the role 'DVE_model_Assignment51' has cardinality 0..*.
+An association connects 'Expression' and 'DVE_model_UnaryExpression'. From 'Expression', the role 'Expression54' has cardinality 0..*, and from 'DVE_model_UnaryExpression', the role 'DVE_model_UnaryExpression' has cardinality 0..*.
+An association connects 'Expression' and 'DVE_model_BinaryExpression'. From 'Expression', the role 'Expression56' has cardinality 0..*, and from 'DVE_model_BinaryExpression', the role 'DVE_model_BinaryExpression' has cardinality 0..*.
+An association connects 'DVE_model_VariableReference' and 'VariableDeclaration'. From 'DVE_model_VariableReference', the role 'DVE_model_VariableReference' has cardinality 0..*, and from 'VariableDeclaration', the role 'VariableDeclaration' has cardinality 0..*.
+An association connects 'DVE_model_ChannelReference' and 'ChannelDeclaration'. From 'DVE_model_ChannelReference', the role 'DVE_model_ChannelReference' has cardinality 0..*, and from 'ChannelDeclaration', the role 'ChannelDeclaration' has cardinality 0..*.
+An association connects 'Process' and 'DVE_model_ProcessReference'. From 'Process', the role 'Process60' has cardinality 0..*, and from 'DVE_model_ProcessReference', the role 'DVE_model_ProcessReference' has cardinality 0..*.
+An association connects 'DVE_model_StateReference' and 'State'. From 'DVE_model_StateReference', the role 'DVE_model_StateReference' has cardinality 0..*, and from 'State', the role 'State62' has cardinality 0..*.
+An association connects 'ProcessReference' and 'DVE_model_PrefixedReference'. From 'ProcessReference', the role 'ProcessReference64' has cardinality 0..*, and from 'DVE_model_PrefixedReference', the role 'DVE_model_PrefixedReference' has cardinality 0..*.
+An association connects 'DVE_model_IndexedExpression' and 'Expression'. From 'DVE_model_IndexedExpression', the role 'DVE_model_IndexedExpression' has cardinality 0..*, and from 'Expression', the role 'Expression66' has cardinality 0..*.
+An association connects 'DVE_model_IndexedExpression' and 'Expression'. From 'DVE_model_IndexedExpression', the role 'DVE_model_IndexedExpression68' has cardinality 0..*, and from 'Expression', the role 'Expression69' has cardinality 0..*.
+An association connects 'Expression' and 'DVE_model_ArrayLiteral'. From 'Expression', the role 'Expression71' has cardinality 0..*, and from 'DVE_model_ArrayLiteral', the role 'DVE_model_ArrayLiteral' has cardinality 0..*.

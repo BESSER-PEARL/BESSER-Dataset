@@ -1,0 +1,58 @@
+The domain model 'units_pc_av' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'units_pc_av_UnitRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'units_pc_av_UnitPower' represents an important domain concept.
+It has one attribute: 'exponent', which is of type int.
+
+'units_pc_av_Pointcut' represents an important domain concept.
+It does not declare any attributes.
+
+'units_pc_av_Advice' represents an important domain concept.
+It does not declare any attributes.
+
+'units_pc_av_UnitLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'units_pc_av_GlobalScope' represents an important domain concept.
+It does not declare any attributes.
+
+'units_pc_av_BaseUnit' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'units_pc_av_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'units_pc_av_PerJoinPointScope' represents an important domain concept.
+It does not declare any attributes.
+
+'Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'units_pc_av_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'units_pc_av_UnitCarryingElement' represents an important domain concept.
+It has one attribute: 'unitSpecification', which is of type str.
+
+'units_pc_av_UnitMultiplication' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'units_pc_av_UnitMultiplication' is a specialization of 'Unit'.
+The class 'units_pc_av_UnitPower' is a specialization of 'Unit'.
+The class 'units_pc_av_UnitLiteral' is a specialization of 'Unit'.
+
+Relationships between classes are modeled using associations.
+An association connects 'units_pc_av_Unit' and 'units_pc_av_UnitCarryingElement'. From 'units_pc_av_Unit', the role 'units_pc_av_Unit' has cardinality 0..*, and from 'units_pc_av_UnitCarryingElement', the role 'units_pc_av_UnitCarryingElement' has cardinality 0..*.
+An association connects 'units_pc_av_UnitRepository' and 'units_pc_av_BaseUnit'. From 'units_pc_av_UnitRepository', the role 'units_pc_av_UnitRepository' has cardinality 0..*, and from 'units_pc_av_BaseUnit', the role 'units_pc_av_BaseUnit' has cardinality 0..*.
+An association connects 'units_pc_av_UnitMultiplication' and 'units_pc_av_Unit'. From 'units_pc_av_UnitMultiplication', the role 'units_pc_av_UnitMultiplication' has cardinality 0..*, and from 'units_pc_av_Unit', the role 'units_pc_av_Unit3' has cardinality 0..*.
+An association connects 'units_pc_av_Unit' and 'units_pc_av_UnitPower'. From 'units_pc_av_Unit', the role 'units_pc_av_Unit5' has cardinality 0..*, and from 'units_pc_av_UnitPower', the role 'units_pc_av_UnitPower' has cardinality 0..*.
+An association connects 'units_pc_av_UnitLiteral' and 'units_pc_av_BaseUnit'. From 'units_pc_av_UnitLiteral', the role 'units_pc_av_UnitLiteral' has cardinality 0..*, and from 'units_pc_av_BaseUnit', the role 'units_pc_av_BaseUnit7' has cardinality 0..*.
+An association connects 'units_pc_av_Pointcut' and 'units_pc_av_EObject'. From 'units_pc_av_Pointcut', the role 'units_pc_av_Pointcut' has cardinality 0..*, and from 'units_pc_av_EObject', the role 'units_pc_av_EObject' has cardinality 0..*.
+An association connects 'units_pc_av_Advice' and 'units_pc_av_EObject'. From 'units_pc_av_Advice', the role 'units_pc_av_Advice' has cardinality 0..*, and from 'units_pc_av_EObject', the role 'units_pc_av_EObject10' has cardinality 0..*.
+An association connects 'units_pc_av_EObject' and 'units_pc_av_GlobalScope'. From 'units_pc_av_EObject', the role 'units_pc_av_EObject12' has cardinality 0..*, and from 'units_pc_av_GlobalScope', the role 'units_pc_av_GlobalScope' has cardinality 0..*.
+An association connects 'units_pc_av_PerJoinPointScope' and 'units_pc_av_EObject'. From 'units_pc_av_PerJoinPointScope', the role 'units_pc_av_PerJoinPointScope' has cardinality 0..*, and from 'units_pc_av_EObject', the role 'units_pc_av_EObject14' has cardinality 0..*.

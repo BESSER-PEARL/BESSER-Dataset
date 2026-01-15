@@ -1,0 +1,65 @@
+The domain model 'fds' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'fds_FunctionalDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'Restriction' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fds_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'CandidateKey' represents an important domain concept.
+It does not declare any attributes.
+
+'fds_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'fds_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fds_PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'fds_CandidateKey' represents an important domain concept.
+It does not declare any attributes.
+
+'fds_Database' represents an important domain concept.
+It does not declare any attributes.
+
+'fds_RestrictionColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'fds_Restriction' represents an important domain concept.
+It does not declare any attributes.
+
+'fds_Column' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'fds_Database' is a specialization of 'NamedElement'.
+The class 'fds_Table' is a specialization of 'NamedElement'.
+The class 'fds_Column' is a specialization of 'NamedElement'.
+The class 'fds_Restriction' is a specialization of 'NamedElement'.
+The class 'fds_ForeignKey' is a specialization of 'Restriction'.
+The class 'fds_CandidateKey' is a specialization of 'Restriction'.
+The class 'fds_PrimaryKey' is a specialization of 'CandidateKey'.
+The class 'fds_RestrictionColumn' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fds_Table' and 'fds_Database'. From 'fds_Table', the role 'fds_Table' has cardinality 0..*, and from 'fds_Database', the role 'fds_Database' has cardinality 0..*.
+An association connects 'fds_Table' and 'fds_Column'. From 'fds_Table', the role 'fds_Table2' has cardinality 0..*, and from 'fds_Column', the role 'fds_Column' has cardinality 0..*.
+An association connects 'fds_FunctionalDependency' and 'fds_Table'. From 'fds_FunctionalDependency', the role 'fds_FunctionalDependency' has cardinality 0..*, and from 'fds_Table', the role 'fds_Table4' has cardinality 0..*.
+An association connects 'fds_Table' and 'fds_Restriction'. From 'fds_Table', the role 'fds_Table6' has cardinality 0..*, and from 'fds_Restriction', the role 'fds_Restriction' has cardinality 0..*.
+An association connects 'fds_Restriction' and 'fds_RestrictionColumn'. From 'fds_Restriction', the role 'restriction' has cardinality 0..*, and from 'fds_RestrictionColumn', the role 'RestrictionColumn' has cardinality 0..*.
+An association connects 'fds_PrimaryKey' and 'fds_ForeignKey'. From 'fds_PrimaryKey', the role 'fds_PrimaryKey' has cardinality 0..*, and from 'fds_ForeignKey', the role 'fds_ForeignKey' has cardinality 0..*.
+An association connects 'fds_FunctionalDependency' and 'fds_Column'. From 'fds_FunctionalDependency', the role 'fds_FunctionalDependency10' has cardinality 0..*, and from 'fds_Column', the role 'fds_Column11' has cardinality 0..*.
+An association connects 'fds_FunctionalDependency' and 'fds_Column'. From 'fds_FunctionalDependency', the role 'fds_FunctionalDependency13' has cardinality 0..*, and from 'fds_Column', the role 'fds_Column14' has cardinality 0..*.
+An association connects 'fds_RestrictionColumn' and 'fds_Restriction'. From 'fds_RestrictionColumn', the role 'restrictionsColumns' has cardinality 0..*, and from 'fds_Restriction', the role 'Restriction' has cardinality 0..*.
+An association connects 'fds_RestrictionColumn' and 'fds_Column'. From 'fds_RestrictionColumn', the role 'fds_RestrictionColumn' has cardinality 0..*, and from 'fds_Column', the role 'fds_Column17' has cardinality 0..*.
+An association connects 'fds_RestrictionColumn' and 'fds_RestrictionColumn'. From 'fds_RestrictionColumn', the role 'fds_RestrictionColumn18' has cardinality 0..*, and from 'fds_RestrictionColumn', the role 'fds_RestrictionColumn20' has cardinality 0..*.

@@ -1,0 +1,97 @@
+The domain model 'core' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'core_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'core_UMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Lower' represents an important domain concept.
+It does not declare any attributes.
+
+'core_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'val', which is of type int.
+
+'core_Mult' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Mod' represents an important domain concept.
+It does not declare any attributes.
+
+'core_And' represents an important domain concept.
+It does not declare any attributes.
+
+'core_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Add' represents an important domain concept.
+It does not declare any attributes.
+
+'core_IntegerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Filter' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'core_Add' is a specialization of 'BinaryExpression'.
+The class 'core_UnaryExpression' is a specialization of 'IntegerExpression'.
+The class 'core_And' is a specialization of 'BinaryExpression'.
+The class 'core_Or' is a specialization of 'BinaryExpression'.
+The class 'core_Not' is a specialization of 'UnaryExpression'.
+The class 'core_Greater' is a specialization of 'BinaryExpression'.
+The class 'core_Lower' is a specialization of 'BinaryExpression'.
+The class 'core_IntegerLiteral' is a specialization of 'IntegerExpression'.
+The class 'core_Conditional' is a specialization of 'IntegerExpression'.
+The class 'core_BinaryExpression' is a specialization of 'IntegerExpression'.
+The class 'core_Mult' is a specialization of 'BinaryExpression'.
+The class 'core_Div' is a specialization of 'BinaryExpression'.
+The class 'core_Mod' is a specialization of 'BinaryExpression'.
+The class 'core_UMinus' is a specialization of 'UnaryExpression'.
+The class 'core_Minus' is a specialization of 'BinaryExpression'.
+The class 'core_Equal' is a specialization of 'BinaryExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'core_Rule' and 'core_IntegerExpression'. From 'core_Rule', the role 'core_Rule' has cardinality 0..*, and from 'core_IntegerExpression', the role 'core_IntegerExpression' has cardinality 0..*.
+An association connects 'core_Rule' and 'core_Filter'. From 'core_Rule', the role 'core_Rule2' has cardinality 0..*, and from 'core_Filter', the role 'core_Filter' has cardinality 0..*.
+An association connects 'core_IntegerExpression' and 'core_UnaryExpression'. From 'core_IntegerExpression', the role 'core_IntegerExpression4' has cardinality 0..*, and from 'core_UnaryExpression', the role 'core_UnaryExpression' has cardinality 0..*.
+An association connects 'core_IntegerExpression' and 'core_Conditional'. From 'core_IntegerExpression', the role 'core_IntegerExpression6' has cardinality 0..*, and from 'core_Conditional', the role 'core_Conditional' has cardinality 0..*.
+An association connects 'core_IntegerExpression' and 'core_Conditional'. From 'core_IntegerExpression', the role 'core_IntegerExpression9' has cardinality 0..*, and from 'core_Conditional', the role 'core_Conditional8' has cardinality 0..*.
+An association connects 'core_IntegerExpression' and 'core_Conditional'. From 'core_IntegerExpression', the role 'core_IntegerExpression12' has cardinality 0..*, and from 'core_Conditional', the role 'core_Conditional11' has cardinality 0..*.
+An association connects 'core_IntegerExpression' and 'core_BinaryExpression'. From 'core_IntegerExpression', the role 'core_IntegerExpression14' has cardinality 0..*, and from 'core_BinaryExpression', the role 'core_BinaryExpression' has cardinality 0..*.
+An association connects 'core_IntegerExpression' and 'core_BinaryExpression'. From 'core_IntegerExpression', the role 'core_IntegerExpression17' has cardinality 0..*, and from 'core_BinaryExpression', the role 'core_BinaryExpression16' has cardinality 0..*.

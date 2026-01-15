@@ -1,0 +1,399 @@
+The domain model 'pp1' describes the core structural elements and their relationships within the system.
+
+The model defines 92 main class(es).
+
+'pp1_RelationshipExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_WithLambdaExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_AtExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_UnaryMinusExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_AdditiveExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpressionBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_ImportExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_BinaryOpExpression' represents an important domain concept.
+It has one attribute: 'opName', which is of type str.
+
+'pp1_PuppetManifest' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_LiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_SelectorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_AttributeOperation' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'op', which is of type str.
+
+'pp1_VariableExpression' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'pp1_EqualityExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_LiteralDefault' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_ExportedCollectQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_SeparatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_TextExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_LiteralList' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_AssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'StringExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TextExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_LiteralUndef' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_RubyLambda' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_ShiftExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'WithLambdaExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_ExprList' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_InterpolatedVariable' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'pp1_StringExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_ResourceExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_IQuotedString' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_UnaryNotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_MatchingExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_LiteralRegex' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'pp1_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_SingleQuotedString' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'pp1_ElseExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_VariableTE' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'pp1_LiteralBoolean' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'ParameterizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_VirtualNameOrReference' represents an important domain concept.
+It has the following attributes: 'exported', which is of type bool; 'value', which is of type str.
+
+'pp1_LiteralHash' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_UnlessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ICollectQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_AppendExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_UnquotedString' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_OrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_ExpressionTE' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_ResourceBody' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_LiteralClass' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_InExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_HashEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'Lambda' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryOpExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_CaseExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_ExpressionBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_DoubleQuotedString' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_MethodCall' represents an important domain concept.
+It has one attribute: 'parenthesized', which is of type bool.
+
+'pp1_Definition' represents an important domain concept.
+It has one attribute: 'className', which is of type str.
+
+'IfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_LiteralNameOrReference' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'pp1_NodeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_ICollectQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_IfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_Lambda' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_MultiplicativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_LiteralName' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'pp1_ParameterizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_RelationalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_JavaLambda' represents an important domain concept.
+It has one attribute: 'farrow', which is of type bool.
+
+'pp1_VirtualCollectQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_VerbatimTE' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'pp1_HostClassDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_CollectExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_ElseIfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_SelectorEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_NamedAccessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_DefinitionArgumentList' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_AttributeOperations' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_ParenthesisedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'IQuotedString' represents an important domain concept.
+It does not declare any attributes.
+
+'pp1_DefinitionArgument' represents an important domain concept.
+It has the following attributes: 'argName', which is of type str; 'op', which is of type str.
+
+'pp1_Case' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'pp1_PuppetManifest' is a specialization of 'ExpressionBlock'.
+The class 'pp1_VirtualCollectQuery' is a specialization of 'UnaryExpression'.
+The class 'pp1_VirtualCollectQuery' is a specialization of 'ICollectQuery'.
+The class 'pp1_ExportedCollectQuery' is a specialization of 'UnaryExpression'.
+The class 'pp1_ExportedCollectQuery' is a specialization of 'ICollectQuery'.
+The class 'pp1_HostClassDefinition' is a specialization of 'Definition'.
+The class 'pp1_Definition' is a specialization of 'Expression'.
+The class 'pp1_CaseExpression' is a specialization of 'Expression'.
+The class 'pp1_IfExpression' is a specialization of 'Expression'.
+The class 'pp1_LiteralExpression' is a specialization of 'Expression'.
+The class 'pp1_LiteralNameOrReference' is a specialization of 'LiteralExpression'.
+The class 'pp1_ResourceExpression' is a specialization of 'Expression'.
+The class 'pp1_ImportExpression' is a specialization of 'Expression'.
+The class 'pp1_LiteralList' is a specialization of 'LiteralExpression'.
+The class 'pp1_LiteralHash' is a specialization of 'LiteralExpression'.
+The class 'pp1_LiteralBoolean' is a specialization of 'LiteralExpression'.
+The class 'pp1_LiteralUndef' is a specialization of 'LiteralExpression'.
+The class 'pp1_LiteralDefault' is a specialization of 'LiteralExpression'.
+The class 'pp1_LiteralRegex' is a specialization of 'LiteralExpression'.
+The class 'pp1_LiteralName' is a specialization of 'LiteralExpression'.
+The class 'pp1_VariableExpression' is a specialization of 'Expression'.
+The class 'pp1_RelationshipExpression' is a specialization of 'BinaryOpExpression'.
+The class 'pp1_AssignmentExpression' is a specialization of 'BinaryExpression'.
+The class 'pp1_AppendExpression' is a specialization of 'BinaryExpression'.
+The class 'pp1_OrExpression' is a specialization of 'BinaryExpression'.
+The class 'pp1_AndExpression' is a specialization of 'BinaryExpression'.
+The class 'pp1_RelationalExpression' is a specialization of 'BinaryOpExpression'.
+The class 'pp1_EqualityExpression' is a specialization of 'BinaryOpExpression'.
+The class 'pp1_ShiftExpression' is a specialization of 'BinaryOpExpression'.
+The class 'pp1_AdditiveExpression' is a specialization of 'BinaryOpExpression'.
+The class 'pp1_MultiplicativeExpression' is a specialization of 'BinaryOpExpression'.
+The class 'pp1_MatchingExpression' is a specialization of 'BinaryOpExpression'.
+The class 'pp1_InExpression' is a specialization of 'BinaryOpExpression'.
+The class 'pp1_AtExpression' is a specialization of 'ParameterizedExpression'.
+The class 'pp1_CollectExpression' is a specialization of 'Expression'.
+The class 'pp1_SelectorExpression' is a specialization of 'ParameterizedExpression'.
+The class 'pp1_SelectorEntry' is a specialization of 'BinaryExpression'.
+The class 'pp1_FunctionCall' is a specialization of 'WithLambdaExpression'.
+The class 'pp1_BinaryOpExpression' is a specialization of 'BinaryExpression'.
+The class 'pp1_BinaryExpression' is a specialization of 'Expression'.
+The class 'pp1_ParameterizedExpression' is a specialization of 'Expression'.
+The class 'pp1_NodeDefinition' is a specialization of 'Expression'.
+The class 'pp1_UnaryExpression' is a specialization of 'Expression'.
+The class 'pp1_UnaryMinusExpression' is a specialization of 'UnaryExpression'.
+The class 'pp1_UnaryNotExpression' is a specialization of 'UnaryExpression'.
+The class 'pp1_ExpressionBlock' is a specialization of 'Expression'.
+The class 'pp1_ElseExpression' is a specialization of 'ExpressionBlock'.
+The class 'pp1_ElseIfExpression' is a specialization of 'IfExpression'.
+The class 'pp1_VirtualNameOrReference' is a specialization of 'LiteralExpression'.
+The class 'pp1_ParenthesisedExpression' is a specialization of 'Expression'.
+The class 'pp1_ExprList' is a specialization of 'Expression'.
+The class 'pp1_DoubleQuotedString' is a specialization of 'StringExpression'.
+The class 'pp1_DoubleQuotedString' is a specialization of 'IQuotedString'.
+The class 'pp1_SingleQuotedString' is a specialization of 'StringExpression'.
+The class 'pp1_SingleQuotedString' is a specialization of 'IQuotedString'.
+The class 'pp1_StringExpression' is a specialization of 'Expression'.
+The class 'pp1_UnquotedString' is a specialization of 'StringExpression'.
+The class 'pp1_InterpolatedVariable' is a specialization of 'Expression'.
+The class 'pp1_VerbatimTE' is a specialization of 'TextExpression'.
+The class 'pp1_ExpressionTE' is a specialization of 'TextExpression'.
+The class 'pp1_VariableTE' is a specialization of 'TextExpression'.
+The class 'pp1_LiteralClass' is a specialization of 'LiteralExpression'.
+The class 'pp1_UnlessExpression' is a specialization of 'Expression'.
+The class 'pp1_Lambda' is a specialization of 'ExpressionBlock'.
+The class 'pp1_NamedAccessExpression' is a specialization of 'BinaryExpression'.
+The class 'pp1_MethodCall' is a specialization of 'WithLambdaExpression'.
+The class 'pp1_WithLambdaExpression' is a specialization of 'ParameterizedExpression'.
+The class 'pp1_JavaLambda' is a specialization of 'Lambda'.
+The class 'pp1_RubyLambda' is a specialization of 'Lambda'.
+The class 'pp1_SeparatorExpression' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pp1_ResourceBody' and 'pp1_AttributeOperations'. From 'pp1_ResourceBody', the role 'pp1_ResourceBody' has cardinality 0..*, and from 'pp1_AttributeOperations', the role 'pp1_AttributeOperations' has cardinality 0..*.
+An association connects 'pp1_ResourceBody' and 'pp1_Expression'. From 'pp1_ResourceBody', the role 'pp1_ResourceBody2' has cardinality 0..*, and from 'pp1_Expression', the role 'pp1_Expression' has cardinality 0..*.
+An association connects 'pp1_AttributeOperation' and 'pp1_Expression'. From 'pp1_AttributeOperation', the role 'pp1_AttributeOperation' has cardinality 0..*, and from 'pp1_Expression', the role 'pp1_Expression4' has cardinality 0..*.
+An association connects 'pp1_AttributeOperations' and 'pp1_AttributeOperation'. From 'pp1_AttributeOperations', the role 'pp1_AttributeOperations6' has cardinality 0..*, and from 'pp1_AttributeOperation', the role 'pp1_AttributeOperation7' has cardinality 0..*.
+An association connects 'pp1_LiteralExpression' and 'pp1_HostClassDefinition'. From 'pp1_LiteralExpression', the role 'pp1_LiteralExpression' has cardinality 0..*, and from 'pp1_HostClassDefinition', the role 'pp1_HostClassDefinition' has cardinality 0..*.
+An association connects 'pp1_DefinitionArgumentList' and 'pp1_Definition'. From 'pp1_DefinitionArgumentList', the role 'pp1_DefinitionArgumentList' has cardinality 0..*, and from 'pp1_Definition', the role 'pp1_Definition' has cardinality 0..*.
+An association connects 'pp1_Expression' and 'pp1_Definition'. From 'pp1_Expression', the role 'pp1_Expression12' has cardinality 0..*, and from 'pp1_Definition', the role 'pp1_Definition11' has cardinality 0..*.
+An association connects 'pp1_DefinitionArgumentList' and 'pp1_DefinitionArgument'. From 'pp1_DefinitionArgumentList', the role 'pp1_DefinitionArgumentList14' has cardinality 0..*, and from 'pp1_DefinitionArgument', the role 'pp1_DefinitionArgument' has cardinality 0..*.
+An association connects 'pp1_DefinitionArgument' and 'pp1_Expression'. From 'pp1_DefinitionArgument', the role 'pp1_DefinitionArgument16' has cardinality 0..*, and from 'pp1_Expression', the role 'pp1_Expression17' has cardinality 0..*.
+An association connects 'pp1_Expression' and 'pp1_CaseExpression'. From 'pp1_Expression', the role 'pp1_Expression19' has cardinality 0..*, and from 'pp1_CaseExpression', the role 'pp1_CaseExpression' has cardinality 0..*.
+An association connects 'pp1_Case' and 'pp1_CaseExpression'. From 'pp1_Case', the role 'pp1_Case' has cardinality 0..*, and from 'pp1_CaseExpression', the role 'pp1_CaseExpression21' has cardinality 0..*.
+An association connects 'pp1_Case' and 'pp1_Expression'. From 'pp1_Case', the role 'pp1_Case23' has cardinality 0..*, and from 'pp1_Expression', the role 'pp1_Expression24' has cardinality 0..*.
+An association connects 'pp1_Case' and 'pp1_Expression'. From 'pp1_Case', the role 'pp1_Case26' has cardinality 0..*, and from 'pp1_Expression', the role 'pp1_Expression27' has cardinality 0..*.
+An association connects 'pp1_Expression' and 'pp1_IfExpression'. From 'pp1_Expression', the role 'pp1_Expression29' has cardinality 0..*, and from 'pp1_IfExpression', the role 'pp1_IfExpression' has cardinality 0..*.
+An association connects 'pp1_Expression' and 'pp1_IfExpression'. From 'pp1_Expression', the role 'pp1_Expression32' has cardinality 0..*, and from 'pp1_IfExpression', the role 'pp1_IfExpression31' has cardinality 0..*.
+An association connects 'pp1_IfExpression' and 'pp1_Expression'. From 'pp1_IfExpression', the role 'pp1_IfExpression34' has cardinality 0..*, and from 'pp1_Expression', the role 'pp1_Expression35' has cardinality 0..*.
+An association connects 'pp1_Expression' and 'pp1_ResourceExpression'. From 'pp1_Expression', the role 'pp1_Expression37' has cardinality 0..*, and from 'pp1_ResourceExpression', the role 'pp1_ResourceExpression' has cardinality 0..*.
+An association connects 'pp1_ResourceBody' and 'pp1_ResourceExpression'. From 'pp1_ResourceBody', the role 'pp1_ResourceBody40' has cardinality 0..*, and from 'pp1_ResourceExpression', the role 'pp1_ResourceExpression39' has cardinality 0..*.
+An association connects 'pp1_IQuotedString' and 'pp1_ImportExpression'. From 'pp1_IQuotedString', the role 'pp1_IQuotedString' has cardinality 0..*, and from 'pp1_ImportExpression', the role 'pp1_ImportExpression' has cardinality 0..*.
+An association connects 'pp1_LiteralList' and 'pp1_Expression'. From 'pp1_LiteralList', the role 'pp1_LiteralList' has cardinality 0..*, and from 'pp1_Expression', the role 'pp1_Expression43' has cardinality 0..*.
+An association connects 'pp1_LiteralHash' and 'pp1_HashEntry'. From 'pp1_LiteralHash', the role 'pp1_LiteralHash' has cardinality 0..*, and from 'pp1_HashEntry', the role 'pp1_HashEntry' has cardinality 0..*.
+An association connects 'pp1_Expression' and 'pp1_HashEntry'. From 'pp1_Expression', the role 'pp1_Expression47' has cardinality 0..*, and from 'pp1_HashEntry', the role 'pp1_HashEntry46' has cardinality 0..*.
+An association connects 'pp1_Expression' and 'pp1_HashEntry'. From 'pp1_Expression', the role 'pp1_Expression50' has cardinality 0..*, and from 'pp1_HashEntry', the role 'pp1_HashEntry49' has cardinality 0..*.
+An association connects 'pp1_Expression' and 'pp1_CollectExpression'. From 'pp1_Expression', the role 'pp1_Expression52' has cardinality 0..*, and from 'pp1_CollectExpression', the role 'pp1_CollectExpression' has cardinality 0..*.
+An association connects 'pp1_CollectExpression' and 'pp1_ICollectQuery'. From 'pp1_CollectExpression', the role 'pp1_CollectExpression54' has cardinality 0..*, and from 'pp1_ICollectQuery', the role 'pp1_ICollectQuery' has cardinality 0..*.
+An association connects 'pp1_CollectExpression' and 'pp1_AttributeOperations'. From 'pp1_CollectExpression', the role 'pp1_CollectExpression56' has cardinality 0..*, and from 'pp1_AttributeOperations', the role 'pp1_AttributeOperations57' has cardinality 0..*.
+An association connects 'pp1_BinaryExpression' and 'pp1_Expression'. From 'pp1_BinaryExpression', the role 'pp1_BinaryExpression' has cardinality 0..*, and from 'pp1_Expression', the role 'pp1_Expression59' has cardinality 0..*.
+An association connects 'pp1_BinaryExpression' and 'pp1_Expression'. From 'pp1_BinaryExpression', the role 'pp1_BinaryExpression61' has cardinality 0..*, and from 'pp1_Expression', the role 'pp1_Expression62' has cardinality 0..*.
+An association connects 'pp1_ParameterizedExpression' and 'pp1_Expression'. From 'pp1_ParameterizedExpression', the role 'pp1_ParameterizedExpression' has cardinality 0..*, and from 'pp1_Expression', the role 'pp1_Expression64' has cardinality 0..*.
+An association connects 'pp1_Expression' and 'pp1_ParameterizedExpression'. From 'pp1_Expression', the role 'pp1_Expression67' has cardinality 0..*, and from 'pp1_ParameterizedExpression', the role 'pp1_ParameterizedExpression66' has cardinality 0..*.
+An association connects 'pp1_NodeDefinition' and 'pp1_Expression'. From 'pp1_NodeDefinition', the role 'pp1_NodeDefinition' has cardinality 0..*, and from 'pp1_Expression', the role 'pp1_Expression69' has cardinality 0..*.
+An association connects 'pp1_Expression' and 'pp1_NodeDefinition'. From 'pp1_Expression', the role 'pp1_Expression72' has cardinality 0..*, and from 'pp1_NodeDefinition', the role 'pp1_NodeDefinition71' has cardinality 0..*.
+An association connects 'pp1_NodeDefinition' and 'pp1_Expression'. From 'pp1_NodeDefinition', the role 'pp1_NodeDefinition74' has cardinality 0..*, and from 'pp1_Expression', the role 'pp1_Expression75' has cardinality 0..*.
+An association connects 'pp1_UnaryExpression' and 'pp1_Expression'. From 'pp1_UnaryExpression', the role 'pp1_UnaryExpression' has cardinality 0..*, and from 'pp1_Expression', the role 'pp1_Expression77' has cardinality 0..*.
+An association connects 'pp1_Expression' and 'pp1_ExpressionBlock'. From 'pp1_Expression', the role 'pp1_Expression79' has cardinality 0..*, and from 'pp1_ExpressionBlock', the role 'pp1_ExpressionBlock' has cardinality 0..*.
+An association connects 'pp1_ParenthesisedExpression' and 'pp1_Expression'. From 'pp1_ParenthesisedExpression', the role 'pp1_ParenthesisedExpression' has cardinality 0..*, and from 'pp1_Expression', the role 'pp1_Expression81' has cardinality 0..*.
+An association connects 'pp1_Expression' and 'pp1_ExprList'. From 'pp1_Expression', the role 'pp1_Expression83' has cardinality 0..*, and from 'pp1_ExprList', the role 'pp1_ExprList' has cardinality 0..*.
+An association connects 'pp1_DoubleQuotedString' and 'pp1_TextExpression'. From 'pp1_DoubleQuotedString', the role 'pp1_DoubleQuotedString' has cardinality 0..*, and from 'pp1_TextExpression', the role 'pp1_TextExpression' has cardinality 0..*.
+An association connects 'pp1_UnquotedString' and 'pp1_Expression'. From 'pp1_UnquotedString', the role 'pp1_UnquotedString' has cardinality 0..*, and from 'pp1_Expression', the role 'pp1_Expression86' has cardinality 0..*.
+An association connects 'pp1_ExpressionTE' and 'pp1_Expression'. From 'pp1_ExpressionTE', the role 'pp1_ExpressionTE' has cardinality 0..*, and from 'pp1_Expression', the role 'pp1_Expression88' has cardinality 0..*.
+An association connects 'pp1_UnlessExpression' and 'pp1_Expression'. From 'pp1_UnlessExpression', the role 'pp1_UnlessExpression' has cardinality 0..*, and from 'pp1_Expression', the role 'pp1_Expression90' has cardinality 0..*.
+An association connects 'pp1_UnlessExpression' and 'pp1_Expression'. From 'pp1_UnlessExpression', the role 'pp1_UnlessExpression92' has cardinality 0..*, and from 'pp1_Expression', the role 'pp1_Expression93' has cardinality 0..*.
+An association connects 'pp1_Expression' and 'pp1_UnlessExpression'. From 'pp1_Expression', the role 'pp1_Expression96' has cardinality 0..*, and from 'pp1_UnlessExpression', the role 'pp1_UnlessExpression95' has cardinality 0..*.
+An association connects 'pp1_Lambda' and 'pp1_DefinitionArgumentList'. From 'pp1_Lambda', the role 'pp1_Lambda' has cardinality 0..*, and from 'pp1_DefinitionArgumentList', the role 'pp1_DefinitionArgumentList98' has cardinality 0..*.
+An association connects 'pp1_Expression' and 'pp1_MethodCall'. From 'pp1_Expression', the role 'pp1_Expression100' has cardinality 0..*, and from 'pp1_MethodCall', the role 'pp1_MethodCall' has cardinality 0..*.
+An association connects 'pp1_Lambda' and 'pp1_WithLambdaExpression'. From 'pp1_Lambda', the role 'pp1_Lambda102' has cardinality 0..*, and from 'pp1_WithLambdaExpression', the role 'pp1_WithLambdaExpression' has cardinality 0..*.

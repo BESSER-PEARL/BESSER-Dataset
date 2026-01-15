@@ -1,0 +1,91 @@
+The domain model 'imp' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'imp_Unary' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'imp_StringToValueMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'imp_While' represents an important domain concept.
+It does not declare any attributes.
+
+'Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_IntValue' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'imp_Skip' represents an important domain concept.
+It does not declare any attributes.
+
+'Stmt' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_BoolValue' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'imp_If' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_Store' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_Var' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'imp_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_Binary' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'imp_Assign' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_IntConst' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'imp_Stmt' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'UnaryOp' defines the following possible values: 'NEGATE', 'NOT'.
+The enumeration 'BinaryOp' defines the following possible values: 'AND', 'SUB', 'OR', 'GT', 'ADD', 'EQ', 'LEQ', 'LT', 'MUL', 'GEQ'.
+
+The model also captures inheritance relationships between classes.
+The class 'imp_Skip' is a specialization of 'Stmt'.
+The class 'imp_Assign' is a specialization of 'Stmt'.
+The class 'imp_Block' is a specialization of 'Stmt'.
+The class 'imp_If' is a specialization of 'Stmt'.
+The class 'imp_While' is a specialization of 'Stmt'.
+The class 'imp_IntConst' is a specialization of 'Expr'.
+The class 'imp_Var' is a specialization of 'Expr'.
+The class 'imp_Unary' is a specialization of 'Expr'.
+The class 'imp_Binary' is a specialization of 'Expr'.
+The class 'imp_IntValue' is a specialization of 'Value'.
+The class 'imp_BoolValue' is a specialization of 'Value'.
+
+Relationships between classes are modeled using associations.
+An association connects 'imp_Assign' and 'imp_Expr'. From 'imp_Assign', the role 'imp_Assign' has cardinality 0..*, and from 'imp_Expr', the role 'imp_Expr' has cardinality 0..*.
+An association connects 'imp_Stmt' and 'imp_Block'. From 'imp_Stmt', the role 'imp_Stmt' has cardinality 0..*, and from 'imp_Block', the role 'imp_Block' has cardinality 0..*.
+An association connects 'imp_Expr' and 'imp_If'. From 'imp_Expr', the role 'imp_Expr3' has cardinality 0..*, and from 'imp_If', the role 'imp_If' has cardinality 0..*.
+An association connects 'imp_If' and 'imp_Stmt'. From 'imp_If', the role 'imp_If5' has cardinality 0..*, and from 'imp_Stmt', the role 'imp_Stmt6' has cardinality 0..*.
+An association connects 'imp_If' and 'imp_Stmt'. From 'imp_If', the role 'imp_If8' has cardinality 0..*, and from 'imp_Stmt', the role 'imp_Stmt9' has cardinality 0..*.
+An association connects 'imp_Expr' and 'imp_While'. From 'imp_Expr', the role 'imp_Expr11' has cardinality 0..*, and from 'imp_While', the role 'imp_While' has cardinality 0..*.
+An association connects 'imp_Stmt' and 'imp_While'. From 'imp_Stmt', the role 'imp_Stmt14' has cardinality 0..*, and from 'imp_While', the role 'imp_While13' has cardinality 0..*.
+An association connects 'imp_Unary' and 'imp_Expr'. From 'imp_Unary', the role 'imp_Unary' has cardinality 0..*, and from 'imp_Expr', the role 'imp_Expr16' has cardinality 0..*.
+An association connects 'imp_Binary' and 'imp_Expr'. From 'imp_Binary', the role 'imp_Binary' has cardinality 0..*, and from 'imp_Expr', the role 'imp_Expr18' has cardinality 0..*.
+An association connects 'imp_Binary' and 'imp_Expr'. From 'imp_Binary', the role 'imp_Binary20' has cardinality 0..*, and from 'imp_Expr', the role 'imp_Expr21' has cardinality 0..*.
+An association connects 'imp_Store' and 'imp_StringToValueMap'. From 'imp_Store', the role 'imp_Store' has cardinality 0..*, and from 'imp_StringToValueMap', the role 'imp_StringToValueMap' has cardinality 0..*.
+An association connects 'imp_StringToValueMap' and 'imp_Value'. From 'imp_StringToValueMap', the role 'imp_StringToValueMap24' has cardinality 0..*, and from 'imp_Value', the role 'imp_Value' has cardinality 0..*.

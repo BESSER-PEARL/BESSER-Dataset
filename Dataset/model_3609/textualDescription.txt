@@ -1,0 +1,396 @@
+The domain model 'pp' describes the core structural elements and their relationships within the system.
+
+The model defines 92 main class(es).
+
+'pp_MultiplicativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_BinaryOpExpression' represents an important domain concept.
+It has one attribute: 'opName', which is of type str.
+
+'pp_VariableExpression' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'pp_PuppetManifest' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_Definition' represents an important domain concept.
+It has one attribute: 'className', which is of type str.
+
+'pp_ParenthesisedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_SelectorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_ResourceBody' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_LiteralRegex' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'StringExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_AttributeOperations' represents an important domain concept.
+It does not declare any attributes.
+
+'WithLambdaExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_LiteralName' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'pp_SingleQuotedString' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'ICollectQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_LiteralBoolean' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'pp_VerbatimTE' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'pp_Case' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_LiteralNameOrReference' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'pp_CollectExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'IQuotedString' represents an important domain concept.
+It does not declare any attributes.
+
+'Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_DefinitionArgument' represents an important domain concept.
+It has the following attributes: 'argName', which is of type str; 'op', which is of type str.
+
+'pp_HashEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_AssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_InExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_AppendExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_LiteralUndef' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_EqualityExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_AtExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_ElseExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_NamedAccessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_LiteralList' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_ResourceExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_NodeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_StringExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_TextExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_ShiftExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TextExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_SeparatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_OrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_ExpressionBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_RelationalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_LiteralClass' represents an important domain concept.
+It does not declare any attributes.
+
+'Lambda' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_LiteralHash' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_JavaLambda' represents an important domain concept.
+It has one attribute: 'farrow', which is of type bool.
+
+'ExpressionBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_UnaryNotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_ParameterizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_LiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_VirtualNameOrReference' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'exported', which is of type bool.
+
+'pp_ExpressionTE' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_ElseIfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_AdditiveExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_UnquotedString' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_SelectorEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_WithLambdaExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_UnaryMinusExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_DefinitionArgumentList' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_RelationshipExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_MethodCall' represents an important domain concept.
+It has one attribute: 'parenthesized', which is of type bool.
+
+'pp_CaseExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_ExportedCollectQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_ExprList' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_VirtualCollectQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'IfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_UnlessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_ImportExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_LiteralDefault' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_RubyLambda' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_IQuotedString' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_IfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_InterpolatedVariable' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'pp_AttributeOperation' represents an important domain concept.
+It has the following attributes: 'op', which is of type str; 'key', which is of type str.
+
+'pp_MatchingExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_HostClassDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_ICollectQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_DoubleQuotedString' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_VariableTE' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'BinaryOpExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pp_Lambda' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'pp_PuppetManifest' is a specialization of 'ExpressionBlock'.
+The class 'pp_VirtualCollectQuery' is a specialization of 'UnaryExpression'.
+The class 'pp_VirtualCollectQuery' is a specialization of 'ICollectQuery'.
+The class 'pp_ExportedCollectQuery' is a specialization of 'UnaryExpression'.
+The class 'pp_ExportedCollectQuery' is a specialization of 'ICollectQuery'.
+The class 'pp_HostClassDefinition' is a specialization of 'Definition'.
+The class 'pp_Definition' is a specialization of 'ExpressionBlock'.
+The class 'pp_CaseExpression' is a specialization of 'Expression'.
+The class 'pp_Case' is a specialization of 'ExpressionBlock'.
+The class 'pp_IfExpression' is a specialization of 'ExpressionBlock'.
+The class 'pp_LiteralExpression' is a specialization of 'Expression'.
+The class 'pp_LiteralNameOrReference' is a specialization of 'LiteralExpression'.
+The class 'pp_ResourceExpression' is a specialization of 'Expression'.
+The class 'pp_ImportExpression' is a specialization of 'Expression'.
+The class 'pp_LiteralList' is a specialization of 'LiteralExpression'.
+The class 'pp_LiteralHash' is a specialization of 'LiteralExpression'.
+The class 'pp_LiteralBoolean' is a specialization of 'LiteralExpression'.
+The class 'pp_LiteralUndef' is a specialization of 'LiteralExpression'.
+The class 'pp_LiteralDefault' is a specialization of 'LiteralExpression'.
+The class 'pp_LiteralRegex' is a specialization of 'LiteralExpression'.
+The class 'pp_LiteralName' is a specialization of 'LiteralExpression'.
+The class 'pp_VariableExpression' is a specialization of 'Expression'.
+The class 'pp_RelationshipExpression' is a specialization of 'BinaryOpExpression'.
+The class 'pp_AssignmentExpression' is a specialization of 'BinaryExpression'.
+The class 'pp_AppendExpression' is a specialization of 'BinaryExpression'.
+The class 'pp_OrExpression' is a specialization of 'BinaryExpression'.
+The class 'pp_AndExpression' is a specialization of 'BinaryExpression'.
+The class 'pp_RelationalExpression' is a specialization of 'BinaryOpExpression'.
+The class 'pp_EqualityExpression' is a specialization of 'BinaryOpExpression'.
+The class 'pp_ShiftExpression' is a specialization of 'BinaryOpExpression'.
+The class 'pp_AdditiveExpression' is a specialization of 'BinaryOpExpression'.
+The class 'pp_MultiplicativeExpression' is a specialization of 'BinaryOpExpression'.
+The class 'pp_MatchingExpression' is a specialization of 'BinaryOpExpression'.
+The class 'pp_InExpression' is a specialization of 'BinaryOpExpression'.
+The class 'pp_AtExpression' is a specialization of 'ParameterizedExpression'.
+The class 'pp_CollectExpression' is a specialization of 'Expression'.
+The class 'pp_SelectorExpression' is a specialization of 'ParameterizedExpression'.
+The class 'pp_SelectorEntry' is a specialization of 'BinaryExpression'.
+The class 'pp_FunctionCall' is a specialization of 'WithLambdaExpression'.
+The class 'pp_BinaryOpExpression' is a specialization of 'BinaryExpression'.
+The class 'pp_BinaryExpression' is a specialization of 'Expression'.
+The class 'pp_ParameterizedExpression' is a specialization of 'Expression'.
+The class 'pp_NodeDefinition' is a specialization of 'ExpressionBlock'.
+The class 'pp_UnaryExpression' is a specialization of 'Expression'.
+The class 'pp_UnaryMinusExpression' is a specialization of 'UnaryExpression'.
+The class 'pp_UnaryNotExpression' is a specialization of 'UnaryExpression'.
+The class 'pp_ExpressionBlock' is a specialization of 'Expression'.
+The class 'pp_ElseExpression' is a specialization of 'ExpressionBlock'.
+The class 'pp_ElseIfExpression' is a specialization of 'IfExpression'.
+The class 'pp_VirtualNameOrReference' is a specialization of 'LiteralExpression'.
+The class 'pp_ParenthesisedExpression' is a specialization of 'Expression'.
+The class 'pp_ExprList' is a specialization of 'Expression'.
+The class 'pp_DoubleQuotedString' is a specialization of 'StringExpression'.
+The class 'pp_DoubleQuotedString' is a specialization of 'IQuotedString'.
+The class 'pp_SingleQuotedString' is a specialization of 'StringExpression'.
+The class 'pp_SingleQuotedString' is a specialization of 'IQuotedString'.
+The class 'pp_StringExpression' is a specialization of 'Expression'.
+The class 'pp_UnquotedString' is a specialization of 'StringExpression'.
+The class 'pp_InterpolatedVariable' is a specialization of 'Expression'.
+The class 'pp_VerbatimTE' is a specialization of 'TextExpression'.
+The class 'pp_ExpressionTE' is a specialization of 'TextExpression'.
+The class 'pp_VariableTE' is a specialization of 'TextExpression'.
+The class 'pp_LiteralClass' is a specialization of 'LiteralExpression'.
+The class 'pp_UnlessExpression' is a specialization of 'ExpressionBlock'.
+The class 'pp_Lambda' is a specialization of 'ExpressionBlock'.
+The class 'pp_NamedAccessExpression' is a specialization of 'BinaryExpression'.
+The class 'pp_MethodCall' is a specialization of 'WithLambdaExpression'.
+The class 'pp_WithLambdaExpression' is a specialization of 'ParameterizedExpression'.
+The class 'pp_JavaLambda' is a specialization of 'Lambda'.
+The class 'pp_RubyLambda' is a specialization of 'Lambda'.
+The class 'pp_SeparatorExpression' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pp_AttributeOperations' and 'pp_ResourceBody'. From 'pp_AttributeOperations', the role 'pp_AttributeOperations' has cardinality 0..*, and from 'pp_ResourceBody', the role 'pp_ResourceBody' has cardinality 0..*.
+An association connects 'pp_ResourceBody' and 'pp_Expression'. From 'pp_ResourceBody', the role 'pp_ResourceBody2' has cardinality 0..*, and from 'pp_Expression', the role 'pp_Expression' has cardinality 0..*.
+An association connects 'pp_Expression' and 'pp_AttributeOperation'. From 'pp_Expression', the role 'pp_Expression4' has cardinality 0..*, and from 'pp_AttributeOperation', the role 'pp_AttributeOperation' has cardinality 0..*.
+An association connects 'pp_AttributeOperations' and 'pp_AttributeOperation'. From 'pp_AttributeOperations', the role 'pp_AttributeOperations6' has cardinality 0..*, and from 'pp_AttributeOperation', the role 'pp_AttributeOperation7' has cardinality 0..*.
+An association connects 'pp_LiteralExpression' and 'pp_HostClassDefinition'. From 'pp_LiteralExpression', the role 'pp_LiteralExpression' has cardinality 0..*, and from 'pp_HostClassDefinition', the role 'pp_HostClassDefinition' has cardinality 0..*.
+An association connects 'pp_Definition' and 'pp_DefinitionArgumentList'. From 'pp_Definition', the role 'pp_Definition' has cardinality 0..*, and from 'pp_DefinitionArgumentList', the role 'pp_DefinitionArgumentList' has cardinality 0..*.
+An association connects 'pp_DefinitionArgument' and 'pp_DefinitionArgumentList'. From 'pp_DefinitionArgument', the role 'pp_DefinitionArgument' has cardinality 0..*, and from 'pp_DefinitionArgumentList', the role 'pp_DefinitionArgumentList11' has cardinality 0..*.
+An association connects 'pp_DefinitionArgument' and 'pp_Expression'. From 'pp_DefinitionArgument', the role 'pp_DefinitionArgument13' has cardinality 0..*, and from 'pp_Expression', the role 'pp_Expression14' has cardinality 0..*.
+An association connects 'pp_Expression' and 'pp_DefinitionArgument'. From 'pp_Expression', the role 'pp_Expression17' has cardinality 0..*, and from 'pp_DefinitionArgument', the role 'pp_DefinitionArgument16' has cardinality 0..*.
+An association connects 'pp_CaseExpression' and 'pp_Expression'. From 'pp_CaseExpression', the role 'pp_CaseExpression' has cardinality 0..*, and from 'pp_Expression', the role 'pp_Expression19' has cardinality 0..*.
+An association connects 'pp_CaseExpression' and 'pp_Case'. From 'pp_CaseExpression', the role 'pp_CaseExpression21' has cardinality 0..*, and from 'pp_Case', the role 'pp_Case' has cardinality 0..*.
+An association connects 'pp_Case' and 'pp_Expression'. From 'pp_Case', the role 'pp_Case23' has cardinality 0..*, and from 'pp_Expression', the role 'pp_Expression24' has cardinality 0..*.
+An association connects 'pp_IfExpression' and 'pp_Expression'. From 'pp_IfExpression', the role 'pp_IfExpression' has cardinality 0..*, and from 'pp_Expression', the role 'pp_Expression26' has cardinality 0..*.
+An association connects 'pp_IfExpression' and 'pp_Expression'. From 'pp_IfExpression', the role 'pp_IfExpression28' has cardinality 0..*, and from 'pp_Expression', the role 'pp_Expression29' has cardinality 0..*.
+An association connects 'pp_ResourceExpression' and 'pp_Expression'. From 'pp_ResourceExpression', the role 'pp_ResourceExpression' has cardinality 0..*, and from 'pp_Expression', the role 'pp_Expression31' has cardinality 0..*.
+An association connects 'pp_ResourceExpression' and 'pp_ResourceBody'. From 'pp_ResourceExpression', the role 'pp_ResourceExpression33' has cardinality 0..*, and from 'pp_ResourceBody', the role 'pp_ResourceBody34' has cardinality 0..*.
+An association connects 'pp_ImportExpression' and 'pp_IQuotedString'. From 'pp_ImportExpression', the role 'pp_ImportExpression' has cardinality 0..*, and from 'pp_IQuotedString', the role 'pp_IQuotedString' has cardinality 0..*.
+An association connects 'pp_LiteralList' and 'pp_Expression'. From 'pp_LiteralList', the role 'pp_LiteralList' has cardinality 0..*, and from 'pp_Expression', the role 'pp_Expression37' has cardinality 0..*.
+An association connects 'pp_HashEntry' and 'pp_LiteralHash'. From 'pp_HashEntry', the role 'pp_HashEntry' has cardinality 0..*, and from 'pp_LiteralHash', the role 'pp_LiteralHash' has cardinality 0..*.
+An association connects 'pp_Expression' and 'pp_HashEntry'. From 'pp_Expression', the role 'pp_Expression41' has cardinality 0..*, and from 'pp_HashEntry', the role 'pp_HashEntry40' has cardinality 0..*.
+An association connects 'pp_HashEntry' and 'pp_Expression'. From 'pp_HashEntry', the role 'pp_HashEntry43' has cardinality 0..*, and from 'pp_Expression', the role 'pp_Expression44' has cardinality 0..*.
+An association connects 'pp_Expression' and 'pp_CollectExpression'. From 'pp_Expression', the role 'pp_Expression46' has cardinality 0..*, and from 'pp_CollectExpression', the role 'pp_CollectExpression' has cardinality 0..*.
+An association connects 'pp_ICollectQuery' and 'pp_CollectExpression'. From 'pp_ICollectQuery', the role 'pp_ICollectQuery' has cardinality 0..*, and from 'pp_CollectExpression', the role 'pp_CollectExpression48' has cardinality 0..*.
+An association connects 'pp_CollectExpression' and 'pp_AttributeOperations'. From 'pp_CollectExpression', the role 'pp_CollectExpression50' has cardinality 0..*, and from 'pp_AttributeOperations', the role 'pp_AttributeOperations51' has cardinality 0..*.
+An association connects 'pp_Expression' and 'pp_BinaryExpression'. From 'pp_Expression', the role 'pp_Expression53' has cardinality 0..*, and from 'pp_BinaryExpression', the role 'pp_BinaryExpression' has cardinality 0..*.
+An association connects 'pp_BinaryExpression' and 'pp_Expression'. From 'pp_BinaryExpression', the role 'pp_BinaryExpression55' has cardinality 0..*, and from 'pp_Expression', the role 'pp_Expression56' has cardinality 0..*.
+An association connects 'pp_Expression' and 'pp_ParameterizedExpression'. From 'pp_Expression', the role 'pp_Expression58' has cardinality 0..*, and from 'pp_ParameterizedExpression', the role 'pp_ParameterizedExpression' has cardinality 0..*.
+An association connects 'pp_ParameterizedExpression' and 'pp_Expression'. From 'pp_ParameterizedExpression', the role 'pp_ParameterizedExpression60' has cardinality 0..*, and from 'pp_Expression', the role 'pp_Expression61' has cardinality 0..*.
+An association connects 'pp_NodeDefinition' and 'pp_Expression'. From 'pp_NodeDefinition', the role 'pp_NodeDefinition' has cardinality 0..*, and from 'pp_Expression', the role 'pp_Expression63' has cardinality 0..*.
+An association connects 'pp_NodeDefinition' and 'pp_Expression'. From 'pp_NodeDefinition', the role 'pp_NodeDefinition65' has cardinality 0..*, and from 'pp_Expression', the role 'pp_Expression66' has cardinality 0..*.
+An association connects 'pp_Expression' and 'pp_UnaryExpression'. From 'pp_Expression', the role 'pp_Expression68' has cardinality 0..*, and from 'pp_UnaryExpression', the role 'pp_UnaryExpression' has cardinality 0..*.
+An association connects 'pp_ExpressionBlock' and 'pp_Expression'. From 'pp_ExpressionBlock', the role 'pp_ExpressionBlock' has cardinality 0..*, and from 'pp_Expression', the role 'pp_Expression70' has cardinality 0..*.
+An association connects 'pp_Expression' and 'pp_ParenthesisedExpression'. From 'pp_Expression', the role 'pp_Expression72' has cardinality 0..*, and from 'pp_ParenthesisedExpression', the role 'pp_ParenthesisedExpression' has cardinality 0..*.
+An association connects 'pp_ExprList' and 'pp_Expression'. From 'pp_ExprList', the role 'pp_ExprList' has cardinality 0..*, and from 'pp_Expression', the role 'pp_Expression74' has cardinality 0..*.
+An association connects 'pp_TextExpression' and 'pp_DoubleQuotedString'. From 'pp_TextExpression', the role 'pp_TextExpression' has cardinality 0..*, and from 'pp_DoubleQuotedString', the role 'pp_DoubleQuotedString' has cardinality 0..*.
+An association connects 'pp_UnquotedString' and 'pp_Expression'. From 'pp_UnquotedString', the role 'pp_UnquotedString' has cardinality 0..*, and from 'pp_Expression', the role 'pp_Expression77' has cardinality 0..*.
+An association connects 'pp_Expression' and 'pp_ExpressionTE'. From 'pp_Expression', the role 'pp_Expression79' has cardinality 0..*, and from 'pp_ExpressionTE', the role 'pp_ExpressionTE' has cardinality 0..*.
+An association connects 'pp_Expression' and 'pp_UnlessExpression'. From 'pp_Expression', the role 'pp_Expression81' has cardinality 0..*, and from 'pp_UnlessExpression', the role 'pp_UnlessExpression' has cardinality 0..*.
+An association connects 'pp_Expression' and 'pp_UnlessExpression'. From 'pp_Expression', the role 'pp_Expression84' has cardinality 0..*, and from 'pp_UnlessExpression', the role 'pp_UnlessExpression83' has cardinality 0..*.
+An association connects 'pp_Lambda' and 'pp_DefinitionArgumentList'. From 'pp_Lambda', the role 'pp_Lambda' has cardinality 0..*, and from 'pp_DefinitionArgumentList', the role 'pp_DefinitionArgumentList86' has cardinality 0..*.
+An association connects 'pp_MethodCall' and 'pp_Expression'. From 'pp_MethodCall', the role 'pp_MethodCall' has cardinality 0..*, and from 'pp_Expression', the role 'pp_Expression88' has cardinality 0..*.
+An association connects 'pp_WithLambdaExpression' and 'pp_Lambda'. From 'pp_WithLambdaExpression', the role 'pp_WithLambdaExpression' has cardinality 0..*, and from 'pp_Lambda', the role 'pp_Lambda90' has cardinality 0..*.

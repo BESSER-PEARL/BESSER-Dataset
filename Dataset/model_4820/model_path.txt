@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/SpagoBILabs/SpagoBI-Meta/it.eng.spagobi.meta.model/model/SpagoBIMetaModel.ecore

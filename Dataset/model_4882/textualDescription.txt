@@ -1,0 +1,140 @@
+The domain model 'builds' describes the core structural elements and their relationships within the system.
+
+The model defines 29 main class(es).
+
+'BuildElement' represents an important domain concept.
+It does not declare any attributes.
+
+'builds_BuildElement' represents an important domain concept.
+It has the following attributes: 'refreshDate', which is of type date; 'url', which is of type str; 'name', which is of type str; 'operations', which is of type str; 'elementStatus', which is of type str.
+
+'ParameterDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'builds_ChoiceParameterDefinition' represents an important domain concept.
+It has the following attributes: 'defaultValue', which is of type str; 'options', which is of type str.
+
+'builds_BuildPlan' represents an important domain concept.
+It has the following attributes: 'state', which is of type str; 'status', which is of type str; 'flags', which is of type str; 'id', which is of type str; 'selected', which is of type bool; 'summary', which is of type str; 'health', which is of type int; 'description', which is of type str; 'info', which is of type str.
+
+'builds_BooleanParameterDefinition' represents an important domain concept.
+It has one attribute: 'defaultValue', which is of type bool.
+
+'builds_TestSuite' represents an important domain concept.
+It does not declare any attributes.
+
+'builds_Build' represents an important domain concept.
+It has the following attributes: 'displayName', which is of type str; 'summary', which is of type str; 'id', which is of type str; 'buildNumber', which is of type int; 'state', which is of type str; 'duration', which is of type str; 'label', which is of type str; 'status', which is of type str; 'timestamp', which is of type str.
+
+'builds_TestResult' represents an important domain concept.
+It has the following attributes: 'ignoredCount', which is of type int; 'failCount', which is of type int; 'errorCount', which is of type int; 'passCount', which is of type int; 'duration', which is of type str.
+
+'builds_PlanParameterDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TestElement' represents an important domain concept.
+It does not declare any attributes.
+
+'builds_PasswordParameterDefinition' represents an important domain concept.
+It has one attribute: 'defaultValue', which is of type str.
+
+'builds_BuildServer' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'connectorKind', which is of type str; 'repositoryUrl', which is of type str.
+
+'builds_BuildModel' represents an important domain concept.
+It does not declare any attributes.
+
+'builds_Artifact' represents an important domain concept.
+It has one attribute: 'relativePath', which is of type str.
+
+'builds_StringToStringMap' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'builds_BuildCause' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'builds_BuildParameterDefinition' represents an important domain concept.
+It has one attribute: 'buildPlanId', which is of type str.
+
+'builds_BuildReference' represents an important domain concept.
+It has the following attributes: 'plan', which is of type str; 'build', which is of type str.
+
+'builds_User' represents an important domain concept.
+It has the following attributes: 'email', which is of type str; 'id', which is of type str.
+
+'builds_ParameterDefinition' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str.
+
+'builds_TestElement' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'output', which is of type str; 'errorOutput', which is of type str; 'duration', which is of type str.
+
+'builds_Change' represents an important domain concept.
+It has the following attributes: 'date', which is of type str; 'message', which is of type str; 'revision', which is of type str.
+
+'builds_StringParameterDefinition' represents an important domain concept.
+It has one attribute: 'defaultValue', which is of type str.
+
+'builds_ChangeSet' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'builds_TestCase' represents an important domain concept.
+It has the following attributes: 'stackTrace', which is of type str; 'message', which is of type str; 'skipped', which is of type bool; 'className', which is of type str; 'status', which is of type str.
+
+'builds_FileParameterDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'builds_ChangeArtifact' represents an important domain concept.
+It has the following attributes: 'file', which is of type str; 'dead', which is of type bool; 'relativePath', which is of type str; 'editType', which is of type str; 'prevRevision', which is of type str; 'revision', which is of type str.
+
+'builds_HealthReport' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'health', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TestCaseResult' defines the following possible values: 'REGRESSION', 'SKIPPED', 'PASSED', 'FIXED', 'FAILED'.
+
+The model also captures inheritance relationships between classes.
+The class 'builds_Artifact' is a specialization of 'BuildElement'.
+The class 'builds_Build' is a specialization of 'BuildElement'.
+The class 'builds_BuildPlan' is a specialization of 'BuildElement'.
+The class 'builds_BuildServer' is a specialization of 'BuildElement'.
+The class 'builds_User' is a specialization of 'BuildElement'.
+The class 'builds_ChoiceParameterDefinition' is a specialization of 'ParameterDefinition'.
+The class 'builds_BooleanParameterDefinition' is a specialization of 'ParameterDefinition'.
+The class 'builds_FileParameterDefinition' is a specialization of 'ParameterDefinition'.
+The class 'builds_PlanParameterDefinition' is a specialization of 'ParameterDefinition'.
+The class 'builds_PasswordParameterDefinition' is a specialization of 'ParameterDefinition'.
+The class 'builds_BuildParameterDefinition' is a specialization of 'ParameterDefinition'.
+The class 'builds_StringParameterDefinition' is a specialization of 'ParameterDefinition'.
+The class 'builds_TestSuite' is a specialization of 'TestElement'.
+The class 'builds_TestCase' is a specialization of 'TestElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'builds_Build' and 'builds_Artifact'. From 'builds_Build', the role 'builds_Build' has cardinality 0..*, and from 'builds_Artifact', the role 'builds_Artifact' has cardinality 0..*.
+An association connects 'builds_Build' and 'builds_ChangeSet'. From 'builds_Build', the role 'builds_Build2' has cardinality 0..*, and from 'builds_ChangeSet', the role 'builds_ChangeSet' has cardinality 0..*.
+An association connects 'builds_BuildPlan' and 'builds_Build'. From 'builds_BuildPlan', the role 'builds_BuildPlan' has cardinality 0..*, and from 'builds_Build', the role 'builds_Build4' has cardinality 0..*.
+An association connects 'builds_BuildServer' and 'builds_Build'. From 'builds_BuildServer', the role 'builds_BuildServer' has cardinality 0..*, and from 'builds_Build', the role 'builds_Build6' has cardinality 0..*.
+An association connects 'builds_TestResult' and 'builds_Build'. From 'builds_TestResult', the role 'TestResult' has cardinality 0..*, and from 'builds_Build', the role 'build' has cardinality 0..*.
+An association connects 'builds_Build' and 'builds_User'. From 'builds_Build', the role 'builds_Build9' has cardinality 0..*, and from 'builds_User', the role 'builds_User' has cardinality 0..*.
+An association connects 'builds_BuildCause' and 'builds_Build'. From 'builds_BuildCause', the role 'builds_BuildCause' has cardinality 0..*, and from 'builds_Build', the role 'builds_Build11' has cardinality 0..*.
+An association connects 'builds_BuildReference' and 'builds_BuildCause'. From 'builds_BuildReference', the role 'builds_BuildReference' has cardinality 0..*, and from 'builds_BuildCause', the role 'builds_BuildCause13' has cardinality 0..*.
+An association connects 'builds_User' and 'builds_BuildCause'. From 'builds_User', the role 'builds_User16' has cardinality 0..*, and from 'builds_BuildCause', the role 'builds_BuildCause15' has cardinality 0..*.
+An association connects 'builds_StringToStringMap' and 'builds_BuildElement'. From 'builds_StringToStringMap', the role 'builds_StringToStringMap' has cardinality 0..*, and from 'builds_BuildElement', the role 'builds_BuildElement' has cardinality 0..*.
+An association connects 'builds_BuildPlan' and 'builds_BuildServer'. From 'builds_BuildPlan', the role 'builds_BuildPlan19' has cardinality 0..*, and from 'builds_BuildServer', the role 'builds_BuildServer20' has cardinality 0..*.
+An association connects 'builds_BuildPlan' and 'builds_BuildPlan'. From 'builds_BuildPlan', the role 'parent' has cardinality 0..*, and from 'builds_BuildPlan', the role 'BuildPlan' has cardinality 0..*.
+An association connects 'builds_BuildPlan' and 'builds_BuildPlan'. From 'builds_BuildPlan', the role 'children' has cardinality 0..*, and from 'builds_BuildPlan', the role 'BuildPlan25' has cardinality 0..*.
+An association connects 'builds_BuildPlan' and 'builds_Build'. From 'builds_BuildPlan', the role 'builds_BuildPlan27' has cardinality 0..*, and from 'builds_Build', the role 'builds_Build28' has cardinality 0..*.
+An association connects 'builds_ParameterDefinition' and 'builds_BuildPlan'. From 'builds_ParameterDefinition', the role 'ParameterDefinition' has cardinality 0..*, and from 'builds_BuildPlan', the role 'containingBuildPlan' has cardinality 0..*.
+An association connects 'builds_HealthReport' and 'builds_BuildPlan'. From 'builds_HealthReport', the role 'builds_HealthReport' has cardinality 0..*, and from 'builds_BuildPlan', the role 'builds_BuildPlan31' has cardinality 0..*.
+An association connects 'builds_BuildServer' and 'builds_BuildModel'. From 'builds_BuildServer', the role 'builds_BuildServer33' has cardinality 0..*, and from 'builds_BuildModel', the role 'builds_BuildModel' has cardinality 0..*.
+An association connects 'builds_BuildModel' and 'builds_BuildPlan'. From 'builds_BuildModel', the role 'builds_BuildModel35' has cardinality 0..*, and from 'builds_BuildPlan', the role 'builds_BuildPlan36' has cardinality 0..*.
+An association connects 'builds_BuildModel' and 'builds_Build'. From 'builds_BuildModel', the role 'builds_BuildModel38' has cardinality 0..*, and from 'builds_Build', the role 'builds_Build39' has cardinality 0..*.
+An association connects 'builds_ChangeArtifact' and 'builds_Change'. From 'builds_ChangeArtifact', the role 'builds_ChangeArtifact' has cardinality 0..*, and from 'builds_Change', the role 'builds_Change' has cardinality 0..*.
+An association connects 'builds_User' and 'builds_Change'. From 'builds_User', the role 'builds_User43' has cardinality 0..*, and from 'builds_Change', the role 'builds_Change42' has cardinality 0..*.
+An association connects 'builds_Change' and 'builds_ChangeSet'. From 'builds_Change', the role 'builds_Change46' has cardinality 0..*, and from 'builds_ChangeSet', the role 'builds_ChangeSet45' has cardinality 0..*.
+An association connects 'builds_ParameterDefinition' and 'builds_BuildPlan'. From 'builds_ParameterDefinition', the role 'parameterDefinitions' has cardinality 0..*, and from 'builds_BuildPlan', the role 'BuildPlan48' has cardinality 0..*.
+An association connects 'builds_BuildPlan' and 'builds_BuildParameterDefinition'. From 'builds_BuildPlan', the role 'builds_BuildPlan50' has cardinality 0..*, and from 'builds_BuildParameterDefinition', the role 'builds_BuildParameterDefinition' has cardinality 0..*.
+An association connects 'builds_Build' and 'builds_TestResult'. From 'builds_Build', the role 'Build' has cardinality 0..*, and from 'builds_TestResult', the role 'testResult' has cardinality 0..*.
+An association connects 'builds_TestSuite' and 'builds_TestResult'. From 'builds_TestSuite', the role 'TestSuite' has cardinality 0..*, and from 'builds_TestResult', the role 'result' has cardinality 0..*.
+An association connects 'builds_TestCase' and 'builds_TestSuite'. From 'builds_TestCase', the role 'TestCase' has cardinality 0..*, and from 'builds_TestSuite', the role 'suite' has cardinality 0..*.
+An association connects 'builds_TestSuite' and 'builds_TestResult'. From 'builds_TestSuite', the role 'suites' has cardinality 0..*, and from 'builds_TestResult', the role 'TestResult55' has cardinality 0..*.
+An association connects 'builds_TestCase' and 'builds_TestSuite'. From 'builds_TestCase', the role 'cases' has cardinality 0..*, and from 'builds_TestSuite', the role 'TestSuite57' has cardinality 0..*.

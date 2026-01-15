@@ -1,0 +1,55 @@
+The domain model 'fM' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'fM_Child' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'mandatory', which is of type bool.
+
+'fM_FeatureModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Child' represents an important domain concept.
+It does not declare any attributes.
+
+'fM_Var' represents an important domain concept.
+It has the following attributes: 'not', which is of type bool; 'name', which is of type str.
+
+'fM_Constraints' represents an important domain concept.
+It does not declare any attributes.
+
+'fM_Leaf' represents an important domain concept.
+It does not declare any attributes.
+
+'fM_Formula' represents an important domain concept.
+It does not declare any attributes.
+
+'Formula' represents an important domain concept.
+It does not declare any attributes.
+
+'fM_Node' represents an important domain concept.
+It has the following attributes: 'close_relation', which is of type str; 'open_relation', which is of type str.
+
+'fM_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'fM_RuleElement' represents an important domain concept.
+It has the following attributes: 'close_operator', which is of type str; 'open_operator', which is of type str.
+
+'fM_FeatureDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'fM_Leaf' is a specialization of 'Child'.
+The class 'fM_Node' is a specialization of 'Child'.
+The class 'fM_RuleElement' is a specialization of 'Formula'.
+The class 'fM_Var' is a specialization of 'Formula'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fM_FeatureDiagram' and 'fM_FeatureModel'. From 'fM_FeatureDiagram', the role 'fM_FeatureDiagram' has cardinality 0..*, and from 'fM_FeatureModel', the role 'fM_FeatureModel' has cardinality 0..*.
+An association connects 'fM_Constraints' and 'fM_FeatureModel'. From 'fM_Constraints', the role 'fM_Constraints' has cardinality 0..*, and from 'fM_FeatureModel', the role 'fM_FeatureModel2' has cardinality 0..*.
+An association connects 'fM_Child' and 'fM_FeatureDiagram'. From 'fM_Child', the role 'fM_Child' has cardinality 0..*, and from 'fM_FeatureDiagram', the role 'fM_FeatureDiagram4' has cardinality 0..*.
+An association connects 'fM_Node' and 'fM_Child'. From 'fM_Node', the role 'fM_Node' has cardinality 0..*, and from 'fM_Child', the role 'fM_Child6' has cardinality 0..*.
+An association connects 'fM_Constraints' and 'fM_Rule'. From 'fM_Constraints', the role 'fM_Constraints8' has cardinality 0..*, and from 'fM_Rule', the role 'fM_Rule' has cardinality 0..*.
+An association connects 'fM_Formula' and 'fM_Rule'. From 'fM_Formula', the role 'fM_Formula' has cardinality 0..*, and from 'fM_Rule', the role 'fM_Rule10' has cardinality 0..*.
+An association connects 'fM_RuleElement' and 'fM_Var'. From 'fM_RuleElement', the role 'fM_RuleElement' has cardinality 0..*, and from 'fM_Var', the role 'fM_Var' has cardinality 0..*.
+An association connects 'fM_Var' and 'fM_RuleElement'. From 'fM_Var', the role 'fM_Var14' has cardinality 0..*, and from 'fM_RuleElement', the role 'fM_RuleElement13' has cardinality 0..*.

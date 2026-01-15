@@ -1,0 +1,21 @@
+The domain model 'Families' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'Families_Member' represents an important domain concept.
+It has the following attributes: 'firstName', which is of type str; 'age', which is of type int.
+
+'Families_FamilyRegistry' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_Family' represents an important domain concept.
+It has the following attributes: 'lastName', which is of type str; 'address', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Families_Family' and 'Families_Member'. From 'Families_Family', the role 'Families_Family' has cardinality 0..*, and from 'Families_Member', the role 'Families_Member' has cardinality 0..*.
+An association connects 'Families_Family' and 'Families_Member'. From 'Families_Family', the role 'Families_Family2' has cardinality 0..*, and from 'Families_Member', the role 'Families_Member3' has cardinality 0..*.
+An association connects 'Families_Member' and 'Families_Family'. From 'Families_Member', the role 'Families_Member6' has cardinality 0..*, and from 'Families_Family', the role 'Families_Family5' has cardinality 0..*.
+An association connects 'Families_Member' and 'Families_Family'. From 'Families_Member', the role 'Families_Member9' has cardinality 0..*, and from 'Families_Family', the role 'Families_Family8' has cardinality 0..*.
+An association connects 'Families_Family' and 'Families_Family'. From 'Families_Family', the role 'Families_Family12' has cardinality 0..*, and from 'Families_Family', the role 'Families_Family10' has cardinality 0..*.
+An association connects 'Families_Member' and 'Families_Member'. From 'Families_Member', the role 'Families_Member13' has cardinality 0..*, and from 'Families_Member', the role 'Families_Member15' has cardinality 0..*.
+An association connects 'Families_FamilyRegistry' and 'Families_Family'. From 'Families_FamilyRegistry', the role 'Families_FamilyRegistry' has cardinality 0..*, and from 'Families_Family', the role 'Families_Family17' has cardinality 0..*.

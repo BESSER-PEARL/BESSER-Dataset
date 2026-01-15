@@ -1,0 +1,108 @@
+The domain model 'feature' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'feature_Interval' represents an important domain concept.
+It has the following attributes: 'lowerBound', which is of type int; 'upperBound', which is of type int.
+
+'feature_Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Imply' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Exclude' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Identifiable' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'feature_DomainValue' represents an important domain concept.
+It has the following attributes: 'int', which is of type int; 'name', which is of type str.
+
+'feature_Feature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'configurationState', which is of type str.
+
+'feature_AttributeConstraint' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'feature_AttributeOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Group' represents an important domain concept.
+It has the following attributes: 'minCardinality', which is of type int; 'maxCardinality', which is of type int.
+
+'feature_AttributeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str; 'deselectedDomainValues', which is of type str.
+
+'feature_NumericalDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_FeatureConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_DiscreteDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_FeatureModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'feature_AttributeValue' represents an important domain concept.
+It has the following attributes: 'int', which is of type int; 'name', which is of type str.
+
+'Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Relop' defines the following possible values: 'unequal', 'greaterThan', 'lessThanOrEqual', 'lessThan', 'equal', 'greaterThanOrEqual'.
+The enumeration 'FeatureState' defines the following possible values: 'unbound', 'deselected', 'selected'.
+
+The model also captures inheritance relationships between classes.
+The class 'feature_Feature' is a specialization of 'Identifiable'.
+The class 'feature_Group' is a specialization of 'Identifiable'.
+The class 'feature_DiscreteDomain' is a specialization of 'Domain'.
+The class 'feature_NumericalDomain' is a specialization of 'Domain'.
+The class 'feature_Domain' is a specialization of 'Identifiable'.
+The class 'feature_Constraint' is a specialization of 'Identifiable'.
+The class 'feature_AttributeConstraint' is a specialization of 'Constraint'.
+The class 'feature_AttributeReference' is a specialization of 'AttributeOperand'.
+The class 'feature_AttributeValue' is a specialization of 'AttributeOperand'.
+The class 'feature_FeatureConstraint' is a specialization of 'Constraint'.
+The class 'feature_Imply' is a specialization of 'FeatureConstraint'.
+The class 'feature_Exclude' is a specialization of 'FeatureConstraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'feature_FeatureModel' and 'feature_Feature'. From 'feature_FeatureModel', the role 'feature_FeatureModel' has cardinality 0..*, and from 'feature_Feature', the role 'feature_Feature' has cardinality 0..*.
+An association connects 'feature_Domain' and 'feature_FeatureModel'. From 'feature_Domain', the role 'feature_Domain' has cardinality 0..*, and from 'feature_FeatureModel', the role 'feature_FeatureModel2' has cardinality 0..*.
+An association connects 'feature_Constraint' and 'feature_FeatureModel'. From 'feature_Constraint', the role 'feature_Constraint' has cardinality 0..*, and from 'feature_FeatureModel', the role 'feature_FeatureModel4' has cardinality 0..*.
+An association connects 'feature_Attribute' and 'feature_Feature'. From 'feature_Attribute', the role 'Attribute' has cardinality 0..*, and from 'feature_Feature', the role 'feature' has cardinality 0..*.
+An association connects 'feature_Group' and 'feature_Feature'. From 'feature_Group', the role 'feature_Group' has cardinality 0..*, and from 'feature_Feature', the role 'feature_Feature7' has cardinality 0..*.
+An association connects 'feature_Group' and 'feature_Feature'. From 'feature_Group', the role 'feature_Group9' has cardinality 0..*, and from 'feature_Feature', the role 'feature_Feature10' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_Attribute'. From 'feature_Feature', the role 'Feature' has cardinality 0..*, and from 'feature_Attribute', the role 'attributes' has cardinality 0..*.
+An association connects 'feature_Domain' and 'feature_Attribute'. From 'feature_Domain', the role 'feature_Domain13' has cardinality 0..*, and from 'feature_Attribute', the role 'feature_Attribute' has cardinality 0..*.
+An association connects 'feature_DiscreteDomain' and 'feature_DomainValue'. From 'feature_DiscreteDomain', the role 'feature_DiscreteDomain' has cardinality 0..*, and from 'feature_DomainValue', the role 'feature_DomainValue' has cardinality 0..*.
+An association connects 'feature_NumericalDomain' and 'feature_Interval'. From 'feature_NumericalDomain', the role 'feature_NumericalDomain' has cardinality 0..*, and from 'feature_Interval', the role 'feature_Interval' has cardinality 0..*.
+An association connects 'feature_AttributeOperand' and 'feature_AttributeConstraint'. From 'feature_AttributeOperand', the role 'feature_AttributeOperand' has cardinality 0..*, and from 'feature_AttributeConstraint', the role 'feature_AttributeConstraint' has cardinality 0..*.
+An association connects 'feature_AttributeConstraint' and 'feature_AttributeOperand'. From 'feature_AttributeConstraint', the role 'feature_AttributeConstraint18' has cardinality 0..*, and from 'feature_AttributeOperand', the role 'feature_AttributeOperand19' has cardinality 0..*.
+An association connects 'feature_AttributeReference' and 'feature_Attribute'. From 'feature_AttributeReference', the role 'feature_AttributeReference' has cardinality 0..*, and from 'feature_Attribute', the role 'feature_Attribute21' has cardinality 0..*.
+An association connects 'feature_AttributeReference' and 'feature_Feature'. From 'feature_AttributeReference', the role 'feature_AttributeReference23' has cardinality 0..*, and from 'feature_Feature', the role 'feature_Feature24' has cardinality 0..*.
+An association connects 'feature_FeatureConstraint' and 'feature_Feature'. From 'feature_FeatureConstraint', the role 'feature_FeatureConstraint' has cardinality 0..*, and from 'feature_Feature', the role 'feature_Feature26' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_FeatureConstraint'. From 'feature_Feature', the role 'feature_Feature29' has cardinality 0..*, and from 'feature_FeatureConstraint', the role 'feature_FeatureConstraint28' has cardinality 0..*.

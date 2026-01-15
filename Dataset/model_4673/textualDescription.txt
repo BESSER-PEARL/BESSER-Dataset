@@ -1,0 +1,262 @@
+The domain model 'Maude' describes the core structural elements and their relationships within the system.
+
+The model defines 57 main class(es).
+
+'Maude_SubsortRel' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_Membership' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_Parameter' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'Maude_MaudeTopEl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Maude_STheory' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_RenMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_SModule' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_ModuleIdModExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ModExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_ViewMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_TheoryIdModExp' represents an important domain concept.
+It does not declare any attributes.
+
+'RenMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_Term' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_OpTypedMapping' represents an important domain concept.
+It has the following attributes: 'to', which is of type str; 'atts', which is of type str.
+
+'Maude_MaudeSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_ModExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_FModule' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_ModElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_Kind' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_MatchingCond' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_Operation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'atts', which is of type str.
+
+'MaudeTopEl' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_Constant' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'EquationalCond' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_RecTerm' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'Maude_RenModExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_ModImportation' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_LabelMapping' represents an important domain concept.
+It has the following attributes: 'to', which is of type str; 'from', which is of type str.
+
+'Maude_Theory' represents an important domain concept.
+It does not declare any attributes.
+
+'ViewMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_InstModExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_Sort' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_EqualCond' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_TermMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_EquationalCond' represents an important domain concept.
+It does not declare any attributes.
+
+'Module' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_BooleanCond' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Maude_SortMapping' represents an important domain concept.
+It has one attribute: 'to', which is of type str.
+
+'Maude_Equation' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_RewriteCond' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_FTheory' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_OpMapping' represents an important domain concept.
+It has one attribute: 'to', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_CompModExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ModElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Theory' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_Statement' represents an important domain concept.
+It has the following attributes: 'atts', which is of type str; 'label', which is of type str.
+
+'Maude_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_MembershipCond' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Term' represents an important domain concept.
+It does not declare any attributes.
+
+'Maude_View' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Maude_InstModExp' is a specialization of 'ModExpression'.
+The class 'Maude_RenModExp' is a specialization of 'ModExpression'.
+The class 'Maude_CompModExp' is a specialization of 'ModExpression'.
+The class 'Maude_ModuleIdModExp' is a specialization of 'ModExpression'.
+The class 'Maude_TheoryIdModExp' is a specialization of 'ModExpression'.
+The class 'Maude_Parameter' is a specialization of 'ModExpression'.
+The class 'Maude_Theory' is a specialization of 'MaudeTopEl'.
+The class 'Maude_FTheory' is a specialization of 'Theory'.
+The class 'Maude_STheory' is a specialization of 'Theory'.
+The class 'Maude_Module' is a specialization of 'MaudeTopEl'.
+The class 'Maude_FModule' is a specialization of 'Module'.
+The class 'Maude_SModule' is a specialization of 'Module'.
+The class 'Maude_ModImportation' is a specialization of 'ModElement'.
+The class 'Maude_Sort' is a specialization of 'Type'.
+The class 'Maude_Sort' is a specialization of 'ModElement'.
+The class 'Maude_Kind' is a specialization of 'Type'.
+The class 'Maude_SubsortRel' is a specialization of 'ModElement'.
+The class 'Maude_Operation' is a specialization of 'ModElement'.
+The class 'Maude_Statement' is a specialization of 'ModElement'.
+The class 'Maude_Membership' is a specialization of 'Statement'.
+The class 'Maude_Equation' is a specialization of 'Statement'.
+The class 'Maude_Rule' is a specialization of 'Statement'.
+The class 'Maude_EquationalCond' is a specialization of 'Condition'.
+The class 'Maude_RewriteCond' is a specialization of 'Condition'.
+The class 'Maude_MembershipCond' is a specialization of 'EquationalCond'.
+The class 'Maude_BooleanCond' is a specialization of 'EquationalCond'.
+The class 'Maude_MatchingCond' is a specialization of 'EquationalCond'.
+The class 'Maude_EqualCond' is a specialization of 'EquationalCond'.
+The class 'Maude_Constant' is a specialization of 'Term'.
+The class 'Maude_RecTerm' is a specialization of 'Term'.
+The class 'Maude_Variable' is a specialization of 'Term'.
+The class 'Maude_View' is a specialization of 'MaudeTopEl'.
+The class 'Maude_RenMapping' is a specialization of 'ViewMapping'.
+The class 'Maude_TermMapping' is a specialization of 'ViewMapping'.
+The class 'Maude_SortMapping' is a specialization of 'RenMapping'.
+The class 'Maude_OpTypedMapping' is a specialization of 'RenMapping'.
+The class 'Maude_OpMapping' is a specialization of 'RenMapping'.
+The class 'Maude_LabelMapping' is a specialization of 'RenMapping'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Maude_MaudeSpec' and 'Maude_MaudeTopEl'. From 'Maude_MaudeSpec', the role 'Maude_MaudeSpec' has cardinality 0..*, and from 'Maude_MaudeTopEl', the role 'Maude_MaudeTopEl' has cardinality 0..*.
+An association connects 'Maude_MaudeSpec' and 'Maude_MaudeTopEl'. From 'Maude_MaudeSpec', the role 'Maude_MaudeSpec2' has cardinality 0..*, and from 'Maude_MaudeTopEl', the role 'Maude_MaudeTopEl3' has cardinality 0..*.
+An association connects 'Maude_InstModExp' and 'Maude_ModExpression'. From 'Maude_InstModExp', the role 'Maude_InstModExp' has cardinality 0..*, and from 'Maude_ModExpression', the role 'Maude_ModExpression' has cardinality 0..*.
+An association connects 'Maude_View' and 'Maude_InstModExp'. From 'Maude_View', the role 'Maude_View' has cardinality 0..*, and from 'Maude_InstModExp', the role 'Maude_InstModExp6' has cardinality 0..*.
+An association connects 'Maude_RenModExp' and 'Maude_ModExpression'. From 'Maude_RenModExp', the role 'Maude_RenModExp' has cardinality 0..*, and from 'Maude_ModExpression', the role 'Maude_ModExpression8' has cardinality 0..*.
+An association connects 'Maude_RenModExp' and 'Maude_RenMapping'. From 'Maude_RenModExp', the role 'Maude_RenModExp10' has cardinality 0..*, and from 'Maude_RenMapping', the role 'Maude_RenMapping' has cardinality 0..*.
+An association connects 'Maude_ModExpression' and 'Maude_CompModExp'. From 'Maude_ModExpression', the role 'Maude_ModExpression12' has cardinality 0..*, and from 'Maude_CompModExp', the role 'Maude_CompModExp' has cardinality 0..*.
+An association connects 'Maude_ModuleIdModExp' and 'Maude_Module'. From 'Maude_ModuleIdModExp', the role 'Maude_ModuleIdModExp' has cardinality 0..*, and from 'Maude_Module', the role 'Maude_Module' has cardinality 0..*.
+An association connects 'Maude_Theory' and 'Maude_TheoryIdModExp'. From 'Maude_Theory', the role 'Maude_Theory' has cardinality 0..*, and from 'Maude_TheoryIdModExp', the role 'Maude_TheoryIdModExp' has cardinality 0..*.
+An association connects 'Maude_ModExpression' and 'Maude_Parameter'. From 'Maude_ModExpression', the role 'Maude_ModExpression16' has cardinality 0..*, and from 'Maude_Parameter', the role 'Maude_Parameter' has cardinality 0..*.
+An association connects 'Maude_Theory' and 'Maude_ModElement'. From 'Maude_Theory', the role 'theory' has cardinality 0..*, and from 'Maude_ModElement', the role 'ModElement' has cardinality 0..*.
+An association connects 'Maude_Module' and 'Maude_ModElement'. From 'Maude_Module', the role 'module' has cardinality 0..*, and from 'Maude_ModElement', the role 'ModElement19' has cardinality 0..*.
+An association connects 'Maude_Parameter' and 'Maude_Module'. From 'Maude_Parameter', the role 'Maude_Parameter22' has cardinality 0..*, and from 'Maude_Module', the role 'Maude_Module21' has cardinality 0..*.
+An association connects 'Maude_ModElement' and 'Maude_Module'. From 'Maude_ModElement', the role 'els' has cardinality 0..*, and from 'Maude_Module', the role 'Module' has cardinality 0..*.
+An association connects 'Maude_ModElement' and 'Maude_Theory'. From 'Maude_ModElement', the role 'els25' has cardinality 0..*, and from 'Maude_Theory', the role 'Theory' has cardinality 0..*.
+An association connects 'Maude_ModImportation' and 'Maude_ModExpression'. From 'Maude_ModImportation', the role 'Maude_ModImportation' has cardinality 0..*, and from 'Maude_ModExpression', the role 'Maude_ModExpression27' has cardinality 0..*.
+An association connects 'Maude_SubsortRel' and 'Maude_Sort'. From 'Maude_SubsortRel', the role 'SubsortRel' has cardinality 0..*, and from 'Maude_Sort', the role 'supersorts' has cardinality 0..*.
+An association connects 'Maude_SubsortRel' and 'Maude_Sort'. From 'Maude_SubsortRel', the role 'SubsortRel30' has cardinality 0..*, and from 'Maude_Sort', the role 'subsorts' has cardinality 0..*.
+An association connects 'Maude_Kind' and 'Maude_Sort'. From 'Maude_Kind', the role 'Kind' has cardinality 0..*, and from 'Maude_Sort', the role 'sorts' has cardinality 0..*.
+An association connects 'Maude_Kind' and 'Maude_Sort'. From 'Maude_Kind', the role 'kind' has cardinality 0..*, and from 'Maude_Sort', the role 'Sort' has cardinality 0..*.
+An association connects 'Maude_Sort' and 'Maude_SubsortRel'. From 'Maude_Sort', the role 'Sort34' has cardinality 0..*, and from 'Maude_SubsortRel', the role 'supersortRels' has cardinality 0..*.
+An association connects 'Maude_Sort' and 'Maude_SubsortRel'. From 'Maude_Sort', the role 'Sort36' has cardinality 0..*, and from 'Maude_SubsortRel', the role 'subsortRels' has cardinality 0..*.
+An association connects 'Maude_Operation' and 'Maude_Type'. From 'Maude_Operation', the role 'Maude_Operation' has cardinality 0..*, and from 'Maude_Type', the role 'Maude_Type' has cardinality 0..*.
+An association connects 'Maude_Operation' and 'Maude_Type'. From 'Maude_Operation', the role 'Maude_Operation39' has cardinality 0..*, and from 'Maude_Type', the role 'Maude_Type40' has cardinality 0..*.
+An association connects 'Maude_Statement' and 'Maude_Condition'. From 'Maude_Statement', the role 'Maude_Statement' has cardinality 0..*, and from 'Maude_Condition', the role 'Maude_Condition' has cardinality 0..*.
+An association connects 'Maude_Term' and 'Maude_Membership'. From 'Maude_Term', the role 'Maude_Term' has cardinality 0..*, and from 'Maude_Membership', the role 'Maude_Membership' has cardinality 0..*.
+An association connects 'Maude_Sort' and 'Maude_Membership'. From 'Maude_Sort', the role 'Maude_Sort' has cardinality 0..*, and from 'Maude_Membership', the role 'Maude_Membership44' has cardinality 0..*.
+An association connects 'Maude_Term' and 'Maude_Equation'. From 'Maude_Term', the role 'Maude_Term46' has cardinality 0..*, and from 'Maude_Equation', the role 'Maude_Equation' has cardinality 0..*.
+An association connects 'Maude_Term' and 'Maude_Equation'. From 'Maude_Term', the role 'Maude_Term49' has cardinality 0..*, and from 'Maude_Equation', the role 'Maude_Equation48' has cardinality 0..*.
+An association connects 'Maude_Term' and 'Maude_Rule'. From 'Maude_Term', the role 'Maude_Term51' has cardinality 0..*, and from 'Maude_Rule', the role 'Maude_Rule' has cardinality 0..*.
+An association connects 'Maude_Term' and 'Maude_Rule'. From 'Maude_Term', the role 'Maude_Term54' has cardinality 0..*, and from 'Maude_Rule', the role 'Maude_Rule53' has cardinality 0..*.
+An association connects 'Maude_Condition' and 'Maude_Term'. From 'Maude_Condition', the role 'Maude_Condition56' has cardinality 0..*, and from 'Maude_Term', the role 'Maude_Term57' has cardinality 0..*.
+An association connects 'Maude_RewriteCond' and 'Maude_Term'. From 'Maude_RewriteCond', the role 'Maude_RewriteCond' has cardinality 0..*, and from 'Maude_Term', the role 'Maude_Term59' has cardinality 0..*.
+An association connects 'Maude_MembershipCond' and 'Maude_Sort'. From 'Maude_MembershipCond', the role 'Maude_MembershipCond' has cardinality 0..*, and from 'Maude_Sort', the role 'Maude_Sort61' has cardinality 0..*.
+An association connects 'Maude_MatchingCond' and 'Maude_Term'. From 'Maude_MatchingCond', the role 'Maude_MatchingCond' has cardinality 0..*, and from 'Maude_Term', the role 'Maude_Term63' has cardinality 0..*.
+An association connects 'Maude_Term' and 'Maude_EqualCond'. From 'Maude_Term', the role 'Maude_Term65' has cardinality 0..*, and from 'Maude_EqualCond', the role 'Maude_EqualCond' has cardinality 0..*.
+An association connects 'Maude_Type' and 'Maude_Term'. From 'Maude_Type', the role 'Maude_Type68' has cardinality 0..*, and from 'Maude_Term', the role 'Maude_Term67' has cardinality 0..*.
+An association connects 'Maude_Term' and 'Maude_RecTerm'. From 'Maude_Term', the role 'Maude_Term70' has cardinality 0..*, and from 'Maude_RecTerm', the role 'Maude_RecTerm' has cardinality 0..*.
+An association connects 'Maude_View' and 'Maude_ModExpression'. From 'Maude_View', the role 'Maude_View72' has cardinality 0..*, and from 'Maude_ModExpression', the role 'Maude_ModExpression73' has cardinality 0..*.
+An association connects 'Maude_ModExpression' and 'Maude_View'. From 'Maude_ModExpression', the role 'Maude_ModExpression76' has cardinality 0..*, and from 'Maude_View', the role 'Maude_View75' has cardinality 0..*.
+An association connects 'Maude_ViewMapping' and 'Maude_View'. From 'Maude_ViewMapping', the role 'Maude_ViewMapping' has cardinality 0..*, and from 'Maude_View', the role 'Maude_View78' has cardinality 0..*.
+An association connects 'Maude_Term' and 'Maude_TermMapping'. From 'Maude_Term', the role 'Maude_Term80' has cardinality 0..*, and from 'Maude_TermMapping', the role 'Maude_TermMapping' has cardinality 0..*.
+An association connects 'Maude_TermMapping' and 'Maude_Term'. From 'Maude_TermMapping', the role 'Maude_TermMapping82' has cardinality 0..*, and from 'Maude_Term', the role 'Maude_Term83' has cardinality 0..*.
+An association connects 'Maude_Sort' and 'Maude_SortMapping'. From 'Maude_Sort', the role 'Maude_Sort85' has cardinality 0..*, and from 'Maude_SortMapping', the role 'Maude_SortMapping' has cardinality 0..*.
+An association connects 'Maude_Operation' and 'Maude_OpTypedMapping'. From 'Maude_Operation', the role 'Maude_Operation87' has cardinality 0..*, and from 'Maude_OpTypedMapping', the role 'Maude_OpTypedMapping' has cardinality 0..*.
+An association connects 'Maude_Operation' and 'Maude_OpMapping'. From 'Maude_Operation', the role 'Maude_Operation89' has cardinality 0..*, and from 'Maude_OpMapping', the role 'Maude_OpMapping' has cardinality 0..*.

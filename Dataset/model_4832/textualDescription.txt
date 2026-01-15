@@ -1,0 +1,301 @@
+The domain model 'archimate' describes the core structural elements and their relationships within the system.
+
+The model defines 64 main class(es).
+
+'archimate_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_WorkPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'BusinessConcept' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Active' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_BusinessActor' represents an important domain concept.
+It does not declare any attributes.
+
+'ImplementationAndMigrationConcept' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Deliverable' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_InfrastructureInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_CommunicationPath' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Representation' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_SystemSoftware' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_MotivationConcept' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_ApplicationInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Passive' represents an important domain concept.
+It does not declare any attributes.
+
+'BusinessObject' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_BusinessInteraction' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Principle' represents an important domain concept.
+It does not declare any attributes.
+
+'Requirement' represents an important domain concept.
+It does not declare any attributes.
+
+'Concept' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_ImplementationAndMigrationConcept' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_ApplicationFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_InfrastructureFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Driver' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_BusinessInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'Passive' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_TechnologyConcept' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_BusinessEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_BusinessService' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Goal' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_InfrastructureService' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Assessment' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_BusinessConcept' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_ApplicationCollaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Requirement' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_ApplicationComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Product' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Contract' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_ApplicationConcept' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Gap' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_BusinessObject' represents an important domain concept.
+It does not declare any attributes.
+
+'Active' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Location' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_ApplicationInteraction' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Device' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'TechnologyConcept' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Plateau' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_BusinessRole' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Meaning' represents an important domain concept.
+It does not declare any attributes.
+
+'MotivationConcept' represents an important domain concept.
+It does not declare any attributes.
+
+'ApplicationConcept' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_BusinessCollaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Concept' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str.
+
+'archimate_BusinessProcess' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Stakeholder' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_ApplicationService' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_BusinessFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_DataObject' represents an important domain concept.
+It does not declare any attributes.
+
+'archimate_Network' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'archimate_BusinessConcept' is a specialization of 'Concept'.
+The class 'archimate_ApplicationConcept' is a specialization of 'Concept'.
+The class 'archimate_TechnologyConcept' is a specialization of 'Concept'.
+The class 'archimate_MotivationConcept' is a specialization of 'Concept'.
+The class 'archimate_ImplementationAndMigrationConcept' is a specialization of 'Concept'.
+The class 'archimate_BusinessActor' is a specialization of 'BusinessConcept'.
+The class 'archimate_BusinessActor' is a specialization of 'Active'.
+The class 'archimate_BusinessRole' is a specialization of 'BusinessConcept'.
+The class 'archimate_BusinessRole' is a specialization of 'Active'.
+The class 'archimate_BusinessCollaboration' is a specialization of 'BusinessConcept'.
+The class 'archimate_BusinessInterface' is a specialization of 'BusinessConcept'.
+The class 'archimate_BusinessInterface' is a specialization of 'Active'.
+The class 'archimate_Location' is a specialization of 'BusinessConcept'.
+The class 'archimate_Location' is a specialization of 'Active'.
+The class 'archimate_BusinessObject' is a specialization of 'BusinessConcept'.
+The class 'archimate_BusinessObject' is a specialization of 'Passive'.
+The class 'archimate_BusinessProcess' is a specialization of 'BusinessConcept'.
+The class 'archimate_BusinessProcess' is a specialization of 'Behavior'.
+The class 'archimate_BusinessFunction' is a specialization of 'BusinessConcept'.
+The class 'archimate_BusinessFunction' is a specialization of 'Behavior'.
+The class 'archimate_BusinessInteraction' is a specialization of 'BusinessConcept'.
+The class 'archimate_BusinessInteraction' is a specialization of 'Behavior'.
+The class 'archimate_BusinessEvent' is a specialization of 'BusinessConcept'.
+The class 'archimate_BusinessEvent' is a specialization of 'Behavior'.
+The class 'archimate_BusinessService' is a specialization of 'BusinessConcept'.
+The class 'archimate_BusinessService' is a specialization of 'Behavior'.
+The class 'archimate_Representation' is a specialization of 'BusinessConcept'.
+The class 'archimate_Representation' is a specialization of 'Passive'.
+The class 'archimate_Meaning' is a specialization of 'BusinessConcept'.
+The class 'archimate_Meaning' is a specialization of 'Passive'.
+The class 'archimate_Value' is a specialization of 'BusinessConcept'.
+The class 'archimate_Value' is a specialization of 'Passive'.
+The class 'archimate_Product' is a specialization of 'BusinessConcept'.
+The class 'archimate_Product' is a specialization of 'Passive'.
+The class 'archimate_Contract' is a specialization of 'BusinessObject'.
+The class 'archimate_ApplicationComponent' is a specialization of 'ApplicationConcept'.
+The class 'archimate_ApplicationComponent' is a specialization of 'Active'.
+The class 'archimate_ApplicationCollaboration' is a specialization of 'ApplicationConcept'.
+The class 'archimate_ApplicationInterface' is a specialization of 'ApplicationConcept'.
+The class 'archimate_ApplicationInterface' is a specialization of 'Active'.
+The class 'archimate_DataObject' is a specialization of 'ApplicationConcept'.
+The class 'archimate_DataObject' is a specialization of 'Passive'.
+The class 'archimate_ApplicationFunction' is a specialization of 'ApplicationConcept'.
+The class 'archimate_ApplicationFunction' is a specialization of 'Behavior'.
+The class 'archimate_ApplicationInteraction' is a specialization of 'ApplicationConcept'.
+The class 'archimate_ApplicationInteraction' is a specialization of 'Behavior'.
+The class 'archimate_ApplicationService' is a specialization of 'ApplicationConcept'.
+The class 'archimate_ApplicationService' is a specialization of 'Behavior'.
+The class 'archimate_Node' is a specialization of 'TechnologyConcept'.
+The class 'archimate_Node' is a specialization of 'Active'.
+The class 'archimate_Device' is a specialization of 'Node'.
+The class 'archimate_SystemSoftware' is a specialization of 'Node'.
+The class 'archimate_InfrastructureInterface' is a specialization of 'TechnologyConcept'.
+The class 'archimate_InfrastructureInterface' is a specialization of 'Active'.
+The class 'archimate_Network' is a specialization of 'TechnologyConcept'.
+The class 'archimate_Network' is a specialization of 'Active'.
+The class 'archimate_CommunicationPath' is a specialization of 'TechnologyConcept'.
+The class 'archimate_CommunicationPath' is a specialization of 'Active'.
+The class 'archimate_InfrastructureFunction' is a specialization of 'TechnologyConcept'.
+The class 'archimate_InfrastructureFunction' is a specialization of 'Behavior'.
+The class 'archimate_InfrastructureService' is a specialization of 'TechnologyConcept'.
+The class 'archimate_InfrastructureService' is a specialization of 'Behavior'.
+The class 'archimate_Artifact' is a specialization of 'ApplicationConcept'.
+The class 'archimate_Artifact' is a specialization of 'Passive'.
+The class 'archimate_Stakeholder' is a specialization of 'MotivationConcept'.
+The class 'archimate_Driver' is a specialization of 'MotivationConcept'.
+The class 'archimate_Assessment' is a specialization of 'MotivationConcept'.
+The class 'archimate_Goal' is a specialization of 'MotivationConcept'.
+The class 'archimate_Requirement' is a specialization of 'MotivationConcept'.
+The class 'archimate_Constraint' is a specialization of 'Requirement'.
+The class 'archimate_Principle' is a specialization of 'MotivationConcept'.
+The class 'archimate_WorkPackage' is a specialization of 'ImplementationAndMigrationConcept'.
+The class 'archimate_Deliverable' is a specialization of 'ImplementationAndMigrationConcept'.
+The class 'archimate_Plateau' is a specialization of 'ImplementationAndMigrationConcept'.
+The class 'archimate_Gap' is a specialization of 'ImplementationAndMigrationConcept'.
+
+Relationships between classes are modeled using associations.
+An association connects 'archimate_Concept' and 'archimate_Concept'. From 'archimate_Concept', the role 'archimate_Concept0' has cardinality 0..*, and from 'archimate_Concept', the role 'archimate_Concept' has cardinality 0..*.
+An association connects 'archimate_MotivationConcept' and 'archimate_MotivationConcept'. From 'archimate_MotivationConcept', the role 'archimate_MotivationConcept2' has cardinality 0..*, and from 'archimate_MotivationConcept', the role 'archimate_MotivationConcept' has cardinality 0..*.
+An association connects 'archimate_MotivationConcept' and 'archimate_MotivationConcept'. From 'archimate_MotivationConcept', the role 'archimate_MotivationConcept6' has cardinality 0..*, and from 'archimate_MotivationConcept', the role 'archimate_MotivationConcept4' has cardinality 0..*.
+An association connects 'archimate_MotivationConcept' and 'archimate_MotivationConcept'. From 'archimate_MotivationConcept', the role 'archimate_MotivationConcept9' has cardinality 0..*, and from 'archimate_MotivationConcept', the role 'archimate_MotivationConcept7' has cardinality 0..*.
+An association connects 'archimate_ImplementationAndMigrationConcept' and 'archimate_ImplementationAndMigrationConcept'. From 'archimate_ImplementationAndMigrationConcept', the role 'archimate_ImplementationAndMigrationConcept' has cardinality 0..*, and from 'archimate_ImplementationAndMigrationConcept', the role 'archimate_ImplementationAndMigrationConcept10' has cardinality 0..*.
+An association connects 'archimate_ImplementationAndMigrationConcept' and 'archimate_ImplementationAndMigrationConcept'. From 'archimate_ImplementationAndMigrationConcept', the role 'archimate_ImplementationAndMigrationConcept14' has cardinality 0..*, and from 'archimate_ImplementationAndMigrationConcept', the role 'archimate_ImplementationAndMigrationConcept12' has cardinality 0..*.
+An association connects 'archimate_ImplementationAndMigrationConcept' and 'archimate_ImplementationAndMigrationConcept'. From 'archimate_ImplementationAndMigrationConcept', the role 'archimate_ImplementationAndMigrationConcept17' has cardinality 0..*, and from 'archimate_ImplementationAndMigrationConcept', the role 'archimate_ImplementationAndMigrationConcept15' has cardinality 0..*.
+An association connects 'archimate_ImplementationAndMigrationConcept' and 'archimate_ImplementationAndMigrationConcept'. From 'archimate_ImplementationAndMigrationConcept', the role 'archimate_ImplementationAndMigrationConcept18' has cardinality 0..*, and from 'archimate_ImplementationAndMigrationConcept', the role 'archimate_ImplementationAndMigrationConcept20' has cardinality 0..*.
+An association connects 'archimate_Passive' and 'archimate_Passive'. From 'archimate_Passive', the role 'archimate_Passive' has cardinality 0..*, and from 'archimate_Passive', the role 'archimate_Passive21' has cardinality 0..*.
+An association connects 'archimate_Passive' and 'archimate_Passive'. From 'archimate_Passive', the role 'archimate_Passive25' has cardinality 0..*, and from 'archimate_Passive', the role 'archimate_Passive23' has cardinality 0..*.
+An association connects 'archimate_Passive' and 'archimate_Passive'. From 'archimate_Passive', the role 'archimate_Passive26' has cardinality 0..*, and from 'archimate_Passive', the role 'archimate_Passive28' has cardinality 0..*.
+An association connects 'archimate_Behavior' and 'archimate_Passive'. From 'archimate_Behavior', the role 'archimate_Behavior' has cardinality 0..*, and from 'archimate_Passive', the role 'archimate_Passive30' has cardinality 0..*.
+An association connects 'archimate_Passive' and 'archimate_Active'. From 'archimate_Passive', the role 'archimate_Passive32' has cardinality 0..*, and from 'archimate_Active', the role 'archimate_Active' has cardinality 0..*.
+An association connects 'archimate_Behavior' and 'archimate_Behavior'. From 'archimate_Behavior', the role 'archimate_Behavior35' has cardinality 0..*, and from 'archimate_Behavior', the role 'archimate_Behavior33' has cardinality 0..*.
+An association connects 'archimate_Behavior' and 'archimate_Behavior'. From 'archimate_Behavior', the role 'archimate_Behavior36' has cardinality 0..*, and from 'archimate_Behavior', the role 'archimate_Behavior38' has cardinality 0..*.
+An association connects 'archimate_Behavior' and 'archimate_Behavior'. From 'archimate_Behavior', the role 'archimate_Behavior39' has cardinality 0..*, and from 'archimate_Behavior', the role 'archimate_Behavior41' has cardinality 0..*.
+An association connects 'archimate_Behavior' and 'archimate_Behavior'. From 'archimate_Behavior', the role 'archimate_Behavior44' has cardinality 0..*, and from 'archimate_Behavior', the role 'archimate_Behavior42' has cardinality 0..*.
+An association connects 'archimate_Active' and 'archimate_Behavior'. From 'archimate_Active', the role 'archimate_Active47' has cardinality 0..*, and from 'archimate_Behavior', the role 'archimate_Behavior46' has cardinality 0..*.
+An association connects 'archimate_Behavior' and 'archimate_Active'. From 'archimate_Behavior', the role 'archimate_Behavior49' has cardinality 0..*, and from 'archimate_Active', the role 'archimate_Active50' has cardinality 0..*.
+An association connects 'archimate_Passive' and 'archimate_Behavior'. From 'archimate_Passive', the role 'archimate_Passive53' has cardinality 0..*, and from 'archimate_Behavior', the role 'archimate_Behavior52' has cardinality 0..*.
+An association connects 'archimate_Active' and 'archimate_Active'. From 'archimate_Active', the role 'archimate_Active56' has cardinality 0..*, and from 'archimate_Active', the role 'archimate_Active54' has cardinality 0..*.
+An association connects 'archimate_Active' and 'archimate_Active'. From 'archimate_Active', the role 'archimate_Active59' has cardinality 0..*, and from 'archimate_Active', the role 'archimate_Active57' has cardinality 0..*.
+An association connects 'archimate_Active' and 'archimate_Active'. From 'archimate_Active', the role 'archimate_Active62' has cardinality 0..*, and from 'archimate_Active', the role 'archimate_Active60' has cardinality 0..*.
+An association connects 'archimate_Active' and 'archimate_Active'. From 'archimate_Active', the role 'archimate_Active63' has cardinality 0..*, and from 'archimate_Active', the role 'archimate_Active65' has cardinality 0..*.
+An association connects 'archimate_Active' and 'archimate_Active'. From 'archimate_Active', the role 'archimate_Active66' has cardinality 0..*, and from 'archimate_Active', the role 'archimate_Active68' has cardinality 0..*.
+An association connects 'archimate_Active' and 'archimate_Active'. From 'archimate_Active', the role 'archimate_Active71' has cardinality 0..*, and from 'archimate_Active', the role 'archimate_Active69' has cardinality 0..*.
+An association connects 'archimate_Passive' and 'archimate_Active'. From 'archimate_Passive', the role 'archimate_Passive74' has cardinality 0..*, and from 'archimate_Active', the role 'archimate_Active73' has cardinality 0..*.

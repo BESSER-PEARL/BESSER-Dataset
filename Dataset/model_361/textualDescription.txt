@@ -1,0 +1,18 @@
+The domain model 'Library' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'Library_Writer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Library_Book' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'Library_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Library_Library' and 'Library_Writer'. From 'Library_Library', the role 'Library_Library' has cardinality 0..*, and from 'Library_Writer', the role 'Library_Writer' has cardinality 0..*.
+An association connects 'Library_Library' and 'Library_Book'. From 'Library_Library', the role 'Library_Library2' has cardinality 0..*, and from 'Library_Book', the role 'Library_Book' has cardinality 0..*.
+An association connects 'Library_Writer' and 'Library_Book'. From 'Library_Writer', the role 'Writer' has cardinality 0..*, and from 'Library_Book', the role 'books' has cardinality 0..*.
+An association connects 'Library_Writer' and 'Library_Book'. From 'Library_Writer', the role 'author' has cardinality 0..*, and from 'Library_Book', the role 'Book' has cardinality 0..*.

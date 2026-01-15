@@ -1,0 +1,18 @@
+The domain model 'Original_Metamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'Original_Metamodel_D' represents an important domain concept.
+It does not declare any attributes.
+
+'Original_Metamodel_C' represents an important domain concept.
+It has one attribute: 'propertyC', which is of type str.
+
+'Original_Metamodel_B' represents an important domain concept.
+It has one attribute: 'propertyB', which is of type str.
+
+'Original_Metamodel_A' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'Original_Metamodel_A' and 'Original_Metamodel_B'. From 'Original_Metamodel_A', the role 'Original_Metamodel_A' has cardinality 0..*, and from 'Original_Metamodel_B', the role 'Original_Metamodel_B' has cardinality 0..*.

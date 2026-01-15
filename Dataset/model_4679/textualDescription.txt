@@ -1,0 +1,189 @@
+The domain model 'imp' describes the core structural elements and their relationships within the system.
+
+The model defines 40 main class(es).
+
+'imp_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'Stmt' represents an important domain concept.
+It does not declare any attributes.
+
+'Symbol' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_IntValue' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'imp_StringConst' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'imp_StringValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'imp_Declaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'imp_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_Stmt' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_Member' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_Store' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_ParamDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_If' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_StringToValueMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'imp_VarRef' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_Binary' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'imp_Symbol' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_BoolValue' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'imp_Unary' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'imp_AttributeDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'imp_This' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_While' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_ArrayDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_NewClass' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_MethodDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_Print' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_BoolConst' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'imp_IntConst' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'imp_Class' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'imp_Project' represents an important domain concept.
+It has one attribute: 'ismethodcall', which is of type bool.
+
+'imp_ArrayValue' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'imp_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BinaryOp' defines the following possible values: 'AND', 'MUL', 'GEQ', 'LT', 'LEQ', 'EQ', 'ADD', 'GT', 'OR', 'SUB'.
+The enumeration 'UnaryOp' defines the following possible values: 'NEGATE', 'NOT'.
+
+The model also captures inheritance relationships between classes.
+The class 'imp_Declaration' is a specialization of 'Stmt'.
+The class 'imp_Declaration' is a specialization of 'Symbol'.
+The class 'imp_Expr' is a specialization of 'Stmt'.
+The class 'imp_Block' is a specialization of 'Stmt'.
+The class 'imp_If' is a specialization of 'Stmt'.
+The class 'imp_While' is a specialization of 'Stmt'.
+The class 'imp_IntConst' is a specialization of 'Expr'.
+The class 'imp_Unary' is a specialization of 'Expr'.
+The class 'imp_Binary' is a specialization of 'Expr'.
+The class 'imp_IntValue' is a specialization of 'Value'.
+The class 'imp_BoolValue' is a specialization of 'Value'.
+The class 'imp_ArrayValue' is a specialization of 'Value'.
+The class 'imp_ArrayDecl' is a specialization of 'Expr'.
+The class 'imp_BoolConst' is a specialization of 'Expr'.
+The class 'imp_MethodDecl' is a specialization of 'Member'.
+The class 'imp_Return' is a specialization of 'Stmt'.
+The class 'imp_Print' is a specialization of 'Stmt'.
+The class 'imp_StringConst' is a specialization of 'Expr'.
+The class 'imp_StringValue' is a specialization of 'Value'.
+The class 'imp_ParamDecl' is a specialization of 'Symbol'.
+The class 'imp_Class' is a specialization of 'NamedElement'.
+The class 'imp_AttributeDecl' is a specialization of 'Member'.
+The class 'imp_This' is a specialization of 'Expr'.
+The class 'imp_NewClass' is a specialization of 'Expr'.
+The class 'imp_Assignment' is a specialization of 'Stmt'.
+The class 'imp_Project' is a specialization of 'Expr'.
+The class 'imp_Symbol' is a specialization of 'NamedElement'.
+The class 'imp_VarRef' is a specialization of 'Expr'.
+
+Relationships between classes are modeled using associations.
+An association connects 'imp_Expr' and 'imp_Declaration'. From 'imp_Expr', the role 'imp_Expr' has cardinality 0..*, and from 'imp_Declaration', the role 'imp_Declaration' has cardinality 0..*.
+An association connects 'imp_Declaration' and 'imp_Expr'. From 'imp_Declaration', the role 'imp_Declaration2' has cardinality 0..*, and from 'imp_Expr', the role 'imp_Expr3' has cardinality 0..*.
+An association connects 'imp_Block' and 'imp_Stmt'. From 'imp_Block', the role 'imp_Block' has cardinality 0..*, and from 'imp_Stmt', the role 'imp_Stmt' has cardinality 0..*.
+An association connects 'imp_Expr' and 'imp_If'. From 'imp_Expr', the role 'imp_Expr6' has cardinality 0..*, and from 'imp_If', the role 'imp_If' has cardinality 0..*.
+An association connects 'imp_Stmt' and 'imp_If'. From 'imp_Stmt', the role 'imp_Stmt9' has cardinality 0..*, and from 'imp_If', the role 'imp_If8' has cardinality 0..*.
+An association connects 'imp_If' and 'imp_Stmt'. From 'imp_If', the role 'imp_If11' has cardinality 0..*, and from 'imp_Stmt', the role 'imp_Stmt12' has cardinality 0..*.
+An association connects 'imp_Expr' and 'imp_While'. From 'imp_Expr', the role 'imp_Expr14' has cardinality 0..*, and from 'imp_While', the role 'imp_While' has cardinality 0..*.
+An association connects 'imp_Stmt' and 'imp_While'. From 'imp_Stmt', the role 'imp_Stmt17' has cardinality 0..*, and from 'imp_While', the role 'imp_While16' has cardinality 0..*.
+An association connects 'imp_Expr' and 'imp_Unary'. From 'imp_Expr', the role 'imp_Expr19' has cardinality 0..*, and from 'imp_Unary', the role 'imp_Unary' has cardinality 0..*.
+An association connects 'imp_Binary' and 'imp_Expr'. From 'imp_Binary', the role 'imp_Binary' has cardinality 0..*, and from 'imp_Expr', the role 'imp_Expr21' has cardinality 0..*.
+An association connects 'imp_Binary' and 'imp_Expr'. From 'imp_Binary', the role 'imp_Binary23' has cardinality 0..*, and from 'imp_Expr', the role 'imp_Expr24' has cardinality 0..*.
+An association connects 'imp_Store' and 'imp_StringToValueMap'. From 'imp_Store', the role 'imp_Store' has cardinality 0..*, and from 'imp_StringToValueMap', the role 'imp_StringToValueMap' has cardinality 0..*.
+An association connects 'imp_StringToValueMap' and 'imp_Value'. From 'imp_StringToValueMap', the role 'imp_StringToValueMap27' has cardinality 0..*, and from 'imp_Value', the role 'imp_Value' has cardinality 0..*.
+An association connects 'imp_ArrayValue' and 'imp_Value'. From 'imp_ArrayValue', the role 'imp_ArrayValue' has cardinality 0..*, and from 'imp_Value', the role 'imp_Value29' has cardinality 0..*.
+An association connects 'imp_ArrayDecl' and 'imp_Expr'. From 'imp_ArrayDecl', the role 'imp_ArrayDecl' has cardinality 0..*, and from 'imp_Expr', the role 'imp_Expr31' has cardinality 0..*.
+An association connects 'imp_MethodDecl' and 'imp_Program'. From 'imp_MethodDecl', the role 'imp_MethodDecl' has cardinality 0..*, and from 'imp_Program', the role 'imp_Program' has cardinality 0..*.
+An association connects 'imp_Class' and 'imp_Program'. From 'imp_Class', the role 'imp_Class' has cardinality 0..*, and from 'imp_Program', the role 'imp_Program34' has cardinality 0..*.
+An association connects 'imp_Stmt' and 'imp_MethodDecl'. From 'imp_Stmt', the role 'imp_Stmt37' has cardinality 0..*, and from 'imp_MethodDecl', the role 'imp_MethodDecl36' has cardinality 0..*.
+An association connects 'imp_ParamDecl' and 'imp_MethodDecl'. From 'imp_ParamDecl', the role 'imp_ParamDecl' has cardinality 0..*, and from 'imp_MethodDecl', the role 'imp_MethodDecl39' has cardinality 0..*.
+An association connects 'imp_Return' and 'imp_Expr'. From 'imp_Return', the role 'imp_Return' has cardinality 0..*, and from 'imp_Expr', the role 'imp_Expr41' has cardinality 0..*.
+An association connects 'imp_Expr' and 'imp_Print'. From 'imp_Expr', the role 'imp_Expr43' has cardinality 0..*, and from 'imp_Print', the role 'imp_Print' has cardinality 0..*.
+An association connects 'imp_Class' and 'imp_AttributeDecl'. From 'imp_Class', the role 'imp_Class45' has cardinality 0..*, and from 'imp_AttributeDecl', the role 'imp_AttributeDecl' has cardinality 0..*.
+An association connects 'imp_Class' and 'imp_MethodDecl'. From 'imp_Class', the role 'imp_Class47' has cardinality 0..*, and from 'imp_MethodDecl', the role 'imp_MethodDecl48' has cardinality 0..*.
+An association connects 'imp_NewClass' and 'imp_Class'. From 'imp_NewClass', the role 'imp_NewClass' has cardinality 0..*, and from 'imp_Class', the role 'imp_Class50' has cardinality 0..*.
+An association connects 'imp_Assignment' and 'imp_Expr'. From 'imp_Assignment', the role 'imp_Assignment' has cardinality 0..*, and from 'imp_Expr', the role 'imp_Expr52' has cardinality 0..*.
+An association connects 'imp_Assignment' and 'imp_Expr'. From 'imp_Assignment', the role 'imp_Assignment54' has cardinality 0..*, and from 'imp_Expr', the role 'imp_Expr55' has cardinality 0..*.
+An association connects 'imp_Project' and 'imp_Expr'. From 'imp_Project', the role 'imp_Project' has cardinality 0..*, and from 'imp_Expr', the role 'imp_Expr57' has cardinality 0..*.
+An association connects 'imp_Member' and 'imp_Project'. From 'imp_Member', the role 'imp_Member' has cardinality 0..*, and from 'imp_Project', the role 'imp_Project59' has cardinality 0..*.
+An association connects 'imp_Expr' and 'imp_Project'. From 'imp_Expr', the role 'imp_Expr62' has cardinality 0..*, and from 'imp_Project', the role 'imp_Project61' has cardinality 0..*.
+An association connects 'imp_VarRef' and 'imp_Symbol'. From 'imp_VarRef', the role 'imp_VarRef' has cardinality 0..*, and from 'imp_Symbol', the role 'imp_Symbol' has cardinality 0..*.

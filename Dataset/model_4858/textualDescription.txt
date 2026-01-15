@@ -1,0 +1,66 @@
+The domain model 'units_av_av' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'units_av_av_BaseUnit' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'units_av_av_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'units_av_av_UnitRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'units_av_av_UnitCarryingElement' represents an important domain concept.
+It has one attribute: 'unitSpecification', which is of type str.
+
+'units_av_av_UnitPower' represents an important domain concept.
+It has one attribute: 'exponent', which is of type int.
+
+'units_av_av_UnitMultiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'units_av_av_GlobalScopeGlobalScope' represents an important domain concept.
+It does not declare any attributes.
+
+'units_av_av_UnitLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'units_av_av_Advice' represents an important domain concept.
+It does not declare any attributes.
+
+'units_av_av_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'units_av_av_AdviceAdvice' represents an important domain concept.
+It does not declare any attributes.
+
+'units_av_av_PerJoinPointScopePerJoinPointScope' represents an important domain concept.
+It does not declare any attributes.
+
+'units_av_av_GlobalScope' represents an important domain concept.
+It does not declare any attributes.
+
+'units_av_av_PerJoinPointScope' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'units_av_av_UnitMultiplication' is a specialization of 'Unit'.
+The class 'units_av_av_UnitPower' is a specialization of 'Unit'.
+The class 'units_av_av_UnitLiteral' is a specialization of 'Unit'.
+
+Relationships between classes are modeled using associations.
+An association connects 'units_av_av_UnitCarryingElement' and 'units_av_av_Unit'. From 'units_av_av_UnitCarryingElement', the role 'units_av_av_UnitCarryingElement' has cardinality 0..*, and from 'units_av_av_Unit', the role 'units_av_av_Unit' has cardinality 0..*.
+An association connects 'units_av_av_UnitRepository' and 'units_av_av_BaseUnit'. From 'units_av_av_UnitRepository', the role 'units_av_av_UnitRepository' has cardinality 0..*, and from 'units_av_av_BaseUnit', the role 'units_av_av_BaseUnit' has cardinality 0..*.
+An association connects 'units_av_av_UnitMultiplication' and 'units_av_av_Unit'. From 'units_av_av_UnitMultiplication', the role 'units_av_av_UnitMultiplication' has cardinality 0..*, and from 'units_av_av_Unit', the role 'units_av_av_Unit3' has cardinality 0..*.
+An association connects 'units_av_av_UnitPower' and 'units_av_av_Unit'. From 'units_av_av_UnitPower', the role 'units_av_av_UnitPower' has cardinality 0..*, and from 'units_av_av_Unit', the role 'units_av_av_Unit5' has cardinality 0..*.
+An association connects 'units_av_av_BaseUnit' and 'units_av_av_UnitLiteral'. From 'units_av_av_BaseUnit', the role 'units_av_av_BaseUnit7' has cardinality 0..*, and from 'units_av_av_UnitLiteral', the role 'units_av_av_UnitLiteral' has cardinality 0..*.
+An association connects 'units_av_av_AdviceAdvice' and 'units_av_av_EObject'. From 'units_av_av_AdviceAdvice', the role 'units_av_av_AdviceAdvice' has cardinality 0..*, and from 'units_av_av_EObject', the role 'units_av_av_EObject' has cardinality 0..*.
+An association connects 'units_av_av_GlobalScopeGlobalScope' and 'units_av_av_EObject'. From 'units_av_av_GlobalScopeGlobalScope', the role 'units_av_av_GlobalScopeGlobalScope' has cardinality 0..*, and from 'units_av_av_EObject', the role 'units_av_av_EObject10' has cardinality 0..*.
+An association connects 'units_av_av_EObject' and 'units_av_av_PerJoinPointScopePerJoinPointScope'. From 'units_av_av_EObject', the role 'units_av_av_EObject12' has cardinality 0..*, and from 'units_av_av_PerJoinPointScopePerJoinPointScope', the role 'units_av_av_PerJoinPointScopePerJoinPointScope' has cardinality 0..*.
+An association connects 'units_av_av_Advice' and 'units_av_av_EObject'. From 'units_av_av_Advice', the role 'units_av_av_Advice' has cardinality 0..*, and from 'units_av_av_EObject', the role 'units_av_av_EObject14' has cardinality 0..*.
+An association connects 'units_av_av_EObject' and 'units_av_av_GlobalScope'. From 'units_av_av_EObject', the role 'units_av_av_EObject16' has cardinality 0..*, and from 'units_av_av_GlobalScope', the role 'units_av_av_GlobalScope' has cardinality 0..*.
+An association connects 'units_av_av_EObject' and 'units_av_av_PerJoinPointScope'. From 'units_av_av_EObject', the role 'units_av_av_EObject18' has cardinality 0..*, and from 'units_av_av_PerJoinPointScope', the role 'units_av_av_PerJoinPointScope' has cardinality 0..*.

@@ -1,0 +1,43 @@
+The domain model 'adl401' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'adl401_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'adl401_Provided' represents an important domain concept.
+It does not declare any attributes.
+
+'adl401_Required' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'adl401_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adl401_Interface' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'signature', which is of type str.
+
+'adl401_EClass0' represents an important domain concept.
+It has one attribute: 'EAttribute0', which is of type str.
+
+'adl401_Content' represents an important domain concept.
+It has the following attributes: 'expression', which is of type str; 'language', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'adl401_Required' is a specialization of 'Interface'.
+The class 'adl401_Provided' is a specialization of 'Interface'.
+
+Relationships between classes are modeled using associations.
+An association connects 'adl401_Interface' and 'adl401_Binding'. From 'adl401_Interface', the role 'adl401_Interface' has cardinality 0..*, and from 'adl401_Binding', the role 'adl401_Binding' has cardinality 0..*.
+An association connects 'adl401_Binding' and 'adl401_Interface'. From 'adl401_Binding', the role 'adl401_Binding2' has cardinality 0..*, and from 'adl401_Interface', the role 'adl401_Interface3' has cardinality 0..*.
+An association connects 'adl401_Binding' and 'adl401_Interface'. From 'adl401_Binding', the role 'adl401_Binding5' has cardinality 0..*, and from 'adl401_Interface', the role 'adl401_Interface6' has cardinality 0..*.
+An association connects 'adl401_Component' and 'adl401_Content'. From 'adl401_Component', the role 'Component' has cardinality 0..*, and from 'adl401_Content', the role 'content' has cardinality 0..*.
+An association connects 'adl401_Content' and 'adl401_EClass0'. From 'adl401_Content', the role 'adl401_Content' has cardinality 0..*, and from 'adl401_EClass0', the role 'adl401_EClass0' has cardinality 0..*.
+An association connects 'adl401_Component' and 'adl401_Component'. From 'adl401_Component', the role 'adl401_Component' has cardinality 0..*, and from 'adl401_Component', the role 'adl401_Component9' has cardinality 0..*.
+An association connects 'adl401_Component' and 'adl401_Required'. From 'adl401_Component', the role 'adl401_Component12' has cardinality 0..*, and from 'adl401_Required', the role 'adl401_Required' has cardinality 0..*.
+An association connects 'adl401_Component' and 'adl401_Provided'. From 'adl401_Component', the role 'adl401_Component14' has cardinality 0..*, and from 'adl401_Provided', the role 'adl401_Provided' has cardinality 0..*.
+An association connects 'adl401_Component' and 'adl401_Content'. From 'adl401_Component', the role 'contentParent' has cardinality 0..*, and from 'adl401_Content', the role 'Content' has cardinality 0..*.
+An association connects 'adl401_EClass0' and 'adl401_EClass0'. From 'adl401_EClass0', the role 'adl401_EClass018' has cardinality 0..*, and from 'adl401_EClass0', the role 'adl401_EClass016' has cardinality 0..*.

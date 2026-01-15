@@ -1,0 +1,9 @@
+The domain model 'testenums' describes the core structural elements and their relationships within the system.
+
+The model defines 1 main class(es).
+
+'testenums_Root' represents an important domain concept.
+It has the following attributes: 'enums', which is of type str; 'enum', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Enum1' defines the following possible values: 'LITERAL1', 'LITERAL0'.

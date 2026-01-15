@@ -1,0 +1,106 @@
+The domain model 'servicefeaturemodel' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'servicefeaturemodel_Preference' represents an important domain concept.
+It has the following attributes: 'stakeholderGroup', which is of type str; 'value', which is of type float; 'description', which is of type str; 'creationDate', which is of type date.
+
+'servicefeaturemodel_ModifyRelationship' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'targetParameterName', which is of type str; 'function', which is of type str; 'orderNumber', which is of type int.
+
+'ModifyRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'servicefeaturemodel_AttributeTypes' represents an important domain concept.
+It does not declare any attributes.
+
+'servicefeaturemodel_PossibleConfigurations' represents an important domain concept.
+It does not declare any attributes.
+
+'servicefeaturemodel_Configuration' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str; 'id', which is of type str.
+
+'servicefeaturemodel_Excludes' represents an important domain concept.
+It does not declare any attributes.
+
+'servicefeaturemodel_FeatureToAttributeModifyRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'servicefeaturemodel_OR' represents an important domain concept.
+It has the following attributes: 'maxFeaturesToChoose', which is of type int; 'minFeaturesToChoose', which is of type int.
+
+'Variant' represents an important domain concept.
+It does not declare any attributes.
+
+'servicefeaturemodel_MandatoryServiceFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'servicefeaturemodel_Variant' represents an important domain concept.
+It does not declare any attributes.
+
+'servicefeaturemodel_Requires' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'servicefeaturemodel_ServiceFeature' represents an important domain concept.
+It has the following attributes: 'associatedGSMElement', which is of type str; 'id', which is of type str; 'description', which is of type str; 'required', which is of type bool; 'mapsToGSMElement', which is of type bool; 'maxAmount', which is of type int; 'minAmount', which is of type int; 'featureType', which is of type str; 'name', which is of type str.
+
+'servicefeaturemodel_Attribute' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'instantiationValue', which is of type str.
+
+'servicefeaturemodel_OptionalServiceFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'servicefeaturemodel_AttributeToAttributeModifyRelationship' represents an important domain concept.
+It has one attribute: 'triggerParameterName', which is of type str.
+
+'servicefeaturemodel_XOR' represents an important domain concept.
+It does not declare any attributes.
+
+'servicefeaturemodel_AttributeType' represents an important domain concept.
+It has the following attributes: 'aggregationRule', which is of type str; 'domain', which is of type str; 'name', which is of type str; 'customAttributeTypePriority', which is of type int; 'scaleOrder', which is of type str; 'toBeEvaluated', which is of type bool; 'description', which is of type str; 'requirement', which is of type str.
+
+'servicefeaturemodel_Service' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'id', which is of type str; 'name', which is of type str.
+
+'servicefeaturemodel_ServiceFeatureDiagram' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str; 'id', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AttributeDomain' defines the following possible values: 'Continuous', 'Boolean'.
+The enumeration 'FeatureTypes' defines the following possible values: 'GroupingFeature', 'InstanceFeature', 'AbstractFeature'.
+The enumeration 'AggregationRules' defines the following possible values: 'Sum', 'Maximum', 'Product', 'Minimum', 'AtLeastOnce'.
+The enumeration 'ScaleOrders' defines the following possible values: 'LowerIsBetter', 'ExistenceIsBetter', 'HigherIsBetter'.
+
+The model also captures inheritance relationships between classes.
+The class 'servicefeaturemodel_OptionalServiceFeature' is a specialization of 'ServiceFeature'.
+The class 'servicefeaturemodel_OR' is a specialization of 'Variant'.
+The class 'servicefeaturemodel_XOR' is a specialization of 'Variant'.
+The class 'servicefeaturemodel_MandatoryServiceFeature' is a specialization of 'ServiceFeature'.
+The class 'servicefeaturemodel_AttributeToAttributeModifyRelationship' is a specialization of 'ModifyRelationship'.
+The class 'servicefeaturemodel_FeatureToAttributeModifyRelationship' is a specialization of 'ModifyRelationship'.
+
+Relationships between classes are modeled using associations.
+An association connects 'servicefeaturemodel_ServiceFeatureDiagram' and 'servicefeaturemodel_Service'. From 'servicefeaturemodel_ServiceFeatureDiagram', the role 'servicefeaturemodel_ServiceFeatureDiagram' has cardinality 0..*, and from 'servicefeaturemodel_Service', the role 'servicefeaturemodel_Service' has cardinality 0..*.
+An association connects 'servicefeaturemodel_PossibleConfigurations' and 'servicefeaturemodel_Service'. From 'servicefeaturemodel_PossibleConfigurations', the role 'servicefeaturemodel_PossibleConfigurations' has cardinality 0..*, and from 'servicefeaturemodel_Service', the role 'servicefeaturemodel_Service2' has cardinality 0..*.
+An association connects 'servicefeaturemodel_AttributeTypes' and 'servicefeaturemodel_Service'. From 'servicefeaturemodel_AttributeTypes', the role 'servicefeaturemodel_AttributeTypes' has cardinality 0..*, and from 'servicefeaturemodel_Service', the role 'servicefeaturemodel_Service4' has cardinality 0..*.
+An association connects 'servicefeaturemodel_Attribute' and 'servicefeaturemodel_ServiceFeature'. From 'servicefeaturemodel_Attribute', the role 'servicefeaturemodel_Attribute' has cardinality 0..*, and from 'servicefeaturemodel_ServiceFeature', the role 'servicefeaturemodel_ServiceFeature' has cardinality 0..*.
+An association connects 'servicefeaturemodel_ServiceFeature' and 'servicefeaturemodel_Variant'. From 'servicefeaturemodel_ServiceFeature', the role 'servicefeaturemodel_ServiceFeature7' has cardinality 0..*, and from 'servicefeaturemodel_Variant', the role 'servicefeaturemodel_Variant' has cardinality 0..*.
+An association connects 'servicefeaturemodel_ServiceFeature' and 'servicefeaturemodel_Requires'. From 'servicefeaturemodel_ServiceFeature', the role 'servicefeaturemodel_ServiceFeature9' has cardinality 0..*, and from 'servicefeaturemodel_Requires', the role 'servicefeaturemodel_Requires' has cardinality 0..*.
+An association connects 'servicefeaturemodel_Excludes' and 'servicefeaturemodel_ServiceFeature'. From 'servicefeaturemodel_Excludes', the role 'servicefeaturemodel_Excludes' has cardinality 0..*, and from 'servicefeaturemodel_ServiceFeature', the role 'servicefeaturemodel_ServiceFeature11' has cardinality 0..*.
+An association connects 'servicefeaturemodel_ServiceFeature' and 'servicefeaturemodel_ServiceFeature'. From 'servicefeaturemodel_ServiceFeature', the role 'servicefeaturemodel_ServiceFeature14' has cardinality 0..*, and from 'servicefeaturemodel_ServiceFeature', the role 'servicefeaturemodel_ServiceFeature12' has cardinality 0..*.
+An association connects 'servicefeaturemodel_Attribute' and 'servicefeaturemodel_AttributeType'. From 'servicefeaturemodel_Attribute', the role 'servicefeaturemodel_Attribute16' has cardinality 0..*, and from 'servicefeaturemodel_AttributeType', the role 'servicefeaturemodel_AttributeType' has cardinality 0..*.
+An association connects 'servicefeaturemodel_Attribute' and 'servicefeaturemodel_ModifyRelationship'. From 'servicefeaturemodel_Attribute', the role 'servicefeaturemodel_Attribute18' has cardinality 0..*, and from 'servicefeaturemodel_ModifyRelationship', the role 'servicefeaturemodel_ModifyRelationship' has cardinality 0..*.
+An association connects 'servicefeaturemodel_ServiceFeature' and 'servicefeaturemodel_Requires'. From 'servicefeaturemodel_ServiceFeature', the role 'servicefeaturemodel_ServiceFeature21' has cardinality 0..*, and from 'servicefeaturemodel_Requires', the role 'servicefeaturemodel_Requires20' has cardinality 0..*.
+An association connects 'servicefeaturemodel_Excludes' and 'servicefeaturemodel_ServiceFeature'. From 'servicefeaturemodel_Excludes', the role 'servicefeaturemodel_Excludes23' has cardinality 0..*, and from 'servicefeaturemodel_ServiceFeature', the role 'servicefeaturemodel_ServiceFeature24' has cardinality 0..*.
+An association connects 'servicefeaturemodel_ServiceFeature' and 'servicefeaturemodel_ServiceFeatureDiagram'. From 'servicefeaturemodel_ServiceFeature', the role 'servicefeaturemodel_ServiceFeature27' has cardinality 0..*, and from 'servicefeaturemodel_ServiceFeatureDiagram', the role 'servicefeaturemodel_ServiceFeatureDiagram26' has cardinality 0..*.
+An association connects 'servicefeaturemodel_Configuration' and 'servicefeaturemodel_ServiceFeature'. From 'servicefeaturemodel_Configuration', the role 'servicefeaturemodel_Configuration' has cardinality 0..*, and from 'servicefeaturemodel_ServiceFeature', the role 'servicefeaturemodel_ServiceFeature29' has cardinality 0..*.
+An association connects 'servicefeaturemodel_Preference' and 'servicefeaturemodel_Configuration'. From 'servicefeaturemodel_Preference', the role 'servicefeaturemodel_Preference' has cardinality 0..*, and from 'servicefeaturemodel_Configuration', the role 'servicefeaturemodel_Configuration31' has cardinality 0..*.
+An association connects 'servicefeaturemodel_Configuration' and 'servicefeaturemodel_Attribute'. From 'servicefeaturemodel_Configuration', the role 'servicefeaturemodel_Configuration33' has cardinality 0..*, and from 'servicefeaturemodel_Attribute', the role 'servicefeaturemodel_Attribute34' has cardinality 0..*.
+An association connects 'servicefeaturemodel_Variant' and 'servicefeaturemodel_OptionalServiceFeature'. From 'servicefeaturemodel_Variant', the role 'servicefeaturemodel_Variant36' has cardinality 0..*, and from 'servicefeaturemodel_OptionalServiceFeature', the role 'servicefeaturemodel_OptionalServiceFeature' has cardinality 0..*.
+An association connects 'servicefeaturemodel_PossibleConfigurations' and 'servicefeaturemodel_Configuration'. From 'servicefeaturemodel_PossibleConfigurations', the role 'servicefeaturemodel_PossibleConfigurations38' has cardinality 0..*, and from 'servicefeaturemodel_Configuration', the role 'servicefeaturemodel_Configuration39' has cardinality 0..*.
+An association connects 'servicefeaturemodel_AttributeType' and 'servicefeaturemodel_AttributeTypes'. From 'servicefeaturemodel_AttributeType', the role 'servicefeaturemodel_AttributeType42' has cardinality 0..*, and from 'servicefeaturemodel_AttributeTypes', the role 'servicefeaturemodel_AttributeTypes41' has cardinality 0..*.
+An association connects 'servicefeaturemodel_AttributeToAttributeModifyRelationship' and 'servicefeaturemodel_Attribute'. From 'servicefeaturemodel_AttributeToAttributeModifyRelationship', the role 'servicefeaturemodel_AttributeToAttributeModifyRelationship' has cardinality 0..*, and from 'servicefeaturemodel_Attribute', the role 'servicefeaturemodel_Attribute44' has cardinality 0..*.
+An association connects 'servicefeaturemodel_ServiceFeature' and 'servicefeaturemodel_FeatureToAttributeModifyRelationship'. From 'servicefeaturemodel_ServiceFeature', the role 'servicefeaturemodel_ServiceFeature46' has cardinality 0..*, and from 'servicefeaturemodel_FeatureToAttributeModifyRelationship', the role 'servicefeaturemodel_FeatureToAttributeModifyRelationship' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/davidediruscio/becontenhtmldoc/src/becontent/html/gen/becontent.ecore

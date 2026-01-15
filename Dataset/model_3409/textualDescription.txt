@@ -1,0 +1,19 @@
+The domain model 'test' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'test_Address' represents an important domain concept.
+It has the following attributes: 'city', which is of type str; 'street', which is of type str.
+
+'test_Person' represents an important domain concept.
+It has the following attributes: 'lastname', which is of type str; 'firstname', which is of type str.
+
+'test_Contact' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'type', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ContactType' defines the following possible values: 'PHONE', 'EMAIL'.
+
+Relationships between classes are modeled using associations.
+An association connects 'test_Person' and 'test_Address'. From 'test_Person', the role 'test_Person' has cardinality 0..*, and from 'test_Address', the role 'test_Address' has cardinality 0..*.
+An association connects 'test_Person' and 'test_Contact'. From 'test_Person', the role 'test_Person2' has cardinality 0..*, and from 'test_Contact', the role 'test_Contact' has cardinality 0..*.

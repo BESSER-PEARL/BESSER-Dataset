@@ -1,0 +1,30 @@
+The domain model 'myDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'myDsl_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_School' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Student' represents an important domain concept.
+It has one attribute: 'registrationNum', which is of type int.
+
+'myDsl_Teacher' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_SchoolModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'myDsl_Student' is a specialization of 'Person'.
+The class 'myDsl_Teacher' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl_SchoolModel' and 'myDsl_School'. From 'myDsl_SchoolModel', the role 'myDsl_SchoolModel' has cardinality 0..*, and from 'myDsl_School', the role 'myDsl_School' has cardinality 0..*.
+An association connects 'myDsl_School' and 'myDsl_Person'. From 'myDsl_School', the role 'myDsl_School2' has cardinality 0..*, and from 'myDsl_Person', the role 'myDsl_Person' has cardinality 0..*.
+An association connects 'myDsl_Student' and 'myDsl_Teacher'. From 'myDsl_Student', the role 'myDsl_Student' has cardinality 0..*, and from 'myDsl_Teacher', the role 'myDsl_Teacher' has cardinality 0..*.

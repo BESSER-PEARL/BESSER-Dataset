@@ -1,0 +1,66 @@
+The domain model 'company' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'company_Order' represents an important domain concept.
+It does not declare any attributes.
+
+'Order' represents an important domain concept.
+It does not declare any attributes.
+
+'company_Product' represents an important domain concept.
+It has the following attributes: 'price', which is of type float; 'description', which is of type str; 'vat', which is of type str; 'name', which is of type str.
+
+'company_PurchaseOrder' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'company_Supplier' represents an important domain concept.
+It has one attribute: 'preferred', which is of type bool.
+
+'company_Category' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Addressable' represents an important domain concept.
+It does not declare any attributes.
+
+'company_Addressable' represents an important domain concept.
+It has the following attributes: 'street', which is of type str; 'city', which is of type str; 'name', which is of type str.
+
+'company_SalesOrder' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'company_Company' represents an important domain concept.
+It does not declare any attributes.
+
+'company_Customer' represents an important domain concept.
+It does not declare any attributes.
+
+'company_OrderDetail' represents an important domain concept.
+It has one attribute: 'price', which is of type float.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VAT' defines the following possible values: 'vat7', 'vat15', 'vat0'.
+
+The model also captures inheritance relationships between classes.
+The class 'company_Company' is a specialization of 'Addressable'.
+The class 'company_Supplier' is a specialization of 'Addressable'.
+The class 'company_Customer' is a specialization of 'Addressable'.
+The class 'company_PurchaseOrder' is a specialization of 'Order'.
+The class 'company_SalesOrder' is a specialization of 'Order'.
+
+Relationships between classes are modeled using associations.
+An association connects 'company_Category' and 'company_Company'. From 'company_Category', the role 'company_Category' has cardinality 0..*, and from 'company_Company', the role 'company_Company' has cardinality 0..*.
+An association connects 'company_Company' and 'company_Supplier'. From 'company_Company', the role 'company_Company2' has cardinality 0..*, and from 'company_Supplier', the role 'company_Supplier' has cardinality 0..*.
+An association connects 'company_Customer' and 'company_Company'. From 'company_Customer', the role 'company_Customer' has cardinality 0..*, and from 'company_Company', the role 'company_Company4' has cardinality 0..*.
+An association connects 'company_PurchaseOrder' and 'company_Company'. From 'company_PurchaseOrder', the role 'company_PurchaseOrder' has cardinality 0..*, and from 'company_Company', the role 'company_Company6' has cardinality 0..*.
+An association connects 'company_SalesOrder' and 'company_Company'. From 'company_SalesOrder', the role 'company_SalesOrder' has cardinality 0..*, and from 'company_Company', the role 'company_Company8' has cardinality 0..*.
+An association connects 'company_PurchaseOrder' and 'company_Supplier'. From 'company_PurchaseOrder', the role 'PurchaseOrder' has cardinality 0..*, and from 'company_Supplier', the role 'supplier' has cardinality 0..*.
+An association connects 'company_SalesOrder' and 'company_Customer'. From 'company_SalesOrder', the role 'SalesOrder' has cardinality 0..*, and from 'company_Customer', the role 'customer' has cardinality 0..*.
+An association connects 'company_OrderDetail' and 'company_Order'. From 'company_OrderDetail', the role 'OrderDetail' has cardinality 0..*, and from 'company_Order', the role 'order' has cardinality 0..*.
+An association connects 'company_OrderDetail' and 'company_Order'. From 'company_OrderDetail', the role 'orderDetails' has cardinality 0..*, and from 'company_Order', the role 'Order' has cardinality 0..*.
+An association connects 'company_OrderDetail' and 'company_Product'. From 'company_OrderDetail', the role 'orderDetails14' has cardinality 0..*, and from 'company_Product', the role 'Product' has cardinality 0..*.
+An association connects 'company_Supplier' and 'company_PurchaseOrder'. From 'company_Supplier', the role 'Supplier' has cardinality 0..*, and from 'company_PurchaseOrder', the role 'purchaseOrders' has cardinality 0..*.
+An association connects 'company_Customer' and 'company_SalesOrder'. From 'company_Customer', the role 'Customer' has cardinality 0..*, and from 'company_SalesOrder', the role 'salesOrders' has cardinality 0..*.
+An association connects 'company_Category' and 'company_Category'. From 'company_Category', the role 'company_Category17' has cardinality 0..*, and from 'company_Category', the role 'company_Category19' has cardinality 0..*.
+An association connects 'company_Category' and 'company_Product'. From 'company_Category', the role 'company_Category21' has cardinality 0..*, and from 'company_Product', the role 'company_Product' has cardinality 0..*.
+An association connects 'company_Product' and 'company_OrderDetail'. From 'company_Product', the role 'product' has cardinality 0..*, and from 'company_OrderDetail', the role 'OrderDetail23' has cardinality 0..*.

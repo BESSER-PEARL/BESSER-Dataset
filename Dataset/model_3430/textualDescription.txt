@@ -1,0 +1,42 @@
+The domain model 'school' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'school_School' represents an important domain concept.
+It does not declare any attributes.
+
+'school_SchoolModel' represents an important domain concept.
+It does not declare any attributes.
+
+'school_Student' represents an important domain concept.
+It has one attribute: 'registrationNum', which is of type int.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'school_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'school_Teacher' represents an important domain concept.
+It does not declare any attributes.
+
+'school_Person' represents an important domain concept.
+It does not declare any attributes.
+
+'school_SchoolStatistics' represents an important domain concept.
+It has the following attributes: 'studentsWithNoTeacher', which is of type str; 'teachersNumber', which is of type int; 'studentsNumber', which is of type int.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'school_School' is a specialization of 'Named'.
+The class 'school_Person' is a specialization of 'Named'.
+The class 'school_Student' is a specialization of 'Person'.
+The class 'school_Teacher' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'school_School' and 'school_SchoolModel'. From 'school_School', the role 'school_School' has cardinality 0..*, and from 'school_SchoolModel', the role 'school_SchoolModel' has cardinality 0..*.
+An association connects 'school_SchoolStatistics' and 'school_School'. From 'school_SchoolStatistics', the role 'school_SchoolStatistics' has cardinality 0..*, and from 'school_School', the role 'school_School2' has cardinality 0..*.
+An association connects 'school_Person' and 'school_School'. From 'school_Person', the role 'school_Person' has cardinality 0..*, and from 'school_School', the role 'school_School4' has cardinality 0..*.
+An association connects 'school_Teacher' and 'school_Student'. From 'school_Teacher', the role 'school_Teacher' has cardinality 0..*, and from 'school_Student', the role 'school_Student' has cardinality 0..*.

@@ -1,0 +1,74 @@
+The domain model 'Families' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'Families_Child' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_Company' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_Member' represents an important domain concept.
+It has one attribute: 'firstName', which is of type str.
+
+'Families_City' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Families_School' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_Parent' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_Neighborhood' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_Family' represents an important domain concept.
+It has one attribute: 'lastName', which is of type str.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_Country' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Families_Country' is a specialization of 'NamedElement'.
+The class 'Families_Parent' is a specialization of 'Member'.
+The class 'Families_Child' is a specialization of 'Member'.
+The class 'Families_Neighborhood' is a specialization of 'NamedElement'.
+The class 'Families_City' is a specialization of 'NamedElement'.
+The class 'Families_School' is a specialization of 'NamedElement'.
+The class 'Families_Company' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Families_Family' and 'Families_Country'. From 'Families_Family', the role 'Families_Family' has cardinality 0..*, and from 'Families_Country', the role 'Families_Country' has cardinality 0..*.
+An association connects 'Families_Country' and 'Families_City'. From 'Families_Country', the role 'Families_Country2' has cardinality 0..*, and from 'Families_City', the role 'Families_City' has cardinality 0..*.
+An association connects 'Families_Company' and 'Families_Country'. From 'Families_Company', the role 'Families_Company' has cardinality 0..*, and from 'Families_Country', the role 'Families_Country4' has cardinality 0..*.
+An association connects 'Families_Family' and 'Families_Parent'. From 'Families_Family', the role 'Families_Family6' has cardinality 0..*, and from 'Families_Parent', the role 'Families_Parent' has cardinality 0..*.
+An association connects 'Families_Parent' and 'Families_Family'. From 'Families_Parent', the role 'Families_Parent9' has cardinality 0..*, and from 'Families_Family', the role 'Families_Family8' has cardinality 0..*.
+An association connects 'Families_Family' and 'Families_Child'. From 'Families_Family', the role 'Families_Family11' has cardinality 0..*, and from 'Families_Child', the role 'Families_Child' has cardinality 0..*.
+An association connects 'Families_Child' and 'Families_Family'. From 'Families_Child', the role 'Families_Child14' has cardinality 0..*, and from 'Families_Family', the role 'Families_Family13' has cardinality 0..*.
+An association connects 'Families_Family' and 'Families_Neighborhood'. From 'Families_Family', the role 'contains' has cardinality 0..*, and from 'Families_Neighborhood', the role 'Neighborhood' has cardinality 0..*.
+An association connects 'Families_Company' and 'Families_Parent'. From 'Families_Company', the role 'Company' has cardinality 0..*, and from 'Families_Parent', the role 'employees' has cardinality 0..*.
+An association connects 'Families_Child' and 'Families_School'. From 'Families_Child', the role 'students' has cardinality 0..*, and from 'Families_School', the role 'School' has cardinality 0..*.
+An association connects 'Families_Family' and 'Families_Neighborhood'. From 'Families_Family', the role 'Family' has cardinality 0..*, and from 'Families_Neighborhood', the role 'registeredIn' has cardinality 0..*.
+An association connects 'Families_Neighborhood' and 'Families_School'. From 'Families_Neighborhood', the role 'Families_Neighborhood' has cardinality 0..*, and from 'Families_School', the role 'Families_School' has cardinality 0..*.
+An association connects 'Families_City' and 'Families_Company'. From 'Families_City', the role 'isIn' has cardinality 0..*, and from 'Families_Company', the role 'Company21' has cardinality 0..*.
+An association connects 'Families_City' and 'Families_Neighborhood'. From 'Families_City', the role 'Families_City23' has cardinality 0..*, and from 'Families_Neighborhood', the role 'Families_Neighborhood24' has cardinality 0..*.
+An association connects 'Families_Service' and 'Families_School'. From 'Families_Service', the role 'Families_Service' has cardinality 0..*, and from 'Families_School', the role 'Families_School26' has cardinality 0..*.
+An association connects 'Families_School' and 'Families_Service'. From 'Families_School', the role 'Families_School28' has cardinality 0..*, and from 'Families_Service', the role 'Families_Service29' has cardinality 0..*.
+An association connects 'Families_Child' and 'Families_School'. From 'Families_Child', the role 'Child' has cardinality 0..*, and from 'Families_School', the role 'goesTo' has cardinality 0..*.
+An association connects 'Families_Parent' and 'Families_Company'. From 'Families_Parent', the role 'Parent' has cardinality 0..*, and from 'Families_Company', the role 'worksIn' has cardinality 0..*.
+An association connects 'Families_Company' and 'Families_City'. From 'Families_Company', the role 'companies' has cardinality 0..*, and from 'Families_City', the role 'City' has cardinality 0..*.
+An association connects 'Families_Family' and 'Families_Member'. From 'Families_Family', the role 'Families_Family34' has cardinality 0..*, and from 'Families_Member', the role 'Families_Member' has cardinality 0..*.
+An association connects 'Families_City' and 'Families_Member'. From 'Families_City', the role 'Families_City37' has cardinality 0..*, and from 'Families_Member', the role 'Families_Member36' has cardinality 0..*.

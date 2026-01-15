@@ -1,0 +1,26 @@
+The domain model 'classmate' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'classmate_Friend' represents an important domain concept.
+It has the following attributes: 'toDate', which is of type str; 'fromDate', which is of type str.
+
+'classmate_ClassmateSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'classmate_Classroom' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'classmate_School' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'classmate_Student' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'classmate_Student' and 'classmate_Classroom'. From 'classmate_Student', the role 'classmate_Student' has cardinality 0..*, and from 'classmate_Classroom', the role 'classmate_Classroom' has cardinality 0..*.
+An association connects 'classmate_School' and 'classmate_ClassmateSystem'. From 'classmate_School', the role 'classmate_School' has cardinality 0..*, and from 'classmate_ClassmateSystem', the role 'classmate_ClassmateSystem' has cardinality 0..*.
+An association connects 'classmate_Friend' and 'classmate_ClassmateSystem'. From 'classmate_Friend', the role 'classmate_Friend' has cardinality 0..*, and from 'classmate_ClassmateSystem', the role 'classmate_ClassmateSystem3' has cardinality 0..*.
+An association connects 'classmate_Classroom' and 'classmate_School'. From 'classmate_Classroom', the role 'classmate_Classroom6' has cardinality 0..*, and from 'classmate_School', the role 'classmate_School5' has cardinality 0..*.
+An association connects 'classmate_Student' and 'classmate_Friend'. From 'classmate_Student', the role 'classmate_Student9' has cardinality 0..*, and from 'classmate_Friend', the role 'classmate_Friend8' has cardinality 0..*.
+An association connects 'classmate_Friend' and 'classmate_Student'. From 'classmate_Friend', the role 'classmate_Friend11' has cardinality 0..*, and from 'classmate_Student', the role 'classmate_Student12' has cardinality 0..*.

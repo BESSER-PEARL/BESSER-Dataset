@@ -1,0 +1,72 @@
+The domain model 'backbone' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'backbone_Attribute' represents an important domain concept.
+It has the following attributes: 'defaultValue', which is of type str; 'cardinality', which is of type str.
+
+'backbone_RouterMapping' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'backbone_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'backbone_View' represents an important domain concept.
+It does not declare any attributes.
+
+'backbone_Router' represents an important domain concept.
+It does not declare any attributes.
+
+'backbone_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'backbone_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'backbone_Collection' represents an important domain concept.
+It does not declare any attributes.
+
+'backbone_Application' represents an important domain concept.
+It does not declare any attributes.
+
+'backbone_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'backbone_Reference' represents an important domain concept.
+It has one attribute: 'cardinality', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CardinalityKind' defines the following possible values: 'ONE', 'MANY'.
+
+The model also captures inheritance relationships between classes.
+The class 'backbone_Application' is a specialization of 'NamedElement'.
+The class 'backbone_Model' is a specialization of 'NamedElement'.
+The class 'backbone_Attribute' is a specialization of 'NamedElement'.
+The class 'backbone_Reference' is a specialization of 'NamedElement'.
+The class 'backbone_Operation' is a specialization of 'NamedElement'.
+The class 'backbone_Parameter' is a specialization of 'NamedElement'.
+The class 'backbone_Collection' is a specialization of 'NamedElement'.
+The class 'backbone_Router' is a specialization of 'NamedElement'.
+The class 'backbone_View' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'backbone_Model' and 'backbone_Application'. From 'backbone_Model', the role 'Model' has cardinality 0..*, and from 'backbone_Application', the role 'application' has cardinality 0..*.
+An association connects 'backbone_Collection' and 'backbone_Application'. From 'backbone_Collection', the role 'Collection' has cardinality 0..*, and from 'backbone_Application', the role 'application2' has cardinality 0..*.
+An association connects 'backbone_Application' and 'backbone_Router'. From 'backbone_Application', the role 'application4' has cardinality 0..*, and from 'backbone_Router', the role 'Router' has cardinality 0..*.
+An association connects 'backbone_Application' and 'backbone_View'. From 'backbone_Application', the role 'application6' has cardinality 0..*, and from 'backbone_View', the role 'View' has cardinality 0..*.
+An association connects 'backbone_Attribute' and 'backbone_Model'. From 'backbone_Attribute', the role 'backbone_Attribute' has cardinality 0..*, and from 'backbone_Model', the role 'backbone_Model' has cardinality 0..*.
+An association connects 'backbone_Reference' and 'backbone_Model'. From 'backbone_Reference', the role 'backbone_Reference' has cardinality 0..*, and from 'backbone_Model', the role 'backbone_Model9' has cardinality 0..*.
+An association connects 'backbone_Operation' and 'backbone_Model'. From 'backbone_Operation', the role 'backbone_Operation' has cardinality 0..*, and from 'backbone_Model', the role 'backbone_Model11' has cardinality 0..*.
+An association connects 'backbone_Model' and 'backbone_Application'. From 'backbone_Model', the role 'models' has cardinality 0..*, and from 'backbone_Application', the role 'Application' has cardinality 0..*.
+An association connects 'backbone_Model' and 'backbone_Reference'. From 'backbone_Model', the role 'backbone_Model15' has cardinality 0..*, and from 'backbone_Reference', the role 'backbone_Reference14' has cardinality 0..*.
+An association connects 'backbone_Parameter' and 'backbone_Operation'. From 'backbone_Parameter', the role 'backbone_Parameter' has cardinality 0..*, and from 'backbone_Operation', the role 'backbone_Operation17' has cardinality 0..*.
+An association connects 'backbone_Model' and 'backbone_Collection'. From 'backbone_Model', the role 'backbone_Model19' has cardinality 0..*, and from 'backbone_Collection', the role 'backbone_Collection' has cardinality 0..*.
+An association connects 'backbone_Collection' and 'backbone_Application'. From 'backbone_Collection', the role 'collections' has cardinality 0..*, and from 'backbone_Application', the role 'Application21' has cardinality 0..*.
+An association connects 'backbone_RouterMapping' and 'backbone_Router'. From 'backbone_RouterMapping', the role 'backbone_RouterMapping' has cardinality 0..*, and from 'backbone_Router', the role 'backbone_Router' has cardinality 0..*.
+An association connects 'backbone_Router' and 'backbone_Application'. From 'backbone_Router', the role 'router' has cardinality 0..*, and from 'backbone_Application', the role 'Application24' has cardinality 0..*.
+An association connects 'backbone_View' and 'backbone_RouterMapping'. From 'backbone_View', the role 'backbone_View' has cardinality 0..*, and from 'backbone_RouterMapping', the role 'backbone_RouterMapping26' has cardinality 0..*.
+An association connects 'backbone_Operation' and 'backbone_View'. From 'backbone_Operation', the role 'backbone_Operation29' has cardinality 0..*, and from 'backbone_View', the role 'backbone_View28' has cardinality 0..*.
+An association connects 'backbone_Application' and 'backbone_View'. From 'backbone_Application', the role 'Application31' has cardinality 0..*, and from 'backbone_View', the role 'views' has cardinality 0..*.

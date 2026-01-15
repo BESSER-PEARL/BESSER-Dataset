@@ -1,0 +1,46 @@
+The domain model 'featuremodels' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'featuremodels_Constraint' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'rule', which is of type str; 'name', which is of type str.
+
+'featuremodels_ContainmentAssociation' represents an important domain concept.
+It has the following attributes: 'upperBound', which is of type int; 'lowerBound', which is of type int.
+
+'featuremodels_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'featuremodels_Instance' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'descritpion', which is of type str.
+
+'featuremodels_Feature' represents an important domain concept.
+It has the following attributes: 'root', which is of type bool; 'name', which is of type str; 'upperBound', which is of type int; 'required', which is of type bool; 'lowerBound', which is of type int.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'featuremodels_FeatureModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'featuremodels_SimpleAttribute' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'value', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ConstraintType' defines the following possible values: 'REQUIRES', 'EXCLUDES'.
+
+The model also captures inheritance relationships between classes.
+The class 'featuremodels_SimpleAttribute' is a specialization of 'Attribute'.
+
+Relationships between classes are modeled using associations.
+An association connects 'featuremodels_Feature' and 'featuremodels_Feature'. From 'featuremodels_Feature', the role 'Feature' has cardinality 0..*, and from 'featuremodels_Feature', the role 'featureParent' has cardinality 0..*.
+An association connects 'featuremodels_Feature' and 'featuremodels_Feature'. From 'featuremodels_Feature', the role 'Feature4' has cardinality 0..*, and from 'featuremodels_Feature', the role 'subFeatures' has cardinality 0..*.
+An association connects 'featuremodels_Feature' and 'featuremodels_ContainmentAssociation'. From 'featuremodels_Feature', the role 'parent' has cardinality 0..*, and from 'featuremodels_ContainmentAssociation', the role 'ContainmentAssociation' has cardinality 0..*.
+An association connects 'featuremodels_Feature' and 'featuremodels_ContainmentAssociation'. From 'featuremodels_Feature', the role 'subFeatures7' has cardinality 0..*, and from 'featuremodels_ContainmentAssociation', the role 'ContainmentAssociation8' has cardinality 0..*.
+An association connects 'featuremodels_Attribute' and 'featuremodels_Feature'. From 'featuremodels_Attribute', the role 'featuremodels_Attribute' has cardinality 0..*, and from 'featuremodels_Feature', the role 'featuremodels_Feature' has cardinality 0..*.
+An association connects 'featuremodels_ContainmentAssociation' and 'featuremodels_Feature'. From 'featuremodels_ContainmentAssociation', the role 'containerParent' has cardinality 0..*, and from 'featuremodels_Feature', the role 'Feature11' has cardinality 0..*.
+An association connects 'featuremodels_Feature' and 'featuremodels_ContainmentAssociation'. From 'featuremodels_Feature', the role 'Feature13' has cardinality 0..*, and from 'featuremodels_ContainmentAssociation', the role 'containers' has cardinality 0..*.
+An association connects 'featuremodels_Feature' and 'featuremodels_FeatureModel'. From 'featuremodels_Feature', the role 'featuremodels_Feature15' has cardinality 0..*, and from 'featuremodels_FeatureModel', the role 'featuremodels_FeatureModel' has cardinality 0..*.
+An association connects 'featuremodels_FeatureModel' and 'featuremodels_Constraint'. From 'featuremodels_FeatureModel', the role 'featuremodels_FeatureModel17' has cardinality 0..*, and from 'featuremodels_Constraint', the role 'featuremodels_Constraint' has cardinality 0..*.
+An association connects 'featuremodels_FeatureModel' and 'featuremodels_Instance'. From 'featuremodels_FeatureModel', the role 'featuremodels_FeatureModel19' has cardinality 0..*, and from 'featuremodels_Instance', the role 'featuremodels_Instance' has cardinality 0..*.
+An association connects 'featuremodels_Instance' and 'featuremodels_Feature'. From 'featuremodels_Instance', the role 'featuremodels_Instance21' has cardinality 0..*, and from 'featuremodels_Feature', the role 'featuremodels_Feature22' has cardinality 0..*.

@@ -1,0 +1,120 @@
+The domain model 'umlknes' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'umlknes_RedefinableElement' represents an important domain concept.
+It has one attribute: 'isLeaf', which is of type bool.
+
+'RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlknes_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlknes_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'umlknes_CreationEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'umlknes_OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'umlknes_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'umlknes_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'umlknes_ExecutionEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'umlknes_Activity' represents an important domain concept.
+It has the following attributes: 'isReadOnly', which is of type bool; 'isSingleExecution', which is of type bool.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlknes_ActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlknes_DecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlknes_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlknes_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlknes_AcceptEventAction' represents an important domain concept.
+It has one attribute: 'isUnMarshall', which is of type bool.
+
+'umlknes_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'umlknes_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlknes_NamedElement' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'umlknes_DestructionEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'umlknes_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VisibilityKind' defines the following possible values: 'package', 'public', 'protected'.
+
+The model also captures inheritance relationships between classes.
+The class 'umlknes_ActivityNode' is a specialization of 'RedefinableElement'.
+The class 'umlknes_ControlNode' is a specialization of 'ActivityNode'.
+The class 'umlknes_ActivityFinalNode' is a specialization of 'ControlNode'.
+The class 'umlknes_InitialNode' is a specialization of 'ControlNode'.
+The class 'umlknes_ActivityEdge' is a specialization of 'RedefinableElement'.
+The class 'umlknes_ControlFlow' is a specialization of 'ActivityEdge'.
+The class 'umlknes_DecisionNode' is a specialization of 'ControlNode'.
+The class 'umlknes_Action' is a specialization of 'ActivityNode'.
+The class 'umlknes_AcceptEventAction' is a specialization of 'Action'.
+The class 'umlknes_ValueSpecification' is a specialization of 'NamedElement'.
+The class 'umlknes_RedefinableElement' is a specialization of 'NamedElement'.
+The class 'umlknes_Trigger' is a specialization of 'NamedElement'.
+The class 'umlknes_ExecutionEvent' is a specialization of 'Event'.
+The class 'umlknes_CreationEvent' is a specialization of 'Event'.
+The class 'umlknes_DestructionEvent' is a specialization of 'Event'.
+The class 'umlknes_OpaqueExpression' is a specialization of 'ValueSpecification'.
+
+Relationships between classes are modeled using associations.
+An association connects 'umlknes_Activity' and 'umlknes_ActivityNode'. From 'umlknes_Activity', the role 'activity' has cardinality 0..*, and from 'umlknes_ActivityNode', the role 'ActivityNode' has cardinality 0..*.
+An association connects 'umlknes_Activity' and 'umlknes_ActivityEdge'. From 'umlknes_Activity', the role 'activity2' has cardinality 0..*, and from 'umlknes_ActivityEdge', the role 'ActivityEdge' has cardinality 0..*.
+An association connects 'umlknes_ActivityNode' and 'umlknes_Activity'. From 'umlknes_ActivityNode', the role 'node' has cardinality 0..*, and from 'umlknes_Activity', the role 'Activity' has cardinality 0..*.
+An association connects 'umlknes_ActivityEdge' and 'umlknes_ActivityNode'. From 'umlknes_ActivityEdge', the role 'ActivityEdge5' has cardinality 0..*, and from 'umlknes_ActivityNode', the role 'target' has cardinality 0..*.
+An association connects 'umlknes_ActivityEdge' and 'umlknes_ActivityNode'. From 'umlknes_ActivityEdge', the role 'ActivityEdge7' has cardinality 0..*, and from 'umlknes_ActivityNode', the role 'source' has cardinality 0..*.
+An association connects 'umlknes_ActivityNode' and 'umlknes_ActivityNode'. From 'umlknes_ActivityNode', the role 'umlknes_ActivityNode8' has cardinality 0..*, and from 'umlknes_ActivityNode', the role 'umlknes_ActivityNode' has cardinality 0..*.
+An association connects 'umlknes_ActivityEdge' and 'umlknes_ActivityNode'. From 'umlknes_ActivityEdge', the role 'incoming' has cardinality 0..*, and from 'umlknes_ActivityNode', the role 'ActivityNode11' has cardinality 0..*.
+An association connects 'umlknes_ActivityNode' and 'umlknes_ActivityEdge'. From 'umlknes_ActivityNode', the role 'ActivityNode13' has cardinality 0..*, and from 'umlknes_ActivityEdge', the role 'outgoing' has cardinality 0..*.
+An association connects 'umlknes_ActivityEdge' and 'umlknes_Activity'. From 'umlknes_ActivityEdge', the role 'edge' has cardinality 0..*, and from 'umlknes_Activity', the role 'Activity15' has cardinality 0..*.
+An association connects 'umlknes_ValueSpecification' and 'umlknes_ActivityEdge'. From 'umlknes_ValueSpecification', the role 'umlknes_ValueSpecification' has cardinality 0..*, and from 'umlknes_ActivityEdge', the role 'umlknes_ActivityEdge' has cardinality 0..*.
+An association connects 'umlknes_ValueSpecification' and 'umlknes_ActivityEdge'. From 'umlknes_ValueSpecification', the role 'umlknes_ValueSpecification19' has cardinality 0..*, and from 'umlknes_ActivityEdge', the role 'umlknes_ActivityEdge18' has cardinality 0..*.
+An association connects 'umlknes_Trigger' and 'umlknes_AcceptEventAction'. From 'umlknes_Trigger', the role 'umlknes_Trigger' has cardinality 0..*, and from 'umlknes_AcceptEventAction', the role 'umlknes_AcceptEventAction' has cardinality 0..*.
+An association connects 'umlknes_Event' and 'umlknes_Trigger'. From 'umlknes_Event', the role 'umlknes_Event' has cardinality 0..*, and from 'umlknes_Trigger', the role 'umlknes_Trigger22' has cardinality 0..*.

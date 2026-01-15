@@ -1,0 +1,77 @@
+The domain model 'internalsm' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'internalsm_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'internalsm_TrapState' represents an important domain concept.
+It does not declare any attributes.
+
+'internalsm_InternalExecutionModel' represents an important domain concept.
+It has one attribute: 'context', which is of type str.
+
+'internalsm_InitState' represents an important domain concept.
+It does not declare any attributes.
+
+'internalsm_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'internalsm_StateMachine' represents an important domain concept.
+It has the following attributes: 'context', which is of type str; 'priority', which is of type int.
+
+'internalsm_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'internalsm_EventToken' represents an important domain concept.
+It does not declare any attributes.
+
+'internalsm_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'internalsm_TimeConstraintSpecification' represents an important domain concept.
+It has the following attributes: 'expectedLength', which is of type str; 'stopTimestamp', which is of type str; 'startTimestamp', which is of type str; 'id', which is of type str.
+
+'internalsm_TimeConstraint' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'internalsm_State' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'internalsm_EventPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'internalsm_AtomicEventPattern' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TimeConstraintType' defines the following possible values: 'STOP', 'CHECK', 'START'.
+The enumeration 'NumericCompareOperator' defines the following possible values: 'LESS_THAN', 'MORE_OR_EQUALS', 'LESS_OR_EQUALS', 'EQUALS', 'MORE_THAN'.
+The enumeration 'EventProcessingContext' defines the following possible values: 'UNRESTRICTED', 'STRICT_IMMEDIATE', 'RECENT', 'IMMEDIATE', 'CHRONICLE'.
+
+The model also captures inheritance relationships between classes.
+The class 'internalsm_FinalState' is a specialization of 'State'.
+The class 'internalsm_InitState' is a specialization of 'State'.
+The class 'internalsm_TrapState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'internalsm_Transition' and 'internalsm_State'. From 'internalsm_Transition', the role 'Transition' has cardinality 0..*, and from 'internalsm_State', the role 'preState' has cardinality 0..*.
+An association connects 'internalsm_State' and 'internalsm_Transition'. From 'internalsm_State', the role 'postState' has cardinality 0..*, and from 'internalsm_Transition', the role 'Transition2' has cardinality 0..*.
+An association connects 'internalsm_State' and 'internalsm_EventToken'. From 'internalsm_State', the role 'currentState' has cardinality 0..*, and from 'internalsm_EventToken', the role 'EventToken' has cardinality 0..*.
+An association connects 'internalsm_TimeConstraint' and 'internalsm_State'. From 'internalsm_TimeConstraint', the role 'internalsm_TimeConstraint' has cardinality 0..*, and from 'internalsm_State', the role 'internalsm_State' has cardinality 0..*.
+An association connects 'internalsm_State' and 'internalsm_Event'. From 'internalsm_State', the role 'internalsm_State6' has cardinality 0..*, and from 'internalsm_Event', the role 'internalsm_Event' has cardinality 0..*.
+An association connects 'internalsm_State' and 'internalsm_Transition'. From 'internalsm_State', the role 'State' has cardinality 0..*, and from 'internalsm_Transition', the role 'outTransitions' has cardinality 0..*.
+An association connects 'internalsm_Transition' and 'internalsm_Guard'. From 'internalsm_Transition', the role 'internalsm_Transition' has cardinality 0..*, and from 'internalsm_Guard', the role 'internalsm_Guard' has cardinality 0..*.
+An association connects 'internalsm_Transition' and 'internalsm_State'. From 'internalsm_Transition', the role 'inTransitions' has cardinality 0..*, and from 'internalsm_State', the role 'State10' has cardinality 0..*.
+An association connects 'internalsm_Guard' and 'internalsm_AtomicEventPattern'. From 'internalsm_Guard', the role 'internalsm_Guard12' has cardinality 0..*, and from 'internalsm_AtomicEventPattern', the role 'internalsm_AtomicEventPattern' has cardinality 0..*.
+An association connects 'internalsm_StateMachine' and 'internalsm_State'. From 'internalsm_StateMachine', the role 'internalsm_StateMachine' has cardinality 0..*, and from 'internalsm_State', the role 'internalsm_State14' has cardinality 0..*.
+An association connects 'internalsm_StateMachine' and 'internalsm_EventPattern'. From 'internalsm_StateMachine', the role 'stateMachine' has cardinality 0..*, and from 'internalsm_EventPattern', the role 'CEPMeta.ecoreEventPattern' has cardinality 0..*.
+An association connects 'internalsm_StateMachine' and 'internalsm_InternalExecutionModel'. From 'internalsm_StateMachine', the role 'internalsm_StateMachine17' has cardinality 0..*, and from 'internalsm_InternalExecutionModel', the role 'internalsm_InternalExecutionModel' has cardinality 0..*.
+An association connects 'internalsm_InternalExecutionModel' and 'internalsm_Event'. From 'internalsm_InternalExecutionModel', the role 'internalsm_InternalExecutionModel19' has cardinality 0..*, and from 'internalsm_Event', the role 'internalsm_Event20' has cardinality 0..*.
+An association connects 'internalsm_EventToken' and 'internalsm_InternalExecutionModel'. From 'internalsm_EventToken', the role 'internalsm_EventToken' has cardinality 0..*, and from 'internalsm_InternalExecutionModel', the role 'internalsm_InternalExecutionModel22' has cardinality 0..*.
+An association connects 'internalsm_State' and 'internalsm_EventToken'. From 'internalsm_State', the role 'State24' has cardinality 0..*, and from 'internalsm_EventToken', the role 'eventTokens' has cardinality 0..*.
+An association connects 'internalsm_EventToken' and 'internalsm_Event'. From 'internalsm_EventToken', the role 'internalsm_EventToken26' has cardinality 0..*, and from 'internalsm_Event', the role 'internalsm_Event27' has cardinality 0..*.
+An association connects 'internalsm_TimeConstraintSpecification' and 'internalsm_TimeConstraint'. From 'internalsm_TimeConstraintSpecification', the role 'internalsm_TimeConstraintSpecification' has cardinality 0..*, and from 'internalsm_TimeConstraint', the role 'internalsm_TimeConstraint29' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/javitroya/AME_ATL_MUT_Testing/Examples_In_Slides/Public2Private_AME/metamodel/UMLSimp.ecore

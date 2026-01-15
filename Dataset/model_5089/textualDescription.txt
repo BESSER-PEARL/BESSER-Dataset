@@ -1,0 +1,54 @@
+The domain model 'adl402' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'adl402_Interface' represents an important domain concept.
+It has the following attributes: 'signature', which is of type str; 'name', which is of type str.
+
+'Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'adl402_EClass1' represents an important domain concept.
+It does not declare any attributes.
+
+'adl402_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adl402_Content' represents an important domain concept.
+It has the following attributes: 'expression', which is of type str; 'language', which is of type str.
+
+'adl402_Required' represents an important domain concept.
+It does not declare any attributes.
+
+'adl402_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'adl402_Provided' represents an important domain concept.
+It does not declare any attributes.
+
+'adl402_EClass2' represents an important domain concept.
+It does not declare any attributes.
+
+'adl402_EClass0' represents an important domain concept.
+It has one attribute: 'EAttribute0', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'adl402_Required' is a specialization of 'Interface'.
+The class 'adl402_Provided' is a specialization of 'Interface'.
+The class 'adl402_EClass1' is a specialization of 'Binding'.
+The class 'adl402_EClass2' is a specialization of 'Binding'.
+
+Relationships between classes are modeled using associations.
+An association connects 'adl402_Binding' and 'adl402_Interface'. From 'adl402_Binding', the role 'adl402_Binding' has cardinality 0..*, and from 'adl402_Interface', the role 'adl402_Interface' has cardinality 0..*.
+An association connects 'adl402_Binding' and 'adl402_Interface'. From 'adl402_Binding', the role 'adl402_Binding2' has cardinality 0..*, and from 'adl402_Interface', the role 'adl402_Interface3' has cardinality 0..*.
+An association connects 'adl402_Interface' and 'adl402_Binding'. From 'adl402_Interface', the role 'adl402_Interface6' has cardinality 0..*, and from 'adl402_Binding', the role 'adl402_Binding5' has cardinality 0..*.
+An association connects 'adl402_Content' and 'adl402_Component'. From 'adl402_Content', the role 'content' has cardinality 0..*, and from 'adl402_Component', the role 'Component' has cardinality 0..*.
+An association connects 'adl402_EClass0' and 'adl402_Content'. From 'adl402_EClass0', the role 'adl402_EClass0' has cardinality 0..*, and from 'adl402_Content', the role 'adl402_Content' has cardinality 0..*.
+An association connects 'adl402_Component' and 'adl402_Component'. From 'adl402_Component', the role 'adl402_Component9' has cardinality 0..*, and from 'adl402_Component', the role 'adl402_Component' has cardinality 0..*.
+An association connects 'adl402_Component' and 'adl402_Required'. From 'adl402_Component', the role 'adl402_Component12' has cardinality 0..*, and from 'adl402_Required', the role 'adl402_Required' has cardinality 0..*.
+An association connects 'adl402_Provided' and 'adl402_Component'. From 'adl402_Provided', the role 'adl402_Provided' has cardinality 0..*, and from 'adl402_Component', the role 'adl402_Component14' has cardinality 0..*.
+An association connects 'adl402_Component' and 'adl402_Content'. From 'adl402_Component', the role 'contentParent' has cardinality 0..*, and from 'adl402_Content', the role 'Content' has cardinality 0..*.
+An association connects 'adl402_EClass0' and 'adl402_EClass0'. From 'adl402_EClass0', the role 'adl402_EClass016' has cardinality 0..*, and from 'adl402_EClass0', the role 'adl402_EClass018' has cardinality 0..*.

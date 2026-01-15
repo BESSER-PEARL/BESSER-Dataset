@@ -1,0 +1,60 @@
+The domain model 'syswbeff106prepa' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'syswbeff106prepa_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106prepa_OutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106prepa_Workbench' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106prepa_InputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106prepa_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106prepa_PatternCatalog' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106prepa_Port' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'syswbeff106prepa_Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106prepa_AbstractFunction' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'AbstractFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106prepa_System' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'syswbeff106prepa_Pattern' is a specialization of 'AbstractFunction'.
+The class 'syswbeff106prepa_Function' is a specialization of 'AbstractFunction'.
+The class 'syswbeff106prepa_InputPort' is a specialization of 'Port'.
+The class 'syswbeff106prepa_OutputPort' is a specialization of 'Port'.
+
+Relationships between classes are modeled using associations.
+An association connects 'syswbeff106prepa_AbstractFunction' and 'syswbeff106prepa_AbstractFunction'. From 'syswbeff106prepa_AbstractFunction', the role 'syswbeff106prepa_AbstractFunction' has cardinality 0..*, and from 'syswbeff106prepa_AbstractFunction', the role 'syswbeff106prepa_AbstractFunction0' has cardinality 0..*.
+An association connects 'syswbeff106prepa_AbstractFunction' and 'syswbeff106prepa_InputPort'. From 'syswbeff106prepa_AbstractFunction', the role 'syswbeff106prepa_AbstractFunction3' has cardinality 0..*, and from 'syswbeff106prepa_InputPort', the role 'syswbeff106prepa_InputPort' has cardinality 0..*.
+An association connects 'syswbeff106prepa_AbstractFunction' and 'syswbeff106prepa_OutputPort'. From 'syswbeff106prepa_AbstractFunction', the role 'syswbeff106prepa_AbstractFunction5' has cardinality 0..*, and from 'syswbeff106prepa_OutputPort', the role 'syswbeff106prepa_OutputPort' has cardinality 0..*.
+An association connects 'syswbeff106prepa_Flow' and 'syswbeff106prepa_AbstractFunction'. From 'syswbeff106prepa_Flow', the role 'syswbeff106prepa_Flow' has cardinality 0..*, and from 'syswbeff106prepa_AbstractFunction', the role 'syswbeff106prepa_AbstractFunction7' has cardinality 0..*.
+An association connects 'syswbeff106prepa_System' and 'syswbeff106prepa_Function'. From 'syswbeff106prepa_System', the role 'syswbeff106prepa_System' has cardinality 0..*, and from 'syswbeff106prepa_Function', the role 'syswbeff106prepa_Function' has cardinality 0..*.
+An association connects 'syswbeff106prepa_PatternCatalog' and 'syswbeff106prepa_Pattern'. From 'syswbeff106prepa_PatternCatalog', the role 'syswbeff106prepa_PatternCatalog' has cardinality 0..*, and from 'syswbeff106prepa_Pattern', the role 'syswbeff106prepa_Pattern' has cardinality 0..*.
+An association connects 'syswbeff106prepa_System' and 'syswbeff106prepa_Workbench'. From 'syswbeff106prepa_System', the role 'syswbeff106prepa_System11' has cardinality 0..*, and from 'syswbeff106prepa_Workbench', the role 'syswbeff106prepa_Workbench' has cardinality 0..*.
+An association connects 'syswbeff106prepa_Workbench' and 'syswbeff106prepa_PatternCatalog'. From 'syswbeff106prepa_Workbench', the role 'syswbeff106prepa_Workbench13' has cardinality 0..*, and from 'syswbeff106prepa_PatternCatalog', the role 'syswbeff106prepa_PatternCatalog14' has cardinality 0..*.
+An association connects 'syswbeff106prepa_Pattern' and 'syswbeff106prepa_Pattern'. From 'syswbeff106prepa_Pattern', the role 'syswbeff106prepa_Pattern15' has cardinality 0..*, and from 'syswbeff106prepa_Pattern', the role 'syswbeff106prepa_Pattern17' has cardinality 0..*.
+An association connects 'syswbeff106prepa_Pattern' and 'syswbeff106prepa_Pattern'. From 'syswbeff106prepa_Pattern', the role 'syswbeff106prepa_Pattern18' has cardinality 0..*, and from 'syswbeff106prepa_Pattern', the role 'syswbeff106prepa_Pattern20' has cardinality 0..*.
+An association connects 'syswbeff106prepa_Function' and 'syswbeff106prepa_Function'. From 'syswbeff106prepa_Function', the role 'syswbeff106prepa_Function21' has cardinality 0..*, and from 'syswbeff106prepa_Function', the role 'syswbeff106prepa_Function23' has cardinality 0..*.
+An association connects 'syswbeff106prepa_Flow' and 'syswbeff106prepa_OutputPort'. From 'syswbeff106prepa_Flow', the role 'syswbeff106prepa_Flow25' has cardinality 0..*, and from 'syswbeff106prepa_OutputPort', the role 'syswbeff106prepa_OutputPort26' has cardinality 0..*.
+An association connects 'syswbeff106prepa_InputPort' and 'syswbeff106prepa_Flow'. From 'syswbeff106prepa_InputPort', the role 'syswbeff106prepa_InputPort29' has cardinality 0..*, and from 'syswbeff106prepa_Flow', the role 'syswbeff106prepa_Flow28' has cardinality 0..*.

@@ -1,0 +1,226 @@
+The domain model 'boa' describes the core structural elements and their relationships within the system.
+
+The model defines 49 main class(es).
+
+'boa_BoolOpAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_BObject' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_If' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_Int' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'boa_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_ArithOpDivide' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_BoolOpOr' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_CmpOp' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_StringToEvalResMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'boa_Skip' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_EvalBoolRes' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'boa_ArithOpMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_CmpOpEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'CmpOp' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_Ctx' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_ArithOpTimes' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_Var' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'boa_Let' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'boa_EvalBoundFunRes' represents an important domain concept.
+It does not declare any attributes.
+
+'BoolOp' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_EvalRes' represents an important domain concept.
+It does not declare any attributes.
+
+'TopLevelCmd' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_ArithOpRemainder' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_File' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_ArithOpPlus' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_Fun' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'boa_EvalFunRes' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'boa_Copy' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_Field' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'boa_CmpOpLess' represents an important domain concept.
+It does not declare any attributes.
+
+'ArithOp' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_This' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_Bool' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'boa_CmpOpUnequal' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_EvalMapRes' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_Seq' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_Assign' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_TopLevelCmd' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_Def' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'boa_App' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_BoolOp' represents an important domain concept.
+It does not declare any attributes.
+
+'EvalRes' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_With' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_ArithOp' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_Project' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EvalFunRes' represents an important domain concept.
+It does not declare any attributes.
+
+'boa_EvalIntRes' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'boa_Expr' is a specialization of 'TopLevelCmd'.
+The class 'boa_Def' is a specialization of 'TopLevelCmd'.
+The class 'boa_App' is a specialization of 'Expr'.
+The class 'boa_Var' is a specialization of 'Expr'.
+The class 'boa_This' is a specialization of 'Expr'.
+The class 'boa_Bool' is a specialization of 'Expr'.
+The class 'boa_Int' is a specialization of 'Expr'.
+The class 'boa_Skip' is a specialization of 'Expr'.
+The class 'boa_Project' is a specialization of 'Expr'.
+The class 'boa_BObject' is a specialization of 'Expr'.
+The class 'boa_Copy' is a specialization of 'Expr'.
+The class 'boa_With' is a specialization of 'Expr'.
+The class 'boa_ArithOp' is a specialization of 'Expr'.
+The class 'boa_Not' is a specialization of 'Expr'.
+The class 'boa_CmpOp' is a specialization of 'Expr'.
+The class 'boa_BoolOp' is a specialization of 'Expr'.
+The class 'boa_If' is a specialization of 'Expr'.
+The class 'boa_Let' is a specialization of 'Expr'.
+The class 'boa_Fun' is a specialization of 'Expr'.
+The class 'boa_Assign' is a specialization of 'Expr'.
+The class 'boa_ArithOpPlus' is a specialization of 'ArithOp'.
+The class 'boa_ArithOpMinus' is a specialization of 'ArithOp'.
+The class 'boa_ArithOpTimes' is a specialization of 'ArithOp'.
+The class 'boa_ArithOpDivide' is a specialization of 'ArithOp'.
+The class 'boa_ArithOpRemainder' is a specialization of 'ArithOp'.
+The class 'boa_BoolOpAnd' is a specialization of 'BoolOp'.
+The class 'boa_BoolOpOr' is a specialization of 'BoolOp'.
+The class 'boa_Seq' is a specialization of 'Expr'.
+The class 'boa_CmpOpEqual' is a specialization of 'CmpOp'.
+The class 'boa_CmpOpUnequal' is a specialization of 'CmpOp'.
+The class 'boa_CmpOpLess' is a specialization of 'CmpOp'.
+The class 'boa_EvalMapRes' is a specialization of 'EvalRes'.
+The class 'boa_EvalFunRes' is a specialization of 'EvalRes'.
+The class 'boa_EvalBoundFunRes' is a specialization of 'EvalFunRes'.
+The class 'boa_EvalIntRes' is a specialization of 'EvalRes'.
+The class 'boa_EvalBoolRes' is a specialization of 'EvalRes'.
+
+Relationships between classes are modeled using associations.
+An association connects 'boa_TopLevelCmd' and 'boa_File'. From 'boa_TopLevelCmd', the role 'boa_TopLevelCmd' has cardinality 0..*, and from 'boa_File', the role 'boa_File' has cardinality 0..*.
+An association connects 'boa_Def' and 'boa_Expr'. From 'boa_Def', the role 'boa_Def' has cardinality 0..*, and from 'boa_Expr', the role 'boa_Expr' has cardinality 0..*.
+An association connects 'boa_App' and 'boa_Expr'. From 'boa_App', the role 'boa_App' has cardinality 0..*, and from 'boa_Expr', the role 'boa_Expr3' has cardinality 0..*.
+An association connects 'boa_App' and 'boa_Expr'. From 'boa_App', the role 'boa_App5' has cardinality 0..*, and from 'boa_Expr', the role 'boa_Expr6' has cardinality 0..*.
+An association connects 'boa_Project' and 'boa_Expr'. From 'boa_Project', the role 'boa_Project' has cardinality 0..*, and from 'boa_Expr', the role 'boa_Expr8' has cardinality 0..*.
+An association connects 'boa_BObject' and 'boa_Field'. From 'boa_BObject', the role 'boa_BObject' has cardinality 0..*, and from 'boa_Field', the role 'boa_Field' has cardinality 0..*.
+An association connects 'boa_Field' and 'boa_Expr'. From 'boa_Field', the role 'boa_Field11' has cardinality 0..*, and from 'boa_Expr', the role 'boa_Expr12' has cardinality 0..*.
+An association connects 'boa_Copy' and 'boa_Expr'. From 'boa_Copy', the role 'boa_Copy' has cardinality 0..*, and from 'boa_Expr', the role 'boa_Expr14' has cardinality 0..*.
+An association connects 'boa_With' and 'boa_Expr'. From 'boa_With', the role 'boa_With' has cardinality 0..*, and from 'boa_Expr', the role 'boa_Expr16' has cardinality 0..*.
+An association connects 'boa_With' and 'boa_Expr'. From 'boa_With', the role 'boa_With18' has cardinality 0..*, and from 'boa_Expr', the role 'boa_Expr19' has cardinality 0..*.
+An association connects 'boa_ArithOp' and 'boa_Expr'. From 'boa_ArithOp', the role 'boa_ArithOp' has cardinality 0..*, and from 'boa_Expr', the role 'boa_Expr21' has cardinality 0..*.
+An association connects 'boa_Expr' and 'boa_ArithOp'. From 'boa_Expr', the role 'boa_Expr24' has cardinality 0..*, and from 'boa_ArithOp', the role 'boa_ArithOp23' has cardinality 0..*.
+An association connects 'boa_Expr' and 'boa_Not'. From 'boa_Expr', the role 'boa_Expr26' has cardinality 0..*, and from 'boa_Not', the role 'boa_Not' has cardinality 0..*.
+An association connects 'boa_CmpOp' and 'boa_Expr'. From 'boa_CmpOp', the role 'boa_CmpOp' has cardinality 0..*, and from 'boa_Expr', the role 'boa_Expr28' has cardinality 0..*.
+An association connects 'boa_Expr' and 'boa_CmpOp'. From 'boa_Expr', the role 'boa_Expr31' has cardinality 0..*, and from 'boa_CmpOp', the role 'boa_CmpOp30' has cardinality 0..*.
+An association connects 'boa_Expr' and 'boa_If'. From 'boa_Expr', the role 'boa_Expr33' has cardinality 0..*, and from 'boa_If', the role 'boa_If' has cardinality 0..*.
+An association connects 'boa_Expr' and 'boa_If'. From 'boa_Expr', the role 'boa_Expr36' has cardinality 0..*, and from 'boa_If', the role 'boa_If35' has cardinality 0..*.
+An association connects 'boa_Expr' and 'boa_If'. From 'boa_Expr', the role 'boa_Expr39' has cardinality 0..*, and from 'boa_If', the role 'boa_If38' has cardinality 0..*.
+An association connects 'boa_Let' and 'boa_Expr'. From 'boa_Let', the role 'boa_Let' has cardinality 0..*, and from 'boa_Expr', the role 'boa_Expr41' has cardinality 0..*.
+An association connects 'boa_Let' and 'boa_Expr'. From 'boa_Let', the role 'boa_Let43' has cardinality 0..*, and from 'boa_Expr', the role 'boa_Expr44' has cardinality 0..*.
+An association connects 'boa_Expr' and 'boa_Fun'. From 'boa_Expr', the role 'boa_Expr46' has cardinality 0..*, and from 'boa_Fun', the role 'boa_Fun' has cardinality 0..*.
+An association connects 'boa_Expr' and 'boa_Assign'. From 'boa_Expr', the role 'boa_Expr48' has cardinality 0..*, and from 'boa_Assign', the role 'boa_Assign' has cardinality 0..*.
+An association connects 'boa_Expr' and 'boa_Assign'. From 'boa_Expr', the role 'boa_Expr51' has cardinality 0..*, and from 'boa_Assign', the role 'boa_Assign50' has cardinality 0..*.
+An association connects 'boa_BoolOpAnd' and 'boa_Expr'. From 'boa_BoolOpAnd', the role 'boa_BoolOpAnd' has cardinality 0..*, and from 'boa_Expr', the role 'boa_Expr53' has cardinality 0..*.
+An association connects 'boa_Expr' and 'boa_BoolOpAnd'. From 'boa_Expr', the role 'boa_Expr56' has cardinality 0..*, and from 'boa_BoolOpAnd', the role 'boa_BoolOpAnd55' has cardinality 0..*.
+An association connects 'boa_Expr' and 'boa_BoolOpOr'. From 'boa_Expr', the role 'boa_Expr58' has cardinality 0..*, and from 'boa_BoolOpOr', the role 'boa_BoolOpOr' has cardinality 0..*.
+An association connects 'boa_BoolOpOr' and 'boa_Expr'. From 'boa_BoolOpOr', the role 'boa_BoolOpOr60' has cardinality 0..*, and from 'boa_Expr', the role 'boa_Expr61' has cardinality 0..*.
+An association connects 'boa_Seq' and 'boa_Expr'. From 'boa_Seq', the role 'boa_Seq' has cardinality 0..*, and from 'boa_Expr', the role 'boa_Expr63' has cardinality 0..*.
+An association connects 'boa_Seq' and 'boa_Expr'. From 'boa_Seq', the role 'boa_Seq65' has cardinality 0..*, and from 'boa_Expr', the role 'boa_Expr66' has cardinality 0..*.
+An association connects 'boa_StringToEvalResMap' and 'boa_Ctx'. From 'boa_StringToEvalResMap', the role 'boa_StringToEvalResMap' has cardinality 0..*, and from 'boa_Ctx', the role 'boa_Ctx' has cardinality 0..*.
+An association connects 'boa_StringToEvalResMap' and 'boa_Ctx'. From 'boa_StringToEvalResMap', the role 'boa_StringToEvalResMap70' has cardinality 0..*, and from 'boa_Ctx', the role 'boa_Ctx69' has cardinality 0..*.
+An association connects 'boa_EvalRes' and 'boa_StringToEvalResMap'. From 'boa_EvalRes', the role 'boa_EvalRes' has cardinality 0..*, and from 'boa_StringToEvalResMap', the role 'boa_StringToEvalResMap72' has cardinality 0..*.
+An association connects 'boa_EvalMapRes' and 'boa_StringToEvalResMap'. From 'boa_EvalMapRes', the role 'boa_EvalMapRes' has cardinality 0..*, and from 'boa_StringToEvalResMap', the role 'boa_StringToEvalResMap74' has cardinality 0..*.
+An association connects 'boa_Expr' and 'boa_EvalFunRes'. From 'boa_Expr', the role 'boa_Expr76' has cardinality 0..*, and from 'boa_EvalFunRes', the role 'boa_EvalFunRes' has cardinality 0..*.
+An association connects 'boa_Ctx' and 'boa_EvalFunRes'. From 'boa_Ctx', the role 'boa_Ctx79' has cardinality 0..*, and from 'boa_EvalFunRes', the role 'boa_EvalFunRes78' has cardinality 0..*.
+An association connects 'boa_EvalBoundFunRes' and 'boa_StringToEvalResMap'. From 'boa_EvalBoundFunRes', the role 'boa_EvalBoundFunRes' has cardinality 0..*, and from 'boa_StringToEvalResMap', the role 'boa_StringToEvalResMap81' has cardinality 0..*.

@@ -1,0 +1,471 @@
+The domain model 'xal' describes the core structural elements and their relationships within the system.
+
+The model defines 86 main class(es).
+
+'xal_Locality' represents an important domain concept.
+It has the following attributes: 'indicator', which is of type str; 'anyAttribute', which is of type str; 'usageType', which is of type str; 'any', which is of type str; 'type', which is of type str.
+
+'xal_ThoroughfareNumberTo' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'mixed', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_PostalCode' represents an important domain concept.
+It has the following attributes: 'any', which is of type str; 'anyAttribute', which is of type str; 'type', which is of type str.
+
+'xal_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'xal_SubAdministrativeArea' represents an important domain concept.
+It has the following attributes: 'any', which is of type str; 'indicator', which is of type str; 'usageType', which is of type str; 'type', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_EndorsementLineCode' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'code', which is of type str; 'type', which is of type str; 'mixed', which is of type str.
+
+'xal_LocalityName' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'type', which is of type str; 'mixed', which is of type str; 'code', which is of type str.
+
+'xal_PostalCodeNumber' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'type', which is of type str; 'anyAttribute', which is of type str; 'mixed', which is of type str.
+
+'xal_PremiseLocation' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'code', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_PostalRouteName' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'anyAttribute', which is of type str; 'type', which is of type str; 'mixed', which is of type str.
+
+'xal_PostTown' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'type', which is of type str.
+
+'xal_CountryName' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'anyAttribute', which is of type str; 'mixed', which is of type str; 'type', which is of type str.
+
+'xal_ThoroughfarePreDirection' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'anyAttribute', which is of type str; 'mixed', which is of type str; 'type', which is of type str.
+
+'xal_MailStopNumber' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'nameNumberSeparator', which is of type str; 'code', which is of type str; 'mixed', which is of type str.
+
+'xal_ThoroughfareNumber' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'indicatorOccurrence', which is of type str; 'code', which is of type str; 'indicator', which is of type str; 'type', which is of type str; 'numberType', which is of type str; 'numberOccurrence', which is of type str; 'mixed', which is of type str.
+
+'xal_Department' represents an important domain concept.
+It has the following attributes: 'any', which is of type str; 'anyAttribute', which is of type str; 'type', which is of type str.
+
+'xal_SubPremiseLocation' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'code', which is of type str.
+
+'xal_ThoroughfareLeadingType' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'code', which is of type str; 'mixed', which is of type str; 'type', which is of type str.
+
+'xal_PostOffice' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'any', which is of type str; 'type', which is of type str; 'indicator', which is of type str.
+
+'xal_PostBoxNumber' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'mixed', which is of type str; 'code', which is of type str.
+
+'xal_PremiseName' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'typeOccurrence', which is of type str; 'type', which is of type str; 'mixed', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_AddressLatitudeDirection' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'type', which is of type str; 'anyAttribute', which is of type str; 'mixed', which is of type str.
+
+'xal_Xal' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'anyAttribute', which is of type str; 'any', which is of type str.
+
+'xal_PremiseNumberRangeFrom' represents an important domain concept.
+It does not declare any attributes.
+
+'xal_SortingCode' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'code', which is of type str.
+
+'xal_LargeMailUserName' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'anyAttribute', which is of type str; 'code', which is of type str; 'mixed', which is of type str.
+
+'xal_ThoroughfareNumberRange' represents an important domain concept.
+It has the following attributes: 'numberRangeOccurrence', which is of type str; 'code', which is of type str; 'rangeType', which is of type str; 'indicatorOccurrence', which is of type str; 'indicator', which is of type str; 'separator', which is of type str; 'anyAttribute', which is of type str; 'type', which is of type str.
+
+'xal_KeyLineCode' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'mixed', which is of type str; 'type', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_SubPremiseNumberPrefix' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'mixed', which is of type str; 'type', which is of type str; 'numberPrefixSeparator', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_AddressLine' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'anyAttribute', which is of type str; 'mixed', which is of type str; 'code', which is of type str.
+
+'xal_Barcode' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'mixed', which is of type str; 'type', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_PremiseNumber' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'indicator', which is of type str; 'anyAttribute', which is of type str; 'mixed', which is of type str; 'numberType', which is of type str; 'code', which is of type str; 'numberTypeOccurrence', which is of type str; 'indicatorOccurrence', which is of type str.
+
+'xal_ThoroughfareNumberSuffix' represents an important domain concept.
+It has the following attributes: 'numberSuffixSeparator', which is of type str; 'type', which is of type str; 'mixed', which is of type str; 'code', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_SupplementaryPostalServiceData' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'anyAttribute', which is of type str; 'type', which is of type str; 'code', which is of type str.
+
+'xal_AddressLongitude' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'mixed', which is of type str; 'code', which is of type str; 'type', which is of type str.
+
+'xal_ThoroughfareName' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'code', which is of type str; 'mixed', which is of type str; 'type', which is of type str.
+
+'xal_Country' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'any', which is of type str.
+
+'xal_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'xal_MailStopName' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'anyAttribute', which is of type str; 'type', which is of type str; 'code', which is of type str.
+
+'xal_ThoroughfareNumberPrefix' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'code', which is of type str; 'mixed', which is of type str; 'anyAttribute', which is of type str; 'numberPrefixSeparator', which is of type str.
+
+'xal_SubPremiseNumber' represents an important domain concept.
+It has the following attributes: 'indicatorOccurrence', which is of type str; 'premiseNumberSeparator', which is of type str; 'mixed', which is of type str; 'anyAttribute', which is of type str; 'type', which is of type str; 'code', which is of type str; 'numberTypeOccurrence', which is of type str; 'indicator', which is of type str.
+
+'xal_FirmName' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'code', which is of type str; 'mixed', which is of type str; 'type', which is of type str.
+
+'xal_BuildingName' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'anyAttribute', which is of type str; 'mixed', which is of type str; 'code', which is of type str; 'typeOccurrence', which is of type str.
+
+'xal_AddressIdentifier' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'type', which is of type str; 'mixed', which is of type str; 'identifierType', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_Firm' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'type', which is of type str; 'any', which is of type str.
+
+'xal_PostOfficeNumber' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'indicator', which is of type str; 'indicatorOccurrence', which is of type str; 'code', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_SubPremiseNumberSuffix' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'type', which is of type str; 'anyAttribute', which is of type str; 'code', which is of type str; 'numberSuffixSeparator', which is of type str.
+
+'xal_AddressLines' represents an important domain concept.
+It has the following attributes: 'any', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_AddressLongitudeDirection' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'mixed', which is of type str; 'anyAttribute', which is of type str; 'type', which is of type str.
+
+'xal_LargeMailUser' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'any', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_Premise' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'premiseDependencyType', which is of type str; 'anyAttribute', which is of type str; 'premiseThoroughfareConnector', which is of type str; 'premiseDependency', which is of type str; 'any', which is of type str.
+
+'xal_PostBoxNumberExtension' represents an important domain concept.
+It has the following attributes: 'numberExtensionSeparator', which is of type str; 'anyAttribute', which is of type str; 'mixed', which is of type str.
+
+'xal_SubAdministrativeAreaName' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'mixed', which is of type str; 'code', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_Address' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'anyAttribute', which is of type str; 'type', which is of type str; 'mixed', which is of type str.
+
+'xal_PostTownSuffix' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'mixed', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_PostalServiceElements' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'any', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_PostalRouteNumber' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'anyAttribute', which is of type str; 'mixed', which is of type str.
+
+'xal_PostalRoute' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'anyAttribute', which is of type str; 'any', which is of type str.
+
+'xal_AddressLatitude' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'type', which is of type str; 'mixed', which is of type str; 'code', which is of type str.
+
+'xal_PostOfficeName' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'mixed', which is of type str; 'code', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_CountryNameCode' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'anyAttribute', which is of type str; 'scheme', which is of type str; 'code', which is of type str.
+
+'xal_DependentThoroughfare' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'anyAttribute', which is of type str; 'any', which is of type str.
+
+'xal_LargeMailUserIdentifier' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'code', which is of type str; 'anyAttribute', which is of type str; 'indicator', which is of type str; 'type', which is of type str.
+
+'xal_ThoroughfarePostDirection' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'type', which is of type str; 'code', which is of type str; 'mixed', which is of type str.
+
+'xal_ThoroughfareTrailingType' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'mixed', which is of type str; 'type', which is of type str; 'code', which is of type str.
+
+'xal_PremiseNumberRange' represents an important domain concept.
+It has the following attributes: 'indicatorOccurence', which is of type str; 'numberRangeOccurence', which is of type str; 'type', which is of type str; 'indicator', which is of type str; 'rangeType', which is of type str; 'separator', which is of type str.
+
+'xal_DepartmentName' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'type', which is of type str; 'anyAttribute', which is of type str; 'mixed', which is of type str.
+
+'xal_DependentLocality' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'any', which is of type str; 'indicator', which is of type str; 'connector', which is of type str; 'type', which is of type str; 'usageType', which is of type str.
+
+'xal_PremiseNumberSuffix' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'code', which is of type str; 'numberSuffixSeparator', which is of type str; 'anyAttribute', which is of type str; 'type', which is of type str.
+
+'xal_AdministrativeArea' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'indicator', which is of type str; 'any', which is of type str; 'type', which is of type str; 'usageType', which is of type str.
+
+'xal_MailStop' represents an important domain concept.
+It has the following attributes: 'any', which is of type str; 'type', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_Thoroughfare' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'type', which is of type str; 'anyAttribute', which is of type str; 'dependentThoroughfaresType', which is of type str; 'any', which is of type str; 'dependentThoroughfaresConnector', which is of type str; 'dependentThoroughfares', which is of type str; 'dependentThoroughfaresIndicator', which is of type str.
+
+'xal_PostalCodeNumberExtension' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'anyAttribute', which is of type str; 'mixed', which is of type str; 'type', which is of type str; 'numberExtensionSeparator', which is of type str.
+
+'xal_PremiseNumberPrefix' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'anyAttribute', which is of type str; 'code', which is of type str; 'type', which is of type str; 'numberPrefixSeparator', which is of type str.
+
+'xal_ThoroughfareNumberFrom' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'code', which is of type str; 'mixed', which is of type str.
+
+'xal_PostBoxNumberPrefix' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'numberPrefixSeparator', which is of type str; 'mixed', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_SubPremise' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'any', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_PostBox' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'indicator', which is of type str; 'any', which is of type str; 'type', which is of type str.
+
+'xal_DependentLocalityName' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'mixed', which is of type str; 'anyAttribute', which is of type str; 'code', which is of type str.
+
+'xal_PremiseNumberRangeTo' represents an important domain concept.
+It does not declare any attributes.
+
+'xal_SubPremiseName' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'mixed', which is of type str; 'typeOccurrence', which is of type str; 'type', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_PostBoxNumberSuffix' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'code', which is of type str; 'numberSuffixSeparator', which is of type str; 'anyAttribute', which is of type str.
+
+'xal_AdministrativeAreaName' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'mixed', which is of type str; 'anyAttribute', which is of type str; 'code', which is of type str.
+
+'xal_PostTownName' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'anyAttribute', which is of type str; 'mixed', which is of type str; 'code', which is of type str.
+
+'xal_DependentLocalityNumber' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'code', which is of type str; 'nameNumberOccurrence', which is of type str; 'mixed', which is of type str.
+
+'xal_AddressDetails' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'currentStatus', which is of type str; 'addressType', which is of type str; 'validToDate', which is of type str; 'code', which is of type str; 'addressDetailsKey', which is of type str; 'any', which is of type str; 'usage', which is of type str; 'validFromDate', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'IndicatorOccurrence' defines the following possible values: 'Before', 'After'.
+The enumeration 'NumberRangeOccurence' defines the following possible values: 'AfterName', 'BeforeType', 'BeforeName', 'AfterType'.
+The enumeration 'NumberTypeOccurrence1' defines the following possible values: 'After', 'Before'.
+The enumeration 'IndicatorOccurrence3' defines the following possible values: 'After', 'Before'.
+The enumeration 'IndicatorOccurrence2' defines the following possible values: 'Before', 'After'.
+The enumeration 'NameNumberOccurrence' defines the following possible values: 'Before', 'After'.
+The enumeration 'NumberRangeOccurrence' defines the following possible values: 'BeforeType', 'AfterType', 'AfterName', 'BeforeName'.
+The enumeration 'IndicatorOccurrence1' defines the following possible values: 'After', 'Before'.
+The enumeration 'TypeOccurrence2' defines the following possible values: 'After', 'Before'.
+The enumeration 'NumberTypeType' defines the following possible values: 'Single', 'Range'.
+The enumeration 'DependentThoroughfaresType' defines the following possible values: 'No', 'Yes'.
+The enumeration 'IndicatorOccurrence4' defines the following possible values: 'Before', 'After'.
+The enumeration 'NumberTypeType1' defines the following possible values: 'Single', 'Range'.
+The enumeration 'TypeOccurrence1' defines the following possible values: 'After', 'Before'.
+The enumeration 'NumberTypeOccurrence' defines the following possible values: 'After', 'Before'.
+The enumeration 'TypeOccurrence' defines the following possible values: 'Before', 'After'.
+The enumeration 'RangeTypeType' defines the following possible values: 'Even', 'Odd'.
+The enumeration 'IndicatorOccurence' defines the following possible values: 'Before', 'After'.
+The enumeration 'NumberOccurrence' defines the following possible values: 'AfterType', 'AfterName', 'BeforeType', 'BeforeName'.
+
+Relationships between classes are modeled using associations.
+An association connects 'xal_AddressDetails' and 'xal_PostalServiceElements'. From 'xal_AddressDetails', the role 'xal_AddressDetails' has cardinality 0..*, and from 'xal_PostalServiceElements', the role 'xal_PostalServiceElements' has cardinality 0..*.
+An association connects 'xal_Address' and 'xal_AddressDetails'. From 'xal_Address', the role 'xal_Address' has cardinality 0..*, and from 'xal_AddressDetails', the role 'xal_AddressDetails2' has cardinality 0..*.
+An association connects 'xal_AddressLines' and 'xal_AddressDetails'. From 'xal_AddressLines', the role 'xal_AddressLines' has cardinality 0..*, and from 'xal_AddressDetails', the role 'xal_AddressDetails4' has cardinality 0..*.
+An association connects 'xal_AddressDetails' and 'xal_Country'. From 'xal_AddressDetails', the role 'xal_AddressDetails6' has cardinality 0..*, and from 'xal_Country', the role 'xal_Country' has cardinality 0..*.
+An association connects 'xal_AddressDetails' and 'xal_AdministrativeArea'. From 'xal_AddressDetails', the role 'xal_AddressDetails8' has cardinality 0..*, and from 'xal_AdministrativeArea', the role 'xal_AdministrativeArea' has cardinality 0..*.
+An association connects 'xal_Locality' and 'xal_AddressDetails'. From 'xal_Locality', the role 'xal_Locality' has cardinality 0..*, and from 'xal_AddressDetails', the role 'xal_AddressDetails10' has cardinality 0..*.
+An association connects 'xal_Thoroughfare' and 'xal_AddressDetails'. From 'xal_Thoroughfare', the role 'xal_Thoroughfare' has cardinality 0..*, and from 'xal_AddressDetails', the role 'xal_AddressDetails12' has cardinality 0..*.
+An association connects 'xal_AddressLine' and 'xal_AddressLines'. From 'xal_AddressLine', the role 'xal_AddressLine' has cardinality 0..*, and from 'xal_AddressLines', the role 'xal_AddressLines14' has cardinality 0..*.
+An association connects 'xal_AdministrativeArea' and 'xal_AddressLine'. From 'xal_AdministrativeArea', the role 'xal_AdministrativeArea16' has cardinality 0..*, and from 'xal_AddressLine', the role 'xal_AddressLine17' has cardinality 0..*.
+An association connects 'xal_AdministrativeArea' and 'xal_AdministrativeAreaName'. From 'xal_AdministrativeArea', the role 'xal_AdministrativeArea19' has cardinality 0..*, and from 'xal_AdministrativeAreaName', the role 'xal_AdministrativeAreaName' has cardinality 0..*.
+An association connects 'xal_AdministrativeArea' and 'xal_SubAdministrativeArea'. From 'xal_AdministrativeArea', the role 'xal_AdministrativeArea21' has cardinality 0..*, and from 'xal_SubAdministrativeArea', the role 'xal_SubAdministrativeArea' has cardinality 0..*.
+An association connects 'xal_Locality' and 'xal_AdministrativeArea'. From 'xal_Locality', the role 'xal_Locality24' has cardinality 0..*, and from 'xal_AdministrativeArea', the role 'xal_AdministrativeArea23' has cardinality 0..*.
+An association connects 'xal_AdministrativeArea' and 'xal_PostOffice'. From 'xal_AdministrativeArea', the role 'xal_AdministrativeArea26' has cardinality 0..*, and from 'xal_PostOffice', the role 'xal_PostOffice' has cardinality 0..*.
+An association connects 'xal_AdministrativeArea' and 'xal_PostalCode'. From 'xal_AdministrativeArea', the role 'xal_AdministrativeArea28' has cardinality 0..*, and from 'xal_PostalCode', the role 'xal_PostalCode' has cardinality 0..*.
+An association connects 'xal_Country' and 'xal_AddressLine'. From 'xal_Country', the role 'xal_Country30' has cardinality 0..*, and from 'xal_AddressLine', the role 'xal_AddressLine31' has cardinality 0..*.
+An association connects 'xal_CountryNameCode' and 'xal_Country'. From 'xal_CountryNameCode', the role 'xal_CountryNameCode' has cardinality 0..*, and from 'xal_Country', the role 'xal_Country33' has cardinality 0..*.
+An association connects 'xal_CountryName' and 'xal_Country'. From 'xal_CountryName', the role 'xal_CountryName' has cardinality 0..*, and from 'xal_Country', the role 'xal_Country35' has cardinality 0..*.
+An association connects 'xal_Country' and 'xal_AdministrativeArea'. From 'xal_Country', the role 'xal_Country37' has cardinality 0..*, and from 'xal_AdministrativeArea', the role 'xal_AdministrativeArea38' has cardinality 0..*.
+An association connects 'xal_Country' and 'xal_Locality'. From 'xal_Country', the role 'xal_Country40' has cardinality 0..*, and from 'xal_Locality', the role 'xal_Locality41' has cardinality 0..*.
+An association connects 'xal_Country' and 'xal_Thoroughfare'. From 'xal_Country', the role 'xal_Country43' has cardinality 0..*, and from 'xal_Thoroughfare', the role 'xal_Thoroughfare44' has cardinality 0..*.
+An association connects 'xal_Department' and 'xal_AddressLine'. From 'xal_Department', the role 'xal_Department' has cardinality 0..*, and from 'xal_AddressLine', the role 'xal_AddressLine46' has cardinality 0..*.
+An association connects 'xal_Department' and 'xal_DepartmentName'. From 'xal_Department', the role 'xal_Department48' has cardinality 0..*, and from 'xal_DepartmentName', the role 'xal_DepartmentName' has cardinality 0..*.
+An association connects 'xal_MailStop' and 'xal_Department'. From 'xal_MailStop', the role 'xal_MailStop' has cardinality 0..*, and from 'xal_Department', the role 'xal_Department50' has cardinality 0..*.
+An association connects 'xal_Department' and 'xal_PostalCode'. From 'xal_Department', the role 'xal_Department52' has cardinality 0..*, and from 'xal_PostalCode', the role 'xal_PostalCode53' has cardinality 0..*.
+An association connects 'xal_AddressLine' and 'xal_DependentLocality'. From 'xal_AddressLine', the role 'xal_AddressLine55' has cardinality 0..*, and from 'xal_DependentLocality', the role 'xal_DependentLocality' has cardinality 0..*.
+An association connects 'xal_DependentLocalityName' and 'xal_DependentLocality'. From 'xal_DependentLocalityName', the role 'xal_DependentLocalityName' has cardinality 0..*, and from 'xal_DependentLocality', the role 'xal_DependentLocality57' has cardinality 0..*.
+An association connects 'xal_DependentLocalityNumber' and 'xal_DependentLocality'. From 'xal_DependentLocalityNumber', the role 'xal_DependentLocalityNumber' has cardinality 0..*, and from 'xal_DependentLocality', the role 'xal_DependentLocality59' has cardinality 0..*.
+An association connects 'xal_DependentLocality' and 'xal_PostBox'. From 'xal_DependentLocality', the role 'xal_DependentLocality61' has cardinality 0..*, and from 'xal_PostBox', the role 'xal_PostBox' has cardinality 0..*.
+An association connects 'xal_DependentLocality' and 'xal_LargeMailUser'. From 'xal_DependentLocality', the role 'xal_DependentLocality63' has cardinality 0..*, and from 'xal_LargeMailUser', the role 'xal_LargeMailUser' has cardinality 0..*.
+An association connects 'xal_DependentLocality' and 'xal_PostOffice'. From 'xal_DependentLocality', the role 'xal_DependentLocality65' has cardinality 0..*, and from 'xal_PostOffice', the role 'xal_PostOffice66' has cardinality 0..*.
+An association connects 'xal_PostalRoute' and 'xal_DependentLocality'. From 'xal_PostalRoute', the role 'xal_PostalRoute' has cardinality 0..*, and from 'xal_DependentLocality', the role 'xal_DependentLocality68' has cardinality 0..*.
+An association connects 'xal_DependentLocality' and 'xal_Thoroughfare'. From 'xal_DependentLocality', the role 'xal_DependentLocality70' has cardinality 0..*, and from 'xal_Thoroughfare', the role 'xal_Thoroughfare71' has cardinality 0..*.
+An association connects 'xal_DependentLocality' and 'xal_Premise'. From 'xal_DependentLocality', the role 'xal_DependentLocality73' has cardinality 0..*, and from 'xal_Premise', the role 'xal_Premise' has cardinality 0..*.
+An association connects 'xal_DependentLocality' and 'xal_DependentLocality'. From 'xal_DependentLocality', the role 'xal_DependentLocality76' has cardinality 0..*, and from 'xal_DependentLocality', the role 'xal_DependentLocality74' has cardinality 0..*.
+An association connects 'xal_PostalCode' and 'xal_DependentLocality'. From 'xal_PostalCode', the role 'xal_PostalCode79' has cardinality 0..*, and from 'xal_DependentLocality', the role 'xal_DependentLocality78' has cardinality 0..*.
+An association connects 'xal_AddressLine' and 'xal_DependentThoroughfare'. From 'xal_AddressLine', the role 'xal_AddressLine81' has cardinality 0..*, and from 'xal_DependentThoroughfare', the role 'xal_DependentThoroughfare' has cardinality 0..*.
+An association connects 'xal_ThoroughfarePreDirection' and 'xal_DependentThoroughfare'. From 'xal_ThoroughfarePreDirection', the role 'xal_ThoroughfarePreDirection' has cardinality 0..*, and from 'xal_DependentThoroughfare', the role 'xal_DependentThoroughfare83' has cardinality 0..*.
+An association connects 'xal_DependentThoroughfare' and 'xal_ThoroughfareLeadingType'. From 'xal_DependentThoroughfare', the role 'xal_DependentThoroughfare85' has cardinality 0..*, and from 'xal_ThoroughfareLeadingType', the role 'xal_ThoroughfareLeadingType' has cardinality 0..*.
+An association connects 'xal_ThoroughfareName' and 'xal_DependentThoroughfare'. From 'xal_ThoroughfareName', the role 'xal_ThoroughfareName' has cardinality 0..*, and from 'xal_DependentThoroughfare', the role 'xal_DependentThoroughfare87' has cardinality 0..*.
+An association connects 'xal_ThoroughfareTrailingType' and 'xal_DependentThoroughfare'. From 'xal_ThoroughfareTrailingType', the role 'xal_ThoroughfareTrailingType' has cardinality 0..*, and from 'xal_DependentThoroughfare', the role 'xal_DependentThoroughfare89' has cardinality 0..*.
+An association connects 'xal_DependentThoroughfare' and 'xal_ThoroughfarePostDirection'. From 'xal_DependentThoroughfare', the role 'xal_DependentThoroughfare91' has cardinality 0..*, and from 'xal_ThoroughfarePostDirection', the role 'xal_ThoroughfarePostDirection' has cardinality 0..*.
+An association connects 'xal_EStringToStringMapEntry' and 'xal_DocumentRoot'. From 'xal_EStringToStringMapEntry', the role 'xal_EStringToStringMapEntry' has cardinality 0..*, and from 'xal_DocumentRoot', the role 'xal_DocumentRoot' has cardinality 0..*.
+An association connects 'xal_EStringToStringMapEntry' and 'xal_DocumentRoot'. From 'xal_EStringToStringMapEntry', the role 'xal_EStringToStringMapEntry95' has cardinality 0..*, and from 'xal_DocumentRoot', the role 'xal_DocumentRoot94' has cardinality 0..*.
+An association connects 'xal_DocumentRoot' and 'xal_AddressDetails'. From 'xal_DocumentRoot', the role 'xal_DocumentRoot97' has cardinality 0..*, and from 'xal_AddressDetails', the role 'xal_AddressDetails98' has cardinality 0..*.
+An association connects 'xal_DocumentRoot' and 'xal_AddressLine'. From 'xal_DocumentRoot', the role 'xal_DocumentRoot100' has cardinality 0..*, and from 'xal_AddressLine', the role 'xal_AddressLine101' has cardinality 0..*.
+An association connects 'xal_DocumentRoot' and 'xal_AdministrativeArea'. From 'xal_DocumentRoot', the role 'xal_DocumentRoot103' has cardinality 0..*, and from 'xal_AdministrativeArea', the role 'xal_AdministrativeArea104' has cardinality 0..*.
+An association connects 'xal_DocumentRoot' and 'xal_CountryName'. From 'xal_DocumentRoot', the role 'xal_DocumentRoot106' has cardinality 0..*, and from 'xal_CountryName', the role 'xal_CountryName107' has cardinality 0..*.
+An association connects 'xal_DocumentRoot' and 'xal_Department'. From 'xal_DocumentRoot', the role 'xal_DocumentRoot109' has cardinality 0..*, and from 'xal_Department', the role 'xal_Department110' has cardinality 0..*.
+An association connects 'xal_DocumentRoot' and 'xal_Locality'. From 'xal_DocumentRoot', the role 'xal_DocumentRoot112' has cardinality 0..*, and from 'xal_Locality', the role 'xal_Locality113' has cardinality 0..*.
+An association connects 'xal_DocumentRoot' and 'xal_PostalCode'. From 'xal_DocumentRoot', the role 'xal_DocumentRoot115' has cardinality 0..*, and from 'xal_PostalCode', the role 'xal_PostalCode116' has cardinality 0..*.
+An association connects 'xal_DocumentRoot' and 'xal_PostBox'. From 'xal_DocumentRoot', the role 'xal_DocumentRoot118' has cardinality 0..*, and from 'xal_PostBox', the role 'xal_PostBox119' has cardinality 0..*.
+An association connects 'xal_PostOffice' and 'xal_DocumentRoot'. From 'xal_PostOffice', the role 'xal_PostOffice122' has cardinality 0..*, and from 'xal_DocumentRoot', the role 'xal_DocumentRoot121' has cardinality 0..*.
+An association connects 'xal_DocumentRoot' and 'xal_Premise'. From 'xal_DocumentRoot', the role 'xal_DocumentRoot124' has cardinality 0..*, and from 'xal_Premise', the role 'xal_Premise125' has cardinality 0..*.
+An association connects 'xal_DocumentRoot' and 'xal_PremiseNumber'. From 'xal_DocumentRoot', the role 'xal_DocumentRoot127' has cardinality 0..*, and from 'xal_PremiseNumber', the role 'xal_PremiseNumber' has cardinality 0..*.
+An association connects 'xal_PremiseNumberPrefix' and 'xal_DocumentRoot'. From 'xal_PremiseNumberPrefix', the role 'xal_PremiseNumberPrefix' has cardinality 0..*, and from 'xal_DocumentRoot', the role 'xal_DocumentRoot129' has cardinality 0..*.
+An association connects 'xal_DocumentRoot' and 'xal_PremiseNumberSuffix'. From 'xal_DocumentRoot', the role 'xal_DocumentRoot131' has cardinality 0..*, and from 'xal_PremiseNumberSuffix', the role 'xal_PremiseNumberSuffix' has cardinality 0..*.
+An association connects 'xal_DocumentRoot' and 'xal_Thoroughfare'. From 'xal_DocumentRoot', the role 'xal_DocumentRoot133' has cardinality 0..*, and from 'xal_Thoroughfare', the role 'xal_Thoroughfare134' has cardinality 0..*.
+An association connects 'xal_DocumentRoot' and 'xal_ThoroughfareNumber'. From 'xal_DocumentRoot', the role 'xal_DocumentRoot136' has cardinality 0..*, and from 'xal_ThoroughfareNumber', the role 'xal_ThoroughfareNumber' has cardinality 0..*.
+An association connects 'xal_ThoroughfareNumberPrefix' and 'xal_DocumentRoot'. From 'xal_ThoroughfareNumberPrefix', the role 'xal_ThoroughfareNumberPrefix' has cardinality 0..*, and from 'xal_DocumentRoot', the role 'xal_DocumentRoot138' has cardinality 0..*.
+An association connects 'xal_ThoroughfareNumberSuffix' and 'xal_DocumentRoot'. From 'xal_ThoroughfareNumberSuffix', the role 'xal_ThoroughfareNumberSuffix' has cardinality 0..*, and from 'xal_DocumentRoot', the role 'xal_DocumentRoot140' has cardinality 0..*.
+An association connects 'xal_Xal' and 'xal_DocumentRoot'. From 'xal_Xal', the role 'xal_Xal' has cardinality 0..*, and from 'xal_DocumentRoot', the role 'xal_DocumentRoot142' has cardinality 0..*.
+An association connects 'xal_Firm' and 'xal_AddressLine'. From 'xal_Firm', the role 'xal_Firm' has cardinality 0..*, and from 'xal_AddressLine', the role 'xal_AddressLine144' has cardinality 0..*.
+An association connects 'xal_FirmName' and 'xal_Firm'. From 'xal_FirmName', the role 'xal_FirmName' has cardinality 0..*, and from 'xal_Firm', the role 'xal_Firm146' has cardinality 0..*.
+An association connects 'xal_Firm' and 'xal_Department'. From 'xal_Firm', the role 'xal_Firm148' has cardinality 0..*, and from 'xal_Department', the role 'xal_Department149' has cardinality 0..*.
+An association connects 'xal_Firm' and 'xal_MailStop'. From 'xal_Firm', the role 'xal_Firm151' has cardinality 0..*, and from 'xal_MailStop', the role 'xal_MailStop152' has cardinality 0..*.
+An association connects 'xal_Firm' and 'xal_PostalCode'. From 'xal_Firm', the role 'xal_Firm154' has cardinality 0..*, and from 'xal_PostalCode', the role 'xal_PostalCode155' has cardinality 0..*.
+An association connects 'xal_LargeMailUser' and 'xal_AddressLine'. From 'xal_LargeMailUser', the role 'xal_LargeMailUser157' has cardinality 0..*, and from 'xal_AddressLine', the role 'xal_AddressLine158' has cardinality 0..*.
+An association connects 'xal_LargeMailUser' and 'xal_LargeMailUserName'. From 'xal_LargeMailUser', the role 'xal_LargeMailUser160' has cardinality 0..*, and from 'xal_LargeMailUserName', the role 'xal_LargeMailUserName' has cardinality 0..*.
+An association connects 'xal_LargeMailUserIdentifier' and 'xal_LargeMailUser'. From 'xal_LargeMailUserIdentifier', the role 'xal_LargeMailUserIdentifier' has cardinality 0..*, and from 'xal_LargeMailUser', the role 'xal_LargeMailUser162' has cardinality 0..*.
+An association connects 'xal_BuildingName' and 'xal_LargeMailUser'. From 'xal_BuildingName', the role 'xal_BuildingName' has cardinality 0..*, and from 'xal_LargeMailUser', the role 'xal_LargeMailUser164' has cardinality 0..*.
+An association connects 'xal_Department' and 'xal_LargeMailUser'. From 'xal_Department', the role 'xal_Department167' has cardinality 0..*, and from 'xal_LargeMailUser', the role 'xal_LargeMailUser166' has cardinality 0..*.
+An association connects 'xal_PostBox' and 'xal_LargeMailUser'. From 'xal_PostBox', the role 'xal_PostBox170' has cardinality 0..*, and from 'xal_LargeMailUser', the role 'xal_LargeMailUser169' has cardinality 0..*.
+An association connects 'xal_LargeMailUser' and 'xal_Thoroughfare'. From 'xal_LargeMailUser', the role 'xal_LargeMailUser172' has cardinality 0..*, and from 'xal_Thoroughfare', the role 'xal_Thoroughfare173' has cardinality 0..*.
+An association connects 'xal_LargeMailUser' and 'xal_PostalCode'. From 'xal_LargeMailUser', the role 'xal_LargeMailUser175' has cardinality 0..*, and from 'xal_PostalCode', the role 'xal_PostalCode176' has cardinality 0..*.
+An association connects 'xal_Locality' and 'xal_AddressLine'. From 'xal_Locality', the role 'xal_Locality178' has cardinality 0..*, and from 'xal_AddressLine', the role 'xal_AddressLine179' has cardinality 0..*.
+An association connects 'xal_LocalityName' and 'xal_Locality'. From 'xal_LocalityName', the role 'xal_LocalityName' has cardinality 0..*, and from 'xal_Locality', the role 'xal_Locality181' has cardinality 0..*.
+An association connects 'xal_Locality' and 'xal_PostBox'. From 'xal_Locality', the role 'xal_Locality183' has cardinality 0..*, and from 'xal_PostBox', the role 'xal_PostBox184' has cardinality 0..*.
+An association connects 'xal_LargeMailUser' and 'xal_Locality'. From 'xal_LargeMailUser', the role 'xal_LargeMailUser187' has cardinality 0..*, and from 'xal_Locality', the role 'xal_Locality186' has cardinality 0..*.
+An association connects 'xal_Locality' and 'xal_PostOffice'. From 'xal_Locality', the role 'xal_Locality189' has cardinality 0..*, and from 'xal_PostOffice', the role 'xal_PostOffice190' has cardinality 0..*.
+An association connects 'xal_PostalRoute' and 'xal_Locality'. From 'xal_PostalRoute', the role 'xal_PostalRoute193' has cardinality 0..*, and from 'xal_Locality', the role 'xal_Locality192' has cardinality 0..*.
+An association connects 'xal_Locality' and 'xal_Thoroughfare'. From 'xal_Locality', the role 'xal_Locality195' has cardinality 0..*, and from 'xal_Thoroughfare', the role 'xal_Thoroughfare196' has cardinality 0..*.
+An association connects 'xal_Locality' and 'xal_Premise'. From 'xal_Locality', the role 'xal_Locality198' has cardinality 0..*, and from 'xal_Premise', the role 'xal_Premise199' has cardinality 0..*.
+An association connects 'xal_Locality' and 'xal_DependentLocality'. From 'xal_Locality', the role 'xal_Locality201' has cardinality 0..*, and from 'xal_DependentLocality', the role 'xal_DependentLocality202' has cardinality 0..*.
+An association connects 'xal_Locality' and 'xal_PostalCode'. From 'xal_Locality', the role 'xal_Locality204' has cardinality 0..*, and from 'xal_PostalCode', the role 'xal_PostalCode205' has cardinality 0..*.
+An association connects 'xal_AddressLine' and 'xal_MailStop'. From 'xal_AddressLine', the role 'xal_AddressLine208' has cardinality 0..*, and from 'xal_MailStop', the role 'xal_MailStop207' has cardinality 0..*.
+An association connects 'xal_MailStopName' and 'xal_MailStop'. From 'xal_MailStopName', the role 'xal_MailStopName' has cardinality 0..*, and from 'xal_MailStop', the role 'xal_MailStop210' has cardinality 0..*.
+An association connects 'xal_MailStop' and 'xal_MailStopNumber'. From 'xal_MailStop', the role 'xal_MailStop212' has cardinality 0..*, and from 'xal_MailStopNumber', the role 'xal_MailStopNumber' has cardinality 0..*.
+An association connects 'xal_AddressLine' and 'xal_PostalCode'. From 'xal_AddressLine', the role 'xal_AddressLine215' has cardinality 0..*, and from 'xal_PostalCode', the role 'xal_PostalCode214' has cardinality 0..*.
+An association connects 'xal_PostalCode' and 'xal_PostalCodeNumber'. From 'xal_PostalCode', the role 'xal_PostalCode217' has cardinality 0..*, and from 'xal_PostalCodeNumber', the role 'xal_PostalCodeNumber' has cardinality 0..*.
+An association connects 'xal_PostalCodeNumberExtension' and 'xal_PostalCode'. From 'xal_PostalCodeNumberExtension', the role 'xal_PostalCodeNumberExtension' has cardinality 0..*, and from 'xal_PostalCode', the role 'xal_PostalCode219' has cardinality 0..*.
+An association connects 'xal_PostTown' and 'xal_PostalCode'. From 'xal_PostTown', the role 'xal_PostTown' has cardinality 0..*, and from 'xal_PostalCode', the role 'xal_PostalCode221' has cardinality 0..*.
+An association connects 'xal_AddressLine' and 'xal_PostalRoute'. From 'xal_AddressLine', the role 'xal_AddressLine224' has cardinality 0..*, and from 'xal_PostalRoute', the role 'xal_PostalRoute223' has cardinality 0..*.
+An association connects 'xal_PostalRouteName' and 'xal_PostalRoute'. From 'xal_PostalRouteName', the role 'xal_PostalRouteName' has cardinality 0..*, and from 'xal_PostalRoute', the role 'xal_PostalRoute226' has cardinality 0..*.
+An association connects 'xal_PostalRouteNumber' and 'xal_PostalRoute'. From 'xal_PostalRouteNumber', the role 'xal_PostalRouteNumber' has cardinality 0..*, and from 'xal_PostalRoute', the role 'xal_PostalRoute228' has cardinality 0..*.
+An association connects 'xal_PostalRoute' and 'xal_PostBox'. From 'xal_PostalRoute', the role 'xal_PostalRoute230' has cardinality 0..*, and from 'xal_PostBox', the role 'xal_PostBox231' has cardinality 0..*.
+An association connects 'xal_AddressIdentifier' and 'xal_PostalServiceElements'. From 'xal_AddressIdentifier', the role 'xal_AddressIdentifier' has cardinality 0..*, and from 'xal_PostalServiceElements', the role 'xal_PostalServiceElements233' has cardinality 0..*.
+An association connects 'xal_PostalServiceElements' and 'xal_EndorsementLineCode'. From 'xal_PostalServiceElements', the role 'xal_PostalServiceElements235' has cardinality 0..*, and from 'xal_EndorsementLineCode', the role 'xal_EndorsementLineCode' has cardinality 0..*.
+An association connects 'xal_KeyLineCode' and 'xal_PostalServiceElements'. From 'xal_KeyLineCode', the role 'xal_KeyLineCode' has cardinality 0..*, and from 'xal_PostalServiceElements', the role 'xal_PostalServiceElements237' has cardinality 0..*.
+An association connects 'xal_Barcode' and 'xal_PostalServiceElements'. From 'xal_Barcode', the role 'xal_Barcode' has cardinality 0..*, and from 'xal_PostalServiceElements', the role 'xal_PostalServiceElements239' has cardinality 0..*.
+An association connects 'xal_PostalServiceElements' and 'xal_SortingCode'. From 'xal_PostalServiceElements', the role 'xal_PostalServiceElements241' has cardinality 0..*, and from 'xal_SortingCode', the role 'xal_SortingCode' has cardinality 0..*.
+An association connects 'xal_PostalServiceElements' and 'xal_AddressLatitude'. From 'xal_PostalServiceElements', the role 'xal_PostalServiceElements243' has cardinality 0..*, and from 'xal_AddressLatitude', the role 'xal_AddressLatitude' has cardinality 0..*.
+An association connects 'xal_PostalServiceElements' and 'xal_AddressLatitudeDirection'. From 'xal_PostalServiceElements', the role 'xal_PostalServiceElements245' has cardinality 0..*, and from 'xal_AddressLatitudeDirection', the role 'xal_AddressLatitudeDirection' has cardinality 0..*.
+An association connects 'xal_AddressLongitude' and 'xal_PostalServiceElements'. From 'xal_AddressLongitude', the role 'xal_AddressLongitude' has cardinality 0..*, and from 'xal_PostalServiceElements', the role 'xal_PostalServiceElements247' has cardinality 0..*.
+An association connects 'xal_PostalServiceElements' and 'xal_AddressLongitudeDirection'. From 'xal_PostalServiceElements', the role 'xal_PostalServiceElements249' has cardinality 0..*, and from 'xal_AddressLongitudeDirection', the role 'xal_AddressLongitudeDirection' has cardinality 0..*.
+An association connects 'xal_SupplementaryPostalServiceData' and 'xal_PostalServiceElements'. From 'xal_SupplementaryPostalServiceData', the role 'xal_SupplementaryPostalServiceData' has cardinality 0..*, and from 'xal_PostalServiceElements', the role 'xal_PostalServiceElements251' has cardinality 0..*.
+An association connects 'xal_AddressLine' and 'xal_PostBox'. From 'xal_AddressLine', the role 'xal_AddressLine254' has cardinality 0..*, and from 'xal_PostBox', the role 'xal_PostBox253' has cardinality 0..*.
+An association connects 'xal_PostBoxNumber' and 'xal_PostBox'. From 'xal_PostBoxNumber', the role 'xal_PostBoxNumber' has cardinality 0..*, and from 'xal_PostBox', the role 'xal_PostBox256' has cardinality 0..*.
+An association connects 'xal_PostBox' and 'xal_PostBoxNumberPrefix'. From 'xal_PostBox', the role 'xal_PostBox258' has cardinality 0..*, and from 'xal_PostBoxNumberPrefix', the role 'xal_PostBoxNumberPrefix' has cardinality 0..*.
+An association connects 'xal_PostBoxNumberSuffix' and 'xal_PostBox'. From 'xal_PostBoxNumberSuffix', the role 'xal_PostBoxNumberSuffix' has cardinality 0..*, and from 'xal_PostBox', the role 'xal_PostBox260' has cardinality 0..*.
+An association connects 'xal_PostBoxNumberExtension' and 'xal_PostBox'. From 'xal_PostBoxNumberExtension', the role 'xal_PostBoxNumberExtension' has cardinality 0..*, and from 'xal_PostBox', the role 'xal_PostBox262' has cardinality 0..*.
+An association connects 'xal_Firm' and 'xal_PostBox'. From 'xal_Firm', the role 'xal_Firm265' has cardinality 0..*, and from 'xal_PostBox', the role 'xal_PostBox264' has cardinality 0..*.
+An association connects 'xal_PostalCode' and 'xal_PostBox'. From 'xal_PostalCode', the role 'xal_PostalCode268' has cardinality 0..*, and from 'xal_PostBox', the role 'xal_PostBox267' has cardinality 0..*.
+An association connects 'xal_PostOffice' and 'xal_AddressLine'. From 'xal_PostOffice', the role 'xal_PostOffice270' has cardinality 0..*, and from 'xal_AddressLine', the role 'xal_AddressLine271' has cardinality 0..*.
+An association connects 'xal_PostOffice' and 'xal_PostOfficeName'. From 'xal_PostOffice', the role 'xal_PostOffice273' has cardinality 0..*, and from 'xal_PostOfficeName', the role 'xal_PostOfficeName' has cardinality 0..*.
+An association connects 'xal_PostOffice' and 'xal_PostOfficeNumber'. From 'xal_PostOffice', the role 'xal_PostOffice275' has cardinality 0..*, and from 'xal_PostOfficeNumber', the role 'xal_PostOfficeNumber' has cardinality 0..*.
+An association connects 'xal_PostalRoute' and 'xal_PostOffice'. From 'xal_PostalRoute', the role 'xal_PostalRoute278' has cardinality 0..*, and from 'xal_PostOffice', the role 'xal_PostOffice277' has cardinality 0..*.
+An association connects 'xal_PostBox' and 'xal_PostOffice'. From 'xal_PostBox', the role 'xal_PostBox281' has cardinality 0..*, and from 'xal_PostOffice', the role 'xal_PostOffice280' has cardinality 0..*.
+An association connects 'xal_PostOffice' and 'xal_PostalCode'. From 'xal_PostOffice', the role 'xal_PostOffice283' has cardinality 0..*, and from 'xal_PostalCode', the role 'xal_PostalCode284' has cardinality 0..*.
+An association connects 'xal_AddressLine' and 'xal_PostTown'. From 'xal_AddressLine', the role 'xal_AddressLine287' has cardinality 0..*, and from 'xal_PostTown', the role 'xal_PostTown286' has cardinality 0..*.
+An association connects 'xal_PostTown' and 'xal_PostTownName'. From 'xal_PostTown', the role 'xal_PostTown289' has cardinality 0..*, and from 'xal_PostTownName', the role 'xal_PostTownName' has cardinality 0..*.
+An association connects 'xal_PostTown' and 'xal_PostTownSuffix'. From 'xal_PostTown', the role 'xal_PostTown291' has cardinality 0..*, and from 'xal_PostTownSuffix', the role 'xal_PostTownSuffix' has cardinality 0..*.
+An association connects 'xal_Premise' and 'xal_AddressLine'. From 'xal_Premise', the role 'xal_Premise293' has cardinality 0..*, and from 'xal_AddressLine', the role 'xal_AddressLine294' has cardinality 0..*.
+An association connects 'xal_Premise' and 'xal_PremiseName'. From 'xal_Premise', the role 'xal_Premise296' has cardinality 0..*, and from 'xal_PremiseName', the role 'xal_PremiseName' has cardinality 0..*.
+An association connects 'xal_PremiseLocation' and 'xal_Premise'. From 'xal_PremiseLocation', the role 'xal_PremiseLocation' has cardinality 0..*, and from 'xal_Premise', the role 'xal_Premise298' has cardinality 0..*.
+An association connects 'xal_Premise' and 'xal_PremiseNumber'. From 'xal_Premise', the role 'xal_Premise300' has cardinality 0..*, and from 'xal_PremiseNumber', the role 'xal_PremiseNumber301' has cardinality 0..*.
+An association connects 'xal_PremiseNumberRange' and 'xal_Premise'. From 'xal_PremiseNumberRange', the role 'xal_PremiseNumberRange' has cardinality 0..*, and from 'xal_Premise', the role 'xal_Premise303' has cardinality 0..*.
+An association connects 'xal_Premise' and 'xal_PremiseNumberPrefix'. From 'xal_Premise', the role 'xal_Premise305' has cardinality 0..*, and from 'xal_PremiseNumberPrefix', the role 'xal_PremiseNumberPrefix306' has cardinality 0..*.
+An association connects 'xal_PremiseNumberSuffix' and 'xal_Premise'. From 'xal_PremiseNumberSuffix', the role 'xal_PremiseNumberSuffix309' has cardinality 0..*, and from 'xal_Premise', the role 'xal_Premise308' has cardinality 0..*.
+An association connects 'xal_BuildingName' and 'xal_Premise'. From 'xal_BuildingName', the role 'xal_BuildingName312' has cardinality 0..*, and from 'xal_Premise', the role 'xal_Premise311' has cardinality 0..*.
+An association connects 'xal_Premise' and 'xal_SubPremise'. From 'xal_Premise', the role 'xal_Premise314' has cardinality 0..*, and from 'xal_SubPremise', the role 'xal_SubPremise' has cardinality 0..*.
+An association connects 'xal_Firm' and 'xal_Premise'. From 'xal_Firm', the role 'xal_Firm317' has cardinality 0..*, and from 'xal_Premise', the role 'xal_Premise316' has cardinality 0..*.
+An association connects 'xal_MailStop' and 'xal_Premise'. From 'xal_MailStop', the role 'xal_MailStop320' has cardinality 0..*, and from 'xal_Premise', the role 'xal_Premise319' has cardinality 0..*.
+An association connects 'xal_Premise' and 'xal_PostalCode'. From 'xal_Premise', the role 'xal_Premise322' has cardinality 0..*, and from 'xal_PostalCode', the role 'xal_PostalCode323' has cardinality 0..*.
+An association connects 'xal_Premise' and 'xal_Premise'. From 'xal_Premise', the role 'xal_Premise326' has cardinality 0..*, and from 'xal_Premise', the role 'xal_Premise324' has cardinality 0..*.
+An association connects 'xal_PremiseNumberRangeFrom' and 'xal_PremiseNumberRange'. From 'xal_PremiseNumberRangeFrom', the role 'xal_PremiseNumberRangeFrom' has cardinality 0..*, and from 'xal_PremiseNumberRange', the role 'xal_PremiseNumberRange328' has cardinality 0..*.
+An association connects 'xal_PremiseNumberRange' and 'xal_PremiseNumberRangeTo'. From 'xal_PremiseNumberRange', the role 'xal_PremiseNumberRange330' has cardinality 0..*, and from 'xal_PremiseNumberRangeTo', the role 'xal_PremiseNumberRangeTo' has cardinality 0..*.
+An association connects 'xal_PremiseNumberRangeFrom' and 'xal_AddressLine'. From 'xal_PremiseNumberRangeFrom', the role 'xal_PremiseNumberRangeFrom332' has cardinality 0..*, and from 'xal_AddressLine', the role 'xal_AddressLine333' has cardinality 0..*.
+An association connects 'xal_PremiseNumberRangeFrom' and 'xal_PremiseNumberPrefix'. From 'xal_PremiseNumberRangeFrom', the role 'xal_PremiseNumberRangeFrom335' has cardinality 0..*, and from 'xal_PremiseNumberPrefix', the role 'xal_PremiseNumberPrefix336' has cardinality 0..*.
+An association connects 'xal_PremiseNumberRangeFrom' and 'xal_PremiseNumber'. From 'xal_PremiseNumberRangeFrom', the role 'xal_PremiseNumberRangeFrom338' has cardinality 0..*, and from 'xal_PremiseNumber', the role 'xal_PremiseNumber339' has cardinality 0..*.
+An association connects 'xal_PremiseNumberRangeFrom' and 'xal_PremiseNumberSuffix'. From 'xal_PremiseNumberRangeFrom', the role 'xal_PremiseNumberRangeFrom341' has cardinality 0..*, and from 'xal_PremiseNumberSuffix', the role 'xal_PremiseNumberSuffix342' has cardinality 0..*.
+An association connects 'xal_AddressLine' and 'xal_PremiseNumberRangeTo'. From 'xal_AddressLine', the role 'xal_AddressLine345' has cardinality 0..*, and from 'xal_PremiseNumberRangeTo', the role 'xal_PremiseNumberRangeTo344' has cardinality 0..*.
+An association connects 'xal_PremiseNumberPrefix' and 'xal_PremiseNumberRangeTo'. From 'xal_PremiseNumberPrefix', the role 'xal_PremiseNumberPrefix348' has cardinality 0..*, and from 'xal_PremiseNumberRangeTo', the role 'xal_PremiseNumberRangeTo347' has cardinality 0..*.
+An association connects 'xal_PremiseNumberRangeTo' and 'xal_PremiseNumber'. From 'xal_PremiseNumberRangeTo', the role 'xal_PremiseNumberRangeTo350' has cardinality 0..*, and from 'xal_PremiseNumber', the role 'xal_PremiseNumber351' has cardinality 0..*.
+An association connects 'xal_PremiseNumberSuffix' and 'xal_PremiseNumberRangeTo'. From 'xal_PremiseNumberSuffix', the role 'xal_PremiseNumberSuffix354' has cardinality 0..*, and from 'xal_PremiseNumberRangeTo', the role 'xal_PremiseNumberRangeTo353' has cardinality 0..*.
+An association connects 'xal_AddressLine' and 'xal_SubAdministrativeArea'. From 'xal_AddressLine', the role 'xal_AddressLine357' has cardinality 0..*, and from 'xal_SubAdministrativeArea', the role 'xal_SubAdministrativeArea356' has cardinality 0..*.
+An association connects 'xal_SubAdministrativeArea' and 'xal_SubAdministrativeAreaName'. From 'xal_SubAdministrativeArea', the role 'xal_SubAdministrativeArea359' has cardinality 0..*, and from 'xal_SubAdministrativeAreaName', the role 'xal_SubAdministrativeAreaName' has cardinality 0..*.
+An association connects 'xal_Locality' and 'xal_SubAdministrativeArea'. From 'xal_Locality', the role 'xal_Locality362' has cardinality 0..*, and from 'xal_SubAdministrativeArea', the role 'xal_SubAdministrativeArea361' has cardinality 0..*.
+An association connects 'xal_SubAdministrativeArea' and 'xal_PostOffice'. From 'xal_SubAdministrativeArea', the role 'xal_SubAdministrativeArea364' has cardinality 0..*, and from 'xal_PostOffice', the role 'xal_PostOffice365' has cardinality 0..*.
+An association connects 'xal_SubAdministrativeArea' and 'xal_PostalCode'. From 'xal_SubAdministrativeArea', the role 'xal_SubAdministrativeArea367' has cardinality 0..*, and from 'xal_PostalCode', the role 'xal_PostalCode368' has cardinality 0..*.
+An association connects 'xal_SubPremise' and 'xal_AddressLine'. From 'xal_SubPremise', the role 'xal_SubPremise370' has cardinality 0..*, and from 'xal_AddressLine', the role 'xal_AddressLine371' has cardinality 0..*.
+An association connects 'xal_SubPremise' and 'xal_SubPremiseName'. From 'xal_SubPremise', the role 'xal_SubPremise373' has cardinality 0..*, and from 'xal_SubPremiseName', the role 'xal_SubPremiseName' has cardinality 0..*.
+An association connects 'xal_SubPremiseLocation' and 'xal_SubPremise'. From 'xal_SubPremiseLocation', the role 'xal_SubPremiseLocation' has cardinality 0..*, and from 'xal_SubPremise', the role 'xal_SubPremise375' has cardinality 0..*.
+An association connects 'xal_SubPremise' and 'xal_SubPremiseNumber'. From 'xal_SubPremise', the role 'xal_SubPremise377' has cardinality 0..*, and from 'xal_SubPremiseNumber', the role 'xal_SubPremiseNumber' has cardinality 0..*.
+An association connects 'xal_SubPremise' and 'xal_SubPremiseNumberPrefix'. From 'xal_SubPremise', the role 'xal_SubPremise379' has cardinality 0..*, and from 'xal_SubPremiseNumberPrefix', the role 'xal_SubPremiseNumberPrefix' has cardinality 0..*.
+An association connects 'xal_SubPremiseNumberSuffix' and 'xal_SubPremise'. From 'xal_SubPremiseNumberSuffix', the role 'xal_SubPremiseNumberSuffix' has cardinality 0..*, and from 'xal_SubPremise', the role 'xal_SubPremise381' has cardinality 0..*.
+An association connects 'xal_BuildingName' and 'xal_SubPremise'. From 'xal_BuildingName', the role 'xal_BuildingName384' has cardinality 0..*, and from 'xal_SubPremise', the role 'xal_SubPremise383' has cardinality 0..*.
+An association connects 'xal_Firm' and 'xal_SubPremise'. From 'xal_Firm', the role 'xal_Firm387' has cardinality 0..*, and from 'xal_SubPremise', the role 'xal_SubPremise386' has cardinality 0..*.
+An association connects 'xal_MailStop' and 'xal_SubPremise'. From 'xal_MailStop', the role 'xal_MailStop390' has cardinality 0..*, and from 'xal_SubPremise', the role 'xal_SubPremise389' has cardinality 0..*.
+An association connects 'xal_PostalCode' and 'xal_SubPremise'. From 'xal_PostalCode', the role 'xal_PostalCode393' has cardinality 0..*, and from 'xal_SubPremise', the role 'xal_SubPremise392' has cardinality 0..*.
+An association connects 'xal_SubPremise' and 'xal_SubPremise'. From 'xal_SubPremise', the role 'xal_SubPremise394' has cardinality 0..*, and from 'xal_SubPremise', the role 'xal_SubPremise396' has cardinality 0..*.
+An association connects 'xal_AddressLine' and 'xal_Thoroughfare'. From 'xal_AddressLine', the role 'xal_AddressLine399' has cardinality 0..*, and from 'xal_Thoroughfare', the role 'xal_Thoroughfare398' has cardinality 0..*.
+An association connects 'xal_ThoroughfareNumber' and 'xal_Thoroughfare'. From 'xal_ThoroughfareNumber', the role 'xal_ThoroughfareNumber402' has cardinality 0..*, and from 'xal_Thoroughfare', the role 'xal_Thoroughfare401' has cardinality 0..*.
+An association connects 'xal_Thoroughfare' and 'xal_ThoroughfareNumberRange'. From 'xal_Thoroughfare', the role 'xal_Thoroughfare404' has cardinality 0..*, and from 'xal_ThoroughfareNumberRange', the role 'xal_ThoroughfareNumberRange' has cardinality 0..*.
+An association connects 'xal_Thoroughfare' and 'xal_ThoroughfareNumberPrefix'. From 'xal_Thoroughfare', the role 'xal_Thoroughfare406' has cardinality 0..*, and from 'xal_ThoroughfareNumberPrefix', the role 'xal_ThoroughfareNumberPrefix407' has cardinality 0..*.
+An association connects 'xal_ThoroughfareNumberSuffix' and 'xal_Thoroughfare'. From 'xal_ThoroughfareNumberSuffix', the role 'xal_ThoroughfareNumberSuffix410' has cardinality 0..*, and from 'xal_Thoroughfare', the role 'xal_Thoroughfare409' has cardinality 0..*.
+An association connects 'xal_ThoroughfarePreDirection' and 'xal_Thoroughfare'. From 'xal_ThoroughfarePreDirection', the role 'xal_ThoroughfarePreDirection413' has cardinality 0..*, and from 'xal_Thoroughfare', the role 'xal_Thoroughfare412' has cardinality 0..*.
+An association connects 'xal_ThoroughfareLeadingType' and 'xal_Thoroughfare'. From 'xal_ThoroughfareLeadingType', the role 'xal_ThoroughfareLeadingType416' has cardinality 0..*, and from 'xal_Thoroughfare', the role 'xal_Thoroughfare415' has cardinality 0..*.
+An association connects 'xal_Thoroughfare' and 'xal_ThoroughfareName'. From 'xal_Thoroughfare', the role 'xal_Thoroughfare418' has cardinality 0..*, and from 'xal_ThoroughfareName', the role 'xal_ThoroughfareName419' has cardinality 0..*.
+An association connects 'xal_ThoroughfareTrailingType' and 'xal_Thoroughfare'. From 'xal_ThoroughfareTrailingType', the role 'xal_ThoroughfareTrailingType422' has cardinality 0..*, and from 'xal_Thoroughfare', the role 'xal_Thoroughfare421' has cardinality 0..*.
+An association connects 'xal_Thoroughfare' and 'xal_ThoroughfarePostDirection'. From 'xal_Thoroughfare', the role 'xal_Thoroughfare424' has cardinality 0..*, and from 'xal_ThoroughfarePostDirection', the role 'xal_ThoroughfarePostDirection425' has cardinality 0..*.
+An association connects 'xal_DependentThoroughfare' and 'xal_Thoroughfare'. From 'xal_DependentThoroughfare', the role 'xal_DependentThoroughfare428' has cardinality 0..*, and from 'xal_Thoroughfare', the role 'xal_Thoroughfare427' has cardinality 0..*.
+An association connects 'xal_DependentLocality' and 'xal_Thoroughfare'. From 'xal_DependentLocality', the role 'xal_DependentLocality431' has cardinality 0..*, and from 'xal_Thoroughfare', the role 'xal_Thoroughfare430' has cardinality 0..*.
+An association connects 'xal_Premise' and 'xal_Thoroughfare'. From 'xal_Premise', the role 'xal_Premise434' has cardinality 0..*, and from 'xal_Thoroughfare', the role 'xal_Thoroughfare433' has cardinality 0..*.
+An association connects 'xal_Thoroughfare' and 'xal_Firm'. From 'xal_Thoroughfare', the role 'xal_Thoroughfare436' has cardinality 0..*, and from 'xal_Firm', the role 'xal_Firm437' has cardinality 0..*.
+An association connects 'xal_PostalCode' and 'xal_Thoroughfare'. From 'xal_PostalCode', the role 'xal_PostalCode440' has cardinality 0..*, and from 'xal_Thoroughfare', the role 'xal_Thoroughfare439' has cardinality 0..*.
+An association connects 'xal_ThoroughfareNumberFrom' and 'xal_AddressLine'. From 'xal_ThoroughfareNumberFrom', the role 'xal_ThoroughfareNumberFrom' has cardinality 0..*, and from 'xal_AddressLine', the role 'xal_AddressLine442' has cardinality 0..*.
+An association connects 'xal_ThoroughfareNumberPrefix' and 'xal_ThoroughfareNumberFrom'. From 'xal_ThoroughfareNumberPrefix', the role 'xal_ThoroughfareNumberPrefix445' has cardinality 0..*, and from 'xal_ThoroughfareNumberFrom', the role 'xal_ThoroughfareNumberFrom444' has cardinality 0..*.
+An association connects 'xal_ThoroughfareNumber' and 'xal_ThoroughfareNumberFrom'. From 'xal_ThoroughfareNumber', the role 'xal_ThoroughfareNumber448' has cardinality 0..*, and from 'xal_ThoroughfareNumberFrom', the role 'xal_ThoroughfareNumberFrom447' has cardinality 0..*.
+An association connects 'xal_ThoroughfareNumberSuffix' and 'xal_ThoroughfareNumberFrom'. From 'xal_ThoroughfareNumberSuffix', the role 'xal_ThoroughfareNumberSuffix451' has cardinality 0..*, and from 'xal_ThoroughfareNumberFrom', the role 'xal_ThoroughfareNumberFrom450' has cardinality 0..*.
+An association connects 'xal_ThoroughfareNumberRange' and 'xal_AddressLine'. From 'xal_ThoroughfareNumberRange', the role 'xal_ThoroughfareNumberRange453' has cardinality 0..*, and from 'xal_AddressLine', the role 'xal_AddressLine454' has cardinality 0..*.
+An association connects 'xal_ThoroughfareNumberFrom' and 'xal_ThoroughfareNumberRange'. From 'xal_ThoroughfareNumberFrom', the role 'xal_ThoroughfareNumberFrom457' has cardinality 0..*, and from 'xal_ThoroughfareNumberRange', the role 'xal_ThoroughfareNumberRange456' has cardinality 0..*.
+An association connects 'xal_ThoroughfareNumberTo' and 'xal_ThoroughfareNumberRange'. From 'xal_ThoroughfareNumberTo', the role 'xal_ThoroughfareNumberTo' has cardinality 0..*, and from 'xal_ThoroughfareNumberRange', the role 'xal_ThoroughfareNumberRange459' has cardinality 0..*.
+An association connects 'xal_ThoroughfareNumberTo' and 'xal_AddressLine'. From 'xal_ThoroughfareNumberTo', the role 'xal_ThoroughfareNumberTo461' has cardinality 0..*, and from 'xal_AddressLine', the role 'xal_AddressLine462' has cardinality 0..*.
+An association connects 'xal_ThoroughfareNumberTo' and 'xal_ThoroughfareNumberPrefix'. From 'xal_ThoroughfareNumberTo', the role 'xal_ThoroughfareNumberTo464' has cardinality 0..*, and from 'xal_ThoroughfareNumberPrefix', the role 'xal_ThoroughfareNumberPrefix465' has cardinality 0..*.
+An association connects 'xal_ThoroughfareNumberTo' and 'xal_ThoroughfareNumber'. From 'xal_ThoroughfareNumberTo', the role 'xal_ThoroughfareNumberTo467' has cardinality 0..*, and from 'xal_ThoroughfareNumber', the role 'xal_ThoroughfareNumber468' has cardinality 0..*.
+An association connects 'xal_ThoroughfareNumberSuffix' and 'xal_ThoroughfareNumberTo'. From 'xal_ThoroughfareNumberSuffix', the role 'xal_ThoroughfareNumberSuffix471' has cardinality 0..*, and from 'xal_ThoroughfareNumberTo', the role 'xal_ThoroughfareNumberTo470' has cardinality 0..*.
+An association connects 'xal_AddressDetails' and 'xal_Xal'. From 'xal_AddressDetails', the role 'xal_AddressDetails474' has cardinality 0..*, and from 'xal_Xal', the role 'xal_Xal473' has cardinality 0..*.

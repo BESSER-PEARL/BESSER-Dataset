@@ -1,0 +1,24 @@
+The domain model 'ecore' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'J' represents an important domain concept.
+It does not declare any attributes.
+
+'foo_J' represents an important domain concept.
+It does not declare any attributes.
+
+'foo_A' represents an important domain concept.
+It has one attribute: 'fooA', which is of type str.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'foo_B' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'foo_B' is a specialization of 'J'.
+
+Relationships between classes are modeled using associations.
+An association connects 'B' and 'foo_A'. From 'B', the role 'B' has cardinality 0..*, and from 'foo_A', the role 'foo_A' has cardinality 0..*.

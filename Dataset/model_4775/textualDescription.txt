@@ -1,0 +1,485 @@
+The domain model 'limp' describes the core structural elements and their relationships within the system.
+
+The model defines 104 main class(es).
+
+'limp_VarBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_SecondInit' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_OutputArgList' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_Uses' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_ExternalProcedure' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'limp_IfThenElseStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_InitExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_SomeAttributeBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_NoAttributeBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_TypeAlias' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_GlobalDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_ArrayUpdateExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_ArrayExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_SomeVarBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_DefineUseRef' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_BoolType' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_AbstractTypeDef' represents an important domain concept.
+It does not declare any attributes.
+
+'Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_BinaryExpr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'limp_RecordExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_Comment' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'limp_LocalFunction' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'limp_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_Import' represents an important domain concept.
+It has one attribute: 'importURI', which is of type str.
+
+'limp_EnumTypeDef' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_Precondition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'limp_StatementBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_AssignmentStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_NoElse' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_RecordFieldType' represents an important domain concept.
+It has one attribute: 'fieldName', which is of type str.
+
+'limp_ChoiceExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_InputArgList' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_RealLiteralExpr' represents an important domain concept.
+It has one attribute: 'realVal', which is of type str.
+
+'limp_EnumType' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_RecordUpdateExpr' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'limp_Define' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_RecordFieldExpr' represents an important domain concept.
+It has one attribute: 'fieldName', which is of type str.
+
+'limp_VoidStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_ArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_BooleanLiteralExpr' represents an important domain concept.
+It has one attribute: 'boolVal', which is of type str.
+
+'limp_Equation' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_Postcondition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'limp_UnaryMinusExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'Else' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_AbstractType' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_RecordAccessExpr' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'Equation' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_FcnCallExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_ElseBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_RecordType' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_IfThenElseExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_LabelStatement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'limp_RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_AttributeBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_NoVarBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_NamedType' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionRef' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_StringLiteralExpr' represents an important domain concept.
+It has one attribute: 'stringVal', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_Else' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_IdList' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_ArrayTypeDef' represents an important domain concept.
+It has one attribute: 'size', which is of type str.
+
+'limp_ArrayAccessExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_LocalArg' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_EquationBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'VarBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_TypeDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'limp_VariableRef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'limp_GotoStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_UnaryNegationExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_IntegerLiteralExpr' represents an important domain concept.
+It has one attribute: 'intVal', which is of type str.
+
+'limp_EnumValue' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_InputArg' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_FreshVariable' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'limp_IdExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_ElseIf' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_ExternalFunction' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_Specification' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_RecordTypeDef' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_IntegerWildCardExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_ExprList' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_ConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_FunctionRef' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_LocalProcedure' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'limp_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'limp_OutputArg' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'limp_Comment' is a specialization of 'Declaration'.
+The class 'limp_Import' is a specialization of 'Declaration'.
+The class 'limp_ExternalFunction' is a specialization of 'Declaration'.
+The class 'limp_ExternalFunction' is a specialization of 'FunctionRef'.
+The class 'limp_ExternalProcedure' is a specialization of 'Declaration'.
+The class 'limp_ExternalProcedure' is a specialization of 'FunctionRef'.
+The class 'limp_LocalFunction' is a specialization of 'Declaration'.
+The class 'limp_LocalFunction' is a specialization of 'FunctionRef'.
+The class 'limp_LocalProcedure' is a specialization of 'Declaration'.
+The class 'limp_LocalProcedure' is a specialization of 'FunctionRef'.
+The class 'limp_TypeDeclaration' is a specialization of 'Declaration'.
+The class 'limp_EnumTypeDef' is a specialization of 'TypeDeclaration'.
+The class 'limp_EnumValue' is a specialization of 'VariableRef'.
+The class 'limp_RecordTypeDef' is a specialization of 'TypeDeclaration'.
+The class 'limp_ArrayTypeDef' is a specialization of 'TypeDeclaration'.
+The class 'limp_AbstractTypeDef' is a specialization of 'TypeDeclaration'.
+The class 'limp_ConstantDeclaration' is a specialization of 'Declaration'.
+The class 'limp_ConstantDeclaration' is a specialization of 'VariableRef'.
+The class 'limp_GlobalDeclaration' is a specialization of 'Declaration'.
+The class 'limp_GlobalDeclaration' is a specialization of 'VariableRef'.
+The class 'limp_InputArg' is a specialization of 'VariableRef'.
+The class 'limp_LocalArg' is a specialization of 'VariableRef'.
+The class 'limp_OutputArg' is a specialization of 'VariableRef'.
+The class 'limp_Precondition' is a specialization of 'Attribute'.
+The class 'limp_Postcondition' is a specialization of 'Attribute'.
+The class 'limp_Define' is a specialization of 'Attribute'.
+The class 'limp_Uses' is a specialization of 'Attribute'.
+The class 'limp_VoidStatement' is a specialization of 'Statement'.
+The class 'limp_VoidStatement' is a specialization of 'Equation'.
+The class 'limp_AssignmentStatement' is a specialization of 'Statement'.
+The class 'limp_AssignmentStatement' is a specialization of 'Equation'.
+The class 'limp_IfThenElseStatement' is a specialization of 'Statement'.
+The class 'limp_WhileStatement' is a specialization of 'Statement'.
+The class 'limp_ForStatement' is a specialization of 'Statement'.
+The class 'limp_LabelStatement' is a specialization of 'Statement'.
+The class 'limp_GotoStatement' is a specialization of 'Statement'.
+The class 'limp_ArrayExpr' is a specialization of 'Expr'.
+The class 'limp_RecordExpr' is a specialization of 'Expr'.
+The class 'limp_TypeAlias' is a specialization of 'TypeDeclaration'.
+The class 'limp_SomeVarBlock' is a specialization of 'VarBlock'.
+The class 'limp_NoVarBlock' is a specialization of 'VarBlock'.
+The class 'limp_VoidType' is a specialization of 'Type'.
+The class 'limp_BoolType' is a specialization of 'Type'.
+The class 'limp_IntegerType' is a specialization of 'Type'.
+The class 'limp_RealType' is a specialization of 'Type'.
+The class 'limp_StringType' is a specialization of 'Type'.
+The class 'limp_EnumType' is a specialization of 'Type'.
+The class 'limp_RecordType' is a specialization of 'Type'.
+The class 'limp_ArrayType' is a specialization of 'Type'.
+The class 'limp_AbstractType' is a specialization of 'Type'.
+The class 'limp_NamedType' is a specialization of 'Type'.
+The class 'limp_SomeAttributeBlock' is a specialization of 'AttributeBlock'.
+The class 'limp_NoAttributeBlock' is a specialization of 'AttributeBlock'.
+The class 'limp_BreakStatement' is a specialization of 'Statement'.
+The class 'limp_ContinueStatement' is a specialization of 'Statement'.
+The class 'limp_ReturnStatement' is a specialization of 'Statement'.
+The class 'limp_ElseBlock' is a specialization of 'Else'.
+The class 'limp_ElseIf' is a specialization of 'Else'.
+The class 'limp_NoElse' is a specialization of 'Else'.
+The class 'limp_IfThenElseExpr' is a specialization of 'Expr'.
+The class 'limp_ChoiceExpr' is a specialization of 'Expr'.
+The class 'limp_BinaryExpr' is a specialization of 'Expr'.
+The class 'limp_UnaryNegationExpr' is a specialization of 'Expr'.
+The class 'limp_UnaryMinusExpr' is a specialization of 'Expr'.
+The class 'limp_RecordAccessExpr' is a specialization of 'Expr'.
+The class 'limp_RecordUpdateExpr' is a specialization of 'Expr'.
+The class 'limp_ArrayAccessExpr' is a specialization of 'Expr'.
+The class 'limp_ArrayUpdateExpr' is a specialization of 'Expr'.
+The class 'limp_BooleanLiteralExpr' is a specialization of 'Expr'.
+The class 'limp_IntegerLiteralExpr' is a specialization of 'Expr'.
+The class 'limp_IntegerWildCardExpr' is a specialization of 'Expr'.
+The class 'limp_RealLiteralExpr' is a specialization of 'Expr'.
+The class 'limp_StringLiteralExpr' is a specialization of 'Expr'.
+The class 'limp_InitExpr' is a specialization of 'Expr'.
+The class 'limp_SecondInit' is a specialization of 'Expr'.
+The class 'limp_IdExpr' is a specialization of 'Expr'.
+The class 'limp_FcnCallExpr' is a specialization of 'Expr'.
+The class 'limp_TupleType' is a specialization of 'Type'.
+The class 'limp_FreshVariable' is a specialization of 'Expr'.
+
+Relationships between classes are modeled using associations.
+An association connects 'limp_Specification' and 'limp_Declaration'. From 'limp_Specification', the role 'limp_Specification' has cardinality 0..*, and from 'limp_Declaration', the role 'limp_Declaration' has cardinality 0..*.
+An association connects 'limp_InputArgList' and 'limp_ExternalFunction'. From 'limp_InputArgList', the role 'limp_InputArgList' has cardinality 0..*, and from 'limp_ExternalFunction', the role 'limp_ExternalFunction' has cardinality 0..*.
+An association connects 'limp_ExternalFunction' and 'limp_OutputArg'. From 'limp_ExternalFunction', the role 'limp_ExternalFunction3' has cardinality 0..*, and from 'limp_OutputArg', the role 'limp_OutputArg' has cardinality 0..*.
+An association connects 'limp_InputArgList' and 'limp_ExternalProcedure'. From 'limp_InputArgList', the role 'limp_InputArgList5' has cardinality 0..*, and from 'limp_ExternalProcedure', the role 'limp_ExternalProcedure' has cardinality 0..*.
+An association connects 'limp_OutputArgList' and 'limp_ExternalProcedure'. From 'limp_OutputArgList', the role 'limp_OutputArgList' has cardinality 0..*, and from 'limp_ExternalProcedure', the role 'limp_ExternalProcedure7' has cardinality 0..*.
+An association connects 'limp_ExternalProcedure' and 'limp_AttributeBlock'. From 'limp_ExternalProcedure', the role 'limp_ExternalProcedure9' has cardinality 0..*, and from 'limp_AttributeBlock', the role 'limp_AttributeBlock' has cardinality 0..*.
+An association connects 'limp_LocalFunction' and 'limp_InputArgList'. From 'limp_LocalFunction', the role 'limp_LocalFunction' has cardinality 0..*, and from 'limp_InputArgList', the role 'limp_InputArgList11' has cardinality 0..*.
+An association connects 'limp_OutputArg' and 'limp_LocalFunction'. From 'limp_OutputArg', the role 'limp_OutputArg14' has cardinality 0..*, and from 'limp_LocalFunction', the role 'limp_LocalFunction13' has cardinality 0..*.
+An association connects 'limp_LocalFunction' and 'limp_VarBlock'. From 'limp_LocalFunction', the role 'limp_LocalFunction16' has cardinality 0..*, and from 'limp_VarBlock', the role 'limp_VarBlock' has cardinality 0..*.
+An association connects 'limp_EquationBlock' and 'limp_LocalFunction'. From 'limp_EquationBlock', the role 'limp_EquationBlock' has cardinality 0..*, and from 'limp_LocalFunction', the role 'limp_LocalFunction18' has cardinality 0..*.
+An association connects 'limp_LocalProcedure' and 'limp_InputArgList'. From 'limp_LocalProcedure', the role 'limp_LocalProcedure' has cardinality 0..*, and from 'limp_InputArgList', the role 'limp_InputArgList20' has cardinality 0..*.
+An association connects 'limp_OutputArgList' and 'limp_LocalProcedure'. From 'limp_OutputArgList', the role 'limp_OutputArgList23' has cardinality 0..*, and from 'limp_LocalProcedure', the role 'limp_LocalProcedure22' has cardinality 0..*.
+An association connects 'limp_VarBlock' and 'limp_LocalProcedure'. From 'limp_VarBlock', the role 'limp_VarBlock26' has cardinality 0..*, and from 'limp_LocalProcedure', the role 'limp_LocalProcedure25' has cardinality 0..*.
+An association connects 'limp_AttributeBlock' and 'limp_LocalProcedure'. From 'limp_AttributeBlock', the role 'limp_AttributeBlock29' has cardinality 0..*, and from 'limp_LocalProcedure', the role 'limp_LocalProcedure28' has cardinality 0..*.
+An association connects 'limp_LocalProcedure' and 'limp_StatementBlock'. From 'limp_LocalProcedure', the role 'limp_LocalProcedure31' has cardinality 0..*, and from 'limp_StatementBlock', the role 'limp_StatementBlock' has cardinality 0..*.
+An association connects 'limp_EnumTypeDef' and 'limp_EnumValue'. From 'limp_EnumTypeDef', the role 'limp_EnumTypeDef' has cardinality 0..*, and from 'limp_EnumValue', the role 'limp_EnumValue' has cardinality 0..*.
+An association connects 'limp_RecordFieldType' and 'limp_RecordTypeDef'. From 'limp_RecordFieldType', the role 'limp_RecordFieldType' has cardinality 0..*, and from 'limp_RecordTypeDef', the role 'limp_RecordTypeDef' has cardinality 0..*.
+An association connects 'limp_ArrayTypeDef' and 'limp_Type'. From 'limp_ArrayTypeDef', the role 'limp_ArrayTypeDef' has cardinality 0..*, and from 'limp_Type', the role 'limp_Type' has cardinality 0..*.
+An association connects 'limp_Type' and 'limp_RecordFieldType'. From 'limp_Type', the role 'limp_Type37' has cardinality 0..*, and from 'limp_RecordFieldType', the role 'limp_RecordFieldType36' has cardinality 0..*.
+An association connects 'limp_Type' and 'limp_ConstantDeclaration'. From 'limp_Type', the role 'limp_Type39' has cardinality 0..*, and from 'limp_ConstantDeclaration', the role 'limp_ConstantDeclaration' has cardinality 0..*.
+An association connects 'limp_Expr' and 'limp_ConstantDeclaration'. From 'limp_Expr', the role 'limp_Expr' has cardinality 0..*, and from 'limp_ConstantDeclaration', the role 'limp_ConstantDeclaration41' has cardinality 0..*.
+An association connects 'limp_Type' and 'limp_GlobalDeclaration'. From 'limp_Type', the role 'limp_Type43' has cardinality 0..*, and from 'limp_GlobalDeclaration', the role 'limp_GlobalDeclaration' has cardinality 0..*.
+An association connects 'limp_InputArgList' and 'limp_InputArg'. From 'limp_InputArgList', the role 'limp_InputArgList45' has cardinality 0..*, and from 'limp_InputArg', the role 'limp_InputArg' has cardinality 0..*.
+An association connects 'limp_InputArg' and 'limp_Type'. From 'limp_InputArg', the role 'limp_InputArg47' has cardinality 0..*, and from 'limp_Type', the role 'limp_Type48' has cardinality 0..*.
+An association connects 'limp_LocalArg' and 'limp_Type'. From 'limp_LocalArg', the role 'limp_LocalArg' has cardinality 0..*, and from 'limp_Type', the role 'limp_Type50' has cardinality 0..*.
+An association connects 'limp_OutputArgList' and 'limp_OutputArg'. From 'limp_OutputArgList', the role 'limp_OutputArgList52' has cardinality 0..*, and from 'limp_OutputArg', the role 'limp_OutputArg53' has cardinality 0..*.
+An association connects 'limp_OutputArg' and 'limp_Type'. From 'limp_OutputArg', the role 'limp_OutputArg55' has cardinality 0..*, and from 'limp_Type', the role 'limp_Type56' has cardinality 0..*.
+An association connects 'limp_Precondition' and 'limp_Expr'. From 'limp_Precondition', the role 'limp_Precondition' has cardinality 0..*, and from 'limp_Expr', the role 'limp_Expr58' has cardinality 0..*.
+An association connects 'limp_Expr' and 'limp_Postcondition'. From 'limp_Expr', the role 'limp_Expr60' has cardinality 0..*, and from 'limp_Postcondition', the role 'limp_Postcondition' has cardinality 0..*.
+An association connects 'limp_DefineUseRef' and 'limp_Expr'. From 'limp_DefineUseRef', the role 'limp_DefineUseRef' has cardinality 0..*, and from 'limp_Expr', the role 'limp_Expr62' has cardinality 0..*.
+An association connects 'limp_Define' and 'limp_DefineUseRef'. From 'limp_Define', the role 'limp_Define' has cardinality 0..*, and from 'limp_DefineUseRef', the role 'limp_DefineUseRef64' has cardinality 0..*.
+An association connects 'limp_DefineUseRef' and 'limp_Uses'. From 'limp_DefineUseRef', the role 'limp_DefineUseRef66' has cardinality 0..*, and from 'limp_Uses', the role 'limp_Uses' has cardinality 0..*.
+An association connects 'limp_StatementBlock' and 'limp_Statement'. From 'limp_StatementBlock', the role 'limp_StatementBlock68' has cardinality 0..*, and from 'limp_Statement', the role 'limp_Statement' has cardinality 0..*.
+An association connects 'limp_VoidStatement' and 'limp_Expr'. From 'limp_VoidStatement', the role 'limp_VoidStatement' has cardinality 0..*, and from 'limp_Expr', the role 'limp_Expr70' has cardinality 0..*.
+An association connects 'limp_IdList' and 'limp_AssignmentStatement'. From 'limp_IdList', the role 'limp_IdList' has cardinality 0..*, and from 'limp_AssignmentStatement', the role 'limp_AssignmentStatement' has cardinality 0..*.
+An association connects 'limp_AssignmentStatement' and 'limp_Expr'. From 'limp_AssignmentStatement', the role 'limp_AssignmentStatement73' has cardinality 0..*, and from 'limp_Expr', the role 'limp_Expr74' has cardinality 0..*.
+An association connects 'limp_Expr' and 'limp_IfThenElseStatement'. From 'limp_Expr', the role 'limp_Expr76' has cardinality 0..*, and from 'limp_IfThenElseStatement', the role 'limp_IfThenElseStatement' has cardinality 0..*.
+An association connects 'limp_StatementBlock' and 'limp_IfThenElseStatement'. From 'limp_StatementBlock', the role 'limp_StatementBlock79' has cardinality 0..*, and from 'limp_IfThenElseStatement', the role 'limp_IfThenElseStatement78' has cardinality 0..*.
+An association connects 'limp_IfThenElseStatement' and 'limp_Else'. From 'limp_IfThenElseStatement', the role 'limp_IfThenElseStatement81' has cardinality 0..*, and from 'limp_Else', the role 'limp_Else' has cardinality 0..*.
+An association connects 'limp_Expr' and 'limp_WhileStatement'. From 'limp_Expr', the role 'limp_Expr83' has cardinality 0..*, and from 'limp_WhileStatement', the role 'limp_WhileStatement' has cardinality 0..*.
+An association connects 'limp_WhileStatement' and 'limp_StatementBlock'. From 'limp_WhileStatement', the role 'limp_WhileStatement85' has cardinality 0..*, and from 'limp_StatementBlock', the role 'limp_StatementBlock86' has cardinality 0..*.
+An association connects 'limp_ForStatement' and 'limp_AssignmentStatement'. From 'limp_ForStatement', the role 'limp_ForStatement' has cardinality 0..*, and from 'limp_AssignmentStatement', the role 'limp_AssignmentStatement88' has cardinality 0..*.
+An association connects 'limp_Expr' and 'limp_ForStatement'. From 'limp_Expr', the role 'limp_Expr91' has cardinality 0..*, and from 'limp_ForStatement', the role 'limp_ForStatement90' has cardinality 0..*.
+An association connects 'limp_ForStatement' and 'limp_AssignmentStatement'. From 'limp_ForStatement', the role 'limp_ForStatement93' has cardinality 0..*, and from 'limp_AssignmentStatement', the role 'limp_AssignmentStatement94' has cardinality 0..*.
+An association connects 'limp_ForStatement' and 'limp_StatementBlock'. From 'limp_ForStatement', the role 'limp_ForStatement96' has cardinality 0..*, and from 'limp_StatementBlock', the role 'limp_StatementBlock97' has cardinality 0..*.
+An association connects 'limp_LabelStatement' and 'limp_GotoStatement'. From 'limp_LabelStatement', the role 'limp_LabelStatement' has cardinality 0..*, and from 'limp_GotoStatement', the role 'limp_GotoStatement' has cardinality 0..*.
+An association connects 'limp_GotoStatement' and 'limp_Expr'. From 'limp_GotoStatement', the role 'limp_GotoStatement100' has cardinality 0..*, and from 'limp_Expr', the role 'limp_Expr101' has cardinality 0..*.
+An association connects 'limp_EquationBlock' and 'limp_Equation'. From 'limp_EquationBlock', the role 'limp_EquationBlock103' has cardinality 0..*, and from 'limp_Equation', the role 'limp_Equation' has cardinality 0..*.
+An association connects 'limp_IdList' and 'limp_VariableRef'. From 'limp_IdList', the role 'limp_IdList105' has cardinality 0..*, and from 'limp_VariableRef', the role 'limp_VariableRef' has cardinality 0..*.
+An association connects 'limp_ArrayExpr' and 'limp_ArrayTypeDef'. From 'limp_ArrayExpr', the role 'limp_ArrayExpr' has cardinality 0..*, and from 'limp_ArrayTypeDef', the role 'limp_ArrayTypeDef107' has cardinality 0..*.
+An association connects 'limp_ArrayExpr' and 'limp_Expr'. From 'limp_ArrayExpr', the role 'limp_ArrayExpr109' has cardinality 0..*, and from 'limp_Expr', the role 'limp_Expr110' has cardinality 0..*.
+An association connects 'limp_RecordExpr' and 'limp_RecordTypeDef'. From 'limp_RecordExpr', the role 'limp_RecordExpr' has cardinality 0..*, and from 'limp_RecordTypeDef', the role 'limp_RecordTypeDef112' has cardinality 0..*.
+An association connects 'limp_RecordFieldExpr' and 'limp_RecordExpr'. From 'limp_RecordFieldExpr', the role 'limp_RecordFieldExpr' has cardinality 0..*, and from 'limp_RecordExpr', the role 'limp_RecordExpr114' has cardinality 0..*.
+An association connects 'limp_Expr' and 'limp_RecordFieldExpr'. From 'limp_Expr', the role 'limp_Expr117' has cardinality 0..*, and from 'limp_RecordFieldExpr', the role 'limp_RecordFieldExpr116' has cardinality 0..*.
+An association connects 'limp_ExprList' and 'limp_Expr'. From 'limp_ExprList', the role 'limp_ExprList' has cardinality 0..*, and from 'limp_Expr', the role 'limp_Expr119' has cardinality 0..*.
+An association connects 'limp_Type' and 'limp_TypeAlias'. From 'limp_Type', the role 'limp_Type121' has cardinality 0..*, and from 'limp_TypeAlias', the role 'limp_TypeAlias' has cardinality 0..*.
+An association connects 'limp_LocalArg' and 'limp_SomeVarBlock'. From 'limp_LocalArg', the role 'limp_LocalArg123' has cardinality 0..*, and from 'limp_SomeVarBlock', the role 'limp_SomeVarBlock' has cardinality 0..*.
+An association connects 'limp_EnumTypeDef' and 'limp_EnumType'. From 'limp_EnumTypeDef', the role 'limp_EnumTypeDef125' has cardinality 0..*, and from 'limp_EnumType', the role 'limp_EnumType' has cardinality 0..*.
+An association connects 'limp_RecordTypeDef' and 'limp_RecordType'. From 'limp_RecordTypeDef', the role 'limp_RecordTypeDef127' has cardinality 0..*, and from 'limp_RecordType', the role 'limp_RecordType' has cardinality 0..*.
+An association connects 'limp_ArrayType' and 'limp_ArrayTypeDef'. From 'limp_ArrayType', the role 'limp_ArrayType' has cardinality 0..*, and from 'limp_ArrayTypeDef', the role 'limp_ArrayTypeDef129' has cardinality 0..*.
+An association connects 'limp_AbstractType' and 'limp_AbstractTypeDef'. From 'limp_AbstractType', the role 'limp_AbstractType' has cardinality 0..*, and from 'limp_AbstractTypeDef', the role 'limp_AbstractTypeDef' has cardinality 0..*.
+An association connects 'limp_NamedType' and 'limp_TypeAlias'. From 'limp_NamedType', the role 'limp_NamedType' has cardinality 0..*, and from 'limp_TypeAlias', the role 'limp_TypeAlias132' has cardinality 0..*.
+An association connects 'limp_SomeAttributeBlock' and 'limp_Attribute'. From 'limp_SomeAttributeBlock', the role 'limp_SomeAttributeBlock' has cardinality 0..*, and from 'limp_Attribute', the role 'limp_Attribute' has cardinality 0..*.
+An association connects 'limp_StatementBlock' and 'limp_ElseBlock'. From 'limp_StatementBlock', the role 'limp_StatementBlock135' has cardinality 0..*, and from 'limp_ElseBlock', the role 'limp_ElseBlock' has cardinality 0..*.
+An association connects 'limp_IfThenElseStatement' and 'limp_ElseIf'. From 'limp_IfThenElseStatement', the role 'limp_IfThenElseStatement137' has cardinality 0..*, and from 'limp_ElseIf', the role 'limp_ElseIf' has cardinality 0..*.
+An association connects 'limp_Expr' and 'limp_IfThenElseExpr'. From 'limp_Expr', the role 'limp_Expr139' has cardinality 0..*, and from 'limp_IfThenElseExpr', the role 'limp_IfThenElseExpr' has cardinality 0..*.
+An association connects 'limp_IfThenElseExpr' and 'limp_Expr'. From 'limp_IfThenElseExpr', the role 'limp_IfThenElseExpr141' has cardinality 0..*, and from 'limp_Expr', the role 'limp_Expr142' has cardinality 0..*.
+An association connects 'limp_IfThenElseExpr' and 'limp_Expr'. From 'limp_IfThenElseExpr', the role 'limp_IfThenElseExpr144' has cardinality 0..*, and from 'limp_Expr', the role 'limp_Expr145' has cardinality 0..*.
+An association connects 'limp_ChoiceExpr' and 'limp_Expr'. From 'limp_ChoiceExpr', the role 'limp_ChoiceExpr' has cardinality 0..*, and from 'limp_Expr', the role 'limp_Expr147' has cardinality 0..*.
+An association connects 'limp_ChoiceExpr' and 'limp_Expr'. From 'limp_ChoiceExpr', the role 'limp_ChoiceExpr149' has cardinality 0..*, and from 'limp_Expr', the role 'limp_Expr150' has cardinality 0..*.
+An association connects 'limp_BinaryExpr' and 'limp_Expr'. From 'limp_BinaryExpr', the role 'limp_BinaryExpr' has cardinality 0..*, and from 'limp_Expr', the role 'limp_Expr152' has cardinality 0..*.
+An association connects 'limp_Expr' and 'limp_BinaryExpr'. From 'limp_Expr', the role 'limp_Expr155' has cardinality 0..*, and from 'limp_BinaryExpr', the role 'limp_BinaryExpr154' has cardinality 0..*.
+An association connects 'limp_Expr' and 'limp_UnaryNegationExpr'. From 'limp_Expr', the role 'limp_Expr157' has cardinality 0..*, and from 'limp_UnaryNegationExpr', the role 'limp_UnaryNegationExpr' has cardinality 0..*.
+An association connects 'limp_UnaryMinusExpr' and 'limp_Expr'. From 'limp_UnaryMinusExpr', the role 'limp_UnaryMinusExpr' has cardinality 0..*, and from 'limp_Expr', the role 'limp_Expr159' has cardinality 0..*.
+An association connects 'limp_Expr' and 'limp_RecordAccessExpr'. From 'limp_Expr', the role 'limp_Expr161' has cardinality 0..*, and from 'limp_RecordAccessExpr', the role 'limp_RecordAccessExpr' has cardinality 0..*.
+An association connects 'limp_Expr' and 'limp_RecordUpdateExpr'. From 'limp_Expr', the role 'limp_Expr163' has cardinality 0..*, and from 'limp_RecordUpdateExpr', the role 'limp_RecordUpdateExpr' has cardinality 0..*.
+An association connects 'limp_RecordUpdateExpr' and 'limp_Expr'. From 'limp_RecordUpdateExpr', the role 'limp_RecordUpdateExpr165' has cardinality 0..*, and from 'limp_Expr', the role 'limp_Expr166' has cardinality 0..*.
+An association connects 'limp_Expr' and 'limp_ArrayAccessExpr'. From 'limp_Expr', the role 'limp_Expr168' has cardinality 0..*, and from 'limp_ArrayAccessExpr', the role 'limp_ArrayAccessExpr' has cardinality 0..*.
+An association connects 'limp_Expr' and 'limp_ArrayAccessExpr'. From 'limp_Expr', the role 'limp_Expr171' has cardinality 0..*, and from 'limp_ArrayAccessExpr', the role 'limp_ArrayAccessExpr170' has cardinality 0..*.
+An association connects 'limp_ArrayUpdateExpr' and 'limp_ArrayAccessExpr'. From 'limp_ArrayUpdateExpr', the role 'limp_ArrayUpdateExpr' has cardinality 0..*, and from 'limp_ArrayAccessExpr', the role 'limp_ArrayAccessExpr173' has cardinality 0..*.
+An association connects 'limp_Expr' and 'limp_ArrayUpdateExpr'. From 'limp_Expr', the role 'limp_Expr176' has cardinality 0..*, and from 'limp_ArrayUpdateExpr', the role 'limp_ArrayUpdateExpr175' has cardinality 0..*.
+An association connects 'limp_VariableRef' and 'limp_InitExpr'. From 'limp_VariableRef', the role 'limp_VariableRef178' has cardinality 0..*, and from 'limp_InitExpr', the role 'limp_InitExpr' has cardinality 0..*.
+An association connects 'limp_SecondInit' and 'limp_VariableRef'. From 'limp_SecondInit', the role 'limp_SecondInit' has cardinality 0..*, and from 'limp_VariableRef', the role 'limp_VariableRef180' has cardinality 0..*.
+An association connects 'limp_VariableRef' and 'limp_IdExpr'. From 'limp_VariableRef', the role 'limp_VariableRef182' has cardinality 0..*, and from 'limp_IdExpr', the role 'limp_IdExpr' has cardinality 0..*.
+An association connects 'limp_FunctionRef' and 'limp_FcnCallExpr'. From 'limp_FunctionRef', the role 'limp_FunctionRef' has cardinality 0..*, and from 'limp_FcnCallExpr', the role 'limp_FcnCallExpr' has cardinality 0..*.
+An association connects 'limp_ExprList' and 'limp_FcnCallExpr'. From 'limp_ExprList', the role 'limp_ExprList186' has cardinality 0..*, and from 'limp_FcnCallExpr', the role 'limp_FcnCallExpr185' has cardinality 0..*.
+An association connects 'limp_TupleType' and 'limp_Type'. From 'limp_TupleType', the role 'limp_TupleType' has cardinality 0..*, and from 'limp_Type', the role 'limp_Type188' has cardinality 0..*.

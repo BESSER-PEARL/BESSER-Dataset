@@ -1,0 +1,36 @@
+The domain model 'iOI' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'iOI_Employee' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'salary', which is of type int.
+
+'iOI_Department' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iOI_Company' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iOI_Position' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iOI_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iOI_Manager' represents an important domain concept.
+It does not declare any attributes.
+
+'Employee' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'iOI_Manager' is a specialization of 'Employee'.
+
+Relationships between classes are modeled using associations.
+An association connects 'iOI_Model' and 'iOI_Company'. From 'iOI_Model', the role 'iOI_Model' has cardinality 0..*, and from 'iOI_Company', the role 'iOI_Company' has cardinality 0..*.
+An association connects 'iOI_Employee' and 'iOI_Position'. From 'iOI_Employee', the role 'iOI_Employee' has cardinality 0..*, and from 'iOI_Position', the role 'iOI_Position' has cardinality 0..*.
+An association connects 'iOI_Company' and 'iOI_Position'. From 'iOI_Company', the role 'iOI_Company3' has cardinality 0..*, and from 'iOI_Position', the role 'iOI_Position4' has cardinality 0..*.
+An association connects 'iOI_Department' and 'iOI_Company'. From 'iOI_Department', the role 'iOI_Department' has cardinality 0..*, and from 'iOI_Company', the role 'iOI_Company6' has cardinality 0..*.
+An association connects 'iOI_Manager' and 'iOI_Department'. From 'iOI_Manager', the role 'iOI_Manager' has cardinality 0..*, and from 'iOI_Department', the role 'iOI_Department8' has cardinality 0..*.
+An association connects 'iOI_Employee' and 'iOI_Department'. From 'iOI_Employee', the role 'iOI_Employee11' has cardinality 0..*, and from 'iOI_Department', the role 'iOI_Department10' has cardinality 0..*.
+An association connects 'iOI_Department' and 'iOI_Department'. From 'iOI_Department', the role 'iOI_Department12' has cardinality 0..*, and from 'iOI_Department', the role 'iOI_Department14' has cardinality 0..*.

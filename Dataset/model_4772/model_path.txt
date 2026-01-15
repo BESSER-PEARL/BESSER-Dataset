@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/rju/xtext-typing-example/de.cau.cs.se.lad/model/Types.ecore

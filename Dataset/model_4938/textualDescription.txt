@@ -1,0 +1,381 @@
+The domain model 'ric' describes the core structural elements and their relationships within the system.
+
+The model defines 68 main class(es).
+
+'ric_TabbedPanel' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_NavigationRegion' represents an important domain concept.
+It has one attribute: 'orientation', which is of type str.
+
+'ric_Heading' represents an important domain concept.
+It has one attribute: 'level', which is of type str.
+
+'ric_HeaderRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_Image' represents an important domain concept.
+It has the following attributes: 'alt', which is of type str; 'src', which is of type str.
+
+'ric_NumberValueConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_Select' represents an important domain concept.
+It has the following attributes: 'multiple', which is of type bool; 'size', which is of type int.
+
+'FormControlConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_Button' represents an important domain concept.
+It has the following attributes: 'image', which is of type str; 'disabled', which is of type bool; 'type', which is of type str.
+
+'ric_Div' represents an important domain concept.
+It has one attribute: 'align', which is of type str.
+
+'ric_ContentRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_Form' represents an important domain concept.
+It has the following attributes: 'method', which is of type str; 'name', which is of type str.
+
+'ric_Label' represents an important domain concept.
+It has the following attributes: 'format', which is of type str; 'text', which is of type str.
+
+'ric_CheckGroup' represents an important domain concept.
+It has one attribute: 'orientation', which is of type str.
+
+'ric_ValidDateConstraint' represents an important domain concept.
+It has one attribute: 'dateFormat', which is of type str.
+
+'ric_UnorderedList' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'ric_Document' represents an important domain concept.
+It has the following attributes: 'index', which is of type bool; 'fileName', which is of type str; 'title', which is of type str.
+
+'ric_ValueConstraint' represents an important domain concept.
+It has the following attributes: 'matchingValue', which is of type str; 'logicalOperator', which is of type str; 'matchingOperator', which is of type str.
+
+'ric_SelectItem' represents an important domain concept.
+It has the following attributes: 'itemLabel', which is of type str; 'selected', which is of type bool; 'value', which is of type str.
+
+'ric_FooterRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassifiableComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_Event' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'ric_Section' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'ric_PhraseElement' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'phraseType', which is of type str.
+
+'BlockLevelComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_InlineComponent' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'ric_InputFile' represents an important domain concept.
+It has the following attributes: 'maxChars', which is of type int; 'charWidth', which is of type int; 'readonly', which is of type bool.
+
+'ric_MessageDialogButton' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'event', which is of type str.
+
+'ric_EventComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_FormControl' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'ric_MessageDialog' represents an important domain concept.
+It has the following attributes: 'resizable', which is of type bool; 'title', which is of type str; 'modal', which is of type bool; 'height', which is of type int; 'maxHeightResize', which is of type int; 'width', which is of type int; 'message', which is of type str; 'maxWidthResize', which is of type int; 'minWidthResize', which is of type int; 'minHeightResize', which is of type int; 'autoOpen', which is of type bool.
+
+'ric_ObjectComponent' represents an important domain concept.
+It has the following attributes: 'height', which is of type int; 'hspace', which is of type int; 'border', which is of type int; 'vspace', which is of type int; 'width', which is of type int; 'align', which is of type str.
+
+'ric_ListItem' represents an important domain concept.
+It has the following attributes: 'format', which is of type str; 'text', which is of type str.
+
+'ric_Logo' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_IdentifiableComponent' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'ric_LinkGroup' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'ric_Radio' represents an important domain concept.
+It has one attribute: 'checked', which is of type bool.
+
+'ric_OrderedList' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'EventComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_Span' represents an important domain concept.
+It has one attribute: 'align', which is of type str.
+
+'RichWidget' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_Datepicker' represents an important domain concept.
+It has the following attributes: 'locale', which is of type str; 'showButtonImage', which is of type bool; 'showYearMenu', which is of type bool; 'showWeekOfYear', which is of type bool; 'showMonthMenu', which is of type bool; 'numberMonthsToShow', which is of type int; 'showButtonClosePanel', which is of type bool; 'dateFormat', which is of type str.
+
+'ric_AccordionPanel' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_Portal' represents an important domain concept.
+It has the following attributes: 'documentsExtension', which is of type str; 'name', which is of type str.
+
+'ric_ClassifiableComponent' represents an important domain concept.
+It has one attribute: 'class', which is of type str.
+
+'ric_RichWidget' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_BlockLevelComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_List' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_TextField' represents an important domain concept.
+It has the following attributes: 'maxChars', which is of type int; 'password', which is of type bool; 'charWidth', which is of type int; 'readonly', which is of type bool.
+
+'ric_Script' represents an important domain concept.
+It has the following attributes: 'implementation', which is of type str; 'type', which is of type str; 'name', which is of type str.
+
+'ric_RequiredFieldConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_LineBreak' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_Fieldset' represents an important domain concept.
+It has the following attributes: 'legendAlign', which is of type str; 'legendFormat', which is of type str; 'legend', which is of type str.
+
+'InlineComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'FormControl' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_Tab' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'ric_FormControlConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_TextArea' represents an important domain concept.
+It has the following attributes: 'readonly', which is of type bool; 'cols', which is of type int; 'rols', which is of type int.
+
+'ric_ContextualNavigationRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_RadioGroup' represents an important domain concept.
+It has one attribute: 'orientation', which is of type str.
+
+'ric_SearchRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'ric_Link' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'ric_Checkbox' represents an important domain concept.
+It has one attribute: 'checked', which is of type bool.
+
+'ric_Paragraph' represents an important domain concept.
+It has one attribute: 'align', which is of type str.
+
+'TextField' represents an important domain concept.
+It does not declare any attributes.
+
+'IdentifiableComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'List' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MatchingOperator' defines the following possible values: 'LessThan', 'Different', 'GreaterOrEqualsThan', 'Equals', 'Contains', 'LessOrEqualsThan', 'GreaterThan'.
+The enumeration 'Locale' defines the following possible values: 'German', 'Portuguese_Brazilian', 'English_UK', 'Spanish'.
+The enumeration 'Align' defines the following possible values: 'right', 'left', 'center', 'justify'.
+The enumeration 'OrderedListType' defines the following possible values: 'none', 'LowerAlpha', 'ArabicNumber', 'LowerRoman', 'UpperRoman', 'UpperAlpha'.
+The enumeration 'EventType' defines the following possible values: 'onclick', 'onmouseup', 'onselect', 'onunload', 'onfocus', 'onmouseout', 'onchange', 'onmouseover', 'onkeyup', 'onsubmit', 'onblur', 'onmousedown', 'onreset', 'ondblclick', 'onmousemove', 'onkeypress', 'onkeydown', 'onload'.
+The enumeration 'DateFormat' defines the following possible values: 'Default', 'Full', 'ISO8601', 'Medium', 'Short'.
+The enumeration 'PhraseElementType' defines the following possible values: 'StrongerEmphasis', 'Definition', 'ComputerCode', 'SampleProgramOutput', 'Emphasis', 'Abbreviation', 'VariableInstance', 'None', 'EntryFromUser', 'Citation', 'Acronym'.
+The enumeration 'ScriptType' defines the following possible values: 'textVBScript', 'textJavaScript', 'textTcl'.
+The enumeration 'FieldSetLegendAlign' defines the following possible values: 'left', 'right', 'bottom', 'center', 'top'.
+The enumeration 'Orientation' defines the following possible values: 'Vertical', 'Horizontal'.
+The enumeration 'ObjectAlign' defines the following possible values: 'right', 'baseline', 'bottom', 'top', 'middle', 'textTop', 'default', 'left', 'absoluteMiddle', 'absoluteBottom'.
+The enumeration 'LogicalOperator' defines the following possible values: 'AND', 'OR'.
+The enumeration 'Extension' defines the following possible values: 'xhtml', 'jsp', 'html', 'asp', 'php'.
+The enumeration 'SubmitFormMethod' defines the following possible values: 'post', 'get'.
+The enumeration 'MessageDialogEvent' defines a single possible value: 'closeDialog'.
+The enumeration 'HeadingLevel' defines the following possible values: 'h2', 'h4', 'h5', 'h3', 'h1', 'h6'.
+The enumeration 'ButtonType' defines the following possible values: 'Submit', 'Push', 'Reset'.
+The enumeration 'UnorderedListType' defines the following possible values: 'circle', 'disc', 'square', 'none'.
+
+The model also captures inheritance relationships between classes.
+The class 'ric_FormControl' is a specialization of 'IdentifiableComponent'.
+The class 'ric_FormControl' is a specialization of 'ClassifiableComponent'.
+The class 'ric_FormControl' is a specialization of 'EventComponent'.
+The class 'ric_Button' is a specialization of 'FormControl'.
+The class 'ric_Form' is a specialization of 'IdentifiableComponent'.
+The class 'ric_Form' is a specialization of 'ClassifiableComponent'.
+The class 'ric_Form' is a specialization of 'EventComponent'.
+The class 'ric_TextField' is a specialization of 'FormControl'.
+The class 'ric_InputFile' is a specialization of 'FormControl'.
+The class 'ric_TextArea' is a specialization of 'FormControl'.
+The class 'ric_Checkbox' is a specialization of 'FormControl'.
+The class 'ric_Radio' is a specialization of 'FormControl'.
+The class 'ric_Select' is a specialization of 'FormControl'.
+The class 'ric_Label' is a specialization of 'IdentifiableComponent'.
+The class 'ric_Label' is a specialization of 'ClassifiableComponent'.
+The class 'ric_Fieldset' is a specialization of 'EventComponent'.
+The class 'ric_Fieldset' is a specialization of 'IdentifiableComponent'.
+The class 'ric_Fieldset' is a specialization of 'ClassifiableComponent'.
+The class 'ric_Div' is a specialization of 'ClassifiableComponent'.
+The class 'ric_Div' is a specialization of 'IdentifiableComponent'.
+The class 'ric_Div' is a specialization of 'EventComponent'.
+The class 'ric_Div' is a specialization of 'BlockLevelComponent'.
+The class 'ric_Span' is a specialization of 'ClassifiableComponent'.
+The class 'ric_Span' is a specialization of 'IdentifiableComponent'.
+The class 'ric_Span' is a specialization of 'EventComponent'.
+The class 'ric_Span' is a specialization of 'InlineComponent'.
+The class 'ric_Heading' is a specialization of 'ClassifiableComponent'.
+The class 'ric_Heading' is a specialization of 'IdentifiableComponent'.
+The class 'ric_Heading' is a specialization of 'EventComponent'.
+The class 'ric_Heading' is a specialization of 'InlineComponent'.
+The class 'ric_PhraseElement' is a specialization of 'IdentifiableComponent'.
+The class 'ric_PhraseElement' is a specialization of 'ClassifiableComponent'.
+The class 'ric_PhraseElement' is a specialization of 'EventComponent'.
+The class 'ric_PhraseElement' is a specialization of 'InlineComponent'.
+The class 'ric_Paragraph' is a specialization of 'ClassifiableComponent'.
+The class 'ric_Paragraph' is a specialization of 'IdentifiableComponent'.
+The class 'ric_Paragraph' is a specialization of 'InlineComponent'.
+The class 'ric_Paragraph' is a specialization of 'EventComponent'.
+The class 'ric_LineBreak' is a specialization of 'ClassifiableComponent'.
+The class 'ric_LineBreak' is a specialization of 'IdentifiableComponent'.
+The class 'ric_Link' is a specialization of 'ClassifiableComponent'.
+The class 'ric_Link' is a specialization of 'EventComponent'.
+The class 'ric_Link' is a specialization of 'IdentifiableComponent'.
+The class 'ric_Link' is a specialization of 'InlineComponent'.
+The class 'ric_Image' is a specialization of 'ClassifiableComponent'.
+The class 'ric_Image' is a specialization of 'EventComponent'.
+The class 'ric_Image' is a specialization of 'IdentifiableComponent'.
+The class 'ric_Image' is a specialization of 'ObjectComponent'.
+The class 'ric_RichWidget' is a specialization of 'ClassifiableComponent'.
+The class 'ric_RichWidget' is a specialization of 'IdentifiableComponent'.
+The class 'ric_TabbedPanel' is a specialization of 'RichWidget'.
+The class 'ric_AccordionPanel' is a specialization of 'RichWidget'.
+The class 'ric_MessageDialog' is a specialization of 'RichWidget'.
+The class 'ric_Datepicker' is a specialization of 'RichWidget'.
+The class 'ric_Datepicker' is a specialization of 'TextField'.
+The class 'ric_ValueConstraint' is a specialization of 'FormControlConstraint'.
+The class 'ric_NumberValueConstraint' is a specialization of 'FormControlConstraint'.
+The class 'ric_RequiredFieldConstraint' is a specialization of 'FormControlConstraint'.
+The class 'ric_ValidDateConstraint' is a specialization of 'FormControlConstraint'.
+The class 'ric_Document' is a specialization of 'EventComponent'.
+The class 'ric_List' is a specialization of 'ClassifiableComponent'.
+The class 'ric_List' is a specialization of 'EventComponent'.
+The class 'ric_List' is a specialization of 'IdentifiableComponent'.
+The class 'ric_OrderedList' is a specialization of 'List'.
+The class 'ric_UnorderedList' is a specialization of 'List'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ric_Event' and 'ric_EventComponent'. From 'ric_Event', the role 'ric_Event' has cardinality 0..*, and from 'ric_EventComponent', the role 'ric_EventComponent' has cardinality 0..*.
+An association connects 'ric_Label' and 'ric_FormControl'. From 'ric_Label', the role 'ric_Label' has cardinality 0..*, and from 'ric_FormControl', the role 'ric_FormControl' has cardinality 0..*.
+An association connects 'ric_PhraseElement' and 'ric_FormControl'. From 'ric_PhraseElement', the role 'ric_PhraseElement' has cardinality 0..*, and from 'ric_FormControl', the role 'ric_FormControl3' has cardinality 0..*.
+An association connects 'ric_FormControl' and 'ric_ValueConstraint'. From 'ric_FormControl', the role 'ric_FormControl5' has cardinality 0..*, and from 'ric_ValueConstraint', the role 'ric_ValueConstraint' has cardinality 0..*.
+An association connects 'ric_FormControl' and 'ric_NumberValueConstraint'. From 'ric_FormControl', the role 'ric_FormControl7' has cardinality 0..*, and from 'ric_NumberValueConstraint', the role 'ric_NumberValueConstraint' has cardinality 0..*.
+An association connects 'ric_RequiredFieldConstraint' and 'ric_FormControl'. From 'ric_RequiredFieldConstraint', the role 'ric_RequiredFieldConstraint' has cardinality 0..*, and from 'ric_FormControl', the role 'ric_FormControl9' has cardinality 0..*.
+An association connects 'ric_ValidDateConstraint' and 'ric_FormControl'. From 'ric_ValidDateConstraint', the role 'ric_ValidDateConstraint' has cardinality 0..*, and from 'ric_FormControl', the role 'ric_FormControl11' has cardinality 0..*.
+An association connects 'ric_Script' and 'ric_Event'. From 'ric_Script', the role 'ric_Script' has cardinality 0..*, and from 'ric_Event', the role 'ric_Event13' has cardinality 0..*.
+An association connects 'ric_Form' and 'ric_Document'. From 'ric_Form', the role 'ric_Form' has cardinality 0..*, and from 'ric_Document', the role 'ric_Document' has cardinality 0..*.
+An association connects 'ric_Form' and 'ric_Fieldset'. From 'ric_Form', the role 'ric_Form16' has cardinality 0..*, and from 'ric_Fieldset', the role 'ric_Fieldset' has cardinality 0..*.
+An association connects 'ric_BlockLevelComponent' and 'ric_Form'. From 'ric_BlockLevelComponent', the role 'ric_BlockLevelComponent' has cardinality 0..*, and from 'ric_Form', the role 'ric_Form18' has cardinality 0..*.
+An association connects 'ric_Form' and 'ric_InlineComponent'. From 'ric_Form', the role 'ric_Form20' has cardinality 0..*, and from 'ric_InlineComponent', the role 'ric_InlineComponent' has cardinality 0..*.
+An association connects 'ric_SelectItem' and 'ric_Select'. From 'ric_SelectItem', the role 'ric_SelectItem' has cardinality 0..*, and from 'ric_Select', the role 'ric_Select' has cardinality 0..*.
+An association connects 'ric_Label' and 'ric_Event'. From 'ric_Label', the role 'ric_Label23' has cardinality 0..*, and from 'ric_Event', the role 'ric_Event24' has cardinality 0..*.
+An association connects 'ric_Fieldset' and 'ric_FormControl'. From 'ric_Fieldset', the role 'ric_Fieldset26' has cardinality 0..*, and from 'ric_FormControl', the role 'ric_FormControl27' has cardinality 0..*.
+An association connects 'ric_RadioGroup' and 'ric_Fieldset'. From 'ric_RadioGroup', the role 'ric_RadioGroup' has cardinality 0..*, and from 'ric_Fieldset', the role 'ric_Fieldset29' has cardinality 0..*.
+An association connects 'ric_Fieldset' and 'ric_CheckGroup'. From 'ric_Fieldset', the role 'ric_Fieldset31' has cardinality 0..*, and from 'ric_CheckGroup', the role 'ric_CheckGroup' has cardinality 0..*.
+An association connects 'ric_Div' and 'ric_ObjectComponent'. From 'ric_Div', the role 'ric_Div' has cardinality 0..*, and from 'ric_ObjectComponent', the role 'ric_ObjectComponent' has cardinality 0..*.
+An association connects 'ric_LineBreak' and 'ric_Div'. From 'ric_LineBreak', the role 'ric_LineBreak' has cardinality 0..*, and from 'ric_Div', the role 'ric_Div34' has cardinality 0..*.
+An association connects 'ric_RichWidget' and 'ric_Div'. From 'ric_RichWidget', the role 'ric_RichWidget' has cardinality 0..*, and from 'ric_Div', the role 'ric_Div36' has cardinality 0..*.
+An association connects 'ric_List' and 'ric_Div'. From 'ric_List', the role 'ric_List' has cardinality 0..*, and from 'ric_Div', the role 'ric_Div38' has cardinality 0..*.
+An association connects 'ric_Div' and 'ric_Form'. From 'ric_Div', the role 'ric_Div40' has cardinality 0..*, and from 'ric_Form', the role 'ric_Form41' has cardinality 0..*.
+An association connects 'ric_Div' and 'ric_Fieldset'. From 'ric_Div', the role 'ric_Div43' has cardinality 0..*, and from 'ric_Fieldset', the role 'ric_Fieldset44' has cardinality 0..*.
+An association connects 'ric_BlockLevelComponent' and 'ric_BlockLevelComponent'. From 'ric_BlockLevelComponent', the role 'ric_BlockLevelComponent45' has cardinality 0..*, and from 'ric_BlockLevelComponent', the role 'ric_BlockLevelComponent47' has cardinality 0..*.
+An association connects 'ric_BlockLevelComponent' and 'ric_InlineComponent'. From 'ric_BlockLevelComponent', the role 'ric_BlockLevelComponent49' has cardinality 0..*, and from 'ric_InlineComponent', the role 'ric_InlineComponent50' has cardinality 0..*.
+An association connects 'ric_InlineComponent' and 'ric_InlineComponent'. From 'ric_InlineComponent', the role 'ric_InlineComponent53' has cardinality 0..*, and from 'ric_InlineComponent', the role 'ric_InlineComponent51' has cardinality 0..*.
+An association connects 'ric_Link' and 'ric_Document'. From 'ric_Link', the role 'ric_Link' has cardinality 0..*, and from 'ric_Document', the role 'ric_Document55' has cardinality 0..*.
+An association connects 'ric_TabbedPanel' and 'ric_Tab'. From 'ric_TabbedPanel', the role 'ric_TabbedPanel' has cardinality 0..*, and from 'ric_Tab', the role 'ric_Tab' has cardinality 0..*.
+An association connects 'ric_InlineComponent' and 'ric_Tab'. From 'ric_InlineComponent', the role 'ric_InlineComponent59' has cardinality 0..*, and from 'ric_Tab', the role 'ric_Tab58' has cardinality 0..*.
+An association connects 'ric_Tab' and 'ric_BlockLevelComponent'. From 'ric_Tab', the role 'ric_Tab61' has cardinality 0..*, and from 'ric_BlockLevelComponent', the role 'ric_BlockLevelComponent62' has cardinality 0..*.
+An association connects 'ric_Tab' and 'ric_ObjectComponent'. From 'ric_Tab', the role 'ric_Tab64' has cardinality 0..*, and from 'ric_ObjectComponent', the role 'ric_ObjectComponent65' has cardinality 0..*.
+An association connects 'ric_Tab' and 'ric_LineBreak'. From 'ric_Tab', the role 'ric_Tab67' has cardinality 0..*, and from 'ric_LineBreak', the role 'ric_LineBreak68' has cardinality 0..*.
+An association connects 'ric_Tab' and 'ric_RichWidget'. From 'ric_Tab', the role 'ric_Tab70' has cardinality 0..*, and from 'ric_RichWidget', the role 'ric_RichWidget71' has cardinality 0..*.
+An association connects 'ric_List' and 'ric_Tab'. From 'ric_List', the role 'ric_List74' has cardinality 0..*, and from 'ric_Tab', the role 'ric_Tab73' has cardinality 0..*.
+An association connects 'ric_Tab' and 'ric_Form'. From 'ric_Tab', the role 'ric_Tab76' has cardinality 0..*, and from 'ric_Form', the role 'ric_Form77' has cardinality 0..*.
+An association connects 'ric_Section' and 'ric_AccordionPanel'. From 'ric_Section', the role 'ric_Section' has cardinality 0..*, and from 'ric_AccordionPanel', the role 'ric_AccordionPanel' has cardinality 0..*.
+An association connects 'ric_InlineComponent' and 'ric_Section'. From 'ric_InlineComponent', the role 'ric_InlineComponent81' has cardinality 0..*, and from 'ric_Section', the role 'ric_Section80' has cardinality 0..*.
+An association connects 'ric_BlockLevelComponent' and 'ric_Section'. From 'ric_BlockLevelComponent', the role 'ric_BlockLevelComponent84' has cardinality 0..*, and from 'ric_Section', the role 'ric_Section83' has cardinality 0..*.
+An association connects 'ric_ObjectComponent' and 'ric_Section'. From 'ric_ObjectComponent', the role 'ric_ObjectComponent87' has cardinality 0..*, and from 'ric_Section', the role 'ric_Section86' has cardinality 0..*.
+An association connects 'ric_LineBreak' and 'ric_Section'. From 'ric_LineBreak', the role 'ric_LineBreak90' has cardinality 0..*, and from 'ric_Section', the role 'ric_Section89' has cardinality 0..*.
+An association connects 'ric_Section' and 'ric_RichWidget'. From 'ric_Section', the role 'ric_Section92' has cardinality 0..*, and from 'ric_RichWidget', the role 'ric_RichWidget93' has cardinality 0..*.
+An association connects 'ric_List' and 'ric_Section'. From 'ric_List', the role 'ric_List96' has cardinality 0..*, and from 'ric_Section', the role 'ric_Section95' has cardinality 0..*.
+An association connects 'ric_Form' and 'ric_Section'. From 'ric_Form', the role 'ric_Form99' has cardinality 0..*, and from 'ric_Section', the role 'ric_Section98' has cardinality 0..*.
+An association connects 'ric_MessageDialog' and 'ric_MessageDialogButton'. From 'ric_MessageDialog', the role 'ric_MessageDialog' has cardinality 0..*, and from 'ric_MessageDialogButton', the role 'ric_MessageDialogButton' has cardinality 0..*.
+An association connects 'ric_Portal' and 'ric_HeaderRegion'. From 'ric_Portal', the role 'ric_Portal' has cardinality 0..*, and from 'ric_HeaderRegion', the role 'ric_HeaderRegion' has cardinality 0..*.
+An association connects 'ric_NavigationRegion' and 'ric_Portal'. From 'ric_NavigationRegion', the role 'ric_NavigationRegion' has cardinality 0..*, and from 'ric_Portal', the role 'ric_Portal103' has cardinality 0..*.
+An association connects 'ric_Portal' and 'ric_ContextualNavigationRegion'. From 'ric_Portal', the role 'ric_Portal105' has cardinality 0..*, and from 'ric_ContextualNavigationRegion', the role 'ric_ContextualNavigationRegion' has cardinality 0..*.
+An association connects 'ric_Portal' and 'ric_SearchRegion'. From 'ric_Portal', the role 'ric_Portal107' has cardinality 0..*, and from 'ric_SearchRegion', the role 'ric_SearchRegion' has cardinality 0..*.
+An association connects 'ric_ContentRegion' and 'ric_Portal'. From 'ric_ContentRegion', the role 'ric_ContentRegion' has cardinality 0..*, and from 'ric_Portal', the role 'ric_Portal109' has cardinality 0..*.
+An association connects 'ric_Portal' and 'ric_FooterRegion'. From 'ric_Portal', the role 'ric_Portal111' has cardinality 0..*, and from 'ric_FooterRegion', the role 'ric_FooterRegion' has cardinality 0..*.
+An association connects 'ric_HeaderRegion' and 'ric_Logo'. From 'ric_HeaderRegion', the role 'ric_HeaderRegion113' has cardinality 0..*, and from 'ric_Logo', the role 'ric_Logo' has cardinality 0..*.
+An association connects 'ric_NavigationRegion' and 'ric_HeaderRegion'. From 'ric_NavigationRegion', the role 'ric_NavigationRegion116' has cardinality 0..*, and from 'ric_HeaderRegion', the role 'ric_HeaderRegion115' has cardinality 0..*.
+An association connects 'ric_InlineComponent' and 'ric_HeaderRegion'. From 'ric_InlineComponent', the role 'ric_InlineComponent119' has cardinality 0..*, and from 'ric_HeaderRegion', the role 'ric_HeaderRegion118' has cardinality 0..*.
+An association connects 'ric_HeaderRegion' and 'ric_LineBreak'. From 'ric_HeaderRegion', the role 'ric_HeaderRegion121' has cardinality 0..*, and from 'ric_LineBreak', the role 'ric_LineBreak122' has cardinality 0..*.
+An association connects 'ric_Image' and 'ric_Logo'. From 'ric_Image', the role 'ric_Image' has cardinality 0..*, and from 'ric_Logo', the role 'ric_Logo124' has cardinality 0..*.
+An association connects 'ric_NavigationRegion' and 'ric_LinkGroup'. From 'ric_NavigationRegion', the role 'ric_NavigationRegion126' has cardinality 0..*, and from 'ric_LinkGroup', the role 'ric_LinkGroup' has cardinality 0..*.
+An association connects 'ric_ContextualNavigationRegion' and 'ric_InlineComponent'. From 'ric_ContextualNavigationRegion', the role 'ric_ContextualNavigationRegion128' has cardinality 0..*, and from 'ric_InlineComponent', the role 'ric_InlineComponent129' has cardinality 0..*.
+An association connects 'ric_BlockLevelComponent' and 'ric_ContextualNavigationRegion'. From 'ric_BlockLevelComponent', the role 'ric_BlockLevelComponent132' has cardinality 0..*, and from 'ric_ContextualNavigationRegion', the role 'ric_ContextualNavigationRegion131' has cardinality 0..*.
+An association connects 'ric_ContextualNavigationRegion' and 'ric_ObjectComponent'. From 'ric_ContextualNavigationRegion', the role 'ric_ContextualNavigationRegion134' has cardinality 0..*, and from 'ric_ObjectComponent', the role 'ric_ObjectComponent135' has cardinality 0..*.
+An association connects 'ric_ContextualNavigationRegion' and 'ric_LineBreak'. From 'ric_ContextualNavigationRegion', the role 'ric_ContextualNavigationRegion137' has cardinality 0..*, and from 'ric_LineBreak', the role 'ric_LineBreak138' has cardinality 0..*.
+An association connects 'ric_ContextualNavigationRegion' and 'ric_RichWidget'. From 'ric_ContextualNavigationRegion', the role 'ric_ContextualNavigationRegion140' has cardinality 0..*, and from 'ric_RichWidget', the role 'ric_RichWidget141' has cardinality 0..*.
+An association connects 'ric_ContextualNavigationRegion' and 'ric_List'. From 'ric_ContextualNavigationRegion', the role 'ric_ContextualNavigationRegion143' has cardinality 0..*, and from 'ric_List', the role 'ric_List144' has cardinality 0..*.
+An association connects 'ric_Form' and 'ric_ContextualNavigationRegion'. From 'ric_Form', the role 'ric_Form147' has cardinality 0..*, and from 'ric_ContextualNavigationRegion', the role 'ric_ContextualNavigationRegion146' has cardinality 0..*.
+An association connects 'ric_SearchRegion' and 'ric_Form'. From 'ric_SearchRegion', the role 'ric_SearchRegion149' has cardinality 0..*, and from 'ric_Form', the role 'ric_Form150' has cardinality 0..*.
+An association connects 'ric_Document' and 'ric_ContentRegion'. From 'ric_Document', the role 'ric_Document153' has cardinality 0..*, and from 'ric_ContentRegion', the role 'ric_ContentRegion152' has cardinality 0..*.
+An association connects 'ric_InlineComponent' and 'ric_Document'. From 'ric_InlineComponent', the role 'ric_InlineComponent156' has cardinality 0..*, and from 'ric_Document', the role 'ric_Document155' has cardinality 0..*.
+An association connects 'ric_BlockLevelComponent' and 'ric_Document'. From 'ric_BlockLevelComponent', the role 'ric_BlockLevelComponent159' has cardinality 0..*, and from 'ric_Document', the role 'ric_Document158' has cardinality 0..*.
+An association connects 'ric_Document' and 'ric_ObjectComponent'. From 'ric_Document', the role 'ric_Document161' has cardinality 0..*, and from 'ric_ObjectComponent', the role 'ric_ObjectComponent162' has cardinality 0..*.
+An association connects 'ric_Document' and 'ric_LineBreak'. From 'ric_Document', the role 'ric_Document164' has cardinality 0..*, and from 'ric_LineBreak', the role 'ric_LineBreak165' has cardinality 0..*.
+An association connects 'ric_RichWidget' and 'ric_Document'. From 'ric_RichWidget', the role 'ric_RichWidget168' has cardinality 0..*, and from 'ric_Document', the role 'ric_Document167' has cardinality 0..*.
+An association connects 'ric_Document' and 'ric_List'. From 'ric_Document', the role 'ric_Document170' has cardinality 0..*, and from 'ric_List', the role 'ric_List171' has cardinality 0..*.
+An association connects 'ric_Form' and 'ric_Document'. From 'ric_Form', the role 'ric_Form174' has cardinality 0..*, and from 'ric_Document', the role 'ric_Document173' has cardinality 0..*.
+An association connects 'ric_FooterRegion' and 'ric_InlineComponent'. From 'ric_FooterRegion', the role 'ric_FooterRegion176' has cardinality 0..*, and from 'ric_InlineComponent', the role 'ric_InlineComponent177' has cardinality 0..*.
+An association connects 'ric_BlockLevelComponent' and 'ric_FooterRegion'. From 'ric_BlockLevelComponent', the role 'ric_BlockLevelComponent180' has cardinality 0..*, and from 'ric_FooterRegion', the role 'ric_FooterRegion179' has cardinality 0..*.
+An association connects 'ric_ObjectComponent' and 'ric_FooterRegion'. From 'ric_ObjectComponent', the role 'ric_ObjectComponent183' has cardinality 0..*, and from 'ric_FooterRegion', the role 'ric_FooterRegion182' has cardinality 0..*.
+An association connects 'ric_FooterRegion' and 'ric_LineBreak'. From 'ric_FooterRegion', the role 'ric_FooterRegion185' has cardinality 0..*, and from 'ric_LineBreak', the role 'ric_LineBreak186' has cardinality 0..*.
+An association connects 'ric_RichWidget' and 'ric_FooterRegion'. From 'ric_RichWidget', the role 'ric_RichWidget189' has cardinality 0..*, and from 'ric_FooterRegion', the role 'ric_FooterRegion188' has cardinality 0..*.
+An association connects 'ric_OrderedList' and 'ric_ListItem'. From 'ric_OrderedList', the role 'ric_OrderedList' has cardinality 0..*, and from 'ric_ListItem', the role 'ric_ListItem' has cardinality 0..*.
+An association connects 'ric_UnorderedList' and 'ric_ListItem'. From 'ric_UnorderedList', the role 'ric_UnorderedList' has cardinality 0..*, and from 'ric_ListItem', the role 'ric_ListItem192' has cardinality 0..*.
+An association connects 'ric_Radio' and 'ric_RadioGroup'. From 'ric_Radio', the role 'ric_Radio' has cardinality 0..*, and from 'ric_RadioGroup', the role 'ric_RadioGroup194' has cardinality 0..*.
+An association connects 'ric_Label' and 'ric_RadioGroup'. From 'ric_Label', the role 'ric_Label197' has cardinality 0..*, and from 'ric_RadioGroup', the role 'ric_RadioGroup196' has cardinality 0..*.
+An association connects 'ric_CheckGroup' and 'ric_Checkbox'. From 'ric_CheckGroup', the role 'ric_CheckGroup199' has cardinality 0..*, and from 'ric_Checkbox', the role 'ric_Checkbox' has cardinality 0..*.
+An association connects 'ric_CheckGroup' and 'ric_Label'. From 'ric_CheckGroup', the role 'ric_CheckGroup201' has cardinality 0..*, and from 'ric_Label', the role 'ric_Label202' has cardinality 0..*.
+An association connects 'ric_Link' and 'ric_LinkGroup'. From 'ric_Link', the role 'ric_Link205' has cardinality 0..*, and from 'ric_LinkGroup', the role 'ric_LinkGroup204' has cardinality 0..*.
+An association connects 'ric_LinkGroup' and 'ric_LinkGroup'. From 'ric_LinkGroup', the role 'ric_LinkGroup208' has cardinality 0..*, and from 'ric_LinkGroup', the role 'ric_LinkGroup206' has cardinality 0..*.

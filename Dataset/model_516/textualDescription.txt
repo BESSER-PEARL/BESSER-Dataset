@@ -1,0 +1,23 @@
+The domain model 'familyleft1' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'familyleft1_Father' represents an important domain concept.
+It has the following attributes: 'age', which is of type int; 'name', which is of type str.
+
+'familyleft1_Family' represents an important domain concept.
+It has the following attributes: 'surname', which is of type str; 'location', which is of type str.
+
+'familyleft1_Mother' represents an important domain concept.
+It has the following attributes: 'age', which is of type int; 'name', which is of type str.
+
+'familyleft1_Son' represents an important domain concept.
+It has the following attributes: 'age', which is of type int; 'name', which is of type str; 'sex', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'familyleft1_Father' and 'familyleft1_Family'. From 'familyleft1_Father', the role 'father' has cardinality 0..*, and from 'familyleft1_Family', the role 'Family' has cardinality 0..*.
+An association connects 'familyleft1_Mother' and 'familyleft1_Family'. From 'familyleft1_Mother', the role 'mother' has cardinality 0..*, and from 'familyleft1_Family', the role 'Family2' has cardinality 0..*.
+An association connects 'familyleft1_Family' and 'familyleft1_Son'. From 'familyleft1_Family', the role 'Family4' has cardinality 0..*, and from 'familyleft1_Son', the role 'sons' has cardinality 0..*.
+An association connects 'familyleft1_Father' and 'familyleft1_Family'. From 'familyleft1_Father', the role 'Father' has cardinality 0..*, and from 'familyleft1_Family', the role 'family' has cardinality 0..*.
+An association connects 'familyleft1_Family' and 'familyleft1_Mother'. From 'familyleft1_Family', the role 'family7' has cardinality 0..*, and from 'familyleft1_Mother', the role 'Mother' has cardinality 0..*.
+An association connects 'familyleft1_Son' and 'familyleft1_Family'. From 'familyleft1_Son', the role 'Son' has cardinality 0..*, and from 'familyleft1_Family', the role 'family9' has cardinality 0..*.

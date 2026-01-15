@@ -1,0 +1,1472 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 309 main class(es).
+
+'PortType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Extension' represents an important domain concept.
+It has the following attributes: 'namespace', which is of type str; 'mustUnderstand', which is of type str.
+
+'model_OnMessage' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_IElementExtensible' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_Binding' represents an important domain concept.
+It has the following attributes: 'undefined', which is of type bool; 'qName', which is of type str.
+
+'model_wsdl_BindingFault' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_xsd_XSDFundamentalFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Pick' represents an important domain concept.
+It has one attribute: 'createInstance', which is of type str.
+
+'model_wsdl_ExtensibleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Message' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Scope' represents an important domain concept.
+It has the following attributes: 'exitOnStandardFault', which is of type str; 'isolated', which is of type str.
+
+'model_wsdl_Part' represents an important domain concept.
+It has the following attributes: 'elementName', which is of type str; 'typeName', which is of type str; 'name', which is of type str.
+
+'model_xsd_XSDTotalDigitsFacet' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'wsdl_IElementExtensible' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDAttributeGroupDefinition' represents an important domain concept.
+It has one attribute: 'attributeGroupDefinitionReference', which is of type bool.
+
+'IExtensibilityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDFractionDigitsFacet' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'model_wsdl_IOutput' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDOrderedFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_Namespace' represents an important domain concept.
+It has the following attributes: 'URI', which is of type str; 'prefix', which is of type str.
+
+'model_wsdl_IBindingFault' represents an important domain concept.
+It does not declare any attributes.
+
+'xsd_XSDNamedComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Targets' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDLengthFacet' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'model_xsd_XSDFacet' represents an important domain concept.
+It has the following attributes: 'facetName', which is of type str; 'effectiveValue', which is of type str; 'lexicalValue', which is of type str.
+
+'model_CorrelationSets' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_Import' represents an important domain concept.
+It has the following attributes: 'namespaceURI', which is of type str; 'locationURI', which is of type str.
+
+'XSDXPathDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Assign' represents an important domain concept.
+It has one attribute: 'validate', which is of type str.
+
+'XSDRepeatableFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'Query' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDMinExclusiveFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDMinFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'model_messageproperties_PropertyAlias' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'ID', which is of type str; 'propertyName', which is of type str; 'messageType', which is of type str; 'part', which is of type str; 'XSDElement', which is of type str.
+
+'model_Compensate' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDMinInclusiveFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDDiagnostic' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_BindingOperation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_Link' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'xsd_XSDFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDNumericFacet' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'model_Documentation' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'source', which is of type str; 'lang', which is of type str.
+
+'model_wsdl_Definition' represents an important domain concept.
+It has the following attributes: 'encoding', which is of type str; 'qName', which is of type str; 'targetNamespace', which is of type str; 'location', which is of type str.
+
+'model_ElseIf' represents an important domain concept.
+It does not declare any attributes.
+
+'xsd_XSDSchemaContent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_While' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDNamedComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDElementDeclaration' represents an important domain concept.
+It has the following attributes: 'lexicalFinal', which is of type str; 'block', which is of type str; 'substitutionGroupExclusions', which is of type str; 'nillable', which is of type bool; 'elementDeclarationReference', which is of type bool; 'circular', which is of type bool; 'disallowedSubstitutions', which is of type str; 'abstract', which is of type bool.
+
+'model_PartnerLink' represents an important domain concept.
+It has the following attributes: 'initializePartnerRole', which is of type str; 'name', which is of type str.
+
+'model_UnknownExtensibilityAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_IBindingOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_IDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'wsdl_IPart' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Rethrow' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_IMap' represents an important domain concept.
+It does not declare any attributes.
+
+'model_RepeatUntil' represents an important domain concept.
+It does not declare any attributes.
+
+'wsdl_IExtensibilityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDParticleContent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Target' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDNamedComponent' represents an important domain concept.
+It has the following attributes: 'aliasURI', which is of type str; 'targetNamespace', which is of type str; 'name', which is of type str; 'aliasName', which is of type str; 'uRI', which is of type str; 'qName', which is of type str.
+
+'XSDMaxInclusiveFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_Output' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BPELExtensibleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'wsdl_IDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_EventHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDAttributeGroupContent' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_UnknownExtensibilityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDWhiteSpaceFacet' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'model_xsd_XSDCardinalityFacet' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'xsd_XSDAttributeGroupContent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Invoke' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Expression' represents an important domain concept.
+It has the following attributes: 'opaque', which is of type str; 'body', which is of type str; 'expressionLanguage', which is of type str.
+
+'model_CatchAll' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractAssignBound' represents an important domain concept.
+It does not declare any attributes.
+
+'wsdl_ExtensibleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_IObject' represents an important domain concept.
+It does not declare any attributes.
+
+'Output' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractAssignBound' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDMaxExclusiveFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'Service' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDSchemaCompositor' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Process' represents an important domain concept.
+It has the following attributes: 'targetNamespace', which is of type str; 'expressionLanguage', which is of type str; 'queryLanguage', which is of type str; 'abstractProcessProfile', which is of type str; 'suppressJoinFailure', which is of type str; 'name', which is of type str; 'exitOnStandardFault', which is of type str; 'variableAccessSerializable', which is of type str.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'wsdl_IOutput' represents an important domain concept.
+It does not declare any attributes.
+
+'wsdl_IBindingFault' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_IImport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDImport' represents an important domain concept.
+It has one attribute: 'namespace', which is of type str.
+
+'XSDLengthFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ForEach' represents an important domain concept.
+It has one attribute: 'parallel', which is of type str.
+
+'model_xsd_XSDScope' represents an important domain concept.
+It does not declare any attributes.
+
+'BindingInput' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDRedefinableComponent' represents an important domain concept.
+It has one attribute: 'circular', which is of type bool.
+
+'XSDConstrainingFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDCardinalityFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDMaxLengthFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ToParts' represents an important domain concept.
+It does not declare any attributes.
+
+'wsdl_IPortType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'Import' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDFixedFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'model_partnerlinktype_PartnerLinkType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'ID', which is of type str.
+
+'model_Else' represents an important domain concept.
+It does not declare any attributes.
+
+'model_OnEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'wsdl_IBindingInput' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDOrderedFacet' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'XSDSchema' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDParticle' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_Port' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_xsd_XSDAttributeDeclaration' represents an important domain concept.
+It has one attribute: 'attributeDeclarationReference', which is of type bool.
+
+'model_xsd_XSDModelGroup' represents an important domain concept.
+It has one attribute: 'compositor', which is of type str.
+
+'model_wsdl_BindingOutput' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_xsd_XSDEnumerationFacet' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'WSDLElement' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDFractionDigitsFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDConcreteComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_PartnerLinks' represents an important domain concept.
+It does not declare any attributes.
+
+'model_To' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_Input' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDComplexTypeContent' represents an important domain concept.
+It does not declare any attributes.
+
+'Role' represents an important domain concept.
+It does not declare any attributes.
+
+'wsdl_IImport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDMinInclusiveFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_MessageReference' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_xsd_XSDConcreteComponent' represents an important domain concept.
+It has one attribute: 'element', which is of type str.
+
+'model_xsd_XSDMaxFacet' represents an important domain concept.
+It has the following attributes: 'exclusive', which is of type bool; 'value', which is of type str; 'inclusive', which is of type bool.
+
+'model_OnAlarm' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_IPart' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_XSDSchemaExtensibilityElement' represents an important domain concept.
+It has one attribute: 'documentBaseURI', which is of type str.
+
+'model_xsd_XSDIdentityConstraintDefinition' represents an important domain concept.
+It has one attribute: 'identityConstraintCategory', which is of type str.
+
+'wsdl_IMessage' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDSchema' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'blockDefault', which is of type str; 'targetNamespace', which is of type str; 'finalDefault', which is of type str; 'elementFormDefault', which is of type str; 'document', which is of type str; 'attributeFormDefault', which is of type str; 'schemaLocation', which is of type str.
+
+'model_xsd_XSDComplexTypeDefinition' represents an important domain concept.
+It has the following attributes: 'derivationMethod', which is of type str; 'contentTypeCategory', which is of type str; 'prohibitedSubstitutions', which is of type str; 'lexicalFinal', which is of type str; 'final', which is of type str; 'abstract', which is of type bool; 'mixed', which is of type bool; 'block', which is of type str.
+
+'XSDSchemaContent' represents an important domain concept.
+It does not declare any attributes.
+
+'Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDParticleContent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_FromPart' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CorrelationSet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_wsdl_IIterator' represents an important domain concept.
+It does not declare any attributes.
+
+'Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Variables' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Wait' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Links' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_IBindingOutput' represents an important domain concept.
+It does not declare any attributes.
+
+'xsd_XSDRedefineContent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MessageExchange' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_xsd_XSDSchemaDirective' represents an important domain concept.
+It has one attribute: 'schemaLocation', which is of type str.
+
+'Input' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDSchemaCompositor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDParticle' represents an important domain concept.
+It has the following attributes: 'maxOccurs', which is of type int; 'minOccurs', which is of type int.
+
+'model_TerminationHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'xsd_XSDComplexTypeContent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_ISchema' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_PortType' represents an important domain concept.
+It has the following attributes: 'undefined', which is of type bool; 'qName', which is of type str.
+
+'model_wsdl_IInput' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDTotalDigitsFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MessageExchanges' represents an important domain concept.
+It does not declare any attributes.
+
+'xsd_XSDRedefinableComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDPatternFacet' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'model_Throw' represents an important domain concept.
+It has one attribute: 'faultName', which is of type str.
+
+'XSDSchemaDirective' represents an important domain concept.
+It does not declare any attributes.
+
+'PartnerLinkType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Validate' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDMaxInclusiveFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'model_messageproperties_Query' represents an important domain concept.
+It has the following attributes: 'queryLanguage', which is of type str; 'value', which is of type str.
+
+'XSDSimpleTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_OpaqueActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDDiagnostic' represents an important domain concept.
+It has the following attributes: 'line', which is of type int; 'message', which is of type str; 'severity', which is of type str; 'key', which is of type str; 'column', which is of type int; 'annotationURI', which is of type str; 'locationURI', which is of type str; 'substitutions', which is of type str; 'node', which is of type str.
+
+'model_wsdl_Operation' represents an important domain concept.
+It has the following attributes: 'undefined', which is of type bool; 'style', which is of type str; 'name', which is of type str.
+
+'ExtensibilityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Sources' represents an important domain concept.
+It does not declare any attributes.
+
+'wsdl_IBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_IFault' represents an important domain concept.
+It does not declare any attributes.
+
+'wsdl_IService' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDMaxExclusiveFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_BindingInput' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'XSDFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDElementDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDAttributeUse' represents an important domain concept.
+It has the following attributes: 'required', which is of type bool; 'use', which is of type str; 'constraint', which is of type str; 'value', which is of type str; 'lexicalValue', which is of type str.
+
+'model_wsdl_IPort' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDMinFacet' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'inclusive', which is of type bool; 'exclusive', which is of type bool.
+
+'XSDNumericFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'model_PartnerActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Branches' represents an important domain concept.
+It has one attribute: 'countCompletedBranchesOnly', which is of type str.
+
+'wsdl_IBindingOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Reply' represents an important domain concept.
+It has one attribute: 'faultName', which is of type str.
+
+'xsd_XSDTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDXPathDefinition' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'variety', which is of type str.
+
+'model_partnerlinktype_Role' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'ID', which is of type str; 'portType', which is of type str.
+
+'model_Correlation' represents an important domain concept.
+It has the following attributes: 'pattern', which is of type str; 'initiate', which is of type str.
+
+'wsdl_ExtensibilityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_IExtensionRegistry' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_IURL' represents an important domain concept.
+It does not declare any attributes.
+
+'BPELExtensibleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ToPart' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDAnnotation' represents an important domain concept.
+It has the following attributes: 'userInformation', which is of type str; 'attributes', which is of type str; 'applicationInformation', which is of type str.
+
+'BindingFault' represents an important domain concept.
+It does not declare any attributes.
+
+'UnknownExtensibilityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Copy' represents an important domain concept.
+It has the following attributes: 'keepSrcElementName', which is of type str; 'ignoreMissingFromData', which is of type str.
+
+'model_Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_IService' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Extensions' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CompensationHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'PartnerActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ServiceRef' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'referenceScheme', which is of type str.
+
+'model_Exit' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDMaxLengthFacet' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'ExtensibleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'wsdl_ITypes' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Catch' represents an important domain concept.
+It has one attribute: 'faultName', which is of type str.
+
+'Part' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_IOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_IExtensibilityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDFeature' represents an important domain concept.
+It has the following attributes: 'form', which is of type str; 'featureReference', which is of type bool; 'global', which is of type bool; 'constraint', which is of type str; 'value', which is of type str; 'lexicalValue', which is of type str.
+
+'model_xsd_XSDModelGroupDefinition' represents an important domain concept.
+It has one attribute: 'modelGroupDefinitionReference', which is of type bool.
+
+'model_wsdl_Types' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDMaxFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_Service' represents an important domain concept.
+It has the following attributes: 'qName', which is of type str; 'undefined', which is of type bool.
+
+'model_wsdl_IMessage' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDAttributeGroupDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDMinExclusiveFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'IElementExtensible' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDRedefine' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDBoundedFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'wsdl_WSDLElement' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDRedefineContent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Activity' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'suppressJoinFailure', which is of type str.
+
+'model_Receive' represents an important domain concept.
+It has one attribute: 'createInstance', which is of type str.
+
+'model_wsdl_IAttributeExtensible' represents an important domain concept.
+It does not declare any attributes.
+
+'wsdl_IOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'wsdl_ISchema' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDModelGroupDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_ITypes' represents an important domain concept.
+It does not declare any attributes.
+
+'model_FaultHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'xsd_XSDTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_ExtensibilityElement' represents an important domain concept.
+It has the following attributes: 'elementType', which is of type str; 'required', which is of type bool.
+
+'XSDFundamentalFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Source' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Correlations' represents an important domain concept.
+It does not declare any attributes.
+
+'BindingOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDWhiteSpaceFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDAttributeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Fault' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDRepeatableFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'wsdl_IBindingOutput' represents an important domain concept.
+It does not declare any attributes.
+
+'wsdl_IFault' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDSchemaContent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Query' represents an important domain concept.
+It has the following attributes: 'queryLanguage', which is of type str; 'value', which is of type str.
+
+'model_CompletionCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'wsdl_IPort' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDFixedFacet' represents an important domain concept.
+It has one attribute: 'fixed', which is of type bool.
+
+'XSDAttributeUse' represents an important domain concept.
+It does not declare any attributes.
+
+'model_If' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDMinLengthFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'xsd_XSDScope' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDBoundedFacet' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'model_Import' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'namespace', which is of type str; 'importType', which is of type str.
+
+'Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'IAttributeExtensible' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_Message' represents an important domain concept.
+It has the following attributes: 'qName', which is of type str; 'undefined', which is of type bool.
+
+'xsd_XSDComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDMinLengthFacet' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'model_wsdl_IBindingInput' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDComplexTypeContent' represents an important domain concept.
+It does not declare any attributes.
+
+'Types' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'wsdl_IAttributeExtensible' represents an important domain concept.
+It does not declare any attributes.
+
+'model_FromParts' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDAttributeGroupContent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_WSDLElement' represents an important domain concept.
+It has the following attributes: 'element', which is of type str; 'documentationElement', which is of type str.
+
+'xsd_XSDParticleContent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_IBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'model_From' represents an important domain concept.
+It has the following attributes: 'opaque', which is of type str; 'endpointReference', which is of type str; 'literal', which is of type str; 'unsafeLiteral', which is of type str.
+
+'wsdl_IInput' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Empty' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CompensateScope' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDNotationDeclaration' represents an important domain concept.
+It has the following attributes: 'publicIdentifier', which is of type str; 'systemIdentifier', which is of type str.
+
+'model_messageproperties_Property' represents an important domain concept.
+It has the following attributes: 'ID', which is of type str; 'qName', which is of type str; 'name', which is of type str; 'type', which is of type str.
+
+'wsdl_MessageReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDConstrainingFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_IList' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDWildcard' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_Fault' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDNotationDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDIdentityConstraintDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDRedefineContent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ExtensionActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDSimpleTypeDefinition' represents an important domain concept.
+It has the following attributes: 'final', which is of type str; 'variety', which is of type str; 'validFacets', which is of type str; 'lexicalFinal', which is of type str.
+
+'XSDPatternFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDModelGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'BindingOutput' represents an important domain concept.
+It does not declare any attributes.
+
+'model_wsdl_IPortType' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDScope' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDInclude' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xsd_XSDWildcard' represents an important domain concept.
+It has the following attributes: 'lexicalNamespaceConstraint', which is of type str; 'namespaceConstraintCategory', which is of type str; 'processContents', which is of type str; 'namespaceConstraint', which is of type str.
+
+'XSDEnumerationFacet' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'XSDProcessContents' defines the following possible values: 'skip', 'lax', 'strict'.
+The enumeration 'XSDComplexFinal' defines the following possible values: 'restriction', 'all', 'extension'.
+The enumeration 'XSDSubstitutionGroupExclusions' defines the following possible values: 'extension', 'restriction'.
+The enumeration 'XSDDiagnosticSeverity' defines the following possible values: 'fatal', 'warning', 'error', 'information'.
+The enumeration 'XSDWhiteSpace' defines the following possible values: 'collapse', 'preserve', 'replace'.
+The enumeration 'XSDIdentityConstraintCategory' defines the following possible values: 'key', 'unique', 'keyref'.
+The enumeration 'XSDAttributeUseCategory' defines the following possible values: 'optional', 'prohibited', 'required'.
+The enumeration 'EndpointReferenceRole' defines the following possible values: 'partnerRole', 'myRole'.
+The enumeration 'XSDNamespaceConstraintCategory' defines the following possible values: 'not', 'set', 'any'.
+The enumeration 'XSDVariety' defines the following possible values: 'union', 'list', 'atomic'.
+The enumeration 'XSDDerivationMethod' defines the following possible values: 'restriction', 'extension'.
+The enumeration 'XSDDisallowedSubstitutions' defines the following possible values: 'restriction', 'substitution', 'extension', 'all'.
+The enumeration 'XSDXPathVariety' defines the following possible values: 'field', 'selector'.
+The enumeration 'XSDSimpleFinal' defines the following possible values: 'list', 'union', 'all', 'restriction'.
+The enumeration 'XSDCardinality' defines the following possible values: 'countablyInfinite', 'finite'.
+The enumeration 'XSDCompositor' defines the following possible values: 'choice', 'all', 'sequence'.
+The enumeration 'XSDForm' defines the following possible values: 'qualified', 'unqualified'.
+The enumeration 'CorrelationPattern' defines the following possible values: 'request', 'requestresponse', 'response'.
+The enumeration 'XSDOrdered' defines the following possible values: 'total', 'false', 'partial'.
+The enumeration 'XSDContentTypeCategory' defines the following possible values: 'empty', 'elementOnly', 'mixed', 'simple'.
+The enumeration 'XSDProhibitedSubstitutions' defines the following possible values: 'extension', 'restriction', 'all'.
+The enumeration 'XSDConstraint' defines the following possible values: 'fixed', 'default'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_Process' is a specialization of 'BPELExtensibleElement'.
+The class 'model_PartnerLink' is a specialization of 'BPELExtensibleElement'.
+The class 'model_FaultHandler' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Activity' is a specialization of 'BPELExtensibleElement'.
+The class 'model_CorrelationSet' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Invoke' is a specialization of 'PartnerActivity'.
+The class 'model_Link' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Catch' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Reply' is a specialization of 'PartnerActivity'.
+The class 'model_Reply' is a specialization of 'Activity'.
+The class 'model_PartnerActivity' is a specialization of 'Activity'.
+The class 'model_Receive' is a specialization of 'PartnerActivity'.
+The class 'model_Exit' is a specialization of 'Activity'.
+The class 'model_Throw' is a specialization of 'Activity'.
+The class 'model_Wait' is a specialization of 'Activity'.
+The class 'model_Empty' is a specialization of 'Activity'.
+The class 'model_Sequence' is a specialization of 'Activity'.
+The class 'model_While' is a specialization of 'Activity'.
+The class 'model_Pick' is a specialization of 'Activity'.
+The class 'model_Flow' is a specialization of 'Activity'.
+The class 'model_OnAlarm' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Assign' is a specialization of 'Activity'.
+The class 'model_Copy' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Extension' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Scope' is a specialization of 'Activity'.
+The class 'model_CompensateScope' is a specialization of 'Activity'.
+The class 'model_CompensationHandler' is a specialization of 'BPELExtensibleElement'.
+The class 'model_To' is a specialization of 'BPELExtensibleElement'.
+The class 'model_To' is a specialization of 'AbstractAssignBound'.
+The class 'model_From' is a specialization of 'BPELExtensibleElement'.
+The class 'model_From' is a specialization of 'AbstractAssignBound'.
+The class 'model_OnMessage' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Expression' is a specialization of 'ExtensibilityElement'.
+The class 'model_BooleanExpression' is a specialization of 'Expression'.
+The class 'model_Correlation' is a specialization of 'BPELExtensibleElement'.
+The class 'model_MessageExchange' is a specialization of 'BPELExtensibleElement'.
+The class 'model_EventHandler' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Source' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Target' is a specialization of 'BPELExtensibleElement'.
+The class 'model_PartnerLinks' is a specialization of 'BPELExtensibleElement'.
+The class 'model_MessageExchanges' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Variables' is a specialization of 'BPELExtensibleElement'.
+The class 'model_CorrelationSets' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Links' is a specialization of 'BPELExtensibleElement'.
+The class 'model_CatchAll' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Correlations' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Variable' is a specialization of 'BPELExtensibleElement'.
+The class 'model_UnknownExtensibilityAttribute' is a specialization of 'UnknownExtensibilityElement'.
+The class 'model_OnEvent' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Import' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Rethrow' is a specialization of 'Activity'.
+The class 'model_Condition' is a specialization of 'Expression'.
+The class 'model_Targets' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Sources' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Query' is a specialization of 'WSDLElement'.
+The class 'model_ServiceRef' is a specialization of 'ExtensibleElement'.
+The class 'model_Extensions' is a specialization of 'BPELExtensibleElement'.
+The class 'model_ExtensionActivity' is a specialization of 'Activity'.
+The class 'model_FromPart' is a specialization of 'BPELExtensibleElement'.
+The class 'model_ToPart' is a specialization of 'BPELExtensibleElement'.
+The class 'model_OpaqueActivity' is a specialization of 'Activity'.
+The class 'model_ForEach' is a specialization of 'Activity'.
+The class 'model_RepeatUntil' is a specialization of 'Activity'.
+The class 'model_TerminationHandler' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Validate' is a specialization of 'Activity'.
+The class 'model_If' is a specialization of 'Activity'.
+The class 'model_ElseIf' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Else' is a specialization of 'BPELExtensibleElement'.
+The class 'model_CompletionCondition' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Branches' is a specialization of 'Expression'.
+The class 'model_BPELExtensibleElement' is a specialization of 'ExtensibleElement'.
+The class 'model_Documentation' is a specialization of 'BPELExtensibleElement'.
+The class 'model_Compensate' is a specialization of 'Activity'.
+The class 'model_FromParts' is a specialization of 'BPELExtensibleElement'.
+The class 'model_ToParts' is a specialization of 'BPELExtensibleElement'.
+The class 'model_wsdl_PortType' is a specialization of 'wsdl_ExtensibleElement'.
+The class 'model_wsdl_PortType' is a specialization of 'wsdl_IPortType'.
+The class 'model_wsdl_Operation' is a specialization of 'wsdl_ExtensibleElement'.
+The class 'model_wsdl_Operation' is a specialization of 'wsdl_IOperation'.
+The class 'model_wsdl_Message' is a specialization of 'wsdl_ExtensibleElement'.
+The class 'model_wsdl_Message' is a specialization of 'wsdl_IMessage'.
+The class 'model_wsdl_Part' is a specialization of 'wsdl_ExtensibleElement'.
+The class 'model_wsdl_Part' is a specialization of 'wsdl_IPart'.
+The class 'model_wsdl_Binding' is a specialization of 'wsdl_ExtensibleElement'.
+The class 'model_wsdl_Binding' is a specialization of 'wsdl_IBinding'.
+The class 'model_wsdl_BindingOperation' is a specialization of 'wsdl_ExtensibleElement'.
+The class 'model_wsdl_BindingOperation' is a specialization of 'wsdl_IBindingOperation'.
+The class 'model_wsdl_Service' is a specialization of 'wsdl_ExtensibleElement'.
+The class 'model_wsdl_Service' is a specialization of 'wsdl_IService'.
+The class 'model_wsdl_Port' is a specialization of 'wsdl_ExtensibleElement'.
+The class 'model_wsdl_Port' is a specialization of 'wsdl_IPort'.
+The class 'model_wsdl_ExtensibilityElement' is a specialization of 'wsdl_WSDLElement'.
+The class 'model_wsdl_ExtensibilityElement' is a specialization of 'wsdl_IExtensibilityElement'.
+The class 'model_wsdl_Definition' is a specialization of 'wsdl_ExtensibleElement'.
+The class 'model_wsdl_Definition' is a specialization of 'wsdl_IDefinition'.
+The class 'model_wsdl_Import' is a specialization of 'wsdl_ExtensibleElement'.
+The class 'model_wsdl_Import' is a specialization of 'wsdl_IImport'.
+The class 'model_wsdl_ExtensibleElement' is a specialization of 'wsdl_WSDLElement'.
+The class 'model_wsdl_ExtensibleElement' is a specialization of 'wsdl_IElementExtensible'.
+The class 'model_wsdl_ExtensibleElement' is a specialization of 'wsdl_IAttributeExtensible'.
+The class 'model_wsdl_Input' is a specialization of 'wsdl_MessageReference'.
+The class 'model_wsdl_Input' is a specialization of 'wsdl_IInput'.
+The class 'model_wsdl_Output' is a specialization of 'wsdl_MessageReference'.
+The class 'model_wsdl_Output' is a specialization of 'wsdl_IOutput'.
+The class 'model_wsdl_Fault' is a specialization of 'wsdl_MessageReference'.
+The class 'model_wsdl_Fault' is a specialization of 'wsdl_IFault'.
+The class 'model_wsdl_BindingInput' is a specialization of 'wsdl_ExtensibleElement'.
+The class 'model_wsdl_BindingInput' is a specialization of 'wsdl_IBindingInput'.
+The class 'model_wsdl_BindingOutput' is a specialization of 'wsdl_ExtensibleElement'.
+The class 'model_wsdl_BindingOutput' is a specialization of 'wsdl_IBindingOutput'.
+The class 'model_wsdl_BindingFault' is a specialization of 'wsdl_ExtensibleElement'.
+The class 'model_wsdl_BindingFault' is a specialization of 'wsdl_IBindingFault'.
+The class 'model_wsdl_IPortType' is a specialization of 'IAttributeExtensible'.
+The class 'model_wsdl_IOperation' is a specialization of 'IElementExtensible'.
+The class 'model_wsdl_IInput' is a specialization of 'IAttributeExtensible'.
+The class 'model_wsdl_IOutput' is a specialization of 'IAttributeExtensible'.
+The class 'model_wsdl_IFault' is a specialization of 'IAttributeExtensible'.
+The class 'model_wsdl_IMessage' is a specialization of 'IElementExtensible'.
+The class 'model_wsdl_IPart' is a specialization of 'IAttributeExtensible'.
+The class 'model_wsdl_IService' is a specialization of 'IElementExtensible'.
+The class 'model_wsdl_IPort' is a specialization of 'IElementExtensible'.
+The class 'model_wsdl_IBinding' is a specialization of 'IElementExtensible'.
+The class 'model_wsdl_IBindingOperation' is a specialization of 'IElementExtensible'.
+The class 'model_wsdl_IBindingInput' is a specialization of 'IElementExtensible'.
+The class 'model_wsdl_IBindingOutput' is a specialization of 'IElementExtensible'.
+The class 'model_wsdl_IBindingFault' is a specialization of 'IElementExtensible'.
+The class 'model_wsdl_IDefinition' is a specialization of 'IElementExtensible'.
+The class 'model_wsdl_IImport' is a specialization of 'IAttributeExtensible'.
+The class 'model_wsdl_Types' is a specialization of 'wsdl_ExtensibleElement'.
+The class 'model_wsdl_Types' is a specialization of 'wsdl_ITypes'.
+The class 'model_wsdl_UnknownExtensibilityElement' is a specialization of 'ExtensibilityElement'.
+The class 'model_wsdl_XSDSchemaExtensibilityElement' is a specialization of 'wsdl_ExtensibilityElement'.
+The class 'model_wsdl_XSDSchemaExtensibilityElement' is a specialization of 'wsdl_ISchema'.
+The class 'model_wsdl_MessageReference' is a specialization of 'ExtensibleElement'.
+The class 'model_wsdl_ISchema' is a specialization of 'IExtensibilityElement'.
+The class 'model_xsd_XSDAnnotation' is a specialization of 'xsd_XSDComponent'.
+The class 'model_xsd_XSDAnnotation' is a specialization of 'xsd_XSDRedefineContent'.
+The class 'model_xsd_XSDAttributeDeclaration' is a specialization of 'xsd_XSDFeature'.
+The class 'model_xsd_XSDAttributeDeclaration' is a specialization of 'xsd_XSDSchemaContent'.
+The class 'model_xsd_XSDAttributeGroupContent' is a specialization of 'XSDConcreteComponent'.
+The class 'model_xsd_XSDAttributeGroupDefinition' is a specialization of 'xsd_XSDRedefinableComponent'.
+The class 'model_xsd_XSDAttributeGroupDefinition' is a specialization of 'xsd_XSDAttributeGroupContent'.
+The class 'model_xsd_XSDAttributeGroupDefinition' is a specialization of 'xsd_XSDRedefineContent'.
+The class 'model_xsd_XSDAttributeUse' is a specialization of 'xsd_XSDComponent'.
+The class 'model_xsd_XSDAttributeUse' is a specialization of 'xsd_XSDAttributeGroupContent'.
+The class 'model_xsd_XSDBoundedFacet' is a specialization of 'XSDFundamentalFacet'.
+The class 'model_xsd_XSDCardinalityFacet' is a specialization of 'XSDFundamentalFacet'.
+The class 'model_xsd_XSDComplexTypeContent' is a specialization of 'XSDComponent'.
+The class 'model_xsd_XSDComplexTypeDefinition' is a specialization of 'xsd_XSDTypeDefinition'.
+The class 'model_xsd_XSDComplexTypeDefinition' is a specialization of 'xsd_XSDScope'.
+The class 'model_xsd_XSDComponent' is a specialization of 'XSDConcreteComponent'.
+The class 'model_xsd_XSDConstrainingFacet' is a specialization of 'XSDFacet'.
+The class 'model_xsd_XSDDiagnostic' is a specialization of 'XSDConcreteComponent'.
+The class 'model_xsd_XSDElementDeclaration' is a specialization of 'xsd_XSDFeature'.
+The class 'model_xsd_XSDElementDeclaration' is a specialization of 'xsd_XSDSchemaContent'.
+The class 'model_xsd_XSDElementDeclaration' is a specialization of 'xsd_XSDTerm'.
+The class 'model_xsd_XSDEnumerationFacet' is a specialization of 'XSDRepeatableFacet'.
+The class 'model_xsd_XSDFacet' is a specialization of 'XSDComponent'.
+The class 'model_xsd_XSDFeature' is a specialization of 'XSDNamedComponent'.
+The class 'model_xsd_XSDFixedFacet' is a specialization of 'XSDConstrainingFacet'.
+The class 'model_xsd_XSDFractionDigitsFacet' is a specialization of 'XSDFixedFacet'.
+The class 'model_xsd_XSDFundamentalFacet' is a specialization of 'XSDFacet'.
+The class 'model_xsd_XSDIdentityConstraintDefinition' is a specialization of 'XSDNamedComponent'.
+The class 'model_xsd_XSDImport' is a specialization of 'XSDSchemaDirective'.
+The class 'model_xsd_XSDInclude' is a specialization of 'XSDSchemaCompositor'.
+The class 'model_xsd_XSDLengthFacet' is a specialization of 'XSDFixedFacet'.
+The class 'model_xsd_XSDMaxExclusiveFacet' is a specialization of 'XSDMaxFacet'.
+The class 'model_xsd_XSDMaxFacet' is a specialization of 'XSDFixedFacet'.
+The class 'model_xsd_XSDMaxInclusiveFacet' is a specialization of 'XSDMaxFacet'.
+The class 'model_xsd_XSDMaxLengthFacet' is a specialization of 'XSDFixedFacet'.
+The class 'model_xsd_XSDMinExclusiveFacet' is a specialization of 'XSDMinFacet'.
+The class 'model_xsd_XSDMinFacet' is a specialization of 'XSDFixedFacet'.
+The class 'model_xsd_XSDMinInclusiveFacet' is a specialization of 'XSDMinFacet'.
+The class 'model_xsd_XSDMinLengthFacet' is a specialization of 'XSDFixedFacet'.
+The class 'model_xsd_XSDModelGroup' is a specialization of 'XSDTerm'.
+The class 'model_xsd_XSDModelGroupDefinition' is a specialization of 'xsd_XSDRedefinableComponent'.
+The class 'model_xsd_XSDModelGroupDefinition' is a specialization of 'xsd_XSDParticleContent'.
+The class 'model_xsd_XSDModelGroupDefinition' is a specialization of 'xsd_XSDRedefineContent'.
+The class 'model_xsd_XSDNamedComponent' is a specialization of 'XSDComponent'.
+The class 'model_xsd_XSDNotationDeclaration' is a specialization of 'xsd_XSDNamedComponent'.
+The class 'model_xsd_XSDNotationDeclaration' is a specialization of 'xsd_XSDSchemaContent'.
+The class 'model_xsd_XSDNumericFacet' is a specialization of 'XSDFundamentalFacet'.
+The class 'model_xsd_XSDOrderedFacet' is a specialization of 'XSDFundamentalFacet'.
+The class 'model_xsd_XSDParticle' is a specialization of 'XSDComplexTypeContent'.
+The class 'model_xsd_XSDParticleContent' is a specialization of 'XSDConcreteComponent'.
+The class 'model_xsd_XSDPatternFacet' is a specialization of 'XSDRepeatableFacet'.
+The class 'model_xsd_XSDRedefinableComponent' is a specialization of 'xsd_XSDNamedComponent'.
+The class 'model_xsd_XSDRedefinableComponent' is a specialization of 'xsd_XSDRedefineContent'.
+The class 'model_xsd_XSDRedefineContent' is a specialization of 'XSDSchemaContent'.
+The class 'model_xsd_XSDRedefine' is a specialization of 'XSDSchemaCompositor'.
+The class 'model_xsd_XSDRepeatableFacet' is a specialization of 'XSDConstrainingFacet'.
+The class 'model_xsd_XSDSchema' is a specialization of 'XSDScope'.
+The class 'model_xsd_XSDSchemaCompositor' is a specialization of 'XSDSchemaDirective'.
+The class 'model_xsd_XSDSchemaContent' is a specialization of 'XSDConcreteComponent'.
+The class 'model_xsd_XSDSchemaDirective' is a specialization of 'XSDSchemaContent'.
+The class 'model_xsd_XSDScope' is a specialization of 'XSDComponent'.
+The class 'model_xsd_XSDSimpleTypeDefinition' is a specialization of 'xsd_XSDTypeDefinition'.
+The class 'model_xsd_XSDSimpleTypeDefinition' is a specialization of 'xsd_XSDComplexTypeContent'.
+The class 'model_xsd_XSDTerm' is a specialization of 'xsd_XSDComponent'.
+The class 'model_xsd_XSDTerm' is a specialization of 'xsd_XSDParticleContent'.
+The class 'model_xsd_XSDTotalDigitsFacet' is a specialization of 'XSDFixedFacet'.
+The class 'model_xsd_XSDTypeDefinition' is a specialization of 'xsd_XSDRedefinableComponent'.
+The class 'model_xsd_XSDTypeDefinition' is a specialization of 'xsd_XSDRedefineContent'.
+The class 'model_xsd_XSDWhiteSpaceFacet' is a specialization of 'XSDFixedFacet'.
+The class 'model_xsd_XSDWildcard' is a specialization of 'XSDTerm'.
+The class 'model_xsd_XSDXPathDefinition' is a specialization of 'XSDComponent'.
+The class 'model_messageproperties_Property' is a specialization of 'ExtensibilityElement'.
+The class 'model_messageproperties_PropertyAlias' is a specialization of 'ExtensibilityElement'.
+The class 'model_messageproperties_Query' is a specialization of 'ExtensibilityElement'.
+The class 'model_partnerlinktype_PartnerLinkType' is a specialization of 'ExtensibilityElement'.
+The class 'model_partnerlinktype_Role' is a specialization of 'ExtensibilityElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_PartnerLinks' and 'model_Process'. From 'model_PartnerLinks', the role 'model_PartnerLinks' has cardinality 0..*, and from 'model_Process', the role 'model_Process' has cardinality 0..*.
+An association connects 'model_Variables' and 'model_Process'. From 'model_Variables', the role 'model_Variables' has cardinality 0..*, and from 'model_Process', the role 'model_Process2' has cardinality 0..*.
+An association connects 'model_Activity' and 'model_Process'. From 'model_Activity', the role 'model_Activity' has cardinality 0..*, and from 'model_Process', the role 'model_Process4' has cardinality 0..*.
+An association connects 'model_Process' and 'model_FaultHandler'. From 'model_Process', the role 'model_Process6' has cardinality 0..*, and from 'model_FaultHandler', the role 'model_FaultHandler' has cardinality 0..*.
+An association connects 'model_Process' and 'model_EventHandler'. From 'model_Process', the role 'model_Process8' has cardinality 0..*, and from 'model_EventHandler', the role 'model_EventHandler' has cardinality 0..*.
+An association connects 'model_Process' and 'model_CorrelationSets'. From 'model_Process', the role 'model_Process10' has cardinality 0..*, and from 'model_CorrelationSets', the role 'model_CorrelationSets' has cardinality 0..*.
+An association connects 'model_Process' and 'model_Import'. From 'model_Process', the role 'model_Process12' has cardinality 0..*, and from 'model_Import', the role 'model_Import' has cardinality 0..*.
+An association connects 'model_Extensions' and 'model_Process'. From 'model_Extensions', the role 'model_Extensions' has cardinality 0..*, and from 'model_Process', the role 'model_Process14' has cardinality 0..*.
+An association connects 'model_MessageExchanges' and 'model_Process'. From 'model_MessageExchanges', the role 'model_MessageExchanges' has cardinality 0..*, and from 'model_Process', the role 'model_Process16' has cardinality 0..*.
+An association connects 'Role' and 'model_PartnerLink'. From 'Role', the role 'Role' has cardinality 0..*, and from 'model_PartnerLink', the role 'model_PartnerLink' has cardinality 0..*.
+An association connects 'model_PartnerLink' and 'Role'. From 'model_PartnerLink', the role 'model_PartnerLink19' has cardinality 0..*, and from 'Role', the role 'Role20' has cardinality 0..*.
+An association connects 'PartnerLinkType' and 'model_PartnerLink'. From 'PartnerLinkType', the role 'PartnerLinkType' has cardinality 0..*, and from 'model_PartnerLink', the role 'model_PartnerLink22' has cardinality 0..*.
+An association connects 'model_Catch' and 'model_FaultHandler'. From 'model_Catch', the role 'model_Catch' has cardinality 0..*, and from 'model_FaultHandler', the role 'model_FaultHandler24' has cardinality 0..*.
+An association connects 'model_CatchAll' and 'model_FaultHandler'. From 'model_CatchAll', the role 'model_CatchAll' has cardinality 0..*, and from 'model_FaultHandler', the role 'model_FaultHandler26' has cardinality 0..*.
+An association connects 'model_Activity' and 'model_Targets'. From 'model_Activity', the role 'model_Activity28' has cardinality 0..*, and from 'model_Targets', the role 'model_Targets' has cardinality 0..*.
+An association connects 'model_Activity' and 'model_Sources'. From 'model_Activity', the role 'model_Activity30' has cardinality 0..*, and from 'model_Sources', the role 'model_Sources' has cardinality 0..*.
+An association connects 'model_CorrelationSet' and 'Property'. From 'model_CorrelationSet', the role 'model_CorrelationSet' has cardinality 0..*, and from 'Property', the role 'Property' has cardinality 0..*.
+An association connects 'model_Variable' and 'model_Invoke'. From 'model_Variable', the role 'model_Variable' has cardinality 0..*, and from 'model_Invoke', the role 'model_Invoke' has cardinality 0..*.
+An association connects 'model_Invoke' and 'model_Variable'. From 'model_Invoke', the role 'model_Invoke34' has cardinality 0..*, and from 'model_Variable', the role 'model_Variable35' has cardinality 0..*.
+An association connects 'model_CompensationHandler' and 'model_Invoke'. From 'model_CompensationHandler', the role 'model_CompensationHandler' has cardinality 0..*, and from 'model_Invoke', the role 'model_Invoke37' has cardinality 0..*.
+An association connects 'model_Invoke' and 'model_FaultHandler'. From 'model_Invoke', the role 'model_Invoke39' has cardinality 0..*, and from 'model_FaultHandler', the role 'model_FaultHandler40' has cardinality 0..*.
+An association connects 'model_Invoke' and 'model_FromParts'. From 'model_Invoke', the role 'model_Invoke42' has cardinality 0..*, and from 'model_FromParts', the role 'model_FromParts' has cardinality 0..*.
+An association connects 'model_Invoke' and 'model_ToParts'. From 'model_Invoke', the role 'model_Invoke44' has cardinality 0..*, and from 'model_ToParts', the role 'model_ToParts' has cardinality 0..*.
+An association connects 'model_Link' and 'model_Source'. From 'model_Link', the role 'Link' has cardinality 0..*, and from 'model_Source', the role 'Source' has cardinality 0..*.
+An association connects 'model_Link' and 'model_Target'. From 'model_Link', the role 'Link47' has cardinality 0..*, and from 'model_Target', the role 'Target' has cardinality 0..*.
+An association connects 'model_Catch' and 'model_Variable'. From 'model_Catch', the role 'model_Catch49' has cardinality 0..*, and from 'model_Variable', the role 'model_Variable50' has cardinality 0..*.
+An association connects 'model_Activity' and 'model_Catch'. From 'model_Activity', the role 'model_Activity53' has cardinality 0..*, and from 'model_Catch', the role 'model_Catch52' has cardinality 0..*.
+An association connects 'model_Catch' and 'Message'. From 'model_Catch', the role 'model_Catch55' has cardinality 0..*, and from 'Message', the role 'Message' has cardinality 0..*.
+An association connects 'model_Catch' and 'XSDElementDeclaration'. From 'model_Catch', the role 'model_Catch57' has cardinality 0..*, and from 'XSDElementDeclaration', the role 'XSDElementDeclaration' has cardinality 0..*.
+An association connects 'model_Reply' and 'model_Variable'. From 'model_Reply', the role 'model_Reply' has cardinality 0..*, and from 'model_Variable', the role 'model_Variable59' has cardinality 0..*.
+An association connects 'model_Reply' and 'model_ToParts'. From 'model_Reply', the role 'model_Reply61' has cardinality 0..*, and from 'model_ToParts', the role 'model_ToParts62' has cardinality 0..*.
+An association connects 'model_Reply' and 'model_MessageExchange'. From 'model_Reply', the role 'model_Reply64' has cardinality 0..*, and from 'model_MessageExchange', the role 'model_MessageExchange' has cardinality 0..*.
+An association connects 'model_PartnerActivity' and 'model_PartnerLink'. From 'model_PartnerActivity', the role 'model_PartnerActivity' has cardinality 0..*, and from 'model_PartnerLink', the role 'model_PartnerLink66' has cardinality 0..*.
+An association connects 'model_PartnerActivity' and 'model_Correlations'. From 'model_PartnerActivity', the role 'model_PartnerActivity68' has cardinality 0..*, and from 'model_Correlations', the role 'model_Correlations' has cardinality 0..*.
+An association connects 'model_PartnerActivity' and 'PortType'. From 'model_PartnerActivity', the role 'model_PartnerActivity70' has cardinality 0..*, and from 'PortType', the role 'PortType' has cardinality 0..*.
+An association connects 'Operation' and 'model_PartnerActivity'. From 'Operation', the role 'Operation' has cardinality 0..*, and from 'model_PartnerActivity', the role 'model_PartnerActivity72' has cardinality 0..*.
+An association connects 'model_Variable' and 'model_Receive'. From 'model_Variable', the role 'model_Variable74' has cardinality 0..*, and from 'model_Receive', the role 'model_Receive' has cardinality 0..*.
+An association connects 'model_FromParts' and 'model_Receive'. From 'model_FromParts', the role 'model_FromParts77' has cardinality 0..*, and from 'model_Receive', the role 'model_Receive76' has cardinality 0..*.
+An association connects 'model_Receive' and 'model_MessageExchange'. From 'model_Receive', the role 'model_Receive79' has cardinality 0..*, and from 'model_MessageExchange', the role 'model_MessageExchange80' has cardinality 0..*.
+An association connects 'model_Throw' and 'model_Variable'. From 'model_Throw', the role 'model_Throw' has cardinality 0..*, and from 'model_Variable', the role 'model_Variable82' has cardinality 0..*.
+An association connects 'model_Wait' and 'model_Expression'. From 'model_Wait', the role 'model_Wait' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression' has cardinality 0..*.
+An association connects 'model_Expression' and 'model_Wait'. From 'model_Expression', the role 'model_Expression86' has cardinality 0..*, and from 'model_Wait', the role 'model_Wait85' has cardinality 0..*.
+An association connects 'model_Activity' and 'model_Sequence'. From 'model_Activity', the role 'model_Activity88' has cardinality 0..*, and from 'model_Sequence', the role 'model_Sequence' has cardinality 0..*.
+An association connects 'model_Activity' and 'model_While'. From 'model_Activity', the role 'model_Activity90' has cardinality 0..*, and from 'model_While', the role 'model_While' has cardinality 0..*.
+An association connects 'model_While' and 'model_Condition'. From 'model_While', the role 'model_While92' has cardinality 0..*, and from 'model_Condition', the role 'model_Condition' has cardinality 0..*.
+An association connects 'model_Pick' and 'model_OnMessage'. From 'model_Pick', the role 'model_Pick' has cardinality 0..*, and from 'model_OnMessage', the role 'model_OnMessage' has cardinality 0..*.
+An association connects 'model_Pick' and 'model_OnAlarm'. From 'model_Pick', the role 'model_Pick95' has cardinality 0..*, and from 'model_OnAlarm', the role 'model_OnAlarm' has cardinality 0..*.
+An association connects 'model_Flow' and 'model_Activity'. From 'model_Flow', the role 'model_Flow' has cardinality 0..*, and from 'model_Activity', the role 'model_Activity97' has cardinality 0..*.
+An association connects 'model_Flow' and 'model_Links'. From 'model_Flow', the role 'model_Flow99' has cardinality 0..*, and from 'model_Links', the role 'model_Links' has cardinality 0..*.
+An association connects 'model_CompletionCondition' and 'model_Flow'. From 'model_CompletionCondition', the role 'model_CompletionCondition' has cardinality 0..*, and from 'model_Flow', the role 'model_Flow101' has cardinality 0..*.
+An association connects 'model_Activity' and 'model_OnAlarm'. From 'model_Activity', the role 'model_Activity104' has cardinality 0..*, and from 'model_OnAlarm', the role 'model_OnAlarm103' has cardinality 0..*.
+An association connects 'model_OnAlarm' and 'model_Expression'. From 'model_OnAlarm', the role 'model_OnAlarm106' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression107' has cardinality 0..*.
+An association connects 'model_OnAlarm' and 'model_Expression'. From 'model_OnAlarm', the role 'model_OnAlarm109' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression110' has cardinality 0..*.
+An association connects 'model_Expression' and 'model_OnAlarm'. From 'model_Expression', the role 'model_Expression113' has cardinality 0..*, and from 'model_OnAlarm', the role 'model_OnAlarm112' has cardinality 0..*.
+An association connects 'model_Copy' and 'model_Assign'. From 'model_Copy', the role 'model_Copy' has cardinality 0..*, and from 'model_Assign', the role 'model_Assign' has cardinality 0..*.
+An association connects 'model_Copy' and 'model_To'. From 'model_Copy', the role 'model_Copy116' has cardinality 0..*, and from 'model_To', the role 'model_To' has cardinality 0..*.
+An association connects 'model_Copy' and 'model_From'. From 'model_Copy', the role 'model_Copy118' has cardinality 0..*, and from 'model_From', the role 'model_From' has cardinality 0..*.
+An association connects 'model_FaultHandler' and 'model_Scope'. From 'model_FaultHandler', the role 'model_FaultHandler120' has cardinality 0..*, and from 'model_Scope', the role 'model_Scope' has cardinality 0..*.
+An association connects 'model_Scope' and 'model_CompensationHandler'. From 'model_Scope', the role 'model_Scope122' has cardinality 0..*, and from 'model_CompensationHandler', the role 'model_CompensationHandler123' has cardinality 0..*.
+An association connects 'model_Activity' and 'model_Scope'. From 'model_Activity', the role 'model_Activity126' has cardinality 0..*, and from 'model_Scope', the role 'model_Scope125' has cardinality 0..*.
+An association connects 'model_Variables' and 'model_Scope'. From 'model_Variables', the role 'model_Variables129' has cardinality 0..*, and from 'model_Scope', the role 'model_Scope128' has cardinality 0..*.
+An association connects 'model_CorrelationSets' and 'model_Scope'. From 'model_CorrelationSets', the role 'model_CorrelationSets132' has cardinality 0..*, and from 'model_Scope', the role 'model_Scope131' has cardinality 0..*.
+An association connects 'model_EventHandler' and 'model_Scope'. From 'model_EventHandler', the role 'model_EventHandler135' has cardinality 0..*, and from 'model_Scope', the role 'model_Scope134' has cardinality 0..*.
+An association connects 'model_PartnerLinks' and 'model_Scope'. From 'model_PartnerLinks', the role 'model_PartnerLinks138' has cardinality 0..*, and from 'model_Scope', the role 'model_Scope137' has cardinality 0..*.
+An association connects 'model_Scope' and 'model_TerminationHandler'. From 'model_Scope', the role 'model_Scope140' has cardinality 0..*, and from 'model_TerminationHandler', the role 'model_TerminationHandler' has cardinality 0..*.
+An association connects 'model_MessageExchanges' and 'model_Scope'. From 'model_MessageExchanges', the role 'model_MessageExchanges143' has cardinality 0..*, and from 'model_Scope', the role 'model_Scope142' has cardinality 0..*.
+An association connects 'model_CompensateScope' and 'model_Activity'. From 'model_CompensateScope', the role 'model_CompensateScope' has cardinality 0..*, and from 'model_Activity', the role 'model_Activity145' has cardinality 0..*.
+An association connects 'model_CompensationHandler' and 'model_Activity'. From 'model_CompensationHandler', the role 'model_CompensationHandler147' has cardinality 0..*, and from 'model_Activity', the role 'model_Activity148' has cardinality 0..*.
+An association connects 'model_AbstractAssignBound' and 'model_Variable'. From 'model_AbstractAssignBound', the role 'model_AbstractAssignBound' has cardinality 0..*, and from 'model_Variable', the role 'model_Variable150' has cardinality 0..*.
+An association connects 'Part' and 'model_AbstractAssignBound'. From 'Part', the role 'Part' has cardinality 0..*, and from 'model_AbstractAssignBound', the role 'model_AbstractAssignBound152' has cardinality 0..*.
+An association connects 'model_AbstractAssignBound' and 'model_PartnerLink'. From 'model_AbstractAssignBound', the role 'model_AbstractAssignBound154' has cardinality 0..*, and from 'model_PartnerLink', the role 'model_PartnerLink155' has cardinality 0..*.
+An association connects 'model_AbstractAssignBound' and 'Property'. From 'model_AbstractAssignBound', the role 'model_AbstractAssignBound157' has cardinality 0..*, and from 'Property', the role 'Property158' has cardinality 0..*.
+An association connects 'model_AbstractAssignBound' and 'model_Query'. From 'model_AbstractAssignBound', the role 'model_AbstractAssignBound160' has cardinality 0..*, and from 'model_Query', the role 'model_Query' has cardinality 0..*.
+An association connects 'model_AbstractAssignBound' and 'model_Expression'. From 'model_AbstractAssignBound', the role 'model_AbstractAssignBound162' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression163' has cardinality 0..*.
+An association connects 'model_From' and 'model_ServiceRef'. From 'model_From', the role 'model_From165' has cardinality 0..*, and from 'model_ServiceRef', the role 'model_ServiceRef' has cardinality 0..*.
+An association connects 'XSDTypeDefinition' and 'model_From'. From 'XSDTypeDefinition', the role 'XSDTypeDefinition' has cardinality 0..*, and from 'model_From', the role 'model_From167' has cardinality 0..*.
+An association connects 'model_Variable' and 'model_OnMessage'. From 'model_Variable', the role 'model_Variable170' has cardinality 0..*, and from 'model_OnMessage', the role 'model_OnMessage169' has cardinality 0..*.
+An association connects 'model_OnMessage' and 'model_Activity'. From 'model_OnMessage', the role 'model_OnMessage172' has cardinality 0..*, and from 'model_Activity', the role 'model_Activity173' has cardinality 0..*.
+An association connects 'model_OnMessage' and 'PortType'. From 'model_OnMessage', the role 'model_OnMessage175' has cardinality 0..*, and from 'PortType', the role 'PortType176' has cardinality 0..*.
+An association connects 'model_OnMessage' and 'model_PartnerLink'. From 'model_OnMessage', the role 'model_OnMessage178' has cardinality 0..*, and from 'model_PartnerLink', the role 'model_PartnerLink179' has cardinality 0..*.
+An association connects 'model_OnMessage' and 'model_Correlations'. From 'model_OnMessage', the role 'model_OnMessage181' has cardinality 0..*, and from 'model_Correlations', the role 'model_Correlations182' has cardinality 0..*.
+An association connects 'Operation' and 'model_OnMessage'. From 'Operation', the role 'Operation185' has cardinality 0..*, and from 'model_OnMessage', the role 'model_OnMessage184' has cardinality 0..*.
+An association connects 'model_OnMessage' and 'model_FromParts'. From 'model_OnMessage', the role 'model_OnMessage187' has cardinality 0..*, and from 'model_FromParts', the role 'model_FromParts188' has cardinality 0..*.
+An association connects 'model_MessageExchange' and 'model_OnMessage'. From 'model_MessageExchange', the role 'model_MessageExchange191' has cardinality 0..*, and from 'model_OnMessage', the role 'model_OnMessage190' has cardinality 0..*.
+An association connects 'model_CorrelationSet' and 'model_Correlation'. From 'model_CorrelationSet', the role 'model_CorrelationSet193' has cardinality 0..*, and from 'model_Correlation', the role 'model_Correlation' has cardinality 0..*.
+An association connects 'model_EventHandler' and 'model_OnAlarm'. From 'model_EventHandler', the role 'model_EventHandler195' has cardinality 0..*, and from 'model_OnAlarm', the role 'model_OnAlarm196' has cardinality 0..*.
+An association connects 'model_EventHandler' and 'model_OnEvent'. From 'model_EventHandler', the role 'model_EventHandler198' has cardinality 0..*, and from 'model_OnEvent', the role 'model_OnEvent' has cardinality 0..*.
+An association connects 'model_Source' and 'model_Link'. From 'model_Source', the role 'sources' has cardinality 0..*, and from 'model_Link', the role 'Link200' has cardinality 0..*.
+An association connects 'model_Source' and 'model_Activity'. From 'model_Source', the role 'model_Source' has cardinality 0..*, and from 'model_Activity', the role 'model_Activity202' has cardinality 0..*.
+An association connects 'model_Source' and 'model_Condition'. From 'model_Source', the role 'model_Source204' has cardinality 0..*, and from 'model_Condition', the role 'model_Condition205' has cardinality 0..*.
+An association connects 'model_Link' and 'model_Target'. From 'model_Link', the role 'Link207' has cardinality 0..*, and from 'model_Target', the role 'targets' has cardinality 0..*.
+An association connects 'model_Target' and 'model_Activity'. From 'model_Target', the role 'model_Target' has cardinality 0..*, and from 'model_Activity', the role 'model_Activity209' has cardinality 0..*.
+An association connects 'model_PartnerLinks' and 'model_PartnerLink'. From 'model_PartnerLinks', the role 'model_PartnerLinks211' has cardinality 0..*, and from 'model_PartnerLink', the role 'model_PartnerLink212' has cardinality 0..*.
+An association connects 'model_MessageExchange' and 'model_MessageExchanges'. From 'model_MessageExchange', the role 'model_MessageExchange215' has cardinality 0..*, and from 'model_MessageExchanges', the role 'model_MessageExchanges214' has cardinality 0..*.
+An association connects 'model_Variable' and 'model_Variables'. From 'model_Variable', the role 'model_Variable218' has cardinality 0..*, and from 'model_Variables', the role 'model_Variables217' has cardinality 0..*.
+An association connects 'model_CorrelationSet' and 'model_CorrelationSets'. From 'model_CorrelationSet', the role 'model_CorrelationSet221' has cardinality 0..*, and from 'model_CorrelationSets', the role 'model_CorrelationSets220' has cardinality 0..*.
+An association connects 'model_Links' and 'model_Link'. From 'model_Links', the role 'model_Links223' has cardinality 0..*, and from 'model_Link', the role 'model_Link' has cardinality 0..*.
+An association connects 'model_CatchAll' and 'model_Activity'. From 'model_CatchAll', the role 'model_CatchAll225' has cardinality 0..*, and from 'model_Activity', the role 'model_Activity226' has cardinality 0..*.
+An association connects 'model_Correlation' and 'model_Correlations'. From 'model_Correlation', the role 'model_Correlation229' has cardinality 0..*, and from 'model_Correlations', the role 'model_Correlations228' has cardinality 0..*.
+An association connects 'Message' and 'model_Variable'. From 'Message', the role 'Message232' has cardinality 0..*, and from 'model_Variable', the role 'model_Variable231' has cardinality 0..*.
+An association connects 'model_Variable' and 'XSDElementDeclaration'. From 'model_Variable', the role 'model_Variable234' has cardinality 0..*, and from 'XSDElementDeclaration', the role 'XSDElementDeclaration235' has cardinality 0..*.
+An association connects 'XSDTypeDefinition' and 'model_Variable'. From 'XSDTypeDefinition', the role 'XSDTypeDefinition238' has cardinality 0..*, and from 'model_Variable', the role 'model_Variable237' has cardinality 0..*.
+An association connects 'model_From' and 'model_Variable'. From 'model_From', the role 'model_From241' has cardinality 0..*, and from 'model_Variable', the role 'model_Variable240' has cardinality 0..*.
+An association connects 'model_Activity' and 'model_OnEvent'. From 'model_Activity', the role 'model_Activity244' has cardinality 0..*, and from 'model_OnEvent', the role 'model_OnEvent243' has cardinality 0..*.
+An association connects 'model_Variable' and 'model_OnEvent'. From 'model_Variable', the role 'model_Variable247' has cardinality 0..*, and from 'model_OnEvent', the role 'model_OnEvent246' has cardinality 0..*.
+An association connects 'model_PartnerLink' and 'model_OnEvent'. From 'model_PartnerLink', the role 'model_PartnerLink250' has cardinality 0..*, and from 'model_OnEvent', the role 'model_OnEvent249' has cardinality 0..*.
+An association connects 'model_OnEvent' and 'model_Correlations'. From 'model_OnEvent', the role 'model_OnEvent252' has cardinality 0..*, and from 'model_Correlations', the role 'model_Correlations253' has cardinality 0..*.
+An association connects 'Operation' and 'model_OnEvent'. From 'Operation', the role 'Operation256' has cardinality 0..*, and from 'model_OnEvent', the role 'model_OnEvent255' has cardinality 0..*.
+An association connects 'PortType' and 'model_OnEvent'. From 'PortType', the role 'PortType259' has cardinality 0..*, and from 'model_OnEvent', the role 'model_OnEvent258' has cardinality 0..*.
+An association connects 'Message' and 'model_OnEvent'. From 'Message', the role 'Message262' has cardinality 0..*, and from 'model_OnEvent', the role 'model_OnEvent261' has cardinality 0..*.
+An association connects 'model_OnEvent' and 'XSDElementDeclaration'. From 'model_OnEvent', the role 'model_OnEvent264' has cardinality 0..*, and from 'XSDElementDeclaration', the role 'XSDElementDeclaration265' has cardinality 0..*.
+An association connects 'model_CorrelationSets' and 'model_OnEvent'. From 'model_CorrelationSets', the role 'model_CorrelationSets268' has cardinality 0..*, and from 'model_OnEvent', the role 'model_OnEvent267' has cardinality 0..*.
+An association connects 'model_FromParts' and 'model_OnEvent'. From 'model_FromParts', the role 'model_FromParts271' has cardinality 0..*, and from 'model_OnEvent', the role 'model_OnEvent270' has cardinality 0..*.
+An association connects 'model_MessageExchange' and 'model_OnEvent'. From 'model_MessageExchange', the role 'model_MessageExchange274' has cardinality 0..*, and from 'model_OnEvent', the role 'model_OnEvent273' has cardinality 0..*.
+An association connects 'model_Target' and 'model_Targets'. From 'model_Target', the role 'model_Target277' has cardinality 0..*, and from 'model_Targets', the role 'model_Targets276' has cardinality 0..*.
+An association connects 'model_Condition' and 'model_Targets'. From 'model_Condition', the role 'model_Condition280' has cardinality 0..*, and from 'model_Targets', the role 'model_Targets279' has cardinality 0..*.
+An association connects 'model_Source' and 'model_Sources'. From 'model_Source', the role 'model_Source283' has cardinality 0..*, and from 'model_Sources', the role 'model_Sources282' has cardinality 0..*.
+An association connects 'model_Extension' and 'model_Extensions'. From 'model_Extension', the role 'model_Extension' has cardinality 0..*, and from 'model_Extensions', the role 'model_Extensions285' has cardinality 0..*.
+An association connects 'model_Variable' and 'model_FromPart'. From 'model_Variable', the role 'model_Variable287' has cardinality 0..*, and from 'model_FromPart', the role 'model_FromPart' has cardinality 0..*.
+An association connects 'Part' and 'model_FromPart'. From 'Part', the role 'Part290' has cardinality 0..*, and from 'model_FromPart', the role 'model_FromPart289' has cardinality 0..*.
+An association connects 'model_ToPart' and 'model_Variable'. From 'model_ToPart', the role 'model_ToPart' has cardinality 0..*, and from 'model_Variable', the role 'model_Variable292' has cardinality 0..*.
+An association connects 'model_ToPart' and 'Part'. From 'model_ToPart', the role 'model_ToPart294' has cardinality 0..*, and from 'Part', the role 'Part295' has cardinality 0..*.
+An association connects 'model_ForEach' and 'model_Expression'. From 'model_ForEach', the role 'model_ForEach' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression297' has cardinality 0..*.
+An association connects 'model_ForEach' and 'model_Expression'. From 'model_ForEach', the role 'model_ForEach299' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression300' has cardinality 0..*.
+An association connects 'model_ForEach' and 'model_Variable'. From 'model_ForEach', the role 'model_ForEach302' has cardinality 0..*, and from 'model_Variable', the role 'model_Variable303' has cardinality 0..*.
+An association connects 'model_ForEach' and 'model_CompletionCondition'. From 'model_ForEach', the role 'model_ForEach305' has cardinality 0..*, and from 'model_CompletionCondition', the role 'model_CompletionCondition306' has cardinality 0..*.
+An association connects 'model_Activity' and 'model_ForEach'. From 'model_Activity', the role 'model_Activity309' has cardinality 0..*, and from 'model_ForEach', the role 'model_ForEach308' has cardinality 0..*.
+An association connects 'model_Activity' and 'model_RepeatUntil'. From 'model_Activity', the role 'model_Activity311' has cardinality 0..*, and from 'model_RepeatUntil', the role 'model_RepeatUntil' has cardinality 0..*.
+An association connects 'model_RepeatUntil' and 'model_Condition'. From 'model_RepeatUntil', the role 'model_RepeatUntil313' has cardinality 0..*, and from 'model_Condition', the role 'model_Condition314' has cardinality 0..*.
+An association connects 'model_Activity' and 'model_TerminationHandler'. From 'model_Activity', the role 'model_Activity317' has cardinality 0..*, and from 'model_TerminationHandler', the role 'model_TerminationHandler316' has cardinality 0..*.
+An association connects 'model_Validate' and 'model_Variable'. From 'model_Validate', the role 'model_Validate' has cardinality 0..*, and from 'model_Variable', the role 'model_Variable319' has cardinality 0..*.
+An association connects 'model_If' and 'model_Condition'. From 'model_If', the role 'model_If' has cardinality 0..*, and from 'model_Condition', the role 'model_Condition321' has cardinality 0..*.
+An association connects 'model_ElseIf' and 'model_If'. From 'model_ElseIf', the role 'model_ElseIf' has cardinality 0..*, and from 'model_If', the role 'model_If323' has cardinality 0..*.
+An association connects 'model_Else' and 'model_If'. From 'model_Else', the role 'model_Else' has cardinality 0..*, and from 'model_If', the role 'model_If325' has cardinality 0..*.
+An association connects 'model_If' and 'model_Activity'. From 'model_If', the role 'model_If327' has cardinality 0..*, and from 'model_Activity', the role 'model_Activity328' has cardinality 0..*.
+An association connects 'model_Condition' and 'model_ElseIf'. From 'model_Condition', the role 'model_Condition331' has cardinality 0..*, and from 'model_ElseIf', the role 'model_ElseIf330' has cardinality 0..*.
+An association connects 'model_ElseIf' and 'model_Activity'. From 'model_ElseIf', the role 'model_ElseIf333' has cardinality 0..*, and from 'model_Activity', the role 'model_Activity334' has cardinality 0..*.
+An association connects 'model_Else' and 'model_Activity'. From 'model_Else', the role 'model_Else336' has cardinality 0..*, and from 'model_Activity', the role 'model_Activity337' has cardinality 0..*.
+An association connects 'model_Branches' and 'model_CompletionCondition'. From 'model_Branches', the role 'model_Branches' has cardinality 0..*, and from 'model_CompletionCondition', the role 'model_CompletionCondition339' has cardinality 0..*.
+An association connects 'model_Documentation' and 'model_BPELExtensibleElement'. From 'model_Documentation', the role 'model_Documentation' has cardinality 0..*, and from 'model_BPELExtensibleElement', the role 'model_BPELExtensibleElement' has cardinality 0..*.
+An association connects 'model_FromPart' and 'model_FromParts'. From 'model_FromPart', the role 'model_FromPart343' has cardinality 0..*, and from 'model_FromParts', the role 'model_FromParts342' has cardinality 0..*.
+An association connects 'model_ToParts' and 'model_ToPart'. From 'model_ToParts', the role 'model_ToParts345' has cardinality 0..*, and from 'model_ToPart', the role 'model_ToPart346' has cardinality 0..*.
+An association connects 'Operation' and 'model_wsdl_PortType'. From 'Operation', the role 'Operation348' has cardinality 0..*, and from 'model_wsdl_PortType', the role 'model_wsdl_PortType' has cardinality 0..*.
+An association connects 'Input' and 'model_wsdl_Operation'. From 'Input', the role 'Input' has cardinality 0..*, and from 'model_wsdl_Operation', the role 'model_wsdl_Operation' has cardinality 0..*.
+An association connects 'model_wsdl_Operation' and 'Output'. From 'model_wsdl_Operation', the role 'model_wsdl_Operation351' has cardinality 0..*, and from 'Output', the role 'Output' has cardinality 0..*.
+An association connects 'Fault' and 'model_wsdl_Operation'. From 'Fault', the role 'Fault' has cardinality 0..*, and from 'model_wsdl_Operation', the role 'model_wsdl_Operation353' has cardinality 0..*.
+An association connects 'Part' and 'model_wsdl_Operation'. From 'Part', the role 'Part356' has cardinality 0..*, and from 'model_wsdl_Operation', the role 'model_wsdl_Operation355' has cardinality 0..*.
+An association connects 'model_wsdl_Message' and 'Part'. From 'model_wsdl_Message', the role 'model_wsdl_Message' has cardinality 0..*, and from 'Part', the role 'Part358' has cardinality 0..*.
+An association connects 'model_wsdl_Part' and 'XSDTypeDefinition'. From 'model_wsdl_Part', the role 'model_wsdl_Part' has cardinality 0..*, and from 'XSDTypeDefinition', the role 'XSDTypeDefinition360' has cardinality 0..*.
+An association connects 'model_wsdl_Part' and 'XSDElementDeclaration'. From 'model_wsdl_Part', the role 'model_wsdl_Part362' has cardinality 0..*, and from 'XSDElementDeclaration', the role 'XSDElementDeclaration363' has cardinality 0..*.
+An association connects 'Message' and 'model_wsdl_Part'. From 'Message', the role 'Message366' has cardinality 0..*, and from 'model_wsdl_Part', the role 'model_wsdl_Part365' has cardinality 0..*.
+An association connects 'PortType' and 'model_wsdl_Binding'. From 'PortType', the role 'PortType368' has cardinality 0..*, and from 'model_wsdl_Binding', the role 'model_wsdl_Binding' has cardinality 0..*.
+An association connects 'model_wsdl_Binding' and 'BindingOperation'. From 'model_wsdl_Binding', the role 'model_wsdl_Binding370' has cardinality 0..*, and from 'BindingOperation', the role 'BindingOperation' has cardinality 0..*.
+An association connects 'model_wsdl_BindingOperation' and 'Operation'. From 'model_wsdl_BindingOperation', the role 'model_wsdl_BindingOperation' has cardinality 0..*, and from 'Operation', the role 'Operation372' has cardinality 0..*.
+An association connects 'BindingInput' and 'model_wsdl_BindingOperation'. From 'BindingInput', the role 'BindingInput' has cardinality 0..*, and from 'model_wsdl_BindingOperation', the role 'model_wsdl_BindingOperation374' has cardinality 0..*.
+An association connects 'model_wsdl_BindingOperation' and 'BindingOutput'. From 'model_wsdl_BindingOperation', the role 'model_wsdl_BindingOperation376' has cardinality 0..*, and from 'BindingOutput', the role 'BindingOutput' has cardinality 0..*.
+An association connects 'model_wsdl_BindingOperation' and 'BindingFault'. From 'model_wsdl_BindingOperation', the role 'model_wsdl_BindingOperation378' has cardinality 0..*, and from 'BindingFault', the role 'BindingFault' has cardinality 0..*.
+An association connects 'Port' and 'model_wsdl_Service'. From 'Port', the role 'Port' has cardinality 0..*, and from 'model_wsdl_Service', the role 'model_wsdl_Service' has cardinality 0..*.
+An association connects 'model_wsdl_Port' and 'Binding'. From 'model_wsdl_Port', the role 'model_wsdl_Port' has cardinality 0..*, and from 'Binding', the role 'Binding' has cardinality 0..*.
+An association connects 'Import' and 'model_wsdl_Definition'. From 'Import', the role 'Import' has cardinality 0..*, and from 'model_wsdl_Definition', the role 'model_wsdl_Definition' has cardinality 0..*.
+An association connects 'model_wsdl_Definition' and 'Types'. From 'model_wsdl_Definition', the role 'model_wsdl_Definition383' has cardinality 0..*, and from 'Types', the role 'Types' has cardinality 0..*.
+An association connects 'model_wsdl_Definition' and 'Message'. From 'model_wsdl_Definition', the role 'model_wsdl_Definition385' has cardinality 0..*, and from 'Message', the role 'Message386' has cardinality 0..*.
+An association connects 'PortType' and 'model_wsdl_Definition'. From 'PortType', the role 'PortType389' has cardinality 0..*, and from 'model_wsdl_Definition', the role 'model_wsdl_Definition388' has cardinality 0..*.
+An association connects 'model_wsdl_Definition' and 'Binding'. From 'model_wsdl_Definition', the role 'model_wsdl_Definition391' has cardinality 0..*, and from 'Binding', the role 'Binding392' has cardinality 0..*.
+An association connects 'model_wsdl_Definition' and 'Service'. From 'model_wsdl_Definition', the role 'model_wsdl_Definition394' has cardinality 0..*, and from 'Service', the role 'Service' has cardinality 0..*.
+An association connects 'model_wsdl_Definition' and 'Namespace'. From 'model_wsdl_Definition', the role 'model_wsdl_Definition396' has cardinality 0..*, and from 'Namespace', the role 'Namespace' has cardinality 0..*.
+An association connects 'Definition' and 'model_wsdl_Import'. From 'Definition', the role 'Definition' has cardinality 0..*, and from 'model_wsdl_Import', the role 'model_wsdl_Import' has cardinality 0..*.
+An association connects 'XSDSchema' and 'model_wsdl_Import'. From 'XSDSchema', the role 'XSDSchema' has cardinality 0..*, and from 'model_wsdl_Import', the role 'model_wsdl_Import399' has cardinality 0..*.
+An association connects 'model_wsdl_ExtensibleElement' and 'ExtensibilityElement'. From 'model_wsdl_ExtensibleElement', the role 'model_wsdl_ExtensibleElement' has cardinality 0..*, and from 'ExtensibilityElement', the role 'ExtensibilityElement' has cardinality 0..*.
+An association connects 'model_wsdl_BindingInput' and 'Input'. From 'model_wsdl_BindingInput', the role 'model_wsdl_BindingInput' has cardinality 0..*, and from 'Input', the role 'Input402' has cardinality 0..*.
+An association connects 'Output' and 'model_wsdl_BindingOutput'. From 'Output', the role 'Output404' has cardinality 0..*, and from 'model_wsdl_BindingOutput', the role 'model_wsdl_BindingOutput' has cardinality 0..*.
+An association connects 'model_wsdl_BindingFault' and 'Fault'. From 'model_wsdl_BindingFault', the role 'model_wsdl_BindingFault' has cardinality 0..*, and from 'Fault', the role 'Fault406' has cardinality 0..*.
+An association connects 'model_wsdl_UnknownExtensibilityElement' and 'UnknownExtensibilityElement'. From 'model_wsdl_UnknownExtensibilityElement', the role 'model_wsdl_UnknownExtensibilityElement' has cardinality 0..*, and from 'UnknownExtensibilityElement', the role 'UnknownExtensibilityElement' has cardinality 0..*.
+An association connects 'model_wsdl_XSDSchemaExtensibilityElement' and 'XSDSchema'. From 'model_wsdl_XSDSchemaExtensibilityElement', the role 'model_wsdl_XSDSchemaExtensibilityElement' has cardinality 0..*, and from 'XSDSchema', the role 'XSDSchema409' has cardinality 0..*.
+An association connects 'model_wsdl_MessageReference' and 'Message'. From 'model_wsdl_MessageReference', the role 'model_wsdl_MessageReference' has cardinality 0..*, and from 'Message', the role 'Message411' has cardinality 0..*.
+An association connects 'XSDAnnotation' and 'model_xsd_XSDAttributeDeclaration'. From 'XSDAnnotation', the role 'XSDAnnotation' has cardinality 0..*, and from 'model_xsd_XSDAttributeDeclaration', the role 'model_xsd_XSDAttributeDeclaration' has cardinality 0..*.
+An association connects 'XSDSimpleTypeDefinition' and 'model_xsd_XSDAttributeDeclaration'. From 'XSDSimpleTypeDefinition', the role 'XSDSimpleTypeDefinition' has cardinality 0..*, and from 'model_xsd_XSDAttributeDeclaration', the role 'model_xsd_XSDAttributeDeclaration414' has cardinality 0..*.
+An association connects 'XSDSimpleTypeDefinition' and 'model_xsd_XSDAttributeDeclaration'. From 'XSDSimpleTypeDefinition', the role 'XSDSimpleTypeDefinition417' has cardinality 0..*, and from 'model_xsd_XSDAttributeDeclaration', the role 'model_xsd_XSDAttributeDeclaration416' has cardinality 0..*.
+An association connects 'XSDAttributeDeclaration' and 'model_xsd_XSDAttributeDeclaration'. From 'XSDAttributeDeclaration', the role 'XSDAttributeDeclaration' has cardinality 0..*, and from 'model_xsd_XSDAttributeDeclaration', the role 'model_xsd_XSDAttributeDeclaration419' has cardinality 0..*.
+An association connects 'XSDAnnotation' and 'model_xsd_XSDAttributeGroupDefinition'. From 'XSDAnnotation', the role 'XSDAnnotation421' has cardinality 0..*, and from 'model_xsd_XSDAttributeGroupDefinition', the role 'model_xsd_XSDAttributeGroupDefinition' has cardinality 0..*.
+An association connects 'XSDAttributeGroupContent' and 'model_xsd_XSDAttributeGroupDefinition'. From 'XSDAttributeGroupContent', the role 'XSDAttributeGroupContent' has cardinality 0..*, and from 'model_xsd_XSDAttributeGroupDefinition', the role 'model_xsd_XSDAttributeGroupDefinition423' has cardinality 0..*.
+An association connects 'XSDAttributeUse' and 'model_xsd_XSDAttributeGroupDefinition'. From 'XSDAttributeUse', the role 'XSDAttributeUse' has cardinality 0..*, and from 'model_xsd_XSDAttributeGroupDefinition', the role 'model_xsd_XSDAttributeGroupDefinition425' has cardinality 0..*.
+An association connects 'model_xsd_XSDAttributeGroupDefinition' and 'XSDWildcard'. From 'model_xsd_XSDAttributeGroupDefinition', the role 'model_xsd_XSDAttributeGroupDefinition427' has cardinality 0..*, and from 'XSDWildcard', the role 'XSDWildcard' has cardinality 0..*.
+An association connects 'model_xsd_XSDAttributeGroupDefinition' and 'XSDWildcard'. From 'model_xsd_XSDAttributeGroupDefinition', the role 'model_xsd_XSDAttributeGroupDefinition429' has cardinality 0..*, and from 'XSDWildcard', the role 'XSDWildcard430' has cardinality 0..*.
+An association connects 'XSDAttributeGroupDefinition' and 'model_xsd_XSDAttributeGroupDefinition'. From 'XSDAttributeGroupDefinition', the role 'XSDAttributeGroupDefinition' has cardinality 0..*, and from 'model_xsd_XSDAttributeGroupDefinition', the role 'model_xsd_XSDAttributeGroupDefinition432' has cardinality 0..*.
+An association connects 'XSDWildcard' and 'model_xsd_XSDAttributeGroupDefinition'. From 'XSDWildcard', the role 'XSDWildcard435' has cardinality 0..*, and from 'model_xsd_XSDAttributeGroupDefinition', the role 'model_xsd_XSDAttributeGroupDefinition434' has cardinality 0..*.
+An association connects 'XSDAttributeDeclaration' and 'model_xsd_XSDAttributeUse'. From 'XSDAttributeDeclaration', the role 'XSDAttributeDeclaration437' has cardinality 0..*, and from 'model_xsd_XSDAttributeUse', the role 'model_xsd_XSDAttributeUse' has cardinality 0..*.
+An association connects 'XSDAttributeDeclaration' and 'model_xsd_XSDAttributeUse'. From 'XSDAttributeDeclaration', the role 'XSDAttributeDeclaration440' has cardinality 0..*, and from 'model_xsd_XSDAttributeUse', the role 'model_xsd_XSDAttributeUse439' has cardinality 0..*.
+An association connects 'XSDAnnotation' and 'model_xsd_XSDComplexTypeDefinition'. From 'XSDAnnotation', the role 'XSDAnnotation442' has cardinality 0..*, and from 'model_xsd_XSDComplexTypeDefinition', the role 'model_xsd_XSDComplexTypeDefinition' has cardinality 0..*.
+An association connects 'XSDTypeDefinition' and 'model_xsd_XSDComplexTypeDefinition'. From 'XSDTypeDefinition', the role 'XSDTypeDefinition445' has cardinality 0..*, and from 'model_xsd_XSDComplexTypeDefinition', the role 'model_xsd_XSDComplexTypeDefinition444' has cardinality 0..*.
+An association connects 'model_xsd_XSDComplexTypeDefinition' and 'XSDComplexTypeContent'. From 'model_xsd_XSDComplexTypeDefinition', the role 'model_xsd_XSDComplexTypeDefinition447' has cardinality 0..*, and from 'XSDComplexTypeContent', the role 'XSDComplexTypeContent' has cardinality 0..*.
+An association connects 'XSDComplexTypeContent' and 'model_xsd_XSDComplexTypeDefinition'. From 'XSDComplexTypeContent', the role 'XSDComplexTypeContent450' has cardinality 0..*, and from 'model_xsd_XSDComplexTypeDefinition', the role 'model_xsd_XSDComplexTypeDefinition449' has cardinality 0..*.
+An association connects 'XSDAttributeUse' and 'model_xsd_XSDComplexTypeDefinition'. From 'XSDAttributeUse', the role 'XSDAttributeUse453' has cardinality 0..*, and from 'model_xsd_XSDComplexTypeDefinition', the role 'model_xsd_XSDComplexTypeDefinition452' has cardinality 0..*.
+An association connects 'XSDAttributeGroupContent' and 'model_xsd_XSDComplexTypeDefinition'. From 'XSDAttributeGroupContent', the role 'XSDAttributeGroupContent456' has cardinality 0..*, and from 'model_xsd_XSDComplexTypeDefinition', the role 'model_xsd_XSDComplexTypeDefinition455' has cardinality 0..*.
+An association connects 'model_xsd_XSDComplexTypeDefinition' and 'XSDWildcard'. From 'model_xsd_XSDComplexTypeDefinition', the role 'model_xsd_XSDComplexTypeDefinition458' has cardinality 0..*, and from 'XSDWildcard', the role 'XSDWildcard459' has cardinality 0..*.
+An association connects 'XSDWildcard' and 'model_xsd_XSDComplexTypeDefinition'. From 'XSDWildcard', the role 'XSDWildcard462' has cardinality 0..*, and from 'model_xsd_XSDComplexTypeDefinition', the role 'model_xsd_XSDComplexTypeDefinition461' has cardinality 0..*.
+An association connects 'XSDTypeDefinition' and 'model_xsd_XSDComplexTypeDefinition'. From 'XSDTypeDefinition', the role 'XSDTypeDefinition465' has cardinality 0..*, and from 'model_xsd_XSDComplexTypeDefinition', the role 'model_xsd_XSDComplexTypeDefinition464' has cardinality 0..*.
+An association connects 'model_xsd_XSDComplexTypeDefinition' and 'XSDParticle'. From 'model_xsd_XSDComplexTypeDefinition', the role 'model_xsd_XSDComplexTypeDefinition467' has cardinality 0..*, and from 'XSDParticle', the role 'XSDParticle' has cardinality 0..*.
+An association connects 'XSDWildcard' and 'model_xsd_XSDComplexTypeDefinition'. From 'XSDWildcard', the role 'XSDWildcard470' has cardinality 0..*, and from 'model_xsd_XSDComplexTypeDefinition', the role 'model_xsd_XSDComplexTypeDefinition469' has cardinality 0..*.
+An association connects 'XSDConcreteComponent' and 'model_xsd_XSDConcreteComponent'. From 'XSDConcreteComponent', the role 'XSDConcreteComponent' has cardinality 0..*, and from 'model_xsd_XSDConcreteComponent', the role 'model_xsd_XSDConcreteComponent' has cardinality 0..*.
+An association connects 'model_xsd_XSDConcreteComponent' and 'XSDConcreteComponent'. From 'model_xsd_XSDConcreteComponent', the role 'model_xsd_XSDConcreteComponent473' has cardinality 0..*, and from 'XSDConcreteComponent', the role 'XSDConcreteComponent474' has cardinality 0..*.
+An association connects 'model_xsd_XSDConcreteComponent' and 'XSDSchema'. From 'model_xsd_XSDConcreteComponent', the role 'model_xsd_XSDConcreteComponent476' has cardinality 0..*, and from 'XSDSchema', the role 'XSDSchema477' has cardinality 0..*.
+An association connects 'XSDDiagnostic' and 'model_xsd_XSDConcreteComponent'. From 'XSDDiagnostic', the role 'XSDDiagnostic' has cardinality 0..*, and from 'model_xsd_XSDConcreteComponent', the role 'model_xsd_XSDConcreteComponent479' has cardinality 0..*.
+An association connects 'XSDConcreteComponent' and 'model_xsd_XSDDiagnostic'. From 'XSDConcreteComponent', the role 'XSDConcreteComponent481' has cardinality 0..*, and from 'model_xsd_XSDDiagnostic', the role 'model_xsd_XSDDiagnostic' has cardinality 0..*.
+An association connects 'XSDConcreteComponent' and 'model_xsd_XSDDiagnostic'. From 'XSDConcreteComponent', the role 'XSDConcreteComponent484' has cardinality 0..*, and from 'model_xsd_XSDDiagnostic', the role 'model_xsd_XSDDiagnostic483' has cardinality 0..*.
+An association connects 'XSDAnnotation' and 'model_xsd_XSDElementDeclaration'. From 'XSDAnnotation', the role 'XSDAnnotation486' has cardinality 0..*, and from 'model_xsd_XSDElementDeclaration', the role 'model_xsd_XSDElementDeclaration' has cardinality 0..*.
+An association connects 'XSDTypeDefinition' and 'model_xsd_XSDElementDeclaration'. From 'XSDTypeDefinition', the role 'XSDTypeDefinition489' has cardinality 0..*, and from 'model_xsd_XSDElementDeclaration', the role 'model_xsd_XSDElementDeclaration488' has cardinality 0..*.
+An association connects 'model_xsd_XSDElementDeclaration' and 'XSDTypeDefinition'. From 'model_xsd_XSDElementDeclaration', the role 'model_xsd_XSDElementDeclaration491' has cardinality 0..*, and from 'XSDTypeDefinition', the role 'XSDTypeDefinition492' has cardinality 0..*.
+An association connects 'model_xsd_XSDElementDeclaration' and 'XSDIdentityConstraintDefinition'. From 'model_xsd_XSDElementDeclaration', the role 'model_xsd_XSDElementDeclaration494' has cardinality 0..*, and from 'XSDIdentityConstraintDefinition', the role 'XSDIdentityConstraintDefinition' has cardinality 0..*.
+An association connects 'XSDElementDeclaration' and 'model_xsd_XSDElementDeclaration'. From 'XSDElementDeclaration', the role 'XSDElementDeclaration497' has cardinality 0..*, and from 'model_xsd_XSDElementDeclaration', the role 'model_xsd_XSDElementDeclaration496' has cardinality 0..*.
+An association connects 'XSDElementDeclaration' and 'model_xsd_XSDElementDeclaration'. From 'XSDElementDeclaration', the role 'XSDElementDeclaration500' has cardinality 0..*, and from 'model_xsd_XSDElementDeclaration', the role 'model_xsd_XSDElementDeclaration499' has cardinality 0..*.
+An association connects 'model_xsd_XSDElementDeclaration' and 'XSDElementDeclaration'. From 'model_xsd_XSDElementDeclaration', the role 'model_xsd_XSDElementDeclaration502' has cardinality 0..*, and from 'XSDElementDeclaration', the role 'XSDElementDeclaration503' has cardinality 0..*.
+An association connects 'model_xsd_XSDFacet' and 'XSDAnnotation'. From 'model_xsd_XSDFacet', the role 'model_xsd_XSDFacet' has cardinality 0..*, and from 'XSDAnnotation', the role 'XSDAnnotation505' has cardinality 0..*.
+An association connects 'model_xsd_XSDFacet' and 'XSDSimpleTypeDefinition'. From 'model_xsd_XSDFacet', the role 'model_xsd_XSDFacet507' has cardinality 0..*, and from 'XSDSimpleTypeDefinition', the role 'XSDSimpleTypeDefinition508' has cardinality 0..*.
+An association connects 'model_xsd_XSDFeature' and 'XSDScope'. From 'model_xsd_XSDFeature', the role 'model_xsd_XSDFeature' has cardinality 0..*, and from 'XSDScope', the role 'XSDScope' has cardinality 0..*.
+An association connects 'model_xsd_XSDFeature' and 'XSDFeature'. From 'model_xsd_XSDFeature', the role 'model_xsd_XSDFeature511' has cardinality 0..*, and from 'XSDFeature', the role 'XSDFeature' has cardinality 0..*.
+An association connects 'XSDTypeDefinition' and 'model_xsd_XSDFeature'. From 'XSDTypeDefinition', the role 'XSDTypeDefinition514' has cardinality 0..*, and from 'model_xsd_XSDFeature', the role 'model_xsd_XSDFeature513' has cardinality 0..*.
+An association connects 'XSDAnnotation' and 'model_xsd_XSDIdentityConstraintDefinition'. From 'XSDAnnotation', the role 'XSDAnnotation516' has cardinality 0..*, and from 'model_xsd_XSDIdentityConstraintDefinition', the role 'model_xsd_XSDIdentityConstraintDefinition' has cardinality 0..*.
+An association connects 'model_xsd_XSDIdentityConstraintDefinition' and 'XSDIdentityConstraintDefinition'. From 'model_xsd_XSDIdentityConstraintDefinition', the role 'model_xsd_XSDIdentityConstraintDefinition518' has cardinality 0..*, and from 'XSDIdentityConstraintDefinition', the role 'XSDIdentityConstraintDefinition519' has cardinality 0..*.
+An association connects 'model_xsd_XSDIdentityConstraintDefinition' and 'XSDXPathDefinition'. From 'model_xsd_XSDIdentityConstraintDefinition', the role 'model_xsd_XSDIdentityConstraintDefinition521' has cardinality 0..*, and from 'XSDXPathDefinition', the role 'XSDXPathDefinition' has cardinality 0..*.
+An association connects 'model_xsd_XSDIdentityConstraintDefinition' and 'XSDXPathDefinition'. From 'model_xsd_XSDIdentityConstraintDefinition', the role 'model_xsd_XSDIdentityConstraintDefinition523' has cardinality 0..*, and from 'XSDXPathDefinition', the role 'XSDXPathDefinition524' has cardinality 0..*.
+An association connects 'model_xsd_XSDImport' and 'XSDAnnotation'. From 'model_xsd_XSDImport', the role 'model_xsd_XSDImport' has cardinality 0..*, and from 'XSDAnnotation', the role 'XSDAnnotation526' has cardinality 0..*.
+An association connects 'model_xsd_XSDInclude' and 'XSDAnnotation'. From 'model_xsd_XSDInclude', the role 'model_xsd_XSDInclude' has cardinality 0..*, and from 'XSDAnnotation', the role 'XSDAnnotation528' has cardinality 0..*.
+An association connects 'model_xsd_XSDModelGroup' and 'XSDAnnotation'. From 'model_xsd_XSDModelGroup', the role 'model_xsd_XSDModelGroup' has cardinality 0..*, and from 'XSDAnnotation', the role 'XSDAnnotation530' has cardinality 0..*.
+An association connects 'XSDParticle' and 'model_xsd_XSDModelGroup'. From 'XSDParticle', the role 'XSDParticle533' has cardinality 0..*, and from 'model_xsd_XSDModelGroup', the role 'model_xsd_XSDModelGroup532' has cardinality 0..*.
+An association connects 'XSDParticle' and 'model_xsd_XSDModelGroup'. From 'XSDParticle', the role 'XSDParticle536' has cardinality 0..*, and from 'model_xsd_XSDModelGroup', the role 'model_xsd_XSDModelGroup535' has cardinality 0..*.
+An association connects 'model_xsd_XSDModelGroupDefinition' and 'XSDAnnotation'. From 'model_xsd_XSDModelGroupDefinition', the role 'model_xsd_XSDModelGroupDefinition' has cardinality 0..*, and from 'XSDAnnotation', the role 'XSDAnnotation538' has cardinality 0..*.
+An association connects 'model_xsd_XSDModelGroupDefinition' and 'XSDModelGroup'. From 'model_xsd_XSDModelGroupDefinition', the role 'model_xsd_XSDModelGroupDefinition540' has cardinality 0..*, and from 'XSDModelGroup', the role 'XSDModelGroup' has cardinality 0..*.
+An association connects 'model_xsd_XSDModelGroupDefinition' and 'XSDModelGroupDefinition'. From 'model_xsd_XSDModelGroupDefinition', the role 'model_xsd_XSDModelGroupDefinition542' has cardinality 0..*, and from 'XSDModelGroupDefinition', the role 'XSDModelGroupDefinition' has cardinality 0..*.
+An association connects 'XSDAnnotation' and 'model_xsd_XSDNotationDeclaration'. From 'XSDAnnotation', the role 'XSDAnnotation544' has cardinality 0..*, and from 'model_xsd_XSDNotationDeclaration', the role 'model_xsd_XSDNotationDeclaration' has cardinality 0..*.
+An association connects 'model_xsd_XSDParticle' and 'XSDParticleContent'. From 'model_xsd_XSDParticle', the role 'model_xsd_XSDParticle' has cardinality 0..*, and from 'XSDParticleContent', the role 'XSDParticleContent' has cardinality 0..*.
+An association connects 'XSDTerm' and 'model_xsd_XSDParticle'. From 'XSDTerm', the role 'XSDTerm' has cardinality 0..*, and from 'model_xsd_XSDParticle', the role 'model_xsd_XSDParticle547' has cardinality 0..*.
+An association connects 'XSDAnnotation' and 'model_xsd_XSDRedefine'. From 'XSDAnnotation', the role 'XSDAnnotation549' has cardinality 0..*, and from 'model_xsd_XSDRedefine', the role 'model_xsd_XSDRedefine' has cardinality 0..*.
+An association connects 'XSDRedefineContent' and 'model_xsd_XSDRedefine'. From 'XSDRedefineContent', the role 'XSDRedefineContent' has cardinality 0..*, and from 'model_xsd_XSDRedefine', the role 'model_xsd_XSDRedefine551' has cardinality 0..*.
+An association connects 'model_xsd_XSDRepeatableFacet' and 'XSDAnnotation'. From 'model_xsd_XSDRepeatableFacet', the role 'model_xsd_XSDRepeatableFacet' has cardinality 0..*, and from 'XSDAnnotation', the role 'XSDAnnotation553' has cardinality 0..*.
+An association connects 'XSDSchemaContent' and 'model_xsd_XSDSchema'. From 'XSDSchemaContent', the role 'XSDSchemaContent' has cardinality 0..*, and from 'model_xsd_XSDSchema', the role 'model_xsd_XSDSchema' has cardinality 0..*.
+An association connects 'XSDElementDeclaration' and 'model_xsd_XSDSchema'. From 'XSDElementDeclaration', the role 'XSDElementDeclaration557' has cardinality 0..*, and from 'model_xsd_XSDSchema', the role 'model_xsd_XSDSchema556' has cardinality 0..*.
+An association connects 'XSDAttributeDeclaration' and 'model_xsd_XSDSchema'. From 'XSDAttributeDeclaration', the role 'XSDAttributeDeclaration560' has cardinality 0..*, and from 'model_xsd_XSDSchema', the role 'model_xsd_XSDSchema559' has cardinality 0..*.
+An association connects 'model_xsd_XSDSchema' and 'XSDAttributeGroupDefinition'. From 'model_xsd_XSDSchema', the role 'model_xsd_XSDSchema562' has cardinality 0..*, and from 'XSDAttributeGroupDefinition', the role 'XSDAttributeGroupDefinition563' has cardinality 0..*.
+An association connects 'XSDTypeDefinition' and 'model_xsd_XSDSchema'. From 'XSDTypeDefinition', the role 'XSDTypeDefinition566' has cardinality 0..*, and from 'model_xsd_XSDSchema', the role 'model_xsd_XSDSchema565' has cardinality 0..*.
+An association connects 'model_xsd_XSDSchema' and 'XSDModelGroupDefinition'. From 'model_xsd_XSDSchema', the role 'model_xsd_XSDSchema568' has cardinality 0..*, and from 'XSDModelGroupDefinition', the role 'XSDModelGroupDefinition569' has cardinality 0..*.
+An association connects 'XSDIdentityConstraintDefinition' and 'model_xsd_XSDSchema'. From 'XSDIdentityConstraintDefinition', the role 'XSDIdentityConstraintDefinition572' has cardinality 0..*, and from 'model_xsd_XSDSchema', the role 'model_xsd_XSDSchema571' has cardinality 0..*.
+An association connects 'XSDNotationDeclaration' and 'model_xsd_XSDSchema'. From 'XSDNotationDeclaration', the role 'XSDNotationDeclaration' has cardinality 0..*, and from 'model_xsd_XSDSchema', the role 'model_xsd_XSDSchema574' has cardinality 0..*.
+An association connects 'model_xsd_XSDSchema' and 'XSDAnnotation'. From 'model_xsd_XSDSchema', the role 'model_xsd_XSDSchema576' has cardinality 0..*, and from 'XSDAnnotation', the role 'XSDAnnotation577' has cardinality 0..*.
+An association connects 'XSDDiagnostic' and 'model_xsd_XSDSchema'. From 'XSDDiagnostic', the role 'XSDDiagnostic580' has cardinality 0..*, and from 'model_xsd_XSDSchema', the role 'model_xsd_XSDSchema579' has cardinality 0..*.
+An association connects 'XSDSchemaDirective' and 'model_xsd_XSDSchema'. From 'XSDSchemaDirective', the role 'XSDSchemaDirective' has cardinality 0..*, and from 'model_xsd_XSDSchema', the role 'model_xsd_XSDSchema582' has cardinality 0..*.
+An association connects 'XSDSchema' and 'model_xsd_XSDSchema'. From 'XSDSchema', the role 'XSDSchema585' has cardinality 0..*, and from 'model_xsd_XSDSchema', the role 'model_xsd_XSDSchema584' has cardinality 0..*.
+An association connects 'model_xsd_XSDSchema' and 'XSDSchema'. From 'model_xsd_XSDSchema', the role 'model_xsd_XSDSchema587' has cardinality 0..*, and from 'XSDSchema', the role 'XSDSchema588' has cardinality 0..*.
+An association connects 'model_xsd_XSDSchema' and 'XSDSchema'. From 'model_xsd_XSDSchema', the role 'model_xsd_XSDSchema590' has cardinality 0..*, and from 'XSDSchema', the role 'XSDSchema591' has cardinality 0..*.
+An association connects 'model_xsd_XSDSchema' and 'XSDSchema'. From 'model_xsd_XSDSchema', the role 'model_xsd_XSDSchema593' has cardinality 0..*, and from 'XSDSchema', the role 'XSDSchema594' has cardinality 0..*.
+An association connects 'XSDSchema' and 'model_xsd_XSDSchemaCompositor'. From 'XSDSchema', the role 'XSDSchema596' has cardinality 0..*, and from 'model_xsd_XSDSchemaCompositor', the role 'model_xsd_XSDSchemaCompositor' has cardinality 0..*.
+An association connects 'model_xsd_XSDSchemaDirective' and 'XSDSchema'. From 'model_xsd_XSDSchemaDirective', the role 'model_xsd_XSDSchemaDirective' has cardinality 0..*, and from 'XSDSchema', the role 'XSDSchema598' has cardinality 0..*.
+An association connects 'XSDSimpleTypeDefinition' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDSimpleTypeDefinition', the role 'XSDSimpleTypeDefinition600' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition' has cardinality 0..*.
+An association connects 'model_xsd_XSDSimpleTypeDefinition' and 'XSDConstrainingFacet'. From 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition602' has cardinality 0..*, and from 'XSDConstrainingFacet', the role 'XSDConstrainingFacet' has cardinality 0..*.
+An association connects 'XSDConstrainingFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDConstrainingFacet', the role 'XSDConstrainingFacet605' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition604' has cardinality 0..*.
+An association connects 'model_xsd_XSDSimpleTypeDefinition' and 'XSDSimpleTypeDefinition'. From 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition607' has cardinality 0..*, and from 'XSDSimpleTypeDefinition', the role 'XSDSimpleTypeDefinition608' has cardinality 0..*.
+An association connects 'XSDFundamentalFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDFundamentalFacet', the role 'XSDFundamentalFacet' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition610' has cardinality 0..*.
+An association connects 'model_xsd_XSDSimpleTypeDefinition' and 'XSDSimpleTypeDefinition'. From 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition612' has cardinality 0..*, and from 'XSDSimpleTypeDefinition', the role 'XSDSimpleTypeDefinition613' has cardinality 0..*.
+An association connects 'model_xsd_XSDSimpleTypeDefinition' and 'XSDSimpleTypeDefinition'. From 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition615' has cardinality 0..*, and from 'XSDSimpleTypeDefinition', the role 'XSDSimpleTypeDefinition616' has cardinality 0..*.
+An association connects 'model_xsd_XSDSimpleTypeDefinition' and 'XSDSimpleTypeDefinition'. From 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition618' has cardinality 0..*, and from 'XSDSimpleTypeDefinition', the role 'XSDSimpleTypeDefinition619' has cardinality 0..*.
+An association connects 'model_xsd_XSDSimpleTypeDefinition' and 'XSDSimpleTypeDefinition'. From 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition621' has cardinality 0..*, and from 'XSDSimpleTypeDefinition', the role 'XSDSimpleTypeDefinition622' has cardinality 0..*.
+An association connects 'XSDMinFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDMinFacet', the role 'XSDMinFacet' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition624' has cardinality 0..*.
+An association connects 'XSDMaxFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDMaxFacet', the role 'XSDMaxFacet' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition626' has cardinality 0..*.
+An association connects 'model_xsd_XSDSimpleTypeDefinition' and 'XSDMaxInclusiveFacet'. From 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition628' has cardinality 0..*, and from 'XSDMaxInclusiveFacet', the role 'XSDMaxInclusiveFacet' has cardinality 0..*.
+An association connects 'XSDMinInclusiveFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDMinInclusiveFacet', the role 'XSDMinInclusiveFacet' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition630' has cardinality 0..*.
+An association connects 'XSDMinExclusiveFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDMinExclusiveFacet', the role 'XSDMinExclusiveFacet' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition632' has cardinality 0..*.
+An association connects 'model_xsd_XSDSimpleTypeDefinition' and 'XSDMaxExclusiveFacet'. From 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition634' has cardinality 0..*, and from 'XSDMaxExclusiveFacet', the role 'XSDMaxExclusiveFacet' has cardinality 0..*.
+An association connects 'model_xsd_XSDSimpleTypeDefinition' and 'XSDLengthFacet'. From 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition636' has cardinality 0..*, and from 'XSDLengthFacet', the role 'XSDLengthFacet' has cardinality 0..*.
+An association connects 'model_xsd_XSDSimpleTypeDefinition' and 'XSDWhiteSpaceFacet'. From 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition638' has cardinality 0..*, and from 'XSDWhiteSpaceFacet', the role 'XSDWhiteSpaceFacet' has cardinality 0..*.
+An association connects 'XSDEnumerationFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDEnumerationFacet', the role 'XSDEnumerationFacet' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition640' has cardinality 0..*.
+An association connects 'XSDPatternFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDPatternFacet', the role 'XSDPatternFacet' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition642' has cardinality 0..*.
+An association connects 'XSDCardinalityFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDCardinalityFacet', the role 'XSDCardinalityFacet' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition644' has cardinality 0..*.
+An association connects 'model_xsd_XSDSimpleTypeDefinition' and 'XSDNumericFacet'. From 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition646' has cardinality 0..*, and from 'XSDNumericFacet', the role 'XSDNumericFacet' has cardinality 0..*.
+An association connects 'XSDMaxLengthFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDMaxLengthFacet', the role 'XSDMaxLengthFacet' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition648' has cardinality 0..*.
+An association connects 'XSDMinLengthFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDMinLengthFacet', the role 'XSDMinLengthFacet' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition650' has cardinality 0..*.
+An association connects 'XSDTotalDigitsFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDTotalDigitsFacet', the role 'XSDTotalDigitsFacet' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition652' has cardinality 0..*.
+An association connects 'model_xsd_XSDSimpleTypeDefinition' and 'XSDFractionDigitsFacet'. From 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition654' has cardinality 0..*, and from 'XSDFractionDigitsFacet', the role 'XSDFractionDigitsFacet' has cardinality 0..*.
+An association connects 'XSDOrderedFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDOrderedFacet', the role 'XSDOrderedFacet' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition656' has cardinality 0..*.
+An association connects 'XSDBoundedFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDBoundedFacet', the role 'XSDBoundedFacet' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition658' has cardinality 0..*.
+An association connects 'XSDMaxFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDMaxFacet', the role 'XSDMaxFacet661' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition660' has cardinality 0..*.
+An association connects 'XSDWhiteSpaceFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDWhiteSpaceFacet', the role 'XSDWhiteSpaceFacet664' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition663' has cardinality 0..*.
+An association connects 'XSDMaxLengthFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDMaxLengthFacet', the role 'XSDMaxLengthFacet667' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition666' has cardinality 0..*.
+An association connects 'XSDFractionDigitsFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDFractionDigitsFacet', the role 'XSDFractionDigitsFacet670' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition669' has cardinality 0..*.
+An association connects 'model_xsd_XSDSimpleTypeDefinition' and 'XSDPatternFacet'. From 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition672' has cardinality 0..*, and from 'XSDPatternFacet', the role 'XSDPatternFacet673' has cardinality 0..*.
+An association connects 'XSDEnumerationFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDEnumerationFacet', the role 'XSDEnumerationFacet676' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition675' has cardinality 0..*.
+An association connects 'XSDTotalDigitsFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDTotalDigitsFacet', the role 'XSDTotalDigitsFacet679' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition678' has cardinality 0..*.
+An association connects 'XSDMinLengthFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDMinLengthFacet', the role 'XSDMinLengthFacet682' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition681' has cardinality 0..*.
+An association connects 'XSDLengthFacet' and 'model_xsd_XSDSimpleTypeDefinition'. From 'XSDLengthFacet', the role 'XSDLengthFacet685' has cardinality 0..*, and from 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition684' has cardinality 0..*.
+An association connects 'model_xsd_XSDSimpleTypeDefinition' and 'XSDMinFacet'. From 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition687' has cardinality 0..*, and from 'XSDMinFacet', the role 'XSDMinFacet688' has cardinality 0..*.
+An association connects 'model_xsd_XSDSimpleTypeDefinition' and 'XSDFacet'. From 'model_xsd_XSDSimpleTypeDefinition', the role 'model_xsd_XSDSimpleTypeDefinition690' has cardinality 0..*, and from 'XSDFacet', the role 'XSDFacet' has cardinality 0..*.
+An association connects 'model_xsd_XSDTypeDefinition' and 'XSDAnnotation'. From 'model_xsd_XSDTypeDefinition', the role 'model_xsd_XSDTypeDefinition' has cardinality 0..*, and from 'XSDAnnotation', the role 'XSDAnnotation692' has cardinality 0..*.
+An association connects 'model_xsd_XSDTypeDefinition' and 'XSDAnnotation'. From 'model_xsd_XSDTypeDefinition', the role 'model_xsd_XSDTypeDefinition694' has cardinality 0..*, and from 'XSDAnnotation', the role 'XSDAnnotation695' has cardinality 0..*.
+An association connects 'XSDAnnotation' and 'model_xsd_XSDTypeDefinition'. From 'XSDAnnotation', the role 'XSDAnnotation698' has cardinality 0..*, and from 'model_xsd_XSDTypeDefinition', the role 'model_xsd_XSDTypeDefinition697' has cardinality 0..*.
+An association connects 'model_xsd_XSDTypeDefinition' and 'XSDTypeDefinition'. From 'model_xsd_XSDTypeDefinition', the role 'model_xsd_XSDTypeDefinition700' has cardinality 0..*, and from 'XSDTypeDefinition', the role 'XSDTypeDefinition701' has cardinality 0..*.
+An association connects 'model_xsd_XSDTypeDefinition' and 'XSDTypeDefinition'. From 'model_xsd_XSDTypeDefinition', the role 'model_xsd_XSDTypeDefinition703' has cardinality 0..*, and from 'XSDTypeDefinition', the role 'XSDTypeDefinition704' has cardinality 0..*.
+An association connects 'model_xsd_XSDTypeDefinition' and 'XSDSimpleTypeDefinition'. From 'model_xsd_XSDTypeDefinition', the role 'model_xsd_XSDTypeDefinition706' has cardinality 0..*, and from 'XSDSimpleTypeDefinition', the role 'XSDSimpleTypeDefinition707' has cardinality 0..*.
+An association connects 'XSDParticle' and 'model_xsd_XSDTypeDefinition'. From 'XSDParticle', the role 'XSDParticle710' has cardinality 0..*, and from 'model_xsd_XSDTypeDefinition', the role 'model_xsd_XSDTypeDefinition709' has cardinality 0..*.
+An association connects 'model_xsd_XSDWildcard' and 'XSDAnnotation'. From 'model_xsd_XSDWildcard', the role 'model_xsd_XSDWildcard' has cardinality 0..*, and from 'XSDAnnotation', the role 'XSDAnnotation712' has cardinality 0..*.
+An association connects 'model_xsd_XSDWildcard' and 'XSDAnnotation'. From 'model_xsd_XSDWildcard', the role 'model_xsd_XSDWildcard714' has cardinality 0..*, and from 'XSDAnnotation', the role 'XSDAnnotation715' has cardinality 0..*.
+An association connects 'model_xsd_XSDXPathDefinition' and 'XSDAnnotation'. From 'model_xsd_XSDXPathDefinition', the role 'model_xsd_XSDXPathDefinition' has cardinality 0..*, and from 'XSDAnnotation', the role 'XSDAnnotation717' has cardinality 0..*.
+An association connects 'model_messageproperties_PropertyAlias' and 'Part'. From 'model_messageproperties_PropertyAlias', the role 'model_messageproperties_PropertyAlias' has cardinality 0..*, and from 'Part', the role 'Part719' has cardinality 0..*.
+An association connects 'Query' and 'model_messageproperties_PropertyAlias'. From 'Query', the role 'Query' has cardinality 0..*, and from 'model_messageproperties_PropertyAlias', the role 'model_messageproperties_PropertyAlias721' has cardinality 0..*.
+An association connects 'Role' and 'model_partnerlinktype_PartnerLinkType'. From 'Role', the role 'Role723' has cardinality 0..*, and from 'model_partnerlinktype_PartnerLinkType', the role 'model_partnerlinktype_PartnerLinkType' has cardinality 0..*.

@@ -1,0 +1,47 @@
+The domain model 'dispatch' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'dispatch_G' represents an important domain concept.
+It does not declare any attributes.
+
+'dispatch_B' represents an important domain concept.
+It does not declare any attributes.
+
+'C' represents an important domain concept.
+It does not declare any attributes.
+
+'dispatch_C' represents an important domain concept.
+It does not declare any attributes.
+
+'dispatch_D' represents an important domain concept.
+It does not declare any attributes.
+
+'dispatch_E' represents an important domain concept.
+It does not declare any attributes.
+
+'dispatch_A' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'dispatch_F' represents an important domain concept.
+It does not declare any attributes.
+
+'dispatch_Container' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'dispatch_B' is a specialization of 'A'.
+The class 'dispatch_C' is a specialization of 'A'.
+The class 'dispatch_D' is a specialization of 'B'.
+The class 'dispatch_E' is a specialization of 'B'.
+The class 'dispatch_F' is a specialization of 'C'.
+The class 'dispatch_G' is a specialization of 'C'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dispatch_Container' and 'dispatch_A'. From 'dispatch_Container', the role 'dispatch_Container' has cardinality 0..*, and from 'dispatch_A', the role 'dispatch_A' has cardinality 0..*.

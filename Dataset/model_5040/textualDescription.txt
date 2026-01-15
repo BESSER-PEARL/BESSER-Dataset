@@ -1,0 +1,141 @@
+The domain model 'bank' describes the core structural elements and their relationships within the system.
+
+The model defines 32 main class(es).
+
+'bank_WebAddress' represents an important domain concept.
+It has one attribute: 'url', which is of type str.
+
+'bank_Statement' represents an important domain concept.
+It has the following attributes: 'closingBalance', which is of type str; 'openingBalance', which is of type str; 'openingDate', which is of type date; 'closingDate', which is of type date.
+
+'bank_Banker' represents an important domain concept.
+It does not declare any attributes.
+
+'bank_ContactMethod' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str.
+
+'bank_PostalAddress' represents an important domain concept.
+It has the following attributes: 'postalCode', which is of type str; 'country', which is of type str; 'line2', which is of type str; 'stateProvince', which is of type str; 'city', which is of type str; 'line1', which is of type str.
+
+'Account' represents an important domain concept.
+It does not declare any attributes.
+
+'bank_Bank' represents an important domain concept.
+It does not declare any attributes.
+
+'bank_BankerTransaction' represents an important domain concept.
+It does not declare any attributes.
+
+'TransactionInitiator' represents an important domain concept.
+It does not declare any attributes.
+
+'bank_MobilePhone' represents an important domain concept.
+It has the following attributes: 'number', which is of type str; 'key', which is of type str.
+
+'bank_Account' represents an important domain concept.
+It has the following attributes: 'periodStart', which is of type int; 'description', which is of type str; 'balance', which is of type str; 'number', which is of type str.
+
+'bank_DeviceTransaction' represents an important domain concept.
+It does not declare any attributes.
+
+'Device' represents an important domain concept.
+It does not declare any attributes.
+
+'bank_Transaction' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'amount', which is of type str; 'date', which is of type date; 'id', which is of type str.
+
+'bank_Merchant' represents an important domain concept.
+It does not declare any attributes.
+
+'bank_Token' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'bank_EMail' represents an important domain concept.
+It has one attribute: 'eMailAddress', which is of type str.
+
+'ContactMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'bank_InternalAccount' represents an important domain concept.
+It does not declare any attributes.
+
+'bank_PointOfSale' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'bank_OnlineTransaction' represents an important domain concept.
+It does not declare any attributes.
+
+'bank_Card' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'expires', which is of type date; 'activated', which is of type date; 'deactivated', which is of type date; 'virtual', which is of type bool; 'issued', which is of type date.
+
+'bank_Device' represents an important domain concept.
+It does not declare any attributes.
+
+'bank_TokenTransaction' represents an important domain concept.
+It does not declare any attributes.
+
+'bank_TransactionInitiator' represents an important domain concept.
+It does not declare any attributes.
+
+'Party' represents an important domain concept.
+It does not declare any attributes.
+
+'bank_CustomerAccount' represents an important domain concept.
+It does not declare any attributes.
+
+'bank_Party' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bank_OnlineSession' represents an important domain concept.
+It has the following attributes: 'start', which is of type date; 'internetAddress', which is of type str; 'end', which is of type date.
+
+'bank_Phone' represents an important domain concept.
+It has the following attributes: 'countryCode', which is of type int; 'areaCode', which is of type int; 'extension', which is of type int; 'phoneNumber', which is of type int.
+
+'bank_Product' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str.
+
+'bank_Customer' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'bank_EMail' is a specialization of 'ContactMethod'.
+The class 'bank_Phone' is a specialization of 'ContactMethod'.
+The class 'bank_PostalAddress' is a specialization of 'ContactMethod'.
+The class 'bank_WebAddress' is a specialization of 'ContactMethod'.
+The class 'bank_Bank' is a specialization of 'Party'.
+The class 'bank_Customer' is a specialization of 'Party'.
+The class 'bank_Merchant' is a specialization of 'Party'.
+The class 'bank_Device' is a specialization of 'TransactionInitiator'.
+The class 'bank_MobilePhone' is a specialization of 'Device'.
+The class 'bank_Card' is a specialization of 'Device'.
+The class 'bank_CustomerAccount' is a specialization of 'Account'.
+The class 'bank_InternalAccount' is a specialization of 'Account'.
+The class 'bank_Banker' is a specialization of 'Party'.
+The class 'bank_Banker' is a specialization of 'TransactionInitiator'.
+The class 'bank_Token' is a specialization of 'TransactionInitiator'.
+The class 'bank_OnlineSession' is a specialization of 'TransactionInitiator'.
+
+Relationships between classes are modeled using associations.
+An association connects 'bank_ContactMethod' and 'bank_Party'. From 'bank_ContactMethod', the role 'bank_ContactMethod' has cardinality 0..*, and from 'bank_Party', the role 'bank_Party' has cardinality 0..*.
+An association connects 'bank_Merchant' and 'bank_Bank'. From 'bank_Merchant', the role 'bank_Merchant' has cardinality 0..*, and from 'bank_Bank', the role 'bank_Bank' has cardinality 0..*.
+An association connects 'bank_Bank' and 'bank_Product'. From 'bank_Bank', the role 'bank_Bank3' has cardinality 0..*, and from 'bank_Product', the role 'bank_Product' has cardinality 0..*.
+An association connects 'bank_Account' and 'bank_Bank'. From 'bank_Account', the role 'bank_Account' has cardinality 0..*, and from 'bank_Bank', the role 'bank_Bank5' has cardinality 0..*.
+An association connects 'bank_Customer' and 'bank_Bank'. From 'bank_Customer', the role 'bank_Customer' has cardinality 0..*, and from 'bank_Bank', the role 'bank_Bank7' has cardinality 0..*.
+An association connects 'bank_Bank' and 'bank_Banker'. From 'bank_Bank', the role 'bank_Bank9' has cardinality 0..*, and from 'bank_Banker', the role 'bank_Banker' has cardinality 0..*.
+An association connects 'bank_CustomerAccount' and 'bank_Customer'. From 'bank_CustomerAccount', the role 'CustomerAccount' has cardinality 0..*, and from 'bank_Customer', the role 'owners' has cardinality 0..*.
+An association connects 'bank_Customer' and 'bank_OnlineSession'. From 'bank_Customer', the role 'bank_Customer12' has cardinality 0..*, and from 'bank_OnlineSession', the role 'bank_OnlineSession' has cardinality 0..*.
+An association connects 'bank_Account' and 'bank_Statement'. From 'bank_Account', the role 'bank_Account14' has cardinality 0..*, and from 'bank_Statement', the role 'bank_Statement' has cardinality 0..*.
+An association connects 'bank_Transaction' and 'bank_Statement'. From 'bank_Transaction', the role 'debits' has cardinality 0..*, and from 'bank_Statement', the role 'Statement' has cardinality 0..*.
+An association connects 'bank_Transaction' and 'bank_Statement'. From 'bank_Transaction', the role 'credits' has cardinality 0..*, and from 'bank_Statement', the role 'Statement17' has cardinality 0..*.
+An association connects 'bank_Transaction' and 'bank_TransactionInitiator'. From 'bank_Transaction', the role 'bank_Transaction' has cardinality 0..*, and from 'bank_TransactionInitiator', the role 'bank_TransactionInitiator' has cardinality 0..*.
+An association connects 'bank_Merchant' and 'bank_PointOfSale'. From 'bank_Merchant', the role 'bank_Merchant20' has cardinality 0..*, and from 'bank_PointOfSale', the role 'bank_PointOfSale' has cardinality 0..*.
+An association connects 'bank_PointOfSale' and 'bank_PostalAddress'. From 'bank_PointOfSale', the role 'bank_PointOfSale22' has cardinality 0..*, and from 'bank_PostalAddress', the role 'bank_PostalAddress' has cardinality 0..*.
+An association connects 'bank_Token' and 'bank_Device'. From 'bank_Token', the role 'bank_Token' has cardinality 0..*, and from 'bank_Device', the role 'bank_Device' has cardinality 0..*.
+An association connects 'bank_Card' and 'bank_Merchant'. From 'bank_Card', the role 'bank_Card' has cardinality 0..*, and from 'bank_Merchant', the role 'bank_Merchant25' has cardinality 0..*.
+An association connects 'bank_Card' and 'bank_Card'. From 'bank_Card', the role 'bank_Card26' has cardinality 0..*, and from 'bank_Card', the role 'bank_Card28' has cardinality 0..*.
+An association connects 'bank_PointOfSale' and 'bank_DeviceTransaction'. From 'bank_PointOfSale', the role 'bank_PointOfSale30' has cardinality 0..*, and from 'bank_DeviceTransaction', the role 'bank_DeviceTransaction' has cardinality 0..*.
+An association connects 'bank_CustomerAccount' and 'bank_Device'. From 'bank_CustomerAccount', the role 'bank_CustomerAccount' has cardinality 0..*, and from 'bank_Device', the role 'bank_Device32' has cardinality 0..*.
+An association connects 'bank_Product' and 'bank_CustomerAccount'. From 'bank_Product', the role 'bank_Product35' has cardinality 0..*, and from 'bank_CustomerAccount', the role 'bank_CustomerAccount34' has cardinality 0..*.
+An association connects 'bank_CustomerAccount' and 'bank_Customer'. From 'bank_CustomerAccount', the role 'accounts' has cardinality 0..*, and from 'bank_Customer', the role 'Customer' has cardinality 0..*.
+An association connects 'bank_Token' and 'bank_Merchant'. From 'bank_Token', the role 'bank_Token38' has cardinality 0..*, and from 'bank_Merchant', the role 'bank_Merchant39' has cardinality 0..*.

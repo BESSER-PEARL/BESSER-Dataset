@@ -1,0 +1,44 @@
+The domain model 'scholar' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'scholar_Exam' represents an important domain concept.
+It has one attribute: 'score', which is of type float.
+
+'scholar_ScholarManagement' represents an important domain concept.
+It does not declare any attributes.
+
+'scholar_Student' represents an important domain concept.
+It has one attribute: 'forname', which is of type str.
+
+'scholar_Lecture' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'scholar_Discipline' represents an important domain concept.
+It does not declare any attributes.
+
+'scholar_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'scholar_Teacher' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'scholar_Student' is a specialization of 'Named'.
+The class 'scholar_Lecture' is a specialization of 'Named'.
+The class 'scholar_Exam' is a specialization of 'Named'.
+The class 'scholar_Discipline' is a specialization of 'Named'.
+The class 'scholar_Teacher' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'scholar_Student' and 'scholar_Exam'. From 'scholar_Student', the role 'scholar_Student' has cardinality 0..*, and from 'scholar_Exam', the role 'scholar_Exam' has cardinality 0..*.
+An association connects 'scholar_Lecture' and 'scholar_Teacher'. From 'scholar_Lecture', the role 'scholar_Lecture' has cardinality 0..*, and from 'scholar_Teacher', the role 'scholar_Teacher' has cardinality 0..*.
+An association connects 'scholar_Lecture' and 'scholar_Discipline'. From 'scholar_Lecture', the role 'scholar_Lecture3' has cardinality 0..*, and from 'scholar_Discipline', the role 'scholar_Discipline' has cardinality 0..*.
+An association connects 'scholar_Exam' and 'scholar_Lecture'. From 'scholar_Exam', the role 'scholar_Exam5' has cardinality 0..*, and from 'scholar_Lecture', the role 'scholar_Lecture6' has cardinality 0..*.
+An association connects 'scholar_ScholarManagement' and 'scholar_Student'. From 'scholar_ScholarManagement', the role 'scholar_ScholarManagement' has cardinality 0..*, and from 'scholar_Student', the role 'scholar_Student8' has cardinality 0..*.
+An association connects 'scholar_Discipline' and 'scholar_ScholarManagement'. From 'scholar_Discipline', the role 'scholar_Discipline11' has cardinality 0..*, and from 'scholar_ScholarManagement', the role 'scholar_ScholarManagement10' has cardinality 0..*.
+An association connects 'scholar_Lecture' and 'scholar_ScholarManagement'. From 'scholar_Lecture', the role 'scholar_Lecture14' has cardinality 0..*, and from 'scholar_ScholarManagement', the role 'scholar_ScholarManagement13' has cardinality 0..*.
+An association connects 'scholar_Teacher' and 'scholar_ScholarManagement'. From 'scholar_Teacher', the role 'scholar_Teacher17' has cardinality 0..*, and from 'scholar_ScholarManagement', the role 'scholar_ScholarManagement16' has cardinality 0..*.

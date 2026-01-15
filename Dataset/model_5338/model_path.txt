@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/juancadavid/papyrus/tests/junit/extraplugins/cdo/org.eclipse.papyrus.cdo.core.tests/resources/xmi/B.ecore

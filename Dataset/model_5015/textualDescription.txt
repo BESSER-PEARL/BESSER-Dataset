@@ -1,0 +1,26 @@
+The domain model 'schemaprimerpo' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'schemaprimerpo_Item' represents an important domain concept.
+It has the following attributes: 'partNum', which is of type str; 'productName', which is of type str; 'shipDate', which is of type str; 'uSPrice', which is of type str; 'quantity', which is of type str; 'comment', which is of type str.
+
+'schemaprimerpo_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'schemaprimerpo_USAddress' represents an important domain concept.
+It has the following attributes: 'zip', which is of type str; 'state', which is of type str; 'name', which is of type str; 'city', which is of type str; 'street', which is of type str; 'country', which is of type str.
+
+'schemaprimerpo_PurchaseOrder' represents an important domain concept.
+It has the following attributes: 'orderDate', which is of type str; 'comment', which is of type str.
+
+'schemaprimerpo_DocumentRoot' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'comment', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'schemaprimerpo_EStringToStringMapEntry' and 'schemaprimerpo_DocumentRoot'. From 'schemaprimerpo_EStringToStringMapEntry', the role 'schemaprimerpo_EStringToStringMapEntry' has cardinality 0..*, and from 'schemaprimerpo_DocumentRoot', the role 'schemaprimerpo_DocumentRoot' has cardinality 0..*.
+An association connects 'schemaprimerpo_EStringToStringMapEntry' and 'schemaprimerpo_DocumentRoot'. From 'schemaprimerpo_EStringToStringMapEntry', the role 'schemaprimerpo_EStringToStringMapEntry3' has cardinality 0..*, and from 'schemaprimerpo_DocumentRoot', the role 'schemaprimerpo_DocumentRoot2' has cardinality 0..*.
+An association connects 'schemaprimerpo_PurchaseOrder' and 'schemaprimerpo_DocumentRoot'. From 'schemaprimerpo_PurchaseOrder', the role 'schemaprimerpo_PurchaseOrder' has cardinality 0..*, and from 'schemaprimerpo_DocumentRoot', the role 'schemaprimerpo_DocumentRoot5' has cardinality 0..*.
+An association connects 'schemaprimerpo_PurchaseOrder' and 'schemaprimerpo_USAddress'. From 'schemaprimerpo_PurchaseOrder', the role 'schemaprimerpo_PurchaseOrder7' has cardinality 0..*, and from 'schemaprimerpo_USAddress', the role 'schemaprimerpo_USAddress' has cardinality 0..*.
+An association connects 'schemaprimerpo_USAddress' and 'schemaprimerpo_PurchaseOrder'. From 'schemaprimerpo_USAddress', the role 'schemaprimerpo_USAddress10' has cardinality 0..*, and from 'schemaprimerpo_PurchaseOrder', the role 'schemaprimerpo_PurchaseOrder9' has cardinality 0..*.
+An association connects 'schemaprimerpo_PurchaseOrder' and 'schemaprimerpo_Item'. From 'schemaprimerpo_PurchaseOrder', the role 'schemaprimerpo_PurchaseOrder12' has cardinality 0..*, and from 'schemaprimerpo_Item', the role 'schemaprimerpo_Item' has cardinality 0..*.

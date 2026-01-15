@@ -1,0 +1,121 @@
+The domain model 'flowgraph' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'flowgraph_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'flowgraph_Param' represents an important domain concept.
+It does not declare any attributes.
+
+'JumpStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'flowgraph_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'FlowInstr' represents an important domain concept.
+It does not declare any attributes.
+
+'flowgraph_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'flowgraph_Break' represents an important domain concept.
+It does not declare any attributes.
+
+'flowgraph_Var' represents an important domain concept.
+It does not declare any attributes.
+
+'flowgraph_Item' represents an important domain concept.
+It has the following attributes: 'txt', which is of type str; 'line', which is of type int.
+
+'Var' represents an important domain concept.
+It does not declare any attributes.
+
+'flowgraph_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'flowgraph_If' represents an important domain concept.
+It does not declare any attributes.
+
+'flowgraph_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'flowgraph_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'flowgraph_Continue' represents an important domain concept.
+It does not declare any attributes.
+
+'flowgraph_JumpStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'flowgraph_Stmt' represents an important domain concept.
+It does not declare any attributes.
+
+'Stmt' represents an important domain concept.
+It does not declare any attributes.
+
+'Item' represents an important domain concept.
+It does not declare any attributes.
+
+'flowgraph_Exit' represents an important domain concept.
+It does not declare any attributes.
+
+'flowgraph_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'flowgraph_FlowInstr' represents an important domain concept.
+It does not declare any attributes.
+
+'flowgraph_SimpleStmt' represents an important domain concept.
+It has the following attributes: 'valiableAccess', which is of type str; 'type', which is of type str; 'functionAccess', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'flowgraph_Stmt' is a specialization of 'Item'.
+The class 'flowgraph_SimpleStmt' is a specialization of 'Stmt'.
+The class 'flowgraph_SimpleStmt' is a specialization of 'FlowInstr'.
+The class 'flowgraph_Block' is a specialization of 'Stmt'.
+The class 'flowgraph_If' is a specialization of 'Conditional'.
+The class 'flowgraph_Expr' is a specialization of 'FlowInstr'.
+The class 'flowgraph_Return' is a specialization of 'Stmt'.
+The class 'flowgraph_Return' is a specialization of 'FlowInstr'.
+The class 'flowgraph_Method' is a specialization of 'Block'.
+The class 'flowgraph_Method' is a specialization of 'FlowInstr'.
+The class 'flowgraph_Exit' is a specialization of 'FlowInstr'.
+The class 'flowgraph_Loop' is a specialization of 'Conditional'.
+The class 'flowgraph_Conditional' is a specialization of 'Stmt'.
+The class 'flowgraph_JumpStmt' is a specialization of 'Stmt'.
+The class 'flowgraph_JumpStmt' is a specialization of 'FlowInstr'.
+The class 'flowgraph_Break' is a specialization of 'JumpStmt'.
+The class 'flowgraph_Continue' is a specialization of 'JumpStmt'.
+The class 'flowgraph_FlowInstr' is a specialization of 'Item'.
+The class 'flowgraph_Var' is a specialization of 'Item'.
+The class 'flowgraph_Param' is a specialization of 'Var'.
+The class 'flowgraph_Label' is a specialization of 'Stmt'.
+
+Relationships between classes are modeled using associations.
+An association connects 'flowgraph_Block' and 'flowgraph_Stmt'. From 'flowgraph_Block', the role 'flowgraph_Block' has cardinality 0..*, and from 'flowgraph_Stmt', the role 'flowgraph_Stmt' has cardinality 0..*.
+An association connects 'flowgraph_If' and 'flowgraph_Stmt'. From 'flowgraph_If', the role 'flowgraph_If' has cardinality 0..*, and from 'flowgraph_Stmt', the role 'flowgraph_Stmt2' has cardinality 0..*.
+An association connects 'flowgraph_If' and 'flowgraph_Stmt'. From 'flowgraph_If', the role 'flowgraph_If4' has cardinality 0..*, and from 'flowgraph_Stmt', the role 'flowgraph_Stmt5' has cardinality 0..*.
+An association connects 'flowgraph_Exit' and 'flowgraph_Method'. From 'flowgraph_Exit', the role 'flowgraph_Exit' has cardinality 0..*, and from 'flowgraph_Method', the role 'flowgraph_Method' has cardinality 0..*.
+An association connects 'flowgraph_Var' and 'flowgraph_Method'. From 'flowgraph_Var', the role 'Var' has cardinality 0..*, and from 'flowgraph_Method', the role 'method' has cardinality 0..*.
+An association connects 'flowgraph_Stmt' and 'flowgraph_Loop'. From 'flowgraph_Stmt', the role 'flowgraph_Stmt9' has cardinality 0..*, and from 'flowgraph_Loop', the role 'flowgraph_Loop' has cardinality 0..*.
+An association connects 'flowgraph_Conditional' and 'flowgraph_Expr'. From 'flowgraph_Conditional', the role 'flowgraph_Conditional' has cardinality 0..*, and from 'flowgraph_Expr', the role 'flowgraph_Expr' has cardinality 0..*.
+An association connects 'flowgraph_JumpStmt' and 'flowgraph_Label'. From 'flowgraph_JumpStmt', the role 'jumps' has cardinality 0..*, and from 'flowgraph_Label', the role 'Label' has cardinality 0..*.
+An association connects 'flowgraph_FlowInstr' and 'flowgraph_FlowInstr'. From 'flowgraph_FlowInstr', the role 'FlowInstr' has cardinality 0..*, and from 'flowgraph_FlowInstr', the role 'cfPrev' has cardinality 0..*.
+An association connects 'flowgraph_FlowInstr' and 'flowgraph_FlowInstr'. From 'flowgraph_FlowInstr', the role 'FlowInstr16' has cardinality 0..*, and from 'flowgraph_FlowInstr', the role 'cfNext' has cardinality 0..*.
+An association connects 'flowgraph_Var' and 'flowgraph_FlowInstr'. From 'flowgraph_Var', the role 'Var18' has cardinality 0..*, and from 'flowgraph_FlowInstr', the role 'definers' has cardinality 0..*.
+An association connects 'flowgraph_Var' and 'flowgraph_FlowInstr'. From 'flowgraph_Var', the role 'Var20' has cardinality 0..*, and from 'flowgraph_FlowInstr', the role 'users' has cardinality 0..*.
+An association connects 'flowgraph_FlowInstr' and 'flowgraph_FlowInstr'. From 'flowgraph_FlowInstr', the role 'flowgraph_FlowInstr' has cardinality 0..*, and from 'flowgraph_FlowInstr', the role 'flowgraph_FlowInstr21' has cardinality 0..*.
+An association connects 'flowgraph_Var' and 'flowgraph_FlowInstr'. From 'flowgraph_Var', the role 'def' has cardinality 0..*, and from 'flowgraph_FlowInstr', the role 'FlowInstr24' has cardinality 0..*.
+An association connects 'flowgraph_FlowInstr' and 'flowgraph_Var'. From 'flowgraph_FlowInstr', the role 'FlowInstr26' has cardinality 0..*, and from 'flowgraph_Var', the role 'use' has cardinality 0..*.
+An association connects 'flowgraph_Method' and 'flowgraph_Var'. From 'flowgraph_Method', the role 'Method' has cardinality 0..*, and from 'flowgraph_Var', the role 'vars' has cardinality 0..*.
+An association connects 'flowgraph_Label' and 'flowgraph_Stmt'. From 'flowgraph_Label', the role 'flowgraph_Label' has cardinality 0..*, and from 'flowgraph_Stmt', the role 'flowgraph_Stmt29' has cardinality 0..*.
+An association connects 'flowgraph_JumpStmt' and 'flowgraph_Label'. From 'flowgraph_JumpStmt', the role 'JumpStmt' has cardinality 0..*, and from 'flowgraph_Label', the role 'label' has cardinality 0..*.

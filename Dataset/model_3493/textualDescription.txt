@@ -1,0 +1,92 @@
+The domain model 'features_modeling' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'features_modeling_AND' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'features_modeling_F' represents an important domain concept.
+It does not declare any attributes.
+
+'features_modeling_Feature' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'E' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'features_modeling_EMAND' represents an important domain concept.
+It does not declare any attributes.
+
+'features_modeling_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'features_modeling_G' represents an important domain concept.
+It does not declare any attributes.
+
+'features_modeling_GOR' represents an important domain concept.
+It does not declare any attributes.
+
+'features_modeling_PropFormulaCNF' represents an important domain concept.
+It does not declare any attributes.
+
+'features_modeling_E' represents an important domain concept.
+It does not declare any attributes.
+
+'features_modeling_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'features_modeling_NOT' represents an important domain concept.
+It does not declare any attributes.
+
+'features_modeling_PropositionOR' represents an important domain concept.
+It does not declare any attributes.
+
+'Group' represents an important domain concept.
+It does not declare any attributes.
+
+'features_modeling_Constraints' represents an important domain concept.
+It does not declare any attributes.
+
+'features_modeling_GXOR' represents an important domain concept.
+It does not declare any attributes.
+
+'features_modeling_EX' represents an important domain concept.
+It does not declare any attributes.
+
+'features_modeling_R' represents an important domain concept.
+It does not declare any attributes.
+
+'features_modeling_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'features_modeling_I' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'features_modeling_R' is a specialization of 'Feature'.
+The class 'features_modeling_EMAND' is a specialization of 'E'.
+The class 'features_modeling_GXOR' is a specialization of 'Group'.
+The class 'features_modeling_GOR' is a specialization of 'Group'.
+The class 'features_modeling_I' is a specialization of 'Constraint'.
+The class 'features_modeling_EX' is a specialization of 'Constraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'features_modeling_R' and 'features_modeling_G'. From 'features_modeling_R', the role 'features_modeling_R' has cardinality 0..*, and from 'features_modeling_G', the role 'features_modeling_G' has cardinality 0..*.
+An association connects 'features_modeling_Feature' and 'features_modeling_Feature'. From 'features_modeling_Feature', the role 'features_modeling_Feature1' has cardinality 0..*, and from 'features_modeling_Feature', the role 'features_modeling_Feature' has cardinality 0..*.
+An association connects 'features_modeling_Feature' and 'features_modeling_F'. From 'features_modeling_Feature', the role 'features_modeling_Feature4' has cardinality 0..*, and from 'features_modeling_F', the role 'features_modeling_F' has cardinality 0..*.
+An association connects 'features_modeling_R' and 'features_modeling_F'. From 'features_modeling_R', the role 'features_modeling_R7' has cardinality 0..*, and from 'features_modeling_F', the role 'features_modeling_F6' has cardinality 0..*.
+An association connects 'features_modeling_Edge' and 'features_modeling_Feature'. From 'features_modeling_Edge', the role 'features_modeling_Edge' has cardinality 0..*, and from 'features_modeling_Feature', the role 'features_modeling_Feature9' has cardinality 0..*.
+An association connects 'features_modeling_E' and 'features_modeling_Edge'. From 'features_modeling_E', the role 'features_modeling_E' has cardinality 0..*, and from 'features_modeling_Edge', the role 'features_modeling_Edge11' has cardinality 0..*.
+An association connects 'features_modeling_Feature' and 'features_modeling_Constraint'. From 'features_modeling_Feature', the role 'features_modeling_Feature13' has cardinality 0..*, and from 'features_modeling_Constraint', the role 'features_modeling_Constraint' has cardinality 0..*.
+An association connects 'features_modeling_Group' and 'features_modeling_Feature'. From 'features_modeling_Group', the role 'features_modeling_Group' has cardinality 0..*, and from 'features_modeling_Feature', the role 'features_modeling_Feature15' has cardinality 0..*.
+An association connects 'features_modeling_Constraint' and 'features_modeling_Constraints'. From 'features_modeling_Constraint', the role 'features_modeling_Constraint17' has cardinality 0..*, and from 'features_modeling_Constraints', the role 'features_modeling_Constraints' has cardinality 0..*.
+An association connects 'features_modeling_PropFormulaCNF' and 'features_modeling_PropositionOR'. From 'features_modeling_PropFormulaCNF', the role 'features_modeling_PropFormulaCNF' has cardinality 0..*, and from 'features_modeling_PropositionOR', the role 'features_modeling_PropositionOR' has cardinality 0..*.
+An association connects 'features_modeling_Feature' and 'features_modeling_PropositionOR'. From 'features_modeling_Feature', the role 'features_modeling_Feature21' has cardinality 0..*, and from 'features_modeling_PropositionOR', the role 'features_modeling_PropositionOR20' has cardinality 0..*.
+An association connects 'features_modeling_NOT' and 'features_modeling_PropositionOR'. From 'features_modeling_NOT', the role 'features_modeling_NOT' has cardinality 0..*, and from 'features_modeling_PropositionOR', the role 'features_modeling_PropositionOR23' has cardinality 0..*.
+An association connects 'features_modeling_Feature' and 'features_modeling_NOT'. From 'features_modeling_Feature', the role 'features_modeling_Feature26' has cardinality 0..*, and from 'features_modeling_NOT', the role 'features_modeling_NOT25' has cardinality 0..*.

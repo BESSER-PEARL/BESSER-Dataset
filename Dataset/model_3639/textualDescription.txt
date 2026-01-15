@@ -1,0 +1,57 @@
+The domain model 'dfa' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dfa_Dfa' represents an important domain concept.
+It does not declare any attributes.
+
+'RegularState' represents an important domain concept.
+It does not declare any attributes.
+
+'dfa_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'dfa_Symbol' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'literal', which is of type str; 'direction', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'dfa_State' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'dfa_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dfa_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'dfa_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'dfa_RegularState' represents an important domain concept.
+It does not declare any attributes.
+
+'dfa_Language' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'dfa_Dfa' is a specialization of 'NamedElement'.
+The class 'dfa_State' is a specialization of 'NamedElement'.
+The class 'dfa_InitialState' is a specialization of 'RegularState'.
+The class 'dfa_FinalState' is a specialization of 'State'.
+The class 'dfa_Language' is a specialization of 'NamedElement'.
+The class 'dfa_RegularState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dfa_Dfa' and 'dfa_Language'. From 'dfa_Dfa', the role 'dfa_Dfa' has cardinality 0..*, and from 'dfa_Language', the role 'dfa_Language' has cardinality 0..*.
+An association connects 'dfa_RegularState' and 'dfa_Dfa'. From 'dfa_RegularState', the role 'dfa_RegularState' has cardinality 0..*, and from 'dfa_Dfa', the role 'dfa_Dfa2' has cardinality 0..*.
+An association connects 'dfa_InitialState' and 'dfa_Dfa'. From 'dfa_InitialState', the role 'dfa_InitialState' has cardinality 0..*, and from 'dfa_Dfa', the role 'dfa_Dfa4' has cardinality 0..*.
+An association connects 'dfa_FinalState' and 'dfa_Dfa'. From 'dfa_FinalState', the role 'dfa_FinalState' has cardinality 0..*, and from 'dfa_Dfa', the role 'dfa_Dfa6' has cardinality 0..*.
+An association connects 'dfa_Transition' and 'dfa_State'. From 'dfa_Transition', the role 'dfa_Transition' has cardinality 0..*, and from 'dfa_State', the role 'dfa_State' has cardinality 0..*.
+An association connects 'dfa_Transition' and 'dfa_Symbol'. From 'dfa_Transition', the role 'dfa_Transition9' has cardinality 0..*, and from 'dfa_Symbol', the role 'dfa_Symbol' has cardinality 0..*.
+An association connects 'dfa_Language' and 'dfa_Symbol'. From 'dfa_Language', the role 'dfa_Language11' has cardinality 0..*, and from 'dfa_Symbol', the role 'dfa_Symbol12' has cardinality 0..*.
+An association connects 'dfa_Transition' and 'dfa_RegularState'. From 'dfa_Transition', the role 'dfa_Transition15' has cardinality 0..*, and from 'dfa_RegularState', the role 'dfa_RegularState14' has cardinality 0..*.

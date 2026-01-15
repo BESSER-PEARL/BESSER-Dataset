@@ -1,0 +1,292 @@
+The domain model 'crom_l1_composed' describes the core structural elements and their relationships within the system.
+
+The model defines 64 main class(es).
+
+'crom_l1_composed_RoleType' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationshipConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_RelationshipExclusion' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_Part' represents an important domain concept.
+It has the following attributes: 'upper', which is of type int; 'lower', which is of type int.
+
+'crom_l1_composed_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_AbstractRole' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_AntiRigidType' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_Total' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_RelationshipImplication' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_DataType' represents an important domain concept.
+It has one attribute: 'serializable', which is of type bool.
+
+'crom_l1_composed_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_RoleGroupElement' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_Place' represents an important domain concept.
+It has the following attributes: 'upper', which is of type int; 'lower', which is of type int.
+
+'RigidType' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractRole' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_AbstractRoleRef' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_Acyclic' represents an important domain concept.
+It does not declare any attributes.
+
+'Model' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_RelationTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_Irreflexive' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_Cyclic' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_Reflexive' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_RelationshipConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'InterRelationshipConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_RoleProhibition' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_RoleEquivalence' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_NaturalInheritance' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_Operation' represents an important domain concept.
+It has one attribute: 'operation', which is of type str.
+
+'AntiRigidType' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_RoleConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'RoleConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_CompartmentType' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_DataInheritance' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_RoleImplication' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_ComplexConstraint' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'RoleGroupElement' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_ParthoodConstraint' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'Inheritance' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_Fulfillment' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_RigidType' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_CompartmentInheritance' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_Relationship' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'crom_l1_composed_NaturalType' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_IntraRelationshipConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_RoleInheritance' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_RoleGroup' represents an important domain concept.
+It has the following attributes: 'upper', which is of type int; 'lower', which is of type int.
+
+'crom_l1_composed_InterRelationshipConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'IntraRelationshipConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_composed_Inheritance' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Parthood' defines the following possible values: 'InseparablePart', 'Unconstrained', 'SharablePart', 'EssentialPart', 'MandatoryPart', 'ExclusivePart'.
+The enumeration 'Direction' defines the following possible values: 'SecondToFirst', 'FirstToSecond', 'Undirected'.
+
+The model also captures inheritance relationships between classes.
+The class 'crom_l1_composed_ModelElement' is a specialization of 'NamedElement'.
+The class 'crom_l1_composed_RigidType' is a specialization of 'Type'.
+The class 'crom_l1_composed_RigidType' is a specialization of 'ModelElement'.
+The class 'crom_l1_composed_Group' is a specialization of 'ModelElement'.
+The class 'crom_l1_composed_Group' is a specialization of 'Model'.
+The class 'crom_l1_composed_Parameter' is a specialization of 'TypedElement'.
+The class 'crom_l1_composed_Operation' is a specialization of 'TypedElement'.
+The class 'crom_l1_composed_Attribute' is a specialization of 'TypedElement'.
+The class 'crom_l1_composed_Type' is a specialization of 'RelationTarget'.
+The class 'crom_l1_composed_DataType' is a specialization of 'RigidType'.
+The class 'crom_l1_composed_NaturalType' is a specialization of 'RigidType'.
+The class 'crom_l1_composed_CompartmentType' is a specialization of 'RigidType'.
+The class 'crom_l1_composed_AntiRigidType' is a specialization of 'Type'.
+The class 'crom_l1_composed_RoleType' is a specialization of 'AntiRigidType'.
+The class 'crom_l1_composed_RoleType' is a specialization of 'AbstractRole'.
+The class 'crom_l1_composed_Relationship' is a specialization of 'Relation'.
+The class 'crom_l1_composed_Relationship' is a specialization of 'NamedElement'.
+The class 'crom_l1_composed_Fulfillment' is a specialization of 'Relation'.
+The class 'crom_l1_composed_Inheritance' is a specialization of 'Relation'.
+The class 'crom_l1_composed_Constraint' is a specialization of 'Relation'.
+The class 'crom_l1_composed_RoleConstraint' is a specialization of 'Constraint'.
+The class 'crom_l1_composed_RelationshipConstraint' is a specialization of 'Constraint'.
+The class 'crom_l1_composed_IntraRelationshipConstraint' is a specialization of 'RelationshipConstraint'.
+The class 'crom_l1_composed_InterRelationshipConstraint' is a specialization of 'RelationshipConstraint'.
+The class 'crom_l1_composed_ComplexConstraint' is a specialization of 'Constraint'.
+The class 'crom_l1_composed_DataInheritance' is a specialization of 'Inheritance'.
+The class 'crom_l1_composed_NaturalInheritance' is a specialization of 'Inheritance'.
+The class 'crom_l1_composed_CompartmentInheritance' is a specialization of 'Inheritance'.
+The class 'crom_l1_composed_RoleInheritance' is a specialization of 'Inheritance'.
+The class 'crom_l1_composed_RelationshipImplication' is a specialization of 'InterRelationshipConstraint'.
+The class 'crom_l1_composed_RelationshipExclusion' is a specialization of 'InterRelationshipConstraint'.
+The class 'crom_l1_composed_RelationTarget' is a specialization of 'NamedElement'.
+The class 'crom_l1_composed_Irreflexive' is a specialization of 'IntraRelationshipConstraint'.
+The class 'crom_l1_composed_Cyclic' is a specialization of 'IntraRelationshipConstraint'.
+The class 'crom_l1_composed_Total' is a specialization of 'IntraRelationshipConstraint'.
+The class 'crom_l1_composed_Acyclic' is a specialization of 'IntraRelationshipConstraint'.
+The class 'crom_l1_composed_Reflexive' is a specialization of 'IntraRelationshipConstraint'.
+The class 'crom_l1_composed_AbstractRole' is a specialization of 'RoleGroupElement'.
+The class 'crom_l1_composed_RoleGroup' is a specialization of 'AbstractRole'.
+The class 'crom_l1_composed_RoleGroup' is a specialization of 'RelationTarget'.
+The class 'crom_l1_composed_RoleImplication' is a specialization of 'RoleConstraint'.
+The class 'crom_l1_composed_RoleEquivalence' is a specialization of 'RoleConstraint'.
+The class 'crom_l1_composed_RoleProhibition' is a specialization of 'RoleConstraint'.
+The class 'crom_l1_composed_TypedElement' is a specialization of 'NamedElement'.
+The class 'crom_l1_composed_ParthoodConstraint' is a specialization of 'IntraRelationshipConstraint'.
+The class 'crom_l1_composed_AbstractRoleRef' is a specialization of 'RoleGroupElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'crom_l1_composed_Model' and 'crom_l1_composed_ModelElement'. From 'crom_l1_composed_Model', the role 'crom_l1_composed_Model' has cardinality 0..*, and from 'crom_l1_composed_ModelElement', the role 'crom_l1_composed_ModelElement' has cardinality 0..*.
+An association connects 'crom_l1_composed_Relation' and 'crom_l1_composed_Model'. From 'crom_l1_composed_Relation', the role 'crom_l1_composed_Relation' has cardinality 0..*, and from 'crom_l1_composed_Model', the role 'crom_l1_composed_Model2' has cardinality 0..*.
+An association connects 'crom_l1_composed_Operation' and 'crom_l1_composed_Parameter'. From 'crom_l1_composed_Operation', the role 'crom_l1_composed_Operation' has cardinality 0..*, and from 'crom_l1_composed_Parameter', the role 'crom_l1_composed_Parameter' has cardinality 0..*.
+An association connects 'crom_l1_composed_Operation' and 'crom_l1_composed_Type'. From 'crom_l1_composed_Operation', the role 'operations' has cardinality 0..*, and from 'crom_l1_composed_Type', the role 'Type' has cardinality 0..*.
+An association connects 'crom_l1_composed_Attribute' and 'crom_l1_composed_Type'. From 'crom_l1_composed_Attribute', the role 'attributes' has cardinality 0..*, and from 'crom_l1_composed_Type', the role 'Type6' has cardinality 0..*.
+An association connects 'crom_l1_composed_Type' and 'crom_l1_composed_Attribute'. From 'crom_l1_composed_Type', the role 'owner' has cardinality 0..*, and from 'crom_l1_composed_Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'crom_l1_composed_Type' and 'crom_l1_composed_Operation'. From 'crom_l1_composed_Type', the role 'owner9' has cardinality 0..*, and from 'crom_l1_composed_Operation', the role 'Operation' has cardinality 0..*.
+An association connects 'crom_l1_composed_DataType' and 'crom_l1_composed_DataType'. From 'crom_l1_composed_DataType', the role 'crom_l1_composed_DataType10' has cardinality 0..*, and from 'crom_l1_composed_DataType', the role 'crom_l1_composed_DataType' has cardinality 0..*.
+An association connects 'crom_l1_composed_NaturalType' and 'crom_l1_composed_NaturalType'. From 'crom_l1_composed_NaturalType', the role 'crom_l1_composed_NaturalType12' has cardinality 0..*, and from 'crom_l1_composed_NaturalType', the role 'crom_l1_composed_NaturalType' has cardinality 0..*.
+An association connects 'crom_l1_composed_CompartmentType' and 'crom_l1_composed_Part'. From 'crom_l1_composed_CompartmentType', the role 'whole' has cardinality 0..*, and from 'crom_l1_composed_Part', the role 'Part' has cardinality 0..*.
+An association connects 'crom_l1_composed_Relationship' and 'crom_l1_composed_CompartmentType'. From 'crom_l1_composed_Relationship', the role 'crom_l1_composed_Relationship' has cardinality 0..*, and from 'crom_l1_composed_CompartmentType', the role 'crom_l1_composed_CompartmentType' has cardinality 0..*.
+An association connects 'crom_l1_composed_CompartmentType' and 'crom_l1_composed_Constraint'. From 'crom_l1_composed_CompartmentType', the role 'crom_l1_composed_CompartmentType17' has cardinality 0..*, and from 'crom_l1_composed_Constraint', the role 'crom_l1_composed_Constraint' has cardinality 0..*.
+An association connects 'crom_l1_composed_CompartmentType' and 'crom_l1_composed_CompartmentType'. From 'crom_l1_composed_CompartmentType', the role 'crom_l1_composed_CompartmentType18' has cardinality 0..*, and from 'crom_l1_composed_CompartmentType', the role 'crom_l1_composed_CompartmentType20' has cardinality 0..*.
+An association connects 'crom_l1_composed_CompartmentType' and 'crom_l1_composed_CompartmentType'. From 'crom_l1_composed_CompartmentType', the role 'crom_l1_composed_CompartmentType23' has cardinality 0..*, and from 'crom_l1_composed_CompartmentType', the role 'crom_l1_composed_CompartmentType21' has cardinality 0..*.
+An association connects 'crom_l1_composed_Fulfillment' and 'crom_l1_composed_CompartmentType'. From 'crom_l1_composed_Fulfillment', the role 'crom_l1_composed_Fulfillment' has cardinality 0..*, and from 'crom_l1_composed_CompartmentType', the role 'crom_l1_composed_CompartmentType25' has cardinality 0..*.
+An association connects 'crom_l1_composed_RoleType' and 'crom_l1_composed_RoleType'. From 'crom_l1_composed_RoleType', the role 'crom_l1_composed_RoleType26' has cardinality 0..*, and from 'crom_l1_composed_RoleType', the role 'crom_l1_composed_RoleType' has cardinality 0..*.
+An association connects 'crom_l1_composed_Relationship' and 'crom_l1_composed_Place'. From 'crom_l1_composed_Relationship', the role 'crom_l1_composed_Relationship29' has cardinality 0..*, and from 'crom_l1_composed_Place', the role 'crom_l1_composed_Place' has cardinality 0..*.
+An association connects 'crom_l1_composed_Place' and 'crom_l1_composed_Relationship'. From 'crom_l1_composed_Place', the role 'crom_l1_composed_Place32' has cardinality 0..*, and from 'crom_l1_composed_Relationship', the role 'crom_l1_composed_Relationship31' has cardinality 0..*.
+An association connects 'crom_l1_composed_Relationship' and 'crom_l1_composed_IntraRelationshipConstraint'. From 'crom_l1_composed_Relationship', the role 'crom_l1_composed_Relationship34' has cardinality 0..*, and from 'crom_l1_composed_IntraRelationshipConstraint', the role 'crom_l1_composed_IntraRelationshipConstraint' has cardinality 0..*.
+An association connects 'crom_l1_composed_AbstractRole' and 'crom_l1_composed_Fulfillment'. From 'crom_l1_composed_AbstractRole', the role 'crom_l1_composed_AbstractRole' has cardinality 0..*, and from 'crom_l1_composed_Fulfillment', the role 'crom_l1_composed_Fulfillment36' has cardinality 0..*.
+An association connects 'crom_l1_composed_Fulfillment' and 'crom_l1_composed_Type'. From 'crom_l1_composed_Fulfillment', the role 'crom_l1_composed_Fulfillment38' has cardinality 0..*, and from 'crom_l1_composed_Type', the role 'crom_l1_composed_Type' has cardinality 0..*.
+An association connects 'crom_l1_composed_RoleConstraint' and 'crom_l1_composed_AbstractRole'. From 'crom_l1_composed_RoleConstraint', the role 'crom_l1_composed_RoleConstraint' has cardinality 0..*, and from 'crom_l1_composed_AbstractRole', the role 'crom_l1_composed_AbstractRole40' has cardinality 0..*.
+An association connects 'crom_l1_composed_AbstractRole' and 'crom_l1_composed_RoleConstraint'. From 'crom_l1_composed_AbstractRole', the role 'crom_l1_composed_AbstractRole43' has cardinality 0..*, and from 'crom_l1_composed_RoleConstraint', the role 'crom_l1_composed_RoleConstraint42' has cardinality 0..*.
+An association connects 'crom_l1_composed_IntraRelationshipConstraint' and 'crom_l1_composed_Relationship'. From 'crom_l1_composed_IntraRelationshipConstraint', the role 'crom_l1_composed_IntraRelationshipConstraint45' has cardinality 0..*, and from 'crom_l1_composed_Relationship', the role 'crom_l1_composed_Relationship46' has cardinality 0..*.
+An association connects 'crom_l1_composed_InterRelationshipConstraint' and 'crom_l1_composed_Relationship'. From 'crom_l1_composed_InterRelationshipConstraint', the role 'crom_l1_composed_InterRelationshipConstraint' has cardinality 0..*, and from 'crom_l1_composed_Relationship', the role 'crom_l1_composed_Relationship48' has cardinality 0..*.
+An association connects 'crom_l1_composed_InterRelationshipConstraint' and 'crom_l1_composed_Relationship'. From 'crom_l1_composed_InterRelationshipConstraint', the role 'crom_l1_composed_InterRelationshipConstraint50' has cardinality 0..*, and from 'crom_l1_composed_Relationship', the role 'crom_l1_composed_Relationship51' has cardinality 0..*.
+An association connects 'crom_l1_composed_AbstractRole' and 'crom_l1_composed_ComplexConstraint'. From 'crom_l1_composed_AbstractRole', the role 'crom_l1_composed_AbstractRole53' has cardinality 0..*, and from 'crom_l1_composed_ComplexConstraint', the role 'crom_l1_composed_ComplexConstraint' has cardinality 0..*.
+An association connects 'crom_l1_composed_DataType' and 'crom_l1_composed_DataInheritance'. From 'crom_l1_composed_DataType', the role 'crom_l1_composed_DataType55' has cardinality 0..*, and from 'crom_l1_composed_DataInheritance', the role 'crom_l1_composed_DataInheritance' has cardinality 0..*.
+An association connects 'crom_l1_composed_DataType' and 'crom_l1_composed_DataInheritance'. From 'crom_l1_composed_DataType', the role 'crom_l1_composed_DataType58' has cardinality 0..*, and from 'crom_l1_composed_DataInheritance', the role 'crom_l1_composed_DataInheritance57' has cardinality 0..*.
+An association connects 'crom_l1_composed_NaturalInheritance' and 'crom_l1_composed_NaturalType'. From 'crom_l1_composed_NaturalInheritance', the role 'crom_l1_composed_NaturalInheritance' has cardinality 0..*, and from 'crom_l1_composed_NaturalType', the role 'crom_l1_composed_NaturalType60' has cardinality 0..*.
+An association connects 'crom_l1_composed_NaturalInheritance' and 'crom_l1_composed_NaturalType'. From 'crom_l1_composed_NaturalInheritance', the role 'crom_l1_composed_NaturalInheritance62' has cardinality 0..*, and from 'crom_l1_composed_NaturalType', the role 'crom_l1_composed_NaturalType63' has cardinality 0..*.
+An association connects 'crom_l1_composed_CompartmentInheritance' and 'crom_l1_composed_CompartmentType'. From 'crom_l1_composed_CompartmentInheritance', the role 'crom_l1_composed_CompartmentInheritance' has cardinality 0..*, and from 'crom_l1_composed_CompartmentType', the role 'crom_l1_composed_CompartmentType65' has cardinality 0..*.
+An association connects 'crom_l1_composed_CompartmentInheritance' and 'crom_l1_composed_CompartmentType'. From 'crom_l1_composed_CompartmentInheritance', the role 'crom_l1_composed_CompartmentInheritance67' has cardinality 0..*, and from 'crom_l1_composed_CompartmentType', the role 'crom_l1_composed_CompartmentType68' has cardinality 0..*.
+An association connects 'crom_l1_composed_RoleInheritance' and 'crom_l1_composed_RoleType'. From 'crom_l1_composed_RoleInheritance', the role 'crom_l1_composed_RoleInheritance' has cardinality 0..*, and from 'crom_l1_composed_RoleType', the role 'crom_l1_composed_RoleType70' has cardinality 0..*.
+An association connects 'crom_l1_composed_RoleType' and 'crom_l1_composed_RoleInheritance'. From 'crom_l1_composed_RoleType', the role 'crom_l1_composed_RoleType73' has cardinality 0..*, and from 'crom_l1_composed_RoleInheritance', the role 'crom_l1_composed_RoleInheritance72' has cardinality 0..*.
+An association connects 'crom_l1_composed_Place' and 'crom_l1_composed_RoleType'. From 'crom_l1_composed_Place', the role 'crom_l1_composed_Place75' has cardinality 0..*, and from 'crom_l1_composed_RoleType', the role 'crom_l1_composed_RoleType76' has cardinality 0..*.
+An association connects 'crom_l1_composed_Relation' and 'crom_l1_composed_RelationTarget'. From 'crom_l1_composed_Relation', the role 'crom_l1_composed_Relation78' has cardinality 0..*, and from 'crom_l1_composed_RelationTarget', the role 'crom_l1_composed_RelationTarget' has cardinality 0..*.
+An association connects 'crom_l1_composed_RelationTarget' and 'crom_l1_composed_Relation'. From 'crom_l1_composed_RelationTarget', the role 'crom_l1_composed_RelationTarget80' has cardinality 0..*, and from 'crom_l1_composed_Relation', the role 'crom_l1_composed_Relation81' has cardinality 0..*.
+An association connects 'crom_l1_composed_RoleGroupElement' and 'crom_l1_composed_RoleGroup'. From 'crom_l1_composed_RoleGroupElement', the role 'crom_l1_composed_RoleGroupElement' has cardinality 0..*, and from 'crom_l1_composed_RoleGroup', the role 'crom_l1_composed_RoleGroup' has cardinality 0..*.
+An association connects 'crom_l1_composed_Part' and 'crom_l1_composed_CompartmentType'. From 'crom_l1_composed_Part', the role 'parts' has cardinality 0..*, and from 'crom_l1_composed_CompartmentType', the role 'CompartmentType' has cardinality 0..*.
+An association connects 'crom_l1_composed_AbstractRole' and 'crom_l1_composed_Part'. From 'crom_l1_composed_AbstractRole', the role 'crom_l1_composed_AbstractRole85' has cardinality 0..*, and from 'crom_l1_composed_Part', the role 'crom_l1_composed_Part' has cardinality 0..*.
+An association connects 'crom_l1_composed_RigidType' and 'crom_l1_composed_TypedElement'. From 'crom_l1_composed_RigidType', the role 'crom_l1_composed_RigidType' has cardinality 0..*, and from 'crom_l1_composed_TypedElement', the role 'crom_l1_composed_TypedElement' has cardinality 0..*.
+An association connects 'crom_l1_composed_AbstractRoleRef' and 'crom_l1_composed_AbstractRole'. From 'crom_l1_composed_AbstractRoleRef', the role 'crom_l1_composed_AbstractRoleRef' has cardinality 0..*, and from 'crom_l1_composed_AbstractRole', the role 'crom_l1_composed_AbstractRole88' has cardinality 0..*.

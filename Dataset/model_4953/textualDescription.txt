@@ -1,0 +1,93 @@
+The domain model 'WebApp' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'WebApp_Forms' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_styleElements' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_Views' represents an important domain concept.
+It does not declare any attributes.
+
+'IdElement' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_ActionMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_Controller' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_Attribute' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'WebApp_Tables' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_Dummies' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_IdElement' represents an important domain concept.
+It has one attribute: 'Id', which is of type str.
+
+'WebApp_Pages' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_DynamicApplication' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_FormElements' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_Entities' represents an important domain concept.
+It does not declare any attributes.
+
+'WebApp_NamedElement' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'WebApp_Action' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'WebApp_Pages' is a specialization of 'NamedElement'.
+The class 'WebApp_Views' is a specialization of 'NamedElement'.
+The class 'WebApp_Views' is a specialization of 'IdElement'.
+The class 'WebApp_Forms' is a specialization of 'NamedElement'.
+The class 'WebApp_Forms' is a specialization of 'IdElement'.
+The class 'WebApp_FormElements' is a specialization of 'NamedElement'.
+The class 'WebApp_FormElements' is a specialization of 'IdElement'.
+The class 'WebApp_Controller' is a specialization of 'NamedElement'.
+The class 'WebApp_Action' is a specialization of 'NamedElement'.
+The class 'WebApp_Entities' is a specialization of 'NamedElement'.
+The class 'WebApp_Tables' is a specialization of 'NamedElement'.
+The class 'WebApp_Tables' is a specialization of 'IdElement'.
+The class 'WebApp_styleElements' is a specialization of 'NamedElement'.
+The class 'WebApp_styleElements' is a specialization of 'IdElement'.
+The class 'WebApp_DynamicApplication' is a specialization of 'NamedElement'.
+The class 'WebApp_Dummies' is a specialization of 'NamedElement'.
+The class 'WebApp_Attribute' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'WebApp_Pages' and 'WebApp_Action'. From 'WebApp_Pages', the role 'WebApp_Pages' has cardinality 0..*, and from 'WebApp_Action', the role 'WebApp_Action' has cardinality 0..*.
+An association connects 'WebApp_Pages' and 'WebApp_Views'. From 'WebApp_Pages', the role 'WebApp_Pages2' has cardinality 0..*, and from 'WebApp_Views', the role 'WebApp_Views' has cardinality 0..*.
+An association connects 'WebApp_Views' and 'WebApp_Tables'. From 'WebApp_Views', the role 'WebApp_Views4' has cardinality 0..*, and from 'WebApp_Tables', the role 'WebApp_Tables' has cardinality 0..*.
+An association connects 'WebApp_Views' and 'WebApp_Forms'. From 'WebApp_Views', the role 'WebApp_Views6' has cardinality 0..*, and from 'WebApp_Forms', the role 'WebApp_Forms' has cardinality 0..*.
+An association connects 'WebApp_styleElements' and 'WebApp_Views'. From 'WebApp_styleElements', the role 'WebApp_styleElements' has cardinality 0..*, and from 'WebApp_Views', the role 'WebApp_Views8' has cardinality 0..*.
+An association connects 'WebApp_FormElements' and 'WebApp_Forms'. From 'WebApp_FormElements', the role 'WebApp_FormElements' has cardinality 0..*, and from 'WebApp_Forms', the role 'WebApp_Forms10' has cardinality 0..*.
+An association connects 'WebApp_Action' and 'WebApp_Controller'. From 'WebApp_Action', the role 'WebApp_Action12' has cardinality 0..*, and from 'WebApp_Controller', the role 'WebApp_Controller' has cardinality 0..*.
+An association connects 'WebApp_ActionMapping' and 'WebApp_Action'. From 'WebApp_ActionMapping', the role 'WebApp_ActionMapping' has cardinality 0..*, and from 'WebApp_Action', the role 'WebApp_Action14' has cardinality 0..*.
+An association connects 'WebApp_Action' and 'WebApp_Entities'. From 'WebApp_Action', the role 'WebApp_Action16' has cardinality 0..*, and from 'WebApp_Entities', the role 'WebApp_Entities' has cardinality 0..*.
+An association connects 'WebApp_Controller' and 'WebApp_ActionMapping'. From 'WebApp_Controller', the role 'WebApp_Controller19' has cardinality 0..*, and from 'WebApp_ActionMapping', the role 'WebApp_ActionMapping18' has cardinality 0..*.
+An association connects 'WebApp_Entities' and 'WebApp_Views'. From 'WebApp_Entities', the role 'WebApp_Entities21' has cardinality 0..*, and from 'WebApp_Views', the role 'WebApp_Views22' has cardinality 0..*.
+An association connects 'WebApp_Entities' and 'WebApp_Entities'. From 'WebApp_Entities', the role 'WebApp_Entities25' has cardinality 0..*, and from 'WebApp_Entities', the role 'WebApp_Entities23' has cardinality 0..*.
+An association connects 'WebApp_Entities' and 'WebApp_Dummies'. From 'WebApp_Entities', the role 'WebApp_Entities27' has cardinality 0..*, and from 'WebApp_Dummies', the role 'WebApp_Dummies' has cardinality 0..*.
+An association connects 'WebApp_Entities' and 'WebApp_Attribute'. From 'WebApp_Entities', the role 'WebApp_Entities29' has cardinality 0..*, and from 'WebApp_Attribute', the role 'WebApp_Attribute' has cardinality 0..*.
+An association connects 'WebApp_Tables' and 'WebApp_styleElements'. From 'WebApp_Tables', the role 'WebApp_Tables31' has cardinality 0..*, and from 'WebApp_styleElements', the role 'WebApp_styleElements32' has cardinality 0..*.
+An association connects 'WebApp_DynamicApplication' and 'WebApp_Pages'. From 'WebApp_DynamicApplication', the role 'WebApp_DynamicApplication' has cardinality 0..*, and from 'WebApp_Pages', the role 'WebApp_Pages34' has cardinality 0..*.
+An association connects 'WebApp_Entities' and 'WebApp_DynamicApplication'. From 'WebApp_Entities', the role 'WebApp_Entities37' has cardinality 0..*, and from 'WebApp_DynamicApplication', the role 'WebApp_DynamicApplication36' has cardinality 0..*.
+An association connects 'WebApp_Dummies' and 'WebApp_Attribute'. From 'WebApp_Dummies', the role 'WebApp_Dummies39' has cardinality 0..*, and from 'WebApp_Attribute', the role 'WebApp_Attribute40' has cardinality 0..*.

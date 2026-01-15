@@ -1,0 +1,150 @@
+The domain model 'FCORE' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'FCORE_AttributeConstraintConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'FCORE_Feature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'selected', which is of type bool.
+
+'FCORE_InfluenceFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'FCORE_SingleFeatureConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'FCORE_InfluenceAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'FCORE_OptionalConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'FCORE_CardinalityConnection' represents an important domain concept.
+It has the following attributes: 'max', which is of type int; 'min', which is of type int.
+
+'FCORE_Softgoal' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'weighting', which is of type str.
+
+'FCORE_ExcludesFeatureConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'FCORE_MandatoryConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'FCORE_FeatureToGroupConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'Conncection' represents an important domain concept.
+It does not declare any attributes.
+
+'FCORE_Influence' represents an important domain concept.
+It has one attribute: 'contribution', which is of type float.
+
+'FCORE_FeatureGroup' represents an important domain concept.
+It has the following attributes: 'max', which is of type int; 'min', which is of type int.
+
+'FCORE_SolitaryFeature' represents an important domain concept.
+It has the following attributes: 'max', which is of type int; 'min', which is of type int.
+
+'FeatureConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'FCORE_Conncection' represents an important domain concept.
+It does not declare any attributes.
+
+'Influence' represents an important domain concept.
+It does not declare any attributes.
+
+'SingleFeatureConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'FCORE_AttributeConstraint' represents an important domain concept.
+It has one attribute: 'equation', which is of type str.
+
+'FCORE_FeatureConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'FCORE_RequiresFeatureConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'FCORE_FeatureModel' represents an important domain concept.
+It does not declare any attributes.
+
+'FCORE_Attribute' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'name', which is of type str; 'min', which is of type int; 'max', which is of type int.
+
+'FCORE_RootFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'FCORE_GroupToFeatureConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'FCORE_GroupFeature' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'FCORE_RootFeature' is a specialization of 'Feature'.
+The class 'FCORE_SolitaryFeature' is a specialization of 'Feature'.
+The class 'FCORE_GroupFeature' is a specialization of 'Feature'.
+The class 'FCORE_FeatureConstraint' is a specialization of 'Conncection'.
+The class 'FCORE_RequiresFeatureConstraint' is a specialization of 'FeatureConstraint'.
+The class 'FCORE_ExcludesFeatureConstraint' is a specialization of 'FeatureConstraint'.
+The class 'FCORE_Influence' is a specialization of 'Conncection'.
+The class 'FCORE_InfluenceFeature' is a specialization of 'Influence'.
+The class 'FCORE_InfluenceAttribute' is a specialization of 'Influence'.
+The class 'FCORE_SingleFeatureConnection' is a specialization of 'Conncection'.
+The class 'FCORE_CardinalityConnection' is a specialization of 'SingleFeatureConnection'.
+The class 'FCORE_MandatoryConnection' is a specialization of 'SingleFeatureConnection'.
+The class 'FCORE_OptionalConnection' is a specialization of 'SingleFeatureConnection'.
+The class 'FCORE_FeatureToGroupConnection' is a specialization of 'Conncection'.
+The class 'FCORE_GroupToFeatureConnection' is a specialization of 'Conncection'.
+The class 'FCORE_AttributeConstraintConnection' is a specialization of 'Conncection'.
+
+Relationships between classes are modeled using associations.
+An association connects 'FCORE_RootFeature' and 'FCORE_FeatureModel'. From 'FCORE_RootFeature', the role 'FCORE_RootFeature' has cardinality 0..*, and from 'FCORE_FeatureModel', the role 'FCORE_FeatureModel' has cardinality 0..*.
+An association connects 'FCORE_GroupFeature' and 'FCORE_FeatureModel'. From 'FCORE_GroupFeature', the role 'FCORE_GroupFeature' has cardinality 0..*, and from 'FCORE_FeatureModel', the role 'FCORE_FeatureModel2' has cardinality 0..*.
+An association connects 'FCORE_FeatureModel' and 'FCORE_SolitaryFeature'. From 'FCORE_FeatureModel', the role 'FCORE_FeatureModel4' has cardinality 0..*, and from 'FCORE_SolitaryFeature', the role 'FCORE_SolitaryFeature' has cardinality 0..*.
+An association connects 'FCORE_FeatureModel' and 'FCORE_FeatureGroup'. From 'FCORE_FeatureModel', the role 'FCORE_FeatureModel6' has cardinality 0..*, and from 'FCORE_FeatureGroup', the role 'FCORE_FeatureGroup' has cardinality 0..*.
+An association connects 'FCORE_FeatureModel' and 'FCORE_Attribute'. From 'FCORE_FeatureModel', the role 'FCORE_FeatureModel8' has cardinality 0..*, and from 'FCORE_Attribute', the role 'FCORE_Attribute' has cardinality 0..*.
+An association connects 'FCORE_AttributeConstraint' and 'FCORE_FeatureModel'. From 'FCORE_AttributeConstraint', the role 'FCORE_AttributeConstraint' has cardinality 0..*, and from 'FCORE_FeatureModel', the role 'FCORE_FeatureModel10' has cardinality 0..*.
+An association connects 'FCORE_FeatureModel' and 'FCORE_RequiresFeatureConstraint'. From 'FCORE_FeatureModel', the role 'FCORE_FeatureModel12' has cardinality 0..*, and from 'FCORE_RequiresFeatureConstraint', the role 'FCORE_RequiresFeatureConstraint' has cardinality 0..*.
+An association connects 'FCORE_ExcludesFeatureConstraint' and 'FCORE_FeatureModel'. From 'FCORE_ExcludesFeatureConstraint', the role 'FCORE_ExcludesFeatureConstraint' has cardinality 0..*, and from 'FCORE_FeatureModel', the role 'FCORE_FeatureModel14' has cardinality 0..*.
+An association connects 'FCORE_FeatureModel' and 'FCORE_Softgoal'. From 'FCORE_FeatureModel', the role 'FCORE_FeatureModel16' has cardinality 0..*, and from 'FCORE_Softgoal', the role 'FCORE_Softgoal' has cardinality 0..*.
+An association connects 'FCORE_FeatureModel' and 'FCORE_InfluenceFeature'. From 'FCORE_FeatureModel', the role 'FCORE_FeatureModel18' has cardinality 0..*, and from 'FCORE_InfluenceFeature', the role 'FCORE_InfluenceFeature' has cardinality 0..*.
+An association connects 'FCORE_InfluenceAttribute' and 'FCORE_FeatureModel'. From 'FCORE_InfluenceAttribute', the role 'FCORE_InfluenceAttribute' has cardinality 0..*, and from 'FCORE_FeatureModel', the role 'FCORE_FeatureModel20' has cardinality 0..*.
+An association connects 'FCORE_MandatoryConnection' and 'FCORE_FeatureModel'. From 'FCORE_MandatoryConnection', the role 'FCORE_MandatoryConnection' has cardinality 0..*, and from 'FCORE_FeatureModel', the role 'FCORE_FeatureModel22' has cardinality 0..*.
+An association connects 'FCORE_FeatureModel' and 'FCORE_OptionalConnection'. From 'FCORE_FeatureModel', the role 'FCORE_FeatureModel24' has cardinality 0..*, and from 'FCORE_OptionalConnection', the role 'FCORE_OptionalConnection' has cardinality 0..*.
+An association connects 'FCORE_FeatureModel' and 'FCORE_FeatureToGroupConnection'. From 'FCORE_FeatureModel', the role 'FCORE_FeatureModel26' has cardinality 0..*, and from 'FCORE_FeatureToGroupConnection', the role 'FCORE_FeatureToGroupConnection' has cardinality 0..*.
+An association connects 'FCORE_GroupToFeatureConnection' and 'FCORE_FeatureModel'. From 'FCORE_GroupToFeatureConnection', the role 'FCORE_GroupToFeatureConnection' has cardinality 0..*, and from 'FCORE_FeatureModel', the role 'FCORE_FeatureModel28' has cardinality 0..*.
+An association connects 'FCORE_FeatureModel' and 'FCORE_AttributeConstraintConnection'. From 'FCORE_FeatureModel', the role 'FCORE_FeatureModel30' has cardinality 0..*, and from 'FCORE_AttributeConstraintConnection', the role 'FCORE_AttributeConstraintConnection' has cardinality 0..*.
+An association connects 'FCORE_Feature' and 'FCORE_AttributeConstraintConnection'. From 'FCORE_Feature', the role 'source' has cardinality 0..*, and from 'FCORE_AttributeConstraintConnection', the role 'AttributeConstraintConnection' has cardinality 0..*.
+An association connects 'FCORE_Attribute' and 'FCORE_Feature'. From 'FCORE_Attribute', the role 'FCORE_Attribute33' has cardinality 0..*, and from 'FCORE_Feature', the role 'FCORE_Feature' has cardinality 0..*.
+An association connects 'FCORE_FeatureConstraint' and 'FCORE_Feature'. From 'FCORE_FeatureConstraint', the role 'FeatureConstraint' has cardinality 0..*, and from 'FCORE_Feature', the role 'featureStart' has cardinality 0..*.
+An association connects 'FCORE_Feature' and 'FCORE_FeatureConstraint'. From 'FCORE_Feature', the role 'featureEnd' has cardinality 0..*, and from 'FCORE_FeatureConstraint', the role 'FeatureConstraint36' has cardinality 0..*.
+An association connects 'FCORE_InfluenceFeature' and 'FCORE_Feature'. From 'FCORE_InfluenceFeature', the role 'InfluenceFeature' has cardinality 0..*, and from 'FCORE_Feature', the role 'feature' has cardinality 0..*.
+An association connects 'FCORE_SingleFeatureConnection' and 'FCORE_Feature'. From 'FCORE_SingleFeatureConnection', the role 'SingleFeatureConnection' has cardinality 0..*, and from 'FCORE_Feature', the role 'source39' has cardinality 0..*.
+An association connects 'FCORE_FeatureToGroupConnection' and 'FCORE_Feature'. From 'FCORE_FeatureToGroupConnection', the role 'FeatureToGroupConnection' has cardinality 0..*, and from 'FCORE_Feature', the role 'source41' has cardinality 0..*.
+An association connects 'FCORE_SolitaryFeature' and 'FCORE_SingleFeatureConnection'. From 'FCORE_SolitaryFeature', the role 'target' has cardinality 0..*, and from 'FCORE_SingleFeatureConnection', the role 'SingleFeatureConnection43' has cardinality 0..*.
+An association connects 'FCORE_GroupFeature' and 'FCORE_GroupToFeatureConnection'. From 'FCORE_GroupFeature', the role 'target45' has cardinality 0..*, and from 'FCORE_GroupToFeatureConnection', the role 'GroupToFeatureConnection' has cardinality 0..*.
+An association connects 'FCORE_FeatureToGroupConnection' and 'FCORE_FeatureGroup'. From 'FCORE_FeatureToGroupConnection', the role 'FeatureToGroupConnection48' has cardinality 0..*, and from 'FCORE_FeatureGroup', the role 'target47' has cardinality 0..*.
+An association connects 'FCORE_FeatureGroup' and 'FCORE_GroupToFeatureConnection'. From 'FCORE_FeatureGroup', the role 'source50' has cardinality 0..*, and from 'FCORE_GroupToFeatureConnection', the role 'GroupToFeatureConnection51' has cardinality 0..*.
+An association connects 'FCORE_Attribute' and 'FCORE_InfluenceAttribute'. From 'FCORE_Attribute', the role 'attribute' has cardinality 0..*, and from 'FCORE_InfluenceAttribute', the role 'InfluenceAttribute' has cardinality 0..*.
+An association connects 'FCORE_AttributeConstraint' and 'FCORE_AttributeConstraintConnection'. From 'FCORE_AttributeConstraint', the role 'target54' has cardinality 0..*, and from 'FCORE_AttributeConstraintConnection', the role 'AttributeConstraintConnection55' has cardinality 0..*.
+An association connects 'FCORE_Influence' and 'FCORE_Softgoal'. From 'FCORE_Influence', the role 'Influence' has cardinality 0..*, and from 'FCORE_Softgoal', the role 'softgoal' has cardinality 0..*.
+An association connects 'FCORE_Feature' and 'FCORE_FeatureConstraint'. From 'FCORE_Feature', the role 'Feature' has cardinality 0..*, and from 'FCORE_FeatureConstraint', the role 'featureConstraintsStarts' has cardinality 0..*.
+An association connects 'FCORE_Feature' and 'FCORE_FeatureConstraint'. From 'FCORE_Feature', the role 'Feature59' has cardinality 0..*, and from 'FCORE_FeatureConstraint', the role 'featureConstraintsEnds' has cardinality 0..*.
+An association connects 'FCORE_Softgoal' and 'FCORE_Influence'. From 'FCORE_Softgoal', the role 'Softgoal' has cardinality 0..*, and from 'FCORE_Influence', the role 'influence' has cardinality 0..*.
+An association connects 'FCORE_Feature' and 'FCORE_InfluenceFeature'. From 'FCORE_Feature', the role 'Feature62' has cardinality 0..*, and from 'FCORE_InfluenceFeature', the role 'influences' has cardinality 0..*.
+An association connects 'FCORE_Attribute' and 'FCORE_InfluenceAttribute'. From 'FCORE_Attribute', the role 'Attribute' has cardinality 0..*, and from 'FCORE_InfluenceAttribute', the role 'influences64' has cardinality 0..*.
+An association connects 'FCORE_SingleFeatureConnection' and 'FCORE_Feature'. From 'FCORE_SingleFeatureConnection', the role 'outgoingSingleFeatureConnections' has cardinality 0..*, and from 'FCORE_Feature', the role 'Feature66' has cardinality 0..*.
+An association connects 'FCORE_SolitaryFeature' and 'FCORE_SingleFeatureConnection'. From 'FCORE_SolitaryFeature', the role 'SolitaryFeature' has cardinality 0..*, and from 'FCORE_SingleFeatureConnection', the role 'incomingSingleFeatureConnection' has cardinality 0..*.
+An association connects 'FCORE_FeatureToGroupConnection' and 'FCORE_Feature'. From 'FCORE_FeatureToGroupConnection', the role 'featureToGroupConnections' has cardinality 0..*, and from 'FCORE_Feature', the role 'Feature69' has cardinality 0..*.
+An association connects 'FCORE_FeatureGroup' and 'FCORE_FeatureToGroupConnection'. From 'FCORE_FeatureGroup', the role 'FeatureGroup' has cardinality 0..*, and from 'FCORE_FeatureToGroupConnection', the role 'featureToGroupConnection' has cardinality 0..*.
+An association connects 'FCORE_FeatureGroup' and 'FCORE_GroupToFeatureConnection'. From 'FCORE_FeatureGroup', the role 'FeatureGroup72' has cardinality 0..*, and from 'FCORE_GroupToFeatureConnection', the role 'groupToFeatureConnections' has cardinality 0..*.
+An association connects 'FCORE_GroupToFeatureConnection' and 'FCORE_GroupFeature'. From 'FCORE_GroupToFeatureConnection', the role 'groupToFeatureConnection' has cardinality 0..*, and from 'FCORE_GroupFeature', the role 'GroupFeature' has cardinality 0..*.
+An association connects 'FCORE_Feature' and 'FCORE_AttributeConstraintConnection'. From 'FCORE_Feature', the role 'Feature75' has cardinality 0..*, and from 'FCORE_AttributeConstraintConnection', the role 'attributeConstraints' has cardinality 0..*.
+An association connects 'FCORE_AttributeConstraint' and 'FCORE_AttributeConstraintConnection'. From 'FCORE_AttributeConstraint', the role 'AttributeConstraint' has cardinality 0..*, and from 'FCORE_AttributeConstraintConnection', the role 'attributeConstraintConnection' has cardinality 0..*.

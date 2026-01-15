@@ -1,0 +1,129 @@
+The domain model 'rule' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_And' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_Size' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_Max' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_Mult' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_CurrentCellPopulation' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_Sum' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_PopulationRange' represents an important domain concept.
+It has the following attributes: 'upperRange', which is of type int; 'lowerRange', which is of type int.
+
+'rule_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_NeighborsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_IntegerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'NeighborsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_Add' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_Lower' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_Min' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'val', which is of type int.
+
+'rule_Mod' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_CellularAutomata' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'rule_UMinus' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'rule_Max' is a specialization of 'NeighborsExpression'.
+The class 'rule_Add' is a specialization of 'BinaryExpression'.
+The class 'rule_UnaryExpression' is a specialization of 'IntegerExpression'.
+The class 'rule_And' is a specialization of 'BinaryExpression'.
+The class 'rule_Or' is a specialization of 'BinaryExpression'.
+The class 'rule_Not' is a specialization of 'UnaryExpression'.
+The class 'rule_Greater' is a specialization of 'BinaryExpression'.
+The class 'rule_Lower' is a specialization of 'BinaryExpression'.
+The class 'rule_IntegerLiteral' is a specialization of 'IntegerExpression'.
+The class 'rule_Conditional' is a specialization of 'IntegerExpression'.
+The class 'rule_CurrentCellPopulation' is a specialization of 'IntegerExpression'.
+The class 'rule_Size' is a specialization of 'NeighborsExpression'.
+The class 'rule_NeighborsExpression' is a specialization of 'IntegerExpression'.
+The class 'rule_Min' is a specialization of 'NeighborsExpression'.
+The class 'rule_BinaryExpression' is a specialization of 'IntegerExpression'.
+The class 'rule_Mult' is a specialization of 'BinaryExpression'.
+The class 'rule_Div' is a specialization of 'BinaryExpression'.
+The class 'rule_Sum' is a specialization of 'NeighborsExpression'.
+The class 'rule_Mod' is a specialization of 'BinaryExpression'.
+The class 'rule_UMinus' is a specialization of 'UnaryExpression'.
+The class 'rule_Minus' is a specialization of 'BinaryExpression'.
+The class 'rule_Equal' is a specialization of 'BinaryExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rule_IntegerExpression' and 'rule_Rule'. From 'rule_IntegerExpression', the role 'rule_IntegerExpression' has cardinality 0..*, and from 'rule_Rule', the role 'rule_Rule' has cardinality 0..*.
+An association connects 'rule_PopulationRange' and 'rule_Rule'. From 'rule_PopulationRange', the role 'rule_PopulationRange' has cardinality 0..*, and from 'rule_Rule', the role 'rule_Rule2' has cardinality 0..*.
+An association connects 'rule_IntegerExpression' and 'rule_UnaryExpression'. From 'rule_IntegerExpression', the role 'rule_IntegerExpression4' has cardinality 0..*, and from 'rule_UnaryExpression', the role 'rule_UnaryExpression' has cardinality 0..*.
+An association connects 'rule_Conditional' and 'rule_IntegerExpression'. From 'rule_Conditional', the role 'rule_Conditional' has cardinality 0..*, and from 'rule_IntegerExpression', the role 'rule_IntegerExpression6' has cardinality 0..*.
+An association connects 'rule_Conditional' and 'rule_IntegerExpression'. From 'rule_Conditional', the role 'rule_Conditional8' has cardinality 0..*, and from 'rule_IntegerExpression', the role 'rule_IntegerExpression9' has cardinality 0..*.
+An association connects 'rule_Conditional' and 'rule_IntegerExpression'. From 'rule_Conditional', the role 'rule_Conditional11' has cardinality 0..*, and from 'rule_IntegerExpression', the role 'rule_IntegerExpression12' has cardinality 0..*.
+An association connects 'rule_NeighborsExpression' and 'rule_PopulationRange'. From 'rule_NeighborsExpression', the role 'rule_NeighborsExpression' has cardinality 0..*, and from 'rule_PopulationRange', the role 'rule_PopulationRange14' has cardinality 0..*.
+An association connects 'rule_BinaryExpression' and 'rule_IntegerExpression'. From 'rule_BinaryExpression', the role 'rule_BinaryExpression' has cardinality 0..*, and from 'rule_IntegerExpression', the role 'rule_IntegerExpression16' has cardinality 0..*.
+An association connects 'rule_IntegerExpression' and 'rule_BinaryExpression'. From 'rule_IntegerExpression', the role 'rule_IntegerExpression19' has cardinality 0..*, and from 'rule_BinaryExpression', the role 'rule_BinaryExpression18' has cardinality 0..*.
+An association connects 'rule_Rule' and 'rule_CellularAutomata'. From 'rule_Rule', the role 'rule_Rule21' has cardinality 0..*, and from 'rule_CellularAutomata', the role 'rule_CellularAutomata' has cardinality 0..*.

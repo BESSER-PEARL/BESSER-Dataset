@@ -1,0 +1,56 @@
+The domain model 'types' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'types_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'types_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Library' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'types_Type' is a specialization of 'NamedElement'.
+The class 'types_Feature' is a specialization of 'TypedElement'.
+The class 'types_Feature' is a specialization of 'NamedElement'.
+The class 'types_Operation' is a specialization of 'Feature'.
+The class 'types_Property' is a specialization of 'Feature'.
+The class 'types_Parameter' is a specialization of 'TypedElement'.
+The class 'types_Parameter' is a specialization of 'NamedElement'.
+The class 'types_Event' is a specialization of 'Feature'.
+
+Relationships between classes are modeled using associations.
+An association connects 'types_Type' and 'types_Library'. From 'types_Type', the role 'Type' has cardinality 0..*, and from 'types_Library', the role 'owningLibrary' has cardinality 0..*.
+An association connects 'types_Type' and 'types_Feature'. From 'types_Type', the role 'owningType' has cardinality 0..*, and from 'types_Feature', the role 'Feature' has cardinality 0..*.
+An association connects 'types_Type' and 'types_Type'. From 'types_Type', the role 'types_Type2' has cardinality 0..*, and from 'types_Type', the role 'types_Type' has cardinality 0..*.
+An association connects 'types_Type' and 'types_Library'. From 'types_Type', the role 'types' has cardinality 0..*, and from 'types_Library', the role 'Library' has cardinality 0..*.
+An association connects 'types_Feature' and 'types_Type'. From 'types_Feature', the role 'features' has cardinality 0..*, and from 'types_Type', the role 'Type6' has cardinality 0..*.
+An association connects 'types_Operation' and 'types_Parameter'. From 'types_Operation', the role 'owningOperation' has cardinality 0..*, and from 'types_Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'types_Parameter' and 'types_Operation'. From 'types_Parameter', the role 'parameters' has cardinality 0..*, and from 'types_Operation', the role 'Operation' has cardinality 0..*.
+An association connects 'types_TypedElement' and 'types_Type'. From 'types_TypedElement', the role 'types_TypedElement' has cardinality 0..*, and from 'types_Type', the role 'types_Type10' has cardinality 0..*.

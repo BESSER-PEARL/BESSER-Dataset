@@ -1,0 +1,13 @@
+The domain model 'TypeB' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'TypeB_A' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TypeB_B' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'TypeB_A' and 'TypeB_B'. From 'TypeB_A', the role 'TypeB_A' has cardinality 0..*, and from 'TypeB_B', the role 'TypeB_B' has cardinality 0..*.
+An association connects 'TypeB_B' and 'TypeB_A'. From 'TypeB_B', the role 'TypeB_B2' has cardinality 0..*, and from 'TypeB_A', the role 'TypeB_A3' has cardinality 0..*.

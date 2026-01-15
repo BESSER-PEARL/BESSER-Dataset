@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/b3/org.eclipse.b3.aggregator.legacy/models/aggregator_1.1.0.ecore

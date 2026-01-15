@@ -1,0 +1,65 @@
+The domain model 'wappm' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'wappm_DynamicPage' represents an important domain concept.
+It does not declare any attributes.
+
+'wappm_ContentLayer' represents an important domain concept.
+It has one attribute: 'contentName', which is of type str.
+
+'wappm_HypertextLayer' represents an important domain concept.
+It has one attribute: 'hyperName', which is of type str.
+
+'Page' represents an important domain concept.
+It does not declare any attributes.
+
+'wappm_StaticPage' represents an important domain concept.
+It does not declare any attributes.
+
+'wappm_DetailPage' represents an important domain concept.
+It does not declare any attributes.
+
+'wappm_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'wappm_IndexPage' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+'wappm_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'wappm_WebClass' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'wappm_WebModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DynamicPage' represents an important domain concept.
+It does not declare any attributes.
+
+'wappm_Page' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'path', which is of type str.
+
+'wappm_Reference' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'upBound', which is of type int; 'lowBound', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AppTypes' defines the following possible values: 'Float', 'String', 'Double', 'Integer', 'Boolean'.
+
+The model also captures inheritance relationships between classes.
+The class 'wappm_StaticPage' is a specialization of 'Page'.
+The class 'wappm_DynamicPage' is a specialization of 'Page'.
+The class 'wappm_DetailPage' is a specialization of 'DynamicPage'.
+The class 'wappm_IndexPage' is a specialization of 'DynamicPage'.
+
+Relationships between classes are modeled using associations.
+An association connects 'wappm_WebModel' and 'wappm_HypertextLayer'. From 'wappm_WebModel', the role 'wappm_WebModel' has cardinality 0..*, and from 'wappm_HypertextLayer', the role 'wappm_HypertextLayer' has cardinality 0..*.
+An association connects 'wappm_WebModel' and 'wappm_ContentLayer'. From 'wappm_WebModel', the role 'wappm_WebModel2' has cardinality 0..*, and from 'wappm_ContentLayer', the role 'wappm_ContentLayer' has cardinality 0..*.
+An association connects 'wappm_Page' and 'wappm_HypertextLayer'. From 'wappm_Page', the role 'wappm_Page' has cardinality 0..*, and from 'wappm_HypertextLayer', the role 'wappm_HypertextLayer4' has cardinality 0..*.
+An association connects 'wappm_Link' and 'wappm_Page'. From 'wappm_Link', the role 'wappm_Link' has cardinality 0..*, and from 'wappm_Page', the role 'wappm_Page6' has cardinality 0..*.
+An association connects 'wappm_DynamicPage' and 'wappm_WebClass'. From 'wappm_DynamicPage', the role 'wappm_DynamicPage' has cardinality 0..*, and from 'wappm_WebClass', the role 'wappm_WebClass' has cardinality 0..*.
+An association connects 'wappm_Page' and 'wappm_Link'. From 'wappm_Page', the role 'wappm_Page10' has cardinality 0..*, and from 'wappm_Link', the role 'wappm_Link9' has cardinality 0..*.
+An association connects 'wappm_ContentLayer' and 'wappm_WebClass'. From 'wappm_ContentLayer', the role 'wappm_ContentLayer12' has cardinality 0..*, and from 'wappm_WebClass', the role 'wappm_WebClass13' has cardinality 0..*.
+An association connects 'wappm_WebClass' and 'wappm_Attribute'. From 'wappm_WebClass', the role 'wappm_WebClass15' has cardinality 0..*, and from 'wappm_Attribute', the role 'wappm_Attribute' has cardinality 0..*.
+An association connects 'wappm_WebClass' and 'wappm_Reference'. From 'wappm_WebClass', the role 'wappm_WebClass17' has cardinality 0..*, and from 'wappm_Reference', the role 'wappm_Reference' has cardinality 0..*.

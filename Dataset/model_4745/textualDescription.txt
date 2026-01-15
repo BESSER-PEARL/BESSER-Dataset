@@ -1,0 +1,32 @@
+The domain model 'sWML' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'sWML_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'sWML_WebModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sWML_ContentLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'sWML_HypertextLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'sWML_IndexPage' represents an important domain concept.
+It has the following attributes: 'size', which is of type int; 'name', which is of type str.
+
+'sWML_Class' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SWMLTypes' defines the following possible values: 'Email', 'String', 'Float', 'Boolean', 'Integer'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sWML_WebModel' and 'sWML_HypertextLayer'. From 'sWML_WebModel', the role 'sWML_WebModel' has cardinality 0..*, and from 'sWML_HypertextLayer', the role 'sWML_HypertextLayer' has cardinality 0..*.
+An association connects 'sWML_ContentLayer' and 'sWML_WebModel'. From 'sWML_ContentLayer', the role 'sWML_ContentLayer' has cardinality 0..*, and from 'sWML_WebModel', the role 'sWML_WebModel2' has cardinality 0..*.
+An association connects 'sWML_HypertextLayer' and 'sWML_IndexPage'. From 'sWML_HypertextLayer', the role 'sWML_HypertextLayer4' has cardinality 0..*, and from 'sWML_IndexPage', the role 'sWML_IndexPage' has cardinality 0..*.
+An association connects 'sWML_IndexPage' and 'sWML_Class'. From 'sWML_IndexPage', the role 'sWML_IndexPage6' has cardinality 0..*, and from 'sWML_Class', the role 'sWML_Class' has cardinality 0..*.
+An association connects 'sWML_Class' and 'sWML_ContentLayer'. From 'sWML_Class', the role 'sWML_Class9' has cardinality 0..*, and from 'sWML_ContentLayer', the role 'sWML_ContentLayer8' has cardinality 0..*.
+An association connects 'sWML_Attribute' and 'sWML_Class'. From 'sWML_Attribute', the role 'sWML_Attribute' has cardinality 0..*, and from 'sWML_Class', the role 'sWML_Class11' has cardinality 0..*.

@@ -1,0 +1,79 @@
+The domain model 'webapp' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'webapp_ClientPage' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_DataStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'webapp_UIElement' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'webapp_Attribute' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'UIElement' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_TextArea' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_WebApp' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_ServerPage' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Form' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_ImageViewer' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_DataSourceManager' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'UIElementType' defines the following possible values: 'input', 'output'.
+
+The model also captures inheritance relationships between classes.
+The class 'webapp_WebApp' is a specialization of 'Named'.
+The class 'webapp_ServerPage' is a specialization of 'Named'.
+The class 'webapp_DataStructure' is a specialization of 'Named'.
+The class 'webapp_DataSourceManager' is a specialization of 'Named'.
+The class 'webapp_Attribute' is a specialization of 'Named'.
+The class 'webapp_ClientPage' is a specialization of 'Named'.
+The class 'webapp_UIElement' is a specialization of 'Named'.
+The class 'webapp_Form' is a specialization of 'UIElement'.
+The class 'webapp_ImageViewer' is a specialization of 'UIElement'.
+The class 'webapp_TextArea' is a specialization of 'UIElement'.
+The class 'webapp_Table' is a specialization of 'UIElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'webapp_ClientPage' and 'webapp_WebApp'. From 'webapp_ClientPage', the role 'webapp_ClientPage' has cardinality 0..*, and from 'webapp_WebApp', the role 'webapp_WebApp' has cardinality 0..*.
+An association connects 'webapp_WebApp' and 'webapp_ServerPage'. From 'webapp_WebApp', the role 'webapp_WebApp2' has cardinality 0..*, and from 'webapp_ServerPage', the role 'webapp_ServerPage' has cardinality 0..*.
+An association connects 'webapp_DataStructure' and 'webapp_WebApp'. From 'webapp_DataStructure', the role 'webapp_DataStructure' has cardinality 0..*, and from 'webapp_WebApp', the role 'webapp_WebApp4' has cardinality 0..*.
+An association connects 'webapp_DataSourceManager' and 'webapp_WebApp'. From 'webapp_DataSourceManager', the role 'webapp_DataSourceManager' has cardinality 0..*, and from 'webapp_WebApp', the role 'webapp_WebApp6' has cardinality 0..*.
+An association connects 'webapp_ServerPage' and 'webapp_ClientPage'. From 'webapp_ServerPage', the role 'connectsTo' has cardinality 0..*, and from 'webapp_ClientPage', the role 'ClientPage' has cardinality 0..*.
+An association connects 'webapp_DataSourceManager' and 'webapp_ServerPage'. From 'webapp_DataSourceManager', the role 'DataSourceManager' has cardinality 0..*, and from 'webapp_ServerPage', the role 'providesContent' has cardinality 0..*.
+An association connects 'webapp_ServerPage' and 'webapp_DataStructure'. From 'webapp_ServerPage', the role 'managedBy' has cardinality 0..*, and from 'webapp_DataStructure', the role 'DataStructure' has cardinality 0..*.
+An association connects 'webapp_ServerPage' and 'webapp_DataStructure'. From 'webapp_ServerPage', the role 'ServerPage' has cardinality 0..*, and from 'webapp_DataStructure', the role 'manages' has cardinality 0..*.
+An association connects 'webapp_DataStructure' and 'webapp_Attribute'. From 'webapp_DataStructure', the role 'attributeOf' has cardinality 0..*, and from 'webapp_Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'webapp_Attribute' and 'webapp_DataStructure'. From 'webapp_Attribute', the role 'Attribute13' has cardinality 0..*, and from 'webapp_DataStructure', the role 'linkedBy' has cardinality 0..*.
+An association connects 'webapp_ServerPage' and 'webapp_DataSourceManager'. From 'webapp_ServerPage', the role 'ServerPage15' has cardinality 0..*, and from 'webapp_DataSourceManager', the role 'getContents' has cardinality 0..*.
+An association connects 'webapp_Attribute' and 'webapp_DataStructure'. From 'webapp_Attribute', the role 'parentOf' has cardinality 0..*, and from 'webapp_DataStructure', the role 'DataStructure17' has cardinality 0..*.
+An association connects 'webapp_DataStructure' and 'webapp_Attribute'. From 'webapp_DataStructure', the role 'DataStructure19' has cardinality 0..*, and from 'webapp_Attribute', the role 'linkedTo' has cardinality 0..*.
+An association connects 'webapp_UIElement' and 'webapp_ClientPage'. From 'webapp_UIElement', the role 'webapp_UIElement' has cardinality 0..*, and from 'webapp_ClientPage', the role 'webapp_ClientPage21' has cardinality 0..*.
+An association connects 'webapp_ClientPage' and 'webapp_ServerPage'. From 'webapp_ClientPage', the role 'generates' has cardinality 0..*, and from 'webapp_ServerPage', the role 'ServerPage23' has cardinality 0..*.
+An association connects 'webapp_DataStructure' and 'webapp_UIElement'. From 'webapp_DataStructure', the role 'webapp_DataStructure26' has cardinality 0..*, and from 'webapp_UIElement', the role 'webapp_UIElement25' has cardinality 0..*.

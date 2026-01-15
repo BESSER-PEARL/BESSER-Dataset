@@ -1,0 +1,14 @@
+The domain model 'familytree' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'familytree_FamilyTree' represents an important domain concept.
+It does not declare any attributes.
+
+'familytree_Member' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'age', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'familytree_Member' and 'familytree_FamilyTree'. From 'familytree_Member', the role 'familytree_Member' has cardinality 0..*, and from 'familytree_FamilyTree', the role 'familytree_FamilyTree' has cardinality 0..*.
+An association connects 'familytree_Member' and 'familytree_Member'. From 'familytree_Member', the role 'Member' has cardinality 0..*, and from 'familytree_Member', the role 'parents' has cardinality 0..*.
+An association connects 'familytree_Member' and 'familytree_Member'. From 'familytree_Member', the role 'Member5' has cardinality 0..*, and from 'familytree_Member', the role 'children' has cardinality 0..*.

@@ -1,0 +1,64 @@
+The domain model 'manypov2' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'manypov2_JK' represents an important domain concept.
+It does not declare any attributes.
+
+'manypov2_E' represents an important domain concept.
+It does not declare any attributes.
+
+'manypov2_J' represents an important domain concept.
+It does not declare any attributes.
+
+'manypov2_A' represents an important domain concept.
+It does not declare any attributes.
+
+'manypov2_K' represents an important domain concept.
+It does not declare any attributes.
+
+'manypov2_N' represents an important domain concept.
+It does not declare any attributes.
+
+'manypov2_M' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'manypov2_B' represents an important domain concept.
+It does not declare any attributes.
+
+'manypov2_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'manypov2_F' represents an important domain concept.
+It does not declare any attributes.
+
+'manypov2_C' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'manypov2_A' is a specialization of 'Named'.
+The class 'manypov2_B' is a specialization of 'Named'.
+The class 'manypov2_C' is a specialization of 'Named'.
+The class 'manypov2_E' is a specialization of 'Named'.
+The class 'manypov2_F' is a specialization of 'Named'.
+The class 'manypov2_J' is a specialization of 'Named'.
+The class 'manypov2_K' is a specialization of 'Named'.
+The class 'manypov2_JK' is a specialization of 'Named'.
+The class 'manypov2_M' is a specialization of 'Named'.
+The class 'manypov2_N' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'manypov2_A' and 'manypov2_B'. From 'manypov2_A', the role 'manypov2_A' has cardinality 0..*, and from 'manypov2_B', the role 'manypov2_B' has cardinality 0..*.
+An association connects 'manypov2_A' and 'manypov2_E'. From 'manypov2_A', the role 'manypov2_A2' has cardinality 0..*, and from 'manypov2_E', the role 'manypov2_E' has cardinality 0..*.
+An association connects 'manypov2_J' and 'manypov2_A'. From 'manypov2_J', the role 'manypov2_J' has cardinality 0..*, and from 'manypov2_A', the role 'manypov2_A4' has cardinality 0..*.
+An association connects 'manypov2_K' and 'manypov2_A'. From 'manypov2_K', the role 'manypov2_K' has cardinality 0..*, and from 'manypov2_A', the role 'manypov2_A6' has cardinality 0..*.
+An association connects 'manypov2_B' and 'manypov2_C'. From 'manypov2_B', the role 'manypov2_B8' has cardinality 0..*, and from 'manypov2_C', the role 'manypov2_C' has cardinality 0..*.
+An association connects 'manypov2_F' and 'manypov2_E'. From 'manypov2_F', the role 'manypov2_F' has cardinality 0..*, and from 'manypov2_E', the role 'manypov2_E10' has cardinality 0..*.
+An association connects 'manypov2_JK' and 'manypov2_J'. From 'manypov2_JK', the role 'manypov2_JK' has cardinality 0..*, and from 'manypov2_J', the role 'manypov2_J12' has cardinality 0..*.
+An association connects 'manypov2_M' and 'manypov2_K'. From 'manypov2_M', the role 'manypov2_M' has cardinality 0..*, and from 'manypov2_K', the role 'manypov2_K14' has cardinality 0..*.
+An association connects 'manypov2_N' and 'manypov2_K'. From 'manypov2_N', the role 'manypov2_N' has cardinality 0..*, and from 'manypov2_K', the role 'manypov2_K16' has cardinality 0..*.
+An association connects 'manypov2_JK' and 'manypov2_K'. From 'manypov2_JK', the role 'manypov2_JK18' has cardinality 0..*, and from 'manypov2_K', the role 'manypov2_K19' has cardinality 0..*.
+An association connects 'manypov2_M' and 'manypov2_N'. From 'manypov2_M', the role 'manypov2_M21' has cardinality 0..*, and from 'manypov2_N', the role 'manypov2_N22' has cardinality 0..*.

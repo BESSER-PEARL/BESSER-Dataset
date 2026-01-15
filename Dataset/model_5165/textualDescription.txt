@@ -1,0 +1,28 @@
+The domain model 'in' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'in_RootIn' represents an important domain concept.
+It does not declare any attributes.
+
+'RootIn' represents an important domain concept.
+It does not declare any attributes.
+
+'in_RootContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'in_B' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'in_A' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'in_A' is a specialization of 'RootIn'.
+The class 'in_B' is a specialization of 'RootIn'.
+The class 'in_RootContainer' is a specialization of 'RootIn'.
+
+Relationships between classes are modeled using associations.
+An association connects 'in_A' and 'in_B'. From 'in_A', the role 'in_A' has cardinality 0..*, and from 'in_B', the role 'in_B' has cardinality 0..*.
+An association connects 'in_A' and 'in_B'. From 'in_A', the role 'in_A3' has cardinality 0..*, and from 'in_B', the role 'in_B2' has cardinality 0..*.
+An association connects 'in_RootContainer' and 'in_RootIn'. From 'in_RootContainer', the role 'in_RootContainer' has cardinality 0..*, and from 'in_RootIn', the role 'in_RootIn' has cardinality 0..*.

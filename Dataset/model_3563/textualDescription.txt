@@ -1,0 +1,63 @@
+The domain model 'pascal' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'pascal_var_block' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_atrib' represents an important domain concept.
+It has one attribute: 'var_id', which is of type str.
+
+'pascal_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_block' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_program' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pascal_repetitive_arit_expression' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'op', which is of type str.
+
+'pascal_var_decl' represents an important domain concept.
+It has the following attributes: 'var_id', which is of type str; 'var_type', which is of type str; 'value', which is of type str.
+
+'pascal_rel_expression' represents an important domain concept.
+It has the following attributes: 'op', which is of type str; 'open', which is of type str; 'first', which is of type str; 'close', which is of type str; 'second', which is of type str.
+
+'pascal_var_list' represents an important domain concept.
+It has the following attributes: 'var_id', which is of type str; 'var_type', which is of type str; 'var_ids', which is of type str.
+
+'expression' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_Pascal' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_arit_expression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'pascal_expression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'type' defines the following possible values: 'BOOLEAN', 'STRING', 'INTEGER'.
+
+The model also captures inheritance relationships between classes.
+The class 'pascal_arit_expression' is a specialization of 'expression'.
+The class 'pascal_rel_expression' is a specialization of 'expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pascal_Pascal' and 'pascal_program'. From 'pascal_Pascal', the role 'pascal_Pascal' has cardinality 0..*, and from 'pascal_program', the role 'pascal_program' has cardinality 0..*.
+An association connects 'pascal_var_block' and 'pascal_Pascal'. From 'pascal_var_block', the role 'pascal_var_block' has cardinality 0..*, and from 'pascal_Pascal', the role 'pascal_Pascal2' has cardinality 0..*.
+An association connects 'pascal_Pascal' and 'pascal_block'. From 'pascal_Pascal', the role 'pascal_Pascal4' has cardinality 0..*, and from 'pascal_block', the role 'pascal_block' has cardinality 0..*.
+An association connects 'pascal_var_block' and 'pascal_EObject'. From 'pascal_var_block', the role 'pascal_var_block6' has cardinality 0..*, and from 'pascal_EObject', the role 'pascal_EObject' has cardinality 0..*.
+An association connects 'pascal_block' and 'pascal_statement'. From 'pascal_block', the role 'pascal_block8' has cardinality 0..*, and from 'pascal_statement', the role 'pascal_statement' has cardinality 0..*.
+An association connects 'pascal_statement' and 'pascal_atrib'. From 'pascal_statement', the role 'pascal_statement10' has cardinality 0..*, and from 'pascal_atrib', the role 'pascal_atrib' has cardinality 0..*.
+An association connects 'pascal_expression' and 'pascal_atrib'. From 'pascal_expression', the role 'pascal_expression' has cardinality 0..*, and from 'pascal_atrib', the role 'pascal_atrib12' has cardinality 0..*.
+An association connects 'pascal_repetitive_arit_expression' and 'pascal_arit_expression'. From 'pascal_repetitive_arit_expression', the role 'pascal_repetitive_arit_expression' has cardinality 0..*, and from 'pascal_arit_expression', the role 'pascal_arit_expression' has cardinality 0..*.
+An association connects 'pascal_repetitive_arit_expression' and 'pascal_repetitive_arit_expression'. From 'pascal_repetitive_arit_expression', the role 'pascal_repetitive_arit_expression16' has cardinality 0..*, and from 'pascal_repetitive_arit_expression', the role 'pascal_repetitive_arit_expression14' has cardinality 0..*.

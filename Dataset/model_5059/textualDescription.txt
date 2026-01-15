@@ -1,0 +1,871 @@
+The domain model 'bpmn2' describes the core structural elements and their relationships within the system.
+
+The model defines 167 main class(es).
+
+'bpmn2_PartnerEntity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bpmn2_Error' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'errorCode', which is of type str.
+
+'bpmn2_ResourceParameter' represents an important domain concept.
+It has the following attributes: 'isRequired', which is of type bool; 'name', which is of type str.
+
+'bpmn2_ParticipantMultiplicity' represents an important domain concept.
+It has the following attributes: 'minimum', which is of type int; 'maximum', which is of type int; 'id', which is of type str.
+
+'bpmn2_ScriptTask' represents an important domain concept.
+It has the following attributes: 'script', which is of type str; 'scriptFormat', which is of type str.
+
+'bpmn2_PartnerRole' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HumanPerformer' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_LaneSet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bpmn2_DataObject' represents an important domain concept.
+It has one attribute: 'isCollection', which is of type bool.
+
+'bpmn2_ConditionalEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_ManualTask' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_Process' represents an important domain concept.
+It has the following attributes: 'isExecutable', which is of type bool; 'isClosed', which is of type bool; 'processType', which is of type str.
+
+'EventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_CompensateEventDefinition' represents an important domain concept.
+It has one attribute: 'waitForCompletion', which is of type bool.
+
+'bpmn2_ImplicitThrowEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_FlowNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceRole' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_BoundaryEvent' represents an important domain concept.
+It has one attribute: 'cancelActivity', which is of type bool.
+
+'bpmn2_SendTask' represents an important domain concept.
+It has one attribute: 'implementation', which is of type str.
+
+'bpmn2_AdHocSubProcess' represents an important domain concept.
+It has the following attributes: 'ordering', which is of type str; 'cancelRemainingInstances', which is of type bool.
+
+'bpmn2_Relationship' represents an important domain concept.
+It has the following attributes: 'direction', which is of type str; 'type', which is of type str.
+
+'bpmn2_IntermediateCatchEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_CancelEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_ConversationAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'ThrowEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_CorrelationSubscription' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_BusinessRuleTask' represents an important domain concept.
+It has one attribute: 'implementation', which is of type str.
+
+'bpmn2_ComplexBehaviorDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_CatchEvent' represents an important domain concept.
+It has one attribute: 'parallelMultiple', which is of type bool.
+
+'InteractionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'FlowElementsContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_InputSet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bpmn2_SubProcess' represents an important domain concept.
+It has one attribute: 'triggeredByEvent', which is of type bool.
+
+'bpmn2_DataInput' represents an important domain concept.
+It has the following attributes: 'isCollection', which is of type bool; 'name', which is of type str.
+
+'bpmn2_ResourceAssignmentExpression' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_CategoryValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'bpmn2_EndPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_LinkEventDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bpmn2_Collaboration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isClosed', which is of type bool.
+
+'bpmn2_DataAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_SubChoreography' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_Activity' represents an important domain concept.
+It has the following attributes: 'completionQuantity', which is of type int; 'isForCompensation', which is of type bool; 'startQuantity', which is of type int.
+
+'bpmn2_InteractionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_CallConversation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_ExtensionAttributeDefinition' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'isReference', which is of type bool; 'name', which is of type str; 'type', which is of type str.
+
+'bpmn2_DataState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bpmn2_DataStore' represents an important domain concept.
+It has the following attributes: 'isUnlimited', which is of type bool; 'capacity', which is of type int; 'name', which is of type str.
+
+'ChoreographyActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_ItemAwareElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_LoopCharacteristics' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_Choreography' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_ConversationLink' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bpmn2_TextAnnotation' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'textFormat', which is of type str.
+
+'bpmn2_Monitoring' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_FormalExpression' represents an important domain concept.
+It has one attribute: 'language', which is of type str.
+
+'bpmn2_ServiceTask' represents an important domain concept.
+It has one attribute: 'implementation', which is of type str.
+
+'bpmn2_CorrelationProperty' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bpmn2_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_ComplexGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_Documentation' represents an important domain concept.
+It has the following attributes: 'textFormat', which is of type str; 'text', which is of type str.
+
+'bpmn2_Message' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bpmn2_EventBasedGateway' represents an important domain concept.
+It has the following attributes: 'instantiate', which is of type bool; 'eventGatewayType', which is of type str.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'ConversationNode' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_ResourceRole' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bpmn2_Property' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bpmn2_InclusiveGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_EndEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_InputOutputBinding' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Choreography' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_DataStoreReference' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_TerminateEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_Association' represents an important domain concept.
+It has one attribute: 'associationDirection', which is of type str.
+
+'bpmn2_Auditing' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_ConversationNode' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bpmn2_TimerEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_CallChoreography' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_SequenceFlow' represents an important domain concept.
+It has one attribute: 'isImmediate', which is of type bool.
+
+'FlowElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_InputOutputSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_DataOutput' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isCollection', which is of type bool.
+
+'ItemAwareElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_Category' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bpmn2_GlobalBusinessRuleTask' represents an important domain concept.
+It has one attribute: 'implementation', which is of type str.
+
+'bpmn2_ItemDefinition' represents an important domain concept.
+It has the following attributes: 'itemKind', which is of type str; 'isCollection', which is of type bool.
+
+'bpmn2_HumanPerformer' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_StandardLoopCharacteristics' represents an important domain concept.
+It has one attribute: 'testBefore', which is of type bool.
+
+'bpmn2_Task' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_Participant' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bpmn2_Interface' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'CallableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_Definitions' represents an important domain concept.
+It has the following attributes: 'expressionLanguage', which is of type str; 'targetNamespace', which is of type str; 'name', which is of type str; 'exporter', which is of type str; 'typeLanguage', which is of type str; 'exporterVersion', which is of type str.
+
+'bpmn2_Conversation' represents an important domain concept.
+It does not declare any attributes.
+
+'CatchEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_ParticipantAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_ChoreographyActivity' represents an important domain concept.
+It has one attribute: 'loopType', which is of type str.
+
+'bpmn2_MessageFlowAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_ErrorEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_ExtensionAttributeValue' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'bpmn2_Import' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'namespace', which is of type str; 'id', which is of type str; 'importType', which is of type str.
+
+'bpmn2_Performer' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_ExclusiveGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_ReceiveTask' represents an important domain concept.
+It has the following attributes: 'implementation', which is of type str; 'instantiate', which is of type bool.
+
+'bpmn2_RootElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_CorrelationPropertyRetrievalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SubProcess' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_DataInputAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_SignalEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_ResourceParameterBinding' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'bpmn2_DataOutputAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_ExtensionDefinition' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'Collaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'Task' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_ThrowEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_SubConversation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_CorrelationPropertyBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_FlowElementsContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_GlobalManualTask' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_Rendering' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_Transaction' represents an important domain concept.
+It has the following attributes: 'method', which is of type str; 'protocol', which is of type str.
+
+'bpmn2_CorrelationKey' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Performer' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bpmn2_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_ChoreographyTask' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_Resource' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Gateway' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_OutputSet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bpmn2_BPMNDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_MessageEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_BaseElement' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'id', which is of type str.
+
+'bpmn2_Gateway' represents an important domain concept.
+It has one attribute: 'gatewayDirection', which is of type str.
+
+'BaseElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_UserTask' represents an important domain concept.
+It has one attribute: 'implementation', which is of type str.
+
+'bpmn2_ParallelGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_PotentialOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_DataObjectReference' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_MessageFlow' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'GlobalTask' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_StartEvent' represents an important domain concept.
+It has one attribute: 'isInterrupting', which is of type bool.
+
+'bpmn2_GlobalChoreographyTask' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_Escalation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str; 'escalationCode', which is of type str.
+
+'bpmn2_GlobalTask' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_Lane' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bpmn2_EscalationEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_Extension' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'mustUnderstand', which is of type bool.
+
+'bpmn2_Signal' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bpmn2_GlobalUserTask' represents an important domain concept.
+It has one attribute: 'implementation', which is of type str.
+
+'bpmn2_EventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_CallActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'DataAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_FlowElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bpmn2_MultiInstanceLoopCharacteristics' represents an important domain concept.
+It has the following attributes: 'isSequential', which is of type bool; 'behavior', which is of type str.
+
+'LoopCharacteristics' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_CallableElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bpmn2_GlobalScriptTask' represents an important domain concept.
+It has the following attributes: 'scriptLanguage', which is of type str; 'script', which is of type str.
+
+'bpmn2_IntermediateThrowEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_GlobalConversation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlowNode' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ItemKind' defines the following possible values: 'Physical', 'Information'.
+The enumeration 'GatewayDirection' defines the following possible values: 'Mixed', 'Converging', 'Diverging', 'Unspecified'.
+The enumeration 'EventBasedGatewayType' defines the following possible values: 'Parallel', 'Exclusive'.
+The enumeration 'AssociationDirection' defines the following possible values: 'None', 'Both', 'One'.
+The enumeration 'AdHocOrdering' defines the following possible values: 'Sequential', 'Parallel'.
+The enumeration 'RelationshipDirection' defines the following possible values: 'None', 'Backward', 'Forward', 'Both'.
+The enumeration 'MultiInstanceBehavior' defines the following possible values: 'All', 'None', 'Complex', 'One'.
+The enumeration 'ChoreographyLoopType' defines the following possible values: 'MultiInstanceSequential', 'MultiInstanceParallel', 'None', 'Standard'.
+The enumeration 'ProcessType' defines the following possible values: 'None', 'Private', 'Public'.
+
+The model also captures inheritance relationships between classes.
+The class 'bpmn2_Interface' is a specialization of 'RootElement'.
+The class 'bpmn2_RootElement' is a specialization of 'BaseElement'.
+The class 'bpmn2_Documentation' is a specialization of 'BaseElement'.
+The class 'bpmn2_Operation' is a specialization of 'BaseElement'.
+The class 'bpmn2_Message' is a specialization of 'RootElement'.
+The class 'bpmn2_ItemDefinition' is a specialization of 'RootElement'.
+The class 'bpmn2_Error' is a specialization of 'RootElement'.
+The class 'bpmn2_EndPoint' is a specialization of 'RootElement'.
+The class 'bpmn2_Auditing' is a specialization of 'BaseElement'.
+The class 'bpmn2_GlobalTask' is a specialization of 'CallableElement'.
+The class 'bpmn2_CallableElement' is a specialization of 'RootElement'.
+The class 'bpmn2_InputOutputSpecification' is a specialization of 'BaseElement'.
+The class 'bpmn2_InputSet' is a specialization of 'BaseElement'.
+The class 'bpmn2_DataInput' is a specialization of 'ItemAwareElement'.
+The class 'bpmn2_ItemAwareElement' is a specialization of 'BaseElement'.
+The class 'bpmn2_DataState' is a specialization of 'BaseElement'.
+The class 'bpmn2_OutputSet' is a specialization of 'BaseElement'.
+The class 'bpmn2_DataOutput' is a specialization of 'ItemAwareElement'.
+The class 'bpmn2_ResourceRole' is a specialization of 'BaseElement'.
+The class 'bpmn2_Resource' is a specialization of 'RootElement'.
+The class 'bpmn2_ResourceParameter' is a specialization of 'BaseElement'.
+The class 'bpmn2_Expression' is a specialization of 'BaseElement'.
+The class 'bpmn2_Monitoring' is a specialization of 'BaseElement'.
+The class 'bpmn2_Performer' is a specialization of 'ResourceRole'.
+The class 'bpmn2_Process' is a specialization of 'CallableElement'.
+The class 'bpmn2_Process' is a specialization of 'FlowElementsContainer'.
+The class 'bpmn2_FlowElementsContainer' is a specialization of 'BaseElement'.
+The class 'bpmn2_FlowElement' is a specialization of 'BaseElement'.
+The class 'bpmn2_CategoryValue' is a specialization of 'BaseElement'.
+The class 'bpmn2_LaneSet' is a specialization of 'BaseElement'.
+The class 'bpmn2_Lane' is a specialization of 'BaseElement'.
+The class 'bpmn2_FlowNode' is a specialization of 'FlowElement'.
+The class 'bpmn2_SequenceFlow' is a specialization of 'FlowElement'.
+The class 'bpmn2_Property' is a specialization of 'ItemAwareElement'.
+The class 'bpmn2_Collaboration' is a specialization of 'RootElement'.
+The class 'bpmn2_Choreography' is a specialization of 'Collaboration'.
+The class 'bpmn2_Choreography' is a specialization of 'FlowElementsContainer'.
+The class 'bpmn2_Artifact' is a specialization of 'BaseElement'.
+The class 'bpmn2_ParticipantAssociation' is a specialization of 'BaseElement'.
+The class 'bpmn2_Participant' is a specialization of 'BaseElement'.
+The class 'bpmn2_Participant' is a specialization of 'InteractionNode'.
+The class 'bpmn2_ConversationLink' is a specialization of 'BaseElement'.
+The class 'bpmn2_MessageFlowAssociation' is a specialization of 'BaseElement'.
+The class 'bpmn2_MessageFlow' is a specialization of 'BaseElement'.
+The class 'bpmn2_ConversationAssociation' is a specialization of 'BaseElement'.
+The class 'bpmn2_ConversationNode' is a specialization of 'BaseElement'.
+The class 'bpmn2_ConversationNode' is a specialization of 'InteractionNode'.
+The class 'bpmn2_CorrelationKey' is a specialization of 'BaseElement'.
+The class 'bpmn2_CorrelationProperty' is a specialization of 'RootElement'.
+The class 'bpmn2_CorrelationPropertyRetrievalExpression' is a specialization of 'BaseElement'.
+The class 'bpmn2_FormalExpression' is a specialization of 'Expression'.
+The class 'bpmn2_CorrelationSubscription' is a specialization of 'BaseElement'.
+The class 'bpmn2_CorrelationPropertyBinding' is a specialization of 'BaseElement'.
+The class 'bpmn2_GlobalManualTask' is a specialization of 'GlobalTask'.
+The class 'bpmn2_ManualTask' is a specialization of 'Task'.
+The class 'bpmn2_Task' is a specialization of 'Activity'.
+The class 'bpmn2_Task' is a specialization of 'InteractionNode'.
+The class 'bpmn2_Activity' is a specialization of 'FlowNode'.
+The class 'bpmn2_LoopCharacteristics' is a specialization of 'BaseElement'.
+The class 'bpmn2_BoundaryEvent' is a specialization of 'CatchEvent'.
+The class 'bpmn2_CatchEvent' is a specialization of 'Event'.
+The class 'bpmn2_Event' is a specialization of 'FlowNode'.
+The class 'bpmn2_Event' is a specialization of 'InteractionNode'.
+The class 'bpmn2_EventDefinition' is a specialization of 'RootElement'.
+The class 'bpmn2_DataOutputAssociation' is a specialization of 'DataAssociation'.
+The class 'bpmn2_DataAssociation' is a specialization of 'BaseElement'.
+The class 'bpmn2_Assignment' is a specialization of 'BaseElement'.
+The class 'bpmn2_DataInputAssociation' is a specialization of 'DataAssociation'.
+The class 'bpmn2_UserTask' is a specialization of 'Task'.
+The class 'bpmn2_Rendering' is a specialization of 'BaseElement'.
+The class 'bpmn2_HumanPerformer' is a specialization of 'Performer'.
+The class 'bpmn2_PotentialOwner' is a specialization of 'HumanPerformer'.
+The class 'bpmn2_GlobalUserTask' is a specialization of 'GlobalTask'.
+The class 'bpmn2_Gateway' is a specialization of 'FlowNode'.
+The class 'bpmn2_EventBasedGateway' is a specialization of 'Gateway'.
+The class 'bpmn2_ComplexGateway' is a specialization of 'Gateway'.
+The class 'bpmn2_ExclusiveGateway' is a specialization of 'Gateway'.
+The class 'bpmn2_InclusiveGateway' is a specialization of 'Gateway'.
+The class 'bpmn2_ParallelGateway' is a specialization of 'Gateway'.
+The class 'bpmn2_Relationship' is a specialization of 'BaseElement'.
+The class 'bpmn2_IntermediateCatchEvent' is a specialization of 'CatchEvent'.
+The class 'bpmn2_IntermediateThrowEvent' is a specialization of 'ThrowEvent'.
+The class 'bpmn2_ThrowEvent' is a specialization of 'Event'.
+The class 'bpmn2_EndEvent' is a specialization of 'ThrowEvent'.
+The class 'bpmn2_StartEvent' is a specialization of 'CatchEvent'.
+The class 'bpmn2_CancelEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmn2_ErrorEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmn2_TerminateEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmn2_EscalationEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmn2_CompensateEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmn2_TimerEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmn2_LinkEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmn2_MessageEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmn2_ConditionalEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmn2_SignalEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmn2_Signal' is a specialization of 'RootElement'.
+The class 'bpmn2_ImplicitThrowEvent' is a specialization of 'ThrowEvent'.
+The class 'bpmn2_DataObject' is a specialization of 'FlowElement'.
+The class 'bpmn2_DataObject' is a specialization of 'ItemAwareElement'.
+The class 'bpmn2_DataStore' is a specialization of 'ItemAwareElement'.
+The class 'bpmn2_DataStore' is a specialization of 'RootElement'.
+The class 'bpmn2_DataStoreReference' is a specialization of 'FlowElement'.
+The class 'bpmn2_DataStoreReference' is a specialization of 'ItemAwareElement'.
+The class 'bpmn2_DataObjectReference' is a specialization of 'FlowElement'.
+The class 'bpmn2_DataObjectReference' is a specialization of 'ItemAwareElement'.
+The class 'bpmn2_CallConversation' is a specialization of 'ConversationNode'.
+The class 'bpmn2_Conversation' is a specialization of 'ConversationNode'.
+The class 'bpmn2_SubConversation' is a specialization of 'ConversationNode'.
+The class 'bpmn2_GlobalConversation' is a specialization of 'Collaboration'.
+The class 'bpmn2_PartnerEntity' is a specialization of 'RootElement'.
+The class 'bpmn2_PartnerRole' is a specialization of 'RootElement'.
+The class 'bpmn2_ChoreographyActivity' is a specialization of 'FlowNode'.
+The class 'bpmn2_CallChoreography' is a specialization of 'ChoreographyActivity'.
+The class 'bpmn2_SubChoreography' is a specialization of 'ChoreographyActivity'.
+The class 'bpmn2_SubChoreography' is a specialization of 'FlowElementsContainer'.
+The class 'bpmn2_ChoreographyTask' is a specialization of 'ChoreographyActivity'.
+The class 'bpmn2_GlobalChoreographyTask' is a specialization of 'Choreography'.
+The class 'bpmn2_TextAnnotation' is a specialization of 'Artifact'.
+The class 'bpmn2_Group' is a specialization of 'Artifact'.
+The class 'bpmn2_Association' is a specialization of 'Artifact'.
+The class 'bpmn2_Category' is a specialization of 'RootElement'.
+The class 'bpmn2_ServiceTask' is a specialization of 'Task'.
+The class 'bpmn2_SubProcess' is a specialization of 'Activity'.
+The class 'bpmn2_SubProcess' is a specialization of 'FlowElementsContainer'.
+The class 'bpmn2_MultiInstanceLoopCharacteristics' is a specialization of 'LoopCharacteristics'.
+The class 'bpmn2_ComplexBehaviorDefinition' is a specialization of 'BaseElement'.
+The class 'bpmn2_StandardLoopCharacteristics' is a specialization of 'LoopCharacteristics'.
+The class 'bpmn2_CallActivity' is a specialization of 'Activity'.
+The class 'bpmn2_SendTask' is a specialization of 'Task'.
+The class 'bpmn2_ReceiveTask' is a specialization of 'Task'.
+The class 'bpmn2_ScriptTask' is a specialization of 'Task'.
+The class 'bpmn2_BusinessRuleTask' is a specialization of 'Task'.
+The class 'bpmn2_AdHocSubProcess' is a specialization of 'SubProcess'.
+The class 'bpmn2_Transaction' is a specialization of 'SubProcess'.
+The class 'bpmn2_GlobalScriptTask' is a specialization of 'GlobalTask'.
+The class 'bpmn2_GlobalBusinessRuleTask' is a specialization of 'GlobalTask'.
+The class 'bpmn2_Definitions' is a specialization of 'BaseElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'bpmn2_Operation' and 'bpmn2_Interface'. From 'bpmn2_Operation', the role 'bpmn2_Operation' has cardinality 0..*, and from 'bpmn2_Interface', the role 'bpmn2_Interface' has cardinality 0..*.
+An association connects 'bpmn2_Interface' and 'bpmn2_EObject'. From 'bpmn2_Interface', the role 'bpmn2_Interface2' has cardinality 0..*, and from 'bpmn2_EObject', the role 'bpmn2_EObject' has cardinality 0..*.
+An association connects 'bpmn2_BaseElement' and 'bpmn2_ExtensionDefinition'. From 'bpmn2_BaseElement', the role 'bpmn2_BaseElement' has cardinality 0..*, and from 'bpmn2_ExtensionDefinition', the role 'bpmn2_ExtensionDefinition' has cardinality 0..*.
+An association connects 'bpmn2_ExtensionAttributeValue' and 'bpmn2_BaseElement'. From 'bpmn2_ExtensionAttributeValue', the role 'bpmn2_ExtensionAttributeValue' has cardinality 0..*, and from 'bpmn2_BaseElement', the role 'bpmn2_BaseElement5' has cardinality 0..*.
+An association connects 'bpmn2_BaseElement' and 'bpmn2_Documentation'. From 'bpmn2_BaseElement', the role 'bpmn2_BaseElement7' has cardinality 0..*, and from 'bpmn2_Documentation', the role 'bpmn2_Documentation' has cardinality 0..*.
+An association connects 'bpmn2_ExtensionDefinition' and 'bpmn2_ExtensionAttributeDefinition'. From 'bpmn2_ExtensionDefinition', the role 'extensionDefinition' has cardinality 0..*, and from 'bpmn2_ExtensionAttributeDefinition', the role 'ExtensionAttributeDefinition' has cardinality 0..*.
+An association connects 'bpmn2_ExtensionAttributeDefinition' and 'bpmn2_ExtensionDefinition'. From 'bpmn2_ExtensionAttributeDefinition', the role 'extensionAttributeDefinitions' has cardinality 0..*, and from 'bpmn2_ExtensionDefinition', the role 'ExtensionDefinition' has cardinality 0..*.
+An association connects 'bpmn2_ExtensionAttributeValue' and 'bpmn2_EObject'. From 'bpmn2_ExtensionAttributeValue', the role 'bpmn2_ExtensionAttributeValue11' has cardinality 0..*, and from 'bpmn2_EObject', the role 'bpmn2_EObject12' has cardinality 0..*.
+An association connects 'bpmn2_ExtensionAttributeValue' and 'bpmn2_EObject'. From 'bpmn2_ExtensionAttributeValue', the role 'bpmn2_ExtensionAttributeValue14' has cardinality 0..*, and from 'bpmn2_EObject', the role 'bpmn2_EObject15' has cardinality 0..*.
+An association connects 'bpmn2_ExtensionAttributeValue' and 'bpmn2_ExtensionAttributeDefinition'. From 'bpmn2_ExtensionAttributeValue', the role 'bpmn2_ExtensionAttributeValue17' has cardinality 0..*, and from 'bpmn2_ExtensionAttributeDefinition', the role 'bpmn2_ExtensionAttributeDefinition' has cardinality 0..*.
+An association connects 'bpmn2_Operation' and 'bpmn2_Message'. From 'bpmn2_Operation', the role 'bpmn2_Operation19' has cardinality 0..*, and from 'bpmn2_Message', the role 'bpmn2_Message' has cardinality 0..*.
+An association connects 'bpmn2_Operation' and 'bpmn2_Message'. From 'bpmn2_Operation', the role 'bpmn2_Operation21' has cardinality 0..*, and from 'bpmn2_Message', the role 'bpmn2_Message22' has cardinality 0..*.
+An association connects 'bpmn2_Operation' and 'bpmn2_Error'. From 'bpmn2_Operation', the role 'bpmn2_Operation24' has cardinality 0..*, and from 'bpmn2_Error', the role 'bpmn2_Error' has cardinality 0..*.
+An association connects 'bpmn2_Operation' and 'bpmn2_EObject'. From 'bpmn2_Operation', the role 'bpmn2_Operation26' has cardinality 0..*, and from 'bpmn2_EObject', the role 'bpmn2_EObject27' has cardinality 0..*.
+An association connects 'bpmn2_ItemDefinition' and 'bpmn2_Message'. From 'bpmn2_ItemDefinition', the role 'bpmn2_ItemDefinition' has cardinality 0..*, and from 'bpmn2_Message', the role 'bpmn2_Message29' has cardinality 0..*.
+An association connects 'bpmn2_ItemDefinition' and 'bpmn2_EObject'. From 'bpmn2_ItemDefinition', the role 'bpmn2_ItemDefinition31' has cardinality 0..*, and from 'bpmn2_EObject', the role 'bpmn2_EObject32' has cardinality 0..*.
+An association connects 'bpmn2_ItemDefinition' and 'bpmn2_Import'. From 'bpmn2_ItemDefinition', the role 'bpmn2_ItemDefinition34' has cardinality 0..*, and from 'bpmn2_Import', the role 'bpmn2_Import' has cardinality 0..*.
+An association connects 'bpmn2_ItemDefinition' and 'bpmn2_Error'. From 'bpmn2_ItemDefinition', the role 'bpmn2_ItemDefinition37' has cardinality 0..*, and from 'bpmn2_Error', the role 'bpmn2_Error36' has cardinality 0..*.
+An association connects 'bpmn2_ResourceRole' and 'bpmn2_GlobalTask'. From 'bpmn2_ResourceRole', the role 'bpmn2_ResourceRole' has cardinality 0..*, and from 'bpmn2_GlobalTask', the role 'bpmn2_GlobalTask' has cardinality 0..*.
+An association connects 'bpmn2_InputOutputSpecification' and 'bpmn2_CallableElement'. From 'bpmn2_InputOutputSpecification', the role 'bpmn2_InputOutputSpecification' has cardinality 0..*, and from 'bpmn2_CallableElement', the role 'bpmn2_CallableElement' has cardinality 0..*.
+An association connects 'bpmn2_CallableElement' and 'bpmn2_Interface'. From 'bpmn2_CallableElement', the role 'bpmn2_CallableElement41' has cardinality 0..*, and from 'bpmn2_Interface', the role 'bpmn2_Interface42' has cardinality 0..*.
+An association connects 'bpmn2_InputOutputBinding' and 'bpmn2_CallableElement'. From 'bpmn2_InputOutputBinding', the role 'bpmn2_InputOutputBinding' has cardinality 0..*, and from 'bpmn2_CallableElement', the role 'bpmn2_CallableElement44' has cardinality 0..*.
+An association connects 'bpmn2_InputOutputSpecification' and 'bpmn2_InputSet'. From 'bpmn2_InputOutputSpecification', the role 'bpmn2_InputOutputSpecification46' has cardinality 0..*, and from 'bpmn2_InputSet', the role 'bpmn2_InputSet' has cardinality 0..*.
+An association connects 'bpmn2_InputOutputSpecification' and 'bpmn2_OutputSet'. From 'bpmn2_InputOutputSpecification', the role 'bpmn2_InputOutputSpecification48' has cardinality 0..*, and from 'bpmn2_OutputSet', the role 'bpmn2_OutputSet' has cardinality 0..*.
+An association connects 'bpmn2_DataInput' and 'bpmn2_InputOutputSpecification'. From 'bpmn2_DataInput', the role 'bpmn2_DataInput' has cardinality 0..*, and from 'bpmn2_InputOutputSpecification', the role 'bpmn2_InputOutputSpecification50' has cardinality 0..*.
+An association connects 'bpmn2_InputOutputSpecification' and 'bpmn2_DataOutput'. From 'bpmn2_InputOutputSpecification', the role 'bpmn2_InputOutputSpecification52' has cardinality 0..*, and from 'bpmn2_DataOutput', the role 'bpmn2_DataOutput' has cardinality 0..*.
+An association connects 'bpmn2_InputSet' and 'bpmn2_DataInput'. From 'bpmn2_InputSet', the role 'inputSetRefs' has cardinality 0..*, and from 'bpmn2_DataInput', the role 'DataInput' has cardinality 0..*.
+An association connects 'bpmn2_DataInput' and 'bpmn2_InputSet'. From 'bpmn2_DataInput', the role 'DataInput55' has cardinality 0..*, and from 'bpmn2_InputSet', the role 'inputSetWithOptional' has cardinality 0..*.
+An association connects 'bpmn2_DataInput' and 'bpmn2_InputSet'. From 'bpmn2_DataInput', the role 'DataInput57' has cardinality 0..*, and from 'bpmn2_InputSet', the role 'inputSetWithWhileExecuting' has cardinality 0..*.
+An association connects 'bpmn2_OutputSet' and 'bpmn2_InputSet'. From 'bpmn2_OutputSet', the role 'OutputSet' has cardinality 0..*, and from 'bpmn2_InputSet', the role 'inputSetRefs59' has cardinality 0..*.
+An association connects 'bpmn2_InputSet' and 'bpmn2_DataInput'. From 'bpmn2_InputSet', the role 'InputSet' has cardinality 0..*, and from 'bpmn2_DataInput', the role 'optionalInputRefs' has cardinality 0..*.
+An association connects 'bpmn2_InputSet' and 'bpmn2_DataInput'. From 'bpmn2_InputSet', the role 'InputSet62' has cardinality 0..*, and from 'bpmn2_DataInput', the role 'whileExecutingInputRefs' has cardinality 0..*.
+An association connects 'bpmn2_DataInput' and 'bpmn2_InputSet'. From 'bpmn2_DataInput', the role 'dataInputRefs' has cardinality 0..*, and from 'bpmn2_InputSet', the role 'InputSet64' has cardinality 0..*.
+An association connects 'bpmn2_ItemDefinition' and 'bpmn2_ItemAwareElement'. From 'bpmn2_ItemDefinition', the role 'bpmn2_ItemDefinition66' has cardinality 0..*, and from 'bpmn2_ItemAwareElement', the role 'bpmn2_ItemAwareElement' has cardinality 0..*.
+An association connects 'bpmn2_DataState' and 'bpmn2_ItemAwareElement'. From 'bpmn2_DataState', the role 'bpmn2_DataState' has cardinality 0..*, and from 'bpmn2_ItemAwareElement', the role 'bpmn2_ItemAwareElement68' has cardinality 0..*.
+An association connects 'bpmn2_DataOutput' and 'bpmn2_OutputSet'. From 'bpmn2_DataOutput', the role 'DataOutput' has cardinality 0..*, and from 'bpmn2_OutputSet', the role 'outputSetRefs' has cardinality 0..*.
+An association connects 'bpmn2_DataOutput' and 'bpmn2_OutputSet'. From 'bpmn2_DataOutput', the role 'DataOutput71' has cardinality 0..*, and from 'bpmn2_OutputSet', the role 'outputSetWithOptional' has cardinality 0..*.
+An association connects 'bpmn2_DataOutput' and 'bpmn2_OutputSet'. From 'bpmn2_DataOutput', the role 'DataOutput73' has cardinality 0..*, and from 'bpmn2_OutputSet', the role 'outputSetWithWhileExecuting' has cardinality 0..*.
+An association connects 'bpmn2_InputSet' and 'bpmn2_OutputSet'. From 'bpmn2_InputSet', the role 'InputSet76' has cardinality 0..*, and from 'bpmn2_OutputSet', the role 'outputSetRefs75' has cardinality 0..*.
+An association connects 'bpmn2_OutputSet' and 'bpmn2_DataOutput'. From 'bpmn2_OutputSet', the role 'OutputSet78' has cardinality 0..*, and from 'bpmn2_DataOutput', the role 'optionalOutputRefs' has cardinality 0..*.
+An association connects 'bpmn2_OutputSet' and 'bpmn2_DataOutput'. From 'bpmn2_OutputSet', the role 'OutputSet80' has cardinality 0..*, and from 'bpmn2_DataOutput', the role 'whileExecutingOutputRefs' has cardinality 0..*.
+An association connects 'bpmn2_DataOutput' and 'bpmn2_OutputSet'. From 'bpmn2_DataOutput', the role 'dataOutputRefs' has cardinality 0..*, and from 'bpmn2_OutputSet', the role 'OutputSet82' has cardinality 0..*.
+An association connects 'bpmn2_InputOutputBinding' and 'bpmn2_InputSet'. From 'bpmn2_InputOutputBinding', the role 'bpmn2_InputOutputBinding84' has cardinality 0..*, and from 'bpmn2_InputSet', the role 'bpmn2_InputSet85' has cardinality 0..*.
+An association connects 'bpmn2_InputOutputBinding' and 'bpmn2_OutputSet'. From 'bpmn2_InputOutputBinding', the role 'bpmn2_InputOutputBinding87' has cardinality 0..*, and from 'bpmn2_OutputSet', the role 'bpmn2_OutputSet88' has cardinality 0..*.
+An association connects 'bpmn2_InputOutputBinding' and 'bpmn2_Operation'. From 'bpmn2_InputOutputBinding', the role 'bpmn2_InputOutputBinding90' has cardinality 0..*, and from 'bpmn2_Operation', the role 'bpmn2_Operation91' has cardinality 0..*.
+An association connects 'bpmn2_Resource' and 'bpmn2_ResourceRole'. From 'bpmn2_Resource', the role 'bpmn2_Resource' has cardinality 0..*, and from 'bpmn2_ResourceRole', the role 'bpmn2_ResourceRole93' has cardinality 0..*.
+An association connects 'bpmn2_ResourceRole' and 'bpmn2_ResourceParameterBinding'. From 'bpmn2_ResourceRole', the role 'bpmn2_ResourceRole95' has cardinality 0..*, and from 'bpmn2_ResourceParameterBinding', the role 'bpmn2_ResourceParameterBinding' has cardinality 0..*.
+An association connects 'bpmn2_ResourceRole' and 'bpmn2_ResourceAssignmentExpression'. From 'bpmn2_ResourceRole', the role 'bpmn2_ResourceRole97' has cardinality 0..*, and from 'bpmn2_ResourceAssignmentExpression', the role 'bpmn2_ResourceAssignmentExpression' has cardinality 0..*.
+An association connects 'bpmn2_Resource' and 'bpmn2_ResourceParameter'. From 'bpmn2_Resource', the role 'bpmn2_Resource99' has cardinality 0..*, and from 'bpmn2_ResourceParameter', the role 'bpmn2_ResourceParameter' has cardinality 0..*.
+An association connects 'bpmn2_ItemDefinition' and 'bpmn2_ResourceParameter'. From 'bpmn2_ItemDefinition', the role 'bpmn2_ItemDefinition102' has cardinality 0..*, and from 'bpmn2_ResourceParameter', the role 'bpmn2_ResourceParameter101' has cardinality 0..*.
+An association connects 'bpmn2_ResourceParameterBinding' and 'bpmn2_Expression'. From 'bpmn2_ResourceParameterBinding', the role 'bpmn2_ResourceParameterBinding104' has cardinality 0..*, and from 'bpmn2_Expression', the role 'bpmn2_Expression' has cardinality 0..*.
+An association connects 'bpmn2_ResourceParameterBinding' and 'bpmn2_ResourceParameter'. From 'bpmn2_ResourceParameterBinding', the role 'bpmn2_ResourceParameterBinding106' has cardinality 0..*, and from 'bpmn2_ResourceParameter', the role 'bpmn2_ResourceParameter107' has cardinality 0..*.
+An association connects 'bpmn2_ResourceAssignmentExpression' and 'bpmn2_Expression'. From 'bpmn2_ResourceAssignmentExpression', the role 'bpmn2_ResourceAssignmentExpression109' has cardinality 0..*, and from 'bpmn2_Expression', the role 'bpmn2_Expression110' has cardinality 0..*.
+An association connects 'bpmn2_Auditing' and 'bpmn2_Process'. From 'bpmn2_Auditing', the role 'bpmn2_Auditing' has cardinality 0..*, and from 'bpmn2_Process', the role 'bpmn2_Process' has cardinality 0..*.
+An association connects 'bpmn2_Monitoring' and 'bpmn2_Process'. From 'bpmn2_Monitoring', the role 'bpmn2_Monitoring' has cardinality 0..*, and from 'bpmn2_Process', the role 'bpmn2_Process113' has cardinality 0..*.
+An association connects 'bpmn2_Property' and 'bpmn2_Process'. From 'bpmn2_Property', the role 'bpmn2_Property' has cardinality 0..*, and from 'bpmn2_Process', the role 'bpmn2_Process115' has cardinality 0..*.
+An association connects 'bpmn2_Process' and 'bpmn2_Process'. From 'bpmn2_Process', the role 'bpmn2_Process118' has cardinality 0..*, and from 'bpmn2_Process', the role 'bpmn2_Process116' has cardinality 0..*.
+An association connects 'bpmn2_Collaboration' and 'bpmn2_Process'. From 'bpmn2_Collaboration', the role 'bpmn2_Collaboration' has cardinality 0..*, and from 'bpmn2_Process', the role 'bpmn2_Process120' has cardinality 0..*.
+An association connects 'bpmn2_ResourceRole' and 'bpmn2_Process'. From 'bpmn2_ResourceRole', the role 'bpmn2_ResourceRole123' has cardinality 0..*, and from 'bpmn2_Process', the role 'bpmn2_Process122' has cardinality 0..*.
+An association connects 'bpmn2_Process' and 'bpmn2_Artifact'. From 'bpmn2_Process', the role 'bpmn2_Process125' has cardinality 0..*, and from 'bpmn2_Artifact', the role 'bpmn2_Artifact' has cardinality 0..*.
+An association connects 'bpmn2_CorrelationSubscription' and 'bpmn2_Process'. From 'bpmn2_CorrelationSubscription', the role 'bpmn2_CorrelationSubscription' has cardinality 0..*, and from 'bpmn2_Process', the role 'bpmn2_Process127' has cardinality 0..*.
+An association connects 'bpmn2_Process' and 'bpmn2_Process'. From 'bpmn2_Process', the role 'decomposes' has cardinality 0..*, and from 'bpmn2_Process', the role 'Process' has cardinality 0..*.
+An association connects 'bpmn2_Process' and 'bpmn2_Process'. From 'bpmn2_Process', the role 'Process132' has cardinality 0..*, and from 'bpmn2_Process', the role 'decomposedBy' has cardinality 0..*.
+An association connects 'bpmn2_FlowElement' and 'bpmn2_FlowElementsContainer'. From 'bpmn2_FlowElement', the role 'bpmn2_FlowElement' has cardinality 0..*, and from 'bpmn2_FlowElementsContainer', the role 'bpmn2_FlowElementsContainer' has cardinality 0..*.
+An association connects 'bpmn2_FlowElementsContainer' and 'bpmn2_LaneSet'. From 'bpmn2_FlowElementsContainer', the role 'bpmn2_FlowElementsContainer135' has cardinality 0..*, and from 'bpmn2_LaneSet', the role 'bpmn2_LaneSet' has cardinality 0..*.
+An association connects 'bpmn2_Auditing' and 'bpmn2_FlowElement'. From 'bpmn2_Auditing', the role 'bpmn2_Auditing138' has cardinality 0..*, and from 'bpmn2_FlowElement', the role 'bpmn2_FlowElement137' has cardinality 0..*.
+An association connects 'bpmn2_Monitoring' and 'bpmn2_FlowElement'. From 'bpmn2_Monitoring', the role 'bpmn2_Monitoring141' has cardinality 0..*, and from 'bpmn2_FlowElement', the role 'bpmn2_FlowElement140' has cardinality 0..*.
+An association connects 'bpmn2_FlowElement' and 'bpmn2_CategoryValue'. From 'bpmn2_FlowElement', the role 'categorizedFlowElements' has cardinality 0..*, and from 'bpmn2_CategoryValue', the role 'CategoryValue' has cardinality 0..*.
+An association connects 'bpmn2_CategoryValue' and 'bpmn2_FlowElement'. From 'bpmn2_CategoryValue', the role 'categoryValueRef' has cardinality 0..*, and from 'bpmn2_FlowElement', the role 'FlowElement' has cardinality 0..*.
+An association connects 'bpmn2_LaneSet' and 'bpmn2_Lane'. From 'bpmn2_LaneSet', the role 'bpmn2_LaneSet145' has cardinality 0..*, and from 'bpmn2_Lane', the role 'bpmn2_Lane' has cardinality 0..*.
+An association connects 'bpmn2_LaneSet' and 'bpmn2_Lane'. From 'bpmn2_LaneSet', the role 'bpmn2_LaneSet148' has cardinality 0..*, and from 'bpmn2_Lane', the role 'bpmn2_Lane147' has cardinality 0..*.
+An association connects 'bpmn2_BaseElement' and 'bpmn2_Lane'. From 'bpmn2_BaseElement', the role 'bpmn2_BaseElement151' has cardinality 0..*, and from 'bpmn2_Lane', the role 'bpmn2_Lane150' has cardinality 0..*.
+An association connects 'bpmn2_Lane' and 'bpmn2_FlowNode'. From 'bpmn2_Lane', the role 'lanes' has cardinality 0..*, and from 'bpmn2_FlowNode', the role 'FlowNode' has cardinality 0..*.
+An association connects 'bpmn2_Lane' and 'bpmn2_BaseElement'. From 'bpmn2_Lane', the role 'bpmn2_Lane154' has cardinality 0..*, and from 'bpmn2_BaseElement', the role 'bpmn2_BaseElement155' has cardinality 0..*.
+An association connects 'bpmn2_SequenceFlow' and 'bpmn2_FlowNode'. From 'bpmn2_SequenceFlow', the role 'SequenceFlow' has cardinality 0..*, and from 'bpmn2_FlowNode', the role 'sourceRef' has cardinality 0..*.
+An association connects 'bpmn2_SequenceFlow' and 'bpmn2_FlowNode'. From 'bpmn2_SequenceFlow', the role 'SequenceFlow158' has cardinality 0..*, and from 'bpmn2_FlowNode', the role 'targetRef' has cardinality 0..*.
+An association connects 'bpmn2_FlowNode' and 'bpmn2_Lane'. From 'bpmn2_FlowNode', the role 'flowNodeRefs' has cardinality 0..*, and from 'bpmn2_Lane', the role 'Lane' has cardinality 0..*.
+An association connects 'bpmn2_SequenceFlow' and 'bpmn2_Expression'. From 'bpmn2_SequenceFlow', the role 'bpmn2_SequenceFlow' has cardinality 0..*, and from 'bpmn2_Expression', the role 'bpmn2_Expression161' has cardinality 0..*.
+An association connects 'bpmn2_FlowNode' and 'bpmn2_SequenceFlow'. From 'bpmn2_FlowNode', the role 'FlowNode163' has cardinality 0..*, and from 'bpmn2_SequenceFlow', the role 'incoming' has cardinality 0..*.
+An association connects 'bpmn2_FlowNode' and 'bpmn2_SequenceFlow'. From 'bpmn2_FlowNode', the role 'FlowNode165' has cardinality 0..*, and from 'bpmn2_SequenceFlow', the role 'outgoing' has cardinality 0..*.
+An association connects 'bpmn2_Collaboration' and 'bpmn2_Choreography'. From 'bpmn2_Collaboration', the role 'bpmn2_Collaboration167' has cardinality 0..*, and from 'bpmn2_Choreography', the role 'bpmn2_Choreography' has cardinality 0..*.
+An association connects 'bpmn2_Artifact' and 'bpmn2_Collaboration'. From 'bpmn2_Artifact', the role 'bpmn2_Artifact170' has cardinality 0..*, and from 'bpmn2_Collaboration', the role 'bpmn2_Collaboration169' has cardinality 0..*.
+An association connects 'bpmn2_Collaboration' and 'bpmn2_ParticipantAssociation'. From 'bpmn2_Collaboration', the role 'bpmn2_Collaboration172' has cardinality 0..*, and from 'bpmn2_ParticipantAssociation', the role 'bpmn2_ParticipantAssociation' has cardinality 0..*.
+An association connects 'bpmn2_Collaboration' and 'bpmn2_MessageFlowAssociation'. From 'bpmn2_Collaboration', the role 'bpmn2_Collaboration174' has cardinality 0..*, and from 'bpmn2_MessageFlowAssociation', the role 'bpmn2_MessageFlowAssociation' has cardinality 0..*.
+An association connects 'bpmn2_ConversationAssociation' and 'bpmn2_Collaboration'. From 'bpmn2_ConversationAssociation', the role 'bpmn2_ConversationAssociation' has cardinality 0..*, and from 'bpmn2_Collaboration', the role 'bpmn2_Collaboration176' has cardinality 0..*.
+An association connects 'bpmn2_Participant' and 'bpmn2_Collaboration'. From 'bpmn2_Participant', the role 'bpmn2_Participant' has cardinality 0..*, and from 'bpmn2_Collaboration', the role 'bpmn2_Collaboration178' has cardinality 0..*.
+An association connects 'bpmn2_MessageFlow' and 'bpmn2_Collaboration'. From 'bpmn2_MessageFlow', the role 'bpmn2_MessageFlow' has cardinality 0..*, and from 'bpmn2_Collaboration', the role 'bpmn2_Collaboration180' has cardinality 0..*.
+An association connects 'bpmn2_CorrelationKey' and 'bpmn2_Collaboration'. From 'bpmn2_CorrelationKey', the role 'bpmn2_CorrelationKey' has cardinality 0..*, and from 'bpmn2_Collaboration', the role 'bpmn2_Collaboration182' has cardinality 0..*.
+An association connects 'bpmn2_ConversationNode' and 'bpmn2_Collaboration'. From 'bpmn2_ConversationNode', the role 'bpmn2_ConversationNode' has cardinality 0..*, and from 'bpmn2_Collaboration', the role 'bpmn2_Collaboration184' has cardinality 0..*.
+An association connects 'bpmn2_ConversationLink' and 'bpmn2_Collaboration'. From 'bpmn2_ConversationLink', the role 'bpmn2_ConversationLink' has cardinality 0..*, and from 'bpmn2_Collaboration', the role 'bpmn2_Collaboration186' has cardinality 0..*.
+An association connects 'bpmn2_Participant' and 'bpmn2_ParticipantAssociation'. From 'bpmn2_Participant', the role 'bpmn2_Participant189' has cardinality 0..*, and from 'bpmn2_ParticipantAssociation', the role 'bpmn2_ParticipantAssociation188' has cardinality 0..*.
+An association connects 'bpmn2_Participant' and 'bpmn2_ParticipantAssociation'. From 'bpmn2_Participant', the role 'bpmn2_Participant192' has cardinality 0..*, and from 'bpmn2_ParticipantAssociation', the role 'bpmn2_ParticipantAssociation191' has cardinality 0..*.
+An association connects 'bpmn2_Interface' and 'bpmn2_Participant'. From 'bpmn2_Interface', the role 'bpmn2_Interface195' has cardinality 0..*, and from 'bpmn2_Participant', the role 'bpmn2_Participant194' has cardinality 0..*.
+An association connects 'bpmn2_Participant' and 'bpmn2_ParticipantMultiplicity'. From 'bpmn2_Participant', the role 'bpmn2_Participant197' has cardinality 0..*, and from 'bpmn2_ParticipantMultiplicity', the role 'bpmn2_ParticipantMultiplicity' has cardinality 0..*.
+An association connects 'bpmn2_Participant' and 'bpmn2_EndPoint'. From 'bpmn2_Participant', the role 'bpmn2_Participant199' has cardinality 0..*, and from 'bpmn2_EndPoint', the role 'bpmn2_EndPoint' has cardinality 0..*.
+An association connects 'bpmn2_Participant' and 'bpmn2_Process'. From 'bpmn2_Participant', the role 'bpmn2_Participant201' has cardinality 0..*, and from 'bpmn2_Process', the role 'bpmn2_Process202' has cardinality 0..*.
+An association connects 'bpmn2_ConversationLink' and 'bpmn2_InteractionNode'. From 'bpmn2_ConversationLink', the role 'ConversationLink' has cardinality 0..*, and from 'bpmn2_InteractionNode', the role 'targetRef204' has cardinality 0..*.
+An association connects 'bpmn2_ConversationLink' and 'bpmn2_InteractionNode'. From 'bpmn2_ConversationLink', the role 'ConversationLink207' has cardinality 0..*, and from 'bpmn2_InteractionNode', the role 'sourceRef206' has cardinality 0..*.
+An association connects 'bpmn2_InteractionNode' and 'bpmn2_ConversationLink'. From 'bpmn2_InteractionNode', the role 'InteractionNode' has cardinality 0..*, and from 'bpmn2_ConversationLink', the role 'outgoingConversationLinks' has cardinality 0..*.
+An association connects 'bpmn2_ConversationLink' and 'bpmn2_InteractionNode'. From 'bpmn2_ConversationLink', the role 'incomingConversationLinks' has cardinality 0..*, and from 'bpmn2_InteractionNode', the role 'InteractionNode210' has cardinality 0..*.
+An association connects 'bpmn2_MessageFlow' and 'bpmn2_MessageFlowAssociation'. From 'bpmn2_MessageFlow', the role 'bpmn2_MessageFlow213' has cardinality 0..*, and from 'bpmn2_MessageFlowAssociation', the role 'bpmn2_MessageFlowAssociation212' has cardinality 0..*.
+An association connects 'bpmn2_MessageFlowAssociation' and 'bpmn2_MessageFlow'. From 'bpmn2_MessageFlowAssociation', the role 'bpmn2_MessageFlowAssociation215' has cardinality 0..*, and from 'bpmn2_MessageFlow', the role 'bpmn2_MessageFlow216' has cardinality 0..*.
+An association connects 'bpmn2_MessageFlow' and 'bpmn2_InteractionNode'. From 'bpmn2_MessageFlow', the role 'bpmn2_MessageFlow218' has cardinality 0..*, and from 'bpmn2_InteractionNode', the role 'bpmn2_InteractionNode' has cardinality 0..*.
+An association connects 'bpmn2_InteractionNode' and 'bpmn2_MessageFlow'. From 'bpmn2_InteractionNode', the role 'bpmn2_InteractionNode221' has cardinality 0..*, and from 'bpmn2_MessageFlow', the role 'bpmn2_MessageFlow220' has cardinality 0..*.
+An association connects 'bpmn2_Message' and 'bpmn2_MessageFlow'. From 'bpmn2_Message', the role 'bpmn2_Message224' has cardinality 0..*, and from 'bpmn2_MessageFlow', the role 'bpmn2_MessageFlow223' has cardinality 0..*.
+An association connects 'bpmn2_ConversationAssociation' and 'bpmn2_ConversationNode'. From 'bpmn2_ConversationAssociation', the role 'bpmn2_ConversationAssociation226' has cardinality 0..*, and from 'bpmn2_ConversationNode', the role 'bpmn2_ConversationNode227' has cardinality 0..*.
+An association connects 'bpmn2_ConversationNode' and 'bpmn2_ConversationAssociation'. From 'bpmn2_ConversationNode', the role 'bpmn2_ConversationNode230' has cardinality 0..*, and from 'bpmn2_ConversationAssociation', the role 'bpmn2_ConversationAssociation229' has cardinality 0..*.
+An association connects 'bpmn2_Participant' and 'bpmn2_ConversationNode'. From 'bpmn2_Participant', the role 'bpmn2_Participant233' has cardinality 0..*, and from 'bpmn2_ConversationNode', the role 'bpmn2_ConversationNode232' has cardinality 0..*.
+An association connects 'bpmn2_ConversationNode' and 'bpmn2_MessageFlow'. From 'bpmn2_ConversationNode', the role 'bpmn2_ConversationNode235' has cardinality 0..*, and from 'bpmn2_MessageFlow', the role 'bpmn2_MessageFlow236' has cardinality 0..*.
+An association connects 'bpmn2_ConversationNode' and 'bpmn2_CorrelationKey'. From 'bpmn2_ConversationNode', the role 'bpmn2_ConversationNode238' has cardinality 0..*, and from 'bpmn2_CorrelationKey', the role 'bpmn2_CorrelationKey239' has cardinality 0..*.
+An association connects 'bpmn2_CorrelationProperty' and 'bpmn2_CorrelationKey'. From 'bpmn2_CorrelationProperty', the role 'bpmn2_CorrelationProperty' has cardinality 0..*, and from 'bpmn2_CorrelationKey', the role 'bpmn2_CorrelationKey241' has cardinality 0..*.
+An association connects 'bpmn2_CorrelationProperty' and 'bpmn2_CorrelationPropertyRetrievalExpression'. From 'bpmn2_CorrelationProperty', the role 'bpmn2_CorrelationProperty243' has cardinality 0..*, and from 'bpmn2_CorrelationPropertyRetrievalExpression', the role 'bpmn2_CorrelationPropertyRetrievalExpression' has cardinality 0..*.
+An association connects 'bpmn2_ItemDefinition' and 'bpmn2_CorrelationProperty'. From 'bpmn2_ItemDefinition', the role 'bpmn2_ItemDefinition246' has cardinality 0..*, and from 'bpmn2_CorrelationProperty', the role 'bpmn2_CorrelationProperty245' has cardinality 0..*.
+An association connects 'bpmn2_FormalExpression' and 'bpmn2_CorrelationPropertyRetrievalExpression'. From 'bpmn2_FormalExpression', the role 'bpmn2_FormalExpression' has cardinality 0..*, and from 'bpmn2_CorrelationPropertyRetrievalExpression', the role 'bpmn2_CorrelationPropertyRetrievalExpression248' has cardinality 0..*.
+An association connects 'bpmn2_CorrelationPropertyRetrievalExpression' and 'bpmn2_Message'. From 'bpmn2_CorrelationPropertyRetrievalExpression', the role 'bpmn2_CorrelationPropertyRetrievalExpression250' has cardinality 0..*, and from 'bpmn2_Message', the role 'bpmn2_Message251' has cardinality 0..*.
+An association connects 'bpmn2_FormalExpression' and 'bpmn2_EObject'. From 'bpmn2_FormalExpression', the role 'bpmn2_FormalExpression253' has cardinality 0..*, and from 'bpmn2_EObject', the role 'bpmn2_EObject254' has cardinality 0..*.
+An association connects 'bpmn2_FormalExpression' and 'bpmn2_ItemDefinition'. From 'bpmn2_FormalExpression', the role 'bpmn2_FormalExpression256' has cardinality 0..*, and from 'bpmn2_ItemDefinition', the role 'bpmn2_ItemDefinition257' has cardinality 0..*.
+An association connects 'bpmn2_CorrelationSubscription' and 'bpmn2_CorrelationKey'. From 'bpmn2_CorrelationSubscription', the role 'bpmn2_CorrelationSubscription259' has cardinality 0..*, and from 'bpmn2_CorrelationKey', the role 'bpmn2_CorrelationKey260' has cardinality 0..*.
+An association connects 'bpmn2_CorrelationPropertyBinding' and 'bpmn2_CorrelationSubscription'. From 'bpmn2_CorrelationPropertyBinding', the role 'bpmn2_CorrelationPropertyBinding' has cardinality 0..*, and from 'bpmn2_CorrelationSubscription', the role 'bpmn2_CorrelationSubscription262' has cardinality 0..*.
+An association connects 'bpmn2_FormalExpression' and 'bpmn2_CorrelationPropertyBinding'. From 'bpmn2_FormalExpression', the role 'bpmn2_FormalExpression265' has cardinality 0..*, and from 'bpmn2_CorrelationPropertyBinding', the role 'bpmn2_CorrelationPropertyBinding264' has cardinality 0..*.
+An association connects 'bpmn2_CorrelationProperty' and 'bpmn2_CorrelationPropertyBinding'. From 'bpmn2_CorrelationProperty', the role 'bpmn2_CorrelationProperty268' has cardinality 0..*, and from 'bpmn2_CorrelationPropertyBinding', the role 'bpmn2_CorrelationPropertyBinding267' has cardinality 0..*.
+An association connects 'bpmn2_Activity' and 'bpmn2_LoopCharacteristics'. From 'bpmn2_Activity', the role 'bpmn2_Activity' has cardinality 0..*, and from 'bpmn2_LoopCharacteristics', the role 'bpmn2_LoopCharacteristics' has cardinality 0..*.
+An association connects 'bpmn2_Activity' and 'bpmn2_ResourceRole'. From 'bpmn2_Activity', the role 'bpmn2_Activity271' has cardinality 0..*, and from 'bpmn2_ResourceRole', the role 'bpmn2_ResourceRole272' has cardinality 0..*.
+An association connects 'bpmn2_Activity' and 'bpmn2_SequenceFlow'. From 'bpmn2_Activity', the role 'bpmn2_Activity274' has cardinality 0..*, and from 'bpmn2_SequenceFlow', the role 'bpmn2_SequenceFlow275' has cardinality 0..*.
+An association connects 'bpmn2_Activity' and 'bpmn2_Property'. From 'bpmn2_Activity', the role 'bpmn2_Activity277' has cardinality 0..*, and from 'bpmn2_Property', the role 'bpmn2_Property278' has cardinality 0..*.
+An association connects 'bpmn2_Activity' and 'bpmn2_InputOutputSpecification'. From 'bpmn2_Activity', the role 'bpmn2_Activity280' has cardinality 0..*, and from 'bpmn2_InputOutputSpecification', the role 'bpmn2_InputOutputSpecification281' has cardinality 0..*.
+An association connects 'bpmn2_BoundaryEvent' and 'bpmn2_Activity'. From 'bpmn2_BoundaryEvent', the role 'BoundaryEvent' has cardinality 0..*, and from 'bpmn2_Activity', the role 'attachedToRef' has cardinality 0..*.
+An association connects 'bpmn2_DataInputAssociation' and 'bpmn2_Activity'. From 'bpmn2_DataInputAssociation', the role 'bpmn2_DataInputAssociation' has cardinality 0..*, and from 'bpmn2_Activity', the role 'bpmn2_Activity284' has cardinality 0..*.
+An association connects 'bpmn2_DataOutputAssociation' and 'bpmn2_Activity'. From 'bpmn2_DataOutputAssociation', the role 'bpmn2_DataOutputAssociation' has cardinality 0..*, and from 'bpmn2_Activity', the role 'bpmn2_Activity286' has cardinality 0..*.
+An association connects 'bpmn2_BoundaryEvent' and 'bpmn2_Activity'. From 'bpmn2_BoundaryEvent', the role 'boundaryEventRefs' has cardinality 0..*, and from 'bpmn2_Activity', the role 'Activity' has cardinality 0..*.
+An association connects 'bpmn2_CatchEvent' and 'bpmn2_OutputSet'. From 'bpmn2_CatchEvent', the role 'bpmn2_CatchEvent' has cardinality 0..*, and from 'bpmn2_OutputSet', the role 'bpmn2_OutputSet289' has cardinality 0..*.
+An association connects 'bpmn2_CatchEvent' and 'bpmn2_EventDefinition'. From 'bpmn2_CatchEvent', the role 'bpmn2_CatchEvent291' has cardinality 0..*, and from 'bpmn2_EventDefinition', the role 'bpmn2_EventDefinition' has cardinality 0..*.
+An association connects 'bpmn2_CatchEvent' and 'bpmn2_DataOutputAssociation'. From 'bpmn2_CatchEvent', the role 'bpmn2_CatchEvent293' has cardinality 0..*, and from 'bpmn2_DataOutputAssociation', the role 'bpmn2_DataOutputAssociation294' has cardinality 0..*.
+An association connects 'bpmn2_CatchEvent' and 'bpmn2_DataOutput'. From 'bpmn2_CatchEvent', the role 'bpmn2_CatchEvent296' has cardinality 0..*, and from 'bpmn2_DataOutput', the role 'bpmn2_DataOutput297' has cardinality 0..*.
+An association connects 'bpmn2_CatchEvent' and 'bpmn2_EventDefinition'. From 'bpmn2_CatchEvent', the role 'bpmn2_CatchEvent299' has cardinality 0..*, and from 'bpmn2_EventDefinition', the role 'bpmn2_EventDefinition300' has cardinality 0..*.
+An association connects 'bpmn2_Event' and 'bpmn2_Property'. From 'bpmn2_Event', the role 'bpmn2_Event' has cardinality 0..*, and from 'bpmn2_Property', the role 'bpmn2_Property302' has cardinality 0..*.
+An association connects 'bpmn2_FormalExpression' and 'bpmn2_DataAssociation'. From 'bpmn2_FormalExpression', the role 'bpmn2_FormalExpression304' has cardinality 0..*, and from 'bpmn2_DataAssociation', the role 'bpmn2_DataAssociation' has cardinality 0..*.
+An association connects 'bpmn2_Assignment' and 'bpmn2_DataAssociation'. From 'bpmn2_Assignment', the role 'bpmn2_Assignment' has cardinality 0..*, and from 'bpmn2_DataAssociation', the role 'bpmn2_DataAssociation306' has cardinality 0..*.
+An association connects 'bpmn2_DataAssociation' and 'bpmn2_ItemAwareElement'. From 'bpmn2_DataAssociation', the role 'bpmn2_DataAssociation308' has cardinality 0..*, and from 'bpmn2_ItemAwareElement', the role 'bpmn2_ItemAwareElement309' has cardinality 0..*.
+An association connects 'bpmn2_DataAssociation' and 'bpmn2_ItemAwareElement'. From 'bpmn2_DataAssociation', the role 'bpmn2_DataAssociation311' has cardinality 0..*, and from 'bpmn2_ItemAwareElement', the role 'bpmn2_ItemAwareElement312' has cardinality 0..*.
+An association connects 'bpmn2_Assignment' and 'bpmn2_Expression'. From 'bpmn2_Assignment', the role 'bpmn2_Assignment314' has cardinality 0..*, and from 'bpmn2_Expression', the role 'bpmn2_Expression315' has cardinality 0..*.
+An association connects 'bpmn2_Assignment' and 'bpmn2_Expression'. From 'bpmn2_Assignment', the role 'bpmn2_Assignment317' has cardinality 0..*, and from 'bpmn2_Expression', the role 'bpmn2_Expression318' has cardinality 0..*.
+An association connects 'bpmn2_UserTask' and 'bpmn2_Rendering'. From 'bpmn2_UserTask', the role 'bpmn2_UserTask' has cardinality 0..*, and from 'bpmn2_Rendering', the role 'bpmn2_Rendering' has cardinality 0..*.
+An association connects 'bpmn2_GlobalUserTask' and 'bpmn2_Rendering'. From 'bpmn2_GlobalUserTask', the role 'bpmn2_GlobalUserTask' has cardinality 0..*, and from 'bpmn2_Rendering', the role 'bpmn2_Rendering321' has cardinality 0..*.
+An association connects 'bpmn2_Expression' and 'bpmn2_ComplexGateway'. From 'bpmn2_Expression', the role 'bpmn2_Expression323' has cardinality 0..*, and from 'bpmn2_ComplexGateway', the role 'bpmn2_ComplexGateway' has cardinality 0..*.
+An association connects 'bpmn2_SequenceFlow' and 'bpmn2_ComplexGateway'. From 'bpmn2_SequenceFlow', the role 'bpmn2_SequenceFlow326' has cardinality 0..*, and from 'bpmn2_ComplexGateway', the role 'bpmn2_ComplexGateway325' has cardinality 0..*.
+An association connects 'bpmn2_ExclusiveGateway' and 'bpmn2_SequenceFlow'. From 'bpmn2_ExclusiveGateway', the role 'bpmn2_ExclusiveGateway' has cardinality 0..*, and from 'bpmn2_SequenceFlow', the role 'bpmn2_SequenceFlow328' has cardinality 0..*.
+An association connects 'bpmn2_SequenceFlow' and 'bpmn2_InclusiveGateway'. From 'bpmn2_SequenceFlow', the role 'bpmn2_SequenceFlow330' has cardinality 0..*, and from 'bpmn2_InclusiveGateway', the role 'bpmn2_InclusiveGateway' has cardinality 0..*.
+An association connects 'bpmn2_EObject' and 'bpmn2_Relationship'. From 'bpmn2_EObject', the role 'bpmn2_EObject332' has cardinality 0..*, and from 'bpmn2_Relationship', the role 'bpmn2_Relationship' has cardinality 0..*.
+An association connects 'bpmn2_EObject' and 'bpmn2_Relationship'. From 'bpmn2_EObject', the role 'bpmn2_EObject335' has cardinality 0..*, and from 'bpmn2_Relationship', the role 'bpmn2_Relationship334' has cardinality 0..*.
+An association connects 'bpmn2_ExtensionDefinition' and 'bpmn2_Extension'. From 'bpmn2_ExtensionDefinition', the role 'bpmn2_ExtensionDefinition337' has cardinality 0..*, and from 'bpmn2_Extension', the role 'bpmn2_Extension' has cardinality 0..*.
+An association connects 'bpmn2_InputSet' and 'bpmn2_ThrowEvent'. From 'bpmn2_InputSet', the role 'bpmn2_InputSet339' has cardinality 0..*, and from 'bpmn2_ThrowEvent', the role 'bpmn2_ThrowEvent' has cardinality 0..*.
+An association connects 'bpmn2_EventDefinition' and 'bpmn2_ThrowEvent'. From 'bpmn2_EventDefinition', the role 'bpmn2_EventDefinition342' has cardinality 0..*, and from 'bpmn2_ThrowEvent', the role 'bpmn2_ThrowEvent341' has cardinality 0..*.
+An association connects 'bpmn2_DataInputAssociation' and 'bpmn2_ThrowEvent'. From 'bpmn2_DataInputAssociation', the role 'bpmn2_DataInputAssociation345' has cardinality 0..*, and from 'bpmn2_ThrowEvent', the role 'bpmn2_ThrowEvent344' has cardinality 0..*.
+An association connects 'bpmn2_ThrowEvent' and 'bpmn2_DataInput'. From 'bpmn2_ThrowEvent', the role 'bpmn2_ThrowEvent347' has cardinality 0..*, and from 'bpmn2_DataInput', the role 'bpmn2_DataInput348' has cardinality 0..*.
+An association connects 'bpmn2_ThrowEvent' and 'bpmn2_EventDefinition'. From 'bpmn2_ThrowEvent', the role 'bpmn2_ThrowEvent350' has cardinality 0..*, and from 'bpmn2_EventDefinition', the role 'bpmn2_EventDefinition351' has cardinality 0..*.
+An association connects 'bpmn2_Error' and 'bpmn2_ErrorEventDefinition'. From 'bpmn2_Error', the role 'bpmn2_Error353' has cardinality 0..*, and from 'bpmn2_ErrorEventDefinition', the role 'bpmn2_ErrorEventDefinition' has cardinality 0..*.
+An association connects 'bpmn2_EscalationEventDefinition' and 'bpmn2_Escalation'. From 'bpmn2_EscalationEventDefinition', the role 'bpmn2_EscalationEventDefinition' has cardinality 0..*, and from 'bpmn2_Escalation', the role 'bpmn2_Escalation' has cardinality 0..*.
+An association connects 'bpmn2_Escalation' and 'bpmn2_ItemDefinition'. From 'bpmn2_Escalation', the role 'bpmn2_Escalation356' has cardinality 0..*, and from 'bpmn2_ItemDefinition', the role 'bpmn2_ItemDefinition357' has cardinality 0..*.
+An association connects 'bpmn2_CompensateEventDefinition' and 'bpmn2_Activity'. From 'bpmn2_CompensateEventDefinition', the role 'bpmn2_CompensateEventDefinition' has cardinality 0..*, and from 'bpmn2_Activity', the role 'bpmn2_Activity359' has cardinality 0..*.
+An association connects 'bpmn2_Expression' and 'bpmn2_TimerEventDefinition'. From 'bpmn2_Expression', the role 'bpmn2_Expression361' has cardinality 0..*, and from 'bpmn2_TimerEventDefinition', the role 'bpmn2_TimerEventDefinition' has cardinality 0..*.
+An association connects 'bpmn2_TimerEventDefinition' and 'bpmn2_Expression'. From 'bpmn2_TimerEventDefinition', the role 'bpmn2_TimerEventDefinition363' has cardinality 0..*, and from 'bpmn2_Expression', the role 'bpmn2_Expression364' has cardinality 0..*.
+An association connects 'bpmn2_Expression' and 'bpmn2_TimerEventDefinition'. From 'bpmn2_Expression', the role 'bpmn2_Expression367' has cardinality 0..*, and from 'bpmn2_TimerEventDefinition', the role 'bpmn2_TimerEventDefinition366' has cardinality 0..*.
+An association connects 'bpmn2_LinkEventDefinition' and 'bpmn2_LinkEventDefinition'. From 'bpmn2_LinkEventDefinition', the role 'LinkEventDefinition' has cardinality 0..*, and from 'bpmn2_LinkEventDefinition', the role 'source' has cardinality 0..*.
+An association connects 'bpmn2_LinkEventDefinition' and 'bpmn2_LinkEventDefinition'. From 'bpmn2_LinkEventDefinition', the role 'LinkEventDefinition372' has cardinality 0..*, and from 'bpmn2_LinkEventDefinition', the role 'target' has cardinality 0..*.
+An association connects 'bpmn2_Message' and 'bpmn2_MessageEventDefinition'. From 'bpmn2_Message', the role 'bpmn2_Message374' has cardinality 0..*, and from 'bpmn2_MessageEventDefinition', the role 'bpmn2_MessageEventDefinition' has cardinality 0..*.
+An association connects 'bpmn2_Operation' and 'bpmn2_MessageEventDefinition'. From 'bpmn2_Operation', the role 'bpmn2_Operation377' has cardinality 0..*, and from 'bpmn2_MessageEventDefinition', the role 'bpmn2_MessageEventDefinition376' has cardinality 0..*.
+An association connects 'bpmn2_Expression' and 'bpmn2_ConditionalEventDefinition'. From 'bpmn2_Expression', the role 'bpmn2_Expression379' has cardinality 0..*, and from 'bpmn2_ConditionalEventDefinition', the role 'bpmn2_ConditionalEventDefinition' has cardinality 0..*.
+An association connects 'bpmn2_SignalEventDefinition' and 'bpmn2_Signal'. From 'bpmn2_SignalEventDefinition', the role 'bpmn2_SignalEventDefinition' has cardinality 0..*, and from 'bpmn2_Signal', the role 'bpmn2_Signal' has cardinality 0..*.
+An association connects 'bpmn2_ItemDefinition' and 'bpmn2_Signal'. From 'bpmn2_ItemDefinition', the role 'bpmn2_ItemDefinition383' has cardinality 0..*, and from 'bpmn2_Signal', the role 'bpmn2_Signal382' has cardinality 0..*.
+An association connects 'bpmn2_DataStore' and 'bpmn2_DataStoreReference'. From 'bpmn2_DataStore', the role 'bpmn2_DataStore' has cardinality 0..*, and from 'bpmn2_DataStoreReference', the role 'bpmn2_DataStoreReference' has cardinality 0..*.
+An association connects 'bpmn2_DataObjectReference' and 'bpmn2_DataObject'. From 'bpmn2_DataObjectReference', the role 'bpmn2_DataObjectReference' has cardinality 0..*, and from 'bpmn2_DataObject', the role 'bpmn2_DataObject' has cardinality 0..*.
+An association connects 'bpmn2_CallConversation' and 'bpmn2_Collaboration'. From 'bpmn2_CallConversation', the role 'bpmn2_CallConversation' has cardinality 0..*, and from 'bpmn2_Collaboration', the role 'bpmn2_Collaboration387' has cardinality 0..*.
+An association connects 'bpmn2_ParticipantAssociation' and 'bpmn2_CallConversation'. From 'bpmn2_ParticipantAssociation', the role 'bpmn2_ParticipantAssociation390' has cardinality 0..*, and from 'bpmn2_CallConversation', the role 'bpmn2_CallConversation389' has cardinality 0..*.
+An association connects 'bpmn2_SubConversation' and 'bpmn2_ConversationNode'. From 'bpmn2_SubConversation', the role 'bpmn2_SubConversation' has cardinality 0..*, and from 'bpmn2_ConversationNode', the role 'bpmn2_ConversationNode392' has cardinality 0..*.
+An association connects 'bpmn2_PartnerEntity' and 'bpmn2_Participant'. From 'bpmn2_PartnerEntity', the role 'bpmn2_PartnerEntity' has cardinality 0..*, and from 'bpmn2_Participant', the role 'bpmn2_Participant394' has cardinality 0..*.
+An association connects 'bpmn2_Participant' and 'bpmn2_PartnerRole'. From 'bpmn2_Participant', the role 'bpmn2_Participant396' has cardinality 0..*, and from 'bpmn2_PartnerRole', the role 'bpmn2_PartnerRole' has cardinality 0..*.
+An association connects 'bpmn2_Participant' and 'bpmn2_ChoreographyActivity'. From 'bpmn2_Participant', the role 'bpmn2_Participant398' has cardinality 0..*, and from 'bpmn2_ChoreographyActivity', the role 'bpmn2_ChoreographyActivity' has cardinality 0..*.
+An association connects 'bpmn2_ChoreographyActivity' and 'bpmn2_Participant'. From 'bpmn2_ChoreographyActivity', the role 'bpmn2_ChoreographyActivity400' has cardinality 0..*, and from 'bpmn2_Participant', the role 'bpmn2_Participant401' has cardinality 0..*.
+An association connects 'bpmn2_ChoreographyActivity' and 'bpmn2_CorrelationKey'. From 'bpmn2_ChoreographyActivity', the role 'bpmn2_ChoreographyActivity403' has cardinality 0..*, and from 'bpmn2_CorrelationKey', the role 'bpmn2_CorrelationKey404' has cardinality 0..*.
+An association connects 'bpmn2_CallChoreography' and 'bpmn2_Choreography'. From 'bpmn2_CallChoreography', the role 'bpmn2_CallChoreography' has cardinality 0..*, and from 'bpmn2_Choreography', the role 'bpmn2_Choreography406' has cardinality 0..*.
+An association connects 'bpmn2_ParticipantAssociation' and 'bpmn2_CallChoreography'. From 'bpmn2_ParticipantAssociation', the role 'bpmn2_ParticipantAssociation409' has cardinality 0..*, and from 'bpmn2_CallChoreography', the role 'bpmn2_CallChoreography408' has cardinality 0..*.
+An association connects 'bpmn2_SubChoreography' and 'bpmn2_Artifact'. From 'bpmn2_SubChoreography', the role 'bpmn2_SubChoreography' has cardinality 0..*, and from 'bpmn2_Artifact', the role 'bpmn2_Artifact411' has cardinality 0..*.
+An association connects 'bpmn2_ChoreographyTask' and 'bpmn2_MessageFlow'. From 'bpmn2_ChoreographyTask', the role 'bpmn2_ChoreographyTask' has cardinality 0..*, and from 'bpmn2_MessageFlow', the role 'bpmn2_MessageFlow413' has cardinality 0..*.
+An association connects 'bpmn2_Participant' and 'bpmn2_GlobalChoreographyTask'. From 'bpmn2_Participant', the role 'bpmn2_Participant415' has cardinality 0..*, and from 'bpmn2_GlobalChoreographyTask', the role 'bpmn2_GlobalChoreographyTask' has cardinality 0..*.
+An association connects 'bpmn2_Group' and 'bpmn2_CategoryValue'. From 'bpmn2_Group', the role 'bpmn2_Group' has cardinality 0..*, and from 'bpmn2_CategoryValue', the role 'bpmn2_CategoryValue' has cardinality 0..*.
+An association connects 'bpmn2_Association' and 'bpmn2_BaseElement'. From 'bpmn2_Association', the role 'bpmn2_Association' has cardinality 0..*, and from 'bpmn2_BaseElement', the role 'bpmn2_BaseElement418' has cardinality 0..*.
+An association connects 'bpmn2_Association' and 'bpmn2_BaseElement'. From 'bpmn2_Association', the role 'bpmn2_Association420' has cardinality 0..*, and from 'bpmn2_BaseElement', the role 'bpmn2_BaseElement421' has cardinality 0..*.
+An association connects 'bpmn2_CategoryValue' and 'bpmn2_Category'. From 'bpmn2_CategoryValue', the role 'bpmn2_CategoryValue423' has cardinality 0..*, and from 'bpmn2_Category', the role 'bpmn2_Category' has cardinality 0..*.
+An association connects 'bpmn2_ServiceTask' and 'bpmn2_Operation'. From 'bpmn2_ServiceTask', the role 'bpmn2_ServiceTask' has cardinality 0..*, and from 'bpmn2_Operation', the role 'bpmn2_Operation425' has cardinality 0..*.
+An association connects 'bpmn2_SubProcess' and 'bpmn2_Artifact'. From 'bpmn2_SubProcess', the role 'bpmn2_SubProcess' has cardinality 0..*, and from 'bpmn2_Artifact', the role 'bpmn2_Artifact427' has cardinality 0..*.
+An association connects 'bpmn2_MultiInstanceLoopCharacteristics' and 'bpmn2_Expression'. From 'bpmn2_MultiInstanceLoopCharacteristics', the role 'bpmn2_MultiInstanceLoopCharacteristics' has cardinality 0..*, and from 'bpmn2_Expression', the role 'bpmn2_Expression429' has cardinality 0..*.
+An association connects 'bpmn2_ItemAwareElement' and 'bpmn2_MultiInstanceLoopCharacteristics'. From 'bpmn2_ItemAwareElement', the role 'bpmn2_ItemAwareElement432' has cardinality 0..*, and from 'bpmn2_MultiInstanceLoopCharacteristics', the role 'bpmn2_MultiInstanceLoopCharacteristics431' has cardinality 0..*.
+An association connects 'bpmn2_ItemAwareElement' and 'bpmn2_MultiInstanceLoopCharacteristics'. From 'bpmn2_ItemAwareElement', the role 'bpmn2_ItemAwareElement435' has cardinality 0..*, and from 'bpmn2_MultiInstanceLoopCharacteristics', the role 'bpmn2_MultiInstanceLoopCharacteristics434' has cardinality 0..*.
+An association connects 'bpmn2_DataInput' and 'bpmn2_MultiInstanceLoopCharacteristics'. From 'bpmn2_DataInput', the role 'bpmn2_DataInput438' has cardinality 0..*, and from 'bpmn2_MultiInstanceLoopCharacteristics', the role 'bpmn2_MultiInstanceLoopCharacteristics437' has cardinality 0..*.
+An association connects 'bpmn2_MultiInstanceLoopCharacteristics' and 'bpmn2_DataOutput'. From 'bpmn2_MultiInstanceLoopCharacteristics', the role 'bpmn2_MultiInstanceLoopCharacteristics440' has cardinality 0..*, and from 'bpmn2_DataOutput', the role 'bpmn2_DataOutput441' has cardinality 0..*.
+An association connects 'bpmn2_Expression' and 'bpmn2_MultiInstanceLoopCharacteristics'. From 'bpmn2_Expression', the role 'bpmn2_Expression444' has cardinality 0..*, and from 'bpmn2_MultiInstanceLoopCharacteristics', the role 'bpmn2_MultiInstanceLoopCharacteristics443' has cardinality 0..*.
+An association connects 'bpmn2_MultiInstanceLoopCharacteristics' and 'bpmn2_ComplexBehaviorDefinition'. From 'bpmn2_MultiInstanceLoopCharacteristics', the role 'bpmn2_MultiInstanceLoopCharacteristics446' has cardinality 0..*, and from 'bpmn2_ComplexBehaviorDefinition', the role 'bpmn2_ComplexBehaviorDefinition' has cardinality 0..*.
+An association connects 'bpmn2_MultiInstanceLoopCharacteristics' and 'bpmn2_EventDefinition'. From 'bpmn2_MultiInstanceLoopCharacteristics', the role 'bpmn2_MultiInstanceLoopCharacteristics448' has cardinality 0..*, and from 'bpmn2_EventDefinition', the role 'bpmn2_EventDefinition449' has cardinality 0..*.
+An association connects 'bpmn2_EventDefinition' and 'bpmn2_MultiInstanceLoopCharacteristics'. From 'bpmn2_EventDefinition', the role 'bpmn2_EventDefinition452' has cardinality 0..*, and from 'bpmn2_MultiInstanceLoopCharacteristics', the role 'bpmn2_MultiInstanceLoopCharacteristics451' has cardinality 0..*.
+An association connects 'bpmn2_FormalExpression' and 'bpmn2_ComplexBehaviorDefinition'. From 'bpmn2_FormalExpression', the role 'bpmn2_FormalExpression455' has cardinality 0..*, and from 'bpmn2_ComplexBehaviorDefinition', the role 'bpmn2_ComplexBehaviorDefinition454' has cardinality 0..*.
+An association connects 'bpmn2_ComplexBehaviorDefinition' and 'bpmn2_ImplicitThrowEvent'. From 'bpmn2_ComplexBehaviorDefinition', the role 'bpmn2_ComplexBehaviorDefinition457' has cardinality 0..*, and from 'bpmn2_ImplicitThrowEvent', the role 'bpmn2_ImplicitThrowEvent' has cardinality 0..*.
+An association connects 'bpmn2_StandardLoopCharacteristics' and 'bpmn2_Expression'. From 'bpmn2_StandardLoopCharacteristics', the role 'bpmn2_StandardLoopCharacteristics' has cardinality 0..*, and from 'bpmn2_Expression', the role 'bpmn2_Expression459' has cardinality 0..*.
+An association connects 'bpmn2_Expression' and 'bpmn2_StandardLoopCharacteristics'. From 'bpmn2_Expression', the role 'bpmn2_Expression462' has cardinality 0..*, and from 'bpmn2_StandardLoopCharacteristics', the role 'bpmn2_StandardLoopCharacteristics461' has cardinality 0..*.
+An association connects 'bpmn2_CallActivity' and 'bpmn2_CallableElement'. From 'bpmn2_CallActivity', the role 'bpmn2_CallActivity' has cardinality 0..*, and from 'bpmn2_CallableElement', the role 'bpmn2_CallableElement464' has cardinality 0..*.
+An association connects 'bpmn2_SendTask' and 'bpmn2_Operation'. From 'bpmn2_SendTask', the role 'bpmn2_SendTask' has cardinality 0..*, and from 'bpmn2_Operation', the role 'bpmn2_Operation466' has cardinality 0..*.
+An association connects 'bpmn2_Message' and 'bpmn2_SendTask'. From 'bpmn2_Message', the role 'bpmn2_Message469' has cardinality 0..*, and from 'bpmn2_SendTask', the role 'bpmn2_SendTask468' has cardinality 0..*.
+An association connects 'bpmn2_Operation' and 'bpmn2_ReceiveTask'. From 'bpmn2_Operation', the role 'bpmn2_Operation471' has cardinality 0..*, and from 'bpmn2_ReceiveTask', the role 'bpmn2_ReceiveTask' has cardinality 0..*.
+An association connects 'bpmn2_Message' and 'bpmn2_ReceiveTask'. From 'bpmn2_Message', the role 'bpmn2_Message474' has cardinality 0..*, and from 'bpmn2_ReceiveTask', the role 'bpmn2_ReceiveTask473' has cardinality 0..*.
+An association connects 'bpmn2_Expression' and 'bpmn2_AdHocSubProcess'. From 'bpmn2_Expression', the role 'bpmn2_Expression476' has cardinality 0..*, and from 'bpmn2_AdHocSubProcess', the role 'bpmn2_AdHocSubProcess' has cardinality 0..*.
+An association connects 'bpmn2_Import' and 'bpmn2_Definitions'. From 'bpmn2_Import', the role 'bpmn2_Import478' has cardinality 0..*, and from 'bpmn2_Definitions', the role 'bpmn2_Definitions' has cardinality 0..*.
+An association connects 'bpmn2_Extension' and 'bpmn2_Definitions'. From 'bpmn2_Extension', the role 'bpmn2_Extension481' has cardinality 0..*, and from 'bpmn2_Definitions', the role 'bpmn2_Definitions480' has cardinality 0..*.
+An association connects 'bpmn2_Relationship' and 'bpmn2_Definitions'. From 'bpmn2_Relationship', the role 'bpmn2_Relationship484' has cardinality 0..*, and from 'bpmn2_Definitions', the role 'bpmn2_Definitions483' has cardinality 0..*.
+An association connects 'bpmn2_RootElement' and 'bpmn2_Definitions'. From 'bpmn2_RootElement', the role 'bpmn2_RootElement' has cardinality 0..*, and from 'bpmn2_Definitions', the role 'bpmn2_Definitions486' has cardinality 0..*.
+An association connects 'bpmn2_BPMNDiagram' and 'bpmn2_Definitions'. From 'bpmn2_BPMNDiagram', the role 'bpmn2_BPMNDiagram' has cardinality 0..*, and from 'bpmn2_Definitions', the role 'bpmn2_Definitions488' has cardinality 0..*.

@@ -1,0 +1,83 @@
+The domain model 'yuml' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'yuml_Attribute' represents an important domain concept.
+It has the following attributes: 'stereotype', which is of type str; 'type', which is of type str.
+
+'yuml_ClassMember' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'visibility', which is of type str.
+
+'yuml_NoteAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'yuml_Class' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'stereotype', which is of type str.
+
+'ColorableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'yuml_Relationship' represents an important domain concept.
+It has the following attributes: 'targetLabel', which is of type str; 'sourceLabel', which is of type str.
+
+'yuml_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'yuml_ColorableElement' represents an important domain concept.
+It has one attribute: 'color', which is of type str.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassMember' represents an important domain concept.
+It does not declare any attributes.
+
+'yuml_Association' represents an important domain concept.
+It has the following attributes: 'navigableTarget', which is of type bool; 'navigableSource', which is of type bool; 'targetVisibility', which is of type str; 'type', which is of type str; 'sourceVisibility', which is of type str.
+
+'yuml_Inheritance' represents an important domain concept.
+It does not declare any attributes.
+
+'yuml_Cardinality' represents an important domain concept.
+It has the following attributes: 'upperBound', which is of type str; 'lowerBound', which is of type str.
+
+'yuml_Note' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'yuml_Equivalence' represents an important domain concept.
+It does not declare any attributes.
+
+'yuml_ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'yuml_Method' represents an important domain concept.
+It has one attribute: 'arguments', which is of type str.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AssociationType' defines the following possible values: 'simpleAssociation', 'composition', 'aggregation'.
+The enumeration 'Visibility' defines the following possible values: 'protected', 'private', 'unspecified', 'package', 'public'.
+
+The model also captures inheritance relationships between classes.
+The class 'yuml_ColorableElement' is a specialization of 'ModelElement'.
+The class 'yuml_Class' is a specialization of 'ColorableElement'.
+The class 'yuml_Relationship' is a specialization of 'ModelElement'.
+The class 'yuml_Association' is a specialization of 'Relationship'.
+The class 'yuml_Inheritance' is a specialization of 'Relationship'.
+The class 'yuml_Attribute' is a specialization of 'ClassMember'.
+The class 'yuml_Method' is a specialization of 'ClassMember'.
+The class 'yuml_Note' is a specialization of 'ColorableElement'.
+The class 'yuml_NoteAssociation' is a specialization of 'Relationship'.
+The class 'yuml_Equivalence' is a specialization of 'Relationship'.
+
+Relationships between classes are modeled using associations.
+An association connects 'yuml_Model' and 'yuml_ModelElement'. From 'yuml_Model', the role 'yuml_Model' has cardinality 0..*, and from 'yuml_ModelElement', the role 'yuml_ModelElement' has cardinality 0..*.
+An association connects 'yuml_Class' and 'yuml_Attribute'. From 'yuml_Class', the role 'yuml_Class' has cardinality 0..*, and from 'yuml_Attribute', the role 'yuml_Attribute' has cardinality 0..*.
+An association connects 'yuml_Class' and 'yuml_Method'. From 'yuml_Class', the role 'yuml_Class3' has cardinality 0..*, and from 'yuml_Method', the role 'yuml_Method' has cardinality 0..*.
+An association connects 'yuml_Relationship' and 'yuml_Class'. From 'yuml_Relationship', the role 'yuml_Relationship' has cardinality 0..*, and from 'yuml_Class', the role 'yuml_Class5' has cardinality 0..*.
+An association connects 'yuml_Relationship' and 'yuml_ColorableElement'. From 'yuml_Relationship', the role 'yuml_Relationship7' has cardinality 0..*, and from 'yuml_ColorableElement', the role 'yuml_ColorableElement' has cardinality 0..*.
+An association connects 'yuml_Cardinality' and 'yuml_Association'. From 'yuml_Cardinality', the role 'yuml_Cardinality' has cardinality 0..*, and from 'yuml_Association', the role 'yuml_Association' has cardinality 0..*.
+An association connects 'yuml_Cardinality' and 'yuml_Association'. From 'yuml_Cardinality', the role 'yuml_Cardinality11' has cardinality 0..*, and from 'yuml_Association', the role 'yuml_Association10' has cardinality 0..*.
+An association connects 'yuml_Note' and 'yuml_NoteAssociation'. From 'yuml_Note', the role 'yuml_Note' has cardinality 0..*, and from 'yuml_NoteAssociation', the role 'yuml_NoteAssociation' has cardinality 0..*.

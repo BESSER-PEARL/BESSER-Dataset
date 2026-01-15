@@ -1,0 +1,159 @@
+The domain model 'terms' describes the core structural elements and their relationships within the system.
+
+The model defines 35 main class(es).
+
+'terms_Term' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_ProductSort' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_Tuple' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_BuiltInConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_All' represents an important domain concept.
+It does not declare any attributes.
+
+'SortDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'TermsDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_NamedSort' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_MultisetOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_MultisetSort' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_NamedOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_BuiltInSort' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_Declarations' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_UserSort' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_HLMarking' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_HLAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_UserOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_Empty' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_SortDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'OperatorDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_PartitionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_TermsDeclaration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'terms_Sort' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_Partition' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_VariableDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'Term' represents an important domain concept.
+It does not declare any attributes.
+
+'Sort' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_BuiltInOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'terms_OperatorDecl' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'terms_MultisetSort' is a specialization of 'Sort'.
+The class 'terms_Operator' is a specialization of 'Term'.
+The class 'terms_VariableDecl' is a specialization of 'TermsDeclaration'.
+The class 'terms_Variable' is a specialization of 'Term'.
+The class 'terms_BuiltInSort' is a specialization of 'Sort'.
+The class 'terms_ProductSort' is a specialization of 'Sort'.
+The class 'terms_BuiltInConstant' is a specialization of 'Operator'.
+The class 'terms_MultisetOperator' is a specialization of 'Operator'.
+The class 'terms_Tuple' is a specialization of 'Operator'.
+The class 'terms_SortDecl' is a specialization of 'TermsDeclaration'.
+The class 'terms_BuiltInOperator' is a specialization of 'Operator'.
+The class 'terms_NamedSort' is a specialization of 'SortDecl'.
+The class 'terms_UserSort' is a specialization of 'Sort'.
+The class 'terms_OperatorDecl' is a specialization of 'TermsDeclaration'.
+The class 'terms_NamedOperator' is a specialization of 'OperatorDecl'.
+The class 'terms_UserOperator' is a specialization of 'Operator'.
+
+Relationships between classes are modeled using associations.
+An association connects 'terms_Declarations' and 'terms_TermsDeclaration'. From 'terms_Declarations', the role 'containerDeclarations' has cardinality 0..*, and from 'terms_TermsDeclaration', the role 'TermsDeclaration' has cardinality 0..*.
+An association connects 'terms_Declaration' and 'terms_Declarations'. From 'terms_Declaration', the role 'hlcorestructure.ecoreDeclaration' has cardinality 0..*, and from 'terms_Declarations', the role 'structure' has cardinality 0..*.
+An association connects 'terms_Declarations' and 'terms_TermsDeclaration'. From 'terms_Declarations', the role 'Declarations' has cardinality 0..*, and from 'terms_TermsDeclaration', the role 'declaration' has cardinality 0..*.
+An association connects 'terms_Sort' and 'terms_MultisetSort'. From 'terms_Sort', the role 'basis' has cardinality 0..*, and from 'terms_MultisetSort', the role 'MultisetSort' has cardinality 0..*.
+An association connects 'terms_Sort' and 'terms_NamedSort'. From 'terms_Sort', the role 'sortdef' has cardinality 0..*, and from 'terms_NamedSort', the role 'NamedSort' has cardinality 0..*.
+An association connects 'terms_VariableDecl' and 'terms_Sort'. From 'terms_VariableDecl', the role 'VariableDecl' has cardinality 0..*, and from 'terms_Sort', the role 'sort' has cardinality 0..*.
+An association connects 'terms_Sort' and 'terms_ProductSort'. From 'terms_Sort', the role 'elementSort' has cardinality 0..*, and from 'terms_ProductSort', the role 'ProductSort' has cardinality 0..*.
+An association connects 'terms_Type' and 'terms_Sort'. From 'terms_Type', the role 'hlcorestructure.ecoreType' has cardinality 0..*, and from 'terms_Sort', the role 'structure8' has cardinality 0..*.
+An association connects 'terms_Sort' and 'terms_All'. From 'terms_Sort', the role 'refsort' has cardinality 0..*, and from 'terms_All', the role 'multisets.ecoreAll' has cardinality 0..*.
+An association connects 'terms_Sort' and 'terms_Empty'. From 'terms_Sort', the role 'refsort11' has cardinality 0..*, and from 'terms_Empty', the role 'multisets.ecoreEmpty' has cardinality 0..*.
+An association connects 'terms_Sort' and 'terms_Partition'. From 'terms_Sort', the role 'def' has cardinality 0..*, and from 'terms_Partition', the role 'partitions.ecorePartition' has cardinality 0..*.
+An association connects 'terms_Sort' and 'terms_MultisetSort'. From 'terms_Sort', the role 'Sort' has cardinality 0..*, and from 'terms_MultisetSort', the role 'multi' has cardinality 0..*.
+An association connects 'terms_Term' and 'terms_Sort'. From 'terms_Term', the role 'terms_Term' has cardinality 0..*, and from 'terms_Sort', the role 'terms_Sort' has cardinality 0..*.
+An association connects 'terms_Term' and 'terms_Operator'. From 'terms_Term', the role 'subterm' has cardinality 0..*, and from 'terms_Operator', the role 'Operator' has cardinality 0..*.
+An association connects 'terms_Term' and 'terms_NamedOperator'. From 'terms_Term', the role 'def17' has cardinality 0..*, and from 'terms_NamedOperator', the role 'NamedOperator' has cardinality 0..*.
+An association connects 'terms_HLMarking' and 'terms_Term'. From 'terms_HLMarking', the role 'hlcorestructure.ecoreHLMarking' has cardinality 0..*, and from 'terms_Term', the role 'structure19' has cardinality 0..*.
+An association connects 'terms_Term' and 'terms_Condition'. From 'terms_Term', the role 'structure21' has cardinality 0..*, and from 'terms_Condition', the role 'hlcorestructure.ecoreCondition' has cardinality 0..*.
+An association connects 'terms_Term' and 'terms_HLAnnotation'. From 'terms_Term', the role 'structure23' has cardinality 0..*, and from 'terms_HLAnnotation', the role 'hlcorestructure.ecoreHLAnnotation' has cardinality 0..*.
+An association connects 'terms_Term' and 'terms_PartitionElement'. From 'terms_Term', the role 'partitionelementconstants' has cardinality 0..*, and from 'terms_PartitionElement', the role 'partitions.ecorePartitionElement' has cardinality 0..*.
+An association connects 'terms_Operator' and 'terms_Term'. From 'terms_Operator', the role 'containerOperator' has cardinality 0..*, and from 'terms_Term', the role 'Term' has cardinality 0..*.
+An association connects 'terms_Operator' and 'terms_Sort'. From 'terms_Operator', the role 'terms_Operator' has cardinality 0..*, and from 'terms_Sort', the role 'terms_Sort27' has cardinality 0..*.
+An association connects 'terms_Sort' and 'terms_Operator'. From 'terms_Sort', the role 'terms_Sort30' has cardinality 0..*, and from 'terms_Operator', the role 'terms_Operator29' has cardinality 0..*.
+An association connects 'terms_Sort' and 'terms_VariableDecl'. From 'terms_Sort', the role 'Sort32' has cardinality 0..*, and from 'terms_VariableDecl', the role 'containerVariableDecl' has cardinality 0..*.
+An association connects 'terms_VariableDecl' and 'terms_NamedOperator'. From 'terms_VariableDecl', the role 'parameters' has cardinality 0..*, and from 'terms_NamedOperator', the role 'NamedOperator34' has cardinality 0..*.
+An association connects 'terms_Variable' and 'terms_VariableDecl'. From 'terms_Variable', the role 'terms_Variable' has cardinality 0..*, and from 'terms_VariableDecl', the role 'terms_VariableDecl' has cardinality 0..*.
+An association connects 'terms_ProductSort' and 'terms_Sort'. From 'terms_ProductSort', the role 'containerProductSort' has cardinality 0..*, and from 'terms_Sort', the role 'Sort37' has cardinality 0..*.
+An association connects 'terms_Sort' and 'terms_NamedSort'. From 'terms_Sort', the role 'Sort39' has cardinality 0..*, and from 'terms_NamedSort', the role 'containerNamedSort' has cardinality 0..*.
+An association connects 'terms_SortDecl' and 'terms_UserSort'. From 'terms_SortDecl', the role 'terms_SortDecl' has cardinality 0..*, and from 'terms_UserSort', the role 'terms_UserSort' has cardinality 0..*.
+An association connects 'terms_Term' and 'terms_NamedOperator'. From 'terms_Term', the role 'Term42' has cardinality 0..*, and from 'terms_NamedOperator', the role 'containerNamedOperator' has cardinality 0..*.
+An association connects 'terms_VariableDecl' and 'terms_NamedOperator'. From 'terms_VariableDecl', the role 'VariableDecl45' has cardinality 0..*, and from 'terms_NamedOperator', the role 'containerNamedOperator44' has cardinality 0..*.
+An association connects 'terms_OperatorDecl' and 'terms_UserOperator'. From 'terms_OperatorDecl', the role 'terms_OperatorDecl' has cardinality 0..*, and from 'terms_UserOperator', the role 'terms_UserOperator' has cardinality 0..*.

@@ -1,0 +1,20 @@
+The domain model 'company' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'company_Company' represents an important domain concept.
+It has the following attributes: 'size', which is of type str; 'name', which is of type str.
+
+'company_Employee' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'hasNameAsAttribute', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CompanySizeKind' defines the following possible values: 'large', 'medium', 'small'.
+
+Relationships between classes are modeled using associations.
+An association connects 'company_Company' and 'company_Employee'. From 'company_Company', the role 'company' has cardinality 0..*, and from 'company_Employee', the role 'Employee' has cardinality 0..*.
+An association connects 'company_Employee' and 'company_Employee'. From 'company_Employee', the role 'company_Employee' has cardinality 0..*, and from 'company_Employee', the role 'company_Employee1' has cardinality 0..*.
+An association connects 'company_Company' and 'company_Employee'. From 'company_Company', the role 'Company' has cardinality 0..*, and from 'company_Employee', the role 'employees' has cardinality 0..*.
+An association connects 'company_Employee' and 'company_Employee'. From 'company_Employee', the role 'company_Employee4' has cardinality 0..*, and from 'company_Employee', the role 'company_Employee6' has cardinality 0..*.
+An association connects 'company_Employee' and 'company_Employee'. From 'company_Employee', the role 'company_Employee9' has cardinality 0..*, and from 'company_Employee', the role 'company_Employee7' has cardinality 0..*.
+An association connects 'company_Employee' and 'company_Employee'. From 'company_Employee', the role 'company_Employee12' has cardinality 0..*, and from 'company_Employee', the role 'company_Employee10' has cardinality 0..*.

@@ -1,0 +1,141 @@
+The domain model 'tracker' describes the core structural elements and their relationships within the system.
+
+The model defines 32 main class(es).
+
+'tracker_WeighIn' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'tracker_MovedIn' represents an important domain concept.
+It has one attribute: 'sourcePin', which is of type str.
+
+'tracker_Premises' represents an important domain concept.
+It has the following attributes: 'premisesId', which is of type str; 'emailContact', which is of type str.
+
+'tracker_BovineBeef' represents an important domain concept.
+It has one attribute: 'beefBreed', which is of type str.
+
+'tracker_ICVI' represents an important domain concept.
+It does not declare any attributes.
+
+'tracker_TagRetired' represents an important domain concept.
+It does not declare any attributes.
+
+'tracker_EventHistory' represents an important domain concept.
+It does not declare any attributes.
+
+'Animal' represents an important domain concept.
+It does not declare any attributes.
+
+'tracker_Event' represents an important domain concept.
+It has the following attributes: 'correction', which is of type bool; 'id', which is of type str; 'dateTime', which is of type str; 'eventCode', which is of type int; 'comments', which is of type str; 'electronicallyRead', which is of type bool.
+
+'tracker_FairRegistration' represents an important domain concept.
+It has the following attributes: 'club', which is of type str; 'participant', which is of type str; 'phone', which is of type str; 'parent', which is of type str; 'address', which is of type str.
+
+'tracker_MovedOut' represents an important domain concept.
+It has one attribute: 'destinationPin', which is of type str.
+
+'tracker_TagApplied' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'tracker_ReplacedTag' represents an important domain concept.
+It has one attribute: 'oldAin', which is of type str.
+
+'Bovine' represents an important domain concept.
+It does not declare any attributes.
+
+'tracker_Swine' represents an important domain concept.
+It has one attribute: 'swineBreed', which is of type str.
+
+'tracker_Bovine' represents an important domain concept.
+It does not declare any attributes.
+
+'tracker_Imported' represents an important domain concept.
+It does not declare any attributes.
+
+'tracker_Animal' represents an important domain concept.
+It has the following attributes: 'idNumber', which is of type str; 'species', which is of type str; 'sex', which is of type str; 'age', which is of type str; 'breed', which is of type str; 'sexCode', which is of type str; 'birthDate', which is of type str; 'speciesCode', which is of type str.
+
+'tracker_Died' represents an important domain concept.
+It does not declare any attributes.
+
+'tracker_Animals' represents an important domain concept.
+It does not declare any attributes.
+
+'tracker_UnAppliedTags' represents an important domain concept.
+It does not declare any attributes.
+
+'tracker_BovineDairy' represents an important domain concept.
+It has one attribute: 'dairyBreed', which is of type str.
+
+'tracker_Slaughtered' represents an important domain concept.
+It does not declare any attributes.
+
+'tracker_TagAllocated' represents an important domain concept.
+It does not declare any attributes.
+
+'tracker_Sighting' represents an important domain concept.
+It does not declare any attributes.
+
+'tracker_AnimalId' represents an important domain concept.
+It has the following attributes: 'usainNumberUsed', which is of type bool; 'idNumber', which is of type str.
+
+'tracker_Ovine' represents an important domain concept.
+It has one attribute: 'sheepBreed', which is of type str.
+
+'tracker_BovineBison' represents an important domain concept.
+It has one attribute: 'buffaloBreed', which is of type str.
+
+'tracker_LostTag' represents an important domain concept.
+It does not declare any attributes.
+
+'tracker_AnimalMissing' represents an important domain concept.
+It does not declare any attributes.
+
+'tracker_Exported' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SwineBreed' defines the following possible values: 'LB', 'RW', 'LC', 'DU', 'LA', 'YO', 'Unspecified', 'CW', 'LW', 'WS', 'PC', 'BK', 'SO', 'PE', 'TM', 'HA'.
+The enumeration 'BeefBreed' defines the following possible values: 'MC', 'CG', 'CN', 'IB', 'AM', 'RO', 'ME', 'HC', 'DR', 'AU', 'SP', 'AR', 'DF', 'BN', 'ML', 'FB', 'AW', 'CA', 'MR', 'BE', 'BQ', 'NS', 'SE', 'NR', 'BM', 'MA', 'SA', 'YA', 'SM', 'GY', 'PI', 'SV', 'BB', 'Unspecified', 'SG', 'DN', 'TL', 'XX', 'CH', 'LO', 'RA', 'AK', 'CB', 'DL', 'FP', 'AE', 'CM', 'LR', 'BD', 'WF', 'TA', 'HY', 'RD', 'GR', 'DS', 'GA', 'SS', 'SL', 'KY', 'TP', 'SW', 'GV', 'GE', 'RS', 'GI', 'SX', 'RR', 'FC', 'BI', 'MG', 'ER', 'BO', 'FA', 'AL', 'IS', 'AN', 'PR', 'BA', 'MH', 'TI', 'LM', 'BR', 'SH', 'MI', 'MU', 'GZ', 'LU', 'MO', 'HP', 'DE', 'BL', 'CU', 'DB', 'BU', 'FR', 'XT', 'WP', 'WB', 'AB', 'FL', 'RN', 'PZ', 'BF', 'NM', 'RB', 'NE', 'GS', 'SB', 'TN', 'KB', 'BH', 'DJ', 'HH', 'TG', 'RW', 'AF', 'HB', 'SI', 'BG', 'CP', 'PA', 'RP', 'BW'.
+The enumeration 'SheepBreed' defines the following possible values: 'TX', 'RG', 'LY', 'KA', 'BC', 'KH', 'CO', 'HL', 'MP', 'SL', 'KK', 'CL', 'OX', 'TA', 'XL', 'SX', 'TU', 'IL', 'RM', 'FN', 'Unspecified', 'ER', 'ZS', 'SU', 'DH', 'OU', 'CF', 'SC', 'LE', 'SR', 'CR', 'RY', 'CD', 'BW', 'RI', 'BF', 'RV', 'XM', 'LI', 'ST', 'DP', 'PO', 'BO', 'PE', 'NC', 'BL', 'NL', 'MM', 'HS', 'CP', 'MT', 'DL', 'HY', 'FB'.
+The enumeration 'Sex' defines the following possible values: 'F', 'S', 'C', 'Unspecified', 'M'.
+The enumeration 'BisonBreed' defines the following possible values: 'WO', 'PB', 'Unspecified'.
+The enumeration 'DairyBreed' defines the following possible values: 'MS', 'LD', 'HO', 'AY', 'JE', 'GU', 'FM', 'WW', 'GD', 'BS', 'Unspecified'.
+
+The model also captures inheritance relationships between classes.
+The class 'tracker_Bovine' is a specialization of 'Animal'.
+The class 'tracker_TagAllocated' is a specialization of 'Event'.
+The class 'tracker_BovineBeef' is a specialization of 'Bovine'.
+The class 'tracker_Ovine' is a specialization of 'Animal'.
+The class 'tracker_BovineBison' is a specialization of 'Bovine'.
+The class 'tracker_BovineDairy' is a specialization of 'Bovine'.
+The class 'tracker_TagApplied' is a specialization of 'Event'.
+The class 'tracker_MovedIn' is a specialization of 'Event'.
+The class 'tracker_MovedOut' is a specialization of 'Event'.
+The class 'tracker_LostTag' is a specialization of 'Event'.
+The class 'tracker_ReplacedTag' is a specialization of 'Event'.
+The class 'tracker_Imported' is a specialization of 'Event'.
+The class 'tracker_Exported' is a specialization of 'Event'.
+The class 'tracker_Sighting' is a specialization of 'Event'.
+The class 'tracker_Slaughtered' is a specialization of 'Event'.
+The class 'tracker_Died' is a specialization of 'Event'.
+The class 'tracker_TagRetired' is a specialization of 'Event'.
+The class 'tracker_AnimalMissing' is a specialization of 'Event'.
+The class 'tracker_ICVI' is a specialization of 'Event'.
+The class 'tracker_FairRegistration' is a specialization of 'Event'.
+The class 'tracker_WeighIn' is a specialization of 'Event'.
+The class 'tracker_Swine' is a specialization of 'Animal'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tracker_AnimalId' and 'tracker_Animal'. From 'tracker_AnimalId', the role 'tracker_AnimalId' has cardinality 0..*, and from 'tracker_Animal', the role 'tracker_Animal' has cardinality 0..*.
+An association connects 'tracker_AnimalId' and 'tracker_Event'. From 'tracker_AnimalId', the role 'tracker_AnimalId2' has cardinality 0..*, and from 'tracker_Event', the role 'tracker_Event' has cardinality 0..*.
+An association connects 'tracker_Premises' and 'tracker_Animals'. From 'tracker_Premises', the role 'tracker_Premises' has cardinality 0..*, and from 'tracker_Animals', the role 'tracker_Animals' has cardinality 0..*.
+An association connects 'tracker_Premises' and 'tracker_EventHistory'. From 'tracker_Premises', the role 'tracker_Premises5' has cardinality 0..*, and from 'tracker_EventHistory', the role 'tracker_EventHistory' has cardinality 0..*.
+An association connects 'tracker_Premises' and 'tracker_UnAppliedTags'. From 'tracker_Premises', the role 'tracker_Premises7' has cardinality 0..*, and from 'tracker_UnAppliedTags', the role 'tracker_UnAppliedTags' has cardinality 0..*.
+An association connects 'tracker_Event' and 'tracker_EventHistory'. From 'tracker_Event', the role 'tracker_Event10' has cardinality 0..*, and from 'tracker_EventHistory', the role 'tracker_EventHistory9' has cardinality 0..*.
+An association connects 'tracker_Animals' and 'tracker_Animal'. From 'tracker_Animals', the role 'tracker_Animals12' has cardinality 0..*, and from 'tracker_Animal', the role 'tracker_Animal13' has cardinality 0..*.
+An association connects 'tracker_AnimalId' and 'tracker_UnAppliedTags'. From 'tracker_AnimalId', the role 'tracker_AnimalId16' has cardinality 0..*, and from 'tracker_UnAppliedTags', the role 'tracker_UnAppliedTags15' has cardinality 0..*.

@@ -1,0 +1,69 @@
+The domain model 'testgramgen1' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'testgramgen1_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'testgramgen1_B' represents an important domain concept.
+It does not declare any attributes.
+
+'ProtoLink' represents an important domain concept.
+It does not declare any attributes.
+
+'testgramgen1_C' represents an important domain concept.
+It does not declare any attributes.
+
+'testgramgen1_ProtoLink' represents an important domain concept.
+It does not declare any attributes.
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+'testgramgen1_A' represents an important domain concept.
+It does not declare any attributes.
+
+'testgramgen1_DerivedComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'CNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'testgramgen1_System' represents an important domain concept.
+It does not declare any attributes.
+
+'testgramgen1_DerivedLink' represents an important domain concept.
+It does not declare any attributes.
+
+'testgramgen1_CNamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'testgramgen1_D' represents an important domain concept.
+It does not declare any attributes.
+
+'testgramgen1_Component' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'testgramgen1_A' is a specialization of 'Node'.
+The class 'testgramgen1_Component' is a specialization of 'CNamedElement'.
+The class 'testgramgen1_C' is a specialization of 'CNamedElement'.
+The class 'testgramgen1_C' is a specialization of 'Node'.
+The class 'testgramgen1_D' is a specialization of 'Node'.
+The class 'testgramgen1_B' is a specialization of 'Node'.
+The class 'testgramgen1_ProtoLink' is a specialization of 'Component'.
+The class 'testgramgen1_DerivedLink' is a specialization of 'ProtoLink'.
+The class 'testgramgen1_DerivedLink' is a specialization of 'CNamedElement'.
+The class 'testgramgen1_DerivedComponent' is a specialization of 'Component'.
+
+Relationships between classes are modeled using associations.
+An association connects 'testgramgen1_System' and 'testgramgen1_Component'. From 'testgramgen1_System', the role 'testgramgen1_System' has cardinality 0..*, and from 'testgramgen1_Component', the role 'testgramgen1_Component' has cardinality 0..*.
+An association connects 'testgramgen1_Node' and 'testgramgen1_System'. From 'testgramgen1_Node', the role 'testgramgen1_Node' has cardinality 0..*, and from 'testgramgen1_System', the role 'testgramgen1_System2' has cardinality 0..*.
+An association connects 'testgramgen1_ProtoLink' and 'testgramgen1_Component'. From 'testgramgen1_ProtoLink', the role 'testgramgen1_ProtoLink' has cardinality 0..*, and from 'testgramgen1_Component', the role 'testgramgen1_Component4' has cardinality 0..*.
+An association connects 'testgramgen1_Component' and 'testgramgen1_ProtoLink'. From 'testgramgen1_Component', the role 'testgramgen1_Component7' has cardinality 0..*, and from 'testgramgen1_ProtoLink', the role 'testgramgen1_ProtoLink6' has cardinality 0..*.
+An association connects 'testgramgen1_ProtoLink' and 'testgramgen1_Node'. From 'testgramgen1_ProtoLink', the role 'testgramgen1_ProtoLink9' has cardinality 0..*, and from 'testgramgen1_Node', the role 'testgramgen1_Node10' has cardinality 0..*.
+An association connects 'testgramgen1_Component' and 'testgramgen1_DerivedLink'. From 'testgramgen1_Component', the role 'testgramgen1_Component12' has cardinality 0..*, and from 'testgramgen1_DerivedLink', the role 'testgramgen1_DerivedLink' has cardinality 0..*.
+An association connects 'testgramgen1_B' and 'testgramgen1_DerivedLink'. From 'testgramgen1_B', the role 'testgramgen1_B' has cardinality 0..*, and from 'testgramgen1_DerivedLink', the role 'testgramgen1_DerivedLink14' has cardinality 0..*.

@@ -1,0 +1,165 @@
+The domain model 'expressions' describes the core structural elements and their relationships within the system.
+
+The model defines 31 main class(es).
+
+'expressions_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_BooleanValue' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'expressions_And' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Variable' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'expressions_NumberValue' represents an important domain concept.
+It has one attribute: 'numValue', which is of type str.
+
+'expressions_CExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Pow' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_LExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_SomeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_StringValue' represents an important domain concept.
+It has one attribute: 'strValue', which is of type str.
+
+'AExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Approx' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Mod' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_GreaterOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_LessOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Unequal' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_AExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Multi' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Xor' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Imply' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'CExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'LExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Equivalent' represents an important domain concept.
+It does not declare any attributes.
+
+'SomeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Less' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'expressions_CExpression' is a specialization of 'LExpression'.
+The class 'expressions_SomeValue' is a specialization of 'CExpression'.
+The class 'expressions_AExpression' is a specialization of 'SomeValue'.
+The class 'expressions_NumberValue' is a specialization of 'AExpression'.
+The class 'expressions_BooleanValue' is a specialization of 'LExpression'.
+The class 'expressions_BooleanValue' is a specialization of 'SomeValue'.
+The class 'expressions_StringValue' is a specialization of 'SomeValue'.
+The class 'expressions_Variable' is a specialization of 'LExpression'.
+The class 'expressions_Variable' is a specialization of 'AExpression'.
+The class 'expressions_Equivalent' is a specialization of 'LExpression'.
+The class 'expressions_Imply' is a specialization of 'LExpression'.
+The class 'expressions_Or' is a specialization of 'LExpression'.
+The class 'expressions_Xor' is a specialization of 'LExpression'.
+The class 'expressions_And' is a specialization of 'LExpression'.
+The class 'expressions_Not' is a specialization of 'LExpression'.
+The class 'expressions_LessOrEqual' is a specialization of 'CExpression'.
+The class 'expressions_Less' is a specialization of 'CExpression'.
+The class 'expressions_GreaterOrEqual' is a specialization of 'CExpression'.
+The class 'expressions_Greater' is a specialization of 'CExpression'.
+The class 'expressions_Equal' is a specialization of 'CExpression'.
+The class 'expressions_Unequal' is a specialization of 'CExpression'.
+The class 'expressions_Approx' is a specialization of 'CExpression'.
+The class 'expressions_Plus' is a specialization of 'AExpression'.
+The class 'expressions_Minus' is a specialization of 'AExpression'.
+The class 'expressions_Multi' is a specialization of 'AExpression'.
+The class 'expressions_Div' is a specialization of 'AExpression'.
+The class 'expressions_Mod' is a specialization of 'AExpression'.
+The class 'expressions_Pow' is a specialization of 'AExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'expressions_LExpression' and 'expressions_Equivalent'. From 'expressions_LExpression', the role 'expressions_LExpression' has cardinality 0..*, and from 'expressions_Equivalent', the role 'expressions_Equivalent' has cardinality 0..*.
+An association connects 'expressions_Equivalent' and 'expressions_LExpression'. From 'expressions_Equivalent', the role 'expressions_Equivalent2' has cardinality 0..*, and from 'expressions_LExpression', the role 'expressions_LExpression3' has cardinality 0..*.
+An association connects 'expressions_LExpression' and 'expressions_Imply'. From 'expressions_LExpression', the role 'expressions_LExpression5' has cardinality 0..*, and from 'expressions_Imply', the role 'expressions_Imply' has cardinality 0..*.
+An association connects 'expressions_Imply' and 'expressions_LExpression'. From 'expressions_Imply', the role 'expressions_Imply7' has cardinality 0..*, and from 'expressions_LExpression', the role 'expressions_LExpression8' has cardinality 0..*.
+An association connects 'expressions_LExpression' and 'expressions_Or'. From 'expressions_LExpression', the role 'expressions_LExpression10' has cardinality 0..*, and from 'expressions_Or', the role 'expressions_Or' has cardinality 0..*.
+An association connects 'expressions_Or' and 'expressions_LExpression'. From 'expressions_Or', the role 'expressions_Or12' has cardinality 0..*, and from 'expressions_LExpression', the role 'expressions_LExpression13' has cardinality 0..*.
+An association connects 'expressions_Xor' and 'expressions_LExpression'. From 'expressions_Xor', the role 'expressions_Xor' has cardinality 0..*, and from 'expressions_LExpression', the role 'expressions_LExpression15' has cardinality 0..*.
+An association connects 'expressions_LExpression' and 'expressions_Xor'. From 'expressions_LExpression', the role 'expressions_LExpression18' has cardinality 0..*, and from 'expressions_Xor', the role 'expressions_Xor17' has cardinality 0..*.
+An association connects 'expressions_LExpression' and 'expressions_And'. From 'expressions_LExpression', the role 'expressions_LExpression20' has cardinality 0..*, and from 'expressions_And', the role 'expressions_And' has cardinality 0..*.
+An association connects 'expressions_LExpression' and 'expressions_And'. From 'expressions_LExpression', the role 'expressions_LExpression23' has cardinality 0..*, and from 'expressions_And', the role 'expressions_And22' has cardinality 0..*.
+An association connects 'expressions_LExpression' and 'expressions_Not'. From 'expressions_LExpression', the role 'expressions_LExpression25' has cardinality 0..*, and from 'expressions_Not', the role 'expressions_Not' has cardinality 0..*.
+An association connects 'expressions_LessOrEqual' and 'expressions_SomeValue'. From 'expressions_LessOrEqual', the role 'expressions_LessOrEqual' has cardinality 0..*, and from 'expressions_SomeValue', the role 'expressions_SomeValue' has cardinality 0..*.
+An association connects 'expressions_LessOrEqual' and 'expressions_SomeValue'. From 'expressions_LessOrEqual', the role 'expressions_LessOrEqual28' has cardinality 0..*, and from 'expressions_SomeValue', the role 'expressions_SomeValue29' has cardinality 0..*.
+An association connects 'expressions_Less' and 'expressions_SomeValue'. From 'expressions_Less', the role 'expressions_Less' has cardinality 0..*, and from 'expressions_SomeValue', the role 'expressions_SomeValue31' has cardinality 0..*.
+An association connects 'expressions_Less' and 'expressions_SomeValue'. From 'expressions_Less', the role 'expressions_Less33' has cardinality 0..*, and from 'expressions_SomeValue', the role 'expressions_SomeValue34' has cardinality 0..*.
+An association connects 'expressions_SomeValue' and 'expressions_GreaterOrEqual'. From 'expressions_SomeValue', the role 'expressions_SomeValue36' has cardinality 0..*, and from 'expressions_GreaterOrEqual', the role 'expressions_GreaterOrEqual' has cardinality 0..*.
+An association connects 'expressions_SomeValue' and 'expressions_GreaterOrEqual'. From 'expressions_SomeValue', the role 'expressions_SomeValue39' has cardinality 0..*, and from 'expressions_GreaterOrEqual', the role 'expressions_GreaterOrEqual38' has cardinality 0..*.
+An association connects 'expressions_SomeValue' and 'expressions_Greater'. From 'expressions_SomeValue', the role 'expressions_SomeValue41' has cardinality 0..*, and from 'expressions_Greater', the role 'expressions_Greater' has cardinality 0..*.
+An association connects 'expressions_SomeValue' and 'expressions_Greater'. From 'expressions_SomeValue', the role 'expressions_SomeValue44' has cardinality 0..*, and from 'expressions_Greater', the role 'expressions_Greater43' has cardinality 0..*.
+An association connects 'expressions_Equal' and 'expressions_SomeValue'. From 'expressions_Equal', the role 'expressions_Equal' has cardinality 0..*, and from 'expressions_SomeValue', the role 'expressions_SomeValue46' has cardinality 0..*.
+An association connects 'expressions_SomeValue' and 'expressions_Equal'. From 'expressions_SomeValue', the role 'expressions_SomeValue49' has cardinality 0..*, and from 'expressions_Equal', the role 'expressions_Equal48' has cardinality 0..*.
+An association connects 'expressions_Unequal' and 'expressions_SomeValue'. From 'expressions_Unequal', the role 'expressions_Unequal' has cardinality 0..*, and from 'expressions_SomeValue', the role 'expressions_SomeValue51' has cardinality 0..*.
+An association connects 'expressions_SomeValue' and 'expressions_Unequal'. From 'expressions_SomeValue', the role 'expressions_SomeValue54' has cardinality 0..*, and from 'expressions_Unequal', the role 'expressions_Unequal53' has cardinality 0..*.
+An association connects 'expressions_Approx' and 'expressions_SomeValue'. From 'expressions_Approx', the role 'expressions_Approx' has cardinality 0..*, and from 'expressions_SomeValue', the role 'expressions_SomeValue56' has cardinality 0..*.
+An association connects 'expressions_Approx' and 'expressions_SomeValue'. From 'expressions_Approx', the role 'expressions_Approx58' has cardinality 0..*, and from 'expressions_SomeValue', the role 'expressions_SomeValue59' has cardinality 0..*.
+An association connects 'expressions_AExpression' and 'expressions_Plus'. From 'expressions_AExpression', the role 'expressions_AExpression' has cardinality 0..*, and from 'expressions_Plus', the role 'expressions_Plus' has cardinality 0..*.
+An association connects 'expressions_AExpression' and 'expressions_Plus'. From 'expressions_AExpression', the role 'expressions_AExpression63' has cardinality 0..*, and from 'expressions_Plus', the role 'expressions_Plus62' has cardinality 0..*.
+An association connects 'expressions_AExpression' and 'expressions_Minus'. From 'expressions_AExpression', the role 'expressions_AExpression65' has cardinality 0..*, and from 'expressions_Minus', the role 'expressions_Minus' has cardinality 0..*.
+An association connects 'expressions_AExpression' and 'expressions_Minus'. From 'expressions_AExpression', the role 'expressions_AExpression68' has cardinality 0..*, and from 'expressions_Minus', the role 'expressions_Minus67' has cardinality 0..*.
+An association connects 'expressions_Multi' and 'expressions_AExpression'. From 'expressions_Multi', the role 'expressions_Multi' has cardinality 0..*, and from 'expressions_AExpression', the role 'expressions_AExpression70' has cardinality 0..*.
+An association connects 'expressions_Multi' and 'expressions_AExpression'. From 'expressions_Multi', the role 'expressions_Multi72' has cardinality 0..*, and from 'expressions_AExpression', the role 'expressions_AExpression73' has cardinality 0..*.
+An association connects 'expressions_Div' and 'expressions_AExpression'. From 'expressions_Div', the role 'expressions_Div' has cardinality 0..*, and from 'expressions_AExpression', the role 'expressions_AExpression75' has cardinality 0..*.
+An association connects 'expressions_AExpression' and 'expressions_Div'. From 'expressions_AExpression', the role 'expressions_AExpression78' has cardinality 0..*, and from 'expressions_Div', the role 'expressions_Div77' has cardinality 0..*.
+An association connects 'expressions_AExpression' and 'expressions_Mod'. From 'expressions_AExpression', the role 'expressions_AExpression80' has cardinality 0..*, and from 'expressions_Mod', the role 'expressions_Mod' has cardinality 0..*.
+An association connects 'expressions_Mod' and 'expressions_AExpression'. From 'expressions_Mod', the role 'expressions_Mod82' has cardinality 0..*, and from 'expressions_AExpression', the role 'expressions_AExpression83' has cardinality 0..*.
+An association connects 'expressions_AExpression' and 'expressions_Pow'. From 'expressions_AExpression', the role 'expressions_AExpression85' has cardinality 0..*, and from 'expressions_Pow', the role 'expressions_Pow' has cardinality 0..*.
+An association connects 'expressions_AExpression' and 'expressions_Pow'. From 'expressions_AExpression', the role 'expressions_AExpression88' has cardinality 0..*, and from 'expressions_Pow', the role 'expressions_Pow87' has cardinality 0..*.

@@ -1,0 +1,292 @@
+The domain model 'types' describes the core structural elements and their relationships within the system.
+
+The model defines 66 main class(es).
+
+'types_JvmConstraintOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmAnnotationType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmPrimitiveType' represents an important domain concept.
+It has one attribute: 'simpleName', which is of type str.
+
+'types_JvmByteAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'JvmDeclaredType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmEnumerationType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmUnknownTypeReference' represents an important domain concept.
+It has one attribute: 'exception', which is of type str.
+
+'JvmIdentifiableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmDeclaredType' represents an important domain concept.
+It has the following attributes: 'abstract', which is of type bool; 'packageName', which is of type str; 'final', which is of type bool; 'static', which is of type bool.
+
+'types_JvmEnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmAnnotationTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmLongAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'types_JvmType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmField' represents an important domain concept.
+It has the following attributes: 'static', which is of type bool; 'final', which is of type bool.
+
+'types_JvmCharAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'types_JvmTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmCustomAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'types_JvmAnnotationAnnotationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmTypeParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'types_JvmCompoundTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmAnnotationTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmTypeParameterDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmShortAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'types_JvmTypeAnnotationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmGenericArrayTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmExecutable' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmConstructor' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmSynonymTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmCompoundTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmUpperBound' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmConstraintOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmDoubleAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type float.
+
+'types_JvmIntAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type int.
+
+'types_JvmAnyTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmStringAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'types_JvmFloatAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type float.
+
+'JvmComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmEnumAnnotationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmMultiTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmIdentifiableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmFormalParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'types_JvmBooleanAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type bool.
+
+'types_JvmOperation' represents an important domain concept.
+It has the following attributes: 'static', which is of type bool; 'final', which is of type bool; 'abstract', which is of type bool.
+
+'types_JvmExecutable' represents an important domain concept.
+It has one attribute: 'varArgs', which is of type bool.
+
+'JvmTypeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmField' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmLowerBound' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmDelegateTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmSpecializedTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmWildcardTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmGenericType' represents an important domain concept.
+It has one attribute: 'interface', which is of type bool.
+
+'types_JvmTypeParameterDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmAnnotationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmAnnotationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmParameterizedTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmVoid' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmMember' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmAnnotationReference' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmMember' represents an important domain concept.
+It has the following attributes: 'identifier', which is of type str; 'simpleName', which is of type str; 'visibility', which is of type str.
+
+'types_JvmTypeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'JvmVisibility' defines the following possible values: 'PROTECTED', 'PRIVATE', 'PUBLIC', 'DEFAULT'.
+
+The model also captures inheritance relationships between classes.
+The class 'types_JvmType' is a specialization of 'JvmIdentifiableElement'.
+The class 'types_JvmVoid' is a specialization of 'JvmType'.
+The class 'types_JvmComponentType' is a specialization of 'JvmType'.
+The class 'types_JvmPrimitiveType' is a specialization of 'JvmComponentType'.
+The class 'types_JvmArrayType' is a specialization of 'JvmComponentType'.
+The class 'types_JvmDeclaredType' is a specialization of 'JvmMember'.
+The class 'types_JvmDeclaredType' is a specialization of 'JvmComponentType'.
+The class 'types_JvmTypeParameter' is a specialization of 'JvmComponentType'.
+The class 'types_JvmTypeParameter' is a specialization of 'JvmConstraintOwner'.
+The class 'types_JvmUpperBound' is a specialization of 'JvmTypeConstraint'.
+The class 'types_JvmLowerBound' is a specialization of 'JvmTypeConstraint'.
+The class 'types_JvmAnnotationType' is a specialization of 'JvmDeclaredType'.
+The class 'types_JvmEnumerationType' is a specialization of 'JvmDeclaredType'.
+The class 'types_JvmEnumerationLiteral' is a specialization of 'JvmField'.
+The class 'types_JvmGenericType' is a specialization of 'JvmDeclaredType'.
+The class 'types_JvmGenericType' is a specialization of 'JvmTypeParameterDeclarator'.
+The class 'types_JvmParameterizedTypeReference' is a specialization of 'JvmTypeReference'.
+The class 'types_JvmGenericArrayTypeReference' is a specialization of 'JvmTypeReference'.
+The class 'types_JvmWildcardTypeReference' is a specialization of 'JvmTypeReference'.
+The class 'types_JvmWildcardTypeReference' is a specialization of 'JvmConstraintOwner'.
+The class 'types_JvmAnyTypeReference' is a specialization of 'JvmTypeReference'.
+The class 'types_JvmMultiTypeReference' is a specialization of 'JvmCompoundTypeReference'.
+The class 'types_JvmMember' is a specialization of 'JvmAnnotationTarget'.
+The class 'types_JvmMember' is a specialization of 'JvmIdentifiableElement'.
+The class 'types_JvmFeature' is a specialization of 'JvmMember'.
+The class 'types_JvmField' is a specialization of 'JvmFeature'.
+The class 'types_JvmExecutable' is a specialization of 'JvmFeature'.
+The class 'types_JvmExecutable' is a specialization of 'JvmTypeParameterDeclarator'.
+The class 'types_JvmConstructor' is a specialization of 'JvmExecutable'.
+The class 'types_JvmOperation' is a specialization of 'JvmExecutable'.
+The class 'types_JvmFormalParameter' is a specialization of 'JvmIdentifiableElement'.
+The class 'types_JvmFormalParameter' is a specialization of 'JvmAnnotationTarget'.
+The class 'types_JvmIntAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'types_JvmBooleanAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'types_JvmByteAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'types_JvmShortAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'types_JvmLongAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'types_JvmDoubleAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'types_JvmFloatAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'types_JvmCharAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'types_JvmStringAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'types_JvmTypeAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'types_JvmAnnotationAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'types_JvmAnnotationAnnotationValue' is a specialization of 'JvmAnnotationTarget'.
+The class 'types_JvmEnumAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'types_JvmDelegateTypeReference' is a specialization of 'JvmTypeReference'.
+The class 'types_JvmSpecializedTypeReference' is a specialization of 'JvmTypeReference'.
+The class 'types_JvmSynonymTypeReference' is a specialization of 'JvmCompoundTypeReference'.
+The class 'types_JvmUnknownTypeReference' is a specialization of 'JvmTypeReference'.
+The class 'types_JvmCompoundTypeReference' is a specialization of 'JvmTypeReference'.
+The class 'types_JvmCustomAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+
+Relationships between classes are modeled using associations.
+An association connects 'types_JvmComponentType' and 'types_JvmArrayType'. From 'types_JvmComponentType', the role 'componentType' has cardinality 0..*, and from 'types_JvmArrayType', the role 'JvmArrayType' has cardinality 0..*.
+An association connects 'types_JvmArrayType' and 'types_JvmComponentType'. From 'types_JvmArrayType', the role 'arrayType' has cardinality 0..*, and from 'types_JvmComponentType', the role 'JvmComponentType' has cardinality 0..*.
+An association connects 'types_JvmDeclaredType' and 'types_JvmTypeReference'. From 'types_JvmDeclaredType', the role 'types_JvmDeclaredType' has cardinality 0..*, and from 'types_JvmTypeReference', the role 'types_JvmTypeReference' has cardinality 0..*.
+An association connects 'types_JvmMember' and 'types_JvmDeclaredType'. From 'types_JvmMember', the role 'JvmMember' has cardinality 0..*, and from 'types_JvmDeclaredType', the role 'declaringType' has cardinality 0..*.
+An association connects 'types_JvmTypeParameter' and 'types_JvmTypeParameterDeclarator'. From 'types_JvmTypeParameter', the role 'typeParameters' has cardinality 0..*, and from 'types_JvmTypeParameterDeclarator', the role 'JvmTypeParameterDeclarator' has cardinality 0..*.
+An association connects 'types_JvmTypeParameterDeclarator' and 'types_JvmTypeParameter'. From 'types_JvmTypeParameterDeclarator', the role 'declarator' has cardinality 0..*, and from 'types_JvmTypeParameter', the role 'JvmTypeParameter' has cardinality 0..*.
+An association connects 'types_JvmConstraintOwner' and 'types_JvmTypeConstraint'. From 'types_JvmConstraintOwner', the role 'owner' has cardinality 0..*, and from 'types_JvmTypeConstraint', the role 'JvmTypeConstraint' has cardinality 0..*.
+An association connects 'types_JvmTypeConstraint' and 'types_JvmTypeReference'. From 'types_JvmTypeConstraint', the role 'types_JvmTypeConstraint' has cardinality 0..*, and from 'types_JvmTypeReference', the role 'types_JvmTypeReference8' has cardinality 0..*.
+An association connects 'types_JvmTypeConstraint' and 'types_JvmConstraintOwner'. From 'types_JvmTypeConstraint', the role 'constraints' has cardinality 0..*, and from 'types_JvmConstraintOwner', the role 'JvmConstraintOwner' has cardinality 0..*.
+An association connects 'types_JvmEnumerationLiteral' and 'types_JvmEnumerationType'. From 'types_JvmEnumerationLiteral', the role 'types_JvmEnumerationLiteral' has cardinality 0..*, and from 'types_JvmEnumerationType', the role 'types_JvmEnumerationType' has cardinality 0..*.
+An association connects 'types_JvmParameterizedTypeReference' and 'types_JvmTypeReference'. From 'types_JvmParameterizedTypeReference', the role 'types_JvmParameterizedTypeReference' has cardinality 0..*, and from 'types_JvmTypeReference', the role 'types_JvmTypeReference12' has cardinality 0..*.
+An association connects 'types_JvmType' and 'types_JvmParameterizedTypeReference'. From 'types_JvmType', the role 'types_JvmType' has cardinality 0..*, and from 'types_JvmParameterizedTypeReference', the role 'types_JvmParameterizedTypeReference14' has cardinality 0..*.
+An association connects 'types_JvmTypeReference' and 'types_JvmGenericArrayTypeReference'. From 'types_JvmTypeReference', the role 'types_JvmTypeReference16' has cardinality 0..*, and from 'types_JvmGenericArrayTypeReference', the role 'types_JvmGenericArrayTypeReference' has cardinality 0..*.
+An association connects 'types_JvmAnyTypeReference' and 'types_JvmType'. From 'types_JvmAnyTypeReference', the role 'types_JvmAnyTypeReference' has cardinality 0..*, and from 'types_JvmType', the role 'types_JvmType18' has cardinality 0..*.
+An association connects 'types_JvmMember' and 'types_JvmDeclaredType'. From 'types_JvmMember', the role 'members' has cardinality 0..*, and from 'types_JvmDeclaredType', the role 'JvmDeclaredType' has cardinality 0..*.
+An association connects 'types_JvmTypeReference' and 'types_JvmField'. From 'types_JvmTypeReference', the role 'types_JvmTypeReference21' has cardinality 0..*, and from 'types_JvmField', the role 'types_JvmField' has cardinality 0..*.
+An association connects 'types_JvmFormalParameter' and 'types_JvmExecutable'. From 'types_JvmFormalParameter', the role 'types_JvmFormalParameter' has cardinality 0..*, and from 'types_JvmExecutable', the role 'types_JvmExecutable' has cardinality 0..*.
+An association connects 'types_JvmTypeReference' and 'types_JvmExecutable'. From 'types_JvmTypeReference', the role 'types_JvmTypeReference25' has cardinality 0..*, and from 'types_JvmExecutable', the role 'types_JvmExecutable24' has cardinality 0..*.
+An association connects 'types_JvmTypeReference' and 'types_JvmOperation'. From 'types_JvmTypeReference', the role 'types_JvmTypeReference27' has cardinality 0..*, and from 'types_JvmOperation', the role 'types_JvmOperation' has cardinality 0..*.
+An association connects 'types_JvmAnnotationValue' and 'types_JvmOperation'. From 'types_JvmAnnotationValue', the role 'types_JvmAnnotationValue' has cardinality 0..*, and from 'types_JvmOperation', the role 'types_JvmOperation29' has cardinality 0..*.
+An association connects 'types_JvmFormalParameter' and 'types_JvmTypeReference'. From 'types_JvmFormalParameter', the role 'types_JvmFormalParameter31' has cardinality 0..*, and from 'types_JvmTypeReference', the role 'types_JvmTypeReference32' has cardinality 0..*.
+An association connects 'types_JvmAnnotationReference' and 'types_JvmAnnotationTarget'. From 'types_JvmAnnotationReference', the role 'JvmAnnotationReference' has cardinality 0..*, and from 'types_JvmAnnotationTarget', the role 'target' has cardinality 0..*.
+An association connects 'types_JvmAnnotationReference' and 'types_JvmAnnotationType'. From 'types_JvmAnnotationReference', the role 'types_JvmAnnotationReference' has cardinality 0..*, and from 'types_JvmAnnotationType', the role 'types_JvmAnnotationType' has cardinality 0..*.
+An association connects 'types_JvmAnnotationTarget' and 'types_JvmAnnotationReference'. From 'types_JvmAnnotationTarget', the role 'JvmAnnotationTarget' has cardinality 0..*, and from 'types_JvmAnnotationReference', the role 'annotations' has cardinality 0..*.
+An association connects 'types_JvmAnnotationValue' and 'types_JvmAnnotationReference'. From 'types_JvmAnnotationValue', the role 'types_JvmAnnotationValue38' has cardinality 0..*, and from 'types_JvmAnnotationReference', the role 'types_JvmAnnotationReference37' has cardinality 0..*.
+An association connects 'types_JvmOperation' and 'types_JvmAnnotationValue'. From 'types_JvmOperation', the role 'types_JvmOperation41' has cardinality 0..*, and from 'types_JvmAnnotationValue', the role 'types_JvmAnnotationValue40' has cardinality 0..*.
+An association connects 'types_JvmTypeReference' and 'types_JvmTypeAnnotationValue'. From 'types_JvmTypeReference', the role 'types_JvmTypeReference43' has cardinality 0..*, and from 'types_JvmTypeAnnotationValue', the role 'types_JvmTypeAnnotationValue' has cardinality 0..*.
+An association connects 'types_JvmAnnotationReference' and 'types_JvmAnnotationAnnotationValue'. From 'types_JvmAnnotationReference', the role 'types_JvmAnnotationReference45' has cardinality 0..*, and from 'types_JvmAnnotationAnnotationValue', the role 'types_JvmAnnotationAnnotationValue' has cardinality 0..*.
+An association connects 'types_JvmEnumerationLiteral' and 'types_JvmEnumAnnotationValue'. From 'types_JvmEnumerationLiteral', the role 'types_JvmEnumerationLiteral47' has cardinality 0..*, and from 'types_JvmEnumAnnotationValue', the role 'types_JvmEnumAnnotationValue' has cardinality 0..*.
+An association connects 'types_JvmTypeReference' and 'types_JvmDelegateTypeReference'. From 'types_JvmTypeReference', the role 'types_JvmTypeReference49' has cardinality 0..*, and from 'types_JvmDelegateTypeReference', the role 'types_JvmDelegateTypeReference' has cardinality 0..*.
+An association connects 'types_JvmSpecializedTypeReference' and 'types_JvmTypeReference'. From 'types_JvmSpecializedTypeReference', the role 'types_JvmSpecializedTypeReference' has cardinality 0..*, and from 'types_JvmTypeReference', the role 'types_JvmTypeReference51' has cardinality 0..*.
+An association connects 'types_JvmCompoundTypeReference' and 'types_JvmType'. From 'types_JvmCompoundTypeReference', the role 'types_JvmCompoundTypeReference' has cardinality 0..*, and from 'types_JvmType', the role 'types_JvmType53' has cardinality 0..*.
+An association connects 'types_JvmTypeReference' and 'types_JvmCompoundTypeReference'. From 'types_JvmTypeReference', the role 'types_JvmTypeReference56' has cardinality 0..*, and from 'types_JvmCompoundTypeReference', the role 'types_JvmCompoundTypeReference55' has cardinality 0..*.

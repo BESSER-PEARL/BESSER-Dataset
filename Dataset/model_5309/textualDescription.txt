@@ -1,0 +1,46 @@
+The domain model 'TypeB' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'TypeB_ElementY' represents an important domain concept.
+It has one attribute: 'nameY', which is of type str.
+
+'ElementX' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeB_ElementR' represents an important domain concept.
+It has one attribute: 'nameR', which is of type str.
+
+'TypeB_AnotherElement' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'additionalField', which is of type str; 'abstractBaseName', which is of type str; 'nameElement', which is of type str.
+
+'TypeB_SubElement' represents an important domain concept.
+It has one attribute: 'additionalField', which is of type str.
+
+'TypeB_ListElement' represents an important domain concept.
+It has one attribute: 'nameListElement', which is of type str.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeB_ElementX' represents an important domain concept.
+It has one attribute: 'nameX', which is of type str.
+
+'TypeB_ElementS' represents an important domain concept.
+It has one attribute: 'nameS', which is of type str.
+
+'TypeB_Element' represents an important domain concept.
+It has the following attributes: 'abstractBaseName', which is of type str; 'nameElement', which is of type str; 'type', which is of type str.
+
+'ElementR' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'TypeB_SubElement' is a specialization of 'Element'.
+The class 'TypeB_ElementY' is a specialization of 'ElementX'.
+The class 'TypeB_ElementS' is a specialization of 'ElementR'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Element' and 'TypeB_ListElement'. From 'Element', the role 'Element' has cardinality 0..*, and from 'TypeB_ListElement', the role 'TypeB_ListElement' has cardinality 0..*.
+An association connects 'ElementX' and 'TypeB_ListElement'. From 'ElementX', the role 'ElementX' has cardinality 0..*, and from 'TypeB_ListElement', the role 'TypeB_ListElement2' has cardinality 0..*.
+An association connects 'ElementR' and 'TypeB_ListElement'. From 'ElementR', the role 'ElementR' has cardinality 0..*, and from 'TypeB_ListElement', the role 'TypeB_ListElement4' has cardinality 0..*.

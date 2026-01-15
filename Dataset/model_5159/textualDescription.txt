@@ -1,0 +1,14 @@
+The domain model 'astrans' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'astrans_B' represents an important domain concept.
+It does not declare any attributes.
+
+'astrans_A' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'astrans_A' and 'astrans_B'. From 'astrans_A', the role 'astrans_A' has cardinality 0..*, and from 'astrans_B', the role 'astrans_B' has cardinality 0..*.
+An association connects 'astrans_A' and 'astrans_B'. From 'astrans_A', the role 'astrans_A2' has cardinality 0..*, and from 'astrans_B', the role 'astrans_B3' has cardinality 0..*.
+An association connects 'astrans_B' and 'astrans_B'. From 'astrans_B', the role 'astrans_B4' has cardinality 0..*, and from 'astrans_B', the role 'astrans_B6' has cardinality 0..*.

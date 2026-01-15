@@ -1,0 +1,63 @@
+The domain model 'FeatureModel' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureModel_Group' represents an important domain concept.
+It has one attribute: 'groupType', which is of type str.
+
+'FeatureModel_Feature' represents an important domain concept.
+It has the following attributes: 'abstract', which is of type bool; 'mandatory', which is of type bool.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureModel_Constraint' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'code', which is of type str.
+
+'FeatureModel_Comment' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'FeatureModel_RequireConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureModel_FeatureModel' represents an important domain concept.
+It has one attribute: 'version', which is of type float.
+
+'FeatureModel_ExcludeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureModel_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'GroupType' defines the following possible values: 'OR', 'ALT'.
+
+The model also captures inheritance relationships between classes.
+The class 'FeatureModel_FeatureModel' is a specialization of 'NamedElement'.
+The class 'FeatureModel_Comment' is a specialization of 'NamedElement'.
+The class 'FeatureModel_Constraint' is a specialization of 'NamedElement'.
+The class 'FeatureModel_Feature' is a specialization of 'NamedElement'.
+The class 'FeatureModel_RequireConstraint' is a specialization of 'Constraint'.
+The class 'FeatureModel_ExcludeConstraint' is a specialization of 'Constraint'.
+The class 'FeatureModel_Group' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'FeatureModel_Comment' and 'FeatureModel_FeatureModel'. From 'FeatureModel_Comment', the role 'FeatureModel_Comment' has cardinality 0..*, and from 'FeatureModel_FeatureModel', the role 'FeatureModel_FeatureModel' has cardinality 0..*.
+An association connects 'FeatureModel_Constraint' and 'FeatureModel_FeatureModel'. From 'FeatureModel_Constraint', the role 'FeatureModel_Constraint' has cardinality 0..*, and from 'FeatureModel_FeatureModel', the role 'FeatureModel_FeatureModel2' has cardinality 0..*.
+An association connects 'FeatureModel_FeatureModel' and 'FeatureModel_Feature'. From 'FeatureModel_FeatureModel', the role 'FeatureModel_FeatureModel4' has cardinality 0..*, and from 'FeatureModel_Feature', the role 'FeatureModel_Feature' has cardinality 0..*.
+An association connects 'FeatureModel_Group' and 'FeatureModel_FeatureModel'. From 'FeatureModel_Group', the role 'FeatureModel_Group' has cardinality 0..*, and from 'FeatureModel_FeatureModel', the role 'FeatureModel_FeatureModel6' has cardinality 0..*.
+An association connects 'FeatureModel_Comment' and 'FeatureModel_NamedElement'. From 'FeatureModel_Comment', the role 'FeatureModel_Comment8' has cardinality 0..*, and from 'FeatureModel_NamedElement', the role 'FeatureModel_NamedElement' has cardinality 0..*.
+An association connects 'FeatureModel_Feature' and 'FeatureModel_Feature'. From 'FeatureModel_Feature', the role 'FeatureModel_Feature9' has cardinality 0..*, and from 'FeatureModel_Feature', the role 'FeatureModel_Feature11' has cardinality 0..*.
+An association connects 'FeatureModel_Feature' and 'FeatureModel_RequireConstraint'. From 'FeatureModel_Feature', the role 'requiredFeature' has cardinality 0..*, and from 'FeatureModel_RequireConstraint', the role 'RequireConstraint' has cardinality 0..*.
+An association connects 'FeatureModel_Feature' and 'FeatureModel_RequireConstraint'. From 'FeatureModel_Feature', the role 'feature' has cardinality 0..*, and from 'FeatureModel_RequireConstraint', the role 'RequireConstraint14' has cardinality 0..*.
+An association connects 'FeatureModel_Group' and 'FeatureModel_Feature'. From 'FeatureModel_Group', the role 'Group' has cardinality 0..*, and from 'FeatureModel_Feature', the role 'features' has cardinality 0..*.
+An association connects 'FeatureModel_Feature' and 'FeatureModel_ExcludeConstraint'. From 'FeatureModel_Feature', the role 'excludedFeatureA' has cardinality 0..*, and from 'FeatureModel_ExcludeConstraint', the role 'ExcludeConstraint' has cardinality 0..*.
+An association connects 'FeatureModel_Feature' and 'FeatureModel_ExcludeConstraint'. From 'FeatureModel_Feature', the role 'excludedFeatureB' has cardinality 0..*, and from 'FeatureModel_ExcludeConstraint', the role 'ExcludeConstraint18' has cardinality 0..*.
+An association connects 'FeatureModel_Feature' and 'FeatureModel_RequireConstraint'. From 'FeatureModel_Feature', the role 'Feature' has cardinality 0..*, and from 'FeatureModel_RequireConstraint', the role 'requiredConstraints' has cardinality 0..*.
+An association connects 'FeatureModel_Feature' and 'FeatureModel_RequireConstraint'. From 'FeatureModel_Feature', the role 'Feature21' has cardinality 0..*, and from 'FeatureModel_RequireConstraint', the role 'requireConstraints' has cardinality 0..*.
+An association connects 'FeatureModel_ExcludeConstraint' and 'FeatureModel_Feature'. From 'FeatureModel_ExcludeConstraint', the role 'excludeConstraintsA' has cardinality 0..*, and from 'FeatureModel_Feature', the role 'Feature23' has cardinality 0..*.
+An association connects 'FeatureModel_Feature' and 'FeatureModel_ExcludeConstraint'. From 'FeatureModel_Feature', the role 'Feature25' has cardinality 0..*, and from 'FeatureModel_ExcludeConstraint', the role 'excludeConstraintsB' has cardinality 0..*.
+An association connects 'FeatureModel_Group' and 'FeatureModel_Feature'. From 'FeatureModel_Group', the role 'group' has cardinality 0..*, and from 'FeatureModel_Feature', the role 'Feature27' has cardinality 0..*.

@@ -1,0 +1,23 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'model_Column' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Column' and 'model_Table'. From 'model_Column', the role 'model_Column' has cardinality 0..*, and from 'model_Table', the role 'model_Table' has cardinality 0..*.
+An association connects 'model_Table' and 'model_Constraint'. From 'model_Table', the role 'model_Table2' has cardinality 0..*, and from 'model_Constraint', the role 'model_Constraint' has cardinality 0..*.
+An association connects 'model_Constraint' and 'model_Table'. From 'model_Constraint', the role 'model_Constraint5' has cardinality 0..*, and from 'model_Table', the role 'model_Table4' has cardinality 0..*.
+An association connects 'model_Diagram' and 'model_Table'. From 'model_Diagram', the role 'model_Diagram' has cardinality 0..*, and from 'model_Table', the role 'model_Table7' has cardinality 0..*.
+An association connects 'model_Table' and 'model_Constraint'. From 'model_Table', the role 'model_Table10' has cardinality 0..*, and from 'model_Constraint', the role 'model_Constraint9' has cardinality 0..*.
+An association connects 'model_Table' and 'model_Constraint'. From 'model_Table', the role 'model_Table13' has cardinality 0..*, and from 'model_Constraint', the role 'model_Constraint12' has cardinality 0..*.

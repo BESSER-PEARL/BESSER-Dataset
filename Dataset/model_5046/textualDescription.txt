@@ -1,0 +1,115 @@
+The domain model 'RandL' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'RandL_TransactionReportLine' represents an important domain concept.
+It has the following attributes: 'amount', which is of type str; 'serviceDesc', which is of type str; 'partnerName', which is of type str; 'points', which is of type str.
+
+'RandL_ServiceLevel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RandL_LoyaltyAccount' represents an important domain concept.
+It has the following attributes: 'number', which is of type str; 'totalPointsEarned', which is of type str; 'points', which is of type str.
+
+'RandL_Service' represents an important domain concept.
+It has the following attributes: 'pointsEarned', which is of type str; 'pointsBurned', which is of type str; 'description', which is of type str; 'condition', which is of type str; 'serviceNr', which is of type str.
+
+'RandL_Membership' represents an important domain concept.
+It does not declare any attributes.
+
+'RandL_LoyaltyProgram' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RandL_Transaction' represents an important domain concept.
+It has the following attributes: 'points', which is of type str; 'amount', which is of type str.
+
+'RandL_Burning' represents an important domain concept.
+It does not declare any attributes.
+
+'RandL_Container_RandL' represents an important domain concept.
+It does not declare any attributes.
+
+'RandL_Earning' represents an important domain concept.
+It does not declare any attributes.
+
+'RandL_Date' represents an important domain concept.
+It has the following attributes: 'day', which is of type str; 'year', which is of type str; 'month', which is of type str.
+
+'RandL_ProgramPartner' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'numberOfCustomers', which is of type str.
+
+'RandL_Customer' represents an important domain concept.
+It has the following attributes: 'isMale', which is of type str; 'gender', which is of type str; 'age', which is of type str; 'title', which is of type str; 'name', which is of type str.
+
+'RandL_CustomerCard' represents an important domain concept.
+It has the following attributes: 'color', which is of type str; 'valid', which is of type str; 'printedName', which is of type str.
+
+'RandL_TransactionReport' represents an important domain concept.
+It has the following attributes: 'number', which is of type str; 'name', which is of type str; 'totalBurned', which is of type str; 'balance', which is of type str; 'totalEarned', which is of type str.
+
+'Transaction' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'RandLColor' defines the following possible values: 'gold', 'silver'.
+The enumeration 'Gender' defines the following possible values: 'female', 'male'.
+
+The model also captures inheritance relationships between classes.
+The class 'RandL_Earning' is a specialization of 'Transaction'.
+The class 'RandL_Burning' is a specialization of 'Transaction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'RandL_ServiceLevel' and 'RandL_LoyaltyProgram'. From 'RandL_ServiceLevel', the role 'levels' has cardinality 0..*, and from 'RandL_LoyaltyProgram', the role 'LoyaltyProgram' has cardinality 0..*.
+An association connects 'RandL_Service' and 'RandL_ServiceLevel'. From 'RandL_Service', the role 'Service' has cardinality 0..*, and from 'RandL_ServiceLevel', the role 'level' has cardinality 0..*.
+An association connects 'RandL_ServiceLevel' and 'RandL_Membership'. From 'RandL_ServiceLevel', the role 'currentLevel' has cardinality 0..*, and from 'RandL_Membership', the role 'Membership' has cardinality 0..*.
+An association connects 'RandL_Transaction' and 'RandL_Date'. From 'RandL_Transaction', the role 'RandL_Transaction' has cardinality 0..*, and from 'RandL_Date', the role 'RandL_Date' has cardinality 0..*.
+An association connects 'RandL_LoyaltyAccount' and 'RandL_Transaction'. From 'RandL_LoyaltyAccount', the role 'LoyaltyAccount' has cardinality 0..*, and from 'RandL_Transaction', the role 'transactions' has cardinality 0..*.
+An association connects 'RandL_Service' and 'RandL_Transaction'. From 'RandL_Service', the role 'Service7' has cardinality 0..*, and from 'RandL_Transaction', the role 'transactions6' has cardinality 0..*.
+An association connects 'RandL_Transaction' and 'RandL_CustomerCard'. From 'RandL_Transaction', the role 'transactions9' has cardinality 0..*, and from 'RandL_CustomerCard', the role 'CustomerCard' has cardinality 0..*.
+An association connects 'RandL_LoyaltyAccount' and 'RandL_Service'. From 'RandL_LoyaltyAccount', the role 'RandL_LoyaltyAccount' has cardinality 0..*, and from 'RandL_Service', the role 'RandL_Service' has cardinality 0..*.
+An association connects 'RandL_LoyaltyAccount' and 'RandL_Membership'. From 'RandL_LoyaltyAccount', the role 'account' has cardinality 0..*, and from 'RandL_Membership', the role 'Membership12' has cardinality 0..*.
+An association connects 'RandL_Transaction' and 'RandL_LoyaltyAccount'. From 'RandL_Transaction', the role 'Transaction' has cardinality 0..*, and from 'RandL_LoyaltyAccount', the role 'account14' has cardinality 0..*.
+An association connects 'RandL_Service' and 'RandL_ProgramPartner'. From 'RandL_Service', the role 'Service16' has cardinality 0..*, and from 'RandL_ProgramPartner', the role 'partner' has cardinality 0..*.
+An association connects 'RandL_ProgramPartner' and 'RandL_LoyaltyProgram'. From 'RandL_ProgramPartner', the role 'partners' has cardinality 0..*, and from 'RandL_LoyaltyProgram', the role 'LoyaltyProgram18' has cardinality 0..*.
+An association connects 'RandL_Date' and 'RandL_TransactionReport'. From 'RandL_Date', the role 'RandL_Date20' has cardinality 0..*, and from 'RandL_TransactionReport', the role 'RandL_TransactionReport' has cardinality 0..*.
+An association connects 'RandL_TransactionReport' and 'RandL_Date'. From 'RandL_TransactionReport', the role 'RandL_TransactionReport22' has cardinality 0..*, and from 'RandL_Date', the role 'RandL_Date23' has cardinality 0..*.
+An association connects 'RandL_TransactionReport' and 'RandL_TransactionReportLine'. From 'RandL_TransactionReport', the role 'report' has cardinality 0..*, and from 'RandL_TransactionReportLine', the role 'TransactionReportLine' has cardinality 0..*.
+An association connects 'RandL_TransactionReport' and 'RandL_CustomerCard'. From 'RandL_TransactionReport', the role 'RandL_TransactionReport26' has cardinality 0..*, and from 'RandL_CustomerCard', the role 'RandL_CustomerCard' has cardinality 0..*.
+An association connects 'RandL_Date' and 'RandL_CustomerCard'. From 'RandL_Date', the role 'RandL_Date29' has cardinality 0..*, and from 'RandL_CustomerCard', the role 'RandL_CustomerCard28' has cardinality 0..*.
+An association connects 'RandL_CustomerCard' and 'RandL_Date'. From 'RandL_CustomerCard', the role 'RandL_CustomerCard31' has cardinality 0..*, and from 'RandL_Date', the role 'RandL_Date32' has cardinality 0..*.
+An association connects 'RandL_ServiceLevel' and 'RandL_CustomerCard'. From 'RandL_ServiceLevel', the role 'RandL_ServiceLevel' has cardinality 0..*, and from 'RandL_CustomerCard', the role 'RandL_CustomerCard34' has cardinality 0..*.
+An association connects 'RandL_Customer' and 'RandL_CustomerCard'. From 'RandL_Customer', the role 'Customer' has cardinality 0..*, and from 'RandL_CustomerCard', the role 'cards' has cardinality 0..*.
+An association connects 'RandL_Membership' and 'RandL_CustomerCard'. From 'RandL_Membership', the role 'Membership37' has cardinality 0..*, and from 'RandL_CustomerCard', the role 'card' has cardinality 0..*.
+An association connects 'RandL_CustomerCard' and 'RandL_Transaction'. From 'RandL_CustomerCard', the role 'card39' has cardinality 0..*, and from 'RandL_Transaction', the role 'Transaction40' has cardinality 0..*.
+An association connects 'RandL_Membership' and 'RandL_ServiceLevel'. From 'RandL_Membership', the role 'Membership42' has cardinality 0..*, and from 'RandL_ServiceLevel', the role 'ServiceLevel' has cardinality 0..*.
+An association connects 'RandL_CustomerCard' and 'RandL_Membership'. From 'RandL_CustomerCard', the role 'CustomerCard45' has cardinality 0..*, and from 'RandL_Membership', the role 'Membership44' has cardinality 0..*.
+An association connects 'RandL_Membership' and 'RandL_LoyaltyAccount'. From 'RandL_Membership', the role 'Membership47' has cardinality 0..*, and from 'RandL_LoyaltyAccount', the role 'LoyaltyAccount48' has cardinality 0..*.
+An association connects 'RandL_Membership' and 'RandL_LoyaltyProgram'. From 'RandL_Membership', the role 'RandL_Membership' has cardinality 0..*, and from 'RandL_LoyaltyProgram', the role 'RandL_LoyaltyProgram' has cardinality 0..*.
+An association connects 'RandL_Customer' and 'RandL_Membership'. From 'RandL_Customer', the role 'RandL_Customer' has cardinality 0..*, and from 'RandL_Membership', the role 'RandL_Membership51' has cardinality 0..*.
+An association connects 'RandL_Container_RandL' and 'RandL_Customer'. From 'RandL_Container_RandL', the role 'RandL_Container_RandL' has cardinality 0..*, and from 'RandL_Customer', the role 'RandL_Customer53' has cardinality 0..*.
+An association connects 'RandL_Date' and 'RandL_Container_RandL'. From 'RandL_Date', the role 'RandL_Date56' has cardinality 0..*, and from 'RandL_Container_RandL', the role 'RandL_Container_RandL55' has cardinality 0..*.
+An association connects 'RandL_CustomerCard' and 'RandL_Container_RandL'. From 'RandL_CustomerCard', the role 'RandL_CustomerCard59' has cardinality 0..*, and from 'RandL_Container_RandL', the role 'RandL_Container_RandL58' has cardinality 0..*.
+An association connects 'RandL_Membership' and 'RandL_Container_RandL'. From 'RandL_Membership', the role 'RandL_Membership62' has cardinality 0..*, and from 'RandL_Container_RandL', the role 'RandL_Container_RandL61' has cardinality 0..*.
+An association connects 'RandL_Container_RandL' and 'RandL_Service'. From 'RandL_Container_RandL', the role 'RandL_Container_RandL64' has cardinality 0..*, and from 'RandL_Service', the role 'RandL_Service65' has cardinality 0..*.
+An association connects 'RandL_Container_RandL' and 'RandL_LoyaltyProgram'. From 'RandL_Container_RandL', the role 'RandL_Container_RandL67' has cardinality 0..*, and from 'RandL_LoyaltyProgram', the role 'RandL_LoyaltyProgram68' has cardinality 0..*.
+An association connects 'RandL_Container_RandL' and 'RandL_Earning'. From 'RandL_Container_RandL', the role 'RandL_Container_RandL70' has cardinality 0..*, and from 'RandL_Earning', the role 'RandL_Earning' has cardinality 0..*.
+An association connects 'RandL_Container_RandL' and 'RandL_LoyaltyAccount'. From 'RandL_Container_RandL', the role 'RandL_Container_RandL72' has cardinality 0..*, and from 'RandL_LoyaltyAccount', the role 'RandL_LoyaltyAccount73' has cardinality 0..*.
+An association connects 'RandL_ServiceLevel' and 'RandL_Container_RandL'. From 'RandL_ServiceLevel', the role 'RandL_ServiceLevel76' has cardinality 0..*, and from 'RandL_Container_RandL', the role 'RandL_Container_RandL75' has cardinality 0..*.
+An association connects 'RandL_TransactionReport' and 'RandL_Container_RandL'. From 'RandL_TransactionReport', the role 'RandL_TransactionReport79' has cardinality 0..*, and from 'RandL_Container_RandL', the role 'RandL_Container_RandL78' has cardinality 0..*.
+An association connects 'RandL_Container_RandL' and 'RandL_ProgramPartner'. From 'RandL_Container_RandL', the role 'RandL_Container_RandL81' has cardinality 0..*, and from 'RandL_ProgramPartner', the role 'RandL_ProgramPartner' has cardinality 0..*.
+An association connects 'RandL_Burning' and 'RandL_Container_RandL'. From 'RandL_Burning', the role 'RandL_Burning' has cardinality 0..*, and from 'RandL_Container_RandL', the role 'RandL_Container_RandL83' has cardinality 0..*.
+An association connects 'RandL_TransactionReportLine' and 'RandL_Container_RandL'. From 'RandL_TransactionReportLine', the role 'RandL_TransactionReportLine' has cardinality 0..*, and from 'RandL_Container_RandL', the role 'RandL_Container_RandL85' has cardinality 0..*.
+An association connects 'RandL_Service' and 'RandL_ProgramPartner'. From 'RandL_Service', the role 'deliveredServices' has cardinality 0..*, and from 'RandL_ProgramPartner', the role 'ProgramPartner' has cardinality 0..*.
+An association connects 'RandL_Service' and 'RandL_Transaction'. From 'RandL_Service', the role 'generatedBy' has cardinality 0..*, and from 'RandL_Transaction', the role 'Transaction88' has cardinality 0..*.
+An association connects 'RandL_Service' and 'RandL_ServiceLevel'. From 'RandL_Service', the role 'availableServices' has cardinality 0..*, and from 'RandL_ServiceLevel', the role 'ServiceLevel90' has cardinality 0..*.
+An association connects 'RandL_Date' and 'RandL_Customer'. From 'RandL_Date', the role 'RandL_Date93' has cardinality 0..*, and from 'RandL_Customer', the role 'RandL_Customer92' has cardinality 0..*.
+An association connects 'RandL_Customer' and 'RandL_LoyaltyProgram'. From 'RandL_Customer', the role 'participants' has cardinality 0..*, and from 'RandL_LoyaltyProgram', the role 'LoyaltyProgram95' has cardinality 0..*.
+An association connects 'RandL_Customer' and 'RandL_CustomerCard'. From 'RandL_Customer', the role 'owner' has cardinality 0..*, and from 'RandL_CustomerCard', the role 'CustomerCard97' has cardinality 0..*.
+An association connects 'RandL_Membership' and 'RandL_Customer'. From 'RandL_Membership', the role 'RandL_Membership100' has cardinality 0..*, and from 'RandL_Customer', the role 'RandL_Customer99' has cardinality 0..*.
+An association connects 'RandL_Date' and 'RandL_TransactionReportLine'. From 'RandL_Date', the role 'RandL_Date103' has cardinality 0..*, and from 'RandL_TransactionReportLine', the role 'RandL_TransactionReportLine102' has cardinality 0..*.
+An association connects 'RandL_Transaction' and 'RandL_TransactionReportLine'. From 'RandL_Transaction', the role 'RandL_Transaction106' has cardinality 0..*, and from 'RandL_TransactionReportLine', the role 'RandL_TransactionReportLine105' has cardinality 0..*.
+An association connects 'RandL_TransactionReport' and 'RandL_TransactionReportLine'. From 'RandL_TransactionReport', the role 'TransactionReport' has cardinality 0..*, and from 'RandL_TransactionReportLine', the role 'lines' has cardinality 0..*.
+An association connects 'RandL_LoyaltyProgram' and 'RandL_ProgramPartner'. From 'RandL_LoyaltyProgram', the role 'programs' has cardinality 0..*, and from 'RandL_ProgramPartner', the role 'ProgramPartner109' has cardinality 0..*.
+An association connects 'RandL_LoyaltyProgram' and 'RandL_ServiceLevel'. From 'RandL_LoyaltyProgram', the role 'program' has cardinality 0..*, and from 'RandL_ServiceLevel', the role 'ServiceLevel111' has cardinality 0..*.
+An association connects 'RandL_LoyaltyProgram' and 'RandL_Customer'. From 'RandL_LoyaltyProgram', the role 'programs113' has cardinality 0..*, and from 'RandL_Customer', the role 'Customer114' has cardinality 0..*.
+An association connects 'RandL_Membership' and 'RandL_LoyaltyProgram'. From 'RandL_Membership', the role 'RandL_Membership117' has cardinality 0..*, and from 'RandL_LoyaltyProgram', the role 'RandL_LoyaltyProgram116' has cardinality 0..*.

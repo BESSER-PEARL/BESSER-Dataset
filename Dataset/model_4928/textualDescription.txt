@@ -1,0 +1,138 @@
+The domain model 'webapp' describes the core structural elements and their relationships within the system.
+
+The model defines 29 main class(es).
+
+'webapp_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'webapp_AbstractView' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'webapp_RouterMapping' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'webapp_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractView' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Section' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'description', which is of type str.
+
+'webapp_Table' represents an important domain concept.
+It has the following attributes: 'bordered', which is of type bool; 'columnNames', which is of type str; 'striped', which is of type bool; 'rowNames', which is of type str.
+
+'webapp_Router' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Collection' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_ModelView' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_CheckBox' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'webapp_Widget' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'webapp_StaticView' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Form' represents an important domain concept.
+It does not declare any attributes.
+
+'FormWidget' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Video' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'webapp_Text' represents an important domain concept.
+It has one attribute: 'columnNumber', which is of type int.
+
+'webapp_Application' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Attribute' represents an important domain concept.
+It has one attribute: 'defaultValue', which is of type str.
+
+'webapp_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_ImagesBlock' represents an important domain concept.
+It has one attribute: 'imagesPath', which is of type str.
+
+'webapp_Spinner' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'webapp_FormWidget' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'Widget' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_TextArea' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Gallery' represents an important domain concept.
+It has one attribute: 'imagesPath', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'webapp_Application' is a specialization of 'NamedElement'.
+The class 'webapp_Model' is a specialization of 'NamedElement'.
+The class 'webapp_Attribute' is a specialization of 'NamedElement'.
+The class 'webapp_Reference' is a specialization of 'NamedElement'.
+The class 'webapp_Operation' is a specialization of 'NamedElement'.
+The class 'webapp_Parameter' is a specialization of 'NamedElement'.
+The class 'webapp_Collection' is a specialization of 'NamedElement'.
+The class 'webapp_Router' is a specialization of 'NamedElement'.
+The class 'webapp_AbstractView' is a specialization of 'NamedElement'.
+The class 'webapp_ModelView' is a specialization of 'AbstractView'.
+The class 'webapp_StaticView' is a specialization of 'AbstractView'.
+The class 'webapp_Form' is a specialization of 'Widget'.
+The class 'webapp_Table' is a specialization of 'Widget'.
+The class 'webapp_Text' is a specialization of 'Widget'.
+The class 'webapp_Video' is a specialization of 'Widget'.
+The class 'webapp_Gallery' is a specialization of 'Widget'.
+The class 'webapp_ImagesBlock' is a specialization of 'Widget'.
+The class 'webapp_TextArea' is a specialization of 'FormWidget'.
+The class 'webapp_Spinner' is a specialization of 'FormWidget'.
+The class 'webapp_CheckBox' is a specialization of 'FormWidget'.
+
+Relationships between classes are modeled using associations.
+An association connects 'webapp_Router' and 'webapp_Application'. From 'webapp_Router', the role 'Router' has cardinality 0..*, and from 'webapp_Application', the role 'application' has cardinality 0..*.
+An association connects 'webapp_Application' and 'webapp_Collection'. From 'webapp_Application', the role 'application2' has cardinality 0..*, and from 'webapp_Collection', the role 'Collection' has cardinality 0..*.
+An association connects 'webapp_AbstractView' and 'webapp_Application'. From 'webapp_AbstractView', the role 'AbstractView' has cardinality 0..*, and from 'webapp_Application', the role 'application4' has cardinality 0..*.
+An association connects 'webapp_Model' and 'webapp_Application'. From 'webapp_Model', the role 'Model' has cardinality 0..*, and from 'webapp_Application', the role 'application6' has cardinality 0..*.
+An association connects 'webapp_Attribute' and 'webapp_Model'. From 'webapp_Attribute', the role 'webapp_Attribute' has cardinality 0..*, and from 'webapp_Model', the role 'webapp_Model' has cardinality 0..*.
+An association connects 'webapp_Reference' and 'webapp_Model'. From 'webapp_Reference', the role 'webapp_Reference' has cardinality 0..*, and from 'webapp_Model', the role 'webapp_Model9' has cardinality 0..*.
+An association connects 'webapp_Model' and 'webapp_Operation'. From 'webapp_Model', the role 'webapp_Model11' has cardinality 0..*, and from 'webapp_Operation', the role 'webapp_Operation' has cardinality 0..*.
+An association connects 'webapp_Model' and 'webapp_Application'. From 'webapp_Model', the role 'models' has cardinality 0..*, and from 'webapp_Application', the role 'Application' has cardinality 0..*.
+An association connects 'webapp_Reference' and 'webapp_Model'. From 'webapp_Reference', the role 'webapp_Reference14' has cardinality 0..*, and from 'webapp_Model', the role 'webapp_Model15' has cardinality 0..*.
+An association connects 'webapp_Operation' and 'webapp_Parameter'. From 'webapp_Operation', the role 'webapp_Operation17' has cardinality 0..*, and from 'webapp_Parameter', the role 'webapp_Parameter' has cardinality 0..*.
+An association connects 'webapp_Model' and 'webapp_Collection'. From 'webapp_Model', the role 'webapp_Model19' has cardinality 0..*, and from 'webapp_Collection', the role 'webapp_Collection' has cardinality 0..*.
+An association connects 'webapp_Application' and 'webapp_Collection'. From 'webapp_Application', the role 'Application21' has cardinality 0..*, and from 'webapp_Collection', the role 'collections' has cardinality 0..*.
+An association connects 'webapp_Router' and 'webapp_RouterMapping'. From 'webapp_Router', the role 'webapp_Router' has cardinality 0..*, and from 'webapp_RouterMapping', the role 'webapp_RouterMapping' has cardinality 0..*.
+An association connects 'webapp_Router' and 'webapp_Application'. From 'webapp_Router', the role 'router' has cardinality 0..*, and from 'webapp_Application', the role 'Application24' has cardinality 0..*.
+An association connects 'webapp_RouterMapping' and 'webapp_AbstractView'. From 'webapp_RouterMapping', the role 'webapp_RouterMapping26' has cardinality 0..*, and from 'webapp_AbstractView', the role 'webapp_AbstractView' has cardinality 0..*.
+An association connects 'webapp_Operation' and 'webapp_AbstractView'. From 'webapp_Operation', the role 'webapp_Operation29' has cardinality 0..*, and from 'webapp_AbstractView', the role 'webapp_AbstractView28' has cardinality 0..*.
+An association connects 'webapp_Application' and 'webapp_AbstractView'. From 'webapp_Application', the role 'Application31' has cardinality 0..*, and from 'webapp_AbstractView', the role 'views' has cardinality 0..*.
+An association connects 'webapp_Collection' and 'webapp_ModelView'. From 'webapp_Collection', the role 'webapp_Collection33' has cardinality 0..*, and from 'webapp_ModelView', the role 'webapp_ModelView' has cardinality 0..*.
+An association connects 'webapp_StaticView' and 'webapp_Section'. From 'webapp_StaticView', the role 'view' has cardinality 0..*, and from 'webapp_Section', the role 'Section' has cardinality 0..*.
+An association connects 'webapp_Section' and 'webapp_Widget'. From 'webapp_Section', the role 'section' has cardinality 0..*, and from 'webapp_Widget', the role 'Widget' has cardinality 0..*.
+An association connects 'webapp_Section' and 'webapp_StaticView'. From 'webapp_Section', the role 'sections' has cardinality 0..*, and from 'webapp_StaticView', the role 'StaticView' has cardinality 0..*.
+An association connects 'webapp_Section' and 'webapp_Widget'. From 'webapp_Section', the role 'Section38' has cardinality 0..*, and from 'webapp_Widget', the role 'widgets' has cardinality 0..*.
+An association connects 'webapp_FormWidget' and 'webapp_Form'. From 'webapp_FormWidget', the role 'FormWidget' has cardinality 0..*, and from 'webapp_Form', the role 'form' has cardinality 0..*.
+An association connects 'webapp_FormWidget' and 'webapp_Form'. From 'webapp_FormWidget', the role 'formWidgets' has cardinality 0..*, and from 'webapp_Form', the role 'Form' has cardinality 0..*.

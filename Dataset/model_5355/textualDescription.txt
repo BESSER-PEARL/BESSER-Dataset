@@ -1,0 +1,56 @@
+The domain model 'p2' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'p2_Feature' represents an important domain concept.
+It has one attribute: 'application', which is of type str.
+
+'p2_Vendor' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_License' represents an important domain concept.
+It does not declare any attributes.
+
+'Tool' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_Copyright' represents an important domain concept.
+It does not declare any attributes.
+
+'Bundle' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_DiscoverySite' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_Plugin' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureMetadata' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_Description' represents an important domain concept.
+It does not declare any attributes.
+
+'p2_FeatureMetadata' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'text', which is of type str.
+
+'LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'p2_Feature' is a specialization of 'Tool'.
+The class 'p2_Copyright' is a specialization of 'FeatureMetadata'.
+The class 'p2_Description' is a specialization of 'FeatureMetadata'.
+The class 'p2_DiscoverySite' is a specialization of 'FeatureMetadata'.
+The class 'p2_License' is a specialization of 'FeatureMetadata'.
+The class 'p2_Plugin' is a specialization of 'Bundle'.
+The class 'p2_FeatureMetadata' is a specialization of 'LocatedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'p2_Copyright' and 'p2_Feature'. From 'p2_Copyright', the role 'p2_Copyright' has cardinality 0..*, and from 'p2_Feature', the role 'p2_Feature' has cardinality 0..*.
+An association connects 'p2_Description' and 'p2_Feature'. From 'p2_Description', the role 'p2_Description' has cardinality 0..*, and from 'p2_Feature', the role 'p2_Feature2' has cardinality 0..*.
+An association connects 'p2_DiscoverySite' and 'p2_Feature'. From 'p2_DiscoverySite', the role 'p2_DiscoverySite' has cardinality 0..*, and from 'p2_Feature', the role 'p2_Feature4' has cardinality 0..*.
+An association connects 'p2_License' and 'p2_Feature'. From 'p2_License', the role 'p2_License' has cardinality 0..*, and from 'p2_Feature', the role 'p2_Feature6' has cardinality 0..*.
+An association connects 'p2_Feature' and 'p2_Vendor'. From 'p2_Feature', the role 'p2_Feature8' has cardinality 0..*, and from 'p2_Vendor', the role 'p2_Vendor' has cardinality 0..*.
+An association connects 'p2_Plugin' and 'p2_Feature'. From 'p2_Plugin', the role 'p2_Plugin' has cardinality 0..*, and from 'p2_Feature', the role 'p2_Feature10' has cardinality 0..*.

@@ -1,0 +1,47 @@
+The domain model 'ed2' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'ed2_EDD' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ed2_TreeElement' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str; 'index', which is of type str.
+
+'ed2_TreeObject' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'index', which is of type str; 'name', which is of type str.
+
+'ed2_Leaf' represents an important domain concept.
+It does not declare any attributes.
+
+'ed2_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'ed2_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'TreeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ed2_ED2' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ed2_TreeParent' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str; 'index', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TreeElementType' defines the following possible values: 'no', 'inadmissible', 'empty', 'dont_know', 'trusted', 'yes'.
+
+The model also captures inheritance relationships between classes.
+The class 'ed2_Node' is a specialization of 'TreeElement'.
+The class 'ed2_Leaf' is a specialization of 'TreeElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ed2_TreeObject' and 'ed2_EDD'. From 'ed2_TreeObject', the role 'ed2_TreeObject' has cardinality 0..*, and from 'ed2_EDD', the role 'ed2_EDD' has cardinality 0..*.
+An association connects 'ed2_EDD' and 'ed2_TreeParent'. From 'ed2_EDD', the role 'ed2_EDD2' has cardinality 0..*, and from 'ed2_TreeParent', the role 'ed2_TreeParent' has cardinality 0..*.
+An association connects 'ed2_Leaf' and 'ed2_Node'. From 'ed2_Leaf', the role 'ed2_Leaf' has cardinality 0..*, and from 'ed2_Node', the role 'ed2_Node' has cardinality 0..*.
+An association connects 'ed2_Node' and 'ed2_Node'. From 'ed2_Node', the role 'ed2_Node6' has cardinality 0..*, and from 'ed2_Node', the role 'ed2_Node4' has cardinality 0..*.
+An association connects 'ed2_TreeParent' and 'ed2_TreeObject'. From 'ed2_TreeParent', the role 'ed2_TreeParent8' has cardinality 0..*, and from 'ed2_TreeObject', the role 'ed2_TreeObject9' has cardinality 0..*.
+An association connects 'ed2_TreeParent' and 'ed2_TreeParent'. From 'ed2_TreeParent', the role 'ed2_TreeParent10' has cardinality 0..*, and from 'ed2_TreeParent', the role 'ed2_TreeParent12' has cardinality 0..*.
+An association connects 'ed2_TreeElement' and 'ed2_ED2'. From 'ed2_TreeElement', the role 'ed2_TreeElement' has cardinality 0..*, and from 'ed2_ED2', the role 'ed2_ED2' has cardinality 0..*.
+An association connects 'ed2_Model' and 'ed2_ED2'. From 'ed2_Model', the role 'ed2_Model' has cardinality 0..*, and from 'ed2_ED2', the role 'ed2_ED215' has cardinality 0..*.

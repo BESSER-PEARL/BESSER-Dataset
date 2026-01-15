@@ -1,0 +1,16 @@
+The domain model 'a' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'a_A' represents an important domain concept.
+It does not declare any attributes.
+
+'a_B' represents an important domain concept.
+It does not declare any attributes.
+
+'a_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'a_EObject' and 'a_A'. From 'a_EObject', the role 'a_EObject' has cardinality 0..*, and from 'a_A', the role 'a_A' has cardinality 0..*.
+An association connects 'a_A' and 'a_B'. From 'a_A', the role 'a_A2' has cardinality 0..*, and from 'a_B', the role 'a_B' has cardinality 0..*.

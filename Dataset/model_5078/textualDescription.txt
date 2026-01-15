@@ -1,0 +1,9 @@
+The domain model 'test' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'test_Input' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'test', which is of type str.
+
+'test_Output' represents an important domain concept.
+It has one attribute: 'key', which is of type str.

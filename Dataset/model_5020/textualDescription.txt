@@ -1,0 +1,17 @@
+The domain model 'esof_homework4_q2' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'esof_homework4_q2_USAddress' represents an important domain concept.
+It has the following attributes: 'state', which is of type str; 'street', which is of type str; 'city', which is of type str; 'country', which is of type str; 'name', which is of type str; 'zip', which is of type int.
+
+'esof_homework4_q2_Item' represents an important domain concept.
+It has the following attributes: 'quantity', which is of type int; 'partNum', which is of type str; 'productName', which is of type str; 'shipDate', which is of type str; 'comment', which is of type str; 'USPrice', which is of type int.
+
+'esof_homework4_q2_PurchaseOrder' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'orderDate', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'esof_homework4_q2_PurchaseOrder' and 'esof_homework4_q2_Item'. From 'esof_homework4_q2_PurchaseOrder', the role 'esof_homework4_q2_PurchaseOrder' has cardinality 0..*, and from 'esof_homework4_q2_Item', the role 'esof_homework4_q2_Item' has cardinality 0..*.
+An association connects 'esof_homework4_q2_USAddress' and 'esof_homework4_q2_PurchaseOrder'. From 'esof_homework4_q2_USAddress', the role 'esof_homework4_q2_USAddress' has cardinality 0..*, and from 'esof_homework4_q2_PurchaseOrder', the role 'esof_homework4_q2_PurchaseOrder2' has cardinality 0..*.
+An association connects 'esof_homework4_q2_USAddress' and 'esof_homework4_q2_PurchaseOrder'. From 'esof_homework4_q2_USAddress', the role 'esof_homework4_q2_USAddress5' has cardinality 0..*, and from 'esof_homework4_q2_PurchaseOrder', the role 'esof_homework4_q2_PurchaseOrder4' has cardinality 0..*.

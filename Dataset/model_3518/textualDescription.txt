@@ -1,0 +1,9 @@
+The domain model 'modelA' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'modelA_B' represents an important domain concept.
+It has one attribute: 'b', which is of type bool.
+
+'modelA_A' represents an important domain concept.
+It has one attribute: 'a', which is of type int.

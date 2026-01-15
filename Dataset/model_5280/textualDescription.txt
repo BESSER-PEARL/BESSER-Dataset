@@ -1,0 +1,12 @@
+The domain model 'AB' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'AB_A' represents an important domain concept.
+It has one attribute: 'i', which is of type int.
+
+'AB_B' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'AB_B' and 'AB_A'. From 'AB_B', the role 'AB_B' has cardinality 0..*, and from 'AB_A', the role 'AB_A' has cardinality 0..*.

@@ -1,0 +1,73 @@
+The domain model 'ktest301' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'ktest301_Attribute' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'ktest301_AbstractComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ktest301_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'ktest301_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'ktest301_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'ktest301_Item' represents an important domain concept.
+It does not declare any attributes.
+
+'ktest301_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ktest301_Attributes' represents an important domain concept.
+It has one attribute: 'signature', which is of type str.
+
+'ktest301_Required' represents an important domain concept.
+It does not declare any attributes.
+
+'ktest301_Content' represents an important domain concept.
+It has the following attributes: 'class', which is of type str; 'language', which is of type str.
+
+'ktest301_Type' represents an important domain concept.
+It has one attribute: 'signature', which is of type str.
+
+'AbstractComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ktest301_Provided' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ktest301_Interface' is a specialization of 'NamedElement'.
+The class 'ktest301_Binding' is a specialization of 'NamedElement'.
+The class 'ktest301_Required' is a specialization of 'Type'.
+The class 'ktest301_Provided' is a specialization of 'Type'.
+The class 'ktest301_Component' is a specialization of 'AbstractComponent'.
+The class 'ktest301_Component' is a specialization of 'NamedElement'.
+The class 'ktest301_Type' is a specialization of 'Interface'.
+The class 'ktest301_Item' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ktest301_Content' and 'ktest301_AbstractComponent'. From 'ktest301_Content', the role 'ktest301_Content' has cardinality 0..*, and from 'ktest301_AbstractComponent', the role 'ktest301_AbstractComponent' has cardinality 0..*.
+An association connects 'ktest301_Attributes' and 'ktest301_AbstractComponent'. From 'ktest301_Attributes', the role 'ktest301_Attributes' has cardinality 0..*, and from 'ktest301_AbstractComponent', the role 'ktest301_AbstractComponent2' has cardinality 0..*.
+An association connects 'ktest301_Required' and 'ktest301_AbstractComponent'. From 'ktest301_Required', the role 'ktest301_Required' has cardinality 0..*, and from 'ktest301_AbstractComponent', the role 'ktest301_AbstractComponent4' has cardinality 0..*.
+An association connects 'ktest301_AbstractComponent' and 'ktest301_Provided'. From 'ktest301_AbstractComponent', the role 'ktest301_AbstractComponent6' has cardinality 0..*, and from 'ktest301_Provided', the role 'ktest301_Provided' has cardinality 0..*.
+An association connects 'ktest301_Interface' and 'ktest301_Binding'. From 'ktest301_Interface', the role 'ktest301_Interface' has cardinality 0..*, and from 'ktest301_Binding', the role 'ktest301_Binding' has cardinality 0..*.
+An association connects 'ktest301_Binding' and 'ktest301_Interface'. From 'ktest301_Binding', the role 'ktest301_Binding9' has cardinality 0..*, and from 'ktest301_Interface', the role 'ktest301_Interface10' has cardinality 0..*.
+An association connects 'ktest301_Binding' and 'ktest301_Interface'. From 'ktest301_Binding', the role 'ktest301_Binding12' has cardinality 0..*, and from 'ktest301_Interface', the role 'ktest301_Interface13' has cardinality 0..*.
+An association connects 'ktest301_Attributes' and 'ktest301_Attribute'. From 'ktest301_Attributes', the role 'ktest301_Attributes15' has cardinality 0..*, and from 'ktest301_Attribute', the role 'ktest301_Attribute' has cardinality 0..*.
+An association connects 'ktest301_Component' and 'ktest301_Component'. From 'ktest301_Component', the role 'ktest301_Component16' has cardinality 0..*, and from 'ktest301_Component', the role 'ktest301_Component' has cardinality 0..*.
+An association connects 'ktest301_Type' and 'ktest301_Item'. From 'ktest301_Type', the role 'ktest301_Type' has cardinality 0..*, and from 'ktest301_Item', the role 'ktest301_Item' has cardinality 0..*.

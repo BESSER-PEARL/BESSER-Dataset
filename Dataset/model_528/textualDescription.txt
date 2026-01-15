@@ -1,0 +1,19 @@
+The domain model 'Household' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'Household_HouseholdRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'Household_Member' represents an important domain concept.
+It has one attribute: 'firstName', which is of type str.
+
+'Household_Family' represents an important domain concept.
+It has one attribute: 'lastName', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Household_Family' and 'Household_HouseholdRoot'. From 'Household_Family', the role 'Household_Family' has cardinality 0..*, and from 'Household_HouseholdRoot', the role 'Household_HouseholdRoot' has cardinality 0..*.
+An association connects 'Household_Family' and 'Household_Member'. From 'Household_Family', the role 'Household_Family2' has cardinality 0..*, and from 'Household_Member', the role 'Household_Member' has cardinality 0..*.
+An association connects 'Household_Family' and 'Household_Member'. From 'Household_Family', the role 'Household_Family4' has cardinality 0..*, and from 'Household_Member', the role 'Household_Member5' has cardinality 0..*.
+An association connects 'Household_Family' and 'Household_Member'. From 'Household_Family', the role 'Household_Family7' has cardinality 0..*, and from 'Household_Member', the role 'Household_Member8' has cardinality 0..*.
+An association connects 'Household_Family' and 'Household_Member'. From 'Household_Family', the role 'Household_Family10' has cardinality 0..*, and from 'Household_Member', the role 'Household_Member11' has cardinality 0..*.

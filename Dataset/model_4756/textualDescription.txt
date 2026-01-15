@@ -1,0 +1,100 @@
+The domain model 'effbd103' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'effbd103_Item' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'effbd103_LoopExit' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessNode' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd103_Final' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd103_SequenceNode' represents an important domain concept.
+It has the following attributes: 'tMin', which is of type int; 'tMax', which is of type int; 'name', which is of type str.
+
+'effbd103_Port' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'effbd103_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd103_OutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd103_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd103_And' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd103_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd103_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd103_InputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd103_Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd103_ProcessNode' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'effbd103_Function' represents an important domain concept.
+It has one attribute: 'domain', which is of type str.
+
+'effbd103_Description' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd103_Iteration' represents an important domain concept.
+It does not declare any attributes.
+
+'SequenceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd103_Start' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FunctionDomain' defines the following possible values: 'space', 'time', 'form'.
+
+The model also captures inheritance relationships between classes.
+The class 'effbd103_Function' is a specialization of 'SequenceNode'.
+The class 'effbd103_Function' is a specialization of 'ProcessNode'.
+The class 'effbd103_Sequence' is a specialization of 'SequenceNode'.
+The class 'effbd103_And' is a specialization of 'Sequence'.
+The class 'effbd103_Or' is a specialization of 'Sequence'.
+The class 'effbd103_Start' is a specialization of 'Sequence'.
+The class 'effbd103_Final' is a specialization of 'Sequence'.
+The class 'effbd103_Loop' is a specialization of 'Sequence'.
+The class 'effbd103_InputPort' is a specialization of 'Port'.
+The class 'effbd103_Flow' is a specialization of 'ProcessNode'.
+The class 'effbd103_OutputPort' is a specialization of 'Port'.
+The class 'effbd103_LoopExit' is a specialization of 'Sequence'.
+The class 'effbd103_Iteration' is a specialization of 'Sequence'.
+
+Relationships between classes are modeled using associations.
+An association connects 'effbd103_Function' and 'effbd103_Function'. From 'effbd103_Function', the role 'effbd103_Function0' has cardinality 0..*, and from 'effbd103_Function', the role 'effbd103_Function' has cardinality 0..*.
+An association connects 'effbd103_Sequence' and 'effbd103_Function'. From 'effbd103_Sequence', the role 'effbd103_Sequence' has cardinality 0..*, and from 'effbd103_Function', the role 'effbd103_Function3' has cardinality 0..*.
+An association connects 'effbd103_Function' and 'effbd103_Flow'. From 'effbd103_Function', the role 'effbd103_Function5' has cardinality 0..*, and from 'effbd103_Flow', the role 'effbd103_Flow' has cardinality 0..*.
+An association connects 'effbd103_OutputPort' and 'effbd103_Function'. From 'effbd103_OutputPort', the role 'effbd103_OutputPort' has cardinality 0..*, and from 'effbd103_Function', the role 'effbd103_Function7' has cardinality 0..*.
+An association connects 'effbd103_Function' and 'effbd103_InputPort'. From 'effbd103_Function', the role 'effbd103_Function9' has cardinality 0..*, and from 'effbd103_InputPort', the role 'effbd103_InputPort' has cardinality 0..*.
+An association connects 'effbd103_Description' and 'effbd103_Function'. From 'effbd103_Description', the role 'effbd103_Description' has cardinality 0..*, and from 'effbd103_Function', the role 'effbd103_Function11' has cardinality 0..*.
+An association connects 'effbd103_Function' and 'effbd103_Token'. From 'effbd103_Function', the role 'effbd103_Function13' has cardinality 0..*, and from 'effbd103_Token', the role 'effbd103_Token' has cardinality 0..*.
+An association connects 'effbd103_SequenceNode' and 'effbd103_SequenceNode'. From 'effbd103_SequenceNode', the role 'effbd103_SequenceNode' has cardinality 0..*, and from 'effbd103_SequenceNode', the role 'effbd103_SequenceNode14' has cardinality 0..*.
+An association connects 'effbd103_InputPort' and 'effbd103_Flow'. From 'effbd103_InputPort', the role 'effbd103_InputPort18' has cardinality 0..*, and from 'effbd103_Flow', the role 'effbd103_Flow17' has cardinality 0..*.
+An association connects 'effbd103_Item' and 'effbd103_Flow'. From 'effbd103_Item', the role 'effbd103_Item' has cardinality 0..*, and from 'effbd103_Flow', the role 'effbd103_Flow20' has cardinality 0..*.
+An association connects 'effbd103_Flow' and 'effbd103_OutputPort'. From 'effbd103_Flow', the role 'effbd103_Flow23' has cardinality 0..*, and from 'effbd103_OutputPort', the role 'effbd103_OutputPort22' has cardinality 0..*.

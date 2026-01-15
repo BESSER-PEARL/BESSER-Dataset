@@ -1,0 +1,30 @@
+The domain model 'TransitionQVT' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'TransitionQVT_B' represents an important domain concept.
+It has one attribute: 'boss', which is of type str.
+
+'TransitionQVT_Element' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'TransitionQVT_A' represents an important domain concept.
+It has the following attributes: 'height', which is of type float; 'reduction', which is of type str.
+
+'TransitionQVT_C' represents an important domain concept.
+It has one attribute: 'c', which is of type str.
+
+'TransitionQVT_Root' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'TransitionQVT_A' is a specialization of 'Element'.
+The class 'TransitionQVT_B' is a specialization of 'Element'.
+The class 'TransitionQVT_C' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'TransitionQVT_Root' and 'TransitionQVT_Element'. From 'TransitionQVT_Root', the role 'TransitionQVT_Root' has cardinality 0..*, and from 'TransitionQVT_Element', the role 'TransitionQVT_Element' has cardinality 0..*.
+An association connects 'TransitionQVT_Element' and 'TransitionQVT_Element'. From 'TransitionQVT_Element', the role 'TransitionQVT_Element1' has cardinality 0..*, and from 'TransitionQVT_Element', the role 'TransitionQVT_Element3' has cardinality 0..*.

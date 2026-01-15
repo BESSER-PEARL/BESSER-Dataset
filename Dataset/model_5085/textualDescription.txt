@@ -1,0 +1,84 @@
+The domain model 'fragdial' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'fragdial_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'fragdial_Output' represents an important domain concept.
+It has one attribute: 'format', which is of type str.
+
+'fragdial_AbstractComponent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fragdial_Content' represents an important domain concept.
+It has the following attributes: 'class', which is of type str; 'language', which is of type str.
+
+'fragdial_Interface' represents an important domain concept.
+It has the following attributes: 'startProperty', which is of type str; 'cardinality', which is of type str; 'name', which is of type str; 'contingency', which is of type str; 'signature', which is of type str.
+
+'fragdial_Include' represents an important domain concept.
+It has one attribute: 'file', which is of type str.
+
+'fragdial_Attributes' represents an important domain concept.
+It has one attribute: 'signature', which is of type str.
+
+'fragdial_Required' represents an important domain concept.
+It does not declare any attributes.
+
+'fragdial_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'fragdial_Component2' represents an important domain concept.
+It does not declare any attributes.
+
+'fragdial_Component3' represents an important domain concept.
+It does not declare any attributes.
+
+'fragdial_Attribute' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'fragdial_Provided' represents an important domain concept.
+It does not declare any attributes.
+
+'fragdial_Ldflag' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'fragdial_Controller' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'descriptor', which is of type str.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'fragdial_Component1' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'fragdial_Required' is a specialization of 'Interface'.
+The class 'fragdial_Provided' is a specialization of 'Interface'.
+The class 'fragdial_Component' is a specialization of 'AbstractComponent'.
+The class 'fragdial_Component1' is a specialization of 'AbstractComponent'.
+The class 'fragdial_Component2' is a specialization of 'AbstractComponent'.
+The class 'fragdial_Component3' is a specialization of 'AbstractComponent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fragdial_AbstractComponent' and 'fragdial_Content'. From 'fragdial_AbstractComponent', the role 'fragdial_AbstractComponent' has cardinality 0..*, and from 'fragdial_Content', the role 'fragdial_Content' has cardinality 0..*.
+An association connects 'fragdial_AbstractComponent' and 'fragdial_Attributes'. From 'fragdial_AbstractComponent', the role 'fragdial_AbstractComponent2' has cardinality 0..*, and from 'fragdial_Attributes', the role 'fragdial_Attributes' has cardinality 0..*.
+An association connects 'fragdial_AbstractComponent' and 'fragdial_Output'. From 'fragdial_AbstractComponent', the role 'fragdial_AbstractComponent4' has cardinality 0..*, and from 'fragdial_Output', the role 'fragdial_Output' has cardinality 0..*.
+An association connects 'fragdial_Controller' and 'fragdial_AbstractComponent'. From 'fragdial_Controller', the role 'fragdial_Controller' has cardinality 0..*, and from 'fragdial_AbstractComponent', the role 'fragdial_AbstractComponent6' has cardinality 0..*.
+An association connects 'fragdial_Required' and 'fragdial_AbstractComponent'. From 'fragdial_Required', the role 'fragdial_Required' has cardinality 0..*, and from 'fragdial_AbstractComponent', the role 'fragdial_AbstractComponent8' has cardinality 0..*.
+An association connects 'fragdial_Provided' and 'fragdial_AbstractComponent'. From 'fragdial_Provided', the role 'fragdial_Provided' has cardinality 0..*, and from 'fragdial_AbstractComponent', the role 'fragdial_AbstractComponent10' has cardinality 0..*.
+An association connects 'fragdial_Binding' and 'fragdial_Interface'. From 'fragdial_Binding', the role 'fragdial_Binding' has cardinality 0..*, and from 'fragdial_Interface', the role 'fragdial_Interface' has cardinality 0..*.
+An association connects 'fragdial_Binding' and 'fragdial_Interface'. From 'fragdial_Binding', the role 'fragdial_Binding13' has cardinality 0..*, and from 'fragdial_Interface', the role 'fragdial_Interface14' has cardinality 0..*.
+An association connects 'fragdial_Binding' and 'fragdial_Interface'. From 'fragdial_Binding', the role 'fragdial_Binding16' has cardinality 0..*, and from 'fragdial_Interface', the role 'fragdial_Interface17' has cardinality 0..*.
+An association connects 'fragdial_AbstractComponent' and 'fragdial_Content'. From 'fragdial_AbstractComponent', the role 'fragdial_AbstractComponent20' has cardinality 0..*, and from 'fragdial_Content', the role 'fragdial_Content19' has cardinality 0..*.
+An association connects 'fragdial_Content' and 'fragdial_Include'. From 'fragdial_Content', the role 'fragdial_Content22' has cardinality 0..*, and from 'fragdial_Include', the role 'fragdial_Include' has cardinality 0..*.
+An association connects 'fragdial_Content' and 'fragdial_Ldflag'. From 'fragdial_Content', the role 'fragdial_Content24' has cardinality 0..*, and from 'fragdial_Ldflag', the role 'fragdial_Ldflag' has cardinality 0..*.
+An association connects 'fragdial_Attributes' and 'fragdial_Attribute'. From 'fragdial_Attributes', the role 'fragdial_Attributes26' has cardinality 0..*, and from 'fragdial_Attribute', the role 'fragdial_Attribute' has cardinality 0..*.
+An association connects 'fragdial_Component1' and 'fragdial_Component'. From 'fragdial_Component1', the role 'fragdial_Component1' has cardinality 0..*, and from 'fragdial_Component', the role 'fragdial_Component' has cardinality 0..*.
+An association connects 'fragdial_Component' and 'fragdial_Component'. From 'fragdial_Component', the role 'fragdial_Component30' has cardinality 0..*, and from 'fragdial_Component', the role 'fragdial_Component28' has cardinality 0..*.
+An association connects 'fragdial_Component1' and 'fragdial_Component2'. From 'fragdial_Component1', the role 'fragdial_Component132' has cardinality 0..*, and from 'fragdial_Component2', the role 'fragdial_Component2' has cardinality 0..*.
+An association connects 'fragdial_Component3' and 'fragdial_Component2'. From 'fragdial_Component3', the role 'fragdial_Component3' has cardinality 0..*, and from 'fragdial_Component2', the role 'fragdial_Component234' has cardinality 0..*.

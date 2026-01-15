@@ -1,0 +1,91 @@
+The domain model 'form' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'form_TextArea' represents an important domain concept.
+It does not declare any attributes.
+
+'form_VisibilityCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'form_ListItem' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'form_TextField' represents an important domain concept.
+It has one attribute: 'encrypted', which is of type bool.
+
+'form_List' represents an important domain concept.
+It has one attribute: 'ordered', which is of type bool.
+
+'form_Text' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'VisibilityCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'form_Page' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'InputField' represents an important domain concept.
+It does not declare any attributes.
+
+'form_PageElement' represents an important domain concept.
+It has one attribute: 'elementId', which is of type str.
+
+'form_SelectionCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'form_Heading' represents an important domain concept.
+It has one attribute: 'level', which is of type int.
+
+'PageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Text' represents an important domain concept.
+It does not declare any attributes.
+
+'form_SelectionItem' represents an important domain concept.
+It has the following attributes: 'selected', which is of type bool; 'label', which is of type str.
+
+'form_Form' represents an important domain concept.
+It does not declare any attributes.
+
+'form_Paragraph' represents an important domain concept.
+It does not declare any attributes.
+
+'form_InputField' represents an important domain concept.
+It has the following attributes: 'mandatory', which is of type bool; 'label', which is of type str.
+
+'form_SelectionField' represents an important domain concept.
+It has one attribute: 'selectionFieldType', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SelectionFieldType' defines the following possible values: 'Checkbox', 'Radio', 'Combobox'.
+
+The model also captures inheritance relationships between classes.
+The class 'form_InputField' is a specialization of 'PageElement'.
+The class 'form_TextField' is a specialization of 'InputField'.
+The class 'form_SelectionField' is a specialization of 'InputField'.
+The class 'form_TextArea' is a specialization of 'InputField'.
+The class 'form_Text' is a specialization of 'PageElement'.
+The class 'form_Heading' is a specialization of 'Text'.
+The class 'form_Paragraph' is a specialization of 'Text'.
+The class 'form_List' is a specialization of 'PageElement'.
+The class 'form_SelectionCondition' is a specialization of 'VisibilityCondition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'form_Form' and 'form_Page'. From 'form_Form', the role 'form_Form' has cardinality 0..*, and from 'form_Page', the role 'form_Page' has cardinality 0..*.
+An association connects 'form_Page' and 'form_Form'. From 'form_Page', the role 'form_Page3' has cardinality 0..*, and from 'form_Form', the role 'form_Form2' has cardinality 0..*.
+An association connects 'form_Page' and 'form_Page'. From 'form_Page', the role 'form_Page4' has cardinality 0..*, and from 'form_Page', the role 'form_Page6' has cardinality 0..*.
+An association connects 'form_Page' and 'form_Page'. From 'form_Page', the role 'form_Page7' has cardinality 0..*, and from 'form_Page', the role 'form_Page9' has cardinality 0..*.
+An association connects 'form_Page' and 'form_Page'. From 'form_Page', the role 'Page' has cardinality 0..*, and from 'form_Page', the role 'previousPage' has cardinality 0..*.
+An association connects 'form_Page' and 'form_PageElement'. From 'form_Page', the role 'page' has cardinality 0..*, and from 'form_PageElement', the role 'PageElement' has cardinality 0..*.
+An association connects 'form_Page' and 'form_Page'. From 'form_Page', the role 'nextPage' has cardinality 0..*, and from 'form_Page', the role 'Page15' has cardinality 0..*.
+An association connects 'form_Page' and 'form_VisibilityCondition'. From 'form_Page', the role 'page17' has cardinality 0..*, and from 'form_VisibilityCondition', the role 'VisibilityCondition' has cardinality 0..*.
+An association connects 'form_PageElement' and 'form_Page'. From 'form_PageElement', the role 'elements' has cardinality 0..*, and from 'form_Page', the role 'Page19' has cardinality 0..*.
+An association connects 'form_SelectionItem' and 'form_SelectionField'. From 'form_SelectionItem', the role 'SelectionItem' has cardinality 0..*, and from 'form_SelectionField', the role 'field' has cardinality 0..*.
+An association connects 'form_SelectionField' and 'form_SelectionItem'. From 'form_SelectionField', the role 'SelectionField' has cardinality 0..*, and from 'form_SelectionItem', the role 'items' has cardinality 0..*.
+An association connects 'form_List' and 'form_ListItem'. From 'form_List', the role 'form_List' has cardinality 0..*, and from 'form_ListItem', the role 'form_ListItem' has cardinality 0..*.
+An association connects 'form_VisibilityCondition' and 'form_Page'. From 'form_VisibilityCondition', the role 'visibilityConditions' has cardinality 0..*, and from 'form_Page', the role 'Page24' has cardinality 0..*.
+An association connects 'form_VisibilityCondition' and 'form_PageElement'. From 'form_VisibilityCondition', the role 'form_VisibilityCondition' has cardinality 0..*, and from 'form_PageElement', the role 'form_PageElement' has cardinality 0..*.
+An association connects 'form_SelectionItem' and 'form_SelectionCondition'. From 'form_SelectionItem', the role 'form_SelectionItem' has cardinality 0..*, and from 'form_SelectionCondition', the role 'form_SelectionCondition' has cardinality 0..*.

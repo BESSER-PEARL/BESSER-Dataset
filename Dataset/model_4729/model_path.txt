@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/viatra/VIATRA-Generator/Framework/hu.bme.mit.inf.dslreasoner.logic.model/model/logiclanguage.ecore

@@ -1,0 +1,174 @@
+####################
+# STRUCTURAL MODEL #
+####################
+
+from besser.BUML.metamodel.structural import (
+    Class, Property, Method, Parameter,
+    BinaryAssociation, Generalization, DomainModel,
+    Enumeration, EnumerationLiteral, Multiplicity,
+    StringType, IntegerType, FloatType, BooleanType,
+    TimeType, DateType, DateTimeType, TimeDeltaType,
+    AnyType, Constraint, AssociationClass, Metadata
+)
+
+# Classes
+ArchimateImplementationAndMigration_BusinessRole = Class(name="ArchimateImplementationAndMigration::BusinessRole")
+ArchimateImplementationAndMigration_BusinessCollaboration = Class(name="ArchimateImplementationAndMigration::BusinessCollaboration")
+ArchimateImplementationAndMigration_BusinessInterface = Class(name="ArchimateImplementationAndMigration::BusinessInterface")
+ArchimateImplementationAndMigration_NodeElement = Class(name="ArchimateImplementationAndMigration::NodeElement", is_abstract=True)
+ArchimateImplementationAndMigration_BusinessActor = Class(name="ArchimateImplementationAndMigration::BusinessActor")
+NodeElement = Class(name="NodeElement")
+ArchimateImplementationAndMigration_BusinessEvent = Class(name="ArchimateImplementationAndMigration::BusinessEvent")
+ArchimateImplementationAndMigration_BusinessService = Class(name="ArchimateImplementationAndMigration::BusinessService")
+ArchimateImplementationAndMigration_BusinessObject = Class(name="ArchimateImplementationAndMigration::BusinessObject")
+ArchimateImplementationAndMigration_Location = Class(name="ArchimateImplementationAndMigration::Location")
+ArchimateImplementationAndMigration_BusinessProcess = Class(name="ArchimateImplementationAndMigration::BusinessProcess")
+ArchimateImplementationAndMigration_BusinessFunction = Class(name="ArchimateImplementationAndMigration::BusinessFunction")
+ArchimateImplementationAndMigration_BusinessInteraction = Class(name="ArchimateImplementationAndMigration::BusinessInteraction")
+ArchimateImplementationAndMigration_Contract = Class(name="ArchimateImplementationAndMigration::Contract")
+ArchimateImplementationAndMigration_Grouping = Class(name="ArchimateImplementationAndMigration::Grouping")
+ArchimateImplementationAndMigration_Junction = Class(name="ArchimateImplementationAndMigration::Junction")
+Relationship = Class(name="Relationship")
+ArchimateImplementationAndMigration_Representation = Class(name="ArchimateImplementationAndMigration::Representation")
+ArchimateImplementationAndMigration_Meaning = Class(name="ArchimateImplementationAndMigration::Meaning")
+ArchimateImplementationAndMigration_Value = Class(name="ArchimateImplementationAndMigration::Value")
+ArchimateImplementationAndMigration_Product = Class(name="ArchimateImplementationAndMigration::Product")
+ArchimateImplementationAndMigration_Access = Class(name="ArchimateImplementationAndMigration::Access")
+ArchimateImplementationAndMigration_UsedBy = Class(name="ArchimateImplementationAndMigration::UsedBy")
+ArchimateImplementationAndMigration_Realization = Class(name="ArchimateImplementationAndMigration::Realization")
+ArchimateImplementationAndMigration_Assignment = Class(name="ArchimateImplementationAndMigration::Assignment")
+ArchimateImplementationAndMigration_Relationship = Class(name="ArchimateImplementationAndMigration::Relationship", is_abstract=True)
+ArchimateImplementationAndMigration_Association = Class(name="ArchimateImplementationAndMigration::Association")
+ArchimateImplementationAndMigration_Aggregation = Class(name="ArchimateImplementationAndMigration::Aggregation")
+ArchimateImplementationAndMigration_Composition = Class(name="ArchimateImplementationAndMigration::Composition")
+ArchimateImplementationAndMigration_Flow = Class(name="ArchimateImplementationAndMigration::Flow")
+ArchimateImplementationAndMigration_Triggering = Class(name="ArchimateImplementationAndMigration::Triggering")
+ArchimateImplementationAndMigration_Specialization = Class(name="ArchimateImplementationAndMigration::Specialization")
+
+# ArchimateImplementationAndMigration_BusinessRole class attributes and methods
+
+# ArchimateImplementationAndMigration_BusinessCollaboration class attributes and methods
+
+# ArchimateImplementationAndMigration_BusinessInterface class attributes and methods
+
+# ArchimateImplementationAndMigration_NodeElement class attributes and methods
+
+# ArchimateImplementationAndMigration_BusinessActor class attributes and methods
+
+# NodeElement class attributes and methods
+
+# ArchimateImplementationAndMigration_BusinessEvent class attributes and methods
+
+# ArchimateImplementationAndMigration_BusinessService class attributes and methods
+
+# ArchimateImplementationAndMigration_BusinessObject class attributes and methods
+
+# ArchimateImplementationAndMigration_Location class attributes and methods
+
+# ArchimateImplementationAndMigration_BusinessProcess class attributes and methods
+
+# ArchimateImplementationAndMigration_BusinessFunction class attributes and methods
+
+# ArchimateImplementationAndMigration_BusinessInteraction class attributes and methods
+
+# ArchimateImplementationAndMigration_Contract class attributes and methods
+
+# ArchimateImplementationAndMigration_Grouping class attributes and methods
+
+# ArchimateImplementationAndMigration_Junction class attributes and methods
+
+# Relationship class attributes and methods
+
+# ArchimateImplementationAndMigration_Representation class attributes and methods
+
+# ArchimateImplementationAndMigration_Meaning class attributes and methods
+
+# ArchimateImplementationAndMigration_Value class attributes and methods
+
+# ArchimateImplementationAndMigration_Product class attributes and methods
+
+# ArchimateImplementationAndMigration_Access class attributes and methods
+
+# ArchimateImplementationAndMigration_UsedBy class attributes and methods
+
+# ArchimateImplementationAndMigration_Realization class attributes and methods
+
+# ArchimateImplementationAndMigration_Assignment class attributes and methods
+
+# ArchimateImplementationAndMigration_Relationship class attributes and methods
+
+# ArchimateImplementationAndMigration_Association class attributes and methods
+
+# ArchimateImplementationAndMigration_Aggregation class attributes and methods
+
+# ArchimateImplementationAndMigration_Composition class attributes and methods
+
+# ArchimateImplementationAndMigration_Flow class attributes and methods
+
+# ArchimateImplementationAndMigration_Triggering class attributes and methods
+
+# ArchimateImplementationAndMigration_Specialization class attributes and methods
+
+# Relationships
+source0: BinaryAssociation = BinaryAssociation(
+    name="source0",
+    ends={
+        Property(name="ArchimateImplementationAndMigration_NodeElement", type=ArchimateImplementationAndMigration_Relationship, multiplicity=Multiplicity(1, 1)),
+        Property(name="ArchimateImplementationAndMigration_Relationship", type=ArchimateImplementationAndMigration_NodeElement, multiplicity=Multiplicity(1, 1))
+    }
+)
+target1: BinaryAssociation = BinaryAssociation(
+    name="target1",
+    ends={
+        Property(name="ArchimateImplementationAndMigration_NodeElement3", type=ArchimateImplementationAndMigration_Relationship, multiplicity=Multiplicity(1, 1)),
+        Property(name="ArchimateImplementationAndMigration_Relationship2", type=ArchimateImplementationAndMigration_NodeElement, multiplicity=Multiplicity(1, 1))
+    }
+)
+
+# Generalizations
+gen_ArchimateImplementationAndMigration_BusinessRole_NodeElement = Generalization(general=NodeElement, specific=ArchimateImplementationAndMigration_BusinessRole)
+gen_ArchimateImplementationAndMigration_BusinessCollaboration_NodeElement = Generalization(general=NodeElement, specific=ArchimateImplementationAndMigration_BusinessCollaboration)
+gen_ArchimateImplementationAndMigration_BusinessInterface_NodeElement = Generalization(general=NodeElement, specific=ArchimateImplementationAndMigration_BusinessInterface)
+gen_ArchimateImplementationAndMigration_BusinessActor_NodeElement = Generalization(general=NodeElement, specific=ArchimateImplementationAndMigration_BusinessActor)
+gen_ArchimateImplementationAndMigration_BusinessEvent_NodeElement = Generalization(general=NodeElement, specific=ArchimateImplementationAndMigration_BusinessEvent)
+gen_ArchimateImplementationAndMigration_BusinessService_NodeElement = Generalization(general=NodeElement, specific=ArchimateImplementationAndMigration_BusinessService)
+gen_ArchimateImplementationAndMigration_BusinessObject_NodeElement = Generalization(general=NodeElement, specific=ArchimateImplementationAndMigration_BusinessObject)
+gen_ArchimateImplementationAndMigration_Location_NodeElement = Generalization(general=NodeElement, specific=ArchimateImplementationAndMigration_Location)
+gen_ArchimateImplementationAndMigration_BusinessProcess_NodeElement = Generalization(general=NodeElement, specific=ArchimateImplementationAndMigration_BusinessProcess)
+gen_ArchimateImplementationAndMigration_BusinessFunction_NodeElement = Generalization(general=NodeElement, specific=ArchimateImplementationAndMigration_BusinessFunction)
+gen_ArchimateImplementationAndMigration_BusinessInteraction_NodeElement = Generalization(general=NodeElement, specific=ArchimateImplementationAndMigration_BusinessInteraction)
+gen_ArchimateImplementationAndMigration_Contract_NodeElement = Generalization(general=NodeElement, specific=ArchimateImplementationAndMigration_Contract)
+gen_ArchimateImplementationAndMigration_Grouping_NodeElement = Generalization(general=NodeElement, specific=ArchimateImplementationAndMigration_Grouping)
+gen_ArchimateImplementationAndMigration_Junction_Relationship = Generalization(general=Relationship, specific=ArchimateImplementationAndMigration_Junction)
+gen_ArchimateImplementationAndMigration_Representation_NodeElement = Generalization(general=NodeElement, specific=ArchimateImplementationAndMigration_Representation)
+gen_ArchimateImplementationAndMigration_Meaning_NodeElement = Generalization(general=NodeElement, specific=ArchimateImplementationAndMigration_Meaning)
+gen_ArchimateImplementationAndMigration_Value_NodeElement = Generalization(general=NodeElement, specific=ArchimateImplementationAndMigration_Value)
+gen_ArchimateImplementationAndMigration_Product_NodeElement = Generalization(general=NodeElement, specific=ArchimateImplementationAndMigration_Product)
+gen_ArchimateImplementationAndMigration_Access_Relationship = Generalization(general=Relationship, specific=ArchimateImplementationAndMigration_Access)
+gen_ArchimateImplementationAndMigration_UsedBy_Relationship = Generalization(general=Relationship, specific=ArchimateImplementationAndMigration_UsedBy)
+gen_ArchimateImplementationAndMigration_Realization_Relationship = Generalization(general=Relationship, specific=ArchimateImplementationAndMigration_Realization)
+gen_ArchimateImplementationAndMigration_Assignment_Relationship = Generalization(general=Relationship, specific=ArchimateImplementationAndMigration_Assignment)
+gen_ArchimateImplementationAndMigration_Association_Relationship = Generalization(general=Relationship, specific=ArchimateImplementationAndMigration_Association)
+gen_ArchimateImplementationAndMigration_Aggregation_Relationship = Generalization(general=Relationship, specific=ArchimateImplementationAndMigration_Aggregation)
+gen_ArchimateImplementationAndMigration_Composition_Relationship = Generalization(general=Relationship, specific=ArchimateImplementationAndMigration_Composition)
+gen_ArchimateImplementationAndMigration_Flow_Relationship = Generalization(general=Relationship, specific=ArchimateImplementationAndMigration_Flow)
+gen_ArchimateImplementationAndMigration_Triggering_Relationship = Generalization(general=Relationship, specific=ArchimateImplementationAndMigration_Triggering)
+gen_ArchimateImplementationAndMigration_Specialization_Relationship = Generalization(general=Relationship, specific=ArchimateImplementationAndMigration_Specialization)
+
+# Domain Model
+domain_model = DomainModel(
+    name="ArchimateImplementationAndMigration",
+    types={ArchimateImplementationAndMigration_BusinessRole, ArchimateImplementationAndMigration_BusinessCollaboration, ArchimateImplementationAndMigration_BusinessInterface, ArchimateImplementationAndMigration_NodeElement, ArchimateImplementationAndMigration_BusinessActor, NodeElement, ArchimateImplementationAndMigration_BusinessEvent, ArchimateImplementationAndMigration_BusinessService, ArchimateImplementationAndMigration_BusinessObject, ArchimateImplementationAndMigration_Location, ArchimateImplementationAndMigration_BusinessProcess, ArchimateImplementationAndMigration_BusinessFunction, ArchimateImplementationAndMigration_BusinessInteraction, ArchimateImplementationAndMigration_Contract, ArchimateImplementationAndMigration_Grouping, ArchimateImplementationAndMigration_Junction, Relationship, ArchimateImplementationAndMigration_Representation, ArchimateImplementationAndMigration_Meaning, ArchimateImplementationAndMigration_Value, ArchimateImplementationAndMigration_Product, ArchimateImplementationAndMigration_Access, ArchimateImplementationAndMigration_UsedBy, ArchimateImplementationAndMigration_Realization, ArchimateImplementationAndMigration_Assignment, ArchimateImplementationAndMigration_Relationship, ArchimateImplementationAndMigration_Association, ArchimateImplementationAndMigration_Aggregation, ArchimateImplementationAndMigration_Composition, ArchimateImplementationAndMigration_Flow, ArchimateImplementationAndMigration_Triggering, ArchimateImplementationAndMigration_Specialization},
+    associations={source0, target1},
+    generalizations={gen_ArchimateImplementationAndMigration_BusinessRole_NodeElement, gen_ArchimateImplementationAndMigration_BusinessCollaboration_NodeElement, gen_ArchimateImplementationAndMigration_BusinessInterface_NodeElement, gen_ArchimateImplementationAndMigration_BusinessActor_NodeElement, gen_ArchimateImplementationAndMigration_BusinessEvent_NodeElement, gen_ArchimateImplementationAndMigration_BusinessService_NodeElement, gen_ArchimateImplementationAndMigration_BusinessObject_NodeElement, gen_ArchimateImplementationAndMigration_Location_NodeElement, gen_ArchimateImplementationAndMigration_BusinessProcess_NodeElement, gen_ArchimateImplementationAndMigration_BusinessFunction_NodeElement, gen_ArchimateImplementationAndMigration_BusinessInteraction_NodeElement, gen_ArchimateImplementationAndMigration_Contract_NodeElement, gen_ArchimateImplementationAndMigration_Grouping_NodeElement, gen_ArchimateImplementationAndMigration_Junction_Relationship, gen_ArchimateImplementationAndMigration_Representation_NodeElement, gen_ArchimateImplementationAndMigration_Meaning_NodeElement, gen_ArchimateImplementationAndMigration_Value_NodeElement, gen_ArchimateImplementationAndMigration_Product_NodeElement, gen_ArchimateImplementationAndMigration_Access_Relationship, gen_ArchimateImplementationAndMigration_UsedBy_Relationship, gen_ArchimateImplementationAndMigration_Realization_Relationship, gen_ArchimateImplementationAndMigration_Assignment_Relationship, gen_ArchimateImplementationAndMigration_Association_Relationship, gen_ArchimateImplementationAndMigration_Aggregation_Relationship, gen_ArchimateImplementationAndMigration_Composition_Relationship, gen_ArchimateImplementationAndMigration_Flow_Relationship, gen_ArchimateImplementationAndMigration_Triggering_Relationship, gen_ArchimateImplementationAndMigration_Specialization_Relationship},
+    metadata=None
+)
+
+
+###################### 
+ # PROJECT DEFINITION # 
+ ###################### 
+from besser.BUML.metamodel.project import Project 
+from besser.BUML.metamodel.structural.structural import Metadata
+metadata = Metadata(description="New project")
+project = Project(name="sampleModel",models=[domain_model],owner="User",metadata=metadata)

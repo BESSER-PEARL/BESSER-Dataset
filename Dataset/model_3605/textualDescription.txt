@@ -1,0 +1,354 @@
+The domain model 'gremlin' describes the core structural elements and their relationships within the system.
+
+The model defines 81 main class(es).
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_IndexCall' represents an important domain concept.
+It has the following attributes: 'indexQuery', which is of type str; 'indexName', which is of type str; 'indexProperty', which is of type str.
+
+'gremlin_FirstCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_ListDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Step' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_PropertyStep' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gremlin_Step' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_InVStep' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_OutEStep' represents an important domain concept.
+It has one attribute: 'relationshipName', which is of type str.
+
+'gremlin_EqualityExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'TraversalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_TraversalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_NextCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_GreaterOrEqualExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_ExceptStep' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_LessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'gremlin_DifferenceExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_NotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_IntersectionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_MethodCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_ScatterStep' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_OrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_VerticesStep' represents an important domain concept.
+It has one attribute: 'vertexId', which is of type str.
+
+'gremlin_RetainStep' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_PlusExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_ClosureIt' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodCall' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_GreaterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_AffectationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_UnionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_OutVStep' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_TernaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_ToListCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_HasNextCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_VariableAccess' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gremlin_InEStep' represents an important domain concept.
+It has one attribute: 'relationshipName', which is of type str.
+
+'gremlin_ToIntegerCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_ContainsCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_LessOrEqualExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_TransformStep' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_GatherStep' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_CustomMethodCall' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gremlin_VariableDeclaration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'final', which is of type bool.
+
+'gremlin_IdentityStep' represents an important domain concept.
+It has one attribute: 'needed', which is of type bool.
+
+'gremlin_SetDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_CountCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_CustomStep' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gremlin_EdgesStep' represents an important domain concept.
+It has one attribute: 'relationshipName', which is of type str.
+
+'gremlin_DoubleLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'gremlin_LeftShiftExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'gremlin_AddAllCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_SizeCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_SortedSetDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_GremlinScript' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gremlin_Closure' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_MethodDeclaration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'parameters', which is of type str.
+
+'gremlin_FillStep' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_IsEmptyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_FilterStep' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_ContainsAllCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_StartStep' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_RetainAllCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_ReturnStatement' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'gremlin_CollectionDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gremlin_InExpression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'gremlin_ReturnStatement' is a specialization of 'Instruction'.
+The class 'gremlin_MethodDeclaration' is a specialization of 'Instruction'.
+The class 'gremlin_TypeDeclaration' is a specialization of 'Instruction'.
+The class 'gremlin_ListDeclaration' is a specialization of 'TypeDeclaration'.
+The class 'gremlin_SetDeclaration' is a specialization of 'TypeDeclaration'.
+The class 'gremlin_SortedSetDeclaration' is a specialization of 'TypeDeclaration'.
+The class 'gremlin_VariableDeclaration' is a specialization of 'Instruction'.
+The class 'gremlin_TraversalElement' is a specialization of 'Instruction'.
+The class 'gremlin_CollectionDefinition' is a specialization of 'TraversalElement'.
+The class 'gremlin_Closure' is a specialization of 'Instruction'.
+The class 'gremlin_ClosureIt' is a specialization of 'VariableAccess'.
+The class 'gremlin_VariableAccess' is a specialization of 'TraversalElement'.
+The class 'gremlin_Step' is a specialization of 'TraversalElement'.
+The class 'gremlin_IdentityStep' is a specialization of 'Step'.
+The class 'gremlin_FillStep' is a specialization of 'Step'.
+The class 'gremlin_StartStep' is a specialization of 'Step'.
+The class 'gremlin_VerticesStep' is a specialization of 'Step'.
+The class 'gremlin_EdgesStep' is a specialization of 'Step'.
+The class 'gremlin_PropertyStep' is a specialization of 'Step'.
+The class 'gremlin_OutEStep' is a specialization of 'Step'.
+The class 'gremlin_InEStep' is a specialization of 'Step'.
+The class 'gremlin_InVStep' is a specialization of 'Step'.
+The class 'gremlin_OutVStep' is a specialization of 'Step'.
+The class 'gremlin_FilterStep' is a specialization of 'Step'.
+The class 'gremlin_RetainStep' is a specialization of 'Step'.
+The class 'gremlin_ExceptStep' is a specialization of 'Step'.
+The class 'gremlin_TransformStep' is a specialization of 'Step'.
+The class 'gremlin_GatherStep' is a specialization of 'Step'.
+The class 'gremlin_ScatterStep' is a specialization of 'Step'.
+The class 'gremlin_MethodCall' is a specialization of 'TraversalElement'.
+The class 'gremlin_CustomMethodCall' is a specialization of 'MethodCall'.
+The class 'gremlin_NextCall' is a specialization of 'MethodCall'.
+The class 'gremlin_HasNextCall' is a specialization of 'MethodCall'.
+The class 'gremlin_IndexCall' is a specialization of 'MethodCall'.
+The class 'gremlin_CountCall' is a specialization of 'MethodCall'.
+The class 'gremlin_FirstCall' is a specialization of 'MethodCall'.
+The class 'gremlin_ToListCall' is a specialization of 'MethodCall'.
+The class 'gremlin_IsEmptyCall' is a specialization of 'MethodCall'.
+The class 'gremlin_ContainsCall' is a specialization of 'MethodCall'.
+The class 'gremlin_ContainsAllCall' is a specialization of 'MethodCall'.
+The class 'gremlin_AddAllCall' is a specialization of 'MethodCall'.
+The class 'gremlin_RetainAllCall' is a specialization of 'MethodCall'.
+The class 'gremlin_UnionCall' is a specialization of 'MethodCall'.
+The class 'gremlin_IntersectionCall' is a specialization of 'MethodCall'.
+The class 'gremlin_SizeCall' is a specialization of 'MethodCall'.
+The class 'gremlin_Expression' is a specialization of 'Instruction'.
+The class 'gremlin_UnaryExpression' is a specialization of 'Expression'.
+The class 'gremlin_NotExpression' is a specialization of 'UnaryExpression'.
+The class 'gremlin_BinaryExpression' is a specialization of 'Expression'.
+The class 'gremlin_EqualityExpression' is a specialization of 'BinaryExpression'.
+The class 'gremlin_InExpression' is a specialization of 'BinaryExpression'.
+The class 'gremlin_DifferenceExpression' is a specialization of 'BinaryExpression'.
+The class 'gremlin_OrExpression' is a specialization of 'BinaryExpression'.
+The class 'gremlin_AndExpression' is a specialization of 'BinaryExpression'.
+The class 'gremlin_GreaterExpression' is a specialization of 'BinaryExpression'.
+The class 'gremlin_GreaterOrEqualExpression' is a specialization of 'BinaryExpression'.
+The class 'gremlin_LessExpression' is a specialization of 'BinaryExpression'.
+The class 'gremlin_LessOrEqualExpression' is a specialization of 'BinaryExpression'.
+The class 'gremlin_AffectationExpression' is a specialization of 'BinaryExpression'.
+The class 'gremlin_LeftShiftExpression' is a specialization of 'BinaryExpression'.
+The class 'gremlin_TernaryOperator' is a specialization of 'Expression'.
+The class 'gremlin_StringLiteral' is a specialization of 'Expression'.
+The class 'gremlin_IntegerLiteral' is a specialization of 'Expression'.
+The class 'gremlin_DoubleLiteral' is a specialization of 'Expression'.
+The class 'gremlin_BooleanLiteral' is a specialization of 'Expression'.
+The class 'gremlin_NullLiteral' is a specialization of 'Expression'.
+The class 'gremlin_ToIntegerCall' is a specialization of 'MethodCall'.
+The class 'gremlin_PlusExpression' is a specialization of 'BinaryExpression'.
+The class 'gremlin_CustomStep' is a specialization of 'Step'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gremlin_Instruction' and 'gremlin_GremlinScript'. From 'gremlin_Instruction', the role 'gremlin_Instruction' has cardinality 0..*, and from 'gremlin_GremlinScript', the role 'gremlin_GremlinScript' has cardinality 0..*.
+An association connects 'gremlin_MethodDeclaration' and 'gremlin_Instruction'. From 'gremlin_MethodDeclaration', the role 'gremlin_MethodDeclaration' has cardinality 0..*, and from 'gremlin_Instruction', the role 'gremlin_Instruction2' has cardinality 0..*.
+An association connects 'gremlin_Instruction' and 'gremlin_VariableDeclaration'. From 'gremlin_Instruction', the role 'gremlin_Instruction4' has cardinality 0..*, and from 'gremlin_VariableDeclaration', the role 'gremlin_VariableDeclaration' has cardinality 0..*.
+An association connects 'gremlin_TypeDeclaration' and 'gremlin_VariableDeclaration'. From 'gremlin_TypeDeclaration', the role 'gremlin_TypeDeclaration' has cardinality 0..*, and from 'gremlin_VariableDeclaration', the role 'gremlin_VariableDeclaration6' has cardinality 0..*.
+An association connects 'gremlin_TraversalElement' and 'gremlin_TraversalElement'. From 'gremlin_TraversalElement', the role 'TraversalElement' has cardinality 0..*, and from 'gremlin_TraversalElement', the role 'previousElement' has cardinality 0..*.
+An association connects 'gremlin_TraversalElement' and 'gremlin_TraversalElement'. From 'gremlin_TraversalElement', the role 'nextElement' has cardinality 0..*, and from 'gremlin_TraversalElement', the role 'TraversalElement11' has cardinality 0..*.
+An association connects 'gremlin_CollectionDefinition' and 'gremlin_Instruction'. From 'gremlin_CollectionDefinition', the role 'gremlin_CollectionDefinition' has cardinality 0..*, and from 'gremlin_Instruction', the role 'gremlin_Instruction13' has cardinality 0..*.
+An association connects 'gremlin_CollectionDefinition' and 'gremlin_TypeDeclaration'. From 'gremlin_CollectionDefinition', the role 'gremlin_CollectionDefinition15' has cardinality 0..*, and from 'gremlin_TypeDeclaration', the role 'gremlin_TypeDeclaration16' has cardinality 0..*.
+An association connects 'gremlin_Instruction' and 'gremlin_Closure'. From 'gremlin_Instruction', the role 'gremlin_Instruction18' has cardinality 0..*, and from 'gremlin_Closure', the role 'gremlin_Closure' has cardinality 0..*.
+An association connects 'gremlin_TypeDeclaration' and 'gremlin_VariableAccess'. From 'gremlin_TypeDeclaration', the role 'gremlin_TypeDeclaration20' has cardinality 0..*, and from 'gremlin_VariableAccess', the role 'gremlin_VariableAccess' has cardinality 0..*.
+An association connects 'gremlin_FillStep' and 'gremlin_Instruction'. From 'gremlin_FillStep', the role 'gremlin_FillStep' has cardinality 0..*, and from 'gremlin_Instruction', the role 'gremlin_Instruction22' has cardinality 0..*.
+An association connects 'gremlin_PropertyStep' and 'gremlin_Instruction'. From 'gremlin_PropertyStep', the role 'gremlin_PropertyStep' has cardinality 0..*, and from 'gremlin_Instruction', the role 'gremlin_Instruction24' has cardinality 0..*.
+An association connects 'gremlin_FilterStep' and 'gremlin_Closure'. From 'gremlin_FilterStep', the role 'gremlin_FilterStep' has cardinality 0..*, and from 'gremlin_Closure', the role 'gremlin_Closure26' has cardinality 0..*.
+An association connects 'gremlin_CollectionDefinition' and 'gremlin_RetainStep'. From 'gremlin_CollectionDefinition', the role 'gremlin_CollectionDefinition28' has cardinality 0..*, and from 'gremlin_RetainStep', the role 'gremlin_RetainStep' has cardinality 0..*.
+An association connects 'gremlin_ExceptStep' and 'gremlin_CollectionDefinition'. From 'gremlin_ExceptStep', the role 'gremlin_ExceptStep' has cardinality 0..*, and from 'gremlin_CollectionDefinition', the role 'gremlin_CollectionDefinition30' has cardinality 0..*.
+An association connects 'gremlin_Closure' and 'gremlin_TransformStep'. From 'gremlin_Closure', the role 'gremlin_Closure32' has cardinality 0..*, and from 'gremlin_TransformStep', the role 'gremlin_TransformStep' has cardinality 0..*.
+An association connects 'gremlin_Closure' and 'gremlin_GatherStep'. From 'gremlin_Closure', the role 'gremlin_Closure34' has cardinality 0..*, and from 'gremlin_GatherStep', the role 'gremlin_GatherStep' has cardinality 0..*.
+An association connects 'gremlin_CustomMethodCall' and 'gremlin_EObject'. From 'gremlin_CustomMethodCall', the role 'gremlin_CustomMethodCall' has cardinality 0..*, and from 'gremlin_EObject', the role 'gremlin_EObject' has cardinality 0..*.
+An association connects 'gremlin_ContainsCall' and 'gremlin_Instruction'. From 'gremlin_ContainsCall', the role 'gremlin_ContainsCall' has cardinality 0..*, and from 'gremlin_Instruction', the role 'gremlin_Instruction37' has cardinality 0..*.
+An association connects 'gremlin_Instruction' and 'gremlin_ContainsAllCall'. From 'gremlin_Instruction', the role 'gremlin_Instruction39' has cardinality 0..*, and from 'gremlin_ContainsAllCall', the role 'gremlin_ContainsAllCall' has cardinality 0..*.
+An association connects 'gremlin_AddAllCall' and 'gremlin_Instruction'. From 'gremlin_AddAllCall', the role 'gremlin_AddAllCall' has cardinality 0..*, and from 'gremlin_Instruction', the role 'gremlin_Instruction41' has cardinality 0..*.
+An association connects 'gremlin_Instruction' and 'gremlin_RetainAllCall'. From 'gremlin_Instruction', the role 'gremlin_Instruction43' has cardinality 0..*, and from 'gremlin_RetainAllCall', the role 'gremlin_RetainAllCall' has cardinality 0..*.
+An association connects 'gremlin_Instruction' and 'gremlin_UnionCall'. From 'gremlin_Instruction', the role 'gremlin_Instruction45' has cardinality 0..*, and from 'gremlin_UnionCall', the role 'gremlin_UnionCall' has cardinality 0..*.
+An association connects 'gremlin_Instruction' and 'gremlin_UnionCall'. From 'gremlin_Instruction', the role 'gremlin_Instruction48' has cardinality 0..*, and from 'gremlin_UnionCall', the role 'gremlin_UnionCall47' has cardinality 0..*.
+An association connects 'gremlin_UnionCall' and 'gremlin_TypeDeclaration'. From 'gremlin_UnionCall', the role 'gremlin_UnionCall50' has cardinality 0..*, and from 'gremlin_TypeDeclaration', the role 'gremlin_TypeDeclaration51' has cardinality 0..*.
+An association connects 'gremlin_IntersectionCall' and 'gremlin_Instruction'. From 'gremlin_IntersectionCall', the role 'gremlin_IntersectionCall' has cardinality 0..*, and from 'gremlin_Instruction', the role 'gremlin_Instruction53' has cardinality 0..*.
+An association connects 'gremlin_Instruction' and 'gremlin_IntersectionCall'. From 'gremlin_Instruction', the role 'gremlin_Instruction56' has cardinality 0..*, and from 'gremlin_IntersectionCall', the role 'gremlin_IntersectionCall55' has cardinality 0..*.
+An association connects 'gremlin_IntersectionCall' and 'gremlin_TypeDeclaration'. From 'gremlin_IntersectionCall', the role 'gremlin_IntersectionCall58' has cardinality 0..*, and from 'gremlin_TypeDeclaration', the role 'gremlin_TypeDeclaration59' has cardinality 0..*.
+An association connects 'gremlin_Instruction' and 'gremlin_UnaryExpression'. From 'gremlin_Instruction', the role 'gremlin_Instruction61' has cardinality 0..*, and from 'gremlin_UnaryExpression', the role 'gremlin_UnaryExpression' has cardinality 0..*.
+An association connects 'gremlin_Instruction' and 'gremlin_BinaryExpression'. From 'gremlin_Instruction', the role 'gremlin_Instruction63' has cardinality 0..*, and from 'gremlin_BinaryExpression', the role 'gremlin_BinaryExpression' has cardinality 0..*.
+An association connects 'gremlin_Instruction' and 'gremlin_BinaryExpression'. From 'gremlin_Instruction', the role 'gremlin_Instruction66' has cardinality 0..*, and from 'gremlin_BinaryExpression', the role 'gremlin_BinaryExpression65' has cardinality 0..*.
+An association connects 'gremlin_Instruction' and 'gremlin_TernaryOperator'. From 'gremlin_Instruction', the role 'gremlin_Instruction68' has cardinality 0..*, and from 'gremlin_TernaryOperator', the role 'gremlin_TernaryOperator' has cardinality 0..*.
+An association connects 'gremlin_TernaryOperator' and 'gremlin_Instruction'. From 'gremlin_TernaryOperator', the role 'gremlin_TernaryOperator70' has cardinality 0..*, and from 'gremlin_Instruction', the role 'gremlin_Instruction71' has cardinality 0..*.
+An association connects 'gremlin_Instruction' and 'gremlin_TernaryOperator'. From 'gremlin_Instruction', the role 'gremlin_Instruction74' has cardinality 0..*, and from 'gremlin_TernaryOperator', the role 'gremlin_TernaryOperator73' has cardinality 0..*.
+An association connects 'gremlin_CustomStep' and 'gremlin_EObject'. From 'gremlin_CustomStep', the role 'gremlin_CustomStep' has cardinality 0..*, and from 'gremlin_EObject', the role 'gremlin_EObject76' has cardinality 0..*.

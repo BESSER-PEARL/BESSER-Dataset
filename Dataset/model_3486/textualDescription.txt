@@ -1,0 +1,41 @@
+The domain model 'fm' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'fm_Group' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'lower', which is of type int; 'description', which is of type str; 'or', which is of type bool; 'upper', which is of type int; 'xor', which is of type bool.
+
+'fm_Attribute' represents an important domain concept.
+It has the following attributes: 'minimize', which is of type bool; 'weight', which is of type str; 'qualityAttribute', which is of type bool; 'type', which is of type str; 'comment', which is of type str; 'alert', which is of type bool; 'name', which is of type str; 'objectiveFunctionAggregator', which is of type str; 'id', which is of type str; 'maxRangeValue', which is of type str; 'minRangeValue', which is of type str; 'description', which is of type str; 'resourceAttribute', which is of type bool; 'defaultValue', which is of type str.
+
+'fm_Constraint' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'value', which is of type str; 'comment', which is of type str; 'language', which is of type str.
+
+'fm_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'fm_Feature' represents an important domain concept.
+It has the following attributes: 'orphan', which is of type bool; 'description', which is of type str; 'optional', which is of type bool; 'name', which is of type str; 'cloneable', which is of type bool; 'root', which is of type bool; 'comment', which is of type str; 'mandatory', which is of type bool; 'id', which is of type str; 'lower', which is of type int; 'upper', which is of type int.
+
+'fm_FeatureModel' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'description', which is of type str; 'name', which is of type str; 'version', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ObjectiveFunctionType' defines the following possible values: 'MINIMUM', 'NOT_ASSIGNED', 'SUM', 'MAXIMUM', 'PRODUCT'.
+The enumeration 'AttributeType' defines the following possible values: 'INTEGER', 'STRING', 'BOOLEAN', 'DOUBLE'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fm_FeatureModel' and 'fm_Feature'. From 'fm_FeatureModel', the role 'fm_FeatureModel' has cardinality 0..*, and from 'fm_Feature', the role 'fm_Feature' has cardinality 0..*.
+An association connects 'fm_FeatureModel' and 'fm_Feature'. From 'fm_FeatureModel', the role 'fm_FeatureModel2' has cardinality 0..*, and from 'fm_Feature', the role 'fm_Feature3' has cardinality 0..*.
+An association connects 'fm_Constraint' and 'fm_FeatureModel'. From 'fm_Constraint', the role 'fm_Constraint' has cardinality 0..*, and from 'fm_FeatureModel', the role 'fm_FeatureModel5' has cardinality 0..*.
+An association connects 'fm_Feature' and 'fm_EObject'. From 'fm_Feature', the role 'fm_Feature7' has cardinality 0..*, and from 'fm_EObject', the role 'fm_EObject' has cardinality 0..*.
+An association connects 'fm_Feature' and 'fm_Feature'. From 'fm_Feature', the role 'features' has cardinality 0..*, and from 'fm_Feature', the role 'Feature' has cardinality 0..*.
+An association connects 'fm_Feature' and 'fm_Group'. From 'fm_Feature', the role 'features11' has cardinality 0..*, and from 'fm_Group', the role 'Group' has cardinality 0..*.
+An association connects 'fm_Attribute' and 'fm_Feature'. From 'fm_Attribute', the role 'Attribute' has cardinality 0..*, and from 'fm_Feature', the role 'feature' has cardinality 0..*.
+An association connects 'fm_Feature' and 'fm_Feature'. From 'fm_Feature', the role 'parentFeature' has cardinality 0..*, and from 'fm_Feature', the role 'Feature15' has cardinality 0..*.
+An association connects 'fm_Feature' and 'fm_Group'. From 'fm_Feature', the role 'parent' has cardinality 0..*, and from 'fm_Group', the role 'Group17' has cardinality 0..*.
+An association connects 'fm_Feature' and 'fm_FeatureModel'. From 'fm_Feature', the role 'fm_Feature19' has cardinality 0..*, and from 'fm_FeatureModel', the role 'fm_FeatureModel20' has cardinality 0..*.
+An association connects 'fm_Group' and 'fm_Feature'. From 'fm_Group', the role 'groups' has cardinality 0..*, and from 'fm_Feature', the role 'Feature22' has cardinality 0..*.
+An association connects 'fm_Group' and 'fm_Feature'. From 'fm_Group', the role 'parentGroup' has cardinality 0..*, and from 'fm_Feature', the role 'Feature24' has cardinality 0..*.
+An association connects 'fm_Feature' and 'fm_Attribute'. From 'fm_Feature', the role 'Feature26' has cardinality 0..*, and from 'fm_Attribute', the role 'attributes' has cardinality 0..*.
+An association connects 'fm_Constraint' and 'fm_FeatureModel'. From 'fm_Constraint', the role 'fm_Constraint28' has cardinality 0..*, and from 'fm_FeatureModel', the role 'fm_FeatureModel29' has cardinality 0..*.

@@ -1,0 +1,29 @@
+The domain model 'eavlibrary' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'eavlibrary_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eavlibrary_Writer' represents an important domain concept.
+It has the following attributes: 'abstract', which is of type str; 'image', which is of type str; 'name', which is of type str.
+
+'eavlibrary_Pen' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eavlibrary_City' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eavlibrary_Book' represents an important domain concept.
+It has the following attributes: 'pages', which is of type str; 'title', which is of type str; 'test', which is of type str; 'category', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BookCategory' defines the following possible values: 'ScienceFiction', 'Biography', 'Mystery'.
+
+Relationships between classes are modeled using associations.
+An association connects 'eavlibrary_Writer' and 'eavlibrary_Book'. From 'eavlibrary_Writer', the role 'Writer' has cardinality 0..*, and from 'eavlibrary_Book', the role 'books' has cardinality 0..*.
+An association connects 'eavlibrary_Writer' and 'eavlibrary_Library'. From 'eavlibrary_Writer', the role 'eavlibrary_Writer' has cardinality 0..*, and from 'eavlibrary_Library', the role 'eavlibrary_Library' has cardinality 0..*.
+An association connects 'eavlibrary_Book' and 'eavlibrary_Library'. From 'eavlibrary_Book', the role 'eavlibrary_Book' has cardinality 0..*, and from 'eavlibrary_Library', the role 'eavlibrary_Library3' has cardinality 0..*.
+An association connects 'eavlibrary_Book' and 'eavlibrary_Writer'. From 'eavlibrary_Book', the role 'Book' has cardinality 0..*, and from 'eavlibrary_Writer', the role 'author' has cardinality 0..*.
+An association connects 'eavlibrary_City' and 'eavlibrary_Writer'. From 'eavlibrary_City', the role 'eavlibrary_City' has cardinality 0..*, and from 'eavlibrary_Writer', the role 'eavlibrary_Writer6' has cardinality 0..*.
+An association connects 'eavlibrary_Pen' and 'eavlibrary_Writer'. From 'eavlibrary_Pen', the role 'eavlibrary_Pen' has cardinality 0..*, and from 'eavlibrary_Writer', the role 'eavlibrary_Writer8' has cardinality 0..*.

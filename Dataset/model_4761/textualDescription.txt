@@ -1,0 +1,85 @@
+The domain model 'effbd101' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'effbd101_And' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd101_InputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd101_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd101_Item' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'effbd101_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd101_SequenceNode' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'effbd101_Port' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'effbd101_Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd101_Description' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd101_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd101_Final' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd101_ProcessNode' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'ProcessNode' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd101_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd101_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'SequenceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'effbd101_OutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'effbd101_Function' is a specialization of 'SequenceNode'.
+The class 'effbd101_Function' is a specialization of 'ProcessNode'.
+The class 'effbd101_Sequence' is a specialization of 'SequenceNode'.
+The class 'effbd101_And' is a specialization of 'Sequence'.
+The class 'effbd101_Or' is a specialization of 'Sequence'.
+The class 'effbd101_Start' is a specialization of 'Sequence'.
+The class 'effbd101_Final' is a specialization of 'Sequence'.
+The class 'effbd101_Loop' is a specialization of 'Sequence'.
+The class 'effbd101_InputPort' is a specialization of 'Port'.
+The class 'effbd101_Flow' is a specialization of 'ProcessNode'.
+The class 'effbd101_OutputPort' is a specialization of 'Port'.
+
+Relationships between classes are modeled using associations.
+An association connects 'effbd101_Function' and 'effbd101_Function'. From 'effbd101_Function', the role 'effbd101_Function0' has cardinality 0..*, and from 'effbd101_Function', the role 'effbd101_Function' has cardinality 0..*.
+An association connects 'effbd101_Sequence' and 'effbd101_Function'. From 'effbd101_Sequence', the role 'effbd101_Sequence' has cardinality 0..*, and from 'effbd101_Function', the role 'effbd101_Function3' has cardinality 0..*.
+An association connects 'effbd101_Function' and 'effbd101_Flow'. From 'effbd101_Function', the role 'effbd101_Function5' has cardinality 0..*, and from 'effbd101_Flow', the role 'effbd101_Flow' has cardinality 0..*.
+An association connects 'effbd101_Function' and 'effbd101_OutputPort'. From 'effbd101_Function', the role 'effbd101_Function7' has cardinality 0..*, and from 'effbd101_OutputPort', the role 'effbd101_OutputPort' has cardinality 0..*.
+An association connects 'effbd101_InputPort' and 'effbd101_Function'. From 'effbd101_InputPort', the role 'effbd101_InputPort' has cardinality 0..*, and from 'effbd101_Function', the role 'effbd101_Function9' has cardinality 0..*.
+An association connects 'effbd101_Description' and 'effbd101_Function'. From 'effbd101_Description', the role 'effbd101_Description' has cardinality 0..*, and from 'effbd101_Function', the role 'effbd101_Function11' has cardinality 0..*.
+An association connects 'effbd101_SequenceNode' and 'effbd101_SequenceNode'. From 'effbd101_SequenceNode', the role 'effbd101_SequenceNode12' has cardinality 0..*, and from 'effbd101_SequenceNode', the role 'effbd101_SequenceNode' has cardinality 0..*.
+An association connects 'effbd101_Flow' and 'effbd101_InputPort'. From 'effbd101_Flow', the role 'effbd101_Flow15' has cardinality 0..*, and from 'effbd101_InputPort', the role 'effbd101_InputPort16' has cardinality 0..*.
+An association connects 'effbd101_Item' and 'effbd101_Flow'. From 'effbd101_Item', the role 'effbd101_Item' has cardinality 0..*, and from 'effbd101_Flow', the role 'effbd101_Flow18' has cardinality 0..*.
+An association connects 'effbd101_OutputPort' and 'effbd101_Flow'. From 'effbd101_OutputPort', the role 'effbd101_OutputPort20' has cardinality 0..*, and from 'effbd101_Flow', the role 'effbd101_Flow21' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/soziotech/CommunityMashup/core/CommunityMashupCore/model/application.ecore

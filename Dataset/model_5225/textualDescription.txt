@@ -1,0 +1,24 @@
+The domain model 'ic' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'ic_sub1_A3' represents an important domain concept.
+It does not declare any attributes.
+
+'ic_sub1_A2' represents an important domain concept.
+It does not declare any attributes.
+
+'ic_sub2_B2' represents an important domain concept.
+It does not declare any attributes.
+
+'ic_sub2_B3' represents an important domain concept.
+It does not declare any attributes.
+
+'ic_TopLevelClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ic_sub2_B1' represents an important domain concept.
+It does not declare any attributes.
+
+'ic_sub1_A1' represents an important domain concept.
+It does not declare any attributes.

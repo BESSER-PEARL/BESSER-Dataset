@@ -1,0 +1,45 @@
+The domain model 'testall' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'testall_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'testall_Interface' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'signature', which is of type str.
+
+'AbstractComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'testall_Content' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'expression', which is of type str.
+
+'testall_Required' represents an important domain concept.
+It does not declare any attributes.
+
+'testall_Provided' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'testall_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'testall_AbstractComponent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'testall_Required' is a specialization of 'Interface'.
+The class 'testall_Provided' is a specialization of 'Interface'.
+The class 'testall_Component' is a specialization of 'AbstractComponent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'testall_AbstractComponent' and 'testall_Content'. From 'testall_AbstractComponent', the role 'testall_AbstractComponent' has cardinality 0..*, and from 'testall_Content', the role 'testall_Content' has cardinality 0..*.
+An association connects 'testall_AbstractComponent' and 'testall_Required'. From 'testall_AbstractComponent', the role 'testall_AbstractComponent2' has cardinality 0..*, and from 'testall_Required', the role 'testall_Required' has cardinality 0..*.
+An association connects 'testall_Provided' and 'testall_AbstractComponent'. From 'testall_Provided', the role 'testall_Provided' has cardinality 0..*, and from 'testall_AbstractComponent', the role 'testall_AbstractComponent4' has cardinality 0..*.
+An association connects 'testall_Interface' and 'testall_Binding'. From 'testall_Interface', the role 'testall_Interface' has cardinality 0..*, and from 'testall_Binding', the role 'testall_Binding' has cardinality 0..*.
+An association connects 'testall_Binding' and 'testall_Interface'. From 'testall_Binding', the role 'testall_Binding7' has cardinality 0..*, and from 'testall_Interface', the role 'testall_Interface8' has cardinality 0..*.
+An association connects 'testall_Interface' and 'testall_Binding'. From 'testall_Interface', the role 'testall_Interface11' has cardinality 0..*, and from 'testall_Binding', the role 'testall_Binding10' has cardinality 0..*.
+An association connects 'testall_AbstractComponent' and 'testall_Content'. From 'testall_AbstractComponent', the role 'testall_AbstractComponent14' has cardinality 0..*, and from 'testall_Content', the role 'testall_Content13' has cardinality 0..*.
+An association connects 'testall_Component' and 'testall_Component'. From 'testall_Component', the role 'testall_Component15' has cardinality 0..*, and from 'testall_Component', the role 'testall_Component' has cardinality 0..*.

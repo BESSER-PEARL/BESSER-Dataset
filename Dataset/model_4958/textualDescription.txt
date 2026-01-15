@@ -1,0 +1,56 @@
+The domain model 'testmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'testmodel_Association' represents an important domain concept.
+It has the following attributes: 'firstLabel', which is of type str; 'secondLabel', which is of type str.
+
+'testmodel_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'testmodel_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'Model' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'testmodel_ModelElement' is a specialization of 'NamedElement'.
+The class 'testmodel_TypedElement' is a specialization of 'NamedElement'.
+The class 'testmodel_Class' is a specialization of 'ModelElement'.
+The class 'testmodel_Attribute' is a specialization of 'TypedElement'.
+The class 'testmodel_Group' is a specialization of 'ModelElement'.
+The class 'testmodel_Group' is a specialization of 'Model'.
+The class 'testmodel_Association' is a specialization of 'ModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'testmodel_Model' and 'testmodel_ModelElement'. From 'testmodel_Model', the role 'testmodel_Model' has cardinality 0..*, and from 'testmodel_ModelElement', the role 'testmodel_ModelElement' has cardinality 0..*.
+An association connects 'testmodel_TypedElement' and 'testmodel_Class'. From 'testmodel_TypedElement', the role 'testmodel_TypedElement' has cardinality 0..*, and from 'testmodel_Class', the role 'testmodel_Class' has cardinality 0..*.
+An association connects 'testmodel_Attribute' and 'testmodel_Class'. From 'testmodel_Attribute', the role 'Attribute' has cardinality 0..*, and from 'testmodel_Class', the role 'owner' has cardinality 0..*.
+An association connects 'testmodel_Class' and 'testmodel_Attribute'. From 'testmodel_Class', the role 'Class' has cardinality 0..*, and from 'testmodel_Attribute', the role 'attributes' has cardinality 0..*.
+An association connects 'testmodel_Association' and 'testmodel_Class'. From 'testmodel_Association', the role 'testmodel_Association' has cardinality 0..*, and from 'testmodel_Class', the role 'testmodel_Class5' has cardinality 0..*.
+An association connects 'testmodel_Class' and 'testmodel_Association'. From 'testmodel_Class', the role 'testmodel_Class8' has cardinality 0..*, and from 'testmodel_Association', the role 'testmodel_Association7' has cardinality 0..*.

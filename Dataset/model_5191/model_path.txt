@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jesusc/bento/examples/library/bento.trafolib.oorefactorings.bindings/gen/Test1_flattened.ecore

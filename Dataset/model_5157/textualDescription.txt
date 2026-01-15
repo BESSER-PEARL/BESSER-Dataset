@@ -1,0 +1,13 @@
+The domain model 'depcycle' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'depcycle_B' represents an important domain concept.
+It does not declare any attributes.
+
+'depcycle_A' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'depcycle_A' and 'depcycle_B'. From 'depcycle_A', the role 'depcycle_A' has cardinality 0..*, and from 'depcycle_B', the role 'depcycle_B' has cardinality 0..*.
+An association connects 'depcycle_B' and 'depcycle_A'. From 'depcycle_B', the role 'depcycle_B2' has cardinality 0..*, and from 'depcycle_A', the role 'depcycle_A3' has cardinality 0..*.

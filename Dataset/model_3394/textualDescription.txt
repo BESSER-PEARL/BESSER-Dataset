@@ -1,0 +1,21 @@
+The domain model 'tables' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'tables_Restaurant' represents an important domain concept.
+It does not declare any attributes.
+
+'tables_Table' represents an important domain concept.
+It has the following attributes: 'isReserved', which is of type bool; 'id', which is of type int.
+
+'tables_Waitress' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tables_Chair' represents an important domain concept.
+It has one attribute: 'order', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'tables_Table' and 'tables_Chair'. From 'tables_Table', the role 'tables_Table' has cardinality 0..*, and from 'tables_Chair', the role 'tables_Chair' has cardinality 0..*.
+An association connects 'tables_Waitress' and 'tables_Table'. From 'tables_Waitress', the role 'tables_Waitress' has cardinality 0..*, and from 'tables_Table', the role 'tables_Table2' has cardinality 0..*.
+An association connects 'tables_Restaurant' and 'tables_Waitress'. From 'tables_Restaurant', the role 'tables_Restaurant' has cardinality 0..*, and from 'tables_Waitress', the role 'tables_Waitress4' has cardinality 0..*.
+An association connects 'tables_Restaurant' and 'tables_Table'. From 'tables_Restaurant', the role 'tables_Restaurant6' has cardinality 0..*, and from 'tables_Table', the role 'tables_Table7' has cardinality 0..*.

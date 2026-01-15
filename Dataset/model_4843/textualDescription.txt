@@ -1,0 +1,97 @@
+The domain model 'ArchimateApplication' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'ArchimateApplication_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_ApplicationCollaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_ApplicationFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_UsedBy' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_Composition' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_Junction' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_ApplicationComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_ApplicationService' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_ApplicationInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_Aggregation' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_NodeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_DataObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_ApplicationInteraction' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_Triggering' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_Grouping' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_Specialization' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateApplication_Access' represents an important domain concept.
+It does not declare any attributes.
+
+'NodeElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ArchimateApplication_ApplicationComponent' is a specialization of 'NodeElement'.
+The class 'ArchimateApplication_ApplicationCollaboration' is a specialization of 'NodeElement'.
+The class 'ArchimateApplication_ApplicationInterface' is a specialization of 'NodeElement'.
+The class 'ArchimateApplication_ApplicationFunction' is a specialization of 'NodeElement'.
+The class 'ArchimateApplication_ApplicationInteraction' is a specialization of 'NodeElement'.
+The class 'ArchimateApplication_ApplicationService' is a specialization of 'NodeElement'.
+The class 'ArchimateApplication_DataObject' is a specialization of 'NodeElement'.
+The class 'ArchimateApplication_Grouping' is a specialization of 'NodeElement'.
+The class 'ArchimateApplication_Junction' is a specialization of 'NodeElement'.
+The class 'ArchimateApplication_Association' is a specialization of 'Relationship'.
+The class 'ArchimateApplication_Aggregation' is a specialization of 'Relationship'.
+The class 'ArchimateApplication_Realization' is a specialization of 'Relationship'.
+The class 'ArchimateApplication_Access' is a specialization of 'Relationship'.
+The class 'ArchimateApplication_UsedBy' is a specialization of 'Relationship'.
+The class 'ArchimateApplication_Assignment' is a specialization of 'Relationship'.
+The class 'ArchimateApplication_Composition' is a specialization of 'Relationship'.
+The class 'ArchimateApplication_Flow' is a specialization of 'Relationship'.
+The class 'ArchimateApplication_Triggering' is a specialization of 'Relationship'.
+The class 'ArchimateApplication_Specialization' is a specialization of 'Relationship'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ArchimateApplication_Relationship' and 'ArchimateApplication_NodeElement'. From 'ArchimateApplication_Relationship', the role 'ArchimateApplication_Relationship' has cardinality 0..*, and from 'ArchimateApplication_NodeElement', the role 'ArchimateApplication_NodeElement' has cardinality 0..*.
+An association connects 'ArchimateApplication_NodeElement' and 'ArchimateApplication_Relationship'. From 'ArchimateApplication_NodeElement', the role 'ArchimateApplication_NodeElement3' has cardinality 0..*, and from 'ArchimateApplication_Relationship', the role 'ArchimateApplication_Relationship2' has cardinality 0..*.

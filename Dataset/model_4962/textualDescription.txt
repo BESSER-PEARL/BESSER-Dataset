@@ -1,0 +1,213 @@
+The domain model 'crom_l1' describes the core structural elements and their relationships within the system.
+
+The model defines 49 main class(es).
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'crom_l1_NaturalInheritance' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'AntiRigidType' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'RoleGroupElement' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_CompartmentType' represents an important domain concept.
+It does not declare any attributes.
+
+'Player' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_Fulfillment' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_NaturalType' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_RoleEquivalence' represents an important domain concept.
+It does not declare any attributes.
+
+'RigidType' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_Player' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_AntiRigidType' represents an important domain concept.
+It does not declare any attributes.
+
+'Inheritance' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_RoleGroupElement' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'RoleConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_RelationTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_AbstractRoleRef' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_RoleProhibition' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_RoleConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_RoleGroup' represents an important domain concept.
+It has the following attributes: 'upper', which is of type int; 'lower', which is of type int.
+
+'crom_l1_Part' represents an important domain concept.
+It has the following attributes: 'lower', which is of type int; 'upper', which is of type int.
+
+'crom_l1_Inheritance' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_RoleImplication' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_RoleType' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractRole' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_Operation' represents an important domain concept.
+It has one attribute: 'operation', which is of type str.
+
+'crom_l1_RigidType' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_AbstractRole' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_CompartmentInheritance' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Model' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_Test' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'crom_l1_DataInheritance' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'crom_l1_ModelElement' is a specialization of 'NamedElement'.
+The class 'crom_l1_RigidType' is a specialization of 'Type'.
+The class 'crom_l1_RigidType' is a specialization of 'ModelElement'.
+The class 'crom_l1_Group' is a specialization of 'ModelElement'.
+The class 'crom_l1_Group' is a specialization of 'Model'.
+The class 'crom_l1_Parameter' is a specialization of 'TypedElement'.
+The class 'crom_l1_Operation' is a specialization of 'TypedElement'.
+The class 'crom_l1_Attribute' is a specialization of 'TypedElement'.
+The class 'crom_l1_Type' is a specialization of 'RelationTarget'.
+The class 'crom_l1_NaturalType' is a specialization of 'RigidType'.
+The class 'crom_l1_NaturalType' is a specialization of 'Player'.
+The class 'crom_l1_RoleType' is a specialization of 'AbstractRole'.
+The class 'crom_l1_RoleType' is a specialization of 'RelationTarget'.
+The class 'crom_l1_RoleType' is a specialization of 'AntiRigidType'.
+The class 'crom_l1_Fulfillment' is a specialization of 'Relation'.
+The class 'crom_l1_Inheritance' is a specialization of 'Relation'.
+The class 'crom_l1_NaturalInheritance' is a specialization of 'Inheritance'.
+The class 'crom_l1_RelationTarget' is a specialization of 'NamedElement'.
+The class 'crom_l1_AbstractRole' is a specialization of 'RoleGroupElement'.
+The class 'crom_l1_TypedElement' is a specialization of 'NamedElement'.
+The class 'crom_l1_DataType' is a specialization of 'RigidType'.
+The class 'crom_l1_RoleGroup' is a specialization of 'AbstractRole'.
+The class 'crom_l1_RoleGroup' is a specialization of 'RelationTarget'.
+The class 'crom_l1_AbstractRoleRef' is a specialization of 'RoleGroupElement'.
+The class 'crom_l1_AntiRigidType' is a specialization of 'Type'.
+The class 'crom_l1_RoleConstraint' is a specialization of 'Constraint'.
+The class 'crom_l1_Test' is a specialization of 'Constraint'.
+The class 'crom_l1_CompartmentType' is a specialization of 'Player'.
+The class 'crom_l1_CompartmentType' is a specialization of 'RigidType'.
+The class 'crom_l1_DataInheritance' is a specialization of 'Inheritance'.
+The class 'crom_l1_RoleImplication' is a specialization of 'RoleConstraint'.
+The class 'crom_l1_CompartmentInheritance' is a specialization of 'Inheritance'.
+The class 'crom_l1_RoleEquivalence' is a specialization of 'RoleConstraint'.
+The class 'crom_l1_RoleProhibition' is a specialization of 'RoleConstraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'crom_l1_Model' and 'crom_l1_ModelElement'. From 'crom_l1_Model', the role 'crom_l1_Model' has cardinality 0..*, and from 'crom_l1_ModelElement', the role 'crom_l1_ModelElement' has cardinality 0..*.
+An association connects 'crom_l1_Model' and 'crom_l1_Relation'. From 'crom_l1_Model', the role 'crom_l1_Model2' has cardinality 0..*, and from 'crom_l1_Relation', the role 'crom_l1_Relation' has cardinality 0..*.
+An association connects 'crom_l1_Operation' and 'crom_l1_Parameter'. From 'crom_l1_Operation', the role 'crom_l1_Operation' has cardinality 0..*, and from 'crom_l1_Parameter', the role 'crom_l1_Parameter' has cardinality 0..*.
+An association connects 'crom_l1_Type' and 'crom_l1_Operation'. From 'crom_l1_Type', the role 'Type' has cardinality 0..*, and from 'crom_l1_Operation', the role 'operations' has cardinality 0..*.
+An association connects 'crom_l1_Type' and 'crom_l1_Attribute'. From 'crom_l1_Type', the role 'Type6' has cardinality 0..*, and from 'crom_l1_Attribute', the role 'attributes' has cardinality 0..*.
+An association connects 'crom_l1_Type' and 'crom_l1_Attribute'. From 'crom_l1_Type', the role 'owner' has cardinality 0..*, and from 'crom_l1_Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'crom_l1_Operation' and 'crom_l1_Type'. From 'crom_l1_Operation', the role 'Operation' has cardinality 0..*, and from 'crom_l1_Type', the role 'owner9' has cardinality 0..*.
+An association connects 'crom_l1_AbstractRole' and 'crom_l1_Fulfillment'. From 'crom_l1_AbstractRole', the role 'crom_l1_AbstractRole' has cardinality 0..*, and from 'crom_l1_Fulfillment', the role 'crom_l1_Fulfillment' has cardinality 0..*.
+An association connects 'crom_l1_Fulfillment' and 'crom_l1_Player'. From 'crom_l1_Fulfillment', the role 'crom_l1_Fulfillment12' has cardinality 0..*, and from 'crom_l1_Player', the role 'crom_l1_Player' has cardinality 0..*.
+An association connects 'crom_l1_NaturalType' and 'crom_l1_NaturalInheritance'. From 'crom_l1_NaturalType', the role 'crom_l1_NaturalType' has cardinality 0..*, and from 'crom_l1_NaturalInheritance', the role 'crom_l1_NaturalInheritance' has cardinality 0..*.
+An association connects 'crom_l1_NaturalInheritance' and 'crom_l1_NaturalType'. From 'crom_l1_NaturalInheritance', the role 'crom_l1_NaturalInheritance15' has cardinality 0..*, and from 'crom_l1_NaturalType', the role 'crom_l1_NaturalType16' has cardinality 0..*.
+An association connects 'crom_l1_Relation' and 'crom_l1_RelationTarget'. From 'crom_l1_Relation', the role 'crom_l1_Relation18' has cardinality 0..*, and from 'crom_l1_RelationTarget', the role 'crom_l1_RelationTarget' has cardinality 0..*.
+An association connects 'crom_l1_Relation' and 'crom_l1_RelationTarget'. From 'crom_l1_Relation', the role 'crom_l1_Relation21' has cardinality 0..*, and from 'crom_l1_RelationTarget', the role 'crom_l1_RelationTarget20' has cardinality 0..*.
+An association connects 'crom_l1_TypedElement' and 'crom_l1_Type'. From 'crom_l1_TypedElement', the role 'crom_l1_TypedElement' has cardinality 0..*, and from 'crom_l1_Type', the role 'crom_l1_Type' has cardinality 0..*.
+An association connects 'crom_l1_RoleGroupElement' and 'crom_l1_RoleGroup'. From 'crom_l1_RoleGroupElement', the role 'crom_l1_RoleGroupElement' has cardinality 0..*, and from 'crom_l1_RoleGroup', the role 'crom_l1_RoleGroup' has cardinality 0..*.
+An association connects 'crom_l1_AbstractRole' and 'crom_l1_AbstractRoleRef'. From 'crom_l1_AbstractRole', the role 'crom_l1_AbstractRole25' has cardinality 0..*, and from 'crom_l1_AbstractRoleRef', the role 'crom_l1_AbstractRoleRef' has cardinality 0..*.
+An association connects 'crom_l1_Part' and 'crom_l1_AbstractRole'. From 'crom_l1_Part', the role 'crom_l1_Part' has cardinality 0..*, and from 'crom_l1_AbstractRole', the role 'crom_l1_AbstractRole27' has cardinality 0..*.
+An association connects 'crom_l1_Part' and 'crom_l1_CompartmentType'. From 'crom_l1_Part', the role 'parts' has cardinality 0..*, and from 'crom_l1_CompartmentType', the role 'CompartmentType' has cardinality 0..*.
+An association connects 'crom_l1_CompartmentType' and 'crom_l1_Part'. From 'crom_l1_CompartmentType', the role 'whole' has cardinality 0..*, and from 'crom_l1_Part', the role 'Part' has cardinality 0..*.
+An association connects 'crom_l1_Constraint' and 'crom_l1_CompartmentType'. From 'crom_l1_Constraint', the role 'crom_l1_Constraint' has cardinality 0..*, and from 'crom_l1_CompartmentType', the role 'crom_l1_CompartmentType' has cardinality 0..*.
+An association connects 'crom_l1_CompartmentType' and 'crom_l1_CompartmentType'. From 'crom_l1_CompartmentType', the role 'crom_l1_CompartmentType31' has cardinality 0..*, and from 'crom_l1_CompartmentType', the role 'crom_l1_CompartmentType33' has cardinality 0..*.
+An association connects 'crom_l1_DataInheritance' and 'crom_l1_DataType'. From 'crom_l1_DataInheritance', the role 'crom_l1_DataInheritance' has cardinality 0..*, and from 'crom_l1_DataType', the role 'crom_l1_DataType' has cardinality 0..*.
+An association connects 'crom_l1_DataType' and 'crom_l1_DataInheritance'. From 'crom_l1_DataType', the role 'crom_l1_DataType37' has cardinality 0..*, and from 'crom_l1_DataInheritance', the role 'crom_l1_DataInheritance36' has cardinality 0..*.
+An association connects 'crom_l1_CompartmentType' and 'crom_l1_CompartmentInheritance'. From 'crom_l1_CompartmentType', the role 'crom_l1_CompartmentType39' has cardinality 0..*, and from 'crom_l1_CompartmentInheritance', the role 'crom_l1_CompartmentInheritance' has cardinality 0..*.
+An association connects 'crom_l1_CompartmentType' and 'crom_l1_CompartmentInheritance'. From 'crom_l1_CompartmentType', the role 'crom_l1_CompartmentType42' has cardinality 0..*, and from 'crom_l1_CompartmentInheritance', the role 'crom_l1_CompartmentInheritance41' has cardinality 0..*.

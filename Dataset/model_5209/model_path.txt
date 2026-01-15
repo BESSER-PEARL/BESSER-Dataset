@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/damenac/puzzle/examples/modularized-state-machines/fr.inria.diverse.k3.examples.abc.metamodel/models/ABC.ecore

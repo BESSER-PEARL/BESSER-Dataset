@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/b3/org.eclipse.b3.build/model/B3Build.ecore

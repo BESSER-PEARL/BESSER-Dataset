@@ -1,0 +1,128 @@
+The domain model 'feature' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'feature_Feature' represents an important domain concept.
+It has one attribute: 'transitiveEliminationState', which is of type str.
+
+'feature_FeatureModel' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_DefaultBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_RootRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_FeatureRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Preference' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Elimination' represents an important domain concept.
+It has one attribute: 'defaultSelection', which is of type str.
+
+'HybridDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_XorFeatureGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Option' represents an important domain concept.
+It does not declare any attributes.
+
+'UUIDElement' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_FeatureExclusion' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_GroupMembership' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_ChildRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_FeatureGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_OrFeatureGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_DisplayName' represents an important domain concept.
+It has one attribute: 'displayName', which is of type str.
+
+'feature_Mandatory' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'HybridElement' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_FeatureDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Invariant' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'feature_FeatureModel' is a specialization of 'HybridDimension'.
+The class 'feature_Feature' is a specialization of 'HybridElement'.
+The class 'feature_Feature' is a specialization of 'UUIDElement'.
+The class 'feature_DisplayName' is a specialization of 'HybridElement'.
+The class 'feature_FeatureGroup' is a specialization of 'HybridElement'.
+The class 'feature_FeatureGroup' is a specialization of 'UUIDElement'.
+The class 'feature_GroupMembership' is a specialization of 'HybridElement'.
+The class 'feature_OrFeatureGroup' is a specialization of 'FeatureGroup'.
+The class 'feature_XorFeatureGroup' is a specialization of 'FeatureGroup'.
+The class 'feature_FeatureDependency' is a specialization of 'HybridElement'.
+The class 'feature_FeatureDependency' is a specialization of 'UUIDElement'.
+The class 'feature_FeatureRequirement' is a specialization of 'FeatureDependency'.
+The class 'feature_FeatureExclusion' is a specialization of 'FeatureDependency'.
+The class 'feature_RootRelationship' is a specialization of 'HybridElement'.
+The class 'feature_ChildRelationship' is a specialization of 'HybridElement'.
+The class 'feature_Mandatory' is a specialization of 'HybridElement'.
+The class 'feature_Elimination' is a specialization of 'HybridElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'feature_RootRelationship' and 'feature_FeatureModel'. From 'feature_RootRelationship', the role 'feature_RootRelationship' has cardinality 0..*, and from 'feature_FeatureModel', the role 'feature_FeatureModel' has cardinality 0..*.
+An association connects 'feature_FeatureModel' and 'feature_Feature'. From 'feature_FeatureModel', the role 'featureModel' has cardinality 0..*, and from 'feature_Feature', the role 'Feature' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_FeatureModel'. From 'feature_Feature', the role 'features' has cardinality 0..*, and from 'feature_FeatureModel', the role 'FeatureModel' has cardinality 0..*.
+An association connects 'feature_Option' and 'feature_Feature'. From 'feature_Option', the role 'feature_Option' has cardinality 0..*, and from 'feature_Feature', the role 'feature_Feature' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_DisplayName'. From 'feature_Feature', the role 'feature' has cardinality 0..*, and from 'feature_DisplayName', the role 'DisplayName' has cardinality 0..*.
+An association connects 'feature_ChildRelationship' and 'feature_Feature'. From 'feature_ChildRelationship', the role 'ChildRelationship' has cardinality 0..*, and from 'feature_Feature', the role 'parent' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_ChildRelationship'. From 'feature_Feature', the role 'child' has cardinality 0..*, and from 'feature_ChildRelationship', the role 'ChildRelationship7' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_FeatureGroup'. From 'feature_Feature', the role 'parentFeature' has cardinality 0..*, and from 'feature_FeatureGroup', the role 'FeatureGroup' has cardinality 0..*.
+An association connects 'feature_GroupMembership' and 'feature_Feature'. From 'feature_GroupMembership', the role 'GroupMembership' has cardinality 0..*, and from 'feature_Feature', the role 'groupedFeature' has cardinality 0..*.
+An association connects 'feature_FeatureDependency' and 'feature_Feature'. From 'feature_FeatureDependency', the role 'FeatureDependency' has cardinality 0..*, and from 'feature_Feature', the role 'targetFeature' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_FeatureDependency'. From 'feature_Feature', the role 'sourceFeature' has cardinality 0..*, and from 'feature_FeatureDependency', the role 'FeatureDependency12' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_Mandatory'. From 'feature_Feature', the role 'feature14' has cardinality 0..*, and from 'feature_Mandatory', the role 'Mandatory' has cardinality 0..*.
+An association connects 'feature_Elimination' and 'feature_Feature'. From 'feature_Elimination', the role 'Elimination' has cardinality 0..*, and from 'feature_Feature', the role 'feature16' has cardinality 0..*.
+An association connects 'feature_RootRelationship' and 'feature_Feature'. From 'feature_RootRelationship', the role 'RootRelationship' has cardinality 0..*, and from 'feature_Feature', the role 'feature18' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_Feature'. From 'feature_Feature', the role 'feature_Feature21' has cardinality 0..*, and from 'feature_Feature', the role 'feature_Feature19' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_DisplayName'. From 'feature_Feature', the role 'Feature23' has cardinality 0..*, and from 'feature_DisplayName', the role 'names' has cardinality 0..*.
+An association connects 'feature_GroupMembership' and 'feature_FeatureGroup'. From 'feature_GroupMembership', the role 'GroupMembership25' has cardinality 0..*, and from 'feature_FeatureGroup', the role 'group' has cardinality 0..*.
+An association connects 'feature_Invariant' and 'feature_FeatureGroup'. From 'feature_Invariant', the role 'feature_Invariant' has cardinality 0..*, and from 'feature_FeatureGroup', the role 'feature_FeatureGroup' has cardinality 0..*.
+An association connects 'feature_FeatureGroup' and 'feature_Feature'. From 'feature_FeatureGroup', the role 'groups' has cardinality 0..*, and from 'feature_Feature', the role 'Feature28' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_GroupMembership'. From 'feature_Feature', the role 'Feature30' has cardinality 0..*, and from 'feature_GroupMembership', the role 'groupedBy' has cardinality 0..*.
+An association connects 'feature_GroupMembership' and 'feature_FeatureGroup'. From 'feature_GroupMembership', the role 'groupedFeatures' has cardinality 0..*, and from 'feature_FeatureGroup', the role 'FeatureGroup32' has cardinality 0..*.
+An association connects 'feature_Invariant' and 'feature_FeatureDependency'. From 'feature_Invariant', the role 'feature_Invariant34' has cardinality 0..*, and from 'feature_FeatureDependency', the role 'feature_FeatureDependency' has cardinality 0..*.
+An association connects 'feature_FeatureDependency' and 'feature_Feature'. From 'feature_FeatureDependency', the role 'outgoingDependencies' has cardinality 0..*, and from 'feature_Feature', the role 'Feature36' has cardinality 0..*.
+An association connects 'feature_FeatureDependency' and 'feature_Feature'. From 'feature_FeatureDependency', the role 'incomingDependencies' has cardinality 0..*, and from 'feature_Feature', the role 'Feature38' has cardinality 0..*.
+An association connects 'feature_Invariant' and 'feature_RootRelationship'. From 'feature_Invariant', the role 'feature_Invariant41' has cardinality 0..*, and from 'feature_RootRelationship', the role 'feature_RootRelationship40' has cardinality 0..*.
+An association connects 'feature_DefaultBinding' and 'feature_RootRelationship'. From 'feature_DefaultBinding', the role 'feature_DefaultBinding' has cardinality 0..*, and from 'feature_RootRelationship', the role 'feature_RootRelationship43' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_RootRelationship'. From 'feature_Feature', the role 'Feature45' has cardinality 0..*, and from 'feature_RootRelationship', the role 'incomingRoots' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_ChildRelationship'. From 'feature_Feature', the role 'Feature47' has cardinality 0..*, and from 'feature_ChildRelationship', the role 'children' has cardinality 0..*.
+An association connects 'feature_ChildRelationship' and 'feature_Feature'. From 'feature_ChildRelationship', the role 'parents' has cardinality 0..*, and from 'feature_Feature', the role 'Feature49' has cardinality 0..*.
+An association connects 'feature_ChildRelationship' and 'feature_Invariant'. From 'feature_ChildRelationship', the role 'feature_ChildRelationship' has cardinality 0..*, and from 'feature_Invariant', the role 'feature_Invariant51' has cardinality 0..*.
+An association connects 'feature_Preference' and 'feature_ChildRelationship'. From 'feature_Preference', the role 'feature_Preference' has cardinality 0..*, and from 'feature_ChildRelationship', the role 'feature_ChildRelationship53' has cardinality 0..*.
+An association connects 'feature_Mandatory' and 'feature_Feature'. From 'feature_Mandatory', the role 'mandatory' has cardinality 0..*, and from 'feature_Feature', the role 'Feature55' has cardinality 0..*.
+An association connects 'feature_Elimination' and 'feature_Feature'. From 'feature_Elimination', the role 'eliminations' has cardinality 0..*, and from 'feature_Feature', the role 'Feature57' has cardinality 0..*.
+An association connects 'feature_Invariant' and 'feature_Elimination'. From 'feature_Invariant', the role 'feature_Invariant59' has cardinality 0..*, and from 'feature_Elimination', the role 'feature_Elimination' has cardinality 0..*.
+An association connects 'feature_DefaultBinding' and 'feature_Elimination'. From 'feature_DefaultBinding', the role 'feature_DefaultBinding62' has cardinality 0..*, and from 'feature_Elimination', the role 'feature_Elimination61' has cardinality 0..*.

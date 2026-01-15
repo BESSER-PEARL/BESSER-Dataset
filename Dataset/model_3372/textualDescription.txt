@@ -1,0 +1,281 @@
+The domain model 'DDL' describes the core structural elements and their relationships within the system.
+
+The model defines 71 main class(es).
+
+'DDL_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_CommentTable' represents an important domain concept.
+It has the following attributes: 'tableName', which is of type str; 'tableComment', which is of type str.
+
+'DDL_Binaries' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Float' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_DDLDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_NationalCharVarying' represents an important domain concept.
+It does not declare any attributes.
+
+'Exacto' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_BFile' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Number' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_VarChar2' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_NationalCharacter' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_BinaryDouble' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_SmallInt' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_NClob' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Timestamp' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_CharVarying' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Exacto' represents an important domain concept.
+It does not declare any attributes.
+
+'Times' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Aproximado' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_NVarChar2' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Bits' represents an important domain concept.
+It has one attribute: 'n', which is of type str.
+
+'Bits' represents an important domain concept.
+It does not declare any attributes.
+
+'Binaries' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Blob' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DDL_Fk' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'columnReference', which is of type str; 'nameFk', which is of type str; 'columnName', which is of type str.
+
+'Characters' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Times' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Real' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Pk' represents an important domain concept.
+It has the following attributes: 'namePk', which is of type str; 'columnName', which is of type str.
+
+'DDL_Database' represents an important domain concept.
+It has one attribute: 'databaseName', which is of type str.
+
+'DDL_Integer' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Bit' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_CommentColumn' represents an important domain concept.
+It has the following attributes: 'columnComment', which is of type str; 'tableName', which is of type str; 'columnName', which is of type str.
+
+'DDL_Intervals' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Bit' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_ValuesCk' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'comparator', which is of type str; 'columnName', which is of type str; 'logConjuntion', which is of type str.
+
+'DDL_Clob' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Character' represents an important domain concept.
+It does not declare any attributes.
+
+'Intervals' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_DayTime' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Table' represents an important domain concept.
+It has the following attributes: 'commentTable', which is of type str; 'tableName', which is of type str.
+
+'DataDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Date' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_BitVarying' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_YearMonth' represents an important domain concept.
+It does not declare any attributes.
+
+'Aproximado' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Text' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_SmallInteger' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Ck' represents an important domain concept.
+It has the following attributes: 'nameCk', which is of type str; 'status', which is of type str.
+
+'DDL_Int' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_VarChar' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Char' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_NationalChar' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_NChar' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_NCharVarying' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_DoublePrecision' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_NationalCharacterVarying' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_CharacterVarying' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Column' represents an important domain concept.
+It has the following attributes: 'scale', which is of type int; 'columnNull', which is of type bool; 'columnName', which is of type str; 'precision', which is of type int; 'commentColumn', which is of type str.
+
+'DDL_BinaryFloat' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Characters' represents an important domain concept.
+It has one attribute: 'n', which is of type str.
+
+'DDL_DataDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Numeric' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_LongRaw' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Time' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Decimal' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Long' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'DDL_DataDefinition' is a specialization of 'Statement'.
+The class 'DDL_Database' is a specialization of 'DataDefinition'.
+The class 'DDL_Table' is a specialization of 'DataDefinition'.
+The class 'DDL_CommentTable' is a specialization of 'DataDefinition'.
+The class 'DDL_CommentColumn' is a specialization of 'DataDefinition'.
+The class 'DDL_Exacto' is a specialization of 'Type'.
+The class 'DDL_Integer' is a specialization of 'Exacto'.
+The class 'DDL_SmallInteger' is a specialization of 'Exacto'.
+The class 'DDL_Int' is a specialization of 'Exacto'.
+The class 'DDL_SmallInt' is a specialization of 'Exacto'.
+The class 'DDL_Number' is a specialization of 'Exacto'.
+The class 'DDL_Numeric' is a specialization of 'Exacto'.
+The class 'DDL_Decimal' is a specialization of 'Exacto'.
+The class 'DDL_Aproximado' is a specialization of 'Type'.
+The class 'DDL_Real' is a specialization of 'Aproximado'.
+The class 'DDL_DoublePrecision' is a specialization of 'Aproximado'.
+The class 'DDL_Float' is a specialization of 'Aproximado'.
+The class 'DDL_Long' is a specialization of 'Aproximado'.
+The class 'DDL_LongRaw' is a specialization of 'Aproximado'.
+The class 'DDL_Characters' is a specialization of 'Type'.
+The class 'DDL_Character' is a specialization of 'Characters'.
+The class 'DDL_CharacterVarying' is a specialization of 'Characters'.
+The class 'DDL_Char' is a specialization of 'Characters'.
+The class 'DDL_VarChar' is a specialization of 'Characters'.
+The class 'DDL_Text' is a specialization of 'Characters'.
+The class 'DDL_VarChar2' is a specialization of 'Characters'.
+The class 'DDL_NVarChar2' is a specialization of 'Characters'.
+The class 'DDL_NChar' is a specialization of 'Characters'.
+The class 'DDL_CharVarying' is a specialization of 'Characters'.
+The class 'DDL_NationalChar' is a specialization of 'Characters'.
+The class 'DDL_NationalCharVarying' is a specialization of 'Characters'.
+The class 'DDL_NationalCharacter' is a specialization of 'Characters'.
+The class 'DDL_NationalCharacterVarying' is a specialization of 'Characters'.
+The class 'DDL_NCharVarying' is a specialization of 'Characters'.
+The class 'DDL_Clob' is a specialization of 'Characters'.
+The class 'DDL_NClob' is a specialization of 'Characters'.
+The class 'DDL_Bits' is a specialization of 'Type'.
+The class 'DDL_Bit' is a specialization of 'Bits'.
+The class 'DDL_BitVarying' is a specialization of 'Bit'.
+The class 'DDL_Times' is a specialization of 'Type'.
+The class 'DDL_Date' is a specialization of 'Times'.
+The class 'DDL_Time' is a specialization of 'Times'.
+The class 'DDL_Timestamp' is a specialization of 'Times'.
+The class 'DDL_Intervals' is a specialization of 'Type'.
+The class 'DDL_YearMonth' is a specialization of 'Intervals'.
+The class 'DDL_DayTime' is a specialization of 'Intervals'.
+The class 'DDL_Binaries' is a specialization of 'Type'.
+The class 'DDL_BinaryDouble' is a specialization of 'Binaries'.
+The class 'DDL_BinaryFloat' is a specialization of 'Binaries'.
+The class 'DDL_BFile' is a specialization of 'Binaries'.
+The class 'DDL_Blob' is a specialization of 'Binaries'.
+
+Relationships between classes are modeled using associations.
+An association connects 'DDL_DataType' and 'DDL_Type'. From 'DDL_DataType', the role 'DDL_DataType' has cardinality 0..*, and from 'DDL_Type', the role 'DDL_Type' has cardinality 0..*.
+An association connects 'DDL_Statement' and 'DDL_DDLDefinition'. From 'DDL_Statement', the role 'DDL_Statement' has cardinality 0..*, and from 'DDL_DDLDefinition', the role 'DDL_DDLDefinition' has cardinality 0..*.
+An association connects 'DDL_DataType' and 'DDL_DDLDefinition'. From 'DDL_DataType', the role 'DDL_DataType4' has cardinality 0..*, and from 'DDL_DDLDefinition', the role 'DDL_DDLDefinition3' has cardinality 0..*.
+An association connects 'DDL_Fk' and 'DDL_Table'. From 'DDL_Fk', the role 'DDL_Fk' has cardinality 0..*, and from 'DDL_Table', the role 'DDL_Table' has cardinality 0..*.
+An association connects 'DDL_Ck' and 'DDL_ValuesCk'. From 'DDL_Ck', the role 'DDL_Ck' has cardinality 0..*, and from 'DDL_ValuesCk', the role 'DDL_ValuesCk' has cardinality 0..*.
+An association connects 'DDL_Column' and 'DDL_Type'. From 'DDL_Column', the role 'DDL_Column' has cardinality 0..*, and from 'DDL_Type', the role 'DDL_Type8' has cardinality 0..*.
+An association connects 'DDL_Table' and 'DDL_Column'. From 'DDL_Table', the role 'DDL_Table10' has cardinality 0..*, and from 'DDL_Column', the role 'DDL_Column11' has cardinality 0..*.
+An association connects 'DDL_Pk' and 'DDL_Table'. From 'DDL_Pk', the role 'DDL_Pk' has cardinality 0..*, and from 'DDL_Table', the role 'DDL_Table13' has cardinality 0..*.
+An association connects 'DDL_Fk' and 'DDL_Table'. From 'DDL_Fk', the role 'DDL_Fk16' has cardinality 0..*, and from 'DDL_Table', the role 'DDL_Table15' has cardinality 0..*.
+An association connects 'DDL_Table' and 'DDL_Ck'. From 'DDL_Table', the role 'DDL_Table18' has cardinality 0..*, and from 'DDL_Ck', the role 'DDL_Ck19' has cardinality 0..*.

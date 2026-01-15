@@ -1,0 +1,73 @@
+The domain model 'simpleALEnv' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'simpleALEnv_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'ArithOp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleALEnv_ArithOp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleALEnv_RandRange' represents an important domain concept.
+It has the following attributes: 'max', which is of type int; 'min', which is of type int.
+
+'simpleALEnv_Stmt' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleALEnv_Arith' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleALEnv_EqualityTest' represents an important domain concept.
+It does not declare any attributes.
+
+'Stmt' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleALEnv_ArithPlus' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleALEnv_ArithLit' represents an important domain concept.
+It has one attribute: 'val', which is of type int.
+
+'Arith' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleALEnv_ALVarRef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleALEnv_Print' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleALEnv_IfStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleALEnv_Assign' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleALEnv_ArithMinus' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simpleALEnv_ALVarRef' is a specialization of 'Arith'.
+The class 'simpleALEnv_ArithLit' is a specialization of 'Arith'.
+The class 'simpleALEnv_ArithOp' is a specialization of 'Arith'.
+The class 'simpleALEnv_ArithPlus' is a specialization of 'ArithOp'.
+The class 'simpleALEnv_ArithMinus' is a specialization of 'ArithOp'.
+The class 'simpleALEnv_Print' is a specialization of 'Stmt'.
+The class 'simpleALEnv_Assign' is a specialization of 'Stmt'.
+The class 'simpleALEnv_IfStmt' is a specialization of 'Stmt'.
+The class 'simpleALEnv_RandRange' is a specialization of 'Arith'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleALEnv_Stmt' and 'simpleALEnv_Block'. From 'simpleALEnv_Stmt', the role 'simpleALEnv_Stmt' has cardinality 0..*, and from 'simpleALEnv_Block', the role 'simpleALEnv_Block' has cardinality 0..*.
+An association connects 'simpleALEnv_ArithOp' and 'simpleALEnv_Arith'. From 'simpleALEnv_ArithOp', the role 'simpleALEnv_ArithOp' has cardinality 0..*, and from 'simpleALEnv_Arith', the role 'simpleALEnv_Arith' has cardinality 0..*.
+An association connects 'simpleALEnv_ArithOp' and 'simpleALEnv_Arith'. From 'simpleALEnv_ArithOp', the role 'simpleALEnv_ArithOp3' has cardinality 0..*, and from 'simpleALEnv_Arith', the role 'simpleALEnv_Arith4' has cardinality 0..*.
+An association connects 'simpleALEnv_Arith' and 'simpleALEnv_Assign'. From 'simpleALEnv_Arith', the role 'simpleALEnv_Arith6' has cardinality 0..*, and from 'simpleALEnv_Assign', the role 'simpleALEnv_Assign' has cardinality 0..*.
+An association connects 'simpleALEnv_Assign' and 'simpleALEnv_IfStmt'. From 'simpleALEnv_Assign', the role 'simpleALEnv_Assign8' has cardinality 0..*, and from 'simpleALEnv_IfStmt', the role 'simpleALEnv_IfStmt' has cardinality 0..*.
+An association connects 'simpleALEnv_Assign' and 'simpleALEnv_IfStmt'. From 'simpleALEnv_Assign', the role 'simpleALEnv_Assign11' has cardinality 0..*, and from 'simpleALEnv_IfStmt', the role 'simpleALEnv_IfStmt10' has cardinality 0..*.
+An association connects 'simpleALEnv_IfStmt' and 'simpleALEnv_EqualityTest'. From 'simpleALEnv_IfStmt', the role 'simpleALEnv_IfStmt13' has cardinality 0..*, and from 'simpleALEnv_EqualityTest', the role 'simpleALEnv_EqualityTest' has cardinality 0..*.
+An association connects 'simpleALEnv_Arith' and 'simpleALEnv_EqualityTest'. From 'simpleALEnv_Arith', the role 'simpleALEnv_Arith16' has cardinality 0..*, and from 'simpleALEnv_EqualityTest', the role 'simpleALEnv_EqualityTest15' has cardinality 0..*.
+An association connects 'simpleALEnv_EqualityTest' and 'simpleALEnv_Arith'. From 'simpleALEnv_EqualityTest', the role 'simpleALEnv_EqualityTest18' has cardinality 0..*, and from 'simpleALEnv_Arith', the role 'simpleALEnv_Arith19' has cardinality 0..*.

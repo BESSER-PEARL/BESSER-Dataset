@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/CohesionForce/eclipsecon2014/plugins/org.eclipse.emf.examples.library/model/extlibrary.ecore

@@ -1,0 +1,58 @@
+The domain model 'componentmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'componentmodel_Property' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str.
+
+'componentmodel_EnumProperty' represents an important domain concept.
+It has one attribute: 'literalValue', which is of type str.
+
+'componentmodel_NumericProperty' represents an important domain concept.
+It has the following attributes: 'maxValue', which is of type float; 'minValue', which is of type float; 'defaultValue', which is of type float.
+
+'componentmodel_Component' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str.
+
+'componentmodel_InPort' represents an important domain concept.
+It does not declare any attributes.
+
+'componentmodel_PrimitiveComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+'componentmodel_OutPort' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'componentmodel_CompositeComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'componentmodel_Port' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str; 'typePackage', which is of type str; 'description', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'componentmodel_PrimitiveComponent' is a specialization of 'Component'.
+The class 'componentmodel_CompositeComponent' is a specialization of 'Component'.
+The class 'componentmodel_InPort' is a specialization of 'Port'.
+The class 'componentmodel_OutPort' is a specialization of 'Port'.
+The class 'componentmodel_NumericProperty' is a specialization of 'Property'.
+The class 'componentmodel_EnumProperty' is a specialization of 'Property'.
+
+Relationships between classes are modeled using associations.
+An association connects 'componentmodel_Port' and 'componentmodel_Component'. From 'componentmodel_Port', the role 'componentmodel_Port' has cardinality 0..*, and from 'componentmodel_Component', the role 'componentmodel_Component' has cardinality 0..*.
+An association connects 'componentmodel_Property' and 'componentmodel_PrimitiveComponent'. From 'componentmodel_Property', the role 'componentmodel_Property' has cardinality 0..*, and from 'componentmodel_PrimitiveComponent', the role 'componentmodel_PrimitiveComponent' has cardinality 0..*.
+An association connects 'componentmodel_Component' and 'componentmodel_CompositeComponent'. From 'componentmodel_Component', the role 'componentmodel_Component3' has cardinality 0..*, and from 'componentmodel_CompositeComponent', the role 'componentmodel_CompositeComponent' has cardinality 0..*.
+An association connects 'componentmodel_InPort' and 'componentmodel_InPort'. From 'componentmodel_InPort', the role 'InPort' has cardinality 0..*, and from 'componentmodel_InPort', the role 'delegatesFrom' has cardinality 0..*.
+An association connects 'componentmodel_OutPort' and 'componentmodel_InPort'. From 'componentmodel_OutPort', the role 'OutPort' has cardinality 0..*, and from 'componentmodel_InPort', the role 'sink' has cardinality 0..*.
+An association connects 'componentmodel_InPort' and 'componentmodel_InPort'. From 'componentmodel_InPort', the role 'delegatesTo' has cardinality 0..*, and from 'componentmodel_InPort', the role 'InPort9' has cardinality 0..*.
+An association connects 'componentmodel_OutPort' and 'componentmodel_OutPort'. From 'componentmodel_OutPort', the role 'propagatesTo' has cardinality 0..*, and from 'componentmodel_OutPort', the role 'OutPort12' has cardinality 0..*.
+An association connects 'componentmodel_OutPort' and 'componentmodel_InPort'. From 'componentmodel_OutPort', the role 'source' has cardinality 0..*, and from 'componentmodel_InPort', the role 'InPort14' has cardinality 0..*.
+An association connects 'componentmodel_OutPort' and 'componentmodel_OutPort'. From 'componentmodel_OutPort', the role 'OutPort17' has cardinality 0..*, and from 'componentmodel_OutPort', the role 'propagatesFrom' has cardinality 0..*.

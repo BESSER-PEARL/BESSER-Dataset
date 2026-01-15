@@ -1,0 +1,58 @@
+The domain model 'accounting' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'accounting_JournalGroup' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'accounting_Account' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'accounting_Report' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'accounting_JournalStatement' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'amount', which is of type str; 'date', which is of type str.
+
+'accounting_BalanceAccount' represents an important domain concept.
+It does not declare any attributes.
+
+'accounting_Accounting' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'accounting_PLAccount' represents an important domain concept.
+It does not declare any attributes.
+
+'accounting_ReportGroup' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'accounting_Vat' represents an important domain concept.
+It has the following attributes: 'rate', which is of type str; 'name', which is of type str.
+
+'accounting_AccountGroup' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Account' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'accounting_BalanceAccount' is a specialization of 'Account'.
+The class 'accounting_PLAccount' is a specialization of 'Account'.
+
+Relationships between classes are modeled using associations.
+An association connects 'accounting_Account' and 'accounting_AccountGroup'. From 'accounting_Account', the role 'accounting_Account' has cardinality 0..*, and from 'accounting_AccountGroup', the role 'accounting_AccountGroup' has cardinality 0..*.
+An association connects 'accounting_AccountGroup' and 'accounting_Accounting'. From 'accounting_AccountGroup', the role 'accounting_AccountGroup2' has cardinality 0..*, and from 'accounting_Accounting', the role 'accounting_Accounting' has cardinality 0..*.
+An association connects 'accounting_Accounting' and 'accounting_Vat'. From 'accounting_Accounting', the role 'accounting_Accounting4' has cardinality 0..*, and from 'accounting_Vat', the role 'accounting_Vat' has cardinality 0..*.
+An association connects 'accounting_Accounting' and 'accounting_BalanceAccount'. From 'accounting_Accounting', the role 'accounting_Accounting6' has cardinality 0..*, and from 'accounting_BalanceAccount', the role 'accounting_BalanceAccount' has cardinality 0..*.
+An association connects 'accounting_Accounting' and 'accounting_Report'. From 'accounting_Accounting', the role 'accounting_Accounting8' has cardinality 0..*, and from 'accounting_Report', the role 'accounting_Report' has cardinality 0..*.
+An association connects 'accounting_JournalGroup' and 'accounting_Accounting'. From 'accounting_JournalGroup', the role 'accounting_JournalGroup' has cardinality 0..*, and from 'accounting_Accounting', the role 'accounting_Accounting10' has cardinality 0..*.
+An association connects 'accounting_ReportGroup' and 'accounting_BalanceAccount'. From 'accounting_ReportGroup', the role 'ReportGroup' has cardinality 0..*, and from 'accounting_BalanceAccount', the role 'account' has cardinality 0..*.
+An association connects 'accounting_JournalGroup' and 'accounting_JournalGroup'. From 'accounting_JournalGroup', the role 'accounting_JournalGroup14' has cardinality 0..*, and from 'accounting_JournalGroup', the role 'accounting_JournalGroup12' has cardinality 0..*.
+An association connects 'accounting_JournalStatement' and 'accounting_JournalGroup'. From 'accounting_JournalStatement', the role 'accounting_JournalStatement' has cardinality 0..*, and from 'accounting_JournalGroup', the role 'accounting_JournalGroup16' has cardinality 0..*.
+An association connects 'accounting_Account' and 'accounting_JournalStatement'. From 'accounting_Account', the role 'accounting_Account19' has cardinality 0..*, and from 'accounting_JournalStatement', the role 'accounting_JournalStatement18' has cardinality 0..*.
+An association connects 'accounting_JournalStatement' and 'accounting_Account'. From 'accounting_JournalStatement', the role 'accounting_JournalStatement21' has cardinality 0..*, and from 'accounting_Account', the role 'accounting_Account22' has cardinality 0..*.
+An association connects 'accounting_JournalStatement' and 'accounting_Vat'. From 'accounting_JournalStatement', the role 'accounting_JournalStatement24' has cardinality 0..*, and from 'accounting_Vat', the role 'accounting_Vat25' has cardinality 0..*.
+An association connects 'accounting_ReportGroup' and 'accounting_Report'. From 'accounting_ReportGroup', the role 'accounting_ReportGroup' has cardinality 0..*, and from 'accounting_Report', the role 'accounting_Report27' has cardinality 0..*.
+An association connects 'accounting_ReportGroup' and 'accounting_Report'. From 'accounting_ReportGroup', the role 'accounting_ReportGroup30' has cardinality 0..*, and from 'accounting_Report', the role 'accounting_Report29' has cardinality 0..*.
+An association connects 'accounting_ReportGroup' and 'accounting_ReportGroup'. From 'accounting_ReportGroup', the role 'accounting_ReportGroup33' has cardinality 0..*, and from 'accounting_ReportGroup', the role 'accounting_ReportGroup31' has cardinality 0..*.
+An association connects 'accounting_ReportGroup' and 'accounting_BalanceAccount'. From 'accounting_ReportGroup', the role 'report' has cardinality 0..*, and from 'accounting_BalanceAccount', the role 'BalanceAccount' has cardinality 0..*.

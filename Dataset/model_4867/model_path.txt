@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/xtext-core/org.eclipse.xtext.xtext.generator/src-gen/org/eclipse/xtext/xtext/generator/parser/antlr/splitting/SimpleExpressions.ecore

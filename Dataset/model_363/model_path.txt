@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/LorenzoBettini/parsley-demo-ece2017/example.model/model/Library.ecore

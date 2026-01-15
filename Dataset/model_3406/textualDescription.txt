@@ -1,0 +1,26 @@
+The domain model 'education' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'education_Student' represents an important domain concept.
+It does not declare any attributes.
+
+'education_Person' represents an important domain concept.
+It has the following attributes: 'firstname', which is of type str; 'lastname', which is of type str.
+
+'education_Course' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'education_Teacher' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'education_Student' is a specialization of 'Person'.
+The class 'education_Teacher' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'education_Course' and 'education_Student'. From 'education_Course', the role 'education_Course' has cardinality 0..*, and from 'education_Student', the role 'education_Student' has cardinality 0..*.
+An association connects 'education_Teacher' and 'education_Course'. From 'education_Teacher', the role 'education_Teacher' has cardinality 0..*, and from 'education_Course', the role 'education_Course2' has cardinality 0..*.

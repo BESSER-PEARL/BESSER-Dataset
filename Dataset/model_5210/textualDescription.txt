@@ -1,0 +1,16 @@
+The domain model 'bug1312' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'bug1312_B' represents an important domain concept.
+It does not declare any attributes.
+
+'bug1312_C' represents an important domain concept.
+It does not declare any attributes.
+
+'bug1312_Root' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'bug1312_B' and 'bug1312_Root'. From 'bug1312_B', the role 'bug1312_B' has cardinality 0..*, and from 'bug1312_Root', the role 'bug1312_Root' has cardinality 0..*.
+An association connects 'bug1312_Root' and 'bug1312_C'. From 'bug1312_Root', the role 'bug1312_Root2' has cardinality 0..*, and from 'bug1312_C', the role 'bug1312_C' has cardinality 0..*.

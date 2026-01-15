@@ -1,0 +1,138 @@
+The domain model 'webshop_builder_3k_model' describes the core structural elements and their relationships within the system.
+
+The model defines 31 main class(es).
+
+'webshop_builder_3k_model_Reuses_component_link' represents an important domain concept.
+It does not declare any attributes.
+
+'webshop_builder_3k_model_Item' represents an important domain concept.
+It does not declare any attributes.
+
+'webshop_builder_3k_model_Newsletter_subscription_widget' represents an important domain concept.
+It does not declare any attributes.
+
+'webshop_builder_3k_model_Checkbox' represents an important domain concept.
+It does not declare any attributes.
+
+'webshop_builder_3k_model_Navigation_to_Page_link' represents an important domain concept.
+It does not declare any attributes.
+
+'webshop_builder_3k_model_Component_group' represents an important domain concept.
+It does not declare any attributes.
+
+'webshop_builder_3k_model_Branding' represents an important domain concept.
+It does not declare any attributes.
+
+'webshop_builder_3k_model_Result_list' represents an important domain concept.
+It has the following attributes: 'distance_between_items', which is of type int; 'number_of_items_per_page', which is of type int.
+
+'webshop_builder_3k_model_Navigation_button' represents an important domain concept.
+It does not declare any attributes.
+
+'webshop_builder_3k_model_Border' represents an important domain concept.
+It has the following attributes: 'color', which is of type str; 'thickness', which is of type int.
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+'webshop_builder_3k_model_Page' represents an important domain concept.
+It has the following attributes: 'height', which is of type int; 'width', which is of type int; 'title', which is of type str; 'canvas_color', which is of type str.
+
+'webshop_builder_3k_model_Login_widget' represents an important domain concept.
+It does not declare any attributes.
+
+'webshop_builder_3k_model_Text_input_field' represents an important domain concept.
+It does not declare any attributes.
+
+'webshop_builder_3k_model_Reuse_component' represents an important domain concept.
+It has the following attributes: 'yposition', which is of type int; 'xposition', which is of type int.
+
+'webshop_builder_3k_model_Source_code' represents an important domain concept.
+It does not declare any attributes.
+
+'webshop_builder_3k_model_Picture' represents an important domain concept.
+It has the following attributes: 'alternative_text', which is of type str; 'source', which is of type str; 'title', which is of type str.
+
+'webshop_builder_3k_model_Item_to_KB_link' represents an important domain concept.
+It does not declare any attributes.
+
+'webshop_builder_3k_model_Component' represents an important domain concept.
+It has the following attributes: 'alignment', which is of type str; 'height', which is of type int; 'name', which is of type str; 'width', which is of type int; 'yposition', which is of type int; 'xposition', which is of type int.
+
+'webshop_builder_3k_model_User_input_field' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'webshop_builder_3k_model_Radio_button' represents an important domain concept.
+It does not declare any attributes.
+
+'webshop_builder_3k_model_Slideshow' represents an important domain concept.
+It does not declare any attributes.
+
+'webshop_builder_3k_model_Social_button' represents an important domain concept.
+It does not declare any attributes.
+
+'webshop_builder_3k_model_Text_field' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'header_level', which is of type int.
+
+'webshop_builder_3k_model_Webshop_builder_3k' represents an important domain concept.
+It has one attribute: 'company_name', which is of type str.
+
+'webshop_builder_3k_model_Knowledge_base' represents an important domain concept.
+It has one attribute: 'xml_file_uri', which is of type str.
+
+'webshop_builder_3k_model_Shopping_cart_button' represents an important domain concept.
+It does not declare any attributes.
+
+'webshop_builder_3k_model_Style' represents an important domain concept.
+It has one attribute: 'background_color', which is of type str.
+
+'webshop_builder_3k_model_Search_widget' represents an important domain concept.
+It does not declare any attributes.
+
+'User_input_field' represents an important domain concept.
+It does not declare any attributes.
+
+'webshop_builder_3k_model_Menu' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Alignment' defines the following possible values: 'left', 'right'.
+
+The model also captures inheritance relationships between classes.
+The class 'webshop_builder_3k_model_Picture' is a specialization of 'Component'.
+The class 'webshop_builder_3k_model_Text_field' is a specialization of 'Component'.
+The class 'webshop_builder_3k_model_Checkbox' is a specialization of 'User_input_field'.
+The class 'webshop_builder_3k_model_Branding' is a specialization of 'Component'.
+The class 'webshop_builder_3k_model_Radio_button' is a specialization of 'User_input_field'.
+The class 'webshop_builder_3k_model_Text_input_field' is a specialization of 'User_input_field'.
+The class 'webshop_builder_3k_model_Item' is a specialization of 'Component'.
+The class 'webshop_builder_3k_model_Result_list' is a specialization of 'Component'.
+The class 'webshop_builder_3k_model_Navigation_button' is a specialization of 'Component'.
+
+Relationships between classes are modeled using associations.
+An association connects 'webshop_builder_3k_model_Component' and 'webshop_builder_3k_model_Page'. From 'webshop_builder_3k_model_Component', the role 'webshop_builder_3k_model_Component' has cardinality 0..*, and from 'webshop_builder_3k_model_Page', the role 'webshop_builder_3k_model_Page' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Page' and 'webshop_builder_3k_model_Reuse_component'. From 'webshop_builder_3k_model_Page', the role 'webshop_builder_3k_model_Page2' has cardinality 0..*, and from 'webshop_builder_3k_model_Reuse_component', the role 'webshop_builder_3k_model_Reuse_component' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Style' and 'webshop_builder_3k_model_Page'. From 'webshop_builder_3k_model_Style', the role 'webshop_builder_3k_model_Style' has cardinality 0..*, and from 'webshop_builder_3k_model_Page', the role 'webshop_builder_3k_model_Page4' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Reuses_component_link' and 'webshop_builder_3k_model_Reuse_component'. From 'webshop_builder_3k_model_Reuses_component_link', the role 'Reuses_component_link' has cardinality 0..*, and from 'webshop_builder_3k_model_Reuse_component', the role 'source' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Style' and 'webshop_builder_3k_model_Component'. From 'webshop_builder_3k_model_Style', the role 'webshop_builder_3k_model_Style8' has cardinality 0..*, and from 'webshop_builder_3k_model_Component', the role 'webshop_builder_3k_model_Component7' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Item_to_KB_link' and 'webshop_builder_3k_model_Item'. From 'webshop_builder_3k_model_Item_to_KB_link', the role 'kb_link' has cardinality 0..*, and from 'webshop_builder_3k_model_Item', the role 'Item' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Item_to_KB_link' and 'webshop_builder_3k_model_Knowledge_base'. From 'webshop_builder_3k_model_Item_to_KB_link', the role 'webshop_builder_3k_model_Item_to_KB_link' has cardinality 0..*, and from 'webshop_builder_3k_model_Knowledge_base', the role 'webshop_builder_3k_model_Knowledge_base' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Branding' and 'webshop_builder_3k_model_Text_field'. From 'webshop_builder_3k_model_Branding', the role 'webshop_builder_3k_model_Branding' has cardinality 0..*, and from 'webshop_builder_3k_model_Text_field', the role 'webshop_builder_3k_model_Text_field' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Picture' and 'webshop_builder_3k_model_Branding'. From 'webshop_builder_3k_model_Picture', the role 'webshop_builder_3k_model_Picture' has cardinality 0..*, and from 'webshop_builder_3k_model_Branding', the role 'webshop_builder_3k_model_Branding13' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Reuses_component_link' and 'webshop_builder_3k_model_Reuse_component'. From 'webshop_builder_3k_model_Reuses_component_link', the role 'link' has cardinality 0..*, and from 'webshop_builder_3k_model_Reuse_component', the role 'Reuse_component' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Reuses_component_link' and 'webshop_builder_3k_model_Component'. From 'webshop_builder_3k_model_Reuses_component_link', the role 'webshop_builder_3k_model_Reuses_component_link' has cardinality 0..*, and from 'webshop_builder_3k_model_Component', the role 'webshop_builder_3k_model_Component16' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Webshop_builder_3k' and 'webshop_builder_3k_model_Page'. From 'webshop_builder_3k_model_Webshop_builder_3k', the role 'webshop_builder_3k_model_Webshop_builder_3k' has cardinality 0..*, and from 'webshop_builder_3k_model_Page', the role 'webshop_builder_3k_model_Page18' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Component' and 'webshop_builder_3k_model_Webshop_builder_3k'. From 'webshop_builder_3k_model_Component', the role 'webshop_builder_3k_model_Component21' has cardinality 0..*, and from 'webshop_builder_3k_model_Webshop_builder_3k', the role 'webshop_builder_3k_model_Webshop_builder_3k20' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Knowledge_base' and 'webshop_builder_3k_model_Webshop_builder_3k'. From 'webshop_builder_3k_model_Knowledge_base', the role 'webshop_builder_3k_model_Knowledge_base24' has cardinality 0..*, and from 'webshop_builder_3k_model_Webshop_builder_3k', the role 'webshop_builder_3k_model_Webshop_builder_3k23' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Page' and 'webshop_builder_3k_model_Webshop_builder_3k'. From 'webshop_builder_3k_model_Page', the role 'webshop_builder_3k_model_Page27' has cardinality 0..*, and from 'webshop_builder_3k_model_Webshop_builder_3k', the role 'webshop_builder_3k_model_Webshop_builder_3k26' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Webshop_builder_3k' and 'webshop_builder_3k_model_Page'. From 'webshop_builder_3k_model_Webshop_builder_3k', the role 'webshop_builder_3k_model_Webshop_builder_3k29' has cardinality 0..*, and from 'webshop_builder_3k_model_Page', the role 'webshop_builder_3k_model_Page30' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Picture' and 'webshop_builder_3k_model_Item'. From 'webshop_builder_3k_model_Picture', the role 'webshop_builder_3k_model_Picture32' has cardinality 0..*, and from 'webshop_builder_3k_model_Item', the role 'webshop_builder_3k_model_Item' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Item' and 'webshop_builder_3k_model_Text_field'. From 'webshop_builder_3k_model_Item', the role 'webshop_builder_3k_model_Item34' has cardinality 0..*, and from 'webshop_builder_3k_model_Text_field', the role 'webshop_builder_3k_model_Text_field35' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Item' and 'webshop_builder_3k_model_Item_to_KB_link'. From 'webshop_builder_3k_model_Item', the role 'item' has cardinality 0..*, and from 'webshop_builder_3k_model_Item_to_KB_link', the role 'Item_to_KB_link' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Item' and 'webshop_builder_3k_model_Result_list'. From 'webshop_builder_3k_model_Item', the role 'webshop_builder_3k_model_Item38' has cardinality 0..*, and from 'webshop_builder_3k_model_Result_list', the role 'webshop_builder_3k_model_Result_list' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Navigation_to_Page_link' and 'webshop_builder_3k_model_Navigation_button'. From 'webshop_builder_3k_model_Navigation_to_Page_link', the role 'Navigation_to_Page_link' has cardinality 0..*, and from 'webshop_builder_3k_model_Navigation_button', the role 'Source' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Picture' and 'webshop_builder_3k_model_Navigation_button'. From 'webshop_builder_3k_model_Picture', the role 'webshop_builder_3k_model_Picture41' has cardinality 0..*, and from 'webshop_builder_3k_model_Navigation_button', the role 'webshop_builder_3k_model_Navigation_button' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Text_field' and 'webshop_builder_3k_model_Navigation_button'. From 'webshop_builder_3k_model_Text_field', the role 'webshop_builder_3k_model_Text_field44' has cardinality 0..*, and from 'webshop_builder_3k_model_Navigation_button', the role 'webshop_builder_3k_model_Navigation_button43' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Navigation_to_Page_link' and 'webshop_builder_3k_model_Navigation_button'. From 'webshop_builder_3k_model_Navigation_to_Page_link', the role 'link46' has cardinality 0..*, and from 'webshop_builder_3k_model_Navigation_button', the role 'Navigation_button' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Navigation_to_Page_link' and 'webshop_builder_3k_model_Page'. From 'webshop_builder_3k_model_Navigation_to_Page_link', the role 'webshop_builder_3k_model_Navigation_to_Page_link' has cardinality 0..*, and from 'webshop_builder_3k_model_Page', the role 'webshop_builder_3k_model_Page48' has cardinality 0..*.
+An association connects 'webshop_builder_3k_model_Border' and 'webshop_builder_3k_model_Style'. From 'webshop_builder_3k_model_Border', the role 'webshop_builder_3k_model_Border' has cardinality 0..*, and from 'webshop_builder_3k_model_Style', the role 'webshop_builder_3k_model_Style50' has cardinality 0..*.

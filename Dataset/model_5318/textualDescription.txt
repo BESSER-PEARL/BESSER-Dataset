@@ -1,0 +1,19 @@
+The domain model 'root' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'root_A2' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'root_A' represents an important domain concept.
+It does not declare any attributes.
+
+'root_B' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'root_A' is a specialization of 'B'.
+The class 'root_A2' is a specialization of 'B'.

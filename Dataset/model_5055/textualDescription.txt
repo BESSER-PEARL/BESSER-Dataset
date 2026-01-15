@@ -1,0 +1,115 @@
+The domain model 'cbpmn' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmn_FlowNode' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cbpmn_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmn_DataObjectReference' represents an important domain concept.
+It has the following attributes: 'higherBound', which is of type int; 'lowerBound', which is of type int; 'name', which is of type str.
+
+'SplitGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmn_IntermediateEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmn_SplitGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmn_FlowNodeInstance' represents an important domain concept.
+It has one attribute: 'status', which is of type str.
+
+'cbpmn_Branch' represents an important domain concept.
+It has one attribute: 'default', which is of type bool.
+
+'cbpmn_Activity' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'cbpmn_ProcessModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cbpmn_DataObject' represents an important domain concept.
+It does not declare any attributes.
+
+'FlowNode' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmn_StartEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmn_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmn_ParallelGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmn_OCLConstraint' represents an important domain concept.
+It has the following attributes: 'constraintStr', which is of type str; 'constraintName', which is of type str.
+
+'cbpmn_ProcessInstance' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'cbpmn_DecisionGateway' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'cbpmn_EndEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'cbpmn_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FlowNodeInstanceStatus' defines the following possible values: 'INIT', 'FAILED', 'SUCCESS', 'INTERRUPTED', 'STARTED'.
+The enumeration 'DecisionType' defines the following possible values: 'INCLUSIVE', 'EXCLUSIVE'.
+The enumeration 'DataObjectType' defines the following possible values: 'PHYSICAL', 'INFORMATIONAL'.
+The enumeration 'EventType' defines a single possible value: 'EEnumLiteral0'.
+The enumeration 'GatewayType' defines the following possible values: 'JOIN', 'SPLIT'.
+The enumeration 'ActivityType' defines the following possible values: 'USER', 'RECEIVE', 'BUSINESSRULE', 'MANUAL', 'SERVICE', 'SEND'.
+
+The model also captures inheritance relationships between classes.
+The class 'cbpmn_Activity' is a specialization of 'FlowNode'.
+The class 'cbpmn_DecisionGateway' is a specialization of 'SplitGateway'.
+The class 'cbpmn_Event' is a specialization of 'FlowNode'.
+The class 'cbpmn_ParallelGateway' is a specialization of 'SplitGateway'.
+The class 'cbpmn_SplitGateway' is a specialization of 'FlowNode'.
+The class 'cbpmn_DataObject' is a specialization of 'EObject'.
+The class 'cbpmn_StartEvent' is a specialization of 'Event'.
+The class 'cbpmn_EndEvent' is a specialization of 'Event'.
+The class 'cbpmn_IntermediateEvent' is a specialization of 'Event'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cbpmn_Branch' and 'cbpmn_ProcessModel'. From 'cbpmn_Branch', the role 'cbpmn_Branch' has cardinality 0..*, and from 'cbpmn_ProcessModel', the role 'cbpmn_ProcessModel' has cardinality 0..*.
+An association connects 'cbpmn_ProcessModel' and 'cbpmn_OCLConstraint'. From 'cbpmn_ProcessModel', the role 'cbpmn_ProcessModel2' has cardinality 0..*, and from 'cbpmn_OCLConstraint', the role 'cbpmn_OCLConstraint' has cardinality 0..*.
+An association connects 'cbpmn_OCLConstraint' and 'cbpmn_Activity'. From 'cbpmn_OCLConstraint', the role 'cbpmn_OCLConstraint4' has cardinality 0..*, and from 'cbpmn_Activity', the role 'cbpmn_Activity' has cardinality 0..*.
+An association connects 'cbpmn_Activity' and 'cbpmn_OCLConstraint'. From 'cbpmn_Activity', the role 'cbpmn_Activity6' has cardinality 0..*, and from 'cbpmn_OCLConstraint', the role 'cbpmn_OCLConstraint7' has cardinality 0..*.
+An association connects 'cbpmn_DataObjectReference' and 'cbpmn_Activity'. From 'cbpmn_DataObjectReference', the role 'cbpmn_DataObjectReference' has cardinality 0..*, and from 'cbpmn_Activity', the role 'cbpmn_Activity9' has cardinality 0..*.
+An association connects 'cbpmn_OCLConstraint' and 'cbpmn_Activity'. From 'cbpmn_OCLConstraint', the role 'cbpmn_OCLConstraint12' has cardinality 0..*, and from 'cbpmn_Activity', the role 'cbpmn_Activity11' has cardinality 0..*.
+An association connects 'cbpmn_FlowNode' and 'cbpmn_Branch'. From 'cbpmn_FlowNode', the role 'FlowNode' has cardinality 0..*, and from 'cbpmn_Branch', the role 'branch' has cardinality 0..*.
+An association connects 'cbpmn_Branch' and 'cbpmn_OCLConstraint'. From 'cbpmn_Branch', the role 'branch15' has cardinality 0..*, and from 'cbpmn_OCLConstraint', the role 'OCLConstraint' has cardinality 0..*.
+An association connects 'cbpmn_Branch' and 'cbpmn_SplitGateway'. From 'cbpmn_Branch', the role 'branches' has cardinality 0..*, and from 'cbpmn_SplitGateway', the role 'SplitGateway' has cardinality 0..*.
+An association connects 'cbpmn_FlowNode' and 'cbpmn_Branch'. From 'cbpmn_FlowNode', the role 'nodes' has cardinality 0..*, and from 'cbpmn_Branch', the role 'Branch' has cardinality 0..*.
+An association connects 'cbpmn_FlowNode' and 'cbpmn_FlowNode'. From 'cbpmn_FlowNode', the role 'previous' has cardinality 0..*, and from 'cbpmn_FlowNode', the role 'FlowNode20' has cardinality 0..*.
+An association connects 'cbpmn_FlowNode' and 'cbpmn_FlowNode'. From 'cbpmn_FlowNode', the role 'FlowNode23' has cardinality 0..*, and from 'cbpmn_FlowNode', the role 'next' has cardinality 0..*.
+An association connects 'cbpmn_DataObjectReference' and 'cbpmn_FlowNode'. From 'cbpmn_DataObjectReference', the role 'cbpmn_DataObjectReference25' has cardinality 0..*, and from 'cbpmn_FlowNode', the role 'cbpmn_FlowNode' has cardinality 0..*.
+An association connects 'cbpmn_OCLConstraint' and 'cbpmn_Branch'. From 'cbpmn_OCLConstraint', the role 'entryConditions' has cardinality 0..*, and from 'cbpmn_Branch', the role 'Branch27' has cardinality 0..*.
+An association connects 'cbpmn_Event' and 'cbpmn_OCLConstraint'. From 'cbpmn_Event', the role 'cbpmn_Event' has cardinality 0..*, and from 'cbpmn_OCLConstraint', the role 'cbpmn_OCLConstraint29' has cardinality 0..*.
+An association connects 'cbpmn_Branch' and 'cbpmn_SplitGateway'. From 'cbpmn_Branch', the role 'Branch31' has cardinality 0..*, and from 'cbpmn_SplitGateway', the role 'gateway' has cardinality 0..*.
+An association connects 'cbpmn_EClass' and 'cbpmn_DataObjectReference'. From 'cbpmn_EClass', the role 'cbpmn_EClass' has cardinality 0..*, and from 'cbpmn_DataObjectReference', the role 'cbpmn_DataObjectReference33' has cardinality 0..*.
+An association connects 'cbpmn_ProcessInstance' and 'cbpmn_ProcessModel'. From 'cbpmn_ProcessInstance', the role 'cbpmn_ProcessInstance' has cardinality 0..*, and from 'cbpmn_ProcessModel', the role 'cbpmn_ProcessModel35' has cardinality 0..*.
+An association connects 'cbpmn_ProcessInstance' and 'cbpmn_FlowNodeInstance'. From 'cbpmn_ProcessInstance', the role 'processInstance' has cardinality 0..*, and from 'cbpmn_FlowNodeInstance', the role 'FlowNodeInstance' has cardinality 0..*.
+An association connects 'cbpmn_ProcessInstance' and 'cbpmn_EObject'. From 'cbpmn_ProcessInstance', the role 'cbpmn_ProcessInstance38' has cardinality 0..*, and from 'cbpmn_EObject', the role 'cbpmn_EObject' has cardinality 0..*.
+An association connects 'cbpmn_FlowNode' and 'cbpmn_FlowNodeInstance'. From 'cbpmn_FlowNode', the role 'cbpmn_FlowNode40' has cardinality 0..*, and from 'cbpmn_FlowNodeInstance', the role 'cbpmn_FlowNodeInstance' has cardinality 0..*.
+An association connects 'cbpmn_EObject' and 'cbpmn_FlowNodeInstance'. From 'cbpmn_EObject', the role 'cbpmn_EObject43' has cardinality 0..*, and from 'cbpmn_FlowNodeInstance', the role 'cbpmn_FlowNodeInstance42' has cardinality 0..*.
+An association connects 'cbpmn_FlowNodeInstance' and 'cbpmn_EObject'. From 'cbpmn_FlowNodeInstance', the role 'cbpmn_FlowNodeInstance45' has cardinality 0..*, and from 'cbpmn_EObject', the role 'cbpmn_EObject46' has cardinality 0..*.
+An association connects 'cbpmn_FlowNodeInstance' and 'cbpmn_ProcessInstance'. From 'cbpmn_FlowNodeInstance', the role 'executedNodes' has cardinality 0..*, and from 'cbpmn_ProcessInstance', the role 'ProcessInstance' has cardinality 0..*.
+An association connects 'cbpmn_EClass' and 'cbpmn_DataObject'. From 'cbpmn_EClass', the role 'cbpmn_EClass49' has cardinality 0..*, and from 'cbpmn_DataObject', the role 'cbpmn_DataObject' has cardinality 0..*.

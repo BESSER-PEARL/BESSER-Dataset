@@ -1,0 +1,40 @@
+The domain model 'adlrecur' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+'adlrecur_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adlrecur_Required' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'adlrecur_Provided' represents an important domain concept.
+It does not declare any attributes.
+
+'adlrecur_Base' represents an important domain concept.
+It does not declare any attributes.
+
+'adlrecur_Interface' represents an important domain concept.
+It has the following attributes: 'signature', which is of type str; 'name', which is of type str.
+
+'adlrecur_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'adlrecur_Required' is a specialization of 'Interface'.
+The class 'adlrecur_Provided' is a specialization of 'Interface'.
+The class 'adlrecur_Base' is a specialization of 'Component'.
+
+Relationships between classes are modeled using associations.
+An association connects 'adlrecur_Component' and 'adlrecur_Required'. From 'adlrecur_Component', the role 'adlrecur_Component' has cardinality 0..*, and from 'adlrecur_Required', the role 'adlrecur_Required' has cardinality 0..*.
+An association connects 'adlrecur_Provided' and 'adlrecur_Component'. From 'adlrecur_Provided', the role 'adlrecur_Provided' has cardinality 0..*, and from 'adlrecur_Component', the role 'adlrecur_Component2' has cardinality 0..*.
+An association connects 'adlrecur_Binding' and 'adlrecur_Interface'. From 'adlrecur_Binding', the role 'adlrecur_Binding' has cardinality 0..*, and from 'adlrecur_Interface', the role 'adlrecur_Interface' has cardinality 0..*.
+An association connects 'adlrecur_Interface' and 'adlrecur_Binding'. From 'adlrecur_Interface', the role 'adlrecur_Interface6' has cardinality 0..*, and from 'adlrecur_Binding', the role 'adlrecur_Binding5' has cardinality 0..*.
+An association connects 'adlrecur_Interface' and 'adlrecur_Binding'. From 'adlrecur_Interface', the role 'adlrecur_Interface9' has cardinality 0..*, and from 'adlrecur_Binding', the role 'adlrecur_Binding8' has cardinality 0..*.
+An association connects 'adlrecur_Base' and 'adlrecur_Base'. From 'adlrecur_Base', the role 'adlrecur_Base10' has cardinality 0..*, and from 'adlrecur_Base', the role 'adlrecur_Base' has cardinality 0..*.

@@ -1,0 +1,23 @@
+The domain model 'root' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'NestedClass1' represents an important domain concept.
+It does not declare any attributes.
+
+'root_nestedPackage1_NestedClass1' represents an important domain concept.
+It does not declare any attributes.
+
+'root_RootClass' represents an important domain concept.
+It has one attribute: 'attribute1', which is of type str.
+
+'root_noLiterals_NoLitClass' represents an important domain concept.
+It has one attribute: 'attribute2', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'NoLitEnum' defines a single possible value: 'literal'.
+The enumeration 'RootEnum' defines a single possible value: 'literal'.
+
+Relationships between classes are modeled using associations.
+An association connects 'root_RootClass' and 'NestedClass1'. From 'root_RootClass', the role 'root_RootClass' has cardinality 0..*, and from 'NestedClass1', the role 'NestedClass1' has cardinality 0..*.
+An association connects 'NestedClass1' and 'root_noLiterals_NoLitClass'. From 'NestedClass1', the role 'NestedClass12' has cardinality 0..*, and from 'root_noLiterals_NoLitClass', the role 'root_noLiterals_NoLitClass' has cardinality 0..*.

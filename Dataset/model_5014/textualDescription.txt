@@ -1,0 +1,47 @@
+The domain model 'extendedPO2' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'extendedPO2_Supplier' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'extendedPO2_GlobalAddress' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'Address' represents an important domain concept.
+It does not declare any attributes.
+
+'extendedPO2_PurchaseOrder' represents an important domain concept.
+It has the following attributes: 'orderDate', which is of type str; 'totalAmount', which is of type int; 'status', which is of type str; 'comment', which is of type str.
+
+'extendedPO2_Customer' represents an important domain concept.
+It has one attribute: 'customerID', which is of type int.
+
+'extendedPO2_Address' represents an important domain concept.
+It has the following attributes: 'country', which is of type str; 'name', which is of type str.
+
+'extendedPO2_USAddress' represents an important domain concept.
+It has the following attributes: 'city', which is of type str; 'zip', which is of type int; 'state', which is of type str; 'street', which is of type str.
+
+'extendedPO2_Item' represents an important domain concept.
+It has the following attributes: 'partNum', which is of type str; 'USPrice', which is of type int; 'quantity', which is of type int; 'shipDate', which is of type str; 'productName', which is of type str; 'comment', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'OrderStatus' defines the following possible values: 'Complete', 'Pending', 'BackOrder'.
+
+The model also captures inheritance relationships between classes.
+The class 'extendedPO2_USAddress' is a specialization of 'Address'.
+The class 'extendedPO2_GlobalAddress' is a specialization of 'Address'.
+
+Relationships between classes are modeled using associations.
+An association connects 'extendedPO2_Item' and 'extendedPO2_PurchaseOrder'. From 'extendedPO2_Item', the role 'Item' has cardinality 0..*, and from 'extendedPO2_PurchaseOrder', the role 'order' has cardinality 0..*.
+An association connects 'extendedPO2_Address' and 'extendedPO2_PurchaseOrder'. From 'extendedPO2_Address', the role 'extendedPO2_Address' has cardinality 0..*, and from 'extendedPO2_PurchaseOrder', the role 'extendedPO2_PurchaseOrder' has cardinality 0..*.
+An association connects 'extendedPO2_PurchaseOrder' and 'extendedPO2_Address'. From 'extendedPO2_PurchaseOrder', the role 'extendedPO2_PurchaseOrder3' has cardinality 0..*, and from 'extendedPO2_Address', the role 'extendedPO2_Address4' has cardinality 0..*.
+An association connects 'extendedPO2_PurchaseOrder' and 'extendedPO2_PurchaseOrder'. From 'extendedPO2_PurchaseOrder', the role 'extendedPO2_PurchaseOrder5' has cardinality 0..*, and from 'extendedPO2_PurchaseOrder', the role 'extendedPO2_PurchaseOrder7' has cardinality 0..*.
+An association connects 'extendedPO2_PurchaseOrder' and 'extendedPO2_Customer'. From 'extendedPO2_PurchaseOrder', the role 'orders' has cardinality 0..*, and from 'extendedPO2_Customer', the role 'Customer' has cardinality 0..*.
+An association connects 'extendedPO2_PurchaseOrder' and 'extendedPO2_Item'. From 'extendedPO2_PurchaseOrder', the role 'PurchaseOrder' has cardinality 0..*, and from 'extendedPO2_Item', the role 'items' has cardinality 0..*.
+An association connects 'extendedPO2_PurchaseOrder' and 'extendedPO2_Customer'. From 'extendedPO2_PurchaseOrder', the role 'PurchaseOrder11' has cardinality 0..*, and from 'extendedPO2_Customer', the role 'customer' has cardinality 0..*.
+An association connects 'extendedPO2_Supplier' and 'extendedPO2_PurchaseOrder'. From 'extendedPO2_Supplier', the role 'extendedPO2_Supplier' has cardinality 0..*, and from 'extendedPO2_PurchaseOrder', the role 'extendedPO2_PurchaseOrder13' has cardinality 0..*.
+An association connects 'extendedPO2_Customer' and 'extendedPO2_Supplier'. From 'extendedPO2_Customer', the role 'extendedPO2_Customer' has cardinality 0..*, and from 'extendedPO2_Supplier', the role 'extendedPO2_Supplier15' has cardinality 0..*.
+An association connects 'extendedPO2_Supplier' and 'extendedPO2_PurchaseOrder'. From 'extendedPO2_Supplier', the role 'extendedPO2_Supplier17' has cardinality 0..*, and from 'extendedPO2_PurchaseOrder', the role 'extendedPO2_PurchaseOrder18' has cardinality 0..*.
+An association connects 'extendedPO2_Supplier' and 'extendedPO2_PurchaseOrder'. From 'extendedPO2_Supplier', the role 'extendedPO2_Supplier20' has cardinality 0..*, and from 'extendedPO2_PurchaseOrder', the role 'extendedPO2_PurchaseOrder21' has cardinality 0..*.

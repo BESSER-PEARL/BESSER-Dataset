@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jmhorcas/istar2fm/metamodels/featureModelMetamodel.ecore

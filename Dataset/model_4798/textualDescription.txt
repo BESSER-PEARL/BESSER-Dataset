@@ -1,0 +1,13 @@
+The domain model 'primitives' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'primitives_Bag' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'primitives_Primitive' represents an important domain concept.
+It has the following attributes: 'integerObj', which is of type str; 'string', which is of type str; 'int', which is of type int; 'long', which is of type str; 'booleanObj', which is of type str; 'byteArray', which is of type str; 'double', which is of type float; 'boolean', which is of type bool; 'floatObj', which is of type str; 'bigint', which is of type str; 'javaObj', which is of type str; 'date', which is of type date; 'byteObj', which is of type str; 'bigdecimal', which is of type str; 'doubleObj', which is of type str; 'short', which is of type str; 'float', which is of type float; 'longObj', which is of type str; 'char', which is of type str; 'characterObj', which is of type str; 'javaClass', which is of type str; 'byte', which is of type str; 'shortObj', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'primitives_Primitive' and 'primitives_Bag'. From 'primitives_Primitive', the role 'primitives_Primitive' has cardinality 0..*, and from 'primitives_Bag', the role 'primitives_Bag' has cardinality 0..*.
+An association connects 'primitives_Bag' and 'primitives_Bag'. From 'primitives_Bag', the role 'primitives_Bag3' has cardinality 0..*, and from 'primitives_Bag', the role 'primitives_Bag1' has cardinality 0..*.

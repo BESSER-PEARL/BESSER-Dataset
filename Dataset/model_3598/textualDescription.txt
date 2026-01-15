@@ -1,0 +1,13 @@
+The domain model 'TypeA' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'TypeA_A' represents an important domain concept.
+It has one attribute: 'nameA', which is of type str.
+
+'TypeA_B' represents an important domain concept.
+It has one attribute: 'nameB', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'TypeA_B' and 'TypeA_A'. From 'TypeA_B', the role 'TypeA_B' has cardinality 0..*, and from 'TypeA_A', the role 'TypeA_A' has cardinality 0..*.
+An association connects 'TypeA_A' and 'TypeA_B'. From 'TypeA_A', the role 'TypeA_A3' has cardinality 0..*, and from 'TypeA_B', the role 'TypeA_B2' has cardinality 0..*.

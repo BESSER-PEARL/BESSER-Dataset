@@ -1,0 +1,532 @@
+The domain model 'thingML' describes the core structural elements and their relationships within the system.
+
+The model defines 101 main class(es).
+
+'thingML_ErrorAction' represents an important domain concept.
+It has one attribute: 'line', which is of type bool.
+
+'thingML_State' represents an important domain concept.
+It does not declare any attributes.
+
+'Handler' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_CastExpression' represents an important domain concept.
+It has one attribute: 'isArray', which is of type bool.
+
+'thingML_CompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_Configuration' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_ActionBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_StringLiteral' represents an important domain concept.
+It has one attribute: 'stringValue', which is of type str.
+
+'AnnotatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_EnumLiteralRef' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_InternalPort' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_SendAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_GreaterOrEqualExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_ReturnAction' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_ThingMLModel' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_ProvidedPort' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_CharLiteral' represents an important domain concept.
+It has one attribute: 'charValue', which is of type str.
+
+'thingML_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'intValue', which is of type str.
+
+'thingML_ArrayIndex' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_AbstractConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_Thing' represents an important domain concept.
+It has one attribute: 'fragment', which is of type bool.
+
+'thingML_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_RequiredPort' represents an important domain concept.
+It has one attribute: 'optional', which is of type bool.
+
+'StateContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_LoopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_Message' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_Increment' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_Function' represents an important domain concept.
+It has one attribute: 'abstract', which is of type bool.
+
+'thingML_Session' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_DivExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_ExpressionGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_ExternExpression' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'thingML_Import' represents an important domain concept.
+It has the following attributes: 'from', which is of type str; 'importURI', which is of type str.
+
+'thingML_EventReference' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_LowerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_PlatformAnnotation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'thingML_VariableAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_ByteLiteral' represents an important domain concept.
+It has one attribute: 'byteValue', which is of type str.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_GreaterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_ExternStatement' represents an important domain concept.
+It has one attribute: 'statement', which is of type str.
+
+'thingML_Handler' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_Instance' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_ObjectType' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_LocalVariable' represents an important domain concept.
+It has one attribute: 'readonly', which is of type bool.
+
+'thingML_ForAction' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_EqualsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_ExternalConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_StartSession' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_FunctionCallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_ArrayInit' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_PropertyReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_ReceiveMessage' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_TimesExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'thingML_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_LowerOrEqualExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_TypeRef' represents an important domain concept.
+It has one attribute: 'isArray', which is of type bool.
+
+'thingML_PrimitiveType' represents an important domain concept.
+It has one attribute: 'ByteSize', which is of type str.
+
+'thingML_ConditionalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_Protocol' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_DoubleLiteral' represents an important domain concept.
+It has one attribute: 'doubleValue', which is of type float.
+
+'thingML_Property' represents an important domain concept.
+It has one attribute: 'readonly', which is of type bool.
+
+'thingML_PrintAction' represents an important domain concept.
+It has one attribute: 'line', which is of type bool.
+
+'thingML_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_PropertyAssign' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_NotEqualsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_StateContainer' represents an important domain concept.
+It has one attribute: 'history', which is of type bool.
+
+'thingML_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_ConfigPropertyAssign' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_PlusExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_Decrement' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_OrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_AnnotatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_NotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_UnaryMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_MinusExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_FunctionCallStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'boolValue', which is of type bool.
+
+'AbstractConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_InternalTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_ModExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'thingML_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'thingML_Variable' is a specialization of 'NamedElement'.
+The class 'thingML_Variable' is a specialization of 'AnnotatedElement'.
+The class 'thingML_Type' is a specialization of 'NamedElement'.
+The class 'thingML_Type' is a specialization of 'AnnotatedElement'.
+The class 'thingML_PrimitiveType' is a specialization of 'Type'.
+The class 'thingML_ObjectType' is a specialization of 'Type'.
+The class 'thingML_Enumeration' is a specialization of 'Type'.
+The class 'thingML_EnumerationLiteral' is a specialization of 'NamedElement'.
+The class 'thingML_EnumerationLiteral' is a specialization of 'AnnotatedElement'.
+The class 'thingML_Thing' is a specialization of 'Type'.
+The class 'thingML_PropertyAssign' is a specialization of 'AnnotatedElement'.
+The class 'thingML_Protocol' is a specialization of 'NamedElement'.
+The class 'thingML_Protocol' is a specialization of 'AnnotatedElement'.
+The class 'thingML_Function' is a specialization of 'NamedElement'.
+The class 'thingML_Function' is a specialization of 'AnnotatedElement'.
+The class 'thingML_Property' is a specialization of 'Variable'.
+The class 'thingML_Message' is a specialization of 'NamedElement'.
+The class 'thingML_Message' is a specialization of 'AnnotatedElement'.
+The class 'thingML_Parameter' is a specialization of 'Variable'.
+The class 'thingML_Port' is a specialization of 'NamedElement'.
+The class 'thingML_Port' is a specialization of 'AnnotatedElement'.
+The class 'thingML_RequiredPort' is a specialization of 'Port'.
+The class 'thingML_ProvidedPort' is a specialization of 'Port'.
+The class 'thingML_InternalPort' is a specialization of 'Port'.
+The class 'thingML_State' is a specialization of 'NamedElement'.
+The class 'thingML_State' is a specialization of 'AnnotatedElement'.
+The class 'thingML_Handler' is a specialization of 'NamedElement'.
+The class 'thingML_Handler' is a specialization of 'AnnotatedElement'.
+The class 'thingML_Transition' is a specialization of 'Handler'.
+The class 'thingML_InternalTransition' is a specialization of 'Handler'.
+The class 'thingML_CompositeState' is a specialization of 'State'.
+The class 'thingML_CompositeState' is a specialization of 'StateContainer'.
+The class 'thingML_Session' is a specialization of 'StateContainer'.
+The class 'thingML_Region' is a specialization of 'StateContainer'.
+The class 'thingML_FinalState' is a specialization of 'State'.
+The class 'thingML_StateContainer' is a specialization of 'NamedElement'.
+The class 'thingML_StateContainer' is a specialization of 'AnnotatedElement'.
+The class 'thingML_Event' is a specialization of 'NamedElement'.
+The class 'thingML_ReceiveMessage' is a specialization of 'Event'.
+The class 'thingML_ActionBlock' is a specialization of 'Action'.
+The class 'thingML_ExternStatement' is a specialization of 'Action'.
+The class 'thingML_LocalVariable' is a specialization of 'Variable'.
+The class 'thingML_LocalVariable' is a specialization of 'Action'.
+The class 'thingML_SendAction' is a specialization of 'Action'.
+The class 'thingML_VariableAssignment' is a specialization of 'Action'.
+The class 'thingML_Increment' is a specialization of 'Action'.
+The class 'thingML_Decrement' is a specialization of 'Action'.
+The class 'thingML_ForAction' is a specialization of 'Action'.
+The class 'thingML_LoopAction' is a specialization of 'Action'.
+The class 'thingML_ConditionalAction' is a specialization of 'Action'.
+The class 'thingML_ReturnAction' is a specialization of 'Action'.
+The class 'thingML_PrintAction' is a specialization of 'Action'.
+The class 'thingML_ErrorAction' is a specialization of 'Action'.
+The class 'thingML_StartSession' is a specialization of 'Action'.
+The class 'thingML_FunctionCallStatement' is a specialization of 'Action'.
+The class 'thingML_ExternExpression' is a specialization of 'Expression'.
+The class 'thingML_Literal' is a specialization of 'Expression'.
+The class 'thingML_ArrayInit' is a specialization of 'Expression'.
+The class 'thingML_EnumLiteralRef' is a specialization of 'Literal'.
+The class 'thingML_ByteLiteral' is a specialization of 'Literal'.
+The class 'thingML_CharLiteral' is a specialization of 'Literal'.
+The class 'thingML_IntegerLiteral' is a specialization of 'Literal'.
+The class 'thingML_BooleanLiteral' is a specialization of 'Literal'.
+The class 'thingML_StringLiteral' is a specialization of 'Literal'.
+The class 'thingML_DoubleLiteral' is a specialization of 'Literal'.
+The class 'thingML_PropertyReference' is a specialization of 'Expression'.
+The class 'thingML_EventReference' is a specialization of 'Expression'.
+The class 'thingML_FunctionCallExpression' is a specialization of 'Expression'.
+The class 'thingML_Configuration' is a specialization of 'NamedElement'.
+The class 'thingML_Configuration' is a specialization of 'AnnotatedElement'.
+The class 'thingML_Instance' is a specialization of 'NamedElement'.
+The class 'thingML_Instance' is a specialization of 'AnnotatedElement'.
+The class 'thingML_AbstractConnector' is a specialization of 'NamedElement'.
+The class 'thingML_AbstractConnector' is a specialization of 'AnnotatedElement'.
+The class 'thingML_Connector' is a specialization of 'AbstractConnector'.
+The class 'thingML_ExternalConnector' is a specialization of 'AbstractConnector'.
+The class 'thingML_OrExpression' is a specialization of 'Expression'.
+The class 'thingML_AndExpression' is a specialization of 'Expression'.
+The class 'thingML_EqualsExpression' is a specialization of 'Expression'.
+The class 'thingML_NotEqualsExpression' is a specialization of 'Expression'.
+The class 'thingML_GreaterExpression' is a specialization of 'Expression'.
+The class 'thingML_LowerExpression' is a specialization of 'Expression'.
+The class 'thingML_GreaterOrEqualExpression' is a specialization of 'Expression'.
+The class 'thingML_LowerOrEqualExpression' is a specialization of 'Expression'.
+The class 'thingML_PlusExpression' is a specialization of 'Expression'.
+The class 'thingML_MinusExpression' is a specialization of 'Expression'.
+The class 'thingML_TimesExpression' is a specialization of 'Expression'.
+The class 'thingML_DivExpression' is a specialization of 'Expression'.
+The class 'thingML_ModExpression' is a specialization of 'Expression'.
+The class 'thingML_CastExpression' is a specialization of 'Expression'.
+The class 'thingML_ExpressionGroup' is a specialization of 'Expression'.
+The class 'thingML_NotExpression' is a specialization of 'Expression'.
+The class 'thingML_UnaryMinus' is a specialization of 'Expression'.
+The class 'thingML_ArrayIndex' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'thingML_Import' and 'thingML_ThingMLModel'. From 'thingML_Import', the role 'thingML_Import' has cardinality 0..*, and from 'thingML_ThingMLModel', the role 'thingML_ThingMLModel' has cardinality 0..*.
+An association connects 'thingML_ThingMLModel' and 'thingML_Type'. From 'thingML_ThingMLModel', the role 'thingML_ThingMLModel2' has cardinality 0..*, and from 'thingML_Type', the role 'thingML_Type' has cardinality 0..*.
+An association connects 'thingML_Protocol' and 'thingML_ThingMLModel'. From 'thingML_Protocol', the role 'thingML_Protocol' has cardinality 0..*, and from 'thingML_ThingMLModel', the role 'thingML_ThingMLModel4' has cardinality 0..*.
+An association connects 'thingML_ThingMLModel' and 'thingML_Configuration'. From 'thingML_ThingMLModel', the role 'thingML_ThingMLModel6' has cardinality 0..*, and from 'thingML_Configuration', the role 'thingML_Configuration' has cardinality 0..*.
+An association connects 'thingML_AnnotatedElement' and 'thingML_PlatformAnnotation'. From 'thingML_AnnotatedElement', the role 'thingML_AnnotatedElement' has cardinality 0..*, and from 'thingML_PlatformAnnotation', the role 'thingML_PlatformAnnotation' has cardinality 0..*.
+An association connects 'thingML_TypeRef' and 'thingML_Variable'. From 'thingML_TypeRef', the role 'thingML_TypeRef' has cardinality 0..*, and from 'thingML_Variable', the role 'thingML_Variable' has cardinality 0..*.
+An association connects 'thingML_Type' and 'thingML_TypeRef'. From 'thingML_Type', the role 'thingML_Type11' has cardinality 0..*, and from 'thingML_TypeRef', the role 'thingML_TypeRef10' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_TypeRef'. From 'thingML_Expression', the role 'thingML_Expression' has cardinality 0..*, and from 'thingML_TypeRef', the role 'thingML_TypeRef13' has cardinality 0..*.
+An association connects 'thingML_Enumeration' and 'thingML_TypeRef'. From 'thingML_Enumeration', the role 'thingML_Enumeration' has cardinality 0..*, and from 'thingML_TypeRef', the role 'thingML_TypeRef15' has cardinality 0..*.
+An association connects 'thingML_EnumerationLiteral' and 'thingML_Enumeration'. From 'thingML_EnumerationLiteral', the role 'thingML_EnumerationLiteral' has cardinality 0..*, and from 'thingML_Enumeration', the role 'thingML_Enumeration17' has cardinality 0..*.
+An association connects 'thingML_Literal' and 'thingML_EnumerationLiteral'. From 'thingML_Literal', the role 'thingML_Literal' has cardinality 0..*, and from 'thingML_EnumerationLiteral', the role 'thingML_EnumerationLiteral19' has cardinality 0..*.
+An association connects 'thingML_Thing' and 'thingML_Thing'. From 'thingML_Thing', the role 'thingML_Thing' has cardinality 0..*, and from 'thingML_Thing', the role 'thingML_Thing20' has cardinality 0..*.
+An association connects 'thingML_Thing' and 'thingML_Message'. From 'thingML_Thing', the role 'thingML_Thing23' has cardinality 0..*, and from 'thingML_Message', the role 'thingML_Message' has cardinality 0..*.
+An association connects 'thingML_Port' and 'thingML_Thing'. From 'thingML_Port', the role 'thingML_Port' has cardinality 0..*, and from 'thingML_Thing', the role 'thingML_Thing25' has cardinality 0..*.
+An association connects 'thingML_Property' and 'thingML_Thing'. From 'thingML_Property', the role 'thingML_Property' has cardinality 0..*, and from 'thingML_Thing', the role 'thingML_Thing27' has cardinality 0..*.
+An association connects 'thingML_Function' and 'thingML_Thing'. From 'thingML_Function', the role 'thingML_Function' has cardinality 0..*, and from 'thingML_Thing', the role 'thingML_Thing29' has cardinality 0..*.
+An association connects 'thingML_Thing' and 'thingML_PropertyAssign'. From 'thingML_Thing', the role 'thingML_Thing31' has cardinality 0..*, and from 'thingML_PropertyAssign', the role 'thingML_PropertyAssign' has cardinality 0..*.
+An association connects 'thingML_Thing' and 'thingML_CompositeState'. From 'thingML_Thing', the role 'thingML_Thing33' has cardinality 0..*, and from 'thingML_CompositeState', the role 'thingML_CompositeState' has cardinality 0..*.
+An association connects 'thingML_PropertyAssign' and 'thingML_Property'. From 'thingML_PropertyAssign', the role 'thingML_PropertyAssign35' has cardinality 0..*, and from 'thingML_Property', the role 'thingML_Property36' has cardinality 0..*.
+An association connects 'thingML_PropertyAssign' and 'thingML_Expression'. From 'thingML_PropertyAssign', the role 'thingML_PropertyAssign38' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression39' has cardinality 0..*.
+An association connects 'thingML_PropertyAssign' and 'thingML_Expression'. From 'thingML_PropertyAssign', the role 'thingML_PropertyAssign41' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression42' has cardinality 0..*.
+An association connects 'thingML_Parameter' and 'thingML_Function'. From 'thingML_Parameter', the role 'thingML_Parameter' has cardinality 0..*, and from 'thingML_Function', the role 'thingML_Function44' has cardinality 0..*.
+An association connects 'thingML_TypeRef' and 'thingML_Function'. From 'thingML_TypeRef', the role 'thingML_TypeRef47' has cardinality 0..*, and from 'thingML_Function', the role 'thingML_Function46' has cardinality 0..*.
+An association connects 'thingML_Function' and 'thingML_Action'. From 'thingML_Function', the role 'thingML_Function49' has cardinality 0..*, and from 'thingML_Action', the role 'thingML_Action' has cardinality 0..*.
+An association connects 'thingML_Property' and 'thingML_Expression'. From 'thingML_Property', the role 'thingML_Property51' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression52' has cardinality 0..*.
+An association connects 'thingML_Parameter' and 'thingML_Message'. From 'thingML_Parameter', the role 'thingML_Parameter55' has cardinality 0..*, and from 'thingML_Message', the role 'thingML_Message54' has cardinality 0..*.
+An association connects 'thingML_Port' and 'thingML_Message'. From 'thingML_Port', the role 'thingML_Port57' has cardinality 0..*, and from 'thingML_Message', the role 'thingML_Message58' has cardinality 0..*.
+An association connects 'thingML_Message' and 'thingML_Port'. From 'thingML_Message', the role 'thingML_Message61' has cardinality 0..*, and from 'thingML_Port', the role 'thingML_Port60' has cardinality 0..*.
+An association connects 'thingML_Property' and 'thingML_State'. From 'thingML_Property', the role 'thingML_Property63' has cardinality 0..*, and from 'thingML_State', the role 'thingML_State' has cardinality 0..*.
+An association connects 'thingML_Action' and 'thingML_State'. From 'thingML_Action', the role 'thingML_Action66' has cardinality 0..*, and from 'thingML_State', the role 'thingML_State65' has cardinality 0..*.
+An association connects 'thingML_State' and 'thingML_Action'. From 'thingML_State', the role 'thingML_State68' has cardinality 0..*, and from 'thingML_Action', the role 'thingML_Action69' has cardinality 0..*.
+An association connects 'thingML_InternalTransition' and 'thingML_State'. From 'thingML_InternalTransition', the role 'thingML_InternalTransition' has cardinality 0..*, and from 'thingML_State', the role 'thingML_State71' has cardinality 0..*.
+An association connects 'thingML_Transition' and 'thingML_State'. From 'thingML_Transition', the role 'thingML_Transition' has cardinality 0..*, and from 'thingML_State', the role 'thingML_State73' has cardinality 0..*.
+An association connects 'thingML_Handler' and 'thingML_Event'. From 'thingML_Handler', the role 'thingML_Handler' has cardinality 0..*, and from 'thingML_Event', the role 'thingML_Event' has cardinality 0..*.
+An association connects 'thingML_Handler' and 'thingML_Expression'. From 'thingML_Handler', the role 'thingML_Handler76' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression77' has cardinality 0..*.
+An association connects 'thingML_Action' and 'thingML_Handler'. From 'thingML_Action', the role 'thingML_Action80' has cardinality 0..*, and from 'thingML_Handler', the role 'thingML_Handler79' has cardinality 0..*.
+An association connects 'thingML_Transition' and 'thingML_State'. From 'thingML_Transition', the role 'thingML_Transition82' has cardinality 0..*, and from 'thingML_State', the role 'thingML_State83' has cardinality 0..*.
+An association connects 'thingML_Region' and 'thingML_CompositeState'. From 'thingML_Region', the role 'thingML_Region' has cardinality 0..*, and from 'thingML_CompositeState', the role 'thingML_CompositeState85' has cardinality 0..*.
+An association connects 'thingML_Session' and 'thingML_CompositeState'. From 'thingML_Session', the role 'thingML_Session' has cardinality 0..*, and from 'thingML_CompositeState', the role 'thingML_CompositeState87' has cardinality 0..*.
+An association connects 'thingML_Session' and 'thingML_Expression'. From 'thingML_Session', the role 'thingML_Session89' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression90' has cardinality 0..*.
+An association connects 'thingML_State' and 'thingML_StateContainer'. From 'thingML_State', the role 'thingML_State92' has cardinality 0..*, and from 'thingML_StateContainer', the role 'thingML_StateContainer' has cardinality 0..*.
+An association connects 'thingML_State' and 'thingML_StateContainer'. From 'thingML_State', the role 'thingML_State95' has cardinality 0..*, and from 'thingML_StateContainer', the role 'thingML_StateContainer94' has cardinality 0..*.
+An association connects 'thingML_ReceiveMessage' and 'thingML_Port'. From 'thingML_ReceiveMessage', the role 'thingML_ReceiveMessage' has cardinality 0..*, and from 'thingML_Port', the role 'thingML_Port97' has cardinality 0..*.
+An association connects 'thingML_Message' and 'thingML_ReceiveMessage'. From 'thingML_Message', the role 'thingML_Message100' has cardinality 0..*, and from 'thingML_ReceiveMessage', the role 'thingML_ReceiveMessage99' has cardinality 0..*.
+An association connects 'thingML_ActionBlock' and 'thingML_Action'. From 'thingML_ActionBlock', the role 'thingML_ActionBlock' has cardinality 0..*, and from 'thingML_Action', the role 'thingML_Action102' has cardinality 0..*.
+An association connects 'thingML_ExternStatement' and 'thingML_Expression'. From 'thingML_ExternStatement', the role 'thingML_ExternStatement' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression104' has cardinality 0..*.
+An association connects 'thingML_LocalVariable' and 'thingML_Expression'. From 'thingML_LocalVariable', the role 'thingML_LocalVariable' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression106' has cardinality 0..*.
+An association connects 'thingML_SendAction' and 'thingML_Port'. From 'thingML_SendAction', the role 'thingML_SendAction' has cardinality 0..*, and from 'thingML_Port', the role 'thingML_Port108' has cardinality 0..*.
+An association connects 'thingML_SendAction' and 'thingML_Message'. From 'thingML_SendAction', the role 'thingML_SendAction110' has cardinality 0..*, and from 'thingML_Message', the role 'thingML_Message111' has cardinality 0..*.
+An association connects 'thingML_SendAction' and 'thingML_Expression'. From 'thingML_SendAction', the role 'thingML_SendAction113' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression114' has cardinality 0..*.
+An association connects 'thingML_Variable' and 'thingML_VariableAssignment'. From 'thingML_Variable', the role 'thingML_Variable116' has cardinality 0..*, and from 'thingML_VariableAssignment', the role 'thingML_VariableAssignment' has cardinality 0..*.
+An association connects 'thingML_VariableAssignment' and 'thingML_Expression'. From 'thingML_VariableAssignment', the role 'thingML_VariableAssignment118' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression119' has cardinality 0..*.
+An association connects 'thingML_VariableAssignment' and 'thingML_Expression'. From 'thingML_VariableAssignment', the role 'thingML_VariableAssignment121' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression122' has cardinality 0..*.
+An association connects 'thingML_Variable' and 'thingML_Increment'. From 'thingML_Variable', the role 'thingML_Variable124' has cardinality 0..*, and from 'thingML_Increment', the role 'thingML_Increment' has cardinality 0..*.
+An association connects 'thingML_Variable' and 'thingML_Decrement'. From 'thingML_Variable', the role 'thingML_Variable126' has cardinality 0..*, and from 'thingML_Decrement', the role 'thingML_Decrement' has cardinality 0..*.
+An association connects 'thingML_Parameter' and 'thingML_ForAction'. From 'thingML_Parameter', the role 'thingML_Parameter128' has cardinality 0..*, and from 'thingML_ForAction', the role 'thingML_ForAction' has cardinality 0..*.
+An association connects 'thingML_ForAction' and 'thingML_Parameter'. From 'thingML_ForAction', the role 'thingML_ForAction130' has cardinality 0..*, and from 'thingML_Parameter', the role 'thingML_Parameter131' has cardinality 0..*.
+An association connects 'thingML_PropertyReference' and 'thingML_ForAction'. From 'thingML_PropertyReference', the role 'thingML_PropertyReference' has cardinality 0..*, and from 'thingML_ForAction', the role 'thingML_ForAction133' has cardinality 0..*.
+An association connects 'thingML_ForAction' and 'thingML_Action'. From 'thingML_ForAction', the role 'thingML_ForAction135' has cardinality 0..*, and from 'thingML_Action', the role 'thingML_Action136' has cardinality 0..*.
+An association connects 'thingML_LoopAction' and 'thingML_Expression'. From 'thingML_LoopAction', the role 'thingML_LoopAction' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression138' has cardinality 0..*.
+An association connects 'thingML_LoopAction' and 'thingML_Action'. From 'thingML_LoopAction', the role 'thingML_LoopAction140' has cardinality 0..*, and from 'thingML_Action', the role 'thingML_Action141' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_ConditionalAction'. From 'thingML_Expression', the role 'thingML_Expression143' has cardinality 0..*, and from 'thingML_ConditionalAction', the role 'thingML_ConditionalAction' has cardinality 0..*.
+An association connects 'thingML_ConditionalAction' and 'thingML_Action'. From 'thingML_ConditionalAction', the role 'thingML_ConditionalAction145' has cardinality 0..*, and from 'thingML_Action', the role 'thingML_Action146' has cardinality 0..*.
+An association connects 'thingML_Action' and 'thingML_ConditionalAction'. From 'thingML_Action', the role 'thingML_Action149' has cardinality 0..*, and from 'thingML_ConditionalAction', the role 'thingML_ConditionalAction148' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_ReturnAction'. From 'thingML_Expression', the role 'thingML_Expression151' has cardinality 0..*, and from 'thingML_ReturnAction', the role 'thingML_ReturnAction' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_PrintAction'. From 'thingML_Expression', the role 'thingML_Expression153' has cardinality 0..*, and from 'thingML_PrintAction', the role 'thingML_PrintAction' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_ErrorAction'. From 'thingML_Expression', the role 'thingML_Expression155' has cardinality 0..*, and from 'thingML_ErrorAction', the role 'thingML_ErrorAction' has cardinality 0..*.
+An association connects 'thingML_Session' and 'thingML_StartSession'. From 'thingML_Session', the role 'thingML_Session157' has cardinality 0..*, and from 'thingML_StartSession', the role 'thingML_StartSession' has cardinality 0..*.
+An association connects 'thingML_Function' and 'thingML_FunctionCallStatement'. From 'thingML_Function', the role 'thingML_Function159' has cardinality 0..*, and from 'thingML_FunctionCallStatement', the role 'thingML_FunctionCallStatement' has cardinality 0..*.
+An association connects 'thingML_FunctionCallStatement' and 'thingML_Expression'. From 'thingML_FunctionCallStatement', the role 'thingML_FunctionCallStatement161' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression162' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_ExternExpression'. From 'thingML_Expression', the role 'thingML_Expression164' has cardinality 0..*, and from 'thingML_ExternExpression', the role 'thingML_ExternExpression' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_ArrayInit'. From 'thingML_Expression', the role 'thingML_Expression166' has cardinality 0..*, and from 'thingML_ArrayInit', the role 'thingML_ArrayInit' has cardinality 0..*.
+An association connects 'thingML_Enumeration' and 'thingML_EnumLiteralRef'. From 'thingML_Enumeration', the role 'thingML_Enumeration168' has cardinality 0..*, and from 'thingML_EnumLiteralRef', the role 'thingML_EnumLiteralRef' has cardinality 0..*.
+An association connects 'thingML_EnumLiteralRef' and 'thingML_EnumerationLiteral'. From 'thingML_EnumLiteralRef', the role 'thingML_EnumLiteralRef170' has cardinality 0..*, and from 'thingML_EnumerationLiteral', the role 'thingML_EnumerationLiteral171' has cardinality 0..*.
+An association connects 'thingML_Variable' and 'thingML_PropertyReference'. From 'thingML_Variable', the role 'thingML_Variable174' has cardinality 0..*, and from 'thingML_PropertyReference', the role 'thingML_PropertyReference173' has cardinality 0..*.
+An association connects 'thingML_EventReference' and 'thingML_Event'. From 'thingML_EventReference', the role 'thingML_EventReference' has cardinality 0..*, and from 'thingML_Event', the role 'thingML_Event176' has cardinality 0..*.
+An association connects 'thingML_Parameter' and 'thingML_EventReference'. From 'thingML_Parameter', the role 'thingML_Parameter179' has cardinality 0..*, and from 'thingML_EventReference', the role 'thingML_EventReference178' has cardinality 0..*.
+An association connects 'thingML_FunctionCallExpression' and 'thingML_Function'. From 'thingML_FunctionCallExpression', the role 'thingML_FunctionCallExpression' has cardinality 0..*, and from 'thingML_Function', the role 'thingML_Function181' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_FunctionCallExpression'. From 'thingML_Expression', the role 'thingML_Expression184' has cardinality 0..*, and from 'thingML_FunctionCallExpression', the role 'thingML_FunctionCallExpression183' has cardinality 0..*.
+An association connects 'thingML_Configuration' and 'thingML_Instance'. From 'thingML_Configuration', the role 'thingML_Configuration186' has cardinality 0..*, and from 'thingML_Instance', the role 'thingML_Instance' has cardinality 0..*.
+An association connects 'thingML_AbstractConnector' and 'thingML_Configuration'. From 'thingML_AbstractConnector', the role 'thingML_AbstractConnector' has cardinality 0..*, and from 'thingML_Configuration', the role 'thingML_Configuration188' has cardinality 0..*.
+An association connects 'thingML_ConfigPropertyAssign' and 'thingML_Configuration'. From 'thingML_ConfigPropertyAssign', the role 'thingML_ConfigPropertyAssign' has cardinality 0..*, and from 'thingML_Configuration', the role 'thingML_Configuration190' has cardinality 0..*.
+An association connects 'thingML_Thing' and 'thingML_Instance'. From 'thingML_Thing', the role 'thingML_Thing193' has cardinality 0..*, and from 'thingML_Instance', the role 'thingML_Instance192' has cardinality 0..*.
+An association connects 'thingML_Instance' and 'thingML_ConfigPropertyAssign'. From 'thingML_Instance', the role 'thingML_Instance196' has cardinality 0..*, and from 'thingML_ConfigPropertyAssign', the role 'thingML_ConfigPropertyAssign195' has cardinality 0..*.
+An association connects 'thingML_ConfigPropertyAssign' and 'thingML_Property'. From 'thingML_ConfigPropertyAssign', the role 'thingML_ConfigPropertyAssign198' has cardinality 0..*, and from 'thingML_Property', the role 'thingML_Property199' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_ConfigPropertyAssign'. From 'thingML_Expression', the role 'thingML_Expression202' has cardinality 0..*, and from 'thingML_ConfigPropertyAssign', the role 'thingML_ConfigPropertyAssign201' has cardinality 0..*.
+An association connects 'thingML_ConfigPropertyAssign' and 'thingML_Expression'. From 'thingML_ConfigPropertyAssign', the role 'thingML_ConfigPropertyAssign204' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression205' has cardinality 0..*.
+An association connects 'thingML_ConfigPropertyAssign' and 'thingML_PlatformAnnotation'. From 'thingML_ConfigPropertyAssign', the role 'thingML_ConfigPropertyAssign207' has cardinality 0..*, and from 'thingML_PlatformAnnotation', the role 'thingML_PlatformAnnotation208' has cardinality 0..*.
+An association connects 'thingML_Instance' and 'thingML_Connector'. From 'thingML_Instance', the role 'thingML_Instance210' has cardinality 0..*, and from 'thingML_Connector', the role 'thingML_Connector' has cardinality 0..*.
+An association connects 'thingML_RequiredPort' and 'thingML_Connector'. From 'thingML_RequiredPort', the role 'thingML_RequiredPort' has cardinality 0..*, and from 'thingML_Connector', the role 'thingML_Connector212' has cardinality 0..*.
+An association connects 'thingML_Connector' and 'thingML_Instance'. From 'thingML_Connector', the role 'thingML_Connector214' has cardinality 0..*, and from 'thingML_Instance', the role 'thingML_Instance215' has cardinality 0..*.
+An association connects 'thingML_Connector' and 'thingML_ProvidedPort'. From 'thingML_Connector', the role 'thingML_Connector217' has cardinality 0..*, and from 'thingML_ProvidedPort', the role 'thingML_ProvidedPort' has cardinality 0..*.
+An association connects 'thingML_Instance' and 'thingML_ExternalConnector'. From 'thingML_Instance', the role 'thingML_Instance219' has cardinality 0..*, and from 'thingML_ExternalConnector', the role 'thingML_ExternalConnector' has cardinality 0..*.
+An association connects 'thingML_ExternalConnector' and 'thingML_Port'. From 'thingML_ExternalConnector', the role 'thingML_ExternalConnector221' has cardinality 0..*, and from 'thingML_Port', the role 'thingML_Port222' has cardinality 0..*.
+An association connects 'thingML_Protocol' and 'thingML_ExternalConnector'. From 'thingML_Protocol', the role 'thingML_Protocol225' has cardinality 0..*, and from 'thingML_ExternalConnector', the role 'thingML_ExternalConnector224' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_OrExpression'. From 'thingML_Expression', the role 'thingML_Expression227' has cardinality 0..*, and from 'thingML_OrExpression', the role 'thingML_OrExpression' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_OrExpression'. From 'thingML_Expression', the role 'thingML_Expression230' has cardinality 0..*, and from 'thingML_OrExpression', the role 'thingML_OrExpression229' has cardinality 0..*.
+An association connects 'thingML_AndExpression' and 'thingML_Expression'. From 'thingML_AndExpression', the role 'thingML_AndExpression' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression232' has cardinality 0..*.
+An association connects 'thingML_AndExpression' and 'thingML_Expression'. From 'thingML_AndExpression', the role 'thingML_AndExpression234' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression235' has cardinality 0..*.
+An association connects 'thingML_EqualsExpression' and 'thingML_Expression'. From 'thingML_EqualsExpression', the role 'thingML_EqualsExpression' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression237' has cardinality 0..*.
+An association connects 'thingML_EqualsExpression' and 'thingML_Expression'. From 'thingML_EqualsExpression', the role 'thingML_EqualsExpression239' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression240' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_NotEqualsExpression'. From 'thingML_Expression', the role 'thingML_Expression242' has cardinality 0..*, and from 'thingML_NotEqualsExpression', the role 'thingML_NotEqualsExpression' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_NotEqualsExpression'. From 'thingML_Expression', the role 'thingML_Expression245' has cardinality 0..*, and from 'thingML_NotEqualsExpression', the role 'thingML_NotEqualsExpression244' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_GreaterExpression'. From 'thingML_Expression', the role 'thingML_Expression247' has cardinality 0..*, and from 'thingML_GreaterExpression', the role 'thingML_GreaterExpression' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_GreaterExpression'. From 'thingML_Expression', the role 'thingML_Expression250' has cardinality 0..*, and from 'thingML_GreaterExpression', the role 'thingML_GreaterExpression249' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_LowerExpression'. From 'thingML_Expression', the role 'thingML_Expression252' has cardinality 0..*, and from 'thingML_LowerExpression', the role 'thingML_LowerExpression' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_LowerExpression'. From 'thingML_Expression', the role 'thingML_Expression255' has cardinality 0..*, and from 'thingML_LowerExpression', the role 'thingML_LowerExpression254' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_GreaterOrEqualExpression'. From 'thingML_Expression', the role 'thingML_Expression257' has cardinality 0..*, and from 'thingML_GreaterOrEqualExpression', the role 'thingML_GreaterOrEqualExpression' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_GreaterOrEqualExpression'. From 'thingML_Expression', the role 'thingML_Expression260' has cardinality 0..*, and from 'thingML_GreaterOrEqualExpression', the role 'thingML_GreaterOrEqualExpression259' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_LowerOrEqualExpression'. From 'thingML_Expression', the role 'thingML_Expression262' has cardinality 0..*, and from 'thingML_LowerOrEqualExpression', the role 'thingML_LowerOrEqualExpression' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_LowerOrEqualExpression'. From 'thingML_Expression', the role 'thingML_Expression265' has cardinality 0..*, and from 'thingML_LowerOrEqualExpression', the role 'thingML_LowerOrEqualExpression264' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_PlusExpression'. From 'thingML_Expression', the role 'thingML_Expression267' has cardinality 0..*, and from 'thingML_PlusExpression', the role 'thingML_PlusExpression' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_PlusExpression'. From 'thingML_Expression', the role 'thingML_Expression270' has cardinality 0..*, and from 'thingML_PlusExpression', the role 'thingML_PlusExpression269' has cardinality 0..*.
+An association connects 'thingML_MinusExpression' and 'thingML_Expression'. From 'thingML_MinusExpression', the role 'thingML_MinusExpression' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression272' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_MinusExpression'. From 'thingML_Expression', the role 'thingML_Expression275' has cardinality 0..*, and from 'thingML_MinusExpression', the role 'thingML_MinusExpression274' has cardinality 0..*.
+An association connects 'thingML_TimesExpression' and 'thingML_Expression'. From 'thingML_TimesExpression', the role 'thingML_TimesExpression' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression277' has cardinality 0..*.
+An association connects 'thingML_TimesExpression' and 'thingML_Expression'. From 'thingML_TimesExpression', the role 'thingML_TimesExpression279' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression280' has cardinality 0..*.
+An association connects 'thingML_DivExpression' and 'thingML_Expression'. From 'thingML_DivExpression', the role 'thingML_DivExpression' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression282' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_DivExpression'. From 'thingML_Expression', the role 'thingML_Expression285' has cardinality 0..*, and from 'thingML_DivExpression', the role 'thingML_DivExpression284' has cardinality 0..*.
+An association connects 'thingML_Expression' and 'thingML_ModExpression'. From 'thingML_Expression', the role 'thingML_Expression287' has cardinality 0..*, and from 'thingML_ModExpression', the role 'thingML_ModExpression' has cardinality 0..*.
+An association connects 'thingML_ModExpression' and 'thingML_Expression'. From 'thingML_ModExpression', the role 'thingML_ModExpression289' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression290' has cardinality 0..*.
+An association connects 'thingML_CastExpression' and 'thingML_Expression'. From 'thingML_CastExpression', the role 'thingML_CastExpression' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression292' has cardinality 0..*.
+An association connects 'thingML_CastExpression' and 'thingML_Type'. From 'thingML_CastExpression', the role 'thingML_CastExpression294' has cardinality 0..*, and from 'thingML_Type', the role 'thingML_Type295' has cardinality 0..*.
+An association connects 'thingML_ExpressionGroup' and 'thingML_Expression'. From 'thingML_ExpressionGroup', the role 'thingML_ExpressionGroup' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression297' has cardinality 0..*.
+An association connects 'thingML_NotExpression' and 'thingML_Expression'. From 'thingML_NotExpression', the role 'thingML_NotExpression' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression299' has cardinality 0..*.
+An association connects 'thingML_UnaryMinus' and 'thingML_Expression'. From 'thingML_UnaryMinus', the role 'thingML_UnaryMinus' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression301' has cardinality 0..*.
+An association connects 'thingML_ArrayIndex' and 'thingML_Expression'. From 'thingML_ArrayIndex', the role 'thingML_ArrayIndex' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression303' has cardinality 0..*.
+An association connects 'thingML_ArrayIndex' and 'thingML_Expression'. From 'thingML_ArrayIndex', the role 'thingML_ArrayIndex305' has cardinality 0..*, and from 'thingML_Expression', the role 'thingML_Expression306' has cardinality 0..*.

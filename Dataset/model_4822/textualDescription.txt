@@ -1,0 +1,45 @@
+The domain model 'trip' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'trip_TripModel' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Vehicle' represents an important domain concept.
+It does not declare any attributes.
+
+'trip_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'trip_Trip' represents an important domain concept.
+It does not declare any attributes.
+
+'trip_Person' represents an important domain concept.
+It does not declare any attributes.
+
+'trip_Van' represents an important domain concept.
+It does not declare any attributes.
+
+'trip_Vehicle' represents an important domain concept.
+It has one attribute: 'nrOfSeats', which is of type int.
+
+'trip_Car' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'trip_Trip' is a specialization of 'NamedElement'.
+The class 'trip_Vehicle' is a specialization of 'NamedElement'.
+The class 'trip_Person' is a specialization of 'NamedElement'.
+The class 'trip_Car' is a specialization of 'Vehicle'.
+The class 'trip_TripModel' is a specialization of 'NamedElement'.
+The class 'trip_Van' is a specialization of 'Vehicle'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trip_Trip' and 'trip_Vehicle'. From 'trip_Trip', the role 'trip_Trip' has cardinality 0..*, and from 'trip_Vehicle', the role 'trip_Vehicle' has cardinality 0..*.
+An association connects 'trip_Person' and 'trip_Trip'. From 'trip_Person', the role 'Person' has cardinality 0..*, and from 'trip_Trip', the role 'trips' has cardinality 0..*.
+An association connects 'trip_Person' and 'trip_Trip'. From 'trip_Person', the role 'trip_Person' has cardinality 0..*, and from 'trip_Trip', the role 'trip_Trip3' has cardinality 0..*.
+An association connects 'trip_Trip' and 'trip_Person'. From 'trip_Trip', the role 'Trip' has cardinality 0..*, and from 'trip_Person', the role 'passengers' has cardinality 0..*.
+An association connects 'trip_TripModel' and 'trip_NamedElement'. From 'trip_TripModel', the role 'trip_TripModel' has cardinality 0..*, and from 'trip_NamedElement', the role 'trip_NamedElement' has cardinality 0..*.

@@ -1,0 +1,72 @@
+The domain model 'ramRoot' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'ramRoot_MTpos__Restaurant' represents an important domain concept.
+It does not declare any attributes.
+
+'MTpos__Element' represents an important domain concept.
+It does not declare any attributes.
+
+'ramRoot_MTpos__Waitress' represents an important domain concept.
+It has one attribute: 'MTpos__name', which is of type str.
+
+'ramRoot_MTpre__Table' represents an important domain concept.
+It has the following attributes: 'MTpre__isReserved', which is of type str; 'MTpre__id', which is of type str.
+
+'ramRoot_MTpre__Waitress' represents an important domain concept.
+It has one attribute: 'MTpre__name', which is of type str.
+
+'ramRoot_MTpos__Table' represents an important domain concept.
+It has the following attributes: 'MTpos__isReserved', which is of type str; 'MTpos__id', which is of type str.
+
+'ramRoot_MTpre__Element' represents an important domain concept.
+It has one attribute: 'MT__matchSubtype', which is of type bool.
+
+'MTpre__Element' represents an important domain concept.
+It does not declare any attributes.
+
+'ramRoot_MTpre__Chair' represents an important domain concept.
+It has one attribute: 'MTpre__order', which is of type str.
+
+'ramRoot_GenericNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ramRoot_MT__Element' represents an important domain concept.
+It has the following attributes: 'MT__label', which is of type str; 'MT__isProcessed', which is of type bool.
+
+'ramRoot_MTpos__Element' represents an important domain concept.
+It does not declare any attributes.
+
+'ramRoot_MTpre__Restaurant' represents an important domain concept.
+It does not declare any attributes.
+
+'ramRoot_MTpos__Chair' represents an important domain concept.
+It has one attribute: 'MTpos__order', which is of type str.
+
+'MT__Element' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ramRoot_MTpos__Element' is a specialization of 'MT__Element'.
+The class 'ramRoot_MTpre__Element' is a specialization of 'MT__Element'.
+The class 'ramRoot_GenericNode' is a specialization of 'MT__Element'.
+The class 'ramRoot_MTpos__Table' is a specialization of 'MTpos__Element'.
+The class 'ramRoot_MTpos__Chair' is a specialization of 'MTpos__Element'.
+The class 'ramRoot_MTpos__Waitress' is a specialization of 'MTpos__Element'.
+The class 'ramRoot_MTpre__Table' is a specialization of 'MTpre__Element'.
+The class 'ramRoot_MTpre__Chair' is a specialization of 'MTpre__Element'.
+The class 'ramRoot_MTpre__Waitress' is a specialization of 'MTpre__Element'.
+The class 'ramRoot_MTpre__Restaurant' is a specialization of 'MTpre__Element'.
+The class 'ramRoot_MTpos__Restaurant' is a specialization of 'MTpos__Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ramRoot_GenericNode' and 'ramRoot_MT__Element'. From 'ramRoot_GenericNode', the role 'ramRoot_GenericNode' has cardinality 0..*, and from 'ramRoot_MT__Element', the role 'ramRoot_MT__Element' has cardinality 0..*.
+An association connects 'ramRoot_MTpos__Chair' and 'ramRoot_MTpos__Table'. From 'ramRoot_MTpos__Chair', the role 'ramRoot_MTpos__Chair' has cardinality 0..*, and from 'ramRoot_MTpos__Table', the role 'ramRoot_MTpos__Table' has cardinality 0..*.
+An association connects 'ramRoot_MTpos__Table' and 'ramRoot_MTpos__Waitress'. From 'ramRoot_MTpos__Table', the role 'ramRoot_MTpos__Table3' has cardinality 0..*, and from 'ramRoot_MTpos__Waitress', the role 'ramRoot_MTpos__Waitress' has cardinality 0..*.
+An association connects 'ramRoot_MTpre__Table' and 'ramRoot_MTpre__Chair'. From 'ramRoot_MTpre__Table', the role 'ramRoot_MTpre__Table' has cardinality 0..*, and from 'ramRoot_MTpre__Chair', the role 'ramRoot_MTpre__Chair' has cardinality 0..*.
+An association connects 'ramRoot_MTpre__Table' and 'ramRoot_MTpre__Waitress'. From 'ramRoot_MTpre__Table', the role 'ramRoot_MTpre__Table6' has cardinality 0..*, and from 'ramRoot_MTpre__Waitress', the role 'ramRoot_MTpre__Waitress' has cardinality 0..*.
+An association connects 'ramRoot_MTpre__Restaurant' and 'ramRoot_MTpre__Table'. From 'ramRoot_MTpre__Restaurant', the role 'ramRoot_MTpre__Restaurant' has cardinality 0..*, and from 'ramRoot_MTpre__Table', the role 'ramRoot_MTpre__Table8' has cardinality 0..*.
+An association connects 'ramRoot_MTpre__Restaurant' and 'ramRoot_MTpre__Waitress'. From 'ramRoot_MTpre__Restaurant', the role 'ramRoot_MTpre__Restaurant10' has cardinality 0..*, and from 'ramRoot_MTpre__Waitress', the role 'ramRoot_MTpre__Waitress11' has cardinality 0..*.
+An association connects 'ramRoot_MTpos__Waitress' and 'ramRoot_MTpos__Restaurant'. From 'ramRoot_MTpos__Waitress', the role 'ramRoot_MTpos__Waitress13' has cardinality 0..*, and from 'ramRoot_MTpos__Restaurant', the role 'ramRoot_MTpos__Restaurant' has cardinality 0..*.
+An association connects 'ramRoot_MTpos__Table' and 'ramRoot_MTpos__Restaurant'. From 'ramRoot_MTpos__Table', the role 'ramRoot_MTpos__Table16' has cardinality 0..*, and from 'ramRoot_MTpos__Restaurant', the role 'ramRoot_MTpos__Restaurant15' has cardinality 0..*.

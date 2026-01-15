@@ -1,0 +1,25 @@
+The domain model 'Master' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'Master_Classe' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'N' represents an important domain concept.
+It does not declare any attributes.
+
+'Master_N' represents an important domain concept.
+It has one attribute: 'n', which is of type str.
+
+'Master_test2_B' represents an important domain concept.
+It has the following attributes: 'nb', which is of type int; 'nb2', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'Master_Classe' is a specialization of 'N'.
+The class 'Master_test2_B' is a specialization of 'N'.
+
+Relationships between classes are modeled using associations.
+An association connects 'B' and 'Master_Classe'. From 'B', the role 'B' has cardinality 0..*, and from 'Master_Classe', the role 'Master_Classe' has cardinality 0..*.

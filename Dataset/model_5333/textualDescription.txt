@@ -1,0 +1,6 @@
+The domain model 'Root' describes the core structural elements and their relationships within the system.
+
+The model defines 1 main class(es).
+
+'Root_ClaferA' represents an important domain concept.
+It does not declare any attributes.

@@ -1,0 +1,317 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 62 main class(es).
+
+'model_business_BusinessDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'model_behavioural_BehaviouralModel' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ModelPropertyCategory' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str.
+
+'BusinessViewInnerJoinRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'model_olap_OlapModel' represents an important domain concept.
+It does not declare any attributes.
+
+'model_physical_PhysicalModel' represents an important domain concept.
+It has the following attributes: 'databaseName', which is of type str; 'databaseVersion', which is of type str; 'catalog', which is of type str; 'schema', which is of type str.
+
+'model_business_BusinessViewInnerJoinRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'BusinessRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'BusinessModel' represents an important domain concept.
+It does not declare any attributes.
+
+'model_physical_PhysicalForeignKey' represents an important domain concept.
+It has the following attributes: 'destinationName', which is of type str; 'sourceName', which is of type str.
+
+'model_business_BusinessTable' represents an important domain concept.
+It does not declare any attributes.
+
+'model_analytical_AnalyticalModel' represents an important domain concept.
+It does not declare any attributes.
+
+'model_business_BusinessColumnSet' represents an important domain concept.
+It does not declare any attributes.
+
+'model_physical_PhysicalColumn' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'defaultValue', which is of type str; 'position', which is of type int; 'decimalDigits', which is of type int; 'radix', which is of type int; 'size', which is of type int; 'typeName', which is of type str; 'octectLength', which is of type int; 'nullable', which is of type bool; 'dataType', which is of type str.
+
+'BusinessColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model_olap_VirtualCube' represents an important domain concept.
+It does not declare any attributes.
+
+'model_business_SimpleBusinessColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'model_olap_Hierarchy' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ModelProperty' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'model_olap_CalculatedMember' represents an important domain concept.
+It does not declare any attributes.
+
+'Dimension' represents an important domain concept.
+It does not declare any attributes.
+
+'PhysicalTable' represents an important domain concept.
+It does not declare any attributes.
+
+'model_olap_Dimension' represents an important domain concept.
+It does not declare any attributes.
+
+'physical_model_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'PhysicalForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'model_business_BusinessColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ModelObject' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'uniqueName', which is of type str; 'id', which is of type str; 'name', which is of type str.
+
+'PhysicalModel' represents an important domain concept.
+It does not declare any attributes.
+
+'model_olap_Level' represents an important domain concept.
+It does not declare any attributes.
+
+'model_physical_PhysicalTable' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'type', which is of type str.
+
+'BusinessDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'model_business_BusinessIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'model_olap_Cube' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'Level' represents an important domain concept.
+It does not declare any attributes.
+
+'Cube' represents an important domain concept.
+It does not declare any attributes.
+
+'model_business_BusinessModel' represents an important domain concept.
+It does not declare any attributes.
+
+'CalculatedMember' represents an important domain concept.
+It does not declare any attributes.
+
+'model_business_BusinessRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'PhysicalPrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'VirtualCube' represents an important domain concept.
+It does not declare any attributes.
+
+'BusinessIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ModelPropertyMapEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'model_olap_VirtualCubeMeasure' represents an important domain concept.
+It does not declare any attributes.
+
+'model_business_CalculatedBusinessColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'olap_model_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'model_business_BusinessView' represents an important domain concept.
+It does not declare any attributes.
+
+'VirtualCubeMeasure' represents an important domain concept.
+It does not declare any attributes.
+
+'model_olap_NamedSet' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedSet' represents an important domain concept.
+It does not declare any attributes.
+
+'model_olap_Measure' represents an important domain concept.
+It does not declare any attributes.
+
+'Measure' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ModelPropertyType' represents an important domain concept.
+It has the following attributes: 'admissibleValues', which is of type str; 'description', which is of type str; 'id', which is of type str; 'defaultValue', which is of type str; 'name', which is of type str.
+
+'Hierarchy' represents an important domain concept.
+It does not declare any attributes.
+
+'OlapModel' represents an important domain concept.
+It does not declare any attributes.
+
+'PhysicalColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'model_olap_VirtualCubeDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'model_physical_PhysicalPrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'VirtualCubeDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'BusinessColumnSet' represents an important domain concept.
+It does not declare any attributes.
+
+'business_model_Model' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'model_Model' is a specialization of 'ModelObject'.
+The class 'model_physical_PhysicalModel' is a specialization of 'ModelObject'.
+The class 'model_physical_PhysicalTable' is a specialization of 'ModelObject'.
+The class 'model_physical_PhysicalColumn' is a specialization of 'ModelObject'.
+The class 'model_physical_PhysicalPrimaryKey' is a specialization of 'ModelObject'.
+The class 'model_physical_PhysicalForeignKey' is a specialization of 'ModelObject'.
+The class 'model_business_BusinessModel' is a specialization of 'ModelObject'.
+The class 'model_business_BusinessColumn' is a specialization of 'ModelObject'.
+The class 'model_business_BusinessColumnSet' is a specialization of 'ModelObject'.
+The class 'model_business_BusinessTable' is a specialization of 'BusinessColumnSet'.
+The class 'model_business_BusinessView' is a specialization of 'BusinessColumnSet'.
+The class 'model_business_BusinessRelationship' is a specialization of 'ModelObject'.
+The class 'model_business_BusinessDomain' is a specialization of 'ModelObject'.
+The class 'model_business_BusinessIdentifier' is a specialization of 'ModelObject'.
+The class 'model_business_BusinessViewInnerJoinRelationship' is a specialization of 'ModelObject'.
+The class 'model_business_SimpleBusinessColumn' is a specialization of 'BusinessColumn'.
+The class 'model_business_CalculatedBusinessColumn' is a specialization of 'BusinessColumn'.
+The class 'model_olap_OlapModel' is a specialization of 'ModelObject'.
+The class 'model_olap_Cube' is a specialization of 'ModelObject'.
+The class 'model_olap_Dimension' is a specialization of 'ModelObject'.
+The class 'model_olap_Hierarchy' is a specialization of 'ModelObject'.
+The class 'model_olap_Level' is a specialization of 'ModelObject'.
+The class 'model_olap_Measure' is a specialization of 'ModelObject'.
+The class 'model_olap_CalculatedMember' is a specialization of 'ModelObject'.
+The class 'model_olap_NamedSet' is a specialization of 'ModelObject'.
+The class 'model_olap_VirtualCube' is a specialization of 'ModelObject'.
+The class 'model_olap_VirtualCubeDimension' is a specialization of 'ModelObject'.
+The class 'model_olap_VirtualCubeMeasure' is a specialization of 'ModelObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_ModelPropertyCategory' and 'model_ModelPropertyCategory'. From 'model_ModelPropertyCategory', the role 'model_ModelPropertyCategory0' has cardinality 0..*, and from 'model_ModelPropertyCategory', the role 'model_ModelPropertyCategory' has cardinality 0..*.
+An association connects 'model_ModelPropertyCategory' and 'model_ModelPropertyCategory'. From 'model_ModelPropertyCategory', the role 'model_ModelPropertyCategory4' has cardinality 0..*, and from 'model_ModelPropertyCategory', the role 'model_ModelPropertyCategory2' has cardinality 0..*.
+An association connects 'model_ModelPropertyCategory' and 'model_ModelPropertyType'. From 'model_ModelPropertyCategory', the role 'category' has cardinality 0..*, and from 'model_ModelPropertyType', the role 'ModelPropertyType' has cardinality 0..*.
+An association connects 'model_ModelPropertyType' and 'model_ModelPropertyCategory'. From 'model_ModelPropertyType', the role 'propertyTypes' has cardinality 0..*, and from 'model_ModelPropertyCategory', the role 'ModelPropertyCategory' has cardinality 0..*.
+An association connects 'model_ModelPropertyType' and 'model_ModelProperty'. From 'model_ModelPropertyType', the role 'model_ModelPropertyType' has cardinality 0..*, and from 'model_ModelProperty', the role 'model_ModelProperty' has cardinality 0..*.
+An association connects 'model_ModelPropertyMapEntry' and 'model_ModelProperty'. From 'model_ModelPropertyMapEntry', the role 'model_ModelPropertyMapEntry' has cardinality 0..*, and from 'model_ModelProperty', the role 'model_ModelProperty9' has cardinality 0..*.
+An association connects 'model_ModelObject' and 'model_ModelPropertyMapEntry'. From 'model_ModelObject', the role 'model_ModelObject' has cardinality 0..*, and from 'model_ModelPropertyMapEntry', the role 'model_ModelPropertyMapEntry11' has cardinality 0..*.
+An association connects 'PhysicalModel' and 'model_Model'. From 'PhysicalModel', the role 'physical' has cardinality 0..*, and from 'model_Model', the role 'PhysicalModel' has cardinality 0..*.
+An association connects 'BusinessModel' and 'model_Model'. From 'BusinessModel', the role 'business' has cardinality 0..*, and from 'model_Model', the role 'BusinessModel' has cardinality 0..*.
+An association connects 'model_Model' and 'OlapModel'. From 'model_Model', the role 'OlapModel' has cardinality 0..*, and from 'OlapModel', the role 'olap' has cardinality 0..*.
+An association connects 'model_ModelPropertyType' and 'model_Model'. From 'model_ModelPropertyType', the role 'model_ModelPropertyType16' has cardinality 0..*, and from 'model_Model', the role 'model_Model' has cardinality 0..*.
+An association connects 'model_ModelPropertyCategory' and 'model_Model'. From 'model_ModelPropertyCategory', the role 'model_ModelPropertyCategory19' has cardinality 0..*, and from 'model_Model', the role 'model_Model18' has cardinality 0..*.
+An association connects 'physical_model_Model' and 'model_physical_PhysicalModel'. From 'physical_model_Model', the role 'Model' has cardinality 0..*, and from 'model_physical_PhysicalModel', the role 'physicalModels' has cardinality 0..*.
+An association connects 'PhysicalTable' and 'model_physical_PhysicalModel'. From 'PhysicalTable', the role 'physical22' has cardinality 0..*, and from 'model_physical_PhysicalModel', the role 'PhysicalTable' has cardinality 0..*.
+An association connects 'PhysicalPrimaryKey' and 'model_physical_PhysicalModel'. From 'PhysicalPrimaryKey', the role 'physical24' has cardinality 0..*, and from 'model_physical_PhysicalModel', the role 'PhysicalPrimaryKey' has cardinality 0..*.
+An association connects 'PhysicalForeignKey' and 'model_physical_PhysicalModel'. From 'PhysicalForeignKey', the role 'physical26' has cardinality 0..*, and from 'model_physical_PhysicalModel', the role 'PhysicalForeignKey' has cardinality 0..*.
+An association connects 'model_physical_PhysicalTable' and 'PhysicalModel'. From 'model_physical_PhysicalTable', the role 'PhysicalModel28' has cardinality 0..*, and from 'PhysicalModel', the role 'physical29' has cardinality 0..*.
+An association connects 'model_physical_PhysicalTable' and 'PhysicalColumn'. From 'model_physical_PhysicalTable', the role 'PhysicalColumn' has cardinality 0..*, and from 'PhysicalColumn', the role 'physical31' has cardinality 0..*.
+An association connects 'PhysicalTable' and 'model_physical_PhysicalColumn'. From 'PhysicalTable', the role 'physical34' has cardinality 0..*, and from 'model_physical_PhysicalColumn', the role 'PhysicalTable33' has cardinality 0..*.
+An association connects 'model_physical_PhysicalPrimaryKey' and 'PhysicalModel'. From 'model_physical_PhysicalPrimaryKey', the role 'PhysicalModel36' has cardinality 0..*, and from 'PhysicalModel', the role 'physical37' has cardinality 0..*.
+An association connects 'model_physical_PhysicalPrimaryKey' and 'PhysicalTable'. From 'model_physical_PhysicalPrimaryKey', the role 'model_physical_PhysicalPrimaryKey' has cardinality 0..*, and from 'PhysicalTable', the role 'PhysicalTable39' has cardinality 0..*.
+An association connects 'model_physical_PhysicalPrimaryKey' and 'PhysicalColumn'. From 'model_physical_PhysicalPrimaryKey', the role 'model_physical_PhysicalPrimaryKey41' has cardinality 0..*, and from 'PhysicalColumn', the role 'PhysicalColumn42' has cardinality 0..*.
+An association connects 'PhysicalTable' and 'model_physical_PhysicalForeignKey'. From 'PhysicalTable', the role 'PhysicalTable44' has cardinality 0..*, and from 'model_physical_PhysicalForeignKey', the role 'model_physical_PhysicalForeignKey' has cardinality 0..*.
+An association connects 'model_physical_PhysicalForeignKey' and 'PhysicalColumn'. From 'model_physical_PhysicalForeignKey', the role 'model_physical_PhysicalForeignKey46' has cardinality 0..*, and from 'PhysicalColumn', the role 'PhysicalColumn47' has cardinality 0..*.
+An association connects 'model_physical_PhysicalForeignKey' and 'PhysicalTable'. From 'model_physical_PhysicalForeignKey', the role 'model_physical_PhysicalForeignKey49' has cardinality 0..*, and from 'PhysicalTable', the role 'PhysicalTable50' has cardinality 0..*.
+An association connects 'PhysicalColumn' and 'model_physical_PhysicalForeignKey'. From 'PhysicalColumn', the role 'PhysicalColumn53' has cardinality 0..*, and from 'model_physical_PhysicalForeignKey', the role 'model_physical_PhysicalForeignKey52' has cardinality 0..*.
+An association connects 'PhysicalModel' and 'model_physical_PhysicalForeignKey'. From 'PhysicalModel', the role 'physical56' has cardinality 0..*, and from 'model_physical_PhysicalForeignKey', the role 'PhysicalModel55' has cardinality 0..*.
+An association connects 'model_business_BusinessModel' and 'business_model_Model'. From 'model_business_BusinessModel', the role 'businessModels' has cardinality 0..*, and from 'business_model_Model', the role 'Model58' has cardinality 0..*.
+An association connects 'model_business_BusinessModel' and 'PhysicalModel'. From 'model_business_BusinessModel', the role 'model_business_BusinessModel' has cardinality 0..*, and from 'PhysicalModel', the role 'PhysicalModel60' has cardinality 0..*.
+An association connects 'model_business_BusinessModel' and 'BusinessColumnSet'. From 'model_business_BusinessModel', the role 'BusinessColumnSet' has cardinality 0..*, and from 'BusinessColumnSet', the role 'business62' has cardinality 0..*.
+An association connects 'BusinessRelationship' and 'model_business_BusinessModel'. From 'BusinessRelationship', the role 'business64' has cardinality 0..*, and from 'model_business_BusinessModel', the role 'BusinessRelationship' has cardinality 0..*.
+An association connects 'model_business_BusinessModel' and 'BusinessIdentifier'. From 'model_business_BusinessModel', the role 'BusinessIdentifier' has cardinality 0..*, and from 'BusinessIdentifier', the role 'business66' has cardinality 0..*.
+An association connects 'BusinessDomain' and 'model_business_BusinessModel'. From 'BusinessDomain', the role 'business68' has cardinality 0..*, and from 'model_business_BusinessModel', the role 'BusinessDomain' has cardinality 0..*.
+An association connects 'BusinessViewInnerJoinRelationship' and 'model_business_BusinessModel'. From 'BusinessViewInnerJoinRelationship', the role 'business70' has cardinality 0..*, and from 'model_business_BusinessModel', the role 'BusinessViewInnerJoinRelationship' has cardinality 0..*.
+An association connects 'model_business_BusinessColumn' and 'BusinessColumnSet'. From 'model_business_BusinessColumn', the role 'BusinessColumnSet72' has cardinality 0..*, and from 'BusinessColumnSet', the role 'business73' has cardinality 0..*.
+An association connects 'BusinessModel' and 'model_business_BusinessColumnSet'. From 'BusinessModel', the role 'business76' has cardinality 0..*, and from 'model_business_BusinessColumnSet', the role 'BusinessModel75' has cardinality 0..*.
+An association connects 'BusinessColumn' and 'model_business_BusinessColumnSet'. From 'BusinessColumn', the role 'business78' has cardinality 0..*, and from 'model_business_BusinessColumnSet', the role 'BusinessColumn' has cardinality 0..*.
+An association connects 'PhysicalTable' and 'model_business_BusinessTable'. From 'PhysicalTable', the role 'PhysicalTable80' has cardinality 0..*, and from 'model_business_BusinessTable', the role 'model_business_BusinessTable' has cardinality 0..*.
+An association connects 'model_business_BusinessView' and 'BusinessViewInnerJoinRelationship'. From 'model_business_BusinessView', the role 'model_business_BusinessView' has cardinality 0..*, and from 'BusinessViewInnerJoinRelationship', the role 'BusinessViewInnerJoinRelationship82' has cardinality 0..*.
+An association connects 'BusinessModel' and 'model_business_BusinessRelationship'. From 'BusinessModel', the role 'business85' has cardinality 0..*, and from 'model_business_BusinessRelationship', the role 'BusinessModel84' has cardinality 0..*.
+An association connects 'model_business_BusinessRelationship' and 'BusinessColumnSet'. From 'model_business_BusinessRelationship', the role 'model_business_BusinessRelationship' has cardinality 0..*, and from 'BusinessColumnSet', the role 'BusinessColumnSet87' has cardinality 0..*.
+An association connects 'model_business_BusinessRelationship' and 'BusinessColumnSet'. From 'model_business_BusinessRelationship', the role 'model_business_BusinessRelationship89' has cardinality 0..*, and from 'BusinessColumnSet', the role 'BusinessColumnSet90' has cardinality 0..*.
+An association connects 'BusinessColumn' and 'model_business_BusinessRelationship'. From 'BusinessColumn', the role 'BusinessColumn93' has cardinality 0..*, and from 'model_business_BusinessRelationship', the role 'model_business_BusinessRelationship92' has cardinality 0..*.
+An association connects 'BusinessColumn' and 'model_business_BusinessRelationship'. From 'BusinessColumn', the role 'BusinessColumn96' has cardinality 0..*, and from 'model_business_BusinessRelationship', the role 'model_business_BusinessRelationship95' has cardinality 0..*.
+An association connects 'model_business_BusinessRelationship' and 'PhysicalForeignKey'. From 'model_business_BusinessRelationship', the role 'model_business_BusinessRelationship98' has cardinality 0..*, and from 'PhysicalForeignKey', the role 'PhysicalForeignKey99' has cardinality 0..*.
+An association connects 'BusinessModel' and 'model_business_BusinessDomain'. From 'BusinessModel', the role 'business102' has cardinality 0..*, and from 'model_business_BusinessDomain', the role 'BusinessModel101' has cardinality 0..*.
+An association connects 'BusinessColumnSet' and 'model_business_BusinessDomain'. From 'BusinessColumnSet', the role 'BusinessColumnSet104' has cardinality 0..*, and from 'model_business_BusinessDomain', the role 'model_business_BusinessDomain' has cardinality 0..*.
+An association connects 'BusinessRelationship' and 'model_business_BusinessDomain'. From 'BusinessRelationship', the role 'BusinessRelationship107' has cardinality 0..*, and from 'model_business_BusinessDomain', the role 'model_business_BusinessDomain106' has cardinality 0..*.
+An association connects 'model_business_BusinessIdentifier' and 'BusinessModel'. From 'model_business_BusinessIdentifier', the role 'BusinessModel109' has cardinality 0..*, and from 'BusinessModel', the role 'business110' has cardinality 0..*.
+An association connects 'model_business_BusinessIdentifier' and 'BusinessColumnSet'. From 'model_business_BusinessIdentifier', the role 'model_business_BusinessIdentifier' has cardinality 0..*, and from 'BusinessColumnSet', the role 'BusinessColumnSet112' has cardinality 0..*.
+An association connects 'model_business_BusinessIdentifier' and 'BusinessColumn'. From 'model_business_BusinessIdentifier', the role 'model_business_BusinessIdentifier114' has cardinality 0..*, and from 'BusinessColumn', the role 'BusinessColumn115' has cardinality 0..*.
+An association connects 'PhysicalPrimaryKey' and 'model_business_BusinessIdentifier'. From 'PhysicalPrimaryKey', the role 'PhysicalPrimaryKey118' has cardinality 0..*, and from 'model_business_BusinessIdentifier', the role 'model_business_BusinessIdentifier117' has cardinality 0..*.
+An association connects 'model_business_BusinessViewInnerJoinRelationship' and 'BusinessModel'. From 'model_business_BusinessViewInnerJoinRelationship', the role 'BusinessModel120' has cardinality 0..*, and from 'BusinessModel', the role 'business121' has cardinality 0..*.
+An association connects 'PhysicalTable' and 'model_business_BusinessViewInnerJoinRelationship'. From 'PhysicalTable', the role 'PhysicalTable123' has cardinality 0..*, and from 'model_business_BusinessViewInnerJoinRelationship', the role 'model_business_BusinessViewInnerJoinRelationship' has cardinality 0..*.
+An association connects 'model_business_BusinessViewInnerJoinRelationship' and 'PhysicalTable'. From 'model_business_BusinessViewInnerJoinRelationship', the role 'model_business_BusinessViewInnerJoinRelationship125' has cardinality 0..*, and from 'PhysicalTable', the role 'PhysicalTable126' has cardinality 0..*.
+An association connects 'PhysicalColumn' and 'model_business_BusinessViewInnerJoinRelationship'. From 'PhysicalColumn', the role 'PhysicalColumn129' has cardinality 0..*, and from 'model_business_BusinessViewInnerJoinRelationship', the role 'model_business_BusinessViewInnerJoinRelationship128' has cardinality 0..*.
+An association connects 'model_business_BusinessViewInnerJoinRelationship' and 'PhysicalColumn'. From 'model_business_BusinessViewInnerJoinRelationship', the role 'model_business_BusinessViewInnerJoinRelationship131' has cardinality 0..*, and from 'PhysicalColumn', the role 'PhysicalColumn132' has cardinality 0..*.
+An association connects 'model_business_SimpleBusinessColumn' and 'PhysicalColumn'. From 'model_business_SimpleBusinessColumn', the role 'model_business_SimpleBusinessColumn' has cardinality 0..*, and from 'PhysicalColumn', the role 'PhysicalColumn134' has cardinality 0..*.
+An association connects 'olap_model_Model' and 'model_olap_OlapModel'. From 'olap_model_Model', the role 'Model136' has cardinality 0..*, and from 'model_olap_OlapModel', the role 'olapModels' has cardinality 0..*.
+An association connects 'model_olap_OlapModel' and 'Cube'. From 'model_olap_OlapModel', the role 'Cube' has cardinality 0..*, and from 'Cube', the role 'olap138' has cardinality 0..*.
+An association connects 'model_olap_OlapModel' and 'VirtualCube'. From 'model_olap_OlapModel', the role 'VirtualCube' has cardinality 0..*, and from 'VirtualCube', the role 'olap140' has cardinality 0..*.
+An association connects 'model_olap_OlapModel' and 'Dimension'. From 'model_olap_OlapModel', the role 'Dimension' has cardinality 0..*, and from 'Dimension', the role 'olap142' has cardinality 0..*.
+An association connects 'model_olap_Cube' and 'OlapModel'. From 'model_olap_Cube', the role 'OlapModel144' has cardinality 0..*, and from 'OlapModel', the role 'olap145' has cardinality 0..*.
+An association connects 'BusinessColumnSet' and 'model_olap_Cube'. From 'BusinessColumnSet', the role 'BusinessColumnSet147' has cardinality 0..*, and from 'model_olap_Cube', the role 'model_olap_Cube' has cardinality 0..*.
+An association connects 'Dimension' and 'model_olap_Cube'. From 'Dimension', the role 'Dimension150' has cardinality 0..*, and from 'model_olap_Cube', the role 'model_olap_Cube149' has cardinality 0..*.
+An association connects 'Measure' and 'model_olap_Cube'. From 'Measure', the role 'olap152' has cardinality 0..*, and from 'model_olap_Cube', the role 'Measure' has cardinality 0..*.
+An association connects 'CalculatedMember' and 'model_olap_Cube'. From 'CalculatedMember', the role 'olap154' has cardinality 0..*, and from 'model_olap_Cube', the role 'CalculatedMember' has cardinality 0..*.
+An association connects 'NamedSet' and 'model_olap_Cube'. From 'NamedSet', the role 'olap156' has cardinality 0..*, and from 'model_olap_Cube', the role 'NamedSet' has cardinality 0..*.
+An association connects 'BusinessColumnSet' and 'model_olap_Dimension'. From 'BusinessColumnSet', the role 'BusinessColumnSet158' has cardinality 0..*, and from 'model_olap_Dimension', the role 'model_olap_Dimension' has cardinality 0..*.
+An association connects 'Hierarchy' and 'model_olap_Dimension'. From 'Hierarchy', the role 'olap160' has cardinality 0..*, and from 'model_olap_Dimension', the role 'Hierarchy' has cardinality 0..*.
+An association connects 'model_olap_Dimension' and 'OlapModel'. From 'model_olap_Dimension', the role 'OlapModel162' has cardinality 0..*, and from 'OlapModel', the role 'olap163' has cardinality 0..*.
+An association connects 'model_olap_Hierarchy' and 'BusinessColumnSet'. From 'model_olap_Hierarchy', the role 'model_olap_Hierarchy' has cardinality 0..*, and from 'BusinessColumnSet', the role 'BusinessColumnSet165' has cardinality 0..*.
+An association connects 'Dimension' and 'model_olap_Hierarchy'. From 'Dimension', the role 'olap168' has cardinality 0..*, and from 'model_olap_Hierarchy', the role 'Dimension167' has cardinality 0..*.
+An association connects 'model_olap_Hierarchy' and 'Level'. From 'model_olap_Hierarchy', the role 'Level' has cardinality 0..*, and from 'Level', the role 'olap170' has cardinality 0..*.
+An association connects 'Hierarchy' and 'model_olap_Level'. From 'Hierarchy', the role 'olap173' has cardinality 0..*, and from 'model_olap_Level', the role 'Hierarchy172' has cardinality 0..*.
+An association connects 'BusinessColumn' and 'model_olap_Level'. From 'BusinessColumn', the role 'BusinessColumn175' has cardinality 0..*, and from 'model_olap_Level', the role 'model_olap_Level' has cardinality 0..*.
+An association connects 'BusinessColumn' and 'model_olap_Level'. From 'BusinessColumn', the role 'BusinessColumn178' has cardinality 0..*, and from 'model_olap_Level', the role 'model_olap_Level177' has cardinality 0..*.
+An association connects 'BusinessColumn' and 'model_olap_Level'. From 'BusinessColumn', the role 'BusinessColumn181' has cardinality 0..*, and from 'model_olap_Level', the role 'model_olap_Level180' has cardinality 0..*.
+An association connects 'BusinessColumn' and 'model_olap_Level'. From 'BusinessColumn', the role 'BusinessColumn184' has cardinality 0..*, and from 'model_olap_Level', the role 'model_olap_Level183' has cardinality 0..*.
+An association connects 'BusinessColumn' and 'model_olap_Level'. From 'BusinessColumn', the role 'BusinessColumn187' has cardinality 0..*, and from 'model_olap_Level', the role 'model_olap_Level186' has cardinality 0..*.
+An association connects 'model_olap_Measure' and 'Cube'. From 'model_olap_Measure', the role 'Cube189' has cardinality 0..*, and from 'Cube', the role 'olap190' has cardinality 0..*.
+An association connects 'BusinessColumn' and 'model_olap_Measure'. From 'BusinessColumn', the role 'BusinessColumn192' has cardinality 0..*, and from 'model_olap_Measure', the role 'model_olap_Measure' has cardinality 0..*.
+An association connects 'Cube' and 'model_olap_CalculatedMember'. From 'Cube', the role 'olap195' has cardinality 0..*, and from 'model_olap_CalculatedMember', the role 'Cube194' has cardinality 0..*.
+An association connects 'Hierarchy' and 'model_olap_CalculatedMember'. From 'Hierarchy', the role 'Hierarchy197' has cardinality 0..*, and from 'model_olap_CalculatedMember', the role 'model_olap_CalculatedMember' has cardinality 0..*.
+An association connects 'model_olap_NamedSet' and 'Cube'. From 'model_olap_NamedSet', the role 'Cube199' has cardinality 0..*, and from 'Cube', the role 'olap200' has cardinality 0..*.
+An association connects 'Cube' and 'model_olap_VirtualCube'. From 'Cube', the role 'Cube202' has cardinality 0..*, and from 'model_olap_VirtualCube', the role 'model_olap_VirtualCube' has cardinality 0..*.
+An association connects 'model_olap_VirtualCube' and 'VirtualCubeDimension'. From 'model_olap_VirtualCube', the role 'VirtualCubeDimension' has cardinality 0..*, and from 'VirtualCubeDimension', the role 'olap204' has cardinality 0..*.
+An association connects 'model_olap_VirtualCube' and 'VirtualCubeMeasure'. From 'model_olap_VirtualCube', the role 'VirtualCubeMeasure' has cardinality 0..*, and from 'VirtualCubeMeasure', the role 'olap206' has cardinality 0..*.
+An association connects 'model_olap_VirtualCube' and 'CalculatedMember'. From 'model_olap_VirtualCube', the role 'model_olap_VirtualCube208' has cardinality 0..*, and from 'CalculatedMember', the role 'CalculatedMember209' has cardinality 0..*.
+An association connects 'model_olap_VirtualCube' and 'OlapModel'. From 'model_olap_VirtualCube', the role 'OlapModel211' has cardinality 0..*, and from 'OlapModel', the role 'olap212' has cardinality 0..*.
+An association connects 'VirtualCube' and 'model_olap_VirtualCubeDimension'. From 'VirtualCube', the role 'olap215' has cardinality 0..*, and from 'model_olap_VirtualCubeDimension', the role 'VirtualCube214' has cardinality 0..*.
+An association connects 'Cube' and 'model_olap_VirtualCubeDimension'. From 'Cube', the role 'Cube217' has cardinality 0..*, and from 'model_olap_VirtualCubeDimension', the role 'model_olap_VirtualCubeDimension' has cardinality 0..*.
+An association connects 'model_olap_VirtualCubeDimension' and 'Dimension'. From 'model_olap_VirtualCubeDimension', the role 'model_olap_VirtualCubeDimension219' has cardinality 0..*, and from 'Dimension', the role 'Dimension220' has cardinality 0..*.
+An association connects 'model_olap_VirtualCubeMeasure' and 'VirtualCube'. From 'model_olap_VirtualCubeMeasure', the role 'VirtualCube222' has cardinality 0..*, and from 'VirtualCube', the role 'olap223' has cardinality 0..*.
+An association connects 'model_olap_VirtualCubeMeasure' and 'Cube'. From 'model_olap_VirtualCubeMeasure', the role 'model_olap_VirtualCubeMeasure' has cardinality 0..*, and from 'Cube', the role 'Cube225' has cardinality 0..*.
+An association connects 'model_olap_VirtualCubeMeasure' and 'Measure'. From 'model_olap_VirtualCubeMeasure', the role 'model_olap_VirtualCubeMeasure227' has cardinality 0..*, and from 'Measure', the role 'Measure228' has cardinality 0..*.

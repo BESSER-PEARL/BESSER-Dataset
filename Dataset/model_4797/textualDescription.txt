@@ -1,0 +1,60 @@
+The domain model 'Graphql' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'Graphql_SystemType' represents an important domain concept.
+It does not declare any attributes.
+
+'Graphql_Boolean' represents an important domain concept.
+It does not declare any attributes.
+
+'Graphql_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Graphql_ScalarType' represents an important domain concept.
+It does not declare any attributes.
+
+'Graphql_String' represents an important domain concept.
+It does not declare any attributes.
+
+'Graphql_ID' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Graphql_Attribute' represents an important domain concept.
+It has the following attributes: 'isArray', which is of type str; 'typeName', which is of type str; 'name', which is of type str; 'isNullable', which is of type str.
+
+'Graphql_Float' represents an important domain concept.
+It does not declare any attributes.
+
+'Graphql_EnumValue' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'number', which is of type str.
+
+'ScalarType' represents an important domain concept.
+It does not declare any attributes.
+
+'Graphql_Enum' represents an important domain concept.
+It does not declare any attributes.
+
+'Graphql_Int' represents an important domain concept.
+It does not declare any attributes.
+
+'Graphql_Schema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'Graphql_ScalarType' is a specialization of 'Type'.
+The class 'Graphql_SystemType' is a specialization of 'Type'.
+The class 'Graphql_Int' is a specialization of 'ScalarType'.
+The class 'Graphql_Float' is a specialization of 'ScalarType'.
+The class 'Graphql_String' is a specialization of 'ScalarType'.
+The class 'Graphql_Boolean' is a specialization of 'ScalarType'.
+The class 'Graphql_ID' is a specialization of 'ScalarType'.
+The class 'Graphql_Enum' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Graphql_Type' and 'Graphql_Attribute'. From 'Graphql_Type', the role 'Graphql_Type' has cardinality 0..*, and from 'Graphql_Attribute', the role 'Graphql_Attribute' has cardinality 0..*.
+An association connects 'Graphql_Schema' and 'Graphql_Type'. From 'Graphql_Schema', the role 'Graphql_Schema' has cardinality 0..*, and from 'Graphql_Type', the role 'Graphql_Type2' has cardinality 0..*.
+An association connects 'Graphql_EnumValue' and 'Graphql_Enum'. From 'Graphql_EnumValue', the role 'Graphql_EnumValue' has cardinality 0..*, and from 'Graphql_Enum', the role 'Graphql_Enum' has cardinality 0..*.

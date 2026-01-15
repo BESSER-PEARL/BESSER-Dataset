@@ -1,0 +1,218 @@
+The domain model 'types' describes the core structural elements and their relationships within the system.
+
+The model defines 51 main class(es).
+
+'Typed' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_TypeDef' represents an important domain concept.
+It does not declare any attributes.
+
+'types_IdlObject' represents an important domain concept.
+It does not declare any attributes.
+
+'types_LongLong' represents an important domain concept.
+It does not declare any attributes.
+
+'types_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_UnionType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_IdlType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_TemplateType' represents an important domain concept.
+It does not declare any attributes.
+
+'IdlTypeDcl' represents an important domain concept.
+It does not declare any attributes.
+
+'types_StructType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_LongDouble' represents an important domain concept.
+It does not declare any attributes.
+
+'CaseLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ElementSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'types_UnionForwardDcl' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'types_IdlWChar' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Any' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Long' represents an important domain concept.
+It does not declare any attributes.
+
+'types_DefaultCaseLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'FileRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'types_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_IdlChar' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ValueBaseType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ULong' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ExprCaseLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'types_IdlString' represents an important domain concept.
+It does not declare any attributes.
+
+'IdlType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Short' represents an important domain concept.
+It does not declare any attributes.
+
+'Declarator' represents an important domain concept.
+It does not declare any attributes.
+
+'types_FixedPtType' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Declarator' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Case' represents an important domain concept.
+It does not declare any attributes.
+
+'types_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_UShort' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Double' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'types_EnumType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_CaseLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Boolean' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ULongLong' represents an important domain concept.
+It does not declare any attributes.
+
+'types_WString' represents an important domain concept.
+It does not declare any attributes.
+
+'MemberContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Float' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Switch' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Octet' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ForwardDcl' represents an important domain concept.
+It does not declare any attributes.
+
+'types_StructForwardDcl' represents an important domain concept.
+It does not declare any attributes.
+
+'types_WChar' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'types_TypeDef' is a specialization of 'TypedElement'.
+The class 'types_TypeDef' is a specialization of 'IdlTypeDcl'.
+The class 'types_VoidType' is a specialization of 'IdlType'.
+The class 'types_UnionType' is a specialization of 'IdlTypeDcl'.
+The class 'types_Switch' is a specialization of 'FileRegion'.
+The class 'types_Case' is a specialization of 'FileRegion'.
+The class 'types_CaseLabel' is a specialization of 'FileRegion'.
+The class 'types_DefaultCaseLabel' is a specialization of 'CaseLabel'.
+The class 'types_ExprCaseLabel' is a specialization of 'CaseLabel'.
+The class 'types_ElementSpec' is a specialization of 'FileRegion'.
+The class 'types_EnumType' is a specialization of 'IdlTypeDcl'.
+The class 'types_StructType' is a specialization of 'IdlTypeDcl'.
+The class 'types_StructType' is a specialization of 'MemberContainer'.
+The class 'types_TemplateType' is a specialization of 'IdlType'.
+The class 'types_SequenceType' is a specialization of 'TemplateType'.
+The class 'types_SequenceType' is a specialization of 'Typed'.
+The class 'types_IdlString' is a specialization of 'TemplateType'.
+The class 'types_WString' is a specialization of 'TemplateType'.
+The class 'types_PrimitiveType' is a specialization of 'IdlType'.
+The class 'types_Short' is a specialization of 'PrimitiveType'.
+The class 'types_Long' is a specialization of 'PrimitiveType'.
+The class 'types_Octet' is a specialization of 'PrimitiveType'.
+The class 'types_Float' is a specialization of 'PrimitiveType'.
+The class 'types_Double' is a specialization of 'PrimitiveType'.
+The class 'types_IdlChar' is a specialization of 'PrimitiveType'.
+The class 'types_IdlWChar' is a specialization of 'PrimitiveType'.
+The class 'types_WChar' is a specialization of 'PrimitiveType'.
+The class 'types_Boolean' is a specialization of 'PrimitiveType'.
+The class 'types_LongLong' is a specialization of 'PrimitiveType'.
+The class 'types_LongDouble' is a specialization of 'PrimitiveType'.
+The class 'types_UShort' is a specialization of 'PrimitiveType'.
+The class 'types_ULong' is a specialization of 'PrimitiveType'.
+The class 'types_ULongLong' is a specialization of 'PrimitiveType'.
+The class 'types_Any' is a specialization of 'PrimitiveType'.
+The class 'types_IdlObject' is a specialization of 'PrimitiveType'.
+The class 'types_UnionForwardDcl' is a specialization of 'IdlTypeDcl'.
+The class 'types_StructForwardDcl' is a specialization of 'IdlTypeDcl'.
+The class 'types_FixedPtType' is a specialization of 'TemplateType'.
+The class 'types_ValueBaseType' is a specialization of 'PrimitiveType'.
+The class 'types_Enumeration' is a specialization of 'Declarator'.
+The class 'types_Enumeration' is a specialization of 'IdlTypeDcl'.
+
+Relationships between classes are modeled using associations.
+An association connects 'types_UnionForwardDcl' and 'types_UnionType'. From 'types_UnionForwardDcl', the role 'UnionForwardDcl' has cardinality 0..*, and from 'types_UnionType', the role 'implementation' has cardinality 0..*.
+An association connects 'types_UnionType' and 'types_Switch'. From 'types_UnionType', the role 'types_UnionType' has cardinality 0..*, and from 'types_Switch', the role 'types_Switch' has cardinality 0..*.
+An association connects 'types_IdlType' and 'types_Switch'. From 'types_IdlType', the role 'types_IdlType' has cardinality 0..*, and from 'types_Switch', the role 'types_Switch3' has cardinality 0..*.
+An association connects 'types_Switch' and 'types_Case'. From 'types_Switch', the role 'types_Switch5' has cardinality 0..*, and from 'types_Case', the role 'types_Case' has cardinality 0..*.
+An association connects 'types_Case' and 'types_CaseLabel'. From 'types_Case', the role 'types_Case7' has cardinality 0..*, and from 'types_CaseLabel', the role 'types_CaseLabel' has cardinality 0..*.
+An association connects 'types_Case' and 'types_ElementSpec'. From 'types_Case', the role 'types_Case9' has cardinality 0..*, and from 'types_ElementSpec', the role 'types_ElementSpec' has cardinality 0..*.
+An association connects 'types_Expression' and 'types_ExprCaseLabel'. From 'types_Expression', the role 'types_Expression' has cardinality 0..*, and from 'types_ExprCaseLabel', the role 'types_ExprCaseLabel' has cardinality 0..*.
+An association connects 'types_ElementSpec' and 'types_IdlType'. From 'types_ElementSpec', the role 'types_ElementSpec12' has cardinality 0..*, and from 'types_IdlType', the role 'types_IdlType13' has cardinality 0..*.
+An association connects 'types_Declarator' and 'types_ElementSpec'. From 'types_Declarator', the role 'types_Declarator' has cardinality 0..*, and from 'types_ElementSpec', the role 'types_ElementSpec15' has cardinality 0..*.
+An association connects 'types_EnumType' and 'types_Enumeration'. From 'types_EnumType', the role 'types_EnumType' has cardinality 0..*, and from 'types_Enumeration', the role 'types_Enumeration' has cardinality 0..*.
+An association connects 'types_ForwardDcl' and 'types_StructType'. From 'types_ForwardDcl', the role 'types_ForwardDcl' has cardinality 0..*, and from 'types_StructType', the role 'types_StructType' has cardinality 0..*.
+An association connects 'types_StructForwardDcl' and 'types_StructType'. From 'types_StructForwardDcl', the role 'StructForwardDcl' has cardinality 0..*, and from 'types_StructType', the role 'implementation19' has cardinality 0..*.
+An association connects 'types_Expression' and 'types_TemplateType'. From 'types_Expression', the role 'types_Expression21' has cardinality 0..*, and from 'types_TemplateType', the role 'types_TemplateType' has cardinality 0..*.
+An association connects 'types_UnionForwardDcl' and 'types_UnionType'. From 'types_UnionForwardDcl', the role 'forwardDcl' has cardinality 0..*, and from 'types_UnionType', the role 'UnionType' has cardinality 0..*.
+An association connects 'types_StructForwardDcl' and 'types_StructType'. From 'types_StructForwardDcl', the role 'forwardDcl24' has cardinality 0..*, and from 'types_StructType', the role 'StructType' has cardinality 0..*.
+An association connects 'types_FixedPtType' and 'types_Expression'. From 'types_FixedPtType', the role 'types_FixedPtType' has cardinality 0..*, and from 'types_Expression', the role 'types_Expression26' has cardinality 0..*.
+An association connects 'types_Expression' and 'types_FixedPtType'. From 'types_Expression', the role 'types_Expression29' has cardinality 0..*, and from 'types_FixedPtType', the role 'types_FixedPtType28' has cardinality 0..*.

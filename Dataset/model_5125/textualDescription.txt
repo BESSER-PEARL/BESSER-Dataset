@@ -1,0 +1,62 @@
+The domain model 'junitresult' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'junitresult_Testsuite' represents an important domain concept.
+It has the following attributes: 'system_out', which is of type str; 'id', which is of type int; 'hostname', which is of type str; 'timestamp', which is of type date; 'system_err', which is of type str; 'disabled', which is of type int; 'time', which is of type float; 'skipped', which is of type int; 'package', which is of type str.
+
+'junitresult_Error' represents an important domain concept.
+It does not declare any attributes.
+
+'junitresult_Failure' represents an important domain concept.
+It does not declare any attributes.
+
+'junitresult_AbstractAggregatedTest' represents an important domain concept.
+It has the following attributes: 'errors', which is of type int; 'failures', which is of type int; 'tests', which is of type int; 'name', which is of type str.
+
+'AbstractAggregatedTest' represents an important domain concept.
+It does not declare any attributes.
+
+'junitresult_Skipped' represents an important domain concept.
+It does not declare any attributes.
+
+'junitresult_Testrun' represents an important domain concept.
+It has the following attributes: 'project', which is of type str; 'ignored', which is of type int; 'started', which is of type int.
+
+'junitresult_Testcase' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'system_out', which is of type str; 'assertions', which is of type str; 'system_err', which is of type str; 'time', which is of type float; 'classname', which is of type str; 'status', which is of type str.
+
+'junitresult_NegativeResult' represents an important domain concept.
+It has the following attributes: 'message', which is of type str; 'type', which is of type str; 'value', which is of type str.
+
+'NegativeResult' represents an important domain concept.
+It does not declare any attributes.
+
+'junitresult_JunitResult' represents an important domain concept.
+It does not declare any attributes.
+
+'junitresult_Property' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'JunitResult' represents an important domain concept.
+It does not declare any attributes.
+
+'junitresult_Testsuites' represents an important domain concept.
+It has the following attributes: 'disabled', which is of type int; 'time', which is of type float.
+
+The model also captures inheritance relationships between classes.
+The class 'junitresult_Testsuite' is a specialization of 'AbstractAggregatedTest'.
+The class 'junitresult_Error' is a specialization of 'NegativeResult'.
+The class 'junitresult_Failure' is a specialization of 'NegativeResult'.
+The class 'junitresult_Testrun' is a specialization of 'AbstractAggregatedTest'.
+The class 'junitresult_AbstractAggregatedTest' is a specialization of 'JunitResult'.
+The class 'junitresult_Testsuites' is a specialization of 'AbstractAggregatedTest'.
+The class 'junitresult_Skipped' is a specialization of 'NegativeResult'.
+
+Relationships between classes are modeled using associations.
+An association connects 'junitresult_Property' and 'junitresult_Testsuite'. From 'junitresult_Property', the role 'junitresult_Property' has cardinality 0..*, and from 'junitresult_Testsuite', the role 'junitresult_Testsuite' has cardinality 0..*.
+An association connects 'junitresult_Testsuite' and 'junitresult_Testcase'. From 'junitresult_Testsuite', the role 'junitresult_Testsuite2' has cardinality 0..*, and from 'junitresult_Testcase', the role 'junitresult_Testcase' has cardinality 0..*.
+An association connects 'junitresult_Testcase' and 'junitresult_Skipped'. From 'junitresult_Testcase', the role 'junitresult_Testcase4' has cardinality 0..*, and from 'junitresult_Skipped', the role 'junitresult_Skipped' has cardinality 0..*.
+An association connects 'junitresult_Testcase' and 'junitresult_Failure'. From 'junitresult_Testcase', the role 'junitresult_Testcase6' has cardinality 0..*, and from 'junitresult_Failure', the role 'junitresult_Failure' has cardinality 0..*.
+An association connects 'junitresult_Error' and 'junitresult_Testcase'. From 'junitresult_Error', the role 'junitresult_Error' has cardinality 0..*, and from 'junitresult_Testcase', the role 'junitresult_Testcase8' has cardinality 0..*.
+An association connects 'junitresult_AbstractAggregatedTest' and 'junitresult_Testsuite'. From 'junitresult_AbstractAggregatedTest', the role 'junitresult_AbstractAggregatedTest' has cardinality 0..*, and from 'junitresult_Testsuite', the role 'junitresult_Testsuite10' has cardinality 0..*.

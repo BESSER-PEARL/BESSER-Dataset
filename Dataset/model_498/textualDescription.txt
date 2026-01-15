@@ -1,0 +1,35 @@
+The domain model 'PrimitiveTypes' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'Families_Family' represents an important domain concept.
+It does not declare any attributes.
+
+'Families_Member' represents an important domain concept.
+It has one attribute: 'firstName', which is of type str.
+
+'Families_LastNameElement' represents an important domain concept.
+It has one attribute: 'lastName', which is of type str.
+
+'Family' represents an important domain concept.
+It does not declare any attributes.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+'LastNameElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Families_Family' is a specialization of 'LastNameElement'.
+The class 'Families_Member' is a specialization of 'LastNameElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Member' and 'Families_Family'. From 'Member', the role '#' has cardinality 0..*, and from 'Families_Family', the role '0' has cardinality 0..*.
+An association connects 'Member' and 'Families_Family'. From 'Member', the role '#3' has cardinality 0..*, and from 'Families_Family', the role '02' has cardinality 0..*.
+An association connects 'Member' and 'Families_Family'. From 'Member', the role '#6' has cardinality 0..*, and from 'Families_Family', the role '05' has cardinality 0..*.
+An association connects 'Member' and 'Families_Family'. From 'Member', the role '#9' has cardinality 0..*, and from 'Families_Family', the role '08' has cardinality 0..*.
+An association connects 'Family' and 'Families_Member'. From 'Family', the role '#12' has cardinality 0..*, and from 'Families_Member', the role '011' has cardinality 0..*.
+An association connects 'Families_Member' and 'Family'. From 'Families_Member', the role '014' has cardinality 0..*, and from 'Family', the role '#15' has cardinality 0..*.
+An association connects 'Family' and 'Families_Member'. From 'Family', the role '#18' has cardinality 0..*, and from 'Families_Member', the role '017' has cardinality 0..*.
+An association connects 'Families_Member' and 'Family'. From 'Families_Member', the role '020' has cardinality 0..*, and from 'Family', the role '#21' has cardinality 0..*.

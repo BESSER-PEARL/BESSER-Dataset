@@ -1,0 +1,52 @@
+The domain model 'expressions' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'expressions_BoolConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_VariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'expressions_ExpressionsModel' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_IntConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'expressions_StringConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'expressions_Variable' is a specialization of 'AbstractElement'.
+The class 'expressions_Expression' is a specialization of 'AbstractElement'.
+The class 'expressions_Plus' is a specialization of 'Expression'.
+The class 'expressions_IntConstant' is a specialization of 'Expression'.
+The class 'expressions_StringConstant' is a specialization of 'Expression'.
+The class 'expressions_BoolConstant' is a specialization of 'Expression'.
+The class 'expressions_VariableRef' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'expressions_ExpressionsModel' and 'expressions_AbstractElement'. From 'expressions_ExpressionsModel', the role 'expressions_ExpressionsModel' has cardinality 0..*, and from 'expressions_AbstractElement', the role 'expressions_AbstractElement' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_Variable'. From 'expressions_Expression', the role 'expressions_Expression' has cardinality 0..*, and from 'expressions_Variable', the role 'expressions_Variable' has cardinality 0..*.
+An association connects 'expressions_Plus' and 'expressions_Expression'. From 'expressions_Plus', the role 'expressions_Plus' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression3' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_Plus'. From 'expressions_Expression', the role 'expressions_Expression6' has cardinality 0..*, and from 'expressions_Plus', the role 'expressions_Plus5' has cardinality 0..*.
+An association connects 'expressions_VariableRef' and 'expressions_Variable'. From 'expressions_VariableRef', the role 'expressions_VariableRef' has cardinality 0..*, and from 'expressions_Variable', the role 'expressions_Variable8' has cardinality 0..*.

@@ -1,0 +1,38 @@
+The domain model 'training' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'training_Session' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'training_Trainee' represents an important domain concept.
+It does not declare any attributes.
+
+'training_Training' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'training_Person' represents an important domain concept.
+It has the following attributes: 'firstname', which is of type str; 'lastname', which is of type str.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'training_TrainingOrganization' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'training_Trainer' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'training_Trainer' is a specialization of 'Person'.
+The class 'training_Trainee' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'training_Training' and 'training_Session'. From 'training_Training', the role 'training_Training' has cardinality 0..*, and from 'training_Session', the role 'training_Session' has cardinality 0..*.
+An association connects 'training_Session' and 'training_Trainer'. From 'training_Session', the role 'training_Session2' has cardinality 0..*, and from 'training_Trainer', the role 'training_Trainer' has cardinality 0..*.
+An association connects 'training_Session' and 'training_Person'. From 'training_Session', the role 'training_Session4' has cardinality 0..*, and from 'training_Person', the role 'training_Person' has cardinality 0..*.
+An association connects 'training_Person' and 'training_TrainingOrganization'. From 'training_Person', the role 'training_Person6' has cardinality 0..*, and from 'training_TrainingOrganization', the role 'training_TrainingOrganization' has cardinality 0..*.
+An association connects 'training_TrainingOrganization' and 'training_Session'. From 'training_TrainingOrganization', the role 'training_TrainingOrganization8' has cardinality 0..*, and from 'training_Session', the role 'training_Session9' has cardinality 0..*.
+An association connects 'training_TrainingOrganization' and 'training_Training'. From 'training_TrainingOrganization', the role 'training_TrainingOrganization11' has cardinality 0..*, and from 'training_Training', the role 'training_Training12' has cardinality 0..*.
+An association connects 'training_Trainer' and 'training_Training'. From 'training_Trainer', the role 'Trainer' has cardinality 0..*, and from 'training_Training', the role 'canProvide' has cardinality 0..*.
+An association connects 'training_Trainer' and 'training_Training'. From 'training_Trainer', the role 'canBeProvidedBy' has cardinality 0..*, and from 'training_Training', the role 'Training' has cardinality 0..*.

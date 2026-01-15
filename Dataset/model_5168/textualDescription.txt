@@ -1,0 +1,12 @@
+The domain model 'b' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'b_B' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'b_Model' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'b_Model' and 'b_B'. From 'b_Model', the role 'b_Model' has cardinality 0..*, and from 'b_B', the role 'b_B' has cardinality 0..*.

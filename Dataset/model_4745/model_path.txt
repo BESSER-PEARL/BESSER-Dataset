@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/UNIT-Research-Development/TextualConcreteSyntax/mdse.book.swml.tcs/src-gen/mdse/book/SWML.ecore

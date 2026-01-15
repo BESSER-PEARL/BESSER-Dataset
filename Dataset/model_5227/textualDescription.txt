@@ -1,0 +1,34 @@
+The domain model 'projectPlanning' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'projectPlanning_Project' represents an important domain concept.
+It has the following attributes: 'requiresResources', which is of type int; 'name', which is of type str.
+
+'projectPlanning_Employee' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'hasResource', which is of type int.
+
+'projectPlanning_Rating' represents an important domain concept.
+It has one attribute: 'rating', which is of type int.
+
+'projectPlanning_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'projectPlanning_Capability' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'projectPlanning_ProjectPlan' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'projectPlanning_Capability' and 'projectPlanning_ProjectPlan'. From 'projectPlanning_Capability', the role 'projectPlanning_Capability' has cardinality 0..*, and from 'projectPlanning_ProjectPlan', the role 'projectPlanning_ProjectPlan' has cardinality 0..*.
+An association connects 'projectPlanning_Employee' and 'projectPlanning_ProjectPlan'. From 'projectPlanning_Employee', the role 'projectPlanning_Employee' has cardinality 0..*, and from 'projectPlanning_ProjectPlan', the role 'projectPlanning_ProjectPlan2' has cardinality 0..*.
+An association connects 'projectPlanning_Project' and 'projectPlanning_ProjectPlan'. From 'projectPlanning_Project', the role 'projectPlanning_Project' has cardinality 0..*, and from 'projectPlanning_ProjectPlan', the role 'projectPlanning_ProjectPlan4' has cardinality 0..*.
+An association connects 'projectPlanning_Rating' and 'projectPlanning_ProjectPlan'. From 'projectPlanning_Rating', the role 'projectPlanning_Rating' has cardinality 0..*, and from 'projectPlanning_ProjectPlan', the role 'projectPlanning_ProjectPlan6' has cardinality 0..*.
+An association connects 'projectPlanning_Assignment' and 'projectPlanning_ProjectPlan'. From 'projectPlanning_Assignment', the role 'projectPlanning_Assignment' has cardinality 0..*, and from 'projectPlanning_ProjectPlan', the role 'projectPlanning_ProjectPlan8' has cardinality 0..*.
+An association connects 'projectPlanning_Project' and 'projectPlanning_Capability'. From 'projectPlanning_Project', the role 'projectPlanning_Project10' has cardinality 0..*, and from 'projectPlanning_Capability', the role 'projectPlanning_Capability11' has cardinality 0..*.
+An association connects 'projectPlanning_Employee' and 'projectPlanning_Capability'. From 'projectPlanning_Employee', the role 'projectPlanning_Employee13' has cardinality 0..*, and from 'projectPlanning_Capability', the role 'projectPlanning_Capability14' has cardinality 0..*.
+An association connects 'projectPlanning_Rating' and 'projectPlanning_Employee'. From 'projectPlanning_Rating', the role 'projectPlanning_Rating17' has cardinality 0..*, and from 'projectPlanning_Employee', the role 'projectPlanning_Employee16' has cardinality 0..*.
+An association connects 'projectPlanning_Rating' and 'projectPlanning_Capability'. From 'projectPlanning_Rating', the role 'projectPlanning_Rating19' has cardinality 0..*, and from 'projectPlanning_Capability', the role 'projectPlanning_Capability20' has cardinality 0..*.
+An association connects 'projectPlanning_Assignment' and 'projectPlanning_Project'. From 'projectPlanning_Assignment', the role 'projectPlanning_Assignment22' has cardinality 0..*, and from 'projectPlanning_Project', the role 'projectPlanning_Project23' has cardinality 0..*.
+An association connects 'projectPlanning_Assignment' and 'projectPlanning_Employee'. From 'projectPlanning_Assignment', the role 'projectPlanning_Assignment25' has cardinality 0..*, and from 'projectPlanning_Employee', the role 'projectPlanning_Employee26' has cardinality 0..*.

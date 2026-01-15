@@ -1,0 +1,51 @@
+The domain model 'ctrlflow101' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'ctrlflow101_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'ctrlflow101_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'ctrlflow101_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'ctrlflow101_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'ctrlflow101_Final' represents an important domain concept.
+It does not declare any attributes.
+
+'ctrlflow101_And' represents an important domain concept.
+It does not declare any attributes.
+
+'ctrlflow101_SequenceNode' represents an important domain concept.
+It has the following attributes: 'tMax', which is of type int; 'name', which is of type str; 'tMin', which is of type int.
+
+'ctrlflow101_Sequence' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'ctrlflow101_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'SequenceNode' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ctrlflow101_Function' is a specialization of 'SequenceNode'.
+The class 'ctrlflow101_Sequence' is a specialization of 'SequenceNode'.
+The class 'ctrlflow101_And' is a specialization of 'Sequence'.
+The class 'ctrlflow101_Or' is a specialization of 'Sequence'.
+The class 'ctrlflow101_Start' is a specialization of 'Sequence'.
+The class 'ctrlflow101_Final' is a specialization of 'Sequence'.
+The class 'ctrlflow101_Loop' is a specialization of 'Sequence'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ctrlflow101_Function' and 'ctrlflow101_Function'. From 'ctrlflow101_Function', the role 'ctrlflow101_Function0' has cardinality 0..*, and from 'ctrlflow101_Function', the role 'ctrlflow101_Function' has cardinality 0..*.
+An association connects 'ctrlflow101_Sequence' and 'ctrlflow101_Function'. From 'ctrlflow101_Sequence', the role 'ctrlflow101_Sequence' has cardinality 0..*, and from 'ctrlflow101_Function', the role 'ctrlflow101_Function3' has cardinality 0..*.
+An association connects 'ctrlflow101_Token' and 'ctrlflow101_Function'. From 'ctrlflow101_Token', the role 'ctrlflow101_Token' has cardinality 0..*, and from 'ctrlflow101_Function', the role 'ctrlflow101_Function5' has cardinality 0..*.
+An association connects 'ctrlflow101_SequenceNode' and 'ctrlflow101_SequenceNode'. From 'ctrlflow101_SequenceNode', the role 'ctrlflow101_SequenceNode' has cardinality 0..*, and from 'ctrlflow101_SequenceNode', the role 'ctrlflow101_SequenceNode6' has cardinality 0..*.

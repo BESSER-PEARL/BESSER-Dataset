@@ -1,0 +1,89 @@
+The domain model 'minuml1' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'minuml1_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml1_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml1_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml1_StateVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml1_State' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml1_Partition' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml1_BooleanExpression' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'language', which is of type str.
+
+'minuml1_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml1_CompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml1_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml1_Pseudostate' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'minuml1_ModelElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'minuml1_ObjectFlowState' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml1_ActionState' represents an important domain concept.
+It has one attribute: 'isDynamic', which is of type bool.
+
+'StateVertex' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PseudostateKind' defines the following possible values: 'junction', 'join', 'fork', 'inital'.
+
+The model also captures inheritance relationships between classes.
+The class 'minuml1_StateMachine' is a specialization of 'ModelElement'.
+The class 'minuml1_Activity' is a specialization of 'StateMachine'.
+The class 'minuml1_Partition' is a specialization of 'ModelElement'.
+The class 'minuml1_StateVertex' is a specialization of 'ModelElement'.
+The class 'minuml1_State' is a specialization of 'StateVertex'.
+The class 'minuml1_CompositeState' is a specialization of 'State'.
+The class 'minuml1_ActionState' is a specialization of 'State'.
+The class 'minuml1_Pseudostate' is a specialization of 'StateVertex'.
+The class 'minuml1_ObjectFlowState' is a specialization of 'State'.
+The class 'minuml1_FinalState' is a specialization of 'State'.
+The class 'minuml1_Transition' is a specialization of 'ModelElement'.
+The class 'minuml1_Guard' is a specialization of 'ModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'minuml1_Partition' and 'minuml1_ModelElement'. From 'minuml1_Partition', the role 'Partition' has cardinality 0..*, and from 'minuml1_ModelElement', the role 'contents' has cardinality 0..*.
+An association connects 'minuml1_State' and 'minuml1_StateMachine'. From 'minuml1_State', the role 'minuml1_State' has cardinality 0..*, and from 'minuml1_StateMachine', the role 'minuml1_StateMachine' has cardinality 0..*.
+An association connects 'minuml1_Transition' and 'minuml1_StateMachine'. From 'minuml1_Transition', the role 'minuml1_Transition' has cardinality 0..*, and from 'minuml1_StateMachine', the role 'minuml1_StateMachine3' has cardinality 0..*.
+An association connects 'minuml1_Partition' and 'minuml1_Activity'. From 'minuml1_Partition', the role 'minuml1_Partition' has cardinality 0..*, and from 'minuml1_Activity', the role 'minuml1_Activity' has cardinality 0..*.
+An association connects 'minuml1_Partition' and 'minuml1_ModelElement'. From 'minuml1_Partition', the role 'partition' has cardinality 0..*, and from 'minuml1_ModelElement', the role 'ModelElement' has cardinality 0..*.
+An association connects 'minuml1_StateVertex' and 'minuml1_Transition'. From 'minuml1_StateVertex', the role 'source' has cardinality 0..*, and from 'minuml1_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'minuml1_Transition' and 'minuml1_StateVertex'. From 'minuml1_Transition', the role 'Transition8' has cardinality 0..*, and from 'minuml1_StateVertex', the role 'target' has cardinality 0..*.
+An association connects 'minuml1_CompositeState' and 'minuml1_StateVertex'. From 'minuml1_CompositeState', the role 'minuml1_CompositeState' has cardinality 0..*, and from 'minuml1_StateVertex', the role 'minuml1_StateVertex' has cardinality 0..*.
+An association connects 'minuml1_ObjectFlowState' and 'minuml1_ModelElement'. From 'minuml1_ObjectFlowState', the role 'minuml1_ObjectFlowState' has cardinality 0..*, and from 'minuml1_ModelElement', the role 'minuml1_ModelElement' has cardinality 0..*.
+An association connects 'minuml1_Transition' and 'minuml1_StateVertex'. From 'minuml1_Transition', the role 'outgoing' has cardinality 0..*, and from 'minuml1_StateVertex', the role 'StateVertex' has cardinality 0..*.
+An association connects 'minuml1_Transition' and 'minuml1_StateVertex'. From 'minuml1_Transition', the role 'incoming' has cardinality 0..*, and from 'minuml1_StateVertex', the role 'StateVertex13' has cardinality 0..*.
+An association connects 'minuml1_Transition' and 'minuml1_Guard'. From 'minuml1_Transition', the role 'minuml1_Transition15' has cardinality 0..*, and from 'minuml1_Guard', the role 'minuml1_Guard' has cardinality 0..*.
+An association connects 'minuml1_Guard' and 'minuml1_BooleanExpression'. From 'minuml1_Guard', the role 'minuml1_Guard17' has cardinality 0..*, and from 'minuml1_BooleanExpression', the role 'minuml1_BooleanExpression' has cardinality 0..*.

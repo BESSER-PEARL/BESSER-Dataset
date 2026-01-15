@@ -1,0 +1,56 @@
+The domain model 'employee' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'employee_JobTitle' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'employee_EmploymentPeriod' represents an important domain concept.
+It has the following attributes: 'startDate', which is of type date; 'endDate', which is of type date; 'id', which is of type int.
+
+'employee_Address' represents an important domain concept.
+It has the following attributes: 'country', which is of type str; 'id', which is of type int; 'postalCode', which is of type str; 'street', which is of type str; 'province', which is of type str; 'city', which is of type str.
+
+'employee_Employee' represents an important domain concept.
+It has the following attributes: 'salary', which is of type float; 'gender', which is of type str; 'lastName', which is of type str; 'version', which is of type str; 'firstName', which is of type str; 'responsibilities', which is of type str.
+
+'employee_Project' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str.
+
+'employee_LargeProject' represents an important domain concept.
+It has the following attributes: 'budget', which is of type float; 'milestone', which is of type date.
+
+'Project' represents an important domain concept.
+It does not declare any attributes.
+
+'employee_PhoneNumber' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'areaCode', which is of type str; 'number', which is of type str.
+
+'employee_EmailAddress' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'address', which is of type str; 'id', which is of type int.
+
+'employee_Degree' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'employee_SmallProject' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Gender' defines the following possible values: 'Female', 'Male'.
+
+The model also captures inheritance relationships between classes.
+The class 'employee_SmallProject' is a specialization of 'Project'.
+The class 'employee_LargeProject' is a specialization of 'Project'.
+
+Relationships between classes are modeled using associations.
+An association connects 'employee_Employee' and 'employee_Project'. From 'employee_Employee', the role 'employee_Employee' has cardinality 0..*, and from 'employee_Project', the role 'employee_Project' has cardinality 0..*.
+An association connects 'employee_Employee' and 'employee_PhoneNumber'. From 'employee_Employee', the role 'Employee' has cardinality 0..*, and from 'employee_PhoneNumber', the role 'phoneNumbers' has cardinality 0..*.
+An association connects 'employee_EmploymentPeriod' and 'employee_Employee'. From 'employee_EmploymentPeriod', the role 'employee_EmploymentPeriod' has cardinality 0..*, and from 'employee_Employee', the role 'employee_Employee3' has cardinality 0..*.
+An association connects 'employee_Address' and 'employee_Employee'. From 'employee_Address', the role 'employee_Address' has cardinality 0..*, and from 'employee_Employee', the role 'employee_Employee5' has cardinality 0..*.
+An association connects 'employee_Employee' and 'employee_JobTitle'. From 'employee_Employee', the role 'employee_Employee7' has cardinality 0..*, and from 'employee_JobTitle', the role 'employee_JobTitle' has cardinality 0..*.
+An association connects 'employee_Employee' and 'employee_Employee'. From 'employee_Employee', the role 'Employee10' has cardinality 0..*, and from 'employee_Employee', the role 'managedEmployees' has cardinality 0..*.
+An association connects 'employee_Employee' and 'employee_Employee'. From 'employee_Employee', the role 'Employee13' has cardinality 0..*, and from 'employee_Employee', the role 'manager' has cardinality 0..*.
+An association connects 'employee_PhoneNumber' and 'employee_Employee'. From 'employee_PhoneNumber', the role 'PhoneNumber' has cardinality 0..*, and from 'employee_Employee', the role 'owner' has cardinality 0..*.
+An association connects 'employee_Degree' and 'employee_Employee'. From 'employee_Degree', the role 'employee_Degree' has cardinality 0..*, and from 'employee_Employee', the role 'employee_Employee16' has cardinality 0..*.
+An association connects 'employee_Employee' and 'employee_Project'. From 'employee_Employee', the role 'employee_Employee18' has cardinality 0..*, and from 'employee_Project', the role 'employee_Project19' has cardinality 0..*.
+An association connects 'employee_Employee' and 'employee_EmailAddress'. From 'employee_Employee', the role 'employee_Employee21' has cardinality 0..*, and from 'employee_EmailAddress', the role 'employee_EmailAddress' has cardinality 0..*.

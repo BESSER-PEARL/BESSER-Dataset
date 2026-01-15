@@ -1,0 +1,62 @@
+The domain model 'swml' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'WebPage' represents an important domain concept.
+It does not declare any attributes.
+
+'DynamicPage' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_IndexPage' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'swml_WebPage' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'relativeUrl', which is of type str.
+
+'swml_Link' represents an important domain concept.
+It has one attribute: 'href', which is of type str.
+
+'swml_Icon' represents an important domain concept.
+It has one attribute: 'image', which is of type str.
+
+'swml_EntityPage' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_Attribute' represents an important domain concept.
+It has the following attributes: 'dataType', which is of type str; 'name', which is of type str.
+
+'swml_DynamicPage' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_StaticPage' represents an important domain concept.
+It does not declare any attributes.
+
+'swml_Relationship' represents an important domain concept.
+It has the following attributes: 'role', which is of type str; 'lowerBound', which is of type int; 'upperBound', which is of type int.
+
+'swml_WebApplication' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DataType' defines the following possible values: 'Float', 'Boolean', 'Integer', 'String'.
+
+The model also captures inheritance relationships between classes.
+The class 'swml_StaticPage' is a specialization of 'WebPage'.
+The class 'swml_DynamicPage' is a specialization of 'WebPage'.
+The class 'swml_EntityPage' is a specialization of 'DynamicPage'.
+The class 'swml_IndexPage' is a specialization of 'DynamicPage'.
+
+Relationships between classes are modeled using associations.
+An association connects 'swml_WebApplication' and 'swml_Entity'. From 'swml_WebApplication', the role 'swml_WebApplication' has cardinality 0..*, and from 'swml_Entity', the role 'swml_Entity' has cardinality 0..*.
+An association connects 'swml_WebApplication' and 'swml_StaticPage'. From 'swml_WebApplication', the role 'swml_WebApplication2' has cardinality 0..*, and from 'swml_StaticPage', the role 'swml_StaticPage' has cardinality 0..*.
+An association connects 'swml_Attribute' and 'swml_Entity'. From 'swml_Attribute', the role 'swml_Attribute' has cardinality 0..*, and from 'swml_Entity', the role 'swml_Entity4' has cardinality 0..*.
+An association connects 'swml_Attribute' and 'swml_Entity'. From 'swml_Attribute', the role 'swml_Attribute7' has cardinality 0..*, and from 'swml_Entity', the role 'swml_Entity6' has cardinality 0..*.
+An association connects 'swml_Relationship' and 'swml_Entity'. From 'swml_Relationship', the role 'swml_Relationship' has cardinality 0..*, and from 'swml_Entity', the role 'swml_Entity9' has cardinality 0..*.
+An association connects 'swml_Entity' and 'swml_Relationship'. From 'swml_Entity', the role 'swml_Entity12' has cardinality 0..*, and from 'swml_Relationship', the role 'swml_Relationship11' has cardinality 0..*.
+An association connects 'swml_StaticPage' and 'swml_Link'. From 'swml_StaticPage', the role 'swml_StaticPage14' has cardinality 0..*, and from 'swml_Link', the role 'swml_Link' has cardinality 0..*.
+An association connects 'swml_Icon' and 'swml_DynamicPage'. From 'swml_Icon', the role 'swml_Icon' has cardinality 0..*, and from 'swml_DynamicPage', the role 'swml_DynamicPage' has cardinality 0..*.
+An association connects 'swml_Entity' and 'swml_DynamicPage'. From 'swml_Entity', the role 'swml_Entity18' has cardinality 0..*, and from 'swml_DynamicPage', the role 'swml_DynamicPage17' has cardinality 0..*.

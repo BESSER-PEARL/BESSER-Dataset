@@ -1,0 +1,75 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'model_Application' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'weight', which is of type str; 'totalData', which is of type str; 'totalMessages', which is of type str.
+
+'model_Message' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'messageSize', which is of type str; 'timestamp', which is of type str; 'avgResponseTime', which is of type str; 'uid', which is of type str.
+
+'model_StringToDoubleMap' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'model_StringToService' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'model_ElementWithResources' represents an important domain concept.
+It does not declare any attributes.
+
+'Service' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementWithResources' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Service' represents an important domain concept.
+It has the following attributes: 'stateful', which is of type str; 'name', which is of type str; 'application', which is of type str.
+
+'model_Host' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'hostAddress', which is of type str; 'cores', which is of type str.
+
+'model_StringToServiceInstance' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'model_ServiceInstance' represents an important domain concept.
+It has the following attributes: 'totalData', which is of type str; 'containers', which is of type str; 'address', which is of type str; 'id', which is of type str; 'totalMessages', which is of type str.
+
+'model_StringToHost' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'model_Cluster' represents an important domain concept.
+It has one attribute: 'environment', which is of type str.
+
+'model_StringToApplication' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'model_Affinity' represents an important domain concept.
+It has one attribute: 'degree', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Environment' defines the following possible values: 'DOCKER_SWARM', 'KUBERNETES'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_ServiceInstance' is a specialization of 'Service'.
+The class 'model_ServiceInstance' is a specialization of 'ElementWithResources'.
+The class 'model_Host' is a specialization of 'ElementWithResources'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_StringToHost' and 'model_Cluster'. From 'model_StringToHost', the role 'model_StringToHost' has cardinality 0..*, and from 'model_Cluster', the role 'model_Cluster' has cardinality 0..*.
+An association connects 'model_Cluster' and 'model_StringToApplication'. From 'model_Cluster', the role 'model_Cluster2' has cardinality 0..*, and from 'model_StringToApplication', the role 'model_StringToApplication' has cardinality 0..*.
+An association connects 'model_Service' and 'model_Affinity'. From 'model_Service', the role 'model_Service' has cardinality 0..*, and from 'model_Affinity', the role 'model_Affinity' has cardinality 0..*.
+An association connects 'model_Affinity' and 'model_Service'. From 'model_Affinity', the role 'model_Affinity5' has cardinality 0..*, and from 'model_Service', the role 'model_Service6' has cardinality 0..*.
+An association connects 'model_ServiceInstance' and 'model_Message'. From 'model_ServiceInstance', the role 'model_ServiceInstance' has cardinality 0..*, and from 'model_Message', the role 'model_Message' has cardinality 0..*.
+An association connects 'model_Host' and 'model_ServiceInstance'. From 'model_Host', the role 'model_Host' has cardinality 0..*, and from 'model_ServiceInstance', the role 'model_ServiceInstance9' has cardinality 0..*.
+An association connects 'model_ServiceInstance' and 'model_Message'. From 'model_ServiceInstance', the role 'model_ServiceInstance12' has cardinality 0..*, and from 'model_Message', the role 'model_Message11' has cardinality 0..*.
+An association connects 'model_Message' and 'model_ServiceInstance'. From 'model_Message', the role 'model_Message14' has cardinality 0..*, and from 'model_ServiceInstance', the role 'model_ServiceInstance15' has cardinality 0..*.
+An association connects 'model_Host' and 'model_StringToServiceInstance'. From 'model_Host', the role 'model_Host17' has cardinality 0..*, and from 'model_StringToServiceInstance', the role 'model_StringToServiceInstance' has cardinality 0..*.
+An association connects 'model_StringToDoubleMap' and 'model_Host'. From 'model_StringToDoubleMap', the role 'model_StringToDoubleMap' has cardinality 0..*, and from 'model_Host', the role 'model_Host19' has cardinality 0..*.
+An association connects 'model_ElementWithResources' and 'model_StringToDoubleMap'. From 'model_ElementWithResources', the role 'model_ElementWithResources' has cardinality 0..*, and from 'model_StringToDoubleMap', the role 'model_StringToDoubleMap21' has cardinality 0..*.
+An association connects 'model_StringToDoubleMap' and 'model_ElementWithResources'. From 'model_StringToDoubleMap', the role 'model_StringToDoubleMap24' has cardinality 0..*, and from 'model_ElementWithResources', the role 'model_ElementWithResources23' has cardinality 0..*.
+An association connects 'model_Service' and 'model_StringToService'. From 'model_Service', the role 'model_Service26' has cardinality 0..*, and from 'model_StringToService', the role 'model_StringToService' has cardinality 0..*.
+An association connects 'model_StringToHost' and 'model_Host'. From 'model_StringToHost', the role 'model_StringToHost28' has cardinality 0..*, and from 'model_Host', the role 'model_Host29' has cardinality 0..*.
+An association connects 'model_StringToServiceInstance' and 'model_ServiceInstance'. From 'model_StringToServiceInstance', the role 'model_StringToServiceInstance31' has cardinality 0..*, and from 'model_ServiceInstance', the role 'model_ServiceInstance32' has cardinality 0..*.
+An association connects 'model_Application' and 'model_StringToService'. From 'model_Application', the role 'model_Application' has cardinality 0..*, and from 'model_StringToService', the role 'model_StringToService34' has cardinality 0..*.
+An association connects 'model_StringToApplication' and 'model_Application'. From 'model_StringToApplication', the role 'model_StringToApplication36' has cardinality 0..*, and from 'model_Application', the role 'model_Application37' has cardinality 0..*.

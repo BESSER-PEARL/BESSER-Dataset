@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ArendtTh/Seminar-Eclipse-WS201415/de.unimarburg.swt.fopra.model/model/fopramodel.ecore

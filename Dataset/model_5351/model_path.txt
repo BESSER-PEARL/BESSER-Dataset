@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/lengyela89/sirius-custom/plugins/org.eclipse.sirius.tests.junit/data/unit/migration/do_not_migrate/fragmentedMigration/fragmentedMigration_p2.ecore

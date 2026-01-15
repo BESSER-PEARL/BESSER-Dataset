@@ -1,0 +1,125 @@
+The domain model 'Model' describes the core structural elements and their relationships within the system.
+
+The model defines 24 main class(es).
+
+'Model_Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_ExtTrans' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_CoupledDEVS' represents an important domain concept.
+It does not declare any attributes.
+
+'DEVS' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_DEVS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Model_Expression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_Variable' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'domain', which is of type str.
+
+'Model_EIC' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_PhaseTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'PhaseTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_ConfTrans' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_EOC' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_Phase' represents an important domain concept.
+It has the following attributes: 'phaseID', which is of type str; 'timeAdvance', which is of type float.
+
+'Model_AtomicDEVS' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_IntTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_Port' represents an important domain concept.
+It has the following attributes: 'portId', which is of type str; 'portType', which is of type str.
+
+'Model_SimplePredicate' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_IPort' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_IC' represents an important domain concept.
+It does not declare any attributes.
+
+'Model_OPort' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Classifier' defines the following possible values: 'String', 'Class', 'Integer', 'Double'.
+The enumeration 'LogicOperators' defines the following possible values: 'or', 'not', 'and'.
+The enumeration 'RelationalOperators' defines the following possible values: 'greater_or_equals', 'greater', 'equals', 'not_equals', 'lesser', 'lesser_or_equals'.
+The enumeration 'MathOperators' defines the following possible values: 'multiple', 'minus', 'plus', 'divide'.
+
+The model also captures inheritance relationships between classes.
+The class 'Model_AtomicDEVS' is a specialization of 'DEVS'.
+The class 'Model_CoupledDEVS' is a specialization of 'DEVS'.
+The class 'Model_IPort' is a specialization of 'Port'.
+The class 'Model_OPort' is a specialization of 'Port'.
+The class 'Model_IntTransition' is a specialization of 'PhaseTransition'.
+The class 'Model_ConfTrans' is a specialization of 'PhaseTransition'.
+The class 'Model_ExtTrans' is a specialization of 'PhaseTransition'.
+The class 'Model_SimplePredicate' is a specialization of 'Predicate'.
+The class 'Model_Expression' is a specialization of 'Predicate'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Model_DEVS' and 'Model_DEVS'. From 'Model_DEVS', the role 'Model_DEVS' has cardinality 0..*, and from 'Model_DEVS', the role 'Model_DEVS0' has cardinality 0..*.
+An association connects 'Model_IPort' and 'Model_DEVS'. From 'Model_IPort', the role 'Model_IPort' has cardinality 0..*, and from 'Model_DEVS', the role 'Model_DEVS3' has cardinality 0..*.
+An association connects 'Model_DEVS' and 'Model_OPort'. From 'Model_DEVS', the role 'Model_DEVS5' has cardinality 0..*, and from 'Model_OPort', the role 'Model_OPort' has cardinality 0..*.
+An association connects 'Model_IntTransition' and 'Model_AtomicDEVS'. From 'Model_IntTransition', the role 'Model_IntTransition' has cardinality 0..*, and from 'Model_AtomicDEVS', the role 'Model_AtomicDEVS' has cardinality 0..*.
+An association connects 'Model_AtomicDEVS' and 'Model_ConfTrans'. From 'Model_AtomicDEVS', the role 'Model_AtomicDEVS8' has cardinality 0..*, and from 'Model_ConfTrans', the role 'Model_ConfTrans' has cardinality 0..*.
+An association connects 'Model_AtomicDEVS' and 'Model_ExtTrans'. From 'Model_AtomicDEVS', the role 'Model_AtomicDEVS10' has cardinality 0..*, and from 'Model_ExtTrans', the role 'Model_ExtTrans' has cardinality 0..*.
+An association connects 'Model_Phase' and 'Model_AtomicDEVS'. From 'Model_Phase', the role 'Model_Phase' has cardinality 0..*, and from 'Model_AtomicDEVS', the role 'Model_AtomicDEVS12' has cardinality 0..*.
+An association connects 'Model_Variable' and 'Model_AtomicDEVS'. From 'Model_Variable', the role 'Model_Variable' has cardinality 0..*, and from 'Model_AtomicDEVS', the role 'Model_AtomicDEVS14' has cardinality 0..*.
+An association connects 'Model_CoupledDEVS' and 'Model_DEVS'. From 'Model_CoupledDEVS', the role 'Model_CoupledDEVS' has cardinality 0..*, and from 'Model_DEVS', the role 'Model_DEVS16' has cardinality 0..*.
+An association connects 'Model_EIC' and 'Model_CoupledDEVS'. From 'Model_EIC', the role 'Model_EIC' has cardinality 0..*, and from 'Model_CoupledDEVS', the role 'Model_CoupledDEVS18' has cardinality 0..*.
+An association connects 'Model_IC' and 'Model_CoupledDEVS'. From 'Model_IC', the role 'Model_IC' has cardinality 0..*, and from 'Model_CoupledDEVS', the role 'Model_CoupledDEVS20' has cardinality 0..*.
+An association connects 'Model_CoupledDEVS' and 'Model_EOC'. From 'Model_CoupledDEVS', the role 'Model_CoupledDEVS22' has cardinality 0..*, and from 'Model_EOC', the role 'Model_EOC' has cardinality 0..*.
+An association connects 'Model_DEVS' and 'Model_Port'. From 'Model_DEVS', the role 'Model_DEVS24' has cardinality 0..*, and from 'Model_Port', the role 'Model_Port' has cardinality 0..*.
+An association connects 'Model_EIC' and 'Model_IPort'. From 'Model_EIC', the role 'Model_EIC26' has cardinality 0..*, and from 'Model_IPort', the role 'Model_IPort27' has cardinality 0..*.
+An association connects 'Model_IPort' and 'Model_EIC'. From 'Model_IPort', the role 'Model_IPort30' has cardinality 0..*, and from 'Model_EIC', the role 'Model_EIC29' has cardinality 0..*.
+An association connects 'Model_OPort' and 'Model_IC'. From 'Model_OPort', the role 'Model_OPort33' has cardinality 0..*, and from 'Model_IC', the role 'Model_IC32' has cardinality 0..*.
+An association connects 'Model_IPort' and 'Model_IC'. From 'Model_IPort', the role 'Model_IPort36' has cardinality 0..*, and from 'Model_IC', the role 'Model_IC35' has cardinality 0..*.
+An association connects 'Model_OPort' and 'Model_EOC'. From 'Model_OPort', the role 'Model_OPort39' has cardinality 0..*, and from 'Model_EOC', the role 'Model_EOC38' has cardinality 0..*.
+An association connects 'Model_OPort' and 'Model_EOC'. From 'Model_OPort', the role 'Model_OPort42' has cardinality 0..*, and from 'Model_EOC', the role 'Model_EOC41' has cardinality 0..*.
+An association connects 'Model_Event' and 'Model_IntTransition'. From 'Model_Event', the role 'Model_Event' has cardinality 0..*, and from 'Model_IntTransition', the role 'Model_IntTransition44' has cardinality 0..*.
+An association connects 'Model_ConfTrans' and 'Model_Event'. From 'Model_ConfTrans', the role 'Model_ConfTrans46' has cardinality 0..*, and from 'Model_Event', the role 'Model_Event47' has cardinality 0..*.
+An association connects 'Model_ConfTrans' and 'Model_Event'. From 'Model_ConfTrans', the role 'Model_ConfTrans49' has cardinality 0..*, and from 'Model_Event', the role 'Model_Event50' has cardinality 0..*.
+An association connects 'Model_Event' and 'Model_ExtTrans'. From 'Model_Event', the role 'Model_Event53' has cardinality 0..*, and from 'Model_ExtTrans', the role 'Model_ExtTrans52' has cardinality 0..*.
+An association connects 'Model_Port' and 'Model_Event'. From 'Model_Port', the role 'Model_Port56' has cardinality 0..*, and from 'Model_Event', the role 'Model_Event55' has cardinality 0..*.
+An association connects 'Model_Phase' and 'Model_Property'. From 'Model_Phase', the role 'Model_Phase58' has cardinality 0..*, and from 'Model_Property', the role 'Model_Property' has cardinality 0..*.
+An association connects 'Model_Property' and 'Model_Predicate'. From 'Model_Property', the role 'Model_Property60' has cardinality 0..*, and from 'Model_Predicate', the role 'Model_Predicate' has cardinality 0..*.
+An association connects 'Model_PhaseTransition' and 'Model_Phase'. From 'Model_PhaseTransition', the role 'Model_PhaseTransition' has cardinality 0..*, and from 'Model_Phase', the role 'Model_Phase62' has cardinality 0..*.
+An association connects 'Model_Phase' and 'Model_PhaseTransition'. From 'Model_Phase', the role 'Model_Phase65' has cardinality 0..*, and from 'Model_PhaseTransition', the role 'Model_PhaseTransition64' has cardinality 0..*.
+An association connects 'Model_SimplePredicate' and 'Model_Variable'. From 'Model_SimplePredicate', the role 'Model_SimplePredicate' has cardinality 0..*, and from 'Model_Variable', the role 'Model_Variable67' has cardinality 0..*.
+An association connects 'Model_Expression' and 'Model_Predicate'. From 'Model_Expression', the role 'Model_Expression' has cardinality 0..*, and from 'Model_Predicate', the role 'Model_Predicate69' has cardinality 0..*.
+An association connects 'Model_Predicate' and 'Model_Expression'. From 'Model_Predicate', the role 'Model_Predicate72' has cardinality 0..*, and from 'Model_Expression', the role 'Model_Expression71' has cardinality 0..*.

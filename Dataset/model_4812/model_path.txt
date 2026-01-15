@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/cyrilnavessamuel/TripManagment/workspace_trip/trip_model/model/trip_model.ecore

@@ -1,0 +1,36 @@
+The domain model 'multipleinheritence' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'multipleinheritence_NewEClass2' represents an important domain concept.
+It has one attribute: 'f2', which is of type int.
+
+'NewEClass4' represents an important domain concept.
+It does not declare any attributes.
+
+'NewEClass3' represents an important domain concept.
+It does not declare any attributes.
+
+'NewEClass5' represents an important domain concept.
+It does not declare any attributes.
+
+'multipleinheritence_NewEClass4' represents an important domain concept.
+It has one attribute: 'f4', which is of type int.
+
+'multipleinheritence_NewEClass5' represents an important domain concept.
+It has one attribute: 'f5', which is of type int.
+
+'NewEClass2' represents an important domain concept.
+It does not declare any attributes.
+
+'multipleinheritence_NewEClass3' represents an important domain concept.
+It has one attribute: 'f3', which is of type int.
+
+'multipleinheritence_NewEClass1' represents an important domain concept.
+It has one attribute: 'f1', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'multipleinheritence_NewEClass1' is a specialization of 'NewEClass2'.
+The class 'multipleinheritence_NewEClass1' is a specialization of 'NewEClass3'.
+The class 'multipleinheritence_NewEClass3' is a specialization of 'NewEClass4'.
+The class 'multipleinheritence_NewEClass3' is a specialization of 'NewEClass5'.

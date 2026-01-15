@@ -1,0 +1,63 @@
+The domain model 'base' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'Access' represents an important domain concept.
+It does not declare any attributes.
+
+'base_IdElement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'base_PropertyTrace' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'base_ElementAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'base_AllInstancesAccess' represents an important domain concept.
+It has one attribute: 'ofKind', which is of type bool.
+
+'IdElement' represents an important domain concept.
+It does not declare any attributes.
+
+'base_ModelTypeTrace' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'base_ModelTrace' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'base_ExecutionTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'base_ModuleTrace' represents an important domain concept.
+It has one attribute: 'source', which is of type str.
+
+'base_ModelElementTrace' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'base_PropertyAccess' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'base_Access' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'base_ModuleTrace' is a specialization of 'IdElement'.
+The class 'base_ExecutionTrace' is a specialization of 'IdElement'.
+The class 'base_Access' is a specialization of 'IdElement'.
+The class 'base_ElementAccess' is a specialization of 'Access'.
+The class 'base_AllInstancesAccess' is a specialization of 'Access'.
+The class 'base_PropertyAccess' is a specialization of 'Access'.
+The class 'base_ModelTrace' is a specialization of 'IdElement'.
+The class 'base_ModelTypeTrace' is a specialization of 'IdElement'.
+The class 'base_ModelElementTrace' is a specialization of 'IdElement'.
+The class 'base_PropertyTrace' is a specialization of 'IdElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'base_ExecutionTrace' and 'base_Access'. From 'base_ExecutionTrace', the role 'base_ExecutionTrace' has cardinality 0..*, and from 'base_Access', the role 'base_Access' has cardinality 0..*.
+An association connects 'base_ElementAccess' and 'base_ModelElementTrace'. From 'base_ElementAccess', the role 'base_ElementAccess' has cardinality 0..*, and from 'base_ModelElementTrace', the role 'base_ModelElementTrace' has cardinality 0..*.
+An association connects 'base_ModelTypeTrace' and 'base_AllInstancesAccess'. From 'base_ModelTypeTrace', the role 'base_ModelTypeTrace' has cardinality 0..*, and from 'base_AllInstancesAccess', the role 'base_AllInstancesAccess' has cardinality 0..*.
+An association connects 'base_PropertyTrace' and 'base_PropertyAccess'. From 'base_PropertyTrace', the role 'base_PropertyTrace' has cardinality 0..*, and from 'base_PropertyAccess', the role 'base_PropertyAccess' has cardinality 0..*.
+An association connects 'base_ModelTrace' and 'base_ModelTypeTrace'. From 'base_ModelTrace', the role 'base_ModelTrace' has cardinality 0..*, and from 'base_ModelTypeTrace', the role 'base_ModelTypeTrace5' has cardinality 0..*.
+An association connects 'base_ModelTrace' and 'base_ModelElementTrace'. From 'base_ModelTrace', the role 'base_ModelTrace8' has cardinality 0..*, and from 'base_ModelElementTrace', the role 'base_ModelElementTrace7' has cardinality 0..*.
+An association connects 'base_PropertyTrace' and 'base_ModelElementTrace'. From 'base_PropertyTrace', the role 'base_PropertyTrace10' has cardinality 0..*, and from 'base_ModelElementTrace', the role 'base_ModelElementTrace11' has cardinality 0..*.

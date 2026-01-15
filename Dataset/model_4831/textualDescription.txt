@@ -1,0 +1,284 @@
+The domain model 'archimateC3' describes the core structural elements and their relationships within the system.
+
+The model defines 71 main class(es).
+
+'archimateC3_Specialization' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Access' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_PassiveStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Principle' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'PassiveStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'BehaviorElement' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_InfrastructureService' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Device' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Aggregation' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Driver' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_BusinessInteraction' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_DataObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ActiveStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchimateElement' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_ApplicationCollaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_BusinessRole' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Network' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Composition' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Goal' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Product' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_BusinessFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_BehaviorElement' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_ApplicationComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Assessment' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_ArchimateModel' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Contract' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_ActiveStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Representation' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Location' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'archimateC3_ApplicationInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_BusinessActor' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Plateau' represents an important domain concept.
+It does not declare any attributes.
+
+'ApplicationFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Meaning' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_SystemSoftware' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_WorkPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_ArchimateElement' represents an important domain concept.
+It has the following attributes: 'elementName', which is of type str; 'description', which is of type str.
+
+'archimateC3_BusinessInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_ApplicationInteraction' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_InfrastructureInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Gap' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_CommunicationPath' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_BusinessCollaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_BusinessBehaviorElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ApplicationComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_value' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_BusinessObject' represents an important domain concept.
+It does not declare any attributes.
+
+'BusinessBehaviorElement' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_ApplicationService' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_BusinessEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_ArchimateRelation' represents an important domain concept.
+It has one attribute: 'connectorName', which is of type str.
+
+'BusinessRole' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Requirement' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_UsedBy' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_BusinessProcess' represents an important domain concept.
+It has the following attributes: 'processType', which is of type str; 'processID', which is of type str; 'importance', which is of type int; 'processDesign', which is of type str; 'missionary', which is of type bool; 'processFullName', which is of type str.
+
+'archimateC3_BusinessService' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Triggering' represents an important domain concept.
+It does not declare any attributes.
+
+'BusinessObject' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Stakeholder' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_ApplicationFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Deliverable' represents an important domain concept.
+It does not declare any attributes.
+
+'archimateC3_Group' represents an important domain concept.
+It has one attribute: 'groupName', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'archimateC3_PassiveStructure' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_BehaviorElement' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_ActiveStructure' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_value' is a specialization of 'PassiveStructure'.
+The class 'archimateC3_Product' is a specialization of 'PassiveStructure'.
+The class 'archimateC3_Contract' is a specialization of 'BusinessObject'.
+The class 'archimateC3_BusinessObject' is a specialization of 'PassiveStructure'.
+The class 'archimateC3_Meaning' is a specialization of 'PassiveStructure'.
+The class 'archimateC3_Representation' is a specialization of 'PassiveStructure'.
+The class 'archimateC3_BusinessService' is a specialization of 'BehaviorElement'.
+The class 'archimateC3_BusinessBehaviorElement' is a specialization of 'BehaviorElement'.
+The class 'archimateC3_BusinessProcess' is a specialization of 'BusinessBehaviorElement'.
+The class 'archimateC3_BusinessFunction' is a specialization of 'BusinessBehaviorElement'.
+The class 'archimateC3_BusinessInteraction' is a specialization of 'BusinessBehaviorElement'.
+The class 'archimateC3_BusinessEvent' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_Location' is a specialization of 'ActiveStructure'.
+The class 'archimateC3_BusinessInterface' is a specialization of 'ActiveStructure'.
+The class 'archimateC3_BusinessRole' is a specialization of 'ActiveStructure'.
+The class 'archimateC3_BusinessCollaboration' is a specialization of 'BusinessRole'.
+The class 'archimateC3_BusinessActor' is a specialization of 'ActiveStructure'.
+The class 'archimateC3_DataObject' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_ApplicationService' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_ApplicationFunction' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_ApplicationInteraction' is a specialization of 'ApplicationFunction'.
+The class 'archimateC3_ApplicationInterface' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_ApplicationComponent' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_ApplicationCollaboration' is a specialization of 'ApplicationComponent'.
+The class 'archimateC3_Artifact' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_InfrastructureService' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_InfrastructureInterface' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_Node' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_SystemSoftware' is a specialization of 'Node'.
+The class 'archimateC3_Device' is a specialization of 'Node'.
+The class 'archimateC3_CommunicationPath' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_Network' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_Composition' is a specialization of 'ArchimateRelation'.
+The class 'archimateC3_Aggregation' is a specialization of 'ArchimateRelation'.
+The class 'archimateC3_Access' is a specialization of 'ArchimateRelation'.
+The class 'archimateC3_Association' is a specialization of 'ArchimateRelation'.
+The class 'archimateC3_Triggering' is a specialization of 'ArchimateRelation'.
+The class 'archimateC3_Flow' is a specialization of 'ArchimateRelation'.
+The class 'archimateC3_Specialization' is a specialization of 'ArchimateRelation'.
+The class 'archimateC3_Realization' is a specialization of 'ArchimateRelation'.
+The class 'archimateC3_Assignment' is a specialization of 'ArchimateRelation'.
+The class 'archimateC3_UsedBy' is a specialization of 'ArchimateRelation'.
+The class 'archimateC3_Stakeholder' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_Driver' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_Assessment' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_Goal' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_Requirement' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_Constraint' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_Principle' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_WorkPackage' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_Deliverable' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_Plateau' is a specialization of 'ArchimateElement'.
+The class 'archimateC3_Gap' is a specialization of 'ArchimateElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'archimateC3_ArchimateModel' and 'archimateC3_ArchimateElement'. From 'archimateC3_ArchimateModel', the role 'archimateC3_ArchimateModel' has cardinality 0..*, and from 'archimateC3_ArchimateElement', the role 'archimateC3_ArchimateElement' has cardinality 0..*.
+An association connects 'archimateC3_ArchimateModel' and 'archimateC3_ArchimateRelation'. From 'archimateC3_ArchimateModel', the role 'archimateC3_ArchimateModel2' has cardinality 0..*, and from 'archimateC3_ArchimateRelation', the role 'archimateC3_ArchimateRelation' has cardinality 0..*.
+An association connects 'archimateC3_ArchimateModel' and 'archimateC3_Group'. From 'archimateC3_ArchimateModel', the role 'archimateC3_ArchimateModel4' has cardinality 0..*, and from 'archimateC3_Group', the role 'archimateC3_Group' has cardinality 0..*.
+An association connects 'archimateC3_ArchimateElement' and 'archimateC3_ArchimateElement'. From 'archimateC3_ArchimateElement', the role 'ArchimateElement' has cardinality 0..*, and from 'archimateC3_ArchimateElement', the role 'composes' has cardinality 0..*.
+An association connects 'archimateC3_ArchimateElement' and 'archimateC3_ArchimateElement'. From 'archimateC3_ArchimateElement', the role 'ArchimateElement9' has cardinality 0..*, and from 'archimateC3_ArchimateElement', the role 'composedOf' has cardinality 0..*.
+An association connects 'archimateC3_ArchimateElement' and 'archimateC3_ArchimateRelation'. From 'archimateC3_ArchimateElement', the role 'archimateC3_ArchimateElement12' has cardinality 0..*, and from 'archimateC3_ArchimateRelation', the role 'archimateC3_ArchimateRelation11' has cardinality 0..*.
+An association connects 'archimateC3_ArchimateElement' and 'archimateC3_ArchimateRelation'. From 'archimateC3_ArchimateElement', the role 'archimateC3_ArchimateElement15' has cardinality 0..*, and from 'archimateC3_ArchimateRelation', the role 'archimateC3_ArchimateRelation14' has cardinality 0..*.
+An association connects 'archimateC3_ArchimateElement' and 'archimateC3_Group'. From 'archimateC3_ArchimateElement', the role 'archimateC3_ArchimateElement18' has cardinality 0..*, and from 'archimateC3_Group', the role 'archimateC3_Group17' has cardinality 0..*.

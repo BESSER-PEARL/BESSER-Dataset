@@ -1,0 +1,189 @@
+The domain model 'paplj' describes the core structural elements and their relationships within the system.
+
+The model defines 36 main class(es).
+
+'paplj_Symbol' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Min' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Add' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Sub' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'paplj_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Mul' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Cast' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_This' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Param' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_If' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Eq' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Num' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'paplj_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_And' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Member' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Program' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'paplj_Let' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Bool' represents an important domain concept.
+It has one attribute: 'true', which is of type bool.
+
+'paplj_Field' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_New' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Neq' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Null' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Lt' represents an important domain concept.
+It does not declare any attributes.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Block2' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'Symbol' represents an important domain concept.
+It does not declare any attributes.
+
+'paplj_Var' represents an important domain concept.
+It has one attribute: 'methodInvocation', which is of type bool.
+
+'paplj_MemberRef' represents an important domain concept.
+It has one attribute: 'methodInvocation', which is of type bool.
+
+The model also captures inheritance relationships between classes.
+The class 'paplj_Member' is a specialization of 'Symbol'.
+The class 'paplj_Field' is a specialization of 'Member'.
+The class 'paplj_Method' is a specialization of 'Member'.
+The class 'paplj_Param' is a specialization of 'Symbol'.
+The class 'paplj_Binding' is a specialization of 'Symbol'.
+The class 'paplj_Block2' is a specialization of 'Expr'.
+The class 'paplj_If' is a specialization of 'Expr'.
+The class 'paplj_Let' is a specialization of 'Expr'.
+The class 'paplj_Assignment' is a specialization of 'Expr'.
+The class 'paplj_Or' is a specialization of 'Expr'.
+The class 'paplj_And' is a specialization of 'Expr'.
+The class 'paplj_Eq' is a specialization of 'Expr'.
+The class 'paplj_Neq' is a specialization of 'Expr'.
+The class 'paplj_Lt' is a specialization of 'Expr'.
+The class 'paplj_Add' is a specialization of 'Expr'.
+The class 'paplj_Sub' is a specialization of 'Expr'.
+The class 'paplj_Mul' is a specialization of 'Expr'.
+The class 'paplj_Div' is a specialization of 'Expr'.
+The class 'paplj_Cast' is a specialization of 'Expr'.
+The class 'paplj_Not' is a specialization of 'Expr'.
+The class 'paplj_Min' is a specialization of 'Expr'.
+The class 'paplj_MemberRef' is a specialization of 'Expr'.
+The class 'paplj_Num' is a specialization of 'Expr'.
+The class 'paplj_Bool' is a specialization of 'Expr'.
+The class 'paplj_This' is a specialization of 'Expr'.
+The class 'paplj_Null' is a specialization of 'Expr'.
+The class 'paplj_New' is a specialization of 'Expr'.
+The class 'paplj_Var' is a specialization of 'Expr'.
+
+Relationships between classes are modeled using associations.
+An association connects 'paplj_Program' and 'paplj_Import'. From 'paplj_Program', the role 'paplj_Program' has cardinality 0..*, and from 'paplj_Import', the role 'paplj_Import' has cardinality 0..*.
+An association connects 'paplj_Type' and 'paplj_Program'. From 'paplj_Type', the role 'paplj_Type' has cardinality 0..*, and from 'paplj_Program', the role 'paplj_Program2' has cardinality 0..*.
+An association connects 'paplj_Expr' and 'paplj_Program'. From 'paplj_Expr', the role 'paplj_Expr' has cardinality 0..*, and from 'paplj_Program', the role 'paplj_Program4' has cardinality 0..*.
+An association connects 'paplj_Type' and 'paplj_Type'. From 'paplj_Type', the role 'paplj_Type5' has cardinality 0..*, and from 'paplj_Type', the role 'paplj_Type7' has cardinality 0..*.
+An association connects 'paplj_Type' and 'paplj_Member'. From 'paplj_Type', the role 'paplj_Type9' has cardinality 0..*, and from 'paplj_Member', the role 'paplj_Member' has cardinality 0..*.
+An association connects 'paplj_Type' and 'paplj_Symbol'. From 'paplj_Type', the role 'paplj_Type11' has cardinality 0..*, and from 'paplj_Symbol', the role 'paplj_Symbol' has cardinality 0..*.
+An association connects 'paplj_Param' and 'paplj_Method'. From 'paplj_Param', the role 'paplj_Param' has cardinality 0..*, and from 'paplj_Method', the role 'paplj_Method' has cardinality 0..*.
+An association connects 'paplj_Method' and 'paplj_Block2'. From 'paplj_Method', the role 'paplj_Method14' has cardinality 0..*, and from 'paplj_Block2', the role 'paplj_Block2' has cardinality 0..*.
+An association connects 'paplj_Binding' and 'paplj_Expr'. From 'paplj_Binding', the role 'paplj_Binding' has cardinality 0..*, and from 'paplj_Expr', the role 'paplj_Expr16' has cardinality 0..*.
+An association connects 'paplj_Block2' and 'paplj_Expr'. From 'paplj_Block2', the role 'paplj_Block218' has cardinality 0..*, and from 'paplj_Expr', the role 'paplj_Expr19' has cardinality 0..*.
+An association connects 'paplj_Expr' and 'paplj_If'. From 'paplj_Expr', the role 'paplj_Expr21' has cardinality 0..*, and from 'paplj_If', the role 'paplj_If' has cardinality 0..*.
+An association connects 'paplj_If' and 'paplj_Expr'. From 'paplj_If', the role 'paplj_If23' has cardinality 0..*, and from 'paplj_Expr', the role 'paplj_Expr24' has cardinality 0..*.
+An association connects 'paplj_Expr' and 'paplj_If'. From 'paplj_Expr', the role 'paplj_Expr27' has cardinality 0..*, and from 'paplj_If', the role 'paplj_If26' has cardinality 0..*.
+An association connects 'paplj_Binding' and 'paplj_Let'. From 'paplj_Binding', the role 'paplj_Binding29' has cardinality 0..*, and from 'paplj_Let', the role 'paplj_Let' has cardinality 0..*.
+An association connects 'paplj_Let' and 'paplj_Expr'. From 'paplj_Let', the role 'paplj_Let31' has cardinality 0..*, and from 'paplj_Expr', the role 'paplj_Expr32' has cardinality 0..*.
+An association connects 'paplj_Expr' and 'paplj_Assignment'. From 'paplj_Expr', the role 'paplj_Expr34' has cardinality 0..*, and from 'paplj_Assignment', the role 'paplj_Assignment' has cardinality 0..*.
+An association connects 'paplj_Expr' and 'paplj_Assignment'. From 'paplj_Expr', the role 'paplj_Expr37' has cardinality 0..*, and from 'paplj_Assignment', the role 'paplj_Assignment36' has cardinality 0..*.
+An association connects 'paplj_Expr' and 'paplj_Or'. From 'paplj_Expr', the role 'paplj_Expr39' has cardinality 0..*, and from 'paplj_Or', the role 'paplj_Or' has cardinality 0..*.
+An association connects 'paplj_Expr' and 'paplj_Or'. From 'paplj_Expr', the role 'paplj_Expr42' has cardinality 0..*, and from 'paplj_Or', the role 'paplj_Or41' has cardinality 0..*.
+An association connects 'paplj_And' and 'paplj_Expr'. From 'paplj_And', the role 'paplj_And' has cardinality 0..*, and from 'paplj_Expr', the role 'paplj_Expr44' has cardinality 0..*.
+An association connects 'paplj_Expr' and 'paplj_And'. From 'paplj_Expr', the role 'paplj_Expr47' has cardinality 0..*, and from 'paplj_And', the role 'paplj_And46' has cardinality 0..*.
+An association connects 'paplj_Eq' and 'paplj_Expr'. From 'paplj_Eq', the role 'paplj_Eq' has cardinality 0..*, and from 'paplj_Expr', the role 'paplj_Expr49' has cardinality 0..*.
+An association connects 'paplj_Eq' and 'paplj_Expr'. From 'paplj_Eq', the role 'paplj_Eq51' has cardinality 0..*, and from 'paplj_Expr', the role 'paplj_Expr52' has cardinality 0..*.
+An association connects 'paplj_Expr' and 'paplj_Neq'. From 'paplj_Expr', the role 'paplj_Expr54' has cardinality 0..*, and from 'paplj_Neq', the role 'paplj_Neq' has cardinality 0..*.
+An association connects 'paplj_Neq' and 'paplj_Expr'. From 'paplj_Neq', the role 'paplj_Neq56' has cardinality 0..*, and from 'paplj_Expr', the role 'paplj_Expr57' has cardinality 0..*.
+An association connects 'paplj_Expr' and 'paplj_Lt'. From 'paplj_Expr', the role 'paplj_Expr59' has cardinality 0..*, and from 'paplj_Lt', the role 'paplj_Lt' has cardinality 0..*.
+An association connects 'paplj_Expr' and 'paplj_Lt'. From 'paplj_Expr', the role 'paplj_Expr62' has cardinality 0..*, and from 'paplj_Lt', the role 'paplj_Lt61' has cardinality 0..*.
+An association connects 'paplj_Add' and 'paplj_Expr'. From 'paplj_Add', the role 'paplj_Add' has cardinality 0..*, and from 'paplj_Expr', the role 'paplj_Expr64' has cardinality 0..*.
+An association connects 'paplj_Expr' and 'paplj_Add'. From 'paplj_Expr', the role 'paplj_Expr67' has cardinality 0..*, and from 'paplj_Add', the role 'paplj_Add66' has cardinality 0..*.
+An association connects 'paplj_Expr' and 'paplj_Sub'. From 'paplj_Expr', the role 'paplj_Expr69' has cardinality 0..*, and from 'paplj_Sub', the role 'paplj_Sub' has cardinality 0..*.
+An association connects 'paplj_Sub' and 'paplj_Expr'. From 'paplj_Sub', the role 'paplj_Sub71' has cardinality 0..*, and from 'paplj_Expr', the role 'paplj_Expr72' has cardinality 0..*.
+An association connects 'paplj_Expr' and 'paplj_Mul'. From 'paplj_Expr', the role 'paplj_Expr74' has cardinality 0..*, and from 'paplj_Mul', the role 'paplj_Mul' has cardinality 0..*.
+An association connects 'paplj_Expr' and 'paplj_Mul'. From 'paplj_Expr', the role 'paplj_Expr77' has cardinality 0..*, and from 'paplj_Mul', the role 'paplj_Mul76' has cardinality 0..*.
+An association connects 'paplj_Expr' and 'paplj_Div'. From 'paplj_Expr', the role 'paplj_Expr79' has cardinality 0..*, and from 'paplj_Div', the role 'paplj_Div' has cardinality 0..*.
+An association connects 'paplj_Div' and 'paplj_Expr'. From 'paplj_Div', the role 'paplj_Div81' has cardinality 0..*, and from 'paplj_Expr', the role 'paplj_Expr82' has cardinality 0..*.
+An association connects 'paplj_Cast' and 'paplj_Expr'. From 'paplj_Cast', the role 'paplj_Cast' has cardinality 0..*, and from 'paplj_Expr', the role 'paplj_Expr84' has cardinality 0..*.
+An association connects 'paplj_Type' and 'paplj_Cast'. From 'paplj_Type', the role 'paplj_Type87' has cardinality 0..*, and from 'paplj_Cast', the role 'paplj_Cast86' has cardinality 0..*.
+An association connects 'paplj_Not' and 'paplj_Expr'. From 'paplj_Not', the role 'paplj_Not' has cardinality 0..*, and from 'paplj_Expr', the role 'paplj_Expr89' has cardinality 0..*.
+An association connects 'paplj_Expr' and 'paplj_Min'. From 'paplj_Expr', the role 'paplj_Expr91' has cardinality 0..*, and from 'paplj_Min', the role 'paplj_Min' has cardinality 0..*.
+An association connects 'paplj_MemberRef' and 'paplj_Expr'. From 'paplj_MemberRef', the role 'paplj_MemberRef' has cardinality 0..*, and from 'paplj_Expr', the role 'paplj_Expr93' has cardinality 0..*.
+An association connects 'paplj_Member' and 'paplj_MemberRef'. From 'paplj_Member', the role 'paplj_Member96' has cardinality 0..*, and from 'paplj_MemberRef', the role 'paplj_MemberRef95' has cardinality 0..*.
+An association connects 'paplj_Expr' and 'paplj_MemberRef'. From 'paplj_Expr', the role 'paplj_Expr99' has cardinality 0..*, and from 'paplj_MemberRef', the role 'paplj_MemberRef98' has cardinality 0..*.
+An association connects 'paplj_Null' and 'paplj_Type'. From 'paplj_Null', the role 'paplj_Null' has cardinality 0..*, and from 'paplj_Type', the role 'paplj_Type101' has cardinality 0..*.
+An association connects 'paplj_New' and 'paplj_Type'. From 'paplj_New', the role 'paplj_New' has cardinality 0..*, and from 'paplj_Type', the role 'paplj_Type103' has cardinality 0..*.
+An association connects 'paplj_Var' and 'paplj_Symbol'. From 'paplj_Var', the role 'paplj_Var' has cardinality 0..*, and from 'paplj_Symbol', the role 'paplj_Symbol105' has cardinality 0..*.
+An association connects 'paplj_Expr' and 'paplj_Var'. From 'paplj_Expr', the role 'paplj_Expr108' has cardinality 0..*, and from 'paplj_Var', the role 'paplj_Var107' has cardinality 0..*.

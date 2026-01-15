@@ -1,0 +1,170 @@
+The domain model 'testmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 38 main class(es).
+
+'testmodel_SubClass1' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubAbstractClass2' represents an important domain concept.
+It does not declare any attributes.
+
+'SuperClass' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubInterface1' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubInterface5' represents an important domain concept.
+It does not declare any attributes.
+
+'SuperInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubInterface6' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubAbstractClass3' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubAbstractClass1' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SuperAbstractClass' represents an important domain concept.
+It does not declare any attributes.
+
+'SubAbstractClass1' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubClass5' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_Source' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubInterface3' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_Target' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubAbstractClass7' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubClass2' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubInterface7' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubInterface4' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubClass3' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SuperClass' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubClass4' represents an important domain concept.
+It does not declare any attributes.
+
+'SubClass1' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_B' represents an important domain concept.
+It has one attribute: 'b', which is of type str.
+
+'testmodel_A' represents an important domain concept.
+It has one attribute: 'a', which is of type str.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'SubInterface2' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubAbstractClass5' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_C' represents an important domain concept.
+It has one attribute: 'c', which is of type str.
+
+'SuperAbstractClass' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubClass7' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubAbstractClass4' represents an important domain concept.
+It does not declare any attributes.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SuperInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubAbstractClass6' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubClass6' represents an important domain concept.
+It does not declare any attributes.
+
+'SubInterface1' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_SubInterface2' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'testmodel_SubInterface1' is a specialization of 'SuperInterface'.
+The class 'testmodel_SubInterface2' is a specialization of 'SuperAbstractClass'.
+The class 'testmodel_SubInterface3' is a specialization of 'SuperClass'.
+The class 'testmodel_SubAbstractClass1' is a specialization of 'SuperInterface'.
+The class 'testmodel_SubAbstractClass2' is a specialization of 'SuperAbstractClass'.
+The class 'testmodel_SubAbstractClass3' is a specialization of 'SuperClass'.
+The class 'testmodel_SubClass1' is a specialization of 'SuperInterface'.
+The class 'testmodel_SubClass2' is a specialization of 'SuperAbstractClass'.
+The class 'testmodel_SubClass3' is a specialization of 'SuperClass'.
+The class 'testmodel_SubInterface4' is a specialization of 'SubInterface1'.
+The class 'testmodel_SubInterface4' is a specialization of 'SubInterface2'.
+The class 'testmodel_SubInterface5' is a specialization of 'SubInterface1'.
+The class 'testmodel_SubInterface5' is a specialization of 'SubAbstractClass1'.
+The class 'testmodel_SubInterface6' is a specialization of 'SubInterface1'.
+The class 'testmodel_SubInterface6' is a specialization of 'SubClass1'.
+The class 'testmodel_SubInterface7' is a specialization of 'SubAbstractClass1'.
+The class 'testmodel_SubInterface7' is a specialization of 'SubClass1'.
+The class 'testmodel_SubAbstractClass4' is a specialization of 'SubInterface1'.
+The class 'testmodel_SubAbstractClass4' is a specialization of 'SubInterface2'.
+The class 'testmodel_SubAbstractClass5' is a specialization of 'SubInterface1'.
+The class 'testmodel_SubAbstractClass5' is a specialization of 'SubAbstractClass1'.
+The class 'testmodel_SubAbstractClass6' is a specialization of 'SubInterface1'.
+The class 'testmodel_SubAbstractClass6' is a specialization of 'SubClass1'.
+The class 'testmodel_SubAbstractClass7' is a specialization of 'SubAbstractClass1'.
+The class 'testmodel_SubAbstractClass7' is a specialization of 'SubClass1'.
+The class 'testmodel_SubClass4' is a specialization of 'SubInterface1'.
+The class 'testmodel_SubClass4' is a specialization of 'SubInterface2'.
+The class 'testmodel_SubClass5' is a specialization of 'SubInterface1'.
+The class 'testmodel_SubClass5' is a specialization of 'SubAbstractClass1'.
+The class 'testmodel_SubClass6' is a specialization of 'SubInterface1'.
+The class 'testmodel_SubClass6' is a specialization of 'SubClass1'.
+The class 'testmodel_SubClass7' is a specialization of 'SubAbstractClass1'.
+The class 'testmodel_SubClass7' is a specialization of 'SubClass1'.
+The class 'testmodel_B' is a specialization of 'A'.
+The class 'testmodel_C' is a specialization of 'B'.
+
+Relationships between classes are modeled using associations.
+An association connects 'testmodel_Source' and 'testmodel_Target'. From 'testmodel_Source', the role 'testmodel_Source' has cardinality 0..*, and from 'testmodel_Target', the role 'testmodel_Target' has cardinality 0..*.
+An association connects 'testmodel_Source' and 'testmodel_Target'. From 'testmodel_Source', the role 'testmodel_Source2' has cardinality 0..*, and from 'testmodel_Target', the role 'testmodel_Target3' has cardinality 0..*.
+An association connects 'testmodel_Target' and 'testmodel_Source'. From 'testmodel_Target', the role 'testmodel_Target6' has cardinality 0..*, and from 'testmodel_Source', the role 'testmodel_Source5' has cardinality 0..*.
+An association connects 'testmodel_Target' and 'testmodel_Source'. From 'testmodel_Target', the role 'testmodel_Target9' has cardinality 0..*, and from 'testmodel_Source', the role 'testmodel_Source8' has cardinality 0..*.
+An association connects 'testmodel_Target' and 'testmodel_Source'. From 'testmodel_Target', the role 'Target' has cardinality 0..*, and from 'testmodel_Source', the role 'one_one_no_no' has cardinality 0..*.
+An association connects 'testmodel_Target' and 'testmodel_Source'. From 'testmodel_Target', the role 'Target12' has cardinality 0..*, and from 'testmodel_Source', the role 'one_many_no_no' has cardinality 0..*.
+An association connects 'testmodel_Target' and 'testmodel_Source'. From 'testmodel_Target', the role 'Target14' has cardinality 0..*, and from 'testmodel_Source', the role 'many_many_no_no' has cardinality 0..*.
+An association connects 'testmodel_Target' and 'testmodel_Source'. From 'testmodel_Target', the role 'Target16' has cardinality 0..*, and from 'testmodel_Source', the role 'one_many_no_yes' has cardinality 0..*.
+An association connects 'testmodel_Target' and 'testmodel_Source'. From 'testmodel_Target', the role 'Target18' has cardinality 0..*, and from 'testmodel_Source', the role 'one_one_no_yes' has cardinality 0..*.
+An association connects 'testmodel_Target' and 'testmodel_Source'. From 'testmodel_Target', the role 'one_one_no_no20' has cardinality 0..*, and from 'testmodel_Source', the role 'Source' has cardinality 0..*.
+An association connects 'testmodel_Target' and 'testmodel_Source'. From 'testmodel_Target', the role 'one_many_no_no22' has cardinality 0..*, and from 'testmodel_Source', the role 'Source23' has cardinality 0..*.
+An association connects 'testmodel_Source' and 'testmodel_Target'. From 'testmodel_Source', the role 'Source26' has cardinality 0..*, and from 'testmodel_Target', the role 'many_many_no_no25' has cardinality 0..*.
+An association connects 'testmodel_Target' and 'testmodel_Source'. From 'testmodel_Target', the role 'one_many_no_yes28' has cardinality 0..*, and from 'testmodel_Source', the role 'Source29' has cardinality 0..*.
+An association connects 'testmodel_Source' and 'testmodel_Target'. From 'testmodel_Source', the role 'Source32' has cardinality 0..*, and from 'testmodel_Target', the role 'one_one_no_yes31' has cardinality 0..*.

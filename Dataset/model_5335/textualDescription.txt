@@ -1,0 +1,12 @@
+The domain model 'root' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'root_A' represents an important domain concept.
+It does not declare any attributes.
+
+'root_B' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'root_A' and 'root_B'. From 'root_A', the role 'root_A' has cardinality 0..*, and from 'root_B', the role 'root_B' has cardinality 0..*.

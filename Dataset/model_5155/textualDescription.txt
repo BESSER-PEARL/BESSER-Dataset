@@ -1,0 +1,13 @@
+The domain model 'minimalref' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'minimalref_B' represents an important domain concept.
+It does not declare any attributes.
+
+'minimalref_A' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'minimalref_A' and 'minimalref_B'. From 'minimalref_A', the role 'parentA' has cardinality 0..*, and from 'minimalref_B', the role 'B' has cardinality 0..*.
+An association connects 'minimalref_A' and 'minimalref_B'. From 'minimalref_A', the role 'A' has cardinality 0..*, and from 'minimalref_B', the role 'manyB' has cardinality 0..*.

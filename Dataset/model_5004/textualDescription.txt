@@ -1,0 +1,105 @@
+The domain model 'systemmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'systemmodel_SystemModel' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_ScalarType' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfaceBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_Inport' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'SMElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_InputBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_InterfaceBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_GainBlock' represents an important domain concept.
+It has one attribute: 'gainfactor', which is of type str.
+
+'systemmodel_OutputBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_Saturation' represents an important domain concept.
+It has the following attributes: 'lowerBound', which is of type str; 'upperBound', which is of type str.
+
+'systemmodel_Block' represents an important domain concept.
+It has one attribute: 'sequenceNumber', which is of type int.
+
+'systemmodel_Sum' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_UnitDelay' represents an important domain concept.
+It has one attribute: 'initialCondition', which is of type str.
+
+'systemmodel_Outport' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_DataType' represents an important domain concept.
+It has one attribute: 'basetype', which is of type str.
+
+'systemmodel_SMElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_VectorType' represents an important domain concept.
+It has one attribute: 'size', which is of type str.
+
+'systemmodel_MatrixType' represents an important domain concept.
+It has the following attributes: 'columns', which is of type str; 'rows', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'systemmodel_SystemModel' is a specialization of 'SMElement'.
+The class 'systemmodel_Block' is a specialization of 'SMElement'.
+The class 'systemmodel_Signal' is a specialization of 'SMElement'.
+The class 'systemmodel_Inport' is a specialization of 'Port'.
+The class 'systemmodel_Outport' is a specialization of 'Port'.
+The class 'systemmodel_UnitDelay' is a specialization of 'Block'.
+The class 'systemmodel_Sum' is a specialization of 'Block'.
+The class 'systemmodel_InputBlock' is a specialization of 'InterfaceBlock'.
+The class 'systemmodel_Saturation' is a specialization of 'Block'.
+The class 'systemmodel_OutputBlock' is a specialization of 'InterfaceBlock'.
+The class 'systemmodel_InterfaceBlock' is a specialization of 'Block'.
+The class 'systemmodel_GainBlock' is a specialization of 'Block'.
+The class 'systemmodel_Port' is a specialization of 'SMElement'.
+The class 'systemmodel_DataType' is a specialization of 'SMElement'.
+The class 'systemmodel_MatrixType' is a specialization of 'DataType'.
+The class 'systemmodel_VectorType' is a specialization of 'DataType'.
+The class 'systemmodel_ScalarType' is a specialization of 'DataType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'systemmodel_SystemModel' and 'systemmodel_Block'. From 'systemmodel_SystemModel', the role 'systemmodel_SystemModel' has cardinality 0..*, and from 'systemmodel_Block', the role 'systemmodel_Block' has cardinality 0..*.
+An association connects 'systemmodel_SystemModel' and 'systemmodel_Signal'. From 'systemmodel_SystemModel', the role 'systemmodel_SystemModel2' has cardinality 0..*, and from 'systemmodel_Signal', the role 'systemmodel_Signal' has cardinality 0..*.
+An association connects 'systemmodel_SystemModel' and 'systemmodel_DataType'. From 'systemmodel_SystemModel', the role 'systemmodel_SystemModel4' has cardinality 0..*, and from 'systemmodel_DataType', the role 'systemmodel_DataType' has cardinality 0..*.
+An association connects 'systemmodel_Inport' and 'systemmodel_Block'. From 'systemmodel_Inport', the role 'Inport' has cardinality 0..*, and from 'systemmodel_Block', the role 'parentBlock' has cardinality 0..*.
+An association connects 'systemmodel_Block' and 'systemmodel_Outport'. From 'systemmodel_Block', the role 'parentBlock7' has cardinality 0..*, and from 'systemmodel_Outport', the role 'Outport' has cardinality 0..*.
+An association connects 'systemmodel_Outport' and 'systemmodel_Signal'. From 'systemmodel_Outport', the role 'Outport9' has cardinality 0..*, and from 'systemmodel_Signal', the role 'outSignals' has cardinality 0..*.
+An association connects 'systemmodel_Inport' and 'systemmodel_Signal'. From 'systemmodel_Inport', the role 'Inport11' has cardinality 0..*, and from 'systemmodel_Signal', the role 'inSignal' has cardinality 0..*.
+An association connects 'systemmodel_Inport' and 'systemmodel_Signal'. From 'systemmodel_Inport', the role 'dstPort' has cardinality 0..*, and from 'systemmodel_Signal', the role 'Signal' has cardinality 0..*.
+An association connects 'systemmodel_Inport' and 'systemmodel_Block'. From 'systemmodel_Inport', the role 'inports' has cardinality 0..*, and from 'systemmodel_Block', the role 'Block' has cardinality 0..*.
+An association connects 'systemmodel_Signal' and 'systemmodel_Outport'. From 'systemmodel_Signal', the role 'Signal15' has cardinality 0..*, and from 'systemmodel_Outport', the role 'srcPort' has cardinality 0..*.
+An association connects 'systemmodel_Block' and 'systemmodel_Outport'. From 'systemmodel_Block', the role 'Block17' has cardinality 0..*, and from 'systemmodel_Outport', the role 'outports' has cardinality 0..*.
+An association connects 'systemmodel_Port' and 'systemmodel_DataType'. From 'systemmodel_Port', the role 'systemmodel_Port' has cardinality 0..*, and from 'systemmodel_DataType', the role 'systemmodel_DataType19' has cardinality 0..*.

@@ -1,0 +1,115 @@
+The domain model 'webApplication' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'webApplication_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'webApplication_content_SingleContent' represents an important domain concept.
+It does not declare any attributes.
+
+'webApplication_content_CRUDForm' represents an important domain concept.
+It does not declare any attributes.
+
+'Column' represents an important domain concept.
+It does not declare any attributes.
+
+'webApplication_content_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'Page' represents an important domain concept.
+It does not declare any attributes.
+
+'Link' represents an important domain concept.
+It does not declare any attributes.
+
+'Field' represents an important domain concept.
+It does not declare any attributes.
+
+'Content' represents an important domain concept.
+It does not declare any attributes.
+
+'webApplication_content_Content' represents an important domain concept.
+It does not declare any attributes.
+
+'webApplication_data_RelatedEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'webApplication_content_MultipleContent' represents an important domain concept.
+It has the following attributes: 'paginated', which is of type bool; 'size', which is of type int.
+
+'DataSource' represents an important domain concept.
+It does not declare any attributes.
+
+'webApplication_data_DataSource' represents an important domain concept.
+It does not declare any attributes.
+
+'webApplication_content_Page' represents an important domain concept.
+It does not declare any attributes.
+
+'Form' represents an important domain concept.
+It does not declare any attributes.
+
+'webApplication_content_Menu' represents an important domain concept.
+It has the following attributes: 'itemName', which is of type str; 'order', which is of type int; 'url', which is of type str.
+
+'webApplication_content_Field' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'webApplication_data_Entity' represents an important domain concept.
+It has one attribute: 'numberOfColumns', which is of type str.
+
+'RelatedEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'webApplication_data_Column' represents an important domain concept.
+It has the following attributes: 'PK', which is of type bool; 'type', which is of type str; 'lenght', which is of type int.
+
+'webApplication_content_Form' represents an important domain concept.
+It does not declare any attributes.
+
+'webApplication_WebApplicationModel' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FieldType' defines the following possible values: 'SubmitButton', 'TextBox', 'CheckBox', 'RadioButton'.
+The enumeration 'ColumnType' defines the following possible values: 'Float', 'Integer', 'Text', 'Boolean', 'String'.
+
+The model also captures inheritance relationships between classes.
+The class 'webApplication_WebApplicationModel' is a specialization of 'Named'.
+The class 'webApplication_data_DataSource' is a specialization of 'Named'.
+The class 'webApplication_data_Entity' is a specialization of 'Named'.
+The class 'webApplication_data_Column' is a specialization of 'Named'.
+The class 'webApplication_data_RelatedEntity' is a specialization of 'Named'.
+The class 'webApplication_content_Page' is a specialization of 'Named'.
+The class 'webApplication_content_Content' is a specialization of 'Named'.
+The class 'webApplication_content_Form' is a specialization of 'Named'.
+The class 'webApplication_content_Link' is a specialization of 'Named'.
+The class 'webApplication_content_Menu' is a specialization of 'Content'.
+The class 'webApplication_content_SingleContent' is a specialization of 'Content'.
+The class 'webApplication_content_MultipleContent' is a specialization of 'Content'.
+The class 'webApplication_content_CRUDForm' is a specialization of 'Form'.
+The class 'webApplication_content_Field' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Entity' and 'webApplication_WebApplicationModel'. From 'Entity', the role 'Entity' has cardinality 0..*, and from 'webApplication_WebApplicationModel', the role 'webApplication_WebApplicationModel' has cardinality 0..*.
+An association connects 'webApplication_WebApplicationModel' and 'DataSource'. From 'webApplication_WebApplicationModel', the role 'webApplication_WebApplicationModel2' has cardinality 0..*, and from 'DataSource', the role 'DataSource' has cardinality 0..*.
+An association connects 'Page' and 'webApplication_WebApplicationModel'. From 'Page', the role 'Page' has cardinality 0..*, and from 'webApplication_WebApplicationModel', the role 'webApplication_WebApplicationModel4' has cardinality 0..*.
+An association connects 'Entity' and 'webApplication_data_DataSource'. From 'Entity', the role 'Entity6' has cardinality 0..*, and from 'webApplication_data_DataSource', the role 'webApplication_data_DataSource' has cardinality 0..*.
+An association connects 'Column' and 'webApplication_data_Entity'. From 'Column', the role 'Column' has cardinality 0..*, and from 'webApplication_data_Entity', the role 'webApplication_data_Entity' has cardinality 0..*.
+An association connects 'RelatedEntity' and 'webApplication_data_Entity'. From 'RelatedEntity', the role 'RelatedEntity' has cardinality 0..*, and from 'webApplication_data_Entity', the role 'webApplication_data_Entity9' has cardinality 0..*.
+An association connects 'Entity' and 'webApplication_data_Entity'. From 'Entity', the role 'Entity12' has cardinality 0..*, and from 'webApplication_data_Entity', the role 'webApplication_data_Entity11' has cardinality 0..*.
+An association connects 'webApplication_data_RelatedEntity' and 'Entity'. From 'webApplication_data_RelatedEntity', the role 'webApplication_data_RelatedEntity' has cardinality 0..*, and from 'Entity', the role 'Entity14' has cardinality 0..*.
+An association connects 'webApplication_content_Page' and 'Content'. From 'webApplication_content_Page', the role 'webApplication_content_Page' has cardinality 0..*, and from 'Content', the role 'Content' has cardinality 0..*.
+An association connects 'Link' and 'webApplication_content_Page'. From 'Link', the role 'Link' has cardinality 0..*, and from 'webApplication_content_Page', the role 'webApplication_content_Page17' has cardinality 0..*.
+An association connects 'Form' and 'webApplication_content_Page'. From 'Form', the role 'Form' has cardinality 0..*, and from 'webApplication_content_Page', the role 'webApplication_content_Page19' has cardinality 0..*.
+An association connects 'webApplication_content_Content' and 'DataSource'. From 'webApplication_content_Content', the role 'webApplication_content_Content' has cardinality 0..*, and from 'DataSource', the role 'DataSource21' has cardinality 0..*.
+An association connects 'webApplication_content_Link' and 'Page'. From 'webApplication_content_Link', the role 'webApplication_content_Link' has cardinality 0..*, and from 'Page', the role 'Page23' has cardinality 0..*.
+An association connects 'webApplication_content_Link' and 'Page'. From 'webApplication_content_Link', the role 'webApplication_content_Link25' has cardinality 0..*, and from 'Page', the role 'Page26' has cardinality 0..*.
+An association connects 'webApplication_content_CRUDForm' and 'Field'. From 'webApplication_content_CRUDForm', the role 'webApplication_content_CRUDForm' has cardinality 0..*, and from 'Field', the role 'Field' has cardinality 0..*.

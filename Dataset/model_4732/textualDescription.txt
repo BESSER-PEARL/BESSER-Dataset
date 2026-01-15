@@ -1,0 +1,99 @@
+The domain model 'solution' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'solution_DeletePage' represents an important domain concept.
+It does not declare any attributes.
+
+'solution_UpdatePage' represents an important domain concept.
+It does not declare any attributes.
+
+'solution_CreatePage' represents an important domain concept.
+It does not declare any attributes.
+
+'solution_NonContextualLink' represents an important domain concept.
+It does not declare any attributes.
+
+'solution_DynamicPage' represents an important domain concept.
+It does not declare any attributes.
+
+'solution_WebPage' represents an important domain concept.
+It has the following attributes: 'relativeUrl', which is of type str; 'name', which is of type str.
+
+'WebPage' represents an important domain concept.
+It does not declare any attributes.
+
+'solution_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'dataType', which is of type str.
+
+'DynamicPage' represents an important domain concept.
+It does not declare any attributes.
+
+'Link' represents an important domain concept.
+It does not declare any attributes.
+
+'solution_Link' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'solution_EntityPage' represents an important domain concept.
+It does not declare any attributes.
+
+'solution_Relationship' represents an important domain concept.
+It has the following attributes: 'roleName', which is of type str; 'upperBound', which is of type int; 'lowerBound', which is of type int.
+
+'EntityPage' represents an important domain concept.
+It does not declare any attributes.
+
+'solution_StaticPage' represents an important domain concept.
+It does not declare any attributes.
+
+'solution_ContextualLink' represents an important domain concept.
+It does not declare any attributes.
+
+'EditablePage' represents an important domain concept.
+It does not declare any attributes.
+
+'solution_WebApplication' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'solution_EditablePage' represents an important domain concept.
+It does not declare any attributes.
+
+'solution_IndexPage' represents an important domain concept.
+It does not declare any attributes.
+
+'solution_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DataType' defines the following possible values: 'Float', 'String', 'Boolean', 'Integer'.
+
+The model also captures inheritance relationships between classes.
+The class 'solution_StaticPage' is a specialization of 'WebPage'.
+The class 'solution_DynamicPage' is a specialization of 'WebPage'.
+The class 'solution_EntityPage' is a specialization of 'DynamicPage'.
+The class 'solution_IndexPage' is a specialization of 'DynamicPage'.
+The class 'solution_CreatePage' is a specialization of 'EditablePage'.
+The class 'solution_UpdatePage' is a specialization of 'EditablePage'.
+The class 'solution_DeletePage' is a specialization of 'EditablePage'.
+The class 'solution_NonContextualLink' is a specialization of 'Link'.
+The class 'solution_ContextualLink' is a specialization of 'Link'.
+The class 'solution_EditablePage' is a specialization of 'EntityPage'.
+
+Relationships between classes are modeled using associations.
+An association connects 'solution_WebApplication' and 'solution_Entity'. From 'solution_WebApplication', the role 'solution_WebApplication' has cardinality 0..*, and from 'solution_Entity', the role 'solution_Entity' has cardinality 0..*.
+An association connects 'solution_WebPage' and 'solution_WebApplication'. From 'solution_WebPage', the role 'solution_WebPage' has cardinality 0..*, and from 'solution_WebApplication', the role 'solution_WebApplication2' has cardinality 0..*.
+An association connects 'solution_WebApplication' and 'solution_StaticPage'. From 'solution_WebApplication', the role 'solution_WebApplication4' has cardinality 0..*, and from 'solution_StaticPage', the role 'solution_StaticPage' has cardinality 0..*.
+An association connects 'solution_Entity' and 'solution_Attribute'. From 'solution_Entity', the role 'solution_Entity6' has cardinality 0..*, and from 'solution_Attribute', the role 'solution_Attribute' has cardinality 0..*.
+An association connects 'solution_Attribute' and 'solution_Entity'. From 'solution_Attribute', the role 'solution_Attribute9' has cardinality 0..*, and from 'solution_Entity', the role 'solution_Entity8' has cardinality 0..*.
+An association connects 'solution_Entity' and 'solution_Relationship'. From 'solution_Entity', the role 'source' has cardinality 0..*, and from 'solution_Relationship', the role 'Relationship' has cardinality 0..*.
+An association connects 'solution_Relationship' and 'solution_Entity'. From 'solution_Relationship', the role 'relationships' has cardinality 0..*, and from 'solution_Entity', the role 'Entity' has cardinality 0..*.
+An association connects 'solution_Entity' and 'solution_Relationship'. From 'solution_Entity', the role 'solution_Entity13' has cardinality 0..*, and from 'solution_Relationship', the role 'solution_Relationship' has cardinality 0..*.
+An association connects 'solution_Relationship' and 'solution_Relationship'. From 'solution_Relationship', the role 'solution_Relationship16' has cardinality 0..*, and from 'solution_Relationship', the role 'solution_Relationship14' has cardinality 0..*.
+An association connects 'solution_Link' and 'solution_WebPage'. From 'solution_Link', the role 'solution_Link' has cardinality 0..*, and from 'solution_WebPage', the role 'solution_WebPage18' has cardinality 0..*.
+An association connects 'solution_WebPage' and 'solution_NonContextualLink'. From 'solution_WebPage', the role 'solution_WebPage20' has cardinality 0..*, and from 'solution_NonContextualLink', the role 'solution_NonContextualLink' has cardinality 0..*.
+An association connects 'solution_DynamicPage' and 'solution_Entity'. From 'solution_DynamicPage', the role 'solution_DynamicPage' has cardinality 0..*, and from 'solution_Entity', the role 'solution_Entity22' has cardinality 0..*.
+An association connects 'solution_EntityPage' and 'solution_DynamicPage'. From 'solution_EntityPage', the role 'solution_EntityPage' has cardinality 0..*, and from 'solution_DynamicPage', the role 'solution_DynamicPage24' has cardinality 0..*.
+An association connects 'solution_Link' and 'solution_WebPage'. From 'solution_Link', the role 'solution_Link26' has cardinality 0..*, and from 'solution_WebPage', the role 'solution_WebPage27' has cardinality 0..*.
+An association connects 'solution_Entity' and 'solution_ContextualLink'. From 'solution_Entity', the role 'solution_Entity29' has cardinality 0..*, and from 'solution_ContextualLink', the role 'solution_ContextualLink' has cardinality 0..*.
+An association connects 'solution_EntityPage' and 'solution_EditablePage'. From 'solution_EntityPage', the role 'solution_EntityPage31' has cardinality 0..*, and from 'solution_EditablePage', the role 'solution_EditablePage' has cardinality 0..*.

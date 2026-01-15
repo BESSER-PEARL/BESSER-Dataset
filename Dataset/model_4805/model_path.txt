@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/adalrsjr1/k8s-monitoring/storage-clients/model/target/classes/model/model.ecore

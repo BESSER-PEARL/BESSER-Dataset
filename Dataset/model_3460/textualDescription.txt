@@ -1,0 +1,88 @@
+The domain model 'fm' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'fm_CardExConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'fm_GroupCardinality' represents an important domain concept.
+It does not declare any attributes.
+
+'fm_Constraints' represents an important domain concept.
+It does not declare any attributes.
+
+'fm_Attribute' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'fm_FeatureModel' represents an important domain concept.
+It does not declare any attributes.
+
+'fm_Cardinality' represents an important domain concept.
+It has the following attributes: 'max', which is of type int; 'min', which is of type int.
+
+'fm_AndOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'fm_Feature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'fm_Operation' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'Constraints' represents an important domain concept.
+It does not declare any attributes.
+
+'fm_OrOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'fm_BooleanConstraints' represents an important domain concept.
+It does not declare any attributes.
+
+'fm_Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'Cardinality' represents an important domain concept.
+It does not declare any attributes.
+
+'OrFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'fm_XorFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'fm_FeatureCardinality' represents an important domain concept.
+It does not declare any attributes.
+
+'fm_OrFeature' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'fm_OrFeature' is a specialization of 'Feature'.
+The class 'fm_XorFeature' is a specialization of 'OrFeature'.
+The class 'fm_FeatureCardinality' is a specialization of 'Cardinality'.
+The class 'fm_GroupCardinality' is a specialization of 'Cardinality'.
+The class 'fm_CardExConstraint' is a specialization of 'Constraints'.
+The class 'fm_AndOperator' is a specialization of 'Operator'.
+The class 'fm_OrOperator' is a specialization of 'Operator'.
+The class 'fm_BooleanConstraints' is a specialization of 'Constraints'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fm_FeatureModel' and 'fm_Feature'. From 'fm_FeatureModel', the role 'fm_FeatureModel' has cardinality 0..*, and from 'fm_Feature', the role 'fm_Feature' has cardinality 0..*.
+An association connects 'fm_Constraints' and 'fm_FeatureModel'. From 'fm_Constraints', the role 'fm_Constraints' has cardinality 0..*, and from 'fm_FeatureModel', the role 'fm_FeatureModel2' has cardinality 0..*.
+An association connects 'fm_Feature' and 'fm_Feature'. From 'fm_Feature', the role 'fm_Feature3' has cardinality 0..*, and from 'fm_Feature', the role 'fm_Feature5' has cardinality 0..*.
+An association connects 'fm_FeatureCardinality' and 'fm_Feature'. From 'fm_FeatureCardinality', the role 'fm_FeatureCardinality' has cardinality 0..*, and from 'fm_Feature', the role 'fm_Feature7' has cardinality 0..*.
+An association connects 'fm_Feature' and 'fm_Attribute'. From 'fm_Feature', the role 'fm_Feature9' has cardinality 0..*, and from 'fm_Attribute', the role 'fm_Attribute' has cardinality 0..*.
+An association connects 'fm_Feature' and 'fm_OrFeature'. From 'fm_Feature', the role 'fm_Feature11' has cardinality 0..*, and from 'fm_OrFeature', the role 'fm_OrFeature' has cardinality 0..*.
+An association connects 'fm_OrFeature' and 'fm_GroupCardinality'. From 'fm_OrFeature', the role 'fm_OrFeature13' has cardinality 0..*, and from 'fm_GroupCardinality', the role 'fm_GroupCardinality' has cardinality 0..*.
+An association connects 'fm_Operation' and 'fm_CardExConstraint'. From 'fm_Operation', the role 'fm_Operation' has cardinality 0..*, and from 'fm_CardExConstraint', the role 'fm_CardExConstraint' has cardinality 0..*.
+An association connects 'fm_CardExConstraint' and 'fm_Operation'. From 'fm_CardExConstraint', the role 'fm_CardExConstraint16' has cardinality 0..*, and from 'fm_Operation', the role 'fm_Operation17' has cardinality 0..*.
+An association connects 'fm_CardExConstraint' and 'fm_Operator'. From 'fm_CardExConstraint', the role 'fm_CardExConstraint19' has cardinality 0..*, and from 'fm_Operator', the role 'fm_Operator' has cardinality 0..*.
+An association connects 'fm_Operation' and 'fm_Feature'. From 'fm_Operation', the role 'fm_Operation21' has cardinality 0..*, and from 'fm_Feature', the role 'fm_Feature22' has cardinality 0..*.
+An association connects 'fm_BooleanConstraints' and 'fm_Feature'. From 'fm_BooleanConstraints', the role 'fm_BooleanConstraints' has cardinality 0..*, and from 'fm_Feature', the role 'fm_Feature24' has cardinality 0..*.
+An association connects 'fm_BooleanConstraints' and 'fm_Feature'. From 'fm_BooleanConstraints', the role 'fm_BooleanConstraints26' has cardinality 0..*, and from 'fm_Feature', the role 'fm_Feature27' has cardinality 0..*.

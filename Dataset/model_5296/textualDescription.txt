@@ -1,0 +1,301 @@
+The domain model 'acad' describes the core structural elements and their relationships within the system.
+
+The model defines 76 main class(es).
+
+'acad_S_FastAssist' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_D_MDTUse' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_AR5' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_AR8' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_AR9' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_G_ManualMap' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_Q_IncidResolv' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_G_ObtainMap' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_RadioPos' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_ExceptQueue' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_CV_MST' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_ConfIncident' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_CreateOrAssign' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_DetectLoc' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_Feedback' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_Q_AmbArriv' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_S_LowCost' represents an important domain concept.
+It does not declare any attributes.
+
+'EcaAwReq' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_AcadGoalModel' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_G_ResourceId' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_AR6' represents an important domain concept.
+It does not declare any attributes.
+
+'Task' represents an important domain concept.
+It does not declare any attributes.
+
+'DomainAssumption' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_InformStat' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_D_DriverKnows' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_CheckPaper' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_G_MonitorRes' represents an important domain concept.
+It does not declare any attributes.
+
+'HardGoal' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_AR12' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_D_GazetUpd' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_G_CallTaking' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_AR11' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_DispDepArriv' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_G_DispExcept' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_Except' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_SearchDuplic' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_InputInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_AcadAssists' represents an important domain concept.
+It does not declare any attributes.
+
+'Softgoal' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_AR13' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_S_FastArriv' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_Q_MaxCost' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_AR2' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_AR1' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_AR14' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_AR10' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_StaffAssists' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_DispStatus' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_AR4' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_MonitorStatus' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_ReplAmb' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_D_DataUpd' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_S_UserFriendly' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_G_ResourceMob' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_G_RegCall' represents an important domain concept.
+It does not declare any attributes.
+
+'GoalModel' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_G_GenDispatch' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_D_MDTPos' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_SpecConfig' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_G_RouteAssist' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_G_AssignIncident' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_S_FastDispatch' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_G_IncidentUpd' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_G_UpdPosition' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_Q_MaxTimeMsg' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_DetBestAmb' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_CheckGazet' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_CloseIncident' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_AR3' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_AR7' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_AR15' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_T_ConfirmCall' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_Q_Dispatch' represents an important domain concept.
+It does not declare any attributes.
+
+'acad_D_MaxCalls' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'acad_G_GenDispatch' is a specialization of 'HardGoal'.
+The class 'acad_G_CallTaking' is a specialization of 'HardGoal'.
+The class 'acad_D_DataUpd' is a specialization of 'DomainAssumption'.
+The class 'acad_G_ResourceId' is a specialization of 'HardGoal'.
+The class 'acad_G_ResourceMob' is a specialization of 'HardGoal'.
+The class 'acad_G_ObtainMap' is a specialization of 'HardGoal'.
+The class 'acad_G_IncidentUpd' is a specialization of 'HardGoal'.
+The class 'acad_D_MaxCalls' is a specialization of 'DomainAssumption'.
+The class 'acad_G_RegCall' is a specialization of 'HardGoal'.
+The class 'acad_T_ConfirmCall' is a specialization of 'Task'.
+The class 'acad_G_AssignIncident' is a specialization of 'HardGoal'.
+The class 'acad_T_SearchDuplic' is a specialization of 'Task'.
+The class 'acad_T_CreateOrAssign' is a specialization of 'Task'.
+The class 'acad_T_InputInfo' is a specialization of 'Task'.
+The class 'acad_T_DetectLoc' is a specialization of 'Task'.
+The class 'acad_T_SpecConfig' is a specialization of 'Task'.
+The class 'acad_T_ConfIncident' is a specialization of 'Task'.
+The class 'acad_T_DetBestAmb' is a specialization of 'Task'.
+The class 'acad_T_InformStat' is a specialization of 'Task'.
+The class 'acad_G_RouteAssist' is a specialization of 'HardGoal'.
+The class 'acad_D_DriverKnows' is a specialization of 'DomainAssumption'.
+The class 'acad_T_AcadAssists' is a specialization of 'Task'.
+The class 'acad_T_StaffAssists' is a specialization of 'Task'.
+The class 'acad_T_Feedback' is a specialization of 'Task'.
+The class 'acad_D_GazetUpd' is a specialization of 'DomainAssumption'.
+The class 'acad_G_ManualMap' is a specialization of 'HardGoal'.
+The class 'acad_T_CheckGazet' is a specialization of 'Task'.
+The class 'acad_T_CheckPaper' is a specialization of 'Task'.
+The class 'acad_G_DispExcept' is a specialization of 'HardGoal'.
+The class 'acad_G_MonitorRes' is a specialization of 'HardGoal'.
+The class 'acad_G_UpdPosition' is a specialization of 'HardGoal'.
+The class 'acad_D_MDTPos' is a specialization of 'DomainAssumption'.
+The class 'acad_T_RadioPos' is a specialization of 'Task'.
+The class 'acad_D_MDTUse' is a specialization of 'DomainAssumption'.
+The class 'acad_T_MonitorStatus' is a specialization of 'Task'.
+The class 'acad_T_DispStatus' is a specialization of 'Task'.
+The class 'acad_T_DispDepArriv' is a specialization of 'Task'.
+The class 'acad_T_ReplAmb' is a specialization of 'Task'.
+The class 'acad_T_Except' is a specialization of 'Task'.
+The class 'acad_T_ExceptQueue' is a specialization of 'Task'.
+The class 'acad_T_CloseIncident' is a specialization of 'Task'.
+The class 'acad_S_FastDispatch' is a specialization of 'Softgoal'.
+The class 'acad_Q_Dispatch' is a specialization of 'QualityConstraint'.
+The class 'acad_S_FastAssist' is a specialization of 'Softgoal'.
+The class 'acad_Q_IncidResolv' is a specialization of 'QualityConstraint'.
+The class 'acad_S_FastArriv' is a specialization of 'Softgoal'.
+The class 'acad_Q_AmbArriv' is a specialization of 'QualityConstraint'.
+The class 'acad_S_LowCost' is a specialization of 'Softgoal'.
+The class 'acad_Q_MaxCost' is a specialization of 'QualityConstraint'.
+The class 'acad_S_UserFriendly' is a specialization of 'Softgoal'.
+The class 'acad_Q_MaxTimeMsg' is a specialization of 'QualityConstraint'.
+The class 'acad_AR1' is a specialization of 'EcaAwReq'.
+The class 'acad_AR2' is a specialization of 'EcaAwReq'.
+The class 'acad_AR3' is a specialization of 'EcaAwReq'.
+The class 'acad_AR4' is a specialization of 'EcaAwReq'.
+The class 'acad_AR5' is a specialization of 'EcaAwReq'.
+The class 'acad_AR6' is a specialization of 'EcaAwReq'.
+The class 'acad_AR7' is a specialization of 'EcaAwReq'.
+The class 'acad_AR8' is a specialization of 'EcaAwReq'.
+The class 'acad_AR9' is a specialization of 'EcaAwReq'.
+The class 'acad_AR10' is a specialization of 'EcaAwReq'.
+The class 'acad_AR11' is a specialization of 'EcaAwReq'.
+The class 'acad_AR12' is a specialization of 'EcaAwReq'.
+The class 'acad_AR13' is a specialization of 'EcaAwReq'.
+The class 'acad_AR14' is a specialization of 'EcaAwReq'.
+The class 'acad_AR15' is a specialization of 'EcaAwReq'.
+The class 'acad_AcadGoalModel' is a specialization of 'GoalModel'.
+The class 'acad_CV_MST' is a specialization of 'Parameter'.

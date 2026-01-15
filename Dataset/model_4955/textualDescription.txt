@@ -1,0 +1,56 @@
+The domain model 'gfsm' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_GFinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'FSM' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_GTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_GFSM' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_GState' represents an important domain concept.
+It does not declare any attributes.
+
+'FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_GInitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_IntOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'GState' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'gfsm_GTransition' is a specialization of 'Transition'.
+The class 'gfsm_GState' is a specialization of 'State'.
+The class 'gfsm_GFinalState' is a specialization of 'GState'.
+The class 'gfsm_GFinalState' is a specialization of 'FinalState'.
+The class 'gfsm_GInitialState' is a specialization of 'GState'.
+The class 'gfsm_GInitialState' is a specialization of 'InitialState'.
+The class 'gfsm_GFSM' is a specialization of 'FSM'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gfsm_BooleanExpression' and 'gfsm_GTransition'. From 'gfsm_BooleanExpression', the role 'gfsm_BooleanExpression' has cardinality 0..*, and from 'gfsm_GTransition', the role 'gfsm_GTransition' has cardinality 0..*.
+An association connects 'gfsm_IntOperation' and 'gfsm_GState'. From 'gfsm_IntOperation', the role 'gfsm_IntOperation' has cardinality 0..*, and from 'gfsm_GState', the role 'gfsm_GState' has cardinality 0..*.
+An association connects 'gfsm_IntOperation' and 'gfsm_GState'. From 'gfsm_IntOperation', the role 'gfsm_IntOperation4' has cardinality 0..*, and from 'gfsm_GState', the role 'gfsm_GState3' has cardinality 0..*.

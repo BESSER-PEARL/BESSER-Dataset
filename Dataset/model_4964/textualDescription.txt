@@ -1,0 +1,130 @@
+The domain model 'primitives' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'km3_ModelElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'km3_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'km3_Metamodel' represents an important domain concept.
+It does not declare any attributes.
+
+'km3_Class' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type str.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'km3_Reference' represents an important domain concept.
+It has one attribute: 'isContainer', which is of type str.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'km3_EnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'km3_LocatedElement' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'km3_TemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'km3_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'km3_TypedElement' represents an important domain concept.
+It has the following attributes: 'lower', which is of type str; 'upper', which is of type str; 'isUnique', which is of type str; 'isOrdered', which is of type str.
+
+'km3_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'km3_StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'Metamodel' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'km3_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'km3_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'km3_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'km3_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'km3_ModelElement' is a specialization of 'LocatedElement'.
+The class 'km3_Classifier' is a specialization of 'ModelElement'.
+The class 'km3_DataType' is a specialization of 'Classifier'.
+The class 'km3_Enumeration' is a specialization of 'Classifier'.
+The class 'km3_EnumLiteral' is a specialization of 'ModelElement'.
+The class 'km3_TemplateParameter' is a specialization of 'Classifier'.
+The class 'km3_Class' is a specialization of 'Classifier'.
+The class 'km3_TypedElement' is a specialization of 'ModelElement'.
+The class 'km3_StructuralFeature' is a specialization of 'TypedElement'.
+The class 'km3_Attribute' is a specialization of 'StructuralFeature'.
+The class 'km3_Reference' is a specialization of 'StructuralFeature'.
+The class 'km3_Operation' is a specialization of 'TypedElement'.
+The class 'km3_Parameter' is a specialization of 'TypedElement'.
+The class 'km3_Package' is a specialization of 'ModelElement'.
+The class 'km3_Metamodel' is a specialization of 'LocatedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'km3_ModelElement' and 'Package'. From 'km3_ModelElement', the role '0' has cardinality 0..*, and from 'Package', the role '#' has cardinality 0..*.
+An association connects 'EnumLiteral' and 'km3_Enumeration'. From 'EnumLiteral', the role '#3' has cardinality 0..*, and from 'km3_Enumeration', the role '02' has cardinality 0..*.
+An association connects 'km3_EnumLiteral' and 'Enumeration'. From 'km3_EnumLiteral', the role '05' has cardinality 0..*, and from 'Enumeration', the role '#6' has cardinality 0..*.
+An association connects 'km3_Class' and 'TemplateParameter'. From 'km3_Class', the role 'km3_Class' has cardinality 0..*, and from 'TemplateParameter', the role 'TemplateParameter' has cardinality 0..*.
+An association connects 'km3_Class' and 'Class'. From 'km3_Class', the role 'km3_Class9' has cardinality 0..*, and from 'Class', the role 'Class' has cardinality 0..*.
+An association connects 'StructuralFeature' and 'km3_Class'. From 'StructuralFeature', the role '#12' has cardinality 0..*, and from 'km3_Class', the role '011' has cardinality 0..*.
+An association connects 'Operation' and 'km3_Class'. From 'Operation', the role '#15' has cardinality 0..*, and from 'km3_Class', the role '014' has cardinality 0..*.
+An association connects 'Classifier' and 'km3_TypedElement'. From 'Classifier', the role 'Classifier' has cardinality 0..*, and from 'km3_TypedElement', the role 'km3_TypedElement' has cardinality 0..*.
+An association connects 'Class' and 'km3_StructuralFeature'. From 'Class', the role '#19' has cardinality 0..*, and from 'km3_StructuralFeature', the role '018' has cardinality 0..*.
+An association connects 'km3_StructuralFeature' and 'StructuralFeature'. From 'km3_StructuralFeature', the role '021' has cardinality 0..*, and from 'StructuralFeature', the role '#22' has cardinality 0..*.
+An association connects 'StructuralFeature' and 'km3_StructuralFeature'. From 'StructuralFeature', the role '#25' has cardinality 0..*, and from 'km3_StructuralFeature', the role '024' has cardinality 0..*.
+An association connects 'Reference' and 'km3_Reference'. From 'Reference', the role 'Reference' has cardinality 0..*, and from 'km3_Reference', the role 'km3_Reference' has cardinality 0..*.
+An association connects 'Class' and 'km3_Operation'. From 'Class', the role '#29' has cardinality 0..*, and from 'km3_Operation', the role '028' has cardinality 0..*.
+An association connects 'km3_Operation' and 'Parameter'. From 'km3_Operation', the role '031' has cardinality 0..*, and from 'Parameter', the role '#32' has cardinality 0..*.
+An association connects 'Operation' and 'km3_Parameter'. From 'Operation', the role '#35' has cardinality 0..*, and from 'km3_Parameter', the role '034' has cardinality 0..*.
+An association connects 'ModelElement' and 'km3_Package'. From 'ModelElement', the role '#38' has cardinality 0..*, and from 'km3_Package', the role '037' has cardinality 0..*.
+An association connects 'Metamodel' and 'km3_Package'. From 'Metamodel', the role '#41' has cardinality 0..*, and from 'km3_Package', the role '040' has cardinality 0..*.
+An association connects 'Package' and 'km3_Metamodel'. From 'Package', the role '#44' has cardinality 0..*, and from 'km3_Metamodel', the role '043' has cardinality 0..*.

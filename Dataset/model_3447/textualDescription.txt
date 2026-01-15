@@ -1,0 +1,32 @@
+The domain model 'test' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'test_Person' represents an important domain concept.
+It has the following attributes: 'firstame', which is of type str; 'lastname', which is of type str; 'Grade', which is of type str.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'test_University' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'test_Student' represents an important domain concept.
+It has one attribute: 'regNo', which is of type str.
+
+'test_Employee' represents an important domain concept.
+It has one attribute: 'incomeLevel', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EEnum0' is defined but does not specify any literals.
+The enumeration 'incomeLevel' defines the following possible values: 'UnderGrad', 'PostDoc', 'PreDoc', 'Professor'.
+The enumeration 'Grade' defines the following possible values: 'PHD', 'None', 'MSC', 'BSC', 'Professor'.
+
+The model also captures inheritance relationships between classes.
+The class 'test_Student' is a specialization of 'Person'.
+The class 'test_Employee' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'test_Person' and 'test_Person'. From 'test_Person', the role 'test_Person' has cardinality 0..*, and from 'test_Person', the role 'test_Person0' has cardinality 0..*.
+An association connects 'test_Person' and 'test_Person'. From 'test_Person', the role 'test_Person4' has cardinality 0..*, and from 'test_Person', the role 'test_Person2' has cardinality 0..*.
+An association connects 'test_University' and 'test_Person'. From 'test_University', the role 'test_University' has cardinality 0..*, and from 'test_Person', the role 'test_Person6' has cardinality 0..*.

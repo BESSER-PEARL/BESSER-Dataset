@@ -1,0 +1,83 @@
+The domain model 'model1' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'model1_ProductToOrder' represents an important domain concept.
+It does not declare any attributes.
+
+'Address' represents an important domain concept.
+It does not declare any attributes.
+
+'model1_Company' represents an important domain concept.
+It does not declare any attributes.
+
+'model1_PurchaseOrder' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'model1_Order' represents an important domain concept.
+It does not declare any attributes.
+
+'model1_Product1' represents an important domain concept.
+It has the following attributes: 'vat', which is of type str; 'description', which is of type str; 'otherVATs', which is of type str; 'name', which is of type str.
+
+'OrderDetail' represents an important domain concept.
+It does not declare any attributes.
+
+'model1_Category' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model1_SalesOrder' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'model1_OrderDetail' represents an important domain concept.
+It has one attribute: 'price', which is of type float.
+
+'model1_Customer' represents an important domain concept.
+It does not declare any attributes.
+
+'model1_OrderAddress' represents an important domain concept.
+It has one attribute: 'testAttribute', which is of type bool.
+
+'Order' represents an important domain concept.
+It does not declare any attributes.
+
+'model1_Supplier' represents an important domain concept.
+It has one attribute: 'preferred', which is of type bool.
+
+'model1_Address' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'city', which is of type str; 'street', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VAT' defines the following possible values: 'vat0', 'vat7', 'vat15'.
+
+The model also captures inheritance relationships between classes.
+The class 'model1_Company' is a specialization of 'Address'.
+The class 'model1_Supplier' is a specialization of 'Address'.
+The class 'model1_Customer' is a specialization of 'Address'.
+The class 'model1_PurchaseOrder' is a specialization of 'Order'.
+The class 'model1_SalesOrder' is a specialization of 'Order'.
+The class 'model1_OrderAddress' is a specialization of 'Address'.
+The class 'model1_OrderAddress' is a specialization of 'Order'.
+The class 'model1_OrderAddress' is a specialization of 'OrderDetail'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model1_Company' and 'model1_Category'. From 'model1_Company', the role 'model1_Company' has cardinality 0..*, and from 'model1_Category', the role 'model1_Category' has cardinality 0..*.
+An association connects 'model1_Supplier' and 'model1_Company'. From 'model1_Supplier', the role 'model1_Supplier' has cardinality 0..*, and from 'model1_Company', the role 'model1_Company2' has cardinality 0..*.
+An association connects 'model1_Company' and 'model1_Customer'. From 'model1_Company', the role 'model1_Company4' has cardinality 0..*, and from 'model1_Customer', the role 'model1_Customer' has cardinality 0..*.
+An association connects 'model1_PurchaseOrder' and 'model1_Company'. From 'model1_PurchaseOrder', the role 'model1_PurchaseOrder' has cardinality 0..*, and from 'model1_Company', the role 'model1_Company6' has cardinality 0..*.
+An association connects 'model1_SalesOrder' and 'model1_Company'. From 'model1_SalesOrder', the role 'model1_SalesOrder' has cardinality 0..*, and from 'model1_Company', the role 'model1_Company8' has cardinality 0..*.
+An association connects 'model1_PurchaseOrder' and 'model1_Supplier'. From 'model1_PurchaseOrder', the role 'PurchaseOrder' has cardinality 0..*, and from 'model1_Supplier', the role 'supplier' has cardinality 0..*.
+An association connects 'model1_Customer' and 'model1_SalesOrder'. From 'model1_Customer', the role 'customer' has cardinality 0..*, and from 'model1_SalesOrder', the role 'SalesOrder' has cardinality 0..*.
+An association connects 'model1_Customer' and 'model1_ProductToOrder'. From 'model1_Customer', the role 'model1_Customer12' has cardinality 0..*, and from 'model1_ProductToOrder', the role 'model1_ProductToOrder' has cardinality 0..*.
+An association connects 'model1_Order' and 'model1_OrderDetail'. From 'model1_Order', the role 'order' has cardinality 0..*, and from 'model1_OrderDetail', the role 'OrderDetail' has cardinality 0..*.
+An association connects 'model1_Order' and 'model1_OrderDetail'. From 'model1_Order', the role 'Order' has cardinality 0..*, and from 'model1_OrderDetail', the role 'orderDetails' has cardinality 0..*.
+An association connects 'model1_OrderDetail' and 'model1_Product1'. From 'model1_OrderDetail', the role 'orderDetails16' has cardinality 0..*, and from 'model1_Product1', the role 'Product1' has cardinality 0..*.
+An association connects 'model1_PurchaseOrder' and 'model1_Supplier'. From 'model1_PurchaseOrder', the role 'purchaseOrders' has cardinality 0..*, and from 'model1_Supplier', the role 'Supplier' has cardinality 0..*.
+An association connects 'model1_SalesOrder' and 'model1_PurchaseOrder'. From 'model1_SalesOrder', the role 'SalesOrder20' has cardinality 0..*, and from 'model1_PurchaseOrder', the role 'purchaseOrders19' has cardinality 0..*.
+An association connects 'model1_Customer' and 'model1_SalesOrder'. From 'model1_Customer', the role 'Customer' has cardinality 0..*, and from 'model1_SalesOrder', the role 'salesOrders' has cardinality 0..*.
+An association connects 'model1_SalesOrder' and 'model1_PurchaseOrder'. From 'model1_SalesOrder', the role 'salesOrders23' has cardinality 0..*, and from 'model1_PurchaseOrder', the role 'PurchaseOrder24' has cardinality 0..*.
+An association connects 'model1_Category' and 'model1_Category'. From 'model1_Category', the role 'model1_Category25' has cardinality 0..*, and from 'model1_Category', the role 'model1_Category27' has cardinality 0..*.
+An association connects 'model1_Product1' and 'model1_Category'. From 'model1_Product1', the role 'model1_Product1' has cardinality 0..*, and from 'model1_Category', the role 'model1_Category29' has cardinality 0..*.
+An association connects 'model1_OrderDetail' and 'model1_Product1'. From 'model1_OrderDetail', the role 'OrderDetail31' has cardinality 0..*, and from 'model1_Product1', the role 'product' has cardinality 0..*.
+An association connects 'model1_ProductToOrder' and 'model1_Product1'. From 'model1_ProductToOrder', the role 'model1_ProductToOrder33' has cardinality 0..*, and from 'model1_Product1', the role 'model1_Product134' has cardinality 0..*.
+An association connects 'model1_ProductToOrder' and 'model1_SalesOrder'. From 'model1_ProductToOrder', the role 'model1_ProductToOrder36' has cardinality 0..*, and from 'model1_SalesOrder', the role 'model1_SalesOrder37' has cardinality 0..*.

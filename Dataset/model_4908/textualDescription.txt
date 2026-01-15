@@ -1,0 +1,121 @@
+The domain model 'services' describes the core structural elements and their relationships within the system.
+
+The model defines 24 main class(es).
+
+'services_ServiceDistribution' represents an important domain concept.
+It does not declare any attributes.
+
+'services_ResourceMonitor' represents an important domain concept.
+It does not declare any attributes.
+
+'services_Service' represents an important domain concept.
+It has the following attributes: 'serviceName', which is of type str; 'serviceCategory', which is of type str; 'serviceDescription', which is of type str; 'serviceClass', which is of type str.
+
+'services_ServiceForecastUsers' represents an important domain concept.
+It does not declare any attributes.
+
+'services_Tolerance' represents an important domain concept.
+It does not declare any attributes.
+
+'services_CFSService' represents an important domain concept.
+It has the following attributes: 'provider', which is of type str; 'scenario', which is of type str.
+
+'services_ResourceForecast' represents an important domain concept.
+It does not declare any attributes.
+
+'services_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'services_ServiceProfile' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'services_ServiceUser' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str.
+
+'services_Lifecycle' represents an important domain concept.
+It does not declare any attributes.
+
+'services_DateTimeRange' represents an important domain concept.
+It does not declare any attributes.
+
+'services_DistributionEntry' represents an important domain concept.
+It has one attribute: 'resourceOrigin', which is of type str.
+
+'Base' represents an important domain concept.
+It does not declare any attributes.
+
+'Service' represents an important domain concept.
+It does not declare any attributes.
+
+'services_ServiceMonitor' represents an important domain concept.
+It has the following attributes: 'revision', which is of type str; 'name', which is of type str.
+
+'services_CIID' represents an important domain concept.
+It has the following attributes: 'commonCIID', which is of type str; 'localCIID', which is of type str.
+
+'services_DerivedResource' represents an important domain concept.
+It does not declare any attributes.
+
+'services_ServiceForecast' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'revision', which is of type str.
+
+'services_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'services_NetXResource' represents an important domain concept.
+It does not declare any attributes.
+
+'services_RFSService' represents an important domain concept.
+It has one attribute: 'functionalCategory', which is of type str.
+
+'services_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseResource' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ServiceClassType' defines the following possible values: 'Bronze', 'Gold', 'Silver'.
+The enumeration 'ResourceOriginType' defines the following possible values: 'Internal', 'InBound', 'OutBound'.
+
+The model also captures inheritance relationships between classes.
+The class 'services_CFSService' is a specialization of 'Service'.
+The class 'services_CIID' is a specialization of 'Base'.
+The class 'services_DerivedResource' is a specialization of 'BaseResource'.
+The class 'services_DistributionEntry' is a specialization of 'Base'.
+The class 'services_RFSService' is a specialization of 'Service'.
+The class 'services_Service' is a specialization of 'Base'.
+The class 'services_ServiceDistribution' is a specialization of 'Base'.
+The class 'services_ServiceForecast' is a specialization of 'Base'.
+The class 'services_ServiceForecastUsers' is a specialization of 'Base'.
+The class 'services_ServiceMonitor' is a specialization of 'Base'.
+The class 'services_ServiceProfile' is a specialization of 'Base'.
+The class 'services_ServiceUser' is a specialization of 'Base'.
+
+Relationships between classes are modeled using associations.
+An association connects 'services_DerivedResource' and 'services_Value'. From 'services_DerivedResource', the role 'services_DerivedResource' has cardinality 0..*, and from 'services_Value', the role 'services_Value' has cardinality 0..*.
+An association connects 'services_DerivedResource' and 'services_Value'. From 'services_DerivedResource', the role 'services_DerivedResource2' has cardinality 0..*, and from 'services_Value', the role 'services_Value3' has cardinality 0..*.
+An association connects 'services_DerivedResource' and 'services_Value'. From 'services_DerivedResource', the role 'services_DerivedResource5' has cardinality 0..*, and from 'services_Value', the role 'services_Value6' has cardinality 0..*.
+An association connects 'services_NetXResource' and 'services_DistributionEntry'. From 'services_NetXResource', the role 'services_NetXResource' has cardinality 0..*, and from 'services_DistributionEntry', the role 'services_DistributionEntry' has cardinality 0..*.
+An association connects 'services_DistributionEntry' and 'services_DerivedResource'. From 'services_DistributionEntry', the role 'services_DistributionEntry9' has cardinality 0..*, and from 'services_DerivedResource', the role 'services_DerivedResource10' has cardinality 0..*.
+An association connects 'services_RFSService' and 'services_Node'. From 'services_RFSService', the role 'services_RFSService' has cardinality 0..*, and from 'services_Node', the role 'services_Node' has cardinality 0..*.
+An association connects 'services_RFSService' and 'services_Tolerance'. From 'services_RFSService', the role 'services_RFSService13' has cardinality 0..*, and from 'services_Tolerance', the role 'services_Tolerance' has cardinality 0..*.
+An association connects 'services_Service' and 'services_CIID'. From 'services_Service', the role 'services_Service' has cardinality 0..*, and from 'services_CIID', the role 'services_CIID' has cardinality 0..*.
+An association connects 'services_Lifecycle' and 'services_Service'. From 'services_Lifecycle', the role 'services_Lifecycle' has cardinality 0..*, and from 'services_Service', the role 'services_Service16' has cardinality 0..*.
+An association connects 'services_Service' and 'services_Service'. From 'services_Service', the role 'services_Service19' has cardinality 0..*, and from 'services_Service', the role 'services_Service17' has cardinality 0..*.
+An association connects 'services_Service' and 'services_ServiceForecast'. From 'services_Service', the role 'services_Service21' has cardinality 0..*, and from 'services_ServiceForecast', the role 'services_ServiceForecast' has cardinality 0..*.
+An association connects 'services_ServiceMonitor' and 'services_Service'. From 'services_ServiceMonitor', the role 'services_ServiceMonitor' has cardinality 0..*, and from 'services_Service', the role 'services_Service23' has cardinality 0..*.
+An association connects 'services_Service' and 'services_ServiceUser'. From 'services_Service', the role 'services_Service25' has cardinality 0..*, and from 'services_ServiceUser', the role 'services_ServiceUser' has cardinality 0..*.
+An association connects 'services_ServiceDistribution' and 'services_Service'. From 'services_ServiceDistribution', the role 'services_ServiceDistribution' has cardinality 0..*, and from 'services_Service', the role 'services_Service27' has cardinality 0..*.
+An association connects 'services_ServiceDistribution' and 'services_DistributionEntry'. From 'services_ServiceDistribution', the role 'services_ServiceDistribution29' has cardinality 0..*, and from 'services_DistributionEntry', the role 'services_DistributionEntry30' has cardinality 0..*.
+An association connects 'services_Expression' and 'services_ServiceDistribution'. From 'services_Expression', the role 'services_Expression' has cardinality 0..*, and from 'services_ServiceDistribution', the role 'services_ServiceDistribution32' has cardinality 0..*.
+An association connects 'services_ServiceForecast' and 'services_DateTimeRange'. From 'services_ServiceForecast', the role 'services_ServiceForecast34' has cardinality 0..*, and from 'services_DateTimeRange', the role 'services_DateTimeRange' has cardinality 0..*.
+An association connects 'services_ServiceForecastUsers' and 'services_ServiceForecast'. From 'services_ServiceForecastUsers', the role 'services_ServiceForecastUsers' has cardinality 0..*, and from 'services_ServiceForecast', the role 'services_ServiceForecast36' has cardinality 0..*.
+An association connects 'services_ResourceForecast' and 'services_ServiceForecast'. From 'services_ResourceForecast', the role 'services_ResourceForecast' has cardinality 0..*, and from 'services_ServiceForecast', the role 'services_ServiceForecast38' has cardinality 0..*.
+An association connects 'services_ServiceForecastUsers' and 'services_Value'. From 'services_ServiceForecastUsers', the role 'services_ServiceForecastUsers40' has cardinality 0..*, and from 'services_Value', the role 'services_Value41' has cardinality 0..*.
+An association connects 'services_ServiceForecastUsers' and 'services_ServiceUser'. From 'services_ServiceForecastUsers', the role 'services_ServiceForecastUsers43' has cardinality 0..*, and from 'services_ServiceUser', the role 'services_ServiceUser44' has cardinality 0..*.
+An association connects 'services_ServiceMonitor' and 'services_DateTimeRange'. From 'services_ServiceMonitor', the role 'services_ServiceMonitor46' has cardinality 0..*, and from 'services_DateTimeRange', the role 'services_DateTimeRange47' has cardinality 0..*.
+An association connects 'services_ServiceMonitor' and 'services_ResourceMonitor'. From 'services_ServiceMonitor', the role 'services_ServiceMonitor49' has cardinality 0..*, and from 'services_ResourceMonitor', the role 'services_ResourceMonitor' has cardinality 0..*.
+An association connects 'services_DerivedResource' and 'services_ServiceProfile'. From 'services_DerivedResource', the role 'services_DerivedResource51' has cardinality 0..*, and from 'services_ServiceProfile', the role 'services_ServiceProfile' has cardinality 0..*.
+An association connects 'services_ServiceUser' and 'services_ServiceProfile'. From 'services_ServiceUser', the role 'services_ServiceUser53' has cardinality 0..*, and from 'services_ServiceProfile', the role 'services_ServiceProfile54' has cardinality 0..*.
+An association connects 'services_Expression' and 'services_ServiceUser'. From 'services_Expression', the role 'services_Expression57' has cardinality 0..*, and from 'services_ServiceUser', the role 'services_ServiceUser56' has cardinality 0..*.

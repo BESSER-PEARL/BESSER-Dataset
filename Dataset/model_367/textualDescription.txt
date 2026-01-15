@@ -1,0 +1,68 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'Lendable' represents an important domain concept.
+It does not declare any attributes.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'library_IncBook' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'pages', which is of type int.
+
+'library_Item' represents an important domain concept.
+It has one attribute: 'publicationDate', which is of type date.
+
+'library_Lendable' represents an important domain concept.
+It has one attribute: 'copies', which is of type int.
+
+'library_Writer' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Borrower' represents an important domain concept.
+It does not declare any attributes.
+
+'Addressable' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Addressable' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'Item' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Employee' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_CirculatingItem' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Person' represents an important domain concept.
+It has the following attributes: 'firstName', which is of type str; 'lastName', which is of type str.
+
+'CirculatingItem' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'library_Library' is a specialization of 'Addressable'.
+The class 'library_Person' is a specialization of 'Addressable'.
+The class 'library_Employee' is a specialization of 'Person'.
+The class 'library_Writer' is a specialization of 'Person'.
+The class 'library_Borrower' is a specialization of 'Person'.
+The class 'library_IncBook' is a specialization of 'CirculatingItem'.
+The class 'library_CirculatingItem' is a specialization of 'Item'.
+The class 'library_CirculatingItem' is a specialization of 'Lendable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'library_Library' and 'library_Writer'. From 'library_Library', the role 'library_Library' has cardinality 0..*, and from 'library_Writer', the role 'library_Writer' has cardinality 0..*.
+An association connects 'library_Employee' and 'library_Library'. From 'library_Employee', the role 'library_Employee' has cardinality 0..*, and from 'library_Library', the role 'library_Library2' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Borrower'. From 'library_Library', the role 'library_Library4' has cardinality 0..*, and from 'library_Borrower', the role 'library_Borrower' has cardinality 0..*.
+An association connects 'library_Item' and 'library_Library'. From 'library_Item', the role 'library_Item' has cardinality 0..*, and from 'library_Library', the role 'library_Library6' has cardinality 0..*.
+An association connects 'library_Writer' and 'library_IncBook'. From 'library_Writer', the role 'authors' has cardinality 0..*, and from 'library_IncBook', the role 'IncBook' has cardinality 0..*.
+An association connects 'library_Lendable' and 'library_Borrower'. From 'library_Lendable', the role 'Lendable' has cardinality 0..*, and from 'library_Borrower', the role 'borrowers' has cardinality 0..*.
+An association connects 'library_Writer' and 'library_IncBook'. From 'library_Writer', the role 'Writer' has cardinality 0..*, and from 'library_IncBook', the role 'books' has cardinality 0..*.
+An association connects 'library_Borrower' and 'library_Lendable'. From 'library_Borrower', the role 'Borrower' has cardinality 0..*, and from 'library_Lendable', the role 'borrowing' has cardinality 0..*.

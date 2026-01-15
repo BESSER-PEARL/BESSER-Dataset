@@ -1,0 +1,50 @@
+The domain model 'boolexp' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'boolexp_Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'boolexp_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'boolexp_Fals' represents an important domain concept.
+It does not declare any attributes.
+
+'BinExp' represents an important domain concept.
+It does not declare any attributes.
+
+'boolexp_BinExp' represents an important domain concept.
+It does not declare any attributes.
+
+'boolexp_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'boolexp_Tru' represents an important domain concept.
+It does not declare any attributes.
+
+'boolexp_And' represents an important domain concept.
+It does not declare any attributes.
+
+'Lit' represents an important domain concept.
+It does not declare any attributes.
+
+'boolexp_Lit' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'boolexp_BinExp' is a specialization of 'Exp'.
+The class 'boolexp_Lit' is a specialization of 'Exp'.
+The class 'boolexp_Tru' is a specialization of 'Lit'.
+The class 'boolexp_Fals' is a specialization of 'Lit'.
+The class 'boolexp_Not' is a specialization of 'Exp'.
+The class 'boolexp_And' is a specialization of 'BinExp'.
+The class 'boolexp_Or' is a specialization of 'BinExp'.
+
+Relationships between classes are modeled using associations.
+An association connects 'boolexp_BinExp' and 'boolexp_Exp'. From 'boolexp_BinExp', the role 'boolexp_BinExp' has cardinality 0..*, and from 'boolexp_Exp', the role 'boolexp_Exp' has cardinality 0..*.
+An association connects 'boolexp_Exp' and 'boolexp_BinExp'. From 'boolexp_Exp', the role 'boolexp_Exp3' has cardinality 0..*, and from 'boolexp_BinExp', the role 'boolexp_BinExp2' has cardinality 0..*.
+An association connects 'boolexp_Exp' and 'boolexp_Not'. From 'boolexp_Exp', the role 'boolexp_Exp5' has cardinality 0..*, and from 'boolexp_Not', the role 'boolexp_Not' has cardinality 0..*.

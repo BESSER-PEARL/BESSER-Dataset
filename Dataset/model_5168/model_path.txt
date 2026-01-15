@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/sschindler/ame13mt/at.ac.tuwien.big.ame13.atl2java.atl/model/B.ecore

@@ -1,0 +1,42 @@
+The domain model 'customerDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'customerDsl_Order' represents an important domain concept.
+It has the following attributes: 'channel', which is of type str; 'name', which is of type str.
+
+'customerDsl_CustomerDb' represents an important domain concept.
+It does not declare any attributes.
+
+'customerDsl_Address' represents an important domain concept.
+It has the following attributes: 'zip', which is of type str; 'name', which is of type str.
+
+'Address' represents an important domain concept.
+It does not declare any attributes.
+
+'customerDsl_Customer' represents an important domain concept.
+It has the following attributes: 'fullName', which is of type str; 'name', which is of type str.
+
+'customerDsl_StreetAddress' represents an important domain concept.
+It has the following attributes: 'street', which is of type str; 'city', which is of type str.
+
+'customerDsl_POBox' represents an important domain concept.
+It has one attribute: 'number', which is of type int.
+
+'customerDsl_Product' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'price', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'OrderChannel' defines the following possible values: 'MAIL', 'WEB', 'PHONE'.
+
+The model also captures inheritance relationships between classes.
+The class 'customerDsl_StreetAddress' is a specialization of 'Address'.
+The class 'customerDsl_POBox' is a specialization of 'Address'.
+
+Relationships between classes are modeled using associations.
+An association connects 'customerDsl_Customer' and 'customerDsl_CustomerDb'. From 'customerDsl_Customer', the role 'customerDsl_Customer' has cardinality 0..*, and from 'customerDsl_CustomerDb', the role 'customerDsl_CustomerDb' has cardinality 0..*.
+An association connects 'customerDsl_Order' and 'customerDsl_CustomerDb'. From 'customerDsl_Order', the role 'customerDsl_Order' has cardinality 0..*, and from 'customerDsl_CustomerDb', the role 'customerDsl_CustomerDb2' has cardinality 0..*.
+An association connects 'customerDsl_CustomerDb' and 'customerDsl_Product'. From 'customerDsl_CustomerDb', the role 'customerDsl_CustomerDb4' has cardinality 0..*, and from 'customerDsl_Product', the role 'customerDsl_Product' has cardinality 0..*.
+An association connects 'customerDsl_Address' and 'customerDsl_Customer'. From 'customerDsl_Address', the role 'customerDsl_Address' has cardinality 0..*, and from 'customerDsl_Customer', the role 'customerDsl_Customer6' has cardinality 0..*.
+An association connects 'customerDsl_Customer' and 'customerDsl_Order'. From 'customerDsl_Customer', the role 'customerDsl_Customer9' has cardinality 0..*, and from 'customerDsl_Order', the role 'customerDsl_Order8' has cardinality 0..*.
+An association connects 'customerDsl_Order' and 'customerDsl_Address'. From 'customerDsl_Order', the role 'customerDsl_Order11' has cardinality 0..*, and from 'customerDsl_Address', the role 'customerDsl_Address12' has cardinality 0..*.

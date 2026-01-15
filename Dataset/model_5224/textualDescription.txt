@@ -1,0 +1,24 @@
+The domain model 'root' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'root_A' represents an important domain concept.
+It does not declare any attributes.
+
+'root_B' represents an important domain concept.
+It does not declare any attributes.
+
+'root_subsub_E' represents an important domain concept.
+It does not declare any attributes.
+
+'root_sub2_E' represents an important domain concept.
+It does not declare any attributes.
+
+'root_sub_C' represents an important domain concept.
+It does not declare any attributes.
+
+'root_sub_D' represents an important domain concept.
+It does not declare any attributes.
+
+'root_subsub_F' represents an important domain concept.
+It does not declare any attributes.

@@ -1,0 +1,318 @@
+The domain model 'gestionmodelosconsultas' describes the core structural elements and their relationships within the system.
+
+The model defines 75 main class(es).
+
+'modeloconsultas_gestionmodelosconsultas_ModelFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_entitymodel_AssociativeEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_resultcotracir_NewClass' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_resultcotracir_Detallado' represents an important domain concept.
+It has the following attributes: 'REGISTRO_RECAUDO', which is of type str; 'COSTO_TARIFA', which is of type str; 'ID', which is of type str; 'TOTAL_RECAUDO_TARIFA', which is of type str; 'NOMBRE', which is of type str; 'REGISTRO', which is of type str.
+
+'gestionmodelosconsultas_entitymodel_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_model_ElementoModelo' represents an important domain concept.
+It has one attribute: 'nombre', which is of type str.
+
+'gestionmodelosconsultas_cotracir_Trama' represents an important domain concept.
+It does not declare any attributes.
+
+'model_EADiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementoRealizacionDiagramEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_factoryrules_Rule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EntityRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_resultcotracir_Consolidado' represents an important domain concept.
+It has the following attributes: 'HORA_DESPACHO', which is of type str; 'RUTA_DESPACHO', which is of type str; 'ESTADO_CONSOLIDADO', which is of type str; 'ESTADO_IMPRESION', which is of type str; 'ID', which is of type str; 'REGISTRO_CONSOLIDADO', which is of type str; 'TOTAL_RECAUDO_DESPACHO', which is of type str; 'TOTAL_RECAUDO_BRUTO', which is of type str.
+
+'gestionmodelosconsultas_factoryrules_EntityName' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_entitymodel_ModelElementEntity' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'stereotype', which is of type str.
+
+'gestionmodelosconsultas_cotracir_Detallado' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_entitymodel_DiagramEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_model_ViewModel' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_entitymodel_Value' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'gestionmodelosconsultas_resultcotracir_Trama' represents an important domain concept.
+It has the following attributes: 'CADENA_TRAMA', which is of type str; 'ID', which is of type str.
+
+'gestionmodelosconsultas_entitymodel_RealizacionDiagramEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementoConsulta' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_resultset_ElementoModeloResultado' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'factoryrules_RulesFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'resultset_ResultElement' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_entitymodel_SimpleRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Campo' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_factoryrules_RulesFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagramEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_modeloconsultas_FactoryModeloConsulta' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_resultcotracir_Transaccion' represents an important domain concept.
+It has the following attributes: 'ID', which is of type str; 'TIPO', which is of type str; 'VALOR', which is of type str; 'DESCRIPCION', which is of type str; 'ESTADO_TRANSACCION', which is of type str; 'HORA', which is of type str; 'CATEGORIA', which is of type str.
+
+'gestionmodelosconsultas_cotracir_Consolidado' represents an important domain concept.
+It does not declare any attributes.
+
+'Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_entitymodel_Attribute' represents an important domain concept.
+It has the following attributes: 'attributeType', which is of type str; 'value', which is of type str; 'type', which is of type str; 'name', which is of type str; 'visible', which is of type bool.
+
+'resultset_Resultado' represents an important domain concept.
+It does not declare any attributes.
+
+'factoryrules_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_factoryrules_ChildRule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gestionmodelosconsultas_model_Relacion' represents an important domain concept.
+It has the following attributes: 'order', which is of type str; 'estereotipo', which is of type str.
+
+'ModeloConsulta' represents an important domain concept.
+It does not declare any attributes.
+
+'ChildRule' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_model_Campo' represents an important domain concept.
+It has the following attributes: 'nombreCampo', which is of type str; 'criterio', which is of type str; 'seleccion', which is of type bool.
+
+'gestionmodelosconsultas_ModelFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_model_Proyeccion' represents an important domain concept.
+It does not declare any attributes.
+
+'EADiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElementEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_resultset_ResultElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementoModeloResultado' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_entitymodel_EntityRelation' represents an important domain concept.
+It has the following attributes: 'multiplicityTarget', which is of type str; 'atributtePrimaryKeyTarget', which is of type str; 'multiplicitySource', which is of type str; 'atributteForeingKeySource', which is of type str.
+
+'gestionmodelosconsultas_cotracir_Planilla' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_entitymodel_ElementoRealizacionDiagramEntity' represents an important domain concept.
+It has the following attributes: 'tipo', which is of type str; 'nombreModelElementEntity', which is of type str.
+
+'gestionmodelosconsultas_resultcotracir_Planilla' represents an important domain concept.
+It has the following attributes: 'TOTAL_DEPOSITO', which is of type str; 'USUARIO', which is of type str; 'APELLIDO', which is of type str; 'TOTAL_RECAUDO_NETO', which is of type str; 'NOMBRE_PERSONA', which is of type str; 'NUMERO_MOVIL', which is of type str; 'ID', which is of type str; 'TOTAL', which is of type str; 'TOTAL_RECAUDO_BRUTO', which is of type str; 'FECHA', which is of type str; 'HORA_MODIFICACION', which is of type str; 'TOTAL_GASTOS', which is of type str; 'CEDULA', which is of type str; 'CEDULA_CONDUCTOR', which is of type str; 'LIQUIDADO', which is of type str; 'CONDUCTOR', which is of type str.
+
+'gestionmodelosconsultas_cotracir_Transaccion' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_resultset_Resultado' represents an important domain concept.
+It has one attribute: 'nombre', which is of type str.
+
+'gestionmodelosconsultas_factoryrules_RelationName' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Relacion' represents an important domain concept.
+It does not declare any attributes.
+
+'RealizacionDiagramEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'factoryrules_ChildRule' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_model_EADiagram' represents an important domain concept.
+It has one attribute: 'nombre', which is of type str.
+
+'FactoryModeloConsulta' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementoModelo' represents an important domain concept.
+It does not declare any attributes.
+
+'resultset_ElementoModeloResultado' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_entitymodel_ElementoRealizacionValueAttribute' represents an important domain concept.
+It has one attribute: 'nombre', which is of type str.
+
+'entitymodel_gestionmodelosconsultas_ModelFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_modeloconsultas_ModeloConsulta' represents an important domain concept.
+It has one attribute: 'nombre', which is of type str.
+
+'model_ElementoConsulta' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ElementoModelo' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementoRealizacionValueAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_model_ElementoConsulta' represents an important domain concept.
+It has one attribute: 'order', which is of type str.
+
+'factoryrules_gestionmodelosconsultas_ModelFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_entitymodel_ElementoRealizacionVisibleAttribute' represents an important domain concept.
+It has one attribute: 'nombre', which is of type str.
+
+'ResultElement' represents an important domain concept.
+It does not declare any attributes.
+
+'gestionmodelosconsultas_resultcotracir_Propietario' represents an important domain concept.
+It has the following attributes: 'ID', which is of type str; 'CEDULA', which is of type str; 'NOMBRE', which is of type str.
+
+'gestionmodelosconsultas_cotracir_Propietario' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementoRealizacionVisibleAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'NombreCampo' defines the following possible values: 'TOTAL_RECAUDO_NETO', 'CEDULA_CONDUCTOR', 'RUTA_DESPACHO', 'NUMERO_MOVIL', 'TOTAL_GASTOS', 'NOMBRE_PERSONA', 'ESTADO_TRANSACCION', 'TOTAL', 'CEDULA', 'HORA', 'TOTAL_RECAUDO_TARIFA', 'ID', 'CONDUCTOR', 'default', 'LIQUIDADO', 'TOTAL_RECAUDO_BRUTO', 'CATEGORIA', 'REGISTRO_RECAUDO', 'NOMBRE', 'HORA_DESPACHO', 'REGISTRO_CONSOLIDADO', 'ESTADO_IMPRESION', 'COSTO_TARIFA', 'FECHA', 'REGISTRO', 'DESCRIPCION', 'TOTAL_RECAUDO_DESPACHO', 'ESTADO_CONSOLIDADO', 'CADENA_TRAMA', 'USUARIO', 'TOTAL_RECAUDO_RUTO', 'TOTAL_DEPOSITO', 'APELLIDO', 'HORA_MODIFICACION', 'VALOR', 'TIPO'.
+The enumeration 'Multiplicity' defines the following possible values: 'many_to_one', 'one_to_one', 'one_to_many'.
+The enumeration 'Type' defines the following possible values: 'float', 'date', 'string', 'int'.
+The enumeration 'AttributeType' defines the following possible values: 'primaryKey', 'ordinary'.
+The enumeration 'TipoModelElementEntity' defines the following possible values: 'relation', 'entity'.
+
+The model also captures inheritance relationships between classes.
+The class 'gestionmodelosconsultas_factoryrules_EntityName' is a specialization of 'ChildRule'.
+The class 'gestionmodelosconsultas_factoryrules_RelationName' is a specialization of 'ChildRule'.
+The class 'gestionmodelosconsultas_entitymodel_Entity' is a specialization of 'ModelElementEntity'.
+The class 'gestionmodelosconsultas_entitymodel_EntityRelation' is a specialization of 'ModelElementEntity'.
+The class 'gestionmodelosconsultas_entitymodel_SimpleRelation' is a specialization of 'EntityRelation'.
+The class 'gestionmodelosconsultas_entitymodel_AssociativeEntity' is a specialization of 'Entity'.
+The class 'gestionmodelosconsultas_model_Relacion' is a specialization of 'ElementoModelo'.
+The class 'gestionmodelosconsultas_model_ViewModel' is a specialization of 'EADiagram'.
+The class 'gestionmodelosconsultas_model_ElementoConsulta' is a specialization of 'ElementoModelo'.
+The class 'gestionmodelosconsultas_model_Proyeccion' is a specialization of 'EADiagram'.
+The class 'gestionmodelosconsultas_resultset_ElementoModeloResultado' is a specialization of 'ResultElement'.
+The class 'gestionmodelosconsultas_resultcotracir_Transaccion' is a specialization of 'ElementoModeloResultado'.
+The class 'gestionmodelosconsultas_resultcotracir_Trama' is a specialization of 'ElementoModeloResultado'.
+The class 'gestionmodelosconsultas_resultcotracir_Consolidado' is a specialization of 'ElementoModeloResultado'.
+The class 'gestionmodelosconsultas_resultcotracir_Propietario' is a specialization of 'ElementoModeloResultado'.
+The class 'gestionmodelosconsultas_resultcotracir_Planilla' is a specialization of 'ElementoModeloResultado'.
+The class 'gestionmodelosconsultas_resultcotracir_Detallado' is a specialization of 'ElementoModeloResultado'.
+The class 'gestionmodelosconsultas_cotracir_Planilla' is a specialization of 'ElementoConsulta'.
+The class 'gestionmodelosconsultas_cotracir_Consolidado' is a specialization of 'ElementoConsulta'.
+The class 'gestionmodelosconsultas_cotracir_Transaccion' is a specialization of 'ElementoConsulta'.
+The class 'gestionmodelosconsultas_cotracir_Trama' is a specialization of 'ElementoConsulta'.
+The class 'gestionmodelosconsultas_cotracir_Propietario' is a specialization of 'ElementoConsulta'.
+The class 'gestionmodelosconsultas_cotracir_Detallado' is a specialization of 'ElementoConsulta'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gestionmodelosconsultas_ModelFactory' and 'factoryrules_RulesFactory'. From 'gestionmodelosconsultas_ModelFactory', the role 'factoryrules' has cardinality 0..*, and from 'factoryrules_RulesFactory', the role 'rules' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_ModelFactory' and 'FactoryModeloConsulta'. From 'gestionmodelosconsultas_ModelFactory', the role 'FactoryModeloConsulta' has cardinality 0..*, and from 'FactoryModeloConsulta', the role 'modeloconsultas' has cardinality 0..*.
+An association connects 'DiagramEntity' and 'gestionmodelosconsultas_ModelFactory'. From 'DiagramEntity', the role 'entitymodel' has cardinality 0..*, and from 'gestionmodelosconsultas_ModelFactory', the role 'DiagramEntity' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_factoryrules_RulesFactory' and 'factoryrules_gestionmodelosconsultas_ModelFactory'. From 'gestionmodelosconsultas_factoryrules_RulesFactory', the role 'rulesFactory' has cardinality 0..*, and from 'factoryrules_gestionmodelosconsultas_ModelFactory', the role 'ModelFactory' has cardinality 0..*.
+An association connects 'factoryrules_Rule' and 'gestionmodelosconsultas_factoryrules_RulesFactory'. From 'factoryrules_Rule', the role 'rules6' has cardinality 0..*, and from 'gestionmodelosconsultas_factoryrules_RulesFactory', the role 'factoryrules5' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_factoryrules_Rule' and 'factoryrules_RulesFactory'. From 'gestionmodelosconsultas_factoryrules_Rule', the role 'factoryrules8' has cardinality 0..*, and from 'factoryrules_RulesFactory', the role 'rules9' has cardinality 0..*.
+An association connects 'factoryrules_ChildRule' and 'gestionmodelosconsultas_factoryrules_Rule'. From 'factoryrules_ChildRule', the role 'rules12' has cardinality 0..*, and from 'gestionmodelosconsultas_factoryrules_Rule', the role 'factoryrules11' has cardinality 0..*.
+An association connects 'factoryrules_Rule' and 'gestionmodelosconsultas_factoryrules_ChildRule'. From 'factoryrules_Rule', the role 'rules15' has cardinality 0..*, and from 'gestionmodelosconsultas_factoryrules_ChildRule', the role 'factoryrules14' has cardinality 0..*.
+An association connects 'DiagramEntity' and 'gestionmodelosconsultas_entitymodel_Entity'. From 'DiagramEntity', the role 'entitymodel18' has cardinality 0..*, and from 'gestionmodelosconsultas_entitymodel_Entity', the role 'DiagramEntity17' has cardinality 0..*.
+An association connects 'Attribute' and 'gestionmodelosconsultas_entitymodel_Entity'. From 'Attribute', the role 'entitymodel20' has cardinality 0..*, and from 'gestionmodelosconsultas_entitymodel_Entity', the role 'Attribute' has cardinality 0..*.
+An association connects 'DiagramEntity' and 'gestionmodelosconsultas_entitymodel_EntityRelation'. From 'DiagramEntity', the role 'entitymodel23' has cardinality 0..*, and from 'gestionmodelosconsultas_entitymodel_EntityRelation', the role 'DiagramEntity22' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_entitymodel_EntityRelation' and 'Entity'. From 'gestionmodelosconsultas_entitymodel_EntityRelation', the role 'gestionmodelosconsultas_entitymodel_EntityRelation' has cardinality 0..*, and from 'Entity', the role 'Entity' has cardinality 0..*.
+An association connects 'Entity' and 'gestionmodelosconsultas_entitymodel_EntityRelation'. From 'Entity', the role 'Entity27' has cardinality 0..*, and from 'gestionmodelosconsultas_entitymodel_EntityRelation', the role 'gestionmodelosconsultas_entitymodel_EntityRelation26' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_entitymodel_Attribute' and 'Entity'. From 'gestionmodelosconsultas_entitymodel_Attribute', the role 'Entity29' has cardinality 0..*, and from 'Entity', the role 'entitymodel30' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_entitymodel_Attribute' and 'ElementoRealizacionValueAttribute'. From 'gestionmodelosconsultas_entitymodel_Attribute', the role 'ElementoRealizacionValueAttribute' has cardinality 0..*, and from 'ElementoRealizacionValueAttribute', the role 'entitymodel32' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_entitymodel_Attribute' and 'ElementoRealizacionVisibleAttribute'. From 'gestionmodelosconsultas_entitymodel_Attribute', the role 'ElementoRealizacionVisibleAttribute' has cardinality 0..*, and from 'ElementoRealizacionVisibleAttribute', the role 'entitymodel34' has cardinality 0..*.
+An association connects 'ElementoRealizacionDiagramEntity' and 'gestionmodelosconsultas_entitymodel_ModelElementEntity'. From 'ElementoRealizacionDiagramEntity', the role 'entitymodel36' has cardinality 0..*, and from 'gestionmodelosconsultas_entitymodel_ModelElementEntity', the role 'ElementoRealizacionDiagramEntity' has cardinality 0..*.
+An association connects 'entitymodel_gestionmodelosconsultas_ModelFactory' and 'gestionmodelosconsultas_entitymodel_DiagramEntity'. From 'entitymodel_gestionmodelosconsultas_ModelFactory', the role 'ModelFactory38' has cardinality 0..*, and from 'gestionmodelosconsultas_entitymodel_DiagramEntity', the role 'diagramEntity' has cardinality 0..*.
+An association connects 'Entity' and 'gestionmodelosconsultas_entitymodel_DiagramEntity'. From 'Entity', the role 'entitymodel41' has cardinality 0..*, and from 'gestionmodelosconsultas_entitymodel_DiagramEntity', the role 'Entity40' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_entitymodel_DiagramEntity' and 'EntityRelation'. From 'gestionmodelosconsultas_entitymodel_DiagramEntity', the role 'EntityRelation' has cardinality 0..*, and from 'EntityRelation', the role 'entitymodel43' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_entitymodel_RealizacionDiagramEntity' and 'ModeloConsulta'. From 'gestionmodelosconsultas_entitymodel_RealizacionDiagramEntity', the role 'ModeloConsulta' has cardinality 0..*, and from 'ModeloConsulta', the role 'modeloconsultas45' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_entitymodel_RealizacionDiagramEntity' and 'ElementoRealizacionDiagramEntity'. From 'gestionmodelosconsultas_entitymodel_RealizacionDiagramEntity', the role 'ElementoRealizacionDiagramEntity47' has cardinality 0..*, and from 'ElementoRealizacionDiagramEntity', the role 'entitymodel48' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_entitymodel_RealizacionDiagramEntity' and 'ElementoRealizacionVisibleAttribute'. From 'gestionmodelosconsultas_entitymodel_RealizacionDiagramEntity', the role 'ElementoRealizacionVisibleAttribute50' has cardinality 0..*, and from 'ElementoRealizacionVisibleAttribute', the role 'entitymodel51' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_entitymodel_RealizacionDiagramEntity' and 'Value'. From 'gestionmodelosconsultas_entitymodel_RealizacionDiagramEntity', the role 'Value' has cardinality 0..*, and from 'Value', the role 'entitymodel53' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_entitymodel_ElementoRealizacionDiagramEntity' and 'ModelElementEntity'. From 'gestionmodelosconsultas_entitymodel_ElementoRealizacionDiagramEntity', the role 'ModelElementEntity' has cardinality 0..*, and from 'ModelElementEntity', the role 'entitymodel55' has cardinality 0..*.
+An association connects 'RealizacionDiagramEntity' and 'gestionmodelosconsultas_entitymodel_ElementoRealizacionDiagramEntity'. From 'RealizacionDiagramEntity', the role 'entitymodel57' has cardinality 0..*, and from 'gestionmodelosconsultas_entitymodel_ElementoRealizacionDiagramEntity', the role 'RealizacionDiagramEntity' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_entitymodel_ElementoRealizacionDiagramEntity' and 'ElementoRealizacionValueAttribute'. From 'gestionmodelosconsultas_entitymodel_ElementoRealizacionDiagramEntity', the role 'ElementoRealizacionValueAttribute59' has cardinality 0..*, and from 'ElementoRealizacionValueAttribute', the role 'entitymodel60' has cardinality 0..*.
+An association connects 'Attribute' and 'gestionmodelosconsultas_entitymodel_ElementoRealizacionValueAttribute'. From 'Attribute', the role 'entitymodel63' has cardinality 0..*, and from 'gestionmodelosconsultas_entitymodel_ElementoRealizacionValueAttribute', the role 'Attribute62' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_entitymodel_ElementoRealizacionValueAttribute' and 'ElementoRealizacionDiagramEntity'. From 'gestionmodelosconsultas_entitymodel_ElementoRealizacionValueAttribute', the role 'ElementoRealizacionDiagramEntity65' has cardinality 0..*, and from 'ElementoRealizacionDiagramEntity', the role 'entitymodel66' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_entitymodel_ElementoRealizacionValueAttribute' and 'Value'. From 'gestionmodelosconsultas_entitymodel_ElementoRealizacionValueAttribute', the role 'Value68' has cardinality 0..*, and from 'Value', the role 'entitymodel69' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_entitymodel_ElementoRealizacionVisibleAttribute' and 'RealizacionDiagramEntity'. From 'gestionmodelosconsultas_entitymodel_ElementoRealizacionVisibleAttribute', the role 'RealizacionDiagramEntity71' has cardinality 0..*, and from 'RealizacionDiagramEntity', the role 'entitymodel72' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_entitymodel_ElementoRealizacionVisibleAttribute' and 'Attribute'. From 'gestionmodelosconsultas_entitymodel_ElementoRealizacionVisibleAttribute', the role 'Attribute74' has cardinality 0..*, and from 'Attribute', the role 'entitymodel75' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_entitymodel_Value' and 'ElementoRealizacionValueAttribute'. From 'gestionmodelosconsultas_entitymodel_Value', the role 'ElementoRealizacionValueAttribute77' has cardinality 0..*, and from 'ElementoRealizacionValueAttribute', the role 'entitymodel78' has cardinality 0..*.
+An association connects 'RealizacionDiagramEntity' and 'gestionmodelosconsultas_entitymodel_Value'. From 'RealizacionDiagramEntity', the role 'entitymodel81' has cardinality 0..*, and from 'gestionmodelosconsultas_entitymodel_Value', the role 'RealizacionDiagramEntity80' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_modeloconsultas_ModeloConsulta' and 'RealizacionDiagramEntity'. From 'gestionmodelosconsultas_modeloconsultas_ModeloConsulta', the role 'RealizacionDiagramEntity83' has cardinality 0..*, and from 'RealizacionDiagramEntity', the role 'entitymodel84' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_modeloconsultas_ModeloConsulta' and 'FactoryModeloConsulta'. From 'gestionmodelosconsultas_modeloconsultas_ModeloConsulta', the role 'FactoryModeloConsulta86' has cardinality 0..*, and from 'FactoryModeloConsulta', the role 'modeloconsultas87' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_modeloconsultas_ModeloConsulta' and 'model_EADiagram'. From 'gestionmodelosconsultas_modeloconsultas_ModeloConsulta', the role 'model' has cardinality 0..*, and from 'model_EADiagram', the role 'modeloconsultas89' has cardinality 0..*.
+An association connects 'resultset_Resultado' and 'gestionmodelosconsultas_modeloconsultas_ModeloConsulta'. From 'resultset_Resultado', the role 'modeloconsultas91' has cardinality 0..*, and from 'gestionmodelosconsultas_modeloconsultas_ModeloConsulta', the role 'resultset' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_modeloconsultas_FactoryModeloConsulta' and 'modeloconsultas_gestionmodelosconsultas_ModelFactory'. From 'gestionmodelosconsultas_modeloconsultas_FactoryModeloConsulta', the role 'factoryModeloConsultas' has cardinality 0..*, and from 'modeloconsultas_gestionmodelosconsultas_ModelFactory', the role 'ModelFactory93' has cardinality 0..*.
+An association connects 'ModeloConsulta' and 'gestionmodelosconsultas_modeloconsultas_FactoryModeloConsulta'. From 'ModeloConsulta', the role 'modeloconsultas96' has cardinality 0..*, and from 'gestionmodelosconsultas_modeloconsultas_FactoryModeloConsulta', the role 'ModeloConsulta95' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_model_Relacion' and 'model_EADiagram'. From 'gestionmodelosconsultas_model_Relacion', the role 'model98' has cardinality 0..*, and from 'model_EADiagram', the role 'modeloconsultas99' has cardinality 0..*.
+An association connects 'model_ElementoConsulta' and 'gestionmodelosconsultas_model_Relacion'. From 'model_ElementoConsulta', the role 'model_ElementoConsulta' has cardinality 0..*, and from 'gestionmodelosconsultas_model_Relacion', the role 'gestionmodelosconsultas_model_Relacion' has cardinality 0..*.
+An association connects 'model_ElementoConsulta' and 'gestionmodelosconsultas_model_Relacion'. From 'model_ElementoConsulta', the role 'model_ElementoConsulta103' has cardinality 0..*, and from 'gestionmodelosconsultas_model_Relacion', the role 'gestionmodelosconsultas_model_Relacion102' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_model_Campo' and 'model_ElementoConsulta'. From 'gestionmodelosconsultas_model_Campo', the role 'model105' has cardinality 0..*, and from 'model_ElementoConsulta', the role 'modeloconsultas106' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_model_EADiagram' and 'model_Relacion'. From 'gestionmodelosconsultas_model_EADiagram', the role 'model108' has cardinality 0..*, and from 'model_Relacion', the role 'modeloconsultas109' has cardinality 0..*.
+An association connects 'ModeloConsulta' and 'gestionmodelosconsultas_model_EADiagram'. From 'ModeloConsulta', the role 'modeloconsultas112' has cardinality 0..*, and from 'gestionmodelosconsultas_model_EADiagram', the role 'ModeloConsulta111' has cardinality 0..*.
+An association connects 'model_ElementoConsulta' and 'gestionmodelosconsultas_model_EADiagram'. From 'model_ElementoConsulta', the role 'modeloconsultas115' has cardinality 0..*, and from 'gestionmodelosconsultas_model_EADiagram', the role 'model114' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_model_ElementoConsulta' and 'model_EADiagram'. From 'gestionmodelosconsultas_model_ElementoConsulta', the role 'model117' has cardinality 0..*, and from 'model_EADiagram', the role 'modeloconsultas118' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_model_ElementoConsulta' and 'model_Campo'. From 'gestionmodelosconsultas_model_ElementoConsulta', the role 'model120' has cardinality 0..*, and from 'model_Campo', the role 'modeloconsultas121' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_model_ElementoModelo' and 'model_ElementoModelo'. From 'gestionmodelosconsultas_model_ElementoModelo', the role 'model123' has cardinality 0..*, and from 'model_ElementoModelo', the role 'modeloconsultas124' has cardinality 0..*.
+An association connects 'model_ElementoModelo' and 'gestionmodelosconsultas_model_ElementoModelo'. From 'model_ElementoModelo', the role 'modeloconsultas127' has cardinality 0..*, and from 'gestionmodelosconsultas_model_ElementoModelo', the role 'model126' has cardinality 0..*.
+An association connects 'ModeloConsulta' and 'gestionmodelosconsultas_resultset_Resultado'. From 'ModeloConsulta', the role 'modeloconsultas130' has cardinality 0..*, and from 'gestionmodelosconsultas_resultset_Resultado', the role 'ModeloConsulta129' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_resultset_Resultado' and 'resultset_ResultElement'. From 'gestionmodelosconsultas_resultset_Resultado', the role 'resultset132' has cardinality 0..*, and from 'resultset_ResultElement', the role 'modeloconsultas133' has cardinality 0..*.
+An association connects 'resultset_ElementoModeloResultado' and 'gestionmodelosconsultas_resultset_ElementoModeloResultado'. From 'resultset_ElementoModeloResultado', the role 'modeloconsultas136' has cardinality 0..*, and from 'gestionmodelosconsultas_resultset_ElementoModeloResultado', the role 'resultset135' has cardinality 0..*.
+An association connects 'gestionmodelosconsultas_resultset_ElementoModeloResultado' and 'resultset_ElementoModeloResultado'. From 'gestionmodelosconsultas_resultset_ElementoModeloResultado', the role 'resultset138' has cardinality 0..*, and from 'resultset_ElementoModeloResultado', the role 'modeloconsultas139' has cardinality 0..*.
+An association connects 'resultset_Resultado' and 'gestionmodelosconsultas_resultset_ResultElement'. From 'resultset_Resultado', the role 'modeloconsultas142' has cardinality 0..*, and from 'gestionmodelosconsultas_resultset_ResultElement', the role 'resultset141' has cardinality 0..*.
