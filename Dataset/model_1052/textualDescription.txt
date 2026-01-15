@@ -1,0 +1,62 @@
+The domain model 'devs' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'devs_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'devs_OutputFunction' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'devs_ExternalTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'devs_InternalTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'devs_InputEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'devs_AtomicModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'devs_State' represents an important domain concept.
+It has the following attributes: 'lifeTime', which is of type float; 'name', which is of type str.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'devs_OutputEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'devs_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'devs_InputEvent' is a specialization of 'Event'.
+The class 'devs_OutputEvent' is a specialization of 'Event'.
+The class 'devs_InternalTransition' is a specialization of 'Transition'.
+The class 'devs_ExternalTransition' is a specialization of 'Transition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'devs_State' and 'devs_AtomicModel'. From 'devs_State', the role 'State' has cardinality 0..*, and from 'devs_AtomicModel', the role 'atomicModel' has cardinality 0..*.
+An association connects 'devs_Event' and 'devs_AtomicModel'. From 'devs_Event', the role 'Event' has cardinality 0..*, and from 'devs_AtomicModel', the role 'atomicModel2' has cardinality 0..*.
+An association connects 'devs_Transition' and 'devs_AtomicModel'. From 'devs_Transition', the role 'Transition' has cardinality 0..*, and from 'devs_AtomicModel', the role 'atomicModel4' has cardinality 0..*.
+An association connects 'devs_AtomicModel' and 'devs_OutputFunction'. From 'devs_AtomicModel', the role 'atomicModel6' has cardinality 0..*, and from 'devs_OutputFunction', the role 'OutputFunction' has cardinality 0..*.
+An association connects 'devs_State' and 'devs_Transition'. From 'devs_State', the role 'target' has cardinality 0..*, and from 'devs_Transition', the role 'Transition8' has cardinality 0..*.
+An association connects 'devs_Transition' and 'devs_State'. From 'devs_Transition', the role 'Transition10' has cardinality 0..*, and from 'devs_State', the role 'source' has cardinality 0..*.
+An association connects 'devs_OutputFunction' and 'devs_State'. From 'devs_OutputFunction', the role 'OutputFunction13' has cardinality 0..*, and from 'devs_State', the role 'source12' has cardinality 0..*.
+An association connects 'devs_AtomicModel' and 'devs_State'. From 'devs_AtomicModel', the role 'AtomicModel' has cardinality 0..*, and from 'devs_State', the role 'state' has cardinality 0..*.
+An association connects 'devs_Event' and 'devs_AtomicModel'. From 'devs_Event', the role 'event' has cardinality 0..*, and from 'devs_AtomicModel', the role 'AtomicModel16' has cardinality 0..*.
+An association connects 'devs_ExternalTransition' and 'devs_InputEvent'. From 'devs_ExternalTransition', the role 'ExternalTransition' has cardinality 0..*, and from 'devs_InputEvent', the role 'inputEvent' has cardinality 0..*.
+An association connects 'devs_OutputEvent' and 'devs_OutputFunction'. From 'devs_OutputEvent', the role 'outputEvent' has cardinality 0..*, and from 'devs_OutputFunction', the role 'OutputFunction19' has cardinality 0..*.
+An association connects 'devs_Transition' and 'devs_State'. From 'devs_Transition', the role 'out' has cardinality 0..*, and from 'devs_State', the role 'State21' has cardinality 0..*.
+An association connects 'devs_State' and 'devs_Transition'. From 'devs_State', the role 'State23' has cardinality 0..*, and from 'devs_Transition', the role 'in' has cardinality 0..*.
+An association connects 'devs_AtomicModel' and 'devs_Transition'. From 'devs_AtomicModel', the role 'AtomicModel25' has cardinality 0..*, and from 'devs_Transition', the role 'transition' has cardinality 0..*.
+An association connects 'devs_ExternalTransition' and 'devs_InputEvent'. From 'devs_ExternalTransition', the role 'externalTransition' has cardinality 0..*, and from 'devs_InputEvent', the role 'InputEvent' has cardinality 0..*.
+An association connects 'devs_State' and 'devs_OutputFunction'. From 'devs_State', the role 'State28' has cardinality 0..*, and from 'devs_OutputFunction', the role 'outF' has cardinality 0..*.
+An association connects 'devs_OutputFunction' and 'devs_OutputEvent'. From 'devs_OutputFunction', the role 'outputFunction' has cardinality 0..*, and from 'devs_OutputEvent', the role 'OutputEvent' has cardinality 0..*.
+An association connects 'devs_AtomicModel' and 'devs_OutputFunction'. From 'devs_AtomicModel', the role 'AtomicModel32' has cardinality 0..*, and from 'devs_OutputFunction', the role 'outputFunction31' has cardinality 0..*.

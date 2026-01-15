@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/wbombardellis/BachelorThesis_WilliamBombardelliDaSilva/Examples/de.silvawb.java_Jamopp_OnePackage_Trial_Fail/de.silvawb.java/model/java.ecore

@@ -1,0 +1,94 @@
+The domain model 'tfsm' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'tfsm_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tfsm_UpperClockConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_BinaryClockConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_LowerEqualClockConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_Clock' represents an important domain concept.
+It has the following attributes: 'tick', which is of type int; 'name', which is of type str.
+
+'BinaryClockConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_OrClockConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_Transition' represents an important domain concept.
+It has one attribute: 'event', which is of type str.
+
+'tfsm_UpperEqualClockConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_AndClockConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_FSM' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tfsm_ClockReset' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_ClockConstraint' represents an important domain concept.
+It has one attribute: 'threshold', which is of type int.
+
+'ClockConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_ClockConstraintOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockConstraintOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_LowerClockConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'tfsm_ClockConstraint' is a specialization of 'ClockConstraintOperation'.
+The class 'tfsm_LowerClockConstraint' is a specialization of 'ClockConstraint'.
+The class 'tfsm_LowerEqualClockConstraint' is a specialization of 'ClockConstraint'.
+The class 'tfsm_UpperClockConstraint' is a specialization of 'ClockConstraint'.
+The class 'tfsm_UpperEqualClockConstraint' is a specialization of 'ClockConstraint'.
+The class 'tfsm_AndClockConstraint' is a specialization of 'BinaryClockConstraint'.
+The class 'tfsm_OrClockConstraint' is a specialization of 'BinaryClockConstraint'.
+The class 'tfsm_BinaryClockConstraint' is a specialization of 'ClockConstraintOperation'.
+The class 'tfsm_FinalState' is a specialization of 'State'.
+The class 'tfsm_InitialState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tfsm_Clock' and 'tfsm_FSM'. From 'tfsm_Clock', the role 'tfsm_Clock' has cardinality 0..*, and from 'tfsm_FSM', the role 'tfsm_FSM' has cardinality 0..*.
+An association connects 'tfsm_FSM' and 'tfsm_State'. From 'tfsm_FSM', the role 'tfsm_FSM2' has cardinality 0..*, and from 'tfsm_State', the role 'tfsm_State' has cardinality 0..*.
+An association connects 'tfsm_FSM' and 'tfsm_Transition'. From 'tfsm_FSM', the role 'tfsm_FSM4' has cardinality 0..*, and from 'tfsm_Transition', the role 'tfsm_Transition' has cardinality 0..*.
+An association connects 'tfsm_FSM' and 'tfsm_InitialState'. From 'tfsm_FSM', the role 'tfsm_FSM6' has cardinality 0..*, and from 'tfsm_InitialState', the role 'tfsm_InitialState' has cardinality 0..*.
+An association connects 'tfsm_State' and 'tfsm_FSM'. From 'tfsm_State', the role 'tfsm_State9' has cardinality 0..*, and from 'tfsm_FSM', the role 'tfsm_FSM8' has cardinality 0..*.
+An association connects 'tfsm_ClockConstraintOperation' and 'tfsm_State'. From 'tfsm_ClockConstraintOperation', the role 'tfsm_ClockConstraintOperation' has cardinality 0..*, and from 'tfsm_State', the role 'tfsm_State11' has cardinality 0..*.
+An association connects 'tfsm_FSM' and 'tfsm_State'. From 'tfsm_FSM', the role 'tfsm_FSM14' has cardinality 0..*, and from 'tfsm_State', the role 'tfsm_State13' has cardinality 0..*.
+An association connects 'tfsm_Transition' and 'tfsm_State'. From 'tfsm_Transition', the role 'Transition' has cardinality 0..*, and from 'tfsm_State', the role 'from' has cardinality 0..*.
+An association connects 'tfsm_Transition' and 'tfsm_State'. From 'tfsm_Transition', the role 'Transition17' has cardinality 0..*, and from 'tfsm_State', the role 'to' has cardinality 0..*.
+An association connects 'tfsm_Transition' and 'tfsm_ClockReset'. From 'tfsm_Transition', the role 'tfsm_Transition19' has cardinality 0..*, and from 'tfsm_ClockReset', the role 'tfsm_ClockReset' has cardinality 0..*.
+An association connects 'tfsm_Transition' and 'tfsm_ClockConstraintOperation'. From 'tfsm_Transition', the role 'tfsm_Transition21' has cardinality 0..*, and from 'tfsm_ClockConstraintOperation', the role 'tfsm_ClockConstraintOperation22' has cardinality 0..*.
+An association connects 'tfsm_Transition' and 'tfsm_State'. From 'tfsm_Transition', the role 'outgoingtransitions' has cardinality 0..*, and from 'tfsm_State', the role 'State' has cardinality 0..*.
+An association connects 'tfsm_State' and 'tfsm_Transition'. From 'tfsm_State', the role 'State25' has cardinality 0..*, and from 'tfsm_Transition', the role 'incommingtransitions' has cardinality 0..*.
+An association connects 'tfsm_ClockConstraint' and 'tfsm_Clock'. From 'tfsm_ClockConstraint', the role 'tfsm_ClockConstraint' has cardinality 0..*, and from 'tfsm_Clock', the role 'tfsm_Clock27' has cardinality 0..*.
+An association connects 'tfsm_ClockReset' and 'tfsm_Clock'. From 'tfsm_ClockReset', the role 'tfsm_ClockReset29' has cardinality 0..*, and from 'tfsm_Clock', the role 'tfsm_Clock30' has cardinality 0..*.
+An association connects 'tfsm_BinaryClockConstraint' and 'tfsm_ClockConstraintOperation'. From 'tfsm_BinaryClockConstraint', the role 'tfsm_BinaryClockConstraint' has cardinality 0..*, and from 'tfsm_ClockConstraintOperation', the role 'tfsm_ClockConstraintOperation32' has cardinality 0..*.
+An association connects 'tfsm_ClockConstraintOperation' and 'tfsm_BinaryClockConstraint'. From 'tfsm_ClockConstraintOperation', the role 'tfsm_ClockConstraintOperation35' has cardinality 0..*, and from 'tfsm_BinaryClockConstraint', the role 'tfsm_BinaryClockConstraint34' has cardinality 0..*.

@@ -1,0 +1,282 @@
+The domain model 'EssentialOCL' describes the core structural elements and their relationships within the system.
+
+The model defines 65 main class(es).
+
+'EssentialOCL_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_TemplateParameterType' represents an important domain concept.
+It has one attribute: 'specification', which is of type str.
+
+'EssentialOCL_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_CollectionRange' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_NavigationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_RealLiteralExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type str.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_CollectionLiteralExp' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_ExpressionInOcl' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_FeatureCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_InvalidLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_IntegerLiteralExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'EssentialOCL_InvalidType' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_StringLiteralExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_BooleanLiteralExp' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type str.
+
+'NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_UnlimitedNaturalExp' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'EssentialOCL_TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_TypeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_IteratorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_EnumLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_NullLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_CollectionItem' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CollectionKind' defines the following possible values: 'Set', 'Sequence', 'OrderedSet', 'Collection', 'Bag'.
+
+The model also captures inheritance relationships between classes.
+The class 'EssentialOCL_AnyType' is a specialization of 'Type'.
+The class 'EssentialOCL_BagType' is a specialization of 'CollectionType'.
+The class 'EssentialOCL_BooleanLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'EssentialOCL_CallExp' is a specialization of 'OclExpression'.
+The class 'EssentialOCL_CollectionItem' is a specialization of 'CollectionLiteralPart'.
+The class 'EssentialOCL_CollectionLiteralExp' is a specialization of 'LiteralExp'.
+The class 'EssentialOCL_CollectionLiteralPart' is a specialization of 'TypedElement'.
+The class 'EssentialOCL_CollectionRange' is a specialization of 'CollectionLiteralPart'.
+The class 'EssentialOCL_CollectionType' is a specialization of 'DataType'.
+The class 'EssentialOCL_EnumLiteralExp' is a specialization of 'LiteralExp'.
+The class 'EssentialOCL_ExpressionInOcl' is a specialization of 'TypedElement'.
+The class 'EssentialOCL_FeatureCallExp' is a specialization of 'CallExp'.
+The class 'EssentialOCL_IfExp' is a specialization of 'OclExpression'.
+The class 'EssentialOCL_IntegerLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'EssentialOCL_InvalidLiteralExp' is a specialization of 'LiteralExp'.
+The class 'EssentialOCL_InvalidType' is a specialization of 'Type'.
+The class 'EssentialOCL_IterateExp' is a specialization of 'LoopExp'.
+The class 'EssentialOCL_IteratorExp' is a specialization of 'LoopExp'.
+The class 'EssentialOCL_LetExp' is a specialization of 'OclExpression'.
+The class 'EssentialOCL_LiteralExp' is a specialization of 'OclExpression'.
+The class 'EssentialOCL_LoopExp' is a specialization of 'CallExp'.
+The class 'EssentialOCL_LoopExp' is a specialization of 'OclExpression'.
+The class 'EssentialOCL_NavigationCallExp' is a specialization of 'FeatureCallExp'.
+The class 'EssentialOCL_NullLiteralExp' is a specialization of 'LiteralExp'.
+The class 'EssentialOCL_NumericLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'EssentialOCL_OclExpression' is a specialization of 'TypedElement'.
+The class 'EssentialOCL_OperationCallExp' is a specialization of 'FeatureCallExp'.
+The class 'EssentialOCL_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'EssentialOCL_PrimitiveLiteralExp' is a specialization of 'LiteralExp'.
+The class 'EssentialOCL_PropertyCallExp' is a specialization of 'NavigationCallExp'.
+The class 'EssentialOCL_RealLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'EssentialOCL_SequenceType' is a specialization of 'CollectionType'.
+The class 'EssentialOCL_SetType' is a specialization of 'CollectionType'.
+The class 'EssentialOCL_StringLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'EssentialOCL_TemplateParameterType' is a specialization of 'Type'.
+The class 'EssentialOCL_TupleLiteralExp' is a specialization of 'LiteralExp'.
+The class 'EssentialOCL_TupleLiteralPart' is a specialization of 'TypedElement'.
+The class 'EssentialOCL_TupleType' is a specialization of 'Class'.
+The class 'EssentialOCL_TupleType' is a specialization of 'DataType'.
+The class 'EssentialOCL_TypeExp' is a specialization of 'OclExpression'.
+The class 'EssentialOCL_UnlimitedNaturalExp' is a specialization of 'NumericLiteralExp'.
+The class 'EssentialOCL_Variable' is a specialization of 'TypedElement'.
+The class 'EssentialOCL_VariableExp' is a specialization of 'OclExpression'.
+The class 'EssentialOCL_VoidType' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'EssentialOCL_CallExp' and 'OclExpression'. From 'EssentialOCL_CallExp', the role 'EssentialOCL_CallExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression' has cardinality 0..*.
+An association connects 'EssentialOCL_CollectionItem' and 'OclExpression'. From 'EssentialOCL_CollectionItem', the role 'EssentialOCL_CollectionItem' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression2' has cardinality 0..*.
+An association connects 'CollectionLiteralPart' and 'EssentialOCL_CollectionLiteralExp'. From 'CollectionLiteralPart', the role 'CollectionLiteralPart' has cardinality 0..*, and from 'EssentialOCL_CollectionLiteralExp', the role 'EssentialOCL_CollectionLiteralExp' has cardinality 0..*.
+An association connects 'CollectionLiteralExp' and 'EssentialOCL_CollectionLiteralPart'. From 'CollectionLiteralExp', the role 'CollectionLiteralExp' has cardinality 0..*, and from 'EssentialOCL_CollectionLiteralPart', the role 'EssentialOCL_CollectionLiteralPart' has cardinality 0..*.
+An association connects 'EssentialOCL_CollectionRange' and 'OclExpression'. From 'EssentialOCL_CollectionRange', the role 'EssentialOCL_CollectionRange' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression6' has cardinality 0..*.
+An association connects 'OclExpression' and 'EssentialOCL_CollectionRange'. From 'OclExpression', the role 'OclExpression9' has cardinality 0..*, and from 'EssentialOCL_CollectionRange', the role 'EssentialOCL_CollectionRange8' has cardinality 0..*.
+An association connects 'Type' and 'EssentialOCL_CollectionType'. From 'Type', the role 'Type' has cardinality 0..*, and from 'EssentialOCL_CollectionType', the role 'EssentialOCL_CollectionType' has cardinality 0..*.
+An association connects 'EnumerationLiteral' and 'EssentialOCL_EnumLiteralExp'. From 'EnumerationLiteral', the role 'EnumerationLiteral' has cardinality 0..*, and from 'EssentialOCL_EnumLiteralExp', the role 'EssentialOCL_EnumLiteralExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'EssentialOCL_ExpressionInOcl'. From 'OclExpression', the role 'OclExpression13' has cardinality 0..*, and from 'EssentialOCL_ExpressionInOcl', the role 'EssentialOCL_ExpressionInOcl' has cardinality 0..*.
+An association connects 'EssentialOCL_ExpressionInOcl' and 'Variable'. From 'EssentialOCL_ExpressionInOcl', the role 'EssentialOCL_ExpressionInOcl15' has cardinality 0..*, and from 'Variable', the role 'Variable' has cardinality 0..*.
+An association connects 'Type' and 'EssentialOCL_ExpressionInOcl'. From 'Type', the role 'Type18' has cardinality 0..*, and from 'EssentialOCL_ExpressionInOcl', the role 'EssentialOCL_ExpressionInOcl17' has cardinality 0..*.
+An association connects 'Variable' and 'EssentialOCL_ExpressionInOcl'. From 'Variable', the role 'Variable21' has cardinality 0..*, and from 'EssentialOCL_ExpressionInOcl', the role 'EssentialOCL_ExpressionInOcl20' has cardinality 0..*.
+An association connects 'EssentialOCL_ExpressionInOcl' and 'Variable'. From 'EssentialOCL_ExpressionInOcl', the role 'EssentialOCL_ExpressionInOcl23' has cardinality 0..*, and from 'Variable', the role 'Variable24' has cardinality 0..*.
+An association connects 'EssentialOCL_IfExp' and 'OclExpression'. From 'EssentialOCL_IfExp', the role 'EssentialOCL_IfExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression26' has cardinality 0..*.
+An association connects 'OclExpression' and 'EssentialOCL_IfExp'. From 'OclExpression', the role 'OclExpression29' has cardinality 0..*, and from 'EssentialOCL_IfExp', the role 'EssentialOCL_IfExp28' has cardinality 0..*.
+An association connects 'EssentialOCL_IfExp' and 'OclExpression'. From 'EssentialOCL_IfExp', the role 'EssentialOCL_IfExp31' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression32' has cardinality 0..*.
+An association connects 'Variable' and 'EssentialOCL_IterateExp'. From 'Variable', the role 'Variable34' has cardinality 0..*, and from 'EssentialOCL_IterateExp', the role 'EssentialOCL_IterateExp' has cardinality 0..*.
+An association connects 'EssentialOCL_LetExp' and 'OclExpression'. From 'EssentialOCL_LetExp', the role 'EssentialOCL_LetExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression36' has cardinality 0..*.
+An association connects 'Variable' and 'EssentialOCL_LetExp'. From 'Variable', the role 'Variable39' has cardinality 0..*, and from 'EssentialOCL_LetExp', the role 'EssentialOCL_LetExp38' has cardinality 0..*.
+An association connects 'OclExpression' and 'EssentialOCL_LoopExp'. From 'OclExpression', the role 'OclExpression41' has cardinality 0..*, and from 'EssentialOCL_LoopExp', the role 'EssentialOCL_LoopExp' has cardinality 0..*.
+An association connects 'EssentialOCL_LoopExp' and 'Variable'. From 'EssentialOCL_LoopExp', the role 'EssentialOCL_LoopExp43' has cardinality 0..*, and from 'Variable', the role 'Variable44' has cardinality 0..*.
+An association connects 'EssentialOCL_OperationCallExp' and 'OclExpression'. From 'EssentialOCL_OperationCallExp', the role 'EssentialOCL_OperationCallExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression46' has cardinality 0..*.
+An association connects 'Operation' and 'EssentialOCL_OperationCallExp'. From 'Operation', the role 'Operation' has cardinality 0..*, and from 'EssentialOCL_OperationCallExp', the role 'EssentialOCL_OperationCallExp48' has cardinality 0..*.
+An association connects 'EssentialOCL_PropertyCallExp' and 'Property'. From 'EssentialOCL_PropertyCallExp', the role 'EssentialOCL_PropertyCallExp' has cardinality 0..*, and from 'Property', the role 'Property' has cardinality 0..*.
+An association connects 'EssentialOCL_TupleLiteralExp' and 'TupleLiteralPart'. From 'EssentialOCL_TupleLiteralExp', the role 'EssentialOCL_TupleLiteralExp' has cardinality 0..*, and from 'TupleLiteralPart', the role 'TupleLiteralPart' has cardinality 0..*.
+An association connects 'EssentialOCL_TupleLiteralPart' and 'Property'. From 'EssentialOCL_TupleLiteralPart', the role 'EssentialOCL_TupleLiteralPart' has cardinality 0..*, and from 'Property', the role 'Property52' has cardinality 0..*.
+An association connects 'TupleLiteralExp' and 'EssentialOCL_TupleLiteralPart'. From 'TupleLiteralExp', the role 'TupleLiteralExp' has cardinality 0..*, and from 'EssentialOCL_TupleLiteralPart', the role 'EssentialOCL_TupleLiteralPart54' has cardinality 0..*.
+An association connects 'EssentialOCL_TupleLiteralPart' and 'OclExpression'. From 'EssentialOCL_TupleLiteralPart', the role 'EssentialOCL_TupleLiteralPart56' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression57' has cardinality 0..*.
+An association connects 'Type' and 'EssentialOCL_TypeExp'. From 'Type', the role 'Type59' has cardinality 0..*, and from 'EssentialOCL_TypeExp', the role 'EssentialOCL_TypeExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'EssentialOCL_Variable'. From 'OclExpression', the role 'OclExpression61' has cardinality 0..*, and from 'EssentialOCL_Variable', the role 'EssentialOCL_Variable' has cardinality 0..*.
+An association connects 'LetExp' and 'EssentialOCL_Variable'. From 'LetExp', the role 'LetExp' has cardinality 0..*, and from 'EssentialOCL_Variable', the role 'EssentialOCL_Variable63' has cardinality 0..*.
+An association connects 'EssentialOCL_Variable' and 'Parameter'. From 'EssentialOCL_Variable', the role 'EssentialOCL_Variable65' has cardinality 0..*, and from 'Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'Variable' and 'EssentialOCL_VariableExp'. From 'Variable', the role 'Variable67' has cardinality 0..*, and from 'EssentialOCL_VariableExp', the role 'EssentialOCL_VariableExp' has cardinality 0..*.

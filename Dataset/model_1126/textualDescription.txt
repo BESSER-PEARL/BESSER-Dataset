@@ -1,0 +1,97 @@
+The domain model 'rosmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'rosmodel_Field' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'rosmodel_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rosmodel_Publisher' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'msg', which is of type str; 'queue_size', which is of type int.
+
+'rosmodel_ServiceClient' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rosmodel_Subscriber' represents an important domain concept.
+It has the following attributes: 'queue_size', which is of type int; 'name', which is of type str; 'msg', which is of type str.
+
+'rosmodel_ActionClient' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rosmodel_Package' represents an important domain concept.
+It has the following attributes: 'author_email', which is of type str; 'name', which is of type str; 'depends', which is of type str; 'author', which is of type str; 'description', which is of type str.
+
+'rosmodel_ActionServer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rosmodel_ServiceType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rosmodel_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rosmodel_Topic' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rosmodel_ActionMessage' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rosmodel_ServiceServer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rosmodel_Node' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'frequency', which is of type float.
+
+'rosmodel_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rosmodel_Message' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rosmodel_Action' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Datatype' defines the following possible values: 'msg', 'int16', 'int8', 'int64', 'int32', 'string', 'float32', 'float64'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rosmodel_Node' and 'rosmodel_Package'. From 'rosmodel_Node', the role 'rosmodel_Node' has cardinality 0..*, and from 'rosmodel_Package', the role 'rosmodel_Package' has cardinality 0..*.
+An association connects 'rosmodel_Package' and 'rosmodel_Topic'. From 'rosmodel_Package', the role 'rosmodel_Package2' has cardinality 0..*, and from 'rosmodel_Topic', the role 'rosmodel_Topic' has cardinality 0..*.
+An association connects 'rosmodel_Package' and 'rosmodel_Message'. From 'rosmodel_Package', the role 'rosmodel_Package4' has cardinality 0..*, and from 'rosmodel_Message', the role 'rosmodel_Message' has cardinality 0..*.
+An association connects 'rosmodel_ServiceType' and 'rosmodel_Package'. From 'rosmodel_ServiceType', the role 'rosmodel_ServiceType' has cardinality 0..*, and from 'rosmodel_Package', the role 'rosmodel_Package6' has cardinality 0..*.
+An association connects 'rosmodel_Package' and 'rosmodel_ActionMessage'. From 'rosmodel_Package', the role 'rosmodel_Package8' has cardinality 0..*, and from 'rosmodel_ActionMessage', the role 'rosmodel_ActionMessage' has cardinality 0..*.
+An association connects 'rosmodel_Node' and 'rosmodel_Publisher'. From 'rosmodel_Node', the role 'rosmodel_Node10' has cardinality 0..*, and from 'rosmodel_Publisher', the role 'rosmodel_Publisher' has cardinality 0..*.
+An association connects 'rosmodel_Subscriber' and 'rosmodel_Node'. From 'rosmodel_Subscriber', the role 'rosmodel_Subscriber' has cardinality 0..*, and from 'rosmodel_Node', the role 'rosmodel_Node12' has cardinality 0..*.
+An association connects 'rosmodel_ServiceClient' and 'rosmodel_Node'. From 'rosmodel_ServiceClient', the role 'rosmodel_ServiceClient' has cardinality 0..*, and from 'rosmodel_Node', the role 'rosmodel_Node14' has cardinality 0..*.
+An association connects 'rosmodel_Node' and 'rosmodel_ServiceServer'. From 'rosmodel_Node', the role 'rosmodel_Node16' has cardinality 0..*, and from 'rosmodel_ServiceServer', the role 'rosmodel_ServiceServer' has cardinality 0..*.
+An association connects 'rosmodel_ActionClient' and 'rosmodel_Node'. From 'rosmodel_ActionClient', the role 'rosmodel_ActionClient' has cardinality 0..*, and from 'rosmodel_Node', the role 'rosmodel_Node18' has cardinality 0..*.
+An association connects 'rosmodel_ActionServer' and 'rosmodel_Node'. From 'rosmodel_ActionServer', the role 'rosmodel_ActionServer' has cardinality 0..*, and from 'rosmodel_Node', the role 'rosmodel_Node20' has cardinality 0..*.
+An association connects 'rosmodel_State' and 'rosmodel_Node'. From 'rosmodel_State', the role 'rosmodel_State' has cardinality 0..*, and from 'rosmodel_Node', the role 'rosmodel_Node22' has cardinality 0..*.
+An association connects 'rosmodel_Node' and 'rosmodel_Transition'. From 'rosmodel_Node', the role 'rosmodel_Node24' has cardinality 0..*, and from 'rosmodel_Transition', the role 'rosmodel_Transition' has cardinality 0..*.
+An association connects 'rosmodel_Action' and 'rosmodel_Node'. From 'rosmodel_Action', the role 'rosmodel_Action' has cardinality 0..*, and from 'rosmodel_Node', the role 'rosmodel_Node26' has cardinality 0..*.
+An association connects 'rosmodel_Event' and 'rosmodel_Node'. From 'rosmodel_Event', the role 'rosmodel_Event' has cardinality 0..*, and from 'rosmodel_Node', the role 'rosmodel_Node28' has cardinality 0..*.
+An association connects 'rosmodel_Publisher' and 'rosmodel_Topic'. From 'rosmodel_Publisher', the role 'rosmodel_Publisher30' has cardinality 0..*, and from 'rosmodel_Topic', the role 'rosmodel_Topic31' has cardinality 0..*.
+An association connects 'rosmodel_Topic' and 'rosmodel_Subscriber'. From 'rosmodel_Topic', the role 'rosmodel_Topic34' has cardinality 0..*, and from 'rosmodel_Subscriber', the role 'rosmodel_Subscriber33' has cardinality 0..*.
+An association connects 'rosmodel_Message' and 'rosmodel_Field'. From 'rosmodel_Message', the role 'rosmodel_Message36' has cardinality 0..*, and from 'rosmodel_Field', the role 'rosmodel_Field' has cardinality 0..*.
+An association connects 'rosmodel_Field' and 'rosmodel_ServiceType'. From 'rosmodel_Field', the role 'rosmodel_Field39' has cardinality 0..*, and from 'rosmodel_ServiceType', the role 'rosmodel_ServiceType38' has cardinality 0..*.
+An association connects 'rosmodel_ServiceType' and 'rosmodel_Field'. From 'rosmodel_ServiceType', the role 'rosmodel_ServiceType41' has cardinality 0..*, and from 'rosmodel_Field', the role 'rosmodel_Field42' has cardinality 0..*.
+An association connects 'rosmodel_ServiceServer' and 'rosmodel_ServiceType'. From 'rosmodel_ServiceServer', the role 'rosmodel_ServiceServer44' has cardinality 0..*, and from 'rosmodel_ServiceType', the role 'rosmodel_ServiceType45' has cardinality 0..*.
+An association connects 'rosmodel_ServiceClient' and 'rosmodel_ServiceType'. From 'rosmodel_ServiceClient', the role 'rosmodel_ServiceClient47' has cardinality 0..*, and from 'rosmodel_ServiceType', the role 'rosmodel_ServiceType48' has cardinality 0..*.
+An association connects 'rosmodel_ActionMessage' and 'rosmodel_Field'. From 'rosmodel_ActionMessage', the role 'rosmodel_ActionMessage50' has cardinality 0..*, and from 'rosmodel_Field', the role 'rosmodel_Field51' has cardinality 0..*.
+An association connects 'rosmodel_ActionMessage' and 'rosmodel_Field'. From 'rosmodel_ActionMessage', the role 'rosmodel_ActionMessage53' has cardinality 0..*, and from 'rosmodel_Field', the role 'rosmodel_Field54' has cardinality 0..*.
+An association connects 'rosmodel_Field' and 'rosmodel_ActionMessage'. From 'rosmodel_Field', the role 'rosmodel_Field57' has cardinality 0..*, and from 'rosmodel_ActionMessage', the role 'rosmodel_ActionMessage56' has cardinality 0..*.
+An association connects 'rosmodel_ActionMessage' and 'rosmodel_ActionServer'. From 'rosmodel_ActionMessage', the role 'rosmodel_ActionMessage60' has cardinality 0..*, and from 'rosmodel_ActionServer', the role 'rosmodel_ActionServer59' has cardinality 0..*.
+An association connects 'rosmodel_ActionClient' and 'rosmodel_ActionMessage'. From 'rosmodel_ActionClient', the role 'rosmodel_ActionClient62' has cardinality 0..*, and from 'rosmodel_ActionMessage', the role 'rosmodel_ActionMessage63' has cardinality 0..*.
+An association connects 'rosmodel_Transition' and 'rosmodel_State'. From 'rosmodel_Transition', the role 'rosmodel_Transition66' has cardinality 0..*, and from 'rosmodel_State', the role 'rosmodel_State65' has cardinality 0..*.
+An association connects 'rosmodel_State' and 'rosmodel_State'. From 'rosmodel_State', the role 'rosmodel_State69' has cardinality 0..*, and from 'rosmodel_State', the role 'rosmodel_State67' has cardinality 0..*.
+An association connects 'rosmodel_State' and 'rosmodel_Action'. From 'rosmodel_State', the role 'rosmodel_State71' has cardinality 0..*, and from 'rosmodel_Action', the role 'rosmodel_Action72' has cardinality 0..*.
+An association connects 'rosmodel_State' and 'rosmodel_Action'. From 'rosmodel_State', the role 'rosmodel_State74' has cardinality 0..*, and from 'rosmodel_Action', the role 'rosmodel_Action75' has cardinality 0..*.
+An association connects 'rosmodel_Action' and 'rosmodel_State'. From 'rosmodel_Action', the role 'rosmodel_Action78' has cardinality 0..*, and from 'rosmodel_State', the role 'rosmodel_State77' has cardinality 0..*.
+An association connects 'rosmodel_State' and 'rosmodel_Event'. From 'rosmodel_State', the role 'rosmodel_State80' has cardinality 0..*, and from 'rosmodel_Event', the role 'rosmodel_Event81' has cardinality 0..*.
+An association connects 'rosmodel_State' and 'rosmodel_Transition'. From 'rosmodel_State', the role 'rosmodel_State84' has cardinality 0..*, and from 'rosmodel_Transition', the role 'rosmodel_Transition83' has cardinality 0..*.
+An association connects 'rosmodel_Transition' and 'rosmodel_State'. From 'rosmodel_Transition', the role 'rosmodel_Transition86' has cardinality 0..*, and from 'rosmodel_State', the role 'rosmodel_State87' has cardinality 0..*.
+An association connects 'rosmodel_Transition' and 'rosmodel_Action'. From 'rosmodel_Transition', the role 'rosmodel_Transition89' has cardinality 0..*, and from 'rosmodel_Action', the role 'rosmodel_Action90' has cardinality 0..*.
+An association connects 'rosmodel_Action' and 'rosmodel_Transition'. From 'rosmodel_Action', the role 'rosmodel_Action93' has cardinality 0..*, and from 'rosmodel_Transition', the role 'rosmodel_Transition92' has cardinality 0..*.
+An association connects 'rosmodel_Event' and 'rosmodel_Transition'. From 'rosmodel_Event', the role 'rosmodel_Event95' has cardinality 0..*, and from 'rosmodel_Transition', the role 'rosmodel_Transition96' has cardinality 0..*.

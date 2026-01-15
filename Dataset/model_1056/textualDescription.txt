@@ -1,0 +1,31 @@
+The domain model 'fSM' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'fSM_State' represents an important domain concept.
+It does not declare any attributes.
+
+'fSM_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'fSM_EnumerationType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fSM_FSM' represents an important domain concept.
+It does not declare any attributes.
+
+'fSM_EnumerationLiteral' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fSM_Model' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'fSM_Model' and 'fSM_EnumerationType'. From 'fSM_Model', the role 'fSM_Model' has cardinality 0..*, and from 'fSM_EnumerationType', the role 'fSM_EnumerationType' has cardinality 0..*.
+An association connects 'fSM_FSM' and 'fSM_Model'. From 'fSM_FSM', the role 'fSM_FSM' has cardinality 0..*, and from 'fSM_Model', the role 'fSM_Model2' has cardinality 0..*.
+An association connects 'fSM_FSM' and 'fSM_EnumerationType'. From 'fSM_FSM', the role 'fSM_FSM4' has cardinality 0..*, and from 'fSM_EnumerationType', the role 'fSM_EnumerationType5' has cardinality 0..*.
+An association connects 'fSM_State' and 'fSM_FSM'. From 'fSM_State', the role 'fSM_State' has cardinality 0..*, and from 'fSM_FSM', the role 'fSM_FSM7' has cardinality 0..*.
+An association connects 'fSM_EnumerationLiteral' and 'fSM_State'. From 'fSM_EnumerationLiteral', the role 'fSM_EnumerationLiteral' has cardinality 0..*, and from 'fSM_State', the role 'fSM_State9' has cardinality 0..*.
+An association connects 'fSM_Transition' and 'fSM_State'. From 'fSM_Transition', the role 'fSM_Transition' has cardinality 0..*, and from 'fSM_State', the role 'fSM_State11' has cardinality 0..*.
+An association connects 'fSM_State' and 'fSM_Transition'. From 'fSM_State', the role 'fSM_State14' has cardinality 0..*, and from 'fSM_Transition', the role 'fSM_Transition13' has cardinality 0..*.
+An association connects 'fSM_EnumerationType' and 'fSM_EnumerationLiteral'. From 'fSM_EnumerationType', the role 'fSM_EnumerationType16' has cardinality 0..*, and from 'fSM_EnumerationLiteral', the role 'fSM_EnumerationLiteral17' has cardinality 0..*.

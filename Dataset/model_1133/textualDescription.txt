@@ -1,0 +1,153 @@
+The domain model 'research31' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'research31_ReviewNote' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'research31_PaperKeyword' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'Counted' represents an important domain concept.
+It does not declare any attributes.
+
+'research31_Progress' represents an important domain concept.
+It has one attribute: 'percent', which is of type int.
+
+'research31_Labelled' represents an important domain concept.
+It has one attribute: 'lname', which is of type str.
+
+'research31_Write' represents an important domain concept.
+It has one attribute: 'timeSpent', which is of type int.
+
+'research31_Skill' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'research31_Action' represents an important domain concept.
+It has the following attributes: 'actionStatement', which is of type str; 'actionLabel', which is of type str.
+
+'research31_PublicationStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'Labelled' represents an important domain concept.
+It does not declare any attributes.
+
+'research31_Position' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'research31_StateMachineVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'research31_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'research31_Keyword' represents an important domain concept.
+It has one attribute: 'word', which is of type str.
+
+'research31_Transition' represents an important domain concept.
+It has the following attributes: 'guardLabel', which is of type str; 'guardExpression', which is of type str.
+
+'research31_Review' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'research31_Counted' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'research31_Paragraph' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'research31_PublicationSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'research31_PublicationStatus' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'research31_PublicationProcess' represents an important domain concept.
+It has the following attributes: 'minTime', which is of type int; 'maxTime', which is of type int.
+
+'StateMachineObject' represents an important domain concept.
+It does not declare any attributes.
+
+'research31_KnowledgeManager' represents an important domain concept.
+It does not declare any attributes.
+
+'research31_Collaboration' represents an important domain concept.
+It has one attribute: 'ratio', which is of type int.
+
+'research31_StateMachineObject' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'research31_Phase' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'research31_State' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'kind', which is of type str; 'id', which is of type int.
+
+'research31_Paper' represents an important domain concept.
+It does not declare any attributes.
+
+'research31_Researcher' represents an important domain concept.
+It has the following attributes: 'forName', which is of type str; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StateType' defines the following possible values: 'initial', 'final', 'ongoing'.
+
+The model also captures inheritance relationships between classes.
+The class 'research31_PublicationProcess' is a specialization of 'Named'.
+The class 'research31_Paper' is a specialization of 'Named'.
+The class 'research31_Paragraph' is a specialization of 'Counted'.
+The class 'research31_Paragraph' is a specialization of 'Named'.
+The class 'research31_ReviewNote' is a specialization of 'Named'.
+The class 'research31_Progress' is a specialization of 'Labelled'.
+The class 'research31_Write' is a specialization of 'Labelled'.
+The class 'research31_Review' is a specialization of 'Labelled'.
+The class 'research31_PublicationStructure' is a specialization of 'Named'.
+The class 'research31_PublicationSystem' is a specialization of 'Named'.
+The class 'research31_Position' is a specialization of 'Named'.
+The class 'research31_Keyword' is a specialization of 'Named'.
+The class 'research31_KnowledgeManager' is a specialization of 'Named'.
+The class 'research31_Transition' is a specialization of 'StateMachineObject'.
+The class 'research31_State' is a specialization of 'StateMachineObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'research31_Phase' and 'research31_PublicationProcess'. From 'research31_Phase', the role 'research31_Phase' has cardinality 0..*, and from 'research31_PublicationProcess', the role 'research31_PublicationProcess' has cardinality 0..*.
+An association connects 'research31_Write' and 'research31_Researcher'. From 'research31_Write', the role 'research31_Write' has cardinality 0..*, and from 'research31_Researcher', the role 'research31_Researcher' has cardinality 0..*.
+An association connects 'research31_Researcher' and 'research31_Review'. From 'research31_Researcher', the role 'research31_Researcher3' has cardinality 0..*, and from 'research31_Review', the role 'research31_Review' has cardinality 0..*.
+An association connects 'research31_Paper' and 'research31_Researcher'. From 'research31_Paper', the role 'Paper' has cardinality 0..*, and from 'research31_Researcher', the role 'authors' has cardinality 0..*.
+An association connects 'research31_Researcher' and 'research31_Skill'. From 'research31_Researcher', the role 'research31_Researcher6' has cardinality 0..*, and from 'research31_Skill', the role 'research31_Skill' has cardinality 0..*.
+An association connects 'research31_Position' and 'research31_Researcher'. From 'research31_Position', the role 'research31_Position' has cardinality 0..*, and from 'research31_Researcher', the role 'research31_Researcher8' has cardinality 0..*.
+An association connects 'research31_Researcher' and 'research31_Collaboration'. From 'research31_Researcher', the role 'research31_Researcher10' has cardinality 0..*, and from 'research31_Collaboration', the role 'research31_Collaboration' has cardinality 0..*.
+An association connects 'research31_Paragraph' and 'research31_Paper'. From 'research31_Paragraph', the role 'research31_Paragraph' has cardinality 0..*, and from 'research31_Paper', the role 'research31_Paper' has cardinality 0..*.
+An association connects 'research31_Paper' and 'research31_Progress'. From 'research31_Paper', the role 'paper' has cardinality 0..*, and from 'research31_Progress', the role 'Progress' has cardinality 0..*.
+An association connects 'research31_Researcher' and 'research31_Paper'. From 'research31_Researcher', the role 'Researcher' has cardinality 0..*, and from 'research31_Paper', the role 'res_papers' has cardinality 0..*.
+An association connects 'research31_PaperKeyword' and 'research31_Paper'. From 'research31_PaperKeyword', the role 'research31_PaperKeyword' has cardinality 0..*, and from 'research31_Paper', the role 'research31_Paper15' has cardinality 0..*.
+An association connects 'research31_Paper' and 'research31_Paper'. From 'research31_Paper', the role 'research31_Paper16' has cardinality 0..*, and from 'research31_Paper', the role 'research31_Paper18' has cardinality 0..*.
+An association connects 'research31_Paper' and 'research31_State'. From 'research31_Paper', the role 'research31_Paper20' has cardinality 0..*, and from 'research31_State', the role 'research31_State' has cardinality 0..*.
+An association connects 'research31_ReviewNote' and 'research31_Paragraph'. From 'research31_ReviewNote', the role 'research31_ReviewNote' has cardinality 0..*, and from 'research31_Paragraph', the role 'research31_Paragraph22' has cardinality 0..*.
+An association connects 'research31_PublicationProcess' and 'research31_Progress'. From 'research31_PublicationProcess', the role 'research31_PublicationProcess24' has cardinality 0..*, and from 'research31_Progress', the role 'research31_Progress' has cardinality 0..*.
+An association connects 'research31_Progress' and 'research31_Paper'. From 'research31_Progress', the role 'progress' has cardinality 0..*, and from 'research31_Paper', the role 'Paper26' has cardinality 0..*.
+An association connects 'research31_Write' and 'research31_Paragraph'. From 'research31_Write', the role 'research31_Write28' has cardinality 0..*, and from 'research31_Paragraph', the role 'research31_Paragraph29' has cardinality 0..*.
+An association connects 'research31_Review' and 'research31_ReviewNote'. From 'research31_Review', the role 'research31_Review31' has cardinality 0..*, and from 'research31_ReviewNote', the role 'research31_ReviewNote32' has cardinality 0..*.
+An association connects 'research31_PublicationStructure' and 'research31_Researcher'. From 'research31_PublicationStructure', the role 'research31_PublicationStructure' has cardinality 0..*, and from 'research31_Researcher', the role 'research31_Researcher34' has cardinality 0..*.
+An association connects 'research31_PublicationStructure' and 'research31_Paper'. From 'research31_PublicationStructure', the role 'research31_PublicationStructure36' has cardinality 0..*, and from 'research31_Paper', the role 'research31_Paper37' has cardinality 0..*.
+An association connects 'research31_PublicationStructure' and 'research31_KnowledgeManager'. From 'research31_PublicationStructure', the role 'research31_PublicationStructure39' has cardinality 0..*, and from 'research31_KnowledgeManager', the role 'research31_KnowledgeManager' has cardinality 0..*.
+An association connects 'research31_PublicationStructure' and 'research31_PublicationStatus'. From 'research31_PublicationStructure', the role 'research31_PublicationStructure41' has cardinality 0..*, and from 'research31_PublicationStatus', the role 'research31_PublicationStatus' has cardinality 0..*.
+An association connects 'research31_PublicationProcess' and 'research31_PublicationSystem'. From 'research31_PublicationProcess', the role 'research31_PublicationProcess43' has cardinality 0..*, and from 'research31_PublicationSystem', the role 'research31_PublicationSystem' has cardinality 0..*.
+An association connects 'research31_PublicationSystem' and 'research31_PublicationStructure'. From 'research31_PublicationSystem', the role 'research31_PublicationSystem45' has cardinality 0..*, and from 'research31_PublicationStructure', the role 'research31_PublicationStructure46' has cardinality 0..*.
+An association connects 'research31_Position' and 'research31_PublicationSystem'. From 'research31_Position', the role 'research31_Position49' has cardinality 0..*, and from 'research31_PublicationSystem', the role 'research31_PublicationSystem48' has cardinality 0..*.
+An association connects 'research31_Position' and 'research31_Position'. From 'research31_Position', the role 'research31_Position52' has cardinality 0..*, and from 'research31_Position', the role 'research31_Position50' has cardinality 0..*.
+An association connects 'research31_Keyword' and 'research31_Paper'. From 'research31_Keyword', the role 'research31_Keyword' has cardinality 0..*, and from 'research31_Paper', the role 'research31_Paper54' has cardinality 0..*.
+An association connects 'research31_KnowledgeManager' and 'research31_Keyword'. From 'research31_KnowledgeManager', the role 'research31_KnowledgeManager56' has cardinality 0..*, and from 'research31_Keyword', the role 'research31_Keyword57' has cardinality 0..*.
+An association connects 'research31_PaperKeyword' and 'research31_Keyword'. From 'research31_PaperKeyword', the role 'research31_PaperKeyword59' has cardinality 0..*, and from 'research31_Keyword', the role 'research31_Keyword60' has cardinality 0..*.
+An association connects 'research31_Paper' and 'research31_Collaboration'. From 'research31_Paper', the role 'research31_Paper63' has cardinality 0..*, and from 'research31_Collaboration', the role 'research31_Collaboration62' has cardinality 0..*.
+An association connects 'research31_PublicationStatus' and 'research31_StateMachineVariable'. From 'research31_PublicationStatus', the role 'research31_PublicationStatus65' has cardinality 0..*, and from 'research31_StateMachineVariable', the role 'research31_StateMachineVariable' has cardinality 0..*.
+An association connects 'research31_PublicationStatus' and 'research31_State'. From 'research31_PublicationStatus', the role 'research31_PublicationStatus67' has cardinality 0..*, and from 'research31_State', the role 'research31_State68' has cardinality 0..*.
+An association connects 'research31_Action' and 'research31_Transition'. From 'research31_Action', the role 'research31_Action' has cardinality 0..*, and from 'research31_Transition', the role 'research31_Transition' has cardinality 0..*.
+An association connects 'research31_Transition' and 'research31_State'. From 'research31_Transition', the role 'research31_Transition71' has cardinality 0..*, and from 'research31_State', the role 'research31_State72' has cardinality 0..*.
+An association connects 'research31_State' and 'research31_Transition'. From 'research31_State', the role 'research31_State75' has cardinality 0..*, and from 'research31_Transition', the role 'research31_Transition74' has cardinality 0..*.
+An association connects 'research31_State' and 'research31_Transition'. From 'research31_State', the role 'research31_State77' has cardinality 0..*, and from 'research31_Transition', the role 'research31_Transition78' has cardinality 0..*.
+An association connects 'research31_State' and 'research31_Action'. From 'research31_State', the role 'research31_State80' has cardinality 0..*, and from 'research31_Action', the role 'research31_Action81' has cardinality 0..*.
+An association connects 'research31_Action' and 'research31_Action'. From 'research31_Action', the role 'research31_Action82' has cardinality 0..*, and from 'research31_Action', the role 'research31_Action84' has cardinality 0..*.

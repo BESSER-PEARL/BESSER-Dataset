@@ -1,0 +1,65 @@
+The domain model 'robotmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'robotmodel_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'robotmodel_System' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str; 'author_email', which is of type str; 'author', which is of type str; 'depends', which is of type str.
+
+'robotmodel_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'robotmodel_Property_List' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'robotmodel_Action' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'robotmodel_Connector' represents an important domain concept.
+It has the following attributes: 'atype', which is of type str; 'name', which is of type str; 'type', which is of type str.
+
+'robotmodel_Role' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'robotmodel_Port' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'robotmodel_Component' represents an important domain concept.
+It has the following attributes: 'atype', which is of type str; 'depends', which is of type str; 'frequency', which is of type float; 'name', which is of type str; 'type', which is of type str.
+
+'robotmodel_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'robotmodel_Property' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str; 'type', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Is_Style' defines the following possible values: 'style', 'non_style'.
+
+Relationships between classes are modeled using associations.
+An association connects 'robotmodel_System' and 'robotmodel_Component'. From 'robotmodel_System', the role 'robotmodel_System' has cardinality 0..*, and from 'robotmodel_Component', the role 'robotmodel_Component' has cardinality 0..*.
+An association connects 'robotmodel_System' and 'robotmodel_Connector'. From 'robotmodel_System', the role 'robotmodel_System2' has cardinality 0..*, and from 'robotmodel_Connector', the role 'robotmodel_Connector' has cardinality 0..*.
+An association connects 'robotmodel_Component' and 'robotmodel_Port'. From 'robotmodel_Component', the role 'robotmodel_Component4' has cardinality 0..*, and from 'robotmodel_Port', the role 'robotmodel_Port' has cardinality 0..*.
+An association connects 'robotmodel_Component' and 'robotmodel_Property_List'. From 'robotmodel_Component', the role 'robotmodel_Component6' has cardinality 0..*, and from 'robotmodel_Property_List', the role 'robotmodel_Property_List' has cardinality 0..*.
+An association connects 'robotmodel_Component' and 'robotmodel_Component'. From 'robotmodel_Component', the role 'robotmodel_Component7' has cardinality 0..*, and from 'robotmodel_Component', the role 'robotmodel_Component9' has cardinality 0..*.
+An association connects 'robotmodel_Component' and 'robotmodel_State'. From 'robotmodel_Component', the role 'robotmodel_Component11' has cardinality 0..*, and from 'robotmodel_State', the role 'robotmodel_State' has cardinality 0..*.
+An association connects 'robotmodel_Component' and 'robotmodel_Event'. From 'robotmodel_Component', the role 'robotmodel_Component13' has cardinality 0..*, and from 'robotmodel_Event', the role 'robotmodel_Event' has cardinality 0..*.
+An association connects 'robotmodel_Component' and 'robotmodel_Transition'. From 'robotmodel_Component', the role 'robotmodel_Component15' has cardinality 0..*, and from 'robotmodel_Transition', the role 'robotmodel_Transition' has cardinality 0..*.
+An association connects 'robotmodel_Action' and 'robotmodel_Component'. From 'robotmodel_Action', the role 'robotmodel_Action' has cardinality 0..*, and from 'robotmodel_Component', the role 'robotmodel_Component17' has cardinality 0..*.
+An association connects 'robotmodel_Connector' and 'robotmodel_Property_List'. From 'robotmodel_Connector', the role 'robotmodel_Connector19' has cardinality 0..*, and from 'robotmodel_Property_List', the role 'robotmodel_Property_List20' has cardinality 0..*.
+An association connects 'robotmodel_Connector' and 'robotmodel_Role'. From 'robotmodel_Connector', the role 'robotmodel_Connector22' has cardinality 0..*, and from 'robotmodel_Role', the role 'robotmodel_Role' has cardinality 0..*.
+An association connects 'robotmodel_Role' and 'robotmodel_Port'. From 'robotmodel_Role', the role 'robotmodel_Role25' has cardinality 0..*, and from 'robotmodel_Port', the role 'robotmodel_Port24' has cardinality 0..*.
+An association connects 'robotmodel_Property_List' and 'robotmodel_Property'. From 'robotmodel_Property_List', the role 'robotmodel_Property_List27' has cardinality 0..*, and from 'robotmodel_Property', the role 'robotmodel_Property' has cardinality 0..*.
+An association connects 'robotmodel_State' and 'robotmodel_State'. From 'robotmodel_State', the role 'robotmodel_State30' has cardinality 0..*, and from 'robotmodel_State', the role 'robotmodel_State28' has cardinality 0..*.
+An association connects 'robotmodel_Action' and 'robotmodel_State'. From 'robotmodel_Action', the role 'robotmodel_Action33' has cardinality 0..*, and from 'robotmodel_State', the role 'robotmodel_State32' has cardinality 0..*.
+An association connects 'robotmodel_State' and 'robotmodel_Transition'. From 'robotmodel_State', the role 'robotmodel_State35' has cardinality 0..*, and from 'robotmodel_Transition', the role 'robotmodel_Transition36' has cardinality 0..*.
+An association connects 'robotmodel_Action' and 'robotmodel_State'. From 'robotmodel_Action', the role 'robotmodel_Action39' has cardinality 0..*, and from 'robotmodel_State', the role 'robotmodel_State38' has cardinality 0..*.
+An association connects 'robotmodel_State' and 'robotmodel_Action'. From 'robotmodel_State', the role 'robotmodel_State41' has cardinality 0..*, and from 'robotmodel_Action', the role 'robotmodel_Action42' has cardinality 0..*.
+An association connects 'robotmodel_Event' and 'robotmodel_State'. From 'robotmodel_Event', the role 'robotmodel_Event45' has cardinality 0..*, and from 'robotmodel_State', the role 'robotmodel_State44' has cardinality 0..*.
+An association connects 'robotmodel_Transition' and 'robotmodel_Action'. From 'robotmodel_Transition', the role 'robotmodel_Transition47' has cardinality 0..*, and from 'robotmodel_Action', the role 'robotmodel_Action48' has cardinality 0..*.
+An association connects 'robotmodel_Transition' and 'robotmodel_Action'. From 'robotmodel_Transition', the role 'robotmodel_Transition50' has cardinality 0..*, and from 'robotmodel_Action', the role 'robotmodel_Action51' has cardinality 0..*.
+An association connects 'robotmodel_Transition' and 'robotmodel_State'. From 'robotmodel_Transition', the role 'robotmodel_Transition53' has cardinality 0..*, and from 'robotmodel_State', the role 'robotmodel_State54' has cardinality 0..*.
+An association connects 'robotmodel_State' and 'robotmodel_Transition'. From 'robotmodel_State', the role 'robotmodel_State57' has cardinality 0..*, and from 'robotmodel_Transition', the role 'robotmodel_Transition56' has cardinality 0..*.
+An association connects 'robotmodel_Transition' and 'robotmodel_Event'. From 'robotmodel_Transition', the role 'robotmodel_Transition60' has cardinality 0..*, and from 'robotmodel_Event', the role 'robotmodel_Event59' has cardinality 0..*.

@@ -1,0 +1,74 @@
+The domain model 'MMInterModel' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'MMInterModel_Element' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'MMInterModel_State' represents an important domain concept.
+It has the following attributes: 'stateConfiguration', which is of type str; 'stateNumber', which is of type int; 'duringBehaviour', which is of type str; 'exitBehaviour', which is of type str; 'entryBehaviour', which is of type str; 'stateMachine', which is of type str.
+
+'MMInterModel_Attribute' represents an important domain concept.
+It has the following attributes: 'defaultValue', which is of type str; 'type', which is of type str; 'lowerBound', which is of type int; 'component', which is of type str; 'arraySize', which is of type int; 'isArray', which is of type bool; 'upperBound', which is of type int; 'model', which is of type str.
+
+'MMInterModel_Transition' represents an important domain concept.
+It has the following attributes: 'action', which is of type str; 'stateMachine', which is of type str.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'MMInterModel_StateMachine' represents an important domain concept.
+It has the following attributes: 'superState', which is of type str; 'component', which is of type str; 'type', which is of type str.
+
+'MMInterModel_Guard' represents an important domain concept.
+It has the following attributes: 'specification', which is of type str; 'transition', which is of type str.
+
+'MMInterModel_Event' represents an important domain concept.
+It has the following attributes: 'model', which is of type str; 'type', which is of type str.
+
+'MMInterModel_StateConfiguration' represents an important domain concept.
+It has the following attributes: 'configOperator', which is of type str; 'negation', which is of type bool; 'condition', which is of type str; 'model', which is of type str.
+
+'MMInterModel_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'MMInterModel_Component' represents an important domain concept.
+It has the following attributes: 'model', which is of type str; 'numberOfSpares', which is of type int.
+
+'MMInterModel_StringEnumeration' represents an important domain concept.
+It has one attribute: 'attribute', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'MMInterModel_Model' is a specialization of 'Element'.
+The class 'MMInterModel_Component' is a specialization of 'Element'.
+The class 'MMInterModel_StateMachine' is a specialization of 'Element'.
+The class 'MMInterModel_Transition' is a specialization of 'Element'.
+The class 'MMInterModel_State' is a specialization of 'Element'.
+The class 'MMInterModel_Attribute' is a specialization of 'Element'.
+The class 'MMInterModel_StringEnumeration' is a specialization of 'Element'.
+The class 'MMInterModel_Event' is a specialization of 'Element'.
+The class 'MMInterModel_StateConfiguration' is a specialization of 'Element'.
+The class 'MMInterModel_Guard' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'MMInterModel_Component' and 'MMInterModel_Model'. From 'MMInterModel_Component', the role 'MMInterModel_Component' has cardinality 0..*, and from 'MMInterModel_Model', the role 'MMInterModel_Model' has cardinality 0..*.
+An association connects 'MMInterModel_Attribute' and 'MMInterModel_Model'. From 'MMInterModel_Attribute', the role 'MMInterModel_Attribute' has cardinality 0..*, and from 'MMInterModel_Model', the role 'MMInterModel_Model2' has cardinality 0..*.
+An association connects 'MMInterModel_Model' and 'MMInterModel_Event'. From 'MMInterModel_Model', the role 'MMInterModel_Model4' has cardinality 0..*, and from 'MMInterModel_Event', the role 'MMInterModel_Event' has cardinality 0..*.
+An association connects 'MMInterModel_Model' and 'MMInterModel_StateConfiguration'. From 'MMInterModel_Model', the role 'MMInterModel_Model6' has cardinality 0..*, and from 'MMInterModel_StateConfiguration', the role 'MMInterModel_StateConfiguration' has cardinality 0..*.
+An association connects 'MMInterModel_Component' and 'MMInterModel_StateMachine'. From 'MMInterModel_Component', the role 'MMInterModel_Component8' has cardinality 0..*, and from 'MMInterModel_StateMachine', the role 'MMInterModel_StateMachine' has cardinality 0..*.
+An association connects 'MMInterModel_Attribute' and 'MMInterModel_Component'. From 'MMInterModel_Attribute', the role 'MMInterModel_Attribute11' has cardinality 0..*, and from 'MMInterModel_Component', the role 'MMInterModel_Component10' has cardinality 0..*.
+An association connects 'MMInterModel_Component' and 'MMInterModel_StateMachine'. From 'MMInterModel_Component', the role 'MMInterModel_Component13' has cardinality 0..*, and from 'MMInterModel_StateMachine', the role 'MMInterModel_StateMachine14' has cardinality 0..*.
+An association connects 'MMInterModel_StateMachine' and 'MMInterModel_Transition'. From 'MMInterModel_StateMachine', the role 'MMInterModel_StateMachine16' has cardinality 0..*, and from 'MMInterModel_Transition', the role 'MMInterModel_Transition' has cardinality 0..*.
+An association connects 'MMInterModel_State' and 'MMInterModel_StateMachine'. From 'MMInterModel_State', the role 'MMInterModel_State' has cardinality 0..*, and from 'MMInterModel_StateMachine', the role 'MMInterModel_StateMachine18' has cardinality 0..*.
+An association connects 'MMInterModel_StateMachine' and 'MMInterModel_State'. From 'MMInterModel_StateMachine', the role 'MMInterModel_StateMachine20' has cardinality 0..*, and from 'MMInterModel_State', the role 'MMInterModel_State21' has cardinality 0..*.
+An association connects 'MMInterModel_State' and 'MMInterModel_Transition'. From 'MMInterModel_State', the role 'MMInterModel_State24' has cardinality 0..*, and from 'MMInterModel_Transition', the role 'MMInterModel_Transition23' has cardinality 0..*.
+An association connects 'MMInterModel_Transition' and 'MMInterModel_State'. From 'MMInterModel_Transition', the role 'MMInterModel_Transition26' has cardinality 0..*, and from 'MMInterModel_State', the role 'MMInterModel_State27' has cardinality 0..*.
+An association connects 'MMInterModel_Transition' and 'MMInterModel_Event'. From 'MMInterModel_Transition', the role 'MMInterModel_Transition29' has cardinality 0..*, and from 'MMInterModel_Event', the role 'MMInterModel_Event30' has cardinality 0..*.
+An association connects 'MMInterModel_Transition' and 'MMInterModel_Guard'. From 'MMInterModel_Transition', the role 'MMInterModel_Transition32' has cardinality 0..*, and from 'MMInterModel_Guard', the role 'MMInterModel_Guard' has cardinality 0..*.
+An association connects 'MMInterModel_Transition' and 'MMInterModel_State'. From 'MMInterModel_Transition', the role 'MMInterModel_Transition35' has cardinality 0..*, and from 'MMInterModel_State', the role 'MMInterModel_State34' has cardinality 0..*.
+An association connects 'MMInterModel_Transition' and 'MMInterModel_State'. From 'MMInterModel_Transition', the role 'MMInterModel_Transition38' has cardinality 0..*, and from 'MMInterModel_State', the role 'MMInterModel_State37' has cardinality 0..*.
+An association connects 'MMInterModel_StateMachine' and 'MMInterModel_State'. From 'MMInterModel_StateMachine', the role 'MMInterModel_StateMachine41' has cardinality 0..*, and from 'MMInterModel_State', the role 'MMInterModel_State40' has cardinality 0..*.
+An association connects 'MMInterModel_Attribute' and 'MMInterModel_StringEnumeration'. From 'MMInterModel_Attribute', the role 'MMInterModel_Attribute43' has cardinality 0..*, and from 'MMInterModel_StringEnumeration', the role 'MMInterModel_StringEnumeration' has cardinality 0..*.
+An association connects 'MMInterModel_Transition' and 'MMInterModel_Event'. From 'MMInterModel_Transition', the role 'MMInterModel_Transition46' has cardinality 0..*, and from 'MMInterModel_Event', the role 'MMInterModel_Event45' has cardinality 0..*.
+An association connects 'MMInterModel_State' and 'MMInterModel_StateConfiguration'. From 'MMInterModel_State', the role 'MMInterModel_State49' has cardinality 0..*, and from 'MMInterModel_StateConfiguration', the role 'MMInterModel_StateConfiguration48' has cardinality 0..*.
+An association connects 'MMInterModel_StateConfiguration' and 'MMInterModel_StateConfiguration'. From 'MMInterModel_StateConfiguration', the role 'MMInterModel_StateConfiguration52' has cardinality 0..*, and from 'MMInterModel_StateConfiguration', the role 'MMInterModel_StateConfiguration50' has cardinality 0..*.

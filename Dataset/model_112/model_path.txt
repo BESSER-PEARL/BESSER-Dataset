@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/lolybc88/LinTra/atl2JavaSimpl/JavaSimplified.ecore

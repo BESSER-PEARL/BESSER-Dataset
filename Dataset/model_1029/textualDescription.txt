@@ -1,0 +1,131 @@
+The domain model 'fsm' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'fsm_Join' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Trigger' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'fsm_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Fork' represents an important domain concept.
+It does not declare any attributes.
+
+'Pseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_NotTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_DeepHistory' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_AndTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fsm_Junction' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_OrTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_ShallowHistory' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Pseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_State' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'fsm_StateMachine' is a specialization of 'NamedElement'.
+The class 'fsm_Region' is a specialization of 'NamedElement'.
+The class 'fsm_AbstractState' is a specialization of 'NamedElement'.
+The class 'fsm_State' is a specialization of 'AbstractState'.
+The class 'fsm_Transition' is a specialization of 'NamedElement'.
+The class 'fsm_NotTrigger' is a specialization of 'Trigger'.
+The class 'fsm_AndTrigger' is a specialization of 'Trigger'.
+The class 'fsm_OrTrigger' is a specialization of 'Trigger'.
+The class 'fsm_Pseudostate' is a specialization of 'AbstractState'.
+The class 'fsm_InitialState' is a specialization of 'Pseudostate'.
+The class 'fsm_Fork' is a specialization of 'Pseudostate'.
+The class 'fsm_Join' is a specialization of 'Pseudostate'.
+The class 'fsm_DeepHistory' is a specialization of 'Pseudostate'.
+The class 'fsm_ShallowHistory' is a specialization of 'Pseudostate'.
+The class 'fsm_Junction' is a specialization of 'Pseudostate'.
+The class 'fsm_Conditional' is a specialization of 'Pseudostate'.
+The class 'fsm_FinalState' is a specialization of 'State'.
+The class 'fsm_Program' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fsm_Region' and 'fsm_StateMachine'. From 'fsm_Region', the role 'fsm_Region' has cardinality 0..*, and from 'fsm_StateMachine', the role 'fsm_StateMachine' has cardinality 0..*.
+An association connects 'fsm_AbstractState' and 'fsm_Region'. From 'fsm_AbstractState', the role '2' has cardinality 0..*, and from 'fsm_Region', the role 'unnamed role' has cardinality 0..*.
+An association connects 'fsm_Transition' and 'fsm_Region'. From 'fsm_Transition', the role 'fsm_Transition' has cardinality 0..*, and from 'fsm_Region', the role 'fsm_Region4' has cardinality 0..*.
+An association connects 'fsm_Region' and 'fsm_State'. From 'fsm_Region', the role '6' has cardinality 0..*, and from 'fsm_State', the role '7' has cardinality 0..*.
+An association connects 'fsm_Transition' and 'fsm_AbstractState'. From 'fsm_Transition', the role '10' has cardinality 0..*, and from 'fsm_AbstractState', the role '9' has cardinality 0..*.
+An association connects 'fsm_Transition' and 'fsm_AbstractState'. From 'fsm_Transition', the role '13' has cardinality 0..*, and from 'fsm_AbstractState', the role '12' has cardinality 0..*.
+An association connects 'fsm_AbstractState' and 'fsm_Region'. From 'fsm_AbstractState', the role '15' has cardinality 0..*, and from 'fsm_Region', the role '16' has cardinality 0..*.
+An association connects 'fsm_Program' and 'fsm_State'. From 'fsm_Program', the role 'fsm_Program' has cardinality 0..*, and from 'fsm_State', the role 'fsm_State' has cardinality 0..*.
+An association connects 'fsm_Program' and 'fsm_State'. From 'fsm_Program', the role 'fsm_Program20' has cardinality 0..*, and from 'fsm_State', the role 'fsm_State19' has cardinality 0..*.
+An association connects 'fsm_Program' and 'fsm_State'. From 'fsm_Program', the role 'fsm_Program23' has cardinality 0..*, and from 'fsm_State', the role 'fsm_State22' has cardinality 0..*.
+An association connects 'fsm_Region' and 'fsm_State'. From 'fsm_Region', the role '26' has cardinality 0..*, and from 'fsm_State', the role '25' has cardinality 0..*.
+An association connects 'fsm_Trigger' and 'fsm_Transition'. From 'fsm_Trigger', the role 'fsm_Trigger' has cardinality 0..*, and from 'fsm_Transition', the role 'fsm_Transition28' has cardinality 0..*.
+An association connects 'fsm_AbstractState' and 'fsm_Transition'. From 'fsm_AbstractState', the role '31' has cardinality 0..*, and from 'fsm_Transition', the role '30' has cardinality 0..*.
+An association connects 'fsm_Transition' and 'fsm_AbstractState'. From 'fsm_Transition', the role '33' has cardinality 0..*, and from 'fsm_AbstractState', the role '34' has cardinality 0..*.
+An association connects 'fsm_Transition' and 'fsm_Statement'. From 'fsm_Transition', the role 'fsm_Transition36' has cardinality 0..*, and from 'fsm_Statement', the role 'fsm_Statement' has cardinality 0..*.
+An association connects 'fsm_Transition' and 'fsm_Constraint'. From 'fsm_Transition', the role 'fsm_Transition38' has cardinality 0..*, and from 'fsm_Constraint', the role 'fsm_Constraint' has cardinality 0..*.
+An association connects 'fsm_Trigger' and 'fsm_NotTrigger'. From 'fsm_Trigger', the role 'fsm_Trigger40' has cardinality 0..*, and from 'fsm_NotTrigger', the role 'fsm_NotTrigger' has cardinality 0..*.
+An association connects 'fsm_AndTrigger' and 'fsm_Trigger'. From 'fsm_AndTrigger', the role 'fsm_AndTrigger' has cardinality 0..*, and from 'fsm_Trigger', the role 'fsm_Trigger42' has cardinality 0..*.
+An association connects 'fsm_Trigger' and 'fsm_AndTrigger'. From 'fsm_Trigger', the role 'fsm_Trigger45' has cardinality 0..*, and from 'fsm_AndTrigger', the role 'fsm_AndTrigger44' has cardinality 0..*.
+An association connects 'fsm_OrTrigger' and 'fsm_Trigger'. From 'fsm_OrTrigger', the role 'fsm_OrTrigger' has cardinality 0..*, and from 'fsm_Trigger', the role 'fsm_Trigger47' has cardinality 0..*.
+An association connects 'fsm_Trigger' and 'fsm_OrTrigger'. From 'fsm_Trigger', the role 'fsm_Trigger50' has cardinality 0..*, and from 'fsm_OrTrigger', the role 'fsm_OrTrigger49' has cardinality 0..*.
+An association connects 'fsm_Statement' and 'fsm_Program'. From 'fsm_Statement', the role 'fsm_Statement53' has cardinality 0..*, and from 'fsm_Program', the role 'fsm_Program52' has cardinality 0..*.

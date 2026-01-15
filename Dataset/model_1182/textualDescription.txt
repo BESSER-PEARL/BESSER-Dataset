@@ -1,0 +1,503 @@
+The domain model 'simpleocl' describes the core structural elements and their relationships within the system.
+
+The model defines 107 main class(es).
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'OperatorCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'simpleocl_SuperExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_OclModel' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_RelOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'StaticPropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_EnvExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_OperatorCallExp' represents an important domain concept.
+It has one attribute: 'operationName', which is of type str.
+
+'simpleocl_AddOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_StringExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'simpleocl_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_OperationCall' represents an important domain concept.
+It has one attribute: 'operationName', which is of type str.
+
+'simpleocl_CollectionItem' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_IntOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_BagExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_OclType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleocl_SelfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_CollectionRange' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_LambdaCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_OclContextDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_OclFeatureDefinition' represents an important domain concept.
+It has one attribute: 'static', which is of type str.
+
+'simpleocl_TupleTypeAttribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleocl_EqOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_LocatedElement' represents an important domain concept.
+It has the following attributes: 'charEnd', which is of type str; 'line', which is of type str; 'charStart', which is of type str; 'column', which is of type str.
+
+'simpleocl_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_TuplePart' represents an important domain concept.
+It does not declare any attributes.
+
+'OclFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_MulOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'LocalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionPart' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_TupleExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_CollectionPart' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_StaticOperationCall' represents an important domain concept.
+It has one attribute: 'operationName', which is of type str.
+
+'simpleocl_SetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_CollectionOperationCall' represents an important domain concept.
+It does not declare any attributes.
+
+'OclModel' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_OrderedSetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_IntegerExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'simpleocl_StaticPropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_ModuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_StaticNavigationOrAttributeCall' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleocl_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_BooleanExp' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type str.
+
+'simpleocl_LambdaType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_OclFeature' represents an important domain concept.
+It has one attribute: 'eq', which is of type str.
+
+'simpleocl_CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_MapType' represents an important domain concept.
+It does not declare any attributes.
+
+'ModuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_EnvType' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCall' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_OclAnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_EnumLiteralExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleocl_OclUndefinedExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_PropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_LocalVariable' represents an important domain concept.
+It has one attribute: 'eq', which is of type str.
+
+'simpleocl_NavigationOrAttributeCall' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleocl_RealExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type str.
+
+'simpleocl_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_StaticPropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_IteratorExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleocl_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_OclInstanceModel' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_MapElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_BraceExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_Iterator' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_MapExp' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_SequenceExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_OclModelElementExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_Import' represents an important domain concept.
+It does not declare any attributes.
+
+'OclType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_OclModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleocl_OclMetamodel' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'simpleocl_NotOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simpleocl_NamedElement' is a specialization of 'LocatedElement'.
+The class 'simpleocl_Module' is a specialization of 'NamedElement'.
+The class 'simpleocl_ModuleElement' is a specialization of 'LocatedElement'.
+The class 'simpleocl_Import' is a specialization of 'NamedElement'.
+The class 'simpleocl_OclExpression' is a specialization of 'LocatedElement'.
+The class 'simpleocl_VariableExp' is a specialization of 'OclExpression'.
+The class 'simpleocl_SuperExp' is a specialization of 'OclExpression'.
+The class 'simpleocl_SelfExp' is a specialization of 'OclExpression'.
+The class 'simpleocl_EnvExp' is a specialization of 'OclExpression'.
+The class 'simpleocl_PrimitiveExp' is a specialization of 'OclExpression'.
+The class 'simpleocl_StringExp' is a specialization of 'PrimitiveExp'.
+The class 'simpleocl_BooleanExp' is a specialization of 'PrimitiveExp'.
+The class 'simpleocl_NumericExp' is a specialization of 'PrimitiveExp'.
+The class 'simpleocl_RealExp' is a specialization of 'NumericExp'.
+The class 'simpleocl_IntegerExp' is a specialization of 'NumericExp'.
+The class 'simpleocl_CollectionExp' is a specialization of 'OclExpression'.
+The class 'simpleocl_CollectionPart' is a specialization of 'LocatedElement'.
+The class 'simpleocl_CollectionRange' is a specialization of 'CollectionPart'.
+The class 'simpleocl_CollectionItem' is a specialization of 'CollectionPart'.
+The class 'simpleocl_BagExp' is a specialization of 'CollectionExp'.
+The class 'simpleocl_OrderedSetExp' is a specialization of 'CollectionExp'.
+The class 'simpleocl_SequenceExp' is a specialization of 'CollectionExp'.
+The class 'simpleocl_SetExp' is a specialization of 'CollectionExp'.
+The class 'simpleocl_TupleExp' is a specialization of 'OclExpression'.
+The class 'simpleocl_TuplePart' is a specialization of 'LocalVariable'.
+The class 'simpleocl_MapExp' is a specialization of 'OclExpression'.
+The class 'simpleocl_MapElement' is a specialization of 'LocatedElement'.
+The class 'simpleocl_EnumLiteralExp' is a specialization of 'OclExpression'.
+The class 'simpleocl_OclUndefinedExp' is a specialization of 'OclExpression'.
+The class 'simpleocl_StaticPropertyCallExp' is a specialization of 'OclExpression'.
+The class 'simpleocl_StaticPropertyCall' is a specialization of 'LocatedElement'.
+The class 'simpleocl_StaticNavigationOrAttributeCall' is a specialization of 'StaticPropertyCall'.
+The class 'simpleocl_StaticOperationCall' is a specialization of 'StaticPropertyCall'.
+The class 'simpleocl_PropertyCallExp' is a specialization of 'OclExpression'.
+The class 'simpleocl_PropertyCall' is a specialization of 'LocatedElement'.
+The class 'simpleocl_NavigationOrAttributeCall' is a specialization of 'PropertyCall'.
+The class 'simpleocl_OperationCall' is a specialization of 'PropertyCall'.
+The class 'simpleocl_OperatorCallExp' is a specialization of 'OclExpression'.
+The class 'simpleocl_NotOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'simpleocl_RelOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'simpleocl_EqOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'simpleocl_AddOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'simpleocl_IntOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'simpleocl_MulOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'simpleocl_LambdaCallExp' is a specialization of 'VariableExp'.
+The class 'simpleocl_BraceExp' is a specialization of 'OclExpression'.
+The class 'simpleocl_CollectionOperationCall' is a specialization of 'OperationCall'.
+The class 'simpleocl_LoopExp' is a specialization of 'PropertyCall'.
+The class 'simpleocl_IterateExp' is a specialization of 'LoopExp'.
+The class 'simpleocl_IteratorExp' is a specialization of 'LoopExp'.
+The class 'simpleocl_LetExp' is a specialization of 'OclExpression'.
+The class 'simpleocl_IfExp' is a specialization of 'OclExpression'.
+The class 'simpleocl_VariableDeclaration' is a specialization of 'LocatedElement'.
+The class 'simpleocl_LocalVariable' is a specialization of 'VariableDeclaration'.
+The class 'simpleocl_Iterator' is a specialization of 'VariableDeclaration'.
+The class 'simpleocl_Parameter' is a specialization of 'VariableDeclaration'.
+The class 'simpleocl_CollectionType' is a specialization of 'OclType'.
+The class 'simpleocl_OclType' is a specialization of 'LocatedElement'.
+The class 'simpleocl_OclModelElementExp' is a specialization of 'OclExpression'.
+The class 'simpleocl_Primitive' is a specialization of 'OclType'.
+The class 'simpleocl_StringType' is a specialization of 'Primitive'.
+The class 'simpleocl_BooleanType' is a specialization of 'Primitive'.
+The class 'simpleocl_NumericType' is a specialization of 'Primitive'.
+The class 'simpleocl_IntegerType' is a specialization of 'NumericType'.
+The class 'simpleocl_RealType' is a specialization of 'NumericType'.
+The class 'simpleocl_BagType' is a specialization of 'CollectionType'.
+The class 'simpleocl_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'simpleocl_SequenceType' is a specialization of 'CollectionType'.
+The class 'simpleocl_SetType' is a specialization of 'CollectionType'.
+The class 'simpleocl_OclAnyType' is a specialization of 'OclType'.
+The class 'simpleocl_TupleType' is a specialization of 'OclType'.
+The class 'simpleocl_TupleTypeAttribute' is a specialization of 'LocatedElement'.
+The class 'simpleocl_OclModelElement' is a specialization of 'OclType'.
+The class 'simpleocl_MapType' is a specialization of 'OclType'.
+The class 'simpleocl_LambdaType' is a specialization of 'OclType'.
+The class 'simpleocl_EnvType' is a specialization of 'OclType'.
+The class 'simpleocl_OclFeatureDefinition' is a specialization of 'ModuleElement'.
+The class 'simpleocl_OclContextDefinition' is a specialization of 'LocatedElement'.
+The class 'simpleocl_OclFeature' is a specialization of 'NamedElement'.
+The class 'simpleocl_Attribute' is a specialization of 'OclFeature'.
+The class 'simpleocl_Operation' is a specialization of 'OclFeature'.
+The class 'simpleocl_OclModel' is a specialization of 'NamedElement'.
+The class 'simpleocl_OclMetamodel' is a specialization of 'OclModel'.
+The class 'simpleocl_OclInstanceModel' is a specialization of 'OclModel'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleocl_Module' and 'simpleocl_OclMetamodel'. From 'simpleocl_Module', the role 'simpleocl_Module' has cardinality 0..*, and from 'simpleocl_OclMetamodel', the role 'simpleocl_OclMetamodel' has cardinality 0..*.
+An association connects 'simpleocl_Import' and 'simpleocl_Module'. From 'simpleocl_Import', the role 'Import' has cardinality 0..*, and from 'simpleocl_Module', the role 'module' has cardinality 0..*.
+An association connects 'simpleocl_Module' and 'simpleocl_ModuleElement'. From 'simpleocl_Module', the role 'module3' has cardinality 0..*, and from 'simpleocl_ModuleElement', the role 'ModuleElement' has cardinality 0..*.
+An association connects 'simpleocl_Module' and 'simpleocl_ModuleElement'. From 'simpleocl_Module', the role 'Module' has cardinality 0..*, and from 'simpleocl_ModuleElement', the role 'elements' has cardinality 0..*.
+An association connects 'simpleocl_Module' and 'simpleocl_Import'. From 'simpleocl_Module', the role 'Module6' has cardinality 0..*, and from 'simpleocl_Import', the role 'imports' has cardinality 0..*.
+An association connects 'simpleocl_OclExpression' and 'simpleocl_OclType'. From 'simpleocl_OclExpression', the role 'oclExpression' has cardinality 0..*, and from 'simpleocl_OclType', the role 'OclType' has cardinality 0..*.
+An association connects 'simpleocl_OclExpression' and 'simpleocl_IfExp'. From 'simpleocl_OclExpression', the role 'elseExpression' has cardinality 0..*, and from 'simpleocl_IfExp', the role 'IfExp' has cardinality 0..*.
+An association connects 'simpleocl_OclExpression' and 'simpleocl_PropertyCallExp'. From 'simpleocl_OclExpression', the role 'source' has cardinality 0..*, and from 'simpleocl_PropertyCallExp', the role 'PropertyCallExp' has cardinality 0..*.
+An association connects 'simpleocl_LetExp' and 'simpleocl_OclExpression'. From 'simpleocl_LetExp', the role 'LetExp' has cardinality 0..*, and from 'simpleocl_OclExpression', the role 'in_' has cardinality 0..*.
+An association connects 'simpleocl_LoopExp' and 'simpleocl_OclExpression'. From 'simpleocl_LoopExp', the role 'LoopExp' has cardinality 0..*, and from 'simpleocl_OclExpression', the role 'body' has cardinality 0..*.
+An association connects 'simpleocl_OclExpression' and 'simpleocl_OperationCall'. From 'simpleocl_OclExpression', the role 'arguments' has cardinality 0..*, and from 'simpleocl_OperationCall', the role 'OperationCall' has cardinality 0..*.
+An association connects 'simpleocl_OclExpression' and 'simpleocl_LocalVariable'. From 'simpleocl_OclExpression', the role 'initExpression' has cardinality 0..*, and from 'simpleocl_LocalVariable', the role 'LocalVariable' has cardinality 0..*.
+An association connects 'simpleocl_OclExpression' and 'simpleocl_IfExp'. From 'simpleocl_OclExpression', the role 'thenExpression' has cardinality 0..*, and from 'simpleocl_IfExp', the role 'IfExp15' has cardinality 0..*.
+An association connects 'simpleocl_Operation' and 'simpleocl_OclExpression'. From 'simpleocl_Operation', the role 'Operation' has cardinality 0..*, and from 'simpleocl_OclExpression', the role 'body17' has cardinality 0..*.
+An association connects 'simpleocl_OclExpression' and 'simpleocl_IfExp'. From 'simpleocl_OclExpression', the role 'condition' has cardinality 0..*, and from 'simpleocl_IfExp', the role 'IfExp19' has cardinality 0..*.
+An association connects 'simpleocl_Attribute' and 'simpleocl_OclExpression'. From 'simpleocl_Attribute', the role 'Attribute' has cardinality 0..*, and from 'simpleocl_OclExpression', the role 'initExpression21' has cardinality 0..*.
+An association connects 'simpleocl_OclExpression' and 'simpleocl_OperatorCallExp'. From 'simpleocl_OclExpression', the role 'source23' has cardinality 0..*, and from 'simpleocl_OperatorCallExp', the role 'OperatorCallExp' has cardinality 0..*.
+An association connects 'simpleocl_VariableDeclaration' and 'simpleocl_VariableExp'. From 'simpleocl_VariableDeclaration', the role 'VariableDeclaration' has cardinality 0..*, and from 'simpleocl_VariableExp', the role 'variableExp' has cardinality 0..*.
+An association connects 'simpleocl_CollectionPart' and 'simpleocl_CollectionExp'. From 'simpleocl_CollectionPart', the role 'CollectionPart' has cardinality 0..*, and from 'simpleocl_CollectionExp', the role 'collection' has cardinality 0..*.
+An association connects 'simpleocl_CollectionExp' and 'simpleocl_CollectionPart'. From 'simpleocl_CollectionExp', the role 'CollectionExp' has cardinality 0..*, and from 'simpleocl_CollectionPart', the role 'parts' has cardinality 0..*.
+An association connects 'simpleocl_CollectionRange' and 'simpleocl_OclExpression'. From 'simpleocl_CollectionRange', the role 'simpleocl_CollectionRange' has cardinality 0..*, and from 'simpleocl_OclExpression', the role 'simpleocl_OclExpression' has cardinality 0..*.
+An association connects 'simpleocl_CollectionRange' and 'simpleocl_OclExpression'. From 'simpleocl_CollectionRange', the role 'simpleocl_CollectionRange29' has cardinality 0..*, and from 'simpleocl_OclExpression', the role 'simpleocl_OclExpression30' has cardinality 0..*.
+An association connects 'simpleocl_OclExpression' and 'simpleocl_CollectionItem'. From 'simpleocl_OclExpression', the role 'simpleocl_OclExpression32' has cardinality 0..*, and from 'simpleocl_CollectionItem', the role 'simpleocl_CollectionItem' has cardinality 0..*.
+An association connects 'simpleocl_TuplePart' and 'simpleocl_TupleExp'. From 'simpleocl_TuplePart', the role 'TuplePart' has cardinality 0..*, and from 'simpleocl_TupleExp', the role 'tuple' has cardinality 0..*.
+An association connects 'simpleocl_TuplePart' and 'simpleocl_TupleExp'. From 'simpleocl_TuplePart', the role 'tuplePart' has cardinality 0..*, and from 'simpleocl_TupleExp', the role 'TupleExp' has cardinality 0..*.
+An association connects 'simpleocl_MapElement' and 'simpleocl_MapExp'. From 'simpleocl_MapElement', the role 'MapElement' has cardinality 0..*, and from 'simpleocl_MapExp', the role 'map' has cardinality 0..*.
+An association connects 'simpleocl_MapExp' and 'simpleocl_MapElement'. From 'simpleocl_MapExp', the role 'MapExp' has cardinality 0..*, and from 'simpleocl_MapElement', the role 'elements37' has cardinality 0..*.
+An association connects 'simpleocl_MapElement' and 'simpleocl_OclExpression'. From 'simpleocl_MapElement', the role 'simpleocl_MapElement' has cardinality 0..*, and from 'simpleocl_OclExpression', the role 'simpleocl_OclExpression39' has cardinality 0..*.
+An association connects 'simpleocl_MapElement' and 'simpleocl_OclExpression'. From 'simpleocl_MapElement', the role 'simpleocl_MapElement41' has cardinality 0..*, and from 'simpleocl_OclExpression', the role 'simpleocl_OclExpression42' has cardinality 0..*.
+An association connects 'simpleocl_StaticPropertyCallExp' and 'simpleocl_OclType'. From 'simpleocl_StaticPropertyCallExp', the role 'staticPropertyCall' has cardinality 0..*, and from 'simpleocl_OclType', the role 'OclType44' has cardinality 0..*.
+An association connects 'simpleocl_StaticPropertyCallExp' and 'simpleocl_StaticPropertyCall'. From 'simpleocl_StaticPropertyCallExp', the role 'staticCallExp' has cardinality 0..*, and from 'simpleocl_StaticPropertyCall', the role 'StaticPropertyCall' has cardinality 0..*.
+An association connects 'simpleocl_StaticPropertyCallExp' and 'simpleocl_StaticPropertyCall'. From 'simpleocl_StaticPropertyCallExp', the role 'StaticPropertyCallExp' has cardinality 0..*, and from 'simpleocl_StaticPropertyCall', the role 'staticCall' has cardinality 0..*.
+An association connects 'simpleocl_OclExpression' and 'simpleocl_StaticOperationCall'. From 'simpleocl_OclExpression', the role 'simpleocl_OclExpression48' has cardinality 0..*, and from 'simpleocl_StaticOperationCall', the role 'simpleocl_StaticOperationCall' has cardinality 0..*.
+An association connects 'simpleocl_PropertyCallExp' and 'simpleocl_PropertyCall'. From 'simpleocl_PropertyCallExp', the role 'callExp' has cardinality 0..*, and from 'simpleocl_PropertyCall', the role 'PropertyCall' has cardinality 0..*.
+An association connects 'simpleocl_PropertyCallExp' and 'simpleocl_OclExpression'. From 'simpleocl_PropertyCallExp', the role 'appliedProperty' has cardinality 0..*, and from 'simpleocl_OclExpression', the role 'OclExpression' has cardinality 0..*.
+An association connects 'simpleocl_PropertyCall' and 'simpleocl_PropertyCallExp'. From 'simpleocl_PropertyCall', the role 'calls' has cardinality 0..*, and from 'simpleocl_PropertyCallExp', the role 'PropertyCallExp52' has cardinality 0..*.
+An association connects 'simpleocl_OperationCall' and 'simpleocl_OclExpression'. From 'simpleocl_OperationCall', the role 'parentOperation' has cardinality 0..*, and from 'simpleocl_OclExpression', the role 'OclExpression54' has cardinality 0..*.
+An association connects 'simpleocl_OperatorCallExp' and 'simpleocl_OclExpression'. From 'simpleocl_OperatorCallExp', the role 'simpleocl_OperatorCallExp' has cardinality 0..*, and from 'simpleocl_OclExpression', the role 'simpleocl_OclExpression56' has cardinality 0..*.
+An association connects 'simpleocl_OperatorCallExp' and 'simpleocl_OclExpression'. From 'simpleocl_OperatorCallExp', the role 'appliedOperator' has cardinality 0..*, and from 'simpleocl_OclExpression', the role 'OclExpression58' has cardinality 0..*.
+An association connects 'simpleocl_OclExpression' and 'simpleocl_LambdaCallExp'. From 'simpleocl_OclExpression', the role 'simpleocl_OclExpression60' has cardinality 0..*, and from 'simpleocl_LambdaCallExp', the role 'simpleocl_LambdaCallExp' has cardinality 0..*.
+An association connects 'simpleocl_BraceExp' and 'simpleocl_OclExpression'. From 'simpleocl_BraceExp', the role 'simpleocl_BraceExp' has cardinality 0..*, and from 'simpleocl_OclExpression', the role 'simpleocl_OclExpression62' has cardinality 0..*.
+An association connects 'simpleocl_OclExpression' and 'simpleocl_LoopExp'. From 'simpleocl_OclExpression', the role 'OclExpression64' has cardinality 0..*, and from 'simpleocl_LoopExp', the role 'loopExp' has cardinality 0..*.
+An association connects 'simpleocl_Iterator' and 'simpleocl_LoopExp'. From 'simpleocl_Iterator', the role 'Iterator' has cardinality 0..*, and from 'simpleocl_LoopExp', the role 'loopExpr' has cardinality 0..*.
+An association connects 'simpleocl_LocalVariable' and 'simpleocl_IterateExp'. From 'simpleocl_LocalVariable', the role 'LocalVariable67' has cardinality 0..*, and from 'simpleocl_IterateExp', the role 'baseExp' has cardinality 0..*.
+An association connects 'simpleocl_LetExp' and 'simpleocl_LocalVariable'. From 'simpleocl_LetExp', the role 'letExp' has cardinality 0..*, and from 'simpleocl_LocalVariable', the role 'LocalVariable69' has cardinality 0..*.
+An association connects 'simpleocl_OclExpression' and 'simpleocl_LetExp'. From 'simpleocl_OclExpression', the role 'OclExpression72' has cardinality 0..*, and from 'simpleocl_LetExp', the role 'letExp71' has cardinality 0..*.
+An association connects 'simpleocl_OclExpression' and 'simpleocl_IfExp'. From 'simpleocl_OclExpression', the role 'OclExpression74' has cardinality 0..*, and from 'simpleocl_IfExp', the role 'ifExp2' has cardinality 0..*.
+An association connects 'simpleocl_IfExp' and 'simpleocl_OclExpression'. From 'simpleocl_IfExp', the role 'ifExp1' has cardinality 0..*, and from 'simpleocl_OclExpression', the role 'OclExpression76' has cardinality 0..*.
+An association connects 'simpleocl_OclExpression' and 'simpleocl_IfExp'. From 'simpleocl_OclExpression', the role 'OclExpression78' has cardinality 0..*, and from 'simpleocl_IfExp', the role 'ifExp3' has cardinality 0..*.
+An association connects 'simpleocl_OclType' and 'simpleocl_VariableDeclaration'. From 'simpleocl_OclType', the role 'OclType80' has cardinality 0..*, and from 'simpleocl_VariableDeclaration', the role 'variableDeclaration' has cardinality 0..*.
+An association connects 'simpleocl_VariableDeclaration' and 'simpleocl_VariableExp'. From 'simpleocl_VariableDeclaration', the role 'referredVariable' has cardinality 0..*, and from 'simpleocl_VariableExp', the role 'VariableExp' has cardinality 0..*.
+An association connects 'simpleocl_LocalVariable' and 'simpleocl_LetExp'. From 'simpleocl_LocalVariable', the role 'variable' has cardinality 0..*, and from 'simpleocl_LetExp', the role 'LetExp83' has cardinality 0..*.
+An association connects 'simpleocl_OclExpression' and 'simpleocl_LocalVariable'. From 'simpleocl_OclExpression', the role 'OclExpression85' has cardinality 0..*, and from 'simpleocl_LocalVariable', the role 'initializedVariable' has cardinality 0..*.
+An association connects 'simpleocl_IterateExp' and 'simpleocl_LocalVariable'. From 'simpleocl_IterateExp', the role 'IterateExp' has cardinality 0..*, and from 'simpleocl_LocalVariable', the role 'result' has cardinality 0..*.
+An association connects 'simpleocl_LoopExp' and 'simpleocl_Iterator'. From 'simpleocl_LoopExp', the role 'LoopExp88' has cardinality 0..*, and from 'simpleocl_Iterator', the role 'iterators' has cardinality 0..*.
+An association connects 'simpleocl_Parameter' and 'simpleocl_Operation'. From 'simpleocl_Parameter', the role 'parameters' has cardinality 0..*, and from 'simpleocl_Operation', the role 'Operation90' has cardinality 0..*.
+An association connects 'simpleocl_CollectionType' and 'simpleocl_OclType'. From 'simpleocl_CollectionType', the role 'collectionTypes' has cardinality 0..*, and from 'simpleocl_OclType', the role 'OclType92' has cardinality 0..*.
+An association connects 'simpleocl_OclType' and 'simpleocl_OclContextDefinition'. From 'simpleocl_OclType', the role 'context_' has cardinality 0..*, and from 'simpleocl_OclContextDefinition', the role 'OclContextDefinition' has cardinality 0..*.
+An association connects 'simpleocl_OclType' and 'simpleocl_OclExpression'. From 'simpleocl_OclType', the role 'type' has cardinality 0..*, and from 'simpleocl_OclExpression', the role 'OclExpression95' has cardinality 0..*.
+An association connects 'simpleocl_Operation' and 'simpleocl_OclType'. From 'simpleocl_Operation', the role 'Operation97' has cardinality 0..*, and from 'simpleocl_OclType', the role 'returnType' has cardinality 0..*.
+An association connects 'simpleocl_OclType' and 'simpleocl_MapType'. From 'simpleocl_OclType', the role 'valueType' has cardinality 0..*, and from 'simpleocl_MapType', the role 'MapType' has cardinality 0..*.
+An association connects 'simpleocl_Attribute' and 'simpleocl_OclType'. From 'simpleocl_Attribute', the role 'Attribute101' has cardinality 0..*, and from 'simpleocl_OclType', the role 'type100' has cardinality 0..*.
+An association connects 'simpleocl_OclType' and 'simpleocl_MapType'. From 'simpleocl_OclType', the role 'keyType' has cardinality 0..*, and from 'simpleocl_MapType', the role 'MapType103' has cardinality 0..*.
+An association connects 'simpleocl_OclType' and 'simpleocl_CollectionType'. From 'simpleocl_OclType', the role 'elementType' has cardinality 0..*, and from 'simpleocl_CollectionType', the role 'CollectionType' has cardinality 0..*.
+An association connects 'simpleocl_OclType' and 'simpleocl_TupleTypeAttribute'. From 'simpleocl_OclType', the role 'type106' has cardinality 0..*, and from 'simpleocl_TupleTypeAttribute', the role 'TupleTypeAttribute' has cardinality 0..*.
+An association connects 'simpleocl_VariableDeclaration' and 'simpleocl_OclType'. From 'simpleocl_VariableDeclaration', the role 'VariableDeclaration109' has cardinality 0..*, and from 'simpleocl_OclType', the role 'type108' has cardinality 0..*.
+An association connects 'simpleocl_OclType' and 'simpleocl_LambdaType'. From 'simpleocl_OclType', the role 'returnType111' has cardinality 0..*, and from 'simpleocl_LambdaType', the role 'LambdaType' has cardinality 0..*.
+An association connects 'simpleocl_LambdaType' and 'simpleocl_OclType'. From 'simpleocl_LambdaType', the role 'LambdaType113' has cardinality 0..*, and from 'simpleocl_OclType', the role 'argumentTypes' has cardinality 0..*.
+An association connects 'simpleocl_StaticPropertyCallExp' and 'simpleocl_OclType'. From 'simpleocl_StaticPropertyCallExp', the role 'StaticPropertyCallExp116' has cardinality 0..*, and from 'simpleocl_OclType', the role 'source115' has cardinality 0..*.
+An association connects 'simpleocl_OclModel' and 'simpleocl_OclModelElementExp'. From 'simpleocl_OclModel', the role 'simpleocl_OclModel' has cardinality 0..*, and from 'simpleocl_OclModelElementExp', the role 'simpleocl_OclModelElementExp' has cardinality 0..*.
+An association connects 'simpleocl_TupleType' and 'simpleocl_TupleTypeAttribute'. From 'simpleocl_TupleType', the role 'tupleType' has cardinality 0..*, and from 'simpleocl_TupleTypeAttribute', the role 'TupleTypeAttribute119' has cardinality 0..*.
+An association connects 'simpleocl_OclType' and 'simpleocl_TupleTypeAttribute'. From 'simpleocl_OclType', the role 'OclType121' has cardinality 0..*, and from 'simpleocl_TupleTypeAttribute', the role 'tupleTypeAttribute' has cardinality 0..*.
+An association connects 'simpleocl_TupleTypeAttribute' and 'simpleocl_TupleType'. From 'simpleocl_TupleTypeAttribute', the role 'attributes' has cardinality 0..*, and from 'simpleocl_TupleType', the role 'TupleType' has cardinality 0..*.
+An association connects 'simpleocl_OclModel' and 'simpleocl_OclModelElement'. From 'simpleocl_OclModel', the role 'OclModel' has cardinality 0..*, and from 'simpleocl_OclModelElement', the role 'elements124' has cardinality 0..*.
+An association connects 'simpleocl_MapType' and 'simpleocl_OclType'. From 'simpleocl_MapType', the role 'mapType2' has cardinality 0..*, and from 'simpleocl_OclType', the role 'OclType126' has cardinality 0..*.
+An association connects 'simpleocl_OclType' and 'simpleocl_MapType'. From 'simpleocl_OclType', the role 'OclType128' has cardinality 0..*, and from 'simpleocl_MapType', the role 'mapType' has cardinality 0..*.
+An association connects 'simpleocl_OclType' and 'simpleocl_LambdaType'. From 'simpleocl_OclType', the role 'OclType130' has cardinality 0..*, and from 'simpleocl_LambdaType', the role 'lambdaReturnType' has cardinality 0..*.
+An association connects 'simpleocl_OclType' and 'simpleocl_LambdaType'. From 'simpleocl_OclType', the role 'OclType132' has cardinality 0..*, and from 'simpleocl_LambdaType', the role 'lambdaArgType' has cardinality 0..*.
+An association connects 'simpleocl_OclFeature' and 'simpleocl_OclFeatureDefinition'. From 'simpleocl_OclFeature', the role 'OclFeature' has cardinality 0..*, and from 'simpleocl_OclFeatureDefinition', the role 'definition' has cardinality 0..*.
+An association connects 'simpleocl_OclFeatureDefinition' and 'simpleocl_OclContextDefinition'. From 'simpleocl_OclFeatureDefinition', the role 'definition135' has cardinality 0..*, and from 'simpleocl_OclContextDefinition', the role 'OclContextDefinition136' has cardinality 0..*.
+An association connects 'simpleocl_OclContextDefinition' and 'simpleocl_OclFeatureDefinition'. From 'simpleocl_OclContextDefinition', the role 'context_138' has cardinality 0..*, and from 'simpleocl_OclFeatureDefinition', the role 'OclFeatureDefinition' has cardinality 0..*.
+An association connects 'simpleocl_OclType' and 'simpleocl_OclContextDefinition'. From 'simpleocl_OclType', the role 'OclType140' has cardinality 0..*, and from 'simpleocl_OclContextDefinition', the role 'definitions' has cardinality 0..*.
+An association connects 'simpleocl_OclFeatureDefinition' and 'simpleocl_OclFeature'. From 'simpleocl_OclFeatureDefinition', the role 'OclFeatureDefinition142' has cardinality 0..*, and from 'simpleocl_OclFeature', the role 'feature' has cardinality 0..*.
+An association connects 'simpleocl_Attribute' and 'simpleocl_OclExpression'. From 'simpleocl_Attribute', the role 'owningAttribute' has cardinality 0..*, and from 'simpleocl_OclExpression', the role 'OclExpression144' has cardinality 0..*.
+An association connects 'simpleocl_Attribute' and 'simpleocl_OclType'. From 'simpleocl_Attribute', the role 'attribute' has cardinality 0..*, and from 'simpleocl_OclType', the role 'OclType146' has cardinality 0..*.
+An association connects 'simpleocl_Operation' and 'simpleocl_Parameter'. From 'simpleocl_Operation', the role 'operation' has cardinality 0..*, and from 'simpleocl_Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'simpleocl_Operation' and 'simpleocl_OclType'. From 'simpleocl_Operation', the role 'operation149' has cardinality 0..*, and from 'simpleocl_OclType', the role 'OclType150' has cardinality 0..*.
+An association connects 'simpleocl_Operation' and 'simpleocl_OclExpression'. From 'simpleocl_Operation', the role 'owningOperation' has cardinality 0..*, and from 'simpleocl_OclExpression', the role 'OclExpression152' has cardinality 0..*.
+An association connects 'simpleocl_OclModelElement' and 'simpleocl_OclModel'. From 'simpleocl_OclModelElement', the role 'OclModelElement' has cardinality 0..*, and from 'simpleocl_OclModel', the role 'model' has cardinality 0..*.
+An association connects 'simpleocl_OclInstanceModel' and 'simpleocl_OclMetamodel'. From 'simpleocl_OclInstanceModel', the role 'OclInstanceModel' has cardinality 0..*, and from 'simpleocl_OclMetamodel', the role 'metamodel' has cardinality 0..*.
+An association connects 'simpleocl_OclMetamodel' and 'simpleocl_OclInstanceModel'. From 'simpleocl_OclMetamodel', the role 'OclMetamodel' has cardinality 0..*, and from 'simpleocl_OclInstanceModel', the role 'model156' has cardinality 0..*.

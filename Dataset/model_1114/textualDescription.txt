@@ -1,0 +1,27 @@
+The domain model 'stateChart' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'stateChart_Model' represents an important domain concept.
+It has the following attributes: 'metadata', which is of type str; 'description', which is of type str; 'name', which is of type str.
+
+'stateChart_Transition' represents an important domain concept.
+It has the following attributes: 'TE', which is of type str; 'name', which is of type str; 'metadata', which is of type str.
+
+'stateChart_Variable' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'stateChart_Node' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'metadata', which is of type str; 'actions', which is of type str; 'label', which is of type str; 'activity', which is of type str; 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'stateChart_Variable' and 'stateChart_Node'. From 'stateChart_Variable', the role 'stateChart_Variable' has cardinality 0..*, and from 'stateChart_Node', the role 'stateChart_Node' has cardinality 0..*.
+An association connects 'stateChart_Node' and 'stateChart_Node'. From 'stateChart_Node', the role 'Father' has cardinality 0..*, and from 'stateChart_Node', the role 'Node' has cardinality 0..*.
+An association connects 'stateChart_Node' and 'stateChart_Node'. From 'stateChart_Node', the role 'Children' has cardinality 0..*, and from 'stateChart_Node', the role 'Node5' has cardinality 0..*.
+An association connects 'stateChart_Transition' and 'stateChart_Node'. From 'stateChart_Transition', the role 'stateChart_Transition' has cardinality 0..*, and from 'stateChart_Node', the role 'stateChart_Node7' has cardinality 0..*.
+An association connects 'stateChart_Transition' and 'stateChart_Node'. From 'stateChart_Transition', the role 'stateChart_Transition10' has cardinality 0..*, and from 'stateChart_Node', the role 'stateChart_Node9' has cardinality 0..*.
+An association connects 'stateChart_Node' and 'stateChart_Model'. From 'stateChart_Node', the role 'stateChart_Node12' has cardinality 0..*, and from 'stateChart_Model', the role 'stateChart_Model' has cardinality 0..*.
+An association connects 'stateChart_Variable' and 'stateChart_Model'. From 'stateChart_Variable', the role 'stateChart_Variable15' has cardinality 0..*, and from 'stateChart_Model', the role 'stateChart_Model14' has cardinality 0..*.
+An association connects 'stateChart_Model' and 'stateChart_Transition'. From 'stateChart_Model', the role 'stateChart_Model17' has cardinality 0..*, and from 'stateChart_Transition', the role 'stateChart_Transition18' has cardinality 0..*.
+An association connects 'stateChart_Transition' and 'stateChart_Node'. From 'stateChart_Transition', the role 'stateChart_Transition20' has cardinality 0..*, and from 'stateChart_Node', the role 'stateChart_Node21' has cardinality 0..*.
+An association connects 'stateChart_Transition' and 'stateChart_Node'. From 'stateChart_Transition', the role 'stateChart_Transition23' has cardinality 0..*, and from 'stateChart_Node', the role 'stateChart_Node24' has cardinality 0..*.

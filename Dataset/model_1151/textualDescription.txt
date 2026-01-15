@@ -1,0 +1,33 @@
+The domain model 'myFirstEditorCustom' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'myFirstEditorCustom_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myFirstEditorCustom_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myFirstEditorCustom_State' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'myFirstEditorCustom_EndState' represents an important domain concept.
+It does not declare any attributes.
+
+'myFirstEditorCustom_StartState' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'myFirstEditorCustom_StartState' is a specialization of 'State'.
+The class 'myFirstEditorCustom_EndState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myFirstEditorCustom_StateMachine' and 'myFirstEditorCustom_State'. From 'myFirstEditorCustom_StateMachine', the role 'myFirstEditorCustom_StateMachine' has cardinality 0..*, and from 'myFirstEditorCustom_State', the role 'myFirstEditorCustom_State' has cardinality 0..*.
+An association connects 'myFirstEditorCustom_Transition' and 'myFirstEditorCustom_StateMachine'. From 'myFirstEditorCustom_Transition', the role 'myFirstEditorCustom_Transition' has cardinality 0..*, and from 'myFirstEditorCustom_StateMachine', the role 'myFirstEditorCustom_StateMachine2' has cardinality 0..*.
+An association connects 'myFirstEditorCustom_State' and 'myFirstEditorCustom_Transition'. From 'myFirstEditorCustom_State', the role 'target' has cardinality 0..*, and from 'myFirstEditorCustom_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'myFirstEditorCustom_State' and 'myFirstEditorCustom_Transition'. From 'myFirstEditorCustom_State', the role 'source' has cardinality 0..*, and from 'myFirstEditorCustom_Transition', the role 'Transition5' has cardinality 0..*.
+An association connects 'myFirstEditorCustom_State' and 'myFirstEditorCustom_Transition'. From 'myFirstEditorCustom_State', the role 'State' has cardinality 0..*, and from 'myFirstEditorCustom_Transition', the role 'out' has cardinality 0..*.
+An association connects 'myFirstEditorCustom_State' and 'myFirstEditorCustom_Transition'. From 'myFirstEditorCustom_State', the role 'State8' has cardinality 0..*, and from 'myFirstEditorCustom_Transition', the role 'in' has cardinality 0..*.

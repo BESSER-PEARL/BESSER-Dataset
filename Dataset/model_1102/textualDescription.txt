@@ -1,0 +1,33 @@
+The domain model 'petrinet' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_Net' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petrinet_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_Place' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'petrinet_Net' is a specialization of 'NamedElement'.
+The class 'petrinet_Place' is a specialization of 'NamedElement'.
+The class 'petrinet_Transition' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'petrinet_Place' and 'petrinet_Net'. From 'petrinet_Place', the role 'Place' has cardinality 0..*, and from 'petrinet_Net', the role 'net' has cardinality 0..*.
+An association connects 'petrinet_Net' and 'petrinet_Transition'. From 'petrinet_Net', the role 'net2' has cardinality 0..*, and from 'petrinet_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'petrinet_Place' and 'petrinet_Net'. From 'petrinet_Place', the role 'places' has cardinality 0..*, and from 'petrinet_Net', the role 'Net' has cardinality 0..*.
+An association connects 'petrinet_Place' and 'petrinet_Transition'. From 'petrinet_Place', the role 'src' has cardinality 0..*, and from 'petrinet_Transition', the role 'Transition5' has cardinality 0..*.
+An association connects 'petrinet_Transition' and 'petrinet_Place'. From 'petrinet_Transition', the role 'Transition7' has cardinality 0..*, and from 'petrinet_Place', the role 'dst' has cardinality 0..*.
+An association connects 'petrinet_Transition' and 'petrinet_Net'. From 'petrinet_Transition', the role 'transitions' has cardinality 0..*, and from 'petrinet_Net', the role 'Net9' has cardinality 0..*.
+An association connects 'petrinet_Transition' and 'petrinet_Place'. From 'petrinet_Transition', the role 'dst11' has cardinality 0..*, and from 'petrinet_Place', the role 'Place12' has cardinality 0..*.
+An association connects 'petrinet_Place' and 'petrinet_Transition'. From 'petrinet_Place', the role 'Place15' has cardinality 0..*, and from 'petrinet_Transition', the role 'src14' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/amine-ben/OCL-lite/fr.inria.diverse.ocllite.parent/fr.inria.diverse.ocllite/model/generated/OCLlite.ecore

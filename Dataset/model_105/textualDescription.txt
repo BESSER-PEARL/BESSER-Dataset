@@ -1,0 +1,589 @@
+The domain model 'DOM' describes the core structural elements and their relationships within the system.
+
+The model defines 109 main class(es).
+
+'DOM_AbstractTypeDeclaration' represents an important domain concept.
+It has the following attributes: 'packageMemberTypeDeclaration', which is of type str; 'memberTypeDeclaration', which is of type str; 'localTypeDeclaration', which is of type str.
+
+'DOM_ThisExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_VariableDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_MemberValuePair' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_TagElement' represents an important domain concept.
+It has the following attributes: 'nested', which is of type str; 'tagName', which is of type str.
+
+'DOM_TypeDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'booleanValue', which is of type str.
+
+'DOM_MethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_SingleMemberAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_CatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_FieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ClassInstanceCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_MarkerAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_AnonymousClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_CastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_SingleVariableDeclaration' represents an important domain concept.
+It has one attribute: 'varargs', which is of type str.
+
+'DOM_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_FieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_Expression' represents an important domain concept.
+It has the following attributes: 'resolveBoxing', which is of type str; 'resolveUnboxing', which is of type str.
+
+'DOM_QualifiedName' represents an important domain concept.
+It does not declare any attributes.
+
+'ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_LineComment' represents an important domain concept.
+It does not declare any attributes.
+
+'BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_EmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_AST' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_TypeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_MethodRefParameter' represents an important domain concept.
+It has one attribute: 'varargs', which is of type str.
+
+'DOM_MemberRef' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_CharacterLiteral' represents an important domain concept.
+It has the following attributes: 'escapedValue', which is of type str; 'charValue', which is of type str.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_PackageDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ParameterizedType' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ParenthesizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_SimpleName' represents an important domain concept.
+It has the following attributes: 'identifier', which is of type str; 'declaration', which is of type str.
+
+'DOM_EnhancedForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_BlockComment' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_Modifier' represents an important domain concept.
+It has the following attributes: 'none', which is of type str; 'final', which is of type str; 'native', which is of type str; 'public', which is of type str; 'static', which is of type str; 'protected', which is of type str; 'strictfp', which is of type str; 'transient', which is of type str; 'synchronized', which is of type str; 'private', which is of type str; 'volatile', which is of type str; 'abstract', which is of type str.
+
+'DOM_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'extraDimensions', which is of type str.
+
+'DOM_ArrayType' represents an important domain concept.
+It has one attribute: 'dimensions', which is of type str.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_SuperMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_NumberLiteral' represents an important domain concept.
+It has one attribute: 'token', which is of type str.
+
+'Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_SuperConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_SimpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_Name' represents an important domain concept.
+It has one attribute: 'fullyQualifiedName', which is of type str.
+
+'DOM_IMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_TextElement' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'DOM_ArrayCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_TypeDeclaration' represents an important domain concept.
+It has one attribute: 'interface', which is of type str.
+
+'DOM_ExtendedModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ImportDeclaration' represents an important domain concept.
+It has the following attributes: 'static', which is of type str; 'onDemand', which is of type str.
+
+'DOM_TryStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ArrayAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_MethodRef' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_InstanceofExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_EnumDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_DoStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_WildcardType' represents an important domain concept.
+It has one attribute: 'upperBound', which is of type str.
+
+'DOM_VariableDeclarationFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_AssertStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Name' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_PrefixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'DOM_SwitchCase' represents an important domain concept.
+It has one attribute: 'default', which is of type str.
+
+'DOM_SynchronizedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_NormalAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_IType' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_InfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'DOM_SuperFieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_Initializer' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtendedModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_Javadoc' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_IPackageFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_MethodDeclaration' represents an important domain concept.
+It has the following attributes: 'extraDimensions', which is of type str; 'constructor', which is of type str; 'varargs', which is of type str.
+
+'DOM_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_StringLiteral' represents an important domain concept.
+It has the following attributes: 'escapedValue', which is of type str; 'literalValue', which is of type str.
+
+'DOM_AnnotationTypeMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_AnnotationTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_VariableDeclarationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_PrimitiveType' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+'DOM_LabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_EnumConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ThrowStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_PostfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'DOM_Assignment' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'DOM_QualifiedType' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_TypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PostfixExpressionOperatorKind' defines the following possible values: 'increment', 'decrement'.
+The enumeration 'InfixExpressionOperatorKind' defines the following possible values: 'greater_equals', 'conditional_and', 'or', 'greater', 'conditional_or', 'right_shift_signed', 'right_shift_unsigned', 'equals', 'not_equals', 'divide', 'plus', 'left_shift', 'less', 'less_equals', 'remainder', 'times', 'minus', 'and', 'xor'.
+The enumeration 'AssignmentOperatorKind' defines the following possible values: 'times_assign', 'plus_assign', 'left_shift_assign', 'bit_or_assign', 'assign', 'bit_and_assign', 'divide_assign', 'right_shift_signed_assign', 'bit_xor_assign', 'minus_assign', 'right_shift_unsigned_assign', 'remainder_assign'.
+The enumeration 'PrefixExpressionOperatorKind' defines the following possible values: 'not', 'minus', 'increment', 'decrement', 'complement', 'plus'.
+
+The model also captures inheritance relationships between classes.
+The class 'DOM_AnonymousClassDeclaration' is a specialization of 'ASTNode'.
+The class 'DOM_BodyDeclaration' is a specialization of 'ASTNode'.
+The class 'DOM_CatchClause' is a specialization of 'ASTNode'.
+The class 'DOM_Comment' is a specialization of 'ASTNode'.
+The class 'DOM_CompilationUnit' is a specialization of 'ASTNode'.
+The class 'DOM_Expression' is a specialization of 'ASTNode'.
+The class 'DOM_ImportDeclaration' is a specialization of 'ASTNode'.
+The class 'DOM_MemberRef' is a specialization of 'ASTNode'.
+The class 'DOM_MemberValuePair' is a specialization of 'ASTNode'.
+The class 'DOM_MethodRef' is a specialization of 'ASTNode'.
+The class 'DOM_MethodRefParameter' is a specialization of 'ASTNode'.
+The class 'DOM_Modifier' is a specialization of 'ASTNode'.
+The class 'DOM_Modifier' is a specialization of 'ExtendedModifier'.
+The class 'DOM_PackageDeclaration' is a specialization of 'ASTNode'.
+The class 'DOM_Statement' is a specialization of 'ASTNode'.
+The class 'DOM_TagElement' is a specialization of 'ASTNode'.
+The class 'DOM_TextElement' is a specialization of 'ASTNode'.
+The class 'DOM_Type' is a specialization of 'ASTNode'.
+The class 'DOM_TypeParameter' is a specialization of 'ASTNode'.
+The class 'DOM_VariableDeclaration' is a specialization of 'ASTNode'.
+The class 'DOM_AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'DOM_AnnotationTypeMemberDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'DOM_EnumConstantDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'DOM_FieldDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'DOM_Initializer' is a specialization of 'BodyDeclaration'.
+The class 'DOM_MethodDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'DOM_AnnotationTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'DOM_EnumDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'DOM_TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'DOM_BlockComment' is a specialization of 'Comment'.
+The class 'DOM_Javadoc' is a specialization of 'Comment'.
+The class 'DOM_LineComment' is a specialization of 'Comment'.
+The class 'DOM_Annotation' is a specialization of 'Expression'.
+The class 'DOM_Annotation' is a specialization of 'ExtendedModifier'.
+The class 'DOM_ArrayAccess' is a specialization of 'Expression'.
+The class 'DOM_ArrayCreation' is a specialization of 'Expression'.
+The class 'DOM_ArrayInitializer' is a specialization of 'Expression'.
+The class 'DOM_Assignment' is a specialization of 'Expression'.
+The class 'DOM_BooleanLiteral' is a specialization of 'Expression'.
+The class 'DOM_CastExpression' is a specialization of 'Expression'.
+The class 'DOM_CharacterLiteral' is a specialization of 'Expression'.
+The class 'DOM_ClassInstanceCreation' is a specialization of 'Expression'.
+The class 'DOM_ConditionalExpression' is a specialization of 'Expression'.
+The class 'DOM_FieldAccess' is a specialization of 'Expression'.
+The class 'DOM_InfixExpression' is a specialization of 'Expression'.
+The class 'DOM_InstanceofExpression' is a specialization of 'Expression'.
+The class 'DOM_MethodInvocation' is a specialization of 'Expression'.
+The class 'DOM_Name' is a specialization of 'Expression'.
+The class 'DOM_NullLiteral' is a specialization of 'Expression'.
+The class 'DOM_NumberLiteral' is a specialization of 'Expression'.
+The class 'DOM_ParenthesizedExpression' is a specialization of 'Expression'.
+The class 'DOM_PostfixExpression' is a specialization of 'Expression'.
+The class 'DOM_PrefixExpression' is a specialization of 'Expression'.
+The class 'DOM_StringLiteral' is a specialization of 'Expression'.
+The class 'DOM_SuperFieldAccess' is a specialization of 'Expression'.
+The class 'DOM_SuperMethodInvocation' is a specialization of 'Expression'.
+The class 'DOM_ThisExpression' is a specialization of 'Expression'.
+The class 'DOM_TypeLiteral' is a specialization of 'Expression'.
+The class 'DOM_VariableDeclarationExpression' is a specialization of 'Expression'.
+The class 'DOM_AssertStatement' is a specialization of 'Statement'.
+The class 'DOM_Block' is a specialization of 'Statement'.
+The class 'DOM_BreakStatement' is a specialization of 'Statement'.
+The class 'DOM_ConstructorInvocation' is a specialization of 'Statement'.
+The class 'DOM_ContinueStatement' is a specialization of 'Statement'.
+The class 'DOM_DoStatement' is a specialization of 'Statement'.
+The class 'DOM_EmptyStatement' is a specialization of 'Statement'.
+The class 'DOM_EnhancedForStatement' is a specialization of 'Statement'.
+The class 'DOM_ExpressionStatement' is a specialization of 'Statement'.
+The class 'DOM_ForStatement' is a specialization of 'Statement'.
+The class 'DOM_IfStatement' is a specialization of 'Statement'.
+The class 'DOM_LabeledStatement' is a specialization of 'Statement'.
+The class 'DOM_ReturnStatement' is a specialization of 'Statement'.
+The class 'DOM_SuperConstructorInvocation' is a specialization of 'Statement'.
+The class 'DOM_SwitchCase' is a specialization of 'Statement'.
+The class 'DOM_SwitchStatement' is a specialization of 'Statement'.
+The class 'DOM_SynchronizedStatement' is a specialization of 'Statement'.
+The class 'DOM_ThrowStatement' is a specialization of 'Statement'.
+The class 'DOM_TryStatement' is a specialization of 'Statement'.
+The class 'DOM_TypeDeclarationStatement' is a specialization of 'Statement'.
+The class 'DOM_VariableDeclarationStatement' is a specialization of 'Statement'.
+The class 'DOM_WhileStatement' is a specialization of 'Statement'.
+The class 'DOM_ArrayType' is a specialization of 'Type'.
+The class 'DOM_ParameterizedType' is a specialization of 'Type'.
+The class 'DOM_PrimitiveType' is a specialization of 'Type'.
+The class 'DOM_QualifiedType' is a specialization of 'Type'.
+The class 'DOM_SimpleType' is a specialization of 'Type'.
+The class 'DOM_WildcardType' is a specialization of 'Type'.
+The class 'DOM_SingleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+The class 'DOM_VariableDeclarationFragment' is a specialization of 'VariableDeclaration'.
+The class 'DOM_QualifiedName' is a specialization of 'Name'.
+The class 'DOM_SimpleName' is a specialization of 'Name'.
+The class 'DOM_MarkerAnnotation' is a specialization of 'Annotation'.
+The class 'DOM_NormalAnnotation' is a specialization of 'Annotation'.
+The class 'DOM_SingleMemberAnnotation' is a specialization of 'Annotation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'DOM_AST' and 'DOM_ASTNode'. From 'DOM_AST', the role 'DOM_AST' has cardinality 0..*, and from 'DOM_ASTNode', the role 'DOM_ASTNode' has cardinality 0..*.
+An association connects 'DOM_AnonymousClassDeclaration' and 'DOM_BodyDeclaration'. From 'DOM_AnonymousClassDeclaration', the role 'DOM_AnonymousClassDeclaration' has cardinality 0..*, and from 'DOM_BodyDeclaration', the role 'DOM_BodyDeclaration' has cardinality 0..*.
+An association connects 'DOM_ExtendedModifier' and 'DOM_BodyDeclaration'. From 'DOM_ExtendedModifier', the role 'DOM_ExtendedModifier' has cardinality 0..*, and from 'DOM_BodyDeclaration', the role 'DOM_BodyDeclaration3' has cardinality 0..*.
+An association connects 'DOM_Javadoc' and 'DOM_BodyDeclaration'. From 'DOM_Javadoc', the role 'DOM_Javadoc' has cardinality 0..*, and from 'DOM_BodyDeclaration', the role 'DOM_BodyDeclaration5' has cardinality 0..*.
+An association connects 'DOM_CatchClause' and 'DOM_Block'. From 'DOM_CatchClause', the role 'DOM_CatchClause' has cardinality 0..*, and from 'DOM_Block', the role 'DOM_Block' has cardinality 0..*.
+An association connects 'DOM_CatchClause' and 'DOM_SingleVariableDeclaration'. From 'DOM_CatchClause', the role 'DOM_CatchClause8' has cardinality 0..*, and from 'DOM_SingleVariableDeclaration', the role 'DOM_SingleVariableDeclaration' has cardinality 0..*.
+An association connects 'DOM_ASTNode' and 'DOM_Comment'. From 'DOM_ASTNode', the role 'DOM_ASTNode10' has cardinality 0..*, and from 'DOM_Comment', the role 'DOM_Comment' has cardinality 0..*.
+An association connects 'DOM_CompilationUnit' and 'DOM_Comment'. From 'DOM_CompilationUnit', the role 'DOM_CompilationUnit' has cardinality 0..*, and from 'DOM_Comment', the role 'DOM_Comment12' has cardinality 0..*.
+An association connects 'DOM_CompilationUnit' and 'DOM_PackageDeclaration'. From 'DOM_CompilationUnit', the role 'DOM_CompilationUnit14' has cardinality 0..*, and from 'DOM_PackageDeclaration', the role 'DOM_PackageDeclaration' has cardinality 0..*.
+An association connects 'DOM_CompilationUnit' and 'DOM_ImportDeclaration'. From 'DOM_CompilationUnit', the role 'DOM_CompilationUnit16' has cardinality 0..*, and from 'DOM_ImportDeclaration', the role 'DOM_ImportDeclaration' has cardinality 0..*.
+An association connects 'DOM_AbstractTypeDeclaration' and 'DOM_CompilationUnit'. From 'DOM_AbstractTypeDeclaration', the role 'DOM_AbstractTypeDeclaration' has cardinality 0..*, and from 'DOM_CompilationUnit', the role 'DOM_CompilationUnit18' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_IType'. From 'DOM_Expression', the role 'DOM_Expression' has cardinality 0..*, and from 'DOM_IType', the role 'DOM_IType' has cardinality 0..*.
+An association connects 'DOM_ImportDeclaration' and 'DOM_Name'. From 'DOM_ImportDeclaration', the role 'DOM_ImportDeclaration21' has cardinality 0..*, and from 'DOM_Name', the role 'DOM_Name' has cardinality 0..*.
+An association connects 'DOM_SimpleName' and 'DOM_MemberRef'. From 'DOM_SimpleName', the role 'DOM_SimpleName' has cardinality 0..*, and from 'DOM_MemberRef', the role 'DOM_MemberRef' has cardinality 0..*.
+An association connects 'DOM_MemberRef' and 'DOM_Name'. From 'DOM_MemberRef', the role 'DOM_MemberRef24' has cardinality 0..*, and from 'DOM_Name', the role 'DOM_Name25' has cardinality 0..*.
+An association connects 'DOM_MemberValuePair' and 'DOM_SimpleName'. From 'DOM_MemberValuePair', the role 'DOM_MemberValuePair' has cardinality 0..*, and from 'DOM_SimpleName', the role 'DOM_SimpleName27' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_MemberValuePair'. From 'DOM_Expression', the role 'DOM_Expression30' has cardinality 0..*, and from 'DOM_MemberValuePair', the role 'DOM_MemberValuePair29' has cardinality 0..*.
+An association connects 'DOM_SimpleName' and 'DOM_MethodRef'. From 'DOM_SimpleName', the role 'DOM_SimpleName32' has cardinality 0..*, and from 'DOM_MethodRef', the role 'DOM_MethodRef' has cardinality 0..*.
+An association connects 'DOM_Name' and 'DOM_MethodRef'. From 'DOM_Name', the role 'DOM_Name35' has cardinality 0..*, and from 'DOM_MethodRef', the role 'DOM_MethodRef34' has cardinality 0..*.
+An association connects 'DOM_MethodRefParameter' and 'DOM_MethodRef'. From 'DOM_MethodRefParameter', the role 'DOM_MethodRefParameter' has cardinality 0..*, and from 'DOM_MethodRef', the role 'DOM_MethodRef37' has cardinality 0..*.
+An association connects 'DOM_SimpleName' and 'DOM_MethodRefParameter'. From 'DOM_SimpleName', the role 'DOM_SimpleName40' has cardinality 0..*, and from 'DOM_MethodRefParameter', the role 'DOM_MethodRefParameter39' has cardinality 0..*.
+An association connects 'DOM_MethodRefParameter' and 'DOM_Type'. From 'DOM_MethodRefParameter', the role 'DOM_MethodRefParameter42' has cardinality 0..*, and from 'DOM_Type', the role 'DOM_Type' has cardinality 0..*.
+An association connects 'DOM_Annotation' and 'DOM_PackageDeclaration'. From 'DOM_Annotation', the role 'DOM_Annotation' has cardinality 0..*, and from 'DOM_PackageDeclaration', the role 'DOM_PackageDeclaration44' has cardinality 0..*.
+An association connects 'DOM_Javadoc' and 'DOM_PackageDeclaration'. From 'DOM_Javadoc', the role 'DOM_Javadoc47' has cardinality 0..*, and from 'DOM_PackageDeclaration', the role 'DOM_PackageDeclaration46' has cardinality 0..*.
+An association connects 'DOM_PackageDeclaration' and 'DOM_Name'. From 'DOM_PackageDeclaration', the role 'DOM_PackageDeclaration49' has cardinality 0..*, and from 'DOM_Name', the role 'DOM_Name50' has cardinality 0..*.
+An association connects 'DOM_PackageDeclaration' and 'DOM_IPackageFragment'. From 'DOM_PackageDeclaration', the role 'DOM_PackageDeclaration52' has cardinality 0..*, and from 'DOM_IPackageFragment', the role 'DOM_IPackageFragment' has cardinality 0..*.
+An association connects 'DOM_TagElement' and 'DOM_ASTNode'. From 'DOM_TagElement', the role 'DOM_TagElement' has cardinality 0..*, and from 'DOM_ASTNode', the role 'DOM_ASTNode54' has cardinality 0..*.
+An association connects 'DOM_TypeParameter' and 'DOM_SimpleName'. From 'DOM_TypeParameter', the role 'DOM_TypeParameter' has cardinality 0..*, and from 'DOM_SimpleName', the role 'DOM_SimpleName56' has cardinality 0..*.
+An association connects 'DOM_Type' and 'DOM_TypeParameter'. From 'DOM_Type', the role 'DOM_Type59' has cardinality 0..*, and from 'DOM_TypeParameter', the role 'DOM_TypeParameter58' has cardinality 0..*.
+An association connects 'DOM_VariableDeclaration' and 'DOM_Expression'. From 'DOM_VariableDeclaration', the role 'DOM_VariableDeclaration' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression61' has cardinality 0..*.
+An association connects 'DOM_SimpleName' and 'DOM_VariableDeclaration'. From 'DOM_SimpleName', the role 'DOM_SimpleName64' has cardinality 0..*, and from 'DOM_VariableDeclaration', the role 'DOM_VariableDeclaration63' has cardinality 0..*.
+An association connects 'DOM_BodyDeclaration' and 'DOM_AbstractTypeDeclaration'. From 'DOM_BodyDeclaration', the role 'DOM_BodyDeclaration67' has cardinality 0..*, and from 'DOM_AbstractTypeDeclaration', the role 'DOM_AbstractTypeDeclaration66' has cardinality 0..*.
+An association connects 'DOM_SimpleName' and 'DOM_AbstractTypeDeclaration'. From 'DOM_SimpleName', the role 'DOM_SimpleName70' has cardinality 0..*, and from 'DOM_AbstractTypeDeclaration', the role 'DOM_AbstractTypeDeclaration69' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_AnnotationTypeMemberDeclaration'. From 'DOM_Expression', the role 'DOM_Expression72' has cardinality 0..*, and from 'DOM_AnnotationTypeMemberDeclaration', the role 'DOM_AnnotationTypeMemberDeclaration' has cardinality 0..*.
+An association connects 'DOM_SimpleName' and 'DOM_AnnotationTypeMemberDeclaration'. From 'DOM_SimpleName', the role 'DOM_SimpleName75' has cardinality 0..*, and from 'DOM_AnnotationTypeMemberDeclaration', the role 'DOM_AnnotationTypeMemberDeclaration74' has cardinality 0..*.
+An association connects 'DOM_Type' and 'DOM_AnnotationTypeMemberDeclaration'. From 'DOM_Type', the role 'DOM_Type78' has cardinality 0..*, and from 'DOM_AnnotationTypeMemberDeclaration', the role 'DOM_AnnotationTypeMemberDeclaration77' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_EnumConstantDeclaration'. From 'DOM_Expression', the role 'DOM_Expression80' has cardinality 0..*, and from 'DOM_EnumConstantDeclaration', the role 'DOM_EnumConstantDeclaration' has cardinality 0..*.
+An association connects 'DOM_AnonymousClassDeclaration' and 'DOM_EnumConstantDeclaration'. From 'DOM_AnonymousClassDeclaration', the role 'DOM_AnonymousClassDeclaration83' has cardinality 0..*, and from 'DOM_EnumConstantDeclaration', the role 'DOM_EnumConstantDeclaration82' has cardinality 0..*.
+An association connects 'DOM_SimpleName' and 'DOM_EnumConstantDeclaration'. From 'DOM_SimpleName', the role 'DOM_SimpleName86' has cardinality 0..*, and from 'DOM_EnumConstantDeclaration', the role 'DOM_EnumConstantDeclaration85' has cardinality 0..*.
+An association connects 'DOM_VariableDeclarationFragment' and 'DOM_FieldDeclaration'. From 'DOM_VariableDeclarationFragment', the role 'DOM_VariableDeclarationFragment' has cardinality 0..*, and from 'DOM_FieldDeclaration', the role 'DOM_FieldDeclaration' has cardinality 0..*.
+An association connects 'DOM_FieldDeclaration' and 'DOM_Type'. From 'DOM_FieldDeclaration', the role 'DOM_FieldDeclaration89' has cardinality 0..*, and from 'DOM_Type', the role 'DOM_Type90' has cardinality 0..*.
+An association connects 'DOM_Initializer' and 'DOM_Block'. From 'DOM_Initializer', the role 'DOM_Initializer' has cardinality 0..*, and from 'DOM_Block', the role 'DOM_Block92' has cardinality 0..*.
+An association connects 'DOM_MethodDeclaration' and 'DOM_Block'. From 'DOM_MethodDeclaration', the role 'DOM_MethodDeclaration' has cardinality 0..*, and from 'DOM_Block', the role 'DOM_Block94' has cardinality 0..*.
+An association connects 'DOM_MethodDeclaration' and 'DOM_SimpleName'. From 'DOM_MethodDeclaration', the role 'DOM_MethodDeclaration96' has cardinality 0..*, and from 'DOM_SimpleName', the role 'DOM_SimpleName97' has cardinality 0..*.
+An association connects 'DOM_MethodDeclaration' and 'DOM_Type'. From 'DOM_MethodDeclaration', the role 'DOM_MethodDeclaration99' has cardinality 0..*, and from 'DOM_Type', the role 'DOM_Type100' has cardinality 0..*.
+An association connects 'DOM_SingleVariableDeclaration' and 'DOM_MethodDeclaration'. From 'DOM_SingleVariableDeclaration', the role 'DOM_SingleVariableDeclaration103' has cardinality 0..*, and from 'DOM_MethodDeclaration', the role 'DOM_MethodDeclaration102' has cardinality 0..*.
+An association connects 'DOM_MethodDeclaration' and 'DOM_Name'. From 'DOM_MethodDeclaration', the role 'DOM_MethodDeclaration105' has cardinality 0..*, and from 'DOM_Name', the role 'DOM_Name106' has cardinality 0..*.
+An association connects 'DOM_TypeParameter' and 'DOM_MethodDeclaration'. From 'DOM_TypeParameter', the role 'DOM_TypeParameter109' has cardinality 0..*, and from 'DOM_MethodDeclaration', the role 'DOM_MethodDeclaration108' has cardinality 0..*.
+An association connects 'DOM_IMethod' and 'DOM_MethodDeclaration'. From 'DOM_IMethod', the role 'DOM_IMethod' has cardinality 0..*, and from 'DOM_MethodDeclaration', the role 'DOM_MethodDeclaration111' has cardinality 0..*.
+An association connects 'DOM_EnumDeclaration' and 'DOM_Type'. From 'DOM_EnumDeclaration', the role 'DOM_EnumDeclaration' has cardinality 0..*, and from 'DOM_Type', the role 'DOM_Type113' has cardinality 0..*.
+An association connects 'DOM_EnumConstantDeclaration' and 'DOM_EnumDeclaration'. From 'DOM_EnumConstantDeclaration', the role 'DOM_EnumConstantDeclaration116' has cardinality 0..*, and from 'DOM_EnumDeclaration', the role 'DOM_EnumDeclaration115' has cardinality 0..*.
+An association connects 'DOM_TypeDeclaration' and 'DOM_Type'. From 'DOM_TypeDeclaration', the role 'DOM_TypeDeclaration' has cardinality 0..*, and from 'DOM_Type', the role 'DOM_Type118' has cardinality 0..*.
+An association connects 'DOM_Type' and 'DOM_TypeDeclaration'. From 'DOM_Type', the role 'DOM_Type121' has cardinality 0..*, and from 'DOM_TypeDeclaration', the role 'DOM_TypeDeclaration120' has cardinality 0..*.
+An association connects 'DOM_TypeDeclaration' and 'DOM_TypeParameter'. From 'DOM_TypeDeclaration', the role 'DOM_TypeDeclaration123' has cardinality 0..*, and from 'DOM_TypeParameter', the role 'DOM_TypeParameter124' has cardinality 0..*.
+An association connects 'DOM_Javadoc' and 'DOM_TagElement'. From 'DOM_Javadoc', the role 'DOM_Javadoc126' has cardinality 0..*, and from 'DOM_TagElement', the role 'DOM_TagElement127' has cardinality 0..*.
+An association connects 'DOM_Annotation' and 'DOM_Name'. From 'DOM_Annotation', the role 'DOM_Annotation129' has cardinality 0..*, and from 'DOM_Name', the role 'DOM_Name130' has cardinality 0..*.
+An association connects 'DOM_ArrayAccess' and 'DOM_Expression'. From 'DOM_ArrayAccess', the role 'DOM_ArrayAccess' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression132' has cardinality 0..*.
+An association connects 'DOM_ArrayAccess' and 'DOM_Expression'. From 'DOM_ArrayAccess', the role 'DOM_ArrayAccess134' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression135' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_ArrayCreation'. From 'DOM_Expression', the role 'DOM_Expression137' has cardinality 0..*, and from 'DOM_ArrayCreation', the role 'DOM_ArrayCreation' has cardinality 0..*.
+An association connects 'DOM_ArrayCreation' and 'DOM_ArrayInitializer'. From 'DOM_ArrayCreation', the role 'DOM_ArrayCreation139' has cardinality 0..*, and from 'DOM_ArrayInitializer', the role 'DOM_ArrayInitializer' has cardinality 0..*.
+An association connects 'DOM_ArrayCreation' and 'DOM_ArrayType'. From 'DOM_ArrayCreation', the role 'DOM_ArrayCreation141' has cardinality 0..*, and from 'DOM_ArrayType', the role 'DOM_ArrayType' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_ArrayInitializer'. From 'DOM_Expression', the role 'DOM_Expression144' has cardinality 0..*, and from 'DOM_ArrayInitializer', the role 'DOM_ArrayInitializer143' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_Assignment'. From 'DOM_Expression', the role 'DOM_Expression146' has cardinality 0..*, and from 'DOM_Assignment', the role 'DOM_Assignment' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_Assignment'. From 'DOM_Expression', the role 'DOM_Expression149' has cardinality 0..*, and from 'DOM_Assignment', the role 'DOM_Assignment148' has cardinality 0..*.
+An association connects 'DOM_CastExpression' and 'DOM_Expression'. From 'DOM_CastExpression', the role 'DOM_CastExpression' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression151' has cardinality 0..*.
+An association connects 'DOM_Type' and 'DOM_CastExpression'. From 'DOM_Type', the role 'DOM_Type154' has cardinality 0..*, and from 'DOM_CastExpression', the role 'DOM_CastExpression153' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_ClassInstanceCreation'. From 'DOM_Expression', the role 'DOM_Expression156' has cardinality 0..*, and from 'DOM_ClassInstanceCreation', the role 'DOM_ClassInstanceCreation' has cardinality 0..*.
+An association connects 'DOM_AnonymousClassDeclaration' and 'DOM_ClassInstanceCreation'. From 'DOM_AnonymousClassDeclaration', the role 'DOM_AnonymousClassDeclaration159' has cardinality 0..*, and from 'DOM_ClassInstanceCreation', the role 'DOM_ClassInstanceCreation158' has cardinality 0..*.
+An association connects 'DOM_ClassInstanceCreation' and 'DOM_Expression'. From 'DOM_ClassInstanceCreation', the role 'DOM_ClassInstanceCreation161' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression162' has cardinality 0..*.
+An association connects 'DOM_ClassInstanceCreation' and 'DOM_Type'. From 'DOM_ClassInstanceCreation', the role 'DOM_ClassInstanceCreation164' has cardinality 0..*, and from 'DOM_Type', the role 'DOM_Type165' has cardinality 0..*.
+An association connects 'DOM_ClassInstanceCreation' and 'DOM_Type'. From 'DOM_ClassInstanceCreation', the role 'DOM_ClassInstanceCreation167' has cardinality 0..*, and from 'DOM_Type', the role 'DOM_Type168' has cardinality 0..*.
+An association connects 'DOM_ConditionalExpression' and 'DOM_Expression'. From 'DOM_ConditionalExpression', the role 'DOM_ConditionalExpression' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression170' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_ConditionalExpression'. From 'DOM_Expression', the role 'DOM_Expression173' has cardinality 0..*, and from 'DOM_ConditionalExpression', the role 'DOM_ConditionalExpression172' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_ConditionalExpression'. From 'DOM_Expression', the role 'DOM_Expression176' has cardinality 0..*, and from 'DOM_ConditionalExpression', the role 'DOM_ConditionalExpression175' has cardinality 0..*.
+An association connects 'DOM_FieldAccess' and 'DOM_Expression'. From 'DOM_FieldAccess', the role 'DOM_FieldAccess' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression178' has cardinality 0..*.
+An association connects 'DOM_SimpleName' and 'DOM_FieldAccess'. From 'DOM_SimpleName', the role 'DOM_SimpleName181' has cardinality 0..*, and from 'DOM_FieldAccess', the role 'DOM_FieldAccess180' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_InfixExpression'. From 'DOM_Expression', the role 'DOM_Expression183' has cardinality 0..*, and from 'DOM_InfixExpression', the role 'DOM_InfixExpression' has cardinality 0..*.
+An association connects 'DOM_InfixExpression' and 'DOM_Expression'. From 'DOM_InfixExpression', the role 'DOM_InfixExpression185' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression186' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_InfixExpression'. From 'DOM_Expression', the role 'DOM_Expression189' has cardinality 0..*, and from 'DOM_InfixExpression', the role 'DOM_InfixExpression188' has cardinality 0..*.
+An association connects 'DOM_InstanceofExpression' and 'DOM_Expression'. From 'DOM_InstanceofExpression', the role 'DOM_InstanceofExpression' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression191' has cardinality 0..*.
+An association connects 'DOM_Type' and 'DOM_InstanceofExpression'. From 'DOM_Type', the role 'DOM_Type194' has cardinality 0..*, and from 'DOM_InstanceofExpression', the role 'DOM_InstanceofExpression193' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_MethodInvocation'. From 'DOM_Expression', the role 'DOM_Expression196' has cardinality 0..*, and from 'DOM_MethodInvocation', the role 'DOM_MethodInvocation' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_MethodInvocation'. From 'DOM_Expression', the role 'DOM_Expression199' has cardinality 0..*, and from 'DOM_MethodInvocation', the role 'DOM_MethodInvocation198' has cardinality 0..*.
+An association connects 'DOM_SimpleName' and 'DOM_MethodInvocation'. From 'DOM_SimpleName', the role 'DOM_SimpleName202' has cardinality 0..*, and from 'DOM_MethodInvocation', the role 'DOM_MethodInvocation201' has cardinality 0..*.
+An association connects 'DOM_Type' and 'DOM_MethodInvocation'. From 'DOM_Type', the role 'DOM_Type205' has cardinality 0..*, and from 'DOM_MethodInvocation', the role 'DOM_MethodInvocation204' has cardinality 0..*.
+An association connects 'DOM_IMethod' and 'DOM_MethodInvocation'. From 'DOM_IMethod', the role 'DOM_IMethod208' has cardinality 0..*, and from 'DOM_MethodInvocation', the role 'DOM_MethodInvocation207' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_ParenthesizedExpression'. From 'DOM_Expression', the role 'DOM_Expression210' has cardinality 0..*, and from 'DOM_ParenthesizedExpression', the role 'DOM_ParenthesizedExpression' has cardinality 0..*.
+An association connects 'DOM_PostfixExpression' and 'DOM_Expression'. From 'DOM_PostfixExpression', the role 'DOM_PostfixExpression' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression212' has cardinality 0..*.
+An association connects 'DOM_PrefixExpression' and 'DOM_Expression'. From 'DOM_PrefixExpression', the role 'DOM_PrefixExpression' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression214' has cardinality 0..*.
+An association connects 'DOM_SimpleName' and 'DOM_SuperFieldAccess'. From 'DOM_SimpleName', the role 'DOM_SimpleName216' has cardinality 0..*, and from 'DOM_SuperFieldAccess', the role 'DOM_SuperFieldAccess' has cardinality 0..*.
+An association connects 'DOM_SuperFieldAccess' and 'DOM_Name'. From 'DOM_SuperFieldAccess', the role 'DOM_SuperFieldAccess218' has cardinality 0..*, and from 'DOM_Name', the role 'DOM_Name219' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_SuperMethodInvocation'. From 'DOM_Expression', the role 'DOM_Expression221' has cardinality 0..*, and from 'DOM_SuperMethodInvocation', the role 'DOM_SuperMethodInvocation' has cardinality 0..*.
+An association connects 'DOM_SuperMethodInvocation' and 'DOM_Name'. From 'DOM_SuperMethodInvocation', the role 'DOM_SuperMethodInvocation223' has cardinality 0..*, and from 'DOM_Name', the role 'DOM_Name224' has cardinality 0..*.
+An association connects 'DOM_SuperMethodInvocation' and 'DOM_Name'. From 'DOM_SuperMethodInvocation', the role 'DOM_SuperMethodInvocation226' has cardinality 0..*, and from 'DOM_Name', the role 'DOM_Name227' has cardinality 0..*.
+An association connects 'DOM_SuperMethodInvocation' and 'DOM_Type'. From 'DOM_SuperMethodInvocation', the role 'DOM_SuperMethodInvocation229' has cardinality 0..*, and from 'DOM_Type', the role 'DOM_Type230' has cardinality 0..*.
+An association connects 'DOM_ThisExpression' and 'DOM_Name'. From 'DOM_ThisExpression', the role 'DOM_ThisExpression' has cardinality 0..*, and from 'DOM_Name', the role 'DOM_Name232' has cardinality 0..*.
+An association connects 'DOM_Type' and 'DOM_TypeLiteral'. From 'DOM_Type', the role 'DOM_Type234' has cardinality 0..*, and from 'DOM_TypeLiteral', the role 'DOM_TypeLiteral' has cardinality 0..*.
+An association connects 'DOM_VariableDeclarationFragment' and 'DOM_VariableDeclarationExpression'. From 'DOM_VariableDeclarationFragment', the role 'DOM_VariableDeclarationFragment236' has cardinality 0..*, and from 'DOM_VariableDeclarationExpression', the role 'DOM_VariableDeclarationExpression' has cardinality 0..*.
+An association connects 'DOM_ExtendedModifier' and 'DOM_VariableDeclarationExpression'. From 'DOM_ExtendedModifier', the role 'DOM_ExtendedModifier239' has cardinality 0..*, and from 'DOM_VariableDeclarationExpression', the role 'DOM_VariableDeclarationExpression238' has cardinality 0..*.
+An association connects 'DOM_VariableDeclarationExpression' and 'DOM_Type'. From 'DOM_VariableDeclarationExpression', the role 'DOM_VariableDeclarationExpression241' has cardinality 0..*, and from 'DOM_Type', the role 'DOM_Type242' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_AssertStatement'. From 'DOM_Expression', the role 'DOM_Expression244' has cardinality 0..*, and from 'DOM_AssertStatement', the role 'DOM_AssertStatement' has cardinality 0..*.
+An association connects 'DOM_AssertStatement' and 'DOM_Expression'. From 'DOM_AssertStatement', the role 'DOM_AssertStatement246' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression247' has cardinality 0..*.
+An association connects 'DOM_Statement' and 'DOM_Block'. From 'DOM_Statement', the role 'DOM_Statement' has cardinality 0..*, and from 'DOM_Block', the role 'DOM_Block249' has cardinality 0..*.
+An association connects 'DOM_SimpleName' and 'DOM_BreakStatement'. From 'DOM_SimpleName', the role 'DOM_SimpleName251' has cardinality 0..*, and from 'DOM_BreakStatement', the role 'DOM_BreakStatement' has cardinality 0..*.
+An association connects 'DOM_ConstructorInvocation' and 'DOM_Expression'. From 'DOM_ConstructorInvocation', the role 'DOM_ConstructorInvocation' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression253' has cardinality 0..*.
+An association connects 'DOM_Type' and 'DOM_ConstructorInvocation'. From 'DOM_Type', the role 'DOM_Type256' has cardinality 0..*, and from 'DOM_ConstructorInvocation', the role 'DOM_ConstructorInvocation255' has cardinality 0..*.
+An association connects 'DOM_SimpleName' and 'DOM_ContinueStatement'. From 'DOM_SimpleName', the role 'DOM_SimpleName258' has cardinality 0..*, and from 'DOM_ContinueStatement', the role 'DOM_ContinueStatement' has cardinality 0..*.
+An association connects 'DOM_Statement' and 'DOM_DoStatement'. From 'DOM_Statement', the role 'DOM_Statement260' has cardinality 0..*, and from 'DOM_DoStatement', the role 'DOM_DoStatement' has cardinality 0..*.
+An association connects 'DOM_DoStatement' and 'DOM_Expression'. From 'DOM_DoStatement', the role 'DOM_DoStatement262' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression263' has cardinality 0..*.
+An association connects 'DOM_EnhancedForStatement' and 'DOM_Statement'. From 'DOM_EnhancedForStatement', the role 'DOM_EnhancedForStatement' has cardinality 0..*, and from 'DOM_Statement', the role 'DOM_Statement265' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_EnhancedForStatement'. From 'DOM_Expression', the role 'DOM_Expression268' has cardinality 0..*, and from 'DOM_EnhancedForStatement', the role 'DOM_EnhancedForStatement267' has cardinality 0..*.
+An association connects 'DOM_EnhancedForStatement' and 'DOM_SingleVariableDeclaration'. From 'DOM_EnhancedForStatement', the role 'DOM_EnhancedForStatement270' has cardinality 0..*, and from 'DOM_SingleVariableDeclaration', the role 'DOM_SingleVariableDeclaration271' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_ExpressionStatement'. From 'DOM_Expression', the role 'DOM_Expression273' has cardinality 0..*, and from 'DOM_ExpressionStatement', the role 'DOM_ExpressionStatement' has cardinality 0..*.
+An association connects 'DOM_ForStatement' and 'DOM_Statement'. From 'DOM_ForStatement', the role 'DOM_ForStatement' has cardinality 0..*, and from 'DOM_Statement', the role 'DOM_Statement275' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_ForStatement'. From 'DOM_Expression', the role 'DOM_Expression278' has cardinality 0..*, and from 'DOM_ForStatement', the role 'DOM_ForStatement277' has cardinality 0..*.
+An association connects 'DOM_ForStatement' and 'DOM_Expression'. From 'DOM_ForStatement', the role 'DOM_ForStatement280' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression281' has cardinality 0..*.
+An association connects 'DOM_ForStatement' and 'DOM_Expression'. From 'DOM_ForStatement', the role 'DOM_ForStatement283' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression284' has cardinality 0..*.
+An association connects 'DOM_Statement' and 'DOM_IfStatement'. From 'DOM_Statement', the role 'DOM_Statement286' has cardinality 0..*, and from 'DOM_IfStatement', the role 'DOM_IfStatement' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_IfStatement'. From 'DOM_Expression', the role 'DOM_Expression289' has cardinality 0..*, and from 'DOM_IfStatement', the role 'DOM_IfStatement288' has cardinality 0..*.
+An association connects 'DOM_Statement' and 'DOM_IfStatement'. From 'DOM_Statement', the role 'DOM_Statement292' has cardinality 0..*, and from 'DOM_IfStatement', the role 'DOM_IfStatement291' has cardinality 0..*.
+An association connects 'DOM_LabeledStatement' and 'DOM_Statement'. From 'DOM_LabeledStatement', the role 'DOM_LabeledStatement' has cardinality 0..*, and from 'DOM_Statement', the role 'DOM_Statement294' has cardinality 0..*.
+An association connects 'DOM_SimpleName' and 'DOM_LabeledStatement'. From 'DOM_SimpleName', the role 'DOM_SimpleName297' has cardinality 0..*, and from 'DOM_LabeledStatement', the role 'DOM_LabeledStatement296' has cardinality 0..*.
+An association connects 'DOM_ReturnStatement' and 'DOM_Expression'. From 'DOM_ReturnStatement', the role 'DOM_ReturnStatement' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression299' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_SuperConstructorInvocation'. From 'DOM_Expression', the role 'DOM_Expression301' has cardinality 0..*, and from 'DOM_SuperConstructorInvocation', the role 'DOM_SuperConstructorInvocation' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_SuperConstructorInvocation'. From 'DOM_Expression', the role 'DOM_Expression304' has cardinality 0..*, and from 'DOM_SuperConstructorInvocation', the role 'DOM_SuperConstructorInvocation303' has cardinality 0..*.
+An association connects 'DOM_SuperConstructorInvocation' and 'DOM_Type'. From 'DOM_SuperConstructorInvocation', the role 'DOM_SuperConstructorInvocation306' has cardinality 0..*, and from 'DOM_Type', the role 'DOM_Type307' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_SwitchCase'. From 'DOM_Expression', the role 'DOM_Expression309' has cardinality 0..*, and from 'DOM_SwitchCase', the role 'DOM_SwitchCase' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_SwitchStatement'. From 'DOM_Expression', the role 'DOM_Expression311' has cardinality 0..*, and from 'DOM_SwitchStatement', the role 'DOM_SwitchStatement' has cardinality 0..*.
+An association connects 'DOM_Statement' and 'DOM_SwitchStatement'. From 'DOM_Statement', the role 'DOM_Statement314' has cardinality 0..*, and from 'DOM_SwitchStatement', the role 'DOM_SwitchStatement313' has cardinality 0..*.
+An association connects 'DOM_Block' and 'DOM_SynchronizedStatement'. From 'DOM_Block', the role 'DOM_Block316' has cardinality 0..*, and from 'DOM_SynchronizedStatement', the role 'DOM_SynchronizedStatement' has cardinality 0..*.
+An association connects 'DOM_SynchronizedStatement' and 'DOM_Expression'. From 'DOM_SynchronizedStatement', the role 'DOM_SynchronizedStatement318' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression319' has cardinality 0..*.
+An association connects 'DOM_ThrowStatement' and 'DOM_Expression'. From 'DOM_ThrowStatement', the role 'DOM_ThrowStatement' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression321' has cardinality 0..*.
+An association connects 'DOM_TryStatement' and 'DOM_CatchClause'. From 'DOM_TryStatement', the role 'DOM_TryStatement' has cardinality 0..*, and from 'DOM_CatchClause', the role 'DOM_CatchClause323' has cardinality 0..*.
+An association connects 'DOM_TryStatement' and 'DOM_Block'. From 'DOM_TryStatement', the role 'DOM_TryStatement325' has cardinality 0..*, and from 'DOM_Block', the role 'DOM_Block326' has cardinality 0..*.
+An association connects 'DOM_Block' and 'DOM_TryStatement'. From 'DOM_Block', the role 'DOM_Block329' has cardinality 0..*, and from 'DOM_TryStatement', the role 'DOM_TryStatement328' has cardinality 0..*.
+An association connects 'DOM_TypeDeclarationStatement' and 'DOM_AbstractTypeDeclaration'. From 'DOM_TypeDeclarationStatement', the role 'DOM_TypeDeclarationStatement' has cardinality 0..*, and from 'DOM_AbstractTypeDeclaration', the role 'DOM_AbstractTypeDeclaration331' has cardinality 0..*.
+An association connects 'DOM_VariableDeclarationFragment' and 'DOM_VariableDeclarationStatement'. From 'DOM_VariableDeclarationFragment', the role 'DOM_VariableDeclarationFragment333' has cardinality 0..*, and from 'DOM_VariableDeclarationStatement', the role 'DOM_VariableDeclarationStatement' has cardinality 0..*.
+An association connects 'DOM_VariableDeclarationStatement' and 'DOM_ExtendedModifier'. From 'DOM_VariableDeclarationStatement', the role 'DOM_VariableDeclarationStatement335' has cardinality 0..*, and from 'DOM_ExtendedModifier', the role 'DOM_ExtendedModifier336' has cardinality 0..*.
+An association connects 'DOM_Type' and 'DOM_VariableDeclarationStatement'. From 'DOM_Type', the role 'DOM_Type339' has cardinality 0..*, and from 'DOM_VariableDeclarationStatement', the role 'DOM_VariableDeclarationStatement338' has cardinality 0..*.
+An association connects 'DOM_WhileStatement' and 'DOM_Statement'. From 'DOM_WhileStatement', the role 'DOM_WhileStatement' has cardinality 0..*, and from 'DOM_Statement', the role 'DOM_Statement341' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_WhileStatement'. From 'DOM_Expression', the role 'DOM_Expression344' has cardinality 0..*, and from 'DOM_WhileStatement', the role 'DOM_WhileStatement343' has cardinality 0..*.
+An association connects 'DOM_Type' and 'DOM_ArrayType'. From 'DOM_Type', the role 'DOM_Type347' has cardinality 0..*, and from 'DOM_ArrayType', the role 'DOM_ArrayType346' has cardinality 0..*.
+An association connects 'DOM_ArrayType' and 'DOM_Type'. From 'DOM_ArrayType', the role 'DOM_ArrayType349' has cardinality 0..*, and from 'DOM_Type', the role 'DOM_Type350' has cardinality 0..*.
+An association connects 'DOM_Type' and 'DOM_ParameterizedType'. From 'DOM_Type', the role 'DOM_Type352' has cardinality 0..*, and from 'DOM_ParameterizedType', the role 'DOM_ParameterizedType' has cardinality 0..*.
+An association connects 'DOM_Type' and 'DOM_ParameterizedType'. From 'DOM_Type', the role 'DOM_Type355' has cardinality 0..*, and from 'DOM_ParameterizedType', the role 'DOM_ParameterizedType354' has cardinality 0..*.
+An association connects 'DOM_QualifiedType' and 'DOM_SimpleName'. From 'DOM_QualifiedType', the role 'DOM_QualifiedType' has cardinality 0..*, and from 'DOM_SimpleName', the role 'DOM_SimpleName357' has cardinality 0..*.
+An association connects 'DOM_Type' and 'DOM_QualifiedType'. From 'DOM_Type', the role 'DOM_Type360' has cardinality 0..*, and from 'DOM_QualifiedType', the role 'DOM_QualifiedType359' has cardinality 0..*.
+An association connects 'DOM_Name' and 'DOM_SimpleType'. From 'DOM_Name', the role 'DOM_Name362' has cardinality 0..*, and from 'DOM_SimpleType', the role 'DOM_SimpleType' has cardinality 0..*.
+An association connects 'DOM_WildcardType' and 'DOM_Type'. From 'DOM_WildcardType', the role 'DOM_WildcardType' has cardinality 0..*, and from 'DOM_Type', the role 'DOM_Type364' has cardinality 0..*.
+An association connects 'DOM_Type' and 'DOM_SingleVariableDeclaration'. From 'DOM_Type', the role 'DOM_Type367' has cardinality 0..*, and from 'DOM_SingleVariableDeclaration', the role 'DOM_SingleVariableDeclaration366' has cardinality 0..*.
+An association connects 'DOM_ExtendedModifier' and 'DOM_SingleVariableDeclaration'. From 'DOM_ExtendedModifier', the role 'DOM_ExtendedModifier370' has cardinality 0..*, and from 'DOM_SingleVariableDeclaration', the role 'DOM_SingleVariableDeclaration369' has cardinality 0..*.
+An association connects 'DOM_SimpleName' and 'DOM_QualifiedName'. From 'DOM_SimpleName', the role 'DOM_SimpleName372' has cardinality 0..*, and from 'DOM_QualifiedName', the role 'DOM_QualifiedName' has cardinality 0..*.
+An association connects 'DOM_QualifiedName' and 'DOM_Name'. From 'DOM_QualifiedName', the role 'DOM_QualifiedName374' has cardinality 0..*, and from 'DOM_Name', the role 'DOM_Name375' has cardinality 0..*.
+An association connects 'DOM_NormalAnnotation' and 'DOM_MemberValuePair'. From 'DOM_NormalAnnotation', the role 'DOM_NormalAnnotation' has cardinality 0..*, and from 'DOM_MemberValuePair', the role 'DOM_MemberValuePair377' has cardinality 0..*.
+An association connects 'DOM_Expression' and 'DOM_SingleMemberAnnotation'. From 'DOM_Expression', the role 'DOM_Expression379' has cardinality 0..*, and from 'DOM_SingleMemberAnnotation', the role 'DOM_SingleMemberAnnotation' has cardinality 0..*.

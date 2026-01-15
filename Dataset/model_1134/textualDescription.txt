@@ -1,0 +1,153 @@
+The domain model 'research23' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'research23_PaperKeyword' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'research23_StateMachineVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'research23_Labelled' represents an important domain concept.
+It has one attribute: 'lname', which is of type str.
+
+'research23_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'research23_Counted' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'research23_ReviewNote' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'StateMachineObject' represents an important domain concept.
+It does not declare any attributes.
+
+'Counted' represents an important domain concept.
+It does not declare any attributes.
+
+'research23_PublicationProcess' represents an important domain concept.
+It has the following attributes: 'maxTime', which is of type int; 'minTime', which is of type int.
+
+'Labelled' represents an important domain concept.
+It does not declare any attributes.
+
+'research23_Skill' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'research23_Keyword' represents an important domain concept.
+It has one attribute: 'word', which is of type str.
+
+'research23_Paper' represents an important domain concept.
+It does not declare any attributes.
+
+'research23_Progress' represents an important domain concept.
+It has one attribute: 'percent', which is of type int.
+
+'research23_Review' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'research23_PublicationSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'research23_Transition' represents an important domain concept.
+It has the following attributes: 'guardLabel', which is of type str; 'guardExpression', which is of type str.
+
+'research23_State' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'kind', which is of type str; 'name', which is of type str.
+
+'research23_Researcher' represents an important domain concept.
+It has the following attributes: 'forName', which is of type str; 'name', which is of type str.
+
+'research23_Action' represents an important domain concept.
+It has the following attributes: 'actionLabel', which is of type str; 'actionStatement', which is of type str.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'research23_Write' represents an important domain concept.
+It has one attribute: 'timeSpent', which is of type int.
+
+'research23_PublicationStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'research23_KnowledgeManager' represents an important domain concept.
+It does not declare any attributes.
+
+'research23_StateMachineObject' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'research23_Collaboration' represents an important domain concept.
+It has one attribute: 'ratio', which is of type int.
+
+'research23_Phase' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'research23_Paragraph' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'research23_Position' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'research23_PublicationStatus' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StateType' defines the following possible values: 'initial', 'final', 'ongoing'.
+
+The model also captures inheritance relationships between classes.
+The class 'research23_PublicationProcess' is a specialization of 'Named'.
+The class 'research23_Paper' is a specialization of 'Named'.
+The class 'research23_Paragraph' is a specialization of 'Counted'.
+The class 'research23_Paragraph' is a specialization of 'Named'.
+The class 'research23_ReviewNote' is a specialization of 'Named'.
+The class 'research23_Progress' is a specialization of 'Labelled'.
+The class 'research23_Write' is a specialization of 'Labelled'.
+The class 'research23_Review' is a specialization of 'Labelled'.
+The class 'research23_PublicationStructure' is a specialization of 'Named'.
+The class 'research23_PublicationSystem' is a specialization of 'Named'.
+The class 'research23_Position' is a specialization of 'Named'.
+The class 'research23_Keyword' is a specialization of 'Named'.
+The class 'research23_KnowledgeManager' is a specialization of 'Named'.
+The class 'research23_Transition' is a specialization of 'StateMachineObject'.
+The class 'research23_State' is a specialization of 'StateMachineObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'research23_Phase' and 'research23_PublicationProcess'. From 'research23_Phase', the role 'research23_Phase' has cardinality 0..*, and from 'research23_PublicationProcess', the role 'research23_PublicationProcess' has cardinality 0..*.
+An association connects 'research23_Researcher' and 'research23_Write'. From 'research23_Researcher', the role 'research23_Researcher' has cardinality 0..*, and from 'research23_Write', the role 'research23_Write' has cardinality 0..*.
+An association connects 'research23_Researcher' and 'research23_Review'. From 'research23_Researcher', the role 'research23_Researcher3' has cardinality 0..*, and from 'research23_Review', the role 'research23_Review' has cardinality 0..*.
+An association connects 'research23_Researcher' and 'research23_Paper'. From 'research23_Researcher', the role 'authors' has cardinality 0..*, and from 'research23_Paper', the role 'Paper' has cardinality 0..*.
+An association connects 'research23_Researcher' and 'research23_Skill'. From 'research23_Researcher', the role 'research23_Researcher6' has cardinality 0..*, and from 'research23_Skill', the role 'research23_Skill' has cardinality 0..*.
+An association connects 'research23_Researcher' and 'research23_Position'. From 'research23_Researcher', the role 'research23_Researcher8' has cardinality 0..*, and from 'research23_Position', the role 'research23_Position' has cardinality 0..*.
+An association connects 'research23_Researcher' and 'research23_Collaboration'. From 'research23_Researcher', the role 'research23_Researcher10' has cardinality 0..*, and from 'research23_Collaboration', the role 'research23_Collaboration' has cardinality 0..*.
+An association connects 'research23_Paragraph' and 'research23_Paper'. From 'research23_Paragraph', the role 'research23_Paragraph' has cardinality 0..*, and from 'research23_Paper', the role 'research23_Paper' has cardinality 0..*.
+An association connects 'research23_Paper' and 'research23_Progress'. From 'research23_Paper', the role 'paper' has cardinality 0..*, and from 'research23_Progress', the role 'Progress' has cardinality 0..*.
+An association connects 'research23_Paper' and 'research23_Researcher'. From 'research23_Paper', the role 'res_papers' has cardinality 0..*, and from 'research23_Researcher', the role 'Researcher' has cardinality 0..*.
+An association connects 'research23_Paper' and 'research23_PaperKeyword'. From 'research23_Paper', the role 'research23_Paper15' has cardinality 0..*, and from 'research23_PaperKeyword', the role 'research23_PaperKeyword' has cardinality 0..*.
+An association connects 'research23_Paper' and 'research23_Paper'. From 'research23_Paper', the role 'research23_Paper18' has cardinality 0..*, and from 'research23_Paper', the role 'research23_Paper16' has cardinality 0..*.
+An association connects 'research23_State' and 'research23_Paper'. From 'research23_State', the role 'research23_State' has cardinality 0..*, and from 'research23_Paper', the role 'research23_Paper20' has cardinality 0..*.
+An association connects 'research23_Paragraph' and 'research23_ReviewNote'. From 'research23_Paragraph', the role 'research23_Paragraph22' has cardinality 0..*, and from 'research23_ReviewNote', the role 'research23_ReviewNote' has cardinality 0..*.
+An association connects 'research23_Progress' and 'research23_PublicationProcess'. From 'research23_Progress', the role 'research23_Progress' has cardinality 0..*, and from 'research23_PublicationProcess', the role 'research23_PublicationProcess24' has cardinality 0..*.
+An association connects 'research23_Paper' and 'research23_Progress'. From 'research23_Paper', the role 'Paper26' has cardinality 0..*, and from 'research23_Progress', the role 'progress' has cardinality 0..*.
+An association connects 'research23_Paragraph' and 'research23_Write'. From 'research23_Paragraph', the role 'research23_Paragraph29' has cardinality 0..*, and from 'research23_Write', the role 'research23_Write28' has cardinality 0..*.
+An association connects 'research23_Review' and 'research23_ReviewNote'. From 'research23_Review', the role 'research23_Review31' has cardinality 0..*, and from 'research23_ReviewNote', the role 'research23_ReviewNote32' has cardinality 0..*.
+An association connects 'research23_Researcher' and 'research23_PublicationStructure'. From 'research23_Researcher', the role 'research23_Researcher34' has cardinality 0..*, and from 'research23_PublicationStructure', the role 'research23_PublicationStructure' has cardinality 0..*.
+An association connects 'research23_Paper' and 'research23_PublicationStructure'. From 'research23_Paper', the role 'research23_Paper37' has cardinality 0..*, and from 'research23_PublicationStructure', the role 'research23_PublicationStructure36' has cardinality 0..*.
+An association connects 'research23_KnowledgeManager' and 'research23_PublicationStructure'. From 'research23_KnowledgeManager', the role 'research23_KnowledgeManager' has cardinality 0..*, and from 'research23_PublicationStructure', the role 'research23_PublicationStructure39' has cardinality 0..*.
+An association connects 'research23_PublicationStructure' and 'research23_PublicationStatus'. From 'research23_PublicationStructure', the role 'research23_PublicationStructure41' has cardinality 0..*, and from 'research23_PublicationStatus', the role 'research23_PublicationStatus' has cardinality 0..*.
+An association connects 'research23_PublicationProcess' and 'research23_PublicationSystem'. From 'research23_PublicationProcess', the role 'research23_PublicationProcess43' has cardinality 0..*, and from 'research23_PublicationSystem', the role 'research23_PublicationSystem' has cardinality 0..*.
+An association connects 'research23_PublicationStructure' and 'research23_PublicationSystem'. From 'research23_PublicationStructure', the role 'research23_PublicationStructure46' has cardinality 0..*, and from 'research23_PublicationSystem', the role 'research23_PublicationSystem45' has cardinality 0..*.
+An association connects 'research23_Position' and 'research23_PublicationSystem'. From 'research23_Position', the role 'research23_Position49' has cardinality 0..*, and from 'research23_PublicationSystem', the role 'research23_PublicationSystem48' has cardinality 0..*.
+An association connects 'research23_Position' and 'research23_Position'. From 'research23_Position', the role 'research23_Position52' has cardinality 0..*, and from 'research23_Position', the role 'research23_Position50' has cardinality 0..*.
+An association connects 'research23_Keyword' and 'research23_Paper'. From 'research23_Keyword', the role 'research23_Keyword' has cardinality 0..*, and from 'research23_Paper', the role 'research23_Paper54' has cardinality 0..*.
+An association connects 'research23_KnowledgeManager' and 'research23_Keyword'. From 'research23_KnowledgeManager', the role 'research23_KnowledgeManager56' has cardinality 0..*, and from 'research23_Keyword', the role 'research23_Keyword57' has cardinality 0..*.
+An association connects 'research23_PaperKeyword' and 'research23_Keyword'. From 'research23_PaperKeyword', the role 'research23_PaperKeyword59' has cardinality 0..*, and from 'research23_Keyword', the role 'research23_Keyword60' has cardinality 0..*.
+An association connects 'research23_Paper' and 'research23_Collaboration'. From 'research23_Paper', the role 'research23_Paper63' has cardinality 0..*, and from 'research23_Collaboration', the role 'research23_Collaboration62' has cardinality 0..*.
+An association connects 'research23_PublicationStatus' and 'research23_StateMachineVariable'. From 'research23_PublicationStatus', the role 'research23_PublicationStatus65' has cardinality 0..*, and from 'research23_StateMachineVariable', the role 'research23_StateMachineVariable' has cardinality 0..*.
+An association connects 'research23_PublicationStatus' and 'research23_State'. From 'research23_PublicationStatus', the role 'research23_PublicationStatus67' has cardinality 0..*, and from 'research23_State', the role 'research23_State68' has cardinality 0..*.
+An association connects 'research23_Transition' and 'research23_Action'. From 'research23_Transition', the role 'research23_Transition' has cardinality 0..*, and from 'research23_Action', the role 'research23_Action' has cardinality 0..*.
+An association connects 'research23_Transition' and 'research23_State'. From 'research23_Transition', the role 'research23_Transition71' has cardinality 0..*, and from 'research23_State', the role 'research23_State72' has cardinality 0..*.
+An association connects 'research23_Transition' and 'research23_State'. From 'research23_Transition', the role 'research23_Transition74' has cardinality 0..*, and from 'research23_State', the role 'research23_State75' has cardinality 0..*.
+An association connects 'research23_State' and 'research23_Transition'. From 'research23_State', the role 'research23_State77' has cardinality 0..*, and from 'research23_Transition', the role 'research23_Transition78' has cardinality 0..*.
+An association connects 'research23_State' and 'research23_Action'. From 'research23_State', the role 'research23_State80' has cardinality 0..*, and from 'research23_Action', the role 'research23_Action81' has cardinality 0..*.
+An association connects 'research23_Action' and 'research23_Action'. From 'research23_Action', the role 'research23_Action82' has cardinality 0..*, and from 'research23_Action', the role 'research23_Action84' has cardinality 0..*.

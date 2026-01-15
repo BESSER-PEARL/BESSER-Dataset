@@ -1,0 +1,346 @@
+The domain model 'OCLinEmig' describes the core structural elements and their relationships within the system.
+
+The model defines 72 main class(es).
+
+'OCLinEmig_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_EnumLiteralExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OCLinEmig_CollectionOperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_TuplePart' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_TupleTypeAttribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_NavigationOrAttributeCallExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OCLinEmig_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_OperatorCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_OclModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OCLinEmig_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_OclUndefinedExp' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OclFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_OclAnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OclType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_OperationCallExp' represents an important domain concept.
+It has one attribute: 'operationName', which is of type str.
+
+'OCLinEmig_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_RealExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type str.
+
+'OCLinEmig_OclFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_MapElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_SequenceExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_Module' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OCLinEmig_BagExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_TupleExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OCLinEmig_LocatedElement' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'commentsAfter', which is of type str; 'commentsBefore', which is of type str.
+
+'OCLinEmig_Iterator' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OCLinEmig_OclModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_IteratorExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OCLinEmig_MapType' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_VariableDeclaration' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'varName', which is of type str.
+
+'OCLinEmig_SetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_OclFeatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_OclContextDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_OclType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_IntegerExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'OCLinEmig_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_SuperExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_OrderedSetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_MapExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_BooleanExp' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type str.
+
+'OCLinEmig_PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLinEmig_StringExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'OCLinEmig_OclExpression' is a specialization of 'LocatedElement'.
+The class 'OCLinEmig_VariableExp' is a specialization of 'OclExpression'.
+The class 'OCLinEmig_SuperExp' is a specialization of 'OclExpression'.
+The class 'OCLinEmig_PrimitiveExp' is a specialization of 'OclExpression'.
+The class 'OCLinEmig_StringExp' is a specialization of 'PrimitiveExp'.
+The class 'OCLinEmig_BooleanExp' is a specialization of 'PrimitiveExp'.
+The class 'OCLinEmig_NumericExp' is a specialization of 'PrimitiveExp'.
+The class 'OCLinEmig_RealExp' is a specialization of 'NumericExp'.
+The class 'OCLinEmig_IntegerExp' is a specialization of 'NumericExp'.
+The class 'OCLinEmig_CollectionExp' is a specialization of 'OclExpression'.
+The class 'OCLinEmig_BagExp' is a specialization of 'CollectionExp'.
+The class 'OCLinEmig_OrderedSetExp' is a specialization of 'CollectionExp'.
+The class 'OCLinEmig_SequenceExp' is a specialization of 'CollectionExp'.
+The class 'OCLinEmig_SetExp' is a specialization of 'CollectionExp'.
+The class 'OCLinEmig_TupleExp' is a specialization of 'OclExpression'.
+The class 'OCLinEmig_TuplePart' is a specialization of 'VariableDeclaration'.
+The class 'OCLinEmig_MapExp' is a specialization of 'OclExpression'.
+The class 'OCLinEmig_MapElement' is a specialization of 'LocatedElement'.
+The class 'OCLinEmig_EnumLiteralExp' is a specialization of 'OclExpression'.
+The class 'OCLinEmig_OclUndefinedExp' is a specialization of 'OclExpression'.
+The class 'OCLinEmig_PropertyCallExp' is a specialization of 'OclExpression'.
+The class 'OCLinEmig_NavigationOrAttributeCallExp' is a specialization of 'PropertyCallExp'.
+The class 'OCLinEmig_OperationCallExp' is a specialization of 'PropertyCallExp'.
+The class 'OCLinEmig_OperatorCallExp' is a specialization of 'OperationCallExp'.
+The class 'OCLinEmig_CollectionOperationCallExp' is a specialization of 'OperationCallExp'.
+The class 'OCLinEmig_LoopExp' is a specialization of 'PropertyCallExp'.
+The class 'OCLinEmig_IterateExp' is a specialization of 'LoopExp'.
+The class 'OCLinEmig_IteratorExp' is a specialization of 'LoopExp'.
+The class 'OCLinEmig_LetExp' is a specialization of 'OclExpression'.
+The class 'OCLinEmig_IfExp' is a specialization of 'OclExpression'.
+The class 'OCLinEmig_VariableDeclaration' is a specialization of 'LocatedElement'.
+The class 'OCLinEmig_Iterator' is a specialization of 'VariableDeclaration'.
+The class 'OCLinEmig_Parameter' is a specialization of 'VariableDeclaration'.
+The class 'OCLinEmig_CollectionType' is a specialization of 'OclType'.
+The class 'OCLinEmig_OclType' is a specialization of 'OclExpression'.
+The class 'OCLinEmig_Primitive' is a specialization of 'OclType'.
+The class 'OCLinEmig_StringType' is a specialization of 'Primitive'.
+The class 'OCLinEmig_BooleanType' is a specialization of 'Primitive'.
+The class 'OCLinEmig_NumericType' is a specialization of 'Primitive'.
+The class 'OCLinEmig_IntegerType' is a specialization of 'NumericType'.
+The class 'OCLinEmig_RealType' is a specialization of 'NumericType'.
+The class 'OCLinEmig_BagType' is a specialization of 'CollectionType'.
+The class 'OCLinEmig_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'OCLinEmig_SequenceType' is a specialization of 'CollectionType'.
+The class 'OCLinEmig_SetType' is a specialization of 'CollectionType'.
+The class 'OCLinEmig_OclAnyType' is a specialization of 'OclType'.
+The class 'OCLinEmig_TupleType' is a specialization of 'OclType'.
+The class 'OCLinEmig_TupleTypeAttribute' is a specialization of 'LocatedElement'.
+The class 'OCLinEmig_OclModelElement' is a specialization of 'OclType'.
+The class 'OCLinEmig_MapType' is a specialization of 'OclType'.
+The class 'OCLinEmig_OclFeatureDefinition' is a specialization of 'LocatedElement'.
+The class 'OCLinEmig_OclContextDefinition' is a specialization of 'LocatedElement'.
+The class 'OCLinEmig_OclFeature' is a specialization of 'LocatedElement'.
+The class 'OCLinEmig_Attribute' is a specialization of 'OclFeature'.
+The class 'OCLinEmig_Operation' is a specialization of 'OclFeature'.
+The class 'OCLinEmig_OclModel' is a specialization of 'LocatedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'OCLinEmig_OclType' and 'OCLinEmig_OclExpression'. From 'OCLinEmig_OclType', the role 'OclType' has cardinality 0..*, and from 'OCLinEmig_OclExpression', the role 'oclExpression' has cardinality 0..*.
+An association connects 'OCLinEmig_OclExpression' and 'OCLinEmig_IfExp'. From 'OCLinEmig_OclExpression', the role 'elseExpression' has cardinality 0..*, and from 'OCLinEmig_IfExp', the role 'IfExp' has cardinality 0..*.
+An association connects 'OCLinEmig_OclExpression' and 'OCLinEmig_PropertyCallExp'. From 'OCLinEmig_OclExpression', the role 'source' has cardinality 0..*, and from 'OCLinEmig_PropertyCallExp', the role 'PropertyCallExp' has cardinality 0..*.
+An association connects 'OCLinEmig_OclExpression' and 'OCLinEmig_CollectionExp'. From 'OCLinEmig_OclExpression', the role 'elements' has cardinality 0..*, and from 'OCLinEmig_CollectionExp', the role 'CollectionExp' has cardinality 0..*.
+An association connects 'OCLinEmig_LetExp' and 'OCLinEmig_OclExpression'. From 'OCLinEmig_LetExp', the role 'LetExp' has cardinality 0..*, and from 'OCLinEmig_OclExpression', the role 'in_' has cardinality 0..*.
+An association connects 'OCLinEmig_LoopExp' and 'OCLinEmig_OclExpression'. From 'OCLinEmig_LoopExp', the role 'LoopExp' has cardinality 0..*, and from 'OCLinEmig_OclExpression', the role 'body' has cardinality 0..*.
+An association connects 'OCLinEmig_OclExpression' and 'OCLinEmig_OperationCallExp'. From 'OCLinEmig_OclExpression', the role 'arguments' has cardinality 0..*, and from 'OCLinEmig_OperationCallExp', the role 'OperationCallExp' has cardinality 0..*.
+An association connects 'OCLinEmig_VariableDeclaration' and 'OCLinEmig_OclExpression'. From 'OCLinEmig_VariableDeclaration', the role 'VariableDeclaration' has cardinality 0..*, and from 'OCLinEmig_OclExpression', the role 'initExpression' has cardinality 0..*.
+An association connects 'OCLinEmig_IfExp' and 'OCLinEmig_OclExpression'. From 'OCLinEmig_IfExp', the role 'IfExp9' has cardinality 0..*, and from 'OCLinEmig_OclExpression', the role 'thenExpression' has cardinality 0..*.
+An association connects 'OCLinEmig_OclExpression' and 'OCLinEmig_Operation'. From 'OCLinEmig_OclExpression', the role 'body11' has cardinality 0..*, and from 'OCLinEmig_Operation', the role 'Operation' has cardinality 0..*.
+An association connects 'OCLinEmig_OclExpression' and 'OCLinEmig_IfExp'. From 'OCLinEmig_OclExpression', the role 'condition' has cardinality 0..*, and from 'OCLinEmig_IfExp', the role 'IfExp13' has cardinality 0..*.
+An association connects 'OCLinEmig_OclExpression' and 'OCLinEmig_Attribute'. From 'OCLinEmig_OclExpression', the role 'initExpression15' has cardinality 0..*, and from 'OCLinEmig_Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'OCLinEmig_VariableExp' and 'OCLinEmig_VariableDeclaration'. From 'OCLinEmig_VariableExp', the role 'variableExp' has cardinality 0..*, and from 'OCLinEmig_VariableDeclaration', the role 'VariableDeclaration17' has cardinality 0..*.
+An association connects 'OCLinEmig_CollectionExp' and 'OCLinEmig_OclExpression'. From 'OCLinEmig_CollectionExp', the role 'collection' has cardinality 0..*, and from 'OCLinEmig_OclExpression', the role 'OclExpression' has cardinality 0..*.
+An association connects 'OCLinEmig_TupleExp' and 'OCLinEmig_TuplePart'. From 'OCLinEmig_TupleExp', the role 'tuple' has cardinality 0..*, and from 'OCLinEmig_TuplePart', the role 'TuplePart' has cardinality 0..*.
+An association connects 'OCLinEmig_TuplePart' and 'OCLinEmig_TupleExp'. From 'OCLinEmig_TuplePart', the role 'tuplePart' has cardinality 0..*, and from 'OCLinEmig_TupleExp', the role 'TupleExp' has cardinality 0..*.
+An association connects 'OCLinEmig_MapElement' and 'OCLinEmig_MapExp'. From 'OCLinEmig_MapElement', the role 'MapElement' has cardinality 0..*, and from 'OCLinEmig_MapExp', the role 'map' has cardinality 0..*.
+An association connects 'OCLinEmig_MapElement' and 'OCLinEmig_MapExp'. From 'OCLinEmig_MapElement', the role 'elements23' has cardinality 0..*, and from 'OCLinEmig_MapExp', the role 'MapExp' has cardinality 0..*.
+An association connects 'OCLinEmig_OclExpression' and 'OCLinEmig_MapElement'. From 'OCLinEmig_OclExpression', the role 'OCLinEmig_OclExpression' has cardinality 0..*, and from 'OCLinEmig_MapElement', the role 'OCLinEmig_MapElement' has cardinality 0..*.
+An association connects 'OCLinEmig_OclExpression' and 'OCLinEmig_MapElement'. From 'OCLinEmig_OclExpression', the role 'OCLinEmig_OclExpression27' has cardinality 0..*, and from 'OCLinEmig_MapElement', the role 'OCLinEmig_MapElement26' has cardinality 0..*.
+An association connects 'OCLinEmig_OclExpression' and 'OCLinEmig_PropertyCallExp'. From 'OCLinEmig_OclExpression', the role 'OclExpression29' has cardinality 0..*, and from 'OCLinEmig_PropertyCallExp', the role 'appliedProperty' has cardinality 0..*.
+An association connects 'OCLinEmig_OclExpression' and 'OCLinEmig_OperationCallExp'. From 'OCLinEmig_OclExpression', the role 'OclExpression31' has cardinality 0..*, and from 'OCLinEmig_OperationCallExp', the role 'parentOperation' has cardinality 0..*.
+An association connects 'OCLinEmig_LoopExp' and 'OCLinEmig_OclExpression'. From 'OCLinEmig_LoopExp', the role 'loopExp' has cardinality 0..*, and from 'OCLinEmig_OclExpression', the role 'OclExpression33' has cardinality 0..*.
+An association connects 'OCLinEmig_Iterator' and 'OCLinEmig_LoopExp'. From 'OCLinEmig_Iterator', the role 'Iterator' has cardinality 0..*, and from 'OCLinEmig_LoopExp', the role 'loopExpr' has cardinality 0..*.
+An association connects 'OCLinEmig_IterateExp' and 'OCLinEmig_VariableDeclaration'. From 'OCLinEmig_IterateExp', the role 'baseExp' has cardinality 0..*, and from 'OCLinEmig_VariableDeclaration', the role 'VariableDeclaration36' has cardinality 0..*.
+An association connects 'OCLinEmig_LetExp' and 'OCLinEmig_VariableDeclaration'. From 'OCLinEmig_LetExp', the role 'letExp' has cardinality 0..*, and from 'OCLinEmig_VariableDeclaration', the role 'VariableDeclaration38' has cardinality 0..*.
+An association connects 'OCLinEmig_OclExpression' and 'OCLinEmig_LetExp'. From 'OCLinEmig_OclExpression', the role 'OclExpression41' has cardinality 0..*, and from 'OCLinEmig_LetExp', the role 'letExp40' has cardinality 0..*.
+An association connects 'OCLinEmig_OclExpression' and 'OCLinEmig_IfExp'. From 'OCLinEmig_OclExpression', the role 'OclExpression43' has cardinality 0..*, and from 'OCLinEmig_IfExp', the role 'ifExp2' has cardinality 0..*.
+An association connects 'OCLinEmig_IfExp' and 'OCLinEmig_OclExpression'. From 'OCLinEmig_IfExp', the role 'ifExp1' has cardinality 0..*, and from 'OCLinEmig_OclExpression', the role 'OclExpression45' has cardinality 0..*.
+An association connects 'OCLinEmig_OclExpression' and 'OCLinEmig_IfExp'. From 'OCLinEmig_OclExpression', the role 'OclExpression47' has cardinality 0..*, and from 'OCLinEmig_IfExp', the role 'ifExp3' has cardinality 0..*.
+An association connects 'OCLinEmig_VariableDeclaration' and 'OCLinEmig_OclType'. From 'OCLinEmig_VariableDeclaration', the role 'variableDeclaration' has cardinality 0..*, and from 'OCLinEmig_OclType', the role 'OclType49' has cardinality 0..*.
+An association connects 'OCLinEmig_OclExpression' and 'OCLinEmig_VariableDeclaration'. From 'OCLinEmig_OclExpression', the role 'OclExpression51' has cardinality 0..*, and from 'OCLinEmig_VariableDeclaration', the role 'initializedVariable' has cardinality 0..*.
+An association connects 'OCLinEmig_LetExp' and 'OCLinEmig_VariableDeclaration'. From 'OCLinEmig_LetExp', the role 'LetExp53' has cardinality 0..*, and from 'OCLinEmig_VariableDeclaration', the role 'variable' has cardinality 0..*.
+An association connects 'OCLinEmig_IterateExp' and 'OCLinEmig_VariableDeclaration'. From 'OCLinEmig_IterateExp', the role 'IterateExp' has cardinality 0..*, and from 'OCLinEmig_VariableDeclaration', the role 'result' has cardinality 0..*.
+An association connects 'OCLinEmig_VariableExp' and 'OCLinEmig_VariableDeclaration'. From 'OCLinEmig_VariableExp', the role 'VariableExp' has cardinality 0..*, and from 'OCLinEmig_VariableDeclaration', the role 'referredVariable' has cardinality 0..*.
+An association connects 'OCLinEmig_LoopExp' and 'OCLinEmig_Iterator'. From 'OCLinEmig_LoopExp', the role 'LoopExp57' has cardinality 0..*, and from 'OCLinEmig_Iterator', the role 'iterators' has cardinality 0..*.
+An association connects 'OCLinEmig_Operation' and 'OCLinEmig_Parameter'. From 'OCLinEmig_Operation', the role 'Operation59' has cardinality 0..*, and from 'OCLinEmig_Parameter', the role 'parameters' has cardinality 0..*.
+An association connects 'OCLinEmig_OclType' and 'OCLinEmig_CollectionType'. From 'OCLinEmig_OclType', the role 'OclType61' has cardinality 0..*, and from 'OCLinEmig_CollectionType', the role 'collectionTypes' has cardinality 0..*.
+An association connects 'OCLinEmig_OclType' and 'OCLinEmig_OclContextDefinition'. From 'OCLinEmig_OclType', the role 'context_' has cardinality 0..*, and from 'OCLinEmig_OclContextDefinition', the role 'OclContextDefinition' has cardinality 0..*.
+An association connects 'OCLinEmig_OclExpression' and 'OCLinEmig_OclType'. From 'OCLinEmig_OclExpression', the role 'OclExpression64' has cardinality 0..*, and from 'OCLinEmig_OclType', the role 'type' has cardinality 0..*.
+An association connects 'OCLinEmig_Operation' and 'OCLinEmig_OclType'. From 'OCLinEmig_Operation', the role 'Operation66' has cardinality 0..*, and from 'OCLinEmig_OclType', the role 'returnType' has cardinality 0..*.
+An association connects 'OCLinEmig_OclType' and 'OCLinEmig_MapType'. From 'OCLinEmig_OclType', the role 'valueType' has cardinality 0..*, and from 'OCLinEmig_MapType', the role 'MapType' has cardinality 0..*.
+An association connects 'OCLinEmig_OclType' and 'OCLinEmig_Attribute'. From 'OCLinEmig_OclType', the role 'type69' has cardinality 0..*, and from 'OCLinEmig_Attribute', the role 'Attribute70' has cardinality 0..*.
+An association connects 'OCLinEmig_MapType' and 'OCLinEmig_OclType'. From 'OCLinEmig_MapType', the role 'MapType72' has cardinality 0..*, and from 'OCLinEmig_OclType', the role 'keyType' has cardinality 0..*.
+An association connects 'OCLinEmig_OclType' and 'OCLinEmig_CollectionType'. From 'OCLinEmig_OclType', the role 'elementType' has cardinality 0..*, and from 'OCLinEmig_CollectionType', the role 'CollectionType' has cardinality 0..*.
+An association connects 'OCLinEmig_TupleTypeAttribute' and 'OCLinEmig_OclType'. From 'OCLinEmig_TupleTypeAttribute', the role 'TupleTypeAttribute' has cardinality 0..*, and from 'OCLinEmig_OclType', the role 'type75' has cardinality 0..*.
+An association connects 'OCLinEmig_OclType' and 'OCLinEmig_VariableDeclaration'. From 'OCLinEmig_OclType', the role 'type77' has cardinality 0..*, and from 'OCLinEmig_VariableDeclaration', the role 'VariableDeclaration78' has cardinality 0..*.
+An association connects 'OCLinEmig_TupleTypeAttribute' and 'OCLinEmig_TupleType'. From 'OCLinEmig_TupleTypeAttribute', the role 'TupleTypeAttribute80' has cardinality 0..*, and from 'OCLinEmig_TupleType', the role 'tupleType' has cardinality 0..*.
+An association connects 'OCLinEmig_TupleTypeAttribute' and 'OCLinEmig_OclType'. From 'OCLinEmig_TupleTypeAttribute', the role 'tupleTypeAttribute' has cardinality 0..*, and from 'OCLinEmig_OclType', the role 'OclType82' has cardinality 0..*.
+An association connects 'OCLinEmig_TupleTypeAttribute' and 'OCLinEmig_TupleType'. From 'OCLinEmig_TupleTypeAttribute', the role 'attributes' has cardinality 0..*, and from 'OCLinEmig_TupleType', the role 'TupleType' has cardinality 0..*.
+An association connects 'OCLinEmig_OclModelElement' and 'OCLinEmig_OclModel'. From 'OCLinEmig_OclModelElement', the role 'elements85' has cardinality 0..*, and from 'OCLinEmig_OclModel', the role 'OclModel' has cardinality 0..*.
+An association connects 'OCLinEmig_MapType' and 'OCLinEmig_OclType'. From 'OCLinEmig_MapType', the role 'mapType2' has cardinality 0..*, and from 'OCLinEmig_OclType', the role 'OclType87' has cardinality 0..*.
+An association connects 'OCLinEmig_MapType' and 'OCLinEmig_OclType'. From 'OCLinEmig_MapType', the role 'mapType' has cardinality 0..*, and from 'OCLinEmig_OclType', the role 'OclType89' has cardinality 0..*.
+An association connects 'OCLinEmig_OclFeature' and 'OCLinEmig_OclFeatureDefinition'. From 'OCLinEmig_OclFeature', the role 'OclFeature' has cardinality 0..*, and from 'OCLinEmig_OclFeatureDefinition', the role 'definition' has cardinality 0..*.
+An association connects 'OCLinEmig_OclFeatureDefinition' and 'OCLinEmig_OclContextDefinition'. From 'OCLinEmig_OclFeatureDefinition', the role 'definition92' has cardinality 0..*, and from 'OCLinEmig_OclContextDefinition', the role 'OclContextDefinition93' has cardinality 0..*.
+An association connects 'OCLinEmig_OclFeatureDefinition' and 'OCLinEmig_OclContextDefinition'. From 'OCLinEmig_OclFeatureDefinition', the role 'OclFeatureDefinition' has cardinality 0..*, and from 'OCLinEmig_OclContextDefinition', the role 'context_95' has cardinality 0..*.
+An association connects 'OCLinEmig_OclContextDefinition' and 'OCLinEmig_OclType'. From 'OCLinEmig_OclContextDefinition', the role 'definitions' has cardinality 0..*, and from 'OCLinEmig_OclType', the role 'OclType97' has cardinality 0..*.
+An association connects 'OCLinEmig_OclFeatureDefinition' and 'OCLinEmig_OclFeature'. From 'OCLinEmig_OclFeatureDefinition', the role 'OclFeatureDefinition99' has cardinality 0..*, and from 'OCLinEmig_OclFeature', the role 'feature' has cardinality 0..*.
+An association connects 'OCLinEmig_Attribute' and 'OCLinEmig_OclExpression'. From 'OCLinEmig_Attribute', the role 'owningAttribute' has cardinality 0..*, and from 'OCLinEmig_OclExpression', the role 'OclExpression101' has cardinality 0..*.
+An association connects 'OCLinEmig_OclType' and 'OCLinEmig_Attribute'. From 'OCLinEmig_OclType', the role 'OclType103' has cardinality 0..*, and from 'OCLinEmig_Attribute', the role 'attribute' has cardinality 0..*.
+An association connects 'OCLinEmig_Operation' and 'OCLinEmig_Parameter'. From 'OCLinEmig_Operation', the role 'operation' has cardinality 0..*, and from 'OCLinEmig_Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'OCLinEmig_Operation' and 'OCLinEmig_OclType'. From 'OCLinEmig_Operation', the role 'operation106' has cardinality 0..*, and from 'OCLinEmig_OclType', the role 'OclType107' has cardinality 0..*.
+An association connects 'OCLinEmig_Operation' and 'OCLinEmig_OclExpression'. From 'OCLinEmig_Operation', the role 'owningOperation' has cardinality 0..*, and from 'OCLinEmig_OclExpression', the role 'OclExpression109' has cardinality 0..*.
+An association connects 'OCLinEmig_OclModel' and 'OCLinEmig_OclModel'. From 'OCLinEmig_OclModel', the role 'model' has cardinality 0..*, and from 'OCLinEmig_OclModel', the role 'OclModel112' has cardinality 0..*.
+An association connects 'OCLinEmig_OclModelElement' and 'OCLinEmig_OclModel'. From 'OCLinEmig_OclModelElement', the role 'OclModelElement' has cardinality 0..*, and from 'OCLinEmig_OclModel', the role 'model114' has cardinality 0..*.
+An association connects 'OCLinEmig_OclModel' and 'OCLinEmig_OclModel'. From 'OCLinEmig_OclModel', the role 'metamodel' has cardinality 0..*, and from 'OCLinEmig_OclModel', the role 'OclModel117' has cardinality 0..*.
+An association connects 'OCLinEmig_Module' and 'OCLinEmig_OclFeatureDefinition'. From 'OCLinEmig_Module', the role 'OCLinEmig_Module' has cardinality 0..*, and from 'OCLinEmig_OclFeatureDefinition', the role 'OCLinEmig_OclFeatureDefinition' has cardinality 0..*.

@@ -1,0 +1,710 @@
+The domain model 'JDTAST' describes the core structural elements and their relationships within the system.
+
+The model defines 133 main class(es).
+
+'JDTAST_VariableDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_MethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_SuperMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_SuperFieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_MarkerAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_IImportDeclaration' represents an important domain concept.
+It has the following attributes: 'isStatic', which is of type str; 'isOnDemand', which is of type str.
+
+'JDTAST_CharacterLiteral' represents an important domain concept.
+It has the following attributes: 'charValue', which is of type str; 'escapedValue', which is of type str.
+
+'JDTAST_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_ITypeParameter' represents an important domain concept.
+It has one attribute: 'bounds', which is of type str.
+
+'JDTAST_AnnotationTypeMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_PhysicalElement' represents an important domain concept.
+It has the following attributes: 'isReadOnly', which is of type str; 'path', which is of type str.
+
+'JDTAST_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_IType' represents an important domain concept.
+It has the following attributes: 'fullyQualifiedParametrizedName', which is of type str; 'fullyQualifiedName', which is of type str.
+
+'JDTAST_QualifiedType' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_PackageDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_ArrayAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_InfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'JDTAST_IMethod' represents an important domain concept.
+It has the following attributes: 'returnType', which is of type str; 'isConstructor', which is of type str; 'isMainMethod', which is of type str; 'exceptionTypes', which is of type str.
+
+'JDTAST_ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_WildcardType' represents an important domain concept.
+It has one attribute: 'upperBound', which is of type str.
+
+'JDTAST_IJavaElement' represents an important domain concept.
+It has one attribute: 'elementName', which is of type str.
+
+'JDTAST_ISourceReference' represents an important domain concept.
+It has one attribute: 'source', which is of type str.
+
+'ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_IPackageFragmentRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_SwitchCase' represents an important domain concept.
+It has one attribute: 'default', which is of type str.
+
+'AbstractTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_PrefixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'JDTAST_TypeDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'extraDimensions', which is of type str.
+
+'JDTAST_IPackageFragment' represents an important domain concept.
+It has one attribute: 'isDefaultPackage', which is of type str.
+
+'Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_Javadoc' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_SimpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_Modifier' represents an important domain concept.
+It has the following attributes: 'strictfp', which is of type str; 'volatile', which is of type str; 'native', which is of type str; 'none', which is of type str; 'synchronized', which is of type str; 'static', which is of type str; 'protected', which is of type str; 'private', which is of type str; 'abstract', which is of type str; 'transient', which is of type str; 'final', which is of type str; 'public', which is of type str.
+
+'JDTAST_QualifiedName' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_StringLiteral' represents an important domain concept.
+It has the following attributes: 'literalValue', which is of type str; 'escapedValue', which is of type str.
+
+'JDTAST_InstanceofExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Name' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_LabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_IClassFile' represents an important domain concept.
+It has the following attributes: 'isInterface', which is of type str; 'isClass', which is of type str.
+
+'JDTAST_PrimitiveType' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+'JDTAST_AST' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_AssertStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_MethodDeclaration' represents an important domain concept.
+It has the following attributes: 'extraDimensions', which is of type str; 'constructor', which is of type str; 'varargs', which is of type str.
+
+'JDTAST_EmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_DoStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_BlockComment' represents an important domain concept.
+It does not declare any attributes.
+
+'IPackageFragmentRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_MemberRef' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_AbstractTypeDeclaration' represents an important domain concept.
+It has the following attributes: 'packageMemberTypeDeclaration', which is of type str; 'localTypeDeclaration', which is of type str; 'memberTypeDeclaration', which is of type str.
+
+'JDTAST_ConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_ICompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_TypeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_IJavaProject' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_ClassInstanceCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'booleanValue', which is of type str.
+
+'JDTAST_ParenthesizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_NumberLiteral' represents an important domain concept.
+It has one attribute: 'token', which is of type str.
+
+'JDTAST_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_SourcePackageFragmentRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_ThisExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_AnonymousClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'IJavaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_CastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_FieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_ArrayCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_AnnotationTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_EnumConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_IJavaModel' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_CatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_LineComment' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_IInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_ThrowStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_MemberValuePair' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_VariableDeclarationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_VariableDeclarationFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_FieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_TextElement' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'JDTAST_SingleMemberAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_ExtendedModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_NormalAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_TagElement' represents an important domain concept.
+It has the following attributes: 'nested', which is of type str; 'tagName', which is of type str.
+
+'JDTAST_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'IMember' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_SingleVariableDeclaration' represents an important domain concept.
+It has one attribute: 'varargs', which is of type str.
+
+'JDTAST_ImportDeclaration' represents an important domain concept.
+It has the following attributes: 'onDemand', which is of type str; 'static', which is of type str.
+
+'JDTAST_ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_SynchronizedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_MethodRefParameter' represents an important domain concept.
+It has one attribute: 'varargs', which is of type str.
+
+'JDTAST_Expression' represents an important domain concept.
+It has the following attributes: 'resolveUnboxing', which is of type str; 'resolveBoxing', which is of type str.
+
+'JDTAST_Assignment' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'JDTAST_ParameterizedType' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_TypeDeclaration' represents an important domain concept.
+It has one attribute: 'interface', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'ISourceReference' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_TypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_IMember' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_SimpleName' represents an important domain concept.
+It has the following attributes: 'declaration', which is of type str; 'identifier', which is of type str.
+
+'JDTAST_EnhancedForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_ITypeRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_BinaryPackageFragmentRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_Parameter' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'JDTAST_ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_TryStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'PhysicalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_ISourceRange' represents an important domain concept.
+It has the following attributes: 'length', which is of type str; 'offset', which is of type str.
+
+'ITypeRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_Name' represents an important domain concept.
+It has one attribute: 'fullyQualifiedName', which is of type str.
+
+'JDTAST_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_MethodRef' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_IField' represents an important domain concept.
+It has the following attributes: 'isTransient', which is of type str; 'typeSignature', which is of type str; 'constant', which is of type str; 'isVolatile', which is of type str; 'isEnumConstant', which is of type str.
+
+'ExtendedModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_Initializer' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_SuperConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTAST_ArrayType' represents an important domain concept.
+It has one attribute: 'dimensions', which is of type str.
+
+'JDTAST_PostfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'JDTAST_EnumDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PrefixExpressionOperatorKind' defines the following possible values: 'decrement', 'increment', 'plus', 'complement', 'not', 'minus'.
+The enumeration 'InfixExpressionOperatorKind' defines the following possible values: 'right_shift_unsigned', 'minus', 'and', 'plus', 'or', 'not_equals', 'times', 'remainder', 'xor', 'conditional_and', 'greater_equals', 'right_shift_signed', 'greater', 'less', 'divide', 'less_equals', 'conditional_or', 'left_shift', 'equals'.
+The enumeration 'AssignmentOperatorKind' defines the following possible values: 'divide_assign', 'right_shift_unsigned_assign', 'plus_assign', 'remainder_assign', 'bit_or_assign', 'minus_assign', 'assign', 'left_shift_assign', 'right_shift_signed_assign', 'bit_xor_assign', 'bit_and_assign', 'times_assign'.
+The enumeration 'Modifiers' defines the following possible values: 'deprecated', 'bridge', 'varargs', 'enum', 'strictfp', 'volatile', 'static', 'final', 'transient', 'synthetic', 'super', 'native', 'private', 'abstract', 'protected', 'synchronized', 'interface', 'public', 'annotation', 'default'.
+The enumeration 'PostfixExpressionOperatorKind' defines the following possible values: 'decrement', 'increment'.
+
+The model also captures inheritance relationships between classes.
+The class 'JDTAST_IJavaModel' is a specialization of 'PhysicalElement'.
+The class 'JDTAST_IJavaProject' is a specialization of 'IJavaElement'.
+The class 'JDTAST_IJavaProject' is a specialization of 'PhysicalElement'.
+The class 'JDTAST_IPackageFragmentRoot' is a specialization of 'IJavaElement'.
+The class 'JDTAST_IPackageFragmentRoot' is a specialization of 'PhysicalElement'.
+The class 'JDTAST_BinaryPackageFragmentRoot' is a specialization of 'IPackageFragmentRoot'.
+The class 'JDTAST_SourcePackageFragmentRoot' is a specialization of 'IPackageFragmentRoot'.
+The class 'JDTAST_IPackageFragment' is a specialization of 'IJavaElement'.
+The class 'JDTAST_IPackageFragment' is a specialization of 'PhysicalElement'.
+The class 'JDTAST_ITypeRoot' is a specialization of 'IJavaElement'.
+The class 'JDTAST_ITypeRoot' is a specialization of 'ISourceReference'.
+The class 'JDTAST_ITypeRoot' is a specialization of 'PhysicalElement'.
+The class 'JDTAST_ICompilationUnit' is a specialization of 'ITypeRoot'.
+The class 'JDTAST_IClassFile' is a specialization of 'ITypeRoot'.
+The class 'JDTAST_IImportDeclaration' is a specialization of 'IJavaElement'.
+The class 'JDTAST_IImportDeclaration' is a specialization of 'ISourceReference'.
+The class 'JDTAST_IMember' is a specialization of 'IJavaElement'.
+The class 'JDTAST_IMember' is a specialization of 'ISourceReference'.
+The class 'JDTAST_IType' is a specialization of 'IMember'.
+The class 'JDTAST_ITypeParameter' is a specialization of 'IJavaElement'.
+The class 'JDTAST_ITypeParameter' is a specialization of 'ISourceReference'.
+The class 'JDTAST_IInitializer' is a specialization of 'IMember'.
+The class 'JDTAST_IField' is a specialization of 'IMember'.
+The class 'JDTAST_IMethod' is a specialization of 'IMember'.
+The class 'JDTAST_AnonymousClassDeclaration' is a specialization of 'ASTNode'.
+The class 'JDTAST_BodyDeclaration' is a specialization of 'ASTNode'.
+The class 'JDTAST_CatchClause' is a specialization of 'ASTNode'.
+The class 'JDTAST_Comment' is a specialization of 'ASTNode'.
+The class 'JDTAST_CompilationUnit' is a specialization of 'ASTNode'.
+The class 'JDTAST_Expression' is a specialization of 'ASTNode'.
+The class 'JDTAST_ImportDeclaration' is a specialization of 'ASTNode'.
+The class 'JDTAST_MemberRef' is a specialization of 'ASTNode'.
+The class 'JDTAST_MemberValuePair' is a specialization of 'ASTNode'.
+The class 'JDTAST_MethodRef' is a specialization of 'ASTNode'.
+The class 'JDTAST_MethodRefParameter' is a specialization of 'ASTNode'.
+The class 'JDTAST_Modifier' is a specialization of 'ASTNode'.
+The class 'JDTAST_Modifier' is a specialization of 'ExtendedModifier'.
+The class 'JDTAST_PackageDeclaration' is a specialization of 'ASTNode'.
+The class 'JDTAST_Statement' is a specialization of 'ASTNode'.
+The class 'JDTAST_TagElement' is a specialization of 'ASTNode'.
+The class 'JDTAST_TextElement' is a specialization of 'ASTNode'.
+The class 'JDTAST_Type' is a specialization of 'ASTNode'.
+The class 'JDTAST_TypeParameter' is a specialization of 'ASTNode'.
+The class 'JDTAST_VariableDeclaration' is a specialization of 'ASTNode'.
+The class 'JDTAST_AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'JDTAST_AnnotationTypeMemberDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'JDTAST_EnumConstantDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'JDTAST_FieldDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'JDTAST_Initializer' is a specialization of 'BodyDeclaration'.
+The class 'JDTAST_MethodDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'JDTAST_AnnotationTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'JDTAST_EnumDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'JDTAST_TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'JDTAST_BlockComment' is a specialization of 'Comment'.
+The class 'JDTAST_Javadoc' is a specialization of 'Comment'.
+The class 'JDTAST_LineComment' is a specialization of 'Comment'.
+The class 'JDTAST_Annotation' is a specialization of 'Expression'.
+The class 'JDTAST_Annotation' is a specialization of 'ExtendedModifier'.
+The class 'JDTAST_ArrayAccess' is a specialization of 'Expression'.
+The class 'JDTAST_ArrayCreation' is a specialization of 'Expression'.
+The class 'JDTAST_ArrayInitializer' is a specialization of 'Expression'.
+The class 'JDTAST_Assignment' is a specialization of 'Expression'.
+The class 'JDTAST_BooleanLiteral' is a specialization of 'Expression'.
+The class 'JDTAST_CastExpression' is a specialization of 'Expression'.
+The class 'JDTAST_CharacterLiteral' is a specialization of 'Expression'.
+The class 'JDTAST_ClassInstanceCreation' is a specialization of 'Expression'.
+The class 'JDTAST_ConditionalExpression' is a specialization of 'Expression'.
+The class 'JDTAST_FieldAccess' is a specialization of 'Expression'.
+The class 'JDTAST_InfixExpression' is a specialization of 'Expression'.
+The class 'JDTAST_InstanceofExpression' is a specialization of 'Expression'.
+The class 'JDTAST_MethodInvocation' is a specialization of 'Expression'.
+The class 'JDTAST_Name' is a specialization of 'Expression'.
+The class 'JDTAST_NullLiteral' is a specialization of 'Expression'.
+The class 'JDTAST_NumberLiteral' is a specialization of 'Expression'.
+The class 'JDTAST_ParenthesizedExpression' is a specialization of 'Expression'.
+The class 'JDTAST_PostfixExpression' is a specialization of 'Expression'.
+The class 'JDTAST_PrefixExpression' is a specialization of 'Expression'.
+The class 'JDTAST_StringLiteral' is a specialization of 'Expression'.
+The class 'JDTAST_SuperFieldAccess' is a specialization of 'Expression'.
+The class 'JDTAST_SuperMethodInvocation' is a specialization of 'Expression'.
+The class 'JDTAST_ThisExpression' is a specialization of 'Expression'.
+The class 'JDTAST_TypeLiteral' is a specialization of 'Expression'.
+The class 'JDTAST_VariableDeclarationExpression' is a specialization of 'Expression'.
+The class 'JDTAST_AssertStatement' is a specialization of 'Statement'.
+The class 'JDTAST_Block' is a specialization of 'Statement'.
+The class 'JDTAST_BreakStatement' is a specialization of 'Statement'.
+The class 'JDTAST_ConstructorInvocation' is a specialization of 'Statement'.
+The class 'JDTAST_ContinueStatement' is a specialization of 'Statement'.
+The class 'JDTAST_DoStatement' is a specialization of 'Statement'.
+The class 'JDTAST_EmptyStatement' is a specialization of 'Statement'.
+The class 'JDTAST_EnhancedForStatement' is a specialization of 'Statement'.
+The class 'JDTAST_ExpressionStatement' is a specialization of 'Statement'.
+The class 'JDTAST_ForStatement' is a specialization of 'Statement'.
+The class 'JDTAST_IfStatement' is a specialization of 'Statement'.
+The class 'JDTAST_LabeledStatement' is a specialization of 'Statement'.
+The class 'JDTAST_ReturnStatement' is a specialization of 'Statement'.
+The class 'JDTAST_SuperConstructorInvocation' is a specialization of 'Statement'.
+The class 'JDTAST_SwitchCase' is a specialization of 'Statement'.
+The class 'JDTAST_SwitchStatement' is a specialization of 'Statement'.
+The class 'JDTAST_SynchronizedStatement' is a specialization of 'Statement'.
+The class 'JDTAST_ThrowStatement' is a specialization of 'Statement'.
+The class 'JDTAST_TryStatement' is a specialization of 'Statement'.
+The class 'JDTAST_TypeDeclarationStatement' is a specialization of 'Statement'.
+The class 'JDTAST_VariableDeclarationStatement' is a specialization of 'Statement'.
+The class 'JDTAST_WhileStatement' is a specialization of 'Statement'.
+The class 'JDTAST_ArrayType' is a specialization of 'Type'.
+The class 'JDTAST_ParameterizedType' is a specialization of 'Type'.
+The class 'JDTAST_PrimitiveType' is a specialization of 'Type'.
+The class 'JDTAST_QualifiedType' is a specialization of 'Type'.
+The class 'JDTAST_SimpleType' is a specialization of 'Type'.
+The class 'JDTAST_WildcardType' is a specialization of 'Type'.
+The class 'JDTAST_SingleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+The class 'JDTAST_VariableDeclarationFragment' is a specialization of 'VariableDeclaration'.
+The class 'JDTAST_QualifiedName' is a specialization of 'Name'.
+The class 'JDTAST_SimpleName' is a specialization of 'Name'.
+The class 'JDTAST_MarkerAnnotation' is a specialization of 'Annotation'.
+The class 'JDTAST_NormalAnnotation' is a specialization of 'Annotation'.
+The class 'JDTAST_SingleMemberAnnotation' is a specialization of 'Annotation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'JDTAST_IJavaProject' and 'JDTAST_IJavaModel'. From 'JDTAST_IJavaProject', the role 'JDTAST_IJavaProject' has cardinality 0..*, and from 'JDTAST_IJavaModel', the role 'JDTAST_IJavaModel' has cardinality 0..*.
+An association connects 'JDTAST_IJavaModel' and 'JDTAST_IPackageFragmentRoot'. From 'JDTAST_IJavaModel', the role 'JDTAST_IJavaModel2' has cardinality 0..*, and from 'JDTAST_IPackageFragmentRoot', the role 'JDTAST_IPackageFragmentRoot' has cardinality 0..*.
+An association connects 'JDTAST_IJavaProject' and 'JDTAST_IPackageFragmentRoot'. From 'JDTAST_IJavaProject', the role 'JDTAST_IJavaProject4' has cardinality 0..*, and from 'JDTAST_IPackageFragmentRoot', the role 'JDTAST_IPackageFragmentRoot5' has cardinality 0..*.
+An association connects 'JDTAST_IPackageFragmentRoot' and 'JDTAST_IJavaProject'. From 'JDTAST_IPackageFragmentRoot', the role 'JDTAST_IPackageFragmentRoot8' has cardinality 0..*, and from 'JDTAST_IJavaProject', the role 'JDTAST_IJavaProject7' has cardinality 0..*.
+An association connects 'JDTAST_IJavaProject' and 'JDTAST_IJavaProject'. From 'JDTAST_IJavaProject', the role 'JDTAST_IJavaProject9' has cardinality 0..*, and from 'JDTAST_IJavaProject', the role 'JDTAST_IJavaProject11' has cardinality 0..*.
+An association connects 'JDTAST_IPackageFragmentRoot' and 'JDTAST_IPackageFragment'. From 'JDTAST_IPackageFragmentRoot', the role 'packageFragmentRoot' has cardinality 0..*, and from 'JDTAST_IPackageFragment', the role 'IPackageFragment' has cardinality 0..*.
+An association connects 'JDTAST_IPackageFragmentRoot' and 'JDTAST_IPackageFragment'. From 'JDTAST_IPackageFragmentRoot', the role 'IPackageFragmentRoot' has cardinality 0..*, and from 'JDTAST_IPackageFragment', the role 'packageFragments' has cardinality 0..*.
+An association connects 'JDTAST_IClassFile' and 'JDTAST_IPackageFragment'. From 'JDTAST_IClassFile', the role 'JDTAST_IClassFile' has cardinality 0..*, and from 'JDTAST_IPackageFragment', the role 'JDTAST_IPackageFragment' has cardinality 0..*.
+An association connects 'JDTAST_ICompilationUnit' and 'JDTAST_IPackageFragment'. From 'JDTAST_ICompilationUnit', the role 'JDTAST_ICompilationUnit' has cardinality 0..*, and from 'JDTAST_IPackageFragment', the role 'JDTAST_IPackageFragment16' has cardinality 0..*.
+An association connects 'JDTAST_IType' and 'JDTAST_ICompilationUnit'. From 'JDTAST_IType', the role 'JDTAST_IType' has cardinality 0..*, and from 'JDTAST_ICompilationUnit', the role 'JDTAST_ICompilationUnit18' has cardinality 0..*.
+An association connects 'JDTAST_IImportDeclaration' and 'JDTAST_ICompilationUnit'. From 'JDTAST_IImportDeclaration', the role 'JDTAST_IImportDeclaration' has cardinality 0..*, and from 'JDTAST_ICompilationUnit', the role 'JDTAST_ICompilationUnit20' has cardinality 0..*.
+An association connects 'JDTAST_ICompilationUnit' and 'JDTAST_IType'. From 'JDTAST_ICompilationUnit', the role 'JDTAST_ICompilationUnit22' has cardinality 0..*, and from 'JDTAST_IType', the role 'JDTAST_IType23' has cardinality 0..*.
+An association connects 'JDTAST_ICompilationUnit' and 'JDTAST_ICompilationUnit'. From 'JDTAST_ICompilationUnit', the role 'JDTAST_ICompilationUnit26' has cardinality 0..*, and from 'JDTAST_ICompilationUnit', the role 'JDTAST_ICompilationUnit24' has cardinality 0..*.
+An association connects 'JDTAST_ICompilationUnit' and 'JDTAST_CompilationUnit'. From 'JDTAST_ICompilationUnit', the role 'JDTAST_ICompilationUnit28' has cardinality 0..*, and from 'JDTAST_CompilationUnit', the role 'JDTAST_CompilationUnit' has cardinality 0..*.
+An association connects 'JDTAST_IType' and 'JDTAST_IClassFile'. From 'JDTAST_IType', the role 'JDTAST_IType31' has cardinality 0..*, and from 'JDTAST_IClassFile', the role 'JDTAST_IClassFile30' has cardinality 0..*.
+An association connects 'JDTAST_ISourceRange' and 'JDTAST_ISourceReference'. From 'JDTAST_ISourceRange', the role 'JDTAST_ISourceRange' has cardinality 0..*, and from 'JDTAST_ISourceReference', the role 'JDTAST_ISourceReference' has cardinality 0..*.
+An association connects 'JDTAST_IMember' and 'JDTAST_ISourceRange'. From 'JDTAST_IMember', the role 'JDTAST_IMember' has cardinality 0..*, and from 'JDTAST_ISourceRange', the role 'JDTAST_ISourceRange34' has cardinality 0..*.
+An association connects 'JDTAST_ISourceRange' and 'JDTAST_IMember'. From 'JDTAST_ISourceRange', the role 'JDTAST_ISourceRange37' has cardinality 0..*, and from 'JDTAST_IMember', the role 'JDTAST_IMember36' has cardinality 0..*.
+An association connects 'JDTAST_IType' and 'JDTAST_IInitializer'. From 'JDTAST_IType', the role 'JDTAST_IType39' has cardinality 0..*, and from 'JDTAST_IInitializer', the role 'JDTAST_IInitializer' has cardinality 0..*.
+An association connects 'JDTAST_IField' and 'JDTAST_IType'. From 'JDTAST_IField', the role 'JDTAST_IField' has cardinality 0..*, and from 'JDTAST_IType', the role 'JDTAST_IType41' has cardinality 0..*.
+An association connects 'JDTAST_IType' and 'JDTAST_IMethod'. From 'JDTAST_IType', the role 'JDTAST_IType43' has cardinality 0..*, and from 'JDTAST_IMethod', the role 'JDTAST_IMethod' has cardinality 0..*.
+An association connects 'JDTAST_IType' and 'JDTAST_IType'. From 'JDTAST_IType', the role 'JDTAST_IType44' has cardinality 0..*, and from 'JDTAST_IType', the role 'JDTAST_IType46' has cardinality 0..*.
+An association connects 'JDTAST_IType' and 'JDTAST_ITypeParameter'. From 'JDTAST_IType', the role 'JDTAST_IType48' has cardinality 0..*, and from 'JDTAST_ITypeParameter', the role 'JDTAST_ITypeParameter' has cardinality 0..*.
+An association connects 'JDTAST_Parameter' and 'JDTAST_IMethod'. From 'JDTAST_Parameter', the role 'JDTAST_Parameter' has cardinality 0..*, and from 'JDTAST_IMethod', the role 'JDTAST_IMethod50' has cardinality 0..*.
+An association connects 'JDTAST_ASTNode' and 'JDTAST_AST'. From 'JDTAST_ASTNode', the role 'JDTAST_ASTNode' has cardinality 0..*, and from 'JDTAST_AST', the role 'JDTAST_AST' has cardinality 0..*.
+An association connects 'JDTAST_BodyDeclaration' and 'JDTAST_AnonymousClassDeclaration'. From 'JDTAST_BodyDeclaration', the role 'JDTAST_BodyDeclaration' has cardinality 0..*, and from 'JDTAST_AnonymousClassDeclaration', the role 'JDTAST_AnonymousClassDeclaration' has cardinality 0..*.
+An association connects 'JDTAST_BodyDeclaration' and 'JDTAST_ExtendedModifier'. From 'JDTAST_BodyDeclaration', the role 'JDTAST_BodyDeclaration54' has cardinality 0..*, and from 'JDTAST_ExtendedModifier', the role 'JDTAST_ExtendedModifier' has cardinality 0..*.
+An association connects 'JDTAST_Javadoc' and 'JDTAST_BodyDeclaration'. From 'JDTAST_Javadoc', the role 'JDTAST_Javadoc' has cardinality 0..*, and from 'JDTAST_BodyDeclaration', the role 'JDTAST_BodyDeclaration56' has cardinality 0..*.
+An association connects 'JDTAST_CatchClause' and 'JDTAST_Block'. From 'JDTAST_CatchClause', the role 'JDTAST_CatchClause' has cardinality 0..*, and from 'JDTAST_Block', the role 'JDTAST_Block' has cardinality 0..*.
+An association connects 'JDTAST_CatchClause' and 'JDTAST_SingleVariableDeclaration'. From 'JDTAST_CatchClause', the role 'JDTAST_CatchClause59' has cardinality 0..*, and from 'JDTAST_SingleVariableDeclaration', the role 'JDTAST_SingleVariableDeclaration' has cardinality 0..*.
+An association connects 'JDTAST_Comment' and 'JDTAST_ASTNode'. From 'JDTAST_Comment', the role 'JDTAST_Comment' has cardinality 0..*, and from 'JDTAST_ASTNode', the role 'JDTAST_ASTNode61' has cardinality 0..*.
+An association connects 'JDTAST_Comment' and 'JDTAST_CompilationUnit'. From 'JDTAST_Comment', the role 'JDTAST_Comment64' has cardinality 0..*, and from 'JDTAST_CompilationUnit', the role 'JDTAST_CompilationUnit63' has cardinality 0..*.
+An association connects 'JDTAST_PackageDeclaration' and 'JDTAST_CompilationUnit'. From 'JDTAST_PackageDeclaration', the role 'JDTAST_PackageDeclaration' has cardinality 0..*, and from 'JDTAST_CompilationUnit', the role 'JDTAST_CompilationUnit66' has cardinality 0..*.
+An association connects 'JDTAST_ImportDeclaration' and 'JDTAST_CompilationUnit'. From 'JDTAST_ImportDeclaration', the role 'JDTAST_ImportDeclaration' has cardinality 0..*, and from 'JDTAST_CompilationUnit', the role 'JDTAST_CompilationUnit68' has cardinality 0..*.
+An association connects 'JDTAST_AbstractTypeDeclaration' and 'JDTAST_CompilationUnit'. From 'JDTAST_AbstractTypeDeclaration', the role 'JDTAST_AbstractTypeDeclaration' has cardinality 0..*, and from 'JDTAST_CompilationUnit', the role 'JDTAST_CompilationUnit70' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_IType'. From 'JDTAST_Expression', the role 'JDTAST_Expression' has cardinality 0..*, and from 'JDTAST_IType', the role 'JDTAST_IType72' has cardinality 0..*.
+An association connects 'JDTAST_ImportDeclaration' and 'JDTAST_Name'. From 'JDTAST_ImportDeclaration', the role 'JDTAST_ImportDeclaration74' has cardinality 0..*, and from 'JDTAST_Name', the role 'JDTAST_Name' has cardinality 0..*.
+An association connects 'JDTAST_SimpleName' and 'JDTAST_MemberRef'. From 'JDTAST_SimpleName', the role 'JDTAST_SimpleName' has cardinality 0..*, and from 'JDTAST_MemberRef', the role 'JDTAST_MemberRef' has cardinality 0..*.
+An association connects 'JDTAST_MemberRef' and 'JDTAST_Name'. From 'JDTAST_MemberRef', the role 'JDTAST_MemberRef77' has cardinality 0..*, and from 'JDTAST_Name', the role 'JDTAST_Name78' has cardinality 0..*.
+An association connects 'JDTAST_MemberValuePair' and 'JDTAST_SimpleName'. From 'JDTAST_MemberValuePair', the role 'JDTAST_MemberValuePair' has cardinality 0..*, and from 'JDTAST_SimpleName', the role 'JDTAST_SimpleName80' has cardinality 0..*.
+An association connects 'JDTAST_MemberValuePair' and 'JDTAST_Expression'. From 'JDTAST_MemberValuePair', the role 'JDTAST_MemberValuePair82' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression83' has cardinality 0..*.
+An association connects 'JDTAST_MethodRef' and 'JDTAST_SimpleName'. From 'JDTAST_MethodRef', the role 'JDTAST_MethodRef' has cardinality 0..*, and from 'JDTAST_SimpleName', the role 'JDTAST_SimpleName85' has cardinality 0..*.
+An association connects 'JDTAST_Name' and 'JDTAST_MethodRef'. From 'JDTAST_Name', the role 'JDTAST_Name88' has cardinality 0..*, and from 'JDTAST_MethodRef', the role 'JDTAST_MethodRef87' has cardinality 0..*.
+An association connects 'JDTAST_MethodRef' and 'JDTAST_MethodRefParameter'. From 'JDTAST_MethodRef', the role 'JDTAST_MethodRef90' has cardinality 0..*, and from 'JDTAST_MethodRefParameter', the role 'JDTAST_MethodRefParameter' has cardinality 0..*.
+An association connects 'JDTAST_MethodRefParameter' and 'JDTAST_SimpleName'. From 'JDTAST_MethodRefParameter', the role 'JDTAST_MethodRefParameter92' has cardinality 0..*, and from 'JDTAST_SimpleName', the role 'JDTAST_SimpleName93' has cardinality 0..*.
+An association connects 'JDTAST_MethodRefParameter' and 'JDTAST_Type'. From 'JDTAST_MethodRefParameter', the role 'JDTAST_MethodRefParameter95' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type' has cardinality 0..*.
+An association connects 'JDTAST_Annotation' and 'JDTAST_PackageDeclaration'. From 'JDTAST_Annotation', the role 'JDTAST_Annotation' has cardinality 0..*, and from 'JDTAST_PackageDeclaration', the role 'JDTAST_PackageDeclaration97' has cardinality 0..*.
+An association connects 'JDTAST_PackageDeclaration' and 'JDTAST_Javadoc'. From 'JDTAST_PackageDeclaration', the role 'JDTAST_PackageDeclaration99' has cardinality 0..*, and from 'JDTAST_Javadoc', the role 'JDTAST_Javadoc100' has cardinality 0..*.
+An association connects 'JDTAST_Name' and 'JDTAST_PackageDeclaration'. From 'JDTAST_Name', the role 'JDTAST_Name103' has cardinality 0..*, and from 'JDTAST_PackageDeclaration', the role 'JDTAST_PackageDeclaration102' has cardinality 0..*.
+An association connects 'JDTAST_IPackageFragment' and 'JDTAST_PackageDeclaration'. From 'JDTAST_IPackageFragment', the role 'JDTAST_IPackageFragment106' has cardinality 0..*, and from 'JDTAST_PackageDeclaration', the role 'JDTAST_PackageDeclaration105' has cardinality 0..*.
+An association connects 'JDTAST_TagElement' and 'JDTAST_ASTNode'. From 'JDTAST_TagElement', the role 'JDTAST_TagElement' has cardinality 0..*, and from 'JDTAST_ASTNode', the role 'JDTAST_ASTNode108' has cardinality 0..*.
+An association connects 'JDTAST_TypeParameter' and 'JDTAST_SimpleName'. From 'JDTAST_TypeParameter', the role 'JDTAST_TypeParameter' has cardinality 0..*, and from 'JDTAST_SimpleName', the role 'JDTAST_SimpleName110' has cardinality 0..*.
+An association connects 'JDTAST_TypeParameter' and 'JDTAST_Type'. From 'JDTAST_TypeParameter', the role 'JDTAST_TypeParameter112' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type113' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_VariableDeclaration'. From 'JDTAST_Expression', the role 'JDTAST_Expression115' has cardinality 0..*, and from 'JDTAST_VariableDeclaration', the role 'JDTAST_VariableDeclaration' has cardinality 0..*.
+An association connects 'JDTAST_VariableDeclaration' and 'JDTAST_SimpleName'. From 'JDTAST_VariableDeclaration', the role 'JDTAST_VariableDeclaration117' has cardinality 0..*, and from 'JDTAST_SimpleName', the role 'JDTAST_SimpleName118' has cardinality 0..*.
+An association connects 'JDTAST_AbstractTypeDeclaration' and 'JDTAST_BodyDeclaration'. From 'JDTAST_AbstractTypeDeclaration', the role 'JDTAST_AbstractTypeDeclaration120' has cardinality 0..*, and from 'JDTAST_BodyDeclaration', the role 'JDTAST_BodyDeclaration121' has cardinality 0..*.
+An association connects 'JDTAST_SimpleName' and 'JDTAST_AbstractTypeDeclaration'. From 'JDTAST_SimpleName', the role 'JDTAST_SimpleName124' has cardinality 0..*, and from 'JDTAST_AbstractTypeDeclaration', the role 'JDTAST_AbstractTypeDeclaration123' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_AnnotationTypeMemberDeclaration'. From 'JDTAST_Expression', the role 'JDTAST_Expression126' has cardinality 0..*, and from 'JDTAST_AnnotationTypeMemberDeclaration', the role 'JDTAST_AnnotationTypeMemberDeclaration' has cardinality 0..*.
+An association connects 'JDTAST_AnnotationTypeMemberDeclaration' and 'JDTAST_SimpleName'. From 'JDTAST_AnnotationTypeMemberDeclaration', the role 'JDTAST_AnnotationTypeMemberDeclaration128' has cardinality 0..*, and from 'JDTAST_SimpleName', the role 'JDTAST_SimpleName129' has cardinality 0..*.
+An association connects 'JDTAST_AnnotationTypeMemberDeclaration' and 'JDTAST_Type'. From 'JDTAST_AnnotationTypeMemberDeclaration', the role 'JDTAST_AnnotationTypeMemberDeclaration131' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type132' has cardinality 0..*.
+An association connects 'JDTAST_EnumConstantDeclaration' and 'JDTAST_Expression'. From 'JDTAST_EnumConstantDeclaration', the role 'JDTAST_EnumConstantDeclaration' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression134' has cardinality 0..*.
+An association connects 'JDTAST_AnonymousClassDeclaration' and 'JDTAST_EnumConstantDeclaration'. From 'JDTAST_AnonymousClassDeclaration', the role 'JDTAST_AnonymousClassDeclaration137' has cardinality 0..*, and from 'JDTAST_EnumConstantDeclaration', the role 'JDTAST_EnumConstantDeclaration136' has cardinality 0..*.
+An association connects 'JDTAST_EnumConstantDeclaration' and 'JDTAST_SimpleName'. From 'JDTAST_EnumConstantDeclaration', the role 'JDTAST_EnumConstantDeclaration139' has cardinality 0..*, and from 'JDTAST_SimpleName', the role 'JDTAST_SimpleName140' has cardinality 0..*.
+An association connects 'JDTAST_FieldDeclaration' and 'JDTAST_VariableDeclarationFragment'. From 'JDTAST_FieldDeclaration', the role 'JDTAST_FieldDeclaration' has cardinality 0..*, and from 'JDTAST_VariableDeclarationFragment', the role 'JDTAST_VariableDeclarationFragment' has cardinality 0..*.
+An association connects 'JDTAST_FieldDeclaration' and 'JDTAST_Type'. From 'JDTAST_FieldDeclaration', the role 'JDTAST_FieldDeclaration143' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type144' has cardinality 0..*.
+An association connects 'JDTAST_Block' and 'JDTAST_Initializer'. From 'JDTAST_Block', the role 'JDTAST_Block146' has cardinality 0..*, and from 'JDTAST_Initializer', the role 'JDTAST_Initializer' has cardinality 0..*.
+An association connects 'JDTAST_MethodDeclaration' and 'JDTAST_Block'. From 'JDTAST_MethodDeclaration', the role 'JDTAST_MethodDeclaration' has cardinality 0..*, and from 'JDTAST_Block', the role 'JDTAST_Block148' has cardinality 0..*.
+An association connects 'JDTAST_SimpleName' and 'JDTAST_MethodDeclaration'. From 'JDTAST_SimpleName', the role 'JDTAST_SimpleName151' has cardinality 0..*, and from 'JDTAST_MethodDeclaration', the role 'JDTAST_MethodDeclaration150' has cardinality 0..*.
+An association connects 'JDTAST_MethodDeclaration' and 'JDTAST_Type'. From 'JDTAST_MethodDeclaration', the role 'JDTAST_MethodDeclaration153' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type154' has cardinality 0..*.
+An association connects 'JDTAST_MethodDeclaration' and 'JDTAST_SingleVariableDeclaration'. From 'JDTAST_MethodDeclaration', the role 'JDTAST_MethodDeclaration156' has cardinality 0..*, and from 'JDTAST_SingleVariableDeclaration', the role 'JDTAST_SingleVariableDeclaration157' has cardinality 0..*.
+An association connects 'JDTAST_Name' and 'JDTAST_MethodDeclaration'. From 'JDTAST_Name', the role 'JDTAST_Name160' has cardinality 0..*, and from 'JDTAST_MethodDeclaration', the role 'JDTAST_MethodDeclaration159' has cardinality 0..*.
+An association connects 'JDTAST_MethodDeclaration' and 'JDTAST_TypeParameter'. From 'JDTAST_MethodDeclaration', the role 'JDTAST_MethodDeclaration162' has cardinality 0..*, and from 'JDTAST_TypeParameter', the role 'JDTAST_TypeParameter163' has cardinality 0..*.
+An association connects 'JDTAST_MethodDeclaration' and 'JDTAST_IMethod'. From 'JDTAST_MethodDeclaration', the role 'JDTAST_MethodDeclaration165' has cardinality 0..*, and from 'JDTAST_IMethod', the role 'JDTAST_IMethod166' has cardinality 0..*.
+An association connects 'JDTAST_EnumDeclaration' and 'JDTAST_Type'. From 'JDTAST_EnumDeclaration', the role 'JDTAST_EnumDeclaration' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type168' has cardinality 0..*.
+An association connects 'JDTAST_EnumDeclaration' and 'JDTAST_EnumConstantDeclaration'. From 'JDTAST_EnumDeclaration', the role 'JDTAST_EnumDeclaration170' has cardinality 0..*, and from 'JDTAST_EnumConstantDeclaration', the role 'JDTAST_EnumConstantDeclaration171' has cardinality 0..*.
+An association connects 'JDTAST_TypeDeclaration' and 'JDTAST_Type'. From 'JDTAST_TypeDeclaration', the role 'JDTAST_TypeDeclaration' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type173' has cardinality 0..*.
+An association connects 'JDTAST_TypeDeclaration' and 'JDTAST_Type'. From 'JDTAST_TypeDeclaration', the role 'JDTAST_TypeDeclaration175' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type176' has cardinality 0..*.
+An association connects 'JDTAST_TypeParameter' and 'JDTAST_TypeDeclaration'. From 'JDTAST_TypeParameter', the role 'JDTAST_TypeParameter179' has cardinality 0..*, and from 'JDTAST_TypeDeclaration', the role 'JDTAST_TypeDeclaration178' has cardinality 0..*.
+An association connects 'JDTAST_TagElement' and 'JDTAST_Javadoc'. From 'JDTAST_TagElement', the role 'JDTAST_TagElement182' has cardinality 0..*, and from 'JDTAST_Javadoc', the role 'JDTAST_Javadoc181' has cardinality 0..*.
+An association connects 'JDTAST_Annotation' and 'JDTAST_Name'. From 'JDTAST_Annotation', the role 'JDTAST_Annotation184' has cardinality 0..*, and from 'JDTAST_Name', the role 'JDTAST_Name185' has cardinality 0..*.
+An association connects 'JDTAST_ArrayAccess' and 'JDTAST_Expression'. From 'JDTAST_ArrayAccess', the role 'JDTAST_ArrayAccess' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression187' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_ArrayAccess'. From 'JDTAST_Expression', the role 'JDTAST_Expression190' has cardinality 0..*, and from 'JDTAST_ArrayAccess', the role 'JDTAST_ArrayAccess189' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_ArrayCreation'. From 'JDTAST_Expression', the role 'JDTAST_Expression192' has cardinality 0..*, and from 'JDTAST_ArrayCreation', the role 'JDTAST_ArrayCreation' has cardinality 0..*.
+An association connects 'JDTAST_ArrayInitializer' and 'JDTAST_ArrayCreation'. From 'JDTAST_ArrayInitializer', the role 'JDTAST_ArrayInitializer' has cardinality 0..*, and from 'JDTAST_ArrayCreation', the role 'JDTAST_ArrayCreation194' has cardinality 0..*.
+An association connects 'JDTAST_ArrayType' and 'JDTAST_ArrayCreation'. From 'JDTAST_ArrayType', the role 'JDTAST_ArrayType' has cardinality 0..*, and from 'JDTAST_ArrayCreation', the role 'JDTAST_ArrayCreation196' has cardinality 0..*.
+An association connects 'JDTAST_ArrayInitializer' and 'JDTAST_Expression'. From 'JDTAST_ArrayInitializer', the role 'JDTAST_ArrayInitializer198' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression199' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_Assignment'. From 'JDTAST_Expression', the role 'JDTAST_Expression201' has cardinality 0..*, and from 'JDTAST_Assignment', the role 'JDTAST_Assignment' has cardinality 0..*.
+An association connects 'JDTAST_Assignment' and 'JDTAST_Expression'. From 'JDTAST_Assignment', the role 'JDTAST_Assignment203' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression204' has cardinality 0..*.
+An association connects 'JDTAST_CastExpression' and 'JDTAST_Expression'. From 'JDTAST_CastExpression', the role 'JDTAST_CastExpression' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression206' has cardinality 0..*.
+An association connects 'JDTAST_CastExpression' and 'JDTAST_Type'. From 'JDTAST_CastExpression', the role 'JDTAST_CastExpression208' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type209' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_ClassInstanceCreation'. From 'JDTAST_Expression', the role 'JDTAST_Expression211' has cardinality 0..*, and from 'JDTAST_ClassInstanceCreation', the role 'JDTAST_ClassInstanceCreation' has cardinality 0..*.
+An association connects 'JDTAST_ClassInstanceCreation' and 'JDTAST_AnonymousClassDeclaration'. From 'JDTAST_ClassInstanceCreation', the role 'JDTAST_ClassInstanceCreation213' has cardinality 0..*, and from 'JDTAST_AnonymousClassDeclaration', the role 'JDTAST_AnonymousClassDeclaration214' has cardinality 0..*.
+An association connects 'JDTAST_ClassInstanceCreation' and 'JDTAST_Expression'. From 'JDTAST_ClassInstanceCreation', the role 'JDTAST_ClassInstanceCreation216' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression217' has cardinality 0..*.
+An association connects 'JDTAST_ClassInstanceCreation' and 'JDTAST_Type'. From 'JDTAST_ClassInstanceCreation', the role 'JDTAST_ClassInstanceCreation219' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type220' has cardinality 0..*.
+An association connects 'JDTAST_Type' and 'JDTAST_ClassInstanceCreation'. From 'JDTAST_Type', the role 'JDTAST_Type223' has cardinality 0..*, and from 'JDTAST_ClassInstanceCreation', the role 'JDTAST_ClassInstanceCreation222' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_ConditionalExpression'. From 'JDTAST_Expression', the role 'JDTAST_Expression225' has cardinality 0..*, and from 'JDTAST_ConditionalExpression', the role 'JDTAST_ConditionalExpression' has cardinality 0..*.
+An association connects 'JDTAST_ConditionalExpression' and 'JDTAST_Expression'. From 'JDTAST_ConditionalExpression', the role 'JDTAST_ConditionalExpression227' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression228' has cardinality 0..*.
+An association connects 'JDTAST_ConditionalExpression' and 'JDTAST_Expression'. From 'JDTAST_ConditionalExpression', the role 'JDTAST_ConditionalExpression230' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression231' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_FieldAccess'. From 'JDTAST_Expression', the role 'JDTAST_Expression233' has cardinality 0..*, and from 'JDTAST_FieldAccess', the role 'JDTAST_FieldAccess' has cardinality 0..*.
+An association connects 'JDTAST_SimpleName' and 'JDTAST_FieldAccess'. From 'JDTAST_SimpleName', the role 'JDTAST_SimpleName236' has cardinality 0..*, and from 'JDTAST_FieldAccess', the role 'JDTAST_FieldAccess235' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_InfixExpression'. From 'JDTAST_Expression', the role 'JDTAST_Expression238' has cardinality 0..*, and from 'JDTAST_InfixExpression', the role 'JDTAST_InfixExpression' has cardinality 0..*.
+An association connects 'JDTAST_InfixExpression' and 'JDTAST_Expression'. From 'JDTAST_InfixExpression', the role 'JDTAST_InfixExpression240' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression241' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_InfixExpression'. From 'JDTAST_Expression', the role 'JDTAST_Expression244' has cardinality 0..*, and from 'JDTAST_InfixExpression', the role 'JDTAST_InfixExpression243' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_InstanceofExpression'. From 'JDTAST_Expression', the role 'JDTAST_Expression246' has cardinality 0..*, and from 'JDTAST_InstanceofExpression', the role 'JDTAST_InstanceofExpression' has cardinality 0..*.
+An association connects 'JDTAST_InstanceofExpression' and 'JDTAST_Type'. From 'JDTAST_InstanceofExpression', the role 'JDTAST_InstanceofExpression248' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type249' has cardinality 0..*.
+An association connects 'JDTAST_MethodInvocation' and 'JDTAST_Expression'. From 'JDTAST_MethodInvocation', the role 'JDTAST_MethodInvocation' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression251' has cardinality 0..*.
+An association connects 'JDTAST_MethodInvocation' and 'JDTAST_Expression'. From 'JDTAST_MethodInvocation', the role 'JDTAST_MethodInvocation253' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression254' has cardinality 0..*.
+An association connects 'JDTAST_MethodInvocation' and 'JDTAST_SimpleName'. From 'JDTAST_MethodInvocation', the role 'JDTAST_MethodInvocation256' has cardinality 0..*, and from 'JDTAST_SimpleName', the role 'JDTAST_SimpleName257' has cardinality 0..*.
+An association connects 'JDTAST_MethodInvocation' and 'JDTAST_Type'. From 'JDTAST_MethodInvocation', the role 'JDTAST_MethodInvocation259' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type260' has cardinality 0..*.
+An association connects 'JDTAST_MethodInvocation' and 'JDTAST_IMethod'. From 'JDTAST_MethodInvocation', the role 'JDTAST_MethodInvocation262' has cardinality 0..*, and from 'JDTAST_IMethod', the role 'JDTAST_IMethod263' has cardinality 0..*.
+An association connects 'JDTAST_ParenthesizedExpression' and 'JDTAST_Expression'. From 'JDTAST_ParenthesizedExpression', the role 'JDTAST_ParenthesizedExpression' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression265' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_PostfixExpression'. From 'JDTAST_Expression', the role 'JDTAST_Expression267' has cardinality 0..*, and from 'JDTAST_PostfixExpression', the role 'JDTAST_PostfixExpression' has cardinality 0..*.
+An association connects 'JDTAST_PrefixExpression' and 'JDTAST_Expression'. From 'JDTAST_PrefixExpression', the role 'JDTAST_PrefixExpression' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression269' has cardinality 0..*.
+An association connects 'JDTAST_SimpleName' and 'JDTAST_SuperFieldAccess'. From 'JDTAST_SimpleName', the role 'JDTAST_SimpleName271' has cardinality 0..*, and from 'JDTAST_SuperFieldAccess', the role 'JDTAST_SuperFieldAccess' has cardinality 0..*.
+An association connects 'JDTAST_Name' and 'JDTAST_SuperFieldAccess'. From 'JDTAST_Name', the role 'JDTAST_Name274' has cardinality 0..*, and from 'JDTAST_SuperFieldAccess', the role 'JDTAST_SuperFieldAccess273' has cardinality 0..*.
+An association connects 'JDTAST_SuperMethodInvocation' and 'JDTAST_Expression'. From 'JDTAST_SuperMethodInvocation', the role 'JDTAST_SuperMethodInvocation' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression276' has cardinality 0..*.
+An association connects 'JDTAST_Name' and 'JDTAST_SuperMethodInvocation'. From 'JDTAST_Name', the role 'JDTAST_Name279' has cardinality 0..*, and from 'JDTAST_SuperMethodInvocation', the role 'JDTAST_SuperMethodInvocation278' has cardinality 0..*.
+An association connects 'JDTAST_Name' and 'JDTAST_SuperMethodInvocation'. From 'JDTAST_Name', the role 'JDTAST_Name282' has cardinality 0..*, and from 'JDTAST_SuperMethodInvocation', the role 'JDTAST_SuperMethodInvocation281' has cardinality 0..*.
+An association connects 'JDTAST_Type' and 'JDTAST_SuperMethodInvocation'. From 'JDTAST_Type', the role 'JDTAST_Type285' has cardinality 0..*, and from 'JDTAST_SuperMethodInvocation', the role 'JDTAST_SuperMethodInvocation284' has cardinality 0..*.
+An association connects 'JDTAST_Name' and 'JDTAST_ThisExpression'. From 'JDTAST_Name', the role 'JDTAST_Name287' has cardinality 0..*, and from 'JDTAST_ThisExpression', the role 'JDTAST_ThisExpression' has cardinality 0..*.
+An association connects 'JDTAST_TypeLiteral' and 'JDTAST_Type'. From 'JDTAST_TypeLiteral', the role 'JDTAST_TypeLiteral' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type289' has cardinality 0..*.
+An association connects 'JDTAST_VariableDeclarationFragment' and 'JDTAST_VariableDeclarationExpression'. From 'JDTAST_VariableDeclarationFragment', the role 'JDTAST_VariableDeclarationFragment291' has cardinality 0..*, and from 'JDTAST_VariableDeclarationExpression', the role 'JDTAST_VariableDeclarationExpression' has cardinality 0..*.
+An association connects 'JDTAST_VariableDeclarationExpression' and 'JDTAST_ExtendedModifier'. From 'JDTAST_VariableDeclarationExpression', the role 'JDTAST_VariableDeclarationExpression293' has cardinality 0..*, and from 'JDTAST_ExtendedModifier', the role 'JDTAST_ExtendedModifier294' has cardinality 0..*.
+An association connects 'JDTAST_VariableDeclarationExpression' and 'JDTAST_Type'. From 'JDTAST_VariableDeclarationExpression', the role 'JDTAST_VariableDeclarationExpression296' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type297' has cardinality 0..*.
+An association connects 'JDTAST_AssertStatement' and 'JDTAST_Expression'. From 'JDTAST_AssertStatement', the role 'JDTAST_AssertStatement' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression299' has cardinality 0..*.
+An association connects 'JDTAST_AssertStatement' and 'JDTAST_Expression'. From 'JDTAST_AssertStatement', the role 'JDTAST_AssertStatement301' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression302' has cardinality 0..*.
+An association connects 'JDTAST_Block' and 'JDTAST_Statement'. From 'JDTAST_Block', the role 'JDTAST_Block304' has cardinality 0..*, and from 'JDTAST_Statement', the role 'JDTAST_Statement' has cardinality 0..*.
+An association connects 'JDTAST_BreakStatement' and 'JDTAST_SimpleName'. From 'JDTAST_BreakStatement', the role 'JDTAST_BreakStatement' has cardinality 0..*, and from 'JDTAST_SimpleName', the role 'JDTAST_SimpleName306' has cardinality 0..*.
+An association connects 'JDTAST_ConstructorInvocation' and 'JDTAST_Expression'. From 'JDTAST_ConstructorInvocation', the role 'JDTAST_ConstructorInvocation' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression308' has cardinality 0..*.
+An association connects 'JDTAST_ConstructorInvocation' and 'JDTAST_Type'. From 'JDTAST_ConstructorInvocation', the role 'JDTAST_ConstructorInvocation310' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type311' has cardinality 0..*.
+An association connects 'JDTAST_ContinueStatement' and 'JDTAST_SimpleName'. From 'JDTAST_ContinueStatement', the role 'JDTAST_ContinueStatement' has cardinality 0..*, and from 'JDTAST_SimpleName', the role 'JDTAST_SimpleName313' has cardinality 0..*.
+An association connects 'JDTAST_Statement' and 'JDTAST_DoStatement'. From 'JDTAST_Statement', the role 'JDTAST_Statement315' has cardinality 0..*, and from 'JDTAST_DoStatement', the role 'JDTAST_DoStatement' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_DoStatement'. From 'JDTAST_Expression', the role 'JDTAST_Expression318' has cardinality 0..*, and from 'JDTAST_DoStatement', the role 'JDTAST_DoStatement317' has cardinality 0..*.
+An association connects 'JDTAST_EnhancedForStatement' and 'JDTAST_Statement'. From 'JDTAST_EnhancedForStatement', the role 'JDTAST_EnhancedForStatement' has cardinality 0..*, and from 'JDTAST_Statement', the role 'JDTAST_Statement320' has cardinality 0..*.
+An association connects 'JDTAST_EnhancedForStatement' and 'JDTAST_Expression'. From 'JDTAST_EnhancedForStatement', the role 'JDTAST_EnhancedForStatement322' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression323' has cardinality 0..*.
+An association connects 'JDTAST_SingleVariableDeclaration' and 'JDTAST_EnhancedForStatement'. From 'JDTAST_SingleVariableDeclaration', the role 'JDTAST_SingleVariableDeclaration326' has cardinality 0..*, and from 'JDTAST_EnhancedForStatement', the role 'JDTAST_EnhancedForStatement325' has cardinality 0..*.
+An association connects 'JDTAST_ExpressionStatement' and 'JDTAST_Expression'. From 'JDTAST_ExpressionStatement', the role 'JDTAST_ExpressionStatement' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression328' has cardinality 0..*.
+An association connects 'JDTAST_Statement' and 'JDTAST_ForStatement'. From 'JDTAST_Statement', the role 'JDTAST_Statement330' has cardinality 0..*, and from 'JDTAST_ForStatement', the role 'JDTAST_ForStatement' has cardinality 0..*.
+An association connects 'JDTAST_ForStatement' and 'JDTAST_Expression'. From 'JDTAST_ForStatement', the role 'JDTAST_ForStatement332' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression333' has cardinality 0..*.
+An association connects 'JDTAST_ForStatement' and 'JDTAST_Expression'. From 'JDTAST_ForStatement', the role 'JDTAST_ForStatement335' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression336' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_ForStatement'. From 'JDTAST_Expression', the role 'JDTAST_Expression339' has cardinality 0..*, and from 'JDTAST_ForStatement', the role 'JDTAST_ForStatement338' has cardinality 0..*.
+An association connects 'JDTAST_Statement' and 'JDTAST_IfStatement'. From 'JDTAST_Statement', the role 'JDTAST_Statement341' has cardinality 0..*, and from 'JDTAST_IfStatement', the role 'JDTAST_IfStatement' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_IfStatement'. From 'JDTAST_Expression', the role 'JDTAST_Expression344' has cardinality 0..*, and from 'JDTAST_IfStatement', the role 'JDTAST_IfStatement343' has cardinality 0..*.
+An association connects 'JDTAST_IfStatement' and 'JDTAST_Statement'. From 'JDTAST_IfStatement', the role 'JDTAST_IfStatement346' has cardinality 0..*, and from 'JDTAST_Statement', the role 'JDTAST_Statement347' has cardinality 0..*.
+An association connects 'JDTAST_Statement' and 'JDTAST_LabeledStatement'. From 'JDTAST_Statement', the role 'JDTAST_Statement349' has cardinality 0..*, and from 'JDTAST_LabeledStatement', the role 'JDTAST_LabeledStatement' has cardinality 0..*.
+An association connects 'JDTAST_SimpleName' and 'JDTAST_LabeledStatement'. From 'JDTAST_SimpleName', the role 'JDTAST_SimpleName352' has cardinality 0..*, and from 'JDTAST_LabeledStatement', the role 'JDTAST_LabeledStatement351' has cardinality 0..*.
+An association connects 'JDTAST_ReturnStatement' and 'JDTAST_Expression'. From 'JDTAST_ReturnStatement', the role 'JDTAST_ReturnStatement' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression354' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_SuperConstructorInvocation'. From 'JDTAST_Expression', the role 'JDTAST_Expression356' has cardinality 0..*, and from 'JDTAST_SuperConstructorInvocation', the role 'JDTAST_SuperConstructorInvocation' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_SuperConstructorInvocation'. From 'JDTAST_Expression', the role 'JDTAST_Expression359' has cardinality 0..*, and from 'JDTAST_SuperConstructorInvocation', the role 'JDTAST_SuperConstructorInvocation358' has cardinality 0..*.
+An association connects 'JDTAST_Type' and 'JDTAST_SuperConstructorInvocation'. From 'JDTAST_Type', the role 'JDTAST_Type362' has cardinality 0..*, and from 'JDTAST_SuperConstructorInvocation', the role 'JDTAST_SuperConstructorInvocation361' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_SwitchCase'. From 'JDTAST_Expression', the role 'JDTAST_Expression364' has cardinality 0..*, and from 'JDTAST_SwitchCase', the role 'JDTAST_SwitchCase' has cardinality 0..*.
+An association connects 'JDTAST_SwitchStatement' and 'JDTAST_Expression'. From 'JDTAST_SwitchStatement', the role 'JDTAST_SwitchStatement' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression366' has cardinality 0..*.
+An association connects 'JDTAST_SwitchStatement' and 'JDTAST_Statement'. From 'JDTAST_SwitchStatement', the role 'JDTAST_SwitchStatement368' has cardinality 0..*, and from 'JDTAST_Statement', the role 'JDTAST_Statement369' has cardinality 0..*.
+An association connects 'JDTAST_SynchronizedStatement' and 'JDTAST_Block'. From 'JDTAST_SynchronizedStatement', the role 'JDTAST_SynchronizedStatement' has cardinality 0..*, and from 'JDTAST_Block', the role 'JDTAST_Block371' has cardinality 0..*.
+An association connects 'JDTAST_SynchronizedStatement' and 'JDTAST_Expression'. From 'JDTAST_SynchronizedStatement', the role 'JDTAST_SynchronizedStatement373' has cardinality 0..*, and from 'JDTAST_Expression', the role 'JDTAST_Expression374' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_ThrowStatement'. From 'JDTAST_Expression', the role 'JDTAST_Expression376' has cardinality 0..*, and from 'JDTAST_ThrowStatement', the role 'JDTAST_ThrowStatement' has cardinality 0..*.
+An association connects 'JDTAST_TryStatement' and 'JDTAST_CatchClause'. From 'JDTAST_TryStatement', the role 'JDTAST_TryStatement' has cardinality 0..*, and from 'JDTAST_CatchClause', the role 'JDTAST_CatchClause378' has cardinality 0..*.
+An association connects 'JDTAST_Block' and 'JDTAST_TryStatement'. From 'JDTAST_Block', the role 'JDTAST_Block381' has cardinality 0..*, and from 'JDTAST_TryStatement', the role 'JDTAST_TryStatement380' has cardinality 0..*.
+An association connects 'JDTAST_Block' and 'JDTAST_TryStatement'. From 'JDTAST_Block', the role 'JDTAST_Block384' has cardinality 0..*, and from 'JDTAST_TryStatement', the role 'JDTAST_TryStatement383' has cardinality 0..*.
+An association connects 'JDTAST_TypeDeclarationStatement' and 'JDTAST_AbstractTypeDeclaration'. From 'JDTAST_TypeDeclarationStatement', the role 'JDTAST_TypeDeclarationStatement' has cardinality 0..*, and from 'JDTAST_AbstractTypeDeclaration', the role 'JDTAST_AbstractTypeDeclaration386' has cardinality 0..*.
+An association connects 'JDTAST_VariableDeclarationStatement' and 'JDTAST_VariableDeclarationFragment'. From 'JDTAST_VariableDeclarationStatement', the role 'JDTAST_VariableDeclarationStatement' has cardinality 0..*, and from 'JDTAST_VariableDeclarationFragment', the role 'JDTAST_VariableDeclarationFragment388' has cardinality 0..*.
+An association connects 'JDTAST_VariableDeclarationStatement' and 'JDTAST_ExtendedModifier'. From 'JDTAST_VariableDeclarationStatement', the role 'JDTAST_VariableDeclarationStatement390' has cardinality 0..*, and from 'JDTAST_ExtendedModifier', the role 'JDTAST_ExtendedModifier391' has cardinality 0..*.
+An association connects 'JDTAST_VariableDeclarationStatement' and 'JDTAST_Type'. From 'JDTAST_VariableDeclarationStatement', the role 'JDTAST_VariableDeclarationStatement393' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type394' has cardinality 0..*.
+An association connects 'JDTAST_WhileStatement' and 'JDTAST_Statement'. From 'JDTAST_WhileStatement', the role 'JDTAST_WhileStatement' has cardinality 0..*, and from 'JDTAST_Statement', the role 'JDTAST_Statement396' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_WhileStatement'. From 'JDTAST_Expression', the role 'JDTAST_Expression399' has cardinality 0..*, and from 'JDTAST_WhileStatement', the role 'JDTAST_WhileStatement398' has cardinality 0..*.
+An association connects 'JDTAST_ArrayType' and 'JDTAST_Type'. From 'JDTAST_ArrayType', the role 'JDTAST_ArrayType401' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type402' has cardinality 0..*.
+An association connects 'JDTAST_Type' and 'JDTAST_ArrayType'. From 'JDTAST_Type', the role 'JDTAST_Type405' has cardinality 0..*, and from 'JDTAST_ArrayType', the role 'JDTAST_ArrayType404' has cardinality 0..*.
+An association connects 'JDTAST_ParameterizedType' and 'JDTAST_Type'. From 'JDTAST_ParameterizedType', the role 'JDTAST_ParameterizedType' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type407' has cardinality 0..*.
+An association connects 'JDTAST_ParameterizedType' and 'JDTAST_Type'. From 'JDTAST_ParameterizedType', the role 'JDTAST_ParameterizedType409' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type410' has cardinality 0..*.
+An association connects 'JDTAST_QualifiedType' and 'JDTAST_SimpleName'. From 'JDTAST_QualifiedType', the role 'JDTAST_QualifiedType' has cardinality 0..*, and from 'JDTAST_SimpleName', the role 'JDTAST_SimpleName412' has cardinality 0..*.
+An association connects 'JDTAST_Type' and 'JDTAST_QualifiedType'. From 'JDTAST_Type', the role 'JDTAST_Type415' has cardinality 0..*, and from 'JDTAST_QualifiedType', the role 'JDTAST_QualifiedType414' has cardinality 0..*.
+An association connects 'JDTAST_SimpleType' and 'JDTAST_Name'. From 'JDTAST_SimpleType', the role 'JDTAST_SimpleType' has cardinality 0..*, and from 'JDTAST_Name', the role 'JDTAST_Name417' has cardinality 0..*.
+An association connects 'JDTAST_WildcardType' and 'JDTAST_Type'. From 'JDTAST_WildcardType', the role 'JDTAST_WildcardType' has cardinality 0..*, and from 'JDTAST_Type', the role 'JDTAST_Type419' has cardinality 0..*.
+An association connects 'JDTAST_Type' and 'JDTAST_SingleVariableDeclaration'. From 'JDTAST_Type', the role 'JDTAST_Type422' has cardinality 0..*, and from 'JDTAST_SingleVariableDeclaration', the role 'JDTAST_SingleVariableDeclaration421' has cardinality 0..*.
+An association connects 'JDTAST_SingleVariableDeclaration' and 'JDTAST_ExtendedModifier'. From 'JDTAST_SingleVariableDeclaration', the role 'JDTAST_SingleVariableDeclaration424' has cardinality 0..*, and from 'JDTAST_ExtendedModifier', the role 'JDTAST_ExtendedModifier425' has cardinality 0..*.
+An association connects 'JDTAST_QualifiedName' and 'JDTAST_SimpleName'. From 'JDTAST_QualifiedName', the role 'JDTAST_QualifiedName' has cardinality 0..*, and from 'JDTAST_SimpleName', the role 'JDTAST_SimpleName427' has cardinality 0..*.
+An association connects 'JDTAST_QualifiedName' and 'JDTAST_Name'. From 'JDTAST_QualifiedName', the role 'JDTAST_QualifiedName429' has cardinality 0..*, and from 'JDTAST_Name', the role 'JDTAST_Name430' has cardinality 0..*.
+An association connects 'JDTAST_NormalAnnotation' and 'JDTAST_MemberValuePair'. From 'JDTAST_NormalAnnotation', the role 'JDTAST_NormalAnnotation' has cardinality 0..*, and from 'JDTAST_MemberValuePair', the role 'JDTAST_MemberValuePair432' has cardinality 0..*.
+An association connects 'JDTAST_Expression' and 'JDTAST_SingleMemberAnnotation'. From 'JDTAST_Expression', the role 'JDTAST_Expression434' has cardinality 0..*, and from 'JDTAST_SingleMemberAnnotation', the role 'JDTAST_SingleMemberAnnotation' has cardinality 0..*.

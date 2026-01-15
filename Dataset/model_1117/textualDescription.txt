@@ -1,0 +1,146 @@
+The domain model 'rtsc' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'rtsc_Clock' represents an important domain concept.
+It has one attribute: 'uClock', which is of type bool.
+
+'rtsc_Realtimestatechart' represents an important domain concept.
+It has one attribute: 'rounds', which is of type int.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'rtsc_Transition' represents an important domain concept.
+It has one attribute: 'hitCount', which is of type int.
+
+'rtsc_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'rtsc_BehavioralElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'rtsc_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'rtsc_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rtsc_MessageBuffer' represents an important domain concept.
+It does not declare any attributes.
+
+'rtsc_Variable' represents an important domain concept.
+It has the following attributes: 'runtimeValue', which is of type str; 'initialValue', which is of type str.
+
+'rtsc_ClockResetEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'rtsc_ClockConstraint' represents an important domain concept.
+It has one attribute: 'bound', which is of type int.
+
+'rtsc_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralElement' represents an important domain concept.
+It does not declare any attributes.
+
+'rtsc_Guard' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'rtsc_MessageTypeRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'rtsc_VariableAssignmentEvent' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'rtsc_MessageType' represents an important domain concept.
+It does not declare any attributes.
+
+'rtsc_System' represents an important domain concept.
+It does not declare any attributes.
+
+'rtsc_Vertex' represents an important domain concept.
+It has one attribute: 'active', which is of type bool.
+
+'rtsc_State' represents an important domain concept.
+It has the following attributes: 'initial', which is of type bool; 'final', which is of type bool.
+
+'rtsc_Message' represents an important domain concept.
+It does not declare any attributes.
+
+'rtsc_MessageEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'rtsc_CoordinationProtocol' represents an important domain concept.
+It does not declare any attributes.
+
+'rtsc_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'rtsc_BehavioralElement' is a specialization of 'NamedElement'.
+The class 'rtsc_Realtimestatechart' is a specialization of 'Behavior'.
+The class 'rtsc_Realtimestatechart' is a specialization of 'NamedElement'.
+The class 'rtsc_State' is a specialization of 'Vertex'.
+The class 'rtsc_State' is a specialization of 'NamedElement'.
+The class 'rtsc_Transition' is a specialization of 'NamedElement'.
+The class 'rtsc_Variable' is a specialization of 'NamedElement'.
+The class 'rtsc_Clock' is a specialization of 'NamedElement'.
+The class 'rtsc_Port' is a specialization of 'BehavioralElement'.
+The class 'rtsc_CoordinationProtocol' is a specialization of 'NamedElement'.
+The class 'rtsc_MessageType' is a specialization of 'NamedElement'.
+The class 'rtsc_MessageEvent' is a specialization of 'Event'.
+The class 'rtsc_ClockResetEvent' is a specialization of 'Event'.
+The class 'rtsc_VariableAssignmentEvent' is a specialization of 'Event'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rtsc_BehavioralElement' and 'rtsc_Behavior'. From 'rtsc_BehavioralElement', the role '1' has cardinality 0..*, and from 'rtsc_Behavior', the role 'unnamed role' has cardinality 0..*.
+An association connects 'rtsc_Behavior' and 'rtsc_BehavioralElement'. From 'rtsc_Behavior', the role '4' has cardinality 0..*, and from 'rtsc_BehavioralElement', the role '3' has cardinality 0..*.
+An association connects 'rtsc_Realtimestatechart' and 'rtsc_Transition'. From 'rtsc_Realtimestatechart', the role '6' has cardinality 0..*, and from 'rtsc_Transition', the role '7' has cardinality 0..*.
+An association connects 'rtsc_State' and 'rtsc_Realtimestatechart'. From 'rtsc_State', the role '10' has cardinality 0..*, and from 'rtsc_Realtimestatechart', the role '9' has cardinality 0..*.
+An association connects 'rtsc_Realtimestatechart' and 'rtsc_State'. From 'rtsc_Realtimestatechart', the role 'rtsc_Realtimestatechart' has cardinality 0..*, and from 'rtsc_State', the role 'rtsc_State' has cardinality 0..*.
+An association connects 'rtsc_Realtimestatechart' and 'rtsc_Variable'. From 'rtsc_Realtimestatechart', the role '13' has cardinality 0..*, and from 'rtsc_Variable', the role '14' has cardinality 0..*.
+An association connects 'rtsc_Clock' and 'rtsc_Realtimestatechart'. From 'rtsc_Clock', the role '17' has cardinality 0..*, and from 'rtsc_Realtimestatechart', the role '16' has cardinality 0..*.
+An association connects 'rtsc_State' and 'rtsc_Realtimestatechart'. From 'rtsc_State', the role 'rtsc_State19' has cardinality 0..*, and from 'rtsc_Realtimestatechart', the role 'rtsc_Realtimestatechart20' has cardinality 0..*.
+An association connects 'rtsc_State' and 'rtsc_Realtimestatechart'. From 'rtsc_State', the role '22' has cardinality 0..*, and from 'rtsc_Realtimestatechart', the role '23' has cardinality 0..*.
+An association connects 'rtsc_State' and 'rtsc_Transition'. From 'rtsc_State', the role '25' has cardinality 0..*, and from 'rtsc_Transition', the role '26' has cardinality 0..*.
+An association connects 'rtsc_State' and 'rtsc_Transition'. From 'rtsc_State', the role '28' has cardinality 0..*, and from 'rtsc_Transition', the role '29' has cardinality 0..*.
+An association connects 'rtsc_Event' and 'rtsc_State'. From 'rtsc_Event', the role 'rtsc_Event' has cardinality 0..*, and from 'rtsc_State', the role 'rtsc_State31' has cardinality 0..*.
+An association connects 'rtsc_State' and 'rtsc_Event'. From 'rtsc_State', the role 'rtsc_State33' has cardinality 0..*, and from 'rtsc_Event', the role 'rtsc_Event34' has cardinality 0..*.
+An association connects 'rtsc_State' and 'rtsc_Transition'. From 'rtsc_State', the role '37' has cardinality 0..*, and from 'rtsc_Transition', the role '36' has cardinality 0..*.
+An association connects 'rtsc_State' and 'rtsc_Transition'. From 'rtsc_State', the role '40' has cardinality 0..*, and from 'rtsc_Transition', the role '39' has cardinality 0..*.
+An association connects 'rtsc_Transition' and 'rtsc_Guard'. From 'rtsc_Transition', the role 'rtsc_Transition' has cardinality 0..*, and from 'rtsc_Guard', the role 'rtsc_Guard' has cardinality 0..*.
+An association connects 'rtsc_ClockConstraint' and 'rtsc_Transition'. From 'rtsc_ClockConstraint', the role 'rtsc_ClockConstraint' has cardinality 0..*, and from 'rtsc_Transition', the role 'rtsc_Transition43' has cardinality 0..*.
+An association connects 'rtsc_Transition' and 'rtsc_Realtimestatechart'. From 'rtsc_Transition', the role '45' has cardinality 0..*, and from 'rtsc_Realtimestatechart', the role '46' has cardinality 0..*.
+An association connects 'rtsc_Transition' and 'rtsc_MessageType'. From 'rtsc_Transition', the role 'rtsc_Transition48' has cardinality 0..*, and from 'rtsc_MessageType', the role 'rtsc_MessageType' has cardinality 0..*.
+An association connects 'rtsc_Event' and 'rtsc_Transition'. From 'rtsc_Event', the role 'rtsc_Event51' has cardinality 0..*, and from 'rtsc_Transition', the role 'rtsc_Transition50' has cardinality 0..*.
+An association connects 'rtsc_Variable' and 'rtsc_Guard'. From 'rtsc_Variable', the role 'rtsc_Variable' has cardinality 0..*, and from 'rtsc_Guard', the role 'rtsc_Guard53' has cardinality 0..*.
+An association connects 'rtsc_Clock' and 'rtsc_ClockConstraint'. From 'rtsc_Clock', the role 'rtsc_Clock' has cardinality 0..*, and from 'rtsc_ClockConstraint', the role 'rtsc_ClockConstraint55' has cardinality 0..*.
+An association connects 'rtsc_Variable' and 'rtsc_Realtimestatechart'. From 'rtsc_Variable', the role '57' has cardinality 0..*, and from 'rtsc_Realtimestatechart', the role '58' has cardinality 0..*.
+An association connects 'rtsc_Clock' and 'rtsc_Realtimestatechart'. From 'rtsc_Clock', the role '60' has cardinality 0..*, and from 'rtsc_Realtimestatechart', the role '61' has cardinality 0..*.
+An association connects 'rtsc_Port' and 'rtsc_Behavior'. From 'rtsc_Port', the role 'rtsc_Port' has cardinality 0..*, and from 'rtsc_Behavior', the role 'rtsc_Behavior' has cardinality 0..*.
+An association connects 'rtsc_Port' and 'rtsc_MessageBuffer'. From 'rtsc_Port', the role '64' has cardinality 0..*, and from 'rtsc_MessageBuffer', the role '65' has cardinality 0..*.
+An association connects 'rtsc_Connector' and 'rtsc_Port'. From 'rtsc_Connector', the role '68' has cardinality 0..*, and from 'rtsc_Port', the role '67' has cardinality 0..*.
+An association connects 'rtsc_Port' and 'rtsc_MessageBuffer'. From 'rtsc_Port', the role '71' has cardinality 0..*, and from 'rtsc_MessageBuffer', the role '70' has cardinality 0..*.
+An association connects 'rtsc_MessageBuffer' and 'rtsc_MessageType'. From 'rtsc_MessageBuffer', the role 'rtsc_MessageBuffer' has cardinality 0..*, and from 'rtsc_MessageType', the role 'rtsc_MessageType73' has cardinality 0..*.
+An association connects 'rtsc_Message' and 'rtsc_MessageBuffer'. From 'rtsc_Message', the role 'rtsc_Message' has cardinality 0..*, and from 'rtsc_MessageBuffer', the role 'rtsc_MessageBuffer75' has cardinality 0..*.
+An association connects 'rtsc_Port' and 'rtsc_Connector'. From 'rtsc_Port', the role '78' has cardinality 0..*, and from 'rtsc_Connector', the role '77' has cardinality 0..*.
+An association connects 'rtsc_Port' and 'rtsc_CoordinationProtocol'. From 'rtsc_Port', the role 'rtsc_Port80' has cardinality 0..*, and from 'rtsc_CoordinationProtocol', the role 'rtsc_CoordinationProtocol' has cardinality 0..*.
+An association connects 'rtsc_Connector' and 'rtsc_CoordinationProtocol'. From 'rtsc_Connector', the role 'rtsc_Connector' has cardinality 0..*, and from 'rtsc_CoordinationProtocol', the role 'rtsc_CoordinationProtocol82' has cardinality 0..*.
+An association connects 'rtsc_Message' and 'rtsc_MessageType'. From 'rtsc_Message', the role 'rtsc_Message84' has cardinality 0..*, and from 'rtsc_MessageType', the role 'rtsc_MessageType85' has cardinality 0..*.
+An association connects 'rtsc_Realtimestatechart' and 'rtsc_System'. From 'rtsc_Realtimestatechart', the role 'rtsc_Realtimestatechart87' has cardinality 0..*, and from 'rtsc_System', the role 'rtsc_System' has cardinality 0..*.
+An association connects 'rtsc_System' and 'rtsc_CoordinationProtocol'. From 'rtsc_System', the role 'rtsc_System89' has cardinality 0..*, and from 'rtsc_CoordinationProtocol', the role 'rtsc_CoordinationProtocol90' has cardinality 0..*.
+An association connects 'rtsc_System' and 'rtsc_MessageTypeRepository'. From 'rtsc_System', the role 'rtsc_System92' has cardinality 0..*, and from 'rtsc_MessageTypeRepository', the role 'rtsc_MessageTypeRepository' has cardinality 0..*.
+An association connects 'rtsc_MessageType' and 'rtsc_MessageTypeRepository'. From 'rtsc_MessageType', the role 'rtsc_MessageType95' has cardinality 0..*, and from 'rtsc_MessageTypeRepository', the role 'rtsc_MessageTypeRepository94' has cardinality 0..*.
+An association connects 'rtsc_MessageEvent' and 'rtsc_MessageType'. From 'rtsc_MessageEvent', the role 'rtsc_MessageEvent' has cardinality 0..*, and from 'rtsc_MessageType', the role 'rtsc_MessageType97' has cardinality 0..*.
+An association connects 'rtsc_Clock' and 'rtsc_ClockResetEvent'. From 'rtsc_Clock', the role 'rtsc_Clock99' has cardinality 0..*, and from 'rtsc_ClockResetEvent', the role 'rtsc_ClockResetEvent' has cardinality 0..*.
+An association connects 'rtsc_VariableAssignmentEvent' and 'rtsc_Variable'. From 'rtsc_VariableAssignmentEvent', the role 'rtsc_VariableAssignmentEvent' has cardinality 0..*, and from 'rtsc_Variable', the role 'rtsc_Variable101' has cardinality 0..*.

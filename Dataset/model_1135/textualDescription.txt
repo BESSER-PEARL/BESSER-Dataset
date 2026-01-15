@@ -1,0 +1,181 @@
+The domain model 'gpfl' describes the core structural elements and their relationships within the system.
+
+The model defines 35 main class(es).
+
+'gpfl_IterStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_InterruptStmt' represents an important domain concept.
+It has one attribute: 'timeout', which is of type int.
+
+'gpfl_CmdSub' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_AutomataDef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gpfl_Field' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gpfl_GBoolFalse' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_CmdLECompare' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_GBoolTrue' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_CmdAdd' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_CmdGECompare' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_AlarmCmd' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_SetCmd' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gpfl_CmdGCompare' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_CmdLCompare' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_OutPort' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_StringLit' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'gpfl_AcceptCmd' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_CmdAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_PortLit' represents an important domain concept.
+It has one attribute: 'inSide', which is of type bool.
+
+'gpfl_CmdNEq' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_SendCmd' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_Program' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gpfl_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gpfl_GExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'GExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_InPort' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_AutomatonCmd' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gpfl_StpCmd' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_DropCmd' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_IntLitCmd' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'gpfl_Variable' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'gpfl_Transition' represents an important domain concept.
+It has one attribute: 'event', which is of type str.
+
+'gpfl_CmdEq' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_CondStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'gpfl_NopCmd' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'gpfl_CondStmt' is a specialization of 'GExpression'.
+The class 'gpfl_IterStmt' is a specialization of 'GExpression'.
+The class 'gpfl_InterruptStmt' is a specialization of 'GExpression'.
+The class 'gpfl_NopCmd' is a specialization of 'GExpression'.
+The class 'gpfl_AcceptCmd' is a specialization of 'GExpression'.
+The class 'gpfl_DropCmd' is a specialization of 'GExpression'.
+The class 'gpfl_SendCmd' is a specialization of 'GExpression'.
+The class 'gpfl_AlarmCmd' is a specialization of 'GExpression'.
+The class 'gpfl_SetCmd' is a specialization of 'GExpression'.
+The class 'gpfl_AutomatonCmd' is a specialization of 'GExpression'.
+The class 'gpfl_StpCmd' is a specialization of 'GExpression'.
+The class 'gpfl_CmdAnd' is a specialization of 'GExpression'.
+The class 'gpfl_CmdEq' is a specialization of 'GExpression'.
+The class 'gpfl_CmdNEq' is a specialization of 'GExpression'.
+The class 'gpfl_CmdGECompare' is a specialization of 'GExpression'.
+The class 'gpfl_CmdLECompare' is a specialization of 'GExpression'.
+The class 'gpfl_CmdGCompare' is a specialization of 'GExpression'.
+The class 'gpfl_CmdLCompare' is a specialization of 'GExpression'.
+The class 'gpfl_CmdAdd' is a specialization of 'GExpression'.
+The class 'gpfl_CmdSub' is a specialization of 'GExpression'.
+The class 'gpfl_IntLitCmd' is a specialization of 'GExpression'.
+The class 'gpfl_GBoolTrue' is a specialization of 'GExpression'.
+The class 'gpfl_GBoolFalse' is a specialization of 'GExpression'.
+The class 'gpfl_StringLit' is a specialization of 'GExpression'.
+The class 'gpfl_Variable' is a specialization of 'GExpression'.
+The class 'gpfl_PortLit' is a specialization of 'GExpression'.
+The class 'gpfl_InPort' is a specialization of 'GExpression'.
+The class 'gpfl_OutPort' is a specialization of 'GExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gpfl_Program' and 'gpfl_AutomataDef'. From 'gpfl_Program', the role 'gpfl_Program' has cardinality 0..*, and from 'gpfl_AutomataDef', the role 'gpfl_AutomataDef' has cardinality 0..*.
+An association connects 'gpfl_Program' and 'gpfl_GExpression'. From 'gpfl_Program', the role 'gpfl_Program2' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression' has cardinality 0..*.
+An association connects 'gpfl_Program' and 'gpfl_GExpression'. From 'gpfl_Program', the role 'gpfl_Program4' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression5' has cardinality 0..*.
+An association connects 'gpfl_GExpression' and 'gpfl_GExpression'. From 'gpfl_GExpression', the role 'gpfl_GExpression6' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression8' has cardinality 0..*.
+An association connects 'gpfl_GExpression' and 'gpfl_Field'. From 'gpfl_GExpression', the role 'gpfl_GExpression10' has cardinality 0..*, and from 'gpfl_Field', the role 'gpfl_Field' has cardinality 0..*.
+An association connects 'gpfl_AutomataDef' and 'gpfl_State'. From 'gpfl_AutomataDef', the role 'gpfl_AutomataDef12' has cardinality 0..*, and from 'gpfl_State', the role 'gpfl_State' has cardinality 0..*.
+An association connects 'gpfl_State' and 'gpfl_AutomataDef'. From 'gpfl_State', the role 'gpfl_State15' has cardinality 0..*, and from 'gpfl_AutomataDef', the role 'gpfl_AutomataDef14' has cardinality 0..*.
+An association connects 'gpfl_Transition' and 'gpfl_State'. From 'gpfl_Transition', the role 'gpfl_Transition' has cardinality 0..*, and from 'gpfl_State', the role 'gpfl_State17' has cardinality 0..*.
+An association connects 'gpfl_Transition' and 'gpfl_State'. From 'gpfl_Transition', the role 'gpfl_Transition19' has cardinality 0..*, and from 'gpfl_State', the role 'gpfl_State20' has cardinality 0..*.
+An association connects 'gpfl_CondStmt' and 'gpfl_GExpression'. From 'gpfl_CondStmt', the role 'gpfl_CondStmt' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression22' has cardinality 0..*.
+An association connects 'gpfl_GExpression' and 'gpfl_CondStmt'. From 'gpfl_GExpression', the role 'gpfl_GExpression25' has cardinality 0..*, and from 'gpfl_CondStmt', the role 'gpfl_CondStmt24' has cardinality 0..*.
+An association connects 'gpfl_IterStmt' and 'gpfl_GExpression'. From 'gpfl_IterStmt', the role 'gpfl_IterStmt' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression27' has cardinality 0..*.
+An association connects 'gpfl_GExpression' and 'gpfl_IterStmt'. From 'gpfl_GExpression', the role 'gpfl_GExpression30' has cardinality 0..*, and from 'gpfl_IterStmt', the role 'gpfl_IterStmt29' has cardinality 0..*.
+An association connects 'gpfl_InterruptStmt' and 'gpfl_GExpression'. From 'gpfl_InterruptStmt', the role 'gpfl_InterruptStmt' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression32' has cardinality 0..*.
+An association connects 'gpfl_GExpression' and 'gpfl_InterruptStmt'. From 'gpfl_GExpression', the role 'gpfl_GExpression35' has cardinality 0..*, and from 'gpfl_InterruptStmt', the role 'gpfl_InterruptStmt34' has cardinality 0..*.
+An association connects 'gpfl_SendCmd' and 'gpfl_GExpression'. From 'gpfl_SendCmd', the role 'gpfl_SendCmd' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression37' has cardinality 0..*.
+An association connects 'gpfl_SendCmd' and 'gpfl_Field'. From 'gpfl_SendCmd', the role 'gpfl_SendCmd39' has cardinality 0..*, and from 'gpfl_Field', the role 'gpfl_Field40' has cardinality 0..*.
+An association connects 'gpfl_GExpression' and 'gpfl_AlarmCmd'. From 'gpfl_GExpression', the role 'gpfl_GExpression42' has cardinality 0..*, and from 'gpfl_AlarmCmd', the role 'gpfl_AlarmCmd' has cardinality 0..*.
+An association connects 'gpfl_SetCmd' and 'gpfl_GExpression'. From 'gpfl_SetCmd', the role 'gpfl_SetCmd' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression44' has cardinality 0..*.
+An association connects 'gpfl_AutomataDef' and 'gpfl_AutomatonCmd'. From 'gpfl_AutomataDef', the role 'gpfl_AutomataDef46' has cardinality 0..*, and from 'gpfl_AutomatonCmd', the role 'gpfl_AutomatonCmd' has cardinality 0..*.
+An association connects 'gpfl_AutomatonCmd' and 'gpfl_StpCmd'. From 'gpfl_AutomatonCmd', the role 'gpfl_AutomatonCmd48' has cardinality 0..*, and from 'gpfl_StpCmd', the role 'gpfl_StpCmd' has cardinality 0..*.
+An association connects 'gpfl_GExpression' and 'gpfl_StpCmd'. From 'gpfl_GExpression', the role 'gpfl_GExpression51' has cardinality 0..*, and from 'gpfl_StpCmd', the role 'gpfl_StpCmd50' has cardinality 0..*.
+An association connects 'gpfl_StpCmd' and 'gpfl_GExpression'. From 'gpfl_StpCmd', the role 'gpfl_StpCmd53' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression54' has cardinality 0..*.
+An association connects 'gpfl_CmdAnd' and 'gpfl_GExpression'. From 'gpfl_CmdAnd', the role 'gpfl_CmdAnd' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression56' has cardinality 0..*.
+An association connects 'gpfl_CmdAnd' and 'gpfl_GExpression'. From 'gpfl_CmdAnd', the role 'gpfl_CmdAnd58' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression59' has cardinality 0..*.
+An association connects 'gpfl_CmdEq' and 'gpfl_GExpression'. From 'gpfl_CmdEq', the role 'gpfl_CmdEq' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression61' has cardinality 0..*.
+An association connects 'gpfl_CmdEq' and 'gpfl_GExpression'. From 'gpfl_CmdEq', the role 'gpfl_CmdEq63' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression64' has cardinality 0..*.
+An association connects 'gpfl_GExpression' and 'gpfl_CmdNEq'. From 'gpfl_GExpression', the role 'gpfl_GExpression66' has cardinality 0..*, and from 'gpfl_CmdNEq', the role 'gpfl_CmdNEq' has cardinality 0..*.
+An association connects 'gpfl_CmdNEq' and 'gpfl_GExpression'. From 'gpfl_CmdNEq', the role 'gpfl_CmdNEq68' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression69' has cardinality 0..*.
+An association connects 'gpfl_CmdGECompare' and 'gpfl_GExpression'. From 'gpfl_CmdGECompare', the role 'gpfl_CmdGECompare' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression71' has cardinality 0..*.
+An association connects 'gpfl_CmdGECompare' and 'gpfl_GExpression'. From 'gpfl_CmdGECompare', the role 'gpfl_CmdGECompare73' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression74' has cardinality 0..*.
+An association connects 'gpfl_CmdLECompare' and 'gpfl_GExpression'. From 'gpfl_CmdLECompare', the role 'gpfl_CmdLECompare' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression76' has cardinality 0..*.
+An association connects 'gpfl_GExpression' and 'gpfl_CmdLECompare'. From 'gpfl_GExpression', the role 'gpfl_GExpression79' has cardinality 0..*, and from 'gpfl_CmdLECompare', the role 'gpfl_CmdLECompare78' has cardinality 0..*.
+An association connects 'gpfl_GExpression' and 'gpfl_CmdGCompare'. From 'gpfl_GExpression', the role 'gpfl_GExpression81' has cardinality 0..*, and from 'gpfl_CmdGCompare', the role 'gpfl_CmdGCompare' has cardinality 0..*.
+An association connects 'gpfl_CmdGCompare' and 'gpfl_GExpression'. From 'gpfl_CmdGCompare', the role 'gpfl_CmdGCompare83' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression84' has cardinality 0..*.
+An association connects 'gpfl_GExpression' and 'gpfl_CmdLCompare'. From 'gpfl_GExpression', the role 'gpfl_GExpression86' has cardinality 0..*, and from 'gpfl_CmdLCompare', the role 'gpfl_CmdLCompare' has cardinality 0..*.
+An association connects 'gpfl_CmdLCompare' and 'gpfl_GExpression'. From 'gpfl_CmdLCompare', the role 'gpfl_CmdLCompare88' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression89' has cardinality 0..*.
+An association connects 'gpfl_GExpression' and 'gpfl_CmdAdd'. From 'gpfl_GExpression', the role 'gpfl_GExpression91' has cardinality 0..*, and from 'gpfl_CmdAdd', the role 'gpfl_CmdAdd' has cardinality 0..*.
+An association connects 'gpfl_CmdAdd' and 'gpfl_GExpression'. From 'gpfl_CmdAdd', the role 'gpfl_CmdAdd93' has cardinality 0..*, and from 'gpfl_GExpression', the role 'gpfl_GExpression94' has cardinality 0..*.
+An association connects 'gpfl_GExpression' and 'gpfl_CmdSub'. From 'gpfl_GExpression', the role 'gpfl_GExpression96' has cardinality 0..*, and from 'gpfl_CmdSub', the role 'gpfl_CmdSub' has cardinality 0..*.
+An association connects 'gpfl_GExpression' and 'gpfl_CmdSub'. From 'gpfl_GExpression', the role 'gpfl_GExpression99' has cardinality 0..*, and from 'gpfl_CmdSub', the role 'gpfl_CmdSub98' has cardinality 0..*.

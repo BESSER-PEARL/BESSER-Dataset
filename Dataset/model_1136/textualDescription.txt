@@ -1,0 +1,88 @@
+The domain model 'ea' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'ea_extensions_StringExtension' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ea_automata_Transition' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'ea_extensions_BooleanExtension' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'ea_extensions_IExtendible' represents an important domain concept.
+It does not declare any attributes.
+
+'ea_extensions_ExtensionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ea_extensions_IExtension' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'ea_extensions_IntegerExtension' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'ea_extensions_StringListExtension' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'Module' represents an important domain concept.
+It does not declare any attributes.
+
+'Automaton' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtensionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtendibleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'IExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'ea_extensions_ExtendibleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ea_automata_Automaton' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str; 'usedExtensionIds', which is of type str.
+
+'ea_automata_State' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'IExtendible' represents an important domain concept.
+It does not declare any attributes.
+
+'ea_automata_Module' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ea_automata_Automaton' is a specialization of 'ExtendibleElement'.
+The class 'ea_automata_State' is a specialization of 'ExtendibleElement'.
+The class 'ea_automata_Transition' is a specialization of 'ExtendibleElement'.
+The class 'ea_extensions_ExtendibleElement' is a specialization of 'IExtendible'.
+The class 'ea_extensions_ExtensionElement' is a specialization of 'IExtension'.
+The class 'ea_extensions_IntegerExtension' is a specialization of 'ExtensionElement'.
+The class 'ea_extensions_StringExtension' is a specialization of 'ExtensionElement'.
+The class 'ea_extensions_StringListExtension' is a specialization of 'ExtensionElement'.
+The class 'ea_extensions_BooleanExtension' is a specialization of 'ExtensionElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ea_automata_Automaton' and 'State'. From 'ea_automata_Automaton', the role 'State' has cardinality 0..*, and from 'State', the role 'automata' has cardinality 0..*.
+An association connects 'ea_automata_Automaton' and 'Transition'. From 'ea_automata_Automaton', the role 'Transition' has cardinality 0..*, and from 'Transition', the role 'automata2' has cardinality 0..*.
+An association connects 'ea_automata_Automaton' and 'Module'. From 'ea_automata_Automaton', the role 'Module' has cardinality 0..*, and from 'Module', the role 'automata4' has cardinality 0..*.
+An association connects 'ea_automata_State' and 'Automaton'. From 'ea_automata_State', the role 'Automaton' has cardinality 0..*, and from 'Automaton', the role 'automata6' has cardinality 0..*.
+An association connects 'Transition' and 'ea_automata_State'. From 'Transition', the role 'automata9' has cardinality 0..*, and from 'ea_automata_State', the role 'Transition8' has cardinality 0..*.
+An association connects 'ea_automata_State' and 'Transition'. From 'ea_automata_State', the role 'Transition11' has cardinality 0..*, and from 'Transition', the role 'automata12' has cardinality 0..*.
+An association connects 'ea_automata_Transition' and 'Automaton'. From 'ea_automata_Transition', the role 'Automaton14' has cardinality 0..*, and from 'Automaton', the role 'automata15' has cardinality 0..*.
+An association connects 'State' and 'ea_automata_Transition'. From 'State', the role 'automata18' has cardinality 0..*, and from 'ea_automata_Transition', the role 'State17' has cardinality 0..*.
+An association connects 'State' and 'ea_automata_Transition'. From 'State', the role 'automata21' has cardinality 0..*, and from 'ea_automata_Transition', the role 'State20' has cardinality 0..*.
+An association connects 'Automaton' and 'ea_automata_Module'. From 'Automaton', the role 'automata24' has cardinality 0..*, and from 'ea_automata_Module', the role 'Automaton23' has cardinality 0..*.
+An association connects 'IExtension' and 'ea_extensions_IExtendible'. From 'IExtension', the role 'extensions' has cardinality 0..*, and from 'ea_extensions_IExtendible', the role 'IExtension' has cardinality 0..*.
+An association connects 'ea_extensions_IExtension' and 'IExtendible'. From 'ea_extensions_IExtension', the role 'IExtendible' has cardinality 0..*, and from 'IExtendible', the role 'extensions27' has cardinality 0..*.

@@ -1,0 +1,661 @@
+The domain model 'QualityMetamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 150 main class(es).
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_OclUndefinedExp' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_StringExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_BagExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_IntOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_OclContextDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_MapExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_LambdaType' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QualityAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_LocatedElement' represents an important domain concept.
+It has the following attributes: 'charStart', which is of type str; 'column', which is of type str; 'line', which is of type str; 'charEnd', which is of type str.
+
+'QualityMetamodel_QMM_OCL_RealExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type str.
+
+'QualityMetamodel_ValueType' represents an important domain concept.
+It does not declare any attributes.
+
+'IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'StaticPropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'ModuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MapElement' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_OclType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'QualityMetamodel_QMM_OCL_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QualityModel' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_AggregatedValueMetric' represents an important domain concept.
+It has the following attributes: 'minimum', which is of type str; 'average', which is of type str; 'standardDeviation', which is of type str; 'median', which is of type str; 'maximum', which is of type str.
+
+'OclInstanceModel' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_SuperExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_TextValueType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'QualityMetamodel_QMM_OCL_IntegerExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'QualityMetamodel_QMM_OCL_OclModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_CollectionItem' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_Operation' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'name', which is of type str.
+
+'QualityMetamodel_QMM_OCL_AddOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_MapElement' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_RealValueType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'QualityMetamodel_QMM_OCL_CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_OclFeature' represents an important domain concept.
+It has one attribute: 'eq', which is of type str.
+
+'LambdaType' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'QualityMetamodel_QMM_OCL_LocalVariable' represents an important domain concept.
+It has one attribute: 'eq', which is of type str.
+
+'QualityMetamodel_Value' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'StaticPropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_OperatorCallExp' represents an important domain concept.
+It has one attribute: 'operationName', which is of type str.
+
+'TupleExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_LambdaCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_TupleTypeAttribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'QualityMetamodel_QMM_OCL_EqOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_EnumLiteralExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'LocalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_CollectionOperationCall' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_EnvExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_CollectionPart' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_PropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleTypeAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_NavigationOrAttributeCall' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OperationCall' represents an important domain concept.
+It does not declare any attributes.
+
+'TuplePart' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_StaticPropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'Module' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_OrderedSetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_EnvType' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_RangeValueType' represents an important domain concept.
+It has the following attributes: 'max', which is of type str; 'min', which is of type str.
+
+'OclFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_OclModelElementExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OclModel' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'OclMetamodel' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_AggregatedValue' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OclContextDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_OperationCall' represents an important domain concept.
+It has one attribute: 'operationName', which is of type str.
+
+'QualityMetamodel_QMM_OCL_OclInstanceModel' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_Iterator' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_MapType' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_StaticOperationCall' represents an important domain concept.
+It has one attribute: 'operationName', which is of type str.
+
+'QualityMetamodel_QMM_OCL_StaticPropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_OclAnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_TupleExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_SingleValue' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_BraceExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_OclFeatureDefinition' represents an important domain concept.
+It has one attribute: 'static', which is of type str.
+
+'QualityMetamodel_QMM_OCL_Import' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_OclMetamodel' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'QualityMetamodel_QMM_OCL_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'Import' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_SelfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_SequenceExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_IteratorExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'QualityMetamodel_QMM_OCL_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_MulOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_EnumerationMetric' represents an important domain concept.
+It does not declare any attributes.
+
+'MapExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OclFeatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_MetricProvider' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'description', which is of type str; 'name', which is of type str.
+
+'QualityMetamodel_IntegerValueType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'QualityMetamodel_EnumerationItem' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'QualityMetamodel_QMM_OCL_RelOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OclModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_BooleanValueType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'QualityMetamodel_QMM_OCL_CollectionRange' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_BooleanExp' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type str.
+
+'QualityMetamodel_QMM_OCL_NotOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueType' represents an important domain concept.
+It does not declare any attributes.
+
+'LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Iterator' represents an important domain concept.
+It does not declare any attributes.
+
+'OclType' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_SetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_StaticNavigationOrAttributeCall' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'CollectionPart' represents an important domain concept.
+It does not declare any attributes.
+
+'OperatorCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_OclModel' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_ListValue' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_TuplePart' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QMM_OCL_ModuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MapType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'QualityMetamodel_QualityModel' is a specialization of 'Module'.
+The class 'QualityMetamodel_QualityAttribute' is a specialization of 'VariableDeclaration'.
+The class 'QualityMetamodel_Value' is a specialization of 'VariableDeclaration'.
+The class 'QualityMetamodel_ValueType' is a specialization of 'VariableDeclaration'.
+The class 'QualityMetamodel_SingleValue' is a specialization of 'Value'.
+The class 'QualityMetamodel_AggregatedValue' is a specialization of 'Value'.
+The class 'QualityMetamodel_TextValueType' is a specialization of 'ValueType'.
+The class 'QualityMetamodel_RangeValueType' is a specialization of 'ValueType'.
+The class 'QualityMetamodel_AggregatedValueMetric' is a specialization of 'ValueType'.
+The class 'QualityMetamodel_EnumerationMetric' is a specialization of 'ValueType'.
+The class 'QualityMetamodel_RealValueType' is a specialization of 'ValueType'.
+The class 'QualityMetamodel_BooleanValueType' is a specialization of 'ValueType'.
+The class 'QualityMetamodel_IntegerValueType' is a specialization of 'ValueType'.
+The class 'QualityMetamodel_ListValue' is a specialization of 'ValueType'.
+The class 'QualityMetamodel_QMM_OCL_NamedElement' is a specialization of 'LocatedElement'.
+The class 'QualityMetamodel_QMM_OCL_Module' is a specialization of 'NamedElement'.
+The class 'QualityMetamodel_QMM_OCL_ModuleElement' is a specialization of 'LocatedElement'.
+The class 'QualityMetamodel_QMM_OCL_Import' is a specialization of 'NamedElement'.
+The class 'QualityMetamodel_QMM_OCL_OclExpression' is a specialization of 'LocatedElement'.
+The class 'QualityMetamodel_QMM_OCL_VariableExp' is a specialization of 'OclExpression'.
+The class 'QualityMetamodel_QMM_OCL_SuperExp' is a specialization of 'OclExpression'.
+The class 'QualityMetamodel_QMM_OCL_SelfExp' is a specialization of 'OclExpression'.
+The class 'QualityMetamodel_QMM_OCL_EnvExp' is a specialization of 'OclExpression'.
+The class 'QualityMetamodel_QMM_OCL_PrimitiveExp' is a specialization of 'OclExpression'.
+The class 'QualityMetamodel_QMM_OCL_StringExp' is a specialization of 'PrimitiveExp'.
+The class 'QualityMetamodel_QMM_OCL_BooleanExp' is a specialization of 'PrimitiveExp'.
+The class 'QualityMetamodel_QMM_OCL_NumericExp' is a specialization of 'PrimitiveExp'.
+The class 'QualityMetamodel_QMM_OCL_RealExp' is a specialization of 'NumericExp'.
+The class 'QualityMetamodel_QMM_OCL_IntegerExp' is a specialization of 'NumericExp'.
+The class 'QualityMetamodel_QMM_OCL_CollectionExp' is a specialization of 'OclExpression'.
+The class 'QualityMetamodel_QMM_OCL_CollectionPart' is a specialization of 'LocatedElement'.
+The class 'QualityMetamodel_QMM_OCL_CollectionRange' is a specialization of 'CollectionPart'.
+The class 'QualityMetamodel_QMM_OCL_CollectionItem' is a specialization of 'CollectionPart'.
+The class 'QualityMetamodel_QMM_OCL_BagExp' is a specialization of 'CollectionExp'.
+The class 'QualityMetamodel_QMM_OCL_OrderedSetExp' is a specialization of 'CollectionExp'.
+The class 'QualityMetamodel_QMM_OCL_SequenceExp' is a specialization of 'CollectionExp'.
+The class 'QualityMetamodel_QMM_OCL_SetExp' is a specialization of 'CollectionExp'.
+The class 'QualityMetamodel_QMM_OCL_TupleExp' is a specialization of 'OclExpression'.
+The class 'QualityMetamodel_QMM_OCL_TuplePart' is a specialization of 'LocalVariable'.
+The class 'QualityMetamodel_QMM_OCL_MapExp' is a specialization of 'OclExpression'.
+The class 'QualityMetamodel_QMM_OCL_MapElement' is a specialization of 'LocatedElement'.
+The class 'QualityMetamodel_QMM_OCL_EnumLiteralExp' is a specialization of 'OclExpression'.
+The class 'QualityMetamodel_QMM_OCL_OclUndefinedExp' is a specialization of 'OclExpression'.
+The class 'QualityMetamodel_QMM_OCL_StaticPropertyCallExp' is a specialization of 'OclExpression'.
+The class 'QualityMetamodel_QMM_OCL_StaticPropertyCall' is a specialization of 'LocatedElement'.
+The class 'QualityMetamodel_QMM_OCL_StaticNavigationOrAttributeCall' is a specialization of 'StaticPropertyCall'.
+The class 'QualityMetamodel_QMM_OCL_StaticOperationCall' is a specialization of 'StaticPropertyCall'.
+The class 'QualityMetamodel_QMM_OCL_PropertyCallExp' is a specialization of 'OclExpression'.
+The class 'QualityMetamodel_QMM_OCL_PropertyCall' is a specialization of 'LocatedElement'.
+The class 'QualityMetamodel_QMM_OCL_NavigationOrAttributeCall' is a specialization of 'PropertyCall'.
+The class 'QualityMetamodel_QMM_OCL_OperationCall' is a specialization of 'PropertyCall'.
+The class 'QualityMetamodel_QMM_OCL_OperatorCallExp' is a specialization of 'OclExpression'.
+The class 'QualityMetamodel_QMM_OCL_NotOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'QualityMetamodel_QMM_OCL_RelOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'QualityMetamodel_QMM_OCL_EqOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'QualityMetamodel_QMM_OCL_AddOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'QualityMetamodel_QMM_OCL_IntOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'QualityMetamodel_QMM_OCL_MulOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'QualityMetamodel_QMM_OCL_LambdaCallExp' is a specialization of 'VariableExp'.
+The class 'QualityMetamodel_QMM_OCL_BraceExp' is a specialization of 'OclExpression'.
+The class 'QualityMetamodel_QMM_OCL_CollectionOperationCall' is a specialization of 'OperationCall'.
+The class 'QualityMetamodel_QMM_OCL_LoopExp' is a specialization of 'PropertyCall'.
+The class 'QualityMetamodel_QMM_OCL_IterateExp' is a specialization of 'LoopExp'.
+The class 'QualityMetamodel_QMM_OCL_IteratorExp' is a specialization of 'LoopExp'.
+The class 'QualityMetamodel_QMM_OCL_LetExp' is a specialization of 'OclExpression'.
+The class 'QualityMetamodel_QMM_OCL_IfExp' is a specialization of 'OclExpression'.
+The class 'QualityMetamodel_QMM_OCL_VariableDeclaration' is a specialization of 'LocatedElement'.
+The class 'QualityMetamodel_QMM_OCL_LocalVariable' is a specialization of 'VariableDeclaration'.
+The class 'QualityMetamodel_QMM_OCL_Iterator' is a specialization of 'VariableDeclaration'.
+The class 'QualityMetamodel_QMM_OCL_Parameter' is a specialization of 'VariableDeclaration'.
+The class 'QualityMetamodel_QMM_OCL_CollectionType' is a specialization of 'OclType'.
+The class 'QualityMetamodel_QMM_OCL_OclType' is a specialization of 'LocatedElement'.
+The class 'QualityMetamodel_QMM_OCL_OclModelElementExp' is a specialization of 'OclExpression'.
+The class 'QualityMetamodel_QMM_OCL_Primitive' is a specialization of 'OclType'.
+The class 'QualityMetamodel_QMM_OCL_StringType' is a specialization of 'Primitive'.
+The class 'QualityMetamodel_QMM_OCL_BooleanType' is a specialization of 'Primitive'.
+The class 'QualityMetamodel_QMM_OCL_NumericType' is a specialization of 'Primitive'.
+The class 'QualityMetamodel_QMM_OCL_IntegerType' is a specialization of 'NumericType'.
+The class 'QualityMetamodel_QMM_OCL_RealType' is a specialization of 'NumericType'.
+The class 'QualityMetamodel_QMM_OCL_BagType' is a specialization of 'CollectionType'.
+The class 'QualityMetamodel_QMM_OCL_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'QualityMetamodel_QMM_OCL_SequenceType' is a specialization of 'CollectionType'.
+The class 'QualityMetamodel_QMM_OCL_SetType' is a specialization of 'CollectionType'.
+The class 'QualityMetamodel_QMM_OCL_OclAnyType' is a specialization of 'OclType'.
+The class 'QualityMetamodel_QMM_OCL_TupleType' is a specialization of 'OclType'.
+The class 'QualityMetamodel_QMM_OCL_TupleTypeAttribute' is a specialization of 'LocatedElement'.
+The class 'QualityMetamodel_QMM_OCL_OclModelElement' is a specialization of 'OclType'.
+The class 'QualityMetamodel_QMM_OCL_MapType' is a specialization of 'OclType'.
+The class 'QualityMetamodel_QMM_OCL_LambdaType' is a specialization of 'OclType'.
+The class 'QualityMetamodel_QMM_OCL_EnvType' is a specialization of 'OclType'.
+The class 'QualityMetamodel_QMM_OCL_OclFeatureDefinition' is a specialization of 'ModuleElement'.
+The class 'QualityMetamodel_QMM_OCL_OclContextDefinition' is a specialization of 'LocatedElement'.
+The class 'QualityMetamodel_QMM_OCL_OclFeature' is a specialization of 'NamedElement'.
+The class 'QualityMetamodel_QMM_OCL_Attribute' is a specialization of 'OclFeature'.
+The class 'QualityMetamodel_QMM_OCL_Operation' is a specialization of 'OclFeature'.
+The class 'QualityMetamodel_QMM_OCL_OclModel' is a specialization of 'NamedElement'.
+The class 'QualityMetamodel_QMM_OCL_OclMetamodel' is a specialization of 'OclModel'.
+The class 'QualityMetamodel_QMM_OCL_OclInstanceModel' is a specialization of 'OclModel'.
+
+Relationships between classes are modeled using associations.
+An association connects 'QualityMetamodel_MetricProvider' and 'QualityMetamodel_QualityModel'. From 'QualityMetamodel_MetricProvider', the role 'QualityMetamodel_MetricProvider' has cardinality 0..*, and from 'QualityMetamodel_QualityModel', the role 'QualityMetamodel_QualityModel' has cardinality 0..*.
+An association connects 'QualityMetamodel_QualityModel' and 'QualityMetamodel_ValueType'. From 'QualityMetamodel_QualityModel', the role 'QualityMetamodel_QualityModel2' has cardinality 0..*, and from 'QualityMetamodel_ValueType', the role 'QualityMetamodel_ValueType' has cardinality 0..*.
+An association connects 'QualityMetamodel_QualityAttribute' and 'QualityMetamodel_QualityModel'. From 'QualityMetamodel_QualityAttribute', the role 'QualityMetamodel_QualityAttribute' has cardinality 0..*, and from 'QualityMetamodel_QualityModel', the role 'QualityMetamodel_QualityModel4' has cardinality 0..*.
+An association connects 'QualityMetamodel_Value' and 'QualityMetamodel_QualityModel'. From 'QualityMetamodel_Value', the role 'QualityMetamodel_Value' has cardinality 0..*, and from 'QualityMetamodel_QualityModel', the role 'QualityMetamodel_QualityModel6' has cardinality 0..*.
+An association connects 'QualityMetamodel_Value' and 'QualityMetamodel_QualityAttribute'. From 'QualityMetamodel_Value', the role 'QualityMetamodel_Value9' has cardinality 0..*, and from 'QualityMetamodel_QualityAttribute', the role 'QualityMetamodel_QualityAttribute8' has cardinality 0..*.
+An association connects 'QualityMetamodel_QualityAttribute' and 'QualityMetamodel_QualityAttribute'. From 'QualityMetamodel_QualityAttribute', the role 'QualityMetamodel_QualityAttribute10' has cardinality 0..*, and from 'QualityMetamodel_QualityAttribute', the role 'QualityMetamodel_QualityAttribute12' has cardinality 0..*.
+An association connects 'QualityMetamodel_ValueType' and 'QualityMetamodel_Value'. From 'QualityMetamodel_ValueType', the role 'ValueType' has cardinality 0..*, and from 'QualityMetamodel_Value', the role 'val' has cardinality 0..*.
+An association connects 'QualityMetamodel_ValueType' and 'QualityMetamodel_Value'. From 'QualityMetamodel_ValueType', the role 'valueType' has cardinality 0..*, and from 'QualityMetamodel_Value', the role 'Value' has cardinality 0..*.
+An association connects 'QualityMetamodel_SingleValue' and 'QualityMetamodel_MetricProvider'. From 'QualityMetamodel_SingleValue', the role 'QualityMetamodel_SingleValue' has cardinality 0..*, and from 'QualityMetamodel_MetricProvider', the role 'QualityMetamodel_MetricProvider16' has cardinality 0..*.
+An association connects 'QualityMetamodel_AggregatedValue' and 'QualityMetamodel_Operation'. From 'QualityMetamodel_AggregatedValue', the role 'QualityMetamodel_AggregatedValue' has cardinality 0..*, and from 'QualityMetamodel_Operation', the role 'QualityMetamodel_Operation' has cardinality 0..*.
+An association connects 'QualityMetamodel_Value' and 'QualityMetamodel_Operation'. From 'QualityMetamodel_Value', the role 'QualityMetamodel_Value20' has cardinality 0..*, and from 'QualityMetamodel_Operation', the role 'QualityMetamodel_Operation19' has cardinality 0..*.
+An association connects 'QualityMetamodel_Operation' and 'OclExpression'. From 'QualityMetamodel_Operation', the role 'QualityMetamodel_Operation22' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression' has cardinality 0..*.
+An association connects 'QualityMetamodel_EnumerationItem' and 'QualityMetamodel_EnumerationMetric'. From 'QualityMetamodel_EnumerationItem', the role 'QualityMetamodel_EnumerationItem' has cardinality 0..*, and from 'QualityMetamodel_EnumerationMetric', the role 'QualityMetamodel_EnumerationMetric' has cardinality 0..*.
+An association connects 'QualityMetamodel_EnumerationItem' and 'QualityMetamodel_EnumerationMetric'. From 'QualityMetamodel_EnumerationItem', the role 'QualityMetamodel_EnumerationItem26' has cardinality 0..*, and from 'QualityMetamodel_EnumerationMetric', the role 'QualityMetamodel_EnumerationMetric25' has cardinality 0..*.
+An association connects 'QualityMetamodel_ListValue' and 'QualityMetamodel_ValueType'. From 'QualityMetamodel_ListValue', the role 'QualityMetamodel_ListValue' has cardinality 0..*, and from 'QualityMetamodel_ValueType', the role 'QualityMetamodel_ValueType28' has cardinality 0..*.
+An association connects 'OclMetamodel' and 'QualityMetamodel_QMM_OCL_Module'. From 'OclMetamodel', the role 'OclMetamodel' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_Module', the role 'QualityMetamodel_QMM_OCL_Module' has cardinality 0..*.
+An association connects 'Import' and 'QualityMetamodel_QMM_OCL_Module'. From 'Import', the role 'QMM_OCL' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_Module', the role 'Import' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_Module' and 'ModuleElement'. From 'QualityMetamodel_QMM_OCL_Module', the role 'ModuleElement' has cardinality 0..*, and from 'ModuleElement', the role 'QMM_OCL32' has cardinality 0..*.
+An association connects 'Module' and 'QualityMetamodel_QMM_OCL_ModuleElement'. From 'Module', the role 'QMM_OCL34' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_ModuleElement', the role 'Module' has cardinality 0..*.
+An association connects 'Module' and 'QualityMetamodel_QMM_OCL_Import'. From 'Module', the role 'QMM_OCL37' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_Import', the role 'Module36' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_OclExpression' and 'OclType'. From 'QualityMetamodel_QMM_OCL_OclExpression', the role 'OclType' has cardinality 0..*, and from 'OclType', the role 'QMM_OCL39' has cardinality 0..*.
+An association connects 'IfExp' and 'QualityMetamodel_QMM_OCL_OclExpression'. From 'IfExp', the role 'QMM_OCL41' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_OclExpression', the role 'IfExp' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_OclExpression' and 'PropertyCallExp'. From 'QualityMetamodel_QMM_OCL_OclExpression', the role 'PropertyCallExp' has cardinality 0..*, and from 'PropertyCallExp', the role 'QMM_OCL43' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_OclExpression' and 'LetExp'. From 'QualityMetamodel_QMM_OCL_OclExpression', the role 'LetExp' has cardinality 0..*, and from 'LetExp', the role 'QMM_OCL45' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_OclExpression' and 'LoopExp'. From 'QualityMetamodel_QMM_OCL_OclExpression', the role 'LoopExp' has cardinality 0..*, and from 'LoopExp', the role 'QMM_OCL47' has cardinality 0..*.
+An association connects 'OperationCall' and 'QualityMetamodel_QMM_OCL_OclExpression'. From 'OperationCall', the role 'QMM_OCL49' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_OclExpression', the role 'OperationCall' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_OclExpression' and 'LocalVariable'. From 'QualityMetamodel_QMM_OCL_OclExpression', the role 'LocalVariable' has cardinality 0..*, and from 'LocalVariable', the role 'QMM_OCL51' has cardinality 0..*.
+An association connects 'IfExp' and 'QualityMetamodel_QMM_OCL_OclExpression'. From 'IfExp', the role 'QMM_OCL54' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_OclExpression', the role 'IfExp53' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_OclExpression' and 'Operation'. From 'QualityMetamodel_QMM_OCL_OclExpression', the role 'Operation' has cardinality 0..*, and from 'Operation', the role 'QMM_OCL56' has cardinality 0..*.
+An association connects 'IfExp' and 'QualityMetamodel_QMM_OCL_OclExpression'. From 'IfExp', the role 'QMM_OCL59' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_OclExpression', the role 'IfExp58' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_OclExpression' and 'Attribute'. From 'QualityMetamodel_QMM_OCL_OclExpression', the role 'Attribute' has cardinality 0..*, and from 'Attribute', the role 'QMM_OCL61' has cardinality 0..*.
+An association connects 'OperatorCallExp' and 'QualityMetamodel_QMM_OCL_OclExpression'. From 'OperatorCallExp', the role 'QMM_OCL63' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_OclExpression', the role 'OperatorCallExp' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_VariableExp' and 'VariableDeclaration'. From 'QualityMetamodel_QMM_OCL_VariableExp', the role 'VariableDeclaration' has cardinality 0..*, and from 'VariableDeclaration', the role 'QMM_OCL65' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_CollectionExp' and 'CollectionPart'. From 'QualityMetamodel_QMM_OCL_CollectionExp', the role 'CollectionPart' has cardinality 0..*, and from 'CollectionPart', the role 'QMM_OCL67' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_CollectionPart' and 'CollectionExp'. From 'QualityMetamodel_QMM_OCL_CollectionPart', the role 'CollectionExp' has cardinality 0..*, and from 'CollectionExp', the role 'QMM_OCL69' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_CollectionRange' and 'OclExpression'. From 'QualityMetamodel_QMM_OCL_CollectionRange', the role 'QualityMetamodel_QMM_OCL_CollectionRange' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression71' has cardinality 0..*.
+An association connects 'OclExpression' and 'QualityMetamodel_QMM_OCL_CollectionRange'. From 'OclExpression', the role 'OclExpression74' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_CollectionRange', the role 'QualityMetamodel_QMM_OCL_CollectionRange73' has cardinality 0..*.
+An association connects 'OclExpression' and 'QualityMetamodel_QMM_OCL_CollectionItem'. From 'OclExpression', the role 'OclExpression76' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_CollectionItem', the role 'QualityMetamodel_QMM_OCL_CollectionItem' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_TupleExp' and 'TuplePart'. From 'QualityMetamodel_QMM_OCL_TupleExp', the role 'TuplePart' has cardinality 0..*, and from 'TuplePart', the role 'QMM_OCL78' has cardinality 0..*.
+An association connects 'TupleExp' and 'QualityMetamodel_QMM_OCL_TuplePart'. From 'TupleExp', the role 'QMM_OCL80' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_TuplePart', the role 'TupleExp' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_MapExp' and 'MapElement'. From 'QualityMetamodel_QMM_OCL_MapExp', the role 'MapElement' has cardinality 0..*, and from 'MapElement', the role 'QMM_OCL82' has cardinality 0..*.
+An association connects 'MapExp' and 'QualityMetamodel_QMM_OCL_MapElement'. From 'MapExp', the role 'QMM_OCL84' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_MapElement', the role 'MapExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'QualityMetamodel_QMM_OCL_MapElement'. From 'OclExpression', the role 'OclExpression86' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_MapElement', the role 'QualityMetamodel_QMM_OCL_MapElement' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_MapElement' and 'OclExpression'. From 'QualityMetamodel_QMM_OCL_MapElement', the role 'QualityMetamodel_QMM_OCL_MapElement88' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression89' has cardinality 0..*.
+An association connects 'OclType' and 'QualityMetamodel_QMM_OCL_StaticPropertyCallExp'. From 'OclType', the role 'QMM_OCL92' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_StaticPropertyCallExp', the role 'OclType91' has cardinality 0..*.
+An association connects 'StaticPropertyCall' and 'QualityMetamodel_QMM_OCL_StaticPropertyCallExp'. From 'StaticPropertyCall', the role 'QMM_OCL94' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_StaticPropertyCallExp', the role 'StaticPropertyCall' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_StaticPropertyCall' and 'StaticPropertyCallExp'. From 'QualityMetamodel_QMM_OCL_StaticPropertyCall', the role 'StaticPropertyCallExp' has cardinality 0..*, and from 'StaticPropertyCallExp', the role 'QMM_OCL96' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_StaticOperationCall' and 'OclExpression'. From 'QualityMetamodel_QMM_OCL_StaticOperationCall', the role 'QualityMetamodel_QMM_OCL_StaticOperationCall' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression98' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_PropertyCallExp' and 'PropertyCall'. From 'QualityMetamodel_QMM_OCL_PropertyCallExp', the role 'PropertyCall' has cardinality 0..*, and from 'PropertyCall', the role 'QMM_OCL100' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_PropertyCallExp' and 'OclExpression'. From 'QualityMetamodel_QMM_OCL_PropertyCallExp', the role 'OclExpression102' has cardinality 0..*, and from 'OclExpression', the role 'QMM_OCL103' has cardinality 0..*.
+An association connects 'PropertyCallExp' and 'QualityMetamodel_QMM_OCL_PropertyCall'. From 'PropertyCallExp', the role 'QMM_OCL106' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_PropertyCall', the role 'PropertyCallExp105' has cardinality 0..*.
+An association connects 'OclExpression' and 'QualityMetamodel_QMM_OCL_OperationCall'. From 'OclExpression', the role 'QMM_OCL109' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_OperationCall', the role 'OclExpression108' has cardinality 0..*.
+An association connects 'OclExpression' and 'QualityMetamodel_QMM_OCL_OperatorCallExp'. From 'OclExpression', the role 'OclExpression111' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_OperatorCallExp', the role 'QualityMetamodel_QMM_OCL_OperatorCallExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'QualityMetamodel_QMM_OCL_OperatorCallExp'. From 'OclExpression', the role 'QMM_OCL114' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_OperatorCallExp', the role 'OclExpression113' has cardinality 0..*.
+An association connects 'OclExpression' and 'QualityMetamodel_QMM_OCL_LambdaCallExp'. From 'OclExpression', the role 'OclExpression116' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_LambdaCallExp', the role 'QualityMetamodel_QMM_OCL_LambdaCallExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'QualityMetamodel_QMM_OCL_BraceExp'. From 'OclExpression', the role 'OclExpression118' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_BraceExp', the role 'QualityMetamodel_QMM_OCL_BraceExp' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_LoopExp' and 'OclExpression'. From 'QualityMetamodel_QMM_OCL_LoopExp', the role 'OclExpression120' has cardinality 0..*, and from 'OclExpression', the role 'QMM_OCL121' has cardinality 0..*.
+An association connects 'Iterator' and 'QualityMetamodel_QMM_OCL_LoopExp'. From 'Iterator', the role 'QMM_OCL123' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_LoopExp', the role 'Iterator' has cardinality 0..*.
+An association connects 'LocalVariable' and 'QualityMetamodel_QMM_OCL_IterateExp'. From 'LocalVariable', the role 'QMM_OCL126' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_IterateExp', the role 'LocalVariable125' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_LetExp' and 'LocalVariable'. From 'QualityMetamodel_QMM_OCL_LetExp', the role 'LocalVariable128' has cardinality 0..*, and from 'LocalVariable', the role 'QMM_OCL129' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_LetExp' and 'OclExpression'. From 'QualityMetamodel_QMM_OCL_LetExp', the role 'OclExpression131' has cardinality 0..*, and from 'OclExpression', the role 'QMM_OCL132' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_IfExp' and 'OclExpression'. From 'QualityMetamodel_QMM_OCL_IfExp', the role 'OclExpression134' has cardinality 0..*, and from 'OclExpression', the role 'QMM_OCL135' has cardinality 0..*.
+An association connects 'OclExpression' and 'QualityMetamodel_QMM_OCL_IfExp'. From 'OclExpression', the role 'QMM_OCL138' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_IfExp', the role 'OclExpression137' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_IfExp' and 'OclExpression'. From 'QualityMetamodel_QMM_OCL_IfExp', the role 'OclExpression140' has cardinality 0..*, and from 'OclExpression', the role 'QMM_OCL141' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_VariableDeclaration' and 'OclType'. From 'QualityMetamodel_QMM_OCL_VariableDeclaration', the role 'OclType143' has cardinality 0..*, and from 'OclType', the role 'QMM_OCL144' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_VariableDeclaration' and 'VariableExp'. From 'QualityMetamodel_QMM_OCL_VariableDeclaration', the role 'VariableExp' has cardinality 0..*, and from 'VariableExp', the role 'QMM_OCL146' has cardinality 0..*.
+An association connects 'LetExp' and 'QualityMetamodel_QMM_OCL_LocalVariable'. From 'LetExp', the role 'QMM_OCL149' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_LocalVariable', the role 'LetExp148' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_LocalVariable' and 'OclExpression'. From 'QualityMetamodel_QMM_OCL_LocalVariable', the role 'OclExpression151' has cardinality 0..*, and from 'OclExpression', the role 'QMM_OCL152' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_LocalVariable' and 'IterateExp'. From 'QualityMetamodel_QMM_OCL_LocalVariable', the role 'IterateExp' has cardinality 0..*, and from 'IterateExp', the role 'QMM_OCL154' has cardinality 0..*.
+An association connects 'LoopExp' and 'QualityMetamodel_QMM_OCL_Iterator'. From 'LoopExp', the role 'QMM_OCL157' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_Iterator', the role 'LoopExp156' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_Parameter' and 'Operation'. From 'QualityMetamodel_QMM_OCL_Parameter', the role 'Operation159' has cardinality 0..*, and from 'Operation', the role 'QMM_OCL160' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_CollectionType' and 'OclType'. From 'QualityMetamodel_QMM_OCL_CollectionType', the role 'OclType162' has cardinality 0..*, and from 'OclType', the role 'QMM_OCL163' has cardinality 0..*.
+An association connects 'OclContextDefinition' and 'QualityMetamodel_QMM_OCL_OclType'. From 'OclContextDefinition', the role 'QMM_OCL165' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_OclType', the role 'OclContextDefinition' has cardinality 0..*.
+An association connects 'OclExpression' and 'QualityMetamodel_QMM_OCL_OclType'. From 'OclExpression', the role 'QMM_OCL168' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_OclType', the role 'OclExpression167' has cardinality 0..*.
+An association connects 'Operation' and 'QualityMetamodel_QMM_OCL_OclType'. From 'Operation', the role 'QMM_OCL171' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_OclType', the role 'Operation170' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_OclType' and 'MapType'. From 'QualityMetamodel_QMM_OCL_OclType', the role 'MapType' has cardinality 0..*, and from 'MapType', the role 'QMM_OCL173' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_OclType' and 'Attribute'. From 'QualityMetamodel_QMM_OCL_OclType', the role 'Attribute175' has cardinality 0..*, and from 'Attribute', the role 'QMM_OCL176' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_OclType' and 'MapType'. From 'QualityMetamodel_QMM_OCL_OclType', the role 'MapType178' has cardinality 0..*, and from 'MapType', the role 'QMM_OCL179' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_OclType' and 'CollectionType'. From 'QualityMetamodel_QMM_OCL_OclType', the role 'CollectionType' has cardinality 0..*, and from 'CollectionType', the role 'QMM_OCL181' has cardinality 0..*.
+An association connects 'TupleTypeAttribute' and 'QualityMetamodel_QMM_OCL_OclType'. From 'TupleTypeAttribute', the role 'QMM_OCL183' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_OclType', the role 'TupleTypeAttribute' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_OclType' and 'VariableDeclaration'. From 'QualityMetamodel_QMM_OCL_OclType', the role 'VariableDeclaration185' has cardinality 0..*, and from 'VariableDeclaration', the role 'QMM_OCL186' has cardinality 0..*.
+An association connects 'LambdaType' and 'QualityMetamodel_QMM_OCL_OclType'. From 'LambdaType', the role 'QMM_OCL188' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_OclType', the role 'LambdaType' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_OclType' and 'LambdaType'. From 'QualityMetamodel_QMM_OCL_OclType', the role 'LambdaType190' has cardinality 0..*, and from 'LambdaType', the role 'QMM_OCL191' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_OclType' and 'StaticPropertyCallExp'. From 'QualityMetamodel_QMM_OCL_OclType', the role 'StaticPropertyCallExp193' has cardinality 0..*, and from 'StaticPropertyCallExp', the role 'QMM_OCL194' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_OclModelElementExp' and 'OclModel'. From 'QualityMetamodel_QMM_OCL_OclModelElementExp', the role 'QualityMetamodel_QMM_OCL_OclModelElementExp' has cardinality 0..*, and from 'OclModel', the role 'OclModel' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_TupleType' and 'TupleTypeAttribute'. From 'QualityMetamodel_QMM_OCL_TupleType', the role 'TupleTypeAttribute197' has cardinality 0..*, and from 'TupleTypeAttribute', the role 'QMM_OCL198' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_TupleTypeAttribute' and 'OclType'. From 'QualityMetamodel_QMM_OCL_TupleTypeAttribute', the role 'OclType200' has cardinality 0..*, and from 'OclType', the role 'QMM_OCL201' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_TupleTypeAttribute' and 'TupleType'. From 'QualityMetamodel_QMM_OCL_TupleTypeAttribute', the role 'TupleType' has cardinality 0..*, and from 'TupleType', the role 'QMM_OCL203' has cardinality 0..*.
+An association connects 'OclModel' and 'QualityMetamodel_QMM_OCL_OclModelElement'. From 'OclModel', the role 'QMM_OCL206' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_OclModelElement', the role 'OclModel205' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_MapType' and 'OclType'. From 'QualityMetamodel_QMM_OCL_MapType', the role 'OclType208' has cardinality 0..*, and from 'OclType', the role 'QMM_OCL209' has cardinality 0..*.
+An association connects 'OclType' and 'QualityMetamodel_QMM_OCL_MapType'. From 'OclType', the role 'QMM_OCL212' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_MapType', the role 'OclType211' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_LambdaType' and 'OclType'. From 'QualityMetamodel_QMM_OCL_LambdaType', the role 'OclType214' has cardinality 0..*, and from 'OclType', the role 'QMM_OCL215' has cardinality 0..*.
+An association connects 'OclType' and 'QualityMetamodel_QMM_OCL_LambdaType'. From 'OclType', the role 'QMM_OCL218' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_LambdaType', the role 'OclType217' has cardinality 0..*.
+An association connects 'OclFeature' and 'QualityMetamodel_QMM_OCL_OclFeatureDefinition'. From 'OclFeature', the role 'QMM_OCL220' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_OclFeatureDefinition', the role 'OclFeature' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_OclFeatureDefinition' and 'OclContextDefinition'. From 'QualityMetamodel_QMM_OCL_OclFeatureDefinition', the role 'OclContextDefinition222' has cardinality 0..*, and from 'OclContextDefinition', the role 'QMM_OCL223' has cardinality 0..*.
+An association connects 'OclFeatureDefinition' and 'QualityMetamodel_QMM_OCL_OclContextDefinition'. From 'OclFeatureDefinition', the role 'QMM_OCL225' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_OclContextDefinition', the role 'OclFeatureDefinition' has cardinality 0..*.
+An association connects 'OclType' and 'QualityMetamodel_QMM_OCL_OclContextDefinition'. From 'OclType', the role 'QMM_OCL228' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_OclContextDefinition', the role 'OclType227' has cardinality 0..*.
+An association connects 'OclFeatureDefinition' and 'QualityMetamodel_QMM_OCL_OclFeature'. From 'OclFeatureDefinition', the role 'QMM_OCL231' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_OclFeature', the role 'OclFeatureDefinition230' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_Attribute' and 'OclExpression'. From 'QualityMetamodel_QMM_OCL_Attribute', the role 'OclExpression233' has cardinality 0..*, and from 'OclExpression', the role 'QMM_OCL234' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_Attribute' and 'OclType'. From 'QualityMetamodel_QMM_OCL_Attribute', the role 'OclType236' has cardinality 0..*, and from 'OclType', the role 'QMM_OCL237' has cardinality 0..*.
+An association connects 'Parameter' and 'QualityMetamodel_QMM_OCL_Operation'. From 'Parameter', the role 'QMM_OCL239' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_Operation', the role 'Parameter' has cardinality 0..*.
+An association connects 'OclType' and 'QualityMetamodel_QMM_OCL_Operation'. From 'OclType', the role 'QMM_OCL242' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_Operation', the role 'OclType241' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_Operation' and 'OclExpression'. From 'QualityMetamodel_QMM_OCL_Operation', the role 'OclExpression244' has cardinality 0..*, and from 'OclExpression', the role 'QMM_OCL245' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_OclModel' and 'OclModelElement'. From 'QualityMetamodel_QMM_OCL_OclModel', the role 'OclModelElement' has cardinality 0..*, and from 'OclModelElement', the role 'QMM_OCL247' has cardinality 0..*.
+An association connects 'QualityMetamodel_QMM_OCL_OclMetamodel' and 'OclInstanceModel'. From 'QualityMetamodel_QMM_OCL_OclMetamodel', the role 'OclInstanceModel' has cardinality 0..*, and from 'OclInstanceModel', the role 'QMM_OCL249' has cardinality 0..*.
+An association connects 'OclMetamodel' and 'QualityMetamodel_QMM_OCL_OclInstanceModel'. From 'OclMetamodel', the role 'QMM_OCL252' has cardinality 0..*, and from 'QualityMetamodel_QMM_OCL_OclInstanceModel', the role 'OclMetamodel251' has cardinality 0..*.

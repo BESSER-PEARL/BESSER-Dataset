@@ -1,0 +1,65 @@
+The domain model 'ctxmngr' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'ctxmngr_RemoteFiringDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'ctxmngr_CtxState' represents an important domain concept.
+It has the following attributes: 'isStart', which is of type bool; 'isEnd', which is of type bool.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ctxmngr_ManagerState' represents an important domain concept.
+It does not declare any attributes.
+
+'ctxmngr_CtxTransition' represents an important domain concept.
+It has the following attributes: 'Condition', which is of type str; 'input', which is of type str; 'isRemote', which is of type bool; 'transRate', which is of type float; 'transProb', which is of type float; 'Action', which is of type str; 'Event', which is of type str; 'output', which is of type str.
+
+'ctxmngr_ContextManager' represents an important domain concept.
+It does not declare any attributes.
+
+'ctxmngr_ManagerTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'ctxmngr_ContextParameter' represents an important domain concept.
+It has the following attributes: 'LitteralString', which is of type str; 'LitteralInteger', which is of type int; 'isInput', which is of type bool; 'LitteralBoolean', which is of type bool; 'LitteralUnlimitedNatural', which is of type float.
+
+'ctxmngr_OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ctxmngr_Manager' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ctxmngr_ContextManager' is a specialization of 'NamedElement'.
+The class 'ctxmngr_CtxState' is a specialization of 'NamedElement'.
+The class 'ctxmngr_CtxTransition' is a specialization of 'NamedElement'.
+The class 'ctxmngr_ContextParameter' is a specialization of 'NamedElement'.
+The class 'ctxmngr_RemoteFiringDependency' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ctxmngr_ContextManager' and 'ctxmngr_CtxState'. From 'ctxmngr_ContextManager', the role 'owningManager' has cardinality 0..*, and from 'ctxmngr_CtxState', the role 'CtxState' has cardinality 0..*.
+An association connects 'ctxmngr_CtxState' and 'ctxmngr_ContextManager'. From 'ctxmngr_CtxState', the role 'ctxmngr_CtxState' has cardinality 0..*, and from 'ctxmngr_ContextManager', the role 'ctxmngr_ContextManager' has cardinality 0..*.
+An association connects 'ctxmngr_CtxState' and 'ctxmngr_ContextManager'. From 'ctxmngr_CtxState', the role 'ctxmngr_CtxState4' has cardinality 0..*, and from 'ctxmngr_ContextManager', the role 'ctxmngr_ContextManager3' has cardinality 0..*.
+An association connects 'ctxmngr_ContextParameter' and 'ctxmngr_ContextManager'. From 'ctxmngr_ContextParameter', the role 'ContextParameter' has cardinality 0..*, and from 'ctxmngr_ContextManager', the role 'owningManager6' has cardinality 0..*.
+An association connects 'ctxmngr_Manager' and 'ctxmngr_ContextManager'. From 'ctxmngr_Manager', the role 'ctxmngr_Manager' has cardinality 0..*, and from 'ctxmngr_ContextManager', the role 'ctxmngr_ContextManager8' has cardinality 0..*.
+An association connects 'ctxmngr_RemoteFiringDependency' and 'ctxmngr_ContextManager'. From 'ctxmngr_RemoteFiringDependency', the role 'RemoteFiringDependency' has cardinality 0..*, and from 'ctxmngr_ContextManager', the role 'owningManager10' has cardinality 0..*.
+An association connects 'ctxmngr_CtxTransition' and 'ctxmngr_ContextManager'. From 'ctxmngr_CtxTransition', the role 'CtxTransition' has cardinality 0..*, and from 'ctxmngr_ContextManager', the role 'owningManager12' has cardinality 0..*.
+An association connects 'ctxmngr_ContextManager' and 'ctxmngr_CtxState'. From 'ctxmngr_ContextManager', the role 'ContextManager' has cardinality 0..*, and from 'ctxmngr_CtxState', the role 'ownedState' has cardinality 0..*.
+An association connects 'ctxmngr_CtxState' and 'ctxmngr_CtxTransition'. From 'ctxmngr_CtxState', the role 'source' has cardinality 0..*, and from 'ctxmngr_CtxTransition', the role 'CtxTransition15' has cardinality 0..*.
+An association connects 'ctxmngr_CtxState' and 'ctxmngr_CtxTransition'. From 'ctxmngr_CtxState', the role 'target' has cardinality 0..*, and from 'ctxmngr_CtxTransition', the role 'CtxTransition17' has cardinality 0..*.
+An association connects 'ctxmngr_ContextParameter' and 'ctxmngr_CtxState'. From 'ctxmngr_ContextParameter', the role 'ContextParameter19' has cardinality 0..*, and from 'ctxmngr_CtxState', the role 'state' has cardinality 0..*.
+An association connects 'ctxmngr_ManagerState' and 'ctxmngr_CtxState'. From 'ctxmngr_ManagerState', the role 'ctxmngr_ManagerState' has cardinality 0..*, and from 'ctxmngr_CtxState', the role 'ctxmngr_CtxState21' has cardinality 0..*.
+An association connects 'ctxmngr_ContextManager' and 'ctxmngr_CtxTransition'. From 'ctxmngr_ContextManager', the role 'ContextManager23' has cardinality 0..*, and from 'ctxmngr_CtxTransition', the role 'ownedTransition' has cardinality 0..*.
+An association connects 'ctxmngr_CtxState' and 'ctxmngr_CtxTransition'. From 'ctxmngr_CtxState', the role 'CtxState25' has cardinality 0..*, and from 'ctxmngr_CtxTransition', the role 'outgoingTransition' has cardinality 0..*.
+An association connects 'ctxmngr_CtxTransition' and 'ctxmngr_CtxState'. From 'ctxmngr_CtxTransition', the role 'incomingTransition' has cardinality 0..*, and from 'ctxmngr_CtxState', the role 'CtxState27' has cardinality 0..*.
+An association connects 'ctxmngr_CtxTransition' and 'ctxmngr_ManagerTransition'. From 'ctxmngr_CtxTransition', the role 'ctxmngr_CtxTransition' has cardinality 0..*, and from 'ctxmngr_ManagerTransition', the role 'ctxmngr_ManagerTransition' has cardinality 0..*.
+An association connects 'ctxmngr_ContextParameter' and 'ctxmngr_CtxState'. From 'ctxmngr_ContextParameter', the role 'contextParameters' has cardinality 0..*, and from 'ctxmngr_CtxState', the role 'CtxState30' has cardinality 0..*.
+An association connects 'ctxmngr_OpaqueExpression' and 'ctxmngr_ContextParameter'. From 'ctxmngr_OpaqueExpression', the role 'ctxmngr_OpaqueExpression' has cardinality 0..*, and from 'ctxmngr_ContextParameter', the role 'ctxmngr_ContextParameter' has cardinality 0..*.
+An association connects 'ctxmngr_ContextManager' and 'ctxmngr_ContextParameter'. From 'ctxmngr_ContextManager', the role 'ContextManager34' has cardinality 0..*, and from 'ctxmngr_ContextParameter', the role 'contextParameters33' has cardinality 0..*.
+An association connects 'ctxmngr_ManagerTransition' and 'ctxmngr_RemoteFiringDependency'. From 'ctxmngr_ManagerTransition', the role 'ctxmngr_ManagerTransition36' has cardinality 0..*, and from 'ctxmngr_RemoteFiringDependency', the role 'ctxmngr_RemoteFiringDependency' has cardinality 0..*.
+An association connects 'ctxmngr_RemoteFiringDependency' and 'ctxmngr_ManagerTransition'. From 'ctxmngr_RemoteFiringDependency', the role 'ctxmngr_RemoteFiringDependency38' has cardinality 0..*, and from 'ctxmngr_ManagerTransition', the role 'ctxmngr_ManagerTransition39' has cardinality 0..*.
+An association connects 'ctxmngr_ContextManager' and 'ctxmngr_RemoteFiringDependency'. From 'ctxmngr_ContextManager', the role 'ContextManager41' has cardinality 0..*, and from 'ctxmngr_RemoteFiringDependency', the role 'remoteFirings' has cardinality 0..*.
+An association connects 'ctxmngr_CtxTransition' and 'ctxmngr_RemoteFiringDependency'. From 'ctxmngr_CtxTransition', the role 'ctxmngr_CtxTransition44' has cardinality 0..*, and from 'ctxmngr_RemoteFiringDependency', the role 'ctxmngr_RemoteFiringDependency43' has cardinality 0..*.

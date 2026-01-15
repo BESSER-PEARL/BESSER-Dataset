@@ -1,0 +1,73 @@
+The domain model 'fsm' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'fsm_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Pseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fsm_Pseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_State' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Trigger' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'fsm_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'fsm_StateMachine' is a specialization of 'NamedElement'.
+The class 'fsm_Region' is a specialization of 'NamedElement'.
+The class 'fsm_AbstractState' is a specialization of 'NamedElement'.
+The class 'fsm_State' is a specialization of 'AbstractState'.
+The class 'fsm_Transition' is a specialization of 'NamedElement'.
+The class 'fsm_Pseudostate' is a specialization of 'AbstractState'.
+The class 'fsm_InitialState' is a specialization of 'Pseudostate'.
+The class 'fsm_FinalState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fsm_StateMachine' and 'fsm_Region'. From 'fsm_StateMachine', the role 'ownerStateMachine' has cardinality 0..*, and from 'fsm_Region', the role 'Region' has cardinality 0..*.
+An association connects 'fsm_Region' and 'fsm_AbstractState'. From 'fsm_Region', the role 'ownerRegion' has cardinality 0..*, and from 'fsm_AbstractState', the role 'AbstractState' has cardinality 0..*.
+An association connects 'fsm_Region' and 'fsm_Transition'. From 'fsm_Region', the role 'fsm_Region' has cardinality 0..*, and from 'fsm_Transition', the role 'fsm_Transition' has cardinality 0..*.
+An association connects 'fsm_StateMachine' and 'fsm_Region'. From 'fsm_StateMachine', the role 'StateMachine' has cardinality 0..*, and from 'fsm_Region', the role 'regions' has cardinality 0..*.
+An association connects 'fsm_AbstractState' and 'fsm_Transition'. From 'fsm_AbstractState', the role 'target' has cardinality 0..*, and from 'fsm_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'fsm_Transition' and 'fsm_AbstractState'. From 'fsm_Transition', the role 'Transition6' has cardinality 0..*, and from 'fsm_AbstractState', the role 'source' has cardinality 0..*.
+An association connects 'fsm_Region' and 'fsm_AbstractState'. From 'fsm_Region', the role 'Region8' has cardinality 0..*, and from 'fsm_AbstractState', the role 'subvertex' has cardinality 0..*.
+An association connects 'fsm_Block' and 'fsm_State'. From 'fsm_Block', the role 'fsm_Block' has cardinality 0..*, and from 'fsm_State', the role 'fsm_State' has cardinality 0..*.
+An association connects 'fsm_Block' and 'fsm_State'. From 'fsm_Block', the role 'fsm_Block12' has cardinality 0..*, and from 'fsm_State', the role 'fsm_State11' has cardinality 0..*.
+An association connects 'fsm_State' and 'fsm_Block'. From 'fsm_State', the role 'fsm_State14' has cardinality 0..*, and from 'fsm_Block', the role 'fsm_Block15' has cardinality 0..*.
+An association connects 'fsm_Trigger' and 'fsm_Transition'. From 'fsm_Trigger', the role 'fsm_Trigger' has cardinality 0..*, and from 'fsm_Transition', the role 'fsm_Transition17' has cardinality 0..*.
+An association connects 'fsm_AbstractState' and 'fsm_Transition'. From 'fsm_AbstractState', the role 'AbstractState19' has cardinality 0..*, and from 'fsm_Transition', the role 'incoming' has cardinality 0..*.
+An association connects 'fsm_AbstractState' and 'fsm_Transition'. From 'fsm_AbstractState', the role 'AbstractState21' has cardinality 0..*, and from 'fsm_Transition', the role 'outgoing' has cardinality 0..*.

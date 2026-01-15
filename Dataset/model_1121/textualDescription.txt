@@ -1,0 +1,50 @@
+The domain model 'mngr' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'mngr_ManagedElement' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'mngr_ManagerState' represents an important domain concept.
+It has the following attributes: 'Prob', which is of type float; 'isStart', which is of type bool; 'isEnd', which is of type bool.
+
+'mngr_Manager' represents an important domain concept.
+It does not declare any attributes.
+
+'mngr_ManagerTransition' represents an important domain concept.
+It has the following attributes: 'output', which is of type str; 'input', which is of type str; 'Event', which is of type str; 'Action', which is of type str; 'transProb', which is of type float; 'transRate', which is of type float; 'Condition', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'mngr_OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mngr_ManagerParameter' represents an important domain concept.
+It has the following attributes: 'LitteralBoolean', which is of type bool; 'LitteralInteger', which is of type int; 'LitteralString', which is of type str; 'isInput', which is of type bool; 'LitteralUnlimitedNatural', which is of type float.
+
+The model also captures inheritance relationships between classes.
+The class 'mngr_Manager' is a specialization of 'NamedElement'.
+The class 'mngr_ManagerState' is a specialization of 'NamedElement'.
+The class 'mngr_ManagerTransition' is a specialization of 'NamedElement'.
+The class 'mngr_ManagerParameter' is a specialization of 'NamedElement'.
+The class 'mngr_ManagedElement' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mngr_Manager' and 'mngr_ManagerState'. From 'mngr_Manager', the role 'owningManager' has cardinality 0..*, and from 'mngr_ManagerState', the role 'ManagerState' has cardinality 0..*.
+An association connects 'mngr_ManagerState' and 'mngr_Manager'. From 'mngr_ManagerState', the role 'mngr_ManagerState' has cardinality 0..*, and from 'mngr_Manager', the role 'mngr_Manager' has cardinality 0..*.
+An association connects 'mngr_ManagerState' and 'mngr_Manager'. From 'mngr_ManagerState', the role 'mngr_ManagerState4' has cardinality 0..*, and from 'mngr_Manager', the role 'mngr_Manager3' has cardinality 0..*.
+An association connects 'mngr_Manager' and 'mngr_ManagerParameter'. From 'mngr_Manager', the role 'owningManager6' has cardinality 0..*, and from 'mngr_ManagerParameter', the role 'ManagerParameter' has cardinality 0..*.
+An association connects 'mngr_Manager' and 'mngr_ManagedElement'. From 'mngr_Manager', the role 'owningManager8' has cardinality 0..*, and from 'mngr_ManagedElement', the role 'ManagedElement' has cardinality 0..*.
+An association connects 'mngr_ManagerTransition' and 'mngr_Manager'. From 'mngr_ManagerTransition', the role 'ManagerTransition' has cardinality 0..*, and from 'mngr_Manager', the role 'owningManager10' has cardinality 0..*.
+An association connects 'mngr_Manager' and 'mngr_ManagerState'. From 'mngr_Manager', the role 'Manager' has cardinality 0..*, and from 'mngr_ManagerState', the role 'ownedState' has cardinality 0..*.
+An association connects 'mngr_ManagerTransition' and 'mngr_ManagerState'. From 'mngr_ManagerTransition', the role 'ManagerTransition13' has cardinality 0..*, and from 'mngr_ManagerState', the role 'source' has cardinality 0..*.
+An association connects 'mngr_ManagerState' and 'mngr_ManagerTransition'. From 'mngr_ManagerState', the role 'target' has cardinality 0..*, and from 'mngr_ManagerTransition', the role 'ManagerTransition15' has cardinality 0..*.
+An association connects 'mngr_ManagerState' and 'mngr_ManagerParameter'. From 'mngr_ManagerState', the role 'state' has cardinality 0..*, and from 'mngr_ManagerParameter', the role 'ManagerParameter17' has cardinality 0..*.
+An association connects 'mngr_ManagerTransition' and 'mngr_Manager'. From 'mngr_ManagerTransition', the role 'ownedTransition' has cardinality 0..*, and from 'mngr_Manager', the role 'Manager19' has cardinality 0..*.
+An association connects 'mngr_ManagerTransition' and 'mngr_ManagerState'. From 'mngr_ManagerTransition', the role 'outgoingTransition' has cardinality 0..*, and from 'mngr_ManagerState', the role 'ManagerState21' has cardinality 0..*.
+An association connects 'mngr_ManagerTransition' and 'mngr_ManagerState'. From 'mngr_ManagerTransition', the role 'incomingTransition' has cardinality 0..*, and from 'mngr_ManagerState', the role 'ManagerState23' has cardinality 0..*.
+An association connects 'mngr_ManagerParameter' and 'mngr_ManagerState'. From 'mngr_ManagerParameter', the role 'contextParameters' has cardinality 0..*, and from 'mngr_ManagerState', the role 'ManagerState25' has cardinality 0..*.
+An association connects 'mngr_OpaqueExpression' and 'mngr_ManagerParameter'. From 'mngr_OpaqueExpression', the role 'mngr_OpaqueExpression' has cardinality 0..*, and from 'mngr_ManagerParameter', the role 'mngr_ManagerParameter' has cardinality 0..*.
+An association connects 'mngr_ManagerParameter' and 'mngr_Manager'. From 'mngr_ManagerParameter', the role 'contextParameters28' has cardinality 0..*, and from 'mngr_Manager', the role 'Manager29' has cardinality 0..*.
+An association connects 'mngr_ManagedElement' and 'mngr_Manager'. From 'mngr_ManagedElement', the role 'managedElement' has cardinality 0..*, and from 'mngr_Manager', the role 'Manager31' has cardinality 0..*.

@@ -1,0 +1,766 @@
+The domain model 'atlext' describes the core structural elements and their relationships within the system.
+
+The model defines 173 main class(es).
+
+'atlext_OCL_Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'atlext_ATL_LocatedElement' represents an important domain concept.
+It has the following attributes: 'fileObject', which is of type str; 'fileLocation', which is of type str; 'commentsAfter', which is of type str; 'location', which is of type str; 'commentsBefore', which is of type str.
+
+'ATL_ModuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_TuplePart' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_OclModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ATL_atlext_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'OclType' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_Binding' represents an important domain concept.
+It has the following attributes: 'propertyName', which is of type str; 'isAssignment', which is of type str.
+
+'atlext_OCL_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OclFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'ContextHelper' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_Rule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OclFeatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_RuleResolutionInfo' represents an important domain concept.
+It has one attribute: 'status', which is of type str.
+
+'atlext_ATL_StaticRule' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_VariableDeclaration' represents an important domain concept.
+It has the following attributes: 'varName', which is of type str; 'id', which is of type str.
+
+'IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_OclModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'Callable' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_Module' represents an important domain concept.
+It has one attribute: 'isRefining', which is of type str.
+
+'atlext_ATL_ForStat' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'OutPatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ATL_StaticRule' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'ATL_Callable' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_ExpressionStat' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_OclFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_OclUndefinedExp' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_InPatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'MapElement' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_Unit' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'InPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_BindingStat' represents an important domain concept.
+It has the following attributes: 'propertyName', which is of type str; 'isAssignment', which is of type str.
+
+'Helper' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_Helper' represents an important domain concept.
+It has the following attributes: 'hasContext', which is of type bool; 'isAttribute', which is of type bool.
+
+'ATL_RuleWithPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_Iterator' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_CallableParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_ModuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'OclContextDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'RuleResolutionInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleTypeAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_Callable' represents an important domain concept.
+It does not declare any attributes.
+
+'Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_PropertyCallExp' represents an important domain concept.
+It has one attribute: 'isStaticCall', which is of type bool.
+
+'OclModel' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_SimpleInPatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_atlext_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_ActionBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_OclAnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_RealExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type str.
+
+'atlext_ATL_RuleWithPattern' represents an important domain concept.
+It has the following attributes: 'isAbstract', which is of type str; 'isRefining', which is of type str; 'isNoDefault', which is of type str.
+
+'atlext_OCL_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_ResolveTempResolution' represents an important domain concept.
+It does not declare any attributes.
+
+'Library' represents an important domain concept.
+It does not declare any attributes.
+
+'StringToStringMap' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_OrderedSetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_GetAppliedStereotypesBody' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_SetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_OutPatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_OutPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_PatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OclModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TuplePart' represents an important domain concept.
+It does not declare any attributes.
+
+'LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_OperatorCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_StaticHelper' represents an important domain concept.
+It does not declare any attributes.
+
+'CallableParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_TupleExp' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_NavigationOrAttributeCallExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'atlext_OCL_IntegerExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'RuleWithPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_MapElement' represents an important domain concept.
+It does not declare any attributes.
+
+'StaticRule' represents an important domain concept.
+It does not declare any attributes.
+
+'MatchedRule' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'MapExp' represents an important domain concept.
+It does not declare any attributes.
+
+'DropPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_SimpleOutPatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ResolveTempResolution' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_SequenceExp' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_StringToStringMap' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'atlext_OCL_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OutPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_OclType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'atlext_OCL_NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_BagExp' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_Query' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_SuperExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_atlext_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionOperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_OclFeatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_MatchedRule' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaBody' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL2_SelectByKind' represents an important domain concept.
+It has one attribute: 'isExact', which is of type bool.
+
+'atlext_OCL_StringExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'atlext_OCL_EnumLiteralExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'atlext_OCL_BooleanExp' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type str.
+
+'atlext_OCL_RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'ModuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'MapType' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_OclExpression' represents an important domain concept.
+It has one attribute: 'implicitlyCasted', which is of type bool.
+
+'atlext_ATL_IfStat' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Iterator' represents an important domain concept.
+It does not declare any attributes.
+
+'InPatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_OperationCallExp' represents an important domain concept.
+It has one attribute: 'operationName', which is of type str.
+
+'VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_CalledRule' represents an important domain concept.
+It has the following attributes: 'isEntrypoint', which is of type str; 'isEndpoint', which is of type str.
+
+'atlext_OCL_TupleTypeAttribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'atlext_OCL_CollectionOperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ATL_ModuleCallable' represents an important domain concept.
+It does not declare any attributes.
+
+'ATL_atlext_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_ForEachOutPatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_MapType' represents an important domain concept.
+It does not declare any attributes.
+
+'Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Query' represents an important domain concept.
+It does not declare any attributes.
+
+'ATL_LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_ContextHelper' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_OclContextDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'LibraryRef' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ATL_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'PatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_LazyRule' represents an important domain concept.
+It has one attribute: 'isUnique', which is of type str.
+
+'atlext_ATL_LibraryRef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'atlext_OCL_IteratorExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ATL_Helper' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_MapExp' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_RuleVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_JavaBody' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_DropPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_OCL_NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_ModuleCallable' represents an important domain concept.
+It does not declare any attributes.
+
+'RuleVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'atlext_ATL_InPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'RuleResolutionStatus' defines the following possible values: 'RESOLUTION_UNKNOWN', 'RESOLUTION_CONFIRMED', 'RESOLUTION_DISCARDED'.
+
+The model also captures inheritance relationships between classes.
+The class 'atlext_ATL_Unit' is a specialization of 'LocatedElement'.
+The class 'atlext_ATL_Library' is a specialization of 'Unit'.
+The class 'atlext_ATL_Query' is a specialization of 'Unit'.
+The class 'atlext_ATL_Module' is a specialization of 'Unit'.
+The class 'atlext_ATL_ModuleElement' is a specialization of 'LocatedElement'.
+The class 'atlext_ATL_Helper' is a specialization of 'ATL_ModuleElement'.
+The class 'atlext_ATL_Helper' is a specialization of 'ATL_Callable'.
+The class 'atlext_ATL_StaticHelper' is a specialization of 'ATL_Helper'.
+The class 'atlext_ATL_StaticHelper' is a specialization of 'ATL_ModuleCallable'.
+The class 'atlext_ATL_ContextHelper' is a specialization of 'Helper'.
+The class 'atlext_ATL_Rule' is a specialization of 'ModuleElement'.
+The class 'atlext_ATL_StaticRule' is a specialization of 'ATL_ModuleCallable'.
+The class 'atlext_ATL_StaticRule' is a specialization of 'ATL_Rule'.
+The class 'atlext_ATL_ModuleCallable' is a specialization of 'Callable'.
+The class 'atlext_ATL_RuleWithPattern' is a specialization of 'Rule'.
+The class 'atlext_ATL_MatchedRule' is a specialization of 'RuleWithPattern'.
+The class 'atlext_ATL_LazyRule' is a specialization of 'ATL_RuleWithPattern'.
+The class 'atlext_ATL_LazyRule' is a specialization of 'ATL_StaticRule'.
+The class 'atlext_ATL_CalledRule' is a specialization of 'StaticRule'.
+The class 'atlext_ATL_InPattern' is a specialization of 'LocatedElement'.
+The class 'atlext_ATL_OutPattern' is a specialization of 'LocatedElement'.
+The class 'atlext_ATL_DropPattern' is a specialization of 'LocatedElement'.
+The class 'atlext_ATL_PatternElement' is a specialization of 'VariableDeclaration'.
+The class 'atlext_ATL_InPatternElement' is a specialization of 'PatternElement'.
+The class 'atlext_ATL_SimpleInPatternElement' is a specialization of 'InPatternElement'.
+The class 'atlext_ATL_OutPatternElement' is a specialization of 'PatternElement'.
+The class 'atlext_ATL_SimpleOutPatternElement' is a specialization of 'OutPatternElement'.
+The class 'atlext_ATL_ForEachOutPatternElement' is a specialization of 'OutPatternElement'.
+The class 'atlext_ATL_Binding' is a specialization of 'LocatedElement'.
+The class 'atlext_ATL_RuleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+The class 'atlext_ATL_LibraryRef' is a specialization of 'LocatedElement'.
+The class 'atlext_ATL_ActionBlock' is a specialization of 'LocatedElement'.
+The class 'atlext_ATL_Statement' is a specialization of 'LocatedElement'.
+The class 'atlext_ATL_ExpressionStat' is a specialization of 'Statement'.
+The class 'atlext_ATL_BindingStat' is a specialization of 'Statement'.
+The class 'atlext_ATL_IfStat' is a specialization of 'Statement'.
+The class 'atlext_ATL_ForStat' is a specialization of 'Statement'.
+The class 'atlext_OCL_OclExpression' is a specialization of 'ATL_LocatedElement'.
+The class 'atlext_OCL_OclExpression' is a specialization of 'OCL_TypedElement'.
+The class 'atlext_OCL_VariableExp' is a specialization of 'OclExpression'.
+The class 'atlext_OCL_SuperExp' is a specialization of 'OclExpression'.
+The class 'atlext_OCL_PrimitiveExp' is a specialization of 'OclExpression'.
+The class 'atlext_OCL_StringExp' is a specialization of 'PrimitiveExp'.
+The class 'atlext_OCL_BooleanExp' is a specialization of 'PrimitiveExp'.
+The class 'atlext_OCL_NumericExp' is a specialization of 'PrimitiveExp'.
+The class 'atlext_OCL_RealExp' is a specialization of 'NumericExp'.
+The class 'atlext_OCL_IntegerExp' is a specialization of 'NumericExp'.
+The class 'atlext_OCL_CollectionExp' is a specialization of 'OclExpression'.
+The class 'atlext_OCL_BagExp' is a specialization of 'CollectionExp'.
+The class 'atlext_OCL_OrderedSetExp' is a specialization of 'CollectionExp'.
+The class 'atlext_OCL_SequenceExp' is a specialization of 'CollectionExp'.
+The class 'atlext_OCL_SetExp' is a specialization of 'CollectionExp'.
+The class 'atlext_OCL_TupleExp' is a specialization of 'OclExpression'.
+The class 'atlext_OCL_TuplePart' is a specialization of 'VariableDeclaration'.
+The class 'atlext_OCL_MapExp' is a specialization of 'OclExpression'.
+The class 'atlext_OCL_MapElement' is a specialization of 'LocatedElement'.
+The class 'atlext_OCL_EnumLiteralExp' is a specialization of 'OclExpression'.
+The class 'atlext_OCL_OclUndefinedExp' is a specialization of 'OclExpression'.
+The class 'atlext_OCL_PropertyCallExp' is a specialization of 'OclExpression'.
+The class 'atlext_OCL_NavigationOrAttributeCallExp' is a specialization of 'PropertyCallExp'.
+The class 'atlext_OCL_OperationCallExp' is a specialization of 'PropertyCallExp'.
+The class 'atlext_OCL_OperatorCallExp' is a specialization of 'OperationCallExp'.
+The class 'atlext_OCL_CollectionOperationCallExp' is a specialization of 'OperationCallExp'.
+The class 'atlext_OCL_LoopExp' is a specialization of 'PropertyCallExp'.
+The class 'atlext_OCL_IterateExp' is a specialization of 'LoopExp'.
+The class 'atlext_OCL_IteratorExp' is a specialization of 'LoopExp'.
+The class 'atlext_OCL_LetExp' is a specialization of 'OclExpression'.
+The class 'atlext_OCL_IfExp' is a specialization of 'OclExpression'.
+The class 'atlext_OCL_VariableDeclaration' is a specialization of 'ATL_LocatedElement'.
+The class 'atlext_OCL_VariableDeclaration' is a specialization of 'OCL_TypedElement'.
+The class 'atlext_OCL_Iterator' is a specialization of 'VariableDeclaration'.
+The class 'atlext_OCL_Parameter' is a specialization of 'VariableDeclaration'.
+The class 'atlext_OCL_CollectionType' is a specialization of 'OclType'.
+The class 'atlext_OCL_OclType' is a specialization of 'OclExpression'.
+The class 'atlext_OCL_Primitive' is a specialization of 'OclType'.
+The class 'atlext_OCL_StringType' is a specialization of 'Primitive'.
+The class 'atlext_OCL_BooleanType' is a specialization of 'Primitive'.
+The class 'atlext_OCL_NumericType' is a specialization of 'Primitive'.
+The class 'atlext_OCL_IntegerType' is a specialization of 'NumericType'.
+The class 'atlext_OCL_RealType' is a specialization of 'NumericType'.
+The class 'atlext_OCL_BagType' is a specialization of 'CollectionType'.
+The class 'atlext_OCL_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'atlext_OCL_SequenceType' is a specialization of 'CollectionType'.
+The class 'atlext_OCL_SetType' is a specialization of 'CollectionType'.
+The class 'atlext_OCL_OclAnyType' is a specialization of 'OclType'.
+The class 'atlext_OCL_TupleType' is a specialization of 'OclType'.
+The class 'atlext_OCL_TupleTypeAttribute' is a specialization of 'LocatedElement'.
+The class 'atlext_OCL_OclModelElement' is a specialization of 'OclType'.
+The class 'atlext_OCL_MapType' is a specialization of 'OclType'.
+The class 'atlext_OCL_OclFeatureDefinition' is a specialization of 'LocatedElement'.
+The class 'atlext_OCL_OclContextDefinition' is a specialization of 'LocatedElement'.
+The class 'atlext_OCL_OclFeature' is a specialization of 'LocatedElement'.
+The class 'atlext_OCL_Attribute' is a specialization of 'OclFeature'.
+The class 'atlext_OCL_Operation' is a specialization of 'OclFeature'.
+The class 'atlext_OCL_OclModel' is a specialization of 'LocatedElement'.
+The class 'atlext_OCL_ResolveTempResolution' is a specialization of 'RuleResolutionInfo'.
+The class 'atlext_OCL_JavaBody' is a specialization of 'OclExpression'.
+The class 'atlext_OCL_GetAppliedStereotypesBody' is a specialization of 'JavaBody'.
+The class 'atlext_OCL2_SelectByKind' is a specialization of 'CollectionOperationCallExp'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ATL_atlext_EObject' and 'atlext_ATL_LocatedElement'. From 'ATL_atlext_EObject', the role 'ATL_atlext_EObject' has cardinality 0..*, and from 'atlext_ATL_LocatedElement', the role 'atlext_ATL_LocatedElement' has cardinality 0..*.
+An association connects 'atlext_ATL_LocatedElement' and 'StringToStringMap'. From 'atlext_ATL_LocatedElement', the role 'atlext_ATL_LocatedElement2' has cardinality 0..*, and from 'StringToStringMap', the role 'StringToStringMap' has cardinality 0..*.
+An association connects 'LibraryRef' and 'atlext_ATL_Unit'. From 'LibraryRef', the role 'ATL' has cardinality 0..*, and from 'atlext_ATL_Unit', the role 'LibraryRef' has cardinality 0..*.
+An association connects 'Helper' and 'atlext_ATL_Library'. From 'Helper', the role 'ATL5' has cardinality 0..*, and from 'atlext_ATL_Library', the role 'Helper' has cardinality 0..*.
+An association connects 'atlext_ATL_Query' and 'OclExpression'. From 'atlext_ATL_Query', the role 'atlext_ATL_Query' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression' has cardinality 0..*.
+An association connects 'Helper' and 'atlext_ATL_Query'. From 'Helper', the role 'ATL9' has cardinality 0..*, and from 'atlext_ATL_Query', the role 'Helper8' has cardinality 0..*.
+An association connects 'OclModel' and 'atlext_ATL_Module'. From 'OclModel', the role 'OclModel' has cardinality 0..*, and from 'atlext_ATL_Module', the role 'atlext_ATL_Module' has cardinality 0..*.
+An association connects 'OclModel' and 'atlext_ATL_Module'. From 'OclModel', the role 'OclModel13' has cardinality 0..*, and from 'atlext_ATL_Module', the role 'atlext_ATL_Module12' has cardinality 0..*.
+An association connects 'atlext_ATL_Module' and 'ModuleElement'. From 'atlext_ATL_Module', the role 'atlext_ATL_Module15' has cardinality 0..*, and from 'ModuleElement', the role 'ModuleElement' has cardinality 0..*.
+An association connects 'atlext_ATL_Helper' and 'Query'. From 'atlext_ATL_Helper', the role 'Query' has cardinality 0..*, and from 'Query', the role 'ATL17' has cardinality 0..*.
+An association connects 'atlext_ATL_Helper' and 'Library'. From 'atlext_ATL_Helper', the role 'Library' has cardinality 0..*, and from 'Library', the role 'ATL19' has cardinality 0..*.
+An association connects 'OclFeatureDefinition' and 'atlext_ATL_Helper'. From 'OclFeatureDefinition', the role 'OclFeatureDefinition' has cardinality 0..*, and from 'atlext_ATL_Helper', the role 'atlext_ATL_Helper' has cardinality 0..*.
+An association connects 'ATL_atlext_Type' and 'atlext_ATL_Helper'. From 'ATL_atlext_Type', the role 'ATL_atlext_Type' has cardinality 0..*, and from 'atlext_ATL_Helper', the role 'atlext_ATL_Helper22' has cardinality 0..*.
+An association connects 'atlext_ATL_Helper' and 'ATL_atlext_Type'. From 'atlext_ATL_Helper', the role 'atlext_ATL_Helper24' has cardinality 0..*, and from 'ATL_atlext_Type', the role 'ATL_atlext_Type25' has cardinality 0..*.
+An association connects 'atlext_ATL_ContextHelper' and 'ATL_atlext_Type'. From 'atlext_ATL_ContextHelper', the role 'atlext_ATL_ContextHelper' has cardinality 0..*, and from 'ATL_atlext_Type', the role 'ATL_atlext_Type27' has cardinality 0..*.
+An association connects 'atlext_ATL_ContextHelper' and 'PropertyCallExp'. From 'atlext_ATL_ContextHelper', the role 'PropertyCallExp' has cardinality 0..*, and from 'PropertyCallExp', the role 'OCL' has cardinality 0..*.
+An association connects 'OutPattern' and 'atlext_ATL_Rule'. From 'OutPattern', the role 'ATL30' has cardinality 0..*, and from 'atlext_ATL_Rule', the role 'OutPattern' has cardinality 0..*.
+An association connects 'atlext_ATL_Rule' and 'ActionBlock'. From 'atlext_ATL_Rule', the role 'ActionBlock' has cardinality 0..*, and from 'ActionBlock', the role 'ATL32' has cardinality 0..*.
+An association connects 'atlext_ATL_Rule' and 'RuleVariableDeclaration'. From 'atlext_ATL_Rule', the role 'RuleVariableDeclaration' has cardinality 0..*, and from 'RuleVariableDeclaration', the role 'ATL34' has cardinality 0..*.
+An association connects 'atlext_ATL_Callable' and 'PropertyCallExp'. From 'atlext_ATL_Callable', the role 'atlext_ATL_Callable' has cardinality 0..*, and from 'PropertyCallExp', the role 'PropertyCallExp36' has cardinality 0..*.
+An association connects 'atlext_ATL_Callable' and 'CallableParameter'. From 'atlext_ATL_Callable', the role 'atlext_ATL_Callable38' has cardinality 0..*, and from 'CallableParameter', the role 'CallableParameter' has cardinality 0..*.
+An association connects 'atlext_ATL_RuleWithPattern' and 'InPattern'. From 'atlext_ATL_RuleWithPattern', the role 'atlext_ATL_RuleWithPattern' has cardinality 0..*, and from 'InPattern', the role 'InPattern' has cardinality 0..*.
+An association connects 'atlext_ATL_RuleWithPattern' and 'RuleWithPattern'. From 'atlext_ATL_RuleWithPattern', the role 'RuleWithPattern' has cardinality 0..*, and from 'RuleWithPattern', the role 'ATL41' has cardinality 0..*.
+An association connects 'atlext_ATL_RuleWithPattern' and 'RuleWithPattern'. From 'atlext_ATL_RuleWithPattern', the role 'RuleWithPattern43' has cardinality 0..*, and from 'RuleWithPattern', the role 'ATL44' has cardinality 0..*.
+An association connects 'atlext_ATL_CalledRule' and 'Parameter'. From 'atlext_ATL_CalledRule', the role 'atlext_ATL_CalledRule' has cardinality 0..*, and from 'Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'atlext_ATL_InPattern' and 'InPatternElement'. From 'atlext_ATL_InPattern', the role 'InPatternElement' has cardinality 0..*, and from 'InPatternElement', the role 'ATL47' has cardinality 0..*.
+An association connects 'atlext_ATL_InPattern' and 'OclExpression'. From 'atlext_ATL_InPattern', the role 'atlext_ATL_InPattern' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression49' has cardinality 0..*.
+An association connects 'atlext_ATL_OutPattern' and 'Rule'. From 'atlext_ATL_OutPattern', the role 'Rule' has cardinality 0..*, and from 'Rule', the role 'ATL51' has cardinality 0..*.
+An association connects 'DropPattern' and 'atlext_ATL_OutPattern'. From 'DropPattern', the role 'ATL53' has cardinality 0..*, and from 'atlext_ATL_OutPattern', the role 'DropPattern' has cardinality 0..*.
+An association connects 'OutPatternElement' and 'atlext_ATL_OutPattern'. From 'OutPatternElement', the role 'ATL55' has cardinality 0..*, and from 'atlext_ATL_OutPattern', the role 'OutPatternElement' has cardinality 0..*.
+An association connects 'OutPattern' and 'atlext_ATL_DropPattern'. From 'OutPattern', the role 'ATL58' has cardinality 0..*, and from 'atlext_ATL_DropPattern', the role 'OutPattern57' has cardinality 0..*.
+An association connects 'OutPatternElement' and 'atlext_ATL_InPatternElement'. From 'OutPatternElement', the role 'ATL61' has cardinality 0..*, and from 'atlext_ATL_InPatternElement', the role 'OutPatternElement60' has cardinality 0..*.
+An association connects 'InPattern' and 'atlext_ATL_InPatternElement'. From 'InPattern', the role 'ATL64' has cardinality 0..*, and from 'atlext_ATL_InPatternElement', the role 'InPattern63' has cardinality 0..*.
+An association connects 'atlext_ATL_InPatternElement' and 'OclModel'. From 'atlext_ATL_InPatternElement', the role 'atlext_ATL_InPatternElement' has cardinality 0..*, and from 'OclModel', the role 'OclModel66' has cardinality 0..*.
+An association connects 'atlext_ATL_OutPatternElement' and 'OutPattern'. From 'atlext_ATL_OutPatternElement', the role 'OutPattern68' has cardinality 0..*, and from 'OutPattern', the role 'ATL69' has cardinality 0..*.
+An association connects 'atlext_ATL_OutPatternElement' and 'InPatternElement'. From 'atlext_ATL_OutPatternElement', the role 'InPatternElement71' has cardinality 0..*, and from 'InPatternElement', the role 'ATL72' has cardinality 0..*.
+An association connects 'Binding' and 'atlext_ATL_OutPatternElement'. From 'Binding', the role 'ATL74' has cardinality 0..*, and from 'atlext_ATL_OutPatternElement', the role 'Binding' has cardinality 0..*.
+An association connects 'atlext_ATL_OutPatternElement' and 'OclModel'. From 'atlext_ATL_OutPatternElement', the role 'atlext_ATL_OutPatternElement' has cardinality 0..*, and from 'OclModel', the role 'OclModel76' has cardinality 0..*.
+An association connects 'atlext_ATL_SimpleOutPatternElement' and 'OclExpression'. From 'atlext_ATL_SimpleOutPatternElement', the role 'atlext_ATL_SimpleOutPatternElement' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression78' has cardinality 0..*.
+An association connects 'OclExpression' and 'atlext_ATL_ForEachOutPatternElement'. From 'OclExpression', the role 'OclExpression80' has cardinality 0..*, and from 'atlext_ATL_ForEachOutPatternElement', the role 'atlext_ATL_ForEachOutPatternElement' has cardinality 0..*.
+An association connects 'atlext_ATL_ForEachOutPatternElement' and 'Iterator'. From 'atlext_ATL_ForEachOutPatternElement', the role 'atlext_ATL_ForEachOutPatternElement82' has cardinality 0..*, and from 'Iterator', the role 'Iterator' has cardinality 0..*.
+An association connects 'atlext_ATL_Binding' and 'OclExpression'. From 'atlext_ATL_Binding', the role 'atlext_ATL_Binding' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression84' has cardinality 0..*.
+An association connects 'OutPatternElement' and 'atlext_ATL_Binding'. From 'OutPatternElement', the role 'ATL87' has cardinality 0..*, and from 'atlext_ATL_Binding', the role 'OutPatternElement86' has cardinality 0..*.
+An association connects 'ATL_atlext_EObject' and 'atlext_ATL_Binding'. From 'ATL_atlext_EObject', the role 'ATL_atlext_EObject90' has cardinality 0..*, and from 'atlext_ATL_Binding', the role 'atlext_ATL_Binding89' has cardinality 0..*.
+An association connects 'atlext_ATL_Binding' and 'ATL_atlext_Type'. From 'atlext_ATL_Binding', the role 'atlext_ATL_Binding92' has cardinality 0..*, and from 'ATL_atlext_Type', the role 'ATL_atlext_Type93' has cardinality 0..*.
+An association connects 'atlext_ATL_Binding' and 'RuleResolutionInfo'. From 'atlext_ATL_Binding', the role 'atlext_ATL_Binding95' has cardinality 0..*, and from 'RuleResolutionInfo', the role 'RuleResolutionInfo' has cardinality 0..*.
+An association connects 'Rule' and 'atlext_ATL_RuleVariableDeclaration'. From 'Rule', the role 'ATL98' has cardinality 0..*, and from 'atlext_ATL_RuleVariableDeclaration', the role 'Rule97' has cardinality 0..*.
+An association connects 'atlext_ATL_LibraryRef' and 'Unit'. From 'atlext_ATL_LibraryRef', the role 'Unit' has cardinality 0..*, and from 'Unit', the role 'ATL100' has cardinality 0..*.
+An association connects 'Rule' and 'atlext_ATL_ActionBlock'. From 'Rule', the role 'ATL103' has cardinality 0..*, and from 'atlext_ATL_ActionBlock', the role 'Rule102' has cardinality 0..*.
+An association connects 'Statement' and 'atlext_ATL_ActionBlock'. From 'Statement', the role 'Statement' has cardinality 0..*, and from 'atlext_ATL_ActionBlock', the role 'atlext_ATL_ActionBlock' has cardinality 0..*.
+An association connects 'atlext_ATL_ExpressionStat' and 'OclExpression'. From 'atlext_ATL_ExpressionStat', the role 'atlext_ATL_ExpressionStat' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression106' has cardinality 0..*.
+An association connects 'OclExpression' and 'atlext_ATL_BindingStat'. From 'OclExpression', the role 'OclExpression108' has cardinality 0..*, and from 'atlext_ATL_BindingStat', the role 'atlext_ATL_BindingStat' has cardinality 0..*.
+An association connects 'OclExpression' and 'atlext_ATL_BindingStat'. From 'OclExpression', the role 'OclExpression111' has cardinality 0..*, and from 'atlext_ATL_BindingStat', the role 'atlext_ATL_BindingStat110' has cardinality 0..*.
+An association connects 'OclExpression' and 'atlext_ATL_IfStat'. From 'OclExpression', the role 'OclExpression113' has cardinality 0..*, and from 'atlext_ATL_IfStat', the role 'atlext_ATL_IfStat' has cardinality 0..*.
+An association connects 'atlext_ATL_IfStat' and 'Statement'. From 'atlext_ATL_IfStat', the role 'atlext_ATL_IfStat115' has cardinality 0..*, and from 'Statement', the role 'Statement116' has cardinality 0..*.
+An association connects 'atlext_ATL_IfStat' and 'Statement'. From 'atlext_ATL_IfStat', the role 'atlext_ATL_IfStat118' has cardinality 0..*, and from 'Statement', the role 'Statement119' has cardinality 0..*.
+An association connects 'atlext_ATL_ForStat' and 'Iterator'. From 'atlext_ATL_ForStat', the role 'atlext_ATL_ForStat' has cardinality 0..*, and from 'Iterator', the role 'Iterator121' has cardinality 0..*.
+An association connects 'OclExpression' and 'atlext_ATL_ForStat'. From 'OclExpression', the role 'OclExpression124' has cardinality 0..*, and from 'atlext_ATL_ForStat', the role 'atlext_ATL_ForStat123' has cardinality 0..*.
+An association connects 'atlext_ATL_ForStat' and 'Statement'. From 'atlext_ATL_ForStat', the role 'atlext_ATL_ForStat126' has cardinality 0..*, and from 'Statement', the role 'Statement127' has cardinality 0..*.
+An association connects 'ATL_atlext_Type' and 'atlext_ATL_CallableParameter'. From 'ATL_atlext_Type', the role 'ATL_atlext_Type129' has cardinality 0..*, and from 'atlext_ATL_CallableParameter', the role 'atlext_ATL_CallableParameter' has cardinality 0..*.
+An association connects 'atlext_ATL_CallableParameter' and 'VariableDeclaration'. From 'atlext_ATL_CallableParameter', the role 'atlext_ATL_CallableParameter131' has cardinality 0..*, and from 'VariableDeclaration', the role 'VariableDeclaration' has cardinality 0..*.
+An association connects 'MatchedRule' and 'atlext_ATL_RuleResolutionInfo'. From 'MatchedRule', the role 'MatchedRule' has cardinality 0..*, and from 'atlext_ATL_RuleResolutionInfo', the role 'atlext_ATL_RuleResolutionInfo' has cardinality 0..*.
+An association connects 'atlext_ATL_RuleResolutionInfo' and 'MatchedRule'. From 'atlext_ATL_RuleResolutionInfo', the role 'atlext_ATL_RuleResolutionInfo134' has cardinality 0..*, and from 'MatchedRule', the role 'MatchedRule135' has cardinality 0..*.
+An association connects 'OclType' and 'atlext_OCL_OclExpression'. From 'OclType', the role 'OCL137' has cardinality 0..*, and from 'atlext_OCL_OclExpression', the role 'OclType' has cardinality 0..*.
+An association connects 'IfExp' and 'atlext_OCL_OclExpression'. From 'IfExp', the role 'OCL139' has cardinality 0..*, and from 'atlext_OCL_OclExpression', the role 'IfExp' has cardinality 0..*.
+An association connects 'atlext_OCL_OclExpression' and 'PropertyCallExp'. From 'atlext_OCL_OclExpression', the role 'PropertyCallExp141' has cardinality 0..*, and from 'PropertyCallExp', the role 'OCL142' has cardinality 0..*.
+An association connects 'CollectionExp' and 'atlext_OCL_OclExpression'. From 'CollectionExp', the role 'OCL144' has cardinality 0..*, and from 'atlext_OCL_OclExpression', the role 'CollectionExp' has cardinality 0..*.
+An association connects 'atlext_OCL_OclExpression' and 'LetExp'. From 'atlext_OCL_OclExpression', the role 'LetExp' has cardinality 0..*, and from 'LetExp', the role 'OCL146' has cardinality 0..*.
+An association connects 'LoopExp' and 'atlext_OCL_OclExpression'. From 'LoopExp', the role 'OCL148' has cardinality 0..*, and from 'atlext_OCL_OclExpression', the role 'LoopExp' has cardinality 0..*.
+An association connects 'atlext_OCL_OclExpression' and 'OperationCallExp'. From 'atlext_OCL_OclExpression', the role 'OperationCallExp' has cardinality 0..*, and from 'OperationCallExp', the role 'OCL150' has cardinality 0..*.
+An association connects 'VariableDeclaration' and 'atlext_OCL_OclExpression'. From 'VariableDeclaration', the role 'OCL153' has cardinality 0..*, and from 'atlext_OCL_OclExpression', the role 'VariableDeclaration152' has cardinality 0..*.
+An association connects 'atlext_OCL_OclExpression' and 'IfExp'. From 'atlext_OCL_OclExpression', the role 'IfExp155' has cardinality 0..*, and from 'IfExp', the role 'OCL156' has cardinality 0..*.
+An association connects 'atlext_OCL_OclExpression' and 'Operation'. From 'atlext_OCL_OclExpression', the role 'Operation' has cardinality 0..*, and from 'Operation', the role 'OCL158' has cardinality 0..*.
+An association connects 'IfExp' and 'atlext_OCL_OclExpression'. From 'IfExp', the role 'OCL161' has cardinality 0..*, and from 'atlext_OCL_OclExpression', the role 'IfExp160' has cardinality 0..*.
+An association connects 'Attribute' and 'atlext_OCL_OclExpression'. From 'Attribute', the role 'OCL163' has cardinality 0..*, and from 'atlext_OCL_OclExpression', the role 'Attribute' has cardinality 0..*.
+An association connects 'atlext_OCL_OclExpression' and 'OCL_atlext_Type'. From 'atlext_OCL_OclExpression', the role 'atlext_OCL_OclExpression' has cardinality 0..*, and from 'OCL_atlext_Type', the role 'OCL_atlext_Type' has cardinality 0..*.
+An association connects 'atlext_OCL_VariableExp' and 'VariableDeclaration'. From 'atlext_OCL_VariableExp', the role 'VariableDeclaration166' has cardinality 0..*, and from 'VariableDeclaration', the role 'OCL167' has cardinality 0..*.
+An association connects 'atlext_OCL_CollectionExp' and 'OclExpression'. From 'atlext_OCL_CollectionExp', the role 'OclExpression169' has cardinality 0..*, and from 'OclExpression', the role 'OCL170' has cardinality 0..*.
+An association connects 'atlext_OCL_TupleExp' and 'TuplePart'. From 'atlext_OCL_TupleExp', the role 'TuplePart' has cardinality 0..*, and from 'TuplePart', the role 'OCL172' has cardinality 0..*.
+An association connects 'TupleExp' and 'atlext_OCL_TuplePart'. From 'TupleExp', the role 'OCL174' has cardinality 0..*, and from 'atlext_OCL_TuplePart', the role 'TupleExp' has cardinality 0..*.
+An association connects 'MapElement' and 'atlext_OCL_MapExp'. From 'MapElement', the role 'OCL176' has cardinality 0..*, and from 'atlext_OCL_MapExp', the role 'MapElement' has cardinality 0..*.
+An association connects 'atlext_OCL_MapElement' and 'MapExp'. From 'atlext_OCL_MapElement', the role 'MapExp' has cardinality 0..*, and from 'MapExp', the role 'OCL178' has cardinality 0..*.
+An association connects 'atlext_OCL_MapElement' and 'OclExpression'. From 'atlext_OCL_MapElement', the role 'atlext_OCL_MapElement' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression180' has cardinality 0..*.
+An association connects 'atlext_OCL_MapElement' and 'OclExpression'. From 'atlext_OCL_MapElement', the role 'atlext_OCL_MapElement182' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression183' has cardinality 0..*.
+An association connects 'atlext_OCL_PropertyCallExp' and 'OclExpression'. From 'atlext_OCL_PropertyCallExp', the role 'OclExpression185' has cardinality 0..*, and from 'OclExpression', the role 'OCL186' has cardinality 0..*.
+An association connects 'atlext_OCL_PropertyCallExp' and 'OCL_atlext_EObject'. From 'atlext_OCL_PropertyCallExp', the role 'atlext_OCL_PropertyCallExp' has cardinality 0..*, and from 'OCL_atlext_EObject', the role 'OCL_atlext_EObject' has cardinality 0..*.
+An association connects 'atlext_OCL_PropertyCallExp' and 'OCL_atlext_EObject'. From 'atlext_OCL_PropertyCallExp', the role 'atlext_OCL_PropertyCallExp189' has cardinality 0..*, and from 'OCL_atlext_EObject', the role 'OCL_atlext_EObject190' has cardinality 0..*.
+An association connects 'atlext_OCL_PropertyCallExp' and 'OCL_atlext_EObject'. From 'atlext_OCL_PropertyCallExp', the role 'atlext_OCL_PropertyCallExp192' has cardinality 0..*, and from 'OCL_atlext_EObject', the role 'OCL_atlext_EObject193' has cardinality 0..*.
+An association connects 'Callable' and 'atlext_OCL_PropertyCallExp'. From 'Callable', the role 'Callable' has cardinality 0..*, and from 'atlext_OCL_PropertyCallExp', the role 'atlext_OCL_PropertyCallExp195' has cardinality 0..*.
+An association connects 'ContextHelper' and 'atlext_OCL_PropertyCallExp'. From 'ContextHelper', the role 'ATL197' has cardinality 0..*, and from 'atlext_OCL_PropertyCallExp', the role 'ContextHelper' has cardinality 0..*.
+An association connects 'OclExpression' and 'atlext_OCL_OperationCallExp'. From 'OclExpression', the role 'OCL200' has cardinality 0..*, and from 'atlext_OCL_OperationCallExp', the role 'OclExpression199' has cardinality 0..*.
+An association connects 'atlext_OCL_OperationCallExp' and 'ResolveTempResolution'. From 'atlext_OCL_OperationCallExp', the role 'atlext_OCL_OperationCallExp' has cardinality 0..*, and from 'ResolveTempResolution', the role 'ResolveTempResolution' has cardinality 0..*.
+An association connects 'OclExpression' and 'atlext_OCL_LoopExp'. From 'OclExpression', the role 'OCL204' has cardinality 0..*, and from 'atlext_OCL_LoopExp', the role 'OclExpression203' has cardinality 0..*.
+An association connects 'Iterator' and 'atlext_OCL_LoopExp'. From 'Iterator', the role 'OCL207' has cardinality 0..*, and from 'atlext_OCL_LoopExp', the role 'Iterator206' has cardinality 0..*.
+An association connects 'VariableDeclaration' and 'atlext_OCL_IterateExp'. From 'VariableDeclaration', the role 'OCL210' has cardinality 0..*, and from 'atlext_OCL_IterateExp', the role 'VariableDeclaration209' has cardinality 0..*.
+An association connects 'atlext_OCL_LetExp' and 'VariableDeclaration'. From 'atlext_OCL_LetExp', the role 'VariableDeclaration212' has cardinality 0..*, and from 'VariableDeclaration', the role 'OCL213' has cardinality 0..*.
+An association connects 'OclExpression' and 'atlext_OCL_LetExp'. From 'OclExpression', the role 'OCL216' has cardinality 0..*, and from 'atlext_OCL_LetExp', the role 'OclExpression215' has cardinality 0..*.
+An association connects 'atlext_OCL_IfExp' and 'OclExpression'. From 'atlext_OCL_IfExp', the role 'OclExpression218' has cardinality 0..*, and from 'OclExpression', the role 'OCL219' has cardinality 0..*.
+An association connects 'OclExpression' and 'atlext_OCL_IfExp'. From 'OclExpression', the role 'OCL222' has cardinality 0..*, and from 'atlext_OCL_IfExp', the role 'OclExpression221' has cardinality 0..*.
+An association connects 'OclExpression' and 'atlext_OCL_IfExp'. From 'OclExpression', the role 'OCL225' has cardinality 0..*, and from 'atlext_OCL_IfExp', the role 'OclExpression224' has cardinality 0..*.
+An association connects 'OclType' and 'atlext_OCL_VariableDeclaration'. From 'OclType', the role 'OCL228' has cardinality 0..*, and from 'atlext_OCL_VariableDeclaration', the role 'OclType227' has cardinality 0..*.
+An association connects 'atlext_OCL_VariableDeclaration' and 'OclExpression'. From 'atlext_OCL_VariableDeclaration', the role 'OclExpression230' has cardinality 0..*, and from 'OclExpression', the role 'OCL231' has cardinality 0..*.
+An association connects 'atlext_OCL_VariableDeclaration' and 'LetExp'. From 'atlext_OCL_VariableDeclaration', the role 'LetExp233' has cardinality 0..*, and from 'LetExp', the role 'OCL234' has cardinality 0..*.
+An association connects 'IterateExp' and 'atlext_OCL_VariableDeclaration'. From 'IterateExp', the role 'OCL236' has cardinality 0..*, and from 'atlext_OCL_VariableDeclaration', the role 'IterateExp' has cardinality 0..*.
+An association connects 'atlext_OCL_VariableDeclaration' and 'VariableExp'. From 'atlext_OCL_VariableDeclaration', the role 'VariableExp' has cardinality 0..*, and from 'VariableExp', the role 'OCL238' has cardinality 0..*.
+An association connects 'OCL_atlext_Type' and 'atlext_OCL_VariableDeclaration'. From 'OCL_atlext_Type', the role 'OCL_atlext_Type240' has cardinality 0..*, and from 'atlext_OCL_VariableDeclaration', the role 'atlext_OCL_VariableDeclaration' has cardinality 0..*.
+An association connects 'LoopExp' and 'atlext_OCL_Iterator'. From 'LoopExp', the role 'OCL243' has cardinality 0..*, and from 'atlext_OCL_Iterator', the role 'LoopExp242' has cardinality 0..*.
+An association connects 'atlext_OCL_CollectionType' and 'OclType'. From 'atlext_OCL_CollectionType', the role 'OclType245' has cardinality 0..*, and from 'OclType', the role 'OCL246' has cardinality 0..*.
+An association connects 'OclContextDefinition' and 'atlext_OCL_OclType'. From 'OclContextDefinition', the role 'OCL248' has cardinality 0..*, and from 'atlext_OCL_OclType', the role 'OclContextDefinition' has cardinality 0..*.
+An association connects 'atlext_OCL_OclType' and 'OclExpression'. From 'atlext_OCL_OclType', the role 'OclExpression250' has cardinality 0..*, and from 'OclExpression', the role 'OCL251' has cardinality 0..*.
+An association connects 'Operation' and 'atlext_OCL_OclType'. From 'Operation', the role 'OCL254' has cardinality 0..*, and from 'atlext_OCL_OclType', the role 'Operation253' has cardinality 0..*.
+An association connects 'atlext_OCL_OclType' and 'MapType'. From 'atlext_OCL_OclType', the role 'MapType' has cardinality 0..*, and from 'MapType', the role 'OCL256' has cardinality 0..*.
+An association connects 'atlext_OCL_OclType' and 'Attribute'. From 'atlext_OCL_OclType', the role 'Attribute258' has cardinality 0..*, and from 'Attribute', the role 'OCL259' has cardinality 0..*.
+An association connects 'atlext_OCL_OclType' and 'MapType'. From 'atlext_OCL_OclType', the role 'MapType261' has cardinality 0..*, and from 'MapType', the role 'OCL262' has cardinality 0..*.
+An association connects 'atlext_OCL_OclType' and 'CollectionType'. From 'atlext_OCL_OclType', the role 'CollectionType' has cardinality 0..*, and from 'CollectionType', the role 'OCL264' has cardinality 0..*.
+An association connects 'TupleTypeAttribute' and 'atlext_OCL_OclType'. From 'TupleTypeAttribute', the role 'OCL266' has cardinality 0..*, and from 'atlext_OCL_OclType', the role 'TupleTypeAttribute' has cardinality 0..*.
+An association connects 'VariableDeclaration' and 'atlext_OCL_OclType'. From 'VariableDeclaration', the role 'OCL269' has cardinality 0..*, and from 'atlext_OCL_OclType', the role 'VariableDeclaration268' has cardinality 0..*.
+An association connects 'atlext_OCL_TupleType' and 'TupleTypeAttribute'. From 'atlext_OCL_TupleType', the role 'TupleTypeAttribute271' has cardinality 0..*, and from 'TupleTypeAttribute', the role 'OCL272' has cardinality 0..*.
+An association connects 'OclType' and 'atlext_OCL_TupleTypeAttribute'. From 'OclType', the role 'OCL275' has cardinality 0..*, and from 'atlext_OCL_TupleTypeAttribute', the role 'OclType274' has cardinality 0..*.
+An association connects 'atlext_OCL_TupleTypeAttribute' and 'TupleType'. From 'atlext_OCL_TupleTypeAttribute', the role 'TupleType' has cardinality 0..*, and from 'TupleType', the role 'OCL277' has cardinality 0..*.
+An association connects 'OclModel' and 'atlext_OCL_OclModelElement'. From 'OclModel', the role 'OCL280' has cardinality 0..*, and from 'atlext_OCL_OclModelElement', the role 'OclModel279' has cardinality 0..*.
+An association connects 'atlext_OCL_MapType' and 'OclType'. From 'atlext_OCL_MapType', the role 'OclType282' has cardinality 0..*, and from 'OclType', the role 'OCL283' has cardinality 0..*.
+An association connects 'OclType' and 'atlext_OCL_MapType'. From 'OclType', the role 'OCL286' has cardinality 0..*, and from 'atlext_OCL_MapType', the role 'OclType285' has cardinality 0..*.
+An association connects 'OclFeature' and 'atlext_OCL_OclFeatureDefinition'. From 'OclFeature', the role 'OCL288' has cardinality 0..*, and from 'atlext_OCL_OclFeatureDefinition', the role 'OclFeature' has cardinality 0..*.
+An association connects 'OclContextDefinition' and 'atlext_OCL_OclFeatureDefinition'. From 'OclContextDefinition', the role 'OCL291' has cardinality 0..*, and from 'atlext_OCL_OclFeatureDefinition', the role 'OclContextDefinition290' has cardinality 0..*.
+An association connects 'atlext_OCL_OclContextDefinition' and 'OclFeatureDefinition'. From 'atlext_OCL_OclContextDefinition', the role 'OclFeatureDefinition293' has cardinality 0..*, and from 'OclFeatureDefinition', the role 'OCL294' has cardinality 0..*.
+An association connects 'OclType' and 'atlext_OCL_OclContextDefinition'. From 'OclType', the role 'OCL297' has cardinality 0..*, and from 'atlext_OCL_OclContextDefinition', the role 'OclType296' has cardinality 0..*.
+An association connects 'atlext_OCL_OclFeature' and 'OclFeatureDefinition'. From 'atlext_OCL_OclFeature', the role 'OclFeatureDefinition299' has cardinality 0..*, and from 'OclFeatureDefinition', the role 'OCL300' has cardinality 0..*.
+An association connects 'atlext_OCL_Attribute' and 'OclExpression'. From 'atlext_OCL_Attribute', the role 'OclExpression302' has cardinality 0..*, and from 'OclExpression', the role 'OCL303' has cardinality 0..*.
+An association connects 'OclType' and 'atlext_OCL_Attribute'. From 'OclType', the role 'OCL306' has cardinality 0..*, and from 'atlext_OCL_Attribute', the role 'OclType305' has cardinality 0..*.
+An association connects 'atlext_OCL_Operation' and 'Parameter'. From 'atlext_OCL_Operation', the role 'atlext_OCL_Operation' has cardinality 0..*, and from 'Parameter', the role 'Parameter308' has cardinality 0..*.
+An association connects 'OclType' and 'atlext_OCL_Operation'. From 'OclType', the role 'OCL311' has cardinality 0..*, and from 'atlext_OCL_Operation', the role 'OclType310' has cardinality 0..*.
+An association connects 'atlext_OCL_Operation' and 'OclExpression'. From 'atlext_OCL_Operation', the role 'OclExpression313' has cardinality 0..*, and from 'OclExpression', the role 'OCL314' has cardinality 0..*.
+An association connects 'atlext_OCL_OclModel' and 'OclModel'. From 'atlext_OCL_OclModel', the role 'OclModel316' has cardinality 0..*, and from 'OclModel', the role 'OCL317' has cardinality 0..*.
+An association connects 'atlext_OCL_OclModel' and 'OclModelElement'. From 'atlext_OCL_OclModel', the role 'OclModelElement' has cardinality 0..*, and from 'OclModelElement', the role 'OCL319' has cardinality 0..*.
+An association connects 'atlext_OCL_OclModel' and 'OclModel'. From 'atlext_OCL_OclModel', the role 'OclModel321' has cardinality 0..*, and from 'OclModel', the role 'OCL322' has cardinality 0..*.
+An association connects 'OCL_atlext_Type' and 'atlext_OCL_TypedElement'. From 'OCL_atlext_Type', the role 'OCL_atlext_Type324' has cardinality 0..*, and from 'atlext_OCL_TypedElement', the role 'atlext_OCL_TypedElement' has cardinality 0..*.
+An association connects 'atlext_OCL_ResolveTempResolution' and 'OutPatternElement'. From 'atlext_OCL_ResolveTempResolution', the role 'atlext_OCL_ResolveTempResolution' has cardinality 0..*, and from 'OutPatternElement', the role 'OutPatternElement326' has cardinality 0..*.

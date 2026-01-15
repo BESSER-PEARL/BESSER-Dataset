@@ -1,0 +1,439 @@
+The domain model 'EmigOcl' describes the core structural elements and their relationships within the system.
+
+The model defines 94 main class(es).
+
+'EmigOcl_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_NavigationOrAttributeCall' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EmigOcl_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_LambdaType' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LocalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_LambdaCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_MulOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_BooleanExp' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type str.
+
+'EmigOcl_SuperExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_RelOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_MapElement' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_OclAnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_OclType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EmigOcl_StaticOperationCall' represents an important domain concept.
+It has one attribute: 'operationName', which is of type str.
+
+'EmigOcl_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_LocatedElement' represents an important domain concept.
+It has the following attributes: 'line', which is of type str; 'charStart', which is of type str; 'column', which is of type str; 'charEnd', which is of type str.
+
+'EmigOcl_Module' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_MapExp' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_TupleTypeAttribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EmigOcl_OclModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_AddOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_OclContextDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_Iterator' represents an important domain concept.
+It does not declare any attributes.
+
+'OperatorCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_StringExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'OclType' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCall' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_OperationCall' represents an important domain concept.
+It has one attribute: 'operationName', which is of type str.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_OclFeature' represents an important domain concept.
+It has one attribute: 'eq', which is of type str.
+
+'EmigOcl_IntegerExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_PropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_NotOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_MapType' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_OclModelElementExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EmigOcl_CollectionOperationCall' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_OrderedSetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_OclUndefinedExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_OclModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EmigOcl_TuplePart' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_StaticPropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_OclFeatureDefinition' represents an important domain concept.
+It has one attribute: 'static', which is of type str.
+
+'EmigOcl_LocalVariable' represents an important domain concept.
+It has one attribute: 'eq', which is of type str.
+
+'NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_SelfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_BraceExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_EqOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_EnumLiteralExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'StaticPropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_SequenceExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_TupleExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_StaticPropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_IteratorExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EmigOcl_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EmigOcl_OperatorCallExp' represents an important domain concept.
+It has one attribute: 'operationName', which is of type str.
+
+'EmigOcl_SetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_IntOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OclFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EmigOcl_RealExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type str.
+
+'EmigOcl_BagExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmigOcl_StaticNavigationOrAttributeCall' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'EmigOcl_Module' is a specialization of 'LocatedElement'.
+The class 'EmigOcl_OclExpression' is a specialization of 'LocatedElement'.
+The class 'EmigOcl_VariableExp' is a specialization of 'OclExpression'.
+The class 'EmigOcl_SuperExp' is a specialization of 'OclExpression'.
+The class 'EmigOcl_SelfExp' is a specialization of 'OclExpression'.
+The class 'EmigOcl_PrimitiveExp' is a specialization of 'OclExpression'.
+The class 'EmigOcl_StringExp' is a specialization of 'PrimitiveExp'.
+The class 'EmigOcl_BooleanExp' is a specialization of 'PrimitiveExp'.
+The class 'EmigOcl_NumericExp' is a specialization of 'PrimitiveExp'.
+The class 'EmigOcl_RealExp' is a specialization of 'NumericExp'.
+The class 'EmigOcl_IntegerExp' is a specialization of 'NumericExp'.
+The class 'EmigOcl_CollectionExp' is a specialization of 'OclExpression'.
+The class 'EmigOcl_BagExp' is a specialization of 'CollectionExp'.
+The class 'EmigOcl_OrderedSetExp' is a specialization of 'CollectionExp'.
+The class 'EmigOcl_SequenceExp' is a specialization of 'CollectionExp'.
+The class 'EmigOcl_SetExp' is a specialization of 'CollectionExp'.
+The class 'EmigOcl_TupleExp' is a specialization of 'OclExpression'.
+The class 'EmigOcl_TuplePart' is a specialization of 'LocalVariable'.
+The class 'EmigOcl_MapExp' is a specialization of 'OclExpression'.
+The class 'EmigOcl_MapElement' is a specialization of 'LocatedElement'.
+The class 'EmigOcl_EnumLiteralExp' is a specialization of 'OclExpression'.
+The class 'EmigOcl_OclUndefinedExp' is a specialization of 'OclExpression'.
+The class 'EmigOcl_StaticPropertyCallExp' is a specialization of 'OclExpression'.
+The class 'EmigOcl_StaticNavigationOrAttributeCall' is a specialization of 'StaticPropertyCall'.
+The class 'EmigOcl_StaticOperationCall' is a specialization of 'StaticPropertyCall'.
+The class 'EmigOcl_PropertyCallExp' is a specialization of 'OclExpression'.
+The class 'EmigOcl_NavigationOrAttributeCall' is a specialization of 'PropertyCall'.
+The class 'EmigOcl_OperationCall' is a specialization of 'PropertyCall'.
+The class 'EmigOcl_OperatorCallExp' is a specialization of 'PropertyCallExp'.
+The class 'EmigOcl_NotOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'EmigOcl_RelOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'EmigOcl_EqOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'EmigOcl_AddOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'EmigOcl_IntOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'EmigOcl_MulOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'EmigOcl_LambdaCallExp' is a specialization of 'VariableExp'.
+The class 'EmigOcl_BraceExp' is a specialization of 'OclExpression'.
+The class 'EmigOcl_CollectionOperationCall' is a specialization of 'OperationCall'.
+The class 'EmigOcl_LoopExp' is a specialization of 'PropertyCall'.
+The class 'EmigOcl_IterateExp' is a specialization of 'LoopExp'.
+The class 'EmigOcl_IteratorExp' is a specialization of 'LoopExp'.
+The class 'EmigOcl_LetExp' is a specialization of 'OclExpression'.
+The class 'EmigOcl_IfExp' is a specialization of 'OclExpression'.
+The class 'EmigOcl_VariableDeclaration' is a specialization of 'LocatedElement'.
+The class 'EmigOcl_LocalVariable' is a specialization of 'VariableDeclaration'.
+The class 'EmigOcl_Iterator' is a specialization of 'VariableDeclaration'.
+The class 'EmigOcl_Parameter' is a specialization of 'VariableDeclaration'.
+The class 'EmigOcl_CollectionType' is a specialization of 'OclType'.
+The class 'EmigOcl_OclType' is a specialization of 'LocatedElement'.
+The class 'EmigOcl_OclModelElementExp' is a specialization of 'OclExpression'.
+The class 'EmigOcl_Primitive' is a specialization of 'OclType'.
+The class 'EmigOcl_StringType' is a specialization of 'Primitive'.
+The class 'EmigOcl_BooleanType' is a specialization of 'Primitive'.
+The class 'EmigOcl_NumericType' is a specialization of 'Primitive'.
+The class 'EmigOcl_IntegerType' is a specialization of 'NumericType'.
+The class 'EmigOcl_RealType' is a specialization of 'NumericType'.
+The class 'EmigOcl_BagType' is a specialization of 'CollectionType'.
+The class 'EmigOcl_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'EmigOcl_SequenceType' is a specialization of 'CollectionType'.
+The class 'EmigOcl_SetType' is a specialization of 'CollectionType'.
+The class 'EmigOcl_OclAnyType' is a specialization of 'OclType'.
+The class 'EmigOcl_TupleType' is a specialization of 'OclType'.
+The class 'EmigOcl_TupleTypeAttribute' is a specialization of 'LocatedElement'.
+The class 'EmigOcl_OclModelElement' is a specialization of 'OclType'.
+The class 'EmigOcl_MapType' is a specialization of 'OclType'.
+The class 'EmigOcl_LambdaType' is a specialization of 'OclType'.
+The class 'EmigOcl_OclFeatureDefinition' is a specialization of 'LocatedElement'.
+The class 'EmigOcl_OclContextDefinition' is a specialization of 'LocatedElement'.
+The class 'EmigOcl_OclFeature' is a specialization of 'LocatedElement'.
+The class 'EmigOcl_Attribute' is a specialization of 'OclFeature'.
+The class 'EmigOcl_Operation' is a specialization of 'OclFeature'.
+The class 'EmigOcl_OclModel' is a specialization of 'LocatedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'EmigOcl_OclModel' and 'EmigOcl_Module'. From 'EmigOcl_OclModel', the role 'EmigOcl_OclModel' has cardinality 0..*, and from 'EmigOcl_Module', the role 'EmigOcl_Module' has cardinality 0..*.
+An association connects 'EmigOcl_OclFeatureDefinition' and 'EmigOcl_Module'. From 'EmigOcl_OclFeatureDefinition', the role 'EmigOcl_OclFeatureDefinition' has cardinality 0..*, and from 'EmigOcl_Module', the role 'EmigOcl_Module2' has cardinality 0..*.
+An association connects 'EmigOcl_OclExpression' and 'EmigOcl_OclType'. From 'EmigOcl_OclExpression', the role 'oclExpression' has cardinality 0..*, and from 'EmigOcl_OclType', the role 'OclType' has cardinality 0..*.
+An association connects 'EmigOcl_OclExpression' and 'EmigOcl_IfExp'. From 'EmigOcl_OclExpression', the role 'elseExpression' has cardinality 0..*, and from 'EmigOcl_IfExp', the role 'IfExp' has cardinality 0..*.
+An association connects 'EmigOcl_PropertyCallExp' and 'EmigOcl_OclExpression'. From 'EmigOcl_PropertyCallExp', the role 'PropertyCallExp' has cardinality 0..*, and from 'EmigOcl_OclExpression', the role 'source' has cardinality 0..*.
+An association connects 'EmigOcl_CollectionExp' and 'EmigOcl_OclExpression'. From 'EmigOcl_CollectionExp', the role 'CollectionExp' has cardinality 0..*, and from 'EmigOcl_OclExpression', the role 'elements' has cardinality 0..*.
+An association connects 'EmigOcl_OclExpression' and 'EmigOcl_LetExp'. From 'EmigOcl_OclExpression', the role 'in_' has cardinality 0..*, and from 'EmigOcl_LetExp', the role 'LetExp' has cardinality 0..*.
+An association connects 'EmigOcl_LoopExp' and 'EmigOcl_OclExpression'. From 'EmigOcl_LoopExp', the role 'LoopExp' has cardinality 0..*, and from 'EmigOcl_OclExpression', the role 'body' has cardinality 0..*.
+An association connects 'EmigOcl_OclExpression' and 'EmigOcl_OperationCall'. From 'EmigOcl_OclExpression', the role 'arguments' has cardinality 0..*, and from 'EmigOcl_OperationCall', the role 'OperationCall' has cardinality 0..*.
+An association connects 'EmigOcl_LocalVariable' and 'EmigOcl_OclExpression'. From 'EmigOcl_LocalVariable', the role 'LocalVariable' has cardinality 0..*, and from 'EmigOcl_OclExpression', the role 'initExpression' has cardinality 0..*.
+An association connects 'EmigOcl_IfExp' and 'EmigOcl_OclExpression'. From 'EmigOcl_IfExp', the role 'IfExp12' has cardinality 0..*, and from 'EmigOcl_OclExpression', the role 'thenExpression' has cardinality 0..*.
+An association connects 'EmigOcl_OclExpression' and 'EmigOcl_Operation'. From 'EmigOcl_OclExpression', the role 'body14' has cardinality 0..*, and from 'EmigOcl_Operation', the role 'Operation' has cardinality 0..*.
+An association connects 'EmigOcl_IfExp' and 'EmigOcl_OclExpression'. From 'EmigOcl_IfExp', the role 'IfExp16' has cardinality 0..*, and from 'EmigOcl_OclExpression', the role 'condition' has cardinality 0..*.
+An association connects 'EmigOcl_Attribute' and 'EmigOcl_OclExpression'. From 'EmigOcl_Attribute', the role 'Attribute' has cardinality 0..*, and from 'EmigOcl_OclExpression', the role 'initExpression18' has cardinality 0..*.
+An association connects 'EmigOcl_VariableDeclaration' and 'EmigOcl_VariableExp'. From 'EmigOcl_VariableDeclaration', the role 'VariableDeclaration' has cardinality 0..*, and from 'EmigOcl_VariableExp', the role 'variableExp' has cardinality 0..*.
+An association connects 'EmigOcl_OclExpression' and 'EmigOcl_CollectionExp'. From 'EmigOcl_OclExpression', the role 'OclExpression' has cardinality 0..*, and from 'EmigOcl_CollectionExp', the role 'collection' has cardinality 0..*.
+An association connects 'EmigOcl_TupleExp' and 'EmigOcl_TuplePart'. From 'EmigOcl_TupleExp', the role 'tuple' has cardinality 0..*, and from 'EmigOcl_TuplePart', the role 'TuplePart' has cardinality 0..*.
+An association connects 'EmigOcl_TupleExp' and 'EmigOcl_TuplePart'. From 'EmigOcl_TupleExp', the role 'TupleExp' has cardinality 0..*, and from 'EmigOcl_TuplePart', the role 'tuplePart' has cardinality 0..*.
+An association connects 'EmigOcl_MapExp' and 'EmigOcl_MapElement'. From 'EmigOcl_MapExp', the role 'map' has cardinality 0..*, and from 'EmigOcl_MapElement', the role 'MapElement' has cardinality 0..*.
+An association connects 'EmigOcl_MapElement' and 'EmigOcl_MapExp'. From 'EmigOcl_MapElement', the role 'elements25' has cardinality 0..*, and from 'EmigOcl_MapExp', the role 'MapExp' has cardinality 0..*.
+An association connects 'EmigOcl_OclExpression' and 'EmigOcl_MapElement'. From 'EmigOcl_OclExpression', the role 'EmigOcl_OclExpression' has cardinality 0..*, and from 'EmigOcl_MapElement', the role 'EmigOcl_MapElement' has cardinality 0..*.
+An association connects 'EmigOcl_MapElement' and 'EmigOcl_OclExpression'. From 'EmigOcl_MapElement', the role 'EmigOcl_MapElement28' has cardinality 0..*, and from 'EmigOcl_OclExpression', the role 'EmigOcl_OclExpression29' has cardinality 0..*.
+An association connects 'EmigOcl_StaticPropertyCallExp' and 'EmigOcl_OclType'. From 'EmigOcl_StaticPropertyCallExp', the role 'EmigOcl_StaticPropertyCallExp' has cardinality 0..*, and from 'EmigOcl_OclType', the role 'EmigOcl_OclType' has cardinality 0..*.
+An association connects 'EmigOcl_StaticPropertyCallExp' and 'EmigOcl_StaticPropertyCall'. From 'EmigOcl_StaticPropertyCallExp', the role 'EmigOcl_StaticPropertyCallExp32' has cardinality 0..*, and from 'EmigOcl_StaticPropertyCall', the role 'EmigOcl_StaticPropertyCall' has cardinality 0..*.
+An association connects 'EmigOcl_OclExpression' and 'EmigOcl_StaticOperationCall'. From 'EmigOcl_OclExpression', the role 'EmigOcl_OclExpression34' has cardinality 0..*, and from 'EmigOcl_StaticOperationCall', the role 'EmigOcl_StaticOperationCall' has cardinality 0..*.
+An association connects 'EmigOcl_PropertyCallExp' and 'EmigOcl_PropertyCall'. From 'EmigOcl_PropertyCallExp', the role 'EmigOcl_PropertyCallExp' has cardinality 0..*, and from 'EmigOcl_PropertyCall', the role 'EmigOcl_PropertyCall' has cardinality 0..*.
+An association connects 'EmigOcl_OclExpression' and 'EmigOcl_PropertyCallExp'. From 'EmigOcl_OclExpression', the role 'OclExpression37' has cardinality 0..*, and from 'EmigOcl_PropertyCallExp', the role 'appliedProperty' has cardinality 0..*.
+An association connects 'EmigOcl_OclExpression' and 'EmigOcl_OperationCall'. From 'EmigOcl_OclExpression', the role 'OclExpression39' has cardinality 0..*, and from 'EmigOcl_OperationCall', the role 'parentOperation' has cardinality 0..*.
+An association connects 'EmigOcl_OperatorCallExp' and 'EmigOcl_OclExpression'. From 'EmigOcl_OperatorCallExp', the role 'EmigOcl_OperatorCallExp' has cardinality 0..*, and from 'EmigOcl_OclExpression', the role 'EmigOcl_OclExpression41' has cardinality 0..*.
+An association connects 'EmigOcl_OclExpression' and 'EmigOcl_LambdaCallExp'. From 'EmigOcl_OclExpression', the role 'EmigOcl_OclExpression43' has cardinality 0..*, and from 'EmigOcl_LambdaCallExp', the role 'EmigOcl_LambdaCallExp' has cardinality 0..*.
+An association connects 'EmigOcl_OclExpression' and 'EmigOcl_BraceExp'. From 'EmigOcl_OclExpression', the role 'EmigOcl_OclExpression45' has cardinality 0..*, and from 'EmigOcl_BraceExp', the role 'EmigOcl_BraceExp' has cardinality 0..*.
+An association connects 'EmigOcl_LoopExp' and 'EmigOcl_OclExpression'. From 'EmigOcl_LoopExp', the role 'loopExp' has cardinality 0..*, and from 'EmigOcl_OclExpression', the role 'OclExpression47' has cardinality 0..*.
+An association connects 'EmigOcl_Iterator' and 'EmigOcl_LoopExp'. From 'EmigOcl_Iterator', the role 'Iterator' has cardinality 0..*, and from 'EmigOcl_LoopExp', the role 'loopExpr' has cardinality 0..*.
+An association connects 'EmigOcl_IterateExp' and 'EmigOcl_LocalVariable'. From 'EmigOcl_IterateExp', the role 'baseExp' has cardinality 0..*, and from 'EmigOcl_LocalVariable', the role 'LocalVariable50' has cardinality 0..*.
+An association connects 'EmigOcl_LetExp' and 'EmigOcl_LocalVariable'. From 'EmigOcl_LetExp', the role 'letExp' has cardinality 0..*, and from 'EmigOcl_LocalVariable', the role 'LocalVariable52' has cardinality 0..*.
+An association connects 'EmigOcl_OclExpression' and 'EmigOcl_LetExp'. From 'EmigOcl_OclExpression', the role 'OclExpression55' has cardinality 0..*, and from 'EmigOcl_LetExp', the role 'letExp54' has cardinality 0..*.
+An association connects 'EmigOcl_IfExp' and 'EmigOcl_OclExpression'. From 'EmigOcl_IfExp', the role 'ifExp2' has cardinality 0..*, and from 'EmigOcl_OclExpression', the role 'OclExpression57' has cardinality 0..*.
+An association connects 'EmigOcl_IfExp' and 'EmigOcl_OclExpression'. From 'EmigOcl_IfExp', the role 'ifExp1' has cardinality 0..*, and from 'EmigOcl_OclExpression', the role 'OclExpression59' has cardinality 0..*.
+An association connects 'EmigOcl_OclExpression' and 'EmigOcl_IfExp'. From 'EmigOcl_OclExpression', the role 'OclExpression61' has cardinality 0..*, and from 'EmigOcl_IfExp', the role 'ifExp3' has cardinality 0..*.
+An association connects 'EmigOcl_VariableDeclaration' and 'EmigOcl_OclType'. From 'EmigOcl_VariableDeclaration', the role 'variableDeclaration' has cardinality 0..*, and from 'EmigOcl_OclType', the role 'OclType63' has cardinality 0..*.
+An association connects 'EmigOcl_VariableDeclaration' and 'EmigOcl_VariableExp'. From 'EmigOcl_VariableDeclaration', the role 'referredVariable' has cardinality 0..*, and from 'EmigOcl_VariableExp', the role 'VariableExp' has cardinality 0..*.
+An association connects 'EmigOcl_LetExp' and 'EmigOcl_LocalVariable'. From 'EmigOcl_LetExp', the role 'LetExp66' has cardinality 0..*, and from 'EmigOcl_LocalVariable', the role 'variable' has cardinality 0..*.
+An association connects 'EmigOcl_OclExpression' and 'EmigOcl_LocalVariable'. From 'EmigOcl_OclExpression', the role 'OclExpression68' has cardinality 0..*, and from 'EmigOcl_LocalVariable', the role 'initializedVariable' has cardinality 0..*.
+An association connects 'EmigOcl_IterateExp' and 'EmigOcl_LocalVariable'. From 'EmigOcl_IterateExp', the role 'IterateExp' has cardinality 0..*, and from 'EmigOcl_LocalVariable', the role 'result' has cardinality 0..*.
+An association connects 'EmigOcl_LoopExp' and 'EmigOcl_Iterator'. From 'EmigOcl_LoopExp', the role 'LoopExp71' has cardinality 0..*, and from 'EmigOcl_Iterator', the role 'iterators' has cardinality 0..*.
+An association connects 'EmigOcl_Operation' and 'EmigOcl_Parameter'. From 'EmigOcl_Operation', the role 'Operation73' has cardinality 0..*, and from 'EmigOcl_Parameter', the role 'parameters' has cardinality 0..*.
+An association connects 'EmigOcl_CollectionType' and 'EmigOcl_OclType'. From 'EmigOcl_CollectionType', the role 'collectionTypes' has cardinality 0..*, and from 'EmigOcl_OclType', the role 'OclType75' has cardinality 0..*.
+An association connects 'EmigOcl_OclContextDefinition' and 'EmigOcl_OclType'. From 'EmigOcl_OclContextDefinition', the role 'OclContextDefinition' has cardinality 0..*, and from 'EmigOcl_OclType', the role 'context_' has cardinality 0..*.
+An association connects 'EmigOcl_OclExpression' and 'EmigOcl_OclType'. From 'EmigOcl_OclExpression', the role 'OclExpression78' has cardinality 0..*, and from 'EmigOcl_OclType', the role 'type' has cardinality 0..*.
+An association connects 'EmigOcl_Operation' and 'EmigOcl_OclType'. From 'EmigOcl_Operation', the role 'Operation80' has cardinality 0..*, and from 'EmigOcl_OclType', the role 'returnType' has cardinality 0..*.
+An association connects 'EmigOcl_OclType' and 'EmigOcl_MapType'. From 'EmigOcl_OclType', the role 'valueType' has cardinality 0..*, and from 'EmigOcl_MapType', the role 'MapType' has cardinality 0..*.
+An association connects 'EmigOcl_Attribute' and 'EmigOcl_OclType'. From 'EmigOcl_Attribute', the role 'Attribute84' has cardinality 0..*, and from 'EmigOcl_OclType', the role 'type83' has cardinality 0..*.
+An association connects 'EmigOcl_OclType' and 'EmigOcl_MapType'. From 'EmigOcl_OclType', the role 'keyType' has cardinality 0..*, and from 'EmigOcl_MapType', the role 'MapType86' has cardinality 0..*.
+An association connects 'EmigOcl_CollectionType' and 'EmigOcl_OclType'. From 'EmigOcl_CollectionType', the role 'CollectionType' has cardinality 0..*, and from 'EmigOcl_OclType', the role 'elementType' has cardinality 0..*.
+An association connects 'EmigOcl_TupleTypeAttribute' and 'EmigOcl_OclType'. From 'EmigOcl_TupleTypeAttribute', the role 'TupleTypeAttribute' has cardinality 0..*, and from 'EmigOcl_OclType', the role 'type89' has cardinality 0..*.
+An association connects 'EmigOcl_OclType' and 'EmigOcl_VariableDeclaration'. From 'EmigOcl_OclType', the role 'type91' has cardinality 0..*, and from 'EmigOcl_VariableDeclaration', the role 'VariableDeclaration92' has cardinality 0..*.
+An association connects 'EmigOcl_OclModelElementExp' and 'EmigOcl_OclModel'. From 'EmigOcl_OclModelElementExp', the role 'EmigOcl_OclModelElementExp' has cardinality 0..*, and from 'EmigOcl_OclModel', the role 'EmigOcl_OclModel94' has cardinality 0..*.
+An association connects 'EmigOcl_TupleTypeAttribute' and 'EmigOcl_TupleType'. From 'EmigOcl_TupleTypeAttribute', the role 'TupleTypeAttribute96' has cardinality 0..*, and from 'EmigOcl_TupleType', the role 'tupleType' has cardinality 0..*.
+An association connects 'EmigOcl_OclType' and 'EmigOcl_TupleTypeAttribute'. From 'EmigOcl_OclType', the role 'OclType98' has cardinality 0..*, and from 'EmigOcl_TupleTypeAttribute', the role 'tupleTypeAttribute' has cardinality 0..*.
+An association connects 'EmigOcl_TupleTypeAttribute' and 'EmigOcl_TupleType'. From 'EmigOcl_TupleTypeAttribute', the role 'attributes' has cardinality 0..*, and from 'EmigOcl_TupleType', the role 'TupleType' has cardinality 0..*.
+An association connects 'EmigOcl_OclModel' and 'EmigOcl_OclModelElement'. From 'EmigOcl_OclModel', the role 'OclModel' has cardinality 0..*, and from 'EmigOcl_OclModelElement', the role 'elements101' has cardinality 0..*.
+An association connects 'EmigOcl_MapType' and 'EmigOcl_OclType'. From 'EmigOcl_MapType', the role 'mapType2' has cardinality 0..*, and from 'EmigOcl_OclType', the role 'OclType103' has cardinality 0..*.
+An association connects 'EmigOcl_OclType' and 'EmigOcl_MapType'. From 'EmigOcl_OclType', the role 'OclType105' has cardinality 0..*, and from 'EmigOcl_MapType', the role 'mapType' has cardinality 0..*.
+An association connects 'EmigOcl_LambdaType' and 'EmigOcl_OclType'. From 'EmigOcl_LambdaType', the role 'EmigOcl_LambdaType' has cardinality 0..*, and from 'EmigOcl_OclType', the role 'EmigOcl_OclType107' has cardinality 0..*.
+An association connects 'EmigOcl_OclType' and 'EmigOcl_LambdaType'. From 'EmigOcl_OclType', the role 'EmigOcl_OclType110' has cardinality 0..*, and from 'EmigOcl_LambdaType', the role 'EmigOcl_LambdaType109' has cardinality 0..*.
+An association connects 'EmigOcl_OclFeatureDefinition' and 'EmigOcl_OclFeature'. From 'EmigOcl_OclFeatureDefinition', the role 'definition' has cardinality 0..*, and from 'EmigOcl_OclFeature', the role 'OclFeature' has cardinality 0..*.
+An association connects 'EmigOcl_OclContextDefinition' and 'EmigOcl_OclFeatureDefinition'. From 'EmigOcl_OclContextDefinition', the role 'OclContextDefinition114' has cardinality 0..*, and from 'EmigOcl_OclFeatureDefinition', the role 'definition113' has cardinality 0..*.
+An association connects 'EmigOcl_OclContextDefinition' and 'EmigOcl_OclFeatureDefinition'. From 'EmigOcl_OclContextDefinition', the role 'context_116' has cardinality 0..*, and from 'EmigOcl_OclFeatureDefinition', the role 'OclFeatureDefinition' has cardinality 0..*.
+An association connects 'EmigOcl_OclType' and 'EmigOcl_OclContextDefinition'. From 'EmigOcl_OclType', the role 'OclType118' has cardinality 0..*, and from 'EmigOcl_OclContextDefinition', the role 'definitions' has cardinality 0..*.
+An association connects 'EmigOcl_OclFeatureDefinition' and 'EmigOcl_OclFeature'. From 'EmigOcl_OclFeatureDefinition', the role 'OclFeatureDefinition120' has cardinality 0..*, and from 'EmigOcl_OclFeature', the role 'feature' has cardinality 0..*.
+An association connects 'EmigOcl_Attribute' and 'EmigOcl_OclExpression'. From 'EmigOcl_Attribute', the role 'owningAttribute' has cardinality 0..*, and from 'EmigOcl_OclExpression', the role 'OclExpression122' has cardinality 0..*.
+An association connects 'EmigOcl_Attribute' and 'EmigOcl_OclType'. From 'EmigOcl_Attribute', the role 'attribute' has cardinality 0..*, and from 'EmigOcl_OclType', the role 'OclType124' has cardinality 0..*.
+An association connects 'EmigOcl_Parameter' and 'EmigOcl_Operation'. From 'EmigOcl_Parameter', the role 'Parameter' has cardinality 0..*, and from 'EmigOcl_Operation', the role 'operation' has cardinality 0..*.
+An association connects 'EmigOcl_Operation' and 'EmigOcl_OclType'. From 'EmigOcl_Operation', the role 'operation127' has cardinality 0..*, and from 'EmigOcl_OclType', the role 'OclType128' has cardinality 0..*.
+An association connects 'EmigOcl_OclExpression' and 'EmigOcl_Operation'. From 'EmigOcl_OclExpression', the role 'OclExpression130' has cardinality 0..*, and from 'EmigOcl_Operation', the role 'owningOperation' has cardinality 0..*.
+An association connects 'EmigOcl_OclModel' and 'EmigOcl_OclModel'. From 'EmigOcl_OclModel', the role 'OclModel133' has cardinality 0..*, and from 'EmigOcl_OclModel', the role 'model' has cardinality 0..*.
+An association connects 'EmigOcl_OclModelElement' and 'EmigOcl_OclModel'. From 'EmigOcl_OclModelElement', the role 'OclModelElement' has cardinality 0..*, and from 'EmigOcl_OclModel', the role 'model135' has cardinality 0..*.
+An association connects 'EmigOcl_OclModel' and 'EmigOcl_OclModel'. From 'EmigOcl_OclModel', the role 'metamodel' has cardinality 0..*, and from 'EmigOcl_OclModel', the role 'OclModel138' has cardinality 0..*.

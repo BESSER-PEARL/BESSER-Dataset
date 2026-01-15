@@ -1,0 +1,962 @@
+The domain model 'analysis' describes the core structural elements and their relationships within the system.
+
+The model defines 226 main class(es).
+
+'analysis_scheduling_MarkovSchedulingTransition' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'firings', which is of type str.
+
+'analysis_profiler_SharedVariableAccessData' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'StringToDoubleMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_scheduling_FSMCombination' represents an important domain concept.
+It has one attribute: 'combinator', which is of type str.
+
+'analysis_trace_CompressedVariableDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_map_ActionToLongMap' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'DoubleToBottlenecksReportMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_trace_MarkovModelActionData' represents an important domain concept.
+It has the following attributes: 'first', which is of type bool; 'successors', which is of type str.
+
+'analysis_map_StringToLongMap' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'analysis_postprocessing_ActionStatisticsReport' represents an important domain concept.
+It does not declare any attributes.
+
+'profiler_analysis_StatisticalData' represents an important domain concept.
+It does not declare any attributes.
+
+'partitioning_analysis_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_postprocessing_PostProcessingReport' represents an important domain concept.
+It has the following attributes: 'deadlock', which is of type bool; 'time', which is of type float.
+
+'CompressedTraceReport' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_trace_CompressedDependency' represents an important domain concept.
+It has one attribute: 'count', which is of type str.
+
+'TableRow' represents an important domain concept.
+It does not declare any attributes.
+
+'BottlenecksReport' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_map_DoubleToDoubleMap' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'ComparedAction' represents an important domain concept.
+It does not declare any attributes.
+
+'WorkloadBalancePartition' represents an important domain concept.
+It does not declare any attributes.
+
+'PortToLongMap' represents an important domain concept.
+It does not declare any attributes.
+
+'FSMTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_profiler_ActionMemoryProfilingData' represents an important domain concept.
+It has the following attributes: 'actor', which is of type str; 'action', which is of type str.
+
+'analysis_profiler_ActorDynamicData' represents an important domain concept.
+It does not declare any attributes.
+
+'IntraActionCommunicationData' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_map_StringToDoubleMap' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'analysis_trace_ComparedAction' represents an important domain concept.
+It has the following attributes: 'found', which is of type bool; 'dOutgoings', which is of type str; 'dIncomings', which is of type str; 'dSteps', which is of type str.
+
+'analysis_scheduling_ActorSelectionSchedule' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_map_EOperatorToStatisticalDataMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'analysis_pipelining_ActionsVariablePipeliningReport' represents an important domain concept.
+It does not declare any attributes.
+
+'ActorDynamicData' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_partitioning_WorkloadBalancePartitioningReport' represents an important domain concept.
+It does not declare any attributes.
+
+'postprocessing_analysis_StatisticalData' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableToStatisticalDataMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_trace_CompressedPortDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'CompressedDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'ScheduledImpactAnalysisData' represents an important domain concept.
+It does not declare any attributes.
+
+'profiling_analysis_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'bottlenecks_analysis_Network' represents an important domain concept.
+It does not declare any attributes.
+
+'DoubleToDoubleMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_scheduling_MarkovPartitionScheduler' represents an important domain concept.
+It has one attribute: 'partitionId', which is of type str.
+
+'analysis_profiler_CodeProfilingReport' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_scheduling_MarkovSchedulingState' represents an important domain concept.
+It has the following attributes: 'firings', which is of type str; 'name', which is of type str.
+
+'analysis_bottlenecks_ScheduledImpactAnalysisReport' represents an important domain concept.
+It has one attribute: 'classLevel', which is of type bool.
+
+'AnalysisReport' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionBottlenecksData' represents an important domain concept.
+It does not declare any attributes.
+
+'ProfilingStatsActorData' represents an important domain concept.
+It does not declare any attributes.
+
+'map_analysis_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_scheduling_ActorFire' represents an important domain concept.
+It has the following attributes: 'partition', which is of type str; 'Times', which is of type int; 'dependencyPartitions', which is of type str; 'Actor', which is of type str.
+
+'analysis_scheduling_FSMOperation' represents an important domain concept.
+It has the following attributes: 'op', which is of type str; 'var', which is of type str; 'val', which is of type str.
+
+'ActionDynamicData' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_bottlenecks_ImpactAnalysisReport' represents an important domain concept.
+It has one attribute: 'classLevel', which is of type bool.
+
+'analysis_profiling_ProfilingStatsReport' represents an important domain concept.
+It has one attribute: 'networkName', which is of type str.
+
+'analysis_profiler_ComplexDynamicData' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_map_ActorToLongMap' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'SchedulerChecksPartition' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_profiler_MemoryProfilingReport' represents an important domain concept.
+It has one attribute: 'networkName', which is of type str.
+
+'analysis_postprocessing_SchedulerChecksPartition' represents an important domain concept.
+It does not declare any attributes.
+
+'BoundedBufferData' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_profiler_StateVariableAccessData' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'analysis_buffers_OptimalBufferData' represents an important domain concept.
+It does not declare any attributes.
+
+'StringToStringMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_profiling_IntraActionCommunicationData' represents an important domain concept.
+It does not declare any attributes.
+
+'ActorFire' represents an important domain concept.
+It does not declare any attributes.
+
+'map_analysis_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'postprocessing_PostProcessingData' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_map_ActorClassToStatisticalDataMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_postprocessing_BufferBlockingReport' represents an important domain concept.
+It does not declare any attributes.
+
+'FSMVar' represents an important domain concept.
+It does not declare any attributes.
+
+'map_analysis_Procedure' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_map_StringToStringMap' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'analysis_bottlenecks_BottlenecksWithSchedulingReport' represents an important domain concept.
+It has the following attributes: 'cpBlockingTime', which is of type float; 'totalFirings', which is of type str; 'executionTime', which is of type float; 'cpFirings', which is of type str; 'cpWeight', which is of type float; 'totalWeight', which is of type float.
+
+'EOperatorToStatisticalDataMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_trace_MarkowModelTraceReport' represents an important domain concept.
+It does not declare any attributes.
+
+'OptimalBufferData' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_scheduling_PartitionedActorFire' represents an important domain concept.
+It does not declare any attributes.
+
+'profiler_analysis_Network' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_profiler_DynamicProfilingReport' represents an important domain concept.
+It does not declare any attributes.
+
+'ComparedTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionToLongMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_trace_CompressedTokensDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_partitioning_ComCostPartitioningReport' represents an important domain concept.
+It has one attribute: 'bitAccurate', which is of type bool.
+
+'MarkovSchedulingTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_map_ActorToStatisticalDataMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_scheduling_MarkovSimpleSchedulerReport' represents an important domain concept.
+It does not declare any attributes.
+
+'map_analysis_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'map_analysis_StatisticalData' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_scheduling_FSMCondition' represents an important domain concept.
+It has the following attributes: 'valName', which is of type str; 'compval', which is of type str; 'comp', which is of type str.
+
+'trace_analysis_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_scheduling_FSMState' represents an important domain concept.
+It has one attribute: 'enumName', which is of type str.
+
+'ComplexCodeData' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_trace_CompressedTraceReport' represents an important domain concept.
+It has one attribute: 'traceFile', which is of type str.
+
+'buffers_analysis_Network' represents an important domain concept.
+It does not declare any attributes.
+
+'scheduling_analysis_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'ActorToStatisticalDataMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_map_StringToIntegerMap' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'analysis_map_PartitionToActorSelectionScheduleMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'analysis_trace_CompressedGuardDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_buffers_BoundedBufferData' represents an important domain concept.
+It has the following attributes: 'bitSize', which is of type int; 'tokenSize', which is of type int.
+
+'analysis_caseoptimal_CaseOptimalScheduleReport' represents an important domain concept.
+It has the following attributes: 'partitionFilePath', which is of type str; 'pipeline', which is of type str; 'traceFile', which is of type str.
+
+'BufferToLongMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_scheduling_Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_buffers_BoundedBuffersReport' represents an important domain concept.
+It has the following attributes: 'pow2', which is of type bool; 'bitSize', which is of type int; 'tokenSize', which is of type int; 'bitAccurate', which is of type bool.
+
+'profiler_analysis_Buffer' represents an important domain concept.
+It does not declare any attributes.
+
+'FSMCombination' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_pipelining_ImpactAnalysisReport' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_map_VariableToStatisticalDataMap' represents an important domain concept.
+It does not declare any attributes.
+
+'ComCostPartition' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_profiling_IntraActionCommunicationReport' represents an important domain concept.
+It does not declare any attributes.
+
+'FSMCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_scheduling_FSMTransition' represents an important domain concept.
+It has the following attributes: 'sourceStateEnumName', which is of type str; 'targetStateEnumName', which is of type str.
+
+'analysis_postprocessing_PostProcessingData' represents an important domain concept.
+It does not declare any attributes.
+
+'CompressedStep' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_profiler_StringToAccessDataMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'PartitionToActorSelectionScheduleMap' represents an important domain concept.
+It does not declare any attributes.
+
+'map_analysis_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'FSMVarUpdate' represents an important domain concept.
+It does not declare any attributes.
+
+'ActorToLongMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_bottlenecks_DoubleToBottlenecksWithSchedulingReportMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'analysis_profiling_IntraActorCommunicationData' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcedureToStatisticalDataMap' represents an important domain concept.
+It does not declare any attributes.
+
+'scheduling_analysis_Network' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_map_ActionToDoubleMap' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'analysis_map_BufferToDoubleMap' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'profiling_analysis_Network' represents an important domain concept.
+It does not declare any attributes.
+
+'BufferToIntegerMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_profiler_LocalVariableAccessData' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'analysis_partitioning_WorkloadBalancePartition' represents an important domain concept.
+It has one attribute: 'workload', which is of type float.
+
+'analysis_profiler_ActionDynamicData' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_bottlenecks_BottlenecksReport' represents an important domain concept.
+It has the following attributes: 'totalWeight', which is of type float; 'cpVariance', which is of type float; 'totalVariance', which is of type float; 'cpFirings', which is of type str; 'cpWeight', which is of type float; 'totalFirings', which is of type str.
+
+'analysis_bottlenecks_ImpactAnalysisData' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_trace_CompressedFsmDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'ComplexDynamicData' represents an important domain concept.
+It does not declare any attributes.
+
+'BottlenecksWithSchedulingReport' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_profiler_ProcedureToComplexDynamicDataMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_bottlenecks_ActionBottlenecksData' represents an important domain concept.
+It has the following attributes: 'totalWeight', which is of type float; 'totalVariance', which is of type float; 'cpFirings', which is of type str; 'cpVariance', which is of type float; 'cpWeight', which is of type float; 'slackMin', which is of type float; 'slackMax', which is of type float; 'totalFirings', which is of type str.
+
+'ActionToDoubleMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_map_VariableToLongMap' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'analysis_caseoptimal_CaseOptimalActorSelectionSchedule' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionBottlenecksWithSchedulingData' represents an important domain concept.
+It does not declare any attributes.
+
+'AccessData' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableToLongMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_trace_CompressedStep' represents an important domain concept.
+It has one attribute: 'count', which is of type str.
+
+'FSMOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'MarkovSchedulingState' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionsVariablePipeliningReport' represents an important domain concept.
+It does not declare any attributes.
+
+'BufferToStatisticalDataMap' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionVariablePipeliningData' represents an important domain concept.
+It does not declare any attributes.
+
+'MarkovPartitionScheduler' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_bottlenecks_ScheduledImpactAnalysisData' represents an important domain concept.
+It does not declare any attributes.
+
+'DoubleToBottlenecksWithSchedulingReportMap' represents an important domain concept.
+It does not declare any attributes.
+
+'StatisticalActorPartition' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_bottlenecks_DoubleToBottlenecksReportMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'analysis_buffers_OptimalBuffersReport' represents an important domain concept.
+It has the following attributes: 'bitAccurate', which is of type bool; 'pow2', which is of type bool.
+
+'analysis_scheduling_FSM' represents an important domain concept.
+It has the following attributes: 'startState', which is of type str; 'terminalState', which is of type str.
+
+'analysis_map_BufferToLongMap' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'analysis_trace_TraceComparatorReport' represents an important domain concept.
+It does not declare any attributes.
+
+'pipelining_analysis_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_pipelining_ImpactAnalysisData' represents an important domain concept.
+It has one attribute: 'cpReduction', which is of type float.
+
+'postprocessing_analysis_Network' represents an important domain concept.
+It does not declare any attributes.
+
+'pipelining_analysis_ActorClass' represents an important domain concept.
+It does not declare any attributes.
+
+'BufferToDoubleMap' represents an important domain concept.
+It does not declare any attributes.
+
+'bottlenecks_analysis_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_partitioning_BalancedPipelinePartition' represents an important domain concept.
+It has the following attributes: 'workload', which is of type float; 'preWorkload', which is of type float; 'commonPredAvg', which is of type float.
+
+'analysis_trace_ComparedTrace' represents an important domain concept.
+It has the following attributes: 'dSteps', which is of type str; 'dDependencies', which is of type str; 'equal', which is of type bool.
+
+'analysis_map_BufferToStatisticalDataMap' represents an important domain concept.
+It does not declare any attributes.
+
+'profiling_analysis_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_profiler_BufferDynamicData' represents an important domain concept.
+It has one attribute: 'unconsumedTokens', which is of type int.
+
+'analysis_trace_TraceSizeReport' represents an important domain concept.
+It has the following attributes: 'dependencies', which is of type str; 'firings', which is of type str.
+
+'GuardToLongMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_scheduling_FSMTransitionWithState' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionMemoryProfilingData' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_map_ActionToStatisticalDataMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_postprocessing_SchedulerChecksReport' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_map_ProcedureToStatisticalDataMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_partitioning_BalancedPipelinePartitioningReport' represents an important domain concept.
+It does not declare any attributes.
+
+'ImpactAnalysisData' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_map_BufferToIntegerMap' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'analysis_profiler_TableRow' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_profiler_MemoryAccessData' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_AnalysisReport' represents an important domain concept.
+It has the following attributes: 'date', which is of type date; 'algorithm', which is of type str.
+
+'map_analysis_ActorClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ActorSelectionSchedule' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_profiling_ProfilingStatsActorData' represents an important domain concept.
+It has the following attributes: 'actionsWeight', which is of type float; 'schedulerWeight', which is of type float; 'actionsWeightPercent', which is of type float; 'schedulerWeightPercent', which is of type float; 'actorName', which is of type str.
+
+'analysis_bottlenecks_ActionBottlenecksWithSchedulingData' represents an important domain concept.
+It has the following attributes: 'totalWeight', which is of type float; 'cpFirings', which is of type str; 'totalFirings', which is of type str; 'cpWeight', which is of type float.
+
+'pipelining_analysis_StatisticalData' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_scheduling_FSMVarUpdate' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionToStatisticalDataMap' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcedureToComplexDynamicDataMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_profiler_AccessData' represents an important domain concept.
+It has the following attributes: 'min', which is of type float; 'average', which is of type float; 'total', which is of type float; 'accesses', which is of type float; 'max', which is of type float.
+
+'map_analysis_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'bottlenecks_analysis_ActorClass' represents an important domain concept.
+It does not declare any attributes.
+
+'buffers_analysis_Buffer' represents an important domain concept.
+It does not declare any attributes.
+
+'BalancedPipelinePartition' represents an important domain concept.
+It does not declare any attributes.
+
+'profiling_analysis_StatisticalData' represents an important domain concept.
+It does not declare any attributes.
+
+'StringToIntegerMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_partitioning_ComCostPartition' represents an important domain concept.
+It has the following attributes: 'externalCost', which is of type str; 'internalCost', which is of type str.
+
+'partitioning_analysis_Network' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_profiler_CodeData' represents an important domain concept.
+It has the following attributes: 'blockName', which is of type str; 'nol', which is of type str.
+
+'PostProcessingData' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_profiler_ComplexCodeData' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_profiler_BenchmarkReport' represents an important domain concept.
+It has one attribute: 'column_names', which is of type str.
+
+'analysis_map_GuardToLongMap' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'analysis_map_PortToLongMap' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'MarkovModelActionData' represents an important domain concept.
+It does not declare any attributes.
+
+'postprocessing_analysis_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'StringToLongMap' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_pipelining_ActionVariablePipeliningData' represents an important domain concept.
+It has one attribute: 'pipelinable', which is of type bool.
+
+'analysis_scheduling_FSMVar' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str; 'initialVal', which is of type str.
+
+'CodeData' represents an important domain concept.
+It does not declare any attributes.
+
+'IntraActorCommunicationData' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_postprocessing_StatisticalActorPartition' represents an important domain concept.
+It has the following attributes: 'actors', which is of type str; 'schedulingPolicy', which is of type str; 'occupancy', which is of type float.
+
+'profiler_analysis_Procedure' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_postprocessing_ActorStatisticsReport' represents an important domain concept.
+It has the following attributes: 'executionTime', which is of type float; 'occupancyDeviation', which is of type float; 'averageOccupancy', which is of type float.
+
+'pipelining_analysis_Network' represents an important domain concept.
+It does not declare any attributes.
+
+'Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'analysis_profiler_BufferAccessData' represents an important domain concept.
+It has the following attributes: 'targetActor', which is of type str; 'targetPort', which is of type str; 'sourceActor', which is of type str; 'sourcePort', which is of type str.
+
+'StringToAccessDataMap' represents an important domain concept.
+It does not declare any attributes.
+
+'FSMState' represents an important domain concept.
+It does not declare any attributes.
+
+'map_analysis_Buffer' represents an important domain concept.
+It does not declare any attributes.
+
+'profiler_analysis_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'BoundedBuffersReport' represents an important domain concept.
+It does not declare any attributes.
+
+'BufferDynamicData' represents an important domain concept.
+It does not declare any attributes.
+
+'profiler_analysis_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'MemoryAccessData' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_analysis_Network' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Optimizer' defines the following possible values: 'KTAIL', 'RLE'.
+The enumeration 'FSMComparator' defines the following possible values: 'GREQ', 'GREATER', 'SMEQ', 'SMALLER', 'NEQ', 'EQ'.
+The enumeration 'FSMCombinator' defines the following possible values: 'NAND', 'NOT', 'OR', 'AND', 'NOR'.
+The enumeration 'FSMOp' defines the following possible values: 'SET', 'ADD'.
+
+The model also captures inheritance relationships between classes.
+The class 'analysis_profiler_CodeProfilingReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_profiler_ComplexCodeData' is a specialization of 'CodeData'.
+The class 'analysis_profiler_DynamicProfilingReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_profiler_ActorDynamicData' is a specialization of 'ComplexDynamicData'.
+The class 'analysis_profiler_ActionDynamicData' is a specialization of 'ComplexDynamicData'.
+The class 'analysis_profiler_MemoryProfilingReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_profiler_BufferAccessData' is a specialization of 'MemoryAccessData'.
+The class 'analysis_profiler_StateVariableAccessData' is a specialization of 'MemoryAccessData'.
+The class 'analysis_profiler_LocalVariableAccessData' is a specialization of 'MemoryAccessData'.
+The class 'analysis_profiler_SharedVariableAccessData' is a specialization of 'MemoryAccessData'.
+The class 'analysis_profiler_BenchmarkReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_trace_TraceSizeReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_trace_CompressedTraceReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_trace_CompressedFsmDependency' is a specialization of 'CompressedDependency'.
+The class 'analysis_trace_CompressedGuardDependency' is a specialization of 'CompressedDependency'.
+The class 'analysis_trace_CompressedVariableDependency' is a specialization of 'CompressedDependency'.
+The class 'analysis_trace_CompressedPortDependency' is a specialization of 'CompressedDependency'.
+The class 'analysis_trace_CompressedTokensDependency' is a specialization of 'CompressedDependency'.
+The class 'analysis_trace_TraceComparatorReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_trace_MarkowModelTraceReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_bottlenecks_BottlenecksReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_bottlenecks_ImpactAnalysisReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_bottlenecks_BottlenecksWithSchedulingReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_bottlenecks_BottlenecksWithSchedulingReport' is a specialization of 'postprocessing_PostProcessingData'.
+The class 'analysis_bottlenecks_ScheduledImpactAnalysisReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_buffers_BoundedBuffersReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_buffers_OptimalBuffersReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_partitioning_ComCostPartitioningReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_partitioning_WorkloadBalancePartitioningReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_partitioning_BalancedPipelinePartitioningReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_pipelining_ActionsVariablePipeliningReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_pipelining_ImpactAnalysisReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_postprocessing_PostProcessingReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_postprocessing_ActorStatisticsReport' is a specialization of 'PostProcessingData'.
+The class 'analysis_postprocessing_ActionStatisticsReport' is a specialization of 'PostProcessingData'.
+The class 'analysis_postprocessing_SchedulerChecksReport' is a specialization of 'PostProcessingData'.
+The class 'analysis_postprocessing_BufferBlockingReport' is a specialization of 'PostProcessingData'.
+The class 'analysis_profiling_IntraActionCommunicationReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_profiling_ProfilingStatsReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_scheduling_ActorFire' is a specialization of 'ActorSelectionSchedule'.
+The class 'analysis_scheduling_FSM' is a specialization of 'ActorSelectionSchedule'.
+The class 'analysis_scheduling_Sequence' is a specialization of 'ActorSelectionSchedule'.
+The class 'analysis_scheduling_FSMTransitionWithState' is a specialization of 'FSMTransition'.
+The class 'analysis_scheduling_PartitionedActorFire' is a specialization of 'ActorFire'.
+The class 'analysis_scheduling_MarkovSimpleSchedulerReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_scheduling_MarkovSimpleSchedulerReport' is a specialization of 'postprocessing_PostProcessingData'.
+The class 'analysis_caseoptimal_CaseOptimalScheduleReport' is a specialization of 'AnalysisReport'.
+The class 'analysis_caseoptimal_CaseOptimalActorSelectionSchedule' is a specialization of 'ActorSelectionSchedule'.
+
+Relationships between classes are modeled using associations.
+An association connects 'profiler_analysis_Network' and 'analysis_profiler_CodeProfilingReport'. From 'profiler_analysis_Network', the role 'profiler_analysis_Network' has cardinality 0..*, and from 'analysis_profiler_CodeProfilingReport', the role 'analysis_profiler_CodeProfilingReport' has cardinality 0..*.
+An association connects 'analysis_profiler_CodeProfilingReport' and 'ComplexCodeData'. From 'analysis_profiler_CodeProfilingReport', the role 'analysis_profiler_CodeProfilingReport2' has cardinality 0..*, and from 'ComplexCodeData', the role 'ComplexCodeData' has cardinality 0..*.
+An association connects 'ComplexCodeData' and 'analysis_profiler_CodeProfilingReport'. From 'ComplexCodeData', the role 'ComplexCodeData5' has cardinality 0..*, and from 'analysis_profiler_CodeProfilingReport', the role 'analysis_profiler_CodeProfilingReport4' has cardinality 0..*.
+An association connects 'analysis_profiler_CodeData' and 'StringToIntegerMap'. From 'analysis_profiler_CodeData', the role 'analysis_profiler_CodeData' has cardinality 0..*, and from 'StringToIntegerMap', the role 'StringToIntegerMap' has cardinality 0..*.
+An association connects 'StringToIntegerMap' and 'analysis_profiler_CodeData'. From 'StringToIntegerMap', the role 'StringToIntegerMap9' has cardinality 0..*, and from 'analysis_profiler_CodeData', the role 'analysis_profiler_CodeData8' has cardinality 0..*.
+An association connects 'analysis_profiler_ComplexCodeData' and 'CodeData'. From 'analysis_profiler_ComplexCodeData', the role 'analysis_profiler_ComplexCodeData' has cardinality 0..*, and from 'CodeData', the role 'CodeData' has cardinality 0..*.
+An association connects 'CodeData' and 'analysis_profiler_ComplexCodeData'. From 'CodeData', the role 'CodeData13' has cardinality 0..*, and from 'analysis_profiler_ComplexCodeData', the role 'analysis_profiler_ComplexCodeData12' has cardinality 0..*.
+An association connects 'profiler_analysis_Network' and 'analysis_profiler_DynamicProfilingReport'. From 'profiler_analysis_Network', the role 'profiler_analysis_Network15' has cardinality 0..*, and from 'analysis_profiler_DynamicProfilingReport', the role 'analysis_profiler_DynamicProfilingReport' has cardinality 0..*.
+An association connects 'ActorDynamicData' and 'analysis_profiler_DynamicProfilingReport'. From 'ActorDynamicData', the role 'ActorDynamicData' has cardinality 0..*, and from 'analysis_profiler_DynamicProfilingReport', the role 'analysis_profiler_DynamicProfilingReport17' has cardinality 0..*.
+An association connects 'analysis_profiler_DynamicProfilingReport' and 'BufferDynamicData'. From 'analysis_profiler_DynamicProfilingReport', the role 'analysis_profiler_DynamicProfilingReport19' has cardinality 0..*, and from 'BufferDynamicData', the role 'BufferDynamicData' has cardinality 0..*.
+An association connects 'analysis_profiler_ActorDynamicData' and 'profiler_analysis_Actor'. From 'analysis_profiler_ActorDynamicData', the role 'analysis_profiler_ActorDynamicData' has cardinality 0..*, and from 'profiler_analysis_Actor', the role 'profiler_analysis_Actor' has cardinality 0..*.
+An association connects 'analysis_profiler_ActorDynamicData' and 'ActionDynamicData'. From 'analysis_profiler_ActorDynamicData', the role 'analysis_profiler_ActorDynamicData22' has cardinality 0..*, and from 'ActionDynamicData', the role 'ActionDynamicData' has cardinality 0..*.
+An association connects 'analysis_profiler_ActionDynamicData' and 'profiler_analysis_Action'. From 'analysis_profiler_ActionDynamicData', the role 'analysis_profiler_ActionDynamicData' has cardinality 0..*, and from 'profiler_analysis_Action', the role 'profiler_analysis_Action' has cardinality 0..*.
+An association connects 'profiler_analysis_Buffer' and 'analysis_profiler_BufferDynamicData'. From 'profiler_analysis_Buffer', the role 'profiler_analysis_Buffer' has cardinality 0..*, and from 'analysis_profiler_BufferDynamicData', the role 'analysis_profiler_BufferDynamicData' has cardinality 0..*.
+An association connects 'analysis_profiler_BufferDynamicData' and 'profiler_analysis_StatisticalData'. From 'analysis_profiler_BufferDynamicData', the role 'analysis_profiler_BufferDynamicData26' has cardinality 0..*, and from 'profiler_analysis_StatisticalData', the role 'profiler_analysis_StatisticalData' has cardinality 0..*.
+An association connects 'analysis_profiler_BufferDynamicData' and 'profiler_analysis_StatisticalData'. From 'analysis_profiler_BufferDynamicData', the role 'analysis_profiler_BufferDynamicData28' has cardinality 0..*, and from 'profiler_analysis_StatisticalData', the role 'profiler_analysis_StatisticalData29' has cardinality 0..*.
+An association connects 'analysis_profiler_BufferDynamicData' and 'profiler_analysis_StatisticalData'. From 'analysis_profiler_BufferDynamicData', the role 'analysis_profiler_BufferDynamicData31' has cardinality 0..*, and from 'profiler_analysis_StatisticalData', the role 'profiler_analysis_StatisticalData32' has cardinality 0..*.
+An association connects 'analysis_profiler_BufferDynamicData' and 'ActionToStatisticalDataMap'. From 'analysis_profiler_BufferDynamicData', the role 'analysis_profiler_BufferDynamicData34' has cardinality 0..*, and from 'ActionToStatisticalDataMap', the role 'ActionToStatisticalDataMap' has cardinality 0..*.
+An association connects 'ActionToStatisticalDataMap' and 'analysis_profiler_BufferDynamicData'. From 'ActionToStatisticalDataMap', the role 'ActionToStatisticalDataMap37' has cardinality 0..*, and from 'analysis_profiler_BufferDynamicData', the role 'analysis_profiler_BufferDynamicData36' has cardinality 0..*.
+An association connects 'ActionToLongMap' and 'analysis_profiler_BufferDynamicData'. From 'ActionToLongMap', the role 'ActionToLongMap' has cardinality 0..*, and from 'analysis_profiler_BufferDynamicData', the role 'analysis_profiler_BufferDynamicData39' has cardinality 0..*.
+An association connects 'analysis_profiler_BufferDynamicData' and 'ActionToLongMap'. From 'analysis_profiler_BufferDynamicData', the role 'analysis_profiler_BufferDynamicData41' has cardinality 0..*, and from 'ActionToLongMap', the role 'ActionToLongMap42' has cardinality 0..*.
+An association connects 'analysis_profiler_BufferDynamicData' and 'ActionToLongMap'. From 'analysis_profiler_BufferDynamicData', the role 'analysis_profiler_BufferDynamicData44' has cardinality 0..*, and from 'ActionToLongMap', the role 'ActionToLongMap45' has cardinality 0..*.
+An association connects 'analysis_profiler_ComplexDynamicData' and 'EOperatorToStatisticalDataMap'. From 'analysis_profiler_ComplexDynamicData', the role 'analysis_profiler_ComplexDynamicData' has cardinality 0..*, and from 'EOperatorToStatisticalDataMap', the role 'EOperatorToStatisticalDataMap' has cardinality 0..*.
+An association connects 'analysis_profiler_ComplexDynamicData' and 'ProcedureToStatisticalDataMap'. From 'analysis_profiler_ComplexDynamicData', the role 'analysis_profiler_ComplexDynamicData48' has cardinality 0..*, and from 'ProcedureToStatisticalDataMap', the role 'ProcedureToStatisticalDataMap' has cardinality 0..*.
+An association connects 'analysis_profiler_ComplexDynamicData' and 'VariableToStatisticalDataMap'. From 'analysis_profiler_ComplexDynamicData', the role 'analysis_profiler_ComplexDynamicData50' has cardinality 0..*, and from 'VariableToStatisticalDataMap', the role 'VariableToStatisticalDataMap' has cardinality 0..*.
+An association connects 'VariableToStatisticalDataMap' and 'analysis_profiler_ComplexDynamicData'. From 'VariableToStatisticalDataMap', the role 'VariableToStatisticalDataMap53' has cardinality 0..*, and from 'analysis_profiler_ComplexDynamicData', the role 'analysis_profiler_ComplexDynamicData52' has cardinality 0..*.
+An association connects 'ProcedureToComplexDynamicDataMap' and 'analysis_profiler_ComplexDynamicData'. From 'ProcedureToComplexDynamicDataMap', the role 'ProcedureToComplexDynamicDataMap' has cardinality 0..*, and from 'analysis_profiler_ComplexDynamicData', the role 'analysis_profiler_ComplexDynamicData55' has cardinality 0..*.
+An association connects 'BufferToStatisticalDataMap' and 'analysis_profiler_ComplexDynamicData'. From 'BufferToStatisticalDataMap', the role 'BufferToStatisticalDataMap' has cardinality 0..*, and from 'analysis_profiler_ComplexDynamicData', the role 'analysis_profiler_ComplexDynamicData57' has cardinality 0..*.
+An association connects 'BufferToStatisticalDataMap' and 'analysis_profiler_ComplexDynamicData'. From 'BufferToStatisticalDataMap', the role 'BufferToStatisticalDataMap60' has cardinality 0..*, and from 'analysis_profiler_ComplexDynamicData', the role 'analysis_profiler_ComplexDynamicData59' has cardinality 0..*.
+An association connects 'analysis_profiler_ProcedureToComplexDynamicDataMap' and 'profiler_analysis_Procedure'. From 'analysis_profiler_ProcedureToComplexDynamicDataMap', the role 'analysis_profiler_ProcedureToComplexDynamicDataMap' has cardinality 0..*, and from 'profiler_analysis_Procedure', the role 'profiler_analysis_Procedure' has cardinality 0..*.
+An association connects 'ComplexDynamicData' and 'analysis_profiler_ProcedureToComplexDynamicDataMap'. From 'ComplexDynamicData', the role 'ComplexDynamicData' has cardinality 0..*, and from 'analysis_profiler_ProcedureToComplexDynamicDataMap', the role 'analysis_profiler_ProcedureToComplexDynamicDataMap63' has cardinality 0..*.
+An association connects 'ActionMemoryProfilingData' and 'analysis_profiler_MemoryProfilingReport'. From 'ActionMemoryProfilingData', the role 'ActionMemoryProfilingData' has cardinality 0..*, and from 'analysis_profiler_MemoryProfilingReport', the role 'analysis_profiler_MemoryProfilingReport' has cardinality 0..*.
+An association connects 'analysis_profiler_ActionMemoryProfilingData' and 'MemoryAccessData'. From 'analysis_profiler_ActionMemoryProfilingData', the role 'analysis_profiler_ActionMemoryProfilingData' has cardinality 0..*, and from 'MemoryAccessData', the role 'MemoryAccessData' has cardinality 0..*.
+An association connects 'analysis_profiler_ActionMemoryProfilingData' and 'MemoryAccessData'. From 'analysis_profiler_ActionMemoryProfilingData', the role 'analysis_profiler_ActionMemoryProfilingData67' has cardinality 0..*, and from 'MemoryAccessData', the role 'MemoryAccessData68' has cardinality 0..*.
+An association connects 'StringToAccessDataMap' and 'analysis_profiler_MemoryAccessData'. From 'StringToAccessDataMap', the role 'StringToAccessDataMap' has cardinality 0..*, and from 'analysis_profiler_MemoryAccessData', the role 'analysis_profiler_MemoryAccessData' has cardinality 0..*.
+An association connects 'AccessData' and 'analysis_profiler_StringToAccessDataMap'. From 'AccessData', the role 'AccessData' has cardinality 0..*, and from 'analysis_profiler_StringToAccessDataMap', the role 'analysis_profiler_StringToAccessDataMap' has cardinality 0..*.
+An association connects 'analysis_profiler_BenchmarkReport' and 'TableRow'. From 'analysis_profiler_BenchmarkReport', the role 'analysis_profiler_BenchmarkReport' has cardinality 0..*, and from 'TableRow', the role 'TableRow' has cardinality 0..*.
+An association connects 'StringToStringMap' and 'analysis_profiler_TableRow'. From 'StringToStringMap', the role 'StringToStringMap' has cardinality 0..*, and from 'analysis_profiler_TableRow', the role 'analysis_profiler_TableRow' has cardinality 0..*.
+An association connects 'analysis_map_ActorToStatisticalDataMap' and 'map_analysis_Actor'. From 'analysis_map_ActorToStatisticalDataMap', the role 'analysis_map_ActorToStatisticalDataMap' has cardinality 0..*, and from 'map_analysis_Actor', the role 'map_analysis_Actor' has cardinality 0..*.
+An association connects 'map_analysis_StatisticalData' and 'analysis_map_ActorToStatisticalDataMap'. From 'map_analysis_StatisticalData', the role 'map_analysis_StatisticalData' has cardinality 0..*, and from 'analysis_map_ActorToStatisticalDataMap', the role 'analysis_map_ActorToStatisticalDataMap75' has cardinality 0..*.
+An association connects 'analysis_map_ActionToStatisticalDataMap' and 'map_analysis_Action'. From 'analysis_map_ActionToStatisticalDataMap', the role 'analysis_map_ActionToStatisticalDataMap' has cardinality 0..*, and from 'map_analysis_Action', the role 'map_analysis_Action' has cardinality 0..*.
+An association connects 'analysis_map_ActionToStatisticalDataMap' and 'map_analysis_StatisticalData'. From 'analysis_map_ActionToStatisticalDataMap', the role 'analysis_map_ActionToStatisticalDataMap78' has cardinality 0..*, and from 'map_analysis_StatisticalData', the role 'map_analysis_StatisticalData79' has cardinality 0..*.
+An association connects 'map_analysis_Buffer' and 'analysis_map_BufferToStatisticalDataMap'. From 'map_analysis_Buffer', the role 'map_analysis_Buffer' has cardinality 0..*, and from 'analysis_map_BufferToStatisticalDataMap', the role 'analysis_map_BufferToStatisticalDataMap' has cardinality 0..*.
+An association connects 'analysis_map_BufferToStatisticalDataMap' and 'map_analysis_StatisticalData'. From 'analysis_map_BufferToStatisticalDataMap', the role 'analysis_map_BufferToStatisticalDataMap82' has cardinality 0..*, and from 'map_analysis_StatisticalData', the role 'map_analysis_StatisticalData83' has cardinality 0..*.
+An association connects 'analysis_map_ProcedureToStatisticalDataMap' and 'map_analysis_Procedure'. From 'analysis_map_ProcedureToStatisticalDataMap', the role 'analysis_map_ProcedureToStatisticalDataMap' has cardinality 0..*, and from 'map_analysis_Procedure', the role 'map_analysis_Procedure' has cardinality 0..*.
+An association connects 'analysis_map_ProcedureToStatisticalDataMap' and 'map_analysis_StatisticalData'. From 'analysis_map_ProcedureToStatisticalDataMap', the role 'analysis_map_ProcedureToStatisticalDataMap86' has cardinality 0..*, and from 'map_analysis_StatisticalData', the role 'map_analysis_StatisticalData87' has cardinality 0..*.
+An association connects 'analysis_map_VariableToStatisticalDataMap' and 'map_analysis_Variable'. From 'analysis_map_VariableToStatisticalDataMap', the role 'analysis_map_VariableToStatisticalDataMap' has cardinality 0..*, and from 'map_analysis_Variable', the role 'map_analysis_Variable' has cardinality 0..*.
+An association connects 'analysis_map_VariableToStatisticalDataMap' and 'map_analysis_StatisticalData'. From 'analysis_map_VariableToStatisticalDataMap', the role 'analysis_map_VariableToStatisticalDataMap90' has cardinality 0..*, and from 'map_analysis_StatisticalData', the role 'map_analysis_StatisticalData91' has cardinality 0..*.
+An association connects 'analysis_map_ActorClassToStatisticalDataMap' and 'map_analysis_ActorClass'. From 'analysis_map_ActorClassToStatisticalDataMap', the role 'analysis_map_ActorClassToStatisticalDataMap' has cardinality 0..*, and from 'map_analysis_ActorClass', the role 'map_analysis_ActorClass' has cardinality 0..*.
+An association connects 'map_analysis_StatisticalData' and 'analysis_map_ActorClassToStatisticalDataMap'. From 'map_analysis_StatisticalData', the role 'map_analysis_StatisticalData95' has cardinality 0..*, and from 'analysis_map_ActorClassToStatisticalDataMap', the role 'analysis_map_ActorClassToStatisticalDataMap94' has cardinality 0..*.
+An association connects 'map_analysis_StatisticalData' and 'analysis_map_EOperatorToStatisticalDataMap'. From 'map_analysis_StatisticalData', the role 'map_analysis_StatisticalData97' has cardinality 0..*, and from 'analysis_map_EOperatorToStatisticalDataMap', the role 'analysis_map_EOperatorToStatisticalDataMap' has cardinality 0..*.
+An association connects 'analysis_map_ActionToLongMap' and 'map_analysis_Action'. From 'analysis_map_ActionToLongMap', the role 'analysis_map_ActionToLongMap' has cardinality 0..*, and from 'map_analysis_Action', the role 'map_analysis_Action99' has cardinality 0..*.
+An association connects 'analysis_map_ActorToLongMap' and 'map_analysis_Actor'. From 'analysis_map_ActorToLongMap', the role 'analysis_map_ActorToLongMap' has cardinality 0..*, and from 'map_analysis_Actor', the role 'map_analysis_Actor101' has cardinality 0..*.
+An association connects 'map_analysis_Buffer' and 'analysis_map_BufferToLongMap'. From 'map_analysis_Buffer', the role 'map_analysis_Buffer103' has cardinality 0..*, and from 'analysis_map_BufferToLongMap', the role 'analysis_map_BufferToLongMap' has cardinality 0..*.
+An association connects 'analysis_map_VariableToLongMap' and 'map_analysis_Variable'. From 'analysis_map_VariableToLongMap', the role 'analysis_map_VariableToLongMap' has cardinality 0..*, and from 'map_analysis_Variable', the role 'map_analysis_Variable105' has cardinality 0..*.
+An association connects 'analysis_map_GuardToLongMap' and 'map_analysis_Guard'. From 'analysis_map_GuardToLongMap', the role 'analysis_map_GuardToLongMap' has cardinality 0..*, and from 'map_analysis_Guard', the role 'map_analysis_Guard' has cardinality 0..*.
+An association connects 'analysis_map_PortToLongMap' and 'map_analysis_Port'. From 'analysis_map_PortToLongMap', the role 'analysis_map_PortToLongMap' has cardinality 0..*, and from 'map_analysis_Port', the role 'map_analysis_Port' has cardinality 0..*.
+An association connects 'map_analysis_Action' and 'analysis_map_ActionToDoubleMap'. From 'map_analysis_Action', the role 'map_analysis_Action109' has cardinality 0..*, and from 'analysis_map_ActionToDoubleMap', the role 'analysis_map_ActionToDoubleMap' has cardinality 0..*.
+An association connects 'analysis_map_BufferToIntegerMap' and 'map_analysis_Buffer'. From 'analysis_map_BufferToIntegerMap', the role 'analysis_map_BufferToIntegerMap' has cardinality 0..*, and from 'map_analysis_Buffer', the role 'map_analysis_Buffer111' has cardinality 0..*.
+An association connects 'map_analysis_Buffer' and 'analysis_map_BufferToDoubleMap'. From 'map_analysis_Buffer', the role 'map_analysis_Buffer113' has cardinality 0..*, and from 'analysis_map_BufferToDoubleMap', the role 'analysis_map_BufferToDoubleMap' has cardinality 0..*.
+An association connects 'ActorSelectionSchedule' and 'analysis_map_PartitionToActorSelectionScheduleMap'. From 'ActorSelectionSchedule', the role 'ActorSelectionSchedule' has cardinality 0..*, and from 'analysis_map_PartitionToActorSelectionScheduleMap', the role 'analysis_map_PartitionToActorSelectionScheduleMap' has cardinality 0..*.
+An association connects 'analysis_trace_TraceSizeReport' and 'ActionToLongMap'. From 'analysis_trace_TraceSizeReport', the role 'analysis_trace_TraceSizeReport' has cardinality 0..*, and from 'ActionToLongMap', the role 'ActionToLongMap116' has cardinality 0..*.
+An association connects 'ActionToLongMap' and 'analysis_trace_TraceSizeReport'. From 'ActionToLongMap', the role 'ActionToLongMap119' has cardinality 0..*, and from 'analysis_trace_TraceSizeReport', the role 'analysis_trace_TraceSizeReport118' has cardinality 0..*.
+An association connects 'analysis_trace_TraceSizeReport' and 'ActionToLongMap'. From 'analysis_trace_TraceSizeReport', the role 'analysis_trace_TraceSizeReport121' has cardinality 0..*, and from 'ActionToLongMap', the role 'ActionToLongMap122' has cardinality 0..*.
+An association connects 'ActorToLongMap' and 'analysis_trace_TraceSizeReport'. From 'ActorToLongMap', the role 'ActorToLongMap' has cardinality 0..*, and from 'analysis_trace_TraceSizeReport', the role 'analysis_trace_TraceSizeReport124' has cardinality 0..*.
+An association connects 'analysis_trace_TraceSizeReport' and 'ActorToLongMap'. From 'analysis_trace_TraceSizeReport', the role 'analysis_trace_TraceSizeReport126' has cardinality 0..*, and from 'ActorToLongMap', the role 'ActorToLongMap127' has cardinality 0..*.
+An association connects 'analysis_trace_TraceSizeReport' and 'ActorToLongMap'. From 'analysis_trace_TraceSizeReport', the role 'analysis_trace_TraceSizeReport129' has cardinality 0..*, and from 'ActorToLongMap', the role 'ActorToLongMap130' has cardinality 0..*.
+An association connects 'StringToLongMap' and 'analysis_trace_TraceSizeReport'. From 'StringToLongMap', the role 'StringToLongMap' has cardinality 0..*, and from 'analysis_trace_TraceSizeReport', the role 'analysis_trace_TraceSizeReport132' has cardinality 0..*.
+An association connects 'analysis_trace_TraceSizeReport' and 'trace_analysis_Network'. From 'analysis_trace_TraceSizeReport', the role 'analysis_trace_TraceSizeReport134' has cardinality 0..*, and from 'trace_analysis_Network', the role 'trace_analysis_Network' has cardinality 0..*.
+An association connects 'trace_analysis_Network' and 'analysis_trace_CompressedTraceReport'. From 'trace_analysis_Network', the role 'trace_analysis_Network136' has cardinality 0..*, and from 'analysis_trace_CompressedTraceReport', the role 'analysis_trace_CompressedTraceReport' has cardinality 0..*.
+An association connects 'CompressedStep' and 'analysis_trace_CompressedTraceReport'. From 'CompressedStep', the role 'CompressedStep' has cardinality 0..*, and from 'analysis_trace_CompressedTraceReport', the role 'analysis_trace_CompressedTraceReport138' has cardinality 0..*.
+An association connects 'CompressedDependency' and 'analysis_trace_CompressedTraceReport'. From 'CompressedDependency', the role 'CompressedDependency' has cardinality 0..*, and from 'analysis_trace_CompressedTraceReport', the role 'analysis_trace_CompressedTraceReport140' has cardinality 0..*.
+An association connects 'analysis_trace_CompressedStep' and 'trace_analysis_Action'. From 'analysis_trace_CompressedStep', the role 'analysis_trace_CompressedStep' has cardinality 0..*, and from 'trace_analysis_Action', the role 'trace_analysis_Action' has cardinality 0..*.
+An association connects 'analysis_trace_CompressedStep' and 'CompressedDependency'. From 'analysis_trace_CompressedStep', the role 'CompressedDependency143' has cardinality 0..*, and from 'CompressedDependency', the role 'trace' has cardinality 0..*.
+An association connects 'analysis_trace_CompressedStep' and 'CompressedDependency'. From 'analysis_trace_CompressedStep', the role 'CompressedDependency145' has cardinality 0..*, and from 'CompressedDependency', the role 'trace146' has cardinality 0..*.
+An association connects 'CompressedStep' and 'analysis_trace_CompressedStep'. From 'CompressedStep', the role 'CompressedStep149' has cardinality 0..*, and from 'analysis_trace_CompressedStep', the role 'analysis_trace_CompressedStep148' has cardinality 0..*.
+An association connects 'CompressedStep' and 'analysis_trace_CompressedStep'. From 'CompressedStep', the role 'CompressedStep152' has cardinality 0..*, and from 'analysis_trace_CompressedStep', the role 'analysis_trace_CompressedStep151' has cardinality 0..*.
+An association connects 'analysis_trace_CompressedStep' and 'CompressedStep'. From 'analysis_trace_CompressedStep', the role 'analysis_trace_CompressedStep154' has cardinality 0..*, and from 'CompressedStep', the role 'CompressedStep155' has cardinality 0..*.
+An association connects 'analysis_trace_CompressedDependency' and 'CompressedStep'. From 'analysis_trace_CompressedDependency', the role 'CompressedStep157' has cardinality 0..*, and from 'CompressedStep', the role 'trace158' has cardinality 0..*.
+An association connects 'analysis_trace_CompressedDependency' and 'CompressedStep'. From 'analysis_trace_CompressedDependency', the role 'CompressedStep160' has cardinality 0..*, and from 'CompressedStep', the role 'trace161' has cardinality 0..*.
+An association connects 'analysis_trace_CompressedGuardDependency' and 'GuardToLongMap'. From 'analysis_trace_CompressedGuardDependency', the role 'analysis_trace_CompressedGuardDependency' has cardinality 0..*, and from 'GuardToLongMap', the role 'GuardToLongMap' has cardinality 0..*.
+An association connects 'GuardToLongMap' and 'analysis_trace_CompressedGuardDependency'. From 'GuardToLongMap', the role 'GuardToLongMap165' has cardinality 0..*, and from 'analysis_trace_CompressedGuardDependency', the role 'analysis_trace_CompressedGuardDependency164' has cardinality 0..*.
+An association connects 'VariableToLongMap' and 'analysis_trace_CompressedVariableDependency'. From 'VariableToLongMap', the role 'VariableToLongMap' has cardinality 0..*, and from 'analysis_trace_CompressedVariableDependency', the role 'analysis_trace_CompressedVariableDependency' has cardinality 0..*.
+An association connects 'analysis_trace_CompressedVariableDependency' and 'VariableToLongMap'. From 'analysis_trace_CompressedVariableDependency', the role 'analysis_trace_CompressedVariableDependency168' has cardinality 0..*, and from 'VariableToLongMap', the role 'VariableToLongMap169' has cardinality 0..*.
+An association connects 'analysis_trace_CompressedVariableDependency' and 'VariableToLongMap'. From 'analysis_trace_CompressedVariableDependency', the role 'analysis_trace_CompressedVariableDependency171' has cardinality 0..*, and from 'VariableToLongMap', the role 'VariableToLongMap172' has cardinality 0..*.
+An association connects 'VariableToLongMap' and 'analysis_trace_CompressedVariableDependency'. From 'VariableToLongMap', the role 'VariableToLongMap175' has cardinality 0..*, and from 'analysis_trace_CompressedVariableDependency', the role 'analysis_trace_CompressedVariableDependency174' has cardinality 0..*.
+An association connects 'analysis_trace_CompressedPortDependency' and 'PortToLongMap'. From 'analysis_trace_CompressedPortDependency', the role 'analysis_trace_CompressedPortDependency' has cardinality 0..*, and from 'PortToLongMap', the role 'PortToLongMap' has cardinality 0..*.
+An association connects 'analysis_trace_CompressedPortDependency' and 'PortToLongMap'. From 'analysis_trace_CompressedPortDependency', the role 'analysis_trace_CompressedPortDependency178' has cardinality 0..*, and from 'PortToLongMap', the role 'PortToLongMap179' has cardinality 0..*.
+An association connects 'BufferToLongMap' and 'analysis_trace_CompressedTokensDependency'. From 'BufferToLongMap', the role 'BufferToLongMap' has cardinality 0..*, and from 'analysis_trace_CompressedTokensDependency', the role 'analysis_trace_CompressedTokensDependency' has cardinality 0..*.
+An association connects 'BufferToStatisticalDataMap' and 'analysis_trace_CompressedTokensDependency'. From 'BufferToStatisticalDataMap', the role 'BufferToStatisticalDataMap183' has cardinality 0..*, and from 'analysis_trace_CompressedTokensDependency', the role 'analysis_trace_CompressedTokensDependency182' has cardinality 0..*.
+An association connects 'CompressedTraceReport' and 'analysis_trace_TraceComparatorReport'. From 'CompressedTraceReport', the role 'CompressedTraceReport' has cardinality 0..*, and from 'analysis_trace_TraceComparatorReport', the role 'analysis_trace_TraceComparatorReport' has cardinality 0..*.
+An association connects 'analysis_trace_TraceComparatorReport' and 'ComparedTrace'. From 'analysis_trace_TraceComparatorReport', the role 'analysis_trace_TraceComparatorReport186' has cardinality 0..*, and from 'ComparedTrace', the role 'ComparedTrace' has cardinality 0..*.
+An association connects 'analysis_trace_ComparedTrace' and 'CompressedTraceReport'. From 'analysis_trace_ComparedTrace', the role 'analysis_trace_ComparedTrace' has cardinality 0..*, and from 'CompressedTraceReport', the role 'CompressedTraceReport188' has cardinality 0..*.
+An association connects 'analysis_trace_ComparedTrace' and 'trace_analysis_Action'. From 'analysis_trace_ComparedTrace', the role 'analysis_trace_ComparedTrace190' has cardinality 0..*, and from 'trace_analysis_Action', the role 'trace_analysis_Action191' has cardinality 0..*.
+An association connects 'analysis_trace_ComparedTrace' and 'ComparedAction'. From 'analysis_trace_ComparedTrace', the role 'analysis_trace_ComparedTrace193' has cardinality 0..*, and from 'ComparedAction', the role 'ComparedAction' has cardinality 0..*.
+An association connects 'analysis_trace_ComparedAction' and 'trace_analysis_Action'. From 'analysis_trace_ComparedAction', the role 'analysis_trace_ComparedAction' has cardinality 0..*, and from 'trace_analysis_Action', the role 'trace_analysis_Action195' has cardinality 0..*.
+An association connects 'trace_analysis_Network' and 'analysis_trace_MarkowModelTraceReport'. From 'trace_analysis_Network', the role 'trace_analysis_Network197' has cardinality 0..*, and from 'analysis_trace_MarkowModelTraceReport', the role 'analysis_trace_MarkowModelTraceReport' has cardinality 0..*.
+An association connects 'MarkovModelActionData' and 'analysis_trace_MarkowModelTraceReport'. From 'MarkovModelActionData', the role 'MarkovModelActionData' has cardinality 0..*, and from 'analysis_trace_MarkowModelTraceReport', the role 'analysis_trace_MarkowModelTraceReport199' has cardinality 0..*.
+An association connects 'trace_analysis_Action' and 'analysis_trace_MarkovModelActionData'. From 'trace_analysis_Action', the role 'trace_analysis_Action201' has cardinality 0..*, and from 'analysis_trace_MarkovModelActionData', the role 'analysis_trace_MarkovModelActionData' has cardinality 0..*.
+An association connects 'ActionToLongMap' and 'analysis_trace_MarkovModelActionData'. From 'ActionToLongMap', the role 'ActionToLongMap204' has cardinality 0..*, and from 'analysis_trace_MarkovModelActionData', the role 'analysis_trace_MarkovModelActionData203' has cardinality 0..*.
+An association connects 'bottlenecks_analysis_Network' and 'analysis_bottlenecks_BottlenecksReport'. From 'bottlenecks_analysis_Network', the role 'bottlenecks_analysis_Network' has cardinality 0..*, and from 'analysis_bottlenecks_BottlenecksReport', the role 'analysis_bottlenecks_BottlenecksReport' has cardinality 0..*.
+An association connects 'ActionBottlenecksData' and 'analysis_bottlenecks_BottlenecksReport'. From 'ActionBottlenecksData', the role 'ActionBottlenecksData' has cardinality 0..*, and from 'analysis_bottlenecks_BottlenecksReport', the role 'analysis_bottlenecks_BottlenecksReport207' has cardinality 0..*.
+An association connects 'bottlenecks_analysis_Action' and 'analysis_bottlenecks_ActionBottlenecksData'. From 'bottlenecks_analysis_Action', the role 'bottlenecks_analysis_Action' has cardinality 0..*, and from 'analysis_bottlenecks_ActionBottlenecksData', the role 'analysis_bottlenecks_ActionBottlenecksData' has cardinality 0..*.
+An association connects 'bottlenecks_analysis_Network' and 'analysis_bottlenecks_ImpactAnalysisReport'. From 'bottlenecks_analysis_Network', the role 'bottlenecks_analysis_Network210' has cardinality 0..*, and from 'analysis_bottlenecks_ImpactAnalysisReport', the role 'analysis_bottlenecks_ImpactAnalysisReport' has cardinality 0..*.
+An association connects 'analysis_bottlenecks_ImpactAnalysisReport' and 'ImpactAnalysisData'. From 'analysis_bottlenecks_ImpactAnalysisReport', the role 'analysis_bottlenecks_ImpactAnalysisReport212' has cardinality 0..*, and from 'ImpactAnalysisData', the role 'ImpactAnalysisData' has cardinality 0..*.
+An association connects 'BottlenecksReport' and 'analysis_bottlenecks_ImpactAnalysisReport'. From 'BottlenecksReport', the role 'BottlenecksReport' has cardinality 0..*, and from 'analysis_bottlenecks_ImpactAnalysisReport', the role 'analysis_bottlenecks_ImpactAnalysisReport214' has cardinality 0..*.
+An association connects 'analysis_bottlenecks_ImpactAnalysisData' and 'bottlenecks_analysis_Action'. From 'analysis_bottlenecks_ImpactAnalysisData', the role 'analysis_bottlenecks_ImpactAnalysisData' has cardinality 0..*, and from 'bottlenecks_analysis_Action', the role 'bottlenecks_analysis_Action216' has cardinality 0..*.
+An association connects 'bottlenecks_analysis_ActorClass' and 'analysis_bottlenecks_ImpactAnalysisData'. From 'bottlenecks_analysis_ActorClass', the role 'bottlenecks_analysis_ActorClass' has cardinality 0..*, and from 'analysis_bottlenecks_ImpactAnalysisData', the role 'analysis_bottlenecks_ImpactAnalysisData218' has cardinality 0..*.
+An association connects 'DoubleToDoubleMap' and 'analysis_bottlenecks_ImpactAnalysisData'. From 'DoubleToDoubleMap', the role 'DoubleToDoubleMap' has cardinality 0..*, and from 'analysis_bottlenecks_ImpactAnalysisData', the role 'analysis_bottlenecks_ImpactAnalysisData220' has cardinality 0..*.
+An association connects 'DoubleToBottlenecksReportMap' and 'analysis_bottlenecks_ImpactAnalysisData'. From 'DoubleToBottlenecksReportMap', the role 'DoubleToBottlenecksReportMap' has cardinality 0..*, and from 'analysis_bottlenecks_ImpactAnalysisData', the role 'analysis_bottlenecks_ImpactAnalysisData222' has cardinality 0..*.
+An association connects 'analysis_bottlenecks_DoubleToBottlenecksReportMap' and 'BottlenecksReport'. From 'analysis_bottlenecks_DoubleToBottlenecksReportMap', the role 'analysis_bottlenecks_DoubleToBottlenecksReportMap' has cardinality 0..*, and from 'BottlenecksReport', the role 'BottlenecksReport224' has cardinality 0..*.
+An association connects 'analysis_bottlenecks_BottlenecksWithSchedulingReport' and 'bottlenecks_analysis_Network'. From 'analysis_bottlenecks_BottlenecksWithSchedulingReport', the role 'analysis_bottlenecks_BottlenecksWithSchedulingReport' has cardinality 0..*, and from 'bottlenecks_analysis_Network', the role 'bottlenecks_analysis_Network226' has cardinality 0..*.
+An association connects 'analysis_bottlenecks_BottlenecksWithSchedulingReport' and 'ActionBottlenecksWithSchedulingData'. From 'analysis_bottlenecks_BottlenecksWithSchedulingReport', the role 'analysis_bottlenecks_BottlenecksWithSchedulingReport228' has cardinality 0..*, and from 'ActionBottlenecksWithSchedulingData', the role 'ActionBottlenecksWithSchedulingData' has cardinality 0..*.
+An association connects 'StringToDoubleMap' and 'analysis_bottlenecks_BottlenecksWithSchedulingReport'. From 'StringToDoubleMap', the role 'StringToDoubleMap' has cardinality 0..*, and from 'analysis_bottlenecks_BottlenecksWithSchedulingReport', the role 'analysis_bottlenecks_BottlenecksWithSchedulingReport230' has cardinality 0..*.
+An association connects 'analysis_bottlenecks_ActionBottlenecksWithSchedulingData' and 'bottlenecks_analysis_Action'. From 'analysis_bottlenecks_ActionBottlenecksWithSchedulingData', the role 'analysis_bottlenecks_ActionBottlenecksWithSchedulingData' has cardinality 0..*, and from 'bottlenecks_analysis_Action', the role 'bottlenecks_analysis_Action232' has cardinality 0..*.
+An association connects 'BufferToIntegerMap' and 'analysis_bottlenecks_ActionBottlenecksWithSchedulingData'. From 'BufferToIntegerMap', the role 'BufferToIntegerMap' has cardinality 0..*, and from 'analysis_bottlenecks_ActionBottlenecksWithSchedulingData', the role 'analysis_bottlenecks_ActionBottlenecksWithSchedulingData234' has cardinality 0..*.
+An association connects 'BufferToDoubleMap' and 'analysis_bottlenecks_ActionBottlenecksWithSchedulingData'. From 'BufferToDoubleMap', the role 'BufferToDoubleMap' has cardinality 0..*, and from 'analysis_bottlenecks_ActionBottlenecksWithSchedulingData', the role 'analysis_bottlenecks_ActionBottlenecksWithSchedulingData236' has cardinality 0..*.
+An association connects 'BufferToIntegerMap' and 'analysis_bottlenecks_ActionBottlenecksWithSchedulingData'. From 'BufferToIntegerMap', the role 'BufferToIntegerMap239' has cardinality 0..*, and from 'analysis_bottlenecks_ActionBottlenecksWithSchedulingData', the role 'analysis_bottlenecks_ActionBottlenecksWithSchedulingData238' has cardinality 0..*.
+An association connects 'bottlenecks_analysis_Action' and 'analysis_bottlenecks_ScheduledImpactAnalysisData'. From 'bottlenecks_analysis_Action', the role 'bottlenecks_analysis_Action241' has cardinality 0..*, and from 'analysis_bottlenecks_ScheduledImpactAnalysisData', the role 'analysis_bottlenecks_ScheduledImpactAnalysisData' has cardinality 0..*.
+An association connects 'analysis_bottlenecks_ScheduledImpactAnalysisData' and 'bottlenecks_analysis_ActorClass'. From 'analysis_bottlenecks_ScheduledImpactAnalysisData', the role 'analysis_bottlenecks_ScheduledImpactAnalysisData243' has cardinality 0..*, and from 'bottlenecks_analysis_ActorClass', the role 'bottlenecks_analysis_ActorClass244' has cardinality 0..*.
+An association connects 'analysis_bottlenecks_ScheduledImpactAnalysisData' and 'DoubleToDoubleMap'. From 'analysis_bottlenecks_ScheduledImpactAnalysisData', the role 'analysis_bottlenecks_ScheduledImpactAnalysisData246' has cardinality 0..*, and from 'DoubleToDoubleMap', the role 'DoubleToDoubleMap247' has cardinality 0..*.
+An association connects 'DoubleToDoubleMap' and 'analysis_bottlenecks_ScheduledImpactAnalysisData'. From 'DoubleToDoubleMap', the role 'DoubleToDoubleMap250' has cardinality 0..*, and from 'analysis_bottlenecks_ScheduledImpactAnalysisData', the role 'analysis_bottlenecks_ScheduledImpactAnalysisData249' has cardinality 0..*.
+An association connects 'DoubleToBottlenecksWithSchedulingReportMap' and 'analysis_bottlenecks_ScheduledImpactAnalysisData'. From 'DoubleToBottlenecksWithSchedulingReportMap', the role 'DoubleToBottlenecksWithSchedulingReportMap' has cardinality 0..*, and from 'analysis_bottlenecks_ScheduledImpactAnalysisData', the role 'analysis_bottlenecks_ScheduledImpactAnalysisData252' has cardinality 0..*.
+An association connects 'BottlenecksWithSchedulingReport' and 'analysis_bottlenecks_DoubleToBottlenecksWithSchedulingReportMap'. From 'BottlenecksWithSchedulingReport', the role 'BottlenecksWithSchedulingReport' has cardinality 0..*, and from 'analysis_bottlenecks_DoubleToBottlenecksWithSchedulingReportMap', the role 'analysis_bottlenecks_DoubleToBottlenecksWithSchedulingReportMap' has cardinality 0..*.
+An association connects 'analysis_bottlenecks_ScheduledImpactAnalysisReport' and 'bottlenecks_analysis_Network'. From 'analysis_bottlenecks_ScheduledImpactAnalysisReport', the role 'analysis_bottlenecks_ScheduledImpactAnalysisReport' has cardinality 0..*, and from 'bottlenecks_analysis_Network', the role 'bottlenecks_analysis_Network255' has cardinality 0..*.
+An association connects 'analysis_bottlenecks_ScheduledImpactAnalysisReport' and 'ScheduledImpactAnalysisData'. From 'analysis_bottlenecks_ScheduledImpactAnalysisReport', the role 'analysis_bottlenecks_ScheduledImpactAnalysisReport257' has cardinality 0..*, and from 'ScheduledImpactAnalysisData', the role 'ScheduledImpactAnalysisData' has cardinality 0..*.
+An association connects 'analysis_bottlenecks_ScheduledImpactAnalysisReport' and 'BottlenecksWithSchedulingReport'. From 'analysis_bottlenecks_ScheduledImpactAnalysisReport', the role 'analysis_bottlenecks_ScheduledImpactAnalysisReport259' has cardinality 0..*, and from 'BottlenecksWithSchedulingReport', the role 'BottlenecksWithSchedulingReport260' has cardinality 0..*.
+An association connects 'buffers_analysis_Network' and 'analysis_buffers_BoundedBuffersReport'. From 'buffers_analysis_Network', the role 'buffers_analysis_Network' has cardinality 0..*, and from 'analysis_buffers_BoundedBuffersReport', the role 'analysis_buffers_BoundedBuffersReport' has cardinality 0..*.
+An association connects 'BoundedBufferData' and 'analysis_buffers_BoundedBuffersReport'. From 'BoundedBufferData', the role 'BoundedBufferData' has cardinality 0..*, and from 'analysis_buffers_BoundedBuffersReport', the role 'analysis_buffers_BoundedBuffersReport263' has cardinality 0..*.
+An association connects 'analysis_buffers_BoundedBufferData' and 'buffers_analysis_Buffer'. From 'analysis_buffers_BoundedBufferData', the role 'analysis_buffers_BoundedBufferData' has cardinality 0..*, and from 'buffers_analysis_Buffer', the role 'buffers_analysis_Buffer' has cardinality 0..*.
+An association connects 'buffers_analysis_Network' and 'analysis_buffers_OptimalBuffersReport'. From 'buffers_analysis_Network', the role 'buffers_analysis_Network266' has cardinality 0..*, and from 'analysis_buffers_OptimalBuffersReport', the role 'analysis_buffers_OptimalBuffersReport' has cardinality 0..*.
+An association connects 'analysis_buffers_OptimalBuffersReport' and 'OptimalBufferData'. From 'analysis_buffers_OptimalBuffersReport', the role 'analysis_buffers_OptimalBuffersReport268' has cardinality 0..*, and from 'OptimalBufferData', the role 'OptimalBufferData' has cardinality 0..*.
+An association connects 'BoundedBuffersReport' and 'analysis_buffers_OptimalBuffersReport'. From 'BoundedBuffersReport', the role 'BoundedBuffersReport' has cardinality 0..*, and from 'analysis_buffers_OptimalBuffersReport', the role 'analysis_buffers_OptimalBuffersReport270' has cardinality 0..*.
+An association connects 'BottlenecksWithSchedulingReport' and 'analysis_buffers_OptimalBuffersReport'. From 'BottlenecksWithSchedulingReport', the role 'BottlenecksWithSchedulingReport273' has cardinality 0..*, and from 'analysis_buffers_OptimalBuffersReport', the role 'analysis_buffers_OptimalBuffersReport272' has cardinality 0..*.
+An association connects 'BoundedBuffersReport' and 'analysis_buffers_OptimalBufferData'. From 'BoundedBuffersReport', the role 'BoundedBuffersReport275' has cardinality 0..*, and from 'analysis_buffers_OptimalBufferData', the role 'analysis_buffers_OptimalBufferData' has cardinality 0..*.
+An association connects 'analysis_buffers_OptimalBufferData' and 'BottlenecksWithSchedulingReport'. From 'analysis_buffers_OptimalBufferData', the role 'analysis_buffers_OptimalBufferData277' has cardinality 0..*, and from 'BottlenecksWithSchedulingReport', the role 'BottlenecksWithSchedulingReport278' has cardinality 0..*.
+An association connects 'analysis_partitioning_ComCostPartitioningReport' and 'partitioning_analysis_Network'. From 'analysis_partitioning_ComCostPartitioningReport', the role 'analysis_partitioning_ComCostPartitioningReport' has cardinality 0..*, and from 'partitioning_analysis_Network', the role 'partitioning_analysis_Network' has cardinality 0..*.
+An association connects 'analysis_partitioning_ComCostPartitioningReport' and 'ComCostPartition'. From 'analysis_partitioning_ComCostPartitioningReport', the role 'analysis_partitioning_ComCostPartitioningReport281' has cardinality 0..*, and from 'ComCostPartition', the role 'ComCostPartition' has cardinality 0..*.
+An association connects 'analysis_partitioning_ComCostPartition' and 'partitioning_analysis_Actor'. From 'analysis_partitioning_ComCostPartition', the role 'analysis_partitioning_ComCostPartition' has cardinality 0..*, and from 'partitioning_analysis_Actor', the role 'partitioning_analysis_Actor' has cardinality 0..*.
+An association connects 'analysis_partitioning_ComCostPartition' and 'ActorToLongMap'. From 'analysis_partitioning_ComCostPartition', the role 'analysis_partitioning_ComCostPartition284' has cardinality 0..*, and from 'ActorToLongMap', the role 'ActorToLongMap285' has cardinality 0..*.
+An association connects 'analysis_partitioning_ComCostPartition' and 'ActorToLongMap'. From 'analysis_partitioning_ComCostPartition', the role 'analysis_partitioning_ComCostPartition287' has cardinality 0..*, and from 'ActorToLongMap', the role 'ActorToLongMap288' has cardinality 0..*.
+An association connects 'partitioning_analysis_Actor' and 'analysis_partitioning_WorkloadBalancePartition'. From 'partitioning_analysis_Actor', the role 'partitioning_analysis_Actor290' has cardinality 0..*, and from 'analysis_partitioning_WorkloadBalancePartition', the role 'analysis_partitioning_WorkloadBalancePartition' has cardinality 0..*.
+An association connects 'partitioning_analysis_Network' and 'analysis_partitioning_WorkloadBalancePartitioningReport'. From 'partitioning_analysis_Network', the role 'partitioning_analysis_Network292' has cardinality 0..*, and from 'analysis_partitioning_WorkloadBalancePartitioningReport', the role 'analysis_partitioning_WorkloadBalancePartitioningReport' has cardinality 0..*.
+An association connects 'WorkloadBalancePartition' and 'analysis_partitioning_WorkloadBalancePartitioningReport'. From 'WorkloadBalancePartition', the role 'WorkloadBalancePartition' has cardinality 0..*, and from 'analysis_partitioning_WorkloadBalancePartitioningReport', the role 'analysis_partitioning_WorkloadBalancePartitioningReport294' has cardinality 0..*.
+An association connects 'analysis_partitioning_BalancedPipelinePartition' and 'partitioning_analysis_Actor'. From 'analysis_partitioning_BalancedPipelinePartition', the role 'analysis_partitioning_BalancedPipelinePartition' has cardinality 0..*, and from 'partitioning_analysis_Actor', the role 'partitioning_analysis_Actor296' has cardinality 0..*.
+An association connects 'analysis_partitioning_BalancedPipelinePartitioningReport' and 'BalancedPipelinePartition'. From 'analysis_partitioning_BalancedPipelinePartitioningReport', the role 'analysis_partitioning_BalancedPipelinePartitioningReport' has cardinality 0..*, and from 'BalancedPipelinePartition', the role 'BalancedPipelinePartition' has cardinality 0..*.
+An association connects 'partitioning_analysis_Network' and 'analysis_partitioning_BalancedPipelinePartitioningReport'. From 'partitioning_analysis_Network', the role 'partitioning_analysis_Network300' has cardinality 0..*, and from 'analysis_partitioning_BalancedPipelinePartitioningReport', the role 'analysis_partitioning_BalancedPipelinePartitioningReport299' has cardinality 0..*.
+An association connects 'pipelining_analysis_Network' and 'analysis_pipelining_ActionsVariablePipeliningReport'. From 'pipelining_analysis_Network', the role 'pipelining_analysis_Network' has cardinality 0..*, and from 'analysis_pipelining_ActionsVariablePipeliningReport', the role 'analysis_pipelining_ActionsVariablePipeliningReport' has cardinality 0..*.
+An association connects 'ActionVariablePipeliningData' and 'analysis_pipelining_ActionsVariablePipeliningReport'. From 'ActionVariablePipeliningData', the role 'ActionVariablePipeliningData' has cardinality 0..*, and from 'analysis_pipelining_ActionsVariablePipeliningReport', the role 'analysis_pipelining_ActionsVariablePipeliningReport303' has cardinality 0..*.
+An association connects 'analysis_pipelining_ActionVariablePipeliningData' and 'pipelining_analysis_Action'. From 'analysis_pipelining_ActionVariablePipeliningData', the role 'analysis_pipelining_ActionVariablePipeliningData' has cardinality 0..*, and from 'pipelining_analysis_Action', the role 'pipelining_analysis_Action' has cardinality 0..*.
+An association connects 'analysis_pipelining_ActionVariablePipeliningData' and 'pipelining_analysis_StatisticalData'. From 'analysis_pipelining_ActionVariablePipeliningData', the role 'analysis_pipelining_ActionVariablePipeliningData306' has cardinality 0..*, and from 'pipelining_analysis_StatisticalData', the role 'pipelining_analysis_StatisticalData' has cardinality 0..*.
+An association connects 'analysis_pipelining_ActionVariablePipeliningData' and 'pipelining_analysis_StatisticalData'. From 'analysis_pipelining_ActionVariablePipeliningData', the role 'analysis_pipelining_ActionVariablePipeliningData308' has cardinality 0..*, and from 'pipelining_analysis_StatisticalData', the role 'pipelining_analysis_StatisticalData309' has cardinality 0..*.
+An association connects 'analysis_pipelining_ImpactAnalysisReport' and 'pipelining_analysis_Network'. From 'analysis_pipelining_ImpactAnalysisReport', the role 'analysis_pipelining_ImpactAnalysisReport' has cardinality 0..*, and from 'pipelining_analysis_Network', the role 'pipelining_analysis_Network311' has cardinality 0..*.
+An association connects 'BottlenecksReport' and 'analysis_pipelining_ImpactAnalysisReport'. From 'BottlenecksReport', the role 'BottlenecksReport314' has cardinality 0..*, and from 'analysis_pipelining_ImpactAnalysisReport', the role 'analysis_pipelining_ImpactAnalysisReport313' has cardinality 0..*.
+An association connects 'ActionsVariablePipeliningReport' and 'analysis_pipelining_ImpactAnalysisReport'. From 'ActionsVariablePipeliningReport', the role 'ActionsVariablePipeliningReport' has cardinality 0..*, and from 'analysis_pipelining_ImpactAnalysisReport', the role 'analysis_pipelining_ImpactAnalysisReport316' has cardinality 0..*.
+An association connects 'ImpactAnalysisData' and 'analysis_pipelining_ImpactAnalysisReport'. From 'ImpactAnalysisData', the role 'ImpactAnalysisData319' has cardinality 0..*, and from 'analysis_pipelining_ImpactAnalysisReport', the role 'analysis_pipelining_ImpactAnalysisReport318' has cardinality 0..*.
+An association connects 'analysis_pipelining_ImpactAnalysisData' and 'BottlenecksReport'. From 'analysis_pipelining_ImpactAnalysisData', the role 'analysis_pipelining_ImpactAnalysisData' has cardinality 0..*, and from 'BottlenecksReport', the role 'BottlenecksReport321' has cardinality 0..*.
+An association connects 'pipelining_analysis_Action' and 'analysis_pipelining_ImpactAnalysisData'. From 'pipelining_analysis_Action', the role 'pipelining_analysis_Action324' has cardinality 0..*, and from 'analysis_pipelining_ImpactAnalysisData', the role 'analysis_pipelining_ImpactAnalysisData323' has cardinality 0..*.
+An association connects 'pipelining_analysis_ActorClass' and 'analysis_pipelining_ImpactAnalysisData'. From 'pipelining_analysis_ActorClass', the role 'pipelining_analysis_ActorClass' has cardinality 0..*, and from 'analysis_pipelining_ImpactAnalysisData', the role 'analysis_pipelining_ImpactAnalysisData326' has cardinality 0..*.
+An association connects 'postprocessing_analysis_Network' and 'analysis_postprocessing_PostProcessingReport'. From 'postprocessing_analysis_Network', the role 'postprocessing_analysis_Network' has cardinality 0..*, and from 'analysis_postprocessing_PostProcessingReport', the role 'analysis_postprocessing_PostProcessingReport' has cardinality 0..*.
+An association connects 'analysis_postprocessing_PostProcessingReport' and 'PostProcessingData'. From 'analysis_postprocessing_PostProcessingReport', the role 'analysis_postprocessing_PostProcessingReport329' has cardinality 0..*, and from 'PostProcessingData', the role 'PostProcessingData' has cardinality 0..*.
+An association connects 'analysis_postprocessing_ActorStatisticsReport' and 'postprocessing_analysis_Network'. From 'analysis_postprocessing_ActorStatisticsReport', the role 'analysis_postprocessing_ActorStatisticsReport' has cardinality 0..*, and from 'postprocessing_analysis_Network', the role 'postprocessing_analysis_Network331' has cardinality 0..*.
+An association connects 'StatisticalActorPartition' and 'analysis_postprocessing_ActorStatisticsReport'. From 'StatisticalActorPartition', the role 'StatisticalActorPartition' has cardinality 0..*, and from 'analysis_postprocessing_ActorStatisticsReport', the role 'analysis_postprocessing_ActorStatisticsReport333' has cardinality 0..*.
+An association connects 'StringToDoubleMap' and 'analysis_postprocessing_ActorStatisticsReport'. From 'StringToDoubleMap', the role 'StringToDoubleMap336' has cardinality 0..*, and from 'analysis_postprocessing_ActorStatisticsReport', the role 'analysis_postprocessing_ActorStatisticsReport335' has cardinality 0..*.
+An association connects 'StringToDoubleMap' and 'analysis_postprocessing_ActorStatisticsReport'. From 'StringToDoubleMap', the role 'StringToDoubleMap339' has cardinality 0..*, and from 'analysis_postprocessing_ActorStatisticsReport', the role 'analysis_postprocessing_ActorStatisticsReport338' has cardinality 0..*.
+An association connects 'StringToDoubleMap' and 'analysis_postprocessing_ActorStatisticsReport'. From 'StringToDoubleMap', the role 'StringToDoubleMap342' has cardinality 0..*, and from 'analysis_postprocessing_ActorStatisticsReport', the role 'analysis_postprocessing_ActorStatisticsReport341' has cardinality 0..*.
+An association connects 'analysis_postprocessing_ActorStatisticsReport' and 'StringToDoubleMap'. From 'analysis_postprocessing_ActorStatisticsReport', the role 'analysis_postprocessing_ActorStatisticsReport344' has cardinality 0..*, and from 'StringToDoubleMap', the role 'StringToDoubleMap345' has cardinality 0..*.
+An association connects 'analysis_postprocessing_ActionStatisticsReport' and 'postprocessing_analysis_Actor'. From 'analysis_postprocessing_ActionStatisticsReport', the role 'analysis_postprocessing_ActionStatisticsReport' has cardinality 0..*, and from 'postprocessing_analysis_Actor', the role 'postprocessing_analysis_Actor' has cardinality 0..*.
+An association connects 'analysis_postprocessing_ActionStatisticsReport' and 'ActionToDoubleMap'. From 'analysis_postprocessing_ActionStatisticsReport', the role 'analysis_postprocessing_ActionStatisticsReport348' has cardinality 0..*, and from 'ActionToDoubleMap', the role 'ActionToDoubleMap' has cardinality 0..*.
+An association connects 'ActionToDoubleMap' and 'analysis_postprocessing_ActionStatisticsReport'. From 'ActionToDoubleMap', the role 'ActionToDoubleMap351' has cardinality 0..*, and from 'analysis_postprocessing_ActionStatisticsReport', the role 'analysis_postprocessing_ActionStatisticsReport350' has cardinality 0..*.
+An association connects 'analysis_postprocessing_ActionStatisticsReport' and 'ActionToDoubleMap'. From 'analysis_postprocessing_ActionStatisticsReport', the role 'analysis_postprocessing_ActionStatisticsReport353' has cardinality 0..*, and from 'ActionToDoubleMap', the role 'ActionToDoubleMap354' has cardinality 0..*.
+An association connects 'analysis_postprocessing_ActionStatisticsReport' and 'ActionToDoubleMap'. From 'analysis_postprocessing_ActionStatisticsReport', the role 'analysis_postprocessing_ActionStatisticsReport356' has cardinality 0..*, and from 'ActionToDoubleMap', the role 'ActionToDoubleMap357' has cardinality 0..*.
+An association connects 'analysis_postprocessing_ActionStatisticsReport' and 'ActionToDoubleMap'. From 'analysis_postprocessing_ActionStatisticsReport', the role 'analysis_postprocessing_ActionStatisticsReport359' has cardinality 0..*, and from 'ActionToDoubleMap', the role 'ActionToDoubleMap360' has cardinality 0..*.
+An association connects 'analysis_postprocessing_ActionStatisticsReport' and 'ActionToDoubleMap'. From 'analysis_postprocessing_ActionStatisticsReport', the role 'analysis_postprocessing_ActionStatisticsReport362' has cardinality 0..*, and from 'ActionToDoubleMap', the role 'ActionToDoubleMap363' has cardinality 0..*.
+An association connects 'analysis_postprocessing_ActionStatisticsReport' and 'ActionToDoubleMap'. From 'analysis_postprocessing_ActionStatisticsReport', the role 'analysis_postprocessing_ActionStatisticsReport365' has cardinality 0..*, and from 'ActionToDoubleMap', the role 'ActionToDoubleMap366' has cardinality 0..*.
+An association connects 'analysis_postprocessing_ActionStatisticsReport' and 'ActionToDoubleMap'. From 'analysis_postprocessing_ActionStatisticsReport', the role 'analysis_postprocessing_ActionStatisticsReport368' has cardinality 0..*, and from 'ActionToDoubleMap', the role 'ActionToDoubleMap369' has cardinality 0..*.
+An association connects 'ActionToDoubleMap' and 'analysis_postprocessing_ActionStatisticsReport'. From 'ActionToDoubleMap', the role 'ActionToDoubleMap372' has cardinality 0..*, and from 'analysis_postprocessing_ActionStatisticsReport', the role 'analysis_postprocessing_ActionStatisticsReport371' has cardinality 0..*.
+An association connects 'analysis_postprocessing_ActionStatisticsReport' and 'ActionToDoubleMap'. From 'analysis_postprocessing_ActionStatisticsReport', the role 'analysis_postprocessing_ActionStatisticsReport374' has cardinality 0..*, and from 'ActionToDoubleMap', the role 'ActionToDoubleMap375' has cardinality 0..*.
+An association connects 'ActionToLongMap' and 'analysis_postprocessing_ActionStatisticsReport'. From 'ActionToLongMap', the role 'ActionToLongMap378' has cardinality 0..*, and from 'analysis_postprocessing_ActionStatisticsReport', the role 'analysis_postprocessing_ActionStatisticsReport377' has cardinality 0..*.
+An association connects 'SchedulerChecksPartition' and 'analysis_postprocessing_SchedulerChecksReport'. From 'SchedulerChecksPartition', the role 'SchedulerChecksPartition' has cardinality 0..*, and from 'analysis_postprocessing_SchedulerChecksReport', the role 'analysis_postprocessing_SchedulerChecksReport' has cardinality 0..*.
+An association connects 'postprocessing_analysis_StatisticalData' and 'analysis_postprocessing_SchedulerChecksPartition'. From 'postprocessing_analysis_StatisticalData', the role 'postprocessing_analysis_StatisticalData' has cardinality 0..*, and from 'analysis_postprocessing_SchedulerChecksPartition', the role 'analysis_postprocessing_SchedulerChecksPartition' has cardinality 0..*.
+An association connects 'postprocessing_analysis_StatisticalData' and 'analysis_postprocessing_SchedulerChecksPartition'. From 'postprocessing_analysis_StatisticalData', the role 'postprocessing_analysis_StatisticalData383' has cardinality 0..*, and from 'analysis_postprocessing_SchedulerChecksPartition', the role 'analysis_postprocessing_SchedulerChecksPartition382' has cardinality 0..*.
+An association connects 'ActorToStatisticalDataMap' and 'analysis_postprocessing_SchedulerChecksPartition'. From 'ActorToStatisticalDataMap', the role 'ActorToStatisticalDataMap' has cardinality 0..*, and from 'analysis_postprocessing_SchedulerChecksPartition', the role 'analysis_postprocessing_SchedulerChecksPartition385' has cardinality 0..*.
+An association connects 'ActorToStatisticalDataMap' and 'analysis_postprocessing_SchedulerChecksPartition'. From 'ActorToStatisticalDataMap', the role 'ActorToStatisticalDataMap388' has cardinality 0..*, and from 'analysis_postprocessing_SchedulerChecksPartition', the role 'analysis_postprocessing_SchedulerChecksPartition387' has cardinality 0..*.
+An association connects 'postprocessing_analysis_Network' and 'analysis_postprocessing_BufferBlockingReport'. From 'postprocessing_analysis_Network', the role 'postprocessing_analysis_Network390' has cardinality 0..*, and from 'analysis_postprocessing_BufferBlockingReport', the role 'analysis_postprocessing_BufferBlockingReport' has cardinality 0..*.
+An association connects 'BufferToIntegerMap' and 'analysis_postprocessing_BufferBlockingReport'. From 'BufferToIntegerMap', the role 'BufferToIntegerMap393' has cardinality 0..*, and from 'analysis_postprocessing_BufferBlockingReport', the role 'analysis_postprocessing_BufferBlockingReport392' has cardinality 0..*.
+An association connects 'BufferToDoubleMap' and 'analysis_postprocessing_BufferBlockingReport'. From 'BufferToDoubleMap', the role 'BufferToDoubleMap396' has cardinality 0..*, and from 'analysis_postprocessing_BufferBlockingReport', the role 'analysis_postprocessing_BufferBlockingReport395' has cardinality 0..*.
+An association connects 'analysis_postprocessing_BufferBlockingReport' and 'BufferToIntegerMap'. From 'analysis_postprocessing_BufferBlockingReport', the role 'analysis_postprocessing_BufferBlockingReport398' has cardinality 0..*, and from 'BufferToIntegerMap', the role 'BufferToIntegerMap399' has cardinality 0..*.
+An association connects 'IntraActorCommunicationData' and 'analysis_profiling_IntraActionCommunicationReport'. From 'IntraActorCommunicationData', the role 'IntraActorCommunicationData' has cardinality 0..*, and from 'analysis_profiling_IntraActionCommunicationReport', the role 'analysis_profiling_IntraActionCommunicationReport' has cardinality 0..*.
+An association connects 'profiling_analysis_Network' and 'analysis_profiling_IntraActionCommunicationReport'. From 'profiling_analysis_Network', the role 'profiling_analysis_Network' has cardinality 0..*, and from 'analysis_profiling_IntraActionCommunicationReport', the role 'analysis_profiling_IntraActionCommunicationReport402' has cardinality 0..*.
+An association connects 'profiling_analysis_Actor' and 'analysis_profiling_IntraActorCommunicationData'. From 'profiling_analysis_Actor', the role 'profiling_analysis_Actor' has cardinality 0..*, and from 'analysis_profiling_IntraActorCommunicationData', the role 'analysis_profiling_IntraActorCommunicationData' has cardinality 0..*.
+An association connects 'analysis_profiling_IntraActorCommunicationData' and 'profiling_analysis_StatisticalData'. From 'analysis_profiling_IntraActorCommunicationData', the role 'analysis_profiling_IntraActorCommunicationData405' has cardinality 0..*, and from 'profiling_analysis_StatisticalData', the role 'profiling_analysis_StatisticalData' has cardinality 0..*.
+An association connects 'profiling_analysis_StatisticalData' and 'analysis_profiling_IntraActorCommunicationData'. From 'profiling_analysis_StatisticalData', the role 'profiling_analysis_StatisticalData408' has cardinality 0..*, and from 'analysis_profiling_IntraActorCommunicationData', the role 'analysis_profiling_IntraActorCommunicationData407' has cardinality 0..*.
+An association connects 'ActorToStatisticalDataMap' and 'analysis_profiling_IntraActorCommunicationData'. From 'ActorToStatisticalDataMap', the role 'ActorToStatisticalDataMap411' has cardinality 0..*, and from 'analysis_profiling_IntraActorCommunicationData', the role 'analysis_profiling_IntraActorCommunicationData410' has cardinality 0..*.
+An association connects 'analysis_profiling_IntraActorCommunicationData' and 'IntraActionCommunicationData'. From 'analysis_profiling_IntraActorCommunicationData', the role 'analysis_profiling_IntraActorCommunicationData413' has cardinality 0..*, and from 'IntraActionCommunicationData', the role 'IntraActionCommunicationData' has cardinality 0..*.
+An association connects 'analysis_profiling_IntraActionCommunicationData' and 'profiling_analysis_Action'. From 'analysis_profiling_IntraActionCommunicationData', the role 'analysis_profiling_IntraActionCommunicationData' has cardinality 0..*, and from 'profiling_analysis_Action', the role 'profiling_analysis_Action' has cardinality 0..*.
+An association connects 'profiling_analysis_StatisticalData' and 'analysis_profiling_IntraActionCommunicationData'. From 'profiling_analysis_StatisticalData', the role 'profiling_analysis_StatisticalData417' has cardinality 0..*, and from 'analysis_profiling_IntraActionCommunicationData', the role 'analysis_profiling_IntraActionCommunicationData416' has cardinality 0..*.
+An association connects 'analysis_profiling_IntraActionCommunicationData' and 'profiling_analysis_StatisticalData'. From 'analysis_profiling_IntraActionCommunicationData', the role 'analysis_profiling_IntraActionCommunicationData419' has cardinality 0..*, and from 'profiling_analysis_StatisticalData', the role 'profiling_analysis_StatisticalData420' has cardinality 0..*.
+An association connects 'analysis_profiling_IntraActionCommunicationData' and 'ActionToStatisticalDataMap'. From 'analysis_profiling_IntraActionCommunicationData', the role 'analysis_profiling_IntraActionCommunicationData422' has cardinality 0..*, and from 'ActionToStatisticalDataMap', the role 'ActionToStatisticalDataMap423' has cardinality 0..*.
+An association connects 'ProfilingStatsActorData' and 'analysis_profiling_ProfilingStatsReport'. From 'ProfilingStatsActorData', the role 'ProfilingStatsActorData' has cardinality 0..*, and from 'analysis_profiling_ProfilingStatsReport', the role 'analysis_profiling_ProfilingStatsReport' has cardinality 0..*.
+An association connects 'analysis_scheduling_FSM' and 'FSMState'. From 'analysis_scheduling_FSM', the role 'analysis_scheduling_FSM' has cardinality 0..*, and from 'FSMState', the role 'FSMState' has cardinality 0..*.
+An association connects 'FSMVar' and 'analysis_scheduling_FSM'. From 'FSMVar', the role 'FSMVar' has cardinality 0..*, and from 'analysis_scheduling_FSM', the role 'analysis_scheduling_FSM427' has cardinality 0..*.
+An association connects 'analysis_scheduling_Sequence' and 'ActorFire'. From 'analysis_scheduling_Sequence', the role 'analysis_scheduling_Sequence' has cardinality 0..*, and from 'ActorFire', the role 'ActorFire' has cardinality 0..*.
+An association connects 'FSMCondition' and 'analysis_scheduling_FSMTransition'. From 'FSMCondition', the role 'FSMCondition' has cardinality 0..*, and from 'analysis_scheduling_FSMTransition', the role 'analysis_scheduling_FSMTransition' has cardinality 0..*.
+An association connects 'analysis_scheduling_FSMTransition' and 'Sequence'. From 'analysis_scheduling_FSMTransition', the role 'analysis_scheduling_FSMTransition431' has cardinality 0..*, and from 'Sequence', the role 'Sequence' has cardinality 0..*.
+An association connects 'FSMVarUpdate' and 'analysis_scheduling_FSMState'. From 'FSMVarUpdate', the role 'FSMVarUpdate' has cardinality 0..*, and from 'analysis_scheduling_FSMState', the role 'analysis_scheduling_FSMState' has cardinality 0..*.
+An association connects 'FSMTransition' and 'analysis_scheduling_FSMState'. From 'FSMTransition', the role 'FSMTransition' has cardinality 0..*, and from 'analysis_scheduling_FSMState', the role 'analysis_scheduling_FSMState434' has cardinality 0..*.
+An association connects 'analysis_scheduling_FSMVarUpdate' and 'FSMOperation'. From 'analysis_scheduling_FSMVarUpdate', the role 'analysis_scheduling_FSMVarUpdate' has cardinality 0..*, and from 'FSMOperation', the role 'FSMOperation' has cardinality 0..*.
+An association connects 'analysis_scheduling_FSMVarUpdate' and 'FSMCondition'. From 'analysis_scheduling_FSMVarUpdate', the role 'analysis_scheduling_FSMVarUpdate437' has cardinality 0..*, and from 'FSMCondition', the role 'FSMCondition438' has cardinality 0..*.
+An association connects 'FSMCondition' and 'analysis_scheduling_FSMCombination'. From 'FSMCondition', the role 'FSMCondition440' has cardinality 0..*, and from 'analysis_scheduling_FSMCombination', the role 'analysis_scheduling_FSMCombination' has cardinality 0..*.
+An association connects 'FSMCombination' and 'analysis_scheduling_FSMCondition'. From 'FSMCombination', the role 'FSMCombination' has cardinality 0..*, and from 'analysis_scheduling_FSMCondition', the role 'analysis_scheduling_FSMCondition' has cardinality 0..*.
+An association connects 'analysis_scheduling_FSMTransitionWithState' and 'StringToIntegerMap'. From 'analysis_scheduling_FSMTransitionWithState', the role 'analysis_scheduling_FSMTransitionWithState' has cardinality 0..*, and from 'StringToIntegerMap', the role 'StringToIntegerMap443' has cardinality 0..*.
+An association connects 'MarkovPartitionScheduler' and 'analysis_scheduling_MarkovSimpleSchedulerReport'. From 'MarkovPartitionScheduler', the role 'MarkovPartitionScheduler' has cardinality 0..*, and from 'analysis_scheduling_MarkovSimpleSchedulerReport', the role 'analysis_scheduling_MarkovSimpleSchedulerReport' has cardinality 0..*.
+An association connects 'analysis_scheduling_MarkovSimpleSchedulerReport' and 'scheduling_analysis_Network'. From 'analysis_scheduling_MarkovSimpleSchedulerReport', the role 'analysis_scheduling_MarkovSimpleSchedulerReport446' has cardinality 0..*, and from 'scheduling_analysis_Network', the role 'scheduling_analysis_Network' has cardinality 0..*.
+An association connects 'scheduling_analysis_Actor' and 'analysis_scheduling_MarkovPartitionScheduler'. From 'scheduling_analysis_Actor', the role 'scheduling_analysis_Actor' has cardinality 0..*, and from 'analysis_scheduling_MarkovPartitionScheduler', the role 'analysis_scheduling_MarkovPartitionScheduler' has cardinality 0..*.
+An association connects 'analysis_scheduling_MarkovPartitionScheduler' and 'MarkovSchedulingState'. From 'analysis_scheduling_MarkovPartitionScheduler', the role 'analysis_scheduling_MarkovPartitionScheduler449' has cardinality 0..*, and from 'MarkovSchedulingState', the role 'MarkovSchedulingState' has cardinality 0..*.
+An association connects 'MarkovSchedulingTransition' and 'analysis_scheduling_MarkovPartitionScheduler'. From 'MarkovSchedulingTransition', the role 'MarkovSchedulingTransition' has cardinality 0..*, and from 'analysis_scheduling_MarkovPartitionScheduler', the role 'analysis_scheduling_MarkovPartitionScheduler451' has cardinality 0..*.
+An association connects 'scheduling_analysis_Actor' and 'analysis_scheduling_MarkovSchedulingState'. From 'scheduling_analysis_Actor', the role 'scheduling_analysis_Actor453' has cardinality 0..*, and from 'analysis_scheduling_MarkovSchedulingState', the role 'analysis_scheduling_MarkovSchedulingState' has cardinality 0..*.
+An association connects 'analysis_scheduling_MarkovSchedulingState' and 'MarkovSchedulingTransition'. From 'analysis_scheduling_MarkovSchedulingState', the role 'MarkovSchedulingTransition455' has cardinality 0..*, and from 'MarkovSchedulingTransition', the role 'scheduling' has cardinality 0..*.
+An association connects 'analysis_scheduling_MarkovSchedulingState' and 'MarkovSchedulingTransition'. From 'analysis_scheduling_MarkovSchedulingState', the role 'MarkovSchedulingTransition457' has cardinality 0..*, and from 'MarkovSchedulingTransition', the role 'scheduling458' has cardinality 0..*.
+An association connects 'MarkovSchedulingState' and 'analysis_scheduling_MarkovSchedulingTransition'. From 'MarkovSchedulingState', the role 'scheduling461' has cardinality 0..*, and from 'analysis_scheduling_MarkovSchedulingTransition', the role 'MarkovSchedulingState460' has cardinality 0..*.
+An association connects 'MarkovSchedulingState' and 'analysis_scheduling_MarkovSchedulingTransition'. From 'MarkovSchedulingState', the role 'scheduling464' has cardinality 0..*, and from 'analysis_scheduling_MarkovSchedulingTransition', the role 'MarkovSchedulingState463' has cardinality 0..*.
+An association connects 'analysis_caseoptimal_CaseOptimalScheduleReport' and 'PartitionToActorSelectionScheduleMap'. From 'analysis_caseoptimal_CaseOptimalScheduleReport', the role 'analysis_caseoptimal_CaseOptimalScheduleReport' has cardinality 0..*, and from 'PartitionToActorSelectionScheduleMap', the role 'PartitionToActorSelectionScheduleMap' has cardinality 0..*.

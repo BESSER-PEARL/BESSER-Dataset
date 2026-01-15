@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/JonathanRochelli/DSL-Compilateur-Interpreteur/fr.ut2j.m1ice.fsm/model/fsm.ecore

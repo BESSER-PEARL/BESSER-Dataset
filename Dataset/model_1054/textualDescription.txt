@@ -1,0 +1,35 @@
+The domain model 'FSM' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'FSM_EndState' represents an important domain concept.
+It does not declare any attributes.
+
+'FSM_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'FSM_State' represents an important domain concept.
+It does not declare any attributes.
+
+'FSM_StateMachine' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+'FSM_StartState' represents an important domain concept.
+It does not declare any attributes.
+
+'FSM_AbstractState' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'envs', which is of type str.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'FSM_StartState' is a specialization of 'AbstractState'.
+The class 'FSM_State' is a specialization of 'AbstractState'.
+The class 'FSM_EndState' is a specialization of 'AbstractState'.
+
+Relationships between classes are modeled using associations.
+An association connects 'FSM_StateMachine' and 'FSM_AbstractState'. From 'FSM_StateMachine', the role 'FSM_StateMachine' has cardinality 0..*, and from 'FSM_AbstractState', the role 'FSM_AbstractState' has cardinality 0..*.
+An association connects 'FSM_Transition' and 'FSM_StateMachine'. From 'FSM_Transition', the role 'FSM_Transition' has cardinality 0..*, and from 'FSM_StateMachine', the role 'FSM_StateMachine2' has cardinality 0..*.
+An association connects 'FSM_Transition' and 'FSM_AbstractState'. From 'FSM_Transition', the role 'FSM_Transition5' has cardinality 0..*, and from 'FSM_AbstractState', the role 'FSM_AbstractState4' has cardinality 0..*.
+An association connects 'FSM_AbstractState' and 'FSM_Transition'. From 'FSM_AbstractState', the role 'FSM_AbstractState7' has cardinality 0..*, and from 'FSM_Transition', the role 'FSM_Transition8' has cardinality 0..*.

@@ -1,0 +1,730 @@
+The domain model 'gbind' describes the core structural elements and their relationships within the system.
+
+The model defines 167 main class(es).
+
+'IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_OclFeature' represents an important domain concept.
+It has one attribute: 'eq', which is of type str.
+
+'gbind_simpleocl_CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_NavigationOrAttributeCall' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gbind_simpleocl_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_dsl_LocalHelper' represents an important domain concept.
+It does not declare any attributes.
+
+'LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Module' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_EqOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_SuperExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_OclAnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'Metaclass' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Import' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'ConceptMetaclass' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'OclModel' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_dsl_IntermediateClassBinding' represents an important domain concept.
+It has one attribute: 'conceptReferenceName', which is of type str.
+
+'LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCall' represents an important domain concept.
+It does not declare any attributes.
+
+'MapExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_dsl_HelperParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_TupleTypeAttribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gbind_simpleocl_LocalVariable' represents an important domain concept.
+It has one attribute: 'eq', which is of type str.
+
+'gbind_dsl_OclFeatureBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_OclModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_BraceExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_MapElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OclInstanceModel' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_RelOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_MapExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_EnvType' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_gbind_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_RealExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type str.
+
+'StaticPropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_dsl_BaseHelper' represents an important domain concept.
+It has one attribute: 'feature', which is of type str.
+
+'gbind_dsl_MetamodelDeclaration' represents an important domain concept.
+It has one attribute: 'metamodelURI', which is of type str.
+
+'gbind_dsl_ConcreteReferencDeclaringVar' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_OclFeatureDefinition' represents an important domain concept.
+It has one attribute: 'static', which is of type str.
+
+'MapElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_EnumLiteralExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Iterator' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_OperationCall' represents an important domain concept.
+It has one attribute: 'operationName', which is of type str.
+
+'gbind_simpleocl_SelfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_dsl_VirtualMetaclass' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_StaticPropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_OclContextDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'ModuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_AddOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_dsl_VirtualReference' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_LambdaCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_dsl_ConceptBinding' represents an important domain concept.
+It has one attribute: 'debugName', which is of type str.
+
+'TuplePart' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_OclUndefinedExp' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_IntegerExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_dsl_VirtualClassBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'LocalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_OclMetamodel' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'gbind_simpleocl_TupleExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ConceptFeatureRef' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_SequenceExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_EnvExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_OclInstanceModel' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_NotOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_MapType' represents an important domain concept.
+It does not declare any attributes.
+
+'BindingOptions' represents an important domain concept.
+It does not declare any attributes.
+
+'HelperParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'OclFeatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'VirtualMetaclass' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_dsl_BaseFeatureBinding' represents an important domain concept.
+It has one attribute: 'conceptFeature', which is of type str.
+
+'gbind_simpleocl_StringExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_dsl_ConceptFeatureRef' represents an important domain concept.
+It has one attribute: 'featureName', which is of type str.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_Iterator' represents an important domain concept.
+It does not declare any attributes.
+
+'MapType' represents an important domain concept.
+It does not declare any attributes.
+
+'OclContextDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_OclModel' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_LocatedElement' represents an important domain concept.
+It has the following attributes: 'column', which is of type str; 'charEnd', which is of type str; 'line', which is of type str; 'charStart', which is of type str.
+
+'gbind_simpleocl_CollectionOperationCall' represents an important domain concept.
+It does not declare any attributes.
+
+'OclFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_StaticPropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_StaticOperationCall' represents an important domain concept.
+It has one attribute: 'operationName', which is of type str.
+
+'gbind_simpleocl_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_IteratorExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'LambdaType' represents an important domain concept.
+It does not declare any attributes.
+
+'MetamodelDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_dsl_VirtualFeature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gbind_dsl_ConceptMetaclass' represents an important domain concept.
+It does not declare any attributes.
+
+'ConceptBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_StaticNavigationOrAttributeCall' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gbind_simpleocl_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'gbind_simpleocl_SetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_dsl_Metaclass' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gbind_dsl_ConceptHelper' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_MulOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'VirtualAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseFeatureBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_OperatorCallExp' represents an important domain concept.
+It has one attribute: 'operationName', which is of type str.
+
+'OclModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_dsl_VirtualAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseHelper' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_ModuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_PropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_BagExp' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_OrderedSetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ConcreteReferencDeclaringVar' represents an important domain concept.
+It does not declare any attributes.
+
+'StaticPropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_OclType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_dsl_BindingModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gbind_dsl_BindingOptions' represents an important domain concept.
+It has one attribute: 'enableClassMerge', which is of type bool.
+
+'VirtualReference' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_Import' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_IntOpCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OperatorCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_BooleanExp' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type str.
+
+'BindingModel' represents an important domain concept.
+It does not declare any attributes.
+
+'OclType' represents an important domain concept.
+It does not declare any attributes.
+
+'VirtualFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_LambdaType' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleTypeAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OclMetamodel' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_OclModelElementExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gbind_simpleocl_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'ConcreteMetaclass' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_dsl_RenamingFeatureBinding' represents an important domain concept.
+It has one attribute: 'concreteFeature', which is of type str.
+
+'gbind_simpleocl_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_dsl_ClassBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_simpleocl_TuplePart' represents an important domain concept.
+It does not declare any attributes.
+
+'gbind_dsl_ConcreteMetaclass' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'gbind_simpleocl_NamedElement' is a specialization of 'LocatedElement'.
+The class 'gbind_simpleocl_Module' is a specialization of 'NamedElement'.
+The class 'gbind_simpleocl_ModuleElement' is a specialization of 'LocatedElement'.
+The class 'gbind_simpleocl_Import' is a specialization of 'NamedElement'.
+The class 'gbind_simpleocl_OclExpression' is a specialization of 'LocatedElement'.
+The class 'gbind_simpleocl_VariableExp' is a specialization of 'OclExpression'.
+The class 'gbind_simpleocl_SuperExp' is a specialization of 'OclExpression'.
+The class 'gbind_simpleocl_SelfExp' is a specialization of 'OclExpression'.
+The class 'gbind_simpleocl_EnvExp' is a specialization of 'OclExpression'.
+The class 'gbind_simpleocl_PrimitiveExp' is a specialization of 'OclExpression'.
+The class 'gbind_simpleocl_StringExp' is a specialization of 'PrimitiveExp'.
+The class 'gbind_simpleocl_BooleanExp' is a specialization of 'PrimitiveExp'.
+The class 'gbind_simpleocl_NumericExp' is a specialization of 'PrimitiveExp'.
+The class 'gbind_simpleocl_RealExp' is a specialization of 'NumericExp'.
+The class 'gbind_simpleocl_IntegerExp' is a specialization of 'NumericExp'.
+The class 'gbind_simpleocl_CollectionExp' is a specialization of 'OclExpression'.
+The class 'gbind_simpleocl_BagExp' is a specialization of 'CollectionExp'.
+The class 'gbind_simpleocl_OrderedSetExp' is a specialization of 'CollectionExp'.
+The class 'gbind_simpleocl_SequenceExp' is a specialization of 'CollectionExp'.
+The class 'gbind_simpleocl_SetExp' is a specialization of 'CollectionExp'.
+The class 'gbind_simpleocl_TupleExp' is a specialization of 'OclExpression'.
+The class 'gbind_simpleocl_TuplePart' is a specialization of 'LocalVariable'.
+The class 'gbind_simpleocl_MapExp' is a specialization of 'OclExpression'.
+The class 'gbind_simpleocl_MapElement' is a specialization of 'LocatedElement'.
+The class 'gbind_simpleocl_EnumLiteralExp' is a specialization of 'OclExpression'.
+The class 'gbind_simpleocl_OclUndefinedExp' is a specialization of 'OclExpression'.
+The class 'gbind_simpleocl_StaticPropertyCallExp' is a specialization of 'OclExpression'.
+The class 'gbind_simpleocl_StaticPropertyCall' is a specialization of 'LocatedElement'.
+The class 'gbind_simpleocl_StaticNavigationOrAttributeCall' is a specialization of 'StaticPropertyCall'.
+The class 'gbind_simpleocl_StaticOperationCall' is a specialization of 'StaticPropertyCall'.
+The class 'gbind_simpleocl_PropertyCallExp' is a specialization of 'OclExpression'.
+The class 'gbind_simpleocl_PropertyCall' is a specialization of 'LocatedElement'.
+The class 'gbind_simpleocl_NavigationOrAttributeCall' is a specialization of 'PropertyCall'.
+The class 'gbind_simpleocl_OperationCall' is a specialization of 'PropertyCall'.
+The class 'gbind_simpleocl_OperatorCallExp' is a specialization of 'OclExpression'.
+The class 'gbind_simpleocl_NotOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'gbind_simpleocl_RelOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'gbind_simpleocl_EqOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'gbind_simpleocl_AddOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'gbind_simpleocl_IntOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'gbind_simpleocl_MulOpCallExp' is a specialization of 'OperatorCallExp'.
+The class 'gbind_simpleocl_LambdaCallExp' is a specialization of 'VariableExp'.
+The class 'gbind_simpleocl_BraceExp' is a specialization of 'OclExpression'.
+The class 'gbind_simpleocl_CollectionOperationCall' is a specialization of 'OperationCall'.
+The class 'gbind_simpleocl_LoopExp' is a specialization of 'PropertyCall'.
+The class 'gbind_simpleocl_IterateExp' is a specialization of 'LoopExp'.
+The class 'gbind_simpleocl_IteratorExp' is a specialization of 'LoopExp'.
+The class 'gbind_simpleocl_LetExp' is a specialization of 'OclExpression'.
+The class 'gbind_simpleocl_IfExp' is a specialization of 'OclExpression'.
+The class 'gbind_simpleocl_VariableDeclaration' is a specialization of 'LocatedElement'.
+The class 'gbind_simpleocl_LocalVariable' is a specialization of 'VariableDeclaration'.
+The class 'gbind_simpleocl_Iterator' is a specialization of 'VariableDeclaration'.
+The class 'gbind_simpleocl_Parameter' is a specialization of 'VariableDeclaration'.
+The class 'gbind_simpleocl_CollectionType' is a specialization of 'OclType'.
+The class 'gbind_simpleocl_OclType' is a specialization of 'LocatedElement'.
+The class 'gbind_simpleocl_OclModelElementExp' is a specialization of 'OclExpression'.
+The class 'gbind_simpleocl_Primitive' is a specialization of 'OclType'.
+The class 'gbind_simpleocl_StringType' is a specialization of 'Primitive'.
+The class 'gbind_simpleocl_BooleanType' is a specialization of 'Primitive'.
+The class 'gbind_simpleocl_NumericType' is a specialization of 'Primitive'.
+The class 'gbind_simpleocl_IntegerType' is a specialization of 'NumericType'.
+The class 'gbind_simpleocl_RealType' is a specialization of 'NumericType'.
+The class 'gbind_simpleocl_BagType' is a specialization of 'CollectionType'.
+The class 'gbind_simpleocl_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'gbind_simpleocl_SequenceType' is a specialization of 'CollectionType'.
+The class 'gbind_simpleocl_SetType' is a specialization of 'CollectionType'.
+The class 'gbind_simpleocl_OclAnyType' is a specialization of 'OclType'.
+The class 'gbind_simpleocl_TupleType' is a specialization of 'OclType'.
+The class 'gbind_simpleocl_TupleTypeAttribute' is a specialization of 'LocatedElement'.
+The class 'gbind_simpleocl_OclModelElement' is a specialization of 'OclType'.
+The class 'gbind_simpleocl_MapType' is a specialization of 'OclType'.
+The class 'gbind_simpleocl_LambdaType' is a specialization of 'OclType'.
+The class 'gbind_simpleocl_EnvType' is a specialization of 'OclType'.
+The class 'gbind_simpleocl_OclFeatureDefinition' is a specialization of 'ModuleElement'.
+The class 'gbind_simpleocl_OclContextDefinition' is a specialization of 'LocatedElement'.
+The class 'gbind_simpleocl_OclFeature' is a specialization of 'NamedElement'.
+The class 'gbind_simpleocl_Attribute' is a specialization of 'OclFeature'.
+The class 'gbind_simpleocl_Operation' is a specialization of 'OclFeature'.
+The class 'gbind_simpleocl_OclModel' is a specialization of 'NamedElement'.
+The class 'gbind_simpleocl_OclMetamodel' is a specialization of 'OclModel'.
+The class 'gbind_simpleocl_OclInstanceModel' is a specialization of 'OclModel'.
+The class 'gbind_dsl_MetamodelDeclaration' is a specialization of 'OclMetamodel'.
+The class 'gbind_dsl_ConceptMetaclass' is a specialization of 'Metaclass'.
+The class 'gbind_dsl_ConcreteMetaclass' is a specialization of 'Metaclass'.
+The class 'gbind_dsl_ClassBinding' is a specialization of 'ConceptBinding'.
+The class 'gbind_dsl_IntermediateClassBinding' is a specialization of 'ConceptBinding'.
+The class 'gbind_dsl_ConcreteReferencDeclaringVar' is a specialization of 'VariableDeclaration'.
+The class 'gbind_dsl_VirtualMetaclass' is a specialization of 'Metaclass'.
+The class 'gbind_dsl_VirtualReference' is a specialization of 'VirtualFeature'.
+The class 'gbind_dsl_VirtualAttribute' is a specialization of 'VirtualFeature'.
+The class 'gbind_dsl_VirtualClassBinding' is a specialization of 'ConceptBinding'.
+The class 'gbind_dsl_BaseFeatureBinding' is a specialization of 'ConceptBinding'.
+The class 'gbind_dsl_RenamingFeatureBinding' is a specialization of 'BaseFeatureBinding'.
+The class 'gbind_dsl_OclFeatureBinding' is a specialization of 'BaseFeatureBinding'.
+The class 'gbind_dsl_ConceptHelper' is a specialization of 'BaseHelper'.
+The class 'gbind_dsl_LocalHelper' is a specialization of 'BaseHelper'.
+The class 'gbind_dsl_HelperParameter' is a specialization of 'VariableDeclaration'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gbind_simpleocl_Module' and 'OclMetamodel'. From 'gbind_simpleocl_Module', the role 'gbind_simpleocl_Module' has cardinality 0..*, and from 'OclMetamodel', the role 'OclMetamodel' has cardinality 0..*.
+An association connects 'Import' and 'gbind_simpleocl_Module'. From 'Import', the role 'simpleocl' has cardinality 0..*, and from 'gbind_simpleocl_Module', the role 'Import' has cardinality 0..*.
+An association connects 'gbind_simpleocl_Module' and 'ModuleElement'. From 'gbind_simpleocl_Module', the role 'ModuleElement' has cardinality 0..*, and from 'ModuleElement', the role 'simpleocl3' has cardinality 0..*.
+An association connects 'gbind_simpleocl_ModuleElement' and 'Module'. From 'gbind_simpleocl_ModuleElement', the role 'Module' has cardinality 0..*, and from 'Module', the role 'simpleocl5' has cardinality 0..*.
+An association connects 'gbind_simpleocl_Import' and 'Module'. From 'gbind_simpleocl_Import', the role 'Module7' has cardinality 0..*, and from 'Module', the role 'simpleocl8' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclExpression' and 'OclType'. From 'gbind_simpleocl_OclExpression', the role 'OclType' has cardinality 0..*, and from 'OclType', the role 'simpleocl10' has cardinality 0..*.
+An association connects 'IfExp' and 'gbind_simpleocl_OclExpression'. From 'IfExp', the role 'simpleocl12' has cardinality 0..*, and from 'gbind_simpleocl_OclExpression', the role 'IfExp' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclExpression' and 'PropertyCallExp'. From 'gbind_simpleocl_OclExpression', the role 'PropertyCallExp' has cardinality 0..*, and from 'PropertyCallExp', the role 'simpleocl14' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclExpression' and 'CollectionExp'. From 'gbind_simpleocl_OclExpression', the role 'CollectionExp' has cardinality 0..*, and from 'CollectionExp', the role 'simpleocl16' has cardinality 0..*.
+An association connects 'LetExp' and 'gbind_simpleocl_OclExpression'. From 'LetExp', the role 'simpleocl18' has cardinality 0..*, and from 'gbind_simpleocl_OclExpression', the role 'LetExp' has cardinality 0..*.
+An association connects 'LoopExp' and 'gbind_simpleocl_OclExpression'. From 'LoopExp', the role 'simpleocl20' has cardinality 0..*, and from 'gbind_simpleocl_OclExpression', the role 'LoopExp' has cardinality 0..*.
+An association connects 'OperationCall' and 'gbind_simpleocl_OclExpression'. From 'OperationCall', the role 'simpleocl22' has cardinality 0..*, and from 'gbind_simpleocl_OclExpression', the role 'OperationCall' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclExpression' and 'LocalVariable'. From 'gbind_simpleocl_OclExpression', the role 'LocalVariable' has cardinality 0..*, and from 'LocalVariable', the role 'simpleocl24' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclExpression' and 'IfExp'. From 'gbind_simpleocl_OclExpression', the role 'IfExp26' has cardinality 0..*, and from 'IfExp', the role 'simpleocl27' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclExpression' and 'Operation'. From 'gbind_simpleocl_OclExpression', the role 'Operation' has cardinality 0..*, and from 'Operation', the role 'simpleocl29' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclExpression' and 'IfExp'. From 'gbind_simpleocl_OclExpression', the role 'IfExp31' has cardinality 0..*, and from 'IfExp', the role 'simpleocl32' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclExpression' and 'Attribute'. From 'gbind_simpleocl_OclExpression', the role 'Attribute' has cardinality 0..*, and from 'Attribute', the role 'simpleocl34' has cardinality 0..*.
+An association connects 'OperatorCallExp' and 'gbind_simpleocl_OclExpression'. From 'OperatorCallExp', the role 'simpleocl36' has cardinality 0..*, and from 'gbind_simpleocl_OclExpression', the role 'OperatorCallExp' has cardinality 0..*.
+An association connects 'VariableDeclaration' and 'gbind_simpleocl_VariableExp'. From 'VariableDeclaration', the role 'simpleocl38' has cardinality 0..*, and from 'gbind_simpleocl_VariableExp', the role 'VariableDeclaration' has cardinality 0..*.
+An association connects 'OclExpression' and 'gbind_simpleocl_CollectionExp'. From 'OclExpression', the role 'simpleocl40' has cardinality 0..*, and from 'gbind_simpleocl_CollectionExp', the role 'OclExpression' has cardinality 0..*.
+An association connects 'gbind_simpleocl_TupleExp' and 'TuplePart'. From 'gbind_simpleocl_TupleExp', the role 'TuplePart' has cardinality 0..*, and from 'TuplePart', the role 'simpleocl42' has cardinality 0..*.
+An association connects 'TupleExp' and 'gbind_simpleocl_TuplePart'. From 'TupleExp', the role 'simpleocl44' has cardinality 0..*, and from 'gbind_simpleocl_TuplePart', the role 'TupleExp' has cardinality 0..*.
+An association connects 'MapElement' and 'gbind_simpleocl_MapExp'. From 'MapElement', the role 'simpleocl46' has cardinality 0..*, and from 'gbind_simpleocl_MapExp', the role 'MapElement' has cardinality 0..*.
+An association connects 'MapExp' and 'gbind_simpleocl_MapElement'. From 'MapExp', the role 'simpleocl48' has cardinality 0..*, and from 'gbind_simpleocl_MapElement', the role 'MapExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'gbind_simpleocl_MapElement'. From 'OclExpression', the role 'OclExpression50' has cardinality 0..*, and from 'gbind_simpleocl_MapElement', the role 'gbind_simpleocl_MapElement' has cardinality 0..*.
+An association connects 'gbind_simpleocl_MapElement' and 'OclExpression'. From 'gbind_simpleocl_MapElement', the role 'gbind_simpleocl_MapElement52' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression53' has cardinality 0..*.
+An association connects 'OclType' and 'gbind_simpleocl_StaticPropertyCallExp'. From 'OclType', the role 'simpleocl56' has cardinality 0..*, and from 'gbind_simpleocl_StaticPropertyCallExp', the role 'OclType55' has cardinality 0..*.
+An association connects 'StaticPropertyCall' and 'gbind_simpleocl_StaticPropertyCallExp'. From 'StaticPropertyCall', the role 'simpleocl58' has cardinality 0..*, and from 'gbind_simpleocl_StaticPropertyCallExp', the role 'StaticPropertyCall' has cardinality 0..*.
+An association connects 'StaticPropertyCallExp' and 'gbind_simpleocl_StaticPropertyCall'. From 'StaticPropertyCallExp', the role 'simpleocl60' has cardinality 0..*, and from 'gbind_simpleocl_StaticPropertyCall', the role 'StaticPropertyCallExp' has cardinality 0..*.
+An association connects 'gbind_simpleocl_StaticOperationCall' and 'OclExpression'. From 'gbind_simpleocl_StaticOperationCall', the role 'gbind_simpleocl_StaticOperationCall' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression62' has cardinality 0..*.
+An association connects 'PropertyCall' and 'gbind_simpleocl_PropertyCallExp'. From 'PropertyCall', the role 'simpleocl64' has cardinality 0..*, and from 'gbind_simpleocl_PropertyCallExp', the role 'PropertyCall' has cardinality 0..*.
+An association connects 'OclExpression' and 'gbind_simpleocl_PropertyCallExp'. From 'OclExpression', the role 'simpleocl67' has cardinality 0..*, and from 'gbind_simpleocl_PropertyCallExp', the role 'OclExpression66' has cardinality 0..*.
+An association connects 'gbind_simpleocl_PropertyCall' and 'PropertyCallExp'. From 'gbind_simpleocl_PropertyCall', the role 'PropertyCallExp69' has cardinality 0..*, and from 'PropertyCallExp', the role 'simpleocl70' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OperationCall' and 'OclExpression'. From 'gbind_simpleocl_OperationCall', the role 'OclExpression72' has cardinality 0..*, and from 'OclExpression', the role 'simpleocl73' has cardinality 0..*.
+An association connects 'OclExpression' and 'gbind_simpleocl_OperatorCallExp'. From 'OclExpression', the role 'OclExpression75' has cardinality 0..*, and from 'gbind_simpleocl_OperatorCallExp', the role 'gbind_simpleocl_OperatorCallExp' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OperatorCallExp' and 'OclExpression'. From 'gbind_simpleocl_OperatorCallExp', the role 'OclExpression77' has cardinality 0..*, and from 'OclExpression', the role 'simpleocl78' has cardinality 0..*.
+An association connects 'OclExpression' and 'gbind_simpleocl_LambdaCallExp'. From 'OclExpression', the role 'OclExpression80' has cardinality 0..*, and from 'gbind_simpleocl_LambdaCallExp', the role 'gbind_simpleocl_LambdaCallExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'gbind_simpleocl_BraceExp'. From 'OclExpression', the role 'OclExpression82' has cardinality 0..*, and from 'gbind_simpleocl_BraceExp', the role 'gbind_simpleocl_BraceExp' has cardinality 0..*.
+An association connects 'gbind_simpleocl_LoopExp' and 'OclExpression'. From 'gbind_simpleocl_LoopExp', the role 'OclExpression84' has cardinality 0..*, and from 'OclExpression', the role 'simpleocl85' has cardinality 0..*.
+An association connects 'Iterator' and 'gbind_simpleocl_LoopExp'. From 'Iterator', the role 'simpleocl87' has cardinality 0..*, and from 'gbind_simpleocl_LoopExp', the role 'Iterator' has cardinality 0..*.
+An association connects 'gbind_simpleocl_IterateExp' and 'LocalVariable'. From 'gbind_simpleocl_IterateExp', the role 'LocalVariable89' has cardinality 0..*, and from 'LocalVariable', the role 'simpleocl90' has cardinality 0..*.
+An association connects 'gbind_simpleocl_LetExp' and 'LocalVariable'. From 'gbind_simpleocl_LetExp', the role 'LocalVariable92' has cardinality 0..*, and from 'LocalVariable', the role 'simpleocl93' has cardinality 0..*.
+An association connects 'gbind_simpleocl_LetExp' and 'OclExpression'. From 'gbind_simpleocl_LetExp', the role 'OclExpression95' has cardinality 0..*, and from 'OclExpression', the role 'simpleocl96' has cardinality 0..*.
+An association connects 'OclExpression' and 'gbind_simpleocl_IfExp'. From 'OclExpression', the role 'simpleocl99' has cardinality 0..*, and from 'gbind_simpleocl_IfExp', the role 'OclExpression98' has cardinality 0..*.
+An association connects 'gbind_simpleocl_IfExp' and 'OclExpression'. From 'gbind_simpleocl_IfExp', the role 'OclExpression101' has cardinality 0..*, and from 'OclExpression', the role 'simpleocl102' has cardinality 0..*.
+An association connects 'gbind_simpleocl_IfExp' and 'OclExpression'. From 'gbind_simpleocl_IfExp', the role 'OclExpression104' has cardinality 0..*, and from 'OclExpression', the role 'simpleocl105' has cardinality 0..*.
+An association connects 'gbind_simpleocl_VariableDeclaration' and 'OclType'. From 'gbind_simpleocl_VariableDeclaration', the role 'OclType107' has cardinality 0..*, and from 'OclType', the role 'simpleocl108' has cardinality 0..*.
+An association connects 'VariableExp' and 'gbind_simpleocl_VariableDeclaration'. From 'VariableExp', the role 'simpleocl110' has cardinality 0..*, and from 'gbind_simpleocl_VariableDeclaration', the role 'VariableExp' has cardinality 0..*.
+An association connects 'gbind_simpleocl_LocalVariable' and 'LetExp'. From 'gbind_simpleocl_LocalVariable', the role 'LetExp112' has cardinality 0..*, and from 'LetExp', the role 'simpleocl113' has cardinality 0..*.
+An association connects 'gbind_simpleocl_LocalVariable' and 'OclExpression'. From 'gbind_simpleocl_LocalVariable', the role 'OclExpression115' has cardinality 0..*, and from 'OclExpression', the role 'simpleocl116' has cardinality 0..*.
+An association connects 'gbind_simpleocl_LocalVariable' and 'IterateExp'. From 'gbind_simpleocl_LocalVariable', the role 'IterateExp' has cardinality 0..*, and from 'IterateExp', the role 'simpleocl118' has cardinality 0..*.
+An association connects 'LoopExp' and 'gbind_simpleocl_Iterator'. From 'LoopExp', the role 'simpleocl121' has cardinality 0..*, and from 'gbind_simpleocl_Iterator', the role 'LoopExp120' has cardinality 0..*.
+An association connects 'Operation' and 'gbind_simpleocl_Parameter'. From 'Operation', the role 'simpleocl124' has cardinality 0..*, and from 'gbind_simpleocl_Parameter', the role 'Operation123' has cardinality 0..*.
+An association connects 'OclType' and 'gbind_simpleocl_CollectionType'. From 'OclType', the role 'simpleocl127' has cardinality 0..*, and from 'gbind_simpleocl_CollectionType', the role 'OclType126' has cardinality 0..*.
+An association connects 'OclContextDefinition' and 'gbind_simpleocl_OclType'. From 'OclContextDefinition', the role 'simpleocl129' has cardinality 0..*, and from 'gbind_simpleocl_OclType', the role 'OclContextDefinition' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclType' and 'OclExpression'. From 'gbind_simpleocl_OclType', the role 'OclExpression131' has cardinality 0..*, and from 'OclExpression', the role 'simpleocl132' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclType' and 'Operation'. From 'gbind_simpleocl_OclType', the role 'Operation134' has cardinality 0..*, and from 'Operation', the role 'simpleocl135' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclType' and 'MapType'. From 'gbind_simpleocl_OclType', the role 'MapType' has cardinality 0..*, and from 'MapType', the role 'simpleocl137' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclType' and 'Attribute'. From 'gbind_simpleocl_OclType', the role 'Attribute139' has cardinality 0..*, and from 'Attribute', the role 'simpleocl140' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclType' and 'MapType'. From 'gbind_simpleocl_OclType', the role 'MapType142' has cardinality 0..*, and from 'MapType', the role 'simpleocl143' has cardinality 0..*.
+An association connects 'CollectionType' and 'gbind_simpleocl_OclType'. From 'CollectionType', the role 'simpleocl145' has cardinality 0..*, and from 'gbind_simpleocl_OclType', the role 'CollectionType' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclType' and 'TupleTypeAttribute'. From 'gbind_simpleocl_OclType', the role 'TupleTypeAttribute' has cardinality 0..*, and from 'TupleTypeAttribute', the role 'simpleocl147' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclType' and 'VariableDeclaration'. From 'gbind_simpleocl_OclType', the role 'VariableDeclaration149' has cardinality 0..*, and from 'VariableDeclaration', the role 'simpleocl150' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclType' and 'LambdaType'. From 'gbind_simpleocl_OclType', the role 'LambdaType' has cardinality 0..*, and from 'LambdaType', the role 'simpleocl152' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclType' and 'LambdaType'. From 'gbind_simpleocl_OclType', the role 'LambdaType154' has cardinality 0..*, and from 'LambdaType', the role 'simpleocl155' has cardinality 0..*.
+An association connects 'StaticPropertyCallExp' and 'gbind_simpleocl_OclType'. From 'StaticPropertyCallExp', the role 'simpleocl158' has cardinality 0..*, and from 'gbind_simpleocl_OclType', the role 'StaticPropertyCallExp157' has cardinality 0..*.
+An association connects 'OclModel' and 'gbind_simpleocl_OclModelElementExp'. From 'OclModel', the role 'OclModel' has cardinality 0..*, and from 'gbind_simpleocl_OclModelElementExp', the role 'gbind_simpleocl_OclModelElementExp' has cardinality 0..*.
+An association connects 'TupleTypeAttribute' and 'gbind_simpleocl_TupleType'. From 'TupleTypeAttribute', the role 'simpleocl162' has cardinality 0..*, and from 'gbind_simpleocl_TupleType', the role 'TupleTypeAttribute161' has cardinality 0..*.
+An association connects 'OclType' and 'gbind_simpleocl_TupleTypeAttribute'. From 'OclType', the role 'simpleocl165' has cardinality 0..*, and from 'gbind_simpleocl_TupleTypeAttribute', the role 'OclType164' has cardinality 0..*.
+An association connects 'gbind_simpleocl_TupleTypeAttribute' and 'TupleType'. From 'gbind_simpleocl_TupleTypeAttribute', the role 'TupleType' has cardinality 0..*, and from 'TupleType', the role 'simpleocl167' has cardinality 0..*.
+An association connects 'OclModel' and 'gbind_simpleocl_OclModelElement'. From 'OclModel', the role 'simpleocl170' has cardinality 0..*, and from 'gbind_simpleocl_OclModelElement', the role 'OclModel169' has cardinality 0..*.
+An association connects 'gbind_simpleocl_MapType' and 'OclType'. From 'gbind_simpleocl_MapType', the role 'OclType172' has cardinality 0..*, and from 'OclType', the role 'simpleocl173' has cardinality 0..*.
+An association connects 'OclType' and 'gbind_simpleocl_MapType'. From 'OclType', the role 'simpleocl176' has cardinality 0..*, and from 'gbind_simpleocl_MapType', the role 'OclType175' has cardinality 0..*.
+An association connects 'OclType' and 'gbind_simpleocl_LambdaType'. From 'OclType', the role 'simpleocl179' has cardinality 0..*, and from 'gbind_simpleocl_LambdaType', the role 'OclType178' has cardinality 0..*.
+An association connects 'OclType' and 'gbind_simpleocl_LambdaType'. From 'OclType', the role 'simpleocl182' has cardinality 0..*, and from 'gbind_simpleocl_LambdaType', the role 'OclType181' has cardinality 0..*.
+An association connects 'OclFeature' and 'gbind_simpleocl_OclFeatureDefinition'. From 'OclFeature', the role 'simpleocl184' has cardinality 0..*, and from 'gbind_simpleocl_OclFeatureDefinition', the role 'OclFeature' has cardinality 0..*.
+An association connects 'OclContextDefinition' and 'gbind_simpleocl_OclFeatureDefinition'. From 'OclContextDefinition', the role 'simpleocl187' has cardinality 0..*, and from 'gbind_simpleocl_OclFeatureDefinition', the role 'OclContextDefinition186' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclContextDefinition' and 'OclFeatureDefinition'. From 'gbind_simpleocl_OclContextDefinition', the role 'OclFeatureDefinition' has cardinality 0..*, and from 'OclFeatureDefinition', the role 'simpleocl189' has cardinality 0..*.
+An association connects 'OclType' and 'gbind_simpleocl_OclContextDefinition'. From 'OclType', the role 'simpleocl192' has cardinality 0..*, and from 'gbind_simpleocl_OclContextDefinition', the role 'OclType191' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclFeature' and 'OclFeatureDefinition'. From 'gbind_simpleocl_OclFeature', the role 'OclFeatureDefinition194' has cardinality 0..*, and from 'OclFeatureDefinition', the role 'simpleocl195' has cardinality 0..*.
+An association connects 'gbind_simpleocl_Attribute' and 'OclExpression'. From 'gbind_simpleocl_Attribute', the role 'OclExpression197' has cardinality 0..*, and from 'OclExpression', the role 'simpleocl198' has cardinality 0..*.
+An association connects 'gbind_simpleocl_Attribute' and 'OclType'. From 'gbind_simpleocl_Attribute', the role 'OclType200' has cardinality 0..*, and from 'OclType', the role 'simpleocl201' has cardinality 0..*.
+An association connects 'gbind_simpleocl_Operation' and 'Parameter'. From 'gbind_simpleocl_Operation', the role 'Parameter' has cardinality 0..*, and from 'Parameter', the role 'simpleocl203' has cardinality 0..*.
+An association connects 'gbind_simpleocl_Operation' and 'OclType'. From 'gbind_simpleocl_Operation', the role 'OclType205' has cardinality 0..*, and from 'OclType', the role 'simpleocl206' has cardinality 0..*.
+An association connects 'gbind_simpleocl_Operation' and 'OclExpression'. From 'gbind_simpleocl_Operation', the role 'OclExpression208' has cardinality 0..*, and from 'OclExpression', the role 'simpleocl209' has cardinality 0..*.
+An association connects 'OclModelElement' and 'gbind_simpleocl_OclModel'. From 'OclModelElement', the role 'simpleocl211' has cardinality 0..*, and from 'gbind_simpleocl_OclModel', the role 'OclModelElement' has cardinality 0..*.
+An association connects 'OclInstanceModel' and 'gbind_simpleocl_OclMetamodel'. From 'OclInstanceModel', the role 'simpleocl213' has cardinality 0..*, and from 'gbind_simpleocl_OclMetamodel', the role 'OclInstanceModel' has cardinality 0..*.
+An association connects 'gbind_simpleocl_OclInstanceModel' and 'OclMetamodel'. From 'gbind_simpleocl_OclInstanceModel', the role 'OclMetamodel215' has cardinality 0..*, and from 'OclMetamodel', the role 'simpleocl216' has cardinality 0..*.
+An association connects 'gbind_dsl_BindingModel' and 'ConceptBinding'. From 'gbind_dsl_BindingModel', the role 'ConceptBinding' has cardinality 0..*, and from 'ConceptBinding', the role 'dsl' has cardinality 0..*.
+An association connects 'gbind_dsl_BindingModel' and 'BaseHelper'. From 'gbind_dsl_BindingModel', the role 'BaseHelper' has cardinality 0..*, and from 'BaseHelper', the role 'dsl219' has cardinality 0..*.
+An association connects 'ConceptMetaclass' and 'gbind_dsl_BindingModel'. From 'ConceptMetaclass', the role 'ConceptMetaclass' has cardinality 0..*, and from 'gbind_dsl_BindingModel', the role 'gbind_dsl_BindingModel' has cardinality 0..*.
+An association connects 'ConcreteMetaclass' and 'gbind_dsl_BindingModel'. From 'ConcreteMetaclass', the role 'ConcreteMetaclass' has cardinality 0..*, and from 'gbind_dsl_BindingModel', the role 'gbind_dsl_BindingModel222' has cardinality 0..*.
+An association connects 'VirtualMetaclass' and 'gbind_dsl_BindingModel'. From 'VirtualMetaclass', the role 'VirtualMetaclass' has cardinality 0..*, and from 'gbind_dsl_BindingModel', the role 'gbind_dsl_BindingModel224' has cardinality 0..*.
+An association connects 'gbind_dsl_BindingModel' and 'MetamodelDeclaration'. From 'gbind_dsl_BindingModel', the role 'gbind_dsl_BindingModel226' has cardinality 0..*, and from 'MetamodelDeclaration', the role 'MetamodelDeclaration' has cardinality 0..*.
+An association connects 'MetamodelDeclaration' and 'gbind_dsl_BindingModel'. From 'MetamodelDeclaration', the role 'MetamodelDeclaration229' has cardinality 0..*, and from 'gbind_dsl_BindingModel', the role 'gbind_dsl_BindingModel228' has cardinality 0..*.
+An association connects 'BindingOptions' and 'gbind_dsl_BindingModel'. From 'BindingOptions', the role 'BindingOptions' has cardinality 0..*, and from 'gbind_dsl_BindingModel', the role 'gbind_dsl_BindingModel231' has cardinality 0..*.
+An association connects 'dsl_gbind_EClass' and 'gbind_dsl_Metaclass'. From 'dsl_gbind_EClass', the role 'dsl_gbind_EClass' has cardinality 0..*, and from 'gbind_dsl_Metaclass', the role 'gbind_dsl_Metaclass' has cardinality 0..*.
+An association connects 'BindingModel' and 'gbind_dsl_ConceptBinding'. From 'BindingModel', the role 'dsl234' has cardinality 0..*, and from 'gbind_dsl_ConceptBinding', the role 'BindingModel' has cardinality 0..*.
+An association connects 'gbind_dsl_ClassBinding' and 'ConceptMetaclass'. From 'gbind_dsl_ClassBinding', the role 'gbind_dsl_ClassBinding' has cardinality 0..*, and from 'ConceptMetaclass', the role 'ConceptMetaclass236' has cardinality 0..*.
+An association connects 'ConcreteMetaclass' and 'gbind_dsl_ClassBinding'. From 'ConcreteMetaclass', the role 'ConcreteMetaclass239' has cardinality 0..*, and from 'gbind_dsl_ClassBinding', the role 'gbind_dsl_ClassBinding238' has cardinality 0..*.
+An association connects 'gbind_dsl_ClassBinding' and 'OclExpression'. From 'gbind_dsl_ClassBinding', the role 'gbind_dsl_ClassBinding241' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression242' has cardinality 0..*.
+An association connects 'ConceptMetaclass' and 'gbind_dsl_IntermediateClassBinding'. From 'ConceptMetaclass', the role 'ConceptMetaclass244' has cardinality 0..*, and from 'gbind_dsl_IntermediateClassBinding', the role 'gbind_dsl_IntermediateClassBinding' has cardinality 0..*.
+An association connects 'gbind_dsl_IntermediateClassBinding' and 'ConcreteMetaclass'. From 'gbind_dsl_IntermediateClassBinding', the role 'gbind_dsl_IntermediateClassBinding246' has cardinality 0..*, and from 'ConcreteMetaclass', the role 'ConcreteMetaclass247' has cardinality 0..*.
+An association connects 'ConcreteReferencDeclaringVar' and 'gbind_dsl_IntermediateClassBinding'. From 'ConcreteReferencDeclaringVar', the role 'ConcreteReferencDeclaringVar' has cardinality 0..*, and from 'gbind_dsl_IntermediateClassBinding', the role 'gbind_dsl_IntermediateClassBinding249' has cardinality 0..*.
+An association connects 'gbind_dsl_IntermediateClassBinding' and 'ConceptMetaclass'. From 'gbind_dsl_IntermediateClassBinding', the role 'gbind_dsl_IntermediateClassBinding251' has cardinality 0..*, and from 'ConceptMetaclass', the role 'ConceptMetaclass252' has cardinality 0..*.
+An association connects 'gbind_dsl_IntermediateClassBinding' and 'BaseFeatureBinding'. From 'gbind_dsl_IntermediateClassBinding', the role 'gbind_dsl_IntermediateClassBinding254' has cardinality 0..*, and from 'BaseFeatureBinding', the role 'BaseFeatureBinding' has cardinality 0..*.
+An association connects 'VirtualReference' and 'gbind_dsl_VirtualMetaclass'. From 'VirtualReference', the role 'VirtualReference' has cardinality 0..*, and from 'gbind_dsl_VirtualMetaclass', the role 'gbind_dsl_VirtualMetaclass' has cardinality 0..*.
+An association connects 'VirtualAttribute' and 'gbind_dsl_VirtualMetaclass'. From 'VirtualAttribute', the role 'VirtualAttribute' has cardinality 0..*, and from 'gbind_dsl_VirtualMetaclass', the role 'gbind_dsl_VirtualMetaclass257' has cardinality 0..*.
+An association connects 'OclExpression' and 'gbind_dsl_VirtualMetaclass'. From 'OclExpression', the role 'OclExpression260' has cardinality 0..*, and from 'gbind_dsl_VirtualMetaclass', the role 'gbind_dsl_VirtualMetaclass259' has cardinality 0..*.
+An association connects 'ConcreteMetaclass' and 'gbind_dsl_VirtualReference'. From 'ConcreteMetaclass', the role 'ConcreteMetaclass262' has cardinality 0..*, and from 'gbind_dsl_VirtualReference', the role 'gbind_dsl_VirtualReference' has cardinality 0..*.
+An association connects 'gbind_dsl_VirtualAttribute' and 'Primitive'. From 'gbind_dsl_VirtualAttribute', the role 'gbind_dsl_VirtualAttribute' has cardinality 0..*, and from 'Primitive', the role 'Primitive' has cardinality 0..*.
+An association connects 'ConceptMetaclass' and 'gbind_dsl_VirtualClassBinding'. From 'ConceptMetaclass', the role 'ConceptMetaclass265' has cardinality 0..*, and from 'gbind_dsl_VirtualClassBinding', the role 'gbind_dsl_VirtualClassBinding' has cardinality 0..*.
+An association connects 'gbind_dsl_VirtualClassBinding' and 'VirtualMetaclass'. From 'gbind_dsl_VirtualClassBinding', the role 'gbind_dsl_VirtualClassBinding267' has cardinality 0..*, and from 'VirtualMetaclass', the role 'VirtualMetaclass268' has cardinality 0..*.
+An association connects 'ConceptFeatureRef' and 'gbind_dsl_VirtualClassBinding'. From 'ConceptFeatureRef', the role 'ConceptFeatureRef' has cardinality 0..*, and from 'gbind_dsl_VirtualClassBinding', the role 'gbind_dsl_VirtualClassBinding270' has cardinality 0..*.
+An association connects 'gbind_dsl_ConceptFeatureRef' and 'ConceptMetaclass'. From 'gbind_dsl_ConceptFeatureRef', the role 'gbind_dsl_ConceptFeatureRef' has cardinality 0..*, and from 'ConceptMetaclass', the role 'ConceptMetaclass272' has cardinality 0..*.
+An association connects 'gbind_dsl_BaseFeatureBinding' and 'ConceptMetaclass'. From 'gbind_dsl_BaseFeatureBinding', the role 'gbind_dsl_BaseFeatureBinding' has cardinality 0..*, and from 'ConceptMetaclass', the role 'ConceptMetaclass274' has cardinality 0..*.
+An association connects 'ConcreteMetaclass' and 'gbind_dsl_BaseFeatureBinding'. From 'ConcreteMetaclass', the role 'ConcreteMetaclass277' has cardinality 0..*, and from 'gbind_dsl_BaseFeatureBinding', the role 'gbind_dsl_BaseFeatureBinding276' has cardinality 0..*.
+An association connects 'gbind_dsl_OclFeatureBinding' and 'OclExpression'. From 'gbind_dsl_OclFeatureBinding', the role 'gbind_dsl_OclFeatureBinding' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression279' has cardinality 0..*.
+An association connects 'gbind_dsl_BaseHelper' and 'OclExpression'. From 'gbind_dsl_BaseHelper', the role 'gbind_dsl_BaseHelper' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression281' has cardinality 0..*.
+An association connects 'gbind_dsl_BaseHelper' and 'OclType'. From 'gbind_dsl_BaseHelper', the role 'gbind_dsl_BaseHelper283' has cardinality 0..*, and from 'OclType', the role 'OclType284' has cardinality 0..*.
+An association connects 'BindingModel' and 'gbind_dsl_BaseHelper'. From 'BindingModel', the role 'dsl287' has cardinality 0..*, and from 'gbind_dsl_BaseHelper', the role 'BindingModel286' has cardinality 0..*.
+An association connects 'gbind_dsl_ConceptHelper' and 'ConcreteMetaclass'. From 'gbind_dsl_ConceptHelper', the role 'gbind_dsl_ConceptHelper' has cardinality 0..*, and from 'ConcreteMetaclass', the role 'ConcreteMetaclass289' has cardinality 0..*.
+An association connects 'ConceptMetaclass' and 'gbind_dsl_ConceptHelper'. From 'ConceptMetaclass', the role 'ConceptMetaclass292' has cardinality 0..*, and from 'gbind_dsl_ConceptHelper', the role 'gbind_dsl_ConceptHelper291' has cardinality 0..*.
+An association connects 'gbind_dsl_LocalHelper' and 'ConcreteMetaclass'. From 'gbind_dsl_LocalHelper', the role 'gbind_dsl_LocalHelper' has cardinality 0..*, and from 'ConcreteMetaclass', the role 'ConcreteMetaclass294' has cardinality 0..*.
+An association connects 'gbind_dsl_LocalHelper' and 'HelperParameter'. From 'gbind_dsl_LocalHelper', the role 'gbind_dsl_LocalHelper296' has cardinality 0..*, and from 'HelperParameter', the role 'HelperParameter' has cardinality 0..*.

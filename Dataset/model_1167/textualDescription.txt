@@ -1,0 +1,618 @@
+The domain model 'top' describes the core structural elements and their relationships within the system.
+
+The model defines 137 main class(es).
+
+'IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_OperatorCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'MapExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_CollectionOperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_MapElement' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_MatchedRule' represents an important domain concept.
+It has the following attributes: 'isAbstract', which is of type str; 'isRefining', which is of type str; 'isNoDefault', which is of type str.
+
+'top_ATL_IfStat' represents an important domain concept.
+It does not declare any attributes.
+
+'RuleVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_InPatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_IteratorExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'top_OCL_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_Binding' represents an important domain concept.
+It has the following attributes: 'isAssignment', which is of type str; 'propertyName', which is of type str.
+
+'PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Query' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_InPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'MatchedRule' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_BagExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_ExpressionStat' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_OclModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_LazyMatchedRule' represents an important domain concept.
+It has one attribute: 'isUnique', which is of type str.
+
+'top_OCL_TupleExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_VariableDeclaration' represents an important domain concept.
+It has the following attributes: 'varName', which is of type str; 'id', which is of type str.
+
+'OclContextDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_NavigationOrAttributeCallExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'top_ATL_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'OclModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ModuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'InPatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_ForStat' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_OclType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DropPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Library' represents an important domain concept.
+It does not declare any attributes.
+
+'OclModel' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Iterator' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_LocatedElement' represents an important domain concept.
+It has the following attributes: 'commentsAfter', which is of type str; 'commentsBefore', which is of type str; 'location', which is of type str.
+
+'top_ATL_Module' represents an important domain concept.
+It has one attribute: 'isRefining', which is of type str.
+
+'OutPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_BindingStat' represents an important domain concept.
+It has the following attributes: 'isAssignment', which is of type str; 'propertyName', which is of type str.
+
+'top_OCL_Iterator' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_OutPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_OclFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Module' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_StringExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'top_OCL_MapExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_OperationCallExp' represents an important domain concept.
+It has one attribute: 'operationName', which is of type str.
+
+'IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_TupleTypeAttribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'top_OCL_OclFeatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_SimpleInPatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_RealExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type str.
+
+'top_ATL_PatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_MapType' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_TuplePart' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_RuleVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_Unit' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'LibraryRef' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_IntegerExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'top_OCL_SuperExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_Helper' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_OclUndefinedExp' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_OclModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'top_OCL_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_EnumLiteralExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TupleTypeAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_BooleanExp' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type str.
+
+'NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_ActionBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_OclAnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_LibraryRef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'top_OCL_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'PatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'Helper' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_DropPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_ModuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_CalledRule' represents an important domain concept.
+It has the following attributes: 'isEntrypoint', which is of type str; 'isEndpoint', which is of type str.
+
+'top_OCL_OclContextDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'OutPatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_ForEachOutPatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TuplePart' represents an important domain concept.
+It does not declare any attributes.
+
+'LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_SetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_Rule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OclFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_SimpleOutPatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_SequenceExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_OrderedSetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'InPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_OutPatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ATL_Query' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OclType' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'MapElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MapType' represents an important domain concept.
+It does not declare any attributes.
+
+'OclFeatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OCL_RealType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'top_ATL_Unit' is a specialization of 'LocatedElement'.
+The class 'top_ATL_Library' is a specialization of 'Unit'.
+The class 'top_ATL_Query' is a specialization of 'Unit'.
+The class 'top_ATL_Module' is a specialization of 'Unit'.
+The class 'top_ATL_ModuleElement' is a specialization of 'LocatedElement'.
+The class 'top_ATL_Helper' is a specialization of 'ModuleElement'.
+The class 'top_ATL_Rule' is a specialization of 'ModuleElement'.
+The class 'top_ATL_MatchedRule' is a specialization of 'Rule'.
+The class 'top_ATL_LazyMatchedRule' is a specialization of 'MatchedRule'.
+The class 'top_ATL_CalledRule' is a specialization of 'Rule'.
+The class 'top_ATL_InPattern' is a specialization of 'LocatedElement'.
+The class 'top_ATL_OutPattern' is a specialization of 'LocatedElement'.
+The class 'top_ATL_DropPattern' is a specialization of 'LocatedElement'.
+The class 'top_ATL_PatternElement' is a specialization of 'VariableDeclaration'.
+The class 'top_ATL_InPatternElement' is a specialization of 'PatternElement'.
+The class 'top_ATL_SimpleInPatternElement' is a specialization of 'InPatternElement'.
+The class 'top_ATL_OutPatternElement' is a specialization of 'PatternElement'.
+The class 'top_ATL_SimpleOutPatternElement' is a specialization of 'OutPatternElement'.
+The class 'top_ATL_ForEachOutPatternElement' is a specialization of 'OutPatternElement'.
+The class 'top_ATL_Binding' is a specialization of 'LocatedElement'.
+The class 'top_ATL_RuleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+The class 'top_ATL_LibraryRef' is a specialization of 'LocatedElement'.
+The class 'top_ATL_ActionBlock' is a specialization of 'LocatedElement'.
+The class 'top_ATL_Statement' is a specialization of 'LocatedElement'.
+The class 'top_ATL_ExpressionStat' is a specialization of 'Statement'.
+The class 'top_ATL_BindingStat' is a specialization of 'Statement'.
+The class 'top_ATL_IfStat' is a specialization of 'Statement'.
+The class 'top_ATL_ForStat' is a specialization of 'Statement'.
+The class 'top_OCL_OclExpression' is a specialization of 'LocatedElement'.
+The class 'top_OCL_VariableExp' is a specialization of 'OclExpression'.
+The class 'top_OCL_SuperExp' is a specialization of 'OclExpression'.
+The class 'top_OCL_PrimitiveExp' is a specialization of 'OclExpression'.
+The class 'top_OCL_StringExp' is a specialization of 'PrimitiveExp'.
+The class 'top_OCL_BooleanExp' is a specialization of 'PrimitiveExp'.
+The class 'top_OCL_NumericExp' is a specialization of 'PrimitiveExp'.
+The class 'top_OCL_RealExp' is a specialization of 'NumericExp'.
+The class 'top_OCL_IntegerExp' is a specialization of 'NumericExp'.
+The class 'top_OCL_CollectionExp' is a specialization of 'OclExpression'.
+The class 'top_OCL_BagExp' is a specialization of 'CollectionExp'.
+The class 'top_OCL_OrderedSetExp' is a specialization of 'CollectionExp'.
+The class 'top_OCL_SequenceExp' is a specialization of 'CollectionExp'.
+The class 'top_OCL_SetExp' is a specialization of 'CollectionExp'.
+The class 'top_OCL_TupleExp' is a specialization of 'OclExpression'.
+The class 'top_OCL_TuplePart' is a specialization of 'VariableDeclaration'.
+The class 'top_OCL_MapExp' is a specialization of 'OclExpression'.
+The class 'top_OCL_MapElement' is a specialization of 'LocatedElement'.
+The class 'top_OCL_EnumLiteralExp' is a specialization of 'OclExpression'.
+The class 'top_OCL_OclUndefinedExp' is a specialization of 'OclExpression'.
+The class 'top_OCL_PropertyCallExp' is a specialization of 'OclExpression'.
+The class 'top_OCL_NavigationOrAttributeCallExp' is a specialization of 'PropertyCallExp'.
+The class 'top_OCL_OperationCallExp' is a specialization of 'PropertyCallExp'.
+The class 'top_OCL_OperatorCallExp' is a specialization of 'OperationCallExp'.
+The class 'top_OCL_CollectionOperationCallExp' is a specialization of 'OperationCallExp'.
+The class 'top_OCL_LoopExp' is a specialization of 'PropertyCallExp'.
+The class 'top_OCL_IterateExp' is a specialization of 'LoopExp'.
+The class 'top_OCL_IteratorExp' is a specialization of 'LoopExp'.
+The class 'top_OCL_LetExp' is a specialization of 'OclExpression'.
+The class 'top_OCL_IfExp' is a specialization of 'OclExpression'.
+The class 'top_OCL_VariableDeclaration' is a specialization of 'LocatedElement'.
+The class 'top_OCL_Iterator' is a specialization of 'VariableDeclaration'.
+The class 'top_OCL_Parameter' is a specialization of 'VariableDeclaration'.
+The class 'top_OCL_CollectionType' is a specialization of 'OclType'.
+The class 'top_OCL_OclType' is a specialization of 'OclExpression'.
+The class 'top_OCL_Primitive' is a specialization of 'OclType'.
+The class 'top_OCL_StringType' is a specialization of 'Primitive'.
+The class 'top_OCL_BooleanType' is a specialization of 'Primitive'.
+The class 'top_OCL_NumericType' is a specialization of 'Primitive'.
+The class 'top_OCL_IntegerType' is a specialization of 'NumericType'.
+The class 'top_OCL_RealType' is a specialization of 'NumericType'.
+The class 'top_OCL_BagType' is a specialization of 'CollectionType'.
+The class 'top_OCL_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'top_OCL_SequenceType' is a specialization of 'CollectionType'.
+The class 'top_OCL_SetType' is a specialization of 'CollectionType'.
+The class 'top_OCL_OclAnyType' is a specialization of 'OclType'.
+The class 'top_OCL_TupleType' is a specialization of 'OclType'.
+The class 'top_OCL_TupleTypeAttribute' is a specialization of 'LocatedElement'.
+The class 'top_OCL_OclModelElement' is a specialization of 'OclType'.
+The class 'top_OCL_MapType' is a specialization of 'OclType'.
+The class 'top_OCL_OclFeatureDefinition' is a specialization of 'LocatedElement'.
+The class 'top_OCL_OclContextDefinition' is a specialization of 'LocatedElement'.
+The class 'top_OCL_OclFeature' is a specialization of 'LocatedElement'.
+The class 'top_OCL_Attribute' is a specialization of 'OclFeature'.
+The class 'top_OCL_Operation' is a specialization of 'OclFeature'.
+The class 'top_OCL_OclModel' is a specialization of 'LocatedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'LibraryRef' and 'top_ATL_Unit'. From 'LibraryRef', the role 'ATL' has cardinality 0..*, and from 'top_ATL_Unit', the role 'LibraryRef' has cardinality 0..*.
+An association connects 'top_ATL_Library' and 'Helper'. From 'top_ATL_Library', the role 'Helper' has cardinality 0..*, and from 'Helper', the role 'ATL2' has cardinality 0..*.
+An association connects 'OclExpression' and 'top_ATL_Query'. From 'OclExpression', the role 'OclExpression' has cardinality 0..*, and from 'top_ATL_Query', the role 'top_ATL_Query' has cardinality 0..*.
+An association connects 'Helper' and 'top_ATL_Query'. From 'Helper', the role 'ATL6' has cardinality 0..*, and from 'top_ATL_Query', the role 'Helper5' has cardinality 0..*.
+An association connects 'OclModel' and 'top_ATL_Module'. From 'OclModel', the role 'OclModel' has cardinality 0..*, and from 'top_ATL_Module', the role 'top_ATL_Module' has cardinality 0..*.
+An association connects 'OclModel' and 'top_ATL_Module'. From 'OclModel', the role 'OclModel10' has cardinality 0..*, and from 'top_ATL_Module', the role 'top_ATL_Module9' has cardinality 0..*.
+An association connects 'ModuleElement' and 'top_ATL_Module'. From 'ModuleElement', the role 'ATL12' has cardinality 0..*, and from 'top_ATL_Module', the role 'ModuleElement' has cardinality 0..*.
+An association connects 'Module' and 'top_ATL_ModuleElement'. From 'Module', the role 'ATL14' has cardinality 0..*, and from 'top_ATL_ModuleElement', the role 'Module' has cardinality 0..*.
+An association connects 'top_ATL_Helper' and 'Query'. From 'top_ATL_Helper', the role 'Query' has cardinality 0..*, and from 'Query', the role 'ATL16' has cardinality 0..*.
+An association connects 'Library' and 'top_ATL_Helper'. From 'Library', the role 'ATL18' has cardinality 0..*, and from 'top_ATL_Helper', the role 'Library' has cardinality 0..*.
+An association connects 'top_ATL_Helper' and 'OclFeatureDefinition'. From 'top_ATL_Helper', the role 'top_ATL_Helper' has cardinality 0..*, and from 'OclFeatureDefinition', the role 'OclFeatureDefinition' has cardinality 0..*.
+An association connects 'top_ATL_Rule' and 'OutPattern'. From 'top_ATL_Rule', the role 'OutPattern' has cardinality 0..*, and from 'OutPattern', the role 'ATL21' has cardinality 0..*.
+An association connects 'ActionBlock' and 'top_ATL_Rule'. From 'ActionBlock', the role 'ATL23' has cardinality 0..*, and from 'top_ATL_Rule', the role 'ActionBlock' has cardinality 0..*.
+An association connects 'RuleVariableDeclaration' and 'top_ATL_Rule'. From 'RuleVariableDeclaration', the role 'ATL25' has cardinality 0..*, and from 'top_ATL_Rule', the role 'RuleVariableDeclaration' has cardinality 0..*.
+An association connects 'top_ATL_MatchedRule' and 'InPattern'. From 'top_ATL_MatchedRule', the role 'InPattern' has cardinality 0..*, and from 'InPattern', the role 'ATL27' has cardinality 0..*.
+An association connects 'top_ATL_MatchedRule' and 'MatchedRule'. From 'top_ATL_MatchedRule', the role 'MatchedRule' has cardinality 0..*, and from 'MatchedRule', the role 'ATL29' has cardinality 0..*.
+An association connects 'top_ATL_MatchedRule' and 'MatchedRule'. From 'top_ATL_MatchedRule', the role 'MatchedRule31' has cardinality 0..*, and from 'MatchedRule', the role 'ATL32' has cardinality 0..*.
+An association connects 'top_ATL_CalledRule' and 'Parameter'. From 'top_ATL_CalledRule', the role 'top_ATL_CalledRule' has cardinality 0..*, and from 'Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'top_ATL_InPattern' and 'InPatternElement'. From 'top_ATL_InPattern', the role 'InPatternElement' has cardinality 0..*, and from 'InPatternElement', the role 'ATL35' has cardinality 0..*.
+An association connects 'MatchedRule' and 'top_ATL_InPattern'. From 'MatchedRule', the role 'ATL38' has cardinality 0..*, and from 'top_ATL_InPattern', the role 'MatchedRule37' has cardinality 0..*.
+An association connects 'top_ATL_InPattern' and 'OclExpression'. From 'top_ATL_InPattern', the role 'top_ATL_InPattern' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression40' has cardinality 0..*.
+An association connects 'top_ATL_OutPattern' and 'Rule'. From 'top_ATL_OutPattern', the role 'Rule' has cardinality 0..*, and from 'Rule', the role 'ATL42' has cardinality 0..*.
+An association connects 'DropPattern' and 'top_ATL_OutPattern'. From 'DropPattern', the role 'ATL44' has cardinality 0..*, and from 'top_ATL_OutPattern', the role 'DropPattern' has cardinality 0..*.
+An association connects 'OutPatternElement' and 'top_ATL_OutPattern'. From 'OutPatternElement', the role 'ATL46' has cardinality 0..*, and from 'top_ATL_OutPattern', the role 'OutPatternElement' has cardinality 0..*.
+An association connects 'OutPattern' and 'top_ATL_DropPattern'. From 'OutPattern', the role 'ATL49' has cardinality 0..*, and from 'top_ATL_DropPattern', the role 'OutPattern48' has cardinality 0..*.
+An association connects 'top_ATL_InPatternElement' and 'OutPatternElement'. From 'top_ATL_InPatternElement', the role 'OutPatternElement51' has cardinality 0..*, and from 'OutPatternElement', the role 'ATL52' has cardinality 0..*.
+An association connects 'top_ATL_InPatternElement' and 'InPattern'. From 'top_ATL_InPatternElement', the role 'InPattern54' has cardinality 0..*, and from 'InPattern', the role 'ATL55' has cardinality 0..*.
+An association connects 'top_ATL_InPatternElement' and 'OclModel'. From 'top_ATL_InPatternElement', the role 'top_ATL_InPatternElement' has cardinality 0..*, and from 'OclModel', the role 'OclModel57' has cardinality 0..*.
+An association connects 'top_ATL_OutPatternElement' and 'OutPattern'. From 'top_ATL_OutPatternElement', the role 'OutPattern59' has cardinality 0..*, and from 'OutPattern', the role 'ATL60' has cardinality 0..*.
+An association connects 'InPatternElement' and 'top_ATL_OutPatternElement'. From 'InPatternElement', the role 'ATL63' has cardinality 0..*, and from 'top_ATL_OutPatternElement', the role 'InPatternElement62' has cardinality 0..*.
+An association connects 'Binding' and 'top_ATL_OutPatternElement'. From 'Binding', the role 'ATL65' has cardinality 0..*, and from 'top_ATL_OutPatternElement', the role 'Binding' has cardinality 0..*.
+An association connects 'top_ATL_OutPatternElement' and 'OclModel'. From 'top_ATL_OutPatternElement', the role 'top_ATL_OutPatternElement' has cardinality 0..*, and from 'OclModel', the role 'OclModel67' has cardinality 0..*.
+An association connects 'top_ATL_SimpleOutPatternElement' and 'OclExpression'. From 'top_ATL_SimpleOutPatternElement', the role 'top_ATL_SimpleOutPatternElement' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression69' has cardinality 0..*.
+An association connects 'OclExpression' and 'top_ATL_ForEachOutPatternElement'. From 'OclExpression', the role 'OclExpression71' has cardinality 0..*, and from 'top_ATL_ForEachOutPatternElement', the role 'top_ATL_ForEachOutPatternElement' has cardinality 0..*.
+An association connects 'Iterator' and 'top_ATL_ForEachOutPatternElement'. From 'Iterator', the role 'Iterator' has cardinality 0..*, and from 'top_ATL_ForEachOutPatternElement', the role 'top_ATL_ForEachOutPatternElement73' has cardinality 0..*.
+An association connects 'top_ATL_Binding' and 'OclExpression'. From 'top_ATL_Binding', the role 'top_ATL_Binding' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression75' has cardinality 0..*.
+An association connects 'OutPatternElement' and 'top_ATL_Binding'. From 'OutPatternElement', the role 'ATL78' has cardinality 0..*, and from 'top_ATL_Binding', the role 'OutPatternElement77' has cardinality 0..*.
+An association connects 'top_ATL_RuleVariableDeclaration' and 'Rule'. From 'top_ATL_RuleVariableDeclaration', the role 'Rule80' has cardinality 0..*, and from 'Rule', the role 'ATL81' has cardinality 0..*.
+An association connects 'Unit' and 'top_ATL_LibraryRef'. From 'Unit', the role 'ATL83' has cardinality 0..*, and from 'top_ATL_LibraryRef', the role 'Unit' has cardinality 0..*.
+An association connects 'top_ATL_ActionBlock' and 'Rule'. From 'top_ATL_ActionBlock', the role 'Rule85' has cardinality 0..*, and from 'Rule', the role 'ATL86' has cardinality 0..*.
+An association connects 'top_ATL_ActionBlock' and 'Statement'. From 'top_ATL_ActionBlock', the role 'top_ATL_ActionBlock' has cardinality 0..*, and from 'Statement', the role 'Statement' has cardinality 0..*.
+An association connects 'top_ATL_ExpressionStat' and 'OclExpression'. From 'top_ATL_ExpressionStat', the role 'top_ATL_ExpressionStat' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression89' has cardinality 0..*.
+An association connects 'top_ATL_BindingStat' and 'OclExpression'. From 'top_ATL_BindingStat', the role 'top_ATL_BindingStat' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression91' has cardinality 0..*.
+An association connects 'OclExpression' and 'top_ATL_BindingStat'. From 'OclExpression', the role 'OclExpression94' has cardinality 0..*, and from 'top_ATL_BindingStat', the role 'top_ATL_BindingStat93' has cardinality 0..*.
+An association connects 'top_ATL_IfStat' and 'OclExpression'. From 'top_ATL_IfStat', the role 'top_ATL_IfStat' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression96' has cardinality 0..*.
+An association connects 'Statement' and 'top_ATL_IfStat'. From 'Statement', the role 'Statement99' has cardinality 0..*, and from 'top_ATL_IfStat', the role 'top_ATL_IfStat98' has cardinality 0..*.
+An association connects 'Statement' and 'top_ATL_IfStat'. From 'Statement', the role 'Statement102' has cardinality 0..*, and from 'top_ATL_IfStat', the role 'top_ATL_IfStat101' has cardinality 0..*.
+An association connects 'top_ATL_ForStat' and 'Iterator'. From 'top_ATL_ForStat', the role 'top_ATL_ForStat' has cardinality 0..*, and from 'Iterator', the role 'Iterator104' has cardinality 0..*.
+An association connects 'top_ATL_ForStat' and 'OclExpression'. From 'top_ATL_ForStat', the role 'top_ATL_ForStat106' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression107' has cardinality 0..*.
+An association connects 'Statement' and 'top_ATL_ForStat'. From 'Statement', the role 'Statement110' has cardinality 0..*, and from 'top_ATL_ForStat', the role 'top_ATL_ForStat109' has cardinality 0..*.
+An association connects 'top_OCL_OclExpression' and 'OclType'. From 'top_OCL_OclExpression', the role 'OclType' has cardinality 0..*, and from 'OclType', the role 'OCL' has cardinality 0..*.
+An association connects 'top_OCL_OclExpression' and 'IfExp'. From 'top_OCL_OclExpression', the role 'IfExp' has cardinality 0..*, and from 'IfExp', the role 'OCL113' has cardinality 0..*.
+An association connects 'top_OCL_OclExpression' and 'PropertyCallExp'. From 'top_OCL_OclExpression', the role 'PropertyCallExp' has cardinality 0..*, and from 'PropertyCallExp', the role 'OCL115' has cardinality 0..*.
+An association connects 'top_OCL_OclExpression' and 'CollectionExp'. From 'top_OCL_OclExpression', the role 'CollectionExp' has cardinality 0..*, and from 'CollectionExp', the role 'OCL117' has cardinality 0..*.
+An association connects 'LetExp' and 'top_OCL_OclExpression'. From 'LetExp', the role 'OCL119' has cardinality 0..*, and from 'top_OCL_OclExpression', the role 'LetExp' has cardinality 0..*.
+An association connects 'top_OCL_OclExpression' and 'LoopExp'. From 'top_OCL_OclExpression', the role 'LoopExp' has cardinality 0..*, and from 'LoopExp', the role 'OCL121' has cardinality 0..*.
+An association connects 'OperationCallExp' and 'top_OCL_OclExpression'. From 'OperationCallExp', the role 'OCL123' has cardinality 0..*, and from 'top_OCL_OclExpression', the role 'OperationCallExp' has cardinality 0..*.
+An association connects 'top_OCL_OclExpression' and 'VariableDeclaration'. From 'top_OCL_OclExpression', the role 'VariableDeclaration' has cardinality 0..*, and from 'VariableDeclaration', the role 'OCL125' has cardinality 0..*.
+An association connects 'top_OCL_OclExpression' and 'IfExp'. From 'top_OCL_OclExpression', the role 'IfExp127' has cardinality 0..*, and from 'IfExp', the role 'OCL128' has cardinality 0..*.
+An association connects 'Operation' and 'top_OCL_OclExpression'. From 'Operation', the role 'OCL130' has cardinality 0..*, and from 'top_OCL_OclExpression', the role 'Operation' has cardinality 0..*.
+An association connects 'IfExp' and 'top_OCL_OclExpression'. From 'IfExp', the role 'OCL133' has cardinality 0..*, and from 'top_OCL_OclExpression', the role 'IfExp132' has cardinality 0..*.
+An association connects 'top_OCL_OclExpression' and 'Attribute'. From 'top_OCL_OclExpression', the role 'Attribute' has cardinality 0..*, and from 'Attribute', the role 'OCL135' has cardinality 0..*.
+An association connects 'top_OCL_VariableExp' and 'VariableDeclaration'. From 'top_OCL_VariableExp', the role 'VariableDeclaration137' has cardinality 0..*, and from 'VariableDeclaration', the role 'OCL138' has cardinality 0..*.
+An association connects 'top_OCL_CollectionExp' and 'OclExpression'. From 'top_OCL_CollectionExp', the role 'OclExpression140' has cardinality 0..*, and from 'OclExpression', the role 'OCL141' has cardinality 0..*.
+An association connects 'TuplePart' and 'top_OCL_TupleExp'. From 'TuplePart', the role 'OCL143' has cardinality 0..*, and from 'top_OCL_TupleExp', the role 'TuplePart' has cardinality 0..*.
+An association connects 'top_OCL_TuplePart' and 'TupleExp'. From 'top_OCL_TuplePart', the role 'TupleExp' has cardinality 0..*, and from 'TupleExp', the role 'OCL145' has cardinality 0..*.
+An association connects 'top_OCL_MapExp' and 'MapElement'. From 'top_OCL_MapExp', the role 'MapElement' has cardinality 0..*, and from 'MapElement', the role 'OCL147' has cardinality 0..*.
+An association connects 'top_OCL_MapElement' and 'MapExp'. From 'top_OCL_MapElement', the role 'MapExp' has cardinality 0..*, and from 'MapExp', the role 'OCL149' has cardinality 0..*.
+An association connects 'OclExpression' and 'top_OCL_MapElement'. From 'OclExpression', the role 'OclExpression151' has cardinality 0..*, and from 'top_OCL_MapElement', the role 'top_OCL_MapElement' has cardinality 0..*.
+An association connects 'OclExpression' and 'top_OCL_MapElement'. From 'OclExpression', the role 'OclExpression154' has cardinality 0..*, and from 'top_OCL_MapElement', the role 'top_OCL_MapElement153' has cardinality 0..*.
+An association connects 'top_OCL_PropertyCallExp' and 'OclExpression'. From 'top_OCL_PropertyCallExp', the role 'OclExpression156' has cardinality 0..*, and from 'OclExpression', the role 'OCL157' has cardinality 0..*.
+An association connects 'OclExpression' and 'top_OCL_OperationCallExp'. From 'OclExpression', the role 'OCL160' has cardinality 0..*, and from 'top_OCL_OperationCallExp', the role 'OclExpression159' has cardinality 0..*.
+An association connects 'top_OCL_LoopExp' and 'OclExpression'. From 'top_OCL_LoopExp', the role 'OclExpression162' has cardinality 0..*, and from 'OclExpression', the role 'OCL163' has cardinality 0..*.
+An association connects 'Iterator' and 'top_OCL_LoopExp'. From 'Iterator', the role 'OCL166' has cardinality 0..*, and from 'top_OCL_LoopExp', the role 'Iterator165' has cardinality 0..*.
+An association connects 'top_OCL_IterateExp' and 'VariableDeclaration'. From 'top_OCL_IterateExp', the role 'VariableDeclaration168' has cardinality 0..*, and from 'VariableDeclaration', the role 'OCL169' has cardinality 0..*.
+An association connects 'top_OCL_LetExp' and 'VariableDeclaration'. From 'top_OCL_LetExp', the role 'VariableDeclaration171' has cardinality 0..*, and from 'VariableDeclaration', the role 'OCL172' has cardinality 0..*.
+An association connects 'OclExpression' and 'top_OCL_LetExp'. From 'OclExpression', the role 'OCL175' has cardinality 0..*, and from 'top_OCL_LetExp', the role 'OclExpression174' has cardinality 0..*.
+An association connects 'OclExpression' and 'top_OCL_IfExp'. From 'OclExpression', the role 'OCL178' has cardinality 0..*, and from 'top_OCL_IfExp', the role 'OclExpression177' has cardinality 0..*.
+An association connects 'OclExpression' and 'top_OCL_IfExp'. From 'OclExpression', the role 'OCL181' has cardinality 0..*, and from 'top_OCL_IfExp', the role 'OclExpression180' has cardinality 0..*.
+An association connects 'top_OCL_IfExp' and 'OclExpression'. From 'top_OCL_IfExp', the role 'OclExpression183' has cardinality 0..*, and from 'OclExpression', the role 'OCL184' has cardinality 0..*.
+An association connects 'top_OCL_VariableDeclaration' and 'OclType'. From 'top_OCL_VariableDeclaration', the role 'OclType186' has cardinality 0..*, and from 'OclType', the role 'OCL187' has cardinality 0..*.
+An association connects 'top_OCL_VariableDeclaration' and 'OclExpression'. From 'top_OCL_VariableDeclaration', the role 'OclExpression189' has cardinality 0..*, and from 'OclExpression', the role 'OCL190' has cardinality 0..*.
+An association connects 'top_OCL_VariableDeclaration' and 'LetExp'. From 'top_OCL_VariableDeclaration', the role 'LetExp192' has cardinality 0..*, and from 'LetExp', the role 'OCL193' has cardinality 0..*.
+An association connects 'IterateExp' and 'top_OCL_VariableDeclaration'. From 'IterateExp', the role 'OCL195' has cardinality 0..*, and from 'top_OCL_VariableDeclaration', the role 'IterateExp' has cardinality 0..*.
+An association connects 'VariableExp' and 'top_OCL_VariableDeclaration'. From 'VariableExp', the role 'OCL197' has cardinality 0..*, and from 'top_OCL_VariableDeclaration', the role 'VariableExp' has cardinality 0..*.
+An association connects 'LoopExp' and 'top_OCL_Iterator'. From 'LoopExp', the role 'OCL200' has cardinality 0..*, and from 'top_OCL_Iterator', the role 'LoopExp199' has cardinality 0..*.
+An association connects 'Operation' and 'top_OCL_Parameter'. From 'Operation', the role 'OCL203' has cardinality 0..*, and from 'top_OCL_Parameter', the role 'Operation202' has cardinality 0..*.
+An association connects 'OclType' and 'top_OCL_CollectionType'. From 'OclType', the role 'OCL206' has cardinality 0..*, and from 'top_OCL_CollectionType', the role 'OclType205' has cardinality 0..*.
+An association connects 'OclContextDefinition' and 'top_OCL_OclType'. From 'OclContextDefinition', the role 'OCL208' has cardinality 0..*, and from 'top_OCL_OclType', the role 'OclContextDefinition' has cardinality 0..*.
+An association connects 'OclExpression' and 'top_OCL_OclType'. From 'OclExpression', the role 'OCL211' has cardinality 0..*, and from 'top_OCL_OclType', the role 'OclExpression210' has cardinality 0..*.
+An association connects 'Operation' and 'top_OCL_OclType'. From 'Operation', the role 'OCL214' has cardinality 0..*, and from 'top_OCL_OclType', the role 'Operation213' has cardinality 0..*.
+An association connects 'MapType' and 'top_OCL_OclType'. From 'MapType', the role 'OCL216' has cardinality 0..*, and from 'top_OCL_OclType', the role 'MapType' has cardinality 0..*.
+An association connects 'top_OCL_OclType' and 'Attribute'. From 'top_OCL_OclType', the role 'Attribute218' has cardinality 0..*, and from 'Attribute', the role 'OCL219' has cardinality 0..*.
+An association connects 'top_OCL_OclType' and 'MapType'. From 'top_OCL_OclType', the role 'MapType221' has cardinality 0..*, and from 'MapType', the role 'OCL222' has cardinality 0..*.
+An association connects 'top_OCL_OclType' and 'CollectionType'. From 'top_OCL_OclType', the role 'CollectionType' has cardinality 0..*, and from 'CollectionType', the role 'OCL224' has cardinality 0..*.
+An association connects 'top_OCL_OclType' and 'TupleTypeAttribute'. From 'top_OCL_OclType', the role 'TupleTypeAttribute' has cardinality 0..*, and from 'TupleTypeAttribute', the role 'OCL226' has cardinality 0..*.
+An association connects 'top_OCL_OclType' and 'VariableDeclaration'. From 'top_OCL_OclType', the role 'VariableDeclaration228' has cardinality 0..*, and from 'VariableDeclaration', the role 'OCL229' has cardinality 0..*.
+An association connects 'top_OCL_TupleType' and 'TupleTypeAttribute'. From 'top_OCL_TupleType', the role 'TupleTypeAttribute231' has cardinality 0..*, and from 'TupleTypeAttribute', the role 'OCL232' has cardinality 0..*.
+An association connects 'top_OCL_TupleTypeAttribute' and 'OclType'. From 'top_OCL_TupleTypeAttribute', the role 'OclType234' has cardinality 0..*, and from 'OclType', the role 'OCL235' has cardinality 0..*.
+An association connects 'TupleType' and 'top_OCL_TupleTypeAttribute'. From 'TupleType', the role 'OCL237' has cardinality 0..*, and from 'top_OCL_TupleTypeAttribute', the role 'TupleType' has cardinality 0..*.
+An association connects 'top_OCL_OclModelElement' and 'OclModel'. From 'top_OCL_OclModelElement', the role 'OclModel239' has cardinality 0..*, and from 'OclModel', the role 'OCL240' has cardinality 0..*.
+An association connects 'top_OCL_MapType' and 'OclType'. From 'top_OCL_MapType', the role 'OclType242' has cardinality 0..*, and from 'OclType', the role 'OCL243' has cardinality 0..*.
+An association connects 'OclType' and 'top_OCL_MapType'. From 'OclType', the role 'OCL246' has cardinality 0..*, and from 'top_OCL_MapType', the role 'OclType245' has cardinality 0..*.
+An association connects 'top_OCL_OclFeatureDefinition' and 'OclFeature'. From 'top_OCL_OclFeatureDefinition', the role 'OclFeature' has cardinality 0..*, and from 'OclFeature', the role 'OCL248' has cardinality 0..*.
+An association connects 'top_OCL_OclFeatureDefinition' and 'OclContextDefinition'. From 'top_OCL_OclFeatureDefinition', the role 'OclContextDefinition250' has cardinality 0..*, and from 'OclContextDefinition', the role 'OCL251' has cardinality 0..*.
+An association connects 'top_OCL_OclContextDefinition' and 'OclFeatureDefinition'. From 'top_OCL_OclContextDefinition', the role 'OclFeatureDefinition253' has cardinality 0..*, and from 'OclFeatureDefinition', the role 'OCL254' has cardinality 0..*.
+An association connects 'top_OCL_OclContextDefinition' and 'OclType'. From 'top_OCL_OclContextDefinition', the role 'OclType256' has cardinality 0..*, and from 'OclType', the role 'OCL257' has cardinality 0..*.
+An association connects 'top_OCL_OclFeature' and 'OclFeatureDefinition'. From 'top_OCL_OclFeature', the role 'OclFeatureDefinition259' has cardinality 0..*, and from 'OclFeatureDefinition', the role 'OCL260' has cardinality 0..*.
+An association connects 'top_OCL_Attribute' and 'OclExpression'. From 'top_OCL_Attribute', the role 'OclExpression262' has cardinality 0..*, and from 'OclExpression', the role 'OCL263' has cardinality 0..*.
+An association connects 'top_OCL_Attribute' and 'OclType'. From 'top_OCL_Attribute', the role 'OclType265' has cardinality 0..*, and from 'OclType', the role 'OCL266' has cardinality 0..*.
+An association connects 'Parameter' and 'top_OCL_Operation'. From 'Parameter', the role 'OCL269' has cardinality 0..*, and from 'top_OCL_Operation', the role 'Parameter268' has cardinality 0..*.
+An association connects 'top_OCL_Operation' and 'OclType'. From 'top_OCL_Operation', the role 'OclType271' has cardinality 0..*, and from 'OclType', the role 'OCL272' has cardinality 0..*.
+An association connects 'OclExpression' and 'top_OCL_Operation'. From 'OclExpression', the role 'OCL275' has cardinality 0..*, and from 'top_OCL_Operation', the role 'OclExpression274' has cardinality 0..*.
+An association connects 'top_OCL_OclModel' and 'OclModel'. From 'top_OCL_OclModel', the role 'OclModel277' has cardinality 0..*, and from 'OclModel', the role 'OCL278' has cardinality 0..*.
+An association connects 'top_OCL_OclModel' and 'OclModelElement'. From 'top_OCL_OclModel', the role 'OclModelElement' has cardinality 0..*, and from 'OclModelElement', the role 'OCL280' has cardinality 0..*.
+An association connects 'OclModel' and 'top_OCL_OclModel'. From 'OclModel', the role 'OCL283' has cardinality 0..*, and from 'top_OCL_OclModel', the role 'OclModel282' has cardinality 0..*.

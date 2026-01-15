@@ -1,0 +1,22 @@
+The domain model 'PetriNet' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'PetriNet_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_Net' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_Place' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'PetriNet_Place' and 'PetriNet_Net'. From 'PetriNet_Place', the role 'place' has cardinality 0..*, and from 'PetriNet_Net', the role 'Net' has cardinality 0..*.
+An association connects 'PetriNet_Place' and 'PetriNet_Transition'. From 'PetriNet_Place', the role 'dst' has cardinality 0..*, and from 'PetriNet_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'PetriNet_Transition' and 'PetriNet_Place'. From 'PetriNet_Transition', the role 'Transition3' has cardinality 0..*, and from 'PetriNet_Place', the role 'src' has cardinality 0..*.
+An association connects 'PetriNet_Net' and 'PetriNet_Transition'. From 'PetriNet_Net', the role 'Net5' has cardinality 0..*, and from 'PetriNet_Transition', the role 'transition' has cardinality 0..*.
+An association connects 'PetriNet_Transition' and 'PetriNet_Place'. From 'PetriNet_Transition', the role 'dst7' has cardinality 0..*, and from 'PetriNet_Place', the role 'Place' has cardinality 0..*.
+An association connects 'PetriNet_Transition' and 'PetriNet_Place'. From 'PetriNet_Transition', the role 'src9' has cardinality 0..*, and from 'PetriNet_Place', the role 'Place10' has cardinality 0..*.
+An association connects 'PetriNet_Net' and 'PetriNet_Place'. From 'PetriNet_Net', the role 'net' has cardinality 0..*, and from 'PetriNet_Place', the role 'Place12' has cardinality 0..*.
+An association connects 'PetriNet_Transition' and 'PetriNet_Net'. From 'PetriNet_Transition', the role 'Transition15' has cardinality 0..*, and from 'PetriNet_Net', the role 'net14' has cardinality 0..*.

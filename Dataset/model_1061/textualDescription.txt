@@ -1,0 +1,117 @@
+The domain model 'PrimitiveTypes' describes the core structural elements and their relationships within the system.
+
+The model defines 26 main class(es).
+
+'PetriNet_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Movement' represents an important domain concept.
+It does not declare any attributes.
+
+'Place' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'Marking' represents an important domain concept.
+It does not declare any attributes.
+
+'PlaceToTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_Marking' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_PlaceToTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_Arc' represents an important domain concept.
+It has one attribute: 'weight', which is of type str.
+
+'Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'Execution' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_LocatedElement' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'PetriNet_Movement' represents an important domain concept.
+It does not declare any attributes.
+
+'Token' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PetriNet_Execution' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'TransitionToPlace' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_TransitionToPlace' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'PetriNet_NamedElement' is a specialization of 'LocatedElement'.
+The class 'PetriNet_PetriNet' is a specialization of 'NamedElement'.
+The class 'PetriNet_Element' is a specialization of 'NamedElement'.
+The class 'PetriNet_Place' is a specialization of 'Element'.
+The class 'PetriNet_Transition' is a specialization of 'Element'.
+The class 'PetriNet_Arc' is a specialization of 'NamedElement'.
+The class 'PetriNet_PlaceToTransition' is a specialization of 'Arc'.
+The class 'PetriNet_TransitionToPlace' is a specialization of 'Arc'.
+
+Relationships between classes are modeled using associations.
+An association connects 'PetriNet_PetriNet' and 'Element'. From 'PetriNet_PetriNet', the role '0' has cardinality 0..*, and from 'Element', the role '#' has cardinality 0..*.
+An association connects 'Arc' and 'PetriNet_PetriNet'. From 'Arc', the role '#3' has cardinality 0..*, and from 'PetriNet_PetriNet', the role '02' has cardinality 0..*.
+An association connects 'Execution' and 'PetriNet_PetriNet'. From 'Execution', the role '#6' has cardinality 0..*, and from 'PetriNet_PetriNet', the role '05' has cardinality 0..*.
+An association connects 'PetriNet' and 'PetriNet_Element'. From 'PetriNet', the role '#9' has cardinality 0..*, and from 'PetriNet_Element', the role '08' has cardinality 0..*.
+An association connects 'TransitionToPlace' and 'PetriNet_Place'. From 'TransitionToPlace', the role '#12' has cardinality 0..*, and from 'PetriNet_Place', the role '011' has cardinality 0..*.
+An association connects 'PetriNet_Place' and 'PlaceToTransition'. From 'PetriNet_Place', the role '014' has cardinality 0..*, and from 'PlaceToTransition', the role '#15' has cardinality 0..*.
+An association connects 'PlaceToTransition' and 'PetriNet_Transition'. From 'PlaceToTransition', the role '#18' has cardinality 0..*, and from 'PetriNet_Transition', the role '017' has cardinality 0..*.
+An association connects 'TransitionToPlace' and 'PetriNet_Transition'. From 'TransitionToPlace', the role '#21' has cardinality 0..*, and from 'PetriNet_Transition', the role '020' has cardinality 0..*.
+An association connects 'PetriNet_Arc' and 'PetriNet'. From 'PetriNet_Arc', the role '023' has cardinality 0..*, and from 'PetriNet', the role '#24' has cardinality 0..*.
+An association connects 'Place' and 'PetriNet_PlaceToTransition'. From 'Place', the role '#27' has cardinality 0..*, and from 'PetriNet_PlaceToTransition', the role '026' has cardinality 0..*.
+An association connects 'Transition' and 'PetriNet_PlaceToTransition'. From 'Transition', the role '#30' has cardinality 0..*, and from 'PetriNet_PlaceToTransition', the role '029' has cardinality 0..*.
+An association connects 'PetriNet_TransitionToPlace' and 'Transition'. From 'PetriNet_TransitionToPlace', the role '032' has cardinality 0..*, and from 'Transition', the role '#33' has cardinality 0..*.
+An association connects 'Place' and 'PetriNet_TransitionToPlace'. From 'Place', the role '#36' has cardinality 0..*, and from 'PetriNet_TransitionToPlace', the role '035' has cardinality 0..*.
+An association connects 'PetriNet' and 'PetriNet_Execution'. From 'PetriNet', the role '#39' has cardinality 0..*, and from 'PetriNet_Execution', the role '038' has cardinality 0..*.
+An association connects 'PetriNet_Execution' and 'Marking'. From 'PetriNet_Execution', the role '041' has cardinality 0..*, and from 'Marking', the role '#42' has cardinality 0..*.
+An association connects 'PetriNet_Execution' and 'Movement'. From 'PetriNet_Execution', the role '044' has cardinality 0..*, and from 'Movement', the role '#45' has cardinality 0..*.
+An association connects 'PetriNet_Token' and 'Place'. From 'PetriNet_Token', the role 'PetriNet_Token' has cardinality 0..*, and from 'Place', the role 'Place' has cardinality 0..*.
+An association connects 'PetriNet_Token' and 'Marking'. From 'PetriNet_Token', the role '048' has cardinality 0..*, and from 'Marking', the role '#49' has cardinality 0..*.
+An association connects 'PetriNet_Marking' and 'Execution'. From 'PetriNet_Marking', the role '051' has cardinality 0..*, and from 'Execution', the role '#52' has cardinality 0..*.
+An association connects 'PetriNet_Marking' and 'Token'. From 'PetriNet_Marking', the role '054' has cardinality 0..*, and from 'Token', the role '#55' has cardinality 0..*.
+An association connects 'Execution' and 'PetriNet_Movement'. From 'Execution', the role '#58' has cardinality 0..*, and from 'PetriNet_Movement', the role '057' has cardinality 0..*.
+An association connects 'PetriNet_Movement' and 'Transition'. From 'PetriNet_Movement', the role 'PetriNet_Movement' has cardinality 0..*, and from 'Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'Marking' and 'PetriNet_Movement'. From 'Marking', the role 'Marking' has cardinality 0..*, and from 'PetriNet_Movement', the role 'PetriNet_Movement61' has cardinality 0..*.
+An association connects 'Marking' and 'PetriNet_Movement'. From 'Marking', the role 'Marking64' has cardinality 0..*, and from 'PetriNet_Movement', the role 'PetriNet_Movement63' has cardinality 0..*.

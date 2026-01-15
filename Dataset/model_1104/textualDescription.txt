@@ -1,0 +1,83 @@
+The domain model 'PrimitiveTypes' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'PlaceToTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'evoPetrinet_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'evoPetrinet_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'evoPetrinet_TransitionToPlace' represents an important domain concept.
+It does not declare any attributes.
+
+'evoPetrinet_LocatedElement' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'TransitionToPlace' represents an important domain concept.
+It does not declare any attributes.
+
+'evoPetrinet_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'evoPetrinet_PlaceToTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'Place' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'evoPetrinet_Arc' represents an important domain concept.
+It has one attribute: 'weight', which is of type str.
+
+'Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'evoPetrinet_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'evoPetrinet_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'evoPetrinet_PetriNetModel' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'evoPetrinet_NamedElement' is a specialization of 'LocatedElement'.
+The class 'evoPetrinet_PetriNet' is a specialization of 'NamedElement'.
+The class 'evoPetrinet_Element' is a specialization of 'NamedElement'.
+The class 'evoPetrinet_Place' is a specialization of 'Element'.
+The class 'evoPetrinet_Transition' is a specialization of 'Element'.
+The class 'evoPetrinet_Arc' is a specialization of 'Element'.
+The class 'evoPetrinet_PlaceToTransition' is a specialization of 'Arc'.
+The class 'evoPetrinet_TransitionToPlace' is a specialization of 'Arc'.
+
+Relationships between classes are modeled using associations.
+An association connects 'evoPetrinet_PetriNetModel' and 'PetriNet'. From 'evoPetrinet_PetriNetModel', the role 'evoPetrinet_PetriNetModel' has cardinality 0..*, and from 'PetriNet', the role 'PetriNet' has cardinality 0..*.
+An association connects 'Element' and 'evoPetrinet_PetriNet'. From 'Element', the role '#' has cardinality 0..*, and from 'evoPetrinet_PetriNet', the role '0' has cardinality 0..*.
+An association connects 'PetriNet' and 'evoPetrinet_Element'. From 'PetriNet', the role '#4' has cardinality 0..*, and from 'evoPetrinet_Element', the role '03' has cardinality 0..*.
+An association connects 'evoPetrinet_Place' and 'TransitionToPlace'. From 'evoPetrinet_Place', the role '06' has cardinality 0..*, and from 'TransitionToPlace', the role '#7' has cardinality 0..*.
+An association connects 'evoPetrinet_Place' and 'PlaceToTransition'. From 'evoPetrinet_Place', the role '09' has cardinality 0..*, and from 'PlaceToTransition', the role '#10' has cardinality 0..*.
+An association connects 'evoPetrinet_Transition' and 'PlaceToTransition'. From 'evoPetrinet_Transition', the role '012' has cardinality 0..*, and from 'PlaceToTransition', the role '#13' has cardinality 0..*.
+An association connects 'evoPetrinet_Transition' and 'TransitionToPlace'. From 'evoPetrinet_Transition', the role '015' has cardinality 0..*, and from 'TransitionToPlace', the role '#16' has cardinality 0..*.
+An association connects 'Place' and 'evoPetrinet_PlaceToTransition'. From 'Place', the role '#19' has cardinality 0..*, and from 'evoPetrinet_PlaceToTransition', the role '018' has cardinality 0..*.
+An association connects 'evoPetrinet_PlaceToTransition' and 'Transition'. From 'evoPetrinet_PlaceToTransition', the role '021' has cardinality 0..*, and from 'Transition', the role '#22' has cardinality 0..*.
+An association connects 'evoPetrinet_TransitionToPlace' and 'Transition'. From 'evoPetrinet_TransitionToPlace', the role '024' has cardinality 0..*, and from 'Transition', the role '#25' has cardinality 0..*.
+An association connects 'evoPetrinet_TransitionToPlace' and 'Place'. From 'evoPetrinet_TransitionToPlace', the role '027' has cardinality 0..*, and from 'Place', the role '#28' has cardinality 0..*.

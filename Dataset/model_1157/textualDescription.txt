@@ -1,0 +1,80 @@
+The domain model 'fiacremm' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'fiacremm_Component' represents an important domain concept.
+It has the following attributes: 'VarSize', which is of type int; 'Name', which is of type str; 'ProcessSize', which is of type int.
+
+'fiacremm_Port' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'fiacremm_Process' represents an important domain concept.
+It has the following attributes: 'StateSize', which is of type int; 'Name', which is of type str; 'VarSize', which is of type int.
+
+'fiacremm_Guard' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'codeFiacre', which is of type str; 'Body', which is of type str.
+
+'EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacremm_Program' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'ComponentSize', which is of type int.
+
+'fiacremm_Transition' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'fiacremm_Trigger' represents an important domain concept.
+It has the following attributes: 'Body', which is of type str; 'codeFiacre', which is of type str; 'Name', which is of type str; 'ArgSize', which is of type int.
+
+'fiacremm_State' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'fiacremm_Action' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'Body', which is of type str; 'codeFiacre', which is of type str.
+
+'fiacremm_Variable' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'initVal', which is of type str.
+
+'fiacremm_DataType' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'fiacremm_State' is a specialization of 'EModelElement'.
+The class 'fiacremm_Process' is a specialization of 'EModelElement'.
+The class 'fiacremm_Transition' is a specialization of 'EModelElement'.
+The class 'fiacremm_DataType' is a specialization of 'EModelElement'.
+The class 'fiacremm_Variable' is a specialization of 'EModelElement'.
+The class 'fiacremm_Component' is a specialization of 'EModelElement'.
+The class 'fiacremm_Program' is a specialization of 'EModelElement'.
+The class 'fiacremm_Guard' is a specialization of 'EModelElement'.
+The class 'fiacremm_Trigger' is a specialization of 'EModelElement'.
+The class 'fiacremm_Action' is a specialization of 'EModelElement'.
+The class 'fiacremm_Port' is a specialization of 'EModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fiacremm_State' and 'fiacremm_Transition'. From 'fiacremm_State', the role 'source' has cardinality 0..*, and from 'fiacremm_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'fiacremm_Transition' and 'fiacremm_State'. From 'fiacremm_Transition', the role 'Transition2' has cardinality 0..*, and from 'fiacremm_State', the role 'target' has cardinality 0..*.
+An association connects 'fiacremm_State' and 'fiacremm_Process'. From 'fiacremm_State', the role 'initState' has cardinality 0..*, and from 'fiacremm_Process', the role 'Process' has cardinality 0..*.
+An association connects 'fiacremm_Transition' and 'fiacremm_Process'. From 'fiacremm_Transition', the role 'fiacremm_Transition' has cardinality 0..*, and from 'fiacremm_Process', the role 'fiacremm_Process' has cardinality 0..*.
+An association connects 'fiacremm_Process' and 'fiacremm_Variable'. From 'fiacremm_Process', the role 'processes' has cardinality 0..*, and from 'fiacremm_Variable', the role 'Variable' has cardinality 0..*.
+An association connects 'fiacremm_State' and 'fiacremm_Process'. From 'fiacremm_State', the role 'fiacremm_State' has cardinality 0..*, and from 'fiacremm_Process', the role 'fiacremm_Process7' has cardinality 0..*.
+An association connects 'fiacremm_Process' and 'fiacremm_State'. From 'fiacremm_Process', the role 'process' has cardinality 0..*, and from 'fiacremm_State', the role 'State' has cardinality 0..*.
+An association connects 'fiacremm_Port' and 'fiacremm_Process'. From 'fiacremm_Port', the role 'fiacremm_Port' has cardinality 0..*, and from 'fiacremm_Process', the role 'fiacremm_Process10' has cardinality 0..*.
+An association connects 'fiacremm_Process' and 'fiacremm_Trigger'. From 'fiacremm_Process', the role 'fiacremm_Process12' has cardinality 0..*, and from 'fiacremm_Trigger', the role 'fiacremm_Trigger' has cardinality 0..*.
+An association connects 'fiacremm_State' and 'fiacremm_Transition'. From 'fiacremm_State', the role 'State14' has cardinality 0..*, and from 'fiacremm_Transition', the role 'outTransitions' has cardinality 0..*.
+An association connects 'fiacremm_Transition' and 'fiacremm_State'. From 'fiacremm_Transition', the role 'inTransitions' has cardinality 0..*, and from 'fiacremm_State', the role 'State16' has cardinality 0..*.
+An association connects 'fiacremm_Transition' and 'fiacremm_Guard'. From 'fiacremm_Transition', the role 'fiacremm_Transition18' has cardinality 0..*, and from 'fiacremm_Guard', the role 'fiacremm_Guard' has cardinality 0..*.
+An association connects 'fiacremm_Trigger' and 'fiacremm_Transition'. From 'fiacremm_Trigger', the role 'fiacremm_Trigger21' has cardinality 0..*, and from 'fiacremm_Transition', the role 'fiacremm_Transition20' has cardinality 0..*.
+An association connects 'fiacremm_Action' and 'fiacremm_Transition'. From 'fiacremm_Action', the role 'fiacremm_Action' has cardinality 0..*, and from 'fiacremm_Transition', the role 'fiacremm_Transition23' has cardinality 0..*.
+An association connects 'fiacremm_DataType' and 'fiacremm_Variable'. From 'fiacremm_DataType', the role 'fiacremm_DataType' has cardinality 0..*, and from 'fiacremm_Variable', the role 'fiacremm_Variable' has cardinality 0..*.
+An association connects 'fiacremm_Process' and 'fiacremm_Variable'. From 'fiacremm_Process', the role 'Process26' has cardinality 0..*, and from 'fiacremm_Variable', the role 'variables' has cardinality 0..*.
+An association connects 'fiacremm_Component' and 'fiacremm_Variable'. From 'fiacremm_Component', the role 'Component' has cardinality 0..*, and from 'fiacremm_Variable', the role 'variables28' has cardinality 0..*.
+An association connects 'fiacremm_Process' and 'fiacremm_Component'. From 'fiacremm_Process', the role 'fiacremm_Process30' has cardinality 0..*, and from 'fiacremm_Component', the role 'fiacremm_Component' has cardinality 0..*.
+An association connects 'fiacremm_Component' and 'fiacremm_Variable'. From 'fiacremm_Component', the role 'components' has cardinality 0..*, and from 'fiacremm_Variable', the role 'Variable32' has cardinality 0..*.
+An association connects 'fiacremm_Component' and 'fiacremm_Port'. From 'fiacremm_Component', the role 'fiacremm_Component34' has cardinality 0..*, and from 'fiacremm_Port', the role 'fiacremm_Port35' has cardinality 0..*.
+An association connects 'fiacremm_Component' and 'fiacremm_Program'. From 'fiacremm_Component', the role 'fiacremm_Component37' has cardinality 0..*, and from 'fiacremm_Program', the role 'fiacremm_Program' has cardinality 0..*.
+An association connects 'fiacremm_Variable' and 'fiacremm_Program'. From 'fiacremm_Variable', the role 'fiacremm_Variable40' has cardinality 0..*, and from 'fiacremm_Program', the role 'fiacremm_Program39' has cardinality 0..*.
+An association connects 'fiacremm_Process' and 'fiacremm_Program'. From 'fiacremm_Process', the role 'fiacremm_Process43' has cardinality 0..*, and from 'fiacremm_Program', the role 'fiacremm_Program42' has cardinality 0..*.
+An association connects 'fiacremm_Program' and 'fiacremm_DataType'. From 'fiacremm_Program', the role 'fiacremm_Program45' has cardinality 0..*, and from 'fiacremm_DataType', the role 'fiacremm_DataType46' has cardinality 0..*.
+An association connects 'fiacremm_Trigger' and 'fiacremm_Variable'. From 'fiacremm_Trigger', the role 'fiacremm_Trigger48' has cardinality 0..*, and from 'fiacremm_Variable', the role 'fiacremm_Variable49' has cardinality 0..*.
+An association connects 'fiacremm_Port' and 'fiacremm_Component'. From 'fiacremm_Port', the role 'fiacremm_Port51' has cardinality 0..*, and from 'fiacremm_Component', the role 'fiacremm_Component52' has cardinality 0..*.

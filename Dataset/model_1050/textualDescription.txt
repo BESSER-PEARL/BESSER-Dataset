@@ -1,0 +1,30 @@
+The domain model 'fsm' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'fsm_Constraint' represents an important domain concept.
+It has the following attributes: 'true', which is of type bool; 'name', which is of type str.
+
+'fsm_Machine' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_State' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'initial', which is of type bool; 'final', which is of type bool.
+
+'fsm_Transition' represents an important domain concept.
+It has one attribute: 'event', which is of type str.
+
+'fsm_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fsm_Language' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'target', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'fsm_Model' and 'fsm_Constraint'. From 'fsm_Model', the role 'fsm_Model' has cardinality 0..*, and from 'fsm_Constraint', the role 'fsm_Constraint' has cardinality 0..*.
+An association connects 'fsm_Model' and 'fsm_Language'. From 'fsm_Model', the role 'fsm_Model2' has cardinality 0..*, and from 'fsm_Language', the role 'fsm_Language' has cardinality 0..*.
+An association connects 'fsm_Machine' and 'fsm_Model'. From 'fsm_Machine', the role 'fsm_Machine' has cardinality 0..*, and from 'fsm_Model', the role 'fsm_Model4' has cardinality 0..*.
+An association connects 'fsm_State' and 'fsm_Machine'. From 'fsm_State', the role 'fsm_State' has cardinality 0..*, and from 'fsm_Machine', the role 'fsm_Machine6' has cardinality 0..*.
+An association connects 'fsm_Machine' and 'fsm_Transition'. From 'fsm_Machine', the role 'fsm_Machine8' has cardinality 0..*, and from 'fsm_Transition', the role 'fsm_Transition' has cardinality 0..*.
+An association connects 'fsm_Transition' and 'fsm_State'. From 'fsm_Transition', the role 'fsm_Transition10' has cardinality 0..*, and from 'fsm_State', the role 'fsm_State11' has cardinality 0..*.
+An association connects 'fsm_Transition' and 'fsm_State'. From 'fsm_Transition', the role 'fsm_Transition13' has cardinality 0..*, and from 'fsm_State', the role 'fsm_State14' has cardinality 0..*.

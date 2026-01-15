@@ -1,0 +1,153 @@
+The domain model 'research19' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'research19_PublicationSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'research19_Collaboration' represents an important domain concept.
+It has one attribute: 'ratio', which is of type int.
+
+'Counted' represents an important domain concept.
+It does not declare any attributes.
+
+'research19_Transition' represents an important domain concept.
+It has the following attributes: 'guardExpression', which is of type str; 'guardLabel', which is of type str.
+
+'research19_Paragraph' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'StateMachineObject' represents an important domain concept.
+It does not declare any attributes.
+
+'research19_PublicationStatus' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'research19_Write' represents an important domain concept.
+It has one attribute: 'timeSpent', which is of type int.
+
+'research19_Progress' represents an important domain concept.
+It has one attribute: 'percent', which is of type int.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'research19_Review' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'Labelled' represents an important domain concept.
+It does not declare any attributes.
+
+'research19_PaperKeyword' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'research19_Action' represents an important domain concept.
+It has the following attributes: 'actionLabel', which is of type str; 'actionStatement', which is of type str.
+
+'research19_PublicationProcess' represents an important domain concept.
+It has the following attributes: 'minTime', which is of type int; 'maxTime', which is of type int.
+
+'research19_Position' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'research19_Labelled' represents an important domain concept.
+It has one attribute: 'lname', which is of type str.
+
+'research19_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'research19_StateMachineVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'research19_Keyword' represents an important domain concept.
+It has one attribute: 'word', which is of type str.
+
+'research19_Skill' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'research19_ReviewNote' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'research19_Paper' represents an important domain concept.
+It does not declare any attributes.
+
+'research19_Researcher' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'forName', which is of type str.
+
+'research19_State' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'id', which is of type int; 'name', which is of type str.
+
+'research19_Phase' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'research19_StateMachineObject' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'research19_PublicationStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'research19_KnowledgeManager' represents an important domain concept.
+It does not declare any attributes.
+
+'research19_Counted' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StateType' defines the following possible values: 'initial', 'final', 'ongoing'.
+
+The model also captures inheritance relationships between classes.
+The class 'research19_PublicationProcess' is a specialization of 'Named'.
+The class 'research19_Paper' is a specialization of 'Named'.
+The class 'research19_Paragraph' is a specialization of 'Counted'.
+The class 'research19_Paragraph' is a specialization of 'Named'.
+The class 'research19_ReviewNote' is a specialization of 'Named'.
+The class 'research19_Progress' is a specialization of 'Labelled'.
+The class 'research19_Write' is a specialization of 'Labelled'.
+The class 'research19_Review' is a specialization of 'Labelled'.
+The class 'research19_PublicationStructure' is a specialization of 'Named'.
+The class 'research19_PublicationSystem' is a specialization of 'Named'.
+The class 'research19_Position' is a specialization of 'Named'.
+The class 'research19_Keyword' is a specialization of 'Named'.
+The class 'research19_KnowledgeManager' is a specialization of 'Named'.
+The class 'research19_Transition' is a specialization of 'StateMachineObject'.
+The class 'research19_State' is a specialization of 'StateMachineObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'research19_Phase' and 'research19_PublicationProcess'. From 'research19_Phase', the role 'research19_Phase' has cardinality 0..*, and from 'research19_PublicationProcess', the role 'research19_PublicationProcess' has cardinality 0..*.
+An association connects 'research19_Write' and 'research19_Researcher'. From 'research19_Write', the role 'research19_Write' has cardinality 0..*, and from 'research19_Researcher', the role 'research19_Researcher' has cardinality 0..*.
+An association connects 'research19_Review' and 'research19_Researcher'. From 'research19_Review', the role 'research19_Review' has cardinality 0..*, and from 'research19_Researcher', the role 'research19_Researcher3' has cardinality 0..*.
+An association connects 'research19_Paper' and 'research19_Researcher'. From 'research19_Paper', the role 'Paper' has cardinality 0..*, and from 'research19_Researcher', the role 'authors' has cardinality 0..*.
+An association connects 'research19_Researcher' and 'research19_Skill'. From 'research19_Researcher', the role 'research19_Researcher6' has cardinality 0..*, and from 'research19_Skill', the role 'research19_Skill' has cardinality 0..*.
+An association connects 'research19_Researcher' and 'research19_Position'. From 'research19_Researcher', the role 'research19_Researcher8' has cardinality 0..*, and from 'research19_Position', the role 'research19_Position' has cardinality 0..*.
+An association connects 'research19_Collaboration' and 'research19_Researcher'. From 'research19_Collaboration', the role 'research19_Collaboration' has cardinality 0..*, and from 'research19_Researcher', the role 'research19_Researcher10' has cardinality 0..*.
+An association connects 'research19_Paragraph' and 'research19_Paper'. From 'research19_Paragraph', the role 'research19_Paragraph' has cardinality 0..*, and from 'research19_Paper', the role 'research19_Paper' has cardinality 0..*.
+An association connects 'research19_Progress' and 'research19_Paper'. From 'research19_Progress', the role 'Progress' has cardinality 0..*, and from 'research19_Paper', the role 'paper' has cardinality 0..*.
+An association connects 'research19_Researcher' and 'research19_Paper'. From 'research19_Researcher', the role 'Researcher' has cardinality 0..*, and from 'research19_Paper', the role 'res_papers' has cardinality 0..*.
+An association connects 'research19_Paper' and 'research19_PaperKeyword'. From 'research19_Paper', the role 'research19_Paper15' has cardinality 0..*, and from 'research19_PaperKeyword', the role 'research19_PaperKeyword' has cardinality 0..*.
+An association connects 'research19_Paper' and 'research19_Paper'. From 'research19_Paper', the role 'research19_Paper18' has cardinality 0..*, and from 'research19_Paper', the role 'research19_Paper16' has cardinality 0..*.
+An association connects 'research19_Paper' and 'research19_State'. From 'research19_Paper', the role 'research19_Paper20' has cardinality 0..*, and from 'research19_State', the role 'research19_State' has cardinality 0..*.
+An association connects 'research19_ReviewNote' and 'research19_Paragraph'. From 'research19_ReviewNote', the role 'research19_ReviewNote' has cardinality 0..*, and from 'research19_Paragraph', the role 'research19_Paragraph22' has cardinality 0..*.
+An association connects 'research19_PublicationProcess' and 'research19_Progress'. From 'research19_PublicationProcess', the role 'research19_PublicationProcess24' has cardinality 0..*, and from 'research19_Progress', the role 'research19_Progress' has cardinality 0..*.
+An association connects 'research19_Paper' and 'research19_Progress'. From 'research19_Paper', the role 'Paper26' has cardinality 0..*, and from 'research19_Progress', the role 'progress' has cardinality 0..*.
+An association connects 'research19_Paragraph' and 'research19_Write'. From 'research19_Paragraph', the role 'research19_Paragraph29' has cardinality 0..*, and from 'research19_Write', the role 'research19_Write28' has cardinality 0..*.
+An association connects 'research19_Review' and 'research19_ReviewNote'. From 'research19_Review', the role 'research19_Review31' has cardinality 0..*, and from 'research19_ReviewNote', the role 'research19_ReviewNote32' has cardinality 0..*.
+An association connects 'research19_Researcher' and 'research19_PublicationStructure'. From 'research19_Researcher', the role 'research19_Researcher34' has cardinality 0..*, and from 'research19_PublicationStructure', the role 'research19_PublicationStructure' has cardinality 0..*.
+An association connects 'research19_PublicationStructure' and 'research19_Paper'. From 'research19_PublicationStructure', the role 'research19_PublicationStructure36' has cardinality 0..*, and from 'research19_Paper', the role 'research19_Paper37' has cardinality 0..*.
+An association connects 'research19_PublicationStructure' and 'research19_KnowledgeManager'. From 'research19_PublicationStructure', the role 'research19_PublicationStructure39' has cardinality 0..*, and from 'research19_KnowledgeManager', the role 'research19_KnowledgeManager' has cardinality 0..*.
+An association connects 'research19_PublicationSystem' and 'research19_PublicationProcess'. From 'research19_PublicationSystem', the role 'research19_PublicationSystem' has cardinality 0..*, and from 'research19_PublicationProcess', the role 'research19_PublicationProcess41' has cardinality 0..*.
+An association connects 'research19_PublicationStructure' and 'research19_PublicationSystem'. From 'research19_PublicationStructure', the role 'research19_PublicationStructure44' has cardinality 0..*, and from 'research19_PublicationSystem', the role 'research19_PublicationSystem43' has cardinality 0..*.
+An association connects 'research19_Position' and 'research19_PublicationSystem'. From 'research19_Position', the role 'research19_Position47' has cardinality 0..*, and from 'research19_PublicationSystem', the role 'research19_PublicationSystem46' has cardinality 0..*.
+An association connects 'research19_PublicationStatus' and 'research19_PublicationSystem'. From 'research19_PublicationStatus', the role 'research19_PublicationStatus' has cardinality 0..*, and from 'research19_PublicationSystem', the role 'research19_PublicationSystem49' has cardinality 0..*.
+An association connects 'research19_Position' and 'research19_Position'. From 'research19_Position', the role 'research19_Position52' has cardinality 0..*, and from 'research19_Position', the role 'research19_Position50' has cardinality 0..*.
+An association connects 'research19_Paper' and 'research19_Keyword'. From 'research19_Paper', the role 'research19_Paper54' has cardinality 0..*, and from 'research19_Keyword', the role 'research19_Keyword' has cardinality 0..*.
+An association connects 'research19_KnowledgeManager' and 'research19_Keyword'. From 'research19_KnowledgeManager', the role 'research19_KnowledgeManager56' has cardinality 0..*, and from 'research19_Keyword', the role 'research19_Keyword57' has cardinality 0..*.
+An association connects 'research19_Keyword' and 'research19_PaperKeyword'. From 'research19_Keyword', the role 'research19_Keyword60' has cardinality 0..*, and from 'research19_PaperKeyword', the role 'research19_PaperKeyword59' has cardinality 0..*.
+An association connects 'research19_Paper' and 'research19_Collaboration'. From 'research19_Paper', the role 'research19_Paper63' has cardinality 0..*, and from 'research19_Collaboration', the role 'research19_Collaboration62' has cardinality 0..*.
+An association connects 'research19_StateMachineVariable' and 'research19_PublicationStatus'. From 'research19_StateMachineVariable', the role 'research19_StateMachineVariable' has cardinality 0..*, and from 'research19_PublicationStatus', the role 'research19_PublicationStatus65' has cardinality 0..*.
+An association connects 'research19_PublicationStatus' and 'research19_State'. From 'research19_PublicationStatus', the role 'research19_PublicationStatus67' has cardinality 0..*, and from 'research19_State', the role 'research19_State68' has cardinality 0..*.
+An association connects 'research19_Action' and 'research19_Transition'. From 'research19_Action', the role 'research19_Action' has cardinality 0..*, and from 'research19_Transition', the role 'research19_Transition' has cardinality 0..*.
+An association connects 'research19_State' and 'research19_Transition'. From 'research19_State', the role 'research19_State72' has cardinality 0..*, and from 'research19_Transition', the role 'research19_Transition71' has cardinality 0..*.
+An association connects 'research19_Transition' and 'research19_State'. From 'research19_Transition', the role 'research19_Transition74' has cardinality 0..*, and from 'research19_State', the role 'research19_State75' has cardinality 0..*.
+An association connects 'research19_State' and 'research19_Transition'. From 'research19_State', the role 'research19_State77' has cardinality 0..*, and from 'research19_Transition', the role 'research19_Transition78' has cardinality 0..*.
+An association connects 'research19_State' and 'research19_Action'. From 'research19_State', the role 'research19_State80' has cardinality 0..*, and from 'research19_Action', the role 'research19_Action81' has cardinality 0..*.
+An association connects 'research19_Action' and 'research19_Action'. From 'research19_Action', the role 'research19_Action84' has cardinality 0..*, and from 'research19_Action', the role 'research19_Action82' has cardinality 0..*.

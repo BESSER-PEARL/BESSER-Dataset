@@ -1,0 +1,399 @@
+The domain model 'PrimitiveTypes' describes the core structural elements and their relationships within the system.
+
+The model defines 90 main class(es).
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'MapElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OclModel' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_CollectionOperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_StringExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'OCL_OclAnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_TupleExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_OclModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Iterator' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_MapType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_IteratorExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'MapExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OclContextDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TuplePart' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_SetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_OclModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OCL_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_NavigationOrAttributeCallExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OCL_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OCL_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'OclModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_BooleanExp' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type str.
+
+'OCL_SuperExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_TupleTypeAttribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OclFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_SequenceExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_BagExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_OclFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+'IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_MapExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ATL_LocatedElement' represents an important domain concept.
+It has the following attributes: 'commentsBefore', which is of type str; 'commentsAfter', which is of type str; 'location', which is of type str.
+
+'OCL_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_OperatorCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_OclType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OCL_EnumLiteralExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OCL_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_RealExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type str.
+
+'OCL_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_OrderedSetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_Iterator' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_OclUndefinedExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_MapElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_VariableDeclaration' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'varName', which is of type str.
+
+'OCL_OperationCallExp' represents an important domain concept.
+It has one attribute: 'operationName', which is of type str.
+
+'OclType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_TuplePart' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_IntegerExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'OCL_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_OclFeatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_OclContextDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'MapType' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleTypeAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OclFeatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleExp' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'OCL_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'OCL_OclExpression' is a specialization of 'LocatedElement'.
+The class 'OCL_VariableExp' is a specialization of 'OclExpression'.
+The class 'OCL_SuperExp' is a specialization of 'OclExpression'.
+The class 'OCL_PrimitiveExp' is a specialization of 'OclExpression'.
+The class 'OCL_StringExp' is a specialization of 'PrimitiveExp'.
+The class 'OCL_BooleanExp' is a specialization of 'PrimitiveExp'.
+The class 'OCL_NumericExp' is a specialization of 'PrimitiveExp'.
+The class 'OCL_RealExp' is a specialization of 'NumericExp'.
+The class 'OCL_IntegerExp' is a specialization of 'NumericExp'.
+The class 'OCL_CollectionExp' is a specialization of 'OclExpression'.
+The class 'OCL_BagExp' is a specialization of 'CollectionExp'.
+The class 'OCL_OrderedSetExp' is a specialization of 'CollectionExp'.
+The class 'OCL_SequenceExp' is a specialization of 'CollectionExp'.
+The class 'OCL_SetExp' is a specialization of 'CollectionExp'.
+The class 'OCL_TupleExp' is a specialization of 'OclExpression'.
+The class 'OCL_TuplePart' is a specialization of 'VariableDeclaration'.
+The class 'OCL_MapExp' is a specialization of 'OclExpression'.
+The class 'OCL_MapElement' is a specialization of 'LocatedElement'.
+The class 'OCL_EnumLiteralExp' is a specialization of 'OclExpression'.
+The class 'OCL_OclUndefinedExp' is a specialization of 'OclExpression'.
+The class 'OCL_PropertyCallExp' is a specialization of 'OclExpression'.
+The class 'OCL_NavigationOrAttributeCallExp' is a specialization of 'PropertyCallExp'.
+The class 'OCL_OperationCallExp' is a specialization of 'PropertyCallExp'.
+The class 'OCL_OperatorCallExp' is a specialization of 'OperationCallExp'.
+The class 'OCL_CollectionOperationCallExp' is a specialization of 'OperationCallExp'.
+The class 'OCL_LoopExp' is a specialization of 'PropertyCallExp'.
+The class 'OCL_IterateExp' is a specialization of 'LoopExp'.
+The class 'OCL_IteratorExp' is a specialization of 'LoopExp'.
+The class 'OCL_LetExp' is a specialization of 'OclExpression'.
+The class 'OCL_IfExp' is a specialization of 'OclExpression'.
+The class 'OCL_VariableDeclaration' is a specialization of 'LocatedElement'.
+The class 'OCL_Iterator' is a specialization of 'VariableDeclaration'.
+The class 'OCL_Parameter' is a specialization of 'VariableDeclaration'.
+The class 'OCL_CollectionType' is a specialization of 'OclType'.
+The class 'OCL_OclType' is a specialization of 'OclExpression'.
+The class 'OCL_Primitive' is a specialization of 'OclType'.
+The class 'OCL_StringType' is a specialization of 'Primitive'.
+The class 'OCL_BooleanType' is a specialization of 'Primitive'.
+The class 'OCL_NumericType' is a specialization of 'Primitive'.
+The class 'OCL_IntegerType' is a specialization of 'NumericType'.
+The class 'OCL_RealType' is a specialization of 'NumericType'.
+The class 'OCL_BagType' is a specialization of 'CollectionType'.
+The class 'OCL_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'OCL_SequenceType' is a specialization of 'CollectionType'.
+The class 'OCL_SetType' is a specialization of 'CollectionType'.
+The class 'OCL_OclAnyType' is a specialization of 'OclType'.
+The class 'OCL_TupleType' is a specialization of 'OclType'.
+The class 'OCL_TupleTypeAttribute' is a specialization of 'LocatedElement'.
+The class 'OCL_OclModelElement' is a specialization of 'OclType'.
+The class 'OCL_MapType' is a specialization of 'OclType'.
+The class 'OCL_OclFeatureDefinition' is a specialization of 'LocatedElement'.
+The class 'OCL_OclContextDefinition' is a specialization of 'LocatedElement'.
+The class 'OCL_OclFeature' is a specialization of 'LocatedElement'.
+The class 'OCL_Attribute' is a specialization of 'OclFeature'.
+The class 'OCL_Operation' is a specialization of 'OclFeature'.
+The class 'OCL_OclModel' is a specialization of 'LocatedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'OCL_OclExpression' and 'OclType'. From 'OCL_OclExpression', the role '1' has cardinality 0..*, and from 'OclType', the role '#' has cardinality 0..*.
+An association connects 'IfExp' and 'OCL_OclExpression'. From 'IfExp', the role '#3' has cardinality 0..*, and from 'OCL_OclExpression', the role '12' has cardinality 0..*.
+An association connects 'PropertyCallExp' and 'OCL_OclExpression'. From 'PropertyCallExp', the role '#6' has cardinality 0..*, and from 'OCL_OclExpression', the role '15' has cardinality 0..*.
+An association connects 'CollectionExp' and 'OCL_OclExpression'. From 'CollectionExp', the role '#9' has cardinality 0..*, and from 'OCL_OclExpression', the role '18' has cardinality 0..*.
+An association connects 'OCL_OclExpression' and 'LetExp'. From 'OCL_OclExpression', the role '111' has cardinality 0..*, and from 'LetExp', the role '#12' has cardinality 0..*.
+An association connects 'OCL_OclExpression' and 'LoopExp'. From 'OCL_OclExpression', the role '114' has cardinality 0..*, and from 'LoopExp', the role '#15' has cardinality 0..*.
+An association connects 'OperationCallExp' and 'OCL_OclExpression'. From 'OperationCallExp', the role '#18' has cardinality 0..*, and from 'OCL_OclExpression', the role '117' has cardinality 0..*.
+An association connects 'VariableDeclaration' and 'OCL_OclExpression'. From 'VariableDeclaration', the role '#21' has cardinality 0..*, and from 'OCL_OclExpression', the role '120' has cardinality 0..*.
+An association connects 'IfExp' and 'OCL_OclExpression'. From 'IfExp', the role '#24' has cardinality 0..*, and from 'OCL_OclExpression', the role '123' has cardinality 0..*.
+An association connects 'OCL_OclExpression' and 'Operation'. From 'OCL_OclExpression', the role '126' has cardinality 0..*, and from 'Operation', the role '#27' has cardinality 0..*.
+An association connects 'OCL_OclExpression' and 'IfExp'. From 'OCL_OclExpression', the role '129' has cardinality 0..*, and from 'IfExp', the role '#30' has cardinality 0..*.
+An association connects 'Attribute' and 'OCL_OclExpression'. From 'Attribute', the role '#33' has cardinality 0..*, and from 'OCL_OclExpression', the role '132' has cardinality 0..*.
+An association connects 'VariableDeclaration' and 'OCL_VariableExp'. From 'VariableDeclaration', the role '#36' has cardinality 0..*, and from 'OCL_VariableExp', the role '135' has cardinality 0..*.
+An association connects 'OCL_CollectionExp' and 'OclExpression'. From 'OCL_CollectionExp', the role '138' has cardinality 0..*, and from 'OclExpression', the role '#39' has cardinality 0..*.
+An association connects 'TuplePart' and 'OCL_TupleExp'. From 'TuplePart', the role '#42' has cardinality 0..*, and from 'OCL_TupleExp', the role '141' has cardinality 0..*.
+An association connects 'OCL_TuplePart' and 'TupleExp'. From 'OCL_TuplePart', the role '144' has cardinality 0..*, and from 'TupleExp', the role '#45' has cardinality 0..*.
+An association connects 'MapElement' and 'OCL_MapExp'. From 'MapElement', the role '#48' has cardinality 0..*, and from 'OCL_MapExp', the role '147' has cardinality 0..*.
+An association connects 'OCL_MapElement' and 'MapExp'. From 'OCL_MapElement', the role '150' has cardinality 0..*, and from 'MapExp', the role '#51' has cardinality 0..*.
+An association connects 'OclExpression' and 'OCL_MapElement'. From 'OclExpression', the role 'OclExpression' has cardinality 0..*, and from 'OCL_MapElement', the role 'OCL_MapElement' has cardinality 0..*.
+An association connects 'OclExpression' and 'OCL_MapElement'. From 'OclExpression', the role 'OclExpression55' has cardinality 0..*, and from 'OCL_MapElement', the role 'OCL_MapElement54' has cardinality 0..*.
+An association connects 'OCL_PropertyCallExp' and 'OclExpression'. From 'OCL_PropertyCallExp', the role '157' has cardinality 0..*, and from 'OclExpression', the role '#58' has cardinality 0..*.
+An association connects 'OclExpression' and 'OCL_OperationCallExp'. From 'OclExpression', the role '#61' has cardinality 0..*, and from 'OCL_OperationCallExp', the role '160' has cardinality 0..*.
+An association connects 'OclExpression' and 'OCL_LoopExp'. From 'OclExpression', the role '#64' has cardinality 0..*, and from 'OCL_LoopExp', the role '163' has cardinality 0..*.
+An association connects 'Iterator' and 'OCL_LoopExp'. From 'Iterator', the role '#67' has cardinality 0..*, and from 'OCL_LoopExp', the role '166' has cardinality 0..*.
+An association connects 'OCL_IterateExp' and 'VariableDeclaration'. From 'OCL_IterateExp', the role '169' has cardinality 0..*, and from 'VariableDeclaration', the role '#70' has cardinality 0..*.
+An association connects 'VariableDeclaration' and 'OCL_LetExp'. From 'VariableDeclaration', the role '#73' has cardinality 0..*, and from 'OCL_LetExp', the role '172' has cardinality 0..*.
+An association connects 'OCL_LetExp' and 'OclExpression'. From 'OCL_LetExp', the role '175' has cardinality 0..*, and from 'OclExpression', the role '#76' has cardinality 0..*.
+An association connects 'OCL_IfExp' and 'OclExpression'. From 'OCL_IfExp', the role '178' has cardinality 0..*, and from 'OclExpression', the role '#79' has cardinality 0..*.
+An association connects 'OCL_IfExp' and 'OclExpression'. From 'OCL_IfExp', the role '181' has cardinality 0..*, and from 'OclExpression', the role '#82' has cardinality 0..*.
+An association connects 'OCL_IfExp' and 'OclExpression'. From 'OCL_IfExp', the role '184' has cardinality 0..*, and from 'OclExpression', the role '#85' has cardinality 0..*.
+An association connects 'OclType' and 'OCL_VariableDeclaration'. From 'OclType', the role '#88' has cardinality 0..*, and from 'OCL_VariableDeclaration', the role '187' has cardinality 0..*.
+An association connects 'OCL_VariableDeclaration' and 'OclExpression'. From 'OCL_VariableDeclaration', the role '190' has cardinality 0..*, and from 'OclExpression', the role '#91' has cardinality 0..*.
+An association connects 'LetExp' and 'OCL_VariableDeclaration'. From 'LetExp', the role '#94' has cardinality 0..*, and from 'OCL_VariableDeclaration', the role '193' has cardinality 0..*.
+An association connects 'IterateExp' and 'OCL_VariableDeclaration'. From 'IterateExp', the role '#97' has cardinality 0..*, and from 'OCL_VariableDeclaration', the role '196' has cardinality 0..*.
+An association connects 'OCL_VariableDeclaration' and 'VariableExp'. From 'OCL_VariableDeclaration', the role '199' has cardinality 0..*, and from 'VariableExp', the role '#100' has cardinality 0..*.
+An association connects 'LoopExp' and 'OCL_Iterator'. From 'LoopExp', the role '#103' has cardinality 0..*, and from 'OCL_Iterator', the role '1102' has cardinality 0..*.
+An association connects 'OCL_Parameter' and 'Operation'. From 'OCL_Parameter', the role '1105' has cardinality 0..*, and from 'Operation', the role '#106' has cardinality 0..*.
+An association connects 'OCL_CollectionType' and 'OclType'. From 'OCL_CollectionType', the role '1108' has cardinality 0..*, and from 'OclType', the role '#109' has cardinality 0..*.
+An association connects 'OCL_OclType' and 'OclContextDefinition'. From 'OCL_OclType', the role '1111' has cardinality 0..*, and from 'OclContextDefinition', the role '#112' has cardinality 0..*.
+An association connects 'OclExpression' and 'OCL_OclType'. From 'OclExpression', the role '#115' has cardinality 0..*, and from 'OCL_OclType', the role '1114' has cardinality 0..*.
+An association connects 'Operation' and 'OCL_OclType'. From 'Operation', the role '#118' has cardinality 0..*, and from 'OCL_OclType', the role '1117' has cardinality 0..*.
+An association connects 'OCL_OclType' and 'MapType'. From 'OCL_OclType', the role '1120' has cardinality 0..*, and from 'MapType', the role '#121' has cardinality 0..*.
+An association connects 'Attribute' and 'OCL_OclType'. From 'Attribute', the role '#124' has cardinality 0..*, and from 'OCL_OclType', the role '1123' has cardinality 0..*.
+An association connects 'OCL_OclType' and 'MapType'. From 'OCL_OclType', the role '1126' has cardinality 0..*, and from 'MapType', the role '#127' has cardinality 0..*.
+An association connects 'OCL_OclType' and 'CollectionType'. From 'OCL_OclType', the role '1129' has cardinality 0..*, and from 'CollectionType', the role '#130' has cardinality 0..*.
+An association connects 'TupleTypeAttribute' and 'OCL_OclType'. From 'TupleTypeAttribute', the role '#133' has cardinality 0..*, and from 'OCL_OclType', the role '1132' has cardinality 0..*.
+An association connects 'OCL_OclType' and 'VariableDeclaration'. From 'OCL_OclType', the role '1135' has cardinality 0..*, and from 'VariableDeclaration', the role '#136' has cardinality 0..*.
+An association connects 'TupleTypeAttribute' and 'OCL_TupleType'. From 'TupleTypeAttribute', the role '#139' has cardinality 0..*, and from 'OCL_TupleType', the role '1138' has cardinality 0..*.
+An association connects 'OclType' and 'OCL_TupleTypeAttribute'. From 'OclType', the role '#142' has cardinality 0..*, and from 'OCL_TupleTypeAttribute', the role '1141' has cardinality 0..*.
+An association connects 'OCL_TupleTypeAttribute' and 'TupleType'. From 'OCL_TupleTypeAttribute', the role '1144' has cardinality 0..*, and from 'TupleType', the role '#145' has cardinality 0..*.
+An association connects 'OCL_OclModelElement' and 'OclModel'. From 'OCL_OclModelElement', the role '1147' has cardinality 0..*, and from 'OclModel', the role '#148' has cardinality 0..*.
+An association connects 'OclType' and 'OCL_MapType'. From 'OclType', the role '#151' has cardinality 0..*, and from 'OCL_MapType', the role '1150' has cardinality 0..*.
+An association connects 'OclType' and 'OCL_MapType'. From 'OclType', the role '#154' has cardinality 0..*, and from 'OCL_MapType', the role '1153' has cardinality 0..*.
+An association connects 'OCL_OclFeatureDefinition' and 'OclFeature'. From 'OCL_OclFeatureDefinition', the role '1156' has cardinality 0..*, and from 'OclFeature', the role '#157' has cardinality 0..*.
+An association connects 'OclContextDefinition' and 'OCL_OclFeatureDefinition'. From 'OclContextDefinition', the role '#160' has cardinality 0..*, and from 'OCL_OclFeatureDefinition', the role '1159' has cardinality 0..*.
+An association connects 'OCL_OclContextDefinition' and 'OclFeatureDefinition'. From 'OCL_OclContextDefinition', the role '1162' has cardinality 0..*, and from 'OclFeatureDefinition', the role '#163' has cardinality 0..*.
+An association connects 'OCL_OclContextDefinition' and 'OclType'. From 'OCL_OclContextDefinition', the role '1165' has cardinality 0..*, and from 'OclType', the role '#166' has cardinality 0..*.
+An association connects 'OclFeatureDefinition' and 'OCL_OclFeature'. From 'OclFeatureDefinition', the role '#169' has cardinality 0..*, and from 'OCL_OclFeature', the role '1168' has cardinality 0..*.
+An association connects 'OCL_Attribute' and 'OclExpression'. From 'OCL_Attribute', the role '1171' has cardinality 0..*, and from 'OclExpression', the role '#172' has cardinality 0..*.
+An association connects 'OCL_Attribute' and 'OclType'. From 'OCL_Attribute', the role '1174' has cardinality 0..*, and from 'OclType', the role '#175' has cardinality 0..*.
+An association connects 'OCL_Operation' and 'Parameter'. From 'OCL_Operation', the role '1177' has cardinality 0..*, and from 'Parameter', the role '#178' has cardinality 0..*.
+An association connects 'OCL_Operation' and 'OclType'. From 'OCL_Operation', the role '1180' has cardinality 0..*, and from 'OclType', the role '#181' has cardinality 0..*.
+An association connects 'OCL_Operation' and 'OclExpression'. From 'OCL_Operation', the role '1183' has cardinality 0..*, and from 'OclExpression', the role '#184' has cardinality 0..*.
+An association connects 'OCL_OclModel' and 'OclModel'. From 'OCL_OclModel', the role '1186' has cardinality 0..*, and from 'OclModel', the role '#187' has cardinality 0..*.
+An association connects 'OCL_OclModel' and 'OclModelElement'. From 'OCL_OclModel', the role '1189' has cardinality 0..*, and from 'OclModelElement', the role '#190' has cardinality 0..*.
+An association connects 'OclModel' and 'OCL_OclModel'. From 'OclModel', the role '#193' has cardinality 0..*, and from 'OCL_OclModel', the role '1192' has cardinality 0..*.

@@ -1,0 +1,46 @@
+The domain model 'scxml' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'scxml_ScxmlScxmlType' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'id', which is of type str; 'initial', which is of type str.
+
+'scxml_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'scxml_ScxmlOnexecuteType' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'scxmlExecutablecontent', which is of type str; 'any', which is of type str.
+
+'scxml_ScxmlScriptType' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'content', which is of type str; 'scxmlExtraContent', which is of type str; 'src', which is of type str; 'any', which is of type str.
+
+'scxml_ScxmlParamType' represents an important domain concept.
+It has the following attributes: 'expr', which is of type str; 'scxmlExtraContent', which is of type str; 'any', which is of type str; 'anyAttribute', which is of type str; 'name', which is of type str.
+
+'scxml_ScxmlTransitionType' represents an important domain concept.
+It has the following attributes: 'cond', which is of type str; 'scxmlExecutablecontent', which is of type str; 'target', which is of type str; 'event', which is of type str; 'any', which is of type str.
+
+'scxml_ScxmlStateType' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'initial', which is of type str.
+
+'scxml_ScxmlSendType' represents an important domain concept.
+It has one attribute: 'event', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'scxml_ScxmlOnexecuteType' and 'scxml_ScxmlSendType'. From 'scxml_ScxmlOnexecuteType', the role 'scxml_ScxmlOnexecuteType' has cardinality 0..*, and from 'scxml_ScxmlSendType', the role 'scxml_ScxmlSendType' has cardinality 0..*.
+An association connects 'scxml_ScxmlScriptType' and 'scxml_ScxmlOnexecuteType'. From 'scxml_ScxmlScriptType', the role 'scxml_ScxmlScriptType' has cardinality 0..*, and from 'scxml_ScxmlOnexecuteType', the role 'scxml_ScxmlOnexecuteType2' has cardinality 0..*.
+An association connects 'scxml_ScxmlScxmlType' and 'scxml_ScxmlStateType'. From 'scxml_ScxmlScxmlType', the role 'scxml_ScxmlScxmlType' has cardinality 0..*, and from 'scxml_ScxmlStateType', the role 'scxml_ScxmlStateType' has cardinality 0..*.
+An association connects 'scxml_ScxmlScriptType' and 'scxml_ScxmlScxmlType'. From 'scxml_ScxmlScriptType', the role 'scxml_ScxmlScriptType6' has cardinality 0..*, and from 'scxml_ScxmlScxmlType', the role 'scxml_ScxmlScxmlType5' has cardinality 0..*.
+An association connects 'scxml_ScxmlParamType' and 'scxml_ScxmlSendType'. From 'scxml_ScxmlParamType', the role 'scxml_ScxmlParamType' has cardinality 0..*, and from 'scxml_ScxmlSendType', the role 'scxml_ScxmlSendType8' has cardinality 0..*.
+An association connects 'scxml_ScxmlStateType' and 'scxml_ScxmlOnexecuteType'. From 'scxml_ScxmlStateType', the role 'scxml_ScxmlStateType10' has cardinality 0..*, and from 'scxml_ScxmlOnexecuteType', the role 'scxml_ScxmlOnexecuteType11' has cardinality 0..*.
+An association connects 'scxml_ScxmlOnexecuteType' and 'scxml_ScxmlStateType'. From 'scxml_ScxmlOnexecuteType', the role 'scxml_ScxmlOnexecuteType14' has cardinality 0..*, and from 'scxml_ScxmlStateType', the role 'scxml_ScxmlStateType13' has cardinality 0..*.
+An association connects 'scxml_ScxmlTransitionType' and 'scxml_ScxmlStateType'. From 'scxml_ScxmlTransitionType', the role 'scxml_ScxmlTransitionType' has cardinality 0..*, and from 'scxml_ScxmlStateType', the role 'scxml_ScxmlStateType16' has cardinality 0..*.
+An association connects 'scxml_ScxmlStateType' and 'scxml_ScxmlStateType'. From 'scxml_ScxmlStateType', the role 'scxml_ScxmlStateType17' has cardinality 0..*, and from 'scxml_ScxmlStateType', the role 'scxml_ScxmlStateType19' has cardinality 0..*.
+An association connects 'scxml_ScxmlTransitionType' and 'scxml_ScxmlSendType'. From 'scxml_ScxmlTransitionType', the role 'scxml_ScxmlTransitionType21' has cardinality 0..*, and from 'scxml_ScxmlSendType', the role 'scxml_ScxmlSendType22' has cardinality 0..*.
+An association connects 'scxml_ScxmlScriptType' and 'scxml_ScxmlTransitionType'. From 'scxml_ScxmlScriptType', the role 'scxml_ScxmlScriptType25' has cardinality 0..*, and from 'scxml_ScxmlTransitionType', the role 'scxml_ScxmlTransitionType24' has cardinality 0..*.
+An association connects 'scxml_EStringToStringMapEntry' and 'scxml_DocumentRoot'. From 'scxml_EStringToStringMapEntry', the role 'scxml_EStringToStringMapEntry' has cardinality 0..*, and from 'scxml_DocumentRoot', the role 'scxml_DocumentRoot' has cardinality 0..*.
+An association connects 'scxml_EStringToStringMapEntry' and 'scxml_DocumentRoot'. From 'scxml_EStringToStringMapEntry', the role 'scxml_EStringToStringMapEntry29' has cardinality 0..*, and from 'scxml_DocumentRoot', the role 'scxml_DocumentRoot28' has cardinality 0..*.
+An association connects 'scxml_ScxmlScxmlType' and 'scxml_DocumentRoot'. From 'scxml_ScxmlScxmlType', the role 'scxml_ScxmlScxmlType32' has cardinality 0..*, and from 'scxml_DocumentRoot', the role 'scxml_DocumentRoot31' has cardinality 0..*.

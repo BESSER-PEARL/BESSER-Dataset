@@ -1,0 +1,1383 @@
+The domain model 'c_sharp' describes the core structural elements and their relationships within the system.
+
+The model defines 336 main class(es).
+
+'c_sharp_statements_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'AdditiveExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_classes_ClassBase' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_InclusiveOr' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_AssignmentRightShift' represents an important domain concept.
+It does not declare any attributes.
+
+'ForInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_attributes_NamedArgumentList' represents an important domain concept.
+It does not declare any attributes.
+
+'FormalParameterList' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_ParenthesizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'NamespaceBody' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_LabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_Bool' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_ClassMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstantDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_FixedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Attributes' represents an important domain concept.
+It does not declare any attributes.
+
+'Addition' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'PreIncrementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryModificationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_AssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_Subtraction' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_LessThan' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_common_NamespaceOrTypeName' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_literals_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_And' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_AssignmentUnsignedRightShift' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_EmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_Argument' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_PrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_ShiftExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_modifiers_Sealed' represents an important domain concept.
+It does not declare any attributes.
+
+'Return' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_PlusPlus' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_modifiers_New' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_attributes_AttributeArguments' represents an important domain concept.
+It does not declare any attributes.
+
+'common_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_LocalConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_PrimaryNoArrayCreationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_literals_DecimalIntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'c_sharp_operators_AdditiveOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_modifiers_Volatile' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_LessThanOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterArray' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_LockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_AssignmentOr' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_attributes_GlobalAttributes' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_modifiers_Virtual' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_ForInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_InclusiveOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_modifiers_Unsafe' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_AssignmentPlus' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_EmbeddedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_PointerType' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_literals_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'JumpStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_modifiers_Static' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_VariableDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'Complement' represents an important domain concept.
+It does not declare any attributes.
+
+'namespaces_NamespaceMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_Char' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_ExpressionList' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_PrimaryExtendedExpressionType' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_Remainder' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_CheckedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_Int' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_keywords_Params' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_SwitchLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_attributes_AttributeTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_FinallyClause' represents an important domain concept.
+It does not declare any attributes.
+
+'FixedParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_Decimal' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_classes_ClassMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'NonArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_attributes_GlobalAttributeTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_GeneralCatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_PrimaryExtendedExpressionType' represents an important domain concept.
+It does not declare any attributes.
+
+'ExclusiveOr' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_ExclusiveOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_namespaces_CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_AssignmentAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'FinallyClause' represents an important domain concept.
+It does not declare any attributes.
+
+'RightShift' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_literals_CharacterLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'c_sharp_keywords_Out' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_SimpleEmbeddedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ArgumentList' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_ShiftOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_modifiers_ReadOnly' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_namespaces_NamespaceMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'EmbeddedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_Double' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_classes_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_EqualityExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_ClassOrInterfaceOrDelegateOrEnumType' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_keywords_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'InclusiveOr' represents an important domain concept.
+It does not declare any attributes.
+
+'CastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_Byte' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_literals_This' represents an important domain concept.
+It does not declare any attributes.
+
+'NamespaceMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_NonArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'GeneralCatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'NotEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeArguments' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_attributes_Attributes' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_ForInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_literals_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_ArrayCreationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicativeOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_Addition' represents an important domain concept.
+It does not declare any attributes.
+
+'Params' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_PostDecrementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'LeftShift' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_UInt' represents an important domain concept.
+It does not declare any attributes.
+
+'SelectionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalOr' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_attributes_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'Unsafe' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_keywords_Default' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_ResourceAcquisition' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_StatementExpressionList' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_keywords_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'NamespaceOrTypeName' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_classes_FormalParameterList' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_UncheckedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'MemberAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_GotoStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_ReferenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'And' represents an important domain concept.
+It does not declare any attributes.
+
+'namespaces_TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_keywords_Ref' represents an important domain concept.
+It does not declare any attributes.
+
+'StatementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_DoStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_modifiers_Internal' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_AssignmentMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_ConditionalOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_PreIncrementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassBase' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_arrays_StackallocInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'LessThanOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_StatementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_DelegateCreationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_BaseAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Division' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_MultiplicativeOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'GreaterThan' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_ConditionalAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_UncheckedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_classes_FixedParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_modifiers_Private' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_Void' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_arrays_ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_TryStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_AdditiveExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_IterationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_AssignmentOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_EqualityOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_common_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_modifiers_Extern' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_SelectionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_Multiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'PointerType' represents an important domain concept.
+It does not declare any attributes.
+
+'SwitchLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_ObjectCreationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'LessThan' represents an important domain concept.
+It does not declare any attributes.
+
+'GlobalAttributeTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_SimpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_modifiers_Protected' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimaryNoArrayCreationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_Float' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_PointerMemberAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_ArgumentList' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_SByte' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_attributes_NamedArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_AdditiveOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'Modifier' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_StatementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_classes_VariableInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Subtraction' represents an important domain concept.
+It does not declare any attributes.
+
+'ShiftOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_ForeachStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_LeftShift' represents an important domain concept.
+It does not declare any attributes.
+
+'PreDecrementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_ConditionalOr' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_AssignmentLeftShift' represents an important domain concept.
+It does not declare any attributes.
+
+'Ref' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Case' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_RelationalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_AssignmentModulo' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_Long' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_modifiers_Public' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_Negate' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_AssignmentDivision' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_MemberAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_UnsignedRightShift' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_RightShift' represents an important domain concept.
+It does not declare any attributes.
+
+'ExclusiveOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'FixedPointerDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'InclusiveOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'GlobalAttributes' represents an important domain concept.
+It does not declare any attributes.
+
+'Default' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_PostIncrementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ReferenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_Short' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimaryExtendedExpressionType' represents an important domain concept.
+It does not declare any attributes.
+
+'EqualityOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'Negate' represents an important domain concept.
+It does not declare any attributes.
+
+'types_NonArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_literals_HexadecimalIntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'c_sharp_types_ULong' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_ResourceAcquisition' represents an important domain concept.
+It does not declare any attributes.
+
+'UsingDirective' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_namespaces_UsingDirective' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_modifiers_Modifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Argument' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_GreaterThan' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_MultiplicativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_PrimaryNoArrayCreationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_ThrowStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_ConstantDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'ShiftExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_SpecificCatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_MinusMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_arrays_ArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'RankSpecifier' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_DeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'IterationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'SpecificCatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'EqualityExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_ExclusiveOr' represents an important domain concept.
+It does not declare any attributes.
+
+'GreaterThanOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'LocalConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceAcquisition' represents an important domain concept.
+It does not declare any attributes.
+
+'Remainder' represents an important domain concept.
+It does not declare any attributes.
+
+'AssignmentOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'SwitchSection' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_PreDecrementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_namespaces_TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_InvocationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_namespaces_NamespaceBody' represents an important domain concept.
+It does not declare any attributes.
+
+'Multiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_UnaryModificationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_modifiers_Abstract' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_AssignmentMultiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_UsingStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_classes_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_String' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_CheckedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_namespaces_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_RelationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_classes_FieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_AddressOfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassOrInterfaceOrDelegateOrEnumType' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_JumpStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_CastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'StatementExpressionList' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_ElementAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_keywords_Case' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_modifiers_Partial' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_FixedPointerDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_GreaterThanOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_types_UShort' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_classes_ParameterArray' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_classes_ConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_ConditionalAndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_common_Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Out' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_TypeOfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_VariableInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_expressions_SizeOfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_NotEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedArgumentList' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_literals_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'c_sharp_arrays_RankSpecifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalAndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_modifiers_OverrideModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'AddressOfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_Complement' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_operators_AssignmentExclusiveOr' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_statements_SwitchSection' represents an important domain concept.
+It does not declare any attributes.
+
+'c_sharp_literals_RealLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'c_sharp_classes_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpressionList' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'c_sharp_common_Identifier' is a specialization of 'common_NamedElement'.
+The class 'c_sharp_common_Identifier' is a specialization of 'expressions_PrimaryNoArrayCreationExpression'.
+The class 'c_sharp_namespaces_UsingDirective' is a specialization of 'NamedElement'.
+The class 'c_sharp_namespaces_Namespace' is a specialization of 'NamespaceMemberDeclaration'.
+The class 'c_sharp_namespaces_TypeDeclaration' is a specialization of 'namespaces_NamespaceMemberDeclaration'.
+The class 'c_sharp_namespaces_TypeDeclaration' is a specialization of 'classes_ClassMemberDeclaration'.
+The class 'c_sharp_classes_Class' is a specialization of 'namespaces_TypeDeclaration'.
+The class 'c_sharp_classes_Class' is a specialization of 'common_NamedElement'.
+The class 'c_sharp_classes_Method' is a specialization of 'classes_ClassMemberDeclaration'.
+The class 'c_sharp_classes_Method' is a specialization of 'common_NamedElement'.
+The class 'c_sharp_classes_ConstantDeclaration' is a specialization of 'ClassMemberDeclaration'.
+The class 'c_sharp_classes_FieldDeclaration' is a specialization of 'ClassMemberDeclaration'.
+The class 'c_sharp_arrays_StackallocInitializer' is a specialization of 'VariableInitializer'.
+The class 'c_sharp_arrays_ArrayInitializer' is a specialization of 'VariableInitializer'.
+The class 'c_sharp_arrays_ArrayType' is a specialization of 'Type'.
+The class 'c_sharp_statements_LabeledStatement' is a specialization of 'statements_Statement'.
+The class 'c_sharp_statements_LabeledStatement' is a specialization of 'common_NamedElement'.
+The class 'c_sharp_statements_DeclarationStatement' is a specialization of 'Statement'.
+The class 'c_sharp_statements_EmbeddedStatement' is a specialization of 'Statement'.
+The class 'c_sharp_statements_SimpleEmbeddedStatement' is a specialization of 'EmbeddedStatement'.
+The class 'c_sharp_statements_EmptyStatement' is a specialization of 'EmbeddedStatement'.
+The class 'c_sharp_statements_ExpressionStatement' is a specialization of 'EmbeddedStatement'.
+The class 'c_sharp_statements_SelectionStatement' is a specialization of 'EmbeddedStatement'.
+The class 'c_sharp_statements_IfStatement' is a specialization of 'SelectionStatement'.
+The class 'c_sharp_statements_SwitchStatement' is a specialization of 'SelectionStatement'.
+The class 'c_sharp_statements_IterationStatement' is a specialization of 'EmbeddedStatement'.
+The class 'c_sharp_statements_WhileStatement' is a specialization of 'IterationStatement'.
+The class 'c_sharp_statements_DoStatement' is a specialization of 'IterationStatement'.
+The class 'c_sharp_statements_ForStatement' is a specialization of 'IterationStatement'.
+The class 'c_sharp_statements_ForeachStatement' is a specialization of 'IterationStatement'.
+The class 'c_sharp_statements_JumpStatement' is a specialization of 'EmbeddedStatement'.
+The class 'c_sharp_statements_BreakStatement' is a specialization of 'JumpStatement'.
+The class 'c_sharp_statements_ContinueStatement' is a specialization of 'JumpStatement'.
+The class 'c_sharp_statements_GotoStatement' is a specialization of 'JumpStatement'.
+The class 'c_sharp_statements_ReturnStatement' is a specialization of 'JumpStatement'.
+The class 'c_sharp_statements_ThrowStatement' is a specialization of 'JumpStatement'.
+The class 'c_sharp_statements_TryStatement' is a specialization of 'EmbeddedStatement'.
+The class 'c_sharp_statements_CheckedStatement' is a specialization of 'EmbeddedStatement'.
+The class 'c_sharp_statements_UncheckedStatement' is a specialization of 'EmbeddedStatement'.
+The class 'c_sharp_statements_LockStatement' is a specialization of 'EmbeddedStatement'.
+The class 'c_sharp_statements_UsingStatement' is a specialization of 'EmbeddedStatement'.
+The class 'c_sharp_statements_FixedStatement' is a specialization of 'EmbeddedStatement'.
+The class 'c_sharp_statements_VariableDeclaration' is a specialization of 'statements_ForInitializer'.
+The class 'c_sharp_statements_VariableDeclaration' is a specialization of 'statements_ResourceAcquisition'.
+The class 'c_sharp_statements_VariableDeclarator' is a specialization of 'NamedElement'.
+The class 'c_sharp_statements_ConstantDeclarator' is a specialization of 'NamedElement'.
+The class 'c_sharp_expressions_StatementExpressionList' is a specialization of 'ForInitializer'.
+The class 'c_sharp_expressions_Expression' is a specialization of 'classes_VariableInitializer'.
+The class 'c_sharp_expressions_Expression' is a specialization of 'statements_ResourceAcquisition'.
+The class 'c_sharp_expressions_PrimaryNoArrayCreationExpression' is a specialization of 'PrimaryExpression'.
+The class 'c_sharp_expressions_MemberAccess' is a specialization of 'PrimaryExtendedExpressionType'.
+The class 'c_sharp_expressions_ElementAccess' is a specialization of 'PrimaryExtendedExpressionType'.
+The class 'c_sharp_expressions_InvocationExpression' is a specialization of 'expressions_PrimaryExtendedExpressionType'.
+The class 'c_sharp_expressions_InvocationExpression' is a specialization of 'expressions_StatementExpression'.
+The class 'c_sharp_expressions_PostIncrementExpression' is a specialization of 'expressions_PrimaryExtendedExpressionType'.
+The class 'c_sharp_expressions_PostIncrementExpression' is a specialization of 'expressions_StatementExpression'.
+The class 'c_sharp_expressions_PostDecrementExpression' is a specialization of 'expressions_PrimaryExtendedExpressionType'.
+The class 'c_sharp_expressions_PostDecrementExpression' is a specialization of 'expressions_StatementExpression'.
+The class 'c_sharp_expressions_PointerMemberAccess' is a specialization of 'PrimaryExtendedExpressionType'.
+The class 'c_sharp_expressions_BaseAccess' is a specialization of 'PrimaryNoArrayCreationExpression'.
+The class 'c_sharp_expressions_ObjectCreationExpression' is a specialization of 'expressions_PrimaryNoArrayCreationExpression'.
+The class 'c_sharp_expressions_ObjectCreationExpression' is a specialization of 'expressions_StatementExpression'.
+The class 'c_sharp_expressions_ArrayCreationExpression' is a specialization of 'PrimaryExpression'.
+The class 'c_sharp_expressions_ParenthesizedExpression' is a specialization of 'PrimaryNoArrayCreationExpression'.
+The class 'c_sharp_expressions_ConditionalExpression' is a specialization of 'Expression'.
+The class 'c_sharp_expressions_AssignmentExpression' is a specialization of 'expressions_Expression'.
+The class 'c_sharp_expressions_AssignmentExpression' is a specialization of 'expressions_StatementExpression'.
+The class 'c_sharp_expressions_TypeOfExpression' is a specialization of 'PrimaryNoArrayCreationExpression'.
+The class 'c_sharp_expressions_DelegateCreationExpression' is a specialization of 'PrimaryNoArrayCreationExpression'.
+The class 'c_sharp_expressions_CheckedExpression' is a specialization of 'PrimaryNoArrayCreationExpression'.
+The class 'c_sharp_expressions_UncheckedExpression' is a specialization of 'PrimaryNoArrayCreationExpression'.
+The class 'c_sharp_expressions_SizeOfExpression' is a specialization of 'PrimaryNoArrayCreationExpression'.
+The class 'c_sharp_expressions_PreIncrementExpression' is a specialization of 'StatementExpression'.
+The class 'c_sharp_expressions_PreDecrementExpression' is a specialization of 'StatementExpression'.
+The class 'c_sharp_types_ReferenceType' is a specialization of 'types_NonArrayType'.
+The class 'c_sharp_types_ReferenceType' is a specialization of 'types_Type'.
+The class 'c_sharp_types_SimpleType' is a specialization of 'types_Type'.
+The class 'c_sharp_types_SimpleType' is a specialization of 'types_NonArrayType'.
+The class 'c_sharp_types_Void' is a specialization of 'SimpleType'.
+The class 'c_sharp_types_Decimal' is a specialization of 'SimpleType'.
+The class 'c_sharp_types_Bool' is a specialization of 'SimpleType'.
+The class 'c_sharp_types_SByte' is a specialization of 'SimpleType'.
+The class 'c_sharp_types_Byte' is a specialization of 'SimpleType'.
+The class 'c_sharp_types_Short' is a specialization of 'SimpleType'.
+The class 'c_sharp_types_UShort' is a specialization of 'SimpleType'.
+The class 'c_sharp_types_Int' is a specialization of 'SimpleType'.
+The class 'c_sharp_types_UInt' is a specialization of 'SimpleType'.
+The class 'c_sharp_types_Long' is a specialization of 'SimpleType'.
+The class 'c_sharp_types_ULong' is a specialization of 'SimpleType'.
+The class 'c_sharp_types_Char' is a specialization of 'SimpleType'.
+The class 'c_sharp_types_Float' is a specialization of 'SimpleType'.
+The class 'c_sharp_types_Double' is a specialization of 'SimpleType'.
+The class 'c_sharp_types_Object' is a specialization of 'SimpleType'.
+The class 'c_sharp_types_String' is a specialization of 'SimpleType'.
+The class 'c_sharp_types_ClassOrInterfaceOrDelegateOrEnumType' is a specialization of 'ReferenceType'.
+The class 'c_sharp_types_PointerType' is a specialization of 'types_Type'.
+The class 'c_sharp_types_PointerType' is a specialization of 'types_NonArrayType'.
+The class 'c_sharp_modifiers_Abstract' is a specialization of 'Modifier'.
+The class 'c_sharp_modifiers_Extern' is a specialization of 'Modifier'.
+The class 'c_sharp_modifiers_Internal' is a specialization of 'Modifier'.
+The class 'c_sharp_modifiers_New' is a specialization of 'Modifier'.
+The class 'c_sharp_modifiers_OverrideModifier' is a specialization of 'Modifier'.
+The class 'c_sharp_modifiers_Private' is a specialization of 'Modifier'.
+The class 'c_sharp_modifiers_Protected' is a specialization of 'Modifier'.
+The class 'c_sharp_modifiers_Public' is a specialization of 'Modifier'.
+The class 'c_sharp_modifiers_Partial' is a specialization of 'Modifier'.
+The class 'c_sharp_modifiers_ReadOnly' is a specialization of 'Modifier'.
+The class 'c_sharp_modifiers_Sealed' is a specialization of 'Modifier'.
+The class 'c_sharp_modifiers_Static' is a specialization of 'Modifier'.
+The class 'c_sharp_modifiers_Unsafe' is a specialization of 'Modifier'.
+The class 'c_sharp_modifiers_Virtual' is a specialization of 'Modifier'.
+The class 'c_sharp_modifiers_Volatile' is a specialization of 'Modifier'.
+The class 'c_sharp_literals_Literal' is a specialization of 'PrimaryNoArrayCreationExpression'.
+The class 'c_sharp_literals_BooleanLiteral' is a specialization of 'Literal'.
+The class 'c_sharp_literals_DecimalIntegerLiteral' is a specialization of 'Literal'.
+The class 'c_sharp_literals_HexadecimalIntegerLiteral' is a specialization of 'Literal'.
+The class 'c_sharp_literals_RealLiteral' is a specialization of 'Literal'.
+The class 'c_sharp_literals_NullLiteral' is a specialization of 'Literal'.
+The class 'c_sharp_literals_This' is a specialization of 'Literal'.
+The class 'c_sharp_literals_CharacterLiteral' is a specialization of 'Literal'.
+The class 'c_sharp_literals_StringLiteral' is a specialization of 'Literal'.
+The class 'c_sharp_operators_AdditiveOperator' is a specialization of 'Operator'.
+The class 'c_sharp_operators_AssignmentOperator' is a specialization of 'Operator'.
+The class 'c_sharp_operators_EqualityOperator' is a specialization of 'Operator'.
+The class 'c_sharp_operators_MultiplicativeOperator' is a specialization of 'Operator'.
+The class 'c_sharp_operators_RelationOperator' is a specialization of 'Operator'.
+The class 'c_sharp_operators_ShiftOperator' is a specialization of 'Operator'.
+The class 'c_sharp_operators_UnaryOperator' is a specialization of 'Operator'.
+The class 'c_sharp_operators_UnaryModificationOperator' is a specialization of 'Operator'.
+The class 'c_sharp_operators_Assignment' is a specialization of 'AssignmentOperator'.
+The class 'c_sharp_operators_AssignmentAnd' is a specialization of 'AssignmentOperator'.
+The class 'c_sharp_operators_AssignmentDivision' is a specialization of 'AssignmentOperator'.
+The class 'c_sharp_operators_AssignmentExclusiveOr' is a specialization of 'AssignmentOperator'.
+The class 'c_sharp_operators_AssignmentMinus' is a specialization of 'AssignmentOperator'.
+The class 'c_sharp_operators_AssignmentModulo' is a specialization of 'AssignmentOperator'.
+The class 'c_sharp_operators_AssignmentMultiplication' is a specialization of 'AssignmentOperator'.
+The class 'c_sharp_operators_AssignmentLeftShift' is a specialization of 'AssignmentOperator'.
+The class 'c_sharp_operators_AssignmentOr' is a specialization of 'AssignmentOperator'.
+The class 'c_sharp_operators_AssignmentPlus' is a specialization of 'AssignmentOperator'.
+The class 'c_sharp_operators_AssignmentRightShift' is a specialization of 'AssignmentOperator'.
+The class 'c_sharp_operators_AssignmentUnsignedRightShift' is a specialization of 'AssignmentOperator'.
+The class 'c_sharp_operators_Equal' is a specialization of 'EqualityOperator'.
+The class 'c_sharp_operators_NotEqual' is a specialization of 'EqualityOperator'.
+The class 'c_sharp_operators_GreaterThan' is a specialization of 'RelationOperator'.
+The class 'c_sharp_operators_GreaterThanOrEqual' is a specialization of 'RelationOperator'.
+The class 'c_sharp_operators_LessThan' is a specialization of 'RelationOperator'.
+The class 'c_sharp_operators_LessThanOrEqual' is a specialization of 'RelationOperator'.
+The class 'c_sharp_operators_Addition' is a specialization of 'operators_AdditiveOperator'.
+The class 'c_sharp_operators_Addition' is a specialization of 'operators_UnaryOperator'.
+The class 'c_sharp_operators_Subtraction' is a specialization of 'operators_AdditiveOperator'.
+The class 'c_sharp_operators_Subtraction' is a specialization of 'operators_UnaryOperator'.
+The class 'c_sharp_operators_Division' is a specialization of 'MultiplicativeOperator'.
+The class 'c_sharp_operators_Multiplication' is a specialization of 'MultiplicativeOperator'.
+The class 'c_sharp_operators_Remainder' is a specialization of 'MultiplicativeOperator'.
+The class 'c_sharp_operators_Complement' is a specialization of 'UnaryOperator'.
+The class 'c_sharp_operators_MinusMinus' is a specialization of 'UnaryModificationOperator'.
+The class 'c_sharp_operators_Negate' is a specialization of 'UnaryOperator'.
+The class 'c_sharp_operators_PlusPlus' is a specialization of 'UnaryModificationOperator'.
+The class 'c_sharp_operators_LeftShift' is a specialization of 'ShiftOperator'.
+The class 'c_sharp_operators_RightShift' is a specialization of 'ShiftOperator'.
+The class 'c_sharp_operators_UnsignedRightShift' is a specialization of 'ShiftOperator'.
+The class 'c_sharp_operators_And' is a specialization of 'UnaryOperator'.
+The class 'c_sharp_operators_ExclusiveOr' is a specialization of 'UnaryOperator'.
+The class 'c_sharp_operators_InclusiveOr' is a specialization of 'UnaryOperator'.
+The class 'c_sharp_operators_ConditionalAnd' is a specialization of 'UnaryOperator'.
+The class 'c_sharp_operators_ConditionalOr' is a specialization of 'UnaryOperator'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Identifier' and 'c_sharp_common_NamespaceOrTypeName'. From 'Identifier', the role 'Identifier' has cardinality 0..*, and from 'c_sharp_common_NamespaceOrTypeName', the role 'c_sharp_common_NamespaceOrTypeName' has cardinality 0..*.
+An association connects 'UsingDirective' and 'c_sharp_namespaces_CompilationUnit'. From 'UsingDirective', the role 'UsingDirective' has cardinality 0..*, and from 'c_sharp_namespaces_CompilationUnit', the role 'c_sharp_namespaces_CompilationUnit' has cardinality 0..*.
+An association connects 'GlobalAttributes' and 'c_sharp_namespaces_CompilationUnit'. From 'GlobalAttributes', the role 'GlobalAttributes' has cardinality 0..*, and from 'c_sharp_namespaces_CompilationUnit', the role 'c_sharp_namespaces_CompilationUnit3' has cardinality 0..*.
+An association connects 'c_sharp_namespaces_CompilationUnit' and 'NamespaceMemberDeclaration'. From 'c_sharp_namespaces_CompilationUnit', the role 'c_sharp_namespaces_CompilationUnit5' has cardinality 0..*, and from 'NamespaceMemberDeclaration', the role 'NamespaceMemberDeclaration' has cardinality 0..*.
+An association connects 'NamespaceOrTypeName' and 'c_sharp_namespaces_UsingDirective'. From 'NamespaceOrTypeName', the role 'NamespaceOrTypeName' has cardinality 0..*, and from 'c_sharp_namespaces_UsingDirective', the role 'c_sharp_namespaces_UsingDirective' has cardinality 0..*.
+An association connects 'c_sharp_namespaces_Namespace' and 'NamespaceOrTypeName'. From 'c_sharp_namespaces_Namespace', the role 'c_sharp_namespaces_Namespace' has cardinality 0..*, and from 'NamespaceOrTypeName', the role 'NamespaceOrTypeName8' has cardinality 0..*.
+An association connects 'c_sharp_namespaces_Namespace' and 'NamespaceBody'. From 'c_sharp_namespaces_Namespace', the role 'c_sharp_namespaces_Namespace10' has cardinality 0..*, and from 'NamespaceBody', the role 'NamespaceBody' has cardinality 0..*.
+An association connects 'UsingDirective' and 'c_sharp_namespaces_NamespaceBody'. From 'UsingDirective', the role 'UsingDirective12' has cardinality 0..*, and from 'c_sharp_namespaces_NamespaceBody', the role 'c_sharp_namespaces_NamespaceBody' has cardinality 0..*.
+An association connects 'c_sharp_namespaces_NamespaceBody' and 'NamespaceMemberDeclaration'. From 'c_sharp_namespaces_NamespaceBody', the role 'c_sharp_namespaces_NamespaceBody14' has cardinality 0..*, and from 'NamespaceMemberDeclaration', the role 'NamespaceMemberDeclaration15' has cardinality 0..*.
+An association connects 'c_sharp_classes_Class' and 'Attributes'. From 'c_sharp_classes_Class', the role 'c_sharp_classes_Class' has cardinality 0..*, and from 'Attributes', the role 'Attributes' has cardinality 0..*.
+An association connects 'c_sharp_classes_Class' and 'Modifier'. From 'c_sharp_classes_Class', the role 'c_sharp_classes_Class18' has cardinality 0..*, and from 'Modifier', the role 'Modifier' has cardinality 0..*.
+An association connects 'ClassBase' and 'c_sharp_classes_Class'. From 'ClassBase', the role 'ClassBase' has cardinality 0..*, and from 'c_sharp_classes_Class', the role 'c_sharp_classes_Class20' has cardinality 0..*.
+An association connects 'c_sharp_classes_Class' and 'ClassMemberDeclaration'. From 'c_sharp_classes_Class', the role 'c_sharp_classes_Class22' has cardinality 0..*, and from 'ClassMemberDeclaration', the role 'ClassMemberDeclaration' has cardinality 0..*.
+An association connects 'c_sharp_classes_ClassBase' and 'ClassOrInterfaceOrDelegateOrEnumType'. From 'c_sharp_classes_ClassBase', the role 'c_sharp_classes_ClassBase' has cardinality 0..*, and from 'ClassOrInterfaceOrDelegateOrEnumType', the role 'ClassOrInterfaceOrDelegateOrEnumType' has cardinality 0..*.
+An association connects 'Attributes' and 'c_sharp_classes_Method'. From 'Attributes', the role 'Attributes25' has cardinality 0..*, and from 'c_sharp_classes_Method', the role 'c_sharp_classes_Method' has cardinality 0..*.
+An association connects 'Modifier' and 'c_sharp_classes_Method'. From 'Modifier', the role 'Modifier28' has cardinality 0..*, and from 'c_sharp_classes_Method', the role 'c_sharp_classes_Method27' has cardinality 0..*.
+An association connects 'Type' and 'c_sharp_classes_Method'. From 'Type', the role 'Type' has cardinality 0..*, and from 'c_sharp_classes_Method', the role 'c_sharp_classes_Method30' has cardinality 0..*.
+An association connects 'ClassOrInterfaceOrDelegateOrEnumType' and 'c_sharp_classes_Method'. From 'ClassOrInterfaceOrDelegateOrEnumType', the role 'ClassOrInterfaceOrDelegateOrEnumType33' has cardinality 0..*, and from 'c_sharp_classes_Method', the role 'c_sharp_classes_Method32' has cardinality 0..*.
+An association connects 'c_sharp_classes_Method' and 'FormalParameterList'. From 'c_sharp_classes_Method', the role 'c_sharp_classes_Method35' has cardinality 0..*, and from 'FormalParameterList', the role 'FormalParameterList' has cardinality 0..*.
+An association connects 'Block' and 'c_sharp_classes_Method'. From 'Block', the role 'Block' has cardinality 0..*, and from 'c_sharp_classes_Method', the role 'c_sharp_classes_Method37' has cardinality 0..*.
+An association connects 'c_sharp_classes_FormalParameterList' and 'FixedParameter'. From 'c_sharp_classes_FormalParameterList', the role 'c_sharp_classes_FormalParameterList' has cardinality 0..*, and from 'FixedParameter', the role 'FixedParameter' has cardinality 0..*.
+An association connects 'ParameterArray' and 'c_sharp_classes_FormalParameterList'. From 'ParameterArray', the role 'ParameterArray' has cardinality 0..*, and from 'c_sharp_classes_FormalParameterList', the role 'c_sharp_classes_FormalParameterList40' has cardinality 0..*.
+An association connects 'Attributes' and 'c_sharp_classes_FixedParameter'. From 'Attributes', the role 'Attributes42' has cardinality 0..*, and from 'c_sharp_classes_FixedParameter', the role 'c_sharp_classes_FixedParameter' has cardinality 0..*.
+An association connects 'Ref' and 'c_sharp_classes_FixedParameter'. From 'Ref', the role 'Ref' has cardinality 0..*, and from 'c_sharp_classes_FixedParameter', the role 'c_sharp_classes_FixedParameter44' has cardinality 0..*.
+An association connects 'c_sharp_classes_FixedParameter' and 'Out'. From 'c_sharp_classes_FixedParameter', the role 'c_sharp_classes_FixedParameter46' has cardinality 0..*, and from 'Out', the role 'Out' has cardinality 0..*.
+An association connects 'Type' and 'c_sharp_classes_FixedParameter'. From 'Type', the role 'Type49' has cardinality 0..*, and from 'c_sharp_classes_FixedParameter', the role 'c_sharp_classes_FixedParameter48' has cardinality 0..*.
+An association connects 'Identifier' and 'c_sharp_classes_FixedParameter'. From 'Identifier', the role 'Identifier52' has cardinality 0..*, and from 'c_sharp_classes_FixedParameter', the role 'c_sharp_classes_FixedParameter51' has cardinality 0..*.
+An association connects 'Attributes' and 'c_sharp_classes_ParameterArray'. From 'Attributes', the role 'Attributes54' has cardinality 0..*, and from 'c_sharp_classes_ParameterArray', the role 'c_sharp_classes_ParameterArray' has cardinality 0..*.
+An association connects 'Params' and 'c_sharp_classes_ParameterArray'. From 'Params', the role 'Params' has cardinality 0..*, and from 'c_sharp_classes_ParameterArray', the role 'c_sharp_classes_ParameterArray56' has cardinality 0..*.
+An association connects 'ArrayType' and 'c_sharp_classes_ParameterArray'. From 'ArrayType', the role 'ArrayType' has cardinality 0..*, and from 'c_sharp_classes_ParameterArray', the role 'c_sharp_classes_ParameterArray58' has cardinality 0..*.
+An association connects 'Identifier' and 'c_sharp_classes_ParameterArray'. From 'Identifier', the role 'Identifier61' has cardinality 0..*, and from 'c_sharp_classes_ParameterArray', the role 'c_sharp_classes_ParameterArray60' has cardinality 0..*.
+An association connects 'c_sharp_classes_Block' and 'Statement'. From 'c_sharp_classes_Block', the role 'c_sharp_classes_Block' has cardinality 0..*, and from 'Statement', the role 'Statement' has cardinality 0..*.
+An association connects 'Attributes' and 'c_sharp_classes_ConstantDeclaration'. From 'Attributes', the role 'Attributes64' has cardinality 0..*, and from 'c_sharp_classes_ConstantDeclaration', the role 'c_sharp_classes_ConstantDeclaration' has cardinality 0..*.
+An association connects 'Modifier' and 'c_sharp_classes_ConstantDeclaration'. From 'Modifier', the role 'Modifier67' has cardinality 0..*, and from 'c_sharp_classes_ConstantDeclaration', the role 'c_sharp_classes_ConstantDeclaration66' has cardinality 0..*.
+An association connects 'Type' and 'c_sharp_classes_ConstantDeclaration'. From 'Type', the role 'Type70' has cardinality 0..*, and from 'c_sharp_classes_ConstantDeclaration', the role 'c_sharp_classes_ConstantDeclaration69' has cardinality 0..*.
+An association connects 'ConstantDeclarator' and 'c_sharp_classes_ConstantDeclaration'. From 'ConstantDeclarator', the role 'ConstantDeclarator' has cardinality 0..*, and from 'c_sharp_classes_ConstantDeclaration', the role 'c_sharp_classes_ConstantDeclaration72' has cardinality 0..*.
+An association connects 'Attributes' and 'c_sharp_classes_FieldDeclaration'. From 'Attributes', the role 'Attributes74' has cardinality 0..*, and from 'c_sharp_classes_FieldDeclaration', the role 'c_sharp_classes_FieldDeclaration' has cardinality 0..*.
+An association connects 'Modifier' and 'c_sharp_classes_FieldDeclaration'. From 'Modifier', the role 'Modifier77' has cardinality 0..*, and from 'c_sharp_classes_FieldDeclaration', the role 'c_sharp_classes_FieldDeclaration76' has cardinality 0..*.
+An association connects 'Type' and 'c_sharp_classes_FieldDeclaration'. From 'Type', the role 'Type80' has cardinality 0..*, and from 'c_sharp_classes_FieldDeclaration', the role 'c_sharp_classes_FieldDeclaration79' has cardinality 0..*.
+An association connects 'VariableDeclarator' and 'c_sharp_classes_FieldDeclaration'. From 'VariableDeclarator', the role 'VariableDeclarator' has cardinality 0..*, and from 'c_sharp_classes_FieldDeclaration', the role 'c_sharp_classes_FieldDeclaration82' has cardinality 0..*.
+An association connects 'c_sharp_arrays_StackallocInitializer' and 'Type'. From 'c_sharp_arrays_StackallocInitializer', the role 'c_sharp_arrays_StackallocInitializer' has cardinality 0..*, and from 'Type', the role 'Type84' has cardinality 0..*.
+An association connects 'c_sharp_arrays_StackallocInitializer' and 'Expression'. From 'c_sharp_arrays_StackallocInitializer', the role 'c_sharp_arrays_StackallocInitializer86' has cardinality 0..*, and from 'Expression', the role 'Expression' has cardinality 0..*.
+An association connects 'VariableInitializer' and 'c_sharp_arrays_ArrayInitializer'. From 'VariableInitializer', the role 'VariableInitializer' has cardinality 0..*, and from 'c_sharp_arrays_ArrayInitializer', the role 'c_sharp_arrays_ArrayInitializer' has cardinality 0..*.
+An association connects 'c_sharp_arrays_ArrayType' and 'NonArrayType'. From 'c_sharp_arrays_ArrayType', the role 'c_sharp_arrays_ArrayType' has cardinality 0..*, and from 'NonArrayType', the role 'NonArrayType' has cardinality 0..*.
+An association connects 'RankSpecifier' and 'c_sharp_arrays_ArrayType'. From 'RankSpecifier', the role 'RankSpecifier' has cardinality 0..*, and from 'c_sharp_arrays_ArrayType', the role 'c_sharp_arrays_ArrayType90' has cardinality 0..*.
+An association connects 'c_sharp_attributes_GlobalAttributes' and 'GlobalAttributeTarget'. From 'c_sharp_attributes_GlobalAttributes', the role 'c_sharp_attributes_GlobalAttributes' has cardinality 0..*, and from 'GlobalAttributeTarget', the role 'GlobalAttributeTarget' has cardinality 0..*.
+An association connects 'c_sharp_attributes_GlobalAttributes' and 'Attribute'. From 'c_sharp_attributes_GlobalAttributes', the role 'c_sharp_attributes_GlobalAttributes93' has cardinality 0..*, and from 'Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'Identifier' and 'c_sharp_attributes_GlobalAttributeTarget'. From 'Identifier', the role 'Identifier95' has cardinality 0..*, and from 'c_sharp_attributes_GlobalAttributeTarget', the role 'c_sharp_attributes_GlobalAttributeTarget' has cardinality 0..*.
+An association connects 'AttributeTarget' and 'c_sharp_attributes_Attributes'. From 'AttributeTarget', the role 'AttributeTarget' has cardinality 0..*, and from 'c_sharp_attributes_Attributes', the role 'c_sharp_attributes_Attributes' has cardinality 0..*.
+An association connects 'Attribute' and 'c_sharp_attributes_Attributes'. From 'Attribute', the role 'Attribute99' has cardinality 0..*, and from 'c_sharp_attributes_Attributes', the role 'c_sharp_attributes_Attributes98' has cardinality 0..*.
+An association connects 'Event' and 'c_sharp_attributes_AttributeTarget'. From 'Event', the role 'Event' has cardinality 0..*, and from 'c_sharp_attributes_AttributeTarget', the role 'c_sharp_attributes_AttributeTarget' has cardinality 0..*.
+An association connects 'c_sharp_attributes_AttributeTarget' and 'Return'. From 'c_sharp_attributes_AttributeTarget', the role 'c_sharp_attributes_AttributeTarget102' has cardinality 0..*, and from 'Return', the role 'Return' has cardinality 0..*.
+An association connects 'c_sharp_attributes_AttributeTarget' and 'Type'. From 'c_sharp_attributes_AttributeTarget', the role 'c_sharp_attributes_AttributeTarget104' has cardinality 0..*, and from 'Type', the role 'Type105' has cardinality 0..*.
+An association connects 'c_sharp_attributes_Attribute' and 'NamespaceOrTypeName'. From 'c_sharp_attributes_Attribute', the role 'c_sharp_attributes_Attribute' has cardinality 0..*, and from 'NamespaceOrTypeName', the role 'NamespaceOrTypeName107' has cardinality 0..*.
+An association connects 'AttributeArguments' and 'c_sharp_attributes_Attribute'. From 'AttributeArguments', the role 'AttributeArguments' has cardinality 0..*, and from 'c_sharp_attributes_Attribute', the role 'c_sharp_attributes_Attribute109' has cardinality 0..*.
+An association connects 'ExpressionList' and 'c_sharp_attributes_AttributeArguments'. From 'ExpressionList', the role 'ExpressionList' has cardinality 0..*, and from 'c_sharp_attributes_AttributeArguments', the role 'c_sharp_attributes_AttributeArguments' has cardinality 0..*.
+An association connects 'NamedArgumentList' and 'c_sharp_attributes_AttributeArguments'. From 'NamedArgumentList', the role 'NamedArgumentList' has cardinality 0..*, and from 'c_sharp_attributes_AttributeArguments', the role 'c_sharp_attributes_AttributeArguments112' has cardinality 0..*.
+An association connects 'NamedArgument' and 'c_sharp_attributes_NamedArgumentList'. From 'NamedArgument', the role 'NamedArgument' has cardinality 0..*, and from 'c_sharp_attributes_NamedArgumentList', the role 'c_sharp_attributes_NamedArgumentList' has cardinality 0..*.
+An association connects 'c_sharp_attributes_NamedArgument' and 'Identifier'. From 'c_sharp_attributes_NamedArgument', the role 'c_sharp_attributes_NamedArgument' has cardinality 0..*, and from 'Identifier', the role 'Identifier115' has cardinality 0..*.
+An association connects 'c_sharp_attributes_NamedArgument' and 'Expression'. From 'c_sharp_attributes_NamedArgument', the role 'c_sharp_attributes_NamedArgument117' has cardinality 0..*, and from 'Expression', the role 'Expression118' has cardinality 0..*.
+An association connects 'c_sharp_statements_LabeledStatement' and 'Statement'. From 'c_sharp_statements_LabeledStatement', the role 'c_sharp_statements_LabeledStatement' has cardinality 0..*, and from 'Statement', the role 'Statement120' has cardinality 0..*.
+An association connects 'VariableDeclaration' and 'c_sharp_statements_DeclarationStatement'. From 'VariableDeclaration', the role 'VariableDeclaration' has cardinality 0..*, and from 'c_sharp_statements_DeclarationStatement', the role 'c_sharp_statements_DeclarationStatement' has cardinality 0..*.
+An association connects 'LocalConstantDeclaration' and 'c_sharp_statements_DeclarationStatement'. From 'LocalConstantDeclaration', the role 'LocalConstantDeclaration' has cardinality 0..*, and from 'c_sharp_statements_DeclarationStatement', the role 'c_sharp_statements_DeclarationStatement123' has cardinality 0..*.
+An association connects 'c_sharp_statements_SimpleEmbeddedStatement' and 'Unsafe'. From 'c_sharp_statements_SimpleEmbeddedStatement', the role 'c_sharp_statements_SimpleEmbeddedStatement' has cardinality 0..*, and from 'Unsafe', the role 'Unsafe' has cardinality 0..*.
+An association connects 'Block' and 'c_sharp_statements_SimpleEmbeddedStatement'. From 'Block', the role 'Block127' has cardinality 0..*, and from 'c_sharp_statements_SimpleEmbeddedStatement', the role 'c_sharp_statements_SimpleEmbeddedStatement126' has cardinality 0..*.
+An association connects 'c_sharp_statements_ExpressionStatement' and 'StatementExpression'. From 'c_sharp_statements_ExpressionStatement', the role 'c_sharp_statements_ExpressionStatement' has cardinality 0..*, and from 'StatementExpression', the role 'StatementExpression' has cardinality 0..*.
+An association connects 'Expression' and 'c_sharp_statements_IfStatement'. From 'Expression', the role 'Expression130' has cardinality 0..*, and from 'c_sharp_statements_IfStatement', the role 'c_sharp_statements_IfStatement' has cardinality 0..*.
+An association connects 'c_sharp_statements_IfStatement' and 'EmbeddedStatement'. From 'c_sharp_statements_IfStatement', the role 'c_sharp_statements_IfStatement132' has cardinality 0..*, and from 'EmbeddedStatement', the role 'EmbeddedStatement' has cardinality 0..*.
+An association connects 'c_sharp_statements_SwitchStatement' and 'Expression'. From 'c_sharp_statements_SwitchStatement', the role 'c_sharp_statements_SwitchStatement' has cardinality 0..*, and from 'Expression', the role 'Expression134' has cardinality 0..*.
+An association connects 'c_sharp_statements_SwitchStatement' and 'SwitchSection'. From 'c_sharp_statements_SwitchStatement', the role 'c_sharp_statements_SwitchStatement136' has cardinality 0..*, and from 'SwitchSection', the role 'SwitchSection' has cardinality 0..*.
+An association connects 'SwitchLabel' and 'c_sharp_statements_SwitchSection'. From 'SwitchLabel', the role 'SwitchLabel' has cardinality 0..*, and from 'c_sharp_statements_SwitchSection', the role 'c_sharp_statements_SwitchSection' has cardinality 0..*.
+An association connects 'c_sharp_statements_SwitchSection' and 'Statement'. From 'c_sharp_statements_SwitchSection', the role 'c_sharp_statements_SwitchSection139' has cardinality 0..*, and from 'Statement', the role 'Statement140' has cardinality 0..*.
+An association connects 'Default' and 'c_sharp_statements_SwitchLabel'. From 'Default', the role 'Default' has cardinality 0..*, and from 'c_sharp_statements_SwitchLabel', the role 'c_sharp_statements_SwitchLabel' has cardinality 0..*.
+An association connects 'Case' and 'c_sharp_statements_SwitchLabel'. From 'Case', the role 'Case' has cardinality 0..*, and from 'c_sharp_statements_SwitchLabel', the role 'c_sharp_statements_SwitchLabel143' has cardinality 0..*.
+An association connects 'c_sharp_statements_SwitchLabel' and 'Expression'. From 'c_sharp_statements_SwitchLabel', the role 'c_sharp_statements_SwitchLabel145' has cardinality 0..*, and from 'Expression', the role 'Expression146' has cardinality 0..*.
+An association connects 'Expression' and 'c_sharp_statements_WhileStatement'. From 'Expression', the role 'Expression148' has cardinality 0..*, and from 'c_sharp_statements_WhileStatement', the role 'c_sharp_statements_WhileStatement' has cardinality 0..*.
+An association connects 'EmbeddedStatement' and 'c_sharp_statements_WhileStatement'. From 'EmbeddedStatement', the role 'EmbeddedStatement151' has cardinality 0..*, and from 'c_sharp_statements_WhileStatement', the role 'c_sharp_statements_WhileStatement150' has cardinality 0..*.
+An association connects 'EmbeddedStatement' and 'c_sharp_statements_DoStatement'. From 'EmbeddedStatement', the role 'EmbeddedStatement153' has cardinality 0..*, and from 'c_sharp_statements_DoStatement', the role 'c_sharp_statements_DoStatement' has cardinality 0..*.
+An association connects 'Expression' and 'c_sharp_statements_DoStatement'. From 'Expression', the role 'Expression156' has cardinality 0..*, and from 'c_sharp_statements_DoStatement', the role 'c_sharp_statements_DoStatement155' has cardinality 0..*.
+An association connects 'c_sharp_statements_ForStatement' and 'ForInitializer'. From 'c_sharp_statements_ForStatement', the role 'c_sharp_statements_ForStatement' has cardinality 0..*, and from 'ForInitializer', the role 'ForInitializer' has cardinality 0..*.
+An association connects 'Expression' and 'c_sharp_statements_ForStatement'. From 'Expression', the role 'Expression160' has cardinality 0..*, and from 'c_sharp_statements_ForStatement', the role 'c_sharp_statements_ForStatement159' has cardinality 0..*.
+An association connects 'StatementExpressionList' and 'c_sharp_statements_ForStatement'. From 'StatementExpressionList', the role 'StatementExpressionList' has cardinality 0..*, and from 'c_sharp_statements_ForStatement', the role 'c_sharp_statements_ForStatement162' has cardinality 0..*.
+An association connects 'c_sharp_statements_ForStatement' and 'EmbeddedStatement'. From 'c_sharp_statements_ForStatement', the role 'c_sharp_statements_ForStatement164' has cardinality 0..*, and from 'EmbeddedStatement', the role 'EmbeddedStatement165' has cardinality 0..*.
+An association connects 'Type' and 'c_sharp_statements_ForeachStatement'. From 'Type', the role 'Type167' has cardinality 0..*, and from 'c_sharp_statements_ForeachStatement', the role 'c_sharp_statements_ForeachStatement' has cardinality 0..*.
+An association connects 'c_sharp_statements_ForeachStatement' and 'Identifier'. From 'c_sharp_statements_ForeachStatement', the role 'c_sharp_statements_ForeachStatement169' has cardinality 0..*, and from 'Identifier', the role 'Identifier170' has cardinality 0..*.
+An association connects 'Expression' and 'c_sharp_statements_ForeachStatement'. From 'Expression', the role 'Expression173' has cardinality 0..*, and from 'c_sharp_statements_ForeachStatement', the role 'c_sharp_statements_ForeachStatement172' has cardinality 0..*.
+An association connects 'EmbeddedStatement' and 'c_sharp_statements_ForeachStatement'. From 'EmbeddedStatement', the role 'EmbeddedStatement176' has cardinality 0..*, and from 'c_sharp_statements_ForeachStatement', the role 'c_sharp_statements_ForeachStatement175' has cardinality 0..*.
+An association connects 'c_sharp_statements_GotoStatement' and 'Default'. From 'c_sharp_statements_GotoStatement', the role 'c_sharp_statements_GotoStatement' has cardinality 0..*, and from 'Default', the role 'Default178' has cardinality 0..*.
+An association connects 'c_sharp_statements_GotoStatement' and 'Case'. From 'c_sharp_statements_GotoStatement', the role 'c_sharp_statements_GotoStatement180' has cardinality 0..*, and from 'Case', the role 'Case181' has cardinality 0..*.
+An association connects 'Expression' and 'c_sharp_statements_GotoStatement'. From 'Expression', the role 'Expression184' has cardinality 0..*, and from 'c_sharp_statements_GotoStatement', the role 'c_sharp_statements_GotoStatement183' has cardinality 0..*.
+An association connects 'c_sharp_statements_GotoStatement' and 'Identifier'. From 'c_sharp_statements_GotoStatement', the role 'c_sharp_statements_GotoStatement186' has cardinality 0..*, and from 'Identifier', the role 'Identifier187' has cardinality 0..*.
+An association connects 'c_sharp_statements_ReturnStatement' and 'Expression'. From 'c_sharp_statements_ReturnStatement', the role 'c_sharp_statements_ReturnStatement' has cardinality 0..*, and from 'Expression', the role 'Expression189' has cardinality 0..*.
+An association connects 'Expression' and 'c_sharp_statements_ThrowStatement'. From 'Expression', the role 'Expression191' has cardinality 0..*, and from 'c_sharp_statements_ThrowStatement', the role 'c_sharp_statements_ThrowStatement' has cardinality 0..*.
+An association connects 'Block' and 'c_sharp_statements_TryStatement'. From 'Block', the role 'Block193' has cardinality 0..*, and from 'c_sharp_statements_TryStatement', the role 'c_sharp_statements_TryStatement' has cardinality 0..*.
+An association connects 'SpecificCatchClause' and 'c_sharp_statements_TryStatement'. From 'SpecificCatchClause', the role 'SpecificCatchClause' has cardinality 0..*, and from 'c_sharp_statements_TryStatement', the role 'c_sharp_statements_TryStatement195' has cardinality 0..*.
+An association connects 'c_sharp_statements_TryStatement' and 'GeneralCatchClause'. From 'c_sharp_statements_TryStatement', the role 'c_sharp_statements_TryStatement197' has cardinality 0..*, and from 'GeneralCatchClause', the role 'GeneralCatchClause' has cardinality 0..*.
+An association connects 'c_sharp_statements_TryStatement' and 'FinallyClause'. From 'c_sharp_statements_TryStatement', the role 'c_sharp_statements_TryStatement199' has cardinality 0..*, and from 'FinallyClause', the role 'FinallyClause' has cardinality 0..*.
+An association connects 'c_sharp_statements_SpecificCatchClause' and 'ClassOrInterfaceOrDelegateOrEnumType'. From 'c_sharp_statements_SpecificCatchClause', the role 'c_sharp_statements_SpecificCatchClause' has cardinality 0..*, and from 'ClassOrInterfaceOrDelegateOrEnumType', the role 'ClassOrInterfaceOrDelegateOrEnumType201' has cardinality 0..*.
+An association connects 'c_sharp_statements_SpecificCatchClause' and 'Identifier'. From 'c_sharp_statements_SpecificCatchClause', the role 'c_sharp_statements_SpecificCatchClause203' has cardinality 0..*, and from 'Identifier', the role 'Identifier204' has cardinality 0..*.
+An association connects 'c_sharp_statements_SpecificCatchClause' and 'Block'. From 'c_sharp_statements_SpecificCatchClause', the role 'c_sharp_statements_SpecificCatchClause206' has cardinality 0..*, and from 'Block', the role 'Block207' has cardinality 0..*.
+An association connects 'c_sharp_statements_GeneralCatchClause' and 'Block'. From 'c_sharp_statements_GeneralCatchClause', the role 'c_sharp_statements_GeneralCatchClause' has cardinality 0..*, and from 'Block', the role 'Block209' has cardinality 0..*.
+An association connects 'Block' and 'c_sharp_statements_FinallyClause'. From 'Block', the role 'Block211' has cardinality 0..*, and from 'c_sharp_statements_FinallyClause', the role 'c_sharp_statements_FinallyClause' has cardinality 0..*.
+An association connects 'Block' and 'c_sharp_statements_CheckedStatement'. From 'Block', the role 'Block213' has cardinality 0..*, and from 'c_sharp_statements_CheckedStatement', the role 'c_sharp_statements_CheckedStatement' has cardinality 0..*.
+An association connects 'c_sharp_statements_UncheckedStatement' and 'Block'. From 'c_sharp_statements_UncheckedStatement', the role 'c_sharp_statements_UncheckedStatement' has cardinality 0..*, and from 'Block', the role 'Block215' has cardinality 0..*.
+An association connects 'c_sharp_statements_LockStatement' and 'Expression'. From 'c_sharp_statements_LockStatement', the role 'c_sharp_statements_LockStatement' has cardinality 0..*, and from 'Expression', the role 'Expression217' has cardinality 0..*.
+An association connects 'c_sharp_statements_LockStatement' and 'EmbeddedStatement'. From 'c_sharp_statements_LockStatement', the role 'c_sharp_statements_LockStatement219' has cardinality 0..*, and from 'EmbeddedStatement', the role 'EmbeddedStatement220' has cardinality 0..*.
+An association connects 'c_sharp_statements_UsingStatement' and 'ResourceAcquisition'. From 'c_sharp_statements_UsingStatement', the role 'c_sharp_statements_UsingStatement' has cardinality 0..*, and from 'ResourceAcquisition', the role 'ResourceAcquisition' has cardinality 0..*.
+An association connects 'EmbeddedStatement' and 'c_sharp_statements_UsingStatement'. From 'EmbeddedStatement', the role 'EmbeddedStatement224' has cardinality 0..*, and from 'c_sharp_statements_UsingStatement', the role 'c_sharp_statements_UsingStatement223' has cardinality 0..*.
+An association connects 'PointerType' and 'c_sharp_statements_FixedStatement'. From 'PointerType', the role 'PointerType' has cardinality 0..*, and from 'c_sharp_statements_FixedStatement', the role 'c_sharp_statements_FixedStatement' has cardinality 0..*.
+An association connects 'c_sharp_statements_FixedStatement' and 'FixedPointerDeclarator'. From 'c_sharp_statements_FixedStatement', the role 'c_sharp_statements_FixedStatement227' has cardinality 0..*, and from 'FixedPointerDeclarator', the role 'FixedPointerDeclarator' has cardinality 0..*.
+An association connects 'EmbeddedStatement' and 'c_sharp_statements_FixedStatement'. From 'EmbeddedStatement', the role 'EmbeddedStatement230' has cardinality 0..*, and from 'c_sharp_statements_FixedStatement', the role 'c_sharp_statements_FixedStatement229' has cardinality 0..*.
+An association connects 'c_sharp_statements_FixedPointerDeclarator' and 'Identifier'. From 'c_sharp_statements_FixedPointerDeclarator', the role 'c_sharp_statements_FixedPointerDeclarator' has cardinality 0..*, and from 'Identifier', the role 'Identifier232' has cardinality 0..*.
+An association connects 'c_sharp_statements_FixedPointerDeclarator' and 'Expression'. From 'c_sharp_statements_FixedPointerDeclarator', the role 'c_sharp_statements_FixedPointerDeclarator234' has cardinality 0..*, and from 'Expression', the role 'Expression235' has cardinality 0..*.
+An association connects 'c_sharp_statements_VariableDeclaration' and 'Type'. From 'c_sharp_statements_VariableDeclaration', the role 'c_sharp_statements_VariableDeclaration' has cardinality 0..*, and from 'Type', the role 'Type237' has cardinality 0..*.
+An association connects 'VariableDeclarator' and 'c_sharp_statements_VariableDeclaration'. From 'VariableDeclarator', the role 'VariableDeclarator240' has cardinality 0..*, and from 'c_sharp_statements_VariableDeclaration', the role 'c_sharp_statements_VariableDeclaration239' has cardinality 0..*.
+An association connects 'VariableInitializer' and 'c_sharp_statements_VariableDeclarator'. From 'VariableInitializer', the role 'VariableInitializer242' has cardinality 0..*, and from 'c_sharp_statements_VariableDeclarator', the role 'c_sharp_statements_VariableDeclarator' has cardinality 0..*.
+An association connects 'Type' and 'c_sharp_statements_LocalConstantDeclaration'. From 'Type', the role 'Type244' has cardinality 0..*, and from 'c_sharp_statements_LocalConstantDeclaration', the role 'c_sharp_statements_LocalConstantDeclaration' has cardinality 0..*.
+An association connects 'c_sharp_statements_LocalConstantDeclaration' and 'ConstantDeclarator'. From 'c_sharp_statements_LocalConstantDeclaration', the role 'c_sharp_statements_LocalConstantDeclaration246' has cardinality 0..*, and from 'ConstantDeclarator', the role 'ConstantDeclarator247' has cardinality 0..*.
+An association connects 'c_sharp_statements_ConstantDeclarator' and 'Expression'. From 'c_sharp_statements_ConstantDeclarator', the role 'c_sharp_statements_ConstantDeclarator' has cardinality 0..*, and from 'Expression', the role 'Expression249' has cardinality 0..*.
+An association connects 'StatementExpression' and 'c_sharp_expressions_StatementExpressionList'. From 'StatementExpression', the role 'StatementExpression251' has cardinality 0..*, and from 'c_sharp_expressions_StatementExpressionList', the role 'c_sharp_expressions_StatementExpressionList' has cardinality 0..*.
+An association connects 'c_sharp_expressions_ExpressionList' and 'Expression'. From 'c_sharp_expressions_ExpressionList', the role 'c_sharp_expressions_ExpressionList' has cardinality 0..*, and from 'Expression', the role 'Expression253' has cardinality 0..*.
+An association connects 'Out' and 'c_sharp_expressions_Argument'. From 'Out', the role 'Out255' has cardinality 0..*, and from 'c_sharp_expressions_Argument', the role 'c_sharp_expressions_Argument' has cardinality 0..*.
+An association connects 'c_sharp_expressions_Argument' and 'Ref'. From 'c_sharp_expressions_Argument', the role 'c_sharp_expressions_Argument257' has cardinality 0..*, and from 'Ref', the role 'Ref258' has cardinality 0..*.
+An association connects 'c_sharp_expressions_Argument' and 'Expression'. From 'c_sharp_expressions_Argument', the role 'c_sharp_expressions_Argument260' has cardinality 0..*, and from 'Expression', the role 'Expression261' has cardinality 0..*.
+An association connects 'c_sharp_expressions_ArgumentList' and 'Argument'. From 'c_sharp_expressions_ArgumentList', the role 'c_sharp_expressions_ArgumentList' has cardinality 0..*, and from 'Argument', the role 'Argument' has cardinality 0..*.
+An association connects 'c_sharp_expressions_MemberAccess' and 'SimpleType'. From 'c_sharp_expressions_MemberAccess', the role 'c_sharp_expressions_MemberAccess' has cardinality 0..*, and from 'SimpleType', the role 'SimpleType' has cardinality 0..*.
+An association connects 'c_sharp_expressions_MemberAccess' and 'Identifier'. From 'c_sharp_expressions_MemberAccess', the role 'c_sharp_expressions_MemberAccess265' has cardinality 0..*, and from 'Identifier', the role 'Identifier266' has cardinality 0..*.
+An association connects 'ExpressionList' and 'c_sharp_expressions_ElementAccess'. From 'ExpressionList', the role 'ExpressionList268' has cardinality 0..*, and from 'c_sharp_expressions_ElementAccess', the role 'c_sharp_expressions_ElementAccess' has cardinality 0..*.
+An association connects 'ArgumentList' and 'c_sharp_expressions_InvocationExpression'. From 'ArgumentList', the role 'ArgumentList' has cardinality 0..*, and from 'c_sharp_expressions_InvocationExpression', the role 'c_sharp_expressions_InvocationExpression' has cardinality 0..*.
+An association connects 'c_sharp_expressions_PointerMemberAccess' and 'Identifier'. From 'c_sharp_expressions_PointerMemberAccess', the role 'c_sharp_expressions_PointerMemberAccess' has cardinality 0..*, and from 'Identifier', the role 'Identifier271' has cardinality 0..*.
+An association connects 'c_sharp_expressions_BaseAccess' and 'ExpressionList'. From 'c_sharp_expressions_BaseAccess', the role 'c_sharp_expressions_BaseAccess' has cardinality 0..*, and from 'ExpressionList', the role 'ExpressionList273' has cardinality 0..*.
+An association connects 'Identifier' and 'c_sharp_expressions_BaseAccess'. From 'Identifier', the role 'Identifier276' has cardinality 0..*, and from 'c_sharp_expressions_BaseAccess', the role 'c_sharp_expressions_BaseAccess275' has cardinality 0..*.
+An association connects 'c_sharp_expressions_ObjectCreationExpression' and 'Type'. From 'c_sharp_expressions_ObjectCreationExpression', the role 'c_sharp_expressions_ObjectCreationExpression' has cardinality 0..*, and from 'Type', the role 'Type278' has cardinality 0..*.
+An association connects 'c_sharp_expressions_ObjectCreationExpression' and 'ArgumentList'. From 'c_sharp_expressions_ObjectCreationExpression', the role 'c_sharp_expressions_ObjectCreationExpression280' has cardinality 0..*, and from 'ArgumentList', the role 'ArgumentList281' has cardinality 0..*.
+An association connects 'Type' and 'c_sharp_expressions_ArrayCreationExpression'. From 'Type', the role 'Type283' has cardinality 0..*, and from 'c_sharp_expressions_ArrayCreationExpression', the role 'c_sharp_expressions_ArrayCreationExpression' has cardinality 0..*.
+An association connects 'c_sharp_expressions_ArrayCreationExpression' and 'ArrayType'. From 'c_sharp_expressions_ArrayCreationExpression', the role 'c_sharp_expressions_ArrayCreationExpression285' has cardinality 0..*, and from 'ArrayType', the role 'ArrayType286' has cardinality 0..*.
+An association connects 'c_sharp_expressions_ArrayCreationExpression' and 'ExpressionList'. From 'c_sharp_expressions_ArrayCreationExpression', the role 'c_sharp_expressions_ArrayCreationExpression288' has cardinality 0..*, and from 'ExpressionList', the role 'ExpressionList289' has cardinality 0..*.
+An association connects 'RankSpecifier' and 'c_sharp_expressions_ArrayCreationExpression'. From 'RankSpecifier', the role 'RankSpecifier292' has cardinality 0..*, and from 'c_sharp_expressions_ArrayCreationExpression', the role 'c_sharp_expressions_ArrayCreationExpression291' has cardinality 0..*.
+An association connects 'c_sharp_expressions_ArrayCreationExpression' and 'ArrayInitializer'. From 'c_sharp_expressions_ArrayCreationExpression', the role 'c_sharp_expressions_ArrayCreationExpression294' has cardinality 0..*, and from 'ArrayInitializer', the role 'ArrayInitializer' has cardinality 0..*.
+An association connects 'c_sharp_expressions_ParenthesizedExpression' and 'Expression'. From 'c_sharp_expressions_ParenthesizedExpression', the role 'c_sharp_expressions_ParenthesizedExpression' has cardinality 0..*, and from 'Expression', the role 'Expression296' has cardinality 0..*.
+An association connects 'c_sharp_expressions_UnaryExpression' and 'MemberAccess'. From 'c_sharp_expressions_UnaryExpression', the role 'c_sharp_expressions_UnaryExpression' has cardinality 0..*, and from 'MemberAccess', the role 'MemberAccess' has cardinality 0..*.
+An association connects 'PrimaryExpression' and 'c_sharp_expressions_UnaryExpression'. From 'PrimaryExpression', the role 'PrimaryExpression' has cardinality 0..*, and from 'c_sharp_expressions_UnaryExpression', the role 'c_sharp_expressions_UnaryExpression299' has cardinality 0..*.
+An association connects 'c_sharp_expressions_UnaryExpression' and 'PrimaryExtendedExpressionType'. From 'c_sharp_expressions_UnaryExpression', the role 'c_sharp_expressions_UnaryExpression301' has cardinality 0..*, and from 'PrimaryExtendedExpressionType', the role 'PrimaryExtendedExpressionType' has cardinality 0..*.
+An association connects 'Addition' and 'c_sharp_expressions_UnaryExpression'. From 'Addition', the role 'Addition' has cardinality 0..*, and from 'c_sharp_expressions_UnaryExpression', the role 'c_sharp_expressions_UnaryExpression303' has cardinality 0..*.
+An association connects 'Subtraction' and 'c_sharp_expressions_UnaryExpression'. From 'Subtraction', the role 'Subtraction' has cardinality 0..*, and from 'c_sharp_expressions_UnaryExpression', the role 'c_sharp_expressions_UnaryExpression305' has cardinality 0..*.
+An association connects 'Negate' and 'c_sharp_expressions_UnaryExpression'. From 'Negate', the role 'Negate' has cardinality 0..*, and from 'c_sharp_expressions_UnaryExpression', the role 'c_sharp_expressions_UnaryExpression307' has cardinality 0..*.
+An association connects 'c_sharp_expressions_UnaryExpression' and 'Complement'. From 'c_sharp_expressions_UnaryExpression', the role 'c_sharp_expressions_UnaryExpression309' has cardinality 0..*, and from 'Complement', the role 'Complement' has cardinality 0..*.
+An association connects 'Multiplication' and 'c_sharp_expressions_UnaryExpression'. From 'Multiplication', the role 'Multiplication' has cardinality 0..*, and from 'c_sharp_expressions_UnaryExpression', the role 'c_sharp_expressions_UnaryExpression311' has cardinality 0..*.
+An association connects 'c_sharp_expressions_UnaryExpression' and 'UnaryExpression'. From 'c_sharp_expressions_UnaryExpression', the role 'c_sharp_expressions_UnaryExpression313' has cardinality 0..*, and from 'UnaryExpression', the role 'UnaryExpression' has cardinality 0..*.
+An association connects 'c_sharp_expressions_UnaryExpression' and 'PreIncrementExpression'. From 'c_sharp_expressions_UnaryExpression', the role 'c_sharp_expressions_UnaryExpression315' has cardinality 0..*, and from 'PreIncrementExpression', the role 'PreIncrementExpression' has cardinality 0..*.
+An association connects 'PreDecrementExpression' and 'c_sharp_expressions_UnaryExpression'. From 'PreDecrementExpression', the role 'PreDecrementExpression' has cardinality 0..*, and from 'c_sharp_expressions_UnaryExpression', the role 'c_sharp_expressions_UnaryExpression317' has cardinality 0..*.
+An association connects 'CastExpression' and 'c_sharp_expressions_UnaryExpression'. From 'CastExpression', the role 'CastExpression' has cardinality 0..*, and from 'c_sharp_expressions_UnaryExpression', the role 'c_sharp_expressions_UnaryExpression319' has cardinality 0..*.
+An association connects 'c_sharp_expressions_UnaryExpression' and 'AddressOfExpression'. From 'c_sharp_expressions_UnaryExpression', the role 'c_sharp_expressions_UnaryExpression321' has cardinality 0..*, and from 'AddressOfExpression', the role 'AddressOfExpression' has cardinality 0..*.
+An association connects 'Expression' and 'c_sharp_expressions_ConditionalExpression'. From 'Expression', the role 'Expression323' has cardinality 0..*, and from 'c_sharp_expressions_ConditionalExpression', the role 'c_sharp_expressions_ConditionalExpression' has cardinality 0..*.
+An association connects 'c_sharp_expressions_ConditionalExpression' and 'ConditionalOrExpression'. From 'c_sharp_expressions_ConditionalExpression', the role 'c_sharp_expressions_ConditionalExpression325' has cardinality 0..*, and from 'ConditionalOrExpression', the role 'ConditionalOrExpression' has cardinality 0..*.
+An association connects 'c_sharp_expressions_AssignmentExpression' and 'UnaryExpression'. From 'c_sharp_expressions_AssignmentExpression', the role 'c_sharp_expressions_AssignmentExpression' has cardinality 0..*, and from 'UnaryExpression', the role 'UnaryExpression327' has cardinality 0..*.
+An association connects 'c_sharp_expressions_AssignmentExpression' and 'AssignmentOperator'. From 'c_sharp_expressions_AssignmentExpression', the role 'c_sharp_expressions_AssignmentExpression329' has cardinality 0..*, and from 'AssignmentOperator', the role 'AssignmentOperator' has cardinality 0..*.
+An association connects 'c_sharp_expressions_AssignmentExpression' and 'Expression'. From 'c_sharp_expressions_AssignmentExpression', the role 'c_sharp_expressions_AssignmentExpression331' has cardinality 0..*, and from 'Expression', the role 'Expression332' has cardinality 0..*.
+An association connects 'Type' and 'c_sharp_expressions_TypeOfExpression'. From 'Type', the role 'Type334' has cardinality 0..*, and from 'c_sharp_expressions_TypeOfExpression', the role 'c_sharp_expressions_TypeOfExpression' has cardinality 0..*.
+An association connects 'ClassOrInterfaceOrDelegateOrEnumType' and 'c_sharp_expressions_DelegateCreationExpression'. From 'ClassOrInterfaceOrDelegateOrEnumType', the role 'ClassOrInterfaceOrDelegateOrEnumType336' has cardinality 0..*, and from 'c_sharp_expressions_DelegateCreationExpression', the role 'c_sharp_expressions_DelegateCreationExpression' has cardinality 0..*.
+An association connects 'Expression' and 'c_sharp_expressions_DelegateCreationExpression'. From 'Expression', the role 'Expression339' has cardinality 0..*, and from 'c_sharp_expressions_DelegateCreationExpression', the role 'c_sharp_expressions_DelegateCreationExpression338' has cardinality 0..*.
+An association connects 'Expression' and 'c_sharp_expressions_CheckedExpression'. From 'Expression', the role 'Expression341' has cardinality 0..*, and from 'c_sharp_expressions_CheckedExpression', the role 'c_sharp_expressions_CheckedExpression' has cardinality 0..*.
+An association connects 'Expression' and 'c_sharp_expressions_UncheckedExpression'. From 'Expression', the role 'Expression343' has cardinality 0..*, and from 'c_sharp_expressions_UncheckedExpression', the role 'c_sharp_expressions_UncheckedExpression' has cardinality 0..*.
+An association connects 'c_sharp_expressions_SizeOfExpression' and 'Type'. From 'c_sharp_expressions_SizeOfExpression', the role 'c_sharp_expressions_SizeOfExpression' has cardinality 0..*, and from 'Type', the role 'Type345' has cardinality 0..*.
+An association connects 'c_sharp_expressions_PreIncrementExpression' and 'UnaryExpression'. From 'c_sharp_expressions_PreIncrementExpression', the role 'c_sharp_expressions_PreIncrementExpression' has cardinality 0..*, and from 'UnaryExpression', the role 'UnaryExpression347' has cardinality 0..*.
+An association connects 'c_sharp_expressions_PreDecrementExpression' and 'UnaryExpression'. From 'c_sharp_expressions_PreDecrementExpression', the role 'c_sharp_expressions_PreDecrementExpression' has cardinality 0..*, and from 'UnaryExpression', the role 'UnaryExpression349' has cardinality 0..*.
+An association connects 'c_sharp_expressions_CastExpression' and 'Type'. From 'c_sharp_expressions_CastExpression', the role 'c_sharp_expressions_CastExpression' has cardinality 0..*, and from 'Type', the role 'Type351' has cardinality 0..*.
+An association connects 'UnaryExpression' and 'c_sharp_expressions_CastExpression'. From 'UnaryExpression', the role 'UnaryExpression354' has cardinality 0..*, and from 'c_sharp_expressions_CastExpression', the role 'c_sharp_expressions_CastExpression353' has cardinality 0..*.
+An association connects 'UnaryExpression' and 'c_sharp_expressions_AddressOfExpression'. From 'UnaryExpression', the role 'UnaryExpression356' has cardinality 0..*, and from 'c_sharp_expressions_AddressOfExpression', the role 'c_sharp_expressions_AddressOfExpression' has cardinality 0..*.
+An association connects 'UnaryExpression' and 'c_sharp_expressions_MultiplicativeExpression'. From 'UnaryExpression', the role 'UnaryExpression358' has cardinality 0..*, and from 'c_sharp_expressions_MultiplicativeExpression', the role 'c_sharp_expressions_MultiplicativeExpression' has cardinality 0..*.
+An association connects 'Multiplication' and 'c_sharp_expressions_MultiplicativeExpression'. From 'Multiplication', the role 'Multiplication361' has cardinality 0..*, and from 'c_sharp_expressions_MultiplicativeExpression', the role 'c_sharp_expressions_MultiplicativeExpression360' has cardinality 0..*.
+An association connects 'Division' and 'c_sharp_expressions_MultiplicativeExpression'. From 'Division', the role 'Division' has cardinality 0..*, and from 'c_sharp_expressions_MultiplicativeExpression', the role 'c_sharp_expressions_MultiplicativeExpression363' has cardinality 0..*.
+An association connects 'Remainder' and 'c_sharp_expressions_MultiplicativeExpression'. From 'Remainder', the role 'Remainder' has cardinality 0..*, and from 'c_sharp_expressions_MultiplicativeExpression', the role 'c_sharp_expressions_MultiplicativeExpression365' has cardinality 0..*.
+An association connects 'MultiplicativeExpression' and 'c_sharp_expressions_AdditiveExpression'. From 'MultiplicativeExpression', the role 'MultiplicativeExpression' has cardinality 0..*, and from 'c_sharp_expressions_AdditiveExpression', the role 'c_sharp_expressions_AdditiveExpression' has cardinality 0..*.
+An association connects 'c_sharp_expressions_AdditiveExpression' and 'Addition'. From 'c_sharp_expressions_AdditiveExpression', the role 'c_sharp_expressions_AdditiveExpression368' has cardinality 0..*, and from 'Addition', the role 'Addition369' has cardinality 0..*.
+An association connects 'Subtraction' and 'c_sharp_expressions_AdditiveExpression'. From 'Subtraction', the role 'Subtraction372' has cardinality 0..*, and from 'c_sharp_expressions_AdditiveExpression', the role 'c_sharp_expressions_AdditiveExpression371' has cardinality 0..*.
+An association connects 'c_sharp_expressions_ShiftExpression' and 'RightShift'. From 'c_sharp_expressions_ShiftExpression', the role 'c_sharp_expressions_ShiftExpression' has cardinality 0..*, and from 'RightShift', the role 'RightShift' has cardinality 0..*.
+An association connects 'LeftShift' and 'c_sharp_expressions_ShiftExpression'. From 'LeftShift', the role 'LeftShift' has cardinality 0..*, and from 'c_sharp_expressions_ShiftExpression', the role 'c_sharp_expressions_ShiftExpression375' has cardinality 0..*.
+An association connects 'c_sharp_expressions_ShiftExpression' and 'Remainder'. From 'c_sharp_expressions_ShiftExpression', the role 'c_sharp_expressions_ShiftExpression377' has cardinality 0..*, and from 'Remainder', the role 'Remainder378' has cardinality 0..*.
+An association connects 'AdditiveExpression' and 'c_sharp_expressions_ShiftExpression'. From 'AdditiveExpression', the role 'AdditiveExpression' has cardinality 0..*, and from 'c_sharp_expressions_ShiftExpression', the role 'c_sharp_expressions_ShiftExpression380' has cardinality 0..*.
+An association connects 'c_sharp_expressions_RelationalExpression' and 'ShiftExpression'. From 'c_sharp_expressions_RelationalExpression', the role 'c_sharp_expressions_RelationalExpression' has cardinality 0..*, and from 'ShiftExpression', the role 'ShiftExpression' has cardinality 0..*.
+An association connects 'Type' and 'c_sharp_expressions_RelationalExpression'. From 'Type', the role 'Type384' has cardinality 0..*, and from 'c_sharp_expressions_RelationalExpression', the role 'c_sharp_expressions_RelationalExpression383' has cardinality 0..*.
+An association connects 'LessThan' and 'c_sharp_expressions_RelationalExpression'. From 'LessThan', the role 'LessThan' has cardinality 0..*, and from 'c_sharp_expressions_RelationalExpression', the role 'c_sharp_expressions_RelationalExpression386' has cardinality 0..*.
+An association connects 'LessThanOrEqual' and 'c_sharp_expressions_RelationalExpression'. From 'LessThanOrEqual', the role 'LessThanOrEqual' has cardinality 0..*, and from 'c_sharp_expressions_RelationalExpression', the role 'c_sharp_expressions_RelationalExpression388' has cardinality 0..*.
+An association connects 'c_sharp_expressions_RelationalExpression' and 'GreaterThan'. From 'c_sharp_expressions_RelationalExpression', the role 'c_sharp_expressions_RelationalExpression390' has cardinality 0..*, and from 'GreaterThan', the role 'GreaterThan' has cardinality 0..*.
+An association connects 'GreaterThanOrEqual' and 'c_sharp_expressions_RelationalExpression'. From 'GreaterThanOrEqual', the role 'GreaterThanOrEqual' has cardinality 0..*, and from 'c_sharp_expressions_RelationalExpression', the role 'c_sharp_expressions_RelationalExpression392' has cardinality 0..*.
+An association connects 'RelationalExpression' and 'c_sharp_expressions_EqualityExpression'. From 'RelationalExpression', the role 'RelationalExpression' has cardinality 0..*, and from 'c_sharp_expressions_EqualityExpression', the role 'c_sharp_expressions_EqualityExpression' has cardinality 0..*.
+An association connects 'c_sharp_expressions_EqualityExpression' and 'Equal'. From 'c_sharp_expressions_EqualityExpression', the role 'c_sharp_expressions_EqualityExpression395' has cardinality 0..*, and from 'Equal', the role 'Equal' has cardinality 0..*.
+An association connects 'NotEqual' and 'c_sharp_expressions_EqualityExpression'. From 'NotEqual', the role 'NotEqual' has cardinality 0..*, and from 'c_sharp_expressions_EqualityExpression', the role 'c_sharp_expressions_EqualityExpression397' has cardinality 0..*.
+An association connects 'c_sharp_expressions_AndExpression' and 'EqualityExpression'. From 'c_sharp_expressions_AndExpression', the role 'c_sharp_expressions_AndExpression' has cardinality 0..*, and from 'EqualityExpression', the role 'EqualityExpression' has cardinality 0..*.
+An association connects 'And' and 'c_sharp_expressions_AndExpression'. From 'And', the role 'And' has cardinality 0..*, and from 'c_sharp_expressions_AndExpression', the role 'c_sharp_expressions_AndExpression400' has cardinality 0..*.
+An association connects 'AndExpression' and 'c_sharp_expressions_ExclusiveOrExpression'. From 'AndExpression', the role 'AndExpression' has cardinality 0..*, and from 'c_sharp_expressions_ExclusiveOrExpression', the role 'c_sharp_expressions_ExclusiveOrExpression' has cardinality 0..*.
+An association connects 'c_sharp_expressions_ExclusiveOrExpression' and 'ExclusiveOr'. From 'c_sharp_expressions_ExclusiveOrExpression', the role 'c_sharp_expressions_ExclusiveOrExpression403' has cardinality 0..*, and from 'ExclusiveOr', the role 'ExclusiveOr' has cardinality 0..*.
+An association connects 'ExclusiveOrExpression' and 'c_sharp_expressions_InclusiveOrExpression'. From 'ExclusiveOrExpression', the role 'ExclusiveOrExpression' has cardinality 0..*, and from 'c_sharp_expressions_InclusiveOrExpression', the role 'c_sharp_expressions_InclusiveOrExpression' has cardinality 0..*.
+An association connects 'InclusiveOr' and 'c_sharp_expressions_InclusiveOrExpression'. From 'InclusiveOr', the role 'InclusiveOr' has cardinality 0..*, and from 'c_sharp_expressions_InclusiveOrExpression', the role 'c_sharp_expressions_InclusiveOrExpression406' has cardinality 0..*.
+An association connects 'InclusiveOrExpression' and 'c_sharp_expressions_ConditionalAndExpression'. From 'InclusiveOrExpression', the role 'InclusiveOrExpression' has cardinality 0..*, and from 'c_sharp_expressions_ConditionalAndExpression', the role 'c_sharp_expressions_ConditionalAndExpression' has cardinality 0..*.
+An association connects 'ConditionalAnd' and 'c_sharp_expressions_ConditionalAndExpression'. From 'ConditionalAnd', the role 'ConditionalAnd' has cardinality 0..*, and from 'c_sharp_expressions_ConditionalAndExpression', the role 'c_sharp_expressions_ConditionalAndExpression409' has cardinality 0..*.
+An association connects 'ConditionalAndExpression' and 'c_sharp_expressions_ConditionalOrExpression'. From 'ConditionalAndExpression', the role 'ConditionalAndExpression' has cardinality 0..*, and from 'c_sharp_expressions_ConditionalOrExpression', the role 'c_sharp_expressions_ConditionalOrExpression' has cardinality 0..*.
+An association connects 'c_sharp_expressions_ConditionalOrExpression' and 'ConditionalOr'. From 'c_sharp_expressions_ConditionalOrExpression', the role 'c_sharp_expressions_ConditionalOrExpression412' has cardinality 0..*, and from 'ConditionalOr', the role 'ConditionalOr' has cardinality 0..*.
+An association connects 'NamespaceOrTypeName' and 'c_sharp_types_ClassOrInterfaceOrDelegateOrEnumType'. From 'NamespaceOrTypeName', the role 'NamespaceOrTypeName414' has cardinality 0..*, and from 'c_sharp_types_ClassOrInterfaceOrDelegateOrEnumType', the role 'c_sharp_types_ClassOrInterfaceOrDelegateOrEnumType' has cardinality 0..*.
+An association connects 'c_sharp_types_PointerType' and 'SimpleType'. From 'c_sharp_types_PointerType', the role 'c_sharp_types_PointerType' has cardinality 0..*, and from 'SimpleType', the role 'SimpleType416' has cardinality 0..*.
+An association connects 'c_sharp_types_PointerType' and 'ReferenceType'. From 'c_sharp_types_PointerType', the role 'c_sharp_types_PointerType418' has cardinality 0..*, and from 'ReferenceType', the role 'ReferenceType' has cardinality 0..*.

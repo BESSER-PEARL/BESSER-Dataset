@@ -1,0 +1,41 @@
+The domain model 'oclstates' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'oclstates_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstates_Statemachine' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'initial', which is of type bool; 'value', which is of type int.
+
+'oclstates_SimpleState' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'oclstates_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'oclstates_Module' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'oclstates_CompoundState' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstates_State' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'initial', which is of type bool.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'oclstates_SimpleState' is a specialization of 'State'.
+The class 'oclstates_CompoundState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'oclstates_Statemachine' and 'oclstates_Module'. From 'oclstates_Statemachine', the role 'oclstates_Statemachine' has cardinality 0..*, and from 'oclstates_Module', the role 'oclstates_Module' has cardinality 0..*.
+An association connects 'oclstates_Event' and 'oclstates_Statemachine'. From 'oclstates_Event', the role 'oclstates_Event' has cardinality 0..*, and from 'oclstates_Statemachine', the role 'oclstates_Statemachine2' has cardinality 0..*.
+An association connects 'oclstates_Statemachine' and 'oclstates_State'. From 'oclstates_Statemachine', the role 'oclstates_Statemachine4' has cardinality 0..*, and from 'oclstates_State', the role 'oclstates_State' has cardinality 0..*.
+An association connects 'oclstates_State' and 'oclstates_Transition'. From 'oclstates_State', the role 'oclstates_State6' has cardinality 0..*, and from 'oclstates_Transition', the role 'oclstates_Transition' has cardinality 0..*.
+An association connects 'oclstates_State' and 'oclstates_Statemachine'. From 'oclstates_State', the role 'oclstates_State8' has cardinality 0..*, and from 'oclstates_Statemachine', the role 'oclstates_Statemachine9' has cardinality 0..*.
+An association connects 'oclstates_Statemachine' and 'oclstates_CompoundState'. From 'oclstates_Statemachine', the role 'oclstates_Statemachine11' has cardinality 0..*, and from 'oclstates_CompoundState', the role 'oclstates_CompoundState' has cardinality 0..*.
+An association connects 'oclstates_Transition' and 'oclstates_Event'. From 'oclstates_Transition', the role 'oclstates_Transition13' has cardinality 0..*, and from 'oclstates_Event', the role 'oclstates_Event14' has cardinality 0..*.
+An association connects 'oclstates_State' and 'oclstates_Transition'. From 'oclstates_State', the role 'oclstates_State17' has cardinality 0..*, and from 'oclstates_Transition', the role 'oclstates_Transition16' has cardinality 0..*.

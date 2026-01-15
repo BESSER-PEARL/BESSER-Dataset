@@ -1,0 +1,40 @@
+The domain model 'states' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'states_Module' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'states_CompoundState' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'states_State' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'initial', which is of type bool.
+
+'states_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'states_SimpleState' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'states_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'states_Statemachine' represents an important domain concept.
+It has the following attributes: 'initial', which is of type bool; 'name', which is of type str; 'value', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'states_SimpleState' is a specialization of 'State'.
+The class 'states_CompoundState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'states_Statemachine' and 'states_Module'. From 'states_Statemachine', the role 'states_Statemachine' has cardinality 0..*, and from 'states_Module', the role 'states_Module' has cardinality 0..*.
+An association connects 'states_Statemachine' and 'states_Event'. From 'states_Statemachine', the role 'states_Statemachine2' has cardinality 0..*, and from 'states_Event', the role 'states_Event' has cardinality 0..*.
+An association connects 'states_State' and 'states_Statemachine'. From 'states_State', the role 'states_State' has cardinality 0..*, and from 'states_Statemachine', the role 'states_Statemachine4' has cardinality 0..*.
+An association connects 'states_Transition' and 'states_State'. From 'states_Transition', the role 'states_Transition' has cardinality 0..*, and from 'states_State', the role 'states_State6' has cardinality 0..*.
+An association connects 'states_CompoundState' and 'states_Statemachine'. From 'states_CompoundState', the role 'states_CompoundState' has cardinality 0..*, and from 'states_Statemachine', the role 'states_Statemachine8' has cardinality 0..*.
+An association connects 'states_Event' and 'states_Transition'. From 'states_Event', the role 'states_Event11' has cardinality 0..*, and from 'states_Transition', the role 'states_Transition10' has cardinality 0..*.
+An association connects 'states_Transition' and 'states_State'. From 'states_Transition', the role 'states_Transition13' has cardinality 0..*, and from 'states_State', the role 'states_State14' has cardinality 0..*.

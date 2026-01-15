@@ -1,0 +1,452 @@
+The domain model 'cjsidl' describes the core structural elements and their relationships within the system.
+
+The model defines 81 main class(es).
+
+'cjsidl_formatEnumDef' represents an important domain concept.
+It has the following attributes: 'fieldFormatStr', which is of type str; 'index', which is of type str; 'fieldFormat', which is of type str.
+
+'cjsidl_bodyScopedRef' represents an important domain concept.
+It does not declare any attributes.
+
+'cjsidl_valueSpec' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comment', which is of type str; 'value', which is of type str.
+
+'cjsidl_scaledRangeDef' represents an important domain concept.
+It has the following attributes: 'upperLim', which is of type str; 'interp', which is of type str; 'function', which is of type str; 'lowerLim', which is of type str.
+
+'cjsidl_subField' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'fromIndex', which is of type str; 'toIndex', which is of type str; 'name', which is of type str.
+
+'cjsidl_scopedType' represents an important domain concept.
+It does not declare any attributes.
+
+'cjsidl_messageDef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'command', which is of type str; 'messageID', which is of type str.
+
+'cjsidl_defaultState' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'cjsidl_taggedItemDef' represents an important domain concept.
+It does not declare any attributes.
+
+'cjsidl_listDef' represents an important domain concept.
+It has the following attributes: 'minCount', which is of type str; 'maxCount', which is of type str; 'countComment', which is of type str.
+
+'cjsidl_fixedFieldDef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comment', which is of type str; 'fieldUnit', which is of type str; 'optional', which is of type str.
+
+'cjsidl_footerDef' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'name', which is of type str.
+
+'cjsidl_declaredTypeSet' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'name', which is of type str; 'typeName', which is of type str.
+
+'cjsidl_messageSet' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'outputComment', which is of type str; 'inputComment', which is of type str.
+
+'cjsidl_declaredConstSet' represents an important domain concept.
+It has the following attributes: 'constSetVersion', which is of type str; 'constName', which is of type str; 'name', which is of type str.
+
+'cjsidl_varFormatField' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'units', which is of type str; 'name', which is of type str; 'optional', which is of type str; 'countComment', which is of type str.
+
+'cjsidl_actionList' represents an important domain concept.
+It does not declare any attributes.
+
+'cjsidl_headerRef' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'name', which is of type str.
+
+'cjsidl_simpleTransition' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'cjsidl_arrayDef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'optional', which is of type str; 'comment', which is of type str; 'arraySize', which is of type str.
+
+'cjsidl_startState' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'cjsidl_scopedTypeId' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'scopedName', which is of type str; 'optional', which is of type str.
+
+'cjsidl_transParam' represents an important domain concept.
+It has the following attributes: 'unsignedType', which is of type str; 'name', which is of type str; 'comment', which is of type str.
+
+'cjsidl_bitfieldDef' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'name', which is of type str; 'type', which is of type str; 'optional', which is of type str.
+
+'cjsidl_varLenField' represents an important domain concept.
+It has the following attributes: 'upperLim', which is of type str; 'lowerLim', which is of type str; 'countComment', which is of type str; 'comment', which is of type str; 'optional', which is of type str; 'fieldFormat', which is of type str; 'name', which is of type str.
+
+'cjsidl_guardAction' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'not', which is of type str.
+
+'cjsidl_serviceDef' represents an important domain concept.
+It has the following attributes: 'assumpt', which is of type str; 'name', which is of type str; 'serviceName', which is of type str; 'serviceVersion', which is of type str.
+
+'cjsidl_declaredEventDef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comment', which is of type str.
+
+'cjsidl_stateMachine' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comment', which is of type str.
+
+'cjsidl_description' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'cjsidl_scopedConstId' represents an important domain concept.
+It does not declare any attributes.
+
+'cjsidl_exit' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'cjsidl_nextState' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'cjsidl_declaredTypeSetRef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comment', which is of type str.
+
+'cjsidl_varField' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'optional', which is of type str; 'comment', which is of type str.
+
+'cjsidl_references' represents an important domain concept.
+It does not declare any attributes.
+
+'cjsidl_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'cjsidl_internalEventSet' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'cjsidl_guardParam' represents an important domain concept.
+It has one attribute: 'guardConst', which is of type str.
+
+'cjsidl_constReference' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'cjsidl_guard' represents an important domain concept.
+It has the following attributes: 'equiv', which is of type str; 'logicalOperator', which is of type str; 'comment', which is of type str.
+
+'cjsidl_typeReference' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'optional', which is of type str; 'name', which is of type str.
+
+'cjsidl_headerScopedRef' represents an important domain concept.
+It does not declare any attributes.
+
+'cjsidl_jaus' represents an important domain concept.
+It does not declare any attributes.
+
+'cjsidl_valueSetDef' represents an important domain concept.
+It has one attribute: 'offset', which is of type str.
+
+'cjsidl_footerRef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comment', which is of type str.
+
+'cjsidl_refAttr' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comment', which is of type str.
+
+'cjsidl_headerDef' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'name', which is of type str.
+
+'cjsidl_eventDef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cjsidl_bodyDef' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'name', which is of type str.
+
+'cjsidl_pushTransition' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'cjsidl_transition' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'type', which is of type str; 'name', which is of type str.
+
+'cjsidl_internalTransition' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'cjsidl_state' represents an important domain concept.
+It has the following attributes: 'initial', which is of type str; 'comment', which is of type str; 'name', which is of type str.
+
+'cjsidl_declaredConstSetRef' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'name', which is of type str.
+
+'cjsidl_varLenString' represents an important domain concept.
+It has the following attributes: 'optional', which is of type str; 'upperLim', which is of type str; 'comment', which is of type str; 'name', which is of type str; 'lowerLim', which is of type str.
+
+'cjsidl_typeDef' represents an important domain concept.
+It does not declare any attributes.
+
+'cjsidl_containerRef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comment', which is of type str; 'optional', which is of type str.
+
+'cjsidl_messageScopedRef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comment', which is of type str.
+
+'cjsidl_protocolBehavior' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'stateless', which is of type str.
+
+'cjsidl_simpleNumericType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'cjsidl_containerDef' represents an important domain concept.
+It has the following attributes: 'optional', which is of type str; 'comment', which is of type str; 'name', which is of type str.
+
+'cjsidl_messageRef' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'name', which is of type str.
+
+'cjsidl_constDef' represents an important domain concept.
+It has the following attributes: 'constValue', which is of type str; 'fieldUnits', which is of type str; 'name', which is of type str; 'comment', which is of type str.
+
+'cjsidl_sendActionList' represents an important domain concept.
+It does not declare any attributes.
+
+'cjsidl_popTransition' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'cjsidl_taggedUnitsEnum' represents an important domain concept.
+It has the following attributes: 'const_tag', which is of type str; 'name', which is of type str; 'fieldUnit', which is of type str.
+
+'containerDef' represents an important domain concept.
+It does not declare any attributes.
+
+'cjsidl_valueRange' represents an important domain concept.
+It has the following attributes: 'lowerLimit_type', which is of type str; 'upperLimit_type', which is of type str; 'upperLim', which is of type str; 'comment', which is of type str; 'lowerLim', which is of type str.
+
+'cjsidl_bodyRef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comment', which is of type str.
+
+'cjsidl_sequenceDef' represents an important domain concept.
+It does not declare any attributes.
+
+'cjsidl_footerScopedRef' represents an important domain concept.
+It does not declare any attributes.
+
+'cjsidl_entry' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'cjsidl_fixedLenString' represents an important domain concept.
+It has the following attributes: 'upperLim', which is of type str; 'name', which is of type str; 'optional', which is of type str; 'comment', which is of type str.
+
+'cjsidl_recordDef' represents an important domain concept.
+It does not declare any attributes.
+
+'cjsidl_scopedEventType' represents an important domain concept.
+It does not declare any attributes.
+
+'cjsidl_transParams' represents an important domain concept.
+It does not declare any attributes.
+
+'cjsidl_action' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comment', which is of type str.
+
+'cjsidl_variantDef' represents an important domain concept.
+It has the following attributes: 'vtagComment', which is of type str; 'maxCount', which is of type str; 'minCount', which is of type str.
+
+'cjsidl_defaultTransition' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'comment', which is of type str.
+
+'cjsidl_messages' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FIELD_FORMAT' defines the following possible values: 'XML', 'AU', 'MJPEG', 'MPEG2', 'MP3', 'RAW', 'WAV', 'USER_DEFINED', 'MP2', 'BMP', 'MP4', 'XSD', 'RNC', 'MPEG1', 'JPEG', 'JAUS_MESSAGE', 'RNG'.
+The enumeration 'UNIT' defines the following possible values: 'ARE', 'RAD_PER_SEC', 'AMPPERSQRMETER', 'KELVIN', 'FARAD', 'METER_PER_SEC_SQR', 'NEPER', 'COULOMB', 'LTR', 'JOULE_PER_MOLE', 'RECIPROCAL_METER', 'WATT_PER_METER_KELVIN', 'AMP', 'COULOMB_PER_KG', 'METER', 'SEC', 'OHM', 'WATT', 'HECTARE', 'CUBIC_METER', 'HENRY', 'REM', 'WEBER', 'COULOMB_PER_CUBIC_METER', 'JOULE_PER_MOLE_KELVIN', 'JOULES_PER_CUBIC_METER', 'DAY', 'HRZ', 'ONE', 'BECQUEREL', 'SIEMENS', 'FARAD_PER_METER', 'MTON', 'CANDELA_PER_SQUARE_METER', 'STE_RAD', 'BARN', 'BAR', 'NEWTON', 'ANGSROM', 'RAD', 'COULOMB_PER_SQR_METER', 'NMILE', 'AMP_PER_METER', 'MOLE', 'JOULE_PER_KG', 'METER_PER_SEC', 'VOLT_PER_METER', 'CURIE', 'PASCAL_SEC', 'HOUR', 'NEWTON_PER_METER', 'KG', 'SQR_METER', 'WATT_PER_SQR_METER_STERAD', 'JOULE', 'WATT_PER_SQR_METER', 'RAD_PER_SEC_SQR', 'DEGREE', 'MOLE_PER_CUBIC_METER', 'SIEVERT', 'VOLT', 'KG_PER_CUBIC_METER', 'BEL', 'CANDELA', 'GRAY_PER_SEC', 'LUMEN', 'CUBICMETERPERKG', 'HENRY_PER_METER', 'KATAL', 'TESLA', 'CELSIUS', 'ROENTGEN', 'LUX', 'NEWTON_METER', 'MIN', 'PASCAL', 'KNOT', 'RADIAN', 'JOULE_PER_KELVIN', 'KATAL_PER_CUBIC_METER'.
+
+The model also captures inheritance relationships between classes.
+The class 'cjsidl_listDef' is a specialization of 'containerDef'.
+The class 'cjsidl_variantDef' is a specialization of 'containerDef'.
+The class 'cjsidl_sequenceDef' is a specialization of 'containerDef'.
+The class 'cjsidl_recordDef' is a specialization of 'containerDef'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cjsidl_jaus' and 'cjsidl_EObject'. From 'cjsidl_jaus', the role 'cjsidl_jaus' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject' has cardinality 0..*.
+An association connects 'cjsidl_description' and 'cjsidl_serviceDef'. From 'cjsidl_description', the role 'cjsidl_description' has cardinality 0..*, and from 'cjsidl_serviceDef', the role 'cjsidl_serviceDef' has cardinality 0..*.
+An association connects 'cjsidl_references' and 'cjsidl_serviceDef'. From 'cjsidl_references', the role 'cjsidl_references' has cardinality 0..*, and from 'cjsidl_serviceDef', the role 'cjsidl_serviceDef3' has cardinality 0..*.
+An association connects 'cjsidl_declaredConstSet' and 'cjsidl_serviceDef'. From 'cjsidl_declaredConstSet', the role 'cjsidl_declaredConstSet' has cardinality 0..*, and from 'cjsidl_serviceDef', the role 'cjsidl_serviceDef5' has cardinality 0..*.
+An association connects 'cjsidl_declaredTypeSet' and 'cjsidl_serviceDef'. From 'cjsidl_declaredTypeSet', the role 'cjsidl_declaredTypeSet' has cardinality 0..*, and from 'cjsidl_serviceDef', the role 'cjsidl_serviceDef7' has cardinality 0..*.
+An association connects 'cjsidl_messageSet' and 'cjsidl_serviceDef'. From 'cjsidl_messageSet', the role 'cjsidl_messageSet' has cardinality 0..*, and from 'cjsidl_serviceDef', the role 'cjsidl_serviceDef9' has cardinality 0..*.
+An association connects 'cjsidl_serviceDef' and 'cjsidl_internalEventSet'. From 'cjsidl_serviceDef', the role 'cjsidl_serviceDef11' has cardinality 0..*, and from 'cjsidl_internalEventSet', the role 'cjsidl_internalEventSet' has cardinality 0..*.
+An association connects 'cjsidl_protocolBehavior' and 'cjsidl_serviceDef'. From 'cjsidl_protocolBehavior', the role 'cjsidl_protocolBehavior' has cardinality 0..*, and from 'cjsidl_serviceDef', the role 'cjsidl_serviceDef13' has cardinality 0..*.
+An association connects 'cjsidl_refAttr' and 'cjsidl_references'. From 'cjsidl_refAttr', the role 'cjsidl_refAttr' has cardinality 0..*, and from 'cjsidl_references', the role 'cjsidl_references15' has cardinality 0..*.
+An association connects 'cjsidl_refAttr' and 'cjsidl_references'. From 'cjsidl_refAttr', the role 'cjsidl_refAttr18' has cardinality 0..*, and from 'cjsidl_references', the role 'cjsidl_references17' has cardinality 0..*.
+An association connects 'cjsidl_refAttr' and 'cjsidl_serviceDef'. From 'cjsidl_refAttr', the role 'cjsidl_refAttr20' has cardinality 0..*, and from 'cjsidl_serviceDef', the role 'cjsidl_serviceDef21' has cardinality 0..*.
+An association connects 'cjsidl_declaredConstSetRef' and 'cjsidl_declaredConstSet'. From 'cjsidl_declaredConstSetRef', the role 'cjsidl_declaredConstSetRef' has cardinality 0..*, and from 'cjsidl_declaredConstSet', the role 'cjsidl_declaredConstSet23' has cardinality 0..*.
+An association connects 'cjsidl_constDef' and 'cjsidl_declaredConstSet'. From 'cjsidl_constDef', the role 'cjsidl_constDef' has cardinality 0..*, and from 'cjsidl_declaredConstSet', the role 'cjsidl_declaredConstSet25' has cardinality 0..*.
+An association connects 'cjsidl_declaredConstSetRef' and 'cjsidl_declaredConstSet'. From 'cjsidl_declaredConstSetRef', the role 'cjsidl_declaredConstSetRef27' has cardinality 0..*, and from 'cjsidl_declaredConstSet', the role 'cjsidl_declaredConstSet28' has cardinality 0..*.
+An association connects 'cjsidl_declaredConstSetRef' and 'cjsidl_declaredTypeSet'. From 'cjsidl_declaredConstSetRef', the role 'cjsidl_declaredConstSetRef31' has cardinality 0..*, and from 'cjsidl_declaredTypeSet', the role 'cjsidl_declaredTypeSet30' has cardinality 0..*.
+An association connects 'cjsidl_declaredTypeSet' and 'cjsidl_declaredTypeSetRef'. From 'cjsidl_declaredTypeSet', the role 'cjsidl_declaredTypeSet33' has cardinality 0..*, and from 'cjsidl_declaredTypeSetRef', the role 'cjsidl_declaredTypeSetRef' has cardinality 0..*.
+An association connects 'cjsidl_declaredTypeSet' and 'cjsidl_typeDef'. From 'cjsidl_declaredTypeSet', the role 'cjsidl_declaredTypeSet35' has cardinality 0..*, and from 'cjsidl_typeDef', the role 'cjsidl_typeDef' has cardinality 0..*.
+An association connects 'cjsidl_declaredTypeSet' and 'cjsidl_typeReference'. From 'cjsidl_declaredTypeSet', the role 'cjsidl_declaredTypeSet37' has cardinality 0..*, and from 'cjsidl_typeReference', the role 'cjsidl_typeReference' has cardinality 0..*.
+An association connects 'cjsidl_scopedTypeId' and 'cjsidl_declaredTypeSet'. From 'cjsidl_scopedTypeId', the role 'cjsidl_scopedTypeId' has cardinality 0..*, and from 'cjsidl_declaredTypeSet', the role 'cjsidl_declaredTypeSet39' has cardinality 0..*.
+An association connects 'cjsidl_messages' and 'cjsidl_messageSet'. From 'cjsidl_messages', the role 'cjsidl_messages' has cardinality 0..*, and from 'cjsidl_messageSet', the role 'cjsidl_messageSet41' has cardinality 0..*.
+An association connects 'cjsidl_messageSet' and 'cjsidl_messages'. From 'cjsidl_messageSet', the role 'cjsidl_messageSet43' has cardinality 0..*, and from 'cjsidl_messages', the role 'cjsidl_messages44' has cardinality 0..*.
+An association connects 'cjsidl_messages' and 'cjsidl_messageDef'. From 'cjsidl_messages', the role 'cjsidl_messages46' has cardinality 0..*, and from 'cjsidl_messageDef', the role 'cjsidl_messageDef' has cardinality 0..*.
+An association connects 'cjsidl_messageRef' and 'cjsidl_messages'. From 'cjsidl_messageRef', the role 'cjsidl_messageRef' has cardinality 0..*, and from 'cjsidl_messages', the role 'cjsidl_messages48' has cardinality 0..*.
+An association connects 'cjsidl_messages' and 'cjsidl_messageScopedRef'. From 'cjsidl_messages', the role 'cjsidl_messages50' has cardinality 0..*, and from 'cjsidl_messageScopedRef', the role 'cjsidl_messageScopedRef' has cardinality 0..*.
+An association connects 'cjsidl_internalEventSet' and 'cjsidl_EObject'. From 'cjsidl_internalEventSet', the role 'cjsidl_internalEventSet52' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject53' has cardinality 0..*.
+An association connects 'cjsidl_eventDef' and 'cjsidl_description'. From 'cjsidl_eventDef', the role 'cjsidl_eventDef' has cardinality 0..*, and from 'cjsidl_description', the role 'cjsidl_description55' has cardinality 0..*.
+An association connects 'cjsidl_eventDef' and 'cjsidl_EObject'. From 'cjsidl_eventDef', the role 'cjsidl_eventDef57' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject58' has cardinality 0..*.
+An association connects 'cjsidl_eventDef' and 'cjsidl_EObject'. From 'cjsidl_eventDef', the role 'cjsidl_eventDef60' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject61' has cardinality 0..*.
+An association connects 'cjsidl_EObject' and 'cjsidl_eventDef'. From 'cjsidl_EObject', the role 'cjsidl_EObject64' has cardinality 0..*, and from 'cjsidl_eventDef', the role 'cjsidl_eventDef63' has cardinality 0..*.
+An association connects 'cjsidl_messageRef' and 'cjsidl_messageDef'. From 'cjsidl_messageRef', the role 'cjsidl_messageRef66' has cardinality 0..*, and from 'cjsidl_messageDef', the role 'cjsidl_messageDef67' has cardinality 0..*.
+An association connects 'cjsidl_stateMachine' and 'cjsidl_protocolBehavior'. From 'cjsidl_stateMachine', the role 'cjsidl_stateMachine' has cardinality 0..*, and from 'cjsidl_protocolBehavior', the role 'cjsidl_protocolBehavior69' has cardinality 0..*.
+An association connects 'cjsidl_startState' and 'cjsidl_state'. From 'cjsidl_startState', the role 'cjsidl_startState' has cardinality 0..*, and from 'cjsidl_state', the role 'cjsidl_state' has cardinality 0..*.
+An association connects 'cjsidl_state' and 'cjsidl_startState'. From 'cjsidl_state', the role 'cjsidl_state73' has cardinality 0..*, and from 'cjsidl_startState', the role 'cjsidl_startState72' has cardinality 0..*.
+An association connects 'cjsidl_stateMachine' and 'cjsidl_refAttr'. From 'cjsidl_stateMachine', the role 'cjsidl_stateMachine75' has cardinality 0..*, and from 'cjsidl_refAttr', the role 'cjsidl_refAttr76' has cardinality 0..*.
+An association connects 'cjsidl_startState' and 'cjsidl_stateMachine'. From 'cjsidl_startState', the role 'cjsidl_startState79' has cardinality 0..*, and from 'cjsidl_stateMachine', the role 'cjsidl_stateMachine78' has cardinality 0..*.
+An association connects 'cjsidl_defaultState' and 'cjsidl_stateMachine'. From 'cjsidl_defaultState', the role 'cjsidl_defaultState' has cardinality 0..*, and from 'cjsidl_stateMachine', the role 'cjsidl_stateMachine81' has cardinality 0..*.
+An association connects 'cjsidl_state' and 'cjsidl_stateMachine'. From 'cjsidl_state', the role 'cjsidl_state84' has cardinality 0..*, and from 'cjsidl_stateMachine', the role 'cjsidl_stateMachine83' has cardinality 0..*.
+An association connects 'cjsidl_entry' and 'cjsidl_state'. From 'cjsidl_entry', the role 'cjsidl_entry' has cardinality 0..*, and from 'cjsidl_state', the role 'cjsidl_state86' has cardinality 0..*.
+An association connects 'cjsidl_exit' and 'cjsidl_state'. From 'cjsidl_exit', the role 'cjsidl_exit' has cardinality 0..*, and from 'cjsidl_state', the role 'cjsidl_state88' has cardinality 0..*.
+An association connects 'cjsidl_transition' and 'cjsidl_state'. From 'cjsidl_transition', the role 'cjsidl_transition' has cardinality 0..*, and from 'cjsidl_state', the role 'cjsidl_state90' has cardinality 0..*.
+An association connects 'cjsidl_defaultTransition' and 'cjsidl_state'. From 'cjsidl_defaultTransition', the role 'cjsidl_defaultTransition' has cardinality 0..*, and from 'cjsidl_state', the role 'cjsidl_state92' has cardinality 0..*.
+An association connects 'cjsidl_defaultState' and 'cjsidl_state'. From 'cjsidl_defaultState', the role 'cjsidl_defaultState95' has cardinality 0..*, and from 'cjsidl_state', the role 'cjsidl_state94' has cardinality 0..*.
+An association connects 'cjsidl_state' and 'cjsidl_state'. From 'cjsidl_state', the role 'cjsidl_state96' has cardinality 0..*, and from 'cjsidl_state', the role 'cjsidl_state98' has cardinality 0..*.
+An association connects 'cjsidl_defaultState' and 'cjsidl_transition'. From 'cjsidl_defaultState', the role 'cjsidl_defaultState100' has cardinality 0..*, and from 'cjsidl_transition', the role 'cjsidl_transition101' has cardinality 0..*.
+An association connects 'cjsidl_defaultState' and 'cjsidl_defaultTransition'. From 'cjsidl_defaultState', the role 'cjsidl_defaultState103' has cardinality 0..*, and from 'cjsidl_defaultTransition', the role 'cjsidl_defaultTransition104' has cardinality 0..*.
+An association connects 'cjsidl_actionList' and 'cjsidl_entry'. From 'cjsidl_actionList', the role 'cjsidl_actionList' has cardinality 0..*, and from 'cjsidl_entry', the role 'cjsidl_entry106' has cardinality 0..*.
+An association connects 'cjsidl_entry' and 'cjsidl_sendActionList'. From 'cjsidl_entry', the role 'cjsidl_entry108' has cardinality 0..*, and from 'cjsidl_sendActionList', the role 'cjsidl_sendActionList' has cardinality 0..*.
+An association connects 'cjsidl_actionList' and 'cjsidl_exit'. From 'cjsidl_actionList', the role 'cjsidl_actionList111' has cardinality 0..*, and from 'cjsidl_exit', the role 'cjsidl_exit110' has cardinality 0..*.
+An association connects 'cjsidl_exit' and 'cjsidl_sendActionList'. From 'cjsidl_exit', the role 'cjsidl_exit113' has cardinality 0..*, and from 'cjsidl_sendActionList', the role 'cjsidl_sendActionList114' has cardinality 0..*.
+An association connects 'cjsidl_transParams' and 'cjsidl_transParam'. From 'cjsidl_transParams', the role 'cjsidl_transParams' has cardinality 0..*, and from 'cjsidl_transParam', the role 'cjsidl_transParam' has cardinality 0..*.
+An association connects 'cjsidl_transParam' and 'cjsidl_EObject'. From 'cjsidl_transParam', the role 'cjsidl_transParam117' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject118' has cardinality 0..*.
+An association connects 'cjsidl_scopedEventType' and 'cjsidl_transParam'. From 'cjsidl_scopedEventType', the role 'cjsidl_scopedEventType' has cardinality 0..*, and from 'cjsidl_transParam', the role 'cjsidl_transParam120' has cardinality 0..*.
+An association connects 'cjsidl_transition' and 'cjsidl_refAttr'. From 'cjsidl_transition', the role 'cjsidl_transition122' has cardinality 0..*, and from 'cjsidl_refAttr', the role 'cjsidl_refAttr123' has cardinality 0..*.
+An association connects 'cjsidl_transition' and 'cjsidl_transParams'. From 'cjsidl_transition', the role 'cjsidl_transition125' has cardinality 0..*, and from 'cjsidl_transParams', the role 'cjsidl_transParams126' has cardinality 0..*.
+An association connects 'cjsidl_guard' and 'cjsidl_transition'. From 'cjsidl_guard', the role 'cjsidl_guard' has cardinality 0..*, and from 'cjsidl_transition', the role 'cjsidl_transition128' has cardinality 0..*.
+An association connects 'cjsidl_actionList' and 'cjsidl_transition'. From 'cjsidl_actionList', the role 'cjsidl_actionList131' has cardinality 0..*, and from 'cjsidl_transition', the role 'cjsidl_transition130' has cardinality 0..*.
+An association connects 'cjsidl_transition' and 'cjsidl_sendActionList'. From 'cjsidl_transition', the role 'cjsidl_transition133' has cardinality 0..*, and from 'cjsidl_sendActionList', the role 'cjsidl_sendActionList134' has cardinality 0..*.
+An association connects 'cjsidl_transition' and 'cjsidl_EObject'. From 'cjsidl_transition', the role 'cjsidl_transition136' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject137' has cardinality 0..*.
+An association connects 'cjsidl_defaultTransition' and 'cjsidl_guard'. From 'cjsidl_defaultTransition', the role 'cjsidl_defaultTransition139' has cardinality 0..*, and from 'cjsidl_guard', the role 'cjsidl_guard140' has cardinality 0..*.
+An association connects 'cjsidl_actionList' and 'cjsidl_defaultTransition'. From 'cjsidl_actionList', the role 'cjsidl_actionList143' has cardinality 0..*, and from 'cjsidl_defaultTransition', the role 'cjsidl_defaultTransition142' has cardinality 0..*.
+An association connects 'cjsidl_sendActionList' and 'cjsidl_defaultTransition'. From 'cjsidl_sendActionList', the role 'cjsidl_sendActionList146' has cardinality 0..*, and from 'cjsidl_defaultTransition', the role 'cjsidl_defaultTransition145' has cardinality 0..*.
+An association connects 'cjsidl_defaultTransition' and 'cjsidl_EObject'. From 'cjsidl_defaultTransition', the role 'cjsidl_defaultTransition148' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject149' has cardinality 0..*.
+An association connects 'cjsidl_nextState' and 'cjsidl_simpleTransition'. From 'cjsidl_nextState', the role 'cjsidl_nextState' has cardinality 0..*, and from 'cjsidl_simpleTransition', the role 'cjsidl_simpleTransition' has cardinality 0..*.
+An association connects 'cjsidl_pushTransition' and 'cjsidl_nextState'. From 'cjsidl_pushTransition', the role 'cjsidl_pushTransition' has cardinality 0..*, and from 'cjsidl_nextState', the role 'cjsidl_nextState152' has cardinality 0..*.
+An association connects 'cjsidl_simpleTransition' and 'cjsidl_pushTransition'. From 'cjsidl_simpleTransition', the role 'cjsidl_simpleTransition155' has cardinality 0..*, and from 'cjsidl_pushTransition', the role 'cjsidl_pushTransition154' has cardinality 0..*.
+An association connects 'cjsidl_popTransition' and 'cjsidl_transition'. From 'cjsidl_popTransition', the role 'cjsidl_popTransition' has cardinality 0..*, and from 'cjsidl_transition', the role 'cjsidl_transition157' has cardinality 0..*.
+An association connects 'cjsidl_popTransition' and 'cjsidl_guardParam'. From 'cjsidl_popTransition', the role 'cjsidl_popTransition159' has cardinality 0..*, and from 'cjsidl_guardParam', the role 'cjsidl_guardParam' has cardinality 0..*.
+An association connects 'cjsidl_state' and 'cjsidl_nextState'. From 'cjsidl_state', the role 'cjsidl_state162' has cardinality 0..*, and from 'cjsidl_nextState', the role 'cjsidl_nextState161' has cardinality 0..*.
+An association connects 'cjsidl_state' and 'cjsidl_nextState'. From 'cjsidl_state', the role 'cjsidl_state165' has cardinality 0..*, and from 'cjsidl_nextState', the role 'cjsidl_nextState164' has cardinality 0..*.
+An association connects 'cjsidl_nextState' and 'cjsidl_state'. From 'cjsidl_nextState', the role 'cjsidl_nextState167' has cardinality 0..*, and from 'cjsidl_state', the role 'cjsidl_state168' has cardinality 0..*.
+An association connects 'cjsidl_guardAction' and 'cjsidl_guard'. From 'cjsidl_guardAction', the role 'cjsidl_guardAction' has cardinality 0..*, and from 'cjsidl_guard', the role 'cjsidl_guard170' has cardinality 0..*.
+An association connects 'cjsidl_guardParam' and 'cjsidl_guardAction'. From 'cjsidl_guardParam', the role 'cjsidl_guardParam173' has cardinality 0..*, and from 'cjsidl_guardAction', the role 'cjsidl_guardAction172' has cardinality 0..*.
+An association connects 'cjsidl_guardParam' and 'cjsidl_transParam'. From 'cjsidl_guardParam', the role 'cjsidl_guardParam175' has cardinality 0..*, and from 'cjsidl_transParam', the role 'cjsidl_transParam176' has cardinality 0..*.
+An association connects 'cjsidl_actionList' and 'cjsidl_action'. From 'cjsidl_actionList', the role 'cjsidl_actionList178' has cardinality 0..*, and from 'cjsidl_action', the role 'cjsidl_action' has cardinality 0..*.
+An association connects 'cjsidl_action' and 'cjsidl_sendActionList'. From 'cjsidl_action', the role 'cjsidl_action181' has cardinality 0..*, and from 'cjsidl_sendActionList', the role 'cjsidl_sendActionList180' has cardinality 0..*.
+An association connects 'cjsidl_guardParam' and 'cjsidl_action'. From 'cjsidl_guardParam', the role 'cjsidl_guardParam184' has cardinality 0..*, and from 'cjsidl_action', the role 'cjsidl_action183' has cardinality 0..*.
+An association connects 'cjsidl_simpleNumericType' and 'cjsidl_constDef'. From 'cjsidl_simpleNumericType', the role 'cjsidl_simpleNumericType' has cardinality 0..*, and from 'cjsidl_constDef', the role 'cjsidl_constDef186' has cardinality 0..*.
+An association connects 'cjsidl_declaredTypeSet' and 'cjsidl_declaredTypeSetRef'. From 'cjsidl_declaredTypeSet', the role 'cjsidl_declaredTypeSet189' has cardinality 0..*, and from 'cjsidl_declaredTypeSetRef', the role 'cjsidl_declaredTypeSetRef188' has cardinality 0..*.
+An association connects 'cjsidl_typeDef' and 'cjsidl_messageDef'. From 'cjsidl_typeDef', the role 'cjsidl_typeDef191' has cardinality 0..*, and from 'cjsidl_messageDef', the role 'cjsidl_messageDef192' has cardinality 0..*.
+An association connects 'cjsidl_typeDef' and 'cjsidl_arrayDef'. From 'cjsidl_typeDef', the role 'cjsidl_typeDef194' has cardinality 0..*, and from 'cjsidl_arrayDef', the role 'cjsidl_arrayDef' has cardinality 0..*.
+An association connects 'cjsidl_recordDef' and 'cjsidl_typeDef'. From 'cjsidl_recordDef', the role 'cjsidl_recordDef' has cardinality 0..*, and from 'cjsidl_typeDef', the role 'cjsidl_typeDef196' has cardinality 0..*.
+An association connects 'cjsidl_typeDef' and 'cjsidl_listDef'. From 'cjsidl_typeDef', the role 'cjsidl_typeDef198' has cardinality 0..*, and from 'cjsidl_listDef', the role 'cjsidl_listDef' has cardinality 0..*.
+An association connects 'cjsidl_variantDef' and 'cjsidl_typeDef'. From 'cjsidl_variantDef', the role 'cjsidl_variantDef' has cardinality 0..*, and from 'cjsidl_typeDef', the role 'cjsidl_typeDef200' has cardinality 0..*.
+An association connects 'cjsidl_typeDef' and 'cjsidl_sequenceDef'. From 'cjsidl_typeDef', the role 'cjsidl_typeDef202' has cardinality 0..*, and from 'cjsidl_sequenceDef', the role 'cjsidl_sequenceDef' has cardinality 0..*.
+An association connects 'cjsidl_fixedFieldDef' and 'cjsidl_typeDef'. From 'cjsidl_fixedFieldDef', the role 'cjsidl_fixedFieldDef' has cardinality 0..*, and from 'cjsidl_typeDef', the role 'cjsidl_typeDef204' has cardinality 0..*.
+An association connects 'cjsidl_varField' and 'cjsidl_typeDef'. From 'cjsidl_varField', the role 'cjsidl_varField' has cardinality 0..*, and from 'cjsidl_typeDef', the role 'cjsidl_typeDef206' has cardinality 0..*.
+An association connects 'cjsidl_typeDef' and 'cjsidl_bitfieldDef'. From 'cjsidl_typeDef', the role 'cjsidl_typeDef208' has cardinality 0..*, and from 'cjsidl_bitfieldDef', the role 'cjsidl_bitfieldDef' has cardinality 0..*.
+An association connects 'cjsidl_fixedLenString' and 'cjsidl_typeDef'. From 'cjsidl_fixedLenString', the role 'cjsidl_fixedLenString' has cardinality 0..*, and from 'cjsidl_typeDef', the role 'cjsidl_typeDef210' has cardinality 0..*.
+An association connects 'cjsidl_typeDef' and 'cjsidl_varLenString'. From 'cjsidl_typeDef', the role 'cjsidl_typeDef212' has cardinality 0..*, and from 'cjsidl_varLenString', the role 'cjsidl_varLenString' has cardinality 0..*.
+An association connects 'cjsidl_varLenField' and 'cjsidl_typeDef'. From 'cjsidl_varLenField', the role 'cjsidl_varLenField' has cardinality 0..*, and from 'cjsidl_typeDef', the role 'cjsidl_typeDef214' has cardinality 0..*.
+An association connects 'cjsidl_varFormatField' and 'cjsidl_typeDef'. From 'cjsidl_varFormatField', the role 'cjsidl_varFormatField' has cardinality 0..*, and from 'cjsidl_typeDef', the role 'cjsidl_typeDef216' has cardinality 0..*.
+An association connects 'cjsidl_headerDef' and 'cjsidl_typeDef'. From 'cjsidl_headerDef', the role 'cjsidl_headerDef' has cardinality 0..*, and from 'cjsidl_typeDef', the role 'cjsidl_typeDef218' has cardinality 0..*.
+An association connects 'cjsidl_bodyDef' and 'cjsidl_typeDef'. From 'cjsidl_bodyDef', the role 'cjsidl_bodyDef' has cardinality 0..*, and from 'cjsidl_typeDef', the role 'cjsidl_typeDef220' has cardinality 0..*.
+An association connects 'cjsidl_footerDef' and 'cjsidl_typeDef'. From 'cjsidl_footerDef', the role 'cjsidl_footerDef' has cardinality 0..*, and from 'cjsidl_typeDef', the role 'cjsidl_typeDef222' has cardinality 0..*.
+An association connects 'cjsidl_messageDef' and 'cjsidl_description'. From 'cjsidl_messageDef', the role 'cjsidl_messageDef224' has cardinality 0..*, and from 'cjsidl_description', the role 'cjsidl_description225' has cardinality 0..*.
+An association connects 'cjsidl_EObject' and 'cjsidl_messageDef'. From 'cjsidl_EObject', the role 'cjsidl_EObject228' has cardinality 0..*, and from 'cjsidl_messageDef', the role 'cjsidl_messageDef227' has cardinality 0..*.
+An association connects 'cjsidl_messageDef' and 'cjsidl_EObject'. From 'cjsidl_messageDef', the role 'cjsidl_messageDef230' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject231' has cardinality 0..*.
+An association connects 'cjsidl_messageDef' and 'cjsidl_EObject'. From 'cjsidl_messageDef', the role 'cjsidl_messageDef233' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject234' has cardinality 0..*.
+An association connects 'cjsidl_headerDef' and 'cjsidl_EObject'. From 'cjsidl_headerDef', the role 'cjsidl_headerDef236' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject237' has cardinality 0..*.
+An association connects 'cjsidl_bodyDef' and 'cjsidl_EObject'. From 'cjsidl_bodyDef', the role 'cjsidl_bodyDef239' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject240' has cardinality 0..*.
+An association connects 'cjsidl_footerDef' and 'cjsidl_EObject'. From 'cjsidl_footerDef', the role 'cjsidl_footerDef242' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject243' has cardinality 0..*.
+An association connects 'cjsidl_headerRef' and 'cjsidl_headerDef'. From 'cjsidl_headerRef', the role 'cjsidl_headerRef' has cardinality 0..*, and from 'cjsidl_headerDef', the role 'cjsidl_headerDef245' has cardinality 0..*.
+An association connects 'cjsidl_headerRef' and 'cjsidl_headerScopedRef'. From 'cjsidl_headerRef', the role 'cjsidl_headerRef247' has cardinality 0..*, and from 'cjsidl_headerScopedRef', the role 'cjsidl_headerScopedRef' has cardinality 0..*.
+An association connects 'cjsidl_bodyRef' and 'cjsidl_bodyDef'. From 'cjsidl_bodyRef', the role 'cjsidl_bodyRef' has cardinality 0..*, and from 'cjsidl_bodyDef', the role 'cjsidl_bodyDef249' has cardinality 0..*.
+An association connects 'cjsidl_bodyRef' and 'cjsidl_bodyScopedRef'. From 'cjsidl_bodyRef', the role 'cjsidl_bodyRef251' has cardinality 0..*, and from 'cjsidl_bodyScopedRef', the role 'cjsidl_bodyScopedRef' has cardinality 0..*.
+An association connects 'cjsidl_footerRef' and 'cjsidl_footerDef'. From 'cjsidl_footerRef', the role 'cjsidl_footerRef' has cardinality 0..*, and from 'cjsidl_footerDef', the role 'cjsidl_footerDef253' has cardinality 0..*.
+An association connects 'cjsidl_footerScopedRef' and 'cjsidl_footerRef'. From 'cjsidl_footerScopedRef', the role 'cjsidl_footerScopedRef' has cardinality 0..*, and from 'cjsidl_footerRef', the role 'cjsidl_footerRef255' has cardinality 0..*.
+An association connects 'cjsidl_EObject' and 'cjsidl_headerScopedRef'. From 'cjsidl_EObject', the role 'cjsidl_EObject258' has cardinality 0..*, and from 'cjsidl_headerScopedRef', the role 'cjsidl_headerScopedRef257' has cardinality 0..*.
+An association connects 'cjsidl_headerScopedRef' and 'cjsidl_EObject'. From 'cjsidl_headerScopedRef', the role 'cjsidl_headerScopedRef260' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject261' has cardinality 0..*.
+An association connects 'cjsidl_headerDef' and 'cjsidl_headerScopedRef'. From 'cjsidl_headerDef', the role 'cjsidl_headerDef264' has cardinality 0..*, and from 'cjsidl_headerScopedRef', the role 'cjsidl_headerScopedRef263' has cardinality 0..*.
+An association connects 'cjsidl_EObject' and 'cjsidl_bodyScopedRef'. From 'cjsidl_EObject', the role 'cjsidl_EObject267' has cardinality 0..*, and from 'cjsidl_bodyScopedRef', the role 'cjsidl_bodyScopedRef266' has cardinality 0..*.
+An association connects 'cjsidl_EObject' and 'cjsidl_bodyScopedRef'. From 'cjsidl_EObject', the role 'cjsidl_EObject270' has cardinality 0..*, and from 'cjsidl_bodyScopedRef', the role 'cjsidl_bodyScopedRef269' has cardinality 0..*.
+An association connects 'cjsidl_bodyDef' and 'cjsidl_bodyScopedRef'. From 'cjsidl_bodyDef', the role 'cjsidl_bodyDef273' has cardinality 0..*, and from 'cjsidl_bodyScopedRef', the role 'cjsidl_bodyScopedRef272' has cardinality 0..*.
+An association connects 'cjsidl_footerScopedRef' and 'cjsidl_EObject'. From 'cjsidl_footerScopedRef', the role 'cjsidl_footerScopedRef275' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject276' has cardinality 0..*.
+An association connects 'cjsidl_footerScopedRef' and 'cjsidl_EObject'. From 'cjsidl_footerScopedRef', the role 'cjsidl_footerScopedRef278' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject279' has cardinality 0..*.
+An association connects 'cjsidl_footerScopedRef' and 'cjsidl_footerDef'. From 'cjsidl_footerScopedRef', the role 'cjsidl_footerScopedRef281' has cardinality 0..*, and from 'cjsidl_footerDef', the role 'cjsidl_footerDef282' has cardinality 0..*.
+An association connects 'cjsidl_containerRef' and 'cjsidl_containerDef'. From 'cjsidl_containerRef', the role 'cjsidl_containerRef' has cardinality 0..*, and from 'cjsidl_containerDef', the role 'cjsidl_containerDef' has cardinality 0..*.
+An association connects 'cjsidl_scopedType' and 'cjsidl_containerRef'. From 'cjsidl_scopedType', the role 'cjsidl_scopedType' has cardinality 0..*, and from 'cjsidl_containerRef', the role 'cjsidl_containerRef285' has cardinality 0..*.
+An association connects 'cjsidl_eventDef' and 'cjsidl_declaredEventDef'. From 'cjsidl_eventDef', the role 'cjsidl_eventDef287' has cardinality 0..*, and from 'cjsidl_declaredEventDef', the role 'cjsidl_declaredEventDef' has cardinality 0..*.
+An association connects 'cjsidl_scopedEventType' and 'cjsidl_declaredEventDef'. From 'cjsidl_scopedEventType', the role 'cjsidl_scopedEventType290' has cardinality 0..*, and from 'cjsidl_declaredEventDef', the role 'cjsidl_declaredEventDef289' has cardinality 0..*.
+An association connects 'cjsidl_constReference' and 'cjsidl_fixedLenString'. From 'cjsidl_constReference', the role 'cjsidl_constReference' has cardinality 0..*, and from 'cjsidl_fixedLenString', the role 'cjsidl_fixedLenString292' has cardinality 0..*.
+An association connects 'cjsidl_fixedLenString' and 'cjsidl_scopedConstId'. From 'cjsidl_fixedLenString', the role 'cjsidl_fixedLenString294' has cardinality 0..*, and from 'cjsidl_scopedConstId', the role 'cjsidl_scopedConstId' has cardinality 0..*.
+An association connects 'cjsidl_constReference' and 'cjsidl_varLenString'. From 'cjsidl_constReference', the role 'cjsidl_constReference297' has cardinality 0..*, and from 'cjsidl_varLenString', the role 'cjsidl_varLenString296' has cardinality 0..*.
+An association connects 'cjsidl_varLenString' and 'cjsidl_scopedConstId'. From 'cjsidl_varLenString', the role 'cjsidl_varLenString299' has cardinality 0..*, and from 'cjsidl_scopedConstId', the role 'cjsidl_scopedConstId300' has cardinality 0..*.
+An association connects 'cjsidl_constReference' and 'cjsidl_varLenString'. From 'cjsidl_constReference', the role 'cjsidl_constReference303' has cardinality 0..*, and from 'cjsidl_varLenString', the role 'cjsidl_varLenString302' has cardinality 0..*.
+An association connects 'cjsidl_scopedConstId' and 'cjsidl_varLenString'. From 'cjsidl_scopedConstId', the role 'cjsidl_scopedConstId306' has cardinality 0..*, and from 'cjsidl_varLenString', the role 'cjsidl_varLenString305' has cardinality 0..*.
+An association connects 'cjsidl_simpleNumericType' and 'cjsidl_fixedFieldDef'. From 'cjsidl_simpleNumericType', the role 'cjsidl_simpleNumericType309' has cardinality 0..*, and from 'cjsidl_fixedFieldDef', the role 'cjsidl_fixedFieldDef308' has cardinality 0..*.
+An association connects 'cjsidl_EObject' and 'cjsidl_fixedFieldDef'. From 'cjsidl_EObject', the role 'cjsidl_EObject312' has cardinality 0..*, and from 'cjsidl_fixedFieldDef', the role 'cjsidl_fixedFieldDef311' has cardinality 0..*.
+An association connects 'cjsidl_varField' and 'cjsidl_taggedUnitsEnum'. From 'cjsidl_varField', the role 'cjsidl_varField314' has cardinality 0..*, and from 'cjsidl_taggedUnitsEnum', the role 'cjsidl_taggedUnitsEnum' has cardinality 0..*.
+An association connects 'cjsidl_varLenField' and 'cjsidl_constReference'. From 'cjsidl_varLenField', the role 'cjsidl_varLenField316' has cardinality 0..*, and from 'cjsidl_constReference', the role 'cjsidl_constReference317' has cardinality 0..*.
+An association connects 'cjsidl_varLenField' and 'cjsidl_scopedConstId'. From 'cjsidl_varLenField', the role 'cjsidl_varLenField319' has cardinality 0..*, and from 'cjsidl_scopedConstId', the role 'cjsidl_scopedConstId320' has cardinality 0..*.
+An association connects 'cjsidl_varLenField' and 'cjsidl_constReference'. From 'cjsidl_varLenField', the role 'cjsidl_varLenField322' has cardinality 0..*, and from 'cjsidl_constReference', the role 'cjsidl_constReference323' has cardinality 0..*.
+An association connects 'cjsidl_scopedConstId' and 'cjsidl_varLenField'. From 'cjsidl_scopedConstId', the role 'cjsidl_scopedConstId326' has cardinality 0..*, and from 'cjsidl_varLenField', the role 'cjsidl_varLenField325' has cardinality 0..*.
+An association connects 'cjsidl_constReference' and 'cjsidl_taggedUnitsEnum'. From 'cjsidl_constReference', the role 'cjsidl_constReference329' has cardinality 0..*, and from 'cjsidl_taggedUnitsEnum', the role 'cjsidl_taggedUnitsEnum328' has cardinality 0..*.
+An association connects 'cjsidl_scopedConstId' and 'cjsidl_taggedUnitsEnum'. From 'cjsidl_scopedConstId', the role 'cjsidl_scopedConstId332' has cardinality 0..*, and from 'cjsidl_taggedUnitsEnum', the role 'cjsidl_taggedUnitsEnum331' has cardinality 0..*.
+An association connects 'cjsidl_simpleNumericType' and 'cjsidl_taggedUnitsEnum'. From 'cjsidl_simpleNumericType', the role 'cjsidl_simpleNumericType335' has cardinality 0..*, and from 'cjsidl_taggedUnitsEnum', the role 'cjsidl_taggedUnitsEnum334' has cardinality 0..*.
+An association connects 'cjsidl_valueSetDef' and 'cjsidl_taggedUnitsEnum'. From 'cjsidl_valueSetDef', the role 'cjsidl_valueSetDef' has cardinality 0..*, and from 'cjsidl_taggedUnitsEnum', the role 'cjsidl_taggedUnitsEnum337' has cardinality 0..*.
+An association connects 'cjsidl_taggedUnitsEnum' and 'cjsidl_scaledRangeDef'. From 'cjsidl_taggedUnitsEnum', the role 'cjsidl_taggedUnitsEnum339' has cardinality 0..*, and from 'cjsidl_scaledRangeDef', the role 'cjsidl_scaledRangeDef' has cardinality 0..*.
+An association connects 'cjsidl_valueRange' and 'cjsidl_varFormatField'. From 'cjsidl_valueRange', the role 'cjsidl_valueRange' has cardinality 0..*, and from 'cjsidl_varFormatField', the role 'cjsidl_varFormatField341' has cardinality 0..*.
+An association connects 'cjsidl_varFormatField' and 'cjsidl_formatEnumDef'. From 'cjsidl_varFormatField', the role 'cjsidl_varFormatField343' has cardinality 0..*, and from 'cjsidl_formatEnumDef', the role 'cjsidl_formatEnumDef' has cardinality 0..*.
+An association connects 'cjsidl_constReference' and 'cjsidl_formatEnumDef'. From 'cjsidl_constReference', the role 'cjsidl_constReference346' has cardinality 0..*, and from 'cjsidl_formatEnumDef', the role 'cjsidl_formatEnumDef345' has cardinality 0..*.
+An association connects 'cjsidl_scopedConstId' and 'cjsidl_formatEnumDef'. From 'cjsidl_scopedConstId', the role 'cjsidl_scopedConstId349' has cardinality 0..*, and from 'cjsidl_formatEnumDef', the role 'cjsidl_formatEnumDef348' has cardinality 0..*.
+An association connects 'cjsidl_valueSetDef' and 'cjsidl_EObject'. From 'cjsidl_valueSetDef', the role 'cjsidl_valueSetDef351' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject352' has cardinality 0..*.
+An association connects 'cjsidl_bitfieldDef' and 'cjsidl_subField'. From 'cjsidl_bitfieldDef', the role 'cjsidl_bitfieldDef354' has cardinality 0..*, and from 'cjsidl_subField', the role 'cjsidl_subField' has cardinality 0..*.
+An association connects 'cjsidl_valueRange' and 'cjsidl_constReference'. From 'cjsidl_valueRange', the role 'cjsidl_valueRange356' has cardinality 0..*, and from 'cjsidl_constReference', the role 'cjsidl_constReference357' has cardinality 0..*.
+An association connects 'cjsidl_valueRange' and 'cjsidl_scopedConstId'. From 'cjsidl_valueRange', the role 'cjsidl_valueRange359' has cardinality 0..*, and from 'cjsidl_scopedConstId', the role 'cjsidl_scopedConstId360' has cardinality 0..*.
+An association connects 'cjsidl_constReference' and 'cjsidl_valueRange'. From 'cjsidl_constReference', the role 'cjsidl_constReference363' has cardinality 0..*, and from 'cjsidl_valueRange', the role 'cjsidl_valueRange362' has cardinality 0..*.
+An association connects 'cjsidl_valueRange' and 'cjsidl_scopedConstId'. From 'cjsidl_valueRange', the role 'cjsidl_valueRange365' has cardinality 0..*, and from 'cjsidl_scopedConstId', the role 'cjsidl_scopedConstId366' has cardinality 0..*.
+An association connects 'cjsidl_constReference' and 'cjsidl_scaledRangeDef'. From 'cjsidl_constReference', the role 'cjsidl_constReference369' has cardinality 0..*, and from 'cjsidl_scaledRangeDef', the role 'cjsidl_scaledRangeDef368' has cardinality 0..*.
+An association connects 'cjsidl_scaledRangeDef' and 'cjsidl_scopedConstId'. From 'cjsidl_scaledRangeDef', the role 'cjsidl_scaledRangeDef371' has cardinality 0..*, and from 'cjsidl_scopedConstId', the role 'cjsidl_scopedConstId372' has cardinality 0..*.
+An association connects 'cjsidl_constReference' and 'cjsidl_scaledRangeDef'. From 'cjsidl_constReference', the role 'cjsidl_constReference375' has cardinality 0..*, and from 'cjsidl_scaledRangeDef', the role 'cjsidl_scaledRangeDef374' has cardinality 0..*.
+An association connects 'cjsidl_scopedConstId' and 'cjsidl_scaledRangeDef'. From 'cjsidl_scopedConstId', the role 'cjsidl_scopedConstId378' has cardinality 0..*, and from 'cjsidl_scaledRangeDef', the role 'cjsidl_scaledRangeDef377' has cardinality 0..*.
+An association connects 'cjsidl_subField' and 'cjsidl_valueSetDef'. From 'cjsidl_subField', the role 'cjsidl_subField380' has cardinality 0..*, and from 'cjsidl_valueSetDef', the role 'cjsidl_valueSetDef381' has cardinality 0..*.
+An association connects 'cjsidl_listDef' and 'cjsidl_constReference'. From 'cjsidl_listDef', the role 'cjsidl_listDef383' has cardinality 0..*, and from 'cjsidl_constReference', the role 'cjsidl_constReference384' has cardinality 0..*.
+An association connects 'cjsidl_scopedConstId' and 'cjsidl_listDef'. From 'cjsidl_scopedConstId', the role 'cjsidl_scopedConstId387' has cardinality 0..*, and from 'cjsidl_listDef', the role 'cjsidl_listDef386' has cardinality 0..*.
+An association connects 'cjsidl_listDef' and 'cjsidl_constReference'. From 'cjsidl_listDef', the role 'cjsidl_listDef389' has cardinality 0..*, and from 'cjsidl_constReference', the role 'cjsidl_constReference390' has cardinality 0..*.
+An association connects 'cjsidl_listDef' and 'cjsidl_scopedConstId'. From 'cjsidl_listDef', the role 'cjsidl_listDef392' has cardinality 0..*, and from 'cjsidl_scopedConstId', the role 'cjsidl_scopedConstId393' has cardinality 0..*.
+An association connects 'cjsidl_containerRef' and 'cjsidl_listDef'. From 'cjsidl_containerRef', the role 'cjsidl_containerRef396' has cardinality 0..*, and from 'cjsidl_listDef', the role 'cjsidl_listDef395' has cardinality 0..*.
+An association connects 'cjsidl_containerDef' and 'cjsidl_listDef'. From 'cjsidl_containerDef', the role 'cjsidl_containerDef399' has cardinality 0..*, and from 'cjsidl_listDef', the role 'cjsidl_listDef398' has cardinality 0..*.
+An association connects 'cjsidl_constReference' and 'cjsidl_variantDef'. From 'cjsidl_constReference', the role 'cjsidl_constReference402' has cardinality 0..*, and from 'cjsidl_variantDef', the role 'cjsidl_variantDef401' has cardinality 0..*.
+An association connects 'cjsidl_scopedConstId' and 'cjsidl_variantDef'. From 'cjsidl_scopedConstId', the role 'cjsidl_scopedConstId405' has cardinality 0..*, and from 'cjsidl_variantDef', the role 'cjsidl_variantDef404' has cardinality 0..*.
+An association connects 'cjsidl_variantDef' and 'cjsidl_constReference'. From 'cjsidl_variantDef', the role 'cjsidl_variantDef407' has cardinality 0..*, and from 'cjsidl_constReference', the role 'cjsidl_constReference408' has cardinality 0..*.
+An association connects 'cjsidl_variantDef' and 'cjsidl_scopedConstId'. From 'cjsidl_variantDef', the role 'cjsidl_variantDef410' has cardinality 0..*, and from 'cjsidl_scopedConstId', the role 'cjsidl_scopedConstId411' has cardinality 0..*.
+An association connects 'cjsidl_taggedItemDef' and 'cjsidl_variantDef'. From 'cjsidl_taggedItemDef', the role 'cjsidl_taggedItemDef' has cardinality 0..*, and from 'cjsidl_variantDef', the role 'cjsidl_variantDef413' has cardinality 0..*.
+An association connects 'cjsidl_containerDef' and 'cjsidl_taggedItemDef'. From 'cjsidl_containerDef', the role 'cjsidl_containerDef416' has cardinality 0..*, and from 'cjsidl_taggedItemDef', the role 'cjsidl_taggedItemDef415' has cardinality 0..*.
+An association connects 'cjsidl_taggedItemDef' and 'cjsidl_containerRef'. From 'cjsidl_taggedItemDef', the role 'cjsidl_taggedItemDef418' has cardinality 0..*, and from 'cjsidl_containerRef', the role 'cjsidl_containerRef419' has cardinality 0..*.
+An association connects 'cjsidl_sequenceDef' and 'cjsidl_EObject'. From 'cjsidl_sequenceDef', the role 'cjsidl_sequenceDef421' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject422' has cardinality 0..*.
+An association connects 'cjsidl_arrayDef' and 'cjsidl_recordDef'. From 'cjsidl_arrayDef', the role 'cjsidl_arrayDef425' has cardinality 0..*, and from 'cjsidl_recordDef', the role 'cjsidl_recordDef424' has cardinality 0..*.
+An association connects 'cjsidl_fixedFieldDef' and 'cjsidl_recordDef'. From 'cjsidl_fixedFieldDef', the role 'cjsidl_fixedFieldDef428' has cardinality 0..*, and from 'cjsidl_recordDef', the role 'cjsidl_recordDef427' has cardinality 0..*.
+An association connects 'cjsidl_varField' and 'cjsidl_recordDef'. From 'cjsidl_varField', the role 'cjsidl_varField431' has cardinality 0..*, and from 'cjsidl_recordDef', the role 'cjsidl_recordDef430' has cardinality 0..*.
+An association connects 'cjsidl_bitfieldDef' and 'cjsidl_recordDef'. From 'cjsidl_bitfieldDef', the role 'cjsidl_bitfieldDef434' has cardinality 0..*, and from 'cjsidl_recordDef', the role 'cjsidl_recordDef433' has cardinality 0..*.
+An association connects 'cjsidl_recordDef' and 'cjsidl_fixedLenString'. From 'cjsidl_recordDef', the role 'cjsidl_recordDef436' has cardinality 0..*, and from 'cjsidl_fixedLenString', the role 'cjsidl_fixedLenString437' has cardinality 0..*.
+An association connects 'cjsidl_recordDef' and 'cjsidl_varLenString'. From 'cjsidl_recordDef', the role 'cjsidl_recordDef439' has cardinality 0..*, and from 'cjsidl_varLenString', the role 'cjsidl_varLenString440' has cardinality 0..*.
+An association connects 'cjsidl_varLenField' and 'cjsidl_recordDef'. From 'cjsidl_varLenField', the role 'cjsidl_varLenField443' has cardinality 0..*, and from 'cjsidl_recordDef', the role 'cjsidl_recordDef442' has cardinality 0..*.
+An association connects 'cjsidl_varFormatField' and 'cjsidl_recordDef'. From 'cjsidl_varFormatField', the role 'cjsidl_varFormatField446' has cardinality 0..*, and from 'cjsidl_recordDef', the role 'cjsidl_recordDef445' has cardinality 0..*.
+An association connects 'cjsidl_typeReference' and 'cjsidl_recordDef'. From 'cjsidl_typeReference', the role 'cjsidl_typeReference449' has cardinality 0..*, and from 'cjsidl_recordDef', the role 'cjsidl_recordDef448' has cardinality 0..*.
+An association connects 'cjsidl_recordDef' and 'cjsidl_scopedTypeId'. From 'cjsidl_recordDef', the role 'cjsidl_recordDef451' has cardinality 0..*, and from 'cjsidl_scopedTypeId', the role 'cjsidl_scopedTypeId452' has cardinality 0..*.
+An association connects 'cjsidl_constDef' and 'cjsidl_constReference'. From 'cjsidl_constDef', the role 'cjsidl_constDef455' has cardinality 0..*, and from 'cjsidl_constReference', the role 'cjsidl_constReference454' has cardinality 0..*.
+An association connects 'cjsidl_typeReference' and 'cjsidl_EObject'. From 'cjsidl_typeReference', the role 'cjsidl_typeReference457' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject458' has cardinality 0..*.
+An association connects 'cjsidl_EObject' and 'cjsidl_arrayDef'. From 'cjsidl_EObject', the role 'cjsidl_EObject461' has cardinality 0..*, and from 'cjsidl_arrayDef', the role 'cjsidl_arrayDef460' has cardinality 0..*.
+An association connects 'cjsidl_arrayDef' and 'cjsidl_scopedType'. From 'cjsidl_arrayDef', the role 'cjsidl_arrayDef463' has cardinality 0..*, and from 'cjsidl_scopedType', the role 'cjsidl_scopedType464' has cardinality 0..*.
+An association connects 'cjsidl_EObject' and 'cjsidl_messageScopedRef'. From 'cjsidl_EObject', the role 'cjsidl_EObject467' has cardinality 0..*, and from 'cjsidl_messageScopedRef', the role 'cjsidl_messageScopedRef466' has cardinality 0..*.
+An association connects 'cjsidl_EObject' and 'cjsidl_messageScopedRef'. From 'cjsidl_EObject', the role 'cjsidl_EObject470' has cardinality 0..*, and from 'cjsidl_messageScopedRef', the role 'cjsidl_messageScopedRef469' has cardinality 0..*.
+An association connects 'cjsidl_messageDef' and 'cjsidl_messageScopedRef'. From 'cjsidl_messageDef', the role 'cjsidl_messageDef473' has cardinality 0..*, and from 'cjsidl_messageScopedRef', the role 'cjsidl_messageScopedRef472' has cardinality 0..*.
+An association connects 'cjsidl_scopedType' and 'cjsidl_EObject'. From 'cjsidl_scopedType', the role 'cjsidl_scopedType475' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject476' has cardinality 0..*.
+An association connects 'cjsidl_EObject' and 'cjsidl_scopedType'. From 'cjsidl_EObject', the role 'cjsidl_EObject479' has cardinality 0..*, and from 'cjsidl_scopedType', the role 'cjsidl_scopedType478' has cardinality 0..*.
+An association connects 'cjsidl_scopedType' and 'cjsidl_EObject'. From 'cjsidl_scopedType', the role 'cjsidl_scopedType481' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject482' has cardinality 0..*.
+An association connects 'cjsidl_EObject' and 'cjsidl_scopedEventType'. From 'cjsidl_EObject', the role 'cjsidl_EObject485' has cardinality 0..*, and from 'cjsidl_scopedEventType', the role 'cjsidl_scopedEventType484' has cardinality 0..*.
+An association connects 'cjsidl_EObject' and 'cjsidl_scopedEventType'. From 'cjsidl_EObject', the role 'cjsidl_EObject488' has cardinality 0..*, and from 'cjsidl_scopedEventType', the role 'cjsidl_scopedEventType487' has cardinality 0..*.
+An association connects 'cjsidl_scopedEventType' and 'cjsidl_EObject'. From 'cjsidl_scopedEventType', the role 'cjsidl_scopedEventType490' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject491' has cardinality 0..*.
+An association connects 'cjsidl_scopedType' and 'cjsidl_scopedTypeId'. From 'cjsidl_scopedType', the role 'cjsidl_scopedType494' has cardinality 0..*, and from 'cjsidl_scopedTypeId', the role 'cjsidl_scopedTypeId493' has cardinality 0..*.
+An association connects 'cjsidl_scopedConstId' and 'cjsidl_EObject'. From 'cjsidl_scopedConstId', the role 'cjsidl_scopedConstId496' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject497' has cardinality 0..*.
+An association connects 'cjsidl_scopedConstId' and 'cjsidl_EObject'. From 'cjsidl_scopedConstId', the role 'cjsidl_scopedConstId499' has cardinality 0..*, and from 'cjsidl_EObject', the role 'cjsidl_EObject500' has cardinality 0..*.
+An association connects 'cjsidl_constDef' and 'cjsidl_scopedConstId'. From 'cjsidl_constDef', the role 'cjsidl_constDef503' has cardinality 0..*, and from 'cjsidl_scopedConstId', the role 'cjsidl_scopedConstId502' has cardinality 0..*.

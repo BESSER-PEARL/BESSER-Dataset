@@ -1,0 +1,31 @@
+The domain model 'sample' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'sample_FSM' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sample_Transition' represents an important domain concept.
+It has the following attributes: 'trigger', which is of type str; 'name', which is of type str.
+
+'sample_Initstate' represents an important domain concept.
+It does not declare any attributes.
+
+'sample_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sample_Finalstate' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'sample_Initstate' is a specialization of 'State'.
+The class 'sample_Finalstate' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sample_FSM' and 'sample_Transition'. From 'sample_FSM', the role 'sample_FSM' has cardinality 0..*, and from 'sample_Transition', the role 'sample_Transition' has cardinality 0..*.
+An association connects 'sample_State' and 'sample_FSM'. From 'sample_State', the role 'sample_State' has cardinality 0..*, and from 'sample_FSM', the role 'sample_FSM2' has cardinality 0..*.
+An association connects 'sample_Transition' and 'sample_State'. From 'sample_Transition', the role 'sample_Transition4' has cardinality 0..*, and from 'sample_State', the role 'sample_State5' has cardinality 0..*.
+An association connects 'sample_Transition' and 'sample_State'. From 'sample_Transition', the role 'sample_Transition7' has cardinality 0..*, and from 'sample_State', the role 'sample_State8' has cardinality 0..*.

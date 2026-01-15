@@ -1,0 +1,36 @@
+The domain model 'efsm' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'efsm_EFSM' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'efsm_Transition' represents an important domain concept.
+It has the following attributes: 'input', which is of type str; 'output', which is of type str; 'action', which is of type str; 'name', which is of type str; 'event', which is of type str; 'guard', which is of type str.
+
+'efsm_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'efsm_AbstractState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'efsm_State' represents an important domain concept.
+It does not declare any attributes.
+
+'efsm_ContextVariable' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'efsm_InitialState' is a specialization of 'AbstractState'.
+The class 'efsm_State' is a specialization of 'AbstractState'.
+
+Relationships between classes are modeled using associations.
+An association connects 'efsm_EFSM' and 'efsm_Transition'. From 'efsm_EFSM', the role 'efsm_EFSM' has cardinality 0..*, and from 'efsm_Transition', the role 'efsm_Transition' has cardinality 0..*.
+An association connects 'efsm_InitialState' and 'efsm_EFSM'. From 'efsm_InitialState', the role 'efsm_InitialState' has cardinality 0..*, and from 'efsm_EFSM', the role 'efsm_EFSM2' has cardinality 0..*.
+An association connects 'efsm_EFSM' and 'efsm_State'. From 'efsm_EFSM', the role 'efsm_EFSM4' has cardinality 0..*, and from 'efsm_State', the role 'efsm_State' has cardinality 0..*.
+An association connects 'efsm_EFSM' and 'efsm_ContextVariable'. From 'efsm_EFSM', the role 'efsm_EFSM6' has cardinality 0..*, and from 'efsm_ContextVariable', the role 'efsm_ContextVariable' has cardinality 0..*.
+An association connects 'efsm_AbstractState' and 'efsm_Transition'. From 'efsm_AbstractState', the role 'efsm_AbstractState' has cardinality 0..*, and from 'efsm_Transition', the role 'efsm_Transition8' has cardinality 0..*.
+An association connects 'efsm_AbstractState' and 'efsm_Transition'. From 'efsm_AbstractState', the role 'efsm_AbstractState11' has cardinality 0..*, and from 'efsm_Transition', the role 'efsm_Transition10' has cardinality 0..*.

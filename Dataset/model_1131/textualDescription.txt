@@ -1,0 +1,153 @@
+The domain model 'research32' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'Counted' represents an important domain concept.
+It does not declare any attributes.
+
+'research32_Labelled' represents an important domain concept.
+It has one attribute: 'lname', which is of type str.
+
+'research32_PublicationProcess' represents an important domain concept.
+It has the following attributes: 'maxTime', which is of type int; 'minTime', which is of type int.
+
+'research32_Action' represents an important domain concept.
+It has the following attributes: 'actionStatement', which is of type str; 'actionLabel', which is of type str.
+
+'research32_Collaboration' represents an important domain concept.
+It has one attribute: 'ratio', which is of type int.
+
+'research32_State' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'name', which is of type str; 'id', which is of type int.
+
+'research32_StateMachineObject' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'research32_Phase' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'research32_Skill' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'research32_PublicationStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'research32_PublicationSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachineObject' represents an important domain concept.
+It does not declare any attributes.
+
+'research32_PaperKeyword' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'research32_Write' represents an important domain concept.
+It has one attribute: 'timeSpent', which is of type int.
+
+'research32_KnowledgeManager' represents an important domain concept.
+It does not declare any attributes.
+
+'research32_Paragraph' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'research32_Researcher' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'forName', which is of type str.
+
+'research32_Transition' represents an important domain concept.
+It has the following attributes: 'guardLabel', which is of type str; 'guardExpression', which is of type str.
+
+'Labelled' represents an important domain concept.
+It does not declare any attributes.
+
+'research32_PublicationStatus' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'research32_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'research32_Keyword' represents an important domain concept.
+It has one attribute: 'word', which is of type str.
+
+'research32_Review' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'research32_Progress' represents an important domain concept.
+It has one attribute: 'percent', which is of type int.
+
+'research32_Counted' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'research32_ReviewNote' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'research32_Position' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'research32_StateMachineVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'research32_Paper' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StateType' defines the following possible values: 'initial', 'ongoing', 'final'.
+
+The model also captures inheritance relationships between classes.
+The class 'research32_PublicationProcess' is a specialization of 'Named'.
+The class 'research32_Paper' is a specialization of 'Named'.
+The class 'research32_Paragraph' is a specialization of 'Counted'.
+The class 'research32_Paragraph' is a specialization of 'Named'.
+The class 'research32_ReviewNote' is a specialization of 'Named'.
+The class 'research32_Progress' is a specialization of 'Labelled'.
+The class 'research32_Write' is a specialization of 'Labelled'.
+The class 'research32_Review' is a specialization of 'Labelled'.
+The class 'research32_PublicationStructure' is a specialization of 'Named'.
+The class 'research32_PublicationSystem' is a specialization of 'Named'.
+The class 'research32_Position' is a specialization of 'Named'.
+The class 'research32_Keyword' is a specialization of 'Named'.
+The class 'research32_KnowledgeManager' is a specialization of 'Named'.
+The class 'research32_Transition' is a specialization of 'StateMachineObject'.
+The class 'research32_State' is a specialization of 'StateMachineObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'research32_PublicationProcess' and 'research32_Phase'. From 'research32_PublicationProcess', the role 'research32_PublicationProcess' has cardinality 0..*, and from 'research32_Phase', the role 'research32_Phase' has cardinality 0..*.
+An association connects 'research32_Researcher' and 'research32_Write'. From 'research32_Researcher', the role 'research32_Researcher' has cardinality 0..*, and from 'research32_Write', the role 'research32_Write' has cardinality 0..*.
+An association connects 'research32_Review' and 'research32_Researcher'. From 'research32_Review', the role 'research32_Review' has cardinality 0..*, and from 'research32_Researcher', the role 'research32_Researcher3' has cardinality 0..*.
+An association connects 'research32_Researcher' and 'research32_Paper'. From 'research32_Researcher', the role 'authors' has cardinality 0..*, and from 'research32_Paper', the role 'Paper' has cardinality 0..*.
+An association connects 'research32_Researcher' and 'research32_Skill'. From 'research32_Researcher', the role 'research32_Researcher6' has cardinality 0..*, and from 'research32_Skill', the role 'research32_Skill' has cardinality 0..*.
+An association connects 'research32_Researcher' and 'research32_Position'. From 'research32_Researcher', the role 'research32_Researcher8' has cardinality 0..*, and from 'research32_Position', the role 'research32_Position' has cardinality 0..*.
+An association connects 'research32_Researcher' and 'research32_Collaboration'. From 'research32_Researcher', the role 'research32_Researcher10' has cardinality 0..*, and from 'research32_Collaboration', the role 'research32_Collaboration' has cardinality 0..*.
+An association connects 'research32_Paragraph' and 'research32_Paper'. From 'research32_Paragraph', the role 'research32_Paragraph' has cardinality 0..*, and from 'research32_Paper', the role 'research32_Paper' has cardinality 0..*.
+An association connects 'research32_Progress' and 'research32_Paper'. From 'research32_Progress', the role 'Progress' has cardinality 0..*, and from 'research32_Paper', the role 'paper' has cardinality 0..*.
+An association connects 'research32_Researcher' and 'research32_Paper'. From 'research32_Researcher', the role 'Researcher' has cardinality 0..*, and from 'research32_Paper', the role 'res_papers' has cardinality 0..*.
+An association connects 'research32_Paper' and 'research32_PaperKeyword'. From 'research32_Paper', the role 'research32_Paper15' has cardinality 0..*, and from 'research32_PaperKeyword', the role 'research32_PaperKeyword' has cardinality 0..*.
+An association connects 'research32_Paper' and 'research32_Paper'. From 'research32_Paper', the role 'research32_Paper18' has cardinality 0..*, and from 'research32_Paper', the role 'research32_Paper16' has cardinality 0..*.
+An association connects 'research32_State' and 'research32_Paper'. From 'research32_State', the role 'research32_State' has cardinality 0..*, and from 'research32_Paper', the role 'research32_Paper20' has cardinality 0..*.
+An association connects 'research32_ReviewNote' and 'research32_Paragraph'. From 'research32_ReviewNote', the role 'research32_ReviewNote' has cardinality 0..*, and from 'research32_Paragraph', the role 'research32_Paragraph22' has cardinality 0..*.
+An association connects 'research32_PublicationProcess' and 'research32_Progress'. From 'research32_PublicationProcess', the role 'research32_PublicationProcess24' has cardinality 0..*, and from 'research32_Progress', the role 'research32_Progress' has cardinality 0..*.
+An association connects 'research32_Progress' and 'research32_Paper'. From 'research32_Progress', the role 'progress' has cardinality 0..*, and from 'research32_Paper', the role 'Paper26' has cardinality 0..*.
+An association connects 'research32_Write' and 'research32_Paragraph'. From 'research32_Write', the role 'research32_Write28' has cardinality 0..*, and from 'research32_Paragraph', the role 'research32_Paragraph29' has cardinality 0..*.
+An association connects 'research32_Review' and 'research32_ReviewNote'. From 'research32_Review', the role 'research32_Review31' has cardinality 0..*, and from 'research32_ReviewNote', the role 'research32_ReviewNote32' has cardinality 0..*.
+An association connects 'research32_Researcher' and 'research32_PublicationStructure'. From 'research32_Researcher', the role 'research32_Researcher34' has cardinality 0..*, and from 'research32_PublicationStructure', the role 'research32_PublicationStructure' has cardinality 0..*.
+An association connects 'research32_Paper' and 'research32_PublicationStructure'. From 'research32_Paper', the role 'research32_Paper37' has cardinality 0..*, and from 'research32_PublicationStructure', the role 'research32_PublicationStructure36' has cardinality 0..*.
+An association connects 'research32_PublicationStructure' and 'research32_KnowledgeManager'. From 'research32_PublicationStructure', the role 'research32_PublicationStructure39' has cardinality 0..*, and from 'research32_KnowledgeManager', the role 'research32_KnowledgeManager' has cardinality 0..*.
+An association connects 'research32_PublicationStructure' and 'research32_PublicationStatus'. From 'research32_PublicationStructure', the role 'research32_PublicationStructure41' has cardinality 0..*, and from 'research32_PublicationStatus', the role 'research32_PublicationStatus' has cardinality 0..*.
+An association connects 'research32_PublicationProcess' and 'research32_PublicationSystem'. From 'research32_PublicationProcess', the role 'research32_PublicationProcess43' has cardinality 0..*, and from 'research32_PublicationSystem', the role 'research32_PublicationSystem' has cardinality 0..*.
+An association connects 'research32_PublicationSystem' and 'research32_PublicationStructure'. From 'research32_PublicationSystem', the role 'research32_PublicationSystem45' has cardinality 0..*, and from 'research32_PublicationStructure', the role 'research32_PublicationStructure46' has cardinality 0..*.
+An association connects 'research32_Position' and 'research32_PublicationSystem'. From 'research32_Position', the role 'research32_Position49' has cardinality 0..*, and from 'research32_PublicationSystem', the role 'research32_PublicationSystem48' has cardinality 0..*.
+An association connects 'research32_Position' and 'research32_Position'. From 'research32_Position', the role 'research32_Position52' has cardinality 0..*, and from 'research32_Position', the role 'research32_Position50' has cardinality 0..*.
+An association connects 'research32_Keyword' and 'research32_Paper'. From 'research32_Keyword', the role 'research32_Keyword' has cardinality 0..*, and from 'research32_Paper', the role 'research32_Paper54' has cardinality 0..*.
+An association connects 'research32_KnowledgeManager' and 'research32_Keyword'. From 'research32_KnowledgeManager', the role 'research32_KnowledgeManager56' has cardinality 0..*, and from 'research32_Keyword', the role 'research32_Keyword57' has cardinality 0..*.
+An association connects 'research32_Keyword' and 'research32_PaperKeyword'. From 'research32_Keyword', the role 'research32_Keyword60' has cardinality 0..*, and from 'research32_PaperKeyword', the role 'research32_PaperKeyword59' has cardinality 0..*.
+An association connects 'research32_Collaboration' and 'research32_Paper'. From 'research32_Collaboration', the role 'research32_Collaboration62' has cardinality 0..*, and from 'research32_Paper', the role 'research32_Paper63' has cardinality 0..*.
+An association connects 'research32_StateMachineVariable' and 'research32_PublicationStatus'. From 'research32_StateMachineVariable', the role 'research32_StateMachineVariable' has cardinality 0..*, and from 'research32_PublicationStatus', the role 'research32_PublicationStatus65' has cardinality 0..*.
+An association connects 'research32_PublicationStatus' and 'research32_State'. From 'research32_PublicationStatus', the role 'research32_PublicationStatus67' has cardinality 0..*, and from 'research32_State', the role 'research32_State68' has cardinality 0..*.
+An association connects 'research32_Transition' and 'research32_Action'. From 'research32_Transition', the role 'research32_Transition' has cardinality 0..*, and from 'research32_Action', the role 'research32_Action' has cardinality 0..*.
+An association connects 'research32_Transition' and 'research32_State'. From 'research32_Transition', the role 'research32_Transition71' has cardinality 0..*, and from 'research32_State', the role 'research32_State72' has cardinality 0..*.
+An association connects 'research32_Transition' and 'research32_State'. From 'research32_Transition', the role 'research32_Transition74' has cardinality 0..*, and from 'research32_State', the role 'research32_State75' has cardinality 0..*.
+An association connects 'research32_Transition' and 'research32_State'. From 'research32_Transition', the role 'research32_Transition78' has cardinality 0..*, and from 'research32_State', the role 'research32_State77' has cardinality 0..*.
+An association connects 'research32_State' and 'research32_Action'. From 'research32_State', the role 'research32_State80' has cardinality 0..*, and from 'research32_Action', the role 'research32_Action81' has cardinality 0..*.
+An association connects 'research32_Action' and 'research32_Action'. From 'research32_Action', the role 'research32_Action82' has cardinality 0..*, and from 'research32_Action', the role 'research32_Action84' has cardinality 0..*.

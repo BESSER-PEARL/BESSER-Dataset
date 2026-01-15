@@ -1,0 +1,1397 @@
+The domain model 'java' describes the core structural elements and their relationships within the system.
+
+The model defines 322 main class(es).
+
+'JavaRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'java_PlusPlus' represents an important domain concept.
+It does not declare any attributes.
+
+'java_HexIntegerLiteral' represents an important domain concept.
+It has one attribute: 'hexValue', which is of type str.
+
+'java_Double' represents an important domain concept.
+It does not declare any attributes.
+
+'java_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'java_Negate' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Super' represents an important domain concept.
+It does not declare any attributes.
+
+'java_DecimalDoubleLiteral' represents an important domain concept.
+It has one attribute: 'decimalValue', which is of type float.
+
+'java_GreaterThan' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'java_CharacterLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ImportingElement' represents an important domain concept.
+It does not declare any attributes.
+
+'java_PackageImport' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'InstanceOfExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'StatementContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'java_RelationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Argumentable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Public' represents an important domain concept.
+It does not declare any attributes.
+
+'java_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Static' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Complement' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfaceMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'java_UnsignedRightShift' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Multiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'java_PrefixUnaryModificationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_SwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Jump' represents an important domain concept.
+It does not declare any attributes.
+
+'NamespaceAwareElement' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AnonymousClass' represents an important domain concept.
+It does not declare any attributes.
+
+'java_FloatLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Commentable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_PrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_StaticMemberImport' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ArrayInitializationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AdditiveOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Parametrizable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_LayoutInformation' represents an important domain concept.
+It does not declare any attributes.
+
+'java_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ArrayInstantiationBySize' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ConditionalExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'AdditiveExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AdditionalField' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Boolean' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AssignmentOr' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ForEachLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Strictfp' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ReflectiveClassReference' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AssignmentUnsignedRightShift' represents an important domain concept.
+It does not declare any attributes.
+
+'java_SuperTypeArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AssignmentExclusiveOr' represents an important domain concept.
+It does not declare any attributes.
+
+'StaticImport' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Modifier' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Protected' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AnnotationParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Argumentable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'java_DoubleLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AnnotationInstanceOrModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'java_SelfReference' represents an important domain concept.
+It does not declare any attributes.
+
+'java_EnumConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'java_JavaRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Short' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ArrayInstantiationByValuesUntyped' represents an important domain concept.
+It does not declare any attributes.
+
+'ExceptionThrower' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Commentable' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicativeExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AnnotationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ArrayInstantiationByValues' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'ShiftOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'java_LocalVariableStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotableAndModifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalAndExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'Self' represents an important domain concept.
+It does not declare any attributes.
+
+'java_TypeArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AdditiveExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AnnotableAndModifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Transient' represents an important domain concept.
+It does not declare any attributes.
+
+'java_HexLongLiteral' represents an important domain concept.
+It has one attribute: 'hexValue', which is of type str.
+
+'java_InclusiveOrExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'java_InclusiveOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'java_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ArrayInstantiationByValuesTyped' represents an important domain concept.
+It does not declare any attributes.
+
+'java_EqualityOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Instantiation' represents an important domain concept.
+It does not declare any attributes.
+
+'java_MultiplicativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_RightShift' represents an important domain concept.
+It does not declare any attributes.
+
+'AssignmentOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'EqualityExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_LongLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayInitializationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Subtraction' represents an important domain concept.
+It does not declare any attributes.
+
+'java_EmptyModel' represents an important domain concept.
+It does not declare any attributes.
+
+'StatementListContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'java_GreaterThanOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeArgumentable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_SingleAnnotationParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalOrExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AssignmentOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AssignmentMultiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'AndExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'FloatLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'java_MultiplicativeExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ConcreteClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'CallTypeArgumentable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ExtendsTypeArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'java_TypeArgumentable' represents an important domain concept.
+It does not declare any attributes.
+
+'AdditiveOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Member' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Continue' represents an important domain concept.
+It does not declare any attributes.
+
+'java_RelationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'ConcreteClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'java_OrdinaryParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ConditionalAndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_TypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'java_IntegerLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AssignmentAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'java_MethodCall' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Addition' represents an important domain concept.
+It does not declare any attributes.
+
+'java_IdentifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'java_HexFloatLiteral' represents an important domain concept.
+It has one attribute: 'hexValue', which is of type float.
+
+'EqualityOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AnnotationAttributeSetting' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ClassifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'InclusiveOrExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Initializable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Private' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Synchronized' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'WhileLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'java_NamespaceClassifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AssignmentDivision' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AssignmentExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'Import' represents an important domain concept.
+It does not declare any attributes.
+
+'java_DefaultSwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationInstanceOrModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ExclusiveOrExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_NewConstructorCall' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ExceptionThrower' represents an important domain concept.
+It does not declare any attributes.
+
+'java_NormalSwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'java_OctalLongLiteral' represents an important domain concept.
+It has one attribute: 'octalValue', which is of type str.
+
+'MemberContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ElementReference' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_LocalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_StatementListContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'java_RelationExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Constructor' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AssignmentModulo' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ForLoopInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ShiftExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ReferenceableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'java_StringReference' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'java_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ConditionalOrExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'Method' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'java_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Throw' represents an important domain concept.
+It does not declare any attributes.
+
+'java_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'java_UnknownTypeArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'java_CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'java_NamespaceAwareElement' represents an important domain concept.
+It has one attribute: 'namespaces', which is of type str.
+
+'java_AnnotationAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Modifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ShiftExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Field' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ExclusiveOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_StatementContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'java_LessThanOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Void' represents an important domain concept.
+It does not declare any attributes.
+
+'java_UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ClassMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ArraySelector' represents an important domain concept.
+It does not declare any attributes.
+
+'java_DecimalIntegerLiteral' represents an important domain concept.
+It has one attribute: 'decimalValue', which is of type str.
+
+'java_ExclusiveOrExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_MinusMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'java_DecimalFloatLiteral' represents an important domain concept.
+It has one attribute: 'decimalValue', which is of type float.
+
+'java_AnnotationParameterList' represents an important domain concept.
+It does not declare any attributes.
+
+'java_UnaryModificationExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayInstantiationByValues' represents an important domain concept.
+It does not declare any attributes.
+
+'Modifier' represents an important domain concept.
+It does not declare any attributes.
+
+'java_NestedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AssignmentRightShift' represents an important domain concept.
+It does not declare any attributes.
+
+'Jump' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Switch' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ExplicitConstructorCall' represents an important domain concept.
+It does not declare any attributes.
+
+'Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_LessThan' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ConditionalAndExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ArrayDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'java_InstanceOfExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Implementor' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ClassifierImport' represents an important domain concept.
+It does not declare any attributes.
+
+'java_CatchBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_InterfaceMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'java_PrimitiveTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayInstantiation' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'java_StaticImport' represents an important domain concept.
+It does not declare any attributes.
+
+'java_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ExpressionList' represents an important domain concept.
+It does not declare any attributes.
+
+'java_SuffixUnaryModificationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_EmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AndExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_CallTypeArgumentable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_NotEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'java_DecimalLongLiteral' represents an important domain concept.
+It has one attribute: 'decimalValue', which is of type str.
+
+'java_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'SwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Char' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AnnotationInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Final' represents an important domain concept.
+It does not declare any attributes.
+
+'java_PackageReference' represents an important domain concept.
+It does not declare any attributes.
+
+'java_StaticClassifierImport' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AssignmentLeftShift' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AdditiveExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_VariableLengthParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Assert' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ArrayTypeable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ShiftOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ArrayInstantiation' represents an important domain concept.
+It does not declare any attributes.
+
+'java_InstanceOfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'java_EmptyMember' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AssignmentPlus' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Remainder' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'Instantiation' represents an important domain concept.
+It does not declare any attributes.
+
+'java_QualifiedTypeArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'java_This' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayTypeable' represents an important domain concept.
+It does not declare any attributes.
+
+'Initializable' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Self' represents an important domain concept.
+It does not declare any attributes.
+
+'java_UnaryExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_WhileLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Import' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Abstract' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicativeOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Float' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AdditionalLocalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_MultiplicativeOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'java_TypeParametrizable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_EqualityExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'AssignmentExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Long' represents an important domain concept.
+It does not declare any attributes.
+
+'ForLoopInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Break' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ImportingElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DoubleLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_OctalIntegerLiteral' represents an important domain concept.
+It has one attribute: 'octalValue', which is of type str.
+
+'Modifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AssignmentMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementReference' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Annotable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_UnaryModificationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'java_DoWhileLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Byte' represents an important domain concept.
+It does not declare any attributes.
+
+'ReferenceableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'java_CastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_LeftShift' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementor' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'java_JumpLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'LongLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'java_TryBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ConditionalOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_HexDoubleLiteral' represents an important domain concept.
+It has one attribute: 'hexValue', which is of type float.
+
+'UnaryModificationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryModificationExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Int' represents an important domain concept.
+It does not declare any attributes.
+
+'java_ForLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'ShiftExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeParametrizable' represents an important domain concept.
+It does not declare any attributes.
+
+'Parametrizable' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Annotable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Native' represents an important domain concept.
+It does not declare any attributes.
+
+'java_SynchronizedBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'java_UnaryModificationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_MemberContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryModificationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'java_EqualityExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Volatile' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'java_Annotable' is a specialization of 'Commentable'.
+The class 'java_AnnotationInstance' is a specialization of 'Reference'.
+The class 'java_AnnotationInstance' is a specialization of 'AnnotationInstanceOrModifier'.
+The class 'java_AnnotationInstance' is a specialization of 'NamespaceAwareElement'.
+The class 'java_AnnotationParameter' is a specialization of 'Commentable'.
+The class 'java_SingleAnnotationParameter' is a specialization of 'AnnotationParameter'.
+The class 'java_AnnotationParameterList' is a specialization of 'AnnotationParameter'.
+The class 'java_AnnotationAttributeSetting' is a specialization of 'Commentable'.
+The class 'java_AnnotationValue' is a specialization of 'Commentable'.
+The class 'java_AnnotationAttribute' is a specialization of 'InterfaceMethod'.
+The class 'java_ArrayTypeable' is a specialization of 'Commentable'.
+The class 'java_ArrayDimension' is a specialization of 'Commentable'.
+The class 'java_ArrayInitializer' is a specialization of 'ArrayInitializationValue'.
+The class 'java_ArrayInitializer' is a specialization of 'AnnotationValue'.
+The class 'java_ArrayInitializationValue' is a specialization of 'Commentable'.
+The class 'java_ArrayInstantiation' is a specialization of 'Expression'.
+The class 'java_ArrayInstantiation' is a specialization of 'Reference'.
+The class 'java_ArrayInstantiationBySize' is a specialization of 'ArrayInstantiation'.
+The class 'java_ArrayInstantiationBySize' is a specialization of 'TypedElement'.
+The class 'java_ArrayInstantiationBySize' is a specialization of 'ArrayTypeable'.
+The class 'java_ArrayInstantiationByValues' is a specialization of 'ArrayInstantiation'.
+The class 'java_ArrayInstantiationByValuesUntyped' is a specialization of 'ArrayInstantiationByValues'.
+The class 'java_ArrayInstantiationByValuesTyped' is a specialization of 'ArrayInstantiationByValues'.
+The class 'java_ArrayInstantiationByValuesTyped' is a specialization of 'TypedElement'.
+The class 'java_ArrayInstantiationByValuesTyped' is a specialization of 'ArrayTypeable'.
+The class 'java_ArraySelector' is a specialization of 'Commentable'.
+The class 'java_Classifier' is a specialization of 'Type'.
+The class 'java_Classifier' is a specialization of 'ReferenceableElement'.
+The class 'java_ConcreteClassifier' is a specialization of 'Classifier'.
+The class 'java_ConcreteClassifier' is a specialization of 'TypeParametrizable'.
+The class 'java_ConcreteClassifier' is a specialization of 'MemberContainer'.
+The class 'java_ConcreteClassifier' is a specialization of 'Member'.
+The class 'java_ConcreteClassifier' is a specialization of 'Statement'.
+The class 'java_ConcreteClassifier' is a specialization of 'AnnotableAndModifiable'.
+The class 'java_Implementor' is a specialization of 'Commentable'.
+The class 'java_Class' is a specialization of 'ConcreteClassifier'.
+The class 'java_Class' is a specialization of 'Implementor'.
+The class 'java_Interface' is a specialization of 'ConcreteClassifier'.
+The class 'java_Enumeration' is a specialization of 'ConcreteClassifier'.
+The class 'java_Enumeration' is a specialization of 'Implementor'.
+The class 'java_Annotation' is a specialization of 'ConcreteClassifier'.
+The class 'java_AnonymousClass' is a specialization of 'Type'.
+The class 'java_AnonymousClass' is a specialization of 'MemberContainer'.
+The class 'java_NamedElement' is a specialization of 'Commentable'.
+The class 'java_NamespaceAwareElement' is a specialization of 'Commentable'.
+The class 'java_JavaRoot' is a specialization of 'NamedElement'.
+The class 'java_JavaRoot' is a specialization of 'NamespaceAwareElement'.
+The class 'java_JavaRoot' is a specialization of 'ImportingElement'.
+The class 'java_CompilationUnit' is a specialization of 'JavaRoot'.
+The class 'java_Package' is a specialization of 'JavaRoot'.
+The class 'java_Package' is a specialization of 'Annotable'.
+The class 'java_EmptyModel' is a specialization of 'JavaRoot'.
+The class 'java_ExpressionList' is a specialization of 'ForLoopInitializer'.
+The class 'java_Expression' is a specialization of 'ArrayInitializationValue'.
+The class 'java_Expression' is a specialization of 'AnnotationValue'.
+The class 'java_AssignmentExpression' is a specialization of 'Expression'.
+The class 'java_AssignmentExpressionChild' is a specialization of 'Expression'.
+The class 'java_ConditionalExpression' is a specialization of 'AssignmentExpressionChild'.
+The class 'java_ConditionalExpressionChild' is a specialization of 'AssignmentExpressionChild'.
+The class 'java_ConditionalOrExpression' is a specialization of 'ConditionalExpressionChild'.
+The class 'java_ConditionalOrExpressionChild' is a specialization of 'ConditionalExpressionChild'.
+The class 'java_ConditionalAndExpression' is a specialization of 'ConditionalOrExpressionChild'.
+The class 'java_ConditionalAndExpressionChild' is a specialization of 'ConditionalOrExpressionChild'.
+The class 'java_InclusiveOrExpression' is a specialization of 'ConditionalAndExpressionChild'.
+The class 'java_InclusiveOrExpressionChild' is a specialization of 'ConditionalAndExpressionChild'.
+The class 'java_ExclusiveOrExpression' is a specialization of 'InclusiveOrExpressionChild'.
+The class 'java_ExclusiveOrExpressionChild' is a specialization of 'InclusiveOrExpressionChild'.
+The class 'java_AndExpression' is a specialization of 'ExclusiveOrExpressionChild'.
+The class 'java_AndExpressionChild' is a specialization of 'ExclusiveOrExpressionChild'.
+The class 'java_EqualityExpression' is a specialization of 'AndExpressionChild'.
+The class 'java_EqualityExpressionChild' is a specialization of 'AndExpressionChild'.
+The class 'java_InstanceOfExpression' is a specialization of 'ArrayTypeable'.
+The class 'java_InstanceOfExpression' is a specialization of 'TypedElement'.
+The class 'java_InstanceOfExpression' is a specialization of 'EqualityExpressionChild'.
+The class 'java_InstanceOfExpressionChild' is a specialization of 'EqualityExpressionChild'.
+The class 'java_RelationExpression' is a specialization of 'InstanceOfExpressionChild'.
+The class 'java_RelationExpressionChild' is a specialization of 'InstanceOfExpressionChild'.
+The class 'java_ShiftExpression' is a specialization of 'RelationExpressionChild'.
+The class 'java_ShiftExpressionChild' is a specialization of 'RelationExpressionChild'.
+The class 'java_AdditiveExpression' is a specialization of 'ShiftExpressionChild'.
+The class 'java_AdditiveExpressionChild' is a specialization of 'ShiftExpressionChild'.
+The class 'java_MultiplicativeExpression' is a specialization of 'AdditiveExpressionChild'.
+The class 'java_MultiplicativeExpressionChild' is a specialization of 'AdditiveExpressionChild'.
+The class 'java_UnaryExpression' is a specialization of 'MultiplicativeExpressionChild'.
+The class 'java_UnaryExpressionChild' is a specialization of 'MultiplicativeExpressionChild'.
+The class 'java_UnaryModificationExpression' is a specialization of 'UnaryExpressionChild'.
+The class 'java_PrefixUnaryModificationExpression' is a specialization of 'UnaryModificationExpression'.
+The class 'java_SuffixUnaryModificationExpression' is a specialization of 'UnaryModificationExpression'.
+The class 'java_UnaryModificationExpressionChild' is a specialization of 'UnaryExpressionChild'.
+The class 'java_CastExpression' is a specialization of 'TypedElement'.
+The class 'java_CastExpression' is a specialization of 'ArrayTypeable'.
+The class 'java_CastExpression' is a specialization of 'UnaryModificationExpressionChild'.
+The class 'java_PrimaryExpression' is a specialization of 'UnaryModificationExpressionChild'.
+The class 'java_NestedExpression' is a specialization of 'Reference'.
+The class 'java_TypeArgument' is a specialization of 'ArrayTypeable'.
+The class 'java_TypeArgumentable' is a specialization of 'Commentable'.
+The class 'java_CallTypeArgumentable' is a specialization of 'Commentable'.
+The class 'java_TypeParametrizable' is a specialization of 'Commentable'.
+The class 'java_ExtendsTypeArgument' is a specialization of 'TypeArgument'.
+The class 'java_QualifiedTypeArgument' is a specialization of 'TypeArgument'.
+The class 'java_QualifiedTypeArgument' is a specialization of 'TypedElement'.
+The class 'java_SuperTypeArgument' is a specialization of 'TypeArgument'.
+The class 'java_TypeParameter' is a specialization of 'Classifier'.
+The class 'java_UnknownTypeArgument' is a specialization of 'TypeArgument'.
+The class 'java_Import' is a specialization of 'NamespaceAwareElement'.
+The class 'java_ImportingElement' is a specialization of 'Commentable'.
+The class 'java_StaticImport' is a specialization of 'Import'.
+The class 'java_ClassifierImport' is a specialization of 'Import'.
+The class 'java_PackageImport' is a specialization of 'Import'.
+The class 'java_StaticClassifierImport' is a specialization of 'StaticImport'.
+The class 'java_StaticMemberImport' is a specialization of 'StaticImport'.
+The class 'java_Initializable' is a specialization of 'Commentable'.
+The class 'java_Instantiation' is a specialization of 'Reference'.
+The class 'java_Instantiation' is a specialization of 'Argumentable'.
+The class 'java_NewConstructorCall' is a specialization of 'TypedElement'.
+The class 'java_NewConstructorCall' is a specialization of 'Instantiation'.
+The class 'java_NewConstructorCall' is a specialization of 'CallTypeArgumentable'.
+The class 'java_ExplicitConstructorCall' is a specialization of 'Instantiation'.
+The class 'java_Literal' is a specialization of 'PrimaryExpression'.
+The class 'java_Self' is a specialization of 'Commentable'.
+The class 'java_BooleanLiteral' is a specialization of 'Literal'.
+The class 'java_CharacterLiteral' is a specialization of 'Literal'.
+The class 'java_FloatLiteral' is a specialization of 'Literal'.
+The class 'java_DecimalFloatLiteral' is a specialization of 'FloatLiteral'.
+The class 'java_HexFloatLiteral' is a specialization of 'FloatLiteral'.
+The class 'java_DoubleLiteral' is a specialization of 'Literal'.
+The class 'java_DecimalDoubleLiteral' is a specialization of 'DoubleLiteral'.
+The class 'java_HexDoubleLiteral' is a specialization of 'DoubleLiteral'.
+The class 'java_IntegerLiteral' is a specialization of 'Literal'.
+The class 'java_DecimalIntegerLiteral' is a specialization of 'IntegerLiteral'.
+The class 'java_HexIntegerLiteral' is a specialization of 'IntegerLiteral'.
+The class 'java_OctalIntegerLiteral' is a specialization of 'IntegerLiteral'.
+The class 'java_LongLiteral' is a specialization of 'Literal'.
+The class 'java_DecimalLongLiteral' is a specialization of 'LongLiteral'.
+The class 'java_HexLongLiteral' is a specialization of 'LongLiteral'.
+The class 'java_OctalLongLiteral' is a specialization of 'LongLiteral'.
+The class 'java_NullLiteral' is a specialization of 'Literal'.
+The class 'java_Super' is a specialization of 'Self'.
+The class 'java_This' is a specialization of 'Self'.
+The class 'java_ExceptionThrower' is a specialization of 'Commentable'.
+The class 'java_Member' is a specialization of 'NamedElement'.
+The class 'java_MemberContainer' is a specialization of 'Commentable'.
+The class 'java_AdditionalField' is a specialization of 'ReferenceableElement'.
+The class 'java_AdditionalField' is a specialization of 'ArrayTypeable'.
+The class 'java_AdditionalField' is a specialization of 'Initializable'.
+The class 'java_Constructor' is a specialization of 'Member'.
+The class 'java_Constructor' is a specialization of 'StatementListContainer'.
+The class 'java_Constructor' is a specialization of 'Parametrizable'.
+The class 'java_Constructor' is a specialization of 'TypeParametrizable'.
+The class 'java_Constructor' is a specialization of 'ExceptionThrower'.
+The class 'java_Constructor' is a specialization of 'AnnotableAndModifiable'.
+The class 'java_EmptyMember' is a specialization of 'Member'.
+The class 'java_Field' is a specialization of 'Member'.
+The class 'java_Field' is a specialization of 'Initializable'.
+The class 'java_Field' is a specialization of 'Variable'.
+The class 'java_Field' is a specialization of 'ReferenceableElement'.
+The class 'java_Field' is a specialization of 'AnnotableAndModifiable'.
+The class 'java_Method' is a specialization of 'Member'.
+The class 'java_Method' is a specialization of 'TypedElement'.
+The class 'java_Method' is a specialization of 'ArrayTypeable'.
+The class 'java_Method' is a specialization of 'TypeParametrizable'.
+The class 'java_Method' is a specialization of 'Parametrizable'.
+The class 'java_Method' is a specialization of 'ReferenceableElement'.
+The class 'java_Method' is a specialization of 'ExceptionThrower'.
+The class 'java_Method' is a specialization of 'AnnotableAndModifiable'.
+The class 'java_InterfaceMethod' is a specialization of 'Method'.
+The class 'java_ClassMethod' is a specialization of 'Method'.
+The class 'java_ClassMethod' is a specialization of 'StatementListContainer'.
+The class 'java_EnumConstant' is a specialization of 'ReferenceableElement'.
+The class 'java_EnumConstant' is a specialization of 'Argumentable'.
+The class 'java_EnumConstant' is a specialization of 'Annotable'.
+The class 'java_Modifier' is a specialization of 'AnnotationInstanceOrModifier'.
+The class 'java_AnnotationInstanceOrModifier' is a specialization of 'Commentable'.
+The class 'java_AnnotableAndModifiable' is a specialization of 'Commentable'.
+The class 'java_Modifiable' is a specialization of 'Commentable'.
+The class 'java_Abstract' is a specialization of 'Modifier'.
+The class 'java_Final' is a specialization of 'Modifier'.
+The class 'java_Native' is a specialization of 'Modifier'.
+The class 'java_Protected' is a specialization of 'Modifier'.
+The class 'java_Public' is a specialization of 'Modifier'.
+The class 'java_Private' is a specialization of 'Modifier'.
+The class 'java_Static' is a specialization of 'Modifier'.
+The class 'java_Strictfp' is a specialization of 'Modifier'.
+The class 'java_Synchronized' is a specialization of 'Modifier'.
+The class 'java_Transient' is a specialization of 'Modifier'.
+The class 'java_Volatile' is a specialization of 'Modifier'.
+The class 'java_Operator' is a specialization of 'Commentable'.
+The class 'java_AdditiveOperator' is a specialization of 'Operator'.
+The class 'java_AssignmentOperator' is a specialization of 'Operator'.
+The class 'java_EqualityOperator' is a specialization of 'Operator'.
+The class 'java_MultiplicativeOperator' is a specialization of 'Operator'.
+The class 'java_RelationOperator' is a specialization of 'Operator'.
+The class 'java_ShiftOperator' is a specialization of 'Operator'.
+The class 'java_UnaryOperator' is a specialization of 'Operator'.
+The class 'java_UnaryModificationOperator' is a specialization of 'Operator'.
+The class 'java_Assignment' is a specialization of 'AssignmentOperator'.
+The class 'java_AssignmentAnd' is a specialization of 'AssignmentOperator'.
+The class 'java_AssignmentDivision' is a specialization of 'AssignmentOperator'.
+The class 'java_AssignmentExclusiveOr' is a specialization of 'AssignmentOperator'.
+The class 'java_AssignmentMinus' is a specialization of 'AssignmentOperator'.
+The class 'java_AssignmentModulo' is a specialization of 'AssignmentOperator'.
+The class 'java_AssignmentMultiplication' is a specialization of 'AssignmentOperator'.
+The class 'java_AssignmentLeftShift' is a specialization of 'AssignmentOperator'.
+The class 'java_AssignmentOr' is a specialization of 'AssignmentOperator'.
+The class 'java_AssignmentPlus' is a specialization of 'AssignmentOperator'.
+The class 'java_AssignmentRightShift' is a specialization of 'AssignmentOperator'.
+The class 'java_AssignmentUnsignedRightShift' is a specialization of 'AssignmentOperator'.
+The class 'java_Equal' is a specialization of 'EqualityOperator'.
+The class 'java_NotEqual' is a specialization of 'EqualityOperator'.
+The class 'java_GreaterThan' is a specialization of 'RelationOperator'.
+The class 'java_GreaterThanOrEqual' is a specialization of 'RelationOperator'.
+The class 'java_LessThan' is a specialization of 'RelationOperator'.
+The class 'java_LessThanOrEqual' is a specialization of 'RelationOperator'.
+The class 'java_Addition' is a specialization of 'AdditiveOperator'.
+The class 'java_Addition' is a specialization of 'UnaryOperator'.
+The class 'java_Subtraction' is a specialization of 'AdditiveOperator'.
+The class 'java_Subtraction' is a specialization of 'UnaryOperator'.
+The class 'java_Division' is a specialization of 'MultiplicativeOperator'.
+The class 'java_Multiplication' is a specialization of 'MultiplicativeOperator'.
+The class 'java_Remainder' is a specialization of 'MultiplicativeOperator'.
+The class 'java_Complement' is a specialization of 'UnaryOperator'.
+The class 'java_MinusMinus' is a specialization of 'UnaryModificationOperator'.
+The class 'java_Negate' is a specialization of 'UnaryOperator'.
+The class 'java_PlusPlus' is a specialization of 'UnaryModificationOperator'.
+The class 'java_LeftShift' is a specialization of 'ShiftOperator'.
+The class 'java_RightShift' is a specialization of 'ShiftOperator'.
+The class 'java_UnsignedRightShift' is a specialization of 'ShiftOperator'.
+The class 'java_Reference' is a specialization of 'PrimaryExpression'.
+The class 'java_Reference' is a specialization of 'TypeArgumentable'.
+The class 'java_Argumentable' is a specialization of 'Commentable'.
+The class 'java_ReferenceableElement' is a specialization of 'NamedElement'.
+The class 'java_ElementReference' is a specialization of 'Reference'.
+The class 'java_IdentifierReference' is a specialization of 'ElementReference'.
+The class 'java_MethodCall' is a specialization of 'ElementReference'.
+The class 'java_MethodCall' is a specialization of 'Argumentable'.
+The class 'java_MethodCall' is a specialization of 'CallTypeArgumentable'.
+The class 'java_ReflectiveClassReference' is a specialization of 'Reference'.
+The class 'java_PrimitiveTypeReference' is a specialization of 'Reference'.
+The class 'java_StringReference' is a specialization of 'Reference'.
+The class 'java_SelfReference' is a specialization of 'Reference'.
+The class 'java_Parameter' is a specialization of 'Variable'.
+The class 'java_Parameter' is a specialization of 'AnnotableAndModifiable'.
+The class 'java_Parametrizable' is a specialization of 'Commentable'.
+The class 'java_OrdinaryParameter' is a specialization of 'Parameter'.
+The class 'java_VariableLengthParameter' is a specialization of 'Parameter'.
+The class 'java_StatementContainer' is a specialization of 'Commentable'.
+The class 'java_StatementListContainer' is a specialization of 'Commentable'.
+The class 'java_Conditional' is a specialization of 'Commentable'.
+The class 'java_ForLoopInitializer' is a specialization of 'Commentable'.
+The class 'java_Statement' is a specialization of 'Commentable'.
+The class 'java_SwitchCase' is a specialization of 'StatementListContainer'.
+The class 'java_Assert' is a specialization of 'Statement'.
+The class 'java_Assert' is a specialization of 'Conditional'.
+The class 'java_Break' is a specialization of 'Jump'.
+The class 'java_Block' is a specialization of 'Member'.
+The class 'java_Block' is a specialization of 'Statement'.
+The class 'java_Block' is a specialization of 'StatementListContainer'.
+The class 'java_Block' is a specialization of 'Modifiable'.
+The class 'java_CatchBlock' is a specialization of 'StatementListContainer'.
+The class 'java_Condition' is a specialization of 'Statement'.
+The class 'java_Condition' is a specialization of 'StatementContainer'.
+The class 'java_Condition' is a specialization of 'Conditional'.
+The class 'java_Continue' is a specialization of 'Jump'.
+The class 'java_DefaultSwitchCase' is a specialization of 'SwitchCase'.
+The class 'java_DoWhileLoop' is a specialization of 'WhileLoop'.
+The class 'java_EmptyStatement' is a specialization of 'Statement'.
+The class 'java_ExpressionStatement' is a specialization of 'Statement'.
+The class 'java_ForLoop' is a specialization of 'Statement'.
+The class 'java_ForLoop' is a specialization of 'StatementContainer'.
+The class 'java_ForLoop' is a specialization of 'Conditional'.
+The class 'java_ForEachLoop' is a specialization of 'Statement'.
+The class 'java_ForEachLoop' is a specialization of 'StatementContainer'.
+The class 'java_Jump' is a specialization of 'Statement'.
+The class 'java_JumpLabel' is a specialization of 'Statement'.
+The class 'java_JumpLabel' is a specialization of 'StatementContainer'.
+The class 'java_JumpLabel' is a specialization of 'NamedElement'.
+The class 'java_LocalVariableStatement' is a specialization of 'Statement'.
+The class 'java_NormalSwitchCase' is a specialization of 'SwitchCase'.
+The class 'java_NormalSwitchCase' is a specialization of 'Conditional'.
+The class 'java_Return' is a specialization of 'Statement'.
+The class 'java_Switch' is a specialization of 'Statement'.
+The class 'java_SynchronizedBlock' is a specialization of 'Statement'.
+The class 'java_SynchronizedBlock' is a specialization of 'StatementListContainer'.
+The class 'java_Throw' is a specialization of 'Statement'.
+The class 'java_TryBlock' is a specialization of 'Statement'.
+The class 'java_TryBlock' is a specialization of 'StatementListContainer'.
+The class 'java_WhileLoop' is a specialization of 'Statement'.
+The class 'java_WhileLoop' is a specialization of 'StatementContainer'.
+The class 'java_Type' is a specialization of 'Commentable'.
+The class 'java_TypedElement' is a specialization of 'Commentable'.
+The class 'java_TypeReference' is a specialization of 'Commentable'.
+The class 'java_ClassifierReference' is a specialization of 'TypeReference'.
+The class 'java_ClassifierReference' is a specialization of 'TypeArgumentable'.
+The class 'java_NamespaceClassifierReference' is a specialization of 'TypeReference'.
+The class 'java_NamespaceClassifierReference' is a specialization of 'NamespaceAwareElement'.
+The class 'java_PrimitiveType' is a specialization of 'Type'.
+The class 'java_PrimitiveType' is a specialization of 'TypeReference'.
+The class 'java_Boolean' is a specialization of 'PrimitiveType'.
+The class 'java_Byte' is a specialization of 'PrimitiveType'.
+The class 'java_Char' is a specialization of 'PrimitiveType'.
+The class 'java_Double' is a specialization of 'PrimitiveType'.
+The class 'java_Float' is a specialization of 'PrimitiveType'.
+The class 'java_Int' is a specialization of 'PrimitiveType'.
+The class 'java_Long' is a specialization of 'PrimitiveType'.
+The class 'java_Short' is a specialization of 'PrimitiveType'.
+The class 'java_Void' is a specialization of 'PrimitiveType'.
+The class 'java_PackageReference' is a specialization of 'ReferenceableElement'.
+The class 'java_Variable' is a specialization of 'NamedElement'.
+The class 'java_Variable' is a specialization of 'TypedElement'.
+The class 'java_Variable' is a specialization of 'ArrayTypeable'.
+The class 'java_Variable' is a specialization of 'ReferenceableElement'.
+The class 'java_Variable' is a specialization of 'TypeArgumentable'.
+The class 'java_LocalVariable' is a specialization of 'Variable'.
+The class 'java_LocalVariable' is a specialization of 'Initializable'.
+The class 'java_LocalVariable' is a specialization of 'ForLoopInitializer'.
+The class 'java_LocalVariable' is a specialization of 'AnnotableAndModifiable'.
+The class 'java_AdditionalLocalVariable' is a specialization of 'ReferenceableElement'.
+The class 'java_AdditionalLocalVariable' is a specialization of 'ArrayTypeable'.
+The class 'java_AdditionalLocalVariable' is a specialization of 'Initializable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'java_AnnotationInstance' and 'java_Annotable'. From 'java_AnnotationInstance', the role 'java_AnnotationInstance' has cardinality 0..*, and from 'java_Annotable', the role 'java_Annotable' has cardinality 0..*.
+An association connects 'java_AnnotationInstance' and 'java_Classifier'. From 'java_AnnotationInstance', the role 'java_AnnotationInstance2' has cardinality 0..*, and from 'java_Classifier', the role 'java_Classifier' has cardinality 0..*.
+An association connects 'java_AnnotationParameter' and 'java_AnnotationInstance'. From 'java_AnnotationParameter', the role 'java_AnnotationParameter' has cardinality 0..*, and from 'java_AnnotationInstance', the role 'java_AnnotationInstance4' has cardinality 0..*.
+An association connects 'java_AnnotationValue' and 'java_SingleAnnotationParameter'. From 'java_AnnotationValue', the role 'java_AnnotationValue' has cardinality 0..*, and from 'java_SingleAnnotationParameter', the role 'java_SingleAnnotationParameter' has cardinality 0..*.
+An association connects 'java_AnnotationParameterList' and 'java_AnnotationAttributeSetting'. From 'java_AnnotationParameterList', the role 'java_AnnotationParameterList' has cardinality 0..*, and from 'java_AnnotationAttributeSetting', the role 'java_AnnotationAttributeSetting' has cardinality 0..*.
+An association connects 'java_InterfaceMethod' and 'java_AnnotationAttributeSetting'. From 'java_InterfaceMethod', the role 'java_InterfaceMethod' has cardinality 0..*, and from 'java_AnnotationAttributeSetting', the role 'java_AnnotationAttributeSetting8' has cardinality 0..*.
+An association connects 'java_AnnotationAttributeSetting' and 'java_AnnotationValue'. From 'java_AnnotationAttributeSetting', the role 'java_AnnotationAttributeSetting10' has cardinality 0..*, and from 'java_AnnotationValue', the role 'java_AnnotationValue11' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_AnnotationAttribute'. From 'java_Expression', the role 'java_Expression' has cardinality 0..*, and from 'java_AnnotationAttribute', the role 'java_AnnotationAttribute' has cardinality 0..*.
+An association connects 'java_ArrayTypeable' and 'java_ArrayDimension'. From 'java_ArrayTypeable', the role 'java_ArrayTypeable' has cardinality 0..*, and from 'java_ArrayDimension', the role 'java_ArrayDimension' has cardinality 0..*.
+An association connects 'java_ArrayTypeable' and 'java_ArrayDimension'. From 'java_ArrayTypeable', the role 'java_ArrayTypeable15' has cardinality 0..*, and from 'java_ArrayDimension', the role 'java_ArrayDimension16' has cardinality 0..*.
+An association connects 'java_ArrayInitializer' and 'java_ArrayInitializationValue'. From 'java_ArrayInitializer', the role 'java_ArrayInitializer' has cardinality 0..*, and from 'java_ArrayInitializationValue', the role 'java_ArrayInitializationValue' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_ArrayInstantiationBySize'. From 'java_Expression', the role 'java_Expression19' has cardinality 0..*, and from 'java_ArrayInstantiationBySize', the role 'java_ArrayInstantiationBySize' has cardinality 0..*.
+An association connects 'java_ArrayInstantiationByValues' and 'java_ArrayInitializer'. From 'java_ArrayInstantiationByValues', the role 'java_ArrayInstantiationByValues' has cardinality 0..*, and from 'java_ArrayInitializer', the role 'java_ArrayInitializer21' has cardinality 0..*.
+An association connects 'java_ArraySelector' and 'java_Expression'. From 'java_ArraySelector', the role 'java_ArraySelector' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression23' has cardinality 0..*.
+An association connects 'java_Implementor' and 'java_TypeReference'. From 'java_Implementor', the role 'java_Implementor' has cardinality 0..*, and from 'java_TypeReference', the role 'java_TypeReference' has cardinality 0..*.
+An association connects 'java_Class' and 'java_TypeReference'. From 'java_Class', the role 'java_Class' has cardinality 0..*, and from 'java_TypeReference', the role 'java_TypeReference26' has cardinality 0..*.
+An association connects 'java_Class' and 'java_TypeReference'. From 'java_Class', the role 'java_Class28' has cardinality 0..*, and from 'java_TypeReference', the role 'java_TypeReference29' has cardinality 0..*.
+An association connects 'java_Interface' and 'java_TypeReference'. From 'java_Interface', the role 'java_Interface' has cardinality 0..*, and from 'java_TypeReference', the role 'java_TypeReference31' has cardinality 0..*.
+An association connects 'java_Interface' and 'java_TypeReference'. From 'java_Interface', the role 'java_Interface33' has cardinality 0..*, and from 'java_TypeReference', the role 'java_TypeReference34' has cardinality 0..*.
+An association connects 'java_EnumConstant' and 'java_Enumeration'. From 'java_EnumConstant', the role 'java_EnumConstant' has cardinality 0..*, and from 'java_Enumeration', the role 'java_Enumeration' has cardinality 0..*.
+An association connects 'java_Commentable' and 'java_LayoutInformation'. From 'java_Commentable', the role 'java_Commentable' has cardinality 0..*, and from 'java_LayoutInformation', the role 'java_LayoutInformation' has cardinality 0..*.
+An association connects 'java_ConcreteClassifier' and 'java_CompilationUnit'. From 'java_ConcreteClassifier', the role 'java_ConcreteClassifier' has cardinality 0..*, and from 'java_CompilationUnit', the role 'java_CompilationUnit' has cardinality 0..*.
+An association connects 'java_CompilationUnit' and 'java_Package'. From 'java_CompilationUnit', the role 'java_CompilationUnit39' has cardinality 0..*, and from 'java_Package', the role 'java_Package' has cardinality 0..*.
+An association connects 'java_ExpressionList' and 'java_Expression'. From 'java_ExpressionList', the role 'java_ExpressionList' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression41' has cardinality 0..*.
+An association connects 'java_AssignmentExpressionChild' and 'java_AssignmentExpression'. From 'java_AssignmentExpressionChild', the role 'java_AssignmentExpressionChild' has cardinality 0..*, and from 'java_AssignmentExpression', the role 'java_AssignmentExpression' has cardinality 0..*.
+An association connects 'java_AssignmentOperator' and 'java_AssignmentExpression'. From 'java_AssignmentOperator', the role 'java_AssignmentOperator' has cardinality 0..*, and from 'java_AssignmentExpression', the role 'java_AssignmentExpression44' has cardinality 0..*.
+An association connects 'java_AssignmentExpression' and 'java_Expression'. From 'java_AssignmentExpression', the role 'java_AssignmentExpression46' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression47' has cardinality 0..*.
+An association connects 'java_ConditionalExpressionChild' and 'java_ConditionalExpression'. From 'java_ConditionalExpressionChild', the role 'java_ConditionalExpressionChild' has cardinality 0..*, and from 'java_ConditionalExpression', the role 'java_ConditionalExpression' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_ConditionalExpression'. From 'java_Expression', the role 'java_Expression51' has cardinality 0..*, and from 'java_ConditionalExpression', the role 'java_ConditionalExpression50' has cardinality 0..*.
+An association connects 'java_AssignmentExpressionChild' and 'java_ConditionalExpression'. From 'java_AssignmentExpressionChild', the role 'java_AssignmentExpressionChild54' has cardinality 0..*, and from 'java_ConditionalExpression', the role 'java_ConditionalExpression53' has cardinality 0..*.
+An association connects 'java_ConditionalOrExpressionChild' and 'java_ConditionalOrExpression'. From 'java_ConditionalOrExpressionChild', the role 'java_ConditionalOrExpressionChild' has cardinality 0..*, and from 'java_ConditionalOrExpression', the role 'java_ConditionalOrExpression' has cardinality 0..*.
+An association connects 'java_ConditionalAndExpression' and 'java_ConditionalAndExpressionChild'. From 'java_ConditionalAndExpression', the role 'java_ConditionalAndExpression' has cardinality 0..*, and from 'java_ConditionalAndExpressionChild', the role 'java_ConditionalAndExpressionChild' has cardinality 0..*.
+An association connects 'java_InclusiveOrExpressionChild' and 'java_InclusiveOrExpression'. From 'java_InclusiveOrExpressionChild', the role 'java_InclusiveOrExpressionChild' has cardinality 0..*, and from 'java_InclusiveOrExpression', the role 'java_InclusiveOrExpression' has cardinality 0..*.
+An association connects 'java_ExclusiveOrExpression' and 'java_ExclusiveOrExpressionChild'. From 'java_ExclusiveOrExpression', the role 'java_ExclusiveOrExpression' has cardinality 0..*, and from 'java_ExclusiveOrExpressionChild', the role 'java_ExclusiveOrExpressionChild' has cardinality 0..*.
+An association connects 'java_AndExpressionChild' and 'java_AndExpression'. From 'java_AndExpressionChild', the role 'java_AndExpressionChild' has cardinality 0..*, and from 'java_AndExpression', the role 'java_AndExpression' has cardinality 0..*.
+An association connects 'java_EqualityOperator' and 'java_EqualityExpression'. From 'java_EqualityOperator', the role 'java_EqualityOperator' has cardinality 0..*, and from 'java_EqualityExpression', the role 'java_EqualityExpression' has cardinality 0..*.
+An association connects 'java_EqualityExpressionChild' and 'java_EqualityExpression'. From 'java_EqualityExpressionChild', the role 'java_EqualityExpressionChild' has cardinality 0..*, and from 'java_EqualityExpression', the role 'java_EqualityExpression62' has cardinality 0..*.
+An association connects 'java_InstanceOfExpression' and 'java_InstanceOfExpressionChild'. From 'java_InstanceOfExpression', the role 'java_InstanceOfExpression' has cardinality 0..*, and from 'java_InstanceOfExpressionChild', the role 'java_InstanceOfExpressionChild' has cardinality 0..*.
+An association connects 'java_RelationExpression' and 'java_RelationExpressionChild'. From 'java_RelationExpression', the role 'java_RelationExpression' has cardinality 0..*, and from 'java_RelationExpressionChild', the role 'java_RelationExpressionChild' has cardinality 0..*.
+An association connects 'java_RelationOperator' and 'java_RelationExpression'. From 'java_RelationOperator', the role 'java_RelationOperator' has cardinality 0..*, and from 'java_RelationExpression', the role 'java_RelationExpression66' has cardinality 0..*.
+An association connects 'java_ShiftExpressionChild' and 'java_ShiftExpression'. From 'java_ShiftExpressionChild', the role 'java_ShiftExpressionChild' has cardinality 0..*, and from 'java_ShiftExpression', the role 'java_ShiftExpression' has cardinality 0..*.
+An association connects 'java_ShiftOperator' and 'java_ShiftExpression'. From 'java_ShiftOperator', the role 'java_ShiftOperator' has cardinality 0..*, and from 'java_ShiftExpression', the role 'java_ShiftExpression69' has cardinality 0..*.
+An association connects 'java_AdditiveExpressionChild' and 'java_AdditiveExpression'. From 'java_AdditiveExpressionChild', the role 'java_AdditiveExpressionChild' has cardinality 0..*, and from 'java_AdditiveExpression', the role 'java_AdditiveExpression' has cardinality 0..*.
+An association connects 'java_AdditiveOperator' and 'java_AdditiveExpression'. From 'java_AdditiveOperator', the role 'java_AdditiveOperator' has cardinality 0..*, and from 'java_AdditiveExpression', the role 'java_AdditiveExpression72' has cardinality 0..*.
+An association connects 'java_MultiplicativeExpression' and 'java_MultiplicativeExpressionChild'. From 'java_MultiplicativeExpression', the role 'java_MultiplicativeExpression' has cardinality 0..*, and from 'java_MultiplicativeExpressionChild', the role 'java_MultiplicativeExpressionChild' has cardinality 0..*.
+An association connects 'java_MultiplicativeExpression' and 'java_MultiplicativeOperator'. From 'java_MultiplicativeExpression', the role 'java_MultiplicativeExpression75' has cardinality 0..*, and from 'java_MultiplicativeOperator', the role 'java_MultiplicativeOperator' has cardinality 0..*.
+An association connects 'java_UnaryOperator' and 'java_UnaryExpression'. From 'java_UnaryOperator', the role 'java_UnaryOperator' has cardinality 0..*, and from 'java_UnaryExpression', the role 'java_UnaryExpression' has cardinality 0..*.
+An association connects 'java_UnaryExpressionChild' and 'java_UnaryExpression'. From 'java_UnaryExpressionChild', the role 'java_UnaryExpressionChild' has cardinality 0..*, and from 'java_UnaryExpression', the role 'java_UnaryExpression78' has cardinality 0..*.
+An association connects 'java_UnaryModificationExpressionChild' and 'java_UnaryModificationExpression'. From 'java_UnaryModificationExpressionChild', the role 'java_UnaryModificationExpressionChild' has cardinality 0..*, and from 'java_UnaryModificationExpression', the role 'java_UnaryModificationExpression' has cardinality 0..*.
+An association connects 'java_UnaryModificationExpression' and 'java_UnaryModificationOperator'. From 'java_UnaryModificationExpression', the role 'java_UnaryModificationExpression81' has cardinality 0..*, and from 'java_UnaryModificationOperator', the role 'java_UnaryModificationOperator' has cardinality 0..*.
+An association connects 'java_CastExpression' and 'java_MultiplicativeExpressionChild'. From 'java_CastExpression', the role 'java_CastExpression' has cardinality 0..*, and from 'java_MultiplicativeExpressionChild', the role 'java_MultiplicativeExpressionChild83' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_NestedExpression'. From 'java_Expression', the role 'java_Expression85' has cardinality 0..*, and from 'java_NestedExpression', the role 'java_NestedExpression' has cardinality 0..*.
+An association connects 'java_TypeArgument' and 'java_TypeArgumentable'. From 'java_TypeArgument', the role 'java_TypeArgument' has cardinality 0..*, and from 'java_TypeArgumentable', the role 'java_TypeArgumentable' has cardinality 0..*.
+An association connects 'java_CallTypeArgumentable' and 'java_TypeArgument'. From 'java_CallTypeArgumentable', the role 'java_CallTypeArgumentable' has cardinality 0..*, and from 'java_TypeArgument', the role 'java_TypeArgument88' has cardinality 0..*.
+An association connects 'java_TypeParameter' and 'java_TypeParametrizable'. From 'java_TypeParameter', the role 'java_TypeParameter' has cardinality 0..*, and from 'java_TypeParametrizable', the role 'java_TypeParametrizable' has cardinality 0..*.
+An association connects 'java_TypeReference' and 'java_ExtendsTypeArgument'. From 'java_TypeReference', the role 'java_TypeReference91' has cardinality 0..*, and from 'java_ExtendsTypeArgument', the role 'java_ExtendsTypeArgument' has cardinality 0..*.
+An association connects 'java_SuperTypeArgument' and 'java_TypeReference'. From 'java_SuperTypeArgument', the role 'java_SuperTypeArgument' has cardinality 0..*, and from 'java_TypeReference', the role 'java_TypeReference93' has cardinality 0..*.
+An association connects 'java_TypeReference' and 'java_TypeParameter'. From 'java_TypeReference', the role 'java_TypeReference96' has cardinality 0..*, and from 'java_TypeParameter', the role 'java_TypeParameter95' has cardinality 0..*.
+An association connects 'java_Import' and 'java_ImportingElement'. From 'java_Import', the role 'java_Import' has cardinality 0..*, and from 'java_ImportingElement', the role 'java_ImportingElement' has cardinality 0..*.
+An association connects 'java_StaticImport' and 'java_Static'. From 'java_StaticImport', the role 'java_StaticImport' has cardinality 0..*, and from 'java_Static', the role 'java_Static' has cardinality 0..*.
+An association connects 'java_ClassifierImport' and 'java_ConcreteClassifier'. From 'java_ClassifierImport', the role 'java_ClassifierImport' has cardinality 0..*, and from 'java_ConcreteClassifier', the role 'java_ConcreteClassifier100' has cardinality 0..*.
+An association connects 'java_StaticMemberImport' and 'java_ReferenceableElement'. From 'java_StaticMemberImport', the role 'java_StaticMemberImport' has cardinality 0..*, and from 'java_ReferenceableElement', the role 'java_ReferenceableElement' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_Initializable'. From 'java_Expression', the role 'java_Expression103' has cardinality 0..*, and from 'java_Initializable', the role 'java_Initializable' has cardinality 0..*.
+An association connects 'java_NewConstructorCall' and 'java_AnonymousClass'. From 'java_NewConstructorCall', the role 'java_NewConstructorCall' has cardinality 0..*, and from 'java_AnonymousClass', the role 'java_AnonymousClass' has cardinality 0..*.
+An association connects 'java_ExplicitConstructorCall' and 'java_Self'. From 'java_ExplicitConstructorCall', the role 'java_ExplicitConstructorCall' has cardinality 0..*, and from 'java_Self', the role 'java_Self' has cardinality 0..*.
+An association connects 'java_ExceptionThrower' and 'java_NamespaceClassifierReference'. From 'java_ExceptionThrower', the role 'java_ExceptionThrower' has cardinality 0..*, and from 'java_NamespaceClassifierReference', the role 'java_NamespaceClassifierReference' has cardinality 0..*.
+An association connects 'java_MemberContainer' and 'java_Member'. From 'java_MemberContainer', the role 'java_MemberContainer' has cardinality 0..*, and from 'java_Member', the role 'java_Member' has cardinality 0..*.
+An association connects 'java_MemberContainer' and 'java_Member'. From 'java_MemberContainer', the role 'java_MemberContainer109' has cardinality 0..*, and from 'java_Member', the role 'java_Member110' has cardinality 0..*.
+An association connects 'java_AdditionalField' and 'java_Field'. From 'java_AdditionalField', the role 'java_AdditionalField' has cardinality 0..*, and from 'java_Field', the role 'java_Field' has cardinality 0..*.
+An association connects 'java_EnumConstant' and 'java_AnonymousClass'. From 'java_EnumConstant', the role 'java_EnumConstant113' has cardinality 0..*, and from 'java_AnonymousClass', the role 'java_AnonymousClass114' has cardinality 0..*.
+An association connects 'java_AnnotationInstanceOrModifier' and 'java_AnnotableAndModifiable'. From 'java_AnnotationInstanceOrModifier', the role 'java_AnnotationInstanceOrModifier' has cardinality 0..*, and from 'java_AnnotableAndModifiable', the role 'java_AnnotableAndModifiable' has cardinality 0..*.
+An association connects 'java_Modifier' and 'java_Modifiable'. From 'java_Modifier', the role 'java_Modifier' has cardinality 0..*, and from 'java_Modifiable', the role 'java_Modifiable' has cardinality 0..*.
+An association connects 'java_Reference' and 'java_Reference'. From 'java_Reference', the role 'java_Reference117' has cardinality 0..*, and from 'java_Reference', the role 'java_Reference' has cardinality 0..*.
+An association connects 'java_Reference' and 'java_ArraySelector'. From 'java_Reference', the role 'java_Reference120' has cardinality 0..*, and from 'java_ArraySelector', the role 'java_ArraySelector121' has cardinality 0..*.
+An association connects 'java_Argumentable' and 'java_Expression'. From 'java_Argumentable', the role 'java_Argumentable' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression123' has cardinality 0..*.
+An association connects 'java_ReferenceableElement' and 'java_ElementReference'. From 'java_ReferenceableElement', the role 'java_ReferenceableElement125' has cardinality 0..*, and from 'java_ElementReference', the role 'java_ElementReference' has cardinality 0..*.
+An association connects 'java_PrimitiveType' and 'java_PrimitiveTypeReference'. From 'java_PrimitiveType', the role 'java_PrimitiveType' has cardinality 0..*, and from 'java_PrimitiveTypeReference', the role 'java_PrimitiveTypeReference' has cardinality 0..*.
+An association connects 'java_SelfReference' and 'java_Self'. From 'java_SelfReference', the role 'java_SelfReference' has cardinality 0..*, and from 'java_Self', the role 'java_Self128' has cardinality 0..*.
+An association connects 'java_Parametrizable' and 'java_Parameter'. From 'java_Parametrizable', the role 'java_Parametrizable' has cardinality 0..*, and from 'java_Parameter', the role 'java_Parameter' has cardinality 0..*.
+An association connects 'java_StatementContainer' and 'java_Statement'. From 'java_StatementContainer', the role 'java_StatementContainer' has cardinality 0..*, and from 'java_Statement', the role 'java_Statement' has cardinality 0..*.
+An association connects 'java_Statement' and 'java_StatementListContainer'. From 'java_Statement', the role 'java_Statement132' has cardinality 0..*, and from 'java_StatementListContainer', the role 'java_StatementListContainer' has cardinality 0..*.
+An association connects 'java_Conditional' and 'java_Expression'. From 'java_Conditional', the role 'java_Conditional' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression134' has cardinality 0..*.
+An association connects 'java_Assert' and 'java_Expression'. From 'java_Assert', the role 'java_Assert' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression136' has cardinality 0..*.
+An association connects 'java_OrdinaryParameter' and 'java_CatchBlock'. From 'java_OrdinaryParameter', the role 'java_OrdinaryParameter' has cardinality 0..*, and from 'java_CatchBlock', the role 'java_CatchBlock' has cardinality 0..*.
+An association connects 'java_Condition' and 'java_Statement'. From 'java_Condition', the role 'java_Condition' has cardinality 0..*, and from 'java_Statement', the role 'java_Statement139' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_ExpressionStatement'. From 'java_Expression', the role 'java_Expression141' has cardinality 0..*, and from 'java_ExpressionStatement', the role 'java_ExpressionStatement' has cardinality 0..*.
+An association connects 'java_ForLoop' and 'java_ForLoopInitializer'. From 'java_ForLoop', the role 'java_ForLoop' has cardinality 0..*, and from 'java_ForLoopInitializer', the role 'java_ForLoopInitializer' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_ForLoop'. From 'java_Expression', the role 'java_Expression145' has cardinality 0..*, and from 'java_ForLoop', the role 'java_ForLoop144' has cardinality 0..*.
+An association connects 'java_ForEachLoop' and 'java_OrdinaryParameter'. From 'java_ForEachLoop', the role 'java_ForEachLoop' has cardinality 0..*, and from 'java_OrdinaryParameter', the role 'java_OrdinaryParameter147' has cardinality 0..*.
+An association connects 'java_ForEachLoop' and 'java_Expression'. From 'java_ForEachLoop', the role 'java_ForEachLoop149' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression150' has cardinality 0..*.
+An association connects 'java_JumpLabel' and 'java_Jump'. From 'java_JumpLabel', the role 'java_JumpLabel' has cardinality 0..*, and from 'java_Jump', the role 'java_Jump' has cardinality 0..*.
+An association connects 'java_LocalVariable' and 'java_LocalVariableStatement'. From 'java_LocalVariable', the role 'java_LocalVariable' has cardinality 0..*, and from 'java_LocalVariableStatement', the role 'java_LocalVariableStatement' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_Return'. From 'java_Expression', the role 'java_Expression154' has cardinality 0..*, and from 'java_Return', the role 'java_Return' has cardinality 0..*.
+An association connects 'java_SwitchCase' and 'java_Switch'. From 'java_SwitchCase', the role 'java_SwitchCase' has cardinality 0..*, and from 'java_Switch', the role 'java_Switch' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_Switch'. From 'java_Expression', the role 'java_Expression158' has cardinality 0..*, and from 'java_Switch', the role 'java_Switch157' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_SynchronizedBlock'. From 'java_Expression', the role 'java_Expression160' has cardinality 0..*, and from 'java_SynchronizedBlock', the role 'java_SynchronizedBlock' has cardinality 0..*.
+An association connects 'java_Throw' and 'java_Expression'. From 'java_Throw', the role 'java_Throw' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression162' has cardinality 0..*.
+An association connects 'java_CatchBlock' and 'java_TryBlock'. From 'java_CatchBlock', the role 'java_CatchBlock164' has cardinality 0..*, and from 'java_TryBlock', the role 'java_TryBlock' has cardinality 0..*.
+An association connects 'java_Block' and 'java_TryBlock'. From 'java_Block', the role 'java_Block' has cardinality 0..*, and from 'java_TryBlock', the role 'java_TryBlock166' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_WhileLoop'. From 'java_Expression', the role 'java_Expression168' has cardinality 0..*, and from 'java_WhileLoop', the role 'java_WhileLoop' has cardinality 0..*.
+An association connects 'java_TypedElement' and 'java_TypeReference'. From 'java_TypedElement', the role 'java_TypedElement' has cardinality 0..*, and from 'java_TypeReference', the role 'java_TypeReference170' has cardinality 0..*.
+An association connects 'java_ClassifierReference' and 'java_Classifier'. From 'java_ClassifierReference', the role 'java_ClassifierReference' has cardinality 0..*, and from 'java_Classifier', the role 'java_Classifier172' has cardinality 0..*.
+An association connects 'java_NamespaceClassifierReference' and 'java_ClassifierReference'. From 'java_NamespaceClassifierReference', the role 'java_NamespaceClassifierReference174' has cardinality 0..*, and from 'java_ClassifierReference', the role 'java_ClassifierReference175' has cardinality 0..*.
+An association connects 'java_PackageReference' and 'java_PackageReference'. From 'java_PackageReference', the role 'java_PackageReference176' has cardinality 0..*, and from 'java_PackageReference', the role 'java_PackageReference' has cardinality 0..*.
+An association connects 'java_AdditionalLocalVariable' and 'java_LocalVariable'. From 'java_AdditionalLocalVariable', the role 'java_AdditionalLocalVariable' has cardinality 0..*, and from 'java_LocalVariable', the role 'java_LocalVariable179' has cardinality 0..*.

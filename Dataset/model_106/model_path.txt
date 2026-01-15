@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/lolybc88/Primitives/QVTO_Transformations/javaQuery_case/JDTAST.ecore

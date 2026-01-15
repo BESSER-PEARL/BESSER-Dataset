@@ -1,0 +1,23 @@
+The domain model 'simpleStateMachineMetaModel' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'simpleStateMachineMetaModel_State' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'simpleStateMachineMetaModel_SimpleStateMachine' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'simpleStateMachineMetaModel_Transition' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleStateMachineMetaModel_State' and 'simpleStateMachineMetaModel_SimpleStateMachine'. From 'simpleStateMachineMetaModel_State', the role 'State' has cardinality 0..*, and from 'simpleStateMachineMetaModel_SimpleStateMachine', the role 'SimpleStateMachine' has cardinality 0..*.
+An association connects 'simpleStateMachineMetaModel_SimpleStateMachine' and 'simpleStateMachineMetaModel_Transition'. From 'simpleStateMachineMetaModel_SimpleStateMachine', the role 'SimpleStateMachine2' has cardinality 0..*, and from 'simpleStateMachineMetaModel_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'simpleStateMachineMetaModel_State' and 'simpleStateMachineMetaModel_SimpleStateMachine'. From 'simpleStateMachineMetaModel_State', the role 'simpleStateMachineMetaModel_State' has cardinality 0..*, and from 'simpleStateMachineMetaModel_SimpleStateMachine', the role 'simpleStateMachineMetaModel_SimpleStateMachine' has cardinality 0..*.
+An association connects 'simpleStateMachineMetaModel_SimpleStateMachine' and 'simpleStateMachineMetaModel_Transition'. From 'simpleStateMachineMetaModel_SimpleStateMachine', the role 'SimpleStateMachine5' has cardinality 0..*, and from 'simpleStateMachineMetaModel_Transition', the role 'Transitions' has cardinality 0..*.
+An association connects 'simpleStateMachineMetaModel_Transition' and 'simpleStateMachineMetaModel_State'. From 'simpleStateMachineMetaModel_Transition', the role 'Outgoing' has cardinality 0..*, and from 'simpleStateMachineMetaModel_State', the role 'State7' has cardinality 0..*.
+An association connects 'simpleStateMachineMetaModel_State' and 'simpleStateMachineMetaModel_Transition'. From 'simpleStateMachineMetaModel_State', the role 'State9' has cardinality 0..*, and from 'simpleStateMachineMetaModel_Transition', the role 'Incoming' has cardinality 0..*.
+An association connects 'simpleStateMachineMetaModel_State' and 'simpleStateMachineMetaModel_SimpleStateMachine'. From 'simpleStateMachineMetaModel_State', the role 'States' has cardinality 0..*, and from 'simpleStateMachineMetaModel_SimpleStateMachine', the role 'SimpleStateMachine11' has cardinality 0..*.
+An association connects 'simpleStateMachineMetaModel_Transition' and 'simpleStateMachineMetaModel_State'. From 'simpleStateMachineMetaModel_Transition', the role 'Transition13' has cardinality 0..*, and from 'simpleStateMachineMetaModel_State', the role 'Source' has cardinality 0..*.
+An association connects 'simpleStateMachineMetaModel_State' and 'simpleStateMachineMetaModel_Transition'. From 'simpleStateMachineMetaModel_State', the role 'Target' has cardinality 0..*, and from 'simpleStateMachineMetaModel_Transition', the role 'Transition15' has cardinality 0..*.

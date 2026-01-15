@@ -1,0 +1,35 @@
+The domain model 'complexStateMachineMetaModel' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'complexStateMachineMetaModel_ComplexStateMachine' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'complexStateMachineMetaModel_CompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'complexStateMachineMetaModel_Transition' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'complexStateMachineMetaModel_State' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'complexStateMachineMetaModel_CompositeState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'complexStateMachineMetaModel_ComplexStateMachine' and 'complexStateMachineMetaModel_State'. From 'complexStateMachineMetaModel_ComplexStateMachine', the role 'ComplexStateMachine' has cardinality 0..*, and from 'complexStateMachineMetaModel_State', the role 'State' has cardinality 0..*.
+An association connects 'complexStateMachineMetaModel_Transition' and 'complexStateMachineMetaModel_ComplexStateMachine'. From 'complexStateMachineMetaModel_Transition', the role 'Transition' has cardinality 0..*, and from 'complexStateMachineMetaModel_ComplexStateMachine', the role 'ComplexStateMachine2' has cardinality 0..*.
+An association connects 'complexStateMachineMetaModel_State' and 'complexStateMachineMetaModel_ComplexStateMachine'. From 'complexStateMachineMetaModel_State', the role 'complexStateMachineMetaModel_State' has cardinality 0..*, and from 'complexStateMachineMetaModel_ComplexStateMachine', the role 'complexStateMachineMetaModel_ComplexStateMachine' has cardinality 0..*.
+An association connects 'complexStateMachineMetaModel_ComplexStateMachine' and 'complexStateMachineMetaModel_Transition'. From 'complexStateMachineMetaModel_ComplexStateMachine', the role 'ComplexStateMachine5' has cardinality 0..*, and from 'complexStateMachineMetaModel_Transition', the role 'Transitions' has cardinality 0..*.
+An association connects 'complexStateMachineMetaModel_State' and 'complexStateMachineMetaModel_Transition'. From 'complexStateMachineMetaModel_State', the role 'State7' has cardinality 0..*, and from 'complexStateMachineMetaModel_Transition', the role 'Outgoing' has cardinality 0..*.
+An association connects 'complexStateMachineMetaModel_State' and 'complexStateMachineMetaModel_Transition'. From 'complexStateMachineMetaModel_State', the role 'State9' has cardinality 0..*, and from 'complexStateMachineMetaModel_Transition', the role 'Incoming' has cardinality 0..*.
+An association connects 'complexStateMachineMetaModel_ComplexStateMachine' and 'complexStateMachineMetaModel_State'. From 'complexStateMachineMetaModel_ComplexStateMachine', the role 'ComplexStateMachine11' has cardinality 0..*, and from 'complexStateMachineMetaModel_State', the role 'States' has cardinality 0..*.
+An association connects 'complexStateMachineMetaModel_State' and 'complexStateMachineMetaModel_Transition'. From 'complexStateMachineMetaModel_State', the role 'Source' has cardinality 0..*, and from 'complexStateMachineMetaModel_Transition', the role 'Transition13' has cardinality 0..*.
+An association connects 'complexStateMachineMetaModel_Transition' and 'complexStateMachineMetaModel_State'. From 'complexStateMachineMetaModel_Transition', the role 'Transition15' has cardinality 0..*, and from 'complexStateMachineMetaModel_State', the role 'Target' has cardinality 0..*.
+An association connects 'complexStateMachineMetaModel_State' and 'complexStateMachineMetaModel_CompositeState'. From 'complexStateMachineMetaModel_State', the role 'States17' has cardinality 0..*, and from 'complexStateMachineMetaModel_CompositeState', the role 'CompositeState' has cardinality 0..*.
+An association connects 'complexStateMachineMetaModel_CompositeState' and 'complexStateMachineMetaModel_State'. From 'complexStateMachineMetaModel_CompositeState', the role 'CompositeState19' has cardinality 0..*, and from 'complexStateMachineMetaModel_State', the role 'State20' has cardinality 0..*.
+An association connects 'complexStateMachineMetaModel_CompositeState' and 'complexStateMachineMetaModel_State'. From 'complexStateMachineMetaModel_CompositeState', the role 'complexStateMachineMetaModel_CompositeState' has cardinality 0..*, and from 'complexStateMachineMetaModel_State', the role 'complexStateMachineMetaModel_State22' has cardinality 0..*.

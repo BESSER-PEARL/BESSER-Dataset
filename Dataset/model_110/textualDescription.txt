@@ -1,0 +1,678 @@
+The domain model 'ast' describes the core structural elements and their relationships within the system.
+
+The model defines 120 main class(es).
+
+'ast_ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_FieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_ExpressionMethodReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_MethodRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Name' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_Name' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_SimpleName' represents an important domain concept.
+It has one attribute: 'identifier', which is of type str.
+
+'ast_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_AnnotationTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_ParenthesizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_SingleVariableDeclaration' represents an important domain concept.
+It has one attribute: 'varargs', which is of type bool.
+
+'ast_CharacterLiteral' represents an important domain concept.
+It has one attribute: 'escapedValue', which is of type str.
+
+'ast_QualifiedName' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_ImportDeclaration' represents an important domain concept.
+It has the following attributes: 'static', which is of type bool; 'onDemand', which is of type bool.
+
+'ast_MarkerAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_NumberLiteral' represents an important domain concept.
+It has one attribute: 'token', which is of type str.
+
+'AnnotatableType' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_SuperFieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_Initializer' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_SuperMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_PackageDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_CastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_PrefixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'ast_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_PrimitiveType' represents an important domain concept.
+It has one attribute: 'primitiveTypeCode', which is of type str.
+
+'ast_AnnotationTypeMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_ArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_Javadoc' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_VariableDeclarationFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_QualifiedType' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_LineComment' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_ArrayAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'IDocElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_AnnotatableType' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_NormalAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_TagElement' represents an important domain concept.
+It has one attribute: 'tagName', which is of type str.
+
+'ast_TypeDeclaration' represents an important domain concept.
+It has one attribute: 'interface', which is of type bool.
+
+'ast_CatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'booleanValue', which is of type bool.
+
+'ast_MemberRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_AssertStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_SwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_MemberValuePair' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_EnumConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_IntersectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_Assignment' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'ast_SingleMemberAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_SuperConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_TypeDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_SynchronizedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_DoStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_ClassInstanceCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_EmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_ArrayCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_ThisExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_VariableDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_Dimension' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_MethodDeclaration' represents an important domain concept.
+It has one attribute: 'constructor', which is of type bool.
+
+'ast_ParameterizedType' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_IDocElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_MethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_CreationReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_LabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_TypeMethodReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_TypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_PostfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'ast_MethodReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_TypeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'IExtendedModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_IExtendedModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_VariableDeclarationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_BlockComment' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_NameQualifiedType' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_EnumDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_WildcardType' represents an important domain concept.
+It has one attribute: 'upperBound', which is of type bool.
+
+'ast_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_ThrowStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_TextElement' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'ast_SimpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_Modifier' represents an important domain concept.
+It has one attribute: 'keyword', which is of type str.
+
+'ast_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_TryStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_FieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_MethodRefParameter' represents an important domain concept.
+It has one attribute: 'varargs', which is of type bool.
+
+'ast_SuperMethodReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_InfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'ast_AnonymousClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_LambdaExpression' represents an important domain concept.
+It has one attribute: 'parentheses', which is of type bool.
+
+'ast_UnionType' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_EnhancedForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_AbstractTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_InstanceofExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_ConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_StringLiteral' represents an important domain concept.
+It has one attribute: 'escapedValue', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'ast_Modifier' is a specialization of 'ASTNode'.
+The class 'ast_Modifier' is a specialization of 'IExtendedModifier'.
+The class 'ast_MarkerAnnotation' is a specialization of 'Annotation'.
+The class 'ast_Annotation' is a specialization of 'Expression'.
+The class 'ast_Annotation' is a specialization of 'IExtendedModifier'.
+The class 'ast_Expression' is a specialization of 'ASTNode'.
+The class 'ast_NormalAnnotation' is a specialization of 'Annotation'.
+The class 'ast_SingleMemberAnnotation' is a specialization of 'Annotation'.
+The class 'ast_MemberRef' is a specialization of 'ASTNode'.
+The class 'ast_MemberRef' is a specialization of 'IDocElement'.
+The class 'ast_MethodRef' is a specialization of 'ASTNode'.
+The class 'ast_MethodRef' is a specialization of 'IDocElement'.
+The class 'ast_Name' is a specialization of 'Expression'.
+The class 'ast_Name' is a specialization of 'IDocElement'.
+The class 'ast_TagElement' is a specialization of 'ASTNode'.
+The class 'ast_TagElement' is a specialization of 'IDocElement'.
+The class 'ast_TextElement' is a specialization of 'ASTNode'.
+The class 'ast_TextElement' is a specialization of 'IDocElement'.
+The class 'ast_AnonymousClassDeclaration' is a specialization of 'ASTNode'.
+The class 'ast_ArrayAccess' is a specialization of 'Expression'.
+The class 'ast_ArrayCreation' is a specialization of 'Expression'.
+The class 'ast_ArrayInitializer' is a specialization of 'Expression'.
+The class 'ast_ArrayType' is a specialization of 'Type'.
+The class 'ast_Type' is a specialization of 'ASTNode'.
+The class 'ast_AssertStatement' is a specialization of 'Statement'.
+The class 'ast_Statement' is a specialization of 'ASTNode'.
+The class 'ast_Assignment' is a specialization of 'Expression'.
+The class 'ast_Block' is a specialization of 'Statement'.
+The class 'ast_BooleanLiteral' is a specialization of 'Expression'.
+The class 'ast_BreakStatement' is a specialization of 'Statement'.
+The class 'ast_CastExpression' is a specialization of 'Expression'.
+The class 'ast_CatchClause' is a specialization of 'ASTNode'.
+The class 'ast_CharacterLiteral' is a specialization of 'Expression'.
+The class 'ast_ClassInstanceCreation' is a specialization of 'Expression'.
+The class 'ast_CompilationUnit' is a specialization of 'ASTNode'.
+The class 'ast_ConditionalExpression' is a specialization of 'Expression'.
+The class 'ast_ConstructorInvocation' is a specialization of 'Statement'.
+The class 'ast_ContinueStatement' is a specialization of 'Statement'.
+The class 'ast_DoStatement' is a specialization of 'Statement'.
+The class 'ast_EmptyStatement' is a specialization of 'Statement'.
+The class 'ast_ExpressionStatement' is a specialization of 'Statement'.
+The class 'ast_FieldAccess' is a specialization of 'Expression'.
+The class 'ast_FieldDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'ast_BodyDeclaration' is a specialization of 'ASTNode'.
+The class 'ast_ForStatement' is a specialization of 'Statement'.
+The class 'ast_IfStatement' is a specialization of 'Statement'.
+The class 'ast_ImportDeclaration' is a specialization of 'ASTNode'.
+The class 'ast_InfixExpression' is a specialization of 'Expression'.
+The class 'ast_Initializer' is a specialization of 'BodyDeclaration'.
+The class 'ast_Javadoc' is a specialization of 'Comment'.
+The class 'ast_Comment' is a specialization of 'ASTNode'.
+The class 'ast_LabeledStatement' is a specialization of 'Statement'.
+The class 'ast_MethodDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'ast_MethodInvocation' is a specialization of 'Expression'.
+The class 'ast_NullLiteral' is a specialization of 'Expression'.
+The class 'ast_NumberLiteral' is a specialization of 'Expression'.
+The class 'ast_PackageDeclaration' is a specialization of 'ASTNode'.
+The class 'ast_ParenthesizedExpression' is a specialization of 'Expression'.
+The class 'ast_PostfixExpression' is a specialization of 'Expression'.
+The class 'ast_PrefixExpression' is a specialization of 'Expression'.
+The class 'ast_PrimitiveType' is a specialization of 'AnnotatableType'.
+The class 'ast_AnnotatableType' is a specialization of 'Type'.
+The class 'ast_QualifiedName' is a specialization of 'Name'.
+The class 'ast_ReturnStatement' is a specialization of 'Statement'.
+The class 'ast_SimpleName' is a specialization of 'Name'.
+The class 'ast_SimpleType' is a specialization of 'AnnotatableType'.
+The class 'ast_SingleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+The class 'ast_VariableDeclaration' is a specialization of 'ASTNode'.
+The class 'ast_StringLiteral' is a specialization of 'Expression'.
+The class 'ast_SuperConstructorInvocation' is a specialization of 'Statement'.
+The class 'ast_SuperFieldAccess' is a specialization of 'Expression'.
+The class 'ast_SuperMethodInvocation' is a specialization of 'Expression'.
+The class 'ast_SwitchCase' is a specialization of 'Statement'.
+The class 'ast_SwitchStatement' is a specialization of 'Statement'.
+The class 'ast_SynchronizedStatement' is a specialization of 'Statement'.
+The class 'ast_ThisExpression' is a specialization of 'Expression'.
+The class 'ast_ThrowStatement' is a specialization of 'Statement'.
+The class 'ast_TryStatement' is a specialization of 'Statement'.
+The class 'ast_TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'ast_AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'ast_TypeDeclarationStatement' is a specialization of 'Statement'.
+The class 'ast_TypeLiteral' is a specialization of 'Expression'.
+The class 'ast_VariableDeclarationExpression' is a specialization of 'Expression'.
+The class 'ast_VariableDeclarationFragment' is a specialization of 'VariableDeclaration'.
+The class 'ast_VariableDeclarationStatement' is a specialization of 'Statement'.
+The class 'ast_WhileStatement' is a specialization of 'Statement'.
+The class 'ast_InstanceofExpression' is a specialization of 'Expression'.
+The class 'ast_LineComment' is a specialization of 'Comment'.
+The class 'ast_BlockComment' is a specialization of 'Comment'.
+The class 'ast_MethodRefParameter' is a specialization of 'ASTNode'.
+The class 'ast_EnhancedForStatement' is a specialization of 'Statement'.
+The class 'ast_EnumDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'ast_EnumConstantDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'ast_TypeParameter' is a specialization of 'ASTNode'.
+The class 'ast_ParameterizedType' is a specialization of 'Type'.
+The class 'ast_QualifiedType' is a specialization of 'AnnotatableType'.
+The class 'ast_WildcardType' is a specialization of 'AnnotatableType'.
+The class 'ast_MemberValuePair' is a specialization of 'ASTNode'.
+The class 'ast_AnnotationTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'ast_AnnotationTypeMemberDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'ast_UnionType' is a specialization of 'Type'.
+The class 'ast_Dimension' is a specialization of 'ASTNode'.
+The class 'ast_LambdaExpression' is a specialization of 'Expression'.
+The class 'ast_IntersectionType' is a specialization of 'Type'.
+The class 'ast_NameQualifiedType' is a specialization of 'AnnotatableType'.
+The class 'ast_CreationReference' is a specialization of 'MethodReference'.
+The class 'ast_MethodReference' is a specialization of 'Expression'.
+The class 'ast_ExpressionMethodReference' is a specialization of 'MethodReference'.
+The class 'ast_SuperMethodReference' is a specialization of 'MethodReference'.
+The class 'ast_TypeMethodReference' is a specialization of 'MethodReference'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ast_Name' and 'ast_MarkerAnnotation'. From 'ast_Name', the role 'ast_Name' has cardinality 0..*, and from 'ast_MarkerAnnotation', the role 'ast_MarkerAnnotation' has cardinality 0..*.
+An association connects 'ast_Name' and 'ast_NormalAnnotation'. From 'ast_Name', the role 'ast_Name2' has cardinality 0..*, and from 'ast_NormalAnnotation', the role 'ast_NormalAnnotation' has cardinality 0..*.
+An association connects 'ast_NormalAnnotation' and 'ast_MemberValuePair'. From 'ast_NormalAnnotation', the role 'ast_NormalAnnotation4' has cardinality 0..*, and from 'ast_MemberValuePair', the role 'ast_MemberValuePair' has cardinality 0..*.
+An association connects 'ast_SingleMemberAnnotation' and 'ast_Name'. From 'ast_SingleMemberAnnotation', the role 'ast_SingleMemberAnnotation' has cardinality 0..*, and from 'ast_Name', the role 'ast_Name6' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_SingleMemberAnnotation'. From 'ast_Expression', the role 'ast_Expression' has cardinality 0..*, and from 'ast_SingleMemberAnnotation', the role 'ast_SingleMemberAnnotation8' has cardinality 0..*.
+An association connects 'ast_Name' and 'ast_MemberRef'. From 'ast_Name', the role 'ast_Name10' has cardinality 0..*, and from 'ast_MemberRef', the role 'ast_MemberRef' has cardinality 0..*.
+An association connects 'ast_SimpleName' and 'ast_MemberRef'. From 'ast_SimpleName', the role 'ast_SimpleName' has cardinality 0..*, and from 'ast_MemberRef', the role 'ast_MemberRef12' has cardinality 0..*.
+An association connects 'ast_MethodRef' and 'ast_Name'. From 'ast_MethodRef', the role 'ast_MethodRef' has cardinality 0..*, and from 'ast_Name', the role 'ast_Name14' has cardinality 0..*.
+An association connects 'ast_MethodRef' and 'ast_SimpleName'. From 'ast_MethodRef', the role 'ast_MethodRef16' has cardinality 0..*, and from 'ast_SimpleName', the role 'ast_SimpleName17' has cardinality 0..*.
+An association connects 'ast_MethodRefParameter' and 'ast_MethodRef'. From 'ast_MethodRefParameter', the role 'ast_MethodRefParameter' has cardinality 0..*, and from 'ast_MethodRef', the role 'ast_MethodRef19' has cardinality 0..*.
+An association connects 'ast_TagElement' and 'ast_IDocElement'. From 'ast_TagElement', the role 'ast_TagElement' has cardinality 0..*, and from 'ast_IDocElement', the role 'ast_IDocElement' has cardinality 0..*.
+An association connects 'ast_AnonymousClassDeclaration' and 'ast_BodyDeclaration'. From 'ast_AnonymousClassDeclaration', the role 'ast_AnonymousClassDeclaration' has cardinality 0..*, and from 'ast_BodyDeclaration', the role 'ast_BodyDeclaration' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_ArrayAccess'. From 'ast_Expression', the role 'ast_Expression23' has cardinality 0..*, and from 'ast_ArrayAccess', the role 'ast_ArrayAccess' has cardinality 0..*.
+An association connects 'ast_ArrayAccess' and 'ast_Expression'. From 'ast_ArrayAccess', the role 'ast_ArrayAccess25' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression26' has cardinality 0..*.
+An association connects 'ast_ArrayCreation' and 'ast_ArrayType'. From 'ast_ArrayCreation', the role 'ast_ArrayCreation' has cardinality 0..*, and from 'ast_ArrayType', the role 'ast_ArrayType' has cardinality 0..*.
+An association connects 'ast_ArrayCreation' and 'ast_Expression'. From 'ast_ArrayCreation', the role 'ast_ArrayCreation29' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression30' has cardinality 0..*.
+An association connects 'ast_ArrayCreation' and 'ast_ArrayInitializer'. From 'ast_ArrayCreation', the role 'ast_ArrayCreation32' has cardinality 0..*, and from 'ast_ArrayInitializer', the role 'ast_ArrayInitializer' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_ArrayInitializer'. From 'ast_Expression', the role 'ast_Expression35' has cardinality 0..*, and from 'ast_ArrayInitializer', the role 'ast_ArrayInitializer34' has cardinality 0..*.
+An association connects 'ast_Type' and 'ast_ArrayType'. From 'ast_Type', the role 'ast_Type' has cardinality 0..*, and from 'ast_ArrayType', the role 'ast_ArrayType37' has cardinality 0..*.
+An association connects 'ast_Dimension' and 'ast_ArrayType'. From 'ast_Dimension', the role 'ast_Dimension' has cardinality 0..*, and from 'ast_ArrayType', the role 'ast_ArrayType39' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_AssertStatement'. From 'ast_Expression', the role 'ast_Expression41' has cardinality 0..*, and from 'ast_AssertStatement', the role 'ast_AssertStatement' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_AssertStatement'. From 'ast_Expression', the role 'ast_Expression44' has cardinality 0..*, and from 'ast_AssertStatement', the role 'ast_AssertStatement43' has cardinality 0..*.
+An association connects 'ast_Assignment' and 'ast_Expression'. From 'ast_Assignment', the role 'ast_Assignment' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression46' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_Assignment'. From 'ast_Expression', the role 'ast_Expression49' has cardinality 0..*, and from 'ast_Assignment', the role 'ast_Assignment48' has cardinality 0..*.
+An association connects 'ast_Statement' and 'ast_Block'. From 'ast_Statement', the role 'ast_Statement' has cardinality 0..*, and from 'ast_Block', the role 'ast_Block' has cardinality 0..*.
+An association connects 'ast_SimpleName' and 'ast_BreakStatement'. From 'ast_SimpleName', the role 'ast_SimpleName52' has cardinality 0..*, and from 'ast_BreakStatement', the role 'ast_BreakStatement' has cardinality 0..*.
+An association connects 'ast_CastExpression' and 'ast_Type'. From 'ast_CastExpression', the role 'ast_CastExpression' has cardinality 0..*, and from 'ast_Type', the role 'ast_Type54' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_CastExpression'. From 'ast_Expression', the role 'ast_Expression57' has cardinality 0..*, and from 'ast_CastExpression', the role 'ast_CastExpression56' has cardinality 0..*.
+An association connects 'ast_CatchClause' and 'ast_SingleVariableDeclaration'. From 'ast_CatchClause', the role 'ast_CatchClause' has cardinality 0..*, and from 'ast_SingleVariableDeclaration', the role 'ast_SingleVariableDeclaration' has cardinality 0..*.
+An association connects 'ast_Block' and 'ast_CatchClause'. From 'ast_Block', the role 'ast_Block61' has cardinality 0..*, and from 'ast_CatchClause', the role 'ast_CatchClause60' has cardinality 0..*.
+An association connects 'ast_ClassInstanceCreation' and 'ast_Expression'. From 'ast_ClassInstanceCreation', the role 'ast_ClassInstanceCreation' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression63' has cardinality 0..*.
+An association connects 'ast_ClassInstanceCreation' and 'ast_Type'. From 'ast_ClassInstanceCreation', the role 'ast_ClassInstanceCreation65' has cardinality 0..*, and from 'ast_Type', the role 'ast_Type66' has cardinality 0..*.
+An association connects 'ast_Type' and 'ast_ClassInstanceCreation'. From 'ast_Type', the role 'ast_Type69' has cardinality 0..*, and from 'ast_ClassInstanceCreation', the role 'ast_ClassInstanceCreation68' has cardinality 0..*.
+An association connects 'ast_ClassInstanceCreation' and 'ast_Expression'. From 'ast_ClassInstanceCreation', the role 'ast_ClassInstanceCreation71' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression72' has cardinality 0..*.
+An association connects 'ast_AnonymousClassDeclaration' and 'ast_ClassInstanceCreation'. From 'ast_AnonymousClassDeclaration', the role 'ast_AnonymousClassDeclaration75' has cardinality 0..*, and from 'ast_ClassInstanceCreation', the role 'ast_ClassInstanceCreation74' has cardinality 0..*.
+An association connects 'ast_PackageDeclaration' and 'ast_CompilationUnit'. From 'ast_PackageDeclaration', the role 'ast_PackageDeclaration' has cardinality 0..*, and from 'ast_CompilationUnit', the role 'ast_CompilationUnit' has cardinality 0..*.
+An association connects 'ast_ImportDeclaration' and 'ast_CompilationUnit'. From 'ast_ImportDeclaration', the role 'ast_ImportDeclaration' has cardinality 0..*, and from 'ast_CompilationUnit', the role 'ast_CompilationUnit78' has cardinality 0..*.
+An association connects 'ast_AbstractTypeDeclaration' and 'ast_CompilationUnit'. From 'ast_AbstractTypeDeclaration', the role 'ast_AbstractTypeDeclaration' has cardinality 0..*, and from 'ast_CompilationUnit', the role 'ast_CompilationUnit80' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_ConditionalExpression'. From 'ast_Expression', the role 'ast_Expression82' has cardinality 0..*, and from 'ast_ConditionalExpression', the role 'ast_ConditionalExpression' has cardinality 0..*.
+An association connects 'ast_ConditionalExpression' and 'ast_Expression'. From 'ast_ConditionalExpression', the role 'ast_ConditionalExpression84' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression85' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_ConditionalExpression'. From 'ast_Expression', the role 'ast_Expression88' has cardinality 0..*, and from 'ast_ConditionalExpression', the role 'ast_ConditionalExpression87' has cardinality 0..*.
+An association connects 'ast_ConstructorInvocation' and 'ast_Type'. From 'ast_ConstructorInvocation', the role 'ast_ConstructorInvocation' has cardinality 0..*, and from 'ast_Type', the role 'ast_Type90' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_ConstructorInvocation'. From 'ast_Expression', the role 'ast_Expression93' has cardinality 0..*, and from 'ast_ConstructorInvocation', the role 'ast_ConstructorInvocation92' has cardinality 0..*.
+An association connects 'ast_ContinueStatement' and 'ast_SimpleName'. From 'ast_ContinueStatement', the role 'ast_ContinueStatement' has cardinality 0..*, and from 'ast_SimpleName', the role 'ast_SimpleName95' has cardinality 0..*.
+An association connects 'ast_DoStatement' and 'ast_Statement'. From 'ast_DoStatement', the role 'ast_DoStatement' has cardinality 0..*, and from 'ast_Statement', the role 'ast_Statement97' has cardinality 0..*.
+An association connects 'ast_DoStatement' and 'ast_Expression'. From 'ast_DoStatement', the role 'ast_DoStatement99' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression100' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_ExpressionStatement'. From 'ast_Expression', the role 'ast_Expression102' has cardinality 0..*, and from 'ast_ExpressionStatement', the role 'ast_ExpressionStatement' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_FieldAccess'. From 'ast_Expression', the role 'ast_Expression104' has cardinality 0..*, and from 'ast_FieldAccess', the role 'ast_FieldAccess' has cardinality 0..*.
+An association connects 'ast_FieldAccess' and 'ast_SimpleName'. From 'ast_FieldAccess', the role 'ast_FieldAccess106' has cardinality 0..*, and from 'ast_SimpleName', the role 'ast_SimpleName107' has cardinality 0..*.
+An association connects 'ast_FieldDeclaration' and 'ast_Javadoc'. From 'ast_FieldDeclaration', the role 'ast_FieldDeclaration' has cardinality 0..*, and from 'ast_Javadoc', the role 'ast_Javadoc' has cardinality 0..*.
+An association connects 'ast_IExtendedModifier' and 'ast_FieldDeclaration'. From 'ast_IExtendedModifier', the role 'ast_IExtendedModifier' has cardinality 0..*, and from 'ast_FieldDeclaration', the role 'ast_FieldDeclaration110' has cardinality 0..*.
+An association connects 'ast_Type' and 'ast_FieldDeclaration'. From 'ast_Type', the role 'ast_Type113' has cardinality 0..*, and from 'ast_FieldDeclaration', the role 'ast_FieldDeclaration112' has cardinality 0..*.
+An association connects 'ast_VariableDeclarationFragment' and 'ast_FieldDeclaration'. From 'ast_VariableDeclarationFragment', the role 'ast_VariableDeclarationFragment' has cardinality 0..*, and from 'ast_FieldDeclaration', the role 'ast_FieldDeclaration115' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_ForStatement'. From 'ast_Expression', the role 'ast_Expression117' has cardinality 0..*, and from 'ast_ForStatement', the role 'ast_ForStatement' has cardinality 0..*.
+An association connects 'ast_ForStatement' and 'ast_Expression'. From 'ast_ForStatement', the role 'ast_ForStatement119' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression120' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_ForStatement'. From 'ast_Expression', the role 'ast_Expression123' has cardinality 0..*, and from 'ast_ForStatement', the role 'ast_ForStatement122' has cardinality 0..*.
+An association connects 'ast_Statement' and 'ast_ForStatement'. From 'ast_Statement', the role 'ast_Statement126' has cardinality 0..*, and from 'ast_ForStatement', the role 'ast_ForStatement125' has cardinality 0..*.
+An association connects 'ast_IfStatement' and 'ast_Expression'. From 'ast_IfStatement', the role 'ast_IfStatement' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression128' has cardinality 0..*.
+An association connects 'ast_Statement' and 'ast_IfStatement'. From 'ast_Statement', the role 'ast_Statement131' has cardinality 0..*, and from 'ast_IfStatement', the role 'ast_IfStatement130' has cardinality 0..*.
+An association connects 'ast_IfStatement' and 'ast_Statement'. From 'ast_IfStatement', the role 'ast_IfStatement133' has cardinality 0..*, and from 'ast_Statement', the role 'ast_Statement134' has cardinality 0..*.
+An association connects 'ast_ImportDeclaration' and 'ast_Name'. From 'ast_ImportDeclaration', the role 'ast_ImportDeclaration136' has cardinality 0..*, and from 'ast_Name', the role 'ast_Name137' has cardinality 0..*.
+An association connects 'ast_InfixExpression' and 'ast_Expression'. From 'ast_InfixExpression', the role 'ast_InfixExpression' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression139' has cardinality 0..*.
+An association connects 'ast_InfixExpression' and 'ast_Expression'. From 'ast_InfixExpression', the role 'ast_InfixExpression141' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression142' has cardinality 0..*.
+An association connects 'ast_InfixExpression' and 'ast_Expression'. From 'ast_InfixExpression', the role 'ast_InfixExpression144' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression145' has cardinality 0..*.
+An association connects 'ast_Javadoc' and 'ast_Initializer'. From 'ast_Javadoc', the role 'ast_Javadoc147' has cardinality 0..*, and from 'ast_Initializer', the role 'ast_Initializer' has cardinality 0..*.
+An association connects 'ast_IExtendedModifier' and 'ast_Initializer'. From 'ast_IExtendedModifier', the role 'ast_IExtendedModifier150' has cardinality 0..*, and from 'ast_Initializer', the role 'ast_Initializer149' has cardinality 0..*.
+An association connects 'ast_Initializer' and 'ast_Block'. From 'ast_Initializer', the role 'ast_Initializer152' has cardinality 0..*, and from 'ast_Block', the role 'ast_Block153' has cardinality 0..*.
+An association connects 'ast_TagElement' and 'ast_Javadoc'. From 'ast_TagElement', the role 'ast_TagElement156' has cardinality 0..*, and from 'ast_Javadoc', the role 'ast_Javadoc155' has cardinality 0..*.
+An association connects 'ast_SimpleName' and 'ast_LabeledStatement'. From 'ast_SimpleName', the role 'ast_SimpleName158' has cardinality 0..*, and from 'ast_LabeledStatement', the role 'ast_LabeledStatement' has cardinality 0..*.
+An association connects 'ast_LabeledStatement' and 'ast_Statement'. From 'ast_LabeledStatement', the role 'ast_LabeledStatement160' has cardinality 0..*, and from 'ast_Statement', the role 'ast_Statement161' has cardinality 0..*.
+An association connects 'ast_MethodDeclaration' and 'ast_Javadoc'. From 'ast_MethodDeclaration', the role 'ast_MethodDeclaration' has cardinality 0..*, and from 'ast_Javadoc', the role 'ast_Javadoc163' has cardinality 0..*.
+An association connects 'ast_IExtendedModifier' and 'ast_MethodDeclaration'. From 'ast_IExtendedModifier', the role 'ast_IExtendedModifier166' has cardinality 0..*, and from 'ast_MethodDeclaration', the role 'ast_MethodDeclaration165' has cardinality 0..*.
+An association connects 'ast_TypeParameter' and 'ast_MethodDeclaration'. From 'ast_TypeParameter', the role 'ast_TypeParameter' has cardinality 0..*, and from 'ast_MethodDeclaration', the role 'ast_MethodDeclaration168' has cardinality 0..*.
+An association connects 'ast_MethodDeclaration' and 'ast_Type'. From 'ast_MethodDeclaration', the role 'ast_MethodDeclaration170' has cardinality 0..*, and from 'ast_Type', the role 'ast_Type171' has cardinality 0..*.
+An association connects 'ast_MethodDeclaration' and 'ast_SimpleName'. From 'ast_MethodDeclaration', the role 'ast_MethodDeclaration173' has cardinality 0..*, and from 'ast_SimpleName', the role 'ast_SimpleName174' has cardinality 0..*.
+An association connects 'ast_MethodDeclaration' and 'ast_Type'. From 'ast_MethodDeclaration', the role 'ast_MethodDeclaration176' has cardinality 0..*, and from 'ast_Type', the role 'ast_Type177' has cardinality 0..*.
+An association connects 'ast_MethodDeclaration' and 'ast_SimpleName'. From 'ast_MethodDeclaration', the role 'ast_MethodDeclaration179' has cardinality 0..*, and from 'ast_SimpleName', the role 'ast_SimpleName180' has cardinality 0..*.
+An association connects 'ast_MethodDeclaration' and 'ast_SingleVariableDeclaration'. From 'ast_MethodDeclaration', the role 'ast_MethodDeclaration182' has cardinality 0..*, and from 'ast_SingleVariableDeclaration', the role 'ast_SingleVariableDeclaration183' has cardinality 0..*.
+An association connects 'ast_MethodDeclaration' and 'ast_Dimension'. From 'ast_MethodDeclaration', the role 'ast_MethodDeclaration185' has cardinality 0..*, and from 'ast_Dimension', the role 'ast_Dimension186' has cardinality 0..*.
+An association connects 'ast_Type' and 'ast_MethodDeclaration'. From 'ast_Type', the role 'ast_Type189' has cardinality 0..*, and from 'ast_MethodDeclaration', the role 'ast_MethodDeclaration188' has cardinality 0..*.
+An association connects 'ast_Block' and 'ast_MethodDeclaration'. From 'ast_Block', the role 'ast_Block192' has cardinality 0..*, and from 'ast_MethodDeclaration', the role 'ast_MethodDeclaration191' has cardinality 0..*.
+An association connects 'ast_MethodInvocation' and 'ast_Expression'. From 'ast_MethodInvocation', the role 'ast_MethodInvocation' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression194' has cardinality 0..*.
+An association connects 'ast_Type' and 'ast_MethodInvocation'. From 'ast_Type', the role 'ast_Type197' has cardinality 0..*, and from 'ast_MethodInvocation', the role 'ast_MethodInvocation196' has cardinality 0..*.
+An association connects 'ast_SimpleName' and 'ast_MethodInvocation'. From 'ast_SimpleName', the role 'ast_SimpleName200' has cardinality 0..*, and from 'ast_MethodInvocation', the role 'ast_MethodInvocation199' has cardinality 0..*.
+An association connects 'ast_MethodInvocation' and 'ast_Expression'. From 'ast_MethodInvocation', the role 'ast_MethodInvocation202' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression203' has cardinality 0..*.
+An association connects 'ast_Javadoc' and 'ast_PackageDeclaration'. From 'ast_Javadoc', the role 'ast_Javadoc206' has cardinality 0..*, and from 'ast_PackageDeclaration', the role 'ast_PackageDeclaration205' has cardinality 0..*.
+An association connects 'ast_Annotation' and 'ast_PackageDeclaration'. From 'ast_Annotation', the role 'ast_Annotation' has cardinality 0..*, and from 'ast_PackageDeclaration', the role 'ast_PackageDeclaration208' has cardinality 0..*.
+An association connects 'ast_PackageDeclaration' and 'ast_Name'. From 'ast_PackageDeclaration', the role 'ast_PackageDeclaration210' has cardinality 0..*, and from 'ast_Name', the role 'ast_Name211' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_ParenthesizedExpression'. From 'ast_Expression', the role 'ast_Expression213' has cardinality 0..*, and from 'ast_ParenthesizedExpression', the role 'ast_ParenthesizedExpression' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_PostfixExpression'. From 'ast_Expression', the role 'ast_Expression215' has cardinality 0..*, and from 'ast_PostfixExpression', the role 'ast_PostfixExpression' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_PrefixExpression'. From 'ast_Expression', the role 'ast_Expression217' has cardinality 0..*, and from 'ast_PrefixExpression', the role 'ast_PrefixExpression' has cardinality 0..*.
+An association connects 'ast_Annotation' and 'ast_PrimitiveType'. From 'ast_Annotation', the role 'ast_Annotation219' has cardinality 0..*, and from 'ast_PrimitiveType', the role 'ast_PrimitiveType' has cardinality 0..*.
+An association connects 'ast_Name' and 'ast_QualifiedName'. From 'ast_Name', the role 'ast_Name221' has cardinality 0..*, and from 'ast_QualifiedName', the role 'ast_QualifiedName' has cardinality 0..*.
+An association connects 'ast_QualifiedName' and 'ast_SimpleName'. From 'ast_QualifiedName', the role 'ast_QualifiedName223' has cardinality 0..*, and from 'ast_SimpleName', the role 'ast_SimpleName224' has cardinality 0..*.
+An association connects 'ast_ReturnStatement' and 'ast_Expression'. From 'ast_ReturnStatement', the role 'ast_ReturnStatement' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression226' has cardinality 0..*.
+An association connects 'ast_SimpleType' and 'ast_Annotation'. From 'ast_SimpleType', the role 'ast_SimpleType' has cardinality 0..*, and from 'ast_Annotation', the role 'ast_Annotation228' has cardinality 0..*.
+An association connects 'ast_SimpleType' and 'ast_Name'. From 'ast_SimpleType', the role 'ast_SimpleType230' has cardinality 0..*, and from 'ast_Name', the role 'ast_Name231' has cardinality 0..*.
+An association connects 'ast_IExtendedModifier' and 'ast_SingleVariableDeclaration'. From 'ast_IExtendedModifier', the role 'ast_IExtendedModifier234' has cardinality 0..*, and from 'ast_SingleVariableDeclaration', the role 'ast_SingleVariableDeclaration233' has cardinality 0..*.
+An association connects 'ast_SingleVariableDeclaration' and 'ast_Type'. From 'ast_SingleVariableDeclaration', the role 'ast_SingleVariableDeclaration236' has cardinality 0..*, and from 'ast_Type', the role 'ast_Type237' has cardinality 0..*.
+An association connects 'ast_SingleVariableDeclaration' and 'ast_Annotation'. From 'ast_SingleVariableDeclaration', the role 'ast_SingleVariableDeclaration239' has cardinality 0..*, and from 'ast_Annotation', the role 'ast_Annotation240' has cardinality 0..*.
+An association connects 'ast_SingleVariableDeclaration' and 'ast_SimpleName'. From 'ast_SingleVariableDeclaration', the role 'ast_SingleVariableDeclaration242' has cardinality 0..*, and from 'ast_SimpleName', the role 'ast_SimpleName243' has cardinality 0..*.
+An association connects 'ast_SingleVariableDeclaration' and 'ast_Dimension'. From 'ast_SingleVariableDeclaration', the role 'ast_SingleVariableDeclaration245' has cardinality 0..*, and from 'ast_Dimension', the role 'ast_Dimension246' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_SingleVariableDeclaration'. From 'ast_Expression', the role 'ast_Expression249' has cardinality 0..*, and from 'ast_SingleVariableDeclaration', the role 'ast_SingleVariableDeclaration248' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_SuperConstructorInvocation'. From 'ast_Expression', the role 'ast_Expression251' has cardinality 0..*, and from 'ast_SuperConstructorInvocation', the role 'ast_SuperConstructorInvocation' has cardinality 0..*.
+An association connects 'ast_Type' and 'ast_SuperConstructorInvocation'. From 'ast_Type', the role 'ast_Type254' has cardinality 0..*, and from 'ast_SuperConstructorInvocation', the role 'ast_SuperConstructorInvocation253' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_SuperConstructorInvocation'. From 'ast_Expression', the role 'ast_Expression257' has cardinality 0..*, and from 'ast_SuperConstructorInvocation', the role 'ast_SuperConstructorInvocation256' has cardinality 0..*.
+An association connects 'ast_SuperFieldAccess' and 'ast_Name'. From 'ast_SuperFieldAccess', the role 'ast_SuperFieldAccess' has cardinality 0..*, and from 'ast_Name', the role 'ast_Name259' has cardinality 0..*.
+An association connects 'ast_SuperFieldAccess' and 'ast_SimpleName'. From 'ast_SuperFieldAccess', the role 'ast_SuperFieldAccess261' has cardinality 0..*, and from 'ast_SimpleName', the role 'ast_SimpleName262' has cardinality 0..*.
+An association connects 'ast_Name' and 'ast_SuperMethodInvocation'. From 'ast_Name', the role 'ast_Name264' has cardinality 0..*, and from 'ast_SuperMethodInvocation', the role 'ast_SuperMethodInvocation' has cardinality 0..*.
+An association connects 'ast_SuperMethodInvocation' and 'ast_Type'. From 'ast_SuperMethodInvocation', the role 'ast_SuperMethodInvocation266' has cardinality 0..*, and from 'ast_Type', the role 'ast_Type267' has cardinality 0..*.
+An association connects 'ast_SuperMethodInvocation' and 'ast_SimpleName'. From 'ast_SuperMethodInvocation', the role 'ast_SuperMethodInvocation269' has cardinality 0..*, and from 'ast_SimpleName', the role 'ast_SimpleName270' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_SuperMethodInvocation'. From 'ast_Expression', the role 'ast_Expression273' has cardinality 0..*, and from 'ast_SuperMethodInvocation', the role 'ast_SuperMethodInvocation272' has cardinality 0..*.
+An association connects 'ast_SwitchCase' and 'ast_Expression'. From 'ast_SwitchCase', the role 'ast_SwitchCase' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression275' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_SwitchStatement'. From 'ast_Expression', the role 'ast_Expression277' has cardinality 0..*, and from 'ast_SwitchStatement', the role 'ast_SwitchStatement' has cardinality 0..*.
+An association connects 'ast_SwitchStatement' and 'ast_Statement'. From 'ast_SwitchStatement', the role 'ast_SwitchStatement279' has cardinality 0..*, and from 'ast_Statement', the role 'ast_Statement280' has cardinality 0..*.
+An association connects 'ast_SynchronizedStatement' and 'ast_Expression'. From 'ast_SynchronizedStatement', the role 'ast_SynchronizedStatement' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression282' has cardinality 0..*.
+An association connects 'ast_SynchronizedStatement' and 'ast_Block'. From 'ast_SynchronizedStatement', the role 'ast_SynchronizedStatement284' has cardinality 0..*, and from 'ast_Block', the role 'ast_Block285' has cardinality 0..*.
+An association connects 'ast_ThisExpression' and 'ast_Name'. From 'ast_ThisExpression', the role 'ast_ThisExpression' has cardinality 0..*, and from 'ast_Name', the role 'ast_Name287' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_ThrowStatement'. From 'ast_Expression', the role 'ast_Expression289' has cardinality 0..*, and from 'ast_ThrowStatement', the role 'ast_ThrowStatement' has cardinality 0..*.
+An association connects 'ast_VariableDeclarationExpression' and 'ast_TryStatement'. From 'ast_VariableDeclarationExpression', the role 'ast_VariableDeclarationExpression' has cardinality 0..*, and from 'ast_TryStatement', the role 'ast_TryStatement' has cardinality 0..*.
+An association connects 'ast_TryStatement' and 'ast_Block'. From 'ast_TryStatement', the role 'ast_TryStatement292' has cardinality 0..*, and from 'ast_Block', the role 'ast_Block293' has cardinality 0..*.
+An association connects 'ast_TryStatement' and 'ast_CatchClause'. From 'ast_TryStatement', the role 'ast_TryStatement295' has cardinality 0..*, and from 'ast_CatchClause', the role 'ast_CatchClause296' has cardinality 0..*.
+An association connects 'ast_Block' and 'ast_TryStatement'. From 'ast_Block', the role 'ast_Block299' has cardinality 0..*, and from 'ast_TryStatement', the role 'ast_TryStatement298' has cardinality 0..*.
+An association connects 'ast_TypeDeclaration' and 'ast_Javadoc'. From 'ast_TypeDeclaration', the role 'ast_TypeDeclaration' has cardinality 0..*, and from 'ast_Javadoc', the role 'ast_Javadoc301' has cardinality 0..*.
+An association connects 'ast_IExtendedModifier' and 'ast_TypeDeclaration'. From 'ast_IExtendedModifier', the role 'ast_IExtendedModifier304' has cardinality 0..*, and from 'ast_TypeDeclaration', the role 'ast_TypeDeclaration303' has cardinality 0..*.
+An association connects 'ast_TypeDeclaration' and 'ast_SimpleName'. From 'ast_TypeDeclaration', the role 'ast_TypeDeclaration306' has cardinality 0..*, and from 'ast_SimpleName', the role 'ast_SimpleName307' has cardinality 0..*.
+An association connects 'ast_TypeParameter' and 'ast_TypeDeclaration'. From 'ast_TypeParameter', the role 'ast_TypeParameter310' has cardinality 0..*, and from 'ast_TypeDeclaration', the role 'ast_TypeDeclaration309' has cardinality 0..*.
+An association connects 'ast_Type' and 'ast_TypeDeclaration'. From 'ast_Type', the role 'ast_Type313' has cardinality 0..*, and from 'ast_TypeDeclaration', the role 'ast_TypeDeclaration312' has cardinality 0..*.
+An association connects 'ast_Type' and 'ast_TypeDeclaration'. From 'ast_Type', the role 'ast_Type316' has cardinality 0..*, and from 'ast_TypeDeclaration', the role 'ast_TypeDeclaration315' has cardinality 0..*.
+An association connects 'ast_TypeDeclaration' and 'ast_BodyDeclaration'. From 'ast_TypeDeclaration', the role 'ast_TypeDeclaration318' has cardinality 0..*, and from 'ast_BodyDeclaration', the role 'ast_BodyDeclaration319' has cardinality 0..*.
+An association connects 'ast_AbstractTypeDeclaration' and 'ast_TypeDeclarationStatement'. From 'ast_AbstractTypeDeclaration', the role 'ast_AbstractTypeDeclaration321' has cardinality 0..*, and from 'ast_TypeDeclarationStatement', the role 'ast_TypeDeclarationStatement' has cardinality 0..*.
+An association connects 'ast_TypeLiteral' and 'ast_Type'. From 'ast_TypeLiteral', the role 'ast_TypeLiteral' has cardinality 0..*, and from 'ast_Type', the role 'ast_Type323' has cardinality 0..*.
+An association connects 'ast_IExtendedModifier' and 'ast_VariableDeclarationExpression'. From 'ast_IExtendedModifier', the role 'ast_IExtendedModifier326' has cardinality 0..*, and from 'ast_VariableDeclarationExpression', the role 'ast_VariableDeclarationExpression325' has cardinality 0..*.
+An association connects 'ast_Type' and 'ast_VariableDeclarationExpression'. From 'ast_Type', the role 'ast_Type329' has cardinality 0..*, and from 'ast_VariableDeclarationExpression', the role 'ast_VariableDeclarationExpression328' has cardinality 0..*.
+An association connects 'ast_VariableDeclarationFragment' and 'ast_VariableDeclarationExpression'. From 'ast_VariableDeclarationFragment', the role 'ast_VariableDeclarationFragment332' has cardinality 0..*, and from 'ast_VariableDeclarationExpression', the role 'ast_VariableDeclarationExpression331' has cardinality 0..*.
+An association connects 'ast_SimpleName' and 'ast_VariableDeclarationFragment'. From 'ast_SimpleName', the role 'ast_SimpleName335' has cardinality 0..*, and from 'ast_VariableDeclarationFragment', the role 'ast_VariableDeclarationFragment334' has cardinality 0..*.
+An association connects 'ast_VariableDeclarationFragment' and 'ast_Dimension'. From 'ast_VariableDeclarationFragment', the role 'ast_VariableDeclarationFragment337' has cardinality 0..*, and from 'ast_Dimension', the role 'ast_Dimension338' has cardinality 0..*.
+An association connects 'ast_VariableDeclarationFragment' and 'ast_Expression'. From 'ast_VariableDeclarationFragment', the role 'ast_VariableDeclarationFragment340' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression341' has cardinality 0..*.
+An association connects 'ast_VariableDeclarationStatement' and 'ast_IExtendedModifier'. From 'ast_VariableDeclarationStatement', the role 'ast_VariableDeclarationStatement' has cardinality 0..*, and from 'ast_IExtendedModifier', the role 'ast_IExtendedModifier343' has cardinality 0..*.
+An association connects 'ast_Type' and 'ast_VariableDeclarationStatement'. From 'ast_Type', the role 'ast_Type346' has cardinality 0..*, and from 'ast_VariableDeclarationStatement', the role 'ast_VariableDeclarationStatement345' has cardinality 0..*.
+An association connects 'ast_VariableDeclarationFragment' and 'ast_VariableDeclarationStatement'. From 'ast_VariableDeclarationFragment', the role 'ast_VariableDeclarationFragment349' has cardinality 0..*, and from 'ast_VariableDeclarationStatement', the role 'ast_VariableDeclarationStatement348' has cardinality 0..*.
+An association connects 'ast_WhileStatement' and 'ast_Expression'. From 'ast_WhileStatement', the role 'ast_WhileStatement' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression351' has cardinality 0..*.
+An association connects 'ast_Statement' and 'ast_WhileStatement'. From 'ast_Statement', the role 'ast_Statement354' has cardinality 0..*, and from 'ast_WhileStatement', the role 'ast_WhileStatement353' has cardinality 0..*.
+An association connects 'ast_InstanceofExpression' and 'ast_Expression'. From 'ast_InstanceofExpression', the role 'ast_InstanceofExpression' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression356' has cardinality 0..*.
+An association connects 'ast_InstanceofExpression' and 'ast_Type'. From 'ast_InstanceofExpression', the role 'ast_InstanceofExpression358' has cardinality 0..*, and from 'ast_Type', the role 'ast_Type359' has cardinality 0..*.
+An association connects 'ast_Type' and 'ast_MethodRefParameter'. From 'ast_Type', the role 'ast_Type362' has cardinality 0..*, and from 'ast_MethodRefParameter', the role 'ast_MethodRefParameter361' has cardinality 0..*.
+An association connects 'ast_MethodRefParameter' and 'ast_SimpleName'. From 'ast_MethodRefParameter', the role 'ast_MethodRefParameter364' has cardinality 0..*, and from 'ast_SimpleName', the role 'ast_SimpleName365' has cardinality 0..*.
+An association connects 'ast_SingleVariableDeclaration' and 'ast_EnhancedForStatement'. From 'ast_SingleVariableDeclaration', the role 'ast_SingleVariableDeclaration367' has cardinality 0..*, and from 'ast_EnhancedForStatement', the role 'ast_EnhancedForStatement' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_EnhancedForStatement'. From 'ast_Expression', the role 'ast_Expression370' has cardinality 0..*, and from 'ast_EnhancedForStatement', the role 'ast_EnhancedForStatement369' has cardinality 0..*.
+An association connects 'ast_EnhancedForStatement' and 'ast_Statement'. From 'ast_EnhancedForStatement', the role 'ast_EnhancedForStatement372' has cardinality 0..*, and from 'ast_Statement', the role 'ast_Statement373' has cardinality 0..*.
+An association connects 'ast_EnumDeclaration' and 'ast_Javadoc'. From 'ast_EnumDeclaration', the role 'ast_EnumDeclaration' has cardinality 0..*, and from 'ast_Javadoc', the role 'ast_Javadoc375' has cardinality 0..*.
+An association connects 'ast_IExtendedModifier' and 'ast_EnumDeclaration'. From 'ast_IExtendedModifier', the role 'ast_IExtendedModifier378' has cardinality 0..*, and from 'ast_EnumDeclaration', the role 'ast_EnumDeclaration377' has cardinality 0..*.
+An association connects 'ast_SimpleName' and 'ast_EnumDeclaration'. From 'ast_SimpleName', the role 'ast_SimpleName381' has cardinality 0..*, and from 'ast_EnumDeclaration', the role 'ast_EnumDeclaration380' has cardinality 0..*.
+An association connects 'ast_EnumDeclaration' and 'ast_Type'. From 'ast_EnumDeclaration', the role 'ast_EnumDeclaration383' has cardinality 0..*, and from 'ast_Type', the role 'ast_Type384' has cardinality 0..*.
+An association connects 'ast_EnumDeclaration' and 'ast_EnumConstantDeclaration'. From 'ast_EnumDeclaration', the role 'ast_EnumDeclaration386' has cardinality 0..*, and from 'ast_EnumConstantDeclaration', the role 'ast_EnumConstantDeclaration' has cardinality 0..*.
+An association connects 'ast_EnumDeclaration' and 'ast_BodyDeclaration'. From 'ast_EnumDeclaration', the role 'ast_EnumDeclaration388' has cardinality 0..*, and from 'ast_BodyDeclaration', the role 'ast_BodyDeclaration389' has cardinality 0..*.
+An association connects 'ast_Javadoc' and 'ast_EnumConstantDeclaration'. From 'ast_Javadoc', the role 'ast_Javadoc392' has cardinality 0..*, and from 'ast_EnumConstantDeclaration', the role 'ast_EnumConstantDeclaration391' has cardinality 0..*.
+An association connects 'ast_EnumConstantDeclaration' and 'ast_IExtendedModifier'. From 'ast_EnumConstantDeclaration', the role 'ast_EnumConstantDeclaration394' has cardinality 0..*, and from 'ast_IExtendedModifier', the role 'ast_IExtendedModifier395' has cardinality 0..*.
+An association connects 'ast_SimpleName' and 'ast_EnumConstantDeclaration'. From 'ast_SimpleName', the role 'ast_SimpleName398' has cardinality 0..*, and from 'ast_EnumConstantDeclaration', the role 'ast_EnumConstantDeclaration397' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_EnumConstantDeclaration'. From 'ast_Expression', the role 'ast_Expression401' has cardinality 0..*, and from 'ast_EnumConstantDeclaration', the role 'ast_EnumConstantDeclaration400' has cardinality 0..*.
+An association connects 'ast_AnonymousClassDeclaration' and 'ast_EnumConstantDeclaration'. From 'ast_AnonymousClassDeclaration', the role 'ast_AnonymousClassDeclaration404' has cardinality 0..*, and from 'ast_EnumConstantDeclaration', the role 'ast_EnumConstantDeclaration403' has cardinality 0..*.
+An association connects 'ast_TypeParameter' and 'ast_IExtendedModifier'. From 'ast_TypeParameter', the role 'ast_TypeParameter406' has cardinality 0..*, and from 'ast_IExtendedModifier', the role 'ast_IExtendedModifier407' has cardinality 0..*.
+An association connects 'ast_TypeParameter' and 'ast_SimpleName'. From 'ast_TypeParameter', the role 'ast_TypeParameter409' has cardinality 0..*, and from 'ast_SimpleName', the role 'ast_SimpleName410' has cardinality 0..*.
+An association connects 'ast_TypeParameter' and 'ast_Type'. From 'ast_TypeParameter', the role 'ast_TypeParameter412' has cardinality 0..*, and from 'ast_Type', the role 'ast_Type413' has cardinality 0..*.
+An association connects 'ast_ParameterizedType' and 'ast_Type'. From 'ast_ParameterizedType', the role 'ast_ParameterizedType' has cardinality 0..*, and from 'ast_Type', the role 'ast_Type415' has cardinality 0..*.
+An association connects 'ast_ParameterizedType' and 'ast_Type'. From 'ast_ParameterizedType', the role 'ast_ParameterizedType417' has cardinality 0..*, and from 'ast_Type', the role 'ast_Type418' has cardinality 0..*.
+An association connects 'ast_Type' and 'ast_QualifiedType'. From 'ast_Type', the role 'ast_Type420' has cardinality 0..*, and from 'ast_QualifiedType', the role 'ast_QualifiedType' has cardinality 0..*.
+An association connects 'ast_Annotation' and 'ast_QualifiedType'. From 'ast_Annotation', the role 'ast_Annotation423' has cardinality 0..*, and from 'ast_QualifiedType', the role 'ast_QualifiedType422' has cardinality 0..*.
+An association connects 'ast_SimpleName' and 'ast_QualifiedType'. From 'ast_SimpleName', the role 'ast_SimpleName426' has cardinality 0..*, and from 'ast_QualifiedType', the role 'ast_QualifiedType425' has cardinality 0..*.
+An association connects 'ast_WildcardType' and 'ast_Annotation'. From 'ast_WildcardType', the role 'ast_WildcardType' has cardinality 0..*, and from 'ast_Annotation', the role 'ast_Annotation428' has cardinality 0..*.
+An association connects 'ast_WildcardType' and 'ast_Type'. From 'ast_WildcardType', the role 'ast_WildcardType430' has cardinality 0..*, and from 'ast_Type', the role 'ast_Type431' has cardinality 0..*.
+An association connects 'ast_MemberValuePair' and 'ast_SimpleName'. From 'ast_MemberValuePair', the role 'ast_MemberValuePair433' has cardinality 0..*, and from 'ast_SimpleName', the role 'ast_SimpleName434' has cardinality 0..*.
+An association connects 'ast_MemberValuePair' and 'ast_Expression'. From 'ast_MemberValuePair', the role 'ast_MemberValuePair436' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression437' has cardinality 0..*.
+An association connects 'ast_Javadoc' and 'ast_AnnotationTypeDeclaration'. From 'ast_Javadoc', the role 'ast_Javadoc439' has cardinality 0..*, and from 'ast_AnnotationTypeDeclaration', the role 'ast_AnnotationTypeDeclaration' has cardinality 0..*.
+An association connects 'ast_AnnotationTypeDeclaration' and 'ast_IExtendedModifier'. From 'ast_AnnotationTypeDeclaration', the role 'ast_AnnotationTypeDeclaration441' has cardinality 0..*, and from 'ast_IExtendedModifier', the role 'ast_IExtendedModifier442' has cardinality 0..*.
+An association connects 'ast_AnnotationTypeDeclaration' and 'ast_SimpleName'. From 'ast_AnnotationTypeDeclaration', the role 'ast_AnnotationTypeDeclaration444' has cardinality 0..*, and from 'ast_SimpleName', the role 'ast_SimpleName445' has cardinality 0..*.
+An association connects 'ast_AnnotationTypeDeclaration' and 'ast_BodyDeclaration'. From 'ast_AnnotationTypeDeclaration', the role 'ast_AnnotationTypeDeclaration447' has cardinality 0..*, and from 'ast_BodyDeclaration', the role 'ast_BodyDeclaration448' has cardinality 0..*.
+An association connects 'ast_AnnotationTypeMemberDeclaration' and 'ast_Javadoc'. From 'ast_AnnotationTypeMemberDeclaration', the role 'ast_AnnotationTypeMemberDeclaration' has cardinality 0..*, and from 'ast_Javadoc', the role 'ast_Javadoc450' has cardinality 0..*.
+An association connects 'ast_IExtendedModifier' and 'ast_AnnotationTypeMemberDeclaration'. From 'ast_IExtendedModifier', the role 'ast_IExtendedModifier453' has cardinality 0..*, and from 'ast_AnnotationTypeMemberDeclaration', the role 'ast_AnnotationTypeMemberDeclaration452' has cardinality 0..*.
+An association connects 'ast_AnnotationTypeMemberDeclaration' and 'ast_Type'. From 'ast_AnnotationTypeMemberDeclaration', the role 'ast_AnnotationTypeMemberDeclaration455' has cardinality 0..*, and from 'ast_Type', the role 'ast_Type456' has cardinality 0..*.
+An association connects 'ast_AnnotationTypeMemberDeclaration' and 'ast_SimpleName'. From 'ast_AnnotationTypeMemberDeclaration', the role 'ast_AnnotationTypeMemberDeclaration458' has cardinality 0..*, and from 'ast_SimpleName', the role 'ast_SimpleName459' has cardinality 0..*.
+An association connects 'ast_AnnotationTypeMemberDeclaration' and 'ast_Expression'. From 'ast_AnnotationTypeMemberDeclaration', the role 'ast_AnnotationTypeMemberDeclaration461' has cardinality 0..*, and from 'ast_Expression', the role 'ast_Expression462' has cardinality 0..*.
+An association connects 'ast_Type' and 'ast_UnionType'. From 'ast_Type', the role 'ast_Type464' has cardinality 0..*, and from 'ast_UnionType', the role 'ast_UnionType' has cardinality 0..*.
+An association connects 'ast_Dimension' and 'ast_Annotation'. From 'ast_Dimension', the role 'ast_Dimension466' has cardinality 0..*, and from 'ast_Annotation', the role 'ast_Annotation467' has cardinality 0..*.
+An association connects 'ast_LambdaExpression' and 'ast_VariableDeclaration'. From 'ast_LambdaExpression', the role 'ast_LambdaExpression' has cardinality 0..*, and from 'ast_VariableDeclaration', the role 'ast_VariableDeclaration' has cardinality 0..*.
+An association connects 'ast_LambdaExpression' and 'ast_ASTNode'. From 'ast_LambdaExpression', the role 'ast_LambdaExpression470' has cardinality 0..*, and from 'ast_ASTNode', the role 'ast_ASTNode' has cardinality 0..*.
+An association connects 'ast_Type' and 'ast_IntersectionType'. From 'ast_Type', the role 'ast_Type472' has cardinality 0..*, and from 'ast_IntersectionType', the role 'ast_IntersectionType' has cardinality 0..*.
+An association connects 'ast_Name' and 'ast_NameQualifiedType'. From 'ast_Name', the role 'ast_Name474' has cardinality 0..*, and from 'ast_NameQualifiedType', the role 'ast_NameQualifiedType' has cardinality 0..*.
+An association connects 'ast_NameQualifiedType' and 'ast_Annotation'. From 'ast_NameQualifiedType', the role 'ast_NameQualifiedType476' has cardinality 0..*, and from 'ast_Annotation', the role 'ast_Annotation477' has cardinality 0..*.
+An association connects 'ast_SimpleName' and 'ast_NameQualifiedType'. From 'ast_SimpleName', the role 'ast_SimpleName480' has cardinality 0..*, and from 'ast_NameQualifiedType', the role 'ast_NameQualifiedType479' has cardinality 0..*.
+An association connects 'ast_CreationReference' and 'ast_Type'. From 'ast_CreationReference', the role 'ast_CreationReference' has cardinality 0..*, and from 'ast_Type', the role 'ast_Type482' has cardinality 0..*.
+An association connects 'ast_CreationReference' and 'ast_Type'. From 'ast_CreationReference', the role 'ast_CreationReference484' has cardinality 0..*, and from 'ast_Type', the role 'ast_Type485' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_ExpressionMethodReference'. From 'ast_Expression', the role 'ast_Expression487' has cardinality 0..*, and from 'ast_ExpressionMethodReference', the role 'ast_ExpressionMethodReference' has cardinality 0..*.
+An association connects 'ast_Type' and 'ast_ExpressionMethodReference'. From 'ast_Type', the role 'ast_Type490' has cardinality 0..*, and from 'ast_ExpressionMethodReference', the role 'ast_ExpressionMethodReference489' has cardinality 0..*.
+An association connects 'ast_ExpressionMethodReference' and 'ast_SimpleName'. From 'ast_ExpressionMethodReference', the role 'ast_ExpressionMethodReference492' has cardinality 0..*, and from 'ast_SimpleName', the role 'ast_SimpleName493' has cardinality 0..*.
+An association connects 'ast_Name' and 'ast_SuperMethodReference'. From 'ast_Name', the role 'ast_Name495' has cardinality 0..*, and from 'ast_SuperMethodReference', the role 'ast_SuperMethodReference' has cardinality 0..*.
+An association connects 'ast_Type' and 'ast_SuperMethodReference'. From 'ast_Type', the role 'ast_Type498' has cardinality 0..*, and from 'ast_SuperMethodReference', the role 'ast_SuperMethodReference497' has cardinality 0..*.
+An association connects 'ast_SimpleName' and 'ast_SuperMethodReference'. From 'ast_SimpleName', the role 'ast_SimpleName501' has cardinality 0..*, and from 'ast_SuperMethodReference', the role 'ast_SuperMethodReference500' has cardinality 0..*.
+An association connects 'ast_Type' and 'ast_TypeMethodReference'. From 'ast_Type', the role 'ast_Type503' has cardinality 0..*, and from 'ast_TypeMethodReference', the role 'ast_TypeMethodReference' has cardinality 0..*.
+An association connects 'ast_Type' and 'ast_TypeMethodReference'. From 'ast_Type', the role 'ast_Type506' has cardinality 0..*, and from 'ast_TypeMethodReference', the role 'ast_TypeMethodReference505' has cardinality 0..*.
+An association connects 'ast_SimpleName' and 'ast_TypeMethodReference'. From 'ast_SimpleName', the role 'ast_SimpleName509' has cardinality 0..*, and from 'ast_TypeMethodReference', the role 'ast_TypeMethodReference508' has cardinality 0..*.

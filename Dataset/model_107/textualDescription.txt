@@ -1,0 +1,624 @@
+The domain model 'PrimitiveTypes' describes the core structural elements and their relationships within the system.
+
+The model defines 122 main class(es).
+
+'JavaAbstractSyntax_Modifier' represents an important domain concept.
+It has the following attributes: 'final', which is of type str; 'strictfp', which is of type str; 'none', which is of type str; 'public', which is of type str; 'synchronized', which is of type str; 'transient', which is of type str; 'volatile', which is of type str; 'native', which is of type str; 'abstract', which is of type str; 'static', which is of type str; 'private', which is of type str; 'protected', which is of type str.
+
+'JavaAbstractSyntax_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_VariableDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_ParameterizedType' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_AnonymousClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_SuperMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_ClassInstanceCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_TagElement' represents an important domain concept.
+It has the following attributes: 'nested', which is of type str; 'tagName', which is of type str.
+
+'JavaAbstractSyntax_PrefixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'JavaAbstractSyntax_AST' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_AssertStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'extraDimensions', which is of type str.
+
+'Name' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_MethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_TextElement' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'JavaAbstractSyntax_SuperConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_PrimitiveType' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+'JavaAbstractSyntax_Expression' represents an important domain concept.
+It has the following attributes: 'resolveBoxing', which is of type str; 'resolveUnboxing', which is of type str.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_SwitchCase' represents an important domain concept.
+It has one attribute: 'default', which is of type str.
+
+'ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_CharacterLiteral' represents an important domain concept.
+It has the following attributes: 'escapedValue', which is of type str; 'charValue', which is of type str.
+
+'JavaAbstractSyntax_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_InstanceofExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_MethodRefParameter' represents an important domain concept.
+It has one attribute: 'varargs', which is of type str.
+
+'JavaAbstractSyntax_InfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'JavaAbstractSyntax_EmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodRefParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_ArrayType' represents an important domain concept.
+It has one attribute: 'dimensions', which is of type str.
+
+'BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_ImportDeclaration' represents an important domain concept.
+It has the following attributes: 'onDemand', which is of type str; 'static', which is of type str.
+
+'JavaAbstractSyntax_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_StringLiteral' represents an important domain concept.
+It has the following attributes: 'literalValue', which is of type str; 'escapedValue', which is of type str.
+
+'ExtendedModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_SuperFieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'MemberValuePair' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_SingleMemberAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_LineComment' represents an important domain concept.
+It does not declare any attributes.
+
+'Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'CatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_FieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'TagElement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_CatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_Assignment' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'JavaAbstractSyntax_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_Name' represents an important domain concept.
+It has one attribute: 'fullyQualifiedName', which is of type str.
+
+'JavaAbstractSyntax_MethodRef' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_VariableDeclarationFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_DoStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'SingleVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Javadoc' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_SimpleName' represents an important domain concept.
+It has the following attributes: 'identifier', which is of type str; 'declaration', which is of type str.
+
+'ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_MemberRef' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_NumberLiteral' represents an important domain concept.
+It has one attribute: 'token', which is of type str.
+
+'ImportDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclarationFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_TryStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_TypeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_VariableDeclarationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_FieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_TypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_EnumConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_AnnotationTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_QualifiedType' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_Initializer' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_ThisExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_MethodDeclaration' represents an important domain concept.
+It has the following attributes: 'varargs', which is of type str; 'constructor', which is of type str; 'extraDimensions', which is of type str.
+
+'JavaAbstractSyntax_ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_EnumDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_CastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_BlockComment' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_ParenthesizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_EnhancedForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_TypeDeclaration' represents an important domain concept.
+It has one attribute: 'interface', which is of type str.
+
+'AbstractTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_QualifiedName' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_PostfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'JavaAbstractSyntax_AnnotationTypeMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_ThrowStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_MemberValuePair' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_AbstractTypeDeclaration' represents an important domain concept.
+It has the following attributes: 'memberTypeDeclaration', which is of type str; 'packageMemberTypeDeclaration', which is of type str; 'localTypeDeclaration', which is of type str.
+
+'JavaAbstractSyntax_LabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_ArrayAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_WildcardType' represents an important domain concept.
+It has one attribute: 'upperBound', which is of type str.
+
+'SimpleName' represents an important domain concept.
+It does not declare any attributes.
+
+'AnonymousClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_NormalAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_ExtendedModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'booleanValue', which is of type str.
+
+'JavaAbstractSyntax_SimpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_ArrayCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_PackageDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_SingleVariableDeclaration' represents an important domain concept.
+It has one attribute: 'varargs', which is of type str.
+
+'JavaAbstractSyntax_SynchronizedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_Javadoc' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_TypeDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_MarkerAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_ConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaAbstractSyntax_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'InfixExpressionOperatorKind' defines the following possible values: 'RIGHT_SHIFT_SIGNED', 'LESS_EQUALS', 'CONDITIONAL_AND', 'GREATER', 'AND', 'NOT_EQUALS', 'GREATER_EQUALS', 'RIGHT_SHIFT_UNSIGNED', 'CONDITIONAL_OR', 'TIMES', 'OR', 'XOR', 'MINUS', 'REMAINDER', 'EQUALS', 'PLUS', 'LEFT_SHIFT', 'LESS', 'DIVIDE'.
+The enumeration 'PostfixExpresssionOperatorKind' defines the following possible values: 'DECREMENT', 'INCREMENT'.
+The enumeration 'AssignementOperatorKind' defines the following possible values: 'MINUS_ASSIGN', 'BIT_AND_ASSIGN', 'BIT_OR_ASSIGN', 'TIMES_ASSIGN', 'REMAINDER_ASSIGN', 'DIVIDE_ASSIGN', 'ASSIGN', 'RIGHT_SHIFT_UNSIGNED_ASSIGN', 'PLUS_ASSIGN', 'RIGHT_SHIFT_SIGNED_ASSIGN', 'BIT_XOR_ASSIGN', 'LEFT_SHIFT_ASSIGN'.
+The enumeration 'PrefixExpresssionOperatorKind' defines the following possible values: 'MINUS', 'PLUS', 'DECREMENT', 'NOT', 'INCREMENT', 'COMPLEMENT'.
+
+The model also captures inheritance relationships between classes.
+The class 'JavaAbstractSyntax_AnonymousClassDeclaration' is a specialization of 'ASTNode'.
+The class 'JavaAbstractSyntax_BodyDeclaration' is a specialization of 'ASTNode'.
+The class 'JavaAbstractSyntax_CatchClause' is a specialization of 'ASTNode'.
+The class 'JavaAbstractSyntax_Comment' is a specialization of 'ASTNode'.
+The class 'JavaAbstractSyntax_CompilationUnit' is a specialization of 'ASTNode'.
+The class 'JavaAbstractSyntax_Expression' is a specialization of 'ASTNode'.
+The class 'JavaAbstractSyntax_ImportDeclaration' is a specialization of 'ASTNode'.
+The class 'JavaAbstractSyntax_MemberRef' is a specialization of 'ASTNode'.
+The class 'JavaAbstractSyntax_MemberValuePair' is a specialization of 'ASTNode'.
+The class 'JavaAbstractSyntax_MethodRef' is a specialization of 'ASTNode'.
+The class 'JavaAbstractSyntax_MethodRefParameter' is a specialization of 'ASTNode'.
+The class 'JavaAbstractSyntax_Modifier' is a specialization of 'ASTNode'.
+The class 'JavaAbstractSyntax_Modifier' is a specialization of 'ExtendedModifier'.
+The class 'JavaAbstractSyntax_PackageDeclaration' is a specialization of 'ASTNode'.
+The class 'JavaAbstractSyntax_Statement' is a specialization of 'ASTNode'.
+The class 'JavaAbstractSyntax_TagElement' is a specialization of 'ASTNode'.
+The class 'JavaAbstractSyntax_TextElement' is a specialization of 'ASTNode'.
+The class 'JavaAbstractSyntax_Type' is a specialization of 'ASTNode'.
+The class 'JavaAbstractSyntax_TypeParameter' is a specialization of 'ASTNode'.
+The class 'JavaAbstractSyntax_VariableDeclaration' is a specialization of 'ASTNode'.
+The class 'JavaAbstractSyntax_AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'JavaAbstractSyntax_AnnotationTypeMemberDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'JavaAbstractSyntax_EnumConstantDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'JavaAbstractSyntax_FieldDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'JavaAbstractSyntax_Initializer' is a specialization of 'BodyDeclaration'.
+The class 'JavaAbstractSyntax_MethodDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'JavaAbstractSyntax_AnnotationTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'JavaAbstractSyntax_EnumDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'JavaAbstractSyntax_TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'JavaAbstractSyntax_BlockComment' is a specialization of 'Comment'.
+The class 'JavaAbstractSyntax_Javadoc' is a specialization of 'Comment'.
+The class 'JavaAbstractSyntax_LineComment' is a specialization of 'Comment'.
+The class 'JavaAbstractSyntax_Annotation' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_Annotation' is a specialization of 'ExtendedModifier'.
+The class 'JavaAbstractSyntax_ArrayAccess' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_ArrayCreation' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_ArrayInitializer' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_Assignment' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_BooleanLiteral' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_CastExpression' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_CharacterLiteral' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_ClassInstanceCreation' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_ConditionalExpression' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_FieldAccess' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_InfixExpression' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_InstanceofExpression' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_MethodInvocation' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_Name' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_NullLiteral' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_NumberLiteral' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_ParenthesizedExpression' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_PostfixExpression' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_PrefixExpression' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_StringLiteral' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_SuperFieldAccess' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_SuperMethodInvocation' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_ThisExpression' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_TypeLiteral' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_VariableDeclarationExpression' is a specialization of 'Expression'.
+The class 'JavaAbstractSyntax_AssertStatement' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_Block' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_BreakStatement' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_ConstructorInvocation' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_ContinueStatement' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_DoStatement' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_EmptyStatement' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_EnhancedForStatement' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_ExpressionStatement' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_ForStatement' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_IfStatement' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_LabeledStatement' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_ReturnStatement' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_SuperConstructorInvocation' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_SwitchCase' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_SwitchStatement' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_SynchronizedStatement' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_ThrowStatement' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_TryStatement' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_TypeDeclarationStatement' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_VariableDeclarationStatement' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_WhileStatement' is a specialization of 'Statement'.
+The class 'JavaAbstractSyntax_ArrayType' is a specialization of 'Type'.
+The class 'JavaAbstractSyntax_ParameterizedType' is a specialization of 'Type'.
+The class 'JavaAbstractSyntax_PrimitiveType' is a specialization of 'Type'.
+The class 'JavaAbstractSyntax_QualifiedType' is a specialization of 'Type'.
+The class 'JavaAbstractSyntax_SimpleType' is a specialization of 'Type'.
+The class 'JavaAbstractSyntax_WildcardType' is a specialization of 'Type'.
+The class 'JavaAbstractSyntax_SingleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+The class 'JavaAbstractSyntax_VariableDeclarationFragment' is a specialization of 'VariableDeclaration'.
+The class 'JavaAbstractSyntax_QualifiedName' is a specialization of 'Name'.
+The class 'JavaAbstractSyntax_SimpleName' is a specialization of 'Name'.
+The class 'JavaAbstractSyntax_MarkerAnnotation' is a specialization of 'Annotation'.
+The class 'JavaAbstractSyntax_NormalAnnotation' is a specialization of 'Annotation'.
+The class 'JavaAbstractSyntax_SingleMemberAnnotation' is a specialization of 'Annotation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ASTNode' and 'JavaAbstractSyntax_AST'. From 'ASTNode', the role 'ASTNode' has cardinality 0..*, and from 'JavaAbstractSyntax_AST', the role 'JavaAbstractSyntax_AST' has cardinality 0..*.
+An association connects 'BodyDeclaration' and 'JavaAbstractSyntax_AnonymousClassDeclaration'. From 'BodyDeclaration', the role 'BodyDeclaration' has cardinality 0..*, and from 'JavaAbstractSyntax_AnonymousClassDeclaration', the role 'JavaAbstractSyntax_AnonymousClassDeclaration' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_BodyDeclaration' and 'ExtendedModifier'. From 'JavaAbstractSyntax_BodyDeclaration', the role 'JavaAbstractSyntax_BodyDeclaration' has cardinality 0..*, and from 'ExtendedModifier', the role 'ExtendedModifier' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_BodyDeclaration' and 'Javadoc'. From 'JavaAbstractSyntax_BodyDeclaration', the role 'JavaAbstractSyntax_BodyDeclaration4' has cardinality 0..*, and from 'Javadoc', the role 'Javadoc' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_CatchClause' and 'Block'. From 'JavaAbstractSyntax_CatchClause', the role 'JavaAbstractSyntax_CatchClause' has cardinality 0..*, and from 'Block', the role 'Block' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_CatchClause' and 'SingleVariableDeclaration'. From 'JavaAbstractSyntax_CatchClause', the role 'JavaAbstractSyntax_CatchClause7' has cardinality 0..*, and from 'SingleVariableDeclaration', the role 'SingleVariableDeclaration' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_Comment' and 'ASTNode'. From 'JavaAbstractSyntax_Comment', the role 'JavaAbstractSyntax_Comment' has cardinality 0..*, and from 'ASTNode', the role 'ASTNode9' has cardinality 0..*.
+An association connects 'Comment' and 'JavaAbstractSyntax_CompilationUnit'. From 'Comment', the role 'Comment' has cardinality 0..*, and from 'JavaAbstractSyntax_CompilationUnit', the role 'JavaAbstractSyntax_CompilationUnit' has cardinality 0..*.
+An association connects 'PackageDeclaration' and 'JavaAbstractSyntax_CompilationUnit'. From 'PackageDeclaration', the role 'PackageDeclaration' has cardinality 0..*, and from 'JavaAbstractSyntax_CompilationUnit', the role 'JavaAbstractSyntax_CompilationUnit12' has cardinality 0..*.
+An association connects 'ImportDeclaration' and 'JavaAbstractSyntax_CompilationUnit'. From 'ImportDeclaration', the role 'ImportDeclaration' has cardinality 0..*, and from 'JavaAbstractSyntax_CompilationUnit', the role 'JavaAbstractSyntax_CompilationUnit14' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_CompilationUnit' and 'AbstractTypeDeclaration'. From 'JavaAbstractSyntax_CompilationUnit', the role 'JavaAbstractSyntax_CompilationUnit16' has cardinality 0..*, and from 'AbstractTypeDeclaration', the role 'AbstractTypeDeclaration' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_ImportDeclaration' and 'Name'. From 'JavaAbstractSyntax_ImportDeclaration', the role 'JavaAbstractSyntax_ImportDeclaration' has cardinality 0..*, and from 'Name', the role 'Name' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_MemberRef' and 'SimpleName'. From 'JavaAbstractSyntax_MemberRef', the role 'JavaAbstractSyntax_MemberRef' has cardinality 0..*, and from 'SimpleName', the role 'SimpleName' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_MemberRef' and 'Name'. From 'JavaAbstractSyntax_MemberRef', the role 'JavaAbstractSyntax_MemberRef20' has cardinality 0..*, and from 'Name', the role 'Name21' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_MemberValuePair' and 'SimpleName'. From 'JavaAbstractSyntax_MemberValuePair', the role 'JavaAbstractSyntax_MemberValuePair' has cardinality 0..*, and from 'SimpleName', the role 'SimpleName23' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_MemberValuePair' and 'Expression'. From 'JavaAbstractSyntax_MemberValuePair', the role 'JavaAbstractSyntax_MemberValuePair25' has cardinality 0..*, and from 'Expression', the role 'Expression' has cardinality 0..*.
+An association connects 'SimpleName' and 'JavaAbstractSyntax_MethodRef'. From 'SimpleName', the role 'SimpleName27' has cardinality 0..*, and from 'JavaAbstractSyntax_MethodRef', the role 'JavaAbstractSyntax_MethodRef' has cardinality 0..*.
+An association connects 'Name' and 'JavaAbstractSyntax_MethodRef'. From 'Name', the role 'Name30' has cardinality 0..*, and from 'JavaAbstractSyntax_MethodRef', the role 'JavaAbstractSyntax_MethodRef29' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_MethodRef' and 'MethodRefParameter'. From 'JavaAbstractSyntax_MethodRef', the role 'JavaAbstractSyntax_MethodRef32' has cardinality 0..*, and from 'MethodRefParameter', the role 'MethodRefParameter' has cardinality 0..*.
+An association connects 'SimpleName' and 'JavaAbstractSyntax_MethodRefParameter'. From 'SimpleName', the role 'SimpleName34' has cardinality 0..*, and from 'JavaAbstractSyntax_MethodRefParameter', the role 'JavaAbstractSyntax_MethodRefParameter' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_MethodRefParameter' and 'Type'. From 'JavaAbstractSyntax_MethodRefParameter', the role 'JavaAbstractSyntax_MethodRefParameter36' has cardinality 0..*, and from 'Type', the role 'Type' has cardinality 0..*.
+An association connects 'Annotation' and 'JavaAbstractSyntax_PackageDeclaration'. From 'Annotation', the role 'Annotation' has cardinality 0..*, and from 'JavaAbstractSyntax_PackageDeclaration', the role 'JavaAbstractSyntax_PackageDeclaration' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_PackageDeclaration' and 'Javadoc'. From 'JavaAbstractSyntax_PackageDeclaration', the role 'JavaAbstractSyntax_PackageDeclaration39' has cardinality 0..*, and from 'Javadoc', the role 'Javadoc40' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_PackageDeclaration' and 'Name'. From 'JavaAbstractSyntax_PackageDeclaration', the role 'JavaAbstractSyntax_PackageDeclaration42' has cardinality 0..*, and from 'Name', the role 'Name43' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_TagElement' and 'ASTNode'. From 'JavaAbstractSyntax_TagElement', the role 'JavaAbstractSyntax_TagElement' has cardinality 0..*, and from 'ASTNode', the role 'ASTNode45' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_TypeParameter' and 'SimpleName'. From 'JavaAbstractSyntax_TypeParameter', the role 'JavaAbstractSyntax_TypeParameter' has cardinality 0..*, and from 'SimpleName', the role 'SimpleName47' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_TypeParameter' and 'Type'. From 'JavaAbstractSyntax_TypeParameter', the role 'JavaAbstractSyntax_TypeParameter49' has cardinality 0..*, and from 'Type', the role 'Type50' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_VariableDeclaration' and 'Expression'. From 'JavaAbstractSyntax_VariableDeclaration', the role 'JavaAbstractSyntax_VariableDeclaration' has cardinality 0..*, and from 'Expression', the role 'Expression52' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_VariableDeclaration' and 'SimpleName'. From 'JavaAbstractSyntax_VariableDeclaration', the role 'JavaAbstractSyntax_VariableDeclaration54' has cardinality 0..*, and from 'SimpleName', the role 'SimpleName55' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_AbstractTypeDeclaration' and 'BodyDeclaration'. From 'JavaAbstractSyntax_AbstractTypeDeclaration', the role 'JavaAbstractSyntax_AbstractTypeDeclaration' has cardinality 0..*, and from 'BodyDeclaration', the role 'BodyDeclaration57' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_AbstractTypeDeclaration' and 'SimpleName'. From 'JavaAbstractSyntax_AbstractTypeDeclaration', the role 'JavaAbstractSyntax_AbstractTypeDeclaration59' has cardinality 0..*, and from 'SimpleName', the role 'SimpleName60' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_AnnotationTypeMemberDeclaration' and 'Expression'. From 'JavaAbstractSyntax_AnnotationTypeMemberDeclaration', the role 'JavaAbstractSyntax_AnnotationTypeMemberDeclaration' has cardinality 0..*, and from 'Expression', the role 'Expression62' has cardinality 0..*.
+An association connects 'SimpleName' and 'JavaAbstractSyntax_AnnotationTypeMemberDeclaration'. From 'SimpleName', the role 'SimpleName65' has cardinality 0..*, and from 'JavaAbstractSyntax_AnnotationTypeMemberDeclaration', the role 'JavaAbstractSyntax_AnnotationTypeMemberDeclaration64' has cardinality 0..*.
+An association connects 'Type' and 'JavaAbstractSyntax_AnnotationTypeMemberDeclaration'. From 'Type', the role 'Type68' has cardinality 0..*, and from 'JavaAbstractSyntax_AnnotationTypeMemberDeclaration', the role 'JavaAbstractSyntax_AnnotationTypeMemberDeclaration67' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_EnumConstantDeclaration' and 'Expression'. From 'JavaAbstractSyntax_EnumConstantDeclaration', the role 'JavaAbstractSyntax_EnumConstantDeclaration' has cardinality 0..*, and from 'Expression', the role 'Expression70' has cardinality 0..*.
+An association connects 'AnonymousClassDeclaration' and 'JavaAbstractSyntax_EnumConstantDeclaration'. From 'AnonymousClassDeclaration', the role 'AnonymousClassDeclaration' has cardinality 0..*, and from 'JavaAbstractSyntax_EnumConstantDeclaration', the role 'JavaAbstractSyntax_EnumConstantDeclaration72' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_EnumConstantDeclaration' and 'SimpleName'. From 'JavaAbstractSyntax_EnumConstantDeclaration', the role 'JavaAbstractSyntax_EnumConstantDeclaration74' has cardinality 0..*, and from 'SimpleName', the role 'SimpleName75' has cardinality 0..*.
+An association connects 'VariableDeclarationFragment' and 'JavaAbstractSyntax_FieldDeclaration'. From 'VariableDeclarationFragment', the role 'VariableDeclarationFragment' has cardinality 0..*, and from 'JavaAbstractSyntax_FieldDeclaration', the role 'JavaAbstractSyntax_FieldDeclaration' has cardinality 0..*.
+An association connects 'Type' and 'JavaAbstractSyntax_FieldDeclaration'. From 'Type', the role 'Type79' has cardinality 0..*, and from 'JavaAbstractSyntax_FieldDeclaration', the role 'JavaAbstractSyntax_FieldDeclaration78' has cardinality 0..*.
+An association connects 'Block' and 'JavaAbstractSyntax_Initializer'. From 'Block', the role 'Block81' has cardinality 0..*, and from 'JavaAbstractSyntax_Initializer', the role 'JavaAbstractSyntax_Initializer' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_MethodDeclaration' and 'Block'. From 'JavaAbstractSyntax_MethodDeclaration', the role 'JavaAbstractSyntax_MethodDeclaration' has cardinality 0..*, and from 'Block', the role 'Block83' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_MethodDeclaration' and 'SimpleName'. From 'JavaAbstractSyntax_MethodDeclaration', the role 'JavaAbstractSyntax_MethodDeclaration85' has cardinality 0..*, and from 'SimpleName', the role 'SimpleName86' has cardinality 0..*.
+An association connects 'Type' and 'JavaAbstractSyntax_MethodDeclaration'. From 'Type', the role 'Type89' has cardinality 0..*, and from 'JavaAbstractSyntax_MethodDeclaration', the role 'JavaAbstractSyntax_MethodDeclaration88' has cardinality 0..*.
+An association connects 'SingleVariableDeclaration' and 'JavaAbstractSyntax_MethodDeclaration'. From 'SingleVariableDeclaration', the role 'SingleVariableDeclaration92' has cardinality 0..*, and from 'JavaAbstractSyntax_MethodDeclaration', the role 'JavaAbstractSyntax_MethodDeclaration91' has cardinality 0..*.
+An association connects 'Name' and 'JavaAbstractSyntax_MethodDeclaration'. From 'Name', the role 'Name95' has cardinality 0..*, and from 'JavaAbstractSyntax_MethodDeclaration', the role 'JavaAbstractSyntax_MethodDeclaration94' has cardinality 0..*.
+An association connects 'TypeParameter' and 'JavaAbstractSyntax_MethodDeclaration'. From 'TypeParameter', the role 'TypeParameter' has cardinality 0..*, and from 'JavaAbstractSyntax_MethodDeclaration', the role 'JavaAbstractSyntax_MethodDeclaration97' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_EnumDeclaration' and 'Type'. From 'JavaAbstractSyntax_EnumDeclaration', the role 'JavaAbstractSyntax_EnumDeclaration' has cardinality 0..*, and from 'Type', the role 'Type99' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_EnumDeclaration' and 'EnumConstantDeclaration'. From 'JavaAbstractSyntax_EnumDeclaration', the role 'JavaAbstractSyntax_EnumDeclaration101' has cardinality 0..*, and from 'EnumConstantDeclaration', the role 'EnumConstantDeclaration' has cardinality 0..*.
+An association connects 'Type' and 'JavaAbstractSyntax_TypeDeclaration'. From 'Type', the role 'Type103' has cardinality 0..*, and from 'JavaAbstractSyntax_TypeDeclaration', the role 'JavaAbstractSyntax_TypeDeclaration' has cardinality 0..*.
+An association connects 'Type' and 'JavaAbstractSyntax_TypeDeclaration'. From 'Type', the role 'Type106' has cardinality 0..*, and from 'JavaAbstractSyntax_TypeDeclaration', the role 'JavaAbstractSyntax_TypeDeclaration105' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_TypeDeclaration' and 'TypeParameter'. From 'JavaAbstractSyntax_TypeDeclaration', the role 'JavaAbstractSyntax_TypeDeclaration108' has cardinality 0..*, and from 'TypeParameter', the role 'TypeParameter109' has cardinality 0..*.
+An association connects 'TagElement' and 'JavaAbstractSyntax_Javadoc'. From 'TagElement', the role 'TagElement' has cardinality 0..*, and from 'JavaAbstractSyntax_Javadoc', the role 'JavaAbstractSyntax_Javadoc' has cardinality 0..*.
+An association connects 'Name' and 'JavaAbstractSyntax_Annotation'. From 'Name', the role 'Name112' has cardinality 0..*, and from 'JavaAbstractSyntax_Annotation', the role 'JavaAbstractSyntax_Annotation' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_ArrayAccess' and 'Expression'. From 'JavaAbstractSyntax_ArrayAccess', the role 'JavaAbstractSyntax_ArrayAccess' has cardinality 0..*, and from 'Expression', the role 'Expression114' has cardinality 0..*.
+An association connects 'Expression' and 'JavaAbstractSyntax_ArrayAccess'. From 'Expression', the role 'Expression117' has cardinality 0..*, and from 'JavaAbstractSyntax_ArrayAccess', the role 'JavaAbstractSyntax_ArrayAccess116' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_ArrayCreation' and 'Expression'. From 'JavaAbstractSyntax_ArrayCreation', the role 'JavaAbstractSyntax_ArrayCreation' has cardinality 0..*, and from 'Expression', the role 'Expression119' has cardinality 0..*.
+An association connects 'ArrayInitializer' and 'JavaAbstractSyntax_ArrayCreation'. From 'ArrayInitializer', the role 'ArrayInitializer' has cardinality 0..*, and from 'JavaAbstractSyntax_ArrayCreation', the role 'JavaAbstractSyntax_ArrayCreation121' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_ArrayCreation' and 'ArrayType'. From 'JavaAbstractSyntax_ArrayCreation', the role 'JavaAbstractSyntax_ArrayCreation123' has cardinality 0..*, and from 'ArrayType', the role 'ArrayType' has cardinality 0..*.
+An association connects 'Expression' and 'JavaAbstractSyntax_ArrayInitializer'. From 'Expression', the role 'Expression125' has cardinality 0..*, and from 'JavaAbstractSyntax_ArrayInitializer', the role 'JavaAbstractSyntax_ArrayInitializer' has cardinality 0..*.
+An association connects 'Expression' and 'JavaAbstractSyntax_Assignment'. From 'Expression', the role 'Expression127' has cardinality 0..*, and from 'JavaAbstractSyntax_Assignment', the role 'JavaAbstractSyntax_Assignment' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_Assignment' and 'Expression'. From 'JavaAbstractSyntax_Assignment', the role 'JavaAbstractSyntax_Assignment129' has cardinality 0..*, and from 'Expression', the role 'Expression130' has cardinality 0..*.
+An association connects 'Expression' and 'JavaAbstractSyntax_CastExpression'. From 'Expression', the role 'Expression132' has cardinality 0..*, and from 'JavaAbstractSyntax_CastExpression', the role 'JavaAbstractSyntax_CastExpression' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_CastExpression' and 'Type'. From 'JavaAbstractSyntax_CastExpression', the role 'JavaAbstractSyntax_CastExpression134' has cardinality 0..*, and from 'Type', the role 'Type135' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_ClassInstanceCreation' and 'Expression'. From 'JavaAbstractSyntax_ClassInstanceCreation', the role 'JavaAbstractSyntax_ClassInstanceCreation' has cardinality 0..*, and from 'Expression', the role 'Expression137' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_ClassInstanceCreation' and 'AnonymousClassDeclaration'. From 'JavaAbstractSyntax_ClassInstanceCreation', the role 'JavaAbstractSyntax_ClassInstanceCreation139' has cardinality 0..*, and from 'AnonymousClassDeclaration', the role 'AnonymousClassDeclaration140' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_ClassInstanceCreation' and 'Expression'. From 'JavaAbstractSyntax_ClassInstanceCreation', the role 'JavaAbstractSyntax_ClassInstanceCreation142' has cardinality 0..*, and from 'Expression', the role 'Expression143' has cardinality 0..*.
+An association connects 'Type' and 'JavaAbstractSyntax_ClassInstanceCreation'. From 'Type', the role 'Type146' has cardinality 0..*, and from 'JavaAbstractSyntax_ClassInstanceCreation', the role 'JavaAbstractSyntax_ClassInstanceCreation145' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_ClassInstanceCreation' and 'Type'. From 'JavaAbstractSyntax_ClassInstanceCreation', the role 'JavaAbstractSyntax_ClassInstanceCreation148' has cardinality 0..*, and from 'Type', the role 'Type149' has cardinality 0..*.
+An association connects 'Expression' and 'JavaAbstractSyntax_ConditionalExpression'. From 'Expression', the role 'Expression151' has cardinality 0..*, and from 'JavaAbstractSyntax_ConditionalExpression', the role 'JavaAbstractSyntax_ConditionalExpression' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_ConditionalExpression' and 'Expression'. From 'JavaAbstractSyntax_ConditionalExpression', the role 'JavaAbstractSyntax_ConditionalExpression153' has cardinality 0..*, and from 'Expression', the role 'Expression154' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_ConditionalExpression' and 'Expression'. From 'JavaAbstractSyntax_ConditionalExpression', the role 'JavaAbstractSyntax_ConditionalExpression156' has cardinality 0..*, and from 'Expression', the role 'Expression157' has cardinality 0..*.
+An association connects 'Expression' and 'JavaAbstractSyntax_FieldAccess'. From 'Expression', the role 'Expression159' has cardinality 0..*, and from 'JavaAbstractSyntax_FieldAccess', the role 'JavaAbstractSyntax_FieldAccess' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_FieldAccess' and 'SimpleName'. From 'JavaAbstractSyntax_FieldAccess', the role 'JavaAbstractSyntax_FieldAccess161' has cardinality 0..*, and from 'SimpleName', the role 'SimpleName162' has cardinality 0..*.
+An association connects 'Expression' and 'JavaAbstractSyntax_InfixExpression'. From 'Expression', the role 'Expression164' has cardinality 0..*, and from 'JavaAbstractSyntax_InfixExpression', the role 'JavaAbstractSyntax_InfixExpression' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_InfixExpression' and 'Expression'. From 'JavaAbstractSyntax_InfixExpression', the role 'JavaAbstractSyntax_InfixExpression166' has cardinality 0..*, and from 'Expression', the role 'Expression167' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_InfixExpression' and 'Expression'. From 'JavaAbstractSyntax_InfixExpression', the role 'JavaAbstractSyntax_InfixExpression169' has cardinality 0..*, and from 'Expression', the role 'Expression170' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_InstanceofExpression' and 'Expression'. From 'JavaAbstractSyntax_InstanceofExpression', the role 'JavaAbstractSyntax_InstanceofExpression' has cardinality 0..*, and from 'Expression', the role 'Expression172' has cardinality 0..*.
+An association connects 'Type' and 'JavaAbstractSyntax_InstanceofExpression'. From 'Type', the role 'Type175' has cardinality 0..*, and from 'JavaAbstractSyntax_InstanceofExpression', the role 'JavaAbstractSyntax_InstanceofExpression174' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_MethodInvocation' and 'Expression'. From 'JavaAbstractSyntax_MethodInvocation', the role 'JavaAbstractSyntax_MethodInvocation' has cardinality 0..*, and from 'Expression', the role 'Expression177' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_MethodInvocation' and 'Expression'. From 'JavaAbstractSyntax_MethodInvocation', the role 'JavaAbstractSyntax_MethodInvocation179' has cardinality 0..*, and from 'Expression', the role 'Expression180' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_MethodInvocation' and 'SimpleName'. From 'JavaAbstractSyntax_MethodInvocation', the role 'JavaAbstractSyntax_MethodInvocation182' has cardinality 0..*, and from 'SimpleName', the role 'SimpleName183' has cardinality 0..*.
+An association connects 'Type' and 'JavaAbstractSyntax_MethodInvocation'. From 'Type', the role 'Type186' has cardinality 0..*, and from 'JavaAbstractSyntax_MethodInvocation', the role 'JavaAbstractSyntax_MethodInvocation185' has cardinality 0..*.
+An association connects 'Expression' and 'JavaAbstractSyntax_ParenthesizedExpression'. From 'Expression', the role 'Expression188' has cardinality 0..*, and from 'JavaAbstractSyntax_ParenthesizedExpression', the role 'JavaAbstractSyntax_ParenthesizedExpression' has cardinality 0..*.
+An association connects 'Expression' and 'JavaAbstractSyntax_PostfixExpression'. From 'Expression', the role 'Expression190' has cardinality 0..*, and from 'JavaAbstractSyntax_PostfixExpression', the role 'JavaAbstractSyntax_PostfixExpression' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_PrefixExpression' and 'Expression'. From 'JavaAbstractSyntax_PrefixExpression', the role 'JavaAbstractSyntax_PrefixExpression' has cardinality 0..*, and from 'Expression', the role 'Expression192' has cardinality 0..*.
+An association connects 'SimpleName' and 'JavaAbstractSyntax_SuperFieldAccess'. From 'SimpleName', the role 'SimpleName194' has cardinality 0..*, and from 'JavaAbstractSyntax_SuperFieldAccess', the role 'JavaAbstractSyntax_SuperFieldAccess' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_SuperFieldAccess' and 'Name'. From 'JavaAbstractSyntax_SuperFieldAccess', the role 'JavaAbstractSyntax_SuperFieldAccess196' has cardinality 0..*, and from 'Name', the role 'Name197' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_SuperMethodInvocation' and 'Expression'. From 'JavaAbstractSyntax_SuperMethodInvocation', the role 'JavaAbstractSyntax_SuperMethodInvocation' has cardinality 0..*, and from 'Expression', the role 'Expression199' has cardinality 0..*.
+An association connects 'Name' and 'JavaAbstractSyntax_SuperMethodInvocation'. From 'Name', the role 'Name202' has cardinality 0..*, and from 'JavaAbstractSyntax_SuperMethodInvocation', the role 'JavaAbstractSyntax_SuperMethodInvocation201' has cardinality 0..*.
+An association connects 'Name' and 'JavaAbstractSyntax_SuperMethodInvocation'. From 'Name', the role 'Name205' has cardinality 0..*, and from 'JavaAbstractSyntax_SuperMethodInvocation', the role 'JavaAbstractSyntax_SuperMethodInvocation204' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_SuperMethodInvocation' and 'Type'. From 'JavaAbstractSyntax_SuperMethodInvocation', the role 'JavaAbstractSyntax_SuperMethodInvocation207' has cardinality 0..*, and from 'Type', the role 'Type208' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_ThisExpression' and 'Name'. From 'JavaAbstractSyntax_ThisExpression', the role 'JavaAbstractSyntax_ThisExpression' has cardinality 0..*, and from 'Name', the role 'Name210' has cardinality 0..*.
+An association connects 'Type' and 'JavaAbstractSyntax_TypeLiteral'. From 'Type', the role 'Type212' has cardinality 0..*, and from 'JavaAbstractSyntax_TypeLiteral', the role 'JavaAbstractSyntax_TypeLiteral' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_VariableDeclarationExpression' and 'VariableDeclarationFragment'. From 'JavaAbstractSyntax_VariableDeclarationExpression', the role 'JavaAbstractSyntax_VariableDeclarationExpression' has cardinality 0..*, and from 'VariableDeclarationFragment', the role 'VariableDeclarationFragment214' has cardinality 0..*.
+An association connects 'ExtendedModifier' and 'JavaAbstractSyntax_VariableDeclarationExpression'. From 'ExtendedModifier', the role 'ExtendedModifier217' has cardinality 0..*, and from 'JavaAbstractSyntax_VariableDeclarationExpression', the role 'JavaAbstractSyntax_VariableDeclarationExpression216' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_VariableDeclarationExpression' and 'Type'. From 'JavaAbstractSyntax_VariableDeclarationExpression', the role 'JavaAbstractSyntax_VariableDeclarationExpression219' has cardinality 0..*, and from 'Type', the role 'Type220' has cardinality 0..*.
+An association connects 'Expression' and 'JavaAbstractSyntax_AssertStatement'. From 'Expression', the role 'Expression222' has cardinality 0..*, and from 'JavaAbstractSyntax_AssertStatement', the role 'JavaAbstractSyntax_AssertStatement' has cardinality 0..*.
+An association connects 'Expression' and 'JavaAbstractSyntax_AssertStatement'. From 'Expression', the role 'Expression225' has cardinality 0..*, and from 'JavaAbstractSyntax_AssertStatement', the role 'JavaAbstractSyntax_AssertStatement224' has cardinality 0..*.
+An association connects 'Statement' and 'JavaAbstractSyntax_Block'. From 'Statement', the role 'Statement' has cardinality 0..*, and from 'JavaAbstractSyntax_Block', the role 'JavaAbstractSyntax_Block' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_BreakStatement' and 'SimpleName'. From 'JavaAbstractSyntax_BreakStatement', the role 'JavaAbstractSyntax_BreakStatement' has cardinality 0..*, and from 'SimpleName', the role 'SimpleName228' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_ConstructorInvocation' and 'Expression'. From 'JavaAbstractSyntax_ConstructorInvocation', the role 'JavaAbstractSyntax_ConstructorInvocation' has cardinality 0..*, and from 'Expression', the role 'Expression230' has cardinality 0..*.
+An association connects 'Type' and 'JavaAbstractSyntax_ConstructorInvocation'. From 'Type', the role 'Type233' has cardinality 0..*, and from 'JavaAbstractSyntax_ConstructorInvocation', the role 'JavaAbstractSyntax_ConstructorInvocation232' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_ContinueStatement' and 'SimpleName'. From 'JavaAbstractSyntax_ContinueStatement', the role 'JavaAbstractSyntax_ContinueStatement' has cardinality 0..*, and from 'SimpleName', the role 'SimpleName235' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_DoStatement' and 'Statement'. From 'JavaAbstractSyntax_DoStatement', the role 'JavaAbstractSyntax_DoStatement' has cardinality 0..*, and from 'Statement', the role 'Statement237' has cardinality 0..*.
+An association connects 'Expression' and 'JavaAbstractSyntax_DoStatement'. From 'Expression', the role 'Expression240' has cardinality 0..*, and from 'JavaAbstractSyntax_DoStatement', the role 'JavaAbstractSyntax_DoStatement239' has cardinality 0..*.
+An association connects 'Statement' and 'JavaAbstractSyntax_EnhancedForStatement'. From 'Statement', the role 'Statement242' has cardinality 0..*, and from 'JavaAbstractSyntax_EnhancedForStatement', the role 'JavaAbstractSyntax_EnhancedForStatement' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_EnhancedForStatement' and 'Expression'. From 'JavaAbstractSyntax_EnhancedForStatement', the role 'JavaAbstractSyntax_EnhancedForStatement244' has cardinality 0..*, and from 'Expression', the role 'Expression245' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_EnhancedForStatement' and 'SingleVariableDeclaration'. From 'JavaAbstractSyntax_EnhancedForStatement', the role 'JavaAbstractSyntax_EnhancedForStatement247' has cardinality 0..*, and from 'SingleVariableDeclaration', the role 'SingleVariableDeclaration248' has cardinality 0..*.
+An association connects 'Expression' and 'JavaAbstractSyntax_ExpressionStatement'. From 'Expression', the role 'Expression250' has cardinality 0..*, and from 'JavaAbstractSyntax_ExpressionStatement', the role 'JavaAbstractSyntax_ExpressionStatement' has cardinality 0..*.
+An association connects 'Statement' and 'JavaAbstractSyntax_ForStatement'. From 'Statement', the role 'Statement252' has cardinality 0..*, and from 'JavaAbstractSyntax_ForStatement', the role 'JavaAbstractSyntax_ForStatement' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_ForStatement' and 'Expression'. From 'JavaAbstractSyntax_ForStatement', the role 'JavaAbstractSyntax_ForStatement254' has cardinality 0..*, and from 'Expression', the role 'Expression255' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_ForStatement' and 'Expression'. From 'JavaAbstractSyntax_ForStatement', the role 'JavaAbstractSyntax_ForStatement257' has cardinality 0..*, and from 'Expression', the role 'Expression258' has cardinality 0..*.
+An association connects 'Expression' and 'JavaAbstractSyntax_ForStatement'. From 'Expression', the role 'Expression261' has cardinality 0..*, and from 'JavaAbstractSyntax_ForStatement', the role 'JavaAbstractSyntax_ForStatement260' has cardinality 0..*.
+An association connects 'Statement' and 'JavaAbstractSyntax_IfStatement'. From 'Statement', the role 'Statement263' has cardinality 0..*, and from 'JavaAbstractSyntax_IfStatement', the role 'JavaAbstractSyntax_IfStatement' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_IfStatement' and 'Expression'. From 'JavaAbstractSyntax_IfStatement', the role 'JavaAbstractSyntax_IfStatement265' has cardinality 0..*, and from 'Expression', the role 'Expression266' has cardinality 0..*.
+An association connects 'Statement' and 'JavaAbstractSyntax_IfStatement'. From 'Statement', the role 'Statement269' has cardinality 0..*, and from 'JavaAbstractSyntax_IfStatement', the role 'JavaAbstractSyntax_IfStatement268' has cardinality 0..*.
+An association connects 'Statement' and 'JavaAbstractSyntax_LabeledStatement'. From 'Statement', the role 'Statement271' has cardinality 0..*, and from 'JavaAbstractSyntax_LabeledStatement', the role 'JavaAbstractSyntax_LabeledStatement' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_LabeledStatement' and 'SimpleName'. From 'JavaAbstractSyntax_LabeledStatement', the role 'JavaAbstractSyntax_LabeledStatement273' has cardinality 0..*, and from 'SimpleName', the role 'SimpleName274' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_ReturnStatement' and 'Expression'. From 'JavaAbstractSyntax_ReturnStatement', the role 'JavaAbstractSyntax_ReturnStatement' has cardinality 0..*, and from 'Expression', the role 'Expression276' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_SuperConstructorInvocation' and 'Expression'. From 'JavaAbstractSyntax_SuperConstructorInvocation', the role 'JavaAbstractSyntax_SuperConstructorInvocation' has cardinality 0..*, and from 'Expression', the role 'Expression278' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_SuperConstructorInvocation' and 'Expression'. From 'JavaAbstractSyntax_SuperConstructorInvocation', the role 'JavaAbstractSyntax_SuperConstructorInvocation280' has cardinality 0..*, and from 'Expression', the role 'Expression281' has cardinality 0..*.
+An association connects 'Type' and 'JavaAbstractSyntax_SuperConstructorInvocation'. From 'Type', the role 'Type284' has cardinality 0..*, and from 'JavaAbstractSyntax_SuperConstructorInvocation', the role 'JavaAbstractSyntax_SuperConstructorInvocation283' has cardinality 0..*.
+An association connects 'Expression' and 'JavaAbstractSyntax_SwitchCase'. From 'Expression', the role 'Expression286' has cardinality 0..*, and from 'JavaAbstractSyntax_SwitchCase', the role 'JavaAbstractSyntax_SwitchCase' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_SwitchStatement' and 'Expression'. From 'JavaAbstractSyntax_SwitchStatement', the role 'JavaAbstractSyntax_SwitchStatement' has cardinality 0..*, and from 'Expression', the role 'Expression288' has cardinality 0..*.
+An association connects 'Statement' and 'JavaAbstractSyntax_SwitchStatement'. From 'Statement', the role 'Statement291' has cardinality 0..*, and from 'JavaAbstractSyntax_SwitchStatement', the role 'JavaAbstractSyntax_SwitchStatement290' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_SynchronizedStatement' and 'Block'. From 'JavaAbstractSyntax_SynchronizedStatement', the role 'JavaAbstractSyntax_SynchronizedStatement' has cardinality 0..*, and from 'Block', the role 'Block293' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_SynchronizedStatement' and 'Expression'. From 'JavaAbstractSyntax_SynchronizedStatement', the role 'JavaAbstractSyntax_SynchronizedStatement295' has cardinality 0..*, and from 'Expression', the role 'Expression296' has cardinality 0..*.
+An association connects 'Expression' and 'JavaAbstractSyntax_ThrowStatement'. From 'Expression', the role 'Expression298' has cardinality 0..*, and from 'JavaAbstractSyntax_ThrowStatement', the role 'JavaAbstractSyntax_ThrowStatement' has cardinality 0..*.
+An association connects 'CatchClause' and 'JavaAbstractSyntax_TryStatement'. From 'CatchClause', the role 'CatchClause' has cardinality 0..*, and from 'JavaAbstractSyntax_TryStatement', the role 'JavaAbstractSyntax_TryStatement' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_TryStatement' and 'Block'. From 'JavaAbstractSyntax_TryStatement', the role 'JavaAbstractSyntax_TryStatement301' has cardinality 0..*, and from 'Block', the role 'Block302' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_TryStatement' and 'Block'. From 'JavaAbstractSyntax_TryStatement', the role 'JavaAbstractSyntax_TryStatement304' has cardinality 0..*, and from 'Block', the role 'Block305' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_TypeDeclarationStatement' and 'AbstractTypeDeclaration'. From 'JavaAbstractSyntax_TypeDeclarationStatement', the role 'JavaAbstractSyntax_TypeDeclarationStatement' has cardinality 0..*, and from 'AbstractTypeDeclaration', the role 'AbstractTypeDeclaration307' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_VariableDeclarationStatement' and 'VariableDeclarationFragment'. From 'JavaAbstractSyntax_VariableDeclarationStatement', the role 'JavaAbstractSyntax_VariableDeclarationStatement' has cardinality 0..*, and from 'VariableDeclarationFragment', the role 'VariableDeclarationFragment309' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_VariableDeclarationStatement' and 'ExtendedModifier'. From 'JavaAbstractSyntax_VariableDeclarationStatement', the role 'JavaAbstractSyntax_VariableDeclarationStatement311' has cardinality 0..*, and from 'ExtendedModifier', the role 'ExtendedModifier312' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_VariableDeclarationStatement' and 'Type'. From 'JavaAbstractSyntax_VariableDeclarationStatement', the role 'JavaAbstractSyntax_VariableDeclarationStatement314' has cardinality 0..*, and from 'Type', the role 'Type315' has cardinality 0..*.
+An association connects 'Statement' and 'JavaAbstractSyntax_WhileStatement'. From 'Statement', the role 'Statement317' has cardinality 0..*, and from 'JavaAbstractSyntax_WhileStatement', the role 'JavaAbstractSyntax_WhileStatement' has cardinality 0..*.
+An association connects 'Expression' and 'JavaAbstractSyntax_WhileStatement'. From 'Expression', the role 'Expression320' has cardinality 0..*, and from 'JavaAbstractSyntax_WhileStatement', the role 'JavaAbstractSyntax_WhileStatement319' has cardinality 0..*.
+An association connects 'Type' and 'JavaAbstractSyntax_ArrayType'. From 'Type', the role 'Type322' has cardinality 0..*, and from 'JavaAbstractSyntax_ArrayType', the role 'JavaAbstractSyntax_ArrayType' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_ArrayType' and 'Type'. From 'JavaAbstractSyntax_ArrayType', the role 'JavaAbstractSyntax_ArrayType324' has cardinality 0..*, and from 'Type', the role 'Type325' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_ParameterizedType' and 'Type'. From 'JavaAbstractSyntax_ParameterizedType', the role 'JavaAbstractSyntax_ParameterizedType' has cardinality 0..*, and from 'Type', the role 'Type327' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_ParameterizedType' and 'Type'. From 'JavaAbstractSyntax_ParameterizedType', the role 'JavaAbstractSyntax_ParameterizedType329' has cardinality 0..*, and from 'Type', the role 'Type330' has cardinality 0..*.
+An association connects 'SimpleName' and 'JavaAbstractSyntax_QualifiedType'. From 'SimpleName', the role 'SimpleName332' has cardinality 0..*, and from 'JavaAbstractSyntax_QualifiedType', the role 'JavaAbstractSyntax_QualifiedType' has cardinality 0..*.
+An association connects 'Type' and 'JavaAbstractSyntax_QualifiedType'. From 'Type', the role 'Type335' has cardinality 0..*, and from 'JavaAbstractSyntax_QualifiedType', the role 'JavaAbstractSyntax_QualifiedType334' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_SimpleType' and 'Name'. From 'JavaAbstractSyntax_SimpleType', the role 'JavaAbstractSyntax_SimpleType' has cardinality 0..*, and from 'Name', the role 'Name337' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_WildcardType' and 'Type'. From 'JavaAbstractSyntax_WildcardType', the role 'JavaAbstractSyntax_WildcardType' has cardinality 0..*, and from 'Type', the role 'Type339' has cardinality 0..*.
+An association connects 'JavaAbstractSyntax_SingleVariableDeclaration' and 'Type'. From 'JavaAbstractSyntax_SingleVariableDeclaration', the role 'JavaAbstractSyntax_SingleVariableDeclaration' has cardinality 0..*, and from 'Type', the role 'Type341' has cardinality 0..*.
+An association connects 'ExtendedModifier' and 'JavaAbstractSyntax_SingleVariableDeclaration'. From 'ExtendedModifier', the role 'ExtendedModifier344' has cardinality 0..*, and from 'JavaAbstractSyntax_SingleVariableDeclaration', the role 'JavaAbstractSyntax_SingleVariableDeclaration343' has cardinality 0..*.
+An association connects 'SimpleName' and 'JavaAbstractSyntax_QualifiedName'. From 'SimpleName', the role 'SimpleName346' has cardinality 0..*, and from 'JavaAbstractSyntax_QualifiedName', the role 'JavaAbstractSyntax_QualifiedName' has cardinality 0..*.
+An association connects 'Name' and 'JavaAbstractSyntax_QualifiedName'. From 'Name', the role 'Name349' has cardinality 0..*, and from 'JavaAbstractSyntax_QualifiedName', the role 'JavaAbstractSyntax_QualifiedName348' has cardinality 0..*.
+An association connects 'MemberValuePair' and 'JavaAbstractSyntax_NormalAnnotation'. From 'MemberValuePair', the role 'MemberValuePair' has cardinality 0..*, and from 'JavaAbstractSyntax_NormalAnnotation', the role 'JavaAbstractSyntax_NormalAnnotation' has cardinality 0..*.
+An association connects 'Expression' and 'JavaAbstractSyntax_SingleMemberAnnotation'. From 'Expression', the role 'Expression352' has cardinality 0..*, and from 'JavaAbstractSyntax_SingleMemberAnnotation', the role 'JavaAbstractSyntax_SingleMemberAnnotation' has cardinality 0..*.

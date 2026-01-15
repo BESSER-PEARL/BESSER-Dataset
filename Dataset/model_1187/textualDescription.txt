@@ -1,0 +1,159 @@
+The domain model 'superimposed' describes the core structural elements and their relationships within the system.
+
+The model defines 37 main class(es).
+
+'superimposed_CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OperatorCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'superimposed_PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'superimposed_OclType' represents an important domain concept.
+It does not declare any attributes.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+'superimposed_IteratorExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'superimposed_OclModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'superimposed_OclUndefinedExp' represents an important domain concept.
+It does not declare any attributes.
+
+'superimposed_RealExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type str.
+
+'superimposed_Iterator' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'superimposed_NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+'superimposed_SetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'superimposed_UnaryOperatorCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OclType' represents an important domain concept.
+It does not declare any attributes.
+
+'superimposed_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'superimposed_BinaryOperatorCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'superimposed_OperationCallExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'superimposed_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'superimposed_IntegerExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'superimposed_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'superimposed_NavigationCallExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'superimposed_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'superimposed_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'superimposed_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'superimposed_BooleanExp' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type str.
+
+'superimposed_StringExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'superimposed_OperatorCallExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'superimposed_CollectionOperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'superimposed_OclModelElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'superimposed_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'superimposed_VariableExp' is a specialization of 'OclExpression'.
+The class 'superimposed_OclUndefinedExp' is a specialization of 'OclExpression'.
+The class 'superimposed_LetExp' is a specialization of 'OclExpression'.
+The class 'superimposed_OperationCallExp' is a specialization of 'PropertyCallExp'.
+The class 'superimposed_CollectionOperationCallExp' is a specialization of 'OperationCallExp'.
+The class 'superimposed_NavigationCallExp' is a specialization of 'PropertyCallExp'.
+The class 'superimposed_IfExp' is a specialization of 'OclExpression'.
+The class 'superimposed_OperatorCallExp' is a specialization of 'OclExpression'.
+The class 'superimposed_BinaryOperatorCallExp' is a specialization of 'OperatorCallExp'.
+The class 'superimposed_UnaryOperatorCallExp' is a specialization of 'OperatorCallExp'.
+The class 'superimposed_PropertyCallExp' is a specialization of 'OclExpression'.
+The class 'superimposed_LoopExp' is a specialization of 'PropertyCallExp'.
+The class 'superimposed_IteratorExp' is a specialization of 'LoopExp'.
+The class 'superimposed_Iterator' is a specialization of 'VariableDeclaration'.
+The class 'superimposed_PrimitiveExp' is a specialization of 'OclExpression'.
+The class 'superimposed_StringExp' is a specialization of 'PrimitiveExp'.
+The class 'superimposed_BooleanExp' is a specialization of 'PrimitiveExp'.
+The class 'superimposed_NumericExp' is a specialization of 'PrimitiveExp'.
+The class 'superimposed_RealExp' is a specialization of 'NumericExp'.
+The class 'superimposed_IntegerExp' is a specialization of 'NumericExp'.
+The class 'superimposed_OclType' is a specialization of 'OclExpression'.
+The class 'superimposed_OclModelElement' is a specialization of 'OclType'.
+The class 'superimposed_CollectionExp' is a specialization of 'OclExpression'.
+The class 'superimposed_SetExp' is a specialization of 'CollectionExp'.
+
+Relationships between classes are modeled using associations.
+An association connects 'superimposed_OclExpression' and 'superimposed_VariableDeclaration'. From 'superimposed_OclExpression', the role 'superimposed_OclExpression' has cardinality 0..*, and from 'superimposed_VariableDeclaration', the role 'superimposed_VariableDeclaration' has cardinality 0..*.
+An association connects 'superimposed_OclType' and 'superimposed_VariableDeclaration'. From 'superimposed_OclType', the role 'superimposed_OclType' has cardinality 0..*, and from 'superimposed_VariableDeclaration', the role 'superimposed_VariableDeclaration2' has cardinality 0..*.
+An association connects 'superimposed_VariableExp' and 'superimposed_VariableDeclaration'. From 'superimposed_VariableExp', the role 'superimposed_VariableExp' has cardinality 0..*, and from 'superimposed_VariableDeclaration', the role 'superimposed_VariableDeclaration4' has cardinality 0..*.
+An association connects 'superimposed_LetExp' and 'superimposed_VariableDeclaration'. From 'superimposed_LetExp', the role 'superimposed_LetExp' has cardinality 0..*, and from 'superimposed_VariableDeclaration', the role 'superimposed_VariableDeclaration6' has cardinality 0..*.
+An association connects 'superimposed_OclExpression' and 'superimposed_LetExp'. From 'superimposed_OclExpression', the role 'superimposed_OclExpression9' has cardinality 0..*, and from 'superimposed_LetExp', the role 'superimposed_LetExp8' has cardinality 0..*.
+An association connects 'superimposed_OperationCallExp' and 'superimposed_OclExpression'. From 'superimposed_OperationCallExp', the role 'superimposed_OperationCallExp' has cardinality 0..*, and from 'superimposed_OclExpression', the role 'superimposed_OclExpression11' has cardinality 0..*.
+An association connects 'superimposed_OclExpression' and 'superimposed_IfExp'. From 'superimposed_OclExpression', the role 'superimposed_OclExpression13' has cardinality 0..*, and from 'superimposed_IfExp', the role 'superimposed_IfExp' has cardinality 0..*.
+An association connects 'superimposed_IfExp' and 'superimposed_OclExpression'. From 'superimposed_IfExp', the role 'superimposed_IfExp15' has cardinality 0..*, and from 'superimposed_OclExpression', the role 'superimposed_OclExpression16' has cardinality 0..*.
+An association connects 'superimposed_IfExp' and 'superimposed_OclExpression'. From 'superimposed_IfExp', the role 'superimposed_IfExp18' has cardinality 0..*, and from 'superimposed_OclExpression', the role 'superimposed_OclExpression19' has cardinality 0..*.
+An association connects 'superimposed_OclExpression' and 'superimposed_BinaryOperatorCallExp'. From 'superimposed_OclExpression', the role 'superimposed_OclExpression21' has cardinality 0..*, and from 'superimposed_BinaryOperatorCallExp', the role 'superimposed_BinaryOperatorCallExp' has cardinality 0..*.
+An association connects 'superimposed_BinaryOperatorCallExp' and 'superimposed_OclExpression'. From 'superimposed_BinaryOperatorCallExp', the role 'superimposed_BinaryOperatorCallExp23' has cardinality 0..*, and from 'superimposed_OclExpression', the role 'superimposed_OclExpression24' has cardinality 0..*.
+An association connects 'superimposed_UnaryOperatorCallExp' and 'superimposed_OclExpression'. From 'superimposed_UnaryOperatorCallExp', the role 'superimposed_UnaryOperatorCallExp' has cardinality 0..*, and from 'superimposed_OclExpression', the role 'superimposed_OclExpression26' has cardinality 0..*.
+An association connects 'superimposed_OclExpression' and 'superimposed_PropertyCallExp'. From 'superimposed_OclExpression', the role 'superimposed_OclExpression28' has cardinality 0..*, and from 'superimposed_PropertyCallExp', the role 'superimposed_PropertyCallExp' has cardinality 0..*.
+An association connects 'superimposed_LoopExp' and 'superimposed_OclExpression'. From 'superimposed_LoopExp', the role 'superimposed_LoopExp' has cardinality 0..*, and from 'superimposed_OclExpression', the role 'superimposed_OclExpression30' has cardinality 0..*.
+An association connects 'superimposed_IteratorExp' and 'superimposed_Iterator'. From 'superimposed_IteratorExp', the role 'superimposed_IteratorExp' has cardinality 0..*, and from 'superimposed_Iterator', the role 'superimposed_Iterator' has cardinality 0..*.
+An association connects 'superimposed_OclModel' and 'superimposed_OclModelElement'. From 'superimposed_OclModel', the role 'superimposed_OclModel' has cardinality 0..*, and from 'superimposed_OclModelElement', the role 'superimposed_OclModelElement' has cardinality 0..*.
+An association connects 'superimposed_OclExpression' and 'superimposed_CollectionExp'. From 'superimposed_OclExpression', the role 'superimposed_OclExpression34' has cardinality 0..*, and from 'superimposed_CollectionExp', the role 'superimposed_CollectionExp' has cardinality 0..*.

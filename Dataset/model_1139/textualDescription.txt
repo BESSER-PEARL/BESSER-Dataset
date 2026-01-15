@@ -1,0 +1,50 @@
+The domain model 'statemodel' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'statemodel_Import' represents an important domain concept.
+It has one attribute: 'importURI', which is of type str.
+
+'statemodel_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'statemodel_State' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'statemodel_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'statemodel_TransitionBlock' represents an important domain concept.
+It has one attribute: 'event', which is of type str.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'statemodel_Statemachine' represents an important domain concept.
+It does not declare any attributes.
+
+'statemodel_Transition' represents an important domain concept.
+It has the following attributes: 'action', which is of type str; 'guard', which is of type str.
+
+'statemodel_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StateType' defines the following possible values: 'FINAL', 'INITIAL', 'NONE'.
+
+The model also captures inheritance relationships between classes.
+The class 'statemodel_Statemachine' is a specialization of 'Element'.
+The class 'statemodel_State' is a specialization of 'Element'.
+The class 'statemodel_State' is a specialization of 'Activity'.
+The class 'statemodel_TransitionBlock' is a specialization of 'Activity'.
+
+Relationships between classes are modeled using associations.
+An association connects 'statemodel_Model' and 'statemodel_Import'. From 'statemodel_Model', the role 'statemodel_Model' has cardinality 0..*, and from 'statemodel_Import', the role 'statemodel_Import' has cardinality 0..*.
+An association connects 'statemodel_Element' and 'statemodel_Model'. From 'statemodel_Element', the role 'statemodel_Element' has cardinality 0..*, and from 'statemodel_Model', the role 'statemodel_Model2' has cardinality 0..*.
+An association connects 'statemodel_Statemachine' and 'statemodel_State'. From 'statemodel_Statemachine', the role 'statemodel_Statemachine' has cardinality 0..*, and from 'statemodel_State', the role 'statemodel_State' has cardinality 0..*.
+An association connects 'statemodel_Activity' and 'statemodel_State'. From 'statemodel_Activity', the role 'statemodel_Activity' has cardinality 0..*, and from 'statemodel_State', the role 'statemodel_State5' has cardinality 0..*.
+An association connects 'statemodel_Transition' and 'statemodel_TransitionBlock'. From 'statemodel_Transition', the role 'statemodel_Transition' has cardinality 0..*, and from 'statemodel_TransitionBlock', the role 'statemodel_TransitionBlock' has cardinality 0..*.
+An association connects 'statemodel_State' and 'statemodel_Transition'. From 'statemodel_State', the role 'statemodel_State9' has cardinality 0..*, and from 'statemodel_Transition', the role 'statemodel_Transition8' has cardinality 0..*.

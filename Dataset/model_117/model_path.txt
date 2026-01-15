@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atlanmod/modisco/modisco-models/org.eclipse.modisco.omg.gastm/src/main/resources/model/gastm.ecore

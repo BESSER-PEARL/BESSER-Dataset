@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/anatlyzer/beautyocl/src/beautyocl.catalogue.atl/metamodels/merged.ecore

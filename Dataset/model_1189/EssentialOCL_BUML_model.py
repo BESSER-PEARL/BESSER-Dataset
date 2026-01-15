@@ -1,0 +1,523 @@
+####################
+# STRUCTURAL MODEL #
+####################
+
+from besser.BUML.metamodel.structural import (
+    Class, Property, Method, Parameter,
+    BinaryAssociation, Generalization, DomainModel,
+    Enumeration, EnumerationLiteral, Multiplicity,
+    StringType, IntegerType, FloatType, BooleanType,
+    TimeType, DateType, DateTimeType, TimeDeltaType,
+    AnyType, Constraint, AssociationClass, Metadata
+)
+
+# Enumerations
+CollectionKind: Enumeration = Enumeration(
+    name="CollectionKind",
+    literals={
+            EnumerationLiteral(name="Set"),
+			EnumerationLiteral(name="OrderedSet"),
+			EnumerationLiteral(name="Bag"),
+			EnumerationLiteral(name="Sequence"),
+			EnumerationLiteral(name="Collection")
+    }
+)
+
+# Classes
+EssentialOCL_BagType = Class(name="EssentialOCL::BagType")
+CollectionType = Class(name="CollectionType")
+EssentialOCL_BooleanLiteralExp = Class(name="EssentialOCL::BooleanLiteralExp")
+PrimitiveLiteralExp = Class(name="PrimitiveLiteralExp")
+EssentialOCL_CallExp = Class(name="EssentialOCL::CallExp", is_abstract=True)
+OclExpression = Class(name="OclExpression")
+EssentialOCL_CollectionItem = Class(name="EssentialOCL::CollectionItem")
+CollectionLiteralPart = Class(name="CollectionLiteralPart")
+EssentialOCL_AnyType = Class(name="EssentialOCL::AnyType")
+Type = Class(name="Type")
+EssentialOCL_CollectionType = Class(name="EssentialOCL::CollectionType")
+DataType = Class(name="DataType")
+EssentialOCL_EnumLiteralExp = Class(name="EssentialOCL::EnumLiteralExp")
+EnumerationLiteral = Class(name="EnumerationLiteral")
+EssentialOCL_ExpressionInOcl = Class(name="EssentialOCL::ExpressionInOcl")
+Variable = Class(name="Variable")
+EssentialOCL_CollectionLiteralExp = Class(name="EssentialOCL::CollectionLiteralExp")
+LiteralExp = Class(name="LiteralExp")
+EssentialOCL_CollectionLiteralPart = Class(name="EssentialOCL::CollectionLiteralPart", is_abstract=True)
+TypedElement = Class(name="TypedElement")
+CollectionLiteralExp = Class(name="CollectionLiteralExp")
+EssentialOCL_CollectionRange = Class(name="EssentialOCL::CollectionRange")
+EssentialOCL_IntegerLiteralExp = Class(name="EssentialOCL::IntegerLiteralExp")
+NumericLiteralExp = Class(name="NumericLiteralExp")
+EssentialOCL_InvalidLiteralExp = Class(name="EssentialOCL::InvalidLiteralExp")
+EssentialOCL_InvalidType = Class(name="EssentialOCL::InvalidType")
+EssentialOCL_IterateExp = Class(name="EssentialOCL::IterateExp")
+LoopExp = Class(name="LoopExp")
+EssentialOCL_IteratorExp = Class(name="EssentialOCL::IteratorExp")
+EssentialOCL_LetExp = Class(name="EssentialOCL::LetExp")
+EssentialOCL_FeatureCallExp = Class(name="EssentialOCL::FeatureCallExp", is_abstract=True)
+CallExp = Class(name="CallExp")
+EssentialOCL_IfExp = Class(name="EssentialOCL::IfExp")
+EssentialOCL_OclExpression = Class(name="EssentialOCL::OclExpression", is_abstract=True)
+EssentialOCL_OperationCallExp = Class(name="EssentialOCL::OperationCallExp")
+Operation = Class(name="Operation")
+EssentialOCL_OrderedSetType = Class(name="EssentialOCL::OrderedSetType")
+EssentialOCL_PrimitiveLiteralExp = Class(name="EssentialOCL::PrimitiveLiteralExp", is_abstract=True)
+EssentialOCL_PropertyCallExp = Class(name="EssentialOCL::PropertyCallExp")
+NavigationCallExp = Class(name="NavigationCallExp")
+Property_ = Class(name="Property")
+EssentialOCL_LiteralExp = Class(name="EssentialOCL::LiteralExp", is_abstract=True)
+EssentialOCL_LoopExp = Class(name="EssentialOCL::LoopExp", is_abstract=True)
+EssentialOCL_NavigationCallExp = Class(name="EssentialOCL::NavigationCallExp")
+FeatureCallExp = Class(name="FeatureCallExp")
+EssentialOCL_NullLiteralExp = Class(name="EssentialOCL::NullLiteralExp")
+EssentialOCL_NumericLiteralExp = Class(name="EssentialOCL::NumericLiteralExp", is_abstract=True)
+TupleLiteralExp = Class(name="TupleLiteralExp")
+EssentialOCL_TupleType = Class(name="EssentialOCL::TupleType")
+Class_ = Class(name="Class")
+EssentialOCL_TypeExp = Class(name="EssentialOCL::TypeExp")
+EssentialOCL_TypeType = Class(name="EssentialOCL::TypeType")
+EssentialOCL_UnlimitedNaturalExp = Class(name="EssentialOCL::UnlimitedNaturalExp")
+EssentialOCL_Variable = Class(name="EssentialOCL::Variable")
+EssentialOCL_RealLiteralExp = Class(name="EssentialOCL::RealLiteralExp")
+EssentialOCL_SequenceType = Class(name="EssentialOCL::SequenceType")
+EssentialOCL_SetType = Class(name="EssentialOCL::SetType")
+EssentialOCL_StringLiteralExp = Class(name="EssentialOCL::StringLiteralExp")
+EssentialOCL_TupleLiteralExp = Class(name="EssentialOCL::TupleLiteralExp")
+TupleLiteralPart = Class(name="TupleLiteralPart")
+EssentialOCL_TupleLiteralPart = Class(name="EssentialOCL::TupleLiteralPart")
+LetExp = Class(name="LetExp")
+Parameter_ = Class(name="Parameter")
+EssentialOCL_VariableExp = Class(name="EssentialOCL::VariableExp")
+EssentialOCL_VoidType = Class(name="EssentialOCL::VoidType")
+
+# EssentialOCL_BagType class attributes and methods
+
+# CollectionType class attributes and methods
+
+# EssentialOCL_BooleanLiteralExp class attributes and methods
+EssentialOCL_BooleanLiteralExp_booleanSymbol: Property = Property(name="booleanSymbol", type=StringType)
+EssentialOCL_BooleanLiteralExp.attributes={EssentialOCL_BooleanLiteralExp_booleanSymbol}
+
+# PrimitiveLiteralExp class attributes and methods
+
+# EssentialOCL_CallExp class attributes and methods
+
+# OclExpression class attributes and methods
+
+# EssentialOCL_CollectionItem class attributes and methods
+
+# CollectionLiteralPart class attributes and methods
+
+# EssentialOCL_AnyType class attributes and methods
+
+# Type class attributes and methods
+
+# EssentialOCL_CollectionType class attributes and methods
+
+# DataType class attributes and methods
+
+# EssentialOCL_EnumLiteralExp class attributes and methods
+
+# EnumerationLiteral class attributes and methods
+
+# EssentialOCL_ExpressionInOcl class attributes and methods
+
+# Variable class attributes and methods
+
+# EssentialOCL_CollectionLiteralExp class attributes and methods
+EssentialOCL_CollectionLiteralExp_kind: Property = Property(name="kind", type=StringType)
+EssentialOCL_CollectionLiteralExp.attributes={EssentialOCL_CollectionLiteralExp_kind}
+
+# LiteralExp class attributes and methods
+
+# EssentialOCL_CollectionLiteralPart class attributes and methods
+
+# TypedElement class attributes and methods
+
+# CollectionLiteralExp class attributes and methods
+
+# EssentialOCL_CollectionRange class attributes and methods
+
+# EssentialOCL_IntegerLiteralExp class attributes and methods
+EssentialOCL_IntegerLiteralExp_integerSymbol: Property = Property(name="integerSymbol", type=StringType)
+EssentialOCL_IntegerLiteralExp.attributes={EssentialOCL_IntegerLiteralExp_integerSymbol}
+
+# NumericLiteralExp class attributes and methods
+
+# EssentialOCL_InvalidLiteralExp class attributes and methods
+
+# EssentialOCL_InvalidType class attributes and methods
+
+# EssentialOCL_IterateExp class attributes and methods
+
+# LoopExp class attributes and methods
+
+# EssentialOCL_IteratorExp class attributes and methods
+
+# EssentialOCL_LetExp class attributes and methods
+
+# EssentialOCL_FeatureCallExp class attributes and methods
+
+# CallExp class attributes and methods
+
+# EssentialOCL_IfExp class attributes and methods
+
+# EssentialOCL_OclExpression class attributes and methods
+
+# EssentialOCL_OperationCallExp class attributes and methods
+
+# Operation class attributes and methods
+
+# EssentialOCL_OrderedSetType class attributes and methods
+
+# EssentialOCL_PrimitiveLiteralExp class attributes and methods
+
+# EssentialOCL_PropertyCallExp class attributes and methods
+
+# NavigationCallExp class attributes and methods
+
+# Property class attributes and methods
+
+# EssentialOCL_LiteralExp class attributes and methods
+
+# EssentialOCL_LoopExp class attributes and methods
+
+# EssentialOCL_NavigationCallExp class attributes and methods
+
+# FeatureCallExp class attributes and methods
+
+# EssentialOCL_NullLiteralExp class attributes and methods
+
+# EssentialOCL_NumericLiteralExp class attributes and methods
+
+# TupleLiteralExp class attributes and methods
+
+# EssentialOCL_TupleType class attributes and methods
+
+# Class class attributes and methods
+
+# EssentialOCL_TypeExp class attributes and methods
+
+# EssentialOCL_TypeType class attributes and methods
+
+# EssentialOCL_UnlimitedNaturalExp class attributes and methods
+EssentialOCL_UnlimitedNaturalExp_symbol: Property = Property(name="symbol", type=StringType)
+EssentialOCL_UnlimitedNaturalExp.attributes={EssentialOCL_UnlimitedNaturalExp_symbol}
+
+# EssentialOCL_Variable class attributes and methods
+
+# EssentialOCL_RealLiteralExp class attributes and methods
+EssentialOCL_RealLiteralExp_realSymbol: Property = Property(name="realSymbol", type=StringType)
+EssentialOCL_RealLiteralExp.attributes={EssentialOCL_RealLiteralExp_realSymbol}
+
+# EssentialOCL_SequenceType class attributes and methods
+
+# EssentialOCL_SetType class attributes and methods
+
+# EssentialOCL_StringLiteralExp class attributes and methods
+EssentialOCL_StringLiteralExp_stringSymbol: Property = Property(name="stringSymbol", type=StringType)
+EssentialOCL_StringLiteralExp.attributes={EssentialOCL_StringLiteralExp_stringSymbol}
+
+# EssentialOCL_TupleLiteralExp class attributes and methods
+
+# TupleLiteralPart class attributes and methods
+
+# EssentialOCL_TupleLiteralPart class attributes and methods
+
+# LetExp class attributes and methods
+
+# Parameter class attributes and methods
+
+# EssentialOCL_VariableExp class attributes and methods
+
+# EssentialOCL_VoidType class attributes and methods
+
+# Relationships
+source0: BinaryAssociation = BinaryAssociation(
+    name="source0",
+    ends={
+        Property(name="OclExpression", type=EssentialOCL_CallExp, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_CallExp", type=OclExpression, multiplicity=Multiplicity(0, 1), is_composite=True)
+    }
+)
+item1: BinaryAssociation = BinaryAssociation(
+    name="item1",
+    ends={
+        Property(name="OclExpression2", type=EssentialOCL_CollectionItem, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_CollectionItem", type=OclExpression, multiplicity=Multiplicity(1, 1), is_composite=True)
+    }
+)
+last7: BinaryAssociation = BinaryAssociation(
+    name="last7",
+    ends={
+        Property(name="OclExpression9", type=EssentialOCL_CollectionRange, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_CollectionRange8", type=OclExpression, multiplicity=Multiplicity(1, 1), is_composite=True)
+    }
+)
+elementType10: BinaryAssociation = BinaryAssociation(
+    name="elementType10",
+    ends={
+        Property(name="Type", type=EssentialOCL_CollectionType, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_CollectionType", type=Type, multiplicity=Multiplicity(1, 1))
+    }
+)
+referredEnumLiteral11: BinaryAssociation = BinaryAssociation(
+    name="referredEnumLiteral11",
+    ends={
+        Property(name="EnumerationLiteral", type=EssentialOCL_EnumLiteralExp, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_EnumLiteralExp", type=EnumerationLiteral, multiplicity=Multiplicity(0, 1))
+    }
+)
+bodyExpression12: BinaryAssociation = BinaryAssociation(
+    name="bodyExpression12",
+    ends={
+        Property(name="OclExpression13", type=EssentialOCL_ExpressionInOcl, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_ExpressionInOcl", type=OclExpression, multiplicity=Multiplicity(1, 1), is_composite=True)
+    }
+)
+contextVariable14: BinaryAssociation = BinaryAssociation(
+    name="contextVariable14",
+    ends={
+        Property(name="Variable", type=EssentialOCL_ExpressionInOcl, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_ExpressionInOcl15", type=Variable, multiplicity=Multiplicity(0, 1), is_composite=True)
+    }
+)
+part3: BinaryAssociation = BinaryAssociation(
+    name="part3",
+    ends={
+        Property(name="CollectionLiteralPart", type=EssentialOCL_CollectionLiteralExp, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_CollectionLiteralExp", type=CollectionLiteralPart, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+collectionLiteralExp4: BinaryAssociation = BinaryAssociation(
+    name="collectionLiteralExp4",
+    ends={
+        Property(name="CollectionLiteralExp", type=EssentialOCL_CollectionLiteralPart, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_CollectionLiteralPart", type=CollectionLiteralExp, multiplicity=Multiplicity(1, 1))
+    }
+)
+first5: BinaryAssociation = BinaryAssociation(
+    name="first5",
+    ends={
+        Property(name="OclExpression6", type=EssentialOCL_CollectionRange, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_CollectionRange", type=OclExpression, multiplicity=Multiplicity(1, 1), is_composite=True)
+    }
+)
+thenExpression27: BinaryAssociation = BinaryAssociation(
+    name="thenExpression27",
+    ends={
+        Property(name="OclExpression29", type=EssentialOCL_IfExp, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_IfExp28", type=OclExpression, multiplicity=Multiplicity(1, 1), is_composite=True)
+    }
+)
+result30: BinaryAssociation = BinaryAssociation(
+    name="result30",
+    ends={
+        Property(name="Variable31", type=EssentialOCL_IterateExp, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_IterateExp", type=Variable, multiplicity=Multiplicity(0, 1), is_composite=True)
+    }
+)
+in32: BinaryAssociation = BinaryAssociation(
+    name="in32",
+    ends={
+        Property(name="OclExpression33", type=EssentialOCL_LetExp, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_LetExp", type=OclExpression, multiplicity=Multiplicity(1, 1), is_composite=True)
+    }
+)
+parameterVariable16: BinaryAssociation = BinaryAssociation(
+    name="parameterVariable16",
+    ends={
+        Property(name="Variable18", type=EssentialOCL_ExpressionInOcl, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_ExpressionInOcl17", type=Variable, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+resultVariable19: BinaryAssociation = BinaryAssociation(
+    name="resultVariable19",
+    ends={
+        Property(name="Variable21", type=EssentialOCL_ExpressionInOcl, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_ExpressionInOcl20", type=Variable, multiplicity=Multiplicity(0, 1), is_composite=True)
+    }
+)
+condition22: BinaryAssociation = BinaryAssociation(
+    name="condition22",
+    ends={
+        Property(name="OclExpression23", type=EssentialOCL_IfExp, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_IfExp", type=OclExpression, multiplicity=Multiplicity(1, 1), is_composite=True)
+    }
+)
+elseExpression24: BinaryAssociation = BinaryAssociation(
+    name="elseExpression24",
+    ends={
+        Property(name="OclExpression26", type=EssentialOCL_IfExp, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_IfExp25", type=OclExpression, multiplicity=Multiplicity(1, 1), is_composite=True)
+    }
+)
+argument42: BinaryAssociation = BinaryAssociation(
+    name="argument42",
+    ends={
+        Property(name="OclExpression43", type=EssentialOCL_OperationCallExp, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_OperationCallExp", type=OclExpression, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+referredOperation44: BinaryAssociation = BinaryAssociation(
+    name="referredOperation44",
+    ends={
+        Property(name="Operation", type=EssentialOCL_OperationCallExp, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_OperationCallExp45", type=Operation, multiplicity=Multiplicity(0, 1))
+    }
+)
+referredProperty46: BinaryAssociation = BinaryAssociation(
+    name="referredProperty46",
+    ends={
+        Property(name="Property", type=EssentialOCL_PropertyCallExp, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_PropertyCallExp", type=Property_, multiplicity=Multiplicity(0, 1))
+    }
+)
+variable34: BinaryAssociation = BinaryAssociation(
+    name="variable34",
+    ends={
+        Property(name="Variable36", type=EssentialOCL_LetExp, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_LetExp35", type=Variable, multiplicity=Multiplicity(1, 1), is_composite=True)
+    }
+)
+body37: BinaryAssociation = BinaryAssociation(
+    name="body37",
+    ends={
+        Property(name="OclExpression38", type=EssentialOCL_LoopExp, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_LoopExp", type=OclExpression, multiplicity=Multiplicity(1, 1), is_composite=True)
+    }
+)
+iterator39: BinaryAssociation = BinaryAssociation(
+    name="iterator39",
+    ends={
+        Property(name="Variable41", type=EssentialOCL_LoopExp, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_LoopExp40", type=Variable, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+tupleLiteralExp50: BinaryAssociation = BinaryAssociation(
+    name="tupleLiteralExp50",
+    ends={
+        Property(name="TupleLiteralExp", type=EssentialOCL_TupleLiteralPart, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_TupleLiteralPart51", type=TupleLiteralExp, multiplicity=Multiplicity(0, 1))
+    }
+)
+value52: BinaryAssociation = BinaryAssociation(
+    name="value52",
+    ends={
+        Property(name="OclExpression54", type=EssentialOCL_TupleLiteralPart, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_TupleLiteralPart53", type=OclExpression, multiplicity=Multiplicity(1, 1), is_composite=True)
+    }
+)
+referredType55: BinaryAssociation = BinaryAssociation(
+    name="referredType55",
+    ends={
+        Property(name="Type56", type=EssentialOCL_TypeExp, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_TypeExp", type=Type, multiplicity=Multiplicity(0, 1))
+    }
+)
+initExpression57: BinaryAssociation = BinaryAssociation(
+    name="initExpression57",
+    ends={
+        Property(name="OclExpression58", type=EssentialOCL_Variable, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_Variable", type=OclExpression, multiplicity=Multiplicity(0, 1), is_composite=True)
+    }
+)
+part47: BinaryAssociation = BinaryAssociation(
+    name="part47",
+    ends={
+        Property(name="TupleLiteralPart", type=EssentialOCL_TupleLiteralExp, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_TupleLiteralExp", type=TupleLiteralPart, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+attribute48: BinaryAssociation = BinaryAssociation(
+    name="attribute48",
+    ends={
+        Property(name="Property49", type=EssentialOCL_TupleLiteralPart, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_TupleLiteralPart", type=Property_, multiplicity=Multiplicity(0, 1))
+    }
+)
+letExp59: BinaryAssociation = BinaryAssociation(
+    name="letExp59",
+    ends={
+        Property(name="LetExp", type=EssentialOCL_Variable, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_Variable60", type=LetExp, multiplicity=Multiplicity(0, 1))
+    }
+)
+representedParameter61: BinaryAssociation = BinaryAssociation(
+    name="representedParameter61",
+    ends={
+        Property(name="Parameter", type=EssentialOCL_Variable, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_Variable62", type=Parameter_, multiplicity=Multiplicity(0, 1))
+    }
+)
+referredVariable63: BinaryAssociation = BinaryAssociation(
+    name="referredVariable63",
+    ends={
+        Property(name="Variable64", type=EssentialOCL_VariableExp, multiplicity=Multiplicity(1, 1)),
+        Property(name="EssentialOCL_VariableExp", type=Variable, multiplicity=Multiplicity(0, 1))
+    }
+)
+
+# Generalizations
+gen_EssentialOCL_BagType_CollectionType = Generalization(general=CollectionType, specific=EssentialOCL_BagType)
+gen_EssentialOCL_BooleanLiteralExp_PrimitiveLiteralExp = Generalization(general=PrimitiveLiteralExp, specific=EssentialOCL_BooleanLiteralExp)
+gen_EssentialOCL_CallExp_OclExpression = Generalization(general=OclExpression, specific=EssentialOCL_CallExp)
+gen_EssentialOCL_CollectionItem_CollectionLiteralPart = Generalization(general=CollectionLiteralPart, specific=EssentialOCL_CollectionItem)
+gen_EssentialOCL_AnyType_Type = Generalization(general=Type, specific=EssentialOCL_AnyType)
+gen_EssentialOCL_CollectionType_DataType = Generalization(general=DataType, specific=EssentialOCL_CollectionType)
+gen_EssentialOCL_EnumLiteralExp_LiteralExp = Generalization(general=LiteralExp, specific=EssentialOCL_EnumLiteralExp)
+gen_EssentialOCL_ExpressionInOcl_TypedElement = Generalization(general=TypedElement, specific=EssentialOCL_ExpressionInOcl)
+gen_EssentialOCL_CollectionLiteralExp_LiteralExp = Generalization(general=LiteralExp, specific=EssentialOCL_CollectionLiteralExp)
+gen_EssentialOCL_CollectionLiteralPart_TypedElement = Generalization(general=TypedElement, specific=EssentialOCL_CollectionLiteralPart)
+gen_EssentialOCL_CollectionRange_CollectionLiteralPart = Generalization(general=CollectionLiteralPart, specific=EssentialOCL_CollectionRange)
+gen_EssentialOCL_IntegerLiteralExp_NumericLiteralExp = Generalization(general=NumericLiteralExp, specific=EssentialOCL_IntegerLiteralExp)
+gen_EssentialOCL_InvalidLiteralExp_LiteralExp = Generalization(general=LiteralExp, specific=EssentialOCL_InvalidLiteralExp)
+gen_EssentialOCL_InvalidType_Type = Generalization(general=Type, specific=EssentialOCL_InvalidType)
+gen_EssentialOCL_IterateExp_LoopExp = Generalization(general=LoopExp, specific=EssentialOCL_IterateExp)
+gen_EssentialOCL_IteratorExp_LoopExp = Generalization(general=LoopExp, specific=EssentialOCL_IteratorExp)
+gen_EssentialOCL_LetExp_OclExpression = Generalization(general=OclExpression, specific=EssentialOCL_LetExp)
+gen_EssentialOCL_FeatureCallExp_CallExp = Generalization(general=CallExp, specific=EssentialOCL_FeatureCallExp)
+gen_EssentialOCL_IfExp_OclExpression = Generalization(general=OclExpression, specific=EssentialOCL_IfExp)
+gen_EssentialOCL_OclExpression_TypedElement = Generalization(general=TypedElement, specific=EssentialOCL_OclExpression)
+gen_EssentialOCL_OperationCallExp_FeatureCallExp = Generalization(general=FeatureCallExp, specific=EssentialOCL_OperationCallExp)
+gen_EssentialOCL_OrderedSetType_CollectionType = Generalization(general=CollectionType, specific=EssentialOCL_OrderedSetType)
+gen_EssentialOCL_PrimitiveLiteralExp_LiteralExp = Generalization(general=LiteralExp, specific=EssentialOCL_PrimitiveLiteralExp)
+gen_EssentialOCL_PropertyCallExp_NavigationCallExp = Generalization(general=NavigationCallExp, specific=EssentialOCL_PropertyCallExp)
+gen_EssentialOCL_LiteralExp_OclExpression = Generalization(general=OclExpression, specific=EssentialOCL_LiteralExp)
+gen_EssentialOCL_LoopExp_CallExp = Generalization(general=CallExp, specific=EssentialOCL_LoopExp)
+gen_EssentialOCL_LoopExp_OclExpression = Generalization(general=OclExpression, specific=EssentialOCL_LoopExp)
+gen_EssentialOCL_NavigationCallExp_FeatureCallExp = Generalization(general=FeatureCallExp, specific=EssentialOCL_NavigationCallExp)
+gen_EssentialOCL_NullLiteralExp_LiteralExp = Generalization(general=LiteralExp, specific=EssentialOCL_NullLiteralExp)
+gen_EssentialOCL_NumericLiteralExp_PrimitiveLiteralExp = Generalization(general=PrimitiveLiteralExp, specific=EssentialOCL_NumericLiteralExp)
+gen_EssentialOCL_TupleType_Class = Generalization(general=Class_, specific=EssentialOCL_TupleType)
+gen_EssentialOCL_TupleType_DataType = Generalization(general=DataType, specific=EssentialOCL_TupleType)
+gen_EssentialOCL_TypeExp_OclExpression = Generalization(general=OclExpression, specific=EssentialOCL_TypeExp)
+gen_EssentialOCL_TypeType_Type = Generalization(general=Type, specific=EssentialOCL_TypeType)
+gen_EssentialOCL_UnlimitedNaturalExp_NumericLiteralExp = Generalization(general=NumericLiteralExp, specific=EssentialOCL_UnlimitedNaturalExp)
+gen_EssentialOCL_Variable_TypedElement = Generalization(general=TypedElement, specific=EssentialOCL_Variable)
+gen_EssentialOCL_RealLiteralExp_NumericLiteralExp = Generalization(general=NumericLiteralExp, specific=EssentialOCL_RealLiteralExp)
+gen_EssentialOCL_SequenceType_CollectionType = Generalization(general=CollectionType, specific=EssentialOCL_SequenceType)
+gen_EssentialOCL_SetType_CollectionType = Generalization(general=CollectionType, specific=EssentialOCL_SetType)
+gen_EssentialOCL_StringLiteralExp_PrimitiveLiteralExp = Generalization(general=PrimitiveLiteralExp, specific=EssentialOCL_StringLiteralExp)
+gen_EssentialOCL_TupleLiteralExp_LiteralExp = Generalization(general=LiteralExp, specific=EssentialOCL_TupleLiteralExp)
+gen_EssentialOCL_TupleLiteralPart_TypedElement = Generalization(general=TypedElement, specific=EssentialOCL_TupleLiteralPart)
+gen_EssentialOCL_VariableExp_OclExpression = Generalization(general=OclExpression, specific=EssentialOCL_VariableExp)
+gen_EssentialOCL_VoidType_Type = Generalization(general=Type, specific=EssentialOCL_VoidType)
+
+# Domain Model
+domain_model = DomainModel(
+    name="EssentialOCL",
+    types={EssentialOCL_BagType, CollectionType, EssentialOCL_BooleanLiteralExp, PrimitiveLiteralExp, EssentialOCL_CallExp, OclExpression, EssentialOCL_CollectionItem, CollectionLiteralPart, EssentialOCL_AnyType, Type, EssentialOCL_CollectionType, DataType, EssentialOCL_EnumLiteralExp, EnumerationLiteral, EssentialOCL_ExpressionInOcl, Variable, EssentialOCL_CollectionLiteralExp, LiteralExp, EssentialOCL_CollectionLiteralPart, TypedElement, CollectionLiteralExp, EssentialOCL_CollectionRange, EssentialOCL_IntegerLiteralExp, NumericLiteralExp, EssentialOCL_InvalidLiteralExp, EssentialOCL_InvalidType, EssentialOCL_IterateExp, LoopExp, EssentialOCL_IteratorExp, EssentialOCL_LetExp, EssentialOCL_FeatureCallExp, CallExp, EssentialOCL_IfExp, EssentialOCL_OclExpression, EssentialOCL_OperationCallExp, Operation, EssentialOCL_OrderedSetType, EssentialOCL_PrimitiveLiteralExp, EssentialOCL_PropertyCallExp, NavigationCallExp, Property_, EssentialOCL_LiteralExp, EssentialOCL_LoopExp, EssentialOCL_NavigationCallExp, FeatureCallExp, EssentialOCL_NullLiteralExp, EssentialOCL_NumericLiteralExp, TupleLiteralExp, EssentialOCL_TupleType, Class_, EssentialOCL_TypeExp, EssentialOCL_TypeType, EssentialOCL_UnlimitedNaturalExp, EssentialOCL_Variable, EssentialOCL_RealLiteralExp, EssentialOCL_SequenceType, EssentialOCL_SetType, EssentialOCL_StringLiteralExp, EssentialOCL_TupleLiteralExp, TupleLiteralPart, EssentialOCL_TupleLiteralPart, LetExp, Parameter_, EssentialOCL_VariableExp, EssentialOCL_VoidType, CollectionKind},
+    associations={source0, item1, last7, elementType10, referredEnumLiteral11, bodyExpression12, contextVariable14, part3, collectionLiteralExp4, first5, thenExpression27, result30, in32, parameterVariable16, resultVariable19, condition22, elseExpression24, argument42, referredOperation44, referredProperty46, variable34, body37, iterator39, tupleLiteralExp50, value52, referredType55, initExpression57, part47, attribute48, letExp59, representedParameter61, referredVariable63},
+    generalizations={gen_EssentialOCL_BagType_CollectionType, gen_EssentialOCL_BooleanLiteralExp_PrimitiveLiteralExp, gen_EssentialOCL_CallExp_OclExpression, gen_EssentialOCL_CollectionItem_CollectionLiteralPart, gen_EssentialOCL_AnyType_Type, gen_EssentialOCL_CollectionType_DataType, gen_EssentialOCL_EnumLiteralExp_LiteralExp, gen_EssentialOCL_ExpressionInOcl_TypedElement, gen_EssentialOCL_CollectionLiteralExp_LiteralExp, gen_EssentialOCL_CollectionLiteralPart_TypedElement, gen_EssentialOCL_CollectionRange_CollectionLiteralPart, gen_EssentialOCL_IntegerLiteralExp_NumericLiteralExp, gen_EssentialOCL_InvalidLiteralExp_LiteralExp, gen_EssentialOCL_InvalidType_Type, gen_EssentialOCL_IterateExp_LoopExp, gen_EssentialOCL_IteratorExp_LoopExp, gen_EssentialOCL_LetExp_OclExpression, gen_EssentialOCL_FeatureCallExp_CallExp, gen_EssentialOCL_IfExp_OclExpression, gen_EssentialOCL_OclExpression_TypedElement, gen_EssentialOCL_OperationCallExp_FeatureCallExp, gen_EssentialOCL_OrderedSetType_CollectionType, gen_EssentialOCL_PrimitiveLiteralExp_LiteralExp, gen_EssentialOCL_PropertyCallExp_NavigationCallExp, gen_EssentialOCL_LiteralExp_OclExpression, gen_EssentialOCL_LoopExp_CallExp, gen_EssentialOCL_LoopExp_OclExpression, gen_EssentialOCL_NavigationCallExp_FeatureCallExp, gen_EssentialOCL_NullLiteralExp_LiteralExp, gen_EssentialOCL_NumericLiteralExp_PrimitiveLiteralExp, gen_EssentialOCL_TupleType_Class, gen_EssentialOCL_TupleType_DataType, gen_EssentialOCL_TypeExp_OclExpression, gen_EssentialOCL_TypeType_Type, gen_EssentialOCL_UnlimitedNaturalExp_NumericLiteralExp, gen_EssentialOCL_Variable_TypedElement, gen_EssentialOCL_RealLiteralExp_NumericLiteralExp, gen_EssentialOCL_SequenceType_CollectionType, gen_EssentialOCL_SetType_CollectionType, gen_EssentialOCL_StringLiteralExp_PrimitiveLiteralExp, gen_EssentialOCL_TupleLiteralExp_LiteralExp, gen_EssentialOCL_TupleLiteralPart_TypedElement, gen_EssentialOCL_VariableExp_OclExpression, gen_EssentialOCL_VoidType_Type},
+    metadata=None
+)
+
+
+###################### 
+ # PROJECT DEFINITION # 
+ ###################### 
+from besser.BUML.metamodel.project import Project 
+from besser.BUML.metamodel.structural.structural import Metadata
+metadata = Metadata(description="New project")
+project = Project(name="sampleModel",models=[domain_model],owner="User",metadata=metadata)

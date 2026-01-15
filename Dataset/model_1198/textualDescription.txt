@@ -1,0 +1,327 @@
+The domain model 'essentialocl' describes the core structural elements and their relationships within the system.
+
+The model defines 74 main class(es).
+
+'essentialocl_expressions_ExpressionInOcl' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_InvalidLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_TypeLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'InvalidType' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_CollectionLiteralExp' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'essentialocl_types_TypeType' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_IntegerLiteralExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'essentialocl_expressions_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_types_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'OclLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'types_essentialocl_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_CollectionRange' represents an important domain concept.
+It does not declare any attributes.
+
+'BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_essentialocl_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_UnlimitedNaturalExp' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'essentialocl_expressions_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_types_AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_BooleanLiteralExp' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type str.
+
+'TypeType' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_CollectionItem' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_types_OclLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_RealLiteralExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type str.
+
+'essentialocl_expressions_LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_FeatureCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_types_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'types_essentialocl_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_StringLiteralExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'essentialocl_expressions_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_types_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_types_InvalidType' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_UndefinedLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_IteratorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_EnumLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_essentialocl_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_types_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_types_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_types_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_expressions_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_essentialocl_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_essentialocl_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_essentialocl_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_types_CollectionType' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CollectionKind' defines the following possible values: 'Bag', 'Set', 'Sequence', 'Collection', 'OrderedSet'.
+
+The model also captures inheritance relationships between classes.
+The class 'essentialocl_types_BagType' is a specialization of 'CollectionType'.
+The class 'essentialocl_types_TupleType' is a specialization of 'Type'.
+The class 'essentialocl_types_CollectionType' is a specialization of 'Type'.
+The class 'essentialocl_types_InvalidType' is a specialization of 'Type'.
+The class 'essentialocl_types_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'essentialocl_types_SequenceType' is a specialization of 'CollectionType'.
+The class 'essentialocl_types_SetType' is a specialization of 'CollectionType'.
+The class 'essentialocl_types_VoidType' is a specialization of 'Type'.
+The class 'essentialocl_types_TypeType' is a specialization of 'Type'.
+The class 'essentialocl_types_AnyType' is a specialization of 'Type'.
+The class 'essentialocl_expressions_VariableExp' is a specialization of 'OclExpression'.
+The class 'essentialocl_expressions_Variable' is a specialization of 'TypedElement'.
+The class 'essentialocl_expressions_Variable' is a specialization of 'NamedElement'.
+The class 'essentialocl_expressions_UnlimitedNaturalExp' is a specialization of 'NumericLiteralExp'.
+The class 'essentialocl_expressions_TypeLiteralExp' is a specialization of 'LiteralExp'.
+The class 'essentialocl_expressions_TupleLiteralPart' is a specialization of 'TypedElement'.
+The class 'essentialocl_expressions_TupleLiteralExp' is a specialization of 'LiteralExp'.
+The class 'essentialocl_expressions_StringLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'essentialocl_expressions_RealLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'essentialocl_expressions_PropertyCallExp' is a specialization of 'FeatureCallExp'.
+The class 'essentialocl_expressions_PrimitiveLiteralExp' is a specialization of 'LiteralExp'.
+The class 'essentialocl_expressions_OperationCallExp' is a specialization of 'FeatureCallExp'.
+The class 'essentialocl_expressions_OclExpression' is a specialization of 'TypedElement'.
+The class 'essentialocl_expressions_OclExpression' is a specialization of 'NamedElement'.
+The class 'essentialocl_expressions_NumericLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'essentialocl_expressions_UndefinedLiteralExp' is a specialization of 'LiteralExp'.
+The class 'essentialocl_expressions_LoopExp' is a specialization of 'CallExp'.
+The class 'essentialocl_expressions_LiteralExp' is a specialization of 'OclExpression'.
+The class 'essentialocl_expressions_LetExp' is a specialization of 'OclExpression'.
+The class 'essentialocl_expressions_IteratorExp' is a specialization of 'LoopExp'.
+The class 'essentialocl_expressions_IterateExp' is a specialization of 'LoopExp'.
+The class 'essentialocl_expressions_InvalidLiteralExp' is a specialization of 'LiteralExp'.
+The class 'essentialocl_expressions_IntegerLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'essentialocl_expressions_IfExp' is a specialization of 'OclExpression'.
+The class 'essentialocl_expressions_FeatureCallExp' is a specialization of 'CallExp'.
+The class 'essentialocl_expressions_BooleanLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'essentialocl_expressions_CallExp' is a specialization of 'OclExpression'.
+The class 'essentialocl_expressions_CollectionItem' is a specialization of 'CollectionLiteralPart'.
+The class 'essentialocl_expressions_CollectionLiteralExp' is a specialization of 'LiteralExp'.
+The class 'essentialocl_expressions_CollectionLiteralPart' is a specialization of 'TypedElement'.
+The class 'essentialocl_expressions_CollectionRange' is a specialization of 'CollectionLiteralPart'.
+The class 'essentialocl_expressions_EnumLiteralExp' is a specialization of 'LiteralExp'.
+The class 'essentialocl_expressions_ExpressionInOcl' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'OclLibrary' and 'essentialocl_types_TupleType'. From 'OclLibrary', the role 'OclLibrary' has cardinality 0..*, and from 'essentialocl_types_TupleType', the role 'essentialocl_types_TupleType' has cardinality 0..*.
+An association connects 'types_essentialocl_Type' and 'essentialocl_types_CollectionType'. From 'types_essentialocl_Type', the role 'types_essentialocl_Type' has cardinality 0..*, and from 'essentialocl_types_CollectionType', the role 'essentialocl_types_CollectionType' has cardinality 0..*.
+An association connects 'OclLibrary' and 'essentialocl_types_CollectionType'. From 'OclLibrary', the role 'OclLibrary4' has cardinality 0..*, and from 'essentialocl_types_CollectionType', the role 'essentialocl_types_CollectionType3' has cardinality 0..*.
+An association connects 'essentialocl_types_InvalidType' and 'OclLibrary'. From 'essentialocl_types_InvalidType', the role 'OclLibrary6' has cardinality 0..*, and from 'OclLibrary', the role 'types' has cardinality 0..*.
+An association connects 'essentialocl_types_VoidType' and 'OclLibrary'. From 'essentialocl_types_VoidType', the role 'OclLibrary8' has cardinality 0..*, and from 'OclLibrary', the role 'types9' has cardinality 0..*.
+An association connects 'types_essentialocl_Type' and 'essentialocl_types_TypeType'. From 'types_essentialocl_Type', the role 'types_essentialocl_Type11' has cardinality 0..*, and from 'essentialocl_types_TypeType', the role 'essentialocl_types_TypeType' has cardinality 0..*.
+An association connects 'essentialocl_types_OclLibrary' and 'types_essentialocl_PrimitiveType'. From 'essentialocl_types_OclLibrary', the role 'essentialocl_types_OclLibrary' has cardinality 0..*, and from 'types_essentialocl_PrimitiveType', the role 'types_essentialocl_PrimitiveType' has cardinality 0..*.
+An association connects 'essentialocl_types_OclLibrary' and 'types_essentialocl_PrimitiveType'. From 'essentialocl_types_OclLibrary', the role 'essentialocl_types_OclLibrary14' has cardinality 0..*, and from 'types_essentialocl_PrimitiveType', the role 'types_essentialocl_PrimitiveType15' has cardinality 0..*.
+An association connects 'essentialocl_types_OclLibrary' and 'types_essentialocl_PrimitiveType'. From 'essentialocl_types_OclLibrary', the role 'essentialocl_types_OclLibrary17' has cardinality 0..*, and from 'types_essentialocl_PrimitiveType', the role 'types_essentialocl_PrimitiveType18' has cardinality 0..*.
+An association connects 'essentialocl_types_OclLibrary' and 'types_essentialocl_PrimitiveType'. From 'essentialocl_types_OclLibrary', the role 'essentialocl_types_OclLibrary20' has cardinality 0..*, and from 'types_essentialocl_PrimitiveType', the role 'types_essentialocl_PrimitiveType21' has cardinality 0..*.
+An association connects 'essentialocl_types_OclLibrary' and 'AnyType'. From 'essentialocl_types_OclLibrary', the role 'essentialocl_types_OclLibrary23' has cardinality 0..*, and from 'AnyType', the role 'AnyType' has cardinality 0..*.
+An association connects 'VoidType' and 'essentialocl_types_OclLibrary'. From 'VoidType', the role 'types25' has cardinality 0..*, and from 'essentialocl_types_OclLibrary', the role 'VoidType' has cardinality 0..*.
+An association connects 'InvalidType' and 'essentialocl_types_OclLibrary'. From 'InvalidType', the role 'types27' has cardinality 0..*, and from 'essentialocl_types_OclLibrary', the role 'InvalidType' has cardinality 0..*.
+An association connects 'essentialocl_types_OclLibrary' and 'TypeType'. From 'essentialocl_types_OclLibrary', the role 'essentialocl_types_OclLibrary29' has cardinality 0..*, and from 'TypeType', the role 'TypeType' has cardinality 0..*.
+An association connects 'CollectionType' and 'essentialocl_types_OclLibrary'. From 'CollectionType', the role 'CollectionType' has cardinality 0..*, and from 'essentialocl_types_OclLibrary', the role 'essentialocl_types_OclLibrary31' has cardinality 0..*.
+An association connects 'essentialocl_types_OclLibrary' and 'SequenceType'. From 'essentialocl_types_OclLibrary', the role 'essentialocl_types_OclLibrary33' has cardinality 0..*, and from 'SequenceType', the role 'SequenceType' has cardinality 0..*.
+An association connects 'essentialocl_types_OclLibrary' and 'BagType'. From 'essentialocl_types_OclLibrary', the role 'essentialocl_types_OclLibrary35' has cardinality 0..*, and from 'BagType', the role 'BagType' has cardinality 0..*.
+An association connects 'essentialocl_types_OclLibrary' and 'SetType'. From 'essentialocl_types_OclLibrary', the role 'essentialocl_types_OclLibrary37' has cardinality 0..*, and from 'SetType', the role 'SetType' has cardinality 0..*.
+An association connects 'essentialocl_types_OclLibrary' and 'OrderedSetType'. From 'essentialocl_types_OclLibrary', the role 'essentialocl_types_OclLibrary39' has cardinality 0..*, and from 'OrderedSetType', the role 'OrderedSetType' has cardinality 0..*.
+An association connects 'essentialocl_types_OclLibrary' and 'TupleType'. From 'essentialocl_types_OclLibrary', the role 'essentialocl_types_OclLibrary41' has cardinality 0..*, and from 'TupleType', the role 'TupleType' has cardinality 0..*.
+An association connects 'Variable' and 'essentialocl_expressions_VariableExp'. From 'Variable', the role 'Variable' has cardinality 0..*, and from 'essentialocl_expressions_VariableExp', the role 'essentialocl_expressions_VariableExp' has cardinality 0..*.
+An association connects 'essentialocl_expressions_Variable' and 'expressions_essentialocl_Parameter'. From 'essentialocl_expressions_Variable', the role 'essentialocl_expressions_Variable' has cardinality 0..*, and from 'expressions_essentialocl_Parameter', the role 'expressions_essentialocl_Parameter' has cardinality 0..*.
+An association connects 'OclExpression' and 'essentialocl_expressions_Variable'. From 'OclExpression', the role 'OclExpression' has cardinality 0..*, and from 'essentialocl_expressions_Variable', the role 'essentialocl_expressions_Variable45' has cardinality 0..*.
+An association connects 'expressions_essentialocl_Type' and 'essentialocl_expressions_TypeLiteralExp'. From 'expressions_essentialocl_Type', the role 'expressions_essentialocl_Type' has cardinality 0..*, and from 'essentialocl_expressions_TypeLiteralExp', the role 'essentialocl_expressions_TypeLiteralExp' has cardinality 0..*.
+An association connects 'essentialocl_expressions_TupleLiteralPart' and 'expressions_essentialocl_Property'. From 'essentialocl_expressions_TupleLiteralPart', the role 'essentialocl_expressions_TupleLiteralPart' has cardinality 0..*, and from 'expressions_essentialocl_Property', the role 'expressions_essentialocl_Property' has cardinality 0..*.
+An association connects 'essentialocl_expressions_TupleLiteralPart' and 'OclExpression'. From 'essentialocl_expressions_TupleLiteralPart', the role 'essentialocl_expressions_TupleLiteralPart49' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression50' has cardinality 0..*.
+An association connects 'essentialocl_expressions_TupleLiteralExp' and 'TupleLiteralPart'. From 'essentialocl_expressions_TupleLiteralExp', the role 'essentialocl_expressions_TupleLiteralExp' has cardinality 0..*, and from 'TupleLiteralPart', the role 'TupleLiteralPart' has cardinality 0..*.
+An association connects 'essentialocl_expressions_PropertyCallExp' and 'expressions_essentialocl_Property'. From 'essentialocl_expressions_PropertyCallExp', the role 'essentialocl_expressions_PropertyCallExp' has cardinality 0..*, and from 'expressions_essentialocl_Property', the role 'expressions_essentialocl_Property53' has cardinality 0..*.
+An association connects 'OclExpression' and 'essentialocl_expressions_PropertyCallExp'. From 'OclExpression', the role 'OclExpression56' has cardinality 0..*, and from 'essentialocl_expressions_PropertyCallExp', the role 'essentialocl_expressions_PropertyCallExp55' has cardinality 0..*.
+An association connects 'OclExpression' and 'essentialocl_expressions_OperationCallExp'. From 'OclExpression', the role 'OclExpression58' has cardinality 0..*, and from 'essentialocl_expressions_OperationCallExp', the role 'essentialocl_expressions_OperationCallExp' has cardinality 0..*.
+An association connects 'essentialocl_expressions_OperationCallExp' and 'expressions_essentialocl_Operation'. From 'essentialocl_expressions_OperationCallExp', the role 'essentialocl_expressions_OperationCallExp60' has cardinality 0..*, and from 'expressions_essentialocl_Operation', the role 'expressions_essentialocl_Operation' has cardinality 0..*.
+An association connects 'OclLibrary' and 'essentialocl_expressions_OclExpression'. From 'OclLibrary', the role 'OclLibrary62' has cardinality 0..*, and from 'essentialocl_expressions_OclExpression', the role 'essentialocl_expressions_OclExpression' has cardinality 0..*.
+An association connects 'OclExpression' and 'essentialocl_expressions_LoopExp'. From 'OclExpression', the role 'OclExpression64' has cardinality 0..*, and from 'essentialocl_expressions_LoopExp', the role 'essentialocl_expressions_LoopExp' has cardinality 0..*.
+An association connects 'essentialocl_expressions_LoopExp' and 'Variable'. From 'essentialocl_expressions_LoopExp', the role 'essentialocl_expressions_LoopExp66' has cardinality 0..*, and from 'Variable', the role 'Variable67' has cardinality 0..*.
+An association connects 'OclExpression' and 'essentialocl_expressions_LetExp'. From 'OclExpression', the role 'OclExpression69' has cardinality 0..*, and from 'essentialocl_expressions_LetExp', the role 'essentialocl_expressions_LetExp' has cardinality 0..*.
+An association connects 'Variable' and 'essentialocl_expressions_LetExp'. From 'Variable', the role 'Variable72' has cardinality 0..*, and from 'essentialocl_expressions_LetExp', the role 'essentialocl_expressions_LetExp71' has cardinality 0..*.
+An association connects 'Variable' and 'essentialocl_expressions_IterateExp'. From 'Variable', the role 'Variable74' has cardinality 0..*, and from 'essentialocl_expressions_IterateExp', the role 'essentialocl_expressions_IterateExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'essentialocl_expressions_IfExp'. From 'OclExpression', the role 'OclExpression76' has cardinality 0..*, and from 'essentialocl_expressions_IfExp', the role 'essentialocl_expressions_IfExp' has cardinality 0..*.
+An association connects 'essentialocl_expressions_IfExp' and 'OclExpression'. From 'essentialocl_expressions_IfExp', the role 'essentialocl_expressions_IfExp78' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression79' has cardinality 0..*.
+An association connects 'OclExpression' and 'essentialocl_expressions_IfExp'. From 'OclExpression', the role 'OclExpression82' has cardinality 0..*, and from 'essentialocl_expressions_IfExp', the role 'essentialocl_expressions_IfExp81' has cardinality 0..*.
+An association connects 'expressions_essentialocl_Type' and 'essentialocl_expressions_FeatureCallExp'. From 'expressions_essentialocl_Type', the role 'expressions_essentialocl_Type84' has cardinality 0..*, and from 'essentialocl_expressions_FeatureCallExp', the role 'essentialocl_expressions_FeatureCallExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'essentialocl_expressions_CallExp'. From 'OclExpression', the role 'OclExpression86' has cardinality 0..*, and from 'essentialocl_expressions_CallExp', the role 'essentialocl_expressions_CallExp' has cardinality 0..*.
+An association connects 'essentialocl_expressions_CollectionItem' and 'OclExpression'. From 'essentialocl_expressions_CollectionItem', the role 'essentialocl_expressions_CollectionItem' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression88' has cardinality 0..*.
+An association connects 'essentialocl_expressions_CollectionLiteralExp' and 'CollectionLiteralPart'. From 'essentialocl_expressions_CollectionLiteralExp', the role 'essentialocl_expressions_CollectionLiteralExp' has cardinality 0..*, and from 'CollectionLiteralPart', the role 'CollectionLiteralPart' has cardinality 0..*.
+An association connects 'expressions_essentialocl_Type' and 'essentialocl_expressions_CollectionLiteralExp'. From 'expressions_essentialocl_Type', the role 'expressions_essentialocl_Type92' has cardinality 0..*, and from 'essentialocl_expressions_CollectionLiteralExp', the role 'essentialocl_expressions_CollectionLiteralExp91' has cardinality 0..*.
+An association connects 'essentialocl_expressions_CollectionRange' and 'OclExpression'. From 'essentialocl_expressions_CollectionRange', the role 'essentialocl_expressions_CollectionRange' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression94' has cardinality 0..*.
+An association connects 'OclExpression' and 'essentialocl_expressions_CollectionRange'. From 'OclExpression', the role 'OclExpression97' has cardinality 0..*, and from 'essentialocl_expressions_CollectionRange', the role 'essentialocl_expressions_CollectionRange96' has cardinality 0..*.
+An association connects 'essentialocl_expressions_EnumLiteralExp' and 'expressions_essentialocl_EnumerationLiteral'. From 'essentialocl_expressions_EnumLiteralExp', the role 'essentialocl_expressions_EnumLiteralExp' has cardinality 0..*, and from 'expressions_essentialocl_EnumerationLiteral', the role 'expressions_essentialocl_EnumerationLiteral' has cardinality 0..*.
+An association connects 'essentialocl_expressions_ExpressionInOcl' and 'OclExpression'. From 'essentialocl_expressions_ExpressionInOcl', the role 'essentialocl_expressions_ExpressionInOcl' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression100' has cardinality 0..*.
+An association connects 'essentialocl_expressions_ExpressionInOcl' and 'Variable'. From 'essentialocl_expressions_ExpressionInOcl', the role 'essentialocl_expressions_ExpressionInOcl102' has cardinality 0..*, and from 'Variable', the role 'Variable103' has cardinality 0..*.
+An association connects 'essentialocl_expressions_ExpressionInOcl' and 'Variable'. From 'essentialocl_expressions_ExpressionInOcl', the role 'essentialocl_expressions_ExpressionInOcl105' has cardinality 0..*, and from 'Variable', the role 'Variable106' has cardinality 0..*.
+An association connects 'Variable' and 'essentialocl_expressions_ExpressionInOcl'. From 'Variable', the role 'Variable109' has cardinality 0..*, and from 'essentialocl_expressions_ExpressionInOcl', the role 'essentialocl_expressions_ExpressionInOcl108' has cardinality 0..*.

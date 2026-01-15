@@ -1,0 +1,160 @@
+The domain model 'fsm' describes the core structural elements and their relationships within the system.
+
+The model defines 34 main class(es).
+
+'fsm_Assignation' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Println' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_State' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_VarDecl' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'fsm_Trigger' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'fsm_IntegerLit' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'fsm_ConsoleOutput' represents an important domain concept.
+It has one attribute: 'input', which is of type str.
+
+'fsm_BoolLit' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'fsm_RelationalExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'fsm_RelationalConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ConsoleOutput' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_StringLit' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'fsm_ArithmeticExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'fsm_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Pseudostate' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'fsm_Wait' represents an important domain concept.
+It has one attribute: 'miliseconds', which is of type str.
+
+'fsm_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fsm_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_VarReference' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'fsm_AbstractState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fsm_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Print' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PseudostateKind' defines a single possible value: 'initial'.
+The enumeration 'RelationalOperator' defines the following possible values: 'greaterThan', 'greaterThanOrEqualTo', 'lessThanOrEqualTo', 'notEqual', 'equals', 'lessThan'.
+The enumeration 'ArithmeticOperator' defines the following possible values: 'div', 'plus', 'mult', 'minus'.
+
+The model also captures inheritance relationships between classes.
+The class 'fsm_State' is a specialization of 'AbstractState'.
+The class 'fsm_Pseudostate' is a specialization of 'AbstractState'.
+The class 'fsm_FinalState' is a specialization of 'State'.
+The class 'fsm_RelationalConstraint' is a specialization of 'Constraint'.
+The class 'fsm_Program' is a specialization of 'Statement'.
+The class 'fsm_Conditional' is a specialization of 'Statement'.
+The class 'fsm_Loop' is a specialization of 'Statement'.
+The class 'fsm_VarDecl' is a specialization of 'Statement'.
+The class 'fsm_Literal' is a specialization of 'Expression'.
+The class 'fsm_IntegerLit' is a specialization of 'Literal'.
+The class 'fsm_StringLit' is a specialization of 'Literal'.
+The class 'fsm_BoolLit' is a specialization of 'Literal'.
+The class 'fsm_ArithmeticExpression' is a specialization of 'Expression'.
+The class 'fsm_RelationalExpression' is a specialization of 'Expression'.
+The class 'fsm_VarReference' is a specialization of 'Expression'.
+The class 'fsm_ConsoleOutput' is a specialization of 'Statement'.
+The class 'fsm_Println' is a specialization of 'ConsoleOutput'.
+The class 'fsm_Print' is a specialization of 'ConsoleOutput'.
+The class 'fsm_Assignation' is a specialization of 'Statement'.
+The class 'fsm_Wait' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fsm_AbstractState' and 'fsm_StateMachine'. From 'fsm_AbstractState', the role 'fsm_AbstractState' has cardinality 0..*, and from 'fsm_StateMachine', the role 'fsm_StateMachine' has cardinality 0..*.
+An association connects 'fsm_StateMachine' and 'fsm_Transition'. From 'fsm_StateMachine', the role 'fsm_StateMachine2' has cardinality 0..*, and from 'fsm_Transition', the role 'fsm_Transition' has cardinality 0..*.
+An association connects 'fsm_AbstractState' and 'fsm_Transition'. From 'fsm_AbstractState', the role 'unnamed role' has cardinality 0..*, and from 'fsm_Transition', the role '4' has cardinality 0..*.
+An association connects 'fsm_Transition' and 'fsm_AbstractState'. From 'fsm_Transition', the role '7' has cardinality 0..*, and from 'fsm_AbstractState', the role '6' has cardinality 0..*.
+An association connects 'fsm_Program' and 'fsm_State'. From 'fsm_Program', the role 'fsm_Program' has cardinality 0..*, and from 'fsm_State', the role 'fsm_State' has cardinality 0..*.
+An association connects 'fsm_Program' and 'fsm_State'. From 'fsm_Program', the role 'fsm_Program11' has cardinality 0..*, and from 'fsm_State', the role 'fsm_State10' has cardinality 0..*.
+An association connects 'fsm_State' and 'fsm_Program'. From 'fsm_State', the role 'fsm_State13' has cardinality 0..*, and from 'fsm_Program', the role 'fsm_Program14' has cardinality 0..*.
+An association connects 'fsm_Transition' and 'fsm_Trigger'. From 'fsm_Transition', the role 'fsm_Transition16' has cardinality 0..*, and from 'fsm_Trigger', the role 'fsm_Trigger' has cardinality 0..*.
+An association connects 'fsm_Transition' and 'fsm_AbstractState'. From 'fsm_Transition', the role '18' has cardinality 0..*, and from 'fsm_AbstractState', the role '19' has cardinality 0..*.
+An association connects 'fsm_AbstractState' and 'fsm_Transition'. From 'fsm_AbstractState', the role '22' has cardinality 0..*, and from 'fsm_Transition', the role '21' has cardinality 0..*.
+An association connects 'fsm_Transition' and 'fsm_Statement'. From 'fsm_Transition', the role 'fsm_Transition24' has cardinality 0..*, and from 'fsm_Statement', the role 'fsm_Statement' has cardinality 0..*.
+An association connects 'fsm_Constraint' and 'fsm_Transition'. From 'fsm_Constraint', the role 'fsm_Constraint' has cardinality 0..*, and from 'fsm_Transition', the role 'fsm_Transition26' has cardinality 0..*.
+An association connects 'fsm_Expression' and 'fsm_RelationalConstraint'. From 'fsm_Expression', the role 'fsm_Expression' has cardinality 0..*, and from 'fsm_RelationalConstraint', the role 'fsm_RelationalConstraint' has cardinality 0..*.
+An association connects 'fsm_Statement' and 'fsm_Program'. From 'fsm_Statement', the role 'fsm_Statement30' has cardinality 0..*, and from 'fsm_Program', the role 'fsm_Program29' has cardinality 0..*.
+An association connects 'fsm_Conditional' and 'fsm_Expression'. From 'fsm_Conditional', the role 'fsm_Conditional' has cardinality 0..*, and from 'fsm_Expression', the role 'fsm_Expression32' has cardinality 0..*.
+An association connects 'fsm_Conditional' and 'fsm_Program'. From 'fsm_Conditional', the role 'fsm_Conditional34' has cardinality 0..*, and from 'fsm_Program', the role 'fsm_Program35' has cardinality 0..*.
+An association connects 'fsm_Program' and 'fsm_Conditional'. From 'fsm_Program', the role 'fsm_Program38' has cardinality 0..*, and from 'fsm_Conditional', the role 'fsm_Conditional37' has cardinality 0..*.
+An association connects 'fsm_Expression' and 'fsm_Loop'. From 'fsm_Expression', the role 'fsm_Expression40' has cardinality 0..*, and from 'fsm_Loop', the role 'fsm_Loop' has cardinality 0..*.
+An association connects 'fsm_Program' and 'fsm_Loop'. From 'fsm_Program', the role 'fsm_Program43' has cardinality 0..*, and from 'fsm_Loop', the role 'fsm_Loop42' has cardinality 0..*.
+An association connects 'fsm_VarDecl' and 'fsm_Expression'. From 'fsm_VarDecl', the role 'fsm_VarDecl' has cardinality 0..*, and from 'fsm_Expression', the role 'fsm_Expression45' has cardinality 0..*.
+An association connects 'fsm_Expression' and 'fsm_ArithmeticExpression'. From 'fsm_Expression', the role 'fsm_Expression47' has cardinality 0..*, and from 'fsm_ArithmeticExpression', the role 'fsm_ArithmeticExpression' has cardinality 0..*.
+An association connects 'fsm_Expression' and 'fsm_ArithmeticExpression'. From 'fsm_Expression', the role 'fsm_Expression50' has cardinality 0..*, and from 'fsm_ArithmeticExpression', the role 'fsm_ArithmeticExpression49' has cardinality 0..*.
+An association connects 'fsm_RelationalExpression' and 'fsm_Expression'. From 'fsm_RelationalExpression', the role 'fsm_RelationalExpression' has cardinality 0..*, and from 'fsm_Expression', the role 'fsm_Expression52' has cardinality 0..*.
+An association connects 'fsm_Expression' and 'fsm_RelationalExpression'. From 'fsm_Expression', the role 'fsm_Expression55' has cardinality 0..*, and from 'fsm_RelationalExpression', the role 'fsm_RelationalExpression54' has cardinality 0..*.
+An association connects 'fsm_VarDecl' and 'fsm_Assignation'. From 'fsm_VarDecl', the role 'fsm_VarDecl57' has cardinality 0..*, and from 'fsm_Assignation', the role 'fsm_Assignation' has cardinality 0..*.
+An association connects 'fsm_Expression' and 'fsm_Assignation'. From 'fsm_Expression', the role 'fsm_Expression60' has cardinality 0..*, and from 'fsm_Assignation', the role 'fsm_Assignation59' has cardinality 0..*.

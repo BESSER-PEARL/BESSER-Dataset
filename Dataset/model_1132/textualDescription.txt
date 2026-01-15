@@ -1,0 +1,153 @@
+The domain model 'research20' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'research20_Transition' represents an important domain concept.
+It has the following attributes: 'guardLabel', which is of type str; 'guardExpression', which is of type str.
+
+'research20_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'research20_Collaboration' represents an important domain concept.
+It has one attribute: 'ratio', which is of type int.
+
+'research20_Skill' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'research20_State' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type int; 'kind', which is of type str.
+
+'research20_StateMachineVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'research20_Position' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'research20_Researcher' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'forName', which is of type str.
+
+'research20_Counted' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'research20_Action' represents an important domain concept.
+It has the following attributes: 'actionStatement', which is of type str; 'actionLabel', which is of type str.
+
+'research20_PublicationProcess' represents an important domain concept.
+It has the following attributes: 'minTime', which is of type int; 'maxTime', which is of type int.
+
+'research20_Progress' represents an important domain concept.
+It has one attribute: 'percent', which is of type int.
+
+'Labelled' represents an important domain concept.
+It does not declare any attributes.
+
+'research20_KnowledgeManager' represents an important domain concept.
+It does not declare any attributes.
+
+'research20_Review' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'research20_Paragraph' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'research20_Phase' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Counted' represents an important domain concept.
+It does not declare any attributes.
+
+'research20_Write' represents an important domain concept.
+It has one attribute: 'timeSpent', which is of type int.
+
+'research20_PublicationSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'research20_ReviewNote' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'research20_PublicationStatus' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'research20_PublicationStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'research20_Labelled' represents an important domain concept.
+It has one attribute: 'lname', which is of type str.
+
+'research20_StateMachineObject' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'research20_Paper' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachineObject' represents an important domain concept.
+It does not declare any attributes.
+
+'research20_Keyword' represents an important domain concept.
+It has one attribute: 'word', which is of type str.
+
+'research20_PaperKeyword' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StateType' defines the following possible values: 'initial', 'ongoing', 'final'.
+
+The model also captures inheritance relationships between classes.
+The class 'research20_PublicationProcess' is a specialization of 'Named'.
+The class 'research20_Paper' is a specialization of 'Named'.
+The class 'research20_Paragraph' is a specialization of 'Counted'.
+The class 'research20_Paragraph' is a specialization of 'Named'.
+The class 'research20_ReviewNote' is a specialization of 'Named'.
+The class 'research20_Progress' is a specialization of 'Labelled'.
+The class 'research20_Write' is a specialization of 'Labelled'.
+The class 'research20_Review' is a specialization of 'Labelled'.
+The class 'research20_PublicationStructure' is a specialization of 'Named'.
+The class 'research20_PublicationSystem' is a specialization of 'Named'.
+The class 'research20_Position' is a specialization of 'Named'.
+The class 'research20_Keyword' is a specialization of 'Named'.
+The class 'research20_KnowledgeManager' is a specialization of 'Named'.
+The class 'research20_Transition' is a specialization of 'StateMachineObject'.
+The class 'research20_State' is a specialization of 'StateMachineObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'research20_PublicationProcess' and 'research20_Phase'. From 'research20_PublicationProcess', the role 'research20_PublicationProcess' has cardinality 0..*, and from 'research20_Phase', the role 'research20_Phase' has cardinality 0..*.
+An association connects 'research20_Researcher' and 'research20_Write'. From 'research20_Researcher', the role 'research20_Researcher' has cardinality 0..*, and from 'research20_Write', the role 'research20_Write' has cardinality 0..*.
+An association connects 'research20_Researcher' and 'research20_Review'. From 'research20_Researcher', the role 'research20_Researcher3' has cardinality 0..*, and from 'research20_Review', the role 'research20_Review' has cardinality 0..*.
+An association connects 'research20_Paper' and 'research20_Researcher'. From 'research20_Paper', the role 'Paper' has cardinality 0..*, and from 'research20_Researcher', the role 'authors' has cardinality 0..*.
+An association connects 'research20_Skill' and 'research20_Researcher'. From 'research20_Skill', the role 'research20_Skill' has cardinality 0..*, and from 'research20_Researcher', the role 'research20_Researcher6' has cardinality 0..*.
+An association connects 'research20_Position' and 'research20_Researcher'. From 'research20_Position', the role 'research20_Position' has cardinality 0..*, and from 'research20_Researcher', the role 'research20_Researcher8' has cardinality 0..*.
+An association connects 'research20_Collaboration' and 'research20_Researcher'. From 'research20_Collaboration', the role 'research20_Collaboration' has cardinality 0..*, and from 'research20_Researcher', the role 'research20_Researcher10' has cardinality 0..*.
+An association connects 'research20_Paper' and 'research20_Paragraph'. From 'research20_Paper', the role 'research20_Paper' has cardinality 0..*, and from 'research20_Paragraph', the role 'research20_Paragraph' has cardinality 0..*.
+An association connects 'research20_Progress' and 'research20_Paper'. From 'research20_Progress', the role 'Progress' has cardinality 0..*, and from 'research20_Paper', the role 'paper' has cardinality 0..*.
+An association connects 'research20_Paper' and 'research20_Researcher'. From 'research20_Paper', the role 'res_papers' has cardinality 0..*, and from 'research20_Researcher', the role 'Researcher' has cardinality 0..*.
+An association connects 'research20_Paper' and 'research20_PaperKeyword'. From 'research20_Paper', the role 'research20_Paper15' has cardinality 0..*, and from 'research20_PaperKeyword', the role 'research20_PaperKeyword' has cardinality 0..*.
+An association connects 'research20_Paper' and 'research20_Paper'. From 'research20_Paper', the role 'research20_Paper18' has cardinality 0..*, and from 'research20_Paper', the role 'research20_Paper16' has cardinality 0..*.
+An association connects 'research20_Paper' and 'research20_State'. From 'research20_Paper', the role 'research20_Paper20' has cardinality 0..*, and from 'research20_State', the role 'research20_State' has cardinality 0..*.
+An association connects 'research20_ReviewNote' and 'research20_Paragraph'. From 'research20_ReviewNote', the role 'research20_ReviewNote' has cardinality 0..*, and from 'research20_Paragraph', the role 'research20_Paragraph22' has cardinality 0..*.
+An association connects 'research20_PublicationProcess' and 'research20_Progress'. From 'research20_PublicationProcess', the role 'research20_PublicationProcess24' has cardinality 0..*, and from 'research20_Progress', the role 'research20_Progress' has cardinality 0..*.
+An association connects 'research20_Progress' and 'research20_Paper'. From 'research20_Progress', the role 'progress' has cardinality 0..*, and from 'research20_Paper', the role 'Paper26' has cardinality 0..*.
+An association connects 'research20_Paragraph' and 'research20_Write'. From 'research20_Paragraph', the role 'research20_Paragraph29' has cardinality 0..*, and from 'research20_Write', the role 'research20_Write28' has cardinality 0..*.
+An association connects 'research20_ReviewNote' and 'research20_Review'. From 'research20_ReviewNote', the role 'research20_ReviewNote32' has cardinality 0..*, and from 'research20_Review', the role 'research20_Review31' has cardinality 0..*.
+An association connects 'research20_PublicationStructure' and 'research20_Researcher'. From 'research20_PublicationStructure', the role 'research20_PublicationStructure' has cardinality 0..*, and from 'research20_Researcher', the role 'research20_Researcher34' has cardinality 0..*.
+An association connects 'research20_Paper' and 'research20_PublicationStructure'. From 'research20_Paper', the role 'research20_Paper37' has cardinality 0..*, and from 'research20_PublicationStructure', the role 'research20_PublicationStructure36' has cardinality 0..*.
+An association connects 'research20_KnowledgeManager' and 'research20_PublicationStructure'. From 'research20_KnowledgeManager', the role 'research20_KnowledgeManager' has cardinality 0..*, and from 'research20_PublicationStructure', the role 'research20_PublicationStructure39' has cardinality 0..*.
+An association connects 'research20_PublicationStatus' and 'research20_PublicationStructure'. From 'research20_PublicationStatus', the role 'research20_PublicationStatus' has cardinality 0..*, and from 'research20_PublicationStructure', the role 'research20_PublicationStructure41' has cardinality 0..*.
+An association connects 'research20_PublicationProcess' and 'research20_PublicationSystem'. From 'research20_PublicationProcess', the role 'research20_PublicationProcess43' has cardinality 0..*, and from 'research20_PublicationSystem', the role 'research20_PublicationSystem' has cardinality 0..*.
+An association connects 'research20_PublicationSystem' and 'research20_PublicationStructure'. From 'research20_PublicationSystem', the role 'research20_PublicationSystem45' has cardinality 0..*, and from 'research20_PublicationStructure', the role 'research20_PublicationStructure46' has cardinality 0..*.
+An association connects 'research20_PublicationSystem' and 'research20_Position'. From 'research20_PublicationSystem', the role 'research20_PublicationSystem48' has cardinality 0..*, and from 'research20_Position', the role 'research20_Position49' has cardinality 0..*.
+An association connects 'research20_Position' and 'research20_Position'. From 'research20_Position', the role 'research20_Position50' has cardinality 0..*, and from 'research20_Position', the role 'research20_Position52' has cardinality 0..*.
+An association connects 'research20_Paper' and 'research20_Keyword'. From 'research20_Paper', the role 'research20_Paper54' has cardinality 0..*, and from 'research20_Keyword', the role 'research20_Keyword' has cardinality 0..*.
+An association connects 'research20_Keyword' and 'research20_KnowledgeManager'. From 'research20_Keyword', the role 'research20_Keyword57' has cardinality 0..*, and from 'research20_KnowledgeManager', the role 'research20_KnowledgeManager56' has cardinality 0..*.
+An association connects 'research20_Keyword' and 'research20_PaperKeyword'. From 'research20_Keyword', the role 'research20_Keyword60' has cardinality 0..*, and from 'research20_PaperKeyword', the role 'research20_PaperKeyword59' has cardinality 0..*.
+An association connects 'research20_Collaboration' and 'research20_Paper'. From 'research20_Collaboration', the role 'research20_Collaboration62' has cardinality 0..*, and from 'research20_Paper', the role 'research20_Paper63' has cardinality 0..*.
+An association connects 'research20_StateMachineVariable' and 'research20_PublicationStatus'. From 'research20_StateMachineVariable', the role 'research20_StateMachineVariable' has cardinality 0..*, and from 'research20_PublicationStatus', the role 'research20_PublicationStatus65' has cardinality 0..*.
+An association connects 'research20_PublicationStatus' and 'research20_State'. From 'research20_PublicationStatus', the role 'research20_PublicationStatus67' has cardinality 0..*, and from 'research20_State', the role 'research20_State68' has cardinality 0..*.
+An association connects 'research20_Transition' and 'research20_Action'. From 'research20_Transition', the role 'research20_Transition' has cardinality 0..*, and from 'research20_Action', the role 'research20_Action' has cardinality 0..*.
+An association connects 'research20_Transition' and 'research20_State'. From 'research20_Transition', the role 'research20_Transition71' has cardinality 0..*, and from 'research20_State', the role 'research20_State72' has cardinality 0..*.
+An association connects 'research20_Transition' and 'research20_State'. From 'research20_Transition', the role 'research20_Transition74' has cardinality 0..*, and from 'research20_State', the role 'research20_State75' has cardinality 0..*.
+An association connects 'research20_Transition' and 'research20_State'. From 'research20_Transition', the role 'research20_Transition78' has cardinality 0..*, and from 'research20_State', the role 'research20_State77' has cardinality 0..*.
+An association connects 'research20_Action' and 'research20_State'. From 'research20_Action', the role 'research20_Action81' has cardinality 0..*, and from 'research20_State', the role 'research20_State80' has cardinality 0..*.
+An association connects 'research20_Action' and 'research20_Action'. From 'research20_Action', the role 'research20_Action84' has cardinality 0..*, and from 'research20_Action', the role 'research20_Action82' has cardinality 0..*.

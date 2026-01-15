@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/merlin-pl/merlin/examples/PetriNets2/PetriNets.ecore

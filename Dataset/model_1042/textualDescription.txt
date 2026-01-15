@@ -1,0 +1,39 @@
+The domain model 'gfsm' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'gfsm_Transition' represents an important domain concept.
+It has one attribute: 'event', which is of type str.
+
+'gfsm_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_Machine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gfsm_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'gfsm_InitialState' is a specialization of 'State'.
+The class 'gfsm_FinalState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gfsm_Transition' and 'gfsm_Machine'. From 'gfsm_Transition', the role 'Transition' has cardinality 0..*, and from 'gfsm_Machine', the role 'owning' has cardinality 0..*.
+An association connects 'gfsm_Machine' and 'gfsm_State'. From 'gfsm_Machine', the role 'owning2' has cardinality 0..*, and from 'gfsm_State', the role 'State' has cardinality 0..*.
+An association connects 'gfsm_State' and 'gfsm_Machine'. From 'gfsm_State', the role 'states' has cardinality 0..*, and from 'gfsm_Machine', the role 'Machine' has cardinality 0..*.
+An association connects 'gfsm_Transition' and 'gfsm_State'. From 'gfsm_Transition', the role 'Transition5' has cardinality 0..*, and from 'gfsm_State', the role 'target' has cardinality 0..*.
+An association connects 'gfsm_Transition' and 'gfsm_State'. From 'gfsm_Transition', the role 'Transition7' has cardinality 0..*, and from 'gfsm_State', the role 'source' has cardinality 0..*.
+An association connects 'gfsm_Transition' and 'gfsm_Machine'. From 'gfsm_Transition', the role 'transitions' has cardinality 0..*, and from 'gfsm_Machine', the role 'Machine9' has cardinality 0..*.
+An association connects 'gfsm_Transition' and 'gfsm_State'. From 'gfsm_Transition', the role 'incoming' has cardinality 0..*, and from 'gfsm_State', the role 'State11' has cardinality 0..*.
+An association connects 'gfsm_Transition' and 'gfsm_State'. From 'gfsm_Transition', the role 'outgoing' has cardinality 0..*, and from 'gfsm_State', the role 'State13' has cardinality 0..*.
+An association connects 'gfsm_Transition' and 'gfsm_Guard'. From 'gfsm_Transition', the role 'gfsm_Transition' has cardinality 0..*, and from 'gfsm_Guard', the role 'gfsm_Guard' has cardinality 0..*.

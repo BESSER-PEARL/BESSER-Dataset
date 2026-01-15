@@ -1,0 +1,22 @@
+The domain model 'petrinets' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'petrinets_Net' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinets_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petrinets_Place' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'petrinets_Place' and 'petrinets_Net'. From 'petrinets_Place', the role 'Place' has cardinality 0..*, and from 'petrinets_Net', the role 'net' has cardinality 0..*.
+An association connects 'petrinets_Net' and 'petrinets_Transition'. From 'petrinets_Net', the role 'net2' has cardinality 0..*, and from 'petrinets_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'petrinets_Net' and 'petrinets_Place'. From 'petrinets_Net', the role 'Net' has cardinality 0..*, and from 'petrinets_Place', the role 'places' has cardinality 0..*.
+An association connects 'petrinets_Place' and 'petrinets_Transition'. From 'petrinets_Place', the role 'dst' has cardinality 0..*, and from 'petrinets_Transition', the role 'Transition5' has cardinality 0..*.
+An association connects 'petrinets_Transition' and 'petrinets_Place'. From 'petrinets_Transition', the role 'Transition7' has cardinality 0..*, and from 'petrinets_Place', the role 'src' has cardinality 0..*.
+An association connects 'petrinets_Transition' and 'petrinets_Net'. From 'petrinets_Transition', the role 'transitions' has cardinality 0..*, and from 'petrinets_Net', the role 'Net9' has cardinality 0..*.
+An association connects 'petrinets_Transition' and 'petrinets_Place'. From 'petrinets_Transition', the role 'dst11' has cardinality 0..*, and from 'petrinets_Place', the role 'Place12' has cardinality 0..*.
+An association connects 'petrinets_Transition' and 'petrinets_Place'. From 'petrinets_Transition', the role 'src14' has cardinality 0..*, and from 'petrinets_Place', the role 'Place15' has cardinality 0..*.

@@ -1,0 +1,59 @@
+The domain model 'PetriNet' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'IdentifiableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_IdentifiableElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'author', which is of type str.
+
+'PetriNet_PlaceToTransArc' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PetriNet_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_TransToPlaceArc' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_Arc' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_PrimitiveAttribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'primType', which is of type str.
+
+'PetriNet_Token' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'PetriNet_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'PetriNet_PetriNet' is a specialization of 'IdentifiableElement'.
+The class 'PetriNet_Place' is a specialization of 'IdentifiableElement'.
+The class 'PetriNet_Transition' is a specialization of 'IdentifiableElement'.
+The class 'PetriNet_PlaceToTransArc' is a specialization of 'Arc'.
+The class 'PetriNet_TransToPlaceArc' is a specialization of 'Arc'.
+
+Relationships between classes are modeled using associations.
+An association connects 'PetriNet_Place' and 'PetriNet_PetriNet'. From 'PetriNet_Place', the role 'PetriNet_Place' has cardinality 0..*, and from 'PetriNet_PetriNet', the role 'PetriNet_PetriNet' has cardinality 0..*.
+An association connects 'PetriNet_PetriNet' and 'PetriNet_Transition'. From 'PetriNet_PetriNet', the role 'PetriNet_PetriNet2' has cardinality 0..*, and from 'PetriNet_Transition', the role 'PetriNet_Transition' has cardinality 0..*.
+An association connects 'PetriNet_Arc' and 'PetriNet_PetriNet'. From 'PetriNet_Arc', the role 'PetriNet_Arc' has cardinality 0..*, and from 'PetriNet_PetriNet', the role 'PetriNet_PetriNet4' has cardinality 0..*.
+An association connects 'PetriNet_PetriNet' and 'PetriNet_Type'. From 'PetriNet_PetriNet', the role 'PetriNet_PetriNet6' has cardinality 0..*, and from 'PetriNet_Type', the role 'PetriNet_Type' has cardinality 0..*.
+An association connects 'PetriNet_Type' and 'PetriNet_PrimitiveAttribute'. From 'PetriNet_Type', the role 'PetriNet_Type8' has cardinality 0..*, and from 'PetriNet_PrimitiveAttribute', the role 'PetriNet_PrimitiveAttribute' has cardinality 0..*.
+An association connects 'PetriNet_Token' and 'PetriNet_Place'. From 'PetriNet_Token', the role 'PetriNet_Token' has cardinality 0..*, and from 'PetriNet_Place', the role 'PetriNet_Place10' has cardinality 0..*.
+An association connects 'PetriNet_Place' and 'PetriNet_Type'. From 'PetriNet_Place', the role 'PetriNet_Place12' has cardinality 0..*, and from 'PetriNet_Type', the role 'PetriNet_Type13' has cardinality 0..*.
+An association connects 'PetriNet_Place' and 'PetriNet_PlaceToTransArc'. From 'PetriNet_Place', the role 'PetriNet_Place15' has cardinality 0..*, and from 'PetriNet_PlaceToTransArc', the role 'PetriNet_PlaceToTransArc' has cardinality 0..*.
+An association connects 'PetriNet_Transition' and 'PetriNet_PlaceToTransArc'. From 'PetriNet_Transition', the role 'PetriNet_Transition18' has cardinality 0..*, and from 'PetriNet_PlaceToTransArc', the role 'PetriNet_PlaceToTransArc17' has cardinality 0..*.
+An association connects 'PetriNet_TransToPlaceArc' and 'PetriNet_Transition'. From 'PetriNet_TransToPlaceArc', the role 'PetriNet_TransToPlaceArc' has cardinality 0..*, and from 'PetriNet_Transition', the role 'PetriNet_Transition20' has cardinality 0..*.
+An association connects 'PetriNet_Place' and 'PetriNet_TransToPlaceArc'. From 'PetriNet_Place', the role 'PetriNet_Place23' has cardinality 0..*, and from 'PetriNet_TransToPlaceArc', the role 'PetriNet_TransToPlaceArc22' has cardinality 0..*.

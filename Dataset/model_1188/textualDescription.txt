@@ -1,0 +1,431 @@
+The domain model 'ir' describes the core structural elements and their relationships within the system.
+
+The model defines 103 main class(es).
+
+'ir_ocl_OclAnyLibElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyFeatureRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ir_OperationFeatureRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_SetLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_Iterator' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_DerivedPropertyRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_RealLiteralExp' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_EFEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'TuplePart' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_OclOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_EFPrimitiveType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ir_ocl_VarExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_AbstractFunction' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ir_SequenceTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_PropertyCallExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'FeatureRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_MetaTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_TypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_DefinedOperationRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_EFClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ir_EFClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ir_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_BuiltinPropertyRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ir_PropertyFeatureRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_MetamodelFeatureRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_TuplePart' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ir_TupleTypeElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ir_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_OperationCallExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ir_ocl_SequenceLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_BagLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EFType' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_TupleFieldRef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ocl_ir_MetaTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_EnumLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_DerivedProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_EFPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_InvalidTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_EFTupleType' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'ir_BuiltinOperationRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_OclInvalid' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_BooleanLiteralExp' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'ir_ocl_IteratorExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ir_SetTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_CollectionLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_OclInvariant' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Constraint' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ir_EEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ir_EFTupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_CollectionTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OperationFeatureRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_OclDerivedProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_CollectionCallExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ir_FeatureRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_OrderedSetTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ir_TypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_EFEnumLiteral' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ir_EFMetamodel' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_StringLiteralExp' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ir_ocl_OrderedSetLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_BagTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_UnsupportedExp' represents an important domain concept.
+It has the following attributes: 'reason', which is of type str; 'description', which is of type str.
+
+'DerivedProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_OperatorCallExp' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'ir_ocl_WithContextVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_PropertyFeatureRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_AbstractOperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_OperationFeatureRef' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Specification' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_WithContextVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'Iterator' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractOperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_OclUndefined' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ir_EFEnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ocl_IntegerLiteralExp' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ir_EFType' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'OperatorKind' defines the following possible values: 'GREATER', 'MINUS', 'OR', 'MUL', 'DISTINCT', 'PLUS', 'EQUAL', 'XOR', 'IMPLIES', 'NOT', 'AND', 'LESS', 'GREATER_OR_EQUAL', 'DIV', 'LESS_OR_EQUAL'.
+
+The model also captures inheritance relationships between classes.
+The class 'ir_AbstractFunction' is a specialization of 'TypedElement'.
+The class 'ir_DerivedProperty' is a specialization of 'AbstractFunction'.
+The class 'ir_Operation' is a specialization of 'AbstractFunction'.
+The class 'ir_OperationFeatureRef' is a specialization of 'FeatureRef'.
+The class 'ir_BuiltinOperationRef' is a specialization of 'OperationFeatureRef'.
+The class 'ir_DefinedOperationRef' is a specialization of 'OperationFeatureRef'.
+The class 'ir_PropertyFeatureRef' is a specialization of 'FeatureRef'.
+The class 'ir_TupleFieldRef' is a specialization of 'PropertyFeatureRef'.
+The class 'ir_DerivedPropertyRef' is a specialization of 'PropertyFeatureRef'.
+The class 'ir_BuiltinPropertyRef' is a specialization of 'PropertyFeatureRef'.
+The class 'ir_MetamodelFeatureRef' is a specialization of 'PropertyFeatureRef'.
+The class 'ir_Parameter' is a specialization of 'VariableDeclaration'.
+The class 'ir_EFClass' is a specialization of 'EFType'.
+The class 'ir_EFPrimitiveType' is a specialization of 'EFType'.
+The class 'ir_EFEnum' is a specialization of 'EFType'.
+The class 'ir_EFTupleType' is a specialization of 'EFType'.
+The class 'ir_MetaTypeRef' is a specialization of 'TypeRef'.
+The class 'ir_InvalidTypeRef' is a specialization of 'TypeRef'.
+The class 'ir_CollectionTypeRef' is a specialization of 'TypeRef'.
+The class 'ir_SetTypeRef' is a specialization of 'CollectionTypeRef'.
+The class 'ir_SequenceTypeRef' is a specialization of 'CollectionTypeRef'.
+The class 'ir_BagTypeRef' is a specialization of 'CollectionTypeRef'.
+The class 'ir_OrderedSetTypeRef' is a specialization of 'CollectionTypeRef'.
+The class 'ir_ocl_OclInvariant' is a specialization of 'Constraint'.
+The class 'ir_ocl_OclInvariant' is a specialization of 'ocl_WithContextVariable'.
+The class 'ir_ocl_OclDerivedProperty' is a specialization of 'DerivedProperty'.
+The class 'ir_ocl_OclDerivedProperty' is a specialization of 'ocl_WithContextVariable'.
+The class 'ir_ocl_OclOperation' is a specialization of 'Operation'.
+The class 'ir_ocl_OclOperation' is a specialization of 'ocl_WithContextVariable'.
+The class 'ir_ocl_ModelElement' is a specialization of 'OclExpression'.
+The class 'ir_ocl_CallExp' is a specialization of 'OclExpression'.
+The class 'ir_ocl_AbstractOperationCallExp' is a specialization of 'CallExp'.
+The class 'ir_ocl_OperationCallExp' is a specialization of 'AbstractOperationCallExp'.
+The class 'ir_ocl_PropertyCallExp' is a specialization of 'CallExp'.
+The class 'ir_ocl_CollectionCallExp' is a specialization of 'AbstractOperationCallExp'.
+The class 'ir_ocl_LoopExp' is a specialization of 'CallExp'.
+The class 'ir_ocl_IteratorExp' is a specialization of 'LoopExp'.
+The class 'ir_ocl_IterateExp' is a specialization of 'LoopExp'.
+The class 'ir_ocl_Iterator' is a specialization of 'VariableDeclaration'.
+The class 'ir_ocl_IfExp' is a specialization of 'OclExpression'.
+The class 'ir_ocl_LetExp' is a specialization of 'OclExpression'.
+The class 'ir_ocl_OperatorCallExp' is a specialization of 'CallExp'.
+The class 'ir_ocl_VarExp' is a specialization of 'OclExpression'.
+The class 'ir_ocl_LiteralExp' is a specialization of 'OclExpression'.
+The class 'ir_ocl_BooleanLiteralExp' is a specialization of 'LiteralExp'.
+The class 'ir_ocl_StringLiteralExp' is a specialization of 'LiteralExp'.
+The class 'ir_ocl_IntegerLiteralExp' is a specialization of 'LiteralExp'.
+The class 'ir_ocl_RealLiteralExp' is a specialization of 'LiteralExp'.
+The class 'ir_ocl_OclUndefined' is a specialization of 'LiteralExp'.
+The class 'ir_ocl_OclInvalid' is a specialization of 'LiteralExp'.
+The class 'ir_ocl_TupleLiteralExp' is a specialization of 'LiteralExp'.
+The class 'ir_ocl_EnumLiteralExp' is a specialization of 'LiteralExp'.
+The class 'ir_ocl_CollectionLiteralExp' is a specialization of 'LiteralExp'.
+The class 'ir_ocl_SetLiteralExp' is a specialization of 'CollectionLiteralExp'.
+The class 'ir_ocl_OrderedSetLiteralExp' is a specialization of 'CollectionLiteralExp'.
+The class 'ir_ocl_SequenceLiteralExp' is a specialization of 'CollectionLiteralExp'.
+The class 'ir_ocl_BagLiteralExp' is a specialization of 'CollectionLiteralExp'.
+The class 'ir_ocl_UnsupportedExp' is a specialization of 'OclExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ir_Specification' and 'ir_EFMetamodel'. From 'ir_Specification', the role 'ir_Specification' has cardinality 0..*, and from 'ir_EFMetamodel', the role 'ir_EFMetamodel' has cardinality 0..*.
+An association connects 'ir_Constraint' and 'ir_Specification'. From 'ir_Constraint', the role 'ir_Constraint' has cardinality 0..*, and from 'ir_Specification', the role 'ir_Specification2' has cardinality 0..*.
+An association connects 'ir_EFClass' and 'ir_Specification'. From 'ir_EFClass', the role 'ir_EFClass' has cardinality 0..*, and from 'ir_Specification', the role 'ir_Specification4' has cardinality 0..*.
+An association connects 'ir_DerivedProperty' and 'ir_Specification'. From 'ir_DerivedProperty', the role 'ir_DerivedProperty' has cardinality 0..*, and from 'ir_Specification', the role 'ir_Specification6' has cardinality 0..*.
+An association connects 'ir_Operation' and 'ir_Specification'. From 'ir_Operation', the role 'ir_Operation' has cardinality 0..*, and from 'ir_Specification', the role 'ir_Specification8' has cardinality 0..*.
+An association connects 'ir_EFPrimitiveType' and 'ir_Specification'. From 'ir_EFPrimitiveType', the role 'ir_EFPrimitiveType' has cardinality 0..*, and from 'ir_Specification', the role 'ir_Specification10' has cardinality 0..*.
+An association connects 'ir_Specification' and 'ir_EFTupleType'. From 'ir_Specification', the role 'ir_Specification12' has cardinality 0..*, and from 'ir_EFTupleType', the role 'ir_EFTupleType' has cardinality 0..*.
+An association connects 'ir_TypedElement' and 'ir_TypeRef'. From 'ir_TypedElement', the role 'ir_TypedElement' has cardinality 0..*, and from 'ir_TypeRef', the role 'ir_TypeRef' has cardinality 0..*.
+An association connects 'ir_AbstractFunction' and 'ir_EFType'. From 'ir_AbstractFunction', the role 'ir_AbstractFunction' has cardinality 0..*, and from 'ir_EFType', the role 'ir_EFType' has cardinality 0..*.
+An association connects 'ir_Operation' and 'ir_Parameter'. From 'ir_Operation', the role 'ir_Operation16' has cardinality 0..*, and from 'ir_Parameter', the role 'ir_Parameter' has cardinality 0..*.
+An association connects 'ir_Operation' and 'ir_DefinedOperationRef'. From 'ir_Operation', the role 'ir_Operation18' has cardinality 0..*, and from 'ir_DefinedOperationRef', the role 'ir_DefinedOperationRef' has cardinality 0..*.
+An association connects 'ir_TupleFieldRef' and 'ir_EFTupleType'. From 'ir_TupleFieldRef', the role 'ir_TupleFieldRef' has cardinality 0..*, and from 'ir_EFTupleType', the role 'ir_EFTupleType20' has cardinality 0..*.
+An association connects 'ir_DerivedPropertyRef' and 'ir_DerivedProperty'. From 'ir_DerivedPropertyRef', the role 'ir_DerivedPropertyRef' has cardinality 0..*, and from 'ir_DerivedProperty', the role 'ir_DerivedProperty22' has cardinality 0..*.
+An association connects 'ir_MetamodelFeatureRef' and 'ir_EStructuralFeature'. From 'ir_MetamodelFeatureRef', the role 'ir_MetamodelFeatureRef' has cardinality 0..*, and from 'ir_EStructuralFeature', the role 'ir_EStructuralFeature' has cardinality 0..*.
+An association connects 'ir_VariableDeclaration' and 'ir_TypeRef'. From 'ir_VariableDeclaration', the role 'ir_VariableDeclaration' has cardinality 0..*, and from 'ir_TypeRef', the role 'ir_TypeRef25' has cardinality 0..*.
+An association connects 'ir_EFPackage' and 'ir_EFMetamodel'. From 'ir_EFPackage', the role 'ir_EFPackage' has cardinality 0..*, and from 'ir_EFMetamodel', the role 'ir_EFMetamodel27' has cardinality 0..*.
+An association connects 'ir_EFPackage' and 'ir_EPackage'. From 'ir_EFPackage', the role 'ir_EFPackage29' has cardinality 0..*, and from 'ir_EPackage', the role 'ir_EPackage' has cardinality 0..*.
+An association connects 'ir_EFPackage' and 'ir_EFClass'. From 'ir_EFPackage', the role 'ir_EFPackage31' has cardinality 0..*, and from 'ir_EFClass', the role 'ir_EFClass32' has cardinality 0..*.
+An association connects 'ir_EFPackage' and 'ir_EFEnum'. From 'ir_EFPackage', the role 'ir_EFPackage34' has cardinality 0..*, and from 'ir_EFEnum', the role 'ir_EFEnum' has cardinality 0..*.
+An association connects 'ir_EFClass' and 'ir_EClass'. From 'ir_EFClass', the role 'ir_EFClass36' has cardinality 0..*, and from 'ir_EClass', the role 'ir_EClass' has cardinality 0..*.
+An association connects 'ir_EFEnum' and 'ir_EEnum'. From 'ir_EFEnum', the role 'ir_EFEnum38' has cardinality 0..*, and from 'ir_EEnum', the role 'ir_EEnum' has cardinality 0..*.
+An association connects 'ir_EFEnumLiteral' and 'ir_EFEnum'. From 'ir_EFEnumLiteral', the role 'ir_EFEnumLiteral' has cardinality 0..*, and from 'ir_EFEnum', the role 'ir_EFEnum40' has cardinality 0..*.
+An association connects 'ir_TupleTypeElement' and 'ir_EFTupleType'. From 'ir_TupleTypeElement', the role 'ir_TupleTypeElement' has cardinality 0..*, and from 'ir_EFTupleType', the role 'ir_EFTupleType42' has cardinality 0..*.
+An association connects 'ir_TupleTypeElement' and 'ir_TypeRef'. From 'ir_TupleTypeElement', the role 'ir_TupleTypeElement44' has cardinality 0..*, and from 'ir_TypeRef', the role 'ir_TypeRef45' has cardinality 0..*.
+An association connects 'ir_EFType' and 'ir_MetaTypeRef'. From 'ir_EFType', the role 'ir_EFType47' has cardinality 0..*, and from 'ir_MetaTypeRef', the role 'ir_MetaTypeRef' has cardinality 0..*.
+An association connects 'ir_CollectionTypeRef' and 'ir_TypeRef'. From 'ir_CollectionTypeRef', the role 'ir_CollectionTypeRef' has cardinality 0..*, and from 'ir_TypeRef', the role 'ir_TypeRef49' has cardinality 0..*.
+An association connects 'ocl_ir_VariableDeclaration' and 'ir_ocl_WithContextVariable'. From 'ocl_ir_VariableDeclaration', the role 'ocl_ir_VariableDeclaration' has cardinality 0..*, and from 'ir_ocl_WithContextVariable', the role 'ir_ocl_WithContextVariable' has cardinality 0..*.
+An association connects 'ir_ocl_OclInvariant' and 'ocl_ir_EFClass'. From 'ir_ocl_OclInvariant', the role 'ir_ocl_OclInvariant' has cardinality 0..*, and from 'ocl_ir_EFClass', the role 'ocl_ir_EFClass' has cardinality 0..*.
+An association connects 'OclExpression' and 'ir_ocl_OclInvariant'. From 'OclExpression', the role 'OclExpression' has cardinality 0..*, and from 'ir_ocl_OclInvariant', the role 'ir_ocl_OclInvariant53' has cardinality 0..*.
+An association connects 'OclExpression' and 'ir_ocl_OclDerivedProperty'. From 'OclExpression', the role 'OclExpression55' has cardinality 0..*, and from 'ir_ocl_OclDerivedProperty', the role 'ir_ocl_OclDerivedProperty' has cardinality 0..*.
+An association connects 'ir_ocl_OclOperation' and 'OclExpression'. From 'ir_ocl_OclOperation', the role 'ir_ocl_OclOperation' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression57' has cardinality 0..*.
+An association connects 'ir_ocl_OclExpression' and 'ocl_ir_TypeRef'. From 'ir_ocl_OclExpression', the role 'ir_ocl_OclExpression' has cardinality 0..*, and from 'ocl_ir_TypeRef', the role 'ocl_ir_TypeRef' has cardinality 0..*.
+An association connects 'OclExpression' and 'ir_ocl_CallExp'. From 'OclExpression', the role 'OclExpression60' has cardinality 0..*, and from 'ir_ocl_CallExp', the role 'ir_ocl_CallExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'ir_ocl_AbstractOperationCallExp'. From 'OclExpression', the role 'OclExpression62' has cardinality 0..*, and from 'ir_ocl_AbstractOperationCallExp', the role 'ir_ocl_AbstractOperationCallExp' has cardinality 0..*.
+An association connects 'ir_ocl_OperationCallExp' and 'ocl_ir_OperationFeatureRef'. From 'ir_ocl_OperationCallExp', the role 'ir_ocl_OperationCallExp' has cardinality 0..*, and from 'ocl_ir_OperationFeatureRef', the role 'ocl_ir_OperationFeatureRef' has cardinality 0..*.
+An association connects 'ir_ocl_PropertyCallExp' and 'ocl_ir_PropertyFeatureRef'. From 'ir_ocl_PropertyCallExp', the role 'ir_ocl_PropertyCallExp' has cardinality 0..*, and from 'ocl_ir_PropertyFeatureRef', the role 'ocl_ir_PropertyFeatureRef' has cardinality 0..*.
+An association connects 'ir_ocl_LoopExp' and 'Iterator'. From 'ir_ocl_LoopExp', the role 'ir_ocl_LoopExp' has cardinality 0..*, and from 'Iterator', the role 'Iterator' has cardinality 0..*.
+An association connects 'OclExpression' and 'ir_ocl_LoopExp'. From 'OclExpression', the role 'OclExpression68' has cardinality 0..*, and from 'ir_ocl_LoopExp', the role 'ir_ocl_LoopExp67' has cardinality 0..*.
+An association connects 'ir_ocl_IterateExp' and 'ocl_ir_VariableDeclaration'. From 'ir_ocl_IterateExp', the role 'ir_ocl_IterateExp' has cardinality 0..*, and from 'ocl_ir_VariableDeclaration', the role 'ocl_ir_VariableDeclaration70' has cardinality 0..*.
+An association connects 'ir_ocl_IterateExp' and 'OclExpression'. From 'ir_ocl_IterateExp', the role 'ir_ocl_IterateExp72' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression73' has cardinality 0..*.
+An association connects 'ir_ocl_IfExp' and 'OclExpression'. From 'ir_ocl_IfExp', the role 'ir_ocl_IfExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression75' has cardinality 0..*.
+An association connects 'OclExpression' and 'ir_ocl_IfExp'. From 'OclExpression', the role 'OclExpression78' has cardinality 0..*, and from 'ir_ocl_IfExp', the role 'ir_ocl_IfExp77' has cardinality 0..*.
+An association connects 'OclExpression' and 'ir_ocl_IfExp'. From 'OclExpression', the role 'OclExpression81' has cardinality 0..*, and from 'ir_ocl_IfExp', the role 'ir_ocl_IfExp80' has cardinality 0..*.
+An association connects 'ir_ocl_LetExp' and 'ocl_ir_VariableDeclaration'. From 'ir_ocl_LetExp', the role 'ir_ocl_LetExp' has cardinality 0..*, and from 'ocl_ir_VariableDeclaration', the role 'ocl_ir_VariableDeclaration83' has cardinality 0..*.
+An association connects 'OclExpression' and 'ir_ocl_LetExp'. From 'OclExpression', the role 'OclExpression86' has cardinality 0..*, and from 'ir_ocl_LetExp', the role 'ir_ocl_LetExp85' has cardinality 0..*.
+An association connects 'OclExpression' and 'ir_ocl_LetExp'. From 'OclExpression', the role 'OclExpression89' has cardinality 0..*, and from 'ir_ocl_LetExp', the role 'ir_ocl_LetExp88' has cardinality 0..*.
+An association connects 'OclExpression' and 'ir_ocl_OperatorCallExp'. From 'OclExpression', the role 'OclExpression91' has cardinality 0..*, and from 'ir_ocl_OperatorCallExp', the role 'ir_ocl_OperatorCallExp' has cardinality 0..*.
+An association connects 'ocl_ir_VariableDeclaration' and 'ir_ocl_VarExp'. From 'ocl_ir_VariableDeclaration', the role 'ocl_ir_VariableDeclaration93' has cardinality 0..*, and from 'ir_ocl_VarExp', the role 'ir_ocl_VarExp' has cardinality 0..*.
+An association connects 'ocl_ir_EFTupleType' and 'ir_ocl_TupleLiteralExp'. From 'ocl_ir_EFTupleType', the role 'ocl_ir_EFTupleType' has cardinality 0..*, and from 'ir_ocl_TupleLiteralExp', the role 'ir_ocl_TupleLiteralExp' has cardinality 0..*.
+An association connects 'ir_ocl_TupleLiteralExp' and 'TuplePart'. From 'ir_ocl_TupleLiteralExp', the role 'ir_ocl_TupleLiteralExp96' has cardinality 0..*, and from 'TuplePart', the role 'TuplePart' has cardinality 0..*.
+An association connects 'OclExpression' and 'ir_ocl_TuplePart'. From 'OclExpression', the role 'OclExpression98' has cardinality 0..*, and from 'ir_ocl_TuplePart', the role 'ir_ocl_TuplePart' has cardinality 0..*.
+An association connects 'ocl_ir_MetaTypeRef' and 'ir_ocl_EnumLiteralExp'. From 'ocl_ir_MetaTypeRef', the role 'ocl_ir_MetaTypeRef' has cardinality 0..*, and from 'ir_ocl_EnumLiteralExp', the role 'ir_ocl_EnumLiteralExp' has cardinality 0..*.
+An association connects 'ocl_ir_EFEnumLiteral' and 'ir_ocl_EnumLiteralExp'. From 'ocl_ir_EFEnumLiteral', the role 'ocl_ir_EFEnumLiteral' has cardinality 0..*, and from 'ir_ocl_EnumLiteralExp', the role 'ir_ocl_EnumLiteralExp101' has cardinality 0..*.
+An association connects 'ir_ocl_CollectionLiteralExp' and 'OclExpression'. From 'ir_ocl_CollectionLiteralExp', the role 'ir_ocl_CollectionLiteralExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression103' has cardinality 0..*.

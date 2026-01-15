@@ -1,0 +1,108 @@
+The domain model 'jointPackage_HSM2FSM' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'TrgTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_HSM2FSM_TrgInitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_HSM2FSM_TrgAbstractState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jointPackage_HSM2FSM_SrcTransition' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'jointPackage_HSM2FSM_TrgCompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_HSM2FSM_SrcInitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_HSM2FSM_SrcAbstractState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SrcCompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_HSM2FSM_TrgRegularState' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_HSM2FSM_SrcStateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jointPackage_HSM2FSM_TrgStateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SrcAbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_HSM2FSM_SrcRegularState' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_HSM2FSM_SrcRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgAbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_HSM2FSM_JointMM' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_HSM2FSM_SrcCompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_HSM2FSM_TrgTransition' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'jointPackage_HSM2FSM_TrgRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgCompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'jointPackage_HSM2FSM_SrcInitialState' is a specialization of 'SrcAbstractState'.
+The class 'jointPackage_HSM2FSM_SrcRegularState' is a specialization of 'SrcAbstractState'.
+The class 'jointPackage_HSM2FSM_SrcCompositeState' is a specialization of 'SrcAbstractState'.
+The class 'jointPackage_HSM2FSM_TrgInitialState' is a specialization of 'TrgAbstractState'.
+The class 'jointPackage_HSM2FSM_TrgRegularState' is a specialization of 'TrgAbstractState'.
+The class 'jointPackage_HSM2FSM_TrgCompositeState' is a specialization of 'TrgAbstractState'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SrcRoot' and 'jointPackage_HSM2FSM_JointMM'. From 'SrcRoot', the role 'SrcRoot' has cardinality 0..*, and from 'jointPackage_HSM2FSM_JointMM', the role 'jointPackage_HSM2FSM_JointMM' has cardinality 0..*.
+An association connects 'jointPackage_HSM2FSM_JointMM' and 'TrgRoot'. From 'jointPackage_HSM2FSM_JointMM', the role 'jointPackage_HSM2FSM_JointMM2' has cardinality 0..*, and from 'TrgRoot', the role 'TrgRoot' has cardinality 0..*.
+An association connects 'jointPackage_HSM2FSM_SrcRoot' and 'SrcStateMachine'. From 'jointPackage_HSM2FSM_SrcRoot', the role 'jointPackage_HSM2FSM_SrcRoot' has cardinality 0..*, and from 'SrcStateMachine', the role 'SrcStateMachine' has cardinality 0..*.
+An association connects 'jointPackage_HSM2FSM_SrcStateMachine' and 'SrcTransition'. From 'jointPackage_HSM2FSM_SrcStateMachine', the role '0' has cardinality 0..*, and from 'SrcTransition', the role '#' has cardinality 0..*.
+An association connects 'SrcAbstractState' and 'jointPackage_HSM2FSM_SrcStateMachine'. From 'SrcAbstractState', the role '#7' has cardinality 0..*, and from 'jointPackage_HSM2FSM_SrcStateMachine', the role '06' has cardinality 0..*.
+An association connects 'SrcStateMachine' and 'jointPackage_HSM2FSM_SrcTransition'. From 'SrcStateMachine', the role '#10' has cardinality 0..*, and from 'jointPackage_HSM2FSM_SrcTransition', the role '09' has cardinality 0..*.
+An association connects 'SrcAbstractState' and 'jointPackage_HSM2FSM_SrcTransition'. From 'SrcAbstractState', the role 'SrcAbstractState' has cardinality 0..*, and from 'jointPackage_HSM2FSM_SrcTransition', the role 'jointPackage_HSM2FSM_SrcTransition' has cardinality 0..*.
+An association connects 'SrcAbstractState' and 'jointPackage_HSM2FSM_SrcTransition'. From 'SrcAbstractState', the role 'SrcAbstractState14' has cardinality 0..*, and from 'jointPackage_HSM2FSM_SrcTransition', the role 'jointPackage_HSM2FSM_SrcTransition13' has cardinality 0..*.
+An association connects 'jointPackage_HSM2FSM_SrcAbstractState' and 'SrcStateMachine'. From 'jointPackage_HSM2FSM_SrcAbstractState', the role '016' has cardinality 0..*, and from 'SrcStateMachine', the role '#17' has cardinality 0..*.
+An association connects 'jointPackage_HSM2FSM_SrcAbstractState' and 'SrcCompositeState'. From 'jointPackage_HSM2FSM_SrcAbstractState', the role '019' has cardinality 0..*, and from 'SrcCompositeState', the role '#20' has cardinality 0..*.
+An association connects 'jointPackage_HSM2FSM_SrcCompositeState' and 'SrcAbstractState'. From 'jointPackage_HSM2FSM_SrcCompositeState', the role '022' has cardinality 0..*, and from 'SrcAbstractState', the role '#23' has cardinality 0..*.
+An association connects 'TrgStateMachine' and 'jointPackage_HSM2FSM_TrgRoot'. From 'TrgStateMachine', the role 'TrgStateMachine' has cardinality 0..*, and from 'jointPackage_HSM2FSM_TrgRoot', the role 'jointPackage_HSM2FSM_TrgRoot' has cardinality 0..*.
+An association connects 'jointPackage_HSM2FSM_TrgStateMachine' and 'TrgTransition'. From 'jointPackage_HSM2FSM_TrgStateMachine', the role '026' has cardinality 0..*, and from 'TrgTransition', the role '#27' has cardinality 0..*.
+An association connects 'TrgAbstractState' and 'jointPackage_HSM2FSM_TrgStateMachine'. From 'TrgAbstractState', the role '#30' has cardinality 0..*, and from 'jointPackage_HSM2FSM_TrgStateMachine', the role '029' has cardinality 0..*.
+An association connects 'jointPackage_HSM2FSM_TrgTransition' and 'TrgStateMachine'. From 'jointPackage_HSM2FSM_TrgTransition', the role '032' has cardinality 0..*, and from 'TrgStateMachine', the role '#33' has cardinality 0..*.
+An association connects 'jointPackage_HSM2FSM_TrgTransition' and 'TrgAbstractState'. From 'jointPackage_HSM2FSM_TrgTransition', the role 'jointPackage_HSM2FSM_TrgTransition' has cardinality 0..*, and from 'TrgAbstractState', the role 'TrgAbstractState' has cardinality 0..*.
+An association connects 'jointPackage_HSM2FSM_TrgTransition' and 'TrgAbstractState'. From 'jointPackage_HSM2FSM_TrgTransition', the role 'jointPackage_HSM2FSM_TrgTransition36' has cardinality 0..*, and from 'TrgAbstractState', the role 'TrgAbstractState37' has cardinality 0..*.
+An association connects 'jointPackage_HSM2FSM_TrgAbstractState' and 'TrgStateMachine'. From 'jointPackage_HSM2FSM_TrgAbstractState', the role '039' has cardinality 0..*, and from 'TrgStateMachine', the role '#40' has cardinality 0..*.
+An association connects 'TrgCompositeState' and 'jointPackage_HSM2FSM_TrgAbstractState'. From 'TrgCompositeState', the role '#43' has cardinality 0..*, and from 'jointPackage_HSM2FSM_TrgAbstractState', the role '042' has cardinality 0..*.
+An association connects 'TrgAbstractState' and 'jointPackage_HSM2FSM_TrgCompositeState'. From 'TrgAbstractState', the role '#46' has cardinality 0..*, and from 'jointPackage_HSM2FSM_TrgCompositeState', the role '045' has cardinality 0..*.

@@ -1,0 +1,24 @@
+The domain model 'uppaallite' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'uppaallite_UppaalDiagram' represents an important domain concept.
+It has the following attributes: 'declaration', which is of type str; 'resourceWeightDeclaration', which is of type str.
+
+'uppaallite_LocationType' represents an important domain concept.
+It has the following attributes: 'invariant', which is of type str; 'y', which is of type int; 'urgent', which is of type bool; 'id', which is of type str; 'name', which is of type str; 'cost', which is of type str; 'x', which is of type int; 'committed', which is of type bool; 'initial', which is of type bool.
+
+'uppaallite_TransitionType' represents an important domain concept.
+It has the following attributes: 'guard', which is of type str; 'assignment', which is of type str; 'sync', which is of type str; 'cost', which is of type str.
+
+'uppaallite_TemplateType' represents an important domain concept.
+It has the following attributes: 'declaration', which is of type str; 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'uppaallite_UppaalDiagram' and 'uppaallite_TemplateType'. From 'uppaallite_UppaalDiagram', the role 'uppaallite_UppaalDiagram' has cardinality 0..*, and from 'uppaallite_TemplateType', the role 'uppaallite_TemplateType' has cardinality 0..*.
+An association connects 'uppaallite_TemplateType' and 'uppaallite_LocationType'. From 'uppaallite_TemplateType', the role 'container' has cardinality 0..*, and from 'uppaallite_LocationType', the role 'LocationType' has cardinality 0..*.
+An association connects 'uppaallite_TransitionType' and 'uppaallite_TemplateType'. From 'uppaallite_TransitionType', the role 'TransitionType' has cardinality 0..*, and from 'uppaallite_TemplateType', the role 'container3' has cardinality 0..*.
+An association connects 'uppaallite_TemplateType' and 'uppaallite_LocationType'. From 'uppaallite_TemplateType', the role 'TemplateType' has cardinality 0..*, and from 'uppaallite_LocationType', the role 'location' has cardinality 0..*.
+An association connects 'uppaallite_LocationType' and 'uppaallite_TransitionType'. From 'uppaallite_LocationType', the role 'uppaallite_LocationType' has cardinality 0..*, and from 'uppaallite_TransitionType', the role 'uppaallite_TransitionType' has cardinality 0..*.
+An association connects 'uppaallite_LocationType' and 'uppaallite_TransitionType'. From 'uppaallite_LocationType', the role 'uppaallite_LocationType8' has cardinality 0..*, and from 'uppaallite_TransitionType', the role 'uppaallite_TransitionType7' has cardinality 0..*.
+An association connects 'uppaallite_TransitionType' and 'uppaallite_TemplateType'. From 'uppaallite_TransitionType', the role 'transition' has cardinality 0..*, and from 'uppaallite_TemplateType', the role 'TemplateType10' has cardinality 0..*.

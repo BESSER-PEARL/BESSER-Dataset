@@ -1,0 +1,532 @@
+The domain model 'dsl' describes the core structural elements and their relationships within the system.
+
+The model defines 107 main class(es).
+
+'dsl_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_PreIncrementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_MemberValuePairs' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_VariableInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_SynchronizedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_ForInit' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Type' represents an important domain concept.
+It has one attribute: 'primType', which is of type str.
+
+'dsl_WildcardBounds' represents an important domain concept.
+It has the following attributes: 'sup', which is of type bool; 'ext', which is of type bool.
+
+'dsl_MemberValue' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_PackageDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_BlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_InclusiveOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'truthiness', which is of type str.
+
+'dsl_FieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Expression' represents an important domain concept.
+It has one attribute: 'assignOp', which is of type str.
+
+'dsl_FormalParameters' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_AllocationExpression' represents an important domain concept.
+It has one attribute: 'primType', which is of type str.
+
+'dsl_EnumBody' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_MethodDeclarator' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'squareBrackets', which is of type str.
+
+'dsl_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_VariableDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_EqualityExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_TryStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_EnumConstant' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dsl_Literal' represents an important domain concept.
+It has the following attributes: 'charLit', which is of type str; 'stringLit', which is of type str; 'nullLit', which is of type str.
+
+'dsl_PreDecrementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_MemberValuePair' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dsl_BaseLiteral' represents an important domain concept.
+It has the following attributes: 'decDigitsUnderscore', which is of type str; 'binDigitsUnderscore', which is of type str; 'hexDigitsUnderscore', which is of type str.
+
+'dsl_EnumDeclaration' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dsl_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_LabeledStatement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dsl_DoStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_PrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_ForUpdate' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_UnsignedIntLiteral' represents an important domain concept.
+It has one attribute: 'sign', which is of type str.
+
+'dsl_ReferenceType' represents an important domain concept.
+It has the following attributes: 'primType', which is of type str; 'squareBracketsBeta', which is of type str; 'squareBracketsAlpha', which is of type str.
+
+'dsl_PrimarySuffix' represents an important domain concept.
+It has the following attributes: 'thisOp', which is of type bool; 'id', which is of type str.
+
+'dsl_ForStatement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dsl_AnnotationTypeDeclaration' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dsl_RelationalExpression' represents an important domain concept.
+It has one attribute: 'ops', which is of type str.
+
+'dsl_Initializer' represents an important domain concept.
+It has one attribute: 'static', which is of type bool.
+
+'dsl_TypeParameter' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dsl_ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_TypeArguments' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_ClassOrInterfaceDeclaration' represents an important domain concept.
+It has the following attributes: 'typeCategory', which is of type str; 'id', which is of type str.
+
+'dsl_AssertStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_ArrayDimsAndInits' represents an important domain concept.
+It has one attribute: 'squareBrackets', which is of type str.
+
+'dsl_SignedIntLiteral' represents an important domain concept.
+It has one attribute: 'bitWidth', which is of type int.
+
+'dsl_CastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_IntegerLiteral' represents an important domain concept.
+It has the following attributes: 'zero', which is of type str; 'one', which is of type str.
+
+'dsl_BreakStatement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dsl_ClassOrInterfaceBody' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_DefaultValue' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_DecimalNumber' represents an important domain concept.
+It has the following attributes: 'decDigitsUnderscore', which is of type str; 'decDigits', which is of type int.
+
+'dsl_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_MultiplicativeExpression' represents an important domain concept.
+It has one attribute: 'ops', which is of type str.
+
+'dsl_ExtendsList' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_StatementExpressionList' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_FormalParameter' represents an important domain concept.
+It has one attribute: 'final', which is of type bool.
+
+'dsl_MemberValueArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_AdditiveExpression' represents an important domain concept.
+It has one attribute: 'ops', which is of type str.
+
+'dsl_ContinueStatement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dsl_MemberSelector' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dsl_PostfixExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'dsl_PrimaryPrefix' represents an important domain concept.
+It has the following attributes: 'superOp', which is of type str; 'id', which is of type str; 'thisOp', which is of type str.
+
+'dsl_ExplicitConstructorInvocation' represents an important domain concept.
+It has the following attributes: 'self', which is of type bool; 'parent', which is of type str.
+
+'dsl_ClassOrInterfaceBodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_ArgumentList' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_MethodOrCtorDeclaration' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dsl_ConditionalOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_AnnotationTypeBody' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_ClassOrInterfaceType' represents an important domain concept.
+It has one attribute: 'ids', which is of type str.
+
+'dsl_UnaryExpression' represents an important domain concept.
+It has one attribute: 'sign', which is of type str.
+
+'dsl_VariableDeclaratorId' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'squareBrackets', which is of type str.
+
+'dsl_ResultType' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_UnaryExpressionNotPlusMinus' represents an important domain concept.
+It has one attribute: 'negOp', which is of type str.
+
+'dsl_FloatLiteral' represents an important domain concept.
+It has one attribute: 'digits', which is of type str.
+
+'dsl_StatementExpression' represents an important domain concept.
+It has the following attributes: 'assignOp', which is of type str; 'plusOp', which is of type str; 'minOp', which is of type str.
+
+'dsl_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_LocalVariableDeclaration' represents an important domain concept.
+It has one attribute: 'finality', which is of type str.
+
+'dsl_TypeArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_ImportDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_ShiftExpression' represents an important domain concept.
+It has one attribute: 'ops', which is of type str.
+
+'dsl_TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_ExclusiveOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Name' represents an important domain concept.
+It has one attribute: 'ids', which is of type str.
+
+'dsl_Arguments' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_TypeBodyModifier' represents an important domain concept.
+It has the following attributes: 'native', which is of type bool; 'strictfp', which is of type bool; 'transient', which is of type bool; 'volatile', which is of type bool; 'synchronized', which is of type bool.
+
+'dsl_ImplementsList' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_CommonModifier' represents an important domain concept.
+It has the following attributes: 'final', which is of type bool; 'static', which is of type bool; 'visibility', which is of type str; 'abstract', which is of type bool.
+
+'dsl_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_InstanceOfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_ThrowStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DefaultValue' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_TypeBound' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_CastLookahead' represents an important domain concept.
+It has the following attributes: 'bitNegOp', which is of type str; 'thisOp', which is of type str; 'openBracket', which is of type str; 'superOp', which is of type str; 'newOp', which is of type str; 'negOp', which is of type str; 'primType', which is of type str; 'id', which is of type str.
+
+'dsl_SwitchLabel' represents an important domain concept.
+It has one attribute: 'defaultOp', which is of type str.
+
+'dsl_NameList' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_ConditionalAndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_AnnotationTypeMemberDeclaration' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dsl_TypeParameters' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Visibility' defines the following possible values: 'PUBLIC', 'PROTECTED', 'PRIVATE'.
+
+The model also captures inheritance relationships between classes.
+The class 'dsl_Expression' is a specialization of 'IfStatement'.
+The class 'dsl_MemberValue' is a specialization of 'DefaultValue'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dsl_PackageDeclaration' and 'dsl_CompilationUnit'. From 'dsl_PackageDeclaration', the role 'dsl_PackageDeclaration' has cardinality 0..*, and from 'dsl_CompilationUnit', the role 'dsl_CompilationUnit' has cardinality 0..*.
+An association connects 'dsl_CompilationUnit' and 'dsl_ImportDeclaration'. From 'dsl_CompilationUnit', the role 'dsl_CompilationUnit2' has cardinality 0..*, and from 'dsl_ImportDeclaration', the role 'dsl_ImportDeclaration' has cardinality 0..*.
+An association connects 'dsl_CompilationUnit' and 'dsl_TypeDeclaration'. From 'dsl_CompilationUnit', the role 'dsl_CompilationUnit4' has cardinality 0..*, and from 'dsl_TypeDeclaration', the role 'dsl_TypeDeclaration' has cardinality 0..*.
+An association connects 'dsl_Name' and 'dsl_PackageDeclaration'. From 'dsl_Name', the role 'dsl_Name' has cardinality 0..*, and from 'dsl_PackageDeclaration', the role 'dsl_PackageDeclaration6' has cardinality 0..*.
+An association connects 'dsl_ImportDeclaration' and 'dsl_Name'. From 'dsl_ImportDeclaration', the role 'dsl_ImportDeclaration8' has cardinality 0..*, and from 'dsl_Name', the role 'dsl_Name9' has cardinality 0..*.
+An association connects 'dsl_TypeBodyModifier' and 'dsl_CommonModifier'. From 'dsl_TypeBodyModifier', the role 'dsl_TypeBodyModifier' has cardinality 0..*, and from 'dsl_CommonModifier', the role 'dsl_CommonModifier' has cardinality 0..*.
+An association connects 'dsl_CommonModifier' and 'dsl_TypeDeclaration'. From 'dsl_CommonModifier', the role 'dsl_CommonModifier13' has cardinality 0..*, and from 'dsl_TypeDeclaration', the role 'dsl_TypeDeclaration12' has cardinality 0..*.
+An association connects 'dsl_ClassOrInterfaceDeclaration' and 'dsl_TypeDeclaration'. From 'dsl_ClassOrInterfaceDeclaration', the role 'dsl_ClassOrInterfaceDeclaration' has cardinality 0..*, and from 'dsl_TypeDeclaration', the role 'dsl_TypeDeclaration15' has cardinality 0..*.
+An association connects 'dsl_TypeDeclaration' and 'dsl_EnumDeclaration'. From 'dsl_TypeDeclaration', the role 'dsl_TypeDeclaration17' has cardinality 0..*, and from 'dsl_EnumDeclaration', the role 'dsl_EnumDeclaration' has cardinality 0..*.
+An association connects 'dsl_AnnotationTypeDeclaration' and 'dsl_TypeDeclaration'. From 'dsl_AnnotationTypeDeclaration', the role 'dsl_AnnotationTypeDeclaration' has cardinality 0..*, and from 'dsl_TypeDeclaration', the role 'dsl_TypeDeclaration19' has cardinality 0..*.
+An association connects 'dsl_ClassOrInterfaceDeclaration' and 'dsl_TypeParameters'. From 'dsl_ClassOrInterfaceDeclaration', the role 'dsl_ClassOrInterfaceDeclaration21' has cardinality 0..*, and from 'dsl_TypeParameters', the role 'dsl_TypeParameters' has cardinality 0..*.
+An association connects 'dsl_ClassOrInterfaceDeclaration' and 'dsl_ExtendsList'. From 'dsl_ClassOrInterfaceDeclaration', the role 'dsl_ClassOrInterfaceDeclaration23' has cardinality 0..*, and from 'dsl_ExtendsList', the role 'dsl_ExtendsList' has cardinality 0..*.
+An association connects 'dsl_ClassOrInterfaceDeclaration' and 'dsl_ImplementsList'. From 'dsl_ClassOrInterfaceDeclaration', the role 'dsl_ClassOrInterfaceDeclaration25' has cardinality 0..*, and from 'dsl_ImplementsList', the role 'dsl_ImplementsList' has cardinality 0..*.
+An association connects 'dsl_ClassOrInterfaceDeclaration' and 'dsl_ClassOrInterfaceBody'. From 'dsl_ClassOrInterfaceDeclaration', the role 'dsl_ClassOrInterfaceDeclaration27' has cardinality 0..*, and from 'dsl_ClassOrInterfaceBody', the role 'dsl_ClassOrInterfaceBody' has cardinality 0..*.
+An association connects 'dsl_ClassOrInterfaceType' and 'dsl_ExtendsList'. From 'dsl_ClassOrInterfaceType', the role 'dsl_ClassOrInterfaceType' has cardinality 0..*, and from 'dsl_ExtendsList', the role 'dsl_ExtendsList29' has cardinality 0..*.
+An association connects 'dsl_ExtendsList' and 'dsl_ClassOrInterfaceType'. From 'dsl_ExtendsList', the role 'dsl_ExtendsList31' has cardinality 0..*, and from 'dsl_ClassOrInterfaceType', the role 'dsl_ClassOrInterfaceType32' has cardinality 0..*.
+An association connects 'dsl_ImplementsList' and 'dsl_ClassOrInterfaceType'. From 'dsl_ImplementsList', the role 'dsl_ImplementsList34' has cardinality 0..*, and from 'dsl_ClassOrInterfaceType', the role 'dsl_ClassOrInterfaceType35' has cardinality 0..*.
+An association connects 'dsl_ImplementsList' and 'dsl_EnumDeclaration'. From 'dsl_ImplementsList', the role 'dsl_ImplementsList38' has cardinality 0..*, and from 'dsl_EnumDeclaration', the role 'dsl_EnumDeclaration37' has cardinality 0..*.
+An association connects 'dsl_EnumDeclaration' and 'dsl_EnumBody'. From 'dsl_EnumDeclaration', the role 'dsl_EnumDeclaration40' has cardinality 0..*, and from 'dsl_EnumBody', the role 'dsl_EnumBody' has cardinality 0..*.
+An association connects 'dsl_EnumBody' and 'dsl_EnumConstant'. From 'dsl_EnumBody', the role 'dsl_EnumBody42' has cardinality 0..*, and from 'dsl_EnumConstant', the role 'dsl_EnumConstant' has cardinality 0..*.
+An association connects 'dsl_EnumBody' and 'dsl_ClassOrInterfaceBodyDeclaration'. From 'dsl_EnumBody', the role 'dsl_EnumBody44' has cardinality 0..*, and from 'dsl_ClassOrInterfaceBodyDeclaration', the role 'dsl_ClassOrInterfaceBodyDeclaration' has cardinality 0..*.
+An association connects 'dsl_EnumConstant' and 'dsl_Arguments'. From 'dsl_EnumConstant', the role 'dsl_EnumConstant46' has cardinality 0..*, and from 'dsl_Arguments', the role 'dsl_Arguments' has cardinality 0..*.
+An association connects 'dsl_ClassOrInterfaceBody' and 'dsl_EnumConstant'. From 'dsl_ClassOrInterfaceBody', the role 'dsl_ClassOrInterfaceBody49' has cardinality 0..*, and from 'dsl_EnumConstant', the role 'dsl_EnumConstant48' has cardinality 0..*.
+An association connects 'dsl_TypeParameters' and 'dsl_TypeParameter'. From 'dsl_TypeParameters', the role 'dsl_TypeParameters51' has cardinality 0..*, and from 'dsl_TypeParameter', the role 'dsl_TypeParameter' has cardinality 0..*.
+An association connects 'dsl_TypeParameter' and 'dsl_TypeBound'. From 'dsl_TypeParameter', the role 'dsl_TypeParameter53' has cardinality 0..*, and from 'dsl_TypeBound', the role 'dsl_TypeBound' has cardinality 0..*.
+An association connects 'dsl_ClassOrInterfaceType' and 'dsl_TypeBound'. From 'dsl_ClassOrInterfaceType', the role 'dsl_ClassOrInterfaceType56' has cardinality 0..*, and from 'dsl_TypeBound', the role 'dsl_TypeBound55' has cardinality 0..*.
+An association connects 'dsl_ClassOrInterfaceBodyDeclaration' and 'dsl_ClassOrInterfaceBody'. From 'dsl_ClassOrInterfaceBodyDeclaration', the role 'dsl_ClassOrInterfaceBodyDeclaration59' has cardinality 0..*, and from 'dsl_ClassOrInterfaceBody', the role 'dsl_ClassOrInterfaceBody58' has cardinality 0..*.
+An association connects 'dsl_Initializer' and 'dsl_ClassOrInterfaceBodyDeclaration'. From 'dsl_Initializer', the role 'dsl_Initializer' has cardinality 0..*, and from 'dsl_ClassOrInterfaceBodyDeclaration', the role 'dsl_ClassOrInterfaceBodyDeclaration61' has cardinality 0..*.
+An association connects 'dsl_ClassOrInterfaceBodyDeclaration' and 'dsl_TypeBodyModifier'. From 'dsl_ClassOrInterfaceBodyDeclaration', the role 'dsl_ClassOrInterfaceBodyDeclaration63' has cardinality 0..*, and from 'dsl_TypeBodyModifier', the role 'dsl_TypeBodyModifier64' has cardinality 0..*.
+An association connects 'dsl_ClassOrInterfaceBodyDeclaration' and 'dsl_ClassOrInterfaceDeclaration'. From 'dsl_ClassOrInterfaceBodyDeclaration', the role 'dsl_ClassOrInterfaceBodyDeclaration66' has cardinality 0..*, and from 'dsl_ClassOrInterfaceDeclaration', the role 'dsl_ClassOrInterfaceDeclaration67' has cardinality 0..*.
+An association connects 'dsl_EnumDeclaration' and 'dsl_ClassOrInterfaceBodyDeclaration'. From 'dsl_EnumDeclaration', the role 'dsl_EnumDeclaration70' has cardinality 0..*, and from 'dsl_ClassOrInterfaceBodyDeclaration', the role 'dsl_ClassOrInterfaceBodyDeclaration69' has cardinality 0..*.
+An association connects 'dsl_ClassOrInterfaceBodyDeclaration' and 'dsl_MethodOrCtorDeclaration'. From 'dsl_ClassOrInterfaceBodyDeclaration', the role 'dsl_ClassOrInterfaceBodyDeclaration72' has cardinality 0..*, and from 'dsl_MethodOrCtorDeclaration', the role 'dsl_MethodOrCtorDeclaration' has cardinality 0..*.
+An association connects 'dsl_ClassOrInterfaceBodyDeclaration' and 'dsl_FieldDeclaration'. From 'dsl_ClassOrInterfaceBodyDeclaration', the role 'dsl_ClassOrInterfaceBodyDeclaration74' has cardinality 0..*, and from 'dsl_FieldDeclaration', the role 'dsl_FieldDeclaration' has cardinality 0..*.
+An association connects 'dsl_FieldDeclaration' and 'dsl_Type'. From 'dsl_FieldDeclaration', the role 'dsl_FieldDeclaration76' has cardinality 0..*, and from 'dsl_Type', the role 'dsl_Type' has cardinality 0..*.
+An association connects 'dsl_VariableDeclarator' and 'dsl_FieldDeclaration'. From 'dsl_VariableDeclarator', the role 'dsl_VariableDeclarator' has cardinality 0..*, and from 'dsl_FieldDeclaration', the role 'dsl_FieldDeclaration78' has cardinality 0..*.
+An association connects 'dsl_VariableDeclarator' and 'dsl_VariableDeclaratorId'. From 'dsl_VariableDeclarator', the role 'dsl_VariableDeclarator80' has cardinality 0..*, and from 'dsl_VariableDeclaratorId', the role 'dsl_VariableDeclaratorId' has cardinality 0..*.
+An association connects 'dsl_VariableDeclarator' and 'dsl_VariableInitializer'. From 'dsl_VariableDeclarator', the role 'dsl_VariableDeclarator82' has cardinality 0..*, and from 'dsl_VariableInitializer', the role 'dsl_VariableInitializer' has cardinality 0..*.
+An association connects 'dsl_VariableInitializer' and 'dsl_ArrayInitializer'. From 'dsl_VariableInitializer', the role 'dsl_VariableInitializer84' has cardinality 0..*, and from 'dsl_ArrayInitializer', the role 'dsl_ArrayInitializer' has cardinality 0..*.
+An association connects 'dsl_VariableInitializer' and 'dsl_Expression'. From 'dsl_VariableInitializer', the role 'dsl_VariableInitializer86' has cardinality 0..*, and from 'dsl_Expression', the role 'dsl_Expression' has cardinality 0..*.
+An association connects 'dsl_VariableInitializer' and 'dsl_ArrayInitializer'. From 'dsl_VariableInitializer', the role 'dsl_VariableInitializer89' has cardinality 0..*, and from 'dsl_ArrayInitializer', the role 'dsl_ArrayInitializer88' has cardinality 0..*.
+An association connects 'dsl_MethodOrCtorDeclaration' and 'dsl_TypeParameters'. From 'dsl_MethodOrCtorDeclaration', the role 'dsl_MethodOrCtorDeclaration91' has cardinality 0..*, and from 'dsl_TypeParameters', the role 'dsl_TypeParameters92' has cardinality 0..*.
+An association connects 'dsl_FormalParameters' and 'dsl_MethodOrCtorDeclaration'. From 'dsl_FormalParameters', the role 'dsl_FormalParameters' has cardinality 0..*, and from 'dsl_MethodOrCtorDeclaration', the role 'dsl_MethodOrCtorDeclaration94' has cardinality 0..*.
+An association connects 'dsl_MethodOrCtorDeclaration' and 'dsl_NameList'. From 'dsl_MethodOrCtorDeclaration', the role 'dsl_MethodOrCtorDeclaration96' has cardinality 0..*, and from 'dsl_NameList', the role 'dsl_NameList' has cardinality 0..*.
+An association connects 'dsl_ExplicitConstructorInvocation' and 'dsl_MethodOrCtorDeclaration'. From 'dsl_ExplicitConstructorInvocation', the role 'dsl_ExplicitConstructorInvocation' has cardinality 0..*, and from 'dsl_MethodOrCtorDeclaration', the role 'dsl_MethodOrCtorDeclaration98' has cardinality 0..*.
+An association connects 'dsl_BlockStatement' and 'dsl_MethodOrCtorDeclaration'. From 'dsl_BlockStatement', the role 'dsl_BlockStatement' has cardinality 0..*, and from 'dsl_MethodOrCtorDeclaration', the role 'dsl_MethodOrCtorDeclaration100' has cardinality 0..*.
+An association connects 'dsl_MethodOrCtorDeclaration' and 'dsl_ResultType'. From 'dsl_MethodOrCtorDeclaration', the role 'dsl_MethodOrCtorDeclaration102' has cardinality 0..*, and from 'dsl_ResultType', the role 'dsl_ResultType' has cardinality 0..*.
+An association connects 'dsl_MethodDeclarator' and 'dsl_MethodOrCtorDeclaration'. From 'dsl_MethodDeclarator', the role 'dsl_MethodDeclarator' has cardinality 0..*, and from 'dsl_MethodOrCtorDeclaration', the role 'dsl_MethodOrCtorDeclaration104' has cardinality 0..*.
+An association connects 'dsl_Block' and 'dsl_MethodOrCtorDeclaration'. From 'dsl_Block', the role 'dsl_Block' has cardinality 0..*, and from 'dsl_MethodOrCtorDeclaration', the role 'dsl_MethodOrCtorDeclaration106' has cardinality 0..*.
+An association connects 'dsl_FormalParameters' and 'dsl_MethodDeclarator'. From 'dsl_FormalParameters', the role 'dsl_FormalParameters109' has cardinality 0..*, and from 'dsl_MethodDeclarator', the role 'dsl_MethodDeclarator108' has cardinality 0..*.
+An association connects 'dsl_FormalParameters' and 'dsl_FormalParameter'. From 'dsl_FormalParameters', the role 'dsl_FormalParameters111' has cardinality 0..*, and from 'dsl_FormalParameter', the role 'dsl_FormalParameter' has cardinality 0..*.
+An association connects 'dsl_Type' and 'dsl_FormalParameter'. From 'dsl_Type', the role 'dsl_Type114' has cardinality 0..*, and from 'dsl_FormalParameter', the role 'dsl_FormalParameter113' has cardinality 0..*.
+An association connects 'dsl_FormalParameter' and 'dsl_VariableDeclaratorId'. From 'dsl_FormalParameter', the role 'dsl_FormalParameter116' has cardinality 0..*, and from 'dsl_VariableDeclaratorId', the role 'dsl_VariableDeclaratorId117' has cardinality 0..*.
+An association connects 'dsl_ExplicitConstructorInvocation' and 'dsl_Arguments'. From 'dsl_ExplicitConstructorInvocation', the role 'dsl_ExplicitConstructorInvocation119' has cardinality 0..*, and from 'dsl_Arguments', the role 'dsl_Arguments120' has cardinality 0..*.
+An association connects 'dsl_ExplicitConstructorInvocation' and 'dsl_PrimaryExpression'. From 'dsl_ExplicitConstructorInvocation', the role 'dsl_ExplicitConstructorInvocation122' has cardinality 0..*, and from 'dsl_PrimaryExpression', the role 'dsl_PrimaryExpression' has cardinality 0..*.
+An association connects 'dsl_Initializer' and 'dsl_Block'. From 'dsl_Initializer', the role 'dsl_Initializer124' has cardinality 0..*, and from 'dsl_Block', the role 'dsl_Block125' has cardinality 0..*.
+An association connects 'dsl_Type' and 'dsl_ReferenceType'. From 'dsl_Type', the role 'dsl_Type127' has cardinality 0..*, and from 'dsl_ReferenceType', the role 'dsl_ReferenceType' has cardinality 0..*.
+An association connects 'dsl_ReferenceType' and 'dsl_ClassOrInterfaceType'. From 'dsl_ReferenceType', the role 'dsl_ReferenceType129' has cardinality 0..*, and from 'dsl_ClassOrInterfaceType', the role 'dsl_ClassOrInterfaceType130' has cardinality 0..*.
+An association connects 'dsl_ClassOrInterfaceType' and 'dsl_TypeArguments'. From 'dsl_ClassOrInterfaceType', the role 'dsl_ClassOrInterfaceType132' has cardinality 0..*, and from 'dsl_TypeArguments', the role 'dsl_TypeArguments' has cardinality 0..*.
+An association connects 'dsl_TypeArgument' and 'dsl_TypeArguments'. From 'dsl_TypeArgument', the role 'dsl_TypeArgument' has cardinality 0..*, and from 'dsl_TypeArguments', the role 'dsl_TypeArguments134' has cardinality 0..*.
+An association connects 'dsl_TypeArgument' and 'dsl_ReferenceType'. From 'dsl_TypeArgument', the role 'dsl_TypeArgument136' has cardinality 0..*, and from 'dsl_ReferenceType', the role 'dsl_ReferenceType137' has cardinality 0..*.
+An association connects 'dsl_WildcardBounds' and 'dsl_TypeArgument'. From 'dsl_WildcardBounds', the role 'dsl_WildcardBounds' has cardinality 0..*, and from 'dsl_TypeArgument', the role 'dsl_TypeArgument139' has cardinality 0..*.
+An association connects 'dsl_ReferenceType' and 'dsl_WildcardBounds'. From 'dsl_ReferenceType', the role 'dsl_ReferenceType142' has cardinality 0..*, and from 'dsl_WildcardBounds', the role 'dsl_WildcardBounds141' has cardinality 0..*.
+An association connects 'dsl_Type' and 'dsl_ResultType'. From 'dsl_Type', the role 'dsl_Type145' has cardinality 0..*, and from 'dsl_ResultType', the role 'dsl_ResultType144' has cardinality 0..*.
+An association connects 'dsl_Name' and 'dsl_NameList'. From 'dsl_Name', the role 'dsl_Name148' has cardinality 0..*, and from 'dsl_NameList', the role 'dsl_NameList147' has cardinality 0..*.
+An association connects 'dsl_Expression' and 'dsl_ConditionalExpression'. From 'dsl_Expression', the role 'dsl_Expression150' has cardinality 0..*, and from 'dsl_ConditionalExpression', the role 'dsl_ConditionalExpression' has cardinality 0..*.
+An association connects 'dsl_Expression' and 'dsl_Expression'. From 'dsl_Expression', the role 'dsl_Expression151' has cardinality 0..*, and from 'dsl_Expression', the role 'dsl_Expression153' has cardinality 0..*.
+An association connects 'dsl_Expression' and 'dsl_Statement'. From 'dsl_Expression', the role 'dsl_Expression155' has cardinality 0..*, and from 'dsl_Statement', the role 'dsl_Statement' has cardinality 0..*.
+An association connects 'dsl_Statement' and 'dsl_Expression'. From 'dsl_Statement', the role 'dsl_Statement158' has cardinality 0..*, and from 'dsl_Expression', the role 'dsl_Expression157' has cardinality 0..*.
+An association connects 'dsl_ConditionalOrExpression' and 'dsl_ConditionalExpression'. From 'dsl_ConditionalOrExpression', the role 'dsl_ConditionalOrExpression' has cardinality 0..*, and from 'dsl_ConditionalExpression', the role 'dsl_ConditionalExpression160' has cardinality 0..*.
+An association connects 'dsl_ConditionalExpression' and 'dsl_Expression'. From 'dsl_ConditionalExpression', the role 'dsl_ConditionalExpression162' has cardinality 0..*, and from 'dsl_Expression', the role 'dsl_Expression163' has cardinality 0..*.
+An association connects 'dsl_Expression' and 'dsl_ConditionalExpression'. From 'dsl_Expression', the role 'dsl_Expression166' has cardinality 0..*, and from 'dsl_ConditionalExpression', the role 'dsl_ConditionalExpression165' has cardinality 0..*.
+An association connects 'dsl_ConditionalOrExpression' and 'dsl_ConditionalAndExpression'. From 'dsl_ConditionalOrExpression', the role 'dsl_ConditionalOrExpression168' has cardinality 0..*, and from 'dsl_ConditionalAndExpression', the role 'dsl_ConditionalAndExpression' has cardinality 0..*.
+An association connects 'dsl_InclusiveOrExpression' and 'dsl_ConditionalAndExpression'. From 'dsl_InclusiveOrExpression', the role 'dsl_InclusiveOrExpression' has cardinality 0..*, and from 'dsl_ConditionalAndExpression', the role 'dsl_ConditionalAndExpression170' has cardinality 0..*.
+An association connects 'dsl_ExclusiveOrExpression' and 'dsl_InclusiveOrExpression'. From 'dsl_ExclusiveOrExpression', the role 'dsl_ExclusiveOrExpression' has cardinality 0..*, and from 'dsl_InclusiveOrExpression', the role 'dsl_InclusiveOrExpression172' has cardinality 0..*.
+An association connects 'dsl_ExclusiveOrExpression' and 'dsl_AndExpression'. From 'dsl_ExclusiveOrExpression', the role 'dsl_ExclusiveOrExpression174' has cardinality 0..*, and from 'dsl_AndExpression', the role 'dsl_AndExpression' has cardinality 0..*.
+An association connects 'dsl_EqualityExpression' and 'dsl_AndExpression'. From 'dsl_EqualityExpression', the role 'dsl_EqualityExpression' has cardinality 0..*, and from 'dsl_AndExpression', the role 'dsl_AndExpression176' has cardinality 0..*.
+An association connects 'dsl_InstanceOfExpression' and 'dsl_EqualityExpression'. From 'dsl_InstanceOfExpression', the role 'dsl_InstanceOfExpression' has cardinality 0..*, and from 'dsl_EqualityExpression', the role 'dsl_EqualityExpression178' has cardinality 0..*.
+An association connects 'dsl_InstanceOfExpression' and 'dsl_RelationalExpression'. From 'dsl_InstanceOfExpression', the role 'dsl_InstanceOfExpression180' has cardinality 0..*, and from 'dsl_RelationalExpression', the role 'dsl_RelationalExpression' has cardinality 0..*.
+An association connects 'dsl_Type' and 'dsl_InstanceOfExpression'. From 'dsl_Type', the role 'dsl_Type183' has cardinality 0..*, and from 'dsl_InstanceOfExpression', the role 'dsl_InstanceOfExpression182' has cardinality 0..*.
+An association connects 'dsl_RelationalExpression' and 'dsl_ShiftExpression'. From 'dsl_RelationalExpression', the role 'dsl_RelationalExpression185' has cardinality 0..*, and from 'dsl_ShiftExpression', the role 'dsl_ShiftExpression' has cardinality 0..*.
+An association connects 'dsl_ShiftExpression' and 'dsl_AdditiveExpression'. From 'dsl_ShiftExpression', the role 'dsl_ShiftExpression187' has cardinality 0..*, and from 'dsl_AdditiveExpression', the role 'dsl_AdditiveExpression' has cardinality 0..*.
+An association connects 'dsl_AdditiveExpression' and 'dsl_MultiplicativeExpression'. From 'dsl_AdditiveExpression', the role 'dsl_AdditiveExpression189' has cardinality 0..*, and from 'dsl_MultiplicativeExpression', the role 'dsl_MultiplicativeExpression' has cardinality 0..*.
+An association connects 'dsl_MultiplicativeExpression' and 'dsl_UnaryExpression'. From 'dsl_MultiplicativeExpression', the role 'dsl_MultiplicativeExpression191' has cardinality 0..*, and from 'dsl_UnaryExpression', the role 'dsl_UnaryExpression' has cardinality 0..*.
+An association connects 'dsl_UnaryExpression' and 'dsl_UnaryExpression'. From 'dsl_UnaryExpression', the role 'dsl_UnaryExpression194' has cardinality 0..*, and from 'dsl_UnaryExpression', the role 'dsl_UnaryExpression192' has cardinality 0..*.
+An association connects 'dsl_PreIncrementExpression' and 'dsl_UnaryExpression'. From 'dsl_PreIncrementExpression', the role 'dsl_PreIncrementExpression' has cardinality 0..*, and from 'dsl_UnaryExpression', the role 'dsl_UnaryExpression196' has cardinality 0..*.
+An association connects 'dsl_UnaryExpression' and 'dsl_PreDecrementExpression'. From 'dsl_UnaryExpression', the role 'dsl_UnaryExpression198' has cardinality 0..*, and from 'dsl_PreDecrementExpression', the role 'dsl_PreDecrementExpression' has cardinality 0..*.
+An association connects 'dsl_UnaryExpression' and 'dsl_UnaryExpressionNotPlusMinus'. From 'dsl_UnaryExpression', the role 'dsl_UnaryExpression200' has cardinality 0..*, and from 'dsl_UnaryExpressionNotPlusMinus', the role 'dsl_UnaryExpressionNotPlusMinus' has cardinality 0..*.
+An association connects 'dsl_PreIncrementExpression' and 'dsl_PrimaryExpression'. From 'dsl_PreIncrementExpression', the role 'dsl_PreIncrementExpression202' has cardinality 0..*, and from 'dsl_PrimaryExpression', the role 'dsl_PrimaryExpression203' has cardinality 0..*.
+An association connects 'dsl_PreDecrementExpression' and 'dsl_PrimaryExpression'. From 'dsl_PreDecrementExpression', the role 'dsl_PreDecrementExpression205' has cardinality 0..*, and from 'dsl_PrimaryExpression', the role 'dsl_PrimaryExpression206' has cardinality 0..*.
+An association connects 'dsl_UnaryExpressionNotPlusMinus' and 'dsl_UnaryExpression'. From 'dsl_UnaryExpressionNotPlusMinus', the role 'dsl_UnaryExpressionNotPlusMinus208' has cardinality 0..*, and from 'dsl_UnaryExpression', the role 'dsl_UnaryExpression209' has cardinality 0..*.
+An association connects 'dsl_CastExpression' and 'dsl_UnaryExpressionNotPlusMinus'. From 'dsl_CastExpression', the role 'dsl_CastExpression' has cardinality 0..*, and from 'dsl_UnaryExpressionNotPlusMinus', the role 'dsl_UnaryExpressionNotPlusMinus211' has cardinality 0..*.
+An association connects 'dsl_PostfixExpression' and 'dsl_UnaryExpressionNotPlusMinus'. From 'dsl_PostfixExpression', the role 'dsl_PostfixExpression' has cardinality 0..*, and from 'dsl_UnaryExpressionNotPlusMinus', the role 'dsl_UnaryExpressionNotPlusMinus213' has cardinality 0..*.
+An association connects 'dsl_Type' and 'dsl_CastLookahead'. From 'dsl_Type', the role 'dsl_Type215' has cardinality 0..*, and from 'dsl_CastLookahead', the role 'dsl_CastLookahead' has cardinality 0..*.
+An association connects 'dsl_CastLookahead' and 'dsl_Type'. From 'dsl_CastLookahead', the role 'dsl_CastLookahead217' has cardinality 0..*, and from 'dsl_Type', the role 'dsl_Type218' has cardinality 0..*.
+An association connects 'dsl_Literal' and 'dsl_CastLookahead'. From 'dsl_Literal', the role 'dsl_Literal' has cardinality 0..*, and from 'dsl_CastLookahead', the role 'dsl_CastLookahead220' has cardinality 0..*.
+An association connects 'dsl_PostfixExpression' and 'dsl_PrimaryExpression'. From 'dsl_PostfixExpression', the role 'dsl_PostfixExpression222' has cardinality 0..*, and from 'dsl_PrimaryExpression', the role 'dsl_PrimaryExpression223' has cardinality 0..*.
+An association connects 'dsl_CastExpression' and 'dsl_Type'. From 'dsl_CastExpression', the role 'dsl_CastExpression225' has cardinality 0..*, and from 'dsl_Type', the role 'dsl_Type226' has cardinality 0..*.
+An association connects 'dsl_EObject' and 'dsl_CastExpression'. From 'dsl_EObject', the role 'dsl_EObject' has cardinality 0..*, and from 'dsl_CastExpression', the role 'dsl_CastExpression228' has cardinality 0..*.
+An association connects 'dsl_EObject' and 'dsl_PrimaryExpression'. From 'dsl_EObject', the role 'dsl_EObject231' has cardinality 0..*, and from 'dsl_PrimaryExpression', the role 'dsl_PrimaryExpression230' has cardinality 0..*.
+An association connects 'dsl_TypeArguments' and 'dsl_MemberSelector'. From 'dsl_TypeArguments', the role 'dsl_TypeArguments233' has cardinality 0..*, and from 'dsl_MemberSelector', the role 'dsl_MemberSelector' has cardinality 0..*.
+An association connects 'dsl_PrimaryPrefix' and 'dsl_Literal'. From 'dsl_PrimaryPrefix', the role 'dsl_PrimaryPrefix' has cardinality 0..*, and from 'dsl_Literal', the role 'dsl_Literal235' has cardinality 0..*.
+An association connects 'dsl_Expression' and 'dsl_PrimaryPrefix'. From 'dsl_Expression', the role 'dsl_Expression238' has cardinality 0..*, and from 'dsl_PrimaryPrefix', the role 'dsl_PrimaryPrefix237' has cardinality 0..*.
+An association connects 'dsl_AllocationExpression' and 'dsl_PrimaryPrefix'. From 'dsl_AllocationExpression', the role 'dsl_AllocationExpression' has cardinality 0..*, and from 'dsl_PrimaryPrefix', the role 'dsl_PrimaryPrefix240' has cardinality 0..*.
+An association connects 'dsl_ResultType' and 'dsl_PrimaryPrefix'. From 'dsl_ResultType', the role 'dsl_ResultType243' has cardinality 0..*, and from 'dsl_PrimaryPrefix', the role 'dsl_PrimaryPrefix242' has cardinality 0..*.
+An association connects 'dsl_PrimaryPrefix' and 'dsl_Name'. From 'dsl_PrimaryPrefix', the role 'dsl_PrimaryPrefix245' has cardinality 0..*, and from 'dsl_Name', the role 'dsl_Name246' has cardinality 0..*.
+An association connects 'dsl_PrimarySuffix' and 'dsl_AllocationExpression'. From 'dsl_PrimarySuffix', the role 'dsl_PrimarySuffix' has cardinality 0..*, and from 'dsl_AllocationExpression', the role 'dsl_AllocationExpression248' has cardinality 0..*.
+An association connects 'dsl_MemberSelector' and 'dsl_PrimarySuffix'. From 'dsl_MemberSelector', the role 'dsl_MemberSelector251' has cardinality 0..*, and from 'dsl_PrimarySuffix', the role 'dsl_PrimarySuffix250' has cardinality 0..*.
+An association connects 'dsl_PrimarySuffix' and 'dsl_Expression'. From 'dsl_PrimarySuffix', the role 'dsl_PrimarySuffix253' has cardinality 0..*, and from 'dsl_Expression', the role 'dsl_Expression254' has cardinality 0..*.
+An association connects 'dsl_Arguments' and 'dsl_PrimarySuffix'. From 'dsl_Arguments', the role 'dsl_Arguments257' has cardinality 0..*, and from 'dsl_PrimarySuffix', the role 'dsl_PrimarySuffix256' has cardinality 0..*.
+An association connects 'dsl_DecimalNumber' and 'dsl_UnsignedIntLiteral'. From 'dsl_DecimalNumber', the role 'dsl_DecimalNumber' has cardinality 0..*, and from 'dsl_UnsignedIntLiteral', the role 'dsl_UnsignedIntLiteral' has cardinality 0..*.
+An association connects 'dsl_UnsignedIntLiteral' and 'dsl_BaseLiteral'. From 'dsl_UnsignedIntLiteral', the role 'dsl_UnsignedIntLiteral260' has cardinality 0..*, and from 'dsl_BaseLiteral', the role 'dsl_BaseLiteral' has cardinality 0..*.
+An association connects 'dsl_BaseLiteral' and 'dsl_SignedIntLiteral'. From 'dsl_BaseLiteral', the role 'dsl_BaseLiteral262' has cardinality 0..*, and from 'dsl_SignedIntLiteral', the role 'dsl_SignedIntLiteral' has cardinality 0..*.
+An association connects 'dsl_IntegerLiteral' and 'dsl_SignedIntLiteral'. From 'dsl_IntegerLiteral', the role 'dsl_IntegerLiteral' has cardinality 0..*, and from 'dsl_SignedIntLiteral', the role 'dsl_SignedIntLiteral264' has cardinality 0..*.
+An association connects 'dsl_UnsignedIntLiteral' and 'dsl_IntegerLiteral'. From 'dsl_UnsignedIntLiteral', the role 'dsl_UnsignedIntLiteral267' has cardinality 0..*, and from 'dsl_IntegerLiteral', the role 'dsl_IntegerLiteral266' has cardinality 0..*.
+An association connects 'dsl_DecimalNumber' and 'dsl_FloatLiteral'. From 'dsl_DecimalNumber', the role 'dsl_DecimalNumber269' has cardinality 0..*, and from 'dsl_FloatLiteral', the role 'dsl_FloatLiteral' has cardinality 0..*.
+An association connects 'dsl_FloatLiteral' and 'dsl_DecimalNumber'. From 'dsl_FloatLiteral', the role 'dsl_FloatLiteral271' has cardinality 0..*, and from 'dsl_DecimalNumber', the role 'dsl_DecimalNumber272' has cardinality 0..*.
+An association connects 'dsl_IntegerLiteral' and 'dsl_Literal'. From 'dsl_IntegerLiteral', the role 'dsl_IntegerLiteral275' has cardinality 0..*, and from 'dsl_Literal', the role 'dsl_Literal274' has cardinality 0..*.
+An association connects 'dsl_Literal' and 'dsl_FloatLiteral'. From 'dsl_Literal', the role 'dsl_Literal277' has cardinality 0..*, and from 'dsl_FloatLiteral', the role 'dsl_FloatLiteral278' has cardinality 0..*.
+An association connects 'dsl_Literal' and 'dsl_BooleanLiteral'. From 'dsl_Literal', the role 'dsl_Literal280' has cardinality 0..*, and from 'dsl_BooleanLiteral', the role 'dsl_BooleanLiteral' has cardinality 0..*.
+An association connects 'dsl_Arguments' and 'dsl_ArgumentList'. From 'dsl_Arguments', the role 'dsl_Arguments282' has cardinality 0..*, and from 'dsl_ArgumentList', the role 'dsl_ArgumentList' has cardinality 0..*.
+An association connects 'dsl_Expression' and 'dsl_ArgumentList'. From 'dsl_Expression', the role 'dsl_Expression285' has cardinality 0..*, and from 'dsl_ArgumentList', the role 'dsl_ArgumentList284' has cardinality 0..*.
+An association connects 'dsl_ArrayDimsAndInits' and 'dsl_AllocationExpression'. From 'dsl_ArrayDimsAndInits', the role 'dsl_ArrayDimsAndInits' has cardinality 0..*, and from 'dsl_AllocationExpression', the role 'dsl_AllocationExpression287' has cardinality 0..*.
+An association connects 'dsl_AllocationExpression' and 'dsl_ClassOrInterfaceType'. From 'dsl_AllocationExpression', the role 'dsl_AllocationExpression289' has cardinality 0..*, and from 'dsl_ClassOrInterfaceType', the role 'dsl_ClassOrInterfaceType290' has cardinality 0..*.
+An association connects 'dsl_TypeArguments' and 'dsl_AllocationExpression'. From 'dsl_TypeArguments', the role 'dsl_TypeArguments293' has cardinality 0..*, and from 'dsl_AllocationExpression', the role 'dsl_AllocationExpression292' has cardinality 0..*.
+An association connects 'dsl_AllocationExpression' and 'dsl_Arguments'. From 'dsl_AllocationExpression', the role 'dsl_AllocationExpression295' has cardinality 0..*, and from 'dsl_Arguments', the role 'dsl_Arguments296' has cardinality 0..*.
+An association connects 'dsl_AllocationExpression' and 'dsl_ClassOrInterfaceBody'. From 'dsl_AllocationExpression', the role 'dsl_AllocationExpression298' has cardinality 0..*, and from 'dsl_ClassOrInterfaceBody', the role 'dsl_ClassOrInterfaceBody299' has cardinality 0..*.
+An association connects 'dsl_Expression' and 'dsl_ArrayDimsAndInits'. From 'dsl_Expression', the role 'dsl_Expression302' has cardinality 0..*, and from 'dsl_ArrayDimsAndInits', the role 'dsl_ArrayDimsAndInits301' has cardinality 0..*.
+An association connects 'dsl_ArrayDimsAndInits' and 'dsl_ArrayInitializer'. From 'dsl_ArrayDimsAndInits', the role 'dsl_ArrayDimsAndInits304' has cardinality 0..*, and from 'dsl_ArrayInitializer', the role 'dsl_ArrayInitializer305' has cardinality 0..*.
+An association connects 'dsl_Statement' and 'dsl_LabeledStatement'. From 'dsl_Statement', the role 'dsl_Statement307' has cardinality 0..*, and from 'dsl_LabeledStatement', the role 'dsl_LabeledStatement' has cardinality 0..*.
+An association connects 'dsl_Statement' and 'dsl_AssertStatement'. From 'dsl_Statement', the role 'dsl_Statement309' has cardinality 0..*, and from 'dsl_AssertStatement', the role 'dsl_AssertStatement' has cardinality 0..*.
+An association connects 'dsl_Statement' and 'dsl_Block'. From 'dsl_Statement', the role 'dsl_Statement311' has cardinality 0..*, and from 'dsl_Block', the role 'dsl_Block312' has cardinality 0..*.
+An association connects 'dsl_StatementExpression' and 'dsl_Statement'. From 'dsl_StatementExpression', the role 'dsl_StatementExpression' has cardinality 0..*, and from 'dsl_Statement', the role 'dsl_Statement314' has cardinality 0..*.
+An association connects 'dsl_SwitchStatement' and 'dsl_Statement'. From 'dsl_SwitchStatement', the role 'dsl_SwitchStatement' has cardinality 0..*, and from 'dsl_Statement', the role 'dsl_Statement316' has cardinality 0..*.
+An association connects 'dsl_IfStatement' and 'dsl_Statement'. From 'dsl_IfStatement', the role 'dsl_IfStatement' has cardinality 0..*, and from 'dsl_Statement', the role 'dsl_Statement318' has cardinality 0..*.
+An association connects 'dsl_Statement' and 'dsl_WhileStatement'. From 'dsl_Statement', the role 'dsl_Statement320' has cardinality 0..*, and from 'dsl_WhileStatement', the role 'dsl_WhileStatement' has cardinality 0..*.
+An association connects 'dsl_DoStatement' and 'dsl_Statement'. From 'dsl_DoStatement', the role 'dsl_DoStatement' has cardinality 0..*, and from 'dsl_Statement', the role 'dsl_Statement322' has cardinality 0..*.
+An association connects 'dsl_ForStatement' and 'dsl_Statement'. From 'dsl_ForStatement', the role 'dsl_ForStatement' has cardinality 0..*, and from 'dsl_Statement', the role 'dsl_Statement324' has cardinality 0..*.
+An association connects 'dsl_Statement' and 'dsl_BreakStatement'. From 'dsl_Statement', the role 'dsl_Statement326' has cardinality 0..*, and from 'dsl_BreakStatement', the role 'dsl_BreakStatement' has cardinality 0..*.
+An association connects 'dsl_ContinueStatement' and 'dsl_Statement'. From 'dsl_ContinueStatement', the role 'dsl_ContinueStatement' has cardinality 0..*, and from 'dsl_Statement', the role 'dsl_Statement328' has cardinality 0..*.
+An association connects 'dsl_ReturnStatement' and 'dsl_Statement'. From 'dsl_ReturnStatement', the role 'dsl_ReturnStatement' has cardinality 0..*, and from 'dsl_Statement', the role 'dsl_Statement330' has cardinality 0..*.
+An association connects 'dsl_ThrowStatement' and 'dsl_Statement'. From 'dsl_ThrowStatement', the role 'dsl_ThrowStatement' has cardinality 0..*, and from 'dsl_Statement', the role 'dsl_Statement332' has cardinality 0..*.
+An association connects 'dsl_SynchronizedStatement' and 'dsl_Statement'. From 'dsl_SynchronizedStatement', the role 'dsl_SynchronizedStatement' has cardinality 0..*, and from 'dsl_Statement', the role 'dsl_Statement334' has cardinality 0..*.
+An association connects 'dsl_TryStatement' and 'dsl_Statement'. From 'dsl_TryStatement', the role 'dsl_TryStatement' has cardinality 0..*, and from 'dsl_Statement', the role 'dsl_Statement336' has cardinality 0..*.
+An association connects 'dsl_Expression' and 'dsl_AssertStatement'. From 'dsl_Expression', the role 'dsl_Expression339' has cardinality 0..*, and from 'dsl_AssertStatement', the role 'dsl_AssertStatement338' has cardinality 0..*.
+An association connects 'dsl_Expression' and 'dsl_AssertStatement'. From 'dsl_Expression', the role 'dsl_Expression342' has cardinality 0..*, and from 'dsl_AssertStatement', the role 'dsl_AssertStatement341' has cardinality 0..*.
+An association connects 'dsl_Statement' and 'dsl_LabeledStatement'. From 'dsl_Statement', the role 'dsl_Statement345' has cardinality 0..*, and from 'dsl_LabeledStatement', the role 'dsl_LabeledStatement344' has cardinality 0..*.
+An association connects 'dsl_BlockStatement' and 'dsl_Block'. From 'dsl_BlockStatement', the role 'dsl_BlockStatement348' has cardinality 0..*, and from 'dsl_Block', the role 'dsl_Block347' has cardinality 0..*.
+An association connects 'dsl_BlockStatement' and 'dsl_LocalVariableDeclaration'. From 'dsl_BlockStatement', the role 'dsl_BlockStatement350' has cardinality 0..*, and from 'dsl_LocalVariableDeclaration', the role 'dsl_LocalVariableDeclaration' has cardinality 0..*.
+An association connects 'dsl_Statement' and 'dsl_BlockStatement'. From 'dsl_Statement', the role 'dsl_Statement353' has cardinality 0..*, and from 'dsl_BlockStatement', the role 'dsl_BlockStatement352' has cardinality 0..*.
+An association connects 'dsl_ClassOrInterfaceDeclaration' and 'dsl_BlockStatement'. From 'dsl_ClassOrInterfaceDeclaration', the role 'dsl_ClassOrInterfaceDeclaration356' has cardinality 0..*, and from 'dsl_BlockStatement', the role 'dsl_BlockStatement355' has cardinality 0..*.
+An association connects 'dsl_Type' and 'dsl_LocalVariableDeclaration'. From 'dsl_Type', the role 'dsl_Type359' has cardinality 0..*, and from 'dsl_LocalVariableDeclaration', the role 'dsl_LocalVariableDeclaration358' has cardinality 0..*.
+An association connects 'dsl_VariableDeclarator' and 'dsl_LocalVariableDeclaration'. From 'dsl_VariableDeclarator', the role 'dsl_VariableDeclarator362' has cardinality 0..*, and from 'dsl_LocalVariableDeclaration', the role 'dsl_LocalVariableDeclaration361' has cardinality 0..*.
+An association connects 'dsl_StatementExpression' and 'dsl_PreIncrementExpression'. From 'dsl_StatementExpression', the role 'dsl_StatementExpression364' has cardinality 0..*, and from 'dsl_PreIncrementExpression', the role 'dsl_PreIncrementExpression365' has cardinality 0..*.
+An association connects 'dsl_PreDecrementExpression' and 'dsl_StatementExpression'. From 'dsl_PreDecrementExpression', the role 'dsl_PreDecrementExpression368' has cardinality 0..*, and from 'dsl_StatementExpression', the role 'dsl_StatementExpression367' has cardinality 0..*.
+An association connects 'dsl_PrimaryExpression' and 'dsl_StatementExpression'. From 'dsl_PrimaryExpression', the role 'dsl_PrimaryExpression371' has cardinality 0..*, and from 'dsl_StatementExpression', the role 'dsl_StatementExpression370' has cardinality 0..*.
+An association connects 'dsl_Expression' and 'dsl_StatementExpression'. From 'dsl_Expression', the role 'dsl_Expression374' has cardinality 0..*, and from 'dsl_StatementExpression', the role 'dsl_StatementExpression373' has cardinality 0..*.
+An association connects 'dsl_Expression' and 'dsl_SwitchStatement'. From 'dsl_Expression', the role 'dsl_Expression377' has cardinality 0..*, and from 'dsl_SwitchStatement', the role 'dsl_SwitchStatement376' has cardinality 0..*.
+An association connects 'dsl_SwitchStatement' and 'dsl_SwitchLabel'. From 'dsl_SwitchStatement', the role 'dsl_SwitchStatement379' has cardinality 0..*, and from 'dsl_SwitchLabel', the role 'dsl_SwitchLabel' has cardinality 0..*.
+An association connects 'dsl_SwitchStatement' and 'dsl_BlockStatement'. From 'dsl_SwitchStatement', the role 'dsl_SwitchStatement381' has cardinality 0..*, and from 'dsl_BlockStatement', the role 'dsl_BlockStatement382' has cardinality 0..*.
+An association connects 'dsl_SwitchLabel' and 'dsl_Expression'. From 'dsl_SwitchLabel', the role 'dsl_SwitchLabel384' has cardinality 0..*, and from 'dsl_Expression', the role 'dsl_Expression385' has cardinality 0..*.
+An association connects 'dsl_Expression' and 'dsl_WhileStatement'. From 'dsl_Expression', the role 'dsl_Expression388' has cardinality 0..*, and from 'dsl_WhileStatement', the role 'dsl_WhileStatement387' has cardinality 0..*.
+An association connects 'dsl_WhileStatement' and 'dsl_Statement'. From 'dsl_WhileStatement', the role 'dsl_WhileStatement390' has cardinality 0..*, and from 'dsl_Statement', the role 'dsl_Statement391' has cardinality 0..*.
+An association connects 'dsl_DoStatement' and 'dsl_Statement'. From 'dsl_DoStatement', the role 'dsl_DoStatement393' has cardinality 0..*, and from 'dsl_Statement', the role 'dsl_Statement394' has cardinality 0..*.
+An association connects 'dsl_DoStatement' and 'dsl_Expression'. From 'dsl_DoStatement', the role 'dsl_DoStatement396' has cardinality 0..*, and from 'dsl_Expression', the role 'dsl_Expression397' has cardinality 0..*.
+An association connects 'dsl_Type' and 'dsl_ForStatement'. From 'dsl_Type', the role 'dsl_Type400' has cardinality 0..*, and from 'dsl_ForStatement', the role 'dsl_ForStatement399' has cardinality 0..*.
+An association connects 'dsl_Expression' and 'dsl_ForStatement'. From 'dsl_Expression', the role 'dsl_Expression403' has cardinality 0..*, and from 'dsl_ForStatement', the role 'dsl_ForStatement402' has cardinality 0..*.
+An association connects 'dsl_ForInit' and 'dsl_ForStatement'. From 'dsl_ForInit', the role 'dsl_ForInit' has cardinality 0..*, and from 'dsl_ForStatement', the role 'dsl_ForStatement405' has cardinality 0..*.
+An association connects 'dsl_ForStatement' and 'dsl_Expression'. From 'dsl_ForStatement', the role 'dsl_ForStatement407' has cardinality 0..*, and from 'dsl_Expression', the role 'dsl_Expression408' has cardinality 0..*.
+An association connects 'dsl_ForUpdate' and 'dsl_ForStatement'. From 'dsl_ForUpdate', the role 'dsl_ForUpdate' has cardinality 0..*, and from 'dsl_ForStatement', the role 'dsl_ForStatement410' has cardinality 0..*.
+An association connects 'dsl_ForStatement' and 'dsl_Statement'. From 'dsl_ForStatement', the role 'dsl_ForStatement412' has cardinality 0..*, and from 'dsl_Statement', the role 'dsl_Statement413' has cardinality 0..*.
+An association connects 'dsl_ForInit' and 'dsl_LocalVariableDeclaration'. From 'dsl_ForInit', the role 'dsl_ForInit415' has cardinality 0..*, and from 'dsl_LocalVariableDeclaration', the role 'dsl_LocalVariableDeclaration416' has cardinality 0..*.
+An association connects 'dsl_StatementExpressionList' and 'dsl_ForInit'. From 'dsl_StatementExpressionList', the role 'dsl_StatementExpressionList' has cardinality 0..*, and from 'dsl_ForInit', the role 'dsl_ForInit418' has cardinality 0..*.
+An association connects 'dsl_StatementExpression' and 'dsl_StatementExpressionList'. From 'dsl_StatementExpression', the role 'dsl_StatementExpression421' has cardinality 0..*, and from 'dsl_StatementExpressionList', the role 'dsl_StatementExpressionList420' has cardinality 0..*.
+An association connects 'dsl_StatementExpressionList' and 'dsl_ForUpdate'. From 'dsl_StatementExpressionList', the role 'dsl_StatementExpressionList424' has cardinality 0..*, and from 'dsl_ForUpdate', the role 'dsl_ForUpdate423' has cardinality 0..*.
+An association connects 'dsl_ReturnStatement' and 'dsl_Expression'. From 'dsl_ReturnStatement', the role 'dsl_ReturnStatement426' has cardinality 0..*, and from 'dsl_Expression', the role 'dsl_Expression427' has cardinality 0..*.
+An association connects 'dsl_ThrowStatement' and 'dsl_Expression'. From 'dsl_ThrowStatement', the role 'dsl_ThrowStatement429' has cardinality 0..*, and from 'dsl_Expression', the role 'dsl_Expression430' has cardinality 0..*.
+An association connects 'dsl_Expression' and 'dsl_SynchronizedStatement'. From 'dsl_Expression', the role 'dsl_Expression433' has cardinality 0..*, and from 'dsl_SynchronizedStatement', the role 'dsl_SynchronizedStatement432' has cardinality 0..*.
+An association connects 'dsl_SynchronizedStatement' and 'dsl_Block'. From 'dsl_SynchronizedStatement', the role 'dsl_SynchronizedStatement435' has cardinality 0..*, and from 'dsl_Block', the role 'dsl_Block436' has cardinality 0..*.
+An association connects 'dsl_Block' and 'dsl_TryStatement'. From 'dsl_Block', the role 'dsl_Block439' has cardinality 0..*, and from 'dsl_TryStatement', the role 'dsl_TryStatement438' has cardinality 0..*.
+An association connects 'dsl_TryStatement' and 'dsl_FormalParameter'. From 'dsl_TryStatement', the role 'dsl_TryStatement441' has cardinality 0..*, and from 'dsl_FormalParameter', the role 'dsl_FormalParameter442' has cardinality 0..*.
+An association connects 'dsl_Block' and 'dsl_TryStatement'. From 'dsl_Block', the role 'dsl_Block445' has cardinality 0..*, and from 'dsl_TryStatement', the role 'dsl_TryStatement444' has cardinality 0..*.
+An association connects 'dsl_Name' and 'dsl_Annotation'. From 'dsl_Name', the role 'dsl_Name447' has cardinality 0..*, and from 'dsl_Annotation', the role 'dsl_Annotation' has cardinality 0..*.
+An association connects 'dsl_Annotation' and 'dsl_MemberValuePairs'. From 'dsl_Annotation', the role 'dsl_Annotation449' has cardinality 0..*, and from 'dsl_MemberValuePairs', the role 'dsl_MemberValuePairs' has cardinality 0..*.
+An association connects 'dsl_Annotation' and 'dsl_MemberValue'. From 'dsl_Annotation', the role 'dsl_Annotation451' has cardinality 0..*, and from 'dsl_MemberValue', the role 'dsl_MemberValue' has cardinality 0..*.
+An association connects 'dsl_MemberValuePair' and 'dsl_MemberValuePairs'. From 'dsl_MemberValuePair', the role 'dsl_MemberValuePair' has cardinality 0..*, and from 'dsl_MemberValuePairs', the role 'dsl_MemberValuePairs453' has cardinality 0..*.
+An association connects 'dsl_MemberValuePair' and 'dsl_MemberValue'. From 'dsl_MemberValuePair', the role 'dsl_MemberValuePair455' has cardinality 0..*, and from 'dsl_MemberValue', the role 'dsl_MemberValue456' has cardinality 0..*.
+An association connects 'dsl_MemberValue' and 'dsl_Annotation'. From 'dsl_MemberValue', the role 'dsl_MemberValue458' has cardinality 0..*, and from 'dsl_Annotation', the role 'dsl_Annotation459' has cardinality 0..*.
+An association connects 'dsl_MemberValueArrayInitializer' and 'dsl_MemberValue'. From 'dsl_MemberValueArrayInitializer', the role 'dsl_MemberValueArrayInitializer' has cardinality 0..*, and from 'dsl_MemberValue', the role 'dsl_MemberValue461' has cardinality 0..*.
+An association connects 'dsl_MemberValue' and 'dsl_ConditionalExpression'. From 'dsl_MemberValue', the role 'dsl_MemberValue463' has cardinality 0..*, and from 'dsl_ConditionalExpression', the role 'dsl_ConditionalExpression464' has cardinality 0..*.
+An association connects 'dsl_MemberValueArrayInitializer' and 'dsl_MemberValue'. From 'dsl_MemberValueArrayInitializer', the role 'dsl_MemberValueArrayInitializer466' has cardinality 0..*, and from 'dsl_MemberValue', the role 'dsl_MemberValue467' has cardinality 0..*.
+An association connects 'dsl_AnnotationTypeBody' and 'dsl_AnnotationTypeDeclaration'. From 'dsl_AnnotationTypeBody', the role 'dsl_AnnotationTypeBody' has cardinality 0..*, and from 'dsl_AnnotationTypeDeclaration', the role 'dsl_AnnotationTypeDeclaration469' has cardinality 0..*.
+An association connects 'dsl_AnnotationTypeBody' and 'dsl_AnnotationTypeMemberDeclaration'. From 'dsl_AnnotationTypeBody', the role 'dsl_AnnotationTypeBody471' has cardinality 0..*, and from 'dsl_AnnotationTypeMemberDeclaration', the role 'dsl_AnnotationTypeMemberDeclaration' has cardinality 0..*.
+An association connects 'dsl_TypeBodyModifier' and 'dsl_AnnotationTypeMemberDeclaration'. From 'dsl_TypeBodyModifier', the role 'dsl_TypeBodyModifier474' has cardinality 0..*, and from 'dsl_AnnotationTypeMemberDeclaration', the role 'dsl_AnnotationTypeMemberDeclaration473' has cardinality 0..*.
+An association connects 'dsl_Type' and 'dsl_AnnotationTypeMemberDeclaration'. From 'dsl_Type', the role 'dsl_Type477' has cardinality 0..*, and from 'dsl_AnnotationTypeMemberDeclaration', the role 'dsl_AnnotationTypeMemberDeclaration476' has cardinality 0..*.
+An association connects 'dsl_AnnotationTypeMemberDeclaration' and 'dsl_DefaultValue'. From 'dsl_AnnotationTypeMemberDeclaration', the role 'dsl_AnnotationTypeMemberDeclaration479' has cardinality 0..*, and from 'dsl_DefaultValue', the role 'dsl_DefaultValue' has cardinality 0..*.
+An association connects 'dsl_AnnotationTypeMemberDeclaration' and 'dsl_ClassOrInterfaceDeclaration'. From 'dsl_AnnotationTypeMemberDeclaration', the role 'dsl_AnnotationTypeMemberDeclaration481' has cardinality 0..*, and from 'dsl_ClassOrInterfaceDeclaration', the role 'dsl_ClassOrInterfaceDeclaration482' has cardinality 0..*.
+An association connects 'dsl_EnumDeclaration' and 'dsl_AnnotationTypeMemberDeclaration'. From 'dsl_EnumDeclaration', the role 'dsl_EnumDeclaration485' has cardinality 0..*, and from 'dsl_AnnotationTypeMemberDeclaration', the role 'dsl_AnnotationTypeMemberDeclaration484' has cardinality 0..*.
+An association connects 'dsl_AnnotationTypeDeclaration' and 'dsl_AnnotationTypeMemberDeclaration'. From 'dsl_AnnotationTypeDeclaration', the role 'dsl_AnnotationTypeDeclaration488' has cardinality 0..*, and from 'dsl_AnnotationTypeMemberDeclaration', the role 'dsl_AnnotationTypeMemberDeclaration487' has cardinality 0..*.
+An association connects 'dsl_FieldDeclaration' and 'dsl_AnnotationTypeMemberDeclaration'. From 'dsl_FieldDeclaration', the role 'dsl_FieldDeclaration491' has cardinality 0..*, and from 'dsl_AnnotationTypeMemberDeclaration', the role 'dsl_AnnotationTypeMemberDeclaration490' has cardinality 0..*.

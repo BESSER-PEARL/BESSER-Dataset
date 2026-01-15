@@ -1,0 +1,322 @@
+The domain model 'simulink' describes the core structural elements and their relationships within the system.
+
+The model defines 69 main class(es).
+
+'simulink_TriggerPort' represents an important domain concept.
+It has one attribute: 'triggerInput', which is of type str.
+
+'simulink_stateflow_State' represents an important domain concept.
+It has the following attributes: 'initial', which is of type bool; 'subStateType', which is of type str; 'name', which is of type str; 'priority', which is of type int.
+
+'simulink_buffer_Dequeue' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_stateflow_Data' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'value', which is of type str; 'name', which is of type str; 'size', which is of type str.
+
+'Data' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_Bus' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EmbeddedFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_stateflow_Chart' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_reconfiguration_MultiSourceControl' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_reconfiguration_MultiTargetControl' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_stateflow_Action' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'simulink_EmbeddedMatlabFunction' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+'simulink_buffer_SharedCheckQueue' represents an important domain concept.
+It does not declare any attributes.
+
+'SimulinkFile' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_OutPortBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'StateflowElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_SimulinkModel' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_Line' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_MiscBlock' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_msglib_LinkLayer' represents an important domain concept.
+It has the following attributes: 'bufferOverflowPossible', which is of type bool; 'messageMapping', which is of type str; 'sourceBufferSize', which is of type int; 'bufferSize', which is of type int; 'delayMin', which is of type str; 'delayMax', which is of type str; 'messageLossProbability', which is of type int; 'messageRetransmission', which is of type bool.
+
+'simulink_BusSelector' represents an important domain concept.
+It does not declare any attributes.
+
+'stateflow_simulink_SimulinkFile' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_SimulinkContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_ZeroOrderHold' represents an important domain concept.
+It has one attribute: 'sampleTime', which is of type str.
+
+'simulink_stateflow_StateflowMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_stateflow_History' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_stateflow_Junction' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_Parameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str; 'type', which is of type str.
+
+'simulink_UnitDelay' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_SimulinkFile' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_EnablePort' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_BusCreator' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_stateflow_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_SimulinkLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_buffer_Enqueue' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_buffer_BufferFunction' represents an important domain concept.
+It has one attribute: 'bufferSize', which is of type int.
+
+'simulink_Block' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simulink_ChartBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_buffer_CheckQueue' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_buffer_SharedDequeue' represents an important domain concept.
+It does not declare any attributes.
+
+'SubSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'PortBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_stateflow_Transition' represents an important domain concept.
+It has one attribute: 'priority', which is of type int.
+
+'simulink_Element' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'simulink_stateflow_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'BufferFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'StateflowMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'stateflow_simulink_ChartBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'InPortBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_Constant' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'value', which is of type str.
+
+'simulink_stateflow_EmbeddedFunction' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'code', which is of type str.
+
+'simulink_SubSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_DigitalClock' represents an important domain concept.
+It has one attribute: 'sampleTime', which is of type float.
+
+'simulink_msglib_CommunicationSwitch' represents an important domain concept.
+It has one attribute: 'debug', which is of type int.
+
+'simulink_PortBlock' represents an important domain concept.
+It has the following attributes: 'initialCondition', which is of type str; 'type', which is of type str; 'dimensions', which is of type str.
+
+'simulink_stateflow_StateflowElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_LibraryReference' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_reconfiguration_FadingComponent' represents an important domain concept.
+It has one attribute: 'time', which is of type int.
+
+'Chart' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_InPortBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'simulink_BusElement' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str; 'dimensions', which is of type str.
+
+'simulink_buffer_SharedEnqueue' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DataType' defines the following possible values: 'INHERIT', 'INT16', 'DOUBLE', 'SINGLE', 'INT8', 'UINT16', 'UINT8', 'BUS', 'INT32', 'BOOLEAN', 'UINT32'.
+The enumeration 'SubStateType' defines the following possible values: 'EXCLUSIVE', 'PARALLEL'.
+The enumeration 'TriggerEvent' defines the following possible values: 'Rising', 'Falling', 'Either'.
+
+The model also captures inheritance relationships between classes.
+The class 'simulink_Block' is a specialization of 'Element'.
+The class 'simulink_SimulinkModel' is a specialization of 'SimulinkFile'.
+The class 'simulink_Line' is a specialization of 'Element'.
+The class 'simulink_SubSystem' is a specialization of 'Block'.
+The class 'simulink_InPortBlock' is a specialization of 'PortBlock'.
+The class 'simulink_EmbeddedMatlabFunction' is a specialization of 'Block'.
+The class 'simulink_MiscBlock' is a specialization of 'Block'.
+The class 'simulink_SimulinkContainer' is a specialization of 'Element'.
+The class 'simulink_SimulinkLibrary' is a specialization of 'SimulinkFile'.
+The class 'simulink_LibraryReference' is a specialization of 'Block'.
+The class 'simulink_SimulinkFile' is a specialization of 'SubSystem'.
+The class 'simulink_OutPortBlock' is a specialization of 'PortBlock'.
+The class 'simulink_ChartBlock' is a specialization of 'Block'.
+The class 'simulink_Bus' is a specialization of 'Element'.
+The class 'simulink_BusCreator' is a specialization of 'Block'.
+The class 'simulink_BusSelector' is a specialization of 'Block'.
+The class 'simulink_PortBlock' is a specialization of 'Block'.
+The class 'simulink_UnitDelay' is a specialization of 'Block'.
+The class 'simulink_DigitalClock' is a specialization of 'Block'.
+The class 'simulink_Constant' is a specialization of 'Block'.
+The class 'simulink_TriggerPort' is a specialization of 'InPortBlock'.
+The class 'simulink_EnablePort' is a specialization of 'InPortBlock'.
+The class 'simulink_ZeroOrderHold' is a specialization of 'Block'.
+The class 'simulink_stateflow_StateflowMachine' is a specialization of 'StateflowElement'.
+The class 'simulink_stateflow_Chart' is a specialization of 'State'.
+The class 'simulink_stateflow_StateflowElement' is a specialization of 'Element'.
+The class 'simulink_stateflow_State' is a specialization of 'Node'.
+The class 'simulink_stateflow_Transition' is a specialization of 'StateflowElement'.
+The class 'simulink_stateflow_Junction' is a specialization of 'Node'.
+The class 'simulink_stateflow_Node' is a specialization of 'StateflowElement'.
+The class 'simulink_stateflow_Event' is a specialization of 'StateflowElement'.
+The class 'simulink_stateflow_History' is a specialization of 'Node'.
+The class 'simulink_stateflow_EmbeddedFunction' is a specialization of 'StateflowElement'.
+The class 'simulink_stateflow_Action' is a specialization of 'StateflowElement'.
+The class 'simulink_stateflow_Data' is a specialization of 'StateflowElement'.
+The class 'simulink_msglib_CommunicationSwitch' is a specialization of 'Block'.
+The class 'simulink_msglib_LinkLayer' is a specialization of 'Block'.
+The class 'simulink_buffer_Enqueue' is a specialization of 'BufferFunction'.
+The class 'simulink_buffer_Dequeue' is a specialization of 'BufferFunction'.
+The class 'simulink_buffer_CheckQueue' is a specialization of 'BufferFunction'.
+The class 'simulink_buffer_SharedEnqueue' is a specialization of 'BufferFunction'.
+The class 'simulink_buffer_SharedDequeue' is a specialization of 'BufferFunction'.
+The class 'simulink_buffer_SharedCheckQueue' is a specialization of 'BufferFunction'.
+The class 'simulink_buffer_BufferFunction' is a specialization of 'EmbeddedFunction'.
+The class 'simulink_reconfiguration_MultiTargetControl' is a specialization of 'Block'.
+The class 'simulink_reconfiguration_MultiSourceControl' is a specialization of 'Block'.
+The class 'simulink_reconfiguration_FadingComponent' is a specialization of 'Block'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simulink_SubSystem' and 'simulink_Block'. From 'simulink_SubSystem', the role 'SubSystem' has cardinality 0..*, and from 'simulink_Block', the role 'blocks' has cardinality 0..*.
+An association connects 'simulink_Block' and 'simulink_OutPortBlock'. From 'simulink_Block', the role 'block' has cardinality 0..*, and from 'simulink_OutPortBlock', the role 'OutPortBlock' has cardinality 0..*.
+An association connects 'simulink_InPortBlock' and 'simulink_Block'. From 'simulink_InPortBlock', the role 'InPortBlock' has cardinality 0..*, and from 'simulink_Block', the role 'block3' has cardinality 0..*.
+An association connects 'simulink_Line' and 'simulink_Block'. From 'simulink_Line', the role 'Line' has cardinality 0..*, and from 'simulink_Block', the role 'targetBlock' has cardinality 0..*.
+An association connects 'simulink_Line' and 'simulink_Block'. From 'simulink_Line', the role 'Line6' has cardinality 0..*, and from 'simulink_Block', the role 'sourceBlock' has cardinality 0..*.
+An association connects 'simulink_SimulinkContainer' and 'simulink_SimulinkModel'. From 'simulink_SimulinkContainer', the role 'SimulinkContainer' has cardinality 0..*, and from 'simulink_SimulinkModel', the role 'models' has cardinality 0..*.
+An association connects 'simulink_Parameter' and 'simulink_Element'. From 'simulink_Parameter', the role 'simulink_Parameter' has cardinality 0..*, and from 'simulink_Element', the role 'simulink_Element' has cardinality 0..*.
+An association connects 'simulink_OutPortBlock' and 'simulink_Line'. From 'simulink_OutPortBlock', the role 'simulink_OutPortBlock' has cardinality 0..*, and from 'simulink_Line', the role 'simulink_Line' has cardinality 0..*.
+An association connects 'simulink_Line' and 'simulink_InPortBlock'. From 'simulink_Line', the role 'simulink_Line11' has cardinality 0..*, and from 'simulink_InPortBlock', the role 'simulink_InPortBlock' has cardinality 0..*.
+An association connects 'simulink_Line' and 'simulink_Block'. From 'simulink_Line', the role 'outgoingLines' has cardinality 0..*, and from 'simulink_Block', the role 'Block' has cardinality 0..*.
+An association connects 'simulink_Block' and 'simulink_Line'. From 'simulink_Block', the role 'Block14' has cardinality 0..*, and from 'simulink_Line', the role 'incomingLines' has cardinality 0..*.
+An association connects 'simulink_Line' and 'simulink_Bus'. From 'simulink_Line', the role 'simulink_Line16' has cardinality 0..*, and from 'simulink_Bus', the role 'simulink_Bus' has cardinality 0..*.
+An association connects 'simulink_SubSystem' and 'simulink_Line'. From 'simulink_SubSystem', the role 'simulink_SubSystem' has cardinality 0..*, and from 'simulink_Line', the role 'simulink_Line18' has cardinality 0..*.
+An association connects 'simulink_Block' and 'simulink_SubSystem'. From 'simulink_Block', the role 'Block20' has cardinality 0..*, and from 'simulink_SubSystem', the role 'parent' has cardinality 0..*.
+An association connects 'simulink_SubSystem' and 'simulink_SubSystem'. From 'simulink_SubSystem', the role 'simulink_SubSystem21' has cardinality 0..*, and from 'simulink_SubSystem', the role 'simulink_SubSystem23' has cardinality 0..*.
+An association connects 'simulink_SubSystem' and 'simulink_Block'. From 'simulink_SubSystem', the role 'simulink_SubSystem25' has cardinality 0..*, and from 'simulink_Block', the role 'simulink_Block' has cardinality 0..*.
+An association connects 'simulink_InPortBlock' and 'simulink_Block'. From 'simulink_InPortBlock', the role 'inPorts' has cardinality 0..*, and from 'simulink_Block', the role 'Block27' has cardinality 0..*.
+An association connects 'simulink_SimulinkContainer' and 'simulink_SimulinkModel'. From 'simulink_SimulinkContainer', the role 'root' has cardinality 0..*, and from 'simulink_SimulinkModel', the role 'SimulinkModel' has cardinality 0..*.
+An association connects 'simulink_SimulinkContainer' and 'simulink_SimulinkLibrary'. From 'simulink_SimulinkContainer', the role 'simulink_SimulinkContainer' has cardinality 0..*, and from 'simulink_SimulinkLibrary', the role 'simulink_SimulinkLibrary' has cardinality 0..*.
+An association connects 'simulink_Block' and 'simulink_LibraryReference'. From 'simulink_Block', the role 'simulink_Block31' has cardinality 0..*, and from 'simulink_LibraryReference', the role 'simulink_LibraryReference' has cardinality 0..*.
+An association connects 'StateflowMachine' and 'simulink_SimulinkFile'. From 'StateflowMachine', the role 'stateflow' has cardinality 0..*, and from 'simulink_SimulinkFile', the role 'StateflowMachine' has cardinality 0..*.
+An association connects 'simulink_Bus' and 'simulink_SimulinkFile'. From 'simulink_Bus', the role 'simulink_Bus34' has cardinality 0..*, and from 'simulink_SimulinkFile', the role 'simulink_SimulinkFile' has cardinality 0..*.
+An association connects 'simulink_Block' and 'simulink_OutPortBlock'. From 'simulink_Block', the role 'Block36' has cardinality 0..*, and from 'simulink_OutPortBlock', the role 'outPorts' has cardinality 0..*.
+An association connects 'Chart' and 'simulink_ChartBlock'. From 'Chart', the role 'stateflow38' has cardinality 0..*, and from 'simulink_ChartBlock', the role 'Chart' has cardinality 0..*.
+An association connects 'simulink_Bus' and 'simulink_BusElement'. From 'simulink_Bus', the role 'simulink_Bus40' has cardinality 0..*, and from 'simulink_BusElement', the role 'simulink_BusElement' has cardinality 0..*.
+An association connects 'simulink_Bus' and 'simulink_BusCreator'. From 'simulink_Bus', the role 'simulink_Bus42' has cardinality 0..*, and from 'simulink_BusCreator', the role 'simulink_BusCreator' has cardinality 0..*.
+An association connects 'simulink_BusSelector' and 'simulink_Bus'. From 'simulink_BusSelector', the role 'simulink_BusSelector' has cardinality 0..*, and from 'simulink_Bus', the role 'simulink_Bus44' has cardinality 0..*.
+An association connects 'simulink_Bus' and 'simulink_BusElement'. From 'simulink_Bus', the role 'simulink_Bus47' has cardinality 0..*, and from 'simulink_BusElement', the role 'simulink_BusElement46' has cardinality 0..*.
+An association connects 'simulink_stateflow_StateflowMachine' and 'Chart'. From 'simulink_stateflow_StateflowMachine', the role 'Chart49' has cardinality 0..*, and from 'Chart', the role 'stateflow50' has cardinality 0..*.
+An association connects 'stateflow_simulink_SimulinkFile' and 'simulink_stateflow_StateflowMachine'. From 'stateflow_simulink_SimulinkFile', the role 'SimulinkFile' has cardinality 0..*, and from 'simulink_stateflow_StateflowMachine', the role 'stateflowMachine' has cardinality 0..*.
+An association connects 'StateflowMachine' and 'simulink_stateflow_Chart'. From 'StateflowMachine', the role 'stateflow54' has cardinality 0..*, and from 'simulink_stateflow_Chart', the role 'StateflowMachine53' has cardinality 0..*.
+An association connects 'Data' and 'simulink_stateflow_Chart'. From 'Data', the role 'Data' has cardinality 0..*, and from 'simulink_stateflow_Chart', the role 'simulink_stateflow_Chart' has cardinality 0..*.
+An association connects 'Data' and 'simulink_stateflow_Chart'. From 'Data', the role 'Data58' has cardinality 0..*, and from 'simulink_stateflow_Chart', the role 'simulink_stateflow_Chart57' has cardinality 0..*.
+An association connects 'stateflow_simulink_ChartBlock' and 'simulink_stateflow_Chart'. From 'stateflow_simulink_ChartBlock', the role 'ChartBlock' has cardinality 0..*, and from 'simulink_stateflow_Chart', the role 'chart' has cardinality 0..*.
+An association connects 'simulink_stateflow_State' and 'Node'. From 'simulink_stateflow_State', the role 'Node' has cardinality 0..*, and from 'Node', the role 'stateflow61' has cardinality 0..*.
+An association connects 'Transition' and 'simulink_stateflow_State'. From 'Transition', the role 'Transition' has cardinality 0..*, and from 'simulink_stateflow_State', the role 'simulink_stateflow_State' has cardinality 0..*.
+An association connects 'simulink_stateflow_State' and 'Event'. From 'simulink_stateflow_State', the role 'simulink_stateflow_State64' has cardinality 0..*, and from 'Event', the role 'Event' has cardinality 0..*.
+An association connects 'simulink_stateflow_State' and 'EmbeddedFunction'. From 'simulink_stateflow_State', the role 'simulink_stateflow_State66' has cardinality 0..*, and from 'EmbeddedFunction', the role 'EmbeddedFunction' has cardinality 0..*.
+An association connects 'Action' and 'simulink_stateflow_State'. From 'Action', the role 'Action' has cardinality 0..*, and from 'simulink_stateflow_State', the role 'simulink_stateflow_State68' has cardinality 0..*.
+An association connects 'Action' and 'simulink_stateflow_State'. From 'Action', the role 'Action71' has cardinality 0..*, and from 'simulink_stateflow_State', the role 'simulink_stateflow_State70' has cardinality 0..*.
+An association connects 'simulink_stateflow_State' and 'Action'. From 'simulink_stateflow_State', the role 'simulink_stateflow_State73' has cardinality 0..*, and from 'Action', the role 'Action74' has cardinality 0..*.
+An association connects 'simulink_stateflow_State' and 'Data'. From 'simulink_stateflow_State', the role 'simulink_stateflow_State76' has cardinality 0..*, and from 'Data', the role 'Data77' has cardinality 0..*.
+An association connects 'Data' and 'simulink_stateflow_State'. From 'Data', the role 'Data80' has cardinality 0..*, and from 'simulink_stateflow_State', the role 'simulink_stateflow_State79' has cardinality 0..*.
+An association connects 'simulink_stateflow_State' and 'Action'. From 'simulink_stateflow_State', the role 'simulink_stateflow_State82' has cardinality 0..*, and from 'Action', the role 'Action83' has cardinality 0..*.
+An association connects 'simulink_stateflow_Transition' and 'Node'. From 'simulink_stateflow_Transition', the role 'Node85' has cardinality 0..*, and from 'Node', the role 'stateflow86' has cardinality 0..*.
+An association connects 'Node' and 'simulink_stateflow_Transition'. From 'Node', the role 'stateflow89' has cardinality 0..*, and from 'simulink_stateflow_Transition', the role 'Node88' has cardinality 0..*.
+An association connects 'Event' and 'simulink_stateflow_Transition'. From 'Event', the role 'Event91' has cardinality 0..*, and from 'simulink_stateflow_Transition', the role 'simulink_stateflow_Transition' has cardinality 0..*.
+An association connects 'simulink_stateflow_Transition' and 'Action'. From 'simulink_stateflow_Transition', the role 'simulink_stateflow_Transition93' has cardinality 0..*, and from 'Action', the role 'Action94' has cardinality 0..*.
+An association connects 'simulink_stateflow_Transition' and 'Action'. From 'simulink_stateflow_Transition', the role 'simulink_stateflow_Transition96' has cardinality 0..*, and from 'Action', the role 'Action97' has cardinality 0..*.
+An association connects 'State' and 'simulink_stateflow_Node'. From 'State', the role 'stateflow99' has cardinality 0..*, and from 'simulink_stateflow_Node', the role 'State' has cardinality 0..*.
+An association connects 'simulink_stateflow_Node' and 'Transition'. From 'simulink_stateflow_Node', the role 'Transition101' has cardinality 0..*, and from 'Transition', the role 'stateflow102' has cardinality 0..*.
+An association connects 'simulink_stateflow_Node' and 'Transition'. From 'simulink_stateflow_Node', the role 'Transition104' has cardinality 0..*, and from 'Transition', the role 'stateflow105' has cardinality 0..*.
+An association connects 'simulink_stateflow_EmbeddedFunction' and 'Data'. From 'simulink_stateflow_EmbeddedFunction', the role 'simulink_stateflow_EmbeddedFunction' has cardinality 0..*, and from 'Data', the role 'Data107' has cardinality 0..*.
+An association connects 'simulink_stateflow_EmbeddedFunction' and 'Data'. From 'simulink_stateflow_EmbeddedFunction', the role 'simulink_stateflow_EmbeddedFunction109' has cardinality 0..*, and from 'Data', the role 'Data110' has cardinality 0..*.
+An association connects 'Data' and 'simulink_stateflow_EmbeddedFunction'. From 'Data', the role 'Data113' has cardinality 0..*, and from 'simulink_stateflow_EmbeddedFunction', the role 'simulink_stateflow_EmbeddedFunction112' has cardinality 0..*.
+An association connects 'Data' and 'simulink_stateflow_EmbeddedFunction'. From 'Data', the role 'Data116' has cardinality 0..*, and from 'simulink_stateflow_EmbeddedFunction', the role 'simulink_stateflow_EmbeddedFunction115' has cardinality 0..*.

@@ -1,0 +1,22 @@
+The domain model 'coom' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'coom_State' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'initial', which is of type bool.
+
+'coom_Version' represents an important domain concept.
+It has the following attributes: 'minorValue', which is of type int; 'majorMalue', which is of type int.
+
+'coom_ComponentOnOffManifest' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'coom_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'coom_Version' and 'coom_ComponentOnOffManifest'. From 'coom_Version', the role 'coom_Version' has cardinality 0..*, and from 'coom_ComponentOnOffManifest', the role 'coom_ComponentOnOffManifest' has cardinality 0..*.
+An association connects 'coom_ComponentOnOffManifest' and 'coom_State'. From 'coom_ComponentOnOffManifest', the role 'coom_ComponentOnOffManifest2' has cardinality 0..*, and from 'coom_State', the role 'coom_State' has cardinality 0..*.
+An association connects 'coom_ComponentOnOffManifest' and 'coom_Transition'. From 'coom_ComponentOnOffManifest', the role 'coom_ComponentOnOffManifest4' has cardinality 0..*, and from 'coom_Transition', the role 'coom_Transition' has cardinality 0..*.
+An association connects 'coom_State' and 'coom_Transition'. From 'coom_State', the role 'coom_State7' has cardinality 0..*, and from 'coom_Transition', the role 'coom_Transition6' has cardinality 0..*.
+An association connects 'coom_Transition' and 'coom_State'. From 'coom_Transition', the role 'coom_Transition9' has cardinality 0..*, and from 'coom_State', the role 'coom_State10' has cardinality 0..*.

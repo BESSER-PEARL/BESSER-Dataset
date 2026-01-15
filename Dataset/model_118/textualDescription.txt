@@ -1,0 +1,437 @@
+The domain model 'javaDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 98 main class(es).
+
+'javaDsl_PrimaryNoNewArray' represents an important domain concept.
+It has the following attributes: 'literal', which is of type str; 'method', which is of type str; 'reference', which is of type str; 'keyword', which is of type str.
+
+'javaDsl_ClassBodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_ExplicitConstructorInvocation' represents an important domain concept.
+It has one attribute: 'keyword', which is of type str.
+
+'javaDsl_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_LabeledStatement' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'javaDsl_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_MethodHeader' represents an important domain concept.
+It has one attribute: 'modifiers', which is of type str.
+
+'javaDsl_InterfaceDeclaration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'modifiers', which is of type str.
+
+'Primary' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_Head' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstantExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_IfStatement' represents an important domain concept.
+It has one attribute: 'condition', which is of type bool.
+
+'javaDsl_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_MethodInvocation' represents an important domain concept.
+It has the following attributes: 'method', which is of type str; 'keyword', which is of type str.
+
+'javaDsl_Exceptions' represents an important domain concept.
+It has one attribute: 'exceptions', which is of type str.
+
+'javaDsl_StatementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_Interfaces' represents an important domain concept.
+It has the following attributes: 'keyword', which is of type str; 'interfaces', which is of type str.
+
+'javaDsl_ThrowsStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_MultiplicativeExpression' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'javaDsl_InterfaceBody' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_PostfixExpression' represents an important domain concept.
+It has the following attributes: 'operators', which is of type str; 'reference', which is of type str.
+
+'NoArrayExpressionWithoutMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_FormalParameter' represents an important domain concept.
+It has one attribute: 'variable', which is of type str.
+
+'javaDsl_ExclusiveOrExpression' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'LeftHandSide' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_ConstructorDeclarator' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'javaDsl_ConstructorDeclaration' represents an important domain concept.
+It has one attribute: 'modifiers', which is of type str.
+
+'javaDsl_BlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_MethodDeclarator' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'javaDsl_ClassBody' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_ClassMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_TryStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'VariableInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_EqualityExpression' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'javaDsl_FieldAccess' represents an important domain concept.
+It has the following attributes: 'keyword', which is of type str; 'field', which is of type str.
+
+'javaDsl_TypeDeclaration' represents an important domain concept.
+It has one attribute: 'doc', which is of type str.
+
+'javaDsl_BreakStatement' represents an important domain concept.
+It has one attribute: 'reference', which is of type str.
+
+'javaDsl_ConditionalAndExpression' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'javaDsl_ClassInstanceCreationExpression' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'javaDsl_ConstantExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_ClassDeclaration' represents an important domain concept.
+It has the following attributes: 'modifiers', which is of type str; 'className', which is of type str; 'extend', which is of type str.
+
+'javaDsl_ConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_AbstractMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_LocalVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_Primary' represents an important domain concept.
+It has one attribute: 'fields', which is of type str.
+
+'javaDsl_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_InterfaceMemberDeclaration' represents an important domain concept.
+It has one attribute: 'modifiers', which is of type str.
+
+'BlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_ResultType' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_ShiftExpression' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'javaDsl_NoArrayExpressionWithoutMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_RelationalExpression' represents an important domain concept.
+It has the following attributes: 'classes', which is of type str; 'operators', which is of type str.
+
+'javaDsl_ForInit' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_ForUpdate' represents an important domain concept.
+It does not declare any attributes.
+
+'NoArrayExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_PreIncrementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_InclusiveOrExpression' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'javaDsl_FieldDeclaration' represents an important domain concept.
+It has one attribute: 'modifiers', which is of type str.
+
+'javaDsl_ForStatement' represents an important domain concept.
+It has one attribute: 'condition', which is of type bool.
+
+'javaDsl_ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassBodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfaceMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'StatementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_ImportStatement' represents an important domain concept.
+It has the following attributes: 'package', which is of type str; 'object', which is of type str.
+
+'javaDsl_StaticInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_ContinueStatement' represents an important domain concept.
+It has one attribute: 'reference', which is of type str.
+
+'javaDsl_ConditionalOrExpression' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'javaDsl_ArrayCreationExpression' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'layers', which is of type str.
+
+'javaDsl_CastExpression' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'javaDsl_VariableDeclarator' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'javaDsl_DoStatement' represents an important domain concept.
+It has one attribute: 'condition', which is of type bool.
+
+'javaDsl_ArrayAccess' represents an important domain concept.
+It has one attribute: 'reference', which is of type str.
+
+'javaDsl_ExtendsInterfaces' represents an important domain concept.
+It has the following attributes: 'keyword', which is of type str; 'interfaces', which is of type str.
+
+'javaDsl_AdditiveExpression' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'javaDsl_NoArrayExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'javaDsl_MethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_VariableInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_WhileStatement' represents an important domain concept.
+It has one attribute: 'condition', which is of type bool.
+
+'javaDsl_ArgumentList' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_Assignment' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'javaDsl_AndExpression' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'javaDsl_LeftHandSide' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_PackageStatement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PrimaryNoNewArray' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_PreDecrementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_PrimaryNewArray' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_SynchronizedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_ArrayExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_AssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_ConstructorBody' represents an important domain concept.
+It does not declare any attributes.
+
+'javaDsl_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'AssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'javaDsl_StaticInitializer' is a specialization of 'ClassBodyDeclaration'.
+The class 'javaDsl_ConstructorDeclaration' is a specialization of 'ClassBodyDeclaration'.
+The class 'javaDsl_ConstantDeclaration' is a specialization of 'InterfaceMemberDeclaration'.
+The class 'javaDsl_AbstractMethodDeclaration' is a specialization of 'InterfaceMemberDeclaration'.
+The class 'javaDsl_ArrayInitializer' is a specialization of 'VariableInitializer'.
+The class 'javaDsl_Block' is a specialization of 'Statement'.
+The class 'javaDsl_LocalVariableDeclaration' is a specialization of 'BlockStatement'.
+The class 'javaDsl_Statement' is a specialization of 'BlockStatement'.
+The class 'javaDsl_LabeledStatement' is a specialization of 'Statement'.
+The class 'javaDsl_StatementExpression' is a specialization of 'Statement'.
+The class 'javaDsl_IfStatement' is a specialization of 'Statement'.
+The class 'javaDsl_SwitchStatement' is a specialization of 'Statement'.
+The class 'javaDsl_WhileStatement' is a specialization of 'Statement'.
+The class 'javaDsl_DoStatement' is a specialization of 'Statement'.
+The class 'javaDsl_ForStatement' is a specialization of 'Statement'.
+The class 'javaDsl_BreakStatement' is a specialization of 'Statement'.
+The class 'javaDsl_ContinueStatement' is a specialization of 'Statement'.
+The class 'javaDsl_ReturnStatement' is a specialization of 'Statement'.
+The class 'javaDsl_ThrowsStatement' is a specialization of 'Statement'.
+The class 'javaDsl_SynchronizedStatement' is a specialization of 'Statement'.
+The class 'javaDsl_TryStatement' is a specialization of 'Statement'.
+The class 'javaDsl_Expression' is a specialization of 'ConstantExpression'.
+The class 'javaDsl_Expression' is a specialization of 'PrimaryNoNewArray'.
+The class 'javaDsl_AssignmentExpression' is a specialization of 'Expression'.
+The class 'javaDsl_Assignment' is a specialization of 'StatementExpression'.
+The class 'javaDsl_Assignment' is a specialization of 'AssignmentExpression'.
+The class 'javaDsl_ConditionalExpression' is a specialization of 'AssignmentExpression'.
+The class 'javaDsl_CastExpression' is a specialization of 'NoArrayExpressionWithoutMinus'.
+The class 'javaDsl_PreDecrementExpression' is a specialization of 'StatementExpression'.
+The class 'javaDsl_PreDecrementExpression' is a specialization of 'NoArrayExpression'.
+The class 'javaDsl_PreIncrementExpression' is a specialization of 'StatementExpression'.
+The class 'javaDsl_PreIncrementExpression' is a specialization of 'NoArrayExpression'.
+The class 'javaDsl_NoArrayExpressionWithoutMinus' is a specialization of 'NoArrayExpression'.
+The class 'javaDsl_PostfixExpression' is a specialization of 'StatementExpression'.
+The class 'javaDsl_PostfixExpression' is a specialization of 'NoArrayExpressionWithoutMinus'.
+The class 'javaDsl_MethodInvocation' is a specialization of 'StatementExpression'.
+The class 'javaDsl_FieldAccess' is a specialization of 'LeftHandSide'.
+The class 'javaDsl_PrimaryNoNewArray' is a specialization of 'Primary'.
+The class 'javaDsl_PrimaryNewArray' is a specialization of 'Primary'.
+The class 'javaDsl_ClassInstanceCreationExpression' is a specialization of 'StatementExpression'.
+The class 'javaDsl_ArrayAccess' is a specialization of 'LeftHandSide'.
+
+Relationships between classes are modeled using associations.
+An association connects 'javaDsl_CompilationUnit' and 'javaDsl_Head'. From 'javaDsl_CompilationUnit', the role 'javaDsl_CompilationUnit' has cardinality 0..*, and from 'javaDsl_Head', the role 'javaDsl_Head' has cardinality 0..*.
+An association connects 'javaDsl_PackageStatement' and 'javaDsl_CompilationUnit'. From 'javaDsl_PackageStatement', the role 'javaDsl_PackageStatement' has cardinality 0..*, and from 'javaDsl_CompilationUnit', the role 'javaDsl_CompilationUnit2' has cardinality 0..*.
+An association connects 'javaDsl_CompilationUnit' and 'javaDsl_ImportStatement'. From 'javaDsl_CompilationUnit', the role 'javaDsl_CompilationUnit4' has cardinality 0..*, and from 'javaDsl_ImportStatement', the role 'javaDsl_ImportStatement' has cardinality 0..*.
+An association connects 'javaDsl_TypeDeclaration' and 'javaDsl_CompilationUnit'. From 'javaDsl_TypeDeclaration', the role 'javaDsl_TypeDeclaration' has cardinality 0..*, and from 'javaDsl_CompilationUnit', the role 'javaDsl_CompilationUnit6' has cardinality 0..*.
+An association connects 'javaDsl_TypeDeclaration' and 'javaDsl_EObject'. From 'javaDsl_TypeDeclaration', the role 'javaDsl_TypeDeclaration8' has cardinality 0..*, and from 'javaDsl_EObject', the role 'javaDsl_EObject' has cardinality 0..*.
+An association connects 'javaDsl_Interfaces' and 'javaDsl_ClassDeclaration'. From 'javaDsl_Interfaces', the role 'javaDsl_Interfaces' has cardinality 0..*, and from 'javaDsl_ClassDeclaration', the role 'javaDsl_ClassDeclaration' has cardinality 0..*.
+An association connects 'javaDsl_ClassDeclaration' and 'javaDsl_ClassBody'. From 'javaDsl_ClassDeclaration', the role 'javaDsl_ClassDeclaration11' has cardinality 0..*, and from 'javaDsl_ClassBody', the role 'javaDsl_ClassBody' has cardinality 0..*.
+An association connects 'javaDsl_ClassBody' and 'javaDsl_ClassBodyDeclaration'. From 'javaDsl_ClassBody', the role 'javaDsl_ClassBody13' has cardinality 0..*, and from 'javaDsl_ClassBodyDeclaration', the role 'javaDsl_ClassBodyDeclaration' has cardinality 0..*.
+An association connects 'javaDsl_ClassMemberDeclaration' and 'javaDsl_ClassBodyDeclaration'. From 'javaDsl_ClassMemberDeclaration', the role 'javaDsl_ClassMemberDeclaration' has cardinality 0..*, and from 'javaDsl_ClassBodyDeclaration', the role 'javaDsl_ClassBodyDeclaration15' has cardinality 0..*.
+An association connects 'javaDsl_FieldDeclaration' and 'javaDsl_ClassMemberDeclaration'. From 'javaDsl_FieldDeclaration', the role 'javaDsl_FieldDeclaration' has cardinality 0..*, and from 'javaDsl_ClassMemberDeclaration', the role 'javaDsl_ClassMemberDeclaration17' has cardinality 0..*.
+An association connects 'javaDsl_ClassMemberDeclaration' and 'javaDsl_MethodDeclaration'. From 'javaDsl_ClassMemberDeclaration', the role 'javaDsl_ClassMemberDeclaration19' has cardinality 0..*, and from 'javaDsl_MethodDeclaration', the role 'javaDsl_MethodDeclaration' has cardinality 0..*.
+An association connects 'javaDsl_StaticInitializer' and 'javaDsl_Block'. From 'javaDsl_StaticInitializer', the role 'javaDsl_StaticInitializer' has cardinality 0..*, and from 'javaDsl_Block', the role 'javaDsl_Block' has cardinality 0..*.
+An association connects 'javaDsl_ConstructorDeclarator' and 'javaDsl_ConstructorDeclaration'. From 'javaDsl_ConstructorDeclarator', the role 'javaDsl_ConstructorDeclarator' has cardinality 0..*, and from 'javaDsl_ConstructorDeclaration', the role 'javaDsl_ConstructorDeclaration' has cardinality 0..*.
+An association connects 'javaDsl_ConstructorDeclaration' and 'javaDsl_Exceptions'. From 'javaDsl_ConstructorDeclaration', the role 'javaDsl_ConstructorDeclaration23' has cardinality 0..*, and from 'javaDsl_Exceptions', the role 'javaDsl_Exceptions' has cardinality 0..*.
+An association connects 'javaDsl_ConstructorBody' and 'javaDsl_ConstructorDeclaration'. From 'javaDsl_ConstructorBody', the role 'javaDsl_ConstructorBody' has cardinality 0..*, and from 'javaDsl_ConstructorDeclaration', the role 'javaDsl_ConstructorDeclaration25' has cardinality 0..*.
+An association connects 'javaDsl_ConstructorDeclarator' and 'javaDsl_FormalParameter'. From 'javaDsl_ConstructorDeclarator', the role 'javaDsl_ConstructorDeclarator27' has cardinality 0..*, and from 'javaDsl_FormalParameter', the role 'javaDsl_FormalParameter' has cardinality 0..*.
+An association connects 'javaDsl_Type' and 'javaDsl_FormalParameter'. From 'javaDsl_Type', the role 'javaDsl_Type' has cardinality 0..*, and from 'javaDsl_FormalParameter', the role 'javaDsl_FormalParameter29' has cardinality 0..*.
+An association connects 'javaDsl_ConstructorBody' and 'javaDsl_ExplicitConstructorInvocation'. From 'javaDsl_ConstructorBody', the role 'javaDsl_ConstructorBody31' has cardinality 0..*, and from 'javaDsl_ExplicitConstructorInvocation', the role 'javaDsl_ExplicitConstructorInvocation' has cardinality 0..*.
+An association connects 'javaDsl_ConstructorBody' and 'javaDsl_BlockStatement'. From 'javaDsl_ConstructorBody', the role 'javaDsl_ConstructorBody33' has cardinality 0..*, and from 'javaDsl_BlockStatement', the role 'javaDsl_BlockStatement' has cardinality 0..*.
+An association connects 'javaDsl_ArgumentList' and 'javaDsl_ExplicitConstructorInvocation'. From 'javaDsl_ArgumentList', the role 'javaDsl_ArgumentList' has cardinality 0..*, and from 'javaDsl_ExplicitConstructorInvocation', the role 'javaDsl_ExplicitConstructorInvocation35' has cardinality 0..*.
+An association connects 'javaDsl_FieldDeclaration' and 'javaDsl_Type'. From 'javaDsl_FieldDeclaration', the role 'javaDsl_FieldDeclaration37' has cardinality 0..*, and from 'javaDsl_Type', the role 'javaDsl_Type38' has cardinality 0..*.
+An association connects 'javaDsl_VariableDeclarator' and 'javaDsl_FieldDeclaration'. From 'javaDsl_VariableDeclarator', the role 'javaDsl_VariableDeclarator' has cardinality 0..*, and from 'javaDsl_FieldDeclaration', the role 'javaDsl_FieldDeclaration40' has cardinality 0..*.
+An association connects 'javaDsl_VariableDeclarator' and 'javaDsl_VariableInitializer'. From 'javaDsl_VariableDeclarator', the role 'javaDsl_VariableDeclarator42' has cardinality 0..*, and from 'javaDsl_VariableInitializer', the role 'javaDsl_VariableInitializer' has cardinality 0..*.
+An association connects 'javaDsl_VariableInitializer' and 'javaDsl_Expression'. From 'javaDsl_VariableInitializer', the role 'javaDsl_VariableInitializer44' has cardinality 0..*, and from 'javaDsl_Expression', the role 'javaDsl_Expression' has cardinality 0..*.
+An association connects 'javaDsl_MethodHeader' and 'javaDsl_MethodDeclaration'. From 'javaDsl_MethodHeader', the role 'javaDsl_MethodHeader' has cardinality 0..*, and from 'javaDsl_MethodDeclaration', the role 'javaDsl_MethodDeclaration46' has cardinality 0..*.
+An association connects 'javaDsl_Block' and 'javaDsl_MethodDeclaration'. From 'javaDsl_Block', the role 'javaDsl_Block49' has cardinality 0..*, and from 'javaDsl_MethodDeclaration', the role 'javaDsl_MethodDeclaration48' has cardinality 0..*.
+An association connects 'javaDsl_ResultType' and 'javaDsl_MethodHeader'. From 'javaDsl_ResultType', the role 'javaDsl_ResultType' has cardinality 0..*, and from 'javaDsl_MethodHeader', the role 'javaDsl_MethodHeader51' has cardinality 0..*.
+An association connects 'javaDsl_MethodHeader' and 'javaDsl_MethodDeclarator'. From 'javaDsl_MethodHeader', the role 'javaDsl_MethodHeader53' has cardinality 0..*, and from 'javaDsl_MethodDeclarator', the role 'javaDsl_MethodDeclarator' has cardinality 0..*.
+An association connects 'javaDsl_Exceptions' and 'javaDsl_MethodHeader'. From 'javaDsl_Exceptions', the role 'javaDsl_Exceptions56' has cardinality 0..*, and from 'javaDsl_MethodHeader', the role 'javaDsl_MethodHeader55' has cardinality 0..*.
+An association connects 'javaDsl_ResultType' and 'javaDsl_Type'. From 'javaDsl_ResultType', the role 'javaDsl_ResultType58' has cardinality 0..*, and from 'javaDsl_Type', the role 'javaDsl_Type59' has cardinality 0..*.
+An association connects 'javaDsl_FormalParameter' and 'javaDsl_MethodDeclarator'. From 'javaDsl_FormalParameter', the role 'javaDsl_FormalParameter62' has cardinality 0..*, and from 'javaDsl_MethodDeclarator', the role 'javaDsl_MethodDeclarator61' has cardinality 0..*.
+An association connects 'javaDsl_InterfaceDeclaration' and 'javaDsl_ExtendsInterfaces'. From 'javaDsl_InterfaceDeclaration', the role 'javaDsl_InterfaceDeclaration' has cardinality 0..*, and from 'javaDsl_ExtendsInterfaces', the role 'javaDsl_ExtendsInterfaces' has cardinality 0..*.
+An association connects 'javaDsl_InterfaceBody' and 'javaDsl_InterfaceDeclaration'. From 'javaDsl_InterfaceBody', the role 'javaDsl_InterfaceBody' has cardinality 0..*, and from 'javaDsl_InterfaceDeclaration', the role 'javaDsl_InterfaceDeclaration65' has cardinality 0..*.
+An association connects 'javaDsl_InterfaceMemberDeclaration' and 'javaDsl_InterfaceBody'. From 'javaDsl_InterfaceMemberDeclaration', the role 'javaDsl_InterfaceMemberDeclaration' has cardinality 0..*, and from 'javaDsl_InterfaceBody', the role 'javaDsl_InterfaceBody67' has cardinality 0..*.
+An association connects 'javaDsl_ConstantDeclaration' and 'javaDsl_Type'. From 'javaDsl_ConstantDeclaration', the role 'javaDsl_ConstantDeclaration' has cardinality 0..*, and from 'javaDsl_Type', the role 'javaDsl_Type69' has cardinality 0..*.
+An association connects 'javaDsl_VariableDeclarator' and 'javaDsl_ConstantDeclaration'. From 'javaDsl_VariableDeclarator', the role 'javaDsl_VariableDeclarator72' has cardinality 0..*, and from 'javaDsl_ConstantDeclaration', the role 'javaDsl_ConstantDeclaration71' has cardinality 0..*.
+An association connects 'javaDsl_AbstractMethodDeclaration' and 'javaDsl_ResultType'. From 'javaDsl_AbstractMethodDeclaration', the role 'javaDsl_AbstractMethodDeclaration' has cardinality 0..*, and from 'javaDsl_ResultType', the role 'javaDsl_ResultType74' has cardinality 0..*.
+An association connects 'javaDsl_MethodDeclarator' and 'javaDsl_AbstractMethodDeclaration'. From 'javaDsl_MethodDeclarator', the role 'javaDsl_MethodDeclarator77' has cardinality 0..*, and from 'javaDsl_AbstractMethodDeclaration', the role 'javaDsl_AbstractMethodDeclaration76' has cardinality 0..*.
+An association connects 'javaDsl_AbstractMethodDeclaration' and 'javaDsl_Exceptions'. From 'javaDsl_AbstractMethodDeclaration', the role 'javaDsl_AbstractMethodDeclaration79' has cardinality 0..*, and from 'javaDsl_Exceptions', the role 'javaDsl_Exceptions80' has cardinality 0..*.
+An association connects 'javaDsl_ArrayInitializer' and 'javaDsl_VariableInitializer'. From 'javaDsl_ArrayInitializer', the role 'javaDsl_ArrayInitializer' has cardinality 0..*, and from 'javaDsl_VariableInitializer', the role 'javaDsl_VariableInitializer82' has cardinality 0..*.
+An association connects 'javaDsl_Block' and 'javaDsl_BlockStatement'. From 'javaDsl_Block', the role 'javaDsl_Block84' has cardinality 0..*, and from 'javaDsl_BlockStatement', the role 'javaDsl_BlockStatement85' has cardinality 0..*.
+An association connects 'javaDsl_LocalVariableDeclaration' and 'javaDsl_Type'. From 'javaDsl_LocalVariableDeclaration', the role 'javaDsl_LocalVariableDeclaration' has cardinality 0..*, and from 'javaDsl_Type', the role 'javaDsl_Type87' has cardinality 0..*.
+An association connects 'javaDsl_LocalVariableDeclaration' and 'javaDsl_VariableDeclarator'. From 'javaDsl_LocalVariableDeclaration', the role 'javaDsl_LocalVariableDeclaration89' has cardinality 0..*, and from 'javaDsl_VariableDeclarator', the role 'javaDsl_VariableDeclarator90' has cardinality 0..*.
+An association connects 'javaDsl_LabeledStatement' and 'javaDsl_Statement'. From 'javaDsl_LabeledStatement', the role 'javaDsl_LabeledStatement' has cardinality 0..*, and from 'javaDsl_Statement', the role 'javaDsl_Statement' has cardinality 0..*.
+An association connects 'javaDsl_IfStatement' and 'javaDsl_Statement'. From 'javaDsl_IfStatement', the role 'javaDsl_IfStatement' has cardinality 0..*, and from 'javaDsl_Statement', the role 'javaDsl_Statement93' has cardinality 0..*.
+An association connects 'javaDsl_Statement' and 'javaDsl_IfStatement'. From 'javaDsl_Statement', the role 'javaDsl_Statement96' has cardinality 0..*, and from 'javaDsl_IfStatement', the role 'javaDsl_IfStatement95' has cardinality 0..*.
+An association connects 'javaDsl_Expression' and 'javaDsl_SwitchStatement'. From 'javaDsl_Expression', the role 'javaDsl_Expression98' has cardinality 0..*, and from 'javaDsl_SwitchStatement', the role 'javaDsl_SwitchStatement' has cardinality 0..*.
+An association connects 'javaDsl_SwitchStatement' and 'javaDsl_ConstantExpression'. From 'javaDsl_SwitchStatement', the role 'javaDsl_SwitchStatement100' has cardinality 0..*, and from 'javaDsl_ConstantExpression', the role 'javaDsl_ConstantExpression' has cardinality 0..*.
+An association connects 'javaDsl_BlockStatement' and 'javaDsl_SwitchStatement'. From 'javaDsl_BlockStatement', the role 'javaDsl_BlockStatement103' has cardinality 0..*, and from 'javaDsl_SwitchStatement', the role 'javaDsl_SwitchStatement102' has cardinality 0..*.
+An association connects 'javaDsl_WhileStatement' and 'javaDsl_Statement'. From 'javaDsl_WhileStatement', the role 'javaDsl_WhileStatement' has cardinality 0..*, and from 'javaDsl_Statement', the role 'javaDsl_Statement105' has cardinality 0..*.
+An association connects 'javaDsl_DoStatement' and 'javaDsl_Statement'. From 'javaDsl_DoStatement', the role 'javaDsl_DoStatement' has cardinality 0..*, and from 'javaDsl_Statement', the role 'javaDsl_Statement107' has cardinality 0..*.
+An association connects 'javaDsl_ForStatement' and 'javaDsl_ForInit'. From 'javaDsl_ForStatement', the role 'javaDsl_ForStatement' has cardinality 0..*, and from 'javaDsl_ForInit', the role 'javaDsl_ForInit' has cardinality 0..*.
+An association connects 'javaDsl_ForUpdate' and 'javaDsl_ForStatement'. From 'javaDsl_ForUpdate', the role 'javaDsl_ForUpdate' has cardinality 0..*, and from 'javaDsl_ForStatement', the role 'javaDsl_ForStatement110' has cardinality 0..*.
+An association connects 'javaDsl_Statement' and 'javaDsl_ForStatement'. From 'javaDsl_Statement', the role 'javaDsl_Statement113' has cardinality 0..*, and from 'javaDsl_ForStatement', the role 'javaDsl_ForStatement112' has cardinality 0..*.
+An association connects 'javaDsl_ForInit' and 'javaDsl_StatementExpression'. From 'javaDsl_ForInit', the role 'javaDsl_ForInit115' has cardinality 0..*, and from 'javaDsl_StatementExpression', the role 'javaDsl_StatementExpression' has cardinality 0..*.
+An association connects 'javaDsl_LocalVariableDeclaration' and 'javaDsl_ForInit'. From 'javaDsl_LocalVariableDeclaration', the role 'javaDsl_LocalVariableDeclaration118' has cardinality 0..*, and from 'javaDsl_ForInit', the role 'javaDsl_ForInit117' has cardinality 0..*.
+An association connects 'javaDsl_ForUpdate' and 'javaDsl_StatementExpression'. From 'javaDsl_ForUpdate', the role 'javaDsl_ForUpdate120' has cardinality 0..*, and from 'javaDsl_StatementExpression', the role 'javaDsl_StatementExpression121' has cardinality 0..*.
+An association connects 'javaDsl_ReturnStatement' and 'javaDsl_Expression'. From 'javaDsl_ReturnStatement', the role 'javaDsl_ReturnStatement' has cardinality 0..*, and from 'javaDsl_Expression', the role 'javaDsl_Expression123' has cardinality 0..*.
+An association connects 'javaDsl_Expression' and 'javaDsl_ThrowsStatement'. From 'javaDsl_Expression', the role 'javaDsl_Expression125' has cardinality 0..*, and from 'javaDsl_ThrowsStatement', the role 'javaDsl_ThrowsStatement' has cardinality 0..*.
+An association connects 'javaDsl_SynchronizedStatement' and 'javaDsl_Expression'. From 'javaDsl_SynchronizedStatement', the role 'javaDsl_SynchronizedStatement' has cardinality 0..*, and from 'javaDsl_Expression', the role 'javaDsl_Expression127' has cardinality 0..*.
+An association connects 'javaDsl_Block' and 'javaDsl_SynchronizedStatement'. From 'javaDsl_Block', the role 'javaDsl_Block130' has cardinality 0..*, and from 'javaDsl_SynchronizedStatement', the role 'javaDsl_SynchronizedStatement129' has cardinality 0..*.
+An association connects 'javaDsl_Block' and 'javaDsl_TryStatement'. From 'javaDsl_Block', the role 'javaDsl_Block132' has cardinality 0..*, and from 'javaDsl_TryStatement', the role 'javaDsl_TryStatement' has cardinality 0..*.
+An association connects 'javaDsl_TryStatement' and 'javaDsl_FormalParameter'. From 'javaDsl_TryStatement', the role 'javaDsl_TryStatement134' has cardinality 0..*, and from 'javaDsl_FormalParameter', the role 'javaDsl_FormalParameter135' has cardinality 0..*.
+An association connects 'javaDsl_TryStatement' and 'javaDsl_Block'. From 'javaDsl_TryStatement', the role 'javaDsl_TryStatement137' has cardinality 0..*, and from 'javaDsl_Block', the role 'javaDsl_Block138' has cardinality 0..*.
+An association connects 'javaDsl_TryStatement' and 'javaDsl_Block'. From 'javaDsl_TryStatement', the role 'javaDsl_TryStatement140' has cardinality 0..*, and from 'javaDsl_Block', the role 'javaDsl_Block141' has cardinality 0..*.
+An association connects 'javaDsl_LeftHandSide' and 'javaDsl_Assignment'. From 'javaDsl_LeftHandSide', the role 'javaDsl_LeftHandSide' has cardinality 0..*, and from 'javaDsl_Assignment', the role 'javaDsl_Assignment' has cardinality 0..*.
+An association connects 'javaDsl_Assignment' and 'javaDsl_AssignmentExpression'. From 'javaDsl_Assignment', the role 'javaDsl_Assignment144' has cardinality 0..*, and from 'javaDsl_AssignmentExpression', the role 'javaDsl_AssignmentExpression' has cardinality 0..*.
+An association connects 'javaDsl_ConditionalExpression' and 'javaDsl_ConditionalOrExpression'. From 'javaDsl_ConditionalExpression', the role 'javaDsl_ConditionalExpression' has cardinality 0..*, and from 'javaDsl_ConditionalOrExpression', the role 'javaDsl_ConditionalOrExpression' has cardinality 0..*.
+An association connects 'javaDsl_Expression' and 'javaDsl_ConditionalExpression'. From 'javaDsl_Expression', the role 'javaDsl_Expression148' has cardinality 0..*, and from 'javaDsl_ConditionalExpression', the role 'javaDsl_ConditionalExpression147' has cardinality 0..*.
+An association connects 'javaDsl_ConditionalExpression' and 'javaDsl_ConditionalExpression'. From 'javaDsl_ConditionalExpression', the role 'javaDsl_ConditionalExpression149' has cardinality 0..*, and from 'javaDsl_ConditionalExpression', the role 'javaDsl_ConditionalExpression151' has cardinality 0..*.
+An association connects 'javaDsl_ConditionalAndExpression' and 'javaDsl_ConditionalOrExpression'. From 'javaDsl_ConditionalAndExpression', the role 'javaDsl_ConditionalAndExpression' has cardinality 0..*, and from 'javaDsl_ConditionalOrExpression', the role 'javaDsl_ConditionalOrExpression153' has cardinality 0..*.
+An association connects 'javaDsl_InclusiveOrExpression' and 'javaDsl_ConditionalAndExpression'. From 'javaDsl_InclusiveOrExpression', the role 'javaDsl_InclusiveOrExpression' has cardinality 0..*, and from 'javaDsl_ConditionalAndExpression', the role 'javaDsl_ConditionalAndExpression155' has cardinality 0..*.
+An association connects 'javaDsl_InclusiveOrExpression' and 'javaDsl_ExclusiveOrExpression'. From 'javaDsl_InclusiveOrExpression', the role 'javaDsl_InclusiveOrExpression157' has cardinality 0..*, and from 'javaDsl_ExclusiveOrExpression', the role 'javaDsl_ExclusiveOrExpression' has cardinality 0..*.
+An association connects 'javaDsl_AndExpression' and 'javaDsl_ExclusiveOrExpression'. From 'javaDsl_AndExpression', the role 'javaDsl_AndExpression' has cardinality 0..*, and from 'javaDsl_ExclusiveOrExpression', the role 'javaDsl_ExclusiveOrExpression159' has cardinality 0..*.
+An association connects 'javaDsl_EqualityExpression' and 'javaDsl_AndExpression'. From 'javaDsl_EqualityExpression', the role 'javaDsl_EqualityExpression' has cardinality 0..*, and from 'javaDsl_AndExpression', the role 'javaDsl_AndExpression161' has cardinality 0..*.
+An association connects 'javaDsl_RelationalExpression' and 'javaDsl_EqualityExpression'. From 'javaDsl_RelationalExpression', the role 'javaDsl_RelationalExpression' has cardinality 0..*, and from 'javaDsl_EqualityExpression', the role 'javaDsl_EqualityExpression163' has cardinality 0..*.
+An association connects 'javaDsl_RelationalExpression' and 'javaDsl_ShiftExpression'. From 'javaDsl_RelationalExpression', the role 'javaDsl_RelationalExpression165' has cardinality 0..*, and from 'javaDsl_ShiftExpression', the role 'javaDsl_ShiftExpression' has cardinality 0..*.
+An association connects 'javaDsl_AdditiveExpression' and 'javaDsl_ShiftExpression'. From 'javaDsl_AdditiveExpression', the role 'javaDsl_AdditiveExpression' has cardinality 0..*, and from 'javaDsl_ShiftExpression', the role 'javaDsl_ShiftExpression167' has cardinality 0..*.
+An association connects 'javaDsl_AdditiveExpression' and 'javaDsl_MultiplicativeExpression'. From 'javaDsl_AdditiveExpression', the role 'javaDsl_AdditiveExpression169' has cardinality 0..*, and from 'javaDsl_MultiplicativeExpression', the role 'javaDsl_MultiplicativeExpression' has cardinality 0..*.
+An association connects 'javaDsl_NoArrayExpression' and 'javaDsl_MultiplicativeExpression'. From 'javaDsl_NoArrayExpression', the role 'javaDsl_NoArrayExpression' has cardinality 0..*, and from 'javaDsl_MultiplicativeExpression', the role 'javaDsl_MultiplicativeExpression171' has cardinality 0..*.
+An association connects 'javaDsl_NoArrayExpression' and 'javaDsl_NoArrayExpression'. From 'javaDsl_NoArrayExpression', the role 'javaDsl_NoArrayExpression172' has cardinality 0..*, and from 'javaDsl_NoArrayExpression', the role 'javaDsl_NoArrayExpression174' has cardinality 0..*.
+An association connects 'javaDsl_PostfixExpression' and 'javaDsl_Primary'. From 'javaDsl_PostfixExpression', the role 'javaDsl_PostfixExpression' has cardinality 0..*, and from 'javaDsl_Primary', the role 'javaDsl_Primary' has cardinality 0..*.
+An association connects 'javaDsl_MethodInvocation' and 'javaDsl_ArgumentList'. From 'javaDsl_MethodInvocation', the role 'javaDsl_MethodInvocation' has cardinality 0..*, and from 'javaDsl_ArgumentList', the role 'javaDsl_ArgumentList177' has cardinality 0..*.
+An association connects 'javaDsl_MethodInvocation' and 'javaDsl_Primary'. From 'javaDsl_MethodInvocation', the role 'javaDsl_MethodInvocation179' has cardinality 0..*, and from 'javaDsl_Primary', the role 'javaDsl_Primary180' has cardinality 0..*.
+An association connects 'javaDsl_FieldAccess' and 'javaDsl_Primary'. From 'javaDsl_FieldAccess', the role 'javaDsl_FieldAccess' has cardinality 0..*, and from 'javaDsl_Primary', the role 'javaDsl_Primary182' has cardinality 0..*.
+An association connects 'javaDsl_ArgumentList' and 'javaDsl_Primary'. From 'javaDsl_ArgumentList', the role 'javaDsl_ArgumentList185' has cardinality 0..*, and from 'javaDsl_Primary', the role 'javaDsl_Primary184' has cardinality 0..*.
+An association connects 'javaDsl_Primary' and 'javaDsl_ArrayExpression'. From 'javaDsl_Primary', the role 'javaDsl_Primary187' has cardinality 0..*, and from 'javaDsl_ArrayExpression', the role 'javaDsl_ArrayExpression' has cardinality 0..*.
+An association connects 'javaDsl_PrimaryNoNewArray' and 'javaDsl_ClassInstanceCreationExpression'. From 'javaDsl_PrimaryNoNewArray', the role 'javaDsl_PrimaryNoNewArray' has cardinality 0..*, and from 'javaDsl_ClassInstanceCreationExpression', the role 'javaDsl_ClassInstanceCreationExpression' has cardinality 0..*.
+An association connects 'javaDsl_PrimaryNewArray' and 'javaDsl_ArrayCreationExpression'. From 'javaDsl_PrimaryNewArray', the role 'javaDsl_PrimaryNewArray' has cardinality 0..*, and from 'javaDsl_ArrayCreationExpression', the role 'javaDsl_ArrayCreationExpression' has cardinality 0..*.
+An association connects 'javaDsl_ArgumentList' and 'javaDsl_ClassInstanceCreationExpression'. From 'javaDsl_ArgumentList', the role 'javaDsl_ArgumentList192' has cardinality 0..*, and from 'javaDsl_ClassInstanceCreationExpression', the role 'javaDsl_ClassInstanceCreationExpression191' has cardinality 0..*.
+An association connects 'javaDsl_ArgumentList' and 'javaDsl_Expression'. From 'javaDsl_ArgumentList', the role 'javaDsl_ArgumentList194' has cardinality 0..*, and from 'javaDsl_Expression', the role 'javaDsl_Expression195' has cardinality 0..*.
+An association connects 'javaDsl_ArrayCreationExpression' and 'javaDsl_ArrayExpression'. From 'javaDsl_ArrayCreationExpression', the role 'javaDsl_ArrayCreationExpression197' has cardinality 0..*, and from 'javaDsl_ArrayExpression', the role 'javaDsl_ArrayExpression198' has cardinality 0..*.
+An association connects 'javaDsl_Expression' and 'javaDsl_ArrayExpression'. From 'javaDsl_Expression', the role 'javaDsl_Expression201' has cardinality 0..*, and from 'javaDsl_ArrayExpression', the role 'javaDsl_ArrayExpression200' has cardinality 0..*.
+An association connects 'javaDsl_PrimaryNoNewArray' and 'javaDsl_ArrayAccess'. From 'javaDsl_PrimaryNoNewArray', the role 'javaDsl_PrimaryNoNewArray203' has cardinality 0..*, and from 'javaDsl_ArrayAccess', the role 'javaDsl_ArrayAccess' has cardinality 0..*.
+An association connects 'javaDsl_ArrayAccess' and 'javaDsl_ArrayExpression'. From 'javaDsl_ArrayAccess', the role 'javaDsl_ArrayAccess205' has cardinality 0..*, and from 'javaDsl_ArrayExpression', the role 'javaDsl_ArrayExpression206' has cardinality 0..*.
