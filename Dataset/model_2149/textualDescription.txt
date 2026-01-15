@@ -1,0 +1,60 @@
+The domain model 'cfgraph' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'cfgraph_ControlFlowGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'cfgraph_ControlFlowEdge' represents an important domain concept.
+It has one attribute: 'backward', which is of type bool.
+
+'StatementVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'cfgraph_StatementVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'cfgraph_SimpleStatementVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'cfgraph_StartVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'cfgraph_CallVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'cfgraph_BranchingVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlFlowVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'cfgraph_EndVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'BodyVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'cfgraph_ControlFlowVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'cfgraph_BodyVertex' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'cfgraph_StartVertex' is a specialization of 'ControlFlowVertex'.
+The class 'cfgraph_BodyVertex' is a specialization of 'ControlFlowVertex'.
+The class 'cfgraph_EndVertex' is a specialization of 'BodyVertex'.
+The class 'cfgraph_StatementVertex' is a specialization of 'BodyVertex'.
+The class 'cfgraph_SimpleStatementVertex' is a specialization of 'StatementVertex'.
+The class 'cfgraph_CallVertex' is a specialization of 'StatementVertex'.
+The class 'cfgraph_BranchingVertex' is a specialization of 'BodyVertex'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cfgraph_ControlFlowGraph' and 'cfgraph_StartVertex'. From 'cfgraph_ControlFlowGraph', the role 'cfgraph_ControlFlowGraph' has cardinality 0..*, and from 'cfgraph_StartVertex', the role 'cfgraph_StartVertex' has cardinality 0..*.
+An association connects 'cfgraph_BodyVertex' and 'cfgraph_ControlFlowEdge'. From 'cfgraph_BodyVertex', the role 'BodyVertex' has cardinality 0..*, and from 'cfgraph_ControlFlowEdge', the role 'incomingEdges' has cardinality 0..*.
+An association connects 'cfgraph_StartVertex' and 'cfgraph_ControlFlowEdge'. From 'cfgraph_StartVertex', the role 'cfgraph_StartVertex3' has cardinality 0..*, and from 'cfgraph_ControlFlowEdge', the role 'cfgraph_ControlFlowEdge' has cardinality 0..*.
+An association connects 'cfgraph_BodyVertex' and 'cfgraph_ControlFlowEdge'. From 'cfgraph_BodyVertex', the role 'end' has cardinality 0..*, and from 'cfgraph_ControlFlowEdge', the role 'ControlFlowEdge' has cardinality 0..*.
+An association connects 'cfgraph_StatementVertex' and 'cfgraph_ControlFlowEdge'. From 'cfgraph_StatementVertex', the role 'cfgraph_StatementVertex' has cardinality 0..*, and from 'cfgraph_ControlFlowEdge', the role 'cfgraph_ControlFlowEdge6' has cardinality 0..*.
+An association connects 'cfgraph_StartVertex' and 'cfgraph_CallVertex'. From 'cfgraph_StartVertex', the role 'cfgraph_StartVertex8' has cardinality 0..*, and from 'cfgraph_CallVertex', the role 'cfgraph_CallVertex' has cardinality 0..*.
+An association connects 'cfgraph_ControlFlowEdge' and 'cfgraph_BranchingVertex'. From 'cfgraph_ControlFlowEdge', the role 'cfgraph_ControlFlowEdge10' has cardinality 0..*, and from 'cfgraph_BranchingVertex', the role 'cfgraph_BranchingVertex' has cardinality 0..*.

@@ -1,0 +1,173 @@
+The domain model 'test' describes the core structural elements and their relationships within the system.
+
+The model defines 42 main class(es).
+
+'test_OAuth2' represents an important domain concept.
+It has one attribute: 'token', which is of type str.
+
+'Assertion' represents an important domain concept.
+It does not declare any attributes.
+
+'HeaderAssertion' represents an important domain concept.
+It does not declare any attributes.
+
+'HTTPStatusAssertion' represents an important domain concept.
+It does not declare any attributes.
+
+'test_Authorization' represents an important domain concept.
+It does not declare any attributes.
+
+'test_SLAAssertion' represents an important domain concept.
+It has one attribute: 'maxTime', which is of type str.
+
+'test_HeaderEqualsAssertion' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'test_OutputProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'ResponseMessageAssertion' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'test_SchemaComplianceAssertion' represents an important domain concept.
+It does not declare any attributes.
+
+'test_TestSuite' represents an important domain concept.
+It has the following attributes: 'api', which is of type str; 'description', which is of type str.
+
+'test_HeaderExistsAssertion' represents an important domain concept.
+It does not declare any attributes.
+
+'test_InvalidStatusCodesAssertion' represents an important domain concept.
+It does not declare any attributes.
+
+'OutputProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'test_ResponseMessageContainsAssertion' represents an important domain concept.
+It does not declare any attributes.
+
+'test_ParameterProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'test_InputProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'test_ResponseMessageAssertion' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ComplianceAssertion' represents an important domain concept.
+It does not declare any attributes.
+
+'test_TestCase' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'test_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'test_ResponseProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'TestStep' represents an important domain concept.
+It does not declare any attributes.
+
+'test_APIRequest' represents an important domain concept.
+It has the following attributes: 'operationId', which is of type str; 'accept', which is of type str; 'scheme', which is of type str; 'contentType', which is of type str.
+
+'PerformanceAssertion' represents an important domain concept.
+It does not declare any attributes.
+
+'test_ValidStatusCodesAssertion' represents an important domain concept.
+It does not declare any attributes.
+
+'test_ComplianceAssertion' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'test_HTTPStatusAssertion' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+'test_HeaderProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'test_TestStep' represents an important domain concept.
+It does not declare any attributes.
+
+'test_PropertyTransfer' represents an important domain concept.
+It does not declare any attributes.
+
+'test_Parameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'location', which is of type str; 'value', which is of type str.
+
+'Authorization' represents an important domain concept.
+It does not declare any attributes.
+
+'test_HeaderAssertion' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'InputProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'test_PerformanceAssertion' represents an important domain concept.
+It does not declare any attributes.
+
+'test_ResponseMessageEqualsAssertion' represents an important domain concept.
+It does not declare any attributes.
+
+'test_Assertion' represents an important domain concept.
+It has one attribute: 'errorMessage', which is of type str.
+
+'test_Basic' represents an important domain concept.
+It has the following attributes: 'username', which is of type str; 'password', which is of type str.
+
+'test_Property' represents an important domain concept.
+It has the following attributes: 'pathLanguage', which is of type str; 'expression', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SchemeType' defines the following possible values: 'undefined', 'https', 'http'.
+The enumeration 'ParameterLocation' defines the following possible values: 'query', 'body', 'formData', 'undefined', 'path', 'header'.
+The enumeration 'PathLanguage' defines the following possible values: 'JSONPath', 'XPath', 'undefined'.
+The enumeration 'HTTPMethod' defines the following possible values: 'undefined', 'POST', 'GET', 'PUT', 'DELETE', 'OPTIONS'.
+
+The model also captures inheritance relationships between classes.
+The class 'test_TestSuite' is a specialization of 'NamedElement'.
+The class 'test_TestCase' is a specialization of 'NamedElement'.
+The class 'test_TestStep' is a specialization of 'NamedElement'.
+The class 'test_APIRequest' is a specialization of 'TestStep'.
+The class 'test_ComplianceAssertion' is a specialization of 'Assertion'.
+The class 'test_PerformanceAssertion' is a specialization of 'Assertion'.
+The class 'test_ResponseMessageAssertion' is a specialization of 'Assertion'.
+The class 'test_ResponseMessageContainsAssertion' is a specialization of 'ResponseMessageAssertion'.
+The class 'test_ResponseMessageEqualsAssertion' is a specialization of 'ResponseMessageAssertion'.
+The class 'test_SchemaComplianceAssertion' is a specialization of 'ComplianceAssertion'.
+The class 'test_SLAAssertion' is a specialization of 'PerformanceAssertion'.
+The class 'test_HeaderAssertion' is a specialization of 'Assertion'.
+The class 'test_HeaderEqualsAssertion' is a specialization of 'HeaderAssertion'.
+The class 'test_HeaderExistsAssertion' is a specialization of 'HeaderAssertion'.
+The class 'test_HTTPStatusAssertion' is a specialization of 'Assertion'.
+The class 'test_InvalidStatusCodesAssertion' is a specialization of 'HTTPStatusAssertion'.
+The class 'test_ValidStatusCodesAssertion' is a specialization of 'HTTPStatusAssertion'.
+The class 'test_Basic' is a specialization of 'Authorization'.
+The class 'test_OAuth2' is a specialization of 'Authorization'.
+The class 'test_PropertyTransfer' is a specialization of 'TestStep'.
+The class 'test_ParameterProperty' is a specialization of 'InputProperty'.
+The class 'test_ResponseProperty' is a specialization of 'OutputProperty'.
+The class 'test_InputProperty' is a specialization of 'Property'.
+The class 'test_OutputProperty' is a specialization of 'Property'.
+The class 'test_HeaderProperty' is a specialization of 'OutputProperty'.
+
+Relationships between classes are modeled using associations.
+An association connects 'test_TestSuite' and 'test_TestCase'. From 'test_TestSuite', the role 'test_TestSuite' has cardinality 0..*, and from 'test_TestCase', the role 'test_TestCase' has cardinality 0..*.
+An association connects 'test_TestCase' and 'test_TestStep'. From 'test_TestCase', the role 'test_TestCase2' has cardinality 0..*, and from 'test_TestStep', the role 'test_TestStep' has cardinality 0..*.
+An association connects 'test_Parameter' and 'test_APIRequest'. From 'test_Parameter', the role 'test_Parameter' has cardinality 0..*, and from 'test_APIRequest', the role 'test_APIRequest' has cardinality 0..*.
+An association connects 'test_APIRequest' and 'test_Assertion'. From 'test_APIRequest', the role 'test_APIRequest5' has cardinality 0..*, and from 'test_Assertion', the role 'test_Assertion' has cardinality 0..*.
+An association connects 'test_APIRequest' and 'test_Authorization'. From 'test_APIRequest', the role 'test_APIRequest7' has cardinality 0..*, and from 'test_Authorization', the role 'test_Authorization' has cardinality 0..*.
+An association connects 'test_PropertyTransfer' and 'test_Property'. From 'test_PropertyTransfer', the role 'test_PropertyTransfer' has cardinality 0..*, and from 'test_Property', the role 'test_Property' has cardinality 0..*.
+An association connects 'test_Property' and 'test_PropertyTransfer'. From 'test_Property', the role 'test_Property11' has cardinality 0..*, and from 'test_PropertyTransfer', the role 'test_PropertyTransfer10' has cardinality 0..*.
+An association connects 'test_Parameter' and 'test_ParameterProperty'. From 'test_Parameter', the role 'test_Parameter13' has cardinality 0..*, and from 'test_ParameterProperty', the role 'test_ParameterProperty' has cardinality 0..*.
+An association connects 'test_APIRequest' and 'test_OutputProperty'. From 'test_APIRequest', the role 'test_APIRequest15' has cardinality 0..*, and from 'test_OutputProperty', the role 'test_OutputProperty' has cardinality 0..*.

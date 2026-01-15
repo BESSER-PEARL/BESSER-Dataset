@@ -1,0 +1,19 @@
+The domain model 'egraphs' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'egraphs_EGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'egraphs_ENode' represents an important domain concept.
+It has one attribute: 'element', which is of type str.
+
+'egraphs_EHyperEdge' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'egraphs_EGraph' and 'egraphs_ENode'. From 'egraphs_EGraph', the role 'egraphs_EGraph' has cardinality 0..*, and from 'egraphs_ENode', the role 'egraphs_ENode' has cardinality 0..*.
+An association connects 'egraphs_ENode' and 'egraphs_EHyperEdge'. From 'egraphs_ENode', the role 'source' has cardinality 0..*, and from 'egraphs_EHyperEdge', the role 'EHyperEdge' has cardinality 0..*.
+An association connects 'egraphs_ENode' and 'egraphs_EHyperEdge'. From 'egraphs_ENode', the role 'targets' has cardinality 0..*, and from 'egraphs_EHyperEdge', the role 'EHyperEdge3' has cardinality 0..*.
+An association connects 'egraphs_ENode' and 'egraphs_EHyperEdge'. From 'egraphs_ENode', the role 'ENode' has cardinality 0..*, and from 'egraphs_EHyperEdge', the role 'outgoing' has cardinality 0..*.
+An association connects 'egraphs_ENode' and 'egraphs_EHyperEdge'. From 'egraphs_ENode', the role 'ENode6' has cardinality 0..*, and from 'egraphs_EHyperEdge', the role 'incoming' has cardinality 0..*.

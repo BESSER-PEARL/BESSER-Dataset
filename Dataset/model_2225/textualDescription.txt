@@ -1,0 +1,37 @@
+The domain model 'Program' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'Program_Specialization' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Program_Semester' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'code', which is of type str; 'name', which is of type str.
+
+'Program_Course' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'name', which is of type str; 'credit', which is of type float.
+
+'Program_SemesterCourse' represents an important domain concept.
+It has one attribute: 'status', which is of type str.
+
+'Program_Department' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Program_Program' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'year', which is of type float.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CourseStatus' defines the following possible values: 'ELECTIVE', 'MANDATORY'.
+The enumeration 'SemesterStatus' defines the following possible values: 'SPRING', 'FALL'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Program_Semester' and 'Program_Program'. From 'Program_Semester', the role 'Program_Semester' has cardinality 0..*, and from 'Program_Program', the role 'Program_Program' has cardinality 0..*.
+An association connects 'Program_Program' and 'Program_Specialization'. From 'Program_Program', the role 'Program_Program2' has cardinality 0..*, and from 'Program_Specialization', the role 'Program_Specialization' has cardinality 0..*.
+An association connects 'Program_Specialization' and 'Program_Semester'. From 'Program_Specialization', the role 'Program_Specialization4' has cardinality 0..*, and from 'Program_Semester', the role 'Program_Semester5' has cardinality 0..*.
+An association connects 'Program_Specialization' and 'Program_Specialization'. From 'Program_Specialization', the role 'Program_Specialization8' has cardinality 0..*, and from 'Program_Specialization', the role 'Program_Specialization6' has cardinality 0..*.
+An association connects 'Program_SemesterCourse' and 'Program_Semester'. From 'Program_SemesterCourse', the role 'SemesterCourse' has cardinality 0..*, and from 'Program_Semester', the role 'semester' has cardinality 0..*.
+An association connects 'Program_Course' and 'Program_SemesterCourse'. From 'Program_Course', the role 'Program_Course' has cardinality 0..*, and from 'Program_SemesterCourse', the role 'Program_SemesterCourse' has cardinality 0..*.
+An association connects 'Program_SemesterCourse' and 'Program_Semester'. From 'Program_SemesterCourse', the role 'semesterCourses' has cardinality 0..*, and from 'Program_Semester', the role 'Semester' has cardinality 0..*.
+An association connects 'Program_Course' and 'Program_Department'. From 'Program_Course', the role 'courses' has cardinality 0..*, and from 'Program_Department', the role 'Department' has cardinality 0..*.
+An association connects 'Program_Department' and 'Program_Program'. From 'Program_Department', the role 'Program_Department' has cardinality 0..*, and from 'Program_Program', the role 'Program_Program14' has cardinality 0..*.
+An association connects 'Program_Course' and 'Program_Department'. From 'Program_Course', the role 'Course' has cardinality 0..*, and from 'Program_Department', the role 'department' has cardinality 0..*.

@@ -1,0 +1,24 @@
+The domain model 'test' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'test_SomeTestClassWithID' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'test_PatchTestModel' represents an important domain concept.
+It has the following attributes: 'multiAttribute', which is of type str; 'oneAttribute', which is of type str; 'id', which is of type str.
+
+'SomeTestClass' represents an important domain concept.
+It does not declare any attributes.
+
+'test_SomeTestClass' represents an important domain concept.
+It has one attribute: 'attribute', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'test_SomeTestClassWithID' is a specialization of 'SomeTestClass'.
+
+Relationships between classes are modeled using associations.
+An association connects 'test_SomeTestClass' and 'test_PatchTestModel'. From 'test_SomeTestClass', the role 'test_SomeTestClass' has cardinality 0..*, and from 'test_PatchTestModel', the role 'test_PatchTestModel' has cardinality 0..*.
+An association connects 'test_SomeTestClass' and 'test_PatchTestModel'. From 'test_SomeTestClass', the role 'test_SomeTestClass3' has cardinality 0..*, and from 'test_PatchTestModel', the role 'test_PatchTestModel2' has cardinality 0..*.
+An association connects 'test_PatchTestModel' and 'test_SomeTestClass'. From 'test_PatchTestModel', the role 'test_PatchTestModel5' has cardinality 0..*, and from 'test_SomeTestClass', the role 'test_SomeTestClass6' has cardinality 0..*.
+An association connects 'test_SomeTestClass' and 'test_PatchTestModel'. From 'test_SomeTestClass', the role 'test_SomeTestClass9' has cardinality 0..*, and from 'test_PatchTestModel', the role 'test_PatchTestModel8' has cardinality 0..*.

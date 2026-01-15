@@ -1,0 +1,22 @@
+The domain model 'scaffolds' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'scaffolds_Edge' represents an important domain concept.
+It has the following attributes: 'weight', which is of type int; 'distance', which is of type int.
+
+'scaffolds_Vertex' represents an important domain concept.
+It has one attribute: 'num', which is of type int.
+
+'scaffolds_Contig' represents an important domain concept.
+It has the following attributes: 'multiplicity', which is of type int; 'length', which is of type int.
+
+'scaffolds_ScaffoldGraph' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'scaffolds_Contig' and 'scaffolds_ScaffoldGraph'. From 'scaffolds_Contig', the role 'scaffolds_Contig' has cardinality 0..*, and from 'scaffolds_ScaffoldGraph', the role 'scaffolds_ScaffoldGraph' has cardinality 0..*.
+An association connects 'scaffolds_Edge' and 'scaffolds_ScaffoldGraph'. From 'scaffolds_Edge', the role 'scaffolds_Edge' has cardinality 0..*, and from 'scaffolds_ScaffoldGraph', the role 'scaffolds_ScaffoldGraph2' has cardinality 0..*.
+An association connects 'scaffolds_Contig' and 'scaffolds_Vertex'. From 'scaffolds_Contig', the role 'scaffolds_Contig4' has cardinality 0..*, and from 'scaffolds_Vertex', the role 'scaffolds_Vertex' has cardinality 0..*.
+An association connects 'scaffolds_Vertex' and 'scaffolds_Edge'. From 'scaffolds_Vertex', the role 'Vertex' has cardinality 0..*, and from 'scaffolds_Edge', the role 'edges' has cardinality 0..*.
+An association connects 'scaffolds_Edge' and 'scaffolds_Vertex'. From 'scaffolds_Edge', the role 'Edge' has cardinality 0..*, and from 'scaffolds_Vertex', the role 'vertices' has cardinality 0..*.

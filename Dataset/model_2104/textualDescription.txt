@@ -1,0 +1,27 @@
+The domain model 'SemanticResourceDB' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'SemanticResourceDB_ResourceTreeNode' represents an important domain concept.
+It has the following attributes: 'sessionProperties', which is of type str; 'name', which is of type str; 'templateID', which is of type str; 'queryPart', which is of type str; 'dynamicContentProviderID', which is of type str; 'remoteURI', which is of type str; 'localOnly', which is of type bool; 'exists', which is of type bool; 'persistentProperties', which is of type str; 'type', which is of type str; 'path', which is of type str.
+
+'SemanticResourceDB_SemanticDB' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceTreeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'SemanticResourceDB_TreeRoot' represents an important domain concept.
+It has one attribute: 'rootURI', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TreeNodeType' defines the following possible values: 'FOLDER', 'FILE', 'PROJECT', 'UNKNOWN'.
+
+The model also captures inheritance relationships between classes.
+The class 'SemanticResourceDB_TreeRoot' is a specialization of 'ResourceTreeNode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SemanticResourceDB_ResourceTreeNode' and 'SemanticResourceDB_ResourceTreeNode'. From 'SemanticResourceDB_ResourceTreeNode', the role 'ResourceTreeNode' has cardinality 0..*, and from 'SemanticResourceDB_ResourceTreeNode', the role 'parent' has cardinality 0..*.
+An association connects 'SemanticResourceDB_ResourceTreeNode' and 'SemanticResourceDB_ResourceTreeNode'. From 'SemanticResourceDB_ResourceTreeNode', the role 'children' has cardinality 0..*, and from 'SemanticResourceDB_ResourceTreeNode', the role 'ResourceTreeNode4' has cardinality 0..*.
+An association connects 'SemanticResourceDB_TreeRoot' and 'SemanticResourceDB_SemanticDB'. From 'SemanticResourceDB_TreeRoot', the role 'TreeRoot' has cardinality 0..*, and from 'SemanticResourceDB_SemanticDB', the role 'parentDB' has cardinality 0..*.
+An association connects 'SemanticResourceDB_TreeRoot' and 'SemanticResourceDB_SemanticDB'. From 'SemanticResourceDB_TreeRoot', the role 'roots' has cardinality 0..*, and from 'SemanticResourceDB_SemanticDB', the role 'SemanticDB' has cardinality 0..*.

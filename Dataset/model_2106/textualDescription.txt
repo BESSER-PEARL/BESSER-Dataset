@@ -1,0 +1,12 @@
+The domain model 'tests' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'tests_TestsModel' represents an important domain concept.
+It does not declare any attributes.
+
+'tests_Test' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'id', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'tests_Test' and 'tests_TestsModel'. From 'tests_Test', the role 'tests_Test' has cardinality 0..*, and from 'tests_TestsModel', the role 'tests_TestsModel' has cardinality 0..*.

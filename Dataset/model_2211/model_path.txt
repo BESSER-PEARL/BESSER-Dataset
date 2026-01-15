@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/alexmstaff/TDT4250-Assignments/sudyProgrammeModel/TDT4250.studyProgrammeModel/model/programme.ecore

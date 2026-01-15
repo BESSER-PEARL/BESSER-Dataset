@@ -1,0 +1,251 @@
+The domain model 'article' describes the core structural elements and their relationships within the system.
+
+The model defines 59 main class(es).
+
+'article_Article' represents an important domain concept.
+It does not declare any attributes.
+
+'article_Schemadoc' represents an important domain concept.
+It does not declare any attributes.
+
+'article_ImageFactory' represents an important domain concept.
+It has one attribute: 'file', which is of type str.
+
+'article_Description' represents an important domain concept.
+It does not declare any attributes.
+
+'article_Javadoc' represents an important domain concept.
+It does not declare any attributes.
+
+'BodyElementContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'article_Chapter' represents an important domain concept.
+It does not declare any attributes.
+
+'ExternalArticle' represents an important domain concept.
+It does not declare any attributes.
+
+'article_BodyElement' represents an important domain concept.
+It has one attribute: 'tag', which is of type str.
+
+'EmbeddableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'article_BodyElementContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'article_Image' represents an important domain concept.
+It has one attribute: 'file', which is of type str.
+
+'article_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'article_ExternalArticle' represents an important domain concept.
+It has one attribute: 'url', which is of type str.
+
+'article_Category' represents an important domain concept.
+It does not declare any attributes.
+
+'article_Snippet' represents an important domain concept.
+It has the following attributes: 'titleImage', which is of type str; 'title', which is of type str.
+
+'Article' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'article_PluginResource' represents an important domain concept.
+It does not declare any attributes.
+
+'article_ImageFormatter' represents an important domain concept.
+It has one attribute: 'file', which is of type str.
+
+'Factory' represents an important domain concept.
+It does not declare any attributes.
+
+'article_Plugin' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'name', which is of type str.
+
+'article_Factory' represents an important domain concept.
+It does not declare any attributes.
+
+'ExternalTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'article_Formatter' represents an important domain concept.
+It does not declare any attributes.
+
+'article_StructuralElement' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'doc', which is of type str.
+
+'article_JavaFormatter' represents an important domain concept.
+It does not declare any attributes.
+
+'article_SourceCode' represents an important domain concept.
+It does not declare any attributes.
+
+'article_LinkTarget' represents an important domain concept.
+It has the following attributes: 'defaultLabel', which is of type str; 'tooltip', which is of type str.
+
+'BodyElement' represents an important domain concept.
+It does not declare any attributes.
+
+'article_Body' represents an important domain concept.
+It does not declare any attributes.
+
+'article_TreeNodeProperty' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'valueImage', which is of type str; 'key', which is of type str.
+
+'Chapter' represents an important domain concept.
+It does not declare any attributes.
+
+'Category' represents an important domain concept.
+It does not declare any attributes.
+
+'article_Toc' represents an important domain concept.
+It has one attribute: 'levels', which is of type int.
+
+'article_Key' represents an important domain concept.
+It does not declare any attributes.
+
+'article_JavaPackage' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'article_Identifiable' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'article_EmbeddableElement' represents an important domain concept.
+It has one attribute: 'doc', which is of type str.
+
+'Body' represents an important domain concept.
+It does not declare any attributes.
+
+'article_HtmlFormatter' represents an important domain concept.
+It has one attribute: 'file', which is of type str.
+
+'article_Context' represents an important domain concept.
+It has the following attributes: 'baseFolder', which is of type str; 'root', which is of type str; 'project', which is of type str.
+
+'article_ExternalTarget' represents an important domain concept.
+It has one attribute: 'url', which is of type str.
+
+'article_ExtensionPoint' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'article_Section' represents an important domain concept.
+It does not declare any attributes.
+
+'Formatter' represents an important domain concept.
+It does not declare any attributes.
+
+'article_Documentation' represents an important domain concept.
+It has one attribute: 'project', which is of type str.
+
+'article_Embedding' represents an important domain concept.
+It does not declare any attributes.
+
+'article_Text' represents an important domain concept.
+It does not declare any attributes.
+
+'article_XmlFormatter' represents an important domain concept.
+It has one attribute: 'file', which is of type str.
+
+'article_Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+'article_TreeFormatter' represents an important domain concept.
+It has the following attributes: 'selected', which is of type str; 'expanded', which is of type str; 'expandTo', which is of type int; 'file', which is of type str.
+
+'article_TreeNode' represents an important domain concept.
+It has the following attributes: 'image', which is of type str; 'xmi_ID', which is of type str; 'label', which is of type str.
+
+'article_Callout' represents an important domain concept.
+It does not declare any attributes.
+
+'article_Excel' represents an important domain concept.
+It does not declare any attributes.
+
+'article_JavaElement' represents an important domain concept.
+It has one attribute: 'classFile', which is of type str.
+
+'article_Selection' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'article_Documentation' is a specialization of 'StructuralElement'.
+The class 'article_Category' is a specialization of 'Body'.
+The class 'article_Article' is a specialization of 'Chapter'.
+The class 'article_Chapter' is a specialization of 'Body'.
+The class 'article_Snippet' is a specialization of 'EmbeddableElement'.
+The class 'article_Diagram' is a specialization of 'BodyElement'.
+The class 'article_Factory' is a specialization of 'EmbeddableElement'.
+The class 'article_JavaElement' is a specialization of 'LinkTarget'.
+The class 'article_StructuralElement' is a specialization of 'LinkTarget'.
+The class 'article_LinkTarget' is a specialization of 'Identifiable'.
+The class 'article_Callout' is a specialization of 'BodyElementContainer'.
+The class 'article_EmbeddableElement' is a specialization of 'Identifiable'.
+The class 'article_ExternalTarget' is a specialization of 'LinkTarget'.
+The class 'article_Section' is a specialization of 'LinkTarget'.
+The class 'article_Section' is a specialization of 'BodyElementContainer'.
+The class 'article_Body' is a specialization of 'StructuralElement'.
+The class 'article_Body' is a specialization of 'BodyElementContainer'.
+The class 'article_Text' is a specialization of 'BodyElement'.
+The class 'article_Link' is a specialization of 'BodyElement'.
+The class 'article_Embedding' is a specialization of 'BodyElement'.
+The class 'article_SourceCode' is a specialization of 'ExternalTarget'.
+The class 'article_Javadoc' is a specialization of 'Category'.
+The class 'article_ExternalArticle' is a specialization of 'Article'.
+The class 'article_Schemadoc' is a specialization of 'Category'.
+The class 'article_Toc' is a specialization of 'BodyElement'.
+The class 'article_PluginResource' is a specialization of 'ExternalArticle'.
+The class 'article_Excel' is a specialization of 'BodyElement'.
+The class 'article_JavaFormatter' is a specialization of 'Formatter'.
+The class 'article_XmlFormatter' is a specialization of 'Formatter'.
+The class 'article_TreeFormatter' is a specialization of 'Formatter'.
+The class 'article_Image' is a specialization of 'BodyElement'.
+The class 'article_ImageFactory' is a specialization of 'Factory'.
+The class 'article_Key' is a specialization of 'BodyElement'.
+The class 'article_Selection' is a specialization of 'BodyElement'.
+The class 'article_ImageFormatter' is a specialization of 'Formatter'.
+The class 'article_Description' is a specialization of 'BodyElementContainer'.
+The class 'article_HtmlFormatter' is a specialization of 'Formatter'.
+
+Relationships between classes are modeled using associations.
+An association connects 'article_Documentation' and 'article_Context'. From 'article_Documentation', the role 'documentations' has cardinality 0..*, and from 'article_Context', the role 'Context' has cardinality 0..*.
+An association connects 'article_EmbeddableElement' and 'article_Documentation'. From 'article_EmbeddableElement', the role 'EmbeddableElement' has cardinality 0..*, and from 'article_Documentation', the role 'documentation' has cardinality 0..*.
+An association connects 'article_Documentation' and 'article_Documentation'. From 'article_Documentation', the role 'article_Documentation2' has cardinality 0..*, and from 'article_Documentation', the role 'article_Documentation' has cardinality 0..*.
+An association connects 'article_Plugin' and 'article_Documentation'. From 'article_Plugin', the role 'article_Plugin' has cardinality 0..*, and from 'article_Documentation', the role 'article_Documentation5' has cardinality 0..*.
+An association connects 'article_Context' and 'article_Documentation'. From 'article_Context', the role 'context' has cardinality 0..*, and from 'article_Documentation', the role 'Documentation' has cardinality 0..*.
+An association connects 'article_Chapter' and 'article_Article'. From 'article_Chapter', the role 'article_Chapter' has cardinality 0..*, and from 'article_Article', the role 'article_Article' has cardinality 0..*.
+An association connects 'article_Section' and 'article_Chapter'. From 'article_Section', the role 'Section' has cardinality 0..*, and from 'article_Chapter', the role 'chapter' has cardinality 0..*.
+An association connects 'article_Callout' and 'article_Snippet'. From 'article_Callout', the role 'Callout' has cardinality 0..*, and from 'article_Snippet', the role 'snippet' has cardinality 0..*.
+An association connects 'article_Snippet' and 'article_Formatter'. From 'article_Snippet', the role 'snippet11' has cardinality 0..*, and from 'article_Formatter', the role 'Formatter' has cardinality 0..*.
+An association connects 'article_Description' and 'article_Snippet'. From 'article_Description', the role 'Description' has cardinality 0..*, and from 'article_Snippet', the role 'snippet13' has cardinality 0..*.
+An association connects 'article_StructuralElement' and 'article_StructuralElement'. From 'article_StructuralElement', the role 'StructuralElement' has cardinality 0..*, and from 'article_StructuralElement', the role 'parent' has cardinality 0..*.
+An association connects 'article_StructuralElement' and 'article_StructuralElement'. From 'article_StructuralElement', the role 'StructuralElement18' has cardinality 0..*, and from 'article_StructuralElement', the role 'children' has cardinality 0..*.
+An association connects 'article_Documentation' and 'article_StructuralElement'. From 'article_Documentation', the role 'article_Documentation20' has cardinality 0..*, and from 'article_StructuralElement', the role 'article_StructuralElement' has cardinality 0..*.
+An association connects 'article_Snippet' and 'article_Callout'. From 'article_Snippet', the role 'Snippet' has cardinality 0..*, and from 'article_Callout', the role 'callouts' has cardinality 0..*.
+An association connects 'article_EmbeddableElement' and 'article_Documentation'. From 'article_EmbeddableElement', the role 'embeddableElements' has cardinality 0..*, and from 'article_Documentation', the role 'Documentation23' has cardinality 0..*.
+An association connects 'article_Section' and 'article_Chapter'. From 'article_Section', the role 'sections' has cardinality 0..*, and from 'article_Chapter', the role 'Chapter' has cardinality 0..*.
+An association connects 'article_Body' and 'article_Category'. From 'article_Body', the role 'article_Body' has cardinality 0..*, and from 'article_Category', the role 'article_Category' has cardinality 0..*.
+An association connects 'article_BodyElementContainer' and 'article_BodyElement'. From 'article_BodyElementContainer', the role 'container' has cardinality 0..*, and from 'article_BodyElement', the role 'BodyElement' has cardinality 0..*.
+An association connects 'article_BodyElement' and 'article_BodyElementContainer'. From 'article_BodyElement', the role 'elements' has cardinality 0..*, and from 'article_BodyElementContainer', the role 'BodyElementContainer' has cardinality 0..*.
+An association connects 'article_LinkTarget' and 'article_Link'. From 'article_LinkTarget', the role 'article_LinkTarget' has cardinality 0..*, and from 'article_Link', the role 'article_Link' has cardinality 0..*.
+An association connects 'article_Embedding' and 'article_EmbeddableElement'. From 'article_Embedding', the role 'article_Embedding' has cardinality 0..*, and from 'article_EmbeddableElement', the role 'article_EmbeddableElement' has cardinality 0..*.
+An association connects 'article_JavaPackage' and 'article_Plugin'. From 'article_JavaPackage', the role 'JavaPackage' has cardinality 0..*, and from 'article_Plugin', the role 'plugin' has cardinality 0..*.
+An association connects 'article_ExtensionPoint' and 'article_Plugin'. From 'article_ExtensionPoint', the role 'ExtensionPoint' has cardinality 0..*, and from 'article_Plugin', the role 'plugin32' has cardinality 0..*.
+An association connects 'article_JavaPackage' and 'article_Plugin'. From 'article_JavaPackage', the role 'packages' has cardinality 0..*, and from 'article_Plugin', the role 'Plugin' has cardinality 0..*.
+An association connects 'article_ExtensionPoint' and 'article_Plugin'. From 'article_ExtensionPoint', the role 'extensionPoints' has cardinality 0..*, and from 'article_Plugin', the role 'Plugin35' has cardinality 0..*.
+An association connects 'article_Formatter' and 'article_Snippet'. From 'article_Formatter', the role 'formatter' has cardinality 0..*, and from 'article_Snippet', the role 'Snippet37' has cardinality 0..*.
+An association connects 'article_TreeNode' and 'article_TreeNode'. From 'article_TreeNode', the role 'article_TreeNode38' has cardinality 0..*, and from 'article_TreeNode', the role 'article_TreeNode' has cardinality 0..*.
+An association connects 'article_TreeNode' and 'article_TreeNodeProperty'. From 'article_TreeNode', the role 'article_TreeNode41' has cardinality 0..*, and from 'article_TreeNodeProperty', the role 'article_TreeNodeProperty' has cardinality 0..*.
+An association connects 'article_TreeNodeProperty' and 'article_TreeNodeProperty'. From 'article_TreeNodeProperty', the role 'article_TreeNodeProperty44' has cardinality 0..*, and from 'article_TreeNodeProperty', the role 'article_TreeNodeProperty42' has cardinality 0..*.
+An association connects 'article_Snippet' and 'article_Description'. From 'article_Snippet', the role 'Snippet46' has cardinality 0..*, and from 'article_Description', the role 'description' has cardinality 0..*.

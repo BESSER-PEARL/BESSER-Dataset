@@ -1,0 +1,28 @@
+The domain model 'StructuredTree' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'StructuredTree_NodeKind' represents an important domain concept.
+It does not declare any attributes.
+
+'NodeKind' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredTree_Tree' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredTree_BranchKind' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredTree_LeafKind' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'StructuredTree_LeafKind' is a specialization of 'NodeKind'.
+The class 'StructuredTree_BranchKind' is a specialization of 'NodeKind'.
+
+Relationships between classes are modeled using associations.
+An association connects 'StructuredTree_NodeKind' and 'StructuredTree_Tree'. From 'StructuredTree_NodeKind', the role 'NodeKind' has cardinality 0..*, and from 'StructuredTree_Tree', the role 'tree' has cardinality 0..*.
+An association connects 'StructuredTree_NodeKind' and 'StructuredTree_Tree'. From 'StructuredTree_NodeKind', the role 'root' has cardinality 0..*, and from 'StructuredTree_Tree', the role 'Tree' has cardinality 0..*.
+An association connects 'StructuredTree_NodeKind' and 'StructuredTree_BranchKind'. From 'StructuredTree_NodeKind', the role 'children' has cardinality 0..*, and from 'StructuredTree_BranchKind', the role 'BranchKind' has cardinality 0..*.
+An association connects 'StructuredTree_BranchKind' and 'StructuredTree_NodeKind'. From 'StructuredTree_BranchKind', the role 'parent' has cardinality 0..*, and from 'StructuredTree_NodeKind', the role 'NodeKind4' has cardinality 0..*.

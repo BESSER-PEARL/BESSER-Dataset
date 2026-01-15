@@ -1,0 +1,84 @@
+The domain model 'adaptiveSystem' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'adaptiveSystem_OccurrenceNet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adaptiveSystem_Arc' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'adaptiveSystem_ArcToEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'adaptiveSystem_Node' represents an important domain concept.
+It has the following attributes: 'disabledByConflict', which is of type bool; 'name', which is of type str; 'abstract', which is of type bool; 'temp', which is of type str; 'disabledByAntiOclet', which is of type bool.
+
+'adaptiveSystem_AdaptiveProcess' represents an important domain concept.
+It does not declare any attributes.
+
+'adaptiveSystem_PreNet' represents an important domain concept.
+It does not declare any attributes.
+
+'adaptiveSystem_DoNet' represents an important domain concept.
+It does not declare any attributes.
+
+'OccurrenceNet' represents an important domain concept.
+It does not declare any attributes.
+
+'adaptiveSystem_ArcToCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'adaptiveSystem_Oclet' represents an important domain concept.
+It has the following attributes: 'wellFormed', which is of type bool; 'name', which is of type str; 'orientation', which is of type str; 'quantor', which is of type str.
+
+'Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'adaptiveSystem_Condition' represents an important domain concept.
+It has the following attributes: 'marked', which is of type bool; 'maximal', which is of type bool; 'token', which is of type int; 'minimal', which is of type bool.
+
+'adaptiveSystem_Event' represents an important domain concept.
+It has the following attributes: 'saturated', which is of type bool; 'enabled', which is of type bool.
+
+'adaptiveSystem_AdaptiveSystem' represents an important domain concept.
+It has one attribute: 'setWellformednessToOclets', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Temp' defines the following possible values: 'cold', 'without', 'hot'.
+The enumeration 'Quantor' defines the following possible values: 'universal', 'existencial'.
+The enumeration 'Orientation' defines the following possible values: 'anti', 'normal'.
+
+The model also captures inheritance relationships between classes.
+The class 'adaptiveSystem_DoNet' is a specialization of 'OccurrenceNet'.
+The class 'adaptiveSystem_PreNet' is a specialization of 'OccurrenceNet'.
+The class 'adaptiveSystem_AdaptiveProcess' is a specialization of 'OccurrenceNet'.
+The class 'adaptiveSystem_Condition' is a specialization of 'Node'.
+The class 'adaptiveSystem_Event' is a specialization of 'Node'.
+The class 'adaptiveSystem_ArcToEvent' is a specialization of 'Arc'.
+The class 'adaptiveSystem_ArcToCondition' is a specialization of 'Arc'.
+
+Relationships between classes are modeled using associations.
+An association connects 'adaptiveSystem_Oclet' and 'adaptiveSystem_AdaptiveSystem'. From 'adaptiveSystem_Oclet', the role 'adaptiveSystem_Oclet' has cardinality 0..*, and from 'adaptiveSystem_AdaptiveSystem', the role 'adaptiveSystem_AdaptiveSystem' has cardinality 0..*.
+An association connects 'adaptiveSystem_AdaptiveSystem' and 'adaptiveSystem_AdaptiveProcess'. From 'adaptiveSystem_AdaptiveSystem', the role 'adaptiveSystem_AdaptiveSystem2' has cardinality 0..*, and from 'adaptiveSystem_AdaptiveProcess', the role 'adaptiveSystem_AdaptiveProcess' has cardinality 0..*.
+An association connects 'adaptiveSystem_PreNet' and 'adaptiveSystem_Oclet'. From 'adaptiveSystem_PreNet', the role 'adaptiveSystem_PreNet' has cardinality 0..*, and from 'adaptiveSystem_Oclet', the role 'adaptiveSystem_Oclet4' has cardinality 0..*.
+An association connects 'adaptiveSystem_DoNet' and 'adaptiveSystem_Oclet'. From 'adaptiveSystem_DoNet', the role 'adaptiveSystem_DoNet' has cardinality 0..*, and from 'adaptiveSystem_Oclet', the role 'adaptiveSystem_Oclet6' has cardinality 0..*.
+An association connects 'adaptiveSystem_Node' and 'adaptiveSystem_OccurrenceNet'. From 'adaptiveSystem_Node', the role 'adaptiveSystem_Node' has cardinality 0..*, and from 'adaptiveSystem_OccurrenceNet', the role 'adaptiveSystem_OccurrenceNet' has cardinality 0..*.
+An association connects 'adaptiveSystem_OccurrenceNet' and 'adaptiveSystem_Arc'. From 'adaptiveSystem_OccurrenceNet', the role 'adaptiveSystem_OccurrenceNet9' has cardinality 0..*, and from 'adaptiveSystem_Arc', the role 'adaptiveSystem_Arc' has cardinality 0..*.
+An association connects 'adaptiveSystem_PreNet' and 'adaptiveSystem_Condition'. From 'adaptiveSystem_PreNet', the role 'adaptiveSystem_PreNet11' has cardinality 0..*, and from 'adaptiveSystem_Condition', the role 'adaptiveSystem_Condition' has cardinality 0..*.
+An association connects 'adaptiveSystem_AdaptiveProcess' and 'adaptiveSystem_Condition'. From 'adaptiveSystem_AdaptiveProcess', the role 'adaptiveSystem_AdaptiveProcess13' has cardinality 0..*, and from 'adaptiveSystem_Condition', the role 'adaptiveSystem_Condition14' has cardinality 0..*.
+An association connects 'adaptiveSystem_Condition' and 'adaptiveSystem_Event'. From 'adaptiveSystem_Condition', the role 'postConditions' has cardinality 0..*, and from 'adaptiveSystem_Event', the role 'Event' has cardinality 0..*.
+An association connects 'adaptiveSystem_Event' and 'adaptiveSystem_Condition'. From 'adaptiveSystem_Event', the role 'Event17' has cardinality 0..*, and from 'adaptiveSystem_Condition', the role 'preConditions' has cardinality 0..*.
+An association connects 'adaptiveSystem_Condition' and 'adaptiveSystem_ArcToCondition'. From 'adaptiveSystem_Condition', the role 'destination' has cardinality 0..*, and from 'adaptiveSystem_ArcToCondition', the role 'ArcToCondition' has cardinality 0..*.
+An association connects 'adaptiveSystem_Condition' and 'adaptiveSystem_ArcToEvent'. From 'adaptiveSystem_Condition', the role 'source' has cardinality 0..*, and from 'adaptiveSystem_ArcToEvent', the role 'ArcToEvent' has cardinality 0..*.
+An association connects 'adaptiveSystem_Event' and 'adaptiveSystem_Condition'. From 'adaptiveSystem_Event', the role 'postEvents' has cardinality 0..*, and from 'adaptiveSystem_Condition', the role 'Condition' has cardinality 0..*.
+An association connects 'adaptiveSystem_Event' and 'adaptiveSystem_Condition'. From 'adaptiveSystem_Event', the role 'preEvents' has cardinality 0..*, and from 'adaptiveSystem_Condition', the role 'Condition22' has cardinality 0..*.
+An association connects 'adaptiveSystem_Event' and 'adaptiveSystem_ArcToEvent'. From 'adaptiveSystem_Event', the role 'destination24' has cardinality 0..*, and from 'adaptiveSystem_ArcToEvent', the role 'ArcToEvent25' has cardinality 0..*.
+An association connects 'adaptiveSystem_ArcToCondition' and 'adaptiveSystem_Event'. From 'adaptiveSystem_ArcToCondition', the role 'ArcToCondition28' has cardinality 0..*, and from 'adaptiveSystem_Event', the role 'source27' has cardinality 0..*.
+An association connects 'adaptiveSystem_Condition' and 'adaptiveSystem_ArcToEvent'. From 'adaptiveSystem_Condition', the role 'Condition30' has cardinality 0..*, and from 'adaptiveSystem_ArcToEvent', the role 'outgoing' has cardinality 0..*.
+An association connects 'adaptiveSystem_ArcToEvent' and 'adaptiveSystem_Event'. From 'adaptiveSystem_ArcToEvent', the role 'incoming' has cardinality 0..*, and from 'adaptiveSystem_Event', the role 'Event32' has cardinality 0..*.
+An association connects 'adaptiveSystem_Event' and 'adaptiveSystem_ArcToCondition'. From 'adaptiveSystem_Event', the role 'Event35' has cardinality 0..*, and from 'adaptiveSystem_ArcToCondition', the role 'outgoing34' has cardinality 0..*.
+An association connects 'adaptiveSystem_ArcToCondition' and 'adaptiveSystem_Condition'. From 'adaptiveSystem_ArcToCondition', the role 'incoming37' has cardinality 0..*, and from 'adaptiveSystem_Condition', the role 'Condition38' has cardinality 0..*.

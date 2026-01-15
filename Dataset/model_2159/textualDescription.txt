@@ -1,0 +1,46 @@
+The domain model 'list' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'list_VersionedListEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'list_VersionedListVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'list_VersionedListStartReference' represents an important domain concept.
+It does not declare any attributes.
+
+'list_ProductSpaceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ProductSpaceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'list_VersionedList' represents an important domain concept.
+It does not declare any attributes.
+
+'UUIDElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'list_VersionedList' is a specialization of 'ProductSpaceElement'.
+The class 'list_VersionedListVertex' is a specialization of 'ProductSpaceElement'.
+The class 'list_VersionedListVertex' is a specialization of 'UUIDElement'.
+The class 'list_VersionedListEdge' is a specialization of 'ProductSpaceElement'.
+The class 'list_VersionedListStartReference' is a specialization of 'ProductSpaceElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'list_VersionedListVertex' and 'list_VersionedList'. From 'list_VersionedListVertex', the role 'VersionedListVertex' has cardinality 0..*, and from 'list_VersionedList', the role 'list' has cardinality 0..*.
+An association connects 'list_VersionedList' and 'list_VersionedListEdge'. From 'list_VersionedList', the role 'list2' has cardinality 0..*, and from 'list_VersionedListEdge', the role 'VersionedListEdge' has cardinality 0..*.
+An association connects 'list_VersionedList' and 'list_VersionedListStartReference'. From 'list_VersionedList', the role 'list4' has cardinality 0..*, and from 'list_VersionedListStartReference', the role 'VersionedListStartReference' has cardinality 0..*.
+An association connects 'list_VersionedListVertex' and 'list_ProductSpaceElement'. From 'list_VersionedListVertex', the role 'list_VersionedListVertex' has cardinality 0..*, and from 'list_ProductSpaceElement', the role 'list_ProductSpaceElement' has cardinality 0..*.
+An association connects 'list_VersionedListEdge' and 'list_VersionedListVertex'. From 'list_VersionedListEdge', the role 'VersionedListEdge7' has cardinality 0..*, and from 'list_VersionedListVertex', the role 'sink' has cardinality 0..*.
+An association connects 'list_VersionedListEdge' and 'list_VersionedListVertex'. From 'list_VersionedListEdge', the role 'VersionedListEdge9' has cardinality 0..*, and from 'list_VersionedListVertex', the role 'source' has cardinality 0..*.
+An association connects 'list_VersionedListVertex' and 'list_VersionedList'. From 'list_VersionedListVertex', the role 'vertices' has cardinality 0..*, and from 'list_VersionedList', the role 'VersionedList' has cardinality 0..*.
+An association connects 'list_VersionedListStartReference' and 'list_VersionedListVertex'. From 'list_VersionedListStartReference', the role 'VersionedListStartReference12' has cardinality 0..*, and from 'list_VersionedListVertex', the role 'vertex' has cardinality 0..*.
+An association connects 'list_VersionedListEdge' and 'list_VersionedListVertex'. From 'list_VersionedListEdge', the role 'outgoingEdges' has cardinality 0..*, and from 'list_VersionedListVertex', the role 'VersionedListVertex14' has cardinality 0..*.
+An association connects 'list_VersionedListVertex' and 'list_VersionedListEdge'. From 'list_VersionedListVertex', the role 'VersionedListVertex16' has cardinality 0..*, and from 'list_VersionedListEdge', the role 'incomingEdges' has cardinality 0..*.
+An association connects 'list_VersionedList' and 'list_VersionedListEdge'. From 'list_VersionedList', the role 'VersionedList18' has cardinality 0..*, and from 'list_VersionedListEdge', the role 'edges' has cardinality 0..*.
+An association connects 'list_VersionedListStartReference' and 'list_VersionedListVertex'. From 'list_VersionedListStartReference', the role 'startRef' has cardinality 0..*, and from 'list_VersionedListVertex', the role 'VersionedListVertex20' has cardinality 0..*.
+An association connects 'list_VersionedListStartReference' and 'list_VersionedList'. From 'list_VersionedListStartReference', the role 'startVertices' has cardinality 0..*, and from 'list_VersionedList', the role 'VersionedList22' has cardinality 0..*.

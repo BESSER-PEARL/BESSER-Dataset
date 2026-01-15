@@ -1,0 +1,66 @@
+The domain model 'behavior' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'behavior_UseCase' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'behavior_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_Transition' represents an important domain concept.
+It has the following attributes: 'thinkTimeParams', which is of type str; 'value', which is of type float; 'timeDiffs', which is of type str.
+
+'behavior_AbstractUseCaseExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_ObservedUseCaseExecution' represents an important domain concept.
+It has the following attributes: 'startTime', which is of type str; 'endTime', which is of type str.
+
+'behavior_BehaviorMix' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractBehaviorModelGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_BehaviorModelAbsolute' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_BehaviorModelRelative' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_Session' represents an important domain concept.
+It has the following attributes: 'startTime', which is of type str; 'endTime', which is of type str; 'id', which is of type str; 'transactionType', which is of type str.
+
+'AbstractUseCaseExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_SessionRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_BehaviorMixEntry' represents an important domain concept.
+It has the following attributes: 'relativeFrequency', which is of type float; 'behaviorModelName', which is of type str.
+
+'behavior_UseCaseRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_AbstractBehaviorModelGraph' represents an important domain concept.
+It has one attribute: 'transactionType', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'behavior_ObservedUseCaseExecution' is a specialization of 'AbstractUseCaseExecution'.
+The class 'behavior_Vertex' is a specialization of 'AbstractUseCaseExecution'.
+The class 'behavior_BehaviorModelAbsolute' is a specialization of 'AbstractBehaviorModelGraph'.
+The class 'behavior_BehaviorModelRelative' is a specialization of 'AbstractBehaviorModelGraph'.
+
+Relationships between classes are modeled using associations.
+An association connects 'behavior_UseCase' and 'behavior_UseCaseRepository'. From 'behavior_UseCase', the role 'behavior_UseCase' has cardinality 0..*, and from 'behavior_UseCaseRepository', the role 'behavior_UseCaseRepository' has cardinality 0..*.
+An association connects 'behavior_Session' and 'behavior_SessionRepository'. From 'behavior_Session', the role 'behavior_Session' has cardinality 0..*, and from 'behavior_SessionRepository', the role 'behavior_SessionRepository' has cardinality 0..*.
+An association connects 'behavior_Session' and 'behavior_ObservedUseCaseExecution'. From 'behavior_Session', the role 'behavior_Session3' has cardinality 0..*, and from 'behavior_ObservedUseCaseExecution', the role 'behavior_ObservedUseCaseExecution' has cardinality 0..*.
+An association connects 'behavior_UseCase' and 'behavior_AbstractUseCaseExecution'. From 'behavior_UseCase', the role 'behavior_UseCase5' has cardinality 0..*, and from 'behavior_AbstractUseCaseExecution', the role 'behavior_AbstractUseCaseExecution' has cardinality 0..*.
+An association connects 'behavior_AbstractBehaviorModelGraph' and 'behavior_Vertex'. From 'behavior_AbstractBehaviorModelGraph', the role 'behavior_AbstractBehaviorModelGraph' has cardinality 0..*, and from 'behavior_Vertex', the role 'behavior_Vertex' has cardinality 0..*.
+An association connects 'behavior_Vertex' and 'behavior_Transition'. From 'behavior_Vertex', the role 'behavior_Vertex8' has cardinality 0..*, and from 'behavior_Transition', the role 'behavior_Transition' has cardinality 0..*.
+An association connects 'behavior_Transition' and 'behavior_Vertex'. From 'behavior_Transition', the role 'behavior_Transition10' has cardinality 0..*, and from 'behavior_Vertex', the role 'behavior_Vertex11' has cardinality 0..*.
+An association connects 'behavior_Vertex' and 'behavior_Transition'. From 'behavior_Vertex', the role 'behavior_Vertex14' has cardinality 0..*, and from 'behavior_Transition', the role 'behavior_Transition13' has cardinality 0..*.
+An association connects 'behavior_BehaviorMixEntry' and 'behavior_BehaviorMix'. From 'behavior_BehaviorMixEntry', the role 'behavior_BehaviorMixEntry' has cardinality 0..*, and from 'behavior_BehaviorMix', the role 'behavior_BehaviorMix' has cardinality 0..*.
+An association connects 'behavior_BehaviorMixEntry' and 'behavior_BehaviorModelRelative'. From 'behavior_BehaviorMixEntry', the role 'behavior_BehaviorMixEntry17' has cardinality 0..*, and from 'behavior_BehaviorModelRelative', the role 'behavior_BehaviorModelRelative' has cardinality 0..*.

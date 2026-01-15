@@ -1,0 +1,44 @@
+The domain model 'programmes' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'programmes_Course' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'level', which is of type str; 'credits', which is of type float; 'code', which is of type str.
+
+'programmes_Semester' represents an important domain concept.
+It has the following attributes: 'year', which is of type int; 'semesterType', which is of type str.
+
+'programmes_Programme' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'name', which is of type str.
+
+'Programme' represents an important domain concept.
+It does not declare any attributes.
+
+'programmes_CourseGroup' represents an important domain concept.
+It has the following attributes: 'coursesType', which is of type str; 'name', which is of type str.
+
+'programmes_University' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'programmes_Specialization' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CourseType' defines the following possible values: 'MANDATORY', 'ELECTIVE'.
+The enumeration 'SemesterType' defines the following possible values: 'Autumn', 'Spring'.
+The enumeration 'StudyLevel' defines the following possible values: 'SECOND_YEAR', 'POST_GRAD', 'SECOND_DEGREE', 'THIRD_YEAR', 'FIRST_YEAR'.
+
+The model also captures inheritance relationships between classes.
+The class 'programmes_Specialization' is a specialization of 'Programme'.
+
+Relationships between classes are modeled using associations.
+An association connects 'programmes_Programme' and 'programmes_Specialization'. From 'programmes_Programme', the role 'specializesIn' has cardinality 0..*, and from 'programmes_Specialization', the role 'Specialization' has cardinality 0..*.
+An association connects 'programmes_Semester' and 'programmes_Programme'. From 'programmes_Semester', the role 'Semester' has cardinality 0..*, and from 'programmes_Programme', the role 'programme' has cardinality 0..*.
+An association connects 'programmes_CourseGroup' and 'programmes_Programme'. From 'programmes_CourseGroup', the role 'programmes_CourseGroup' has cardinality 0..*, and from 'programmes_Programme', the role 'programmes_Programme' has cardinality 0..*.
+An association connects 'programmes_Specialization' and 'programmes_Programme'. From 'programmes_Specialization', the role 'specializations' has cardinality 0..*, and from 'programmes_Programme', the role 'Programme' has cardinality 0..*.
+An association connects 'programmes_Semester' and 'programmes_Specialization'. From 'programmes_Semester', the role 'programmes_Semester' has cardinality 0..*, and from 'programmes_Specialization', the role 'programmes_Specialization' has cardinality 0..*.
+An association connects 'programmes_Programme' and 'programmes_Semester'. From 'programmes_Programme', the role 'Programme6' has cardinality 0..*, and from 'programmes_Semester', the role 'programmeSemester' has cardinality 0..*.
+An association connects 'programmes_Course' and 'programmes_Semester'. From 'programmes_Course', the role 'programmes_Course' has cardinality 0..*, and from 'programmes_Semester', the role 'programmes_Semester8' has cardinality 0..*.
+An association connects 'programmes_Course' and 'programmes_CourseGroup'. From 'programmes_Course', the role 'programmes_Course11' has cardinality 0..*, and from 'programmes_CourseGroup', the role 'programmes_CourseGroup10' has cardinality 0..*.
+An association connects 'programmes_University' and 'programmes_Programme'. From 'programmes_University', the role 'programmes_University' has cardinality 0..*, and from 'programmes_Programme', the role 'programmes_Programme13' has cardinality 0..*.
+An association connects 'programmes_Course' and 'programmes_University'. From 'programmes_Course', the role 'programmes_Course16' has cardinality 0..*, and from 'programmes_University', the role 'programmes_University15' has cardinality 0..*.

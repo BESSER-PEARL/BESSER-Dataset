@@ -1,0 +1,25 @@
+The domain model 'btsviewmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'btsviewmodel_BTSObjectTypeTreeNode' represents an important domain concept.
+It has the following attributes: 'selected', which is of type bool; 'value', which is of type str.
+
+'btsviewmodel_TreeNodeWrapper' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'object', which is of type str; 'propertyChangeSupport', which is of type str; 'childrenLoaded', which is of type bool; 'parentObject', which is of type str.
+
+'btsviewmodel_StatusMessage' represents an important domain concept.
+It has the following attributes: 'creationTime', which is of type date; 'userId', which is of type str; 'message', which is of type str; 'messageType', which is of type str.
+
+'btsviewmodel_DBCollectionStatusInformation' represents an important domain concept.
+It has the following attributes: 'indexDocCount', which is of type str; 'indexStatus', which is of type str; 'dbDocCount', which is of type str; 'dbUpdateSeq', which is of type str; 'dbDocDelCount', which is of type str; 'indexUpdateSeq', which is of type str; 'dbCollectionName', which is of type str; 'syncStatusFromRemote', which is of type str; 'dbPurgeSeq', which is of type str; 'syncStatusToRemote', which is of type str; 'dbDiskSize', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MessageType' defines the following possible values: 'NO_EDITING_RIGHTS', 'UPDATE', 'INFORMATION', 'LOCKED', 'FILTERED', 'ERROR', 'WARNING'.
+
+Relationships between classes are modeled using associations.
+An association connects 'btsviewmodel_TreeNodeWrapper' and 'btsviewmodel_TreeNodeWrapper'. From 'btsviewmodel_TreeNodeWrapper', the role 'btsviewmodel_TreeNodeWrapper' has cardinality 0..*, and from 'btsviewmodel_TreeNodeWrapper', the role 'btsviewmodel_TreeNodeWrapper0' has cardinality 0..*.
+An association connects 'btsviewmodel_TreeNodeWrapper' and 'btsviewmodel_TreeNodeWrapper'. From 'btsviewmodel_TreeNodeWrapper', the role 'btsviewmodel_TreeNodeWrapper4' has cardinality 0..*, and from 'btsviewmodel_TreeNodeWrapper', the role 'btsviewmodel_TreeNodeWrapper2' has cardinality 0..*.
+An association connects 'btsviewmodel_StatusMessage' and 'btsviewmodel_StatusMessage'. From 'btsviewmodel_StatusMessage', the role 'btsviewmodel_StatusMessage5' has cardinality 0..*, and from 'btsviewmodel_StatusMessage', the role 'btsviewmodel_StatusMessage' has cardinality 0..*.
+An association connects 'btsviewmodel_BTSObjectTypeTreeNode' and 'btsviewmodel_BTSObjectTypeTreeNode'. From 'btsviewmodel_BTSObjectTypeTreeNode', the role 'btsviewmodel_BTSObjectTypeTreeNode7' has cardinality 0..*, and from 'btsviewmodel_BTSObjectTypeTreeNode', the role 'btsviewmodel_BTSObjectTypeTreeNode' has cardinality 0..*.
+An association connects 'btsviewmodel_BTSObjectTypeTreeNode' and 'btsviewmodel_BTSObjectTypeTreeNode'. From 'btsviewmodel_BTSObjectTypeTreeNode', the role 'btsviewmodel_BTSObjectTypeTreeNode9' has cardinality 0..*, and from 'btsviewmodel_BTSObjectTypeTreeNode', the role 'btsviewmodel_BTSObjectTypeTreeNode11' has cardinality 0..*.

@@ -1,0 +1,157 @@
+The domain model 'bpmn' describes the core structural elements and their relationships within the system.
+
+The model defines 29 main class(es).
+
+'Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn_MessagingEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn_Activity' represents an important domain concept.
+It has the following attributes: 'activityType', which is of type str; 'looping', which is of type str.
+
+'AssociationTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn_SequenceEdge' represents an important domain concept.
+It has the following attributes: 'isDefault', which is of type str; 'conditionType', which is of type str.
+
+'bpmn_Pool' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn_Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn_Association' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'bpmn_AssociationTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedBpmnObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ArtifactsContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn_Identifiable' represents an important domain concept.
+It has one attribute: 'iD', which is of type str.
+
+'bpmn_NamedBpmnObject' represents an important domain concept.
+It has the following attributes: 'documentation', which is of type str; 'name', which is of type str; 'ncname', which is of type str.
+
+'bpmn_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn_SubProcess' represents an important domain concept.
+It has the following attributes: 'isTransaction', which is of type str; 'adhoc', which is of type str.
+
+'bpmn_BpmnDiagram' represents an important domain concept.
+It has the following attributes: 'author', which is of type str; 'title', which is of type str.
+
+'bpmn_Lane' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn_MessageVertex' represents an important domain concept.
+It has one attribute: 'orderedMessages', which is of type str.
+
+'bpmn_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn_ArtifactsContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn_DataObject' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn_TextAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ActivityType' defines the following possible values: 'EventIntermediateEmpty', 'EventIntermediateCompensation', 'EventIntermediateError', 'EventEndMessage', 'GatewayComplex', 'EventIntermediateRule', 'EventEndTerminate', 'EventIntermediateMultiple', 'GatewayDataBasedExclusive', 'EventEndMultiple', 'EventIntermediateTimer', 'EventEndCancel', 'EventStartMessage', 'EventEndError', 'GatewayDataBasedInclusive', 'Task', 'EventIntermediateCancel', 'EventStartTimer', 'EventStartMultiple', 'EventEndLink', 'EventEndSignal', 'EventStartRule', 'EventEndEmpty', 'EventEndCompensation', 'GatewayParallel', 'EventIntermediateLink', 'GatewayEventBasedExclusive', 'EventIntermediateSignal', 'EventStartEmpty', 'EventStartLink', 'EventStartSignal', 'EventIntermediateMessage', 'SubProcess'.
+The enumeration 'SequenceFlowConditionType' defines the following possible values: 'Expression', 'Default', 'None'.
+The enumeration 'DirectionType' defines the following possible values: 'From', 'None', 'Both', 'To'.
+
+The model also captures inheritance relationships between classes.
+The class 'bpmn_Activity' is a specialization of 'Vertex'.
+The class 'bpmn_Activity' is a specialization of 'MessageVertex'.
+The class 'bpmn_Artifact' is a specialization of 'Identifiable'.
+The class 'bpmn_Artifact' is a specialization of 'NamedBpmnObject'.
+The class 'bpmn_ArtifactsContainer' is a specialization of 'NamedBpmnObject'.
+The class 'bpmn_Association' is a specialization of 'EModelElement'.
+The class 'bpmn_AssociationTarget' is a specialization of 'Identifiable'.
+The class 'bpmn_BpmnDiagram' is a specialization of 'Identifiable'.
+The class 'bpmn_BpmnDiagram' is a specialization of 'ArtifactsContainer'.
+The class 'bpmn_DataObject' is a specialization of 'Artifact'.
+The class 'bpmn_Graph' is a specialization of 'AssociationTarget'.
+The class 'bpmn_Graph' is a specialization of 'ArtifactsContainer'.
+The class 'bpmn_Group' is a specialization of 'Artifact'.
+The class 'bpmn_Identifiable' is a specialization of 'EModelElement'.
+The class 'bpmn_Lane' is a specialization of 'AssociationTarget'.
+The class 'bpmn_Lane' is a specialization of 'NamedBpmnObject'.
+The class 'bpmn_MessageVertex' is a specialization of 'NamedBpmnObject'.
+The class 'bpmn_MessageVertex' is a specialization of 'Identifiable'.
+The class 'bpmn_MessagingEdge' is a specialization of 'AssociationTarget'.
+The class 'bpmn_MessagingEdge' is a specialization of 'NamedBpmnObject'.
+The class 'bpmn_Pool' is a specialization of 'Graph'.
+The class 'bpmn_Pool' is a specialization of 'MessageVertex'.
+The class 'bpmn_SequenceEdge' is a specialization of 'AssociationTarget'.
+The class 'bpmn_SequenceEdge' is a specialization of 'NamedBpmnObject'.
+The class 'bpmn_SubProcess' is a specialization of 'Activity'.
+The class 'bpmn_SubProcess' is a specialization of 'Graph'.
+The class 'bpmn_TextAnnotation' is a specialization of 'Artifact'.
+The class 'bpmn_Vertex' is a specialization of 'AssociationTarget'.
+
+Relationships between classes are modeled using associations.
+An association connects 'bpmn_Group' and 'bpmn_Activity'. From 'bpmn_Group', the role 'Group' has cardinality 0..*, and from 'bpmn_Activity', the role 'activities' has cardinality 0..*.
+An association connects 'bpmn_Activity' and 'bpmn_Lane'. From 'bpmn_Activity', the role 'activities2' has cardinality 0..*, and from 'bpmn_Lane', the role 'Lane' has cardinality 0..*.
+An association connects 'bpmn_SubProcess' and 'bpmn_Activity'. From 'bpmn_SubProcess', the role 'SubProcess' has cardinality 0..*, and from 'bpmn_Activity', the role 'eventHandlers' has cardinality 0..*.
+An association connects 'bpmn_Artifact' and 'bpmn_Association'. From 'bpmn_Artifact', the role 'source' has cardinality 0..*, and from 'bpmn_Association', the role 'Association' has cardinality 0..*.
+An association connects 'bpmn_ArtifactsContainer' and 'bpmn_Artifact'. From 'bpmn_ArtifactsContainer', the role 'ArtifactsContainer' has cardinality 0..*, and from 'bpmn_Artifact', the role 'artifacts' has cardinality 0..*.
+An association connects 'bpmn_Artifact' and 'bpmn_ArtifactsContainer'. From 'bpmn_Artifact', the role 'Artifact' has cardinality 0..*, and from 'bpmn_ArtifactsContainer', the role 'artifactsContainer' has cardinality 0..*.
+An association connects 'bpmn_Artifact' and 'bpmn_Association'. From 'bpmn_Artifact', the role 'Artifact8' has cardinality 0..*, and from 'bpmn_Association', the role 'associations' has cardinality 0..*.
+An association connects 'bpmn_AssociationTarget' and 'bpmn_Association'. From 'bpmn_AssociationTarget', the role 'AssociationTarget' has cardinality 0..*, and from 'bpmn_Association', the role 'associations10' has cardinality 0..*.
+An association connects 'bpmn_AssociationTarget' and 'bpmn_Association'. From 'bpmn_AssociationTarget', the role 'target' has cardinality 0..*, and from 'bpmn_Association', the role 'Association12' has cardinality 0..*.
+An association connects 'bpmn_BpmnDiagram' and 'bpmn_Pool'. From 'bpmn_BpmnDiagram', the role 'bpmnDiagram' has cardinality 0..*, and from 'bpmn_Pool', the role 'Pool' has cardinality 0..*.
+An association connects 'bpmn_BpmnDiagram' and 'bpmn_MessagingEdge'. From 'bpmn_BpmnDiagram', the role 'bpmnDiagram15' has cardinality 0..*, and from 'bpmn_MessagingEdge', the role 'MessagingEdge' has cardinality 0..*.
+An association connects 'bpmn_Vertex' and 'bpmn_Graph'. From 'bpmn_Vertex', the role 'Vertex' has cardinality 0..*, and from 'bpmn_Graph', the role 'graph' has cardinality 0..*.
+An association connects 'bpmn_SequenceEdge' and 'bpmn_Graph'. From 'bpmn_SequenceEdge', the role 'SequenceEdge' has cardinality 0..*, and from 'bpmn_Graph', the role 'graph18' has cardinality 0..*.
+An association connects 'bpmn_Activity' and 'bpmn_Group'. From 'bpmn_Activity', the role 'Activity' has cardinality 0..*, and from 'bpmn_Group', the role 'groups' has cardinality 0..*.
+An association connects 'bpmn_Lane' and 'bpmn_Activity'. From 'bpmn_Lane', the role 'lanes' has cardinality 0..*, and from 'bpmn_Activity', the role 'Activity21' has cardinality 0..*.
+An association connects 'bpmn_Pool' and 'bpmn_Lane'. From 'bpmn_Pool', the role 'Pool24' has cardinality 0..*, and from 'bpmn_Lane', the role 'lanes23' has cardinality 0..*.
+An association connects 'bpmn_MessageVertex' and 'bpmn_MessagingEdge'. From 'bpmn_MessageVertex', the role 'target26' has cardinality 0..*, and from 'bpmn_MessagingEdge', the role 'MessagingEdge27' has cardinality 0..*.
+An association connects 'bpmn_MessagingEdge' and 'bpmn_MessageVertex'. From 'bpmn_MessagingEdge', the role 'MessagingEdge30' has cardinality 0..*, and from 'bpmn_MessageVertex', the role 'source29' has cardinality 0..*.
+An association connects 'bpmn_MessageVertex' and 'bpmn_MessagingEdge'. From 'bpmn_MessageVertex', the role 'MessageVertex' has cardinality 0..*, and from 'bpmn_MessagingEdge', the role 'outgoingMessages' has cardinality 0..*.
+An association connects 'bpmn_MessageVertex' and 'bpmn_MessagingEdge'. From 'bpmn_MessageVertex', the role 'MessageVertex33' has cardinality 0..*, and from 'bpmn_MessagingEdge', the role 'incomingMessages' has cardinality 0..*.
+An association connects 'bpmn_BpmnDiagram' and 'bpmn_MessagingEdge'. From 'bpmn_BpmnDiagram', the role 'BpmnDiagram' has cardinality 0..*, and from 'bpmn_MessagingEdge', the role 'messages' has cardinality 0..*.
+An association connects 'bpmn_Lane' and 'bpmn_Pool'. From 'bpmn_Lane', the role 'Lane36' has cardinality 0..*, and from 'bpmn_Pool', the role 'pool' has cardinality 0..*.
+An association connects 'bpmn_Pool' and 'bpmn_BpmnDiagram'. From 'bpmn_Pool', the role 'pools' has cardinality 0..*, and from 'bpmn_BpmnDiagram', the role 'BpmnDiagram38' has cardinality 0..*.
+An association connects 'bpmn_SequenceEdge' and 'bpmn_Vertex'. From 'bpmn_SequenceEdge', the role 'outgoingEdges' has cardinality 0..*, and from 'bpmn_Vertex', the role 'Vertex40' has cardinality 0..*.
+An association connects 'bpmn_SequenceEdge' and 'bpmn_Vertex'. From 'bpmn_SequenceEdge', the role 'incomingEdges' has cardinality 0..*, and from 'bpmn_Vertex', the role 'Vertex42' has cardinality 0..*.
+An association connects 'bpmn_Graph' and 'bpmn_SequenceEdge'. From 'bpmn_Graph', the role 'Graph' has cardinality 0..*, and from 'bpmn_SequenceEdge', the role 'sequenceEdges' has cardinality 0..*.
+An association connects 'bpmn_Activity' and 'bpmn_SubProcess'. From 'bpmn_Activity', the role 'Activity45' has cardinality 0..*, and from 'bpmn_SubProcess', the role 'eventHandlerFor' has cardinality 0..*.
+An association connects 'bpmn_SequenceEdge' and 'bpmn_Vertex'. From 'bpmn_SequenceEdge', the role 'SequenceEdge48' has cardinality 0..*, and from 'bpmn_Vertex', the role 'source47' has cardinality 0..*.
+An association connects 'bpmn_Vertex' and 'bpmn_SequenceEdge'. From 'bpmn_Vertex', the role 'target50' has cardinality 0..*, and from 'bpmn_SequenceEdge', the role 'SequenceEdge51' has cardinality 0..*.
+An association connects 'bpmn_Vertex' and 'bpmn_Graph'. From 'bpmn_Vertex', the role 'vertices' has cardinality 0..*, and from 'bpmn_Graph', the role 'Graph53' has cardinality 0..*.

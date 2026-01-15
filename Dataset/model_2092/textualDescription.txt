@@ -1,0 +1,47 @@
+The domain model 'DecisionTree' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'DecisionTreeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'DecisionTree_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'DecisionTree_StructuralVariation' represents an important domain concept.
+It does not declare any attributes.
+
+'DecisionTree_DecisionTreeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'DecisionTree_DecisionTrees' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DecisionTree_EntityType' represents an important domain concept.
+It does not declare any attributes.
+
+'DecisionTree_LeafNode' represents an important domain concept.
+It does not declare any attributes.
+
+'DecisionTree_PropertySpec2' represents an important domain concept.
+It has one attribute: 'needsTypeCheck', which is of type bool.
+
+'DecisionTree_DecisionTreeForEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'DecisionTree_IntermediateNode' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'DecisionTree_LeafNode' is a specialization of 'DecisionTreeNode'.
+The class 'DecisionTree_IntermediateNode' is a specialization of 'DecisionTreeNode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'DecisionTree_DecisionTreeNode' and 'DecisionTree_DecisionTreeNode'. From 'DecisionTree_DecisionTreeNode', the role 'DecisionTree_DecisionTreeNode' has cardinality 0..*, and from 'DecisionTree_DecisionTreeNode', the role 'DecisionTree_DecisionTreeNode0' has cardinality 0..*.
+An association connects 'DecisionTree_DecisionTreeNode' and 'DecisionTree_DecisionTreeNode'. From 'DecisionTree_DecisionTreeNode', the role 'DecisionTree_DecisionTreeNode2' has cardinality 0..*, and from 'DecisionTree_DecisionTreeNode', the role 'DecisionTree_DecisionTreeNode4' has cardinality 0..*.
+An association connects 'DecisionTree_StructuralVariation' and 'DecisionTree_LeafNode'. From 'DecisionTree_StructuralVariation', the role 'DecisionTree_StructuralVariation' has cardinality 0..*, and from 'DecisionTree_LeafNode', the role 'DecisionTree_LeafNode' has cardinality 0..*.
+An association connects 'DecisionTree_IntermediateNode' and 'DecisionTree_PropertySpec2'. From 'DecisionTree_IntermediateNode', the role 'DecisionTree_IntermediateNode' has cardinality 0..*, and from 'DecisionTree_PropertySpec2', the role 'DecisionTree_PropertySpec2' has cardinality 0..*.
+An association connects 'DecisionTree_DecisionTreeForEntity' and 'DecisionTree_DecisionTreeNode'. From 'DecisionTree_DecisionTreeForEntity', the role 'DecisionTree_DecisionTreeForEntity' has cardinality 0..*, and from 'DecisionTree_DecisionTreeNode', the role 'DecisionTree_DecisionTreeNode8' has cardinality 0..*.
+An association connects 'DecisionTree_DecisionTreeForEntity' and 'DecisionTree_EntityType'. From 'DecisionTree_DecisionTreeForEntity', the role 'DecisionTree_DecisionTreeForEntity10' has cardinality 0..*, and from 'DecisionTree_EntityType', the role 'DecisionTree_EntityType' has cardinality 0..*.
+An association connects 'DecisionTree_DecisionTrees' and 'DecisionTree_DecisionTreeForEntity'. From 'DecisionTree_DecisionTrees', the role 'DecisionTree_DecisionTrees' has cardinality 0..*, and from 'DecisionTree_DecisionTreeForEntity', the role 'DecisionTree_DecisionTreeForEntity12' has cardinality 0..*.
+An association connects 'DecisionTree_PropertySpec2' and 'DecisionTree_Property'. From 'DecisionTree_PropertySpec2', the role 'DecisionTree_PropertySpec214' has cardinality 0..*, and from 'DecisionTree_Property', the role 'DecisionTree_Property' has cardinality 0..*.

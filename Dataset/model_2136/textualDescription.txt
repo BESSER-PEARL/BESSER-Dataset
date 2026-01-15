@@ -1,0 +1,20 @@
+The domain model 'transitiongraph' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'transitiongraph_TransitionGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'transitiongraph_State' represents an important domain concept.
+It has the following attributes: 'isInitial', which is of type bool; 'isFinal', which is of type bool; 'id', which is of type int.
+
+'transitiongraph_Transition' represents an important domain concept.
+It has the following attributes: 'probability', which is of type float; 'label', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'transitiongraph_TransitionGraph' and 'transitiongraph_State'. From 'transitiongraph_TransitionGraph', the role 'transitiongraph_TransitionGraph' has cardinality 0..*, and from 'transitiongraph_State', the role 'transitiongraph_State' has cardinality 0..*.
+An association connects 'transitiongraph_TransitionGraph' and 'transitiongraph_Transition'. From 'transitiongraph_TransitionGraph', the role 'transitiongraph_TransitionGraph2' has cardinality 0..*, and from 'transitiongraph_Transition', the role 'transitiongraph_Transition' has cardinality 0..*.
+An association connects 'transitiongraph_State' and 'transitiongraph_Transition'. From 'transitiongraph_State', the role 'source' has cardinality 0..*, and from 'transitiongraph_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'transitiongraph_State' and 'transitiongraph_Transition'. From 'transitiongraph_State', the role 'target' has cardinality 0..*, and from 'transitiongraph_Transition', the role 'Transition5' has cardinality 0..*.
+An association connects 'transitiongraph_Transition' and 'transitiongraph_State'. From 'transitiongraph_Transition', the role 'outgoing' has cardinality 0..*, and from 'transitiongraph_State', the role 'State' has cardinality 0..*.
+An association connects 'transitiongraph_Transition' and 'transitiongraph_State'. From 'transitiongraph_Transition', the role 'incoming' has cardinality 0..*, and from 'transitiongraph_State', the role 'State8' has cardinality 0..*.

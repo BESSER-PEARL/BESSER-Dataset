@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Echtzeitsysteme/java-refactoring-ttc/ecore-files/TTCTest.ecore

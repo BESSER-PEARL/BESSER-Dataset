@@ -1,0 +1,39 @@
+The domain model 'study' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'study_Specialization' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'study_Course' represents an important domain concept.
+It has the following attributes: 'credits', which is of type float; 'code', which is of type str; 'name', which is of type str; 'level', which is of type int.
+
+'study_Programme' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'code', which is of type str; 'duration', which is of type int.
+
+'study_SemesterCourse' represents an important domain concept.
+It has one attribute: 'mandatory', which is of type bool.
+
+'study_Semester' represents an important domain concept.
+It has the following attributes: 'year', which is of type int; 'Season', which is of type str.
+
+'study_Department' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Season' defines the following possible values: 'FALL', 'SPRING'.
+
+Relationships between classes are modeled using associations.
+An association connects 'study_Semester' and 'study_Programme'. From 'study_Semester', the role 'Semester' has cardinality 0..*, and from 'study_Programme', the role 'programme' has cardinality 0..*.
+An association connects 'study_Programme' and 'study_Specialization'. From 'study_Programme', the role 'programme2' has cardinality 0..*, and from 'study_Specialization', the role 'Specialization' has cardinality 0..*.
+An association connects 'study_Department' and 'study_Programme'. From 'study_Department', the role 'Department' has cardinality 0..*, and from 'study_Programme', the role 'programs' has cardinality 0..*.
+An association connects 'study_SemesterCourse' and 'study_Semester'. From 'study_SemesterCourse', the role 'SemesterCourse' has cardinality 0..*, and from 'study_Semester', the role 'semester' has cardinality 0..*.
+An association connects 'study_Programme' and 'study_Semester'. From 'study_Programme', the role 'Programme' has cardinality 0..*, and from 'study_Semester', the role 'semesters' has cardinality 0..*.
+An association connects 'study_Semester' and 'study_Specialization'. From 'study_Semester', the role 'semesters7' has cardinality 0..*, and from 'study_Specialization', the role 'Specialization8' has cardinality 0..*.
+An association connects 'study_Specialization' and 'study_Semester'. From 'study_Specialization', the role 'specialization' has cardinality 0..*, and from 'study_Semester', the role 'Semester10' has cardinality 0..*.
+An association connects 'study_Programme' and 'study_Specialization'. From 'study_Programme', the role 'Programme12' has cardinality 0..*, and from 'study_Specialization', the role 'specializations' has cardinality 0..*.
+An association connects 'study_SemesterCourse' and 'study_Course'. From 'study_SemesterCourse', the role 'study_SemesterCourse' has cardinality 0..*, and from 'study_Course', the role 'study_Course' has cardinality 0..*.
+An association connects 'study_Semester' and 'study_SemesterCourse'. From 'study_Semester', the role 'Semester15' has cardinality 0..*, and from 'study_SemesterCourse', the role 'courses' has cardinality 0..*.
+An association connects 'study_Department' and 'study_Course'. From 'study_Department', the role 'Department18' has cardinality 0..*, and from 'study_Course', the role 'courses17' has cardinality 0..*.
+An association connects 'study_Course' and 'study_Department'. From 'study_Course', the role 'Course' has cardinality 0..*, and from 'study_Department', the role 'department' has cardinality 0..*.
+An association connects 'study_Programme' and 'study_Department'. From 'study_Programme', the role 'Programme22' has cardinality 0..*, and from 'study_Department', the role 'department21' has cardinality 0..*.

@@ -1,0 +1,84 @@
+The domain model 'afmmm' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'afmmm_Mutex' represents an important domain concept.
+It does not declare any attributes.
+
+'afmmm_Boolean' represents an important domain concept.
+It does not declare any attributes.
+
+'afmmm_Integer' represents an important domain concept.
+It does not declare any attributes.
+
+'afmmm_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'afmmm_AttributedFeatureDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'afmmm_XOr' represents an important domain concept.
+It does not declare any attributes.
+
+'afmmm_Feature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'afmmm_Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'afmmm_CrossTreeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'afmmm_Optional' represents an important domain concept.
+It does not declare any attributes.
+
+'afmmm_Real' represents an important domain concept.
+It does not declare any attributes.
+
+'afmmm_AttributedFeatureModel' represents an important domain concept.
+It does not declare any attributes.
+
+'afmmm_EClass0' represents an important domain concept.
+It does not declare any attributes.
+
+'afmmm_Mandatory' represents an important domain concept.
+It does not declare any attributes.
+
+'afmmm_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'afmmm_Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'afmmm_Enum' represents an important domain concept.
+It has one attribute: 'literals', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'afmmm_Mandatory' is a specialization of 'Relation'.
+The class 'afmmm_Optional' is a specialization of 'Relation'.
+The class 'afmmm_Mutex' is a specialization of 'Relation'.
+The class 'afmmm_XOr' is a specialization of 'Relation'.
+The class 'afmmm_Or' is a specialization of 'Relation'.
+The class 'afmmm_Boolean' is a specialization of 'Domain'.
+The class 'afmmm_Integer' is a specialization of 'Domain'.
+The class 'afmmm_Real' is a specialization of 'Domain'.
+The class 'afmmm_Enum' is a specialization of 'Domain'.
+
+Relationships between classes are modeled using associations.
+An association connects 'afmmm_Feature' and 'afmmm_AttributedFeatureDiagram'. From 'afmmm_Feature', the role 'afmmm_Feature' has cardinality 0..*, and from 'afmmm_AttributedFeatureDiagram', the role 'afmmm_AttributedFeatureDiagram' has cardinality 0..*.
+An association connects 'afmmm_AttributedFeatureDiagram' and 'afmmm_Feature'. From 'afmmm_AttributedFeatureDiagram', the role 'afmmm_AttributedFeatureDiagram2' has cardinality 0..*, and from 'afmmm_Feature', the role 'afmmm_Feature3' has cardinality 0..*.
+An association connects 'afmmm_AttributedFeatureDiagram' and 'afmmm_CrossTreeConstraint'. From 'afmmm_AttributedFeatureDiagram', the role 'afmmm_AttributedFeatureDiagram5' has cardinality 0..*, and from 'afmmm_CrossTreeConstraint', the role 'afmmm_CrossTreeConstraint' has cardinality 0..*.
+An association connects 'afmmm_AttributedFeatureDiagram' and 'afmmm_Relation'. From 'afmmm_AttributedFeatureDiagram', the role 'afmmm_AttributedFeatureDiagram7' has cardinality 0..*, and from 'afmmm_Relation', the role 'afmmm_Relation' has cardinality 0..*.
+An association connects 'afmmm_Attribute' and 'afmmm_Feature'. From 'afmmm_Attribute', the role 'afmmm_Attribute' has cardinality 0..*, and from 'afmmm_Feature', the role 'afmmm_Feature9' has cardinality 0..*.
+An association connects 'afmmm_Relation' and 'afmmm_Feature'. From 'afmmm_Relation', the role 'afmmm_Relation11' has cardinality 0..*, and from 'afmmm_Feature', the role 'afmmm_Feature12' has cardinality 0..*.
+An association connects 'afmmm_Relation' and 'afmmm_Feature'. From 'afmmm_Relation', the role 'afmmm_Relation14' has cardinality 0..*, and from 'afmmm_Feature', the role 'afmmm_Feature15' has cardinality 0..*.
+An association connects 'afmmm_AttributedFeatureDiagram' and 'afmmm_AttributedFeatureModel'. From 'afmmm_AttributedFeatureDiagram', the role 'afmmm_AttributedFeatureDiagram17' has cardinality 0..*, and from 'afmmm_AttributedFeatureModel', the role 'afmmm_AttributedFeatureModel' has cardinality 0..*.
+An association connects 'afmmm_AttributedFeatureModel' and 'afmmm_CrossTreeConstraint'. From 'afmmm_AttributedFeatureModel', the role 'afmmm_AttributedFeatureModel19' has cardinality 0..*, and from 'afmmm_CrossTreeConstraint', the role 'afmmm_CrossTreeConstraint20' has cardinality 0..*.
+An association connects 'afmmm_Domain' and 'afmmm_AttributedFeatureModel'. From 'afmmm_Domain', the role 'afmmm_Domain' has cardinality 0..*, and from 'afmmm_AttributedFeatureModel', the role 'afmmm_AttributedFeatureModel22' has cardinality 0..*.
+An association connects 'afmmm_Attribute' and 'afmmm_Domain'. From 'afmmm_Attribute', the role 'afmmm_Attribute24' has cardinality 0..*, and from 'afmmm_Domain', the role 'afmmm_Domain25' has cardinality 0..*.

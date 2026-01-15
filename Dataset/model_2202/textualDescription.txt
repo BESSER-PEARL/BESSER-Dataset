@@ -1,0 +1,25 @@
+The domain model 'MMTree' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'MMTree_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'TreeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MMTree_TreeElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MMTree_Leaf' represents an important domain concept.
+It has one attribute: 'size', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'LeafSize' defines the following possible values: 'medium', 'big', 'small'.
+
+The model also captures inheritance relationships between classes.
+The class 'MMTree_Node' is a specialization of 'TreeElement'.
+The class 'MMTree_Leaf' is a specialization of 'TreeElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'MMTree_TreeElement' and 'MMTree_Node'. From 'MMTree_TreeElement', the role 'MMTree_TreeElement' has cardinality 0..*, and from 'MMTree_Node', the role 'MMTree_Node' has cardinality 0..*.

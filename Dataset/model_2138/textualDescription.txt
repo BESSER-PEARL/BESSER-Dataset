@@ -1,0 +1,96 @@
+The domain model 'UML_Activity_mine' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'UML_Activity_mine_ActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Activity_mine_Action' represents an important domain concept.
+It has the following attributes: 'outputs', which is of type str; 'inputs', which is of type str.
+
+'UML_Activity_mine_ExpansionRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Activity_mine_Fork' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Activity_mine_ActivityEdge' represents an important domain concept.
+It has one attribute: 'objectFlow', which is of type bool.
+
+'UML_Activity_mine_ActivityParameterNode' represents an important domain concept.
+It has one attribute: 'parameter', which is of type str.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Activity_mine_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Activity_mine_Element' represents an important domain concept.
+It has the following attributes: 'elementID', which is of type str; 'properties', which is of type str; 'name', which is of type str.
+
+'UML_Activity_mine_ExpansionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Activity_mine_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Activity_mine_DatastoreNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Activity_mine_Join' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Activity_mine_ActivityInitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Activity_mine_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Activity_mine_ObjectNode' represents an important domain concept.
+It has the following attributes: 'upperBound', which is of type str; 'objects', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Status' defines the following possible values: 'INACTIVE', 'ACTIVE', 'DONE'.
+The enumeration 'ExpansionMode' defines the following possible values: 'ITERATIVE', 'PARALLEL'.
+The enumeration 'Direction' defines the following possible values: 'OUT', 'IN'.
+
+The model also captures inheritance relationships between classes.
+The class 'UML_Activity_mine_Activity' is a specialization of 'Element'.
+The class 'UML_Activity_mine_ActivityEdge' is a specialization of 'Element'.
+The class 'UML_Activity_mine_ActivityNode' is a specialization of 'Element'.
+The class 'UML_Activity_mine_ControlNode' is a specialization of 'ActivityNode'.
+The class 'UML_Activity_mine_ObjectNode' is a specialization of 'ActivityNode'.
+The class 'UML_Activity_mine_Action' is a specialization of 'ActivityNode'.
+The class 'UML_Activity_mine_Fork' is a specialization of 'ControlNode'.
+The class 'UML_Activity_mine_Join' is a specialization of 'ControlNode'.
+The class 'UML_Activity_mine_ActivityInitialNode' is a specialization of 'ControlNode'.
+The class 'UML_Activity_mine_ActivityFinalNode' is a specialization of 'ControlNode'.
+The class 'UML_Activity_mine_DatastoreNode' is a specialization of 'ObjectNode'.
+The class 'UML_Activity_mine_ActivityParameterNode' is a specialization of 'ObjectNode'.
+The class 'UML_Activity_mine_ExpansionNode' is a specialization of 'ObjectNode'.
+The class 'UML_Activity_mine_ExpansionRegion' is a specialization of 'Action'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UML_Activity_mine_Activity' and 'UML_Activity_mine_ActivityNode'. From 'UML_Activity_mine_Activity', the role 'UML_Activity_mine_Activity' has cardinality 0..*, and from 'UML_Activity_mine_ActivityNode', the role 'UML_Activity_mine_ActivityNode' has cardinality 0..*.
+An association connects 'UML_Activity_mine_Activity' and 'UML_Activity_mine_ActivityEdge'. From 'UML_Activity_mine_Activity', the role 'UML_Activity_mine_Activity2' has cardinality 0..*, and from 'UML_Activity_mine_ActivityEdge', the role 'UML_Activity_mine_ActivityEdge' has cardinality 0..*.
+An association connects 'UML_Activity_mine_ActivityNode' and 'UML_Activity_mine_ActivityEdge'. From 'UML_Activity_mine_ActivityNode', the role 'ActivityNode' has cardinality 0..*, and from 'UML_Activity_mine_ActivityEdge', the role 'incoming' has cardinality 0..*.
+An association connects 'UML_Activity_mine_ActivityEdge' and 'UML_Activity_mine_ActivityNode'. From 'UML_Activity_mine_ActivityEdge', the role 'outgoing' has cardinality 0..*, and from 'UML_Activity_mine_ActivityNode', the role 'ActivityNode5' has cardinality 0..*.
+An association connects 'UML_Activity_mine_ActivityEdge' and 'UML_Activity_mine_ActivityNode'. From 'UML_Activity_mine_ActivityEdge', the role 'ActivityEdge' has cardinality 0..*, and from 'UML_Activity_mine_ActivityNode', the role 'target' has cardinality 0..*.
+An association connects 'UML_Activity_mine_ActivityNode' and 'UML_Activity_mine_ActivityEdge'. From 'UML_Activity_mine_ActivityNode', the role 'source' has cardinality 0..*, and from 'UML_Activity_mine_ActivityEdge', the role 'ActivityEdge8' has cardinality 0..*.
+An association connects 'UML_Activity_mine_ExpansionNode' and 'UML_Activity_mine_ExpansionRegion'. From 'UML_Activity_mine_ExpansionNode', the role 'UML_Activity_mine_ExpansionNode' has cardinality 0..*, and from 'UML_Activity_mine_ExpansionRegion', the role 'UML_Activity_mine_ExpansionRegion' has cardinality 0..*.
+An association connects 'UML_Activity_mine_ExpansionNode' and 'UML_Activity_mine_ExpansionRegion'. From 'UML_Activity_mine_ExpansionNode', the role 'UML_Activity_mine_ExpansionNode12' has cardinality 0..*, and from 'UML_Activity_mine_ExpansionRegion', the role 'UML_Activity_mine_ExpansionRegion11' has cardinality 0..*.
+An association connects 'UML_Activity_mine_ActivityEdge' and 'UML_Activity_mine_ExpansionRegion'. From 'UML_Activity_mine_ActivityEdge', the role 'UML_Activity_mine_ActivityEdge15' has cardinality 0..*, and from 'UML_Activity_mine_ExpansionRegion', the role 'UML_Activity_mine_ExpansionRegion14' has cardinality 0..*.
+An association connects 'UML_Activity_mine_ExpansionRegion' and 'UML_Activity_mine_ActivityNode'. From 'UML_Activity_mine_ExpansionRegion', the role 'UML_Activity_mine_ExpansionRegion17' has cardinality 0..*, and from 'UML_Activity_mine_ActivityNode', the role 'UML_Activity_mine_ActivityNode18' has cardinality 0..*.

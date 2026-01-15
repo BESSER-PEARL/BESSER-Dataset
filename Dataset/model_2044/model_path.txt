@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/hckkid/eTrice/plugins/org.eclipse.etrice.core.room/src-gen/org/eclipse/etrice/core/Room.ecore

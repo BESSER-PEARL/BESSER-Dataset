@@ -1,0 +1,66 @@
+The domain model 'studyprogramme' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'studyprogramme_Programme' represents an important domain concept.
+It has the following attributes: 'programmeType', which is of type str; 'programmeCode', which is of type str; 'name', which is of type str; 'numberOfYears', which is of type int.
+
+'studyprogramme_Semester' represents an important domain concept.
+It has one attribute: 'semesterNumber', which is of type int.
+
+'studyprogramme_University' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SemesterContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'studyprogramme_CompulsoryCourseSlot' represents an important domain concept.
+It does not declare any attributes.
+
+'CourseSlot' represents an important domain concept.
+It does not declare any attributes.
+
+'studyprogramme_Course' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'courseCode', which is of type str; 'level', which is of type int; 'displayedName', which is of type str; 'credits', which is of type float.
+
+'studyprogramme_CourseSlot' represents an important domain concept.
+It does not declare any attributes.
+
+'studyprogramme_ElectiveCourseList' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'studyprogramme_ElectiveCourseSlot' represents an important domain concept.
+It does not declare any attributes.
+
+'studyprogramme_SemesterContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'studyprogramme_Specialization' represents an important domain concept.
+It has the following attributes: 'selectionSemester', which is of type int; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ProgrammeCode' defines the following possible values: 'MTPROD', 'MTIOT', 'BIT', 'MIT', 'MTDT', 'MIDT'.
+The enumeration 'ProgrammeType' defines the following possible values: 'Bachelors', 'Masters', 'IntegratedMaster'.
+
+The model also captures inheritance relationships between classes.
+The class 'studyprogramme_Programme' is a specialization of 'SemesterContainer'.
+The class 'studyprogramme_Specialization' is a specialization of 'SemesterContainer'.
+The class 'studyprogramme_ElectiveCourseSlot' is a specialization of 'CourseSlot'.
+The class 'studyprogramme_CompulsoryCourseSlot' is a specialization of 'CourseSlot'.
+
+Relationships between classes are modeled using associations.
+An association connects 'studyprogramme_Specialization' and 'studyprogramme_Programme'. From 'studyprogramme_Specialization', the role 'Specialization' has cardinality 0..*, and from 'studyprogramme_Programme', the role 'programme' has cardinality 0..*.
+An association connects 'studyprogramme_Specialization' and 'studyprogramme_Programme'. From 'studyprogramme_Specialization', the role 'specializations' has cardinality 0..*, and from 'studyprogramme_Programme', the role 'Programme' has cardinality 0..*.
+An association connects 'studyprogramme_Specialization' and 'studyprogramme_Specialization'. From 'studyprogramme_Specialization', the role 'parrentSpecialisation' has cardinality 0..*, and from 'studyprogramme_Specialization', the role 'Specialization4' has cardinality 0..*.
+An association connects 'studyprogramme_Specialization' and 'studyprogramme_Specialization'. From 'studyprogramme_Specialization', the role 'Specialization7' has cardinality 0..*, and from 'studyprogramme_Specialization', the role 'subSpecialisations' has cardinality 0..*.
+An association connects 'studyprogramme_Semester' and 'studyprogramme_CourseSlot'. From 'studyprogramme_Semester', the role 'studyprogramme_Semester' has cardinality 0..*, and from 'studyprogramme_CourseSlot', the role 'studyprogramme_CourseSlot' has cardinality 0..*.
+An association connects 'studyprogramme_Course' and 'studyprogramme_CourseSlot'. From 'studyprogramme_Course', the role 'studyprogramme_Course' has cardinality 0..*, and from 'studyprogramme_CourseSlot', the role 'studyprogramme_CourseSlot10' has cardinality 0..*.
+An association connects 'studyprogramme_Semester' and 'studyprogramme_SemesterContainer'. From 'studyprogramme_Semester', the role 'studyprogramme_Semester12' has cardinality 0..*, and from 'studyprogramme_SemesterContainer', the role 'studyprogramme_SemesterContainer' has cardinality 0..*.
+An association connects 'studyprogramme_Course' and 'studyprogramme_ElectiveCourseList'. From 'studyprogramme_Course', the role 'studyprogramme_Course14' has cardinality 0..*, and from 'studyprogramme_ElectiveCourseList', the role 'studyprogramme_ElectiveCourseList' has cardinality 0..*.
+An association connects 'studyprogramme_ElectiveCourseList' and 'studyprogramme_ElectiveCourseSlot'. From 'studyprogramme_ElectiveCourseList', the role 'electiveCourseList' has cardinality 0..*, and from 'studyprogramme_ElectiveCourseSlot', the role 'ElectiveCourseSlot' has cardinality 0..*.
+An association connects 'studyprogramme_Programme' and 'studyprogramme_University'. From 'studyprogramme_Programme', the role 'studyprogramme_Programme' has cardinality 0..*, and from 'studyprogramme_University', the role 'studyprogramme_University' has cardinality 0..*.
+An association connects 'studyprogramme_Course' and 'studyprogramme_University'. From 'studyprogramme_Course', the role 'studyprogramme_Course19' has cardinality 0..*, and from 'studyprogramme_University', the role 'studyprogramme_University18' has cardinality 0..*.
+An association connects 'studyprogramme_University' and 'studyprogramme_Semester'. From 'studyprogramme_University', the role 'studyprogramme_University21' has cardinality 0..*, and from 'studyprogramme_Semester', the role 'studyprogramme_Semester22' has cardinality 0..*.
+An association connects 'studyprogramme_University' and 'studyprogramme_Specialization'. From 'studyprogramme_University', the role 'studyprogramme_University24' has cardinality 0..*, and from 'studyprogramme_Specialization', the role 'studyprogramme_Specialization' has cardinality 0..*.
+An association connects 'studyprogramme_ElectiveCourseSlot' and 'studyprogramme_ElectiveCourseList'. From 'studyprogramme_ElectiveCourseSlot', the role 'electiveCourseSlot' has cardinality 0..*, and from 'studyprogramme_ElectiveCourseList', the role 'ElectiveCourseList' has cardinality 0..*.
+An association connects 'studyprogramme_ElectiveCourseSlot' and 'studyprogramme_Course'. From 'studyprogramme_ElectiveCourseSlot', the role 'studyprogramme_ElectiveCourseSlot' has cardinality 0..*, and from 'studyprogramme_Course', the role 'studyprogramme_Course27' has cardinality 0..*.

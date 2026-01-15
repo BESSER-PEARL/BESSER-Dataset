@@ -1,0 +1,51 @@
+The domain model 'graphEditor' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'graphEditor_GraphElement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'graphEditor_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'graphEditor_Factornode' represents an important domain concept.
+It has the following attributes: 'values', which is of type str; 'type', which is of type str.
+
+'graphEditor_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'graphEditor_Graph' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'result', which is of type str.
+
+'graphEditor_Message' represents an important domain concept.
+It has the following attributes: 'count', which is of type int; 'type', which is of type str.
+
+'graphEditor_Variablenode' represents an important domain concept.
+It has the following attributes: 'isKnown', which is of type bool; 'type', which is of type str; 'values', which is of type float.
+
+'GraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VariableType' defines the following possible values: 'Categorial', 'Real', 'Boolean'.
+The enumeration 'FunctionType' defines the following possible values: 'Gausian', 'Boolean'.
+The enumeration 'MessageType' defines the following possible values: 'MarginalEdge', 'VariableToFactor'.
+
+The model also captures inheritance relationships between classes.
+The class 'graphEditor_Node' is a specialization of 'GraphElement'.
+The class 'graphEditor_Factornode' is a specialization of 'Node'.
+The class 'graphEditor_Variablenode' is a specialization of 'Node'.
+The class 'graphEditor_Message' is a specialization of 'GraphElement'.
+The class 'graphEditor_Edge' is a specialization of 'GraphElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'graphEditor_Node' and 'graphEditor_Graph'. From 'graphEditor_Node', the role 'graphEditor_Node' has cardinality 0..*, and from 'graphEditor_Graph', the role 'graphEditor_Graph' has cardinality 0..*.
+An association connects 'graphEditor_Graph' and 'graphEditor_Edge'. From 'graphEditor_Graph', the role 'graphEditor_Graph2' has cardinality 0..*, and from 'graphEditor_Edge', the role 'graphEditor_Edge' has cardinality 0..*.
+An association connects 'graphEditor_Message' and 'graphEditor_Graph'. From 'graphEditor_Message', the role 'graphEditor_Message' has cardinality 0..*, and from 'graphEditor_Graph', the role 'graphEditor_Graph4' has cardinality 0..*.
+An association connects 'graphEditor_Node' and 'graphEditor_Message'. From 'graphEditor_Node', the role 'graphEditor_Node7' has cardinality 0..*, and from 'graphEditor_Message', the role 'graphEditor_Message6' has cardinality 0..*.
+An association connects 'graphEditor_Message' and 'graphEditor_Node'. From 'graphEditor_Message', the role 'graphEditor_Message9' has cardinality 0..*, and from 'graphEditor_Node', the role 'graphEditor_Node10' has cardinality 0..*.
+An association connects 'graphEditor_Edge' and 'graphEditor_Node'. From 'graphEditor_Edge', the role 'graphEditor_Edge12' has cardinality 0..*, and from 'graphEditor_Node', the role 'graphEditor_Node13' has cardinality 0..*.
+An association connects 'graphEditor_Node' and 'graphEditor_Edge'. From 'graphEditor_Node', the role 'graphEditor_Node16' has cardinality 0..*, and from 'graphEditor_Edge', the role 'graphEditor_Edge15' has cardinality 0..*.

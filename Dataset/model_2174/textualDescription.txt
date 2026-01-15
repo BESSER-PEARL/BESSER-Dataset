@@ -1,0 +1,29 @@
+The domain model 'controlflow' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'controlflow_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'controlflow_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'controlflow_Branch' represents an important domain concept.
+It does not declare any attributes.
+
+'controlflow_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'controlflow_Command' is a specialization of 'Node'.
+The class 'controlflow_Branch' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'controlflow_Node' and 'controlflow_Node'. From 'controlflow_Node', the role 'controlflow_Node' has cardinality 0..*, and from 'controlflow_Node', the role 'controlflow_Node0' has cardinality 0..*.
+An association connects 'controlflow_Node' and 'controlflow_Graph'. From 'controlflow_Node', the role 'controlflow_Node3' has cardinality 0..*, and from 'controlflow_Graph', the role 'controlflow_Graph' has cardinality 0..*.
+An association connects 'controlflow_Node' and 'controlflow_Graph'. From 'controlflow_Node', the role 'controlflow_Node6' has cardinality 0..*, and from 'controlflow_Graph', the role 'controlflow_Graph5' has cardinality 0..*.
+An association connects 'controlflow_Branch' and 'controlflow_Node'. From 'controlflow_Branch', the role 'controlflow_Branch' has cardinality 0..*, and from 'controlflow_Node', the role 'controlflow_Node8' has cardinality 0..*.
+An association connects 'controlflow_Node' and 'controlflow_Branch'. From 'controlflow_Node', the role 'controlflow_Node11' has cardinality 0..*, and from 'controlflow_Branch', the role 'controlflow_Branch10' has cardinality 0..*.

@@ -1,0 +1,46 @@
+The domain model 'rpslPerceptionGraphMetaModel' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'rpslPerceptionGraphMetaModel_Element' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'doc', which is of type str.
+
+'rpslPerceptionGraphMetaModel_Prototype' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'rpslPerceptionGraphMetaModel_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'rpslPerceptionGraphMetaModel_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'rpslPerceptionGraphMetaModel_InputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'rpslPerceptionGraphMetaModel_PerceptionGraph' represents an important domain concept.
+It has the following attributes: 'uuid', which is of type str; 'doc', which is of type str; 'name', which is of type str.
+
+'rpslPerceptionGraphMetaModel_OutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'rpslPerceptionGraphMetaModel_Leaf' represents an important domain concept.
+It does not declare any attributes.
+
+'rpslPerceptionGraphMetaModel_Connection' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'rpslPerceptionGraphMetaModel_Leaf' is a specialization of 'Element'.
+The class 'rpslPerceptionGraphMetaModel_Node' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rpslPerceptionGraphMetaModel_PerceptionGraph' and 'rpslPerceptionGraphMetaModel_Element'. From 'rpslPerceptionGraphMetaModel_PerceptionGraph', the role 'rpslPerceptionGraphMetaModel_PerceptionGraph' has cardinality 0..*, and from 'rpslPerceptionGraphMetaModel_Element', the role 'rpslPerceptionGraphMetaModel_Element' has cardinality 0..*.
+An association connects 'rpslPerceptionGraphMetaModel_Prototype' and 'rpslPerceptionGraphMetaModel_PerceptionGraph'. From 'rpslPerceptionGraphMetaModel_Prototype', the role 'rpslPerceptionGraphMetaModel_Prototype' has cardinality 0..*, and from 'rpslPerceptionGraphMetaModel_PerceptionGraph', the role 'rpslPerceptionGraphMetaModel_PerceptionGraph2' has cardinality 0..*.
+An association connects 'rpslPerceptionGraphMetaModel_Element' and 'rpslPerceptionGraphMetaModel_Component'. From 'rpslPerceptionGraphMetaModel_Element', the role 'rpslPerceptionGraphMetaModel_Element4' has cardinality 0..*, and from 'rpslPerceptionGraphMetaModel_Component', the role 'rpslPerceptionGraphMetaModel_Component' has cardinality 0..*.
+An association connects 'rpslPerceptionGraphMetaModel_Node' and 'rpslPerceptionGraphMetaModel_Connection'. From 'rpslPerceptionGraphMetaModel_Node', the role 'rpslPerceptionGraphMetaModel_Node' has cardinality 0..*, and from 'rpslPerceptionGraphMetaModel_Connection', the role 'rpslPerceptionGraphMetaModel_Connection' has cardinality 0..*.
+An association connects 'rpslPerceptionGraphMetaModel_Element' and 'rpslPerceptionGraphMetaModel_Connection'. From 'rpslPerceptionGraphMetaModel_Element', the role 'rpslPerceptionGraphMetaModel_Element8' has cardinality 0..*, and from 'rpslPerceptionGraphMetaModel_Connection', the role 'rpslPerceptionGraphMetaModel_Connection7' has cardinality 0..*.
+An association connects 'rpslPerceptionGraphMetaModel_InputPort' and 'rpslPerceptionGraphMetaModel_Connection'. From 'rpslPerceptionGraphMetaModel_InputPort', the role 'rpslPerceptionGraphMetaModel_InputPort' has cardinality 0..*, and from 'rpslPerceptionGraphMetaModel_Connection', the role 'rpslPerceptionGraphMetaModel_Connection10' has cardinality 0..*.
+An association connects 'rpslPerceptionGraphMetaModel_Connection' and 'rpslPerceptionGraphMetaModel_OutputPort'. From 'rpslPerceptionGraphMetaModel_Connection', the role 'rpslPerceptionGraphMetaModel_Connection12' has cardinality 0..*, and from 'rpslPerceptionGraphMetaModel_OutputPort', the role 'rpslPerceptionGraphMetaModel_OutputPort' has cardinality 0..*.

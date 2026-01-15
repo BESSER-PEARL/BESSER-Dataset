@@ -1,0 +1,39 @@
+The domain model 'tDT4250_asssignment1_2' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'tDT4250_asssignment1_2_Specialization' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'tDT4250_asssignment1_2_Course' represents an important domain concept.
+It has the following attributes: 'StartDate', which is of type str; 'Code', which is of type str; 'Credits', which is of type float; 'ExamDate', which is of type str; 'Name', which is of type str.
+
+'tDT4250_asssignment1_2_Department' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'tDT4250_asssignment1_2_Semester' represents an important domain concept.
+It has the following attributes: 'Credits', which is of type str; 'Number', which is of type int.
+
+'tDT4250_asssignment1_2_Semester_Course' represents an important domain concept.
+It has the following attributes: 'Mandatory', which is of type bool; 'Fall_or_spring', which is of type str.
+
+'tDT4250_asssignment1_2_Program' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'Credits', which is of type str.
+
+'tDT4250_asssignment1_2_Program_course' represents an important domain concept.
+It has the following attributes: 'Fall_or_spring', which is of type str; 'Mandatory', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Fall_or_spring' defines the following possible values: 'Spring', 'Fall'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tDT4250_asssignment1_2_Specialization' and 'tDT4250_asssignment1_2_Program'. From 'tDT4250_asssignment1_2_Specialization', the role 'tDT4250_asssignment1_2_Specialization' has cardinality 0..*, and from 'tDT4250_asssignment1_2_Program', the role 'tDT4250_asssignment1_2_Program' has cardinality 0..*.
+An association connects 'tDT4250_asssignment1_2_Program_course' and 'tDT4250_asssignment1_2_Program'. From 'tDT4250_asssignment1_2_Program_course', the role 'tDT4250_asssignment1_2_Program_course' has cardinality 0..*, and from 'tDT4250_asssignment1_2_Program', the role 'tDT4250_asssignment1_2_Program2' has cardinality 0..*.
+An association connects 'tDT4250_asssignment1_2_Program' and 'tDT4250_asssignment1_2_Semester'. From 'tDT4250_asssignment1_2_Program', the role 'tDT4250_asssignment1_2_Program4' has cardinality 0..*, and from 'tDT4250_asssignment1_2_Semester', the role 'tDT4250_asssignment1_2_Semester' has cardinality 0..*.
+An association connects 'tDT4250_asssignment1_2_Semester' and 'tDT4250_asssignment1_2_Specialization'. From 'tDT4250_asssignment1_2_Semester', the role 'tDT4250_asssignment1_2_Semester7' has cardinality 0..*, and from 'tDT4250_asssignment1_2_Specialization', the role 'tDT4250_asssignment1_2_Specialization6' has cardinality 0..*.
+An association connects 'tDT4250_asssignment1_2_Specialization' and 'tDT4250_asssignment1_2_Specialization'. From 'tDT4250_asssignment1_2_Specialization', the role 'tDT4250_asssignment1_2_Specialization8' has cardinality 0..*, and from 'tDT4250_asssignment1_2_Specialization', the role 'tDT4250_asssignment1_2_Specialization10' has cardinality 0..*.
+An association connects 'tDT4250_asssignment1_2_Semester' and 'tDT4250_asssignment1_2_Semester_Course'. From 'tDT4250_asssignment1_2_Semester', the role 'tDT4250_asssignment1_2_Semester12' has cardinality 0..*, and from 'tDT4250_asssignment1_2_Semester_Course', the role 'tDT4250_asssignment1_2_Semester_Course' has cardinality 0..*.
+An association connects 'tDT4250_asssignment1_2_Course' and 'tDT4250_asssignment1_2_Semester_Course'. From 'tDT4250_asssignment1_2_Course', the role 'tDT4250_asssignment1_2_Course' has cardinality 0..*, and from 'tDT4250_asssignment1_2_Semester_Course', the role 'tDT4250_asssignment1_2_Semester_Course14' has cardinality 0..*.
+An association connects 'tDT4250_asssignment1_2_Course' and 'tDT4250_asssignment1_2_Program_course'. From 'tDT4250_asssignment1_2_Course', the role 'tDT4250_asssignment1_2_Course17' has cardinality 0..*, and from 'tDT4250_asssignment1_2_Program_course', the role 'tDT4250_asssignment1_2_Program_course16' has cardinality 0..*.
+An association connects 'tDT4250_asssignment1_2_Department' and 'tDT4250_asssignment1_2_Course'. From 'tDT4250_asssignment1_2_Department', the role 'tDT4250_asssignment1_2_Department' has cardinality 0..*, and from 'tDT4250_asssignment1_2_Course', the role 'tDT4250_asssignment1_2_Course19' has cardinality 0..*.
+An association connects 'tDT4250_asssignment1_2_Department' and 'tDT4250_asssignment1_2_Program'. From 'tDT4250_asssignment1_2_Department', the role 'tDT4250_asssignment1_2_Department21' has cardinality 0..*, and from 'tDT4250_asssignment1_2_Program', the role 'tDT4250_asssignment1_2_Program22' has cardinality 0..*.

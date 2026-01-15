@@ -1,0 +1,177 @@
+The domain model 'activitydiagram' describes the core structural elements and their relationships within the system.
+
+The model defines 41 main class(es).
+
+'activitydiagram_Input' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_ForkedToken' represents an important domain concept.
+It has one attribute: 'remainingOffersCount', which is of type int.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_ForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_MergeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_ControlToken' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_OpaqueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_IntegerVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_Context' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_JoinNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_IntegerValue' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'activitydiagram_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_BooleanValue' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'activitydiagram_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_NamedActivity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NamedActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_DecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_Offer' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_ActivityNode' represents an important domain concept.
+It has one attribute: 'running', which is of type bool.
+
+'activitydiagram_Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_ActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_InputValue' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_BooleanVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'Token' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'activitydiagram_Activity' is a specialization of 'NamedActivity'.
+The class 'activitydiagram_ActivityNode' is a specialization of 'NamedActivity'.
+The class 'activitydiagram_ActivityEdge' is a specialization of 'NamedActivity'.
+The class 'activitydiagram_ControlFlow' is a specialization of 'ActivityEdge'.
+The class 'activitydiagram_ControlNode' is a specialization of 'ActivityNode'.
+The class 'activitydiagram_ExecutableNode' is a specialization of 'ActivityNode'.
+The class 'activitydiagram_Action' is a specialization of 'ExecutableNode'.
+The class 'activitydiagram_OpaqueAction' is a specialization of 'Action'.
+The class 'activitydiagram_InitialNode' is a specialization of 'ControlNode'.
+The class 'activitydiagram_FinalNode' is a specialization of 'ControlNode'.
+The class 'activitydiagram_ActivityFinalNode' is a specialization of 'FinalNode'.
+The class 'activitydiagram_ForkNode' is a specialization of 'ControlNode'.
+The class 'activitydiagram_JoinNode' is a specialization of 'ControlNode'.
+The class 'activitydiagram_MergeNode' is a specialization of 'ControlNode'.
+The class 'activitydiagram_DecisionNode' is a specialization of 'ControlNode'.
+The class 'activitydiagram_BooleanVariable' is a specialization of 'Variable'.
+The class 'activitydiagram_BooleanValue' is a specialization of 'Value'.
+The class 'activitydiagram_IntegerValue' is a specialization of 'Value'.
+The class 'activitydiagram_IntegerVariable' is a specialization of 'Variable'.
+The class 'activitydiagram_ControlToken' is a specialization of 'Token'.
+The class 'activitydiagram_ForkedToken' is a specialization of 'Token'.
+
+Relationships between classes are modeled using associations.
+An association connects 'activitydiagram_ActivityNode' and 'activitydiagram_Activity'. From 'activitydiagram_ActivityNode', the role 'ActivityNode' has cardinality 0..*, and from 'activitydiagram_Activity', the role 'activity' has cardinality 0..*.
+An association connects 'activitydiagram_ActivityEdge' and 'activitydiagram_Activity'. From 'activitydiagram_ActivityEdge', the role 'activitydiagram_ActivityEdge' has cardinality 0..*, and from 'activitydiagram_Activity', the role 'activitydiagram_Activity' has cardinality 0..*.
+An association connects 'activitydiagram_Activity' and 'activitydiagram_Variable'. From 'activitydiagram_Activity', the role 'activitydiagram_Activity3' has cardinality 0..*, and from 'activitydiagram_Variable', the role 'activitydiagram_Variable' has cardinality 0..*.
+An association connects 'activitydiagram_Variable' and 'activitydiagram_Activity'. From 'activitydiagram_Variable', the role 'activitydiagram_Variable6' has cardinality 0..*, and from 'activitydiagram_Activity', the role 'activitydiagram_Activity5' has cardinality 0..*.
+An association connects 'activitydiagram_ActivityNode' and 'activitydiagram_ActivityEdge'. From 'activitydiagram_ActivityNode', the role 'source' has cardinality 0..*, and from 'activitydiagram_ActivityEdge', the role 'ActivityEdge' has cardinality 0..*.
+An association connects 'activitydiagram_ActivityEdge' and 'activitydiagram_ActivityNode'. From 'activitydiagram_ActivityEdge', the role 'ActivityEdge9' has cardinality 0..*, and from 'activitydiagram_ActivityNode', the role 'target' has cardinality 0..*.
+An association connects 'activitydiagram_Activity' and 'activitydiagram_ActivityNode'. From 'activitydiagram_Activity', the role 'Activity' has cardinality 0..*, and from 'activitydiagram_ActivityNode', the role 'nodes' has cardinality 0..*.
+An association connects 'activitydiagram_ActivityNode' and 'activitydiagram_Token'. From 'activitydiagram_ActivityNode', the role 'holder' has cardinality 0..*, and from 'activitydiagram_Token', the role 'Token' has cardinality 0..*.
+An association connects 'activitydiagram_ActivityEdge' and 'activitydiagram_ActivityNode'. From 'activitydiagram_ActivityEdge', the role 'outgoing' has cardinality 0..*, and from 'activitydiagram_ActivityNode', the role 'ActivityNode13' has cardinality 0..*.
+An association connects 'activitydiagram_ActivityNode' and 'activitydiagram_ActivityEdge'. From 'activitydiagram_ActivityNode', the role 'ActivityNode15' has cardinality 0..*, and from 'activitydiagram_ActivityEdge', the role 'incoming' has cardinality 0..*.
+An association connects 'activitydiagram_ActivityEdge' and 'activitydiagram_Offer'. From 'activitydiagram_ActivityEdge', the role 'activitydiagram_ActivityEdge17' has cardinality 0..*, and from 'activitydiagram_Offer', the role 'activitydiagram_Offer' has cardinality 0..*.
+An association connects 'activitydiagram_ControlFlow' and 'activitydiagram_BooleanVariable'. From 'activitydiagram_ControlFlow', the role 'activitydiagram_ControlFlow' has cardinality 0..*, and from 'activitydiagram_BooleanVariable', the role 'activitydiagram_BooleanVariable' has cardinality 0..*.
+An association connects 'activitydiagram_OpaqueAction' and 'activitydiagram_Exp'. From 'activitydiagram_OpaqueAction', the role 'activitydiagram_OpaqueAction' has cardinality 0..*, and from 'activitydiagram_Exp', the role 'activitydiagram_Exp' has cardinality 0..*.
+An association connects 'activitydiagram_Value' and 'activitydiagram_Variable'. From 'activitydiagram_Value', the role 'activitydiagram_Value' has cardinality 0..*, and from 'activitydiagram_Variable', the role 'activitydiagram_Variable21' has cardinality 0..*.
+An association connects 'activitydiagram_Variable' and 'activitydiagram_Value'. From 'activitydiagram_Variable', the role 'activitydiagram_Variable23' has cardinality 0..*, and from 'activitydiagram_Value', the role 'activitydiagram_Value24' has cardinality 0..*.
+An association connects 'activitydiagram_Value' and 'activitydiagram_InputValue'. From 'activitydiagram_Value', the role 'activitydiagram_Value26' has cardinality 0..*, and from 'activitydiagram_InputValue', the role 'activitydiagram_InputValue' has cardinality 0..*.
+An association connects 'activitydiagram_InputValue' and 'activitydiagram_Variable'. From 'activitydiagram_InputValue', the role 'activitydiagram_InputValue28' has cardinality 0..*, and from 'activitydiagram_Variable', the role 'activitydiagram_Variable29' has cardinality 0..*.
+An association connects 'activitydiagram_Input' and 'activitydiagram_InputValue'. From 'activitydiagram_Input', the role 'activitydiagram_Input' has cardinality 0..*, and from 'activitydiagram_InputValue', the role 'activitydiagram_InputValue31' has cardinality 0..*.
+An association connects 'activitydiagram_Token' and 'activitydiagram_ActivityNode'. From 'activitydiagram_Token', the role 'heldTokens' has cardinality 0..*, and from 'activitydiagram_ActivityNode', the role 'ActivityNode33' has cardinality 0..*.
+An association connects 'activitydiagram_Offer' and 'activitydiagram_Token'. From 'activitydiagram_Offer', the role 'activitydiagram_Offer35' has cardinality 0..*, and from 'activitydiagram_Token', the role 'activitydiagram_Token' has cardinality 0..*.
+An association connects 'activitydiagram_Token' and 'activitydiagram_ForkedToken'. From 'activitydiagram_Token', the role 'activitydiagram_Token37' has cardinality 0..*, and from 'activitydiagram_ForkedToken', the role 'activitydiagram_ForkedToken' has cardinality 0..*.
+An association connects 'activitydiagram_ActivityNode' and 'activitydiagram_Trace'. From 'activitydiagram_ActivityNode', the role 'activitydiagram_ActivityNode' has cardinality 0..*, and from 'activitydiagram_Trace', the role 'activitydiagram_Trace' has cardinality 0..*.
+An association connects 'activitydiagram_Context' and 'activitydiagram_Trace'. From 'activitydiagram_Context', the role 'activitydiagram_Context' has cardinality 0..*, and from 'activitydiagram_Trace', the role 'activitydiagram_Trace40' has cardinality 0..*.
+An association connects 'activitydiagram_Activity' and 'activitydiagram_Context'. From 'activitydiagram_Activity', the role 'activitydiagram_Activity43' has cardinality 0..*, and from 'activitydiagram_Context', the role 'activitydiagram_Context42' has cardinality 0..*.
+An association connects 'activitydiagram_InputValue' and 'activitydiagram_Context'. From 'activitydiagram_InputValue', the role 'activitydiagram_InputValue46' has cardinality 0..*, and from 'activitydiagram_Context', the role 'activitydiagram_Context45' has cardinality 0..*.
+An association connects 'activitydiagram_JoinNode' and 'activitydiagram_Context'. From 'activitydiagram_JoinNode', the role 'activitydiagram_JoinNode' has cardinality 0..*, and from 'activitydiagram_Context', the role 'activitydiagram_Context48' has cardinality 0..*.

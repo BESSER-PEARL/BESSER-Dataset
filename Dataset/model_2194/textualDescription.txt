@@ -1,0 +1,336 @@
+The domain model 'commons' describes the core structural elements and their relationships within the system.
+
+The model defines 85 main class(es).
+
+'commons_Imageable' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_Removed' represents an important domain concept.
+It does not declare any attributes.
+
+'PersonLike' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_Added' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_ResourceAware' represents an important domain concept.
+It has the following attributes: 'resourceUri', which is of type str; 'resourceName', which is of type str; 'resourceType', which is of type str.
+
+'commons_Revisionable' represents an important domain concept.
+It has the following attributes: 'revision', which is of type str; 'guid', which is of type str.
+
+'commons_AppManifest' represents an important domain concept.
+It has the following attributes: 'letterClosing', which is of type str; 'reminderScheduleStr', which is of type str; 'defaultCurrencyCode', which is of type str; 'summary', which is of type str; 'reminderPeriod', which is of type str; 'defaultTimeZone', which is of type str; 'defaultCategoryUName', which is of type str; 'domainDev', which is of type str; 'headNote', which is of type str; 'domainStg', which is of type str; 'organizationPhoneNumbers', which is of type str; 'generalEmailPrd', which is of type str; 'generalEmailStg', which is of type str; 'reminderSchedule', which is of type str; 'defaultStyle', which is of type str; 'title', which is of type str; 'defaultLanguageTag', which is of type str; 'defaultCountryCode', which is of type str; 'generalEmail', which is of type str; 'generalEmailDev', which is of type str; 'shipmentLogoUriTemplate', which is of type str; 'defaultTimeZoneId', which is of type str; 'domainPrd', which is of type str; 'kursDollarDpex', which is of type str; 'defaultVariation', which is of type str; 'letterSalutation', which is of type str; 'defaultCurrency', which is of type str; 'organizationName', which is of type str; 'domain', which is of type str; 'emailLogoUriTemplate', which is of type str; 'kursDollarPaypal', which is of type str; 'reminderPeriodStr', which is of type str; 'organizationAddress', which is of type str; 'headTitle', which is of type str; 'footnote', which is of type str; 'description', which is of type str; 'wwwUsed', which is of type str; 'supportEmail', which is of type str.
+
+'commons_ProgressMonitorWrapper' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_Positionable' represents an important domain concept.
+It has one attribute: 'positioner', which is of type str.
+
+'Describable' represents an important domain concept.
+It does not declare any attributes.
+
+'Sluggable' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_ObjectsNotification' represents an important domain concept.
+It has one attribute: 'objects', which is of type str.
+
+'Timestamped' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_FacebookAccessible' represents an important domain concept.
+It has one attribute: 'facebookAccessToken', which is of type str.
+
+'commons_TwitterAccessible' represents an important domain concept.
+It has the following attributes: 'twitterAccessToken', which is of type str; 'twitterAccessTokenSecret', which is of type str.
+
+'commons_Expandable' represents an important domain concept.
+It has one attribute: 'expansionState', which is of type str.
+
+'commons_EFactoryLinked' represents an important domain concept.
+It has one attribute: 'eFactory', which is of type str.
+
+'commons_TranslationMessageEntry' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'commons_Organization' represents an important domain concept.
+It has the following attributes: 'twitterAccessTokenSecret', which is of type str; 'website', which is of type str; 'facebookId', which is of type str; 'facebookAccessToken', which is of type str; 'blackBerryPin', which is of type str; 'schemaVersion', which is of type str; 'twitterScreenName', which is of type str; 'twitterId', which is of type str; 'facebookUserName', which is of type str; 'facebookPageUri', which is of type str; 'twitterAccessToken', which is of type str.
+
+'commons_MongoSysConfig' represents an important domain concept.
+It has one attribute: 'mongoUri', which is of type str.
+
+'commons_Nameable' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_PostalAddress' represents an important domain concept.
+It has the following attributes: 'city', which is of type str; 'postalCode', which is of type str; 'jneAreaCode', which is of type str; 'schemaVersion', which is of type str; 'primaryBilling', which is of type bool; 'primaryMobile', which is of type str; 'country', which is of type str; 'countryCode', which is of type str; 'organization', which is of type str; 'primaryEmail', which is of type str; 'homePhones', which is of type str; 'primaryWorkPhone', which is of type str; 'primaryShipping', which is of type bool; 'workPhones', which is of type str; 'phones', which is of type str; 'primary', which is of type bool; 'validationTime', which is of type str; 'primaryHomePhone', which is of type str; 'street', which is of type str; 'district', which is of type str; 'primaryPhone', which is of type str; 'description', which is of type str; 'province', which is of type str; 'mobiles', which is of type str; 'emails', which is of type str.
+
+'BundleAware' represents an important domain concept.
+It does not declare any attributes.
+
+'Expandable' represents an important domain concept.
+It does not declare any attributes.
+
+'NameContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_StyleConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_EventBusProgressMonitor' represents an important domain concept.
+It has the following attributes: 'eventBus', which is of type str; 'trackingId', which is of type str.
+
+'commons_Translatable' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'translationState', which is of type str; 'originalLanguage', which is of type str.
+
+'commons_WebAddress' represents an important domain concept.
+It has the following attributes: 'secureImagesUri', which is of type str; 'apiPath', which is of type str; 'skinUri', which is of type str; 'basePath', which is of type str; 'imagesUri', which is of type str; 'secureBaseUri', which is of type str; 'secureJsUri', which is of type str; 'secureSkinUri', which is of type str; 'jsUri', which is of type str; 'baseUri', which is of type str.
+
+'commons_TranslationEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'commons_Identifiable' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'commons_ProgressMonitor' represents an important domain concept.
+It has the following attributes: 'taskName', which is of type str; 'canceled', which is of type bool.
+
+'PhotoIdContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_NsPrefixable' represents an important domain concept.
+It has one attribute: 'nsPrefix', which is of type str.
+
+'commons_Describable' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'commons_EObjectLinked' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_TwitterIdentity' represents an important domain concept.
+It has the following attributes: 'twitterScreenName', which is of type str; 'twitterId', which is of type str.
+
+'commons_NameContainer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SysConfig' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_SchemaVersionable' represents an important domain concept.
+It does not declare any attributes.
+
+'Positionable' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_AttributeSet' represents an important domain concept.
+It has one attribute: 'principals', which is of type str.
+
+'commons_PhotoIdContainer' represents an important domain concept.
+It has one attribute: 'photoId', which is of type str.
+
+'ProgressMonitor' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_ObjectNotification' represents an important domain concept.
+It has one attribute: 'object', which is of type str.
+
+'commons_RemovedMany' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_Email' represents an important domain concept.
+It has the following attributes: 'validationTime', which is of type str; 'email', which is of type str; 'primary', which is of type bool.
+
+'commons_CanonicalSluggable' represents an important domain concept.
+It has one attribute: 'canonicalSlug', which is of type str.
+
+'commons_GeneralSysConfig' represents an important domain concept.
+It has one attribute: 'sslSupported', which is of type str.
+
+'commons_Informer' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceAware' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_CategoryInfo' represents an important domain concept.
+It has the following attributes: 'primaryUri', which is of type str; 'googleFormalId', which is of type str.
+
+'commons_PersonLike' represents an important domain concept.
+It does not declare any attributes.
+
+'SchemaVersionable' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_PersonCatalog' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_ShellProgressMonitor' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_EClassLinked' represents an important domain concept.
+It has the following attributes: 'eClassStatus', which is of type str; 'ePackageNsPrefix', which is of type str; 'ePackageName', which is of type str; 'eClassName', which is of type str.
+
+'Nameable' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_Sluggable' represents an important domain concept.
+It has one attribute: 'slug', which is of type str.
+
+'commons_BundleAware' represents an important domain concept.
+It has one attribute: 'bundle', which is of type str.
+
+'commons_Translation' represents an important domain concept.
+It has one attribute: 'language', which is of type str.
+
+'commons_AttributeNotification' represents an important domain concept.
+It has the following attributes: 'newValue', which is of type str; 'object', which is of type str; 'oldValue', which is of type str.
+
+'commons_CategoryLike' represents an important domain concept.
+It has the following attributes: 'imageId', which is of type str; 'slugPath', which is of type str; 'level', which is of type str; 'categoryCount', which is of type str; 'color', which is of type str.
+
+'commons_SysConfig' represents an important domain concept.
+It has one attribute: 'tenantId', which is of type str.
+
+'commons_Timestamped' represents an important domain concept.
+It has the following attributes: 'creationTime', which is of type str; 'modificationTime', which is of type str.
+
+'commons_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_Parentable' represents an important domain concept.
+It does not declare any attributes.
+
+'NsPrefixable' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_TranslationManager' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_ThingInfo' represents an important domain concept.
+It has one attribute: 'imageId', which is of type str.
+
+'commons_AddedMany' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_Person' represents an important domain concept.
+It has the following attributes: 'lastName', which is of type str; 'birthDate', which is of type str; 'signupSourceType', which is of type str; 'zendeskIntegration', which is of type bool; 'managerRole', which is of type str; 'activationTime', which is of type str; 'timeZone', which is of type str; 'lastTimeSynchronizeWithZendesk', which is of type str; 'birthYear', which is of type str; 'signupSource', which is of type str; 'securityRoleIds', which is of type str; 'lastLoginTime', which is of type str; 'firstName', which is of type str; 'gender', which is of type str; 'nickname', which is of type str; 'accountStatus', which is of type str; 'language', which is of type str; 'timeZoneId', which is of type str; 'password', which is of type str; 'currency', which is of type str; 'virtualMail', which is of type str; 'publicationStatus', which is of type str; 'passwordResetCode', which is of type str; 'newsletterSubscriptionTime', which is of type str; 'customerRoleEditTime', which is of type str; 'currencyCode', which is of type str; 'customerRole', which is of type str; 'schemaVersion', which is of type str; 'verifyCode', which is of type str; 'validationTime', which is of type str; 'birthDay', which is of type str; 'referrerId', which is of type str; 'clientAccessToken', which is of type str; 'googlePlusId', which is of type str; 'ipAddress', which is of type str; 'passwordResetExpiryTime', which is of type str; 'zendeskUserId', which is of type str; 'verificationTime', which is of type str; 'debitCurrency', which is of type str; 'referrerType', which is of type str; 'newsletterSubscriptionEnabled', which is of type str; 'religion', which is of type str; 'birthMonth', which is of type str; 'socialSharingEnabled', which is of type str; 'archivalStatus', which is of type str; 'folder', which is of type str; 'memberRole', which is of type str; 'type', which is of type str; 'lastIpAddress', which is of type str; 'debitBalance', which is of type str; 'googleUsername', which is of type str.
+
+'commons_AttributeUnset' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_JavaClassLinked' represents an important domain concept.
+It has the following attributes: 'javaClassName', which is of type str; 'javaClass', which is of type str; 'javaClassStatus', which is of type str.
+
+'commons_PersonInfo' represents an important domain concept.
+It has the following attributes: 'email', which is of type str; 'gender', which is of type str; 'mobileNumber', which is of type str.
+
+'commons_Colorable' represents an important domain concept.
+It has one attribute: 'color', which is of type str.
+
+'commons_Geolocation' represents an important domain concept.
+It has the following attributes: 'elevation', which is of type str; 'longitude', which is of type str; 'latitude', which is of type str.
+
+'commons_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_FacebookIdentity' represents an important domain concept.
+It has the following attributes: 'facebookId', which is of type str; 'facebookUsername', which is of type str.
+
+'commons_CustomerRole' represents an important domain concept.
+It has the following attributes: 'bookingEnabled', which is of type bool; 'transactionHistoryEnabled', which is of type bool; 'bookingExpiryTimeInMinutes', which is of type int; 'paymentGatewayEnabled', which is of type bool; 'readOnly', which is of type bool; 'zendeskIntegration', which is of type bool; 'zendeskOrganizationId', which is of type str; 'dropshipEnabled', which is of type bool; 'schemaVersion', which is of type str; 'salesOrderReportEnabled', which is of type bool; 'status', which is of type str; 'agentSalesReportEnabled', which is of type bool; 'historySalesOrderEnabled', which is of type bool; 'quickShopEnabled', which is of type bool; 'reviewReminderEnabled', which is of type bool.
+
+'commons_ModelNotification' represents an important domain concept.
+It does not declare any attributes.
+
+'Imageable' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_PhoneNumber' represents an important domain concept.
+It has the following attributes: 'phoneNumber', which is of type str; 'primary', which is of type bool; 'validationTime', which is of type str.
+
+'commons_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ProgressStatus' defines the following possible values: 'deleted', 'skipped', 'ok', 'warning', 'error'.
+The enumeration 'Gender' defines the following possible values: 'male', 'unknown', 'female'.
+The enumeration 'AccountStatus' defines the following possible values: 'void', 'inactive', 'unregister', 'verified', 'validated', 'active', 'draft'.
+The enumeration 'ResourceType' defines the following possible values: 'database', 'bundle', 'classpath', 'file'.
+The enumeration 'TranslationState' defines the following possible values: 'original', 'translated'.
+The enumeration 'TenantSource' defines the following possible values: 'repository', 'classpath', 'config'.
+The enumeration 'ArchivalStatus' defines the following possible values: 'fresh', 'archived'.
+The enumeration 'PublicationStatus' defines the following possible values: 'draft', 'published', 'unpublished'.
+The enumeration 'GenericStatus' defines the following possible values: 'inactive', 'booked', 'draft', 'void'.
+The enumeration 'EClassStatus' defines the following possible values: 'resolved', 'unresolved'.
+The enumeration 'ExpansionState' defines the following possible values: 'unexpanded', 'expanded'.
+The enumeration 'CustomerRoleStatus' defines the following possible values: 'void', 'inactive', 'active'.
+The enumeration 'JavaClassStatus' defines the following possible values: 'unresolved', 'resolved'.
+The enumeration 'SignupSourceType' defines the following possible values: 'facebook_ads', 'facebook_friend', 'google_search', 'google_ads', 'alia_magazine', 'other'.
+The enumeration 'EntityKind' defines the following possible values: 'product', 'shop', 'category', 'page', 'place', 'article', 'banner_shop', 'person', 'product_release', 'tag', 'task'.
+
+The model also captures inheritance relationships between classes.
+The class 'commons_AppManifest' is a specialization of 'Positionable'.
+The class 'commons_AppManifest' is a specialization of 'ResourceAware'.
+The class 'commons_AppManifest' is a specialization of 'BundleAware'.
+The class 'commons_AppManifest' is a specialization of 'Expandable'.
+The class 'commons_PersonInfo' is a specialization of 'Identifiable'.
+The class 'commons_PersonInfo' is a specialization of 'PhotoIdContainer'.
+The class 'commons_PersonInfo' is a specialization of 'Sluggable'.
+The class 'commons_PersonInfo' is a specialization of 'NameContainer'.
+The class 'commons_PersonInfo' is a specialization of 'PersonLike'.
+The class 'commons_PhotoIdContainer' is a specialization of 'Imageable'.
+The class 'commons_NameContainer' is a specialization of 'Nameable'.
+The class 'commons_WebAddress' is a specialization of 'Positionable'.
+The class 'commons_WebAddress' is a specialization of 'BundleAware'.
+The class 'commons_WebAddress' is a specialization of 'ResourceAware'.
+The class 'commons_WebAddress' is a specialization of 'Expandable'.
+The class 'commons_CategoryLike' is a specialization of 'Identifiable'.
+The class 'commons_CategoryLike' is a specialization of 'NsPrefixable'.
+The class 'commons_CategoryLike' is a specialization of 'NameContainer'.
+The class 'commons_CategoryLike' is a specialization of 'Positionable'.
+The class 'commons_CategoryLike' is a specialization of 'Sluggable'.
+The class 'commons_CategoryLike' is a specialization of 'Imageable'.
+The class 'commons_ShellProgressMonitor' is a specialization of 'ProgressMonitor'.
+The class 'commons_EventBusProgressMonitor' is a specialization of 'ProgressMonitor'.
+The class 'commons_ProgressMonitorWrapper' is a specialization of 'ProgressMonitor'.
+The class 'commons_PostalAddress' is a specialization of 'NameContainer'.
+The class 'commons_PostalAddress' is a specialization of 'Identifiable'.
+The class 'commons_PostalAddress' is a specialization of 'SchemaVersionable'.
+The class 'commons_CanonicalSluggable' is a specialization of 'Sluggable'.
+The class 'commons_SysConfig' is a specialization of 'Timestamped'.
+The class 'commons_ThingInfo' is a specialization of 'NameContainer'.
+The class 'commons_ThingInfo' is a specialization of 'Identifiable'.
+The class 'commons_ThingInfo' is a specialization of 'Sluggable'.
+The class 'commons_ThingInfo' is a specialization of 'Imageable'.
+The class 'commons_GeneralSysConfig' is a specialization of 'Expandable'.
+The class 'commons_GeneralSysConfig' is a specialization of 'SysConfig'.
+The class 'commons_Organization' is a specialization of 'Identifiable'.
+The class 'commons_Organization' is a specialization of 'SchemaVersionable'.
+The class 'commons_Organization' is a specialization of 'NameContainer'.
+The class 'commons_CustomerRole' is a specialization of 'Identifiable'.
+The class 'commons_CustomerRole' is a specialization of 'SchemaVersionable'.
+The class 'commons_CustomerRole' is a specialization of 'NameContainer'.
+The class 'commons_CustomerRole' is a specialization of 'Timestamped'.
+The class 'commons_CustomerRole' is a specialization of 'Describable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'commons_EClass' and 'commons_EClassLinked'. From 'commons_EClass', the role 'commons_EClass' has cardinality 0..*, and from 'commons_EClassLinked', the role 'commons_EClassLinked' has cardinality 0..*.
+An association connects 'commons_EObject' and 'commons_ModelNotification'. From 'commons_EObject', the role 'commons_EObject' has cardinality 0..*, and from 'commons_ModelNotification', the role 'commons_ModelNotification' has cardinality 0..*.
+An association connects 'commons_AttributeNotification' and 'commons_EAttribute'. From 'commons_AttributeNotification', the role 'commons_AttributeNotification' has cardinality 0..*, and from 'commons_EAttribute', the role 'commons_EAttribute' has cardinality 0..*.
+An association connects 'commons_CategoryInfo' and 'commons_CategoryInfo'. From 'commons_CategoryInfo', the role 'commons_CategoryInfo3' has cardinality 0..*, and from 'commons_CategoryInfo', the role 'commons_CategoryInfo' has cardinality 0..*.
+An association connects 'commons_ProgressMonitorWrapper' and 'commons_ProgressMonitor'. From 'commons_ProgressMonitorWrapper', the role 'commons_ProgressMonitorWrapper' has cardinality 0..*, and from 'commons_ProgressMonitor', the role 'commons_ProgressMonitor' has cardinality 0..*.
+An association connects 'commons_TranslationEntry' and 'commons_Translatable'. From 'commons_TranslationEntry', the role 'commons_TranslationEntry' has cardinality 0..*, and from 'commons_Translatable', the role 'commons_Translatable' has cardinality 0..*.
+An association connects 'commons_TranslationMessageEntry' and 'commons_Translation'. From 'commons_TranslationMessageEntry', the role 'commons_TranslationMessageEntry' has cardinality 0..*, and from 'commons_Translation', the role 'commons_Translation' has cardinality 0..*.
+An association connects 'commons_Translation' and 'commons_TranslationEntry'. From 'commons_Translation', the role 'commons_Translation10' has cardinality 0..*, and from 'commons_TranslationEntry', the role 'commons_TranslationEntry9' has cardinality 0..*.
+An association connects 'commons_PhoneNumber' and 'commons_Person'. From 'commons_PhoneNumber', the role 'commons_PhoneNumber' has cardinality 0..*, and from 'commons_Person', the role 'commons_Person' has cardinality 0..*.
+An association connects 'commons_Email' and 'commons_Person'. From 'commons_Email', the role 'commons_Email' has cardinality 0..*, and from 'commons_Person', the role 'commons_Person13' has cardinality 0..*.
+An association connects 'commons_PhoneNumber' and 'commons_Person'. From 'commons_PhoneNumber', the role 'commons_PhoneNumber16' has cardinality 0..*, and from 'commons_Person', the role 'commons_Person15' has cardinality 0..*.
+An association connects 'commons_Person' and 'commons_PostalAddress'. From 'commons_Person', the role 'commons_Person18' has cardinality 0..*, and from 'commons_PostalAddress', the role 'commons_PostalAddress' has cardinality 0..*.
+An association connects 'commons_Organization' and 'commons_Person'. From 'commons_Organization', the role 'commons_Organization' has cardinality 0..*, and from 'commons_Person', the role 'commons_Person20' has cardinality 0..*.
+An association connects 'commons_PersonCatalog' and 'commons_Person'. From 'commons_PersonCatalog', the role 'commons_PersonCatalog' has cardinality 0..*, and from 'commons_Person', the role 'commons_Person22' has cardinality 0..*.

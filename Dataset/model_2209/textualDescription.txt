@@ -1,0 +1,52 @@
+The domain model 'universityStudies' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'universityStudies_ElectiveCourseSlot' represents an important domain concept.
+It does not declare any attributes.
+
+'universityStudies_MandatoryCourseSlot' represents an important domain concept.
+It does not declare any attributes.
+
+'universityStudies_Course' represents an important domain concept.
+It has the following attributes: 'level', which is of type int; 'credits', which is of type str; 'name', which is of type str; 'code', which is of type str.
+
+'universityStudies_Semester' represents an important domain concept.
+It has the following attributes: 'season', which is of type str; 'semesterNumber', which is of type int; 'name', which is of type str.
+
+'universityStudies_Programme' represents an important domain concept.
+It has the following attributes: 'programmeType', which is of type str; 'name', which is of type str; 'numberOfSemesters', which is of type int.
+
+'CourseSlot' represents an important domain concept.
+It does not declare any attributes.
+
+'universityStudies_Specialization' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'universityStudies_Department' represents an important domain concept.
+It does not declare any attributes.
+
+'universityStudies_CourseSlot' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Seasons' defines the following possible values: 'Fall', 'Spring'.
+The enumeration 'Credits' defines the following possible values: 'Minor', 'Double', 'Full', 'Basic'.
+The enumeration 'ProgrammeType' defines the following possible values: 'Master', 'Årsstudie', 'IntegrertMaster', 'Bachelor'.
+
+The model also captures inheritance relationships between classes.
+The class 'universityStudies_MandatoryCourseSlot' is a specialization of 'CourseSlot'.
+The class 'universityStudies_ElectiveCourseSlot' is a specialization of 'CourseSlot'.
+
+Relationships between classes are modeled using associations.
+An association connects 'universityStudies_Course' and 'universityStudies_Programme'. From 'universityStudies_Course', the role 'universityStudies_Course' has cardinality 0..*, and from 'universityStudies_Programme', the role 'universityStudies_Programme' has cardinality 0..*.
+An association connects 'universityStudies_Programme' and 'universityStudies_Specialization'. From 'universityStudies_Programme', the role 'universityStudies_Programme2' has cardinality 0..*, and from 'universityStudies_Specialization', the role 'universityStudies_Specialization' has cardinality 0..*.
+An association connects 'universityStudies_Semester' and 'universityStudies_Programme'. From 'universityStudies_Semester', the role 'universityStudies_Semester' has cardinality 0..*, and from 'universityStudies_Programme', the role 'universityStudies_Programme4' has cardinality 0..*.
+An association connects 'universityStudies_Department' and 'universityStudies_Programme'. From 'universityStudies_Department', the role 'Department' has cardinality 0..*, and from 'universityStudies_Programme', the role 'Programmes' has cardinality 0..*.
+An association connects 'universityStudies_Specialization' and 'universityStudies_Specialization'. From 'universityStudies_Specialization', the role 'universityStudies_Specialization8' has cardinality 0..*, and from 'universityStudies_Specialization', the role 'universityStudies_Specialization6' has cardinality 0..*.
+An association connects 'universityStudies_Specialization' and 'universityStudies_Semester'. From 'universityStudies_Specialization', the role 'universityStudies_Specialization10' has cardinality 0..*, and from 'universityStudies_Semester', the role 'universityStudies_Semester11' has cardinality 0..*.
+An association connects 'universityStudies_CourseSlot' and 'universityStudies_Semester'. From 'universityStudies_CourseSlot', the role 'universityStudies_CourseSlot' has cardinality 0..*, and from 'universityStudies_Semester', the role 'universityStudies_Semester13' has cardinality 0..*.
+An association connects 'universityStudies_Department' and 'universityStudies_Course'. From 'universityStudies_Department', the role 'universityStudies_Department' has cardinality 0..*, and from 'universityStudies_Course', the role 'universityStudies_Course15' has cardinality 0..*.
+An association connects 'universityStudies_Programme' and 'universityStudies_Department'. From 'universityStudies_Programme', the role 'Programme' has cardinality 0..*, and from 'universityStudies_Department', the role 'Department17' has cardinality 0..*.
+An association connects 'universityStudies_Course' and 'universityStudies_CourseSlot'. From 'universityStudies_Course', the role 'universityStudies_Course20' has cardinality 0..*, and from 'universityStudies_CourseSlot', the role 'universityStudies_CourseSlot19' has cardinality 0..*.
+An association connects 'universityStudies_ElectiveCourseSlot' and 'universityStudies_Course'. From 'universityStudies_ElectiveCourseSlot', the role 'universityStudies_ElectiveCourseSlot' has cardinality 0..*, and from 'universityStudies_Course', the role 'universityStudies_Course22' has cardinality 0..*.

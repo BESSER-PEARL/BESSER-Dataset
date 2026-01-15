@@ -1,0 +1,26 @@
+The domain model 'TestMM5' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'TestMM5_TestSet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TestMM5_Test' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'TestMM5_Action' represents an important domain concept.
+It has the following attributes: 'xpath', which is of type str; 'type', which is of type str; 'value', which is of type str; 'id', which is of type str; 'description', which is of type str.
+
+'TestMM5_Metadata' represents an important domain concept.
+It has the following attributes: 'date', which is of type str; 'taglist', which is of type str; 'user', which is of type str; 'webpage', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ActionType' defines the following possible values: 'comment', 'copy', 'insert', 'click'.
+
+Relationships between classes are modeled using associations.
+An association connects 'TestMM5_Test' and 'TestMM5_TestSet'. From 'TestMM5_Test', the role 'Test' has cardinality 0..*, and from 'TestMM5_TestSet', the role 'tst' has cardinality 0..*.
+An association connects 'TestMM5_Test' and 'TestMM5_TestSet'. From 'TestMM5_Test', the role 'ts' has cardinality 0..*, and from 'TestMM5_TestSet', the role 'TestSet' has cardinality 0..*.
+An association connects 'TestMM5_Metadata' and 'TestMM5_Test'. From 'TestMM5_Metadata', the role 'Metadata' has cardinality 0..*, and from 'TestMM5_Test', the role 'te' has cardinality 0..*.
+An association connects 'TestMM5_Action' and 'TestMM5_Test'. From 'TestMM5_Action', the role 'Action' has cardinality 0..*, and from 'TestMM5_Test', the role 'te4' has cardinality 0..*.
+An association connects 'TestMM5_Metadata' and 'TestMM5_Test'. From 'TestMM5_Metadata', the role 'md' has cardinality 0..*, and from 'TestMM5_Test', the role 'Test6' has cardinality 0..*.
+An association connects 'TestMM5_Test' and 'TestMM5_Action'. From 'TestMM5_Test', the role 'Test8' has cardinality 0..*, and from 'TestMM5_Action', the role 'act' has cardinality 0..*.

@@ -1,0 +1,37 @@
+The domain model 'ChangingOverTime' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'ChangingOverTime_BindingKind' represents an important domain concept.
+It does not declare any attributes.
+
+'ChangingOverTime_LinkKind' represents an important domain concept.
+It does not declare any attributes.
+
+'TimeStampedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ChangingOverTime_Tree' represents an important domain concept.
+It does not declare any attributes.
+
+'ChangingOverTime_TimeStampedElement' represents an important domain concept.
+It has the following attributes: 'expirationDate', which is of type date; 'effectiveDate', which is of type date.
+
+'ChangingOverTime_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'ChangingOverTime_NodeKind' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ChangingOverTime_NodeKind' is a specialization of 'TimeStampedElement'.
+The class 'ChangingOverTime_BindingKind' is a specialization of 'TimeStampedElement'.
+The class 'ChangingOverTime_Entity' is a specialization of 'TimeStampedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ChangingOverTime_NodeKind' and 'ChangingOverTime_Tree'. From 'ChangingOverTime_NodeKind', the role 'NodeKind' has cardinality 0..*, and from 'ChangingOverTime_Tree', the role 'tree' has cardinality 0..*.
+An association connects 'ChangingOverTime_Tree' and 'ChangingOverTime_NodeKind'. From 'ChangingOverTime_Tree', the role 'Tree' has cardinality 0..*, and from 'ChangingOverTime_NodeKind', the role 'root' has cardinality 0..*.
+An association connects 'ChangingOverTime_NodeKind' and 'ChangingOverTime_BindingKind'. From 'ChangingOverTime_NodeKind', the role 'ChangingOverTime_NodeKind' has cardinality 0..*, and from 'ChangingOverTime_BindingKind', the role 'ChangingOverTime_BindingKind' has cardinality 0..*.
+An association connects 'ChangingOverTime_Entity' and 'ChangingOverTime_BindingKind'. From 'ChangingOverTime_Entity', the role 'ChangingOverTime_Entity' has cardinality 0..*, and from 'ChangingOverTime_BindingKind', the role 'ChangingOverTime_BindingKind4' has cardinality 0..*.
+An association connects 'ChangingOverTime_LinkKind' and 'ChangingOverTime_NodeKind'. From 'ChangingOverTime_LinkKind', the role 'ChangingOverTime_LinkKind' has cardinality 0..*, and from 'ChangingOverTime_NodeKind', the role 'ChangingOverTime_NodeKind6' has cardinality 0..*.
+An association connects 'ChangingOverTime_NodeKind' and 'ChangingOverTime_LinkKind'. From 'ChangingOverTime_NodeKind', the role 'ChangingOverTime_NodeKind9' has cardinality 0..*, and from 'ChangingOverTime_LinkKind', the role 'ChangingOverTime_LinkKind8' has cardinality 0..*.

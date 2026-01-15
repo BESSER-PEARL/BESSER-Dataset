@@ -1,0 +1,123 @@
+The domain model 'graphgrammar' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'graphgrammar_VertexToStringMap' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'graphgrammar_Grammar' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'graphgrammar_Derivation' represents an important domain concept.
+It does not declare any attributes.
+
+'graphgrammar_Rule' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'graphgrammar_Symbol' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'superscript', which is of type str; 'subscript', which is of type str.
+
+'graphgrammar_SymbolSymbolsPair' represents an important domain concept.
+It does not declare any attributes.
+
+'graphgrammar_DerivationStep' represents an important domain concept.
+It does not declare any attributes.
+
+'graphgrammar_TripleRule' represents an important domain concept.
+It does not declare any attributes.
+
+'graphgrammar_ParsingTree' represents an important domain concept.
+It does not declare any attributes.
+
+'graphgrammar_ResolutionStep' represents an important domain concept.
+It does not declare any attributes.
+
+'graphgrammar_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'graphgrammar_Vertex' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'graphgrammar_TripleGrammar' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'graphgrammar_StringToVertexMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'graphgrammar_TripleGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'graphgrammar_Resolution' represents an important domain concept.
+It does not declare any attributes.
+
+'graphgrammar_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'graphgrammar_VertexToVertexMap' represents an important domain concept.
+It does not declare any attributes.
+
+'graphgrammar_ZoneVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'graphgrammar_VertexToSymbolSymbolsPairMap' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'graphgrammar_ZoneVertex' is a specialization of 'Vertex'.
+
+Relationships between classes are modeled using associations.
+An association connects 'graphgrammar_Grammar' and 'graphgrammar_Symbol'. From 'graphgrammar_Grammar', the role 'graphgrammar_Grammar' has cardinality 0..*, and from 'graphgrammar_Symbol', the role 'graphgrammar_Symbol' has cardinality 0..*.
+An association connects 'graphgrammar_Symbol' and 'graphgrammar_Grammar'. From 'graphgrammar_Symbol', the role 'graphgrammar_Symbol3' has cardinality 0..*, and from 'graphgrammar_Grammar', the role 'graphgrammar_Grammar2' has cardinality 0..*.
+An association connects 'graphgrammar_Symbol' and 'graphgrammar_Grammar'. From 'graphgrammar_Symbol', the role 'graphgrammar_Symbol6' has cardinality 0..*, and from 'graphgrammar_Grammar', the role 'graphgrammar_Grammar5' has cardinality 0..*.
+An association connects 'graphgrammar_Rule' and 'graphgrammar_Grammar'. From 'graphgrammar_Rule', the role 'graphgrammar_Rule' has cardinality 0..*, and from 'graphgrammar_Grammar', the role 'graphgrammar_Grammar8' has cardinality 0..*.
+An association connects 'graphgrammar_Grammar' and 'graphgrammar_Symbol'. From 'graphgrammar_Grammar', the role 'graphgrammar_Grammar10' has cardinality 0..*, and from 'graphgrammar_Symbol', the role 'graphgrammar_Symbol11' has cardinality 0..*.
+An association connects 'graphgrammar_Symbol' and 'graphgrammar_Rule'. From 'graphgrammar_Symbol', the role 'graphgrammar_Symbol14' has cardinality 0..*, and from 'graphgrammar_Rule', the role 'graphgrammar_Rule13' has cardinality 0..*.
+An association connects 'graphgrammar_Graph' and 'graphgrammar_Rule'. From 'graphgrammar_Graph', the role 'graphgrammar_Graph' has cardinality 0..*, and from 'graphgrammar_Rule', the role 'graphgrammar_Rule16' has cardinality 0..*.
+An association connects 'graphgrammar_Rule' and 'graphgrammar_VertexToSymbolSymbolsPairMap'. From 'graphgrammar_Rule', the role 'graphgrammar_Rule18' has cardinality 0..*, and from 'graphgrammar_VertexToSymbolSymbolsPairMap', the role 'graphgrammar_VertexToSymbolSymbolsPairMap' has cardinality 0..*.
+An association connects 'graphgrammar_Rule' and 'graphgrammar_Vertex'. From 'graphgrammar_Rule', the role 'graphgrammar_Rule20' has cardinality 0..*, and from 'graphgrammar_Vertex', the role 'graphgrammar_Vertex' has cardinality 0..*.
+An association connects 'graphgrammar_Symbol' and 'graphgrammar_SymbolSymbolsPair'. From 'graphgrammar_Symbol', the role 'graphgrammar_Symbol22' has cardinality 0..*, and from 'graphgrammar_SymbolSymbolsPair', the role 'graphgrammar_SymbolSymbolsPair' has cardinality 0..*.
+An association connects 'graphgrammar_SymbolSymbolsPair' and 'graphgrammar_Symbol'. From 'graphgrammar_SymbolSymbolsPair', the role 'graphgrammar_SymbolSymbolsPair24' has cardinality 0..*, and from 'graphgrammar_Symbol', the role 'graphgrammar_Symbol25' has cardinality 0..*.
+An association connects 'graphgrammar_Vertex' and 'graphgrammar_VertexToSymbolSymbolsPairMap'. From 'graphgrammar_Vertex', the role 'graphgrammar_Vertex28' has cardinality 0..*, and from 'graphgrammar_VertexToSymbolSymbolsPairMap', the role 'graphgrammar_VertexToSymbolSymbolsPairMap27' has cardinality 0..*.
+An association connects 'graphgrammar_SymbolSymbolsPair' and 'graphgrammar_VertexToSymbolSymbolsPairMap'. From 'graphgrammar_SymbolSymbolsPair', the role 'graphgrammar_SymbolSymbolsPair31' has cardinality 0..*, and from 'graphgrammar_VertexToSymbolSymbolsPairMap', the role 'graphgrammar_VertexToSymbolSymbolsPairMap30' has cardinality 0..*.
+An association connects 'graphgrammar_DerivationStep' and 'graphgrammar_Rule'. From 'graphgrammar_DerivationStep', the role 'graphgrammar_DerivationStep' has cardinality 0..*, and from 'graphgrammar_Rule', the role 'graphgrammar_Rule33' has cardinality 0..*.
+An association connects 'graphgrammar_Vertex' and 'graphgrammar_DerivationStep'. From 'graphgrammar_Vertex', the role 'graphgrammar_Vertex36' has cardinality 0..*, and from 'graphgrammar_DerivationStep', the role 'graphgrammar_DerivationStep35' has cardinality 0..*.
+An association connects 'graphgrammar_DerivationStep' and 'graphgrammar_Graph'. From 'graphgrammar_DerivationStep', the role 'graphgrammar_DerivationStep38' has cardinality 0..*, and from 'graphgrammar_Graph', the role 'graphgrammar_Graph39' has cardinality 0..*.
+An association connects 'graphgrammar_Graph' and 'graphgrammar_DerivationStep'. From 'graphgrammar_Graph', the role 'graphgrammar_Graph42' has cardinality 0..*, and from 'graphgrammar_DerivationStep', the role 'graphgrammar_DerivationStep41' has cardinality 0..*.
+An association connects 'graphgrammar_DerivationStep' and 'graphgrammar_VertexToVertexMap'. From 'graphgrammar_DerivationStep', the role 'graphgrammar_DerivationStep44' has cardinality 0..*, and from 'graphgrammar_VertexToVertexMap', the role 'graphgrammar_VertexToVertexMap' has cardinality 0..*.
+An association connects 'graphgrammar_DerivationStep' and 'graphgrammar_Derivation'. From 'graphgrammar_DerivationStep', the role 'graphgrammar_DerivationStep46' has cardinality 0..*, and from 'graphgrammar_Derivation', the role 'graphgrammar_Derivation' has cardinality 0..*.
+An association connects 'graphgrammar_ZoneVertex' and 'graphgrammar_ParsingTree'. From 'graphgrammar_ZoneVertex', the role 'graphgrammar_ZoneVertex' has cardinality 0..*, and from 'graphgrammar_ParsingTree', the role 'graphgrammar_ParsingTree' has cardinality 0..*.
+An association connects 'graphgrammar_ParsingTree' and 'graphgrammar_DerivationStep'. From 'graphgrammar_ParsingTree', the role 'graphgrammar_ParsingTree49' has cardinality 0..*, and from 'graphgrammar_DerivationStep', the role 'graphgrammar_DerivationStep50' has cardinality 0..*.
+An association connects 'graphgrammar_ParsingTree' and 'graphgrammar_ParsingTree'. From 'graphgrammar_ParsingTree', the role 'graphgrammar_ParsingTree53' has cardinality 0..*, and from 'graphgrammar_ParsingTree', the role 'graphgrammar_ParsingTree51' has cardinality 0..*.
+An association connects 'graphgrammar_VertexToStringMap' and 'graphgrammar_ResolutionStep'. From 'graphgrammar_VertexToStringMap', the role 'graphgrammar_VertexToStringMap' has cardinality 0..*, and from 'graphgrammar_ResolutionStep', the role 'graphgrammar_ResolutionStep' has cardinality 0..*.
+An association connects 'graphgrammar_StringToVertexMap' and 'graphgrammar_Resolution'. From 'graphgrammar_StringToVertexMap', the role 'graphgrammar_StringToVertexMap' has cardinality 0..*, and from 'graphgrammar_Resolution', the role 'graphgrammar_Resolution' has cardinality 0..*.
+An association connects 'graphgrammar_Resolution' and 'graphgrammar_ResolutionStep'. From 'graphgrammar_Resolution', the role 'graphgrammar_Resolution57' has cardinality 0..*, and from 'graphgrammar_ResolutionStep', the role 'graphgrammar_ResolutionStep58' has cardinality 0..*.
+An association connects 'graphgrammar_Vertex' and 'graphgrammar_Graph'. From 'graphgrammar_Vertex', the role 'graphgrammar_Vertex61' has cardinality 0..*, and from 'graphgrammar_Graph', the role 'graphgrammar_Graph60' has cardinality 0..*.
+An association connects 'graphgrammar_Edge' and 'graphgrammar_Graph'. From 'graphgrammar_Edge', the role 'graphgrammar_Edge' has cardinality 0..*, and from 'graphgrammar_Graph', the role 'graphgrammar_Graph63' has cardinality 0..*.
+An association connects 'graphgrammar_Vertex' and 'graphgrammar_Symbol'. From 'graphgrammar_Vertex', the role 'graphgrammar_Vertex65' has cardinality 0..*, and from 'graphgrammar_Symbol', the role 'graphgrammar_Symbol66' has cardinality 0..*.
+An association connects 'graphgrammar_ZoneVertex' and 'graphgrammar_Vertex'. From 'graphgrammar_ZoneVertex', the role 'graphgrammar_ZoneVertex68' has cardinality 0..*, and from 'graphgrammar_Vertex', the role 'graphgrammar_Vertex69' has cardinality 0..*.
+An association connects 'graphgrammar_ZoneVertex' and 'graphgrammar_Vertex'. From 'graphgrammar_ZoneVertex', the role 'graphgrammar_ZoneVertex71' has cardinality 0..*, and from 'graphgrammar_Vertex', the role 'graphgrammar_Vertex72' has cardinality 0..*.
+An association connects 'graphgrammar_Vertex' and 'graphgrammar_Edge'. From 'graphgrammar_Vertex', the role 'graphgrammar_Vertex75' has cardinality 0..*, and from 'graphgrammar_Edge', the role 'graphgrammar_Edge74' has cardinality 0..*.
+An association connects 'graphgrammar_Edge' and 'graphgrammar_Vertex'. From 'graphgrammar_Edge', the role 'graphgrammar_Edge77' has cardinality 0..*, and from 'graphgrammar_Vertex', the role 'graphgrammar_Vertex78' has cardinality 0..*.
+An association connects 'graphgrammar_Symbol' and 'graphgrammar_Edge'. From 'graphgrammar_Symbol', the role 'graphgrammar_Symbol81' has cardinality 0..*, and from 'graphgrammar_Edge', the role 'graphgrammar_Edge80' has cardinality 0..*.
+An association connects 'graphgrammar_TripleGrammar' and 'graphgrammar_Symbol'. From 'graphgrammar_TripleGrammar', the role 'graphgrammar_TripleGrammar' has cardinality 0..*, and from 'graphgrammar_Symbol', the role 'graphgrammar_Symbol83' has cardinality 0..*.
+An association connects 'graphgrammar_TripleGrammar' and 'graphgrammar_Symbol'. From 'graphgrammar_TripleGrammar', the role 'graphgrammar_TripleGrammar85' has cardinality 0..*, and from 'graphgrammar_Symbol', the role 'graphgrammar_Symbol86' has cardinality 0..*.
+An association connects 'graphgrammar_Symbol' and 'graphgrammar_TripleGrammar'. From 'graphgrammar_Symbol', the role 'graphgrammar_Symbol89' has cardinality 0..*, and from 'graphgrammar_TripleGrammar', the role 'graphgrammar_TripleGrammar88' has cardinality 0..*.
+An association connects 'graphgrammar_TripleRule' and 'graphgrammar_TripleGrammar'. From 'graphgrammar_TripleRule', the role 'graphgrammar_TripleRule' has cardinality 0..*, and from 'graphgrammar_TripleGrammar', the role 'graphgrammar_TripleGrammar91' has cardinality 0..*.
+An association connects 'graphgrammar_TripleGrammar' and 'graphgrammar_Symbol'. From 'graphgrammar_TripleGrammar', the role 'graphgrammar_TripleGrammar93' has cardinality 0..*, and from 'graphgrammar_Symbol', the role 'graphgrammar_Symbol94' has cardinality 0..*.
+An association connects 'graphgrammar_Rule' and 'graphgrammar_TripleRule'. From 'graphgrammar_Rule', the role 'graphgrammar_Rule97' has cardinality 0..*, and from 'graphgrammar_TripleRule', the role 'graphgrammar_TripleRule96' has cardinality 0..*.
+An association connects 'graphgrammar_TripleRule' and 'graphgrammar_Rule'. From 'graphgrammar_TripleRule', the role 'graphgrammar_TripleRule99' has cardinality 0..*, and from 'graphgrammar_Rule', the role 'graphgrammar_Rule100' has cardinality 0..*.
+An association connects 'graphgrammar_TripleRule' and 'graphgrammar_Rule'. From 'graphgrammar_TripleRule', the role 'graphgrammar_TripleRule102' has cardinality 0..*, and from 'graphgrammar_Rule', the role 'graphgrammar_Rule103' has cardinality 0..*.
+An association connects 'graphgrammar_TripleRule' and 'graphgrammar_VertexToVertexMap'. From 'graphgrammar_TripleRule', the role 'graphgrammar_TripleRule105' has cardinality 0..*, and from 'graphgrammar_VertexToVertexMap', the role 'graphgrammar_VertexToVertexMap106' has cardinality 0..*.
+An association connects 'graphgrammar_TripleRule' and 'graphgrammar_VertexToVertexMap'. From 'graphgrammar_TripleRule', the role 'graphgrammar_TripleRule108' has cardinality 0..*, and from 'graphgrammar_VertexToVertexMap', the role 'graphgrammar_VertexToVertexMap109' has cardinality 0..*.
+An association connects 'graphgrammar_Graph' and 'graphgrammar_TripleGraph'. From 'graphgrammar_Graph', the role 'graphgrammar_Graph111' has cardinality 0..*, and from 'graphgrammar_TripleGraph', the role 'graphgrammar_TripleGraph' has cardinality 0..*.
+An association connects 'graphgrammar_Graph' and 'graphgrammar_TripleGraph'. From 'graphgrammar_Graph', the role 'graphgrammar_Graph114' has cardinality 0..*, and from 'graphgrammar_TripleGraph', the role 'graphgrammar_TripleGraph113' has cardinality 0..*.
+An association connects 'graphgrammar_Graph' and 'graphgrammar_TripleGraph'. From 'graphgrammar_Graph', the role 'graphgrammar_Graph117' has cardinality 0..*, and from 'graphgrammar_TripleGraph', the role 'graphgrammar_TripleGraph116' has cardinality 0..*.
+An association connects 'graphgrammar_TripleGraph' and 'graphgrammar_VertexToVertexMap'. From 'graphgrammar_TripleGraph', the role 'graphgrammar_TripleGraph119' has cardinality 0..*, and from 'graphgrammar_VertexToVertexMap', the role 'graphgrammar_VertexToVertexMap120' has cardinality 0..*.
+An association connects 'graphgrammar_TripleGraph' and 'graphgrammar_VertexToVertexMap'. From 'graphgrammar_TripleGraph', the role 'graphgrammar_TripleGraph122' has cardinality 0..*, and from 'graphgrammar_VertexToVertexMap', the role 'graphgrammar_VertexToVertexMap123' has cardinality 0..*.
+An association connects 'graphgrammar_VertexToVertexMap' and 'graphgrammar_Vertex'. From 'graphgrammar_VertexToVertexMap', the role 'graphgrammar_VertexToVertexMap125' has cardinality 0..*, and from 'graphgrammar_Vertex', the role 'graphgrammar_Vertex126' has cardinality 0..*.
+An association connects 'graphgrammar_Vertex' and 'graphgrammar_VertexToVertexMap'. From 'graphgrammar_Vertex', the role 'graphgrammar_Vertex129' has cardinality 0..*, and from 'graphgrammar_VertexToVertexMap', the role 'graphgrammar_VertexToVertexMap128' has cardinality 0..*.
+An association connects 'graphgrammar_Vertex' and 'graphgrammar_VertexToStringMap'. From 'graphgrammar_Vertex', the role 'graphgrammar_Vertex132' has cardinality 0..*, and from 'graphgrammar_VertexToStringMap', the role 'graphgrammar_VertexToStringMap131' has cardinality 0..*.
+An association connects 'graphgrammar_StringToVertexMap' and 'graphgrammar_Vertex'. From 'graphgrammar_StringToVertexMap', the role 'graphgrammar_StringToVertexMap134' has cardinality 0..*, and from 'graphgrammar_Vertex', the role 'graphgrammar_Vertex135' has cardinality 0..*.

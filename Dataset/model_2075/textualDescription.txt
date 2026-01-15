@@ -1,0 +1,21 @@
+The domain model 'OverlappingTree' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'OverlappingTree_NodeKind' represents an important domain concept.
+It does not declare any attributes.
+
+'OverlappingTree_Child' represents an important domain concept.
+It does not declare any attributes.
+
+'OverlappingTree_Tree' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'OverlappingTree_NodeKind' and 'OverlappingTree_Tree'. From 'OverlappingTree_NodeKind', the role 'NodeKind' has cardinality 0..*, and from 'OverlappingTree_Tree', the role 'tree' has cardinality 0..*.
+An association connects 'OverlappingTree_Child' and 'OverlappingTree_Tree'. From 'OverlappingTree_Child', the role 'OverlappingTree_Child' has cardinality 0..*, and from 'OverlappingTree_Tree', the role 'OverlappingTree_Tree' has cardinality 0..*.
+An association connects 'OverlappingTree_Tree' and 'OverlappingTree_NodeKind'. From 'OverlappingTree_Tree', the role 'Tree' has cardinality 0..*, and from 'OverlappingTree_NodeKind', the role 'root' has cardinality 0..*.
+An association connects 'OverlappingTree_Child' and 'OverlappingTree_NodeKind'. From 'OverlappingTree_Child', the role 'Child' has cardinality 0..*, and from 'OverlappingTree_NodeKind', the role 'parent' has cardinality 0..*.
+An association connects 'OverlappingTree_Child' and 'OverlappingTree_NodeKind'. From 'OverlappingTree_Child', the role 'Child5' has cardinality 0..*, and from 'OverlappingTree_NodeKind', the role 'node' has cardinality 0..*.
+An association connects 'OverlappingTree_Child' and 'OverlappingTree_NodeKind'. From 'OverlappingTree_Child', the role 'nodeChildren' has cardinality 0..*, and from 'OverlappingTree_NodeKind', the role 'NodeKind7' has cardinality 0..*.
+An association connects 'OverlappingTree_NodeKind' and 'OverlappingTree_Child'. From 'OverlappingTree_NodeKind', the role 'NodeKind9' has cardinality 0..*, and from 'OverlappingTree_Child', the role 'children' has cardinality 0..*.

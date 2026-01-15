@@ -1,0 +1,31 @@
+The domain model 'featuretree' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'featuretree_FeatureTree' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'core_ITopLevelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'features_IFeatureDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'featuretree_TreeFeature' represents an important domain concept.
+It has one attribute: 'mandatory', which is of type bool.
+
+'core_AbstractModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'featuretree_FeatureTree' is a specialization of 'core_AbstractModelElement'.
+The class 'featuretree_FeatureTree' is a specialization of 'features_IFeatureDomain'.
+The class 'featuretree_FeatureTree' is a specialization of 'core_ITopLevelElement'.
+The class 'featuretree_TreeFeature' is a specialization of 'Feature'.
+
+Relationships between classes are modeled using associations.
+An association connects 'featuretree_FeatureTree' and 'featuretree_TreeFeature'. From 'featuretree_FeatureTree', the role 'featuretree_FeatureTree' has cardinality 0..*, and from 'featuretree_TreeFeature', the role 'featuretree_TreeFeature' has cardinality 0..*.
+An association connects 'featuretree_TreeFeature' and 'featuretree_TreeFeature'. From 'featuretree_TreeFeature', the role 'featuretree_TreeFeature1' has cardinality 0..*, and from 'featuretree_TreeFeature', the role 'featuretree_TreeFeature3' has cardinality 0..*.

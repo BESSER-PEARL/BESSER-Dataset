@@ -1,0 +1,20 @@
+The domain model 'dfg' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'dfg_DfgGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'dfg_DfgVertex' represents an important domain concept.
+It has one attribute: 'mappings', which is of type str.
+
+'dfg_DfgEdge' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'dfg_DfgVertex' and 'dfg_DfgGraph'. From 'dfg_DfgVertex', the role 'dfg_DfgVertex' has cardinality 0..*, and from 'dfg_DfgGraph', the role 'dfg_DfgGraph' has cardinality 0..*.
+An association connects 'dfg_DfgEdge' and 'dfg_DfgGraph'. From 'dfg_DfgEdge', the role 'dfg_DfgEdge' has cardinality 0..*, and from 'dfg_DfgGraph', the role 'dfg_DfgGraph2' has cardinality 0..*.
+An association connects 'dfg_DfgVertex' and 'dfg_DfgVertex'. From 'dfg_DfgVertex', the role 'dfg_DfgVertex3' has cardinality 0..*, and from 'dfg_DfgVertex', the role 'dfg_DfgVertex5' has cardinality 0..*.
+An association connects 'dfg_DfgVertex' and 'dfg_DfgEdge'. From 'dfg_DfgVertex', the role 'dfg_DfgVertex7' has cardinality 0..*, and from 'dfg_DfgEdge', the role 'dfg_DfgEdge8' has cardinality 0..*.
+An association connects 'dfg_DfgEdge' and 'dfg_DfgVertex'. From 'dfg_DfgEdge', the role 'dfg_DfgEdge10' has cardinality 0..*, and from 'dfg_DfgVertex', the role 'dfg_DfgVertex11' has cardinality 0..*.
+An association connects 'dfg_DfgEdge' and 'dfg_DfgVertex'. From 'dfg_DfgEdge', the role 'dfg_DfgEdge13' has cardinality 0..*, and from 'dfg_DfgVertex', the role 'dfg_DfgVertex14' has cardinality 0..*.

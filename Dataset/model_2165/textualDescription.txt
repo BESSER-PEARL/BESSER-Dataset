@@ -1,0 +1,204 @@
+The domain model 'pimm' describes the core structural elements and their relationships within the system.
+
+The model defines 45 main class(es).
+
+'pimm_FunctionParameter' represents an important domain concept.
+It has the following attributes: 'isConfigurationParameter', which is of type bool; 'type', which is of type str; 'name', which is of type str; 'direction', which is of type str.
+
+'DataOutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_visitor_PiMMVisitable' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_HRefinement' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_visitor_PiMMVisitor' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_Fifo' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'type', which is of type str.
+
+'pimm_DataInputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_PiGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_Parameter' represents an important domain concept.
+It has one attribute: 'configurationInterface', which is of type bool.
+
+'DataPort' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_Actor' represents an important domain concept.
+It has the following attributes: 'configurationActor', which is of type bool; 'memoryScriptPath', which is of type str.
+
+'pimm_ExecutableActor' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_Refinement' represents an important domain concept.
+It has the following attributes: 'fileName', which is of type str; 'filePath', which is of type str.
+
+'pimm_Port' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'name', which is of type str.
+
+'AbstractVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_FunctionPrototype' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pimm_ConfigOutputInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_Delay' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_ConfigInputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_DataOutputInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'PiMMVisitable' represents an important domain concept.
+It does not declare any attributes.
+
+'Refinement' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_JoinActor' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfaceActor' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_AbstractVertex' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ExecutableActor' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_DataPort' represents an important domain concept.
+It has one attribute: 'annotation', which is of type str.
+
+'pimm_ForkActor' represents an important domain concept.
+It does not declare any attributes.
+
+'ISetter' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractActor' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_DataInputInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_DataOutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_InterfaceActor' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'Parameterizable' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_ConfigOutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_Parameterizable' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_RoundBufferActor' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_ConfigInputInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_AbstractActor' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_ISetter' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_BroadcastActor' represents an important domain concept.
+It does not declare any attributes.
+
+'pimm_Expression' represents an important domain concept.
+It has one attribute: 'string', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PortMemoryAnnotation' defines the following possible values: 'NONE', 'UNUSED', 'WRITE_ONLY', 'READ_ONLY'.
+The enumeration 'Direction' defines the following possible values: 'IN', 'OUT'.
+
+The model also captures inheritance relationships between classes.
+The class 'pimm_Parameterizable' is a specialization of 'PiMMVisitable'.
+The class 'pimm_AbstractVertex' is a specialization of 'Parameterizable'.
+The class 'pimm_AbstractActor' is a specialization of 'AbstractVertex'.
+The class 'pimm_PiGraph' is a specialization of 'AbstractActor'.
+The class 'pimm_Actor' is a specialization of 'ExecutableActor'.
+The class 'pimm_Port' is a specialization of 'PiMMVisitable'.
+The class 'pimm_DataInputPort' is a specialization of 'DataPort'.
+The class 'pimm_DataOutputPort' is a specialization of 'DataPort'.
+The class 'pimm_ConfigInputPort' is a specialization of 'Port'.
+The class 'pimm_ConfigOutputPort' is a specialization of 'DataOutputPort'.
+The class 'pimm_ConfigOutputPort' is a specialization of 'ISetter'.
+The class 'pimm_Fifo' is a specialization of 'PiMMVisitable'.
+The class 'pimm_InterfaceActor' is a specialization of 'AbstractActor'.
+The class 'pimm_DataInputInterface' is a specialization of 'InterfaceActor'.
+The class 'pimm_DataOutputInterface' is a specialization of 'InterfaceActor'.
+The class 'pimm_ConfigInputInterface' is a specialization of 'Parameter'.
+The class 'pimm_ConfigOutputInterface' is a specialization of 'InterfaceActor'.
+The class 'pimm_Refinement' is a specialization of 'PiMMVisitable'.
+The class 'pimm_Parameter' is a specialization of 'AbstractVertex'.
+The class 'pimm_Parameter' is a specialization of 'ISetter'.
+The class 'pimm_Dependency' is a specialization of 'PiMMVisitable'.
+The class 'pimm_Delay' is a specialization of 'Parameterizable'.
+The class 'pimm_Expression' is a specialization of 'PiMMVisitable'.
+The class 'pimm_HRefinement' is a specialization of 'Refinement'.
+The class 'pimm_FunctionPrototype' is a specialization of 'PiMMVisitable'.
+The class 'pimm_FunctionParameter' is a specialization of 'PiMMVisitable'.
+The class 'pimm_DataPort' is a specialization of 'Port'.
+The class 'pimm_BroadcastActor' is a specialization of 'ExecutableActor'.
+The class 'pimm_JoinActor' is a specialization of 'ExecutableActor'.
+The class 'pimm_ForkActor' is a specialization of 'ExecutableActor'.
+The class 'pimm_RoundBufferActor' is a specialization of 'ExecutableActor'.
+The class 'pimm_ExecutableActor' is a specialization of 'AbstractActor'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pimm_ConfigInputPort' and 'pimm_Parameterizable'. From 'pimm_ConfigInputPort', the role 'pimm_ConfigInputPort' has cardinality 0..*, and from 'pimm_Parameterizable', the role 'pimm_Parameterizable' has cardinality 0..*.
+An association connects 'pimm_DataInputPort' and 'pimm_AbstractActor'. From 'pimm_DataInputPort', the role 'pimm_DataInputPort' has cardinality 0..*, and from 'pimm_AbstractActor', the role 'pimm_AbstractActor' has cardinality 0..*.
+An association connects 'pimm_AbstractActor' and 'pimm_DataOutputPort'. From 'pimm_AbstractActor', the role 'pimm_AbstractActor3' has cardinality 0..*, and from 'pimm_DataOutputPort', the role 'pimm_DataOutputPort' has cardinality 0..*.
+An association connects 'pimm_AbstractActor' and 'pimm_ConfigOutputPort'. From 'pimm_AbstractActor', the role 'pimm_AbstractActor5' has cardinality 0..*, and from 'pimm_ConfigOutputPort', the role 'pimm_ConfigOutputPort' has cardinality 0..*.
+An association connects 'pimm_AbstractActor' and 'pimm_PiGraph'. From 'pimm_AbstractActor', the role 'pimm_AbstractActor7' has cardinality 0..*, and from 'pimm_PiGraph', the role 'pimm_PiGraph' has cardinality 0..*.
+An association connects 'pimm_PiGraph' and 'pimm_Fifo'. From 'pimm_PiGraph', the role 'pimm_PiGraph9' has cardinality 0..*, and from 'pimm_Fifo', the role 'pimm_Fifo' has cardinality 0..*.
+An association connects 'pimm_Parameter' and 'pimm_PiGraph'. From 'pimm_Parameter', the role 'pimm_Parameter' has cardinality 0..*, and from 'pimm_PiGraph', the role 'pimm_PiGraph11' has cardinality 0..*.
+An association connects 'pimm_Dependency' and 'pimm_PiGraph'. From 'pimm_Dependency', the role 'pimm_Dependency' has cardinality 0..*, and from 'pimm_PiGraph', the role 'pimm_PiGraph13' has cardinality 0..*.
+An association connects 'pimm_Refinement' and 'pimm_Actor'. From 'pimm_Refinement', the role 'pimm_Refinement' has cardinality 0..*, and from 'pimm_Actor', the role 'pimm_Actor' has cardinality 0..*.
+An association connects 'pimm_Fifo' and 'pimm_DataInputPort'. From 'pimm_Fifo', the role 'Fifo' has cardinality 0..*, and from 'pimm_DataInputPort', the role 'targetPort' has cardinality 0..*.
+An association connects 'pimm_DataOutputPort' and 'pimm_Fifo'. From 'pimm_DataOutputPort', the role 'sourcePort' has cardinality 0..*, and from 'pimm_Fifo', the role 'Fifo17' has cardinality 0..*.
+An association connects 'pimm_ConfigInputPort' and 'pimm_Dependency'. From 'pimm_ConfigInputPort', the role 'getter' has cardinality 0..*, and from 'pimm_Dependency', the role 'Dependency' has cardinality 0..*.
+An association connects 'pimm_DataOutputPort' and 'pimm_Fifo'. From 'pimm_DataOutputPort', the role 'DataOutputPort' has cardinality 0..*, and from 'pimm_Fifo', the role 'outgoingFifo' has cardinality 0..*.
+An association connects 'pimm_Fifo' and 'pimm_DataInputPort'. From 'pimm_Fifo', the role 'incomingFifo' has cardinality 0..*, and from 'pimm_DataInputPort', the role 'DataInputPort' has cardinality 0..*.
+An association connects 'pimm_Fifo' and 'pimm_Delay'. From 'pimm_Fifo', the role 'pimm_Fifo22' has cardinality 0..*, and from 'pimm_Delay', the role 'pimm_Delay' has cardinality 0..*.
+An association connects 'pimm_InterfaceActor' and 'pimm_Port'. From 'pimm_InterfaceActor', the role 'pimm_InterfaceActor' has cardinality 0..*, and from 'pimm_Port', the role 'pimm_Port' has cardinality 0..*.
+An association connects 'pimm_Parameter' and 'pimm_ConfigInputPort'. From 'pimm_Parameter', the role 'pimm_Parameter25' has cardinality 0..*, and from 'pimm_ConfigInputPort', the role 'pimm_ConfigInputPort26' has cardinality 0..*.
+An association connects 'pimm_Expression' and 'pimm_Parameter'. From 'pimm_Expression', the role 'pimm_Expression' has cardinality 0..*, and from 'pimm_Parameter', the role 'pimm_Parameter28' has cardinality 0..*.
+An association connects 'pimm_Dependency' and 'pimm_ISetter'. From 'pimm_Dependency', the role 'outgoingDependencies' has cardinality 0..*, and from 'pimm_ISetter', the role 'ISetter' has cardinality 0..*.
+An association connects 'pimm_ConfigInputPort' and 'pimm_Dependency'. From 'pimm_ConfigInputPort', the role 'ConfigInputPort' has cardinality 0..*, and from 'pimm_Dependency', the role 'incomingDependency' has cardinality 0..*.
+An association connects 'pimm_ISetter' and 'pimm_Dependency'. From 'pimm_ISetter', the role 'setter' has cardinality 0..*, and from 'pimm_Dependency', the role 'Dependency32' has cardinality 0..*.
+An association connects 'pimm_Delay' and 'pimm_Expression'. From 'pimm_Delay', the role 'pimm_Delay34' has cardinality 0..*, and from 'pimm_Expression', the role 'pimm_Expression35' has cardinality 0..*.
+An association connects 'pimm_FunctionPrototype' and 'pimm_HRefinement'. From 'pimm_FunctionPrototype', the role 'pimm_FunctionPrototype' has cardinality 0..*, and from 'pimm_HRefinement', the role 'pimm_HRefinement' has cardinality 0..*.
+An association connects 'pimm_HRefinement' and 'pimm_FunctionPrototype'. From 'pimm_HRefinement', the role 'pimm_HRefinement38' has cardinality 0..*, and from 'pimm_FunctionPrototype', the role 'pimm_FunctionPrototype39' has cardinality 0..*.
+An association connects 'pimm_FunctionPrototype' and 'pimm_FunctionParameter'. From 'pimm_FunctionPrototype', the role 'pimm_FunctionPrototype41' has cardinality 0..*, and from 'pimm_FunctionParameter', the role 'pimm_FunctionParameter' has cardinality 0..*.
+An association connects 'pimm_DataPort' and 'pimm_Expression'. From 'pimm_DataPort', the role 'pimm_DataPort' has cardinality 0..*, and from 'pimm_Expression', the role 'pimm_Expression43' has cardinality 0..*.

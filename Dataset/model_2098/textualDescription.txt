@@ -1,0 +1,31 @@
+The domain model 'BasicFMmetamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'BasicFMmetamodel_OrGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicFMmetamodel_Feature' represents an important domain concept.
+It has the following attributes: 'selected', which is of type bool; 'name', which is of type str; 'mandatory', which is of type bool; 'id', which is of type str.
+
+'BasicFMmetamodel_FeatureModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'BasicFMmetamodel_CrossTreeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicFMmetamodel_Alternative' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'BasicFMmetamodel_Alternative' is a specialization of 'Feature'.
+The class 'BasicFMmetamodel_OrGroup' is a specialization of 'Feature'.
+
+Relationships between classes are modeled using associations.
+An association connects 'BasicFMmetamodel_Feature' and 'BasicFMmetamodel_FeatureModel'. From 'BasicFMmetamodel_Feature', the role 'BasicFMmetamodel_Feature' has cardinality 0..*, and from 'BasicFMmetamodel_FeatureModel', the role 'BasicFMmetamodel_FeatureModel' has cardinality 0..*.
+An association connects 'BasicFMmetamodel_CrossTreeConstraint' and 'BasicFMmetamodel_FeatureModel'. From 'BasicFMmetamodel_CrossTreeConstraint', the role 'BasicFMmetamodel_CrossTreeConstraint' has cardinality 0..*, and from 'BasicFMmetamodel_FeatureModel', the role 'BasicFMmetamodel_FeatureModel2' has cardinality 0..*.
+An association connects 'BasicFMmetamodel_Feature' and 'BasicFMmetamodel_Feature'. From 'BasicFMmetamodel_Feature', the role 'Feature' has cardinality 0..*, and from 'BasicFMmetamodel_Feature', the role 'parent' has cardinality 0..*.
+An association connects 'BasicFMmetamodel_Feature' and 'BasicFMmetamodel_Feature'. From 'BasicFMmetamodel_Feature', the role 'Feature7' has cardinality 0..*, and from 'BasicFMmetamodel_Feature', the role 'children' has cardinality 0..*.

@@ -1,0 +1,144 @@
+The domain model 'DiagonosticModel' describes the core structural elements and their relationships within the system.
+
+The model defines 31 main class(es).
+
+'DiagonosticModel_WaitAction' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagonosticModel_WhileLoop' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'operator', which is of type str; 'valueTo', which is of type str.
+
+'DiagonosticModel_TracebilityArtifact' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'url', which is of type str.
+
+'DiagonosticModel_TestSpecification' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'functionName', which is of type str; 'description', which is of type str; 'name', which is of type str; 'author', which is of type str; 'functionVersion', which is of type str.
+
+'DiagonosticModel_DiagnosticParam' represents an important domain concept.
+It has the following attributes: 'copyToVar', which is of type str; 'qualifier', which is of type str.
+
+'BlockAction' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagonosticModel_Variant' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str.
+
+'DiagonosticModel_DiagnosticParamValueType' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagonosticModel_ExternalReference' represents an important domain concept.
+It has the following attributes: 'owner', which is of type str; 'type', which is of type str; 'url', which is of type str; 'title', which is of type str.
+
+'DiagonosticModel_TestCase' represents an important domain concept.
+It has the following attributes: 'skip', which is of type bool; 'requirementID', which is of type str; 'name', which is of type str; 'description', which is of type str; 'executionStatus', which is of type str; 'id', which is of type str.
+
+'DiagonosticModel_ImportArtifact' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'DiagonosticModel_DiagnosticService' represents an important domain concept.
+It has the following attributes: 'result', which is of type str; 'service', which is of type str; 'ecu', which is of type str.
+
+'DiagonosticModel_BlockAction' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagonosticModel_DiagnosticResponse' represents an important domain concept.
+It has one attribute: 'primitive', which is of type str.
+
+'DiagonosticModel_Action' represents an important domain concept.
+It has the following attributes: 'wait', which is of type float; 'value', which is of type str; 'valueTo', which is of type str.
+
+'TestStep' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagonosticModel_DiagnosticRequest' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagonosticModel_CAPLParam' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str; 'value', which is of type str.
+
+'DiagonosticModel_ForLoop' represents an important domain concept.
+It has the following attributes: 'loopVar', which is of type str; 'startValue', which is of type int; 'stopValue', which is of type int.
+
+'DiagonosticModel_CheckAction' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'DiagonosticModel_OneOf' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'DiagonosticModel_CAPLTestStep' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagonosticModel_Var' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DiagonosticModel_TestGroup' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagonosticModel_SetAction' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagonosticModel_Range' represents an important domain concept.
+It has the following attributes: 'to', which is of type int; 'from', which is of type int.
+
+'DiagonosticModel_CAPLTestCase' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DiagonosticModel_TestStep' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'DiagonosticModel_SignalType' represents an important domain concept.
+It has the following attributes: 'namespace', which is of type str; 'MessageName', which is of type str; 'node', which is of type str; 'type', which is of type str; 'creationMode', which is of type str; 'lookupValues', which is of type str; 'name', which is of type str.
+
+'DiagnosticParamValueType' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TraceabilityArtifactEnum' defines the following possible values: 'BUG', 'TEST', 'OTHERS', 'REQUIREMENT'.
+The enumeration 'OperatorTypeEnum' defines the following possible values: 'eq', 'ne', 'gt', 'lt', 'bt'.
+The enumeration 'CreationModeEnum' defines the following possible values: 'IMPORTED', 'USER_DEFINED'.
+The enumeration 'SignalTypeEnum' defines the following possible values: 'SIGNAL', 'SYSTEM', 'UNDEFINED', 'ENVIRONMENT'.
+The enumeration 'ExecutionStatueTypeEnum' defines the following possible values: 'FAIL', 'NOT_EXECUTED', 'PASS'.
+
+The model also captures inheritance relationships between classes.
+The class 'DiagonosticModel_WaitAction' is a specialization of 'Action'.
+The class 'DiagonosticModel_CheckAction' is a specialization of 'Action'.
+The class 'DiagonosticModel_SetAction' is a specialization of 'Action'.
+The class 'DiagonosticModel_DiagnosticService' is a specialization of 'Action'.
+The class 'DiagonosticModel_CAPLTestStep' is a specialization of 'Action'.
+The class 'DiagonosticModel_Action' is a specialization of 'TestStep'.
+The class 'DiagonosticModel_BlockAction' is a specialization of 'TestStep'.
+The class 'DiagonosticModel_ForLoop' is a specialization of 'BlockAction'.
+The class 'DiagonosticModel_WhileLoop' is a specialization of 'BlockAction'.
+The class 'DiagonosticModel_Var' is a specialization of 'DiagnosticParamValueType'.
+The class 'DiagonosticModel_OneOf' is a specialization of 'DiagnosticParamValueType'.
+The class 'DiagonosticModel_Range' is a specialization of 'DiagnosticParamValueType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'DiagonosticModel_TestGroup' and 'DiagonosticModel_TestSpecification'. From 'DiagonosticModel_TestGroup', the role 'DiagonosticModel_TestGroup' has cardinality 0..*, and from 'DiagonosticModel_TestSpecification', the role 'DiagonosticModel_TestSpecification' has cardinality 0..*.
+An association connects 'DiagonosticModel_CAPLTestCase' and 'DiagonosticModel_TestSpecification'. From 'DiagonosticModel_CAPLTestCase', the role 'DiagonosticModel_CAPLTestCase' has cardinality 0..*, and from 'DiagonosticModel_TestSpecification', the role 'DiagonosticModel_TestSpecification2' has cardinality 0..*.
+An association connects 'DiagonosticModel_TestSpecification' and 'DiagonosticModel_Variant'. From 'DiagonosticModel_TestSpecification', the role 'DiagonosticModel_TestSpecification4' has cardinality 0..*, and from 'DiagonosticModel_Variant', the role 'DiagonosticModel_Variant' has cardinality 0..*.
+An association connects 'DiagonosticModel_ImportArtifact' and 'DiagonosticModel_TestSpecification'. From 'DiagonosticModel_ImportArtifact', the role 'DiagonosticModel_ImportArtifact' has cardinality 0..*, and from 'DiagonosticModel_TestSpecification', the role 'DiagonosticModel_TestSpecification6' has cardinality 0..*.
+An association connects 'DiagonosticModel_TestGroup' and 'DiagonosticModel_TestCase'. From 'DiagonosticModel_TestGroup', the role 'DiagonosticModel_TestGroup8' has cardinality 0..*, and from 'DiagonosticModel_TestCase', the role 'DiagonosticModel_TestCase' has cardinality 0..*.
+An association connects 'DiagonosticModel_TestGroup' and 'DiagonosticModel_ExternalReference'. From 'DiagonosticModel_TestGroup', the role 'DiagonosticModel_TestGroup10' has cardinality 0..*, and from 'DiagonosticModel_ExternalReference', the role 'DiagonosticModel_ExternalReference' has cardinality 0..*.
+An association connects 'DiagonosticModel_TestGroup' and 'DiagonosticModel_TestGroup'. From 'DiagonosticModel_TestGroup', the role 'DiagonosticModel_TestGroup13' has cardinality 0..*, and from 'DiagonosticModel_TestGroup', the role 'DiagonosticModel_TestGroup11' has cardinality 0..*.
+An association connects 'DiagonosticModel_TestGroup' and 'DiagonosticModel_CAPLTestCase'. From 'DiagonosticModel_TestGroup', the role 'DiagonosticModel_TestGroup15' has cardinality 0..*, and from 'DiagonosticModel_CAPLTestCase', the role 'DiagonosticModel_CAPLTestCase16' has cardinality 0..*.
+An association connects 'DiagonosticModel_TestStep' and 'DiagonosticModel_TestCase'. From 'DiagonosticModel_TestStep', the role 'DiagonosticModel_TestStep' has cardinality 0..*, and from 'DiagonosticModel_TestCase', the role 'DiagonosticModel_TestCase18' has cardinality 0..*.
+An association connects 'DiagonosticModel_TestCase' and 'DiagonosticModel_Variant'. From 'DiagonosticModel_TestCase', the role 'DiagonosticModel_TestCase20' has cardinality 0..*, and from 'DiagonosticModel_Variant', the role 'DiagonosticModel_Variant21' has cardinality 0..*.
+An association connects 'DiagonosticModel_TestStep' and 'DiagonosticModel_TestCase'. From 'DiagonosticModel_TestStep', the role 'DiagonosticModel_TestStep24' has cardinality 0..*, and from 'DiagonosticModel_TestCase', the role 'DiagonosticModel_TestCase23' has cardinality 0..*.
+An association connects 'DiagonosticModel_TestCase' and 'DiagonosticModel_TestStep'. From 'DiagonosticModel_TestCase', the role 'DiagonosticModel_TestCase26' has cardinality 0..*, and from 'DiagonosticModel_TestStep', the role 'DiagonosticModel_TestStep27' has cardinality 0..*.
+An association connects 'DiagonosticModel_TestCase' and 'DiagonosticModel_ExternalReference'. From 'DiagonosticModel_TestCase', the role 'DiagonosticModel_TestCase29' has cardinality 0..*, and from 'DiagonosticModel_ExternalReference', the role 'DiagonosticModel_ExternalReference30' has cardinality 0..*.
+An association connects 'DiagonosticModel_TracebilityArtifact' and 'DiagonosticModel_TestCase'. From 'DiagonosticModel_TracebilityArtifact', the role 'DiagonosticModel_TracebilityArtifact' has cardinality 0..*, and from 'DiagonosticModel_TestCase', the role 'DiagonosticModel_TestCase32' has cardinality 0..*.
+An association connects 'DiagonosticModel_TestStep' and 'DiagonosticModel_TestStep'. From 'DiagonosticModel_TestStep', the role 'DiagonosticModel_TestStep35' has cardinality 0..*, and from 'DiagonosticModel_TestStep', the role 'DiagonosticModel_TestStep33' has cardinality 0..*.
+An association connects 'DiagonosticModel_SignalType' and 'DiagonosticModel_TestStep'. From 'DiagonosticModel_SignalType', the role 'DiagonosticModel_SignalType' has cardinality 0..*, and from 'DiagonosticModel_TestStep', the role 'DiagonosticModel_TestStep37' has cardinality 0..*.
+An association connects 'DiagonosticModel_DiagnosticRequest' and 'DiagonosticModel_DiagnosticService'. From 'DiagonosticModel_DiagnosticRequest', the role 'DiagonosticModel_DiagnosticRequest' has cardinality 0..*, and from 'DiagonosticModel_DiagnosticService', the role 'DiagonosticModel_DiagnosticService' has cardinality 0..*.
+An association connects 'DiagonosticModel_DiagnosticResponse' and 'DiagonosticModel_DiagnosticService'. From 'DiagonosticModel_DiagnosticResponse', the role 'DiagonosticModel_DiagnosticResponse' has cardinality 0..*, and from 'DiagonosticModel_DiagnosticService', the role 'DiagonosticModel_DiagnosticService40' has cardinality 0..*.
+An association connects 'DiagonosticModel_CAPLParam' and 'DiagonosticModel_CAPLTestCase'. From 'DiagonosticModel_CAPLParam', the role 'DiagonosticModel_CAPLParam' has cardinality 0..*, and from 'DiagonosticModel_CAPLTestCase', the role 'DiagonosticModel_CAPLTestCase42' has cardinality 0..*.
+An association connects 'DiagonosticModel_CAPLTestStep' and 'DiagonosticModel_CAPLParam'. From 'DiagonosticModel_CAPLTestStep', the role 'DiagonosticModel_CAPLTestStep' has cardinality 0..*, and from 'DiagonosticModel_CAPLParam', the role 'DiagonosticModel_CAPLParam44' has cardinality 0..*.
+An association connects 'DiagonosticModel_SignalType' and 'DiagonosticModel_ImportArtifact'. From 'DiagonosticModel_SignalType', the role 'DiagonosticModel_SignalType47' has cardinality 0..*, and from 'DiagonosticModel_ImportArtifact', the role 'DiagonosticModel_ImportArtifact46' has cardinality 0..*.
+An association connects 'DiagonosticModel_DiagnosticParam' and 'DiagonosticModel_DiagnosticRequest'. From 'DiagonosticModel_DiagnosticParam', the role 'DiagonosticModel_DiagnosticParam' has cardinality 0..*, and from 'DiagonosticModel_DiagnosticRequest', the role 'DiagonosticModel_DiagnosticRequest49' has cardinality 0..*.
+An association connects 'DiagonosticModel_DiagnosticResponse' and 'DiagonosticModel_DiagnosticParam'. From 'DiagonosticModel_DiagnosticResponse', the role 'DiagonosticModel_DiagnosticResponse51' has cardinality 0..*, and from 'DiagonosticModel_DiagnosticParam', the role 'DiagonosticModel_DiagnosticParam52' has cardinality 0..*.
+An association connects 'DiagonosticModel_DiagnosticParamValueType' and 'DiagonosticModel_DiagnosticParam'. From 'DiagonosticModel_DiagnosticParamValueType', the role 'DiagonosticModel_DiagnosticParamValueType' has cardinality 0..*, and from 'DiagonosticModel_DiagnosticParam', the role 'DiagonosticModel_DiagnosticParam54' has cardinality 0..*.
+An association connects 'DiagonosticModel_TestStep' and 'DiagonosticModel_BlockAction'. From 'DiagonosticModel_TestStep', the role 'DiagonosticModel_TestStep56' has cardinality 0..*, and from 'DiagonosticModel_BlockAction', the role 'DiagonosticModel_BlockAction' has cardinality 0..*.

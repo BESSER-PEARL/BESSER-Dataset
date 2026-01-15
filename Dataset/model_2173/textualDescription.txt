@@ -1,0 +1,70 @@
+The domain model 'graphDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'graphDsl_ExportsVariable' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'strValue', which is of type str; 'intValue', which is of type int.
+
+'graphDsl_ImportsVariable' represents an important domain concept.
+It has the following attributes: 'isExternal', which is of type bool; 'componentName', which is of type str; 'isOptional', which is of type bool; 'componentProperty', which is of type str.
+
+'graphDsl_FacetsProperty' represents an important domain concept.
+It has one attribute: 'facetsNames', which is of type str.
+
+'graphDsl_ExportsProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'graphDsl_ComponentOrFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'graphDsl_ComponentProperties' represents an important domain concept.
+It does not declare any attributes.
+
+'graphDsl_FacetProperties' represents an important domain concept.
+It does not declare any attributes.
+
+'graphDsl_Facet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'graphDsl_FacetProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'graphDsl_ImportsProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'graphDsl_ExtendsProperty' represents an important domain concept.
+It has one attribute: 'extendsNames', which is of type str.
+
+'graphDsl_ChildrenProperty' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'graphDsl_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'graphDsl_InstallerProperty' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'graphDsl_OptionalProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'graphDsl_Graph' represents an important domain concept.
+It has one attribute: 'comments', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'graphDsl_ComponentOrFacet' and 'graphDsl_Graph'. From 'graphDsl_ComponentOrFacet', the role 'graphDsl_ComponentOrFacet' has cardinality 0..*, and from 'graphDsl_Graph', the role 'graphDsl_Graph' has cardinality 0..*.
+An association connects 'graphDsl_ComponentOrFacet' and 'graphDsl_Component'. From 'graphDsl_ComponentOrFacet', the role 'graphDsl_ComponentOrFacet2' has cardinality 0..*, and from 'graphDsl_Component', the role 'graphDsl_Component' has cardinality 0..*.
+An association connects 'graphDsl_Facet' and 'graphDsl_ComponentOrFacet'. From 'graphDsl_Facet', the role 'graphDsl_Facet' has cardinality 0..*, and from 'graphDsl_ComponentOrFacet', the role 'graphDsl_ComponentOrFacet4' has cardinality 0..*.
+An association connects 'graphDsl_ComponentProperties' and 'graphDsl_Component'. From 'graphDsl_ComponentProperties', the role 'graphDsl_ComponentProperties' has cardinality 0..*, and from 'graphDsl_Component', the role 'graphDsl_Component6' has cardinality 0..*.
+An association connects 'graphDsl_FacetProperties' and 'graphDsl_Facet'. From 'graphDsl_FacetProperties', the role 'graphDsl_FacetProperties' has cardinality 0..*, and from 'graphDsl_Facet', the role 'graphDsl_Facet8' has cardinality 0..*.
+An association connects 'graphDsl_OptionalProperty' and 'graphDsl_ComponentProperties'. From 'graphDsl_OptionalProperty', the role 'graphDsl_OptionalProperty' has cardinality 0..*, and from 'graphDsl_ComponentProperties', the role 'graphDsl_ComponentProperties10' has cardinality 0..*.
+An association connects 'graphDsl_ComponentProperties' and 'graphDsl_InstallerProperty'. From 'graphDsl_ComponentProperties', the role 'graphDsl_ComponentProperties12' has cardinality 0..*, and from 'graphDsl_InstallerProperty', the role 'graphDsl_InstallerProperty' has cardinality 0..*.
+An association connects 'graphDsl_FacetProperty' and 'graphDsl_FacetProperties'. From 'graphDsl_FacetProperty', the role 'graphDsl_FacetProperty' has cardinality 0..*, and from 'graphDsl_FacetProperties', the role 'graphDsl_FacetProperties14' has cardinality 0..*.
+An association connects 'graphDsl_ChildrenProperty' and 'graphDsl_FacetProperty'. From 'graphDsl_ChildrenProperty', the role 'graphDsl_ChildrenProperty' has cardinality 0..*, and from 'graphDsl_FacetProperty', the role 'graphDsl_FacetProperty16' has cardinality 0..*.
+An association connects 'graphDsl_FacetProperty' and 'graphDsl_ExportsProperty'. From 'graphDsl_FacetProperty', the role 'graphDsl_FacetProperty18' has cardinality 0..*, and from 'graphDsl_ExportsProperty', the role 'graphDsl_ExportsProperty' has cardinality 0..*.
+An association connects 'graphDsl_OptionalProperty' and 'graphDsl_ChildrenProperty'. From 'graphDsl_OptionalProperty', the role 'graphDsl_OptionalProperty20' has cardinality 0..*, and from 'graphDsl_ChildrenProperty', the role 'graphDsl_ChildrenProperty21' has cardinality 0..*.
+An association connects 'graphDsl_OptionalProperty' and 'graphDsl_ExportsProperty'. From 'graphDsl_OptionalProperty', the role 'graphDsl_OptionalProperty23' has cardinality 0..*, and from 'graphDsl_ExportsProperty', the role 'graphDsl_ExportsProperty24' has cardinality 0..*.
+An association connects 'graphDsl_ImportsProperty' and 'graphDsl_OptionalProperty'. From 'graphDsl_ImportsProperty', the role 'graphDsl_ImportsProperty' has cardinality 0..*, and from 'graphDsl_OptionalProperty', the role 'graphDsl_OptionalProperty26' has cardinality 0..*.
+An association connects 'graphDsl_FacetsProperty' and 'graphDsl_OptionalProperty'. From 'graphDsl_FacetsProperty', the role 'graphDsl_FacetsProperty' has cardinality 0..*, and from 'graphDsl_OptionalProperty', the role 'graphDsl_OptionalProperty28' has cardinality 0..*.
+An association connects 'graphDsl_ExtendsProperty' and 'graphDsl_OptionalProperty'. From 'graphDsl_ExtendsProperty', the role 'graphDsl_ExtendsProperty' has cardinality 0..*, and from 'graphDsl_OptionalProperty', the role 'graphDsl_OptionalProperty30' has cardinality 0..*.
+An association connects 'graphDsl_ExportsProperty' and 'graphDsl_ExportsVariable'. From 'graphDsl_ExportsProperty', the role 'graphDsl_ExportsProperty32' has cardinality 0..*, and from 'graphDsl_ExportsVariable', the role 'graphDsl_ExportsVariable' has cardinality 0..*.
+An association connects 'graphDsl_ImportsVariable' and 'graphDsl_ImportsProperty'. From 'graphDsl_ImportsVariable', the role 'graphDsl_ImportsVariable' has cardinality 0..*, and from 'graphDsl_ImportsProperty', the role 'graphDsl_ImportsProperty34' has cardinality 0..*.

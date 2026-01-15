@@ -1,0 +1,20 @@
+The domain model 'test' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'test_AddressModel' represents an important domain concept.
+It has the following attributes: 'validFrom', which is of type date; 'houseNumber', which is of type str; 'zipCode', which is of type str; 'street', which is of type str; 'validTo', which is of type date; 'differentPostAddress', which is of type bool.
+
+'test_TestModel' represents an important domain concept.
+It has the following attributes: 'accountBalance', which is of type str; 'isSelectable', which is of type str; 'childCount', which is of type str; 'age', which is of type int; 'name', which is of type str; 'overdrawAccount', which is of type str; 'gender', which is of type str; 'birthDate', which is of type date.
+
+'test_ConfigurationModel' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Gender' defines the following possible values: 'FEMALE', 'MALE', 'UNKNOWN'.
+
+Relationships between classes are modeled using associations.
+An association connects 'test_AddressModel' and 'test_TestModel'. From 'test_AddressModel', the role 'test_AddressModel' has cardinality 0..*, and from 'test_TestModel', the role 'test_TestModel' has cardinality 0..*.
+An association connects 'test_TestModel' and 'test_ConfigurationModel'. From 'test_TestModel', the role 'test_TestModel2' has cardinality 0..*, and from 'test_ConfigurationModel', the role 'test_ConfigurationModel' has cardinality 0..*.
+An association connects 'test_TestModel' and 'test_ConfigurationModel'. From 'test_TestModel', the role 'test_TestModel5' has cardinality 0..*, and from 'test_ConfigurationModel', the role 'test_ConfigurationModel4' has cardinality 0..*.

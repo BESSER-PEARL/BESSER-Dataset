@@ -1,0 +1,102 @@
+The domain model 'sgf' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'sgf_graph_Graph' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'BasicNode' represents an important domain concept.
+It does not declare any attributes.
+
+'sgf_tree_Simulator' represents an important domain concept.
+It does not declare any attributes.
+
+'VM' represents an important domain concept.
+It does not declare any attributes.
+
+'Tree' represents an important domain concept.
+It does not declare any attributes.
+
+'sgf_tree_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'Simulator' represents an important domain concept.
+It does not declare any attributes.
+
+'sgf_vm_Processor' represents an important domain concept.
+It has the following attributes: 'ID', which is of type str; 'IP', which is of type str.
+
+'Coordinator' represents an important domain concept.
+It does not declare any attributes.
+
+'sgf_tree_BasicNode' represents an important domain concept.
+It has one attribute: 'modelName', which is of type str.
+
+'sgf_tree_Tree' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'Skeleton' represents an important domain concept.
+It does not declare any attributes.
+
+'sgf_tree_Coordinator' represents an important domain concept.
+It does not declare any attributes.
+
+'sgf_graph_Mapping' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'Root' represents an important domain concept.
+It does not declare any attributes.
+
+'sgf_skeleton_Skeleton' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'Process' represents an important domain concept.
+It does not declare any attributes.
+
+'Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'sgf_bundle_Process' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'Bundle' represents an important domain concept.
+It does not declare any attributes.
+
+'Processor' represents an important domain concept.
+It does not declare any attributes.
+
+'sgf_bundle_Bundle' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'sgf_tree_Node' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'sgf_vm_VM' represents an important domain concept.
+It has the following attributes: 'protocol', which is of type str; 'ID', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'sgf_tree_Root' is a specialization of 'Node'.
+The class 'sgf_tree_Coordinator' is a specialization of 'BasicNode'.
+The class 'sgf_tree_Simulator' is a specialization of 'BasicNode'.
+The class 'sgf_tree_BasicNode' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sgf_tree_Tree' and 'Root'. From 'sgf_tree_Tree', the role 'sgf_tree_Tree' has cardinality 0..*, and from 'Root', the role 'Root' has cardinality 0..*.
+An association connects 'sgf_tree_Tree' and 'Coordinator'. From 'sgf_tree_Tree', the role 'sgf_tree_Tree2' has cardinality 0..*, and from 'Coordinator', the role 'Coordinator' has cardinality 0..*.
+An association connects 'Simulator' and 'sgf_tree_Tree'. From 'Simulator', the role 'Simulator' has cardinality 0..*, and from 'sgf_tree_Tree', the role 'sgf_tree_Tree4' has cardinality 0..*.
+An association connects 'BasicNode' and 'sgf_tree_Root'. From 'BasicNode', the role 'BasicNode' has cardinality 0..*, and from 'sgf_tree_Root', the role 'sgf_tree_Root' has cardinality 0..*.
+An association connects 'BasicNode' and 'sgf_tree_Coordinator'. From 'BasicNode', the role 'BasicNode7' has cardinality 0..*, and from 'sgf_tree_Coordinator', the role 'sgf_tree_Coordinator' has cardinality 0..*.
+An association connects 'sgf_skeleton_Skeleton' and 'Tree'. From 'sgf_skeleton_Skeleton', the role 'sgf_skeleton_Skeleton' has cardinality 0..*, and from 'Tree', the role 'Tree' has cardinality 0..*.
+An association connects 'sgf_skeleton_Skeleton' and 'Root'. From 'sgf_skeleton_Skeleton', the role 'sgf_skeleton_Skeleton10' has cardinality 0..*, and from 'Root', the role 'Root11' has cardinality 0..*.
+An association connects 'sgf_bundle_Bundle' and 'Skeleton'. From 'sgf_bundle_Bundle', the role 'sgf_bundle_Bundle' has cardinality 0..*, and from 'Skeleton', the role 'Skeleton' has cardinality 0..*.
+An association connects 'sgf_bundle_Bundle' and 'Process'. From 'sgf_bundle_Bundle', the role 'sgf_bundle_Bundle14' has cardinality 0..*, and from 'Process', the role 'Process' has cardinality 0..*.
+An association connects 'sgf_bundle_Process' and 'Node'. From 'sgf_bundle_Process', the role 'sgf_bundle_Process' has cardinality 0..*, and from 'Node', the role 'Node' has cardinality 0..*.
+An association connects 'Processor' and 'sgf_vm_VM'. From 'Processor', the role 'Processor' has cardinality 0..*, and from 'sgf_vm_VM', the role 'sgf_vm_VM' has cardinality 0..*.
+An association connects 'Bundle' and 'sgf_graph_Graph'. From 'Bundle', the role 'Bundle' has cardinality 0..*, and from 'sgf_graph_Graph', the role 'sgf_graph_Graph' has cardinality 0..*.
+An association connects 'VM' and 'sgf_graph_Graph'. From 'VM', the role 'VM' has cardinality 0..*, and from 'sgf_graph_Graph', the role 'sgf_graph_Graph19' has cardinality 0..*.
+An association connects 'Mapping' and 'sgf_graph_Graph'. From 'Mapping', the role 'Mapping' has cardinality 0..*, and from 'sgf_graph_Graph', the role 'sgf_graph_Graph21' has cardinality 0..*.
+An association connects 'Process' and 'sgf_graph_Mapping'. From 'Process', the role 'Process23' has cardinality 0..*, and from 'sgf_graph_Mapping', the role 'sgf_graph_Mapping' has cardinality 0..*.
+An association connects 'sgf_graph_Mapping' and 'Processor'. From 'sgf_graph_Mapping', the role 'sgf_graph_Mapping25' has cardinality 0..*, and from 'Processor', the role 'Processor26' has cardinality 0..*.

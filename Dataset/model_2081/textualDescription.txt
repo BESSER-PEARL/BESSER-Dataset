@@ -1,0 +1,119 @@
+The domain model 'rsgf' describes the core structural elements and their relationships within the system.
+
+The model defines 29 main class(es).
+
+'rsgf_tree_P_Simulator' represents an important domain concept.
+It does not declare any attributes.
+
+'rsgf_tree_NodeCoordinator' represents an important domain concept.
+It does not declare any attributes.
+
+'Simulator' represents an important domain concept.
+It does not declare any attributes.
+
+'rsgf_tree_Node' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'rsgf_tree_CDEVSSimulator' represents an important domain concept.
+It does not declare any attributes.
+
+'rsgf_tree_FlatCoordinator' represents an important domain concept.
+It does not declare any attributes.
+
+'rsgf_bundle_Process' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'Skeleton' represents an important domain concept.
+It does not declare any attributes.
+
+'rsgf_tree_Tree' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'BasicNode' represents an important domain concept.
+It does not declare any attributes.
+
+'rsgf_tree_Coordinator' represents an important domain concept.
+It does not declare any attributes.
+
+'rsgf_mw_Middleware' represents an important domain concept.
+It does not declare any attributes.
+
+'Process' represents an important domain concept.
+It does not declare any attributes.
+
+'rsgf_vm_VM' represents an important domain concept.
+It has the following attributes: 'ID', which is of type str; 'protocol', which is of type str.
+
+'rsgf_tree_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'rsgf_tree_CDEVSCoordinator' represents an important domain concept.
+It does not declare any attributes.
+
+'rsgf_skeleton_Skeleton' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'rsgf_bundle_Bundle' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'Root' represents an important domain concept.
+It does not declare any attributes.
+
+'rsgf_tree_PDEVSSimulator' represents an important domain concept.
+It does not declare any attributes.
+
+'rsgf_tree_PDEVSCoordinator' represents an important domain concept.
+It does not declare any attributes.
+
+'rsgf_tree_BasicNode' represents an important domain concept.
+It has one attribute: 'modelName', which is of type str.
+
+'Coordinator' represents an important domain concept.
+It does not declare any attributes.
+
+'Middleware' represents an important domain concept.
+It does not declare any attributes.
+
+'rsgf_tree_P_Coordinator' represents an important domain concept.
+It does not declare any attributes.
+
+'VM' represents an important domain concept.
+It does not declare any attributes.
+
+'Tree' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'rsgf_tree_Simulator' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'rsgf_tree_Root' is a specialization of 'Node'.
+The class 'rsgf_tree_BasicNode' is a specialization of 'Node'.
+The class 'rsgf_tree_Coordinator' is a specialization of 'BasicNode'.
+The class 'rsgf_tree_CDEVSCoordinator' is a specialization of 'Coordinator'.
+The class 'rsgf_tree_PDEVSCoordinator' is a specialization of 'Coordinator'.
+The class 'rsgf_tree_FlatCoordinator' is a specialization of 'Coordinator'.
+The class 'rsgf_tree_NodeCoordinator' is a specialization of 'Coordinator'.
+The class 'rsgf_tree_P_Coordinator' is a specialization of 'Coordinator'.
+The class 'rsgf_tree_Simulator' is a specialization of 'BasicNode'.
+The class 'rsgf_tree_CDEVSSimulator' is a specialization of 'Simulator'.
+The class 'rsgf_tree_PDEVSSimulator' is a specialization of 'Simulator'.
+The class 'rsgf_tree_P_Simulator' is a specialization of 'Simulator'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Root' and 'rsgf_tree_Tree'. From 'Root', the role 'Root' has cardinality 0..*, and from 'rsgf_tree_Tree', the role 'rsgf_tree_Tree' has cardinality 0..*.
+An association connects 'Coordinator' and 'rsgf_tree_Tree'. From 'Coordinator', the role 'Coordinator' has cardinality 0..*, and from 'rsgf_tree_Tree', the role 'rsgf_tree_Tree2' has cardinality 0..*.
+An association connects 'rsgf_tree_Tree' and 'Simulator'. From 'rsgf_tree_Tree', the role 'rsgf_tree_Tree4' has cardinality 0..*, and from 'Simulator', the role 'Simulator' has cardinality 0..*.
+An association connects 'BasicNode' and 'rsgf_tree_Root'. From 'BasicNode', the role 'BasicNode' has cardinality 0..*, and from 'rsgf_tree_Root', the role 'rsgf_tree_Root' has cardinality 0..*.
+An association connects 'rsgf_tree_Coordinator' and 'BasicNode'. From 'rsgf_tree_Coordinator', the role 'rsgf_tree_Coordinator' has cardinality 0..*, and from 'BasicNode', the role 'BasicNode7' has cardinality 0..*.
+An association connects 'Tree' and 'rsgf_skeleton_Skeleton'. From 'Tree', the role 'Tree' has cardinality 0..*, and from 'rsgf_skeleton_Skeleton', the role 'rsgf_skeleton_Skeleton' has cardinality 0..*.
+An association connects 'rsgf_skeleton_Skeleton' and 'Root'. From 'rsgf_skeleton_Skeleton', the role 'rsgf_skeleton_Skeleton10' has cardinality 0..*, and from 'Root', the role 'Root11' has cardinality 0..*.
+An association connects 'Skeleton' and 'rsgf_bundle_Bundle'. From 'Skeleton', the role 'Skeleton' has cardinality 0..*, and from 'rsgf_bundle_Bundle', the role 'rsgf_bundle_Bundle' has cardinality 0..*.
+An association connects 'rsgf_bundle_Bundle' and 'Process'. From 'rsgf_bundle_Bundle', the role 'rsgf_bundle_Bundle14' has cardinality 0..*, and from 'Process', the role 'Process' has cardinality 0..*.
+An association connects 'Node' and 'rsgf_bundle_Process'. From 'Node', the role 'Node' has cardinality 0..*, and from 'rsgf_bundle_Process', the role 'rsgf_bundle_Process' has cardinality 0..*.
+An association connects 'rsgf_bundle_Process' and 'Middleware'. From 'rsgf_bundle_Process', the role 'rsgf_bundle_Process17' has cardinality 0..*, and from 'Middleware', the role 'Middleware' has cardinality 0..*.
+An association connects 'rsgf_mw_Middleware' and 'Process'. From 'rsgf_mw_Middleware', the role 'rsgf_mw_Middleware' has cardinality 0..*, and from 'Process', the role 'Process19' has cardinality 0..*.
+An association connects 'VM' and 'rsgf_mw_Middleware'. From 'VM', the role 'VM' has cardinality 0..*, and from 'rsgf_mw_Middleware', the role 'rsgf_mw_Middleware21' has cardinality 0..*.

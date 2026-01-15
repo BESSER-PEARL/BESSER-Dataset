@@ -1,0 +1,95 @@
+The domain model 'sample' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'sample_Node' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'sample_VirtualNode' represents an important domain concept.
+It does not declare any attributes.
+
+'sample_PhysicalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'sample_StringMap' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'sample_LocalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'sample_ETypes' represents an important domain concept.
+It has one attribute: 'uris', which is of type str.
+
+'sample_TypeMap' represents an important domain concept.
+It does not declare any attributes.
+
+'sample_Value' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'sample_PrimaryObject' represents an important domain concept.
+It has the following attributes: 'featureMapReferenceCollection', which is of type str; 'unsettableAttributeWithDefault', which is of type str; 'featureMapAttributeType1', which is of type str; 'unsettableAttribute', which is of type str; 'id', which is of type str; 'kind', which is of type str; 'featureMapAttributeType2', which is of type str; 'featureMapAttributeCollection', which is of type str; 'name', which is of type str.
+
+'sample_Tree' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sample_DataTypeMap' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'PhysicalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'sample_Comment' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'sample_TargetObject' represents an important domain concept.
+It has the following attributes: 'manyAttributes', which is of type str; 'singleAttribute', which is of type str; 'name', which is of type str.
+
+'sample_RemoteNode' represents an important domain concept.
+It does not declare any attributes.
+
+'sample_TypeMapReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'sample_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SomeKind' defines the following possible values: 'one', 'Three', 'Two'.
+
+The model also captures inheritance relationships between classes.
+The class 'sample_PhysicalNode' is a specialization of 'Node'.
+The class 'sample_RemoteNode' is a specialization of 'PhysicalNode'.
+The class 'sample_LocalNode' is a specialization of 'PhysicalNode'.
+The class 'sample_VirtualNode' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sample_TypeMap' and 'sample_ETypes'. From 'sample_TypeMap', the role 'sample_TypeMap' has cardinality 0..*, and from 'sample_ETypes', the role 'sample_ETypes' has cardinality 0..*.
+An association connects 'sample_TypeMapReference' and 'sample_ETypes'. From 'sample_TypeMapReference', the role 'sample_TypeMapReference' has cardinality 0..*, and from 'sample_ETypes', the role 'sample_ETypes2' has cardinality 0..*.
+An association connects 'sample_ETypes' and 'sample_StringMap'. From 'sample_ETypes', the role 'sample_ETypes4' has cardinality 0..*, and from 'sample_StringMap', the role 'sample_StringMap' has cardinality 0..*.
+An association connects 'sample_ETypes' and 'sample_DataTypeMap'. From 'sample_ETypes', the role 'sample_ETypes6' has cardinality 0..*, and from 'sample_DataTypeMap', the role 'sample_DataTypeMap' has cardinality 0..*.
+An association connects 'sample_TypeMap' and 'sample_Type'. From 'sample_TypeMap', the role 'sample_TypeMap8' has cardinality 0..*, and from 'sample_Type', the role 'sample_Type' has cardinality 0..*.
+An association connects 'sample_Value' and 'sample_TypeMap'. From 'sample_Value', the role 'sample_Value' has cardinality 0..*, and from 'sample_TypeMap', the role 'sample_TypeMap10' has cardinality 0..*.
+An association connects 'sample_PrimaryObject' and 'sample_TypeMapReference'. From 'sample_PrimaryObject', the role 'sample_PrimaryObject' has cardinality 0..*, and from 'sample_TypeMapReference', the role 'sample_TypeMapReference12' has cardinality 0..*.
+An association connects 'sample_TypeMapReference' and 'sample_TargetObject'. From 'sample_TypeMapReference', the role 'sample_TypeMapReference14' has cardinality 0..*, and from 'sample_TargetObject', the role 'sample_TargetObject' has cardinality 0..*.
+An association connects 'sample_TargetObject' and 'sample_PrimaryObject'. From 'sample_TargetObject', the role 'sample_TargetObject17' has cardinality 0..*, and from 'sample_PrimaryObject', the role 'sample_PrimaryObject16' has cardinality 0..*.
+An association connects 'sample_TargetObject' and 'sample_PrimaryObject'. From 'sample_TargetObject', the role 'sample_TargetObject20' has cardinality 0..*, and from 'sample_PrimaryObject', the role 'sample_PrimaryObject19' has cardinality 0..*.
+An association connects 'sample_TargetObject' and 'sample_PrimaryObject'. From 'sample_TargetObject', the role 'sample_TargetObject23' has cardinality 0..*, and from 'sample_PrimaryObject', the role 'sample_PrimaryObject22' has cardinality 0..*.
+An association connects 'sample_PrimaryObject' and 'sample_TargetObject'. From 'sample_PrimaryObject', the role 'sample_PrimaryObject25' has cardinality 0..*, and from 'sample_TargetObject', the role 'sample_TargetObject26' has cardinality 0..*.
+An association connects 'sample_PrimaryObject' and 'sample_TargetObject'. From 'sample_PrimaryObject', the role 'sample_PrimaryObject28' has cardinality 0..*, and from 'sample_TargetObject', the role 'sample_TargetObject29' has cardinality 0..*.
+An association connects 'sample_TargetObject' and 'sample_PrimaryObject'. From 'sample_TargetObject', the role 'sample_TargetObject32' has cardinality 0..*, and from 'sample_PrimaryObject', the role 'sample_PrimaryObject31' has cardinality 0..*.
+An association connects 'sample_TargetObject' and 'sample_PrimaryObject'. From 'sample_TargetObject', the role 'sample_TargetObject35' has cardinality 0..*, and from 'sample_PrimaryObject', the role 'sample_PrimaryObject34' has cardinality 0..*.
+An association connects 'sample_TargetObject' and 'sample_PrimaryObject'. From 'sample_TargetObject', the role 'sample_TargetObject37' has cardinality 0..*, and from 'sample_PrimaryObject', the role 'sample_PrimaryObject38' has cardinality 0..*.
+An association connects 'sample_TargetObject' and 'sample_PrimaryObject'. From 'sample_TargetObject', the role 'sample_TargetObject40' has cardinality 0..*, and from 'sample_PrimaryObject', the role 'sample_PrimaryObject41' has cardinality 0..*.
+An association connects 'sample_Tree' and 'sample_Node'. From 'sample_Tree', the role 'tree' has cardinality 0..*, and from 'sample_Node', the role 'Node' has cardinality 0..*.
+An association connects 'sample_Tree' and 'sample_Tree'. From 'sample_Tree', the role 'children' has cardinality 0..*, and from 'sample_Tree', the role 'Tree' has cardinality 0..*.
+An association connects 'sample_Tree' and 'sample_Tree'. From 'sample_Tree', the role 'Tree47' has cardinality 0..*, and from 'sample_Tree', the role 'parent' has cardinality 0..*.
+An association connects 'sample_Comment' and 'sample_Tree'. From 'sample_Comment', the role 'sample_Comment' has cardinality 0..*, and from 'sample_Tree', the role 'sample_Tree' has cardinality 0..*.
+An association connects 'sample_Node' and 'sample_Node'. From 'sample_Node', the role 'Node52' has cardinality 0..*, and from 'sample_Node', the role 'parent51' has cardinality 0..*.
+An association connects 'sample_Node' and 'sample_Node'. From 'sample_Node', the role 'parentProxy' has cardinality 0..*, and from 'sample_Node', the role 'Node55' has cardinality 0..*.
+An association connects 'sample_Node' and 'sample_Node'. From 'sample_Node', the role 'Node59' has cardinality 0..*, and from 'sample_Node', the role 'children58' has cardinality 0..*.
+An association connects 'sample_Node' and 'sample_Node'. From 'sample_Node', the role 'Node62' has cardinality 0..*, and from 'sample_Node', the role 'childrenProxies' has cardinality 0..*.
+An association connects 'sample_Tree' and 'sample_Node'. From 'sample_Tree', the role 'Tree64' has cardinality 0..*, and from 'sample_Node', the role 'nodes' has cardinality 0..*.
+An association connects 'sample_Comment' and 'sample_Node'. From 'sample_Comment', the role 'sample_Comment66' has cardinality 0..*, and from 'sample_Node', the role 'sample_Node' has cardinality 0..*.

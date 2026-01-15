@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ddabble/TDT4250-assignments/assignment1/model/study.ecore

@@ -1,0 +1,105 @@
+The domain model 'synccharts' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'synccharts_Transition' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'isHistory', which is of type bool; 'priority', which is of type int.
+
+'synccharts_Action' represents an important domain concept.
+It has the following attributes: 'delay', which is of type int; 'isImmediate', which is of type bool; 'label', which is of type str.
+
+'Scope' represents an important domain concept.
+It does not declare any attributes.
+
+'synccharts_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'Annotatable' represents an important domain concept.
+It does not declare any attributes.
+
+'synccharts_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'synccharts_TextualCode' represents an important domain concept.
+It does not declare any attributes.
+
+'synccharts_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'synccharts_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'TextualCode' represents an important domain concept.
+It does not declare any attributes.
+
+'synccharts_Substitution' represents an important domain concept.
+It has the following attributes: 'formal', which is of type str; 'actual', which is of type str.
+
+'synccharts_Effect' represents an important domain concept.
+It does not declare any attributes.
+
+'synccharts_TextEffect' represents an important domain concept.
+It does not declare any attributes.
+
+'synccharts_Scope' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'interfaceDeclaration', which is of type str; 'label', which is of type str.
+
+'synccharts_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'synccharts_Emission' represents an important domain concept.
+It does not declare any attributes.
+
+'synccharts_State' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'isFinal', which is of type bool; 'isInitial', which is of type bool.
+
+'Effect' represents an important domain concept.
+It does not declare any attributes.
+
+'synccharts_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StateType' defines the following possible values: 'TEXTUAL', 'REFERENCE', 'CONDITIONAL', 'NORMAL'.
+The enumeration 'TransitionType' defines the following possible values: 'STRONGABORT', 'NORMALTERMINATION', 'WEAKABORT'.
+
+The model also captures inheritance relationships between classes.
+The class 'synccharts_Action' is a specialization of 'Annotatable'.
+The class 'synccharts_Assignment' is a specialization of 'Effect'.
+The class 'synccharts_Emission' is a specialization of 'Effect'.
+The class 'synccharts_Region' is a specialization of 'Scope'.
+The class 'synccharts_State' is a specialization of 'Scope'.
+The class 'synccharts_Transition' is a specialization of 'Action'.
+The class 'synccharts_Scope' is a specialization of 'Annotatable'.
+The class 'synccharts_TextEffect' is a specialization of 'TextualCode'.
+The class 'synccharts_TextEffect' is a specialization of 'Effect'.
+
+Relationships between classes are modeled using associations.
+An association connects 'synccharts_Action' and 'synccharts_Effect'. From 'synccharts_Action', the role 'synccharts_Action' has cardinality 0..*, and from 'synccharts_Effect', the role 'synccharts_Effect' has cardinality 0..*.
+An association connects 'synccharts_Expression' and 'synccharts_Action'. From 'synccharts_Expression', the role 'synccharts_Expression' has cardinality 0..*, and from 'synccharts_Action', the role 'synccharts_Action2' has cardinality 0..*.
+An association connects 'synccharts_Variable' and 'synccharts_Assignment'. From 'synccharts_Variable', the role 'synccharts_Variable' has cardinality 0..*, and from 'synccharts_Assignment', the role 'synccharts_Assignment' has cardinality 0..*.
+An association connects 'synccharts_Expression' and 'synccharts_Assignment'. From 'synccharts_Expression', the role 'synccharts_Expression6' has cardinality 0..*, and from 'synccharts_Assignment', the role 'synccharts_Assignment5' has cardinality 0..*.
+An association connects 'synccharts_Emission' and 'synccharts_Signal'. From 'synccharts_Emission', the role 'synccharts_Emission' has cardinality 0..*, and from 'synccharts_Signal', the role 'synccharts_Signal' has cardinality 0..*.
+An association connects 'synccharts_Emission' and 'synccharts_Expression'. From 'synccharts_Emission', the role 'synccharts_Emission9' has cardinality 0..*, and from 'synccharts_Expression', the role 'synccharts_Expression10' has cardinality 0..*.
+An association connects 'synccharts_Region' and 'synccharts_State'. From 'synccharts_Region', the role 'parentRegion' has cardinality 0..*, and from 'synccharts_State', the role 'State' has cardinality 0..*.
+An association connects 'synccharts_State' and 'synccharts_Region'. From 'synccharts_State', the role 'State13' has cardinality 0..*, and from 'synccharts_Region', the role 'regions' has cardinality 0..*.
+An association connects 'synccharts_Scope' and 'synccharts_Substitution'. From 'synccharts_Scope', the role 'Scope' has cardinality 0..*, and from 'synccharts_Substitution', the role 'renamings' has cardinality 0..*.
+An association connects 'synccharts_State' and 'synccharts_Region'. From 'synccharts_State', the role 'parentState' has cardinality 0..*, and from 'synccharts_Region', the role 'Region' has cardinality 0..*.
+An association connects 'synccharts_Region' and 'synccharts_State'. From 'synccharts_Region', the role 'Region17' has cardinality 0..*, and from 'synccharts_State', the role 'states' has cardinality 0..*.
+An association connects 'synccharts_State' and 'synccharts_Transition'. From 'synccharts_State', the role 'sourceState' has cardinality 0..*, and from 'synccharts_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'synccharts_State' and 'synccharts_Transition'. From 'synccharts_State', the role 'targetState' has cardinality 0..*, and from 'synccharts_Transition', the role 'Transition20' has cardinality 0..*.
+An association connects 'synccharts_Transition' and 'synccharts_State'. From 'synccharts_Transition', the role 'incomingTransitions' has cardinality 0..*, and from 'synccharts_State', the role 'State22' has cardinality 0..*.
+An association connects 'synccharts_Transition' and 'synccharts_State'. From 'synccharts_Transition', the role 'outgoingTransitions' has cardinality 0..*, and from 'synccharts_State', the role 'State24' has cardinality 0..*.
+An association connects 'synccharts_Scope' and 'synccharts_Signal'. From 'synccharts_Scope', the role 'synccharts_Scope' has cardinality 0..*, and from 'synccharts_Signal', the role 'synccharts_Signal26' has cardinality 0..*.
+An association connects 'synccharts_Scope' and 'synccharts_Variable'. From 'synccharts_Scope', the role 'synccharts_Scope28' has cardinality 0..*, and from 'synccharts_Variable', the role 'synccharts_Variable29' has cardinality 0..*.
+An association connects 'synccharts_Action' and 'synccharts_Scope'. From 'synccharts_Action', the role 'synccharts_Action32' has cardinality 0..*, and from 'synccharts_Scope', the role 'synccharts_Scope31' has cardinality 0..*.
+An association connects 'synccharts_Action' and 'synccharts_Scope'. From 'synccharts_Action', the role 'synccharts_Action35' has cardinality 0..*, and from 'synccharts_Scope', the role 'synccharts_Scope34' has cardinality 0..*.
+An association connects 'synccharts_Scope' and 'synccharts_Action'. From 'synccharts_Scope', the role 'synccharts_Scope37' has cardinality 0..*, and from 'synccharts_Action', the role 'synccharts_Action38' has cardinality 0..*.
+An association connects 'synccharts_Scope' and 'synccharts_Action'. From 'synccharts_Scope', the role 'synccharts_Scope40' has cardinality 0..*, and from 'synccharts_Action', the role 'synccharts_Action41' has cardinality 0..*.
+An association connects 'synccharts_EObject' and 'synccharts_Scope'. From 'synccharts_EObject', the role 'synccharts_EObject' has cardinality 0..*, and from 'synccharts_Scope', the role 'synccharts_Scope43' has cardinality 0..*.
+An association connects 'synccharts_Scope' and 'synccharts_EObject'. From 'synccharts_Scope', the role 'synccharts_Scope45' has cardinality 0..*, and from 'synccharts_EObject', the role 'synccharts_EObject46' has cardinality 0..*.
+An association connects 'synccharts_TextualCode' and 'synccharts_Scope'. From 'synccharts_TextualCode', the role 'synccharts_TextualCode' has cardinality 0..*, and from 'synccharts_Scope', the role 'synccharts_Scope48' has cardinality 0..*.
+An association connects 'synccharts_Scope' and 'synccharts_Substitution'. From 'synccharts_Scope', the role 'parentScope' has cardinality 0..*, and from 'synccharts_Substitution', the role 'Substitution' has cardinality 0..*.

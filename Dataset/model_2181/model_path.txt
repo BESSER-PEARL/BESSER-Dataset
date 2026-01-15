@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Sorour-j/Epsilon/examples/org.eclipse.epsilon.emc.emf.ext/tree.ecore

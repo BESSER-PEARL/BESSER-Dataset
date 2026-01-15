@@ -1,0 +1,26 @@
+The domain model 'TreeMapViewer' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'TreeMapViewer_TreeMapItem' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'value', which is of type float.
+
+'TreeMapItem' represents an important domain concept.
+It does not declare any attributes.
+
+'TreeMapViewer_TreeMapContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'TreeMapViewer_TreeMapViewer' represents an important domain concept.
+It has one attribute: 'childLayoutStrategy', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TreeMapType' defines the following possible values: 'Quantum', 'Ordred', 'Linear'.
+
+The model also captures inheritance relationships between classes.
+The class 'TreeMapViewer_TreeMapContainer' is a specialization of 'TreeMapItem'.
+
+Relationships between classes are modeled using associations.
+An association connects 'TreeMapViewer_TreeMapViewer' and 'TreeMapViewer_TreeMapItem'. From 'TreeMapViewer_TreeMapViewer', the role 'TreeMapViewer_TreeMapViewer' has cardinality 0..*, and from 'TreeMapViewer_TreeMapItem', the role 'TreeMapViewer_TreeMapItem' has cardinality 0..*.
+An association connects 'TreeMapViewer_TreeMapItem' and 'TreeMapViewer_TreeMapViewer'. From 'TreeMapViewer_TreeMapItem', the role 'TreeMapViewer_TreeMapItem2' has cardinality 0..*, and from 'TreeMapViewer_TreeMapViewer', the role 'TreeMapViewer_TreeMapViewer3' has cardinality 0..*.
+An association connects 'TreeMapViewer_TreeMapContainer' and 'TreeMapViewer_TreeMapItem'. From 'TreeMapViewer_TreeMapContainer', the role 'TreeMapViewer_TreeMapContainer' has cardinality 0..*, and from 'TreeMapViewer_TreeMapItem', the role 'TreeMapViewer_TreeMapItem5' has cardinality 0..*.

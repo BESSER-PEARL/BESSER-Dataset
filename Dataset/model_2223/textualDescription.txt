@@ -1,0 +1,42 @@
+The domain model 'oving1APD' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'oving1APD_Specialization' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'oving1APD_Course' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'level', which is of type int; 'credit', which is of type float; 'code', which is of type str.
+
+'oving1APD_Semester' represents an important domain concept.
+It has one attribute: 'number', which is of type int.
+
+'oving1APD_Department' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'shortName', which is of type str.
+
+'oving1APD_StudyProgram' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'shortName', which is of type str.
+
+'oving1APD_Slot' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CourseStatus' defines the following possible values: 'Elective', 'Mandatory'.
+
+Relationships between classes are modeled using associations.
+An association connects 'oving1APD_StudyProgram' and 'oving1APD_Department'. From 'oving1APD_StudyProgram', the role 'StudyProgram' has cardinality 0..*, and from 'oving1APD_Department', the role 'department' has cardinality 0..*.
+An association connects 'oving1APD_Specialization' and 'oving1APD_StudyProgram'. From 'oving1APD_Specialization', the role 'Specialization' has cardinality 0..*, and from 'oving1APD_StudyProgram', the role 'studyProgram' has cardinality 0..*.
+An association connects 'oving1APD_Semester' and 'oving1APD_StudyProgram'. From 'oving1APD_Semester', the role 'Semester' has cardinality 0..*, and from 'oving1APD_StudyProgram', the role 'studyProgram3' has cardinality 0..*.
+An association connects 'oving1APD_Department' and 'oving1APD_StudyProgram'. From 'oving1APD_Department', the role 'Department' has cardinality 0..*, and from 'oving1APD_StudyProgram', the role 'studyProgram5' has cardinality 0..*.
+An association connects 'oving1APD_Semester' and 'oving1APD_Course'. From 'oving1APD_Semester', the role 'Semester7' has cardinality 0..*, and from 'oving1APD_Course', the role 'hasCourse' has cardinality 0..*.
+An association connects 'oving1APD_Specialization' and 'oving1APD_Course'. From 'oving1APD_Specialization', the role 'Specialization9' has cardinality 0..*, and from 'oving1APD_Course', the role 'course' has cardinality 0..*.
+An association connects 'oving1APD_Course' and 'oving1APD_Slot'. From 'oving1APD_Course', the role 'course11' has cardinality 0..*, and from 'oving1APD_Slot', the role 'Slot' has cardinality 0..*.
+An association connects 'oving1APD_Semester' and 'oving1APD_Course'. From 'oving1APD_Semester', the role 'courseInSemester' has cardinality 0..*, and from 'oving1APD_Course', the role 'Course' has cardinality 0..*.
+An association connects 'oving1APD_Slot' and 'oving1APD_Semester'. From 'oving1APD_Slot', the role 'Slot14' has cardinality 0..*, and from 'oving1APD_Semester', the role 'semester' has cardinality 0..*.
+An association connects 'oving1APD_StudyProgram' and 'oving1APD_Semester'. From 'oving1APD_StudyProgram', the role 'StudyProgram17' has cardinality 0..*, and from 'oving1APD_Semester', the role 'semester16' has cardinality 0..*.
+An association connects 'oving1APD_Specialization' and 'oving1APD_Semester'. From 'oving1APD_Specialization', the role 'Specialization20' has cardinality 0..*, and from 'oving1APD_Semester', the role 'semester19' has cardinality 0..*.
+An association connects 'oving1APD_Specialization' and 'oving1APD_Semester'. From 'oving1APD_Specialization', the role 'specialization' has cardinality 0..*, and from 'oving1APD_Semester', the role 'Semester22' has cardinality 0..*.
+An association connects 'oving1APD_Course' and 'oving1APD_Specialization'. From 'oving1APD_Course', the role 'Course25' has cardinality 0..*, and from 'oving1APD_Specialization', the role 'specialization24' has cardinality 0..*.
+An association connects 'oving1APD_Specialization' and 'oving1APD_StudyProgram'. From 'oving1APD_Specialization', the role 'specialization27' has cardinality 0..*, and from 'oving1APD_StudyProgram', the role 'StudyProgram28' has cardinality 0..*.
+An association connects 'oving1APD_Slot' and 'oving1APD_Course'. From 'oving1APD_Slot', the role 'slot' has cardinality 0..*, and from 'oving1APD_Course', the role 'Course30' has cardinality 0..*.
+An association connects 'oving1APD_Semester' and 'oving1APD_Slot'. From 'oving1APD_Semester', the role 'Semester33' has cardinality 0..*, and from 'oving1APD_Slot', the role 'slot32' has cardinality 0..*.

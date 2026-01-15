@@ -1,0 +1,22 @@
+The domain model 'TestPackage' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'TestPackage_SubPackage_SubTestClass' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackage_SubPackage_SubTestInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackage_TestClass' represents an important domain concept.
+It has one attribute: 'testAttr', which is of type bool.
+
+'SubTestClass' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SubTestEnum' is defined but does not specify any literals.
+The enumeration 'TestEnum' is defined but does not specify any literals.
+
+Relationships between classes are modeled using associations.
+An association connects 'TestPackage_TestClass' and 'SubTestClass'. From 'TestPackage_TestClass', the role 'TestPackage_TestClass' has cardinality 0..*, and from 'SubTestClass', the role 'SubTestClass' has cardinality 0..*.

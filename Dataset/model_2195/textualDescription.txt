@@ -1,0 +1,55 @@
+The domain model 'datamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'TreeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'datamodel_TreeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'datamodel_ConcreteEnsemble' represents an important domain concept.
+It does not declare any attributes.
+
+'Ensemble' represents an important domain concept.
+It does not declare any attributes.
+
+'datamodel_Constraint' represents an important domain concept.
+It has the following attributes: 'constraintType', which is of type str; 'dependencyKind', which is of type str.
+
+'datamodel_EnsembleRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'datamodel_SliceRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'datamodel_EmptyEnsemble' represents an important domain concept.
+It does not declare any attributes.
+
+'datamodel_Ensemble' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'query', which is of type str; 'description', which is of type str; 'derived', which is of type bool.
+
+'datamodel_Slice' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'diagram', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ConstraintType' defines the following possible values: 'NotAllowed', 'LocalIncoming', 'Expected', 'GlobalIncoming', 'LocalOutgoing', 'GlobalOutgoing', 'Undefined'.
+
+The model also captures inheritance relationships between classes.
+The class 'datamodel_Ensemble' is a specialization of 'TreeNode'.
+The class 'datamodel_EnsembleRepository' is a specialization of 'TreeNode'.
+The class 'datamodel_EmptyEnsemble' is a specialization of 'Ensemble'.
+The class 'datamodel_ConcreteEnsemble' is a specialization of 'Ensemble'.
+
+Relationships between classes are modeled using associations.
+An association connects 'datamodel_Constraint' and 'datamodel_Ensemble'. From 'datamodel_Constraint', the role 'datamodel_Constraint' has cardinality 0..*, and from 'datamodel_Ensemble', the role 'datamodel_Ensemble' has cardinality 0..*.
+An association connects 'datamodel_Slice' and 'datamodel_Ensemble'. From 'datamodel_Slice', the role 'Slice' has cardinality 0..*, and from 'datamodel_Ensemble', the role 'ensembles' has cardinality 0..*.
+An association connects 'datamodel_Constraint' and 'datamodel_Ensemble'. From 'datamodel_Constraint', the role 'datamodel_Constraint3' has cardinality 0..*, and from 'datamodel_Ensemble', the role 'datamodel_Ensemble4' has cardinality 0..*.
+An association connects 'datamodel_Ensemble' and 'datamodel_Constraint'. From 'datamodel_Ensemble', the role 'datamodel_Ensemble7' has cardinality 0..*, and from 'datamodel_Constraint', the role 'datamodel_Constraint6' has cardinality 0..*.
+An association connects 'datamodel_Slice' and 'datamodel_SliceRepository'. From 'datamodel_Slice', the role 'Slice9' has cardinality 0..*, and from 'datamodel_SliceRepository', the role 'sliceRepository' has cardinality 0..*.
+An association connects 'datamodel_SliceRepository' and 'datamodel_Ensemble'. From 'datamodel_SliceRepository', the role 'datamodel_SliceRepository' has cardinality 0..*, and from 'datamodel_Ensemble', the role 'datamodel_Ensemble11' has cardinality 0..*.
+An association connects 'datamodel_Slice' and 'datamodel_Constraint'. From 'datamodel_Slice', the role 'datamodel_Slice' has cardinality 0..*, and from 'datamodel_Constraint', the role 'datamodel_Constraint13' has cardinality 0..*.
+An association connects 'datamodel_Slice' and 'datamodel_Ensemble'. From 'datamodel_Slice', the role 'slices' has cardinality 0..*, and from 'datamodel_Ensemble', the role 'Ensemble' has cardinality 0..*.
+An association connects 'datamodel_Slice' and 'datamodel_SliceRepository'. From 'datamodel_Slice', the role 'slices16' has cardinality 0..*, and from 'datamodel_SliceRepository', the role 'SliceRepository' has cardinality 0..*.
+An association connects 'datamodel_TreeNode' and 'datamodel_TreeNode'. From 'datamodel_TreeNode', the role 'TreeNode' has cardinality 0..*, and from 'datamodel_TreeNode', the role 'children' has cardinality 0..*.
+An association connects 'datamodel_TreeNode' and 'datamodel_TreeNode'. From 'datamodel_TreeNode', the role 'parent' has cardinality 0..*, and from 'datamodel_TreeNode', the role 'TreeNode21' has cardinality 0..*.

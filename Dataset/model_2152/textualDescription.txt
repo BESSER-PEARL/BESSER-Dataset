@@ -1,0 +1,18 @@
+The domain model 'jgrapht' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'jgrapht_Vertex' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jgrapht_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'jgrapht_Edge' represents an important domain concept.
+It has one attribute: 'relation', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'jgrapht_Graph' and 'jgrapht_Edge'. From 'jgrapht_Graph', the role 'jgrapht_Graph' has cardinality 0..*, and from 'jgrapht_Edge', the role 'jgrapht_Edge' has cardinality 0..*.
+An association connects 'jgrapht_Graph' and 'jgrapht_Vertex'. From 'jgrapht_Graph', the role 'jgrapht_Graph2' has cardinality 0..*, and from 'jgrapht_Vertex', the role 'jgrapht_Vertex' has cardinality 0..*.
+An association connects 'jgrapht_Vertex' and 'jgrapht_Edge'. From 'jgrapht_Vertex', the role 'jgrapht_Vertex5' has cardinality 0..*, and from 'jgrapht_Edge', the role 'jgrapht_Edge4' has cardinality 0..*.
+An association connects 'jgrapht_Edge' and 'jgrapht_Vertex'. From 'jgrapht_Edge', the role 'jgrapht_Edge7' has cardinality 0..*, and from 'jgrapht_Vertex', the role 'jgrapht_Vertex8' has cardinality 0..*.

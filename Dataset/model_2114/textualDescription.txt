@@ -1,0 +1,69 @@
+The domain model 'xtextTest' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'xtextTest_EmfTest' represents an important domain concept.
+It has the following attributes: 'timeOut', which is of type int; 'mydefault', which is of type str; 'package', which is of type str; 'file', which is of type str.
+
+'xtextTest_Generator' represents an important domain concept.
+It has the following attributes: 'expected', which is of type str; 'output', which is of type str; 'exception', which is of type str; 'isSameAsInputFile', which is of type bool; 'patternFile', which is of type str.
+
+'xtextTest_Input' represents an important domain concept.
+It has the following attributes: 'file', which is of type str; 'text', which is of type str.
+
+'xtextTest_Import' represents an important domain concept.
+It has the following attributes: 'alias', which is of type str; 'id', which is of type str.
+
+'xtextTest_Element' represents an important domain concept.
+It has the following attributes: 'importing', which is of type str; 'name', which is of type str.
+
+'xtextTest_XtextTest' represents an important domain concept.
+It has the following attributes: 'package', which is of type str; 'lang', which is of type str; 'boolean', which is of type str; 'imports', which is of type str; 'timeOut', which is of type int.
+
+'xtextTest_Before' represents an important domain concept.
+It does not declare any attributes.
+
+'xtextTest_Tokens' represents an important domain concept.
+It does not declare any attributes.
+
+'xtextTest_Inner' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'isNull', which is of type bool; 'isEmpty', which is of type bool; 'assignAsData', which is of type str; 'parameter', which is of type str; 'assignAsBool', which is of type str; 'isNotNull', which is of type bool.
+
+'xtextTest_CodeCall' represents an important domain concept.
+It has the following attributes: 'params', which is of type str; 'myclass', which is of type str; 'method', which is of type str.
+
+'xtextTest_MyTokens' represents an important domain concept.
+It has the following attributes: 'string', which is of type str; 'count', which is of type int; 'token', which is of type str.
+
+'xtextTest_After' represents an important domain concept.
+It does not declare any attributes.
+
+'xtextTest_ReplacePatterns' represents an important domain concept.
+It has the following attributes: 'replace', which is of type str; 'regex', which is of type str.
+
+'xtextTest_Model' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'xtextTest_Model' and 'xtextTest_XtextTest'. From 'xtextTest_Model', the role 'xtextTest_Model' has cardinality 0..*, and from 'xtextTest_XtextTest', the role 'xtextTest_XtextTest' has cardinality 0..*.
+An association connects 'xtextTest_EmfTest' and 'xtextTest_Model'. From 'xtextTest_EmfTest', the role 'xtextTest_EmfTest' has cardinality 0..*, and from 'xtextTest_Model', the role 'xtextTest_Model2' has cardinality 0..*.
+An association connects 'xtextTest_Input' and 'xtextTest_XtextTest'. From 'xtextTest_Input', the role 'xtextTest_Input' has cardinality 0..*, and from 'xtextTest_XtextTest', the role 'xtextTest_XtextTest4' has cardinality 0..*.
+An association connects 'xtextTest_XtextTest' and 'xtextTest_Tokens'. From 'xtextTest_XtextTest', the role 'xtextTest_XtextTest6' has cardinality 0..*, and from 'xtextTest_Tokens', the role 'xtextTest_Tokens' has cardinality 0..*.
+An association connects 'xtextTest_XtextTest' and 'xtextTest_Element'. From 'xtextTest_XtextTest', the role 'xtextTest_XtextTest8' has cardinality 0..*, and from 'xtextTest_Element', the role 'xtextTest_Element' has cardinality 0..*.
+An association connects 'xtextTest_Generator' and 'xtextTest_XtextTest'. From 'xtextTest_Generator', the role 'xtextTest_Generator' has cardinality 0..*, and from 'xtextTest_XtextTest', the role 'xtextTest_XtextTest10' has cardinality 0..*.
+An association connects 'xtextTest_XtextTest' and 'xtextTest_Before'. From 'xtextTest_XtextTest', the role 'xtextTest_XtextTest12' has cardinality 0..*, and from 'xtextTest_Before', the role 'xtextTest_Before' has cardinality 0..*.
+An association connects 'xtextTest_After' and 'xtextTest_XtextTest'. From 'xtextTest_After', the role 'xtextTest_After' has cardinality 0..*, and from 'xtextTest_XtextTest', the role 'xtextTest_XtextTest14' has cardinality 0..*.
+An association connects 'xtextTest_EmfTest' and 'xtextTest_Import'. From 'xtextTest_EmfTest', the role 'xtextTest_EmfTest16' has cardinality 0..*, and from 'xtextTest_Import', the role 'xtextTest_Import' has cardinality 0..*.
+An association connects 'xtextTest_EmfTest' and 'xtextTest_CodeCall'. From 'xtextTest_EmfTest', the role 'xtextTest_EmfTest18' has cardinality 0..*, and from 'xtextTest_CodeCall', the role 'xtextTest_CodeCall' has cardinality 0..*.
+An association connects 'xtextTest_CodeCall' and 'xtextTest_EmfTest'. From 'xtextTest_CodeCall', the role 'xtextTest_CodeCall21' has cardinality 0..*, and from 'xtextTest_EmfTest', the role 'xtextTest_EmfTest20' has cardinality 0..*.
+An association connects 'xtextTest_EmfTest' and 'xtextTest_CodeCall'. From 'xtextTest_EmfTest', the role 'xtextTest_EmfTest23' has cardinality 0..*, and from 'xtextTest_CodeCall', the role 'xtextTest_CodeCall24' has cardinality 0..*.
+An association connects 'xtextTest_Element' and 'xtextTest_EmfTest'. From 'xtextTest_Element', the role 'xtextTest_Element27' has cardinality 0..*, and from 'xtextTest_EmfTest', the role 'xtextTest_EmfTest26' has cardinality 0..*.
+An association connects 'xtextTest_EmfTest' and 'xtextTest_Before'. From 'xtextTest_EmfTest', the role 'xtextTest_EmfTest29' has cardinality 0..*, and from 'xtextTest_Before', the role 'xtextTest_Before30' has cardinality 0..*.
+An association connects 'xtextTest_EmfTest' and 'xtextTest_After'. From 'xtextTest_EmfTest', the role 'xtextTest_EmfTest32' has cardinality 0..*, and from 'xtextTest_After', the role 'xtextTest_After33' has cardinality 0..*.
+An association connects 'xtextTest_Tokens' and 'xtextTest_MyTokens'. From 'xtextTest_Tokens', the role 'xtextTest_Tokens35' has cardinality 0..*, and from 'xtextTest_MyTokens', the role 'xtextTest_MyTokens' has cardinality 0..*.
+An association connects 'xtextTest_Inner' and 'xtextTest_Element'. From 'xtextTest_Inner', the role 'xtextTest_Inner' has cardinality 0..*, and from 'xtextTest_Element', the role 'xtextTest_Element37' has cardinality 0..*.
+An association connects 'xtextTest_Inner' and 'xtextTest_Element'. From 'xtextTest_Inner', the role 'xtextTest_Inner39' has cardinality 0..*, and from 'xtextTest_Element', the role 'xtextTest_Element40' has cardinality 0..*.
+An association connects 'xtextTest_Inner' and 'xtextTest_Element'. From 'xtextTest_Inner', the role 'xtextTest_Inner42' has cardinality 0..*, and from 'xtextTest_Element', the role 'xtextTest_Element43' has cardinality 0..*.
+An association connects 'xtextTest_Generator' and 'xtextTest_ReplacePatterns'. From 'xtextTest_Generator', the role 'xtextTest_Generator45' has cardinality 0..*, and from 'xtextTest_ReplacePatterns', the role 'xtextTest_ReplacePatterns' has cardinality 0..*.
+An association connects 'xtextTest_CodeCall' and 'xtextTest_Before'. From 'xtextTest_CodeCall', the role 'xtextTest_CodeCall48' has cardinality 0..*, and from 'xtextTest_Before', the role 'xtextTest_Before47' has cardinality 0..*.
+An association connects 'xtextTest_After' and 'xtextTest_CodeCall'. From 'xtextTest_After', the role 'xtextTest_After50' has cardinality 0..*, and from 'xtextTest_CodeCall', the role 'xtextTest_CodeCall51' has cardinality 0..*.

@@ -1,0 +1,33 @@
+The domain model 'StudyProgramme' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'StudyProgramme_Department' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'code', which is of type str.
+
+'StudyProgramme_Specialization' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'StudyProgramme_Course' represents an important domain concept.
+It has the following attributes: 'credits', which is of type float; 'code', which is of type str; 'level', which is of type str; 'name', which is of type str.
+
+'StudyProgramme_Programme' represents an important domain concept.
+It has the following attributes: 'duration', which is of type int; 'code', which is of type str; 'name', which is of type str.
+
+'StudyProgramme_Semester' represents an important domain concept.
+It has the following attributes: 'season', which is of type str; 'number', which is of type int; 'creditConstraint', which is of type str; 'totalCredits', which is of type float.
+
+'StudyProgramme_CourseGroup' represents an important domain concept.
+It has one attribute: 'status', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'StudyProgramme_Semester' and 'StudyProgramme_Programme'. From 'StudyProgramme_Semester', the role 'StudyProgramme_Semester' has cardinality 0..*, and from 'StudyProgramme_Programme', the role 'StudyProgramme_Programme' has cardinality 0..*.
+An association connects 'StudyProgramme_Specialization' and 'StudyProgramme_Programme'. From 'StudyProgramme_Specialization', the role 'StudyProgramme_Specialization' has cardinality 0..*, and from 'StudyProgramme_Programme', the role 'StudyProgramme_Programme2' has cardinality 0..*.
+An association connects 'StudyProgramme_Course' and 'StudyProgramme_Semester'. From 'StudyProgramme_Course', the role 'StudyProgramme_Course' has cardinality 0..*, and from 'StudyProgramme_Semester', the role 'StudyProgramme_Semester4' has cardinality 0..*.
+An association connects 'StudyProgramme_Semester' and 'StudyProgramme_CourseGroup'. From 'StudyProgramme_Semester', the role 'StudyProgramme_Semester6' has cardinality 0..*, and from 'StudyProgramme_CourseGroup', the role 'StudyProgramme_CourseGroup' has cardinality 0..*.
+An association connects 'StudyProgramme_Specialization' and 'StudyProgramme_Course'. From 'StudyProgramme_Specialization', the role 'StudyProgramme_Specialization8' has cardinality 0..*, and from 'StudyProgramme_Course', the role 'StudyProgramme_Course9' has cardinality 0..*.
+An association connects 'StudyProgramme_Specialization' and 'StudyProgramme_Semester'. From 'StudyProgramme_Specialization', the role 'StudyProgramme_Specialization11' has cardinality 0..*, and from 'StudyProgramme_Semester', the role 'StudyProgramme_Semester12' has cardinality 0..*.
+An association connects 'StudyProgramme_Specialization' and 'StudyProgramme_Specialization'. From 'StudyProgramme_Specialization', the role 'StudyProgramme_Specialization13' has cardinality 0..*, and from 'StudyProgramme_Specialization', the role 'StudyProgramme_Specialization15' has cardinality 0..*.
+An association connects 'StudyProgramme_CourseGroup' and 'StudyProgramme_Course'. From 'StudyProgramme_CourseGroup', the role 'StudyProgramme_CourseGroup17' has cardinality 0..*, and from 'StudyProgramme_Course', the role 'StudyProgramme_Course18' has cardinality 0..*.
+An association connects 'StudyProgramme_Programme' and 'StudyProgramme_Department'. From 'StudyProgramme_Programme', the role 'StudyProgramme_Programme20' has cardinality 0..*, and from 'StudyProgramme_Department', the role 'StudyProgramme_Department' has cardinality 0..*.
+An association connects 'StudyProgramme_Course' and 'StudyProgramme_Department'. From 'StudyProgramme_Course', the role 'StudyProgramme_Course23' has cardinality 0..*, and from 'StudyProgramme_Department', the role 'StudyProgramme_Department22' has cardinality 0..*.

@@ -1,0 +1,491 @@
+The domain model 'room' describes the core structural elements and their relationships within the system.
+
+The model defines 102 main class(es).
+
+'room_DataClass' represents an important domain concept.
+It does not declare any attributes.
+
+'room_SPPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'room_MessageHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'room_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'room_Annotation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'room_LayerConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'room_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'room_SubSystemRef' represents an important domain concept.
+It does not declare any attributes.
+
+'room_TransitionPoint' represents an important domain concept.
+It has one attribute: 'handler', which is of type bool.
+
+'room_NonInitialTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'room_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'room_GuardedTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'room_State' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfaceItem' represents an important domain concept.
+It does not declare any attributes.
+
+'room_VarDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'room_OutMessageHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'StructureClass' represents an important domain concept.
+It does not declare any attributes.
+
+'room_RefinedTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'SAPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'StateGraphItem' represents an important domain concept.
+It does not declare any attributes.
+
+'room_StateGraphItem' represents an important domain concept.
+It does not declare any attributes.
+
+'room_Port' represents an important domain concept.
+It has the following attributes: 'conjugated', which is of type bool; 'multiplicity', which is of type int.
+
+'SemanticsRule' represents an important domain concept.
+It does not declare any attributes.
+
+'room_GeneralProtocolClass' represents an important domain concept.
+It does not declare any attributes.
+
+'room_DetailCode' represents an important domain concept.
+It has one attribute: 'commands', which is of type str.
+
+'room_SemanticsRule' represents an important domain concept.
+It does not declare any attributes.
+
+'room_ServiceImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'room_SPPRef' represents an important domain concept.
+It does not declare any attributes.
+
+'room_PortClass' represents an important domain concept.
+It does not declare any attributes.
+
+'room_StateGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'room_ComplexType' represents an important domain concept.
+It does not declare any attributes.
+
+'room_TransitionTerminal' represents an important domain concept.
+It does not declare any attributes.
+
+'room_CompoundProtocolClass' represents an important domain concept.
+It does not declare any attributes.
+
+'room_SAPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'room_RefSAPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'room_RefinedState' represents an important domain concept.
+It does not declare any attributes.
+
+'room_LogicalThread' represents an important domain concept.
+It has the following attributes: 'prio', which is of type int; 'name', which is of type str.
+
+'room_BindingEndPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'room_ExitPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'room_LogicalSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'room_ProtocolClass' represents an important domain concept.
+It has one attribute: 'commType', which is of type str.
+
+'room_InMessageHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'ActorContainerClass' represents an important domain concept.
+It does not declare any attributes.
+
+'room_Message' represents an important domain concept.
+It has the following attributes: 'priv', which is of type bool; 'name', which is of type str.
+
+'room_ActorRef' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+'room_InitialTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'room_TrPointTerminal' represents an important domain concept.
+It does not declare any attributes.
+
+'room_RefableType' represents an important domain concept.
+It has one attribute: 'ref', which is of type bool.
+
+'room_PortOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'room_InterfaceItem' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'StateGraphNode' represents an important domain concept.
+It does not declare any attributes.
+
+'room_ActorContainerRef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ActorContainerRef' represents an important domain concept.
+It does not declare any attributes.
+
+'room_ActorClass' represents an important domain concept.
+It has the following attributes: 'abstract', which is of type bool; 'commType', which is of type str.
+
+'room_StateGraphNode' represents an important domain concept.
+It does not declare any attributes.
+
+'room_CPBranchTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'room_SubProtocol' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'GeneralProtocolClass' represents an important domain concept.
+It does not declare any attributes.
+
+'room_StructureClass' represents an important domain concept.
+It does not declare any attributes.
+
+'room_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'room_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'room_TrPoint' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TrPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'room_TriggeredTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'room_RoomModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TransitionChainStartTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'RoomClass' represents an important domain concept.
+It does not declare any attributes.
+
+'room_ActorInstancePath' represents an important domain concept.
+It has one attribute: 'segments', which is of type str.
+
+'TransitionTerminal' represents an important domain concept.
+It does not declare any attributes.
+
+'room_MessageFromIf' represents an important domain concept.
+It does not declare any attributes.
+
+'room_Documentation' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'room_StandardOperation' represents an important domain concept.
+It has one attribute: 'destructor', which is of type bool.
+
+'room_RelaySAPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'room_ChoicePoint' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'room_SAPRef' represents an important domain concept.
+It does not declare any attributes.
+
+'room_ChoicepointTerminal' represents an important domain concept.
+It does not declare any attributes.
+
+'room_ActorContainerClass' represents an important domain concept.
+It does not declare any attributes.
+
+'room_SubSystemClass' represents an important domain concept.
+It does not declare any attributes.
+
+'room_PrimitiveType' represents an important domain concept.
+It has the following attributes: 'castName', which is of type str; 'targetName', which is of type str; 'type', which is of type str; 'defaultValueLiteral', which is of type str.
+
+'room_ExternalPort' represents an important domain concept.
+It does not declare any attributes.
+
+'room_Import' represents an important domain concept.
+It has the following attributes: 'importURI', which is of type str; 'importedNamespace', which is of type str.
+
+'room_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'room_ContinuationTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'room_TransitionChainStartTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'room_RoomClass' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'room_SimpleState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'room_SubStateTrPointTerminal' represents an important domain concept.
+It does not declare any attributes.
+
+'NonInitialTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'ComplexType' represents an important domain concept.
+It does not declare any attributes.
+
+'room_Attribute' represents an important domain concept.
+It has the following attributes: 'defaultValueLiteral', which is of type str; 'size', which is of type int; 'name', which is of type str.
+
+'room_ProtocolSemantics' represents an important domain concept.
+It does not declare any attributes.
+
+'room_EntryPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'room_StateTerminal' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'room_KeyValue' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'room_InSemanticsRule' represents an important domain concept.
+It does not declare any attributes.
+
+'room_ExternalType' represents an important domain concept.
+It has one attribute: 'targetName', which is of type str.
+
+'room_OutSemanticsRule' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CommunicationType' defines the following possible values: 'DATA_DRIVEN', 'SYNCHRONOUS', 'EVENT_DRIVEN'.
+The enumeration 'ActorCommunicationType' defines the following possible values: 'DATA_DRIVEN', 'SYNCHRONOUS', 'EVENT_DRIVEN', 'ASYNCHRONOUS'.
+The enumeration 'LiteralType' defines the following possible values: 'CHAR', 'INT', 'REAL', 'BOOL'.
+
+The model also captures inheritance relationships between classes.
+The class 'room_StructureClass' is a specialization of 'RoomClass'.
+The class 'room_ActorContainerClass' is a specialization of 'StructureClass'.
+The class 'room_DataType' is a specialization of 'RoomClass'.
+The class 'room_ComplexType' is a specialization of 'DataType'.
+The class 'room_PrimitiveType' is a specialization of 'DataType'.
+The class 'room_ExternalType' is a specialization of 'ComplexType'.
+The class 'room_DataClass' is a specialization of 'ComplexType'.
+The class 'room_StandardOperation' is a specialization of 'Operation'.
+The class 'room_PortOperation' is a specialization of 'Operation'.
+The class 'room_GeneralProtocolClass' is a specialization of 'RoomClass'.
+The class 'room_ProtocolClass' is a specialization of 'GeneralProtocolClass'.
+The class 'room_CompoundProtocolClass' is a specialization of 'GeneralProtocolClass'.
+The class 'room_InMessageHandler' is a specialization of 'MessageHandler'.
+The class 'room_OutMessageHandler' is a specialization of 'MessageHandler'.
+The class 'room_InSemanticsRule' is a specialization of 'SemanticsRule'.
+The class 'room_OutSemanticsRule' is a specialization of 'SemanticsRule'.
+The class 'room_ActorClass' is a specialization of 'ActorContainerClass'.
+The class 'room_Port' is a specialization of 'InterfaceItem'.
+The class 'room_SAPRef' is a specialization of 'InterfaceItem'.
+The class 'room_SPPRef' is a specialization of 'InterfaceItem'.
+The class 'room_LogicalSystem' is a specialization of 'StructureClass'.
+The class 'room_SubSystemRef' is a specialization of 'ActorContainerRef'.
+The class 'room_SubSystemClass' is a specialization of 'ActorContainerClass'.
+The class 'room_RefSAPoint' is a specialization of 'SAPoint'.
+The class 'room_RelaySAPoint' is a specialization of 'SAPoint'.
+The class 'room_ActorRef' is a specialization of 'ActorContainerRef'.
+The class 'room_StateGraphNode' is a specialization of 'StateGraphItem'.
+The class 'room_State' is a specialization of 'StateGraphNode'.
+The class 'room_SimpleState' is a specialization of 'State'.
+The class 'room_RefinedState' is a specialization of 'State'.
+The class 'room_TrPoint' is a specialization of 'StateGraphNode'.
+The class 'room_TransitionPoint' is a specialization of 'TrPoint'.
+The class 'room_EntryPoint' is a specialization of 'TrPoint'.
+The class 'room_ExitPoint' is a specialization of 'TrPoint'.
+The class 'room_ChoicePoint' is a specialization of 'StateGraphNode'.
+The class 'room_Transition' is a specialization of 'StateGraphItem'.
+The class 'room_NonInitialTransition' is a specialization of 'Transition'.
+The class 'room_TransitionChainStartTransition' is a specialization of 'NonInitialTransition'.
+The class 'room_InitialTransition' is a specialization of 'Transition'.
+The class 'room_ContinuationTransition' is a specialization of 'NonInitialTransition'.
+The class 'room_TriggeredTransition' is a specialization of 'TransitionChainStartTransition'.
+The class 'room_GuardedTransition' is a specialization of 'TransitionChainStartTransition'.
+The class 'room_CPBranchTransition' is a specialization of 'NonInitialTransition'.
+The class 'room_StateTerminal' is a specialization of 'TransitionTerminal'.
+The class 'room_TrPointTerminal' is a specialization of 'TransitionTerminal'.
+The class 'room_SubStateTrPointTerminal' is a specialization of 'TransitionTerminal'.
+The class 'room_ChoicepointTerminal' is a specialization of 'TransitionTerminal'.
+
+Relationships between classes are modeled using associations.
+An association connects 'room_RoomModel' and 'room_Documentation'. From 'room_RoomModel', the role 'room_RoomModel' has cardinality 0..*, and from 'room_Documentation', the role 'room_Documentation' has cardinality 0..*.
+An association connects 'room_Import' and 'room_RoomModel'. From 'room_Import', the role 'room_Import' has cardinality 0..*, and from 'room_RoomModel', the role 'room_RoomModel2' has cardinality 0..*.
+An association connects 'room_PrimitiveType' and 'room_RoomModel'. From 'room_PrimitiveType', the role 'room_PrimitiveType' has cardinality 0..*, and from 'room_RoomModel', the role 'room_RoomModel4' has cardinality 0..*.
+An association connects 'room_ExternalType' and 'room_RoomModel'. From 'room_ExternalType', the role 'room_ExternalType' has cardinality 0..*, and from 'room_RoomModel', the role 'room_RoomModel6' has cardinality 0..*.
+An association connects 'room_RoomModel' and 'room_DataClass'. From 'room_RoomModel', the role 'room_RoomModel8' has cardinality 0..*, and from 'room_DataClass', the role 'room_DataClass' has cardinality 0..*.
+An association connects 'room_GeneralProtocolClass' and 'room_RoomModel'. From 'room_GeneralProtocolClass', the role 'room_GeneralProtocolClass' has cardinality 0..*, and from 'room_RoomModel', the role 'room_RoomModel10' has cardinality 0..*.
+An association connects 'room_ActorClass' and 'room_RoomModel'. From 'room_ActorClass', the role 'room_ActorClass' has cardinality 0..*, and from 'room_RoomModel', the role 'room_RoomModel12' has cardinality 0..*.
+An association connects 'room_RoomModel' and 'room_SubSystemClass'. From 'room_RoomModel', the role 'room_RoomModel14' has cardinality 0..*, and from 'room_SubSystemClass', the role 'room_SubSystemClass' has cardinality 0..*.
+An association connects 'room_LogicalSystem' and 'room_RoomModel'. From 'room_LogicalSystem', the role 'room_LogicalSystem' has cardinality 0..*, and from 'room_RoomModel', the role 'room_RoomModel16' has cardinality 0..*.
+An association connects 'room_RoomClass' and 'room_Documentation'. From 'room_RoomClass', the role 'room_RoomClass' has cardinality 0..*, and from 'room_Documentation', the role 'room_Documentation18' has cardinality 0..*.
+An association connects 'room_StructureClass' and 'room_Annotation'. From 'room_StructureClass', the role 'room_StructureClass' has cardinality 0..*, and from 'room_Annotation', the role 'room_Annotation' has cardinality 0..*.
+An association connects 'room_Binding' and 'room_StructureClass'. From 'room_Binding', the role 'room_Binding' has cardinality 0..*, and from 'room_StructureClass', the role 'room_StructureClass21' has cardinality 0..*.
+An association connects 'room_LayerConnection' and 'room_StructureClass'. From 'room_LayerConnection', the role 'room_LayerConnection' has cardinality 0..*, and from 'room_StructureClass', the role 'room_StructureClass23' has cardinality 0..*.
+An association connects 'room_SPPRef' and 'room_ActorContainerClass'. From 'room_SPPRef', the role 'room_SPPRef' has cardinality 0..*, and from 'room_ActorContainerClass', the role 'room_ActorContainerClass' has cardinality 0..*.
+An association connects 'room_DetailCode' and 'room_ActorContainerClass'. From 'room_DetailCode', the role 'room_DetailCode' has cardinality 0..*, and from 'room_ActorContainerClass', the role 'room_ActorContainerClass26' has cardinality 0..*.
+An association connects 'room_DetailCode' and 'room_ActorContainerClass'. From 'room_DetailCode', the role 'room_DetailCode29' has cardinality 0..*, and from 'room_ActorContainerClass', the role 'room_ActorContainerClass28' has cardinality 0..*.
+An association connects 'room_DetailCode' and 'room_ActorContainerClass'. From 'room_DetailCode', the role 'room_DetailCode32' has cardinality 0..*, and from 'room_ActorContainerClass', the role 'room_ActorContainerClass31' has cardinality 0..*.
+An association connects 'room_ActorContainerClass' and 'room_ActorRef'. From 'room_ActorContainerClass', the role 'room_ActorContainerClass34' has cardinality 0..*, and from 'room_ActorRef', the role 'room_ActorRef' has cardinality 0..*.
+An association connects 'room_RefableType' and 'room_VarDecl'. From 'room_RefableType', the role 'room_RefableType' has cardinality 0..*, and from 'room_VarDecl', the role 'room_VarDecl' has cardinality 0..*.
+An association connects 'room_DataType' and 'room_RefableType'. From 'room_DataType', the role 'room_DataType' has cardinality 0..*, and from 'room_RefableType', the role 'room_RefableType37' has cardinality 0..*.
+An association connects 'room_DataClass' and 'room_DataClass'. From 'room_DataClass', the role 'room_DataClass38' has cardinality 0..*, and from 'room_DataClass', the role 'room_DataClass40' has cardinality 0..*.
+An association connects 'room_DataClass' and 'room_Annotation'. From 'room_DataClass', the role 'room_DataClass42' has cardinality 0..*, and from 'room_Annotation', the role 'room_Annotation43' has cardinality 0..*.
+An association connects 'room_DetailCode' and 'room_DataClass'. From 'room_DetailCode', the role 'room_DetailCode46' has cardinality 0..*, and from 'room_DataClass', the role 'room_DataClass45' has cardinality 0..*.
+An association connects 'room_DetailCode' and 'room_DataClass'. From 'room_DetailCode', the role 'room_DetailCode49' has cardinality 0..*, and from 'room_DataClass', the role 'room_DataClass48' has cardinality 0..*.
+An association connects 'room_DataClass' and 'room_DetailCode'. From 'room_DataClass', the role 'room_DataClass51' has cardinality 0..*, and from 'room_DetailCode', the role 'room_DetailCode52' has cardinality 0..*.
+An association connects 'room_Attribute' and 'room_DataClass'. From 'room_Attribute', the role 'room_Attribute' has cardinality 0..*, and from 'room_DataClass', the role 'room_DataClass54' has cardinality 0..*.
+An association connects 'room_StandardOperation' and 'room_DataClass'. From 'room_StandardOperation', the role 'room_StandardOperation' has cardinality 0..*, and from 'room_DataClass', the role 'room_DataClass56' has cardinality 0..*.
+An association connects 'room_Attribute' and 'room_RefableType'. From 'room_Attribute', the role 'room_Attribute58' has cardinality 0..*, and from 'room_RefableType', the role 'room_RefableType59' has cardinality 0..*.
+An association connects 'room_Attribute' and 'room_Documentation'. From 'room_Attribute', the role 'room_Attribute61' has cardinality 0..*, and from 'room_Documentation', the role 'room_Documentation62' has cardinality 0..*.
+An association connects 'room_Operation' and 'room_VarDecl'. From 'room_Operation', the role 'room_Operation' has cardinality 0..*, and from 'room_VarDecl', the role 'room_VarDecl64' has cardinality 0..*.
+An association connects 'room_Operation' and 'room_RefableType'. From 'room_Operation', the role 'room_Operation66' has cardinality 0..*, and from 'room_RefableType', the role 'room_RefableType67' has cardinality 0..*.
+An association connects 'room_Documentation' and 'room_Operation'. From 'room_Documentation', the role 'room_Documentation70' has cardinality 0..*, and from 'room_Operation', the role 'room_Operation69' has cardinality 0..*.
+An association connects 'room_DetailCode' and 'room_Operation'. From 'room_DetailCode', the role 'room_DetailCode73' has cardinality 0..*, and from 'room_Operation', the role 'room_Operation72' has cardinality 0..*.
+An association connects 'room_Message' and 'room_PortOperation'. From 'room_Message', the role 'room_Message' has cardinality 0..*, and from 'room_PortOperation', the role 'room_PortOperation' has cardinality 0..*.
+An association connects 'room_GeneralProtocolClass' and 'room_Annotation'. From 'room_GeneralProtocolClass', the role 'room_GeneralProtocolClass76' has cardinality 0..*, and from 'room_Annotation', the role 'room_Annotation77' has cardinality 0..*.
+An association connects 'room_ProtocolClass' and 'room_ProtocolClass'. From 'room_ProtocolClass', the role 'room_ProtocolClass' has cardinality 0..*, and from 'room_ProtocolClass', the role 'room_ProtocolClass78' has cardinality 0..*.
+An association connects 'room_ProtocolClass' and 'room_DetailCode'. From 'room_ProtocolClass', the role 'room_ProtocolClass81' has cardinality 0..*, and from 'room_DetailCode', the role 'room_DetailCode82' has cardinality 0..*.
+An association connects 'room_DetailCode' and 'room_ProtocolClass'. From 'room_DetailCode', the role 'room_DetailCode85' has cardinality 0..*, and from 'room_ProtocolClass', the role 'room_ProtocolClass84' has cardinality 0..*.
+An association connects 'room_DetailCode' and 'room_ProtocolClass'. From 'room_DetailCode', the role 'room_DetailCode88' has cardinality 0..*, and from 'room_ProtocolClass', the role 'room_ProtocolClass87' has cardinality 0..*.
+An association connects 'room_Message' and 'room_ProtocolClass'. From 'room_Message', the role 'room_Message91' has cardinality 0..*, and from 'room_ProtocolClass', the role 'room_ProtocolClass90' has cardinality 0..*.
+An association connects 'room_Message' and 'room_ProtocolClass'. From 'room_Message', the role 'room_Message94' has cardinality 0..*, and from 'room_ProtocolClass', the role 'room_ProtocolClass93' has cardinality 0..*.
+An association connects 'room_ProtocolClass' and 'room_PortClass'. From 'room_ProtocolClass', the role 'room_ProtocolClass96' has cardinality 0..*, and from 'room_PortClass', the role 'room_PortClass' has cardinality 0..*.
+An association connects 'room_ProtocolClass' and 'room_PortClass'. From 'room_ProtocolClass', the role 'room_ProtocolClass98' has cardinality 0..*, and from 'room_PortClass', the role 'room_PortClass99' has cardinality 0..*.
+An association connects 'room_ProtocolClass' and 'room_ProtocolSemantics'. From 'room_ProtocolClass', the role 'room_ProtocolClass101' has cardinality 0..*, and from 'room_ProtocolSemantics', the role 'room_ProtocolSemantics' has cardinality 0..*.
+An association connects 'room_CompoundProtocolClass' and 'room_SubProtocol'. From 'room_CompoundProtocolClass', the role 'room_CompoundProtocolClass' has cardinality 0..*, and from 'room_SubProtocol', the role 'room_SubProtocol' has cardinality 0..*.
+An association connects 'room_SubProtocol' and 'room_GeneralProtocolClass'. From 'room_SubProtocol', the role 'room_SubProtocol104' has cardinality 0..*, and from 'room_GeneralProtocolClass', the role 'room_GeneralProtocolClass105' has cardinality 0..*.
+An association connects 'room_VarDecl' and 'room_Message'. From 'room_VarDecl', the role 'room_VarDecl108' has cardinality 0..*, and from 'room_Message', the role 'room_Message107' has cardinality 0..*.
+An association connects 'room_Documentation' and 'room_Message'. From 'room_Documentation', the role 'room_Documentation111' has cardinality 0..*, and from 'room_Message', the role 'room_Message110' has cardinality 0..*.
+An association connects 'room_PortClass' and 'room_DetailCode'. From 'room_PortClass', the role 'room_PortClass113' has cardinality 0..*, and from 'room_DetailCode', the role 'room_DetailCode114' has cardinality 0..*.
+An association connects 'room_Attribute' and 'room_PortClass'. From 'room_Attribute', the role 'room_Attribute117' has cardinality 0..*, and from 'room_PortClass', the role 'room_PortClass116' has cardinality 0..*.
+An association connects 'room_PortClass' and 'room_PortOperation'. From 'room_PortClass', the role 'room_PortClass119' has cardinality 0..*, and from 'room_PortOperation', the role 'room_PortOperation120' has cardinality 0..*.
+An association connects 'room_MessageHandler' and 'room_PortClass'. From 'room_MessageHandler', the role 'room_MessageHandler' has cardinality 0..*, and from 'room_PortClass', the role 'room_PortClass122' has cardinality 0..*.
+An association connects 'room_MessageHandler' and 'room_Message'. From 'room_MessageHandler', the role 'room_MessageHandler124' has cardinality 0..*, and from 'room_Message', the role 'room_Message125' has cardinality 0..*.
+An association connects 'room_DetailCode' and 'room_MessageHandler'. From 'room_DetailCode', the role 'room_DetailCode128' has cardinality 0..*, and from 'room_MessageHandler', the role 'room_MessageHandler127' has cardinality 0..*.
+An association connects 'room_ProtocolSemantics' and 'room_SemanticsRule'. From 'room_ProtocolSemantics', the role 'room_ProtocolSemantics130' has cardinality 0..*, and from 'room_SemanticsRule', the role 'room_SemanticsRule' has cardinality 0..*.
+An association connects 'room_SemanticsRule' and 'room_Message'. From 'room_SemanticsRule', the role 'room_SemanticsRule132' has cardinality 0..*, and from 'room_Message', the role 'room_Message133' has cardinality 0..*.
+An association connects 'room_SemanticsRule' and 'room_SemanticsRule'. From 'room_SemanticsRule', the role 'room_SemanticsRule136' has cardinality 0..*, and from 'room_SemanticsRule', the role 'room_SemanticsRule134' has cardinality 0..*.
+An association connects 'room_ActorClass' and 'room_ActorClass'. From 'room_ActorClass', the role 'room_ActorClass139' has cardinality 0..*, and from 'room_ActorClass', the role 'room_ActorClass137' has cardinality 0..*.
+An association connects 'room_ActorClass' and 'room_Port'. From 'room_ActorClass', the role 'room_ActorClass141' has cardinality 0..*, and from 'room_Port', the role 'room_Port' has cardinality 0..*.
+An association connects 'room_ActorClass' and 'room_Documentation'. From 'room_ActorClass', the role 'room_ActorClass143' has cardinality 0..*, and from 'room_Documentation', the role 'room_Documentation144' has cardinality 0..*.
+An association connects 'room_ActorClass' and 'room_Port'. From 'room_ActorClass', the role 'room_ActorClass146' has cardinality 0..*, and from 'room_Port', the role 'room_Port147' has cardinality 0..*.
+An association connects 'room_ExternalPort' and 'room_ActorClass'. From 'room_ExternalPort', the role 'room_ExternalPort' has cardinality 0..*, and from 'room_ActorClass', the role 'room_ActorClass149' has cardinality 0..*.
+An association connects 'room_ServiceImplementation' and 'room_ActorClass'. From 'room_ServiceImplementation', the role 'room_ServiceImplementation' has cardinality 0..*, and from 'room_ActorClass', the role 'room_ActorClass151' has cardinality 0..*.
+An association connects 'room_ActorClass' and 'room_SAPRef'. From 'room_ActorClass', the role 'room_ActorClass153' has cardinality 0..*, and from 'room_SAPRef', the role 'room_SAPRef' has cardinality 0..*.
+An association connects 'room_Attribute' and 'room_ActorClass'. From 'room_Attribute', the role 'room_Attribute156' has cardinality 0..*, and from 'room_ActorClass', the role 'room_ActorClass155' has cardinality 0..*.
+An association connects 'room_ActorClass' and 'room_Documentation'. From 'room_ActorClass', the role 'room_ActorClass158' has cardinality 0..*, and from 'room_Documentation', the role 'room_Documentation159' has cardinality 0..*.
+An association connects 'room_Annotation' and 'room_ActorClass'. From 'room_Annotation', the role 'room_Annotation162' has cardinality 0..*, and from 'room_ActorClass', the role 'room_ActorClass161' has cardinality 0..*.
+An association connects 'room_ActorClass' and 'room_StandardOperation'. From 'room_ActorClass', the role 'room_ActorClass164' has cardinality 0..*, and from 'room_StandardOperation', the role 'room_StandardOperation165' has cardinality 0..*.
+An association connects 'room_ActorClass' and 'room_StateGraph'. From 'room_ActorClass', the role 'room_ActorClass167' has cardinality 0..*, and from 'room_StateGraph', the role 'room_StateGraph' has cardinality 0..*.
+An association connects 'room_GeneralProtocolClass' and 'room_Port'. From 'room_GeneralProtocolClass', the role 'room_GeneralProtocolClass170' has cardinality 0..*, and from 'room_Port', the role 'room_Port169' has cardinality 0..*.
+An association connects 'room_Documentation' and 'room_Port'. From 'room_Documentation', the role 'room_Documentation173' has cardinality 0..*, and from 'room_Port', the role 'room_Port172' has cardinality 0..*.
+An association connects 'room_Port' and 'room_ExternalPort'. From 'room_Port', the role 'room_Port176' has cardinality 0..*, and from 'room_ExternalPort', the role 'room_ExternalPort175' has cardinality 0..*.
+An association connects 'room_ProtocolClass' and 'room_SAPRef'. From 'room_ProtocolClass', the role 'room_ProtocolClass179' has cardinality 0..*, and from 'room_SAPRef', the role 'room_SAPRef178' has cardinality 0..*.
+An association connects 'room_ProtocolClass' and 'room_SPPRef'. From 'room_ProtocolClass', the role 'room_ProtocolClass182' has cardinality 0..*, and from 'room_SPPRef', the role 'room_SPPRef181' has cardinality 0..*.
+An association connects 'room_SPPRef' and 'room_ServiceImplementation'. From 'room_SPPRef', the role 'room_SPPRef185' has cardinality 0..*, and from 'room_ServiceImplementation', the role 'room_ServiceImplementation184' has cardinality 0..*.
+An association connects 'room_LogicalSystem' and 'room_SubSystemRef'. From 'room_LogicalSystem', the role 'room_LogicalSystem187' has cardinality 0..*, and from 'room_SubSystemRef', the role 'room_SubSystemRef' has cardinality 0..*.
+An association connects 'room_ActorContainerRef' and 'room_Documentation'. From 'room_ActorContainerRef', the role 'room_ActorContainerRef' has cardinality 0..*, and from 'room_Documentation', the role 'room_Documentation189' has cardinality 0..*.
+An association connects 'room_SubSystemClass' and 'room_SubSystemRef'. From 'room_SubSystemClass', the role 'room_SubSystemClass192' has cardinality 0..*, and from 'room_SubSystemRef', the role 'room_SubSystemRef191' has cardinality 0..*.
+An association connects 'room_SubSystemClass' and 'room_Port'. From 'room_SubSystemClass', the role 'room_SubSystemClass194' has cardinality 0..*, and from 'room_Port', the role 'room_Port195' has cardinality 0..*.
+An association connects 'room_LogicalThread' and 'room_SubSystemClass'. From 'room_LogicalThread', the role 'room_LogicalThread' has cardinality 0..*, and from 'room_SubSystemClass', the role 'room_SubSystemClass197' has cardinality 0..*.
+An association connects 'room_ActorInstancePath' and 'room_LogicalThread'. From 'room_ActorInstancePath', the role 'room_ActorInstancePath' has cardinality 0..*, and from 'room_LogicalThread', the role 'room_LogicalThread199' has cardinality 0..*.
+An association connects 'room_BindingEndPoint' and 'room_Binding'. From 'room_BindingEndPoint', the role 'room_BindingEndPoint' has cardinality 0..*, and from 'room_Binding', the role 'room_Binding201' has cardinality 0..*.
+An association connects 'room_Binding' and 'room_BindingEndPoint'. From 'room_Binding', the role 'room_Binding203' has cardinality 0..*, and from 'room_BindingEndPoint', the role 'room_BindingEndPoint204' has cardinality 0..*.
+An association connects 'room_BindingEndPoint' and 'room_ActorContainerRef'. From 'room_BindingEndPoint', the role 'room_BindingEndPoint206' has cardinality 0..*, and from 'room_ActorContainerRef', the role 'room_ActorContainerRef207' has cardinality 0..*.
+An association connects 'room_Port' and 'room_BindingEndPoint'. From 'room_Port', the role 'room_Port210' has cardinality 0..*, and from 'room_BindingEndPoint', the role 'room_BindingEndPoint209' has cardinality 0..*.
+An association connects 'room_SubProtocol' and 'room_BindingEndPoint'. From 'room_SubProtocol', the role 'room_SubProtocol213' has cardinality 0..*, and from 'room_BindingEndPoint', the role 'room_BindingEndPoint212' has cardinality 0..*.
+An association connects 'room_LayerConnection' and 'room_SAPoint'. From 'room_LayerConnection', the role 'room_LayerConnection215' has cardinality 0..*, and from 'room_SAPoint', the role 'room_SAPoint' has cardinality 0..*.
+An association connects 'room_SPPoint' and 'room_LayerConnection'. From 'room_SPPoint', the role 'room_SPPoint' has cardinality 0..*, and from 'room_LayerConnection', the role 'room_LayerConnection217' has cardinality 0..*.
+An association connects 'room_ActorContainerRef' and 'room_RefSAPoint'. From 'room_ActorContainerRef', the role 'room_ActorContainerRef219' has cardinality 0..*, and from 'room_RefSAPoint', the role 'room_RefSAPoint' has cardinality 0..*.
+An association connects 'room_RelaySAPoint' and 'room_SPPRef'. From 'room_RelaySAPoint', the role 'room_RelaySAPoint' has cardinality 0..*, and from 'room_SPPRef', the role 'room_SPPRef221' has cardinality 0..*.
+An association connects 'room_SPPoint' and 'room_ActorContainerRef'. From 'room_SPPoint', the role 'room_SPPoint223' has cardinality 0..*, and from 'room_ActorContainerRef', the role 'room_ActorContainerRef224' has cardinality 0..*.
+An association connects 'room_SPPRef' and 'room_SPPoint'. From 'room_SPPRef', the role 'room_SPPRef227' has cardinality 0..*, and from 'room_SPPoint', the role 'room_SPPoint226' has cardinality 0..*.
+An association connects 'room_ActorRef' and 'room_ActorClass'. From 'room_ActorRef', the role 'room_ActorRef229' has cardinality 0..*, and from 'room_ActorClass', the role 'room_ActorClass230' has cardinality 0..*.
+An association connects 'room_Documentation' and 'room_State'. From 'room_Documentation', the role 'room_Documentation232' has cardinality 0..*, and from 'room_State', the role 'room_State' has cardinality 0..*.
+An association connects 'room_DetailCode' and 'room_State'. From 'room_DetailCode', the role 'room_DetailCode235' has cardinality 0..*, and from 'room_State', the role 'room_State234' has cardinality 0..*.
+An association connects 'room_DetailCode' and 'room_State'. From 'room_DetailCode', the role 'room_DetailCode238' has cardinality 0..*, and from 'room_State', the role 'room_State237' has cardinality 0..*.
+An association connects 'room_DetailCode' and 'room_State'. From 'room_DetailCode', the role 'room_DetailCode241' has cardinality 0..*, and from 'room_State', the role 'room_State240' has cardinality 0..*.
+An association connects 'room_State' and 'room_StateGraph'. From 'room_State', the role 'room_State243' has cardinality 0..*, and from 'room_StateGraph', the role 'room_StateGraph244' has cardinality 0..*.
+An association connects 'room_StateGraph' and 'room_State'. From 'room_StateGraph', the role 'room_StateGraph246' has cardinality 0..*, and from 'room_State', the role 'room_State247' has cardinality 0..*.
+An association connects 'room_StateGraph' and 'room_TrPoint'. From 'room_StateGraph', the role 'room_StateGraph249' has cardinality 0..*, and from 'room_TrPoint', the role 'room_TrPoint' has cardinality 0..*.
+An association connects 'room_ChoicePoint' and 'room_StateGraph'. From 'room_ChoicePoint', the role 'room_ChoicePoint' has cardinality 0..*, and from 'room_StateGraph', the role 'room_StateGraph251' has cardinality 0..*.
+An association connects 'room_Transition' and 'room_StateGraph'. From 'room_Transition', the role 'room_Transition' has cardinality 0..*, and from 'room_StateGraph', the role 'room_StateGraph253' has cardinality 0..*.
+An association connects 'room_StateGraph' and 'room_RefinedTransition'. From 'room_StateGraph', the role 'room_StateGraph255' has cardinality 0..*, and from 'room_RefinedTransition', the role 'room_RefinedTransition' has cardinality 0..*.
+An association connects 'room_State' and 'room_RefinedState'. From 'room_State', the role 'room_State257' has cardinality 0..*, and from 'room_RefinedState', the role 'room_RefinedState' has cardinality 0..*.
+An association connects 'room_ChoicePoint' and 'room_Documentation'. From 'room_ChoicePoint', the role 'room_ChoicePoint259' has cardinality 0..*, and from 'room_Documentation', the role 'room_Documentation260' has cardinality 0..*.
+An association connects 'room_TransitionTerminal' and 'room_Transition'. From 'room_TransitionTerminal', the role 'room_TransitionTerminal' has cardinality 0..*, and from 'room_Transition', the role 'room_Transition262' has cardinality 0..*.
+An association connects 'room_Transition' and 'room_Documentation'. From 'room_Transition', the role 'room_Transition264' has cardinality 0..*, and from 'room_Documentation', the role 'room_Documentation265' has cardinality 0..*.
+An association connects 'room_DetailCode' and 'room_Transition'. From 'room_DetailCode', the role 'room_DetailCode268' has cardinality 0..*, and from 'room_Transition', the role 'room_Transition267' has cardinality 0..*.
+An association connects 'room_NonInitialTransition' and 'room_TransitionTerminal'. From 'room_NonInitialTransition', the role 'room_NonInitialTransition' has cardinality 0..*, and from 'room_TransitionTerminal', the role 'room_TransitionTerminal270' has cardinality 0..*.
+An association connects 'room_Trigger' and 'room_TriggeredTransition'. From 'room_Trigger', the role 'room_Trigger' has cardinality 0..*, and from 'room_TriggeredTransition', the role 'room_TriggeredTransition' has cardinality 0..*.
+An association connects 'room_DetailCode' and 'room_GuardedTransition'. From 'room_DetailCode', the role 'room_DetailCode273' has cardinality 0..*, and from 'room_GuardedTransition', the role 'room_GuardedTransition' has cardinality 0..*.
+An association connects 'room_DetailCode' and 'room_CPBranchTransition'. From 'room_DetailCode', the role 'room_DetailCode275' has cardinality 0..*, and from 'room_CPBranchTransition', the role 'room_CPBranchTransition' has cardinality 0..*.
+An association connects 'room_Transition' and 'room_RefinedTransition'. From 'room_Transition', the role 'room_Transition278' has cardinality 0..*, and from 'room_RefinedTransition', the role 'room_RefinedTransition277' has cardinality 0..*.
+An association connects 'room_Documentation' and 'room_RefinedTransition'. From 'room_Documentation', the role 'room_Documentation281' has cardinality 0..*, and from 'room_RefinedTransition', the role 'room_RefinedTransition280' has cardinality 0..*.
+An association connects 'room_RefinedTransition' and 'room_DetailCode'. From 'room_RefinedTransition', the role 'room_RefinedTransition283' has cardinality 0..*, and from 'room_DetailCode', the role 'room_DetailCode284' has cardinality 0..*.
+An association connects 'room_StateTerminal' and 'room_State'. From 'room_StateTerminal', the role 'room_StateTerminal' has cardinality 0..*, and from 'room_State', the role 'room_State286' has cardinality 0..*.
+An association connects 'room_TrPoint' and 'room_TrPointTerminal'. From 'room_TrPoint', the role 'room_TrPoint288' has cardinality 0..*, and from 'room_TrPointTerminal', the role 'room_TrPointTerminal' has cardinality 0..*.
+An association connects 'room_SubStateTrPointTerminal' and 'room_TrPoint'. From 'room_SubStateTrPointTerminal', the role 'room_SubStateTrPointTerminal' has cardinality 0..*, and from 'room_TrPoint', the role 'room_TrPoint290' has cardinality 0..*.
+An association connects 'room_SubStateTrPointTerminal' and 'room_State'. From 'room_SubStateTrPointTerminal', the role 'room_SubStateTrPointTerminal292' has cardinality 0..*, and from 'room_State', the role 'room_State293' has cardinality 0..*.
+An association connects 'room_ChoicepointTerminal' and 'room_ChoicePoint'. From 'room_ChoicepointTerminal', the role 'room_ChoicepointTerminal' has cardinality 0..*, and from 'room_ChoicePoint', the role 'room_ChoicePoint295' has cardinality 0..*.
+An association connects 'room_MessageFromIf' and 'room_Trigger'. From 'room_MessageFromIf', the role 'room_MessageFromIf' has cardinality 0..*, and from 'room_Trigger', the role 'room_Trigger297' has cardinality 0..*.
+An association connects 'room_Guard' and 'room_Trigger'. From 'room_Guard', the role 'room_Guard' has cardinality 0..*, and from 'room_Trigger', the role 'room_Trigger299' has cardinality 0..*.
+An association connects 'room_Message' and 'room_MessageFromIf'. From 'room_Message', the role 'room_Message302' has cardinality 0..*, and from 'room_MessageFromIf', the role 'room_MessageFromIf301' has cardinality 0..*.
+An association connects 'room_InterfaceItem' and 'room_MessageFromIf'. From 'room_InterfaceItem', the role 'room_InterfaceItem' has cardinality 0..*, and from 'room_MessageFromIf', the role 'room_MessageFromIf304' has cardinality 0..*.
+An association connects 'room_DetailCode' and 'room_Guard'. From 'room_DetailCode', the role 'room_DetailCode307' has cardinality 0..*, and from 'room_Guard', the role 'room_Guard306' has cardinality 0..*.
+An association connects 'room_KeyValue' and 'room_Annotation'. From 'room_KeyValue', the role 'room_KeyValue' has cardinality 0..*, and from 'room_Annotation', the role 'room_Annotation309' has cardinality 0..*.

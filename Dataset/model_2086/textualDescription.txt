@@ -1,0 +1,19 @@
+The domain model 'redblacktree2' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'redblacktree2_Node' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'redblacktree2_Tree' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Type' defines the following possible values: 'LEAF', 'NODE', 'ROOT'.
+The enumeration 'Color' defines the following possible values: 'RED', 'BLACK'.
+
+Relationships between classes are modeled using associations.
+An association connects 'redblacktree2_Node' and 'redblacktree2_Tree'. From 'redblacktree2_Node', the role 'redblacktree2_Node' has cardinality 0..*, and from 'redblacktree2_Tree', the role 'redblacktree2_Tree' has cardinality 0..*.
+An association connects 'redblacktree2_Node' and 'redblacktree2_Tree'. From 'redblacktree2_Node', the role 'redblacktree2_Node3' has cardinality 0..*, and from 'redblacktree2_Tree', the role 'redblacktree2_Tree2' has cardinality 0..*.
+An association connects 'redblacktree2_Node' and 'redblacktree2_Node'. From 'redblacktree2_Node', the role 'redblacktree2_Node4' has cardinality 0..*, and from 'redblacktree2_Node', the role 'redblacktree2_Node6' has cardinality 0..*.
+An association connects 'redblacktree2_Node' and 'redblacktree2_Node'. From 'redblacktree2_Node', the role 'redblacktree2_Node9' has cardinality 0..*, and from 'redblacktree2_Node', the role 'redblacktree2_Node7' has cardinality 0..*.

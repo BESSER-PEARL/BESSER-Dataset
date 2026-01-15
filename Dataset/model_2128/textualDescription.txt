@@ -1,0 +1,189 @@
+The domain model 'tTCTest' describes the core structural elements and their relationships within the system.
+
+The model defines 44 main class(es).
+
+'tTCTest_Test_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'Class_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Java_Method' represents an important domain concept.
+It has one attribute: 'method_name', which is of type str.
+
+'Assertion' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Test_Step_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Pull_Up_Refactoring' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Java_Class' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'package', which is of type str; 'class_name', which is of type str.
+
+'tTCTest_Propose_Create_Superclass_Refactoring' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Compile' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Propose_Refactoring' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Propose_Pullup_Method_Refactoring' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Methods' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tTCTest_Assertion' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Containment' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Refactoring_Instance' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tTCTest_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Class_Element' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tTCTest_No_Refactoring' represents an important domain concept.
+It does not declare any attributes.
+
+'Refactoring' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Warning' represents an important domain concept.
+It has one attribute: 'message', which is of type str.
+
+'Refactoring_Instance' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Contains_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Test_File' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tTCTest_Synchronize' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Java_Field' represents an important domain concept.
+It has one attribute: 'field_name', which is of type str.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Fields' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tTCTest_Implements' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Refactoring' represents an important domain concept.
+It does not declare any attributes.
+
+'Propose_Refactoring' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Expect_True' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Implements_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Implementation' represents an important domain concept.
+It does not declare any attributes.
+
+'Containment' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Test_Case' represents an important domain concept.
+It has the following attributes: 'java_program', which is of type str; 'name', which is of type str; 'description', which is of type str.
+
+'tTCTest_Test_Step' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Expect_False' represents an important domain concept.
+It does not declare any attributes.
+
+'Test_Step_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Assert_False' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Contains' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Assert_True' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Create_Superclass_Refactoring' represents an important domain concept.
+It does not declare any attributes.
+
+'tTCTest_Classes' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'tTCTest_Java_Method' is a specialization of 'Class_Element'.
+The class 'tTCTest_Java_Field' is a specialization of 'Class_Element'.
+The class 'tTCTest_Refactoring_Instance' is a specialization of 'Refactoring'.
+The class 'tTCTest_Pull_Up_Refactoring' is a specialization of 'Refactoring_Instance'.
+The class 'tTCTest_Create_Superclass_Refactoring' is a specialization of 'Refactoring_Instance'.
+The class 'tTCTest_Test_Step' is a specialization of 'Test_Step_Element'.
+The class 'tTCTest_Assertion' is a specialization of 'Test_Step_Element'.
+The class 'tTCTest_Assert_False' is a specialization of 'Assertion'.
+The class 'tTCTest_Assert_True' is a specialization of 'Assertion'.
+The class 'tTCTest_Condition' is a specialization of 'Test_Step_Element'.
+The class 'tTCTest_Expect_True' is a specialization of 'Condition'.
+The class 'tTCTest_Expect_False' is a specialization of 'Condition'.
+The class 'tTCTest_Compile' is a specialization of 'Test_Step_Element'.
+The class 'tTCTest_Synchronize' is a specialization of 'Test_Step_Element'.
+The class 'tTCTest_No_Refactoring' is a specialization of 'Refactoring'.
+The class 'tTCTest_Propose_Pullup_Method_Refactoring' is a specialization of 'Propose_Refactoring'.
+The class 'tTCTest_Propose_Create_Superclass_Refactoring' is a specialization of 'Propose_Refactoring'.
+The class 'tTCTest_Containment' is a specialization of 'Test_Step_Element'.
+The class 'tTCTest_Contains' is a specialization of 'Containment'.
+The class 'tTCTest_Contains_Not' is a specialization of 'Containment'.
+The class 'tTCTest_Implementation' is a specialization of 'Test_Step_Element'.
+The class 'tTCTest_Implements' is a specialization of 'Implementation'.
+The class 'tTCTest_Implements_Not' is a specialization of 'Implementation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tTCTest_Test_Case' and 'tTCTest_Test_File'. From 'tTCTest_Test_Case', the role 'tTCTest_Test_Case' has cardinality 0..*, and from 'tTCTest_Test_File', the role 'tTCTest_Test_File' has cardinality 0..*.
+An association connects 'tTCTest_Test_File' and 'tTCTest_Java_Class'. From 'tTCTest_Test_File', the role 'tTCTest_Test_File2' has cardinality 0..*, and from 'tTCTest_Java_Class', the role 'tTCTest_Java_Class' has cardinality 0..*.
+An association connects 'tTCTest_Classes' and 'tTCTest_Test_File'. From 'tTCTest_Classes', the role 'tTCTest_Classes' has cardinality 0..*, and from 'tTCTest_Test_File', the role 'tTCTest_Test_File4' has cardinality 0..*.
+An association connects 'tTCTest_Java_Method' and 'tTCTest_Test_File'. From 'tTCTest_Java_Method', the role 'tTCTest_Java_Method' has cardinality 0..*, and from 'tTCTest_Test_File', the role 'tTCTest_Test_File6' has cardinality 0..*.
+An association connects 'tTCTest_Refactoring_Instance' and 'tTCTest_Test_File'. From 'tTCTest_Refactoring_Instance', the role 'tTCTest_Refactoring_Instance' has cardinality 0..*, and from 'tTCTest_Test_File', the role 'tTCTest_Test_File8' has cardinality 0..*.
+An association connects 'tTCTest_Java_Class' and 'tTCTest_Classes'. From 'tTCTest_Java_Class', the role 'tTCTest_Java_Class11' has cardinality 0..*, and from 'tTCTest_Classes', the role 'tTCTest_Classes10' has cardinality 0..*.
+An association connects 'tTCTest_Java_Method' and 'tTCTest_Java_Class'. From 'tTCTest_Java_Method', the role 'tTCTest_Java_Method13' has cardinality 0..*, and from 'tTCTest_Java_Class', the role 'tTCTest_Java_Class14' has cardinality 0..*.
+An association connects 'tTCTest_Java_Method' and 'tTCTest_Methods'. From 'tTCTest_Java_Method', the role 'tTCTest_Java_Method16' has cardinality 0..*, and from 'tTCTest_Methods', the role 'tTCTest_Methods' has cardinality 0..*.
+An association connects 'tTCTest_Java_Field' and 'tTCTest_Java_Class'. From 'tTCTest_Java_Field', the role 'tTCTest_Java_Field' has cardinality 0..*, and from 'tTCTest_Java_Class', the role 'tTCTest_Java_Class18' has cardinality 0..*.
+An association connects 'tTCTest_Java_Field' and 'tTCTest_Fields'. From 'tTCTest_Java_Field', the role 'tTCTest_Java_Field20' has cardinality 0..*, and from 'tTCTest_Fields', the role 'tTCTest_Fields' has cardinality 0..*.
+An association connects 'tTCTest_Test_Flow' and 'tTCTest_Test_Case'. From 'tTCTest_Test_Flow', the role 'tTCTest_Test_Flow' has cardinality 0..*, and from 'tTCTest_Test_Case', the role 'tTCTest_Test_Case22' has cardinality 0..*.
+An association connects 'tTCTest_Pull_Up_Refactoring' and 'tTCTest_Java_Class'. From 'tTCTest_Pull_Up_Refactoring', the role 'tTCTest_Pull_Up_Refactoring' has cardinality 0..*, and from 'tTCTest_Java_Class', the role 'tTCTest_Java_Class24' has cardinality 0..*.
+An association connects 'tTCTest_Pull_Up_Refactoring' and 'tTCTest_Java_Method'. From 'tTCTest_Pull_Up_Refactoring', the role 'tTCTest_Pull_Up_Refactoring26' has cardinality 0..*, and from 'tTCTest_Java_Method', the role 'tTCTest_Java_Method27' has cardinality 0..*.
+An association connects 'tTCTest_Classes' and 'tTCTest_Create_Superclass_Refactoring'. From 'tTCTest_Classes', the role 'tTCTest_Classes29' has cardinality 0..*, and from 'tTCTest_Create_Superclass_Refactoring', the role 'tTCTest_Create_Superclass_Refactoring' has cardinality 0..*.
+An association connects 'tTCTest_Java_Class' and 'tTCTest_Create_Superclass_Refactoring'. From 'tTCTest_Java_Class', the role 'tTCTest_Java_Class32' has cardinality 0..*, and from 'tTCTest_Create_Superclass_Refactoring', the role 'tTCTest_Create_Superclass_Refactoring31' has cardinality 0..*.
+An association connects 'tTCTest_Test_Flow' and 'tTCTest_Test_Step_Element'. From 'tTCTest_Test_Flow', the role 'tTCTest_Test_Flow34' has cardinality 0..*, and from 'tTCTest_Test_Step_Element', the role 'tTCTest_Test_Step_Element' has cardinality 0..*.
+An association connects 'tTCTest_Test_Step_Element' and 'tTCTest_Test_Step'. From 'tTCTest_Test_Step_Element', the role 'tTCTest_Test_Step_Element36' has cardinality 0..*, and from 'tTCTest_Test_Step', the role 'tTCTest_Test_Step' has cardinality 0..*.
+An association connects 'tTCTest_Refactoring' and 'tTCTest_Assertion'. From 'tTCTest_Refactoring', the role 'tTCTest_Refactoring' has cardinality 0..*, and from 'tTCTest_Assertion', the role 'tTCTest_Assertion' has cardinality 0..*.
+An association connects 'tTCTest_Condition' and 'tTCTest_Refactoring'. From 'tTCTest_Condition', the role 'tTCTest_Condition' has cardinality 0..*, and from 'tTCTest_Refactoring', the role 'tTCTest_Refactoring39' has cardinality 0..*.
+An association connects 'tTCTest_Test_Step_Element' and 'tTCTest_Condition'. From 'tTCTest_Test_Step_Element', the role 'tTCTest_Test_Step_Element42' has cardinality 0..*, and from 'tTCTest_Condition', the role 'tTCTest_Condition41' has cardinality 0..*.
+An association connects 'tTCTest_Warning' and 'tTCTest_Condition'. From 'tTCTest_Warning', the role 'tTCTest_Warning' has cardinality 0..*, and from 'tTCTest_Condition', the role 'tTCTest_Condition44' has cardinality 0..*.
+An association connects 'tTCTest_Test_Step_Element' and 'tTCTest_Condition'. From 'tTCTest_Test_Step_Element', the role 'tTCTest_Test_Step_Element47' has cardinality 0..*, and from 'tTCTest_Condition', the role 'tTCTest_Condition46' has cardinality 0..*.
+An association connects 'tTCTest_Refactoring' and 'tTCTest_Propose_Refactoring'. From 'tTCTest_Refactoring', the role 'tTCTest_Refactoring49' has cardinality 0..*, and from 'tTCTest_Propose_Refactoring', the role 'tTCTest_Propose_Refactoring' has cardinality 0..*.
+An association connects 'tTCTest_Containment' and 'tTCTest_Java_Class'. From 'tTCTest_Containment', the role 'tTCTest_Containment' has cardinality 0..*, and from 'tTCTest_Java_Class', the role 'tTCTest_Java_Class51' has cardinality 0..*.
+An association connects 'tTCTest_Containment' and 'tTCTest_Class_Element'. From 'tTCTest_Containment', the role 'tTCTest_Containment53' has cardinality 0..*, and from 'tTCTest_Class_Element', the role 'tTCTest_Class_Element' has cardinality 0..*.
+An association connects 'tTCTest_Implementation' and 'tTCTest_Java_Class'. From 'tTCTest_Implementation', the role 'tTCTest_Implementation' has cardinality 0..*, and from 'tTCTest_Java_Class', the role 'tTCTest_Java_Class55' has cardinality 0..*.
+An association connects 'tTCTest_Implementation' and 'tTCTest_Java_Class'. From 'tTCTest_Implementation', the role 'tTCTest_Implementation57' has cardinality 0..*, and from 'tTCTest_Java_Class', the role 'tTCTest_Java_Class58' has cardinality 0..*.

@@ -1,0 +1,46 @@
+The domain model 'ntnustudies' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'ntnustudies_Specialization' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'specializationChoicePointSemester', which is of type int.
+
+'ntnustudies_Course' represents an important domain concept.
+It has the following attributes: 'level', which is of type str; 'code', which is of type str; 'type', which is of type str; 'credtis', which is of type float; 'name', which is of type str; 'semesters', which is of type str.
+
+'ntnustudies_Programme' represents an important domain concept.
+It has the following attributes: 'years', which is of type int; 'name', which is of type str.
+
+'ntnustudies_ChosenSemester' represents an important domain concept.
+It does not declare any attributes.
+
+'ntnustudies_Department' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'shortName', which is of type str.
+
+'ntnustudies_Semester' represents an important domain concept.
+It has the following attributes: 'year', which is of type int; 'type', which is of type str.
+
+'ntnustudies_StudyPlan' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'semesterType' defines the following possible values: 'fall', 'spring'.
+The enumeration 'courseLevel' defines the following possible values: 'medium', 'high', 'basic'.
+The enumeration 'courseType' defines the following possible values: 'elective', 'mandatory'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ntnustudies_Programme' and 'ntnustudies_Specialization'. From 'ntnustudies_Programme', the role 'programme' has cardinality 0..*, and from 'ntnustudies_Specialization', the role 'Specialization' has cardinality 0..*.
+An association connects 'ntnustudies_Programme' and 'ntnustudies_Semester'. From 'ntnustudies_Programme', the role 'programme2' has cardinality 0..*, and from 'ntnustudies_Semester', the role 'Semester' has cardinality 0..*.
+An association connects 'ntnustudies_Specialization' and 'ntnustudies_Programme'. From 'ntnustudies_Specialization', the role 'specializations' has cardinality 0..*, and from 'ntnustudies_Programme', the role 'Programme' has cardinality 0..*.
+An association connects 'ntnustudies_Specialization' and 'ntnustudies_Course'. From 'ntnustudies_Specialization', the role 'ntnustudies_Specialization' has cardinality 0..*, and from 'ntnustudies_Course', the role 'ntnustudies_Course' has cardinality 0..*.
+An association connects 'ntnustudies_Specialization' and 'ntnustudies_Specialization'. From 'ntnustudies_Specialization', the role 'ntnustudies_Specialization5' has cardinality 0..*, and from 'ntnustudies_Specialization', the role 'ntnustudies_Specialization7' has cardinality 0..*.
+An association connects 'ntnustudies_Specialization' and 'ntnustudies_Semester'. From 'ntnustudies_Specialization', the role 'ntnustudies_Specialization9' has cardinality 0..*, and from 'ntnustudies_Semester', the role 'ntnustudies_Semester' has cardinality 0..*.
+An association connects 'ntnustudies_Semester' and 'ntnustudies_Course'. From 'ntnustudies_Semester', the role 'ntnustudies_Semester11' has cardinality 0..*, and from 'ntnustudies_Course', the role 'ntnustudies_Course12' has cardinality 0..*.
+An association connects 'ntnustudies_Programme' and 'ntnustudies_Semester'. From 'ntnustudies_Programme', the role 'Programme14' has cardinality 0..*, and from 'ntnustudies_Semester', the role 'semesters' has cardinality 0..*.
+An association connects 'ntnustudies_ChosenSemester' and 'ntnustudies_Semester'. From 'ntnustudies_ChosenSemester', the role 'ntnustudies_ChosenSemester' has cardinality 0..*, and from 'ntnustudies_Semester', the role 'ntnustudies_Semester16' has cardinality 0..*.
+An association connects 'ntnustudies_ChosenSemester' and 'ntnustudies_Course'. From 'ntnustudies_ChosenSemester', the role 'ntnustudies_ChosenSemester18' has cardinality 0..*, and from 'ntnustudies_Course', the role 'ntnustudies_Course19' has cardinality 0..*.
+An association connects 'ntnustudies_Programme' and 'ntnustudies_StudyPlan'. From 'ntnustudies_Programme', the role 'ntnustudies_Programme' has cardinality 0..*, and from 'ntnustudies_StudyPlan', the role 'ntnustudies_StudyPlan' has cardinality 0..*.
+An association connects 'ntnustudies_StudyPlan' and 'ntnustudies_Specialization'. From 'ntnustudies_StudyPlan', the role 'ntnustudies_StudyPlan22' has cardinality 0..*, and from 'ntnustudies_Specialization', the role 'ntnustudies_Specialization23' has cardinality 0..*.
+An association connects 'ntnustudies_StudyPlan' and 'ntnustudies_ChosenSemester'. From 'ntnustudies_StudyPlan', the role 'ntnustudies_StudyPlan25' has cardinality 0..*, and from 'ntnustudies_ChosenSemester', the role 'ntnustudies_ChosenSemester26' has cardinality 0..*.
+An association connects 'ntnustudies_Department' and 'ntnustudies_Course'. From 'ntnustudies_Department', the role 'ntnustudies_Department' has cardinality 0..*, and from 'ntnustudies_Course', the role 'ntnustudies_Course28' has cardinality 0..*.
+An association connects 'ntnustudies_Programme' and 'ntnustudies_Department'. From 'ntnustudies_Programme', the role 'ntnustudies_Programme31' has cardinality 0..*, and from 'ntnustudies_Department', the role 'ntnustudies_Department30' has cardinality 0..*.

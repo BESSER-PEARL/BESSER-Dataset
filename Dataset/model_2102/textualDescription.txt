@@ -1,0 +1,37 @@
+The domain model 'dft' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'dft_Observer' represents an important domain concept.
+It has one attribute: 'observationRate', which is of type str.
+
+'dft_GalileoNodeType' represents an important domain concept.
+It does not declare any attributes.
+
+'dft_GalileoFaultTreeNode' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'lambda', which is of type str; 'repair', which is of type str; 'dorm', which is of type str.
+
+'dft_Parametrized' represents an important domain concept.
+It has the following attributes: 'parameter', which is of type str; 'typeName', which is of type str.
+
+'dft_GalileoDft' represents an important domain concept.
+It does not declare any attributes.
+
+'GalileoNodeType' represents an important domain concept.
+It does not declare any attributes.
+
+'dft_Named' represents an important domain concept.
+It has one attribute: 'typeName', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'dft_Named' is a specialization of 'GalileoNodeType'.
+The class 'dft_Observer' is a specialization of 'GalileoNodeType'.
+The class 'dft_Parametrized' is a specialization of 'GalileoNodeType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dft_GalileoDft' and 'dft_GalileoFaultTreeNode'. From 'dft_GalileoDft', the role 'dft_GalileoDft' has cardinality 0..*, and from 'dft_GalileoFaultTreeNode', the role 'dft_GalileoFaultTreeNode' has cardinality 0..*.
+An association connects 'dft_GalileoFaultTreeNode' and 'dft_GalileoDft'. From 'dft_GalileoFaultTreeNode', the role 'dft_GalileoFaultTreeNode3' has cardinality 0..*, and from 'dft_GalileoDft', the role 'dft_GalileoDft2' has cardinality 0..*.
+An association connects 'dft_GalileoDft' and 'dft_GalileoFaultTreeNode'. From 'dft_GalileoDft', the role 'dft_GalileoDft5' has cardinality 0..*, and from 'dft_GalileoFaultTreeNode', the role 'dft_GalileoFaultTreeNode6' has cardinality 0..*.
+An association connects 'dft_GalileoNodeType' and 'dft_GalileoFaultTreeNode'. From 'dft_GalileoNodeType', the role 'dft_GalileoNodeType' has cardinality 0..*, and from 'dft_GalileoFaultTreeNode', the role 'dft_GalileoFaultTreeNode8' has cardinality 0..*.
+An association connects 'dft_GalileoFaultTreeNode' and 'dft_GalileoFaultTreeNode'. From 'dft_GalileoFaultTreeNode', the role 'dft_GalileoFaultTreeNode9' has cardinality 0..*, and from 'dft_GalileoFaultTreeNode', the role 'dft_GalileoFaultTreeNode11' has cardinality 0..*.
+An association connects 'dft_Observer' and 'dft_GalileoFaultTreeNode'. From 'dft_Observer', the role 'dft_Observer' has cardinality 0..*, and from 'dft_GalileoFaultTreeNode', the role 'dft_GalileoFaultTreeNode13' has cardinality 0..*.

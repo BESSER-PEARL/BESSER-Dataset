@@ -1,0 +1,89 @@
+The domain model 'cvlmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'cvlmodel_VSpecResolution' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cvlmodel_ObjectExistence' represents an important domain concept.
+It has one attribute: 'target', which is of type str.
+
+'cvlmodel_VariableResolution' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cvlmodel_VClassifierResolution' represents an important domain concept.
+It has one attribute: 'instance', which is of type str.
+
+'VSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'cvlmodel_ResolutionModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'VariationPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'cvlmodel_MOFRef' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'cvlmodel_VClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'cvlmodel_VSpec' represents an important domain concept.
+It has the following attributes: 'mandatory', which is of type str; 'name', which is of type str.
+
+'cvlmodel_Multiplicity' represents an important domain concept.
+It has the following attributes: 'min', which is of type str; 'max', which is of type str.
+
+'cvlmodel_VSpecTree' represents an important domain concept.
+It does not declare any attributes.
+
+'cvlmodel_VariationPoint' represents an important domain concept.
+It has the following attributes: 'modelTransformationURL', which is of type str; 'modelTransformationSourceURL', which is of type str; 'name', which is of type str; 'negativeVariability', which is of type str.
+
+'cvlmodel_CVLModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cvlmodel_ChoiceResolution' represents an important domain concept.
+It has one attribute: 'decision', which is of type str.
+
+'cvlmodel_StringToMOFRefMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'cvlmodel_Variable' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'cvlmodel_Choice' represents an important domain concept.
+It does not declare any attributes.
+
+'VSpecResolution' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PrimitiveTypeEnum' defines the following possible values: 'Integer', 'String', 'Boolean', 'UnlimitedNatural', 'Real'.
+
+The model also captures inheritance relationships between classes.
+The class 'cvlmodel_Choice' is a specialization of 'VSpec'.
+The class 'cvlmodel_Variable' is a specialization of 'VSpec'.
+The class 'cvlmodel_VClassifier' is a specialization of 'VSpec'.
+The class 'cvlmodel_ChoiceResolution' is a specialization of 'VSpecResolution'.
+The class 'cvlmodel_VariableResolution' is a specialization of 'VSpecResolution'.
+The class 'cvlmodel_VClassifierResolution' is a specialization of 'VSpecResolution'.
+The class 'cvlmodel_ObjectExistence' is a specialization of 'VariationPoint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cvlmodel_Multiplicity' and 'cvlmodel_VSpec'. From 'cvlmodel_Multiplicity', the role 'cvlmodel_Multiplicity' has cardinality 0..*, and from 'cvlmodel_VSpec', the role 'cvlmodel_VSpec' has cardinality 0..*.
+An association connects 'cvlmodel_VSpec' and 'cvlmodel_VSpec'. From 'cvlmodel_VSpec', the role 'cvlmodel_VSpec3' has cardinality 0..*, and from 'cvlmodel_VSpec', the role 'cvlmodel_VSpec1' has cardinality 0..*.
+An association connects 'cvlmodel_VSpec' and 'cvlmodel_VSpec'. From 'cvlmodel_VSpec', the role 'cvlmodel_VSpec4' has cardinality 0..*, and from 'cvlmodel_VSpec', the role 'cvlmodel_VSpec6' has cardinality 0..*.
+An association connects 'cvlmodel_Multiplicity' and 'cvlmodel_VSpec'. From 'cvlmodel_Multiplicity', the role 'cvlmodel_Multiplicity8' has cardinality 0..*, and from 'cvlmodel_VSpec', the role 'cvlmodel_VSpec9' has cardinality 0..*.
+An association connects 'cvlmodel_VClassifier' and 'cvlmodel_Multiplicity'. From 'cvlmodel_VClassifier', the role 'cvlmodel_VClassifier' has cardinality 0..*, and from 'cvlmodel_Multiplicity', the role 'cvlmodel_Multiplicity11' has cardinality 0..*.
+An association connects 'cvlmodel_VSpecResolution' and 'cvlmodel_VSpec'. From 'cvlmodel_VSpecResolution', the role 'cvlmodel_VSpecResolution' has cardinality 0..*, and from 'cvlmodel_VSpec', the role 'cvlmodel_VSpec13' has cardinality 0..*.
+An association connects 'cvlmodel_VSpec' and 'cvlmodel_VariationPoint'. From 'cvlmodel_VSpec', the role 'cvlmodel_VSpec15' has cardinality 0..*, and from 'cvlmodel_VariationPoint', the role 'cvlmodel_VariationPoint' has cardinality 0..*.
+An association connects 'cvlmodel_StringToMOFRefMap' and 'cvlmodel_VariationPoint'. From 'cvlmodel_StringToMOFRefMap', the role 'cvlmodel_StringToMOFRefMap' has cardinality 0..*, and from 'cvlmodel_VariationPoint', the role 'cvlmodel_VariationPoint17' has cardinality 0..*.
+An association connects 'cvlmodel_StringToMOFRefMap' and 'cvlmodel_MOFRef'. From 'cvlmodel_StringToMOFRefMap', the role 'cvlmodel_StringToMOFRefMap19' has cardinality 0..*, and from 'cvlmodel_MOFRef', the role 'cvlmodel_MOFRef' has cardinality 0..*.
+An association connects 'cvlmodel_VSpecTree' and 'cvlmodel_VSpec'. From 'cvlmodel_VSpecTree', the role 'cvlmodel_VSpecTree' has cardinality 0..*, and from 'cvlmodel_VSpec', the role 'cvlmodel_VSpec21' has cardinality 0..*.
+An association connects 'cvlmodel_VSpec' and 'cvlmodel_VSpecTree'. From 'cvlmodel_VSpec', the role 'cvlmodel_VSpec24' has cardinality 0..*, and from 'cvlmodel_VSpecTree', the role 'cvlmodel_VSpecTree23' has cardinality 0..*.
+An association connects 'cvlmodel_ResolutionModel' and 'cvlmodel_VSpecResolution'. From 'cvlmodel_ResolutionModel', the role 'cvlmodel_ResolutionModel' has cardinality 0..*, and from 'cvlmodel_VSpecResolution', the role 'cvlmodel_VSpecResolution26' has cardinality 0..*.
+An association connects 'cvlmodel_ResolutionModel' and 'cvlmodel_VSpecTree'. From 'cvlmodel_ResolutionModel', the role 'cvlmodel_ResolutionModel28' has cardinality 0..*, and from 'cvlmodel_VSpecTree', the role 'cvlmodel_VSpecTree29' has cardinality 0..*.
+An association connects 'cvlmodel_VSpecTree' and 'cvlmodel_CVLModel'. From 'cvlmodel_VSpecTree', the role 'cvlmodel_VSpecTree31' has cardinality 0..*, and from 'cvlmodel_CVLModel', the role 'cvlmodel_CVLModel' has cardinality 0..*.
+An association connects 'cvlmodel_CVLModel' and 'cvlmodel_VariationPoint'. From 'cvlmodel_CVLModel', the role 'cvlmodel_CVLModel33' has cardinality 0..*, and from 'cvlmodel_VariationPoint', the role 'cvlmodel_VariationPoint34' has cardinality 0..*.

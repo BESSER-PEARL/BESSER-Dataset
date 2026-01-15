@@ -1,0 +1,328 @@
+The domain model 'tree' describes the core structural elements and their relationships within the system.
+
+The model defines 78 main class(es).
+
+'description_TreeMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'description_RepresentationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'TreeVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'TreeDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_description_TreeItemUpdater' represents an important domain concept.
+It does not declare any attributes.
+
+'LabelStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'DTreeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractToolDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'ColorDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'TreeItemMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_DTreeElementUpdater' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_VariableContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_description_TreeCreationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_DTreeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_description_PrecedingSiblingsVariables' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_MappingBasedToolDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'RepresentationNavigationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'TreeItemEditionTool' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_description_TreeDescription' represents an important domain concept.
+It has the following attributes: 'preconditionExpression', which is of type str; 'domainClass', which is of type str.
+
+'tool_AbstractVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'TreeItemStyleDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_DTreeElementSynchronizer' represents an important domain concept.
+It does not declare any attributes.
+
+'TreeItemDeletionTool' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_DTreeItem' represents an important domain concept.
+It has one attribute: 'expanded', which is of type bool.
+
+'ConditionalTreeItemStyleDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'style_LabelStyleDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_RepresentationNavigationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_RepresentationCreationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'PrecedingSiblingsVariables' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_ElementDropVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'DRepresentationElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TreeItemDragTool' represents an important domain concept.
+It does not declare any attributes.
+
+'TreePopupMenu' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_DTree' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_description_TreeItemMapping' represents an important domain concept.
+It has the following attributes: 'preconditionExpression', which is of type str; 'domainClass', which is of type str; 'semanticCandidatesExpression', which is of type str.
+
+'tree_description_ConditionalTreeItemStyleDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_description_TreeItemTool' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_DTreeItemContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_description_TreeMapping' represents an important domain concept.
+It has one attribute: 'semanticElements', which is of type str.
+
+'TreeItemContainerDropTool' represents an important domain concept.
+It does not declare any attributes.
+
+'Style' represents an important domain concept.
+It does not declare any attributes.
+
+'DSemanticDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_description_TreeVariable' represents an important domain concept.
+It has one attribute: 'documentation', which is of type str.
+
+'description_TreeItemMappingContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'RepresentationElementMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_description_TreePopupMenu' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_description_TreeItemDeletionTool' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_description_TreeNavigationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_ModelOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'style_StyleDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_description_StyleUpdater' represents an important domain concept.
+It does not declare any attributes.
+
+'DRepresentation' represents an important domain concept.
+It does not declare any attributes.
+
+'description_StyleUpdater' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_description_TreeItemStyleDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'TreeItemMappingContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_RGBValues' represents an important domain concept.
+It does not declare any attributes.
+
+'description_TreeItemTool' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_TreeItemStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_description_TreeItemCreationTool' represents an important domain concept.
+It does not declare any attributes.
+
+'TreeItemTool' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_description_TreeItemContainerDropTool' represents an important domain concept.
+It has one attribute: 'dragSource', which is of type str.
+
+'TreeMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'description_TreeItemUpdater' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_description_TreeItemDragTool' represents an important domain concept.
+It has one attribute: 'dragSourceType', which is of type str.
+
+'tool_MenuItemOrRef' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_description_TreeItemEditionTool' represents an important domain concept.
+It does not declare any attributes.
+
+'TreeItemCreationTool' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_EditMaskVariables' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_DropContainerVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'RepresentationCreationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_ContainerViewVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'StyleUpdater' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalStyleDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'DTreeItemContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'DTreeElementUpdater' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_description_TreeItemMappingContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'TreeItemUpdater' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TreeDragSource' defines the following possible values: 'PROJECT_EXPLORER', 'BOTH', 'TREE'.
+
+The model also captures inheritance relationships between classes.
+The class 'tree_DTree' is a specialization of 'DRepresentation'.
+The class 'tree_DTree' is a specialization of 'DTreeItemContainer'.
+The class 'tree_DTree' is a specialization of 'DTreeElementUpdater'.
+The class 'tree_DTreeElement' is a specialization of 'DRepresentationElement'.
+The class 'tree_DTreeItemContainer' is a specialization of 'DSemanticDecorator'.
+The class 'tree_DTreeItem' is a specialization of 'DTreeItemContainer'.
+The class 'tree_DTreeItem' is a specialization of 'DTreeElement'.
+The class 'tree_DTreeItem' is a specialization of 'DTreeElementUpdater'.
+The class 'tree_TreeItemStyle' is a specialization of 'Style'.
+The class 'tree_TreeItemStyle' is a specialization of 'LabelStyle'.
+The class 'tree_description_TreeDescription' is a specialization of 'description_RepresentationDescription'.
+The class 'tree_description_TreeDescription' is a specialization of 'description_TreeItemMappingContainer'.
+The class 'tree_description_TreeItemMapping' is a specialization of 'description_TreeMapping'.
+The class 'tree_description_TreeItemMapping' is a specialization of 'description_StyleUpdater'.
+The class 'tree_description_TreeItemMapping' is a specialization of 'description_TreeItemUpdater'.
+The class 'tree_description_TreeItemMapping' is a specialization of 'description_TreeItemMappingContainer'.
+The class 'tree_description_TreeItemStyleDescription' is a specialization of 'style_StyleDescription'.
+The class 'tree_description_TreeItemStyleDescription' is a specialization of 'style_LabelStyleDescription'.
+The class 'tree_description_ConditionalTreeItemStyleDescription' is a specialization of 'ConditionalStyleDescription'.
+The class 'tree_description_TreeItemTool' is a specialization of 'AbstractToolDescription'.
+The class 'tree_description_TreeItemDragTool' is a specialization of 'tool_MappingBasedToolDescription'.
+The class 'tree_description_TreeItemDragTool' is a specialization of 'description_TreeItemTool'.
+The class 'tree_description_TreeItemContainerDropTool' is a specialization of 'tool_MappingBasedToolDescription'.
+The class 'tree_description_TreeItemContainerDropTool' is a specialization of 'description_TreeItemTool'.
+The class 'tree_description_TreeItemCreationTool' is a specialization of 'description_TreeItemTool'.
+The class 'tree_description_TreeItemCreationTool' is a specialization of 'tool_MappingBasedToolDescription'.
+The class 'tree_description_TreeItemEditionTool' is a specialization of 'TreeItemTool'.
+The class 'tree_description_TreeItemDeletionTool' is a specialization of 'TreeItemTool'.
+The class 'tree_description_TreeCreationDescription' is a specialization of 'RepresentationCreationDescription'.
+The class 'tree_description_TreeNavigationDescription' is a specialization of 'RepresentationNavigationDescription'.
+The class 'tree_description_TreeMapping' is a specialization of 'RepresentationElementMapping'.
+The class 'tree_description_TreeVariable' is a specialization of 'tool_AbstractVariable'.
+The class 'tree_description_TreeVariable' is a specialization of 'tool_VariableContainer'.
+The class 'tree_description_PrecedingSiblingsVariables' is a specialization of 'TreeVariable'.
+The class 'tree_description_TreePopupMenu' is a specialization of 'AbstractToolDescription'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tree_DTree' and 'tree_EObject'. From 'tree_DTree', the role 'tree_DTree' has cardinality 0..*, and from 'tree_EObject', the role 'tree_EObject' has cardinality 0..*.
+An association connects 'TreeDescription' and 'tree_DTree'. From 'TreeDescription', the role 'TreeDescription' has cardinality 0..*, and from 'tree_DTree', the role 'tree_DTree2' has cardinality 0..*.
+An association connects 'tree_DTreeElement' and 'TreeMapping'. From 'tree_DTreeElement', the role 'tree_DTreeElement' has cardinality 0..*, and from 'TreeMapping', the role 'TreeMapping' has cardinality 0..*.
+An association connects 'tree_DTreeItemContainer' and 'tree_DTreeItem'. From 'tree_DTreeItemContainer', the role 'container' has cardinality 0..*, and from 'tree_DTreeItem', the role 'DTreeItem' has cardinality 0..*.
+An association connects 'tree_DTreeItem' and 'tree_TreeItemStyle'. From 'tree_DTreeItem', the role 'tree_DTreeItem' has cardinality 0..*, and from 'tree_TreeItemStyle', the role 'tree_TreeItemStyle' has cardinality 0..*.
+An association connects 'tree_DTreeItem' and 'TreeItemMapping'. From 'tree_DTreeItem', the role 'tree_DTreeItem7' has cardinality 0..*, and from 'TreeItemMapping', the role 'TreeItemMapping' has cardinality 0..*.
+An association connects 'tree_DTreeItemContainer' and 'tree_DTreeItem'. From 'tree_DTreeItemContainer', the role 'DTreeItemContainer' has cardinality 0..*, and from 'tree_DTreeItem', the role 'ownedTreeItems' has cardinality 0..*.
+An association connects 'StyleUpdater' and 'tree_DTreeItem'. From 'StyleUpdater', the role 'StyleUpdater' has cardinality 0..*, and from 'tree_DTreeItem', the role 'tree_DTreeItem10' has cardinality 0..*.
+An association connects 'tree_DTreeItem' and 'TreeItemUpdater'. From 'tree_DTreeItem', the role 'tree_DTreeItem12' has cardinality 0..*, and from 'TreeItemUpdater', the role 'TreeItemUpdater' has cardinality 0..*.
+An association connects 'tree_RGBValues' and 'tree_TreeItemStyle'. From 'tree_RGBValues', the role 'tree_RGBValues' has cardinality 0..*, and from 'tree_TreeItemStyle', the role 'tree_TreeItemStyle14' has cardinality 0..*.
+An association connects 'tree_description_TreeDescription' and 'TreeItemCreationTool'. From 'tree_description_TreeDescription', the role 'tree_description_TreeDescription' has cardinality 0..*, and from 'TreeItemCreationTool', the role 'TreeItemCreationTool' has cardinality 0..*.
+An association connects 'tree_description_TreeDescription' and 'tool_RepresentationCreationDescription'. From 'tree_description_TreeDescription', the role 'tree_description_TreeDescription17' has cardinality 0..*, and from 'tool_RepresentationCreationDescription', the role 'tool_RepresentationCreationDescription' has cardinality 0..*.
+An association connects 'tree_description_TreeDescription' and 'tool_RepresentationNavigationDescription'. From 'tree_description_TreeDescription', the role 'tree_description_TreeDescription19' has cardinality 0..*, and from 'tool_RepresentationNavigationDescription', the role 'tool_RepresentationNavigationDescription' has cardinality 0..*.
+An association connects 'TreeItemMapping' and 'tree_description_TreeItemMapping'. From 'TreeItemMapping', the role 'TreeItemMapping21' has cardinality 0..*, and from 'tree_description_TreeItemMapping', the role 'tree_description_TreeItemMapping' has cardinality 0..*.
+An association connects 'TreeItemMapping' and 'tree_description_TreeItemMapping'. From 'TreeItemMapping', the role 'TreeItemMapping24' has cardinality 0..*, and from 'tree_description_TreeItemMapping', the role 'tree_description_TreeItemMapping23' has cardinality 0..*.
+An association connects 'TreeItemMapping' and 'tree_description_TreeItemMapping'. From 'TreeItemMapping', the role 'TreeItemMapping27' has cardinality 0..*, and from 'tree_description_TreeItemMapping', the role 'tree_description_TreeItemMapping26' has cardinality 0..*.
+An association connects 'TreeItemDeletionTool' and 'tree_description_TreeItemMapping'. From 'TreeItemDeletionTool', the role 'description' has cardinality 0..*, and from 'tree_description_TreeItemMapping', the role 'TreeItemDeletionTool' has cardinality 0..*.
+An association connects 'tree_description_TreeItemMapping' and 'TreeItemCreationTool'. From 'tree_description_TreeItemMapping', the role 'tree_description_TreeItemMapping30' has cardinality 0..*, and from 'TreeItemCreationTool', the role 'TreeItemCreationTool31' has cardinality 0..*.
+An association connects 'TreeItemDragTool' and 'tree_description_TreeItemMapping'. From 'TreeItemDragTool', the role 'TreeItemDragTool' has cardinality 0..*, and from 'tree_description_TreeItemMapping', the role 'tree_description_TreeItemMapping33' has cardinality 0..*.
+An association connects 'tree_description_TreeItemMapping' and 'TreePopupMenu'. From 'tree_description_TreeItemMapping', the role 'tree_description_TreeItemMapping35' has cardinality 0..*, and from 'TreePopupMenu', the role 'TreePopupMenu' has cardinality 0..*.
+An association connects 'ColorDescription' and 'tree_description_TreeItemStyleDescription'. From 'ColorDescription', the role 'ColorDescription' has cardinality 0..*, and from 'tree_description_TreeItemStyleDescription', the role 'tree_description_TreeItemStyleDescription' has cardinality 0..*.
+An association connects 'tree_description_ConditionalTreeItemStyleDescription' and 'TreeItemStyleDescription'. From 'tree_description_ConditionalTreeItemStyleDescription', the role 'tree_description_ConditionalTreeItemStyleDescription' has cardinality 0..*, and from 'TreeItemStyleDescription', the role 'TreeItemStyleDescription' has cardinality 0..*.
+An association connects 'tree_description_TreeItemTool' and 'tool_ModelOperation'. From 'tree_description_TreeItemTool', the role 'tree_description_TreeItemTool' has cardinality 0..*, and from 'tool_ModelOperation', the role 'tool_ModelOperation' has cardinality 0..*.
+An association connects 'TreeVariable' and 'tree_description_TreeItemTool'. From 'TreeVariable', the role 'TreeVariable' has cardinality 0..*, and from 'tree_description_TreeItemTool', the role 'tree_description_TreeItemTool40' has cardinality 0..*.
+An association connects 'tree_description_TreeItemDragTool' and 'tool_DropContainerVariable'. From 'tree_description_TreeItemDragTool', the role 'tree_description_TreeItemDragTool' has cardinality 0..*, and from 'tool_DropContainerVariable', the role 'tool_DropContainerVariable' has cardinality 0..*.
+An association connects 'tool_DropContainerVariable' and 'tree_description_TreeItemDragTool'. From 'tool_DropContainerVariable', the role 'tool_DropContainerVariable44' has cardinality 0..*, and from 'tree_description_TreeItemDragTool', the role 'tree_description_TreeItemDragTool43' has cardinality 0..*.
+An association connects 'tree_description_TreeItemDragTool' and 'tool_ElementDropVariable'. From 'tree_description_TreeItemDragTool', the role 'tree_description_TreeItemDragTool46' has cardinality 0..*, and from 'tool_ElementDropVariable', the role 'tool_ElementDropVariable' has cardinality 0..*.
+An association connects 'tool_ContainerViewVariable' and 'tree_description_TreeItemDragTool'. From 'tool_ContainerViewVariable', the role 'tool_ContainerViewVariable' has cardinality 0..*, and from 'tree_description_TreeItemDragTool', the role 'tree_description_TreeItemDragTool48' has cardinality 0..*.
+An association connects 'TreeItemMappingContainer' and 'tree_description_TreeItemDragTool'. From 'TreeItemMappingContainer', the role 'TreeItemMappingContainer' has cardinality 0..*, and from 'tree_description_TreeItemDragTool', the role 'tree_description_TreeItemDragTool50' has cardinality 0..*.
+An association connects 'PrecedingSiblingsVariables' and 'tree_description_TreeItemDragTool'. From 'PrecedingSiblingsVariables', the role 'PrecedingSiblingsVariables' has cardinality 0..*, and from 'tree_description_TreeItemDragTool', the role 'tree_description_TreeItemDragTool52' has cardinality 0..*.
+An association connects 'tool_DropContainerVariable' and 'tree_description_TreeItemContainerDropTool'. From 'tool_DropContainerVariable', the role 'tool_DropContainerVariable54' has cardinality 0..*, and from 'tree_description_TreeItemContainerDropTool', the role 'tree_description_TreeItemContainerDropTool' has cardinality 0..*.
+An association connects 'tree_description_TreeItemContainerDropTool' and 'tool_DropContainerVariable'. From 'tree_description_TreeItemContainerDropTool', the role 'tree_description_TreeItemContainerDropTool56' has cardinality 0..*, and from 'tool_DropContainerVariable', the role 'tool_DropContainerVariable57' has cardinality 0..*.
+An association connects 'tool_ElementDropVariable' and 'tree_description_TreeItemContainerDropTool'. From 'tool_ElementDropVariable', the role 'tool_ElementDropVariable60' has cardinality 0..*, and from 'tree_description_TreeItemContainerDropTool', the role 'tree_description_TreeItemContainerDropTool59' has cardinality 0..*.
+An association connects 'tree_description_TreeItemContainerDropTool' and 'tool_ContainerViewVariable'. From 'tree_description_TreeItemContainerDropTool', the role 'tree_description_TreeItemContainerDropTool62' has cardinality 0..*, and from 'tool_ContainerViewVariable', the role 'tool_ContainerViewVariable63' has cardinality 0..*.
+An association connects 'PrecedingSiblingsVariables' and 'tree_description_TreeItemContainerDropTool'. From 'PrecedingSiblingsVariables', the role 'PrecedingSiblingsVariables66' has cardinality 0..*, and from 'tree_description_TreeItemContainerDropTool', the role 'tree_description_TreeItemContainerDropTool65' has cardinality 0..*.
+An association connects 'tree_description_TreeItemCreationTool' and 'TreeItemMapping'. From 'tree_description_TreeItemCreationTool', the role 'tree_description_TreeItemCreationTool' has cardinality 0..*, and from 'TreeItemMapping', the role 'TreeItemMapping68' has cardinality 0..*.
+An association connects 'tree_description_TreeItemEditionTool' and 'tool_EditMaskVariables'. From 'tree_description_TreeItemEditionTool', the role 'tree_description_TreeItemEditionTool' has cardinality 0..*, and from 'tool_EditMaskVariables', the role 'tool_EditMaskVariables' has cardinality 0..*.
+An association connects 'TreeItemMapping' and 'tree_description_TreeItemEditionTool'. From 'TreeItemMapping', the role 'TreeItemMapping72' has cardinality 0..*, and from 'tree_description_TreeItemEditionTool', the role 'tree_description_TreeItemEditionTool71' has cardinality 0..*.
+An association connects 'tree_description_TreeItemEditionTool' and 'tool_ElementDropVariable'. From 'tree_description_TreeItemEditionTool', the role 'tree_description_TreeItemEditionTool74' has cardinality 0..*, and from 'tool_ElementDropVariable', the role 'tool_ElementDropVariable75' has cardinality 0..*.
+An association connects 'tree_description_TreeItemEditionTool' and 'tool_ElementDropVariable'. From 'tree_description_TreeItemEditionTool', the role 'tree_description_TreeItemEditionTool77' has cardinality 0..*, and from 'tool_ElementDropVariable', the role 'tool_ElementDropVariable78' has cardinality 0..*.
+An association connects 'tree_description_TreeItemDeletionTool' and 'TreeItemMapping'. From 'tree_description_TreeItemDeletionTool', the role 'TreeItemMapping80' has cardinality 0..*, and from 'TreeItemMapping', the role 'description81' has cardinality 0..*.
+An association connects 'tree_description_TreeCreationDescription' and 'TreeDescription'. From 'tree_description_TreeCreationDescription', the role 'tree_description_TreeCreationDescription' has cardinality 0..*, and from 'TreeDescription', the role 'TreeDescription83' has cardinality 0..*.
+An association connects 'tree_description_TreeNavigationDescription' and 'TreeDescription'. From 'tree_description_TreeNavigationDescription', the role 'tree_description_TreeNavigationDescription' has cardinality 0..*, and from 'TreeDescription', the role 'TreeDescription85' has cardinality 0..*.
+An association connects 'TreeItemStyleDescription' and 'tree_description_StyleUpdater'. From 'TreeItemStyleDescription', the role 'TreeItemStyleDescription87' has cardinality 0..*, and from 'tree_description_StyleUpdater', the role 'tree_description_StyleUpdater' has cardinality 0..*.
+An association connects 'ConditionalTreeItemStyleDescription' and 'tree_description_StyleUpdater'. From 'ConditionalTreeItemStyleDescription', the role 'ConditionalTreeItemStyleDescription' has cardinality 0..*, and from 'tree_description_StyleUpdater', the role 'tree_description_StyleUpdater89' has cardinality 0..*.
+An association connects 'tree_description_TreeItemUpdater' and 'TreeItemEditionTool'. From 'tree_description_TreeItemUpdater', the role 'tree_description_TreeItemUpdater' has cardinality 0..*, and from 'TreeItemEditionTool', the role 'TreeItemEditionTool' has cardinality 0..*.
+An association connects 'TreeItemMapping' and 'tree_description_TreeItemMappingContainer'. From 'TreeItemMapping', the role 'TreeItemMapping92' has cardinality 0..*, and from 'tree_description_TreeItemMappingContainer', the role 'tree_description_TreeItemMappingContainer' has cardinality 0..*.
+An association connects 'TreeItemContainerDropTool' and 'tree_description_TreeItemMappingContainer'. From 'TreeItemContainerDropTool', the role 'TreeItemContainerDropTool' has cardinality 0..*, and from 'tree_description_TreeItemMappingContainer', the role 'tree_description_TreeItemMappingContainer94' has cardinality 0..*.
+An association connects 'tool_MenuItemOrRef' and 'tree_description_TreePopupMenu'. From 'tool_MenuItemOrRef', the role 'tool_MenuItemOrRef' has cardinality 0..*, and from 'tree_description_TreePopupMenu', the role 'tree_description_TreePopupMenu' has cardinality 0..*.

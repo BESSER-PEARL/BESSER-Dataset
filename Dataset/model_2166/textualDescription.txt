@@ -1,0 +1,20 @@
+The domain model 'dag' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'dag_Edge' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dag_Vertex' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dag_DAG' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'dag_DAG' and 'dag_Vertex'. From 'dag_DAG', the role 'dag_DAG' has cardinality 0..*, and from 'dag_Vertex', the role 'dag_Vertex' has cardinality 0..*.
+An association connects 'dag_Edge' and 'dag_DAG'. From 'dag_Edge', the role 'dag_Edge' has cardinality 0..*, and from 'dag_DAG', the role 'dag_DAG2' has cardinality 0..*.
+An association connects 'dag_Vertex' and 'dag_Edge'. From 'dag_Vertex', the role 'from' has cardinality 0..*, and from 'dag_Edge', the role 'Edge' has cardinality 0..*.
+An association connects 'dag_Edge' and 'dag_Vertex'. From 'dag_Edge', the role 'Edge5' has cardinality 0..*, and from 'dag_Vertex', the role 'to' has cardinality 0..*.
+An association connects 'dag_Vertex' and 'dag_Edge'. From 'dag_Vertex', the role 'Vertex' has cardinality 0..*, and from 'dag_Edge', the role 'outgoing' has cardinality 0..*.
+An association connects 'dag_Edge' and 'dag_Vertex'. From 'dag_Edge', the role 'incoming' has cardinality 0..*, and from 'dag_Vertex', the role 'Vertex8' has cardinality 0..*.

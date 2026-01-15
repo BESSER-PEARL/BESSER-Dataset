@@ -1,0 +1,88 @@
+The domain model 'UATMM_structure' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'UATMM_structure_AND' represents an important domain concept.
+It does not declare any attributes.
+
+'UATMM_structure_FDEP' represents an important domain concept.
+It does not declare any attributes.
+
+'UATMM_structure_Node' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'id', which is of type str; 'role', which is of type str; 'nature', which is of type str.
+
+'UATMM_structure_Weighted' represents an important domain concept.
+It has the following attributes: 'Treshold', which is of type float; 'Weights', which is of type float.
+
+'UATMM_structure_PAND' represents an important domain concept.
+It does not declare any attributes.
+
+'UATMM_structure_TAND' represents an important domain concept.
+It does not declare any attributes.
+
+'UATMM_structure_SOR' represents an important domain concept.
+It does not declare any attributes.
+
+'UATMM_structure_OR' represents an important domain concept.
+It does not declare any attributes.
+
+'UATMM_structure_KofN' represents an important domain concept.
+It has one attribute: 'Threshold', which is of type int.
+
+'UATMM_structure_Spare' represents an important domain concept.
+It does not declare any attributes.
+
+'UATMM_structure_AttackTree' represents an important domain concept.
+It does not declare any attributes.
+
+'UATMM_structure_TreeMetaData' represents an important domain concept.
+It has the following attributes: 'Value', which is of type str; 'Key', which is of type str.
+
+'UATMM_structure_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'UATMM_structure_Edge' represents an important domain concept.
+It has one attribute: 'edgeKind', which is of type str.
+
+'UATMM_structure_XOR' represents an important domain concept.
+It does not declare any attributes.
+
+'UATMM_structure_RDEP' represents an important domain concept.
+It has one attribute: 'factor', which is of type float.
+
+'UATMM_structure_SAND' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Nature' defines the following possible values: 'Hybrid', 'Attack', 'Fault'.
+The enumeration 'RoleType' defines the following possible values: 'Counteracting', 'Contributing'.
+The enumeration 'EdgeKind' defines the following possible values: 'DEPENDENCY', 'TRIGGER'.
+
+The model also captures inheritance relationships between classes.
+The class 'UATMM_structure_AND' is a specialization of 'Connector'.
+The class 'UATMM_structure_OR' is a specialization of 'Connector'.
+The class 'UATMM_structure_XOR' is a specialization of 'Connector'.
+The class 'UATMM_structure_PAND' is a specialization of 'Connector'.
+The class 'UATMM_structure_TAND' is a specialization of 'Connector'.
+The class 'UATMM_structure_KofN' is a specialization of 'Connector'.
+The class 'UATMM_structure_Weighted' is a specialization of 'Connector'.
+The class 'UATMM_structure_SAND' is a specialization of 'Connector'.
+The class 'UATMM_structure_SOR' is a specialization of 'Connector'.
+The class 'UATMM_structure_FDEP' is a specialization of 'Connector'.
+The class 'UATMM_structure_Spare' is a specialization of 'Connector'.
+The class 'UATMM_structure_RDEP' is a specialization of 'Connector'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UATMM_structure_Node' and 'UATMM_structure_AttackTree'. From 'UATMM_structure_Node', the role 'UATMM_structure_Node' has cardinality 0..*, and from 'UATMM_structure_AttackTree', the role 'UATMM_structure_AttackTree' has cardinality 0..*.
+An association connects 'UATMM_structure_AttackTree' and 'UATMM_structure_Node'. From 'UATMM_structure_AttackTree', the role 'UATMM_structure_AttackTree2' has cardinality 0..*, and from 'UATMM_structure_Node', the role 'UATMM_structure_Node3' has cardinality 0..*.
+An association connects 'UATMM_structure_AttackTree' and 'UATMM_structure_Edge'. From 'UATMM_structure_AttackTree', the role 'UATMM_structure_AttackTree5' has cardinality 0..*, and from 'UATMM_structure_Edge', the role 'UATMM_structure_Edge' has cardinality 0..*.
+An association connects 'UATMM_structure_TreeMetaData' and 'UATMM_structure_AttackTree'. From 'UATMM_structure_TreeMetaData', the role 'UATMM_structure_TreeMetaData' has cardinality 0..*, and from 'UATMM_structure_AttackTree', the role 'UATMM_structure_AttackTree7' has cardinality 0..*.
+An association connects 'UATMM_structure_Connector' and 'UATMM_structure_Node'. From 'UATMM_structure_Connector', the role 'Connector' has cardinality 0..*, and from 'UATMM_structure_Node', the role 'gate' has cardinality 0..*.
+An association connects 'UATMM_structure_Node' and 'UATMM_structure_Node'. From 'UATMM_structure_Node', the role 'parents' has cardinality 0..*, and from 'UATMM_structure_Node', the role 'Node' has cardinality 0..*.
+An association connects 'UATMM_structure_Node' and 'UATMM_structure_Node'. From 'UATMM_structure_Node', the role 'children' has cardinality 0..*, and from 'UATMM_structure_Node', the role 'Node13' has cardinality 0..*.
+An association connects 'UATMM_structure_Edge' and 'UATMM_structure_Node'. From 'UATMM_structure_Edge', the role 'UATMM_structure_Edge15' has cardinality 0..*, and from 'UATMM_structure_Node', the role 'UATMM_structure_Node16' has cardinality 0..*.
+An association connects 'UATMM_structure_Edge' and 'UATMM_structure_Node'. From 'UATMM_structure_Edge', the role 'UATMM_structure_Edge18' has cardinality 0..*, and from 'UATMM_structure_Node', the role 'UATMM_structure_Node19' has cardinality 0..*.
+An association connects 'UATMM_structure_Node' and 'UATMM_structure_Connector'. From 'UATMM_structure_Node', the role 'Node21' has cardinality 0..*, and from 'UATMM_structure_Connector', the role 'connector' has cardinality 0..*.

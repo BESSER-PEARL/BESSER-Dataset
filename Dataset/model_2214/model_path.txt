@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/MiriamFi/tdt4250/Assignment1/tdt4250.modelingExercise.studyProgramStructure/model/studyProgramStructure.ecore

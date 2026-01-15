@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/leevi978/TDT4250-1/org.tdt4250.project2/model/studyprogram.ecore

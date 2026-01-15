@@ -1,0 +1,101 @@
+The domain model 'tests' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'tests_TestCategoryBase' represents an important domain concept.
+It has one attribute: 'testBaseProperty', which is of type int.
+
+'DObject' represents an important domain concept.
+It does not declare any attributes.
+
+'tests_TestCategoryReference' represents an important domain concept.
+It does not declare any attributes.
+
+'tests_EReferenceTest' represents an important domain concept.
+It does not declare any attributes.
+
+'tests_ExternalTestType' represents an important domain concept.
+It does not declare any attributes.
+
+'tests_TestCategoryExtends' represents an important domain concept.
+It has one attribute: 'testExtendsProperty', which is of type int.
+
+'tests_TestParameter' represents an important domain concept.
+It has one attribute: 'defaultValue', which is of type float.
+
+'TestCategoryBeanAbstract' represents an important domain concept.
+It does not declare any attributes.
+
+'tests_TestCategoryIntrinsicArray' represents an important domain concept.
+It has the following attributes: 'testStringArrayStatic', which is of type str; 'testStringArrayDynamic', which is of type str.
+
+'tests_TestCategoryBeanConcrete' represents an important domain concept.
+It does not declare any attributes.
+
+'TestCategoryBase' represents an important domain concept.
+It does not declare any attributes.
+
+'dmf_DObject' represents an important domain concept.
+It does not declare any attributes.
+
+'tests_TestCategoryBeanA' represents an important domain concept.
+It does not declare any attributes.
+
+'tests_TestCategoryComposition' represents an important domain concept.
+It does not declare any attributes.
+
+'tests_TestCategoryReferenceArray' represents an important domain concept.
+It does not declare any attributes.
+
+'tests_TestMassParameters' represents an important domain concept.
+It does not declare any attributes.
+
+'tests_TestCategoryCompositionArray' represents an important domain concept.
+It does not declare any attributes.
+
+'tests_TestCategoryBeanB' represents an important domain concept.
+It does not declare any attributes.
+
+'tests_TestCategoryBeanAbstract' represents an important domain concept.
+It does not declare any attributes.
+
+'tests_TestCategoryAllProperty' represents an important domain concept.
+It has the following attributes: 'testBool', which is of type bool; 'testFloat', which is of type float; 'testString', which is of type str; 'testEnum', which is of type str; 'testInt', which is of type int; 'testResource', which is of type str.
+
+'tests_TestCrossLinkedParametersWithCalculation' represents an important domain concept.
+It has one attribute: 'calcedTrl', which is of type float.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EnumTestEnum' defines the following possible values: 'LOW', 'HIGH', 'MEDIUM', 'INCREDIBLE'.
+
+The model also captures inheritance relationships between classes.
+The class 'tests_TestCategoryAllProperty' is a specialization of 'DObject'.
+The class 'tests_TestCategoryComposition' is a specialization of 'DObject'.
+The class 'tests_TestCategoryReference' is a specialization of 'DObject'.
+The class 'tests_TestCategoryIntrinsicArray' is a specialization of 'DObject'.
+The class 'tests_TestCategoryCompositionArray' is a specialization of 'DObject'.
+The class 'tests_TestCategoryReferenceArray' is a specialization of 'DObject'.
+The class 'tests_TestCategoryBeanA' is a specialization of 'DObject'.
+The class 'tests_TestCategoryBeanB' is a specialization of 'DObject'.
+The class 'tests_TestCategoryBeanAbstract' is a specialization of 'DObject'.
+The class 'tests_TestCategoryBeanConcrete' is a specialization of 'dmf_DObject'.
+The class 'tests_TestCategoryBeanConcrete' is a specialization of 'TestCategoryBeanAbstract'.
+The class 'tests_TestCategoryBase' is a specialization of 'DObject'.
+The class 'tests_TestCategoryExtends' is a specialization of 'dmf_DObject'.
+The class 'tests_TestCategoryExtends' is a specialization of 'TestCategoryBase'.
+The class 'tests_TestParameter' is a specialization of 'DObject'.
+The class 'tests_TestMassParameters' is a specialization of 'DObject'.
+The class 'tests_TestCrossLinkedParametersWithCalculation' is a specialization of 'DObject'.
+The class 'tests_EReferenceTest' is a specialization of 'DObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tests_TestCategoryAllProperty' and 'tests_TestCategoryComposition'. From 'tests_TestCategoryAllProperty', the role 'tests_TestCategoryAllProperty' has cardinality 0..*, and from 'tests_TestCategoryComposition', the role 'tests_TestCategoryComposition' has cardinality 0..*.
+An association connects 'tests_TestCategoryAllProperty' and 'tests_TestCategoryReference'. From 'tests_TestCategoryAllProperty', the role 'tests_TestCategoryAllProperty2' has cardinality 0..*, and from 'tests_TestCategoryReference', the role 'tests_TestCategoryReference' has cardinality 0..*.
+An association connects 'tests_TestCategoryCompositionArray' and 'tests_TestCategoryAllProperty'. From 'tests_TestCategoryCompositionArray', the role 'tests_TestCategoryCompositionArray' has cardinality 0..*, and from 'tests_TestCategoryAllProperty', the role 'tests_TestCategoryAllProperty4' has cardinality 0..*.
+An association connects 'tests_TestCategoryAllProperty' and 'tests_TestCategoryCompositionArray'. From 'tests_TestCategoryAllProperty', the role 'tests_TestCategoryAllProperty7' has cardinality 0..*, and from 'tests_TestCategoryCompositionArray', the role 'tests_TestCategoryCompositionArray6' has cardinality 0..*.
+An association connects 'tests_TestCategoryReferenceArray' and 'tests_TestCategoryAllProperty'. From 'tests_TestCategoryReferenceArray', the role 'tests_TestCategoryReferenceArray' has cardinality 0..*, and from 'tests_TestCategoryAllProperty', the role 'tests_TestCategoryAllProperty9' has cardinality 0..*.
+An association connects 'tests_TestCategoryReferenceArray' and 'tests_TestCategoryAllProperty'. From 'tests_TestCategoryReferenceArray', the role 'tests_TestCategoryReferenceArray11' has cardinality 0..*, and from 'tests_TestCategoryAllProperty', the role 'tests_TestCategoryAllProperty12' has cardinality 0..*.
+An association connects 'tests_TestCategoryBase' and 'tests_TestCategoryBase'. From 'tests_TestCategoryBase', the role 'tests_TestCategoryBase' has cardinality 0..*, and from 'tests_TestCategoryBase', the role 'tests_TestCategoryBase13' has cardinality 0..*.
+An association connects 'tests_TestCategoryBase' and 'tests_TestCategoryBase'. From 'tests_TestCategoryBase', the role 'tests_TestCategoryBase15' has cardinality 0..*, and from 'tests_TestCategoryBase', the role 'tests_TestCategoryBase17' has cardinality 0..*.
+An association connects 'tests_TestMassParameters' and 'tests_TestParameter'. From 'tests_TestMassParameters', the role 'tests_TestMassParameters' has cardinality 0..*, and from 'tests_TestParameter', the role 'tests_TestParameter' has cardinality 0..*.
+An association connects 'tests_ExternalTestType' and 'tests_EReferenceTest'. From 'tests_ExternalTestType', the role 'tests_ExternalTestType' has cardinality 0..*, and from 'tests_EReferenceTest', the role 'tests_EReferenceTest' has cardinality 0..*.

@@ -1,0 +1,78 @@
+The domain model 'WT' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'WT_Subsystem' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'WT_WTComponents' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'WT_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'DocumentElt' represents an important domain concept.
+It does not declare any attributes.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'WT_InPort' represents an important domain concept.
+It does not declare any attributes.
+
+'WT_OutPort' represents an important domain concept.
+It does not declare any attributes.
+
+'WT_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'WT_Architecture' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'WT_SimpleState' represents an important domain concept.
+It does not declare any attributes.
+
+'WT_StateMachine' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isPublic', which is of type str.
+
+'WT_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'WT_DocumentElt' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str.
+
+'WT_Component' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'WT_ControlSubsystem' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'WT_Port' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'WT_Vertex' is a specialization of 'DocumentElt'.
+The class 'WT_Edge' is a specialization of 'DocumentElt'.
+The class 'WT_InitialState' is a specialization of 'Vertex'.
+The class 'WT_SimpleState' is a specialization of 'Vertex'.
+The class 'WT_InPort' is a specialization of 'Port'.
+The class 'WT_OutPort' is a specialization of 'Port'.
+
+Relationships between classes are modeled using associations.
+An association connects 'WT_WTComponents' and 'WT_Subsystem'. From 'WT_WTComponents', the role 'WT_WTComponents' has cardinality 0..*, and from 'WT_Subsystem', the role 'WT_Subsystem' has cardinality 0..*.
+An association connects 'WT_Subsystem' and 'WT_Subsystem'. From 'WT_Subsystem', the role 'WT_Subsystem3' has cardinality 0..*, and from 'WT_Subsystem', the role 'WT_Subsystem1' has cardinality 0..*.
+An association connects 'WT_Architecture' and 'WT_Subsystem'. From 'WT_Architecture', the role 'WT_Architecture' has cardinality 0..*, and from 'WT_Subsystem', the role 'WT_Subsystem5' has cardinality 0..*.
+An association connects 'WT_ControlSubsystem' and 'WT_Subsystem'. From 'WT_ControlSubsystem', the role 'WT_ControlSubsystem' has cardinality 0..*, and from 'WT_Subsystem', the role 'WT_Subsystem7' has cardinality 0..*.
+An association connects 'WT_Architecture' and 'WT_Component'. From 'WT_Architecture', the role 'WT_Architecture9' has cardinality 0..*, and from 'WT_Component', the role 'WT_Component' has cardinality 0..*.
+An association connects 'WT_ControlSubsystem' and 'WT_StateMachine'. From 'WT_ControlSubsystem', the role 'WT_ControlSubsystem11' has cardinality 0..*, and from 'WT_StateMachine', the role 'WT_StateMachine' has cardinality 0..*.
+An association connects 'WT_Vertex' and 'WT_StateMachine'. From 'WT_Vertex', the role 'WT_Vertex' has cardinality 0..*, and from 'WT_StateMachine', the role 'WT_StateMachine13' has cardinality 0..*.
+An association connects 'WT_Edge' and 'WT_StateMachine'. From 'WT_Edge', the role 'WT_Edge' has cardinality 0..*, and from 'WT_StateMachine', the role 'WT_StateMachine15' has cardinality 0..*.
+An association connects 'WT_Vertex' and 'WT_Edge'. From 'WT_Vertex', the role 'source' has cardinality 0..*, and from 'WT_Edge', the role 'Edge' has cardinality 0..*.
+An association connects 'WT_Vertex' and 'WT_Edge'. From 'WT_Vertex', the role 'target' has cardinality 0..*, and from 'WT_Edge', the role 'Edge18' has cardinality 0..*.
+An association connects 'WT_Edge' and 'WT_Vertex'. From 'WT_Edge', the role 'outgoing' has cardinality 0..*, and from 'WT_Vertex', the role 'Vertex' has cardinality 0..*.
+An association connects 'WT_Vertex' and 'WT_Edge'. From 'WT_Vertex', the role 'Vertex21' has cardinality 0..*, and from 'WT_Edge', the role 'incoming' has cardinality 0..*.
+An association connects 'WT_Component' and 'WT_Port'. From 'WT_Component', the role 'WT_Component23' has cardinality 0..*, and from 'WT_Port', the role 'WT_Port' has cardinality 0..*.
+An association connects 'WT_StateMachine' and 'WT_Component'. From 'WT_StateMachine', the role 'WT_StateMachine26' has cardinality 0..*, and from 'WT_Component', the role 'WT_Component25' has cardinality 0..*.

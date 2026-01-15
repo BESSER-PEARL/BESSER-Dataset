@@ -1,0 +1,54 @@
+The domain model 'uitf' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'uitf_UIControlVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'uitf_TestCase' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'uitf_Statement' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'kind', which is of type str.
+
+'uitf_TriggeredTransition' represents an important domain concept.
+It has the following attributes: 'scriptStr', which is of type str; 'transitionId', which is of type str.
+
+'uitf_UIControl' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'uitf_AssertInState' represents an important domain concept.
+It has one attribute: 'stateId', which is of type str.
+
+'uitf_UISUT' represents an important domain concept.
+It has one attribute: 'objectURI', which is of type str.
+
+'uitf_TestSuite' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'uitf_Variable' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'UserInstructionEnum' defines the following possible values: 'SetUIValue', 'ManipulateUIControl', 'InstantiateUISUT', 'AssertUIState', 'AssertUIValue', 'SendUITrigger'.
+
+The model also captures inheritance relationships between classes.
+The class 'uitf_UISUT' is a specialization of 'Variable'.
+The class 'uitf_UIControlVariable' is a specialization of 'Variable'.
+The class 'uitf_AssertInState' is a specialization of 'Statement'.
+The class 'uitf_TriggeredTransition' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'uitf_TestCase' and 'uitf_UISUT'. From 'uitf_TestCase', the role 'uitf_TestCase' has cardinality 0..*, and from 'uitf_UISUT', the role 'uitf_UISUT' has cardinality 0..*.
+An association connects 'uitf_TestCase' and 'uitf_Statement'. From 'uitf_TestCase', the role 'uitf_TestCase2' has cardinality 0..*, and from 'uitf_Statement', the role 'uitf_Statement' has cardinality 0..*.
+An association connects 'uitf_TestSuite' and 'uitf_TestCase'. From 'uitf_TestSuite', the role 'uitf_TestSuite' has cardinality 0..*, and from 'uitf_TestCase', the role 'uitf_TestCase4' has cardinality 0..*.
+An association connects 'uitf_UISUT' and 'uitf_Variable'. From 'uitf_UISUT', the role 'uitf_UISUT6' has cardinality 0..*, and from 'uitf_Variable', the role 'uitf_Variable' has cardinality 0..*.
+An association connects 'uitf_UIControl' and 'uitf_UISUT'. From 'uitf_UIControl', the role 'uitf_UIControl' has cardinality 0..*, and from 'uitf_UISUT', the role 'uitf_UISUT8' has cardinality 0..*.
+An association connects 'uitf_Variable' and 'uitf_Statement'. From 'uitf_Variable', the role 'uitf_Variable11' has cardinality 0..*, and from 'uitf_Statement', the role 'uitf_Statement10' has cardinality 0..*.
+An association connects 'uitf_Variable' and 'uitf_UIControl'. From 'uitf_Variable', the role 'uitf_Variable14' has cardinality 0..*, and from 'uitf_UIControl', the role 'uitf_UIControl13' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/rosvik/ntnu-tdt4250-eclipse/assignment1/no.rosvik.tdt4250/model/university.ecore

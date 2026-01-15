@@ -1,0 +1,142 @@
+The domain model 'sxfm' describes the core structural elements and their relationships within the system.
+
+The model defines 32 main class(es).
+
+'sxfm_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstraintableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'sxfm_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'sxfm_Constraint' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'sxfm_Mandatory' represents an important domain concept.
+It does not declare any attributes.
+
+'sxfm_FeatureModelConfiguaration' represents an important domain concept.
+It does not declare any attributes.
+
+'sxfm_Data' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'CardinalizedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'sxfm_ConstraintableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sxfm_Feature' represents an important domain concept.
+It has the following attributes: 'treeLevel', which is of type int; 'name', which is of type str; 'id', which is of type str; 'description', which is of type str.
+
+'sxfm_ContainerElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sxfm_Group' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'sxfm_CardinalizedElement' represents an important domain concept.
+It has the following attributes: 'minCardinality', which is of type int; 'maxCardinality', which is of type int.
+
+'sxfm_GroupedFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'sxfm_VariableFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'sxfm_ConstraintsSet' represents an important domain concept.
+It does not declare any attributes.
+
+'sxfm_FeatureModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sxfm_ContainableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sxfm_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'ContainerElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sxfm_Optional' represents an important domain concept.
+It does not declare any attributes.
+
+'sxfm_MetadataSet' represents an important domain concept.
+It does not declare any attributes.
+
+'sxfm_FeatureTree' represents an important domain concept.
+It does not declare any attributes.
+
+'ContainableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'sxfm_CommonFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'sxfm_FeatureChoice' represents an important domain concept.
+It has the following attributes: 'decisionType', which is of type str; 'selected', which is of type bool; 'decisionStep', which is of type int.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'sxfm_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'sxfm_Atom' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DecisionType' defines the following possible values: 'autocompleted', 'propagated', 'manual'.
+
+The model also captures inheritance relationships between classes.
+The class 'sxfm_Group' is a specialization of 'CardinalizedElement'.
+The class 'sxfm_Mandatory' is a specialization of 'ContainerElement'.
+The class 'sxfm_Mandatory' is a specialization of 'ContainableElement'.
+The class 'sxfm_Mandatory' is a specialization of 'Feature'.
+The class 'sxfm_Mandatory' is a specialization of 'ConstraintableElement'.
+The class 'sxfm_Mandatory' is a specialization of 'CommonFeature'.
+The class 'sxfm_Optional' is a specialization of 'Feature'.
+The class 'sxfm_Optional' is a specialization of 'ContainerElement'.
+The class 'sxfm_Optional' is a specialization of 'ContainableElement'.
+The class 'sxfm_Optional' is a specialization of 'ConstraintableElement'.
+The class 'sxfm_Optional' is a specialization of 'VariableFeature'.
+The class 'sxfm_GroupedFeature' is a specialization of 'Feature'.
+The class 'sxfm_GroupedFeature' is a specialization of 'ConstraintableElement'.
+The class 'sxfm_GroupedFeature' is a specialization of 'ContainerElement'.
+The class 'sxfm_GroupedFeature' is a specialization of 'VariableFeature'.
+The class 'sxfm_Root' is a specialization of 'ContainerElement'.
+The class 'sxfm_Root' is a specialization of 'Feature'.
+The class 'sxfm_Root' is a specialization of 'CommonFeature'.
+The class 'sxfm_Not' is a specialization of 'Literal'.
+The class 'sxfm_Atom' is a specialization of 'Literal'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sxfm_Feature' and 'sxfm_Group'. From 'sxfm_Feature', the role 'sxfm_Feature' has cardinality 0..*, and from 'sxfm_Group', the role 'sxfm_Group' has cardinality 0..*.
+An association connects 'sxfm_GroupedFeature' and 'sxfm_Group'. From 'sxfm_GroupedFeature', the role 'sxfm_GroupedFeature' has cardinality 0..*, and from 'sxfm_Group', the role 'sxfm_Group2' has cardinality 0..*.
+An association connects 'sxfm_Or' and 'sxfm_Constraint'. From 'sxfm_Or', the role 'sxfm_Or' has cardinality 0..*, and from 'sxfm_Constraint', the role 'sxfm_Constraint' has cardinality 0..*.
+An association connects 'sxfm_FeatureModel' and 'sxfm_ConstraintsSet'. From 'sxfm_FeatureModel', the role 'sxfm_FeatureModel' has cardinality 0..*, and from 'sxfm_ConstraintsSet', the role 'sxfm_ConstraintsSet' has cardinality 0..*.
+An association connects 'sxfm_FeatureTree' and 'sxfm_FeatureModel'. From 'sxfm_FeatureTree', the role 'sxfm_FeatureTree' has cardinality 0..*, and from 'sxfm_FeatureModel', the role 'sxfm_FeatureModel6' has cardinality 0..*.
+An association connects 'sxfm_MetadataSet' and 'sxfm_FeatureModel'. From 'sxfm_MetadataSet', the role 'sxfm_MetadataSet' has cardinality 0..*, and from 'sxfm_FeatureModel', the role 'sxfm_FeatureModel8' has cardinality 0..*.
+An association connects 'sxfm_FeatureModel' and 'sxfm_FeatureModelConfiguaration'. From 'sxfm_FeatureModel', the role 'sxfm_FeatureModel10' has cardinality 0..*, and from 'sxfm_FeatureModelConfiguaration', the role 'sxfm_FeatureModelConfiguaration' has cardinality 0..*.
+An association connects 'sxfm_FeatureTree' and 'sxfm_Root'. From 'sxfm_FeatureTree', the role 'sxfm_FeatureTree12' has cardinality 0..*, and from 'sxfm_Root', the role 'sxfm_Root' has cardinality 0..*.
+An association connects 'sxfm_ConstraintsSet' and 'sxfm_Constraint'. From 'sxfm_ConstraintsSet', the role 'sxfm_ConstraintsSet14' has cardinality 0..*, and from 'sxfm_Constraint', the role 'sxfm_Constraint15' has cardinality 0..*.
+An association connects 'sxfm_ContainableElement' and 'sxfm_ContainerElement'. From 'sxfm_ContainableElement', the role 'sxfm_ContainableElement' has cardinality 0..*, and from 'sxfm_ContainerElement', the role 'sxfm_ContainerElement' has cardinality 0..*.
+An association connects 'sxfm_Not' and 'sxfm_Atom'. From 'sxfm_Not', the role 'sxfm_Not' has cardinality 0..*, and from 'sxfm_Atom', the role 'sxfm_Atom' has cardinality 0..*.
+An association connects 'sxfm_Or' and 'sxfm_Literal'. From 'sxfm_Or', the role 'sxfm_Or19' has cardinality 0..*, and from 'sxfm_Literal', the role 'sxfm_Literal' has cardinality 0..*.
+An association connects 'sxfm_ConstraintableElement' and 'sxfm_Atom'. From 'sxfm_ConstraintableElement', the role 'sxfm_ConstraintableElement' has cardinality 0..*, and from 'sxfm_Atom', the role 'sxfm_Atom21' has cardinality 0..*.
+An association connects 'sxfm_MetadataSet' and 'sxfm_Data'. From 'sxfm_MetadataSet', the role 'sxfm_MetadataSet23' has cardinality 0..*, and from 'sxfm_Data', the role 'sxfm_Data' has cardinality 0..*.
+An association connects 'sxfm_FeatureChoice' and 'sxfm_FeatureModelConfiguaration'. From 'sxfm_FeatureChoice', the role 'sxfm_FeatureChoice' has cardinality 0..*, and from 'sxfm_FeatureModelConfiguaration', the role 'sxfm_FeatureModelConfiguaration25' has cardinality 0..*.
+An association connects 'sxfm_FeatureChoice' and 'sxfm_Feature'. From 'sxfm_FeatureChoice', the role 'sxfm_FeatureChoice27' has cardinality 0..*, and from 'sxfm_Feature', the role 'sxfm_Feature28' has cardinality 0..*.

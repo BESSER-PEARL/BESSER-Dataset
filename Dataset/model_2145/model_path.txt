@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atlanmod/UML2NoSQL/fr.inria.atlanmod.uml2nosql.graphdb.metamodel/model/graphdb.ecore

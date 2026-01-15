@@ -1,0 +1,43 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'model_DoorsFolder' represents an important domain concept.
+It has one attribute: 'project', which is of type bool.
+
+'model_AttributeMap' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'model_DoorsTreeNode' represents an important domain concept.
+It has the following attributes: 'fullNameSegments', which is of type str; 'name', which is of type str; 'fullName', which is of type str.
+
+'DoorsTreeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'DoorsObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DoorsTableRow' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DoorsObject' represents an important domain concept.
+It has the following attributes: 'objectNumber', which is of type str; 'objectShortText', which is of type str; 'absoluteNumber', which is of type int; 'objectHeading', which is of type str; 'objectIdentifier', which is of type str; 'objectText', which is of type str; 'text', which is of type str.
+
+'model_DoorsLink' represents an important domain concept.
+It has the following attributes: 'targetModule', which is of type str; 'targetObject', which is of type str.
+
+'model_DoorsModule' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'model_DoorsFolder' is a specialization of 'DoorsTreeNode'.
+The class 'model_DoorsModule' is a specialization of 'DoorsTreeNode'.
+The class 'model_DoorsObject' is a specialization of 'DoorsTreeNode'.
+The class 'model_DoorsTableRow' is a specialization of 'DoorsObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_DoorsObject' and 'model_DoorsLink'. From 'model_DoorsObject', the role 'source' has cardinality 0..*, and from 'model_DoorsLink', the role 'DoorsLink' has cardinality 0..*.
+An association connects 'model_DoorsLink' and 'model_DoorsObject'. From 'model_DoorsLink', the role 'outgoingLinks' has cardinality 0..*, and from 'model_DoorsObject', the role 'DoorsObject' has cardinality 0..*.
+An association connects 'model_DoorsTreeNode' and 'model_DoorsTreeNode'. From 'model_DoorsTreeNode', the role 'parent' has cardinality 0..*, and from 'model_DoorsTreeNode', the role 'DoorsTreeNode' has cardinality 0..*.
+An association connects 'model_DoorsTreeNode' and 'model_DoorsTreeNode'. From 'model_DoorsTreeNode', the role 'children' has cardinality 0..*, and from 'model_DoorsTreeNode', the role 'DoorsTreeNode6' has cardinality 0..*.
+An association connects 'model_DoorsTreeNode' and 'model_AttributeMap'. From 'model_DoorsTreeNode', the role 'model_DoorsTreeNode' has cardinality 0..*, and from 'model_AttributeMap', the role 'model_AttributeMap' has cardinality 0..*.

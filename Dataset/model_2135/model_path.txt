@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/qualicen/specmate/bundles/specmate-model-ecore/model/specmate.ecore

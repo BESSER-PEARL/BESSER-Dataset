@@ -1,0 +1,267 @@
+The domain model 'ftp' describes the core structural elements and their relationships within the system.
+
+The model defines 57 main class(es).
+
+'ftp_SignalConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_MechanicalConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedPortValue' represents an important domain concept.
+It does not declare any attributes.
+
+'FTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_VisualConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_Fault' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'ftp_PTransistor' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_DigitalSwitch' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_AnalogBattery' represents an important domain concept.
+It has one attribute: 'voltage', which is of type float.
+
+'ftp_VisualPort' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_FTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_Port' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'ftp_Component' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'ftp_AnalogSwitch' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_DigitalBattery' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_And' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_NTransistor' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_Xor' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_ComposedComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_HydraulicValue' represents an important domain concept.
+It has the following attributes: 'flow', which is of type float; 'anyFlow', which is of type bool; 'pressure', which is of type float; 'anyPressure', which is of type bool.
+
+'ftp_SignalPort' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_HydraulicConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_OrGate' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_HydraulicPort' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_FloatValue' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'ftp_Resistor' represents an important domain concept.
+It has one attribute: 'resistance', which is of type float.
+
+'ftp_FaultTreeContext' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_VisualValue' represents an important domain concept.
+It has one attribute: 'bulb', which is of type str.
+
+'ftp_CompositionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_DigitalLamp' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_PortValue' represents an important domain concept.
+It does not declare any attributes.
+
+'AnalogConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_ElectricalConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_PrimitiveComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_MechanicalPort' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_TypedPortValue' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_FaultTree' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_SignalConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ftp_RootEvent' represents an important domain concept.
+It has one attribute: 'observation', which is of type str.
+
+'Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'DigintalConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_AndGate' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_DigintalConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_DFlipFlop' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_AnalogLamp' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_ElectricalPort' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_ElectricalValue' represents an important domain concept.
+It has the following attributes: 'anyVoltage', which is of type bool; 'voltage', which is of type float; 'current', which is of type float; 'anyCurrent', which is of type bool.
+
+'ftp_Capacitor' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_AnalogConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'ftp_Observation' represents an important domain concept.
+It has the following attributes: 'faultLimit', which is of type int; 'name', which is of type str.
+
+'ftp_SignalValue' represents an important domain concept.
+It has one attribute: 'signal', which is of type str.
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SignalValues' defines the following possible values: 'on', 'off', 'any'.
+The enumeration 'VisualValues' defines the following possible values: 'light', 'any', 'dark'.
+
+The model also captures inheritance relationships between classes.
+The class 'ftp_OrGate' is a specialization of 'FTNode'.
+The class 'ftp_AndGate' is a specialization of 'FTNode'.
+The class 'ftp_Fault' is a specialization of 'FTNode'.
+The class 'ftp_Component' is a specialization of 'CompositionElement'.
+The class 'ftp_Connection' is a specialization of 'CompositionElement'.
+The class 'ftp_DigintalConnection' is a specialization of 'Connection'.
+The class 'ftp_AnalogConnection' is a specialization of 'Connection'.
+The class 'ftp_SignalConnection' is a specialization of 'DigintalConnection'.
+The class 'ftp_ElectricalConnection' is a specialization of 'AnalogConnection'.
+The class 'ftp_HydraulicConnection' is a specialization of 'AnalogConnection'.
+The class 'ftp_MechanicalConnection' is a specialization of 'AnalogConnection'.
+The class 'ftp_PrimitiveComponent' is a specialization of 'Component'.
+The class 'ftp_ComposedComponent' is a specialization of 'Component'.
+The class 'ftp_Resistor' is a specialization of 'PrimitiveComponent'.
+The class 'ftp_Capacitor' is a specialization of 'PrimitiveComponent'.
+The class 'ftp_AnalogBattery' is a specialization of 'PrimitiveComponent'.
+The class 'ftp_AnalogSwitch' is a specialization of 'PrimitiveComponent'.
+The class 'ftp_AnalogLamp' is a specialization of 'PrimitiveComponent'.
+The class 'ftp_DigitalBattery' is a specialization of 'PrimitiveComponent'.
+The class 'ftp_DigitalSwitch' is a specialization of 'PrimitiveComponent'.
+The class 'ftp_DigitalLamp' is a specialization of 'PrimitiveComponent'.
+The class 'ftp_Not' is a specialization of 'PrimitiveComponent'.
+The class 'ftp_Xor' is a specialization of 'PrimitiveComponent'.
+The class 'ftp_And' is a specialization of 'PrimitiveComponent'.
+The class 'ftp_NTransistor' is a specialization of 'PrimitiveComponent'.
+The class 'ftp_PTransistor' is a specialization of 'PrimitiveComponent'.
+The class 'ftp_DFlipFlop' is a specialization of 'PrimitiveComponent'.
+The class 'ftp_SignalPort' is a specialization of 'Port'.
+The class 'ftp_ElectricalPort' is a specialization of 'Port'.
+The class 'ftp_HydraulicPort' is a specialization of 'Port'.
+The class 'ftp_VisualPort' is a specialization of 'Port'.
+The class 'ftp_VisualConnection' is a specialization of 'Connection'.
+The class 'ftp_RootEvent' is a specialization of 'FTNode'.
+The class 'ftp_MechanicalPort' is a specialization of 'Port'.
+The class 'ftp_SignalValue' is a specialization of 'TypedPortValue'.
+The class 'ftp_ElectricalValue' is a specialization of 'TypedPortValue'.
+The class 'ftp_HydraulicValue' is a specialization of 'TypedPortValue'.
+The class 'ftp_VisualValue' is a specialization of 'TypedPortValue'.
+The class 'ftp_FloatValue' is a specialization of 'TypedPortValue'.
+The class 'ftp_SignalConstant' is a specialization of 'PrimitiveComponent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ftp_FaultTree' and 'ftp_FTNode'. From 'ftp_FaultTree', the role 'ftp_FaultTree' has cardinality 0..*, and from 'ftp_FTNode', the role 'ftp_FTNode' has cardinality 0..*.
+An association connects 'ftp_FaultTree' and 'ftp_FTNode'. From 'ftp_FaultTree', the role 'ftp_FaultTree2' has cardinality 0..*, and from 'ftp_FTNode', the role 'ftp_FTNode3' has cardinality 0..*.
+An association connects 'ftp_OrGate' and 'ftp_FTNode'. From 'ftp_OrGate', the role 'ftp_OrGate' has cardinality 0..*, and from 'ftp_FTNode', the role 'ftp_FTNode5' has cardinality 0..*.
+An association connects 'ftp_FTNode' and 'ftp_AndGate'. From 'ftp_FTNode', the role 'ftp_FTNode7' has cardinality 0..*, and from 'ftp_AndGate', the role 'ftp_AndGate' has cardinality 0..*.
+An association connects 'ftp_Observation' and 'ftp_Component'. From 'ftp_Observation', the role 'ftp_Observation' has cardinality 0..*, and from 'ftp_Component', the role 'ftp_Component' has cardinality 0..*.
+An association connects 'ftp_PortValue' and 'ftp_Observation'. From 'ftp_PortValue', the role 'ftp_PortValue' has cardinality 0..*, and from 'ftp_Observation', the role 'ftp_Observation10' has cardinality 0..*.
+An association connects 'ftp_FaultTree' and 'ftp_Observation'. From 'ftp_FaultTree', the role 'ftp_FaultTree13' has cardinality 0..*, and from 'ftp_Observation', the role 'ftp_Observation12' has cardinality 0..*.
+An association connects 'ftp_Port' and 'ftp_Connection'. From 'ftp_Port', the role 'ftp_Port' has cardinality 0..*, and from 'ftp_Connection', the role 'ftp_Connection' has cardinality 0..*.
+An association connects 'ftp_Connection' and 'ftp_Port'. From 'ftp_Connection', the role 'ftp_Connection16' has cardinality 0..*, and from 'ftp_Port', the role 'ftp_Port17' has cardinality 0..*.
+An association connects 'ftp_ComposedComponent' and 'ftp_CompositionElement'. From 'ftp_ComposedComponent', the role 'ftp_ComposedComponent' has cardinality 0..*, and from 'ftp_CompositionElement', the role 'ftp_CompositionElement' has cardinality 0..*.
+An association connects 'ftp_Port' and 'ftp_ComposedComponent'. From 'ftp_Port', the role 'ftp_Port21' has cardinality 0..*, and from 'ftp_ComposedComponent', the role 'ftp_ComposedComponent20' has cardinality 0..*.
+An association connects 'ftp_PortValue' and 'ftp_Port'. From 'ftp_PortValue', the role 'ftp_PortValue23' has cardinality 0..*, and from 'ftp_Port', the role 'ftp_Port24' has cardinality 0..*.
+An association connects 'ftp_TypedPortValue' and 'ftp_PortValue'. From 'ftp_TypedPortValue', the role 'ftp_TypedPortValue' has cardinality 0..*, and from 'ftp_PortValue', the role 'ftp_PortValue26' has cardinality 0..*.
+An association connects 'ftp_ElectricalPort' and 'ftp_Resistor'. From 'ftp_ElectricalPort', the role 'ftp_ElectricalPort' has cardinality 0..*, and from 'ftp_Resistor', the role 'ftp_Resistor' has cardinality 0..*.
+An association connects 'ftp_Resistor' and 'ftp_ElectricalPort'. From 'ftp_Resistor', the role 'ftp_Resistor29' has cardinality 0..*, and from 'ftp_ElectricalPort', the role 'ftp_ElectricalPort30' has cardinality 0..*.
+An association connects 'ftp_AnalogBattery' and 'ftp_ElectricalPort'. From 'ftp_AnalogBattery', the role 'ftp_AnalogBattery' has cardinality 0..*, and from 'ftp_ElectricalPort', the role 'ftp_ElectricalPort32' has cardinality 0..*.
+An association connects 'ftp_AnalogBattery' and 'ftp_ElectricalPort'. From 'ftp_AnalogBattery', the role 'ftp_AnalogBattery34' has cardinality 0..*, and from 'ftp_ElectricalPort', the role 'ftp_ElectricalPort35' has cardinality 0..*.
+An association connects 'ftp_AnalogSwitch' and 'ftp_ElectricalPort'. From 'ftp_AnalogSwitch', the role 'ftp_AnalogSwitch' has cardinality 0..*, and from 'ftp_ElectricalPort', the role 'ftp_ElectricalPort37' has cardinality 0..*.
+An association connects 'ftp_SignalPort' and 'ftp_AnalogSwitch'. From 'ftp_SignalPort', the role 'ftp_SignalPort' has cardinality 0..*, and from 'ftp_AnalogSwitch', the role 'ftp_AnalogSwitch39' has cardinality 0..*.
+An association connects 'ftp_ElectricalPort' and 'ftp_AnalogSwitch'. From 'ftp_ElectricalPort', the role 'ftp_ElectricalPort42' has cardinality 0..*, and from 'ftp_AnalogSwitch', the role 'ftp_AnalogSwitch41' has cardinality 0..*.
+An association connects 'ftp_ElectricalPort' and 'ftp_AnalogLamp'. From 'ftp_ElectricalPort', the role 'ftp_ElectricalPort44' has cardinality 0..*, and from 'ftp_AnalogLamp', the role 'ftp_AnalogLamp' has cardinality 0..*.
+An association connects 'ftp_ElectricalPort' and 'ftp_AnalogLamp'. From 'ftp_ElectricalPort', the role 'ftp_ElectricalPort47' has cardinality 0..*, and from 'ftp_AnalogLamp', the role 'ftp_AnalogLamp46' has cardinality 0..*.
+An association connects 'ftp_AnalogLamp' and 'ftp_VisualPort'. From 'ftp_AnalogLamp', the role 'ftp_AnalogLamp49' has cardinality 0..*, and from 'ftp_VisualPort', the role 'ftp_VisualPort' has cardinality 0..*.
+An association connects 'ftp_SignalPort' and 'ftp_DigitalBattery'. From 'ftp_SignalPort', the role 'ftp_SignalPort51' has cardinality 0..*, and from 'ftp_DigitalBattery', the role 'ftp_DigitalBattery' has cardinality 0..*.
+An association connects 'ftp_DigitalBattery' and 'ftp_SignalPort'. From 'ftp_DigitalBattery', the role 'ftp_DigitalBattery53' has cardinality 0..*, and from 'ftp_SignalPort', the role 'ftp_SignalPort54' has cardinality 0..*.
+An association connects 'ftp_SignalPort' and 'ftp_DigitalSwitch'. From 'ftp_SignalPort', the role 'ftp_SignalPort56' has cardinality 0..*, and from 'ftp_DigitalSwitch', the role 'ftp_DigitalSwitch' has cardinality 0..*.
+An association connects 'ftp_DigitalSwitch' and 'ftp_SignalPort'. From 'ftp_DigitalSwitch', the role 'ftp_DigitalSwitch58' has cardinality 0..*, and from 'ftp_SignalPort', the role 'ftp_SignalPort59' has cardinality 0..*.
+An association connects 'ftp_DigitalSwitch' and 'ftp_SignalPort'. From 'ftp_DigitalSwitch', the role 'ftp_DigitalSwitch61' has cardinality 0..*, and from 'ftp_SignalPort', the role 'ftp_SignalPort62' has cardinality 0..*.
+An association connects 'ftp_SignalPort' and 'ftp_DigitalLamp'. From 'ftp_SignalPort', the role 'ftp_SignalPort64' has cardinality 0..*, and from 'ftp_DigitalLamp', the role 'ftp_DigitalLamp' has cardinality 0..*.
+An association connects 'ftp_DigitalLamp' and 'ftp_SignalPort'. From 'ftp_DigitalLamp', the role 'ftp_DigitalLamp66' has cardinality 0..*, and from 'ftp_SignalPort', the role 'ftp_SignalPort67' has cardinality 0..*.
+An association connects 'ftp_VisualPort' and 'ftp_DigitalLamp'. From 'ftp_VisualPort', the role 'ftp_VisualPort70' has cardinality 0..*, and from 'ftp_DigitalLamp', the role 'ftp_DigitalLamp69' has cardinality 0..*.
+An association connects 'ftp_SignalPort' and 'ftp_NTransistor'. From 'ftp_SignalPort', the role 'ftp_SignalPort72' has cardinality 0..*, and from 'ftp_NTransistor', the role 'ftp_NTransistor' has cardinality 0..*.
+An association connects 'ftp_NTransistor' and 'ftp_SignalPort'. From 'ftp_NTransistor', the role 'ftp_NTransistor74' has cardinality 0..*, and from 'ftp_SignalPort', the role 'ftp_SignalPort75' has cardinality 0..*.
+An association connects 'ftp_SignalPort' and 'ftp_NTransistor'. From 'ftp_SignalPort', the role 'ftp_SignalPort78' has cardinality 0..*, and from 'ftp_NTransistor', the role 'ftp_NTransistor77' has cardinality 0..*.
+An association connects 'ftp_PTransistor' and 'ftp_SignalPort'. From 'ftp_PTransistor', the role 'ftp_PTransistor' has cardinality 0..*, and from 'ftp_SignalPort', the role 'ftp_SignalPort80' has cardinality 0..*.
+An association connects 'ftp_SignalPort' and 'ftp_PTransistor'. From 'ftp_SignalPort', the role 'ftp_SignalPort83' has cardinality 0..*, and from 'ftp_PTransistor', the role 'ftp_PTransistor82' has cardinality 0..*.
+An association connects 'ftp_PTransistor' and 'ftp_SignalPort'. From 'ftp_PTransistor', the role 'ftp_PTransistor85' has cardinality 0..*, and from 'ftp_SignalPort', the role 'ftp_SignalPort86' has cardinality 0..*.
+An association connects 'ftp_DFlipFlop' and 'ftp_SignalPort'. From 'ftp_DFlipFlop', the role 'ftp_DFlipFlop' has cardinality 0..*, and from 'ftp_SignalPort', the role 'ftp_SignalPort88' has cardinality 0..*.
+An association connects 'ftp_DFlipFlop' and 'ftp_SignalPort'. From 'ftp_DFlipFlop', the role 'ftp_DFlipFlop90' has cardinality 0..*, and from 'ftp_SignalPort', the role 'ftp_SignalPort91' has cardinality 0..*.
+An association connects 'ftp_SignalPort' and 'ftp_DFlipFlop'. From 'ftp_SignalPort', the role 'ftp_SignalPort94' has cardinality 0..*, and from 'ftp_DFlipFlop', the role 'ftp_DFlipFlop93' has cardinality 0..*.
+An association connects 'ftp_SignalPort' and 'ftp_DFlipFlop'. From 'ftp_SignalPort', the role 'ftp_SignalPort97' has cardinality 0..*, and from 'ftp_DFlipFlop', the role 'ftp_DFlipFlop96' has cardinality 0..*.
+An association connects 'ftp_FaultTreeContext' and 'ftp_ComposedComponent'. From 'ftp_FaultTreeContext', the role 'ftp_FaultTreeContext' has cardinality 0..*, and from 'ftp_ComposedComponent', the role 'ftp_ComposedComponent99' has cardinality 0..*.
+An association connects 'ftp_Observation' and 'ftp_FaultTreeContext'. From 'ftp_Observation', the role 'ftp_Observation102' has cardinality 0..*, and from 'ftp_FaultTreeContext', the role 'ftp_FaultTreeContext101' has cardinality 0..*.
+An association connects 'ftp_FTNode' and 'ftp_RootEvent'. From 'ftp_FTNode', the role 'ftp_FTNode104' has cardinality 0..*, and from 'ftp_RootEvent', the role 'ftp_RootEvent' has cardinality 0..*.
+An association connects 'ftp_SignalConstant' and 'ftp_SignalPort'. From 'ftp_SignalConstant', the role 'ftp_SignalConstant' has cardinality 0..*, and from 'ftp_SignalPort', the role 'ftp_SignalPort106' has cardinality 0..*.

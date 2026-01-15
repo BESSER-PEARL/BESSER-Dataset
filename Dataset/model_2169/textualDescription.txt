@@ -1,0 +1,68 @@
+The domain model 'dgf' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'DContainedVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'dgf_DNode' represents an important domain concept.
+It has one attribute: 'pointOfView', which is of type str.
+
+'dgf_DGraphElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dgf_DVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'DGraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dgf_DLink' represents an important domain concept.
+It does not declare any attributes.
+
+'dgf_DTypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DTypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dgf_DReference' represents an important domain concept.
+It has one attribute: 'property', which is of type bool.
+
+'dgf_DContainment' represents an important domain concept.
+It has one attribute: 'compartment', which is of type str.
+
+'dgf_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'dgf_DContainedVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'DVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'dgf_DContainedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DContainedElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'dgf_DVertex' is a specialization of 'DGraphElement'.
+The class 'dgf_DNode' is a specialization of 'DGraphElement'.
+The class 'dgf_DNode' is a specialization of 'DTypedElement'.
+The class 'dgf_DNode' is a specialization of 'DContainedElement'.
+The class 'dgf_DLink' is a specialization of 'DContainedVertex'.
+The class 'dgf_DLink' is a specialization of 'DTypedElement'.
+The class 'dgf_DReference' is a specialization of 'DVertex'.
+The class 'dgf_DContainment' is a specialization of 'DContainedVertex'.
+The class 'dgf_DContainedElement' is a specialization of 'DGraphElement'.
+The class 'dgf_DContainedVertex' is a specialization of 'DContainedElement'.
+The class 'dgf_DContainedVertex' is a specialization of 'DVertex'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dgf_DNode' and 'dgf_DVertex'. From 'dgf_DNode', the role 'dgf_DNode' has cardinality 0..*, and from 'dgf_DVertex', the role 'dgf_DVertex' has cardinality 0..*.
+An association connects 'dgf_DNode' and 'dgf_DVertex'. From 'dgf_DNode', the role 'dgf_DNode3' has cardinality 0..*, and from 'dgf_DVertex', the role 'dgf_DVertex2' has cardinality 0..*.
+An association connects 'dgf_DNode' and 'dgf_DVertex'. From 'dgf_DNode', the role 'dgf_DNode5' has cardinality 0..*, and from 'dgf_DVertex', the role 'dgf_DVertex6' has cardinality 0..*.
+An association connects 'dgf_DGraphElement' and 'dgf_Graph'. From 'dgf_DGraphElement', the role 'dgf_DGraphElement' has cardinality 0..*, and from 'dgf_Graph', the role 'dgf_Graph' has cardinality 0..*.
+An association connects 'dgf_DContainedElement' and 'dgf_DNode'. From 'dgf_DContainedElement', the role 'dgf_DContainedElement' has cardinality 0..*, and from 'dgf_DNode', the role 'dgf_DNode9' has cardinality 0..*.

@@ -1,0 +1,26 @@
+The domain model 'FaultTree' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'FaultTree_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'FaultTree_FaultTree' represents an important domain concept.
+It has the following attributes: 'message', which is of type str; 'name', which is of type str; 'faultTreeType', which is of type str.
+
+'FaultTree_Event' represents an important domain concept.
+It has the following attributes: 'subEventLogic', which is of type str; 'referenceCount', which is of type int; 'sharedEvent', which is of type bool; 'k', which is of type int; 'name', which is of type str; 'computedProbability', which is of type float; 'assignedProbability', which is of type float; 'message', which is of type str; 'type', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FaultTreeType' defines the following possible values: 'FaultTrace', 'FaultTree', 'CompositeParts', 'MinimalCutSet'.
+The enumeration 'EventType' defines the following possible values: 'Basic', 'Intermediate', 'Undeveloped', 'External'.
+The enumeration 'LogicOperation' defines the following possible values: 'kOrless', 'PriorityAnd', 'Xor', 'And', 'kOrmore', 'Or', 'kOf'.
+
+Relationships between classes are modeled using associations.
+An association connects 'FaultTree_Event' and 'FaultTree_FaultTree'. From 'FaultTree_Event', the role 'FaultTree_Event' has cardinality 0..*, and from 'FaultTree_FaultTree', the role 'FaultTree_FaultTree' has cardinality 0..*.
+An association connects 'FaultTree_FaultTree' and 'FaultTree_EObject'. From 'FaultTree_FaultTree', the role 'FaultTree_FaultTree2' has cardinality 0..*, and from 'FaultTree_EObject', the role 'FaultTree_EObject' has cardinality 0..*.
+An association connects 'FaultTree_Event' and 'FaultTree_FaultTree'. From 'FaultTree_Event', the role 'FaultTree_Event5' has cardinality 0..*, and from 'FaultTree_FaultTree', the role 'FaultTree_FaultTree4' has cardinality 0..*.
+An association connects 'FaultTree_Event' and 'FaultTree_Event'. From 'FaultTree_Event', the role 'FaultTree_Event6' has cardinality 0..*, and from 'FaultTree_Event', the role 'FaultTree_Event8' has cardinality 0..*.
+An association connects 'FaultTree_Event' and 'FaultTree_EObject'. From 'FaultTree_Event', the role 'FaultTree_Event10' has cardinality 0..*, and from 'FaultTree_EObject', the role 'FaultTree_EObject11' has cardinality 0..*.
+An association connects 'FaultTree_Event' and 'FaultTree_EObject'. From 'FaultTree_Event', the role 'FaultTree_Event13' has cardinality 0..*, and from 'FaultTree_EObject', the role 'FaultTree_EObject14' has cardinality 0..*.
+An association connects 'FaultTree_Event' and 'FaultTree_EObject'. From 'FaultTree_Event', the role 'FaultTree_Event16' has cardinality 0..*, and from 'FaultTree_EObject', the role 'FaultTree_EObject17' has cardinality 0..*.

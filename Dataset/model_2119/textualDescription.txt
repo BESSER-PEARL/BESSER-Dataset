@@ -1,0 +1,12 @@
+The domain model 'ValidationModel' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'ValidationModel_UnitTest' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str; 'isTested', which is of type bool.
+
+'ValidationModel_TestContainer' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'ValidationModel_TestContainer' and 'ValidationModel_UnitTest'. From 'ValidationModel_TestContainer', the role 'ValidationModel_TestContainer' has cardinality 0..*, and from 'ValidationModel_UnitTest', the role 'ValidationModel_UnitTest' has cardinality 0..*.

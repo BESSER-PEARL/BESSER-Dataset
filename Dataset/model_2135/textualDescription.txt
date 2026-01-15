@@ -1,0 +1,250 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 63 main class(es).
+
+'ParameterAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'model_batch_Operation' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'model_export_Export' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'content', which is of type str.
+
+'HistoryEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'model_processes_ProcessStart' represents an important domain concept.
+It does not declare any attributes.
+
+'model_processes_ProcessNode' represents an important domain concept.
+It does not declare any attributes.
+
+'model_testspecification_TestCase' represents an important domain concept.
+It has one attribute: 'consistent', which is of type bool.
+
+'TestParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'model_history_History' represents an important domain concept.
+It does not declare any attributes.
+
+'base_ISpecmateModelObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model_base_IContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'model_processes_ProcessEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'model_history_Change' represents an important domain concept.
+It has the following attributes: 'newValue', which is of type str; 'feature', which is of type str; 'oldValue', which is of type str; 'objectName', which is of type str; 'isCreate', which is of type bool; 'objectType', which is of type str; 'isDelete', which is of type bool.
+
+'base_IContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'model_testspecification_TestParameter' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'model_testspecification_ParameterAssignment' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'condition', which is of type str.
+
+'model_base_INamed' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_testspecification_TestProcedure' represents an important domain concept.
+It has one attribute: 'isRegressionTest', which is of type bool.
+
+'model_base_IExternal' represents an important domain concept.
+It has the following attributes: 'source', which is of type str; 'live', which is of type bool; 'extId', which is of type str; 'extId2', which is of type str.
+
+'IContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'model_base_IDescribed' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'base_INamed' represents an important domain concept.
+It does not declare any attributes.
+
+'model_testspecification_TestStep' represents an important domain concept.
+It has one attribute: 'expectedOutcome', which is of type str.
+
+'model_history_HistoryEntry' represents an important domain concept.
+It has the following attributes: 'user', which is of type str; 'timestamp', which is of type str; 'deletedObjects', which is of type str; 'comment', which is of type str.
+
+'model_administration_Status' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'model_base_ISpecmatePositionableModelObject' represents an important domain concept.
+It has the following attributes: 'height', which is of type float; 'y', which is of type float; 'x', which is of type float; 'width', which is of type float.
+
+'model_base_ISpecmateModelObject' represents an important domain concept.
+It does not declare any attributes.
+
+'base_ITracingElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_processes_ProcessStep' represents an important domain concept.
+It has one attribute: 'expectedOutcome', which is of type str.
+
+'model_administration_ProblemDetail' represents an important domain concept.
+It has the following attributes: 'ecode', which is of type str; 'instance', which is of type str; 'status', which is of type int; 'detail', which is of type str.
+
+'Change' represents an important domain concept.
+It does not declare any attributes.
+
+'base_IPositionable' represents an important domain concept.
+It does not declare any attributes.
+
+'model_base_IContentElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_base_ITracingElement' represents an important domain concept.
+It does not declare any attributes.
+
+'base_IRecycled' represents an important domain concept.
+It does not declare any attributes.
+
+'ISpecmatePositionableModelObject' represents an important domain concept.
+It does not declare any attributes.
+
+'base_IDescribed' represents an important domain concept.
+It does not declare any attributes.
+
+'model_base_IPositionable' represents an important domain concept.
+It has one attribute: 'position', which is of type int.
+
+'base_IContentElement' represents an important domain concept.
+It does not declare any attributes.
+
+'base_IID' represents an important domain concept.
+It does not declare any attributes.
+
+'IModelConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'ITracingElement' represents an important domain concept.
+It does not declare any attributes.
+
+'IModelNode' represents an important domain concept.
+It does not declare any attributes.
+
+'model_base_IModelConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'model_requirements_CEGModel' represents an important domain concept.
+It has one attribute: 'modelRequirements', which is of type str.
+
+'ISpecmateModelObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model_requirements_CEGConnection' represents an important domain concept.
+It has one attribute: 'negate', which is of type bool.
+
+'model_base_IModelNode' represents an important domain concept.
+It does not declare any attributes.
+
+'model_base_Folder' represents an important domain concept.
+It has one attribute: 'library', which is of type bool.
+
+'model_batch_BatchOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_processes_ProcessConnection' represents an important domain concept.
+It has the following attributes: 'labelX', which is of type float; 'condition', which is of type str; 'labelY', which is of type float.
+
+'IContentElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessNode' represents an important domain concept.
+It does not declare any attributes.
+
+'model_requirements_Requirement' represents an important domain concept.
+It has the following attributes: 'implementingBOTeam', which is of type str; 'status', which is of type str; 'implementingITTeam', which is of type str; 'plannedRelease', which is of type str; 'implementingUnit', which is of type str; 'platform', which is of type str; 'numberOfTests', which is of type int; 'isRegressionRequirement', which is of type bool; 'tac', which is of type str.
+
+'model_requirements_CEGNode' represents an important domain concept.
+It has the following attributes: 'condition', which is of type str; 'type', which is of type str; 'variable', which is of type str.
+
+'model_testspecification_TestSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'INamed' represents an important domain concept.
+It does not declare any attributes.
+
+'base_IExternal' represents an important domain concept.
+It does not declare any attributes.
+
+'model_base_IRecycled' represents an important domain concept.
+It has the following attributes: 'hasRecycledChildren', which is of type bool; 'recycled', which is of type bool.
+
+'model_processes_ProcessDecision' represents an important domain concept.
+It does not declare any attributes.
+
+'model_base_IID' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'model_processes_Process' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ParameterType' defines the following possible values: 'INPUT', 'OUTPUT'.
+The enumeration 'OperationType' defines the following possible values: 'CREATE', 'DELETE', 'UPDATE'.
+The enumeration 'ErrorCode' defines the following possible values: 'hpProxy', 'methodNotAllowed', 'internalProblem', 'validator', 'seralization', 'metrics', 'nlp', 'inMaintenanceMode', 'userSession', 'trello', 'scheduler', 'migration', 'invalidData', 'noAuthorization', 'persistency', 'testgeneration', 'configuration', 'restService', 'jira', 'search', 'noSuchService'.
+The enumeration 'NodeType' defines the following possible values: 'AND', 'OR'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_base_IContentElement' is a specialization of 'base_IID'.
+The class 'model_base_IContentElement' is a specialization of 'base_INamed'.
+The class 'model_base_IContentElement' is a specialization of 'base_IDescribed'.
+The class 'model_base_IContentElement' is a specialization of 'base_IRecycled'.
+The class 'model_base_IContainer' is a specialization of 'IContentElement'.
+The class 'model_base_ISpecmateModelObject' is a specialization of 'base_IContainer'.
+The class 'model_base_ISpecmateModelObject' is a specialization of 'base_ITracingElement'.
+The class 'model_base_Folder' is a specialization of 'ISpecmateModelObject'.
+The class 'model_base_ISpecmatePositionableModelObject' is a specialization of 'ISpecmateModelObject'.
+The class 'model_base_IModelConnection' is a specialization of 'ISpecmateModelObject'.
+The class 'model_base_IModelNode' is a specialization of 'ISpecmatePositionableModelObject'.
+The class 'model_requirements_Requirement' is a specialization of 'base_ISpecmateModelObject'.
+The class 'model_requirements_Requirement' is a specialization of 'base_IExternal'.
+The class 'model_requirements_CEGModel' is a specialization of 'ISpecmateModelObject'.
+The class 'model_requirements_CEGNode' is a specialization of 'IModelNode'.
+The class 'model_requirements_CEGConnection' is a specialization of 'IModelConnection'.
+The class 'model_testspecification_TestSpecification' is a specialization of 'IContainer'.
+The class 'model_testspecification_TestParameter' is a specialization of 'IContentElement'.
+The class 'model_testspecification_TestCase' is a specialization of 'base_IContainer'.
+The class 'model_testspecification_TestCase' is a specialization of 'base_IPositionable'.
+The class 'model_testspecification_ParameterAssignment' is a specialization of 'IContentElement'.
+The class 'model_testspecification_TestProcedure' is a specialization of 'base_IContainer'.
+The class 'model_testspecification_TestProcedure' is a specialization of 'base_IExternal'.
+The class 'model_testspecification_TestStep' is a specialization of 'base_IContentElement'.
+The class 'model_testspecification_TestStep' is a specialization of 'base_IPositionable'.
+The class 'model_processes_Process' is a specialization of 'IContainer'.
+The class 'model_processes_ProcessNode' is a specialization of 'IModelNode'.
+The class 'model_processes_ProcessStep' is a specialization of 'ProcessNode'.
+The class 'model_processes_ProcessDecision' is a specialization of 'ProcessNode'.
+The class 'model_processes_ProcessConnection' is a specialization of 'IModelConnection'.
+The class 'model_processes_ProcessStart' is a specialization of 'ProcessNode'.
+The class 'model_processes_ProcessEnd' is a specialization of 'ProcessNode'.
+The class 'model_export_Export' is a specialization of 'INamed'.
+
+Relationships between classes are modeled using associations.
+An association connects 'IContentElement' and 'model_base_IContainer'. From 'IContentElement', the role 'IContentElement' has cardinality 0..*, and from 'model_base_IContainer', the role 'model_base_IContainer' has cardinality 0..*.
+An association connects 'model_base_IModelConnection' and 'IModelNode'. From 'model_base_IModelConnection', the role 'IModelNode' has cardinality 0..*, and from 'IModelNode', the role 'base' has cardinality 0..*.
+An association connects 'model_base_IModelConnection' and 'IModelNode'. From 'model_base_IModelConnection', the role 'IModelNode3' has cardinality 0..*, and from 'IModelNode', the role 'base4' has cardinality 0..*.
+An association connects 'IModelConnection' and 'model_base_IModelNode'. From 'IModelConnection', the role 'base6' has cardinality 0..*, and from 'model_base_IModelNode', the role 'IModelConnection' has cardinality 0..*.
+An association connects 'model_base_IModelNode' and 'IModelConnection'. From 'model_base_IModelNode', the role 'IModelConnection8' has cardinality 0..*, and from 'IModelConnection', the role 'base9' has cardinality 0..*.
+An association connects 'model_base_ITracingElement' and 'ITracingElement'. From 'model_base_ITracingElement', the role 'ITracingElement' has cardinality 0..*, and from 'ITracingElement', the role 'base11' has cardinality 0..*.
+An association connects 'ITracingElement' and 'model_base_ITracingElement'. From 'ITracingElement', the role 'base14' has cardinality 0..*, and from 'model_base_ITracingElement', the role 'ITracingElement13' has cardinality 0..*.
+An association connects 'model_testspecification_TestParameter' and 'ParameterAssignment'. From 'model_testspecification_TestParameter', the role 'ParameterAssignment' has cardinality 0..*, and from 'ParameterAssignment', the role 'testspecification' has cardinality 0..*.
+An association connects 'TestParameter' and 'model_testspecification_ParameterAssignment'. From 'TestParameter', the role 'testspecification17' has cardinality 0..*, and from 'model_testspecification_ParameterAssignment', the role 'TestParameter' has cardinality 0..*.
+An association connects 'model_testspecification_TestStep' and 'TestParameter'. From 'model_testspecification_TestStep', the role 'model_testspecification_TestStep' has cardinality 0..*, and from 'TestParameter', the role 'TestParameter19' has cardinality 0..*.
+An association connects 'model_history_History' and 'HistoryEntry'. From 'model_history_History', the role 'model_history_History' has cardinality 0..*, and from 'HistoryEntry', the role 'HistoryEntry' has cardinality 0..*.
+An association connects 'model_history_HistoryEntry' and 'Change'. From 'model_history_HistoryEntry', the role 'model_history_HistoryEntry' has cardinality 0..*, and from 'Change', the role 'Change' has cardinality 0..*.
+An association connects 'Operation' and 'model_batch_BatchOperation'. From 'Operation', the role 'Operation' has cardinality 0..*, and from 'model_batch_BatchOperation', the role 'model_batch_BatchOperation' has cardinality 0..*.
+An association connects 'model_batch_Operation' and 'IContentElement'. From 'model_batch_Operation', the role 'model_batch_Operation' has cardinality 0..*, and from 'IContentElement', the role 'IContentElement24' has cardinality 0..*.
+An association connects 'IContentElement' and 'model_batch_Operation'. From 'IContentElement', the role 'IContentElement27' has cardinality 0..*, and from 'model_batch_Operation', the role 'model_batch_Operation26' has cardinality 0..*.

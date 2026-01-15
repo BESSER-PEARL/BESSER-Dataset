@@ -1,0 +1,58 @@
+The domain model 'studyProgramStructure' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'studyProgramStructure_University' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'studyProgramStructure_CourseAllocation' represents an important domain concept.
+It has one attribute: 'grade', which is of type str.
+
+'studyProgramStructure_Semester' represents an important domain concept.
+It has the following attributes: 'season', which is of type str; 'year', which is of type int.
+
+'studyProgramStructure_Student' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'studyProgramStructure_CourseGroup' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'name', which is of type str.
+
+'studyProgramStructure_Specialization' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'numOfSemesters', which is of type int.
+
+'studyProgramStructure_Program' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'numOfSemestersForBaseSpecialization', which is of type int; 'numOfYears', which is of type int; 'name', which is of type str.
+
+'studyProgramStructure_StudyPlan' represents an important domain concept.
+It does not declare any attributes.
+
+'studyProgramStructure_Course' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'credits', which is of type float; 'name', which is of type str; 'level', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Grade' defines the following possible values: 'D', 'C', 'A', 'F', 'E', 'B'.
+The enumeration 'Season' defines the following possible values: 'spring', 'fall'.
+The enumeration 'CourseStatus' defines the following possible values: 'mandatory', 'elective'.
+
+Relationships between classes are modeled using associations.
+An association connects 'studyProgramStructure_Specialization' and 'studyProgramStructure_Program'. From 'studyProgramStructure_Specialization', the role 'Specialization' has cardinality 0..*, and from 'studyProgramStructure_Program', the role 'program' has cardinality 0..*.
+An association connects 'studyProgramStructure_Semester' and 'studyProgramStructure_Program'. From 'studyProgramStructure_Semester', the role 'Semester' has cardinality 0..*, and from 'studyProgramStructure_Program', the role 'program2' has cardinality 0..*.
+An association connects 'studyProgramStructure_Specialization' and 'studyProgramStructure_Specialization'. From 'studyProgramStructure_Specialization', the role 'baseSpecialization' has cardinality 0..*, and from 'studyProgramStructure_Specialization', the role 'Specialization5' has cardinality 0..*.
+An association connects 'studyProgramStructure_Specialization' and 'studyProgramStructure_Specialization'. From 'studyProgramStructure_Specialization', the role 'Specialization8' has cardinality 0..*, and from 'studyProgramStructure_Specialization', the role 'furtherSpecializations' has cardinality 0..*.
+An association connects 'studyProgramStructure_Semester' and 'studyProgramStructure_Specialization'. From 'studyProgramStructure_Semester', the role 'Semester10' has cardinality 0..*, and from 'studyProgramStructure_Specialization', the role 'specialization' has cardinality 0..*.
+An association connects 'studyProgramStructure_Specialization' and 'studyProgramStructure_Program'. From 'studyProgramStructure_Specialization', the role 'specializations' has cardinality 0..*, and from 'studyProgramStructure_Program', the role 'Program' has cardinality 0..*.
+An association connects 'studyProgramStructure_CourseGroup' and 'studyProgramStructure_Semester'. From 'studyProgramStructure_CourseGroup', the role 'CourseGroup' has cardinality 0..*, and from 'studyProgramStructure_Semester', the role 'semester' has cardinality 0..*.
+An association connects 'studyProgramStructure_Semester' and 'studyProgramStructure_Program'. From 'studyProgramStructure_Semester', the role 'semesters' has cardinality 0..*, and from 'studyProgramStructure_Program', the role 'Program14' has cardinality 0..*.
+An association connects 'studyProgramStructure_Semester' and 'studyProgramStructure_Specialization'. From 'studyProgramStructure_Semester', the role 'semesters16' has cardinality 0..*, and from 'studyProgramStructure_Specialization', the role 'Specialization17' has cardinality 0..*.
+An association connects 'studyProgramStructure_CourseGroup' and 'studyProgramStructure_Semester'. From 'studyProgramStructure_CourseGroup', the role 'courseGroups' has cardinality 0..*, and from 'studyProgramStructure_Semester', the role 'Semester19' has cardinality 0..*.
+An association connects 'studyProgramStructure_CourseGroup' and 'studyProgramStructure_Course'. From 'studyProgramStructure_CourseGroup', the role 'studyProgramStructure_CourseGroup' has cardinality 0..*, and from 'studyProgramStructure_Course', the role 'studyProgramStructure_Course' has cardinality 0..*.
+An association connects 'studyProgramStructure_University' and 'studyProgramStructure_Program'. From 'studyProgramStructure_University', the role 'studyProgramStructure_University' has cardinality 0..*, and from 'studyProgramStructure_Program', the role 'studyProgramStructure_Program' has cardinality 0..*.
+An association connects 'studyProgramStructure_Course' and 'studyProgramStructure_University'. From 'studyProgramStructure_Course', the role 'studyProgramStructure_Course24' has cardinality 0..*, and from 'studyProgramStructure_University', the role 'studyProgramStructure_University23' has cardinality 0..*.
+An association connects 'studyProgramStructure_Student' and 'studyProgramStructure_University'. From 'studyProgramStructure_Student', the role 'studyProgramStructure_Student' has cardinality 0..*, and from 'studyProgramStructure_University', the role 'studyProgramStructure_University26' has cardinality 0..*.
+An association connects 'studyProgramStructure_StudyPlan' and 'studyProgramStructure_Student'. From 'studyProgramStructure_StudyPlan', the role 'StudyPlan' has cardinality 0..*, and from 'studyProgramStructure_Student', the role 'student' has cardinality 0..*.
+An association connects 'studyProgramStructure_Program' and 'studyProgramStructure_Student'. From 'studyProgramStructure_Program', the role 'studyProgramStructure_Program30' has cardinality 0..*, and from 'studyProgramStructure_Student', the role 'studyProgramStructure_Student29' has cardinality 0..*.
+An association connects 'studyProgramStructure_Student' and 'studyProgramStructure_Specialization'. From 'studyProgramStructure_Student', the role 'studyProgramStructure_Student32' has cardinality 0..*, and from 'studyProgramStructure_Specialization', the role 'studyProgramStructure_Specialization' has cardinality 0..*.
+An association connects 'studyProgramStructure_Semester' and 'studyProgramStructure_StudyPlan'. From 'studyProgramStructure_Semester', the role 'studyProgramStructure_Semester' has cardinality 0..*, and from 'studyProgramStructure_StudyPlan', the role 'studyProgramStructure_StudyPlan' has cardinality 0..*.
+An association connects 'studyProgramStructure_CourseAllocation' and 'studyProgramStructure_StudyPlan'. From 'studyProgramStructure_CourseAllocation', the role 'studyProgramStructure_CourseAllocation' has cardinality 0..*, and from 'studyProgramStructure_StudyPlan', the role 'studyProgramStructure_StudyPlan35' has cardinality 0..*.
+An association connects 'studyProgramStructure_Student' and 'studyProgramStructure_StudyPlan'. From 'studyProgramStructure_Student', the role 'Student' has cardinality 0..*, and from 'studyProgramStructure_StudyPlan', the role 'studyPlan' has cardinality 0..*.
+An association connects 'studyProgramStructure_Course' and 'studyProgramStructure_CourseAllocation'. From 'studyProgramStructure_Course', the role 'studyProgramStructure_Course39' has cardinality 0..*, and from 'studyProgramStructure_CourseAllocation', the role 'studyProgramStructure_CourseAllocation38' has cardinality 0..*.

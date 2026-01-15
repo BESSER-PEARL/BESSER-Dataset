@@ -1,0 +1,53 @@
+The domain model 'MocaTree' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'MocaTree_Folder' represents an important domain concept.
+It does not declare any attributes.
+
+'MocaTree_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'MocaTree_TreeElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'index', which is of type int.
+
+'MocaTree_File' represents an important domain concept.
+It does not declare any attributes.
+
+'MocaTree_Text' represents an important domain concept.
+It does not declare any attributes.
+
+'MocaTree_Node' represents an important domain concept.
+It has the following attributes: 'startLineIndex', which is of type int; 'stopLineIndex', which is of type int; 'stopIndex', which is of type int; 'startIndex', which is of type int.
+
+'Text' represents an important domain concept.
+It does not declare any attributes.
+
+'MocaTree_Attribute' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'TreeElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'MocaTree_Attribute' is a specialization of 'TreeElement'.
+The class 'MocaTree_File' is a specialization of 'TreeElement'.
+The class 'MocaTree_Folder' is a specialization of 'TreeElement'.
+The class 'MocaTree_Link' is a specialization of 'TreeElement'.
+The class 'MocaTree_Node' is a specialization of 'Text'.
+The class 'MocaTree_Text' is a specialization of 'TreeElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'MocaTree_Attribute' and 'MocaTree_Node'. From 'MocaTree_Attribute', the role 'attribute' has cardinality 0..*, and from 'MocaTree_Node', the role 'Node' has cardinality 0..*.
+An association connects 'MocaTree_File' and 'MocaTree_Folder'. From 'MocaTree_File', the role 'file' has cardinality 0..*, and from 'MocaTree_Folder', the role 'Folder' has cardinality 0..*.
+An association connects 'MocaTree_Node' and 'MocaTree_File'. From 'MocaTree_Node', the role 'Node4' has cardinality 0..*, and from 'MocaTree_File', the role 'file3' has cardinality 0..*.
+An association connects 'MocaTree_Folder' and 'MocaTree_Folder'. From 'MocaTree_Folder', the role 'parentFolder' has cardinality 0..*, and from 'MocaTree_Folder', the role 'Folder7' has cardinality 0..*.
+An association connects 'MocaTree_Folder' and 'MocaTree_Folder'. From 'MocaTree_Folder', the role 'Folder10' has cardinality 0..*, and from 'MocaTree_Folder', the role 'subFolder' has cardinality 0..*.
+An association connects 'MocaTree_Folder' and 'MocaTree_File'. From 'MocaTree_Folder', the role 'folder' has cardinality 0..*, and from 'MocaTree_File', the role 'File' has cardinality 0..*.
+An association connects 'MocaTree_Link' and 'MocaTree_TreeElement'. From 'MocaTree_Link', the role 'MocaTree_Link' has cardinality 0..*, and from 'MocaTree_TreeElement', the role 'MocaTree_TreeElement' has cardinality 0..*.
+An association connects 'MocaTree_Link' and 'MocaTree_Attribute'. From 'MocaTree_Link', the role 'MocaTree_Link14' has cardinality 0..*, and from 'MocaTree_Attribute', the role 'MocaTree_Attribute' has cardinality 0..*.
+An association connects 'MocaTree_File' and 'MocaTree_Node'. From 'MocaTree_File', the role 'File16' has cardinality 0..*, and from 'MocaTree_Node', the role 'rootNode' has cardinality 0..*.
+An association connects 'MocaTree_Text' and 'MocaTree_Node'. From 'MocaTree_Text', the role 'Text' has cardinality 0..*, and from 'MocaTree_Node', the role 'parentNode' has cardinality 0..*.
+An association connects 'MocaTree_Node' and 'MocaTree_Attribute'. From 'MocaTree_Node', the role 'node' has cardinality 0..*, and from 'MocaTree_Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'MocaTree_Text' and 'MocaTree_Node'. From 'MocaTree_Text', the role 'children' has cardinality 0..*, and from 'MocaTree_Node', the role 'Node20' has cardinality 0..*.
+An association connects 'MocaTree_Link' and 'MocaTree_TreeElement'. From 'MocaTree_Link', the role 'MocaTree_Link23' has cardinality 0..*, and from 'MocaTree_TreeElement', the role 'MocaTree_TreeElement22' has cardinality 0..*.

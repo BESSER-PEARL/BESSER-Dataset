@@ -1,0 +1,13 @@
+The domain model 'TestMM2' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'TestMM2_Metadata' represents an important domain concept.
+It has the following attributes: 'taglist', which is of type str; 'webpage', which is of type str; 'date', which is of type str; 'user', which is of type str.
+
+'TestMM2_Test' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'TestMM2_Test' and 'TestMM2_Metadata'. From 'TestMM2_Test', the role 'te' has cardinality 0..*, and from 'TestMM2_Metadata', the role 'Metadata' has cardinality 0..*.
+An association connects 'TestMM2_Test' and 'TestMM2_Metadata'. From 'TestMM2_Test', the role 'Test' has cardinality 0..*, and from 'TestMM2_Metadata', the role 'md' has cardinality 0..*.

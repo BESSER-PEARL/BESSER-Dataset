@@ -1,0 +1,23 @@
+The domain model 'tree' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'TreeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_NonTerminal' represents an important domain concept.
+It does not declare any attributes.
+
+'tree_TreeNode' represents an important domain concept.
+It has one attribute: 'data', which is of type str.
+
+'tree_Leaf' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'tree_Leaf' is a specialization of 'TreeNode'.
+The class 'tree_NonTerminal' is a specialization of 'TreeNode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tree_TreeNode' and 'tree_TreeNode'. From 'tree_TreeNode', the role 'tree_TreeNode' has cardinality 0..*, and from 'tree_TreeNode', the role 'tree_TreeNode0' has cardinality 0..*.
+An association connects 'tree_NonTerminal' and 'tree_TreeNode'. From 'tree_NonTerminal', the role 'tree_NonTerminal' has cardinality 0..*, and from 'tree_TreeNode', the role 'tree_TreeNode3' has cardinality 0..*.

@@ -1,0 +1,129 @@
+The domain model 'architecture' describes the core structural elements and their relationships within the system.
+
+The model defines 31 main class(es).
+
+'architecture_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_DeclaredType' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_extension_ExtensionRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_extension_PatternRelationship' represents an important domain concept.
+It has one attribute: 'referenceName', which is of type str.
+
+'architecture_extension_Role' represents an important domain concept.
+It has one attribute: 'attachedElement', which is of type str.
+
+'architecture_ImportReferenceDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_Type' represents an important domain concept.
+It has the following attributes: 'binary', which is of type bool; 'source', which is of type bool; 'qualifiedName', which is of type str.
+
+'architecture_ParameterRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'AnalysedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_Relationship' represents an important domain concept.
+It has one attribute: 'relationShipId', which is of type int.
+
+'architecture_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_InjectionDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_Field' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_ReturnTypeRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'RuntimeDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_RuntimeDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_ArchitectureFile' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'architecture_InheritanceDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_CallRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_Project' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_extension_RelationshipConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_ReferenceDependency' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uri', which is of type str.
+
+'architecture_extension_RoleRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_AnalysedElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'idAnalyzedElement', which is of type int; 'properties', which is of type int.
+
+'ReferenceDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_extension_Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_extension_Bop' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_FieldReferenceDependency' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'architecture_Type' is a specialization of 'AnalysedElement'.
+The class 'architecture_ArchitectureFile' is a specialization of 'AnalysedElement'.
+The class 'architecture_InheritanceDependency' is a specialization of 'Dependency'.
+The class 'architecture_ReferenceDependency' is a specialization of 'Dependency'.
+The class 'architecture_Dependency' is a specialization of 'Relationship'.
+The class 'architecture_Library' is a specialization of 'AnalysedElement'.
+The class 'architecture_RuntimeDependency' is a specialization of 'Dependency'.
+The class 'architecture_InjectionDependency' is a specialization of 'RuntimeDependency'.
+The class 'architecture_FieldReferenceDependency' is a specialization of 'ReferenceDependency'.
+The class 'architecture_ImportReferenceDependency' is a specialization of 'ReferenceDependency'.
+The class 'architecture_Project' is a specialization of 'AnalysedElement'.
+The class 'architecture_Method' is a specialization of 'AnalysedElement'.
+The class 'architecture_ReturnTypeRelationship' is a specialization of 'Relationship'.
+The class 'architecture_ParameterRelationship' is a specialization of 'Relationship'.
+The class 'architecture_CallRelationship' is a specialization of 'Relationship'.
+The class 'architecture_Field' is a specialization of 'AnalysedElement'.
+The class 'architecture_DeclaredType' is a specialization of 'Relationship'.
+The class 'architecture_extension_Pattern' is a specialization of 'AnalysedElement'.
+The class 'architecture_extension_Role' is a specialization of 'AnalysedElement'.
+The class 'architecture_extension_ExtensionRelationship' is a specialization of 'Relationship'.
+The class 'architecture_extension_RoleRelationship' is a specialization of 'Relationship'.
+The class 'architecture_extension_PatternRelationship' is a specialization of 'Relationship'.
+
+Relationships between classes are modeled using associations.
+An association connects 'architecture_AnalysedElement' and 'architecture_Relationship'. From 'architecture_AnalysedElement', the role 'source' has cardinality 0..*, and from 'architecture_Relationship', the role 'Relationship' has cardinality 0..*.
+An association connects 'architecture_Relationship' and 'architecture_AnalysedElement'. From 'architecture_Relationship', the role 'Relationship2' has cardinality 0..*, and from 'architecture_AnalysedElement', the role 'target' has cardinality 0..*.
+An association connects 'architecture_AnalysedElement' and 'architecture_AnalysedElement'. From 'architecture_AnalysedElement', the role 'parent' has cardinality 0..*, and from 'architecture_AnalysedElement', the role 'AnalysedElement' has cardinality 0..*.
+An association connects 'architecture_AnalysedElement' and 'architecture_AnalysedElement'. From 'architecture_AnalysedElement', the role 'containedElements' has cardinality 0..*, and from 'architecture_AnalysedElement', the role 'AnalysedElement7' has cardinality 0..*.
+An association connects 'architecture_AnalysedElement' and 'architecture_Relationship'. From 'architecture_AnalysedElement', the role 'AnalysedElement9' has cardinality 0..*, and from 'architecture_Relationship', the role 'incomingRelationships' has cardinality 0..*.
+An association connects 'architecture_Relationship' and 'architecture_AnalysedElement'. From 'architecture_Relationship', the role 'outgoingRelationships' has cardinality 0..*, and from 'architecture_AnalysedElement', the role 'AnalysedElement11' has cardinality 0..*.
+An association connects 'architecture_InjectionDependency' and 'architecture_AnalysedElement'. From 'architecture_InjectionDependency', the role 'architecture_InjectionDependency' has cardinality 0..*, and from 'architecture_AnalysedElement', the role 'architecture_AnalysedElement' has cardinality 0..*.

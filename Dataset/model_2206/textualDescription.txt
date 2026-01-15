@@ -1,0 +1,47 @@
+The domain model 'filetree' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'filetree_H2HFile' represents an important domain concept.
+It does not declare any attributes.
+
+'filetree_FileTree' represents an important domain concept.
+It does not declare any attributes.
+
+'filetree_PathToTreeElementMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'filetree_Container' represents an important domain concept.
+It does not declare any attributes.
+
+'filetree_User' represents an important domain concept.
+It has the following attributes: 'rootDir', which is of type str; 'userId', which is of type str; 'pin', which is of type str; 'password', which is of type str.
+
+'filetree_FileTreeElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'file', which is of type str; 'path', which is of type str.
+
+'FileTreeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'filetree_AccessRight' represents an important domain concept.
+It has the following attributes: 'writePermission', which is of type bool; 'readPermission', which is of type bool; 'userId', which is of type str.
+
+'filetree_Directory' represents an important domain concept.
+It does not declare any attributes.
+
+'Container' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'filetree_FileTree' is a specialization of 'Container'.
+The class 'filetree_Directory' is a specialization of 'Container'.
+The class 'filetree_H2HFile' is a specialization of 'FileTreeElement'.
+The class 'filetree_Container' is a specialization of 'FileTreeElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'filetree_FileTree' and 'filetree_PathToTreeElementMap'. From 'filetree_FileTree', the role 'filetree_FileTree' has cardinality 0..*, and from 'filetree_PathToTreeElementMap', the role 'filetree_PathToTreeElementMap' has cardinality 0..*.
+An association connects 'filetree_Container' and 'filetree_FileTreeElement'. From 'filetree_Container', the role 'Container' has cardinality 0..*, and from 'filetree_FileTreeElement', the role 'children' has cardinality 0..*.
+An association connects 'filetree_FileTreeElement' and 'filetree_AccessRight'. From 'filetree_FileTreeElement', the role 'filetree_FileTreeElement' has cardinality 0..*, and from 'filetree_AccessRight', the role 'filetree_AccessRight' has cardinality 0..*.
+An association connects 'filetree_Container' and 'filetree_FileTreeElement'. From 'filetree_Container', the role 'parent' has cardinality 0..*, and from 'filetree_FileTreeElement', the role 'FileTreeElement' has cardinality 0..*.
+An association connects 'filetree_FileTree' and 'filetree_User'. From 'filetree_FileTree', the role 'filetree_FileTree5' has cardinality 0..*, and from 'filetree_User', the role 'filetree_User' has cardinality 0..*.
+An association connects 'filetree_PathToTreeElementMap' and 'filetree_FileTreeElement'. From 'filetree_PathToTreeElementMap', the role 'filetree_PathToTreeElementMap7' has cardinality 0..*, and from 'filetree_FileTreeElement', the role 'filetree_FileTreeElement8' has cardinality 0..*.

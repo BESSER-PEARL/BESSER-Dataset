@@ -1,0 +1,39 @@
+The domain model 'SkillGraph' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'SkillGraph_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'SkillGraph_Requirement' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'term', which is of type str; 'comment', which is of type str.
+
+'SkillGraph_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'SkillGraph_Node' represents an important domain concept.
+It has the following attributes: 'programPath', which is of type str; 'name', which is of type str; 'category', which is of type str.
+
+'SkillGraph_Equation' represents an important domain concept.
+It has one attribute: 'equation', which is of type str.
+
+'SkillGraph_Parameter' represents an important domain concept.
+It has the following attributes: 'variable', which is of type bool; 'defaultValue', which is of type str; 'abbreviation', which is of type str; 'unit', which is of type str; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Type' defines the following possible values: 'Technical_Safety_Requirement', 'Technical_Requirement', 'Functional_Safety_Requirement'.
+The enumeration 'Category' defines the following possible values: 'planning', 'actuator', 'perception', 'observable_external_behavior', 'action', 'sensor', 'main'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SkillGraph_Graph' and 'SkillGraph_Parameter'. From 'SkillGraph_Graph', the role 'Graph' has cardinality 0..*, and from 'SkillGraph_Parameter', the role 'parameterList' has cardinality 0..*.
+An association connects 'SkillGraph_Node' and 'SkillGraph_Graph'. From 'SkillGraph_Node', the role 'SkillGraph_Node' has cardinality 0..*, and from 'SkillGraph_Graph', the role 'SkillGraph_Graph' has cardinality 0..*.
+An association connects 'SkillGraph_Graph' and 'SkillGraph_Node'. From 'SkillGraph_Graph', the role 'SkillGraph_Graph3' has cardinality 0..*, and from 'SkillGraph_Node', the role 'SkillGraph_Node4' has cardinality 0..*.
+An association connects 'SkillGraph_Parameter' and 'SkillGraph_Graph'. From 'SkillGraph_Parameter', the role 'Parameter' has cardinality 0..*, and from 'SkillGraph_Graph', the role 'graph' has cardinality 0..*.
+An association connects 'SkillGraph_Equation' and 'SkillGraph_Node'. From 'SkillGraph_Equation', the role 'Equation' has cardinality 0..*, and from 'SkillGraph_Node', the role 'node' has cardinality 0..*.
+An association connects 'SkillGraph_Node' and 'SkillGraph_Edge'. From 'SkillGraph_Node', the role 'SkillGraph_Node8' has cardinality 0..*, and from 'SkillGraph_Edge', the role 'SkillGraph_Edge' has cardinality 0..*.
+An association connects 'SkillGraph_Node' and 'SkillGraph_Node'. From 'SkillGraph_Node', the role 'SkillGraph_Node9' has cardinality 0..*, and from 'SkillGraph_Node', the role 'SkillGraph_Node11' has cardinality 0..*.
+An association connects 'SkillGraph_Node' and 'SkillGraph_Requirement'. From 'SkillGraph_Node', the role 'node13' has cardinality 0..*, and from 'SkillGraph_Requirement', the role 'Requirement' has cardinality 0..*.
+An association connects 'SkillGraph_Node' and 'SkillGraph_Requirement'. From 'SkillGraph_Node', the role 'Node' has cardinality 0..*, and from 'SkillGraph_Requirement', the role 'requirements' has cardinality 0..*.
+An association connects 'SkillGraph_Equation' and 'SkillGraph_Node'. From 'SkillGraph_Equation', the role 'equations' has cardinality 0..*, and from 'SkillGraph_Node', the role 'Node16' has cardinality 0..*.
+An association connects 'SkillGraph_Node' and 'SkillGraph_Edge'. From 'SkillGraph_Node', the role 'SkillGraph_Node19' has cardinality 0..*, and from 'SkillGraph_Edge', the role 'SkillGraph_Edge18' has cardinality 0..*.
+An association connects 'SkillGraph_Node' and 'SkillGraph_Edge'. From 'SkillGraph_Node', the role 'SkillGraph_Node22' has cardinality 0..*, and from 'SkillGraph_Edge', the role 'SkillGraph_Edge21' has cardinality 0..*.

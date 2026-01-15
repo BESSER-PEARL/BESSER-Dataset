@@ -1,0 +1,34 @@
+The domain model 'goatInfrastructure' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'goatInfrastructure_SingleServer' represents an important domain concept.
+It has the following attributes: 'server', which is of type str; 'timeout', which is of type int.
+
+'goatInfrastructure_Infrastructure' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'goatInfrastructure_Cluster' represents an important domain concept.
+It has the following attributes: 'mid_assigner', which is of type str; 'registration', which is of type str; 'message_queue', which is of type str; 'nodes', which is of type str.
+
+'goatInfrastructure_Tree' represents an important domain concept.
+It has one attribute: 'registration', which is of type str.
+
+'Infrastructure' represents an important domain concept.
+It does not declare any attributes.
+
+'goatInfrastructure_Ring' represents an important domain concept.
+It has the following attributes: 'mid_assigner', which is of type str; 'registration', which is of type str; 'nodes', which is of type str.
+
+'goatInfrastructure_TreeNode' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'goatInfrastructure_SingleServer' is a specialization of 'Infrastructure'.
+The class 'goatInfrastructure_Cluster' is a specialization of 'Infrastructure'.
+The class 'goatInfrastructure_Ring' is a specialization of 'Infrastructure'.
+The class 'goatInfrastructure_Tree' is a specialization of 'Infrastructure'.
+
+Relationships between classes are modeled using associations.
+An association connects 'goatInfrastructure_Tree' and 'goatInfrastructure_TreeNode'. From 'goatInfrastructure_Tree', the role 'goatInfrastructure_Tree' has cardinality 0..*, and from 'goatInfrastructure_TreeNode', the role 'goatInfrastructure_TreeNode' has cardinality 0..*.
+An association connects 'goatInfrastructure_TreeNode' and 'goatInfrastructure_TreeNode'. From 'goatInfrastructure_TreeNode', the role 'goatInfrastructure_TreeNode1' has cardinality 0..*, and from 'goatInfrastructure_TreeNode', the role 'goatInfrastructure_TreeNode3' has cardinality 0..*.

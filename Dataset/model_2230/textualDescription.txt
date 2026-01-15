@@ -1,0 +1,44 @@
+The domain model 'ra' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'ra_StudyPlan' represents an important domain concept.
+It does not declare any attributes.
+
+'ra_Specialization' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ra_Semester' represents an important domain concept.
+It has the following attributes: 'totalPoints', which is of type float; 'semesterNumber', which is of type int.
+
+'ra_Programme' represents an important domain concept.
+It has the following attributes: 'mCode', which is of type str; 'name', which is of type str.
+
+'ra_Course' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'name', which is of type str.
+
+'ra_MandatoryCourse' represents an important domain concept.
+It has the following attributes: 'mandatory', which is of type bool; 'credit', which is of type float.
+
+'ra_Department' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'programmeCode' defines the following possible values: 'Datateknologi5', 'Datateknologi2', 'Informatikk'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ra_Programme' and 'ra_Department'. From 'ra_Programme', the role 'ra_Programme' has cardinality 0..*, and from 'ra_Department', the role 'ra_Department' has cardinality 0..*.
+An association connects 'ra_Course' and 'ra_Department'. From 'ra_Course', the role 'ra_Course' has cardinality 0..*, and from 'ra_Department', the role 'ra_Department2' has cardinality 0..*.
+An association connects 'ra_Department' and 'ra_StudyPlan'. From 'ra_Department', the role 'ra_Department4' has cardinality 0..*, and from 'ra_StudyPlan', the role 'ra_StudyPlan' has cardinality 0..*.
+An association connects 'ra_Specialization' and 'ra_Department'. From 'ra_Specialization', the role 'ra_Specialization' has cardinality 0..*, and from 'ra_Department', the role 'ra_Department6' has cardinality 0..*.
+An association connects 'ra_MandatoryCourse' and 'ra_Course'. From 'ra_MandatoryCourse', the role 'MandatoryCourse' has cardinality 0..*, and from 'ra_Course', the role 'course' has cardinality 0..*.
+An association connects 'ra_StudyPlan' and 'ra_Programme'. From 'ra_StudyPlan', the role 'StudyPlan' has cardinality 0..*, and from 'ra_Programme', the role 'programme' has cardinality 0..*.
+An association connects 'ra_Programme' and 'ra_StudyPlan'. From 'ra_Programme', the role 'Programme' has cardinality 0..*, and from 'ra_StudyPlan', the role 'studyPlan' has cardinality 0..*.
+An association connects 'ra_Specialization' and 'ra_StudyPlan'. From 'ra_Specialization', the role 'ra_Specialization12' has cardinality 0..*, and from 'ra_StudyPlan', the role 'ra_StudyPlan11' has cardinality 0..*.
+An association connects 'ra_StudyPlan' and 'ra_Semester'. From 'ra_StudyPlan', the role 'ra_StudyPlan14' has cardinality 0..*, and from 'ra_Semester', the role 'ra_Semester' has cardinality 0..*.
+An association connects 'ra_StudyPlan' and 'ra_MandatoryCourse'. From 'ra_StudyPlan', the role 'ra_StudyPlan16' has cardinality 0..*, and from 'ra_MandatoryCourse', the role 'ra_MandatoryCourse' has cardinality 0..*.
+An association connects 'ra_Semester' and 'ra_Specialization'. From 'ra_Semester', the role 'ra_Semester19' has cardinality 0..*, and from 'ra_Specialization', the role 'ra_Specialization18' has cardinality 0..*.
+An association connects 'ra_Semester' and 'ra_Course'. From 'ra_Semester', the role 'ra_Semester21' has cardinality 0..*, and from 'ra_Course', the role 'ra_Course22' has cardinality 0..*.
+An association connects 'ra_MandatoryCourse' and 'ra_Semester'. From 'ra_MandatoryCourse', the role 'MandatoryCourse24' has cardinality 0..*, and from 'ra_Semester', the role 'semester' has cardinality 0..*.
+An association connects 'ra_MandatoryCourse' and 'ra_Semester'. From 'ra_MandatoryCourse', the role 'mandatoryCourse' has cardinality 0..*, and from 'ra_Semester', the role 'Semester' has cardinality 0..*.
+An association connects 'ra_Course' and 'ra_MandatoryCourse'. From 'ra_Course', the role 'Course' has cardinality 0..*, and from 'ra_MandatoryCourse', the role 'mandatoryCourse27' has cardinality 0..*.

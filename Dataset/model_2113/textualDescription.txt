@@ -1,0 +1,38 @@
+The domain model 'securityTest' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'securityTest_TargetOfEvaluation' represents an important domain concept.
+It has the following attributes: 'protocol', which is of type str; 'port', which is of type str; 'domain', which is of type str; 'ip', which is of type str.
+
+'securityTest_Attack' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'severity', which is of type str.
+
+'securityTest_Input' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'securityTest_Test' represents an important domain concept.
+It has the following attributes: 'severity', which is of type str; 'id', which is of type str; 'date', which is of type date; 'name', which is of type str.
+
+'securityTest_WebComponent' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'securityTest_AuthSetting' represents an important domain concept.
+It has the following attributes: 'loginTargetURL', which is of type str; 'passwordParam', which is of type str; 'loginMessagePattern', which is of type str; 'logoutMessagePattern', which is of type str; 'roles', which is of type str; 'usernameParam', which is of type str.
+
+'securityTest_Note' represents an important domain concept.
+It has one attribute: 'noteText', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ESeverity' defines the following possible values: 'Low', 'Medium', 'High'.
+The enumeration 'EAttackMethod' defines the following possible values: 'SQLInjection', 'XSS', 'Authentication', 'PrivilegeScalation', 'Authorization'.
+
+Relationships between classes are modeled using associations.
+An association connects 'securityTest_TargetOfEvaluation' and 'securityTest_Test'. From 'securityTest_TargetOfEvaluation', the role 'securityTest_TargetOfEvaluation' has cardinality 0..*, and from 'securityTest_Test', the role 'securityTest_Test' has cardinality 0..*.
+An association connects 'securityTest_Test' and 'securityTest_Attack'. From 'securityTest_Test', the role 'securityTest_Test2' has cardinality 0..*, and from 'securityTest_Attack', the role 'securityTest_Attack' has cardinality 0..*.
+An association connects 'securityTest_Note' and 'securityTest_Test'. From 'securityTest_Note', the role 'securityTest_Note' has cardinality 0..*, and from 'securityTest_Test', the role 'securityTest_Test4' has cardinality 0..*.
+An association connects 'securityTest_Test' and 'securityTest_AuthSetting'. From 'securityTest_Test', the role 'securityTest_Test6' has cardinality 0..*, and from 'securityTest_AuthSetting', the role 'securityTest_AuthSetting' has cardinality 0..*.
+An association connects 'securityTest_TargetOfEvaluation' and 'securityTest_WebComponent'. From 'securityTest_TargetOfEvaluation', the role 'securityTest_TargetOfEvaluation8' has cardinality 0..*, and from 'securityTest_WebComponent', the role 'securityTest_WebComponent' has cardinality 0..*.
+An association connects 'securityTest_WebComponent' and 'securityTest_WebComponent'. From 'securityTest_WebComponent', the role 'securityTest_WebComponent9' has cardinality 0..*, and from 'securityTest_WebComponent', the role 'securityTest_WebComponent11' has cardinality 0..*.
+An association connects 'securityTest_WebComponent' and 'securityTest_Input'. From 'securityTest_WebComponent', the role 'securityTest_WebComponent13' has cardinality 0..*, and from 'securityTest_Input', the role 'securityTest_Input' has cardinality 0..*.
+An association connects 'securityTest_Attack' and 'securityTest_Input'. From 'securityTest_Attack', the role 'securityTest_Attack16' has cardinality 0..*, and from 'securityTest_Input', the role 'securityTest_Input15' has cardinality 0..*.

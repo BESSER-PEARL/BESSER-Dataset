@@ -1,0 +1,39 @@
+The domain model 'lts' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'lts_LTS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'lts_State' represents an important domain concept.
+It has one attribute: 'Id', which is of type str.
+
+'lts_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'lts_Transition' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'lts_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'lts_IntermediateState' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'lts_InitialState' is a specialization of 'State'.
+The class 'lts_FinalState' is a specialization of 'State'.
+The class 'lts_IntermediateState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'lts_LTS' and 'lts_Transition'. From 'lts_LTS', the role 'lts_LTS' has cardinality 0..*, and from 'lts_Transition', the role 'lts_Transition' has cardinality 0..*.
+An association connects 'lts_InitialState' and 'lts_LTS'. From 'lts_InitialState', the role 'lts_InitialState' has cardinality 0..*, and from 'lts_LTS', the role 'lts_LTS2' has cardinality 0..*.
+An association connects 'lts_IntermediateState' and 'lts_LTS'. From 'lts_IntermediateState', the role 'lts_IntermediateState' has cardinality 0..*, and from 'lts_LTS', the role 'lts_LTS4' has cardinality 0..*.
+An association connects 'lts_LTS' and 'lts_FinalState'. From 'lts_LTS', the role 'lts_LTS6' has cardinality 0..*, and from 'lts_FinalState', the role 'lts_FinalState' has cardinality 0..*.
+An association connects 'lts_State' and 'lts_Transition'. From 'lts_State', the role 'State' has cardinality 0..*, and from 'lts_Transition', the role 'incoming' has cardinality 0..*.
+An association connects 'lts_State' and 'lts_Transition'. From 'lts_State', the role 'State9' has cardinality 0..*, and from 'lts_Transition', the role 'outgoing' has cardinality 0..*.
+An association connects 'lts_Transition' and 'lts_State'. From 'lts_Transition', the role 'Transition' has cardinality 0..*, and from 'lts_State', the role 'target' has cardinality 0..*.
+An association connects 'lts_State' and 'lts_Transition'. From 'lts_State', the role 'source' has cardinality 0..*, and from 'lts_Transition', the role 'Transition12' has cardinality 0..*.

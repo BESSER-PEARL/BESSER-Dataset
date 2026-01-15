@@ -1,0 +1,159 @@
+The domain model 'ws' describes the core structural elements and their relationships within the system.
+
+The model defines 40 main class(es).
+
+'Tree' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_middleware_Stub' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_middleware_ServiceImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'Simulator' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_middleware_ServiceDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'Middleware' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_tree_CDEVSSimulator' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_tree_P_Coordinator' represents an important domain concept.
+It does not declare any attributes.
+
+'Process' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_middleware_VM' represents an important domain concept.
+It has the following attributes: 'ID', which is of type str; 'protocol', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_tree_P_Simulator' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_middleware_Processor' represents an important domain concept.
+It has the following attributes: 'ID', which is of type str; 'IP', which is of type str.
+
+'ws_tree_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_tree_Simulator' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_tree_PDEVSSimulator' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_middleware_Middleware' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_skeleton_Skeleton' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'ws_bundle_Bundle' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'Processor' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_bundle_Process' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'VM' represents an important domain concept.
+It does not declare any attributes.
+
+'Coordinator' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_tree_PDEVSCoordinator' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_tree_Tree' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'ws_tree_BasicNode' represents an important domain concept.
+It has one attribute: 'modelName', which is of type str.
+
+'Repository' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_middleware_WebService' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_tree_Coordinator' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_tree_CDEVSCoordinator' represents an important domain concept.
+It does not declare any attributes.
+
+'Root' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_tree_NodeCoordinator' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_tree_FlatCoordinator' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_middleware_Repository' represents an important domain concept.
+It does not declare any attributes.
+
+'Skeleton' represents an important domain concept.
+It does not declare any attributes.
+
+'ws_tree_Node' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'Stub' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ws_middleware_WebService' is a specialization of 'Middleware'.
+The class 'ws_middleware_ServiceImpl' is a specialization of 'ServiceDescription'.
+The class 'ws_tree_Root' is a specialization of 'Node'.
+The class 'ws_tree_Coordinator' is a specialization of 'BasicNode'.
+The class 'ws_tree_CDEVSCoordinator' is a specialization of 'Coordinator'.
+The class 'ws_tree_PDEVSCoordinator' is a specialization of 'Coordinator'.
+The class 'ws_tree_FlatCoordinator' is a specialization of 'Coordinator'.
+The class 'ws_tree_NodeCoordinator' is a specialization of 'Coordinator'.
+The class 'ws_tree_P_Coordinator' is a specialization of 'Coordinator'.
+The class 'ws_tree_Simulator' is a specialization of 'BasicNode'.
+The class 'ws_tree_CDEVSSimulator' is a specialization of 'Simulator'.
+The class 'ws_tree_PDEVSSimulator' is a specialization of 'Simulator'.
+The class 'ws_tree_P_Simulator' is a specialization of 'Simulator'.
+The class 'ws_tree_BasicNode' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ws_middleware_Middleware' and 'VM'. From 'ws_middleware_Middleware', the role 'ws_middleware_Middleware' has cardinality 0..*, and from 'VM', the role 'VM' has cardinality 0..*.
+An association connects 'ws_middleware_Middleware' and 'Process'. From 'ws_middleware_Middleware', the role 'ws_middleware_Middleware2' has cardinality 0..*, and from 'Process', the role 'Process' has cardinality 0..*.
+An association connects 'Stub' and 'ws_middleware_WebService'. From 'Stub', the role 'Stub' has cardinality 0..*, and from 'ws_middleware_WebService', the role 'ws_middleware_WebService' has cardinality 0..*.
+An association connects 'ws_middleware_WebService' and 'Repository'. From 'ws_middleware_WebService', the role 'ws_middleware_WebService5' has cardinality 0..*, and from 'Repository', the role 'Repository' has cardinality 0..*.
+An association connects 'ws_middleware_VM' and 'Processor'. From 'ws_middleware_VM', the role 'ws_middleware_VM' has cardinality 0..*, and from 'Processor', the role 'Processor' has cardinality 0..*.
+An association connects 'ServiceImpl' and 'ws_middleware_Stub'. From 'ServiceImpl', the role 'ServiceImpl' has cardinality 0..*, and from 'ws_middleware_Stub', the role 'ws_middleware_Stub' has cardinality 0..*.
+An association connects 'ServiceDescription' and 'ws_middleware_Repository'. From 'ServiceDescription', the role 'ServiceDescription' has cardinality 0..*, and from 'ws_middleware_Repository', the role 'ws_middleware_Repository' has cardinality 0..*.
+An association connects 'Root' and 'ws_tree_Tree'. From 'Root', the role 'Root' has cardinality 0..*, and from 'ws_tree_Tree', the role 'ws_tree_Tree' has cardinality 0..*.
+An association connects 'ws_tree_Tree' and 'Coordinator'. From 'ws_tree_Tree', the role 'ws_tree_Tree11' has cardinality 0..*, and from 'Coordinator', the role 'Coordinator' has cardinality 0..*.
+An association connects 'Simulator' and 'ws_tree_Tree'. From 'Simulator', the role 'Simulator' has cardinality 0..*, and from 'ws_tree_Tree', the role 'ws_tree_Tree13' has cardinality 0..*.
+An association connects 'ws_tree_Root' and 'BasicNode'. From 'ws_tree_Root', the role 'ws_tree_Root' has cardinality 0..*, and from 'BasicNode', the role 'BasicNode' has cardinality 0..*.
+An association connects 'ws_tree_Coordinator' and 'BasicNode'. From 'ws_tree_Coordinator', the role 'ws_tree_Coordinator' has cardinality 0..*, and from 'BasicNode', the role 'BasicNode16' has cardinality 0..*.
+An association connects 'ws_skeleton_Skeleton' and 'Tree'. From 'ws_skeleton_Skeleton', the role 'ws_skeleton_Skeleton' has cardinality 0..*, and from 'Tree', the role 'Tree' has cardinality 0..*.
+An association connects 'Root' and 'ws_skeleton_Skeleton'. From 'Root', the role 'Root20' has cardinality 0..*, and from 'ws_skeleton_Skeleton', the role 'ws_skeleton_Skeleton19' has cardinality 0..*.
+An association connects 'Skeleton' and 'ws_bundle_Bundle'. From 'Skeleton', the role 'Skeleton' has cardinality 0..*, and from 'ws_bundle_Bundle', the role 'ws_bundle_Bundle' has cardinality 0..*.
+An association connects 'ws_bundle_Bundle' and 'Process'. From 'ws_bundle_Bundle', the role 'ws_bundle_Bundle23' has cardinality 0..*, and from 'Process', the role 'Process24' has cardinality 0..*.
+An association connects 'Node' and 'ws_bundle_Process'. From 'Node', the role 'Node' has cardinality 0..*, and from 'ws_bundle_Process', the role 'ws_bundle_Process' has cardinality 0..*.
+An association connects 'ws_bundle_Process' and 'Middleware'. From 'ws_bundle_Process', the role 'ws_bundle_Process27' has cardinality 0..*, and from 'Middleware', the role 'Middleware' has cardinality 0..*.

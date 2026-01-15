@@ -1,0 +1,19 @@
+The domain model 'graph' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'graph_ResourcePlot' represents an important domain concept.
+It has the following attributes: 'max', which is of type float; 'rgb', which is of type str; 'min', which is of type float; 'fit', which is of type str; 'name', which is of type str.
+
+'graph_ResourceGraphs' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_ResourceGraph' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FitPolicy' defines the following possible values: 'AUTO', 'CUSTOM'.
+
+Relationships between classes are modeled using associations.
+An association connects 'graph_ResourceGraphs' and 'graph_ResourceGraph'. From 'graph_ResourceGraphs', the role 'graph_ResourceGraphs' has cardinality 0..*, and from 'graph_ResourceGraph', the role 'graph_ResourceGraph' has cardinality 0..*.
+An association connects 'graph_ResourcePlot' and 'graph_ResourceGraph'. From 'graph_ResourcePlot', the role 'graph_ResourcePlot' has cardinality 0..*, and from 'graph_ResourceGraph', the role 'graph_ResourceGraph2' has cardinality 0..*.

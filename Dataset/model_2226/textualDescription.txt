@@ -1,0 +1,37 @@
+The domain model 'studyprograms' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'studyprograms_CourseAccess' represents an important domain concept.
+It has one attribute: 'Access', which is of type str.
+
+'studyprograms_Semester' represents an important domain concept.
+It has the following attributes: 'year', which is of type int; 'semesterType', which is of type str; 'semesterCode', which is of type str.
+
+'studyprograms_Department' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'code', which is of type str.
+
+'studyprograms_Course' represents an important domain concept.
+It has the following attributes: 'availableSemester', which is of type str; 'ects', which is of type float; 'name', which is of type str; 'code', which is of type str; 'level', which is of type str.
+
+'studyprograms_Specialisation' represents an important domain concept.
+It has the following attributes: 'startSemester', which is of type int; 'name', which is of type str.
+
+'studyprograms_Programme' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'duration', which is of type int; 'startYear', which is of type int; 'code', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AvailableSemesters' defines the following possible values: 'Spring', 'Fall', 'Both'.
+The enumeration 'SemesterType' defines the following possible values: 'Spring', 'Fall'.
+The enumeration 'Level' defines the following possible values: 'Master', 'Bachelor'.
+The enumeration 'Access' defines the following possible values: 'M2A', 'O', 'VA', 'M1A', 'VB', 'NoAccess'.
+
+Relationships between classes are modeled using associations.
+An association connects 'studyprograms_Programme' and 'studyprograms_Specialisation'. From 'studyprograms_Programme', the role 'studyprograms_Programme' has cardinality 0..*, and from 'studyprograms_Specialisation', the role 'studyprograms_Specialisation' has cardinality 0..*.
+An association connects 'studyprograms_Programme' and 'studyprograms_Semester'. From 'studyprograms_Programme', the role 'studyprograms_Programme2' has cardinality 0..*, and from 'studyprograms_Semester', the role 'studyprograms_Semester' has cardinality 0..*.
+An association connects 'studyprograms_Semester' and 'studyprograms_Specialisation'. From 'studyprograms_Semester', the role 'studyprograms_Semester5' has cardinality 0..*, and from 'studyprograms_Specialisation', the role 'studyprograms_Specialisation4' has cardinality 0..*.
+An association connects 'studyprograms_Specialisation' and 'studyprograms_Specialisation'. From 'studyprograms_Specialisation', the role 'studyprograms_Specialisation8' has cardinality 0..*, and from 'studyprograms_Specialisation', the role 'studyprograms_Specialisation6' has cardinality 0..*.
+An association connects 'studyprograms_Semester' and 'studyprograms_CourseAccess'. From 'studyprograms_Semester', the role 'studyprograms_Semester10' has cardinality 0..*, and from 'studyprograms_CourseAccess', the role 'studyprograms_CourseAccess' has cardinality 0..*.
+An association connects 'studyprograms_Course' and 'studyprograms_CourseAccess'. From 'studyprograms_Course', the role 'studyprograms_Course' has cardinality 0..*, and from 'studyprograms_CourseAccess', the role 'studyprograms_CourseAccess12' has cardinality 0..*.
+An association connects 'studyprograms_Department' and 'studyprograms_Programme'. From 'studyprograms_Department', the role 'studyprograms_Department' has cardinality 0..*, and from 'studyprograms_Programme', the role 'studyprograms_Programme14' has cardinality 0..*.
+An association connects 'studyprograms_Department' and 'studyprograms_Course'. From 'studyprograms_Department', the role 'studyprograms_Department16' has cardinality 0..*, and from 'studyprograms_Course', the role 'studyprograms_Course17' has cardinality 0..*.

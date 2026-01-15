@@ -1,0 +1,45 @@
+The domain model 'SimpleTree' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'SimpleTree_TreeElement' represents an important domain concept.
+It has the following attributes: 'index', which is of type int; 'name', which is of type str.
+
+'Text' represents an important domain concept.
+It does not declare any attributes.
+
+'TreeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleTree_Text' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleTree_File' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleTree_Node' represents an important domain concept.
+It has the following attributes: 'stopIndex', which is of type int; 'stopLineIndex', which is of type int; 'startLineIndex', which is of type int; 'startIndex', which is of type int.
+
+'SimpleTree_Attribute' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'SimpleTree_Folder' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'SimpleTree_Attribute' is a specialization of 'TreeElement'.
+The class 'SimpleTree_File' is a specialization of 'TreeElement'.
+The class 'SimpleTree_Folder' is a specialization of 'TreeElement'.
+The class 'SimpleTree_Node' is a specialization of 'Text'.
+The class 'SimpleTree_Text' is a specialization of 'TreeElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SimpleTree_Node' and 'SimpleTree_Attribute'. From 'SimpleTree_Node', the role 'Node' has cardinality 0..*, and from 'SimpleTree_Attribute', the role 'attribute' has cardinality 0..*.
+An association connects 'SimpleTree_File' and 'SimpleTree_Folder'. From 'SimpleTree_File', the role 'file' has cardinality 0..*, and from 'SimpleTree_Folder', the role 'Folder' has cardinality 0..*.
+An association connects 'SimpleTree_TreeElement' and 'SimpleTree_File'. From 'SimpleTree_TreeElement', the role 'SimpleTree_TreeElement' has cardinality 0..*, and from 'SimpleTree_File', the role 'SimpleTree_File' has cardinality 0..*.
+An association connects 'SimpleTree_Folder' and 'SimpleTree_Folder'. From 'SimpleTree_Folder', the role 'Folder5' has cardinality 0..*, and from 'SimpleTree_Folder', the role 'parentFolder' has cardinality 0..*.
+An association connects 'SimpleTree_Folder' and 'SimpleTree_Folder'. From 'SimpleTree_Folder', the role 'subFolder' has cardinality 0..*, and from 'SimpleTree_Folder', the role 'Folder8' has cardinality 0..*.
+An association connects 'SimpleTree_Folder' and 'SimpleTree_File'. From 'SimpleTree_Folder', the role 'folder' has cardinality 0..*, and from 'SimpleTree_File', the role 'File' has cardinality 0..*.
+An association connects 'SimpleTree_Node' and 'SimpleTree_Text'. From 'SimpleTree_Node', the role 'parentNode' has cardinality 0..*, and from 'SimpleTree_Text', the role 'Text' has cardinality 0..*.
+An association connects 'SimpleTree_Node' and 'SimpleTree_Attribute'. From 'SimpleTree_Node', the role 'node' has cardinality 0..*, and from 'SimpleTree_Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'SimpleTree_Text' and 'SimpleTree_Node'. From 'SimpleTree_Text', the role 'children' has cardinality 0..*, and from 'SimpleTree_Node', the role 'Node13' has cardinality 0..*.

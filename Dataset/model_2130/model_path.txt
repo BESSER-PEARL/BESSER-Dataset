@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/emf.diffmerge.core/tests/org.eclipse.emf.diffmerge.structures.model/model/EGraphs.ecore

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ray56/name.niu.guita/src/name.niu.guita.uitf/model/uitf.ecore

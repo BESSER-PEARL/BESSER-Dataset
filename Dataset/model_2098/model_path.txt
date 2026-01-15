@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/CAOSD-group/rhea-fms/fms.interfaces/src/test/resources/BasicFMs/generators/BasicFMmetamodel.ecore

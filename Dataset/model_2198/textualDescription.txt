@@ -1,0 +1,33 @@
+The domain model 'viewers' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'viewers_ViewerInputs' represents an important domain concept.
+It does not declare any attributes.
+
+'viewers_TreeViewerElement' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'viewers_ListViewerElement' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'viewers_ListViewerInput' represents an important domain concept.
+It does not declare any attributes.
+
+'viewers_TableViewerElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'label', which is of type str.
+
+'viewers_TreeViewerInput' represents an important domain concept.
+It does not declare any attributes.
+
+'viewers_TableViewerInput' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'viewers_ListViewerInput' and 'viewers_ListViewerElement'. From 'viewers_ListViewerInput', the role 'viewers_ListViewerInput' has cardinality 0..*, and from 'viewers_ListViewerElement', the role 'viewers_ListViewerElement' has cardinality 0..*.
+An association connects 'viewers_TableViewerInput' and 'viewers_TableViewerElement'. From 'viewers_TableViewerInput', the role 'viewers_TableViewerInput' has cardinality 0..*, and from 'viewers_TableViewerElement', the role 'viewers_TableViewerElement' has cardinality 0..*.
+An association connects 'viewers_TreeViewerInput' and 'viewers_TreeViewerElement'. From 'viewers_TreeViewerInput', the role 'viewers_TreeViewerInput' has cardinality 0..*, and from 'viewers_TreeViewerElement', the role 'viewers_TreeViewerElement' has cardinality 0..*.
+An association connects 'viewers_TreeViewerElement' and 'viewers_TreeViewerElement'. From 'viewers_TreeViewerElement', the role 'viewers_TreeViewerElement5' has cardinality 0..*, and from 'viewers_TreeViewerElement', the role 'viewers_TreeViewerElement3' has cardinality 0..*.
+An association connects 'viewers_ListViewerInput' and 'viewers_ViewerInputs'. From 'viewers_ListViewerInput', the role 'viewers_ListViewerInput7' has cardinality 0..*, and from 'viewers_ViewerInputs', the role 'viewers_ViewerInputs' has cardinality 0..*.
+An association connects 'viewers_ViewerInputs' and 'viewers_TableViewerInput'. From 'viewers_ViewerInputs', the role 'viewers_ViewerInputs9' has cardinality 0..*, and from 'viewers_TableViewerInput', the role 'viewers_TableViewerInput10' has cardinality 0..*.
+An association connects 'viewers_TreeViewerInput' and 'viewers_ViewerInputs'. From 'viewers_TreeViewerInput', the role 'viewers_TreeViewerInput13' has cardinality 0..*, and from 'viewers_ViewerInputs', the role 'viewers_ViewerInputs12' has cardinality 0..*.

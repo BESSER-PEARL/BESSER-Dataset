@@ -1,0 +1,121 @@
+The domain model 'dsml' describes the core structural elements and their relationships within the system.
+
+The model defines 26 main class(es).
+
+'dsml_DLink' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_Diagraph' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_DClassElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_DGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'DGraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_DLabel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DContainedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_DEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_DAttributeBridge' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_DNode' represents an important domain concept.
+It has the following attributes: 'pointOfViewName', which is of type str; 'pointOfView', which is of type bool.
+
+'dsml_DContainedEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_DGraphElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DClassElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_DModelElementBridge' represents an important domain concept.
+It has the following attributes: 'ecorePath', which is of type str; 'ecoreName', which is of type str.
+
+'dsml_DContainedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_DContainment' represents an important domain concept.
+It has one attribute: 'compartment', which is of type bool.
+
+'dsml_DSemanticBridge' represents an important domain concept.
+It does not declare any attributes.
+
+'DContainedEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_DReference' represents an important domain concept.
+It has one attribute: 'nonGraphicalProperty', which is of type bool.
+
+'dsml_DClassBridge' represents an important domain concept.
+It does not declare any attributes.
+
+'dsml_DReferenceBridge' represents an important domain concept.
+It does not declare any attributes.
+
+'DModelElementBridge' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'dsml_DEdge' is a specialization of 'DGraphElement'.
+The class 'dsml_DNode' is a specialization of 'DGraphElement'.
+The class 'dsml_DNode' is a specialization of 'DClassElement'.
+The class 'dsml_DNode' is a specialization of 'DContainedElement'.
+The class 'dsml_DLink' is a specialization of 'DContainedEdge'.
+The class 'dsml_DLink' is a specialization of 'DClassElement'.
+The class 'dsml_DReference' is a specialization of 'DEdge'.
+The class 'dsml_DContainment' is a specialization of 'DContainedEdge'.
+The class 'dsml_DContainedElement' is a specialization of 'DGraphElement'.
+The class 'dsml_DContainedEdge' is a specialization of 'DContainedElement'.
+The class 'dsml_DContainedEdge' is a specialization of 'DEdge'.
+The class 'dsml_DAttributeBridge' is a specialization of 'DModelElementBridge'.
+The class 'dsml_DReferenceBridge' is a specialization of 'DModelElementBridge'.
+The class 'dsml_DClassBridge' is a specialization of 'DModelElementBridge'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dsml_DNode' and 'dsml_DEdge'. From 'dsml_DNode', the role 'dsml_DNode' has cardinality 0..*, and from 'dsml_DEdge', the role 'dsml_DEdge' has cardinality 0..*.
+An association connects 'dsml_DEdge' and 'dsml_EReference'. From 'dsml_DEdge', the role 'dsml_DEdge2' has cardinality 0..*, and from 'dsml_EReference', the role 'dsml_EReference' has cardinality 0..*.
+An association connects 'dsml_DEdge' and 'dsml_DNode'. From 'dsml_DEdge', the role 'dsml_DEdge4' has cardinality 0..*, and from 'dsml_DNode', the role 'dsml_DNode5' has cardinality 0..*.
+An association connects 'dsml_DReferenceBridge' and 'dsml_DEdge'. From 'dsml_DReferenceBridge', the role 'dsml_DReferenceBridge' has cardinality 0..*, and from 'dsml_DEdge', the role 'dsml_DEdge7' has cardinality 0..*.
+An association connects 'dsml_DNode' and 'dsml_DEdge'. From 'dsml_DNode', the role 'dsml_DNode9' has cardinality 0..*, and from 'dsml_DEdge', the role 'dsml_DEdge10' has cardinality 0..*.
+An association connects 'dsml_DNode' and 'dsml_DNode'. From 'dsml_DNode', the role 'childrenPointOfView' has cardinality 0..*, and from 'dsml_DNode', the role 'DNode' has cardinality 0..*.
+An association connects 'dsml_DNode' and 'dsml_DNode'. From 'dsml_DNode', the role 'DNode15' has cardinality 0..*, and from 'dsml_DNode', the role 'parentPointOfView' has cardinality 0..*.
+An association connects 'dsml_DNode' and 'dsml_DLabel'. From 'dsml_DNode', the role 'dsml_DNode17' has cardinality 0..*, and from 'dsml_DLabel', the role 'dsml_DLabel' has cardinality 0..*.
+An association connects 'dsml_EReference' and 'dsml_DLink'. From 'dsml_EReference', the role 'dsml_EReference19' has cardinality 0..*, and from 'dsml_DLink', the role 'dsml_DLink' has cardinality 0..*.
+An association connects 'dsml_DLink' and 'dsml_DReferenceBridge'. From 'dsml_DLink', the role 'dsml_DLink21' has cardinality 0..*, and from 'dsml_DReferenceBridge', the role 'dsml_DReferenceBridge22' has cardinality 0..*.
+An association connects 'dsml_DLabel' and 'dsml_DLink'. From 'dsml_DLabel', the role 'dsml_DLabel25' has cardinality 0..*, and from 'dsml_DLink', the role 'dsml_DLink24' has cardinality 0..*.
+An association connects 'dsml_DNode' and 'dsml_DGraph'. From 'dsml_DNode', the role 'dsml_DNode27' has cardinality 0..*, and from 'dsml_DGraph', the role 'dsml_DGraph' has cardinality 0..*.
+An association connects 'dsml_DNode' and 'dsml_DGraph'. From 'dsml_DNode', the role 'dsml_DNode30' has cardinality 0..*, and from 'dsml_DGraph', the role 'dsml_DGraph29' has cardinality 0..*.
+An association connects 'dsml_DClassElement' and 'dsml_EClass'. From 'dsml_DClassElement', the role 'dsml_DClassElement' has cardinality 0..*, and from 'dsml_EClass', the role 'dsml_EClass' has cardinality 0..*.
+An association connects 'dsml_DClassElement' and 'dsml_EAttribute'. From 'dsml_DClassElement', the role 'dsml_DClassElement33' has cardinality 0..*, and from 'dsml_EAttribute', the role 'dsml_EAttribute' has cardinality 0..*.
+An association connects 'dsml_DClassElement' and 'dsml_DClassBridge'. From 'dsml_DClassElement', the role 'dsml_DClassElement35' has cardinality 0..*, and from 'dsml_DClassBridge', the role 'dsml_DClassBridge' has cardinality 0..*.
+An association connects 'dsml_DContainedElement' and 'dsml_DNode'. From 'dsml_DContainedElement', the role 'dsml_DContainedElement' has cardinality 0..*, and from 'dsml_DNode', the role 'dsml_DNode37' has cardinality 0..*.
+An association connects 'dsml_DReferenceBridge' and 'dsml_DContainedElement'. From 'dsml_DReferenceBridge', the role 'dsml_DReferenceBridge40' has cardinality 0..*, and from 'dsml_DContainedElement', the role 'dsml_DContainedElement39' has cardinality 0..*.
+An association connects 'dsml_DGraph' and 'dsml_Diagraph'. From 'dsml_DGraph', the role 'dsml_DGraph42' has cardinality 0..*, and from 'dsml_Diagraph', the role 'dsml_Diagraph' has cardinality 0..*.
+An association connects 'dsml_DSemanticBridge' and 'dsml_Diagraph'. From 'dsml_DSemanticBridge', the role 'dsml_DSemanticBridge' has cardinality 0..*, and from 'dsml_Diagraph', the role 'dsml_Diagraph44' has cardinality 0..*.
+An association connects 'dsml_DModelElementBridge' and 'dsml_DSemanticBridge'. From 'dsml_DModelElementBridge', the role 'dsml_DModelElementBridge' has cardinality 0..*, and from 'dsml_DSemanticBridge', the role 'dsml_DSemanticBridge46' has cardinality 0..*.
+An association connects 'dsml_DAttributeBridge' and 'dsml_DLabel'. From 'dsml_DAttributeBridge', the role 'dsml_DAttributeBridge' has cardinality 0..*, and from 'dsml_DLabel', the role 'dsml_DLabel48' has cardinality 0..*.

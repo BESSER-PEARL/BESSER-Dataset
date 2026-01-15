@@ -1,0 +1,41 @@
+The domain model 'programme' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'programme_Programme' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'programmeType', which is of type str; 'code', which is of type str.
+
+'programme_Semester' represents an important domain concept.
+It has one attribute: 'semesterType', which is of type str.
+
+'programme_Specialization' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'programme_Course' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'credits', which is of type float; 'name', which is of type str; 'level', which is of type str; 'taugtIn', which is of type str.
+
+'programme_SemesterCourse' represents an important domain concept.
+It has one attribute: 'courseType', which is of type str.
+
+'programme_Department' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'programme_StudyYear' represents an important domain concept.
+It has one attribute: 'year', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CourseLevel' defines the following possible values: 'HIGHER', 'PHD', 'THIRD_YEAR'.
+The enumeration 'ProgrammeType' defines the following possible values: 'MASTER_2_YEARS', 'BACHELOR', 'YEAR_STUDY', 'INTEGRATED_MASTER'.
+The enumeration 'CourseType' defines the following possible values: 'Elective', 'M2A', 'Obligatory', 'M1A'.
+The enumeration 'SemesterType' defines the following possible values: 'SPRING', 'FALL'.
+
+Relationships between classes are modeled using associations.
+An association connects 'programme_Programme' and 'programme_Department'. From 'programme_Programme', the role 'programme_Programme' has cardinality 0..*, and from 'programme_Department', the role 'programme_Department' has cardinality 0..*.
+An association connects 'programme_Department' and 'programme_Course'. From 'programme_Department', the role 'programme_Department2' has cardinality 0..*, and from 'programme_Course', the role 'programme_Course' has cardinality 0..*.
+An association connects 'programme_Specialization' and 'programme_Programme'. From 'programme_Specialization', the role 'programme_Specialization' has cardinality 0..*, and from 'programme_Programme', the role 'programme_Programme4' has cardinality 0..*.
+An association connects 'programme_StudyYear' and 'programme_Programme'. From 'programme_StudyYear', the role 'programme_StudyYear' has cardinality 0..*, and from 'programme_Programme', the role 'programme_Programme6' has cardinality 0..*.
+An association connects 'programme_Specialization' and 'programme_Specialization'. From 'programme_Specialization', the role 'programme_Specialization7' has cardinality 0..*, and from 'programme_Specialization', the role 'programme_Specialization9' has cardinality 0..*.
+An association connects 'programme_Specialization' and 'programme_StudyYear'. From 'programme_Specialization', the role 'programme_Specialization11' has cardinality 0..*, and from 'programme_StudyYear', the role 'programme_StudyYear12' has cardinality 0..*.
+An association connects 'programme_Semester' and 'programme_StudyYear'. From 'programme_Semester', the role 'programme_Semester' has cardinality 0..*, and from 'programme_StudyYear', the role 'programme_StudyYear14' has cardinality 0..*.
+An association connects 'programme_SemesterCourse' and 'programme_Semester'. From 'programme_SemesterCourse', the role 'programme_SemesterCourse' has cardinality 0..*, and from 'programme_Semester', the role 'programme_Semester16' has cardinality 0..*.
+An association connects 'programme_SemesterCourse' and 'programme_Course'. From 'programme_SemesterCourse', the role 'programme_SemesterCourse18' has cardinality 0..*, and from 'programme_Course', the role 'programme_Course19' has cardinality 0..*.

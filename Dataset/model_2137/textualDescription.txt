@@ -1,0 +1,28 @@
+The domain model 'flowchart' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'flowchart_Flowchart' represents an important domain concept.
+It does not declare any attributes.
+
+'flowchart_Decision' represents an important domain concept.
+It has the following attributes: 'condition', which is of type str; 'isDecision', which is of type bool.
+
+'flowchart_Action' represents an important domain concept.
+It has one attribute: 'isAction', which is of type bool.
+
+'flowchart_Transition' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'flowchart_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'flowchart_Flowchart' and 'flowchart_Node'. From 'flowchart_Flowchart', the role 'flowchart_Flowchart' has cardinality 0..*, and from 'flowchart_Node', the role 'flowchart_Node' has cardinality 0..*.
+An association connects 'flowchart_Flowchart' and 'flowchart_Transition'. From 'flowchart_Flowchart', the role 'flowchart_Flowchart2' has cardinality 0..*, and from 'flowchart_Transition', the role 'flowchart_Transition' has cardinality 0..*.
+An association connects 'flowchart_Node' and 'flowchart_Transition'. From 'flowchart_Node', the role 'target' has cardinality 0..*, and from 'flowchart_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'flowchart_Transition' and 'flowchart_Node'. From 'flowchart_Transition', the role 'Transition5' has cardinality 0..*, and from 'flowchart_Node', the role 'source' has cardinality 0..*.
+An association connects 'flowchart_Node' and 'flowchart_Action'. From 'flowchart_Node', the role 'flowchart_Node7' has cardinality 0..*, and from 'flowchart_Action', the role 'flowchart_Action' has cardinality 0..*.
+An association connects 'flowchart_Node' and 'flowchart_Decision'. From 'flowchart_Node', the role 'flowchart_Node9' has cardinality 0..*, and from 'flowchart_Decision', the role 'flowchart_Decision' has cardinality 0..*.
+An association connects 'flowchart_Node' and 'flowchart_Transition'. From 'flowchart_Node', the role 'Node' has cardinality 0..*, and from 'flowchart_Transition', the role 'outgoing' has cardinality 0..*.
+An association connects 'flowchart_Transition' and 'flowchart_Node'. From 'flowchart_Transition', the role 'incoming' has cardinality 0..*, and from 'flowchart_Node', the role 'Node12' has cardinality 0..*.

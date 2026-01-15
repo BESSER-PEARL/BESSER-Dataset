@@ -1,0 +1,49 @@
+The domain model 'graphdb' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'graphdb_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'graphdb_Edge' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'GraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+'graphdb_Property' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'type', which is of type str.
+
+'graphdb_GraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+'graphdb_Graph' represents an important domain concept.
+It has one attribute: 'rawDatabase', which is of type str.
+
+'graphdb_Vertex' represents an important domain concept.
+It has the following attributes: 'labels', which is of type str; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PrimitiveType' defines the following possible values: 'Boolean', 'UmlToNoSQLID', 'Integer', 'String', 'Object'.
+The enumeration 'DatabaseKind' defines a single possible value: 'GREMLIN'.
+
+The model also captures inheritance relationships between classes.
+The class 'graphdb_GraphElement' is a specialization of 'Element'.
+The class 'graphdb_Vertex' is a specialization of 'GraphElement'.
+The class 'graphdb_Edge' is a specialization of 'GraphElement'.
+The class 'graphdb_Property' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'graphdb_Graph' and 'graphdb_Vertex'. From 'graphdb_Graph', the role 'graph' has cardinality 0..*, and from 'graphdb_Vertex', the role 'Vertex' has cardinality 0..*.
+An association connects 'graphdb_Graph' and 'graphdb_Edge'. From 'graphdb_Graph', the role 'graph2' has cardinality 0..*, and from 'graphdb_Edge', the role 'Edge' has cardinality 0..*.
+An association connects 'graphdb_Property' and 'graphdb_GraphElement'. From 'graphdb_Property', the role 'Property' has cardinality 0..*, and from 'graphdb_GraphElement', the role 'owner' has cardinality 0..*.
+An association connects 'graphdb_Edge' and 'graphdb_Vertex'. From 'graphdb_Edge', the role 'Edge5' has cardinality 0..*, and from 'graphdb_Vertex', the role 'head' has cardinality 0..*.
+An association connects 'graphdb_Vertex' and 'graphdb_Edge'. From 'graphdb_Vertex', the role 'tail' has cardinality 0..*, and from 'graphdb_Edge', the role 'Edge7' has cardinality 0..*.
+An association connects 'graphdb_Graph' and 'graphdb_Vertex'. From 'graphdb_Graph', the role 'Graph' has cardinality 0..*, and from 'graphdb_Vertex', the role 'vertices' has cardinality 0..*.
+An association connects 'graphdb_Vertex' and 'graphdb_Edge'. From 'graphdb_Vertex', the role 'Vertex10' has cardinality 0..*, and from 'graphdb_Edge', the role 'outEdges' has cardinality 0..*.
+An association connects 'graphdb_Edge' and 'graphdb_Vertex'. From 'graphdb_Edge', the role 'inEdges' has cardinality 0..*, and from 'graphdb_Vertex', the role 'Vertex12' has cardinality 0..*.
+An association connects 'graphdb_Graph' and 'graphdb_Edge'. From 'graphdb_Graph', the role 'Graph14' has cardinality 0..*, and from 'graphdb_Edge', the role 'edges' has cardinality 0..*.
+An association connects 'graphdb_GraphElement' and 'graphdb_Property'. From 'graphdb_GraphElement', the role 'GraphElement' has cardinality 0..*, and from 'graphdb_Property', the role 'properties' has cardinality 0..*.

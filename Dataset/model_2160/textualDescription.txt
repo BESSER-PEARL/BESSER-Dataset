@@ -1,0 +1,38 @@
+The domain model 'egt' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'egt_DiEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'egt_Vertex' represents an important domain concept.
+It has the following attributes: 'color', which is of type str; 'name', which is of type str; 'index', which is of type int.
+
+'egt_GraphModel' represents an important domain concept.
+It does not declare any attributes.
+
+'egt_ColorRegistry' represents an important domain concept.
+It has one attribute: 'images', which is of type str.
+
+'egt_Edge' represents an important domain concept.
+It has the following attributes: 'color', which is of type str; 'weight', which is of type float.
+
+'egt_SingleEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'Edge' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Colors' defines the following possible values: 'clean', 'touched', 'performed'.
+
+The model also captures inheritance relationships between classes.
+The class 'egt_DiEdge' is a specialization of 'Edge'.
+The class 'egt_SingleEdge' is a specialization of 'Edge'.
+
+Relationships between classes are modeled using associations.
+An association connects 'egt_Vertex' and 'egt_Edge'. From 'egt_Vertex', the role 'egt_Vertex' has cardinality 0..*, and from 'egt_Edge', the role 'egt_Edge' has cardinality 0..*.
+An association connects 'egt_Edge' and 'egt_Vertex'. From 'egt_Edge', the role 'egt_Edge2' has cardinality 0..*, and from 'egt_Vertex', the role 'egt_Vertex3' has cardinality 0..*.
+An association connects 'egt_GraphModel' and 'egt_Vertex'. From 'egt_GraphModel', the role 'egt_GraphModel' has cardinality 0..*, and from 'egt_Vertex', the role 'egt_Vertex5' has cardinality 0..*.
+An association connects 'egt_GraphModel' and 'egt_ColorRegistry'. From 'egt_GraphModel', the role 'egt_GraphModel7' has cardinality 0..*, and from 'egt_ColorRegistry', the role 'egt_ColorRegistry' has cardinality 0..*.
+An association connects 'egt_SingleEdge' and 'egt_SingleEdge'. From 'egt_SingleEdge', the role 'egt_SingleEdge' has cardinality 0..*, and from 'egt_SingleEdge', the role 'egt_SingleEdge8' has cardinality 0..*.

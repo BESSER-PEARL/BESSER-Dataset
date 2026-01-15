@@ -1,0 +1,42 @@
+The domain model 'List' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'Test' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackage_List_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'SubTestPackage_SubTest' represents an important domain concept.
+It does not declare any attributes.
+
+'List_SubTestPackage_SubTest' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'SubTestPackage_List_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'List_List' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'size', which is of type int.
+
+'List_TestPackage_Test' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'List_Element' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'listType' defines the following possible values: 'ArrayList', 'List'.
+
+Relationships between classes are modeled using associations.
+An association connects 'List_List' and 'List_Element'. From 'List_List', the role 'List_List' has cardinality 0..*, and from 'List_Element', the role 'List_Element' has cardinality 0..*.
+An association connects 'List_Element' and 'List_List'. From 'List_Element', the role 'List_Element3' has cardinality 0..*, and from 'List_List', the role 'List_List2' has cardinality 0..*.
+An association connects 'List_Element' and 'List_List'. From 'List_Element', the role 'List_Element6' has cardinality 0..*, and from 'List_List', the role 'List_List5' has cardinality 0..*.
+An association connects 'List_List' and 'List_List'. From 'List_List', the role 'List_List9' has cardinality 0..*, and from 'List_List', the role 'List_List7' has cardinality 0..*.
+An association connects 'List_List' and 'Test'. From 'List_List', the role 'List_List11' has cardinality 0..*, and from 'Test', the role 'Test' has cardinality 0..*.
+An association connects 'List_Element' and 'List_List'. From 'List_Element', the role 'List_Element13' has cardinality 0..*, and from 'List_List', the role 'List_List14' has cardinality 0..*.
+An association connects 'List_Element' and 'SubTestPackage_SubTest'. From 'List_Element', the role 'SubTestPackage' has cardinality 0..*, and from 'SubTestPackage_SubTest', the role 'TestPackage' has cardinality 0..*.
+An association connects 'TestPackage_List_Element' and 'List_TestPackage_Test'. From 'TestPackage_List_Element', the role 'TestPackage_List_Element' has cardinality 0..*, and from 'List_TestPackage_Test', the role 'List_TestPackage_Test' has cardinality 0..*.
+An association connects 'TestPackage_List_Element' and 'List_TestPackage_Test'. From 'TestPackage_List_Element', the role 'TestPackage_List_Element19' has cardinality 0..*, and from 'List_TestPackage_Test', the role 'List_TestPackage_Test18' has cardinality 0..*.
+An association connects 'List_SubTestPackage_SubTest' and 'SubTestPackage_List_Element'. From 'List_SubTestPackage_SubTest', the role 'subTestPointer' has cardinality 0..*, and from 'SubTestPackage_List_Element', the role 'Element' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/virtualsatellite/VirtualSatellite4-FDIR/de.dlr.sc.virsat.fdir.galileo/model/generated/Dft.ecore

@@ -1,0 +1,22 @@
+The domain model 'pcg' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'pcg_Resource' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'id', which is of type str.
+
+'pcg_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'pcg_Edge' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'pcg_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'pcg_Graph' and 'pcg_Vertex'. From 'pcg_Graph', the role 'pcg_Graph' has cardinality 0..*, and from 'pcg_Vertex', the role 'pcg_Vertex' has cardinality 0..*.
+An association connects 'pcg_Graph' and 'pcg_Edge'. From 'pcg_Graph', the role 'pcg_Graph2' has cardinality 0..*, and from 'pcg_Edge', the role 'pcg_Edge' has cardinality 0..*.
+An association connects 'pcg_Vertex' and 'pcg_Resource'. From 'pcg_Vertex', the role 'pcg_Vertex4' has cardinality 0..*, and from 'pcg_Resource', the role 'pcg_Resource' has cardinality 0..*.
+An association connects 'pcg_Edge' and 'pcg_Vertex'. From 'pcg_Edge', the role 'pcg_Edge6' has cardinality 0..*, and from 'pcg_Vertex', the role 'pcg_Vertex7' has cardinality 0..*.
+An association connects 'pcg_Vertex' and 'pcg_Edge'. From 'pcg_Vertex', the role 'pcg_Vertex10' has cardinality 0..*, and from 'pcg_Edge', the role 'pcg_Edge9' has cardinality 0..*.

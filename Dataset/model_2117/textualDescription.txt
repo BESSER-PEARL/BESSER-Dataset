@@ -1,0 +1,24 @@
+The domain model 'testing' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'testing_Adapter' represents an important domain concept.
+It does not declare any attributes.
+
+'testing_TestSuite' represents an important domain concept.
+It has one attribute: 'sutName', which is of type str.
+
+'testing_Transition' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'testing_TestCoverage' represents an important domain concept.
+It does not declare any attributes.
+
+'testing_TestCase' represents an important domain concept.
+It has the following attributes: 'output', which is of type str; 'input', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'testing_TestCoverage' and 'testing_TestSuite'. From 'testing_TestCoverage', the role 'testing_TestCoverage' has cardinality 0..*, and from 'testing_TestSuite', the role 'testing_TestSuite' has cardinality 0..*.
+An association connects 'testing_TestSuite' and 'testing_Adapter'. From 'testing_TestSuite', the role 'testing_TestSuite2' has cardinality 0..*, and from 'testing_Adapter', the role 'testing_Adapter' has cardinality 0..*.
+An association connects 'testing_Adapter' and 'testing_Transition'. From 'testing_Adapter', the role 'testing_Adapter4' has cardinality 0..*, and from 'testing_Transition', the role 'testing_Transition' has cardinality 0..*.
+An association connects 'testing_TestCase' and 'testing_TestCoverage'. From 'testing_TestCase', the role 'testing_TestCase' has cardinality 0..*, and from 'testing_TestCoverage', the role 'testing_TestCoverage6' has cardinality 0..*.

@@ -1,0 +1,13 @@
+The domain model 'SimpleTree' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'SimpleTree_NodeKind' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleTree_Tree' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'SimpleTree_NodeKind' and 'SimpleTree_Tree'. From 'SimpleTree_NodeKind', the role 'SimpleTree_NodeKind' has cardinality 0..*, and from 'SimpleTree_Tree', the role 'SimpleTree_Tree' has cardinality 0..*.
+An association connects 'SimpleTree_NodeKind' and 'SimpleTree_NodeKind'. From 'SimpleTree_NodeKind', the role 'SimpleTree_NodeKind3' has cardinality 0..*, and from 'SimpleTree_NodeKind', the role 'SimpleTree_NodeKind1' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/mdc-suite/mdc/eclipse/plugins/it.mdc.model/model/dpm.ecore

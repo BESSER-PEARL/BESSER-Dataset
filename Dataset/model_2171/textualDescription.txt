@@ -1,0 +1,80 @@
+The domain model 'TypeGraphBasic' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'TypeGraphBasic_TFieldSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeGraphBasic_TClass' represents an important domain concept.
+It has one attribute: 'tName', which is of type str.
+
+'TypeGraphBasic_TMethodSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'TSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeGraphBasic_TFieldDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeGraphBasic_TPackage' represents an important domain concept.
+It has one attribute: 'tName', which is of type str.
+
+'TypeGraphBasic_TField' represents an important domain concept.
+It has one attribute: 'tName', which is of type str.
+
+'TMember' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeGraphBasic_TMethodDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeGraphBasic_TypeGraph' represents an important domain concept.
+It has one attribute: 'tName', which is of type str.
+
+'TypeGraphBasic_TSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeGraphBasic_TMethod' represents an important domain concept.
+It has one attribute: 'tName', which is of type str.
+
+'TypeGraphBasic_TMember' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'TypeGraphBasic_TFieldDefinition' is a specialization of 'TMember'.
+The class 'TypeGraphBasic_TFieldSignature' is a specialization of 'TSignature'.
+The class 'TypeGraphBasic_TMethodDefinition' is a specialization of 'TMember'.
+The class 'TypeGraphBasic_TMethodSignature' is a specialization of 'TSignature'.
+
+Relationships between classes are modeled using associations.
+An association connects 'TypeGraphBasic_TClass' and 'TypeGraphBasic_TClass'. From 'TypeGraphBasic_TClass', the role 'TClass' has cardinality 0..*, and from 'TypeGraphBasic_TClass', the role 'childClasses' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TClass' and 'TypeGraphBasic_TClass'. From 'TypeGraphBasic_TClass', the role 'TClass4' has cardinality 0..*, and from 'TypeGraphBasic_TClass', the role 'parentClass' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TClass' and 'TypeGraphBasic_TSignature'. From 'TypeGraphBasic_TClass', the role 'TypeGraphBasic_TClass' has cardinality 0..*, and from 'TypeGraphBasic_TSignature', the role 'TypeGraphBasic_TSignature' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TClass' and 'TypeGraphBasic_TPackage'. From 'TypeGraphBasic_TClass', the role 'containedClasses' has cardinality 0..*, and from 'TypeGraphBasic_TPackage', the role 'TPackage' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TClass' and 'TypeGraphBasic_TMember'. From 'TypeGraphBasic_TClass', the role 'TypeGraphBasic_TClass8' has cardinality 0..*, and from 'TypeGraphBasic_TMember', the role 'TypeGraphBasic_TMember' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TFieldSignature' and 'TypeGraphBasic_TField'. From 'TypeGraphBasic_TFieldSignature', the role 'TFieldSignature' has cardinality 0..*, and from 'TypeGraphBasic_TField', the role 'field' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TFieldDefinition' and 'TypeGraphBasic_TFieldDefinition'. From 'TypeGraphBasic_TFieldDefinition', the role 'hiddenBy' has cardinality 0..*, and from 'TypeGraphBasic_TFieldDefinition', the role 'TFieldDefinition' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TFieldDefinition' and 'TypeGraphBasic_TFieldDefinition'. From 'TypeGraphBasic_TFieldDefinition', the role 'hiding' has cardinality 0..*, and from 'TypeGraphBasic_TFieldDefinition', the role 'TFieldDefinition14' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TFieldDefinition' and 'TypeGraphBasic_TFieldSignature'. From 'TypeGraphBasic_TFieldDefinition', the role 'definitions' has cardinality 0..*, and from 'TypeGraphBasic_TFieldSignature', the role 'TFieldSignature16' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TFieldSignature' and 'TypeGraphBasic_TFieldDefinition'. From 'TypeGraphBasic_TFieldSignature', the role 'signature' has cardinality 0..*, and from 'TypeGraphBasic_TFieldDefinition', the role 'TFieldDefinition18' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TFieldSignature' and 'TypeGraphBasic_TField'. From 'TypeGraphBasic_TFieldSignature', the role 'signatures' has cardinality 0..*, and from 'TypeGraphBasic_TField', the role 'TField' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TFieldSignature' and 'TypeGraphBasic_TClass'. From 'TypeGraphBasic_TFieldSignature', the role 'TypeGraphBasic_TFieldSignature' has cardinality 0..*, and from 'TypeGraphBasic_TClass', the role 'TypeGraphBasic_TClass21' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TMember' and 'TypeGraphBasic_TMember'. From 'TypeGraphBasic_TMember', the role 'TypeGraphBasic_TMember22' has cardinality 0..*, and from 'TypeGraphBasic_TMember', the role 'TypeGraphBasic_TMember24' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TMethod' and 'TypeGraphBasic_TMethodSignature'. From 'TypeGraphBasic_TMethod', the role 'method' has cardinality 0..*, and from 'TypeGraphBasic_TMethodSignature', the role 'TMethodSignature' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TMethodDefinition' and 'TypeGraphBasic_TMethodSignature'. From 'TypeGraphBasic_TMethodDefinition', the role 'definitions27' has cardinality 0..*, and from 'TypeGraphBasic_TMethodSignature', the role 'TMethodSignature28' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TMethodDefinition' and 'TypeGraphBasic_TMethodDefinition'. From 'TypeGraphBasic_TMethodDefinition', the role 'TMethodDefinition' has cardinality 0..*, and from 'TypeGraphBasic_TMethodDefinition', the role 'overriddenBy' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TMethodDefinition' and 'TypeGraphBasic_TMethodDefinition'. From 'TypeGraphBasic_TMethodDefinition', the role 'TMethodDefinition33' has cardinality 0..*, and from 'TypeGraphBasic_TMethodDefinition', the role 'overriding' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TMethodDefinition' and 'TypeGraphBasic_TMethodDefinition'. From 'TypeGraphBasic_TMethodDefinition', the role 'overloadedBy' has cardinality 0..*, and from 'TypeGraphBasic_TMethodDefinition', the role 'TMethodDefinition36' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TMethodDefinition' and 'TypeGraphBasic_TMethodDefinition'. From 'TypeGraphBasic_TMethodDefinition', the role 'overloading' has cardinality 0..*, and from 'TypeGraphBasic_TMethodDefinition', the role 'TMethodDefinition39' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TClass' and 'TypeGraphBasic_TMethodDefinition'. From 'TypeGraphBasic_TClass', the role 'TypeGraphBasic_TClass41' has cardinality 0..*, and from 'TypeGraphBasic_TMethodDefinition', the role 'TypeGraphBasic_TMethodDefinition' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TMethodSignature' and 'TypeGraphBasic_TMethod'. From 'TypeGraphBasic_TMethodSignature', the role 'signatures43' has cardinality 0..*, and from 'TypeGraphBasic_TMethod', the role 'TMethod' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TMethodDefinition' and 'TypeGraphBasic_TMethodSignature'. From 'TypeGraphBasic_TMethodDefinition', the role 'TMethodDefinition46' has cardinality 0..*, and from 'TypeGraphBasic_TMethodSignature', the role 'signature45' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TMethodSignature' and 'TypeGraphBasic_TClass'. From 'TypeGraphBasic_TMethodSignature', the role 'TypeGraphBasic_TMethodSignature' has cardinality 0..*, and from 'TypeGraphBasic_TClass', the role 'TypeGraphBasic_TClass48' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TClass' and 'TypeGraphBasic_TPackage'. From 'TypeGraphBasic_TClass', the role 'TClass50' has cardinality 0..*, and from 'TypeGraphBasic_TPackage', the role 'package' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TPackage' and 'TypeGraphBasic_TPackage'. From 'TypeGraphBasic_TPackage', the role 'TPackage53' has cardinality 0..*, and from 'TypeGraphBasic_TPackage', the role 'parent' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TPackage' and 'TypeGraphBasic_TPackage'. From 'TypeGraphBasic_TPackage', the role 'subpackage' has cardinality 0..*, and from 'TypeGraphBasic_TPackage', the role 'TPackage56' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TPackage' and 'TypeGraphBasic_TypeGraph'. From 'TypeGraphBasic_TPackage', the role 'TypeGraphBasic_TPackage' has cardinality 0..*, and from 'TypeGraphBasic_TypeGraph', the role 'TypeGraphBasic_TypeGraph' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TMethod' and 'TypeGraphBasic_TypeGraph'. From 'TypeGraphBasic_TMethod', the role 'TypeGraphBasic_TMethod' has cardinality 0..*, and from 'TypeGraphBasic_TypeGraph', the role 'TypeGraphBasic_TypeGraph59' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TypeGraph' and 'TypeGraphBasic_TField'. From 'TypeGraphBasic_TypeGraph', the role 'TypeGraphBasic_TypeGraph61' has cardinality 0..*, and from 'TypeGraphBasic_TField', the role 'TypeGraphBasic_TField' has cardinality 0..*.
+An association connects 'TypeGraphBasic_TClass' and 'TypeGraphBasic_TypeGraph'. From 'TypeGraphBasic_TClass', the role 'TypeGraphBasic_TClass64' has cardinality 0..*, and from 'TypeGraphBasic_TypeGraph', the role 'TypeGraphBasic_TypeGraph63' has cardinality 0..*.

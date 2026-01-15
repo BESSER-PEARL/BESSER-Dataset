@@ -1,0 +1,257 @@
+The domain model 'safetyDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 60 main class(es).
+
+'safetyDSL_ImplementationDetail' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_DerivedFrom' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_SafetyFramework' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_HazardRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_SafetyCriticalViewpoint' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_SafetyViewpoint' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ArchitecturalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HazardRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'CriticalityLevel' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_LevelA' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_Reads' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_Causes' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_Starts' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_FaultDetection' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_MonitorToArchitecturalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_ClassTestCaseRelation' represents an important domain concept.
+It has one attribute: 'testCases', which is of type str.
+
+'SafetyTactic' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_ClassDef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'safetyDSL_HazardElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SafetyViewpoint' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_CriticalityLevel' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_ReportsFault' represents an important domain concept.
+It does not declare any attributes.
+
+'ArchElementToArchElement' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_FaultTreeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'safetyDSL_ArchElementToArchElement' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_ArchitecturalElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'safetyDSL_LevelC' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_Writes' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_Fault' represents an important domain concept.
+It does not declare any attributes.
+
+'FaultTreeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_FaultTree' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_Hazard' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_Consequence' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_FaultContainment' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_LevelB' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_Monitors' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_FaultAvoidance' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_Restarts' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_LevelD' represents an important domain concept.
+It does not declare any attributes.
+
+'HazardElement' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_SafetyTactic' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'safetyDSL_ANDNodeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_Commands' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_HazardViewpoint' represents an important domain concept.
+It does not declare any attributes.
+
+'MonitorToArchitecturalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_ORNodeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_Monitor' represents an important domain concept.
+It does not declare any attributes.
+
+'SafetyCriticalRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_SafetyTacticViewpoint' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_Inits' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_SafetyCriticalRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_ModuleClassRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_NonSafetyCritical' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_SafetyRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_SafeState' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_CausedBy' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_Stops' represents an important domain concept.
+It does not declare any attributes.
+
+'safetyDSL_SafetyCritical' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'safetyDSL_HazardViewpoint' is a specialization of 'SafetyViewpoint'.
+The class 'safetyDSL_Hazard' is a specialization of 'HazardElement'.
+The class 'safetyDSL_SafetyRequirement' is a specialization of 'HazardElement'.
+The class 'safetyDSL_Consequence' is a specialization of 'HazardElement'.
+The class 'safetyDSL_Fault' is a specialization of 'HazardElement'.
+The class 'safetyDSL_FaultTree' is a specialization of 'HazardElement'.
+The class 'safetyDSL_DerivedFrom' is a specialization of 'HazardRelation'.
+The class 'safetyDSL_Causes' is a specialization of 'HazardRelation'.
+The class 'safetyDSL_CausedBy' is a specialization of 'HazardRelation'.
+The class 'safetyDSL_SafetyTacticViewpoint' is a specialization of 'SafetyViewpoint'.
+The class 'safetyDSL_FaultAvoidance' is a specialization of 'SafetyTactic'.
+The class 'safetyDSL_FaultDetection' is a specialization of 'SafetyTactic'.
+The class 'safetyDSL_FaultContainment' is a specialization of 'SafetyTactic'.
+The class 'safetyDSL_SafetyCriticalViewpoint' is a specialization of 'SafetyViewpoint'.
+The class 'safetyDSL_SafetyCritical' is a specialization of 'ArchitecturalElement'.
+The class 'safetyDSL_NonSafetyCritical' is a specialization of 'ArchitecturalElement'.
+The class 'safetyDSL_Monitor' is a specialization of 'ArchitecturalElement'.
+The class 'safetyDSL_ArchElementToArchElement' is a specialization of 'SafetyCriticalRelation'.
+The class 'safetyDSL_MonitorToArchitecturalElement' is a specialization of 'SafetyCriticalRelation'.
+The class 'safetyDSL_ReportsFault' is a specialization of 'SafetyCriticalRelation'.
+The class 'safetyDSL_ORNodeExpression' is a specialization of 'FaultTreeNode'.
+The class 'safetyDSL_ANDNodeExpression' is a specialization of 'FaultTreeNode'.
+The class 'safetyDSL_LevelA' is a specialization of 'CriticalityLevel'.
+The class 'safetyDSL_LevelB' is a specialization of 'CriticalityLevel'.
+The class 'safetyDSL_LevelC' is a specialization of 'CriticalityLevel'.
+The class 'safetyDSL_LevelD' is a specialization of 'CriticalityLevel'.
+The class 'safetyDSL_SafeState' is a specialization of 'State'.
+The class 'safetyDSL_Reads' is a specialization of 'ArchElementToArchElement'.
+The class 'safetyDSL_Writes' is a specialization of 'ArchElementToArchElement'.
+The class 'safetyDSL_Commands' is a specialization of 'ArchElementToArchElement'.
+The class 'safetyDSL_Stops' is a specialization of 'MonitorToArchitecturalElement'.
+The class 'safetyDSL_Starts' is a specialization of 'MonitorToArchitecturalElement'.
+The class 'safetyDSL_Inits' is a specialization of 'MonitorToArchitecturalElement'.
+The class 'safetyDSL_Restarts' is a specialization of 'MonitorToArchitecturalElement'.
+The class 'safetyDSL_Monitors' is a specialization of 'MonitorToArchitecturalElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'safetyDSL_SafetyViewpoint' and 'safetyDSL_SafetyFramework'. From 'safetyDSL_SafetyViewpoint', the role 'safetyDSL_SafetyViewpoint' has cardinality 0..*, and from 'safetyDSL_SafetyFramework', the role 'safetyDSL_SafetyFramework' has cardinality 0..*.
+An association connects 'safetyDSL_ImplementationDetail' and 'safetyDSL_SafetyFramework'. From 'safetyDSL_ImplementationDetail', the role 'safetyDSL_ImplementationDetail' has cardinality 0..*, and from 'safetyDSL_SafetyFramework', the role 'safetyDSL_SafetyFramework2' has cardinality 0..*.
+An association connects 'safetyDSL_HazardViewpoint' and 'safetyDSL_HazardElement'. From 'safetyDSL_HazardViewpoint', the role 'safetyDSL_HazardViewpoint' has cardinality 0..*, and from 'safetyDSL_HazardElement', the role 'safetyDSL_HazardElement' has cardinality 0..*.
+An association connects 'safetyDSL_HazardViewpoint' and 'safetyDSL_HazardRelation'. From 'safetyDSL_HazardViewpoint', the role 'safetyDSL_HazardViewpoint5' has cardinality 0..*, and from 'safetyDSL_HazardRelation', the role 'safetyDSL_HazardRelation' has cardinality 0..*.
+An association connects 'safetyDSL_SafetyRequirement' and 'safetyDSL_SafetyRequirement'. From 'safetyDSL_SafetyRequirement', the role 'safetyDSL_SafetyRequirement6' has cardinality 0..*, and from 'safetyDSL_SafetyRequirement', the role 'safetyDSL_SafetyRequirement' has cardinality 0..*.
+An association connects 'safetyDSL_FaultTreeNode' and 'safetyDSL_FaultTree'. From 'safetyDSL_FaultTreeNode', the role 'safetyDSL_FaultTreeNode' has cardinality 0..*, and from 'safetyDSL_FaultTree', the role 'safetyDSL_FaultTree' has cardinality 0..*.
+An association connects 'safetyDSL_FaultTreeNode' and 'safetyDSL_Fault'. From 'safetyDSL_FaultTreeNode', the role 'safetyDSL_FaultTreeNode10' has cardinality 0..*, and from 'safetyDSL_Fault', the role 'safetyDSL_Fault' has cardinality 0..*.
+An association connects 'safetyDSL_FaultTreeNode' and 'safetyDSL_FaultTreeNode'. From 'safetyDSL_FaultTreeNode', the role 'safetyDSL_FaultTreeNode13' has cardinality 0..*, and from 'safetyDSL_FaultTreeNode', the role 'safetyDSL_FaultTreeNode11' has cardinality 0..*.
+An association connects 'safetyDSL_FaultTreeNode' and 'safetyDSL_FaultTreeNode'. From 'safetyDSL_FaultTreeNode', the role 'safetyDSL_FaultTreeNode16' has cardinality 0..*, and from 'safetyDSL_FaultTreeNode', the role 'safetyDSL_FaultTreeNode14' has cardinality 0..*.
+An association connects 'safetyDSL_Hazard' and 'safetyDSL_HazardRelation'. From 'safetyDSL_Hazard', the role 'safetyDSL_Hazard' has cardinality 0..*, and from 'safetyDSL_HazardRelation', the role 'safetyDSL_HazardRelation18' has cardinality 0..*.
+An association connects 'safetyDSL_SafetyRequirement' and 'safetyDSL_DerivedFrom'. From 'safetyDSL_SafetyRequirement', the role 'safetyDSL_SafetyRequirement20' has cardinality 0..*, and from 'safetyDSL_DerivedFrom', the role 'safetyDSL_DerivedFrom' has cardinality 0..*.
+An association connects 'safetyDSL_Causes' and 'safetyDSL_Consequence'. From 'safetyDSL_Causes', the role 'safetyDSL_Causes' has cardinality 0..*, and from 'safetyDSL_Consequence', the role 'safetyDSL_Consequence' has cardinality 0..*.
+An association connects 'safetyDSL_FaultTree' and 'safetyDSL_CausedBy'. From 'safetyDSL_FaultTree', the role 'safetyDSL_FaultTree23' has cardinality 0..*, and from 'safetyDSL_CausedBy', the role 'safetyDSL_CausedBy' has cardinality 0..*.
+An association connects 'safetyDSL_SafetyTactic' and 'safetyDSL_SafetyTacticViewpoint'. From 'safetyDSL_SafetyTactic', the role 'safetyDSL_SafetyTactic' has cardinality 0..*, and from 'safetyDSL_SafetyTacticViewpoint', the role 'safetyDSL_SafetyTacticViewpoint' has cardinality 0..*.
+An association connects 'safetyDSL_Fault' and 'safetyDSL_SafetyTactic'. From 'safetyDSL_Fault', the role 'safetyDSL_Fault27' has cardinality 0..*, and from 'safetyDSL_SafetyTactic', the role 'safetyDSL_SafetyTactic26' has cardinality 0..*.
+An association connects 'safetyDSL_ArchitecturalElement' and 'safetyDSL_SafetyCriticalViewpoint'. From 'safetyDSL_ArchitecturalElement', the role 'safetyDSL_ArchitecturalElement' has cardinality 0..*, and from 'safetyDSL_SafetyCriticalViewpoint', the role 'safetyDSL_SafetyCriticalViewpoint' has cardinality 0..*.
+An association connects 'safetyDSL_SafetyCriticalViewpoint' and 'safetyDSL_SafetyCriticalRelation'. From 'safetyDSL_SafetyCriticalViewpoint', the role 'safetyDSL_SafetyCriticalViewpoint30' has cardinality 0..*, and from 'safetyDSL_SafetyCriticalRelation', the role 'safetyDSL_SafetyCriticalRelation' has cardinality 0..*.
+An association connects 'safetyDSL_CriticalityLevel' and 'safetyDSL_SafetyCritical'. From 'safetyDSL_CriticalityLevel', the role 'safetyDSL_CriticalityLevel' has cardinality 0..*, and from 'safetyDSL_SafetyCritical', the role 'safetyDSL_SafetyCritical' has cardinality 0..*.
+An association connects 'safetyDSL_SafetyCritical' and 'safetyDSL_SafetyRequirement'. From 'safetyDSL_SafetyCritical', the role 'safetyDSL_SafetyCritical33' has cardinality 0..*, and from 'safetyDSL_SafetyRequirement', the role 'safetyDSL_SafetyRequirement34' has cardinality 0..*.
+An association connects 'safetyDSL_SafetyCritical' and 'safetyDSL_SafetyTactic'. From 'safetyDSL_SafetyCritical', the role 'safetyDSL_SafetyCritical36' has cardinality 0..*, and from 'safetyDSL_SafetyTactic', the role 'safetyDSL_SafetyTactic37' has cardinality 0..*.
+An association connects 'safetyDSL_SafetyCritical' and 'safetyDSL_SafetyCritical'. From 'safetyDSL_SafetyCritical', the role 'safetyDSL_SafetyCritical38' has cardinality 0..*, and from 'safetyDSL_SafetyCritical', the role 'safetyDSL_SafetyCritical40' has cardinality 0..*.
+An association connects 'safetyDSL_State' and 'safetyDSL_SafetyCritical'. From 'safetyDSL_State', the role 'safetyDSL_State' has cardinality 0..*, and from 'safetyDSL_SafetyCritical', the role 'safetyDSL_SafetyCritical42' has cardinality 0..*.
+An association connects 'safetyDSL_NonSafetyCritical' and 'safetyDSL_NonSafetyCritical'. From 'safetyDSL_NonSafetyCritical', the role 'safetyDSL_NonSafetyCritical' has cardinality 0..*, and from 'safetyDSL_NonSafetyCritical', the role 'safetyDSL_NonSafetyCritical43' has cardinality 0..*.
+An association connects 'safetyDSL_Monitor' and 'safetyDSL_SafetyTactic'. From 'safetyDSL_Monitor', the role 'safetyDSL_Monitor' has cardinality 0..*, and from 'safetyDSL_SafetyTactic', the role 'safetyDSL_SafetyTactic46' has cardinality 0..*.
+An association connects 'safetyDSL_ArchitecturalElement' and 'safetyDSL_ArchElementToArchElement'. From 'safetyDSL_ArchitecturalElement', the role 'safetyDSL_ArchitecturalElement48' has cardinality 0..*, and from 'safetyDSL_ArchElementToArchElement', the role 'safetyDSL_ArchElementToArchElement' has cardinality 0..*.
+An association connects 'safetyDSL_ArchitecturalElement' and 'safetyDSL_ArchElementToArchElement'. From 'safetyDSL_ArchitecturalElement', the role 'safetyDSL_ArchitecturalElement51' has cardinality 0..*, and from 'safetyDSL_ArchElementToArchElement', the role 'safetyDSL_ArchElementToArchElement50' has cardinality 0..*.
+An association connects 'safetyDSL_Monitor' and 'safetyDSL_MonitorToArchitecturalElement'. From 'safetyDSL_Monitor', the role 'safetyDSL_Monitor53' has cardinality 0..*, and from 'safetyDSL_MonitorToArchitecturalElement', the role 'safetyDSL_MonitorToArchitecturalElement' has cardinality 0..*.
+An association connects 'safetyDSL_MonitorToArchitecturalElement' and 'safetyDSL_SafetyCritical'. From 'safetyDSL_MonitorToArchitecturalElement', the role 'safetyDSL_MonitorToArchitecturalElement55' has cardinality 0..*, and from 'safetyDSL_SafetyCritical', the role 'safetyDSL_SafetyCritical56' has cardinality 0..*.
+An association connects 'safetyDSL_SafetyCritical' and 'safetyDSL_ReportsFault'. From 'safetyDSL_SafetyCritical', the role 'safetyDSL_SafetyCritical58' has cardinality 0..*, and from 'safetyDSL_ReportsFault', the role 'safetyDSL_ReportsFault' has cardinality 0..*.
+An association connects 'safetyDSL_SafetyCritical' and 'safetyDSL_ReportsFault'. From 'safetyDSL_SafetyCritical', the role 'safetyDSL_SafetyCritical61' has cardinality 0..*, and from 'safetyDSL_ReportsFault', the role 'safetyDSL_ReportsFault60' has cardinality 0..*.
+An association connects 'safetyDSL_ModuleClassRelation' and 'safetyDSL_ImplementationDetail'. From 'safetyDSL_ModuleClassRelation', the role 'safetyDSL_ModuleClassRelation' has cardinality 0..*, and from 'safetyDSL_ImplementationDetail', the role 'safetyDSL_ImplementationDetail63' has cardinality 0..*.
+An association connects 'safetyDSL_ImplementationDetail' and 'safetyDSL_ClassTestCaseRelation'. From 'safetyDSL_ImplementationDetail', the role 'safetyDSL_ImplementationDetail65' has cardinality 0..*, and from 'safetyDSL_ClassTestCaseRelation', the role 'safetyDSL_ClassTestCaseRelation' has cardinality 0..*.
+An association connects 'safetyDSL_ArchitecturalElement' and 'safetyDSL_ModuleClassRelation'. From 'safetyDSL_ArchitecturalElement', the role 'safetyDSL_ArchitecturalElement68' has cardinality 0..*, and from 'safetyDSL_ModuleClassRelation', the role 'safetyDSL_ModuleClassRelation67' has cardinality 0..*.
+An association connects 'safetyDSL_ClassDef' and 'safetyDSL_ModuleClassRelation'. From 'safetyDSL_ClassDef', the role 'safetyDSL_ClassDef' has cardinality 0..*, and from 'safetyDSL_ModuleClassRelation', the role 'safetyDSL_ModuleClassRelation70' has cardinality 0..*.
+An association connects 'safetyDSL_ClassDef' and 'safetyDSL_ClassTestCaseRelation'. From 'safetyDSL_ClassDef', the role 'safetyDSL_ClassDef73' has cardinality 0..*, and from 'safetyDSL_ClassTestCaseRelation', the role 'safetyDSL_ClassTestCaseRelation72' has cardinality 0..*.

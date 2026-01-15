@@ -1,0 +1,55 @@
+The domain model 'university' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'university_ProgrammeSemesters' represents an important domain concept.
+It does not declare any attributes.
+
+'university_Semesters' represents an important domain concept.
+It has the following attributes: 'semesterTime', which is of type str; 'year', which is of type int.
+
+'university_Slot' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'points', which is of type int; 'slotType', which is of type str.
+
+'university_University' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'university_Programmes' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'code', which is of type str.
+
+'university_Specializations' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'university_ProgrammeInstances' represents an important domain concept.
+It has one attribute: 'startYear', which is of type int.
+
+'university_CourseInstances' represents an important domain concept.
+It does not declare any attributes.
+
+'university_Courses' represents an important domain concept.
+It has the following attributes: 'credits', which is of type float; 'name', which is of type str; 'code', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SemesterTime' defines the following possible values: 'Fall', 'Spring'.
+The enumeration 'SlotType' defines the following possible values: 'V', 'O', 'V2'.
+
+Relationships between classes are modeled using associations.
+An association connects 'university_Programmes' and 'university_ProgrammeInstances'. From 'university_Programmes', the role 'programme' has cardinality 0..*, and from 'university_ProgrammeInstances', the role 'ProgrammeInstances' has cardinality 0..*.
+An association connects 'university_Programmes' and 'university_ProgrammeInstances'. From 'university_Programmes', the role 'Programmes' has cardinality 0..*, and from 'university_ProgrammeInstances', the role 'instances' has cardinality 0..*.
+An association connects 'university_ProgrammeSemesters' and 'university_ProgrammeInstances'. From 'university_ProgrammeSemesters', the role 'ProgrammeSemesters' has cardinality 0..*, and from 'university_ProgrammeInstances', the role 'programmeInstance' has cardinality 0..*.
+An association connects 'university_ProgrammeInstances' and 'university_Specializations'. From 'university_ProgrammeInstances', the role 'programmeInstance4' has cardinality 0..*, and from 'university_Specializations', the role 'Specializations' has cardinality 0..*.
+An association connects 'university_Courses' and 'university_CourseInstances'. From 'university_Courses', the role 'course' has cardinality 0..*, and from 'university_CourseInstances', the role 'CourseInstances' has cardinality 0..*.
+An association connects 'university_Courses' and 'university_CourseInstances'. From 'university_Courses', the role 'Courses' has cardinality 0..*, and from 'university_CourseInstances', the role 'instances7' has cardinality 0..*.
+An association connects 'university_Semesters' and 'university_CourseInstances'. From 'university_Semesters', the role 'university_Semesters' has cardinality 0..*, and from 'university_CourseInstances', the role 'university_CourseInstances' has cardinality 0..*.
+An association connects 'university_ProgrammeInstances' and 'university_ProgrammeSemesters'. From 'university_ProgrammeInstances', the role 'ProgrammeInstances10' has cardinality 0..*, and from 'university_ProgrammeSemesters', the role 'programmeSemesters' has cardinality 0..*.
+An association connects 'university_ProgrammeSemesters' and 'university_Slot'. From 'university_ProgrammeSemesters', the role 'programmeSemester' has cardinality 0..*, and from 'university_Slot', the role 'Slot' has cardinality 0..*.
+An association connects 'university_Semesters' and 'university_ProgrammeSemesters'. From 'university_Semesters', the role 'Semesters' has cardinality 0..*, and from 'university_ProgrammeSemesters', the role 'programmeSemesters13' has cardinality 0..*.
+An association connects 'university_Specializations' and 'university_ProgrammeSemesters'. From 'university_Specializations', the role 'Specializations16' has cardinality 0..*, and from 'university_ProgrammeSemesters', the role 'programmeSemester15' has cardinality 0..*.
+An association connects 'university_ProgrammeSemesters' and 'university_Slot'. From 'university_ProgrammeSemesters', the role 'ProgrammeSemesters18' has cardinality 0..*, and from 'university_Slot', the role 'slots' has cardinality 0..*.
+An association connects 'university_Slot' and 'university_CourseInstances'. From 'university_Slot', the role 'university_Slot' has cardinality 0..*, and from 'university_CourseInstances', the role 'university_CourseInstances20' has cardinality 0..*.
+An association connects 'university_Semesters' and 'university_ProgrammeSemesters'. From 'university_Semesters', the role 'semester' has cardinality 0..*, and from 'university_ProgrammeSemesters', the role 'ProgrammeSemesters22' has cardinality 0..*.
+An association connects 'university_ProgrammeInstances' and 'university_Specializations'. From 'university_ProgrammeInstances', the role 'ProgrammeInstances24' has cardinality 0..*, and from 'university_Specializations', the role 'specializations' has cardinality 0..*.
+An association connects 'university_Specializations' and 'university_ProgrammeSemesters'. From 'university_Specializations', the role 'specialization' has cardinality 0..*, and from 'university_ProgrammeSemesters', the role 'ProgrammeSemesters26' has cardinality 0..*.
+An association connects 'university_Programmes' and 'university_University'. From 'university_Programmes', the role 'university_Programmes' has cardinality 0..*, and from 'university_University', the role 'university_University' has cardinality 0..*.
+An association connects 'university_Courses' and 'university_University'. From 'university_Courses', the role 'university_Courses' has cardinality 0..*, and from 'university_University', the role 'university_University29' has cardinality 0..*.
+An association connects 'university_University' and 'university_Semesters'. From 'university_University', the role 'university_University31' has cardinality 0..*, and from 'university_Semesters', the role 'university_Semesters32' has cardinality 0..*.
