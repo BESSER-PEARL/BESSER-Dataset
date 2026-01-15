@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/gemoc/gemoc-studio/official_samples/TFSM_PlainK3/language_workbench/org.gemoc.sample.tfsm.sequential.xtfsm/model/XTfsm.ecore

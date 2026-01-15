@@ -1,0 +1,99 @@
+The domain model 'SimplePDLSemantics' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'SPDLSimEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'WorkDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplePDLSemantics_TM3SimplePDL_SPDLSimEvent' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'date', which is of type int; 'internal', which is of type bool.
+
+'SimplePDLSemantics_DDMMSimplePDL_WorkSequence' represents an important domain concept.
+It has one attribute: 'linkType', which is of type str.
+
+'SimplePDLSemantics_DDMMSimplePDL_Guidance' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'SimplePDLSemantics_EDMMSimplePDL_FinishWD' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+'WorkSequence' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplePDLSemantics_TM3SimplePDL_SPDLTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplePDLSemantics_TM3SimplePDL_SPDLScenario' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplePDLSemantics_EDMMSimplePDL_StartWD' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplePDLSemantics_EDMMSimplePDL_WorkDefinitionEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'WorkDefinitionEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'Process' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplePDLSemantics_DDMMSimplePDL_Process' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SimplePDLSemantics_SDMMSimplePDL_DynamicWorkDefinition' represents an important domain concept.
+It has the following attributes: 'timeElapsed', which is of type float; 'time', which is of type str; 'state', which is of type str.
+
+'SPDLScenario' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplePDLSemantics_EDMMSimplePDL_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplePDLSemantics_DDMMSimplePDL_WorkDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SPDLTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplePDLSemantics_DDMMSimplePDL_ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TimeState' defines the following possible values: 'tooLate', 'tooEarly', 'inTime'.
+The enumeration 'ExecutionState' defines the following possible values: 'running', 'finished', 'notStarted'.
+The enumeration 'WorkSequenceType' defines the following possible values: 'startToFinish', 'finishToStart', 'startToStart', 'finishToFinish'.
+
+The model also captures inheritance relationships between classes.
+The class 'SimplePDLSemantics_DDMMSimplePDL_WorkDefinition' is a specialization of 'ProcessElement'.
+The class 'SimplePDLSemantics_DDMMSimplePDL_WorkSequence' is a specialization of 'ProcessElement'.
+The class 'SimplePDLSemantics_DDMMSimplePDL_Guidance' is a specialization of 'ProcessElement'.
+The class 'SimplePDLSemantics_EDMMSimplePDL_Event' is a specialization of 'SPDLSimEvent'.
+The class 'SimplePDLSemantics_EDMMSimplePDL_WorkDefinitionEvent' is a specialization of 'Event'.
+The class 'SimplePDLSemantics_EDMMSimplePDL_StartWD' is a specialization of 'WorkDefinitionEvent'.
+The class 'SimplePDLSemantics_EDMMSimplePDL_FinishWD' is a specialization of 'WorkDefinitionEvent'.
+The class 'SimplePDLSemantics_SDMMSimplePDL_DynamicWorkDefinition' is a specialization of 'WorkDefinition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ProcessElement' and 'SimplePDLSemantics_DDMMSimplePDL_Process'. From 'ProcessElement', the role 'DDMMSimplePDL' has cardinality 0..*, and from 'SimplePDLSemantics_DDMMSimplePDL_Process', the role 'ProcessElement' has cardinality 0..*.
+An association connects 'WorkDefinition' and 'SimplePDLSemantics_DDMMSimplePDL_Process'. From 'WorkDefinition', the role 'DDMMSimplePDL2' has cardinality 0..*, and from 'SimplePDLSemantics_DDMMSimplePDL_Process', the role 'WorkDefinition' has cardinality 0..*.
+An association connects 'WorkSequence' and 'SimplePDLSemantics_DDMMSimplePDL_WorkDefinition'. From 'WorkSequence', the role 'DDMMSimplePDL4' has cardinality 0..*, and from 'SimplePDLSemantics_DDMMSimplePDL_WorkDefinition', the role 'WorkSequence' has cardinality 0..*.
+An association connects 'SimplePDLSemantics_DDMMSimplePDL_WorkDefinition' and 'WorkSequence'. From 'SimplePDLSemantics_DDMMSimplePDL_WorkDefinition', the role 'WorkSequence6' has cardinality 0..*, and from 'WorkSequence', the role 'DDMMSimplePDL7' has cardinality 0..*.
+An association connects 'Process' and 'SimplePDLSemantics_DDMMSimplePDL_WorkDefinition'. From 'Process', the role 'DDMMSimplePDL9' has cardinality 0..*, and from 'SimplePDLSemantics_DDMMSimplePDL_WorkDefinition', the role 'Process' has cardinality 0..*.
+An association connects 'SimplePDLSemantics_DDMMSimplePDL_WorkSequence' and 'WorkDefinition'. From 'SimplePDLSemantics_DDMMSimplePDL_WorkSequence', the role 'WorkDefinition11' has cardinality 0..*, and from 'WorkDefinition', the role 'DDMMSimplePDL12' has cardinality 0..*.
+An association connects 'WorkDefinition' and 'SimplePDLSemantics_DDMMSimplePDL_WorkSequence'. From 'WorkDefinition', the role 'DDMMSimplePDL15' has cardinality 0..*, and from 'SimplePDLSemantics_DDMMSimplePDL_WorkSequence', the role 'WorkDefinition14' has cardinality 0..*.
+An association connects 'SimplePDLSemantics_DDMMSimplePDL_ProcessElement' and 'Process'. From 'SimplePDLSemantics_DDMMSimplePDL_ProcessElement', the role 'Process17' has cardinality 0..*, and from 'Process', the role 'DDMMSimplePDL18' has cardinality 0..*.
+An association connects 'ProcessElement' and 'SimplePDLSemantics_DDMMSimplePDL_Guidance'. From 'ProcessElement', the role 'ProcessElement20' has cardinality 0..*, and from 'SimplePDLSemantics_DDMMSimplePDL_Guidance', the role 'SimplePDLSemantics_DDMMSimplePDL_Guidance' has cardinality 0..*.
+An association connects 'WorkDefinition' and 'SimplePDLSemantics_EDMMSimplePDL_WorkDefinitionEvent'. From 'WorkDefinition', the role 'WorkDefinition22' has cardinality 0..*, and from 'SimplePDLSemantics_EDMMSimplePDL_WorkDefinitionEvent', the role 'SimplePDLSemantics_EDMMSimplePDL_WorkDefinitionEvent' has cardinality 0..*.
+An association connects 'SimplePDLSemantics_TM3SimplePDL_SPDLScenario' and 'SPDLTrace'. From 'SimplePDLSemantics_TM3SimplePDL_SPDLScenario', the role 'SPDLTrace' has cardinality 0..*, and from 'SPDLTrace', the role 'TM3SimplePDL' has cardinality 0..*.
+An association connects 'SPDLSimEvent' and 'SimplePDLSemantics_TM3SimplePDL_SPDLScenario'. From 'SPDLSimEvent', the role 'SPDLSimEvent' has cardinality 0..*, and from 'SimplePDLSemantics_TM3SimplePDL_SPDLScenario', the role 'SimplePDLSemantics_TM3SimplePDL_SPDLScenario' has cardinality 0..*.
+An association connects 'SimplePDLSemantics_TM3SimplePDL_SPDLTrace' and 'SPDLScenario'. From 'SimplePDLSemantics_TM3SimplePDL_SPDLTrace', the role 'SPDLScenario' has cardinality 0..*, and from 'SPDLScenario', the role 'TM3SimplePDL26' has cardinality 0..*.

@@ -1,0 +1,155 @@
+The domain model 'PHPMVC' describes the core structural elements and their relationships within the system.
+
+The model defines 37 main class(es).
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'PHPMVC_extPHP_TextField' represents an important domain concept.
+It does not declare any attributes.
+
+'PHPMVC_extPHP_Form' represents an important domain concept.
+It has the following attributes: 'method', which is of type str; 'target', which is of type str; 'action', which is of type str.
+
+'Input' represents an important domain concept.
+It does not declare any attributes.
+
+'MVCClass' represents an important domain concept.
+It does not declare any attributes.
+
+'PHPMVC_coreMVC_Method' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'PHPMVC_extPHP_HTMLElement' represents an important domain concept.
+It has the following attributes: 'isEmpty', which is of type bool; 'isPairedTag', which is of type bool; 'tagName', which is of type str.
+
+'PHPMVC_extPHP_Text' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'content', which is of type str.
+
+'ViewComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'PHPMVC_coreMVC_ViewComponent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PHPMVC_extPHP_Input' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'value', which is of type str.
+
+'PHPMVC_extPHP_Image' represents an important domain concept.
+It has one attribute: 'source', which is of type str.
+
+'View' represents an important domain concept.
+It does not declare any attributes.
+
+'PHPMVC_extPHP_Checkbox' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageView' represents an important domain concept.
+It does not declare any attributes.
+
+'PHPMVC_coreMVC_View' represents an important domain concept.
+It does not declare any attributes.
+
+'PHPMVC_coreMVC_Event' represents an important domain concept.
+It has the following attributes: 'handler', which is of type str; 'type', which is of type str.
+
+'PHPMVC_coreMVC_PackageController' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PHPMVC_extPHP_RadioButton' represents an important domain concept.
+It does not declare any attributes.
+
+'HTMLElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PHPMVC_coreMVC_MVCClass' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PHPMVC_extPHP_Anchor' represents an important domain concept.
+It has the following attributes: 'content', which is of type str; 'hypRef', which is of type str; 'target', which is of type str.
+
+'Method' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageController' represents an important domain concept.
+It does not declare any attributes.
+
+'PHPMVC_coreMVC_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Controller' represents an important domain concept.
+It does not declare any attributes.
+
+'PHPMVC_coreMVC_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PHPMVC_coreMVC_Controller' represents an important domain concept.
+It does not declare any attributes.
+
+'Model' represents an important domain concept.
+It does not declare any attributes.
+
+'PHPMVC_coreMVC_PackageModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PHPMVC_coreMVC_Application' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'locale', which is of type str; 'name', which is of type str; 'routes', which is of type str.
+
+'PackageModel' represents an important domain concept.
+It does not declare any attributes.
+
+'PHPMVC_extPHP_Button' represents an important domain concept.
+It has the following attributes: 'content', which is of type str; 'type', which is of type str; 'disabled', which is of type bool.
+
+'PHPMVC_coreMVC_Identifier' represents an important domain concept.
+It has one attribute: 'isAutoincremental', which is of type bool.
+
+'PHPMVC_coreMVC_PackageView' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ButtonType' defines the following possible values: 'submit', 'button', 'reset', 'workaround'.
+The enumeration 'TargetType' defines the following possible values: 'parent', 'self', 'top', 'framename', 'workaround', 'blank'.
+The enumeration 'MethodType' defines the following possible values: 'get', 'patch', 'post', 'workaround', 'head', 'delete', 'put'.
+The enumeration 'HTMLTag' defines the following possible values: 'a', 'button', 'form', 'input', 'workaround', 'p', 'img'.
+The enumeration 'EventType' defines the following possible values: 'workaround', 'onLoad', 'onError', 'onSubmit'.
+The enumeration 'InputType' defines the following possible values: 'radio', 'checkbox', 'workaround', 'text'.
+
+The model also captures inheritance relationships between classes.
+The class 'PHPMVC_coreMVC_Model' is a specialization of 'MVCClass'.
+The class 'PHPMVC_coreMVC_View' is a specialization of 'MVCClass'.
+The class 'PHPMVC_coreMVC_Controller' is a specialization of 'MVCClass'.
+The class 'PHPMVC_coreMVC_Identifier' is a specialization of 'Attribute'.
+The class 'PHPMVC_extPHP_HTMLElement' is a specialization of 'ViewComponent'.
+The class 'PHPMVC_extPHP_Form' is a specialization of 'HTMLElement'.
+The class 'PHPMVC_extPHP_Button' is a specialization of 'HTMLElement'.
+The class 'PHPMVC_extPHP_Text' is a specialization of 'HTMLElement'.
+The class 'PHPMVC_extPHP_Anchor' is a specialization of 'HTMLElement'.
+The class 'PHPMVC_extPHP_Image' is a specialization of 'HTMLElement'.
+The class 'PHPMVC_extPHP_Input' is a specialization of 'HTMLElement'.
+The class 'PHPMVC_extPHP_TextField' is a specialization of 'Input'.
+The class 'PHPMVC_extPHP_Checkbox' is a specialization of 'Input'.
+The class 'PHPMVC_extPHP_RadioButton' is a specialization of 'Input'.
+
+Relationships between classes are modeled using associations.
+An association connects 'PackageModel' and 'PHPMVC_coreMVC_Application'. From 'PackageModel', the role 'PackageModel' has cardinality 0..*, and from 'PHPMVC_coreMVC_Application', the role 'PHPMVC_coreMVC_Application' has cardinality 0..*.
+An association connects 'PHPMVC_coreMVC_Application' and 'PackageView'. From 'PHPMVC_coreMVC_Application', the role 'PHPMVC_coreMVC_Application2' has cardinality 0..*, and from 'PackageView', the role 'PackageView' has cardinality 0..*.
+An association connects 'PHPMVC_coreMVC_Application' and 'PackageController'. From 'PHPMVC_coreMVC_Application', the role 'PHPMVC_coreMVC_Application4' has cardinality 0..*, and from 'PackageController', the role 'PackageController' has cardinality 0..*.
+An association connects 'PHPMVC_coreMVC_PackageModel' and 'Model'. From 'PHPMVC_coreMVC_PackageModel', the role 'PHPMVC_coreMVC_PackageModel' has cardinality 0..*, and from 'Model', the role 'Model' has cardinality 0..*.
+An association connects 'View' and 'PHPMVC_coreMVC_PackageView'. From 'View', the role 'View' has cardinality 0..*, and from 'PHPMVC_coreMVC_PackageView', the role 'PHPMVC_coreMVC_PackageView' has cardinality 0..*.
+An association connects 'Controller' and 'PHPMVC_coreMVC_PackageController'. From 'Controller', the role 'Controller' has cardinality 0..*, and from 'PHPMVC_coreMVC_PackageController', the role 'PHPMVC_coreMVC_PackageController' has cardinality 0..*.
+An association connects 'PHPMVC_coreMVC_MVCClass' and 'Attribute'. From 'PHPMVC_coreMVC_MVCClass', the role 'PHPMVC_coreMVC_MVCClass' has cardinality 0..*, and from 'Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'PHPMVC_coreMVC_Model' and 'Identifier'. From 'PHPMVC_coreMVC_Model', the role 'PHPMVC_coreMVC_Model' has cardinality 0..*, and from 'Identifier', the role 'Identifier' has cardinality 0..*.
+An association connects 'PHPMVC_coreMVC_View' and 'ViewComponent'. From 'PHPMVC_coreMVC_View', the role 'PHPMVC_coreMVC_View' has cardinality 0..*, and from 'ViewComponent', the role 'ViewComponent' has cardinality 0..*.
+An association connects 'PHPMVC_coreMVC_View' and 'View'. From 'PHPMVC_coreMVC_View', the role 'PHPMVC_coreMVC_View12' has cardinality 0..*, and from 'View', the role 'View13' has cardinality 0..*.
+An association connects 'PHPMVC_coreMVC_Controller' and 'Method'. From 'PHPMVC_coreMVC_Controller', the role 'PHPMVC_coreMVC_Controller' has cardinality 0..*, and from 'Method', the role 'Method' has cardinality 0..*.
+An association connects 'Attribute' and 'PHPMVC_coreMVC_Method'. From 'Attribute', the role 'Attribute16' has cardinality 0..*, and from 'PHPMVC_coreMVC_Method', the role 'PHPMVC_coreMVC_Method' has cardinality 0..*.
+An association connects 'Attribute' and 'PHPMVC_coreMVC_Method'. From 'Attribute', the role 'Attribute19' has cardinality 0..*, and from 'PHPMVC_coreMVC_Method', the role 'PHPMVC_coreMVC_Method18' has cardinality 0..*.
+An association connects 'Event' and 'PHPMVC_coreMVC_ViewComponent'. From 'Event', the role 'Event' has cardinality 0..*, and from 'PHPMVC_coreMVC_ViewComponent', the role 'PHPMVC_coreMVC_ViewComponent' has cardinality 0..*.
+An association connects 'HTMLElement' and 'PHPMVC_extPHP_HTMLElement'. From 'HTMLElement', the role 'HTMLElement' has cardinality 0..*, and from 'PHPMVC_extPHP_HTMLElement', the role 'PHPMVC_extPHP_HTMLElement' has cardinality 0..*.

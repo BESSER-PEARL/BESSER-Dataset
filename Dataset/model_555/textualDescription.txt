@@ -1,0 +1,85 @@
+The domain model 'gedcoml' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'gedcoml_Others' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'gedcoml_PostAddress' represents an important domain concept.
+It has the following attributes: 'city', which is of type str; 'street', which is of type str; 'postcode', which is of type str.
+
+'gedcoml_Author' represents an important domain concept.
+It has the following attributes: 'lastName', which is of type str; 'firstName', which is of type str.
+
+'gedcoml_BekanntePerson' represents an important domain concept.
+It has the following attributes: 'lastName', which is of type str; 'birthName', which is of type str; 'deathDay', which is of type str; 'birthDay', which is of type str; 'firstName', which is of type str; 'middleName', which is of type str.
+
+'gedcoml_FamilyBook' represents an important domain concept.
+It does not declare any attributes.
+
+'gedcoml_UnbekanntePerson' represents an important domain concept.
+It does not declare any attributes.
+
+'Source' represents an important domain concept.
+It does not declare any attributes.
+
+'gedcoml_Source' represents an important domain concept.
+It does not declare any attributes.
+
+'gedcoml_Person' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'sex', which is of type str.
+
+'Address' represents an important domain concept.
+It does not declare any attributes.
+
+'gedcoml_Projectdescription' represents an important domain concept.
+It has the following attributes: 'groupId', which is of type str; 'version', which is of type str; 'publishingDate', which is of type str; 'artifactId', which is of type str.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'gedcoml_Note' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'gedcoml_Address' represents an important domain concept.
+It has the following attributes: 'entry', which is of type str; 'exodus', which is of type str.
+
+'gedcoml_PersonRef' represents an important domain concept.
+It does not declare any attributes.
+
+'gedcoml_FamilyImport' represents an important domain concept.
+It does not declare any attributes.
+
+'gedcoml_Married' represents an important domain concept.
+It has the following attributes: 'separationDay', which is of type str; 'weddingDay', which is of type str.
+
+'gedcoml_Family' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Sexus' defines the following possible values: 'female', 'undefined', 'male'.
+
+The model also captures inheritance relationships between classes.
+The class 'gedcoml_BekanntePerson' is a specialization of 'Person'.
+The class 'gedcoml_PostAddress' is a specialization of 'Address'.
+The class 'gedcoml_Others' is a specialization of 'Source'.
+The class 'gedcoml_PersonRef' is a specialization of 'Source'.
+The class 'gedcoml_UnbekanntePerson' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gedcoml_Projectdescription' and 'gedcoml_FamilyImport'. From 'gedcoml_Projectdescription', the role 'gedcoml_Projectdescription' has cardinality 0..*, and from 'gedcoml_FamilyImport', the role 'gedcoml_FamilyImport' has cardinality 0..*.
+An association connects 'gedcoml_Projectdescription' and 'gedcoml_Author'. From 'gedcoml_Projectdescription', the role 'gedcoml_Projectdescription2' has cardinality 0..*, and from 'gedcoml_Author', the role 'gedcoml_Author' has cardinality 0..*.
+An association connects 'gedcoml_Family' and 'gedcoml_Person'. From 'gedcoml_Family', the role 'gedcoml_Family' has cardinality 0..*, and from 'gedcoml_Person', the role 'gedcoml_Person' has cardinality 0..*.
+An association connects 'gedcoml_Family' and 'gedcoml_FamilyImport'. From 'gedcoml_Family', the role 'gedcoml_Family5' has cardinality 0..*, and from 'gedcoml_FamilyImport', the role 'gedcoml_FamilyImport6' has cardinality 0..*.
+An association connects 'gedcoml_Person' and 'gedcoml_BekanntePerson'. From 'gedcoml_Person', the role 'gedcoml_Person8' has cardinality 0..*, and from 'gedcoml_BekanntePerson', the role 'gedcoml_BekanntePerson' has cardinality 0..*.
+An association connects 'gedcoml_Person' and 'gedcoml_BekanntePerson'. From 'gedcoml_Person', the role 'gedcoml_Person11' has cardinality 0..*, and from 'gedcoml_BekanntePerson', the role 'gedcoml_BekanntePerson10' has cardinality 0..*.
+An association connects 'gedcoml_Person' and 'gedcoml_BekanntePerson'. From 'gedcoml_Person', the role 'gedcoml_Person14' has cardinality 0..*, and from 'gedcoml_BekanntePerson', the role 'gedcoml_BekanntePerson13' has cardinality 0..*.
+An association connects 'gedcoml_Married' and 'gedcoml_BekanntePerson'. From 'gedcoml_Married', the role 'gedcoml_Married' has cardinality 0..*, and from 'gedcoml_BekanntePerson', the role 'gedcoml_BekanntePerson16' has cardinality 0..*.
+An association connects 'gedcoml_BekanntePerson' and 'gedcoml_Note'. From 'gedcoml_BekanntePerson', the role 'gedcoml_BekanntePerson18' has cardinality 0..*, and from 'gedcoml_Note', the role 'gedcoml_Note' has cardinality 0..*.
+An association connects 'gedcoml_Source' and 'gedcoml_BekanntePerson'. From 'gedcoml_Source', the role 'gedcoml_Source' has cardinality 0..*, and from 'gedcoml_BekanntePerson', the role 'gedcoml_BekanntePerson20' has cardinality 0..*.
+An association connects 'gedcoml_Projectdescription' and 'gedcoml_FamilyBook'. From 'gedcoml_Projectdescription', the role 'gedcoml_Projectdescription22' has cardinality 0..*, and from 'gedcoml_FamilyBook', the role 'gedcoml_FamilyBook' has cardinality 0..*.
+An association connects 'gedcoml_FamilyImport' and 'gedcoml_Family'. From 'gedcoml_FamilyImport', the role 'gedcoml_FamilyImport24' has cardinality 0..*, and from 'gedcoml_Family', the role 'gedcoml_Family25' has cardinality 0..*.
+An association connects 'gedcoml_Married' and 'gedcoml_Person'. From 'gedcoml_Married', the role 'gedcoml_Married27' has cardinality 0..*, and from 'gedcoml_Person', the role 'gedcoml_Person28' has cardinality 0..*.
+An association connects 'gedcoml_BekanntePerson' and 'gedcoml_Author'. From 'gedcoml_BekanntePerson', the role 'gedcoml_BekanntePerson31' has cardinality 0..*, and from 'gedcoml_Author', the role 'gedcoml_Author30' has cardinality 0..*.
+An association connects 'gedcoml_PersonRef' and 'gedcoml_BekanntePerson'. From 'gedcoml_PersonRef', the role 'gedcoml_PersonRef' has cardinality 0..*, and from 'gedcoml_BekanntePerson', the role 'gedcoml_BekanntePerson33' has cardinality 0..*.
+An association connects 'gedcoml_Address' and 'gedcoml_Person'. From 'gedcoml_Address', the role 'gedcoml_Address' has cardinality 0..*, and from 'gedcoml_Person', the role 'gedcoml_Person35' has cardinality 0..*.

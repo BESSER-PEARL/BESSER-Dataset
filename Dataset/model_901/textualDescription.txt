@@ -1,0 +1,54 @@
+The domain model 'iritpdl' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'iritpdl_Process' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'minTime', which is of type int; 'maxTime', which is of type int.
+
+'iritpdl_WorkDefinition' represents an important domain concept.
+It has the following attributes: 'maxTime', which is of type int; 'minTime', which is of type int; 'name', which is of type str.
+
+'iritpdl_ResourceConf' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iritpdl_ResourceType' represents an important domain concept.
+It has the following attributes: 'occurrences', which is of type int; 'name', which is of type str.
+
+'iritpdl_Resource' represents an important domain concept.
+It has one attribute: 'occurrences', which is of type int.
+
+'iritpdl_ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+'iritpdl_Guidance' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+'iritpdl_WorkSequence' represents an important domain concept.
+It has one attribute: 'linkType', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'WorkSequenceType' defines the following possible values: 'startToFinish', 'finishToStart', 'finishToFinish', 'startToStart'.
+
+The model also captures inheritance relationships between classes.
+The class 'iritpdl_WorkDefinition' is a specialization of 'ProcessElement'.
+The class 'iritpdl_WorkSequence' is a specialization of 'ProcessElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'iritpdl_ProcessElement' and 'iritpdl_Process'. From 'iritpdl_ProcessElement', the role 'iritpdl_ProcessElement' has cardinality 0..*, and from 'iritpdl_Process', the role 'iritpdl_Process' has cardinality 0..*.
+An association connects 'iritpdl_Process' and 'iritpdl_Guidance'. From 'iritpdl_Process', the role 'iritpdl_Process2' has cardinality 0..*, and from 'iritpdl_Guidance', the role 'iritpdl_Guidance' has cardinality 0..*.
+An association connects 'iritpdl_ResourceType' and 'iritpdl_Process'. From 'iritpdl_ResourceType', the role 'iritpdl_ResourceType' has cardinality 0..*, and from 'iritpdl_Process', the role 'iritpdl_Process4' has cardinality 0..*.
+An association connects 'iritpdl_WorkDefinition' and 'iritpdl_WorkSequence'. From 'iritpdl_WorkDefinition', the role 'successor' has cardinality 0..*, and from 'iritpdl_WorkSequence', the role 'WorkSequence' has cardinality 0..*.
+An association connects 'iritpdl_WorkSequence' and 'iritpdl_WorkDefinition'. From 'iritpdl_WorkSequence', the role 'WorkSequence7' has cardinality 0..*, and from 'iritpdl_WorkDefinition', the role 'predecessor' has cardinality 0..*.
+An association connects 'iritpdl_ResourceConf' and 'iritpdl_WorkDefinition'. From 'iritpdl_ResourceConf', the role 'ResourceConf' has cardinality 0..*, and from 'iritpdl_WorkDefinition', the role 'workDefinition' has cardinality 0..*.
+An association connects 'iritpdl_WorkDefinition' and 'iritpdl_ProcessElement'. From 'iritpdl_WorkDefinition', the role 'parent' has cardinality 0..*, and from 'iritpdl_ProcessElement', the role 'ProcessElement' has cardinality 0..*.
+An association connects 'iritpdl_WorkDefinition' and 'iritpdl_WorkSequence'. From 'iritpdl_WorkDefinition', the role 'WorkDefinition' has cardinality 0..*, and from 'iritpdl_WorkSequence', the role 'linksToSuccessors' has cardinality 0..*.
+An association connects 'iritpdl_WorkDefinition' and 'iritpdl_WorkSequence'. From 'iritpdl_WorkDefinition', the role 'WorkDefinition12' has cardinality 0..*, and from 'iritpdl_WorkSequence', the role 'linksToPredecessors' has cardinality 0..*.
+An association connects 'iritpdl_ProcessElement' and 'iritpdl_Guidance'. From 'iritpdl_ProcessElement', the role 'iritpdl_ProcessElement14' has cardinality 0..*, and from 'iritpdl_Guidance', the role 'iritpdl_Guidance15' has cardinality 0..*.
+An association connects 'iritpdl_ProcessElement' and 'iritpdl_WorkDefinition'. From 'iritpdl_ProcessElement', the role 'children' has cardinality 0..*, and from 'iritpdl_WorkDefinition', the role 'WorkDefinition17' has cardinality 0..*.
+An association connects 'iritpdl_ResourceType' and 'iritpdl_Resource'. From 'iritpdl_ResourceType', the role 'iritpdl_ResourceType19' has cardinality 0..*, and from 'iritpdl_Resource', the role 'iritpdl_Resource' has cardinality 0..*.
+An association connects 'iritpdl_ResourceConf' and 'iritpdl_Resource'. From 'iritpdl_ResourceConf', the role 'ResourceConf21' has cardinality 0..*, and from 'iritpdl_Resource', the role 'neededResources' has cardinality 0..*.
+An association connects 'iritpdl_WorkDefinition' and 'iritpdl_ResourceConf'. From 'iritpdl_WorkDefinition', the role 'WorkDefinition23' has cardinality 0..*, and from 'iritpdl_ResourceConf', the role 'resourceConf' has cardinality 0..*.
+An association connects 'iritpdl_Resource' and 'iritpdl_ResourceConf'. From 'iritpdl_Resource', the role 'Resource' has cardinality 0..*, and from 'iritpdl_ResourceConf', the role 'resourceConf25' has cardinality 0..*.

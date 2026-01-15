@@ -1,0 +1,736 @@
+The domain model 'FlatQVT' describes the core structural elements and their relationships within the system.
+
+The model defines 189 main class(es).
+
+'FlatQVT_InvalidLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_TemplateParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeLoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_BottomPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_AssignExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Area' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Extent' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_TemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_StringLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ContinueExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_VarParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_IteratorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ListLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_EnumLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_WhileExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ModelType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ResolveInExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ModuleImport' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_RelationalTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_MappingBody' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ReturnExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_GuardPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_IntegerLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ResolveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Extent' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_RelationDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_MappingOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ListType' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'CorePattern' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_BreakExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_DomainPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'Module' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ImperativeIterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_OppositePropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_FunctionParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_RealizedVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_LogExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_OperationBody' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_MappingParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ObjectExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_PropertyTemplateItem' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Key' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Object' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ImperativeLoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_EntryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ReflectiveCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CoreDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_PropertyAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_URIExtent' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationBody' represents an important domain concept.
+It does not declare any attributes.
+
+'ResolveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_FeatureCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_RelationImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_OperationalTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ComputeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ObjectTemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CorePattern' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_DictLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CollectionLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_EnforcementOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ExpressionInOcl' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Factory' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_MappingCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CatchExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Constructor' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ContextualProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_TypeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_RealLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_UnlimitedNaturalExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ModelParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CollectionItem' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_InstantiationExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CollectionRange' represents an important domain concept.
+It does not declare any attributes.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_VariableInitExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_DictLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_UnlinkExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_TypedModel' represents an important domain concept.
+It does not declare any attributes.
+
+'ReflectiveCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_AssertExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_RelationDomainAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ReflectiveSequence' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_NavigationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'InstantiationExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_DictionaryType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_SwitchExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Area' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_VariableAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'VarParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_BlockExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_TryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_NullLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_RelationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_InvalidType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Tag' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ImperativeCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ImperativeOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_BooleanLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_RaiseExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ImperativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CollectionTemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_AltExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Transformation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ForExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Transformation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ConstructorBody' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Helper' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Typedef' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EnforcementMode' defines the following possible values: 'Deletion', 'Creation'.
+The enumeration 'ImportKind' defines the following possible values: 'extension', 'access'.
+The enumeration 'SeverityKind' defines the following possible values: 'fatal', 'warning', 'error'.
+The enumeration 'DirectionKind' defines the following possible values: 'in', 'out', 'inout'.
+The enumeration 'CollectionKind' defines the following possible values: 'OrderedSet', 'Collection', 'Bag', 'Sequence', 'Set'.
+
+The model also captures inheritance relationships between classes.
+The class 'FlatQVT_AltExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_AnyType' is a specialization of 'Type'.
+The class 'FlatQVT_AssertExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_AssignExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_Assignment' is a specialization of 'Element'.
+The class 'FlatQVT_BagType' is a specialization of 'CollectionType'.
+The class 'FlatQVT_BlockExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_BooleanLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'FlatQVT_BottomPattern' is a specialization of 'CorePattern'.
+The class 'FlatQVT_BreakExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_CallExp' is a specialization of 'OclExpression'.
+The class 'FlatQVT_CatchExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_Class' is a specialization of 'Type'.
+The class 'FlatQVT_CollectionItem' is a specialization of 'CollectionLiteralPart'.
+The class 'FlatQVT_CollectionLiteralExp' is a specialization of 'LiteralExp'.
+The class 'FlatQVT_CollectionLiteralPart' is a specialization of 'TypedElement'.
+The class 'FlatQVT_CollectionRange' is a specialization of 'CollectionLiteralPart'.
+The class 'FlatQVT_CollectionTemplateExp' is a specialization of 'TemplateExp'.
+The class 'FlatQVT_CollectionType' is a specialization of 'DataType'.
+The class 'FlatQVT_Comment' is a specialization of 'Element'.
+The class 'FlatQVT_ComputeExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_Constructor' is a specialization of 'ImperativeOperation'.
+The class 'FlatQVT_ConstructorBody' is a specialization of 'OperationBody'.
+The class 'FlatQVT_ContextualProperty' is a specialization of 'Property'.
+The class 'FlatQVT_ContinueExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_CoreDomain' is a specialization of 'Domain'.
+The class 'FlatQVT_CoreDomain' is a specialization of 'Area'.
+The class 'FlatQVT_CorePattern' is a specialization of 'Pattern'.
+The class 'FlatQVT_DataType' is a specialization of 'Type'.
+The class 'FlatQVT_DictLiteralExp' is a specialization of 'LiteralExp'.
+The class 'FlatQVT_DictLiteralPart' is a specialization of 'Element'.
+The class 'FlatQVT_DictionaryType' is a specialization of 'CollectionType'.
+The class 'FlatQVT_Domain' is a specialization of 'NamedElement'.
+The class 'FlatQVT_DomainPattern' is a specialization of 'Pattern'.
+The class 'FlatQVT_Element' is a specialization of 'Object'.
+The class 'FlatQVT_EnforcementOperation' is a specialization of 'Element'.
+The class 'FlatQVT_EntryOperation' is a specialization of 'ImperativeOperation'.
+The class 'FlatQVT_EnumLiteralExp' is a specialization of 'LiteralExp'.
+The class 'FlatQVT_Enumeration' is a specialization of 'DataType'.
+The class 'FlatQVT_EnumerationLiteral' is a specialization of 'NamedElement'.
+The class 'FlatQVT_ExpressionInOcl' is a specialization of 'TypedElement'.
+The class 'FlatQVT_Extent' is a specialization of 'Object'.
+The class 'FlatQVT_Factory' is a specialization of 'Element'.
+The class 'FlatQVT_FeatureCallExp' is a specialization of 'CallExp'.
+The class 'FlatQVT_ForExp' is a specialization of 'ImperativeLoopExp'.
+The class 'FlatQVT_Function' is a specialization of 'Operation'.
+The class 'FlatQVT_FunctionParameter' is a specialization of 'Variable'.
+The class 'FlatQVT_FunctionParameter' is a specialization of 'Parameter'.
+The class 'FlatQVT_GuardPattern' is a specialization of 'CorePattern'.
+The class 'FlatQVT_Helper' is a specialization of 'ImperativeOperation'.
+The class 'FlatQVT_IfExp' is a specialization of 'OclExpression'.
+The class 'FlatQVT_ImperativeCallExp' is a specialization of 'OperationCallExp'.
+The class 'FlatQVT_ImperativeCallExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_ImperativeExpression' is a specialization of 'OclExpression'.
+The class 'FlatQVT_ImperativeIterateExp' is a specialization of 'ImperativeLoopExp'.
+The class 'FlatQVT_ImperativeLoopExp' is a specialization of 'LoopExp'.
+The class 'FlatQVT_ImperativeLoopExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_ImperativeOperation' is a specialization of 'Operation'.
+The class 'FlatQVT_InstantiationExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_IntegerLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'FlatQVT_InvalidLiteralExp' is a specialization of 'LiteralExp'.
+The class 'FlatQVT_InvalidType' is a specialization of 'Type'.
+The class 'FlatQVT_IterateExp' is a specialization of 'LoopExp'.
+The class 'FlatQVT_IteratorExp' is a specialization of 'LoopExp'.
+The class 'FlatQVT_Key' is a specialization of 'Element'.
+The class 'FlatQVT_LetExp' is a specialization of 'OclExpression'.
+The class 'FlatQVT_Library' is a specialization of 'Module'.
+The class 'FlatQVT_ListLiteralExp' is a specialization of 'LiteralExp'.
+The class 'FlatQVT_ListType' is a specialization of 'CollectionType'.
+The class 'FlatQVT_LiteralExp' is a specialization of 'OclExpression'.
+The class 'FlatQVT_LogExp' is a specialization of 'OperationCallExp'.
+The class 'FlatQVT_LogExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_LoopExp' is a specialization of 'CallExp'.
+The class 'FlatQVT_LoopExp' is a specialization of 'OclExpression'.
+The class 'FlatQVT_Mapping' is a specialization of 'Rule'.
+The class 'FlatQVT_Mapping' is a specialization of 'Area'.
+The class 'FlatQVT_MappingBody' is a specialization of 'OperationBody'.
+The class 'FlatQVT_MappingCallExp' is a specialization of 'ImperativeCallExp'.
+The class 'FlatQVT_MappingOperation' is a specialization of 'ImperativeOperation'.
+The class 'FlatQVT_MappingParameter' is a specialization of 'VarParameter'.
+The class 'FlatQVT_ModelParameter' is a specialization of 'VarParameter'.
+The class 'FlatQVT_ModelType' is a specialization of 'Class'.
+The class 'FlatQVT_Module' is a specialization of 'Class'.
+The class 'FlatQVT_Module' is a specialization of 'Package'.
+The class 'FlatQVT_ModuleImport' is a specialization of 'Element'.
+The class 'FlatQVT_NamedElement' is a specialization of 'Element'.
+The class 'FlatQVT_NavigationCallExp' is a specialization of 'FeatureCallExp'.
+The class 'FlatQVT_NullLiteralExp' is a specialization of 'LiteralExp'.
+The class 'FlatQVT_NumericLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'FlatQVT_ObjectExp' is a specialization of 'InstantiationExp'.
+The class 'FlatQVT_ObjectTemplateExp' is a specialization of 'TemplateExp'.
+The class 'FlatQVT_OclExpression' is a specialization of 'TypedElement'.
+The class 'FlatQVT_Operation' is a specialization of 'TypedElement'.
+The class 'FlatQVT_Operation' is a specialization of 'MultiplicityElement'.
+The class 'FlatQVT_OperationBody' is a specialization of 'Element'.
+The class 'FlatQVT_OperationCallExp' is a specialization of 'FeatureCallExp'.
+The class 'FlatQVT_OperationalTransformation' is a specialization of 'Module'.
+The class 'FlatQVT_OppositePropertyCallExp' is a specialization of 'PropertyCallExp'.
+The class 'FlatQVT_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'FlatQVT_Package' is a specialization of 'NamedElement'.
+The class 'FlatQVT_Parameter' is a specialization of 'TypedElement'.
+The class 'FlatQVT_Parameter' is a specialization of 'MultiplicityElement'.
+The class 'FlatQVT_Pattern' is a specialization of 'Element'.
+The class 'FlatQVT_Predicate' is a specialization of 'Element'.
+The class 'FlatQVT_PrimitiveLiteralExp' is a specialization of 'LiteralExp'.
+The class 'FlatQVT_PrimitiveType' is a specialization of 'DataType'.
+The class 'FlatQVT_Property' is a specialization of 'TypedElement'.
+The class 'FlatQVT_Property' is a specialization of 'MultiplicityElement'.
+The class 'FlatQVT_PropertyAssignment' is a specialization of 'Assignment'.
+The class 'FlatQVT_PropertyCallExp' is a specialization of 'NavigationCallExp'.
+The class 'FlatQVT_PropertyTemplateItem' is a specialization of 'Element'.
+The class 'FlatQVT_RaiseExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_RealLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'FlatQVT_RealizedVariable' is a specialization of 'Variable'.
+The class 'FlatQVT_ReflectiveCollection' is a specialization of 'Object'.
+The class 'FlatQVT_ReflectiveSequence' is a specialization of 'ReflectiveCollection'.
+The class 'FlatQVT_Relation' is a specialization of 'Rule'.
+The class 'FlatQVT_RelationCallExp' is a specialization of 'OclExpression'.
+The class 'FlatQVT_RelationDomain' is a specialization of 'Domain'.
+The class 'FlatQVT_RelationDomainAssignment' is a specialization of 'Element'.
+The class 'FlatQVT_RelationImplementation' is a specialization of 'Element'.
+The class 'FlatQVT_RelationalTransformation' is a specialization of 'Transformation'.
+The class 'FlatQVT_ResolveExp' is a specialization of 'CallExp'.
+The class 'FlatQVT_ResolveExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_ResolveInExp' is a specialization of 'ResolveExp'.
+The class 'FlatQVT_ReturnExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_Rule' is a specialization of 'NamedElement'.
+The class 'FlatQVT_SequenceType' is a specialization of 'CollectionType'.
+The class 'FlatQVT_SetType' is a specialization of 'CollectionType'.
+The class 'FlatQVT_StringLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'FlatQVT_SwitchExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_Tag' is a specialization of 'Element'.
+The class 'FlatQVT_TemplateExp' is a specialization of 'LiteralExp'.
+The class 'FlatQVT_TemplateParameterType' is a specialization of 'Type'.
+The class 'FlatQVT_Transformation' is a specialization of 'Class'.
+The class 'FlatQVT_Transformation' is a specialization of 'Package'.
+The class 'FlatQVT_TryExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_TupleLiteralExp' is a specialization of 'LiteralExp'.
+The class 'FlatQVT_TupleLiteralPart' is a specialization of 'TypedElement'.
+The class 'FlatQVT_TupleType' is a specialization of 'Class'.
+The class 'FlatQVT_TupleType' is a specialization of 'DataType'.
+The class 'FlatQVT_Type' is a specialization of 'NamedElement'.
+The class 'FlatQVT_TypeExp' is a specialization of 'OclExpression'.
+The class 'FlatQVT_TypedElement' is a specialization of 'NamedElement'.
+The class 'FlatQVT_TypedModel' is a specialization of 'NamedElement'.
+The class 'FlatQVT_Typedef' is a specialization of 'Class'.
+The class 'FlatQVT_URIExtent' is a specialization of 'Extent'.
+The class 'FlatQVT_UnlimitedNaturalExp' is a specialization of 'NumericLiteralExp'.
+The class 'FlatQVT_UnlinkExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_VarParameter' is a specialization of 'Variable'.
+The class 'FlatQVT_VarParameter' is a specialization of 'Parameter'.
+The class 'FlatQVT_Variable' is a specialization of 'TypedElement'.
+The class 'FlatQVT_VariableAssignment' is a specialization of 'Assignment'.
+The class 'FlatQVT_VariableExp' is a specialization of 'OclExpression'.
+The class 'FlatQVT_VariableInitExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_VoidType' is a specialization of 'Type'.
+The class 'FlatQVT_WhileExp' is a specialization of 'ImperativeExpression'.

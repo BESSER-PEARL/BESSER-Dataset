@@ -1,0 +1,12 @@
+The domain model 'ale2' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'ale2_B' represents an important domain concept.
+It does not declare any attributes.
+
+'ale2_RB' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'ale2_B' and 'ale2_RB'. From 'ale2_B', the role 'ale2_B' has cardinality 0..*, and from 'ale2_RB', the role 'ale2_RB' has cardinality 0..*.

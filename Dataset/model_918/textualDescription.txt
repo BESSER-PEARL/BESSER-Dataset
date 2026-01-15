@@ -1,0 +1,125 @@
+The domain model 'publication' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'publication_Progress' represents an important domain concept.
+It has the following attributes: 'time', which is of type int; 'percent', which is of type int.
+
+'publication_Paper' represents an important domain concept.
+It does not declare any attributes.
+
+'publication_Write' represents an important domain concept.
+It does not declare any attributes.
+
+'publication_PlaceHolderRule' represents an important domain concept.
+It does not declare any attributes.
+
+'publication_ReviewNote' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'publication_PublicationSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'publication_Labelled' represents an important domain concept.
+It has one attribute: 'lname', which is of type str.
+
+'publication_Sequence' represents an important domain concept.
+It has one attribute: 'sequenceType', which is of type str.
+
+'publication_Rule' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'key', which is of type str.
+
+'PlaceHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'publication_Counted' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'publication_Researcher' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'position', which is of type str; 'forName', which is of type str.
+
+'Counted' represents an important domain concept.
+It does not declare any attributes.
+
+'publication_Paragraph' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'publication_PlaceHolderPP' represents an important domain concept.
+It does not declare any attributes.
+
+'publication_PublicationStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'publication_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'publication_PublicationProcess' represents an important domain concept.
+It has the following attributes: 'maxTime', which is of type int; 'minTime', which is of type int.
+
+'publication_PlaceHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'publication_Review' represents an important domain concept.
+It does not declare any attributes.
+
+'publication_PublicationPhase' represents an important domain concept.
+It has the following attributes: 'maxTime', which is of type int; 'name', which is of type str; 'minTime', which is of type int.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'publication_PlaceHolderRn' represents an important domain concept.
+It does not declare any attributes.
+
+'Labelled' represents an important domain concept.
+It does not declare any attributes.
+
+'publication_PlaceHolderRs' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SequenceType' defines the following possible values: 'startToFinish', 'finishToFinish', 'startToStart', 'finishToStart'.
+
+The model also captures inheritance relationships between classes.
+The class 'publication_PublicationProcess' is a specialization of 'Named'.
+The class 'publication_Paper' is a specialization of 'Named'.
+The class 'publication_Paragraph' is a specialization of 'Counted'.
+The class 'publication_Paragraph' is a specialization of 'Named'.
+The class 'publication_ReviewNote' is a specialization of 'Named'.
+The class 'publication_Progress' is a specialization of 'Labelled'.
+The class 'publication_Write' is a specialization of 'Labelled'.
+The class 'publication_Review' is a specialization of 'Labelled'.
+The class 'publication_PublicationStructure' is a specialization of 'Named'.
+The class 'publication_PlaceHolderRs' is a specialization of 'PlaceHolder'.
+The class 'publication_PlaceHolderRule' is a specialization of 'PlaceHolder'.
+The class 'publication_PlaceHolderRn' is a specialization of 'PlaceHolder'.
+The class 'publication_PlaceHolderPP' is a specialization of 'PlaceHolder'.
+
+Relationships between classes are modeled using associations.
+An association connects 'publication_PublicationProcess' and 'publication_PublicationPhase'. From 'publication_PublicationProcess', the role 'publication_PublicationProcess' has cardinality 0..*, and from 'publication_PublicationPhase', the role 'publication_PublicationPhase' has cardinality 0..*.
+An association connects 'publication_Rule' and 'publication_PublicationProcess'. From 'publication_Rule', the role 'publication_Rule' has cardinality 0..*, and from 'publication_PublicationProcess', the role 'publication_PublicationProcess2' has cardinality 0..*.
+An association connects 'publication_Sequence' and 'publication_PublicationPhase'. From 'publication_Sequence', the role 'publication_Sequence' has cardinality 0..*, and from 'publication_PublicationPhase', the role 'publication_PublicationPhase4' has cardinality 0..*.
+An association connects 'publication_PublicationPhase' and 'publication_Researcher'. From 'publication_PublicationPhase', the role 'phaseParticipation' has cardinality 0..*, and from 'publication_Researcher', the role 'Researcher' has cardinality 0..*.
+An association connects 'publication_Rule' and 'publication_PublicationPhase'. From 'publication_Rule', the role 'publication_Rule8' has cardinality 0..*, and from 'publication_PublicationPhase', the role 'publication_PublicationPhase7' has cardinality 0..*.
+An association connects 'publication_PlaceHolderPP' and 'publication_PublicationPhase'. From 'publication_PlaceHolderPP', the role 'publication_PlaceHolderPP' has cardinality 0..*, and from 'publication_PublicationPhase', the role 'publication_PublicationPhase10' has cardinality 0..*.
+An association connects 'publication_Sequence' and 'publication_PublicationPhase'. From 'publication_Sequence', the role 'publication_Sequence12' has cardinality 0..*, and from 'publication_PublicationPhase', the role 'publication_PublicationPhase13' has cardinality 0..*.
+An association connects 'publication_PublicationPhase' and 'publication_Sequence'. From 'publication_PublicationPhase', the role 'publication_PublicationPhase16' has cardinality 0..*, and from 'publication_Sequence', the role 'publication_Sequence15' has cardinality 0..*.
+An association connects 'publication_Rule' and 'publication_PlaceHolderRule'. From 'publication_Rule', the role 'publication_Rule18' has cardinality 0..*, and from 'publication_PlaceHolderRule', the role 'publication_PlaceHolderRule' has cardinality 0..*.
+An association connects 'publication_Researcher' and 'publication_PublicationPhase'. From 'publication_Researcher', the role 'neededPerson' has cardinality 0..*, and from 'publication_PublicationPhase', the role 'PublicationPhase' has cardinality 0..*.
+An association connects 'publication_Researcher' and 'publication_Write'. From 'publication_Researcher', the role 'publication_Researcher' has cardinality 0..*, and from 'publication_Write', the role 'publication_Write' has cardinality 0..*.
+An association connects 'publication_Review' and 'publication_Researcher'. From 'publication_Review', the role 'publication_Review' has cardinality 0..*, and from 'publication_Researcher', the role 'publication_Researcher22' has cardinality 0..*.
+An association connects 'publication_Paper' and 'publication_Researcher'. From 'publication_Paper', the role 'Paper' has cardinality 0..*, and from 'publication_Researcher', the role 'authors' has cardinality 0..*.
+An association connects 'publication_Researcher' and 'publication_PlaceHolderRs'. From 'publication_Researcher', the role 'publication_Researcher25' has cardinality 0..*, and from 'publication_PlaceHolderRs', the role 'publication_PlaceHolderRs' has cardinality 0..*.
+An association connects 'publication_Paragraph' and 'publication_Paper'. From 'publication_Paragraph', the role 'publication_Paragraph' has cardinality 0..*, and from 'publication_Paper', the role 'publication_Paper' has cardinality 0..*.
+An association connects 'publication_Paper' and 'publication_Progress'. From 'publication_Paper', the role 'paper' has cardinality 0..*, and from 'publication_Progress', the role 'Progress' has cardinality 0..*.
+An association connects 'publication_Paper' and 'publication_Researcher'. From 'publication_Paper', the role 'papers' has cardinality 0..*, and from 'publication_Researcher', the role 'Researcher29' has cardinality 0..*.
+An association connects 'publication_Paragraph' and 'publication_ReviewNote'. From 'publication_Paragraph', the role 'publication_Paragraph31' has cardinality 0..*, and from 'publication_ReviewNote', the role 'publication_ReviewNote' has cardinality 0..*.
+An association connects 'publication_ReviewNote' and 'publication_PlaceHolderRn'. From 'publication_ReviewNote', the role 'publication_ReviewNote33' has cardinality 0..*, and from 'publication_PlaceHolderRn', the role 'publication_PlaceHolderRn' has cardinality 0..*.
+An association connects 'publication_Progress' and 'publication_PublicationProcess'. From 'publication_Progress', the role 'publication_Progress' has cardinality 0..*, and from 'publication_PublicationProcess', the role 'publication_PublicationProcess35' has cardinality 0..*.
+An association connects 'publication_Paper' and 'publication_Progress'. From 'publication_Paper', the role 'Paper37' has cardinality 0..*, and from 'publication_Progress', the role 'progress' has cardinality 0..*.
+An association connects 'publication_Paragraph' and 'publication_Write'. From 'publication_Paragraph', the role 'publication_Paragraph40' has cardinality 0..*, and from 'publication_Write', the role 'publication_Write39' has cardinality 0..*.
+An association connects 'publication_ReviewNote' and 'publication_Review'. From 'publication_ReviewNote', the role 'publication_ReviewNote43' has cardinality 0..*, and from 'publication_Review', the role 'publication_Review42' has cardinality 0..*.
+An association connects 'publication_PublicationStructure' and 'publication_Researcher'. From 'publication_PublicationStructure', the role 'publication_PublicationStructure' has cardinality 0..*, and from 'publication_Researcher', the role 'publication_Researcher45' has cardinality 0..*.
+An association connects 'publication_Paper' and 'publication_PublicationStructure'. From 'publication_Paper', the role 'publication_Paper48' has cardinality 0..*, and from 'publication_PublicationStructure', the role 'publication_PublicationStructure47' has cardinality 0..*.
+An association connects 'publication_PublicationProcess' and 'publication_PublicationSystem'. From 'publication_PublicationProcess', the role 'publication_PublicationProcess50' has cardinality 0..*, and from 'publication_PublicationSystem', the role 'publication_PublicationSystem' has cardinality 0..*.
+An association connects 'publication_PublicationSystem' and 'publication_PublicationStructure'. From 'publication_PublicationSystem', the role 'publication_PublicationSystem52' has cardinality 0..*, and from 'publication_PublicationStructure', the role 'publication_PublicationStructure53' has cardinality 0..*.

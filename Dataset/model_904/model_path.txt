@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ObeoNetwork/SPEM-Designer/org.obeonetwork.dsl.spem/model/spem2.ecore

@@ -1,0 +1,525 @@
+The domain model 'RefOntoUML' describes the core structural elements and their relationships within the system.
+
+The model defines 116 main class(es).
+
+'RefOntoUML_Relator' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_InstanceValue' represents an important domain concept.
+It does not declare any attributes.
+
+'MomentClass' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_ElementImport' represents an important domain concept.
+It has the following attributes: 'alias', which is of type str; 'visibility', which is of type str.
+
+'DirectedBinaryAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectClass' represents an important domain concept.
+It does not declare any attributes.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_ObjectClass' represents an important domain concept.
+It does not declare any attributes.
+
+'DependencyRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Meronymic' represents an important domain concept.
+It has the following attributes: 'isImmutablePart', which is of type bool; 'isShareable', which is of type bool; 'isImmutableWhole', which is of type bool; 'isEssential', which is of type bool; 'isInseparable', which is of type bool.
+
+'RefOntoUML_SubKind' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'SortalClass' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_GeneralizationSet' represents an important domain concept.
+It has the following attributes: 'isDisjoint', which is of type str; 'isCovering', which is of type str.
+
+'RefOntoUML_Role' represents an important domain concept.
+It does not declare any attributes.
+
+'AntiRigidMixinClass' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_memberOf' represents an important domain concept.
+It does not declare any attributes.
+
+'AntiRigidSortalClass' represents an important domain concept.
+It does not declare any attributes.
+
+'RigidMixinClass' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'NonRigidMixinClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_PackageImport' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'RefOntoUML_StructuralFeature' represents an important domain concept.
+It has one attribute: 'isReadOnly', which is of type str.
+
+'InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Slot' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_DirectedBinaryAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Mediation' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_SemiRigidMixinClass' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Feature' represents an important domain concept.
+It has one attribute: 'isStatic', which is of type str.
+
+'RefOntoUML_subCollectionOf' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Mode' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_RedefinableElement' represents an important domain concept.
+It has one attribute: 'isLeaf', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Derivation' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_SortalClass' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'IntrinsicMomentClass' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Quality' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_DependencyRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Category' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Quantity' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_NamedElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'visibility', which is of type str; 'qualifiedName', which is of type str.
+
+'RefOntoUML_Constraintx' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_OpaqueExpression' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'language', which is of type str.
+
+'RefOntoUML_Mixin' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Generalization' represents an important domain concept.
+It has one attribute: 'isSubstitutable', which is of type str.
+
+'EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_RigidMixinClass' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_LiteralNull' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_StringExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'RigidSortalClass' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Classifier' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type str.
+
+'RefOntoUML_SubstanceSortal' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Comment' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'RefOntoUML_Characterization' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_LiteralInteger' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'RefOntoUML_RigidSortalClass' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_FormalAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Kind' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_MaterialAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Expression' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'MixinClass' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Property' represents an important domain concept.
+It has the following attributes: 'default', which is of type str; 'isComposite', which is of type str; 'aggregation', which is of type str; 'isDerivedUnion', which is of type str; 'isDerived', which is of type str.
+
+'RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_LiteralUnlimitedNatural' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_IntrinsicMomentClass' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Phase' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_MultiplicityElement' represents an important domain concept.
+It has the following attributes: 'upper', which is of type str; 'isUnique', which is of type str; 'isOrdered', which is of type str; 'lower', which is of type str.
+
+'SubstanceSortal' represents an important domain concept.
+It does not declare any attributes.
+
+'DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_AntiRigidSortalClass' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Class' represents an important domain concept.
+It has one attribute: 'isActive', which is of type str.
+
+'RefOntoUML_RoleMixin' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_LiteralBoolean' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'SemiRigidMixinClass' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_PackageMerge' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_MomentClass' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_AntiRigidMixinClass' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_componentOf' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_LiteralString' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'RefOntoUML_NonRigidMixinClass' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_subQuantityOf' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_MixinClass' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Association' represents an important domain concept.
+It has one attribute: 'isDerived', which is of type str.
+
+'RefOntoUML_InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'RefOntoUML_Collective' represents an important domain concept.
+It has one attribute: 'isExtensional', which is of type bool.
+
+'RefOntoUML_Model' represents an important domain concept.
+It has one attribute: 'viewpoint', which is of type str.
+
+'RefOntoUML_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Meronymic' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VisibilityKind' defines the following possible values: 'public', 'protected', 'package', 'private'.
+The enumeration 'AggregationKind' defines the following possible values: 'none', 'composite', 'shared'.
+
+The model also captures inheritance relationships between classes.
+The class 'RefOntoUML_Comment' is a specialization of 'Element'.
+The class 'RefOntoUML_Element' is a specialization of 'EModelElement'.
+The class 'RefOntoUML_Package' is a specialization of 'Namespace'.
+The class 'RefOntoUML_Package' is a specialization of 'PackageableElement'.
+The class 'RefOntoUML_PackageableElement' is a specialization of 'NamedElement'.
+The class 'RefOntoUML_NamedElement' is a specialization of 'Element'.
+The class 'RefOntoUML_Dependency' is a specialization of 'PackageableElement'.
+The class 'RefOntoUML_Dependency' is a specialization of 'DirectedRelationship'.
+The class 'RefOntoUML_DirectedRelationship' is a specialization of 'Relationship'.
+The class 'RefOntoUML_Relationship' is a specialization of 'Element'.
+The class 'RefOntoUML_Namespace' is a specialization of 'NamedElement'.
+The class 'RefOntoUML_ElementImport' is a specialization of 'DirectedRelationship'.
+The class 'RefOntoUML_PackageImport' is a specialization of 'DirectedRelationship'.
+The class 'RefOntoUML_Constraintx' is a specialization of 'PackageableElement'.
+The class 'RefOntoUML_ValueSpecification' is a specialization of 'PackageableElement'.
+The class 'RefOntoUML_ValueSpecification' is a specialization of 'TypedElement'.
+The class 'RefOntoUML_TypedElement' is a specialization of 'NamedElement'.
+The class 'RefOntoUML_Type' is a specialization of 'PackageableElement'.
+The class 'RefOntoUML_Association' is a specialization of 'Classifier'.
+The class 'RefOntoUML_Association' is a specialization of 'Relationship'.
+The class 'RefOntoUML_Classifier' is a specialization of 'Namespace'.
+The class 'RefOntoUML_Classifier' is a specialization of 'RedefinableElement'.
+The class 'RefOntoUML_Classifier' is a specialization of 'Type'.
+The class 'RefOntoUML_RedefinableElement' is a specialization of 'NamedElement'.
+The class 'RefOntoUML_Generalization' is a specialization of 'DirectedRelationship'.
+The class 'RefOntoUML_GeneralizationSet' is a specialization of 'PackageableElement'.
+The class 'RefOntoUML_Feature' is a specialization of 'RedefinableElement'.
+The class 'RefOntoUML_OpaqueExpression' is a specialization of 'ValueSpecification'.
+The class 'RefOntoUML_MultiplicityElement' is a specialization of 'Element'.
+The class 'RefOntoUML_Property' is a specialization of 'StructuralFeature'.
+The class 'RefOntoUML_Class' is a specialization of 'Classifier'.
+The class 'RefOntoUML_Model' is a specialization of 'Package'.
+The class 'RefOntoUML_DataType' is a specialization of 'Classifier'.
+The class 'RefOntoUML_StructuralFeature' is a specialization of 'Feature'.
+The class 'RefOntoUML_StructuralFeature' is a specialization of 'TypedElement'.
+The class 'RefOntoUML_StructuralFeature' is a specialization of 'MultiplicityElement'.
+The class 'RefOntoUML_StringExpression' is a specialization of 'Expression'.
+The class 'RefOntoUML_Expression' is a specialization of 'ValueSpecification'.
+The class 'RefOntoUML_PackageMerge' is a specialization of 'DirectedRelationship'.
+The class 'RefOntoUML_Enumeration' is a specialization of 'DataType'.
+The class 'RefOntoUML_EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+The class 'RefOntoUML_InstanceSpecification' is a specialization of 'PackageableElement'.
+The class 'RefOntoUML_Slot' is a specialization of 'Element'.
+The class 'RefOntoUML_PrimitiveType' is a specialization of 'DataType'.
+The class 'RefOntoUML_LiteralSpecification' is a specialization of 'ValueSpecification'.
+The class 'RefOntoUML_LiteralInteger' is a specialization of 'LiteralSpecification'.
+The class 'RefOntoUML_LiteralString' is a specialization of 'LiteralSpecification'.
+The class 'RefOntoUML_LiteralBoolean' is a specialization of 'LiteralSpecification'.
+The class 'RefOntoUML_LiteralNull' is a specialization of 'LiteralSpecification'.
+The class 'RefOntoUML_InstanceValue' is a specialization of 'ValueSpecification'.
+The class 'RefOntoUML_LiteralUnlimitedNatural' is a specialization of 'LiteralSpecification'.
+The class 'RefOntoUML_ObjectClass' is a specialization of 'Class'.
+The class 'RefOntoUML_MomentClass' is a specialization of 'Class'.
+The class 'RefOntoUML_SortalClass' is a specialization of 'ObjectClass'.
+The class 'RefOntoUML_MixinClass' is a specialization of 'ObjectClass'.
+The class 'RefOntoUML_RigidSortalClass' is a specialization of 'SortalClass'.
+The class 'RefOntoUML_AntiRigidSortalClass' is a specialization of 'SortalClass'.
+The class 'RefOntoUML_SubstanceSortal' is a specialization of 'RigidSortalClass'.
+The class 'RefOntoUML_SubKind' is a specialization of 'RigidSortalClass'.
+The class 'RefOntoUML_Kind' is a specialization of 'SubstanceSortal'.
+The class 'RefOntoUML_Quantity' is a specialization of 'SubstanceSortal'.
+The class 'RefOntoUML_Collective' is a specialization of 'SubstanceSortal'.
+The class 'RefOntoUML_Phase' is a specialization of 'AntiRigidSortalClass'.
+The class 'RefOntoUML_Role' is a specialization of 'AntiRigidSortalClass'.
+The class 'RefOntoUML_RigidMixinClass' is a specialization of 'MixinClass'.
+The class 'RefOntoUML_NonRigidMixinClass' is a specialization of 'MixinClass'.
+The class 'RefOntoUML_Category' is a specialization of 'RigidMixinClass'.
+The class 'RefOntoUML_AntiRigidMixinClass' is a specialization of 'NonRigidMixinClass'.
+The class 'RefOntoUML_SemiRigidMixinClass' is a specialization of 'NonRigidMixinClass'.
+The class 'RefOntoUML_RoleMixin' is a specialization of 'AntiRigidMixinClass'.
+The class 'RefOntoUML_Mixin' is a specialization of 'SemiRigidMixinClass'.
+The class 'RefOntoUML_IntrinsicMomentClass' is a specialization of 'MomentClass'.
+The class 'RefOntoUML_Mode' is a specialization of 'IntrinsicMomentClass'.
+The class 'RefOntoUML_Quality' is a specialization of 'IntrinsicMomentClass'.
+The class 'RefOntoUML_Relator' is a specialization of 'MomentClass'.
+The class 'RefOntoUML_DirectedBinaryAssociation' is a specialization of 'Association'.
+The class 'RefOntoUML_Meronymic' is a specialization of 'DirectedBinaryAssociation'.
+The class 'RefOntoUML_subQuantityOf' is a specialization of 'Meronymic'.
+The class 'RefOntoUML_subCollectionOf' is a specialization of 'Meronymic'.
+The class 'RefOntoUML_memberOf' is a specialization of 'Meronymic'.
+The class 'RefOntoUML_componentOf' is a specialization of 'Meronymic'.
+The class 'RefOntoUML_DependencyRelationship' is a specialization of 'DirectedBinaryAssociation'.
+The class 'RefOntoUML_Characterization' is a specialization of 'DependencyRelationship'.
+The class 'RefOntoUML_Mediation' is a specialization of 'DependencyRelationship'.
+The class 'RefOntoUML_Derivation' is a specialization of 'DependencyRelationship'.
+The class 'RefOntoUML_FormalAssociation' is a specialization of 'Association'.
+The class 'RefOntoUML_MaterialAssociation' is a specialization of 'Association'.
+
+Relationships between classes are modeled using associations.
+An association connects 'RefOntoUML_Element' and 'RefOntoUML_Comment'. From 'RefOntoUML_Element', the role 'RefOntoUML_Element' has cardinality 0..*, and from 'RefOntoUML_Comment', the role 'RefOntoUML_Comment' has cardinality 0..*.
+An association connects 'RefOntoUML_Element' and 'RefOntoUML_Element'. From 'RefOntoUML_Element', the role 'Element' has cardinality 0..*, and from 'RefOntoUML_Element', the role 'owner' has cardinality 0..*.
+An association connects 'RefOntoUML_Element' and 'RefOntoUML_Element'. From 'RefOntoUML_Element', the role 'Element5' has cardinality 0..*, and from 'RefOntoUML_Element', the role 'ownedElement' has cardinality 0..*.
+An association connects 'RefOntoUML_Element' and 'RefOntoUML_Comment'. From 'RefOntoUML_Element', the role 'RefOntoUML_Element7' has cardinality 0..*, and from 'RefOntoUML_Comment', the role 'RefOntoUML_Comment8' has cardinality 0..*.
+An association connects 'RefOntoUML_Package' and 'RefOntoUML_Type'. From 'RefOntoUML_Package', the role 'package' has cardinality 0..*, and from 'RefOntoUML_Type', the role 'Type' has cardinality 0..*.
+An association connects 'RefOntoUML_PackageMerge' and 'RefOntoUML_Package'. From 'RefOntoUML_PackageMerge', the role 'PackageMerge' has cardinality 0..*, and from 'RefOntoUML_Package', the role 'receivingPackage' has cardinality 0..*.
+An association connects 'RefOntoUML_PackageableElement' and 'RefOntoUML_Package'. From 'RefOntoUML_PackageableElement', the role 'RefOntoUML_PackageableElement' has cardinality 0..*, and from 'RefOntoUML_Package', the role 'RefOntoUML_Package' has cardinality 0..*.
+An association connects 'RefOntoUML_Package' and 'RefOntoUML_Package'. From 'RefOntoUML_Package', the role 'nestingPackage' has cardinality 0..*, and from 'RefOntoUML_Package', the role 'Package' has cardinality 0..*.
+An association connects 'RefOntoUML_Package' and 'RefOntoUML_Package'. From 'RefOntoUML_Package', the role 'Package16' has cardinality 0..*, and from 'RefOntoUML_Package', the role 'nestedPackage' has cardinality 0..*.
+An association connects 'RefOntoUML_Dependency' and 'RefOntoUML_NamedElement'. From 'RefOntoUML_Dependency', the role 'Dependency' has cardinality 0..*, and from 'RefOntoUML_NamedElement', the role 'client' has cardinality 0..*.
+An association connects 'RefOntoUML_Namespace' and 'RefOntoUML_NamedElement'. From 'RefOntoUML_Namespace', the role 'Namespace' has cardinality 0..*, and from 'RefOntoUML_NamedElement', the role 'ownedMember' has cardinality 0..*.
+An association connects 'RefOntoUML_NamedElement' and 'RefOntoUML_StringExpression'. From 'RefOntoUML_NamedElement', the role 'RefOntoUML_NamedElement' has cardinality 0..*, and from 'RefOntoUML_StringExpression', the role 'RefOntoUML_StringExpression' has cardinality 0..*.
+An association connects 'RefOntoUML_Dependency' and 'RefOntoUML_NamedElement'. From 'RefOntoUML_Dependency', the role 'RefOntoUML_Dependency' has cardinality 0..*, and from 'RefOntoUML_NamedElement', the role 'RefOntoUML_NamedElement21' has cardinality 0..*.
+An association connects 'RefOntoUML_NamedElement' and 'RefOntoUML_Dependency'. From 'RefOntoUML_NamedElement', the role 'NamedElement' has cardinality 0..*, and from 'RefOntoUML_Dependency', the role 'clientDependency' has cardinality 0..*.
+An association connects 'RefOntoUML_DirectedRelationship' and 'RefOntoUML_Element'. From 'RefOntoUML_DirectedRelationship', the role 'RefOntoUML_DirectedRelationship' has cardinality 0..*, and from 'RefOntoUML_Element', the role 'RefOntoUML_Element24' has cardinality 0..*.
+An association connects 'RefOntoUML_Element' and 'RefOntoUML_DirectedRelationship'. From 'RefOntoUML_Element', the role 'RefOntoUML_Element27' has cardinality 0..*, and from 'RefOntoUML_DirectedRelationship', the role 'RefOntoUML_DirectedRelationship26' has cardinality 0..*.
+An association connects 'RefOntoUML_Relationship' and 'RefOntoUML_Element'. From 'RefOntoUML_Relationship', the role 'RefOntoUML_Relationship' has cardinality 0..*, and from 'RefOntoUML_Element', the role 'RefOntoUML_Element29' has cardinality 0..*.
+An association connects 'RefOntoUML_Namespace' and 'RefOntoUML_ElementImport'. From 'RefOntoUML_Namespace', the role 'importingNamespace' has cardinality 0..*, and from 'RefOntoUML_ElementImport', the role 'ElementImport' has cardinality 0..*.
+An association connects 'RefOntoUML_Namespace' and 'RefOntoUML_PackageImport'. From 'RefOntoUML_Namespace', the role 'importingNamespace32' has cardinality 0..*, and from 'RefOntoUML_PackageImport', the role 'PackageImport' has cardinality 0..*.
+An association connects 'RefOntoUML_Namespace' and 'RefOntoUML_Constraintx'. From 'RefOntoUML_Namespace', the role 'context' has cardinality 0..*, and from 'RefOntoUML_Constraintx', the role 'Constraintx' has cardinality 0..*.
+An association connects 'RefOntoUML_Namespace' and 'RefOntoUML_NamedElement'. From 'RefOntoUML_Namespace', the role 'RefOntoUML_Namespace' has cardinality 0..*, and from 'RefOntoUML_NamedElement', the role 'RefOntoUML_NamedElement35' has cardinality 0..*.
+An association connects 'RefOntoUML_Namespace' and 'RefOntoUML_PackageableElement'. From 'RefOntoUML_Namespace', the role 'RefOntoUML_Namespace37' has cardinality 0..*, and from 'RefOntoUML_PackageableElement', the role 'RefOntoUML_PackageableElement38' has cardinality 0..*.
+An association connects 'RefOntoUML_Namespace' and 'RefOntoUML_NamedElement'. From 'RefOntoUML_Namespace', the role 'namespace' has cardinality 0..*, and from 'RefOntoUML_NamedElement', the role 'NamedElement40' has cardinality 0..*.
+An association connects 'RefOntoUML_PackageableElement' and 'RefOntoUML_ElementImport'. From 'RefOntoUML_PackageableElement', the role 'RefOntoUML_PackageableElement42' has cardinality 0..*, and from 'RefOntoUML_ElementImport', the role 'RefOntoUML_ElementImport' has cardinality 0..*.
+An association connects 'RefOntoUML_Namespace' and 'RefOntoUML_ElementImport'. From 'RefOntoUML_Namespace', the role 'Namespace44' has cardinality 0..*, and from 'RefOntoUML_ElementImport', the role 'elementImport' has cardinality 0..*.
+An association connects 'RefOntoUML_PackageImport' and 'RefOntoUML_Package'. From 'RefOntoUML_PackageImport', the role 'RefOntoUML_PackageImport' has cardinality 0..*, and from 'RefOntoUML_Package', the role 'RefOntoUML_Package46' has cardinality 0..*.
+An association connects 'RefOntoUML_Namespace' and 'RefOntoUML_PackageImport'. From 'RefOntoUML_Namespace', the role 'Namespace48' has cardinality 0..*, and from 'RefOntoUML_PackageImport', the role 'packageImport' has cardinality 0..*.
+An association connects 'RefOntoUML_Constraintx' and 'RefOntoUML_Element'. From 'RefOntoUML_Constraintx', the role 'RefOntoUML_Constraintx' has cardinality 0..*, and from 'RefOntoUML_Element', the role 'RefOntoUML_Element50' has cardinality 0..*.
+An association connects 'RefOntoUML_ValueSpecification' and 'RefOntoUML_Constraintx'. From 'RefOntoUML_ValueSpecification', the role 'RefOntoUML_ValueSpecification' has cardinality 0..*, and from 'RefOntoUML_Constraintx', the role 'RefOntoUML_Constraintx52' has cardinality 0..*.
+An association connects 'RefOntoUML_Constraintx' and 'RefOntoUML_Namespace'. From 'RefOntoUML_Constraintx', the role 'ownedRule' has cardinality 0..*, and from 'RefOntoUML_Namespace', the role 'Namespace54' has cardinality 0..*.
+An association connects 'RefOntoUML_TypedElement' and 'RefOntoUML_Type'. From 'RefOntoUML_TypedElement', the role 'RefOntoUML_TypedElement' has cardinality 0..*, and from 'RefOntoUML_Type', the role 'RefOntoUML_Type' has cardinality 0..*.
+An association connects 'RefOntoUML_Package' and 'RefOntoUML_Type'. From 'RefOntoUML_Package', the role 'Package57' has cardinality 0..*, and from 'RefOntoUML_Type', the role 'ownedType' has cardinality 0..*.
+An association connects 'RefOntoUML_Property' and 'RefOntoUML_Association'. From 'RefOntoUML_Property', the role 'Property' has cardinality 0..*, and from 'RefOntoUML_Association', the role 'owningAssociation' has cardinality 0..*.
+An association connects 'RefOntoUML_Association' and 'RefOntoUML_Property'. From 'RefOntoUML_Association', the role 'association' has cardinality 0..*, and from 'RefOntoUML_Property', the role 'Property60' has cardinality 0..*.
+An association connects 'RefOntoUML_Association' and 'RefOntoUML_Type'. From 'RefOntoUML_Association', the role 'RefOntoUML_Association' has cardinality 0..*, and from 'RefOntoUML_Type', the role 'RefOntoUML_Type62' has cardinality 0..*.
+An association connects 'RefOntoUML_Property' and 'RefOntoUML_Association'. From 'RefOntoUML_Property', the role 'RefOntoUML_Property' has cardinality 0..*, and from 'RefOntoUML_Association', the role 'RefOntoUML_Association64' has cardinality 0..*.
+An association connects 'RefOntoUML_Generalization' and 'RefOntoUML_Classifier'. From 'RefOntoUML_Generalization', the role 'Generalization' has cardinality 0..*, and from 'RefOntoUML_Classifier', the role 'specific' has cardinality 0..*.
+An association connects 'RefOntoUML_GeneralizationSet' and 'RefOntoUML_Classifier'. From 'RefOntoUML_GeneralizationSet', the role 'GeneralizationSet' has cardinality 0..*, and from 'RefOntoUML_Classifier', the role 'powertype' has cardinality 0..*.
+An association connects 'RefOntoUML_Classifier' and 'RefOntoUML_Feature'. From 'RefOntoUML_Classifier', the role 'featuringClassifier' has cardinality 0..*, and from 'RefOntoUML_Feature', the role 'Feature' has cardinality 0..*.
+An association connects 'RefOntoUML_NamedElement' and 'RefOntoUML_Classifier'. From 'RefOntoUML_NamedElement', the role 'RefOntoUML_NamedElement69' has cardinality 0..*, and from 'RefOntoUML_Classifier', the role 'RefOntoUML_Classifier' has cardinality 0..*.
+An association connects 'RefOntoUML_Classifier' and 'RefOntoUML_Classifier'. From 'RefOntoUML_Classifier', the role 'RefOntoUML_Classifier72' has cardinality 0..*, and from 'RefOntoUML_Classifier', the role 'RefOntoUML_Classifier70' has cardinality 0..*.
+An association connects 'RefOntoUML_Classifier' and 'RefOntoUML_Classifier'. From 'RefOntoUML_Classifier', the role 'RefOntoUML_Classifier73' has cardinality 0..*, and from 'RefOntoUML_Classifier', the role 'RefOntoUML_Classifier75' has cardinality 0..*.
+An association connects 'RefOntoUML_Classifier' and 'RefOntoUML_Property'. From 'RefOntoUML_Classifier', the role 'RefOntoUML_Classifier77' has cardinality 0..*, and from 'RefOntoUML_Property', the role 'RefOntoUML_Property78' has cardinality 0..*.
+An association connects 'RefOntoUML_RedefinableElement' and 'RefOntoUML_RedefinableElement'. From 'RefOntoUML_RedefinableElement', the role 'RefOntoUML_RedefinableElement' has cardinality 0..*, and from 'RefOntoUML_RedefinableElement', the role 'RefOntoUML_RedefinableElement79' has cardinality 0..*.
+An association connects 'RefOntoUML_Classifier' and 'RefOntoUML_RedefinableElement'. From 'RefOntoUML_Classifier', the role 'RefOntoUML_Classifier83' has cardinality 0..*, and from 'RefOntoUML_RedefinableElement', the role 'RefOntoUML_RedefinableElement82' has cardinality 0..*.
+An association connects 'RefOntoUML_Classifier' and 'RefOntoUML_Generalization'. From 'RefOntoUML_Classifier', the role 'RefOntoUML_Classifier85' has cardinality 0..*, and from 'RefOntoUML_Generalization', the role 'RefOntoUML_Generalization' has cardinality 0..*.
+An association connects 'RefOntoUML_GeneralizationSet' and 'RefOntoUML_Generalization'. From 'RefOntoUML_GeneralizationSet', the role 'GeneralizationSet87' has cardinality 0..*, and from 'RefOntoUML_Generalization', the role 'generalization' has cardinality 0..*.
+An association connects 'RefOntoUML_Generalization' and 'RefOntoUML_Classifier'. From 'RefOntoUML_Generalization', the role 'generalization89' has cardinality 0..*, and from 'RefOntoUML_Classifier', the role 'Classifier' has cardinality 0..*.
+An association connects 'RefOntoUML_Classifier' and 'RefOntoUML_GeneralizationSet'. From 'RefOntoUML_Classifier', the role 'Classifier91' has cardinality 0..*, and from 'RefOntoUML_GeneralizationSet', the role 'powertypeExtent' has cardinality 0..*.
+An association connects 'RefOntoUML_GeneralizationSet' and 'RefOntoUML_Generalization'. From 'RefOntoUML_GeneralizationSet', the role 'generalizationSet' has cardinality 0..*, and from 'RefOntoUML_Generalization', the role 'Generalization93' has cardinality 0..*.
+An association connects 'RefOntoUML_Classifier' and 'RefOntoUML_Feature'. From 'RefOntoUML_Classifier', the role 'Classifier95' has cardinality 0..*, and from 'RefOntoUML_Feature', the role 'feature' has cardinality 0..*.
+An association connects 'RefOntoUML_MultiplicityElement' and 'RefOntoUML_ValueSpecification'. From 'RefOntoUML_MultiplicityElement', the role 'RefOntoUML_MultiplicityElement' has cardinality 0..*, and from 'RefOntoUML_ValueSpecification', the role 'RefOntoUML_ValueSpecification97' has cardinality 0..*.
+An association connects 'RefOntoUML_MultiplicityElement' and 'RefOntoUML_ValueSpecification'. From 'RefOntoUML_MultiplicityElement', the role 'RefOntoUML_MultiplicityElement99' has cardinality 0..*, and from 'RefOntoUML_ValueSpecification', the role 'RefOntoUML_ValueSpecification100' has cardinality 0..*.
+An association connects 'RefOntoUML_Property' and 'RefOntoUML_Class'. From 'RefOntoUML_Property', the role 'ownedAttribute' has cardinality 0..*, and from 'RefOntoUML_Class', the role 'Class' has cardinality 0..*.
+An association connects 'RefOntoUML_Property' and 'RefOntoUML_DataType'. From 'RefOntoUML_Property', the role 'ownedAttribute103' has cardinality 0..*, and from 'RefOntoUML_DataType', the role 'DataType' has cardinality 0..*.
+An association connects 'RefOntoUML_Property' and 'RefOntoUML_Property'. From 'RefOntoUML_Property', the role 'RefOntoUML_Property104' has cardinality 0..*, and from 'RefOntoUML_Property', the role 'RefOntoUML_Property106' has cardinality 0..*.
+An association connects 'RefOntoUML_Association' and 'RefOntoUML_Property'. From 'RefOntoUML_Association', the role 'Association' has cardinality 0..*, and from 'RefOntoUML_Property', the role 'ownedEnd' has cardinality 0..*.
+An association connects 'RefOntoUML_ValueSpecification' and 'RefOntoUML_Property'. From 'RefOntoUML_ValueSpecification', the role 'RefOntoUML_ValueSpecification110' has cardinality 0..*, and from 'RefOntoUML_Property', the role 'RefOntoUML_Property109' has cardinality 0..*.
+An association connects 'RefOntoUML_Property' and 'RefOntoUML_Property'. From 'RefOntoUML_Property', the role 'RefOntoUML_Property111' has cardinality 0..*, and from 'RefOntoUML_Property', the role 'RefOntoUML_Property113' has cardinality 0..*.
+An association connects 'RefOntoUML_Property' and 'RefOntoUML_Property'. From 'RefOntoUML_Property', the role 'RefOntoUML_Property116' has cardinality 0..*, and from 'RefOntoUML_Property', the role 'RefOntoUML_Property114' has cardinality 0..*.
+An association connects 'RefOntoUML_Property' and 'RefOntoUML_Association'. From 'RefOntoUML_Property', the role 'memberEnd' has cardinality 0..*, and from 'RefOntoUML_Association', the role 'Association118' has cardinality 0..*.
+An association connects 'RefOntoUML_Class' and 'RefOntoUML_Classifier'. From 'RefOntoUML_Class', the role 'RefOntoUML_Class' has cardinality 0..*, and from 'RefOntoUML_Classifier', the role 'RefOntoUML_Classifier120' has cardinality 0..*.
+An association connects 'RefOntoUML_Class' and 'RefOntoUML_Class'. From 'RefOntoUML_Class', the role 'RefOntoUML_Class121' has cardinality 0..*, and from 'RefOntoUML_Class', the role 'RefOntoUML_Class123' has cardinality 0..*.
+An association connects 'RefOntoUML_Class' and 'RefOntoUML_Property'. From 'RefOntoUML_Class', the role 'class' has cardinality 0..*, and from 'RefOntoUML_Property', the role 'Property125' has cardinality 0..*.
+An association connects 'RefOntoUML_DataType' and 'RefOntoUML_Property'. From 'RefOntoUML_DataType', the role 'datatype' has cardinality 0..*, and from 'RefOntoUML_Property', the role 'Property127' has cardinality 0..*.
+An association connects 'RefOntoUML_StringExpression' and 'RefOntoUML_StringExpression'. From 'RefOntoUML_StringExpression', the role 'StringExpression' has cardinality 0..*, and from 'RefOntoUML_StringExpression', the role 'owningExpression' has cardinality 0..*.
+An association connects 'RefOntoUML_StringExpression' and 'RefOntoUML_StringExpression'. From 'RefOntoUML_StringExpression', the role 'subExpression' has cardinality 0..*, and from 'RefOntoUML_StringExpression', the role 'StringExpression132' has cardinality 0..*.
+An association connects 'RefOntoUML_Expression' and 'RefOntoUML_ValueSpecification'. From 'RefOntoUML_Expression', the role 'RefOntoUML_Expression' has cardinality 0..*, and from 'RefOntoUML_ValueSpecification', the role 'RefOntoUML_ValueSpecification134' has cardinality 0..*.
+An association connects 'RefOntoUML_PackageMerge' and 'RefOntoUML_Package'. From 'RefOntoUML_PackageMerge', the role 'RefOntoUML_PackageMerge' has cardinality 0..*, and from 'RefOntoUML_Package', the role 'RefOntoUML_Package136' has cardinality 0..*.
+An association connects 'RefOntoUML_Package' and 'RefOntoUML_PackageMerge'. From 'RefOntoUML_Package', the role 'Package138' has cardinality 0..*, and from 'RefOntoUML_PackageMerge', the role 'packageMerge' has cardinality 0..*.
+An association connects 'RefOntoUML_Enumeration' and 'RefOntoUML_EnumerationLiteral'. From 'RefOntoUML_Enumeration', the role 'enumeration' has cardinality 0..*, and from 'RefOntoUML_EnumerationLiteral', the role 'EnumerationLiteral' has cardinality 0..*.
+An association connects 'RefOntoUML_Enumeration' and 'RefOntoUML_EnumerationLiteral'. From 'RefOntoUML_Enumeration', the role 'Enumeration' has cardinality 0..*, and from 'RefOntoUML_EnumerationLiteral', the role 'ownedLiteral' has cardinality 0..*.
+An association connects 'RefOntoUML_InstanceSpecification' and 'RefOntoUML_Classifier'. From 'RefOntoUML_InstanceSpecification', the role 'RefOntoUML_InstanceSpecification' has cardinality 0..*, and from 'RefOntoUML_Classifier', the role 'RefOntoUML_Classifier142' has cardinality 0..*.
+An association connects 'RefOntoUML_Slot' and 'RefOntoUML_InstanceSpecification'. From 'RefOntoUML_Slot', the role 'Slot' has cardinality 0..*, and from 'RefOntoUML_InstanceSpecification', the role 'owningInstance' has cardinality 0..*.
+An association connects 'RefOntoUML_InstanceSpecification' and 'RefOntoUML_ValueSpecification'. From 'RefOntoUML_InstanceSpecification', the role 'RefOntoUML_InstanceSpecification145' has cardinality 0..*, and from 'RefOntoUML_ValueSpecification', the role 'RefOntoUML_ValueSpecification146' has cardinality 0..*.
+An association connects 'RefOntoUML_StructuralFeature' and 'RefOntoUML_Slot'. From 'RefOntoUML_StructuralFeature', the role 'RefOntoUML_StructuralFeature' has cardinality 0..*, and from 'RefOntoUML_Slot', the role 'RefOntoUML_Slot' has cardinality 0..*.
+An association connects 'RefOntoUML_ValueSpecification' and 'RefOntoUML_Slot'. From 'RefOntoUML_ValueSpecification', the role 'RefOntoUML_ValueSpecification150' has cardinality 0..*, and from 'RefOntoUML_Slot', the role 'RefOntoUML_Slot149' has cardinality 0..*.
+An association connects 'RefOntoUML_Slot' and 'RefOntoUML_InstanceSpecification'. From 'RefOntoUML_Slot', the role 'slot' has cardinality 0..*, and from 'RefOntoUML_InstanceSpecification', the role 'InstanceSpecification' has cardinality 0..*.
+An association connects 'RefOntoUML_InstanceSpecification' and 'RefOntoUML_InstanceValue'. From 'RefOntoUML_InstanceSpecification', the role 'RefOntoUML_InstanceSpecification153' has cardinality 0..*, and from 'RefOntoUML_InstanceValue', the role 'RefOntoUML_InstanceValue' has cardinality 0..*.

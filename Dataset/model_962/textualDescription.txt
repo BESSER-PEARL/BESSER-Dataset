@@ -1,0 +1,36 @@
+The domain model 'vml' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'vml_Node' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'vml_Slice' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'value', which is of type int.
+
+'vml_Diagram' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'vml_Graph' represents an important domain concept.
+It has the following attributes: 'ID', which is of type str; 'title', which is of type str.
+
+'vml_Pie' represents an important domain concept.
+It has the following attributes: 'ID', which is of type str; 'title', which is of type str.
+
+'vml_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'vml_Edge' represents an important domain concept.
+It has one attribute: 'relation', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'vml_Model' and 'vml_Diagram'. From 'vml_Model', the role 'vml_Model' has cardinality 0..*, and from 'vml_Diagram', the role 'vml_Diagram' has cardinality 0..*.
+An association connects 'vml_Pie' and 'vml_Diagram'. From 'vml_Pie', the role 'vml_Pie' has cardinality 0..*, and from 'vml_Diagram', the role 'vml_Diagram2' has cardinality 0..*.
+An association connects 'vml_Graph' and 'vml_Diagram'. From 'vml_Graph', the role 'vml_Graph' has cardinality 0..*, and from 'vml_Diagram', the role 'vml_Diagram4' has cardinality 0..*.
+An association connects 'vml_Pie' and 'vml_Slice'. From 'vml_Pie', the role 'vml_Pie6' has cardinality 0..*, and from 'vml_Slice', the role 'vml_Slice' has cardinality 0..*.
+An association connects 'vml_Node' and 'vml_Graph'. From 'vml_Node', the role 'vml_Node' has cardinality 0..*, and from 'vml_Graph', the role 'vml_Graph8' has cardinality 0..*.
+An association connects 'vml_Edge' and 'vml_Graph'. From 'vml_Edge', the role 'vml_Edge' has cardinality 0..*, and from 'vml_Graph', the role 'vml_Graph10' has cardinality 0..*.
+An association connects 'vml_Node' and 'vml_Edge'. From 'vml_Node', the role 'source' has cardinality 0..*, and from 'vml_Edge', the role 'Edge' has cardinality 0..*.
+An association connects 'vml_Edge' and 'vml_Node'. From 'vml_Edge', the role 'Edge13' has cardinality 0..*, and from 'vml_Node', the role 'target' has cardinality 0..*.
+An association connects 'vml_Edge' and 'vml_Node'. From 'vml_Edge', the role 'outgoing' has cardinality 0..*, and from 'vml_Node', the role 'Node' has cardinality 0..*.
+An association connects 'vml_Node' and 'vml_Edge'. From 'vml_Node', the role 'Node16' has cardinality 0..*, and from 'vml_Edge', the role 'incoming' has cardinality 0..*.

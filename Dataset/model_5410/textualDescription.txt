@@ -1,0 +1,81 @@
+The domain model 'dynamicFaultTree' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'dynamicFaultTree_OR' represents an important domain concept.
+It does not declare any attributes.
+
+'dynamicFaultTree_Spare' represents an important domain concept.
+It does not declare any attributes.
+
+'dynamicFaultTree_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'dynamicFaultTree_FunctionalDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'dynamicFaultTree_XOR' represents an important domain concept.
+It does not declare any attributes.
+
+'dynamicFaultTree_TopLevelEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'dynamicFaultTree_Gate' represents an important domain concept.
+It does not declare any attributes.
+
+'dynamicFaultTree_Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'dynamicFaultTree_PAND' represents an important domain concept.
+It does not declare any attributes.
+
+'dynamicFaultTree_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'dynamicFaultTree_POR' represents an important domain concept.
+It does not declare any attributes.
+
+'Gate' represents an important domain concept.
+It does not declare any attributes.
+
+'dynamicFaultTree_DFT' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dynamicFaultTree_Element' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'elementID', which is of type int; 'sequencePosition', which is of type int; 'probability', which is of type float.
+
+'dynamicFaultTree_AND' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'dynamicFaultTree_TopLevelEvent' is a specialization of 'Element'.
+The class 'dynamicFaultTree_Gate' is a specialization of 'Element'.
+The class 'dynamicFaultTree_Event' is a specialization of 'Element'.
+The class 'dynamicFaultTree_Dependency' is a specialization of 'Element'.
+The class 'dynamicFaultTree_Sequence' is a specialization of 'Dependency'.
+The class 'dynamicFaultTree_FunctionalDependency' is a specialization of 'Dependency'.
+The class 'dynamicFaultTree_AND' is a specialization of 'Gate'.
+The class 'dynamicFaultTree_PAND' is a specialization of 'Gate'.
+The class 'dynamicFaultTree_OR' is a specialization of 'Gate'.
+The class 'dynamicFaultTree_POR' is a specialization of 'Gate'.
+The class 'dynamicFaultTree_XOR' is a specialization of 'Gate'.
+The class 'dynamicFaultTree_Spare' is a specialization of 'Gate'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dynamicFaultTree_TopLevelEvent' and 'dynamicFaultTree_DFT'. From 'dynamicFaultTree_TopLevelEvent', the role 'dynamicFaultTree_TopLevelEvent' has cardinality 0..*, and from 'dynamicFaultTree_DFT', the role 'dynamicFaultTree_DFT' has cardinality 0..*.
+An association connects 'dynamicFaultTree_Dependency' and 'dynamicFaultTree_DFT'. From 'dynamicFaultTree_Dependency', the role 'dynamicFaultTree_Dependency' has cardinality 0..*, and from 'dynamicFaultTree_DFT', the role 'dynamicFaultTree_DFT2' has cardinality 0..*.
+An association connects 'dynamicFaultTree_TopLevelEvent' and 'dynamicFaultTree_Gate'. From 'dynamicFaultTree_TopLevelEvent', the role 'toplevelevent' has cardinality 0..*, and from 'dynamicFaultTree_Gate', the role 'Gate' has cardinality 0..*.
+An association connects 'dynamicFaultTree_TopLevelEvent' and 'dynamicFaultTree_Gate'. From 'dynamicFaultTree_TopLevelEvent', the role 'TopLevelEvent' has cardinality 0..*, and from 'dynamicFaultTree_Gate', the role 'gate' has cardinality 0..*.
+An association connects 'dynamicFaultTree_Gate' and 'dynamicFaultTree_Gate'. From 'dynamicFaultTree_Gate', the role 'Gate7' has cardinality 0..*, and from 'dynamicFaultTree_Gate', the role 'parentGate' has cardinality 0..*.
+An association connects 'dynamicFaultTree_Gate' and 'dynamicFaultTree_Gate'. From 'dynamicFaultTree_Gate', the role 'Gate10' has cardinality 0..*, and from 'dynamicFaultTree_Gate', the role 'childGate' has cardinality 0..*.
+An association connects 'dynamicFaultTree_Event' and 'dynamicFaultTree_Gate'. From 'dynamicFaultTree_Event', the role 'Event' has cardinality 0..*, and from 'dynamicFaultTree_Gate', the role 'parentGate12' has cardinality 0..*.
+An association connects 'dynamicFaultTree_Event' and 'dynamicFaultTree_Gate'. From 'dynamicFaultTree_Event', the role 'childEvent' has cardinality 0..*, and from 'dynamicFaultTree_Gate', the role 'Gate14' has cardinality 0..*.
+An association connects 'dynamicFaultTree_Dependency' and 'dynamicFaultTree_Event'. From 'dynamicFaultTree_Dependency', the role 'Dependency' has cardinality 0..*, and from 'dynamicFaultTree_Event', the role 'events' has cardinality 0..*.
+An association connects 'dynamicFaultTree_Event' and 'dynamicFaultTree_Dependency'. From 'dynamicFaultTree_Event', the role 'Event17' has cardinality 0..*, and from 'dynamicFaultTree_Dependency', the role 'dependency' has cardinality 0..*.
+An association connects 'dynamicFaultTree_Event' and 'dynamicFaultTree_Spare'. From 'dynamicFaultTree_Event', the role 'dynamicFaultTree_Event' has cardinality 0..*, and from 'dynamicFaultTree_Spare', the role 'dynamicFaultTree_Spare' has cardinality 0..*.

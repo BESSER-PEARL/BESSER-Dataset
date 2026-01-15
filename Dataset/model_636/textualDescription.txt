@@ -1,0 +1,26 @@
+The domain model 'lib' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'lib_Book' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'lib_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'lib_Cafeteria' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'lib_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'lib_Address' represents an important domain concept.
+It has one attribute: 'postalCode', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'lib_Book' and 'lib_Library'. From 'lib_Book', the role 'lib_Book' has cardinality 0..*, and from 'lib_Library', the role 'lib_Library' has cardinality 0..*.
+An association connects 'lib_Library' and 'lib_Address'. From 'lib_Library', the role 'lib_Library2' has cardinality 0..*, and from 'lib_Address', the role 'lib_Address' has cardinality 0..*.
+An association connects 'lib_Library' and 'lib_Person'. From 'lib_Library', the role 'library' has cardinality 0..*, and from 'lib_Person', the role 'Person' has cardinality 0..*.
+An association connects 'lib_Library' and 'lib_Cafeteria'. From 'lib_Library', the role 'library5' has cardinality 0..*, and from 'lib_Cafeteria', the role 'Cafeteria' has cardinality 0..*.
+An association connects 'lib_Person' and 'lib_Library'. From 'lib_Person', the role 'writers' has cardinality 0..*, and from 'lib_Library', the role 'Library' has cardinality 0..*.
+An association connects 'lib_Cafeteria' and 'lib_Library'. From 'lib_Cafeteria', the role 'cafeteria' has cardinality 0..*, and from 'lib_Library', the role 'Library8' has cardinality 0..*.

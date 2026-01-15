@@ -1,0 +1,39 @@
+The domain model 'graph' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_Edge' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'graph_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'Adaptable' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_Vertex' represents an important domain concept.
+It has the following attributes: 'number', which is of type int; 'label', which is of type str.
+
+'Attributable' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'graph_Graph' is a specialization of 'Vertex'.
+The class 'graph_Vertex' is a specialization of 'Attributable'.
+The class 'graph_Vertex' is a specialization of 'Adaptable'.
+The class 'graph_Edge' is a specialization of 'Attributable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'graph_Graph' and 'graph_Edge'. From 'graph_Graph', the role 'graph_Graph' has cardinality 0..*, and from 'graph_Edge', the role 'graph_Edge' has cardinality 0..*.
+An association connects 'graph_Graph' and 'graph_Vertex'. From 'graph_Graph', the role 'graph_Graph2' has cardinality 0..*, and from 'graph_Vertex', the role 'graph_Vertex' has cardinality 0..*.
+An association connects 'graph_Vertex' and 'graph_Edge'. From 'graph_Vertex', the role 'target' has cardinality 0..*, and from 'graph_Edge', the role 'Edge' has cardinality 0..*.
+An association connects 'graph_Edge' and 'graph_Vertex'. From 'graph_Edge', the role 'Edge5' has cardinality 0..*, and from 'graph_Vertex', the role 'source' has cardinality 0..*.
+An association connects 'graph_Edge' and 'graph_Vertex'. From 'graph_Edge', the role 'graph_Edge8' has cardinality 0..*, and from 'graph_Vertex', the role 'graph_Vertex7' has cardinality 0..*.
+An association connects 'graph_Vertex' and 'graph_Vertex'. From 'graph_Vertex', the role 'graph_Vertex11' has cardinality 0..*, and from 'graph_Vertex', the role 'graph_Vertex9' has cardinality 0..*.
+An association connects 'graph_Vertex' and 'graph_Vertex'. From 'graph_Vertex', the role 'graph_Vertex14' has cardinality 0..*, and from 'graph_Vertex', the role 'graph_Vertex12' has cardinality 0..*.
+An association connects 'graph_Vertex' and 'graph_Vertex'. From 'graph_Vertex', the role 'graph_Vertex17' has cardinality 0..*, and from 'graph_Vertex', the role 'graph_Vertex15' has cardinality 0..*.
+An association connects 'graph_Vertex' and 'graph_Edge'. From 'graph_Vertex', the role 'Vertex' has cardinality 0..*, and from 'graph_Edge', the role 'outgoing' has cardinality 0..*.
+An association connects 'graph_Vertex' and 'graph_Edge'. From 'graph_Vertex', the role 'Vertex20' has cardinality 0..*, and from 'graph_Edge', the role 'incoming' has cardinality 0..*.

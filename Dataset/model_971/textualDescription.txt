@@ -1,0 +1,29 @@
+The domain model 'graph' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'graph_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractNamedObject' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_AbstractNamedObject' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'graph_Graph' is a specialization of 'AbstractNamedObject'.
+The class 'graph_Node' is a specialization of 'AbstractNamedObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'graph_Node' and 'graph_Graph'. From 'graph_Node', the role 'graph_Node' has cardinality 0..*, and from 'graph_Graph', the role 'graph_Graph' has cardinality 0..*.
+An association connects 'graph_Edge' and 'graph_Node'. From 'graph_Edge', the role 'Edge' has cardinality 0..*, and from 'graph_Node', the role 'target' has cardinality 0..*.
+An association connects 'graph_Edge' and 'graph_Node'. From 'graph_Edge', the role 'Edge3' has cardinality 0..*, and from 'graph_Node', the role 'source' has cardinality 0..*.
+An association connects 'graph_Edge' and 'graph_Node'. From 'graph_Edge', the role 'outgoingEdges' has cardinality 0..*, and from 'graph_Node', the role 'Node' has cardinality 0..*.
+An association connects 'graph_Node' and 'graph_Edge'. From 'graph_Node', the role 'Node6' has cardinality 0..*, and from 'graph_Edge', the role 'incomingEdges' has cardinality 0..*.

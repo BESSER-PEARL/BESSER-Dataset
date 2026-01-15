@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/oovever/MetaModel/org.eclipse.sirius.architecture/model/architecture.ecore

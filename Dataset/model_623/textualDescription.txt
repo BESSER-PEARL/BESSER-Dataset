@@ -1,0 +1,24 @@
+The domain model 'ocltutorial' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'ocltutorial_Member' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ocltutorial_Book' represents an important domain concept.
+It has the following attributes: 'copies', which is of type str; 'name', which is of type str.
+
+'ocltutorial_Loans' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'ocltutorial_Library' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'ocltutorial_Library' and 'ocltutorial_Book'. From 'ocltutorial_Library', the role 'library' has cardinality 0..*, and from 'ocltutorial_Book', the role 'Book' has cardinality 0..*.
+An association connects 'ocltutorial_Library' and 'ocltutorial_Member'. From 'ocltutorial_Library', the role 'library2' has cardinality 0..*, and from 'ocltutorial_Member', the role 'Member' has cardinality 0..*.
+An association connects 'ocltutorial_Library' and 'ocltutorial_Loans'. From 'ocltutorial_Library', the role 'ocltutorial_Library' has cardinality 0..*, and from 'ocltutorial_Loans', the role 'ocltutorial_Loans' has cardinality 0..*.
+An association connects 'ocltutorial_Library' and 'ocltutorial_Book'. From 'ocltutorial_Library', the role 'Library' has cardinality 0..*, and from 'ocltutorial_Book', the role 'books' has cardinality 0..*.
+An association connects 'ocltutorial_Loans' and 'ocltutorial_Member'. From 'ocltutorial_Loans', the role 'ocltutorial_Loans6' has cardinality 0..*, and from 'ocltutorial_Member', the role 'ocltutorial_Member' has cardinality 0..*.
+An association connects 'ocltutorial_Loans' and 'ocltutorial_Book'. From 'ocltutorial_Loans', the role 'ocltutorial_Loans8' has cardinality 0..*, and from 'ocltutorial_Book', the role 'ocltutorial_Book' has cardinality 0..*.
+An association connects 'ocltutorial_Library' and 'ocltutorial_Member'. From 'ocltutorial_Library', the role 'Library10' has cardinality 0..*, and from 'ocltutorial_Member', the role 'members' has cardinality 0..*.

@@ -1,0 +1,53 @@
+The domain model 'UML2' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'UML2_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ProtocolStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ParameterSet' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Parameter' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'UML2_Interaction' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ParameterDirectionKind' defines the following possible values: 'in', 'return', 'out', 'inout'.
+
+The model also captures inheritance relationships between classes.
+The class 'UML2_ProtocolStateMachine' is a specialization of 'StateMachine'.
+The class 'UML2_Activity' is a specialization of 'Behavior'.
+The class 'UML2_StateMachine' is a specialization of 'Behavior'.
+The class 'UML2_Expression' is a specialization of 'OpaqueExpression'.
+The class 'UML2_Interaction' is a specialization of 'Behavior'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UML2_Behavior' and 'UML2_OpaqueExpression'. From 'UML2_Behavior', the role 'UML2_Behavior' has cardinality 0..*, and from 'UML2_OpaqueExpression', the role 'UML2_OpaqueExpression' has cardinality 0..*.
+An association connects 'UML2_Behavior' and 'UML2_ParameterSet'. From 'UML2_Behavior', the role 'UML2_Behavior2' has cardinality 0..*, and from 'UML2_ParameterSet', the role 'UML2_ParameterSet' has cardinality 0..*.

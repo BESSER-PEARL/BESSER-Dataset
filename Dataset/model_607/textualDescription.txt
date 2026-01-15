@@ -1,0 +1,206 @@
+The domain model 'assessment' describes the core structural elements and their relationships within the system.
+
+The model defines 38 main class(es).
+
+'assessment_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_Resource' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_Account' represents an important domain concept.
+It has the following attributes: 'password', which is of type str; 'email', which is of type str.
+
+'assessment_Assessment' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_View' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_Url' represents an important domain concept.
+It has the following attributes: 'patternType', which is of type str; 'pattern', which is of type str.
+
+'assessment_Notes' represents an important domain concept.
+It has one attribute: 'notes', which is of type str.
+
+'assessment_Application' represents an important domain concept.
+It has the following attributes: 'internalURL', which is of type str; 'externalURL', which is of type str.
+
+'assessment_Entitlement' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_Contents' represents an important domain concept.
+It has one attribute: 'contents', which is of type str.
+
+'Contents' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_Applications' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_Label' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'assessment_Models' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_Controllers' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_Accounts' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_Scm' represents an important domain concept.
+It has the following attributes: 'branchTag', which is of type str; 'repository', which is of type str.
+
+'assessment_Views' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_Tasks' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_Controller' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphNode' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_GraphNode' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_Sinks' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_Http' represents an important domain concept.
+It has the following attributes: 'response', which is of type str; 'request', which is of type str.
+
+'assessment_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_Generic' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_Snippet' represents an important domain concept.
+It has the following attributes: 'columnEnd', which is of type int; 'lineStart', which is of type int; 'columnStart', which is of type int; 'lineEnd', which is of type int.
+
+'assessment_Findings' represents an important domain concept.
+It does not declare any attributes.
+
+'Label' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_Sink' represents an important domain concept.
+It has one attribute: 'cwes', which is of type int.
+
+'assessment_Resources' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_Task' represents an important domain concept.
+It has one attribute: 'status', which is of type str.
+
+'assessment_Finding' represents an important domain concept.
+It has the following attributes: 'references', which is of type str; 'remediation', which is of type str; 'reproducer', which is of type str.
+
+'assessment_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_Entitlements' represents an important domain concept.
+It does not declare any attributes.
+
+'assessment_Control' represents an important domain concept.
+It does not declare any attributes.
+
+'Notes' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'UrlPattern' defines a single possible value: 'ANT'.
+The enumeration 'TaskStatus' defines the following possible values: 'done', 'todo', 'in_progress', 'skipped'.
+The enumeration 'HttpMethod' defines the following possible values: 'CONNECT', 'POST', 'PUT', 'OPTIONS', 'TRACE', 'PATCH', 'GET', 'HEAD', 'DELETE'.
+The enumeration 'Language' defines the following possible values: 'Scala', 'PHP', 'Java', 'Python', 'Ruby', 'C_Cpp', 'Other', 'C_Sharp'.
+
+The model also captures inheritance relationships between classes.
+The class 'assessment_Http' is a specialization of 'GraphNode'.
+The class 'assessment_Node' is a specialization of 'Label'.
+The class 'assessment_Node' is a specialization of 'Notes'.
+The class 'assessment_Assessment' is a specialization of 'Label'.
+The class 'assessment_Assessment' is a specialization of 'Notes'.
+The class 'assessment_Application' is a specialization of 'Label'.
+The class 'assessment_Application' is a specialization of 'Notes'.
+The class 'assessment_Sink' is a specialization of 'Node'.
+The class 'assessment_Controller' is a specialization of 'Node'.
+The class 'assessment_View' is a specialization of 'Node'.
+The class 'assessment_Model' is a specialization of 'Node'.
+The class 'assessment_Finding' is a specialization of 'Label'.
+The class 'assessment_Finding' is a specialization of 'Notes'.
+The class 'assessment_Account' is a specialization of 'Node'.
+The class 'assessment_Entitlement' is a specialization of 'Node'.
+The class 'assessment_Task' is a specialization of 'Label'.
+The class 'assessment_Task' is a specialization of 'Notes'.
+The class 'assessment_Snippet' is a specialization of 'GraphNode'.
+The class 'assessment_Snippet' is a specialization of 'Contents'.
+The class 'assessment_Generic' is a specialization of 'GraphNode'.
+The class 'assessment_GraphNode' is a specialization of 'Node'.
+The class 'assessment_Control' is a specialization of 'GraphNode'.
+The class 'assessment_Resource' is a specialization of 'Label'.
+The class 'assessment_Resource' is a specialization of 'Notes'.
+The class 'assessment_Resource' is a specialization of 'Contents'.
+
+Relationships between classes are modeled using associations.
+An association connects 'assessment_GraphNode' and 'assessment_Node'. From 'assessment_GraphNode', the role 'assessment_GraphNode' has cardinality 0..*, and from 'assessment_Node', the role 'assessment_Node' has cardinality 0..*.
+An association connects 'assessment_Node' and 'assessment_Node'. From 'assessment_Node', the role 'assessment_Node3' has cardinality 0..*, and from 'assessment_Node', the role 'assessment_Node1' has cardinality 0..*.
+An association connects 'assessment_Node' and 'assessment_Node'. From 'assessment_Node', the role 'Node' has cardinality 0..*, and from 'assessment_Node', the role 'referredBy' has cardinality 0..*.
+An association connects 'assessment_Node' and 'assessment_Node'. From 'assessment_Node', the role 'Node8' has cardinality 0..*, and from 'assessment_Node', the role 'refersTo' has cardinality 0..*.
+An association connects 'assessment_Node' and 'assessment_Task'. From 'assessment_Node', the role 'affects' has cardinality 0..*, and from 'assessment_Task', the role 'Task' has cardinality 0..*.
+An association connects 'assessment_Finding' and 'assessment_Node'. From 'assessment_Finding', the role 'Finding' has cardinality 0..*, and from 'assessment_Node', the role 'affects11' has cardinality 0..*.
+An association connects 'assessment_Applications' and 'assessment_Assessment'. From 'assessment_Applications', the role 'Applications' has cardinality 0..*, and from 'assessment_Assessment', the role 'assessment' has cardinality 0..*.
+An association connects 'assessment_Findings' and 'assessment_Assessment'. From 'assessment_Findings', the role 'Findings' has cardinality 0..*, and from 'assessment_Assessment', the role 'assessment14' has cardinality 0..*.
+An association connects 'assessment_Tasks' and 'assessment_Assessment'. From 'assessment_Tasks', the role 'Tasks' has cardinality 0..*, and from 'assessment_Assessment', the role 'assessment16' has cardinality 0..*.
+An association connects 'assessment_Application' and 'assessment_Accounts'. From 'assessment_Application', the role 'assessment_Application' has cardinality 0..*, and from 'assessment_Accounts', the role 'assessment_Accounts' has cardinality 0..*.
+An association connects 'assessment_Application' and 'assessment_Entitlements'. From 'assessment_Application', the role 'assessment_Application19' has cardinality 0..*, and from 'assessment_Entitlements', the role 'assessment_Entitlements' has cardinality 0..*.
+An association connects 'assessment_Application' and 'assessment_Controllers'. From 'assessment_Application', the role 'application' has cardinality 0..*, and from 'assessment_Controllers', the role 'Controllers' has cardinality 0..*.
+An association connects 'assessment_Application' and 'assessment_Models'. From 'assessment_Application', the role 'application22' has cardinality 0..*, and from 'assessment_Models', the role 'Models' has cardinality 0..*.
+An association connects 'assessment_Scm' and 'assessment_Application'. From 'assessment_Scm', the role 'Scm' has cardinality 0..*, and from 'assessment_Application', the role 'application24' has cardinality 0..*.
+An association connects 'assessment_Views' and 'assessment_Application'. From 'assessment_Views', the role 'Views' has cardinality 0..*, and from 'assessment_Application', the role 'application26' has cardinality 0..*.
+An association connects 'assessment_Application' and 'assessment_Sinks'. From 'assessment_Application', the role 'assessment_Application28' has cardinality 0..*, and from 'assessment_Sinks', the role 'assessment_Sinks' has cardinality 0..*.
+An association connects 'assessment_Application' and 'assessment_Resources'. From 'assessment_Application', the role 'application30' has cardinality 0..*, and from 'assessment_Resources', the role 'Resources' has cardinality 0..*.
+An association connects 'assessment_Applications' and 'assessment_Application'. From 'assessment_Applications', the role 'Applications32' has cardinality 0..*, and from 'assessment_Application', the role 'applications' has cardinality 0..*.
+An association connects 'assessment_Sinks' and 'assessment_Sink'. From 'assessment_Sinks', the role 'Sinks' has cardinality 0..*, and from 'assessment_Sink', the role 'sinks' has cardinality 0..*.
+An association connects 'assessment_Controller' and 'assessment_Controllers'. From 'assessment_Controller', the role 'controllers' has cardinality 0..*, and from 'assessment_Controllers', the role 'Controllers35' has cardinality 0..*.
+An association connects 'assessment_View' and 'assessment_Views'. From 'assessment_View', the role 'views' has cardinality 0..*, and from 'assessment_Views', the role 'Views37' has cardinality 0..*.
+An association connects 'assessment_Model' and 'assessment_Models'. From 'assessment_Model', the role 'models' has cardinality 0..*, and from 'assessment_Models', the role 'Models39' has cardinality 0..*.
+An association connects 'assessment_Findings' and 'assessment_Finding'. From 'assessment_Findings', the role 'Findings41' has cardinality 0..*, and from 'assessment_Finding', the role 'findings' has cardinality 0..*.
+An association connects 'assessment_Finding' and 'assessment_Node'. From 'assessment_Finding', the role 'findings43' has cardinality 0..*, and from 'assessment_Node', the role 'Node44' has cardinality 0..*.
+An association connects 'assessment_Account' and 'assessment_Accounts'. From 'assessment_Account', the role 'accounts' has cardinality 0..*, and from 'assessment_Accounts', the role 'Accounts' has cardinality 0..*.
+An association connects 'assessment_Entitlement' and 'assessment_Account'. From 'assessment_Entitlement', the role 'Entitlement' has cardinality 0..*, and from 'assessment_Account', the role 'accounts47' has cardinality 0..*.
+An association connects 'assessment_Account' and 'assessment_Entitlement'. From 'assessment_Account', the role 'Account' has cardinality 0..*, and from 'assessment_Entitlement', the role 'entitlements' has cardinality 0..*.
+An association connects 'assessment_Entitlements' and 'assessment_Entitlement'. From 'assessment_Entitlements', the role 'Entitlements' has cardinality 0..*, and from 'assessment_Entitlement', the role 'entitlements50' has cardinality 0..*.
+An association connects 'assessment_Tasks' and 'assessment_Task'. From 'assessment_Tasks', the role 'Tasks52' has cardinality 0..*, and from 'assessment_Task', the role 'tasks' has cardinality 0..*.
+An association connects 'assessment_Node' and 'assessment_Task'. From 'assessment_Node', the role 'Node55' has cardinality 0..*, and from 'assessment_Task', the role 'tasks54' has cardinality 0..*.
+An association connects 'assessment_Scm' and 'assessment_Application'. From 'assessment_Scm', the role 'scm' has cardinality 0..*, and from 'assessment_Application', the role 'Application' has cardinality 0..*.
+An association connects 'assessment_Snippet' and 'assessment_Resource'. From 'assessment_Snippet', the role 'snippets' has cardinality 0..*, and from 'assessment_Resource', the role 'Resource' has cardinality 0..*.
+An association connects 'assessment_Resources' and 'assessment_Resource'. From 'assessment_Resources', the role 'Resources59' has cardinality 0..*, and from 'assessment_Resource', the role 'resources' has cardinality 0..*.
+An association connects 'assessment_Resource' and 'assessment_Snippet'. From 'assessment_Resource', the role 'resource' has cardinality 0..*, and from 'assessment_Snippet', the role 'Snippet' has cardinality 0..*.
+An association connects 'assessment_Application' and 'assessment_Applications'. From 'assessment_Application', the role 'Application63' has cardinality 0..*, and from 'assessment_Applications', the role 'applications62' has cardinality 0..*.
+An association connects 'assessment_Assessment' and 'assessment_Applications'. From 'assessment_Assessment', the role 'Assessment' has cardinality 0..*, and from 'assessment_Applications', the role 'applications65' has cardinality 0..*.
+An association connects 'assessment_Findings' and 'assessment_Finding'. From 'assessment_Findings', the role 'findings67' has cardinality 0..*, and from 'assessment_Finding', the role 'Finding68' has cardinality 0..*.
+An association connects 'assessment_Findings' and 'assessment_Assessment'. From 'assessment_Findings', the role 'findings70' has cardinality 0..*, and from 'assessment_Assessment', the role 'Assessment71' has cardinality 0..*.
+An association connects 'assessment_Accounts' and 'assessment_Application'. From 'assessment_Accounts', the role 'assessment_Accounts73' has cardinality 0..*, and from 'assessment_Application', the role 'assessment_Application74' has cardinality 0..*.
+An association connects 'assessment_Accounts' and 'assessment_Account'. From 'assessment_Accounts', the role 'accounts76' has cardinality 0..*, and from 'assessment_Account', the role 'Account77' has cardinality 0..*.
+An association connects 'assessment_Application' and 'assessment_Controllers'. From 'assessment_Application', the role 'Application80' has cardinality 0..*, and from 'assessment_Controllers', the role 'controllers79' has cardinality 0..*.
+An association connects 'assessment_Controllers' and 'assessment_Controller'. From 'assessment_Controllers', the role 'controllers82' has cardinality 0..*, and from 'assessment_Controller', the role 'Controller' has cardinality 0..*.
+An association connects 'assessment_Application' and 'assessment_Entitlements'. From 'assessment_Application', the role 'assessment_Application85' has cardinality 0..*, and from 'assessment_Entitlements', the role 'assessment_Entitlements84' has cardinality 0..*.
+An association connects 'assessment_Entitlement' and 'assessment_Entitlements'. From 'assessment_Entitlement', the role 'Entitlement88' has cardinality 0..*, and from 'assessment_Entitlements', the role 'entitlements87' has cardinality 0..*.
+An association connects 'assessment_Models' and 'assessment_Application'. From 'assessment_Models', the role 'models90' has cardinality 0..*, and from 'assessment_Application', the role 'Application91' has cardinality 0..*.
+An association connects 'assessment_Model' and 'assessment_Models'. From 'assessment_Model', the role 'Model' has cardinality 0..*, and from 'assessment_Models', the role 'models93' has cardinality 0..*.
+An association connects 'assessment_Application' and 'assessment_Views'. From 'assessment_Application', the role 'Application96' has cardinality 0..*, and from 'assessment_Views', the role 'views95' has cardinality 0..*.
+An association connects 'assessment_View' and 'assessment_Views'. From 'assessment_View', the role 'View' has cardinality 0..*, and from 'assessment_Views', the role 'views98' has cardinality 0..*.
+An association connects 'assessment_Sinks' and 'assessment_Application'. From 'assessment_Sinks', the role 'assessment_Sinks100' has cardinality 0..*, and from 'assessment_Application', the role 'assessment_Application101' has cardinality 0..*.
+An association connects 'assessment_Sink' and 'assessment_Sinks'. From 'assessment_Sink', the role 'Sink' has cardinality 0..*, and from 'assessment_Sinks', the role 'sinks103' has cardinality 0..*.
+An association connects 'assessment_Resources' and 'assessment_Application'. From 'assessment_Resources', the role 'resources105' has cardinality 0..*, and from 'assessment_Application', the role 'Application106' has cardinality 0..*.
+An association connects 'assessment_Resource' and 'assessment_Resources'. From 'assessment_Resource', the role 'Resource109' has cardinality 0..*, and from 'assessment_Resources', the role 'resources108' has cardinality 0..*.
+An association connects 'assessment_Tasks' and 'assessment_Assessment'. From 'assessment_Tasks', the role 'tasks111' has cardinality 0..*, and from 'assessment_Assessment', the role 'Assessment112' has cardinality 0..*.
+An association connects 'assessment_Task' and 'assessment_Tasks'. From 'assessment_Task', the role 'Task115' has cardinality 0..*, and from 'assessment_Tasks', the role 'tasks114' has cardinality 0..*.

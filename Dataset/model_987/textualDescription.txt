@@ -1,0 +1,71 @@
+The domain model 'qVTcDataDependencyGraph' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'qVTcDataDependencyGraph_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'qVTcDataDependencyGraph_MappingNode' represents an important domain concept.
+It does not declare any attributes.
+
+'qVTcDataDependencyGraph_ContainmentEdge' represents an important domain concept.
+It has one attribute: 'model', which is of type str.
+
+'qVTcDataDependencyGraph_ReferenceEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'qVTcDataDependencyGraph_DependencyEdge' represents an important domain concept.
+It has the following attributes: 'direction', which is of type str; 'multiple', which is of type bool; 'derived', which is of type bool.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'qVTcDataDependencyGraph_DataTypeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'qVTcDataDependencyGraph_ClassNode' represents an important domain concept.
+It has the following attributes: 'model', which is of type str; 'superTypes', which is of type str.
+
+'Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'qVTcDataDependencyGraph_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'qVTcDataDependencyGraph_Graph' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'qVTcDataDependencyGraph_Node' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'qVTcDataDependencyGraph_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Model' defines the following possible values: 'middle', 'input', 'output'.
+The enumeration 'DependencyDirection' defines the following possible values: 'input', 'output'.
+
+The model also captures inheritance relationships between classes.
+The class 'qVTcDataDependencyGraph_ClassNode' is a specialization of 'Node'.
+The class 'qVTcDataDependencyGraph_DataTypeNode' is a specialization of 'Node'.
+The class 'qVTcDataDependencyGraph_DependencyEdge' is a specialization of 'Edge'.
+The class 'qVTcDataDependencyGraph_Edge' is a specialization of 'Element'.
+The class 'qVTcDataDependencyGraph_MappingNode' is a specialization of 'Node'.
+The class 'qVTcDataDependencyGraph_Node' is a specialization of 'Element'.
+The class 'qVTcDataDependencyGraph_ReferenceEdge' is a specialization of 'Edge'.
+The class 'qVTcDataDependencyGraph_ContainmentEdge' is a specialization of 'Edge'.
+
+Relationships between classes are modeled using associations.
+An association connects 'qVTcDataDependencyGraph_EObject' and 'qVTcDataDependencyGraph_DataTypeNode'. From 'qVTcDataDependencyGraph_EObject', the role 'qVTcDataDependencyGraph_EObject' has cardinality 0..*, and from 'qVTcDataDependencyGraph_DataTypeNode', the role 'qVTcDataDependencyGraph_DataTypeNode' has cardinality 0..*.
+An association connects 'qVTcDataDependencyGraph_DataTypeNode' and 'qVTcDataDependencyGraph_EObject'. From 'qVTcDataDependencyGraph_DataTypeNode', the role 'qVTcDataDependencyGraph_DataTypeNode2' has cardinality 0..*, and from 'qVTcDataDependencyGraph_EObject', the role 'qVTcDataDependencyGraph_EObject3' has cardinality 0..*.
+An association connects 'qVTcDataDependencyGraph_Node' and 'qVTcDataDependencyGraph_Edge'. From 'qVTcDataDependencyGraph_Node', the role 'Node' has cardinality 0..*, and from 'qVTcDataDependencyGraph_Edge', the role 'incoming' has cardinality 0..*.
+An association connects 'qVTcDataDependencyGraph_Node' and 'qVTcDataDependencyGraph_Edge'. From 'qVTcDataDependencyGraph_Node', the role 'Node6' has cardinality 0..*, and from 'qVTcDataDependencyGraph_Edge', the role 'outgoing' has cardinality 0..*.
+An association connects 'qVTcDataDependencyGraph_EObject' and 'qVTcDataDependencyGraph_Edge'. From 'qVTcDataDependencyGraph_EObject', the role 'qVTcDataDependencyGraph_EObject8' has cardinality 0..*, and from 'qVTcDataDependencyGraph_Edge', the role 'qVTcDataDependencyGraph_Edge' has cardinality 0..*.
+An association connects 'qVTcDataDependencyGraph_Graph' and 'qVTcDataDependencyGraph_Element'. From 'qVTcDataDependencyGraph_Graph', the role 'Graph' has cardinality 0..*, and from 'qVTcDataDependencyGraph_Element', the role 'elements' has cardinality 0..*.
+An association connects 'qVTcDataDependencyGraph_Element' and 'qVTcDataDependencyGraph_Graph'. From 'qVTcDataDependencyGraph_Element', the role 'Element' has cardinality 0..*, and from 'qVTcDataDependencyGraph_Graph', the role 'graph' has cardinality 0..*.
+An association connects 'qVTcDataDependencyGraph_Node' and 'qVTcDataDependencyGraph_Edge'. From 'qVTcDataDependencyGraph_Node', the role 'target' has cardinality 0..*, and from 'qVTcDataDependencyGraph_Edge', the role 'Edge' has cardinality 0..*.
+An association connects 'qVTcDataDependencyGraph_Edge' and 'qVTcDataDependencyGraph_Node'. From 'qVTcDataDependencyGraph_Edge', the role 'Edge13' has cardinality 0..*, and from 'qVTcDataDependencyGraph_Node', the role 'source' has cardinality 0..*.
+An association connects 'qVTcDataDependencyGraph_EObject' and 'qVTcDataDependencyGraph_Node'. From 'qVTcDataDependencyGraph_EObject', the role 'qVTcDataDependencyGraph_EObject15' has cardinality 0..*, and from 'qVTcDataDependencyGraph_Node', the role 'qVTcDataDependencyGraph_Node' has cardinality 0..*.

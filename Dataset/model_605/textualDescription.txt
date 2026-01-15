@@ -1,0 +1,81 @@
+The domain model 'SMVC' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'SMVC_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str; 'multiValued', which is of type bool.
+
+'SMVC_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'SMVC_List' represents an important domain concept.
+It does not declare any attributes.
+
+'SMVC_EntityController' represents an important domain concept.
+It has the following attributes: 'returnOKURL', which is of type str; 'returnKOURL', which is of type str.
+
+'SMVC_Page' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'SMVC_EntityComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'SMVC_Form' represents an important domain concept.
+It does not declare any attributes.
+
+'SMVC_View' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'SMVC_SupportedOperation' represents an important domain concept.
+It has the following attributes: 'operationKind', which is of type str; 'url', which is of type str.
+
+'SMVC_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SMVC_SMVCApplication' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Controller' represents an important domain concept.
+It does not declare any attributes.
+
+'SMVC_DataAccessObject' represents an important domain concept.
+It has the following attributes: 'showDirectInstancesOnly', which is of type bool; 'name', which is of type str.
+
+'SMVC_Link' represents an important domain concept.
+It has one attribute: 'url', which is of type str.
+
+'SMVC_Controller' represents an important domain concept.
+It has the following attributes: 'operation', which is of type str; 'url', which is of type str.
+
+'EntityComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Operation' defines the following possible values: 'readONE', 'update', 'readALL', 'forward', 'read', '_create', 'delete'.
+The enumeration 'AttributeType' defines the following possible values: 'BIGINTEGER', 'DOUBLE', 'OID', 'VARCHAR', 'VOID'.
+
+The model also captures inheritance relationships between classes.
+The class 'SMVC_EntityController' is a specialization of 'Controller'.
+The class 'SMVC_EntityComponent' is a specialization of 'Component'.
+The class 'SMVC_List' is a specialization of 'EntityComponent'.
+The class 'SMVC_Form' is a specialization of 'EntityComponent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SMVC_Controller' and 'SMVC_SMVCApplication'. From 'SMVC_Controller', the role 'SMVC_Controller' has cardinality 0..*, and from 'SMVC_SMVCApplication', the role 'SMVC_SMVCApplication' has cardinality 0..*.
+An association connects 'SMVC_SMVCApplication' and 'SMVC_Controller'. From 'SMVC_SMVCApplication', the role 'SMVC_SMVCApplication2' has cardinality 0..*, and from 'SMVC_Controller', the role 'SMVC_Controller3' has cardinality 0..*.
+An association connects 'SMVC_DataAccessObject' and 'SMVC_SMVCApplication'. From 'SMVC_DataAccessObject', the role 'SMVC_DataAccessObject' has cardinality 0..*, and from 'SMVC_SMVCApplication', the role 'SMVC_SMVCApplication5' has cardinality 0..*.
+An association connects 'SMVC_Entity' and 'SMVC_SMVCApplication'. From 'SMVC_Entity', the role 'SMVC_Entity' has cardinality 0..*, and from 'SMVC_SMVCApplication', the role 'SMVC_SMVCApplication7' has cardinality 0..*.
+An association connects 'SMVC_Controller' and 'SMVC_Controller'. From 'SMVC_Controller', the role 'SMVC_Controller10' has cardinality 0..*, and from 'SMVC_Controller', the role 'SMVC_Controller8' has cardinality 0..*.
+An association connects 'SMVC_Page' and 'SMVC_Controller'. From 'SMVC_Page', the role 'SMVC_Page' has cardinality 0..*, and from 'SMVC_Controller', the role 'SMVC_Controller12' has cardinality 0..*.
+An association connects 'SMVC_EntityController' and 'SMVC_DataAccessObject'. From 'SMVC_EntityController', the role 'SMVC_EntityController' has cardinality 0..*, and from 'SMVC_DataAccessObject', the role 'SMVC_DataAccessObject14' has cardinality 0..*.
+An association connects 'SMVC_DataAccessObject' and 'SMVC_Entity'. From 'SMVC_DataAccessObject', the role 'SMVC_DataAccessObject16' has cardinality 0..*, and from 'SMVC_Entity', the role 'SMVC_Entity17' has cardinality 0..*.
+An association connects 'SMVC_Entity' and 'SMVC_Attribute'. From 'SMVC_Entity', the role 'SMVC_Entity19' has cardinality 0..*, and from 'SMVC_Attribute', the role 'SMVC_Attribute' has cardinality 0..*.
+An association connects 'SMVC_Attribute' and 'SMVC_Entity'. From 'SMVC_Attribute', the role 'SMVC_Attribute21' has cardinality 0..*, and from 'SMVC_Entity', the role 'SMVC_Entity22' has cardinality 0..*.
+An association connects 'SMVC_Page' and 'SMVC_Link'. From 'SMVC_Page', the role 'SMVC_Page24' has cardinality 0..*, and from 'SMVC_Link', the role 'SMVC_Link' has cardinality 0..*.
+An association connects 'SMVC_View' and 'SMVC_Page'. From 'SMVC_View', the role 'SMVC_View' has cardinality 0..*, and from 'SMVC_Page', the role 'SMVC_Page26' has cardinality 0..*.
+An association connects 'SMVC_Component' and 'SMVC_View'. From 'SMVC_Component', the role 'SMVC_Component' has cardinality 0..*, and from 'SMVC_View', the role 'SMVC_View28' has cardinality 0..*.
+An association connects 'SMVC_EntityComponent' and 'SMVC_Entity'. From 'SMVC_EntityComponent', the role 'SMVC_EntityComponent' has cardinality 0..*, and from 'SMVC_Entity', the role 'SMVC_Entity30' has cardinality 0..*.
+An association connects 'SMVC_SupportedOperation' and 'SMVC_List'. From 'SMVC_SupportedOperation', the role 'SMVC_SupportedOperation' has cardinality 0..*, and from 'SMVC_List', the role 'SMVC_List' has cardinality 0..*.

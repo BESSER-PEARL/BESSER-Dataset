@@ -1,0 +1,132 @@
+The domain model 'gfsm' describes the core structural elements and their relationships within the system.
+
+The model defines 29 main class(es).
+
+'gfsm_IntAdd' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_IntVarAssign' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gfsm_BooleanBinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_Transition' represents an important domain concept.
+It has one attribute: 'event', which is of type str.
+
+'gfsm_IntOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'IntBinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_ConstExpr' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_IntBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_IntNeg' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'IntOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_IntMult' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_BooleanAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_IntVarRef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gfsm_IntExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_FSM' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gfsm_BooleanEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanBinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'IntExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_BooleanGreaterThan' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_BooleanOr' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanCompareExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_BooleanCompareExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gfsm_IntBinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'gfsm_FinalState' is a specialization of 'State'.
+The class 'gfsm_InitialState' is a specialization of 'State'.
+The class 'gfsm_IntBinaryExpression' is a specialization of 'IntExpression'.
+The class 'gfsm_IntAdd' is a specialization of 'IntBinaryExpression'.
+The class 'gfsm_IntMult' is a specialization of 'IntBinaryExpression'.
+The class 'gfsm_IntNeg' is a specialization of 'IntExpression'.
+The class 'gfsm_IntVarRef' is a specialization of 'IntExpression'.
+The class 'gfsm_ConstExpr' is a specialization of 'IntExpression'.
+The class 'gfsm_IntVarAssign' is a specialization of 'IntOperation'.
+The class 'gfsm_IntBlock' is a specialization of 'IntOperation'.
+The class 'gfsm_BooleanEqual' is a specialization of 'BooleanCompareExpression'.
+The class 'gfsm_BooleanOr' is a specialization of 'BooleanBinaryExpression'.
+The class 'gfsm_BooleanAnd' is a specialization of 'BooleanBinaryExpression'.
+The class 'gfsm_BooleanGreaterThan' is a specialization of 'BooleanCompareExpression'.
+The class 'gfsm_BooleanBinaryExpression' is a specialization of 'BooleanExpression'.
+The class 'gfsm_BooleanCompareExpression' is a specialization of 'BooleanExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gfsm_Transition' and 'gfsm_BooleanExpression'. From 'gfsm_Transition', the role 'gfsm_Transition' has cardinality 0..*, and from 'gfsm_BooleanExpression', the role 'gfsm_BooleanExpression' has cardinality 0..*.
+An association connects 'gfsm_FSM' and 'gfsm_Transition'. From 'gfsm_FSM', the role 'FSM' has cardinality 0..*, and from 'gfsm_Transition', the role 'transitions' has cardinality 0..*.
+An association connects 'gfsm_State' and 'gfsm_Transition'. From 'gfsm_State', the role 'State' has cardinality 0..*, and from 'gfsm_Transition', the role 'outgoingtransitions' has cardinality 0..*.
+An association connects 'gfsm_State' and 'gfsm_Transition'. From 'gfsm_State', the role 'State4' has cardinality 0..*, and from 'gfsm_Transition', the role 'incommingtransitions' has cardinality 0..*.
+An association connects 'gfsm_IntOperation' and 'gfsm_State'. From 'gfsm_IntOperation', the role 'gfsm_IntOperation' has cardinality 0..*, and from 'gfsm_State', the role 'gfsm_State' has cardinality 0..*.
+An association connects 'gfsm_State' and 'gfsm_IntOperation'. From 'gfsm_State', the role 'gfsm_State7' has cardinality 0..*, and from 'gfsm_IntOperation', the role 'gfsm_IntOperation8' has cardinality 0..*.
+An association connects 'gfsm_State' and 'gfsm_FSM'. From 'gfsm_State', the role 'states' has cardinality 0..*, and from 'gfsm_FSM', the role 'FSM10' has cardinality 0..*.
+An association connects 'gfsm_Transition' and 'gfsm_State'. From 'gfsm_Transition', the role 'Transition' has cardinality 0..*, and from 'gfsm_State', the role 'from' has cardinality 0..*.
+An association connects 'gfsm_Transition' and 'gfsm_State'. From 'gfsm_Transition', the role 'Transition13' has cardinality 0..*, and from 'gfsm_State', the role 'to' has cardinality 0..*.
+An association connects 'gfsm_State' and 'gfsm_FSM'. From 'gfsm_State', the role 'State15' has cardinality 0..*, and from 'gfsm_FSM', the role 'fsm' has cardinality 0..*.
+An association connects 'gfsm_FSM' and 'gfsm_Transition'. From 'gfsm_FSM', the role 'fsm17' has cardinality 0..*, and from 'gfsm_Transition', the role 'Transition18' has cardinality 0..*.
+An association connects 'gfsm_InitialState' and 'gfsm_FSM'. From 'gfsm_InitialState', the role 'gfsm_InitialState' has cardinality 0..*, and from 'gfsm_FSM', the role 'gfsm_FSM' has cardinality 0..*.
+An association connects 'gfsm_FSM' and 'gfsm_State'. From 'gfsm_FSM', the role 'gfsm_FSM21' has cardinality 0..*, and from 'gfsm_State', the role 'gfsm_State22' has cardinality 0..*.
+An association connects 'gfsm_IntBinaryExpression' and 'gfsm_IntExpression'. From 'gfsm_IntBinaryExpression', the role 'gfsm_IntBinaryExpression' has cardinality 0..*, and from 'gfsm_IntExpression', the role 'gfsm_IntExpression' has cardinality 0..*.
+An association connects 'gfsm_IntExpression' and 'gfsm_IntBinaryExpression'. From 'gfsm_IntExpression', the role 'gfsm_IntExpression26' has cardinality 0..*, and from 'gfsm_IntBinaryExpression', the role 'gfsm_IntBinaryExpression25' has cardinality 0..*.
+An association connects 'gfsm_IntNeg' and 'gfsm_IntExpression'. From 'gfsm_IntNeg', the role 'gfsm_IntNeg' has cardinality 0..*, and from 'gfsm_IntExpression', the role 'gfsm_IntExpression28' has cardinality 0..*.
+An association connects 'gfsm_IntExpression' and 'gfsm_IntVarAssign'. From 'gfsm_IntExpression', the role 'gfsm_IntExpression30' has cardinality 0..*, and from 'gfsm_IntVarAssign', the role 'gfsm_IntVarAssign' has cardinality 0..*.
+An association connects 'gfsm_IntBlock' and 'gfsm_IntVarAssign'. From 'gfsm_IntBlock', the role 'gfsm_IntBlock' has cardinality 0..*, and from 'gfsm_IntVarAssign', the role 'gfsm_IntVarAssign32' has cardinality 0..*.
+An association connects 'gfsm_BooleanExpression' and 'gfsm_BooleanBinaryExpression'. From 'gfsm_BooleanExpression', the role 'gfsm_BooleanExpression34' has cardinality 0..*, and from 'gfsm_BooleanBinaryExpression', the role 'gfsm_BooleanBinaryExpression' has cardinality 0..*.
+An association connects 'gfsm_BooleanBinaryExpression' and 'gfsm_BooleanExpression'. From 'gfsm_BooleanBinaryExpression', the role 'gfsm_BooleanBinaryExpression36' has cardinality 0..*, and from 'gfsm_BooleanExpression', the role 'gfsm_BooleanExpression37' has cardinality 0..*.
+An association connects 'gfsm_IntExpression' and 'gfsm_BooleanCompareExpression'. From 'gfsm_IntExpression', the role 'gfsm_IntExpression39' has cardinality 0..*, and from 'gfsm_BooleanCompareExpression', the role 'gfsm_BooleanCompareExpression' has cardinality 0..*.
+An association connects 'gfsm_IntExpression' and 'gfsm_BooleanCompareExpression'. From 'gfsm_IntExpression', the role 'gfsm_IntExpression42' has cardinality 0..*, and from 'gfsm_BooleanCompareExpression', the role 'gfsm_BooleanCompareExpression41' has cardinality 0..*.

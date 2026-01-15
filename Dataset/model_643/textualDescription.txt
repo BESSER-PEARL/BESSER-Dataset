@@ -1,0 +1,22 @@
+The domain model 'mm3' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'mm3_Member' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mm3_Book' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mm3_Film' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mm3_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'mm3_Library' and 'mm3_Member'. From 'mm3_Library', the role 'mm3_Library' has cardinality 0..*, and from 'mm3_Member', the role 'mm3_Member' has cardinality 0..*.
+An association connects 'mm3_Library' and 'mm3_Book'. From 'mm3_Library', the role 'mm3_Library2' has cardinality 0..*, and from 'mm3_Book', the role 'mm3_Book' has cardinality 0..*.
+An association connects 'mm3_Film' and 'mm3_Library'. From 'mm3_Film', the role 'mm3_Film' has cardinality 0..*, and from 'mm3_Library', the role 'mm3_Library4' has cardinality 0..*.
+An association connects 'mm3_Book' and 'mm3_Member'. From 'mm3_Book', the role 'mm3_Book7' has cardinality 0..*, and from 'mm3_Member', the role 'mm3_Member6' has cardinality 0..*.
+An association connects 'mm3_Film' and 'mm3_Member'. From 'mm3_Film', the role 'mm3_Film10' has cardinality 0..*, and from 'mm3_Member', the role 'mm3_Member9' has cardinality 0..*.

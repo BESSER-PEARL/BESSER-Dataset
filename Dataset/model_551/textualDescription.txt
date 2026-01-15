@@ -1,0 +1,32 @@
+The domain model 'familyTree' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'familyTree_Female' represents an important domain concept.
+It does not declare any attributes.
+
+'familyTree_FamilyTree' represents an important domain concept.
+It does not declare any attributes.
+
+'familyTree_Male' represents an important domain concept.
+It does not declare any attributes.
+
+'familyTree_Person' represents an important domain concept.
+It has the following attributes: 'lastName', which is of type str; 'name', which is of type str.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'familyTree_Male' is a specialization of 'Person'.
+The class 'familyTree_Female' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'familyTree_FamilyTree' and 'familyTree_Person'. From 'familyTree_FamilyTree', the role 'tree' has cardinality 0..*, and from 'familyTree_Person', the role 'Person' has cardinality 0..*.
+An association connects 'familyTree_Male' and 'familyTree_Person'. From 'familyTree_Male', the role 'Male' has cardinality 0..*, and from 'familyTree_Person', the role 'children' has cardinality 0..*.
+An association connects 'familyTree_Female' and 'familyTree_Person'. From 'familyTree_Female', the role 'Female' has cardinality 0..*, and from 'familyTree_Person', the role 'children3' has cardinality 0..*.
+An association connects 'familyTree_Person' and 'familyTree_FamilyTree'. From 'familyTree_Person', the role 'leaves' has cardinality 0..*, and from 'familyTree_FamilyTree', the role 'FamilyTree' has cardinality 0..*.
+An association connects 'familyTree_Male' and 'familyTree_Female'. From 'familyTree_Male', the role 'husband' has cardinality 0..*, and from 'familyTree_Female', the role 'Female6' has cardinality 0..*.
+An association connects 'familyTree_Person' and 'familyTree_Male'. From 'familyTree_Person', the role 'Person8' has cardinality 0..*, and from 'familyTree_Male', the role 'father' has cardinality 0..*.
+An association connects 'familyTree_Female' and 'familyTree_Male'. From 'familyTree_Female', the role 'wife' has cardinality 0..*, and from 'familyTree_Male', the role 'Male10' has cardinality 0..*.
+An association connects 'familyTree_Person' and 'familyTree_Female'. From 'familyTree_Person', the role 'Person12' has cardinality 0..*, and from 'familyTree_Female', the role 'mother' has cardinality 0..*.

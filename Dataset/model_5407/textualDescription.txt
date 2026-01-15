@@ -1,0 +1,22 @@
+The domain model 'emfta' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'emfta_Gate' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'type', which is of type str; 'nbOccurrences', which is of type int.
+
+'emfta_Event' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str; 'referenceCount', which is of type int; 'type', which is of type str; 'relatedObject', which is of type str; 'probability', which is of type float.
+
+'emfta_FTAModel' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comments', which is of type str; 'description', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EventType' defines the following possible values: 'Conditioning', 'Undevelopped', 'External', 'Intermediate', 'Basic'.
+The enumeration 'GateType' defines the following possible values: 'OR', 'ORMORE', 'ORLESS', 'PRIORITY_AND', 'XOR', 'AND', 'INHIBIT', 'PRIORITY_OR', 'INTERMEDIATE'.
+
+Relationships between classes are modeled using associations.
+An association connects 'emfta_Gate' and 'emfta_Event'. From 'emfta_Gate', the role 'emfta_Gate' has cardinality 0..*, and from 'emfta_Event', the role 'emfta_Event' has cardinality 0..*.
+An association connects 'emfta_Gate' and 'emfta_Event'. From 'emfta_Gate', the role 'emfta_Gate2' has cardinality 0..*, and from 'emfta_Event', the role 'emfta_Event3' has cardinality 0..*.
+An association connects 'emfta_FTAModel' and 'emfta_Event'. From 'emfta_FTAModel', the role 'emfta_FTAModel' has cardinality 0..*, and from 'emfta_Event', the role 'emfta_Event5' has cardinality 0..*.
+An association connects 'emfta_Event' and 'emfta_FTAModel'. From 'emfta_Event', the role 'emfta_Event8' has cardinality 0..*, and from 'emfta_FTAModel', the role 'emfta_FTAModel7' has cardinality 0..*.

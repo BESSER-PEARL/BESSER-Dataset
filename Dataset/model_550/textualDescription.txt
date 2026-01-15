@@ -1,0 +1,27 @@
+The domain model 'family' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'family_Man' represents an important domain concept.
+It does not declare any attributes.
+
+'family_Family' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'family_Person' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'provincia', which is of type str; 'eCivil', which is of type str; 'fechaNacimiento', which is of type str.
+
+'family_Woman' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'family_Man' is a specialization of 'Person'.
+The class 'family_Woman' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'family_Person' and 'family_Family'. From 'family_Person', the role 'family_Person' has cardinality 0..*, and from 'family_Family', the role 'family_Family' has cardinality 0..*.
+An association connects 'family_Person' and 'family_Man'. From 'family_Person', the role 'family_Person2' has cardinality 0..*, and from 'family_Man', the role 'family_Man' has cardinality 0..*.
+An association connects 'family_Woman' and 'family_Person'. From 'family_Woman', the role 'family_Woman' has cardinality 0..*, and from 'family_Person', the role 'family_Person4' has cardinality 0..*.

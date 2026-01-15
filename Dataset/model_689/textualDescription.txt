@@ -1,0 +1,723 @@
+The domain model 'Janus' describes the core structural elements and their relationships within the system.
+
+The model defines 160 main class(es).
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_BooleanLiteralExp' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type bool.
+
+'Janus_emof_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_emof_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_DictLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_ContinueExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_emof_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_TypeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LogExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'TryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_AnonymousTupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_UnpackExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_Typedef' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_AltExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_CollectionLiteralExp' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'Object' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_emof_MultiplicityElement' represents an important domain concept.
+It has the following attributes: 'lower', which is of type int; 'isOrdered', which is of type str; 'isUnique', which is of type str; 'upper', which is of type str.
+
+'Janus_essentialocl_EnumLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'DictLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectTemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FeaturePropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_JTL_Domain' represents an important domain concept.
+It has the following attributes: 'isCheckable', which is of type bool; 'isEnforceable', which is of type bool.
+
+'Janus_essentialocl_OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_SwitchExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_VariableInitExp' represents an important domain concept.
+It has one attribute: 'withResult', which is of type bool.
+
+'Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_NullLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'AnonymousTupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyTemplateItem' represents an important domain concept.
+It does not declare any attributes.
+
+'Transformation' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_template_TemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_WhileExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_ReturnExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_BreakExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_AnonymousTupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_InstantiationExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_AnonymousTupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_InvalidLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_AssertExp' represents an important domain concept.
+It has one attribute: 'severity', which is of type str.
+
+'Janus_essentialocl_CollectionRange' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_InvalidType' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_ImperativeLoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_JTL_Relation' represents an important domain concept.
+It has one attribute: 'isTopLevel', which is of type bool.
+
+'Janus_emof_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_JTL_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_RealLiteralExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type float.
+
+'Janus_emof_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Janus_emof_Package' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'Janus_essentialocl_LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_AssignExp' represents an important domain concept.
+It has one attribute: 'isReset', which is of type bool.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Extent' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_template_CollectionTemplateExp' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'Janus_imperativeocl_ImperativeIterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_emof_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_emof_URIExtent' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_UnlimitedNaturalExp' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'Janus_emof_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_JTL_Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_ImperativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Tag' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_emof_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_emof_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_template_ObjectTemplateExp' represents an important domain concept.
+It has one attribute: 'referredClass', which is of type str.
+
+'Janus_imperativeocl_TupleExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Model' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_JTL_Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_emof_Extent' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_UnlinkExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_IteratorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_ForExp' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_ComputeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_CollectorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_emof_Class' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'Janus_imperativeocl_RaiseExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_template_PropertyTemplateItem' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_CollectionItem' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_emof_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_emof_Property' represents an important domain concept.
+It has the following attributes: 'isReadOnly', which is of type bool; 'isComposite', which is of type bool; 'default', which is of type str; 'isDerived', which is of type bool; 'isId', which is of type bool.
+
+'AltExp' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_ListType' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_TryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_FeaturePropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_StringLiteralExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'Janus_essentialocl_CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_ImperativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_ExpressionInOcl' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_emof_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_emof_Tag' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'Janus_JTL_Transformation' represents an important domain concept.
+It does not declare any attributes.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_LogExp' represents an important domain concept.
+It has the following attributes: 'level', which is of type int; 'text', which is of type str.
+
+'EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_emof_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_IntegerLiteralExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type int.
+
+'Janus_essentialocl_Variable' represents an important domain concept.
+It has one attribute: 'varType', which is of type str.
+
+'Janus_imperativeocl_TemplateParameterType' represents an important domain concept.
+It has one attribute: 'specification', which is of type str.
+
+'ImperativeLoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ComputeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_BlockExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_DictionaryType' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_essentialocl_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'Janus_imperativeocl_DictLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SeverityKind' defines the following possible values: 'fatal', 'error', 'warning'.
+The enumeration 'CollectionKind' defines the following possible values: 'OrderedSet', 'Bag', 'Set', 'Sequence'.
+
+The model also captures inheritance relationships between classes.
+The class 'Janus_emof_Class' is a specialization of 'Type'.
+The class 'Janus_emof_DataType' is a specialization of 'Type'.
+The class 'Janus_emof_Element' is a specialization of 'Object'.
+The class 'Janus_emof_Tag' is a specialization of 'Element'.
+The class 'Janus_emof_Enumeration' is a specialization of 'DataType'.
+The class 'Janus_emof_NamedElement' is a specialization of 'Element'.
+The class 'Janus_emof_Extent' is a specialization of 'Object'.
+The class 'Janus_emof_Operation' is a specialization of 'emof_MultiplicityElement'.
+The class 'Janus_emof_Operation' is a specialization of 'emof_TypedElement'.
+The class 'Janus_emof_Package' is a specialization of 'NamedElement'.
+The class 'Janus_emof_Type' is a specialization of 'NamedElement'.
+The class 'Janus_emof_Parameter' is a specialization of 'emof_MultiplicityElement'.
+The class 'Janus_emof_Parameter' is a specialization of 'emof_TypedElement'.
+The class 'Janus_emof_EnumerationLiteral' is a specialization of 'NamedElement'.
+The class 'Janus_emof_Property' is a specialization of 'emof_MultiplicityElement'.
+The class 'Janus_emof_Property' is a specialization of 'emof_TypedElement'.
+The class 'Janus_emof_TypedElement' is a specialization of 'NamedElement'.
+The class 'Janus_emof_PrimitiveType' is a specialization of 'DataType'.
+The class 'Janus_emof_URIExtent' is a specialization of 'Extent'.
+The class 'Janus_emof_Comment' is a specialization of 'Element'.
+The class 'Janus_JTL_Transformation' is a specialization of 'emof_Class'.
+The class 'Janus_JTL_Transformation' is a specialization of 'emof_Package'.
+The class 'Janus_JTL_Relation' is a specialization of 'NamedElement'.
+The class 'Janus_JTL_Domain' is a specialization of 'NamedElement'.
+The class 'Janus_JTL_Model' is a specialization of 'NamedElement'.
+The class 'Janus_JTL_Pattern' is a specialization of 'Element'.
+The class 'Janus_JTL_Predicate' is a specialization of 'Element'.
+The class 'Janus_essentialocl_BooleanLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'Janus_essentialocl_CallExp' is a specialization of 'OclExpression'.
+The class 'Janus_essentialocl_OclExpression' is a specialization of 'TypedElement'.
+The class 'Janus_essentialocl_UnlimitedNaturalExp' is a specialization of 'NumericLiteralExp'.
+The class 'Janus_essentialocl_IfExp' is a specialization of 'OclExpression'.
+The class 'Janus_essentialocl_LetExp' is a specialization of 'OclExpression'.
+The class 'Janus_essentialocl_Variable' is a specialization of 'TypedElement'.
+The class 'Janus_essentialocl_PropertyCallExp' is a specialization of 'FeaturePropertyCall'.
+The class 'Janus_essentialocl_VariableExp' is a specialization of 'OclExpression'.
+The class 'Janus_essentialocl_TypeExp' is a specialization of 'OclExpression'.
+The class 'Janus_essentialocl_LoopExp' is a specialization of 'essentialocl_CallExp'.
+The class 'Janus_essentialocl_LoopExp' is a specialization of 'essentialocl_OclExpression'.
+The class 'Janus_essentialocl_IteratorExp' is a specialization of 'LoopExp'.
+The class 'Janus_essentialocl_StringLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'Janus_essentialocl_IntegerLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'Janus_essentialocl_OperationCallExp' is a specialization of 'FeaturePropertyCall'.
+The class 'Janus_essentialocl_RealLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'Janus_essentialocl_LiteralExp' is a specialization of 'OclExpression'.
+The class 'Janus_essentialocl_IterateExp' is a specialization of 'LoopExp'.
+The class 'Janus_essentialocl_PrimitiveLiteralExp' is a specialization of 'LiteralExp'.
+The class 'Janus_essentialocl_NumericLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'Janus_essentialocl_CollectionLiteralExp' is a specialization of 'LiteralExp'.
+The class 'Janus_essentialocl_CollectionLiteralPart' is a specialization of 'TypedElement'.
+The class 'Janus_essentialocl_CollectionItem' is a specialization of 'CollectionLiteralPart'.
+The class 'Janus_essentialocl_CollectionRange' is a specialization of 'CollectionLiteralPart'.
+The class 'Janus_essentialocl_TupleLiteralExp' is a specialization of 'LiteralExp'.
+The class 'Janus_essentialocl_NullLiteralExp' is a specialization of 'LiteralExp'.
+The class 'Janus_essentialocl_ExpressionInOcl' is a specialization of 'OpaqueExpression'.
+The class 'Janus_essentialocl_InvalidLiteralExp' is a specialization of 'LiteralExp'.
+The class 'Janus_essentialocl_FeaturePropertyCall' is a specialization of 'CallExp'.
+The class 'Janus_essentialocl_TupleLiteralPart' is a specialization of 'TypedElement'.
+The class 'Janus_essentialocl_BagType' is a specialization of 'CollectionType'.
+The class 'Janus_essentialocl_CollectionType' is a specialization of 'DataType'.
+The class 'Janus_essentialocl_EnumLiteralExp' is a specialization of 'LiteralExp'.
+The class 'Janus_essentialocl_InvalidType' is a specialization of 'Type'.
+The class 'Janus_essentialocl_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'Janus_essentialocl_SequenceType' is a specialization of 'CollectionType'.
+The class 'Janus_essentialocl_SetType' is a specialization of 'CollectionType'.
+The class 'Janus_essentialocl_TupleType' is a specialization of 'emof_Class'.
+The class 'Janus_essentialocl_TupleType' is a specialization of 'emof_DataType'.
+The class 'Janus_essentialocl_VoidType' is a specialization of 'Type'.
+The class 'Janus_essentialocl_AnyType' is a specialization of 'emof_Class'.
+The class 'Janus_essentialocl_AnyType' is a specialization of 'emof_Type'.
+The class 'Janus_template_TemplateExp' is a specialization of 'LiteralExp'.
+The class 'Janus_template_ObjectTemplateExp' is a specialization of 'TemplateExp'.
+The class 'Janus_template_CollectionTemplateExp' is a specialization of 'TemplateExp'.
+The class 'Janus_template_PropertyTemplateItem' is a specialization of 'Element'.
+The class 'Janus_imperativeocl_ImperativeIterateExp' is a specialization of 'ImperativeLoopExp'.
+The class 'Janus_imperativeocl_AssignExp' is a specialization of 'ImperativeExpression'.
+The class 'Janus_imperativeocl_BlockExp' is a specialization of 'ImperativeExpression'.
+The class 'Janus_imperativeocl_SwitchExp' is a specialization of 'essentialocl_CallExp'.
+The class 'Janus_imperativeocl_SwitchExp' is a specialization of 'imperativeocl_ImperativeExpression'.
+The class 'Janus_imperativeocl_VariableInitExp' is a specialization of 'ImperativeExpression'.
+The class 'Janus_imperativeocl_WhileExp' is a specialization of 'ImperativeExpression'.
+The class 'Janus_imperativeocl_ComputeExp' is a specialization of 'ImperativeExpression'.
+The class 'Janus_imperativeocl_AltExp' is a specialization of 'ImperativeExpression'.
+The class 'Janus_imperativeocl_UnlinkExp' is a specialization of 'ImperativeExpression'.
+The class 'Janus_imperativeocl_ReturnExp' is a specialization of 'ImperativeExpression'.
+The class 'Janus_imperativeocl_BreakExp' is a specialization of 'ImperativeExpression'.
+The class 'Janus_imperativeocl_TryExp' is a specialization of 'ImperativeExpression'.
+The class 'Janus_imperativeocl_RaiseExp' is a specialization of 'ImperativeExpression'.
+The class 'Janus_imperativeocl_ContinueExp' is a specialization of 'ImperativeExpression'.
+The class 'Janus_imperativeocl_ForExp' is a specialization of 'ImperativeLoopExp'.
+The class 'Janus_imperativeocl_TupleExp' is a specialization of 'ImperativeExpression'.
+The class 'Janus_imperativeocl_Typedef' is a specialization of 'Class'.
+The class 'Janus_imperativeocl_InstantiationExp' is a specialization of 'ImperativeExpression'.
+The class 'Janus_imperativeocl_DictionaryType' is a specialization of 'CollectionType'.
+The class 'Janus_imperativeocl_DictLiteralExp' is a specialization of 'LiteralExp'.
+The class 'Janus_imperativeocl_DictLiteralPart' is a specialization of 'Element'.
+The class 'Janus_imperativeocl_TemplateParameterType' is a specialization of 'Type'.
+The class 'Janus_imperativeocl_LogExp' is a specialization of 'ImperativeExpression'.
+The class 'Janus_imperativeocl_AssertExp' is a specialization of 'ImperativeExpression'.
+The class 'Janus_imperativeocl_ImperativeLoopExp' is a specialization of 'essentialocl_LoopExp'.
+The class 'Janus_imperativeocl_ImperativeLoopExp' is a specialization of 'imperativeocl_ImperativeExpression'.
+The class 'Janus_imperativeocl_CollectorExp' is a specialization of 'ImperativeLoopExp'.
+The class 'Janus_imperativeocl_ImperativeExpression' is a specialization of 'OclExpression'.
+The class 'Janus_imperativeocl_UnpackExp' is a specialization of 'ImperativeExpression'.
+The class 'Janus_imperativeocl_AnonymousTupleType' is a specialization of 'Class'.
+The class 'Janus_imperativeocl_AnonymousTupleLiteralExp' is a specialization of 'LiteralExp'.
+The class 'Janus_imperativeocl_AnonymousTupleLiteralPart' is a specialization of 'Element'.
+The class 'Janus_imperativeocl_ListType' is a specialization of 'CollectionType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Property' and 'Janus_emof_Class'. From 'Property', the role 'emof' has cardinality 0..*, and from 'Janus_emof_Class', the role 'Property' has cardinality 0..*.
+An association connects 'Operation' and 'Janus_emof_Class'. From 'Operation', the role 'emof2' has cardinality 0..*, and from 'Janus_emof_Class', the role 'Operation' has cardinality 0..*.
+An association connects 'Janus_emof_Class' and 'Class'. From 'Janus_emof_Class', the role 'Janus_emof_Class' has cardinality 0..*, and from 'Class', the role 'Class' has cardinality 0..*.
+An association connects 'Tag' and 'Janus_emof_Element'. From 'Tag', the role 'emof5' has cardinality 0..*, and from 'Janus_emof_Element', the role 'Tag' has cardinality 0..*.
+An association connects 'Comment' and 'Janus_emof_Element'. From 'Comment', the role 'Comment' has cardinality 0..*, and from 'Janus_emof_Element', the role 'Janus_emof_Element' has cardinality 0..*.
+An association connects 'Element' and 'Janus_emof_Tag'. From 'Element', the role 'emof8' has cardinality 0..*, and from 'Janus_emof_Tag', the role 'Element' has cardinality 0..*.
+An association connects 'EnumerationLiteral' and 'Janus_emof_Enumeration'. From 'EnumerationLiteral', the role 'emof10' has cardinality 0..*, and from 'Janus_emof_Enumeration', the role 'EnumerationLiteral' has cardinality 0..*.
+An association connects 'Class' and 'Janus_emof_Operation'. From 'Class', the role 'emof13' has cardinality 0..*, and from 'Janus_emof_Operation', the role 'Class12' has cardinality 0..*.
+An association connects 'Janus_emof_Operation' and 'Parameter'. From 'Janus_emof_Operation', the role 'Parameter' has cardinality 0..*, and from 'Parameter', the role 'emof15' has cardinality 0..*.
+An association connects 'Type' and 'Janus_emof_Operation'. From 'Type', the role 'Type' has cardinality 0..*, and from 'Janus_emof_Operation', the role 'Janus_emof_Operation' has cardinality 0..*.
+An association connects 'Type' and 'Janus_emof_Package'. From 'Type', the role 'emof19' has cardinality 0..*, and from 'Janus_emof_Package', the role 'Type18' has cardinality 0..*.
+An association connects 'Package' and 'Janus_emof_Package'. From 'Package', the role 'Package' has cardinality 0..*, and from 'Janus_emof_Package', the role 'Janus_emof_Package' has cardinality 0..*.
+An association connects 'Package' and 'Janus_emof_Type'. From 'Package', the role 'emof23' has cardinality 0..*, and from 'Janus_emof_Type', the role 'Package22' has cardinality 0..*.
+An association connects 'Janus_emof_Parameter' and 'Operation'. From 'Janus_emof_Parameter', the role 'Operation25' has cardinality 0..*, and from 'Operation', the role 'emof26' has cardinality 0..*.
+An association connects 'Janus_emof_EnumerationLiteral' and 'Enumeration'. From 'Janus_emof_EnumerationLiteral', the role 'Enumeration' has cardinality 0..*, and from 'Enumeration', the role 'emof28' has cardinality 0..*.
+An association connects 'Janus_emof_Property' and 'Class'. From 'Janus_emof_Property', the role 'Class30' has cardinality 0..*, and from 'Class', the role 'emof31' has cardinality 0..*.
+An association connects 'Janus_emof_Property' and 'Property'. From 'Janus_emof_Property', the role 'Janus_emof_Property' has cardinality 0..*, and from 'Property', the role 'Property33' has cardinality 0..*.
+An association connects 'Janus_emof_TypedElement' and 'Type'. From 'Janus_emof_TypedElement', the role 'Janus_emof_TypedElement' has cardinality 0..*, and from 'Type', the role 'Type35' has cardinality 0..*.
+An association connects 'NamedElement' and 'Janus_emof_Comment'. From 'NamedElement', the role 'NamedElement' has cardinality 0..*, and from 'Janus_emof_Comment', the role 'Janus_emof_Comment' has cardinality 0..*.
+An association connects 'Janus_JTL_Transformation' and 'Model'. From 'Janus_JTL_Transformation', the role 'Model' has cardinality 0..*, and from 'Model', the role 'JTL' has cardinality 0..*.
+An association connects 'Relation' and 'Janus_JTL_Transformation'. From 'Relation', the role 'JTL39' has cardinality 0..*, and from 'Janus_JTL_Transformation', the role 'Relation' has cardinality 0..*.
+An association connects 'Janus_JTL_Relation' and 'Transformation'. From 'Janus_JTL_Relation', the role 'Transformation' has cardinality 0..*, and from 'Transformation', the role 'JTL41' has cardinality 0..*.
+An association connects 'Janus_JTL_Relation' and 'Domain'. From 'Janus_JTL_Relation', the role 'Domain' has cardinality 0..*, and from 'Domain', the role 'JTL43' has cardinality 0..*.
+An association connects 'Janus_JTL_Relation' and 'Pattern'. From 'Janus_JTL_Relation', the role 'Pattern' has cardinality 0..*, and from 'Pattern', the role 'JTL45' has cardinality 0..*.
+An association connects 'Janus_JTL_Relation' and 'Pattern'. From 'Janus_JTL_Relation', the role 'Pattern47' has cardinality 0..*, and from 'Pattern', the role 'JTL48' has cardinality 0..*.
+An association connects 'Janus_JTL_Relation' and 'Variable'. From 'Janus_JTL_Relation', the role 'Janus_JTL_Relation' has cardinality 0..*, and from 'Variable', the role 'Variable' has cardinality 0..*.
+An association connects 'Janus_JTL_Domain' and 'Relation'. From 'Janus_JTL_Domain', the role 'Relation51' has cardinality 0..*, and from 'Relation', the role 'JTL52' has cardinality 0..*.
+An association connects 'Pattern' and 'Janus_JTL_Domain'. From 'Pattern', the role 'Pattern54' has cardinality 0..*, and from 'Janus_JTL_Domain', the role 'Janus_JTL_Domain' has cardinality 0..*.
+An association connects 'Model' and 'Janus_JTL_Domain'. From 'Model', the role 'Model57' has cardinality 0..*, and from 'Janus_JTL_Domain', the role 'Janus_JTL_Domain56' has cardinality 0..*.
+An association connects 'Variable' and 'Janus_JTL_Domain'. From 'Variable', the role 'Variable60' has cardinality 0..*, and from 'Janus_JTL_Domain', the role 'Janus_JTL_Domain59' has cardinality 0..*.
+An association connects 'Janus_JTL_Model' and 'Transformation'. From 'Janus_JTL_Model', the role 'Transformation62' has cardinality 0..*, and from 'Transformation', the role 'JTL63' has cardinality 0..*.
+An association connects 'Janus_JTL_Model' and 'Package'. From 'Janus_JTL_Model', the role 'Janus_JTL_Model' has cardinality 0..*, and from 'Package', the role 'Package65' has cardinality 0..*.
+An association connects 'Janus_JTL_Model' and 'Model'. From 'Janus_JTL_Model', the role 'Janus_JTL_Model67' has cardinality 0..*, and from 'Model', the role 'Model68' has cardinality 0..*.
+An association connects 'Janus_JTL_Pattern' and 'Relation'. From 'Janus_JTL_Pattern', the role 'Relation70' has cardinality 0..*, and from 'Relation', the role 'JTL71' has cardinality 0..*.
+An association connects 'Janus_JTL_Pattern' and 'Relation'. From 'Janus_JTL_Pattern', the role 'Relation73' has cardinality 0..*, and from 'Relation', the role 'JTL74' has cardinality 0..*.
+An association connects 'Predicate' and 'Janus_JTL_Pattern'. From 'Predicate', the role 'JTL76' has cardinality 0..*, and from 'Janus_JTL_Pattern', the role 'Predicate' has cardinality 0..*.
+An association connects 'Janus_JTL_Pattern' and 'Variable'. From 'Janus_JTL_Pattern', the role 'Janus_JTL_Pattern' has cardinality 0..*, and from 'Variable', the role 'Variable78' has cardinality 0..*.
+An association connects 'TemplateExp' and 'Janus_JTL_Pattern'. From 'TemplateExp', the role 'TemplateExp' has cardinality 0..*, and from 'Janus_JTL_Pattern', the role 'Janus_JTL_Pattern80' has cardinality 0..*.
+An association connects 'Janus_JTL_Pattern' and 'Domain'. From 'Janus_JTL_Pattern', the role 'Janus_JTL_Pattern82' has cardinality 0..*, and from 'Domain', the role 'Domain83' has cardinality 0..*.
+An association connects 'Pattern' and 'Janus_JTL_Predicate'. From 'Pattern', the role 'JTL86' has cardinality 0..*, and from 'Janus_JTL_Predicate', the role 'Pattern85' has cardinality 0..*.
+An association connects 'OclExpression' and 'Janus_JTL_Predicate'. From 'OclExpression', the role 'OclExpression' has cardinality 0..*, and from 'Janus_JTL_Predicate', the role 'Janus_JTL_Predicate' has cardinality 0..*.
+An association connects 'Janus_essentialocl_CallExp' and 'OclExpression'. From 'Janus_essentialocl_CallExp', the role 'Janus_essentialocl_CallExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression89' has cardinality 0..*.
+An association connects 'TryExp' and 'Janus_essentialocl_OclExpression'. From 'TryExp', the role 'imperativeocl' has cardinality 0..*, and from 'Janus_essentialocl_OclExpression', the role 'TryExp' has cardinality 0..*.
+An association connects 'Janus_essentialocl_IfExp' and 'OclExpression'. From 'Janus_essentialocl_IfExp', the role 'Janus_essentialocl_IfExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression92' has cardinality 0..*.
+An association connects 'Janus_essentialocl_IfExp' and 'OclExpression'. From 'Janus_essentialocl_IfExp', the role 'Janus_essentialocl_IfExp94' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression95' has cardinality 0..*.
+An association connects 'OclExpression' and 'Janus_essentialocl_IfExp'. From 'OclExpression', the role 'OclExpression98' has cardinality 0..*, and from 'Janus_essentialocl_IfExp', the role 'Janus_essentialocl_IfExp97' has cardinality 0..*.
+An association connects 'Janus_essentialocl_LetExp' and 'OclExpression'. From 'Janus_essentialocl_LetExp', the role 'Janus_essentialocl_LetExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression100' has cardinality 0..*.
+An association connects 'Janus_essentialocl_LetExp' and 'Variable'. From 'Janus_essentialocl_LetExp', the role 'Variable102' has cardinality 0..*, and from 'Variable', the role 'essentialocl' has cardinality 0..*.
+An association connects 'Janus_essentialocl_Variable' and 'OclExpression'. From 'Janus_essentialocl_Variable', the role 'Janus_essentialocl_Variable' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression104' has cardinality 0..*.
+An association connects 'Janus_essentialocl_Variable' and 'LetExp'. From 'Janus_essentialocl_Variable', the role 'LetExp' has cardinality 0..*, and from 'LetExp', the role 'essentialocl106' has cardinality 0..*.
+An association connects 'Parameter' and 'Janus_essentialocl_Variable'. From 'Parameter', the role 'Parameter109' has cardinality 0..*, and from 'Janus_essentialocl_Variable', the role 'Janus_essentialocl_Variable108' has cardinality 0..*.
+An association connects 'Janus_essentialocl_Variable' and 'ComputeExp'. From 'Janus_essentialocl_Variable', the role 'ComputeExp' has cardinality 0..*, and from 'ComputeExp', the role 'imperativeocl111' has cardinality 0..*.
+An association connects 'Janus_essentialocl_PropertyCallExp' and 'Property'. From 'Janus_essentialocl_PropertyCallExp', the role 'Janus_essentialocl_PropertyCallExp' has cardinality 0..*, and from 'Property', the role 'Property113' has cardinality 0..*.
+An association connects 'Janus_essentialocl_VariableExp' and 'Variable'. From 'Janus_essentialocl_VariableExp', the role 'Janus_essentialocl_VariableExp' has cardinality 0..*, and from 'Variable', the role 'Variable115' has cardinality 0..*.
+An association connects 'Janus_essentialocl_TypeExp' and 'Type'. From 'Janus_essentialocl_TypeExp', the role 'Janus_essentialocl_TypeExp' has cardinality 0..*, and from 'Type', the role 'Type117' has cardinality 0..*.
+An association connects 'Janus_essentialocl_LoopExp' and 'OclExpression'. From 'Janus_essentialocl_LoopExp', the role 'Janus_essentialocl_LoopExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression119' has cardinality 0..*.
+An association connects 'Variable' and 'Janus_essentialocl_LoopExp'. From 'Variable', the role 'Variable122' has cardinality 0..*, and from 'Janus_essentialocl_LoopExp', the role 'Janus_essentialocl_LoopExp121' has cardinality 0..*.
+An association connects 'Janus_essentialocl_OperationCallExp' and 'OclExpression'. From 'Janus_essentialocl_OperationCallExp', the role 'Janus_essentialocl_OperationCallExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression124' has cardinality 0..*.
+An association connects 'Operation' and 'Janus_essentialocl_OperationCallExp'. From 'Operation', the role 'Operation127' has cardinality 0..*, and from 'Janus_essentialocl_OperationCallExp', the role 'Janus_essentialocl_OperationCallExp126' has cardinality 0..*.
+An association connects 'Variable' and 'Janus_essentialocl_IterateExp'. From 'Variable', the role 'Variable129' has cardinality 0..*, and from 'Janus_essentialocl_IterateExp', the role 'Janus_essentialocl_IterateExp' has cardinality 0..*.
+An association connects 'CollectionLiteralPart' and 'Janus_essentialocl_CollectionLiteralExp'. From 'CollectionLiteralPart', the role 'essentialocl131' has cardinality 0..*, and from 'Janus_essentialocl_CollectionLiteralExp', the role 'CollectionLiteralPart' has cardinality 0..*.
+An association connects 'Janus_essentialocl_CollectionLiteralPart' and 'CollectionLiteralExp'. From 'Janus_essentialocl_CollectionLiteralPart', the role 'CollectionLiteralExp' has cardinality 0..*, and from 'CollectionLiteralExp', the role 'essentialocl133' has cardinality 0..*.
+An association connects 'OclExpression' and 'Janus_essentialocl_CollectionItem'. From 'OclExpression', the role 'OclExpression135' has cardinality 0..*, and from 'Janus_essentialocl_CollectionItem', the role 'Janus_essentialocl_CollectionItem' has cardinality 0..*.
+An association connects 'Janus_essentialocl_CollectionRange' and 'OclExpression'. From 'Janus_essentialocl_CollectionRange', the role 'Janus_essentialocl_CollectionRange' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression137' has cardinality 0..*.
+An association connects 'Janus_essentialocl_CollectionRange' and 'OclExpression'. From 'Janus_essentialocl_CollectionRange', the role 'Janus_essentialocl_CollectionRange139' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression140' has cardinality 0..*.
+An association connects 'TupleLiteralPart' and 'Janus_essentialocl_TupleLiteralExp'. From 'TupleLiteralPart', the role 'essentialocl142' has cardinality 0..*, and from 'Janus_essentialocl_TupleLiteralExp', the role 'TupleLiteralPart' has cardinality 0..*.
+An association connects 'Janus_essentialocl_ExpressionInOcl' and 'OclExpression'. From 'Janus_essentialocl_ExpressionInOcl', the role 'Janus_essentialocl_ExpressionInOcl' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression144' has cardinality 0..*.
+An association connects 'Variable' and 'Janus_essentialocl_ExpressionInOcl'. From 'Variable', the role 'Variable147' has cardinality 0..*, and from 'Janus_essentialocl_ExpressionInOcl', the role 'Janus_essentialocl_ExpressionInOcl146' has cardinality 0..*.
+An association connects 'Janus_essentialocl_ExpressionInOcl' and 'Variable'. From 'Janus_essentialocl_ExpressionInOcl', the role 'Janus_essentialocl_ExpressionInOcl149' has cardinality 0..*, and from 'Variable', the role 'Variable150' has cardinality 0..*.
+An association connects 'Variable' and 'Janus_essentialocl_ExpressionInOcl'. From 'Variable', the role 'Variable153' has cardinality 0..*, and from 'Janus_essentialocl_ExpressionInOcl', the role 'Janus_essentialocl_ExpressionInOcl152' has cardinality 0..*.
+An association connects 'TupleLiteralExp' and 'Janus_essentialocl_TupleLiteralPart'. From 'TupleLiteralExp', the role 'essentialocl155' has cardinality 0..*, and from 'Janus_essentialocl_TupleLiteralPart', the role 'TupleLiteralExp' has cardinality 0..*.
+An association connects 'Property' and 'Janus_essentialocl_TupleLiteralPart'. From 'Property', the role 'Property157' has cardinality 0..*, and from 'Janus_essentialocl_TupleLiteralPart', the role 'Janus_essentialocl_TupleLiteralPart' has cardinality 0..*.
+An association connects 'Janus_essentialocl_CollectionType' and 'Type'. From 'Janus_essentialocl_CollectionType', the role 'Janus_essentialocl_CollectionType' has cardinality 0..*, and from 'Type', the role 'Type159' has cardinality 0..*.
+An association connects 'Janus_essentialocl_EnumLiteralExp' and 'EnumerationLiteral'. From 'Janus_essentialocl_EnumLiteralExp', the role 'Janus_essentialocl_EnumLiteralExp' has cardinality 0..*, and from 'EnumerationLiteral', the role 'EnumerationLiteral161' has cardinality 0..*.
+An association connects 'Variable' and 'Janus_template_TemplateExp'. From 'Variable', the role 'Variable163' has cardinality 0..*, and from 'Janus_template_TemplateExp', the role 'Janus_template_TemplateExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'Janus_template_TemplateExp'. From 'OclExpression', the role 'OclExpression166' has cardinality 0..*, and from 'Janus_template_TemplateExp', the role 'Janus_template_TemplateExp165' has cardinality 0..*.
+An association connects 'Janus_template_ObjectTemplateExp' and 'PropertyTemplateItem'. From 'Janus_template_ObjectTemplateExp', the role 'PropertyTemplateItem' has cardinality 0..*, and from 'PropertyTemplateItem', the role 'template' has cardinality 0..*.
+An association connects 'OclExpression' and 'Janus_template_CollectionTemplateExp'. From 'OclExpression', the role 'OclExpression169' has cardinality 0..*, and from 'Janus_template_CollectionTemplateExp', the role 'Janus_template_CollectionTemplateExp' has cardinality 0..*.
+An association connects 'CollectionType' and 'Janus_template_CollectionTemplateExp'. From 'CollectionType', the role 'CollectionType' has cardinality 0..*, and from 'Janus_template_CollectionTemplateExp', the role 'Janus_template_CollectionTemplateExp171' has cardinality 0..*.
+An association connects 'OclExpression' and 'Janus_template_CollectionTemplateExp'. From 'OclExpression', the role 'OclExpression174' has cardinality 0..*, and from 'Janus_template_CollectionTemplateExp', the role 'Janus_template_CollectionTemplateExp173' has cardinality 0..*.
+An association connects 'Janus_template_PropertyTemplateItem' and 'ObjectTemplateExp'. From 'Janus_template_PropertyTemplateItem', the role 'ObjectTemplateExp' has cardinality 0..*, and from 'ObjectTemplateExp', the role 'template176' has cardinality 0..*.
+An association connects 'OclExpression' and 'Janus_template_PropertyTemplateItem'. From 'OclExpression', the role 'OclExpression178' has cardinality 0..*, and from 'Janus_template_PropertyTemplateItem', the role 'Janus_template_PropertyTemplateItem' has cardinality 0..*.
+An association connects 'Janus_template_PropertyTemplateItem' and 'Property'. From 'Janus_template_PropertyTemplateItem', the role 'Janus_template_PropertyTemplateItem180' has cardinality 0..*, and from 'Property', the role 'Property181' has cardinality 0..*.
+An association connects 'Variable' and 'Janus_imperativeocl_ImperativeIterateExp'. From 'Variable', the role 'Variable183' has cardinality 0..*, and from 'Janus_imperativeocl_ImperativeIterateExp', the role 'Janus_imperativeocl_ImperativeIterateExp' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_AssignExp' and 'OclExpression'. From 'Janus_imperativeocl_AssignExp', the role 'Janus_imperativeocl_AssignExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression185' has cardinality 0..*.
+An association connects 'OclExpression' and 'Janus_imperativeocl_AssignExp'. From 'OclExpression', the role 'OclExpression188' has cardinality 0..*, and from 'Janus_imperativeocl_AssignExp', the role 'Janus_imperativeocl_AssignExp187' has cardinality 0..*.
+An association connects 'OclExpression' and 'Janus_imperativeocl_AssignExp'. From 'OclExpression', the role 'OclExpression191' has cardinality 0..*, and from 'Janus_imperativeocl_AssignExp', the role 'Janus_imperativeocl_AssignExp190' has cardinality 0..*.
+An association connects 'OclExpression' and 'Janus_imperativeocl_BlockExp'. From 'OclExpression', the role 'OclExpression193' has cardinality 0..*, and from 'Janus_imperativeocl_BlockExp', the role 'Janus_imperativeocl_BlockExp' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_SwitchExp' and 'AltExp'. From 'Janus_imperativeocl_SwitchExp', the role 'Janus_imperativeocl_SwitchExp' has cardinality 0..*, and from 'AltExp', the role 'AltExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'Janus_imperativeocl_SwitchExp'. From 'OclExpression', the role 'OclExpression197' has cardinality 0..*, and from 'Janus_imperativeocl_SwitchExp', the role 'Janus_imperativeocl_SwitchExp196' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_VariableInitExp' and 'Variable'. From 'Janus_imperativeocl_VariableInitExp', the role 'Janus_imperativeocl_VariableInitExp' has cardinality 0..*, and from 'Variable', the role 'Variable199' has cardinality 0..*.
+An association connects 'OclExpression' and 'Janus_imperativeocl_WhileExp'. From 'OclExpression', the role 'OclExpression201' has cardinality 0..*, and from 'Janus_imperativeocl_WhileExp', the role 'Janus_imperativeocl_WhileExp' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_WhileExp' and 'OclExpression'. From 'Janus_imperativeocl_WhileExp', the role 'Janus_imperativeocl_WhileExp203' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression204' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_ComputeExp' and 'Variable'. From 'Janus_imperativeocl_ComputeExp', the role 'Variable206' has cardinality 0..*, and from 'Variable', the role 'essentialocl207' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_ComputeExp' and 'OclExpression'. From 'Janus_imperativeocl_ComputeExp', the role 'Janus_imperativeocl_ComputeExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression209' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_AltExp' and 'OclExpression'. From 'Janus_imperativeocl_AltExp', the role 'Janus_imperativeocl_AltExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression211' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_AltExp' and 'OclExpression'. From 'Janus_imperativeocl_AltExp', the role 'Janus_imperativeocl_AltExp213' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression214' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_UnlinkExp' and 'OclExpression'. From 'Janus_imperativeocl_UnlinkExp', the role 'Janus_imperativeocl_UnlinkExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression216' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_UnlinkExp' and 'OclExpression'. From 'Janus_imperativeocl_UnlinkExp', the role 'Janus_imperativeocl_UnlinkExp218' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression219' has cardinality 0..*.
+An association connects 'OclExpression' and 'Janus_imperativeocl_ReturnExp'. From 'OclExpression', the role 'OclExpression221' has cardinality 0..*, and from 'Janus_imperativeocl_ReturnExp', the role 'Janus_imperativeocl_ReturnExp' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_TryExp' and 'OclExpression'. From 'Janus_imperativeocl_TryExp', the role 'OclExpression223' has cardinality 0..*, and from 'OclExpression', the role 'essentialocl224' has cardinality 0..*.
+An association connects 'Type' and 'Janus_imperativeocl_TryExp'. From 'Type', the role 'Type226' has cardinality 0..*, and from 'Janus_imperativeocl_TryExp', the role 'Janus_imperativeocl_TryExp' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_TryExp' and 'OclExpression'. From 'Janus_imperativeocl_TryExp', the role 'Janus_imperativeocl_TryExp228' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression229' has cardinality 0..*.
+An association connects 'Type' and 'Janus_imperativeocl_RaiseExp'. From 'Type', the role 'Type231' has cardinality 0..*, and from 'Janus_imperativeocl_RaiseExp', the role 'Janus_imperativeocl_RaiseExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'Janus_imperativeocl_TupleExp'. From 'OclExpression', the role 'OclExpression233' has cardinality 0..*, and from 'Janus_imperativeocl_TupleExp', the role 'Janus_imperativeocl_TupleExp' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_Typedef' and 'Type'. From 'Janus_imperativeocl_Typedef', the role 'Janus_imperativeocl_Typedef' has cardinality 0..*, and from 'Type', the role 'Type235' has cardinality 0..*.
+An association connects 'OclExpression' and 'Janus_imperativeocl_Typedef'. From 'OclExpression', the role 'OclExpression238' has cardinality 0..*, and from 'Janus_imperativeocl_Typedef', the role 'Janus_imperativeocl_Typedef237' has cardinality 0..*.
+An association connects 'Class' and 'Janus_imperativeocl_InstantiationExp'. From 'Class', the role 'Class240' has cardinality 0..*, and from 'Janus_imperativeocl_InstantiationExp', the role 'Janus_imperativeocl_InstantiationExp' has cardinality 0..*.
+An association connects 'Variable' and 'Janus_imperativeocl_InstantiationExp'. From 'Variable', the role 'Variable243' has cardinality 0..*, and from 'Janus_imperativeocl_InstantiationExp', the role 'Janus_imperativeocl_InstantiationExp242' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_InstantiationExp' and 'OclExpression'. From 'Janus_imperativeocl_InstantiationExp', the role 'Janus_imperativeocl_InstantiationExp245' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression246' has cardinality 0..*.
+An association connects 'Type' and 'Janus_imperativeocl_DictionaryType'. From 'Type', the role 'Type248' has cardinality 0..*, and from 'Janus_imperativeocl_DictionaryType', the role 'Janus_imperativeocl_DictionaryType' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_DictLiteralExp' and 'DictLiteralPart'. From 'Janus_imperativeocl_DictLiteralExp', the role 'Janus_imperativeocl_DictLiteralExp' has cardinality 0..*, and from 'DictLiteralPart', the role 'DictLiteralPart' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_DictLiteralPart' and 'OclExpression'. From 'Janus_imperativeocl_DictLiteralPart', the role 'Janus_imperativeocl_DictLiteralPart' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression251' has cardinality 0..*.
+An association connects 'OclExpression' and 'Janus_imperativeocl_DictLiteralPart'. From 'OclExpression', the role 'OclExpression254' has cardinality 0..*, and from 'Janus_imperativeocl_DictLiteralPart', the role 'Janus_imperativeocl_DictLiteralPart253' has cardinality 0..*.
+An association connects 'OclExpression' and 'Janus_imperativeocl_LogExp'. From 'OclExpression', the role 'OclExpression256' has cardinality 0..*, and from 'Janus_imperativeocl_LogExp', the role 'Janus_imperativeocl_LogExp' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_LogExp' and 'Element'. From 'Janus_imperativeocl_LogExp', the role 'Janus_imperativeocl_LogExp258' has cardinality 0..*, and from 'Element', the role 'Element259' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_AssertExp' and 'LogExp'. From 'Janus_imperativeocl_AssertExp', the role 'Janus_imperativeocl_AssertExp' has cardinality 0..*, and from 'LogExp', the role 'LogExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'Janus_imperativeocl_AssertExp'. From 'OclExpression', the role 'OclExpression263' has cardinality 0..*, and from 'Janus_imperativeocl_AssertExp', the role 'Janus_imperativeocl_AssertExp262' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_ImperativeLoopExp' and 'OclExpression'. From 'Janus_imperativeocl_ImperativeLoopExp', the role 'Janus_imperativeocl_ImperativeLoopExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression265' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_CollectorExp' and 'Variable'. From 'Janus_imperativeocl_CollectorExp', the role 'Janus_imperativeocl_CollectorExp' has cardinality 0..*, and from 'Variable', the role 'Variable267' has cardinality 0..*.
+An association connects 'Janus_imperativeocl_UnpackExp' and 'Variable'. From 'Janus_imperativeocl_UnpackExp', the role 'Janus_imperativeocl_UnpackExp' has cardinality 0..*, and from 'Variable', the role 'Variable269' has cardinality 0..*.
+An association connects 'Type' and 'Janus_imperativeocl_AnonymousTupleType'. From 'Type', the role 'Type271' has cardinality 0..*, and from 'Janus_imperativeocl_AnonymousTupleType', the role 'Janus_imperativeocl_AnonymousTupleType' has cardinality 0..*.
+An association connects 'AnonymousTupleLiteralPart' and 'Janus_imperativeocl_AnonymousTupleLiteralExp'. From 'AnonymousTupleLiteralPart', the role 'AnonymousTupleLiteralPart' has cardinality 0..*, and from 'Janus_imperativeocl_AnonymousTupleLiteralExp', the role 'Janus_imperativeocl_AnonymousTupleLiteralExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'Janus_imperativeocl_AnonymousTupleLiteralPart'. From 'OclExpression', the role 'OclExpression274' has cardinality 0..*, and from 'Janus_imperativeocl_AnonymousTupleLiteralPart', the role 'Janus_imperativeocl_AnonymousTupleLiteralPart' has cardinality 0..*.

@@ -1,0 +1,41 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'library_UoD' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_Book' represents an important domain concept.
+It has the following attributes: 'isbn', which is of type str; 'title', which is of type str.
+
+'library_Person' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Loan' represents an important domain concept.
+It does not declare any attributes.
+
+'library_AbstractPerson' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_Author' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractPerson' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'library_Person' is a specialization of 'AbstractPerson'.
+The class 'library_Author' is a specialization of 'AbstractPerson'.
+
+Relationships between classes are modeled using associations.
+An association connects 'library_Library' and 'library_UoD'. From 'library_Library', the role 'library_Library' has cardinality 0..*, and from 'library_UoD', the role 'library_UoD' has cardinality 0..*.
+An association connects 'library_UoD' and 'library_Person'. From 'library_UoD', the role 'library_UoD2' has cardinality 0..*, and from 'library_Person', the role 'library_Person' has cardinality 0..*.
+An association connects 'library_UoD' and 'library_Author'. From 'library_UoD', the role 'library_UoD4' has cardinality 0..*, and from 'library_Author', the role 'library_Author' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Author'. From 'library_Book', the role 'library_Book' has cardinality 0..*, and from 'library_Author', the role 'library_Author6' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Book'. From 'library_Library', the role 'library_Library8' has cardinality 0..*, and from 'library_Book', the role 'library_Book9' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Loan'. From 'library_Library', the role 'library_Library11' has cardinality 0..*, and from 'library_Loan', the role 'library_Loan' has cardinality 0..*.
+An association connects 'library_Loan' and 'library_Person'. From 'library_Loan', the role 'library_Loan13' has cardinality 0..*, and from 'library_Person', the role 'library_Person14' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Loan'. From 'library_Book', the role 'library_Book17' has cardinality 0..*, and from 'library_Loan', the role 'library_Loan16' has cardinality 0..*.

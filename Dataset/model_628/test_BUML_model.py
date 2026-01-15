@@ -1,0 +1,316 @@
+####################
+# STRUCTURAL MODEL #
+####################
+
+from besser.BUML.metamodel.structural import (
+    Class, Property, Method, Parameter,
+    BinaryAssociation, Generalization, DomainModel,
+    Enumeration, EnumerationLiteral, Multiplicity,
+    StringType, IntegerType, FloatType, BooleanType,
+    TimeType, DateType, DateTimeType, TimeDeltaType,
+    AnyType, Constraint, AssociationClass, Metadata
+)
+
+# Enumerations
+Gender: Enumeration = Enumeration(
+    name="Gender",
+    literals={
+            EnumerationLiteral(name="Male"),
+			EnumerationLiteral(name="Female"),
+			EnumerationLiteral(name="Both")
+    }
+)
+
+Color: Enumeration = Enumeration(
+    name="Color",
+    literals={
+            EnumerationLiteral(name="Red"),
+			EnumerationLiteral(name="Green"),
+			EnumerationLiteral(name="Blue")
+    }
+)
+
+# Classes
+model_Library = Class(name="model::Library")
+model_Writer = Class(name="model::Writer")
+model_Book = Class(name="model::Book")
+model_Librarian = Class(name="model::Librarian")
+model_Computer = Class(name="model::Computer")
+model_Mainboard = Class(name="model::Mainboard")
+model_TableContentWithoutValidation = Class(name="model::TableContentWithoutValidation")
+TableContent = Class(name="TableContent")
+model_TableContentWithValidation = Class(name="model::TableContentWithValidation")
+model_PowerBlock = Class(name="model::PowerBlock")
+model_Container = Class(name="model::Container")
+model_Content = Class(name="model::Content")
+model_TableWithMultiplicity = Class(name="model::TableWithMultiplicity")
+model_TableContent = Class(name="model::TableContent", is_abstract=True)
+model_CrossReferenceContainer = Class(name="model::CrossReferenceContainer")
+model_CrossReferenceContent = Class(name="model::CrossReferenceContent")
+model_TableWithoutMultiplicity = Class(name="model::TableWithoutMultiplicity")
+model_TableWithUnique = Class(name="model::TableWithUnique")
+model_TableContentWithInnerChild2 = Class(name="model::TableContentWithInnerChild2")
+model_TableContentWithInnerChild = Class(name="model::TableContentWithInnerChild")
+model_TableWithoutMultiplicityConcrete = Class(name="model::TableWithoutMultiplicityConcrete")
+model_Referencer = Class(name="model::Referencer")
+model_Person = Class(name="model::Person")
+
+# model_Library class attributes and methods
+model_Library_name: Property = Property(name="name", type=StringType)
+model_Library_phoneNumber: Property = Property(name="phoneNumber", type=StringType)
+model_Library_m_validate: Method = Method(name="validate", parameters={Parameter(name='diagnostic'), Parameter(name='context')}, type=BooleanType)
+model_Library.attributes={model_Library_name, model_Library_phoneNumber}
+model_Library.methods={model_Library_m_validate}
+
+# model_Writer class attributes and methods
+model_Writer_firstName: Property = Property(name="firstName", type=StringType)
+model_Writer_lastName: Property = Property(name="lastName", type=StringType)
+model_Writer_EMail: Property = Property(name="EMail", type=StringType)
+model_Writer_BirthDate: Property = Property(name="BirthDate", type=DateType)
+model_Writer_Pseudonym: Property = Property(name="Pseudonym", type=BooleanType)
+model_Writer_initials: Property = Property(name="initials", type=StringType)
+model_Writer_title: Property = Property(name="title", type=StringType)
+model_Writer_m_validate: Method = Method(name="validate", parameters={Parameter(name='diagnostic'), Parameter(name='context')}, type=BooleanType)
+model_Writer.attributes={model_Writer_initials, model_Writer_EMail, model_Writer_BirthDate, model_Writer_firstName, model_Writer_title, model_Writer_Pseudonym, model_Writer_lastName}
+model_Writer.methods={model_Writer_m_validate}
+
+# model_Book class attributes and methods
+model_Book_title: Property = Property(name="title", type=StringType)
+model_Book_pages: Property = Property(name="pages", type=IntegerType)
+model_Book_m_validate: Method = Method(name="validate", parameters={Parameter(name='diagnostic'), Parameter(name='context')}, type=BooleanType)
+model_Book.attributes={model_Book_title, model_Book_pages}
+model_Book.methods={model_Book_m_validate}
+
+# model_Librarian class attributes and methods
+model_Librarian_name: Property = Property(name="name", type=StringType)
+model_Librarian_m_validate: Method = Method(name="validate", parameters={Parameter(name='context'), Parameter(name='diagnostic')}, type=BooleanType)
+model_Librarian.attributes={model_Librarian_name}
+model_Librarian.methods={model_Librarian_m_validate}
+
+# model_Computer class attributes and methods
+model_Computer_name: Property = Property(name="name", type=StringType)
+model_Computer_colors: Property = Property(name="colors", type=StringType)
+model_Computer.attributes={model_Computer_name, model_Computer_colors}
+
+# model_Mainboard class attributes and methods
+model_Mainboard_name: Property = Property(name="name", type=StringType)
+model_Mainboard.attributes={model_Mainboard_name}
+
+# model_TableContentWithoutValidation class attributes and methods
+model_TableContentWithoutValidation_name: Property = Property(name="name", type=StringType)
+model_TableContentWithoutValidation_weight: Property = Property(name="weight", type=IntegerType)
+model_TableContentWithoutValidation.attributes={model_TableContentWithoutValidation_weight, model_TableContentWithoutValidation_name}
+
+# TableContent class attributes and methods
+
+# model_TableContentWithValidation class attributes and methods
+model_TableContentWithValidation_name: Property = Property(name="name", type=StringType)
+model_TableContentWithValidation_weight: Property = Property(name="weight", type=IntegerType)
+model_TableContentWithValidation.attributes={model_TableContentWithValidation_weight, model_TableContentWithValidation_name}
+
+# model_PowerBlock class attributes and methods
+model_PowerBlock_name: Property = Property(name="name", type=StringType)
+model_PowerBlock.attributes={model_PowerBlock_name}
+
+# model_Container class attributes and methods
+
+# model_Content class attributes and methods
+model_Content_uniqueAttribute: Property = Property(name="uniqueAttribute", type=StringType)
+model_Content_secondAttribute: Property = Property(name="secondAttribute", type=StringType)
+model_Content.attributes={model_Content_uniqueAttribute, model_Content_secondAttribute}
+
+# model_TableWithMultiplicity class attributes and methods
+
+# model_TableContent class attributes and methods
+
+# model_CrossReferenceContainer class attributes and methods
+
+# model_CrossReferenceContent class attributes and methods
+
+# model_TableWithoutMultiplicity class attributes and methods
+
+# model_TableWithUnique class attributes and methods
+
+# model_TableContentWithInnerChild2 class attributes and methods
+
+# model_TableContentWithInnerChild class attributes and methods
+model_TableContentWithInnerChild_stuff: Property = Property(name="stuff", type=StringType)
+model_TableContentWithInnerChild.attributes={model_TableContentWithInnerChild_stuff}
+
+# model_TableWithoutMultiplicityConcrete class attributes and methods
+
+# model_Referencer class attributes and methods
+
+# model_Person class attributes and methods
+model_Person_firstName: Property = Property(name="firstName", type=StringType)
+model_Person_gender: Property = Property(name="gender", type=StringType)
+model_Person_lastName: Property = Property(name="lastName", type=StringType)
+model_Person_custom: Property = Property(name="custom", type=StringType)
+model_Person_age: Property = Property(name="age", type=StringType)
+model_Person.attributes={model_Person_age, model_Person_custom, model_Person_lastName, model_Person_gender, model_Person_firstName}
+
+# Relationships
+books4: BinaryAssociation = BinaryAssociation(
+    name="books4",
+    ends={
+        Property(name="Book", type=model_Writer, multiplicity=Multiplicity(1, 1)),
+        Property(name="writers", type=model_Book, multiplicity=Multiplicity(0, 9999))
+    }
+)
+writers0: BinaryAssociation = BinaryAssociation(
+    name="writers0",
+    ends={
+        Property(name="Writer", type=model_Library, multiplicity=Multiplicity(1, 1)),
+        Property(name="library", type=model_Writer, multiplicity=Multiplicity(1, 9999), is_composite=True)
+    }
+)
+books1: BinaryAssociation = BinaryAssociation(
+    name="books1",
+    ends={
+        Property(name="model_Book", type=model_Library, multiplicity=Multiplicity(1, 1)),
+        Property(name="model_Library", type=model_Book, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+librarian2: BinaryAssociation = BinaryAssociation(
+    name="librarian2",
+    ends={
+        Property(name="model_Librarian", type=model_Library, multiplicity=Multiplicity(1, 1)),
+        Property(name="model_Library3", type=model_Librarian, multiplicity=Multiplicity(0, 1), is_composite=True)
+    }
+)
+mainboard9: BinaryAssociation = BinaryAssociation(
+    name="mainboard9",
+    ends={
+        Property(name="model_Mainboard", type=model_Computer, multiplicity=Multiplicity(1, 1)),
+        Property(name="model_Computer", type=model_Mainboard, multiplicity=Multiplicity(0, 1), is_composite=True)
+    }
+)
+library5: BinaryAssociation = BinaryAssociation(
+    name="library5",
+    ends={
+        Property(name="Library", type=model_Writer, multiplicity=Multiplicity(1, 1)),
+        Property(name="writers6", type=model_Library, multiplicity=Multiplicity(0, 1))
+    }
+)
+writers7: BinaryAssociation = BinaryAssociation(
+    name="writers7",
+    ends={
+        Property(name="Writer8", type=model_Book, multiplicity=Multiplicity(1, 1)),
+        Property(name="books", type=model_Writer, multiplicity=Multiplicity(0, 1))
+    }
+)
+powerBlock10: BinaryAssociation = BinaryAssociation(
+    name="powerBlock10",
+    ends={
+        Property(name="model_PowerBlock", type=model_Computer, multiplicity=Multiplicity(1, 1)),
+        Property(name="model_Computer11", type=model_PowerBlock, multiplicity=Multiplicity(0, 1), is_composite=True)
+    }
+)
+contents12: BinaryAssociation = BinaryAssociation(
+    name="contents12",
+    ends={
+        Property(name="model_Content", type=model_Container, multiplicity=Multiplicity(1, 1)),
+        Property(name="model_Container", type=model_Content, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+content13: BinaryAssociation = BinaryAssociation(
+    name="content13",
+    ends={
+        Property(name="model_TableContent", type=model_TableWithMultiplicity, multiplicity=Multiplicity(1, 1)),
+        Property(name="model_TableWithMultiplicity", type=model_TableContent, multiplicity=Multiplicity(1, 9999), is_composite=True)
+    }
+)
+referencedContent24: BinaryAssociation = BinaryAssociation(
+    name="referencedContent24",
+    ends={
+        Property(name="model_Computer25", type=model_Referencer, multiplicity=Multiplicity(1, 1)),
+        Property(name="model_Referencer", type=model_Computer, multiplicity=Multiplicity(0, 1))
+    }
+)
+contents26: BinaryAssociation = BinaryAssociation(
+    name="contents26",
+    ends={
+        Property(name="CrossReferenceContent", type=model_CrossReferenceContainer, multiplicity=Multiplicity(1, 1)),
+        Property(name="parent", type=model_CrossReferenceContent, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+singleContent27: BinaryAssociation = BinaryAssociation(
+    name="singleContent27",
+    ends={
+        Property(name="CrossReferenceContent28", type=model_CrossReferenceContainer, multiplicity=Multiplicity(1, 1)),
+        Property(name="singleParent", type=model_CrossReferenceContent, multiplicity=Multiplicity(0, 1), is_composite=True)
+    }
+)
+content14: BinaryAssociation = BinaryAssociation(
+    name="content14",
+    ends={
+        Property(name="model_TableContent15", type=model_TableWithoutMultiplicity, multiplicity=Multiplicity(1, 1)),
+        Property(name="model_TableWithoutMultiplicity", type=model_TableContent, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+content16: BinaryAssociation = BinaryAssociation(
+    name="content16",
+    ends={
+        Property(name="model_TableContent17", type=model_TableWithUnique, multiplicity=Multiplicity(1, 1)),
+        Property(name="model_TableWithUnique", type=model_TableContent, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+innerChild18: BinaryAssociation = BinaryAssociation(
+    name="innerChild18",
+    ends={
+        Property(name="model_TableContent19", type=model_TableContentWithInnerChild2, multiplicity=Multiplicity(1, 1)),
+        Property(name="model_TableContentWithInnerChild2", type=model_TableContent, multiplicity=Multiplicity(0, 1), is_composite=True)
+    }
+)
+innerChild20: BinaryAssociation = BinaryAssociation(
+    name="innerChild20",
+    ends={
+        Property(name="model_TableContent21", type=model_TableContentWithInnerChild, multiplicity=Multiplicity(1, 1)),
+        Property(name="model_TableContentWithInnerChild", type=model_TableContent, multiplicity=Multiplicity(0, 1), is_composite=True)
+    }
+)
+content22: BinaryAssociation = BinaryAssociation(
+    name="content22",
+    ends={
+        Property(name="model_TableContentWithInnerChild23", type=model_TableWithoutMultiplicityConcrete, multiplicity=Multiplicity(1, 1)),
+        Property(name="model_TableWithoutMultiplicityConcrete", type=model_TableContentWithInnerChild, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+parent29: BinaryAssociation = BinaryAssociation(
+    name="parent29",
+    ends={
+        Property(name="CrossReferenceContainer", type=model_CrossReferenceContent, multiplicity=Multiplicity(1, 1)),
+        Property(name="contents", type=model_CrossReferenceContainer, multiplicity=Multiplicity(0, 1))
+    }
+)
+singleParent30: BinaryAssociation = BinaryAssociation(
+    name="singleParent30",
+    ends={
+        Property(name="CrossReferenceContainer31", type=model_CrossReferenceContent, multiplicity=Multiplicity(1, 1)),
+        Property(name="singleContent", type=model_CrossReferenceContainer, multiplicity=Multiplicity(0, 1))
+    }
+)
+
+# Generalizations
+gen_model_TableContentWithoutValidation_TableContent = Generalization(general=TableContent, specific=model_TableContentWithoutValidation)
+gen_model_TableContentWithValidation_TableContent = Generalization(general=TableContent, specific=model_TableContentWithValidation)
+gen_model_TableContentWithInnerChild2_TableContent = Generalization(general=TableContent, specific=model_TableContentWithInnerChild2)
+gen_model_TableContentWithInnerChild_TableContent = Generalization(general=TableContent, specific=model_TableContentWithInnerChild)
+
+# Domain Model
+domain_model = DomainModel(
+    name="model",
+    types={model_Library, model_Writer, model_Book, model_Librarian, model_Computer, model_Mainboard, model_TableContentWithoutValidation, TableContent, model_TableContentWithValidation, model_PowerBlock, model_Container, model_Content, model_TableWithMultiplicity, model_TableContent, model_CrossReferenceContainer, model_CrossReferenceContent, model_TableWithoutMultiplicity, model_TableWithUnique, model_TableContentWithInnerChild2, model_TableContentWithInnerChild, model_TableWithoutMultiplicityConcrete, model_Referencer, model_Person, Gender, Color},
+    associations={books4, writers0, books1, librarian2, mainboard9, library5, writers7, powerBlock10, contents12, content13, referencedContent24, contents26, singleContent27, content14, content16, innerChild18, innerChild20, content22, parent29, singleParent30},
+    generalizations={gen_model_TableContentWithoutValidation_TableContent, gen_model_TableContentWithValidation_TableContent, gen_model_TableContentWithInnerChild2_TableContent, gen_model_TableContentWithInnerChild_TableContent},
+    metadata=None
+)
+
+
+###################### 
+ # PROJECT DEFINITION # 
+ ###################### 
+from besser.BUML.metamodel.project import Project 
+from besser.BUML.metamodel.structural.structural import Metadata
+metadata = Metadata(description="New project")
+project = Project(name="sampleModel",models=[domain_model],owner="User",metadata=metadata)

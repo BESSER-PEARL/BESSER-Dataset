@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ruizrube/spdef/spdt/trunk/src/main/resources/es/uca/spifm/spdt/process/uma/uma104.ecore

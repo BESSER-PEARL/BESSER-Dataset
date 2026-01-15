@@ -1,0 +1,29 @@
+The domain model 'MARTE_Library' describes the core structural elements and their relationships within the system.
+
+The model defines 1 main class(es).
+
+'MARTE_Library_TimeLibrary_IdealClock' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SourceKind' defines the following possible values: 'calc', 'req', 'est', 'meas'.
+The enumeration 'DataSizeUnitKind' defines the following possible values: 'MB', 'Byte', 'GB', 'KB', 'bit'.
+The enumeration 'SchedPolicyKind' defines the following possible values: 'TimeTableDriven', 'Undef', 'FIFO', 'FixedPriority', 'LeastLaxityFirst', 'Other', 'RoundRobin', 'EarliestDeadlineFirst'.
+The enumeration 'StatisticalQualifierKind' defines the following possible values: 'range', 'min', 'mean', 'variance', 'max', 'distrib', 'other', 'percent', 'determ'.
+The enumeration 'DataTxRateUnitKind' defines the following possible values: 'b_per_s', 'Kb_per_s', 'Mb_per_s'.
+The enumeration 'TimeNatureKind' defines the following possible values: 'discrete', 'dense'.
+The enumeration 'LogicalTimeUnit' defines a single possible value: 'tick'.
+The enumeration 'PeriodicServerKind' defines the following possible values: 'Other', 'Undef', 'Sporadic', 'Deferrable'.
+The enumeration 'PowerUnitKind' defines the following possible values: 'W', 'mW', 'KW'.
+The enumeration 'FrequencyUnitKind' defines the following possible values: 'MHz', 'GHz', 'Hz', 'KHz', 'rpm'.
+The enumeration 'LengthUnitKind' defines the following possible values: 'mm', 'cm', 'm'.
+The enumeration 'EnergyUnitKind' defines the following possible values: 'KJ', 'KWh', 'J', 'Wh', 'mWh'.
+The enumeration 'TransmModeKind' defines the following possible values: 'fullDuplex', 'simplex', 'halfDuplex'.
+The enumeration 'DirectionKind' defines the following possible values: 'decr', 'incr'.
+The enumeration 'ProtectProtocolKind' defines the following possible values: 'PriorityInheritance', 'Undef', 'StackBased', 'Other', 'FIFO', 'PriorityCeiling', 'NoPreemption'.
+The enumeration 'TimeUnitKind' defines the following possible values: 'day', 'ms', 'hrs', 'us', 'ns', 'min', 's'.
+The enumeration 'AreaUnitKind' defines the following possible values: 'um2', 'mm2'.
+The enumeration 'TimeInterpretationKind' defines the following possible values: 'duration', 'instant'.
+The enumeration 'EventKind' defines the following possible values: 'consume', 'receive', 'start', 'send', 'finish'.
+The enumeration 'WeightUnitKind' defines the following possible values: 'mg', 'kg', 'g'.
+The enumeration 'TimeStandardKind' defines the following possible values: 'TCG', 'UTC', 'GPS', 'TCB', 'Local', 'UT1', 'TBD', 'Sidereal', 'TAI', 'TT', 'UT0'.

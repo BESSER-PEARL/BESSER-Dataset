@@ -1,0 +1,148 @@
+The domain model 'jointPackage_PetriNet2PNML' describes the core structural elements and their relationships within the system.
+
+The model defines 32 main class(es).
+
+'SrcLocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgNetContentElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgNetContent' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_PetriNet2PNML_TrgName' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_PetriNet2PNML_TrgTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_PetriNet2PNML_TrgIdedElement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'jointPackage_PetriNet2PNML_SrcPetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_PetriNet2PNML_SrcElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_PetriNet2PNML_TrgNetContent' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_PetriNet2PNML_TrgPlace' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_PetriNet2PNML_TrgLabel' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'jointPackage_PetriNet2PNML_SrcTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_PetriNet2PNML_TrgArc' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_PetriNet2PNML_SrcTransitionToPlace' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgLabeledElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_PetriNet2PNML_JointMM' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_PetriNet2PNML_SrcPlaceToTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgIdedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_PetriNet2PNML_TrgURI' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'TrgLocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_PetriNet2PNML_SrcPlace' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_PetriNet2PNML_TrgNetElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_PetriNet2PNML_TrgLabeledElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_PetriNet2PNML_SrcLocatedElement' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'jointPackage_PetriNet2PNML_TrgPNMLDocument' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_PetriNet2PNML_TrgLocatedElement' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'jointPackage_PetriNet2PNML_TrgNetContentElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcArc' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_PetriNet2PNML_SrcNamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jointPackage_PetriNet2PNML_SrcArc' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'jointPackage_PetriNet2PNML_SrcNamedElement' is a specialization of 'SrcLocatedElement'.
+The class 'jointPackage_PetriNet2PNML_SrcPetriNet' is a specialization of 'SrcNamedElement'.
+The class 'jointPackage_PetriNet2PNML_SrcElement' is a specialization of 'SrcNamedElement'.
+The class 'jointPackage_PetriNet2PNML_SrcPlace' is a specialization of 'SrcElement'.
+The class 'jointPackage_PetriNet2PNML_SrcTransition' is a specialization of 'SrcElement'.
+The class 'jointPackage_PetriNet2PNML_SrcArc' is a specialization of 'SrcNamedElement'.
+The class 'jointPackage_PetriNet2PNML_SrcPlaceToTransition' is a specialization of 'SrcArc'.
+The class 'jointPackage_PetriNet2PNML_SrcTransitionToPlace' is a specialization of 'SrcArc'.
+The class 'jointPackage_PetriNet2PNML_TrgPNMLDocument' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_PetriNet2PNML_TrgIdedElement' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_PetriNet2PNML_TrgURI' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_PetriNet2PNML_TrgNetElement' is a specialization of 'TrgIdedElement'.
+The class 'jointPackage_PetriNet2PNML_TrgNetContent' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_PetriNet2PNML_TrgLabeledElement' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_PetriNet2PNML_TrgLabel' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_PetriNet2PNML_TrgName' is a specialization of 'TrgLabeledElement'.
+The class 'jointPackage_PetriNet2PNML_TrgNetContentElement' is a specialization of 'TrgNetContent'.
+The class 'jointPackage_PetriNet2PNML_TrgNetContentElement' is a specialization of 'TrgIdedElement'.
+The class 'jointPackage_PetriNet2PNML_TrgArc' is a specialization of 'TrgNetContent'.
+The class 'jointPackage_PetriNet2PNML_TrgArc' is a specialization of 'TrgIdedElement'.
+The class 'jointPackage_PetriNet2PNML_TrgPlace' is a specialization of 'TrgNetContentElement'.
+The class 'jointPackage_PetriNet2PNML_TrgTransition' is a specialization of 'TrgNetContentElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'jointPackage_PetriNet2PNML_SrcPetriNet' and 'jointPackage_PetriNet2PNML_JointMM'. From 'jointPackage_PetriNet2PNML_SrcPetriNet', the role 'jointPackage_PetriNet2PNML_SrcPetriNet' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_JointMM', the role 'jointPackage_PetriNet2PNML_JointMM' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_TrgPNMLDocument' and 'jointPackage_PetriNet2PNML_JointMM'. From 'jointPackage_PetriNet2PNML_TrgPNMLDocument', the role 'jointPackage_PetriNet2PNML_TrgPNMLDocument' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_JointMM', the role 'jointPackage_PetriNet2PNML_JointMM2' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_SrcPetriNet' and 'jointPackage_PetriNet2PNML_SrcElement'. From 'jointPackage_PetriNet2PNML_SrcPetriNet', the role 'net' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_SrcElement', the role 'SrcElement' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_SrcArc' and 'jointPackage_PetriNet2PNML_SrcPetriNet'. From 'jointPackage_PetriNet2PNML_SrcArc', the role 'SrcArc' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_SrcPetriNet', the role 'net5' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_SrcPetriNet' and 'jointPackage_PetriNet2PNML_SrcElement'. From 'jointPackage_PetriNet2PNML_SrcPetriNet', the role 'SrcPetriNet' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_SrcElement', the role 'elements' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_SrcPlace' and 'jointPackage_PetriNet2PNML_SrcTransitionToPlace'. From 'jointPackage_PetriNet2PNML_SrcPlace', the role 'to' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_SrcTransitionToPlace', the role 'SrcTransitionToPlace' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_SrcPlace' and 'jointPackage_PetriNet2PNML_SrcPlaceToTransition'. From 'jointPackage_PetriNet2PNML_SrcPlace', the role 'from' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_SrcPlaceToTransition', the role 'SrcPlaceToTransition' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_SrcPlaceToTransition' and 'jointPackage_PetriNet2PNML_SrcTransition'. From 'jointPackage_PetriNet2PNML_SrcPlaceToTransition', the role 'SrcPlaceToTransition11' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_SrcTransition', the role 'to10' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_SrcTransition' and 'jointPackage_PetriNet2PNML_SrcTransitionToPlace'. From 'jointPackage_PetriNet2PNML_SrcTransition', the role 'from13' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_SrcTransitionToPlace', the role 'SrcTransitionToPlace14' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_SrcPetriNet' and 'jointPackage_PetriNet2PNML_SrcArc'. From 'jointPackage_PetriNet2PNML_SrcPetriNet', the role 'SrcPetriNet16' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_SrcArc', the role 'arcs' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_SrcPlaceToTransition' and 'jointPackage_PetriNet2PNML_SrcPlace'. From 'jointPackage_PetriNet2PNML_SrcPlaceToTransition', the role 'outgoingArc' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_SrcPlace', the role 'SrcPlace' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_SrcPlaceToTransition' and 'jointPackage_PetriNet2PNML_SrcTransition'. From 'jointPackage_PetriNet2PNML_SrcPlaceToTransition', the role 'incomingArc' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_SrcTransition', the role 'SrcTransition' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_SrcTransitionToPlace' and 'jointPackage_PetriNet2PNML_SrcTransition'. From 'jointPackage_PetriNet2PNML_SrcTransitionToPlace', the role 'outgoingArc20' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_SrcTransition', the role 'SrcTransition21' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_SrcTransitionToPlace' and 'jointPackage_PetriNet2PNML_SrcPlace'. From 'jointPackage_PetriNet2PNML_SrcTransitionToPlace', the role 'incomingArc23' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_SrcPlace', the role 'SrcPlace24' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_TrgURI' and 'jointPackage_PetriNet2PNML_TrgPNMLDocument'. From 'jointPackage_PetriNet2PNML_TrgURI', the role 'jointPackage_PetriNet2PNML_TrgURI' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_TrgPNMLDocument', the role 'jointPackage_PetriNet2PNML_TrgPNMLDocument26' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_TrgNetElement' and 'jointPackage_PetriNet2PNML_TrgPNMLDocument'. From 'jointPackage_PetriNet2PNML_TrgNetElement', the role 'jointPackage_PetriNet2PNML_TrgNetElement' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_TrgPNMLDocument', the role 'jointPackage_PetriNet2PNML_TrgPNMLDocument28' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_TrgNetElement' and 'jointPackage_PetriNet2PNML_TrgURI'. From 'jointPackage_PetriNet2PNML_TrgNetElement', the role 'jointPackage_PetriNet2PNML_TrgNetElement30' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_TrgURI', the role 'jointPackage_PetriNet2PNML_TrgURI31' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_TrgNetElement' and 'jointPackage_PetriNet2PNML_TrgNetContent'. From 'jointPackage_PetriNet2PNML_TrgNetElement', the role 'jointPackage_PetriNet2PNML_TrgNetElement33' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_TrgNetContent', the role 'jointPackage_PetriNet2PNML_TrgNetContent' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_TrgName' and 'jointPackage_PetriNet2PNML_TrgNetElement'. From 'jointPackage_PetriNet2PNML_TrgName', the role 'jointPackage_PetriNet2PNML_TrgName' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_TrgNetElement', the role 'jointPackage_PetriNet2PNML_TrgNetElement35' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_TrgNetContent' and 'jointPackage_PetriNet2PNML_TrgName'. From 'jointPackage_PetriNet2PNML_TrgNetContent', the role 'jointPackage_PetriNet2PNML_TrgNetContent37' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_TrgName', the role 'jointPackage_PetriNet2PNML_TrgName38' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_TrgLabel' and 'jointPackage_PetriNet2PNML_TrgLabeledElement'. From 'jointPackage_PetriNet2PNML_TrgLabel', the role 'jointPackage_PetriNet2PNML_TrgLabel' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_TrgLabeledElement', the role 'jointPackage_PetriNet2PNML_TrgLabeledElement' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_TrgArc' and 'jointPackage_PetriNet2PNML_TrgNetContentElement'. From 'jointPackage_PetriNet2PNML_TrgArc', the role 'jointPackage_PetriNet2PNML_TrgArc' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_TrgNetContentElement', the role 'jointPackage_PetriNet2PNML_TrgNetContentElement' has cardinality 0..*.
+An association connects 'jointPackage_PetriNet2PNML_TrgNetContentElement' and 'jointPackage_PetriNet2PNML_TrgArc'. From 'jointPackage_PetriNet2PNML_TrgNetContentElement', the role 'jointPackage_PetriNet2PNML_TrgNetContentElement43' has cardinality 0..*, and from 'jointPackage_PetriNet2PNML_TrgArc', the role 'jointPackage_PetriNet2PNML_TrgArc42' has cardinality 0..*.

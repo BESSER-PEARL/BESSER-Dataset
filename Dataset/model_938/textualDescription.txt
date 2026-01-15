@@ -1,0 +1,1219 @@
+The domain model 'esmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 272 main class(es).
+
+'esmodel_versioning_VersionProperty' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'WorkItem' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_operations_OperationId' represents an important domain concept.
+It does not declare any attributes.
+
+'rationale_Assessment' represents an important domain concept.
+It does not declare any attributes.
+
+'organization_OrgUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_roles_ProjectAdminRole' represents an important domain concept.
+It does not declare any attributes.
+
+'profile_StereotypeInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'model_rationale_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'model_task_Milestone' represents an important domain concept.
+It does not declare any attributes.
+
+'model_requirement_Scenario' represents an important domain concept.
+It does not declare any attributes.
+
+'UnicaseModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'rationale_Issue' represents an important domain concept.
+It does not declare any attributes.
+
+'versioning_TagVersionSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElementId' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_roles_ServerAdmin' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_operations_DiagramLayoutOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_organization_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_ModelVersion' represents an important domain concept.
+It has one attribute: 'releaseNumber', which is of type int.
+
+'model_rationale_Assessment' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'model_requirement_Step' represents an important domain concept.
+It has one attribute: 'userStep', which is of type bool.
+
+'esmodel_events_NotificationGenerationEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'diagram_model_Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+'task_WorkPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_events_UndoEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'meeting_MeetingSection' represents an important domain concept.
+It does not declare any attributes.
+
+'versioning_ChangePackage' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_events_Validate' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_UnicaseModelElement' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str; 'state', which is of type str.
+
+'esmodel_operations_OperationGroup' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_classes_PackageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'meeting_IssueMeetingSection' represents an important domain concept.
+It does not declare any attributes.
+
+'model_meeting_IssueMeetingSection' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_operations_ModelElementGroup' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'classes_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_url_ModelElementUrlFragment' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_requirement_FunctionalRequirement' represents an important domain concept.
+It has the following attributes: 'storyPoints', which is of type int; 'reviewed', which is of type bool; 'priority', which is of type int; 'cost', which is of type int.
+
+'model_activity_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_events_ShowChangesEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'meeting_WorkItemMeetingSection' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_operations_EObjectToModelElementIdMap' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_events_NotificationReadEvent' represents an important domain concept.
+It has one attribute: 'notificationId', which is of type str.
+
+'model_classes_Attribute' represents an important domain concept.
+It has the following attributes: 'defaultValue', which is of type str; 'visibility', which is of type str; 'type', which is of type str; 'scope', which is of type str; 'properties', which is of type str; 'signature', which is of type str; 'label', which is of type str.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_ModelElementId' represents an important domain concept.
+It does not declare any attributes.
+
+'model_activity_Fork' represents an important domain concept.
+It does not declare any attributes.
+
+'MeetingSection' represents an important domain concept.
+It does not declare any attributes.
+
+'ReadEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_meeting_WorkItemMeetingSection' represents an important domain concept.
+It does not declare any attributes.
+
+'model_change_ModelChangePackage' represents an important domain concept.
+It has the following attributes: 'targetVersion', which is of type int; 'sourceVersion', which is of type int.
+
+'activity_ActivityObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model_classes_Association' represents an important domain concept.
+It has the following attributes: 'targetRole', which is of type str; 'sourceMultiplicity', which is of type str; 'sourceRole', which is of type str; 'targetMultiplicity', which is of type str; 'type', which is of type str.
+
+'model_attachment_UrlAttachment' represents an important domain concept.
+It has one attribute: 'url', which is of type str.
+
+'esmodel_url_ProjectUrlFragment' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'esmodel_versioning_HeadVersionSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_semantic_SemanticCompositeOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_events_NotificationIgnoreEvent' represents an important domain concept.
+It has one attribute: 'notificationId', which is of type str.
+
+'esmodel_url_ModelElementUrl' represents an important domain concept.
+It does not declare any attributes.
+
+'model_classes_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'model_NonDomainElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_events_Event' represents an important domain concept.
+It has one attribute: 'timestamp', which is of type date.
+
+'model_classes_MethodArgument' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'signature', which is of type str; 'direction', which is of type str; 'type', which is of type str; 'defaultValue', which is of type str.
+
+'model_state_StateNode' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_events_MergeGlobalChoiceEvent' represents an important domain concept.
+It has one attribute: 'selection', which is of type str.
+
+'change_ModelChangePackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model_bug_BugReport' represents an important domain concept.
+It has the following attributes: 'resolutionType', which is of type str; 'Status', which is of type str; 'resolution', which is of type str; 'severity', which is of type str.
+
+'esmodel_events_MergeChoiceEvent' represents an important domain concept.
+It has the following attributes: 'contextFeature', which is of type str; 'createdIssueName', which is of type str; 'selection', which is of type str.
+
+'model_state_StateInitial' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_events_URLEvent' represents an important domain concept.
+It has one attribute: 'sourceView', which is of type str.
+
+'UniqueIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Attachment' represents an important domain concept.
+It does not declare any attributes.
+
+'model_state_StateEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'model_task_WorkItem' represents an important domain concept.
+It has the following attributes: 'dueDate', which is of type date; 'resolved', which is of type bool; 'estimate', which is of type int; 'effort', which is of type int; 'priority', which is of type int.
+
+'esmodel_accesscontrol_ACOrgUnit' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str.
+
+'esmodel_events_MergeEvent' represents an important domain concept.
+It has the following attributes: 'totalTime', which is of type int; 'numberOfConflicts', which is of type int.
+
+'CompositeOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_change_MergingIssue' represents an important domain concept.
+It has one attribute: 'resolvingRevision', which is of type int.
+
+'state_StateNode' represents an important domain concept.
+It does not declare any attributes.
+
+'url_ServerUrl' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_events_ReadEvent' represents an important domain concept.
+It has the following attributes: 'sourceView', which is of type str; 'readView', which is of type str.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'Issue' represents an important domain concept.
+It does not declare any attributes.
+
+'model_activity_ActivityEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'task_Checkable' represents an important domain concept.
+It does not declare any attributes.
+
+'model_activity_Branch' represents an important domain concept.
+It does not declare any attributes.
+
+'url_ProjectUrlFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'model_activity_ActivityInitial' represents an important domain concept.
+It does not declare any attributes.
+
+'model_state_State' represents an important domain concept.
+It has the following attributes: 'entryConditions', which is of type str; 'activities', which is of type str; 'exitConditions', which is of type str.
+
+'esmodel_events_PresentationSwitchEvent' represents an important domain concept.
+It has the following attributes: 'newPresentation', which is of type str; 'readView', which is of type str.
+
+'task_WorkItem' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_events_CheckoutEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'ProjectId' represents an important domain concept.
+It does not declare any attributes.
+
+'operations_OperationId' represents an important domain concept.
+It does not declare any attributes.
+
+'url_ModelElementUrlFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_SessionId' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_ServerSpace' represents an important domain concept.
+It does not declare any attributes.
+
+'model_change_MergingProposal' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_accesscontrol_ACGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'StateNode' represents an important domain concept.
+It does not declare any attributes.
+
+'state_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_classes_Method' represents an important domain concept.
+It has the following attributes: 'stubbed', which is of type bool; 'scope', which is of type str; 'label', which is of type str; 'properties', which is of type str; 'visibility', which is of type str; 'returnType', which is of type str; 'signature', which is of type str.
+
+'esmodel_operations_AbstractOperation' represents an important domain concept.
+It has the following attributes: 'accepted', which is of type bool; 'name', which is of type str; 'description', which is of type str; 'clientDate', which is of type date.
+
+'model_task_WorkPackage' represents an important domain concept.
+It has the following attributes: 'endDate', which is of type date; 'startDate', which is of type date.
+
+'versioning_Version' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_accesscontrol_ACUser' represents an important domain concept.
+It has the following attributes: 'lastName', which is of type str; 'firstName', which is of type str.
+
+'model_change_MergingSolution' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_operations_FeatureOperation' represents an important domain concept.
+It has one attribute: 'featureName', which is of type str.
+
+'model_requirement_UserTask' represents an important domain concept.
+It does not declare any attributes.
+
+'Proposal' represents an important domain concept.
+It does not declare any attributes.
+
+'model_requirement_SystemFunction' represents an important domain concept.
+It has the following attributes: 'exception', which is of type str; 'input', which is of type str; 'output', which is of type str.
+
+'model_component_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_operations_CompositeOperation' represents an important domain concept.
+It has the following attributes: 'compositeName', which is of type str; 'compositeDescription', which is of type str; 'reversed', which is of type bool.
+
+'organization_User' represents an important domain concept.
+It does not declare any attributes.
+
+'Solution' represents an important domain concept.
+It does not declare any attributes.
+
+'change_MergingProposal' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_PackageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'versioning_PrimaryVersionSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_events_ExceptionEvent' represents an important domain concept.
+It has the following attributes: 'ExceptionStackTrace', which is of type str; 'ExceptionTitle', which is of type str; 'ExceptionCauseStackTrace', which is of type str; 'ExceptionCauseTitle', which is of type str.
+
+'AbstractOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'model_attachment_FileAttachment' represents an important domain concept.
+It has the following attributes: 'fileHash', which is of type str; 'fileSize', which is of type str; 'fileID', which is of type str; 'fileName', which is of type str.
+
+'Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_events_PluginStartEvent' represents an important domain concept.
+It has one attribute: 'pluginId', which is of type str.
+
+'model_profile_StereotypeInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_server_ServerEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'model_util_ModelElementPath' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_operations_AttributeOperation' represents an important domain concept.
+It has the following attributes: 'newValue', which is of type str; 'oldValue', which is of type str.
+
+'esmodel_events_UpdateEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'Attachment' represents an important domain concept.
+It does not declare any attributes.
+
+'requirement_FunctionalRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'NonDomainElement' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_ProjectId' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_operations_CreateDeleteOperation' represents an important domain concept.
+It has one attribute: 'delete', which is of type bool.
+
+'ACOrgUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'model_profile_Profile' represents an important domain concept.
+It does not declare any attributes.
+
+'model_requirement_UseCase' represents an important domain concept.
+It has the following attributes: 'exception', which is of type str; 'rules', which is of type str; 'postcondition', which is of type str; 'precondition', which is of type str.
+
+'esmodel_events_AnnotationEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_VersionInfo' represents an important domain concept.
+It has one attribute: 'emfStoreVersionString', which is of type str.
+
+'metamodel_UniqueIdentifier' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'requirement_SystemFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'SessionId' represents an important domain concept.
+It does not declare any attributes.
+
+'accesscontrol_ACGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Project' represents an important domain concept.
+It does not declare any attributes.
+
+'ProjectHistory' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_server_ServerProjectEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_profile_Stereotype' represents an important domain concept.
+It has one attribute: 'required', which is of type bool.
+
+'document_Section' represents an important domain concept.
+It does not declare any attributes.
+
+'model_requirement_NonFunctionalRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_task_Checkable' represents an important domain concept.
+It has one attribute: 'checked', which is of type bool.
+
+'ServerEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_server_ProjectUpdatedEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_component_ComponentService' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_events_RevertEvent' represents an important domain concept.
+It has one attribute: 'revertedChangesCount', which is of type int.
+
+'ServerProjectEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_profile_StereotypeAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_operations_MultiAttributeOperation' represents an important domain concept.
+It has the following attributes: 'referencedValues', which is of type str; 'indexes', which is of type int; 'add', which is of type bool.
+
+'model_classes_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'profile_Stereotype' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_ClientVersionInfo' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'name', which is of type str.
+
+'operations_esmodel_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'operations_ReferenceOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'accesscontrol_ACUser' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_url_ServerUrl' represents an important domain concept.
+It has the following attributes: 'hostName', which is of type str; 'port', which is of type int.
+
+'requirement_ActorInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'organization_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'model_rationale_Issue' represents an important domain concept.
+It has one attribute: 'activity', which is of type str.
+
+'model_diagram_MEDiagram' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'diagramLayout', which is of type str.
+
+'model_profile_StereotypeAttributeInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_events_ShowHistoryEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'operations_EObjectToModelElementIdMap' represents an important domain concept.
+It does not declare any attributes.
+
+'model_component_DeploymentNode' represents an important domain concept.
+It does not declare any attributes.
+
+'profile_Profile' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_FileIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_versioning_TagVersionSpec' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'esmodel_events_PerspectiveEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_accesscontrol_OrgUnitProperty' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'metamodel_IdentifiableElement' represents an important domain concept.
+It has one attribute: 'identifier', which is of type str.
+
+'esmodel_roles_Role' represents an important domain concept.
+It does not declare any attributes.
+
+'Criterion' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_NonDomainElement' represents an important domain concept.
+It does not declare any attributes.
+
+'document_LeafSection' represents an important domain concept.
+It does not declare any attributes.
+
+'component_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_operations_MultiAttributeSetOperation' represents an important domain concept.
+It has the following attributes: 'newValue', which is of type str; 'index', which is of type int; 'oldValue', which is of type str.
+
+'model_task_ActionItem' represents an important domain concept.
+It has the following attributes: 'done', which is of type bool; 'activity', which is of type str.
+
+'esmodel_versioning_DateVersionSpec' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'model_requirement_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'roles_Role' represents an important domain concept.
+It does not declare any attributes.
+
+'accesscontrol_OrgUnitProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'profile_StereotypeAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'VersionSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_MethodArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_operations_MultiAttributeMoveOperation' represents an important domain concept.
+It has the following attributes: 'oldIndex', which is of type int; 'referencedValue', which is of type str; 'newIndex', which is of type int.
+
+'component_ComponentService' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_versioning_PrimaryVersionSpec' represents an important domain concept.
+It has one attribute: 'identifier', which is of type int.
+
+'model_requirement_ActorInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_accesscontrol_ACOrgUnitId' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_versioning_VersionSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'model_state_Transition' represents an important domain concept.
+It has one attribute: 'condition', which is of type str.
+
+'esmodel_operations_SingleReferenceOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_events_DNDEvent' represents an important domain concept.
+It has the following attributes: 'targetView', which is of type str; 'sourceView', which is of type str.
+
+'esmodel_ProjectHistory' represents an important domain concept.
+It has the following attributes: 'projectDescription', which is of type str; 'projectName', which is of type str.
+
+'accesscontrol_ACOrgUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'requirement_Step' represents an important domain concept.
+It does not declare any attributes.
+
+'operations_AbstractOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_events_LinkEvent' represents an important domain concept.
+It has the following attributes: 'sourceView', which is of type str; 'createdNew', which is of type bool.
+
+'esmodel_versioning_LogMessage' represents an important domain concept.
+It has the following attributes: 'message', which is of type str; 'date', which is of type date; 'clientDate', which is of type date; 'author', which is of type str.
+
+'model_rationale_Solution' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_versioning_ChangePackage' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_ProjectInfo' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str.
+
+'esmodel_versioning_HistoryInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_operations_MultiReferenceSetOperation' represents an important domain concept.
+It has one attribute: 'index', which is of type int.
+
+'model_rationale_Proposal' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_versioning_HistoryQuery' represents an important domain concept.
+It has one attribute: 'includeChangePackage', which is of type bool.
+
+'metamodel_ModelElement' represents an important domain concept.
+It has the following attributes: 'creator', which is of type str; 'creationDate', which is of type date.
+
+'classes_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'StereotypeAttributeInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'model_meeting_Meeting' represents an important domain concept.
+It has the following attributes: 'endtime', which is of type date; 'location', which is of type str; 'starttime', which is of type date.
+
+'model_profile_StereotypeAttributeSimple' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'ReferenceOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Project' represents an important domain concept.
+It does not declare any attributes.
+
+'model_organization_User' represents an important domain concept.
+It has the following attributes: 'email', which is of type str; 'firstName', which is of type str; 'lastName', which is of type str.
+
+'profile_StereotypeAttributeInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_operations_MultiReferenceOperation' represents an important domain concept.
+It has the following attributes: 'index', which is of type int; 'add', which is of type bool.
+
+'esmodel_events_TraceEvent' represents an important domain concept.
+It has one attribute: 'featureName', which is of type str.
+
+'model_organization_OrgUnit' represents an important domain concept.
+It has one attribute: 'acOrgId', which is of type str.
+
+'model_document_Section' represents an important domain concept.
+It does not declare any attributes.
+
+'model_classes_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'model_document_LeafSection' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_events_NavigatorCreateEvent' represents an important domain concept.
+It has one attribute: 'dynamic', which is of type bool.
+
+'esmodel_notification_ESNotification' represents an important domain concept.
+It has the following attributes: 'provider', which is of type str; 'details', which is of type str; 'creationDate', which is of type date; 'recipient', which is of type str; 'name', which is of type str; 'message', which is of type str; 'sender', which is of type str; 'seen', which is of type bool.
+
+'document_CompositeSection' represents an important domain concept.
+It does not declare any attributes.
+
+'requirement_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'rationale_Proposal' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_roles_WriterRole' represents an important domain concept.
+It does not declare any attributes.
+
+'versioning_LogMessage' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_roles_ReaderRole' represents an important domain concept.
+It does not declare any attributes.
+
+'requirement_Scenario' represents an important domain concept.
+It does not declare any attributes.
+
+'events_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'model_rationale_Criterion' represents an important domain concept.
+It does not declare any attributes.
+
+'Role' represents an important domain concept.
+It does not declare any attributes.
+
+'rationale_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'requirement_UserTask' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_operations_MultiReferenceMoveOperation' represents an important domain concept.
+It has the following attributes: 'oldIndex', which is of type int; 'newIndex', which is of type int.
+
+'StereotypeAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'notification_ESNotification' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_AssociationClassElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_meeting_MeetingSection' represents an important domain concept.
+It has one attribute: 'allocatedTime', which is of type int.
+
+'Section' represents an important domain concept.
+It does not declare any attributes.
+
+'rationale_Solution' represents an important domain concept.
+It does not declare any attributes.
+
+'model_meeting_CompositeMeetingSection' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_versioning_Version' represents an important domain concept.
+It does not declare any attributes.
+
+'rationale_Criterion' represents an important domain concept.
+It does not declare any attributes.
+
+'model_activity_ActivityObject' represents an important domain concept.
+It does not declare any attributes.
+
+'OrgUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'requirement_NonFunctionalRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'versioning_VersionProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'model_profile_StereotypeAttributeInstanceString' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'IdentifiableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_document_CompositeSection' represents an important domain concept.
+It does not declare any attributes.
+
+'model_activity_Transition' represents an important domain concept.
+It has one attribute: 'condition', which is of type str.
+
+'Project' represents an important domain concept.
+It does not declare any attributes.
+
+'requirement_UseCase' represents an important domain concept.
+It does not declare any attributes.
+
+'esmodel_operations_ReferenceOperation' represents an important domain concept.
+It has the following attributes: 'oppositeFeatureName', which is of type str; 'bidirectional', which is of type bool; 'containmentType', which is of type str.
+
+'esmodel_events_PluginFocusEvent' represents an important domain concept.
+It has the following attributes: 'startDate', which is of type date; 'pluginId', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VisibilityType' defines the following possible values: 'UNDEFINED', 'PROTECTED', 'PACKAGE', 'GLOBAL', 'PRIVATE'.
+The enumeration 'ContainmentType' defines the following possible values: 'CONTAINER', 'NONE', 'CONTAINMENT'.
+The enumeration 'ArgumentDirectionType' defines the following possible values: 'UNDEFINED', 'OUT', 'IN', 'INOUT'.
+The enumeration 'MergeChoiceSelection' defines the following possible values: 'Issue', 'Mine', 'MergedText', 'Their'.
+The enumeration 'ScopeType' defines the following possible values: 'INSTANCE', 'CLASS'.
+The enumeration 'MergeGlobalChoiceSelection' defines the following possible values: 'AllMine', 'AllTheir', 'OKFinished', 'Cancel', 'OKNotFinished'.
+The enumeration 'BugStatus' defines the following possible values: 'NEW', 'CLOSED', 'ASSIGNED', 'CONFIRMED', 'RESOLVED'.
+The enumeration 'Severity' defines the following possible values: 'MINOR', 'FEATURE', 'MAJOR', 'TRIVIAL', 'BLOCKER'.
+The enumeration 'ActivityType' defines the following possible values: 'MANAGEMENT', 'OBJECT_DESIGN', 'ANALYSIS', 'NONE', 'SYSTEM_DESIGN', 'TESTING', 'IMPLEMENTATION'.
+The enumeration 'ResolutionType' defines the following possible values: 'CANNOT_REPRODUCE', 'FIXED', 'WONT_FIX'.
+The enumeration 'DiagramType' defines the following possible values: 'WORKITEM_DIAGRAM', 'CLASS_DIAGRAM', 'ACTIVITY_DIAGRAM', 'STATE_DIAGRAM', 'USECASE_DIAGRAM', 'COMPONENT_DIAGRAM'.
+The enumeration 'AssociationType' defines the following possible values: 'AGGREGATION', 'DIRECTED_ASSOCIATION', 'UNDIRECTED_ASSOCIATION', 'COMPOSITION'.
+
+The model also captures inheritance relationships between classes.
+The class 'metamodel_ModelElement' is a specialization of 'IdentifiableElement'.
+The class 'metamodel_ModelElementId' is a specialization of 'UniqueIdentifier'.
+The class 'model_UnicaseModelElement' is a specialization of 'ModelElement'.
+The class 'model_Annotation' is a specialization of 'UnicaseModelElement'.
+The class 'model_Attachment' is a specialization of 'UnicaseModelElement'.
+The class 'model_Project' is a specialization of 'Project'.
+The class 'model_organization_OrgUnit' is a specialization of 'UnicaseModelElement'.
+The class 'model_organization_User' is a specialization of 'OrgUnit'.
+The class 'model_organization_Group' is a specialization of 'OrgUnit'.
+The class 'model_task_WorkItem' is a specialization of 'Annotation'.
+The class 'model_task_WorkPackage' is a specialization of 'WorkItem'.
+The class 'model_task_Milestone' is a specialization of 'WorkItem'.
+The class 'model_task_Checkable' is a specialization of 'UnicaseModelElement'.
+The class 'model_task_ActionItem' is a specialization of 'task_WorkItem'.
+The class 'model_task_ActionItem' is a specialization of 'task_Checkable'.
+The class 'model_diagram_MEDiagram' is a specialization of 'Attachment'.
+The class 'model_classes_PackageElement' is a specialization of 'UnicaseModelElement'.
+The class 'model_classes_Class' is a specialization of 'PackageElement'.
+The class 'model_classes_Package' is a specialization of 'PackageElement'.
+The class 'model_classes_Association' is a specialization of 'UnicaseModelElement'.
+The class 'model_classes_Attribute' is a specialization of 'UnicaseModelElement'.
+The class 'model_classes_Method' is a specialization of 'UnicaseModelElement'.
+The class 'model_classes_MethodArgument' is a specialization of 'UnicaseModelElement'.
+The class 'model_classes_Dependency' is a specialization of 'UnicaseModelElement'.
+The class 'model_document_Section' is a specialization of 'UnicaseModelElement'.
+The class 'model_document_LeafSection' is a specialization of 'Section'.
+The class 'model_document_CompositeSection' is a specialization of 'Section'.
+The class 'model_requirement_FunctionalRequirement' is a specialization of 'UnicaseModelElement'.
+The class 'model_requirement_UseCase' is a specialization of 'UnicaseModelElement'.
+The class 'model_requirement_Scenario' is a specialization of 'UnicaseModelElement'.
+The class 'model_requirement_Actor' is a specialization of 'UnicaseModelElement'.
+The class 'model_requirement_ActorInstance' is a specialization of 'UnicaseModelElement'.
+The class 'model_requirement_Step' is a specialization of 'UnicaseModelElement'.
+The class 'model_requirement_Step' is a specialization of 'NonDomainElement'.
+The class 'model_requirement_SystemFunction' is a specialization of 'UnicaseModelElement'.
+The class 'model_requirement_SystemFunction' is a specialization of 'NonDomainElement'.
+The class 'model_requirement_UserTask' is a specialization of 'UnicaseModelElement'.
+The class 'model_requirement_UserTask' is a specialization of 'NonDomainElement'.
+The class 'model_requirement_NonFunctionalRequirement' is a specialization of 'Criterion'.
+The class 'model_rationale_Issue' is a specialization of 'Annotation'.
+The class 'model_rationale_Issue' is a specialization of 'task_Checkable'.
+The class 'model_rationale_Issue' is a specialization of 'task_WorkItem'.
+The class 'model_rationale_Proposal' is a specialization of 'UnicaseModelElement'.
+The class 'model_rationale_Proposal' is a specialization of 'NonDomainElement'.
+The class 'model_rationale_Solution' is a specialization of 'UnicaseModelElement'.
+The class 'model_rationale_Solution' is a specialization of 'NonDomainElement'.
+The class 'model_rationale_Criterion' is a specialization of 'UnicaseModelElement'.
+The class 'model_rationale_Assessment' is a specialization of 'UnicaseModelElement'.
+The class 'model_rationale_Assessment' is a specialization of 'NonDomainElement'.
+The class 'model_rationale_Comment' is a specialization of 'UnicaseModelElement'.
+The class 'model_change_ModelChangePackage' is a specialization of 'UnicaseModelElement'.
+The class 'model_change_MergingIssue' is a specialization of 'Issue'.
+The class 'model_change_MergingProposal' is a specialization of 'Proposal'.
+The class 'model_change_MergingSolution' is a specialization of 'Solution'.
+The class 'model_bug_BugReport' is a specialization of 'task_WorkItem'.
+The class 'model_bug_BugReport' is a specialization of 'task_Checkable'.
+The class 'model_component_Component' is a specialization of 'UnicaseModelElement'.
+The class 'model_component_ComponentService' is a specialization of 'UnicaseModelElement'.
+The class 'model_component_DeploymentNode' is a specialization of 'UnicaseModelElement'.
+The class 'model_meeting_Meeting' is a specialization of 'UnicaseModelElement'.
+The class 'model_meeting_MeetingSection' is a specialization of 'UnicaseModelElement'.
+The class 'model_meeting_CompositeMeetingSection' is a specialization of 'MeetingSection'.
+The class 'model_meeting_IssueMeetingSection' is a specialization of 'MeetingSection'.
+The class 'model_meeting_WorkItemMeetingSection' is a specialization of 'MeetingSection'.
+The class 'model_state_Transition' is a specialization of 'UnicaseModelElement'.
+The class 'model_state_StateNode' is a specialization of 'UnicaseModelElement'.
+The class 'model_state_State' is a specialization of 'StateNode'.
+The class 'model_state_StateInitial' is a specialization of 'StateNode'.
+The class 'model_state_StateEnd' is a specialization of 'StateNode'.
+The class 'model_attachment_UrlAttachment' is a specialization of 'Attachment'.
+The class 'model_attachment_FileAttachment' is a specialization of 'Attachment'.
+The class 'model_profile_Profile' is a specialization of 'UnicaseModelElement'.
+The class 'model_profile_Stereotype' is a specialization of 'UnicaseModelElement'.
+The class 'model_profile_StereotypeInstance' is a specialization of 'UnicaseModelElement'.
+The class 'model_profile_StereotypeAttribute' is a specialization of 'UnicaseModelElement'.
+The class 'model_profile_StereotypeAttributeSimple' is a specialization of 'StereotypeAttribute'.
+The class 'model_profile_StereotypeAttributeInstance' is a specialization of 'UnicaseModelElement'.
+The class 'model_profile_StereotypeAttributeInstanceString' is a specialization of 'StereotypeAttributeInstance'.
+The class 'model_activity_ActivityObject' is a specialization of 'UnicaseModelElement'.
+The class 'model_activity_Transition' is a specialization of 'UnicaseModelElement'.
+The class 'model_activity_Activity' is a specialization of 'ActivityObject'.
+The class 'model_activity_Fork' is a specialization of 'ActivityObject'.
+The class 'model_activity_Branch' is a specialization of 'ActivityObject'.
+The class 'model_activity_ActivityInitial' is a specialization of 'ActivityObject'.
+The class 'model_activity_ActivityEnd' is a specialization of 'ActivityObject'.
+The class 'esmodel_SessionId' is a specialization of 'UniqueIdentifier'.
+The class 'esmodel_ProjectId' is a specialization of 'UniqueIdentifier'.
+The class 'esmodel_FileIdentifier' is a specialization of 'IdentifiableElement'.
+The class 'esmodel_versioning_TagVersionSpec' is a specialization of 'VersionSpec'.
+The class 'esmodel_versioning_DateVersionSpec' is a specialization of 'VersionSpec'.
+The class 'esmodel_versioning_PrimaryVersionSpec' is a specialization of 'VersionSpec'.
+The class 'esmodel_versioning_HeadVersionSpec' is a specialization of 'VersionSpec'.
+The class 'esmodel_operations_AbstractOperation' is a specialization of 'IdentifiableElement'.
+The class 'esmodel_operations_CompositeOperation' is a specialization of 'AbstractOperation'.
+The class 'esmodel_operations_FeatureOperation' is a specialization of 'AbstractOperation'.
+The class 'esmodel_operations_CreateDeleteOperation' is a specialization of 'AbstractOperation'.
+The class 'esmodel_operations_AttributeOperation' is a specialization of 'FeatureOperation'.
+The class 'esmodel_operations_MultiAttributeOperation' is a specialization of 'FeatureOperation'.
+The class 'esmodel_operations_MultiAttributeSetOperation' is a specialization of 'FeatureOperation'.
+The class 'esmodel_operations_MultiAttributeMoveOperation' is a specialization of 'FeatureOperation'.
+The class 'esmodel_operations_SingleReferenceOperation' is a specialization of 'ReferenceOperation'.
+The class 'esmodel_operations_MultiReferenceSetOperation' is a specialization of 'ReferenceOperation'.
+The class 'esmodel_operations_MultiReferenceOperation' is a specialization of 'ReferenceOperation'.
+The class 'esmodel_operations_MultiReferenceMoveOperation' is a specialization of 'FeatureOperation'.
+The class 'esmodel_operations_ReferenceOperation' is a specialization of 'FeatureOperation'.
+The class 'esmodel_operations_DiagramLayoutOperation' is a specialization of 'AttributeOperation'.
+The class 'esmodel_operations_OperationId' is a specialization of 'UniqueIdentifier'.
+The class 'esmodel_semantic_SemanticCompositeOperation' is a specialization of 'CompositeOperation'.
+The class 'esmodel_events_ReadEvent' is a specialization of 'Event'.
+The class 'esmodel_events_MergeEvent' is a specialization of 'Event'.
+The class 'esmodel_events_CheckoutEvent' is a specialization of 'Event'.
+The class 'esmodel_events_ExceptionEvent' is a specialization of 'Event'.
+The class 'esmodel_events_PluginStartEvent' is a specialization of 'Event'.
+The class 'esmodel_events_UpdateEvent' is a specialization of 'Event'.
+The class 'esmodel_events_AnnotationEvent' is a specialization of 'Event'.
+The class 'esmodel_events_RevertEvent' is a specialization of 'Event'.
+The class 'esmodel_events_ShowHistoryEvent' is a specialization of 'Event'.
+The class 'esmodel_events_PerspectiveEvent' is a specialization of 'Event'.
+The class 'esmodel_events_DNDEvent' is a specialization of 'Event'.
+The class 'esmodel_events_LinkEvent' is a specialization of 'Event'.
+The class 'esmodel_events_TraceEvent' is a specialization of 'Event'.
+The class 'esmodel_events_NavigatorCreateEvent' is a specialization of 'Event'.
+The class 'esmodel_events_PluginFocusEvent' is a specialization of 'Event'.
+The class 'esmodel_events_PresentationSwitchEvent' is a specialization of 'Event'.
+The class 'esmodel_events_UndoEvent' is a specialization of 'Event'.
+The class 'esmodel_events_Validate' is a specialization of 'Event'.
+The class 'esmodel_events_ShowChangesEvent' is a specialization of 'Event'.
+The class 'esmodel_events_NotificationReadEvent' is a specialization of 'ReadEvent'.
+The class 'esmodel_events_NotificationGenerationEvent' is a specialization of 'Event'.
+The class 'esmodel_events_NotificationIgnoreEvent' is a specialization of 'Event'.
+The class 'esmodel_events_URLEvent' is a specialization of 'Event'.
+The class 'esmodel_events_MergeChoiceEvent' is a specialization of 'Event'.
+The class 'esmodel_events_MergeGlobalChoiceEvent' is a specialization of 'Event'.
+The class 'esmodel_server_ServerEvent' is a specialization of 'Event'.
+The class 'esmodel_server_ServerProjectEvent' is a specialization of 'ServerEvent'.
+The class 'esmodel_server_ProjectUpdatedEvent' is a specialization of 'ServerProjectEvent'.
+The class 'esmodel_accesscontrol_ACUser' is a specialization of 'ACOrgUnit'.
+The class 'esmodel_accesscontrol_ACOrgUnit' is a specialization of 'IdentifiableElement'.
+The class 'esmodel_accesscontrol_ACGroup' is a specialization of 'ACOrgUnit'.
+The class 'esmodel_accesscontrol_ACOrgUnitId' is a specialization of 'UniqueIdentifier'.
+The class 'esmodel_roles_ReaderRole' is a specialization of 'Role'.
+The class 'esmodel_roles_WriterRole' is a specialization of 'Role'.
+The class 'esmodel_roles_ProjectAdminRole' is a specialization of 'Role'.
+The class 'esmodel_roles_ServerAdmin' is a specialization of 'Role'.
+The class 'esmodel_notification_ESNotification' is a specialization of 'IdentifiableElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'metamodel_Project' and 'ModelElement'. From 'metamodel_Project', the role 'metamodel_Project' has cardinality 0..*, and from 'ModelElement', the role 'ModelElement' has cardinality 0..*.
+An association connects 'metamodel_Project' and 'ModelElement'. From 'metamodel_Project', the role 'metamodel_Project2' has cardinality 0..*, and from 'ModelElement', the role 'ModelElement3' has cardinality 0..*.
+An association connects 'Annotation' and 'model_UnicaseModelElement'. From 'Annotation', the role '#' has cardinality 0..*, and from 'model_UnicaseModelElement', the role '1' has cardinality 0..*.
+An association connects 'model_UnicaseModelElement' and 'Attachment'. From 'model_UnicaseModelElement', the role '16' has cardinality 0..*, and from 'Attachment', the role '#7' has cardinality 0..*.
+An association connects 'document_LeafSection' and 'model_UnicaseModelElement'. From 'document_LeafSection', the role '#10' has cardinality 0..*, and from 'model_UnicaseModelElement', the role '19' has cardinality 0..*.
+An association connects 'document_LeafSection' and 'model_UnicaseModelElement'. From 'document_LeafSection', the role '#13' has cardinality 0..*, and from 'model_UnicaseModelElement', the role '112' has cardinality 0..*.
+An association connects 'rationale_Comment' and 'model_UnicaseModelElement'. From 'rationale_Comment', the role '#16' has cardinality 0..*, and from 'model_UnicaseModelElement', the role '115' has cardinality 0..*.
+An association connects 'profile_StereotypeInstance' and 'model_UnicaseModelElement'. From 'profile_StereotypeInstance', the role '#19' has cardinality 0..*, and from 'model_UnicaseModelElement', the role '118' has cardinality 0..*.
+An association connects 'model_Annotation' and 'UnicaseModelElement'. From 'model_Annotation', the role '121' has cardinality 0..*, and from 'UnicaseModelElement', the role '#22' has cardinality 0..*.
+An association connects 'model_Attachment' and 'UnicaseModelElement'. From 'model_Attachment', the role '124' has cardinality 0..*, and from 'UnicaseModelElement', the role '#25' has cardinality 0..*.
+An association connects 'organization_Group' and 'model_organization_OrgUnit'. From 'organization_Group', the role '#28' has cardinality 0..*, and from 'model_organization_OrgUnit', the role '127' has cardinality 0..*.
+An association connects 'task_WorkItem' and 'model_organization_OrgUnit'. From 'task_WorkItem', the role '#31' has cardinality 0..*, and from 'model_organization_OrgUnit', the role '130' has cardinality 0..*.
+An association connects 'task_WorkItem' and 'model_organization_OrgUnit'. From 'task_WorkItem', the role '#34' has cardinality 0..*, and from 'model_organization_OrgUnit', the role '133' has cardinality 0..*.
+An association connects 'task_WorkItem' and 'model_organization_User'. From 'task_WorkItem', the role '#37' has cardinality 0..*, and from 'model_organization_User', the role '136' has cardinality 0..*.
+An association connects 'model_organization_Group' and 'organization_OrgUnit'. From 'model_organization_Group', the role '139' has cardinality 0..*, and from 'organization_OrgUnit', the role '#40' has cardinality 0..*.
+An association connects 'task_WorkPackage' and 'model_task_WorkItem'. From 'task_WorkPackage', the role '#43' has cardinality 0..*, and from 'model_task_WorkItem', the role '142' has cardinality 0..*.
+An association connects 'model_task_WorkItem' and 'task_WorkItem'. From 'model_task_WorkItem', the role '145' has cardinality 0..*, and from 'task_WorkItem', the role '#46' has cardinality 0..*.
+An association connects 'task_WorkItem' and 'model_task_WorkItem'. From 'task_WorkItem', the role '#49' has cardinality 0..*, and from 'model_task_WorkItem', the role '148' has cardinality 0..*.
+An association connects 'organization_OrgUnit' and 'model_task_WorkItem'. From 'organization_OrgUnit', the role '#52' has cardinality 0..*, and from 'model_task_WorkItem', the role '151' has cardinality 0..*.
+An association connects 'organization_User' and 'model_task_WorkItem'. From 'organization_User', the role '#55' has cardinality 0..*, and from 'model_task_WorkItem', the role '154' has cardinality 0..*.
+An association connects 'model_task_WorkItem' and 'organization_OrgUnit'. From 'model_task_WorkItem', the role '157' has cardinality 0..*, and from 'organization_OrgUnit', the role '#58' has cardinality 0..*.
+An association connects 'model_task_WorkItem' and 'change_ModelChangePackage'. From 'model_task_WorkItem', the role 'model_task_WorkItem' has cardinality 0..*, and from 'change_ModelChangePackage', the role 'change_ModelChangePackage' has cardinality 0..*.
+An association connects 'task_WorkItem' and 'model_task_WorkPackage'. From 'task_WorkItem', the role '#62' has cardinality 0..*, and from 'model_task_WorkPackage', the role '161' has cardinality 0..*.
+An association connects 'UnicaseModelElement' and 'model_task_Milestone'. From 'UnicaseModelElement', the role 'UnicaseModelElement' has cardinality 0..*, and from 'model_task_Milestone', the role 'model_task_Milestone' has cardinality 0..*.
+An association connects 'model_diagram_MEDiagram' and 'UnicaseModelElement'. From 'model_diagram_MEDiagram', the role 'model_diagram_MEDiagram' has cardinality 0..*, and from 'UnicaseModelElement', the role 'UnicaseModelElement65' has cardinality 0..*.
+An association connects 'diagram_model_Diagram' and 'model_diagram_MEDiagram'. From 'diagram_model_Diagram', the role 'diagram_model_Diagram' has cardinality 0..*, and from 'model_diagram_MEDiagram', the role 'model_diagram_MEDiagram67' has cardinality 0..*.
+An association connects 'model_diagram_MEDiagram' and 'UnicaseModelElement'. From 'model_diagram_MEDiagram', the role 'model_diagram_MEDiagram69' has cardinality 0..*, and from 'UnicaseModelElement', the role 'UnicaseModelElement70' has cardinality 0..*.
+An association connects 'classes_Package' and 'model_classes_PackageElement'. From 'classes_Package', the role '#73' has cardinality 0..*, and from 'model_classes_PackageElement', the role '172' has cardinality 0..*.
+An association connects 'model_classes_PackageElement' and 'classes_Dependency'. From 'model_classes_PackageElement', the role '175' has cardinality 0..*, and from 'classes_Dependency', the role '#76' has cardinality 0..*.
+An association connects 'classes_Dependency' and 'model_classes_PackageElement'. From 'classes_Dependency', the role '#79' has cardinality 0..*, and from 'model_classes_PackageElement', the role '178' has cardinality 0..*.
+An association connects 'model_classes_Class' and 'classes_Class'. From 'model_classes_Class', the role '181' has cardinality 0..*, and from 'classes_Class', the role '#82' has cardinality 0..*.
+An association connects 'classes_Class' and 'model_classes_Class'. From 'classes_Class', the role '#85' has cardinality 0..*, and from 'model_classes_Class', the role '184' has cardinality 0..*.
+An association connects 'model_classes_Class' and 'classes_Association'. From 'model_classes_Class', the role '187' has cardinality 0..*, and from 'classes_Association', the role '#88' has cardinality 0..*.
+An association connects 'classes_Association' and 'model_classes_Class'. From 'classes_Association', the role '#91' has cardinality 0..*, and from 'model_classes_Class', the role '190' has cardinality 0..*.
+An association connects 'classes_Attribute' and 'model_classes_Class'. From 'classes_Attribute', the role '#94' has cardinality 0..*, and from 'model_classes_Class', the role '193' has cardinality 0..*.
+An association connects 'model_classes_Class' and 'classes_Method'. From 'model_classes_Class', the role '196' has cardinality 0..*, and from 'classes_Method', the role '#97' has cardinality 0..*.
+An association connects 'requirement_UseCase' and 'model_classes_Class'. From 'requirement_UseCase', the role '#100' has cardinality 0..*, and from 'model_classes_Class', the role '199' has cardinality 0..*.
+An association connects 'model_classes_Class' and 'requirement_Scenario'. From 'model_classes_Class', the role '1102' has cardinality 0..*, and from 'requirement_Scenario', the role '#103' has cardinality 0..*.
+An association connects 'model_classes_Package' and 'classes_Class'. From 'model_classes_Package', the role 'model_classes_Package' has cardinality 0..*, and from 'classes_Class', the role 'classes_Class' has cardinality 0..*.
+An association connects 'model_classes_Package' and 'classes_PackageElement'. From 'model_classes_Package', the role '1106' has cardinality 0..*, and from 'classes_PackageElement', the role '#107' has cardinality 0..*.
+An association connects 'model_classes_Association' and 'classes_Class'. From 'model_classes_Association', the role '1109' has cardinality 0..*, and from 'classes_Class', the role '#110' has cardinality 0..*.
+An association connects 'classes_Class' and 'model_classes_Association'. From 'classes_Class', the role '#113' has cardinality 0..*, and from 'model_classes_Association', the role '1112' has cardinality 0..*.
+An association connects 'model_classes_Attribute' and 'classes_Class'. From 'model_classes_Attribute', the role '1115' has cardinality 0..*, and from 'classes_Class', the role '#116' has cardinality 0..*.
+An association connects 'model_classes_Method' and 'classes_Class'. From 'model_classes_Method', the role '1118' has cardinality 0..*, and from 'classes_Class', the role '#119' has cardinality 0..*.
+An association connects 'classes_Method' and 'model_classes_Method'. From 'classes_Method', the role '#122' has cardinality 0..*, and from 'model_classes_Method', the role '1121' has cardinality 0..*.
+An association connects 'model_classes_Method' and 'classes_Method'. From 'model_classes_Method', the role '1124' has cardinality 0..*, and from 'classes_Method', the role '#125' has cardinality 0..*.
+An association connects 'classes_MethodArgument' and 'model_classes_Method'. From 'classes_MethodArgument', the role 'classes_MethodArgument' has cardinality 0..*, and from 'model_classes_Method', the role 'model_classes_Method' has cardinality 0..*.
+An association connects 'requirement_Scenario' and 'model_classes_Method'. From 'requirement_Scenario', the role '#129' has cardinality 0..*, and from 'model_classes_Method', the role '1128' has cardinality 0..*.
+An association connects 'classes_PackageElement' and 'model_classes_Dependency'. From 'classes_PackageElement', the role '#132' has cardinality 0..*, and from 'model_classes_Dependency', the role '1131' has cardinality 0..*.
+An association connects 'classes_PackageElement' and 'model_classes_Dependency'. From 'classes_PackageElement', the role '#135' has cardinality 0..*, and from 'model_classes_Dependency', the role '1134' has cardinality 0..*.
+An association connects 'document_CompositeSection' and 'model_document_Section'. From 'document_CompositeSection', the role '#138' has cardinality 0..*, and from 'model_document_Section', the role '1137' has cardinality 0..*.
+An association connects 'UnicaseModelElement' and 'model_document_LeafSection'. From 'UnicaseModelElement', the role '#141' has cardinality 0..*, and from 'model_document_LeafSection', the role '1140' has cardinality 0..*.
+An association connects 'UnicaseModelElement' and 'model_document_LeafSection'. From 'UnicaseModelElement', the role '#144' has cardinality 0..*, and from 'model_document_LeafSection', the role '1143' has cardinality 0..*.
+An association connects 'document_Section' and 'model_document_CompositeSection'. From 'document_Section', the role '#147' has cardinality 0..*, and from 'model_document_CompositeSection', the role '1146' has cardinality 0..*.
+An association connects 'requirement_FunctionalRequirement' and 'model_requirement_FunctionalRequirement'. From 'requirement_FunctionalRequirement', the role '#150' has cardinality 0..*, and from 'model_requirement_FunctionalRequirement', the role '1149' has cardinality 0..*.
+An association connects 'model_requirement_FunctionalRequirement' and 'requirement_FunctionalRequirement'. From 'model_requirement_FunctionalRequirement', the role '1152' has cardinality 0..*, and from 'requirement_FunctionalRequirement', the role '#153' has cardinality 0..*.
+An association connects 'model_requirement_FunctionalRequirement' and 'organization_OrgUnit'. From 'model_requirement_FunctionalRequirement', the role 'model_requirement_FunctionalRequirement' has cardinality 0..*, and from 'organization_OrgUnit', the role 'organization_OrgUnit' has cardinality 0..*.
+An association connects 'requirement_UseCase' and 'model_requirement_FunctionalRequirement'. From 'requirement_UseCase', the role '#157' has cardinality 0..*, and from 'model_requirement_FunctionalRequirement', the role '1156' has cardinality 0..*.
+An association connects 'model_requirement_FunctionalRequirement' and 'requirement_Scenario'. From 'model_requirement_FunctionalRequirement', the role '1159' has cardinality 0..*, and from 'requirement_Scenario', the role '#160' has cardinality 0..*.
+An association connects 'requirement_FunctionalRequirement' and 'model_requirement_UseCase'. From 'requirement_FunctionalRequirement', the role '#163' has cardinality 0..*, and from 'model_requirement_UseCase', the role '1162' has cardinality 0..*.
+An association connects 'classes_Class' and 'model_requirement_UseCase'. From 'classes_Class', the role '#166' has cardinality 0..*, and from 'model_requirement_UseCase', the role '1165' has cardinality 0..*.
+An association connects 'model_requirement_UseCase' and 'requirement_UseCase'. From 'model_requirement_UseCase', the role 'model_requirement_UseCase' has cardinality 0..*, and from 'requirement_UseCase', the role 'requirement_UseCase' has cardinality 0..*.
+An association connects 'requirement_UseCase' and 'model_requirement_UseCase'. From 'requirement_UseCase', the role 'requirement_UseCase170' has cardinality 0..*, and from 'model_requirement_UseCase', the role 'model_requirement_UseCase169' has cardinality 0..*.
+An association connects 'model_requirement_UseCase' and 'requirement_Scenario'. From 'model_requirement_UseCase', the role '1172' has cardinality 0..*, and from 'requirement_Scenario', the role '#173' has cardinality 0..*.
+An association connects 'requirement_Actor' and 'model_requirement_UseCase'. From 'requirement_Actor', the role '#176' has cardinality 0..*, and from 'model_requirement_UseCase', the role '1175' has cardinality 0..*.
+An association connects 'model_requirement_UseCase' and 'requirement_Actor'. From 'model_requirement_UseCase', the role '1178' has cardinality 0..*, and from 'requirement_Actor', the role '#179' has cardinality 0..*.
+An association connects 'requirement_Step' and 'model_requirement_UseCase'. From 'requirement_Step', the role '#182' has cardinality 0..*, and from 'model_requirement_UseCase', the role '1181' has cardinality 0..*.
+An association connects 'model_requirement_UseCase' and 'requirement_UserTask'. From 'model_requirement_UseCase', the role '1184' has cardinality 0..*, and from 'requirement_UserTask', the role '#185' has cardinality 0..*.
+An association connects 'model_requirement_UseCase' and 'requirement_NonFunctionalRequirement'. From 'model_requirement_UseCase', the role '1187' has cardinality 0..*, and from 'requirement_NonFunctionalRequirement', the role '#188' has cardinality 0..*.
+An association connects 'model_requirement_Scenario' and 'requirement_UseCase'. From 'model_requirement_Scenario', the role '1190' has cardinality 0..*, and from 'requirement_UseCase', the role '#191' has cardinality 0..*.
+An association connects 'requirement_FunctionalRequirement' and 'model_requirement_Scenario'. From 'requirement_FunctionalRequirement', the role '#194' has cardinality 0..*, and from 'model_requirement_Scenario', the role '1193' has cardinality 0..*.
+An association connects 'classes_Method' and 'model_requirement_Scenario'. From 'classes_Method', the role '#197' has cardinality 0..*, and from 'model_requirement_Scenario', the role '1196' has cardinality 0..*.
+An association connects 'classes_Class' and 'model_requirement_Scenario'. From 'classes_Class', the role '#200' has cardinality 0..*, and from 'model_requirement_Scenario', the role '1199' has cardinality 0..*.
+An association connects 'requirement_ActorInstance' and 'model_requirement_Scenario'. From 'requirement_ActorInstance', the role '#203' has cardinality 0..*, and from 'model_requirement_Scenario', the role '1202' has cardinality 0..*.
+An association connects 'requirement_ActorInstance' and 'model_requirement_Scenario'. From 'requirement_ActorInstance', the role '#206' has cardinality 0..*, and from 'model_requirement_Scenario', the role '1205' has cardinality 0..*.
+An association connects 'requirement_Step' and 'model_requirement_Scenario'. From 'requirement_Step', the role 'requirement_Step' has cardinality 0..*, and from 'model_requirement_Scenario', the role 'model_requirement_Scenario' has cardinality 0..*.
+An association connects 'model_requirement_Scenario' and 'requirement_NonFunctionalRequirement'. From 'model_requirement_Scenario', the role '1209' has cardinality 0..*, and from 'requirement_NonFunctionalRequirement', the role '#210' has cardinality 0..*.
+An association connects 'requirement_UseCase' and 'model_requirement_Actor'. From 'requirement_UseCase', the role '#213' has cardinality 0..*, and from 'model_requirement_Actor', the role '1212' has cardinality 0..*.
+An association connects 'requirement_UseCase' and 'model_requirement_Actor'. From 'requirement_UseCase', the role '#216' has cardinality 0..*, and from 'model_requirement_Actor', the role '1215' has cardinality 0..*.
+An association connects 'requirement_ActorInstance' and 'model_requirement_Actor'. From 'requirement_ActorInstance', the role '#219' has cardinality 0..*, and from 'model_requirement_Actor', the role '1218' has cardinality 0..*.
+An association connects 'requirement_UserTask' and 'model_requirement_Actor'. From 'requirement_UserTask', the role '#222' has cardinality 0..*, and from 'model_requirement_Actor', the role '1221' has cardinality 0..*.
+An association connects 'model_requirement_Actor' and 'requirement_UserTask'. From 'model_requirement_Actor', the role '1224' has cardinality 0..*, and from 'requirement_UserTask', the role '#225' has cardinality 0..*.
+An association connects 'model_requirement_ActorInstance' and 'requirement_Scenario'. From 'model_requirement_ActorInstance', the role '1227' has cardinality 0..*, and from 'requirement_Scenario', the role '#228' has cardinality 0..*.
+An association connects 'model_requirement_ActorInstance' and 'requirement_Scenario'. From 'model_requirement_ActorInstance', the role '1230' has cardinality 0..*, and from 'requirement_Scenario', the role '#231' has cardinality 0..*.
+An association connects 'model_requirement_ActorInstance' and 'requirement_Actor'. From 'model_requirement_ActorInstance', the role '1233' has cardinality 0..*, and from 'requirement_Actor', the role '#234' has cardinality 0..*.
+An association connects 'requirement_UseCase' and 'model_requirement_Step'. From 'requirement_UseCase', the role 'requirement_UseCase236' has cardinality 0..*, and from 'model_requirement_Step', the role 'model_requirement_Step' has cardinality 0..*.
+An association connects 'model_requirement_Step' and 'requirement_UseCase'. From 'model_requirement_Step', the role '1238' has cardinality 0..*, and from 'requirement_UseCase', the role '#239' has cardinality 0..*.
+An association connects 'requirement_SystemFunction' and 'model_requirement_Step'. From 'requirement_SystemFunction', the role 'requirement_SystemFunction' has cardinality 0..*, and from 'model_requirement_Step', the role 'model_requirement_Step241' has cardinality 0..*.
+An association connects 'requirement_Actor' and 'model_requirement_UserTask'. From 'requirement_Actor', the role '#244' has cardinality 0..*, and from 'model_requirement_UserTask', the role '1243' has cardinality 0..*.
+An association connects 'model_requirement_UserTask' and 'requirement_Actor'. From 'model_requirement_UserTask', the role '1246' has cardinality 0..*, and from 'requirement_Actor', the role '#247' has cardinality 0..*.
+An association connects 'requirement_UseCase' and 'model_requirement_UserTask'. From 'requirement_UseCase', the role '#250' has cardinality 0..*, and from 'model_requirement_UserTask', the role '1249' has cardinality 0..*.
+An association connects 'model_requirement_NonFunctionalRequirement' and 'requirement_UseCase'. From 'model_requirement_NonFunctionalRequirement', the role '1252' has cardinality 0..*, and from 'requirement_UseCase', the role '#253' has cardinality 0..*.
+An association connects 'model_requirement_NonFunctionalRequirement' and 'requirement_Scenario'. From 'model_requirement_NonFunctionalRequirement', the role '1255' has cardinality 0..*, and from 'requirement_Scenario', the role '#256' has cardinality 0..*.
+An association connects 'rationale_Proposal' and 'model_rationale_Issue'. From 'rationale_Proposal', the role '#259' has cardinality 0..*, and from 'model_rationale_Issue', the role '1258' has cardinality 0..*.
+An association connects 'model_rationale_Issue' and 'rationale_Solution'. From 'model_rationale_Issue', the role '1261' has cardinality 0..*, and from 'rationale_Solution', the role '#262' has cardinality 0..*.
+An association connects 'rationale_Criterion' and 'model_rationale_Issue'. From 'rationale_Criterion', the role 'rationale_Criterion' has cardinality 0..*, and from 'model_rationale_Issue', the role 'model_rationale_Issue' has cardinality 0..*.
+An association connects 'model_rationale_Proposal' and 'rationale_Issue'. From 'model_rationale_Proposal', the role '1265' has cardinality 0..*, and from 'rationale_Issue', the role '#266' has cardinality 0..*.
+An association connects 'model_rationale_Proposal' and 'rationale_Assessment'. From 'model_rationale_Proposal', the role '1268' has cardinality 0..*, and from 'rationale_Assessment', the role '#269' has cardinality 0..*.
+An association connects 'rationale_Proposal' and 'model_rationale_Solution'. From 'rationale_Proposal', the role 'rationale_Proposal' has cardinality 0..*, and from 'model_rationale_Solution', the role 'model_rationale_Solution' has cardinality 0..*.
+An association connects 'model_rationale_Solution' and 'rationale_Issue'. From 'model_rationale_Solution', the role '1272' has cardinality 0..*, and from 'rationale_Issue', the role '#273' has cardinality 0..*.
+An association connects 'model_rationale_Criterion' and 'rationale_Assessment'. From 'model_rationale_Criterion', the role '1275' has cardinality 0..*, and from 'rationale_Assessment', the role '#276' has cardinality 0..*.
+An association connects 'model_rationale_Assessment' and 'rationale_Proposal'. From 'model_rationale_Assessment', the role '1278' has cardinality 0..*, and from 'rationale_Proposal', the role '#279' has cardinality 0..*.
+An association connects 'model_rationale_Assessment' and 'rationale_Criterion'. From 'model_rationale_Assessment', the role '1281' has cardinality 0..*, and from 'rationale_Criterion', the role '#282' has cardinality 0..*.
+An association connects 'organization_OrgUnit' and 'model_rationale_Comment'. From 'organization_OrgUnit', the role 'organization_OrgUnit284' has cardinality 0..*, and from 'model_rationale_Comment', the role 'model_rationale_Comment' has cardinality 0..*.
+An association connects 'organization_OrgUnit' and 'model_rationale_Comment'. From 'organization_OrgUnit', the role 'organization_OrgUnit287' has cardinality 0..*, and from 'model_rationale_Comment', the role 'model_rationale_Comment286' has cardinality 0..*.
+An association connects 'UnicaseModelElement' and 'model_rationale_Comment'. From 'UnicaseModelElement', the role '#290' has cardinality 0..*, and from 'model_rationale_Comment', the role '1289' has cardinality 0..*.
+An association connects 'change_MergingProposal' and 'model_change_MergingProposal'. From 'change_MergingProposal', the role 'change_MergingProposal' has cardinality 0..*, and from 'model_change_MergingProposal', the role 'model_change_MergingProposal' has cardinality 0..*.
+An association connects 'change_ModelChangePackage' and 'model_change_MergingProposal'. From 'change_ModelChangePackage', the role 'change_ModelChangePackage294' has cardinality 0..*, and from 'model_change_MergingProposal', the role 'model_change_MergingProposal293' has cardinality 0..*.
+An association connects 'change_ModelChangePackage' and 'model_change_MergingSolution'. From 'change_ModelChangePackage', the role 'change_ModelChangePackage296' has cardinality 0..*, and from 'model_change_MergingSolution', the role 'model_change_MergingSolution' has cardinality 0..*.
+An association connects 'model_component_Component' and 'classes_Package'. From 'model_component_Component', the role 'model_component_Component' has cardinality 0..*, and from 'classes_Package', the role 'classes_Package' has cardinality 0..*.
+An association connects 'classes_Package' and 'model_component_Component'. From 'classes_Package', the role 'classes_Package300' has cardinality 0..*, and from 'model_component_Component', the role 'model_component_Component299' has cardinality 0..*.
+An association connects 'component_ComponentService' and 'model_component_Component'. From 'component_ComponentService', the role '#303' has cardinality 0..*, and from 'model_component_Component', the role '1302' has cardinality 0..*.
+An association connects 'component_ComponentService' and 'model_component_Component'. From 'component_ComponentService', the role '#306' has cardinality 0..*, and from 'model_component_Component', the role '1305' has cardinality 0..*.
+An association connects 'component_Component' and 'model_component_ComponentService'. From 'component_Component', the role '#309' has cardinality 0..*, and from 'model_component_ComponentService', the role '1308' has cardinality 0..*.
+An association connects 'model_component_ComponentService' and 'component_Component'. From 'model_component_ComponentService', the role '1311' has cardinality 0..*, and from 'component_Component', the role '#312' has cardinality 0..*.
+An association connects 'model_component_DeploymentNode' and 'component_Component'. From 'model_component_DeploymentNode', the role 'model_component_DeploymentNode' has cardinality 0..*, and from 'component_Component', the role 'component_Component' has cardinality 0..*.
+An association connects 'model_meeting_Meeting' and 'organization_User'. From 'model_meeting_Meeting', the role 'model_meeting_Meeting' has cardinality 0..*, and from 'organization_User', the role 'organization_User' has cardinality 0..*.
+An association connects 'organization_User' and 'model_meeting_Meeting'. From 'organization_User', the role 'organization_User317' has cardinality 0..*, and from 'model_meeting_Meeting', the role 'model_meeting_Meeting316' has cardinality 0..*.
+An association connects 'model_meeting_Meeting' and 'organization_User'. From 'model_meeting_Meeting', the role 'model_meeting_Meeting319' has cardinality 0..*, and from 'organization_User', the role 'organization_User320' has cardinality 0..*.
+An association connects 'organization_OrgUnit' and 'model_meeting_Meeting'. From 'organization_OrgUnit', the role 'organization_OrgUnit323' has cardinality 0..*, and from 'model_meeting_Meeting', the role 'model_meeting_Meeting322' has cardinality 0..*.
+An association connects 'model_meeting_Meeting' and 'meeting_MeetingSection'. From 'model_meeting_Meeting', the role 'model_meeting_Meeting325' has cardinality 0..*, and from 'meeting_MeetingSection', the role 'meeting_MeetingSection' has cardinality 0..*.
+An association connects 'meeting_IssueMeetingSection' and 'model_meeting_Meeting'. From 'meeting_IssueMeetingSection', the role 'meeting_IssueMeetingSection' has cardinality 0..*, and from 'model_meeting_Meeting', the role 'model_meeting_Meeting327' has cardinality 0..*.
+An association connects 'model_meeting_Meeting' and 'meeting_WorkItemMeetingSection'. From 'model_meeting_Meeting', the role 'model_meeting_Meeting329' has cardinality 0..*, and from 'meeting_WorkItemMeetingSection', the role 'meeting_WorkItemMeetingSection' has cardinality 0..*.
+An association connects 'meeting_MeetingSection' and 'model_meeting_CompositeMeetingSection'. From 'meeting_MeetingSection', the role 'meeting_MeetingSection331' has cardinality 0..*, and from 'model_meeting_CompositeMeetingSection', the role 'model_meeting_CompositeMeetingSection' has cardinality 0..*.
+An association connects 'rationale_Issue' and 'model_meeting_IssueMeetingSection'. From 'rationale_Issue', the role 'rationale_Issue' has cardinality 0..*, and from 'model_meeting_IssueMeetingSection', the role 'model_meeting_IssueMeetingSection' has cardinality 0..*.
+An association connects 'task_WorkItem' and 'model_meeting_WorkItemMeetingSection'. From 'task_WorkItem', the role 'task_WorkItem' has cardinality 0..*, and from 'model_meeting_WorkItemMeetingSection', the role 'model_meeting_WorkItemMeetingSection' has cardinality 0..*.
+An association connects 'model_state_Transition' and 'state_StateNode'. From 'model_state_Transition', the role '1335' has cardinality 0..*, and from 'state_StateNode', the role '#336' has cardinality 0..*.
+An association connects 'model_state_Transition' and 'state_StateNode'. From 'model_state_Transition', the role '1338' has cardinality 0..*, and from 'state_StateNode', the role '#339' has cardinality 0..*.
+An association connects 'model_state_StateNode' and 'state_Transition'. From 'model_state_StateNode', the role '1341' has cardinality 0..*, and from 'state_Transition', the role '#342' has cardinality 0..*.
+An association connects 'model_state_StateNode' and 'state_Transition'. From 'model_state_StateNode', the role '1344' has cardinality 0..*, and from 'state_Transition', the role '#345' has cardinality 0..*.
+An association connects 'UnicaseModelElement' and 'model_profile_Profile'. From 'UnicaseModelElement', the role 'UnicaseModelElement347' has cardinality 0..*, and from 'model_profile_Profile', the role 'model_profile_Profile' has cardinality 0..*.
+An association connects 'profile_Stereotype' and 'model_profile_Profile'. From 'profile_Stereotype', the role '#350' has cardinality 0..*, and from 'model_profile_Profile', the role '1349' has cardinality 0..*.
+An association connects 'model_profile_Stereotype' and 'profile_Profile'. From 'model_profile_Stereotype', the role '1352' has cardinality 0..*, and from 'profile_Profile', the role '#353' has cardinality 0..*.
+An association connects 'profile_StereotypeInstance' and 'model_profile_Stereotype'. From 'profile_StereotypeInstance', the role '#356' has cardinality 0..*, and from 'model_profile_Stereotype', the role '1355' has cardinality 0..*.
+An association connects 'model_profile_Stereotype' and 'profile_StereotypeAttribute'. From 'model_profile_Stereotype', the role '1358' has cardinality 0..*, and from 'profile_StereotypeAttribute', the role '#359' has cardinality 0..*.
+An association connects 'profile_Stereotype' and 'model_profile_StereotypeInstance'. From 'profile_Stereotype', the role '#362' has cardinality 0..*, and from 'model_profile_StereotypeInstance', the role '1361' has cardinality 0..*.
+An association connects 'UnicaseModelElement' and 'model_profile_StereotypeInstance'. From 'UnicaseModelElement', the role '#365' has cardinality 0..*, and from 'model_profile_StereotypeInstance', the role '1364' has cardinality 0..*.
+An association connects 'profile_StereotypeAttributeInstance' and 'model_profile_StereotypeInstance'. From 'profile_StereotypeAttributeInstance', the role '#368' has cardinality 0..*, and from 'model_profile_StereotypeInstance', the role '1367' has cardinality 0..*.
+An association connects 'model_profile_StereotypeAttribute' and 'profile_Stereotype'. From 'model_profile_StereotypeAttribute', the role '1370' has cardinality 0..*, and from 'profile_Stereotype', the role '#371' has cardinality 0..*.
+An association connects 'profile_StereotypeAttributeInstance' and 'model_profile_StereotypeAttribute'. From 'profile_StereotypeAttributeInstance', the role '#374' has cardinality 0..*, and from 'model_profile_StereotypeAttribute', the role '1373' has cardinality 0..*.
+An association connects 'profile_StereotypeInstance' and 'model_profile_StereotypeAttributeInstance'. From 'profile_StereotypeInstance', the role '#377' has cardinality 0..*, and from 'model_profile_StereotypeAttributeInstance', the role '1376' has cardinality 0..*.
+An association connects 'model_profile_StereotypeAttributeInstance' and 'profile_StereotypeAttribute'. From 'model_profile_StereotypeAttributeInstance', the role '1379' has cardinality 0..*, and from 'profile_StereotypeAttribute', the role '#380' has cardinality 0..*.
+An association connects 'ModelElementId' and 'model_util_ModelElementPath'. From 'ModelElementId', the role 'ModelElementId' has cardinality 0..*, and from 'model_util_ModelElementPath', the role 'model_util_ModelElementPath' has cardinality 0..*.
+An association connects 'model_util_ModelElementPath' and 'ModelElementId'. From 'model_util_ModelElementPath', the role 'model_util_ModelElementPath383' has cardinality 0..*, and from 'ModelElementId', the role 'ModelElementId384' has cardinality 0..*.
+An association connects 'model_util_ModelElementPath' and 'ModelElementId'. From 'model_util_ModelElementPath', the role 'model_util_ModelElementPath386' has cardinality 0..*, and from 'ModelElementId', the role 'ModelElementId387' has cardinality 0..*.
+An association connects 'activity_Transition' and 'model_activity_ActivityObject'. From 'activity_Transition', the role '#390' has cardinality 0..*, and from 'model_activity_ActivityObject', the role '1389' has cardinality 0..*.
+An association connects 'model_activity_ActivityObject' and 'activity_Transition'. From 'model_activity_ActivityObject', the role '1392' has cardinality 0..*, and from 'activity_Transition', the role '#393' has cardinality 0..*.
+An association connects 'model_activity_Transition' and 'activity_ActivityObject'. From 'model_activity_Transition', the role '1395' has cardinality 0..*, and from 'activity_ActivityObject', the role '#396' has cardinality 0..*.
+An association connects 'activity_ActivityObject' and 'model_activity_Transition'. From 'activity_ActivityObject', the role '#399' has cardinality 0..*, and from 'model_activity_Transition', the role '1398' has cardinality 0..*.
+An association connects 'esmodel_ProjectHistory' and 'ProjectId'. From 'esmodel_ProjectHistory', the role 'esmodel_ProjectHistory' has cardinality 0..*, and from 'ProjectId', the role 'ProjectId' has cardinality 0..*.
+An association connects 'versioning_Version' and 'esmodel_ProjectHistory'. From 'versioning_Version', the role 'versioning_Version' has cardinality 0..*, and from 'esmodel_ProjectHistory', the role 'esmodel_ProjectHistory402' has cardinality 0..*.
+An association connects 'esmodel_ProjectInfo' and 'ProjectId'. From 'esmodel_ProjectInfo', the role 'esmodel_ProjectInfo' has cardinality 0..*, and from 'ProjectId', the role 'ProjectId404' has cardinality 0..*.
+An association connects 'esmodel_ProjectInfo' and 'versioning_PrimaryVersionSpec'. From 'esmodel_ProjectInfo', the role 'esmodel_ProjectInfo406' has cardinality 0..*, and from 'versioning_PrimaryVersionSpec', the role 'versioning_PrimaryVersionSpec' has cardinality 0..*.
+An association connects 'accesscontrol_ACGroup' and 'esmodel_ServerSpace'. From 'accesscontrol_ACGroup', the role 'accesscontrol_ACGroup' has cardinality 0..*, and from 'esmodel_ServerSpace', the role 'esmodel_ServerSpace' has cardinality 0..*.
+An association connects 'esmodel_ServerSpace' and 'ProjectHistory'. From 'esmodel_ServerSpace', the role 'esmodel_ServerSpace409' has cardinality 0..*, and from 'ProjectHistory', the role 'ProjectHistory' has cardinality 0..*.
+An association connects 'SessionId' and 'esmodel_ServerSpace'. From 'SessionId', the role 'SessionId' has cardinality 0..*, and from 'esmodel_ServerSpace', the role 'esmodel_ServerSpace411' has cardinality 0..*.
+An association connects 'accesscontrol_ACUser' and 'esmodel_ServerSpace'. From 'accesscontrol_ACUser', the role 'accesscontrol_ACUser' has cardinality 0..*, and from 'esmodel_ServerSpace', the role 'esmodel_ServerSpace413' has cardinality 0..*.
+An association connects 'esmodel_versioning_ChangePackage' and 'operations_AbstractOperation'. From 'esmodel_versioning_ChangePackage', the role 'esmodel_versioning_ChangePackage' has cardinality 0..*, and from 'operations_AbstractOperation', the role 'operations_AbstractOperation' has cardinality 0..*.
+An association connects 'events_Event' and 'esmodel_versioning_ChangePackage'. From 'events_Event', the role 'events_Event' has cardinality 0..*, and from 'esmodel_versioning_ChangePackage', the role 'esmodel_versioning_ChangePackage416' has cardinality 0..*.
+An association connects 'esmodel_versioning_ChangePackage' and 'versioning_LogMessage'. From 'esmodel_versioning_ChangePackage', the role 'esmodel_versioning_ChangePackage418' has cardinality 0..*, and from 'versioning_LogMessage', the role 'versioning_LogMessage' has cardinality 0..*.
+An association connects 'notification_ESNotification' and 'esmodel_versioning_ChangePackage'. From 'notification_ESNotification', the role 'notification_ESNotification' has cardinality 0..*, and from 'esmodel_versioning_ChangePackage', the role 'esmodel_versioning_ChangePackage420' has cardinality 0..*.
+An association connects 'versioning_VersionProperty' and 'esmodel_versioning_ChangePackage'. From 'versioning_VersionProperty', the role 'versioning_VersionProperty' has cardinality 0..*, and from 'esmodel_versioning_ChangePackage', the role 'esmodel_versioning_ChangePackage422' has cardinality 0..*.
+An association connects 'versioning_PrimaryVersionSpec' and 'esmodel_versioning_HistoryInfo'. From 'versioning_PrimaryVersionSpec', the role 'versioning_PrimaryVersionSpec424' has cardinality 0..*, and from 'esmodel_versioning_HistoryInfo', the role 'esmodel_versioning_HistoryInfo' has cardinality 0..*.
+An association connects 'versioning_LogMessage' and 'esmodel_versioning_HistoryInfo'. From 'versioning_LogMessage', the role 'versioning_LogMessage427' has cardinality 0..*, and from 'esmodel_versioning_HistoryInfo', the role 'esmodel_versioning_HistoryInfo426' has cardinality 0..*.
+An association connects 'versioning_TagVersionSpec' and 'esmodel_versioning_HistoryInfo'. From 'versioning_TagVersionSpec', the role 'versioning_TagVersionSpec' has cardinality 0..*, and from 'esmodel_versioning_HistoryInfo', the role 'esmodel_versioning_HistoryInfo429' has cardinality 0..*.
+An association connects 'versioning_VersionProperty' and 'esmodel_versioning_HistoryInfo'. From 'versioning_VersionProperty', the role 'versioning_VersionProperty432' has cardinality 0..*, and from 'esmodel_versioning_HistoryInfo', the role 'esmodel_versioning_HistoryInfo431' has cardinality 0..*.
+An association connects 'esmodel_versioning_HistoryInfo' and 'versioning_ChangePackage'. From 'esmodel_versioning_HistoryInfo', the role 'esmodel_versioning_HistoryInfo434' has cardinality 0..*, and from 'versioning_ChangePackage', the role 'versioning_ChangePackage' has cardinality 0..*.
+An association connects 'versioning_PrimaryVersionSpec' and 'esmodel_versioning_HistoryQuery'. From 'versioning_PrimaryVersionSpec', the role 'versioning_PrimaryVersionSpec436' has cardinality 0..*, and from 'esmodel_versioning_HistoryQuery', the role 'esmodel_versioning_HistoryQuery' has cardinality 0..*.
+An association connects 'versioning_PrimaryVersionSpec' and 'esmodel_versioning_HistoryQuery'. From 'versioning_PrimaryVersionSpec', the role 'versioning_PrimaryVersionSpec439' has cardinality 0..*, and from 'esmodel_versioning_HistoryQuery', the role 'esmodel_versioning_HistoryQuery438' has cardinality 0..*.
+An association connects 'ModelElementId' and 'esmodel_versioning_HistoryQuery'. From 'ModelElementId', the role 'ModelElementId442' has cardinality 0..*, and from 'esmodel_versioning_HistoryQuery', the role 'esmodel_versioning_HistoryQuery441' has cardinality 0..*.
+An association connects 'esmodel_versioning_Version' and 'Project'. From 'esmodel_versioning_Version', the role 'esmodel_versioning_Version' has cardinality 0..*, and from 'Project', the role 'Project' has cardinality 0..*.
+An association connects 'esmodel_versioning_Version' and 'versioning_PrimaryVersionSpec'. From 'esmodel_versioning_Version', the role 'esmodel_versioning_Version445' has cardinality 0..*, and from 'versioning_PrimaryVersionSpec', the role 'versioning_PrimaryVersionSpec446' has cardinality 0..*.
+An association connects 'esmodel_versioning_Version' and 'versioning_TagVersionSpec'. From 'esmodel_versioning_Version', the role 'esmodel_versioning_Version448' has cardinality 0..*, and from 'versioning_TagVersionSpec', the role 'versioning_TagVersionSpec449' has cardinality 0..*.
+An association connects 'esmodel_versioning_Version' and 'versioning_Version'. From 'esmodel_versioning_Version', the role '2' has cardinality 0..*, and from 'versioning_Version', the role '#451' has cardinality 0..*.
+An association connects 'versioning_Version' and 'esmodel_versioning_Version'. From 'versioning_Version', the role '#454' has cardinality 0..*, and from 'esmodel_versioning_Version', the role '2453' has cardinality 0..*.
+An association connects 'versioning_ChangePackage' and 'esmodel_versioning_Version'. From 'versioning_ChangePackage', the role 'versioning_ChangePackage457' has cardinality 0..*, and from 'esmodel_versioning_Version', the role 'esmodel_versioning_Version456' has cardinality 0..*.
+An association connects 'versioning_LogMessage' and 'esmodel_versioning_Version'. From 'versioning_LogMessage', the role 'versioning_LogMessage460' has cardinality 0..*, and from 'esmodel_versioning_Version', the role 'esmodel_versioning_Version459' has cardinality 0..*.
+An association connects 'esmodel_operations_AbstractOperation' and 'ModelElementId'. From 'esmodel_operations_AbstractOperation', the role 'esmodel_operations_AbstractOperation' has cardinality 0..*, and from 'ModelElementId', the role 'ModelElementId462' has cardinality 0..*.
+An association connects 'operations_AbstractOperation' and 'esmodel_operations_CompositeOperation'. From 'operations_AbstractOperation', the role 'operations_AbstractOperation464' has cardinality 0..*, and from 'esmodel_operations_CompositeOperation', the role 'esmodel_operations_CompositeOperation' has cardinality 0..*.
+An association connects 'operations_AbstractOperation' and 'esmodel_operations_CompositeOperation'. From 'operations_AbstractOperation', the role 'operations_AbstractOperation467' has cardinality 0..*, and from 'esmodel_operations_CompositeOperation', the role 'esmodel_operations_CompositeOperation466' has cardinality 0..*.
+An association connects 'operations_esmodel_EObject' and 'esmodel_operations_CreateDeleteOperation'. From 'operations_esmodel_EObject', the role 'operations_esmodel_EObject' has cardinality 0..*, and from 'esmodel_operations_CreateDeleteOperation', the role 'esmodel_operations_CreateDeleteOperation' has cardinality 0..*.
+An association connects 'operations_ReferenceOperation' and 'esmodel_operations_CreateDeleteOperation'. From 'operations_ReferenceOperation', the role 'operations_ReferenceOperation' has cardinality 0..*, and from 'esmodel_operations_CreateDeleteOperation', the role 'esmodel_operations_CreateDeleteOperation470' has cardinality 0..*.
+An association connects 'operations_EObjectToModelElementIdMap' and 'esmodel_operations_CreateDeleteOperation'. From 'operations_EObjectToModelElementIdMap', the role 'operations_EObjectToModelElementIdMap' has cardinality 0..*, and from 'esmodel_operations_CreateDeleteOperation', the role 'esmodel_operations_CreateDeleteOperation472' has cardinality 0..*.
+An association connects 'ModelElementId' and 'esmodel_operations_SingleReferenceOperation'. From 'ModelElementId', the role 'ModelElementId474' has cardinality 0..*, and from 'esmodel_operations_SingleReferenceOperation', the role 'esmodel_operations_SingleReferenceOperation' has cardinality 0..*.
+An association connects 'esmodel_operations_SingleReferenceOperation' and 'ModelElementId'. From 'esmodel_operations_SingleReferenceOperation', the role 'esmodel_operations_SingleReferenceOperation476' has cardinality 0..*, and from 'ModelElementId', the role 'ModelElementId477' has cardinality 0..*.
+An association connects 'esmodel_operations_MultiReferenceSetOperation' and 'ModelElementId'. From 'esmodel_operations_MultiReferenceSetOperation', the role 'esmodel_operations_MultiReferenceSetOperation' has cardinality 0..*, and from 'ModelElementId', the role 'ModelElementId479' has cardinality 0..*.
+An association connects 'ModelElementId' and 'esmodel_operations_MultiReferenceSetOperation'. From 'ModelElementId', the role 'ModelElementId482' has cardinality 0..*, and from 'esmodel_operations_MultiReferenceSetOperation', the role 'esmodel_operations_MultiReferenceSetOperation481' has cardinality 0..*.
+An association connects 'ModelElementId' and 'esmodel_operations_MultiReferenceOperation'. From 'ModelElementId', the role 'ModelElementId484' has cardinality 0..*, and from 'esmodel_operations_MultiReferenceOperation', the role 'esmodel_operations_MultiReferenceOperation' has cardinality 0..*.
+An association connects 'ModelElementId' and 'esmodel_operations_MultiReferenceMoveOperation'. From 'ModelElementId', the role 'ModelElementId486' has cardinality 0..*, and from 'esmodel_operations_MultiReferenceMoveOperation', the role 'esmodel_operations_MultiReferenceMoveOperation' has cardinality 0..*.
+An association connects 'esmodel_operations_OperationGroup' and 'operations_AbstractOperation'. From 'esmodel_operations_OperationGroup', the role 'esmodel_operations_OperationGroup' has cardinality 0..*, and from 'operations_AbstractOperation', the role 'operations_AbstractOperation488' has cardinality 0..*.
+An association connects 'esmodel_operations_ModelElementGroup' and 'ModelElementId'. From 'esmodel_operations_ModelElementGroup', the role 'esmodel_operations_ModelElementGroup' has cardinality 0..*, and from 'ModelElementId', the role 'ModelElementId490' has cardinality 0..*.
+An association connects 'esmodel_operations_EObjectToModelElementIdMap' and 'operations_esmodel_EObject'. From 'esmodel_operations_EObjectToModelElementIdMap', the role 'esmodel_operations_EObjectToModelElementIdMap' has cardinality 0..*, and from 'operations_esmodel_EObject', the role 'operations_esmodel_EObject492' has cardinality 0..*.
+An association connects 'esmodel_operations_EObjectToModelElementIdMap' and 'ModelElementId'. From 'esmodel_operations_EObjectToModelElementIdMap', the role 'esmodel_operations_EObjectToModelElementIdMap494' has cardinality 0..*, and from 'ModelElementId', the role 'ModelElementId495' has cardinality 0..*.
+An association connects 'esmodel_events_ReadEvent' and 'ModelElementId'. From 'esmodel_events_ReadEvent', the role 'esmodel_events_ReadEvent' has cardinality 0..*, and from 'ModelElementId', the role 'ModelElementId497' has cardinality 0..*.
+An association connects 'esmodel_events_MergeEvent' and 'versioning_PrimaryVersionSpec'. From 'esmodel_events_MergeEvent', the role 'esmodel_events_MergeEvent' has cardinality 0..*, and from 'versioning_PrimaryVersionSpec', the role 'versioning_PrimaryVersionSpec499' has cardinality 0..*.
+An association connects 'esmodel_events_MergeEvent' and 'versioning_PrimaryVersionSpec'. From 'esmodel_events_MergeEvent', the role 'esmodel_events_MergeEvent501' has cardinality 0..*, and from 'versioning_PrimaryVersionSpec', the role 'versioning_PrimaryVersionSpec502' has cardinality 0..*.
+An association connects 'operations_AbstractOperation' and 'esmodel_events_MergeEvent'. From 'operations_AbstractOperation', the role 'operations_AbstractOperation505' has cardinality 0..*, and from 'esmodel_events_MergeEvent', the role 'esmodel_events_MergeEvent504' has cardinality 0..*.
+An association connects 'versioning_PrimaryVersionSpec' and 'esmodel_events_CheckoutEvent'. From 'versioning_PrimaryVersionSpec', the role 'versioning_PrimaryVersionSpec507' has cardinality 0..*, and from 'esmodel_events_CheckoutEvent', the role 'esmodel_events_CheckoutEvent' has cardinality 0..*.
+An association connects 'esmodel_events_UpdateEvent' and 'versioning_PrimaryVersionSpec'. From 'esmodel_events_UpdateEvent', the role 'esmodel_events_UpdateEvent' has cardinality 0..*, and from 'versioning_PrimaryVersionSpec', the role 'versioning_PrimaryVersionSpec509' has cardinality 0..*.
+An association connects 'esmodel_events_UpdateEvent' and 'versioning_PrimaryVersionSpec'. From 'esmodel_events_UpdateEvent', the role 'esmodel_events_UpdateEvent511' has cardinality 0..*, and from 'versioning_PrimaryVersionSpec', the role 'versioning_PrimaryVersionSpec512' has cardinality 0..*.
+An association connects 'ModelElementId' and 'esmodel_events_AnnotationEvent'. From 'ModelElementId', the role 'ModelElementId514' has cardinality 0..*, and from 'esmodel_events_AnnotationEvent', the role 'esmodel_events_AnnotationEvent' has cardinality 0..*.
+An association connects 'ModelElementId' and 'esmodel_events_AnnotationEvent'. From 'ModelElementId', the role 'ModelElementId517' has cardinality 0..*, and from 'esmodel_events_AnnotationEvent', the role 'esmodel_events_AnnotationEvent516' has cardinality 0..*.
+An association connects 'esmodel_events_ShowHistoryEvent' and 'versioning_PrimaryVersionSpec'. From 'esmodel_events_ShowHistoryEvent', the role 'esmodel_events_ShowHistoryEvent' has cardinality 0..*, and from 'versioning_PrimaryVersionSpec', the role 'versioning_PrimaryVersionSpec519' has cardinality 0..*.
+An association connects 'esmodel_events_ShowHistoryEvent' and 'versioning_PrimaryVersionSpec'. From 'esmodel_events_ShowHistoryEvent', the role 'esmodel_events_ShowHistoryEvent521' has cardinality 0..*, and from 'versioning_PrimaryVersionSpec', the role 'versioning_PrimaryVersionSpec522' has cardinality 0..*.
+An association connects 'ModelElementId' and 'esmodel_events_ShowHistoryEvent'. From 'ModelElementId', the role 'ModelElementId525' has cardinality 0..*, and from 'esmodel_events_ShowHistoryEvent', the role 'esmodel_events_ShowHistoryEvent524' has cardinality 0..*.
+An association connects 'esmodel_events_DNDEvent' and 'ModelElementId'. From 'esmodel_events_DNDEvent', the role 'esmodel_events_DNDEvent' has cardinality 0..*, and from 'ModelElementId', the role 'ModelElementId527' has cardinality 0..*.
+An association connects 'ModelElementId' and 'esmodel_events_DNDEvent'. From 'ModelElementId', the role 'ModelElementId530' has cardinality 0..*, and from 'esmodel_events_DNDEvent', the role 'esmodel_events_DNDEvent529' has cardinality 0..*.
+An association connects 'esmodel_events_LinkEvent' and 'ModelElementId'. From 'esmodel_events_LinkEvent', the role 'esmodel_events_LinkEvent' has cardinality 0..*, and from 'ModelElementId', the role 'ModelElementId532' has cardinality 0..*.
+An association connects 'ModelElementId' and 'esmodel_events_LinkEvent'. From 'ModelElementId', the role 'ModelElementId535' has cardinality 0..*, and from 'esmodel_events_LinkEvent', the role 'esmodel_events_LinkEvent534' has cardinality 0..*.
+An association connects 'esmodel_events_TraceEvent' and 'ModelElementId'. From 'esmodel_events_TraceEvent', the role 'esmodel_events_TraceEvent' has cardinality 0..*, and from 'ModelElementId', the role 'ModelElementId537' has cardinality 0..*.
+An association connects 'esmodel_events_TraceEvent' and 'ModelElementId'. From 'esmodel_events_TraceEvent', the role 'esmodel_events_TraceEvent539' has cardinality 0..*, and from 'ModelElementId', the role 'ModelElementId540' has cardinality 0..*.
+An association connects 'esmodel_events_NavigatorCreateEvent' and 'ModelElementId'. From 'esmodel_events_NavigatorCreateEvent', the role 'esmodel_events_NavigatorCreateEvent' has cardinality 0..*, and from 'ModelElementId', the role 'ModelElementId542' has cardinality 0..*.
+An association connects 'esmodel_events_NavigatorCreateEvent' and 'ModelElementId'. From 'esmodel_events_NavigatorCreateEvent', the role 'esmodel_events_NavigatorCreateEvent544' has cardinality 0..*, and from 'ModelElementId', the role 'ModelElementId545' has cardinality 0..*.
+An association connects 'esmodel_events_UndoEvent' and 'operations_AbstractOperation'. From 'esmodel_events_UndoEvent', the role 'esmodel_events_UndoEvent' has cardinality 0..*, and from 'operations_AbstractOperation', the role 'operations_AbstractOperation547' has cardinality 0..*.
+An association connects 'versioning_PrimaryVersionSpec' and 'esmodel_events_ShowChangesEvent'. From 'versioning_PrimaryVersionSpec', the role 'versioning_PrimaryVersionSpec549' has cardinality 0..*, and from 'esmodel_events_ShowChangesEvent', the role 'esmodel_events_ShowChangesEvent' has cardinality 0..*.
+An association connects 'esmodel_events_ShowChangesEvent' and 'versioning_PrimaryVersionSpec'. From 'esmodel_events_ShowChangesEvent', the role 'esmodel_events_ShowChangesEvent551' has cardinality 0..*, and from 'versioning_PrimaryVersionSpec', the role 'versioning_PrimaryVersionSpec552' has cardinality 0..*.
+An association connects 'esmodel_events_NotificationGenerationEvent' and 'notification_ESNotification'. From 'esmodel_events_NotificationGenerationEvent', the role 'esmodel_events_NotificationGenerationEvent' has cardinality 0..*, and from 'notification_ESNotification', the role 'notification_ESNotification554' has cardinality 0..*.
+An association connects 'esmodel_events_URLEvent' and 'ModelElementId'. From 'esmodel_events_URLEvent', the role 'esmodel_events_URLEvent' has cardinality 0..*, and from 'ModelElementId', the role 'ModelElementId556' has cardinality 0..*.
+An association connects 'ModelElementId' and 'esmodel_events_URLEvent'. From 'ModelElementId', the role 'ModelElementId559' has cardinality 0..*, and from 'esmodel_events_URLEvent', the role 'esmodel_events_URLEvent558' has cardinality 0..*.
+An association connects 'esmodel_events_MergeChoiceEvent' and 'operations_OperationId'. From 'esmodel_events_MergeChoiceEvent', the role 'esmodel_events_MergeChoiceEvent' has cardinality 0..*, and from 'operations_OperationId', the role 'operations_OperationId' has cardinality 0..*.
+An association connects 'operations_OperationId' and 'esmodel_events_MergeChoiceEvent'. From 'operations_OperationId', the role 'operations_OperationId563' has cardinality 0..*, and from 'esmodel_events_MergeChoiceEvent', the role 'esmodel_events_MergeChoiceEvent562' has cardinality 0..*.
+An association connects 'ModelElementId' and 'esmodel_events_MergeChoiceEvent'. From 'ModelElementId', the role 'ModelElementId566' has cardinality 0..*, and from 'esmodel_events_MergeChoiceEvent', the role 'esmodel_events_MergeChoiceEvent565' has cardinality 0..*.
+An association connects 'ProjectId' and 'esmodel_server_ServerProjectEvent'. From 'ProjectId', the role 'ProjectId568' has cardinality 0..*, and from 'esmodel_server_ServerProjectEvent', the role 'esmodel_server_ServerProjectEvent' has cardinality 0..*.
+An association connects 'esmodel_server_ProjectUpdatedEvent' and 'versioning_PrimaryVersionSpec'. From 'esmodel_server_ProjectUpdatedEvent', the role 'esmodel_server_ProjectUpdatedEvent' has cardinality 0..*, and from 'versioning_PrimaryVersionSpec', the role 'versioning_PrimaryVersionSpec570' has cardinality 0..*.
+An association connects 'esmodel_accesscontrol_ACOrgUnit' and 'roles_Role'. From 'esmodel_accesscontrol_ACOrgUnit', the role 'esmodel_accesscontrol_ACOrgUnit' has cardinality 0..*, and from 'roles_Role', the role 'roles_Role' has cardinality 0..*.
+An association connects 'accesscontrol_OrgUnitProperty' and 'esmodel_accesscontrol_ACOrgUnit'. From 'accesscontrol_OrgUnitProperty', the role 'accesscontrol_OrgUnitProperty' has cardinality 0..*, and from 'esmodel_accesscontrol_ACOrgUnit', the role 'esmodel_accesscontrol_ACOrgUnit573' has cardinality 0..*.
+An association connects 'accesscontrol_ACOrgUnit' and 'esmodel_accesscontrol_ACGroup'. From 'accesscontrol_ACOrgUnit', the role 'accesscontrol_ACOrgUnit' has cardinality 0..*, and from 'esmodel_accesscontrol_ACGroup', the role 'esmodel_accesscontrol_ACGroup' has cardinality 0..*.
+An association connects 'esmodel_accesscontrol_OrgUnitProperty' and 'ProjectId'. From 'esmodel_accesscontrol_OrgUnitProperty', the role 'esmodel_accesscontrol_OrgUnitProperty' has cardinality 0..*, and from 'ProjectId', the role 'ProjectId576' has cardinality 0..*.
+An association connects 'ProjectId' and 'esmodel_roles_Role'. From 'ProjectId', the role 'ProjectId578' has cardinality 0..*, and from 'esmodel_roles_Role', the role 'esmodel_roles_Role' has cardinality 0..*.
+An association connects 'ProjectId' and 'esmodel_notification_ESNotification'. From 'ProjectId', the role 'ProjectId580' has cardinality 0..*, and from 'esmodel_notification_ESNotification', the role 'esmodel_notification_ESNotification' has cardinality 0..*.
+An association connects 'esmodel_notification_ESNotification' and 'ModelElementId'. From 'esmodel_notification_ESNotification', the role 'esmodel_notification_ESNotification582' has cardinality 0..*, and from 'ModelElementId', the role 'ModelElementId583' has cardinality 0..*.
+An association connects 'esmodel_notification_ESNotification' and 'operations_OperationId'. From 'esmodel_notification_ESNotification', the role 'esmodel_notification_ESNotification585' has cardinality 0..*, and from 'operations_OperationId', the role 'operations_OperationId586' has cardinality 0..*.
+An association connects 'esmodel_url_ProjectUrlFragment' and 'ProjectId'. From 'esmodel_url_ProjectUrlFragment', the role 'esmodel_url_ProjectUrlFragment' has cardinality 0..*, and from 'ProjectId', the role 'ProjectId588' has cardinality 0..*.
+An association connects 'ModelElementId' and 'esmodel_url_ModelElementUrlFragment'. From 'ModelElementId', the role 'ModelElementId590' has cardinality 0..*, and from 'esmodel_url_ModelElementUrlFragment', the role 'esmodel_url_ModelElementUrlFragment' has cardinality 0..*.
+An association connects 'esmodel_url_ModelElementUrl' and 'url_ServerUrl'. From 'esmodel_url_ModelElementUrl', the role 'esmodel_url_ModelElementUrl' has cardinality 0..*, and from 'url_ServerUrl', the role 'url_ServerUrl' has cardinality 0..*.
+An association connects 'url_ProjectUrlFragment' and 'esmodel_url_ModelElementUrl'. From 'url_ProjectUrlFragment', the role 'url_ProjectUrlFragment' has cardinality 0..*, and from 'esmodel_url_ModelElementUrl', the role 'esmodel_url_ModelElementUrl593' has cardinality 0..*.
+An association connects 'url_ModelElementUrlFragment' and 'esmodel_url_ModelElementUrl'. From 'url_ModelElementUrlFragment', the role 'url_ModelElementUrlFragment' has cardinality 0..*, and from 'esmodel_url_ModelElementUrl', the role 'esmodel_url_ModelElementUrl595' has cardinality 0..*.

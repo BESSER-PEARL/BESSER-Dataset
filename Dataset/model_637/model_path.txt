@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/lucascraft/emf-search/ecore/tests/org.eclipse.emf.search.tests/models/codegen/SimpleLib/SimpleLib.ecore

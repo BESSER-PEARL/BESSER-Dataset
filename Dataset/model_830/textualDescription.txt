@@ -1,0 +1,30 @@
+The domain model 'lts_pc' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'lts_pc_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'lts_pc_Pointcut' represents an important domain concept.
+It does not declare any attributes.
+
+'lts_pc_LTS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'lts_pc_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'lts_pc_Transition' represents an important domain concept.
+It has the following attributes: 'input', which is of type str; 'output', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'lts_pc_State' and 'lts_pc_LTS'. From 'lts_pc_State', the role 'State' has cardinality 0..*, and from 'lts_pc_LTS', the role 'owningLTS' has cardinality 0..*.
+An association connects 'lts_pc_LTS' and 'lts_pc_State'. From 'lts_pc_LTS', the role 'lts_pc_LTS' has cardinality 0..*, and from 'lts_pc_State', the role 'lts_pc_State' has cardinality 0..*.
+An association connects 'lts_pc_LTS' and 'lts_pc_State'. From 'lts_pc_LTS', the role 'lts_pc_LTS3' has cardinality 0..*, and from 'lts_pc_State', the role 'lts_pc_State4' has cardinality 0..*.
+An association connects 'lts_pc_LTS' and 'lts_pc_State'. From 'lts_pc_LTS', the role 'lts_pc_LTS6' has cardinality 0..*, and from 'lts_pc_State', the role 'lts_pc_State7' has cardinality 0..*.
+An association connects 'lts_pc_LTS' and 'lts_pc_State'. From 'lts_pc_LTS', the role 'LTS' has cardinality 0..*, and from 'lts_pc_State', the role 'ownedState' has cardinality 0..*.
+An association connects 'lts_pc_Transition' and 'lts_pc_State'. From 'lts_pc_Transition', the role 'Transition' has cardinality 0..*, and from 'lts_pc_State', the role 'source' has cardinality 0..*.
+An association connects 'lts_pc_State' and 'lts_pc_Transition'. From 'lts_pc_State', the role 'target' has cardinality 0..*, and from 'lts_pc_Transition', the role 'Transition11' has cardinality 0..*.
+An association connects 'lts_pc_Transition' and 'lts_pc_State'. From 'lts_pc_Transition', the role 'outgoingTransition' has cardinality 0..*, and from 'lts_pc_State', the role 'State13' has cardinality 0..*.
+An association connects 'lts_pc_State' and 'lts_pc_Transition'. From 'lts_pc_State', the role 'State15' has cardinality 0..*, and from 'lts_pc_Transition', the role 'incomingTransition' has cardinality 0..*.
+An association connects 'lts_pc_Pointcut' and 'lts_pc_EObject'. From 'lts_pc_Pointcut', the role 'lts_pc_Pointcut' has cardinality 0..*, and from 'lts_pc_EObject', the role 'lts_pc_EObject' has cardinality 0..*.

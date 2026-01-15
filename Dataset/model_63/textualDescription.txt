@@ -1,0 +1,789 @@
+The domain model 'Java' describes the core structural elements and their relationships within the system.
+
+The model defines 152 main class(es).
+
+'Java_CatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_NamedElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'proxy', which is of type bool.
+
+'Java_ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_CharacterLiteral' represents an important domain concept.
+It has one attribute: 'escapedValue', which is of type str.
+
+'Java_SynchronizedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_PrimitiveTypeChar' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_TextElement' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'Java_MethodRefParameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'varargs', which is of type bool.
+
+'Java_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_ManifestEntry' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Java_ParameterizedType' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_EnhancedForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_VariableDeclarationFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'Java_PrimitiveTypeDouble' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_PackageAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_MethodDeclaration' represents an important domain concept.
+It has one attribute: 'extraArrayDimensions', which is of type int.
+
+'Java_PrimitiveTypeShort' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_UnresolvedAnnotationTypeMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_PrimitiveTypeFloat' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_ThrowStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_PrimitiveTypeInt' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_UnresolvedItemAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_MethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_PrimitiveTypeLong' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_UnresolvedAnnotationDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_AssertStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_PrimitiveTypeVoid' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_AbstractTypeQualifiedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_SingleVariableAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_ParenthesizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_CastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_UnresolvedClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_FieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_ConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_InterfaceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_EmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_StringLiteral' represents an important domain concept.
+It has one attribute: 'escapedValue', which is of type str.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_UnresolvedEnumDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'extraArrayDimensions', which is of type int.
+
+'Java_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_ArrayType' represents an important domain concept.
+It has one attribute: 'dimensions', which is of type int.
+
+'Java_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_UnresolvedItem' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_ImportDeclaration' represents an important domain concept.
+It has one attribute: 'static', which is of type bool.
+
+'Java_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_DoStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_ThisExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'UnresolvedItem' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_NamespaceAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_EnumDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationTypeMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_AbstractMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_UnresolvedInterfaceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_PostfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Java_AnnotationTypeMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_TryStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_AnnotationMemberValuePair' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_LabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_SingleVariableDeclaration' represents an important domain concept.
+It has one attribute: 'varargs', which is of type bool.
+
+'Java_UnresolvedLabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_Modifier' represents an important domain concept.
+It has the following attributes: 'inheritance', which is of type str; 'synchronized', which is of type bool; 'strictfp', which is of type bool; 'native', which is of type bool; 'volatile', which is of type bool; 'static', which is of type bool; 'transient', which is of type bool; 'visibility', which is of type str.
+
+'Java_MemberRef' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_ArrayAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_AnnotationTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_UnresolvedMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_ConstructorDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfaceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_TypeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_ArrayLengthAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_UnresolvedSingleVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'LabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_EnumConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_AbstractMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_UnresolvedType' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_PrefixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Java_InfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Java_TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_VariableDeclarationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_Manifest' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_Comment' represents an important domain concept.
+It has the following attributes: 'content', which is of type str; 'prefixOfParent', which is of type bool; 'enclosedByParent', which is of type bool.
+
+'Java_FieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_ManifestAttribute' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'Java_UnresolvedVariableDeclarationFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_ClassFile' represents an important domain concept.
+It has one attribute: 'originalFilePath', which is of type str.
+
+'Java_Javadoc' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_VariableDeclarationStatement' represents an important domain concept.
+It has one attribute: 'extraArrayDimensions', which is of type int.
+
+'SingleVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_SuperConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_UnresolvedTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_Initializer' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_TypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_AnonymousClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_MethodRef' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_SuperFieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_ArrayCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Java_CompilationUnit' represents an important domain concept.
+It has one attribute: 'originalFilePath', which is of type str.
+
+'Java_SuperMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_TypeDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclarationFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_LineComment' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_PrimitiveTypeByte' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_TypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_AbstractVariablesContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_WildCardType' represents an important domain concept.
+It has one attribute: 'upperBound', which is of type bool.
+
+'Java_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_PrimitiveTypeBoolean' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_ClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'NamespaceAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTypeQualifiedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_AbstractTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_BlockComment' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_Archive' represents an important domain concept.
+It has one attribute: 'originalFilePath', which is of type str.
+
+'Java_ClassInstanceCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_SwitchCase' represents an important domain concept.
+It has one attribute: 'default', which is of type bool.
+
+'Java_InstanceofExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractVariablesContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_Assignment' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Java_ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_TagElement' represents an important domain concept.
+It has one attribute: 'tagName', which is of type str.
+
+'Java_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_NumberLiteral' represents an important domain concept.
+It has one attribute: 'tokenValue', which is of type str.
+
+'Java_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AssignmentKind' defines the following possible values: 'ASSIGN', 'BIT_XOR_ASSIGN', 'REMAINDER_ASSIGN', 'MINUS_ASSIGN', 'RIGHT_SHIFT_SIGNED_ASSIGN', 'PLUS_ASSIGN', 'TIMES_ASSIGN', 'BIT_AND_ASSIGN', 'DIVIDE_ASSIGN', 'LEFT_SHIFT_ASSIGN', 'RIGHT_SHIFT_UNSIGNED_ASSIGN', 'BIT_OR_ASSIGN'.
+The enumeration 'VisibilityKind' defines the following possible values: 'public', 'none', 'private', 'protected'.
+The enumeration 'InheritanceKind' defines the following possible values: 'abstract', 'final', 'none'.
+The enumeration 'InfixExpressionKind' defines the following possible values: 'CONDITIONAL_AND', 'DIVIDE', 'XOR', 'PLUS', 'LEFT_SHIFT', 'LESS_EQUALS', 'GREATER', 'RIGHT_SHIFT_SIGNED', 'LESS', 'EQUALS', 'NOT_EQUALS', 'RIGHT_SHIFT_UNSIGNED', 'CONDITIONAL_OR', 'TIMES', 'REMAINDER', 'OR', 'AND', 'GREATER_EQUALS', 'MINUS'.
+The enumeration 'PostfixExpressionKind' defines the following possible values: 'DECREMENT', 'INCREMENT'.
+The enumeration 'PrefixExpressionKind' defines the following possible values: 'PLUS', 'NOT', 'INCREMENT', 'DECREMENT', 'COMPLEMENT', 'MINUS'.
+
+The model also captures inheritance relationships between classes.
+The class 'Java_AbstractMethodDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'Java_AbstractMethodInvocation' is a specialization of 'ASTNode'.
+The class 'Java_AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'Java_AbstractTypeDeclaration' is a specialization of 'Type'.
+The class 'Java_AbstractTypeQualifiedExpression' is a specialization of 'Expression'.
+The class 'Java_AbstractVariablesContainer' is a specialization of 'ASTNode'.
+The class 'Java_Annotation' is a specialization of 'Expression'.
+The class 'Java_Archive' is a specialization of 'NamedElement'.
+The class 'Java_AssertStatement' is a specialization of 'Statement'.
+The class 'Java_AnnotationMemberValuePair' is a specialization of 'NamedElement'.
+The class 'Java_AnnotationTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'Java_AnnotationTypeMemberDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'Java_AnonymousClassDeclaration' is a specialization of 'ASTNode'.
+The class 'Java_ArrayAccess' is a specialization of 'Expression'.
+The class 'Java_ArrayCreation' is a specialization of 'Expression'.
+The class 'Java_ArrayInitializer' is a specialization of 'Expression'.
+The class 'Java_ArrayLengthAccess' is a specialization of 'Expression'.
+The class 'Java_ArrayType' is a specialization of 'Type'.
+The class 'Java_Assignment' is a specialization of 'Expression'.
+The class 'Java_BodyDeclaration' is a specialization of 'NamedElement'.
+The class 'Java_BooleanLiteral' is a specialization of 'Expression'.
+The class 'Java_BlockComment' is a specialization of 'Comment'.
+The class 'Java_Block' is a specialization of 'Statement'.
+The class 'Java_BreakStatement' is a specialization of 'Statement'.
+The class 'Java_CastExpression' is a specialization of 'Expression'.
+The class 'Java_CatchClause' is a specialization of 'Statement'.
+The class 'Java_CharacterLiteral' is a specialization of 'Expression'.
+The class 'Java_ClassFile' is a specialization of 'NamedElement'.
+The class 'Java_ClassInstanceCreation' is a specialization of 'Expression'.
+The class 'Java_ClassInstanceCreation' is a specialization of 'AbstractMethodInvocation'.
+The class 'Java_ConstructorDeclaration' is a specialization of 'AbstractMethodDeclaration'.
+The class 'Java_ConditionalExpression' is a specialization of 'Expression'.
+The class 'Java_ConstructorInvocation' is a specialization of 'Statement'.
+The class 'Java_ConstructorInvocation' is a specialization of 'AbstractMethodInvocation'.
+The class 'Java_ClassDeclaration' is a specialization of 'TypeDeclaration'.
+The class 'Java_Comment' is a specialization of 'ASTNode'.
+The class 'Java_CompilationUnit' is a specialization of 'NamedElement'.
+The class 'Java_ContinueStatement' is a specialization of 'Statement'.
+The class 'Java_DoStatement' is a specialization of 'Statement'.
+The class 'Java_EmptyStatement' is a specialization of 'Statement'.
+The class 'Java_EnhancedForStatement' is a specialization of 'Statement'.
+The class 'Java_EnumConstantDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'Java_EnumConstantDeclaration' is a specialization of 'VariableDeclaration'.
+The class 'Java_EnumDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'Java_Expression' is a specialization of 'ASTNode'.
+The class 'Java_ExpressionStatement' is a specialization of 'Statement'.
+The class 'Java_FieldAccess' is a specialization of 'Expression'.
+The class 'Java_FieldDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'Java_FieldDeclaration' is a specialization of 'AbstractVariablesContainer'.
+The class 'Java_ForStatement' is a specialization of 'Statement'.
+The class 'Java_IfStatement' is a specialization of 'Statement'.
+The class 'Java_ImportDeclaration' is a specialization of 'ASTNode'.
+The class 'Java_InfixExpression' is a specialization of 'Expression'.
+The class 'Java_Initializer' is a specialization of 'BodyDeclaration'.
+The class 'Java_InstanceofExpression' is a specialization of 'Expression'.
+The class 'Java_InterfaceDeclaration' is a specialization of 'TypeDeclaration'.
+The class 'Java_Javadoc' is a specialization of 'Comment'.
+The class 'Java_LabeledStatement' is a specialization of 'NamedElement'.
+The class 'Java_LabeledStatement' is a specialization of 'Statement'.
+The class 'Java_LineComment' is a specialization of 'Comment'.
+The class 'Java_MemberRef' is a specialization of 'ASTNode'.
+The class 'Java_MethodDeclaration' is a specialization of 'AbstractMethodDeclaration'.
+The class 'Java_MethodInvocation' is a specialization of 'Expression'.
+The class 'Java_MethodInvocation' is a specialization of 'AbstractMethodInvocation'.
+The class 'Java_MethodRef' is a specialization of 'ASTNode'.
+The class 'Java_MethodRefParameter' is a specialization of 'ASTNode'.
+The class 'Java_Modifier' is a specialization of 'ASTNode'.
+The class 'Java_NamedElement' is a specialization of 'ASTNode'.
+The class 'Java_NamespaceAccess' is a specialization of 'ASTNode'.
+The class 'Java_NumberLiteral' is a specialization of 'Expression'.
+The class 'Java_NullLiteral' is a specialization of 'Expression'.
+The class 'Java_Package' is a specialization of 'NamedElement'.
+The class 'Java_PackageAccess' is a specialization of 'NamespaceAccess'.
+The class 'Java_ParameterizedType' is a specialization of 'Type'.
+The class 'Java_ParenthesizedExpression' is a specialization of 'Expression'.
+The class 'Java_PostfixExpression' is a specialization of 'Expression'.
+The class 'Java_PrefixExpression' is a specialization of 'Expression'.
+The class 'Java_PrimitiveType' is a specialization of 'Type'.
+The class 'Java_PrimitiveTypeBoolean' is a specialization of 'PrimitiveType'.
+The class 'Java_PrimitiveTypeByte' is a specialization of 'PrimitiveType'.
+The class 'Java_PrimitiveTypeChar' is a specialization of 'PrimitiveType'.
+The class 'Java_PrimitiveTypeDouble' is a specialization of 'PrimitiveType'.
+The class 'Java_PrimitiveTypeShort' is a specialization of 'PrimitiveType'.
+The class 'Java_PrimitiveTypeFloat' is a specialization of 'PrimitiveType'.
+The class 'Java_PrimitiveTypeInt' is a specialization of 'PrimitiveType'.
+The class 'Java_PrimitiveTypeLong' is a specialization of 'PrimitiveType'.
+The class 'Java_PrimitiveTypeVoid' is a specialization of 'PrimitiveType'.
+The class 'Java_ReturnStatement' is a specialization of 'Statement'.
+The class 'Java_SingleVariableAccess' is a specialization of 'Expression'.
+The class 'Java_SingleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+The class 'Java_Statement' is a specialization of 'ASTNode'.
+The class 'Java_StringLiteral' is a specialization of 'Expression'.
+The class 'Java_SuperConstructorInvocation' is a specialization of 'Statement'.
+The class 'Java_SuperConstructorInvocation' is a specialization of 'AbstractMethodInvocation'.
+The class 'Java_SuperFieldAccess' is a specialization of 'AbstractTypeQualifiedExpression'.
+The class 'Java_SuperMethodInvocation' is a specialization of 'AbstractTypeQualifiedExpression'.
+The class 'Java_SuperMethodInvocation' is a specialization of 'AbstractMethodInvocation'.
+The class 'Java_SwitchCase' is a specialization of 'Statement'.
+The class 'Java_SwitchStatement' is a specialization of 'Statement'.
+The class 'Java_SynchronizedStatement' is a specialization of 'Statement'.
+The class 'Java_TagElement' is a specialization of 'ASTNode'.
+The class 'Java_TextElement' is a specialization of 'ASTNode'.
+The class 'Java_ThisExpression' is a specialization of 'AbstractTypeQualifiedExpression'.
+The class 'Java_ThrowStatement' is a specialization of 'Statement'.
+The class 'Java_TryStatement' is a specialization of 'Statement'.
+The class 'Java_Type' is a specialization of 'NamedElement'.
+The class 'Java_TypeAccess' is a specialization of 'Expression'.
+The class 'Java_TypeAccess' is a specialization of 'NamespaceAccess'.
+The class 'Java_TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'Java_TypeDeclarationStatement' is a specialization of 'Statement'.
+The class 'Java_TypeLiteral' is a specialization of 'Expression'.
+The class 'Java_TypeParameter' is a specialization of 'Type'.
+The class 'Java_UnresolvedItem' is a specialization of 'NamedElement'.
+The class 'Java_UnresolvedItemAccess' is a specialization of 'Expression'.
+The class 'Java_UnresolvedItemAccess' is a specialization of 'NamespaceAccess'.
+The class 'Java_UnresolvedAnnotationDeclaration' is a specialization of 'AnnotationTypeDeclaration'.
+The class 'Java_UnresolvedAnnotationDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'Java_UnresolvedAnnotationTypeMemberDeclaration' is a specialization of 'AnnotationTypeMemberDeclaration'.
+The class 'Java_UnresolvedAnnotationTypeMemberDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'Java_UnresolvedClassDeclaration' is a specialization of 'ClassDeclaration'.
+The class 'Java_UnresolvedClassDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'Java_UnresolvedEnumDeclaration' is a specialization of 'EnumDeclaration'.
+The class 'Java_UnresolvedEnumDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'Java_UnresolvedInterfaceDeclaration' is a specialization of 'InterfaceDeclaration'.
+The class 'Java_UnresolvedInterfaceDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'Java_UnresolvedLabeledStatement' is a specialization of 'LabeledStatement'.
+The class 'Java_UnresolvedLabeledStatement' is a specialization of 'UnresolvedItem'.
+The class 'Java_UnresolvedMethodDeclaration' is a specialization of 'MethodDeclaration'.
+The class 'Java_UnresolvedMethodDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'Java_UnresolvedSingleVariableDeclaration' is a specialization of 'SingleVariableDeclaration'.
+The class 'Java_UnresolvedSingleVariableDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'Java_UnresolvedType' is a specialization of 'Type'.
+The class 'Java_UnresolvedType' is a specialization of 'UnresolvedItem'.
+The class 'Java_UnresolvedTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'Java_UnresolvedTypeDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'Java_UnresolvedVariableDeclarationFragment' is a specialization of 'VariableDeclarationFragment'.
+The class 'Java_UnresolvedVariableDeclarationFragment' is a specialization of 'UnresolvedItem'.
+The class 'Java_VariableDeclaration' is a specialization of 'NamedElement'.
+The class 'Java_VariableDeclarationExpression' is a specialization of 'Expression'.
+The class 'Java_VariableDeclarationExpression' is a specialization of 'AbstractVariablesContainer'.
+The class 'Java_VariableDeclarationFragment' is a specialization of 'VariableDeclaration'.
+The class 'Java_VariableDeclarationStatement' is a specialization of 'Statement'.
+The class 'Java_VariableDeclarationStatement' is a specialization of 'AbstractVariablesContainer'.
+The class 'Java_WildCardType' is a specialization of 'Type'.
+The class 'Java_WhileStatement' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Java_Block' and 'Java_AbstractMethodDeclaration'. From 'Java_Block', the role 'Java_Block' has cardinality 0..*, and from 'Java_AbstractMethodDeclaration', the role 'Java_AbstractMethodDeclaration' has cardinality 0..*.
+An association connects 'Java_SingleVariableDeclaration' and 'Java_AbstractMethodDeclaration'. From 'Java_SingleVariableDeclaration', the role 'SingleVariableDeclaration' has cardinality 0..*, and from 'Java_AbstractMethodDeclaration', the role 'methodDeclaration' has cardinality 0..*.
+An association connects 'Java_TypeAccess' and 'Java_AbstractMethodDeclaration'. From 'Java_TypeAccess', the role 'Java_TypeAccess' has cardinality 0..*, and from 'Java_AbstractMethodDeclaration', the role 'Java_AbstractMethodDeclaration3' has cardinality 0..*.
+An association connects 'Java_AbstractMethodDeclaration' and 'Java_TypeParameter'. From 'Java_AbstractMethodDeclaration', the role 'Java_AbstractMethodDeclaration5' has cardinality 0..*, and from 'Java_TypeParameter', the role 'Java_TypeParameter' has cardinality 0..*.
+An association connects 'Java_AbstractMethodDeclaration' and 'Java_MethodRef'. From 'Java_AbstractMethodDeclaration', the role 'method' has cardinality 0..*, and from 'Java_MethodRef', the role 'MethodRef' has cardinality 0..*.
+An association connects 'Java_AbstractMethodDeclaration' and 'Java_AbstractMethodInvocation'. From 'Java_AbstractMethodDeclaration', the role 'method8' has cardinality 0..*, and from 'Java_AbstractMethodInvocation', the role 'AbstractMethodInvocation' has cardinality 0..*.
+An association connects 'Java_AbstractMethodDeclaration' and 'Java_AbstractMethodInvocation'. From 'Java_AbstractMethodDeclaration', the role 'AbstractMethodDeclaration' has cardinality 0..*, and from 'Java_AbstractMethodInvocation', the role 'usages' has cardinality 0..*.
+An association connects 'Java_Expression' and 'Java_AbstractMethodInvocation'. From 'Java_Expression', the role 'Java_Expression' has cardinality 0..*, and from 'Java_AbstractMethodInvocation', the role 'Java_AbstractMethodInvocation' has cardinality 0..*.
+An association connects 'Java_TypeAccess' and 'Java_AbstractMethodInvocation'. From 'Java_TypeAccess', the role 'Java_TypeAccess13' has cardinality 0..*, and from 'Java_AbstractMethodInvocation', the role 'Java_AbstractMethodInvocation12' has cardinality 0..*.
+An association connects 'Java_AbstractTypeDeclaration' and 'Java_BodyDeclaration'. From 'Java_AbstractTypeDeclaration', the role 'abstractTypeDeclaration' has cardinality 0..*, and from 'Java_BodyDeclaration', the role 'BodyDeclaration' has cardinality 0..*.
+An association connects 'Java_Comment' and 'Java_AbstractTypeDeclaration'. From 'Java_Comment', the role 'Java_Comment' has cardinality 0..*, and from 'Java_AbstractTypeDeclaration', the role 'Java_AbstractTypeDeclaration' has cardinality 0..*.
+An association connects 'Java_AbstractTypeDeclaration' and 'Java_Comment'. From 'Java_AbstractTypeDeclaration', the role 'Java_AbstractTypeDeclaration17' has cardinality 0..*, and from 'Java_Comment', the role 'Java_Comment18' has cardinality 0..*.
+An association connects 'Java_AbstractTypeDeclaration' and 'Java_Package'. From 'Java_AbstractTypeDeclaration', the role 'ownedElements' has cardinality 0..*, and from 'Java_Package', the role 'Package' has cardinality 0..*.
+An association connects 'Java_TypeAccess' and 'Java_AbstractTypeDeclaration'. From 'Java_TypeAccess', the role 'Java_TypeAccess22' has cardinality 0..*, and from 'Java_AbstractTypeDeclaration', the role 'Java_AbstractTypeDeclaration21' has cardinality 0..*.
+An association connects 'Java_TypeAccess' and 'Java_AbstractTypeQualifiedExpression'. From 'Java_TypeAccess', the role 'Java_TypeAccess24' has cardinality 0..*, and from 'Java_AbstractTypeQualifiedExpression', the role 'Java_AbstractTypeQualifiedExpression' has cardinality 0..*.
+An association connects 'Java_TypeAccess' and 'Java_AbstractVariablesContainer'. From 'Java_TypeAccess', the role 'Java_TypeAccess26' has cardinality 0..*, and from 'Java_AbstractVariablesContainer', the role 'Java_AbstractVariablesContainer' has cardinality 0..*.
+An association connects 'Java_AbstractVariablesContainer' and 'Java_VariableDeclarationFragment'. From 'Java_AbstractVariablesContainer', the role 'variablesContainer' has cardinality 0..*, and from 'Java_VariableDeclarationFragment', the role 'VariableDeclarationFragment' has cardinality 0..*.
+An association connects 'Java_TypeAccess' and 'Java_Annotation'. From 'Java_TypeAccess', the role 'Java_TypeAccess29' has cardinality 0..*, and from 'Java_Annotation', the role 'Java_Annotation' has cardinality 0..*.
+An association connects 'Java_AnnotationMemberValuePair' and 'Java_Annotation'. From 'Java_AnnotationMemberValuePair', the role 'Java_AnnotationMemberValuePair' has cardinality 0..*, and from 'Java_Annotation', the role 'Java_Annotation31' has cardinality 0..*.
+An association connects 'Java_Archive' and 'Java_ClassFile'. From 'Java_Archive', the role 'Java_Archive' has cardinality 0..*, and from 'Java_ClassFile', the role 'Java_ClassFile' has cardinality 0..*.
+An association connects 'Java_Archive' and 'Java_Manifest'. From 'Java_Archive', the role 'Java_Archive34' has cardinality 0..*, and from 'Java_Manifest', the role 'Java_Manifest' has cardinality 0..*.
+An association connects 'Java_AssertStatement' and 'Java_Expression'. From 'Java_AssertStatement', the role 'Java_AssertStatement' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression36' has cardinality 0..*.
+An association connects 'Java_AssertStatement' and 'Java_Expression'. From 'Java_AssertStatement', the role 'Java_AssertStatement38' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression39' has cardinality 0..*.
+An association connects 'Java_Comment' and 'Java_ASTNode'. From 'Java_Comment', the role 'Java_Comment41' has cardinality 0..*, and from 'Java_ASTNode', the role 'Java_ASTNode' has cardinality 0..*.
+An association connects 'Java_CompilationUnit' and 'Java_ASTNode'. From 'Java_CompilationUnit', the role 'Java_CompilationUnit' has cardinality 0..*, and from 'Java_ASTNode', the role 'Java_ASTNode43' has cardinality 0..*.
+An association connects 'Java_ClassFile' and 'Java_ASTNode'. From 'Java_ClassFile', the role 'Java_ClassFile46' has cardinality 0..*, and from 'Java_ASTNode', the role 'Java_ASTNode45' has cardinality 0..*.
+An association connects 'Java_AnnotationTypeMemberDeclaration' and 'Java_AnnotationMemberValuePair'. From 'Java_AnnotationTypeMemberDeclaration', the role 'AnnotationTypeMemberDeclaration' has cardinality 0..*, and from 'Java_AnnotationMemberValuePair', the role 'usages48' has cardinality 0..*.
+An association connects 'Java_AnnotationMemberValuePair' and 'Java_Expression'. From 'Java_AnnotationMemberValuePair', the role 'Java_AnnotationMemberValuePair50' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression51' has cardinality 0..*.
+An association connects 'Java_AnnotationTypeMemberDeclaration' and 'Java_Expression'. From 'Java_AnnotationTypeMemberDeclaration', the role 'Java_AnnotationTypeMemberDeclaration' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression53' has cardinality 0..*.
+An association connects 'Java_AnnotationTypeMemberDeclaration' and 'Java_TypeAccess'. From 'Java_AnnotationTypeMemberDeclaration', the role 'Java_AnnotationTypeMemberDeclaration55' has cardinality 0..*, and from 'Java_TypeAccess', the role 'Java_TypeAccess56' has cardinality 0..*.
+An association connects 'Java_AnnotationMemberValuePair' and 'Java_AnnotationTypeMemberDeclaration'. From 'Java_AnnotationMemberValuePair', the role 'AnnotationMemberValuePair' has cardinality 0..*, and from 'Java_AnnotationTypeMemberDeclaration', the role 'member' has cardinality 0..*.
+An association connects 'Java_BodyDeclaration' and 'Java_AnonymousClassDeclaration'. From 'Java_BodyDeclaration', the role 'BodyDeclaration59' has cardinality 0..*, and from 'Java_AnonymousClassDeclaration', the role 'anonymousClassDeclarationOwner' has cardinality 0..*.
+An association connects 'Java_AnonymousClassDeclaration' and 'Java_ClassInstanceCreation'. From 'Java_AnonymousClassDeclaration', the role 'anonymousClassDeclaration' has cardinality 0..*, and from 'Java_ClassInstanceCreation', the role 'ClassInstanceCreation' has cardinality 0..*.
+An association connects 'Java_ArrayAccess' and 'Java_Expression'. From 'Java_ArrayAccess', the role 'Java_ArrayAccess' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression62' has cardinality 0..*.
+An association connects 'Java_ArrayAccess' and 'Java_Expression'. From 'Java_ArrayAccess', the role 'Java_ArrayAccess64' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression65' has cardinality 0..*.
+An association connects 'Java_ArrayCreation' and 'Java_Expression'. From 'Java_ArrayCreation', the role 'Java_ArrayCreation' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression67' has cardinality 0..*.
+An association connects 'Java_ArrayInitializer' and 'Java_ArrayCreation'. From 'Java_ArrayInitializer', the role 'Java_ArrayInitializer' has cardinality 0..*, and from 'Java_ArrayCreation', the role 'Java_ArrayCreation69' has cardinality 0..*.
+An association connects 'Java_ArrayCreation' and 'Java_TypeAccess'. From 'Java_ArrayCreation', the role 'Java_ArrayCreation71' has cardinality 0..*, and from 'Java_TypeAccess', the role 'Java_TypeAccess72' has cardinality 0..*.
+An association connects 'Java_Expression' and 'Java_ArrayInitializer'. From 'Java_Expression', the role 'Java_Expression75' has cardinality 0..*, and from 'Java_ArrayInitializer', the role 'Java_ArrayInitializer74' has cardinality 0..*.
+An association connects 'Java_ArrayLengthAccess' and 'Java_Expression'. From 'Java_ArrayLengthAccess', the role 'Java_ArrayLengthAccess' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression77' has cardinality 0..*.
+An association connects 'Java_ArrayType' and 'Java_TypeAccess'. From 'Java_ArrayType', the role 'Java_ArrayType' has cardinality 0..*, and from 'Java_TypeAccess', the role 'Java_TypeAccess79' has cardinality 0..*.
+An association connects 'Java_Expression' and 'Java_Assignment'. From 'Java_Expression', the role 'Java_Expression81' has cardinality 0..*, and from 'Java_Assignment', the role 'Java_Assignment' has cardinality 0..*.
+An association connects 'Java_Expression' and 'Java_Assignment'. From 'Java_Expression', the role 'Java_Expression84' has cardinality 0..*, and from 'Java_Assignment', the role 'Java_Assignment83' has cardinality 0..*.
+An association connects 'Java_BodyDeclaration' and 'Java_AbstractTypeDeclaration'. From 'Java_BodyDeclaration', the role 'bodyDeclarations' has cardinality 0..*, and from 'Java_AbstractTypeDeclaration', the role 'AbstractTypeDeclaration' has cardinality 0..*.
+An association connects 'Java_BodyDeclaration' and 'Java_Annotation'. From 'Java_BodyDeclaration', the role 'Java_BodyDeclaration' has cardinality 0..*, and from 'Java_Annotation', the role 'Java_Annotation87' has cardinality 0..*.
+An association connects 'Java_BodyDeclaration' and 'Java_AnonymousClassDeclaration'. From 'Java_BodyDeclaration', the role 'bodyDeclarations89' has cardinality 0..*, and from 'Java_AnonymousClassDeclaration', the role 'AnonymousClassDeclaration' has cardinality 0..*.
+An association connects 'Java_Modifier' and 'Java_BodyDeclaration'. From 'Java_Modifier', the role 'Modifier' has cardinality 0..*, and from 'Java_BodyDeclaration', the role 'bodyDeclaration' has cardinality 0..*.
+An association connects 'Java_Statement' and 'Java_Block'. From 'Java_Statement', the role 'Java_Statement' has cardinality 0..*, and from 'Java_Block', the role 'Java_Block92' has cardinality 0..*.
+An association connects 'Java_LabeledStatement' and 'Java_BreakStatement'. From 'Java_LabeledStatement', the role 'LabeledStatement' has cardinality 0..*, and from 'Java_BreakStatement', the role 'usagesInBreakStatements' has cardinality 0..*.
+An association connects 'Java_CastExpression' and 'Java_Expression'. From 'Java_CastExpression', the role 'Java_CastExpression' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression95' has cardinality 0..*.
+An association connects 'Java_TypeAccess' and 'Java_CastExpression'. From 'Java_TypeAccess', the role 'Java_TypeAccess98' has cardinality 0..*, and from 'Java_CastExpression', the role 'Java_CastExpression97' has cardinality 0..*.
+An association connects 'Java_SingleVariableDeclaration' and 'Java_CatchClause'. From 'Java_SingleVariableDeclaration', the role 'SingleVariableDeclaration100' has cardinality 0..*, and from 'Java_CatchClause', the role 'catchClause' has cardinality 0..*.
+An association connects 'Java_Block' and 'Java_CatchClause'. From 'Java_Block', the role 'Java_Block102' has cardinality 0..*, and from 'Java_CatchClause', the role 'Java_CatchClause' has cardinality 0..*.
+An association connects 'Java_AbstractTypeDeclaration' and 'Java_ClassFile'. From 'Java_AbstractTypeDeclaration', the role 'Java_AbstractTypeDeclaration105' has cardinality 0..*, and from 'Java_ClassFile', the role 'Java_ClassFile104' has cardinality 0..*.
+An association connects 'Java_ClassFile' and 'Java_CompilationUnit'. From 'Java_ClassFile', the role 'Java_ClassFile107' has cardinality 0..*, and from 'Java_CompilationUnit', the role 'Java_CompilationUnit108' has cardinality 0..*.
+An association connects 'Java_Package' and 'Java_ClassFile'. From 'Java_Package', the role 'Java_Package' has cardinality 0..*, and from 'Java_ClassFile', the role 'Java_ClassFile110' has cardinality 0..*.
+An association connects 'Java_ClassInstanceCreation' and 'Java_AnonymousClassDeclaration'. From 'Java_ClassInstanceCreation', the role 'classInstanceCreation' has cardinality 0..*, and from 'Java_AnonymousClassDeclaration', the role 'AnonymousClassDeclaration112' has cardinality 0..*.
+An association connects 'Java_ClassInstanceCreation' and 'Java_Expression'. From 'Java_ClassInstanceCreation', the role 'Java_ClassInstanceCreation' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression114' has cardinality 0..*.
+An association connects 'Java_ClassInstanceCreation' and 'Java_TypeAccess'. From 'Java_ClassInstanceCreation', the role 'Java_ClassInstanceCreation116' has cardinality 0..*, and from 'Java_TypeAccess', the role 'Java_TypeAccess117' has cardinality 0..*.
+An association connects 'Java_Expression' and 'Java_ConditionalExpression'. From 'Java_Expression', the role 'Java_Expression119' has cardinality 0..*, and from 'Java_ConditionalExpression', the role 'Java_ConditionalExpression' has cardinality 0..*.
+An association connects 'Java_Expression' and 'Java_ConditionalExpression'. From 'Java_Expression', the role 'Java_Expression122' has cardinality 0..*, and from 'Java_ConditionalExpression', the role 'Java_ConditionalExpression121' has cardinality 0..*.
+An association connects 'Java_ConditionalExpression' and 'Java_Expression'. From 'Java_ConditionalExpression', the role 'Java_ConditionalExpression124' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression125' has cardinality 0..*.
+An association connects 'Java_TypeAccess' and 'Java_ClassDeclaration'. From 'Java_TypeAccess', the role 'Java_TypeAccess127' has cardinality 0..*, and from 'Java_ClassDeclaration', the role 'Java_ClassDeclaration' has cardinality 0..*.
+An association connects 'Java_Comment' and 'Java_CompilationUnit'. From 'Java_Comment', the role 'Java_Comment130' has cardinality 0..*, and from 'Java_CompilationUnit', the role 'Java_CompilationUnit129' has cardinality 0..*.
+An association connects 'Java_ImportDeclaration' and 'Java_CompilationUnit'. From 'Java_ImportDeclaration', the role 'Java_ImportDeclaration' has cardinality 0..*, and from 'Java_CompilationUnit', the role 'Java_CompilationUnit132' has cardinality 0..*.
+An association connects 'Java_CompilationUnit' and 'Java_Package'. From 'Java_CompilationUnit', the role 'Java_CompilationUnit134' has cardinality 0..*, and from 'Java_Package', the role 'Java_Package135' has cardinality 0..*.
+An association connects 'Java_AbstractTypeDeclaration' and 'Java_CompilationUnit'. From 'Java_AbstractTypeDeclaration', the role 'Java_AbstractTypeDeclaration138' has cardinality 0..*, and from 'Java_CompilationUnit', the role 'Java_CompilationUnit137' has cardinality 0..*.
+An association connects 'Java_LabeledStatement' and 'Java_ContinueStatement'. From 'Java_LabeledStatement', the role 'LabeledStatement140' has cardinality 0..*, and from 'Java_ContinueStatement', the role 'usagesInContinueStatements' has cardinality 0..*.
+An association connects 'Java_Expression' and 'Java_DoStatement'. From 'Java_Expression', the role 'Java_Expression142' has cardinality 0..*, and from 'Java_DoStatement', the role 'Java_DoStatement' has cardinality 0..*.
+An association connects 'Java_Statement' and 'Java_DoStatement'. From 'Java_Statement', the role 'Java_Statement145' has cardinality 0..*, and from 'Java_DoStatement', the role 'Java_DoStatement144' has cardinality 0..*.
+An association connects 'Java_EnhancedForStatement' and 'Java_Statement'. From 'Java_EnhancedForStatement', the role 'Java_EnhancedForStatement' has cardinality 0..*, and from 'Java_Statement', the role 'Java_Statement147' has cardinality 0..*.
+An association connects 'Java_EnhancedForStatement' and 'Java_Expression'. From 'Java_EnhancedForStatement', the role 'Java_EnhancedForStatement149' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression150' has cardinality 0..*.
+An association connects 'Java_EnhancedForStatement' and 'Java_SingleVariableDeclaration'. From 'Java_EnhancedForStatement', the role 'enhancedForStatement' has cardinality 0..*, and from 'Java_SingleVariableDeclaration', the role 'SingleVariableDeclaration152' has cardinality 0..*.
+An association connects 'Java_EnumConstantDeclaration' and 'Java_AnonymousClassDeclaration'. From 'Java_EnumConstantDeclaration', the role 'Java_EnumConstantDeclaration' has cardinality 0..*, and from 'Java_AnonymousClassDeclaration', the role 'Java_AnonymousClassDeclaration' has cardinality 0..*.
+An association connects 'Java_Expression' and 'Java_EnumConstantDeclaration'. From 'Java_Expression', the role 'Java_Expression156' has cardinality 0..*, and from 'Java_EnumConstantDeclaration', the role 'Java_EnumConstantDeclaration155' has cardinality 0..*.
+An association connects 'Java_EnumConstantDeclaration' and 'Java_EnumDeclaration'. From 'Java_EnumConstantDeclaration', the role 'Java_EnumConstantDeclaration158' has cardinality 0..*, and from 'Java_EnumDeclaration', the role 'Java_EnumDeclaration' has cardinality 0..*.
+An association connects 'Java_Expression' and 'Java_ExpressionStatement'. From 'Java_Expression', the role 'Java_Expression160' has cardinality 0..*, and from 'Java_ExpressionStatement', the role 'Java_ExpressionStatement' has cardinality 0..*.
+An association connects 'Java_SingleVariableAccess' and 'Java_FieldAccess'. From 'Java_SingleVariableAccess', the role 'Java_SingleVariableAccess' has cardinality 0..*, and from 'Java_FieldAccess', the role 'Java_FieldAccess' has cardinality 0..*.
+An association connects 'Java_Expression' and 'Java_FieldAccess'. From 'Java_Expression', the role 'Java_Expression164' has cardinality 0..*, and from 'Java_FieldAccess', the role 'Java_FieldAccess163' has cardinality 0..*.
+An association connects 'Java_Expression' and 'Java_ForStatement'. From 'Java_Expression', the role 'Java_Expression166' has cardinality 0..*, and from 'Java_ForStatement', the role 'Java_ForStatement' has cardinality 0..*.
+An association connects 'Java_Expression' and 'Java_ForStatement'. From 'Java_Expression', the role 'Java_Expression169' has cardinality 0..*, and from 'Java_ForStatement', the role 'Java_ForStatement168' has cardinality 0..*.
+An association connects 'Java_ForStatement' and 'Java_Expression'. From 'Java_ForStatement', the role 'Java_ForStatement171' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression172' has cardinality 0..*.
+An association connects 'Java_ForStatement' and 'Java_Statement'. From 'Java_ForStatement', the role 'Java_ForStatement174' has cardinality 0..*, and from 'Java_Statement', the role 'Java_Statement175' has cardinality 0..*.
+An association connects 'Java_IfStatement' and 'Java_Expression'. From 'Java_IfStatement', the role 'Java_IfStatement' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression177' has cardinality 0..*.
+An association connects 'Java_Statement' and 'Java_IfStatement'. From 'Java_Statement', the role 'Java_Statement180' has cardinality 0..*, and from 'Java_IfStatement', the role 'Java_IfStatement179' has cardinality 0..*.
+An association connects 'Java_IfStatement' and 'Java_Statement'. From 'Java_IfStatement', the role 'Java_IfStatement182' has cardinality 0..*, and from 'Java_Statement', the role 'Java_Statement183' has cardinality 0..*.
+An association connects 'Java_ImportDeclaration' and 'Java_NamedElement'. From 'Java_ImportDeclaration', the role 'usagesInImports' has cardinality 0..*, and from 'Java_NamedElement', the role 'NamedElement' has cardinality 0..*.
+An association connects 'Java_InfixExpression' and 'Java_Expression'. From 'Java_InfixExpression', the role 'Java_InfixExpression' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression186' has cardinality 0..*.
+An association connects 'Java_Expression' and 'Java_InfixExpression'. From 'Java_Expression', the role 'Java_Expression189' has cardinality 0..*, and from 'Java_InfixExpression', the role 'Java_InfixExpression188' has cardinality 0..*.
+An association connects 'Java_Expression' and 'Java_InfixExpression'. From 'Java_Expression', the role 'Java_Expression192' has cardinality 0..*, and from 'Java_InfixExpression', the role 'Java_InfixExpression191' has cardinality 0..*.
+An association connects 'Java_Initializer' and 'Java_Block'. From 'Java_Initializer', the role 'Java_Initializer' has cardinality 0..*, and from 'Java_Block', the role 'Java_Block194' has cardinality 0..*.
+An association connects 'Java_TypeAccess' and 'Java_InstanceofExpression'. From 'Java_TypeAccess', the role 'Java_TypeAccess196' has cardinality 0..*, and from 'Java_InstanceofExpression', the role 'Java_InstanceofExpression' has cardinality 0..*.
+An association connects 'Java_InstanceofExpression' and 'Java_Expression'. From 'Java_InstanceofExpression', the role 'Java_InstanceofExpression198' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression199' has cardinality 0..*.
+An association connects 'Java_TagElement' and 'Java_Javadoc'. From 'Java_TagElement', the role 'Java_TagElement' has cardinality 0..*, and from 'Java_Javadoc', the role 'Java_Javadoc' has cardinality 0..*.
+An association connects 'Java_Statement' and 'Java_LabeledStatement'. From 'Java_Statement', the role 'Java_Statement202' has cardinality 0..*, and from 'Java_LabeledStatement', the role 'Java_LabeledStatement' has cardinality 0..*.
+An association connects 'Java_BreakStatement' and 'Java_LabeledStatement'. From 'Java_BreakStatement', the role 'BreakStatement' has cardinality 0..*, and from 'Java_LabeledStatement', the role 'label' has cardinality 0..*.
+An association connects 'Java_ContinueStatement' and 'Java_LabeledStatement'. From 'Java_ContinueStatement', the role 'ContinueStatement' has cardinality 0..*, and from 'Java_LabeledStatement', the role 'label205' has cardinality 0..*.
+An association connects 'Java_ManifestAttribute' and 'Java_Manifest'. From 'Java_ManifestAttribute', the role 'Java_ManifestAttribute' has cardinality 0..*, and from 'Java_Manifest', the role 'Java_Manifest207' has cardinality 0..*.
+An association connects 'Java_Manifest' and 'Java_ManifestEntry'. From 'Java_Manifest', the role 'Java_Manifest209' has cardinality 0..*, and from 'Java_ManifestEntry', the role 'Java_ManifestEntry' has cardinality 0..*.
+An association connects 'Java_ManifestAttribute' and 'Java_ManifestEntry'. From 'Java_ManifestAttribute', the role 'Java_ManifestAttribute212' has cardinality 0..*, and from 'Java_ManifestEntry', the role 'Java_ManifestEntry211' has cardinality 0..*.
+An association connects 'Java_MemberRef' and 'Java_NamedElement'. From 'Java_MemberRef', the role 'Java_MemberRef' has cardinality 0..*, and from 'Java_NamedElement', the role 'Java_NamedElement' has cardinality 0..*.
+An association connects 'Java_MemberRef' and 'Java_TypeAccess'. From 'Java_MemberRef', the role 'Java_MemberRef215' has cardinality 0..*, and from 'Java_TypeAccess', the role 'Java_TypeAccess216' has cardinality 0..*.
+An association connects 'Java_TypeAccess' and 'Java_MethodDeclaration'. From 'Java_TypeAccess', the role 'Java_TypeAccess218' has cardinality 0..*, and from 'Java_MethodDeclaration', the role 'Java_MethodDeclaration' has cardinality 0..*.
+An association connects 'Java_MethodDeclaration' and 'Java_MethodDeclaration'. From 'Java_MethodDeclaration', the role 'redefinitions' has cardinality 0..*, and from 'Java_MethodDeclaration', the role 'MethodDeclaration' has cardinality 0..*.
+An association connects 'Java_MethodDeclaration' and 'Java_MethodDeclaration'. From 'Java_MethodDeclaration', the role 'MethodDeclaration223' has cardinality 0..*, and from 'Java_MethodDeclaration', the role 'redefinedMethodDeclaration' has cardinality 0..*.
+An association connects 'Java_MethodInvocation' and 'Java_Expression'. From 'Java_MethodInvocation', the role 'Java_MethodInvocation' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression225' has cardinality 0..*.
+An association connects 'Java_AbstractMethodDeclaration' and 'Java_MethodRef'. From 'Java_AbstractMethodDeclaration', the role 'AbstractMethodDeclaration227' has cardinality 0..*, and from 'Java_MethodRef', the role 'usagesInDocComments' has cardinality 0..*.
+An association connects 'Java_TypeAccess' and 'Java_MethodRef'. From 'Java_TypeAccess', the role 'Java_TypeAccess229' has cardinality 0..*, and from 'Java_MethodRef', the role 'Java_MethodRef' has cardinality 0..*.
+An association connects 'Java_MethodRef' and 'Java_MethodRefParameter'. From 'Java_MethodRef', the role 'Java_MethodRef231' has cardinality 0..*, and from 'Java_MethodRefParameter', the role 'Java_MethodRefParameter' has cardinality 0..*.
+An association connects 'Java_MethodRefParameter' and 'Java_TypeAccess'. From 'Java_MethodRefParameter', the role 'Java_MethodRefParameter233' has cardinality 0..*, and from 'Java_TypeAccess', the role 'Java_TypeAccess234' has cardinality 0..*.
+An association connects 'Java_Model' and 'Java_Package'. From 'Java_Model', the role 'model' has cardinality 0..*, and from 'Java_Package', the role 'Package236' has cardinality 0..*.
+An association connects 'Java_Type' and 'Java_Model'. From 'Java_Type', the role 'Java_Type' has cardinality 0..*, and from 'Java_Model', the role 'Java_Model' has cardinality 0..*.
+An association connects 'Java_Model' and 'Java_UnresolvedItem'. From 'Java_Model', the role 'Java_Model239' has cardinality 0..*, and from 'Java_UnresolvedItem', the role 'Java_UnresolvedItem' has cardinality 0..*.
+An association connects 'Java_Model' and 'Java_CompilationUnit'. From 'Java_Model', the role 'Java_Model241' has cardinality 0..*, and from 'Java_CompilationUnit', the role 'Java_CompilationUnit242' has cardinality 0..*.
+An association connects 'Java_ClassFile' and 'Java_Model'. From 'Java_ClassFile', the role 'Java_ClassFile245' has cardinality 0..*, and from 'Java_Model', the role 'Java_Model244' has cardinality 0..*.
+An association connects 'Java_Archive' and 'Java_Model'. From 'Java_Archive', the role 'Java_Archive248' has cardinality 0..*, and from 'Java_Model', the role 'Java_Model247' has cardinality 0..*.
+An association connects 'Java_Modifier' and 'Java_BodyDeclaration'. From 'Java_Modifier', the role 'modifier' has cardinality 0..*, and from 'Java_BodyDeclaration', the role 'BodyDeclaration250' has cardinality 0..*.
+An association connects 'Java_SingleVariableDeclaration' and 'Java_Modifier'. From 'Java_SingleVariableDeclaration', the role 'SingleVariableDeclaration253' has cardinality 0..*, and from 'Java_Modifier', the role 'modifier252' has cardinality 0..*.
+An association connects 'Java_VariableDeclarationStatement' and 'Java_Modifier'. From 'Java_VariableDeclarationStatement', the role 'VariableDeclarationStatement' has cardinality 0..*, and from 'Java_Modifier', the role 'modifier255' has cardinality 0..*.
+An association connects 'Java_Modifier' and 'Java_VariableDeclarationExpression'. From 'Java_Modifier', the role 'modifier257' has cardinality 0..*, and from 'Java_VariableDeclarationExpression', the role 'VariableDeclarationExpression' has cardinality 0..*.
+An association connects 'Java_NamedElement' and 'Java_ImportDeclaration'. From 'Java_NamedElement', the role 'importedElement' has cardinality 0..*, and from 'Java_ImportDeclaration', the role 'ImportDeclaration' has cardinality 0..*.
+An association connects 'Java_AbstractTypeDeclaration' and 'Java_Package'. From 'Java_AbstractTypeDeclaration', the role 'AbstractTypeDeclaration260' has cardinality 0..*, and from 'Java_Package', the role 'package' has cardinality 0..*.
+An association connects 'Java_Model' and 'Java_Package'. From 'Java_Model', the role 'Model' has cardinality 0..*, and from 'Java_Package', the role 'ownedElements262' has cardinality 0..*.
+An association connects 'Java_Package' and 'Java_Package'. From 'Java_Package', the role 'package265' has cardinality 0..*, and from 'Java_Package', the role 'Package266' has cardinality 0..*.
+An association connects 'Java_Package' and 'Java_Package'. From 'Java_Package', the role 'Package269' has cardinality 0..*, and from 'Java_Package', the role 'ownedPackages' has cardinality 0..*.
+An association connects 'Java_PackageAccess' and 'Java_Package'. From 'Java_PackageAccess', the role 'PackageAccess' has cardinality 0..*, and from 'Java_Package', the role 'package271' has cardinality 0..*.
+An association connects 'Java_Package' and 'Java_PackageAccess'. From 'Java_Package', the role 'Package273' has cardinality 0..*, and from 'Java_PackageAccess', the role 'usagesInPackageAccess' has cardinality 0..*.
+An association connects 'Java_PackageAccess' and 'Java_PackageAccess'. From 'Java_PackageAccess', the role 'Java_PackageAccess274' has cardinality 0..*, and from 'Java_PackageAccess', the role 'Java_PackageAccess' has cardinality 0..*.
+An association connects 'Java_ParameterizedType' and 'Java_TypeAccess'. From 'Java_ParameterizedType', the role 'Java_ParameterizedType' has cardinality 0..*, and from 'Java_TypeAccess', the role 'Java_TypeAccess277' has cardinality 0..*.
+An association connects 'Java_ParameterizedType' and 'Java_TypeAccess'. From 'Java_ParameterizedType', the role 'Java_ParameterizedType279' has cardinality 0..*, and from 'Java_TypeAccess', the role 'Java_TypeAccess280' has cardinality 0..*.
+An association connects 'Java_Expression' and 'Java_ParenthesizedExpression'. From 'Java_Expression', the role 'Java_Expression282' has cardinality 0..*, and from 'Java_ParenthesizedExpression', the role 'Java_ParenthesizedExpression' has cardinality 0..*.
+An association connects 'Java_PostfixExpression' and 'Java_Expression'. From 'Java_PostfixExpression', the role 'Java_PostfixExpression' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression284' has cardinality 0..*.
+An association connects 'Java_PrefixExpression' and 'Java_Expression'. From 'Java_PrefixExpression', the role 'Java_PrefixExpression' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression286' has cardinality 0..*.
+An association connects 'Java_ReturnStatement' and 'Java_Expression'. From 'Java_ReturnStatement', the role 'Java_ReturnStatement' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression288' has cardinality 0..*.
+An association connects 'Java_SingleVariableAccess' and 'Java_VariableDeclaration'. From 'Java_SingleVariableAccess', the role 'usageInVariableAccess' has cardinality 0..*, and from 'Java_VariableDeclaration', the role 'VariableDeclaration' has cardinality 0..*.
+An association connects 'Java_Expression' and 'Java_SingleVariableAccess'. From 'Java_Expression', the role 'Java_Expression292' has cardinality 0..*, and from 'Java_SingleVariableAccess', the role 'Java_SingleVariableAccess291' has cardinality 0..*.
+An association connects 'Java_Modifier' and 'Java_SingleVariableDeclaration'. From 'Java_Modifier', the role 'Modifier294' has cardinality 0..*, and from 'Java_SingleVariableDeclaration', the role 'singleVariableDeclaration' has cardinality 0..*.
+An association connects 'Java_SingleVariableDeclaration' and 'Java_TypeAccess'. From 'Java_SingleVariableDeclaration', the role 'Java_SingleVariableDeclaration' has cardinality 0..*, and from 'Java_TypeAccess', the role 'Java_TypeAccess296' has cardinality 0..*.
+An association connects 'Java_Annotation' and 'Java_SingleVariableDeclaration'. From 'Java_Annotation', the role 'Java_Annotation299' has cardinality 0..*, and from 'Java_SingleVariableDeclaration', the role 'Java_SingleVariableDeclaration298' has cardinality 0..*.
+An association connects 'Java_AbstractMethodDeclaration' and 'Java_SingleVariableDeclaration'. From 'Java_AbstractMethodDeclaration', the role 'AbstractMethodDeclaration301' has cardinality 0..*, and from 'Java_SingleVariableDeclaration', the role 'parameters' has cardinality 0..*.
+An association connects 'Java_CatchClause' and 'Java_SingleVariableDeclaration'. From 'Java_CatchClause', the role 'CatchClause' has cardinality 0..*, and from 'Java_SingleVariableDeclaration', the role 'exception' has cardinality 0..*.
+An association connects 'Java_SingleVariableDeclaration' and 'Java_EnhancedForStatement'. From 'Java_SingleVariableDeclaration', the role 'parameter' has cardinality 0..*, and from 'Java_EnhancedForStatement', the role 'EnhancedForStatement' has cardinality 0..*.
+An association connects 'Java_SuperConstructorInvocation' and 'Java_Expression'. From 'Java_SuperConstructorInvocation', the role 'Java_SuperConstructorInvocation' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression305' has cardinality 0..*.
+An association connects 'Java_SuperFieldAccess' and 'Java_SingleVariableAccess'. From 'Java_SuperFieldAccess', the role 'Java_SuperFieldAccess' has cardinality 0..*, and from 'Java_SingleVariableAccess', the role 'Java_SingleVariableAccess307' has cardinality 0..*.
+An association connects 'Java_SwitchCase' and 'Java_Expression'. From 'Java_SwitchCase', the role 'Java_SwitchCase' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression309' has cardinality 0..*.
+An association connects 'Java_Expression' and 'Java_SwitchStatement'. From 'Java_Expression', the role 'Java_Expression311' has cardinality 0..*, and from 'Java_SwitchStatement', the role 'Java_SwitchStatement' has cardinality 0..*.
+An association connects 'Java_SwitchStatement' and 'Java_Statement'. From 'Java_SwitchStatement', the role 'Java_SwitchStatement313' has cardinality 0..*, and from 'Java_Statement', the role 'Java_Statement314' has cardinality 0..*.
+An association connects 'Java_Block' and 'Java_SynchronizedStatement'. From 'Java_Block', the role 'Java_Block316' has cardinality 0..*, and from 'Java_SynchronizedStatement', the role 'Java_SynchronizedStatement' has cardinality 0..*.
+An association connects 'Java_Expression' and 'Java_SynchronizedStatement'. From 'Java_Expression', the role 'Java_Expression319' has cardinality 0..*, and from 'Java_SynchronizedStatement', the role 'Java_SynchronizedStatement318' has cardinality 0..*.
+An association connects 'Java_ASTNode' and 'Java_TagElement'. From 'Java_ASTNode', the role 'Java_ASTNode322' has cardinality 0..*, and from 'Java_TagElement', the role 'Java_TagElement321' has cardinality 0..*.
+An association connects 'Java_ThrowStatement' and 'Java_Expression'. From 'Java_ThrowStatement', the role 'Java_ThrowStatement' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression324' has cardinality 0..*.
+An association connects 'Java_Block' and 'Java_TryStatement'. From 'Java_Block', the role 'Java_Block326' has cardinality 0..*, and from 'Java_TryStatement', the role 'Java_TryStatement' has cardinality 0..*.
+An association connects 'Java_TryStatement' and 'Java_Block'. From 'Java_TryStatement', the role 'Java_TryStatement328' has cardinality 0..*, and from 'Java_Block', the role 'Java_Block329' has cardinality 0..*.
+An association connects 'Java_CatchClause' and 'Java_TryStatement'. From 'Java_CatchClause', the role 'Java_CatchClause332' has cardinality 0..*, and from 'Java_TryStatement', the role 'Java_TryStatement331' has cardinality 0..*.
+An association connects 'Java_Type' and 'Java_TypeAccess'. From 'Java_Type', the role 'type' has cardinality 0..*, and from 'Java_TypeAccess', the role 'TypeAccess' has cardinality 0..*.
+An association connects 'Java_Type' and 'Java_TypeAccess'. From 'Java_Type', the role 'Type' has cardinality 0..*, and from 'Java_TypeAccess', the role 'usagesInTypeAccess' has cardinality 0..*.
+An association connects 'Java_TypeAccess' and 'Java_NamespaceAccess'. From 'Java_TypeAccess', the role 'Java_TypeAccess336' has cardinality 0..*, and from 'Java_NamespaceAccess', the role 'Java_NamespaceAccess' has cardinality 0..*.
+An association connects 'Java_TypeDeclaration' and 'Java_TypeParameter'. From 'Java_TypeDeclaration', the role 'Java_TypeDeclaration' has cardinality 0..*, and from 'Java_TypeParameter', the role 'Java_TypeParameter338' has cardinality 0..*.
+An association connects 'Java_TypeDeclarationStatement' and 'Java_AbstractTypeDeclaration'. From 'Java_TypeDeclarationStatement', the role 'Java_TypeDeclarationStatement' has cardinality 0..*, and from 'Java_AbstractTypeDeclaration', the role 'Java_AbstractTypeDeclaration340' has cardinality 0..*.
+An association connects 'Java_TypeAccess' and 'Java_TypeLiteral'. From 'Java_TypeAccess', the role 'Java_TypeAccess342' has cardinality 0..*, and from 'Java_TypeLiteral', the role 'Java_TypeLiteral' has cardinality 0..*.
+An association connects 'Java_TypeParameter' and 'Java_TypeAccess'. From 'Java_TypeParameter', the role 'Java_TypeParameter344' has cardinality 0..*, and from 'Java_TypeAccess', the role 'Java_TypeAccess345' has cardinality 0..*.
+An association connects 'Java_UnresolvedItem' and 'Java_UnresolvedItemAccess'. From 'Java_UnresolvedItem', the role 'Java_UnresolvedItem347' has cardinality 0..*, and from 'Java_UnresolvedItemAccess', the role 'Java_UnresolvedItemAccess' has cardinality 0..*.
+An association connects 'Java_UnresolvedItemAccess' and 'Java_ASTNode'. From 'Java_UnresolvedItemAccess', the role 'Java_UnresolvedItemAccess349' has cardinality 0..*, and from 'Java_ASTNode', the role 'Java_ASTNode350' has cardinality 0..*.
+An association connects 'Java_VariableDeclaration' and 'Java_Expression'. From 'Java_VariableDeclaration', the role 'Java_VariableDeclaration' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression352' has cardinality 0..*.
+An association connects 'Java_SingleVariableAccess' and 'Java_VariableDeclaration'. From 'Java_SingleVariableAccess', the role 'SingleVariableAccess' has cardinality 0..*, and from 'Java_VariableDeclaration', the role 'variable' has cardinality 0..*.
+An association connects 'Java_VariableDeclarationExpression' and 'Java_Modifier'. From 'Java_VariableDeclarationExpression', the role 'variableDeclarationExpression' has cardinality 0..*, and from 'Java_Modifier', the role 'Modifier355' has cardinality 0..*.
+An association connects 'Java_Annotation' and 'Java_VariableDeclarationExpression'. From 'Java_Annotation', the role 'Java_Annotation357' has cardinality 0..*, and from 'Java_VariableDeclarationExpression', the role 'Java_VariableDeclarationExpression' has cardinality 0..*.
+An association connects 'Java_AbstractVariablesContainer' and 'Java_VariableDeclarationFragment'. From 'Java_AbstractVariablesContainer', the role 'AbstractVariablesContainer' has cardinality 0..*, and from 'Java_VariableDeclarationFragment', the role 'fragments' has cardinality 0..*.
+An association connects 'Java_Modifier' and 'Java_VariableDeclarationStatement'. From 'Java_Modifier', the role 'Modifier360' has cardinality 0..*, and from 'Java_VariableDeclarationStatement', the role 'variableDeclarationStatement' has cardinality 0..*.
+An association connects 'Java_Annotation' and 'Java_VariableDeclarationStatement'. From 'Java_Annotation', the role 'Java_Annotation362' has cardinality 0..*, and from 'Java_VariableDeclarationStatement', the role 'Java_VariableDeclarationStatement' has cardinality 0..*.
+An association connects 'Java_TypeAccess' and 'Java_WildCardType'. From 'Java_TypeAccess', the role 'Java_TypeAccess364' has cardinality 0..*, and from 'Java_WildCardType', the role 'Java_WildCardType' has cardinality 0..*.
+An association connects 'Java_WhileStatement' and 'Java_Expression'. From 'Java_WhileStatement', the role 'Java_WhileStatement' has cardinality 0..*, and from 'Java_Expression', the role 'Java_Expression366' has cardinality 0..*.
+An association connects 'Java_Statement' and 'Java_WhileStatement'. From 'Java_Statement', the role 'Java_Statement369' has cardinality 0..*, and from 'Java_WhileStatement', the role 'Java_WhileStatement368' has cardinality 0..*.

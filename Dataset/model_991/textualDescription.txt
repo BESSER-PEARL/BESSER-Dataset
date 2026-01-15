@@ -1,0 +1,43 @@
+The domain model 'dfs' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'dfs_Node' represents an important domain concept.
+It has the following attributes: 'postTraversal', which is of type int; 'preTraversal', which is of type int.
+
+'dfs_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'dfs_DepthFirstSearch' represents an important domain concept.
+It has the following attributes: 'postTraversalCounter', which is of type int; 'preTraversalCounter', which is of type int.
+
+'EdgeProcessor' represents an important domain concept.
+It does not declare any attributes.
+
+'dfs_Edge' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'dfs_DFSGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'dfs_EdgeProcessor' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EdgeType' defines the following possible values: 'FORWARD_EDGE', 'BACKWARD_EDGE', 'TREE_EDGE', 'CROSS_EDGE'.
+
+The model also captures inheritance relationships between classes.
+The class 'dfs_DepthFirstSearch' is a specialization of 'EdgeProcessor'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dfs_EdgeProcessor' and 'dfs_EdgeProcessor'. From 'dfs_EdgeProcessor', the role 'dfs_EdgeProcessor0' has cardinality 0..*, and from 'dfs_EdgeProcessor', the role 'dfs_EdgeProcessor' has cardinality 0..*.
+An association connects 'dfs_Edge' and 'dfs_Node'. From 'dfs_Edge', the role 'Edge' has cardinality 0..*, and from 'dfs_Node', the role 'target' has cardinality 0..*.
+An association connects 'dfs_Node' and 'dfs_DFSGraph'. From 'dfs_Node', the role 'nodes' has cardinality 0..*, and from 'dfs_DFSGraph', the role 'DFSGraph' has cardinality 0..*.
+An association connects 'dfs_EObject' and 'dfs_Node'. From 'dfs_EObject', the role 'dfs_EObject' has cardinality 0..*, and from 'dfs_Node', the role 'dfs_Node' has cardinality 0..*.
+An association connects 'dfs_Edge' and 'dfs_Node'. From 'dfs_Edge', the role 'Edge6' has cardinality 0..*, and from 'dfs_Node', the role 'source' has cardinality 0..*.
+An association connects 'dfs_DFSGraph' and 'dfs_Edge'. From 'dfs_DFSGraph', the role 'DFSGraph8' has cardinality 0..*, and from 'dfs_Edge', the role 'edges' has cardinality 0..*.
+An association connects 'dfs_Node' and 'dfs_Edge'. From 'dfs_Node', the role 'Node' has cardinality 0..*, and from 'dfs_Edge', the role 'outgoing' has cardinality 0..*.
+An association connects 'dfs_EObject' and 'dfs_Edge'. From 'dfs_EObject', the role 'dfs_EObject11' has cardinality 0..*, and from 'dfs_Edge', the role 'dfs_Edge' has cardinality 0..*.
+An association connects 'dfs_Edge' and 'dfs_Node'. From 'dfs_Edge', the role 'incoming' has cardinality 0..*, and from 'dfs_Node', the role 'Node13' has cardinality 0..*.
+An association connects 'dfs_Edge' and 'dfs_DFSGraph'. From 'dfs_Edge', the role 'Edge15' has cardinality 0..*, and from 'dfs_DFSGraph', the role 'graph' has cardinality 0..*.
+An association connects 'dfs_DFSGraph' and 'dfs_Node'. From 'dfs_DFSGraph', the role 'graph17' has cardinality 0..*, and from 'dfs_Node', the role 'Node18' has cardinality 0..*.

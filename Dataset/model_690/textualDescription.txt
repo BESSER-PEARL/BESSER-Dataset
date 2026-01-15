@@ -1,0 +1,1016 @@
+The domain model 'essentialocl' describes the core structural elements and their relationships within the system.
+
+The model defines 219 main class(es).
+
+'qvtrelation_Key' represents an important domain concept.
+It does not declare any attributes.
+
+'Module' represents an important domain concept.
+It does not declare any attributes.
+
+'Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_TryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_OperationBody' represents an important domain concept.
+It does not declare any attributes.
+
+'Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtbase_Transformation' represents an important domain concept.
+It does not declare any attributes.
+
+'LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_AssignExp' represents an important domain concept.
+It has one attribute: 'isReset', which is of type str.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'CorePattern' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_ContinueExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationBody' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtbase_FunctionParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_RelationalTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_ImperativeIterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Key' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Package' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'emof_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_IteratorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_BottomPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_UnlinkExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EnforcementOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_AltExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstructorBody' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtbase_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_StringLiteralExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'essentialocl_RealLiteralExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type str.
+
+'qvttemplate_TemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'MappingOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_ExpressionInOcl' represents an important domain concept.
+It does not declare any attributes.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_CollectionLiteralExp' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_NullLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'RealizedVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_OperationalTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedModel' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_Typedef' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelType' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_ImperativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtbase_Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_RaiseExp' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_MappingOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_ModelType' represents an important domain concept.
+It has one attribute: 'conformanceKind', which is of type str.
+
+'URIExtent' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_InvalidType' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_BooleanLiteralExp' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type str.
+
+'qvtrelation_DomainPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'ResolveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_VarParameter' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'imperativeocl_VariableInitExp' represents an important domain concept.
+It has one attribute: 'withResult', which is of type str.
+
+'emof_Property' represents an important domain concept.
+It has the following attributes: 'isId', which is of type str; 'isComposite', which is of type str; 'isReadOnly', which is of type str; 'isDerived', which is of type str; 'default', which is of type str.
+
+'qvtoperational_Module' represents an important domain concept.
+It has one attribute: 'isBlackbox', which is of type str.
+
+'qvtcore_CorePattern' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_InvalidLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_ConstructorBody' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Tag' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'essentialocl_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'ComputeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_InstantiationExp' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_UnpackExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_TypeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_TemplateParameterType' represents an important domain concept.
+It has one attribute: 'specification', which is of type str.
+
+'GuardPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_ModuleImport' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'emof_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Extent' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_Helper' represents an important domain concept.
+It has one attribute: 'isQuery', which is of type str.
+
+'qvtoperational_ObjectExp' represents an important domain concept.
+It does not declare any attributes.
+
+'qvttemplate_PropertyTemplateItem' represents an important domain concept.
+It does not declare any attributes.
+
+'qvttemplate_ObjectTemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_AnonymousTupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_UnlimitedNaturalExp' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_EntryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_ListType' represents an important domain concept.
+It does not declare any attributes.
+
+'BottomPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_TupleExp' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_ForExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_AssertExp' represents an important domain concept.
+It has one attribute: 'severity', which is of type str.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'EntryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_FeaturePropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_Area' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_DictionaryType' represents an important domain concept.
+It does not declare any attributes.
+
+'DomainPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_RelationImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_BreakExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_ResolveExp' represents an important domain concept.
+It has the following attributes: 'isDeferred', which is of type str; 'one', which is of type str; 'isInverse', which is of type str.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Tag' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectTemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_RelationDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_CollectionRange' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_IntegerLiteralExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'qvtbase_TypedModel' represents an important domain concept.
+It does not declare any attributes.
+
+'InstantiationExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Extent' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_Relation' represents an important domain concept.
+It has one attribute: 'isTopLevel', which is of type str.
+
+'imperativeocl_DictLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'AltExp' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyTemplateItem' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_MappingParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_MappingBody' represents an important domain concept.
+It does not declare any attributes.
+
+'Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_AnonymousTupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeLoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_CollectionItem' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_Constructor' represents an important domain concept.
+It does not declare any attributes.
+
+'VarParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Area' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_URIExtent' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_EnforcementOperation' represents an important domain concept.
+It has one attribute: 'enforcementMode', which is of type str.
+
+'essentialocl_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'DictLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_EnumLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_MultiplicityElement' represents an important domain concept.
+It has the following attributes: 'isUnique', which is of type str; 'upper', which is of type str; 'lower', which is of type str; 'isOrdered', which is of type str.
+
+'Object' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_ImperativeCallExp' represents an important domain concept.
+It has one attribute: 'isVirtual', which is of type str.
+
+'imperativeocl_DictLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_MappingCallExp' represents an important domain concept.
+It has one attribute: 'isStrict', which is of type str.
+
+'qvtcore_CoreDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'FeaturePropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_BlockExp' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_Assignment' represents an important domain concept.
+It has one attribute: 'isDefault', which is of type str.
+
+'TryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_AnonymousTupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_ComputeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Transformation' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_GuardPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_SwitchExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'qvttemplate_CollectionTemplateExp' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'imperativeocl_ImperativeLoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_RealizedVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'AnonymousTupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_ContextualProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'ModuleImport' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtbase_Domain' represents an important domain concept.
+It has the following attributes: 'isCheckable', which is of type str; 'isEnforceable', which is of type str.
+
+'qvtbase_Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationalTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_LogExp' represents an important domain concept.
+It has the following attributes: 'level', which is of type str; 'text', which is of type str.
+
+'imperativeocl_CollectorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_ReturnExp' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_ResolveInExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'LogExp' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_WhileExp' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_ModelParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Class' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type str.
+
+'qvtbase_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_ImperativeOperation' represents an important domain concept.
+It has one attribute: 'isBlackbox', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DirectionKind' defines the following possible values: 'out', 'in', 'inout'.
+The enumeration 'ImportKind' defines the following possible values: 'access', 'extension'.
+The enumeration 'EnforcementMode' defines the following possible values: 'Creation', 'Deletion'.
+The enumeration 'CollectionKind' defines the following possible values: 'Bag', 'Set', 'Sequence', 'OrderedSet'.
+The enumeration 'SeverityKind' defines the following possible values: 'fatal', 'warning', 'error'.
+
+The model also captures inheritance relationships between classes.
+The class 'qvttemplate_TemplateExp' is a specialization of 'LiteralExp'.
+The class 'qvttemplate_ObjectTemplateExp' is a specialization of 'TemplateExp'.
+The class 'qvttemplate_CollectionTemplateExp' is a specialization of 'TemplateExp'.
+The class 'qvttemplate_PropertyTemplateItem' is a specialization of 'Element'.
+The class 'imperativeocl_ImperativeIterateExp' is a specialization of 'ImperativeLoopExp'.
+The class 'imperativeocl_AssignExp' is a specialization of 'ImperativeExpression'.
+The class 'imperativeocl_BlockExp' is a specialization of 'ImperativeExpression'.
+The class 'imperativeocl_SwitchExp' is a specialization of 'CallExp'.
+The class 'imperativeocl_SwitchExp' is a specialization of 'ImperativeExpression'.
+The class 'imperativeocl_VariableInitExp' is a specialization of 'ImperativeExpression'.
+The class 'imperativeocl_WhileExp' is a specialization of 'ImperativeExpression'.
+The class 'imperativeocl_ComputeExp' is a specialization of 'ImperativeExpression'.
+The class 'imperativeocl_AltExp' is a specialization of 'ImperativeExpression'.
+The class 'imperativeocl_UnlinkExp' is a specialization of 'ImperativeExpression'.
+The class 'imperativeocl_ReturnExp' is a specialization of 'ImperativeExpression'.
+The class 'imperativeocl_BreakExp' is a specialization of 'ImperativeExpression'.
+The class 'imperativeocl_TryExp' is a specialization of 'ImperativeExpression'.
+The class 'imperativeocl_RaiseExp' is a specialization of 'ImperativeExpression'.
+The class 'imperativeocl_ContinueExp' is a specialization of 'ImperativeExpression'.
+The class 'imperativeocl_ForExp' is a specialization of 'ImperativeLoopExp'.
+The class 'imperativeocl_TupleExp' is a specialization of 'ImperativeExpression'.
+The class 'imperativeocl_Typedef' is a specialization of 'Class'.
+The class 'imperativeocl_InstantiationExp' is a specialization of 'ImperativeExpression'.
+The class 'imperativeocl_DictionaryType' is a specialization of 'CollectionType'.
+The class 'imperativeocl_DictLiteralExp' is a specialization of 'LiteralExp'.
+The class 'imperativeocl_DictLiteralPart' is a specialization of 'Element'.
+The class 'imperativeocl_TemplateParameterType' is a specialization of 'Type'.
+The class 'imperativeocl_LogExp' is a specialization of 'ImperativeExpression'.
+The class 'imperativeocl_AssertExp' is a specialization of 'ImperativeExpression'.
+The class 'imperativeocl_ImperativeLoopExp' is a specialization of 'LoopExp'.
+The class 'imperativeocl_ImperativeLoopExp' is a specialization of 'ImperativeExpression'.
+The class 'imperativeocl_CollectorExp' is a specialization of 'ImperativeLoopExp'.
+The class 'imperativeocl_ImperativeExpression' is a specialization of 'OclExpression'.
+The class 'imperativeocl_UnpackExp' is a specialization of 'ImperativeExpression'.
+The class 'imperativeocl_AnonymousTupleType' is a specialization of 'Class'.
+The class 'imperativeocl_AnonymousTupleLiteralExp' is a specialization of 'LiteralExp'.
+The class 'imperativeocl_AnonymousTupleLiteralPart' is a specialization of 'Element'.
+The class 'imperativeocl_ListType' is a specialization of 'CollectionType'.
+The class 'emof_Class' is a specialization of 'Type'.
+The class 'emof_DataType' is a specialization of 'Type'.
+The class 'emof_Element' is a specialization of 'Object'.
+The class 'emof_Tag' is a specialization of 'Element'.
+The class 'emof_Enumeration' is a specialization of 'DataType'.
+The class 'emof_NamedElement' is a specialization of 'Element'.
+The class 'emof_Extent' is a specialization of 'Object'.
+The class 'emof_Operation' is a specialization of 'MultiplicityElement'.
+The class 'emof_Operation' is a specialization of 'TypedElement'.
+The class 'emof_Package' is a specialization of 'NamedElement'.
+The class 'emof_Type' is a specialization of 'NamedElement'.
+The class 'emof_Parameter' is a specialization of 'MultiplicityElement'.
+The class 'emof_Parameter' is a specialization of 'TypedElement'.
+The class 'emof_EnumerationLiteral' is a specialization of 'NamedElement'.
+The class 'emof_Property' is a specialization of 'MultiplicityElement'.
+The class 'emof_Property' is a specialization of 'TypedElement'.
+The class 'emof_TypedElement' is a specialization of 'NamedElement'.
+The class 'emof_PrimitiveType' is a specialization of 'DataType'.
+The class 'emof_URIExtent' is a specialization of 'Extent'.
+The class 'emof_Comment' is a specialization of 'Element'.
+The class 'qvtoperational_MappingBody' is a specialization of 'OperationBody'.
+The class 'qvtoperational_Helper' is a specialization of 'ImperativeOperation'.
+The class 'qvtoperational_ResolveExp' is a specialization of 'CallExp'.
+The class 'qvtoperational_ResolveInExp' is a specialization of 'ResolveExp'.
+The class 'qvtoperational_OperationalTransformation' is a specialization of 'Module'.
+The class 'qvtoperational_MappingParameter' is a specialization of 'VarParameter'.
+The class 'qvtoperational_MappingOperation' is a specialization of 'ImperativeOperation'.
+The class 'qvtoperational_MappingOperation' is a specialization of 'Operation'.
+The class 'qvtoperational_MappingOperation' is a specialization of 'NamedElement'.
+The class 'qvtoperational_MappingCallExp' is a specialization of 'ImperativeCallExp'.
+The class 'qvtoperational_Constructor' is a specialization of 'ImperativeOperation'.
+The class 'qvtoperational_ContextualProperty' is a specialization of 'Property'.
+The class 'qvtoperational_EntryOperation' is a specialization of 'ImperativeOperation'.
+The class 'qvtoperational_ImperativeCallExp' is a specialization of 'OperationCallExp'.
+The class 'qvtoperational_ImperativeOperation' is a specialization of 'Operation'.
+The class 'qvtoperational_Library' is a specialization of 'Module'.
+The class 'qvtoperational_ModelParameter' is a specialization of 'VarParameter'.
+The class 'qvtoperational_ModelType' is a specialization of 'Class'.
+The class 'qvtoperational_ModelType' is a specialization of 'URIExtent'.
+The class 'qvtoperational_Module' is a specialization of 'Class'.
+The class 'qvtoperational_Module' is a specialization of 'Package'.
+The class 'qvtoperational_ModuleImport' is a specialization of 'Element'.
+The class 'qvtoperational_VarParameter' is a specialization of 'Parameter'.
+The class 'qvtoperational_VarParameter' is a specialization of 'Variable'.
+The class 'qvtoperational_OperationBody' is a specialization of 'Element'.
+The class 'qvtoperational_ConstructorBody' is a specialization of 'OperationBody'.
+The class 'qvtoperational_ObjectExp' is a specialization of 'InstantiationExp'.
+The class 'qvtcore_BottomPattern' is a specialization of 'CorePattern'.
+The class 'qvtcore_GuardPattern' is a specialization of 'CorePattern'.
+The class 'qvtcore_Mapping' is a specialization of 'Rule'.
+The class 'qvtcore_Mapping' is a specialization of 'Area'.
+The class 'qvtcore_RealizedVariable' is a specialization of 'Variable'.
+The class 'qvtcore_CoreDomain' is a specialization of 'Domain'.
+The class 'qvtcore_CoreDomain' is a specialization of 'Area'.
+The class 'qvtcore_CorePattern' is a specialization of 'Pattern'.
+The class 'qvtbase_Domain' is a specialization of 'NamedElement'.
+The class 'qvtbase_Transformation' is a specialization of 'Class'.
+The class 'qvtbase_Transformation' is a specialization of 'Package'.
+The class 'qvtbase_TypedModel' is a specialization of 'NamedElement'.
+The class 'qvtbase_Rule' is a specialization of 'NamedElement'.
+The class 'qvtbase_Pattern' is a specialization of 'Element'.
+The class 'qvtbase_Predicate' is a specialization of 'Element'.
+The class 'qvtbase_Function' is a specialization of 'Operation'.
+The class 'qvtbase_FunctionParameter' is a specialization of 'Parameter'.
+The class 'qvtbase_FunctionParameter' is a specialization of 'Variable'.
+The class 'qvtrelation_RelationalTransformation' is a specialization of 'Transformation'.
+The class 'qvtrelation_Relation' is a specialization of 'Rule'.
+The class 'qvtrelation_RelationDomain' is a specialization of 'Domain'.
+The class 'qvtrelation_DomainPattern' is a specialization of 'Pattern'.
+The class 'qvtrelation_RelationImplementation' is a specialization of 'Element'.
+The class 'qvtrelation_Key' is a specialization of 'Element'.
+The class 'essentialocl_BooleanLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'essentialocl_CallExp' is a specialization of 'OclExpression'.
+The class 'essentialocl_OclExpression' is a specialization of 'TypedElement'.
+The class 'essentialocl_UnlimitedNaturalExp' is a specialization of 'NumericLiteralExp'.
+The class 'essentialocl_IfExp' is a specialization of 'OclExpression'.
+The class 'essentialocl_LetExp' is a specialization of 'OclExpression'.
+The class 'essentialocl_Variable' is a specialization of 'TypedElement'.
+The class 'essentialocl_PropertyCallExp' is a specialization of 'FeaturePropertyCall'.
+The class 'essentialocl_VariableExp' is a specialization of 'OclExpression'.
+The class 'essentialocl_TypeExp' is a specialization of 'OclExpression'.
+The class 'essentialocl_LoopExp' is a specialization of 'CallExp'.
+The class 'essentialocl_LoopExp' is a specialization of 'OclExpression'.
+The class 'essentialocl_IteratorExp' is a specialization of 'LoopExp'.
+The class 'essentialocl_StringLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'essentialocl_IntegerLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'essentialocl_OperationCallExp' is a specialization of 'FeaturePropertyCall'.
+The class 'essentialocl_RealLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'essentialocl_LiteralExp' is a specialization of 'OclExpression'.
+The class 'essentialocl_IterateExp' is a specialization of 'LoopExp'.
+The class 'essentialocl_PrimitiveLiteralExp' is a specialization of 'LiteralExp'.
+The class 'essentialocl_NumericLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'essentialocl_CollectionLiteralExp' is a specialization of 'LiteralExp'.
+The class 'essentialocl_CollectionLiteralPart' is a specialization of 'TypedElement'.
+The class 'essentialocl_CollectionItem' is a specialization of 'CollectionLiteralPart'.
+The class 'essentialocl_CollectionRange' is a specialization of 'CollectionLiteralPart'.
+The class 'essentialocl_TupleLiteralExp' is a specialization of 'LiteralExp'.
+The class 'essentialocl_NullLiteralExp' is a specialization of 'LiteralExp'.
+The class 'essentialocl_ExpressionInOcl' is a specialization of 'OpaqueExpression'.
+The class 'essentialocl_InvalidLiteralExp' is a specialization of 'LiteralExp'.
+The class 'essentialocl_FeaturePropertyCall' is a specialization of 'CallExp'.
+The class 'essentialocl_TupleLiteralPart' is a specialization of 'TypedElement'.
+The class 'essentialocl_BagType' is a specialization of 'CollectionType'.
+The class 'essentialocl_CollectionType' is a specialization of 'DataType'.
+The class 'essentialocl_EnumLiteralExp' is a specialization of 'LiteralExp'.
+The class 'essentialocl_InvalidType' is a specialization of 'Type'.
+The class 'essentialocl_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'essentialocl_SequenceType' is a specialization of 'CollectionType'.
+The class 'essentialocl_SetType' is a specialization of 'CollectionType'.
+The class 'essentialocl_TupleType' is a specialization of 'Class'.
+The class 'essentialocl_TupleType' is a specialization of 'DataType'.
+The class 'essentialocl_VoidType' is a specialization of 'Type'.
+The class 'essentialocl_AnyType' is a specialization of 'Class'.
+The class 'essentialocl_AnyType' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'qvttemplate_TemplateExp' and 'Variable'. From 'qvttemplate_TemplateExp', the role 'qvttemplate_TemplateExp' has cardinality 0..*, and from 'Variable', the role 'Variable' has cardinality 0..*.
+An association connects 'OclExpression' and 'qvttemplate_TemplateExp'. From 'OclExpression', the role 'OclExpression' has cardinality 0..*, and from 'qvttemplate_TemplateExp', the role 'qvttemplate_TemplateExp2' has cardinality 0..*.
+An association connects 'PropertyTemplateItem' and 'qvttemplate_ObjectTemplateExp'. From 'PropertyTemplateItem', the role '#' has cardinality 0..*, and from 'qvttemplate_ObjectTemplateExp', the role '0' has cardinality 0..*.
+An association connects 'Class' and 'qvttemplate_ObjectTemplateExp'. From 'Class', the role 'Class' has cardinality 0..*, and from 'qvttemplate_ObjectTemplateExp', the role 'qvttemplate_ObjectTemplateExp' has cardinality 0..*.
+An association connects 'qvttemplate_CollectionTemplateExp' and 'OclExpression'. From 'qvttemplate_CollectionTemplateExp', the role 'qvttemplate_CollectionTemplateExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression6' has cardinality 0..*.
+An association connects 'qvttemplate_CollectionTemplateExp' and 'CollectionType'. From 'qvttemplate_CollectionTemplateExp', the role 'qvttemplate_CollectionTemplateExp8' has cardinality 0..*, and from 'CollectionType', the role 'CollectionType' has cardinality 0..*.
+An association connects 'qvttemplate_CollectionTemplateExp' and 'OclExpression'. From 'qvttemplate_CollectionTemplateExp', the role 'qvttemplate_CollectionTemplateExp10' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression11' has cardinality 0..*.
+An association connects 'ObjectTemplateExp' and 'qvttemplate_PropertyTemplateItem'. From 'ObjectTemplateExp', the role '#14' has cardinality 0..*, and from 'qvttemplate_PropertyTemplateItem', the role '013' has cardinality 0..*.
+An association connects 'OclExpression' and 'qvttemplate_PropertyTemplateItem'. From 'OclExpression', the role 'OclExpression16' has cardinality 0..*, and from 'qvttemplate_PropertyTemplateItem', the role 'qvttemplate_PropertyTemplateItem' has cardinality 0..*.
+An association connects 'Property' and 'qvttemplate_PropertyTemplateItem'. From 'Property', the role 'Property' has cardinality 0..*, and from 'qvttemplate_PropertyTemplateItem', the role 'qvttemplate_PropertyTemplateItem18' has cardinality 0..*.
+An association connects 'Variable' and 'imperativeocl_ImperativeIterateExp'. From 'Variable', the role 'Variable20' has cardinality 0..*, and from 'imperativeocl_ImperativeIterateExp', the role 'imperativeocl_ImperativeIterateExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'imperativeocl_AssignExp'. From 'OclExpression', the role 'OclExpression22' has cardinality 0..*, and from 'imperativeocl_AssignExp', the role 'imperativeocl_AssignExp' has cardinality 0..*.
+An association connects 'imperativeocl_AssignExp' and 'OclExpression'. From 'imperativeocl_AssignExp', the role 'imperativeocl_AssignExp24' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression25' has cardinality 0..*.
+An association connects 'OclExpression' and 'imperativeocl_AssignExp'. From 'OclExpression', the role 'OclExpression28' has cardinality 0..*, and from 'imperativeocl_AssignExp', the role 'imperativeocl_AssignExp27' has cardinality 0..*.
+An association connects 'imperativeocl_BlockExp' and 'OclExpression'. From 'imperativeocl_BlockExp', the role 'imperativeocl_BlockExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression30' has cardinality 0..*.
+An association connects 'AltExp' and 'imperativeocl_SwitchExp'. From 'AltExp', the role 'AltExp' has cardinality 0..*, and from 'imperativeocl_SwitchExp', the role 'imperativeocl_SwitchExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'imperativeocl_SwitchExp'. From 'OclExpression', the role 'OclExpression34' has cardinality 0..*, and from 'imperativeocl_SwitchExp', the role 'imperativeocl_SwitchExp33' has cardinality 0..*.
+An association connects 'Variable' and 'imperativeocl_VariableInitExp'. From 'Variable', the role 'Variable36' has cardinality 0..*, and from 'imperativeocl_VariableInitExp', the role 'imperativeocl_VariableInitExp' has cardinality 0..*.
+An association connects 'imperativeocl_WhileExp' and 'OclExpression'. From 'imperativeocl_WhileExp', the role 'imperativeocl_WhileExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression38' has cardinality 0..*.
+An association connects 'OclExpression' and 'imperativeocl_WhileExp'. From 'OclExpression', the role 'OclExpression41' has cardinality 0..*, and from 'imperativeocl_WhileExp', the role 'imperativeocl_WhileExp40' has cardinality 0..*.
+An association connects 'imperativeocl_ComputeExp' and 'Variable'. From 'imperativeocl_ComputeExp', the role '7' has cardinality 0..*, and from 'Variable', the role '#43' has cardinality 0..*.
+An association connects 'imperativeocl_ComputeExp' and 'OclExpression'. From 'imperativeocl_ComputeExp', the role 'imperativeocl_ComputeExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression45' has cardinality 0..*.
+An association connects 'imperativeocl_AltExp' and 'OclExpression'. From 'imperativeocl_AltExp', the role 'imperativeocl_AltExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression47' has cardinality 0..*.
+An association connects 'imperativeocl_AltExp' and 'OclExpression'. From 'imperativeocl_AltExp', the role 'imperativeocl_AltExp49' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression50' has cardinality 0..*.
+An association connects 'imperativeocl_UnlinkExp' and 'OclExpression'. From 'imperativeocl_UnlinkExp', the role 'imperativeocl_UnlinkExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression52' has cardinality 0..*.
+An association connects 'OclExpression' and 'imperativeocl_UnlinkExp'. From 'OclExpression', the role 'OclExpression55' has cardinality 0..*, and from 'imperativeocl_UnlinkExp', the role 'imperativeocl_UnlinkExp54' has cardinality 0..*.
+An association connects 'OclExpression' and 'imperativeocl_ReturnExp'. From 'OclExpression', the role 'OclExpression57' has cardinality 0..*, and from 'imperativeocl_ReturnExp', the role 'imperativeocl_ReturnExp' has cardinality 0..*.
+An association connects 'imperativeocl_TryExp' and 'OclExpression'. From 'imperativeocl_TryExp', the role '759' has cardinality 0..*, and from 'OclExpression', the role '#60' has cardinality 0..*.
+An association connects 'Type' and 'imperativeocl_TryExp'. From 'Type', the role 'Type' has cardinality 0..*, and from 'imperativeocl_TryExp', the role 'imperativeocl_TryExp' has cardinality 0..*.
+An association connects 'imperativeocl_TryExp' and 'OclExpression'. From 'imperativeocl_TryExp', the role 'imperativeocl_TryExp63' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression64' has cardinality 0..*.
+An association connects 'Type' and 'imperativeocl_RaiseExp'. From 'Type', the role 'Type66' has cardinality 0..*, and from 'imperativeocl_RaiseExp', the role 'imperativeocl_RaiseExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'imperativeocl_TupleExp'. From 'OclExpression', the role 'OclExpression68' has cardinality 0..*, and from 'imperativeocl_TupleExp', the role 'imperativeocl_TupleExp' has cardinality 0..*.
+An association connects 'Type' and 'imperativeocl_Typedef'. From 'Type', the role 'Type70' has cardinality 0..*, and from 'imperativeocl_Typedef', the role 'imperativeocl_Typedef' has cardinality 0..*.
+An association connects 'OclExpression' and 'imperativeocl_Typedef'. From 'OclExpression', the role 'OclExpression73' has cardinality 0..*, and from 'imperativeocl_Typedef', the role 'imperativeocl_Typedef72' has cardinality 0..*.
+An association connects 'Class' and 'imperativeocl_InstantiationExp'. From 'Class', the role 'Class75' has cardinality 0..*, and from 'imperativeocl_InstantiationExp', the role 'imperativeocl_InstantiationExp' has cardinality 0..*.
+An association connects 'Variable' and 'imperativeocl_InstantiationExp'. From 'Variable', the role 'Variable78' has cardinality 0..*, and from 'imperativeocl_InstantiationExp', the role 'imperativeocl_InstantiationExp77' has cardinality 0..*.
+An association connects 'imperativeocl_InstantiationExp' and 'OclExpression'. From 'imperativeocl_InstantiationExp', the role 'imperativeocl_InstantiationExp80' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression81' has cardinality 0..*.
+An association connects 'Type' and 'imperativeocl_DictionaryType'. From 'Type', the role 'Type83' has cardinality 0..*, and from 'imperativeocl_DictionaryType', the role 'imperativeocl_DictionaryType' has cardinality 0..*.
+An association connects 'imperativeocl_DictLiteralExp' and 'DictLiteralPart'. From 'imperativeocl_DictLiteralExp', the role 'imperativeocl_DictLiteralExp' has cardinality 0..*, and from 'DictLiteralPart', the role 'DictLiteralPart' has cardinality 0..*.
+An association connects 'OclExpression' and 'imperativeocl_DictLiteralPart'. From 'OclExpression', the role 'OclExpression86' has cardinality 0..*, and from 'imperativeocl_DictLiteralPart', the role 'imperativeocl_DictLiteralPart' has cardinality 0..*.
+An association connects 'OclExpression' and 'imperativeocl_DictLiteralPart'. From 'OclExpression', the role 'OclExpression89' has cardinality 0..*, and from 'imperativeocl_DictLiteralPart', the role 'imperativeocl_DictLiteralPart88' has cardinality 0..*.
+An association connects 'imperativeocl_LogExp' and 'OclExpression'. From 'imperativeocl_LogExp', the role 'imperativeocl_LogExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression91' has cardinality 0..*.
+An association connects 'imperativeocl_LogExp' and 'Element'. From 'imperativeocl_LogExp', the role 'imperativeocl_LogExp93' has cardinality 0..*, and from 'Element', the role 'Element' has cardinality 0..*.
+An association connects 'imperativeocl_AssertExp' and 'LogExp'. From 'imperativeocl_AssertExp', the role 'imperativeocl_AssertExp' has cardinality 0..*, and from 'LogExp', the role 'LogExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'imperativeocl_AssertExp'. From 'OclExpression', the role 'OclExpression97' has cardinality 0..*, and from 'imperativeocl_AssertExp', the role 'imperativeocl_AssertExp96' has cardinality 0..*.
+An association connects 'OclExpression' and 'imperativeocl_ImperativeLoopExp'. From 'OclExpression', the role 'OclExpression99' has cardinality 0..*, and from 'imperativeocl_ImperativeLoopExp', the role 'imperativeocl_ImperativeLoopExp' has cardinality 0..*.
+An association connects 'imperativeocl_CollectorExp' and 'Variable'. From 'imperativeocl_CollectorExp', the role 'imperativeocl_CollectorExp' has cardinality 0..*, and from 'Variable', the role 'Variable101' has cardinality 0..*.
+An association connects 'Variable' and 'imperativeocl_UnpackExp'. From 'Variable', the role 'Variable103' has cardinality 0..*, and from 'imperativeocl_UnpackExp', the role 'imperativeocl_UnpackExp' has cardinality 0..*.
+An association connects 'imperativeocl_AnonymousTupleType' and 'Type'. From 'imperativeocl_AnonymousTupleType', the role 'imperativeocl_AnonymousTupleType' has cardinality 0..*, and from 'Type', the role 'Type105' has cardinality 0..*.
+An association connects 'imperativeocl_AnonymousTupleLiteralExp' and 'AnonymousTupleLiteralPart'. From 'imperativeocl_AnonymousTupleLiteralExp', the role 'imperativeocl_AnonymousTupleLiteralExp' has cardinality 0..*, and from 'AnonymousTupleLiteralPart', the role 'AnonymousTupleLiteralPart' has cardinality 0..*.
+An association connects 'OclExpression' and 'imperativeocl_AnonymousTupleLiteralPart'. From 'OclExpression', the role 'OclExpression108' has cardinality 0..*, and from 'imperativeocl_AnonymousTupleLiteralPart', the role 'imperativeocl_AnonymousTupleLiteralPart' has cardinality 0..*.
+An association connects 'emof_Class' and 'Property'. From 'emof_Class', the role 'emof_Class' has cardinality 0..*, and from 'Property', the role 'Property110' has cardinality 0..*.
+An association connects 'emof_Class' and 'Operation'. From 'emof_Class', the role '2' has cardinality 0..*, and from 'Operation', the role '#112' has cardinality 0..*.
+An association connects 'emof_Class' and 'Class'. From 'emof_Class', the role 'emof_Class114' has cardinality 0..*, and from 'Class', the role 'Class115' has cardinality 0..*.
+An association connects 'emof_Element' and 'Tag'. From 'emof_Element', the role '2117' has cardinality 0..*, and from 'Tag', the role '#118' has cardinality 0..*.
+An association connects 'Comment' and 'emof_Element'. From 'Comment', the role 'Comment' has cardinality 0..*, and from 'emof_Element', the role 'emof_Element' has cardinality 0..*.
+An association connects 'emof_Tag' and 'Element'. From 'emof_Tag', the role '2121' has cardinality 0..*, and from 'Element', the role '#122' has cardinality 0..*.
+An association connects 'emof_Tag' and 'Transformation'. From 'emof_Tag', the role '5' has cardinality 0..*, and from 'Transformation', the role '#124' has cardinality 0..*.
+An association connects 'Module' and 'emof_Tag'. From 'Module', the role '#126' has cardinality 0..*, and from 'emof_Tag', the role '3' has cardinality 0..*.
+An association connects 'EnumerationLiteral' and 'emof_Enumeration'. From 'EnumerationLiteral', the role '#129' has cardinality 0..*, and from 'emof_Enumeration', the role '2128' has cardinality 0..*.
+An association connects 'Class' and 'emof_Operation'. From 'Class', the role '#132' has cardinality 0..*, and from 'emof_Operation', the role '2131' has cardinality 0..*.
+An association connects 'emof_Operation' and 'Parameter'. From 'emof_Operation', the role '2134' has cardinality 0..*, and from 'Parameter', the role '#135' has cardinality 0..*.
+An association connects 'Type' and 'emof_Operation'. From 'Type', the role 'Type137' has cardinality 0..*, and from 'emof_Operation', the role 'emof_Operation' has cardinality 0..*.
+An association connects 'Type' and 'emof_Package'. From 'Type', the role '#140' has cardinality 0..*, and from 'emof_Package', the role '2139' has cardinality 0..*.
+An association connects 'Package' and 'emof_Package'. From 'Package', the role 'Package' has cardinality 0..*, and from 'emof_Package', the role 'emof_Package' has cardinality 0..*.
+An association connects 'emof_Type' and 'Package'. From 'emof_Type', the role '2143' has cardinality 0..*, and from 'Package', the role '#144' has cardinality 0..*.
+An association connects 'emof_Parameter' and 'Operation'. From 'emof_Parameter', the role '2146' has cardinality 0..*, and from 'Operation', the role '#147' has cardinality 0..*.
+An association connects 'emof_EnumerationLiteral' and 'Enumeration'. From 'emof_EnumerationLiteral', the role '2149' has cardinality 0..*, and from 'Enumeration', the role '#150' has cardinality 0..*.
+An association connects 'Class' and 'emof_Property'. From 'Class', the role 'Class152' has cardinality 0..*, and from 'emof_Property', the role 'emof_Property' has cardinality 0..*.
+An association connects 'Property' and 'emof_Property'. From 'Property', the role 'Property155' has cardinality 0..*, and from 'emof_Property', the role 'emof_Property154' has cardinality 0..*.
+An association connects 'emof_Property' and 'Module'. From 'emof_Property', the role '3157' has cardinality 0..*, and from 'Module', the role '#158' has cardinality 0..*.
+An association connects 'emof_TypedElement' and 'Type'. From 'emof_TypedElement', the role 'emof_TypedElement' has cardinality 0..*, and from 'Type', the role 'Type160' has cardinality 0..*.
+An association connects 'emof_Comment' and 'NamedElement'. From 'emof_Comment', the role 'emof_Comment' has cardinality 0..*, and from 'NamedElement', the role 'NamedElement' has cardinality 0..*.
+An association connects 'OclExpression' and 'qvtoperational_MappingBody'. From 'OclExpression', the role 'OclExpression163' has cardinality 0..*, and from 'qvtoperational_MappingBody', the role 'qvtoperational_MappingBody' has cardinality 0..*.
+An association connects 'qvtoperational_MappingBody' and 'OclExpression'. From 'qvtoperational_MappingBody', the role 'qvtoperational_MappingBody165' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression166' has cardinality 0..*.
+An association connects 'qvtoperational_ResolveExp' and 'OclExpression'. From 'qvtoperational_ResolveExp', the role 'qvtoperational_ResolveExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression168' has cardinality 0..*.
+An association connects 'MappingOperation' and 'qvtoperational_ResolveInExp'. From 'MappingOperation', the role 'MappingOperation' has cardinality 0..*, and from 'qvtoperational_ResolveInExp', the role 'qvtoperational_ResolveInExp' has cardinality 0..*.
+An association connects 'qvtoperational_OperationalTransformation' and 'Class'. From 'qvtoperational_OperationalTransformation', the role 'qvtoperational_OperationalTransformation' has cardinality 0..*, and from 'Class', the role 'Class171' has cardinality 0..*.
+An association connects 'Transformation' and 'qvtoperational_OperationalTransformation'. From 'Transformation', the role 'Transformation' has cardinality 0..*, and from 'qvtoperational_OperationalTransformation', the role 'qvtoperational_OperationalTransformation173' has cardinality 0..*.
+An association connects 'Property' and 'qvtoperational_OperationalTransformation'. From 'Property', the role 'Property176' has cardinality 0..*, and from 'qvtoperational_OperationalTransformation', the role 'qvtoperational_OperationalTransformation175' has cardinality 0..*.
+An association connects 'qvtoperational_OperationalTransformation' and 'ModelParameter'. From 'qvtoperational_OperationalTransformation', the role 'qvtoperational_OperationalTransformation178' has cardinality 0..*, and from 'ModelParameter', the role 'ModelParameter' has cardinality 0..*.
+An association connects 'qvtoperational_OperationalTransformation' and 'EntryOperation'. From 'qvtoperational_OperationalTransformation', the role 'qvtoperational_OperationalTransformation180' has cardinality 0..*, and from 'EntryOperation', the role 'EntryOperation' has cardinality 0..*.
+An association connects 'qvtoperational_OperationalTransformation' and 'Relation'. From 'qvtoperational_OperationalTransformation', the role 'qvtoperational_OperationalTransformation182' has cardinality 0..*, and from 'Relation', the role 'Relation' has cardinality 0..*.
+An association connects 'RelationDomain' and 'qvtoperational_MappingParameter'. From 'RelationDomain', the role 'RelationDomain' has cardinality 0..*, and from 'qvtoperational_MappingParameter', the role 'qvtoperational_MappingParameter' has cardinality 0..*.
+An association connects 'ModelParameter' and 'qvtoperational_MappingParameter'. From 'ModelParameter', the role 'ModelParameter186' has cardinality 0..*, and from 'qvtoperational_MappingParameter', the role 'qvtoperational_MappingParameter185' has cardinality 0..*.
+An association connects 'qvtoperational_MappingOperation' and 'MappingOperation'. From 'qvtoperational_MappingOperation', the role 'qvtoperational_MappingOperation' has cardinality 0..*, and from 'MappingOperation', the role 'MappingOperation188' has cardinality 0..*.
+An association connects 'Relation' and 'qvtoperational_MappingOperation'. From 'Relation', the role 'Relation191' has cardinality 0..*, and from 'qvtoperational_MappingOperation', the role 'qvtoperational_MappingOperation190' has cardinality 0..*.
+An association connects 'MappingOperation' and 'qvtoperational_MappingOperation'. From 'MappingOperation', the role 'MappingOperation194' has cardinality 0..*, and from 'qvtoperational_MappingOperation', the role 'qvtoperational_MappingOperation193' has cardinality 0..*.
+An association connects 'qvtoperational_MappingOperation' and 'MappingOperation'. From 'qvtoperational_MappingOperation', the role 'qvtoperational_MappingOperation196' has cardinality 0..*, and from 'MappingOperation', the role 'MappingOperation197' has cardinality 0..*.
+An association connects 'OclExpression' and 'qvtoperational_MappingOperation'. From 'OclExpression', the role 'OclExpression200' has cardinality 0..*, and from 'qvtoperational_MappingOperation', the role 'qvtoperational_MappingOperation199' has cardinality 0..*.
+An association connects 'Class' and 'qvtoperational_ContextualProperty'. From 'Class', the role 'Class202' has cardinality 0..*, and from 'qvtoperational_ContextualProperty', the role 'qvtoperational_ContextualProperty' has cardinality 0..*.
+An association connects 'Property' and 'qvtoperational_ContextualProperty'. From 'Property', the role 'Property205' has cardinality 0..*, and from 'qvtoperational_ContextualProperty', the role 'qvtoperational_ContextualProperty204' has cardinality 0..*.
+An association connects 'VarParameter' and 'qvtoperational_ImperativeOperation'. From 'VarParameter', the role '#208' has cardinality 0..*, and from 'qvtoperational_ImperativeOperation', the role '3207' has cardinality 0..*.
+An association connects 'VarParameter' and 'qvtoperational_ImperativeOperation'. From 'VarParameter', the role '#211' has cardinality 0..*, and from 'qvtoperational_ImperativeOperation', the role '3210' has cardinality 0..*.
+An association connects 'ImperativeOperation' and 'qvtoperational_ImperativeOperation'. From 'ImperativeOperation', the role 'ImperativeOperation' has cardinality 0..*, and from 'qvtoperational_ImperativeOperation', the role 'qvtoperational_ImperativeOperation' has cardinality 0..*.
+An association connects 'qvtoperational_ImperativeOperation' and 'OperationBody'. From 'qvtoperational_ImperativeOperation', the role '3214' has cardinality 0..*, and from 'OperationBody', the role '#215' has cardinality 0..*.
+An association connects 'Package' and 'qvtoperational_ModelType'. From 'Package', the role 'Package217' has cardinality 0..*, and from 'qvtoperational_ModelType', the role 'qvtoperational_ModelType' has cardinality 0..*.
+An association connects 'qvtoperational_ModelType' and 'OclExpression'. From 'qvtoperational_ModelType', the role 'qvtoperational_ModelType219' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression220' has cardinality 0..*.
+An association connects 'Tag' and 'qvtoperational_Module'. From 'Tag', the role '#223' has cardinality 0..*, and from 'qvtoperational_Module', the role '2222' has cardinality 0..*.
+An association connects 'Property' and 'qvtoperational_Module'. From 'Property', the role '#226' has cardinality 0..*, and from 'qvtoperational_Module', the role '2225' has cardinality 0..*.
+An association connects 'ModuleImport' and 'qvtoperational_Module'. From 'ModuleImport', the role '#229' has cardinality 0..*, and from 'qvtoperational_Module', the role '3228' has cardinality 0..*.
+An association connects 'ModelType' and 'qvtoperational_Module'. From 'ModelType', the role 'ModelType' has cardinality 0..*, and from 'qvtoperational_Module', the role 'qvtoperational_Module' has cardinality 0..*.
+An association connects 'ModelType' and 'qvtoperational_ModuleImport'. From 'ModelType', the role 'ModelType232' has cardinality 0..*, and from 'qvtoperational_ModuleImport', the role 'qvtoperational_ModuleImport' has cardinality 0..*.
+An association connects 'Module' and 'qvtoperational_ModuleImport'. From 'Module', the role '#235' has cardinality 0..*, and from 'qvtoperational_ModuleImport', the role '3234' has cardinality 0..*.
+An association connects 'Module' and 'qvtoperational_ModuleImport'. From 'Module', the role 'Module' has cardinality 0..*, and from 'qvtoperational_ModuleImport', the role 'qvtoperational_ModuleImport237' has cardinality 0..*.
+An association connects 'ImperativeOperation' and 'qvtoperational_VarParameter'. From 'ImperativeOperation', the role '#240' has cardinality 0..*, and from 'qvtoperational_VarParameter', the role '3239' has cardinality 0..*.
+An association connects 'ImperativeOperation' and 'qvtoperational_VarParameter'. From 'ImperativeOperation', the role '#243' has cardinality 0..*, and from 'qvtoperational_VarParameter', the role '3242' has cardinality 0..*.
+An association connects 'qvtoperational_OperationBody' and 'ImperativeOperation'. From 'qvtoperational_OperationBody', the role '3245' has cardinality 0..*, and from 'ImperativeOperation', the role '#246' has cardinality 0..*.
+An association connects 'qvtoperational_OperationBody' and 'OclExpression'. From 'qvtoperational_OperationBody', the role 'qvtoperational_OperationBody' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression248' has cardinality 0..*.
+An association connects 'Variable' and 'qvtoperational_ObjectExp'. From 'Variable', the role 'Variable250' has cardinality 0..*, and from 'qvtoperational_ObjectExp', the role 'qvtoperational_ObjectExp' has cardinality 0..*.
+An association connects 'qvtoperational_ObjectExp' and 'ConstructorBody'. From 'qvtoperational_ObjectExp', the role 'qvtoperational_ObjectExp252' has cardinality 0..*, and from 'ConstructorBody', the role 'ConstructorBody' has cardinality 0..*.
+An association connects 'qvtcore_Area' and 'GuardPattern'. From 'qvtcore_Area', the role '4' has cardinality 0..*, and from 'GuardPattern', the role '#254' has cardinality 0..*.
+An association connects 'BottomPattern' and 'qvtcore_Area'. From 'BottomPattern', the role '#257' has cardinality 0..*, and from 'qvtcore_Area', the role '4256' has cardinality 0..*.
+An association connects 'BottomPattern' and 'qvtcore_Assignment'. From 'BottomPattern', the role '#260' has cardinality 0..*, and from 'qvtcore_Assignment', the role '4259' has cardinality 0..*.
+An association connects 'qvtcore_Assignment' and 'OclExpression'. From 'qvtcore_Assignment', the role 'qvtcore_Assignment' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression262' has cardinality 0..*.
+An association connects 'qvtcore_Assignment' and 'OclExpression'. From 'qvtcore_Assignment', the role 'qvtcore_Assignment264' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression265' has cardinality 0..*.
+An association connects 'qvtcore_Assignment' and 'Property'. From 'qvtcore_Assignment', the role 'qvtcore_Assignment267' has cardinality 0..*, and from 'Property', the role 'Property268' has cardinality 0..*.
+An association connects 'Area' and 'qvtcore_BottomPattern'. From 'Area', the role '#271' has cardinality 0..*, and from 'qvtcore_BottomPattern', the role '4270' has cardinality 0..*.
+An association connects 'qvtcore_BottomPattern' and 'Assignment'. From 'qvtcore_BottomPattern', the role '4273' has cardinality 0..*, and from 'Assignment', the role '#274' has cardinality 0..*.
+An association connects 'qvtcore_BottomPattern' and 'RealizedVariable'. From 'qvtcore_BottomPattern', the role 'qvtcore_BottomPattern' has cardinality 0..*, and from 'RealizedVariable', the role 'RealizedVariable' has cardinality 0..*.
+An association connects 'EnforcementOperation' and 'qvtcore_BottomPattern'. From 'EnforcementOperation', the role '#278' has cardinality 0..*, and from 'qvtcore_BottomPattern', the role '4277' has cardinality 0..*.
+An association connects 'qvtcore_GuardPattern' and 'Area'. From 'qvtcore_GuardPattern', the role '4280' has cardinality 0..*, and from 'Area', the role '#281' has cardinality 0..*.
+An association connects 'qvtcore_Mapping' and 'Mapping'. From 'qvtcore_Mapping', the role 'qvtcore_Mapping' has cardinality 0..*, and from 'Mapping', the role 'Mapping' has cardinality 0..*.
+An association connects 'Mapping' and 'qvtcore_Mapping'. From 'Mapping', the role '#285' has cardinality 0..*, and from 'qvtcore_Mapping', the role '4284' has cardinality 0..*.
+An association connects 'qvtcore_Mapping' and 'Mapping'. From 'qvtcore_Mapping', the role '4287' has cardinality 0..*, and from 'Mapping', the role '#288' has cardinality 0..*.
+An association connects 'BottomPattern' and 'qvtcore_EnforcementOperation'. From 'BottomPattern', the role '#291' has cardinality 0..*, and from 'qvtcore_EnforcementOperation', the role '4290' has cardinality 0..*.
+An association connects 'qvtcore_EnforcementOperation' and 'OperationCallExp'. From 'qvtcore_EnforcementOperation', the role 'qvtcore_EnforcementOperation' has cardinality 0..*, and from 'OperationCallExp', the role 'OperationCallExp' has cardinality 0..*.
+An association connects 'Rule' and 'qvtbase_Domain'. From 'Rule', the role '#295' has cardinality 0..*, and from 'qvtbase_Domain', the role '5294' has cardinality 0..*.
+An association connects 'TypedModel' and 'qvtbase_Domain'. From 'TypedModel', the role 'TypedModel' has cardinality 0..*, and from 'qvtbase_Domain', the role 'qvtbase_Domain' has cardinality 0..*.
+An association connects 'qvtbase_Transformation' and 'Tag'. From 'qvtbase_Transformation', the role '2298' has cardinality 0..*, and from 'Tag', the role '#299' has cardinality 0..*.
+An association connects 'TypedModel' and 'qvtbase_Transformation'. From 'TypedModel', the role '#302' has cardinality 0..*, and from 'qvtbase_Transformation', the role '5301' has cardinality 0..*.
+An association connects 'qvtbase_Transformation' and 'Rule'. From 'qvtbase_Transformation', the role '5304' has cardinality 0..*, and from 'Rule', the role '#305' has cardinality 0..*.
+An association connects 'qvtbase_Transformation' and 'Transformation'. From 'qvtbase_Transformation', the role 'qvtbase_Transformation' has cardinality 0..*, and from 'Transformation', the role 'Transformation307' has cardinality 0..*.
+An association connects 'qvtbase_TypedModel' and 'Transformation'. From 'qvtbase_TypedModel', the role '5309' has cardinality 0..*, and from 'Transformation', the role '#310' has cardinality 0..*.
+An association connects 'Package' and 'qvtbase_TypedModel'. From 'Package', the role 'Package312' has cardinality 0..*, and from 'qvtbase_TypedModel', the role 'qvtbase_TypedModel' has cardinality 0..*.
+An association connects 'TypedModel' and 'qvtbase_TypedModel'. From 'TypedModel', the role 'TypedModel315' has cardinality 0..*, and from 'qvtbase_TypedModel', the role 'qvtbase_TypedModel314' has cardinality 0..*.
+An association connects 'Domain' and 'qvtbase_Rule'. From 'Domain', the role '#318' has cardinality 0..*, and from 'qvtbase_Rule', the role '5317' has cardinality 0..*.
+An association connects 'Transformation' and 'qvtbase_Rule'. From 'Transformation', the role '#321' has cardinality 0..*, and from 'qvtbase_Rule', the role '5320' has cardinality 0..*.
+An association connects 'Rule' and 'qvtbase_Rule'. From 'Rule', the role 'Rule' has cardinality 0..*, and from 'qvtbase_Rule', the role 'qvtbase_Rule' has cardinality 0..*.
+An association connects 'qvtbase_Pattern' and 'Predicate'. From 'qvtbase_Pattern', the role '5324' has cardinality 0..*, and from 'Predicate', the role '#325' has cardinality 0..*.
+An association connects 'qvtbase_Pattern' and 'Variable'. From 'qvtbase_Pattern', the role 'qvtbase_Pattern' has cardinality 0..*, and from 'Variable', the role 'Variable327' has cardinality 0..*.
+An association connects 'qvtbase_Pattern' and 'Relation'. From 'qvtbase_Pattern', the role '6' has cardinality 0..*, and from 'Relation', the role '#329' has cardinality 0..*.
+An association connects 'qvtbase_Pattern' and 'Relation'. From 'qvtbase_Pattern', the role '6331' has cardinality 0..*, and from 'Relation', the role '#332' has cardinality 0..*.
+An association connects 'OclExpression' and 'qvtbase_Predicate'. From 'OclExpression', the role 'OclExpression334' has cardinality 0..*, and from 'qvtbase_Predicate', the role 'qvtbase_Predicate' has cardinality 0..*.
+An association connects 'Pattern' and 'qvtbase_Predicate'. From 'Pattern', the role '#337' has cardinality 0..*, and from 'qvtbase_Predicate', the role '5336' has cardinality 0..*.
+An association connects 'OclExpression' and 'qvtbase_Function'. From 'OclExpression', the role 'OclExpression339' has cardinality 0..*, and from 'qvtbase_Function', the role 'qvtbase_Function' has cardinality 0..*.
+An association connects 'qvtrelation_RelationalTransformation' and 'Key'. From 'qvtrelation_RelationalTransformation', the role '6341' has cardinality 0..*, and from 'Key', the role '#342' has cardinality 0..*.
+An association connects 'qvtrelation_Relation' and 'Variable'. From 'qvtrelation_Relation', the role 'qvtrelation_Relation' has cardinality 0..*, and from 'Variable', the role 'Variable344' has cardinality 0..*.
+An association connects 'qvtrelation_Relation' and 'RelationImplementation'. From 'qvtrelation_Relation', the role '6346' has cardinality 0..*, and from 'RelationImplementation', the role '#347' has cardinality 0..*.
+An association connects 'qvtrelation_Relation' and 'Pattern'. From 'qvtrelation_Relation', the role '5349' has cardinality 0..*, and from 'Pattern', the role '#350' has cardinality 0..*.
+An association connects 'qvtrelation_Relation' and 'Pattern'. From 'qvtrelation_Relation', the role '5352' has cardinality 0..*, and from 'Pattern', the role '#353' has cardinality 0..*.
+An association connects 'qvtrelation_RelationDomain' and 'DomainPattern'. From 'qvtrelation_RelationDomain', the role 'qvtrelation_RelationDomain' has cardinality 0..*, and from 'DomainPattern', the role 'DomainPattern' has cardinality 0..*.
+An association connects 'qvtrelation_RelationDomain' and 'Variable'. From 'qvtrelation_RelationDomain', the role 'qvtrelation_RelationDomain356' has cardinality 0..*, and from 'Variable', the role 'Variable357' has cardinality 0..*.
+An association connects 'TemplateExp' and 'qvtrelation_DomainPattern'. From 'TemplateExp', the role 'TemplateExp' has cardinality 0..*, and from 'qvtrelation_DomainPattern', the role 'qvtrelation_DomainPattern' has cardinality 0..*.
+An association connects 'Relation' and 'qvtrelation_RelationImplementation'. From 'Relation', the role '#361' has cardinality 0..*, and from 'qvtrelation_RelationImplementation', the role '6360' has cardinality 0..*.
+An association connects 'Operation' and 'qvtrelation_RelationImplementation'. From 'Operation', the role 'Operation' has cardinality 0..*, and from 'qvtrelation_RelationImplementation', the role 'qvtrelation_RelationImplementation' has cardinality 0..*.
+An association connects 'TypedModel' and 'qvtrelation_RelationImplementation'. From 'TypedModel', the role 'TypedModel365' has cardinality 0..*, and from 'qvtrelation_RelationImplementation', the role 'qvtrelation_RelationImplementation364' has cardinality 0..*.
+An association connects 'Class' and 'qvtrelation_Key'. From 'Class', the role 'Class367' has cardinality 0..*, and from 'qvtrelation_Key', the role 'qvtrelation_Key' has cardinality 0..*.
+An association connects 'qvtrelation_Key' and 'Property'. From 'qvtrelation_Key', the role 'qvtrelation_Key369' has cardinality 0..*, and from 'Property', the role 'Property370' has cardinality 0..*.
+An association connects 'RelationalTransformation' and 'qvtrelation_Key'. From 'RelationalTransformation', the role '#373' has cardinality 0..*, and from 'qvtrelation_Key', the role '6372' has cardinality 0..*.
+An association connects 'essentialocl_CallExp' and 'OclExpression'. From 'essentialocl_CallExp', the role 'essentialocl_CallExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression375' has cardinality 0..*.
+An association connects 'essentialocl_OclExpression' and 'TryExp'. From 'essentialocl_OclExpression', the role '1' has cardinality 0..*, and from 'TryExp', the role '#377' has cardinality 0..*.
+An association connects 'essentialocl_IfExp' and 'OclExpression'. From 'essentialocl_IfExp', the role 'essentialocl_IfExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression379' has cardinality 0..*.
+An association connects 'OclExpression' and 'essentialocl_IfExp'. From 'OclExpression', the role 'OclExpression382' has cardinality 0..*, and from 'essentialocl_IfExp', the role 'essentialocl_IfExp381' has cardinality 0..*.
+An association connects 'OclExpression' and 'essentialocl_IfExp'. From 'OclExpression', the role 'OclExpression385' has cardinality 0..*, and from 'essentialocl_IfExp', the role 'essentialocl_IfExp384' has cardinality 0..*.
+An association connects 'OclExpression' and 'essentialocl_LetExp'. From 'OclExpression', the role 'OclExpression387' has cardinality 0..*, and from 'essentialocl_LetExp', the role 'essentialocl_LetExp' has cardinality 0..*.
+An association connects 'essentialocl_LetExp' and 'Variable'. From 'essentialocl_LetExp', the role '7389' has cardinality 0..*, and from 'Variable', the role '#390' has cardinality 0..*.
+An association connects 'OclExpression' and 'essentialocl_Variable'. From 'OclExpression', the role 'OclExpression392' has cardinality 0..*, and from 'essentialocl_Variable', the role 'essentialocl_Variable' has cardinality 0..*.
+An association connects 'LetExp' and 'essentialocl_Variable'. From 'LetExp', the role '#395' has cardinality 0..*, and from 'essentialocl_Variable', the role '7394' has cardinality 0..*.
+An association connects 'essentialocl_Variable' and 'ComputeExp'. From 'essentialocl_Variable', the role '1397' has cardinality 0..*, and from 'ComputeExp', the role '#398' has cardinality 0..*.
+An association connects 'essentialocl_Variable' and 'Parameter'. From 'essentialocl_Variable', the role 'essentialocl_Variable400' has cardinality 0..*, and from 'Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'essentialocl_PropertyCallExp' and 'Property'. From 'essentialocl_PropertyCallExp', the role 'essentialocl_PropertyCallExp' has cardinality 0..*, and from 'Property', the role 'Property402' has cardinality 0..*.
+An association connects 'essentialocl_VariableExp' and 'Variable'. From 'essentialocl_VariableExp', the role 'essentialocl_VariableExp' has cardinality 0..*, and from 'Variable', the role 'Variable404' has cardinality 0..*.
+An association connects 'Type' and 'essentialocl_TypeExp'. From 'Type', the role 'Type406' has cardinality 0..*, and from 'essentialocl_TypeExp', the role 'essentialocl_TypeExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'essentialocl_LoopExp'. From 'OclExpression', the role 'OclExpression408' has cardinality 0..*, and from 'essentialocl_LoopExp', the role 'essentialocl_LoopExp' has cardinality 0..*.
+An association connects 'essentialocl_LoopExp' and 'Variable'. From 'essentialocl_LoopExp', the role 'essentialocl_LoopExp410' has cardinality 0..*, and from 'Variable', the role 'Variable411' has cardinality 0..*.
+An association connects 'essentialocl_OperationCallExp' and 'OclExpression'. From 'essentialocl_OperationCallExp', the role 'essentialocl_OperationCallExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression413' has cardinality 0..*.
+An association connects 'Operation' and 'essentialocl_OperationCallExp'. From 'Operation', the role 'Operation416' has cardinality 0..*, and from 'essentialocl_OperationCallExp', the role 'essentialocl_OperationCallExp415' has cardinality 0..*.
+An association connects 'Variable' and 'essentialocl_IterateExp'. From 'Variable', the role 'Variable418' has cardinality 0..*, and from 'essentialocl_IterateExp', the role 'essentialocl_IterateExp' has cardinality 0..*.
+An association connects 'essentialocl_CollectionLiteralExp' and 'CollectionLiteralPart'. From 'essentialocl_CollectionLiteralExp', the role '7420' has cardinality 0..*, and from 'CollectionLiteralPart', the role '#421' has cardinality 0..*.
+An association connects 'CollectionLiteralExp' and 'essentialocl_CollectionLiteralPart'. From 'CollectionLiteralExp', the role '#424' has cardinality 0..*, and from 'essentialocl_CollectionLiteralPart', the role '7423' has cardinality 0..*.
+An association connects 'essentialocl_CollectionItem' and 'OclExpression'. From 'essentialocl_CollectionItem', the role 'essentialocl_CollectionItem' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression426' has cardinality 0..*.
+An association connects 'OclExpression' and 'essentialocl_CollectionRange'. From 'OclExpression', the role 'OclExpression428' has cardinality 0..*, and from 'essentialocl_CollectionRange', the role 'essentialocl_CollectionRange' has cardinality 0..*.
+An association connects 'essentialocl_CollectionRange' and 'OclExpression'. From 'essentialocl_CollectionRange', the role 'essentialocl_CollectionRange430' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression431' has cardinality 0..*.
+An association connects 'essentialocl_TupleLiteralExp' and 'TupleLiteralPart'. From 'essentialocl_TupleLiteralExp', the role '7433' has cardinality 0..*, and from 'TupleLiteralPart', the role '#434' has cardinality 0..*.
+An association connects 'OclExpression' and 'essentialocl_ExpressionInOcl'. From 'OclExpression', the role 'OclExpression436' has cardinality 0..*, and from 'essentialocl_ExpressionInOcl', the role 'essentialocl_ExpressionInOcl' has cardinality 0..*.
+An association connects 'essentialocl_ExpressionInOcl' and 'Variable'. From 'essentialocl_ExpressionInOcl', the role 'essentialocl_ExpressionInOcl438' has cardinality 0..*, and from 'Variable', the role 'Variable439' has cardinality 0..*.
+An association connects 'essentialocl_ExpressionInOcl' and 'Variable'. From 'essentialocl_ExpressionInOcl', the role 'essentialocl_ExpressionInOcl441' has cardinality 0..*, and from 'Variable', the role 'Variable442' has cardinality 0..*.
+An association connects 'essentialocl_ExpressionInOcl' and 'Variable'. From 'essentialocl_ExpressionInOcl', the role 'essentialocl_ExpressionInOcl444' has cardinality 0..*, and from 'Variable', the role 'Variable445' has cardinality 0..*.
+An association connects 'essentialocl_TupleLiteralPart' and 'TupleLiteralExp'. From 'essentialocl_TupleLiteralPart', the role '7447' has cardinality 0..*, and from 'TupleLiteralExp', the role '#448' has cardinality 0..*.
+An association connects 'essentialocl_TupleLiteralPart' and 'Property'. From 'essentialocl_TupleLiteralPart', the role 'essentialocl_TupleLiteralPart' has cardinality 0..*, and from 'Property', the role 'Property450' has cardinality 0..*.
+An association connects 'essentialocl_CollectionType' and 'Type'. From 'essentialocl_CollectionType', the role 'essentialocl_CollectionType' has cardinality 0..*, and from 'Type', the role 'Type452' has cardinality 0..*.
+An association connects 'essentialocl_EnumLiteralExp' and 'EnumerationLiteral'. From 'essentialocl_EnumLiteralExp', the role 'essentialocl_EnumLiteralExp' has cardinality 0..*, and from 'EnumerationLiteral', the role 'EnumerationLiteral' has cardinality 0..*.

@@ -1,0 +1,12 @@
+The domain model 'RHS' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'RHS_Y' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RHS_X' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'RHS_X' and 'RHS_Y'. From 'RHS_X', the role 'RHS_X' has cardinality 0..*, and from 'RHS_Y', the role 'RHS_Y' has cardinality 0..*.

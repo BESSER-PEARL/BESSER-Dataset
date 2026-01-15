@@ -1,0 +1,24 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'model_Book' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'avgRating', which is of type int; 'author', which is of type str.
+
+'model_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_DataBase' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BookShelf' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Book' and 'model_BookShelf'. From 'model_Book', the role 'books' has cardinality 0..*, and from 'model_BookShelf', the role 'BookShelf' has cardinality 0..*.
+An association connects 'model_BookShelf' and 'model_Person'. From 'model_BookShelf', the role 'BookShelf2' has cardinality 0..*, and from 'model_Person', the role 'ownedBy' has cardinality 0..*.
+An association connects 'model_Person' and 'model_Person'. From 'model_Person', the role 'model_Person3' has cardinality 0..*, and from 'model_Person', the role 'model_Person' has cardinality 0..*.
+An association connects 'model_Book' and 'model_BookShelf'. From 'model_Book', the role 'Book' has cardinality 0..*, and from 'model_BookShelf', the role 'presentIn' has cardinality 0..*.
+An association connects 'model_Person' and 'model_BookShelf'. From 'model_Person', the role 'Person' has cardinality 0..*, and from 'model_BookShelf', the role 'shelves' has cardinality 0..*.
+An association connects 'model_Person' and 'model_DataBase'. From 'model_Person', the role 'model_Person8' has cardinality 0..*, and from 'model_DataBase', the role 'model_DataBase' has cardinality 0..*.
+An association connects 'model_Book' and 'model_DataBase'. From 'model_Book', the role 'model_Book' has cardinality 0..*, and from 'model_DataBase', the role 'model_DataBase10' has cardinality 0..*.

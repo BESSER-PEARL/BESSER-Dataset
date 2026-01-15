@@ -1,0 +1,35 @@
+The domain model 'libraryModel_ecore' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryModel_ecore_Book' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryModel_ecore_Author' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryModel_ecore_LibraryModel' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryModel_ecore_Picture' represents an important domain concept.
+It has one attribute: 'pageNumber', which is of type str.
+
+'libraryModel_ecore_NamedElement' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'libraryModel_ecore_Book' is a specialization of 'NamedElement'.
+The class 'libraryModel_ecore_Author' is a specialization of 'NamedElement'.
+The class 'libraryModel_ecore_Picture' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'libraryModel_ecore_Book' and 'libraryModel_ecore_Author'. From 'libraryModel_ecore_Book', the role 'libraryModel_ecore_Book' has cardinality 0..*, and from 'libraryModel_ecore_Author', the role 'libraryModel_ecore_Author' has cardinality 0..*.
+An association connects 'libraryModel_ecore_Book' and 'libraryModel_ecore_LibraryModel'. From 'libraryModel_ecore_Book', the role 'book' has cardinality 0..*, and from 'libraryModel_ecore_LibraryModel', the role 'LibraryModel' has cardinality 0..*.
+An association connects 'libraryModel_ecore_Book' and 'libraryModel_ecore_Picture'. From 'libraryModel_ecore_Book', the role 'book3' has cardinality 0..*, and from 'libraryModel_ecore_Picture', the role 'Picture' has cardinality 0..*.
+An association connects 'libraryModel_ecore_LibraryModel' and 'libraryModel_ecore_Author'. From 'libraryModel_ecore_LibraryModel', the role 'LibraryModel5' has cardinality 0..*, and from 'libraryModel_ecore_Author', the role 'authors' has cardinality 0..*.
+An association connects 'libraryModel_ecore_LibraryModel' and 'libraryModel_ecore_Book'. From 'libraryModel_ecore_LibraryModel', the role 'library' has cardinality 0..*, and from 'libraryModel_ecore_Book', the role 'Book' has cardinality 0..*.
+An association connects 'libraryModel_ecore_LibraryModel' and 'libraryModel_ecore_Author'. From 'libraryModel_ecore_LibraryModel', the role 'library8' has cardinality 0..*, and from 'libraryModel_ecore_Author', the role 'Author' has cardinality 0..*.
+An association connects 'libraryModel_ecore_Picture' and 'libraryModel_ecore_Book'. From 'libraryModel_ecore_Picture', the role 'pictures' has cardinality 0..*, and from 'libraryModel_ecore_Book', the role 'Book10' has cardinality 0..*.

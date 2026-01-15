@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/IfA/PAMTraM/casestudies/de.mfreund.pamtram.casestudies.models2016/metamodel/mm2.ecore

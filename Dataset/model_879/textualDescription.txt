@@ -1,0 +1,75 @@
+The domain model 'simplepdl' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'simplepdl_Guidance' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'simplepdl_SubWorkDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'simplepdl_ParameterSWD' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities' represents an important domain concept.
+It does not declare any attributes.
+
+'simplepdl_Activities' represents an important domain concept.
+It has the following attributes: 'max_time', which is of type int; 'name', which is of type str; 'min_time', which is of type int.
+
+'simplepdl_ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simplepdl_Resource' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'marking', which is of type int.
+
+'simplepdl_ParameterWD' represents an important domain concept.
+It does not declare any attributes.
+
+'simplepdl_Process' represents an important domain concept.
+It has the following attributes: 'max_time', which is of type int; 'name', which is of type str; 'min_time', which is of type int.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'simplepdl_WorkDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'simplepdl_WorkSequence' represents an important domain concept.
+It has the following attributes: 'linkType', which is of type str; 'name', which is of type str.
+
+'simplepdl_Parameter' represents an important domain concept.
+It has the following attributes: 'nbNeeds', which is of type int; 'name', which is of type str.
+
+'ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'WorkSequenceType' defines the following possible values: 'startToFinish', 'finishToFinish', 'startToStart', 'finishToStart'.
+
+The model also captures inheritance relationships between classes.
+The class 'simplepdl_Guidance' is a specialization of 'ProcessElement'.
+The class 'simplepdl_WorkSequence' is a specialization of 'ProcessElement'.
+The class 'simplepdl_Activities' is a specialization of 'ProcessElement'.
+The class 'simplepdl_WorkDefinition' is a specialization of 'Activities'.
+The class 'simplepdl_SubWorkDefinition' is a specialization of 'Activities'.
+The class 'simplepdl_Parameter' is a specialization of 'ProcessElement'.
+The class 'simplepdl_ParameterWD' is a specialization of 'Parameter'.
+The class 'simplepdl_ParameterSWD' is a specialization of 'Parameter'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simplepdl_Process' and 'simplepdl_ProcessElement'. From 'simplepdl_Process', the role 'simplepdl_Process' has cardinality 0..*, and from 'simplepdl_ProcessElement', the role 'simplepdl_ProcessElement' has cardinality 0..*.
+An association connects 'simplepdl_Process' and 'simplepdl_Resource'. From 'simplepdl_Process', the role 'simplepdl_Process2' has cardinality 0..*, and from 'simplepdl_Resource', the role 'simplepdl_Resource' has cardinality 0..*.
+An association connects 'simplepdl_ProcessElement' and 'simplepdl_Guidance'. From 'simplepdl_ProcessElement', the role 'simplepdl_ProcessElement4' has cardinality 0..*, and from 'simplepdl_Guidance', the role 'simplepdl_Guidance' has cardinality 0..*.
+An association connects 'simplepdl_WorkSequence' and 'simplepdl_Activities'. From 'simplepdl_WorkSequence', the role 'linksToSuccessors' has cardinality 0..*, and from 'simplepdl_Activities', the role 'Activities' has cardinality 0..*.
+An association connects 'simplepdl_Activities' and 'simplepdl_WorkSequence'. From 'simplepdl_Activities', the role 'Activities7' has cardinality 0..*, and from 'simplepdl_WorkSequence', the role 'linksToPredecessors' has cardinality 0..*.
+An association connects 'simplepdl_Activities' and 'simplepdl_WorkSequence'. From 'simplepdl_Activities', the role 'successor' has cardinality 0..*, and from 'simplepdl_WorkSequence', the role 'WorkSequence' has cardinality 0..*.
+An association connects 'simplepdl_Activities' and 'simplepdl_WorkSequence'. From 'simplepdl_Activities', the role 'predecessor' has cardinality 0..*, and from 'simplepdl_WorkSequence', the role 'WorkSequence10' has cardinality 0..*.
+An association connects 'simplepdl_SubWorkDefinition' and 'simplepdl_Activities'. From 'simplepdl_SubWorkDefinition', the role 'SubWorkDefinition' has cardinality 0..*, and from 'simplepdl_Activities', the role 'parent' has cardinality 0..*.
+An association connects 'simplepdl_WorkDefinition' and 'simplepdl_ParameterWD'. From 'simplepdl_WorkDefinition', the role 'workDefinition' has cardinality 0..*, and from 'simplepdl_ParameterWD', the role 'ParameterWD' has cardinality 0..*.
+An association connects 'simplepdl_Activities' and 'simplepdl_SubWorkDefinition'. From 'simplepdl_Activities', the role 'Activities14' has cardinality 0..*, and from 'simplepdl_SubWorkDefinition', the role 'children' has cardinality 0..*.
+An association connects 'simplepdl_SubWorkDefinition' and 'simplepdl_ParameterSWD'. From 'simplepdl_SubWorkDefinition', the role 'simplepdl_SubWorkDefinition' has cardinality 0..*, and from 'simplepdl_ParameterSWD', the role 'simplepdl_ParameterSWD' has cardinality 0..*.
+An association connects 'simplepdl_ParameterWD' and 'simplepdl_Resource'. From 'simplepdl_ParameterWD', the role 'simplepdl_ParameterWD' has cardinality 0..*, and from 'simplepdl_Resource', the role 'simplepdl_Resource17' has cardinality 0..*.
+An association connects 'simplepdl_ParameterWD' and 'simplepdl_WorkDefinition'. From 'simplepdl_ParameterWD', the role 'needsWD' has cardinality 0..*, and from 'simplepdl_WorkDefinition', the role 'WorkDefinition' has cardinality 0..*.
+An association connects 'simplepdl_ParameterSWD' and 'simplepdl_Parameter'. From 'simplepdl_ParameterSWD', the role 'simplepdl_ParameterSWD20' has cardinality 0..*, and from 'simplepdl_Parameter', the role 'simplepdl_Parameter' has cardinality 0..*.
+An association connects 'simplepdl_ParameterSWD' and 'simplepdl_SubWorkDefinition'. From 'simplepdl_ParameterSWD', the role 'simplepdl_ParameterSWD22' has cardinality 0..*, and from 'simplepdl_SubWorkDefinition', the role 'simplepdl_SubWorkDefinition23' has cardinality 0..*.

@@ -1,0 +1,83 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'model_Content' represents an important domain concept.
+It has the following attributes: 'secondAttribute', which is of type str; 'uniqueAttribute', which is of type str.
+
+'model_TableWithMultiplicity' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Writer' represents an important domain concept.
+It has the following attributes: 'Pseudonym', which is of type bool; 'lastName', which is of type str; 'EMail', which is of type str; 'firstName', which is of type str; 'BirthDate', which is of type date.
+
+'TableContent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Mainboard' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_TableContent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TableWithoutMultiplicity' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Container' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_TableContentWithoutValidation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'weight', which is of type int.
+
+'model_PowerBlock' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_Computer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_TableWithoutMultiplicityConcrete' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TableContentWithInnerChild' represents an important domain concept.
+It has one attribute: 'stuff', which is of type str.
+
+'model_Librarian' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_TableContentWithInnerChild2' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TableWithUnique' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Book' represents an important domain concept.
+It has the following attributes: 'pages', which is of type int; 'title', which is of type str.
+
+'model_TableContentWithValidation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'weight', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'model_TableContentWithoutValidation' is a specialization of 'TableContent'.
+The class 'model_TableContentWithValidation' is a specialization of 'TableContent'.
+The class 'model_TableContentWithInnerChild2' is a specialization of 'TableContent'.
+The class 'model_TableContentWithInnerChild' is a specialization of 'TableContent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Writer' and 'model_Library'. From 'model_Writer', the role 'Writer' has cardinality 0..*, and from 'model_Library', the role 'library' has cardinality 0..*.
+An association connects 'model_Book' and 'model_Library'. From 'model_Book', the role 'model_Book' has cardinality 0..*, and from 'model_Library', the role 'model_Library' has cardinality 0..*.
+An association connects 'model_Library' and 'model_Librarian'. From 'model_Library', the role 'model_Library3' has cardinality 0..*, and from 'model_Librarian', the role 'model_Librarian' has cardinality 0..*.
+An association connects 'model_Book' and 'model_Writer'. From 'model_Book', the role 'Book' has cardinality 0..*, and from 'model_Writer', the role 'writers' has cardinality 0..*.
+An association connects 'model_Writer' and 'model_Library'. From 'model_Writer', the role 'writers6' has cardinality 0..*, and from 'model_Library', the role 'Library' has cardinality 0..*.
+An association connects 'model_Book' and 'model_Writer'. From 'model_Book', the role 'books' has cardinality 0..*, and from 'model_Writer', the role 'Writer8' has cardinality 0..*.
+An association connects 'model_Mainboard' and 'model_Computer'. From 'model_Mainboard', the role 'model_Mainboard' has cardinality 0..*, and from 'model_Computer', the role 'model_Computer' has cardinality 0..*.
+An association connects 'model_PowerBlock' and 'model_Computer'. From 'model_PowerBlock', the role 'model_PowerBlock' has cardinality 0..*, and from 'model_Computer', the role 'model_Computer11' has cardinality 0..*.
+An association connects 'model_Container' and 'model_Content'. From 'model_Container', the role 'model_Container' has cardinality 0..*, and from 'model_Content', the role 'model_Content' has cardinality 0..*.
+An association connects 'model_TableContent' and 'model_TableWithMultiplicity'. From 'model_TableContent', the role 'model_TableContent' has cardinality 0..*, and from 'model_TableWithMultiplicity', the role 'model_TableWithMultiplicity' has cardinality 0..*.
+An association connects 'model_TableContent' and 'model_TableWithoutMultiplicity'. From 'model_TableContent', the role 'model_TableContent15' has cardinality 0..*, and from 'model_TableWithoutMultiplicity', the role 'model_TableWithoutMultiplicity' has cardinality 0..*.
+An association connects 'model_TableContent' and 'model_TableWithUnique'. From 'model_TableContent', the role 'model_TableContent17' has cardinality 0..*, and from 'model_TableWithUnique', the role 'model_TableWithUnique' has cardinality 0..*.
+An association connects 'model_TableContentWithInnerChild2' and 'model_TableContent'. From 'model_TableContentWithInnerChild2', the role 'model_TableContentWithInnerChild2' has cardinality 0..*, and from 'model_TableContent', the role 'model_TableContent19' has cardinality 0..*.
+An association connects 'model_TableContentWithInnerChild' and 'model_TableContent'. From 'model_TableContentWithInnerChild', the role 'model_TableContentWithInnerChild' has cardinality 0..*, and from 'model_TableContent', the role 'model_TableContent21' has cardinality 0..*.
+An association connects 'model_TableWithoutMultiplicityConcrete' and 'model_TableContentWithInnerChild'. From 'model_TableWithoutMultiplicityConcrete', the role 'model_TableWithoutMultiplicityConcrete' has cardinality 0..*, and from 'model_TableContentWithInnerChild', the role 'model_TableContentWithInnerChild23' has cardinality 0..*.

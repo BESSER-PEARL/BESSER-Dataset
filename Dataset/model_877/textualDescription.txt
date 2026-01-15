@@ -1,0 +1,48 @@
+The domain model 'simplepdl' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'simplepdl_Process' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simplepdl_Guidance' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'simplepdl_RessourceInstance' represents an important domain concept.
+It has one attribute: 'instances', which is of type int.
+
+'simplepdl_WorkDefinition' represents an important domain concept.
+It has the following attributes: 'max_time', which is of type int; 'min_time', which is of type int; 'name', which is of type str.
+
+'simplepdl_ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simplepdl_WorkSequence' represents an important domain concept.
+It has one attribute: 'linkType', which is of type str.
+
+'simplepdl_RessourceDefinition' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'number', which is of type int.
+
+'ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'WorkSequenceType' defines the following possible values: 'startToFinish', 'finishToFinish', 'finishToStart', 'startToStart'.
+
+The model also captures inheritance relationships between classes.
+The class 'simplepdl_WorkDefinition' is a specialization of 'ProcessElement'.
+The class 'simplepdl_WorkSequence' is a specialization of 'ProcessElement'.
+The class 'simplepdl_Guidance' is a specialization of 'ProcessElement'.
+The class 'simplepdl_RessourceDefinition' is a specialization of 'ProcessElement'.
+The class 'simplepdl_RessourceInstance' is a specialization of 'ProcessElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simplepdl_ProcessElement' and 'simplepdl_Process'. From 'simplepdl_ProcessElement', the role 'simplepdl_ProcessElement' has cardinality 0..*, and from 'simplepdl_Process', the role 'simplepdl_Process' has cardinality 0..*.
+An association connects 'simplepdl_WorkSequence' and 'simplepdl_WorkDefinition'. From 'simplepdl_WorkSequence', the role 'WorkSequence' has cardinality 0..*, and from 'simplepdl_WorkDefinition', the role 'successor' has cardinality 0..*.
+An association connects 'simplepdl_WorkSequence' and 'simplepdl_WorkDefinition'. From 'simplepdl_WorkSequence', the role 'WorkSequence3' has cardinality 0..*, and from 'simplepdl_WorkDefinition', the role 'predecessor' has cardinality 0..*.
+An association connects 'simplepdl_RessourceInstance' and 'simplepdl_WorkDefinition'. From 'simplepdl_RessourceInstance', the role 'RessourceInstance' has cardinality 0..*, and from 'simplepdl_WorkDefinition', the role 'activity' has cardinality 0..*.
+An association connects 'simplepdl_WorkSequence' and 'simplepdl_WorkDefinition'. From 'simplepdl_WorkSequence', the role 'linksToSuccessors' has cardinality 0..*, and from 'simplepdl_WorkDefinition', the role 'WorkDefinition' has cardinality 0..*.
+An association connects 'simplepdl_WorkDefinition' and 'simplepdl_WorkSequence'. From 'simplepdl_WorkDefinition', the role 'WorkDefinition7' has cardinality 0..*, and from 'simplepdl_WorkSequence', the role 'linksToPredecessors' has cardinality 0..*.
+An association connects 'simplepdl_Guidance' and 'simplepdl_ProcessElement'. From 'simplepdl_Guidance', the role 'simplepdl_Guidance' has cardinality 0..*, and from 'simplepdl_ProcessElement', the role 'simplepdl_ProcessElement9' has cardinality 0..*.
+An association connects 'simplepdl_RessourceDefinition' and 'simplepdl_RessourceInstance'. From 'simplepdl_RessourceDefinition', the role 'simplepdl_RessourceDefinition' has cardinality 0..*, and from 'simplepdl_RessourceInstance', the role 'simplepdl_RessourceInstance' has cardinality 0..*.
+An association connects 'simplepdl_RessourceInstance' and 'simplepdl_WorkDefinition'. From 'simplepdl_RessourceInstance', the role 'linksToRessources' has cardinality 0..*, and from 'simplepdl_WorkDefinition', the role 'WorkDefinition12' has cardinality 0..*.

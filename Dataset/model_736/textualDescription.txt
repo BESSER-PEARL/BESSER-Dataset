@@ -1,0 +1,295 @@
+The domain model 'art' describes the core structural elements and their relationships within the system.
+
+The model defines 70 main class(es).
+
+'art_instance_Binding' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'art_type_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'art_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'art_type_PortCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'art_instance_OtherEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'art_instance_TransmissionBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'art_instance_AttributeInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'DictionaryDefaultValue' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'Entry' represents an important domain concept.
+It does not declare any attributes.
+
+'art_group_InstanceGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'art_instance_PrimitiveInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'art_instance_DelegationBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'art_implem_TypeImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'art_instance_CompositeInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'art_implem_OSGiType' represents an important domain concept.
+It has one attribute: 'generateInstanceBundle', which is of type str.
+
+'art_type_AbstractPort' represents an important domain concept.
+It has one attribute: 'role', which is of type str.
+
+'art_CardinalityElement' represents an important domain concept.
+It has the following attributes: 'upper', which is of type str; 'lower', which is of type str.
+
+'art_implem_FractalComponent' represents an important domain concept.
+It has the following attributes: 'contentDesc', which is of type str; 'controllerDesc', which is of type str.
+
+'art_type_ComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'art_group_TypeGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'art_instance_ValuedAttribute' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'InstanceGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'art_type_PortId' represents an important domain concept.
+It does not declare any attributes.
+
+'art_type_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'art_type_CompositeType' represents an important domain concept.
+It does not declare any attributes.
+
+'PortId' represents an important domain concept.
+It does not declare any attributes.
+
+'art_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'art_type_BasicAttribute' represents an important domain concept.
+It has one attribute: 'defaultValue', which is of type str.
+
+'art_type_DictionaryDefaultValue' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'DelegationBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'art_implem_OSGiComponent' represents an important domain concept.
+It has one attribute: 'implementingClass', which is of type str.
+
+'art_instance_DefaultEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'Service' represents an important domain concept.
+It does not declare any attributes.
+
+'Group' represents an important domain concept.
+It does not declare any attributes.
+
+'art_type_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'art_type_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'art_System' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'art_ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'type_art_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'art_instance_DictionaryValuedAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'art_type_ControlService' represents an important domain concept.
+It does not declare any attributes.
+
+'art_instance_Entry' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'art_type_Port' represents an important domain concept.
+It has one attribute: 'isOptional', which is of type str.
+
+'AbstractPort' represents an important domain concept.
+It does not declare any attributes.
+
+'TransmissionBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'Dictionary' represents an important domain concept.
+It does not declare any attributes.
+
+'art_type_FunctionalService' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'art_group_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'art_instance_ComponentInstance' represents an important domain concept.
+It has one attribute: 'state', which is of type str.
+
+'CardinalityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'art_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'art_type_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'type_AbstractPort' represents an important domain concept.
+It does not declare any attributes.
+
+'art_implem_ComponentImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'art_type_Dictionary' represents an important domain concept.
+It does not declare any attributes.
+
+'Binding' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'InstanceState' defines the following possible values: 'ON', 'OFF'.
+The enumeration 'PortRole' defines the following possible values: 'client', 'server'.
+
+The model also captures inheritance relationships between classes.
+The class 'art_ModelElement' is a specialization of 'NamedElement'.
+The class 'art_System' is a specialization of 'ModelElement'.
+The class 'art_DataType' is a specialization of 'ModelElement'.
+The class 'art_TypedElement' is a specialization of 'ModelElement'.
+The class 'art_CardinalityElement' is a specialization of 'ModelElement'.
+The class 'art_instance_ComponentInstance' is a specialization of 'ModelElement'.
+The class 'art_instance_PrimitiveInstance' is a specialization of 'ComponentInstance'.
+The class 'art_instance_CompositeInstance' is a specialization of 'ComponentInstance'.
+The class 'art_instance_TransmissionBinding' is a specialization of 'Binding'.
+The class 'art_instance_DelegationBinding' is a specialization of 'Binding'.
+The class 'art_instance_ValuedAttribute' is a specialization of 'AttributeInstance'.
+The class 'art_instance_DictionaryValuedAttribute' is a specialization of 'AttributeInstance'.
+The class 'art_instance_DefaultEntry' is a specialization of 'Entry'.
+The class 'art_instance_OtherEntry' is a specialization of 'Entry'.
+The class 'art_type_ComponentType' is a specialization of 'ModelElement'.
+The class 'art_type_PrimitiveType' is a specialization of 'ComponentType'.
+The class 'art_type_CompositeType' is a specialization of 'ComponentType'.
+The class 'art_type_Service' is a specialization of 'ModelElement'.
+The class 'art_type_Operation' is a specialization of 'ModelElement'.
+The class 'art_type_Parameter' is a specialization of 'TypedElement'.
+The class 'art_type_FunctionalService' is a specialization of 'Service'.
+The class 'art_type_ControlService' is a specialization of 'Service'.
+The class 'art_type_AbstractPort' is a specialization of 'NamedElement'.
+The class 'art_type_Port' is a specialization of 'CardinalityElement'.
+The class 'art_type_Port' is a specialization of 'type_AbstractPort'.
+The class 'art_type_PortCollection' is a specialization of 'AbstractPort'.
+The class 'art_type_PortId' is a specialization of 'NamedElement'.
+The class 'art_type_Attribute' is a specialization of 'TypedElement'.
+The class 'art_type_BasicAttribute' is a specialization of 'Attribute'.
+The class 'art_type_Dictionary' is a specialization of 'Attribute'.
+The class 'art_implem_FractalComponent' is a specialization of 'ComponentImplementation'.
+The class 'art_implem_OSGiComponent' is a specialization of 'ComponentImplementation'.
+The class 'art_implem_OSGiType' is a specialization of 'TypeImplementation'.
+The class 'art_group_Group' is a specialization of 'NamedElement'.
+The class 'art_group_TypeGroup' is a specialization of 'Group'.
+The class 'art_group_InstanceGroup' is a specialization of 'Group'.
+
+Relationships between classes are modeled using associations.
+An association connects 'art_System' and 'CompositeInstance'. From 'art_System', the role 'art_System' has cardinality 0..*, and from 'CompositeInstance', the role 'CompositeInstance' has cardinality 0..*.
+An association connects 'Service' and 'art_System'. From 'Service', the role 'Service' has cardinality 0..*, and from 'art_System', the role 'art_System2' has cardinality 0..*.
+An association connects 'ComponentType' and 'art_System'. From 'ComponentType', the role 'ComponentType' has cardinality 0..*, and from 'art_System', the role 'art_System4' has cardinality 0..*.
+An association connects 'art_System' and 'art_DataType'. From 'art_System', the role 'art_System6' has cardinality 0..*, and from 'art_DataType', the role 'art_DataType' has cardinality 0..*.
+An association connects 'art_System' and 'Group'. From 'art_System', the role 'art_System8' has cardinality 0..*, and from 'Group', the role 'Group' has cardinality 0..*.
+An association connects 'art_TypedElement' and 'art_DataType'. From 'art_TypedElement', the role 'art_TypedElement' has cardinality 0..*, and from 'art_DataType', the role 'art_DataType10' has cardinality 0..*.
+An association connects 'ComponentType' and 'art_instance_ComponentInstance'. From 'ComponentType', the role 'ComponentType12' has cardinality 0..*, and from 'art_instance_ComponentInstance', the role 'art_instance_ComponentInstance' has cardinality 0..*.
+An association connects 'CompositeInstance' and 'art_instance_ComponentInstance'. From 'CompositeInstance', the role 'instance' has cardinality 0..*, and from 'art_instance_ComponentInstance', the role 'CompositeInstance14' has cardinality 0..*.
+An association connects 'art_instance_ComponentInstance' and 'AttributeInstance'. From 'art_instance_ComponentInstance', the role 'art_instance_ComponentInstance16' has cardinality 0..*, and from 'AttributeInstance', the role 'AttributeInstance' has cardinality 0..*.
+An association connects 'TransmissionBinding' and 'art_instance_ComponentInstance'. From 'TransmissionBinding', the role 'TransmissionBinding' has cardinality 0..*, and from 'art_instance_ComponentInstance', the role 'art_instance_ComponentInstance18' has cardinality 0..*.
+An association connects 'art_instance_ComponentInstance' and 'ComponentImplementation'. From 'art_instance_ComponentInstance', the role 'art_instance_ComponentInstance20' has cardinality 0..*, and from 'ComponentImplementation', the role 'ComponentImplementation' has cardinality 0..*.
+An association connects 'InstanceGroup' and 'art_instance_ComponentInstance'. From 'InstanceGroup', the role 'group' has cardinality 0..*, and from 'art_instance_ComponentInstance', the role 'InstanceGroup' has cardinality 0..*.
+An association connects 'ComponentInstance' and 'art_instance_CompositeInstance'. From 'ComponentInstance', the role 'instance23' has cardinality 0..*, and from 'art_instance_CompositeInstance', the role 'ComponentInstance' has cardinality 0..*.
+An association connects 'DelegationBinding' and 'art_instance_CompositeInstance'. From 'DelegationBinding', the role 'DelegationBinding' has cardinality 0..*, and from 'art_instance_CompositeInstance', the role 'art_instance_CompositeInstance' has cardinality 0..*.
+An association connects 'art_instance_Binding' and 'ComponentInstance'. From 'art_instance_Binding', the role 'art_instance_Binding' has cardinality 0..*, and from 'ComponentInstance', the role 'ComponentInstance26' has cardinality 0..*.
+An association connects 'art_instance_TransmissionBinding' and 'AbstractPort'. From 'art_instance_TransmissionBinding', the role 'art_instance_TransmissionBinding' has cardinality 0..*, and from 'AbstractPort', the role 'AbstractPort' has cardinality 0..*.
+An association connects 'art_instance_TransmissionBinding' and 'AbstractPort'. From 'art_instance_TransmissionBinding', the role 'art_instance_TransmissionBinding29' has cardinality 0..*, and from 'AbstractPort', the role 'AbstractPort30' has cardinality 0..*.
+An association connects 'AbstractPort' and 'art_instance_DelegationBinding'. From 'AbstractPort', the role 'AbstractPort32' has cardinality 0..*, and from 'art_instance_DelegationBinding', the role 'art_instance_DelegationBinding' has cardinality 0..*.
+An association connects 'AbstractPort' and 'art_instance_DelegationBinding'. From 'AbstractPort', the role 'AbstractPort35' has cardinality 0..*, and from 'art_instance_DelegationBinding', the role 'art_instance_DelegationBinding34' has cardinality 0..*.
+An association connects 'BasicAttribute' and 'art_instance_ValuedAttribute'. From 'BasicAttribute', the role 'BasicAttribute' has cardinality 0..*, and from 'art_instance_ValuedAttribute', the role 'art_instance_ValuedAttribute' has cardinality 0..*.
+An association connects 'art_instance_DictionaryValuedAttribute' and 'Entry'. From 'art_instance_DictionaryValuedAttribute', the role 'art_instance_DictionaryValuedAttribute' has cardinality 0..*, and from 'Entry', the role 'Entry' has cardinality 0..*.
+An association connects 'Dictionary' and 'art_instance_DictionaryValuedAttribute'. From 'Dictionary', the role 'Dictionary' has cardinality 0..*, and from 'art_instance_DictionaryValuedAttribute', the role 'art_instance_DictionaryValuedAttribute39' has cardinality 0..*.
+An association connects 'DictionaryDefaultValue' and 'art_instance_DefaultEntry'. From 'DictionaryDefaultValue', the role 'DictionaryDefaultValue' has cardinality 0..*, and from 'art_instance_DefaultEntry', the role 'art_instance_DefaultEntry' has cardinality 0..*.
+An association connects 'art_type_ComponentType' and 'AbstractPort'. From 'art_type_ComponentType', the role 'art_type_ComponentType' has cardinality 0..*, and from 'AbstractPort', the role 'AbstractPort42' has cardinality 0..*.
+An association connects 'art_type_ComponentType' and 'Attribute'. From 'art_type_ComponentType', the role 'art_type_ComponentType44' has cardinality 0..*, and from 'Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'TypeGroup' and 'art_type_ComponentType'. From 'TypeGroup', the role 'group46' has cardinality 0..*, and from 'art_type_ComponentType', the role 'TypeGroup' has cardinality 0..*.
+An association connects 'art_type_ComponentType' and 'TypeImplementation'. From 'art_type_ComponentType', the role 'art_type_ComponentType48' has cardinality 0..*, and from 'TypeImplementation', the role 'TypeImplementation' has cardinality 0..*.
+An association connects 'art_type_Service' and 'Operation'. From 'art_type_Service', the role 'art_type_Service' has cardinality 0..*, and from 'Operation', the role 'Operation' has cardinality 0..*.
+An association connects 'art_type_Operation' and 'Parameter'. From 'art_type_Operation', the role 'art_type_Operation' has cardinality 0..*, and from 'Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'art_type_Operation' and 'Parameter'. From 'art_type_Operation', the role 'art_type_Operation52' has cardinality 0..*, and from 'Parameter', the role 'Parameter53' has cardinality 0..*.
+An association connects 'art_type_AbstractPort' and 'Service'. From 'art_type_AbstractPort', the role 'art_type_AbstractPort' has cardinality 0..*, and from 'Service', the role 'Service55' has cardinality 0..*.
+An association connects 'PortId' and 'art_type_PortCollection'. From 'PortId', the role 'PortId' has cardinality 0..*, and from 'art_type_PortCollection', the role 'art_type_PortCollection' has cardinality 0..*.
+An association connects 'type_art_DataType' and 'art_type_Dictionary'. From 'type_art_DataType', the role 'type_art_DataType' has cardinality 0..*, and from 'art_type_Dictionary', the role 'art_type_Dictionary' has cardinality 0..*.
+An association connects 'art_type_Dictionary' and 'DictionaryDefaultValue'. From 'art_type_Dictionary', the role 'art_type_Dictionary59' has cardinality 0..*, and from 'DictionaryDefaultValue', the role 'DictionaryDefaultValue60' has cardinality 0..*.
+An association connects 'ComponentType' and 'art_group_TypeGroup'. From 'ComponentType', the role 'type' has cardinality 0..*, and from 'art_group_TypeGroup', the role 'ComponentType62' has cardinality 0..*.
+An association connects 'art_group_TypeGroup' and 'TypeGroup'. From 'art_group_TypeGroup', the role 'art_group_TypeGroup' has cardinality 0..*, and from 'TypeGroup', the role 'TypeGroup64' has cardinality 0..*.
+An association connects 'art_group_InstanceGroup' and 'ComponentInstance'. From 'art_group_InstanceGroup', the role 'ComponentInstance66' has cardinality 0..*, and from 'ComponentInstance', the role 'instance67' has cardinality 0..*.
+An association connects 'art_group_InstanceGroup' and 'InstanceGroup'. From 'art_group_InstanceGroup', the role 'art_group_InstanceGroup' has cardinality 0..*, and from 'InstanceGroup', the role 'InstanceGroup69' has cardinality 0..*.

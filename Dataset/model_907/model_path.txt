@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/emmanuellerouille/T4VASP/source_code/org.kermeta.spem.activity.model/target/classes/model/spem2.ecore

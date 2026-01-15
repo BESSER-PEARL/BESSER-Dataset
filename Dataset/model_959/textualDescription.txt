@@ -1,0 +1,19 @@
+The domain model 'simplegraph' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'simplegraph_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simplegraph_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'simplegraph_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'simplegraph_Node' and 'simplegraph_Graph'. From 'simplegraph_Node', the role 'simplegraph_Node' has cardinality 0..*, and from 'simplegraph_Graph', the role 'simplegraph_Graph' has cardinality 0..*.
+An association connects 'simplegraph_Node' and 'simplegraph_Edge'. From 'simplegraph_Node', the role 'source' has cardinality 0..*, and from 'simplegraph_Edge', the role 'Edge' has cardinality 0..*.
+An association connects 'simplegraph_Edge' and 'simplegraph_Node'. From 'simplegraph_Edge', the role 'Edge3' has cardinality 0..*, and from 'simplegraph_Node', the role 'target' has cardinality 0..*.
+An association connects 'simplegraph_Node' and 'simplegraph_Edge'. From 'simplegraph_Node', the role 'Node' has cardinality 0..*, and from 'simplegraph_Edge', the role 'outgoing' has cardinality 0..*.
+An association connects 'simplegraph_Node' and 'simplegraph_Edge'. From 'simplegraph_Node', the role 'Node6' has cardinality 0..*, and from 'simplegraph_Edge', the role 'incoming' has cardinality 0..*.

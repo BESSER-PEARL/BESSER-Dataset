@@ -1,0 +1,267 @@
+The domain model 'ryz' describes the core structural elements and their relationships within the system.
+
+The model defines 53 main class(es).
+
+'ryz_PresentationFormElement' represents an important domain concept.
+It has one attribute: 'labelText', which is of type str.
+
+'ryz_PresentationForm' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ryz_Input' represents an important domain concept.
+It has the following attributes: 'isHidden', which is of type bool; 'inputDataType', which is of type str; 'isReadOnly', which is of type bool.
+
+'ryz_Property' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'isRequired', which is of type bool.
+
+'ryz_ViewPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_Form' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_Controller' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_ViewToModelRelation' represents an important domain concept.
+It has one attribute: 'modelcardinality', which is of type str.
+
+'ryz_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_ActionLink' represents an important domain concept.
+It does not declare any attributes.
+
+'PresentationFormElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_TableKey' represents an important domain concept.
+It has the following attributes: 'isForeignKey', which is of type bool; 'isPrimaryKey', which is of type bool; 'isRequired', which is of type bool; 'type', which is of type str.
+
+'ryz_UseCaseActorPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_UseCase' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_ControllerPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'HelperForSendingRequest' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_Model' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'ryz_MultipleChoice' represents an important domain concept.
+It has the following attributes: 'multipleChoiceType', which is of type str; 'multipleSelection', which is of type bool.
+
+'ryz_HelperForSendingRequest' represents an important domain concept.
+It has the following attributes: 'httpMethod', which is of type str; 'requestType', which is of type str; 'text', which is of type str.
+
+'ryz_Link' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'ryz_Layout' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_ComponentPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_AbstractView' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_ControllerToModelRelation' represents an important domain concept.
+It has the following attributes: 'modelOperation', which is of type str; 'modelCardinality', which is of type str.
+
+'ryz_FormElementToPropertyKeyRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_ActionMethod' represents an important domain concept.
+It has the following attributes: 'returns', which is of type str; 'httpMethod', which is of type str.
+
+'ryz_MainComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_PresentationElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MainComponentRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_Header' represents an important domain concept.
+It has the following attributes: 'labelText', which is of type str; 'name', which is of type str.
+
+'MainComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_Parameter' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'isList', which is of type bool; 'isNullable', which is of type bool.
+
+'ryz_ModelAssociation' represents an important domain concept.
+It has the following attributes: 'principalRoleName', which is of type str; 'dependentRoleName', which is of type str; 'isRequired', which is of type bool; 'cardinality', which is of type str.
+
+'ryz_View' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_ModelPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_MvcPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_Choice' represents an important domain concept.
+It has the following attributes: 'selected', which is of type str; 'value', which is of type str; 'text', which is of type str.
+
+'PresentationElement' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractView' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_ControllerToViewRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_Partial' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_Project' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_UseCasePackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_MainComponentRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_PresentationFormElementToPropertyKey' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_Button' represents an important domain concept.
+It has one attribute: 'buttonType', which is of type str.
+
+'ryz_ViewToControllerRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'ryz_Package' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ButtonType' defines the following possible values: 'SUBMIT', 'RESET'.
+The enumeration 'InputDataType' defines the following possible values: 'DATE', 'FILE', 'TEL', 'PASSWORD', 'TEXT', 'NUMBER', 'TIME', 'EMAIL'.
+The enumeration 'HttpMethod' defines the following possible values: 'POST', 'GET'.
+The enumeration 'ModelPropertyType' defines the following possible values: 'STRING', 'BOOLEAN', 'DOUBLE', 'INTEGER', 'DATETIME'.
+The enumeration 'ActionMethodParameterType' defines the following possible values: 'STRING', 'INTEGER'.
+The enumeration 'Cardinality' defines the following possible values: 'MANY_TO_MANY', 'ONE_TO_MANY', 'ONE_TO_ONE'.
+The enumeration 'ModelCardinality' defines the following possible values: 'ONE', 'ALL'.
+The enumeration 'ActionMethodReturnType' defines the following possible values: 'Content', 'Json', 'PartialView', 'RedirectToAction', 'View'.
+The enumeration 'MultipleChoiceType' defines the following possible values: 'DROPDOWN_LIST', 'RADIO_BUTTON', 'CHECKBOX_GROUP'.
+The enumeration 'ModelOperation' defines the following possible values: 'DELETE', 'CREATE', 'UPDATE', 'READ'.
+The enumeration 'RequestType' defines the following possible values: 'REGULAR_HTTP', 'AJAX'.
+
+The model also captures inheritance relationships between classes.
+The class 'ryz_Project' is a specialization of 'NamedElement'.
+The class 'ryz_Package' is a specialization of 'NamedElement'.
+The class 'ryz_ComponentPackage' is a specialization of 'Package'.
+The class 'ryz_MvcPackage' is a specialization of 'Package'.
+The class 'ryz_ModelPackage' is a specialization of 'ComponentPackage'.
+The class 'ryz_ViewPackage' is a specialization of 'ComponentPackage'.
+The class 'ryz_ControllerPackage' is a specialization of 'ComponentPackage'.
+The class 'ryz_Model' is a specialization of 'MainComponent'.
+The class 'ryz_AbstractView' is a specialization of 'MainComponent'.
+The class 'ryz_Controller' is a specialization of 'MainComponent'.
+The class 'ryz_MainComponent' is a specialization of 'NamedElement'.
+The class 'ryz_Property' is a specialization of 'NamedElement'.
+The class 'ryz_ModelAssociation' is a specialization of 'NamedElement'.
+The class 'ryz_Partial' is a specialization of 'AbstractView'.
+The class 'ryz_ActionMethod' is a specialization of 'NamedElement'.
+The class 'ryz_Layout' is a specialization of 'AbstractView'.
+The class 'ryz_View' is a specialization of 'AbstractView'.
+The class 'ryz_Parameter' is a specialization of 'NamedElement'.
+The class 'ryz_MainComponentRelation' is a specialization of 'NamedElement'.
+The class 'ryz_ViewToControllerRelation' is a specialization of 'MainComponentRelation'.
+The class 'ryz_ControllerToModelRelation' is a specialization of 'MainComponentRelation'.
+The class 'ryz_ActionLink' is a specialization of 'HelperForSendingRequest'.
+The class 'ryz_Form' is a specialization of 'HelperForSendingRequest'.
+The class 'ryz_ControllerToViewRelation' is a specialization of 'MainComponentRelation'.
+The class 'ryz_TableKey' is a specialization of 'NamedElement'.
+The class 'ryz_ViewToModelRelation' is a specialization of 'MainComponentRelation'.
+The class 'ryz_UseCaseActorPackage' is a specialization of 'Package'.
+The class 'ryz_Actor' is a specialization of 'NamedElement'.
+The class 'ryz_UseCase' is a specialization of 'NamedElement'.
+The class 'ryz_UseCasePackage' is a specialization of 'NamedElement'.
+The class 'ryz_PresentationElement' is a specialization of 'NamedElement'.
+The class 'ryz_PresentationForm' is a specialization of 'PresentationElement'.
+The class 'ryz_MultipleChoice' is a specialization of 'PresentationFormElement'.
+The class 'ryz_Button' is a specialization of 'PresentationFormElement'.
+The class 'ryz_Input' is a specialization of 'PresentationFormElement'.
+The class 'ryz_Link' is a specialization of 'PresentationElement'.
+The class 'ryz_Table' is a specialization of 'PresentationElement'.
+The class 'ryz_FormElementToPropertyKeyRelation' is a specialization of 'MainComponentRelation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ryz_Project' and 'ryz_Package'. From 'ryz_Project', the role 'ryz_Project' has cardinality 0..*, and from 'ryz_Package', the role 'ryz_Package' has cardinality 0..*.
+An association connects 'ryz_MainComponent' and 'ryz_MvcPackage'. From 'ryz_MainComponent', the role 'ryz_MainComponent' has cardinality 0..*, and from 'ryz_MvcPackage', the role 'ryz_MvcPackage' has cardinality 0..*.
+An association connects 'ryz_MvcPackage' and 'ryz_MainComponentRelation'. From 'ryz_MvcPackage', the role 'ryz_MvcPackage3' has cardinality 0..*, and from 'ryz_MainComponentRelation', the role 'ryz_MainComponentRelation' has cardinality 0..*.
+An association connects 'ryz_ModelPackage' and 'ryz_Model'. From 'ryz_ModelPackage', the role 'ryz_ModelPackage' has cardinality 0..*, and from 'ryz_Model', the role 'ryz_Model' has cardinality 0..*.
+An association connects 'ryz_ModelAssociation' and 'ryz_ModelPackage'. From 'ryz_ModelAssociation', the role 'ryz_ModelAssociation' has cardinality 0..*, and from 'ryz_ModelPackage', the role 'ryz_ModelPackage6' has cardinality 0..*.
+An association connects 'ryz_ViewPackage' and 'ryz_AbstractView'. From 'ryz_ViewPackage', the role 'ryz_ViewPackage' has cardinality 0..*, and from 'ryz_AbstractView', the role 'ryz_AbstractView' has cardinality 0..*.
+An association connects 'ryz_ControllerPackage' and 'ryz_Controller'. From 'ryz_ControllerPackage', the role 'ryz_ControllerPackage' has cardinality 0..*, and from 'ryz_Controller', the role 'ryz_Controller' has cardinality 0..*.
+An association connects 'ryz_Property' and 'ryz_Model'. From 'ryz_Property', the role 'ryz_Property' has cardinality 0..*, and from 'ryz_Model', the role 'ryz_Model10' has cardinality 0..*.
+An association connects 'ryz_Model' and 'ryz_Model'. From 'ryz_Model', the role 'ryz_Model11' has cardinality 0..*, and from 'ryz_Model', the role 'ryz_Model13' has cardinality 0..*.
+An association connects 'ryz_Model' and 'ryz_TableKey'. From 'ryz_Model', the role 'ryz_Model15' has cardinality 0..*, and from 'ryz_TableKey', the role 'ryz_TableKey' has cardinality 0..*.
+An association connects 'ryz_Partial' and 'ryz_AbstractView'. From 'ryz_Partial', the role 'ryz_Partial' has cardinality 0..*, and from 'ryz_AbstractView', the role 'ryz_AbstractView17' has cardinality 0..*.
+An association connects 'ryz_AbstractView' and 'ryz_HelperForSendingRequest'. From 'ryz_AbstractView', the role 'ryz_AbstractView19' has cardinality 0..*, and from 'ryz_HelperForSendingRequest', the role 'ryz_HelperForSendingRequest' has cardinality 0..*.
+An association connects 'ryz_PresentationElement' and 'ryz_AbstractView'. From 'ryz_PresentationElement', the role 'ryz_PresentationElement' has cardinality 0..*, and from 'ryz_AbstractView', the role 'ryz_AbstractView21' has cardinality 0..*.
+An association connects 'ryz_Controller' and 'ryz_ActionMethod'. From 'ryz_Controller', the role 'ryz_Controller23' has cardinality 0..*, and from 'ryz_ActionMethod', the role 'ryz_ActionMethod' has cardinality 0..*.
+An association connects 'ryz_ModelAssociation' and 'ryz_Model'. From 'ryz_ModelAssociation', the role 'ryz_ModelAssociation25' has cardinality 0..*, and from 'ryz_Model', the role 'ryz_Model26' has cardinality 0..*.
+An association connects 'ryz_ModelAssociation' and 'ryz_Model'. From 'ryz_ModelAssociation', the role 'ryz_ModelAssociation28' has cardinality 0..*, and from 'ryz_Model', the role 'ryz_Model29' has cardinality 0..*.
+An association connects 'ryz_Parameter' and 'ryz_ActionMethod'. From 'ryz_Parameter', the role 'ryz_Parameter' has cardinality 0..*, and from 'ryz_ActionMethod', the role 'ryz_ActionMethod31' has cardinality 0..*.
+An association connects 'ryz_UseCase' and 'ryz_ActionMethod'. From 'ryz_UseCase', the role 'UseCase' has cardinality 0..*, and from 'ryz_ActionMethod', the role 'actionmethod' has cardinality 0..*.
+An association connects 'ryz_View' and 'ryz_Layout'. From 'ryz_View', the role 'ryz_View' has cardinality 0..*, and from 'ryz_Layout', the role 'ryz_Layout' has cardinality 0..*.
+An association connects 'ryz_HelperForSendingRequest' and 'ryz_ViewToControllerRelation'. From 'ryz_HelperForSendingRequest', the role 'ryz_HelperForSendingRequest35' has cardinality 0..*, and from 'ryz_ViewToControllerRelation', the role 'ryz_ViewToControllerRelation' has cardinality 0..*.
+An association connects 'ryz_ViewToControllerRelation' and 'ryz_ActionMethod'. From 'ryz_ViewToControllerRelation', the role 'ryz_ViewToControllerRelation37' has cardinality 0..*, and from 'ryz_ActionMethod', the role 'ryz_ActionMethod38' has cardinality 0..*.
+An association connects 'ryz_Model' and 'ryz_ViewToControllerRelation'. From 'ryz_Model', the role 'ryz_Model41' has cardinality 0..*, and from 'ryz_ViewToControllerRelation', the role 'ryz_ViewToControllerRelation40' has cardinality 0..*.
+An association connects 'ryz_Property' and 'ryz_ViewToControllerRelation'. From 'ryz_Property', the role 'ryz_Property44' has cardinality 0..*, and from 'ryz_ViewToControllerRelation', the role 'ryz_ViewToControllerRelation43' has cardinality 0..*.
+An association connects 'ryz_ActionMethod' and 'ryz_ControllerToModelRelation'. From 'ryz_ActionMethod', the role 'ryz_ActionMethod46' has cardinality 0..*, and from 'ryz_ControllerToModelRelation', the role 'ryz_ControllerToModelRelation' has cardinality 0..*.
+An association connects 'ryz_Model' and 'ryz_ControllerToModelRelation'. From 'ryz_Model', the role 'ryz_Model49' has cardinality 0..*, and from 'ryz_ControllerToModelRelation', the role 'ryz_ControllerToModelRelation48' has cardinality 0..*.
+An association connects 'ryz_Property' and 'ryz_ControllerToModelRelation'. From 'ryz_Property', the role 'ryz_Property52' has cardinality 0..*, and from 'ryz_ControllerToModelRelation', the role 'ryz_ControllerToModelRelation51' has cardinality 0..*.
+An association connects 'ryz_HelperForSendingRequest' and 'ryz_UseCase'. From 'ryz_HelperForSendingRequest', the role 'helperforsendingrequest' has cardinality 0..*, and from 'ryz_UseCase', the role 'UseCase54' has cardinality 0..*.
+An association connects 'ryz_HelperForSendingRequest' and 'ryz_PresentationElement'. From 'ryz_HelperForSendingRequest', the role 'helperforsendingrequest56' has cardinality 0..*, and from 'ryz_PresentationElement', the role 'PresentationElement' has cardinality 0..*.
+An association connects 'ryz_ActionMethod' and 'ryz_ControllerToViewRelation'. From 'ryz_ActionMethod', the role 'ryz_ActionMethod58' has cardinality 0..*, and from 'ryz_ControllerToViewRelation', the role 'ryz_ControllerToViewRelation' has cardinality 0..*.
+An association connects 'ryz_ControllerToViewRelation' and 'ryz_AbstractView'. From 'ryz_ControllerToViewRelation', the role 'ryz_ControllerToViewRelation60' has cardinality 0..*, and from 'ryz_AbstractView', the role 'ryz_AbstractView61' has cardinality 0..*.
+An association connects 'ryz_ViewToModelRelation' and 'ryz_AbstractView'. From 'ryz_ViewToModelRelation', the role 'ryz_ViewToModelRelation' has cardinality 0..*, and from 'ryz_AbstractView', the role 'ryz_AbstractView63' has cardinality 0..*.
+An association connects 'ryz_Model' and 'ryz_ViewToModelRelation'. From 'ryz_Model', the role 'ryz_Model66' has cardinality 0..*, and from 'ryz_ViewToModelRelation', the role 'ryz_ViewToModelRelation65' has cardinality 0..*.
+An association connects 'ryz_Property' and 'ryz_ViewToModelRelation'. From 'ryz_Property', the role 'ryz_Property69' has cardinality 0..*, and from 'ryz_ViewToModelRelation', the role 'ryz_ViewToModelRelation68' has cardinality 0..*.
+An association connects 'ryz_Actor' and 'ryz_UseCaseActorPackage'. From 'ryz_Actor', the role 'ryz_Actor' has cardinality 0..*, and from 'ryz_UseCaseActorPackage', the role 'ryz_UseCaseActorPackage' has cardinality 0..*.
+An association connects 'ryz_UseCaseActorPackage' and 'ryz_UseCasePackage'. From 'ryz_UseCaseActorPackage', the role 'ryz_UseCaseActorPackage72' has cardinality 0..*, and from 'ryz_UseCasePackage', the role 'ryz_UseCasePackage' has cardinality 0..*.
+An association connects 'ryz_UseCase' and 'ryz_Actor'. From 'ryz_UseCase', the role 'UseCase74' has cardinality 0..*, and from 'ryz_Actor', the role 'actor' has cardinality 0..*.
+An association connects 'ryz_Actor' and 'ryz_UseCase'. From 'ryz_Actor', the role 'Actor' has cardinality 0..*, and from 'ryz_UseCase', the role 'usecase' has cardinality 0..*.
+An association connects 'ryz_UseCase' and 'ryz_HelperForSendingRequest'. From 'ryz_UseCase', the role 'usecase77' has cardinality 0..*, and from 'ryz_HelperForSendingRequest', the role 'HelperForSendingRequest' has cardinality 0..*.
+An association connects 'ryz_UseCase' and 'ryz_ActionMethod'. From 'ryz_UseCase', the role 'usecase79' has cardinality 0..*, and from 'ryz_ActionMethod', the role 'ActionMethod' has cardinality 0..*.
+An association connects 'ryz_UseCase' and 'ryz_UseCasePackage'. From 'ryz_UseCase', the role 'ryz_UseCase' has cardinality 0..*, and from 'ryz_UseCasePackage', the role 'ryz_UseCasePackage81' has cardinality 0..*.
+An association connects 'ryz_PresentationElement' and 'ryz_HelperForSendingRequest'. From 'ryz_PresentationElement', the role 'presentationelement' has cardinality 0..*, and from 'ryz_HelperForSendingRequest', the role 'HelperForSendingRequest83' has cardinality 0..*.
+An association connects 'ryz_PresentationForm' and 'ryz_PresentationFormElement'. From 'ryz_PresentationForm', the role 'ryz_PresentationForm' has cardinality 0..*, and from 'ryz_PresentationFormElement', the role 'ryz_PresentationFormElement' has cardinality 0..*.
+An association connects 'ryz_MultipleChoice' and 'ryz_Choice'. From 'ryz_MultipleChoice', the role 'ryz_MultipleChoice' has cardinality 0..*, and from 'ryz_Choice', the role 'ryz_Choice' has cardinality 0..*.
+An association connects 'ryz_Header' and 'ryz_Table'. From 'ryz_Header', the role 'ryz_Header' has cardinality 0..*, and from 'ryz_Table', the role 'ryz_Table' has cardinality 0..*.
+An association connects 'ryz_FormElementToPropertyKeyRelation' and 'ryz_HelperForSendingRequest'. From 'ryz_FormElementToPropertyKeyRelation', the role 'ryz_FormElementToPropertyKeyRelation' has cardinality 0..*, and from 'ryz_HelperForSendingRequest', the role 'ryz_HelperForSendingRequest88' has cardinality 0..*.
+An association connects 'ryz_Model' and 'ryz_FormElementToPropertyKeyRelation'. From 'ryz_Model', the role 'ryz_Model91' has cardinality 0..*, and from 'ryz_FormElementToPropertyKeyRelation', the role 'ryz_FormElementToPropertyKeyRelation90' has cardinality 0..*.
+An association connects 'ryz_FormElementToPropertyKeyRelation' and 'ryz_PresentationFormElementToPropertyKey'. From 'ryz_FormElementToPropertyKeyRelation', the role 'ryz_FormElementToPropertyKeyRelation93' has cardinality 0..*, and from 'ryz_PresentationFormElementToPropertyKey', the role 'ryz_PresentationFormElementToPropertyKey' has cardinality 0..*.
+An association connects 'ryz_PresentationFormElementToPropertyKey' and 'ryz_PresentationFormElement'. From 'ryz_PresentationFormElementToPropertyKey', the role 'ryz_PresentationFormElementToPropertyKey95' has cardinality 0..*, and from 'ryz_PresentationFormElement', the role 'ryz_PresentationFormElement96' has cardinality 0..*.
+An association connects 'ryz_PresentationFormElementToPropertyKey' and 'ryz_Property'. From 'ryz_PresentationFormElementToPropertyKey', the role 'ryz_PresentationFormElementToPropertyKey98' has cardinality 0..*, and from 'ryz_Property', the role 'ryz_Property99' has cardinality 0..*.
+An association connects 'ryz_PresentationFormElementToPropertyKey' and 'ryz_TableKey'. From 'ryz_PresentationFormElementToPropertyKey', the role 'ryz_PresentationFormElementToPropertyKey101' has cardinality 0..*, and from 'ryz_TableKey', the role 'ryz_TableKey102' has cardinality 0..*.

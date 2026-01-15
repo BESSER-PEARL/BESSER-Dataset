@@ -1,0 +1,65 @@
+The domain model 'notation' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'notation_Anchor' represents an important domain concept.
+It has the following attributes: 'y', which is of type int; 'x', which is of type int.
+
+'notation_AbsoluteBendPoint' represents an important domain concept.
+It has the following attributes: 'y', which is of type int; 'x', which is of type int.
+
+'notation_HierarchicalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagramElement' represents an important domain concept.
+It does not declare any attributes.
+
+'BendPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_DiagramElement' represents an important domain concept.
+It has the following attributes: 'visible', which is of type bool; 'persistent', which is of type bool.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_RelativeBendPoint' represents an important domain concept.
+It has the following attributes: 'targetY', which is of type int; 'targetX', which is of type int; 'sourceY', which is of type int; 'sourceX', which is of type int.
+
+'Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_BendPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Node' represents an important domain concept.
+It has the following attributes: 'width', which is of type int; 'y', which is of type int; 'x', which is of type int; 'height', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'notation_DiagramElement' is a specialization of 'Identifier'.
+The class 'notation_Node' is a specialization of 'DiagramElement'.
+The class 'notation_Edge' is a specialization of 'DiagramElement'.
+The class 'notation_HierarchicalNode' is a specialization of 'Node'.
+The class 'notation_RelativeBendPoint' is a specialization of 'BendPoint'.
+The class 'notation_AbsoluteBendPoint' is a specialization of 'BendPoint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'notation_EObject' and 'notation_DiagramElement'. From 'notation_EObject', the role 'notation_EObject' has cardinality 0..*, and from 'notation_DiagramElement', the role 'notation_DiagramElement' has cardinality 0..*.
+An association connects 'notation_Edge' and 'notation_Node'. From 'notation_Edge', the role 'Edge' has cardinality 0..*, and from 'notation_Node', the role 'source' has cardinality 0..*.
+An association connects 'notation_Edge' and 'notation_Node'. From 'notation_Edge', the role 'Edge3' has cardinality 0..*, and from 'notation_Node', the role 'target' has cardinality 0..*.
+An association connects 'notation_Node' and 'notation_HierarchicalNode'. From 'notation_Node', the role 'nodes' has cardinality 0..*, and from 'notation_HierarchicalNode', the role 'HierarchicalNode' has cardinality 0..*.
+An association connects 'notation_Node' and 'notation_Edge'. From 'notation_Node', the role 'Node' has cardinality 0..*, and from 'notation_Edge', the role 'outgoing' has cardinality 0..*.
+An association connects 'notation_Edge' and 'notation_Node'. From 'notation_Edge', the role 'incoming' has cardinality 0..*, and from 'notation_Node', the role 'Node7' has cardinality 0..*.
+An association connects 'notation_Edge' and 'notation_HierarchicalNode'. From 'notation_Edge', the role 'edges' has cardinality 0..*, and from 'notation_HierarchicalNode', the role 'HierarchicalNode9' has cardinality 0..*.
+An association connects 'notation_Anchor' and 'notation_Edge'. From 'notation_Anchor', the role 'notation_Anchor' has cardinality 0..*, and from 'notation_Edge', the role 'notation_Edge' has cardinality 0..*.
+An association connects 'notation_Anchor' and 'notation_Edge'. From 'notation_Anchor', the role 'notation_Anchor13' has cardinality 0..*, and from 'notation_Edge', the role 'notation_Edge12' has cardinality 0..*.
+An association connects 'notation_Edge' and 'notation_BendPoint'. From 'notation_Edge', the role 'edge' has cardinality 0..*, and from 'notation_BendPoint', the role 'BendPoint' has cardinality 0..*.
+An association connects 'notation_HierarchicalNode' and 'notation_Node'. From 'notation_HierarchicalNode', the role 'parent' has cardinality 0..*, and from 'notation_Node', the role 'Node16' has cardinality 0..*.
+An association connects 'notation_Edge' and 'notation_HierarchicalNode'. From 'notation_Edge', the role 'Edge19' has cardinality 0..*, and from 'notation_HierarchicalNode', the role 'parent18' has cardinality 0..*.
+An association connects 'notation_BendPoint' and 'notation_Edge'. From 'notation_BendPoint', the role 'bendPoints' has cardinality 0..*, and from 'notation_Edge', the role 'Edge21' has cardinality 0..*.

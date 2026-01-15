@@ -1,0 +1,268 @@
+The domain model 'droneDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 58 main class(es).
+
+'droneDSL_Gauche' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_Parallele3' represents an important domain concept.
+It does not declare any attributes.
+
+'SecondeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_AR' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_Mouvement' represents an important domain concept.
+It does not declare any attributes.
+
+'GDr' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_Pourcent_vitesse_hauteur_max' represents an important domain concept.
+It does not declare any attributes.
+
+'Mouvement' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_GDr' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_FonctionCallInterne' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_Main' represents an important domain concept.
+It does not declare any attributes.
+
+'Parallele' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_RotationGauche' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_FonctionCallExterne' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'droneDSL_FonctionDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'droneDSL_Parallele2' represents an important domain concept.
+It does not declare any attributes.
+
+'VarDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_VarDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'droneDSL_Pourcent_vitesse_rotation_max' represents an important domain concept.
+It does not declare any attributes.
+
+'FonctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_Decoller' represents an important domain concept.
+It does not declare any attributes.
+
+'DecollerAtterrir' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_PourcentExp' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_Parallele4' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_Monter' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_Pourcent_vitesse_deplacement_max' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_Descendre' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_Droite' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_Parallele' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_RefPourcentVar' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_CommandeBasique' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_FinDeMain' represents an important domain concept.
+It has one attribute: 'accolade', which is of type str.
+
+'droneDSL_SecondeConst' represents an important domain concept.
+It has one attribute: 'val', which is of type str.
+
+'droneDSL_RefSecondeVar' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_RGRD' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_Import' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'droneDSL_PourcentDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_Prologue' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_RotationDroite' represents an important domain concept.
+It does not declare any attributes.
+
+'PourcentExp' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_FonctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_PourcentConst' represents an important domain concept.
+It has one attribute: 'val', which is of type str.
+
+'droneDSL_Pause' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_Atterrir' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_Hauteur_max' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_SecondeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'RGRD' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_MD' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_DecollerAtterrir' represents an important domain concept.
+It has one attribute: 'str', which is of type str.
+
+'droneDSL_SecondeDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'MD' represents an important domain concept.
+It does not declare any attributes.
+
+'CommandeBasique' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_Reculer' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_Eloignement_max' represents an important domain concept.
+It does not declare any attributes.
+
+'droneDSL_Avancer' represents an important domain concept.
+It does not declare any attributes.
+
+'AR' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'droneDSL_SecondeConst' is a specialization of 'SecondeExp'.
+The class 'droneDSL_PourcentConst' is a specialization of 'PourcentExp'.
+The class 'droneDSL_SecondeDecl' is a specialization of 'VarDecl'.
+The class 'droneDSL_PourcentDecl' is a specialization of 'VarDecl'.
+The class 'droneDSL_RefSecondeVar' is a specialization of 'SecondeExp'.
+The class 'droneDSL_RefPourcentVar' is a specialization of 'PourcentExp'.
+The class 'droneDSL_Decoller' is a specialization of 'DecollerAtterrir'.
+The class 'droneDSL_Atterrir' is a specialization of 'DecollerAtterrir'.
+The class 'droneDSL_Monter' is a specialization of 'Mouvement'.
+The class 'droneDSL_Monter' is a specialization of 'CommandeBasique'.
+The class 'droneDSL_Monter' is a specialization of 'MD'.
+The class 'droneDSL_Descendre' is a specialization of 'Mouvement'.
+The class 'droneDSL_Descendre' is a specialization of 'CommandeBasique'.
+The class 'droneDSL_Descendre' is a specialization of 'MD'.
+The class 'droneDSL_Avancer' is a specialization of 'Mouvement'.
+The class 'droneDSL_Avancer' is a specialization of 'CommandeBasique'.
+The class 'droneDSL_Avancer' is a specialization of 'AR'.
+The class 'droneDSL_Reculer' is a specialization of 'Mouvement'.
+The class 'droneDSL_Reculer' is a specialization of 'CommandeBasique'.
+The class 'droneDSL_Reculer' is a specialization of 'AR'.
+The class 'droneDSL_Gauche' is a specialization of 'Mouvement'.
+The class 'droneDSL_Gauche' is a specialization of 'CommandeBasique'.
+The class 'droneDSL_Gauche' is a specialization of 'GDr'.
+The class 'droneDSL_Droite' is a specialization of 'Mouvement'.
+The class 'droneDSL_Droite' is a specialization of 'CommandeBasique'.
+The class 'droneDSL_Droite' is a specialization of 'GDr'.
+The class 'droneDSL_RotationGauche' is a specialization of 'Mouvement'.
+The class 'droneDSL_RotationGauche' is a specialization of 'CommandeBasique'.
+The class 'droneDSL_RotationGauche' is a specialization of 'RGRD'.
+The class 'droneDSL_RotationDroite' is a specialization of 'Mouvement'.
+The class 'droneDSL_RotationDroite' is a specialization of 'CommandeBasique'.
+The class 'droneDSL_RotationDroite' is a specialization of 'RGRD'.
+The class 'droneDSL_Pause' is a specialization of 'CommandeBasique'.
+The class 'droneDSL_FonctionCallInterne' is a specialization of 'FonctionCall'.
+The class 'droneDSL_FonctionCallExterne' is a specialization of 'FonctionCall'.
+The class 'droneDSL_Parallele' is a specialization of 'Mouvement'.
+The class 'droneDSL_Parallele2' is a specialization of 'Parallele'.
+The class 'droneDSL_Parallele3' is a specialization of 'Parallele'.
+The class 'droneDSL_Parallele4' is a specialization of 'Parallele'.
+
+Relationships between classes are modeled using associations.
+An association connects 'droneDSL_Import' and 'droneDSL_Model'. From 'droneDSL_Import', the role 'droneDSL_Import' has cardinality 0..*, and from 'droneDSL_Model', the role 'droneDSL_Model' has cardinality 0..*.
+An association connects 'droneDSL_Model' and 'droneDSL_Prologue'. From 'droneDSL_Model', the role 'droneDSL_Model2' has cardinality 0..*, and from 'droneDSL_Prologue', the role 'droneDSL_Prologue' has cardinality 0..*.
+An association connects 'droneDSL_Main' and 'droneDSL_Model'. From 'droneDSL_Main', the role 'droneDSL_Main' has cardinality 0..*, and from 'droneDSL_Model', the role 'droneDSL_Model4' has cardinality 0..*.
+An association connects 'droneDSL_FonctionDecl' and 'droneDSL_Model'. From 'droneDSL_FonctionDecl', the role 'droneDSL_FonctionDecl' has cardinality 0..*, and from 'droneDSL_Model', the role 'droneDSL_Model6' has cardinality 0..*.
+An association connects 'droneDSL_PourcentConst' and 'droneDSL_Pourcent_vitesse_hauteur_max'. From 'droneDSL_PourcentConst', the role 'droneDSL_PourcentConst' has cardinality 0..*, and from 'droneDSL_Pourcent_vitesse_hauteur_max', the role 'droneDSL_Pourcent_vitesse_hauteur_max' has cardinality 0..*.
+An association connects 'droneDSL_Pourcent_vitesse_deplacement_max' and 'droneDSL_PourcentConst'. From 'droneDSL_Pourcent_vitesse_deplacement_max', the role 'droneDSL_Pourcent_vitesse_deplacement_max' has cardinality 0..*, and from 'droneDSL_PourcentConst', the role 'droneDSL_PourcentConst9' has cardinality 0..*.
+An association connects 'droneDSL_PourcentConst' and 'droneDSL_Pourcent_vitesse_rotation_max'. From 'droneDSL_PourcentConst', the role 'droneDSL_PourcentConst11' has cardinality 0..*, and from 'droneDSL_Pourcent_vitesse_rotation_max', the role 'droneDSL_Pourcent_vitesse_rotation_max' has cardinality 0..*.
+An association connects 'droneDSL_SecondeConst' and 'droneDSL_Hauteur_max'. From 'droneDSL_SecondeConst', the role 'droneDSL_SecondeConst' has cardinality 0..*, and from 'droneDSL_Hauteur_max', the role 'droneDSL_Hauteur_max' has cardinality 0..*.
+An association connects 'droneDSL_SecondeConst' and 'droneDSL_Eloignement_max'. From 'droneDSL_SecondeConst', the role 'droneDSL_SecondeConst14' has cardinality 0..*, and from 'droneDSL_Eloignement_max', the role 'droneDSL_Eloignement_max' has cardinality 0..*.
+An association connects 'droneDSL_Prologue' and 'droneDSL_Pourcent_vitesse_hauteur_max'. From 'droneDSL_Prologue', the role 'droneDSL_Prologue16' has cardinality 0..*, and from 'droneDSL_Pourcent_vitesse_hauteur_max', the role 'droneDSL_Pourcent_vitesse_hauteur_max17' has cardinality 0..*.
+An association connects 'droneDSL_Prologue' and 'droneDSL_Pourcent_vitesse_deplacement_max'. From 'droneDSL_Prologue', the role 'droneDSL_Prologue19' has cardinality 0..*, and from 'droneDSL_Pourcent_vitesse_deplacement_max', the role 'droneDSL_Pourcent_vitesse_deplacement_max20' has cardinality 0..*.
+An association connects 'droneDSL_Prologue' and 'droneDSL_Pourcent_vitesse_rotation_max'. From 'droneDSL_Prologue', the role 'droneDSL_Prologue22' has cardinality 0..*, and from 'droneDSL_Pourcent_vitesse_rotation_max', the role 'droneDSL_Pourcent_vitesse_rotation_max23' has cardinality 0..*.
+An association connects 'droneDSL_Hauteur_max' and 'droneDSL_Prologue'. From 'droneDSL_Hauteur_max', the role 'droneDSL_Hauteur_max26' has cardinality 0..*, and from 'droneDSL_Prologue', the role 'droneDSL_Prologue25' has cardinality 0..*.
+An association connects 'droneDSL_Prologue' and 'droneDSL_Eloignement_max'. From 'droneDSL_Prologue', the role 'droneDSL_Prologue28' has cardinality 0..*, and from 'droneDSL_Eloignement_max', the role 'droneDSL_Eloignement_max29' has cardinality 0..*.
+An association connects 'droneDSL_SecondeConst' and 'droneDSL_SecondeDecl'. From 'droneDSL_SecondeConst', the role 'droneDSL_SecondeConst31' has cardinality 0..*, and from 'droneDSL_SecondeDecl', the role 'droneDSL_SecondeDecl' has cardinality 0..*.
+An association connects 'droneDSL_PourcentConst' and 'droneDSL_PourcentDecl'. From 'droneDSL_PourcentConst', the role 'droneDSL_PourcentConst33' has cardinality 0..*, and from 'droneDSL_PourcentDecl', the role 'droneDSL_PourcentDecl' has cardinality 0..*.
+An association connects 'droneDSL_SecondeDecl' and 'droneDSL_RefSecondeVar'. From 'droneDSL_SecondeDecl', the role 'droneDSL_SecondeDecl35' has cardinality 0..*, and from 'droneDSL_RefSecondeVar', the role 'droneDSL_RefSecondeVar' has cardinality 0..*.
+An association connects 'droneDSL_PourcentDecl' and 'droneDSL_RefPourcentVar'. From 'droneDSL_PourcentDecl', the role 'droneDSL_PourcentDecl37' has cardinality 0..*, and from 'droneDSL_RefPourcentVar', the role 'droneDSL_RefPourcentVar' has cardinality 0..*.
+An association connects 'droneDSL_Monter' and 'droneDSL_SecondeExp'. From 'droneDSL_Monter', the role 'droneDSL_Monter' has cardinality 0..*, and from 'droneDSL_SecondeExp', the role 'droneDSL_SecondeExp' has cardinality 0..*.
+An association connects 'droneDSL_PourcentExp' and 'droneDSL_Monter'. From 'droneDSL_PourcentExp', the role 'droneDSL_PourcentExp' has cardinality 0..*, and from 'droneDSL_Monter', the role 'droneDSL_Monter40' has cardinality 0..*.
+An association connects 'droneDSL_Descendre' and 'droneDSL_SecondeExp'. From 'droneDSL_Descendre', the role 'droneDSL_Descendre' has cardinality 0..*, and from 'droneDSL_SecondeExp', the role 'droneDSL_SecondeExp42' has cardinality 0..*.
+An association connects 'droneDSL_PourcentExp' and 'droneDSL_Descendre'. From 'droneDSL_PourcentExp', the role 'droneDSL_PourcentExp45' has cardinality 0..*, and from 'droneDSL_Descendre', the role 'droneDSL_Descendre44' has cardinality 0..*.
+An association connects 'droneDSL_SecondeExp' and 'droneDSL_Avancer'. From 'droneDSL_SecondeExp', the role 'droneDSL_SecondeExp47' has cardinality 0..*, and from 'droneDSL_Avancer', the role 'droneDSL_Avancer' has cardinality 0..*.
+An association connects 'droneDSL_Avancer' and 'droneDSL_PourcentExp'. From 'droneDSL_Avancer', the role 'droneDSL_Avancer49' has cardinality 0..*, and from 'droneDSL_PourcentExp', the role 'droneDSL_PourcentExp50' has cardinality 0..*.
+An association connects 'droneDSL_SecondeExp' and 'droneDSL_Reculer'. From 'droneDSL_SecondeExp', the role 'droneDSL_SecondeExp52' has cardinality 0..*, and from 'droneDSL_Reculer', the role 'droneDSL_Reculer' has cardinality 0..*.
+An association connects 'droneDSL_Reculer' and 'droneDSL_PourcentExp'. From 'droneDSL_Reculer', the role 'droneDSL_Reculer54' has cardinality 0..*, and from 'droneDSL_PourcentExp', the role 'droneDSL_PourcentExp55' has cardinality 0..*.
+An association connects 'droneDSL_SecondeExp' and 'droneDSL_Gauche'. From 'droneDSL_SecondeExp', the role 'droneDSL_SecondeExp57' has cardinality 0..*, and from 'droneDSL_Gauche', the role 'droneDSL_Gauche' has cardinality 0..*.
+An association connects 'droneDSL_PourcentExp' and 'droneDSL_Gauche'. From 'droneDSL_PourcentExp', the role 'droneDSL_PourcentExp60' has cardinality 0..*, and from 'droneDSL_Gauche', the role 'droneDSL_Gauche59' has cardinality 0..*.
+An association connects 'droneDSL_Droite' and 'droneDSL_SecondeExp'. From 'droneDSL_Droite', the role 'droneDSL_Droite' has cardinality 0..*, and from 'droneDSL_SecondeExp', the role 'droneDSL_SecondeExp62' has cardinality 0..*.
+An association connects 'droneDSL_Droite' and 'droneDSL_PourcentExp'. From 'droneDSL_Droite', the role 'droneDSL_Droite64' has cardinality 0..*, and from 'droneDSL_PourcentExp', the role 'droneDSL_PourcentExp65' has cardinality 0..*.
+An association connects 'droneDSL_SecondeExp' and 'droneDSL_RotationGauche'. From 'droneDSL_SecondeExp', the role 'droneDSL_SecondeExp67' has cardinality 0..*, and from 'droneDSL_RotationGauche', the role 'droneDSL_RotationGauche' has cardinality 0..*.
+An association connects 'droneDSL_RotationGauche' and 'droneDSL_PourcentExp'. From 'droneDSL_RotationGauche', the role 'droneDSL_RotationGauche69' has cardinality 0..*, and from 'droneDSL_PourcentExp', the role 'droneDSL_PourcentExp70' has cardinality 0..*.
+An association connects 'droneDSL_RotationDroite' and 'droneDSL_SecondeExp'. From 'droneDSL_RotationDroite', the role 'droneDSL_RotationDroite' has cardinality 0..*, and from 'droneDSL_SecondeExp', the role 'droneDSL_SecondeExp72' has cardinality 0..*.
+An association connects 'droneDSL_PourcentExp' and 'droneDSL_RotationDroite'. From 'droneDSL_PourcentExp', the role 'droneDSL_PourcentExp75' has cardinality 0..*, and from 'droneDSL_RotationDroite', the role 'droneDSL_RotationDroite74' has cardinality 0..*.
+An association connects 'droneDSL_Pause' and 'droneDSL_SecondeExp'. From 'droneDSL_Pause', the role 'droneDSL_Pause' has cardinality 0..*, and from 'droneDSL_SecondeExp', the role 'droneDSL_SecondeExp77' has cardinality 0..*.
+An association connects 'droneDSL_FonctionDecl' and 'droneDSL_EObject'. From 'droneDSL_FonctionDecl', the role 'droneDSL_FonctionDecl79' has cardinality 0..*, and from 'droneDSL_EObject', the role 'droneDSL_EObject' has cardinality 0..*.
+An association connects 'droneDSL_FonctionCallInterne' and 'droneDSL_FonctionDecl'. From 'droneDSL_FonctionCallInterne', the role 'droneDSL_FonctionCallInterne' has cardinality 0..*, and from 'droneDSL_FonctionDecl', the role 'droneDSL_FonctionDecl81' has cardinality 0..*.
+An association connects 'droneDSL_FonctionCallExterne' and 'droneDSL_Import'. From 'droneDSL_FonctionCallExterne', the role 'droneDSL_FonctionCallExterne' has cardinality 0..*, and from 'droneDSL_Import', the role 'droneDSL_Import83' has cardinality 0..*.
+An association connects 'droneDSL_Main' and 'droneDSL_Decoller'. From 'droneDSL_Main', the role 'droneDSL_Main85' has cardinality 0..*, and from 'droneDSL_Decoller', the role 'droneDSL_Decoller' has cardinality 0..*.
+An association connects 'droneDSL_Main' and 'droneDSL_EObject'. From 'droneDSL_Main', the role 'droneDSL_Main87' has cardinality 0..*, and from 'droneDSL_EObject', the role 'droneDSL_EObject88' has cardinality 0..*.
+An association connects 'droneDSL_Main' and 'droneDSL_Atterrir'. From 'droneDSL_Main', the role 'droneDSL_Main90' has cardinality 0..*, and from 'droneDSL_Atterrir', the role 'droneDSL_Atterrir' has cardinality 0..*.
+An association connects 'droneDSL_Main' and 'droneDSL_FinDeMain'. From 'droneDSL_Main', the role 'droneDSL_Main92' has cardinality 0..*, and from 'droneDSL_FinDeMain', the role 'droneDSL_FinDeMain' has cardinality 0..*.
+An association connects 'droneDSL_EObject' and 'droneDSL_Parallele'. From 'droneDSL_EObject', the role 'droneDSL_EObject94' has cardinality 0..*, and from 'droneDSL_Parallele', the role 'droneDSL_Parallele' has cardinality 0..*.
+An association connects 'droneDSL_EObject' and 'droneDSL_Parallele'. From 'droneDSL_EObject', the role 'droneDSL_EObject97' has cardinality 0..*, and from 'droneDSL_Parallele', the role 'droneDSL_Parallele96' has cardinality 0..*.
+An association connects 'droneDSL_Parallele2' and 'droneDSL_EObject'. From 'droneDSL_Parallele2', the role 'droneDSL_Parallele2' has cardinality 0..*, and from 'droneDSL_EObject', the role 'droneDSL_EObject99' has cardinality 0..*.
+An association connects 'droneDSL_EObject' and 'droneDSL_Parallele3'. From 'droneDSL_EObject', the role 'droneDSL_EObject101' has cardinality 0..*, and from 'droneDSL_Parallele3', the role 'droneDSL_Parallele3' has cardinality 0..*.
+An association connects 'droneDSL_EObject' and 'droneDSL_Parallele4'. From 'droneDSL_EObject', the role 'droneDSL_EObject103' has cardinality 0..*, and from 'droneDSL_Parallele4', the role 'droneDSL_Parallele4' has cardinality 0..*.
+An association connects 'droneDSL_Parallele4' and 'droneDSL_EObject'. From 'droneDSL_Parallele4', the role 'droneDSL_Parallele4105' has cardinality 0..*, and from 'droneDSL_EObject', the role 'droneDSL_EObject106' has cardinality 0..*.

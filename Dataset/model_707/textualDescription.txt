@@ -1,0 +1,1063 @@
+The domain model 'FlatQVT' describes the core structural elements and their relationships within the system.
+
+The model defines 228 main class(es).
+
+'Key' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CollectionItem' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Transformation' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_RelationDomainAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Extent' represents an important domain concept.
+It does not declare any attributes.
+
+'MappingOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CollectionTemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ModuleImport' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'FlatQVT_RelationDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_DictLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_FeatureCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_StringLiteralExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'FlatQVT_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_InvalidType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_SwitchExp' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstructorBody' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Comment' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'FlatQVT_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'VarParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'CatchExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_DomainPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CollectionLiteralExp' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'BottomPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'DictLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'Transformation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_BooleanLiteralExp' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type str.
+
+'FlatQVT_OperationalTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_IntegerLiteralExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_OppositePropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_FunctionParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'InstantiationExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ForExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Constructor' represents an important domain concept.
+It does not declare any attributes.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_InstantiationExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Helper' represents an important domain concept.
+It has one attribute: 'isQuery', which is of type str.
+
+'FlatQVT_MappingBody' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeLoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ImperativeCallExp' represents an important domain concept.
+It has one attribute: 'isVirtual', which is of type str.
+
+'OperationBody' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'FlatQVT_RealLiteralExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type str.
+
+'ReflectiveCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationalTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectTemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CollectionRange' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Factory' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationDomainAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_DictionaryType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_VariableInitExp' represents an important domain concept.
+It has one attribute: 'withResult', which is of type str.
+
+'FlatQVT_RelationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_RelationImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Area' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_IteratorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_OperationBody' represents an important domain concept.
+It does not declare any attributes.
+
+'Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_RelationalTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_EnforcementOperation' represents an important domain concept.
+It has one attribute: 'enforcementMode', which is of type str.
+
+'FlatQVT_MappingCallExp' represents an important domain concept.
+It has one attribute: 'isStrict', which is of type str.
+
+'LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_BottomPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'Tag' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Property' represents an important domain concept.
+It has the following attributes: 'default', which is of type str; 'isReadOnly', which is of type str; 'isDerived', which is of type str; 'isID', which is of type str; 'isComposite', which is of type str.
+
+'PropertyTemplateItem' represents an important domain concept.
+It does not declare any attributes.
+
+'LogExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'GuardPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Assignment' represents an important domain concept.
+It has one attribute: 'isDefault', which is of type str.
+
+'FlatQVT_Domain' represents an important domain concept.
+It has the following attributes: 'isEnforceable', which is of type str; 'isCheckable', which is of type str.
+
+'FlatQVT_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Extent' represents an important domain concept.
+It does not declare any attributes.
+
+'EntryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Tag' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'FlatQVT_AssertExp' represents an important domain concept.
+It has one attribute: 'severity', which is of type str.
+
+'FlatQVT_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_BlockExp' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedModel' represents an important domain concept.
+It does not declare any attributes.
+
+'RealizedVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'EnforcementOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'OrderedTupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ImperativeOperation' represents an important domain concept.
+It has one attribute: 'isBlackbox', which is of type str.
+
+'FlatQVT_ResolveExp' represents an important domain concept.
+It has the following attributes: 'isDeferred', which is of type str; 'one', which is of type str; 'isInverse', which is of type str.
+
+'FlatQVT_VarParameter' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ContextualProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_RealizedVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_MappingOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ComputeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ExpressionInOcl' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ImperativeIterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_TypeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ResolveInExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_MappingParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Package' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'FlatQVT_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ListType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ModelParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_NavigationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Module' represents an important domain concept.
+It has one attribute: 'isBlackbox', which is of type str.
+
+'FlatQVT_ContinueExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_NullLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ReturnExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_TryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ListLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_OrderedTupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_WhileExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Module' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_TemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CorePattern' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_TemplateParameterType' represents an important domain concept.
+It has one attribute: 'specification', which is of type str.
+
+'FlatQVT_ImperativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ImperativeLoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ObjectTemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Key' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_DictLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Object' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Typedef' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'DomainPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CatchExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_OrderedTupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_PropertyAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_EntryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'ModuleImport' represents an important domain concept.
+It does not declare any attributes.
+
+'AltExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CoreDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Relation' represents an important domain concept.
+It has one attribute: 'isTopLevel', which is of type str.
+
+'FlatQVT_ReflectiveSequence' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_PropertyTemplateItem' represents an important domain concept.
+It has one attribute: 'isOpposite', which is of type str.
+
+'FlatQVT_UnpackExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ConstructorBody' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_VariableAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ModelType' represents an important domain concept.
+It has one attribute: 'conformanceKind', which is of type str.
+
+'FlatQVT_InvalidLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_CorePattern' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_RaiseExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_AltExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_EnumLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_AssignExp' represents an important domain concept.
+It has one attribute: 'isReset', which is of type str.
+
+'FlatQVT_GuardPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_BreakExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'Area' represents an important domain concept.
+It does not declare any attributes.
+
+'ResolveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_UnlimitedNaturalExp' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_UnlinkExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ReflectiveCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_URIExtent' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Class' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type str.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_LogExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_ObjectExp' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_OrderedTupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_MultiplicityElement' represents an important domain concept.
+It has the following attributes: 'isOrdered', which is of type str; 'isUnique', which is of type str; 'upper', which is of type str; 'lower', which is of type str.
+
+'FlatQVT_Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FlatQVT_TypedModel' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ImportKind' defines the following possible values: 'extension', 'access'.
+The enumeration 'CollectionKind' defines the following possible values: 'Collection', 'Bag', 'OrderedSet', 'Set', 'Sequence'.
+The enumeration 'DirectionKind' defines the following possible values: 'in', 'out', 'inout'.
+The enumeration 'SeverityKind' defines the following possible values: 'warning', 'fatal', 'error'.
+The enumeration 'EnforcementMode' defines the following possible values: 'Deletion', 'Creation'.
+
+The model also captures inheritance relationships between classes.
+The class 'FlatQVT_AltExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_AnyType' is a specialization of 'Type'.
+The class 'FlatQVT_AssertExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_AssignExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_Assignment' is a specialization of 'Element'.
+The class 'FlatQVT_BagType' is a specialization of 'CollectionType'.
+The class 'FlatQVT_BlockExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_BooleanLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'FlatQVT_BottomPattern' is a specialization of 'CorePattern'.
+The class 'FlatQVT_BreakExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_CallExp' is a specialization of 'OclExpression'.
+The class 'FlatQVT_CatchExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_Class' is a specialization of 'Type'.
+The class 'FlatQVT_CollectionItem' is a specialization of 'CollectionLiteralPart'.
+The class 'FlatQVT_CollectionLiteralExp' is a specialization of 'LiteralExp'.
+The class 'FlatQVT_CollectionLiteralPart' is a specialization of 'TypedElement'.
+The class 'FlatQVT_CollectionRange' is a specialization of 'CollectionLiteralPart'.
+The class 'FlatQVT_CollectionTemplateExp' is a specialization of 'TemplateExp'.
+The class 'FlatQVT_CollectionType' is a specialization of 'DataType'.
+The class 'FlatQVT_Comment' is a specialization of 'Element'.
+The class 'FlatQVT_ComputeExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_Constructor' is a specialization of 'ImperativeOperation'.
+The class 'FlatQVT_ConstructorBody' is a specialization of 'OperationBody'.
+The class 'FlatQVT_ContextualProperty' is a specialization of 'Property'.
+The class 'FlatQVT_ContinueExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_CoreDomain' is a specialization of 'Domain'.
+The class 'FlatQVT_CoreDomain' is a specialization of 'Area'.
+The class 'FlatQVT_CorePattern' is a specialization of 'Pattern'.
+The class 'FlatQVT_DataType' is a specialization of 'Type'.
+The class 'FlatQVT_DictLiteralExp' is a specialization of 'LiteralExp'.
+The class 'FlatQVT_DictLiteralPart' is a specialization of 'Element'.
+The class 'FlatQVT_DictionaryType' is a specialization of 'CollectionType'.
+The class 'FlatQVT_Domain' is a specialization of 'NamedElement'.
+The class 'FlatQVT_DomainPattern' is a specialization of 'Pattern'.
+The class 'FlatQVT_Element' is a specialization of 'Object'.
+The class 'FlatQVT_EnforcementOperation' is a specialization of 'Element'.
+The class 'FlatQVT_EntryOperation' is a specialization of 'ImperativeOperation'.
+The class 'FlatQVT_EnumLiteralExp' is a specialization of 'LiteralExp'.
+The class 'FlatQVT_Enumeration' is a specialization of 'DataType'.
+The class 'FlatQVT_EnumerationLiteral' is a specialization of 'NamedElement'.
+The class 'FlatQVT_ExpressionInOcl' is a specialization of 'TypedElement'.
+The class 'FlatQVT_Extent' is a specialization of 'Object'.
+The class 'FlatQVT_Factory' is a specialization of 'Element'.
+The class 'FlatQVT_FeatureCallExp' is a specialization of 'CallExp'.
+The class 'FlatQVT_ForExp' is a specialization of 'ImperativeLoopExp'.
+The class 'FlatQVT_Function' is a specialization of 'Operation'.
+The class 'FlatQVT_FunctionParameter' is a specialization of 'Variable'.
+The class 'FlatQVT_FunctionParameter' is a specialization of 'Parameter'.
+The class 'FlatQVT_GuardPattern' is a specialization of 'CorePattern'.
+The class 'FlatQVT_Helper' is a specialization of 'ImperativeOperation'.
+The class 'FlatQVT_IfExp' is a specialization of 'OclExpression'.
+The class 'FlatQVT_ImperativeCallExp' is a specialization of 'OperationCallExp'.
+The class 'FlatQVT_ImperativeCallExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_ImperativeExpression' is a specialization of 'OclExpression'.
+The class 'FlatQVT_ImperativeIterateExp' is a specialization of 'ImperativeLoopExp'.
+The class 'FlatQVT_ImperativeLoopExp' is a specialization of 'LoopExp'.
+The class 'FlatQVT_ImperativeLoopExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_ImperativeOperation' is a specialization of 'Operation'.
+The class 'FlatQVT_InstantiationExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_IntegerLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'FlatQVT_InvalidLiteralExp' is a specialization of 'LiteralExp'.
+The class 'FlatQVT_InvalidType' is a specialization of 'Type'.
+The class 'FlatQVT_IterateExp' is a specialization of 'LoopExp'.
+The class 'FlatQVT_IteratorExp' is a specialization of 'LoopExp'.
+The class 'FlatQVT_Key' is a specialization of 'Element'.
+The class 'FlatQVT_LetExp' is a specialization of 'OclExpression'.
+The class 'FlatQVT_Library' is a specialization of 'Module'.
+The class 'FlatQVT_ListLiteralExp' is a specialization of 'LiteralExp'.
+The class 'FlatQVT_ListType' is a specialization of 'CollectionType'.
+The class 'FlatQVT_LiteralExp' is a specialization of 'OclExpression'.
+The class 'FlatQVT_LogExp' is a specialization of 'OperationCallExp'.
+The class 'FlatQVT_LogExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_LoopExp' is a specialization of 'CallExp'.
+The class 'FlatQVT_LoopExp' is a specialization of 'OclExpression'.
+The class 'FlatQVT_Mapping' is a specialization of 'Rule'.
+The class 'FlatQVT_Mapping' is a specialization of 'Area'.
+The class 'FlatQVT_MappingBody' is a specialization of 'OperationBody'.
+The class 'FlatQVT_MappingCallExp' is a specialization of 'ImperativeCallExp'.
+The class 'FlatQVT_MappingOperation' is a specialization of 'ImperativeOperation'.
+The class 'FlatQVT_MappingParameter' is a specialization of 'VarParameter'.
+The class 'FlatQVT_ModelParameter' is a specialization of 'VarParameter'.
+The class 'FlatQVT_ModelType' is a specialization of 'Class'.
+The class 'FlatQVT_Module' is a specialization of 'Class'.
+The class 'FlatQVT_Module' is a specialization of 'Package'.
+The class 'FlatQVT_ModuleImport' is a specialization of 'Element'.
+The class 'FlatQVT_NamedElement' is a specialization of 'Element'.
+The class 'FlatQVT_NavigationCallExp' is a specialization of 'FeatureCallExp'.
+The class 'FlatQVT_NullLiteralExp' is a specialization of 'LiteralExp'.
+The class 'FlatQVT_NumericLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'FlatQVT_ObjectExp' is a specialization of 'InstantiationExp'.
+The class 'FlatQVT_ObjectTemplateExp' is a specialization of 'TemplateExp'.
+The class 'FlatQVT_OclExpression' is a specialization of 'TypedElement'.
+The class 'FlatQVT_Operation' is a specialization of 'TypedElement'.
+The class 'FlatQVT_Operation' is a specialization of 'MultiplicityElement'.
+The class 'FlatQVT_OperationBody' is a specialization of 'Element'.
+The class 'FlatQVT_OperationCallExp' is a specialization of 'FeatureCallExp'.
+The class 'FlatQVT_OperationalTransformation' is a specialization of 'Module'.
+The class 'FlatQVT_OppositePropertyCallExp' is a specialization of 'PropertyCallExp'.
+The class 'FlatQVT_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'FlatQVT_OrderedTupleLiteralExp' is a specialization of 'LiteralExp'.
+The class 'FlatQVT_OrderedTupleLiteralPart' is a specialization of 'Element'.
+The class 'FlatQVT_OrderedTupleType' is a specialization of 'Class'.
+The class 'FlatQVT_Package' is a specialization of 'NamedElement'.
+The class 'FlatQVT_Parameter' is a specialization of 'TypedElement'.
+The class 'FlatQVT_Parameter' is a specialization of 'MultiplicityElement'.
+The class 'FlatQVT_Pattern' is a specialization of 'Element'.
+The class 'FlatQVT_Predicate' is a specialization of 'Element'.
+The class 'FlatQVT_PrimitiveLiteralExp' is a specialization of 'LiteralExp'.
+The class 'FlatQVT_PrimitiveType' is a specialization of 'DataType'.
+The class 'FlatQVT_Property' is a specialization of 'TypedElement'.
+The class 'FlatQVT_Property' is a specialization of 'MultiplicityElement'.
+The class 'FlatQVT_PropertyAssignment' is a specialization of 'Assignment'.
+The class 'FlatQVT_PropertyCallExp' is a specialization of 'NavigationCallExp'.
+The class 'FlatQVT_PropertyTemplateItem' is a specialization of 'Element'.
+The class 'FlatQVT_RaiseExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_RealLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'FlatQVT_RealizedVariable' is a specialization of 'Variable'.
+The class 'FlatQVT_ReflectiveCollection' is a specialization of 'Object'.
+The class 'FlatQVT_ReflectiveSequence' is a specialization of 'ReflectiveCollection'.
+The class 'FlatQVT_Relation' is a specialization of 'Rule'.
+The class 'FlatQVT_RelationCallExp' is a specialization of 'OclExpression'.
+The class 'FlatQVT_RelationDomain' is a specialization of 'Domain'.
+The class 'FlatQVT_RelationDomainAssignment' is a specialization of 'Element'.
+The class 'FlatQVT_RelationImplementation' is a specialization of 'Element'.
+The class 'FlatQVT_RelationalTransformation' is a specialization of 'Transformation'.
+The class 'FlatQVT_ResolveExp' is a specialization of 'CallExp'.
+The class 'FlatQVT_ResolveExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_ResolveInExp' is a specialization of 'ResolveExp'.
+The class 'FlatQVT_ReturnExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_Rule' is a specialization of 'NamedElement'.
+The class 'FlatQVT_SequenceType' is a specialization of 'CollectionType'.
+The class 'FlatQVT_SetType' is a specialization of 'CollectionType'.
+The class 'FlatQVT_StringLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'FlatQVT_SwitchExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_Tag' is a specialization of 'Element'.
+The class 'FlatQVT_TemplateExp' is a specialization of 'LiteralExp'.
+The class 'FlatQVT_TemplateParameterType' is a specialization of 'Type'.
+The class 'FlatQVT_Transformation' is a specialization of 'Class'.
+The class 'FlatQVT_Transformation' is a specialization of 'Package'.
+The class 'FlatQVT_TryExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_TupleLiteralExp' is a specialization of 'LiteralExp'.
+The class 'FlatQVT_TupleLiteralPart' is a specialization of 'TypedElement'.
+The class 'FlatQVT_TupleType' is a specialization of 'Class'.
+The class 'FlatQVT_TupleType' is a specialization of 'DataType'.
+The class 'FlatQVT_Type' is a specialization of 'NamedElement'.
+The class 'FlatQVT_TypeExp' is a specialization of 'OclExpression'.
+The class 'FlatQVT_TypedElement' is a specialization of 'NamedElement'.
+The class 'FlatQVT_TypedModel' is a specialization of 'NamedElement'.
+The class 'FlatQVT_Typedef' is a specialization of 'Class'.
+The class 'FlatQVT_URIExtent' is a specialization of 'Extent'.
+The class 'FlatQVT_UnlimitedNaturalExp' is a specialization of 'NumericLiteralExp'.
+The class 'FlatQVT_UnlinkExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_UnpackExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_VarParameter' is a specialization of 'Variable'.
+The class 'FlatQVT_VarParameter' is a specialization of 'Parameter'.
+The class 'FlatQVT_Variable' is a specialization of 'TypedElement'.
+The class 'FlatQVT_VariableAssignment' is a specialization of 'Assignment'.
+The class 'FlatQVT_VariableExp' is a specialization of 'OclExpression'.
+The class 'FlatQVT_VariableInitExp' is a specialization of 'ImperativeExpression'.
+The class 'FlatQVT_VoidType' is a specialization of 'Type'.
+The class 'FlatQVT_WhileExp' is a specialization of 'ImperativeExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'FlatQVT_AltExp' and 'OclExpression'. From 'FlatQVT_AltExp', the role 'FlatQVT_AltExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression' has cardinality 0..*.
+An association connects 'FlatQVT_AltExp' and 'OclExpression'. From 'FlatQVT_AltExp', the role 'FlatQVT_AltExp2' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression3' has cardinality 0..*.
+An association connects 'BottomPattern' and 'FlatQVT_Area'. From 'BottomPattern', the role 'BottomPattern' has cardinality 0..*, and from 'FlatQVT_Area', the role 'FlatQVT_Area' has cardinality 0..*.
+An association connects 'FlatQVT_Area' and 'GuardPattern'. From 'FlatQVT_Area', the role 'FlatQVT_Area6' has cardinality 0..*, and from 'GuardPattern', the role 'GuardPattern' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_AssertExp'. From 'OclExpression', the role 'OclExpression8' has cardinality 0..*, and from 'FlatQVT_AssertExp', the role 'FlatQVT_AssertExp' has cardinality 0..*.
+An association connects 'LogExp' and 'FlatQVT_AssertExp'. From 'LogExp', the role 'LogExp' has cardinality 0..*, and from 'FlatQVT_AssertExp', the role 'FlatQVT_AssertExp10' has cardinality 0..*.
+An association connects 'FlatQVT_AssignExp' and 'OclExpression'. From 'FlatQVT_AssignExp', the role 'FlatQVT_AssignExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression12' has cardinality 0..*.
+An association connects 'FlatQVT_AssignExp' and 'OclExpression'. From 'FlatQVT_AssignExp', the role 'FlatQVT_AssignExp14' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression15' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_AssignExp'. From 'OclExpression', the role 'OclExpression18' has cardinality 0..*, and from 'FlatQVT_AssignExp', the role 'FlatQVT_AssignExp17' has cardinality 0..*.
+An association connects 'FlatQVT_Assignment' and 'BottomPattern'. From 'FlatQVT_Assignment', the role 'FlatQVT_Assignment' has cardinality 0..*, and from 'BottomPattern', the role 'BottomPattern20' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_Assignment'. From 'OclExpression', the role 'OclExpression23' has cardinality 0..*, and from 'FlatQVT_Assignment', the role 'FlatQVT_Assignment22' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_BlockExp'. From 'OclExpression', the role 'OclExpression25' has cardinality 0..*, and from 'FlatQVT_BlockExp', the role 'FlatQVT_BlockExp' has cardinality 0..*.
+An association connects 'Area' and 'FlatQVT_BottomPattern'. From 'Area', the role 'Area' has cardinality 0..*, and from 'FlatQVT_BottomPattern', the role 'FlatQVT_BottomPattern' has cardinality 0..*.
+An association connects 'FlatQVT_BottomPattern' and 'Assignment'. From 'FlatQVT_BottomPattern', the role 'FlatQVT_BottomPattern28' has cardinality 0..*, and from 'Assignment', the role 'Assignment' has cardinality 0..*.
+An association connects 'FlatQVT_BottomPattern' and 'EnforcementOperation'. From 'FlatQVT_BottomPattern', the role 'FlatQVT_BottomPattern30' has cardinality 0..*, and from 'EnforcementOperation', the role 'EnforcementOperation' has cardinality 0..*.
+An association connects 'RealizedVariable' and 'FlatQVT_BottomPattern'. From 'RealizedVariable', the role 'RealizedVariable' has cardinality 0..*, and from 'FlatQVT_BottomPattern', the role 'FlatQVT_BottomPattern32' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_CallExp'. From 'OclExpression', the role 'OclExpression34' has cardinality 0..*, and from 'FlatQVT_CallExp', the role 'FlatQVT_CallExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_CatchExp'. From 'OclExpression', the role 'OclExpression36' has cardinality 0..*, and from 'FlatQVT_CatchExp', the role 'FlatQVT_CatchExp' has cardinality 0..*.
+An association connects 'FlatQVT_CatchExp' and 'Type'. From 'FlatQVT_CatchExp', the role 'FlatQVT_CatchExp38' has cardinality 0..*, and from 'Type', the role 'Type' has cardinality 0..*.
+An association connects 'FlatQVT_Class' and 'Property'. From 'FlatQVT_Class', the role 'FlatQVT_Class' has cardinality 0..*, and from 'Property', the role 'Property' has cardinality 0..*.
+An association connects 'Operation' and 'FlatQVT_Class'. From 'Operation', the role 'Operation' has cardinality 0..*, and from 'FlatQVT_Class', the role 'FlatQVT_Class41' has cardinality 0..*.
+An association connects 'FlatQVT_Class' and 'Class'. From 'FlatQVT_Class', the role 'FlatQVT_Class43' has cardinality 0..*, and from 'Class', the role 'Class' has cardinality 0..*.
+An association connects 'FlatQVT_CollectionItem' and 'OclExpression'. From 'FlatQVT_CollectionItem', the role 'FlatQVT_CollectionItem' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression45' has cardinality 0..*.
+An association connects 'FlatQVT_CollectionLiteralExp' and 'CollectionLiteralPart'. From 'FlatQVT_CollectionLiteralExp', the role 'FlatQVT_CollectionLiteralExp' has cardinality 0..*, and from 'CollectionLiteralPart', the role 'CollectionLiteralPart' has cardinality 0..*.
+An association connects 'CollectionLiteralExp' and 'FlatQVT_CollectionLiteralPart'. From 'CollectionLiteralExp', the role 'CollectionLiteralExp' has cardinality 0..*, and from 'FlatQVT_CollectionLiteralPart', the role 'FlatQVT_CollectionLiteralPart' has cardinality 0..*.
+An association connects 'FlatQVT_CollectionRange' and 'OclExpression'. From 'FlatQVT_CollectionRange', the role 'FlatQVT_CollectionRange' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression49' has cardinality 0..*.
+An association connects 'FlatQVT_CollectionRange' and 'OclExpression'. From 'FlatQVT_CollectionRange', the role 'FlatQVT_CollectionRange51' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression52' has cardinality 0..*.
+An association connects 'FlatQVT_CollectionTemplateExp' and 'OclExpression'. From 'FlatQVT_CollectionTemplateExp', the role 'FlatQVT_CollectionTemplateExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression54' has cardinality 0..*.
+An association connects 'FlatQVT_CollectionTemplateExp' and 'CollectionType'. From 'FlatQVT_CollectionTemplateExp', the role 'FlatQVT_CollectionTemplateExp56' has cardinality 0..*, and from 'CollectionType', the role 'CollectionType' has cardinality 0..*.
+An association connects 'FlatQVT_CollectionTemplateExp' and 'Variable'. From 'FlatQVT_CollectionTemplateExp', the role 'FlatQVT_CollectionTemplateExp58' has cardinality 0..*, and from 'Variable', the role 'Variable' has cardinality 0..*.
+An association connects 'FlatQVT_CollectionType' and 'Type'. From 'FlatQVT_CollectionType', the role 'FlatQVT_CollectionType' has cardinality 0..*, and from 'Type', the role 'Type60' has cardinality 0..*.
+An association connects 'NamedElement' and 'FlatQVT_Comment'. From 'NamedElement', the role 'NamedElement' has cardinality 0..*, and from 'FlatQVT_Comment', the role 'FlatQVT_Comment' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_ComputeExp'. From 'OclExpression', the role 'OclExpression63' has cardinality 0..*, and from 'FlatQVT_ComputeExp', the role 'FlatQVT_ComputeExp' has cardinality 0..*.
+An association connects 'FlatQVT_ComputeExp' and 'Variable'. From 'FlatQVT_ComputeExp', the role 'FlatQVT_ComputeExp65' has cardinality 0..*, and from 'Variable', the role 'Variable66' has cardinality 0..*.
+An association connects 'FlatQVT_ContextualProperty' and 'Class'. From 'FlatQVT_ContextualProperty', the role 'FlatQVT_ContextualProperty' has cardinality 0..*, and from 'Class', the role 'Class68' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_ContextualProperty'. From 'OclExpression', the role 'OclExpression71' has cardinality 0..*, and from 'FlatQVT_ContextualProperty', the role 'FlatQVT_ContextualProperty70' has cardinality 0..*.
+An association connects 'FlatQVT_ContextualProperty' and 'Property'. From 'FlatQVT_ContextualProperty', the role 'FlatQVT_ContextualProperty73' has cardinality 0..*, and from 'Property', the role 'Property74' has cardinality 0..*.
+An association connects 'FlatQVT_CorePattern' and 'Variable'. From 'FlatQVT_CorePattern', the role 'FlatQVT_CorePattern' has cardinality 0..*, and from 'Variable', the role 'Variable76' has cardinality 0..*.
+An association connects 'DictLiteralPart' and 'FlatQVT_DictLiteralExp'. From 'DictLiteralPart', the role 'DictLiteralPart' has cardinality 0..*, and from 'FlatQVT_DictLiteralExp', the role 'FlatQVT_DictLiteralExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_DictLiteralPart'. From 'OclExpression', the role 'OclExpression79' has cardinality 0..*, and from 'FlatQVT_DictLiteralPart', the role 'FlatQVT_DictLiteralPart' has cardinality 0..*.
+An association connects 'FlatQVT_DictLiteralPart' and 'OclExpression'. From 'FlatQVT_DictLiteralPart', the role 'FlatQVT_DictLiteralPart81' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression82' has cardinality 0..*.
+An association connects 'FlatQVT_DictionaryType' and 'Type'. From 'FlatQVT_DictionaryType', the role 'FlatQVT_DictionaryType' has cardinality 0..*, and from 'Type', the role 'Type84' has cardinality 0..*.
+An association connects 'FlatQVT_Domain' and 'Rule'. From 'FlatQVT_Domain', the role 'FlatQVT_Domain' has cardinality 0..*, and from 'Rule', the role 'Rule' has cardinality 0..*.
+An association connects 'TypedModel' and 'FlatQVT_Domain'. From 'TypedModel', the role 'TypedModel' has cardinality 0..*, and from 'FlatQVT_Domain', the role 'FlatQVT_Domain87' has cardinality 0..*.
+An association connects 'FlatQVT_DomainPattern' and 'TemplateExp'. From 'FlatQVT_DomainPattern', the role 'FlatQVT_DomainPattern' has cardinality 0..*, and from 'TemplateExp', the role 'TemplateExp' has cardinality 0..*.
+An association connects 'Comment' and 'FlatQVT_Element'. From 'Comment', the role 'Comment' has cardinality 0..*, and from 'FlatQVT_Element', the role 'FlatQVT_Element' has cardinality 0..*.
+An association connects 'FlatQVT_EnforcementOperation' and 'BottomPattern'. From 'FlatQVT_EnforcementOperation', the role 'FlatQVT_EnforcementOperation' has cardinality 0..*, and from 'BottomPattern', the role 'BottomPattern91' has cardinality 0..*.
+An association connects 'FlatQVT_EnforcementOperation' and 'OperationCallExp'. From 'FlatQVT_EnforcementOperation', the role 'FlatQVT_EnforcementOperation93' has cardinality 0..*, and from 'OperationCallExp', the role 'OperationCallExp' has cardinality 0..*.
+An association connects 'EnumerationLiteral' and 'FlatQVT_EnumLiteralExp'. From 'EnumerationLiteral', the role 'EnumerationLiteral' has cardinality 0..*, and from 'FlatQVT_EnumLiteralExp', the role 'FlatQVT_EnumLiteralExp' has cardinality 0..*.
+An association connects 'FlatQVT_Enumeration' and 'EnumerationLiteral'. From 'FlatQVT_Enumeration', the role 'FlatQVT_Enumeration' has cardinality 0..*, and from 'EnumerationLiteral', the role 'EnumerationLiteral96' has cardinality 0..*.
+An association connects 'FlatQVT_EnumerationLiteral' and 'Enumeration'. From 'FlatQVT_EnumerationLiteral', the role 'FlatQVT_EnumerationLiteral' has cardinality 0..*, and from 'Enumeration', the role 'Enumeration' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_ExpressionInOcl'. From 'OclExpression', the role 'OclExpression99' has cardinality 0..*, and from 'FlatQVT_ExpressionInOcl', the role 'FlatQVT_ExpressionInOcl' has cardinality 0..*.
+An association connects 'FlatQVT_ExpressionInOcl' and 'Variable'. From 'FlatQVT_ExpressionInOcl', the role 'FlatQVT_ExpressionInOcl101' has cardinality 0..*, and from 'Variable', the role 'Variable102' has cardinality 0..*.
+An association connects 'Type' and 'FlatQVT_ExpressionInOcl'. From 'Type', the role 'Type105' has cardinality 0..*, and from 'FlatQVT_ExpressionInOcl', the role 'FlatQVT_ExpressionInOcl104' has cardinality 0..*.
+An association connects 'FlatQVT_ExpressionInOcl' and 'Variable'. From 'FlatQVT_ExpressionInOcl', the role 'FlatQVT_ExpressionInOcl107' has cardinality 0..*, and from 'Variable', the role 'Variable108' has cardinality 0..*.
+An association connects 'Variable' and 'FlatQVT_ExpressionInOcl'. From 'Variable', the role 'Variable111' has cardinality 0..*, and from 'FlatQVT_ExpressionInOcl', the role 'FlatQVT_ExpressionInOcl110' has cardinality 0..*.
+An association connects 'FlatQVT_Factory' and 'Package'. From 'FlatQVT_Factory', the role 'FlatQVT_Factory' has cardinality 0..*, and from 'Package', the role 'Package' has cardinality 0..*.
+An association connects 'FlatQVT_Function' and 'OclExpression'. From 'FlatQVT_Function', the role 'FlatQVT_Function' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression114' has cardinality 0..*.
+An association connects 'Area' and 'FlatQVT_GuardPattern'. From 'Area', the role 'Area116' has cardinality 0..*, and from 'FlatQVT_GuardPattern', the role 'FlatQVT_GuardPattern' has cardinality 0..*.
+An association connects 'FlatQVT_IfExp' and 'OclExpression'. From 'FlatQVT_IfExp', the role 'FlatQVT_IfExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression118' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_IfExp'. From 'OclExpression', the role 'OclExpression121' has cardinality 0..*, and from 'FlatQVT_IfExp', the role 'FlatQVT_IfExp120' has cardinality 0..*.
+An association connects 'FlatQVT_IfExp' and 'OclExpression'. From 'FlatQVT_IfExp', the role 'FlatQVT_IfExp123' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression124' has cardinality 0..*.
+An association connects 'FlatQVT_ImperativeIterateExp' and 'Variable'. From 'FlatQVT_ImperativeIterateExp', the role 'FlatQVT_ImperativeIterateExp' has cardinality 0..*, and from 'Variable', the role 'Variable126' has cardinality 0..*.
+An association connects 'FlatQVT_ImperativeLoopExp' and 'OclExpression'. From 'FlatQVT_ImperativeLoopExp', the role 'FlatQVT_ImperativeLoopExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression128' has cardinality 0..*.
+An association connects 'OperationBody' and 'FlatQVT_ImperativeOperation'. From 'OperationBody', the role 'OperationBody' has cardinality 0..*, and from 'FlatQVT_ImperativeOperation', the role 'FlatQVT_ImperativeOperation' has cardinality 0..*.
+An association connects 'FlatQVT_ImperativeOperation' and 'VarParameter'. From 'FlatQVT_ImperativeOperation', the role 'FlatQVT_ImperativeOperation131' has cardinality 0..*, and from 'VarParameter', the role 'VarParameter' has cardinality 0..*.
+An association connects 'ImperativeOperation' and 'FlatQVT_ImperativeOperation'. From 'ImperativeOperation', the role 'ImperativeOperation' has cardinality 0..*, and from 'FlatQVT_ImperativeOperation', the role 'FlatQVT_ImperativeOperation133' has cardinality 0..*.
+An association connects 'FlatQVT_ImperativeOperation' and 'VarParameter'. From 'FlatQVT_ImperativeOperation', the role 'FlatQVT_ImperativeOperation135' has cardinality 0..*, and from 'VarParameter', the role 'VarParameter136' has cardinality 0..*.
+An association connects 'FlatQVT_InstantiationExp' and 'OclExpression'. From 'FlatQVT_InstantiationExp', the role 'FlatQVT_InstantiationExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression138' has cardinality 0..*.
+An association connects 'FlatQVT_InstantiationExp' and 'Variable'. From 'FlatQVT_InstantiationExp', the role 'FlatQVT_InstantiationExp140' has cardinality 0..*, and from 'Variable', the role 'Variable141' has cardinality 0..*.
+An association connects 'Class' and 'FlatQVT_InstantiationExp'. From 'Class', the role 'Class144' has cardinality 0..*, and from 'FlatQVT_InstantiationExp', the role 'FlatQVT_InstantiationExp143' has cardinality 0..*.
+An association connects 'Variable' and 'FlatQVT_IterateExp'. From 'Variable', the role 'Variable146' has cardinality 0..*, and from 'FlatQVT_IterateExp', the role 'FlatQVT_IterateExp' has cardinality 0..*.
+An association connects 'Class' and 'FlatQVT_Key'. From 'Class', the role 'Class148' has cardinality 0..*, and from 'FlatQVT_Key', the role 'FlatQVT_Key' has cardinality 0..*.
+An association connects 'Property' and 'FlatQVT_Key'. From 'Property', the role 'Property151' has cardinality 0..*, and from 'FlatQVT_Key', the role 'FlatQVT_Key150' has cardinality 0..*.
+An association connects 'FlatQVT_Key' and 'Property'. From 'FlatQVT_Key', the role 'FlatQVT_Key153' has cardinality 0..*, and from 'Property', the role 'Property154' has cardinality 0..*.
+An association connects 'RelationalTransformation' and 'FlatQVT_Key'. From 'RelationalTransformation', the role 'RelationalTransformation' has cardinality 0..*, and from 'FlatQVT_Key', the role 'FlatQVT_Key156' has cardinality 0..*.
+An association connects 'FlatQVT_LetExp' and 'OclExpression'. From 'FlatQVT_LetExp', the role 'FlatQVT_LetExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression158' has cardinality 0..*.
+An association connects 'FlatQVT_LetExp' and 'Variable'. From 'FlatQVT_LetExp', the role 'FlatQVT_LetExp160' has cardinality 0..*, and from 'Variable', the role 'Variable161' has cardinality 0..*.
+An association connects 'FlatQVT_ListLiteralExp' and 'OclExpression'. From 'FlatQVT_ListLiteralExp', the role 'FlatQVT_ListLiteralExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression163' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_LogExp'. From 'OclExpression', the role 'OclExpression165' has cardinality 0..*, and from 'FlatQVT_LogExp', the role 'FlatQVT_LogExp' has cardinality 0..*.
+An association connects 'FlatQVT_LoopExp' and 'OclExpression'. From 'FlatQVT_LoopExp', the role 'FlatQVT_LoopExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression167' has cardinality 0..*.
+An association connects 'Variable' and 'FlatQVT_LoopExp'. From 'Variable', the role 'Variable170' has cardinality 0..*, and from 'FlatQVT_LoopExp', the role 'FlatQVT_LoopExp169' has cardinality 0..*.
+An association connects 'FlatQVT_Mapping' and 'Mapping'. From 'FlatQVT_Mapping', the role 'FlatQVT_Mapping' has cardinality 0..*, and from 'Mapping', the role 'Mapping' has cardinality 0..*.
+An association connects 'FlatQVT_Mapping' and 'Mapping'. From 'FlatQVT_Mapping', the role 'FlatQVT_Mapping173' has cardinality 0..*, and from 'Mapping', the role 'Mapping174' has cardinality 0..*.
+An association connects 'FlatQVT_Mapping' and 'Mapping'. From 'FlatQVT_Mapping', the role 'FlatQVT_Mapping176' has cardinality 0..*, and from 'Mapping', the role 'Mapping177' has cardinality 0..*.
+An association connects 'Mapping' and 'FlatQVT_Mapping'. From 'Mapping', the role 'Mapping180' has cardinality 0..*, and from 'FlatQVT_Mapping', the role 'FlatQVT_Mapping179' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_MappingBody'. From 'OclExpression', the role 'OclExpression182' has cardinality 0..*, and from 'FlatQVT_MappingBody', the role 'FlatQVT_MappingBody' has cardinality 0..*.
+An association connects 'FlatQVT_MappingBody' and 'OclExpression'. From 'FlatQVT_MappingBody', the role 'FlatQVT_MappingBody184' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression185' has cardinality 0..*.
+An association connects 'FlatQVT_MappingOperation' and 'MappingOperation'. From 'FlatQVT_MappingOperation', the role 'FlatQVT_MappingOperation' has cardinality 0..*, and from 'MappingOperation', the role 'MappingOperation' has cardinality 0..*.
+An association connects 'FlatQVT_MappingOperation' and 'MappingOperation'. From 'FlatQVT_MappingOperation', the role 'FlatQVT_MappingOperation188' has cardinality 0..*, and from 'MappingOperation', the role 'MappingOperation189' has cardinality 0..*.
+An association connects 'FlatQVT_MappingOperation' and 'MappingOperation'. From 'FlatQVT_MappingOperation', the role 'FlatQVT_MappingOperation191' has cardinality 0..*, and from 'MappingOperation', the role 'MappingOperation192' has cardinality 0..*.
+An association connects 'FlatQVT_MappingOperation' and 'Relation'. From 'FlatQVT_MappingOperation', the role 'FlatQVT_MappingOperation194' has cardinality 0..*, and from 'Relation', the role 'Relation' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_MappingOperation'. From 'OclExpression', the role 'OclExpression197' has cardinality 0..*, and from 'FlatQVT_MappingOperation', the role 'FlatQVT_MappingOperation196' has cardinality 0..*.
+An association connects 'FlatQVT_MappingOperation' and 'OclExpression'. From 'FlatQVT_MappingOperation', the role 'FlatQVT_MappingOperation199' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression200' has cardinality 0..*.
+An association connects 'FlatQVT_MappingParameter' and 'ModelParameter'. From 'FlatQVT_MappingParameter', the role 'FlatQVT_MappingParameter' has cardinality 0..*, and from 'ModelParameter', the role 'ModelParameter' has cardinality 0..*.
+An association connects 'FlatQVT_MappingParameter' and 'RelationDomain'. From 'FlatQVT_MappingParameter', the role 'FlatQVT_MappingParameter203' has cardinality 0..*, and from 'RelationDomain', the role 'RelationDomain' has cardinality 0..*.
+An association connects 'FlatQVT_ModelType' and 'OclExpression'. From 'FlatQVT_ModelType', the role 'FlatQVT_ModelType' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression205' has cardinality 0..*.
+An association connects 'FlatQVT_ModelType' and 'Package'. From 'FlatQVT_ModelType', the role 'FlatQVT_ModelType207' has cardinality 0..*, and from 'Package', the role 'Package208' has cardinality 0..*.
+An association connects 'Property' and 'FlatQVT_Module'. From 'Property', the role 'Property210' has cardinality 0..*, and from 'FlatQVT_Module', the role 'FlatQVT_Module' has cardinality 0..*.
+An association connects 'EntryOperation' and 'FlatQVT_Module'. From 'EntryOperation', the role 'EntryOperation' has cardinality 0..*, and from 'FlatQVT_Module', the role 'FlatQVT_Module212' has cardinality 0..*.
+An association connects 'FlatQVT_Module' and 'ModuleImport'. From 'FlatQVT_Module', the role 'FlatQVT_Module214' has cardinality 0..*, and from 'ModuleImport', the role 'ModuleImport' has cardinality 0..*.
+An association connects 'FlatQVT_Module' and 'Tag'. From 'FlatQVT_Module', the role 'FlatQVT_Module216' has cardinality 0..*, and from 'Tag', the role 'Tag' has cardinality 0..*.
+An association connects 'FlatQVT_Module' and 'Variable'. From 'FlatQVT_Module', the role 'FlatQVT_Module218' has cardinality 0..*, and from 'Variable', the role 'Variable219' has cardinality 0..*.
+An association connects 'ModelType' and 'FlatQVT_Module'. From 'ModelType', the role 'ModelType' has cardinality 0..*, and from 'FlatQVT_Module', the role 'FlatQVT_Module221' has cardinality 0..*.
+An association connects 'ModelType' and 'FlatQVT_ModuleImport'. From 'ModelType', the role 'ModelType223' has cardinality 0..*, and from 'FlatQVT_ModuleImport', the role 'FlatQVT_ModuleImport' has cardinality 0..*.
+An association connects 'Module' and 'FlatQVT_ModuleImport'. From 'Module', the role 'Module' has cardinality 0..*, and from 'FlatQVT_ModuleImport', the role 'FlatQVT_ModuleImport225' has cardinality 0..*.
+An association connects 'FlatQVT_ModuleImport' and 'Module'. From 'FlatQVT_ModuleImport', the role 'FlatQVT_ModuleImport227' has cardinality 0..*, and from 'Module', the role 'Module228' has cardinality 0..*.
+An association connects 'FlatQVT_ObjectExp' and 'ConstructorBody'. From 'FlatQVT_ObjectExp', the role 'FlatQVT_ObjectExp' has cardinality 0..*, and from 'ConstructorBody', the role 'ConstructorBody' has cardinality 0..*.
+An association connects 'Variable' and 'FlatQVT_ObjectExp'. From 'Variable', the role 'Variable232' has cardinality 0..*, and from 'FlatQVT_ObjectExp', the role 'FlatQVT_ObjectExp231' has cardinality 0..*.
+An association connects 'PropertyTemplateItem' and 'FlatQVT_ObjectTemplateExp'. From 'PropertyTemplateItem', the role 'PropertyTemplateItem' has cardinality 0..*, and from 'FlatQVT_ObjectTemplateExp', the role 'FlatQVT_ObjectTemplateExp' has cardinality 0..*.
+An association connects 'Class' and 'FlatQVT_ObjectTemplateExp'. From 'Class', the role 'Class236' has cardinality 0..*, and from 'FlatQVT_ObjectTemplateExp', the role 'FlatQVT_ObjectTemplateExp235' has cardinality 0..*.
+An association connects 'Class' and 'FlatQVT_Operation'. From 'Class', the role 'Class238' has cardinality 0..*, and from 'FlatQVT_Operation', the role 'FlatQVT_Operation' has cardinality 0..*.
+An association connects 'Parameter' and 'FlatQVT_Operation'. From 'Parameter', the role 'Parameter' has cardinality 0..*, and from 'FlatQVT_Operation', the role 'FlatQVT_Operation240' has cardinality 0..*.
+An association connects 'FlatQVT_Operation' and 'Type'. From 'FlatQVT_Operation', the role 'FlatQVT_Operation242' has cardinality 0..*, and from 'Type', the role 'Type243' has cardinality 0..*.
+An association connects 'FlatQVT_OperationBody' and 'OclExpression'. From 'FlatQVT_OperationBody', the role 'FlatQVT_OperationBody' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression245' has cardinality 0..*.
+An association connects 'ImperativeOperation' and 'FlatQVT_OperationBody'. From 'ImperativeOperation', the role 'ImperativeOperation248' has cardinality 0..*, and from 'FlatQVT_OperationBody', the role 'FlatQVT_OperationBody247' has cardinality 0..*.
+An association connects 'Variable' and 'FlatQVT_OperationBody'. From 'Variable', the role 'Variable251' has cardinality 0..*, and from 'FlatQVT_OperationBody', the role 'FlatQVT_OperationBody250' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_OperationCallExp'. From 'OclExpression', the role 'OclExpression253' has cardinality 0..*, and from 'FlatQVT_OperationCallExp', the role 'FlatQVT_OperationCallExp' has cardinality 0..*.
+An association connects 'FlatQVT_OperationCallExp' and 'Operation'. From 'FlatQVT_OperationCallExp', the role 'FlatQVT_OperationCallExp255' has cardinality 0..*, and from 'Operation', the role 'Operation256' has cardinality 0..*.
+An association connects 'FlatQVT_OperationalTransformation' and 'Class'. From 'FlatQVT_OperationalTransformation', the role 'FlatQVT_OperationalTransformation' has cardinality 0..*, and from 'Class', the role 'Class258' has cardinality 0..*.
+An association connects 'FlatQVT_OperationalTransformation' and 'Property'. From 'FlatQVT_OperationalTransformation', the role 'FlatQVT_OperationalTransformation260' has cardinality 0..*, and from 'Property', the role 'Property261' has cardinality 0..*.
+An association connects 'ModelParameter' and 'FlatQVT_OperationalTransformation'. From 'ModelParameter', the role 'ModelParameter264' has cardinality 0..*, and from 'FlatQVT_OperationalTransformation', the role 'FlatQVT_OperationalTransformation263' has cardinality 0..*.
+An association connects 'FlatQVT_OperationalTransformation' and 'RelationalTransformation'. From 'FlatQVT_OperationalTransformation', the role 'FlatQVT_OperationalTransformation266' has cardinality 0..*, and from 'RelationalTransformation', the role 'RelationalTransformation267' has cardinality 0..*.
+An association connects 'Relation' and 'FlatQVT_OperationalTransformation'. From 'Relation', the role 'Relation270' has cardinality 0..*, and from 'FlatQVT_OperationalTransformation', the role 'FlatQVT_OperationalTransformation269' has cardinality 0..*.
+An association connects 'OrderedTupleLiteralPart' and 'FlatQVT_OrderedTupleLiteralExp'. From 'OrderedTupleLiteralPart', the role 'OrderedTupleLiteralPart' has cardinality 0..*, and from 'FlatQVT_OrderedTupleLiteralExp', the role 'FlatQVT_OrderedTupleLiteralExp' has cardinality 0..*.
+An association connects 'FlatQVT_OrderedTupleLiteralPart' and 'OclExpression'. From 'FlatQVT_OrderedTupleLiteralPart', the role 'FlatQVT_OrderedTupleLiteralPart' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression273' has cardinality 0..*.
+An association connects 'FlatQVT_OrderedTupleType' and 'Type'. From 'FlatQVT_OrderedTupleType', the role 'FlatQVT_OrderedTupleType' has cardinality 0..*, and from 'Type', the role 'Type275' has cardinality 0..*.
+An association connects 'FlatQVT_Package' and 'Package'. From 'FlatQVT_Package', the role 'FlatQVT_Package' has cardinality 0..*, and from 'Package', the role 'Package277' has cardinality 0..*.
+An association connects 'Package' and 'FlatQVT_Package'. From 'Package', the role 'Package280' has cardinality 0..*, and from 'FlatQVT_Package', the role 'FlatQVT_Package279' has cardinality 0..*.
+An association connects 'FlatQVT_Package' and 'Type'. From 'FlatQVT_Package', the role 'FlatQVT_Package282' has cardinality 0..*, and from 'Type', the role 'Type283' has cardinality 0..*.
+An association connects 'Operation' and 'FlatQVT_Parameter'. From 'Operation', the role 'Operation285' has cardinality 0..*, and from 'FlatQVT_Parameter', the role 'FlatQVT_Parameter' has cardinality 0..*.
+An association connects 'FlatQVT_Pattern' and 'Variable'. From 'FlatQVT_Pattern', the role 'FlatQVT_Pattern' has cardinality 0..*, and from 'Variable', the role 'Variable287' has cardinality 0..*.
+An association connects 'Predicate' and 'FlatQVT_Pattern'. From 'Predicate', the role 'Predicate' has cardinality 0..*, and from 'FlatQVT_Pattern', the role 'FlatQVT_Pattern289' has cardinality 0..*.
+An association connects 'FlatQVT_Predicate' and 'OclExpression'. From 'FlatQVT_Predicate', the role 'FlatQVT_Predicate' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression291' has cardinality 0..*.
+An association connects 'FlatQVT_Predicate' and 'Pattern'. From 'FlatQVT_Predicate', the role 'FlatQVT_Predicate293' has cardinality 0..*, and from 'Pattern', the role 'Pattern' has cardinality 0..*.
+An association connects 'FlatQVT_Property' and 'Class'. From 'FlatQVT_Property', the role 'FlatQVT_Property' has cardinality 0..*, and from 'Class', the role 'Class295' has cardinality 0..*.
+An association connects 'FlatQVT_Property' and 'Property'. From 'FlatQVT_Property', the role 'FlatQVT_Property297' has cardinality 0..*, and from 'Property', the role 'Property298' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_PropertyAssignment'. From 'OclExpression', the role 'OclExpression300' has cardinality 0..*, and from 'FlatQVT_PropertyAssignment', the role 'FlatQVT_PropertyAssignment' has cardinality 0..*.
+An association connects 'Property' and 'FlatQVT_PropertyAssignment'. From 'Property', the role 'Property303' has cardinality 0..*, and from 'FlatQVT_PropertyAssignment', the role 'FlatQVT_PropertyAssignment302' has cardinality 0..*.
+An association connects 'FlatQVT_PropertyCallExp' and 'Property'. From 'FlatQVT_PropertyCallExp', the role 'FlatQVT_PropertyCallExp' has cardinality 0..*, and from 'Property', the role 'Property305' has cardinality 0..*.
+An association connects 'ObjectTemplateExp' and 'FlatQVT_PropertyTemplateItem'. From 'ObjectTemplateExp', the role 'ObjectTemplateExp' has cardinality 0..*, and from 'FlatQVT_PropertyTemplateItem', the role 'FlatQVT_PropertyTemplateItem' has cardinality 0..*.
+An association connects 'FlatQVT_PropertyTemplateItem' and 'Property'. From 'FlatQVT_PropertyTemplateItem', the role 'FlatQVT_PropertyTemplateItem308' has cardinality 0..*, and from 'Property', the role 'Property309' has cardinality 0..*.
+An association connects 'FlatQVT_PropertyTemplateItem' and 'OclExpression'. From 'FlatQVT_PropertyTemplateItem', the role 'FlatQVT_PropertyTemplateItem311' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression312' has cardinality 0..*.
+An association connects 'FlatQVT_RaiseExp' and 'OclExpression'. From 'FlatQVT_RaiseExp', the role 'FlatQVT_RaiseExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression314' has cardinality 0..*.
+An association connects 'Type' and 'FlatQVT_RaiseExp'. From 'Type', the role 'Type317' has cardinality 0..*, and from 'FlatQVT_RaiseExp', the role 'FlatQVT_RaiseExp316' has cardinality 0..*.
+An association connects 'RelationImplementation' and 'FlatQVT_Relation'. From 'RelationImplementation', the role 'RelationImplementation' has cardinality 0..*, and from 'FlatQVT_Relation', the role 'FlatQVT_Relation' has cardinality 0..*.
+An association connects 'FlatQVT_Relation' and 'Variable'. From 'FlatQVT_Relation', the role 'FlatQVT_Relation320' has cardinality 0..*, and from 'Variable', the role 'Variable321' has cardinality 0..*.
+An association connects 'FlatQVT_Relation' and 'Pattern'. From 'FlatQVT_Relation', the role 'FlatQVT_Relation323' has cardinality 0..*, and from 'Pattern', the role 'Pattern324' has cardinality 0..*.
+An association connects 'FlatQVT_Relation' and 'Pattern'. From 'FlatQVT_Relation', the role 'FlatQVT_Relation326' has cardinality 0..*, and from 'Pattern', the role 'Pattern327' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_RelationCallExp'. From 'OclExpression', the role 'OclExpression329' has cardinality 0..*, and from 'FlatQVT_RelationCallExp', the role 'FlatQVT_RelationCallExp' has cardinality 0..*.
+An association connects 'FlatQVT_RelationCallExp' and 'Relation'. From 'FlatQVT_RelationCallExp', the role 'FlatQVT_RelationCallExp331' has cardinality 0..*, and from 'Relation', the role 'Relation332' has cardinality 0..*.
+An association connects 'FlatQVT_RelationDomain' and 'RelationDomainAssignment'. From 'FlatQVT_RelationDomain', the role 'FlatQVT_RelationDomain' has cardinality 0..*, and from 'RelationDomainAssignment', the role 'RelationDomainAssignment' has cardinality 0..*.
+An association connects 'FlatQVT_RelationDomain' and 'DomainPattern'. From 'FlatQVT_RelationDomain', the role 'FlatQVT_RelationDomain335' has cardinality 0..*, and from 'DomainPattern', the role 'DomainPattern' has cardinality 0..*.
+An association connects 'FlatQVT_RelationDomain' and 'Variable'. From 'FlatQVT_RelationDomain', the role 'FlatQVT_RelationDomain337' has cardinality 0..*, and from 'Variable', the role 'Variable338' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_RelationDomainAssignment'. From 'OclExpression', the role 'OclExpression340' has cardinality 0..*, and from 'FlatQVT_RelationDomainAssignment', the role 'FlatQVT_RelationDomainAssignment' has cardinality 0..*.
+An association connects 'Variable' and 'FlatQVT_RelationDomainAssignment'. From 'Variable', the role 'Variable343' has cardinality 0..*, and from 'FlatQVT_RelationDomainAssignment', the role 'FlatQVT_RelationDomainAssignment342' has cardinality 0..*.
+An association connects 'Operation' and 'FlatQVT_RelationImplementation'. From 'Operation', the role 'Operation345' has cardinality 0..*, and from 'FlatQVT_RelationImplementation', the role 'FlatQVT_RelationImplementation' has cardinality 0..*.
+An association connects 'FlatQVT_RelationImplementation' and 'TypedModel'. From 'FlatQVT_RelationImplementation', the role 'FlatQVT_RelationImplementation347' has cardinality 0..*, and from 'TypedModel', the role 'TypedModel348' has cardinality 0..*.
+An association connects 'Relation' and 'FlatQVT_RelationImplementation'. From 'Relation', the role 'Relation351' has cardinality 0..*, and from 'FlatQVT_RelationImplementation', the role 'FlatQVT_RelationImplementation350' has cardinality 0..*.
+An association connects 'FlatQVT_RelationalTransformation' and 'Key'. From 'FlatQVT_RelationalTransformation', the role 'FlatQVT_RelationalTransformation' has cardinality 0..*, and from 'Key', the role 'Key' has cardinality 0..*.
+An association connects 'FlatQVT_ResolveExp' and 'OclExpression'. From 'FlatQVT_ResolveExp', the role 'FlatQVT_ResolveExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression354' has cardinality 0..*.
+An association connects 'FlatQVT_ResolveExp' and 'Variable'. From 'FlatQVT_ResolveExp', the role 'FlatQVT_ResolveExp356' has cardinality 0..*, and from 'Variable', the role 'Variable357' has cardinality 0..*.
+An association connects 'FlatQVT_ResolveInExp' and 'MappingOperation'. From 'FlatQVT_ResolveInExp', the role 'FlatQVT_ResolveInExp' has cardinality 0..*, and from 'MappingOperation', the role 'MappingOperation359' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_ReturnExp'. From 'OclExpression', the role 'OclExpression361' has cardinality 0..*, and from 'FlatQVT_ReturnExp', the role 'FlatQVT_ReturnExp' has cardinality 0..*.
+An association connects 'Domain' and 'FlatQVT_Rule'. From 'Domain', the role 'Domain' has cardinality 0..*, and from 'FlatQVT_Rule', the role 'FlatQVT_Rule' has cardinality 0..*.
+An association connects 'Rule' and 'FlatQVT_Rule'. From 'Rule', the role 'Rule365' has cardinality 0..*, and from 'FlatQVT_Rule', the role 'FlatQVT_Rule364' has cardinality 0..*.
+An association connects 'FlatQVT_Rule' and 'Transformation'. From 'FlatQVT_Rule', the role 'FlatQVT_Rule367' has cardinality 0..*, and from 'Transformation', the role 'Transformation' has cardinality 0..*.
+An association connects 'FlatQVT_SwitchExp' and 'AltExp'. From 'FlatQVT_SwitchExp', the role 'FlatQVT_SwitchExp' has cardinality 0..*, and from 'AltExp', the role 'AltExp' has cardinality 0..*.
+An association connects 'FlatQVT_SwitchExp' and 'OclExpression'. From 'FlatQVT_SwitchExp', the role 'FlatQVT_SwitchExp370' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression371' has cardinality 0..*.
+An association connects 'Element' and 'FlatQVT_Tag'. From 'Element', the role 'Element' has cardinality 0..*, and from 'FlatQVT_Tag', the role 'FlatQVT_Tag' has cardinality 0..*.
+An association connects 'Variable' and 'FlatQVT_TemplateExp'. From 'Variable', the role 'Variable374' has cardinality 0..*, and from 'FlatQVT_TemplateExp', the role 'FlatQVT_TemplateExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_TemplateExp'. From 'OclExpression', the role 'OclExpression377' has cardinality 0..*, and from 'FlatQVT_TemplateExp', the role 'FlatQVT_TemplateExp376' has cardinality 0..*.
+An association connects 'FlatQVT_Transformation' and 'Transformation'. From 'FlatQVT_Transformation', the role 'FlatQVT_Transformation' has cardinality 0..*, and from 'Transformation', the role 'Transformation379' has cardinality 0..*.
+An association connects 'FlatQVT_Transformation' and 'TypedModel'. From 'FlatQVT_Transformation', the role 'FlatQVT_Transformation381' has cardinality 0..*, and from 'TypedModel', the role 'TypedModel382' has cardinality 0..*.
+An association connects 'FlatQVT_Transformation' and 'Tag'. From 'FlatQVT_Transformation', the role 'FlatQVT_Transformation384' has cardinality 0..*, and from 'Tag', the role 'Tag385' has cardinality 0..*.
+An association connects 'Rule' and 'FlatQVT_Transformation'. From 'Rule', the role 'Rule388' has cardinality 0..*, and from 'FlatQVT_Transformation', the role 'FlatQVT_Transformation387' has cardinality 0..*.
+An association connects 'CatchExp' and 'FlatQVT_TryExp'. From 'CatchExp', the role 'CatchExp' has cardinality 0..*, and from 'FlatQVT_TryExp', the role 'FlatQVT_TryExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_TryExp'. From 'OclExpression', the role 'OclExpression392' has cardinality 0..*, and from 'FlatQVT_TryExp', the role 'FlatQVT_TryExp391' has cardinality 0..*.
+An association connects 'TupleLiteralPart' and 'FlatQVT_TupleLiteralExp'. From 'TupleLiteralPart', the role 'TupleLiteralPart' has cardinality 0..*, and from 'FlatQVT_TupleLiteralExp', the role 'FlatQVT_TupleLiteralExp' has cardinality 0..*.
+An association connects 'FlatQVT_TupleLiteralPart' and 'Property'. From 'FlatQVT_TupleLiteralPart', the role 'FlatQVT_TupleLiteralPart' has cardinality 0..*, and from 'Property', the role 'Property395' has cardinality 0..*.
+An association connects 'FlatQVT_TupleLiteralPart' and 'TupleLiteralExp'. From 'FlatQVT_TupleLiteralPart', the role 'FlatQVT_TupleLiteralPart397' has cardinality 0..*, and from 'TupleLiteralExp', the role 'TupleLiteralExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_TupleLiteralPart'. From 'OclExpression', the role 'OclExpression400' has cardinality 0..*, and from 'FlatQVT_TupleLiteralPart', the role 'FlatQVT_TupleLiteralPart399' has cardinality 0..*.
+An association connects 'FlatQVT_Type' and 'Package'. From 'FlatQVT_Type', the role 'FlatQVT_Type' has cardinality 0..*, and from 'Package', the role 'Package402' has cardinality 0..*.
+An association connects 'FlatQVT_TypeExp' and 'Type'. From 'FlatQVT_TypeExp', the role 'FlatQVT_TypeExp' has cardinality 0..*, and from 'Type', the role 'Type404' has cardinality 0..*.
+An association connects 'FlatQVT_TypedElement' and 'Type'. From 'FlatQVT_TypedElement', the role 'FlatQVT_TypedElement' has cardinality 0..*, and from 'Type', the role 'Type406' has cardinality 0..*.
+An association connects 'FlatQVT_TypedModel' and 'TypedModel'. From 'FlatQVT_TypedModel', the role 'FlatQVT_TypedModel' has cardinality 0..*, and from 'TypedModel', the role 'TypedModel408' has cardinality 0..*.
+An association connects 'Transformation' and 'FlatQVT_TypedModel'. From 'Transformation', the role 'Transformation411' has cardinality 0..*, and from 'FlatQVT_TypedModel', the role 'FlatQVT_TypedModel410' has cardinality 0..*.
+An association connects 'Package' and 'FlatQVT_TypedModel'. From 'Package', the role 'Package414' has cardinality 0..*, and from 'FlatQVT_TypedModel', the role 'FlatQVT_TypedModel413' has cardinality 0..*.
+An association connects 'Type' and 'FlatQVT_Typedef'. From 'Type', the role 'Type416' has cardinality 0..*, and from 'FlatQVT_Typedef', the role 'FlatQVT_Typedef' has cardinality 0..*.
+An association connects 'FlatQVT_Typedef' and 'OclExpression'. From 'FlatQVT_Typedef', the role 'FlatQVT_Typedef418' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression419' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_UnlinkExp'. From 'OclExpression', the role 'OclExpression421' has cardinality 0..*, and from 'FlatQVT_UnlinkExp', the role 'FlatQVT_UnlinkExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_UnlinkExp'. From 'OclExpression', the role 'OclExpression424' has cardinality 0..*, and from 'FlatQVT_UnlinkExp', the role 'FlatQVT_UnlinkExp423' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_UnpackExp'. From 'OclExpression', the role 'OclExpression426' has cardinality 0..*, and from 'FlatQVT_UnpackExp', the role 'FlatQVT_UnpackExp' has cardinality 0..*.
+An association connects 'Variable' and 'FlatQVT_UnpackExp'. From 'Variable', the role 'Variable429' has cardinality 0..*, and from 'FlatQVT_UnpackExp', the role 'FlatQVT_UnpackExp428' has cardinality 0..*.
+An association connects 'ImperativeOperation' and 'FlatQVT_VarParameter'. From 'ImperativeOperation', the role 'ImperativeOperation431' has cardinality 0..*, and from 'FlatQVT_VarParameter', the role 'FlatQVT_VarParameter' has cardinality 0..*.
+An association connects 'FlatQVT_VarParameter' and 'ImperativeOperation'. From 'FlatQVT_VarParameter', the role 'FlatQVT_VarParameter433' has cardinality 0..*, and from 'ImperativeOperation', the role 'ImperativeOperation434' has cardinality 0..*.
+An association connects 'FlatQVT_Variable' and 'OclExpression'. From 'FlatQVT_Variable', the role 'FlatQVT_Variable' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression436' has cardinality 0..*.
+An association connects 'FlatQVT_Variable' and 'LetExp'. From 'FlatQVT_Variable', the role 'FlatQVT_Variable438' has cardinality 0..*, and from 'LetExp', the role 'LetExp' has cardinality 0..*.
+An association connects 'FlatQVT_Variable' and 'Parameter'. From 'FlatQVT_Variable', the role 'FlatQVT_Variable440' has cardinality 0..*, and from 'Parameter', the role 'Parameter441' has cardinality 0..*.
+An association connects 'Variable' and 'FlatQVT_VariableAssignment'. From 'Variable', the role 'Variable443' has cardinality 0..*, and from 'FlatQVT_VariableAssignment', the role 'FlatQVT_VariableAssignment' has cardinality 0..*.
+An association connects 'Variable' and 'FlatQVT_VariableExp'. From 'Variable', the role 'Variable445' has cardinality 0..*, and from 'FlatQVT_VariableExp', the role 'FlatQVT_VariableExp' has cardinality 0..*.
+An association connects 'FlatQVT_VariableInitExp' and 'Variable'. From 'FlatQVT_VariableInitExp', the role 'FlatQVT_VariableInitExp' has cardinality 0..*, and from 'Variable', the role 'Variable447' has cardinality 0..*.
+An association connects 'OclExpression' and 'FlatQVT_WhileExp'. From 'OclExpression', the role 'OclExpression449' has cardinality 0..*, and from 'FlatQVT_WhileExp', the role 'FlatQVT_WhileExp' has cardinality 0..*.
+An association connects 'FlatQVT_WhileExp' and 'OclExpression'. From 'FlatQVT_WhileExp', the role 'FlatQVT_WhileExp451' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression452' has cardinality 0..*.

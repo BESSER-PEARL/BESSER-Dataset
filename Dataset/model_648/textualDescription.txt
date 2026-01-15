@@ -1,0 +1,17 @@
+The domain model 'mm4' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'mm4_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mm4_Member' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mm4_Medium' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'mm4_Member' and 'mm4_Library'. From 'mm4_Member', the role 'mm4_Member' has cardinality 0..*, and from 'mm4_Library', the role 'mm4_Library' has cardinality 0..*.
+An association connects 'mm4_Medium' and 'mm4_Library'. From 'mm4_Medium', the role 'mm4_Medium' has cardinality 0..*, and from 'mm4_Library', the role 'mm4_Library2' has cardinality 0..*.
+An association connects 'mm4_Medium' and 'mm4_Member'. From 'mm4_Medium', the role 'mm4_Medium5' has cardinality 0..*, and from 'mm4_Member', the role 'mm4_Member4' has cardinality 0..*.

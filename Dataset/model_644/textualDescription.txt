@@ -1,0 +1,85 @@
+The domain model 'reservationsystem' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'reservationsystem_Plane' represents an important domain concept.
+It has the following attributes: 'capacity', which is of type int; 'model', which is of type str; 'id', which is of type str; 'crewNum', which is of type int.
+
+'Crew' represents an important domain concept.
+It does not declare any attributes.
+
+'reservationsystem_Attendant' represents an important domain concept.
+It does not declare any attributes.
+
+'reservationsystem_SpecificFlight' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'date', which is of type date; 'realDepTime', which is of type date; 'realArriTime', which is of type date; 'status', which is of type int.
+
+'reservationsystem_City' represents an important domain concept.
+It has the following attributes: 'abbr', which is of type str; 'id', which is of type int; 'name', which is of type str.
+
+'reservationsystem_Person' represents an important domain concept.
+It has the following attributes: 'birthDate', which is of type date; 'FamilyName', which is of type str; 'citizenship', which is of type str; 'residence', which is of type str; 'passportId', which is of type str; 'id', which is of type int; 'email', which is of type str; 'name', which is of type str; 'middleName', which is of type str; 'gender', which is of type int; 'addr', which is of type str; 'phone', which is of type str.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'reservationsystem_User' represents an important domain concept.
+It has the following attributes: 'md5Pwd', which is of type str; 'userType', which is of type str; 'userName', which is of type str.
+
+'reservationsystem_Booking' represents an important domain concept.
+It has the following attributes: 'baggageInfo', which is of type str; 'bookNo', which is of type str; 'bookingStatus', which is of type int.
+
+'reservationsystem_Crew' represents an important domain concept.
+It has one attribute: 'employeeId', which is of type str.
+
+'reservationsystem_Airport' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type int; 'abbr', which is of type str.
+
+'reservationsystem_PaymentInfo' represents an important domain concept.
+It has the following attributes: 'payTime', which is of type date; 'status', which is of type int; 'id', which is of type str; 'cardNo', which is of type str; 'createTime', which is of type date; 'cardOwner', which is of type str; 'type', which is of type int; 'cardAddr', which is of type str.
+
+'Booking' represents an important domain concept.
+It does not declare any attributes.
+
+'reservationsystem_Passenger' represents an important domain concept.
+It has the following attributes: 'specialNeeds', which is of type str; 'foodPref', which is of type str.
+
+'reservationsystem_GeneralFlight' represents an important domain concept.
+It has the following attributes: 'arrivalTime', which is of type str; 'flightNo', which is of type str; 'departureTime', which is of type str.
+
+'reservationsystem_Pilot' represents an important domain concept.
+It has the following attributes: 'experience', which is of type int; 'certificationId', which is of type str.
+
+'reservationsystem_Seat' represents an important domain concept.
+It has the following attributes: 'no', which is of type str; 'isExit', which is of type bool; 'type', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'reservationsystem_Crew' is a specialization of 'Person'.
+The class 'reservationsystem_Passenger' is a specialization of 'Person'.
+The class 'reservationsystem_Pilot' is a specialization of 'Crew'.
+The class 'reservationsystem_Attendant' is a specialization of 'Crew'.
+The class 'reservationsystem_PaymentInfo' is a specialization of 'Booking'.
+
+Relationships between classes are modeled using associations.
+An association connects 'reservationsystem_Person' and 'reservationsystem_User'. From 'reservationsystem_Person', the role 'reservationsystem_Person' has cardinality 0..*, and from 'reservationsystem_User', the role 'reservationsystem_User' has cardinality 0..*.
+An association connects 'reservationsystem_Crew' and 'reservationsystem_Crew'. From 'reservationsystem_Crew', the role 'reservationsystem_Crew1' has cardinality 0..*, and from 'reservationsystem_Crew', the role 'reservationsystem_Crew' has cardinality 0..*.
+An association connects 'reservationsystem_SpecificFlight' and 'reservationsystem_Crew'. From 'reservationsystem_SpecificFlight', the role 'SpecificFlight' has cardinality 0..*, and from 'reservationsystem_Crew', the role 'crew' has cardinality 0..*.
+An association connects 'reservationsystem_Booking' and 'reservationsystem_Passenger'. From 'reservationsystem_Booking', the role 'reservationsystem_Booking' has cardinality 0..*, and from 'reservationsystem_Passenger', the role 'reservationsystem_Passenger' has cardinality 0..*.
+An association connects 'reservationsystem_Passenger' and 'reservationsystem_Booking'. From 'reservationsystem_Passenger', the role 'passenger' has cardinality 0..*, and from 'reservationsystem_Booking', the role 'Booking' has cardinality 0..*.
+An association connects 'reservationsystem_Booking' and 'reservationsystem_PaymentInfo'. From 'reservationsystem_Booking', the role 'reservationsystem_Booking7' has cardinality 0..*, and from 'reservationsystem_PaymentInfo', the role 'reservationsystem_PaymentInfo' has cardinality 0..*.
+An association connects 'reservationsystem_Passenger' and 'reservationsystem_Booking'. From 'reservationsystem_Passenger', the role 'Passenger' has cardinality 0..*, and from 'reservationsystem_Booking', the role 'booking' has cardinality 0..*.
+An association connects 'reservationsystem_SpecificFlight' and 'reservationsystem_Booking'. From 'reservationsystem_SpecificFlight', the role 'SpecificFlight11' has cardinality 0..*, and from 'reservationsystem_Booking', the role 'booking10' has cardinality 0..*.
+An association connects 'reservationsystem_Seat' and 'reservationsystem_Booking'. From 'reservationsystem_Seat', the role 'Seat' has cardinality 0..*, and from 'reservationsystem_Booking', the role 'book' has cardinality 0..*.
+An association connects 'reservationsystem_SpecificFlight' and 'reservationsystem_GeneralFlight'. From 'reservationsystem_SpecificFlight', the role 'SpecificFlight14' has cardinality 0..*, and from 'reservationsystem_GeneralFlight', the role 'generalFlight' has cardinality 0..*.
+An association connects 'reservationsystem_GeneralFlight' and 'reservationsystem_Airport'. From 'reservationsystem_GeneralFlight', the role 'reservationsystem_GeneralFlight' has cardinality 0..*, and from 'reservationsystem_Airport', the role 'reservationsystem_Airport' has cardinality 0..*.
+An association connects 'reservationsystem_GeneralFlight' and 'reservationsystem_Airport'. From 'reservationsystem_GeneralFlight', the role 'reservationsystem_GeneralFlight17' has cardinality 0..*, and from 'reservationsystem_Airport', the role 'reservationsystem_Airport18' has cardinality 0..*.
+An association connects 'reservationsystem_GeneralFlight' and 'reservationsystem_SpecificFlight'. From 'reservationsystem_GeneralFlight', the role 'GeneralFlight' has cardinality 0..*, and from 'reservationsystem_SpecificFlight', the role 'specificFlight' has cardinality 0..*.
+An association connects 'reservationsystem_SpecificFlight' and 'reservationsystem_Plane'. From 'reservationsystem_SpecificFlight', the role 'specificFlight21' has cardinality 0..*, and from 'reservationsystem_Plane', the role 'Plane' has cardinality 0..*.
+An association connects 'reservationsystem_SpecificFlight' and 'reservationsystem_Crew'. From 'reservationsystem_SpecificFlight', the role 'specificFlight23' has cardinality 0..*, and from 'reservationsystem_Crew', the role 'Crew' has cardinality 0..*.
+An association connects 'reservationsystem_Booking' and 'reservationsystem_SpecificFlight'. From 'reservationsystem_Booking', the role 'Booking26' has cardinality 0..*, and from 'reservationsystem_SpecificFlight', the role 'specificFlight25' has cardinality 0..*.
+An association connects 'reservationsystem_Plane' and 'reservationsystem_SpecificFlight'. From 'reservationsystem_Plane', the role 'plane' has cardinality 0..*, and from 'reservationsystem_SpecificFlight', the role 'SpecificFlight28' has cardinality 0..*.
+An association connects 'reservationsystem_Plane' and 'reservationsystem_Seat'. From 'reservationsystem_Plane', the role 'plane30' has cardinality 0..*, and from 'reservationsystem_Seat', the role 'Seat31' has cardinality 0..*.
+An association connects 'reservationsystem_Airport' and 'reservationsystem_City'. From 'reservationsystem_Airport', the role 'airport' has cardinality 0..*, and from 'reservationsystem_City', the role 'City' has cardinality 0..*.
+An association connects 'reservationsystem_Airport' and 'reservationsystem_City'. From 'reservationsystem_Airport', the role 'Airport' has cardinality 0..*, and from 'reservationsystem_City', the role 'city' has cardinality 0..*.
+An association connects 'reservationsystem_Plane' and 'reservationsystem_Seat'. From 'reservationsystem_Plane', the role 'Plane35' has cardinality 0..*, and from 'reservationsystem_Seat', the role 'seats' has cardinality 0..*.
+An association connects 'reservationsystem_Booking' and 'reservationsystem_Seat'. From 'reservationsystem_Booking', the role 'Booking38' has cardinality 0..*, and from 'reservationsystem_Seat', the role 'seats37' has cardinality 0..*.

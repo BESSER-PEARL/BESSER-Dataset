@@ -1,0 +1,23 @@
+The domain model 'mm2' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'mm2_Category' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mm2_Medium' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'mm2_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mm2_Member' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'mm2_Member' and 'mm2_Library'. From 'mm2_Member', the role 'mm2_Member' has cardinality 0..*, and from 'mm2_Library', the role 'mm2_Library' has cardinality 0..*.
+An association connects 'mm2_Library' and 'mm2_Medium'. From 'mm2_Library', the role 'mm2_Library2' has cardinality 0..*, and from 'mm2_Medium', the role 'mm2_Medium' has cardinality 0..*.
+An association connects 'mm2_Category' and 'mm2_Library'. From 'mm2_Category', the role 'mm2_Category' has cardinality 0..*, and from 'mm2_Library', the role 'mm2_Library4' has cardinality 0..*.
+An association connects 'mm2_Category' and 'mm2_Category'. From 'mm2_Category', the role 'mm2_Category5' has cardinality 0..*, and from 'mm2_Category', the role 'mm2_Category7' has cardinality 0..*.
+An association connects 'mm2_Medium' and 'mm2_Category'. From 'mm2_Medium', the role 'mm2_Medium10' has cardinality 0..*, and from 'mm2_Category', the role 'mm2_Category9' has cardinality 0..*.
+An association connects 'mm2_Medium' and 'mm2_Member'. From 'mm2_Medium', the role 'mm2_Medium13' has cardinality 0..*, and from 'mm2_Member', the role 'mm2_Member12' has cardinality 0..*.

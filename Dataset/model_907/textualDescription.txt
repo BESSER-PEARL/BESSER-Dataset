@@ -1,0 +1,662 @@
+The domain model 'spem' describes the core structural elements and their relationships within the system.
+
+The model defines 145 main class(es).
+
+'spem_WorkProductPort' represents an important domain concept.
+It has the following attributes: 'portKind', which is of type str; 'isOptional', which is of type bool.
+
+'spem_uma_TermDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'DescribableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_RoleDefinitionPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_Kind' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_DescribableElement' represents an important domain concept.
+It has the following attributes: 'briefDescription', which is of type str; 'presentationName', which is of type str; 'mainDescription', which is of type str; 'purpose', which is of type str.
+
+'Guidance' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_Checklist' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_Practice' represents an important domain concept.
+It has the following attributes: 'goal', which is of type str; 'application', which is of type str; 'problem', which is of type str; 'background', which is of type str; 'levelOfAdoption', which is of type str; 'additionalInfo', which is of type str.
+
+'spem_WorkProductUseRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_ReusableAsset' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_ExtensibleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Concept' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_BreakdownElement' represents an important domain concept.
+It has the following attributes: 'isPlanned', which is of type bool; 'hasMultipleOccurrences', which is of type bool; 'isOptional', which is of type bool.
+
+'uma_spem_WorkProductPortConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessPackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'EstimatingConsideration' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_TaskDefinitionPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_Report' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_Metric' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'spem_uma_Phase' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_SupportingMaterial' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_MethodLibrary' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Practice' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_Guideline' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_RoleDefinition' represents an important domain concept.
+It has one attribute: 'synonym', which is of type str.
+
+'spem_uma_Template' represents an important domain concept.
+It does not declare any attributes.
+
+'WorkBreakdownElement' represents an important domain concept.
+It does not declare any attributes.
+
+'VariabilityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_spem_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_ToolMentor' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_ProcessResponsibilityAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_ProcessPerformer' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_Step' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'spem_uma_WorkProductDefinitionPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_EstimatingConsideration' represents an important domain concept.
+It does not declare any attributes.
+
+'WorkDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_spem_RoleDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodContentElement' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_DomainPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_Whitepaper' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_WorkDefinitionPerformer' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_WorkProductPortConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_Discipline' represents an important domain concept.
+It does not declare any attributes.
+
+'WorkDefinitionParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_spem_MethodLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_WorkProductKind' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_TaskDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_Default_ResponsibilityAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtensibleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_ProcessComponent' represents an important domain concept.
+It has the following attributes: 'author', which is of type str; 'changeDate', which is of type date; 'changeDescription', which is of type str; 'version', which is of type str; 'copyright', which is of type str.
+
+'spem_Milestone' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_Example' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_ProcessParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Template' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_CompositeRole' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_ProcessComponentPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_spem_TaskDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'ConfigurationPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_LifeCycleSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodContentKind' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_ToolDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_Qualification' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_ProcessComponentUse' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_ProcessPackageableElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SupportingMaterial' represents an important domain concept.
+It does not declare any attributes.
+
+'WorkProductUse' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_ProcessPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'Report' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_RoleSet' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_Activity' represents an important domain concept.
+It has the following attributes: 'useKind', which is of type str; 'howToStaff', which is of type str; 'isEnactable', which is of type bool.
+
+'spem_uma_RoleSetPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_GuidancePackage' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_WorkProductDefinition' represents an important domain concept.
+It has the following attributes: 'reasonForNotNeeding', which is of type str; 'impactOfNotHaving', which is of type str.
+
+'ToolMentor' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_WorkProductUse' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodPluginPackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_MethodPlugin' represents an important domain concept.
+It has the following attributes: 'userChangeable', which is of type bool; 'supporting', which is of type str.
+
+'spem_uma_DisciplinePackage' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_VariabilityElement' represents an important domain concept.
+It has one attribute: 'variabilityType', which is of type str.
+
+'Kind' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_ToolDefinitionPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_WorkProductKindPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_WorkSequence' represents an important domain concept.
+It has one attribute: 'linkKind', which is of type str.
+
+'spem_uma_Iteration' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_QualificationPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_Outcome' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_RoleUse' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_ProcessPlanningTemplate' represents an important domain concept.
+It does not declare any attributes.
+
+'Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_Default_TaskDefinitionPerformer' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodLibraryPackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_spem_MethodConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_TaskUse' represents an important domain concept.
+It has the following attributes: 'postCondition', which is of type str; 'preCondition', which is of type str.
+
+'spem_uma_DeliveryProcess' represents an important domain concept.
+It has the following attributes: 'typeOfContract', which is of type str; 'projectCharacteristics', which is of type str; 'estimatingTechnique', which is of type str; 'riskLevel', which is of type str; 'scale', which is of type str; 'projectMemberExpertise', which is of type str.
+
+'spem_uma_DeliveryProcessPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_Concept' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_ConfigurationPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+'WorkDefinitionPerformer' represents an important domain concept.
+It does not declare any attributes.
+
+'BreakdownElement' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_WorkDefinition' represents an important domain concept.
+It has the following attributes: 'postCondition', which is of type str; 'preCondition', which is of type str.
+
+'spem_uma_CategoryPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_Process' represents an important domain concept.
+It has the following attributes: 'usageNote', which is of type str; 'scope', which is of type str.
+
+'spem_uma_CapabilityPatternPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_MethodPluginPackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_MethodContentPackageableElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RoleUse' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_MethodContentPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_MethodContentUse' represents an important domain concept.
+It has one attribute: 'isSynchronizedWithSource', which is of type bool.
+
+'spem_uma_DisciplineGrouping' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_MethodContentElement' represents an important domain concept.
+It has the following attributes: 'copyright', which is of type str; 'author', which is of type str; 'version', which is of type str; 'changeDate', which is of type date; 'changeDescription', which is of type str.
+
+'spem_ProcessKind' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_spem_MethodPlugin' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_Category' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_WorkBreakdownElement' represents an important domain concept.
+It has the following attributes: 'isEventDriven', which is of type bool; 'isRepeatable', which is of type bool; 'isOngoing', which is of type bool.
+
+'MethodContentPackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_spem_WorkProductDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'Process' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_Default_TaskDefinitionParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_spem_MethodContentElement' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_CustomCategory' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_Roadmap' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodContentUse' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_PlanningData' represents an important domain concept.
+It has the following attributes: 'finishDate', which is of type date; 'duration', which is of type str; 'rank', which is of type int; 'startDate', which is of type date.
+
+'spem_TeamProfile' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_MethodLibraryPackageableElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'spem_WorkProductDefinitionRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_CapabilityPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_Guidance' represents an important domain concept.
+It has one attribute: 'attachment', which is of type str.
+
+'Category' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_WorkDefinitionParameter' represents an important domain concept.
+It has the following attributes: 'direction', which is of type str; 'optionality', which is of type str; 'name', which is of type str.
+
+'spem_MethodContentKind' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_spem_WorkProductUse' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_uma_Deliverable' represents an important domain concept.
+It has the following attributes: 'externalDescription', which is of type str; 'packagingGuidance', which is of type str.
+
+'CapabilityPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodContentPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'spem_MethodConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ParameterDirectionKind' defines the following possible values: 'in', 'out', 'inout'.
+The enumeration 'RiskLevel' defines the following possible values: 'LOW', 'HIGH', 'MID'.
+The enumeration 'ContractKind' defines the following possible values: 'OTHER', 'EXPRESS', 'IMPLIED'.
+The enumeration 'ActivityUseKind' defines the following possible values: 'extension', 'na', 'localContribution', 'localReplacement'.
+The enumeration 'ExpertiseLevel' defines the following possible values: 'LEVEL', 'MID', 'LOW'.
+The enumeration 'OptionalityKind' defines the following possible values: 'mandatory', 'optional'.
+The enumeration 'WorkSequenceKind' defines the following possible values: 'startToFinish', 'finishToFinish', 'finishToStart', 'startToStart'.
+The enumeration 'EstimatingTechnique' defines the following possible values: 'DEFECTS', 'SKILLS', 'OTHER', 'COST', 'TIME'.
+The enumeration 'VariabilityType' defines the following possible values: 'extends_replaces', 'replaces', 'extends', 'contributes', 'na'.
+
+The model also captures inheritance relationships between classes.
+The class 'spem_Kind' is a specialization of 'ExtensibleElement'.
+The class 'spem_BreakdownElement' is a specialization of 'ProcessElement'.
+The class 'spem_WorkBreakdownElement' is a specialization of 'BreakdownElement'.
+The class 'spem_WorkSequence' is a specialization of 'BreakdownElement'.
+The class 'spem_Activity' is a specialization of 'WorkDefinition'.
+The class 'spem_Activity' is a specialization of 'WorkBreakdownElement'.
+The class 'spem_Activity' is a specialization of 'VariabilityElement'.
+The class 'spem_ProcessPerformer' is a specialization of 'WorkDefinitionPerformer'.
+The class 'spem_ProcessPerformer' is a specialization of 'BreakdownElement'.
+The class 'spem_RoleUse' is a specialization of 'MethodContentUse'.
+The class 'spem_ProcessResponsibilityAssignment' is a specialization of 'BreakdownElement'.
+The class 'spem_WorkProductUse' is a specialization of 'MethodContentUse'.
+The class 'spem_WorkProductUseRelationship' is a specialization of 'BreakdownElement'.
+The class 'spem_ProcessParameter' is a specialization of 'WorkDefinitionParameter'.
+The class 'spem_Milestone' is a specialization of 'WorkBreakdownElement'.
+The class 'spem_ProcessElement' is a specialization of 'DescribableElement'.
+The class 'spem_ProcessElement' is a specialization of 'ProcessPackageableElement'.
+The class 'spem_DescribableElement' is a specialization of 'ExtensibleElement'.
+The class 'spem_Category' is a specialization of 'MethodContentElement'.
+The class 'spem_Guidance' is a specialization of 'MethodContentElement'.
+The class 'spem_Metric' is a specialization of 'Guidance'.
+The class 'spem_MethodContentElement' is a specialization of 'DescribableElement'.
+The class 'spem_MethodContentElement' is a specialization of 'MethodContentPackageableElement'.
+The class 'spem_MethodContentElement' is a specialization of 'VariabilityElement'.
+The class 'spem_ToolDefinition' is a specialization of 'MethodContentElement'.
+The class 'spem_TaskDefinition' is a specialization of 'WorkDefinition'.
+The class 'spem_TaskDefinition' is a specialization of 'MethodContentElement'.
+The class 'spem_Step' is a specialization of 'WorkDefinition'.
+The class 'spem_Step' is a specialization of 'DescribableElement'.
+The class 'spem_Step' is a specialization of 'VariabilityElement'.
+The class 'spem_WorkProductDefinition' is a specialization of 'MethodContentElement'.
+The class 'spem_RoleDefinition' is a specialization of 'MethodContentElement'.
+The class 'spem_WorkProductDefinitionRelationship' is a specialization of 'MethodContentElement'.
+The class 'spem_Default_TaskDefinitionPerformer' is a specialization of 'MethodContentElement'.
+The class 'spem_Default_ResponsibilityAssignment' is a specialization of 'MethodContentElement'.
+The class 'spem_Default_TaskDefinitionParameter' is a specialization of 'WorkDefinitionParameter'.
+The class 'spem_Qualification' is a specialization of 'MethodContentElement'.
+The class 'spem_MethodContentPackageableElement' is a specialization of 'VariabilityElement'.
+The class 'spem_MethodContentPackage' is a specialization of 'MethodContentPackageableElement'.
+The class 'spem_MethodContentPackage' is a specialization of 'MethodPluginPackageableElement'.
+The class 'spem_ProcessPackage' is a specialization of 'ProcessPackageableElement'.
+The class 'spem_ProcessPackage' is a specialization of 'MethodPluginPackageableElement'.
+The class 'spem_MethodContentKind' is a specialization of 'MethodContentElement'.
+The class 'spem_MethodContentKind' is a specialization of 'Kind'.
+The class 'spem_ProcessKind' is a specialization of 'ProcessElement'.
+The class 'spem_ProcessKind' is a specialization of 'Kind'.
+The class 'spem_PlanningData' is a specialization of 'ProcessElement'.
+The class 'spem_MethodContentUse' is a specialization of 'BreakdownElement'.
+The class 'spem_TaskUse' is a specialization of 'MethodContentUse'.
+The class 'spem_TaskUse' is a specialization of 'WorkBreakdownElement'.
+The class 'spem_CompositeRole' is a specialization of 'RoleUse'.
+The class 'spem_TeamProfile' is a specialization of 'BreakdownElement'.
+The class 'spem_ProcessComponent' is a specialization of 'ProcessPackage'.
+The class 'spem_ProcessComponentUse' is a specialization of 'MethodContentUse'.
+The class 'spem_MethodConfiguration' is a specialization of 'MethodLibraryPackageableElement'.
+The class 'spem_MethodPlugin' is a specialization of 'MethodLibraryPackageableElement'.
+The class 'spem_WorkProductPort' is a specialization of 'ProcessElement'.
+The class 'spem_WorkProductPortConnector' is a specialization of 'ProcessElement'.
+The class 'spem_WorkProductKind' is a specialization of 'MethodContentKind'.
+The class 'spem_uma_Artifact' is a specialization of 'WorkProductUse'.
+The class 'spem_uma_CapabilityPattern' is a specialization of 'Process'.
+The class 'spem_uma_Checklist' is a specialization of 'Guidance'.
+The class 'spem_uma_Concept' is a specialization of 'Guidance'.
+The class 'spem_uma_CategoryPackage' is a specialization of 'MethodContentPackage'.
+The class 'spem_uma_CustomCategory' is a specialization of 'Category'.
+The class 'spem_uma_Deliverable' is a specialization of 'WorkProductUse'.
+The class 'spem_uma_Process' is a specialization of 'Activity'.
+The class 'spem_uma_DeliveryProcess' is a specialization of 'Process'.
+The class 'spem_uma_Discipline' is a specialization of 'Category'.
+The class 'spem_uma_DisciplineGrouping' is a specialization of 'Category'.
+The class 'spem_uma_Domain' is a specialization of 'Category'.
+The class 'spem_uma_EstimatingConsideration' is a specialization of 'Guidance'.
+The class 'spem_uma_Example' is a specialization of 'Guidance'.
+The class 'spem_uma_Iteration' is a specialization of 'Activity'.
+The class 'spem_uma_Outcome' is a specialization of 'WorkProductUse'.
+The class 'spem_uma_Phase' is a specialization of 'Activity'.
+The class 'spem_uma_Practice' is a specialization of 'Guidance'.
+The class 'spem_uma_ProcessPlanningTemplate' is a specialization of 'Process'.
+The class 'spem_uma_Report' is a specialization of 'Guidance'.
+The class 'spem_uma_ReusableAsset' is a specialization of 'Guidance'.
+The class 'spem_uma_Roadmap' is a specialization of 'Guidance'.
+The class 'spem_uma_Template' is a specialization of 'Guidance'.
+The class 'spem_uma_TermDefinition' is a specialization of 'Guidance'.
+The class 'spem_uma_ToolMentor' is a specialization of 'Guidance'.
+The class 'spem_uma_Whitepaper' is a specialization of 'Concept'.
+The class 'spem_uma_Guideline' is a specialization of 'Guidance'.
+The class 'spem_uma_SupportingMaterial' is a specialization of 'Guidance'.
+The class 'spem_uma_RoleDefinitionPackage' is a specialization of 'MethodContentPackage'.
+The class 'spem_uma_TaskDefinitionPackage' is a specialization of 'MethodContentPackage'.
+The class 'spem_uma_WorkProductDefinitionPackage' is a specialization of 'MethodContentPackage'.
+The class 'spem_uma_GuidancePackage' is a specialization of 'MethodContentPackage'.
+The class 'spem_uma_DisciplinePackage' is a specialization of 'MethodContentPackage'.
+The class 'spem_uma_DomainPackage' is a specialization of 'MethodContentPackage'.
+The class 'spem_uma_WorkProductKindPackage' is a specialization of 'MethodContentPackage'.
+The class 'spem_uma_RoleSetPackage' is a specialization of 'MethodContentPackage'.
+The class 'spem_uma_ToolDefinitionPackage' is a specialization of 'MethodContentPackage'.
+The class 'spem_uma_ConfigurationPackage' is a specialization of 'MethodContentPackage'.
+The class 'spem_uma_CapabilityPatternPackage' is a specialization of 'ProcessPackage'.
+The class 'spem_uma_DeliveryProcessPackage' is a specialization of 'ProcessPackage'.
+The class 'spem_uma_RoleSet' is a specialization of 'MethodContentElement'.
+The class 'spem_uma_QualificationPackage' is a specialization of 'MethodContentPackage'.
+The class 'spem_uma_ProcessComponentPackage' is a specialization of 'ProcessPackage'.
+
+Relationships between classes are modeled using associations.
+An association connects 'spem_ExtensibleElement' and 'spem_Kind'. From 'spem_ExtensibleElement', the role 'spem_ExtensibleElement' has cardinality 0..*, and from 'spem_Kind', the role 'spem_Kind' has cardinality 0..*.
+An association connects 'spem_WorkDefinitionParameter' and 'spem_WorkDefinition'. From 'spem_WorkDefinitionParameter', the role 'spem_WorkDefinitionParameter' has cardinality 0..*, and from 'spem_WorkDefinition', the role 'spem_WorkDefinition' has cardinality 0..*.
+An association connects 'spem_WorkProductDefinition' and 'spem_WorkDefinitionParameter'. From 'spem_WorkProductDefinition', the role 'spem_WorkProductDefinition' has cardinality 0..*, and from 'spem_WorkDefinitionParameter', the role 'spem_WorkDefinitionParameter3' has cardinality 0..*.
+An association connects 'spem_BreakdownElement' and 'spem_PlanningData'. From 'spem_BreakdownElement', the role 'spem_BreakdownElement' has cardinality 0..*, and from 'spem_PlanningData', the role 'spem_PlanningData' has cardinality 0..*.
+An association connects 'spem_BreakdownElement' and 'spem_Guidance'. From 'spem_BreakdownElement', the role 'spem_BreakdownElement6' has cardinality 0..*, and from 'spem_Guidance', the role 'spem_Guidance' has cardinality 0..*.
+An association connects 'spem_WorkSequence' and 'spem_WorkBreakdownElement'. From 'spem_WorkSequence', the role 'WorkSequence' has cardinality 0..*, and from 'spem_WorkBreakdownElement', the role 'successor' has cardinality 0..*.
+An association connects 'spem_WorkBreakdownElement' and 'spem_WorkSequence'. From 'spem_WorkBreakdownElement', the role 'predecessor' has cardinality 0..*, and from 'spem_WorkSequence', the role 'WorkSequence9' has cardinality 0..*.
+An association connects 'spem_WorkBreakdownElement' and 'spem_WorkSequence'. From 'spem_WorkBreakdownElement', the role 'WorkBreakdownElement' has cardinality 0..*, and from 'spem_WorkSequence', the role 'linkToSuccessor' has cardinality 0..*.
+An association connects 'spem_WorkBreakdownElement' and 'spem_WorkSequence'. From 'spem_WorkBreakdownElement', the role 'WorkBreakdownElement12' has cardinality 0..*, and from 'spem_WorkSequence', the role 'linkToPredecessor' has cardinality 0..*.
+An association connects 'spem_Activity' and 'spem_Activity'. From 'spem_Activity', the role 'spem_Activity13' has cardinality 0..*, and from 'spem_Activity', the role 'spem_Activity' has cardinality 0..*.
+An association connects 'spem_BreakdownElement' and 'spem_Activity'. From 'spem_BreakdownElement', the role 'spem_BreakdownElement17' has cardinality 0..*, and from 'spem_Activity', the role 'spem_Activity16' has cardinality 0..*.
+An association connects 'spem_BreakdownElement' and 'spem_Activity'. From 'spem_BreakdownElement', the role 'spem_BreakdownElement20' has cardinality 0..*, and from 'spem_Activity', the role 'spem_Activity19' has cardinality 0..*.
+An association connects 'spem_ProcessParameter' and 'spem_Activity'. From 'spem_ProcessParameter', the role 'spem_ProcessParameter' has cardinality 0..*, and from 'spem_Activity', the role 'spem_Activity22' has cardinality 0..*.
+An association connects 'spem_MethodConfiguration' and 'spem_Activity'. From 'spem_MethodConfiguration', the role 'spem_MethodConfiguration' has cardinality 0..*, and from 'spem_Activity', the role 'spem_Activity24' has cardinality 0..*.
+An association connects 'spem_Activity' and 'spem_MethodConfiguration'. From 'spem_Activity', the role 'spem_Activity26' has cardinality 0..*, and from 'spem_MethodConfiguration', the role 'spem_MethodConfiguration27' has cardinality 0..*.
+An association connects 'spem_Activity' and 'spem_Activity'. From 'spem_Activity', the role 'spem_Activity28' has cardinality 0..*, and from 'spem_Activity', the role 'spem_Activity30' has cardinality 0..*.
+An association connects 'spem_ProcessPerformer' and 'spem_RoleUse'. From 'spem_ProcessPerformer', the role 'spem_ProcessPerformer' has cardinality 0..*, and from 'spem_RoleUse', the role 'spem_RoleUse' has cardinality 0..*.
+An association connects 'spem_ProcessPerformer' and 'spem_Activity'. From 'spem_ProcessPerformer', the role 'spem_ProcessPerformer33' has cardinality 0..*, and from 'spem_Activity', the role 'spem_Activity34' has cardinality 0..*.
+An association connects 'spem_TaskUse' and 'spem_ProcessPerformer'. From 'spem_TaskUse', the role 'spem_TaskUse' has cardinality 0..*, and from 'spem_ProcessPerformer', the role 'spem_ProcessPerformer36' has cardinality 0..*.
+An association connects 'spem_RoleDefinition' and 'spem_RoleUse'. From 'spem_RoleDefinition', the role 'spem_RoleDefinition' has cardinality 0..*, and from 'spem_RoleUse', the role 'spem_RoleUse38' has cardinality 0..*.
+An association connects 'spem_RoleUse' and 'spem_ProcessResponsibilityAssignment'. From 'spem_RoleUse', the role 'spem_RoleUse40' has cardinality 0..*, and from 'spem_ProcessResponsibilityAssignment', the role 'spem_ProcessResponsibilityAssignment' has cardinality 0..*.
+An association connects 'spem_ProcessResponsibilityAssignment' and 'spem_WorkProductUse'. From 'spem_ProcessResponsibilityAssignment', the role 'spem_ProcessResponsibilityAssignment42' has cardinality 0..*, and from 'spem_WorkProductUse', the role 'spem_WorkProductUse' has cardinality 0..*.
+An association connects 'spem_WorkProductDefinition' and 'spem_WorkProductUse'. From 'spem_WorkProductDefinition', the role 'spem_WorkProductDefinition45' has cardinality 0..*, and from 'spem_WorkProductUse', the role 'spem_WorkProductUse44' has cardinality 0..*.
+An association connects 'spem_WorkProductUse' and 'spem_LifeCycleSpecification'. From 'spem_WorkProductUse', the role 'spem_WorkProductUse47' has cardinality 0..*, and from 'spem_LifeCycleSpecification', the role 'spem_LifeCycleSpecification' has cardinality 0..*.
+An association connects 'spem_WorkProductUse' and 'spem_WorkProductUseRelationship'. From 'spem_WorkProductUse', the role 'spem_WorkProductUse49' has cardinality 0..*, and from 'spem_WorkProductUseRelationship', the role 'spem_WorkProductUseRelationship' has cardinality 0..*.
+An association connects 'spem_WorkProductUseRelationship' and 'spem_WorkProductUse'. From 'spem_WorkProductUseRelationship', the role 'spem_WorkProductUseRelationship51' has cardinality 0..*, and from 'spem_WorkProductUse', the role 'spem_WorkProductUse52' has cardinality 0..*.
+An association connects 'spem_WorkProductUse' and 'spem_Milestone'. From 'spem_WorkProductUse', the role 'spem_WorkProductUse54' has cardinality 0..*, and from 'spem_Milestone', the role 'spem_Milestone' has cardinality 0..*.
+An association connects 'spem_ProcessKind' and 'spem_ProcessElement'. From 'spem_ProcessKind', the role 'spem_ProcessKind' has cardinality 0..*, and from 'spem_ProcessElement', the role 'spem_ProcessElement' has cardinality 0..*.
+An association connects 'spem_DescribableElement' and 'spem_Guidance'. From 'spem_DescribableElement', the role 'spem_DescribableElement' has cardinality 0..*, and from 'spem_Guidance', the role 'spem_Guidance57' has cardinality 0..*.
+An association connects 'spem_DescribableElement' and 'spem_Metric'. From 'spem_DescribableElement', the role 'spem_DescribableElement59' has cardinality 0..*, and from 'spem_Metric', the role 'spem_Metric' has cardinality 0..*.
+An association connects 'spem_DescribableElement' and 'spem_DescribableElement'. From 'spem_DescribableElement', the role 'spem_DescribableElement62' has cardinality 0..*, and from 'spem_DescribableElement', the role 'spem_DescribableElement60' has cardinality 0..*.
+An association connects 'spem_DescribableElement' and 'spem_DescribableElement'. From 'spem_DescribableElement', the role 'spem_DescribableElement65' has cardinality 0..*, and from 'spem_DescribableElement', the role 'spem_DescribableElement63' has cardinality 0..*.
+An association connects 'EstimatingConsideration' and 'spem_DescribableElement'. From 'EstimatingConsideration', the role 'EstimatingConsideration' has cardinality 0..*, and from 'spem_DescribableElement', the role 'spem_DescribableElement67' has cardinality 0..*.
+An association connects 'spem_Category' and 'spem_DescribableElement'. From 'spem_Category', the role 'spem_Category' has cardinality 0..*, and from 'spem_DescribableElement', the role 'spem_DescribableElement69' has cardinality 0..*.
+An association connects 'spem_Category' and 'spem_Category'. From 'spem_Category', the role 'spem_Category70' has cardinality 0..*, and from 'spem_Category', the role 'spem_Category72' has cardinality 0..*.
+An association connects 'spem_MethodContentElement' and 'spem_MethodContentElement'. From 'spem_MethodContentElement', the role 'spem_MethodContentElement73' has cardinality 0..*, and from 'spem_MethodContentElement', the role 'spem_MethodContentElement' has cardinality 0..*.
+An association connects 'spem_MethodContentElement' and 'spem_MethodContentKind'. From 'spem_MethodContentElement', the role 'spem_MethodContentElement76' has cardinality 0..*, and from 'spem_MethodContentKind', the role 'spem_MethodContentKind' has cardinality 0..*.
+An association connects 'spem_ToolDefinition' and 'spem_WorkProductDefinition'. From 'spem_ToolDefinition', the role 'spem_ToolDefinition' has cardinality 0..*, and from 'spem_WorkProductDefinition', the role 'spem_WorkProductDefinition78' has cardinality 0..*.
+An association connects 'ToolMentor' and 'spem_ToolDefinition'. From 'ToolMentor', the role 'ToolMentor' has cardinality 0..*, and from 'spem_ToolDefinition', the role 'spem_ToolDefinition80' has cardinality 0..*.
+An association connects 'spem_TaskDefinition' and 'spem_ToolDefinition'. From 'spem_TaskDefinition', the role 'spem_TaskDefinition' has cardinality 0..*, and from 'spem_ToolDefinition', the role 'spem_ToolDefinition82' has cardinality 0..*.
+An association connects 'spem_Step' and 'spem_TaskDefinition'. From 'spem_Step', the role 'spem_Step' has cardinality 0..*, and from 'spem_TaskDefinition', the role 'spem_TaskDefinition84' has cardinality 0..*.
+An association connects 'spem_TaskDefinition' and 'spem_TaskDefinition'. From 'spem_TaskDefinition', the role 'spem_TaskDefinition85' has cardinality 0..*, and from 'spem_TaskDefinition', the role 'spem_TaskDefinition87' has cardinality 0..*.
+An association connects 'spem_Qualification' and 'spem_TaskDefinition'. From 'spem_Qualification', the role 'spem_Qualification' has cardinality 0..*, and from 'spem_TaskDefinition', the role 'spem_TaskDefinition89' has cardinality 0..*.
+An association connects 'spem_Step' and 'spem_Step'. From 'spem_Step', the role 'spem_Step90' has cardinality 0..*, and from 'spem_Step', the role 'spem_Step92' has cardinality 0..*.
+An association connects 'EstimatingConsideration' and 'spem_WorkProductDefinition'. From 'EstimatingConsideration', the role 'EstimatingConsideration95' has cardinality 0..*, and from 'spem_WorkProductDefinition', the role 'spem_WorkProductDefinition94' has cardinality 0..*.
+An association connects 'spem_WorkProductDefinition' and 'Report'. From 'spem_WorkProductDefinition', the role 'spem_WorkProductDefinition97' has cardinality 0..*, and from 'Report', the role 'Report' has cardinality 0..*.
+An association connects 'Template' and 'spem_WorkProductDefinition'. From 'Template', the role 'Template' has cardinality 0..*, and from 'spem_WorkProductDefinition', the role 'spem_WorkProductDefinition99' has cardinality 0..*.
+An association connects 'ToolMentor' and 'spem_WorkProductDefinition'. From 'ToolMentor', the role 'ToolMentor102' has cardinality 0..*, and from 'spem_WorkProductDefinition', the role 'spem_WorkProductDefinition101' has cardinality 0..*.
+An association connects 'spem_Qualification' and 'spem_RoleDefinition'. From 'spem_Qualification', the role 'spem_Qualification105' has cardinality 0..*, and from 'spem_RoleDefinition', the role 'spem_RoleDefinition104' has cardinality 0..*.
+An association connects 'spem_WorkProductDefinition' and 'spem_WorkProductDefinitionRelationship'. From 'spem_WorkProductDefinition', the role 'spem_WorkProductDefinition107' has cardinality 0..*, and from 'spem_WorkProductDefinitionRelationship', the role 'spem_WorkProductDefinitionRelationship' has cardinality 0..*.
+An association connects 'spem_WorkProductDefinitionRelationship' and 'spem_WorkProductDefinition'. From 'spem_WorkProductDefinitionRelationship', the role 'spem_WorkProductDefinitionRelationship109' has cardinality 0..*, and from 'spem_WorkProductDefinition', the role 'spem_WorkProductDefinition110' has cardinality 0..*.
+An association connects 'spem_Default_TaskDefinitionPerformer' and 'spem_TaskDefinition'. From 'spem_Default_TaskDefinitionPerformer', the role 'spem_Default_TaskDefinitionPerformer' has cardinality 0..*, and from 'spem_TaskDefinition', the role 'spem_TaskDefinition112' has cardinality 0..*.
+An association connects 'spem_RoleDefinition' and 'spem_Default_TaskDefinitionPerformer'. From 'spem_RoleDefinition', the role 'spem_RoleDefinition115' has cardinality 0..*, and from 'spem_Default_TaskDefinitionPerformer', the role 'spem_Default_TaskDefinitionPerformer114' has cardinality 0..*.
+An association connects 'spem_Default_ResponsibilityAssignment' and 'spem_RoleDefinition'. From 'spem_Default_ResponsibilityAssignment', the role 'spem_Default_ResponsibilityAssignment' has cardinality 0..*, and from 'spem_RoleDefinition', the role 'spem_RoleDefinition117' has cardinality 0..*.
+An association connects 'spem_Default_ResponsibilityAssignment' and 'spem_WorkProductDefinition'. From 'spem_Default_ResponsibilityAssignment', the role 'spem_Default_ResponsibilityAssignment119' has cardinality 0..*, and from 'spem_WorkProductDefinition', the role 'spem_WorkProductDefinition120' has cardinality 0..*.
+An association connects 'spem_MethodContentPackageableElement' and 'spem_MethodContentPackage'. From 'spem_MethodContentPackageableElement', the role 'spem_MethodContentPackageableElement' has cardinality 0..*, and from 'spem_MethodContentPackage', the role 'spem_MethodContentPackage' has cardinality 0..*.
+An association connects 'spem_MethodContentPackage' and 'spem_MethodContentPackage'. From 'spem_MethodContentPackage', the role 'spem_MethodContentPackage122' has cardinality 0..*, and from 'spem_MethodContentPackage', the role 'spem_MethodContentPackage124' has cardinality 0..*.
+An association connects 'spem_ProcessPackageableElement' and 'spem_ProcessPackage'. From 'spem_ProcessPackageableElement', the role 'spem_ProcessPackageableElement' has cardinality 0..*, and from 'spem_ProcessPackage', the role 'spem_ProcessPackage' has cardinality 0..*.
+An association connects 'spem_TaskUse' and 'spem_TaskDefinition'. From 'spem_TaskUse', the role 'spem_TaskUse127' has cardinality 0..*, and from 'spem_TaskDefinition', the role 'spem_TaskDefinition128' has cardinality 0..*.
+An association connects 'spem_TaskUse' and 'spem_ProcessParameter'. From 'spem_TaskUse', the role 'spem_TaskUse130' has cardinality 0..*, and from 'spem_ProcessParameter', the role 'spem_ProcessParameter131' has cardinality 0..*.
+An association connects 'spem_Step' and 'spem_TaskUse'. From 'spem_Step', the role 'spem_Step134' has cardinality 0..*, and from 'spem_TaskUse', the role 'spem_TaskUse133' has cardinality 0..*.
+An association connects 'spem_RoleDefinition' and 'spem_CompositeRole'. From 'spem_RoleDefinition', the role 'spem_RoleDefinition136' has cardinality 0..*, and from 'spem_CompositeRole', the role 'spem_CompositeRole' has cardinality 0..*.
+An association connects 'spem_TeamProfile' and 'spem_TeamProfile'. From 'spem_TeamProfile', the role 'superTeam' has cardinality 0..*, and from 'spem_TeamProfile', the role 'TeamProfile' has cardinality 0..*.
+An association connects 'spem_TeamProfile' and 'spem_TeamProfile'. From 'spem_TeamProfile', the role 'TeamProfile141' has cardinality 0..*, and from 'spem_TeamProfile', the role 'subTeam' has cardinality 0..*.
+An association connects 'spem_RoleUse' and 'spem_TeamProfile'. From 'spem_RoleUse', the role 'spem_RoleUse143' has cardinality 0..*, and from 'spem_TeamProfile', the role 'spem_TeamProfile' has cardinality 0..*.
+An association connects 'spem_VariabilityElement' and 'spem_VariabilityElement'. From 'spem_VariabilityElement', the role 'spem_VariabilityElement' has cardinality 0..*, and from 'spem_VariabilityElement', the role 'spem_VariabilityElement144' has cardinality 0..*.
+An association connects 'spem_Activity' and 'spem_ProcessComponent'. From 'spem_Activity', the role 'spem_Activity147' has cardinality 0..*, and from 'spem_ProcessComponent', the role 'spem_ProcessComponent' has cardinality 0..*.
+An association connects 'spem_ProcessComponent' and 'spem_WorkProductPort'. From 'spem_ProcessComponent', the role 'spem_ProcessComponent149' has cardinality 0..*, and from 'spem_WorkProductPort', the role 'spem_WorkProductPort' has cardinality 0..*.
+An association connects 'spem_ProcessComponentUse' and 'spem_ProcessComponent'. From 'spem_ProcessComponentUse', the role 'spem_ProcessComponentUse' has cardinality 0..*, and from 'spem_ProcessComponent', the role 'spem_ProcessComponent151' has cardinality 0..*.
+An association connects 'spem_WorkProductPort' and 'spem_ProcessComponentUse'. From 'spem_WorkProductPort', the role 'spem_WorkProductPort154' has cardinality 0..*, and from 'spem_ProcessComponentUse', the role 'spem_ProcessComponentUse153' has cardinality 0..*.
+An association connects 'spem_MethodConfiguration' and 'spem_MethodConfiguration'. From 'spem_MethodConfiguration', the role 'spem_MethodConfiguration155' has cardinality 0..*, and from 'spem_MethodConfiguration', the role 'spem_MethodConfiguration157' has cardinality 0..*.
+An association connects 'spem_MethodConfiguration' and 'spem_MethodPlugin'. From 'spem_MethodConfiguration', the role 'spem_MethodConfiguration159' has cardinality 0..*, and from 'spem_MethodPlugin', the role 'spem_MethodPlugin' has cardinality 0..*.
+An association connects 'spem_ProcessPackage' and 'spem_MethodConfiguration'. From 'spem_ProcessPackage', the role 'spem_ProcessPackage162' has cardinality 0..*, and from 'spem_MethodConfiguration', the role 'spem_MethodConfiguration161' has cardinality 0..*.
+An association connects 'spem_MethodConfiguration' and 'spem_MethodContentPackage'. From 'spem_MethodConfiguration', the role 'spem_MethodConfiguration164' has cardinality 0..*, and from 'spem_MethodContentPackage', the role 'spem_MethodContentPackage165' has cardinality 0..*.
+An association connects 'spem_MethodConfiguration' and 'spem_Category'. From 'spem_MethodConfiguration', the role 'spem_MethodConfiguration167' has cardinality 0..*, and from 'spem_Category', the role 'spem_Category168' has cardinality 0..*.
+An association connects 'spem_Category' and 'spem_MethodConfiguration'. From 'spem_Category', the role 'spem_Category171' has cardinality 0..*, and from 'spem_MethodConfiguration', the role 'spem_MethodConfiguration170' has cardinality 0..*.
+An association connects 'spem_Category' and 'spem_MethodConfiguration'. From 'spem_Category', the role 'spem_Category174' has cardinality 0..*, and from 'spem_MethodConfiguration', the role 'spem_MethodConfiguration173' has cardinality 0..*.
+An association connects 'spem_MethodConfiguration' and 'spem_Category'. From 'spem_MethodConfiguration', the role 'spem_MethodConfiguration176' has cardinality 0..*, and from 'spem_Category', the role 'spem_Category177' has cardinality 0..*.
+An association connects 'spem_MethodPlugin' and 'spem_MethodContentPackage'. From 'spem_MethodPlugin', the role 'spem_MethodPlugin179' has cardinality 0..*, and from 'spem_MethodContentPackage', the role 'spem_MethodContentPackage180' has cardinality 0..*.
+An association connects 'spem_ProcessPackage' and 'spem_MethodPlugin'. From 'spem_ProcessPackage', the role 'spem_ProcessPackage183' has cardinality 0..*, and from 'spem_MethodPlugin', the role 'spem_MethodPlugin182' has cardinality 0..*.
+An association connects 'spem_MethodPlugin' and 'spem_MethodPlugin'. From 'spem_MethodPlugin', the role 'spem_MethodPlugin184' has cardinality 0..*, and from 'spem_MethodPlugin', the role 'spem_MethodPlugin186' has cardinality 0..*.
+An association connects 'spem_MethodPlugin' and 'spem_MethodPlugin'. From 'spem_MethodPlugin', the role 'spem_MethodPlugin187' has cardinality 0..*, and from 'spem_MethodPlugin', the role 'spem_MethodPlugin189' has cardinality 0..*.
+An association connects 'spem_MethodLibrary' and 'spem_MethodPlugin'. From 'spem_MethodLibrary', the role 'spem_MethodLibrary' has cardinality 0..*, and from 'spem_MethodPlugin', the role 'spem_MethodPlugin191' has cardinality 0..*.
+An association connects 'spem_MethodConfiguration' and 'spem_MethodLibrary'. From 'spem_MethodConfiguration', the role 'spem_MethodConfiguration194' has cardinality 0..*, and from 'spem_MethodLibrary', the role 'spem_MethodLibrary193' has cardinality 0..*.
+An association connects 'spem_ToolDefinition' and 'spem_MethodLibrary'. From 'spem_ToolDefinition', the role 'spem_ToolDefinition197' has cardinality 0..*, and from 'spem_MethodLibrary', the role 'spem_MethodLibrary196' has cardinality 0..*.
+An association connects 'spem_MethodLibrary' and 'ConfigurationPackage'. From 'spem_MethodLibrary', the role 'spem_MethodLibrary199' has cardinality 0..*, and from 'ConfigurationPackage', the role 'ConfigurationPackage' has cardinality 0..*.
+An association connects 'spem_MethodLibrary' and 'spem_EObject'. From 'spem_MethodLibrary', the role 'spem_MethodLibrary201' has cardinality 0..*, and from 'spem_EObject', the role 'spem_EObject' has cardinality 0..*.
+An association connects 'spem_WorkProductPort' and 'spem_WorkProductDefinition'. From 'spem_WorkProductPort', the role 'spem_WorkProductPort203' has cardinality 0..*, and from 'spem_WorkProductDefinition', the role 'spem_WorkProductDefinition204' has cardinality 0..*.
+An association connects 'spem_WorkProductPort' and 'spem_WorkProductPortConnector'. From 'spem_WorkProductPort', the role 'spem_WorkProductPort206' has cardinality 0..*, and from 'spem_WorkProductPortConnector', the role 'spem_WorkProductPortConnector' has cardinality 0..*.
+An association connects 'Artifact' and 'spem_uma_Artifact'. From 'Artifact', the role 'Artifact' has cardinality 0..*, and from 'spem_uma_Artifact', the role 'spem_uma_Artifact' has cardinality 0..*.
+An association connects 'uma_spem_WorkProductUse' and 'spem_uma_Deliverable'. From 'uma_spem_WorkProductUse', the role 'uma_spem_WorkProductUse' has cardinality 0..*, and from 'spem_uma_Deliverable', the role 'spem_uma_Deliverable' has cardinality 0..*.
+An association connects 'CapabilityPattern' and 'spem_uma_Process'. From 'CapabilityPattern', the role 'CapabilityPattern' has cardinality 0..*, and from 'spem_uma_Process', the role 'spem_uma_Process' has cardinality 0..*.
+An association connects 'spem_uma_Process' and 'uma_spem_WorkProductPortConnector'. From 'spem_uma_Process', the role 'spem_uma_Process211' has cardinality 0..*, and from 'uma_spem_WorkProductPortConnector', the role 'uma_spem_WorkProductPortConnector' has cardinality 0..*.
+An association connects 'spem_uma_DeliveryProcess' and 'SupportingMaterial'. From 'spem_uma_DeliveryProcess', the role 'spem_uma_DeliveryProcess' has cardinality 0..*, and from 'SupportingMaterial', the role 'SupportingMaterial' has cardinality 0..*.
+An association connects 'SupportingMaterial' and 'spem_uma_DeliveryProcess'. From 'SupportingMaterial', the role 'SupportingMaterial215' has cardinality 0..*, and from 'spem_uma_DeliveryProcess', the role 'spem_uma_DeliveryProcess214' has cardinality 0..*.
+An association connects 'uma_spem_TaskDefinition' and 'spem_uma_Discipline'. From 'uma_spem_TaskDefinition', the role 'uma_spem_TaskDefinition' has cardinality 0..*, and from 'spem_uma_Discipline', the role 'spem_uma_Discipline' has cardinality 0..*.
+An association connects 'Process' and 'spem_uma_Discipline'. From 'Process', the role 'Process' has cardinality 0..*, and from 'spem_uma_Discipline', the role 'spem_uma_Discipline218' has cardinality 0..*.
+An association connects 'spem_uma_Root' and 'uma_spem_MethodConfiguration'. From 'spem_uma_Root', the role 'spem_uma_Root' has cardinality 0..*, and from 'uma_spem_MethodConfiguration', the role 'uma_spem_MethodConfiguration' has cardinality 0..*.
+An association connects 'spem_uma_Root' and 'uma_spem_MethodLibrary'. From 'spem_uma_Root', the role 'spem_uma_Root221' has cardinality 0..*, and from 'uma_spem_MethodLibrary', the role 'uma_spem_MethodLibrary' has cardinality 0..*.
+An association connects 'uma_spem_MethodPlugin' and 'spem_uma_Root'. From 'uma_spem_MethodPlugin', the role 'uma_spem_MethodPlugin' has cardinality 0..*, and from 'spem_uma_Root', the role 'spem_uma_Root223' has cardinality 0..*.
+An association connects 'uma_spem_WorkProductDefinition' and 'spem_uma_Domain'. From 'uma_spem_WorkProductDefinition', the role 'uma_spem_WorkProductDefinition' has cardinality 0..*, and from 'spem_uma_Domain', the role 'spem_uma_Domain' has cardinality 0..*.
+An association connects 'Practice' and 'spem_uma_Practice'. From 'Practice', the role 'Practice' has cardinality 0..*, and from 'spem_uma_Practice', the role 'spem_uma_Practice' has cardinality 0..*.
+An association connects 'uma_spem_Activity' and 'spem_uma_Practice'. From 'uma_spem_Activity', the role 'uma_spem_Activity' has cardinality 0..*, and from 'spem_uma_Practice', the role 'spem_uma_Practice227' has cardinality 0..*.
+An association connects 'spem_uma_Practice' and 'uma_spem_MethodContentElement'. From 'spem_uma_Practice', the role 'spem_uma_Practice229' has cardinality 0..*, and from 'uma_spem_MethodContentElement', the role 'uma_spem_MethodContentElement' has cardinality 0..*.
+An association connects 'spem_uma_ProcessPlanningTemplate' and 'Process'. From 'spem_uma_ProcessPlanningTemplate', the role 'spem_uma_ProcessPlanningTemplate' has cardinality 0..*, and from 'Process', the role 'Process231' has cardinality 0..*.
+An association connects 'spem_uma_ConfigurationPackage' and 'uma_spem_MethodConfiguration'. From 'spem_uma_ConfigurationPackage', the role 'spem_uma_ConfigurationPackage' has cardinality 0..*, and from 'uma_spem_MethodConfiguration', the role 'uma_spem_MethodConfiguration233' has cardinality 0..*.
+An association connects 'uma_spem_RoleDefinition' and 'spem_uma_RoleSet'. From 'uma_spem_RoleDefinition', the role 'uma_spem_RoleDefinition' has cardinality 0..*, and from 'spem_uma_RoleSet', the role 'spem_uma_RoleSet' has cardinality 0..*.

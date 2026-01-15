@@ -1,0 +1,24 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'library_Book' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'author', which is of type str.
+
+'library_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_User' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_BorrowedItem' represents an important domain concept.
+It has the following attributes: 'borrowDate', which is of type date; 'lastReturnDate', which is of type date.
+
+Relationships between classes are modeled using associations.
+An association connects 'library_Book' and 'library_Library'. From 'library_Book', the role 'Book' has cardinality 0..*, and from 'library_Library', the role 'library' has cardinality 0..*.
+An association connects 'library_Library' and 'library_User'. From 'library_Library', the role 'library2' has cardinality 0..*, and from 'library_User', the role 'User' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Library'. From 'library_Book', the role 'books' has cardinality 0..*, and from 'library_Library', the role 'Library' has cardinality 0..*.
+An association connects 'library_BorrowedItem' and 'library_User'. From 'library_BorrowedItem', the role 'BorrowedItem' has cardinality 0..*, and from 'library_User', the role 'user' has cardinality 0..*.
+An association connects 'library_User' and 'library_Library'. From 'library_User', the role 'users' has cardinality 0..*, and from 'library_Library', the role 'Library6' has cardinality 0..*.
+An association connects 'library_BorrowedItem' and 'library_Book'. From 'library_BorrowedItem', the role 'library_BorrowedItem' has cardinality 0..*, and from 'library_Book', the role 'library_Book' has cardinality 0..*.
+An association connects 'library_BorrowedItem' and 'library_User'. From 'library_BorrowedItem', the role 'borrowedItems' has cardinality 0..*, and from 'library_User', the role 'User9' has cardinality 0..*.

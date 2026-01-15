@@ -1,0 +1,62 @@
+The domain model 'architectureTool' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'architectureTool_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'classMember' represents an important domain concept.
+It does not declare any attributes.
+
+'architectureTool_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'architectureTool_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'Visable', which is of type str; 'type', which is of type str.
+
+'architectureTool_Port' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str; 'required', which is of type str; 'simple', which is of type str; 'provided', which is of type str.
+
+'architectureTool_Method' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'returnType', which is of type str; 'parameter', which is of type str; 'visable', which is of type str.
+
+'architectureTool_classMember' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'architectureTool_System' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'architectureTool_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'architectureTool_Class' is a specialization of 'classMember'.
+The class 'architectureTool_Interface' is a specialization of 'classMember'.
+
+Relationships between classes are modeled using associations.
+An association connects 'architectureTool_Port' and 'architectureTool_Component'. From 'architectureTool_Port', the role 'architectureTool_Port' has cardinality 0..*, and from 'architectureTool_Component', the role 'architectureTool_Component' has cardinality 0..*.
+An association connects 'architectureTool_Component' and 'architectureTool_Component'. From 'architectureTool_Component', the role 'architectureTool_Component1' has cardinality 0..*, and from 'architectureTool_Component', the role 'architectureTool_Component3' has cardinality 0..*.
+An association connects 'architectureTool_Component' and 'architectureTool_Class'. From 'architectureTool_Component', the role 'architectureTool_Component5' has cardinality 0..*, and from 'architectureTool_Class', the role 'architectureTool_Class' has cardinality 0..*.
+An association connects 'architectureTool_Component' and 'architectureTool_Component'. From 'architectureTool_Component', the role 'architectureTool_Component8' has cardinality 0..*, and from 'architectureTool_Component', the role 'architectureTool_Component6' has cardinality 0..*.
+An association connects 'architectureTool_Component' and 'architectureTool_Interface'. From 'architectureTool_Component', the role 'architectureTool_Component10' has cardinality 0..*, and from 'architectureTool_Interface', the role 'architectureTool_Interface' has cardinality 0..*.
+An association connects 'architectureTool_Component' and 'architectureTool_System'. From 'architectureTool_Component', the role 'ComponentDependence' has cardinality 0..*, and from 'architectureTool_System', the role 'System' has cardinality 0..*.
+An association connects 'architectureTool_Class' and 'architectureTool_Class'. From 'architectureTool_Class', the role 'architectureTool_Class14' has cardinality 0..*, and from 'architectureTool_Class', the role 'architectureTool_Class12' has cardinality 0..*.
+An association connects 'architectureTool_Interface' and 'architectureTool_Class'. From 'architectureTool_Interface', the role 'architectureTool_Interface17' has cardinality 0..*, and from 'architectureTool_Class', the role 'architectureTool_Class16' has cardinality 0..*.
+An association connects 'architectureTool_Class' and 'architectureTool_Class'. From 'architectureTool_Class', the role 'architectureTool_Class18' has cardinality 0..*, and from 'architectureTool_Class', the role 'architectureTool_Class20' has cardinality 0..*.
+An association connects 'architectureTool_Class' and 'architectureTool_Class'. From 'architectureTool_Class', the role 'architectureTool_Class21' has cardinality 0..*, and from 'architectureTool_Class', the role 'architectureTool_Class23' has cardinality 0..*.
+An association connects 'architectureTool_Class' and 'architectureTool_Class'. From 'architectureTool_Class', the role 'architectureTool_Class26' has cardinality 0..*, and from 'architectureTool_Class', the role 'architectureTool_Class24' has cardinality 0..*.
+An association connects 'architectureTool_System' and 'architectureTool_System'. From 'architectureTool_System', the role 'architectureTool_System27' has cardinality 0..*, and from 'architectureTool_System', the role 'architectureTool_System' has cardinality 0..*.
+An association connects 'architectureTool_System' and 'architectureTool_Component'. From 'architectureTool_System', the role 'architectureTool_System30' has cardinality 0..*, and from 'architectureTool_Component', the role 'architectureTool_Component31' has cardinality 0..*.
+An association connects 'architectureTool_Port' and 'architectureTool_System'. From 'architectureTool_Port', the role 'architectureTool_Port34' has cardinality 0..*, and from 'architectureTool_System', the role 'architectureTool_System33' has cardinality 0..*.
+An association connects 'architectureTool_System' and 'architectureTool_System'. From 'architectureTool_System', the role 'architectureTool_System35' has cardinality 0..*, and from 'architectureTool_System', the role 'architectureTool_System37' has cardinality 0..*.
+An association connects 'architectureTool_Interface' and 'architectureTool_System'. From 'architectureTool_Interface', the role 'architectureTool_Interface40' has cardinality 0..*, and from 'architectureTool_System', the role 'architectureTool_System39' has cardinality 0..*.
+An association connects 'architectureTool_System' and 'architectureTool_Component'. From 'architectureTool_System', the role 'ComponentDependence42' has cardinality 0..*, and from 'architectureTool_Component', the role 'Component' has cardinality 0..*.
+An association connects 'architectureTool_Interface' and 'architectureTool_Port'. From 'architectureTool_Interface', the role 'architectureTool_Interface45' has cardinality 0..*, and from 'architectureTool_Port', the role 'architectureTool_Port44' has cardinality 0..*.
+An association connects 'architectureTool_Port' and 'architectureTool_Port'. From 'architectureTool_Port', the role 'architectureTool_Port48' has cardinality 0..*, and from 'architectureTool_Port', the role 'architectureTool_Port46' has cardinality 0..*.
+An association connects 'architectureTool_Port' and 'architectureTool_Interface'. From 'architectureTool_Port', the role 'architectureTool_Port50' has cardinality 0..*, and from 'architectureTool_Interface', the role 'architectureTool_Interface51' has cardinality 0..*.
+An association connects 'architectureTool_Port' and 'architectureTool_Interface'. From 'architectureTool_Port', the role 'architectureTool_Port54' has cardinality 0..*, and from 'architectureTool_Interface', the role 'architectureTool_Interface53' has cardinality 0..*.
+An association connects 'architectureTool_Class' and 'architectureTool_Interface'. From 'architectureTool_Class', the role 'architectureTool_Class57' has cardinality 0..*, and from 'architectureTool_Interface', the role 'architectureTool_Interface56' has cardinality 0..*.
+An association connects 'architectureTool_Interface' and 'architectureTool_Interface'. From 'architectureTool_Interface', the role 'architectureTool_Interface58' has cardinality 0..*, and from 'architectureTool_Interface', the role 'architectureTool_Interface60' has cardinality 0..*.
+An association connects 'architectureTool_Port' and 'architectureTool_Interface'. From 'architectureTool_Port', the role 'architectureTool_Port63' has cardinality 0..*, and from 'architectureTool_Interface', the role 'architectureTool_Interface62' has cardinality 0..*.
+An association connects 'architectureTool_classMember' and 'architectureTool_Attribute'. From 'architectureTool_classMember', the role 'architectureTool_classMember' has cardinality 0..*, and from 'architectureTool_Attribute', the role 'architectureTool_Attribute' has cardinality 0..*.
+An association connects 'architectureTool_classMember' and 'architectureTool_Method'. From 'architectureTool_classMember', the role 'architectureTool_classMember66' has cardinality 0..*, and from 'architectureTool_Method', the role 'architectureTool_Method' has cardinality 0..*.

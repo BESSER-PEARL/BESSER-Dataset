@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/wrwei/OMG-specification-implementations/omg.spem/model/uma.ecore

@@ -1,0 +1,736 @@
+The domain model 'presentation' describes the core structural elements and their relationships within the system.
+
+The model defines 168 main class(es).
+
+'Control' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTreeViewer' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_ColorCellEditor' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_ColumnViewer' represents an important domain concept.
+It has one attribute: 'group3', which is of type str.
+
+'presentation_DefaultCellModifier' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_ProgressBar' represents an important domain concept.
+It has the following attributes: 'maximum', which is of type str; 'state', which is of type str; 'selection', which is of type str; 'minimum', which is of type str.
+
+'TrayDialog' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_TitleAreaDialog' represents an important domain concept.
+It has the following attributes: 'group3', which is of type str; 'errorMessage', which is of type str; 'titleImage', which is of type str; 'message', which is of type str; 'title', which is of type str.
+
+'presentation_Layout' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_Tray' represents an important domain concept.
+It has one attribute: 'group', which is of type str.
+
+'presentation_Table' represents an important domain concept.
+It has the following attributes: 'linesVisible', which is of type str; 'group3', which is of type str; 'sortDirection', which is of type str; 'selectionIndices', which is of type str; 'columnOrder', which is of type str; 'headerVisible', which is of type str; 'itemCount', which is of type str; 'topIndex', which is of type str.
+
+'presentation_StackLayout' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'marginHeight', which is of type str; 'marginWidth', which is of type str.
+
+'AbstractDataProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_ToolItem' represents an important domain concept.
+It has the following attributes: 'enabled', which is of type str; 'width', which is of type str; 'selection', which is of type str; 'toolTipText', which is of type str; 'disabledImage', which is of type str; 'group', which is of type str; 'hotImage', which is of type str; 'bounds', which is of type str.
+
+'presentation_AbstractTableViewer' represents an important domain concept.
+It has one attribute: 'itemCount', which is of type str.
+
+'presentation_ComboBoxViewerCellEditor' represents an important domain concept.
+It has one attribute: 'group1', which is of type str.
+
+'presentation_Tracker' represents an important domain concept.
+It has the following attributes: 'rectangles', which is of type str; 'stippled', which is of type str; 'group', which is of type str.
+
+'ContentViewer' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_Text' represents an important domain concept.
+It has the following attributes: 'selection', which is of type str; 'caretLocation', which is of type str; 'lineDelimiter', which is of type str; 'message', which is of type str; 'topIndex', which is of type str; 'echoChar', which is of type str; 'tabs', which is of type str; 'editable', which is of type str; 'selectionText', which is of type str; 'doubleClickEnabled', which is of type str; 'text', which is of type str; 'textLimit', which is of type str; 'orientation', which is of type str.
+
+'presentation_Canvas' represents an important domain concept.
+It has the following attributes: 'mixed1', which is of type str; 'group3', which is of type str.
+
+'presentation_CheckboxTreeViewer' represents an important domain concept.
+It has the following attributes: 'group6', which is of type str; 'allChecked', which is of type str.
+
+'Viewer' represents an important domain concept.
+It does not declare any attributes.
+
+'TextStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_AbstractDataProvider' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'key', which is of type str; 'group', which is of type str.
+
+'presentation_Browser' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'browserType', which is of type str; 'url', which is of type str; 'group3', which is of type str.
+
+'presentation_TableEditor' represents an important domain concept.
+It has the following attributes: 'group1', which is of type str; 'column', which is of type str; 'dynamic', which is of type str.
+
+'presentation_CCombo' represents an important domain concept.
+It has the following attributes: 'group3', which is of type str; 'selection', which is of type str; 'visibleItemCount', which is of type str; 'listVisible', which is of type str; 'editable', which is of type str; 'textLimit', which is of type str; 'items', which is of type str; 'text', which is of type str.
+
+'presentation_DocumentObject' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_Label' represents an important domain concept.
+It has the following attributes: 'image', which is of type str; 'alignment', which is of type str; 'text', which is of type str.
+
+'presentation_Cell' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'image', which is of type str; 'text', which is of type str; 'group', which is of type str.
+
+'presentation_Collection' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Scrollable' represents an important domain concept.
+It does not declare any attributes.
+
+'CellEditor' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_CLabel' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'image', which is of type str; 'alignment', which is of type str.
+
+'presentation_TableTree' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_Button' represents an important domain concept.
+It has the following attributes: 'alignment', which is of type str; 'selection', which is of type str; 'image', which is of type str; 'text', which is of type str; 'group1', which is of type str; 'grayed', which is of type str.
+
+'TableViewer' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_ContentViewer' represents an important domain concept.
+It has one attribute: 'group1', which is of type str.
+
+'presentation_StyleRange' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTableViewer' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_StyledText' represents an important domain concept.
+It has the following attributes: 'caretOffset', which is of type str; 'editable', which is of type str; 'blockSelection', which is of type str; 'group4', which is of type str; 'lineSpacing', which is of type str; 'tabs', which is of type str; 'selectionText', which is of type str; 'selectionForeground', which is of type str; 'selectionBackground', which is of type str; 'horizontalPixel', which is of type str; 'doubleClickEnabled', which is of type str; 'lineDelimiter', which is of type str; 'topPixel', which is of type str; 'horizontalIndex', which is of type str; 'wordWrap', which is of type str; 'textLimit', which is of type str; 'ranges', which is of type str; 'orientation', which is of type str; 'topIndex', which is of type str; 'bidiColoring', which is of type str; 'selectionRanges', which is of type str; 'justify', which is of type str; 'indent', which is of type str; 'text', which is of type str; 'selection', which is of type str; 'alignment', which is of type str.
+
+'presentation_ControlEditor' represents an important domain concept.
+It has the following attributes: 'verticalAlignment', which is of type str; 'group', which is of type str; 'minimumWidth', which is of type str; 'horizontalAlignment', which is of type str; 'grabHorizontal', which is of type str; 'mixed', which is of type str; 'minimumHeight', which is of type str; 'grabVertical', which is of type str.
+
+'presentation_StructuredViewer' represents an important domain concept.
+It has the following attributes: 'group2', which is of type str; 'useHashlookup', which is of type str.
+
+'ViewerColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_TrayItem' represents an important domain concept.
+It does not declare any attributes.
+
+'Canvas' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_DefaultLabelProvider' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_ViewerFilter' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'ColumnViewer' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_ComboViewer' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlEditor' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_Composite' represents an important domain concept.
+It has the following attributes: 'layoutDeferred', which is of type str; 'group2', which is of type str; 'backgroundMode', which is of type str.
+
+'presentation_ListViewer' represents an important domain concept.
+It has one attribute: 'group3', which is of type str.
+
+'presentation_Shell' represents an important domain concept.
+It has the following attributes: 'group5', which is of type str; 'imeInputMode', which is of type str; 'fullScreen', which is of type str; 'minimumSize', which is of type str; 'alpha', which is of type str.
+
+'presentation_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_GridLayout' represents an important domain concept.
+It has the following attributes: 'marginWidth', which is of type str; 'marginHeight', which is of type str; 'verticalSpacing', which is of type str; 'numColumns', which is of type str; 'horizontalSpacing', which is of type str; 'marginLeft', which is of type str; 'makeColumnsEqualWidth', which is of type str; 'marginTop', which is of type str; 'marginRight', which is of type str; 'marginBottom', which is of type str.
+
+'presentation_TextStyle' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_ObjectDataProvider' represents an important domain concept.
+It has the following attributes: 'methodName', which is of type str; 'group1', which is of type str.
+
+'Dialog' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_Observable' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_ExpandItem' represents an important domain concept.
+It has the following attributes: 'height', which is of type str; 'expanded', which is of type str; 'group', which is of type str.
+
+'presentation_CoolItem' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'preferredSize', which is of type str; 'bounds', which is of type str; 'size', which is of type str; 'minimumSize', which is of type str.
+
+'presentation_MenuItem' represents an important domain concept.
+It has the following attributes: 'selection', which is of type str; 'enabled', which is of type str; 'accelerator', which is of type str; 'group', which is of type str.
+
+'presentation_Viewer' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'group', which is of type str.
+
+'presentation_TableTreeViewer' represents an important domain concept.
+It has one attribute: 'group5', which is of type str.
+
+'Observable' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredViewer' represents an important domain concept.
+It does not declare any attributes.
+
+'Decorations' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_IStructuredContentProvider' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_TrayDialog' represents an important domain concept.
+It has the following attributes: 'helpAvailable', which is of type str; 'group2', which is of type str.
+
+'presentation_ICellEditorValidator' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_ScrollBar' represents an important domain concept.
+It has the following attributes: 'maximum', which is of type str; 'increment', which is of type str; 'minimum', which is of type str; 'visible', which is of type str; 'enabled', which is of type str; 'thumb', which is of type str; 'selection', which is of type str; 'group', which is of type str; 'pageIncrement', which is of type str; 'size', which is of type str.
+
+'presentation_Resource' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_List' represents an important domain concept.
+It has the following attributes: 'items', which is of type str; 'group2', which is of type str; 'selection', which is of type str; 'topIndex', which is of type str; 'selectionIndices', which is of type str.
+
+'Composite' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_IME' represents an important domain concept.
+It has the following attributes: 'ranges', which is of type str; 'text', which is of type str; 'group', which is of type str; 'compositionOffset', which is of type str.
+
+'presentation_ComboBoxCellEditor' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_Dialog' represents an important domain concept.
+It has one attribute: 'group1', which is of type str.
+
+'presentation_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_FormData' represents an important domain concept.
+It has the following attributes: 'width', which is of type str; 'height', which is of type str; 'mixed', which is of type str; 'group', which is of type str.
+
+'AbstractListViewer' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_CellEditor' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'style', which is of type str; 'group', which is of type str; 'errorMessage', which is of type str.
+
+'presentation_SashForm' represents an important domain concept.
+It has the following attributes: 'sashWidth1', which is of type str; 'weights', which is of type str; 'sASHWIDTH', which is of type str; 'group3', which is of type str; 'orientation', which is of type str.
+
+'presentation_ToolBar' represents an important domain concept.
+It has one attribute: 'group3', which is of type str.
+
+'presentation_GridData' represents an important domain concept.
+It has the following attributes: 'minimumHeight', which is of type str; 'verticalIndent', which is of type str; 'grabExcessVerticalSpace', which is of type str; 'exclude', which is of type str; 'heightHint', which is of type str; 'grabExcessHorizontalSpace', which is of type str; 'widthHint', which is of type str; 'mixed', which is of type str; 'horizontalSpan', which is of type str; 'verticalSpan', which is of type str; 'verticalAlignment', which is of type str; 'minimumWidth', which is of type str; 'horizontalIndent', which is of type str; 'horizontalAlignment', which is of type str.
+
+'presentation_RowData' represents an important domain concept.
+It has the following attributes: 'exclude', which is of type str; 'height', which is of type str; 'mixed', which is of type str; 'width', which is of type str.
+
+'AbstractComboBoxCellEditor' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_MessageBox' represents an important domain concept.
+It has one attribute: 'message', which is of type str.
+
+'presentation_Item' represents an important domain concept.
+It has the following attributes: 'image', which is of type str; 'text', which is of type str.
+
+'presentation_TableViewer' represents an important domain concept.
+It has one attribute: 'group4', which is of type str.
+
+'presentation_Group' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'presentation_Widget' represents an important domain concept.
+It has the following attributes: 'paintEvent', which is of type str; 'iconifyEvent', which is of type str; 'collapseEvent', which is of type str; 'eraseItemEvent', which is of type str; 'expandEvent', which is of type str; 'paintItemEvent', which is of type str; 'focusOutEvent', which is of type str; 'traverseEvent', which is of type str; 'menuDetectEvent', which is of type str; 'style', which is of type str; 'selectionEvent', which is of type str; 'defaultSelectionEvent', which is of type str; 'resizeEvent', which is of type str; 'deiconifyEvent', which is of type str; 'dataContext', which is of type str; 'keyDownEvent', which is of type str; 'moveEvent', which is of type str; 'focusInEvent', which is of type str; 'deactivateEvent', which is of type str; 'closeEvent', which is of type str; 'mixed', which is of type str; 'mouseEnterEvent', which is of type str; 'mouseHoverEvent', which is of type str; 'imeCompositionEvent', which is of type str; 'mouseUpEvent', which is of type str; 'helpEvent', which is of type str; 'mouseWheelEvent', which is of type str; 'showEvent', which is of type str; 'armEvent', which is of type str; 'mouseMoveEvent', which is of type str; 'activateEvent', which is of type str; 'keyUpEvent', which is of type str; 'mouseDoubleClickEvent', which is of type str; 'hardKeyUpEvent', which is of type str; 'dragDetectEvent', which is of type str; 'verifyEvent', which is of type str; 'hardKeyDownEvent', which is of type str; 'mouseDownEvent', which is of type str; 'hideEvent', which is of type str; 'mouseExitEvent', which is of type str; 'measureItemEvent', which is of type str; 'modifyEvent', which is of type str; 'disposeEvent', which is of type str; 'setDataEvent', which is of type str.
+
+'presentation_FillLayout' represents an important domain concept.
+It has the following attributes: 'marginWidth', which is of type str; 'type', which is of type str; 'marginHeight', which is of type str; 'spacing', which is of type str.
+
+'presentation_Accessible' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_ISelection' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_FormAttachment' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'mixed', which is of type str; 'offset', which is of type str; 'denominator', which is of type str; 'alignment', which is of type str; 'numerator', which is of type str.
+
+'Layout' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_Combo' represents an important domain concept.
+It has the following attributes: 'listVisible', which is of type str; 'selection', which is of type str; 'group3', which is of type str; 'text', which is of type str; 'items', which is of type str; 'orientation', which is of type str; 'visibleItemCount', which is of type str; 'textLimit', which is of type str.
+
+'presentation_ExpandBar' represents an important domain concept.
+It has the following attributes: 'spacing', which is of type str; 'group3', which is of type str.
+
+'presentation_StyledTextContent' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_Caret' represents an important domain concept.
+It has the following attributes: 'visible', which is of type str; 'image', which is of type str; 'font', which is of type str; 'bounds', which is of type str; 'size', which is of type str; 'group', which is of type str; 'location', which is of type str.
+
+'presentation_TableItem' represents an important domain concept.
+It has the following attributes: 'grayed', which is of type str; 'imageIndent', which is of type str; 'checked', which is of type str; 'texts', which is of type str; 'group', which is of type str.
+
+'presentation_IBaseLabelProvider' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_Link' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'presentation_TableViewerColumn' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'width', which is of type str; 'group', which is of type str.
+
+'presentation_ToolTip' represents an important domain concept.
+It has the following attributes: 'message', which is of type str; 'text', which is of type str; 'autoHide', which is of type str; 'group', which is of type str; 'visible', which is of type str.
+
+'presentation_Sash' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_FormLayout' represents an important domain concept.
+It has the following attributes: 'marginHeight', which is of type str; 'marginLeft', which is of type str; 'spacing', which is of type str; 'marginRight', which is of type str; 'marginWidth', which is of type str; 'marginTop', which is of type str; 'marginBottom', which is of type str.
+
+'presentation_DialogCellEditor' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_Listener' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_Spinner' represents an important domain concept.
+It has the following attributes: 'increment', which is of type str; 'text', which is of type str; 'maximum', which is of type str; 'pageIncrement', which is of type str; 'selection', which is of type str; 'minimum', which is of type str; 'digits', which is of type str; 'textLimit', which is of type str.
+
+'presentation_CTabFolder' represents an important domain concept.
+It has the following attributes: 'simple', which is of type str; 'tabPosition', which is of type str; 'group3', which is of type str; 'mRUVisible', which is of type str; 'minimizeVisible', which is of type str; 'borderVisible', which is of type str; 'marginHeight', which is of type str; 'minimized', which is of type str; 'maximizeVisible', which is of type str; 'mINTABWIDTH', which is of type str; 'minimumCharacters', which is of type str; 'single', which is of type str; 'tabHeight', which is of type str; 'marginWidth', which is of type str; 'selectionBackground', which is of type str; 'unselectedCloseVisible', which is of type str; 'maximized', which is of type str; 'unselectedImageVisible', which is of type str; 'selectionForeground', which is of type str.
+
+'presentation_URL' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_LayoutData' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_ViewerComparator' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_TextCellEditor' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_RowLayout' represents an important domain concept.
+It has the following attributes: 'justify', which is of type str; 'marginHeight', which is of type str; 'fill', which is of type str; 'center', which is of type str; 'marginTop', which is of type str; 'type', which is of type str; 'wrap', which is of type str; 'marginRight', which is of type str; 'marginBottom', which is of type str; 'marginWidth', which is of type str; 'marginLeft', which is of type str; 'spacing', which is of type str; 'pack', which is of type str.
+
+'presentation_TabItem' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'toolTipText', which is of type str; 'bounds', which is of type str.
+
+'ViewerComparator' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_AbstractListViewer' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_Document' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_TableColumn' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'alignment', which is of type str; 'resizable', which is of type str; 'toolTipText', which is of type str; 'moveable', which is of type str; 'width', which is of type str.
+
+'presentation_Decorations' represents an important domain concept.
+It has the following attributes: 'maximized', which is of type str; 'group4', which is of type str; 'image', which is of type str; 'text', which is of type str; 'images', which is of type str; 'minimized', which is of type str.
+
+'presentation_Scale' represents an important domain concept.
+It has the following attributes: 'pageIncrement', which is of type str; 'increment', which is of type str; 'minimum', which is of type str; 'maximum', which is of type str; 'selection', which is of type str.
+
+'presentation_Class' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'TreeViewer' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_ICheckStateProvider' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_Cursor' represents an important domain concept.
+It does not declare any attributes.
+
+'Item' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_ICellModifier' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_WindowManager' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_TreeItem' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'checked', which is of type str; 'handle', which is of type str; 'itemCount', which is of type str; 'texts', which is of type str; 'grayed', which is of type str; 'expanded', which is of type str.
+
+'presentation_XMLDataProvider' represents an important domain concept.
+It has the following attributes: 'group1', which is of type str; 'xPath', which is of type str.
+
+'presentation_AbstractComboBoxCellEditor' represents an important domain concept.
+It has one attribute: 'activationStyle', which is of type str.
+
+'presentation_Window' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'group', which is of type str; 'blockOnOpen', which is of type str.
+
+'presentation_TabFolder' represents an important domain concept.
+It has one attribute: 'group3', which is of type str.
+
+'presentation_CTabItem' represents an important domain concept.
+It has the following attributes: 'bounds', which is of type str; 'font', which is of type str; 'toolTipText', which is of type str; 'showClose', which is of type str; 'group', which is of type str; 'disabledImage', which is of type str.
+
+'presentation_ICommand' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_ViewerSorter' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_IContentProvider' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_Control' represents an important domain concept.
+It has the following attributes: 'font', which is of type str; 'dragDetect', which is of type str; 'redraw', which is of type str; 'enabled', which is of type str; 'background', which is of type str; 'group', which is of type str; 'foreground', which is of type str; 'size', which is of type str; 'bounds', which is of type str; 'toolTipText', which is of type str; 'visible', which is of type str; 'capture', which is of type str; 'location', which is of type str; 'handle', which is of type str; 'backgroundImage', which is of type str.
+
+'presentation_RGB' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_IDialogBlockedHandler' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_TreeViewer' represents an important domain concept.
+It has one attribute: 'group5', which is of type str.
+
+'DocumentObject' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_DialogTray' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_CheckboxCellEditor' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_Menu' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'handle', which is of type str; 'enabled', which is of type str; 'visible', which is of type str.
+
+'Widget' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_Slider' represents an important domain concept.
+It has the following attributes: 'maximum', which is of type str; 'pageIncrement', which is of type str; 'minimum', which is of type str; 'increment', which is of type str; 'selection', which is of type str; 'thumb', which is of type str.
+
+'presentation_CheckboxTableViewer' represents an important domain concept.
+It has the following attributes: 'allGrayed', which is of type str; 'group5', which is of type str; 'allChecked', which is of type str.
+
+'DialogCellEditor' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_ViewerColumn' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_IBindingContext' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_DateTime' represents an important domain concept.
+It has the following attributes: 'month', which is of type str; 'day', which is of type str; 'year', which is of type str; 'seconds', which is of type str; 'hours', which is of type str; 'minutes', which is of type str.
+
+'presentation_CoolBar' represents an important domain concept.
+It has the following attributes: 'locked', which is of type str; 'itemOrder', which is of type str; 'group3', which is of type str; 'itemSizes', which is of type str; 'wrapIndices', which is of type str.
+
+'presentation_AbstractTreeViewer' represents an important domain concept.
+It has the following attributes: 'group4', which is of type str; 'autoExpandLevel', which is of type str.
+
+'Window' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_Binding' represents an important domain concept.
+It has the following attributes: 'xPath', which is of type str; 'path', which is of type str; 'group', which is of type str; 'elementName', which is of type str; 'mixed', which is of type str.
+
+'presentation_Scrollable' represents an important domain concept.
+It has the following attributes: 'clientArea', which is of type str; 'group1', which is of type str.
+
+'presentation_TreeColumn' represents an important domain concept.
+It has the following attributes: 'alignment', which is of type str; 'group', which is of type str; 'moveable', which is of type str; 'toolTipText', which is of type str; 'width', which is of type str; 'resizable', which is of type str.
+
+'presentation_ColumnViewerEditor' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Resource' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_IElementComparer' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'presentation_Tree' represents an important domain concept.
+It has the following attributes: 'itemCount', which is of type str; 'group3', which is of type str; 'sortDirection', which is of type str; 'columnOrder', which is of type str; 'linesVisible', which is of type str; 'headerVisible', which is of type str.
+
+'presentation_TreePath' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'presentation_AbstractComboBoxCellEditor' is a specialization of 'CellEditor'.
+The class 'presentation_AbstractListViewer' is a specialization of 'StructuredViewer'.
+The class 'presentation_AbstractTableViewer' is a specialization of 'ColumnViewer'.
+The class 'presentation_AbstractTreeViewer' is a specialization of 'ColumnViewer'.
+The class 'presentation_Browser' is a specialization of 'Composite'.
+The class 'presentation_Button' is a specialization of 'Control'.
+The class 'presentation_Canvas' is a specialization of 'Composite'.
+The class 'presentation_Caret' is a specialization of 'Widget'.
+The class 'presentation_CCombo' is a specialization of 'Composite'.
+The class 'presentation_CheckboxCellEditor' is a specialization of 'CellEditor'.
+The class 'presentation_CheckboxTableViewer' is a specialization of 'TableViewer'.
+The class 'presentation_CheckboxTreeViewer' is a specialization of 'TreeViewer'.
+The class 'presentation_CLabel' is a specialization of 'Canvas'.
+The class 'presentation_ColorCellEditor' is a specialization of 'DialogCellEditor'.
+The class 'presentation_ColumnViewer' is a specialization of 'StructuredViewer'.
+The class 'presentation_Combo' is a specialization of 'Composite'.
+The class 'presentation_ComboBoxCellEditor' is a specialization of 'AbstractComboBoxCellEditor'.
+The class 'presentation_ComboBoxViewerCellEditor' is a specialization of 'AbstractComboBoxCellEditor'.
+The class 'presentation_ComboViewer' is a specialization of 'AbstractListViewer'.
+The class 'presentation_Composite' is a specialization of 'Scrollable'.
+The class 'presentation_ContentViewer' is a specialization of 'Viewer'.
+The class 'presentation_Control' is a specialization of 'Widget'.
+The class 'presentation_CoolBar' is a specialization of 'Composite'.
+The class 'presentation_CoolItem' is a specialization of 'Item'.
+The class 'presentation_CTabFolder' is a specialization of 'Composite'.
+The class 'presentation_CTabItem' is a specialization of 'Item'.
+The class 'presentation_Cursor' is a specialization of 'Resource'.
+The class 'presentation_DateTime' is a specialization of 'Composite'.
+The class 'presentation_Decorations' is a specialization of 'Canvas'.
+The class 'presentation_Dialog' is a specialization of 'Window'.
+The class 'presentation_DialogCellEditor' is a specialization of 'CellEditor'.
+The class 'presentation_DocumentObject' is a specialization of 'Observable'.
+The class 'presentation_Element' is a specialization of 'DocumentObject'.
+The class 'presentation_ExpandBar' is a specialization of 'Composite'.
+The class 'presentation_ExpandItem' is a specialization of 'Item'.
+The class 'presentation_FillLayout' is a specialization of 'Layout'.
+The class 'presentation_FormLayout' is a specialization of 'Layout'.
+The class 'presentation_GridLayout' is a specialization of 'Layout'.
+The class 'presentation_Group' is a specialization of 'Composite'.
+The class 'presentation_IME' is a specialization of 'Widget'.
+The class 'presentation_Item' is a specialization of 'Widget'.
+The class 'presentation_Label' is a specialization of 'Control'.
+The class 'presentation_Link' is a specialization of 'Control'.
+The class 'presentation_List' is a specialization of 'Scrollable'.
+The class 'presentation_ListViewer' is a specialization of 'AbstractListViewer'.
+The class 'presentation_Menu' is a specialization of 'Widget'.
+The class 'presentation_MenuItem' is a specialization of 'Item'.
+The class 'presentation_MessageBox' is a specialization of 'Dialog'.
+The class 'presentation_ObjectDataProvider' is a specialization of 'AbstractDataProvider'.
+The class 'presentation_ProgressBar' is a specialization of 'Control'.
+The class 'presentation_RowLayout' is a specialization of 'Layout'.
+The class 'presentation_Sash' is a specialization of 'Control'.
+The class 'presentation_SashForm' is a specialization of 'Composite'.
+The class 'presentation_Scale' is a specialization of 'Control'.
+The class 'presentation_Scrollable' is a specialization of 'Control'.
+The class 'presentation_ScrollBar' is a specialization of 'Widget'.
+The class 'presentation_Shell' is a specialization of 'Decorations'.
+The class 'presentation_Slider' is a specialization of 'Control'.
+The class 'presentation_Spinner' is a specialization of 'Composite'.
+The class 'presentation_StackLayout' is a specialization of 'Layout'.
+The class 'presentation_StructuredViewer' is a specialization of 'ContentViewer'.
+The class 'presentation_StyledText' is a specialization of 'Canvas'.
+The class 'presentation_StyleRange' is a specialization of 'TextStyle'.
+The class 'presentation_TabFolder' is a specialization of 'Composite'.
+The class 'presentation_TabItem' is a specialization of 'Item'.
+The class 'presentation_Table' is a specialization of 'Composite'.
+The class 'presentation_TableColumn' is a specialization of 'Item'.
+The class 'presentation_TableEditor' is a specialization of 'ControlEditor'.
+The class 'presentation_TableItem' is a specialization of 'Item'.
+The class 'presentation_TableTree' is a specialization of 'Composite'.
+The class 'presentation_TableTreeViewer' is a specialization of 'AbstractTreeViewer'.
+The class 'presentation_TableViewer' is a specialization of 'AbstractTableViewer'.
+The class 'presentation_TableViewerColumn' is a specialization of 'ViewerColumn'.
+The class 'presentation_Text' is a specialization of 'Scrollable'.
+The class 'presentation_TextCellEditor' is a specialization of 'CellEditor'.
+The class 'presentation_TitleAreaDialog' is a specialization of 'TrayDialog'.
+The class 'presentation_ToolBar' is a specialization of 'Composite'.
+The class 'presentation_ToolItem' is a specialization of 'Item'.
+The class 'presentation_ToolTip' is a specialization of 'Widget'.
+The class 'presentation_Tracker' is a specialization of 'Widget'.
+The class 'presentation_Tray' is a specialization of 'Widget'.
+The class 'presentation_TrayDialog' is a specialization of 'Dialog'.
+The class 'presentation_TrayItem' is a specialization of 'Item'.
+The class 'presentation_Tree' is a specialization of 'Composite'.
+The class 'presentation_TreeColumn' is a specialization of 'Item'.
+The class 'presentation_TreeItem' is a specialization of 'Item'.
+The class 'presentation_TreeViewer' is a specialization of 'AbstractTreeViewer'.
+The class 'presentation_ViewerSorter' is a specialization of 'ViewerComparator'.
+The class 'presentation_XMLDataProvider' is a specialization of 'AbstractDataProvider'.
+
+Relationships between classes are modeled using associations.
+An association connects 'presentation_AbstractDataProvider' and 'presentation_IBindingContext'. From 'presentation_AbstractDataProvider', the role 'presentation_AbstractDataProvider' has cardinality 0..*, and from 'presentation_IBindingContext', the role 'presentation_IBindingContext' has cardinality 0..*.
+An association connects 'presentation_AbstractTreeViewer' and 'presentation_TreePath'. From 'presentation_AbstractTreeViewer', the role 'presentation_AbstractTreeViewer' has cardinality 0..*, and from 'presentation_TreePath', the role 'presentation_TreePath' has cardinality 0..*.
+An association connects 'presentation_AbstractTreeViewer' and 'presentation_EObject'. From 'presentation_AbstractTreeViewer', the role 'presentation_AbstractTreeViewer3' has cardinality 0..*, and from 'presentation_EObject', the role 'presentation_EObject' has cardinality 0..*.
+An association connects 'presentation_AbstractTreeViewer' and 'presentation_EObject'. From 'presentation_AbstractTreeViewer', the role 'presentation_AbstractTreeViewer5' has cardinality 0..*, and from 'presentation_EObject', the role 'presentation_EObject6' has cardinality 0..*.
+An association connects 'presentation_EObject' and 'presentation_Binding'. From 'presentation_EObject', the role 'presentation_EObject8' has cardinality 0..*, and from 'presentation_Binding', the role 'presentation_Binding' has cardinality 0..*.
+An association connects 'presentation_Binding' and 'presentation_EObject'. From 'presentation_Binding', the role 'presentation_Binding10' has cardinality 0..*, and from 'presentation_EObject', the role 'presentation_EObject11' has cardinality 0..*.
+An association connects 'presentation_Widget' and 'presentation_Binding'. From 'presentation_Widget', the role 'presentation_Widget' has cardinality 0..*, and from 'presentation_Binding', the role 'presentation_Binding13' has cardinality 0..*.
+An association connects 'presentation_EObject' and 'presentation_Browser'. From 'presentation_EObject', the role 'presentation_EObject15' has cardinality 0..*, and from 'presentation_Browser', the role 'presentation_Browser' has cardinality 0..*.
+An association connects 'presentation_Button' and 'presentation_ICommand'. From 'presentation_Button', the role 'presentation_Button' has cardinality 0..*, and from 'presentation_ICommand', the role 'presentation_ICommand' has cardinality 0..*.
+An association connects 'presentation_Canvas' and 'presentation_IME'. From 'presentation_Canvas', the role 'presentation_Canvas' has cardinality 0..*, and from 'presentation_IME', the role 'presentation_IME' has cardinality 0..*.
+An association connects 'presentation_Caret' and 'presentation_Canvas'. From 'presentation_Caret', the role 'presentation_Caret' has cardinality 0..*, and from 'presentation_Canvas', the role 'presentation_Canvas19' has cardinality 0..*.
+An association connects 'presentation_Canvas' and 'presentation_Caret'. From 'presentation_Canvas', the role 'presentation_Canvas22' has cardinality 0..*, and from 'presentation_Caret', the role 'presentation_Caret21' has cardinality 0..*.
+An association connects 'presentation_TableItem' and 'presentation_Cell'. From 'presentation_TableItem', the role 'presentation_TableItem' has cardinality 0..*, and from 'presentation_Cell', the role 'presentation_Cell' has cardinality 0..*.
+An association connects 'presentation_CellEditor' and 'presentation_ICellEditorValidator'. From 'presentation_CellEditor', the role 'presentation_CellEditor' has cardinality 0..*, and from 'presentation_ICellEditorValidator', the role 'presentation_ICellEditorValidator' has cardinality 0..*.
+An association connects 'presentation_LayoutData' and 'presentation_CellEditor'. From 'presentation_LayoutData', the role 'presentation_LayoutData' has cardinality 0..*, and from 'presentation_CellEditor', the role 'presentation_CellEditor26' has cardinality 0..*.
+An association connects 'presentation_EObject' and 'presentation_CellEditor'. From 'presentation_EObject', the role 'presentation_EObject29' has cardinality 0..*, and from 'presentation_CellEditor', the role 'presentation_CellEditor28' has cardinality 0..*.
+An association connects 'presentation_CellEditor' and 'presentation_Control'. From 'presentation_CellEditor', the role 'presentation_CellEditor31' has cardinality 0..*, and from 'presentation_Control', the role 'presentation_Control' has cardinality 0..*.
+An association connects 'presentation_CheckboxTableViewer' and 'presentation_EObject'. From 'presentation_CheckboxTableViewer', the role 'presentation_CheckboxTableViewer' has cardinality 0..*, and from 'presentation_EObject', the role 'presentation_EObject33' has cardinality 0..*.
+An association connects 'presentation_CheckboxTableViewer' and 'presentation_ICheckStateProvider'. From 'presentation_CheckboxTableViewer', the role 'presentation_CheckboxTableViewer35' has cardinality 0..*, and from 'presentation_ICheckStateProvider', the role 'presentation_ICheckStateProvider' has cardinality 0..*.
+An association connects 'presentation_CheckboxTableViewer' and 'presentation_EObject'. From 'presentation_CheckboxTableViewer', the role 'presentation_CheckboxTableViewer37' has cardinality 0..*, and from 'presentation_EObject', the role 'presentation_EObject38' has cardinality 0..*.
+An association connects 'presentation_CheckboxTreeViewer' and 'presentation_EObject'. From 'presentation_CheckboxTreeViewer', the role 'presentation_CheckboxTreeViewer' has cardinality 0..*, and from 'presentation_EObject', the role 'presentation_EObject40' has cardinality 0..*.
+An association connects 'presentation_ICheckStateProvider' and 'presentation_CheckboxTreeViewer'. From 'presentation_ICheckStateProvider', the role 'presentation_ICheckStateProvider43' has cardinality 0..*, and from 'presentation_CheckboxTreeViewer', the role 'presentation_CheckboxTreeViewer42' has cardinality 0..*.
+An association connects 'presentation_EObject' and 'presentation_CheckboxTreeViewer'. From 'presentation_EObject', the role 'presentation_EObject46' has cardinality 0..*, and from 'presentation_CheckboxTreeViewer', the role 'presentation_CheckboxTreeViewer45' has cardinality 0..*.
+An association connects 'presentation_ColumnViewerEditor' and 'presentation_ColumnViewer'. From 'presentation_ColumnViewerEditor', the role 'presentation_ColumnViewerEditor' has cardinality 0..*, and from 'presentation_ColumnViewer', the role 'presentation_ColumnViewer' has cardinality 0..*.
+An association connects 'presentation_ColumnViewer' and 'presentation_ICellModifier'. From 'presentation_ColumnViewer', the role 'presentation_ColumnViewer49' has cardinality 0..*, and from 'presentation_ICellModifier', the role 'presentation_ICellModifier' has cardinality 0..*.
+An association connects 'presentation_ColumnViewer' and 'presentation_CellEditor'. From 'presentation_ColumnViewer', the role 'presentation_ColumnViewer51' has cardinality 0..*, and from 'presentation_CellEditor', the role 'presentation_CellEditor52' has cardinality 0..*.
+An association connects 'presentation_ColumnViewer' and 'presentation_EObject'. From 'presentation_ColumnViewer', the role 'presentation_ColumnViewer54' has cardinality 0..*, and from 'presentation_EObject', the role 'presentation_EObject55' has cardinality 0..*.
+An association connects 'presentation_EObject' and 'presentation_ComboBoxViewerCellEditor'. From 'presentation_EObject', the role 'presentation_EObject57' has cardinality 0..*, and from 'presentation_ComboBoxViewerCellEditor', the role 'presentation_ComboBoxViewerCellEditor' has cardinality 0..*.
+An association connects 'presentation_IStructuredContentProvider' and 'presentation_ComboBoxViewerCellEditor'. From 'presentation_IStructuredContentProvider', the role 'presentation_IStructuredContentProvider' has cardinality 0..*, and from 'presentation_ComboBoxViewerCellEditor', the role 'presentation_ComboBoxViewerCellEditor59' has cardinality 0..*.
+An association connects 'presentation_ComboBoxViewerCellEditor' and 'presentation_IBaseLabelProvider'. From 'presentation_ComboBoxViewerCellEditor', the role 'presentation_ComboBoxViewerCellEditor61' has cardinality 0..*, and from 'presentation_IBaseLabelProvider', the role 'presentation_IBaseLabelProvider' has cardinality 0..*.
+An association connects 'presentation_ComboViewer' and 'presentation_ComboBoxViewerCellEditor'. From 'presentation_ComboViewer', the role 'presentation_ComboViewer' has cardinality 0..*, and from 'presentation_ComboBoxViewerCellEditor', the role 'presentation_ComboBoxViewerCellEditor63' has cardinality 0..*.
+An association connects 'presentation_Control' and 'presentation_Composite'. From 'presentation_Control', the role 'presentation_Control65' has cardinality 0..*, and from 'presentation_Composite', the role 'presentation_Composite' has cardinality 0..*.
+An association connects 'presentation_Composite' and 'presentation_Control'. From 'presentation_Composite', the role 'presentation_Composite67' has cardinality 0..*, and from 'presentation_Control', the role 'presentation_Control68' has cardinality 0..*.
+An association connects 'presentation_Layout' and 'presentation_Composite'. From 'presentation_Layout', the role 'presentation_Layout' has cardinality 0..*, and from 'presentation_Composite', the role 'presentation_Composite70' has cardinality 0..*.
+An association connects 'presentation_IContentProvider' and 'presentation_ContentViewer'. From 'presentation_IContentProvider', the role 'presentation_IContentProvider' has cardinality 0..*, and from 'presentation_ContentViewer', the role 'presentation_ContentViewer' has cardinality 0..*.
+An association connects 'presentation_IBaseLabelProvider' and 'presentation_ContentViewer'. From 'presentation_IBaseLabelProvider', the role 'presentation_IBaseLabelProvider74' has cardinality 0..*, and from 'presentation_ContentViewer', the role 'presentation_ContentViewer73' has cardinality 0..*.
+An association connects 'presentation_Menu' and 'presentation_Control'. From 'presentation_Menu', the role 'presentation_Menu' has cardinality 0..*, and from 'presentation_Control', the role 'presentation_Control76' has cardinality 0..*.
+An association connects 'presentation_Cursor' and 'presentation_Control'. From 'presentation_Cursor', the role 'presentation_Cursor' has cardinality 0..*, and from 'presentation_Control', the role 'presentation_Control78' has cardinality 0..*.
+An association connects 'presentation_Control' and 'presentation_EObject'. From 'presentation_Control', the role 'presentation_Control80' has cardinality 0..*, and from 'presentation_EObject', the role 'presentation_EObject81' has cardinality 0..*.
+An association connects 'presentation_Control' and 'presentation_Accessible'. From 'presentation_Control', the role 'presentation_Control83' has cardinality 0..*, and from 'presentation_Accessible', the role 'presentation_Accessible' has cardinality 0..*.
+An association connects 'presentation_ControlEditor' and 'presentation_Control'. From 'presentation_ControlEditor', the role 'presentation_ControlEditor' has cardinality 0..*, and from 'presentation_Control', the role 'presentation_Control85' has cardinality 0..*.
+An association connects 'presentation_CoolItem' and 'presentation_CoolBar'. From 'presentation_CoolItem', the role 'presentation_CoolItem' has cardinality 0..*, and from 'presentation_CoolBar', the role 'presentation_CoolBar' has cardinality 0..*.
+An association connects 'presentation_CoolItem' and 'presentation_CoolBar'. From 'presentation_CoolItem', the role 'presentation_CoolItem88' has cardinality 0..*, and from 'presentation_CoolBar', the role 'presentation_CoolBar89' has cardinality 0..*.
+An association connects 'presentation_Control' and 'presentation_CoolItem'. From 'presentation_Control', the role 'presentation_Control92' has cardinality 0..*, and from 'presentation_CoolItem', the role 'presentation_CoolItem91' has cardinality 0..*.
+An association connects 'presentation_RGB' and 'presentation_CTabFolder'. From 'presentation_RGB', the role 'presentation_RGB' has cardinality 0..*, and from 'presentation_CTabFolder', the role 'presentation_CTabFolder' has cardinality 0..*.
+An association connects 'presentation_CTabItem' and 'presentation_CTabFolder'. From 'presentation_CTabItem', the role 'presentation_CTabItem' has cardinality 0..*, and from 'presentation_CTabFolder', the role 'presentation_CTabFolder95' has cardinality 0..*.
+An association connects 'presentation_CTabFolder' and 'presentation_Control'. From 'presentation_CTabFolder', the role 'presentation_CTabFolder97' has cardinality 0..*, and from 'presentation_Control', the role 'presentation_Control98' has cardinality 0..*.
+An association connects 'presentation_CTabFolder' and 'presentation_RGB'. From 'presentation_CTabFolder', the role 'presentation_CTabFolder100' has cardinality 0..*, and from 'presentation_RGB', the role 'presentation_RGB101' has cardinality 0..*.
+An association connects 'presentation_CTabFolder' and 'presentation_CTabItem'. From 'presentation_CTabFolder', the role 'presentation_CTabFolder103' has cardinality 0..*, and from 'presentation_CTabItem', the role 'presentation_CTabItem104' has cardinality 0..*.
+An association connects 'presentation_CTabFolder' and 'presentation_RGB'. From 'presentation_CTabFolder', the role 'presentation_CTabFolder106' has cardinality 0..*, and from 'presentation_RGB', the role 'presentation_RGB107' has cardinality 0..*.
+An association connects 'presentation_CTabFolder' and 'presentation_CTabItem'. From 'presentation_CTabFolder', the role 'presentation_CTabFolder110' has cardinality 0..*, and from 'presentation_CTabItem', the role 'presentation_CTabItem109' has cardinality 0..*.
+An association connects 'presentation_Control' and 'presentation_CTabItem'. From 'presentation_Control', the role 'presentation_Control113' has cardinality 0..*, and from 'presentation_CTabItem', the role 'presentation_CTabItem112' has cardinality 0..*.
+An association connects 'presentation_Decorations' and 'presentation_Button'. From 'presentation_Decorations', the role 'presentation_Decorations' has cardinality 0..*, and from 'presentation_Button', the role 'presentation_Button115' has cardinality 0..*.
+An association connects 'presentation_Decorations' and 'presentation_Menu'. From 'presentation_Decorations', the role 'presentation_Decorations117' has cardinality 0..*, and from 'presentation_Menu', the role 'presentation_Menu118' has cardinality 0..*.
+An association connects 'presentation_Dialog' and 'presentation_Control'. From 'presentation_Dialog', the role 'presentation_Dialog' has cardinality 0..*, and from 'presentation_Control', the role 'presentation_Control120' has cardinality 0..*.
+An association connects 'presentation_Dialog' and 'presentation_IDialogBlockedHandler'. From 'presentation_Dialog', the role 'presentation_Dialog122' has cardinality 0..*, and from 'presentation_IDialogBlockedHandler', the role 'presentation_IDialogBlockedHandler' has cardinality 0..*.
+An association connects 'presentation_DocumentRoot' and 'presentation_EStringToStringMapEntry'. From 'presentation_DocumentRoot', the role 'presentation_DocumentRoot' has cardinality 0..*, and from 'presentation_EStringToStringMapEntry', the role 'presentation_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'presentation_DocumentRoot' and 'presentation_EStringToStringMapEntry'. From 'presentation_DocumentRoot', the role 'presentation_DocumentRoot125' has cardinality 0..*, and from 'presentation_EStringToStringMapEntry', the role 'presentation_EStringToStringMapEntry126' has cardinality 0..*.
+An association connects 'presentation_Composite' and 'presentation_DocumentRoot'. From 'presentation_Composite', the role 'presentation_Composite129' has cardinality 0..*, and from 'presentation_DocumentRoot', the role 'presentation_DocumentRoot128' has cardinality 0..*.
+An association connects 'presentation_DocumentRoot' and 'presentation_Window'. From 'presentation_DocumentRoot', the role 'presentation_DocumentRoot131' has cardinality 0..*, and from 'presentation_Window', the role 'presentation_Window' has cardinality 0..*.
+An association connects 'presentation_ExpandBar' and 'presentation_ExpandItem'. From 'presentation_ExpandBar', the role 'presentation_ExpandBar' has cardinality 0..*, and from 'presentation_ExpandItem', the role 'presentation_ExpandItem' has cardinality 0..*.
+An association connects 'presentation_ExpandItem' and 'presentation_ExpandBar'. From 'presentation_ExpandItem', the role 'presentation_ExpandItem134' has cardinality 0..*, and from 'presentation_ExpandBar', the role 'presentation_ExpandBar135' has cardinality 0..*.
+An association connects 'presentation_ExpandItem' and 'presentation_Control'. From 'presentation_ExpandItem', the role 'presentation_ExpandItem137' has cardinality 0..*, and from 'presentation_Control', the role 'presentation_Control138' has cardinality 0..*.
+An association connects 'presentation_FormAttachment' and 'presentation_Control'. From 'presentation_FormAttachment', the role 'presentation_FormAttachment' has cardinality 0..*, and from 'presentation_Control', the role 'presentation_Control140' has cardinality 0..*.
+An association connects 'presentation_FormData' and 'presentation_FormAttachment'. From 'presentation_FormData', the role 'presentation_FormData' has cardinality 0..*, and from 'presentation_FormAttachment', the role 'presentation_FormAttachment142' has cardinality 0..*.
+An association connects 'presentation_FormData' and 'presentation_FormAttachment'. From 'presentation_FormData', the role 'presentation_FormData144' has cardinality 0..*, and from 'presentation_FormAttachment', the role 'presentation_FormAttachment145' has cardinality 0..*.
+An association connects 'presentation_FormAttachment' and 'presentation_FormData'. From 'presentation_FormAttachment', the role 'presentation_FormAttachment148' has cardinality 0..*, and from 'presentation_FormData', the role 'presentation_FormData147' has cardinality 0..*.
+An association connects 'presentation_FormAttachment' and 'presentation_FormData'. From 'presentation_FormAttachment', the role 'presentation_FormAttachment151' has cardinality 0..*, and from 'presentation_FormData', the role 'presentation_FormData150' has cardinality 0..*.
+An association connects 'presentation_TextStyle' and 'presentation_IME'. From 'presentation_TextStyle', the role 'presentation_TextStyle' has cardinality 0..*, and from 'presentation_IME', the role 'presentation_IME153' has cardinality 0..*.
+An association connects 'presentation_ListViewer' and 'presentation_List'. From 'presentation_ListViewer', the role 'presentation_ListViewer' has cardinality 0..*, and from 'presentation_List', the role 'presentation_List' has cardinality 0..*.
+An association connects 'presentation_MenuItem' and 'presentation_Menu'. From 'presentation_MenuItem', the role 'presentation_MenuItem' has cardinality 0..*, and from 'presentation_Menu', the role 'presentation_Menu156' has cardinality 0..*.
+An association connects 'presentation_Menu' and 'presentation_MenuItem'. From 'presentation_Menu', the role 'presentation_Menu158' has cardinality 0..*, and from 'presentation_MenuItem', the role 'presentation_MenuItem159' has cardinality 0..*.
+An association connects 'presentation_MenuItem' and 'presentation_Menu'. From 'presentation_MenuItem', the role 'presentation_MenuItem162' has cardinality 0..*, and from 'presentation_Menu', the role 'presentation_Menu161' has cardinality 0..*.
+An association connects 'presentation_Menu' and 'presentation_Menu'. From 'presentation_Menu', the role 'presentation_Menu163' has cardinality 0..*, and from 'presentation_Menu', the role 'presentation_Menu165' has cardinality 0..*.
+An association connects 'presentation_Decorations' and 'presentation_Menu'. From 'presentation_Decorations', the role 'presentation_Decorations168' has cardinality 0..*, and from 'presentation_Menu', the role 'presentation_Menu167' has cardinality 0..*.
+An association connects 'presentation_MenuItem' and 'presentation_Menu'. From 'presentation_MenuItem', the role 'presentation_MenuItem170' has cardinality 0..*, and from 'presentation_Menu', the role 'presentation_Menu171' has cardinality 0..*.
+An association connects 'presentation_MenuItem' and 'presentation_ICommand'. From 'presentation_MenuItem', the role 'presentation_MenuItem173' has cardinality 0..*, and from 'presentation_ICommand', the role 'presentation_ICommand174' has cardinality 0..*.
+An association connects 'presentation_MenuItem' and 'presentation_Menu'. From 'presentation_MenuItem', the role 'presentation_MenuItem176' has cardinality 0..*, and from 'presentation_Menu', the role 'presentation_Menu177' has cardinality 0..*.
+An association connects 'presentation_ObjectDataProvider' and 'presentation_Class'. From 'presentation_ObjectDataProvider', the role 'presentation_ObjectDataProvider' has cardinality 0..*, and from 'presentation_Class', the role 'presentation_Class' has cardinality 0..*.
+An association connects 'presentation_ObjectDataProvider' and 'presentation_EObject'. From 'presentation_ObjectDataProvider', the role 'presentation_ObjectDataProvider180' has cardinality 0..*, and from 'presentation_EObject', the role 'presentation_EObject181' has cardinality 0..*.
+An association connects 'presentation_ObjectDataProvider' and 'presentation_List'. From 'presentation_ObjectDataProvider', the role 'presentation_ObjectDataProvider183' has cardinality 0..*, and from 'presentation_List', the role 'presentation_List184' has cardinality 0..*.
+An association connects 'presentation_SashForm' and 'presentation_Control'. From 'presentation_SashForm', the role 'presentation_SashForm' has cardinality 0..*, and from 'presentation_Control', the role 'presentation_Control186' has cardinality 0..*.
+An association connects 'presentation_Scrollable' and 'presentation_ScrollBar'. From 'presentation_Scrollable', the role 'presentation_Scrollable' has cardinality 0..*, and from 'presentation_ScrollBar', the role 'presentation_ScrollBar' has cardinality 0..*.
+An association connects 'presentation_Scrollable' and 'presentation_ScrollBar'. From 'presentation_Scrollable', the role 'presentation_Scrollable189' has cardinality 0..*, and from 'presentation_ScrollBar', the role 'presentation_ScrollBar190' has cardinality 0..*.
+An association connects 'presentation_Scrollable' and 'presentation_ScrollBar'. From 'presentation_Scrollable', the role 'presentation_Scrollable193' has cardinality 0..*, and from 'presentation_ScrollBar', the role 'presentation_ScrollBar192' has cardinality 0..*.
+An association connects 'presentation_Shell' and 'presentation_Shell'. From 'presentation_Shell', the role 'presentation_Shell' has cardinality 0..*, and from 'presentation_Shell', the role 'presentation_Shell194' has cardinality 0..*.
+An association connects 'presentation_Control' and 'presentation_StackLayout'. From 'presentation_Control', the role 'presentation_Control197' has cardinality 0..*, and from 'presentation_StackLayout', the role 'presentation_StackLayout' has cardinality 0..*.
+An association connects 'presentation_StructuredViewer' and 'presentation_ViewerComparator'. From 'presentation_StructuredViewer', the role 'presentation_StructuredViewer' has cardinality 0..*, and from 'presentation_ViewerComparator', the role 'presentation_ViewerComparator' has cardinality 0..*.
+An association connects 'presentation_IElementComparer' and 'presentation_StructuredViewer'. From 'presentation_IElementComparer', the role 'presentation_IElementComparer' has cardinality 0..*, and from 'presentation_StructuredViewer', the role 'presentation_StructuredViewer200' has cardinality 0..*.
+An association connects 'presentation_ViewerFilter' and 'presentation_StructuredViewer'. From 'presentation_ViewerFilter', the role 'presentation_ViewerFilter' has cardinality 0..*, and from 'presentation_StructuredViewer', the role 'presentation_StructuredViewer202' has cardinality 0..*.
+An association connects 'presentation_ViewerSorter' and 'presentation_StructuredViewer'. From 'presentation_ViewerSorter', the role 'presentation_ViewerSorter' has cardinality 0..*, and from 'presentation_StructuredViewer', the role 'presentation_StructuredViewer204' has cardinality 0..*.
+An association connects 'presentation_StyleRange' and 'presentation_StyledText'. From 'presentation_StyleRange', the role 'presentation_StyleRange' has cardinality 0..*, and from 'presentation_StyledText', the role 'presentation_StyledText' has cardinality 0..*.
+An association connects 'presentation_StyledText' and 'presentation_StyleRange'. From 'presentation_StyledText', the role 'presentation_StyledText207' has cardinality 0..*, and from 'presentation_StyleRange', the role 'presentation_StyleRange208' has cardinality 0..*.
+An association connects 'presentation_StyledTextContent' and 'presentation_StyledText'. From 'presentation_StyledTextContent', the role 'presentation_StyledTextContent' has cardinality 0..*, and from 'presentation_StyledText', the role 'presentation_StyledText210' has cardinality 0..*.
+An association connects 'presentation_TabItem' and 'presentation_TabFolder'. From 'presentation_TabItem', the role 'presentation_TabItem' has cardinality 0..*, and from 'presentation_TabFolder', the role 'presentation_TabFolder' has cardinality 0..*.
+An association connects 'presentation_TabItem' and 'presentation_TabFolder'. From 'presentation_TabItem', the role 'presentation_TabItem214' has cardinality 0..*, and from 'presentation_TabFolder', the role 'presentation_TabFolder213' has cardinality 0..*.
+An association connects 'presentation_TabFolder' and 'presentation_TabItem'. From 'presentation_TabFolder', the role 'presentation_TabFolder217' has cardinality 0..*, and from 'presentation_TabItem', the role 'presentation_TabItem216' has cardinality 0..*.
+An association connects 'presentation_Control' and 'presentation_TabItem'. From 'presentation_Control', the role 'presentation_Control220' has cardinality 0..*, and from 'presentation_TabItem', the role 'presentation_TabItem219' has cardinality 0..*.
+An association connects 'presentation_Table' and 'presentation_TableColumn'. From 'presentation_Table', the role 'presentation_Table' has cardinality 0..*, and from 'presentation_TableColumn', the role 'presentation_TableColumn' has cardinality 0..*.
+An association connects 'presentation_TableColumn' and 'presentation_Table'. From 'presentation_TableColumn', the role 'presentation_TableColumn224' has cardinality 0..*, and from 'presentation_Table', the role 'presentation_Table223' has cardinality 0..*.
+An association connects 'presentation_Table' and 'presentation_TableItem'. From 'presentation_Table', the role 'presentation_Table226' has cardinality 0..*, and from 'presentation_TableItem', the role 'presentation_TableItem227' has cardinality 0..*.
+An association connects 'presentation_TableItem' and 'presentation_Table'. From 'presentation_TableItem', the role 'presentation_TableItem230' has cardinality 0..*, and from 'presentation_Table', the role 'presentation_Table229' has cardinality 0..*.
+An association connects 'presentation_Element' and 'presentation_TableColumn'. From 'presentation_Element', the role 'presentation_Element' has cardinality 0..*, and from 'presentation_TableColumn', the role 'presentation_TableColumn232' has cardinality 0..*.
+An association connects 'presentation_TableColumn' and 'presentation_Table'. From 'presentation_TableColumn', the role 'presentation_TableColumn234' has cardinality 0..*, and from 'presentation_Table', the role 'presentation_Table235' has cardinality 0..*.
+An association connects 'presentation_TableEditor' and 'presentation_TableItem'. From 'presentation_TableEditor', the role 'presentation_TableEditor' has cardinality 0..*, and from 'presentation_TableItem', the role 'presentation_TableItem237' has cardinality 0..*.
+An association connects 'presentation_Collection' and 'presentation_TableItem'. From 'presentation_Collection', the role 'presentation_Collection' has cardinality 0..*, and from 'presentation_TableItem', the role 'presentation_TableItem239' has cardinality 0..*.
+An association connects 'presentation_Table' and 'presentation_TableItem'. From 'presentation_Table', the role 'presentation_Table242' has cardinality 0..*, and from 'presentation_TableItem', the role 'presentation_TableItem241' has cardinality 0..*.
+An association connects 'presentation_TableItem' and 'presentation_Collection'. From 'presentation_TableItem', the role 'presentation_TableItem244' has cardinality 0..*, and from 'presentation_Collection', the role 'presentation_Collection245' has cardinality 0..*.
+An association connects 'presentation_TableTree' and 'presentation_TableTreeViewer'. From 'presentation_TableTree', the role 'presentation_TableTree' has cardinality 0..*, and from 'presentation_TableTreeViewer', the role 'presentation_TableTreeViewer' has cardinality 0..*.
+An association connects 'presentation_TableViewer' and 'presentation_Table'. From 'presentation_TableViewer', the role 'presentation_TableViewer' has cardinality 0..*, and from 'presentation_Table', the role 'presentation_Table248' has cardinality 0..*.
+An association connects 'presentation_TableColumn' and 'presentation_TableViewerColumn'. From 'presentation_TableColumn', the role 'presentation_TableColumn250' has cardinality 0..*, and from 'presentation_TableViewerColumn', the role 'presentation_TableViewerColumn' has cardinality 0..*.
+An association connects 'presentation_RGB' and 'presentation_TitleAreaDialog'. From 'presentation_RGB', the role 'presentation_RGB252' has cardinality 0..*, and from 'presentation_TitleAreaDialog', the role 'presentation_TitleAreaDialog' has cardinality 0..*.
+An association connects 'presentation_ToolItem' and 'presentation_ToolBar'. From 'presentation_ToolItem', the role 'presentation_ToolItem' has cardinality 0..*, and from 'presentation_ToolBar', the role 'presentation_ToolBar' has cardinality 0..*.
+An association connects 'presentation_Control' and 'presentation_ToolItem'. From 'presentation_Control', the role 'presentation_Control256' has cardinality 0..*, and from 'presentation_ToolItem', the role 'presentation_ToolItem255' has cardinality 0..*.
+An association connects 'presentation_ToolItem' and 'presentation_ToolBar'. From 'presentation_ToolItem', the role 'presentation_ToolItem258' has cardinality 0..*, and from 'presentation_ToolBar', the role 'presentation_ToolBar259' has cardinality 0..*.
+An association connects 'presentation_ToolTip' and 'presentation_Shell'. From 'presentation_ToolTip', the role 'presentation_ToolTip' has cardinality 0..*, and from 'presentation_Shell', the role 'presentation_Shell261' has cardinality 0..*.
+An association connects 'presentation_Cursor' and 'presentation_Tracker'. From 'presentation_Cursor', the role 'presentation_Cursor263' has cardinality 0..*, and from 'presentation_Tracker', the role 'presentation_Tracker' has cardinality 0..*.
+An association connects 'presentation_TrayItem' and 'presentation_Tray'. From 'presentation_TrayItem', the role 'presentation_TrayItem' has cardinality 0..*, and from 'presentation_Tray', the role 'presentation_Tray' has cardinality 0..*.
+An association connects 'presentation_TrayDialog' and 'presentation_DialogTray'. From 'presentation_TrayDialog', the role 'presentation_TrayDialog' has cardinality 0..*, and from 'presentation_DialogTray', the role 'presentation_DialogTray' has cardinality 0..*.
+An association connects 'presentation_Tree' and 'presentation_TreeColumn'. From 'presentation_Tree', the role 'presentation_Tree' has cardinality 0..*, and from 'presentation_TreeColumn', the role 'presentation_TreeColumn' has cardinality 0..*.
+An association connects 'presentation_Tree' and 'presentation_TreeItem'. From 'presentation_Tree', the role 'presentation_Tree268' has cardinality 0..*, and from 'presentation_TreeItem', the role 'presentation_TreeItem' has cardinality 0..*.
+An association connects 'presentation_TreeColumn' and 'presentation_Tree'. From 'presentation_TreeColumn', the role 'presentation_TreeColumn271' has cardinality 0..*, and from 'presentation_Tree', the role 'presentation_Tree270' has cardinality 0..*.
+An association connects 'presentation_TreeItem' and 'presentation_Tree'. From 'presentation_TreeItem', the role 'presentation_TreeItem274' has cardinality 0..*, and from 'presentation_Tree', the role 'presentation_Tree273' has cardinality 0..*.
+An association connects 'presentation_Tree' and 'presentation_TreeItem'. From 'presentation_Tree', the role 'presentation_Tree276' has cardinality 0..*, and from 'presentation_TreeItem', the role 'presentation_TreeItem277' has cardinality 0..*.
+An association connects 'presentation_Tree' and 'presentation_TreeItem'. From 'presentation_Tree', the role 'presentation_Tree279' has cardinality 0..*, and from 'presentation_TreeItem', the role 'presentation_TreeItem280' has cardinality 0..*.
+An association connects 'presentation_TreeColumn' and 'presentation_Tree'. From 'presentation_TreeColumn', the role 'presentation_TreeColumn282' has cardinality 0..*, and from 'presentation_Tree', the role 'presentation_Tree283' has cardinality 0..*.
+An association connects 'presentation_TreeItem' and 'presentation_TreeItem'. From 'presentation_TreeItem', the role 'presentation_TreeItem286' has cardinality 0..*, and from 'presentation_TreeItem', the role 'presentation_TreeItem284' has cardinality 0..*.
+An association connects 'presentation_TreeItem' and 'presentation_TreeItem'. From 'presentation_TreeItem', the role 'presentation_TreeItem289' has cardinality 0..*, and from 'presentation_TreeItem', the role 'presentation_TreeItem287' has cardinality 0..*.
+An association connects 'presentation_TreeItem' and 'presentation_Tree'. From 'presentation_TreeItem', the role 'presentation_TreeItem291' has cardinality 0..*, and from 'presentation_Tree', the role 'presentation_Tree292' has cardinality 0..*.
+An association connects 'presentation_Tree' and 'presentation_TreeViewer'. From 'presentation_Tree', the role 'presentation_Tree294' has cardinality 0..*, and from 'presentation_TreeViewer', the role 'presentation_TreeViewer' has cardinality 0..*.
+An association connects 'presentation_Viewer' and 'presentation_EObject'. From 'presentation_Viewer', the role 'presentation_Viewer' has cardinality 0..*, and from 'presentation_EObject', the role 'presentation_EObject296' has cardinality 0..*.
+An association connects 'presentation_ISelection' and 'presentation_Viewer'. From 'presentation_ISelection', the role 'presentation_ISelection' has cardinality 0..*, and from 'presentation_Viewer', the role 'presentation_Viewer298' has cardinality 0..*.
+An association connects 'presentation_Viewer' and 'presentation_Control'. From 'presentation_Viewer', the role 'presentation_Viewer300' has cardinality 0..*, and from 'presentation_Control', the role 'presentation_Control301' has cardinality 0..*.
+An association connects 'presentation_WindowManager' and 'presentation_Window'. From 'presentation_WindowManager', the role 'presentation_WindowManager' has cardinality 0..*, and from 'presentation_Window', the role 'presentation_Window303' has cardinality 0..*.
+An association connects 'presentation_Document' and 'presentation_XMLDataProvider'. From 'presentation_Document', the role 'presentation_Document' has cardinality 0..*, and from 'presentation_XMLDataProvider', the role 'presentation_XMLDataProvider' has cardinality 0..*.
+An association connects 'presentation_XMLDataProvider' and 'presentation_URL'. From 'presentation_XMLDataProvider', the role 'presentation_XMLDataProvider306' has cardinality 0..*, and from 'presentation_URL', the role 'presentation_URL' has cardinality 0..*.

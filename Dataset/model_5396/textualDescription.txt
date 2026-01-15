@@ -1,0 +1,6 @@
+The domain model 'B' describes the core structural elements and their relationships within the system.
+
+The model defines 1 main class(es).
+
+'B_B' represents an important domain concept.
+It has the following attributes: 'description1', which is of type str; 'name', which is of type str; 'description2', which is of type str.

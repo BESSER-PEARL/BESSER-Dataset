@@ -1,0 +1,34 @@
+The domain model 'pDL1' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'pDL1_WorkDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pDL1_ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+'pDL1_Process' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pDL1_WorkSequence' represents an important domain concept.
+It has one attribute: 'linkType', which is of type str.
+
+'pDL1_Guidance' represents an important domain concept.
+It has one attribute: 'texte', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'WorkSequenceType' defines the following possible values: 'finish2start', 'start2start', 'start2finish', 'finish2finish'.
+
+The model also captures inheritance relationships between classes.
+The class 'pDL1_WorkDefinition' is a specialization of 'ProcessElement'.
+The class 'pDL1_WorkSequence' is a specialization of 'ProcessElement'.
+The class 'pDL1_Guidance' is a specialization of 'ProcessElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pDL1_ProcessElement' and 'pDL1_Process'. From 'pDL1_ProcessElement', the role 'pDL1_ProcessElement' has cardinality 0..*, and from 'pDL1_Process', the role 'pDL1_Process' has cardinality 0..*.
+An association connects 'pDL1_WorkSequence' and 'pDL1_WorkDefinition'. From 'pDL1_WorkSequence', the role 'pDL1_WorkSequence' has cardinality 0..*, and from 'pDL1_WorkDefinition', the role 'pDL1_WorkDefinition' has cardinality 0..*.
+An association connects 'pDL1_WorkSequence' and 'pDL1_WorkDefinition'. From 'pDL1_WorkSequence', the role 'pDL1_WorkSequence3' has cardinality 0..*, and from 'pDL1_WorkDefinition', the role 'pDL1_WorkDefinition4' has cardinality 0..*.

@@ -1,0 +1,43 @@
+The domain model 'pDL2' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'pDL2_DependanceStart' represents an important domain concept.
+It does not declare any attributes.
+
+'pDL2_Process' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pDL2_DependanceFinish' represents an important domain concept.
+It does not declare any attributes.
+
+'pDL2_ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+'pDL2_WorkSequenceKindStart' represents an important domain concept.
+It has the following attributes: 'Started2Start', which is of type str; 'Started2Finish', which is of type str.
+
+'pDL2_WorkSequenceKindFinish' represents an important domain concept.
+It has the following attributes: 'Finished2Finish', which is of type str; 'Finished2Start', which is of type str.
+
+'pDL2_Guidance' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'pDL2_WorkDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'pDL2_WorkDefinition' is a specialization of 'ProcessElement'.
+The class 'pDL2_Guidance' is a specialization of 'ProcessElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pDL2_ProcessElement' and 'pDL2_Process'. From 'pDL2_ProcessElement', the role 'pDL2_ProcessElement' has cardinality 0..*, and from 'pDL2_Process', the role 'pDL2_Process' has cardinality 0..*.
+An association connects 'pDL2_WorkDefinition' and 'pDL2_DependanceStart'. From 'pDL2_WorkDefinition', the role 'pDL2_WorkDefinition' has cardinality 0..*, and from 'pDL2_DependanceStart', the role 'pDL2_DependanceStart' has cardinality 0..*.
+An association connects 'pDL2_DependanceFinish' and 'pDL2_WorkDefinition'. From 'pDL2_DependanceFinish', the role 'pDL2_DependanceFinish' has cardinality 0..*, and from 'pDL2_WorkDefinition', the role 'pDL2_WorkDefinition3' has cardinality 0..*.
+An association connects 'pDL2_WorkDefinition' and 'pDL2_DependanceStart'. From 'pDL2_WorkDefinition', the role 'pDL2_WorkDefinition6' has cardinality 0..*, and from 'pDL2_DependanceStart', the role 'pDL2_DependanceStart5' has cardinality 0..*.
+An association connects 'pDL2_DependanceStart' and 'pDL2_WorkSequenceKindStart'. From 'pDL2_DependanceStart', the role 'pDL2_DependanceStart8' has cardinality 0..*, and from 'pDL2_WorkSequenceKindStart', the role 'pDL2_WorkSequenceKindStart' has cardinality 0..*.
+An association connects 'pDL2_WorkDefinition' and 'pDL2_DependanceFinish'. From 'pDL2_WorkDefinition', the role 'pDL2_WorkDefinition11' has cardinality 0..*, and from 'pDL2_DependanceFinish', the role 'pDL2_DependanceFinish10' has cardinality 0..*.
+An association connects 'pDL2_WorkSequenceKindFinish' and 'pDL2_DependanceFinish'. From 'pDL2_WorkSequenceKindFinish', the role 'pDL2_WorkSequenceKindFinish' has cardinality 0..*, and from 'pDL2_DependanceFinish', the role 'pDL2_DependanceFinish13' has cardinality 0..*.

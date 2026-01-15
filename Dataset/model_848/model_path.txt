@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/occiware/OCCI-Studio/plugins/org.eclipse.cmf.occi.core/model/OCCI.ecore

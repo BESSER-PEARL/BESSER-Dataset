@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/vitruv-tools/Vitruv/bundles/testutils/tools.vitruv.testutils.metamodels/metamodels/multicontainment_b.ecore

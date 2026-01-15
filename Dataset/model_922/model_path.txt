@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/moussaamrani/kmv/example/xSPEM/org.gemoc.simplifiedspem.v1.r59/metamodel/spem.ecore

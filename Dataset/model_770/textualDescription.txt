@@ -1,0 +1,256 @@
+The domain model 'UML2' describes the core structural elements and their relationships within the system.
+
+The model defines 66 main class(es).
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Extension' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ReadStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_InformationItem' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_DeploymentSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_TemplateableClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_AddStructuralFeatureValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_CommunicationPath' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Reception' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'WriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_RemoveStructuralFeatureValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ClearStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_StructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'EncapsulatedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Stereotype' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ProtocolStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Collaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ExecutionEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_UseCase' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_StructuredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Interaction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Device' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_EncapsulatedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_TimeObservationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ParameterableClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_DurationObservationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_WriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ExtensionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Class' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'UML2_ReadStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'UML2_Device' is a specialization of 'Node'.
+The class 'UML2_WriteStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'UML2_Actor' is a specialization of 'Classifier'.
+The class 'UML2_ExtensionEnd' is a specialization of 'Property'.
+The class 'UML2_Node' is a specialization of 'Class'.
+The class 'UML2_Interaction' is a specialization of 'Behavior'.
+The class 'UML2_StructuralFeature' is a specialization of 'Feature'.
+The class 'UML2_ProtocolStateMachine' is a specialization of 'StateMachine'.
+The class 'UML2_Class' is a specialization of 'BehavioredClassifier'.
+The class 'UML2_Class' is a specialization of 'EncapsulatedClassifier'.
+The class 'UML2_Collaboration' is a specialization of 'BehavioredClassifier'.
+The class 'UML2_Collaboration' is a specialization of 'StructuredClassifier'.
+The class 'UML2_Signal' is a specialization of 'Classifier'.
+The class 'UML2_Interface' is a specialization of 'Classifier'.
+The class 'UML2_CommunicationPath' is a specialization of 'Association'.
+The class 'UML2_ParameterableClassifier' is a specialization of 'Classifier'.
+The class 'UML2_Enumeration' is a specialization of 'DataType'.
+The class 'UML2_BehavioralFeature' is a specialization of 'Feature'.
+The class 'UML2_UseCase' is a specialization of 'BehavioredClassifier'.
+The class 'UML2_TemplateableClassifier' is a specialization of 'Classifier'.
+The class 'UML2_ExecutionEnvironment' is a specialization of 'Node'.
+The class 'UML2_BehavioredClassifier' is a specialization of 'Classifier'.
+The class 'UML2_DataType' is a specialization of 'Classifier'.
+The class 'UML2_DeploymentSpecification' is a specialization of 'Artifact'.
+The class 'UML2_EncapsulatedClassifier' is a specialization of 'StructuredClassifier'.
+The class 'UML2_Connector' is a specialization of 'Feature'.
+The class 'UML2_Component' is a specialization of 'Class'.
+The class 'UML2_StateMachine' is a specialization of 'Behavior'.
+The class 'UML2_Stereotype' is a specialization of 'Class'.
+The class 'UML2_InformationItem' is a specialization of 'Classifier'.
+The class 'UML2_TimeObservationAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'UML2_Behavior' is a specialization of 'Class'.
+The class 'UML2_PrimitiveType' is a specialization of 'DataType'.
+The class 'UML2_AssociationClass' is a specialization of 'Class'.
+The class 'UML2_AssociationClass' is a specialization of 'Association'.
+The class 'UML2_Port' is a specialization of 'Property'.
+The class 'UML2_Reception' is a specialization of 'BehavioralFeature'.
+The class 'UML2_Operation' is a specialization of 'BehavioralFeature'.
+The class 'UML2_Property' is a specialization of 'StructuralFeature'.
+The class 'UML2_Activity' is a specialization of 'Behavior'.
+The class 'UML2_StructuredClassifier' is a specialization of 'Classifier'.
+The class 'UML2_AddStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'UML2_DurationObservationAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'UML2_ClearStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'UML2_Artifact' is a specialization of 'Classifier'.
+The class 'UML2_Extension' is a specialization of 'Association'.
+The class 'UML2_Association' is a specialization of 'Classifier'.
+The class 'UML2_RemoveStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UML2_Feature' and 'UML2_Classifier'. From 'UML2_Feature', the role 'UML2_Feature' has cardinality 0..*, and from 'UML2_Classifier', the role 'UML2_Classifier' has cardinality 0..*.
+An association connects 'UML2_StructuralFeature' and 'UML2_StructuralFeatureAction'. From 'UML2_StructuralFeature', the role 'UML2_StructuralFeature' has cardinality 0..*, and from 'UML2_StructuralFeatureAction', the role 'UML2_StructuralFeatureAction' has cardinality 0..*.

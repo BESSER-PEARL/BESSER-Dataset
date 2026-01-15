@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gdaniel/emc-neoemf/examples/org.eclipse.gmt.modisco.java/model/java.ecore

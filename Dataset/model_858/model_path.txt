@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gemoc/ModelingCrashCourse/material/fsm/org.gemoc.course.fsm.xfsm/model/XFSM.ecore

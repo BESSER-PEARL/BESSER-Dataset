@@ -1,0 +1,83 @@
+The domain model 'oclstdlib' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'OclElement' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlib_Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlib_Bag' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlib_OrderedSet' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlib_OclInvalid' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlib_UniqueCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlib_OclType' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlib_OclAny' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlib_OclVoid' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlib_OclSummable' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlib_Set' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlib_OclElement' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlib_OclMessage' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlib_OclComparable' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlib_OclTuple' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlib_Collection' represents an important domain concept.
+It has the following attributes: 'upper', which is of type str; 'lower', which is of type str.
+
+'OclVoid' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlib_OclLambda' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlib_OclState' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlib_OrderedCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'OclAny' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'oclstdlib_Collection' is a specialization of 'OclAny'.
+The class 'oclstdlib_OclComparable' is a specialization of 'OclAny'.
+The class 'oclstdlib_OclElement' is a specialization of 'OclAny'.
+The class 'oclstdlib_OclInvalid' is a specialization of 'OclVoid'.
+The class 'oclstdlib_OclLambda' is a specialization of 'OclAny'.
+The class 'oclstdlib_OclMessage' is a specialization of 'OclAny'.
+The class 'oclstdlib_OclState' is a specialization of 'OclAny'.
+The class 'oclstdlib_OclSummable' is a specialization of 'OclAny'.
+The class 'oclstdlib_OclTuple' is a specialization of 'OclAny'.
+The class 'oclstdlib_OclType' is a specialization of 'OclElement'.
+The class 'oclstdlib_OclVoid' is a specialization of 'OclAny'.
+
+Relationships between classes are modeled using associations.
+An association connects 'oclstdlib_OclElement' and 'oclstdlib_OclElement'. From 'oclstdlib_OclElement', the role 'oclstdlib_OclElement' has cardinality 0..*, and from 'oclstdlib_OclElement', the role 'oclstdlib_OclElement0' has cardinality 0..*.
+An association connects 'oclstdlib_OclElement' and 'oclstdlib_OclElement'. From 'oclstdlib_OclElement', the role 'oclstdlib_OclElement4' has cardinality 0..*, and from 'oclstdlib_OclElement', the role 'oclstdlib_OclElement2' has cardinality 0..*.

@@ -1,0 +1,33 @@
+The domain model 'type' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'type_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'type_ProcessingInstruction' represents an important domain concept.
+It has the following attributes: 'target', which is of type str; 'data', which is of type str.
+
+'type_SimpleAnyType' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'rawValue', which is of type str.
+
+'type_XMLTypeDocumentRoot' represents an important domain concept.
+It has the following attributes: 'cDATA', which is of type str; 'comment', which is of type str; 'text', which is of type str; 'mixed', which is of type str.
+
+'type_EDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'type_AnyType' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'any', which is of type str; 'mixed', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'type_SimpleAnyType' is a specialization of 'AnyType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'type_SimpleAnyType' and 'type_EDataType'. From 'type_SimpleAnyType', the role 'type_SimpleAnyType' has cardinality 0..*, and from 'type_EDataType', the role 'type_EDataType' has cardinality 0..*.
+An association connects 'type_EStringToStringMapEntry' and 'type_XMLTypeDocumentRoot'. From 'type_EStringToStringMapEntry', the role 'type_EStringToStringMapEntry' has cardinality 0..*, and from 'type_XMLTypeDocumentRoot', the role 'type_XMLTypeDocumentRoot' has cardinality 0..*.
+An association connects 'type_EStringToStringMapEntry' and 'type_XMLTypeDocumentRoot'. From 'type_EStringToStringMapEntry', the role 'type_EStringToStringMapEntry4' has cardinality 0..*, and from 'type_XMLTypeDocumentRoot', the role 'type_XMLTypeDocumentRoot3' has cardinality 0..*.
+An association connects 'type_ProcessingInstruction' and 'type_XMLTypeDocumentRoot'. From 'type_ProcessingInstruction', the role 'type_ProcessingInstruction' has cardinality 0..*, and from 'type_XMLTypeDocumentRoot', the role 'type_XMLTypeDocumentRoot6' has cardinality 0..*.

@@ -1,0 +1,68 @@
+The domain model 'faultTree' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'faultTree_ExternalEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'faultTree_ProbabalisticEvent' represents an important domain concept.
+It has one attribute: 'probability', which is of type float.
+
+'faultTree_FaultTree' represents an important domain concept.
+It does not declare any attributes.
+
+'FTElement' represents an important domain concept.
+It does not declare any attributes.
+
+'faultTree_OR_Gate' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'faultTree_UndevelopedEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'faultTree_AND_Gate' represents an important domain concept.
+It does not declare any attributes.
+
+'Gate' represents an important domain concept.
+It does not declare any attributes.
+
+'faultTree_IntermediateEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'faultTree_BasicEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'faultTree_Gate' represents an important domain concept.
+It does not declare any attributes.
+
+'faultTree_Event' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'description', which is of type str.
+
+'faultTree_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'faultTree_FTElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ProbabalisticEvent' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'faultTree_Connector' is a specialization of 'FTElement'.
+The class 'faultTree_FaultTree' is a specialization of 'FTElement'.
+The class 'faultTree_Event' is a specialization of 'FTElement'.
+The class 'faultTree_ProbabalisticEvent' is a specialization of 'Event'.
+The class 'faultTree_BasicEvent' is a specialization of 'ProbabalisticEvent'.
+The class 'faultTree_UndevelopedEvent' is a specialization of 'ProbabalisticEvent'.
+The class 'faultTree_ExternalEvent' is a specialization of 'ProbabalisticEvent'.
+The class 'faultTree_IntermediateEvent' is a specialization of 'Event'.
+The class 'faultTree_Gate' is a specialization of 'FTElement'.
+The class 'faultTree_AND_Gate' is a specialization of 'Gate'.
+The class 'faultTree_OR_Gate' is a specialization of 'Gate'.
+
+Relationships between classes are modeled using associations.
+An association connects 'faultTree_FTElement' and 'faultTree_Connector'. From 'faultTree_FTElement', the role 'faultTree_FTElement' has cardinality 0..*, and from 'faultTree_Connector', the role 'faultTree_Connector' has cardinality 0..*.
+An association connects 'faultTree_FTElement' and 'faultTree_Connector'. From 'faultTree_FTElement', the role 'faultTree_FTElement3' has cardinality 0..*, and from 'faultTree_Connector', the role 'faultTree_Connector2' has cardinality 0..*.

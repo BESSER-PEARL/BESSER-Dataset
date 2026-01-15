@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/SebastienBerger/IDM/.metadata/.plugins/org.eclipse.pde.core/Eclipse Application/org.eclipse.osgi/13/0/.cp/lib/kermeta.ecore

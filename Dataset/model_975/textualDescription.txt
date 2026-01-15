@@ -1,0 +1,224 @@
+The domain model 'henshin' describes the core structural elements and their relationships within the system.
+
+The model defines 45 main class(es).
+
+'UnaryFormula' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_And' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_ParameterMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_NestedCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_PriorityUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_Unit' represents an important domain concept.
+It has one attribute: 'activated', which is of type bool.
+
+'henshin_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_Attribute' represents an important domain concept.
+It has the following attributes: 'null', which is of type bool; 'constant', which is of type str; 'value', which is of type str.
+
+'GraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_Annotation' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'henshin_UnaryFormula' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryFormula' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_MultiUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_ConditionalUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'Formula' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_BinaryFormula' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_LoopUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_IteratedUnit' represents an important domain concept.
+It has one attribute: 'iterations', which is of type str.
+
+'henshin_Parameter' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'UnaryUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_NamedElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str.
+
+'henshin_IndependentUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_GraphElement' represents an important domain concept.
+It has one attribute: 'action', which is of type str.
+
+'henshin_Rule' represents an important domain concept.
+It has the following attributes: 'javaImports', which is of type str; 'checkDangling', which is of type bool; 'injectiveMatching', which is of type bool.
+
+'henshin_Xor' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_AttributeCondition' represents an important domain concept.
+It has one attribute: 'conditionText', which is of type str.
+
+'henshin_EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_UnaryUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_Formula' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_Edge' represents an important domain concept.
+It has the following attributes: 'index', which is of type str; 'indexConstant', which is of type str.
+
+'henshin_SequentialUnit' represents an important domain concept.
+It has the following attributes: 'strict', which is of type bool; 'rollback', which is of type bool.
+
+'Unit' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ParameterKind' defines the following possible values: 'OUT', 'INOUT', 'VAR', 'UNKNOWN', 'IN'.
+
+The model also captures inheritance relationships between classes.
+The class 'henshin_Annotation' is a specialization of 'ModelElement'.
+The class 'henshin_NamedElement' is a specialization of 'ModelElement'.
+The class 'henshin_Module' is a specialization of 'NamedElement'.
+The class 'henshin_Unit' is a specialization of 'NamedElement'.
+The class 'henshin_Rule' is a specialization of 'Unit'.
+The class 'henshin_Parameter' is a specialization of 'NamedElement'.
+The class 'henshin_ParameterMapping' is a specialization of 'ModelElement'.
+The class 'henshin_Graph' is a specialization of 'NamedElement'.
+The class 'henshin_Node' is a specialization of 'NamedElement'.
+The class 'henshin_Node' is a specialization of 'GraphElement'.
+The class 'henshin_Edge' is a specialization of 'ModelElement'.
+The class 'henshin_Edge' is a specialization of 'GraphElement'.
+The class 'henshin_Attribute' is a specialization of 'ModelElement'.
+The class 'henshin_Attribute' is a specialization of 'GraphElement'.
+The class 'henshin_AttributeCondition' is a specialization of 'NamedElement'.
+The class 'henshin_Mapping' is a specialization of 'ModelElement'.
+The class 'henshin_UnaryUnit' is a specialization of 'Unit'.
+The class 'henshin_MultiUnit' is a specialization of 'Unit'.
+The class 'henshin_IndependentUnit' is a specialization of 'MultiUnit'.
+The class 'henshin_SequentialUnit' is a specialization of 'MultiUnit'.
+The class 'henshin_ConditionalUnit' is a specialization of 'Unit'.
+The class 'henshin_PriorityUnit' is a specialization of 'MultiUnit'.
+The class 'henshin_IteratedUnit' is a specialization of 'UnaryUnit'.
+The class 'henshin_LoopUnit' is a specialization of 'UnaryUnit'.
+The class 'henshin_NestedCondition' is a specialization of 'ModelElement'.
+The class 'henshin_NestedCondition' is a specialization of 'Formula'.
+The class 'henshin_UnaryFormula' is a specialization of 'ModelElement'.
+The class 'henshin_UnaryFormula' is a specialization of 'Formula'.
+The class 'henshin_BinaryFormula' is a specialization of 'ModelElement'.
+The class 'henshin_BinaryFormula' is a specialization of 'Formula'.
+The class 'henshin_And' is a specialization of 'BinaryFormula'.
+The class 'henshin_Or' is a specialization of 'BinaryFormula'.
+The class 'henshin_Xor' is a specialization of 'BinaryFormula'.
+The class 'henshin_Not' is a specialization of 'UnaryFormula'.
+
+Relationships between classes are modeled using associations.
+An association connects 'henshin_ModelElement' and 'henshin_Annotation'. From 'henshin_ModelElement', the role 'henshin_ModelElement' has cardinality 0..*, and from 'henshin_Annotation', the role 'henshin_Annotation' has cardinality 0..*.
+An association connects 'henshin_Module' and 'henshin_Module'. From 'henshin_Module', the role 'superModule' has cardinality 0..*, and from 'henshin_Module', the role 'Module' has cardinality 0..*.
+An association connects 'henshin_Module' and 'henshin_Module'. From 'henshin_Module', the role 'subModules' has cardinality 0..*, and from 'henshin_Module', the role 'Module5' has cardinality 0..*.
+An association connects 'henshin_Module' and 'henshin_EPackage'. From 'henshin_Module', the role 'henshin_Module' has cardinality 0..*, and from 'henshin_EPackage', the role 'henshin_EPackage' has cardinality 0..*.
+An association connects 'henshin_Module' and 'henshin_Unit'. From 'henshin_Module', the role 'henshin_Module8' has cardinality 0..*, and from 'henshin_Unit', the role 'henshin_Unit' has cardinality 0..*.
+An association connects 'henshin_Graph' and 'henshin_Module'. From 'henshin_Graph', the role 'henshin_Graph' has cardinality 0..*, and from 'henshin_Module', the role 'henshin_Module10' has cardinality 0..*.
+An association connects 'henshin_Unit' and 'henshin_Parameter'. From 'henshin_Unit', the role 'unit' has cardinality 0..*, and from 'henshin_Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'henshin_ParameterMapping' and 'henshin_Unit'. From 'henshin_ParameterMapping', the role 'henshin_ParameterMapping' has cardinality 0..*, and from 'henshin_Unit', the role 'henshin_Unit13' has cardinality 0..*.
+An association connects 'henshin_Rule' and 'henshin_Graph'. From 'henshin_Rule', the role 'henshin_Rule' has cardinality 0..*, and from 'henshin_Graph', the role 'henshin_Graph15' has cardinality 0..*.
+An association connects 'henshin_Rule' and 'henshin_Graph'. From 'henshin_Rule', the role 'henshin_Rule17' has cardinality 0..*, and from 'henshin_Graph', the role 'henshin_Graph18' has cardinality 0..*.
+An association connects 'henshin_Rule' and 'henshin_AttributeCondition'. From 'henshin_Rule', the role 'rule' has cardinality 0..*, and from 'henshin_AttributeCondition', the role 'AttributeCondition' has cardinality 0..*.
+An association connects 'henshin_Rule' and 'henshin_Mapping'. From 'henshin_Rule', the role 'henshin_Rule21' has cardinality 0..*, and from 'henshin_Mapping', the role 'henshin_Mapping' has cardinality 0..*.
+An association connects 'henshin_Rule' and 'henshin_Rule'. From 'henshin_Rule', the role 'henshin_Rule22' has cardinality 0..*, and from 'henshin_Rule', the role 'henshin_Rule24' has cardinality 0..*.
+An association connects 'henshin_Mapping' and 'henshin_Rule'. From 'henshin_Mapping', the role 'henshin_Mapping27' has cardinality 0..*, and from 'henshin_Rule', the role 'henshin_Rule26' has cardinality 0..*.
+An association connects 'henshin_Unit' and 'henshin_Parameter'. From 'henshin_Unit', the role 'Unit' has cardinality 0..*, and from 'henshin_Parameter', the role 'parameters' has cardinality 0..*.
+An association connects 'henshin_EClassifier' and 'henshin_Parameter'. From 'henshin_EClassifier', the role 'henshin_EClassifier' has cardinality 0..*, and from 'henshin_Parameter', the role 'henshin_Parameter' has cardinality 0..*.
+An association connects 'henshin_ParameterMapping' and 'henshin_Parameter'. From 'henshin_ParameterMapping', the role 'henshin_ParameterMapping31' has cardinality 0..*, and from 'henshin_Parameter', the role 'henshin_Parameter32' has cardinality 0..*.
+An association connects 'henshin_Parameter' and 'henshin_ParameterMapping'. From 'henshin_Parameter', the role 'henshin_Parameter35' has cardinality 0..*, and from 'henshin_ParameterMapping', the role 'henshin_ParameterMapping34' has cardinality 0..*.
+An association connects 'henshin_Graph' and 'henshin_Node'. From 'henshin_Graph', the role 'graph' has cardinality 0..*, and from 'henshin_Node', the role 'Node' has cardinality 0..*.
+An association connects 'henshin_Edge' and 'henshin_Graph'. From 'henshin_Edge', the role 'Edge' has cardinality 0..*, and from 'henshin_Graph', the role 'graph38' has cardinality 0..*.
+An association connects 'henshin_Graph' and 'henshin_Formula'. From 'henshin_Graph', the role 'henshin_Graph40' has cardinality 0..*, and from 'henshin_Formula', the role 'henshin_Formula' has cardinality 0..*.
+An association connects 'henshin_Node' and 'henshin_EClass'. From 'henshin_Node', the role 'henshin_Node' has cardinality 0..*, and from 'henshin_EClass', the role 'henshin_EClass' has cardinality 0..*.
+An association connects 'henshin_Node' and 'henshin_Attribute'. From 'henshin_Node', the role 'node' has cardinality 0..*, and from 'henshin_Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'henshin_Graph' and 'henshin_Node'. From 'henshin_Graph', the role 'Graph' has cardinality 0..*, and from 'henshin_Node', the role 'nodes' has cardinality 0..*.
+An association connects 'henshin_Edge' and 'henshin_Node'. From 'henshin_Edge', the role 'Edge45' has cardinality 0..*, and from 'henshin_Node', the role 'target' has cardinality 0..*.
+An association connects 'henshin_Edge' and 'henshin_Node'. From 'henshin_Edge', the role 'Edge47' has cardinality 0..*, and from 'henshin_Node', the role 'source' has cardinality 0..*.
+An association connects 'henshin_Node' and 'henshin_Edge'. From 'henshin_Node', the role 'Node49' has cardinality 0..*, and from 'henshin_Edge', the role 'outgoing' has cardinality 0..*.
+An association connects 'henshin_Edge' and 'henshin_Node'. From 'henshin_Edge', the role 'incoming' has cardinality 0..*, and from 'henshin_Node', the role 'Node51' has cardinality 0..*.
+An association connects 'henshin_Edge' and 'henshin_EReference'. From 'henshin_Edge', the role 'henshin_Edge' has cardinality 0..*, and from 'henshin_EReference', the role 'henshin_EReference' has cardinality 0..*.
+An association connects 'henshin_Edge' and 'henshin_Graph'. From 'henshin_Edge', the role 'edges' has cardinality 0..*, and from 'henshin_Graph', the role 'Graph54' has cardinality 0..*.
+An association connects 'henshin_Attribute' and 'henshin_EAttribute'. From 'henshin_Attribute', the role 'henshin_Attribute' has cardinality 0..*, and from 'henshin_EAttribute', the role 'henshin_EAttribute' has cardinality 0..*.
+An association connects 'henshin_Attribute' and 'henshin_Node'. From 'henshin_Attribute', the role 'attributes' has cardinality 0..*, and from 'henshin_Node', the role 'Node57' has cardinality 0..*.
+An association connects 'henshin_AttributeCondition' and 'henshin_Rule'. From 'henshin_AttributeCondition', the role 'attributeConditions' has cardinality 0..*, and from 'henshin_Rule', the role 'Rule' has cardinality 0..*.
+An association connects 'henshin_Node' and 'henshin_Mapping'. From 'henshin_Node', the role 'henshin_Node61' has cardinality 0..*, and from 'henshin_Mapping', the role 'henshin_Mapping60' has cardinality 0..*.
+An association connects 'henshin_Node' and 'henshin_Mapping'. From 'henshin_Node', the role 'henshin_Node64' has cardinality 0..*, and from 'henshin_Mapping', the role 'henshin_Mapping63' has cardinality 0..*.
+An association connects 'henshin_Unit' and 'henshin_UnaryUnit'. From 'henshin_Unit', the role 'henshin_Unit66' has cardinality 0..*, and from 'henshin_UnaryUnit', the role 'henshin_UnaryUnit' has cardinality 0..*.
+An association connects 'henshin_Unit' and 'henshin_MultiUnit'. From 'henshin_Unit', the role 'henshin_Unit68' has cardinality 0..*, and from 'henshin_MultiUnit', the role 'henshin_MultiUnit' has cardinality 0..*.
+An association connects 'henshin_ConditionalUnit' and 'henshin_Unit'. From 'henshin_ConditionalUnit', the role 'henshin_ConditionalUnit' has cardinality 0..*, and from 'henshin_Unit', the role 'henshin_Unit70' has cardinality 0..*.
+An association connects 'henshin_ConditionalUnit' and 'henshin_Unit'. From 'henshin_ConditionalUnit', the role 'henshin_ConditionalUnit72' has cardinality 0..*, and from 'henshin_Unit', the role 'henshin_Unit73' has cardinality 0..*.
+An association connects 'henshin_ConditionalUnit' and 'henshin_Unit'. From 'henshin_ConditionalUnit', the role 'henshin_ConditionalUnit75' has cardinality 0..*, and from 'henshin_Unit', the role 'henshin_Unit76' has cardinality 0..*.
+An association connects 'henshin_NestedCondition' and 'henshin_Graph'. From 'henshin_NestedCondition', the role 'henshin_NestedCondition' has cardinality 0..*, and from 'henshin_Graph', the role 'henshin_Graph78' has cardinality 0..*.
+An association connects 'henshin_Mapping' and 'henshin_NestedCondition'. From 'henshin_Mapping', the role 'henshin_Mapping81' has cardinality 0..*, and from 'henshin_NestedCondition', the role 'henshin_NestedCondition80' has cardinality 0..*.
+An association connects 'henshin_Formula' and 'henshin_UnaryFormula'. From 'henshin_Formula', the role 'henshin_Formula83' has cardinality 0..*, and from 'henshin_UnaryFormula', the role 'henshin_UnaryFormula' has cardinality 0..*.
+An association connects 'henshin_BinaryFormula' and 'henshin_Formula'. From 'henshin_BinaryFormula', the role 'henshin_BinaryFormula' has cardinality 0..*, and from 'henshin_Formula', the role 'henshin_Formula85' has cardinality 0..*.
+An association connects 'henshin_BinaryFormula' and 'henshin_Formula'. From 'henshin_BinaryFormula', the role 'henshin_BinaryFormula87' has cardinality 0..*, and from 'henshin_Formula', the role 'henshin_Formula88' has cardinality 0..*.

@@ -1,0 +1,71 @@
+The domain model 'faultTree' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'faultTree_PrimaryEvent' represents an important domain concept.
+It has the following attributes: 'probability', which is of type float; 'type', which is of type str.
+
+'Transfer' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'faultTree_IntermediateEvent' represents an important domain concept.
+It has one attribute: 'probability', which is of type float.
+
+'faultTree_ConditioningEvent' represents an important domain concept.
+It has one attribute: 'condition', which is of type str.
+
+'faultTree_TransferIn' represents an important domain concept.
+It does not declare any attributes.
+
+'faultTree_TransferOut' represents an important domain concept.
+It does not declare any attributes.
+
+'faultTree_Event' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str.
+
+'faultTree_Transfer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'faultTree_Gate' represents an important domain concept.
+It has the following attributes: 'probability', which is of type float; 'type', which is of type str; 'name', which is of type str.
+
+'faultTree_FaultTree' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PrimaryEventType' defines the following possible values: 'EXTERNAL', 'UNDEVELOPED', 'BASIC'.
+The enumeration 'GateType' defines the following possible values: 'XOR', 'PAND', 'OR', 'AND', 'INHIBIT'.
+
+The model also captures inheritance relationships between classes.
+The class 'faultTree_IntermediateEvent' is a specialization of 'Event'.
+The class 'faultTree_PrimaryEvent' is a specialization of 'Event'.
+The class 'faultTree_ConditioningEvent' is a specialization of 'Event'.
+The class 'faultTree_TransferIn' is a specialization of 'Transfer'.
+The class 'faultTree_TransferOut' is a specialization of 'Transfer'.
+
+Relationships between classes are modeled using associations.
+An association connects 'faultTree_FaultTree' and 'faultTree_Gate'. From 'faultTree_FaultTree', the role 'faultTree' has cardinality 0..*, and from 'faultTree_Gate', the role 'Gate' has cardinality 0..*.
+An association connects 'faultTree_Event' and 'faultTree_FaultTree'. From 'faultTree_Event', the role 'faultTree_Event' has cardinality 0..*, and from 'faultTree_FaultTree', the role 'faultTree_FaultTree' has cardinality 0..*.
+An association connects 'faultTree_IntermediateEvent' and 'faultTree_FaultTree'. From 'faultTree_IntermediateEvent', the role 'faultTree_IntermediateEvent' has cardinality 0..*, and from 'faultTree_FaultTree', the role 'faultTree_FaultTree3' has cardinality 0..*.
+An association connects 'faultTree_FaultTree' and 'faultTree_PrimaryEvent'. From 'faultTree_FaultTree', the role 'faultTree_FaultTree5' has cardinality 0..*, and from 'faultTree_PrimaryEvent', the role 'faultTree_PrimaryEvent' has cardinality 0..*.
+An association connects 'faultTree_FaultTree' and 'faultTree_ConditioningEvent'. From 'faultTree_FaultTree', the role 'faultTree_FaultTree7' has cardinality 0..*, and from 'faultTree_ConditioningEvent', the role 'faultTree_ConditioningEvent' has cardinality 0..*.
+An association connects 'faultTree_TransferOut' and 'faultTree_FaultTree'. From 'faultTree_TransferOut', the role 'TransferOut' has cardinality 0..*, and from 'faultTree_FaultTree', the role 'faultTree9' has cardinality 0..*.
+An association connects 'faultTree_TransferIn' and 'faultTree_FaultTree'. From 'faultTree_TransferIn', the role 'TransferIn' has cardinality 0..*, and from 'faultTree_FaultTree', the role 'faultTree11' has cardinality 0..*.
+An association connects 'faultTree_IntermediateEvent' and 'faultTree_FaultTree'. From 'faultTree_IntermediateEvent', the role 'faultTree_IntermediateEvent14' has cardinality 0..*, and from 'faultTree_FaultTree', the role 'faultTree_FaultTree13' has cardinality 0..*.
+An association connects 'faultTree_Gate' and 'faultTree_Event'. From 'faultTree_Gate', the role 'topGates' has cardinality 0..*, and from 'faultTree_Event', the role 'Event' has cardinality 0..*.
+An association connects 'faultTree_IntermediateEvent' and 'faultTree_Gate'. From 'faultTree_IntermediateEvent', the role 'IntermediateEvent' has cardinality 0..*, and from 'faultTree_Gate', the role 'bottomGate' has cardinality 0..*.
+An association connects 'faultTree_Gate' and 'faultTree_FaultTree'. From 'faultTree_Gate', the role 'gates' has cardinality 0..*, and from 'faultTree_FaultTree', the role 'FaultTree' has cardinality 0..*.
+An association connects 'faultTree_Gate' and 'faultTree_Event'. From 'faultTree_Gate', the role 'Gate19' has cardinality 0..*, and from 'faultTree_Event', the role 'inputs' has cardinality 0..*.
+An association connects 'faultTree_FaultTree' and 'faultTree_Event'. From 'faultTree_FaultTree', the role 'faultTree_FaultTree22' has cardinality 0..*, and from 'faultTree_Event', the role 'faultTree_Event21' has cardinality 0..*.
+An association connects 'faultTree_Gate' and 'faultTree_IntermediateEvent'. From 'faultTree_Gate', the role 'Gate24' has cardinality 0..*, and from 'faultTree_IntermediateEvent', the role 'output' has cardinality 0..*.
+An association connects 'faultTree_IntermediateEvent' and 'faultTree_IntermediateEvent'. From 'faultTree_IntermediateEvent', the role 'IntermediateEvent27' has cardinality 0..*, and from 'faultTree_IntermediateEvent', the role 'bottomEvent' has cardinality 0..*.
+An association connects 'faultTree_IntermediateEvent' and 'faultTree_IntermediateEvent'. From 'faultTree_IntermediateEvent', the role 'IntermediateEvent30' has cardinality 0..*, and from 'faultTree_IntermediateEvent', the role 'topEvent' has cardinality 0..*.
+An association connects 'faultTree_TransferIn' and 'faultTree_IntermediateEvent'. From 'faultTree_TransferIn', the role 'TransferIn32' has cardinality 0..*, and from 'faultTree_IntermediateEvent', the role 'event' has cardinality 0..*.
+An association connects 'faultTree_IntermediateEvent' and 'faultTree_TransferOut'. From 'faultTree_IntermediateEvent', the role 'event34' has cardinality 0..*, and from 'faultTree_TransferOut', the role 'TransferOut35' has cardinality 0..*.
+An association connects 'faultTree_IntermediateEvent' and 'faultTree_TransferIn'. From 'faultTree_IntermediateEvent', the role 'IntermediateEvent37' has cardinality 0..*, and from 'faultTree_TransferIn', the role 'transferIn' has cardinality 0..*.
+An association connects 'faultTree_FaultTree' and 'faultTree_TransferIn'. From 'faultTree_FaultTree', the role 'FaultTree39' has cardinality 0..*, and from 'faultTree_TransferIn', the role 'transferIns' has cardinality 0..*.
+An association connects 'faultTree_TransferOut' and 'faultTree_IntermediateEvent'. From 'faultTree_TransferOut', the role 'transferOut' has cardinality 0..*, and from 'faultTree_IntermediateEvent', the role 'IntermediateEvent41' has cardinality 0..*.
+An association connects 'faultTree_FaultTree' and 'faultTree_TransferOut'. From 'faultTree_FaultTree', the role 'FaultTree44' has cardinality 0..*, and from 'faultTree_TransferOut', the role 'transferOut43' has cardinality 0..*.

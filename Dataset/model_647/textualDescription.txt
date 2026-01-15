@@ -1,0 +1,257 @@
+The domain model 'cellsheet' describes the core structural elements and their relationships within the system.
+
+The model defines 61 main class(es).
+
+'cellsheet_Multiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Book' represents an important domain concept.
+It has one attribute: 'bookname', which is of type str.
+
+'cellsheet_AstEval' represents an important domain concept.
+It has the following attributes: 'numberValue', which is of type str; 'text', which is of type str; 'isError', which is of type bool.
+
+'cellsheet_Concatenation' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_LT' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_NEQ' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_DateCell' represents an important domain concept.
+It has one attribute: 'value', which is of type date.
+
+'Operand' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_NumericCell' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cellsheet_PostfixOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Logical' represents an important domain concept.
+It does not declare any attributes.
+
+'Ast' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Workspace' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Ast' represents an important domain concept.
+It does not declare any attributes.
+
+'PostfixOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'HasA1' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Negation' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Number' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Operand' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Row' represents an important domain concept.
+It has one attribute: 'rowIndex', which is of type int.
+
+'cellsheet_HasA1' represents an important domain concept.
+It has one attribute: 'a1', which is of type str.
+
+'cellsheet_EQ' represents an important domain concept.
+It does not declare any attributes.
+
+'InfixOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Exponentiation' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_GT' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Text' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_EStringToTokenEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'cellsheet_RelativeRange' represents an important domain concept.
+It does not declare any attributes.
+
+'HasId' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Union' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Token' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Cell' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_PrefixOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Intersection' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Noop' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Addition' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Percent' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_CellFormat' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cellsheet_Unknown' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Error' represents an important domain concept.
+It does not declare any attributes.
+
+'PrefixOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_BlankCell' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Ref' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_FormulaCell' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cellsheet_Cell' represents an important domain concept.
+It has one attribute: 'colIndex', which is of type int.
+
+'cellsheet_HasId' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'cellsheet_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Range' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_InfixOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Sheet' represents an important domain concept.
+It has the following attributes: 'sheetName', which is of type str; 'sheetIndex', which is of type int.
+
+'cellsheet_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_Subtraction' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_GTE' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_RelativeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_LTE' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_BooleanCell' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cellsheet_Ref' represents an important domain concept.
+It does not declare any attributes.
+
+'cellsheet_TextCell' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'cellsheet_Book' is a specialization of 'HasId'.
+The class 'cellsheet_Book' is a specialization of 'HasA1'.
+The class 'cellsheet_Sheet' is a specialization of 'HasId'.
+The class 'cellsheet_Sheet' is a specialization of 'HasA1'.
+The class 'cellsheet_Row' is a specialization of 'HasId'.
+The class 'cellsheet_Row' is a specialization of 'HasA1'.
+The class 'cellsheet_Cell' is a specialization of 'HasId'.
+The class 'cellsheet_Cell' is a specialization of 'HasA1'.
+The class 'cellsheet_BlankCell' is a specialization of 'Cell'.
+The class 'cellsheet_TextCell' is a specialization of 'Cell'.
+The class 'cellsheet_NumericCell' is a specialization of 'Cell'.
+The class 'cellsheet_BooleanCell' is a specialization of 'Cell'.
+The class 'cellsheet_DateCell' is a specialization of 'Cell'.
+The class 'cellsheet_FormulaCell' is a specialization of 'Cell'.
+The class 'cellsheet_Operand' is a specialization of 'Ast'.
+The class 'cellsheet_Operation' is a specialization of 'Ast'.
+The class 'cellsheet_PrefixOperator' is a specialization of 'Ast'.
+The class 'cellsheet_InfixOperator' is a specialization of 'Ast'.
+The class 'cellsheet_PostfixOperator' is a specialization of 'Ast'.
+The class 'cellsheet_Unknown' is a specialization of 'Ast'.
+The class 'cellsheet_Noop' is a specialization of 'Ast'.
+The class 'cellsheet_Text' is a specialization of 'Operand'.
+The class 'cellsheet_Number' is a specialization of 'Operand'.
+The class 'cellsheet_Logical' is a specialization of 'Operand'.
+The class 'cellsheet_Error' is a specialization of 'Operand'.
+The class 'cellsheet_Ref' is a specialization of 'Operand'.
+The class 'cellsheet_Range' is a specialization of 'Operand'.
+The class 'cellsheet_RelativeRef' is a specialization of 'Ref'.
+The class 'cellsheet_RelativeRange' is a specialization of 'Ref'.
+The class 'cellsheet_Function' is a specialization of 'Operation'.
+The class 'cellsheet_Plus' is a specialization of 'PrefixOperator'.
+The class 'cellsheet_Negation' is a specialization of 'PrefixOperator'.
+The class 'cellsheet_Percent' is a specialization of 'PostfixOperator'.
+The class 'cellsheet_Exponentiation' is a specialization of 'InfixOperator'.
+The class 'cellsheet_Multiplication' is a specialization of 'InfixOperator'.
+The class 'cellsheet_Division' is a specialization of 'InfixOperator'.
+The class 'cellsheet_Addition' is a specialization of 'InfixOperator'.
+The class 'cellsheet_Subtraction' is a specialization of 'InfixOperator'.
+The class 'cellsheet_Concatenation' is a specialization of 'InfixOperator'.
+The class 'cellsheet_EQ' is a specialization of 'InfixOperator'.
+The class 'cellsheet_LT' is a specialization of 'InfixOperator'.
+The class 'cellsheet_GT' is a specialization of 'InfixOperator'.
+The class 'cellsheet_LTE' is a specialization of 'InfixOperator'.
+The class 'cellsheet_GTE' is a specialization of 'InfixOperator'.
+The class 'cellsheet_NEQ' is a specialization of 'InfixOperator'.
+The class 'cellsheet_Intersection' is a specialization of 'InfixOperator'.
+The class 'cellsheet_Union' is a specialization of 'InfixOperator'.
+The class 'cellsheet_CellFormat' is a specialization of 'HasId'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cellsheet_EStringToTokenEntry' and 'cellsheet_Token'. From 'cellsheet_EStringToTokenEntry', the role 'cellsheet_EStringToTokenEntry' has cardinality 0..*, and from 'cellsheet_Token', the role 'cellsheet_Token' has cardinality 0..*.
+An association connects 'cellsheet_Book' and 'cellsheet_Workspace'. From 'cellsheet_Book', the role 'Book' has cardinality 0..*, and from 'cellsheet_Workspace', the role 'workspace' has cardinality 0..*.
+An association connects 'cellsheet_EStringToTokenEntry' and 'cellsheet_Workspace'. From 'cellsheet_EStringToTokenEntry', the role 'cellsheet_EStringToTokenEntry3' has cardinality 0..*, and from 'cellsheet_Workspace', the role 'cellsheet_Workspace' has cardinality 0..*.
+An association connects 'cellsheet_Workspace' and 'cellsheet_Book'. From 'cellsheet_Workspace', the role 'Workspace' has cardinality 0..*, and from 'cellsheet_Book', the role 'books' has cardinality 0..*.
+An association connects 'cellsheet_CellFormat' and 'cellsheet_Book'. From 'cellsheet_CellFormat', the role 'CellFormat' has cardinality 0..*, and from 'cellsheet_Book', the role 'book' has cardinality 0..*.
+An association connects 'cellsheet_Sheet' and 'cellsheet_Book'. From 'cellsheet_Sheet', the role 'Sheet' has cardinality 0..*, and from 'cellsheet_Book', the role 'book7' has cardinality 0..*.
+An association connects 'cellsheet_Book' and 'cellsheet_Sheet'. From 'cellsheet_Book', the role 'Book9' has cardinality 0..*, and from 'cellsheet_Sheet', the role 'sheets' has cardinality 0..*.
+An association connects 'cellsheet_Row' and 'cellsheet_Sheet'. From 'cellsheet_Row', the role 'Row' has cardinality 0..*, and from 'cellsheet_Sheet', the role 'sheet' has cardinality 0..*.
+An association connects 'cellsheet_Sheet' and 'cellsheet_Row'. From 'cellsheet_Sheet', the role 'Sheet12' has cardinality 0..*, and from 'cellsheet_Row', the role 'rows' has cardinality 0..*.
+An association connects 'cellsheet_Row' and 'cellsheet_Cell'. From 'cellsheet_Row', the role 'row' has cardinality 0..*, and from 'cellsheet_Cell', the role 'Cell' has cardinality 0..*.
+An association connects 'cellsheet_Cell' and 'cellsheet_Row'. From 'cellsheet_Cell', the role 'cells' has cardinality 0..*, and from 'cellsheet_Row', the role 'Row15' has cardinality 0..*.
+An association connects 'cellsheet_Cell' and 'cellsheet_Ast'. From 'cellsheet_Cell', the role 'cell' has cardinality 0..*, and from 'cellsheet_Ast', the role 'Ast' has cardinality 0..*.
+An association connects 'cellsheet_Ast' and 'cellsheet_Cell'. From 'cellsheet_Ast', the role 'cellsheet_Ast' has cardinality 0..*, and from 'cellsheet_Cell', the role 'cellsheet_Cell' has cardinality 0..*.
+An association connects 'cellsheet_Token' and 'cellsheet_Ast'. From 'cellsheet_Token', the role 'token' has cardinality 0..*, and from 'cellsheet_Ast', the role 'Ast19' has cardinality 0..*.
+An association connects 'cellsheet_Ast' and 'cellsheet_Ast'. From 'cellsheet_Ast', the role 'cellsheet_Ast22' has cardinality 0..*, and from 'cellsheet_Ast', the role 'cellsheet_Ast20' has cardinality 0..*.
+An association connects 'cellsheet_Ast' and 'cellsheet_Cell'. From 'cellsheet_Ast', the role 'asts' has cardinality 0..*, and from 'cellsheet_Cell', the role 'Cell24' has cardinality 0..*.
+An association connects 'cellsheet_Ast' and 'cellsheet_Token'. From 'cellsheet_Ast', the role 'usedBy' has cardinality 0..*, and from 'cellsheet_Token', the role 'Token' has cardinality 0..*.
+An association connects 'cellsheet_AstEval' and 'cellsheet_Ast'. From 'cellsheet_AstEval', the role 'cellsheet_AstEval' has cardinality 0..*, and from 'cellsheet_Ast', the role 'cellsheet_Ast27' has cardinality 0..*.
+An association connects 'cellsheet_Book' and 'cellsheet_CellFormat'. From 'cellsheet_Book', the role 'Book29' has cardinality 0..*, and from 'cellsheet_CellFormat', the role 'cellFormats' has cardinality 0..*.

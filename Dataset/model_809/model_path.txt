@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/fcoulon/shiny-guide/examples/language_workbench/org.eclipse.gemoc.sample.ale.fsm.model/model/fsm.ecore

@@ -1,0 +1,19 @@
+The domain model 'SimpleFamilies' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'SimpleFamilies_FamilyMember' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SimpleFamilies_FamilyRegister' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleFamilies_Family' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'SimpleFamilies_Family' and 'SimpleFamilies_FamilyRegister'. From 'SimpleFamilies_Family', the role 'SimpleFamilies_Family' has cardinality 0..*, and from 'SimpleFamilies_FamilyRegister', the role 'SimpleFamilies_FamilyRegister' has cardinality 0..*.
+An association connects 'SimpleFamilies_FamilyMember' and 'SimpleFamilies_Family'. From 'SimpleFamilies_FamilyMember', the role 'SimpleFamilies_FamilyMember' has cardinality 0..*, and from 'SimpleFamilies_Family', the role 'SimpleFamilies_Family2' has cardinality 0..*.
+An association connects 'SimpleFamilies_FamilyMember' and 'SimpleFamilies_Family'. From 'SimpleFamilies_FamilyMember', the role 'SimpleFamilies_FamilyMember5' has cardinality 0..*, and from 'SimpleFamilies_Family', the role 'SimpleFamilies_Family4' has cardinality 0..*.
+An association connects 'SimpleFamilies_Family' and 'SimpleFamilies_FamilyMember'. From 'SimpleFamilies_Family', the role 'SimpleFamilies_Family7' has cardinality 0..*, and from 'SimpleFamilies_FamilyMember', the role 'SimpleFamilies_FamilyMember8' has cardinality 0..*.
+An association connects 'SimpleFamilies_Family' and 'SimpleFamilies_FamilyMember'. From 'SimpleFamilies_Family', the role 'SimpleFamilies_Family10' has cardinality 0..*, and from 'SimpleFamilies_FamilyMember', the role 'SimpleFamilies_FamilyMember11' has cardinality 0..*.

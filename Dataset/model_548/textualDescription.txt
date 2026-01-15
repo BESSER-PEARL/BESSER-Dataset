@@ -1,0 +1,68 @@
+The domain model 'trackit' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'trackit_Member' represents an important domain concept.
+It has the following attributes: 'lastName', which is of type str; 'firstName', which is of type str; 'fullName', which is of type str.
+
+'trackit_IssueTracker' represents an important domain concept.
+It has one attribute: 'projectName', which is of type str.
+
+'trackit_Issue' represents an important domain concept.
+It has the following attributes: 'dateCreated', which is of type str; 'issueType', which is of type str; 'title', which is of type str; 'status', which is of type str; 'description', which is of type str.
+
+'trackit_Team' represents an important domain concept.
+It has one attribute: 'teamName', which is of type str.
+
+'trackit_Version' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'status', which is of type str.
+
+'trackit_Product' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'trackit_Identifiable' represents an important domain concept.
+It has one attribute: 'uuid', which is of type str.
+
+'Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'trackit_Comment' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'dateCreated', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VersionStatus' defines the following possible values: 'COMPLETE', 'IN_PROGRESS'.
+The enumeration 'IssueType' defines the following possible values: 'BUG', 'DUPLICATE', 'ENHANCEMENT', 'WONT_FIX', 'HELP_REQUIRED'.
+The enumeration 'IssueStatus' defines the following possible values: 'CLOSED', 'OPEN'.
+
+The model also captures inheritance relationships between classes.
+The class 'trackit_Member' is a specialization of 'Identifiable'.
+The class 'trackit_Team' is a specialization of 'Identifiable'.
+The class 'trackit_Product' is a specialization of 'Identifiable'.
+The class 'trackit_Version' is a specialization of 'Identifiable'.
+The class 'trackit_Issue' is a specialization of 'Identifiable'.
+The class 'trackit_Comment' is a specialization of 'Identifiable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trackit_IssueTracker' and 'trackit_Team'. From 'trackit_IssueTracker', the role 'trackit_IssueTracker' has cardinality 0..*, and from 'trackit_Team', the role 'trackit_Team' has cardinality 0..*.
+An association connects 'trackit_IssueTracker' and 'trackit_Product'. From 'trackit_IssueTracker', the role 'trackit_IssueTracker2' has cardinality 0..*, and from 'trackit_Product', the role 'trackit_Product' has cardinality 0..*.
+An association connects 'trackit_Issue' and 'trackit_IssueTracker'. From 'trackit_Issue', the role 'trackit_Issue' has cardinality 0..*, and from 'trackit_IssueTracker', the role 'trackit_IssueTracker4' has cardinality 0..*.
+An association connects 'trackit_Member' and 'trackit_IssueTracker'. From 'trackit_Member', the role 'trackit_Member' has cardinality 0..*, and from 'trackit_IssueTracker', the role 'trackit_IssueTracker6' has cardinality 0..*.
+An association connects 'trackit_Member' and 'trackit_Issue'. From 'trackit_Member', the role 'author' has cardinality 0..*, and from 'trackit_Issue', the role 'Issue' has cardinality 0..*.
+An association connects 'trackit_Member' and 'trackit_Comment'. From 'trackit_Member', the role 'author9' has cardinality 0..*, and from 'trackit_Comment', the role 'Comment' has cardinality 0..*.
+An association connects 'trackit_Issue' and 'trackit_Member'. From 'trackit_Issue', the role 'Issue11' has cardinality 0..*, and from 'trackit_Member', the role 'assignedTo' has cardinality 0..*.
+An association connects 'trackit_Member' and 'trackit_Team'. From 'trackit_Member', the role 'trackit_Member14' has cardinality 0..*, and from 'trackit_Team', the role 'trackit_Team13' has cardinality 0..*.
+An association connects 'trackit_Version' and 'trackit_Product'. From 'trackit_Version', the role 'trackit_Version' has cardinality 0..*, and from 'trackit_Product', the role 'trackit_Product16' has cardinality 0..*.
+An association connects 'trackit_Product' and 'trackit_Version'. From 'trackit_Product', the role 'trackit_Product19' has cardinality 0..*, and from 'trackit_Version', the role 'trackit_Version18' has cardinality 0..*.
+An association connects 'trackit_Issue' and 'trackit_Version'. From 'trackit_Issue', the role 'Issue21' has cardinality 0..*, and from 'trackit_Version', the role 'versionsAffected' has cardinality 0..*.
+An association connects 'trackit_Issue' and 'trackit_Member'. From 'trackit_Issue', the role 'issuesCreated' has cardinality 0..*, and from 'trackit_Member', the role 'Member' has cardinality 0..*.
+An association connects 'trackit_Issue' and 'trackit_Issue'. From 'trackit_Issue', the role 'blocking' has cardinality 0..*, and from 'trackit_Issue', the role 'Issue25' has cardinality 0..*.
+An association connects 'trackit_Issue' and 'trackit_Member'. From 'trackit_Issue', the role 'issuesAssigned' has cardinality 0..*, and from 'trackit_Member', the role 'Member27' has cardinality 0..*.
+An association connects 'trackit_Comment' and 'trackit_Issue'. From 'trackit_Comment', the role 'Comment29' has cardinality 0..*, and from 'trackit_Issue', the role 'issue' has cardinality 0..*.
+An association connects 'trackit_Issue' and 'trackit_Issue'. From 'trackit_Issue', the role 'trackit_Issue32' has cardinality 0..*, and from 'trackit_Issue', the role 'trackit_Issue30' has cardinality 0..*.
+An association connects 'trackit_Issue' and 'trackit_Issue'. From 'trackit_Issue', the role 'trackit_Issue33' has cardinality 0..*, and from 'trackit_Issue', the role 'trackit_Issue35' has cardinality 0..*.
+An association connects 'trackit_Issue' and 'trackit_Version'. From 'trackit_Issue', the role 'issues' has cardinality 0..*, and from 'trackit_Version', the role 'Version' has cardinality 0..*.
+An association connects 'trackit_Issue' and 'trackit_Issue'. From 'trackit_Issue', the role 'Issue39' has cardinality 0..*, and from 'trackit_Issue', the role 'blockers' has cardinality 0..*.
+An association connects 'trackit_Comment' and 'trackit_Issue'. From 'trackit_Comment', the role 'comments' has cardinality 0..*, and from 'trackit_Issue', the role 'Issue41' has cardinality 0..*.
+An association connects 'trackit_Comment' and 'trackit_Member'. From 'trackit_Comment', the role 'comments43' has cardinality 0..*, and from 'trackit_Member', the role 'Member44' has cardinality 0..*.
+An association connects 'trackit_Comment' and 'trackit_Comment'. From 'trackit_Comment', the role 'Comment47' has cardinality 0..*, and from 'trackit_Comment', the role 'replies' has cardinality 0..*.
+An association connects 'trackit_Comment' and 'trackit_Comment'. From 'trackit_Comment', the role 'parent' has cardinality 0..*, and from 'trackit_Comment', the role 'Comment50' has cardinality 0..*.

@@ -1,0 +1,74 @@
+The domain model 'tfsm_plaink3' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'tfsm_plaink3_EventGuard' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_plaink3_TimedSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_plaink3_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_plaink3_EvaluateGuard' represents an important domain concept.
+It has one attribute: 'condition', which is of type str.
+
+'tfsm_plaink3_State' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_plaink3_FSMEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_plaink3_TFSM' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_plaink3_FSMClock' represents an important domain concept.
+It does not declare any attributes.
+
+'Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_plaink3_TemporalGuard' represents an important domain concept.
+It has one attribute: 'afterDuration', which is of type int.
+
+'tfsm_plaink3_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tfsm_plaink3_Transition' represents an important domain concept.
+It has one attribute: 'action', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'tfsm_plaink3_TFSM' is a specialization of 'NamedElement'.
+The class 'tfsm_plaink3_State' is a specialization of 'NamedElement'.
+The class 'tfsm_plaink3_Transition' is a specialization of 'NamedElement'.
+The class 'tfsm_plaink3_Guard' is a specialization of 'NamedElement'.
+The class 'tfsm_plaink3_TemporalGuard' is a specialization of 'Guard'.
+The class 'tfsm_plaink3_EventGuard' is a specialization of 'Guard'.
+The class 'tfsm_plaink3_FSMEvent' is a specialization of 'NamedElement'.
+The class 'tfsm_plaink3_FSMClock' is a specialization of 'NamedElement'.
+The class 'tfsm_plaink3_TimedSystem' is a specialization of 'NamedElement'.
+The class 'tfsm_plaink3_EvaluateGuard' is a specialization of 'Guard'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tfsm_plaink3_TFSM' and 'tfsm_plaink3_State'. From 'tfsm_plaink3_TFSM', the role 'owningFSM' has cardinality 0..*, and from 'tfsm_plaink3_State', the role 'State' has cardinality 0..*.
+An association connects 'tfsm_plaink3_State' and 'tfsm_plaink3_TFSM'. From 'tfsm_plaink3_State', the role 'tfsm_plaink3_State' has cardinality 0..*, and from 'tfsm_plaink3_TFSM', the role 'tfsm_plaink3_TFSM' has cardinality 0..*.
+An association connects 'tfsm_plaink3_TFSM' and 'tfsm_plaink3_FSMEvent'. From 'tfsm_plaink3_TFSM', the role 'tfsm_plaink3_TFSM3' has cardinality 0..*, and from 'tfsm_plaink3_FSMEvent', the role 'tfsm_plaink3_FSMEvent' has cardinality 0..*.
+An association connects 'tfsm_plaink3_TFSM' and 'tfsm_plaink3_FSMClock'. From 'tfsm_plaink3_TFSM', the role 'tfsm_plaink3_TFSM5' has cardinality 0..*, and from 'tfsm_plaink3_FSMClock', the role 'tfsm_plaink3_FSMClock' has cardinality 0..*.
+An association connects 'tfsm_plaink3_Transition' and 'tfsm_plaink3_TFSM'. From 'tfsm_plaink3_Transition', the role 'tfsm_plaink3_Transition' has cardinality 0..*, and from 'tfsm_plaink3_TFSM', the role 'tfsm_plaink3_TFSM7' has cardinality 0..*.
+An association connects 'tfsm_plaink3_TFSM' and 'tfsm_plaink3_State'. From 'tfsm_plaink3_TFSM', the role 'TFSM' has cardinality 0..*, and from 'tfsm_plaink3_State', the role 'ownedStates' has cardinality 0..*.
+An association connects 'tfsm_plaink3_State' and 'tfsm_plaink3_Transition'. From 'tfsm_plaink3_State', the role 'source' has cardinality 0..*, and from 'tfsm_plaink3_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'tfsm_plaink3_Transition' and 'tfsm_plaink3_State'. From 'tfsm_plaink3_Transition', the role 'Transition11' has cardinality 0..*, and from 'tfsm_plaink3_State', the role 'target' has cardinality 0..*.
+An association connects 'tfsm_plaink3_State' and 'tfsm_plaink3_Transition'. From 'tfsm_plaink3_State', the role 'State13' has cardinality 0..*, and from 'tfsm_plaink3_Transition', the role 'outgoingTransitions' has cardinality 0..*.
+An association connects 'tfsm_plaink3_State' and 'tfsm_plaink3_Transition'. From 'tfsm_plaink3_State', the role 'State15' has cardinality 0..*, and from 'tfsm_plaink3_Transition', the role 'incomingTransitions' has cardinality 0..*.
+An association connects 'tfsm_plaink3_Transition' and 'tfsm_plaink3_Guard'. From 'tfsm_plaink3_Transition', the role 'tfsm_plaink3_Transition17' has cardinality 0..*, and from 'tfsm_plaink3_Guard', the role 'tfsm_plaink3_Guard' has cardinality 0..*.
+An association connects 'tfsm_plaink3_Transition' and 'tfsm_plaink3_FSMEvent'. From 'tfsm_plaink3_Transition', the role 'tfsm_plaink3_Transition19' has cardinality 0..*, and from 'tfsm_plaink3_FSMEvent', the role 'tfsm_plaink3_FSMEvent20' has cardinality 0..*.
+An association connects 'tfsm_plaink3_TemporalGuard' and 'tfsm_plaink3_FSMClock'. From 'tfsm_plaink3_TemporalGuard', the role 'tfsm_plaink3_TemporalGuard' has cardinality 0..*, and from 'tfsm_plaink3_FSMClock', the role 'tfsm_plaink3_FSMClock22' has cardinality 0..*.
+An association connects 'tfsm_plaink3_EventGuard' and 'tfsm_plaink3_FSMEvent'. From 'tfsm_plaink3_EventGuard', the role 'tfsm_plaink3_EventGuard' has cardinality 0..*, and from 'tfsm_plaink3_FSMEvent', the role 'tfsm_plaink3_FSMEvent24' has cardinality 0..*.
+An association connects 'tfsm_plaink3_Transition' and 'tfsm_plaink3_FSMEvent'. From 'tfsm_plaink3_Transition', the role 'tfsm_plaink3_Transition27' has cardinality 0..*, and from 'tfsm_plaink3_FSMEvent', the role 'tfsm_plaink3_FSMEvent26' has cardinality 0..*.
+An association connects 'tfsm_plaink3_TimedSystem' and 'tfsm_plaink3_TFSM'. From 'tfsm_plaink3_TimedSystem', the role 'tfsm_plaink3_TimedSystem' has cardinality 0..*, and from 'tfsm_plaink3_TFSM', the role 'tfsm_plaink3_TFSM29' has cardinality 0..*.
+An association connects 'tfsm_plaink3_TimedSystem' and 'tfsm_plaink3_FSMClock'. From 'tfsm_plaink3_TimedSystem', the role 'tfsm_plaink3_TimedSystem31' has cardinality 0..*, and from 'tfsm_plaink3_FSMClock', the role 'tfsm_plaink3_FSMClock32' has cardinality 0..*.
+An association connects 'tfsm_plaink3_FSMEvent' and 'tfsm_plaink3_TimedSystem'. From 'tfsm_plaink3_FSMEvent', the role 'tfsm_plaink3_FSMEvent35' has cardinality 0..*, and from 'tfsm_plaink3_TimedSystem', the role 'tfsm_plaink3_TimedSystem34' has cardinality 0..*.

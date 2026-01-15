@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atlanmod/modisco/modisco-models/org.eclipse.gmt.modisco.java.classiceobject/src-gen/org/eclipse/gmt/modisco/java/emf/classic/impl/java.ecore

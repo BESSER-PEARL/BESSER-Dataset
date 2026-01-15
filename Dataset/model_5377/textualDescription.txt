@@ -1,0 +1,85 @@
+The domain model 'html5' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'html5_Action' represents an important domain concept.
+It has one attribute: 'codigo', which is of type str.
+
+'html5_td' represents an important domain concept.
+It does not declare any attributes.
+
+'html5_htmlElement' represents an important domain concept.
+It has one attribute: 'class', which is of type str.
+
+'html5_container' represents an important domain concept.
+It has one attribute: 'class', which is of type str.
+
+'html5_legend' represents an important domain concept.
+It has the following attributes: 'valor', which is of type str; 'class', which is of type str.
+
+'html5_dialog' represents an important domain concept.
+It does not declare any attributes.
+
+'html5_input' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'type', which is of type str; 'disable', which is of type str.
+
+'html5_label' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'valor', which is of type str.
+
+'html5_table' represents an important domain concept.
+It does not declare any attributes.
+
+'container' represents an important domain concept.
+It does not declare any attributes.
+
+'html5_img' represents an important domain concept.
+It has one attribute: 'src', which is of type str.
+
+'html5_button' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'action', which is of type str; 'type', which is of type str.
+
+'html5_select' represents an important domain concept.
+It has the following attributes: 'multiple', which is of type str; 'size', which is of type str.
+
+'html5_html' represents an important domain concept.
+It does not declare any attributes.
+
+'html5_fieldset' represents an important domain concept.
+It does not declare any attributes.
+
+'html5_div' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'html5_option' represents an important domain concept.
+It does not declare any attributes.
+
+'html5_tr' represents an important domain concept.
+It does not declare any attributes.
+
+'htmlElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'types' defines the following possible values: 'button', 'number', 'text'.
+
+The model also captures inheritance relationships between classes.
+The class 'html5_div' is a specialization of 'container'.
+The class 'html5_table' is a specialization of 'htmlElement'.
+The class 'html5_img' is a specialization of 'htmlElement'.
+The class 'html5_label' is a specialization of 'htmlElement'.
+The class 'html5_input' is a specialization of 'htmlElement'.
+The class 'html5_button' is a specialization of 'htmlElement'.
+The class 'html5_fieldset' is a specialization of 'container'.
+The class 'html5_dialog' is a specialization of 'htmlElement'.
+The class 'html5_select' is a specialization of 'htmlElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'html5_Action' and 'html5_div'. From 'html5_Action', the role 'html5_Action' has cardinality 0..*, and from 'html5_div', the role 'html5_div' has cardinality 0..*.
+An association connects 'html5_table' and 'html5_tr'. From 'html5_table', the role 'html5_table' has cardinality 0..*, and from 'html5_tr', the role 'html5_tr' has cardinality 0..*.
+An association connects 'html5_td' and 'html5_tr'. From 'html5_td', the role 'html5_td' has cardinality 0..*, and from 'html5_tr', the role 'html5_tr3' has cardinality 0..*.
+An association connects 'html5_htmlElement' and 'html5_td'. From 'html5_htmlElement', the role 'html5_htmlElement' has cardinality 0..*, and from 'html5_td', the role 'html5_td5' has cardinality 0..*.
+An association connects 'html5_legend' and 'html5_fieldset'. From 'html5_legend', the role 'html5_legend' has cardinality 0..*, and from 'html5_fieldset', the role 'html5_fieldset' has cardinality 0..*.
+An association connects 'html5_container' and 'html5_html'. From 'html5_container', the role 'html5_container' has cardinality 0..*, and from 'html5_html', the role 'html5_html' has cardinality 0..*.
+An association connects 'html5_htmlElement' and 'html5_container'. From 'html5_htmlElement', the role 'html5_htmlElement10' has cardinality 0..*, and from 'html5_container', the role 'html5_container9' has cardinality 0..*.
+An association connects 'html5_container' and 'html5_container'. From 'html5_container', the role 'html5_container13' has cardinality 0..*, and from 'html5_container', the role 'html5_container11' has cardinality 0..*.
+An association connects 'html5_select' and 'html5_option'. From 'html5_select', the role 'html5_select' has cardinality 0..*, and from 'html5_option', the role 'html5_option' has cardinality 0..*.

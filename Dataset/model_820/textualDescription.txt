@@ -1,0 +1,92 @@
+The domain model 'fsm' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'fsm_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fsm_NumberGuard' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'fsm_NumberVariable' represents an important domain concept.
+It has the following attributes: 'value', which is of type bool; 'initialValue', which is of type int.
+
+'fsm_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_EqualNumberGuard' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_GreaterThanNumberGuard' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_AssignValueAction' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'fsm_LessThanNumberGuard' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_State' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Guard' represents an important domain concept.
+It has one attribute: 'not', which is of type bool.
+
+'fsm_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_DecreaseValueAction' represents an important domain concept.
+It has one attribute: 'stepValue', which is of type int.
+
+'Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fsm_IncreaseValueAction' represents an important domain concept.
+It has one attribute: 'stepValue', which is of type int.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'NumberGuard' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'fsm_StateMachine' is a specialization of 'NamedElement'.
+The class 'fsm_State' is a specialization of 'NamedElement'.
+The class 'fsm_Transition' is a specialization of 'NamedElement'.
+The class 'fsm_NumberVariable' is a specialization of 'Variable'.
+The class 'fsm_NumberGuard' is a specialization of 'Guard'.
+The class 'fsm_EqualNumberGuard' is a specialization of 'NumberGuard'.
+The class 'fsm_AssignValueAction' is a specialization of 'Action'.
+The class 'fsm_LessThanNumberGuard' is a specialization of 'NumberGuard'.
+The class 'fsm_GreaterThanNumberGuard' is a specialization of 'NumberGuard'.
+The class 'fsm_IncreaseValueAction' is a specialization of 'Action'.
+The class 'fsm_DecreaseValueAction' is a specialization of 'Action'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fsm_StateMachine' and 'fsm_State'. From 'fsm_StateMachine', the role 'unnamed role' has cardinality 0..*, and from 'fsm_State', the role '1' has cardinality 0..*.
+An association connects 'fsm_State' and 'fsm_StateMachine'. From 'fsm_State', the role 'fsm_State' has cardinality 0..*, and from 'fsm_StateMachine', the role 'fsm_StateMachine' has cardinality 0..*.
+An association connects 'fsm_StateMachine' and 'fsm_Transition'. From 'fsm_StateMachine', the role 'fsm_StateMachine4' has cardinality 0..*, and from 'fsm_Transition', the role 'fsm_Transition' has cardinality 0..*.
+An association connects 'fsm_Variable' and 'fsm_StateMachine'. From 'fsm_Variable', the role 'fsm_Variable' has cardinality 0..*, and from 'fsm_StateMachine', the role 'fsm_StateMachine6' has cardinality 0..*.
+An association connects 'fsm_State' and 'fsm_StateMachine'. From 'fsm_State', the role 'fsm_State9' has cardinality 0..*, and from 'fsm_StateMachine', the role 'fsm_StateMachine8' has cardinality 0..*.
+An association connects 'fsm_StateMachine' and 'fsm_State'. From 'fsm_StateMachine', the role '12' has cardinality 0..*, and from 'fsm_State', the role '11' has cardinality 0..*.
+An association connects 'fsm_State' and 'fsm_Transition'. From 'fsm_State', the role '14' has cardinality 0..*, and from 'fsm_Transition', the role '15' has cardinality 0..*.
+An association connects 'fsm_Transition' and 'fsm_State'. From 'fsm_Transition', the role '18' has cardinality 0..*, and from 'fsm_State', the role '17' has cardinality 0..*.
+An association connects 'fsm_Transition' and 'fsm_State'. From 'fsm_Transition', the role '20' has cardinality 0..*, and from 'fsm_State', the role '21' has cardinality 0..*.
+An association connects 'fsm_State' and 'fsm_Transition'. From 'fsm_State', the role '24' has cardinality 0..*, and from 'fsm_Transition', the role '23' has cardinality 0..*.
+An association connects 'fsm_Guard' and 'fsm_Transition'. From 'fsm_Guard', the role 'fsm_Guard' has cardinality 0..*, and from 'fsm_Transition', the role 'fsm_Transition26' has cardinality 0..*.
+An association connects 'fsm_Transition' and 'fsm_Action'. From 'fsm_Transition', the role 'fsm_Transition28' has cardinality 0..*, and from 'fsm_Action', the role 'fsm_Action' has cardinality 0..*.
+An association connects 'fsm_NumberGuard' and 'fsm_NumberVariable'. From 'fsm_NumberGuard', the role 'fsm_NumberGuard' has cardinality 0..*, and from 'fsm_NumberVariable', the role 'fsm_NumberVariable' has cardinality 0..*.
+An association connects 'fsm_Action' and 'fsm_NumberVariable'. From 'fsm_Action', the role 'fsm_Action31' has cardinality 0..*, and from 'fsm_NumberVariable', the role 'fsm_NumberVariable32' has cardinality 0..*.

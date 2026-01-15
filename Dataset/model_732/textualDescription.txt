@@ -1,0 +1,251 @@
+The domain model 'uml' describes the core structural elements and their relationships within the system.
+
+The model defines 61 main class(es).
+
+'uml_Classifier' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type str.
+
+'ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_JoinNode' represents an important domain concept.
+It has one attribute: 'isCombineDuplicate', which is of type str.
+
+'uml_StructuredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_OpaqueExpression' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'uml_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_ObjectFlow' represents an important domain concept.
+It has the following attributes: 'isMultireceive', which is of type str; 'isMulticast', which is of type str.
+
+'uml_ForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_ParameterableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_Behavior' represents an important domain concept.
+It has one attribute: 'isReentrant', which is of type str.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TemplateableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_DecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_Class' represents an important domain concept.
+It has one attribute: 'isActive', which is of type str.
+
+'uml_ObjectNode' represents an important domain concept.
+It has the following attributes: 'isControlType', which is of type str; 'ordering', which is of type str.
+
+'uml_ActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_ActivityParameterNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'EncapsulatedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'uml_RedefinableElement' represents an important domain concept.
+It has one attribute: 'isLeaf', which is of type str.
+
+'TemplateableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_ActivityGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_EncapsulatedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_OpaqueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_ActivityPartition' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ObjectNodeOrderingKind' defines the following possible values: 'LIFO', 'ordered', 'FIFO', 'unordered'.
+
+The model also captures inheritance relationships between classes.
+The class 'uml_Package' is a specialization of 'Namespace'.
+The class 'uml_Package' is a specialization of 'PackageableElement'.
+The class 'uml_Package' is a specialization of 'TemplateableElement'.
+The class 'uml_Activity' is a specialization of 'Behavior'.
+The class 'uml_ActivityPartition' is a specialization of 'NamedElement'.
+The class 'uml_ActivityPartition' is a specialization of 'ActivityGroup'.
+The class 'uml_ActivityGroup' is a specialization of 'Element'.
+The class 'uml_Behavior' is a specialization of 'Class'.
+The class 'uml_EncapsulatedClassifier' is a specialization of 'StructuredClassifier'.
+The class 'uml_StructuredClassifier' is a specialization of 'Classifier'.
+The class 'uml_Type' is a specialization of 'PackageableElement'.
+The class 'uml_TemplateableElement' is a specialization of 'Element'.
+The class 'uml_Classifier' is a specialization of 'Namespace'.
+The class 'uml_Classifier' is a specialization of 'RedefinableElement'.
+The class 'uml_Classifier' is a specialization of 'Type'.
+The class 'uml_Classifier' is a specialization of 'TemplateableElement'.
+The class 'uml_Namespace' is a specialization of 'NamedElement'.
+The class 'uml_BehavioredClassifier' is a specialization of 'Classifier'.
+The class 'uml_Class' is a specialization of 'EncapsulatedClassifier'.
+The class 'uml_Class' is a specialization of 'BehavioredClassifier'.
+The class 'uml_OpaqueExpression' is a specialization of 'ValueSpecification'.
+The class 'uml_ValueSpecification' is a specialization of 'PackageableElement'.
+The class 'uml_ValueSpecification' is a specialization of 'TypedElement'.
+The class 'uml_TypedElement' is a specialization of 'NamedElement'.
+The class 'uml_PackageableElement' is a specialization of 'NamedElement'.
+The class 'uml_PackageableElement' is a specialization of 'ParameterableElement'.
+The class 'uml_NamedElement' is a specialization of 'Element'.
+The class 'uml_ParameterableElement' is a specialization of 'Element'.
+The class 'uml_OpaqueAction' is a specialization of 'Action'.
+The class 'uml_RedefinableElement' is a specialization of 'NamedElement'.
+The class 'uml_ActivityNode' is a specialization of 'RedefinableElement'.
+The class 'uml_ExecutableNode' is a specialization of 'ActivityNode'.
+The class 'uml_ControlNode' is a specialization of 'ActivityNode'.
+The class 'uml_Action' is a specialization of 'ExecutableNode'.
+The class 'uml_ObjectNode' is a specialization of 'ActivityNode'.
+The class 'uml_ObjectNode' is a specialization of 'TypedElement'.
+The class 'uml_ActivityParameterNode' is a specialization of 'ObjectNode'.
+The class 'uml_JoinNode' is a specialization of 'ControlNode'.
+The class 'uml_InitialNode' is a specialization of 'ControlNode'.
+The class 'uml_DecisionNode' is a specialization of 'ControlNode'.
+The class 'uml_ForkNode' is a specialization of 'ControlNode'.
+The class 'uml_FinalNode' is a specialization of 'ControlNode'.
+The class 'uml_ActivityFinalNode' is a specialization of 'FinalNode'.
+The class 'uml_ActivityEdge' is a specialization of 'RedefinableElement'.
+The class 'uml_ObjectFlow' is a specialization of 'ActivityEdge'.
+The class 'uml_ControlFlow' is a specialization of 'ActivityEdge'.
+
+Relationships between classes are modeled using associations.
+An association connects 'uml_PackageableElement' and 'uml_Package'. From 'uml_PackageableElement', the role 'uml_PackageableElement' has cardinality 0..*, and from 'uml_Package', the role 'uml_Package' has cardinality 0..*.
+An association connects 'uml_ActivityNode' and 'uml_Activity'. From 'uml_ActivityNode', the role 'uml_ActivityNode' has cardinality 0..*, and from 'uml_Activity', the role 'uml_Activity' has cardinality 0..*.
+An association connects 'uml_Activity' and 'uml_ActivityEdge'. From 'uml_Activity', the role 'uml_Activity3' has cardinality 0..*, and from 'uml_ActivityEdge', the role 'uml_ActivityEdge' has cardinality 0..*.
+An association connects 'uml_ActivityGroup' and 'uml_Activity'. From 'uml_ActivityGroup', the role 'uml_ActivityGroup' has cardinality 0..*, and from 'uml_Activity', the role 'uml_Activity5' has cardinality 0..*.
+An association connects 'uml_ActivityNode' and 'uml_ActivityPartition'. From 'uml_ActivityNode', the role 'uml_ActivityNode7' has cardinality 0..*, and from 'uml_ActivityPartition', the role 'uml_ActivityPartition' has cardinality 0..*.
+An association connects 'uml_ActivityEdge' and 'uml_ActivityPartition'. From 'uml_ActivityEdge', the role 'uml_ActivityEdge10' has cardinality 0..*, and from 'uml_ActivityPartition', the role 'uml_ActivityPartition9' has cardinality 0..*.
+An association connects 'uml_TypedElement' and 'uml_Type'. From 'uml_TypedElement', the role 'uml_TypedElement' has cardinality 0..*, and from 'uml_Type', the role 'uml_Type' has cardinality 0..*.
+An association connects 'uml_ActivityEdge' and 'uml_ActivityNode'. From 'uml_ActivityEdge', the role 'ActivityEdge' has cardinality 0..*, and from 'uml_ActivityNode', the role 'source' has cardinality 0..*.
+An association connects 'uml_ActivityEdge' and 'uml_ActivityNode'. From 'uml_ActivityEdge', the role 'ActivityEdge14' has cardinality 0..*, and from 'uml_ActivityNode', the role 'target' has cardinality 0..*.
+An association connects 'uml_ActivityNode' and 'uml_ActivityEdge'. From 'uml_ActivityNode', the role 'ActivityNode' has cardinality 0..*, and from 'uml_ActivityEdge', the role 'outgoing' has cardinality 0..*.
+An association connects 'uml_ActivityEdge' and 'uml_ActivityNode'. From 'uml_ActivityEdge', the role 'incoming' has cardinality 0..*, and from 'uml_ActivityNode', the role 'ActivityNode17' has cardinality 0..*.
+An association connects 'uml_ValueSpecification' and 'uml_ActivityEdge'. From 'uml_ValueSpecification', the role 'uml_ValueSpecification' has cardinality 0..*, and from 'uml_ActivityEdge', the role 'uml_ActivityEdge19' has cardinality 0..*.

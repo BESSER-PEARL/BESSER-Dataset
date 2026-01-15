@@ -1,0 +1,24 @@
+The domain model 'compositefsm' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'compositefsm_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'compositefsm_FSM' represents an important domain concept.
+It does not declare any attributes.
+
+'compositefsm_Transition' represents an important domain concept.
+It has the following attributes: 'input', which is of type str; 'output', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'compositefsm_FSM' and 'compositefsm_State'. From 'compositefsm_FSM', the role 'owningFSM' has cardinality 0..*, and from 'compositefsm_State', the role 'State' has cardinality 0..*.
+An association connects 'compositefsm_FSM' and 'compositefsm_State'. From 'compositefsm_FSM', the role 'compositefsm_FSM' has cardinality 0..*, and from 'compositefsm_State', the role 'compositefsm_State' has cardinality 0..*.
+An association connects 'compositefsm_State' and 'compositefsm_FSM'. From 'compositefsm_State', the role 'compositefsm_State4' has cardinality 0..*, and from 'compositefsm_FSM', the role 'compositefsm_FSM3' has cardinality 0..*.
+An association connects 'compositefsm_State' and 'compositefsm_FSM'. From 'compositefsm_State', the role 'ownedState' has cardinality 0..*, and from 'compositefsm_FSM', the role 'FSM' has cardinality 0..*.
+An association connects 'compositefsm_Transition' and 'compositefsm_State'. From 'compositefsm_Transition', the role 'Transition' has cardinality 0..*, and from 'compositefsm_State', the role 'source' has cardinality 0..*.
+An association connects 'compositefsm_State' and 'compositefsm_Transition'. From 'compositefsm_State', the role 'target' has cardinality 0..*, and from 'compositefsm_Transition', the role 'Transition8' has cardinality 0..*.
+An association connects 'compositefsm_State' and 'compositefsm_State'. From 'compositefsm_State', the role 'superState' has cardinality 0..*, and from 'compositefsm_State', the role 'State11' has cardinality 0..*.
+An association connects 'compositefsm_State' and 'compositefsm_State'. From 'compositefsm_State', the role 'State14' has cardinality 0..*, and from 'compositefsm_State', the role 'subStates' has cardinality 0..*.
+An association connects 'compositefsm_Transition' and 'compositefsm_State'. From 'compositefsm_Transition', the role 'outgoingTransition' has cardinality 0..*, and from 'compositefsm_State', the role 'State16' has cardinality 0..*.
+An association connects 'compositefsm_Transition' and 'compositefsm_State'. From 'compositefsm_Transition', the role 'incomingTransition' has cardinality 0..*, and from 'compositefsm_State', the role 'State18' has cardinality 0..*.

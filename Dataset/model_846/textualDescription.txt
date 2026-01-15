@@ -1,0 +1,171 @@
+The domain model 'ardurobotml' describes the core structural elements and their relationships within the system.
+
+The model defines 37 main class(es).
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'ardurobotml_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ardurobotml_RegionContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'ardurobotml_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'RegionContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'ardurobotml_AcceleratetAction' represents an important domain concept.
+It has the following attributes: 'ratio', which is of type int; 'startTick', which is of type int.
+
+'ardurobotml_EmergencyStopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ardurobotml_MoveForwardAndTurningLeftAction' represents an important domain concept.
+It has the following attributes: 'duration', which is of type int; 'speed', which is of type int; 'startTick', which is of type int; 'diff', which is of type int.
+
+'ardurobotml_TurningRightAction' represents an important domain concept.
+It has the following attributes: 'speed', which is of type int; 'duration', which is of type int; 'startTick', which is of type int.
+
+'ardurobotml_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'ardurobotml_FSMClock' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'ardurobotml_DeceleratetAction' represents an important domain concept.
+It has the following attributes: 'startTick', which is of type int; 'ratio', which is of type int.
+
+'ardurobotml_MoveBackardAndTurningRightAction' represents an important domain concept.
+It has the following attributes: 'diff', which is of type int; 'speed', which is of type int; 'duration', which is of type int; 'startTick', which is of type int.
+
+'ardurobotml_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'ardurobotml_ActionSequence' represents an important domain concept.
+It does not declare any attributes.
+
+'ardurobotml_SystemPropertyCondition' represents an important domain concept.
+It has one attribute: 'expectedAttributeValue', which is of type bool.
+
+'ardurobotml_MoveForwardAndTurningRightAction' represents an important domain concept.
+It has the following attributes: 'speed', which is of type int; 'duration', which is of type int; 'startTick', which is of type int; 'diff', which is of type int.
+
+'ardurobotml_AllActionFinishedCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'ardurobotml_StopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ardurobotml_EventGuard' represents an important domain concept.
+It does not declare any attributes.
+
+'ardurobotml_TimedSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'ardurobotml_TurningLeftAction' represents an important domain concept.
+It has the following attributes: 'startTick', which is of type int; 'speed', which is of type int; 'duration', which is of type int.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'ardurobotml_State' represents an important domain concept.
+It does not declare any attributes.
+
+'ardurobotml_FSMEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'ardurobotml_Region' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ardurobotml_MoveBackardAction' represents an important domain concept.
+It has the following attributes: 'speed', which is of type int; 'duration', which is of type int; 'startTick', which is of type int.
+
+'ardurobotml_TFSM' represents an important domain concept.
+It does not declare any attributes.
+
+'ardurobotml_EvaluateGuard' represents an important domain concept.
+It does not declare any attributes.
+
+'ardurobotml_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'ardurobotml_TemporalGuard' represents an important domain concept.
+It has one attribute: 'afterDuration', which is of type int.
+
+'ardurobotml_MoveForwardAction' represents an important domain concept.
+It has the following attributes: 'startTick', which is of type int; 'speed', which is of type int; 'duration', which is of type int.
+
+'Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'ardurobotml_MoveBackardAndTurningLeftAction' represents an important domain concept.
+It has the following attributes: 'speed', which is of type int; 'startTick', which is of type int; 'duration', which is of type int; 'diff', which is of type int.
+
+'ardurobotml_SCANCollisionAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ardurobotml_CollisionSensorCondition' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ardurobotml_TimedSystem' is a specialization of 'NamedElement'.
+The class 'ardurobotml_TFSM' is a specialization of 'RegionContainer'.
+The class 'ardurobotml_State' is a specialization of 'RegionContainer'.
+The class 'ardurobotml_Transition' is a specialization of 'NamedElement'.
+The class 'ardurobotml_Guard' is a specialization of 'NamedElement'.
+The class 'ardurobotml_TemporalGuard' is a specialization of 'Guard'.
+The class 'ardurobotml_EventGuard' is a specialization of 'Guard'.
+The class 'ardurobotml_FSMEvent' is a specialization of 'NamedElement'.
+The class 'ardurobotml_FSMClock' is a specialization of 'NamedElement'.
+The class 'ardurobotml_EvaluateGuard' is a specialization of 'Guard'.
+The class 'ardurobotml_RegionContainer' is a specialization of 'NamedElement'.
+The class 'ardurobotml_Action' is a specialization of 'NamedElement'.
+The class 'ardurobotml_AllActionFinishedCondition' is a specialization of 'Condition'.
+The class 'ardurobotml_SystemPropertyCondition' is a specialization of 'Condition'.
+The class 'ardurobotml_CollisionSensorCondition' is a specialization of 'Condition'.
+The class 'ardurobotml_ActionSequence' is a specialization of 'Action'.
+The class 'ardurobotml_StopAction' is a specialization of 'Action'.
+The class 'ardurobotml_MoveForwardAction' is a specialization of 'Action'.
+The class 'ardurobotml_MoveBackardAction' is a specialization of 'Action'.
+The class 'ardurobotml_MoveForwardAndTurningRightAction' is a specialization of 'Action'.
+The class 'ardurobotml_MoveForwardAndTurningLeftAction' is a specialization of 'Action'.
+The class 'ardurobotml_MoveBackardAndTurningRightAction' is a specialization of 'Action'.
+The class 'ardurobotml_MoveBackardAndTurningLeftAction' is a specialization of 'Action'.
+The class 'ardurobotml_TurningLeftAction' is a specialization of 'Action'.
+The class 'ardurobotml_TurningRightAction' is a specialization of 'Action'.
+The class 'ardurobotml_AcceleratetAction' is a specialization of 'Action'.
+The class 'ardurobotml_DeceleratetAction' is a specialization of 'Action'.
+The class 'ardurobotml_SCANCollisionAction' is a specialization of 'Action'.
+The class 'ardurobotml_EmergencyStopAction' is a specialization of 'Action'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ardurobotml_TimedSystem' and 'ardurobotml_TFSM'. From 'ardurobotml_TimedSystem', the role 'ardurobotml_TimedSystem' has cardinality 0..*, and from 'ardurobotml_TFSM', the role 'ardurobotml_TFSM' has cardinality 0..*.
+An association connects 'ardurobotml_FSMClock' and 'ardurobotml_TimedSystem'. From 'ardurobotml_FSMClock', the role 'ardurobotml_FSMClock' has cardinality 0..*, and from 'ardurobotml_TimedSystem', the role 'ardurobotml_TimedSystem2' has cardinality 0..*.
+An association connects 'ardurobotml_FSMEvent' and 'ardurobotml_TimedSystem'. From 'ardurobotml_FSMEvent', the role 'ardurobotml_FSMEvent' has cardinality 0..*, and from 'ardurobotml_TimedSystem', the role 'ardurobotml_TimedSystem4' has cardinality 0..*.
+An association connects 'ardurobotml_State' and 'ardurobotml_TFSM'. From 'ardurobotml_State', the role 'ardurobotml_State' has cardinality 0..*, and from 'ardurobotml_TFSM', the role 'ardurobotml_TFSM6' has cardinality 0..*.
+An association connects 'ardurobotml_TFSM' and 'ardurobotml_FSMEvent'. From 'ardurobotml_TFSM', the role 'ardurobotml_TFSM8' has cardinality 0..*, and from 'ardurobotml_FSMEvent', the role 'ardurobotml_FSMEvent9' has cardinality 0..*.
+An association connects 'ardurobotml_FSMClock' and 'ardurobotml_TFSM'. From 'ardurobotml_FSMClock', the role 'ardurobotml_FSMClock12' has cardinality 0..*, and from 'ardurobotml_TFSM', the role 'ardurobotml_TFSM11' has cardinality 0..*.
+An association connects 'ardurobotml_TFSM' and 'ardurobotml_Transition'. From 'ardurobotml_TFSM', the role 'ardurobotml_TFSM14' has cardinality 0..*, and from 'ardurobotml_Transition', the role 'ardurobotml_Transition' has cardinality 0..*.
+An association connects 'ardurobotml_State' and 'ardurobotml_TFSM'. From 'ardurobotml_State', the role 'ardurobotml_State17' has cardinality 0..*, and from 'ardurobotml_TFSM', the role 'ardurobotml_TFSM16' has cardinality 0..*.
+An association connects 'ardurobotml_State' and 'ardurobotml_TFSM'. From 'ardurobotml_State', the role 'State' has cardinality 0..*, and from 'ardurobotml_TFSM', the role 'owningFSM' has cardinality 0..*.
+An association connects 'ardurobotml_State' and 'ardurobotml_Transition'. From 'ardurobotml_State', the role 'source' has cardinality 0..*, and from 'ardurobotml_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'ardurobotml_State' and 'ardurobotml_Transition'. From 'ardurobotml_State', the role 'target' has cardinality 0..*, and from 'ardurobotml_Transition', the role 'Transition21' has cardinality 0..*.
+An association connects 'ardurobotml_State' and 'ardurobotml_Action'. From 'ardurobotml_State', the role 'ardurobotml_State23' has cardinality 0..*, and from 'ardurobotml_Action', the role 'ardurobotml_Action' has cardinality 0..*.
+An association connects 'ardurobotml_State' and 'ardurobotml_TFSM'. From 'ardurobotml_State', the role 'ownedStates' has cardinality 0..*, and from 'ardurobotml_TFSM', the role 'TFSM' has cardinality 0..*.
+An association connects 'ardurobotml_Transition' and 'ardurobotml_State'. From 'ardurobotml_Transition', the role 'outgoingTransitions' has cardinality 0..*, and from 'ardurobotml_State', the role 'State26' has cardinality 0..*.
+An association connects 'ardurobotml_Transition' and 'ardurobotml_State'. From 'ardurobotml_Transition', the role 'incomingTransitions' has cardinality 0..*, and from 'ardurobotml_State', the role 'State28' has cardinality 0..*.
+An association connects 'ardurobotml_Transition' and 'ardurobotml_Guard'. From 'ardurobotml_Transition', the role 'ardurobotml_Transition30' has cardinality 0..*, and from 'ardurobotml_Guard', the role 'ardurobotml_Guard' has cardinality 0..*.
+An association connects 'ardurobotml_FSMEvent' and 'ardurobotml_Transition'. From 'ardurobotml_FSMEvent', the role 'ardurobotml_FSMEvent33' has cardinality 0..*, and from 'ardurobotml_Transition', the role 'ardurobotml_Transition32' has cardinality 0..*.
+An association connects 'ardurobotml_FSMClock' and 'ardurobotml_TemporalGuard'. From 'ardurobotml_FSMClock', the role 'ardurobotml_FSMClock35' has cardinality 0..*, and from 'ardurobotml_TemporalGuard', the role 'ardurobotml_TemporalGuard' has cardinality 0..*.
+An association connects 'ardurobotml_EventGuard' and 'ardurobotml_FSMEvent'. From 'ardurobotml_EventGuard', the role 'ardurobotml_EventGuard' has cardinality 0..*, and from 'ardurobotml_FSMEvent', the role 'ardurobotml_FSMEvent37' has cardinality 0..*.
+An association connects 'ardurobotml_FSMEvent' and 'ardurobotml_Transition'. From 'ardurobotml_FSMEvent', the role 'ardurobotml_FSMEvent39' has cardinality 0..*, and from 'ardurobotml_Transition', the role 'ardurobotml_Transition40' has cardinality 0..*.
+An association connects 'ardurobotml_Condition' and 'ardurobotml_EvaluateGuard'. From 'ardurobotml_Condition', the role 'ardurobotml_Condition' has cardinality 0..*, and from 'ardurobotml_EvaluateGuard', the role 'ardurobotml_EvaluateGuard' has cardinality 0..*.
+An association connects 'ardurobotml_Region' and 'ardurobotml_State'. From 'ardurobotml_Region', the role 'ardurobotml_Region' has cardinality 0..*, and from 'ardurobotml_State', the role 'ardurobotml_State43' has cardinality 0..*.
+An association connects 'ardurobotml_RegionContainer' and 'ardurobotml_Region'. From 'ardurobotml_RegionContainer', the role 'ardurobotml_RegionContainer' has cardinality 0..*, and from 'ardurobotml_Region', the role 'ardurobotml_Region45' has cardinality 0..*.
+An association connects 'ardurobotml_ActionSequence' and 'ardurobotml_Action'. From 'ardurobotml_ActionSequence', the role 'ardurobotml_ActionSequence' has cardinality 0..*, and from 'ardurobotml_Action', the role 'ardurobotml_Action47' has cardinality 0..*.

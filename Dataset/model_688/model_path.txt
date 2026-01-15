@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/rominaeramo/JTLframework/semantic-ancoring/it.univaq.mde.students.jtl2asp.nomultirelation_condition/Metamodels/JTL_nuovo.ecore

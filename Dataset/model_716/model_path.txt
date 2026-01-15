@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/veriatl/UML_CaseStudy/fr.emn.atlanmod.uml.casestudy/resources/references/Pivot.ecore

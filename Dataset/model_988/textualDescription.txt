@@ -1,0 +1,49 @@
+The domain model 'graph' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'graph_Edge' represents an important domain concept.
+It has the following attributes: 'visited', which is of type bool; 'EdgeLabel', which is of type int.
+
+'Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_Identifiable' represents an important domain concept.
+It has the following attributes: 'ID', which is of type str; 'number', which is of type int.
+
+'graph_GraphAsset' represents an important domain concept.
+It has the following attributes: 'Encrypted', which is of type bool; 'Label', which is of type int.
+
+'graph_Node' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'Attacker', which is of type bool; 'AttackerObservation', which is of type int; 'visited', which is of type bool.
+
+'graph_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_Subgraphs' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_NodeResponsibility' represents an important domain concept.
+It has one attribute: 'operation', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'graph_Edge' is a specialization of 'Identifiable'.
+The class 'graph_GraphAsset' is a specialization of 'Identifiable'.
+The class 'graph_Node' is a specialization of 'Identifiable'.
+The class 'graph_Subgraphs' is a specialization of 'Identifiable'.
+The class 'graph_NodeResponsibility' is a specialization of 'Identifiable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'graph_Edge' and 'graph_Node'. From 'graph_Edge', the role 'graph_Edge' has cardinality 0..*, and from 'graph_Node', the role 'graph_Node' has cardinality 0..*.
+An association connects 'graph_Node' and 'graph_Edge'. From 'graph_Node', the role 'graph_Node3' has cardinality 0..*, and from 'graph_Edge', the role 'graph_Edge2' has cardinality 0..*.
+An association connects 'graph_Edge' and 'graph_GraphAsset'. From 'graph_Edge', the role 'graph_Edge5' has cardinality 0..*, and from 'graph_GraphAsset', the role 'graph_GraphAsset' has cardinality 0..*.
+An association connects 'graph_GraphAsset' and 'graph_Node'. From 'graph_GraphAsset', the role 'graph_GraphAsset7' has cardinality 0..*, and from 'graph_Node', the role 'graph_Node8' has cardinality 0..*.
+An association connects 'graph_GraphAsset' and 'graph_Node'. From 'graph_GraphAsset', the role 'graph_GraphAsset10' has cardinality 0..*, and from 'graph_Node', the role 'graph_Node11' has cardinality 0..*.
+An association connects 'graph_Edge' and 'graph_Node'. From 'graph_Edge', the role 'graph_Edge14' has cardinality 0..*, and from 'graph_Node', the role 'graph_Node13' has cardinality 0..*.
+An association connects 'graph_Node' and 'graph_NodeResponsibility'. From 'graph_Node', the role 'graph_Node16' has cardinality 0..*, and from 'graph_NodeResponsibility', the role 'graph_NodeResponsibility' has cardinality 0..*.
+An association connects 'graph_Edge' and 'graph_Node'. From 'graph_Edge', the role 'graph_Edge19' has cardinality 0..*, and from 'graph_Node', the role 'graph_Node18' has cardinality 0..*.
+An association connects 'graph_Subgraphs' and 'graph_Node'. From 'graph_Subgraphs', the role 'graph_Subgraphs' has cardinality 0..*, and from 'graph_Node', the role 'graph_Node21' has cardinality 0..*.
+An association connects 'graph_Subgraphs' and 'graph_GraphAsset'. From 'graph_Subgraphs', the role 'graph_Subgraphs23' has cardinality 0..*, and from 'graph_GraphAsset', the role 'graph_GraphAsset24' has cardinality 0..*.
+An association connects 'graph_NodeResponsibility' and 'graph_GraphAsset'. From 'graph_NodeResponsibility', the role 'graph_NodeResponsibility26' has cardinality 0..*, and from 'graph_GraphAsset', the role 'graph_GraphAsset27' has cardinality 0..*.
+An association connects 'graph_GraphAsset' and 'graph_NodeResponsibility'. From 'graph_GraphAsset', the role 'graph_GraphAsset30' has cardinality 0..*, and from 'graph_NodeResponsibility', the role 'graph_NodeResponsibility29' has cardinality 0..*.
+An association connects 'graph_Subgraphs' and 'graph_Graph'. From 'graph_Subgraphs', the role 'graph_Subgraphs32' has cardinality 0..*, and from 'graph_Graph', the role 'graph_Graph' has cardinality 0..*.

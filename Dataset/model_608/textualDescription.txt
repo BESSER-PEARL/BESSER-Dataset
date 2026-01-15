@@ -1,0 +1,70 @@
+The domain model 'mvc' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'mvc_SocialComponent' represents an important domain concept.
+It has the following attributes: 'socialname', which is of type str; 'social', which is of type str.
+
+'mvc_DataBase' represents an important domain concept.
+It does not declare any attributes.
+
+'mvc_Method' represents an important domain concept.
+It has the following attributes: 'namemethod', which is of type str; 'type', which is of type str.
+
+'mvc_Attribute' represents an important domain concept.
+It has the following attributes: 'nameattribute', which is of type str; 'typeattribute', which is of type str.
+
+'mvc_GraphicComponent' represents an important domain concept.
+It has one attribute: 'stepSize', which is of type int.
+
+'mvc_MapComponent' represents an important domain concept.
+It has the following attributes: 'latitude', which is of type float; 'marker', which is of type bool; 'longitude', which is of type float.
+
+'mvc_MvcApplication' represents an important domain concept.
+It has the following attributes: 'pagelink', which is of type str; 'email', which is of type str; 'name', which is of type str; 'description', which is of type str; 'picture', which is of type str.
+
+'View' represents an important domain concept.
+It does not declare any attributes.
+
+'mvc_Position' represents an important domain concept.
+It has the following attributes: 'long', which is of type int; 'name', which is of type str; 'align_left', which is of type int; 'above', which is of type int; 'wide', which is of type int.
+
+'mvc_ReturnParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'mvc_Client' represents an important domain concept.
+It has one attribute: 'nameservice', which is of type str.
+
+'mvc_Controller' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mvc_Model' represents an important domain concept.
+It has the following attributes: 'nameclass', which is of type str; 'type', which is of type str.
+
+'mvc_View' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'Model' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'mvc_Client' is a specialization of 'Model'.
+The class 'mvc_DataBase' is a specialization of 'Model'.
+The class 'mvc_GraphicComponent' is a specialization of 'View'.
+The class 'mvc_MapComponent' is a specialization of 'View'.
+The class 'mvc_SocialComponent' is a specialization of 'View'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mvc_View' and 'mvc_MvcApplication'. From 'mvc_View', the role 'mvc_View' has cardinality 0..*, and from 'mvc_MvcApplication', the role 'mvc_MvcApplication' has cardinality 0..*.
+An association connects 'mvc_MvcApplication' and 'mvc_Model'. From 'mvc_MvcApplication', the role 'mvc_MvcApplication2' has cardinality 0..*, and from 'mvc_Model', the role 'mvc_Model' has cardinality 0..*.
+An association connects 'mvc_MvcApplication' and 'mvc_Controller'. From 'mvc_MvcApplication', the role 'mvc_MvcApplication4' has cardinality 0..*, and from 'mvc_Controller', the role 'mvc_Controller' has cardinality 0..*.
+An association connects 'mvc_Controller' and 'mvc_Model'. From 'mvc_Controller', the role 'controller' has cardinality 0..*, and from 'mvc_Model', the role 'Model' has cardinality 0..*.
+An association connects 'mvc_View' and 'mvc_Controller'. From 'mvc_View', the role 'View' has cardinality 0..*, and from 'mvc_Controller', the role 'controller7' has cardinality 0..*.
+An association connects 'mvc_Model' and 'mvc_Controller'. From 'mvc_Model', the role 'model' has cardinality 0..*, and from 'mvc_Controller', the role 'Controller' has cardinality 0..*.
+An association connects 'mvc_View' and 'mvc_Controller'. From 'mvc_View', the role 'view' has cardinality 0..*, and from 'mvc_Controller', the role 'Controller10' has cardinality 0..*.
+An association connects 'mvc_View' and 'mvc_Position'. From 'mvc_View', the role 'mvc_View12' has cardinality 0..*, and from 'mvc_Position', the role 'mvc_Position' has cardinality 0..*.
+An association connects 'mvc_Method' and 'mvc_Attribute'. From 'mvc_Method', the role 'mvc_Method' has cardinality 0..*, and from 'mvc_Attribute', the role 'mvc_Attribute' has cardinality 0..*.
+An association connects 'mvc_Method' and 'mvc_Client'. From 'mvc_Method', the role 'mvc_Method15' has cardinality 0..*, and from 'mvc_Client', the role 'mvc_Client' has cardinality 0..*.
+An association connects 'mvc_Attribute' and 'mvc_DataBase'. From 'mvc_Attribute', the role 'mvc_Attribute17' has cardinality 0..*, and from 'mvc_DataBase', the role 'mvc_DataBase' has cardinality 0..*.
+An association connects 'mvc_Attribute' and 'mvc_GraphicComponent'. From 'mvc_Attribute', the role 'mvc_Attribute19' has cardinality 0..*, and from 'mvc_GraphicComponent', the role 'mvc_GraphicComponent' has cardinality 0..*.
+An association connects 'mvc_GraphicComponent' and 'mvc_Attribute'. From 'mvc_GraphicComponent', the role 'mvc_GraphicComponent21' has cardinality 0..*, and from 'mvc_Attribute', the role 'mvc_Attribute22' has cardinality 0..*.

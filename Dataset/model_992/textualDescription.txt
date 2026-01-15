@@ -1,0 +1,25 @@
+The domain model 'DAG' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'DAG_Edge' represents an important domain concept.
+It has the following attributes: 'ID', which is of type int; 'name', which is of type str.
+
+'DAG_Revision' represents an important domain concept.
+It does not declare any attributes.
+
+'DAG_Node' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'ID', which is of type int; 'level', which is of type int.
+
+'DAG_Graph' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'DAG_Node' and 'DAG_Graph'. From 'DAG_Node', the role 'DAG_Node' has cardinality 0..*, and from 'DAG_Graph', the role 'DAG_Graph' has cardinality 0..*.
+An association connects 'DAG_Node' and 'DAG_Node'. From 'DAG_Node', the role 'Node' has cardinality 0..*, and from 'DAG_Node', the role 'children' has cardinality 0..*.
+An association connects 'DAG_Node' and 'DAG_Node'. From 'DAG_Node', the role 'Node5' has cardinality 0..*, and from 'DAG_Node', the role 'parents' has cardinality 0..*.
+An association connects 'DAG_Edge' and 'DAG_Node'. From 'DAG_Edge', the role 'Edge' has cardinality 0..*, and from 'DAG_Node', the role 'from' has cardinality 0..*.
+An association connects 'DAG_Node' and 'DAG_Edge'. From 'DAG_Node', the role 'to' has cardinality 0..*, and from 'DAG_Edge', the role 'Edge8' has cardinality 0..*.
+An association connects 'DAG_Node' and 'DAG_Revision'. From 'DAG_Node', the role 'DAG_Node10' has cardinality 0..*, and from 'DAG_Revision', the role 'DAG_Revision' has cardinality 0..*.
+An association connects 'DAG_Node' and 'DAG_Edge'. From 'DAG_Node', the role 'Node12' has cardinality 0..*, and from 'DAG_Edge', the role 'outgoing' has cardinality 0..*.
+An association connects 'DAG_Edge' and 'DAG_Node'. From 'DAG_Edge', the role 'incoming' has cardinality 0..*, and from 'DAG_Node', the role 'Node14' has cardinality 0..*.

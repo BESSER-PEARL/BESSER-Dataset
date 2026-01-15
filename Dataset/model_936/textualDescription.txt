@@ -1,0 +1,463 @@
+The domain model 'uma' describes the core structural elements and their relationships within the system.
+
+The model defines 113 main class(es).
+
+'uma_MethodElement' represents an important domain concept.
+It has the following attributes: 'suppressed', which is of type str; 'orderingGuide', which is of type str; 'presentationName', which is of type str; 'briefDescription', which is of type str; 'id', which is of type str; 'group', which is of type str.
+
+'uma_WorkProductDescriptor' represents an important domain concept.
+It has the following attributes: 'externalInputTo', which is of type str; 'responsibleRole', which is of type str; 'outputFrom', which is of type str; 'activityEntryState', which is of type str; 'mandatoryInputTo', which is of type str; 'group2', which is of type str; 'deliverableParts', which is of type str; 'impactedBy', which is of type str; 'optionalInputTo', which is of type str; 'activityExitState', which is of type str; 'impacts', which is of type str; 'workProduct', which is of type str.
+
+'uma_Constraint' represents an important domain concept.
+It has one attribute: 'mainDescription', which is of type str.
+
+'uma_Section' represents an important domain concept.
+It has the following attributes: 'sectionName', which is of type str; 'predecessor', which is of type str; 'variabilityBasedOnElement', which is of type str; 'variabilityType', which is of type str; 'description', which is of type str.
+
+'uma_ProcessPackage' represents an important domain concept.
+It has one attribute: 'group2', which is of type str.
+
+'uma_ActivityDescription' represents an important domain concept.
+It has the following attributes: 'purpose', which is of type str; 'howToStaff', which is of type str; 'alternatives', which is of type str.
+
+'uma_WorkProductType' represents an important domain concept.
+It has the following attributes: 'group2', which is of type str; 'workProduct', which is of type str.
+
+'ProcessDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_BreakdownElement' represents an important domain concept.
+It has the following attributes: 'group1', which is of type str; 'guideline', which is of type str; 'reusableAsset', which is of type str; 'supportingMaterial', which is of type str; 'isOptional', which is of type str; 'whitepaper', which is of type str; 'presentedAfter', which is of type str; 'example', which is of type str; 'concept', which is of type str; 'hasMultipleOccurrences', which is of type str; 'superActivity', which is of type str; 'prefix', which is of type str; 'isPlanned', which is of type str; 'checklist', which is of type str; 'presentedBefore', which is of type str; 'planningData', which is of type str.
+
+'uma_Checklist' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_MethodUnit' represents an important domain concept.
+It has the following attributes: 'changeDescription', which is of type str; 'authors', which is of type str; 'copyright', which is of type str; 'changeDate', which is of type str; 'version', which is of type str.
+
+'uma_ContentCategory' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_DescribableElement' represents an important domain concept.
+It has the following attributes: 'shapeicon', which is of type str; 'fulfill', which is of type str; 'nodeicon', which is of type str; 'isAbstract', which is of type str.
+
+'uma_Process' represents an important domain concept.
+It has the following attributes: 'defaultContext', which is of type str; 'diagramURI', which is of type str; 'includesPattern', which is of type str; 'validContext', which is of type str.
+
+'uma_CompositeRole' represents an important domain concept.
+It has one attribute: 'group2', which is of type str.
+
+'uma_TaskDescriptor' represents an important domain concept.
+It has the following attributes: 'externalInput', which is of type str; 'isSynchronizedWithSource', which is of type str; 'task', which is of type str; 'optionalInput', which is of type str; 'assistedBy', which is of type str; 'performedPrimarilyBy', which is of type str; 'mandatoryInput', which is of type str; 'output', which is of type str; 'group3', which is of type str; 'additionallyPerformedBy', which is of type str.
+
+'uma_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ApplicableMetaClassInfo' represents an important domain concept.
+It has one attribute: 'isPrimaryExtension', which is of type str.
+
+'WorkProduct' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_GuidanceDescription' represents an important domain concept.
+It has one attribute: 'attachment', which is of type str.
+
+'uma_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'uma_Report' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Task' represents an important domain concept.
+It has the following attributes: 'optionalInput', which is of type str; 'estimate', which is of type str; 'group2', which is of type str; 'output', which is of type str; 'precondition', which is of type str; 'postcondition', which is of type str; 'additionallyPerformedBy', which is of type str; 'mandatoryInput', which is of type str; 'estimationConsiderations', which is of type str; 'toolMentor', which is of type str; 'performedBy', which is of type str.
+
+'uma_ProcessComponentInterface' represents an important domain concept.
+It has one attribute: 'group2', which is of type str.
+
+'uma_DeliveryProcess' represents an important domain concept.
+It has the following attributes: 'communicationsMaterial', which is of type str; 'group4', which is of type str; 'educationMaterial', which is of type str.
+
+'uma_Artifact' represents an important domain concept.
+It has one attribute: 'group3', which is of type str.
+
+'uma_MethodLibrary' represents an important domain concept.
+It has one attribute: 'tool', which is of type str.
+
+'uma_DeliverableDescription' represents an important domain concept.
+It has the following attributes: 'externalDescription', which is of type str; 'packagingGuidance', which is of type str.
+
+'uma_RoleDescriptor' represents an important domain concept.
+It has the following attributes: 'role', which is of type str; 'responsibleFor', which is of type str.
+
+'uma_Discipline' represents an important domain concept.
+It has the following attributes: 'group2', which is of type str; 'referenceWorkflow', which is of type str; 'task', which is of type str.
+
+'ContentElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Roadmap' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Iteration' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_RoleSet' represents an important domain concept.
+It has the following attributes: 'group2', which is of type str; 'role', which is of type str.
+
+'RoleDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'Descriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_SupportingMaterial' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Guideline' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ContentDescription' represents an important domain concept.
+It has the following attributes: 'externalId', which is of type str; 'keyConsiderations', which is of type str; 'mainDescription', which is of type str.
+
+'uma_Concept' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Role' represents an important domain concept.
+It has the following attributes: 'group2', which is of type str; 'responsibleFor', which is of type str.
+
+'BreakdownElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_CapabilityPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_WorkProductDescription' represents an important domain concept.
+It has the following attributes: 'impactOfNotHaving', which is of type str; 'reasonsForNotNeeding', which is of type str; 'purpose', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Activity' represents an important domain concept.
+It has the following attributes: 'variabilityType', which is of type str; 'variabilityBasedOnElement', which is of type str; 'isEnactable', which is of type str; 'postcondition', which is of type str; 'precondition', which is of type str; 'roadmap', which is of type str; 'group3', which is of type str.
+
+'uma_WorkBreakdownElement' represents an important domain concept.
+It has the following attributes: 'isRepeatable', which is of type str; 'group2', which is of type str; 'isOngoing', which is of type str; 'isEventDriven', which is of type str.
+
+'uma_EstimationConsiderations' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_MethodPackage' represents an important domain concept.
+It has the following attributes: 'group1', which is of type str; 'global', which is of type str; 'reusedPackage', which is of type str.
+
+'uma_DeliveryProcessDescription' represents an important domain concept.
+It has the following attributes: 'estimatingTechnique', which is of type str; 'projectCharacteristics', which is of type str; 'riskLevel', which is of type str; 'typeOfContract', which is of type str; 'projectMemberExpertise', which is of type str; 'scale', which is of type str.
+
+'uma_ProcessPlanningTemplate' represents an important domain concept.
+It has the following attributes: 'baseProcess', which is of type str; 'group4', which is of type str.
+
+'Process' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Milestone' represents an important domain concept.
+It has one attribute: 'requiredResult', which is of type str.
+
+'DescribableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_WorkDefinition' represents an important domain concept.
+It has the following attributes: 'postcondition', which is of type str; 'precondition', which is of type str.
+
+'uma_Template' represents an important domain concept.
+It does not declare any attributes.
+
+'ContentCategory' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Descriptor' represents an important domain concept.
+It has one attribute: 'isSynchronizedWithSource', which is of type str.
+
+'uma_Guidance' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ProcessComponent' represents an important domain concept.
+It has the following attributes: 'copyright', which is of type str; 'version', which is of type str; 'authors', which is of type str; 'changeDate', which is of type str; 'changeDescription', which is of type str.
+
+'WorkBreakdownElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_TermDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_DescriptorDescription' represents an important domain concept.
+It has one attribute: 'refinedDescription', which is of type str.
+
+'uma_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'uma_Tool' represents an important domain concept.
+It has the following attributes: 'group2', which is of type str; 'toolMentor', which is of type str.
+
+'uma_Practice' represents an important domain concept.
+It has the following attributes: 'activityReference', which is of type str; 'contentReference', which is of type str; 'group2', which is of type str.
+
+'Concept' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_DisciplineGrouping' represents an important domain concept.
+It has the following attributes: 'discipline', which is of type str; 'group2', which is of type str.
+
+'MethodUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Phase' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ContentCategoryPackage' represents an important domain concept.
+It has one attribute: 'group2', which is of type str.
+
+'ActivityDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Domain' represents an important domain concept.
+It has the following attributes: 'workProduct', which is of type str; 'group2', which is of type str.
+
+'uma_WorkOrder' represents an important domain concept.
+It has the following attributes: 'linkType', which is of type str; 'id', which is of type str; 'properties', which is of type str; 'value', which is of type str.
+
+'ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_MethodPlugin' represents an important domain concept.
+It has the following attributes: 'supporting', which is of type str; 'userChangeable', which is of type str; 'referencedMethodPlugin', which is of type str.
+
+'MethodElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ToolMentor' represents an important domain concept.
+It does not declare any attributes.
+
+'Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ArtifactDescription' represents an important domain concept.
+It has the following attributes: 'representationOptions', which is of type str; 'representation', which is of type str; 'briefOutline', which is of type str; 'notation', which is of type str.
+
+'ContentDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ProcessDescription' represents an important domain concept.
+It has the following attributes: 'usageNotes', which is of type str; 'scope', which is of type str.
+
+'uma_CustomCategory' represents an important domain concept.
+It has the following attributes: 'group2', which is of type str; 'subCategory', which is of type str; 'categorizedElement', which is of type str.
+
+'uma_Outcome' represents an important domain concept.
+It does not declare any attributes.
+
+'Guidance' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_TaskDescription' represents an important domain concept.
+It has the following attributes: 'purpose', which is of type str; 'alternatives', which is of type str.
+
+'uma_ContentPackage' represents an important domain concept.
+It has one attribute: 'group2', which is of type str.
+
+'uma_Deliverable' represents an important domain concept.
+It has the following attributes: 'group3', which is of type str; 'deliveredWorkProduct', which is of type str.
+
+'uma_PracticeDescription' represents an important domain concept.
+It has the following attributes: 'levelsOfAdoption', which is of type str; 'additionalInfo', which is of type str; 'background', which is of type str; 'application', which is of type str; 'problem', which is of type str; 'goals', which is of type str.
+
+'uma_WorkProduct' represents an important domain concept.
+It has the following attributes: 'group2', which is of type str; 'template', which is of type str; 'estimationConsiderations', which is of type str; 'toolMentor', which is of type str; 'report', which is of type str; 'estimate', which is of type str.
+
+'uma_EstimatingMetric' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_BreakdownElementDescription' represents an important domain concept.
+It has one attribute: 'usageGuidance', which is of type str.
+
+'uma_Kind' represents an important domain concept.
+It has one attribute: 'applicableMetaClassInfo', which is of type str.
+
+'WorkProductDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'BreakdownElementDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_RoleDescription' represents an important domain concept.
+It has the following attributes: 'synonyms', which is of type str; 'assignmentApproaches', which is of type str; 'skills', which is of type str.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_MethodConfiguration' represents an important domain concept.
+It has the following attributes: 'defaultView', which is of type str; 'addedCategory', which is of type str; 'subtractedCategory', which is of type str; 'methodPackageSelection', which is of type str; 'baseConfiguration', which is of type str; 'processView', which is of type str; 'methodPluginSelection', which is of type str.
+
+'uma_RoleSetGrouping' represents an important domain concept.
+It has the following attributes: 'roleSet', which is of type str; 'group2', which is of type str.
+
+'uma_Estimate' represents an important domain concept.
+It has the following attributes: 'estimationMetric', which is of type str; 'group2', which is of type str; 'estimationConsiderations', which is of type str.
+
+'uma_Example' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ContentElement' represents an important domain concept.
+It has the following attributes: 'group1', which is of type str; 'guideline', which is of type str; 'supportingMaterial', which is of type str; 'example', which is of type str; 'whitepaper', which is of type str; 'reusableAsset', which is of type str; 'variabilityBasedOnElement', which is of type str; 'concept', which is of type str; 'checklist', which is of type str; 'variabilityType', which is of type str.
+
+'uma_TeamProfile' represents an important domain concept.
+It has the following attributes: 'group2', which is of type str; 'subTeam', which is of type str; 'superTeam', which is of type str; 'role', which is of type str.
+
+'uma_MethodElementProperty' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'uma_ReusableAsset' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Whitepaper' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_PlanningData' represents an important domain concept.
+It has the following attributes: 'finishDate', which is of type str; 'startDate', which is of type str; 'rank', which is of type str.
+
+'uma_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'WorkOrderType' defines the following possible values: 'finishToStart', 'finishToFinish', 'startToFinish', 'startToStart'.
+The enumeration 'VariabilityType' defines the following possible values: 'na', 'localContribution', 'contributes', 'extends', 'extendsReplaces', 'replaces', 'localReplacement'.
+
+The model also captures inheritance relationships between classes.
+The class 'uma_ActivityDescription' is a specialization of 'BreakdownElementDescription'.
+The class 'uma_ApplicableMetaClassInfo' is a specialization of 'PackageableElement'.
+The class 'uma_Artifact' is a specialization of 'WorkProduct'.
+The class 'uma_ArtifactDescription' is a specialization of 'WorkProductDescription'.
+The class 'uma_BreakdownElement' is a specialization of 'ProcessElement'.
+The class 'uma_BreakdownElementDescription' is a specialization of 'ContentDescription'.
+The class 'uma_CapabilityPattern' is a specialization of 'Process'.
+The class 'uma_Checklist' is a specialization of 'Guidance'.
+The class 'uma_CompositeRole' is a specialization of 'RoleDescriptor'.
+The class 'uma_Concept' is a specialization of 'Guidance'.
+The class 'uma_Constraint' is a specialization of 'MethodElement'.
+The class 'uma_ContentCategory' is a specialization of 'ContentElement'.
+The class 'uma_ContentCategoryPackage' is a specialization of 'MethodPackage'.
+The class 'uma_ContentDescription' is a specialization of 'MethodUnit'.
+The class 'uma_ContentElement' is a specialization of 'DescribableElement'.
+The class 'uma_Activity' is a specialization of 'WorkBreakdownElement'.
+The class 'uma_ContentPackage' is a specialization of 'MethodPackage'.
+The class 'uma_CustomCategory' is a specialization of 'ContentCategory'.
+The class 'uma_Deliverable' is a specialization of 'WorkProduct'.
+The class 'uma_DeliverableDescription' is a specialization of 'WorkProductDescription'.
+The class 'uma_DeliveryProcess' is a specialization of 'Process'.
+The class 'uma_DeliveryProcessDescription' is a specialization of 'ProcessDescription'.
+The class 'uma_DescribableElement' is a specialization of 'MethodElement'.
+The class 'uma_Descriptor' is a specialization of 'BreakdownElement'.
+The class 'uma_DescriptorDescription' is a specialization of 'BreakdownElementDescription'.
+The class 'uma_Discipline' is a specialization of 'ContentCategory'.
+The class 'uma_DisciplineGrouping' is a specialization of 'ContentCategory'.
+The class 'uma_Domain' is a specialization of 'ContentCategory'.
+The class 'uma_Estimate' is a specialization of 'Guidance'.
+The class 'uma_EstimatingMetric' is a specialization of 'Guidance'.
+The class 'uma_EstimationConsiderations' is a specialization of 'Guidance'.
+The class 'uma_Example' is a specialization of 'Guidance'.
+The class 'uma_Guidance' is a specialization of 'ContentElement'.
+The class 'uma_GuidanceDescription' is a specialization of 'ContentDescription'.
+The class 'uma_Guideline' is a specialization of 'Guidance'.
+The class 'uma_Iteration' is a specialization of 'Activity'.
+The class 'uma_Kind' is a specialization of 'ContentElement'.
+The class 'uma_MethodConfiguration' is a specialization of 'MethodUnit'.
+The class 'uma_MethodElement' is a specialization of 'PackageableElement'.
+The class 'uma_MethodElementProperty' is a specialization of 'PackageableElement'.
+The class 'uma_MethodLibrary' is a specialization of 'MethodUnit'.
+The class 'uma_MethodPackage' is a specialization of 'MethodElement'.
+The class 'uma_MethodPlugin' is a specialization of 'MethodUnit'.
+The class 'uma_MethodUnit' is a specialization of 'MethodElement'.
+The class 'uma_Milestone' is a specialization of 'WorkBreakdownElement'.
+The class 'uma_NamedElement' is a specialization of 'Element'.
+The class 'uma_Outcome' is a specialization of 'WorkProduct'.
+The class 'uma_PackageableElement' is a specialization of 'NamedElement'.
+The class 'uma_Phase' is a specialization of 'Activity'.
+The class 'uma_PlanningData' is a specialization of 'ProcessElement'.
+The class 'uma_Practice' is a specialization of 'Guidance'.
+The class 'uma_PracticeDescription' is a specialization of 'ContentDescription'.
+The class 'uma_Process' is a specialization of 'Activity'.
+The class 'uma_ProcessComponent' is a specialization of 'ProcessPackage'.
+The class 'uma_ProcessComponentInterface' is a specialization of 'BreakdownElement'.
+The class 'uma_ProcessDescription' is a specialization of 'ActivityDescription'.
+The class 'uma_ProcessElement' is a specialization of 'DescribableElement'.
+The class 'uma_ProcessPackage' is a specialization of 'MethodPackage'.
+The class 'uma_ProcessPlanningTemplate' is a specialization of 'Process'.
+The class 'uma_Report' is a specialization of 'Guidance'.
+The class 'uma_ReusableAsset' is a specialization of 'Guidance'.
+The class 'uma_Roadmap' is a specialization of 'Guidance'.
+The class 'uma_Role' is a specialization of 'ContentElement'.
+The class 'uma_RoleDescription' is a specialization of 'ContentDescription'.
+The class 'uma_RoleDescriptor' is a specialization of 'Descriptor'.
+The class 'uma_RoleSet' is a specialization of 'ContentCategory'.
+The class 'uma_RoleSetGrouping' is a specialization of 'ContentCategory'.
+The class 'uma_Section' is a specialization of 'MethodElement'.
+The class 'uma_SupportingMaterial' is a specialization of 'Guidance'.
+The class 'uma_Task' is a specialization of 'ContentElement'.
+The class 'uma_TaskDescription' is a specialization of 'ContentDescription'.
+The class 'uma_TaskDescriptor' is a specialization of 'WorkBreakdownElement'.
+The class 'uma_TeamProfile' is a specialization of 'BreakdownElement'.
+The class 'uma_Template' is a specialization of 'Guidance'.
+The class 'uma_TermDefinition' is a specialization of 'Guidance'.
+The class 'uma_Tool' is a specialization of 'ContentCategory'.
+The class 'uma_ToolMentor' is a specialization of 'Guidance'.
+The class 'uma_Whitepaper' is a specialization of 'Concept'.
+The class 'uma_WorkBreakdownElement' is a specialization of 'BreakdownElement'.
+The class 'uma_WorkDefinition' is a specialization of 'MethodElement'.
+The class 'uma_WorkProduct' is a specialization of 'ContentElement'.
+The class 'uma_WorkProductDescription' is a specialization of 'ContentDescription'.
+The class 'uma_WorkProductDescriptor' is a specialization of 'Descriptor'.
+The class 'uma_WorkProductType' is a specialization of 'ContentCategory'.
+
+Relationships between classes are modeled using associations.
+An association connects 'uma_Artifact' and 'uma_Artifact'. From 'uma_Artifact', the role 'uma_Artifact' has cardinality 0..*, and from 'uma_Artifact', the role 'uma_Artifact0' has cardinality 0..*.
+An association connects 'uma_CompositeRole' and 'uma_Role'. From 'uma_CompositeRole', the role 'uma_CompositeRole' has cardinality 0..*, and from 'uma_Role', the role 'uma_Role' has cardinality 0..*.
+An association connects 'uma_ContentCategoryPackage' and 'uma_ContentCategory'. From 'uma_ContentCategoryPackage', the role 'uma_ContentCategoryPackage' has cardinality 0..*, and from 'uma_ContentCategory', the role 'uma_ContentCategory' has cardinality 0..*.
+An association connects 'uma_ContentDescription' and 'uma_Section'. From 'uma_ContentDescription', the role 'uma_ContentDescription' has cardinality 0..*, and from 'uma_Section', the role 'uma_Section' has cardinality 0..*.
+An association connects 'uma_Activity' and 'uma_BreakdownElement'. From 'uma_Activity', the role 'uma_Activity' has cardinality 0..*, and from 'uma_BreakdownElement', the role 'uma_BreakdownElement' has cardinality 0..*.
+An association connects 'uma_ContentElement' and 'uma_ContentPackage'. From 'uma_ContentElement', the role 'uma_ContentElement' has cardinality 0..*, and from 'uma_ContentPackage', the role 'uma_ContentPackage' has cardinality 0..*.
+An association connects 'uma_DescribableElement' and 'uma_ContentDescription'. From 'uma_DescribableElement', the role 'uma_DescribableElement' has cardinality 0..*, and from 'uma_ContentDescription', the role 'uma_ContentDescription8' has cardinality 0..*.
+An association connects 'uma_Discipline' and 'uma_Discipline'. From 'uma_Discipline', the role 'uma_Discipline9' has cardinality 0..*, and from 'uma_Discipline', the role 'uma_Discipline' has cardinality 0..*.
+An association connects 'uma_EStringToStringMapEntry' and 'uma_DocumentRoot'. From 'uma_EStringToStringMapEntry', the role 'uma_EStringToStringMapEntry' has cardinality 0..*, and from 'uma_DocumentRoot', the role 'uma_DocumentRoot' has cardinality 0..*.
+An association connects 'uma_EStringToStringMapEntry' and 'uma_DocumentRoot'. From 'uma_EStringToStringMapEntry', the role 'uma_EStringToStringMapEntry14' has cardinality 0..*, and from 'uma_DocumentRoot', the role 'uma_DocumentRoot13' has cardinality 0..*.
+An association connects 'uma_MethodConfiguration' and 'uma_DocumentRoot'. From 'uma_MethodConfiguration', the role 'uma_MethodConfiguration' has cardinality 0..*, and from 'uma_DocumentRoot', the role 'uma_DocumentRoot16' has cardinality 0..*.
+An association connects 'uma_DocumentRoot' and 'uma_MethodLibrary'. From 'uma_DocumentRoot', the role 'uma_DocumentRoot18' has cardinality 0..*, and from 'uma_MethodLibrary', the role 'uma_MethodLibrary' has cardinality 0..*.
+An association connects 'uma_MethodPlugin' and 'uma_DocumentRoot'. From 'uma_MethodPlugin', the role 'uma_MethodPlugin' has cardinality 0..*, and from 'uma_DocumentRoot', the role 'uma_DocumentRoot20' has cardinality 0..*.
+An association connects 'uma_Domain' and 'uma_Domain'. From 'uma_Domain', the role 'uma_Domain21' has cardinality 0..*, and from 'uma_Domain', the role 'uma_Domain' has cardinality 0..*.
+An association connects 'uma_MethodElement' and 'uma_Constraint'. From 'uma_MethodElement', the role 'uma_MethodElement' has cardinality 0..*, and from 'uma_Constraint', the role 'uma_Constraint' has cardinality 0..*.
+An association connects 'uma_MethodElement' and 'uma_MethodElementProperty'. From 'uma_MethodElement', the role 'uma_MethodElement25' has cardinality 0..*, and from 'uma_MethodElementProperty', the role 'uma_MethodElementProperty' has cardinality 0..*.
+An association connects 'uma_MethodPlugin' and 'uma_MethodLibrary'. From 'uma_MethodPlugin', the role 'uma_MethodPlugin28' has cardinality 0..*, and from 'uma_MethodLibrary', the role 'uma_MethodLibrary27' has cardinality 0..*.
+An association connects 'uma_MethodConfiguration' and 'uma_MethodLibrary'. From 'uma_MethodConfiguration', the role 'uma_MethodConfiguration31' has cardinality 0..*, and from 'uma_MethodLibrary', the role 'uma_MethodLibrary30' has cardinality 0..*.
+An association connects 'uma_MethodPackage' and 'uma_MethodPackage'. From 'uma_MethodPackage', the role 'uma_MethodPackage32' has cardinality 0..*, and from 'uma_MethodPackage', the role 'uma_MethodPackage' has cardinality 0..*.
+An association connects 'uma_MethodPlugin' and 'uma_MethodPackage'. From 'uma_MethodPlugin', the role 'uma_MethodPlugin35' has cardinality 0..*, and from 'uma_MethodPackage', the role 'uma_MethodPackage36' has cardinality 0..*.
+An association connects 'uma_Practice' and 'uma_Practice'. From 'uma_Practice', the role 'uma_Practice37' has cardinality 0..*, and from 'uma_Practice', the role 'uma_Practice' has cardinality 0..*.
+An association connects 'uma_ProcessComponentInterface' and 'uma_ProcessComponent'. From 'uma_ProcessComponentInterface', the role 'uma_ProcessComponentInterface' has cardinality 0..*, and from 'uma_ProcessComponent', the role 'uma_ProcessComponent' has cardinality 0..*.
+An association connects 'uma_ProcessComponent' and 'uma_Process'. From 'uma_ProcessComponent', the role 'uma_ProcessComponent41' has cardinality 0..*, and from 'uma_Process', the role 'uma_Process' has cardinality 0..*.
+An association connects 'uma_ProcessComponentInterface' and 'uma_TaskDescriptor'. From 'uma_ProcessComponentInterface', the role 'uma_ProcessComponentInterface43' has cardinality 0..*, and from 'uma_TaskDescriptor', the role 'uma_TaskDescriptor' has cardinality 0..*.
+An association connects 'uma_ProcessComponentInterface' and 'uma_WorkProductDescriptor'. From 'uma_ProcessComponentInterface', the role 'uma_ProcessComponentInterface45' has cardinality 0..*, and from 'uma_WorkProductDescriptor', the role 'uma_WorkProductDescriptor' has cardinality 0..*.
+An association connects 'uma_ProcessElement' and 'uma_ProcessPackage'. From 'uma_ProcessElement', the role 'uma_ProcessElement' has cardinality 0..*, and from 'uma_ProcessPackage', the role 'uma_ProcessPackage' has cardinality 0..*.
+An association connects 'uma_Section' and 'uma_Section'. From 'uma_Section', the role 'uma_Section49' has cardinality 0..*, and from 'uma_Section', the role 'uma_Section47' has cardinality 0..*.
+An association connects 'uma_Section' and 'uma_TaskDescriptor'. From 'uma_Section', the role 'uma_Section52' has cardinality 0..*, and from 'uma_TaskDescriptor', the role 'uma_TaskDescriptor51' has cardinality 0..*.
+An association connects 'uma_WorkBreakdownElement' and 'uma_WorkOrder'. From 'uma_WorkBreakdownElement', the role 'uma_WorkBreakdownElement' has cardinality 0..*, and from 'uma_WorkOrder', the role 'uma_WorkOrder' has cardinality 0..*.

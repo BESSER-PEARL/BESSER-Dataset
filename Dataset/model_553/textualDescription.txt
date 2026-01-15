@@ -1,0 +1,301 @@
+The domain model 'aspectualacme' describes the core structural elements and their relationships within the system.
+
+The model defines 54 main class(es).
+
+'aspectualacme_ArmaniOrExpression' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'ArmaniExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_WildCard' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'aspectualacme_Import' represents an important domain concept.
+It has one attribute: 'fileName', which is of type str.
+
+'aspectualacme_Attachment' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_attachableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_ArmaniBooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_ArmaniRelationalExpression' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'aspectualacme_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_BindableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ArmaniDesignRuleExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_CrosscuttingRole' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_ArmaniQuantifiedExpression' represents an important domain concept.
+It has one attribute: 'quantifier', which is of type str.
+
+'aspectualacme_ArmaniAdditiveExpression' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'aspectualacme_TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_ArmaniIffExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_ArmaniExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicElement' represents an important domain concept.
+It does not declare any attributes.
+
+'attachableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_ArmaniConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_Family' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_System' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_ArmaniUnaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'aspectualacme_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_ArmaniVariable' represents an important domain concept.
+It has the following attributes: 'basicType', which is of type str; 'id', which is of type str.
+
+'aspectualacme_ConnectorType' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_BaseRole' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_ComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_ArmaniSetExpression' represents an important domain concept.
+It has the following attributes: 'referenceType', which is of type str; 'reference', which is of type str.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_ArmaniImpliesExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_ArmaniFunctionCall' represents an important domain concept.
+It has one attribute: 'functionId', which is of type str.
+
+'aspectualacme_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'BindableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_ArmaniDesignRuleExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_PortType' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_PropertyType' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'values', which is of type str.
+
+'aspectualacme_Armani' represents an important domain concept.
+It has one attribute: 'modifiers', which is of type str.
+
+'aspectualacme_ArmaniEqualityExpression' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'aspectualacme_Element' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'aspectualacme_ArmaniMultiplicativeExpression' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'aspectualacme_Role' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_BasicElement' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_Representation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'aspectualacme_RoleType' represents an important domain concept.
+It does not declare any attributes.
+
+'Role' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_ArmaniPrimitiveExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_Property' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'ArmaniUnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ArmaniPrimitiveExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'aspectualacme_Glue' represents an important domain concept.
+It has one attribute: 'glueType', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'GlueType' defines the following possible values: 'before', 'around', 'after'.
+The enumeration 'ArmaniTypes' defines the following possible values: 'Component', 'Property', 'Connector', 'Port', 'Role', 'Representation'.
+The enumeration 'ArmaniSetTypes' defines the following possible values: 'Representations', 'Ports', 'Connectors', 'Properties', 'Components', 'Roles', 'Elements'.
+The enumeration 'ArmaniQuantifier' defines the following possible values: 'forall', 'exists'.
+
+The model also captures inheritance relationships between classes.
+The class 'aspectualacme_attachableElement' is a specialization of 'Element'.
+The class 'aspectualacme_BasicElement' is a specialization of 'Element'.
+The class 'aspectualacme_Family' is a specialization of 'BasicElement'.
+The class 'aspectualacme_ComponentType' is a specialization of 'TypeDefinition'.
+The class 'aspectualacme_RoleType' is a specialization of 'TypeDefinition'.
+The class 'aspectualacme_PortType' is a specialization of 'TypeDefinition'.
+The class 'aspectualacme_ConnectorType' is a specialization of 'TypeDefinition'.
+The class 'aspectualacme_PropertyType' is a specialization of 'TypeDefinition'.
+The class 'aspectualacme_System' is a specialization of 'BasicElement'.
+The class 'aspectualacme_Component' is a specialization of 'Element'.
+The class 'aspectualacme_Connector' is a specialization of 'Element'.
+The class 'aspectualacme_Role' is a specialization of 'attachableElement'.
+The class 'aspectualacme_Role' is a specialization of 'BindableElement'.
+The class 'aspectualacme_BaseRole' is a specialization of 'Role'.
+The class 'aspectualacme_CrosscuttingRole' is a specialization of 'Role'.
+The class 'aspectualacme_Port' is a specialization of 'attachableElement'.
+The class 'aspectualacme_Port' is a specialization of 'BindableElement'.
+The class 'aspectualacme_WildCard' is a specialization of 'attachableElement'.
+The class 'aspectualacme_BindableElement' is a specialization of 'Element'.
+The class 'aspectualacme_TypeDefinition' is a specialization of 'Element'.
+The class 'aspectualacme_ArmaniFunctionCall' is a specialization of 'ArmaniPrimitiveExpression'.
+The class 'aspectualacme_ArmaniSetExpression' is a specialization of 'ArmaniPrimitiveExpression'.
+The class 'aspectualacme_ArmaniConstant' is a specialization of 'ArmaniPrimitiveExpression'.
+The class 'aspectualacme_ArmaniPrimitiveExpression' is a specialization of 'ArmaniUnaryExpression'.
+The class 'aspectualacme_ArmaniUnaryExpression' is a specialization of 'ArmaniExpression'.
+The class 'aspectualacme_ArmaniMultiplicativeExpression' is a specialization of 'ArmaniExpression'.
+The class 'aspectualacme_ArmaniAdditiveExpression' is a specialization of 'ArmaniExpression'.
+The class 'aspectualacme_ArmaniRelationalExpression' is a specialization of 'ArmaniExpression'.
+The class 'aspectualacme_ArmaniEqualityExpression' is a specialization of 'ArmaniExpression'.
+The class 'aspectualacme_ArmaniIffExpression' is a specialization of 'ArmaniExpression'.
+The class 'aspectualacme_ArmaniImpliesExpression' is a specialization of 'ArmaniExpression'.
+The class 'aspectualacme_ArmaniOrExpression' is a specialization of 'ArmaniExpression'.
+The class 'aspectualacme_ArmaniVariable' is a specialization of 'ArmaniExpression'.
+The class 'aspectualacme_ArmaniBooleanExpression' is a specialization of 'ArmaniDesignRuleExpression'.
+The class 'aspectualacme_ArmaniQuantifiedExpression' is a specialization of 'ArmaniDesignRuleExpression'.
+The class 'aspectualacme_ArmaniDesignRuleExpression' is a specialization of 'ArmaniExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'aspectualacme_Root' and 'aspectualacme_Import'. From 'aspectualacme_Root', the role 'aspectualacme_Root' has cardinality 0..*, and from 'aspectualacme_Import', the role 'aspectualacme_Import' has cardinality 0..*.
+An association connects 'aspectualacme_BasicElement' and 'aspectualacme_Root'. From 'aspectualacme_BasicElement', the role 'aspectualacme_BasicElement' has cardinality 0..*, and from 'aspectualacme_Root', the role 'aspectualacme_Root2' has cardinality 0..*.
+An association connects 'aspectualacme_Element' and 'aspectualacme_Property'. From 'aspectualacme_Element', the role 'aspectualacme_Element' has cardinality 0..*, and from 'aspectualacme_Property', the role 'aspectualacme_Property' has cardinality 0..*.
+An association connects 'aspectualacme_Element' and 'aspectualacme_Representation'. From 'aspectualacme_Element', the role 'element' has cardinality 0..*, and from 'aspectualacme_Representation', the role 'Representation' has cardinality 0..*.
+An association connects 'aspectualacme_Armani' and 'aspectualacme_BasicElement'. From 'aspectualacme_Armani', the role 'aspectualacme_Armani' has cardinality 0..*, and from 'aspectualacme_BasicElement', the role 'aspectualacme_BasicElement6' has cardinality 0..*.
+An association connects 'aspectualacme_BasicElement' and 'aspectualacme_Family'. From 'aspectualacme_BasicElement', the role 'aspectualacme_BasicElement8' has cardinality 0..*, and from 'aspectualacme_Family', the role 'aspectualacme_Family' has cardinality 0..*.
+An association connects 'aspectualacme_Connector' and 'aspectualacme_Family'. From 'aspectualacme_Connector', the role 'Connector' has cardinality 0..*, and from 'aspectualacme_Family', the role 'parentFamily' has cardinality 0..*.
+An association connects 'aspectualacme_Component' and 'aspectualacme_Family'. From 'aspectualacme_Component', the role 'Component' has cardinality 0..*, and from 'aspectualacme_Family', the role 'parentFamily11' has cardinality 0..*.
+An association connects 'aspectualacme_Attachment' and 'aspectualacme_Family'. From 'aspectualacme_Attachment', the role 'Attachment' has cardinality 0..*, and from 'aspectualacme_Family', the role 'parentFamily13' has cardinality 0..*.
+An association connects 'aspectualacme_WildCard' and 'aspectualacme_Family'. From 'aspectualacme_WildCard', the role 'aspectualacme_WildCard' has cardinality 0..*, and from 'aspectualacme_Family', the role 'aspectualacme_Family15' has cardinality 0..*.
+An association connects 'aspectualacme_Family' and 'aspectualacme_ComponentType'. From 'aspectualacme_Family', the role 'parentFamily17' has cardinality 0..*, and from 'aspectualacme_ComponentType', the role 'ComponentType' has cardinality 0..*.
+An association connects 'aspectualacme_Family' and 'aspectualacme_PortType'. From 'aspectualacme_Family', the role 'parentFamily19' has cardinality 0..*, and from 'aspectualacme_PortType', the role 'PortType' has cardinality 0..*.
+An association connects 'aspectualacme_ConnectorType' and 'aspectualacme_Family'. From 'aspectualacme_ConnectorType', the role 'ConnectorType' has cardinality 0..*, and from 'aspectualacme_Family', the role 'parentFamily21' has cardinality 0..*.
+An association connects 'aspectualacme_Family' and 'aspectualacme_RoleType'. From 'aspectualacme_Family', the role 'parentFamily23' has cardinality 0..*, and from 'aspectualacme_RoleType', the role 'RoleType' has cardinality 0..*.
+An association connects 'aspectualacme_Family' and 'aspectualacme_PropertyType'. From 'aspectualacme_Family', the role 'parentFamily25' has cardinality 0..*, and from 'aspectualacme_PropertyType', the role 'PropertyType' has cardinality 0..*.
+An association connects 'aspectualacme_Property' and 'aspectualacme_Family'. From 'aspectualacme_Property', the role 'Property' has cardinality 0..*, and from 'aspectualacme_Family', the role 'parentFamily27' has cardinality 0..*.
+An association connects 'aspectualacme_Port' and 'aspectualacme_ComponentType'. From 'aspectualacme_Port', the role 'Port' has cardinality 0..*, and from 'aspectualacme_ComponentType', the role 'ComponentT' has cardinality 0..*.
+An association connects 'aspectualacme_ComponentType' and 'aspectualacme_ComponentType'. From 'aspectualacme_ComponentType', the role 'aspectualacme_ComponentType29' has cardinality 0..*, and from 'aspectualacme_ComponentType', the role 'aspectualacme_ComponentType' has cardinality 0..*.
+An association connects 'aspectualacme_ComponentType' and 'aspectualacme_Family'. From 'aspectualacme_ComponentType', the role 'ctypes' has cardinality 0..*, and from 'aspectualacme_Family', the role 'Family' has cardinality 0..*.
+An association connects 'aspectualacme_RoleType' and 'aspectualacme_RoleType'. From 'aspectualacme_RoleType', the role 'aspectualacme_RoleType' has cardinality 0..*, and from 'aspectualacme_RoleType', the role 'aspectualacme_RoleType32' has cardinality 0..*.
+An association connects 'aspectualacme_RoleType' and 'aspectualacme_Family'. From 'aspectualacme_RoleType', the role 'rtypes' has cardinality 0..*, and from 'aspectualacme_Family', the role 'Family35' has cardinality 0..*.
+An association connects 'aspectualacme_PortType' and 'aspectualacme_PortType'. From 'aspectualacme_PortType', the role 'aspectualacme_PortType' has cardinality 0..*, and from 'aspectualacme_PortType', the role 'aspectualacme_PortType36' has cardinality 0..*.
+An association connects 'aspectualacme_PortType' and 'aspectualacme_Family'. From 'aspectualacme_PortType', the role 'ptypes' has cardinality 0..*, and from 'aspectualacme_Family', the role 'Family39' has cardinality 0..*.
+An association connects 'aspectualacme_ConnectorType' and 'aspectualacme_ConnectorType'. From 'aspectualacme_ConnectorType', the role 'aspectualacme_ConnectorType' has cardinality 0..*, and from 'aspectualacme_ConnectorType', the role 'aspectualacme_ConnectorType40' has cardinality 0..*.
+An association connects 'aspectualacme_ConnectorType' and 'aspectualacme_Role'. From 'aspectualacme_ConnectorType', the role 'ConnectorT' has cardinality 0..*, and from 'aspectualacme_Role', the role 'Role' has cardinality 0..*.
+An association connects 'aspectualacme_ConnectorType' and 'aspectualacme_Glue'. From 'aspectualacme_ConnectorType', the role 'aspectualacme_ConnectorType44' has cardinality 0..*, and from 'aspectualacme_Glue', the role 'aspectualacme_Glue' has cardinality 0..*.
+An association connects 'aspectualacme_Family' and 'aspectualacme_ConnectorType'. From 'aspectualacme_Family', the role 'Family46' has cardinality 0..*, and from 'aspectualacme_ConnectorType', the role 'cntypes' has cardinality 0..*.
+An association connects 'aspectualacme_PropertyType' and 'aspectualacme_Family'. From 'aspectualacme_PropertyType', the role 'prtypes' has cardinality 0..*, and from 'aspectualacme_Family', the role 'Family48' has cardinality 0..*.
+An association connects 'aspectualacme_Connector' and 'aspectualacme_System'. From 'aspectualacme_Connector', the role 'Connector50' has cardinality 0..*, and from 'aspectualacme_System', the role 'parentSystem' has cardinality 0..*.
+An association connects 'aspectualacme_Property' and 'aspectualacme_System'. From 'aspectualacme_Property', the role 'Property53' has cardinality 0..*, and from 'aspectualacme_System', the role 'parentSystem52' has cardinality 0..*.
+An association connects 'aspectualacme_System' and 'aspectualacme_Attachment'. From 'aspectualacme_System', the role 'parentSystem55' has cardinality 0..*, and from 'aspectualacme_Attachment', the role 'Attachment56' has cardinality 0..*.
+An association connects 'aspectualacme_WildCard' and 'aspectualacme_System'. From 'aspectualacme_WildCard', the role 'aspectualacme_WildCard58' has cardinality 0..*, and from 'aspectualacme_System', the role 'aspectualacme_System' has cardinality 0..*.
+An association connects 'aspectualacme_System' and 'aspectualacme_Component'. From 'aspectualacme_System', the role 'parentSystem60' has cardinality 0..*, and from 'aspectualacme_Component', the role 'Component61' has cardinality 0..*.
+An association connects 'aspectualacme_System' and 'aspectualacme_Representation'. From 'aspectualacme_System', the role 'system' has cardinality 0..*, and from 'aspectualacme_Representation', the role 'Representation63' has cardinality 0..*.
+An association connects 'aspectualacme_Family' and 'aspectualacme_System'. From 'aspectualacme_Family', the role 'aspectualacme_Family66' has cardinality 0..*, and from 'aspectualacme_System', the role 'aspectualacme_System65' has cardinality 0..*.
+An association connects 'aspectualacme_Component' and 'aspectualacme_Port'. From 'aspectualacme_Component', the role 'Component68' has cardinality 0..*, and from 'aspectualacme_Port', the role 'Port69' has cardinality 0..*.
+An association connects 'aspectualacme_ComponentType' and 'aspectualacme_Component'. From 'aspectualacme_ComponentType', the role 'aspectualacme_ComponentType71' has cardinality 0..*, and from 'aspectualacme_Component', the role 'aspectualacme_Component' has cardinality 0..*.
+An association connects 'aspectualacme_Component' and 'aspectualacme_System'. From 'aspectualacme_Component', the role 'components' has cardinality 0..*, and from 'aspectualacme_System', the role 'System' has cardinality 0..*.
+An association connects 'aspectualacme_Component' and 'aspectualacme_Family'. From 'aspectualacme_Component', the role 'components74' has cardinality 0..*, and from 'aspectualacme_Family', the role 'Family75' has cardinality 0..*.
+An association connects 'aspectualacme_Component' and 'aspectualacme_ComponentType'. From 'aspectualacme_Component', the role 'aspectualacme_Component77' has cardinality 0..*, and from 'aspectualacme_ComponentType', the role 'aspectualacme_ComponentType78' has cardinality 0..*.
+An association connects 'aspectualacme_Role' and 'aspectualacme_Connector'. From 'aspectualacme_Role', the role 'Role81' has cardinality 0..*, and from 'aspectualacme_Connector', the role 'Connector80' has cardinality 0..*.
+An association connects 'aspectualacme_Connector' and 'aspectualacme_Glue'. From 'aspectualacme_Connector', the role 'connector' has cardinality 0..*, and from 'aspectualacme_Glue', the role 'Glue' has cardinality 0..*.
+An association connects 'aspectualacme_Connector' and 'aspectualacme_ConnectorType'. From 'aspectualacme_Connector', the role 'aspectualacme_Connector' has cardinality 0..*, and from 'aspectualacme_ConnectorType', the role 'aspectualacme_ConnectorType84' has cardinality 0..*.
+An association connects 'aspectualacme_Connector' and 'aspectualacme_System'. From 'aspectualacme_Connector', the role 'connectors' has cardinality 0..*, and from 'aspectualacme_System', the role 'System86' has cardinality 0..*.
+An association connects 'aspectualacme_Connector' and 'aspectualacme_Family'. From 'aspectualacme_Connector', the role 'connectors88' has cardinality 0..*, and from 'aspectualacme_Family', the role 'Family89' has cardinality 0..*.
+An association connects 'aspectualacme_Connector' and 'aspectualacme_ConnectorType'. From 'aspectualacme_Connector', the role 'aspectualacme_Connector91' has cardinality 0..*, and from 'aspectualacme_ConnectorType', the role 'aspectualacme_ConnectorType92' has cardinality 0..*.
+An association connects 'aspectualacme_Connector' and 'aspectualacme_Role'. From 'aspectualacme_Connector', the role 'Connector94' has cardinality 0..*, and from 'aspectualacme_Role', the role 'role' has cardinality 0..*.
+An association connects 'aspectualacme_ConnectorType' and 'aspectualacme_Role'. From 'aspectualacme_ConnectorType', the role 'ConnectorType97' has cardinality 0..*, and from 'aspectualacme_Role', the role 'role96' has cardinality 0..*.
+An association connects 'aspectualacme_RoleType' and 'aspectualacme_Role'. From 'aspectualacme_RoleType', the role 'aspectualacme_RoleType99' has cardinality 0..*, and from 'aspectualacme_Role', the role 'aspectualacme_Role' has cardinality 0..*.
+An association connects 'aspectualacme_Role' and 'aspectualacme_RoleType'. From 'aspectualacme_Role', the role 'aspectualacme_Role101' has cardinality 0..*, and from 'aspectualacme_RoleType', the role 'aspectualacme_RoleType102' has cardinality 0..*.
+An association connects 'aspectualacme_RoleType' and 'aspectualacme_BaseRole'. From 'aspectualacme_RoleType', the role 'aspectualacme_RoleType104' has cardinality 0..*, and from 'aspectualacme_BaseRole', the role 'aspectualacme_BaseRole' has cardinality 0..*.
+An association connects 'aspectualacme_RoleType' and 'aspectualacme_CrosscuttingRole'. From 'aspectualacme_RoleType', the role 'aspectualacme_RoleType106' has cardinality 0..*, and from 'aspectualacme_CrosscuttingRole', the role 'aspectualacme_CrosscuttingRole' has cardinality 0..*.
+An association connects 'aspectualacme_Port' and 'aspectualacme_PortType'. From 'aspectualacme_Port', the role 'aspectualacme_Port' has cardinality 0..*, and from 'aspectualacme_PortType', the role 'aspectualacme_PortType108' has cardinality 0..*.
+An association connects 'aspectualacme_Port' and 'aspectualacme_Component'. From 'aspectualacme_Port', the role 'port' has cardinality 0..*, and from 'aspectualacme_Component', the role 'Component110' has cardinality 0..*.
+An association connects 'aspectualacme_Port' and 'aspectualacme_ComponentType'. From 'aspectualacme_Port', the role 'port112' has cardinality 0..*, and from 'aspectualacme_ComponentType', the role 'ComponentType113' has cardinality 0..*.
+An association connects 'aspectualacme_Port' and 'aspectualacme_PortType'. From 'aspectualacme_Port', the role 'aspectualacme_Port115' has cardinality 0..*, and from 'aspectualacme_PortType', the role 'aspectualacme_PortType116' has cardinality 0..*.
+An association connects 'aspectualacme_Property' and 'aspectualacme_PropertyType'. From 'aspectualacme_Property', the role 'aspectualacme_Property118' has cardinality 0..*, and from 'aspectualacme_PropertyType', the role 'aspectualacme_PropertyType' has cardinality 0..*.
+An association connects 'aspectualacme_System' and 'aspectualacme_Property'. From 'aspectualacme_System', the role 'System120' has cardinality 0..*, and from 'aspectualacme_Property', the role 'properties' has cardinality 0..*.
+An association connects 'aspectualacme_Family' and 'aspectualacme_Property'. From 'aspectualacme_Family', the role 'Family123' has cardinality 0..*, and from 'aspectualacme_Property', the role 'properties122' has cardinality 0..*.
+An association connects 'aspectualacme_BaseRole' and 'aspectualacme_Glue'. From 'aspectualacme_BaseRole', the role 'aspectualacme_BaseRole126' has cardinality 0..*, and from 'aspectualacme_Glue', the role 'aspectualacme_Glue125' has cardinality 0..*.
+An association connects 'aspectualacme_CrosscuttingRole' and 'aspectualacme_Glue'. From 'aspectualacme_CrosscuttingRole', the role 'aspectualacme_CrosscuttingRole129' has cardinality 0..*, and from 'aspectualacme_Glue', the role 'aspectualacme_Glue128' has cardinality 0..*.
+An association connects 'aspectualacme_Connector' and 'aspectualacme_Glue'. From 'aspectualacme_Connector', the role 'Connector131' has cardinality 0..*, and from 'aspectualacme_Glue', the role 'glue' has cardinality 0..*.
+An association connects 'aspectualacme_Attachment' and 'aspectualacme_attachableElement'. From 'aspectualacme_Attachment', the role 'aspectualacme_Attachment' has cardinality 0..*, and from 'aspectualacme_attachableElement', the role 'aspectualacme_attachableElement' has cardinality 0..*.
+An association connects 'aspectualacme_attachableElement' and 'aspectualacme_Attachment'. From 'aspectualacme_attachableElement', the role 'aspectualacme_attachableElement135' has cardinality 0..*, and from 'aspectualacme_Attachment', the role 'aspectualacme_Attachment134' has cardinality 0..*.
+An association connects 'aspectualacme_Attachment' and 'aspectualacme_System'. From 'aspectualacme_Attachment', the role 'attachments' has cardinality 0..*, and from 'aspectualacme_System', the role 'System137' has cardinality 0..*.
+An association connects 'aspectualacme_Family' and 'aspectualacme_Attachment'. From 'aspectualacme_Family', the role 'Family140' has cardinality 0..*, and from 'aspectualacme_Attachment', the role 'attachments139' has cardinality 0..*.
+An association connects 'aspectualacme_Binding' and 'aspectualacme_Property'. From 'aspectualacme_Binding', the role 'aspectualacme_Binding' has cardinality 0..*, and from 'aspectualacme_Property', the role 'aspectualacme_Property142' has cardinality 0..*.
+An association connects 'aspectualacme_Binding' and 'aspectualacme_BindableElement'. From 'aspectualacme_Binding', the role 'aspectualacme_Binding144' has cardinality 0..*, and from 'aspectualacme_BindableElement', the role 'aspectualacme_BindableElement' has cardinality 0..*.
+An association connects 'aspectualacme_BindableElement' and 'aspectualacme_Binding'. From 'aspectualacme_BindableElement', the role 'aspectualacme_BindableElement147' has cardinality 0..*, and from 'aspectualacme_Binding', the role 'aspectualacme_Binding146' has cardinality 0..*.
+An association connects 'aspectualacme_Representation' and 'aspectualacme_Binding'. From 'aspectualacme_Representation', the role 'Representation149' has cardinality 0..*, and from 'aspectualacme_Binding', the role 'bindings' has cardinality 0..*.
+An association connects 'aspectualacme_Representation' and 'aspectualacme_System'. From 'aspectualacme_Representation', the role 'parentRepresentation' has cardinality 0..*, and from 'aspectualacme_System', the role 'System151' has cardinality 0..*.
+An association connects 'aspectualacme_Representation' and 'aspectualacme_Binding'. From 'aspectualacme_Representation', the role 'representation' has cardinality 0..*, and from 'aspectualacme_Binding', the role 'Binding' has cardinality 0..*.
+An association connects 'aspectualacme_Element' and 'aspectualacme_Representation'. From 'aspectualacme_Element', the role 'Element' has cardinality 0..*, and from 'aspectualacme_Representation', the role 'representations' has cardinality 0..*.
+An association connects 'aspectualacme_Armani' and 'aspectualacme_ArmaniDesignRuleExpression'. From 'aspectualacme_Armani', the role 'aspectualacme_Armani155' has cardinality 0..*, and from 'aspectualacme_ArmaniDesignRuleExpression', the role 'aspectualacme_ArmaniDesignRuleExpression' has cardinality 0..*.
+An association connects 'aspectualacme_ArmaniFunctionCall' and 'aspectualacme_ArmaniPrimitiveExpression'. From 'aspectualacme_ArmaniFunctionCall', the role 'aspectualacme_ArmaniFunctionCall' has cardinality 0..*, and from 'aspectualacme_ArmaniPrimitiveExpression', the role 'aspectualacme_ArmaniPrimitiveExpression' has cardinality 0..*.
+An association connects 'aspectualacme_ArmaniSetExpression' and 'aspectualacme_ArmaniConstant'. From 'aspectualacme_ArmaniSetExpression', the role 'aspectualacme_ArmaniSetExpression' has cardinality 0..*, and from 'aspectualacme_ArmaniConstant', the role 'aspectualacme_ArmaniConstant' has cardinality 0..*.
+An association connects 'aspectualacme_ArmaniDesignRuleExpression' and 'aspectualacme_ArmaniPrimitiveExpression'. From 'aspectualacme_ArmaniDesignRuleExpression', the role 'aspectualacme_ArmaniDesignRuleExpression160' has cardinality 0..*, and from 'aspectualacme_ArmaniPrimitiveExpression', the role 'aspectualacme_ArmaniPrimitiveExpression159' has cardinality 0..*.
+An association connects 'aspectualacme_ArmaniUnaryExpression' and 'aspectualacme_ArmaniUnaryExpression'. From 'aspectualacme_ArmaniUnaryExpression', the role 'aspectualacme_ArmaniUnaryExpression161' has cardinality 0..*, and from 'aspectualacme_ArmaniUnaryExpression', the role 'aspectualacme_ArmaniUnaryExpression' has cardinality 0..*.
+An association connects 'aspectualacme_ArmaniUnaryExpression' and 'aspectualacme_ArmaniMultiplicativeExpression'. From 'aspectualacme_ArmaniUnaryExpression', the role 'aspectualacme_ArmaniUnaryExpression164' has cardinality 0..*, and from 'aspectualacme_ArmaniMultiplicativeExpression', the role 'aspectualacme_ArmaniMultiplicativeExpression' has cardinality 0..*.
+An association connects 'aspectualacme_ArmaniAdditiveExpression' and 'aspectualacme_ArmaniMultiplicativeExpression'. From 'aspectualacme_ArmaniAdditiveExpression', the role 'aspectualacme_ArmaniAdditiveExpression' has cardinality 0..*, and from 'aspectualacme_ArmaniMultiplicativeExpression', the role 'aspectualacme_ArmaniMultiplicativeExpression166' has cardinality 0..*.
+An association connects 'aspectualacme_ArmaniRelationalExpression' and 'aspectualacme_ArmaniAdditiveExpression'. From 'aspectualacme_ArmaniRelationalExpression', the role 'aspectualacme_ArmaniRelationalExpression' has cardinality 0..*, and from 'aspectualacme_ArmaniAdditiveExpression', the role 'aspectualacme_ArmaniAdditiveExpression168' has cardinality 0..*.
+An association connects 'aspectualacme_ArmaniRelationalExpression' and 'aspectualacme_ArmaniEqualityExpression'. From 'aspectualacme_ArmaniRelationalExpression', the role 'aspectualacme_ArmaniRelationalExpression170' has cardinality 0..*, and from 'aspectualacme_ArmaniEqualityExpression', the role 'aspectualacme_ArmaniEqualityExpression' has cardinality 0..*.
+An association connects 'aspectualacme_ArmaniIffExpression' and 'aspectualacme_ArmaniEqualityExpression'. From 'aspectualacme_ArmaniIffExpression', the role 'aspectualacme_ArmaniIffExpression' has cardinality 0..*, and from 'aspectualacme_ArmaniEqualityExpression', the role 'aspectualacme_ArmaniEqualityExpression172' has cardinality 0..*.
+An association connects 'aspectualacme_ArmaniIffExpression' and 'aspectualacme_ArmaniImpliesExpression'. From 'aspectualacme_ArmaniIffExpression', the role 'aspectualacme_ArmaniIffExpression174' has cardinality 0..*, and from 'aspectualacme_ArmaniImpliesExpression', the role 'aspectualacme_ArmaniImpliesExpression' has cardinality 0..*.
+An association connects 'aspectualacme_ArmaniImpliesExpression' and 'aspectualacme_ArmaniOrExpression'. From 'aspectualacme_ArmaniImpliesExpression', the role 'aspectualacme_ArmaniImpliesExpression176' has cardinality 0..*, and from 'aspectualacme_ArmaniOrExpression', the role 'aspectualacme_ArmaniOrExpression' has cardinality 0..*.
+An association connects 'aspectualacme_ArmaniVariable' and 'aspectualacme_TypeDefinition'. From 'aspectualacme_ArmaniVariable', the role 'aspectualacme_ArmaniVariable' has cardinality 0..*, and from 'aspectualacme_TypeDefinition', the role 'aspectualacme_TypeDefinition' has cardinality 0..*.
+An association connects 'aspectualacme_ArmaniBooleanExpression' and 'aspectualacme_ArmaniOrExpression'. From 'aspectualacme_ArmaniBooleanExpression', the role 'aspectualacme_ArmaniBooleanExpression' has cardinality 0..*, and from 'aspectualacme_ArmaniOrExpression', the role 'aspectualacme_ArmaniOrExpression179' has cardinality 0..*.
+An association connects 'aspectualacme_ArmaniQuantifiedExpression' and 'aspectualacme_ArmaniVariable'. From 'aspectualacme_ArmaniQuantifiedExpression', the role 'aspectualacme_ArmaniQuantifiedExpression' has cardinality 0..*, and from 'aspectualacme_ArmaniVariable', the role 'aspectualacme_ArmaniVariable181' has cardinality 0..*.
+An association connects 'aspectualacme_ArmaniQuantifiedExpression' and 'aspectualacme_ArmaniSetExpression'. From 'aspectualacme_ArmaniQuantifiedExpression', the role 'aspectualacme_ArmaniQuantifiedExpression183' has cardinality 0..*, and from 'aspectualacme_ArmaniSetExpression', the role 'aspectualacme_ArmaniSetExpression184' has cardinality 0..*.
+An association connects 'aspectualacme_ArmaniQuantifiedExpression' and 'aspectualacme_ArmaniDesignRuleExpression'. From 'aspectualacme_ArmaniQuantifiedExpression', the role 'aspectualacme_ArmaniQuantifiedExpression186' has cardinality 0..*, and from 'aspectualacme_ArmaniDesignRuleExpression', the role 'aspectualacme_ArmaniDesignRuleExpression187' has cardinality 0..*.

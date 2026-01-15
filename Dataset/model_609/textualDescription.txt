@@ -1,0 +1,200 @@
+The domain model 'webapp' describes the core structural elements and their relationships within the system.
+
+The model defines 41 main class(es).
+
+'webapp_PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Field' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'defaultValue', which is of type str; 'name', which is of type str.
+
+'webapp_TableHTML' represents an important domain concept.
+It does not declare any attributes.
+
+'Tag' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Column' represents an important domain concept.
+It has the following attributes: 'isNotNull', which is of type bool; 'type', which is of type str; 'useZeroFill', which is of type bool; 'name', which is of type str; 'defaultValue', which is of type str; 'size', which is of type int.
+
+'webapp_Image' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Th' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Input' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'webapp_Controller' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_BusinessObject' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'package', which is of type str.
+
+'webapp_OnDelete' represents an important domain concept.
+It has one attribute: 'behavior', which is of type str.
+
+'webapp_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_WebConfig' represents an important domain concept.
+It has one attribute: 'displayName', which is of type str.
+
+'webapp_Td' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Check' represents an important domain concept.
+It has one attribute: 'expr', which is of type str.
+
+'webapp_Model' represents an important domain concept.
+It has the following attributes: 'databaseName', which is of type str; 'userName', which is of type str; 'url', which is of type str; 'password', which is of type str.
+
+'webapp_Messages' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Tag' represents an important domain concept.
+It has one attribute: 'property', which is of type str.
+
+'webapp_Action' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'returnType', which is of type str.
+
+'webapp_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_WebApp' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'framework', which is of type str.
+
+'webapp_Mapping' represents an important domain concept.
+It has the following attributes: 'right', which is of type str; 'left', which is of type str.
+
+'webapp_Navigation' represents an important domain concept.
+It has one attribute: 'message', which is of type str.
+
+'webapp_Properties' represents an important domain concept.
+It has the following attributes: 'package', which is of type str; 'name', which is of type str.
+
+'webapp_OnUpdate' represents an important domain concept.
+It has one attribute: 'behavior', which is of type str.
+
+'webapp_AppConfig' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Unique' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_View' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Attribute' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'webapp_Table' represents an important domain concept.
+It has the following attributes: 'charset', which is of type str; 'name', which is of type str.
+
+'webapp_Tr' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Resource' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_File' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Validator' represents an important domain concept.
+It has the following attributes: 'package', which is of type str; 'name', which is of type str.
+
+'webapp_Form' represents an important domain concept.
+It has one attribute: 'method', which is of type str.
+
+'webapp_Detail' represents an important domain concept.
+It has the following attributes: 'precision', which is of type int; 'scale', which is of type int.
+
+'webapp_Page' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isMain', which is of type bool.
+
+'webapp_Text' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'webapp_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Behavior' defines the following possible values: 'CASCADE', 'RESTRICT'.
+The enumeration 'ColumnType' defines the following possible values: 'BIGINT', 'DOUBLE', 'NUMERIC', 'LONGTEXT', 'LONGBLOB', 'SMALLINT', 'TINYINT', 'FLOAT', 'REAL', 'MEDIUMBLOB', 'YEAR', 'BINARY', 'TIMESTAMP', 'VARBINARY', 'DECIMAL', 'BLOB', 'VARCHAR', 'BIT', 'MEDIUMINT', 'MEDIUMTEXT', 'TINYBLOB', 'TIME', 'TINYTEXT', 'CHAR', 'DATETIME', 'DATE', 'TEXT', 'INTEGER'.
+The enumeration 'FormMethod' defines the following possible values: 'GET', 'POST'.
+The enumeration 'Charset' defines the following possible values: 'BINARY', 'CP932', 'ARMSCII8', 'CP1250', 'SJIS', 'KOI8U', 'TIS620', 'EUCJMPS', 'CP850', 'CP866', 'LATIN7', 'GREEK', 'UJIS', 'LATIN1', 'ASCII', 'GB2312', 'LATIN2', 'CP1256', 'MACROMAN', 'DEC8', 'LATIN5', 'HP8', 'GEOSTD8', 'CP1257', 'MACCE', 'EUCKR', 'CP1251', 'HEBREW', 'GBK', 'UTF8', 'KOI8R', 'UCS2', 'CP852', 'SWE7', 'KEYBCS2', 'BIG5'.
+The enumeration 'InputType' defines the following possible values: 'TEXT', 'BUTTON'.
+
+The model also captures inheritance relationships between classes.
+The class 'webapp_Form' is a specialization of 'Tag'.
+The class 'webapp_Text' is a specialization of 'Instruction'.
+The class 'webapp_Tag' is a specialization of 'Instruction'.
+The class 'webapp_Input' is a specialization of 'Tag'.
+The class 'webapp_TableHTML' is a specialization of 'Tag'.
+The class 'webapp_Tr' is a specialization of 'Tag'.
+The class 'webapp_Td' is a specialization of 'Tag'.
+The class 'webapp_Th' is a specialization of 'Tag'.
+The class 'webapp_Messages' is a specialization of 'Tag'.
+
+Relationships between classes are modeled using associations.
+An association connects 'webapp_AppConfig' and 'webapp_WebApp'. From 'webapp_AppConfig', the role 'webapp_AppConfig' has cardinality 0..*, and from 'webapp_WebApp', the role 'webapp_WebApp' has cardinality 0..*.
+An association connects 'webapp_WebApp' and 'webapp_WebConfig'. From 'webapp_WebApp', the role 'webapp_WebApp2' has cardinality 0..*, and from 'webapp_WebConfig', the role 'webapp_WebConfig' has cardinality 0..*.
+An association connects 'webapp_Library' and 'webapp_WebApp'. From 'webapp_Library', the role 'webapp_Library' has cardinality 0..*, and from 'webapp_WebApp', the role 'webapp_WebApp4' has cardinality 0..*.
+An association connects 'webapp_View' and 'webapp_WebApp'. From 'webapp_View', the role 'webapp_View' has cardinality 0..*, and from 'webapp_WebApp', the role 'webapp_WebApp6' has cardinality 0..*.
+An association connects 'webapp_Model' and 'webapp_WebApp'. From 'webapp_Model', the role 'webapp_Model' has cardinality 0..*, and from 'webapp_WebApp', the role 'webapp_WebApp8' has cardinality 0..*.
+An association connects 'webapp_Controller' and 'webapp_WebApp'. From 'webapp_Controller', the role 'webapp_Controller' has cardinality 0..*, and from 'webapp_WebApp', the role 'webapp_WebApp10' has cardinality 0..*.
+An association connects 'webapp_WebApp' and 'webapp_Resource'. From 'webapp_WebApp', the role 'webapp_WebApp12' has cardinality 0..*, and from 'webapp_Resource', the role 'webapp_Resource' has cardinality 0..*.
+An association connects 'webapp_Page' and 'webapp_View'. From 'webapp_Page', the role 'webapp_Page' has cardinality 0..*, and from 'webapp_View', the role 'webapp_View14' has cardinality 0..*.
+An association connects 'webapp_View' and 'webapp_Navigation'. From 'webapp_View', the role 'webapp_View16' has cardinality 0..*, and from 'webapp_Navigation', the role 'webapp_Navigation' has cardinality 0..*.
+An association connects 'webapp_Table' and 'webapp_Model'. From 'webapp_Table', the role 'webapp_Table' has cardinality 0..*, and from 'webapp_Model', the role 'webapp_Model18' has cardinality 0..*.
+An association connects 'webapp_Model' and 'webapp_BusinessObject'. From 'webapp_Model', the role 'webapp_Model20' has cardinality 0..*, and from 'webapp_BusinessObject', the role 'webapp_BusinessObject' has cardinality 0..*.
+An association connects 'webapp_Validator' and 'webapp_Controller'. From 'webapp_Validator', the role 'webapp_Validator' has cardinality 0..*, and from 'webapp_Controller', the role 'webapp_Controller22' has cardinality 0..*.
+An association connects 'webapp_Action' and 'webapp_Controller'. From 'webapp_Action', the role 'webapp_Action' has cardinality 0..*, and from 'webapp_Controller', the role 'webapp_Controller24' has cardinality 0..*.
+An association connects 'webapp_Image' and 'webapp_Resource'. From 'webapp_Image', the role 'webapp_Image' has cardinality 0..*, and from 'webapp_Resource', the role 'webapp_Resource26' has cardinality 0..*.
+An association connects 'webapp_File' and 'webapp_Resource'. From 'webapp_File', the role 'webapp_File' has cardinality 0..*, and from 'webapp_Resource', the role 'webapp_Resource28' has cardinality 0..*.
+An association connects 'webapp_Resource' and 'webapp_Properties'. From 'webapp_Resource', the role 'webapp_Resource30' has cardinality 0..*, and from 'webapp_Properties', the role 'webapp_Properties' has cardinality 0..*.
+An association connects 'webapp_Mapping' and 'webapp_Properties'. From 'webapp_Mapping', the role 'webapp_Mapping' has cardinality 0..*, and from 'webapp_Properties', the role 'webapp_Properties32' has cardinality 0..*.
+An association connects 'webapp_Table' and 'webapp_Column'. From 'webapp_Table', the role 'webapp_Table34' has cardinality 0..*, and from 'webapp_Column', the role 'webapp_Column' has cardinality 0..*.
+An association connects 'webapp_Constraint' and 'webapp_Table'. From 'webapp_Constraint', the role 'webapp_Constraint' has cardinality 0..*, and from 'webapp_Table', the role 'webapp_Table36' has cardinality 0..*.
+An association connects 'webapp_Detail' and 'webapp_Column'. From 'webapp_Detail', the role 'webapp_Detail' has cardinality 0..*, and from 'webapp_Column', the role 'webapp_Column38' has cardinality 0..*.
+An association connects 'webapp_PrimaryKey' and 'webapp_Constraint'. From 'webapp_PrimaryKey', the role 'webapp_PrimaryKey' has cardinality 0..*, and from 'webapp_Constraint', the role 'webapp_Constraint40' has cardinality 0..*.
+An association connects 'webapp_Unique' and 'webapp_Constraint'. From 'webapp_Unique', the role 'webapp_Unique' has cardinality 0..*, and from 'webapp_Constraint', the role 'webapp_Constraint42' has cardinality 0..*.
+An association connects 'webapp_Constraint' and 'webapp_Check'. From 'webapp_Constraint', the role 'webapp_Constraint44' has cardinality 0..*, and from 'webapp_Check', the role 'webapp_Check' has cardinality 0..*.
+An association connects 'webapp_Constraint' and 'webapp_ForeignKey'. From 'webapp_Constraint', the role 'webapp_Constraint46' has cardinality 0..*, and from 'webapp_ForeignKey', the role 'webapp_ForeignKey' has cardinality 0..*.
+An association connects 'webapp_PrimaryKey' and 'webapp_Column'. From 'webapp_PrimaryKey', the role 'webapp_PrimaryKey48' has cardinality 0..*, and from 'webapp_Column', the role 'webapp_Column49' has cardinality 0..*.
+An association connects 'webapp_Column' and 'webapp_ForeignKey'. From 'webapp_Column', the role 'webapp_Column52' has cardinality 0..*, and from 'webapp_ForeignKey', the role 'webapp_ForeignKey51' has cardinality 0..*.
+An association connects 'webapp_OnDelete' and 'webapp_ForeignKey'. From 'webapp_OnDelete', the role 'webapp_OnDelete' has cardinality 0..*, and from 'webapp_ForeignKey', the role 'webapp_ForeignKey54' has cardinality 0..*.
+An association connects 'webapp_OnUpdate' and 'webapp_ForeignKey'. From 'webapp_OnUpdate', the role 'webapp_OnUpdate' has cardinality 0..*, and from 'webapp_ForeignKey', the role 'webapp_ForeignKey56' has cardinality 0..*.
+An association connects 'webapp_ForeignKey' and 'webapp_Table'. From 'webapp_ForeignKey', the role 'webapp_ForeignKey58' has cardinality 0..*, and from 'webapp_Table', the role 'webapp_Table59' has cardinality 0..*.
+An association connects 'webapp_Column' and 'webapp_ForeignKey'. From 'webapp_Column', the role 'webapp_Column62' has cardinality 0..*, and from 'webapp_ForeignKey', the role 'webapp_ForeignKey61' has cardinality 0..*.
+An association connects 'webapp_Column' and 'webapp_Unique'. From 'webapp_Column', the role 'webapp_Column65' has cardinality 0..*, and from 'webapp_Unique', the role 'webapp_Unique64' has cardinality 0..*.
+An association connects 'webapp_Page' and 'webapp_Validator'. From 'webapp_Page', the role 'webapp_Page68' has cardinality 0..*, and from 'webapp_Validator', the role 'webapp_Validator67' has cardinality 0..*.
+An association connects 'webapp_Page' and 'webapp_Properties'. From 'webapp_Page', the role 'webapp_Page70' has cardinality 0..*, and from 'webapp_Properties', the role 'webapp_Properties71' has cardinality 0..*.
+An association connects 'webapp_Mapping' and 'webapp_Page'. From 'webapp_Mapping', the role 'webapp_Mapping74' has cardinality 0..*, and from 'webapp_Page', the role 'webapp_Page73' has cardinality 0..*.
+An association connects 'webapp_Instruction' and 'webapp_Page'. From 'webapp_Instruction', the role 'webapp_Instruction' has cardinality 0..*, and from 'webapp_Page', the role 'webapp_Page76' has cardinality 0..*.
+An association connects 'webapp_Form' and 'webapp_Tag'. From 'webapp_Form', the role 'webapp_Form' has cardinality 0..*, and from 'webapp_Tag', the role 'webapp_Tag' has cardinality 0..*.
+An association connects 'webapp_Action' and 'webapp_BusinessObject'. From 'webapp_Action', the role 'webapp_Action79' has cardinality 0..*, and from 'webapp_BusinessObject', the role 'webapp_BusinessObject80' has cardinality 0..*.
+An association connects 'webapp_Tag' and 'webapp_Attribute'. From 'webapp_Tag', the role 'webapp_Tag82' has cardinality 0..*, and from 'webapp_Attribute', the role 'webapp_Attribute' has cardinality 0..*.
+An association connects 'webapp_Action' and 'webapp_Input'. From 'webapp_Action', the role 'webapp_Action84' has cardinality 0..*, and from 'webapp_Input', the role 'webapp_Input' has cardinality 0..*.
+An association connects 'webapp_Mapping' and 'webapp_Input'. From 'webapp_Mapping', the role 'webapp_Mapping87' has cardinality 0..*, and from 'webapp_Input', the role 'webapp_Input86' has cardinality 0..*.
+An association connects 'webapp_Mapping' and 'webapp_Input'. From 'webapp_Mapping', the role 'webapp_Mapping90' has cardinality 0..*, and from 'webapp_Input', the role 'webapp_Input89' has cardinality 0..*.
+An association connects 'webapp_Field' and 'webapp_Input'. From 'webapp_Field', the role 'webapp_Field' has cardinality 0..*, and from 'webapp_Input', the role 'webapp_Input92' has cardinality 0..*.
+An association connects 'webapp_Validator' and 'webapp_Input'. From 'webapp_Validator', the role 'webapp_Validator95' has cardinality 0..*, and from 'webapp_Input', the role 'webapp_Input94' has cardinality 0..*.
+An association connects 'webapp_TableHTML' and 'webapp_Tr'. From 'webapp_TableHTML', the role 'webapp_TableHTML' has cardinality 0..*, and from 'webapp_Tr', the role 'webapp_Tr' has cardinality 0..*.
+An association connects 'webapp_Th' and 'webapp_Tr'. From 'webapp_Th', the role 'webapp_Th' has cardinality 0..*, and from 'webapp_Tr', the role 'webapp_Tr98' has cardinality 0..*.
+An association connects 'webapp_Tr' and 'webapp_Td'. From 'webapp_Tr', the role 'webapp_Tr100' has cardinality 0..*, and from 'webapp_Td', the role 'webapp_Td' has cardinality 0..*.
+An association connects 'webapp_Td' and 'webapp_Tag'. From 'webapp_Td', the role 'webapp_Td102' has cardinality 0..*, and from 'webapp_Tag', the role 'webapp_Tag103' has cardinality 0..*.
+An association connects 'webapp_Field' and 'webapp_BusinessObject'. From 'webapp_Field', the role 'webapp_Field106' has cardinality 0..*, and from 'webapp_BusinessObject', the role 'webapp_BusinessObject105' has cardinality 0..*.
+An association connects 'webapp_Action' and 'webapp_BusinessObject'. From 'webapp_Action', the role 'webapp_Action109' has cardinality 0..*, and from 'webapp_BusinessObject', the role 'webapp_BusinessObject108' has cardinality 0..*.
+An association connects 'webapp_BusinessObject' and 'webapp_BusinessObject'. From 'webapp_BusinessObject', the role 'webapp_BusinessObject110' has cardinality 0..*, and from 'webapp_BusinessObject', the role 'webapp_BusinessObject112' has cardinality 0..*.
+An association connects 'webapp_Model' and 'webapp_BusinessObject'. From 'webapp_Model', the role 'webapp_Model115' has cardinality 0..*, and from 'webapp_BusinessObject', the role 'webapp_BusinessObject114' has cardinality 0..*.
+An association connects 'webapp_Field' and 'webapp_BusinessObject'. From 'webapp_Field', the role 'webapp_Field117' has cardinality 0..*, and from 'webapp_BusinessObject', the role 'webapp_BusinessObject118' has cardinality 0..*.
+An association connects 'webapp_Navigation' and 'webapp_Page'. From 'webapp_Navigation', the role 'webapp_Navigation120' has cardinality 0..*, and from 'webapp_Page', the role 'webapp_Page121' has cardinality 0..*.
+An association connects 'webapp_Page' and 'webapp_Navigation'. From 'webapp_Page', the role 'webapp_Page124' has cardinality 0..*, and from 'webapp_Navigation', the role 'webapp_Navigation123' has cardinality 0..*.

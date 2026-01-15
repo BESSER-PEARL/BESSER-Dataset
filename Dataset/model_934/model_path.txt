@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/fabianarol/vSPEM-2.0/master/plugins/org.eclipse.epf.xml.uma/src/model/UMA.ecore

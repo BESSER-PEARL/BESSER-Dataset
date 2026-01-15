@@ -1,0 +1,55 @@
+The domain model 'simplepdl' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'simplepdl_Ressource' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'quantity', which is of type int.
+
+'simplepdl_ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simplepdl_WorkDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simplepdl_Need' represents an important domain concept.
+It has one attribute: 'quantity', which is of type int.
+
+'simplepdl_Guidance' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'simplepdl_Process' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simplepdl_NeedSet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simplepdl_WorkSequence' represents an important domain concept.
+It has one attribute: 'linkType', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'WorkSequenceType' defines the following possible values: 'finishToStart', 'startToStart', 'startToFinish', 'finishToFinish'.
+
+The model also captures inheritance relationships between classes.
+The class 'simplepdl_WorkDefinition' is a specialization of 'ProcessElement'.
+The class 'simplepdl_WorkSequence' is a specialization of 'ProcessElement'.
+The class 'simplepdl_Guidance' is a specialization of 'ProcessElement'.
+The class 'simplepdl_Ressource' is a specialization of 'ProcessElement'.
+The class 'simplepdl_Need' is a specialization of 'ProcessElement'.
+The class 'simplepdl_NeedSet' is a specialization of 'ProcessElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simplepdl_Process' and 'simplepdl_ProcessElement'. From 'simplepdl_Process', the role 'process' has cardinality 0..*, and from 'simplepdl_ProcessElement', the role 'ProcessElement' has cardinality 0..*.
+An association connects 'simplepdl_ProcessElement' and 'simplepdl_Process'. From 'simplepdl_ProcessElement', the role 'processElements' has cardinality 0..*, and from 'simplepdl_Process', the role 'Process' has cardinality 0..*.
+An association connects 'simplepdl_WorkSequence' and 'simplepdl_WorkDefinition'. From 'simplepdl_WorkSequence', the role 'WorkSequence' has cardinality 0..*, and from 'simplepdl_WorkDefinition', the role 'successor' has cardinality 0..*.
+An association connects 'simplepdl_WorkDefinition' and 'simplepdl_WorkSequence'. From 'simplepdl_WorkDefinition', the role 'predecessor' has cardinality 0..*, and from 'simplepdl_WorkSequence', the role 'WorkSequence4' has cardinality 0..*.
+An association connects 'simplepdl_NeedSet' and 'simplepdl_WorkDefinition'. From 'simplepdl_NeedSet', the role 'NeedSet' has cardinality 0..*, and from 'simplepdl_WorkDefinition', the role 'wd' has cardinality 0..*.
+An association connects 'simplepdl_WorkSequence' and 'simplepdl_WorkDefinition'. From 'simplepdl_WorkSequence', the role 'linksToSuccessors' has cardinality 0..*, and from 'simplepdl_WorkDefinition', the role 'WorkDefinition' has cardinality 0..*.
+An association connects 'simplepdl_WorkDefinition' and 'simplepdl_WorkSequence'. From 'simplepdl_WorkDefinition', the role 'WorkDefinition8' has cardinality 0..*, and from 'simplepdl_WorkSequence', the role 'linksToPredecessors' has cardinality 0..*.
+An association connects 'simplepdl_Guidance' and 'simplepdl_ProcessElement'. From 'simplepdl_Guidance', the role 'simplepdl_Guidance' has cardinality 0..*, and from 'simplepdl_ProcessElement', the role 'simplepdl_ProcessElement' has cardinality 0..*.
+An association connects 'simplepdl_Need' and 'simplepdl_Ressource'. From 'simplepdl_Need', the role 'simplepdl_Need' has cardinality 0..*, and from 'simplepdl_Ressource', the role 'simplepdl_Ressource' has cardinality 0..*.
+An association connects 'simplepdl_Need' and 'simplepdl_NeedSet'. From 'simplepdl_Need', the role 'needs' has cardinality 0..*, and from 'simplepdl_NeedSet', the role 'NeedSet12' has cardinality 0..*.
+An association connects 'simplepdl_NeedSet' and 'simplepdl_Need'. From 'simplepdl_NeedSet', the role 'needSet' has cardinality 0..*, and from 'simplepdl_Need', the role 'Need' has cardinality 0..*.
+An association connects 'simplepdl_WorkDefinition' and 'simplepdl_NeedSet'. From 'simplepdl_WorkDefinition', the role 'WorkDefinition15' has cardinality 0..*, and from 'simplepdl_NeedSet', the role 'needSets' has cardinality 0..*.

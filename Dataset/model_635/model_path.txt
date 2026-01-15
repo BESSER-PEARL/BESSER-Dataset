@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/IfA/PAMTraM/casestudies/library/library-atl/mm1.ecore

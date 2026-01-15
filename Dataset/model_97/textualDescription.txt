@@ -1,0 +1,580 @@
+The domain model 'Java5' describes the core structural elements and their relationships within the system.
+
+The model defines 107 main class(es).
+
+'Java5_PrimitiveTypeLong' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_TypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_PrefixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Java5_ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_InstanceofExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_InfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Java5_VariableDeclarationStatement' represents an important domain concept.
+It has one attribute: 'extraArrayDimensions', which is of type int.
+
+'Java5_PrimitiveTypeShort' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_AnnotationTypeMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_CharacterLiteral' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'escapedValue', which is of type str.
+
+'Java5_ThrowStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_ArrayAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_ThisExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_SuperFieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_SynchronizedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_TagElement' represents an important domain concept.
+It has one attribute: 'tagName', which is of type str.
+
+'Java5_InterfaceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'OrphanType' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_SwitchCase' represents an important domain concept.
+It has one attribute: 'default', which is of type bool.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_WildCardType' represents an important domain concept.
+It has one attribute: 'isUpperBound', which is of type str.
+
+'Java5_SingleVariableDeclaration' represents an important domain concept.
+It has one attribute: 'varargs', which is of type bool.
+
+'Java5_AbstractTypeDeclaration' represents an important domain concept.
+It has one attribute: 'qualifiedName', which is of type str.
+
+'Java5_EnumDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_DoStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_MethodRef' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_VariableDeclarationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_CatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_TypeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_MethodRefParameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isVarargs', which is of type str.
+
+'Java5_LabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_PostfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Java5_PrimitiveTypeVoid' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_NamedElementRef' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Java5_EmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_AssertStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_ClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_CompilationUnit' represents an important domain concept.
+It has one attribute: 'originalFilePath', which is of type str.
+
+'Java5_Assignment' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Java5_NamedElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'proxy', which is of type bool.
+
+'Java5_PrimitiveTypeDouble' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_PrimitiveTypeBoolean' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_ArrayCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_FieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_MemberRef' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_PrimitiveTypeFloat' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_NumberLiteral' represents an important domain concept.
+It has one attribute: 'tokenValue', which is of type str.
+
+'Java5_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_Initializer' represents an important domain concept.
+It does not declare any attributes.
+
+'BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_SuperMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_StringLiteral' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'escapedValue', which is of type str.
+
+'Java5_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_Modifier' represents an important domain concept.
+It has the following attributes: 'static', which is of type bool; 'transient', which is of type bool; 'volatile', which is of type bool; 'synchronized', which is of type bool; 'visibility', which is of type str; 'strictfp', which is of type bool; 'inheritance', which is of type str; 'native', which is of type bool.
+
+'Java5_ArrayType' represents an important domain concept.
+It has the following attributes: 'originalName', which is of type str; 'dimensions', which is of type int.
+
+'AbstractTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_UnresolvedItem' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_SuperConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_TextElement' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'Java5_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'extraArrayDimensions', which is of type int.
+
+'Java5_EnhancedForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_AnnotationMemberValuePair' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_CastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_ParameterizedType' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_AnonymousClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_VariableDeclarationFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_ImportDeclaration' represents an important domain concept.
+It has one attribute: 'static', which is of type bool.
+
+'Java5_TryStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'Java5_AnnotationTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_EnumConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_ArrayLengthAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_ParenthesizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_PrimitiveTypeByte' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_PackageDeclaration' represents an important domain concept.
+It has one attribute: 'qualifiedName', which is of type str.
+
+'Java5_ConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_OrphanType' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_FieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_MethodDeclaration' represents an important domain concept.
+It has the following attributes: 'constructor', which is of type bool; 'extraArrayDimensions', which is of type int; 'varargs', which is of type bool.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_PrimitiveTypeInt' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_TypeDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_PrimitiveTypeChar' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_ClassInstanceCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_MethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'Java5_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VisibilityKind' defines the following possible values: 'public', 'private', 'protected', 'none'.
+The enumeration 'InheritanceKind' defines the following possible values: 'abstract', 'final'.
+
+The model also captures inheritance relationships between classes.
+The class 'Java5_AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'Java5_Annotation' is a specialization of 'Expression'.
+The class 'Java5_AnnotationMemberValuePair' is a specialization of 'NamedElement'.
+The class 'Java5_AnnotationTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'Java5_AnnotationTypeMemberDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'Java5_AnonymousClassDeclaration' is a specialization of 'ASTNode'.
+The class 'Java5_ArrayAccess' is a specialization of 'Expression'.
+The class 'Java5_ArrayCreation' is a specialization of 'Expression'.
+The class 'Java5_ArrayInitializer' is a specialization of 'Expression'.
+The class 'Java5_ArrayLengthAccess' is a specialization of 'Expression'.
+The class 'Java5_ArrayType' is a specialization of 'OrphanType'.
+The class 'Java5_AssertStatement' is a specialization of 'Statement'.
+The class 'Java5_Assignment' is a specialization of 'Expression'.
+The class 'Java5_Block' is a specialization of 'Statement'.
+The class 'Java5_BodyDeclaration' is a specialization of 'NamedElement'.
+The class 'Java5_BooleanLiteral' is a specialization of 'Expression'.
+The class 'Java5_BreakStatement' is a specialization of 'Statement'.
+The class 'Java5_CastExpression' is a specialization of 'Expression'.
+The class 'Java5_CatchClause' is a specialization of 'Statement'.
+The class 'Java5_CharacterLiteral' is a specialization of 'Expression'.
+The class 'Java5_ClassDeclaration' is a specialization of 'TypeDeclaration'.
+The class 'Java5_ClassInstanceCreation' is a specialization of 'Expression'.
+The class 'Java5_CompilationUnit' is a specialization of 'NamedElement'.
+The class 'Java5_ConditionalExpression' is a specialization of 'Expression'.
+The class 'Java5_ConstructorInvocation' is a specialization of 'Statement'.
+The class 'Java5_ContinueStatement' is a specialization of 'Statement'.
+The class 'Java5_DoStatement' is a specialization of 'Statement'.
+The class 'Java5_EmptyStatement' is a specialization of 'Statement'.
+The class 'Java5_EnumDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'Java5_EnumConstantDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'Java5_EnhancedForStatement' is a specialization of 'Statement'.
+The class 'Java5_Expression' is a specialization of 'ASTNode'.
+The class 'Java5_ExpressionStatement' is a specialization of 'Statement'.
+The class 'Java5_FieldAccess' is a specialization of 'Expression'.
+The class 'Java5_FieldDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'Java5_ForStatement' is a specialization of 'Statement'.
+The class 'Java5_IfStatement' is a specialization of 'Statement'.
+The class 'Java5_ImportDeclaration' is a specialization of 'ASTNode'.
+The class 'Java5_InfixExpression' is a specialization of 'Expression'.
+The class 'Java5_Initializer' is a specialization of 'BodyDeclaration'.
+The class 'Java5_InstanceofExpression' is a specialization of 'Expression'.
+The class 'Java5_InterfaceDeclaration' is a specialization of 'TypeDeclaration'.
+The class 'Java5_LabeledStatement' is a specialization of 'NamedElement'.
+The class 'Java5_LabeledStatement' is a specialization of 'Statement'.
+The class 'Java5_MemberRef' is a specialization of 'ASTNode'.
+The class 'Java5_MethodDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'Java5_MethodInvocation' is a specialization of 'Expression'.
+The class 'Java5_MethodRef' is a specialization of 'ASTNode'.
+The class 'Java5_MethodRefParameter' is a specialization of 'ASTNode'.
+The class 'Java5_Modifier' is a specialization of 'ASTNode'.
+The class 'Java5_NamedElement' is a specialization of 'ASTNode'.
+The class 'Java5_NamedElementRef' is a specialization of 'Expression'.
+The class 'Java5_NullLiteral' is a specialization of 'Expression'.
+The class 'Java5_NumberLiteral' is a specialization of 'Expression'.
+The class 'Java5_OrphanType' is a specialization of 'NamedElement'.
+The class 'Java5_PackageDeclaration' is a specialization of 'NamedElement'.
+The class 'Java5_ParameterizedType' is a specialization of 'OrphanType'.
+The class 'Java5_ParenthesizedExpression' is a specialization of 'Expression'.
+The class 'Java5_PostfixExpression' is a specialization of 'Expression'.
+The class 'Java5_PrefixExpression' is a specialization of 'Expression'.
+The class 'Java5_PrimitiveType' is a specialization of 'OrphanType'.
+The class 'Java5_PrimitiveTypeBoolean' is a specialization of 'PrimitiveType'.
+The class 'Java5_PrimitiveTypeByte' is a specialization of 'PrimitiveType'.
+The class 'Java5_PrimitiveTypeChar' is a specialization of 'PrimitiveType'.
+The class 'Java5_PrimitiveTypeDouble' is a specialization of 'PrimitiveType'.
+The class 'Java5_PrimitiveTypeShort' is a specialization of 'PrimitiveType'.
+The class 'Java5_PrimitiveTypeFloat' is a specialization of 'PrimitiveType'.
+The class 'Java5_PrimitiveTypeInt' is a specialization of 'PrimitiveType'.
+The class 'Java5_PrimitiveTypeLong' is a specialization of 'PrimitiveType'.
+The class 'Java5_PrimitiveTypeVoid' is a specialization of 'PrimitiveType'.
+The class 'Java5_ReturnStatement' is a specialization of 'Statement'.
+The class 'Java5_SingleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+The class 'Java5_Statement' is a specialization of 'ASTNode'.
+The class 'Java5_StringLiteral' is a specialization of 'Expression'.
+The class 'Java5_SuperConstructorInvocation' is a specialization of 'Statement'.
+The class 'Java5_SuperFieldAccess' is a specialization of 'Expression'.
+The class 'Java5_SuperMethodInvocation' is a specialization of 'Expression'.
+The class 'Java5_SwitchCase' is a specialization of 'Statement'.
+The class 'Java5_SwitchStatement' is a specialization of 'Statement'.
+The class 'Java5_SynchronizedStatement' is a specialization of 'Statement'.
+The class 'Java5_TagElement' is a specialization of 'ASTNode'.
+The class 'Java5_TextElement' is a specialization of 'ASTNode'.
+The class 'Java5_ThisExpression' is a specialization of 'Expression'.
+The class 'Java5_ThrowStatement' is a specialization of 'Statement'.
+The class 'Java5_TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'Java5_TypeDeclarationStatement' is a specialization of 'Statement'.
+The class 'Java5_TypeLiteral' is a specialization of 'Expression'.
+The class 'Java5_TypeParameter' is a specialization of 'NamedElement'.
+The class 'Java5_TryStatement' is a specialization of 'Statement'.
+The class 'Java5_UnresolvedItem' is a specialization of 'NamedElement'.
+The class 'Java5_VariableDeclaration' is a specialization of 'NamedElement'.
+The class 'Java5_VariableDeclarationExpression' is a specialization of 'Expression'.
+The class 'Java5_VariableDeclarationFragment' is a specialization of 'VariableDeclaration'.
+The class 'Java5_VariableDeclarationStatement' is a specialization of 'Statement'.
+The class 'Java5_WhileStatement' is a specialization of 'Statement'.
+The class 'Java5_WildCardType' is a specialization of 'OrphanType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Java5_BodyDeclaration' and 'Java5_AbstractTypeDeclaration'. From 'Java5_BodyDeclaration', the role 'BodyDeclaration' has cardinality 0..*, and from 'Java5_AbstractTypeDeclaration', the role 'abstractTypeDeclaration' has cardinality 0..*.
+An association connects 'Java5_AbstractTypeDeclaration' and 'Java5_ImportDeclaration'. From 'Java5_AbstractTypeDeclaration', the role 'Java5_AbstractTypeDeclaration' has cardinality 0..*, and from 'Java5_ImportDeclaration', the role 'Java5_ImportDeclaration' has cardinality 0..*.
+An association connects 'Java5_PackageDeclaration' and 'Java5_AbstractTypeDeclaration'. From 'Java5_PackageDeclaration', the role 'PackageDeclaration' has cardinality 0..*, and from 'Java5_AbstractTypeDeclaration', the role 'ownedElements' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_AbstractTypeDeclaration'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef' has cardinality 0..*, and from 'Java5_AbstractTypeDeclaration', the role 'Java5_AbstractTypeDeclaration4' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_Annotation'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef6' has cardinality 0..*, and from 'Java5_Annotation', the role 'Java5_Annotation' has cardinality 0..*.
+An association connects 'Java5_Annotation' and 'Java5_AnnotationMemberValuePair'. From 'Java5_Annotation', the role 'Java5_Annotation8' has cardinality 0..*, and from 'Java5_AnnotationMemberValuePair', the role 'Java5_AnnotationMemberValuePair' has cardinality 0..*.
+An association connects 'Java5_AnnotationMemberValuePair' and 'Java5_NamedElementRef'. From 'Java5_AnnotationMemberValuePair', the role 'Java5_AnnotationMemberValuePair10' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef11' has cardinality 0..*.
+An association connects 'Java5_AnnotationMemberValuePair' and 'Java5_Expression'. From 'Java5_AnnotationMemberValuePair', the role 'Java5_AnnotationMemberValuePair13' has cardinality 0..*, and from 'Java5_Expression', the role 'Java5_Expression' has cardinality 0..*.
+An association connects 'Java5_AnnotationTypeMemberDeclaration' and 'Java5_Expression'. From 'Java5_AnnotationTypeMemberDeclaration', the role 'Java5_AnnotationTypeMemberDeclaration' has cardinality 0..*, and from 'Java5_Expression', the role 'Java5_Expression15' has cardinality 0..*.
+An association connects 'Java5_AnnotationTypeMemberDeclaration' and 'Java5_NamedElementRef'. From 'Java5_AnnotationTypeMemberDeclaration', the role 'Java5_AnnotationTypeMemberDeclaration17' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef18' has cardinality 0..*.
+An association connects 'Java5_AnonymousClassDeclaration' and 'Java5_BodyDeclaration'. From 'Java5_AnonymousClassDeclaration', the role 'anonymousClassDeclarationOwner' has cardinality 0..*, and from 'Java5_BodyDeclaration', the role 'BodyDeclaration20' has cardinality 0..*.
+An association connects 'Java5_ClassInstanceCreation' and 'Java5_AnonymousClassDeclaration'. From 'Java5_ClassInstanceCreation', the role 'ClassInstanceCreation' has cardinality 0..*, and from 'Java5_AnonymousClassDeclaration', the role 'anonymousClassDeclaration' has cardinality 0..*.
+An association connects 'Java5_ArrayAccess' and 'Java5_Expression'. From 'Java5_ArrayAccess', the role 'Java5_ArrayAccess' has cardinality 0..*, and from 'Java5_Expression', the role 'Java5_Expression23' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_ArrayAccess'. From 'Java5_Expression', the role 'Java5_Expression26' has cardinality 0..*, and from 'Java5_ArrayAccess', the role 'Java5_ArrayAccess25' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_ArrayCreation'. From 'Java5_Expression', the role 'Java5_Expression28' has cardinality 0..*, and from 'Java5_ArrayCreation', the role 'Java5_ArrayCreation' has cardinality 0..*.
+An association connects 'Java5_ArrayInitializer' and 'Java5_ArrayCreation'. From 'Java5_ArrayInitializer', the role 'Java5_ArrayInitializer' has cardinality 0..*, and from 'Java5_ArrayCreation', the role 'Java5_ArrayCreation30' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_ArrayCreation'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef33' has cardinality 0..*, and from 'Java5_ArrayCreation', the role 'Java5_ArrayCreation32' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_ArrayInitializer'. From 'Java5_Expression', the role 'Java5_Expression36' has cardinality 0..*, and from 'Java5_ArrayInitializer', the role 'Java5_ArrayInitializer35' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_ArrayLengthAccess'. From 'Java5_Expression', the role 'Java5_Expression38' has cardinality 0..*, and from 'Java5_ArrayLengthAccess', the role 'Java5_ArrayLengthAccess' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_ArrayType'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef40' has cardinality 0..*, and from 'Java5_ArrayType', the role 'Java5_ArrayType' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_AssertStatement'. From 'Java5_Expression', the role 'Java5_Expression42' has cardinality 0..*, and from 'Java5_AssertStatement', the role 'Java5_AssertStatement' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_AssertStatement'. From 'Java5_Expression', the role 'Java5_Expression45' has cardinality 0..*, and from 'Java5_AssertStatement', the role 'Java5_AssertStatement44' has cardinality 0..*.
+An association connects 'Java5_Assignment' and 'Java5_Expression'. From 'Java5_Assignment', the role 'Java5_Assignment' has cardinality 0..*, and from 'Java5_Expression', the role 'Java5_Expression47' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_Assignment'. From 'Java5_Expression', the role 'Java5_Expression50' has cardinality 0..*, and from 'Java5_Assignment', the role 'Java5_Assignment49' has cardinality 0..*.
+An association connects 'Java5_Statement' and 'Java5_Block'. From 'Java5_Statement', the role 'Java5_Statement' has cardinality 0..*, and from 'Java5_Block', the role 'Java5_Block' has cardinality 0..*.
+An association connects 'Java5_BodyDeclaration' and 'Java5_AbstractTypeDeclaration'. From 'Java5_BodyDeclaration', the role 'bodyDeclarations' has cardinality 0..*, and from 'Java5_AbstractTypeDeclaration', the role 'AbstractTypeDeclaration' has cardinality 0..*.
+An association connects 'Java5_Annotation' and 'Java5_BodyDeclaration'. From 'Java5_Annotation', the role 'Java5_Annotation54' has cardinality 0..*, and from 'Java5_BodyDeclaration', the role 'Java5_BodyDeclaration' has cardinality 0..*.
+An association connects 'Java5_AnonymousClassDeclaration' and 'Java5_BodyDeclaration'. From 'Java5_AnonymousClassDeclaration', the role 'AnonymousClassDeclaration' has cardinality 0..*, and from 'Java5_BodyDeclaration', the role 'bodyDeclarations56' has cardinality 0..*.
+An association connects 'Java5_BodyDeclaration' and 'Java5_Modifier'. From 'Java5_BodyDeclaration', the role 'BodyDeclaration58' has cardinality 0..*, and from 'Java5_Modifier', the role 'Modifier' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_BreakStatement'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef60' has cardinality 0..*, and from 'Java5_BreakStatement', the role 'Java5_BreakStatement' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_CastExpression'. From 'Java5_Expression', the role 'Java5_Expression62' has cardinality 0..*, and from 'Java5_CastExpression', the role 'Java5_CastExpression' has cardinality 0..*.
+An association connects 'Java5_CastExpression' and 'Java5_NamedElementRef'. From 'Java5_CastExpression', the role 'Java5_CastExpression64' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef65' has cardinality 0..*.
+An association connects 'Java5_CatchClause' and 'Java5_SingleVariableDeclaration'. From 'Java5_CatchClause', the role 'catchClause' has cardinality 0..*, and from 'Java5_SingleVariableDeclaration', the role 'SingleVariableDeclaration' has cardinality 0..*.
+An association connects 'Java5_Block' and 'Java5_CatchClause'. From 'Java5_Block', the role 'Java5_Block68' has cardinality 0..*, and from 'Java5_CatchClause', the role 'Java5_CatchClause' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_ClassDeclaration'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef70' has cardinality 0..*, and from 'Java5_ClassDeclaration', the role 'Java5_ClassDeclaration' has cardinality 0..*.
+An association connects 'Java5_ClassInstanceCreation' and 'Java5_AnonymousClassDeclaration'. From 'Java5_ClassInstanceCreation', the role 'classInstanceCreation' has cardinality 0..*, and from 'Java5_AnonymousClassDeclaration', the role 'AnonymousClassDeclaration72' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_ClassInstanceCreation'. From 'Java5_Expression', the role 'Java5_Expression74' has cardinality 0..*, and from 'Java5_ClassInstanceCreation', the role 'Java5_ClassInstanceCreation' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_ClassInstanceCreation'. From 'Java5_Expression', the role 'Java5_Expression77' has cardinality 0..*, and from 'Java5_ClassInstanceCreation', the role 'Java5_ClassInstanceCreation76' has cardinality 0..*.
+An association connects 'Java5_ClassInstanceCreation' and 'Java5_NamedElementRef'. From 'Java5_ClassInstanceCreation', the role 'Java5_ClassInstanceCreation79' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef80' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_ClassInstanceCreation'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef83' has cardinality 0..*, and from 'Java5_ClassInstanceCreation', the role 'Java5_ClassInstanceCreation82' has cardinality 0..*.
+An association connects 'Java5_CompilationUnit' and 'Java5_ImportDeclaration'. From 'Java5_CompilationUnit', the role 'Java5_CompilationUnit' has cardinality 0..*, and from 'Java5_ImportDeclaration', the role 'Java5_ImportDeclaration85' has cardinality 0..*.
+An association connects 'Java5_CompilationUnit' and 'Java5_PackageDeclaration'. From 'Java5_CompilationUnit', the role 'Java5_CompilationUnit87' has cardinality 0..*, and from 'Java5_PackageDeclaration', the role 'Java5_PackageDeclaration' has cardinality 0..*.
+An association connects 'Java5_CompilationUnit' and 'Java5_AbstractTypeDeclaration'. From 'Java5_CompilationUnit', the role 'Java5_CompilationUnit89' has cardinality 0..*, and from 'Java5_AbstractTypeDeclaration', the role 'Java5_AbstractTypeDeclaration90' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_ConditionalExpression'. From 'Java5_Expression', the role 'Java5_Expression92' has cardinality 0..*, and from 'Java5_ConditionalExpression', the role 'Java5_ConditionalExpression' has cardinality 0..*.
+An association connects 'Java5_ConditionalExpression' and 'Java5_Expression'. From 'Java5_ConditionalExpression', the role 'Java5_ConditionalExpression94' has cardinality 0..*, and from 'Java5_Expression', the role 'Java5_Expression95' has cardinality 0..*.
+An association connects 'Java5_ConditionalExpression' and 'Java5_Expression'. From 'Java5_ConditionalExpression', the role 'Java5_ConditionalExpression97' has cardinality 0..*, and from 'Java5_Expression', the role 'Java5_Expression98' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_ConstructorInvocation'. From 'Java5_Expression', the role 'Java5_Expression100' has cardinality 0..*, and from 'Java5_ConstructorInvocation', the role 'Java5_ConstructorInvocation' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_ConstructorInvocation'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef103' has cardinality 0..*, and from 'Java5_ConstructorInvocation', the role 'Java5_ConstructorInvocation102' has cardinality 0..*.
+An association connects 'Java5_ContinueStatement' and 'Java5_NamedElementRef'. From 'Java5_ContinueStatement', the role 'Java5_ContinueStatement' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef105' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_DoStatement'. From 'Java5_Expression', the role 'Java5_Expression107' has cardinality 0..*, and from 'Java5_DoStatement', the role 'Java5_DoStatement' has cardinality 0..*.
+An association connects 'Java5_Statement' and 'Java5_DoStatement'. From 'Java5_Statement', the role 'Java5_Statement110' has cardinality 0..*, and from 'Java5_DoStatement', the role 'Java5_DoStatement109' has cardinality 0..*.
+An association connects 'Java5_EnumDeclaration' and 'Java5_EnumConstantDeclaration'. From 'Java5_EnumDeclaration', the role 'Java5_EnumDeclaration' has cardinality 0..*, and from 'Java5_EnumConstantDeclaration', the role 'Java5_EnumConstantDeclaration' has cardinality 0..*.
+An association connects 'Java5_EnumConstantDeclaration' and 'Java5_AnonymousClassDeclaration'. From 'Java5_EnumConstantDeclaration', the role 'Java5_EnumConstantDeclaration113' has cardinality 0..*, and from 'Java5_AnonymousClassDeclaration', the role 'Java5_AnonymousClassDeclaration' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_EnumConstantDeclaration'. From 'Java5_Expression', the role 'Java5_Expression116' has cardinality 0..*, and from 'Java5_EnumConstantDeclaration', the role 'Java5_EnumConstantDeclaration115' has cardinality 0..*.
+An association connects 'Java5_EnhancedForStatement' and 'Java5_Statement'. From 'Java5_EnhancedForStatement', the role 'Java5_EnhancedForStatement' has cardinality 0..*, and from 'Java5_Statement', the role 'Java5_Statement118' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_EnhancedForStatement'. From 'Java5_Expression', the role 'Java5_Expression121' has cardinality 0..*, and from 'Java5_EnhancedForStatement', the role 'Java5_EnhancedForStatement120' has cardinality 0..*.
+An association connects 'Java5_SingleVariableDeclaration' and 'Java5_EnhancedForStatement'. From 'Java5_SingleVariableDeclaration', the role 'SingleVariableDeclaration123' has cardinality 0..*, and from 'Java5_EnhancedForStatement', the role 'enhancedForStatement' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_ExpressionStatement'. From 'Java5_Expression', the role 'Java5_Expression125' has cardinality 0..*, and from 'Java5_ExpressionStatement', the role 'Java5_ExpressionStatement' has cardinality 0..*.
+An association connects 'Java5_FieldAccess' and 'Java5_NamedElementRef'. From 'Java5_FieldAccess', the role 'Java5_FieldAccess' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef127' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_FieldAccess'. From 'Java5_Expression', the role 'Java5_Expression130' has cardinality 0..*, and from 'Java5_FieldAccess', the role 'Java5_FieldAccess129' has cardinality 0..*.
+An association connects 'Java5_FieldDeclaration' and 'Java5_NamedElementRef'. From 'Java5_FieldDeclaration', the role 'Java5_FieldDeclaration' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef132' has cardinality 0..*.
+An association connects 'Java5_VariableDeclarationFragment' and 'Java5_FieldDeclaration'. From 'Java5_VariableDeclarationFragment', the role 'VariableDeclarationFragment' has cardinality 0..*, and from 'Java5_FieldDeclaration', the role 'fieldDeclaration' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_ForStatement'. From 'Java5_Expression', the role 'Java5_Expression135' has cardinality 0..*, and from 'Java5_ForStatement', the role 'Java5_ForStatement' has cardinality 0..*.
+An association connects 'Java5_ForStatement' and 'Java5_Expression'. From 'Java5_ForStatement', the role 'Java5_ForStatement137' has cardinality 0..*, and from 'Java5_Expression', the role 'Java5_Expression138' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_ForStatement'. From 'Java5_Expression', the role 'Java5_Expression141' has cardinality 0..*, and from 'Java5_ForStatement', the role 'Java5_ForStatement140' has cardinality 0..*.
+An association connects 'Java5_Statement' and 'Java5_ForStatement'. From 'Java5_Statement', the role 'Java5_Statement144' has cardinality 0..*, and from 'Java5_ForStatement', the role 'Java5_ForStatement143' has cardinality 0..*.
+An association connects 'Java5_IfStatement' and 'Java5_Expression'. From 'Java5_IfStatement', the role 'Java5_IfStatement' has cardinality 0..*, and from 'Java5_Expression', the role 'Java5_Expression146' has cardinality 0..*.
+An association connects 'Java5_Statement' and 'Java5_IfStatement'. From 'Java5_Statement', the role 'Java5_Statement149' has cardinality 0..*, and from 'Java5_IfStatement', the role 'Java5_IfStatement148' has cardinality 0..*.
+An association connects 'Java5_IfStatement' and 'Java5_Statement'. From 'Java5_IfStatement', the role 'Java5_IfStatement151' has cardinality 0..*, and from 'Java5_Statement', the role 'Java5_Statement152' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_ImportDeclaration'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef155' has cardinality 0..*, and from 'Java5_ImportDeclaration', the role 'Java5_ImportDeclaration154' has cardinality 0..*.
+An association connects 'Java5_InfixExpression' and 'Java5_Expression'. From 'Java5_InfixExpression', the role 'Java5_InfixExpression' has cardinality 0..*, and from 'Java5_Expression', the role 'Java5_Expression157' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_InfixExpression'. From 'Java5_Expression', the role 'Java5_Expression160' has cardinality 0..*, and from 'Java5_InfixExpression', the role 'Java5_InfixExpression159' has cardinality 0..*.
+An association connects 'Java5_InfixExpression' and 'Java5_Expression'. From 'Java5_InfixExpression', the role 'Java5_InfixExpression162' has cardinality 0..*, and from 'Java5_Expression', the role 'Java5_Expression163' has cardinality 0..*.
+An association connects 'Java5_Initializer' and 'Java5_Block'. From 'Java5_Initializer', the role 'Java5_Initializer' has cardinality 0..*, and from 'Java5_Block', the role 'Java5_Block165' has cardinality 0..*.
+An association connects 'Java5_InstanceofExpression' and 'Java5_NamedElementRef'. From 'Java5_InstanceofExpression', the role 'Java5_InstanceofExpression' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef167' has cardinality 0..*.
+An association connects 'Java5_InstanceofExpression' and 'Java5_Expression'. From 'Java5_InstanceofExpression', the role 'Java5_InstanceofExpression169' has cardinality 0..*, and from 'Java5_Expression', the role 'Java5_Expression170' has cardinality 0..*.
+An association connects 'Java5_LabeledStatement' and 'Java5_Statement'. From 'Java5_LabeledStatement', the role 'Java5_LabeledStatement' has cardinality 0..*, and from 'Java5_Statement', the role 'Java5_Statement172' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_MemberRef'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef174' has cardinality 0..*, and from 'Java5_MemberRef', the role 'Java5_MemberRef' has cardinality 0..*.
+An association connects 'Java5_MemberRef' and 'Java5_NamedElementRef'. From 'Java5_MemberRef', the role 'Java5_MemberRef176' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef177' has cardinality 0..*.
+An association connects 'Java5_Block' and 'Java5_MethodDeclaration'. From 'Java5_Block', the role 'Java5_Block179' has cardinality 0..*, and from 'Java5_MethodDeclaration', the role 'Java5_MethodDeclaration' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_MethodDeclaration'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef182' has cardinality 0..*, and from 'Java5_MethodDeclaration', the role 'Java5_MethodDeclaration181' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_MethodDeclaration'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef185' has cardinality 0..*, and from 'Java5_MethodDeclaration', the role 'Java5_MethodDeclaration184' has cardinality 0..*.
+An association connects 'Java5_TypeParameter' and 'Java5_MethodDeclaration'. From 'Java5_TypeParameter', the role 'Java5_TypeParameter' has cardinality 0..*, and from 'Java5_MethodDeclaration', the role 'Java5_MethodDeclaration187' has cardinality 0..*.
+An association connects 'Java5_MethodDeclaration' and 'Java5_MethodDeclaration'. From 'Java5_MethodDeclaration', the role 'MethodDeclaration' has cardinality 0..*, and from 'Java5_MethodDeclaration', the role 'redefinitions' has cardinality 0..*.
+An association connects 'Java5_MethodDeclaration' and 'Java5_MethodDeclaration'. From 'Java5_MethodDeclaration', the role 'redefinedMethodDeclaration' has cardinality 0..*, and from 'Java5_MethodDeclaration', the role 'MethodDeclaration192' has cardinality 0..*.
+An association connects 'Java5_SingleVariableDeclaration' and 'Java5_MethodDeclaration'. From 'Java5_SingleVariableDeclaration', the role 'SingleVariableDeclaration194' has cardinality 0..*, and from 'Java5_MethodDeclaration', the role 'methodDeclaration' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_MethodInvocation'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef196' has cardinality 0..*, and from 'Java5_MethodInvocation', the role 'Java5_MethodInvocation' has cardinality 0..*.
+An association connects 'Java5_MethodInvocation' and 'Java5_Expression'. From 'Java5_MethodInvocation', the role 'Java5_MethodInvocation198' has cardinality 0..*, and from 'Java5_Expression', the role 'Java5_Expression199' has cardinality 0..*.
+An association connects 'Java5_MethodInvocation' and 'Java5_Expression'. From 'Java5_MethodInvocation', the role 'Java5_MethodInvocation201' has cardinality 0..*, and from 'Java5_Expression', the role 'Java5_Expression202' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_MethodRef'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef204' has cardinality 0..*, and from 'Java5_MethodRef', the role 'Java5_MethodRef' has cardinality 0..*.
+An association connects 'Java5_MethodRef' and 'Java5_NamedElementRef'. From 'Java5_MethodRef', the role 'Java5_MethodRef206' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef207' has cardinality 0..*.
+An association connects 'Java5_MethodRef' and 'Java5_MethodRefParameter'. From 'Java5_MethodRef', the role 'Java5_MethodRef209' has cardinality 0..*, and from 'Java5_MethodRefParameter', the role 'Java5_MethodRefParameter' has cardinality 0..*.
+An association connects 'Java5_MethodRefParameter' and 'Java5_NamedElementRef'. From 'Java5_MethodRefParameter', the role 'Java5_MethodRefParameter211' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef212' has cardinality 0..*.
+An association connects 'Java5_Model' and 'Java5_PackageDeclaration'. From 'Java5_Model', the role 'Java5_Model' has cardinality 0..*, and from 'Java5_PackageDeclaration', the role 'Java5_PackageDeclaration214' has cardinality 0..*.
+An association connects 'Java5_Model' and 'Java5_OrphanType'. From 'Java5_Model', the role 'Java5_Model216' has cardinality 0..*, and from 'Java5_OrphanType', the role 'Java5_OrphanType' has cardinality 0..*.
+An association connects 'Java5_Model' and 'Java5_UnresolvedItem'. From 'Java5_Model', the role 'Java5_Model218' has cardinality 0..*, and from 'Java5_UnresolvedItem', the role 'Java5_UnresolvedItem' has cardinality 0..*.
+An association connects 'Java5_Model' and 'Java5_CompilationUnit'. From 'Java5_Model', the role 'Java5_Model220' has cardinality 0..*, and from 'Java5_CompilationUnit', the role 'Java5_CompilationUnit221' has cardinality 0..*.
+An association connects 'Java5_Modifier' and 'Java5_BodyDeclaration'. From 'Java5_Modifier', the role 'modifiers' has cardinality 0..*, and from 'Java5_BodyDeclaration', the role 'BodyDeclaration223' has cardinality 0..*.
+An association connects 'Java5_SingleVariableDeclaration' and 'Java5_Modifier'. From 'Java5_SingleVariableDeclaration', the role 'SingleVariableDeclaration226' has cardinality 0..*, and from 'Java5_Modifier', the role 'modifiers225' has cardinality 0..*.
+An association connects 'Java5_VariableDeclarationStatement' and 'Java5_Modifier'. From 'Java5_VariableDeclarationStatement', the role 'VariableDeclarationStatement' has cardinality 0..*, and from 'Java5_Modifier', the role 'modifiers228' has cardinality 0..*.
+An association connects 'Java5_Modifier' and 'Java5_VariableDeclarationExpression'. From 'Java5_Modifier', the role 'modifiers230' has cardinality 0..*, and from 'Java5_VariableDeclarationExpression', the role 'VariableDeclarationExpression' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_NamedElementRef'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef231' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef233' has cardinality 0..*.
+An association connects 'Java5_NamedElement' and 'Java5_NamedElementRef'. From 'Java5_NamedElement', the role 'Java5_NamedElement' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef235' has cardinality 0..*.
+An association connects 'Java5_AbstractTypeDeclaration' and 'Java5_PackageDeclaration'. From 'Java5_AbstractTypeDeclaration', the role 'AbstractTypeDeclaration237' has cardinality 0..*, and from 'Java5_PackageDeclaration', the role 'package' has cardinality 0..*.
+An association connects 'Java5_PackageDeclaration' and 'Java5_PackageDeclaration'. From 'Java5_PackageDeclaration', the role 'Java5_PackageDeclaration238' has cardinality 0..*, and from 'Java5_PackageDeclaration', the role 'Java5_PackageDeclaration240' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_ParameterizedType'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef242' has cardinality 0..*, and from 'Java5_ParameterizedType', the role 'Java5_ParameterizedType' has cardinality 0..*.
+An association connects 'Java5_ParameterizedType' and 'Java5_NamedElementRef'. From 'Java5_ParameterizedType', the role 'Java5_ParameterizedType244' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef245' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_ParenthesizedExpression'. From 'Java5_Expression', the role 'Java5_Expression247' has cardinality 0..*, and from 'Java5_ParenthesizedExpression', the role 'Java5_ParenthesizedExpression' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_PostfixExpression'. From 'Java5_Expression', the role 'Java5_Expression249' has cardinality 0..*, and from 'Java5_PostfixExpression', the role 'Java5_PostfixExpression' has cardinality 0..*.
+An association connects 'Java5_PrefixExpression' and 'Java5_Expression'. From 'Java5_PrefixExpression', the role 'Java5_PrefixExpression' has cardinality 0..*, and from 'Java5_Expression', the role 'Java5_Expression251' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_ReturnStatement'. From 'Java5_Expression', the role 'Java5_Expression253' has cardinality 0..*, and from 'Java5_ReturnStatement', the role 'Java5_ReturnStatement' has cardinality 0..*.
+An association connects 'Java5_Modifier' and 'Java5_SingleVariableDeclaration'. From 'Java5_Modifier', the role 'Modifier256' has cardinality 0..*, and from 'Java5_SingleVariableDeclaration', the role 'SingleVariableDeclaration255' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_SingleVariableDeclaration'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef258' has cardinality 0..*, and from 'Java5_SingleVariableDeclaration', the role 'Java5_SingleVariableDeclaration' has cardinality 0..*.
+An association connects 'Java5_SingleVariableDeclaration' and 'Java5_MethodDeclaration'. From 'Java5_SingleVariableDeclaration', the role 'parameters' has cardinality 0..*, and from 'Java5_MethodDeclaration', the role 'MethodDeclaration260' has cardinality 0..*.
+An association connects 'Java5_CatchClause' and 'Java5_SingleVariableDeclaration'. From 'Java5_CatchClause', the role 'CatchClause' has cardinality 0..*, and from 'Java5_SingleVariableDeclaration', the role 'exception' has cardinality 0..*.
+An association connects 'Java5_EnhancedForStatement' and 'Java5_SingleVariableDeclaration'. From 'Java5_EnhancedForStatement', the role 'EnhancedForStatement' has cardinality 0..*, and from 'Java5_SingleVariableDeclaration', the role 'parameter' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_SuperConstructorInvocation'. From 'Java5_Expression', the role 'Java5_Expression264' has cardinality 0..*, and from 'Java5_SuperConstructorInvocation', the role 'Java5_SuperConstructorInvocation' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_SuperConstructorInvocation'. From 'Java5_Expression', the role 'Java5_Expression267' has cardinality 0..*, and from 'Java5_SuperConstructorInvocation', the role 'Java5_SuperConstructorInvocation266' has cardinality 0..*.
+An association connects 'Java5_SuperConstructorInvocation' and 'Java5_NamedElementRef'. From 'Java5_SuperConstructorInvocation', the role 'Java5_SuperConstructorInvocation269' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef270' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_SuperFieldAccess'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef272' has cardinality 0..*, and from 'Java5_SuperFieldAccess', the role 'Java5_SuperFieldAccess' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_SuperFieldAccess'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef275' has cardinality 0..*, and from 'Java5_SuperFieldAccess', the role 'Java5_SuperFieldAccess274' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_SuperMethodInvocation'. From 'Java5_Expression', the role 'Java5_Expression277' has cardinality 0..*, and from 'Java5_SuperMethodInvocation', the role 'Java5_SuperMethodInvocation' has cardinality 0..*.
+An association connects 'Java5_SuperMethodInvocation' and 'Java5_NamedElementRef'. From 'Java5_SuperMethodInvocation', the role 'Java5_SuperMethodInvocation279' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef280' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_SuperMethodInvocation'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef283' has cardinality 0..*, and from 'Java5_SuperMethodInvocation', the role 'Java5_SuperMethodInvocation282' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_SwitchCase'. From 'Java5_Expression', the role 'Java5_Expression285' has cardinality 0..*, and from 'Java5_SwitchCase', the role 'Java5_SwitchCase' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_SwitchStatement'. From 'Java5_Expression', the role 'Java5_Expression287' has cardinality 0..*, and from 'Java5_SwitchStatement', the role 'Java5_SwitchStatement' has cardinality 0..*.
+An association connects 'Java5_SwitchStatement' and 'Java5_Statement'. From 'Java5_SwitchStatement', the role 'Java5_SwitchStatement289' has cardinality 0..*, and from 'Java5_Statement', the role 'Java5_Statement290' has cardinality 0..*.
+An association connects 'Java5_SynchronizedStatement' and 'Java5_Block'. From 'Java5_SynchronizedStatement', the role 'Java5_SynchronizedStatement' has cardinality 0..*, and from 'Java5_Block', the role 'Java5_Block292' has cardinality 0..*.
+An association connects 'Java5_SynchronizedStatement' and 'Java5_Expression'. From 'Java5_SynchronizedStatement', the role 'Java5_SynchronizedStatement294' has cardinality 0..*, and from 'Java5_Expression', the role 'Java5_Expression295' has cardinality 0..*.
+An association connects 'Java5_TagElement' and 'Java5_ASTNode'. From 'Java5_TagElement', the role 'Java5_TagElement' has cardinality 0..*, and from 'Java5_ASTNode', the role 'Java5_ASTNode' has cardinality 0..*.
+An association connects 'Java5_ThisExpression' and 'Java5_NamedElementRef'. From 'Java5_ThisExpression', the role 'Java5_ThisExpression' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef298' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_ThrowStatement'. From 'Java5_Expression', the role 'Java5_Expression300' has cardinality 0..*, and from 'Java5_ThrowStatement', the role 'Java5_ThrowStatement' has cardinality 0..*.
+An association connects 'Java5_TypeParameter' and 'Java5_TypeDeclaration'. From 'Java5_TypeParameter', the role 'Java5_TypeParameter302' has cardinality 0..*, and from 'Java5_TypeDeclaration', the role 'Java5_TypeDeclaration' has cardinality 0..*.
+An association connects 'Java5_AbstractTypeDeclaration' and 'Java5_TypeDeclarationStatement'. From 'Java5_AbstractTypeDeclaration', the role 'Java5_AbstractTypeDeclaration304' has cardinality 0..*, and from 'Java5_TypeDeclarationStatement', the role 'Java5_TypeDeclarationStatement' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_TypeLiteral'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef306' has cardinality 0..*, and from 'Java5_TypeLiteral', the role 'Java5_TypeLiteral' has cardinality 0..*.
+An association connects 'Java5_TypeParameter' and 'Java5_NamedElementRef'. From 'Java5_TypeParameter', the role 'Java5_TypeParameter308' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef309' has cardinality 0..*.
+An association connects 'Java5_Block' and 'Java5_TryStatement'. From 'Java5_Block', the role 'Java5_Block311' has cardinality 0..*, and from 'Java5_TryStatement', the role 'Java5_TryStatement' has cardinality 0..*.
+An association connects 'Java5_TryStatement' and 'Java5_Block'. From 'Java5_TryStatement', the role 'Java5_TryStatement313' has cardinality 0..*, and from 'Java5_Block', the role 'Java5_Block314' has cardinality 0..*.
+An association connects 'Java5_CatchClause' and 'Java5_TryStatement'. From 'Java5_CatchClause', the role 'Java5_CatchClause317' has cardinality 0..*, and from 'Java5_TryStatement', the role 'Java5_TryStatement316' has cardinality 0..*.
+An association connects 'Java5_Expression' and 'Java5_VariableDeclaration'. From 'Java5_Expression', the role 'Java5_Expression319' has cardinality 0..*, and from 'Java5_VariableDeclaration', the role 'Java5_VariableDeclaration' has cardinality 0..*.
+An association connects 'Java5_VariableDeclarationExpression' and 'Java5_NamedElementRef'. From 'Java5_VariableDeclarationExpression', the role 'Java5_VariableDeclarationExpression' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef321' has cardinality 0..*.
+An association connects 'Java5_VariableDeclarationFragment' and 'Java5_VariableDeclarationExpression'. From 'Java5_VariableDeclarationFragment', the role 'VariableDeclarationFragment323' has cardinality 0..*, and from 'Java5_VariableDeclarationExpression', the role 'variableDeclarationExpression' has cardinality 0..*.
+An association connects 'Java5_VariableDeclarationExpression' and 'Java5_Modifier'. From 'Java5_VariableDeclarationExpression', the role 'VariableDeclarationExpression325' has cardinality 0..*, and from 'Java5_Modifier', the role 'Modifier326' has cardinality 0..*.
+An association connects 'Java5_VariableDeclarationFragment' and 'Java5_FieldDeclaration'. From 'Java5_VariableDeclarationFragment', the role 'fragments' has cardinality 0..*, and from 'Java5_FieldDeclaration', the role 'FieldDeclaration' has cardinality 0..*.
+An association connects 'Java5_VariableDeclarationStatement' and 'Java5_VariableDeclarationFragment'. From 'Java5_VariableDeclarationStatement', the role 'VariableDeclarationStatement330' has cardinality 0..*, and from 'Java5_VariableDeclarationFragment', the role 'fragments329' has cardinality 0..*.
+An association connects 'Java5_VariableDeclarationFragment' and 'Java5_VariableDeclarationExpression'. From 'Java5_VariableDeclarationFragment', the role 'fragments332' has cardinality 0..*, and from 'Java5_VariableDeclarationExpression', the role 'VariableDeclarationExpression333' has cardinality 0..*.
+An association connects 'Java5_NamedElementRef' and 'Java5_VariableDeclarationStatement'. From 'Java5_NamedElementRef', the role 'Java5_NamedElementRef335' has cardinality 0..*, and from 'Java5_VariableDeclarationStatement', the role 'Java5_VariableDeclarationStatement' has cardinality 0..*.
+An association connects 'Java5_VariableDeclarationFragment' and 'Java5_VariableDeclarationStatement'. From 'Java5_VariableDeclarationFragment', the role 'VariableDeclarationFragment337' has cardinality 0..*, and from 'Java5_VariableDeclarationStatement', the role 'variableDeclarationStatement' has cardinality 0..*.
+An association connects 'Java5_VariableDeclarationStatement' and 'Java5_Modifier'. From 'Java5_VariableDeclarationStatement', the role 'VariableDeclarationStatement339' has cardinality 0..*, and from 'Java5_Modifier', the role 'Modifier340' has cardinality 0..*.
+An association connects 'Java5_WhileStatement' and 'Java5_Expression'. From 'Java5_WhileStatement', the role 'Java5_WhileStatement' has cardinality 0..*, and from 'Java5_Expression', the role 'Java5_Expression342' has cardinality 0..*.
+An association connects 'Java5_Statement' and 'Java5_WhileStatement'. From 'Java5_Statement', the role 'Java5_Statement345' has cardinality 0..*, and from 'Java5_WhileStatement', the role 'Java5_WhileStatement344' has cardinality 0..*.
+An association connects 'Java5_WildCardType' and 'Java5_NamedElementRef'. From 'Java5_WildCardType', the role 'Java5_WildCardType' has cardinality 0..*, and from 'Java5_NamedElementRef', the role 'Java5_NamedElementRef347' has cardinality 0..*.

@@ -1,0 +1,98 @@
+The domain model 'AssistantMVC' describes the core structural elements and their relationships within the system.
+
+The model defines 24 main class(es).
+
+'Observer' represents an important domain concept.
+It does not declare any attributes.
+
+'AssistantMVC_MultipleChoiceView' represents an important domain concept.
+It does not declare any attributes.
+
+'AssistantMVC_Exam' represents an important domain concept.
+It has one attribute: 'question', which is of type str.
+
+'AssistantMVC_Observer' represents an important domain concept.
+It does not declare any attributes.
+
+'AssistantMVC_View' represents an important domain concept.
+It has the following attributes: 'fontColor', which is of type str; 'fontName', which is of type str.
+
+'AssistantMVC_ExamItem' represents an important domain concept.
+It has the following attributes: 'question', which is of type str; 'value', which is of type str; 'optional', which is of type bool.
+
+'AssistantMVC_MultipleChoice' represents an important domain concept.
+It does not declare any attributes.
+
+'ExamView' represents an important domain concept.
+It does not declare any attributes.
+
+'AssistantMVC_ExamController' represents an important domain concept.
+It does not declare any attributes.
+
+'ExamItemView' represents an important domain concept.
+It does not declare any attributes.
+
+'AssistantMVC_Controller' represents an important domain concept.
+It does not declare any attributes.
+
+'AssistantMVC_OpenController' represents an important domain concept.
+It does not declare any attributes.
+
+'ExamItem' represents an important domain concept.
+It does not declare any attributes.
+
+'View' represents an important domain concept.
+It does not declare any attributes.
+
+'AssistantMVC_Observable' represents an important domain concept.
+It does not declare any attributes.
+
+'AssistantMVC_ExamView' represents an important domain concept.
+It does not declare any attributes.
+
+'AssistantMVC_Open' represents an important domain concept.
+It does not declare any attributes.
+
+'AssistantMVC_MultipleChoiceController' represents an important domain concept.
+It does not declare any attributes.
+
+'Observable' represents an important domain concept.
+It does not declare any attributes.
+
+'AssistantMVC_ExamItemController' represents an important domain concept.
+It does not declare any attributes.
+
+'ExamItemController' represents an important domain concept.
+It does not declare any attributes.
+
+'AssistantMVC_ExamItemView' represents an important domain concept.
+It does not declare any attributes.
+
+'AssistantMVC_OpenView' represents an important domain concept.
+It does not declare any attributes.
+
+'Controller' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'AssistantMVC_Exam' is a specialization of 'Observable'.
+The class 'AssistantMVC_ExamItem' is a specialization of 'Observable'.
+The class 'AssistantMVC_Open' is a specialization of 'ExamItem'.
+The class 'AssistantMVC_MultipleChoice' is a specialization of 'ExamItem'.
+The class 'AssistantMVC_Controller' is a specialization of 'Observer'.
+The class 'AssistantMVC_View' is a specialization of 'Observer'.
+The class 'AssistantMVC_ExamController' is a specialization of 'Controller'.
+The class 'AssistantMVC_ExamItemController' is a specialization of 'Controller'.
+The class 'AssistantMVC_MultipleChoiceController' is a specialization of 'ExamItemController'.
+The class 'AssistantMVC_OpenController' is a specialization of 'ExamItemController'.
+The class 'AssistantMVC_ExamView' is a specialization of 'View'.
+The class 'AssistantMVC_ExamItemView' is a specialization of 'View'.
+The class 'AssistantMVC_OpenView' is a specialization of 'ExamView'.
+The class 'AssistantMVC_MultipleChoiceView' is a specialization of 'ExamItemView'.
+
+Relationships between classes are modeled using associations.
+An association connects 'AssistantMVC_ExamItem' and 'AssistantMVC_Exam'. From 'AssistantMVC_ExamItem', the role 'AssistantMVC_ExamItem' has cardinality 0..*, and from 'AssistantMVC_Exam', the role 'AssistantMVC_Exam' has cardinality 0..*.
+An association connects 'AssistantMVC_Exam' and 'AssistantMVC_Controller'. From 'AssistantMVC_Exam', the role 'AssistantMVC_Exam2' has cardinality 0..*, and from 'AssistantMVC_Controller', the role 'AssistantMVC_Controller' has cardinality 0..*.
+An association connects 'AssistantMVC_View' and 'AssistantMVC_Exam'. From 'AssistantMVC_View', the role 'AssistantMVC_View' has cardinality 0..*, and from 'AssistantMVC_Exam', the role 'AssistantMVC_Exam4' has cardinality 0..*.
+An association connects 'AssistantMVC_Observable' and 'AssistantMVC_Observer'. From 'AssistantMVC_Observable', the role 'AssistantMVC_Observable' has cardinality 0..*, and from 'AssistantMVC_Observer', the role 'AssistantMVC_Observer' has cardinality 0..*.
+An association connects 'AssistantMVC_View' and 'AssistantMVC_Controller'. From 'AssistantMVC_View', the role 'AssistantMVC_View7' has cardinality 0..*, and from 'AssistantMVC_Controller', the role 'AssistantMVC_Controller8' has cardinality 0..*.

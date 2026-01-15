@@ -1,0 +1,738 @@
+The domain model 'JTL' describes the core structural elements and their relationships within the system.
+
+The model defines 165 main class(es).
+
+'TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_UnpackExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_StringLiteralExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'CollectionLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_emof_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_UnlimitedNaturalExp' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'JTL_essentialocl_CollectionRange' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_InvalidType' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_JTL_Transformation' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_ExpressionInOcl' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'When' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_emof_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'DictLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_ImperativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_VariableInitExp' represents an important domain concept.
+It has one attribute: 'withResult', which is of type bool.
+
+'JTL_imperativeocl_InstantiationExp' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_AnonymousTupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_BooleanLiteralExp' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type bool.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_AnonymousTupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_emof_URIExtent' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'AssignExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_ForExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_emof_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'JTL_template_ObjectTemplateExp' represents an important domain concept.
+It has one attribute: 'referredClass', which is of type str.
+
+'essentialocl_CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_ComputeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Extent' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_SwitchExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_ImperativeLoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Model' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_template_CollectionTemplateExp' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_BreakExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_template_TemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'AnonymousTupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_emof_TypedElement' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'JTL_imperativeocl_DictionaryType' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_emof_Package' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'JTL_imperativeocl_DictLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_JTL_Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_emof_MultiplicityElement' represents an important domain concept.
+It has the following attributes: 'isUnique', which is of type str; 'lower', which is of type int; 'isOrdered', which is of type str; 'upper', which is of type str.
+
+'JTL_imperativeocl_UnlinkExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_emof_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_RaiseExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_JTL_Model' represents an important domain concept.
+It has one attribute: 'usedPackage', which is of type str.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialocl_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_RealLiteralExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type float.
+
+'JTL_emof_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'Transformation' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_ImperativeIterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_LogExp' represents an important domain concept.
+It has the following attributes: 'level', which is of type int; 'text', which is of type str.
+
+'JTL_essentialocl_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'FeaturePropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_TryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_CollectorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_AnonymousTupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_ContinueExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeLoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_IntegerLiteralExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type int.
+
+'JTL_imperativeocl_TemplateParameterType' represents an important domain concept.
+It has one attribute: 'specification', which is of type str.
+
+'JTL_essentialocl_IteratorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_emof_Property' represents an important domain concept.
+It has the following attributes: 'isComposite', which is of type bool; 'isId', which is of type bool; 'isDerived', which is of type bool; 'default', which is of type str; 'isReadOnly', which is of type bool.
+
+'TryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_Typedef' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_TypeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_emof_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_JTL_When' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyTemplateItem' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_emof_Class' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'JTL_essentialocl_CollectionLiteralExp' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'JTL_emof_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_ReturnExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_BlockExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_CollectionItem' represents an important domain concept.
+It does not declare any attributes.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'AltExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_JTL_Where' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_DictLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_AssignExp' represents an important domain concept.
+It has one attribute: 'isReset', which is of type bool.
+
+'JTL_essentialocl_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_FeaturePropertyCall' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeocl_ImperativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_emof_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_JTL_Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'Where' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectTemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_JTL_Relation' represents an important domain concept.
+It has one attribute: 'isTopLevel', which is of type bool.
+
+'JTL_emof_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_emof_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_JTL_Domain' represents an important domain concept.
+It has the following attributes: 'isEnforceable', which is of type bool; 'isCheckable', which is of type bool.
+
+'JTL_essentialocl_InvalidLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_AltExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_WhileExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Object' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_AssertExp' represents an important domain concept.
+It has one attribute: 'severity', which is of type str.
+
+'essentialocl_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_NullLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ComputeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_ListType' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_emof_Extent' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_emof_Tag' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'JTL_emof_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_EnumLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_template_PropertyTemplateItem' represents an important domain concept.
+It does not declare any attributes.
+
+'LogExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Tag' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_imperativeocl_TupleExp' represents an important domain concept.
+It does not declare any attributes.
+
+'JTL_essentialocl_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CollectionKind' defines the following possible values: 'Set', 'OrderedSet', 'Sequence', 'Bag'.
+The enumeration 'SeverityKind' defines the following possible values: 'warning', 'fatal', 'error'.
+
+The model also captures inheritance relationships between classes.
+The class 'JTL_emof_Class' is a specialization of 'Type'.
+The class 'JTL_emof_DataType' is a specialization of 'Type'.
+The class 'JTL_emof_Element' is a specialization of 'Object'.
+The class 'JTL_emof_Tag' is a specialization of 'Element'.
+The class 'JTL_emof_Enumeration' is a specialization of 'DataType'.
+The class 'JTL_emof_NamedElement' is a specialization of 'Element'.
+The class 'JTL_emof_Extent' is a specialization of 'Object'.
+The class 'JTL_emof_Operation' is a specialization of 'emof_MultiplicityElement'.
+The class 'JTL_emof_Operation' is a specialization of 'emof_TypedElement'.
+The class 'JTL_emof_Package' is a specialization of 'NamedElement'.
+The class 'JTL_emof_Type' is a specialization of 'NamedElement'.
+The class 'JTL_emof_Parameter' is a specialization of 'emof_MultiplicityElement'.
+The class 'JTL_emof_Parameter' is a specialization of 'emof_TypedElement'.
+The class 'JTL_emof_EnumerationLiteral' is a specialization of 'NamedElement'.
+The class 'JTL_emof_Property' is a specialization of 'emof_MultiplicityElement'.
+The class 'JTL_emof_Property' is a specialization of 'emof_TypedElement'.
+The class 'JTL_emof_TypedElement' is a specialization of 'NamedElement'.
+The class 'JTL_emof_PrimitiveType' is a specialization of 'DataType'.
+The class 'JTL_emof_URIExtent' is a specialization of 'Extent'.
+The class 'JTL_emof_Comment' is a specialization of 'Element'.
+The class 'JTL_JTL_Transformation' is a specialization of 'emof_Class'.
+The class 'JTL_JTL_Transformation' is a specialization of 'emof_Package'.
+The class 'JTL_JTL_Relation' is a specialization of 'NamedElement'.
+The class 'JTL_JTL_Domain' is a specialization of 'NamedElement'.
+The class 'JTL_JTL_Model' is a specialization of 'NamedElement'.
+The class 'JTL_JTL_Pattern' is a specialization of 'Element'.
+The class 'JTL_JTL_Predicate' is a specialization of 'Element'.
+The class 'JTL_JTL_When' is a specialization of 'Pattern'.
+The class 'JTL_JTL_Where' is a specialization of 'Pattern'.
+The class 'JTL_essentialocl_BooleanLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'JTL_essentialocl_CallExp' is a specialization of 'OclExpression'.
+The class 'JTL_essentialocl_OclExpression' is a specialization of 'TypedElement'.
+The class 'JTL_essentialocl_UnlimitedNaturalExp' is a specialization of 'NumericLiteralExp'.
+The class 'JTL_essentialocl_IfExp' is a specialization of 'OclExpression'.
+The class 'JTL_essentialocl_LetExp' is a specialization of 'OclExpression'.
+The class 'JTL_essentialocl_Variable' is a specialization of 'TypedElement'.
+The class 'JTL_essentialocl_PropertyCallExp' is a specialization of 'FeaturePropertyCall'.
+The class 'JTL_essentialocl_VariableExp' is a specialization of 'OclExpression'.
+The class 'JTL_essentialocl_TypeExp' is a specialization of 'OclExpression'.
+The class 'JTL_essentialocl_LoopExp' is a specialization of 'essentialocl_CallExp'.
+The class 'JTL_essentialocl_LoopExp' is a specialization of 'essentialocl_OclExpression'.
+The class 'JTL_essentialocl_IteratorExp' is a specialization of 'LoopExp'.
+The class 'JTL_essentialocl_StringLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'JTL_essentialocl_IntegerLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'JTL_essentialocl_OperationCallExp' is a specialization of 'FeaturePropertyCall'.
+The class 'JTL_essentialocl_RealLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'JTL_essentialocl_LiteralExp' is a specialization of 'OclExpression'.
+The class 'JTL_essentialocl_IterateExp' is a specialization of 'LoopExp'.
+The class 'JTL_essentialocl_PrimitiveLiteralExp' is a specialization of 'LiteralExp'.
+The class 'JTL_essentialocl_NumericLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'JTL_essentialocl_CollectionLiteralExp' is a specialization of 'LiteralExp'.
+The class 'JTL_essentialocl_CollectionLiteralPart' is a specialization of 'TypedElement'.
+The class 'JTL_essentialocl_CollectionItem' is a specialization of 'CollectionLiteralPart'.
+The class 'JTL_essentialocl_CollectionRange' is a specialization of 'CollectionLiteralPart'.
+The class 'JTL_essentialocl_TupleLiteralExp' is a specialization of 'LiteralExp'.
+The class 'JTL_essentialocl_NullLiteralExp' is a specialization of 'LiteralExp'.
+The class 'JTL_essentialocl_ExpressionInOcl' is a specialization of 'OpaqueExpression'.
+The class 'JTL_essentialocl_InvalidLiteralExp' is a specialization of 'LiteralExp'.
+The class 'JTL_essentialocl_FeaturePropertyCall' is a specialization of 'CallExp'.
+The class 'JTL_essentialocl_TupleLiteralPart' is a specialization of 'TypedElement'.
+The class 'JTL_essentialocl_BagType' is a specialization of 'CollectionType'.
+The class 'JTL_essentialocl_CollectionType' is a specialization of 'DataType'.
+The class 'JTL_essentialocl_EnumLiteralExp' is a specialization of 'LiteralExp'.
+The class 'JTL_essentialocl_InvalidType' is a specialization of 'Type'.
+The class 'JTL_essentialocl_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'JTL_essentialocl_SequenceType' is a specialization of 'CollectionType'.
+The class 'JTL_essentialocl_SetType' is a specialization of 'CollectionType'.
+The class 'JTL_essentialocl_TupleType' is a specialization of 'emof_Class'.
+The class 'JTL_essentialocl_TupleType' is a specialization of 'emof_DataType'.
+The class 'JTL_essentialocl_VoidType' is a specialization of 'Type'.
+The class 'JTL_essentialocl_AnyType' is a specialization of 'emof_Class'.
+The class 'JTL_essentialocl_AnyType' is a specialization of 'emof_Type'.
+The class 'JTL_template_TemplateExp' is a specialization of 'LiteralExp'.
+The class 'JTL_template_ObjectTemplateExp' is a specialization of 'TemplateExp'.
+The class 'JTL_template_CollectionTemplateExp' is a specialization of 'TemplateExp'.
+The class 'JTL_template_PropertyTemplateItem' is a specialization of 'Element'.
+The class 'JTL_imperativeocl_ImperativeIterateExp' is a specialization of 'ImperativeLoopExp'.
+The class 'JTL_imperativeocl_AssignExp' is a specialization of 'ImperativeExpression'.
+The class 'JTL_imperativeocl_BlockExp' is a specialization of 'ImperativeExpression'.
+The class 'JTL_imperativeocl_SwitchExp' is a specialization of 'essentialocl_CallExp'.
+The class 'JTL_imperativeocl_SwitchExp' is a specialization of 'imperativeocl_ImperativeExpression'.
+The class 'JTL_imperativeocl_VariableInitExp' is a specialization of 'ImperativeExpression'.
+The class 'JTL_imperativeocl_WhileExp' is a specialization of 'ImperativeExpression'.
+The class 'JTL_imperativeocl_ComputeExp' is a specialization of 'ImperativeExpression'.
+The class 'JTL_imperativeocl_AltExp' is a specialization of 'ImperativeExpression'.
+The class 'JTL_imperativeocl_UnlinkExp' is a specialization of 'ImperativeExpression'.
+The class 'JTL_imperativeocl_ReturnExp' is a specialization of 'ImperativeExpression'.
+The class 'JTL_imperativeocl_BreakExp' is a specialization of 'ImperativeExpression'.
+The class 'JTL_imperativeocl_TryExp' is a specialization of 'ImperativeExpression'.
+The class 'JTL_imperativeocl_RaiseExp' is a specialization of 'ImperativeExpression'.
+The class 'JTL_imperativeocl_ContinueExp' is a specialization of 'ImperativeExpression'.
+The class 'JTL_imperativeocl_ForExp' is a specialization of 'ImperativeLoopExp'.
+The class 'JTL_imperativeocl_TupleExp' is a specialization of 'ImperativeExpression'.
+The class 'JTL_imperativeocl_Typedef' is a specialization of 'Class'.
+The class 'JTL_imperativeocl_InstantiationExp' is a specialization of 'ImperativeExpression'.
+The class 'JTL_imperativeocl_DictionaryType' is a specialization of 'CollectionType'.
+The class 'JTL_imperativeocl_DictLiteralExp' is a specialization of 'LiteralExp'.
+The class 'JTL_imperativeocl_DictLiteralPart' is a specialization of 'Element'.
+The class 'JTL_imperativeocl_TemplateParameterType' is a specialization of 'Type'.
+The class 'JTL_imperativeocl_LogExp' is a specialization of 'ImperativeExpression'.
+The class 'JTL_imperativeocl_AssertExp' is a specialization of 'ImperativeExpression'.
+The class 'JTL_imperativeocl_ImperativeLoopExp' is a specialization of 'essentialocl_LoopExp'.
+The class 'JTL_imperativeocl_ImperativeLoopExp' is a specialization of 'imperativeocl_ImperativeExpression'.
+The class 'JTL_imperativeocl_CollectorExp' is a specialization of 'ImperativeLoopExp'.
+The class 'JTL_imperativeocl_ImperativeExpression' is a specialization of 'OclExpression'.
+The class 'JTL_imperativeocl_UnpackExp' is a specialization of 'ImperativeExpression'.
+The class 'JTL_imperativeocl_AnonymousTupleType' is a specialization of 'Class'.
+The class 'JTL_imperativeocl_AnonymousTupleLiteralExp' is a specialization of 'LiteralExp'.
+The class 'JTL_imperativeocl_AnonymousTupleLiteralPart' is a specialization of 'Element'.
+The class 'JTL_imperativeocl_ListType' is a specialization of 'CollectionType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'JTL_emof_Class' and 'Property'. From 'JTL_emof_Class', the role 'Property' has cardinality 0..*, and from 'Property', the role 'emof' has cardinality 0..*.
+An association connects 'Operation' and 'JTL_emof_Class'. From 'Operation', the role 'emof2' has cardinality 0..*, and from 'JTL_emof_Class', the role 'Operation' has cardinality 0..*.
+An association connects 'Class' and 'JTL_emof_Class'. From 'Class', the role 'Class' has cardinality 0..*, and from 'JTL_emof_Class', the role 'JTL_emof_Class' has cardinality 0..*.
+An association connects 'JTL_emof_Element' and 'Tag'. From 'JTL_emof_Element', the role 'Tag' has cardinality 0..*, and from 'Tag', the role 'emof5' has cardinality 0..*.
+An association connects 'Comment' and 'JTL_emof_Element'. From 'Comment', the role 'Comment' has cardinality 0..*, and from 'JTL_emof_Element', the role 'JTL_emof_Element' has cardinality 0..*.
+An association connects 'JTL_emof_Tag' and 'Element'. From 'JTL_emof_Tag', the role 'Element' has cardinality 0..*, and from 'Element', the role 'emof8' has cardinality 0..*.
+An association connects 'JTL_emof_Enumeration' and 'EnumerationLiteral'. From 'JTL_emof_Enumeration', the role 'EnumerationLiteral' has cardinality 0..*, and from 'EnumerationLiteral', the role 'emof10' has cardinality 0..*.
+An association connects 'JTL_emof_Operation' and 'Class'. From 'JTL_emof_Operation', the role 'Class12' has cardinality 0..*, and from 'Class', the role 'emof13' has cardinality 0..*.
+An association connects 'Parameter' and 'JTL_emof_Operation'. From 'Parameter', the role 'emof15' has cardinality 0..*, and from 'JTL_emof_Operation', the role 'Parameter' has cardinality 0..*.
+An association connects 'Type' and 'JTL_emof_Operation'. From 'Type', the role 'Type' has cardinality 0..*, and from 'JTL_emof_Operation', the role 'JTL_emof_Operation' has cardinality 0..*.
+An association connects 'JTL_emof_Package' and 'Type'. From 'JTL_emof_Package', the role 'Type18' has cardinality 0..*, and from 'Type', the role 'emof19' has cardinality 0..*.
+An association connects 'JTL_emof_Package' and 'Package'. From 'JTL_emof_Package', the role 'JTL_emof_Package' has cardinality 0..*, and from 'Package', the role 'Package' has cardinality 0..*.
+An association connects 'Package' and 'JTL_emof_Type'. From 'Package', the role 'emof23' has cardinality 0..*, and from 'JTL_emof_Type', the role 'Package22' has cardinality 0..*.
+An association connects 'Operation' and 'JTL_emof_Parameter'. From 'Operation', the role 'emof26' has cardinality 0..*, and from 'JTL_emof_Parameter', the role 'Operation25' has cardinality 0..*.
+An association connects 'Enumeration' and 'JTL_emof_EnumerationLiteral'. From 'Enumeration', the role 'emof28' has cardinality 0..*, and from 'JTL_emof_EnumerationLiteral', the role 'Enumeration' has cardinality 0..*.
+An association connects 'Class' and 'JTL_emof_Property'. From 'Class', the role 'emof31' has cardinality 0..*, and from 'JTL_emof_Property', the role 'Class30' has cardinality 0..*.
+An association connects 'JTL_emof_Property' and 'Property'. From 'JTL_emof_Property', the role 'JTL_emof_Property' has cardinality 0..*, and from 'Property', the role 'Property33' has cardinality 0..*.
+An association connects 'JTL_emof_Comment' and 'NamedElement'. From 'JTL_emof_Comment', the role 'JTL_emof_Comment' has cardinality 0..*, and from 'NamedElement', the role 'NamedElement' has cardinality 0..*.
+An association connects 'Model' and 'JTL_JTL_Transformation'. From 'Model', the role 'JTL' has cardinality 0..*, and from 'JTL_JTL_Transformation', the role 'Model' has cardinality 0..*.
+An association connects 'JTL_JTL_Transformation' and 'Relation'. From 'JTL_JTL_Transformation', the role 'Relation' has cardinality 0..*, and from 'Relation', the role 'JTL37' has cardinality 0..*.
+An association connects 'JTL_JTL_Relation' and 'Transformation'. From 'JTL_JTL_Relation', the role 'Transformation' has cardinality 0..*, and from 'Transformation', the role 'JTL39' has cardinality 0..*.
+An association connects 'Domain' and 'JTL_JTL_Relation'. From 'Domain', the role 'JTL41' has cardinality 0..*, and from 'JTL_JTL_Relation', the role 'Domain' has cardinality 0..*.
+An association connects 'JTL_JTL_Relation' and 'Where'. From 'JTL_JTL_Relation', the role 'Where' has cardinality 0..*, and from 'Where', the role 'JTL43' has cardinality 0..*.
+An association connects 'When' and 'JTL_JTL_Relation'. From 'When', the role 'JTL45' has cardinality 0..*, and from 'JTL_JTL_Relation', the role 'When' has cardinality 0..*.
+An association connects 'JTL_JTL_Relation' and 'Variable'. From 'JTL_JTL_Relation', the role 'JTL_JTL_Relation' has cardinality 0..*, and from 'Variable', the role 'Variable' has cardinality 0..*.
+An association connects 'JTL_JTL_Domain' and 'Relation'. From 'JTL_JTL_Domain', the role 'Relation48' has cardinality 0..*, and from 'Relation', the role 'JTL49' has cardinality 0..*.
+An association connects 'JTL_JTL_Domain' and 'Pattern'. From 'JTL_JTL_Domain', the role 'JTL_JTL_Domain' has cardinality 0..*, and from 'Pattern', the role 'Pattern' has cardinality 0..*.
+An association connects 'JTL_JTL_Domain' and 'Model'. From 'JTL_JTL_Domain', the role 'JTL_JTL_Domain52' has cardinality 0..*, and from 'Model', the role 'Model53' has cardinality 0..*.
+An association connects 'Variable' and 'JTL_JTL_Domain'. From 'Variable', the role 'Variable56' has cardinality 0..*, and from 'JTL_JTL_Domain', the role 'JTL_JTL_Domain55' has cardinality 0..*.
+An association connects 'Transformation' and 'JTL_JTL_Model'. From 'Transformation', the role 'JTL59' has cardinality 0..*, and from 'JTL_JTL_Model', the role 'Transformation58' has cardinality 0..*.
+An association connects 'JTL_JTL_Model' and 'Model'. From 'JTL_JTL_Model', the role 'JTL_JTL_Model' has cardinality 0..*, and from 'Model', the role 'Model61' has cardinality 0..*.
+An association connects 'Predicate' and 'JTL_JTL_Pattern'. From 'Predicate', the role 'JTL63' has cardinality 0..*, and from 'JTL_JTL_Pattern', the role 'Predicate' has cardinality 0..*.
+An association connects 'JTL_JTL_Pattern' and 'Variable'. From 'JTL_JTL_Pattern', the role 'JTL_JTL_Pattern' has cardinality 0..*, and from 'Variable', the role 'Variable65' has cardinality 0..*.
+An association connects 'TemplateExp' and 'JTL_JTL_Pattern'. From 'TemplateExp', the role 'TemplateExp' has cardinality 0..*, and from 'JTL_JTL_Pattern', the role 'JTL_JTL_Pattern67' has cardinality 0..*.
+An association connects 'JTL_JTL_Pattern' and 'Domain'. From 'JTL_JTL_Pattern', the role 'JTL_JTL_Pattern69' has cardinality 0..*, and from 'Domain', the role 'Domain70' has cardinality 0..*.
+An association connects 'Pattern' and 'JTL_JTL_Predicate'. From 'Pattern', the role 'JTL73' has cardinality 0..*, and from 'JTL_JTL_Predicate', the role 'Pattern72' has cardinality 0..*.
+An association connects 'OclExpression' and 'JTL_JTL_Predicate'. From 'OclExpression', the role 'OclExpression' has cardinality 0..*, and from 'JTL_JTL_Predicate', the role 'JTL_JTL_Predicate' has cardinality 0..*.
+An association connects 'Relation' and 'JTL_JTL_When'. From 'Relation', the role 'JTL77' has cardinality 0..*, and from 'JTL_JTL_When', the role 'Relation76' has cardinality 0..*.
+An association connects 'JTL_JTL_Where' and 'Relation'. From 'JTL_JTL_Where', the role 'Relation79' has cardinality 0..*, and from 'Relation', the role 'JTL80' has cardinality 0..*.
+An association connects 'OclExpression' and 'JTL_essentialocl_CallExp'. From 'OclExpression', the role 'OclExpression82' has cardinality 0..*, and from 'JTL_essentialocl_CallExp', the role 'JTL_essentialocl_CallExp' has cardinality 0..*.
+An association connects 'JTL_essentialocl_OclExpression' and 'TryExp'. From 'JTL_essentialocl_OclExpression', the role 'TryExp' has cardinality 0..*, and from 'TryExp', the role 'imperativeocl' has cardinality 0..*.
+An association connects 'JTL_essentialocl_IfExp' and 'OclExpression'. From 'JTL_essentialocl_IfExp', the role 'JTL_essentialocl_IfExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression85' has cardinality 0..*.
+An association connects 'JTL_essentialocl_IfExp' and 'OclExpression'. From 'JTL_essentialocl_IfExp', the role 'JTL_essentialocl_IfExp87' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression88' has cardinality 0..*.
+An association connects 'JTL_essentialocl_IfExp' and 'OclExpression'. From 'JTL_essentialocl_IfExp', the role 'JTL_essentialocl_IfExp90' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression91' has cardinality 0..*.
+An association connects 'OclExpression' and 'JTL_essentialocl_LetExp'. From 'OclExpression', the role 'OclExpression93' has cardinality 0..*, and from 'JTL_essentialocl_LetExp', the role 'JTL_essentialocl_LetExp' has cardinality 0..*.
+An association connects 'JTL_essentialocl_LetExp' and 'Variable'. From 'JTL_essentialocl_LetExp', the role 'Variable95' has cardinality 0..*, and from 'Variable', the role 'essentialocl' has cardinality 0..*.
+An association connects 'OclExpression' and 'JTL_essentialocl_Variable'. From 'OclExpression', the role 'OclExpression97' has cardinality 0..*, and from 'JTL_essentialocl_Variable', the role 'JTL_essentialocl_Variable' has cardinality 0..*.
+An association connects 'JTL_essentialocl_Variable' and 'LetExp'. From 'JTL_essentialocl_Variable', the role 'LetExp' has cardinality 0..*, and from 'LetExp', the role 'essentialocl99' has cardinality 0..*.
+An association connects 'Parameter' and 'JTL_essentialocl_Variable'. From 'Parameter', the role 'Parameter102' has cardinality 0..*, and from 'JTL_essentialocl_Variable', the role 'JTL_essentialocl_Variable101' has cardinality 0..*.
+An association connects 'JTL_essentialocl_Variable' and 'ComputeExp'. From 'JTL_essentialocl_Variable', the role 'ComputeExp' has cardinality 0..*, and from 'ComputeExp', the role 'imperativeocl104' has cardinality 0..*.
+An association connects 'Property' and 'JTL_essentialocl_PropertyCallExp'. From 'Property', the role 'Property106' has cardinality 0..*, and from 'JTL_essentialocl_PropertyCallExp', the role 'JTL_essentialocl_PropertyCallExp' has cardinality 0..*.
+An association connects 'JTL_essentialocl_VariableExp' and 'Variable'. From 'JTL_essentialocl_VariableExp', the role 'JTL_essentialocl_VariableExp' has cardinality 0..*, and from 'Variable', the role 'Variable108' has cardinality 0..*.
+An association connects 'Type' and 'JTL_essentialocl_TypeExp'. From 'Type', the role 'Type110' has cardinality 0..*, and from 'JTL_essentialocl_TypeExp', the role 'JTL_essentialocl_TypeExp' has cardinality 0..*.
+An association connects 'JTL_essentialocl_LoopExp' and 'OclExpression'. From 'JTL_essentialocl_LoopExp', the role 'JTL_essentialocl_LoopExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression112' has cardinality 0..*.
+An association connects 'JTL_essentialocl_LoopExp' and 'Variable'. From 'JTL_essentialocl_LoopExp', the role 'JTL_essentialocl_LoopExp114' has cardinality 0..*, and from 'Variable', the role 'Variable115' has cardinality 0..*.
+An association connects 'JTL_essentialocl_OperationCallExp' and 'OclExpression'. From 'JTL_essentialocl_OperationCallExp', the role 'JTL_essentialocl_OperationCallExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression117' has cardinality 0..*.
+An association connects 'Relation' and 'JTL_essentialocl_OperationCallExp'. From 'Relation', the role 'Relation120' has cardinality 0..*, and from 'JTL_essentialocl_OperationCallExp', the role 'JTL_essentialocl_OperationCallExp119' has cardinality 0..*.
+An association connects 'JTL_essentialocl_IterateExp' and 'Variable'. From 'JTL_essentialocl_IterateExp', the role 'JTL_essentialocl_IterateExp' has cardinality 0..*, and from 'Variable', the role 'Variable122' has cardinality 0..*.
+An association connects 'JTL_essentialocl_CollectionLiteralExp' and 'CollectionLiteralPart'. From 'JTL_essentialocl_CollectionLiteralExp', the role 'CollectionLiteralPart' has cardinality 0..*, and from 'CollectionLiteralPart', the role 'essentialocl124' has cardinality 0..*.
+An association connects 'CollectionLiteralExp' and 'JTL_essentialocl_CollectionLiteralPart'. From 'CollectionLiteralExp', the role 'essentialocl126' has cardinality 0..*, and from 'JTL_essentialocl_CollectionLiteralPart', the role 'CollectionLiteralExp' has cardinality 0..*.
+An association connects 'JTL_essentialocl_CollectionItem' and 'OclExpression'. From 'JTL_essentialocl_CollectionItem', the role 'JTL_essentialocl_CollectionItem' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression128' has cardinality 0..*.
+An association connects 'OclExpression' and 'JTL_essentialocl_CollectionRange'. From 'OclExpression', the role 'OclExpression130' has cardinality 0..*, and from 'JTL_essentialocl_CollectionRange', the role 'JTL_essentialocl_CollectionRange' has cardinality 0..*.
+An association connects 'JTL_essentialocl_CollectionRange' and 'OclExpression'. From 'JTL_essentialocl_CollectionRange', the role 'JTL_essentialocl_CollectionRange132' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression133' has cardinality 0..*.
+An association connects 'TupleLiteralPart' and 'JTL_essentialocl_TupleLiteralExp'. From 'TupleLiteralPart', the role 'essentialocl135' has cardinality 0..*, and from 'JTL_essentialocl_TupleLiteralExp', the role 'TupleLiteralPart' has cardinality 0..*.
+An association connects 'JTL_essentialocl_ExpressionInOcl' and 'OclExpression'. From 'JTL_essentialocl_ExpressionInOcl', the role 'JTL_essentialocl_ExpressionInOcl' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression137' has cardinality 0..*.
+An association connects 'JTL_essentialocl_ExpressionInOcl' and 'Variable'. From 'JTL_essentialocl_ExpressionInOcl', the role 'JTL_essentialocl_ExpressionInOcl139' has cardinality 0..*, and from 'Variable', the role 'Variable140' has cardinality 0..*.
+An association connects 'Variable' and 'JTL_essentialocl_ExpressionInOcl'. From 'Variable', the role 'Variable143' has cardinality 0..*, and from 'JTL_essentialocl_ExpressionInOcl', the role 'JTL_essentialocl_ExpressionInOcl142' has cardinality 0..*.
+An association connects 'Variable' and 'JTL_essentialocl_ExpressionInOcl'. From 'Variable', the role 'Variable146' has cardinality 0..*, and from 'JTL_essentialocl_ExpressionInOcl', the role 'JTL_essentialocl_ExpressionInOcl145' has cardinality 0..*.
+An association connects 'JTL_essentialocl_TupleLiteralPart' and 'TupleLiteralExp'. From 'JTL_essentialocl_TupleLiteralPart', the role 'TupleLiteralExp' has cardinality 0..*, and from 'TupleLiteralExp', the role 'essentialocl148' has cardinality 0..*.
+An association connects 'Type' and 'JTL_essentialocl_CollectionType'. From 'Type', the role 'Type150' has cardinality 0..*, and from 'JTL_essentialocl_CollectionType', the role 'JTL_essentialocl_CollectionType' has cardinality 0..*.
+An association connects 'EnumerationLiteral' and 'JTL_essentialocl_EnumLiteralExp'. From 'EnumerationLiteral', the role 'EnumerationLiteral152' has cardinality 0..*, and from 'JTL_essentialocl_EnumLiteralExp', the role 'JTL_essentialocl_EnumLiteralExp' has cardinality 0..*.
+An association connects 'Variable' and 'JTL_template_TemplateExp'. From 'Variable', the role 'Variable154' has cardinality 0..*, and from 'JTL_template_TemplateExp', the role 'JTL_template_TemplateExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'JTL_template_TemplateExp'. From 'OclExpression', the role 'OclExpression157' has cardinality 0..*, and from 'JTL_template_TemplateExp', the role 'JTL_template_TemplateExp156' has cardinality 0..*.
+An association connects 'PropertyTemplateItem' and 'JTL_template_ObjectTemplateExp'. From 'PropertyTemplateItem', the role 'template' has cardinality 0..*, and from 'JTL_template_ObjectTemplateExp', the role 'PropertyTemplateItem' has cardinality 0..*.
+An association connects 'JTL_template_ObjectTemplateExp' and 'AssignExp'. From 'JTL_template_ObjectTemplateExp', the role 'JTL_template_ObjectTemplateExp' has cardinality 0..*, and from 'AssignExp', the role 'AssignExp' has cardinality 0..*.
+An association connects 'JTL_template_CollectionTemplateExp' and 'OclExpression'. From 'JTL_template_CollectionTemplateExp', the role 'JTL_template_CollectionTemplateExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression161' has cardinality 0..*.
+An association connects 'JTL_template_CollectionTemplateExp' and 'CollectionType'. From 'JTL_template_CollectionTemplateExp', the role 'JTL_template_CollectionTemplateExp163' has cardinality 0..*, and from 'CollectionType', the role 'CollectionType' has cardinality 0..*.
+An association connects 'JTL_template_CollectionTemplateExp' and 'OclExpression'. From 'JTL_template_CollectionTemplateExp', the role 'JTL_template_CollectionTemplateExp165' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression166' has cardinality 0..*.
+An association connects 'ObjectTemplateExp' and 'JTL_template_PropertyTemplateItem'. From 'ObjectTemplateExp', the role 'template168' has cardinality 0..*, and from 'JTL_template_PropertyTemplateItem', the role 'ObjectTemplateExp' has cardinality 0..*.
+An association connects 'JTL_template_PropertyTemplateItem' and 'OclExpression'. From 'JTL_template_PropertyTemplateItem', the role 'JTL_template_PropertyTemplateItem' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression170' has cardinality 0..*.
+An association connects 'JTL_template_PropertyTemplateItem' and 'Property'. From 'JTL_template_PropertyTemplateItem', the role 'JTL_template_PropertyTemplateItem172' has cardinality 0..*, and from 'Property', the role 'Property173' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_ImperativeIterateExp' and 'Variable'. From 'JTL_imperativeocl_ImperativeIterateExp', the role 'JTL_imperativeocl_ImperativeIterateExp' has cardinality 0..*, and from 'Variable', the role 'Variable175' has cardinality 0..*.
+An association connects 'OclExpression' and 'JTL_imperativeocl_AssignExp'. From 'OclExpression', the role 'OclExpression177' has cardinality 0..*, and from 'JTL_imperativeocl_AssignExp', the role 'JTL_imperativeocl_AssignExp' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_AssignExp' and 'OclExpression'. From 'JTL_imperativeocl_AssignExp', the role 'JTL_imperativeocl_AssignExp179' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression180' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_AssignExp' and 'OclExpression'. From 'JTL_imperativeocl_AssignExp', the role 'JTL_imperativeocl_AssignExp182' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression183' has cardinality 0..*.
+An association connects 'OclExpression' and 'JTL_imperativeocl_BlockExp'. From 'OclExpression', the role 'OclExpression185' has cardinality 0..*, and from 'JTL_imperativeocl_BlockExp', the role 'JTL_imperativeocl_BlockExp' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_SwitchExp' and 'AltExp'. From 'JTL_imperativeocl_SwitchExp', the role 'JTL_imperativeocl_SwitchExp' has cardinality 0..*, and from 'AltExp', the role 'AltExp' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_SwitchExp' and 'OclExpression'. From 'JTL_imperativeocl_SwitchExp', the role 'JTL_imperativeocl_SwitchExp188' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression189' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_VariableInitExp' and 'Variable'. From 'JTL_imperativeocl_VariableInitExp', the role 'JTL_imperativeocl_VariableInitExp' has cardinality 0..*, and from 'Variable', the role 'Variable191' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_WhileExp' and 'OclExpression'. From 'JTL_imperativeocl_WhileExp', the role 'JTL_imperativeocl_WhileExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression193' has cardinality 0..*.
+An association connects 'OclExpression' and 'JTL_imperativeocl_WhileExp'. From 'OclExpression', the role 'OclExpression196' has cardinality 0..*, and from 'JTL_imperativeocl_WhileExp', the role 'JTL_imperativeocl_WhileExp195' has cardinality 0..*.
+An association connects 'Variable' and 'JTL_imperativeocl_ComputeExp'. From 'Variable', the role 'essentialocl199' has cardinality 0..*, and from 'JTL_imperativeocl_ComputeExp', the role 'Variable198' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_ComputeExp' and 'OclExpression'. From 'JTL_imperativeocl_ComputeExp', the role 'JTL_imperativeocl_ComputeExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression201' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_AltExp' and 'OclExpression'. From 'JTL_imperativeocl_AltExp', the role 'JTL_imperativeocl_AltExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression203' has cardinality 0..*.
+An association connects 'OclExpression' and 'JTL_imperativeocl_AltExp'. From 'OclExpression', the role 'OclExpression206' has cardinality 0..*, and from 'JTL_imperativeocl_AltExp', the role 'JTL_imperativeocl_AltExp205' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_UnlinkExp' and 'OclExpression'. From 'JTL_imperativeocl_UnlinkExp', the role 'JTL_imperativeocl_UnlinkExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression208' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_UnlinkExp' and 'OclExpression'. From 'JTL_imperativeocl_UnlinkExp', the role 'JTL_imperativeocl_UnlinkExp210' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression211' has cardinality 0..*.
+An association connects 'OclExpression' and 'JTL_imperativeocl_ReturnExp'. From 'OclExpression', the role 'OclExpression213' has cardinality 0..*, and from 'JTL_imperativeocl_ReturnExp', the role 'JTL_imperativeocl_ReturnExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'JTL_imperativeocl_TryExp'. From 'OclExpression', the role 'essentialocl216' has cardinality 0..*, and from 'JTL_imperativeocl_TryExp', the role 'OclExpression215' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_TryExp' and 'Type'. From 'JTL_imperativeocl_TryExp', the role 'JTL_imperativeocl_TryExp' has cardinality 0..*, and from 'Type', the role 'Type218' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_TryExp' and 'OclExpression'. From 'JTL_imperativeocl_TryExp', the role 'JTL_imperativeocl_TryExp220' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression221' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_RaiseExp' and 'Type'. From 'JTL_imperativeocl_RaiseExp', the role 'JTL_imperativeocl_RaiseExp' has cardinality 0..*, and from 'Type', the role 'Type223' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_TupleExp' and 'OclExpression'. From 'JTL_imperativeocl_TupleExp', the role 'JTL_imperativeocl_TupleExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression225' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_Typedef' and 'Type'. From 'JTL_imperativeocl_Typedef', the role 'JTL_imperativeocl_Typedef' has cardinality 0..*, and from 'Type', the role 'Type227' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_Typedef' and 'OclExpression'. From 'JTL_imperativeocl_Typedef', the role 'JTL_imperativeocl_Typedef229' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression230' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_InstantiationExp' and 'Class'. From 'JTL_imperativeocl_InstantiationExp', the role 'JTL_imperativeocl_InstantiationExp' has cardinality 0..*, and from 'Class', the role 'Class232' has cardinality 0..*.
+An association connects 'Variable' and 'JTL_imperativeocl_InstantiationExp'. From 'Variable', the role 'Variable235' has cardinality 0..*, and from 'JTL_imperativeocl_InstantiationExp', the role 'JTL_imperativeocl_InstantiationExp234' has cardinality 0..*.
+An association connects 'OclExpression' and 'JTL_imperativeocl_InstantiationExp'. From 'OclExpression', the role 'OclExpression238' has cardinality 0..*, and from 'JTL_imperativeocl_InstantiationExp', the role 'JTL_imperativeocl_InstantiationExp237' has cardinality 0..*.
+An association connects 'Type' and 'JTL_imperativeocl_DictionaryType'. From 'Type', the role 'Type240' has cardinality 0..*, and from 'JTL_imperativeocl_DictionaryType', the role 'JTL_imperativeocl_DictionaryType' has cardinality 0..*.
+An association connects 'DictLiteralPart' and 'JTL_imperativeocl_DictLiteralExp'. From 'DictLiteralPart', the role 'DictLiteralPart' has cardinality 0..*, and from 'JTL_imperativeocl_DictLiteralExp', the role 'JTL_imperativeocl_DictLiteralExp' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_DictLiteralPart' and 'OclExpression'. From 'JTL_imperativeocl_DictLiteralPart', the role 'JTL_imperativeocl_DictLiteralPart' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression243' has cardinality 0..*.
+An association connects 'OclExpression' and 'JTL_imperativeocl_DictLiteralPart'. From 'OclExpression', the role 'OclExpression246' has cardinality 0..*, and from 'JTL_imperativeocl_DictLiteralPart', the role 'JTL_imperativeocl_DictLiteralPart245' has cardinality 0..*.
+An association connects 'OclExpression' and 'JTL_imperativeocl_LogExp'. From 'OclExpression', the role 'OclExpression248' has cardinality 0..*, and from 'JTL_imperativeocl_LogExp', the role 'JTL_imperativeocl_LogExp' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_LogExp' and 'Element'. From 'JTL_imperativeocl_LogExp', the role 'JTL_imperativeocl_LogExp250' has cardinality 0..*, and from 'Element', the role 'Element251' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_AssertExp' and 'LogExp'. From 'JTL_imperativeocl_AssertExp', the role 'JTL_imperativeocl_AssertExp' has cardinality 0..*, and from 'LogExp', the role 'LogExp' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_AssertExp' and 'OclExpression'. From 'JTL_imperativeocl_AssertExp', the role 'JTL_imperativeocl_AssertExp254' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression255' has cardinality 0..*.
+An association connects 'OclExpression' and 'JTL_imperativeocl_ImperativeLoopExp'. From 'OclExpression', the role 'OclExpression257' has cardinality 0..*, and from 'JTL_imperativeocl_ImperativeLoopExp', the role 'JTL_imperativeocl_ImperativeLoopExp' has cardinality 0..*.
+An association connects 'Variable' and 'JTL_imperativeocl_CollectorExp'. From 'Variable', the role 'Variable259' has cardinality 0..*, and from 'JTL_imperativeocl_CollectorExp', the role 'JTL_imperativeocl_CollectorExp' has cardinality 0..*.
+An association connects 'Variable' and 'JTL_imperativeocl_UnpackExp'. From 'Variable', the role 'Variable261' has cardinality 0..*, and from 'JTL_imperativeocl_UnpackExp', the role 'JTL_imperativeocl_UnpackExp' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_AnonymousTupleType' and 'Type'. From 'JTL_imperativeocl_AnonymousTupleType', the role 'JTL_imperativeocl_AnonymousTupleType' has cardinality 0..*, and from 'Type', the role 'Type263' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_AnonymousTupleLiteralExp' and 'AnonymousTupleLiteralPart'. From 'JTL_imperativeocl_AnonymousTupleLiteralExp', the role 'JTL_imperativeocl_AnonymousTupleLiteralExp' has cardinality 0..*, and from 'AnonymousTupleLiteralPart', the role 'AnonymousTupleLiteralPart' has cardinality 0..*.
+An association connects 'JTL_imperativeocl_AnonymousTupleLiteralPart' and 'OclExpression'. From 'JTL_imperativeocl_AnonymousTupleLiteralPart', the role 'JTL_imperativeocl_AnonymousTupleLiteralPart' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression266' has cardinality 0..*.

@@ -1,0 +1,99 @@
+The domain model 'publication2014b' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'publication2014b_Progress' represents an important domain concept.
+It has the following attributes: 'time', which is of type int; 'percent', which is of type int.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'publication2014b_PublicationProcess' represents an important domain concept.
+It has the following attributes: 'maxTime', which is of type int; 'minTime', which is of type int.
+
+'publication2014b_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'publication2014b_Counted' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'publication2014b_Review' represents an important domain concept.
+It does not declare any attributes.
+
+'publication2014b_Paper' represents an important domain concept.
+It does not declare any attributes.
+
+'publication2014b_PublicationStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'publication2014b_ReviewNote' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'publication2014b_Paragraph' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'publication2014b_Researcher' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'position', which is of type str; 'forName', which is of type str.
+
+'publication2014b_PublicationSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'publication2014b_Rule' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'text', which is of type str.
+
+'publication2014b_Write' represents an important domain concept.
+It does not declare any attributes.
+
+'publication2014b_Labelled' represents an important domain concept.
+It has one attribute: 'lname', which is of type str.
+
+'Counted' represents an important domain concept.
+It does not declare any attributes.
+
+'Labelled' represents an important domain concept.
+It does not declare any attributes.
+
+'publication2014b_Sequence' represents an important domain concept.
+It has one attribute: 'sequenceType', which is of type str.
+
+'publication2014b_PublicationPhase' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'maxTime', which is of type int; 'minTime', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SequenceType' defines the following possible values: 'finishToStart', 'startToStart', 'startToFinish', 'finishToFinish'.
+
+The model also captures inheritance relationships between classes.
+The class 'publication2014b_PublicationProcess' is a specialization of 'Named'.
+The class 'publication2014b_Paper' is a specialization of 'Named'.
+The class 'publication2014b_Paragraph' is a specialization of 'Counted'.
+The class 'publication2014b_Paragraph' is a specialization of 'Named'.
+The class 'publication2014b_ReviewNote' is a specialization of 'Named'.
+The class 'publication2014b_Progress' is a specialization of 'Labelled'.
+The class 'publication2014b_Write' is a specialization of 'Labelled'.
+The class 'publication2014b_Review' is a specialization of 'Labelled'.
+The class 'publication2014b_PublicationStructure' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'publication2014b_PublicationPhase' and 'publication2014b_PublicationProcess'. From 'publication2014b_PublicationPhase', the role 'publication2014b_PublicationPhase' has cardinality 0..*, and from 'publication2014b_PublicationProcess', the role 'publication2014b_PublicationProcess' has cardinality 0..*.
+An association connects 'publication2014b_Rule' and 'publication2014b_PublicationProcess'. From 'publication2014b_Rule', the role 'publication2014b_Rule' has cardinality 0..*, and from 'publication2014b_PublicationProcess', the role 'publication2014b_PublicationProcess2' has cardinality 0..*.
+An association connects 'publication2014b_Sequence' and 'publication2014b_PublicationPhase'. From 'publication2014b_Sequence', the role 'publication2014b_Sequence' has cardinality 0..*, and from 'publication2014b_PublicationPhase', the role 'publication2014b_PublicationPhase4' has cardinality 0..*.
+An association connects 'publication2014b_Researcher' and 'publication2014b_PublicationPhase'. From 'publication2014b_Researcher', the role 'Researcher' has cardinality 0..*, and from 'publication2014b_PublicationPhase', the role 'phaseParticipation' has cardinality 0..*.
+An association connects 'publication2014b_Rule' and 'publication2014b_PublicationPhase'. From 'publication2014b_Rule', the role 'publication2014b_Rule8' has cardinality 0..*, and from 'publication2014b_PublicationPhase', the role 'publication2014b_PublicationPhase7' has cardinality 0..*.
+An association connects 'publication2014b_PublicationPhase' and 'publication2014b_Sequence'. From 'publication2014b_PublicationPhase', the role 'publication2014b_PublicationPhase11' has cardinality 0..*, and from 'publication2014b_Sequence', the role 'publication2014b_Sequence10' has cardinality 0..*.
+An association connects 'publication2014b_PublicationPhase' and 'publication2014b_Sequence'. From 'publication2014b_PublicationPhase', the role 'publication2014b_PublicationPhase14' has cardinality 0..*, and from 'publication2014b_Sequence', the role 'publication2014b_Sequence13' has cardinality 0..*.
+An association connects 'publication2014b_PublicationPhase' and 'publication2014b_Researcher'. From 'publication2014b_PublicationPhase', the role 'PublicationPhase' has cardinality 0..*, and from 'publication2014b_Researcher', the role 'neededPerson' has cardinality 0..*.
+An association connects 'publication2014b_Researcher' and 'publication2014b_Write'. From 'publication2014b_Researcher', the role 'publication2014b_Researcher' has cardinality 0..*, and from 'publication2014b_Write', the role 'publication2014b_Write' has cardinality 0..*.
+An association connects 'publication2014b_Researcher' and 'publication2014b_Review'. From 'publication2014b_Researcher', the role 'publication2014b_Researcher18' has cardinality 0..*, and from 'publication2014b_Review', the role 'publication2014b_Review' has cardinality 0..*.
+An association connects 'publication2014b_Researcher' and 'publication2014b_Paper'. From 'publication2014b_Researcher', the role 'authors' has cardinality 0..*, and from 'publication2014b_Paper', the role 'Paper' has cardinality 0..*.
+An association connects 'publication2014b_Paragraph' and 'publication2014b_Paper'. From 'publication2014b_Paragraph', the role 'publication2014b_Paragraph' has cardinality 0..*, and from 'publication2014b_Paper', the role 'publication2014b_Paper' has cardinality 0..*.
+An association connects 'publication2014b_Progress' and 'publication2014b_Paper'. From 'publication2014b_Progress', the role 'Progress' has cardinality 0..*, and from 'publication2014b_Paper', the role 'paper' has cardinality 0..*.
+An association connects 'publication2014b_Paper' and 'publication2014b_Researcher'. From 'publication2014b_Paper', the role 'papers' has cardinality 0..*, and from 'publication2014b_Researcher', the role 'Researcher23' has cardinality 0..*.
+An association connects 'publication2014b_ReviewNote' and 'publication2014b_Paragraph'. From 'publication2014b_ReviewNote', the role 'publication2014b_ReviewNote' has cardinality 0..*, and from 'publication2014b_Paragraph', the role 'publication2014b_Paragraph25' has cardinality 0..*.
+An association connects 'publication2014b_Progress' and 'publication2014b_PublicationProcess'. From 'publication2014b_Progress', the role 'publication2014b_Progress' has cardinality 0..*, and from 'publication2014b_PublicationProcess', the role 'publication2014b_PublicationProcess27' has cardinality 0..*.
+An association connects 'publication2014b_Progress' and 'publication2014b_Paper'. From 'publication2014b_Progress', the role 'progress' has cardinality 0..*, and from 'publication2014b_Paper', the role 'Paper29' has cardinality 0..*.
+An association connects 'publication2014b_Paragraph' and 'publication2014b_Write'. From 'publication2014b_Paragraph', the role 'publication2014b_Paragraph32' has cardinality 0..*, and from 'publication2014b_Write', the role 'publication2014b_Write31' has cardinality 0..*.
+An association connects 'publication2014b_ReviewNote' and 'publication2014b_Review'. From 'publication2014b_ReviewNote', the role 'publication2014b_ReviewNote35' has cardinality 0..*, and from 'publication2014b_Review', the role 'publication2014b_Review34' has cardinality 0..*.
+An association connects 'publication2014b_PublicationStructure' and 'publication2014b_Researcher'. From 'publication2014b_PublicationStructure', the role 'publication2014b_PublicationStructure' has cardinality 0..*, and from 'publication2014b_Researcher', the role 'publication2014b_Researcher37' has cardinality 0..*.
+An association connects 'publication2014b_PublicationStructure' and 'publication2014b_Paper'. From 'publication2014b_PublicationStructure', the role 'publication2014b_PublicationStructure39' has cardinality 0..*, and from 'publication2014b_Paper', the role 'publication2014b_Paper40' has cardinality 0..*.
+An association connects 'publication2014b_PublicationProcess' and 'publication2014b_PublicationSystem'. From 'publication2014b_PublicationProcess', the role 'publication2014b_PublicationProcess42' has cardinality 0..*, and from 'publication2014b_PublicationSystem', the role 'publication2014b_PublicationSystem' has cardinality 0..*.
+An association connects 'publication2014b_PublicationSystem' and 'publication2014b_PublicationStructure'. From 'publication2014b_PublicationSystem', the role 'publication2014b_PublicationSystem44' has cardinality 0..*, and from 'publication2014b_PublicationStructure', the role 'publication2014b_PublicationStructure45' has cardinality 0..*.

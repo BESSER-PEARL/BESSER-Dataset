@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/diverse-project/melange/examples/fr.inria.diverse.melange.examples.metamodels.compositefsm/model/CompositeFSM.ecore

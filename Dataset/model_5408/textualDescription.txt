@@ -1,0 +1,35 @@
+The domain model 'fta' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'fta_Condition' represents an important domain concept.
+It has one attribute: 'GateKind', which is of type str.
+
+'fta_Event' represents an important domain concept.
+It has one attribute: 'BaseEvent', which is of type bool.
+
+'fta_FTA' represents an important domain concept.
+It does not declare any attributes.
+
+'Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+'fta_Hazard' represents an important domain concept.
+It does not declare any attributes.
+
+'fta_Diagram' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str; 'detail', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'GateType' defines the following possible values: 'ANDGate', 'ORGate'.
+
+The model also captures inheritance relationships between classes.
+The class 'fta_Hazard' is a specialization of 'Diagram'.
+The class 'fta_Event' is a specialization of 'Diagram'.
+The class 'fta_Condition' is a specialization of 'Diagram'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fta_FTA' and 'fta_Diagram'. From 'fta_FTA', the role 'fta_FTA' has cardinality 0..*, and from 'fta_Diagram', the role 'fta_Diagram' has cardinality 0..*.
+An association connects 'fta_Hazard' and 'fta_Condition'. From 'fta_Hazard', the role 'fta_Hazard' has cardinality 0..*, and from 'fta_Condition', the role 'fta_Condition' has cardinality 0..*.
+An association connects 'fta_Event' and 'fta_Condition'. From 'fta_Event', the role 'fta_Event' has cardinality 0..*, and from 'fta_Condition', the role 'fta_Condition3' has cardinality 0..*.
+An association connects 'fta_Condition' and 'fta_Event'. From 'fta_Condition', the role 'fta_Condition5' has cardinality 0..*, and from 'fta_Event', the role 'fta_Event6' has cardinality 0..*.

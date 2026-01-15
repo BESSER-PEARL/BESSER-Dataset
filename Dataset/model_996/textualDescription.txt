@@ -1,0 +1,27 @@
+The domain model 'GraphMetaM' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'GraphMetaM_Vertex' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'globalPriority', which is of type int; 'type', which is of type str; 'rName', which is of type str; 'activity', which is of type str; 'cycles', which is of type int.
+
+'GraphMetaM_Graph' represents an important domain concept.
+It has the following attributes: 'rName', which is of type str; 'name', which is of type str; 'cycles', which is of type int.
+
+'GraphMetaM_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'GraphMetaM_Edge' represents an important domain concept.
+It has the following attributes: 'rName', which is of type str; 'name', which is of type str; 'async', which is of type bool; 'localPriority', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Type' defines the following possible values: 'and', 'or'.
+
+Relationships between classes are modeled using associations.
+An association connects 'GraphMetaM_Vertex' and 'GraphMetaM_Graph'. From 'GraphMetaM_Vertex', the role 'GraphMetaM_Vertex' has cardinality 0..*, and from 'GraphMetaM_Graph', the role 'GraphMetaM_Graph' has cardinality 0..*.
+An association connects 'GraphMetaM_Graph' and 'GraphMetaM_Edge'. From 'GraphMetaM_Graph', the role 'GraphMetaM_Graph2' has cardinality 0..*, and from 'GraphMetaM_Edge', the role 'GraphMetaM_Edge' has cardinality 0..*.
+An association connects 'GraphMetaM_Edge' and 'GraphMetaM_Vertex'. From 'GraphMetaM_Edge', the role 'incoming' has cardinality 0..*, and from 'GraphMetaM_Vertex', the role 'Vertex' has cardinality 0..*.
+An association connects 'GraphMetaM_Vertex' and 'GraphMetaM_Edge'. From 'GraphMetaM_Vertex', the role 'Vertex5' has cardinality 0..*, and from 'GraphMetaM_Edge', the role 'outgoing' has cardinality 0..*.
+An association connects 'GraphMetaM_Edge' and 'GraphMetaM_Vertex'. From 'GraphMetaM_Edge', the role 'Edge' has cardinality 0..*, and from 'GraphMetaM_Vertex', the role 'target' has cardinality 0..*.
+An association connects 'GraphMetaM_Edge' and 'GraphMetaM_Vertex'. From 'GraphMetaM_Edge', the role 'Edge8' has cardinality 0..*, and from 'GraphMetaM_Vertex', the role 'source' has cardinality 0..*.
+An association connects 'GraphMetaM_Model' and 'GraphMetaM_Graph'. From 'GraphMetaM_Model', the role 'GraphMetaM_Model' has cardinality 0..*, and from 'GraphMetaM_Graph', the role 'GraphMetaM_Graph10' has cardinality 0..*.

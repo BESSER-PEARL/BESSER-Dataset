@@ -1,0 +1,23 @@
+The domain model 'family' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'family_Family' represents an important domain concept.
+It does not declare any attributes.
+
+'family_Pet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'family_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'family_Model' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'family_Family' and 'family_Model'. From 'family_Family', the role 'family_Family' has cardinality 0..*, and from 'family_Model', the role 'family_Model' has cardinality 0..*.
+An association connects 'family_Family' and 'family_Person'. From 'family_Family', the role 'family_Family2' has cardinality 0..*, and from 'family_Person', the role 'family_Person' has cardinality 0..*.
+An association connects 'family_Pet' and 'family_Family'. From 'family_Pet', the role 'family_Pet' has cardinality 0..*, and from 'family_Family', the role 'family_Family4' has cardinality 0..*.
+An association connects 'family_Person' and 'family_Person'. From 'family_Person', the role 'parents' has cardinality 0..*, and from 'family_Person', the role 'Person' has cardinality 0..*.
+An association connects 'family_Person' and 'family_Person'. From 'family_Person', the role 'family_Person7' has cardinality 0..*, and from 'family_Person', the role 'family_Person9' has cardinality 0..*.
+An association connects 'family_Person' and 'family_Person'. From 'family_Person', the role 'Person12' has cardinality 0..*, and from 'family_Person', the role 'children' has cardinality 0..*.

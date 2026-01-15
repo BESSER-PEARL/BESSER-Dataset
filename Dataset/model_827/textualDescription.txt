@@ -1,0 +1,75 @@
+The domain model 'tfsm' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'tfsm_TemporalGuard' represents an important domain concept.
+It has one attribute: 'afterDuration', which is of type int.
+
+'tfsm_Transition' represents an important domain concept.
+It has one attribute: 'action', which is of type str.
+
+'tfsm_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_State' represents an important domain concept.
+It has one attribute: 'OnEnterAction', which is of type str.
+
+'tfsm_TFSM' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_EventGuard' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_EvaluateGuard' represents an important domain concept.
+It has one attribute: 'condition', which is of type str.
+
+'tfsm_FSMEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_FSMClock' represents an important domain concept.
+It has one attribute: 'numberOfTicks', which is of type int.
+
+'tfsm_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_TimedSystem' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'tfsm_TFSM' is a specialization of 'NamedElement'.
+The class 'tfsm_State' is a specialization of 'NamedElement'.
+The class 'tfsm_Transition' is a specialization of 'NamedElement'.
+The class 'tfsm_Guard' is a specialization of 'NamedElement'.
+The class 'tfsm_TemporalGuard' is a specialization of 'Guard'.
+The class 'tfsm_EventGuard' is a specialization of 'Guard'.
+The class 'tfsm_FSMEvent' is a specialization of 'NamedElement'.
+The class 'tfsm_FSMClock' is a specialization of 'NamedElement'.
+The class 'tfsm_TimedSystem' is a specialization of 'NamedElement'.
+The class 'tfsm_EvaluateGuard' is a specialization of 'Guard'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tfsm_State' and 'tfsm_TFSM'. From 'tfsm_State', the role 'State' has cardinality 0..*, and from 'tfsm_TFSM', the role 'owningFSM' has cardinality 0..*.
+An association connects 'tfsm_State' and 'tfsm_TFSM'. From 'tfsm_State', the role 'tfsm_State' has cardinality 0..*, and from 'tfsm_TFSM', the role 'tfsm_TFSM' has cardinality 0..*.
+An association connects 'tfsm_FSMEvent' and 'tfsm_TFSM'. From 'tfsm_FSMEvent', the role 'tfsm_FSMEvent' has cardinality 0..*, and from 'tfsm_TFSM', the role 'tfsm_TFSM3' has cardinality 0..*.
+An association connects 'tfsm_FSMClock' and 'tfsm_TFSM'. From 'tfsm_FSMClock', the role 'tfsm_FSMClock' has cardinality 0..*, and from 'tfsm_TFSM', the role 'tfsm_TFSM5' has cardinality 0..*.
+An association connects 'tfsm_TFSM' and 'tfsm_Transition'. From 'tfsm_TFSM', the role 'tfsm_TFSM7' has cardinality 0..*, and from 'tfsm_Transition', the role 'tfsm_Transition' has cardinality 0..*.
+An association connects 'tfsm_TFSM' and 'tfsm_State'. From 'tfsm_TFSM', the role 'tfsm_TFSM9' has cardinality 0..*, and from 'tfsm_State', the role 'tfsm_State10' has cardinality 0..*.
+An association connects 'tfsm_TFSM' and 'tfsm_State'. From 'tfsm_TFSM', the role 'TFSM' has cardinality 0..*, and from 'tfsm_State', the role 'ownedStates' has cardinality 0..*.
+An association connects 'tfsm_Transition' and 'tfsm_State'. From 'tfsm_Transition', the role 'Transition' has cardinality 0..*, and from 'tfsm_State', the role 'source' has cardinality 0..*.
+An association connects 'tfsm_Transition' and 'tfsm_State'. From 'tfsm_Transition', the role 'Transition14' has cardinality 0..*, and from 'tfsm_State', the role 'target' has cardinality 0..*.
+An association connects 'tfsm_Transition' and 'tfsm_State'. From 'tfsm_Transition', the role 'outgoingTransitions' has cardinality 0..*, and from 'tfsm_State', the role 'State16' has cardinality 0..*.
+An association connects 'tfsm_State' and 'tfsm_Transition'. From 'tfsm_State', the role 'State18' has cardinality 0..*, and from 'tfsm_Transition', the role 'incomingTransitions' has cardinality 0..*.
+An association connects 'tfsm_Guard' and 'tfsm_Transition'. From 'tfsm_Guard', the role 'tfsm_Guard' has cardinality 0..*, and from 'tfsm_Transition', the role 'tfsm_Transition20' has cardinality 0..*.
+An association connects 'tfsm_FSMEvent' and 'tfsm_Transition'. From 'tfsm_FSMEvent', the role 'tfsm_FSMEvent23' has cardinality 0..*, and from 'tfsm_Transition', the role 'tfsm_Transition22' has cardinality 0..*.
+An association connects 'tfsm_TemporalGuard' and 'tfsm_FSMClock'. From 'tfsm_TemporalGuard', the role 'tfsm_TemporalGuard' has cardinality 0..*, and from 'tfsm_FSMClock', the role 'tfsm_FSMClock25' has cardinality 0..*.
+An association connects 'tfsm_EventGuard' and 'tfsm_FSMEvent'. From 'tfsm_EventGuard', the role 'tfsm_EventGuard' has cardinality 0..*, and from 'tfsm_FSMEvent', the role 'tfsm_FSMEvent27' has cardinality 0..*.
+An association connects 'tfsm_FSMEvent' and 'tfsm_Transition'. From 'tfsm_FSMEvent', the role 'tfsm_FSMEvent29' has cardinality 0..*, and from 'tfsm_Transition', the role 'tfsm_Transition30' has cardinality 0..*.
+An association connects 'tfsm_TFSM' and 'tfsm_TimedSystem'. From 'tfsm_TFSM', the role 'tfsm_TFSM32' has cardinality 0..*, and from 'tfsm_TimedSystem', the role 'tfsm_TimedSystem' has cardinality 0..*.
+An association connects 'tfsm_FSMClock' and 'tfsm_TimedSystem'. From 'tfsm_FSMClock', the role 'tfsm_FSMClock35' has cardinality 0..*, and from 'tfsm_TimedSystem', the role 'tfsm_TimedSystem34' has cardinality 0..*.
+An association connects 'tfsm_FSMEvent' and 'tfsm_TimedSystem'. From 'tfsm_FSMEvent', the role 'tfsm_FSMEvent38' has cardinality 0..*, and from 'tfsm_TimedSystem', the role 'tfsm_TimedSystem37' has cardinality 0..*.

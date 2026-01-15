@@ -1,0 +1,730 @@
+The domain model 'uma' describes the core structural elements and their relationships within the system.
+
+The model defines 151 main class(es).
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_CoreSemanticModelBridge' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_WorkProductDescription' represents an important domain concept.
+It has the following attributes: 'impactOfNotHaving', which is of type str; 'reasonsForNotNeeding', which is of type str; 'purpose', which is of type str; 'externalId', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_LeafElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_DeliverableDescription' represents an important domain concept.
+It has the following attributes: 'externalDescription', which is of type str; 'packagingGuidance', which is of type str.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_DescribableElement' represents an important domain concept.
+It has the following attributes: 'nodeicon', which is of type str; 'shapeicon', which is of type str; 'presentationName', which is of type str.
+
+'MethodUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_MethodPlugin' represents an important domain concept.
+It has one attribute: 'userChangeable', which is of type str.
+
+'uma_Milestone' represents an important domain concept.
+It does not declare any attributes.
+
+'WorkProductDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_WorkOrder' represents an important domain concept.
+It has one attribute: 'linkType', which is of type str.
+
+'uma_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_RoleDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_CustomCategory' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Role' represents an important domain concept.
+It does not declare any attributes.
+
+'Guidance' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ContentElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_WorkProductDescriptor' represents an important domain concept.
+It has the following attributes: 'activityExitState', which is of type str; 'activityEntryState', which is of type str.
+
+'uma_RoleSetGrouping' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_GuidanceDescription' represents an important domain concept.
+It has one attribute: 'attachments', which is of type str.
+
+'uma_Task' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ProcessContribution' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_DiagramLink' represents an important domain concept.
+It has one attribute: 'zoom', which is of type str.
+
+'uma_TaskDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_SimpleSemanticModelElement' represents an important domain concept.
+It has one attribute: 'typeInfo', which is of type str.
+
+'uma_EstimationConsiderations' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_TeamProfile' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_VariabilityElement' represents an important domain concept.
+It has one attribute: 'variabilityType', which is of type str.
+
+'uma_BreakdownElementDescription' represents an important domain concept.
+It has one attribute: 'usageGuidance', which is of type str.
+
+'uma_DeliveryProcess' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_BreakdownElement' represents an important domain concept.
+It has the following attributes: 'prefix', which is of type str; 'hasMultipleOccurrences', which is of type str; 'isPlanned', which is of type str; 'isOptional', which is of type str.
+
+'uma_WorkDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ArtifactDescription' represents an important domain concept.
+It has the following attributes: 'representationOptions', which is of type str; 'briefOutline', which is of type str.
+
+'uma_GraphConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_UMASemanticModelBridge' represents an important domain concept.
+It does not declare any attributes.
+
+'BreakdownElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'uma_Section' represents an important domain concept.
+It has the following attributes: 'sectionDescription', which is of type str; 'sectionName', which is of type str.
+
+'uma_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_EstimatingMetric' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Diagram' represents an important domain concept.
+It has one attribute: 'zoom', which is of type str.
+
+'uma_Process' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Ellipse' represents an important domain concept.
+It has the following attributes: 'radiusX', which is of type str; 'radiusY', which is of type str; 'startAngle', which is of type str; 'rotation', which is of type str; 'endAngle', which is of type str.
+
+'uma_Template' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_TaskDescription' represents an important domain concept.
+It has the following attributes: 'alternatives', which is of type str; 'purpose', which is of type str.
+
+'uma_ProcessPlanningTemplate' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_RoleDescription' represents an important domain concept.
+It has the following attributes: 'skills', which is of type str; 'synonyms', which is of type str; 'assignmentApproaches', which is of type str.
+
+'VariabilityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'Process' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Whitepaper' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'WorkDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_PracticeDescription' represents an important domain concept.
+It has the following attributes: 'goals', which is of type str; 'background', which is of type str; 'application', which is of type str; 'problem', which is of type str; 'levelsOfAdoption', which is of type str; 'additionalInfo', which is of type str.
+
+'uma_TermDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Deliverable' represents an important domain concept.
+It does not declare any attributes.
+
+'Concept' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ContentPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Property' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'uma_ProcessElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ContentDescription' represents an important domain concept.
+It has the following attributes: 'mainDescription', which is of type str; 'keyConsiderations', which is of type str.
+
+'uma_Step' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Reference' represents an important domain concept.
+It has one attribute: 'isIndividualRepresentation', which is of type str.
+
+'uma_Practice' represents an important domain concept.
+It does not declare any attributes.
+
+'WorkBreakdownElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ProcessPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ProcessFamily' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'ContentDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_GraphicPrimitive' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Descriptor' represents an important domain concept.
+It has one attribute: 'isSynchronizedWithSource', which is of type str.
+
+'uma_Discipline' represents an important domain concept.
+It does not declare any attributes.
+
+'ContentCategory' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Iteration' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_RoleSet' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_MethodUnit' represents an important domain concept.
+It has the following attributes: 'authors', which is of type str; 'changeDate', which is of type str; 'changeDescription', which is of type str; 'version', which is of type str.
+
+'LeafElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_CapabilityPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphNode' represents an important domain concept.
+It does not declare any attributes.
+
+'DescribableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_MethodPackage' represents an important domain concept.
+It has one attribute: 'global', which is of type str.
+
+'uma_MethodConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Report' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ContentCategory' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_WorkBreakdownElement' represents an important domain concept.
+It has the following attributes: 'isOngoing', which is of type str; 'isEventDriven', which is of type str; 'isRepeatable', which is of type str.
+
+'WorkProduct' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_DiagramElement' represents an important domain concept.
+It has one attribute: 'isVisible', which is of type str.
+
+'RoleDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_DisciplineGrouping' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_MethodElement' represents an important domain concept.
+It has the following attributes: 'suppressed', which is of type str; 'orderingGuide', which is of type str; 'guid', which is of type str; 'briefDescription', which is of type str.
+
+'Descriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Polyline' represents an important domain concept.
+It has one attribute: 'closed', which is of type str.
+
+'uma_MethodLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_CompositeRole' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphicPrimitive' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Roadmap' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SemanticModelBridge' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ActivityDescription' represents an important domain concept.
+It has the following attributes: 'howtoStaff', which is of type str; 'alternatives', which is of type str; 'purpose', which is of type str.
+
+'uma_Phase' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Concept' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_DeliveryProcessDescription' represents an important domain concept.
+It has the following attributes: 'riskLevel', which is of type str; 'estimatingTechnique', which is of type str; 'scale', which is of type str; 'projectMemberExpertise', which is of type str; 'typeOfContract', which is of type str; 'projectCharacteristics', which is of type str.
+
+'ProcessPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ProcessComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Checklist' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Guidance' represents an important domain concept.
+It does not declare any attributes.
+
+'BreakdownElementDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Constraint' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'uma_Example' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Guideline' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_WorkProduct' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_GraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ProcessComponentInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_TextElement' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'uma_SupportingMaterial' represents an important domain concept.
+It does not declare any attributes.
+
+'Section' represents an important domain concept.
+It does not declare any attributes.
+
+'ContentElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_PlanningData' represents an important domain concept.
+It has the following attributes: 'rank', which is of type str; 'finishDate', which is of type str; 'startDate', which is of type str.
+
+'uma_ReusableAsset' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Tool' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Image' represents an important domain concept.
+It has the following attributes: 'uri', which is of type str; 'mimeType', which is of type str.
+
+'uma_WorkProductType' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Estimate' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ProcessDescription' represents an important domain concept.
+It has the following attributes: 'scope', which is of type str; 'externalId', which is of type str; 'usageNotes', which is of type str.
+
+'uma_GraphNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_GraphEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ToolMentor' represents an important domain concept.
+It does not declare any attributes.
+
+'Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Outcome' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Dimension' represents an important domain concept.
+It has the following attributes: 'width', which is of type str; 'height', which is of type str.
+
+'DiagramElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_ProcessComponentDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_Point' represents an important domain concept.
+It has the following attributes: 'x', which is of type str; 'y', which is of type str.
+
+'ActivityDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uma_DescriptorDescription' represents an important domain concept.
+It has one attribute: 'refinedDescription', which is of type str.
+
+'uma_SemanticModelBridge' represents an important domain concept.
+It has one attribute: 'presentation', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'WorkOrderType' defines the following possible values: 'finishToFinish', 'finishToStart', 'startToFinish', 'startToStart'.
+The enumeration 'VariabilityType' defines the following possible values: 'contributes', 'extends', 'replaces', 'na'.
+
+The model also captures inheritance relationships between classes.
+The class 'uma_Classifier' is a specialization of 'Type'.
+The class 'uma_Type' is a specialization of 'PackageableElement'.
+The class 'uma_NamedElement' is a specialization of 'Element'.
+The class 'uma_PackageableElement' is a specialization of 'NamedElement'.
+The class 'uma_Package' is a specialization of 'Namespace'.
+The class 'uma_Package' is a specialization of 'PackageableElement'.
+The class 'uma_Namespace' is a specialization of 'NamedElement'.
+The class 'uma_MethodElement' is a specialization of 'PackageableElement'.
+The class 'uma_Constraint' is a specialization of 'MethodElement'.
+The class 'uma_ContentElement' is a specialization of 'DescribableElement'.
+The class 'uma_ContentElement' is a specialization of 'VariabilityElement'.
+The class 'uma_DescribableElement' is a specialization of 'MethodElement'.
+The class 'uma_DescribableElement' is a specialization of 'Classifier'.
+The class 'uma_ContentDescription' is a specialization of 'MethodUnit'.
+The class 'uma_Section' is a specialization of 'VariabilityElement'.
+The class 'uma_Role' is a specialization of 'ContentElement'.
+The class 'uma_WorkProduct' is a specialization of 'ContentElement'.
+The class 'uma_Task' is a specialization of 'ContentElement'.
+The class 'uma_Task' is a specialization of 'WorkDefinition'.
+The class 'uma_WorkDefinition' is a specialization of 'MethodElement'.
+The class 'uma_Step' is a specialization of 'Section'.
+The class 'uma_Step' is a specialization of 'WorkDefinition'.
+The class 'uma_Guidance' is a specialization of 'ContentElement'.
+The class 'uma_Artifact' is a specialization of 'WorkProduct'.
+The class 'uma_Deliverable' is a specialization of 'WorkProduct'.
+The class 'uma_Outcome' is a specialization of 'WorkProduct'.
+The class 'uma_MethodPackage' is a specialization of 'MethodElement'.
+The class 'uma_MethodPackage' is a specialization of 'Package'.
+The class 'uma_ContentPackage' is a specialization of 'MethodPackage'.
+The class 'uma_ArtifactDescription' is a specialization of 'WorkProductDescription'.
+The class 'uma_WorkProductDescription' is a specialization of 'ContentDescription'.
+The class 'uma_DeliverableDescription' is a specialization of 'WorkProductDescription'.
+The class 'uma_RoleDescription' is a specialization of 'ContentDescription'.
+The class 'uma_TaskDescription' is a specialization of 'ContentDescription'.
+The class 'uma_GuidanceDescription' is a specialization of 'ContentDescription'.
+The class 'uma_PracticeDescription' is a specialization of 'ContentDescription'.
+The class 'uma_GraphElement' is a specialization of 'DiagramElement'.
+The class 'uma_DiagramElement' is a specialization of 'MethodElement'.
+The class 'uma_DiagramLink' is a specialization of 'DiagramElement'.
+The class 'uma_GraphConnector' is a specialization of 'GraphElement'.
+The class 'uma_SemanticModelBridge' is a specialization of 'DiagramElement'.
+The class 'uma_Reference' is a specialization of 'DiagramElement'.
+The class 'uma_Property' is a specialization of 'DiagramElement'.
+The class 'uma_GraphEdge' is a specialization of 'GraphElement'.
+The class 'uma_Diagram' is a specialization of 'GraphNode'.
+The class 'uma_GraphNode' is a specialization of 'GraphElement'.
+The class 'uma_SimpleSemanticModelElement' is a specialization of 'SemanticModelBridge'.
+The class 'uma_UMASemanticModelBridge' is a specialization of 'SemanticModelBridge'.
+The class 'uma_CoreSemanticModelBridge' is a specialization of 'SemanticModelBridge'.
+The class 'uma_LeafElement' is a specialization of 'DiagramElement'.
+The class 'uma_TextElement' is a specialization of 'LeafElement'.
+The class 'uma_Image' is a specialization of 'LeafElement'.
+The class 'uma_GraphicPrimitive' is a specialization of 'LeafElement'.
+The class 'uma_Polyline' is a specialization of 'GraphicPrimitive'.
+The class 'uma_Ellipse' is a specialization of 'GraphicPrimitive'.
+The class 'uma_Activity' is a specialization of 'WorkBreakdownElement'.
+The class 'uma_Activity' is a specialization of 'VariabilityElement'.
+The class 'uma_Activity' is a specialization of 'WorkDefinition'.
+The class 'uma_WorkBreakdownElement' is a specialization of 'BreakdownElement'.
+The class 'uma_BreakdownElement' is a specialization of 'ProcessElement'.
+The class 'uma_Milestone' is a specialization of 'WorkBreakdownElement'.
+The class 'uma_Iteration' is a specialization of 'Activity'.
+The class 'uma_Phase' is a specialization of 'Activity'.
+The class 'uma_TeamProfile' is a specialization of 'BreakdownElement'.
+The class 'uma_RoleDescriptor' is a specialization of 'Descriptor'.
+The class 'uma_WorkOrder' is a specialization of 'ProcessElement'.
+The class 'uma_ProcessElement' is a specialization of 'DescribableElement'.
+The class 'uma_PlanningData' is a specialization of 'ProcessElement'.
+The class 'uma_Descriptor' is a specialization of 'BreakdownElement'.
+The class 'uma_TaskDescriptor' is a specialization of 'WorkBreakdownElement'.
+The class 'uma_TaskDescriptor' is a specialization of 'Descriptor'.
+The class 'uma_WorkProductDescriptor' is a specialization of 'Descriptor'.
+The class 'uma_CompositeRole' is a specialization of 'RoleDescriptor'.
+The class 'uma_BreakdownElementDescription' is a specialization of 'ContentDescription'.
+The class 'uma_ActivityDescription' is a specialization of 'BreakdownElementDescription'.
+The class 'uma_DeliveryProcessDescription' is a specialization of 'ProcessDescription'.
+The class 'uma_ProcessDescription' is a specialization of 'ActivityDescription'.
+The class 'uma_DescriptorDescription' is a specialization of 'BreakdownElementDescription'.
+The class 'uma_Concept' is a specialization of 'Guidance'.
+The class 'uma_Checklist' is a specialization of 'Guidance'.
+The class 'uma_Example' is a specialization of 'Guidance'.
+The class 'uma_Guideline' is a specialization of 'Guidance'.
+The class 'uma_Estimate' is a specialization of 'Guidance'.
+The class 'uma_EstimatingMetric' is a specialization of 'Guidance'.
+The class 'uma_EstimationConsiderations' is a specialization of 'Guidance'.
+The class 'uma_Report' is a specialization of 'Guidance'.
+The class 'uma_Template' is a specialization of 'Guidance'.
+The class 'uma_SupportingMaterial' is a specialization of 'Guidance'.
+The class 'uma_ToolMentor' is a specialization of 'Guidance'.
+The class 'uma_Whitepaper' is a specialization of 'Concept'.
+The class 'uma_TermDefinition' is a specialization of 'Guidance'.
+The class 'uma_Practice' is a specialization of 'Guidance'.
+The class 'uma_ReusableAsset' is a specialization of 'Guidance'.
+The class 'uma_Discipline' is a specialization of 'ContentCategory'.
+The class 'uma_ContentCategory' is a specialization of 'ContentElement'.
+The class 'uma_RoleSet' is a specialization of 'ContentCategory'.
+The class 'uma_Domain' is a specialization of 'ContentCategory'.
+The class 'uma_WorkProductType' is a specialization of 'ContentCategory'.
+The class 'uma_DisciplineGrouping' is a specialization of 'ContentCategory'.
+The class 'uma_Tool' is a specialization of 'ContentCategory'.
+The class 'uma_RoleSetGrouping' is a specialization of 'ContentCategory'.
+The class 'uma_CustomCategory' is a specialization of 'ContentCategory'.
+The class 'uma_DeliveryProcess' is a specialization of 'Process'.
+The class 'uma_Process' is a specialization of 'Activity'.
+The class 'uma_CapabilityPattern' is a specialization of 'Process'.
+The class 'uma_ProcessPlanningTemplate' is a specialization of 'Process'.
+The class 'uma_Roadmap' is a specialization of 'Guidance'.
+The class 'uma_ProcessComponent' is a specialization of 'ProcessPackage'.
+The class 'uma_ProcessComponent' is a specialization of 'MethodUnit'.
+The class 'uma_ProcessPackage' is a specialization of 'MethodPackage'.
+The class 'uma_ProcessComponentInterface' is a specialization of 'BreakdownElement'.
+The class 'uma_ProcessComponentDescriptor' is a specialization of 'Descriptor'.
+The class 'uma_MethodPlugin' is a specialization of 'MethodUnit'.
+The class 'uma_MethodPlugin' is a specialization of 'Package'.
+The class 'uma_VariabilityElement' is a specialization of 'MethodElement'.
+The class 'uma_ProcessContribution' is a specialization of 'Process'.
+The class 'uma_MethodUnit' is a specialization of 'MethodElement'.
+The class 'uma_MethodConfiguration' is a specialization of 'MethodElement'.
+The class 'uma_ProcessFamily' is a specialization of 'MethodConfiguration'.
+The class 'uma_MethodLibrary' is a specialization of 'MethodUnit'.
+The class 'uma_MethodLibrary' is a specialization of 'Package'.
+
+Relationships between classes are modeled using associations.
+An association connects 'uma_Constraint' and 'uma_MethodElement'. From 'uma_Constraint', the role 'uma_Constraint' has cardinality 0..*, and from 'uma_MethodElement', the role 'uma_MethodElement' has cardinality 0..*.
+An association connects 'uma_ContentElement' and 'uma_SupportingMaterial'. From 'uma_ContentElement', the role 'uma_ContentElement' has cardinality 0..*, and from 'uma_SupportingMaterial', the role 'uma_SupportingMaterial' has cardinality 0..*.
+An association connects 'uma_ContentElement' and 'uma_Concept'. From 'uma_ContentElement', the role 'uma_ContentElement3' has cardinality 0..*, and from 'uma_Concept', the role 'uma_Concept' has cardinality 0..*.
+An association connects 'uma_ContentElement' and 'uma_Checklist'. From 'uma_ContentElement', the role 'uma_ContentElement5' has cardinality 0..*, and from 'uma_Checklist', the role 'uma_Checklist' has cardinality 0..*.
+An association connects 'uma_Guideline' and 'uma_ContentElement'. From 'uma_Guideline', the role 'uma_Guideline' has cardinality 0..*, and from 'uma_ContentElement', the role 'uma_ContentElement7' has cardinality 0..*.
+An association connects 'uma_Example' and 'uma_ContentElement'. From 'uma_Example', the role 'uma_Example' has cardinality 0..*, and from 'uma_ContentElement', the role 'uma_ContentElement9' has cardinality 0..*.
+An association connects 'uma_ReusableAsset' and 'uma_ContentElement'. From 'uma_ReusableAsset', the role 'uma_ReusableAsset' has cardinality 0..*, and from 'uma_ContentElement', the role 'uma_ContentElement11' has cardinality 0..*.
+An association connects 'uma_ContentDescription' and 'uma_DescribableElement'. From 'uma_ContentDescription', the role 'uma_ContentDescription' has cardinality 0..*, and from 'uma_DescribableElement', the role 'uma_DescribableElement' has cardinality 0..*.
+An association connects 'uma_ContentDescription' and 'uma_Section'. From 'uma_ContentDescription', the role 'uma_ContentDescription14' has cardinality 0..*, and from 'uma_Section', the role 'uma_Section' has cardinality 0..*.
+An association connects 'uma_Section' and 'uma_Section'. From 'uma_Section', the role 'uma_Section17' has cardinality 0..*, and from 'uma_Section', the role 'uma_Section15' has cardinality 0..*.
+An association connects 'uma_Section' and 'uma_Section'. From 'uma_Section', the role 'uma_Section18' has cardinality 0..*, and from 'uma_Section', the role 'uma_Section20' has cardinality 0..*.
+An association connects 'uma_WorkProduct' and 'uma_Role'. From 'uma_WorkProduct', the role 'uma_WorkProduct' has cardinality 0..*, and from 'uma_Role', the role 'uma_Role' has cardinality 0..*.
+An association connects 'uma_WorkProduct' and 'uma_Role'. From 'uma_WorkProduct', the role 'uma_WorkProduct24' has cardinality 0..*, and from 'uma_Role', the role 'uma_Role23' has cardinality 0..*.
+An association connects 'uma_Estimate' and 'uma_WorkProduct'. From 'uma_Estimate', the role 'uma_Estimate' has cardinality 0..*, and from 'uma_WorkProduct', the role 'uma_WorkProduct26' has cardinality 0..*.
+An association connects 'uma_WorkProduct' and 'uma_Report'. From 'uma_WorkProduct', the role 'uma_WorkProduct28' has cardinality 0..*, and from 'uma_Report', the role 'uma_Report' has cardinality 0..*.
+An association connects 'uma_WorkProduct' and 'uma_Template'. From 'uma_WorkProduct', the role 'uma_WorkProduct30' has cardinality 0..*, and from 'uma_Template', the role 'uma_Template' has cardinality 0..*.
+An association connects 'uma_ToolMentor' and 'uma_WorkProduct'. From 'uma_ToolMentor', the role 'uma_ToolMentor' has cardinality 0..*, and from 'uma_WorkProduct', the role 'uma_WorkProduct32' has cardinality 0..*.
+An association connects 'uma_Task' and 'uma_Role'. From 'uma_Task', the role 'uma_Task' has cardinality 0..*, and from 'uma_Role', the role 'uma_Role34' has cardinality 0..*.
+An association connects 'uma_Task' and 'uma_WorkProduct'. From 'uma_Task', the role 'uma_Task36' has cardinality 0..*, and from 'uma_WorkProduct', the role 'uma_WorkProduct37' has cardinality 0..*.
+An association connects 'uma_Task' and 'uma_WorkProduct'. From 'uma_Task', the role 'uma_Task39' has cardinality 0..*, and from 'uma_WorkProduct', the role 'uma_WorkProduct40' has cardinality 0..*.
+An association connects 'uma_Role' and 'uma_Task'. From 'uma_Role', the role 'uma_Role43' has cardinality 0..*, and from 'uma_Task', the role 'uma_Task42' has cardinality 0..*.
+An association connects 'uma_WorkProduct' and 'uma_Task'. From 'uma_WorkProduct', the role 'uma_WorkProduct46' has cardinality 0..*, and from 'uma_Task', the role 'uma_Task45' has cardinality 0..*.
+An association connects 'uma_Step' and 'uma_Task'. From 'uma_Step', the role 'uma_Step' has cardinality 0..*, and from 'uma_Task', the role 'uma_Task48' has cardinality 0..*.
+An association connects 'uma_ToolMentor' and 'uma_Task'. From 'uma_ToolMentor', the role 'uma_ToolMentor51' has cardinality 0..*, and from 'uma_Task', the role 'uma_Task50' has cardinality 0..*.
+An association connects 'uma_Task' and 'uma_Estimate'. From 'uma_Task', the role 'uma_Task53' has cardinality 0..*, and from 'uma_Estimate', the role 'uma_Estimate54' has cardinality 0..*.
+An association connects 'uma_WorkDefinition' and 'uma_Constraint'. From 'uma_WorkDefinition', the role 'uma_WorkDefinition' has cardinality 0..*, and from 'uma_Constraint', the role 'uma_Constraint56' has cardinality 0..*.
+An association connects 'uma_WorkDefinition' and 'uma_Constraint'. From 'uma_WorkDefinition', the role 'uma_WorkDefinition58' has cardinality 0..*, and from 'uma_Constraint', the role 'uma_Constraint59' has cardinality 0..*.
+An association connects 'uma_Artifact' and 'uma_Artifact'. From 'uma_Artifact', the role 'containedArtifacts' has cardinality 0..*, and from 'uma_Artifact', the role 'Artifact' has cardinality 0..*.
+An association connects 'uma_Artifact' and 'uma_Artifact'. From 'uma_Artifact', the role 'Artifact64' has cardinality 0..*, and from 'uma_Artifact', the role 'containerArtifact' has cardinality 0..*.
+An association connects 'uma_Deliverable' and 'uma_WorkProduct'. From 'uma_Deliverable', the role 'uma_Deliverable' has cardinality 0..*, and from 'uma_WorkProduct', the role 'uma_WorkProduct66' has cardinality 0..*.
+An association connects 'uma_MethodPackage' and 'uma_MethodPackage'. From 'uma_MethodPackage', the role 'uma_MethodPackage' has cardinality 0..*, and from 'uma_MethodPackage', the role 'uma_MethodPackage67' has cardinality 0..*.
+An association connects 'uma_MethodPackage' and 'uma_MethodPackage'. From 'uma_MethodPackage', the role 'childPackages' has cardinality 0..*, and from 'uma_MethodPackage', the role 'MethodPackage' has cardinality 0..*.
+An association connects 'uma_MethodPackage' and 'uma_MethodPackage'. From 'uma_MethodPackage', the role 'parentPackage' has cardinality 0..*, and from 'uma_MethodPackage', the role 'MethodPackage73' has cardinality 0..*.
+An association connects 'uma_ContentPackage' and 'uma_ContentElement'. From 'uma_ContentPackage', the role 'uma_ContentPackage' has cardinality 0..*, and from 'uma_ContentElement', the role 'uma_ContentElement75' has cardinality 0..*.
+An association connects 'uma_GraphElement' and 'uma_Point'. From 'uma_GraphElement', the role 'uma_GraphElement' has cardinality 0..*, and from 'uma_Point', the role 'uma_Point' has cardinality 0..*.
+An association connects 'uma_GraphElement' and 'uma_DiagramElement'. From 'uma_GraphElement', the role 'container' has cardinality 0..*, and from 'uma_DiagramElement', the role 'DiagramElement' has cardinality 0..*.
+An association connects 'uma_GraphElement' and 'uma_DiagramLink'. From 'uma_GraphElement', the role 'graphElement' has cardinality 0..*, and from 'uma_DiagramLink', the role 'DiagramLink' has cardinality 0..*.
+An association connects 'uma_GraphElement' and 'uma_GraphConnector'. From 'uma_GraphElement', the role 'graphElement80' has cardinality 0..*, and from 'uma_GraphConnector', the role 'GraphConnector' has cardinality 0..*.
+An association connects 'uma_SemanticModelBridge' and 'uma_GraphElement'. From 'uma_SemanticModelBridge', the role 'SemanticModelBridge' has cardinality 0..*, and from 'uma_GraphElement', the role 'graphElement82' has cardinality 0..*.
+An association connects 'uma_GraphElement' and 'uma_DiagramElement'. From 'uma_GraphElement', the role 'GraphElement' has cardinality 0..*, and from 'uma_DiagramElement', the role 'contained' has cardinality 0..*.
+An association connects 'uma_DiagramElement' and 'uma_Reference'. From 'uma_DiagramElement', the role 'referenced' has cardinality 0..*, and from 'uma_Reference', the role 'Reference' has cardinality 0..*.
+An association connects 'uma_DiagramElement' and 'uma_Property'. From 'uma_DiagramElement', the role 'uma_DiagramElement' has cardinality 0..*, and from 'uma_Property', the role 'uma_Property' has cardinality 0..*.
+An association connects 'uma_DiagramLink' and 'uma_Point'. From 'uma_DiagramLink', the role 'uma_DiagramLink' has cardinality 0..*, and from 'uma_Point', the role 'uma_Point87' has cardinality 0..*.
+An association connects 'uma_GraphElement' and 'uma_DiagramLink'. From 'uma_GraphElement', the role 'GraphElement89' has cardinality 0..*, and from 'uma_DiagramLink', the role 'link' has cardinality 0..*.
+An association connects 'uma_Diagram' and 'uma_DiagramLink'. From 'uma_Diagram', the role 'Diagram' has cardinality 0..*, and from 'uma_DiagramLink', the role 'diagramLink' has cardinality 0..*.
+An association connects 'uma_GraphConnector' and 'uma_GraphElement'. From 'uma_GraphConnector', the role 'anchorage' has cardinality 0..*, and from 'uma_GraphElement', the role 'GraphElement92' has cardinality 0..*.
+An association connects 'uma_GraphEdge' and 'uma_GraphConnector'. From 'uma_GraphEdge', the role 'GraphEdge' has cardinality 0..*, and from 'uma_GraphConnector', the role 'anchor' has cardinality 0..*.
+An association connects 'uma_GraphElement' and 'uma_SemanticModelBridge'. From 'uma_GraphElement', the role 'GraphElement95' has cardinality 0..*, and from 'uma_SemanticModelBridge', the role 'semanticModel' has cardinality 0..*.
+An association connects 'uma_SemanticModelBridge' and 'uma_Diagram'. From 'uma_SemanticModelBridge', the role 'namespace' has cardinality 0..*, and from 'uma_Diagram', the role 'Diagram97' has cardinality 0..*.
+An association connects 'uma_DiagramElement' and 'uma_Reference'. From 'uma_DiagramElement', the role 'DiagramElement99' has cardinality 0..*, and from 'uma_Reference', the role 'reference' has cardinality 0..*.
+An association connects 'uma_GraphConnector' and 'uma_GraphEdge'. From 'uma_GraphConnector', the role 'GraphConnector101' has cardinality 0..*, and from 'uma_GraphEdge', the role 'graphEdge' has cardinality 0..*.
+An association connects 'uma_GraphEdge' and 'uma_Point'. From 'uma_GraphEdge', the role 'uma_GraphEdge' has cardinality 0..*, and from 'uma_Point', the role 'uma_Point103' has cardinality 0..*.
+An association connects 'uma_Diagram' and 'uma_Point'. From 'uma_Diagram', the role 'uma_Diagram' has cardinality 0..*, and from 'uma_Point', the role 'uma_Point105' has cardinality 0..*.
+An association connects 'uma_Diagram' and 'uma_DiagramLink'. From 'uma_Diagram', the role 'diagram' has cardinality 0..*, and from 'uma_DiagramLink', the role 'DiagramLink107' has cardinality 0..*.
+An association connects 'uma_Diagram' and 'uma_SemanticModelBridge'. From 'uma_Diagram', the role 'diagram109' has cardinality 0..*, and from 'uma_SemanticModelBridge', the role 'SemanticModelBridge110' has cardinality 0..*.
+An association connects 'uma_Dimension' and 'uma_GraphNode'. From 'uma_Dimension', the role 'uma_Dimension' has cardinality 0..*, and from 'uma_GraphNode', the role 'uma_GraphNode' has cardinality 0..*.
+An association connects 'uma_MethodElement' and 'uma_UMASemanticModelBridge'. From 'uma_MethodElement', the role 'uma_MethodElement113' has cardinality 0..*, and from 'uma_UMASemanticModelBridge', the role 'uma_UMASemanticModelBridge' has cardinality 0..*.
+An association connects 'uma_Element' and 'uma_CoreSemanticModelBridge'. From 'uma_Element', the role 'uma_Element' has cardinality 0..*, and from 'uma_CoreSemanticModelBridge', the role 'uma_CoreSemanticModelBridge' has cardinality 0..*.
+An association connects 'uma_Point' and 'uma_Polyline'. From 'uma_Point', the role 'uma_Point116' has cardinality 0..*, and from 'uma_Polyline', the role 'uma_Polyline' has cardinality 0..*.
+An association connects 'uma_Ellipse' and 'uma_Point'. From 'uma_Ellipse', the role 'uma_Ellipse' has cardinality 0..*, and from 'uma_Point', the role 'uma_Point118' has cardinality 0..*.
+An association connects 'uma_BreakdownElement' and 'uma_Activity'. From 'uma_BreakdownElement', the role 'BreakdownElement' has cardinality 0..*, and from 'uma_Activity', the role 'superActivities' has cardinality 0..*.
+An association connects 'uma_Roadmap' and 'uma_Activity'. From 'uma_Roadmap', the role 'uma_Roadmap' has cardinality 0..*, and from 'uma_Activity', the role 'uma_Activity' has cardinality 0..*.
+An association connects 'uma_Activity' and 'uma_SupportingMaterial'. From 'uma_Activity', the role 'uma_Activity122' has cardinality 0..*, and from 'uma_SupportingMaterial', the role 'uma_SupportingMaterial123' has cardinality 0..*.
+An association connects 'uma_Activity' and 'uma_Checklist'. From 'uma_Activity', the role 'uma_Activity125' has cardinality 0..*, and from 'uma_Checklist', the role 'uma_Checklist126' has cardinality 0..*.
+An association connects 'uma_Concept' and 'uma_Activity'. From 'uma_Concept', the role 'uma_Concept129' has cardinality 0..*, and from 'uma_Activity', the role 'uma_Activity128' has cardinality 0..*.
+An association connects 'uma_Example' and 'uma_Activity'. From 'uma_Example', the role 'uma_Example132' has cardinality 0..*, and from 'uma_Activity', the role 'uma_Activity131' has cardinality 0..*.
+An association connects 'uma_Guideline' and 'uma_Activity'. From 'uma_Guideline', the role 'uma_Guideline135' has cardinality 0..*, and from 'uma_Activity', the role 'uma_Activity134' has cardinality 0..*.
+An association connects 'uma_ReusableAsset' and 'uma_Activity'. From 'uma_ReusableAsset', the role 'uma_ReusableAsset138' has cardinality 0..*, and from 'uma_Activity', the role 'uma_Activity137' has cardinality 0..*.
+An association connects 'uma_WorkBreakdownElement' and 'uma_WorkOrder'. From 'uma_WorkBreakdownElement', the role 'uma_WorkBreakdownElement' has cardinality 0..*, and from 'uma_WorkOrder', the role 'uma_WorkOrder' has cardinality 0..*.
+An association connects 'uma_BreakdownElement' and 'uma_BreakdownElement'. From 'uma_BreakdownElement', the role 'uma_BreakdownElement' has cardinality 0..*, and from 'uma_BreakdownElement', the role 'uma_BreakdownElement140' has cardinality 0..*.
+An association connects 'uma_BreakdownElement' and 'uma_BreakdownElement'. From 'uma_BreakdownElement', the role 'uma_BreakdownElement142' has cardinality 0..*, and from 'uma_BreakdownElement', the role 'uma_BreakdownElement144' has cardinality 0..*.
+An association connects 'uma_BreakdownElement' and 'uma_PlanningData'. From 'uma_BreakdownElement', the role 'uma_BreakdownElement146' has cardinality 0..*, and from 'uma_PlanningData', the role 'uma_PlanningData' has cardinality 0..*.
+An association connects 'uma_BreakdownElement' and 'uma_Activity'. From 'uma_BreakdownElement', the role 'breakdownElements' has cardinality 0..*, and from 'uma_Activity', the role 'Activity' has cardinality 0..*.
+An association connects 'uma_RoleDescriptor' and 'uma_TeamProfile'. From 'uma_RoleDescriptor', the role 'uma_RoleDescriptor' has cardinality 0..*, and from 'uma_TeamProfile', the role 'uma_TeamProfile' has cardinality 0..*.
+An association connects 'uma_TeamProfile' and 'uma_TeamProfile'. From 'uma_TeamProfile', the role 'TeamProfile' has cardinality 0..*, and from 'uma_TeamProfile', the role 'subTeam' has cardinality 0..*.
+An association connects 'uma_TeamProfile' and 'uma_TeamProfile'. From 'uma_TeamProfile', the role 'superTeam' has cardinality 0..*, and from 'uma_TeamProfile', the role 'TeamProfile153' has cardinality 0..*.
+An association connects 'uma_RoleDescriptor' and 'uma_Role'. From 'uma_RoleDescriptor', the role 'uma_RoleDescriptor155' has cardinality 0..*, and from 'uma_Role', the role 'uma_Role156' has cardinality 0..*.
+An association connects 'uma_RoleDescriptor' and 'uma_TaskDescriptor'. From 'uma_RoleDescriptor', the role 'additionallyPerformedBy' has cardinality 0..*, and from 'uma_TaskDescriptor', the role 'TaskDescriptor' has cardinality 0..*.
+An association connects 'uma_RoleDescriptor' and 'uma_TaskDescriptor'. From 'uma_RoleDescriptor', the role 'assistedBy' has cardinality 0..*, and from 'uma_TaskDescriptor', the role 'TaskDescriptor159' has cardinality 0..*.
+An association connects 'uma_RoleDescriptor' and 'uma_WorkProductDescriptor'. From 'uma_RoleDescriptor', the role 'workedOnBy' has cardinality 0..*, and from 'uma_WorkProductDescriptor', the role 'WorkProductDescriptor' has cardinality 0..*.
+An association connects 'uma_TaskDescriptor' and 'uma_RoleDescriptor'. From 'uma_TaskDescriptor', the role 'TaskDescriptor162' has cardinality 0..*, and from 'uma_RoleDescriptor', the role 'performedPrimarilyBy' has cardinality 0..*.
+An association connects 'uma_RoleDescriptor' and 'uma_WorkProductDescriptor'. From 'uma_RoleDescriptor', the role 'responsibleRole' has cardinality 0..*, and from 'uma_WorkProductDescriptor', the role 'WorkProductDescriptor164' has cardinality 0..*.
+An association connects 'uma_WorkBreakdownElement' and 'uma_WorkOrder'. From 'uma_WorkBreakdownElement', the role 'uma_WorkBreakdownElement167' has cardinality 0..*, and from 'uma_WorkOrder', the role 'uma_WorkOrder166' has cardinality 0..*.
+An association connects 'uma_TaskDescriptor' and 'uma_Task'. From 'uma_TaskDescriptor', the role 'uma_TaskDescriptor' has cardinality 0..*, and from 'uma_Task', the role 'uma_Task169' has cardinality 0..*.
+An association connects 'uma_TaskDescriptor' and 'uma_RoleDescriptor'. From 'uma_TaskDescriptor', the role 'performsAdditionally' has cardinality 0..*, and from 'uma_RoleDescriptor', the role 'RoleDescriptor' has cardinality 0..*.
+An association connects 'uma_TaskDescriptor' and 'uma_RoleDescriptor'. From 'uma_TaskDescriptor', the role 'assistsIn' has cardinality 0..*, and from 'uma_RoleDescriptor', the role 'RoleDescriptor172' has cardinality 0..*.
+An association connects 'uma_WorkProductDescriptor' and 'uma_TaskDescriptor'. From 'uma_WorkProductDescriptor', the role 'WorkProductDescriptor174' has cardinality 0..*, and from 'uma_TaskDescriptor', the role 'externalInputTo' has cardinality 0..*.
+An association connects 'uma_WorkProductDescriptor' and 'uma_TaskDescriptor'. From 'uma_WorkProductDescriptor', the role 'WorkProductDescriptor176' has cardinality 0..*, and from 'uma_TaskDescriptor', the role 'mandatoryInputTo' has cardinality 0..*.
+An association connects 'uma_TaskDescriptor' and 'uma_WorkProductDescriptor'. From 'uma_TaskDescriptor', the role 'OptionalInputTo' has cardinality 0..*, and from 'uma_WorkProductDescriptor', the role 'WorkProductDescriptor178' has cardinality 0..*.
+An association connects 'uma_WorkProductDescriptor' and 'uma_TaskDescriptor'. From 'uma_WorkProductDescriptor', the role 'WorkProductDescriptor180' has cardinality 0..*, and from 'uma_TaskDescriptor', the role 'outputFrom' has cardinality 0..*.
+An association connects 'uma_TaskDescriptor' and 'uma_RoleDescriptor'. From 'uma_TaskDescriptor', the role 'performsAsOwner' has cardinality 0..*, and from 'uma_RoleDescriptor', the role 'RoleDescriptor182' has cardinality 0..*.
+An association connects 'uma_TaskDescriptor' and 'uma_Section'. From 'uma_TaskDescriptor', the role 'uma_TaskDescriptor184' has cardinality 0..*, and from 'uma_Section', the role 'uma_Section185' has cardinality 0..*.
+An association connects 'uma_WorkProductDescriptor' and 'uma_WorkProduct'. From 'uma_WorkProductDescriptor', the role 'uma_WorkProductDescriptor' has cardinality 0..*, and from 'uma_WorkProduct', the role 'uma_WorkProduct187' has cardinality 0..*.
+An association connects 'uma_TaskDescriptor' and 'uma_WorkProductDescriptor'. From 'uma_TaskDescriptor', the role 'TaskDescriptor189' has cardinality 0..*, and from 'uma_WorkProductDescriptor', the role 'externalInput' has cardinality 0..*.
+An association connects 'uma_WorkProductDescriptor' and 'uma_WorkProductDescriptor'. From 'uma_WorkProductDescriptor', the role 'impacts' has cardinality 0..*, and from 'uma_WorkProductDescriptor', the role 'WorkProductDescriptor192' has cardinality 0..*.
+An association connects 'uma_WorkProductDescriptor' and 'uma_WorkProductDescriptor'. From 'uma_WorkProductDescriptor', the role 'impactedBy' has cardinality 0..*, and from 'uma_WorkProductDescriptor', the role 'WorkProductDescriptor195' has cardinality 0..*.
+An association connects 'uma_WorkProductDescriptor' and 'uma_TaskDescriptor'. From 'uma_WorkProductDescriptor', the role 'mandatoryInput' has cardinality 0..*, and from 'uma_TaskDescriptor', the role 'TaskDescriptor197' has cardinality 0..*.
+An association connects 'uma_WorkProductDescriptor' and 'uma_RoleDescriptor'. From 'uma_WorkProductDescriptor', the role 'modifies' has cardinality 0..*, and from 'uma_RoleDescriptor', the role 'RoleDescriptor199' has cardinality 0..*.
+An association connects 'uma_TaskDescriptor' and 'uma_WorkProductDescriptor'. From 'uma_TaskDescriptor', the role 'TaskDescriptor201' has cardinality 0..*, and from 'uma_WorkProductDescriptor', the role 'optionalInput' has cardinality 0..*.
+An association connects 'uma_TaskDescriptor' and 'uma_WorkProductDescriptor'. From 'uma_TaskDescriptor', the role 'TaskDescriptor203' has cardinality 0..*, and from 'uma_WorkProductDescriptor', the role 'output' has cardinality 0..*.
+An association connects 'uma_WorkProductDescriptor' and 'uma_WorkProductDescriptor'. From 'uma_WorkProductDescriptor', the role 'uma_WorkProductDescriptor206' has cardinality 0..*, and from 'uma_WorkProductDescriptor', the role 'uma_WorkProductDescriptor204' has cardinality 0..*.
+An association connects 'uma_WorkProductDescriptor' and 'uma_RoleDescriptor'. From 'uma_WorkProductDescriptor', the role 'responsibleFor' has cardinality 0..*, and from 'uma_RoleDescriptor', the role 'RoleDescriptor208' has cardinality 0..*.
+An association connects 'uma_CompositeRole' and 'uma_Role'. From 'uma_CompositeRole', the role 'uma_CompositeRole' has cardinality 0..*, and from 'uma_Role', the role 'uma_Role210' has cardinality 0..*.
+An association connects 'uma_Estimate' and 'uma_EstimatingMetric'. From 'uma_Estimate', the role 'uma_Estimate212' has cardinality 0..*, and from 'uma_EstimatingMetric', the role 'uma_EstimatingMetric' has cardinality 0..*.
+An association connects 'uma_Estimate' and 'uma_EstimationConsiderations'. From 'uma_Estimate', the role 'uma_Estimate214' has cardinality 0..*, and from 'uma_EstimationConsiderations', the role 'uma_EstimationConsiderations' has cardinality 0..*.
+An association connects 'uma_Practice' and 'uma_Practice'. From 'uma_Practice', the role 'uma_Practice215' has cardinality 0..*, and from 'uma_Practice', the role 'uma_Practice' has cardinality 0..*.
+An association connects 'uma_ContentElement' and 'uma_Practice'. From 'uma_ContentElement', the role 'uma_ContentElement219' has cardinality 0..*, and from 'uma_Practice', the role 'uma_Practice218' has cardinality 0..*.
+An association connects 'uma_Activity' and 'uma_Practice'. From 'uma_Activity', the role 'uma_Activity222' has cardinality 0..*, and from 'uma_Practice', the role 'uma_Practice221' has cardinality 0..*.
+An association connects 'uma_Discipline' and 'uma_Task'. From 'uma_Discipline', the role 'uma_Discipline' has cardinality 0..*, and from 'uma_Task', the role 'uma_Task224' has cardinality 0..*.
+An association connects 'uma_Discipline' and 'uma_Activity'. From 'uma_Discipline', the role 'uma_Discipline226' has cardinality 0..*, and from 'uma_Activity', the role 'uma_Activity227' has cardinality 0..*.
+An association connects 'uma_RoleSet' and 'uma_Role'. From 'uma_RoleSet', the role 'uma_RoleSet' has cardinality 0..*, and from 'uma_Role', the role 'uma_Role229' has cardinality 0..*.
+An association connects 'uma_Domain' and 'uma_WorkProduct'. From 'uma_Domain', the role 'uma_Domain' has cardinality 0..*, and from 'uma_WorkProduct', the role 'uma_WorkProduct231' has cardinality 0..*.
+An association connects 'uma_Domain' and 'uma_Domain'. From 'uma_Domain', the role 'uma_Domain234' has cardinality 0..*, and from 'uma_Domain', the role 'uma_Domain232' has cardinality 0..*.
+An association connects 'uma_WorkProduct' and 'uma_WorkProductType'. From 'uma_WorkProduct', the role 'uma_WorkProduct236' has cardinality 0..*, and from 'uma_WorkProductType', the role 'uma_WorkProductType' has cardinality 0..*.
+An association connects 'uma_Discipline' and 'uma_DisciplineGrouping'. From 'uma_Discipline', the role 'uma_Discipline238' has cardinality 0..*, and from 'uma_DisciplineGrouping', the role 'uma_DisciplineGrouping' has cardinality 0..*.
+An association connects 'uma_ToolMentor' and 'uma_Tool'. From 'uma_ToolMentor', the role 'uma_ToolMentor240' has cardinality 0..*, and from 'uma_Tool', the role 'uma_Tool' has cardinality 0..*.
+An association connects 'uma_RoleSet' and 'uma_RoleSetGrouping'. From 'uma_RoleSet', the role 'uma_RoleSet242' has cardinality 0..*, and from 'uma_RoleSetGrouping', the role 'uma_RoleSetGrouping' has cardinality 0..*.
+An association connects 'uma_DescribableElement' and 'uma_CustomCategory'. From 'uma_DescribableElement', the role 'uma_DescribableElement244' has cardinality 0..*, and from 'uma_CustomCategory', the role 'uma_CustomCategory' has cardinality 0..*.
+An association connects 'uma_ContentCategory' and 'uma_CustomCategory'. From 'uma_ContentCategory', the role 'uma_ContentCategory' has cardinality 0..*, and from 'uma_CustomCategory', the role 'uma_CustomCategory246' has cardinality 0..*.
+An association connects 'uma_DeliveryProcess' and 'uma_SupportingMaterial'. From 'uma_DeliveryProcess', the role 'uma_DeliveryProcess' has cardinality 0..*, and from 'uma_SupportingMaterial', the role 'uma_SupportingMaterial248' has cardinality 0..*.
+An association connects 'uma_SupportingMaterial' and 'uma_DeliveryProcess'. From 'uma_SupportingMaterial', the role 'uma_SupportingMaterial251' has cardinality 0..*, and from 'uma_DeliveryProcess', the role 'uma_DeliveryProcess250' has cardinality 0..*.
+An association connects 'uma_CapabilityPattern' and 'uma_Process'. From 'uma_CapabilityPattern', the role 'uma_CapabilityPattern' has cardinality 0..*, and from 'uma_Process', the role 'uma_Process' has cardinality 0..*.
+An association connects 'uma_Process' and 'uma_MethodConfiguration'. From 'uma_Process', the role 'uma_Process254' has cardinality 0..*, and from 'uma_MethodConfiguration', the role 'uma_MethodConfiguration' has cardinality 0..*.
+An association connects 'uma_Process' and 'uma_MethodConfiguration'. From 'uma_Process', the role 'uma_Process256' has cardinality 0..*, and from 'uma_MethodConfiguration', the role 'uma_MethodConfiguration257' has cardinality 0..*.
+An association connects 'uma_Process' and 'uma_ProcessPlanningTemplate'. From 'uma_Process', the role 'uma_Process259' has cardinality 0..*, and from 'uma_ProcessPlanningTemplate', the role 'uma_ProcessPlanningTemplate' has cardinality 0..*.
+An association connects 'uma_ProcessComponent' and 'uma_ProcessComponentInterface'. From 'uma_ProcessComponent', the role 'uma_ProcessComponent' has cardinality 0..*, and from 'uma_ProcessComponentInterface', the role 'uma_ProcessComponentInterface' has cardinality 0..*.
+An association connects 'uma_Process' and 'uma_ProcessComponent'. From 'uma_Process', the role 'uma_Process263' has cardinality 0..*, and from 'uma_ProcessComponent', the role 'uma_ProcessComponent262' has cardinality 0..*.
+An association connects 'uma_ProcessElement' and 'uma_ProcessPackage'. From 'uma_ProcessElement', the role 'uma_ProcessElement' has cardinality 0..*, and from 'uma_ProcessPackage', the role 'uma_ProcessPackage' has cardinality 0..*.
+An association connects 'uma_ProcessPackage' and 'uma_Diagram'. From 'uma_ProcessPackage', the role 'uma_ProcessPackage266' has cardinality 0..*, and from 'uma_Diagram', the role 'uma_Diagram267' has cardinality 0..*.
+An association connects 'uma_TaskDescriptor' and 'uma_ProcessComponentInterface'. From 'uma_TaskDescriptor', the role 'uma_TaskDescriptor270' has cardinality 0..*, and from 'uma_ProcessComponentInterface', the role 'uma_ProcessComponentInterface269' has cardinality 0..*.
+An association connects 'uma_WorkProductDescriptor' and 'uma_ProcessComponentInterface'. From 'uma_WorkProductDescriptor', the role 'uma_WorkProductDescriptor273' has cardinality 0..*, and from 'uma_ProcessComponentInterface', the role 'uma_ProcessComponentInterface272' has cardinality 0..*.
+An association connects 'uma_ProcessComponentDescriptor' and 'uma_ProcessComponent'. From 'uma_ProcessComponentDescriptor', the role 'uma_ProcessComponentDescriptor' has cardinality 0..*, and from 'uma_ProcessComponent', the role 'uma_ProcessComponent275' has cardinality 0..*.
+An association connects 'uma_MethodPlugin' and 'uma_MethodPackage'. From 'uma_MethodPlugin', the role 'uma_MethodPlugin' has cardinality 0..*, and from 'uma_MethodPackage', the role 'uma_MethodPackage277' has cardinality 0..*.
+An association connects 'uma_MethodPlugin' and 'uma_MethodPlugin'. From 'uma_MethodPlugin', the role 'uma_MethodPlugin278' has cardinality 0..*, and from 'uma_MethodPlugin', the role 'uma_MethodPlugin280' has cardinality 0..*.
+An association connects 'uma_VariabilityElement' and 'uma_VariabilityElement'. From 'uma_VariabilityElement', the role 'uma_VariabilityElement' has cardinality 0..*, and from 'uma_VariabilityElement', the role 'uma_VariabilityElement281' has cardinality 0..*.
+An association connects 'uma_ProcessContribution' and 'uma_Process'. From 'uma_ProcessContribution', the role 'uma_ProcessContribution' has cardinality 0..*, and from 'uma_Process', the role 'uma_Process284' has cardinality 0..*.
+An association connects 'uma_MethodUnit' and 'uma_SupportingMaterial'. From 'uma_MethodUnit', the role 'uma_MethodUnit' has cardinality 0..*, and from 'uma_SupportingMaterial', the role 'uma_SupportingMaterial286' has cardinality 0..*.
+An association connects 'uma_MethodConfiguration' and 'uma_MethodPlugin'. From 'uma_MethodConfiguration', the role 'uma_MethodConfiguration288' has cardinality 0..*, and from 'uma_MethodPlugin', the role 'uma_MethodPlugin289' has cardinality 0..*.
+An association connects 'uma_MethodPackage' and 'uma_MethodConfiguration'. From 'uma_MethodPackage', the role 'uma_MethodPackage292' has cardinality 0..*, and from 'uma_MethodConfiguration', the role 'uma_MethodConfiguration291' has cardinality 0..*.
+An association connects 'uma_MethodConfiguration' and 'uma_ContentCategory'. From 'uma_MethodConfiguration', the role 'uma_MethodConfiguration294' has cardinality 0..*, and from 'uma_ContentCategory', the role 'uma_ContentCategory295' has cardinality 0..*.
+An association connects 'uma_MethodConfiguration' and 'uma_ContentCategory'. From 'uma_MethodConfiguration', the role 'uma_MethodConfiguration297' has cardinality 0..*, and from 'uma_ContentCategory', the role 'uma_ContentCategory298' has cardinality 0..*.
+An association connects 'uma_MethodConfiguration' and 'uma_MethodConfiguration'. From 'uma_MethodConfiguration', the role 'uma_MethodConfiguration299' has cardinality 0..*, and from 'uma_MethodConfiguration', the role 'uma_MethodConfiguration301' has cardinality 0..*.
+An association connects 'uma_ProcessFamily' and 'uma_DeliveryProcess'. From 'uma_ProcessFamily', the role 'uma_ProcessFamily' has cardinality 0..*, and from 'uma_DeliveryProcess', the role 'uma_DeliveryProcess303' has cardinality 0..*.
+An association connects 'uma_MethodLibrary' and 'uma_MethodPlugin'. From 'uma_MethodLibrary', the role 'uma_MethodLibrary' has cardinality 0..*, and from 'uma_MethodPlugin', the role 'uma_MethodPlugin305' has cardinality 0..*.
+An association connects 'uma_MethodLibrary' and 'uma_MethodConfiguration'. From 'uma_MethodLibrary', the role 'uma_MethodLibrary307' has cardinality 0..*, and from 'uma_MethodConfiguration', the role 'uma_MethodConfiguration308' has cardinality 0..*.

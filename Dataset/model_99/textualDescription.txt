@@ -1,0 +1,797 @@
+The domain model 'PrimitiveTypes' describes the core structural elements and their relationships within the system.
+
+The model defines 162 main class(es).
+
+'DOM_InstanceofExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_QualifiedName' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_DoStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_BlockComment' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_StringLiteral' represents an important domain concept.
+It has the following attributes: 'escapedValue', which is of type str; 'literalValue', which is of type str.
+
+'IMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_CastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ArrayType' represents an important domain concept.
+It has one attribute: 'dimensions', which is of type str.
+
+'DOM_MethodRef' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_IType' represents an important domain concept.
+It has the following attributes: 'fullyQualifiedName', which is of type str; 'fullyQualifiedParametrizedName', which is of type str.
+
+'DOM_ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_NumberLiteral' represents an important domain concept.
+It has one attribute: 'token', which is of type str.
+
+'DOM_EmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_SwitchCase' represents an important domain concept.
+It has one attribute: 'default', which is of type str.
+
+'ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_VariableDeclarationFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_BinaryPackageFragmentRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_Javadoc' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'extraDimensions', which is of type str.
+
+'Core_IJavaElement' represents an important domain concept.
+It has one attribute: 'elementName', which is of type str.
+
+'MethodRefParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_AnnotationTypeMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_VariableDeclarationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_Assignment' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'DOM_NormalAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_MemberRef' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'AnonymousClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_MethodRefParameter' represents an important domain concept.
+It has one attribute: 'varargs', which is of type str.
+
+'DOM_BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_EnhancedForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_PrefixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'DOM_SimpleName' represents an important domain concept.
+It has the following attributes: 'identifier', which is of type str; 'declaration', which is of type str.
+
+'DOM_PostfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'DOM_Name' represents an important domain concept.
+It has one attribute: 'fullyQualifiedName', which is of type str.
+
+'DOM_MemberValuePair' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_SynchronizedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_MarkerAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'SingleVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_LineComment' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ParameterizedType' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ParenthesizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_CatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_FieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_PrimitiveType' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+'DOM_EnumConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'IImportDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_Expression' represents an important domain concept.
+It has the following attributes: 'resolveBoxing', which is of type str; 'resolveUnboxing', which is of type str.
+
+'Core_IPackageFragmentRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_Parameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'IPackageFragmentRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_IField' represents an important domain concept.
+It has the following attributes: 'isTransient', which is of type str; 'isEnumConstant', which is of type str; 'isVolatile', which is of type str; 'typeSignature', which is of type str; 'constant', which is of type str.
+
+'DOM_AnnotationTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'TagElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_SingleMemberAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'booleanValue', which is of type str.
+
+'IField' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_PackageDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_IImportDeclaration' represents an important domain concept.
+It has the following attributes: 'isOnDemand', which is of type str; 'isStatic', which is of type str.
+
+'Core_ITypeParameter' represents an important domain concept.
+It has one attribute: 'bounds', which is of type str.
+
+'DOM_TextElement' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'ArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Name' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_TypeDeclaration' represents an important domain concept.
+It has one attribute: 'interface', which is of type str.
+
+'ICompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'MemberValuePair' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleName' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ThrowStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'ITypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'IJavaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_TryStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_IPackageFragment' represents an important domain concept.
+It has one attribute: 'isDefaultPackage', which is of type str.
+
+'DOM_SuperFieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_TypeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ImportDeclaration' represents an important domain concept.
+It has the following attributes: 'onDemand', which is of type str; 'static', which is of type str.
+
+'DOM_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_Initializer' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_SuperMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_QualifiedType' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_LabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_IMethod' represents an important domain concept.
+It has the following attributes: 'isMainMethod', which is of type str; 'returnType', which is of type str; 'exceptionTypes', which is of type str; 'isConstructor', which is of type str.
+
+'DOM_Modifier' represents an important domain concept.
+It has the following attributes: 'final', which is of type str; 'volatile', which is of type str; 'protected', which is of type str; 'strictfp', which is of type str; 'abstract', which is of type str; 'synchronized', which is of type str; 'private', which is of type str; 'static', which is of type str; 'none', which is of type str; 'native', which is of type str; 'public', which is of type str; 'transient', which is of type str.
+
+'DOM_MethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_IJavaModel' represents an important domain concept.
+It does not declare any attributes.
+
+'IClassFile' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_AnonymousClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ITypeRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ThisExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_PhysicalElement' represents an important domain concept.
+It has the following attributes: 'path', which is of type str; 'isReadOnly', which is of type str.
+
+'DOM_TypeDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_AbstractTypeDeclaration' represents an important domain concept.
+It has the following attributes: 'localTypeDeclaration', which is of type str; 'memberTypeDeclaration', which is of type str; 'packageMemberTypeDeclaration', which is of type str.
+
+'Core_SourcePackageFragmentRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ArrayAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ArrayCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_ISourceReference' represents an important domain concept.
+It has one attribute: 'source', which is of type str.
+
+'DOM_FieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_ICompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_SimpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_InfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Core_IClassFile' represents an important domain concept.
+It has the following attributes: 'isClass', which is of type str; 'isInterface', which is of type str.
+
+'IInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'ISourceRange' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_IInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_WildcardType' represents an important domain concept.
+It has one attribute: 'upperBound', which is of type str.
+
+'DOM_ExtendedModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_VariableDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_TagElement' represents an important domain concept.
+It has the following attributes: 'nested', which is of type str; 'tagName', which is of type str.
+
+'DOM_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_TypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclarationFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'IPackageFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'IType' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'IMember' represents an important domain concept.
+It does not declare any attributes.
+
+'ImportDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_MethodDeclaration' represents an important domain concept.
+It has the following attributes: 'extraDimensions', which is of type str; 'varargs', which is of type str; 'constructor', which is of type str.
+
+'Core_IMember' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_CharacterLiteral' represents an important domain concept.
+It has the following attributes: 'charValue', which is of type str; 'escapedValue', which is of type str.
+
+'DOM_EnumDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'CatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ClassInstanceCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'PhysicalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_AssertStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_SuperConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_ISourceRange' represents an important domain concept.
+It has the following attributes: 'length', which is of type str; 'offset', which is of type str.
+
+'DOM_SingleVariableDeclaration' represents an important domain concept.
+It has one attribute: 'varargs', which is of type str.
+
+'DOM_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_ConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtendedModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ISourceReference' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_ITypeRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_IJavaProject' represents an important domain concept.
+It does not declare any attributes.
+
+'Javadoc' represents an important domain concept.
+It does not declare any attributes.
+
+'DOM_AST' represents an important domain concept.
+It does not declare any attributes.
+
+'IJavaProject' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PrefixExpressionOperatorKind' defines the following possible values: 'not', 'increment', 'plus', 'minus', 'decrement', 'complement'.
+The enumeration 'AssignmentOperatorKind' defines the following possible values: 'assign', 'times_assign', 'right_shift_signed_assign', 'bit_and_assign', 'divide_assign', 'left_shift_assign', 'minus_assign', 'bit_or_assign', 'bit_xor_assign', 'remainder_assign', 'right_shift_unsigned_assign', 'plus_assign'.
+The enumeration 'PostfixExpressionOperatorKind' defines the following possible values: 'decrement', 'increment'.
+The enumeration 'Modifiers' defines the following possible values: 'interface', 'private', 'protected', 'synthetic', 'strictfp', 'synchronized', 'bridge', 'static', 'varargs', 'annotation', 'public', 'volatile', 'enum', 'transient', 'final', 'default', 'native', 'deprecated', 'abstract', 'super'.
+The enumeration 'InfixExpressionOperatorKind' defines the following possible values: 'or', 'plus', 'not_equals', 'equals', 'greater_equals', 'left_shift', 'divide', 'minus', 'remainder', 'conditional_and', 'right_shift_signed', 'less_equals', 'xor', 'times', 'greater', 'conditional_or', 'and', 'less', 'right_shift_unsigned'.
+
+The model also captures inheritance relationships between classes.
+The class 'Core_IJavaModel' is a specialization of 'PhysicalElement'.
+The class 'Core_IJavaProject' is a specialization of 'IJavaElement'.
+The class 'Core_IJavaProject' is a specialization of 'PhysicalElement'.
+The class 'Core_IPackageFragmentRoot' is a specialization of 'IJavaElement'.
+The class 'Core_IPackageFragmentRoot' is a specialization of 'PhysicalElement'.
+The class 'Core_BinaryPackageFragmentRoot' is a specialization of 'IPackageFragmentRoot'.
+The class 'Core_SourcePackageFragmentRoot' is a specialization of 'IPackageFragmentRoot'.
+The class 'Core_IPackageFragment' is a specialization of 'IJavaElement'.
+The class 'Core_IPackageFragment' is a specialization of 'PhysicalElement'.
+The class 'Core_ITypeRoot' is a specialization of 'IJavaElement'.
+The class 'Core_ITypeRoot' is a specialization of 'ISourceReference'.
+The class 'Core_ITypeRoot' is a specialization of 'PhysicalElement'.
+The class 'Core_ICompilationUnit' is a specialization of 'ITypeRoot'.
+The class 'Core_IClassFile' is a specialization of 'ITypeRoot'.
+The class 'Core_IImportDeclaration' is a specialization of 'IJavaElement'.
+The class 'Core_IImportDeclaration' is a specialization of 'ISourceReference'.
+The class 'Core_IMember' is a specialization of 'IJavaElement'.
+The class 'Core_IMember' is a specialization of 'ISourceReference'.
+The class 'Core_IType' is a specialization of 'IMember'.
+The class 'Core_ITypeParameter' is a specialization of 'IJavaElement'.
+The class 'Core_ITypeParameter' is a specialization of 'ISourceReference'.
+The class 'Core_IInitializer' is a specialization of 'IMember'.
+The class 'Core_IField' is a specialization of 'IMember'.
+The class 'Core_IMethod' is a specialization of 'IMember'.
+The class 'DOM_AnonymousClassDeclaration' is a specialization of 'ASTNode'.
+The class 'DOM_BodyDeclaration' is a specialization of 'ASTNode'.
+The class 'DOM_CatchClause' is a specialization of 'ASTNode'.
+The class 'DOM_Comment' is a specialization of 'ASTNode'.
+The class 'DOM_CompilationUnit' is a specialization of 'ASTNode'.
+The class 'DOM_Expression' is a specialization of 'ASTNode'.
+The class 'DOM_ImportDeclaration' is a specialization of 'ASTNode'.
+The class 'DOM_MemberRef' is a specialization of 'ASTNode'.
+The class 'DOM_MemberValuePair' is a specialization of 'ASTNode'.
+The class 'DOM_MethodRef' is a specialization of 'ASTNode'.
+The class 'DOM_MethodRefParameter' is a specialization of 'ASTNode'.
+The class 'DOM_Modifier' is a specialization of 'ASTNode'.
+The class 'DOM_Modifier' is a specialization of 'ExtendedModifier'.
+The class 'DOM_PackageDeclaration' is a specialization of 'ASTNode'.
+The class 'DOM_Statement' is a specialization of 'ASTNode'.
+The class 'DOM_TagElement' is a specialization of 'ASTNode'.
+The class 'DOM_TextElement' is a specialization of 'ASTNode'.
+The class 'DOM_Type' is a specialization of 'ASTNode'.
+The class 'DOM_TypeParameter' is a specialization of 'ASTNode'.
+The class 'DOM_VariableDeclaration' is a specialization of 'ASTNode'.
+The class 'DOM_AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'DOM_AnnotationTypeMemberDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'DOM_EnumConstantDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'DOM_FieldDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'DOM_Initializer' is a specialization of 'BodyDeclaration'.
+The class 'DOM_MethodDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'DOM_AnnotationTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'DOM_EnumDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'DOM_TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'DOM_BlockComment' is a specialization of 'Comment'.
+The class 'DOM_Javadoc' is a specialization of 'Comment'.
+The class 'DOM_LineComment' is a specialization of 'Comment'.
+The class 'DOM_Annotation' is a specialization of 'Expression'.
+The class 'DOM_Annotation' is a specialization of 'ExtendedModifier'.
+The class 'DOM_ArrayAccess' is a specialization of 'Expression'.
+The class 'DOM_ArrayCreation' is a specialization of 'Expression'.
+The class 'DOM_ArrayInitializer' is a specialization of 'Expression'.
+The class 'DOM_Assignment' is a specialization of 'Expression'.
+The class 'DOM_BooleanLiteral' is a specialization of 'Expression'.
+The class 'DOM_CastExpression' is a specialization of 'Expression'.
+The class 'DOM_CharacterLiteral' is a specialization of 'Expression'.
+The class 'DOM_ClassInstanceCreation' is a specialization of 'Expression'.
+The class 'DOM_ConditionalExpression' is a specialization of 'Expression'.
+The class 'DOM_FieldAccess' is a specialization of 'Expression'.
+The class 'DOM_InfixExpression' is a specialization of 'Expression'.
+The class 'DOM_InstanceofExpression' is a specialization of 'Expression'.
+The class 'DOM_MethodInvocation' is a specialization of 'Expression'.
+The class 'DOM_Name' is a specialization of 'Expression'.
+The class 'DOM_NullLiteral' is a specialization of 'Expression'.
+The class 'DOM_NumberLiteral' is a specialization of 'Expression'.
+The class 'DOM_ParenthesizedExpression' is a specialization of 'Expression'.
+The class 'DOM_PostfixExpression' is a specialization of 'Expression'.
+The class 'DOM_PrefixExpression' is a specialization of 'Expression'.
+The class 'DOM_StringLiteral' is a specialization of 'Expression'.
+The class 'DOM_SuperFieldAccess' is a specialization of 'Expression'.
+The class 'DOM_SuperMethodInvocation' is a specialization of 'Expression'.
+The class 'DOM_ThisExpression' is a specialization of 'Expression'.
+The class 'DOM_TypeLiteral' is a specialization of 'Expression'.
+The class 'DOM_VariableDeclarationExpression' is a specialization of 'Expression'.
+The class 'DOM_AssertStatement' is a specialization of 'Statement'.
+The class 'DOM_Block' is a specialization of 'Statement'.
+The class 'DOM_BreakStatement' is a specialization of 'Statement'.
+The class 'DOM_ConstructorInvocation' is a specialization of 'Statement'.
+The class 'DOM_ContinueStatement' is a specialization of 'Statement'.
+The class 'DOM_DoStatement' is a specialization of 'Statement'.
+The class 'DOM_EmptyStatement' is a specialization of 'Statement'.
+The class 'DOM_EnhancedForStatement' is a specialization of 'Statement'.
+The class 'DOM_ExpressionStatement' is a specialization of 'Statement'.
+The class 'DOM_ForStatement' is a specialization of 'Statement'.
+The class 'DOM_IfStatement' is a specialization of 'Statement'.
+The class 'DOM_LabeledStatement' is a specialization of 'Statement'.
+The class 'DOM_ReturnStatement' is a specialization of 'Statement'.
+The class 'DOM_SuperConstructorInvocation' is a specialization of 'Statement'.
+The class 'DOM_SwitchCase' is a specialization of 'Statement'.
+The class 'DOM_SwitchStatement' is a specialization of 'Statement'.
+The class 'DOM_SynchronizedStatement' is a specialization of 'Statement'.
+The class 'DOM_ThrowStatement' is a specialization of 'Statement'.
+The class 'DOM_TryStatement' is a specialization of 'Statement'.
+The class 'DOM_TypeDeclarationStatement' is a specialization of 'Statement'.
+The class 'DOM_VariableDeclarationStatement' is a specialization of 'Statement'.
+The class 'DOM_WhileStatement' is a specialization of 'Statement'.
+The class 'DOM_ArrayType' is a specialization of 'Type'.
+The class 'DOM_ParameterizedType' is a specialization of 'Type'.
+The class 'DOM_PrimitiveType' is a specialization of 'Type'.
+The class 'DOM_QualifiedType' is a specialization of 'Type'.
+The class 'DOM_SimpleType' is a specialization of 'Type'.
+The class 'DOM_WildcardType' is a specialization of 'Type'.
+The class 'DOM_SingleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+The class 'DOM_VariableDeclarationFragment' is a specialization of 'VariableDeclaration'.
+The class 'DOM_QualifiedName' is a specialization of 'Name'.
+The class 'DOM_SimpleName' is a specialization of 'Name'.
+The class 'DOM_MarkerAnnotation' is a specialization of 'Annotation'.
+The class 'DOM_NormalAnnotation' is a specialization of 'Annotation'.
+The class 'DOM_SingleMemberAnnotation' is a specialization of 'Annotation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Core_IJavaModel' and 'IJavaProject'. From 'Core_IJavaModel', the role 'Core_IJavaModel' has cardinality 0..*, and from 'IJavaProject', the role 'IJavaProject' has cardinality 0..*.
+An association connects 'IPackageFragmentRoot' and 'Core_IJavaModel'. From 'IPackageFragmentRoot', the role 'IPackageFragmentRoot' has cardinality 0..*, and from 'Core_IJavaModel', the role 'Core_IJavaModel2' has cardinality 0..*.
+An association connects 'IPackageFragmentRoot' and 'Core_IJavaProject'. From 'IPackageFragmentRoot', the role 'IPackageFragmentRoot4' has cardinality 0..*, and from 'Core_IJavaProject', the role 'Core_IJavaProject' has cardinality 0..*.
+An association connects 'Core_IJavaProject' and 'IPackageFragmentRoot'. From 'Core_IJavaProject', the role 'Core_IJavaProject6' has cardinality 0..*, and from 'IPackageFragmentRoot', the role 'IPackageFragmentRoot7' has cardinality 0..*.
+An association connects 'Core_IJavaProject' and 'IJavaProject'. From 'Core_IJavaProject', the role 'Core_IJavaProject9' has cardinality 0..*, and from 'IJavaProject', the role 'IJavaProject10' has cardinality 0..*.
+An association connects 'IPackageFragment' and 'Core_IPackageFragmentRoot'. From 'IPackageFragment', the role '#' has cardinality 0..*, and from 'Core_IPackageFragmentRoot', the role '0' has cardinality 0..*.
+An association connects 'IPackageFragmentRoot' and 'Core_IPackageFragment'. From 'IPackageFragmentRoot', the role '#14' has cardinality 0..*, and from 'Core_IPackageFragment', the role '013' has cardinality 0..*.
+An association connects 'IClassFile' and 'Core_IPackageFragment'. From 'IClassFile', the role 'IClassFile' has cardinality 0..*, and from 'Core_IPackageFragment', the role 'Core_IPackageFragment' has cardinality 0..*.
+An association connects 'Core_IPackageFragment' and 'ICompilationUnit'. From 'Core_IPackageFragment', the role 'Core_IPackageFragment17' has cardinality 0..*, and from 'ICompilationUnit', the role 'ICompilationUnit' has cardinality 0..*.
+An association connects 'IType' and 'Core_ICompilationUnit'. From 'IType', the role 'IType' has cardinality 0..*, and from 'Core_ICompilationUnit', the role 'Core_ICompilationUnit' has cardinality 0..*.
+An association connects 'Core_ICompilationUnit' and 'IImportDeclaration'. From 'Core_ICompilationUnit', the role 'Core_ICompilationUnit20' has cardinality 0..*, and from 'IImportDeclaration', the role 'IImportDeclaration' has cardinality 0..*.
+An association connects 'IType' and 'Core_ICompilationUnit'. From 'IType', the role 'IType23' has cardinality 0..*, and from 'Core_ICompilationUnit', the role 'Core_ICompilationUnit22' has cardinality 0..*.
+An association connects 'Core_ICompilationUnit' and 'ICompilationUnit'. From 'Core_ICompilationUnit', the role 'Core_ICompilationUnit25' has cardinality 0..*, and from 'ICompilationUnit', the role 'ICompilationUnit26' has cardinality 0..*.
+An association connects 'CompilationUnit' and 'Core_ICompilationUnit'. From 'CompilationUnit', the role 'CompilationUnit' has cardinality 0..*, and from 'Core_ICompilationUnit', the role 'Core_ICompilationUnit28' has cardinality 0..*.
+An association connects 'Core_IClassFile' and 'IType'. From 'Core_IClassFile', the role 'Core_IClassFile' has cardinality 0..*, and from 'IType', the role 'IType30' has cardinality 0..*.
+An association connects 'Core_ISourceReference' and 'ISourceRange'. From 'Core_ISourceReference', the role 'Core_ISourceReference' has cardinality 0..*, and from 'ISourceRange', the role 'ISourceRange' has cardinality 0..*.
+An association connects 'Core_IMember' and 'ISourceRange'. From 'Core_IMember', the role 'Core_IMember' has cardinality 0..*, and from 'ISourceRange', the role 'ISourceRange33' has cardinality 0..*.
+An association connects 'Core_IMember' and 'ISourceRange'. From 'Core_IMember', the role 'Core_IMember35' has cardinality 0..*, and from 'ISourceRange', the role 'ISourceRange36' has cardinality 0..*.
+An association connects 'IInitializer' and 'Core_IType'. From 'IInitializer', the role 'IInitializer' has cardinality 0..*, and from 'Core_IType', the role 'Core_IType' has cardinality 0..*.
+An association connects 'IField' and 'Core_IType'. From 'IField', the role 'IField' has cardinality 0..*, and from 'Core_IType', the role 'Core_IType39' has cardinality 0..*.
+An association connects 'IMethod' and 'Core_IType'. From 'IMethod', the role 'IMethod' has cardinality 0..*, and from 'Core_IType', the role 'Core_IType41' has cardinality 0..*.
+An association connects 'IType' and 'Core_IType'. From 'IType', the role 'IType44' has cardinality 0..*, and from 'Core_IType', the role 'Core_IType43' has cardinality 0..*.
+An association connects 'Core_IType' and 'ITypeParameter'. From 'Core_IType', the role 'Core_IType46' has cardinality 0..*, and from 'ITypeParameter', the role 'ITypeParameter' has cardinality 0..*.
+An association connects 'Parameter' and 'Core_IMethod'. From 'Parameter', the role 'Parameter' has cardinality 0..*, and from 'Core_IMethod', the role 'Core_IMethod' has cardinality 0..*.
+An association connects 'DOM_AST' and 'ASTNode'. From 'DOM_AST', the role 'DOM_AST' has cardinality 0..*, and from 'ASTNode', the role 'ASTNode' has cardinality 0..*.
+An association connects 'BodyDeclaration' and 'DOM_AnonymousClassDeclaration'. From 'BodyDeclaration', the role 'BodyDeclaration' has cardinality 0..*, and from 'DOM_AnonymousClassDeclaration', the role 'DOM_AnonymousClassDeclaration' has cardinality 0..*.
+An association connects 'DOM_BodyDeclaration' and 'ExtendedModifier'. From 'DOM_BodyDeclaration', the role 'DOM_BodyDeclaration' has cardinality 0..*, and from 'ExtendedModifier', the role 'ExtendedModifier' has cardinality 0..*.
+An association connects 'DOM_BodyDeclaration' and 'Javadoc'. From 'DOM_BodyDeclaration', the role 'DOM_BodyDeclaration52' has cardinality 0..*, and from 'Javadoc', the role 'Javadoc' has cardinality 0..*.
+An association connects 'Block' and 'DOM_CatchClause'. From 'Block', the role 'Block' has cardinality 0..*, and from 'DOM_CatchClause', the role 'DOM_CatchClause' has cardinality 0..*.
+An association connects 'DOM_CatchClause' and 'SingleVariableDeclaration'. From 'DOM_CatchClause', the role 'DOM_CatchClause55' has cardinality 0..*, and from 'SingleVariableDeclaration', the role 'SingleVariableDeclaration' has cardinality 0..*.
+An association connects 'DOM_Comment' and 'ASTNode'. From 'DOM_Comment', the role 'DOM_Comment' has cardinality 0..*, and from 'ASTNode', the role 'ASTNode57' has cardinality 0..*.
+An association connects 'Comment' and 'DOM_CompilationUnit'. From 'Comment', the role 'Comment' has cardinality 0..*, and from 'DOM_CompilationUnit', the role 'DOM_CompilationUnit' has cardinality 0..*.
+An association connects 'DOM_CompilationUnit' and 'PackageDeclaration'. From 'DOM_CompilationUnit', the role 'DOM_CompilationUnit60' has cardinality 0..*, and from 'PackageDeclaration', the role 'PackageDeclaration' has cardinality 0..*.
+An association connects 'ImportDeclaration' and 'DOM_CompilationUnit'. From 'ImportDeclaration', the role 'ImportDeclaration' has cardinality 0..*, and from 'DOM_CompilationUnit', the role 'DOM_CompilationUnit62' has cardinality 0..*.
+An association connects 'AbstractTypeDeclaration' and 'DOM_CompilationUnit'. From 'AbstractTypeDeclaration', the role 'AbstractTypeDeclaration' has cardinality 0..*, and from 'DOM_CompilationUnit', the role 'DOM_CompilationUnit64' has cardinality 0..*.
+An association connects 'IType' and 'DOM_Expression'. From 'IType', the role 'IType66' has cardinality 0..*, and from 'DOM_Expression', the role 'DOM_Expression' has cardinality 0..*.
+An association connects 'DOM_ImportDeclaration' and 'Name'. From 'DOM_ImportDeclaration', the role 'DOM_ImportDeclaration' has cardinality 0..*, and from 'Name', the role 'Name' has cardinality 0..*.
+An association connects 'SimpleName' and 'DOM_MemberRef'. From 'SimpleName', the role 'SimpleName' has cardinality 0..*, and from 'DOM_MemberRef', the role 'DOM_MemberRef' has cardinality 0..*.
+An association connects 'DOM_MemberRef' and 'Name'. From 'DOM_MemberRef', the role 'DOM_MemberRef70' has cardinality 0..*, and from 'Name', the role 'Name71' has cardinality 0..*.
+An association connects 'DOM_MemberValuePair' and 'SimpleName'. From 'DOM_MemberValuePair', the role 'DOM_MemberValuePair' has cardinality 0..*, and from 'SimpleName', the role 'SimpleName73' has cardinality 0..*.
+An association connects 'DOM_MemberValuePair' and 'Expression'. From 'DOM_MemberValuePair', the role 'DOM_MemberValuePair75' has cardinality 0..*, and from 'Expression', the role 'Expression' has cardinality 0..*.
+An association connects 'DOM_MethodRef' and 'SimpleName'. From 'DOM_MethodRef', the role 'DOM_MethodRef' has cardinality 0..*, and from 'SimpleName', the role 'SimpleName77' has cardinality 0..*.
+An association connects 'DOM_MethodRef' and 'Name'. From 'DOM_MethodRef', the role 'DOM_MethodRef79' has cardinality 0..*, and from 'Name', the role 'Name80' has cardinality 0..*.
+An association connects 'DOM_MethodRef' and 'MethodRefParameter'. From 'DOM_MethodRef', the role 'DOM_MethodRef82' has cardinality 0..*, and from 'MethodRefParameter', the role 'MethodRefParameter' has cardinality 0..*.
+An association connects 'SimpleName' and 'DOM_MethodRefParameter'. From 'SimpleName', the role 'SimpleName84' has cardinality 0..*, and from 'DOM_MethodRefParameter', the role 'DOM_MethodRefParameter' has cardinality 0..*.
+An association connects 'DOM_MethodRefParameter' and 'Type'. From 'DOM_MethodRefParameter', the role 'DOM_MethodRefParameter86' has cardinality 0..*, and from 'Type', the role 'Type' has cardinality 0..*.
+An association connects 'Annotation' and 'DOM_PackageDeclaration'. From 'Annotation', the role 'Annotation' has cardinality 0..*, and from 'DOM_PackageDeclaration', the role 'DOM_PackageDeclaration' has cardinality 0..*.
+An association connects 'Javadoc' and 'DOM_PackageDeclaration'. From 'Javadoc', the role 'Javadoc90' has cardinality 0..*, and from 'DOM_PackageDeclaration', the role 'DOM_PackageDeclaration89' has cardinality 0..*.
+An association connects 'DOM_PackageDeclaration' and 'Name'. From 'DOM_PackageDeclaration', the role 'DOM_PackageDeclaration92' has cardinality 0..*, and from 'Name', the role 'Name93' has cardinality 0..*.
+An association connects 'IPackageFragment' and 'DOM_PackageDeclaration'. From 'IPackageFragment', the role 'IPackageFragment' has cardinality 0..*, and from 'DOM_PackageDeclaration', the role 'DOM_PackageDeclaration95' has cardinality 0..*.
+An association connects 'ASTNode' and 'DOM_TagElement'. From 'ASTNode', the role 'ASTNode97' has cardinality 0..*, and from 'DOM_TagElement', the role 'DOM_TagElement' has cardinality 0..*.
+An association connects 'SimpleName' and 'DOM_TypeParameter'. From 'SimpleName', the role 'SimpleName99' has cardinality 0..*, and from 'DOM_TypeParameter', the role 'DOM_TypeParameter' has cardinality 0..*.
+An association connects 'Type' and 'DOM_TypeParameter'. From 'Type', the role 'Type102' has cardinality 0..*, and from 'DOM_TypeParameter', the role 'DOM_TypeParameter101' has cardinality 0..*.
+An association connects 'Expression' and 'DOM_VariableDeclaration'. From 'Expression', the role 'Expression104' has cardinality 0..*, and from 'DOM_VariableDeclaration', the role 'DOM_VariableDeclaration' has cardinality 0..*.
+An association connects 'DOM_VariableDeclaration' and 'SimpleName'. From 'DOM_VariableDeclaration', the role 'DOM_VariableDeclaration106' has cardinality 0..*, and from 'SimpleName', the role 'SimpleName107' has cardinality 0..*.
+An association connects 'DOM_AbstractTypeDeclaration' and 'BodyDeclaration'. From 'DOM_AbstractTypeDeclaration', the role 'DOM_AbstractTypeDeclaration' has cardinality 0..*, and from 'BodyDeclaration', the role 'BodyDeclaration109' has cardinality 0..*.
+An association connects 'SimpleName' and 'DOM_AbstractTypeDeclaration'. From 'SimpleName', the role 'SimpleName112' has cardinality 0..*, and from 'DOM_AbstractTypeDeclaration', the role 'DOM_AbstractTypeDeclaration111' has cardinality 0..*.
+An association connects 'Expression' and 'DOM_AnnotationTypeMemberDeclaration'. From 'Expression', the role 'Expression114' has cardinality 0..*, and from 'DOM_AnnotationTypeMemberDeclaration', the role 'DOM_AnnotationTypeMemberDeclaration' has cardinality 0..*.
+An association connects 'DOM_AnnotationTypeMemberDeclaration' and 'SimpleName'. From 'DOM_AnnotationTypeMemberDeclaration', the role 'DOM_AnnotationTypeMemberDeclaration116' has cardinality 0..*, and from 'SimpleName', the role 'SimpleName117' has cardinality 0..*.
+An association connects 'DOM_AnnotationTypeMemberDeclaration' and 'Type'. From 'DOM_AnnotationTypeMemberDeclaration', the role 'DOM_AnnotationTypeMemberDeclaration119' has cardinality 0..*, and from 'Type', the role 'Type120' has cardinality 0..*.
+An association connects 'Expression' and 'DOM_EnumConstantDeclaration'. From 'Expression', the role 'Expression122' has cardinality 0..*, and from 'DOM_EnumConstantDeclaration', the role 'DOM_EnumConstantDeclaration' has cardinality 0..*.
+An association connects 'AnonymousClassDeclaration' and 'DOM_EnumConstantDeclaration'. From 'AnonymousClassDeclaration', the role 'AnonymousClassDeclaration' has cardinality 0..*, and from 'DOM_EnumConstantDeclaration', the role 'DOM_EnumConstantDeclaration124' has cardinality 0..*.
+An association connects 'SimpleName' and 'DOM_EnumConstantDeclaration'. From 'SimpleName', the role 'SimpleName127' has cardinality 0..*, and from 'DOM_EnumConstantDeclaration', the role 'DOM_EnumConstantDeclaration126' has cardinality 0..*.
+An association connects 'VariableDeclarationFragment' and 'DOM_FieldDeclaration'. From 'VariableDeclarationFragment', the role 'VariableDeclarationFragment' has cardinality 0..*, and from 'DOM_FieldDeclaration', the role 'DOM_FieldDeclaration' has cardinality 0..*.
+An association connects 'DOM_FieldDeclaration' and 'Type'. From 'DOM_FieldDeclaration', the role 'DOM_FieldDeclaration130' has cardinality 0..*, and from 'Type', the role 'Type131' has cardinality 0..*.
+An association connects 'DOM_Initializer' and 'Block'. From 'DOM_Initializer', the role 'DOM_Initializer' has cardinality 0..*, and from 'Block', the role 'Block133' has cardinality 0..*.
+An association connects 'DOM_MethodDeclaration' and 'Block'. From 'DOM_MethodDeclaration', the role 'DOM_MethodDeclaration' has cardinality 0..*, and from 'Block', the role 'Block135' has cardinality 0..*.
+An association connects 'DOM_MethodDeclaration' and 'SimpleName'. From 'DOM_MethodDeclaration', the role 'DOM_MethodDeclaration137' has cardinality 0..*, and from 'SimpleName', the role 'SimpleName138' has cardinality 0..*.
+An association connects 'DOM_MethodDeclaration' and 'Type'. From 'DOM_MethodDeclaration', the role 'DOM_MethodDeclaration140' has cardinality 0..*, and from 'Type', the role 'Type141' has cardinality 0..*.
+An association connects 'DOM_MethodDeclaration' and 'SingleVariableDeclaration'. From 'DOM_MethodDeclaration', the role 'DOM_MethodDeclaration143' has cardinality 0..*, and from 'SingleVariableDeclaration', the role 'SingleVariableDeclaration144' has cardinality 0..*.
+An association connects 'Name' and 'DOM_MethodDeclaration'. From 'Name', the role 'Name147' has cardinality 0..*, and from 'DOM_MethodDeclaration', the role 'DOM_MethodDeclaration146' has cardinality 0..*.
+An association connects 'DOM_MethodDeclaration' and 'TypeParameter'. From 'DOM_MethodDeclaration', the role 'DOM_MethodDeclaration149' has cardinality 0..*, and from 'TypeParameter', the role 'TypeParameter' has cardinality 0..*.
+An association connects 'IMethod' and 'DOM_MethodDeclaration'. From 'IMethod', the role 'IMethod152' has cardinality 0..*, and from 'DOM_MethodDeclaration', the role 'DOM_MethodDeclaration151' has cardinality 0..*.
+An association connects 'Type' and 'DOM_EnumDeclaration'. From 'Type', the role 'Type154' has cardinality 0..*, and from 'DOM_EnumDeclaration', the role 'DOM_EnumDeclaration' has cardinality 0..*.
+An association connects 'DOM_EnumDeclaration' and 'EnumConstantDeclaration'. From 'DOM_EnumDeclaration', the role 'DOM_EnumDeclaration156' has cardinality 0..*, and from 'EnumConstantDeclaration', the role 'EnumConstantDeclaration' has cardinality 0..*.
+An association connects 'Type' and 'DOM_TypeDeclaration'. From 'Type', the role 'Type158' has cardinality 0..*, and from 'DOM_TypeDeclaration', the role 'DOM_TypeDeclaration' has cardinality 0..*.
+An association connects 'Type' and 'DOM_TypeDeclaration'. From 'Type', the role 'Type161' has cardinality 0..*, and from 'DOM_TypeDeclaration', the role 'DOM_TypeDeclaration160' has cardinality 0..*.
+An association connects 'TypeParameter' and 'DOM_TypeDeclaration'. From 'TypeParameter', the role 'TypeParameter164' has cardinality 0..*, and from 'DOM_TypeDeclaration', the role 'DOM_TypeDeclaration163' has cardinality 0..*.
+An association connects 'DOM_Javadoc' and 'TagElement'. From 'DOM_Javadoc', the role 'DOM_Javadoc' has cardinality 0..*, and from 'TagElement', the role 'TagElement' has cardinality 0..*.
+An association connects 'Name' and 'DOM_Annotation'. From 'Name', the role 'Name167' has cardinality 0..*, and from 'DOM_Annotation', the role 'DOM_Annotation' has cardinality 0..*.
+An association connects 'DOM_ArrayAccess' and 'Expression'. From 'DOM_ArrayAccess', the role 'DOM_ArrayAccess' has cardinality 0..*, and from 'Expression', the role 'Expression169' has cardinality 0..*.
+An association connects 'Expression' and 'DOM_ArrayAccess'. From 'Expression', the role 'Expression172' has cardinality 0..*, and from 'DOM_ArrayAccess', the role 'DOM_ArrayAccess171' has cardinality 0..*.
+An association connects 'Expression' and 'DOM_ArrayCreation'. From 'Expression', the role 'Expression174' has cardinality 0..*, and from 'DOM_ArrayCreation', the role 'DOM_ArrayCreation' has cardinality 0..*.
+An association connects 'ArrayInitializer' and 'DOM_ArrayCreation'. From 'ArrayInitializer', the role 'ArrayInitializer' has cardinality 0..*, and from 'DOM_ArrayCreation', the role 'DOM_ArrayCreation176' has cardinality 0..*.
+An association connects 'DOM_ArrayCreation' and 'ArrayType'. From 'DOM_ArrayCreation', the role 'DOM_ArrayCreation178' has cardinality 0..*, and from 'ArrayType', the role 'ArrayType' has cardinality 0..*.
+An association connects 'DOM_ArrayInitializer' and 'Expression'. From 'DOM_ArrayInitializer', the role 'DOM_ArrayInitializer' has cardinality 0..*, and from 'Expression', the role 'Expression180' has cardinality 0..*.
+An association connects 'DOM_Assignment' and 'Expression'. From 'DOM_Assignment', the role 'DOM_Assignment' has cardinality 0..*, and from 'Expression', the role 'Expression182' has cardinality 0..*.
+An association connects 'Expression' and 'DOM_Assignment'. From 'Expression', the role 'Expression185' has cardinality 0..*, and from 'DOM_Assignment', the role 'DOM_Assignment184' has cardinality 0..*.
+An association connects 'DOM_CastExpression' and 'Expression'. From 'DOM_CastExpression', the role 'DOM_CastExpression' has cardinality 0..*, and from 'Expression', the role 'Expression187' has cardinality 0..*.
+An association connects 'Type' and 'DOM_CastExpression'. From 'Type', the role 'Type190' has cardinality 0..*, and from 'DOM_CastExpression', the role 'DOM_CastExpression189' has cardinality 0..*.
+An association connects 'DOM_ClassInstanceCreation' and 'Expression'. From 'DOM_ClassInstanceCreation', the role 'DOM_ClassInstanceCreation' has cardinality 0..*, and from 'Expression', the role 'Expression192' has cardinality 0..*.
+An association connects 'AnonymousClassDeclaration' and 'DOM_ClassInstanceCreation'. From 'AnonymousClassDeclaration', the role 'AnonymousClassDeclaration195' has cardinality 0..*, and from 'DOM_ClassInstanceCreation', the role 'DOM_ClassInstanceCreation194' has cardinality 0..*.
+An association connects 'DOM_ClassInstanceCreation' and 'Expression'. From 'DOM_ClassInstanceCreation', the role 'DOM_ClassInstanceCreation197' has cardinality 0..*, and from 'Expression', the role 'Expression198' has cardinality 0..*.
+An association connects 'DOM_ClassInstanceCreation' and 'Type'. From 'DOM_ClassInstanceCreation', the role 'DOM_ClassInstanceCreation200' has cardinality 0..*, and from 'Type', the role 'Type201' has cardinality 0..*.
+An association connects 'Type' and 'DOM_ClassInstanceCreation'. From 'Type', the role 'Type204' has cardinality 0..*, and from 'DOM_ClassInstanceCreation', the role 'DOM_ClassInstanceCreation203' has cardinality 0..*.
+An association connects 'DOM_ConditionalExpression' and 'Expression'. From 'DOM_ConditionalExpression', the role 'DOM_ConditionalExpression' has cardinality 0..*, and from 'Expression', the role 'Expression206' has cardinality 0..*.
+An association connects 'DOM_ConditionalExpression' and 'Expression'. From 'DOM_ConditionalExpression', the role 'DOM_ConditionalExpression208' has cardinality 0..*, and from 'Expression', the role 'Expression209' has cardinality 0..*.
+An association connects 'DOM_ConditionalExpression' and 'Expression'. From 'DOM_ConditionalExpression', the role 'DOM_ConditionalExpression211' has cardinality 0..*, and from 'Expression', the role 'Expression212' has cardinality 0..*.
+An association connects 'Expression' and 'DOM_FieldAccess'. From 'Expression', the role 'Expression214' has cardinality 0..*, and from 'DOM_FieldAccess', the role 'DOM_FieldAccess' has cardinality 0..*.
+An association connects 'SimpleName' and 'DOM_FieldAccess'. From 'SimpleName', the role 'SimpleName217' has cardinality 0..*, and from 'DOM_FieldAccess', the role 'DOM_FieldAccess216' has cardinality 0..*.
+An association connects 'DOM_InfixExpression' and 'Expression'. From 'DOM_InfixExpression', the role 'DOM_InfixExpression' has cardinality 0..*, and from 'Expression', the role 'Expression219' has cardinality 0..*.
+An association connects 'Expression' and 'DOM_InfixExpression'. From 'Expression', the role 'Expression222' has cardinality 0..*, and from 'DOM_InfixExpression', the role 'DOM_InfixExpression221' has cardinality 0..*.
+An association connects 'Expression' and 'DOM_InfixExpression'. From 'Expression', the role 'Expression225' has cardinality 0..*, and from 'DOM_InfixExpression', the role 'DOM_InfixExpression224' has cardinality 0..*.
+An association connects 'Expression' and 'DOM_InstanceofExpression'. From 'Expression', the role 'Expression227' has cardinality 0..*, and from 'DOM_InstanceofExpression', the role 'DOM_InstanceofExpression' has cardinality 0..*.
+An association connects 'Type' and 'DOM_InstanceofExpression'. From 'Type', the role 'Type230' has cardinality 0..*, and from 'DOM_InstanceofExpression', the role 'DOM_InstanceofExpression229' has cardinality 0..*.
+An association connects 'DOM_MethodInvocation' and 'Expression'. From 'DOM_MethodInvocation', the role 'DOM_MethodInvocation' has cardinality 0..*, and from 'Expression', the role 'Expression232' has cardinality 0..*.
+An association connects 'DOM_MethodInvocation' and 'Expression'. From 'DOM_MethodInvocation', the role 'DOM_MethodInvocation234' has cardinality 0..*, and from 'Expression', the role 'Expression235' has cardinality 0..*.
+An association connects 'SimpleName' and 'DOM_MethodInvocation'. From 'SimpleName', the role 'SimpleName238' has cardinality 0..*, and from 'DOM_MethodInvocation', the role 'DOM_MethodInvocation237' has cardinality 0..*.
+An association connects 'DOM_MethodInvocation' and 'Type'. From 'DOM_MethodInvocation', the role 'DOM_MethodInvocation240' has cardinality 0..*, and from 'Type', the role 'Type241' has cardinality 0..*.
+An association connects 'IMethod' and 'DOM_MethodInvocation'. From 'IMethod', the role 'IMethod244' has cardinality 0..*, and from 'DOM_MethodInvocation', the role 'DOM_MethodInvocation243' has cardinality 0..*.
+An association connects 'DOM_ParenthesizedExpression' and 'Expression'. From 'DOM_ParenthesizedExpression', the role 'DOM_ParenthesizedExpression' has cardinality 0..*, and from 'Expression', the role 'Expression246' has cardinality 0..*.
+An association connects 'Expression' and 'DOM_PostfixExpression'. From 'Expression', the role 'Expression248' has cardinality 0..*, and from 'DOM_PostfixExpression', the role 'DOM_PostfixExpression' has cardinality 0..*.
+An association connects 'DOM_PrefixExpression' and 'Expression'. From 'DOM_PrefixExpression', the role 'DOM_PrefixExpression' has cardinality 0..*, and from 'Expression', the role 'Expression250' has cardinality 0..*.
+An association connects 'SimpleName' and 'DOM_SuperFieldAccess'. From 'SimpleName', the role 'SimpleName252' has cardinality 0..*, and from 'DOM_SuperFieldAccess', the role 'DOM_SuperFieldAccess' has cardinality 0..*.
+An association connects 'DOM_SuperFieldAccess' and 'Name'. From 'DOM_SuperFieldAccess', the role 'DOM_SuperFieldAccess254' has cardinality 0..*, and from 'Name', the role 'Name255' has cardinality 0..*.
+An association connects 'DOM_SuperMethodInvocation' and 'Expression'. From 'DOM_SuperMethodInvocation', the role 'DOM_SuperMethodInvocation' has cardinality 0..*, and from 'Expression', the role 'Expression257' has cardinality 0..*.
+An association connects 'Name' and 'DOM_SuperMethodInvocation'. From 'Name', the role 'Name260' has cardinality 0..*, and from 'DOM_SuperMethodInvocation', the role 'DOM_SuperMethodInvocation259' has cardinality 0..*.
+An association connects 'Name' and 'DOM_SuperMethodInvocation'. From 'Name', the role 'Name263' has cardinality 0..*, and from 'DOM_SuperMethodInvocation', the role 'DOM_SuperMethodInvocation262' has cardinality 0..*.
+An association connects 'Type' and 'DOM_SuperMethodInvocation'. From 'Type', the role 'Type266' has cardinality 0..*, and from 'DOM_SuperMethodInvocation', the role 'DOM_SuperMethodInvocation265' has cardinality 0..*.
+An association connects 'Name' and 'DOM_ThisExpression'. From 'Name', the role 'Name268' has cardinality 0..*, and from 'DOM_ThisExpression', the role 'DOM_ThisExpression' has cardinality 0..*.
+An association connects 'DOM_TypeLiteral' and 'Type'. From 'DOM_TypeLiteral', the role 'DOM_TypeLiteral' has cardinality 0..*, and from 'Type', the role 'Type270' has cardinality 0..*.
+An association connects 'VariableDeclarationFragment' and 'DOM_VariableDeclarationExpression'. From 'VariableDeclarationFragment', the role 'VariableDeclarationFragment272' has cardinality 0..*, and from 'DOM_VariableDeclarationExpression', the role 'DOM_VariableDeclarationExpression' has cardinality 0..*.
+An association connects 'DOM_VariableDeclarationExpression' and 'ExtendedModifier'. From 'DOM_VariableDeclarationExpression', the role 'DOM_VariableDeclarationExpression274' has cardinality 0..*, and from 'ExtendedModifier', the role 'ExtendedModifier275' has cardinality 0..*.
+An association connects 'DOM_VariableDeclarationExpression' and 'Type'. From 'DOM_VariableDeclarationExpression', the role 'DOM_VariableDeclarationExpression277' has cardinality 0..*, and from 'Type', the role 'Type278' has cardinality 0..*.
+An association connects 'DOM_AssertStatement' and 'Expression'. From 'DOM_AssertStatement', the role 'DOM_AssertStatement' has cardinality 0..*, and from 'Expression', the role 'Expression280' has cardinality 0..*.
+An association connects 'DOM_AssertStatement' and 'Expression'. From 'DOM_AssertStatement', the role 'DOM_AssertStatement282' has cardinality 0..*, and from 'Expression', the role 'Expression283' has cardinality 0..*.
+An association connects 'DOM_Block' and 'Statement'. From 'DOM_Block', the role 'DOM_Block' has cardinality 0..*, and from 'Statement', the role 'Statement' has cardinality 0..*.
+An association connects 'DOM_BreakStatement' and 'SimpleName'. From 'DOM_BreakStatement', the role 'DOM_BreakStatement' has cardinality 0..*, and from 'SimpleName', the role 'SimpleName286' has cardinality 0..*.
+An association connects 'DOM_ConstructorInvocation' and 'Expression'. From 'DOM_ConstructorInvocation', the role 'DOM_ConstructorInvocation' has cardinality 0..*, and from 'Expression', the role 'Expression288' has cardinality 0..*.
+An association connects 'Type' and 'DOM_ConstructorInvocation'. From 'Type', the role 'Type291' has cardinality 0..*, and from 'DOM_ConstructorInvocation', the role 'DOM_ConstructorInvocation290' has cardinality 0..*.
+An association connects 'DOM_ContinueStatement' and 'SimpleName'. From 'DOM_ContinueStatement', the role 'DOM_ContinueStatement' has cardinality 0..*, and from 'SimpleName', the role 'SimpleName293' has cardinality 0..*.
+An association connects 'DOM_DoStatement' and 'Statement'. From 'DOM_DoStatement', the role 'DOM_DoStatement' has cardinality 0..*, and from 'Statement', the role 'Statement295' has cardinality 0..*.
+An association connects 'DOM_DoStatement' and 'Expression'. From 'DOM_DoStatement', the role 'DOM_DoStatement297' has cardinality 0..*, and from 'Expression', the role 'Expression298' has cardinality 0..*.
+An association connects 'Statement' and 'DOM_EnhancedForStatement'. From 'Statement', the role 'Statement300' has cardinality 0..*, and from 'DOM_EnhancedForStatement', the role 'DOM_EnhancedForStatement' has cardinality 0..*.
+An association connects 'DOM_EnhancedForStatement' and 'Expression'. From 'DOM_EnhancedForStatement', the role 'DOM_EnhancedForStatement302' has cardinality 0..*, and from 'Expression', the role 'Expression303' has cardinality 0..*.
+An association connects 'SingleVariableDeclaration' and 'DOM_EnhancedForStatement'. From 'SingleVariableDeclaration', the role 'SingleVariableDeclaration306' has cardinality 0..*, and from 'DOM_EnhancedForStatement', the role 'DOM_EnhancedForStatement305' has cardinality 0..*.
+An association connects 'Expression' and 'DOM_ExpressionStatement'. From 'Expression', the role 'Expression308' has cardinality 0..*, and from 'DOM_ExpressionStatement', the role 'DOM_ExpressionStatement' has cardinality 0..*.
+An association connects 'Statement' and 'DOM_ForStatement'. From 'Statement', the role 'Statement310' has cardinality 0..*, and from 'DOM_ForStatement', the role 'DOM_ForStatement' has cardinality 0..*.
+An association connects 'Expression' and 'DOM_ForStatement'. From 'Expression', the role 'Expression313' has cardinality 0..*, and from 'DOM_ForStatement', the role 'DOM_ForStatement312' has cardinality 0..*.
+An association connects 'DOM_ForStatement' and 'Expression'. From 'DOM_ForStatement', the role 'DOM_ForStatement315' has cardinality 0..*, and from 'Expression', the role 'Expression316' has cardinality 0..*.
+An association connects 'DOM_ForStatement' and 'Expression'. From 'DOM_ForStatement', the role 'DOM_ForStatement318' has cardinality 0..*, and from 'Expression', the role 'Expression319' has cardinality 0..*.
+An association connects 'DOM_IfStatement' and 'Statement'. From 'DOM_IfStatement', the role 'DOM_IfStatement' has cardinality 0..*, and from 'Statement', the role 'Statement321' has cardinality 0..*.
+An association connects 'DOM_IfStatement' and 'Expression'. From 'DOM_IfStatement', the role 'DOM_IfStatement323' has cardinality 0..*, and from 'Expression', the role 'Expression324' has cardinality 0..*.
+An association connects 'Statement' and 'DOM_IfStatement'. From 'Statement', the role 'Statement327' has cardinality 0..*, and from 'DOM_IfStatement', the role 'DOM_IfStatement326' has cardinality 0..*.
+An association connects 'Statement' and 'DOM_LabeledStatement'. From 'Statement', the role 'Statement329' has cardinality 0..*, and from 'DOM_LabeledStatement', the role 'DOM_LabeledStatement' has cardinality 0..*.
+An association connects 'SimpleName' and 'DOM_LabeledStatement'. From 'SimpleName', the role 'SimpleName332' has cardinality 0..*, and from 'DOM_LabeledStatement', the role 'DOM_LabeledStatement331' has cardinality 0..*.
+An association connects 'DOM_ReturnStatement' and 'Expression'. From 'DOM_ReturnStatement', the role 'DOM_ReturnStatement' has cardinality 0..*, and from 'Expression', the role 'Expression334' has cardinality 0..*.
+An association connects 'Expression' and 'DOM_SuperConstructorInvocation'. From 'Expression', the role 'Expression336' has cardinality 0..*, and from 'DOM_SuperConstructorInvocation', the role 'DOM_SuperConstructorInvocation' has cardinality 0..*.
+An association connects 'Expression' and 'DOM_SuperConstructorInvocation'. From 'Expression', the role 'Expression339' has cardinality 0..*, and from 'DOM_SuperConstructorInvocation', the role 'DOM_SuperConstructorInvocation338' has cardinality 0..*.
+An association connects 'DOM_SuperConstructorInvocation' and 'Type'. From 'DOM_SuperConstructorInvocation', the role 'DOM_SuperConstructorInvocation341' has cardinality 0..*, and from 'Type', the role 'Type342' has cardinality 0..*.
+An association connects 'DOM_SwitchCase' and 'Expression'. From 'DOM_SwitchCase', the role 'DOM_SwitchCase' has cardinality 0..*, and from 'Expression', the role 'Expression344' has cardinality 0..*.
+An association connects 'DOM_SwitchStatement' and 'Expression'. From 'DOM_SwitchStatement', the role 'DOM_SwitchStatement' has cardinality 0..*, and from 'Expression', the role 'Expression346' has cardinality 0..*.
+An association connects 'Statement' and 'DOM_SwitchStatement'. From 'Statement', the role 'Statement349' has cardinality 0..*, and from 'DOM_SwitchStatement', the role 'DOM_SwitchStatement348' has cardinality 0..*.
+An association connects 'Block' and 'DOM_SynchronizedStatement'. From 'Block', the role 'Block351' has cardinality 0..*, and from 'DOM_SynchronizedStatement', the role 'DOM_SynchronizedStatement' has cardinality 0..*.
+An association connects 'Expression' and 'DOM_SynchronizedStatement'. From 'Expression', the role 'Expression354' has cardinality 0..*, and from 'DOM_SynchronizedStatement', the role 'DOM_SynchronizedStatement353' has cardinality 0..*.
+An association connects 'DOM_ThrowStatement' and 'Expression'. From 'DOM_ThrowStatement', the role 'DOM_ThrowStatement' has cardinality 0..*, and from 'Expression', the role 'Expression356' has cardinality 0..*.
+An association connects 'CatchClause' and 'DOM_TryStatement'. From 'CatchClause', the role 'CatchClause' has cardinality 0..*, and from 'DOM_TryStatement', the role 'DOM_TryStatement' has cardinality 0..*.
+An association connects 'Block' and 'DOM_TryStatement'. From 'Block', the role 'Block360' has cardinality 0..*, and from 'DOM_TryStatement', the role 'DOM_TryStatement359' has cardinality 0..*.
+An association connects 'Block' and 'DOM_TryStatement'. From 'Block', the role 'Block363' has cardinality 0..*, and from 'DOM_TryStatement', the role 'DOM_TryStatement362' has cardinality 0..*.
+An association connects 'AbstractTypeDeclaration' and 'DOM_TypeDeclarationStatement'. From 'AbstractTypeDeclaration', the role 'AbstractTypeDeclaration365' has cardinality 0..*, and from 'DOM_TypeDeclarationStatement', the role 'DOM_TypeDeclarationStatement' has cardinality 0..*.
+An association connects 'VariableDeclarationFragment' and 'DOM_VariableDeclarationStatement'. From 'VariableDeclarationFragment', the role 'VariableDeclarationFragment367' has cardinality 0..*, and from 'DOM_VariableDeclarationStatement', the role 'DOM_VariableDeclarationStatement' has cardinality 0..*.
+An association connects 'DOM_VariableDeclarationStatement' and 'ExtendedModifier'. From 'DOM_VariableDeclarationStatement', the role 'DOM_VariableDeclarationStatement369' has cardinality 0..*, and from 'ExtendedModifier', the role 'ExtendedModifier370' has cardinality 0..*.
+An association connects 'DOM_VariableDeclarationStatement' and 'Type'. From 'DOM_VariableDeclarationStatement', the role 'DOM_VariableDeclarationStatement372' has cardinality 0..*, and from 'Type', the role 'Type373' has cardinality 0..*.
+An association connects 'DOM_WhileStatement' and 'Statement'. From 'DOM_WhileStatement', the role 'DOM_WhileStatement' has cardinality 0..*, and from 'Statement', the role 'Statement375' has cardinality 0..*.
+An association connects 'DOM_WhileStatement' and 'Expression'. From 'DOM_WhileStatement', the role 'DOM_WhileStatement377' has cardinality 0..*, and from 'Expression', the role 'Expression378' has cardinality 0..*.
+An association connects 'Type' and 'DOM_ArrayType'. From 'Type', the role 'Type380' has cardinality 0..*, and from 'DOM_ArrayType', the role 'DOM_ArrayType' has cardinality 0..*.
+An association connects 'DOM_ArrayType' and 'Type'. From 'DOM_ArrayType', the role 'DOM_ArrayType382' has cardinality 0..*, and from 'Type', the role 'Type383' has cardinality 0..*.
+An association connects 'DOM_ParameterizedType' and 'Type'. From 'DOM_ParameterizedType', the role 'DOM_ParameterizedType' has cardinality 0..*, and from 'Type', the role 'Type385' has cardinality 0..*.
+An association connects 'DOM_ParameterizedType' and 'Type'. From 'DOM_ParameterizedType', the role 'DOM_ParameterizedType387' has cardinality 0..*, and from 'Type', the role 'Type388' has cardinality 0..*.
+An association connects 'SimpleName' and 'DOM_QualifiedType'. From 'SimpleName', the role 'SimpleName390' has cardinality 0..*, and from 'DOM_QualifiedType', the role 'DOM_QualifiedType' has cardinality 0..*.
+An association connects 'Type' and 'DOM_QualifiedType'. From 'Type', the role 'Type393' has cardinality 0..*, and from 'DOM_QualifiedType', the role 'DOM_QualifiedType392' has cardinality 0..*.
+An association connects 'DOM_SimpleType' and 'Name'. From 'DOM_SimpleType', the role 'DOM_SimpleType' has cardinality 0..*, and from 'Name', the role 'Name395' has cardinality 0..*.
+An association connects 'Type' and 'DOM_WildcardType'. From 'Type', the role 'Type397' has cardinality 0..*, and from 'DOM_WildcardType', the role 'DOM_WildcardType' has cardinality 0..*.
+An association connects 'Type' and 'DOM_SingleVariableDeclaration'. From 'Type', the role 'Type399' has cardinality 0..*, and from 'DOM_SingleVariableDeclaration', the role 'DOM_SingleVariableDeclaration' has cardinality 0..*.
+An association connects 'DOM_SingleVariableDeclaration' and 'ExtendedModifier'. From 'DOM_SingleVariableDeclaration', the role 'DOM_SingleVariableDeclaration401' has cardinality 0..*, and from 'ExtendedModifier', the role 'ExtendedModifier402' has cardinality 0..*.
+An association connects 'SimpleName' and 'DOM_QualifiedName'. From 'SimpleName', the role 'SimpleName404' has cardinality 0..*, and from 'DOM_QualifiedName', the role 'DOM_QualifiedName' has cardinality 0..*.
+An association connects 'Name' and 'DOM_QualifiedName'. From 'Name', the role 'Name407' has cardinality 0..*, and from 'DOM_QualifiedName', the role 'DOM_QualifiedName406' has cardinality 0..*.
+An association connects 'MemberValuePair' and 'DOM_NormalAnnotation'. From 'MemberValuePair', the role 'MemberValuePair' has cardinality 0..*, and from 'DOM_NormalAnnotation', the role 'DOM_NormalAnnotation' has cardinality 0..*.
+An association connects 'DOM_SingleMemberAnnotation' and 'Expression'. From 'DOM_SingleMemberAnnotation', the role 'DOM_SingleMemberAnnotation' has cardinality 0..*, and from 'Expression', the role 'Expression410' has cardinality 0..*.

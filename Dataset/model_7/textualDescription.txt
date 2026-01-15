@@ -1,0 +1,63 @@
+The domain model 'petrinet' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'petrinet_RefPetriNets' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'RefArcs' represents an important domain concept.
+It does not declare any attributes.
+
+'RefPetriNets' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petrinet_Arc' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RefNodes' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_RefTokens' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_RefArcs' represents an important domain concept.
+It does not declare any attributes.
+
+'RefTokens' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_RefNodes' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_PetriNet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petrinet_Token' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petrinet_Place' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'petrinet_PetriNet' is a specialization of 'RefPetriNets'.
+The class 'petrinet_Node' is a specialization of 'RefNodes'.
+The class 'petrinet_Arc' is a specialization of 'RefArcs'.
+The class 'petrinet_Transition' is a specialization of 'Node'.
+The class 'petrinet_Place' is a specialization of 'Node'.
+The class 'petrinet_Token' is a specialization of 'RefTokens'.
+
+Relationships between classes are modeled using associations.
+An association connects 'petrinet_PetriNet' and 'petrinet_RefNodes'. From 'petrinet_PetriNet', the role 'petrinet_PetriNet' has cardinality 0..*, and from 'petrinet_RefNodes', the role 'petrinet_RefNodes' has cardinality 0..*.
+An association connects 'petrinet_RefArcs' and 'petrinet_PetriNet'. From 'petrinet_RefArcs', the role 'petrinet_RefArcs' has cardinality 0..*, and from 'petrinet_PetriNet', the role 'petrinet_PetriNet2' has cardinality 0..*.
+An association connects 'petrinet_Arc' and 'petrinet_RefNodes'. From 'petrinet_Arc', the role 'petrinet_Arc' has cardinality 0..*, and from 'petrinet_RefNodes', the role 'petrinet_RefNodes4' has cardinality 0..*.
+An association connects 'petrinet_Arc' and 'petrinet_RefNodes'. From 'petrinet_Arc', the role 'petrinet_Arc6' has cardinality 0..*, and from 'petrinet_RefNodes', the role 'petrinet_RefNodes7' has cardinality 0..*.
+An association connects 'petrinet_RefTokens' and 'petrinet_Place'. From 'petrinet_RefTokens', the role 'petrinet_RefTokens' has cardinality 0..*, and from 'petrinet_Place', the role 'petrinet_Place' has cardinality 0..*.

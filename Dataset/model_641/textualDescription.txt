@@ -1,0 +1,58 @@
+The domain model 'BankingSystem' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'BankingSystem_Bank' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str; 'bankId', which is of type int.
+
+'BankingSystem_Customer' represents an important domain concept.
+It has the following attributes: 'age', which is of type int; 'name', which is of type str; 'customerType', which is of type str; 'phoneNumber', which is of type str; 'address', which is of type str.
+
+'BankingSystem_Account' represents an important domain concept.
+It has the following attributes: 'accountNumber', which is of type str; 'balance', which is of type float.
+
+'BankingSystem_Saving' represents an important domain concept.
+It has one attribute: 'interestRate', which is of type float.
+
+'BankingSystem_Branch' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'branchId', which is of type int; 'location', which is of type str; 'phoneNumber', which is of type str.
+
+'BankingSystem_Employee' represents an important domain concept.
+It has the following attributes: 'ename', which is of type str; 'eid', which is of type int; 'isCustomer', which is of type bool; 'eaddress', which is of type str; 'eage', which is of type int; 'ephoneNumber', which is of type str.
+
+'Account' represents an important domain concept.
+It does not declare any attributes.
+
+'BankingSystem_Loan' represents an important domain concept.
+It has the following attributes: 'loanNumber', which is of type str; 'duration', which is of type int; 'interestRate', which is of type float; 'amount', which is of type float.
+
+'Employee' represents an important domain concept.
+It does not declare any attributes.
+
+'BankingSystem_Financial_Representative' represents an important domain concept.
+It does not declare any attributes.
+
+'BankingSystem_Chequing' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CustomerType' defines the following possible values: 'Senior', 'Adult', 'Youth'.
+
+The model also captures inheritance relationships between classes.
+The class 'BankingSystem_Chequing' is a specialization of 'Account'.
+The class 'BankingSystem_Saving' is a specialization of 'Account'.
+The class 'BankingSystem_Financial_Representative' is a specialization of 'Employee'.
+
+Relationships between classes are modeled using associations.
+An association connects 'BankingSystem_Branch' and 'BankingSystem_Bank'. From 'BankingSystem_Branch', the role 'Branch' has cardinality 0..*, and from 'BankingSystem_Bank', the role 'bank' has cardinality 0..*.
+An association connects 'BankingSystem_Branch' and 'BankingSystem_Customer'. From 'BankingSystem_Branch', the role 'branch' has cardinality 0..*, and from 'BankingSystem_Customer', the role 'Customer' has cardinality 0..*.
+An association connects 'BankingSystem_Branch' and 'BankingSystem_Employee'. From 'BankingSystem_Branch', the role 'branch3' has cardinality 0..*, and from 'BankingSystem_Employee', the role 'Employee' has cardinality 0..*.
+An association connects 'BankingSystem_Branch' and 'BankingSystem_Bank'. From 'BankingSystem_Branch', the role 'branches' has cardinality 0..*, and from 'BankingSystem_Bank', the role 'Bank' has cardinality 0..*.
+An association connects 'BankingSystem_Customer' and 'BankingSystem_Branch'. From 'BankingSystem_Customer', the role 'customers' has cardinality 0..*, and from 'BankingSystem_Branch', the role 'Branch6' has cardinality 0..*.
+An association connects 'BankingSystem_Customer' and 'BankingSystem_Account'. From 'BankingSystem_Customer', the role 'customer' has cardinality 0..*, and from 'BankingSystem_Account', the role 'Account' has cardinality 0..*.
+An association connects 'BankingSystem_Customer' and 'BankingSystem_Loan'. From 'BankingSystem_Customer', the role 'customer9' has cardinality 0..*, and from 'BankingSystem_Loan', the role 'Loan' has cardinality 0..*.
+An association connects 'BankingSystem_Customer' and 'BankingSystem_Financial_Representative'. From 'BankingSystem_Customer', the role 'a' has cardinality 0..*, and from 'BankingSystem_Financial_Representative', the role 'Financial_Representative' has cardinality 0..*.
+An association connects 'BankingSystem_Account' and 'BankingSystem_Customer'. From 'BankingSystem_Account', the role 'accounts' has cardinality 0..*, and from 'BankingSystem_Customer', the role 'Customer12' has cardinality 0..*.
+An association connects 'BankingSystem_Branch' and 'BankingSystem_Employee'. From 'BankingSystem_Branch', the role 'Branch14' has cardinality 0..*, and from 'BankingSystem_Employee', the role 'employees' has cardinality 0..*.
+An association connects 'BankingSystem_Loan' and 'BankingSystem_Customer'. From 'BankingSystem_Loan', the role 'loans' has cardinality 0..*, and from 'BankingSystem_Customer', the role 'Customer16' has cardinality 0..*.
+An association connects 'BankingSystem_Customer' and 'BankingSystem_Financial_Representative'. From 'BankingSystem_Customer', the role 'Customer18' has cardinality 0..*, and from 'BankingSystem_Financial_Representative', the role 'representative' has cardinality 0..*.

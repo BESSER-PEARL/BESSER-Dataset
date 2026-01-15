@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/mickaelistria/EMF/tests/org.eclipse.emf.test.common/models/crossresourcecontainment.SimpleLib/SimpleLib.ecore

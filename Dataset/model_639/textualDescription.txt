@@ -1,0 +1,42 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'library_Customer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_Magazine' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Library' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'library_Borrowable' represents an important domain concept.
+It has the following attributes: 'copiesAvailable', which is of type int; 'title', which is of type str.
+
+'library_Book' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Author' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_CD' represents an important domain concept.
+It does not declare any attributes.
+
+'Borrowable' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'library_CD' is a specialization of 'Borrowable'.
+The class 'library_Magazine' is a specialization of 'Borrowable'.
+The class 'library_Book' is a specialization of 'Borrowable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'library_Borrowable' and 'library_Library'. From 'library_Borrowable', the role 'Borrowable' has cardinality 0..*, and from 'library_Library', the role 'library' has cardinality 0..*.
+An association connects 'library_Customer' and 'library_Library'. From 'library_Customer', the role 'library_Customer' has cardinality 0..*, and from 'library_Library', the role 'library_Library' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Author'. From 'library_Library', the role 'library3' has cardinality 0..*, and from 'library_Author', the role 'Author' has cardinality 0..*.
+An association connects 'library_Borrowable' and 'library_Customer'. From 'library_Borrowable', the role 'library_Borrowable' has cardinality 0..*, and from 'library_Customer', the role 'library_Customer5' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Borrowable'. From 'library_Library', the role 'Library' has cardinality 0..*, and from 'library_Borrowable', the role 'borrowables' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Author'. From 'library_Book', the role 'Book' has cardinality 0..*, and from 'library_Author', the role 'authors' has cardinality 0..*.
+An association connects 'library_Author' and 'library_Library'. From 'library_Author', the role 'authors9' has cardinality 0..*, and from 'library_Library', the role 'Library10' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Author'. From 'library_Book', the role 'writtenBooks' has cardinality 0..*, and from 'library_Author', the role 'Author12' has cardinality 0..*.

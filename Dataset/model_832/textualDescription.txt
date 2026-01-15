@@ -1,0 +1,75 @@
+The domain model 'tfsmextended' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'tfsmextended_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tfsmextended_FSMEvent' represents an important domain concept.
+It has one attribute: 'isTriggered', which is of type str.
+
+'tfsmextended_EvaluateGuard' represents an important domain concept.
+It has one attribute: 'condition', which is of type str.
+
+'tfsmextended_State' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsmextended_Transition' represents an important domain concept.
+It has one attribute: 'action', which is of type str.
+
+'tfsmextended_EventGuard' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsmextended_TimedSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsmextended_TemporalGuard' represents an important domain concept.
+It has one attribute: 'afterDuration', which is of type int.
+
+'tfsmextended_FSMClock' represents an important domain concept.
+It has one attribute: 'numberOfTicks', which is of type str.
+
+'Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsmextended_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsmextended_TFSM' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'tfsmextended_TFSM' is a specialization of 'NamedElement'.
+The class 'tfsmextended_State' is a specialization of 'NamedElement'.
+The class 'tfsmextended_Transition' is a specialization of 'NamedElement'.
+The class 'tfsmextended_Guard' is a specialization of 'NamedElement'.
+The class 'tfsmextended_TemporalGuard' is a specialization of 'Guard'.
+The class 'tfsmextended_EventGuard' is a specialization of 'Guard'.
+The class 'tfsmextended_FSMEvent' is a specialization of 'NamedElement'.
+The class 'tfsmextended_FSMClock' is a specialization of 'NamedElement'.
+The class 'tfsmextended_TimedSystem' is a specialization of 'NamedElement'.
+The class 'tfsmextended_EvaluateGuard' is a specialization of 'Guard'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tfsmextended_State' and 'tfsmextended_TFSM'. From 'tfsmextended_State', the role '1' has cardinality 0..*, and from 'tfsmextended_TFSM', the role 'unnamed role' has cardinality 0..*.
+An association connects 'tfsmextended_State' and 'tfsmextended_TFSM'. From 'tfsmextended_State', the role 'tfsmextended_State' has cardinality 0..*, and from 'tfsmextended_TFSM', the role 'tfsmextended_TFSM' has cardinality 0..*.
+An association connects 'tfsmextended_FSMEvent' and 'tfsmextended_TFSM'. From 'tfsmextended_FSMEvent', the role 'tfsmextended_FSMEvent' has cardinality 0..*, and from 'tfsmextended_TFSM', the role 'tfsmextended_TFSM4' has cardinality 0..*.
+An association connects 'tfsmextended_TFSM' and 'tfsmextended_FSMClock'. From 'tfsmextended_TFSM', the role 'tfsmextended_TFSM6' has cardinality 0..*, and from 'tfsmextended_FSMClock', the role 'tfsmextended_FSMClock' has cardinality 0..*.
+An association connects 'tfsmextended_TFSM' and 'tfsmextended_Transition'. From 'tfsmextended_TFSM', the role 'tfsmextended_TFSM8' has cardinality 0..*, and from 'tfsmextended_Transition', the role 'tfsmextended_Transition' has cardinality 0..*.
+An association connects 'tfsmextended_State' and 'tfsmextended_TFSM'. From 'tfsmextended_State', the role 'tfsmextended_State11' has cardinality 0..*, and from 'tfsmextended_TFSM', the role 'tfsmextended_TFSM10' has cardinality 0..*.
+An association connects 'tfsmextended_State' and 'tfsmextended_TFSM'. From 'tfsmextended_State', the role '13' has cardinality 0..*, and from 'tfsmextended_TFSM', the role '14' has cardinality 0..*.
+An association connects 'tfsmextended_Transition' and 'tfsmextended_State'. From 'tfsmextended_Transition', the role '17' has cardinality 0..*, and from 'tfsmextended_State', the role '16' has cardinality 0..*.
+An association connects 'tfsmextended_Transition' and 'tfsmextended_State'. From 'tfsmextended_Transition', the role '20' has cardinality 0..*, and from 'tfsmextended_State', the role '19' has cardinality 0..*.
+An association connects 'tfsmextended_Transition' and 'tfsmextended_State'. From 'tfsmextended_Transition', the role '22' has cardinality 0..*, and from 'tfsmextended_State', the role '23' has cardinality 0..*.
+An association connects 'tfsmextended_State' and 'tfsmextended_Transition'. From 'tfsmextended_State', the role '26' has cardinality 0..*, and from 'tfsmextended_Transition', the role '25' has cardinality 0..*.
+An association connects 'tfsmextended_Guard' and 'tfsmextended_Transition'. From 'tfsmextended_Guard', the role 'tfsmextended_Guard' has cardinality 0..*, and from 'tfsmextended_Transition', the role 'tfsmextended_Transition28' has cardinality 0..*.
+An association connects 'tfsmextended_FSMEvent' and 'tfsmextended_Transition'. From 'tfsmextended_FSMEvent', the role 'tfsmextended_FSMEvent31' has cardinality 0..*, and from 'tfsmextended_Transition', the role 'tfsmextended_Transition30' has cardinality 0..*.
+An association connects 'tfsmextended_FSMClock' and 'tfsmextended_TemporalGuard'. From 'tfsmextended_FSMClock', the role 'tfsmextended_FSMClock33' has cardinality 0..*, and from 'tfsmextended_TemporalGuard', the role 'tfsmextended_TemporalGuard' has cardinality 0..*.
+An association connects 'tfsmextended_EventGuard' and 'tfsmextended_FSMEvent'. From 'tfsmextended_EventGuard', the role 'tfsmextended_EventGuard' has cardinality 0..*, and from 'tfsmextended_FSMEvent', the role 'tfsmextended_FSMEvent35' has cardinality 0..*.
+An association connects 'tfsmextended_Transition' and 'tfsmextended_FSMEvent'. From 'tfsmextended_Transition', the role 'tfsmextended_Transition38' has cardinality 0..*, and from 'tfsmextended_FSMEvent', the role 'tfsmextended_FSMEvent37' has cardinality 0..*.
+An association connects 'tfsmextended_TimedSystem' and 'tfsmextended_TFSM'. From 'tfsmextended_TimedSystem', the role 'tfsmextended_TimedSystem' has cardinality 0..*, and from 'tfsmextended_TFSM', the role 'tfsmextended_TFSM40' has cardinality 0..*.
+An association connects 'tfsmextended_FSMClock' and 'tfsmextended_TimedSystem'. From 'tfsmextended_FSMClock', the role 'tfsmextended_FSMClock43' has cardinality 0..*, and from 'tfsmextended_TimedSystem', the role 'tfsmextended_TimedSystem42' has cardinality 0..*.
+An association connects 'tfsmextended_TimedSystem' and 'tfsmextended_FSMEvent'. From 'tfsmextended_TimedSystem', the role 'tfsmextended_TimedSystem45' has cardinality 0..*, and from 'tfsmextended_FSMEvent', the role 'tfsmextended_FSMEvent46' has cardinality 0..*.

@@ -1,0 +1,90 @@
+The domain model 'mvc' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'mvc_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mvc_MVCModel' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'version', which is of type str.
+
+'mvc_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mvc_Attribute' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'mvc_UIComponent' represents an important domain concept.
+It has the following attributes: 'layout', which is of type str; 'type', which is of type str; 'name', which is of type str; 'id', which is of type str.
+
+'mvc_EventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'mvc_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Annotable' represents an important domain concept.
+It does not declare any attributes.
+
+'mvc_Controller' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mvc_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mvc_Action' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mvc_Association' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'containment', which is of type bool; 'lowerBound', which is of type int; 'upperBound', which is of type int; 'type', which is of type str.
+
+'mvc_ControllerView' represents an important domain concept.
+It does not declare any attributes.
+
+'mvc_View' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AssociationType' is defined but does not specify any literals.
+
+The model also captures inheritance relationships between classes.
+The class 'mvc_Model' is a specialization of 'Annotable'.
+The class 'mvc_Entity' is a specialization of 'Annotable'.
+The class 'mvc_Attribute' is a specialization of 'Annotable'.
+The class 'mvc_Association' is a specialization of 'Annotable'.
+The class 'mvc_View' is a specialization of 'Annotable'.
+The class 'mvc_UIComponent' is a specialization of 'Annotable'.
+The class 'mvc_MVCModel' is a specialization of 'Annotable'.
+The class 'mvc_Controller' is a specialization of 'Annotable'.
+The class 'mvc_Event' is a specialization of 'Annotable'.
+The class 'mvc_Action' is a specialization of 'Annotable'.
+The class 'mvc_ControllerView' is a specialization of 'Annotable'.
+The class 'mvc_Component' is a specialization of 'Annotable'.
+The class 'mvc_EventAction' is a specialization of 'Annotable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mvc_Model' and 'mvc_Entity'. From 'mvc_Model', the role 'mvc_Model' has cardinality 0..*, and from 'mvc_Entity', the role 'mvc_Entity' has cardinality 0..*.
+An association connects 'mvc_Model' and 'mvc_Association'. From 'mvc_Model', the role 'mvc_Model2' has cardinality 0..*, and from 'mvc_Association', the role 'mvc_Association' has cardinality 0..*.
+An association connects 'mvc_Attribute' and 'mvc_Entity'. From 'mvc_Attribute', the role 'mvc_Attribute' has cardinality 0..*, and from 'mvc_Entity', the role 'mvc_Entity4' has cardinality 0..*.
+An association connects 'mvc_Entity' and 'mvc_Entity'. From 'mvc_Entity', the role 'mvc_Entity5' has cardinality 0..*, and from 'mvc_Entity', the role 'mvc_Entity7' has cardinality 0..*.
+An association connects 'mvc_Entity' and 'mvc_Association'. From 'mvc_Entity', the role 'mvc_Entity10' has cardinality 0..*, and from 'mvc_Association', the role 'mvc_Association9' has cardinality 0..*.
+An association connects 'mvc_Association' and 'mvc_Entity'. From 'mvc_Association', the role 'mvc_Association12' has cardinality 0..*, and from 'mvc_Entity', the role 'mvc_Entity13' has cardinality 0..*.
+An association connects 'mvc_View' and 'mvc_UIComponent'. From 'mvc_View', the role 'mvc_View' has cardinality 0..*, and from 'mvc_UIComponent', the role 'mvc_UIComponent' has cardinality 0..*.
+An association connects 'mvc_UIComponent' and 'mvc_UIComponent'. From 'mvc_UIComponent', the role 'mvc_UIComponent17' has cardinality 0..*, and from 'mvc_UIComponent', the role 'mvc_UIComponent15' has cardinality 0..*.
+An association connects 'mvc_UIComponent' and 'mvc_Event'. From 'mvc_UIComponent', the role 'mvc_UIComponent19' has cardinality 0..*, and from 'mvc_Event', the role 'mvc_Event' has cardinality 0..*.
+An association connects 'mvc_MVCModel' and 'mvc_Model'. From 'mvc_MVCModel', the role 'mvc_MVCModel' has cardinality 0..*, and from 'mvc_Model', the role 'mvc_Model21' has cardinality 0..*.
+An association connects 'mvc_View' and 'mvc_MVCModel'. From 'mvc_View', the role 'mvc_View24' has cardinality 0..*, and from 'mvc_MVCModel', the role 'mvc_MVCModel23' has cardinality 0..*.
+An association connects 'mvc_Event' and 'mvc_MVCModel'. From 'mvc_Event', the role 'mvc_Event27' has cardinality 0..*, and from 'mvc_MVCModel', the role 'mvc_MVCModel26' has cardinality 0..*.
+An association connects 'mvc_MVCModel' and 'mvc_Controller'. From 'mvc_MVCModel', the role 'mvc_MVCModel29' has cardinality 0..*, and from 'mvc_Controller', the role 'mvc_Controller' has cardinality 0..*.
+An association connects 'mvc_MVCModel' and 'mvc_Component'. From 'mvc_MVCModel', the role 'mvc_MVCModel31' has cardinality 0..*, and from 'mvc_Component', the role 'mvc_Component' has cardinality 0..*.
+An association connects 'mvc_Controller' and 'mvc_Action'. From 'mvc_Controller', the role 'mvc_Controller33' has cardinality 0..*, and from 'mvc_Action', the role 'mvc_Action' has cardinality 0..*.
+An association connects 'mvc_ControllerView' and 'mvc_Controller'. From 'mvc_ControllerView', the role 'mvc_ControllerView' has cardinality 0..*, and from 'mvc_Controller', the role 'mvc_Controller35' has cardinality 0..*.
+An association connects 'mvc_EventAction' and 'mvc_Controller'. From 'mvc_EventAction', the role 'mvc_EventAction' has cardinality 0..*, and from 'mvc_Controller', the role 'mvc_Controller37' has cardinality 0..*.
+An association connects 'mvc_Action' and 'mvc_Event'. From 'mvc_Action', the role 'mvc_Action39' has cardinality 0..*, and from 'mvc_Event', the role 'mvc_Event40' has cardinality 0..*.
+An association connects 'mvc_Action' and 'mvc_Event'. From 'mvc_Action', the role 'mvc_Action42' has cardinality 0..*, and from 'mvc_Event', the role 'mvc_Event43' has cardinality 0..*.
+An association connects 'mvc_Event' and 'mvc_Action'. From 'mvc_Event', the role 'mvc_Event46' has cardinality 0..*, and from 'mvc_Action', the role 'mvc_Action45' has cardinality 0..*.
+An association connects 'mvc_View' and 'mvc_ControllerView'. From 'mvc_View', the role 'mvc_View49' has cardinality 0..*, and from 'mvc_ControllerView', the role 'mvc_ControllerView48' has cardinality 0..*.
+An association connects 'mvc_Model' and 'mvc_ControllerView'. From 'mvc_Model', the role 'mvc_Model52' has cardinality 0..*, and from 'mvc_ControllerView', the role 'mvc_ControllerView51' has cardinality 0..*.
+An association connects 'mvc_Controller' and 'mvc_Component'. From 'mvc_Controller', the role 'mvc_Controller55' has cardinality 0..*, and from 'mvc_Component', the role 'mvc_Component54' has cardinality 0..*.
+An association connects 'mvc_EventAction' and 'mvc_Action'. From 'mvc_EventAction', the role 'mvc_EventAction57' has cardinality 0..*, and from 'mvc_Action', the role 'mvc_Action58' has cardinality 0..*.
+An association connects 'mvc_Event' and 'mvc_EventAction'. From 'mvc_Event', the role 'mvc_Event61' has cardinality 0..*, and from 'mvc_EventAction', the role 'mvc_EventAction60' has cardinality 0..*.

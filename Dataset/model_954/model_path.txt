@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/epsilonlabs/epsilonlabs/org.eclipse.epsilon.examples.standalone.metamodel.graph/model/graph.ecore

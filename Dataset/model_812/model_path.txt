@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jdeantoni/gemocAtModels/solutions/language_concurrentV1/org.gemoc.sample.legacyfsm.xsfsm/model-gen/XSFSMMT.ecore

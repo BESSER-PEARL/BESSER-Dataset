@@ -1,0 +1,113 @@
+The domain model 'fault_tree' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'fault_tree_FailureInstance' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fault_tree_Event' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str.
+
+'fault_tree_ErrorType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Gate' represents an important domain concept.
+It does not declare any attributes.
+
+'fault_tree_Gate' represents an important domain concept.
+It does not declare any attributes.
+
+'fault_tree_Inhibit' represents an important domain concept.
+It does not declare any attributes.
+
+'fault_tree_BasicEvent' represents an important domain concept.
+It has one attribute: 'probability', which is of type float.
+
+'fault_tree_OR' represents an important domain concept.
+It does not declare any attributes.
+
+'fault_tree_ErrorInstance' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'fault_tree_FailureType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fault_tree_FaultTree' represents an important domain concept.
+It does not declare any attributes.
+
+'fault_tree_PriorAND' represents an important domain concept.
+It does not declare any attributes.
+
+'fault_tree_Hazard' represents an important domain concept.
+It does not declare any attributes.
+
+'IDBase' represents an important domain concept.
+It does not declare any attributes.
+
+'fault_tree_UndevelopedEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'fault_tree_AND' represents an important domain concept.
+It does not declare any attributes.
+
+'fault_tree_IntermediateEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'fault_tree_XOR' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'fault_tree_Hazard' is a specialization of 'Event'.
+The class 'fault_tree_Gate' is a specialization of 'IDBase'.
+The class 'fault_tree_Event' is a specialization of 'IDBase'.
+The class 'fault_tree_IntermediateEvent' is a specialization of 'Event'.
+The class 'fault_tree_FailureType' is a specialization of 'IDBase'.
+The class 'fault_tree_FailureInstance' is a specialization of 'IDBase'.
+The class 'fault_tree_BasicEvent' is a specialization of 'Event'.
+The class 'fault_tree_UndevelopedEvent' is a specialization of 'Event'.
+The class 'fault_tree_ErrorType' is a specialization of 'IDBase'.
+The class 'fault_tree_ErrorInstance' is a specialization of 'IDBase'.
+The class 'fault_tree_OR' is a specialization of 'Gate'.
+The class 'fault_tree_AND' is a specialization of 'Gate'.
+The class 'fault_tree_XOR' is a specialization of 'Gate'.
+The class 'fault_tree_PriorAND' is a specialization of 'Gate'.
+The class 'fault_tree_Inhibit' is a specialization of 'Gate'.
+The class 'fault_tree_FaultTree' is a specialization of 'IDBase'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fault_tree_Hazard' and 'fault_tree_IntermediateEvent'. From 'fault_tree_Hazard', the role 'fault_tree_Hazard' has cardinality 0..*, and from 'fault_tree_IntermediateEvent', the role 'fault_tree_IntermediateEvent' has cardinality 0..*.
+An association connects 'fault_tree_Gate' and 'fault_tree_Gate'. From 'fault_tree_Gate', the role 'fault_tree_Gate1' has cardinality 0..*, and from 'fault_tree_Gate', the role 'fault_tree_Gate' has cardinality 0..*.
+An association connects 'fault_tree_Gate' and 'fault_tree_Event'. From 'fault_tree_Gate', the role 'outputGate' has cardinality 0..*, and from 'fault_tree_Event', the role 'Event' has cardinality 0..*.
+An association connects 'fault_tree_Gate' and 'fault_tree_Gate'. From 'fault_tree_Gate', the role 'fault_tree_Gate6' has cardinality 0..*, and from 'fault_tree_Gate', the role 'fault_tree_Gate4' has cardinality 0..*.
+An association connects 'fault_tree_Event' and 'fault_tree_Gate'. From 'fault_tree_Event', the role 'Event8' has cardinality 0..*, and from 'fault_tree_Gate', the role 'inputGate' has cardinality 0..*.
+An association connects 'fault_tree_FaultTree' and 'fault_tree_Gate'. From 'fault_tree_FaultTree', the role 'FaultTree' has cardinality 0..*, and from 'fault_tree_Gate', the role 'gate' has cardinality 0..*.
+An association connects 'fault_tree_Gate' and 'fault_tree_Event'. From 'fault_tree_Gate', the role 'Gate' has cardinality 0..*, and from 'fault_tree_Event', the role 'outputEvent' has cardinality 0..*.
+An association connects 'fault_tree_Event' and 'fault_tree_Gate'. From 'fault_tree_Event', the role 'inputEvents' has cardinality 0..*, and from 'fault_tree_Gate', the role 'Gate12' has cardinality 0..*.
+An association connects 'fault_tree_Event' and 'fault_tree_FaultTree'. From 'fault_tree_Event', the role 'event' has cardinality 0..*, and from 'fault_tree_FaultTree', the role 'FaultTree14' has cardinality 0..*.
+An association connects 'fault_tree_IntermediateEvent' and 'fault_tree_FailureInstance'. From 'fault_tree_IntermediateEvent', the role 'event16' has cardinality 0..*, and from 'fault_tree_FailureInstance', the role 'FailureInstance' has cardinality 0..*.
+An association connects 'fault_tree_IntermediateEvent' and 'fault_tree_Event'. From 'fault_tree_IntermediateEvent', the role 'fault_tree_IntermediateEvent18' has cardinality 0..*, and from 'fault_tree_Event', the role 'fault_tree_Event' has cardinality 0..*.
+An association connects 'fault_tree_IntermediateEvent' and 'fault_tree_Event'. From 'fault_tree_IntermediateEvent', the role 'fault_tree_IntermediateEvent20' has cardinality 0..*, and from 'fault_tree_Event', the role 'fault_tree_Event21' has cardinality 0..*.
+An association connects 'fault_tree_FailureInstance' and 'fault_tree_FailureType'. From 'fault_tree_FailureInstance', the role 'FailureInstance23' has cardinality 0..*, and from 'fault_tree_FailureType', the role 'type' has cardinality 0..*.
+An association connects 'fault_tree_FaultTree' and 'fault_tree_FailureType'. From 'fault_tree_FaultTree', the role 'FaultTree25' has cardinality 0..*, and from 'fault_tree_FailureType', the role 'failure_type' has cardinality 0..*.
+An association connects 'fault_tree_FailureType' and 'fault_tree_FailureInstance'. From 'fault_tree_FailureType', the role 'FailureType' has cardinality 0..*, and from 'fault_tree_FailureInstance', the role 'instance' has cardinality 0..*.
+An association connects 'fault_tree_FailureInstance' and 'fault_tree_FaultTree'. From 'fault_tree_FailureInstance', the role 'failure_instance' has cardinality 0..*, and from 'fault_tree_FaultTree', the role 'FaultTree28' has cardinality 0..*.
+An association connects 'fault_tree_FailureInstance' and 'fault_tree_FailureInstance'. From 'fault_tree_FailureInstance', the role 'fault_tree_FailureInstance' has cardinality 0..*, and from 'fault_tree_FailureInstance', the role 'fault_tree_FailureInstance29' has cardinality 0..*.
+An association connects 'fault_tree_ErrorInstance' and 'fault_tree_FailureInstance'. From 'fault_tree_ErrorInstance', the role 'fault_tree_ErrorInstance' has cardinality 0..*, and from 'fault_tree_FailureInstance', the role 'fault_tree_FailureInstance32' has cardinality 0..*.
+An association connects 'fault_tree_FailureInstance' and 'fault_tree_IntermediateEvent'. From 'fault_tree_FailureInstance', the role 'instance34' has cardinality 0..*, and from 'fault_tree_IntermediateEvent', the role 'IntermediateEvent' has cardinality 0..*.
+An association connects 'fault_tree_BasicEvent' and 'fault_tree_ErrorInstance'. From 'fault_tree_BasicEvent', the role 'error' has cardinality 0..*, and from 'fault_tree_ErrorInstance', the role 'ErrorInstance' has cardinality 0..*.
+An association connects 'fault_tree_IntermediateEvent' and 'fault_tree_BasicEvent'. From 'fault_tree_IntermediateEvent', the role 'fault_tree_IntermediateEvent37' has cardinality 0..*, and from 'fault_tree_BasicEvent', the role 'fault_tree_BasicEvent' has cardinality 0..*.
+An association connects 'fault_tree_ErrorInstance' and 'fault_tree_ErrorType'. From 'fault_tree_ErrorInstance', the role 'ErrorInstance40' has cardinality 0..*, and from 'fault_tree_ErrorType', the role 'type39' has cardinality 0..*.
+An association connects 'fault_tree_ErrorType' and 'fault_tree_FaultTree'. From 'fault_tree_ErrorType', the role 'error_type' has cardinality 0..*, and from 'fault_tree_FaultTree', the role 'FaultTree42' has cardinality 0..*.
+An association connects 'fault_tree_BasicEvent' and 'fault_tree_ErrorInstance'. From 'fault_tree_BasicEvent', the role 'BasicEvent' has cardinality 0..*, and from 'fault_tree_ErrorInstance', the role 'instance44' has cardinality 0..*.
+An association connects 'fault_tree_ErrorType' and 'fault_tree_ErrorInstance'. From 'fault_tree_ErrorType', the role 'ErrorType' has cardinality 0..*, and from 'fault_tree_ErrorInstance', the role 'error46' has cardinality 0..*.
+An association connects 'fault_tree_ErrorInstance' and 'fault_tree_FaultTree'. From 'fault_tree_ErrorInstance', the role 'error_instance' has cardinality 0..*, and from 'fault_tree_FaultTree', the role 'FaultTree48' has cardinality 0..*.
+An association connects 'fault_tree_Hazard' and 'fault_tree_FaultTree'. From 'fault_tree_Hazard', the role 'fault_tree_Hazard50' has cardinality 0..*, and from 'fault_tree_FaultTree', the role 'fault_tree_FaultTree' has cardinality 0..*.
+An association connects 'fault_tree_FaultTree' and 'fault_tree_Gate'. From 'fault_tree_FaultTree', the role 'root' has cardinality 0..*, and from 'fault_tree_Gate', the role 'Gate52' has cardinality 0..*.
+An association connects 'fault_tree_FaultTree' and 'fault_tree_Event'. From 'fault_tree_FaultTree', the role 'root54' has cardinality 0..*, and from 'fault_tree_Event', the role 'Event55' has cardinality 0..*.
+An association connects 'fault_tree_FailureInstance' and 'fault_tree_FaultTree'. From 'fault_tree_FailureInstance', the role 'FailureInstance58' has cardinality 0..*, and from 'fault_tree_FaultTree', the role 'root57' has cardinality 0..*.
+An association connects 'fault_tree_FailureType' and 'fault_tree_FaultTree'. From 'fault_tree_FailureType', the role 'FailureType61' has cardinality 0..*, and from 'fault_tree_FaultTree', the role 'root60' has cardinality 0..*.
+An association connects 'fault_tree_ErrorInstance' and 'fault_tree_FaultTree'. From 'fault_tree_ErrorInstance', the role 'ErrorInstance64' has cardinality 0..*, and from 'fault_tree_FaultTree', the role 'root63' has cardinality 0..*.
+An association connects 'fault_tree_ErrorType' and 'fault_tree_FaultTree'. From 'fault_tree_ErrorType', the role 'ErrorType67' has cardinality 0..*, and from 'fault_tree_FaultTree', the role 'root66' has cardinality 0..*.

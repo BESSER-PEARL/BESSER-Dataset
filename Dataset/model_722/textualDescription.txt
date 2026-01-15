@@ -1,0 +1,719 @@
+The domain model 'org' describes the core structural elements and their relationships within the system.
+
+The model defines 156 main class(es).
+
+'structure_UnresolvedProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_UnresolvedProperty' represents an important domain concept.
+It has one attribute: 'propertyIdentifier', which is of type str.
+
+'org_structure_OperationBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_ModelTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_CallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_UnresolvedOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_KermetaModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'AdaptationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_ModelTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_CallExpression' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'structure_AdaptationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_CallModelTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_Using' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_Tag' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'structure_Tag' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_TypeVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_ModelElementTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_AdaptationParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_AbstractOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_UseAdaptationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_CallTypeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_VariableDecl' represents an important domain concept.
+It has one attribute: 'identifier', which is of type str.
+
+'org_structure_ClassDefinition' represents an important domain concept.
+It has the following attributes: 'isAbstract', which is of type str; 'isSingleton', which is of type str; 'isFinal', which is of type str.
+
+'org_structure_ParameterizedType' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_AdaptationParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_VoidLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterizedType' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElementTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_CallFeature' represents an important domain concept.
+It has one attribute: 'isAtpre', which is of type str.
+
+'org_structure_UnresolvedTypeVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_ModelTypeVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_ModelTypeDefinitionContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_ClassDefinitionBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_Metamodel' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_Property' represents an important domain concept.
+It has the following attributes: 'isReadOnly', which is of type str; 'isGetterAbstract', which is of type str; 'isID', which is of type str; 'default', which is of type str; 'isSetterAbstract', which is of type str; 'isDerived', which is of type str; 'isComposite', which is of type str.
+
+'behavior_Rescue' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_ModelTransformation' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type str.
+
+'TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_Rescue' represents an important domain concept.
+It has one attribute: 'exceptionName', which is of type str.
+
+'org_behavior_LambdaExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_Operation' represents an important domain concept.
+It has the following attributes: 'isAbstract', which is of type str; 'uniqueName', which is of type str.
+
+'org_behavior_JavaStaticCall' represents an important domain concept.
+It has the following attributes: 'jclass', which is of type str; 'jmethod', which is of type str.
+
+'org_structure_TypeVariableBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'GenericTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'structure_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'structure_MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_UnresolvedModelTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_ModelTypeDefinitionContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_OperationBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'CallVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_LambdaParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_CallProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_Metamodel' represents an important domain concept.
+It has the following attributes: 'isResolved', which is of type bool; 'uri', which is of type str.
+
+'org_structure_UnresolvedType' represents an important domain concept.
+It has one attribute: 'typeIdentifier', which is of type str.
+
+'org_structure_FilteredMetamodelReference' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_ModelType' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_ModelElementTypeDefinitionContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_CallSuperOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_Package' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'org_behavior_CallValue' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_KermetaModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_ModelTypeDefinitionBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_UnresolvedCall' represents an important domain concept.
+It has the following attributes: 'isCalledWithParenthesis', which is of type str; 'isAtpre', which is of type str.
+
+'org_behavior_EmptyExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_PropertyAdaptationOperator' represents an important domain concept.
+It has the following attributes: 'getter', which is of type str; 'setter', which is of type str; 'adder', which is of type str; 'remover', which is of type str.
+
+'org_structure_Constraint' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'stereotype', which is of type str.
+
+'structure_ModelTypeDefinitionBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_UnresolvedOperation' represents an important domain concept.
+It has one attribute: 'operationIdentifier', which is of type str.
+
+'structure_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_CallOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_AdaptationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_FilteredMetamodelReference' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'structure_GenericTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_SelfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_LambdaParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'structure_UnresolvedReference' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_PropertyBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_VirtualType' represents an important domain concept.
+It does not declare any attributes.
+
+'CallFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'org_behavior_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_AbstractProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_ModelTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_CallResult' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_TypeVariableBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_ClassDefinitionBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_FunctionType' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_VirtualType' represents an important domain concept.
+It does not declare any attributes.
+
+'KermetaModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_Class' represents an important domain concept.
+It has the following attributes: 'isAbstract', which is of type str; 'name', which is of type str.
+
+'org_structure_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_ObjectTypeVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_Raise' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_AbstractProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_TypeVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_TypeDefinition' represents an important domain concept.
+It has one attribute: 'isAspect', which is of type str.
+
+'org_structure_EnumerationBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_ModelTypeVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_ClassDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_Using' represents an important domain concept.
+It has the following attributes: 'toName', which is of type str; 'fromQName', which is of type str.
+
+'structure_EnumerationBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_Assignment' represents an important domain concept.
+It has one attribute: 'isCast', which is of type str.
+
+'org_behavior_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'CallOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_AbstractOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_OperationAdaptationOperator' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'org_structure_UnresolvedAdaptationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_ModelElementTypeDefinitionContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_UnresolvedInferredType' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_MultiplicityElement' represents an important domain concept.
+It has the following attributes: 'isUnique', which is of type str; 'lower', which is of type str; 'upper', which is of type str; 'isOrdered', which is of type str.
+
+'org_structure_UnresolvedModelTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_PropertyBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_UnresolvedReference' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_TypeContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_ProductType' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_CallEnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_GenericTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_UseAdaptationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'org_behavior_CallVariable' represents an important domain concept.
+It has one attribute: 'isAtpre', which is of type str.
+
+'org_structure_TypeContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectTypeVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'org_structure_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_ModelElementTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ConstraintType' defines the following possible values: 'inv', 'pre', 'post'.
+The enumeration 'ConstraintLanguage' defines the following possible values: 'ocl', 'kermeta'.
+
+The model also captures inheritance relationships between classes.
+The class 'org_behavior_Assignment' is a specialization of 'Expression'.
+The class 'org_behavior_Expression' is a specialization of 'structure_KermetaModelElement'.
+The class 'org_behavior_Expression' is a specialization of 'structure_TypeContainer'.
+The class 'org_behavior_CallExpression' is a specialization of 'Expression'.
+The class 'org_behavior_Block' is a specialization of 'Expression'.
+The class 'org_behavior_CallVariable' is a specialization of 'CallExpression'.
+The class 'org_behavior_CallFeature' is a specialization of 'CallExpression'.
+The class 'org_behavior_CallSuperOperation' is a specialization of 'CallOperation'.
+The class 'org_behavior_CallResult' is a specialization of 'CallVariable'.
+The class 'org_behavior_CallValue' is a specialization of 'CallExpression'.
+The class 'org_behavior_Conditional' is a specialization of 'Expression'.
+The class 'org_behavior_Raise' is a specialization of 'Expression'.
+The class 'org_behavior_Rescue' is a specialization of 'KermetaModelElement'.
+The class 'org_behavior_TypeReference' is a specialization of 'MultiplicityElement'.
+The class 'org_behavior_Literal' is a specialization of 'Expression'.
+The class 'org_behavior_EmptyExpression' is a specialization of 'Expression'.
+The class 'org_behavior_JavaStaticCall' is a specialization of 'Expression'.
+The class 'org_behavior_LambdaExpression' is a specialization of 'Expression'.
+The class 'org_behavior_LambdaParameter' is a specialization of 'KermetaModelElement'.
+The class 'org_behavior_IntegerLiteral' is a specialization of 'Literal'.
+The class 'org_behavior_StringLiteral' is a specialization of 'Literal'.
+The class 'org_behavior_BooleanLiteral' is a specialization of 'Literal'.
+The class 'org_behavior_CallTypeLiteral' is a specialization of 'Literal'.
+The class 'org_behavior_VoidLiteral' is a specialization of 'Literal'.
+The class 'org_behavior_Loop' is a specialization of 'Expression'.
+The class 'org_behavior_SelfExpression' is a specialization of 'Expression'.
+The class 'org_behavior_VariableDecl' is a specialization of 'Expression'.
+The class 'org_behavior_UnresolvedCall' is a specialization of 'structure_UnresolvedReference'.
+The class 'org_behavior_UnresolvedCall' is a specialization of 'behavior_CallExpression'.
+The class 'org_behavior_UnresolvedCall' is a specialization of 'structure_TypeContainer'.
+The class 'org_behavior_CallOperation' is a specialization of 'CallFeature'.
+The class 'org_behavior_CallProperty' is a specialization of 'CallFeature'.
+The class 'org_behavior_CallEnumLiteral' is a specialization of 'CallExpression'.
+The class 'org_behavior_CallModelTransformation' is a specialization of 'CallFeature'.
+The class 'org_structure_Operation' is a specialization of 'structure_MultiplicityElement'.
+The class 'org_structure_Operation' is a specialization of 'structure_AbstractOperation'.
+The class 'org_structure_Property' is a specialization of 'structure_MultiplicityElement'.
+The class 'org_structure_Property' is a specialization of 'structure_AbstractProperty'.
+The class 'org_structure_Type' is a specialization of 'KermetaModelElement'.
+The class 'org_structure_TypeContainer' is a specialization of 'KermetaModelElement'.
+The class 'org_structure_EnumerationLiteral' is a specialization of 'NamedElement'.
+The class 'org_structure_TypeVariableBinding' is a specialization of 'structure_TypeContainer'.
+The class 'org_structure_TypeVariableBinding' is a specialization of 'structure_KermetaModelElement'.
+The class 'org_structure_MultiplicityElement' is a specialization of 'TypedElement'.
+The class 'org_structure_TypeDefinition' is a specialization of 'structure_NamedElement'.
+The class 'org_structure_TypeDefinition' is a specialization of 'structure_TypeContainer'.
+The class 'org_structure_Class' is a specialization of 'ParameterizedType'.
+The class 'org_structure_DataType' is a specialization of 'structure_Type'.
+The class 'org_structure_DataType' is a specialization of 'structure_ModelElementTypeDefinition'.
+The class 'org_structure_Enumeration' is a specialization of 'DataType'.
+The class 'org_structure_NamedElement' is a specialization of 'KermetaModelElement'.
+The class 'org_structure_Package' is a specialization of 'structure_NamedElement'.
+The class 'org_structure_Package' is a specialization of 'structure_ModelElementTypeDefinitionContainer'.
+The class 'org_structure_Parameter' is a specialization of 'MultiplicityElement'.
+The class 'org_structure_PrimitiveType' is a specialization of 'DataType'.
+The class 'org_structure_TypedElement' is a specialization of 'structure_TypeContainer'.
+The class 'org_structure_TypedElement' is a specialization of 'structure_NamedElement'.
+The class 'org_structure_Tag' is a specialization of 'KermetaModelElement'.
+The class 'org_structure_AbstractProperty' is a specialization of 'KermetaModelElement'.
+The class 'org_structure_Constraint' is a specialization of 'NamedElement'.
+The class 'org_structure_ClassDefinition' is a specialization of 'GenericTypeDefinition'.
+The class 'org_structure_Metamodel' is a specialization of 'structure_KermetaModelElement'.
+The class 'org_structure_Metamodel' is a specialization of 'structure_NamedElement'.
+The class 'org_structure_Metamodel' is a specialization of 'structure_ModelTypeDefinitionContainer'.
+The class 'org_structure_ModelElementTypeDefinitionContainer' is a specialization of 'NamedElement'.
+The class 'org_structure_GenericTypeDefinition' is a specialization of 'ModelElementTypeDefinition'.
+The class 'org_structure_ParameterizedType' is a specialization of 'Type'.
+The class 'org_structure_TypeVariable' is a specialization of 'structure_TypeContainer'.
+The class 'org_structure_TypeVariable' is a specialization of 'structure_Type'.
+The class 'org_structure_TypeVariable' is a specialization of 'structure_NamedElement'.
+The class 'org_structure_ObjectTypeVariable' is a specialization of 'TypeVariable'.
+The class 'org_structure_ModelTypeVariable' is a specialization of 'TypeVariable'.
+The class 'org_structure_VirtualType' is a specialization of 'ObjectTypeVariable'.
+The class 'org_structure_Model' is a specialization of 'KermetaModelElement'.
+The class 'org_structure_AbstractOperation' is a specialization of 'KermetaModelElement'.
+The class 'org_structure_UnresolvedType' is a specialization of 'structure_Type'.
+The class 'org_structure_UnresolvedType' is a specialization of 'structure_UnresolvedReference'.
+The class 'org_structure_UnresolvedType' is a specialization of 'structure_TypeContainer'.
+The class 'org_structure_UnresolvedReference' is a specialization of 'KermetaModelElement'.
+The class 'org_structure_UnresolvedProperty' is a specialization of 'structure_AbstractProperty'.
+The class 'org_structure_UnresolvedProperty' is a specialization of 'structure_UnresolvedReference'.
+The class 'org_structure_UnresolvedOperation' is a specialization of 'structure_AbstractOperation'.
+The class 'org_structure_UnresolvedOperation' is a specialization of 'structure_UnresolvedReference'.
+The class 'org_structure_UnresolvedOperation' is a specialization of 'structure_TypeContainer'.
+The class 'org_structure_Using' is a specialization of 'KermetaModelElement'.
+The class 'org_structure_ProductType' is a specialization of 'structure_TypeContainer'.
+The class 'org_structure_ProductType' is a specialization of 'structure_Type'.
+The class 'org_structure_FunctionType' is a specialization of 'structure_TypeContainer'.
+The class 'org_structure_FunctionType' is a specialization of 'structure_Type'.
+The class 'org_structure_VoidType' is a specialization of 'Type'.
+The class 'org_structure_UnresolvedInferredType' is a specialization of 'structure_UnresolvedReference'.
+The class 'org_structure_UnresolvedInferredType' is a specialization of 'structure_Type'.
+The class 'org_structure_UnresolvedTypeVariable' is a specialization of 'structure_UnresolvedReference'.
+The class 'org_structure_UnresolvedTypeVariable' is a specialization of 'structure_TypeVariable'.
+The class 'org_structure_ModelTypeDefinitionBinding' is a specialization of 'structure_KermetaModelElement'.
+The class 'org_structure_ModelTypeDefinitionBinding' is a specialization of 'structure_ModelTypeDefinitionContainer'.
+The class 'org_structure_ClassDefinitionBinding' is a specialization of 'KermetaModelElement'.
+The class 'org_structure_EnumerationBinding' is a specialization of 'KermetaModelElement'.
+The class 'org_structure_PropertyBinding' is a specialization of 'KermetaModelElement'.
+The class 'org_structure_OperationBinding' is a specialization of 'KermetaModelElement'.
+The class 'org_structure_AdaptationOperator' is a specialization of 'NamedElement'.
+The class 'org_structure_UseAdaptationOperator' is a specialization of 'KermetaModelElement'.
+The class 'org_structure_PropertyAdaptationOperator' is a specialization of 'AdaptationOperator'.
+The class 'org_structure_UnresolvedAdaptationOperator' is a specialization of 'structure_AdaptationOperator'.
+The class 'org_structure_UnresolvedAdaptationOperator' is a specialization of 'structure_UnresolvedReference'.
+The class 'org_structure_AdaptationParameter' is a specialization of 'TypedElement'.
+The class 'org_structure_OperationAdaptationOperator' is a specialization of 'AdaptationOperator'.
+The class 'org_structure_ModelElementTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'org_structure_ModelType' is a specialization of 'Type'.
+The class 'org_structure_FilteredMetamodelReference' is a specialization of 'KermetaModelElement'.
+The class 'org_structure_ModelTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'org_structure_ModelTransformation' is a specialization of 'MultiplicityElement'.
+The class 'org_structure_UnresolvedModelTypeDefinition' is a specialization of 'structure_ModelTypeDefinition'.
+The class 'org_structure_UnresolvedModelTypeDefinition' is a specialization of 'structure_UnresolvedReference'.
+The class 'org_structure_UnresolvedModelTransformation' is a specialization of 'structure_ModelTransformation'.
+The class 'org_structure_UnresolvedModelTransformation' is a specialization of 'structure_UnresolvedReference'.
+The class 'org_structure_ModelTypeDefinitionContainer' is a specialization of 'KermetaModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'behavior_CallExpression' and 'org_behavior_Assignment'. From 'behavior_CallExpression', the role 'behavior_CallExpression' has cardinality 0..*, and from 'org_behavior_Assignment', the role 'org_behavior_Assignment' has cardinality 0..*.
+An association connects 'org_behavior_Assignment' and 'behavior_Expression'. From 'org_behavior_Assignment', the role 'org_behavior_Assignment2' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression' has cardinality 0..*.
+An association connects 'org_behavior_Expression' and 'structure_Type'. From 'org_behavior_Expression', the role 'org_behavior_Expression' has cardinality 0..*, and from 'structure_Type', the role 'structure_Type' has cardinality 0..*.
+An association connects 'behavior_Expression' and 'org_behavior_CallExpression'. From 'behavior_Expression', the role 'behavior_Expression5' has cardinality 0..*, and from 'org_behavior_CallExpression', the role 'org_behavior_CallExpression' has cardinality 0..*.
+An association connects 'org_behavior_CallExpression' and 'structure_Type'. From 'org_behavior_CallExpression', the role 'org_behavior_CallExpression7' has cardinality 0..*, and from 'structure_Type', the role 'structure_Type8' has cardinality 0..*.
+An association connects 'org_behavior_Block' and 'behavior_Expression'. From 'org_behavior_Block', the role 'org_behavior_Block' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression10' has cardinality 0..*.
+An association connects 'behavior_Rescue' and 'org_behavior_Block'. From 'behavior_Rescue', the role 'behavior_Rescue' has cardinality 0..*, and from 'org_behavior_Block', the role 'org_behavior_Block12' has cardinality 0..*.
+An association connects 'org_behavior_CallFeature' and 'behavior_Expression'. From 'org_behavior_CallFeature', the role 'org_behavior_CallFeature' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression14' has cardinality 0..*.
+An association connects 'structure_Type' and 'org_behavior_CallSuperOperation'. From 'structure_Type', the role 'structure_Type16' has cardinality 0..*, and from 'org_behavior_CallSuperOperation', the role 'org_behavior_CallSuperOperation' has cardinality 0..*.
+An association connects 'behavior_Expression' and 'org_behavior_Conditional'. From 'behavior_Expression', the role 'behavior_Expression18' has cardinality 0..*, and from 'org_behavior_Conditional', the role 'org_behavior_Conditional' has cardinality 0..*.
+An association connects 'behavior_Expression' and 'org_behavior_Conditional'. From 'behavior_Expression', the role 'behavior_Expression21' has cardinality 0..*, and from 'org_behavior_Conditional', the role 'org_behavior_Conditional20' has cardinality 0..*.
+An association connects 'org_behavior_Conditional' and 'behavior_Expression'. From 'org_behavior_Conditional', the role 'org_behavior_Conditional23' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression24' has cardinality 0..*.
+An association connects 'org_behavior_Raise' and 'behavior_Expression'. From 'org_behavior_Raise', the role 'org_behavior_Raise' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression26' has cardinality 0..*.
+An association connects 'behavior_Expression' and 'org_behavior_Rescue'. From 'behavior_Expression', the role 'behavior_Expression28' has cardinality 0..*, and from 'org_behavior_Rescue', the role 'org_behavior_Rescue' has cardinality 0..*.
+An association connects 'org_behavior_Rescue' and 'behavior_TypeReference'. From 'org_behavior_Rescue', the role 'org_behavior_Rescue30' has cardinality 0..*, and from 'behavior_TypeReference', the role 'behavior_TypeReference' has cardinality 0..*.
+An association connects 'org_behavior_JavaStaticCall' and 'behavior_Expression'. From 'org_behavior_JavaStaticCall', the role 'org_behavior_JavaStaticCall' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression32' has cardinality 0..*.
+An association connects 'org_behavior_LambdaExpression' and 'behavior_LambdaParameter'. From 'org_behavior_LambdaExpression', the role 'org_behavior_LambdaExpression' has cardinality 0..*, and from 'behavior_LambdaParameter', the role 'behavior_LambdaParameter' has cardinality 0..*.
+An association connects 'org_behavior_LambdaExpression' and 'behavior_Expression'. From 'org_behavior_LambdaExpression', the role 'org_behavior_LambdaExpression35' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression36' has cardinality 0..*.
+An association connects 'org_behavior_LambdaParameter' and 'behavior_TypeReference'. From 'org_behavior_LambdaParameter', the role 'org_behavior_LambdaParameter' has cardinality 0..*, and from 'behavior_TypeReference', the role 'behavior_TypeReference38' has cardinality 0..*.
+An association connects 'behavior_TypeReference' and 'org_behavior_CallTypeLiteral'. From 'behavior_TypeReference', the role 'behavior_TypeReference40' has cardinality 0..*, and from 'org_behavior_CallTypeLiteral', the role 'org_behavior_CallTypeLiteral' has cardinality 0..*.
+An association connects 'behavior_Expression' and 'org_behavior_Loop'. From 'behavior_Expression', the role 'behavior_Expression42' has cardinality 0..*, and from 'org_behavior_Loop', the role 'org_behavior_Loop' has cardinality 0..*.
+An association connects 'org_behavior_Loop' and 'behavior_Expression'. From 'org_behavior_Loop', the role 'org_behavior_Loop44' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression45' has cardinality 0..*.
+An association connects 'behavior_Expression' and 'org_behavior_Loop'. From 'behavior_Expression', the role 'behavior_Expression48' has cardinality 0..*, and from 'org_behavior_Loop', the role 'org_behavior_Loop47' has cardinality 0..*.
+An association connects 'behavior_Expression' and 'org_behavior_VariableDecl'. From 'behavior_Expression', the role 'behavior_Expression50' has cardinality 0..*, and from 'org_behavior_VariableDecl', the role 'org_behavior_VariableDecl' has cardinality 0..*.
+An association connects 'behavior_TypeReference' and 'org_behavior_VariableDecl'. From 'behavior_TypeReference', the role 'behavior_TypeReference53' has cardinality 0..*, and from 'org_behavior_VariableDecl', the role 'org_behavior_VariableDecl52' has cardinality 0..*.
+An association connects 'structure_Using' and 'org_behavior_UnresolvedCall'. From 'structure_Using', the role 'structure_Using' has cardinality 0..*, and from 'org_behavior_UnresolvedCall', the role 'org_behavior_UnresolvedCall' has cardinality 0..*.
+An association connects 'behavior_Expression' and 'org_behavior_UnresolvedCall'. From 'behavior_Expression', the role 'behavior_Expression57' has cardinality 0..*, and from 'org_behavior_UnresolvedCall', the role 'org_behavior_UnresolvedCall56' has cardinality 0..*.
+An association connects 'structure_Type' and 'org_behavior_UnresolvedCall'. From 'structure_Type', the role 'structure_Type60' has cardinality 0..*, and from 'org_behavior_UnresolvedCall', the role 'org_behavior_UnresolvedCall59' has cardinality 0..*.
+An association connects 'org_behavior_UnresolvedCall' and 'structure_Type'. From 'org_behavior_UnresolvedCall', the role 'org_behavior_UnresolvedCall62' has cardinality 0..*, and from 'structure_Type', the role 'structure_Type63' has cardinality 0..*.
+An association connects 'org_behavior_CallOperation' and 'structure_Operation'. From 'org_behavior_CallOperation', the role 'org_behavior_CallOperation' has cardinality 0..*, and from 'structure_Operation', the role 'structure_Operation' has cardinality 0..*.
+An association connects 'structure_Property' and 'org_behavior_CallProperty'. From 'structure_Property', the role 'structure_Property' has cardinality 0..*, and from 'org_behavior_CallProperty', the role 'org_behavior_CallProperty' has cardinality 0..*.
+An association connects 'structure_EnumerationLiteral' and 'org_behavior_CallEnumLiteral'. From 'structure_EnumerationLiteral', the role 'structure_EnumerationLiteral' has cardinality 0..*, and from 'org_behavior_CallEnumLiteral', the role 'org_behavior_CallEnumLiteral' has cardinality 0..*.
+An association connects 'org_behavior_CallModelTransformation' and 'structure_ModelTransformation'. From 'org_behavior_CallModelTransformation', the role 'org_behavior_CallModelTransformation' has cardinality 0..*, and from 'structure_ModelTransformation', the role 'structure_ModelTransformation' has cardinality 0..*.
+An association connects 'org_structure_KermetaModelElement' and 'structure_Tag'. From 'org_structure_KermetaModelElement', the role 'language' has cardinality 0..*, and from 'structure_Tag', the role 'kermeta' has cardinality 0..*.
+An association connects 'org_structure_KermetaModelElement' and 'structure_Tag'. From 'org_structure_KermetaModelElement', the role 'org_structure_KermetaModelElement' has cardinality 0..*, and from 'structure_Tag', the role 'structure_Tag' has cardinality 0..*.
+An association connects 'structure_Type' and 'org_structure_Operation'. From 'structure_Type', the role 'structure_Type71' has cardinality 0..*, and from 'org_structure_Operation', the role 'org_structure_Operation' has cardinality 0..*.
+An association connects 'org_structure_Operation' and 'structure_Parameter'. From 'org_structure_Operation', the role 'language73' has cardinality 0..*, and from 'structure_Parameter', the role 'kermeta74' has cardinality 0..*.
+An association connects 'structure_Constraint' and 'org_structure_Operation'. From 'structure_Constraint', the role 'kermeta77' has cardinality 0..*, and from 'org_structure_Operation', the role 'language76' has cardinality 0..*.
+An association connects 'structure_Constraint' and 'org_structure_Operation'. From 'structure_Constraint', the role 'kermeta80' has cardinality 0..*, and from 'org_structure_Operation', the role 'language79' has cardinality 0..*.
+An association connects 'behavior_Expression' and 'org_structure_Operation'. From 'behavior_Expression', the role 'behavior_Expression83' has cardinality 0..*, and from 'org_structure_Operation', the role 'org_structure_Operation82' has cardinality 0..*.
+An association connects 'org_structure_Operation' and 'structure_UnresolvedOperation'. From 'org_structure_Operation', the role 'org_structure_Operation85' has cardinality 0..*, and from 'structure_UnresolvedOperation', the role 'structure_UnresolvedOperation' has cardinality 0..*.
+An association connects 'org_structure_Operation' and 'structure_ClassDefinition'. From 'org_structure_Operation', the role 'language87' has cardinality 0..*, and from 'structure_ClassDefinition', the role 'kermeta88' has cardinality 0..*.
+An association connects 'structure_TypeVariable' and 'org_structure_Operation'. From 'structure_TypeVariable', the role 'structure_TypeVariable' has cardinality 0..*, and from 'org_structure_Operation', the role 'org_structure_Operation90' has cardinality 0..*.
+An association connects 'org_structure_Property' and 'structure_AbstractProperty'. From 'org_structure_Property', the role 'org_structure_Property' has cardinality 0..*, and from 'structure_AbstractProperty', the role 'structure_AbstractProperty' has cardinality 0..*.
+An association connects 'org_structure_Property' and 'behavior_Expression'. From 'org_structure_Property', the role 'org_structure_Property93' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression94' has cardinality 0..*.
+An association connects 'behavior_Expression' and 'org_structure_Property'. From 'behavior_Expression', the role 'behavior_Expression97' has cardinality 0..*, and from 'org_structure_Property', the role 'org_structure_Property96' has cardinality 0..*.
+An association connects 'structure_UnresolvedProperty' and 'org_structure_Property'. From 'structure_UnresolvedProperty', the role 'structure_UnresolvedProperty' has cardinality 0..*, and from 'org_structure_Property', the role 'org_structure_Property99' has cardinality 0..*.
+An association connects 'org_structure_Property' and 'structure_ClassDefinition'. From 'org_structure_Property', the role 'language101' has cardinality 0..*, and from 'structure_ClassDefinition', the role 'kermeta102' has cardinality 0..*.
+An association connects 'structure_TypeContainer' and 'org_structure_Type'. From 'structure_TypeContainer', the role 'kermeta105' has cardinality 0..*, and from 'org_structure_Type', the role 'language104' has cardinality 0..*.
+An association connects 'structure_Type' and 'org_structure_TypeContainer'. From 'structure_Type', the role 'kermeta108' has cardinality 0..*, and from 'org_structure_TypeContainer', the role 'language107' has cardinality 0..*.
+An association connects 'structure_Enumeration' and 'org_structure_EnumerationLiteral'. From 'structure_Enumeration', the role 'kermeta111' has cardinality 0..*, and from 'org_structure_EnumerationLiteral', the role 'language110' has cardinality 0..*.
+An association connects 'org_structure_TypeVariableBinding' and 'structure_TypeVariable'. From 'org_structure_TypeVariableBinding', the role 'org_structure_TypeVariableBinding' has cardinality 0..*, and from 'structure_TypeVariable', the role 'structure_TypeVariable113' has cardinality 0..*.
+An association connects 'org_structure_TypeVariableBinding' and 'structure_Type'. From 'org_structure_TypeVariableBinding', the role 'org_structure_TypeVariableBinding115' has cardinality 0..*, and from 'structure_Type', the role 'structure_Type116' has cardinality 0..*.
+An association connects 'structure_Type' and 'org_structure_TypeDefinition'. From 'structure_Type', the role 'structure_Type118' has cardinality 0..*, and from 'org_structure_TypeDefinition', the role 'org_structure_TypeDefinition' has cardinality 0..*.
+An association connects 'structure_Property' and 'org_structure_Class'. From 'structure_Property', the role 'structure_Property120' has cardinality 0..*, and from 'org_structure_Class', the role 'org_structure_Class' has cardinality 0..*.
+An association connects 'structure_Operation' and 'org_structure_Class'. From 'structure_Operation', the role 'structure_Operation123' has cardinality 0..*, and from 'org_structure_Class', the role 'org_structure_Class122' has cardinality 0..*.
+An association connects 'structure_Class' and 'org_structure_Class'. From 'structure_Class', the role 'structure_Class' has cardinality 0..*, and from 'org_structure_Class', the role 'org_structure_Class125' has cardinality 0..*.
+An association connects 'structure_EnumerationLiteral' and 'org_structure_Enumeration'. From 'structure_EnumerationLiteral', the role 'kermeta128' has cardinality 0..*, and from 'org_structure_Enumeration', the role 'language127' has cardinality 0..*.
+An association connects 'structure_Package' and 'org_structure_Package'. From 'structure_Package', the role 'kermeta131' has cardinality 0..*, and from 'org_structure_Package', the role 'language130' has cardinality 0..*.
+An association connects 'structure_Package' and 'org_structure_Package'. From 'structure_Package', the role 'kermeta134' has cardinality 0..*, and from 'org_structure_Package', the role 'language133' has cardinality 0..*.
+An association connects 'structure_AdaptationOperator' and 'org_structure_Package'. From 'structure_AdaptationOperator', the role 'structure_AdaptationOperator' has cardinality 0..*, and from 'org_structure_Package', the role 'org_structure_Package' has cardinality 0..*.
+An association connects 'structure_Operation' and 'org_structure_Parameter'. From 'structure_Operation', the role 'kermeta138' has cardinality 0..*, and from 'org_structure_Parameter', the role 'language137' has cardinality 0..*.
+An association connects 'org_structure_PrimitiveType' and 'structure_Type'. From 'org_structure_PrimitiveType', the role 'org_structure_PrimitiveType' has cardinality 0..*, and from 'structure_Type', the role 'structure_Type140' has cardinality 0..*.
+An association connects 'org_structure_TypedElement' and 'structure_Type'. From 'org_structure_TypedElement', the role 'org_structure_TypedElement' has cardinality 0..*, and from 'structure_Type', the role 'structure_Type142' has cardinality 0..*.
+An association connects 'structure_KermetaModelElement' and 'org_structure_Tag'. From 'structure_KermetaModelElement', the role 'kermeta145' has cardinality 0..*, and from 'org_structure_Tag', the role 'language144' has cardinality 0..*.
+An association connects 'org_structure_Constraint' and 'behavior_Expression'. From 'org_structure_Constraint', the role 'org_structure_Constraint' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression147' has cardinality 0..*.
+An association connects 'structure_ClassDefinition' and 'org_structure_Constraint'. From 'structure_ClassDefinition', the role 'kermeta150' has cardinality 0..*, and from 'org_structure_Constraint', the role 'language149' has cardinality 0..*.
+An association connects 'structure_Operation' and 'org_structure_Constraint'. From 'structure_Operation', the role 'kermeta153' has cardinality 0..*, and from 'org_structure_Constraint', the role 'language152' has cardinality 0..*.
+An association connects 'structure_Operation' and 'org_structure_Constraint'. From 'structure_Operation', the role 'kermeta156' has cardinality 0..*, and from 'org_structure_Constraint', the role 'language155' has cardinality 0..*.
+An association connects 'org_structure_ClassDefinition' and 'structure_Constraint'. From 'org_structure_ClassDefinition', the role 'language158' has cardinality 0..*, and from 'structure_Constraint', the role 'kermeta159' has cardinality 0..*.
+An association connects 'structure_Property' and 'org_structure_ClassDefinition'. From 'structure_Property', the role 'kermeta162' has cardinality 0..*, and from 'org_structure_ClassDefinition', the role 'language161' has cardinality 0..*.
+An association connects 'org_structure_ClassDefinition' and 'structure_Operation'. From 'org_structure_ClassDefinition', the role 'language164' has cardinality 0..*, and from 'structure_Operation', the role 'kermeta165' has cardinality 0..*.
+An association connects 'org_structure_Metamodel' and 'structure_Package'. From 'org_structure_Metamodel', the role 'org_structure_Metamodel' has cardinality 0..*, and from 'structure_Package', the role 'structure_Package' has cardinality 0..*.
+An association connects 'org_structure_Metamodel' and 'structure_FilteredMetamodelReference'. From 'org_structure_Metamodel', the role 'org_structure_Metamodel168' has cardinality 0..*, and from 'structure_FilteredMetamodelReference', the role 'structure_FilteredMetamodelReference' has cardinality 0..*.
+An association connects 'structure_ModelElementTypeDefinition' and 'org_structure_ModelElementTypeDefinitionContainer'. From 'structure_ModelElementTypeDefinition', the role 'structure_ModelElementTypeDefinition' has cardinality 0..*, and from 'org_structure_ModelElementTypeDefinitionContainer', the role 'org_structure_ModelElementTypeDefinitionContainer' has cardinality 0..*.
+An association connects 'org_structure_GenericTypeDefinition' and 'structure_TypeVariable'. From 'org_structure_GenericTypeDefinition', the role 'org_structure_GenericTypeDefinition' has cardinality 0..*, and from 'structure_TypeVariable', the role 'structure_TypeVariable171' has cardinality 0..*.
+An association connects 'structure_TypeVariableBinding' and 'org_structure_ParameterizedType'. From 'structure_TypeVariableBinding', the role 'structure_TypeVariableBinding' has cardinality 0..*, and from 'org_structure_ParameterizedType', the role 'org_structure_ParameterizedType' has cardinality 0..*.
+An association connects 'structure_TypeVariableBinding' and 'org_structure_ParameterizedType'. From 'structure_TypeVariableBinding', the role 'structure_TypeVariableBinding175' has cardinality 0..*, and from 'org_structure_ParameterizedType', the role 'org_structure_ParameterizedType174' has cardinality 0..*.
+An association connects 'structure_GenericTypeDefinition' and 'org_structure_ParameterizedType'. From 'structure_GenericTypeDefinition', the role 'structure_GenericTypeDefinition' has cardinality 0..*, and from 'org_structure_ParameterizedType', the role 'org_structure_ParameterizedType177' has cardinality 0..*.
+An association connects 'org_structure_TypeVariable' and 'structure_Type'. From 'org_structure_TypeVariable', the role 'org_structure_TypeVariable' has cardinality 0..*, and from 'structure_Type', the role 'structure_Type179' has cardinality 0..*.
+An association connects 'structure_VirtualType' and 'org_structure_ModelTypeVariable'. From 'structure_VirtualType', the role 'kermeta182' has cardinality 0..*, and from 'org_structure_ModelTypeVariable', the role 'language181' has cardinality 0..*.
+An association connects 'structure_ModelElementTypeDefinition' and 'org_structure_VirtualType'. From 'structure_ModelElementTypeDefinition', the role 'structure_ModelElementTypeDefinition184' has cardinality 0..*, and from 'org_structure_VirtualType', the role 'org_structure_VirtualType' has cardinality 0..*.
+An association connects 'structure_ModelTypeVariable' and 'org_structure_VirtualType'. From 'structure_ModelTypeVariable', the role 'kermeta187' has cardinality 0..*, and from 'org_structure_VirtualType', the role 'language186' has cardinality 0..*.
+An association connects 'structure_TypeVariableBinding' and 'org_structure_VirtualType'. From 'structure_TypeVariableBinding', the role 'structure_TypeVariableBinding190' has cardinality 0..*, and from 'org_structure_VirtualType', the role 'org_structure_VirtualType189' has cardinality 0..*.
+An association connects 'org_structure_Model' and 'structure_KermetaModelElement'. From 'org_structure_Model', the role 'org_structure_Model' has cardinality 0..*, and from 'structure_KermetaModelElement', the role 'structure_KermetaModelElement' has cardinality 0..*.
+An association connects 'org_structure_UnresolvedType' and 'structure_Using'. From 'org_structure_UnresolvedType', the role 'org_structure_UnresolvedType' has cardinality 0..*, and from 'structure_Using', the role 'structure_Using193' has cardinality 0..*.
+An association connects 'structure_Type' and 'org_structure_UnresolvedType'. From 'structure_Type', the role 'structure_Type196' has cardinality 0..*, and from 'org_structure_UnresolvedType', the role 'org_structure_UnresolvedType195' has cardinality 0..*.
+An association connects 'org_structure_ProductType' and 'structure_Type'. From 'org_structure_ProductType', the role 'org_structure_ProductType' has cardinality 0..*, and from 'structure_Type', the role 'structure_Type198' has cardinality 0..*.
+An association connects 'structure_Type' and 'org_structure_FunctionType'. From 'structure_Type', the role 'structure_Type200' has cardinality 0..*, and from 'org_structure_FunctionType', the role 'org_structure_FunctionType' has cardinality 0..*.
+An association connects 'structure_Type' and 'org_structure_FunctionType'. From 'structure_Type', the role 'structure_Type203' has cardinality 0..*, and from 'org_structure_FunctionType', the role 'org_structure_FunctionType202' has cardinality 0..*.
+An association connects 'org_structure_ModelTypeDefinitionBinding' and 'structure_ClassDefinitionBinding'. From 'org_structure_ModelTypeDefinitionBinding', the role 'org_structure_ModelTypeDefinitionBinding' has cardinality 0..*, and from 'structure_ClassDefinitionBinding', the role 'structure_ClassDefinitionBinding' has cardinality 0..*.
+An association connects 'org_structure_ModelTypeDefinitionBinding' and 'structure_UseAdaptationOperator'. From 'org_structure_ModelTypeDefinitionBinding', the role 'org_structure_ModelTypeDefinitionBinding206' has cardinality 0..*, and from 'structure_UseAdaptationOperator', the role 'structure_UseAdaptationOperator' has cardinality 0..*.
+An association connects 'structure_EnumerationBinding' and 'org_structure_ModelTypeDefinitionBinding'. From 'structure_EnumerationBinding', the role 'structure_EnumerationBinding' has cardinality 0..*, and from 'org_structure_ModelTypeDefinitionBinding', the role 'org_structure_ModelTypeDefinitionBinding208' has cardinality 0..*.
+An association connects 'structure_ModelTypeDefinition' and 'org_structure_ModelTypeDefinitionBinding'. From 'structure_ModelTypeDefinition', the role 'structure_ModelTypeDefinition' has cardinality 0..*, and from 'org_structure_ModelTypeDefinitionBinding', the role 'org_structure_ModelTypeDefinitionBinding210' has cardinality 0..*.
+An association connects 'structure_ModelTransformation' and 'org_structure_ModelTypeDefinitionBinding'. From 'structure_ModelTransformation', the role 'structure_ModelTransformation213' has cardinality 0..*, and from 'org_structure_ModelTypeDefinitionBinding', the role 'org_structure_ModelTypeDefinitionBinding212' has cardinality 0..*.
+An association connects 'structure_PropertyBinding' and 'org_structure_ClassDefinitionBinding'. From 'structure_PropertyBinding', the role 'structure_PropertyBinding' has cardinality 0..*, and from 'org_structure_ClassDefinitionBinding', the role 'org_structure_ClassDefinitionBinding' has cardinality 0..*.
+An association connects 'org_structure_ClassDefinitionBinding' and 'structure_OperationBinding'. From 'org_structure_ClassDefinitionBinding', the role 'org_structure_ClassDefinitionBinding216' has cardinality 0..*, and from 'structure_OperationBinding', the role 'structure_OperationBinding' has cardinality 0..*.
+An association connects 'org_structure_ClassDefinitionBinding' and 'structure_ClassDefinition'. From 'org_structure_ClassDefinitionBinding', the role 'org_structure_ClassDefinitionBinding218' has cardinality 0..*, and from 'structure_ClassDefinition', the role 'structure_ClassDefinition' has cardinality 0..*.
+An association connects 'structure_ClassDefinition' and 'org_structure_ClassDefinitionBinding'. From 'structure_ClassDefinition', the role 'structure_ClassDefinition221' has cardinality 0..*, and from 'org_structure_ClassDefinitionBinding', the role 'org_structure_ClassDefinitionBinding220' has cardinality 0..*.
+An association connects 'structure_Enumeration' and 'org_structure_EnumerationBinding'. From 'structure_Enumeration', the role 'structure_Enumeration' has cardinality 0..*, and from 'org_structure_EnumerationBinding', the role 'org_structure_EnumerationBinding' has cardinality 0..*.
+An association connects 'structure_Enumeration' and 'org_structure_EnumerationBinding'. From 'structure_Enumeration', the role 'structure_Enumeration225' has cardinality 0..*, and from 'org_structure_EnumerationBinding', the role 'org_structure_EnumerationBinding224' has cardinality 0..*.
+An association connects 'structure_Property' and 'org_structure_PropertyBinding'. From 'structure_Property', the role 'structure_Property227' has cardinality 0..*, and from 'org_structure_PropertyBinding', the role 'org_structure_PropertyBinding' has cardinality 0..*.
+An association connects 'org_structure_PropertyBinding' and 'structure_Property'. From 'org_structure_PropertyBinding', the role 'org_structure_PropertyBinding229' has cardinality 0..*, and from 'structure_Property', the role 'structure_Property230' has cardinality 0..*.
+An association connects 'org_structure_OperationBinding' and 'structure_Operation'. From 'org_structure_OperationBinding', the role 'org_structure_OperationBinding' has cardinality 0..*, and from 'structure_Operation', the role 'structure_Operation232' has cardinality 0..*.
+An association connects 'org_structure_OperationBinding' and 'structure_Operation'. From 'org_structure_OperationBinding', the role 'org_structure_OperationBinding234' has cardinality 0..*, and from 'structure_Operation', the role 'structure_Operation235' has cardinality 0..*.
+An association connects 'structure_AdaptationParameter' and 'org_structure_AdaptationOperator'. From 'structure_AdaptationParameter', the role 'structure_AdaptationParameter' has cardinality 0..*, and from 'org_structure_AdaptationOperator', the role 'org_structure_AdaptationOperator' has cardinality 0..*.
+An association connects 'structure_KermetaModelElement' and 'org_structure_UseAdaptationOperator'. From 'structure_KermetaModelElement', the role 'structure_KermetaModelElement238' has cardinality 0..*, and from 'org_structure_UseAdaptationOperator', the role 'org_structure_UseAdaptationOperator' has cardinality 0..*.
+An association connects 'structure_UnresolvedReference' and 'org_structure_UseAdaptationOperator'. From 'structure_UnresolvedReference', the role 'structure_UnresolvedReference' has cardinality 0..*, and from 'org_structure_UseAdaptationOperator', the role 'org_structure_UseAdaptationOperator240' has cardinality 0..*.
+An association connects 'structure_AdaptationOperator' and 'org_structure_UseAdaptationOperator'. From 'structure_AdaptationOperator', the role 'structure_AdaptationOperator243' has cardinality 0..*, and from 'org_structure_UseAdaptationOperator', the role 'org_structure_UseAdaptationOperator242' has cardinality 0..*.
+An association connects 'org_structure_PropertyAdaptationOperator' and 'structure_Property'. From 'org_structure_PropertyAdaptationOperator', the role 'org_structure_PropertyAdaptationOperator' has cardinality 0..*, and from 'structure_Property', the role 'structure_Property245' has cardinality 0..*.
+An association connects 'org_structure_OperationAdaptationOperator' and 'structure_Operation'. From 'org_structure_OperationAdaptationOperator', the role 'org_structure_OperationAdaptationOperator' has cardinality 0..*, and from 'structure_Operation', the role 'structure_Operation247' has cardinality 0..*.
+An association connects 'structure_ModelTypeDefinition' and 'org_structure_ModelType'. From 'structure_ModelTypeDefinition', the role 'structure_ModelTypeDefinition249' has cardinality 0..*, and from 'org_structure_ModelType', the role 'org_structure_ModelType' has cardinality 0..*.
+An association connects 'structure_Metamodel' and 'org_structure_FilteredMetamodelReference'. From 'structure_Metamodel', the role 'structure_Metamodel' has cardinality 0..*, and from 'org_structure_FilteredMetamodelReference', the role 'org_structure_FilteredMetamodelReference' has cardinality 0..*.
+An association connects 'structure_Metamodel' and 'org_structure_ModelTypeDefinition'. From 'structure_Metamodel', the role 'structure_Metamodel252' has cardinality 0..*, and from 'org_structure_ModelTypeDefinition', the role 'org_structure_ModelTypeDefinition' has cardinality 0..*.
+An association connects 'org_structure_ModelTypeDefinition' and 'structure_ModelTypeDefinitionBinding'. From 'org_structure_ModelTypeDefinition', the role 'org_structure_ModelTypeDefinition254' has cardinality 0..*, and from 'structure_ModelTypeDefinitionBinding', the role 'structure_ModelTypeDefinitionBinding' has cardinality 0..*.
+An association connects 'org_structure_ModelTypeDefinition' and 'structure_ModelTransformation'. From 'org_structure_ModelTypeDefinition', the role 'language256' has cardinality 0..*, and from 'structure_ModelTransformation', the role 'kermeta257' has cardinality 0..*.
+An association connects 'structure_ModelElementTypeDefinition' and 'org_structure_ModelTypeDefinition'. From 'structure_ModelElementTypeDefinition', the role 'structure_ModelElementTypeDefinition260' has cardinality 0..*, and from 'org_structure_ModelTypeDefinition', the role 'org_structure_ModelTypeDefinition259' has cardinality 0..*.
+An association connects 'structure_ModelTypeVariable' and 'org_structure_ModelTransformation'. From 'structure_ModelTypeVariable', the role 'structure_ModelTypeVariable' has cardinality 0..*, and from 'org_structure_ModelTransformation', the role 'org_structure_ModelTransformation' has cardinality 0..*.
+An association connects 'behavior_Expression' and 'org_structure_ModelTransformation'. From 'behavior_Expression', the role 'behavior_Expression264' has cardinality 0..*, and from 'org_structure_ModelTransformation', the role 'org_structure_ModelTransformation263' has cardinality 0..*.
+An association connects 'org_structure_ModelTransformation' and 'structure_Operation'. From 'org_structure_ModelTransformation', the role 'org_structure_ModelTransformation266' has cardinality 0..*, and from 'structure_Operation', the role 'structure_Operation267' has cardinality 0..*.
+An association connects 'structure_ModelTypeDefinition' and 'org_structure_ModelTransformation'. From 'structure_ModelTypeDefinition', the role 'kermeta270' has cardinality 0..*, and from 'org_structure_ModelTransformation', the role 'language269' has cardinality 0..*.
+An association connects 'structure_Parameter' and 'org_structure_ModelTransformation'. From 'structure_Parameter', the role 'structure_Parameter' has cardinality 0..*, and from 'org_structure_ModelTransformation', the role 'org_structure_ModelTransformation272' has cardinality 0..*.
+An association connects 'structure_ModelTypeDefinition' and 'org_structure_ModelTypeDefinitionContainer'. From 'structure_ModelTypeDefinition', the role 'structure_ModelTypeDefinition274' has cardinality 0..*, and from 'org_structure_ModelTypeDefinitionContainer', the role 'org_structure_ModelTypeDefinitionContainer' has cardinality 0..*.

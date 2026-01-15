@@ -1,0 +1,18 @@
+The domain model 'geneology' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'geneology_Member' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'female', which is of type bool.
+
+'geneology_Geneology' represents an important domain concept.
+It does not declare any attributes.
+
+'geneology_Family' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'geneology_Geneology' and 'geneology_Family'. From 'geneology_Geneology', the role 'geneology' has cardinality 0..*, and from 'geneology_Family', the role 'Family' has cardinality 0..*.
+An association connects 'geneology_Family' and 'geneology_Member'. From 'geneology_Family', the role 'family' has cardinality 0..*, and from 'geneology_Member', the role 'Member' has cardinality 0..*.
+An association connects 'geneology_Family' and 'geneology_Geneology'. From 'geneology_Family', the role 'families' has cardinality 0..*, and from 'geneology_Geneology', the role 'Geneology' has cardinality 0..*.
+An association connects 'geneology_Member' and 'geneology_Family'. From 'geneology_Member', the role 'members' has cardinality 0..*, and from 'geneology_Family', the role 'Family4' has cardinality 0..*.

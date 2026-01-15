@@ -1,0 +1,16 @@
+The domain model 'xyz' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'xyz_Z' represents an important domain concept.
+It does not declare any attributes.
+
+'xyz_Y' represents an important domain concept.
+It does not declare any attributes.
+
+'xyz_X' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'xyz_X' and 'xyz_Y'. From 'xyz_X', the role 'xyz_X' has cardinality 0..*, and from 'xyz_Y', the role 'xyz_Y' has cardinality 0..*.
+An association connects 'xyz_Z' and 'xyz_Y'. From 'xyz_Z', the role 'xyz_Z' has cardinality 0..*, and from 'xyz_Y', the role 'xyz_Y2' has cardinality 0..*.

@@ -1,0 +1,789 @@
+The domain model 'javaMM' describes the core structural elements and their relationships within the system.
+
+The model defines 152 main class(es).
+
+'javaMM_ClassInstanceCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_EnumDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_MethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_SingleVariableAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_TextElement' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'javaMM_ManifestAttribute' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'javaMM_MethodRef' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_UnresolvedLabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_Comment' represents an important domain concept.
+It has the following attributes: 'enclosedByParent', which is of type bool; 'prefixOfParent', which is of type bool; 'content', which is of type str.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_UnresolvedType' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_PrefixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'javaMM_CompilationUnit' represents an important domain concept.
+It has one attribute: 'originalFilePath', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_UnresolvedVariableDeclarationFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_LineComment' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_ConstructorDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'LabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_UnresolvedItem' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_AbstractTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_UnresolvedClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_PackageAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_MethodRefParameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'varargs', which is of type bool.
+
+'javaMM_TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_VariableDeclarationFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_BlockComment' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'SingleVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractVariablesContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_UnresolvedMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_EnumConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_VariableDeclarationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_NumberLiteral' represents an important domain concept.
+It has one attribute: 'tokenValue', which is of type str.
+
+'AbstractMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_SynchronizedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'NamespaceAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_UnresolvedAnnotationDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_UnresolvedSingleVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_PrimitiveTypeShort' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_InfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'javaMM_InterfaceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_ArrayCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_PrimitiveTypeChar' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_EnhancedForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_Archive' represents an important domain concept.
+It has one attribute: 'originalFilePath', which is of type str.
+
+'javaMM_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'javaMM_PrimitiveTypeByte' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_AnonymousClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_SuperFieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_Modifier' represents an important domain concept.
+It has the following attributes: 'volatile', which is of type bool; 'transient', which is of type bool; 'static', which is of type bool; 'visibility', which is of type str; 'native', which is of type bool; 'strictfp', which is of type bool; 'inheritance', which is of type str; 'synchronized', which is of type bool.
+
+'javaMM_AnnotationTypeMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_VariableDeclarationStatement' represents an important domain concept.
+It has one attribute: 'extraArrayDimensions', which is of type int.
+
+'javaMM_AbstractTypeQualifiedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_FieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_ImportDeclaration' represents an important domain concept.
+It has one attribute: 'static', which is of type bool.
+
+'javaMM_AssertStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_UnresolvedTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_SuperMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_TypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_PrimitiveTypeBoolean' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_CharacterLiteral' represents an important domain concept.
+It has one attribute: 'escapedValue', which is of type str.
+
+'javaMM_ThrowStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_UnresolvedItemAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_FieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'UnresolvedItem' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_LabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_Initializer' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_PrimitiveTypeInt' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_ArrayType' represents an important domain concept.
+It has one attribute: 'dimensions', which is of type int.
+
+'InterfaceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_CatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_NamedElement' represents an important domain concept.
+It has the following attributes: 'proxy', which is of type bool; 'name', which is of type str.
+
+'javaMM_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_MethodDeclaration' represents an important domain concept.
+It has one attribute: 'extraArrayDimensions', which is of type int.
+
+'javaMM_AbstractMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_PrimitiveTypeDouble' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_SwitchCase' represents an important domain concept.
+It has one attribute: 'default', which is of type bool.
+
+'AnnotationTypeMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_TypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_ClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_ArrayLengthAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_SingleVariableDeclaration' represents an important domain concept.
+It has one attribute: 'varargs', which is of type bool.
+
+'javaMM_Javadoc' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_TypeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'javaMM_PrimitiveTypeVoid' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTypeQualifiedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_UnresolvedAnnotationTypeMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_Assignment' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'javaMM_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_StringLiteral' represents an important domain concept.
+It has one attribute: 'escapedValue', which is of type str.
+
+'javaMM_EmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'extraArrayDimensions', which is of type int.
+
+'javaMM_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_ThisExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_TagElement' represents an important domain concept.
+It has one attribute: 'tagName', which is of type str.
+
+'javaMM_ParameterizedType' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_InstanceofExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_WildCardType' represents an important domain concept.
+It has one attribute: 'upperBound', which is of type bool.
+
+'javaMM_AnnotationTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_DoStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_NamespaceAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_PostfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'javaMM_PrimitiveTypeLong' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_ManifestEntry' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'javaMM_UnresolvedEnumDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_Manifest' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_CastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_TypeDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_SuperConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_AbstractVariablesContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_ConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_UnresolvedInterfaceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_PrimitiveTypeFloat' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_ParenthesizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_TryStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_ClassFile' represents an important domain concept.
+It has one attribute: 'originalFilePath', which is of type str.
+
+'javaMM_ArrayAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_AnnotationMemberValuePair' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_MemberRef' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclarationFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMM_AbstractMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'InheritanceKind' defines the following possible values: 'none', 'final', 'abstract'.
+The enumeration 'PostfixExpressionKind' defines the following possible values: 'DECREMENT', 'INCREMENT'.
+The enumeration 'InfixExpressionKind' defines the following possible values: 'LESS', 'OR', 'GREATER', 'MINUS', 'NOT_EQUALS', 'AND', 'CONDITIONAL_AND', 'LESS_EQUALS', 'PLUS', 'DIVIDE', 'EQUALS', 'LEFT_SHIFT', 'GREATER_EQUALS', 'RIGHT_SHIFT_SIGNED', 'TIMES', 'XOR', 'RIGHT_SHIFT_UNSIGNED', 'REMAINDER', 'CONDITIONAL_OR'.
+The enumeration 'AssignmentKind' defines the following possible values: 'RIGHT_SHIFT_SIGNED_ASSIGN', 'MINUS_ASSIGN', 'BIT_AND_ASSIGN', 'ASSIGN', 'DIVIDE_ASSIGN', 'RIGHT_SHIFT_UNSIGNED_ASSIGN', 'BIT_OR_ASSIGN', 'BIT_XOR_ASSIGN', 'PLUS_ASSIGN', 'TIMES_ASSIGN', 'REMAINDER_ASSIGN', 'LEFT_SHIFT_ASSIGN'.
+The enumeration 'PrefixExpressionKind' defines the following possible values: 'COMPLEMENT', 'PLUS', 'INCREMENT', 'NOT', 'DECREMENT', 'MINUS'.
+The enumeration 'VisibilityKind' defines the following possible values: 'private', 'protected', 'public', 'none'.
+
+The model also captures inheritance relationships between classes.
+The class 'javaMM_AbstractMethodDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'javaMM_AbstractMethodInvocation' is a specialization of 'ASTNode'.
+The class 'javaMM_AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'javaMM_AbstractTypeDeclaration' is a specialization of 'Type'.
+The class 'javaMM_AbstractTypeQualifiedExpression' is a specialization of 'Expression'.
+The class 'javaMM_AbstractVariablesContainer' is a specialization of 'ASTNode'.
+The class 'javaMM_Annotation' is a specialization of 'Expression'.
+The class 'javaMM_Archive' is a specialization of 'NamedElement'.
+The class 'javaMM_AssertStatement' is a specialization of 'Statement'.
+The class 'javaMM_AnnotationMemberValuePair' is a specialization of 'NamedElement'.
+The class 'javaMM_AnnotationTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'javaMM_AnnotationTypeMemberDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'javaMM_AnonymousClassDeclaration' is a specialization of 'ASTNode'.
+The class 'javaMM_ArrayAccess' is a specialization of 'Expression'.
+The class 'javaMM_ArrayCreation' is a specialization of 'Expression'.
+The class 'javaMM_ArrayInitializer' is a specialization of 'Expression'.
+The class 'javaMM_ArrayLengthAccess' is a specialization of 'Expression'.
+The class 'javaMM_ArrayType' is a specialization of 'Type'.
+The class 'javaMM_Assignment' is a specialization of 'Expression'.
+The class 'javaMM_BodyDeclaration' is a specialization of 'NamedElement'.
+The class 'javaMM_BooleanLiteral' is a specialization of 'Expression'.
+The class 'javaMM_BlockComment' is a specialization of 'Comment'.
+The class 'javaMM_Block' is a specialization of 'Statement'.
+The class 'javaMM_BreakStatement' is a specialization of 'Statement'.
+The class 'javaMM_CastExpression' is a specialization of 'Expression'.
+The class 'javaMM_CatchClause' is a specialization of 'Statement'.
+The class 'javaMM_CharacterLiteral' is a specialization of 'Expression'.
+The class 'javaMM_ClassFile' is a specialization of 'NamedElement'.
+The class 'javaMM_ClassInstanceCreation' is a specialization of 'Expression'.
+The class 'javaMM_ClassInstanceCreation' is a specialization of 'AbstractMethodInvocation'.
+The class 'javaMM_ConstructorDeclaration' is a specialization of 'AbstractMethodDeclaration'.
+The class 'javaMM_ConditionalExpression' is a specialization of 'Expression'.
+The class 'javaMM_ConstructorInvocation' is a specialization of 'Statement'.
+The class 'javaMM_ConstructorInvocation' is a specialization of 'AbstractMethodInvocation'.
+The class 'javaMM_ClassDeclaration' is a specialization of 'TypeDeclaration'.
+The class 'javaMM_Comment' is a specialization of 'ASTNode'.
+The class 'javaMM_CompilationUnit' is a specialization of 'NamedElement'.
+The class 'javaMM_ContinueStatement' is a specialization of 'Statement'.
+The class 'javaMM_DoStatement' is a specialization of 'Statement'.
+The class 'javaMM_EmptyStatement' is a specialization of 'Statement'.
+The class 'javaMM_EnhancedForStatement' is a specialization of 'Statement'.
+The class 'javaMM_EnumConstantDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'javaMM_EnumConstantDeclaration' is a specialization of 'VariableDeclaration'.
+The class 'javaMM_EnumDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'javaMM_Expression' is a specialization of 'ASTNode'.
+The class 'javaMM_ExpressionStatement' is a specialization of 'Statement'.
+The class 'javaMM_FieldAccess' is a specialization of 'Expression'.
+The class 'javaMM_FieldDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'javaMM_FieldDeclaration' is a specialization of 'AbstractVariablesContainer'.
+The class 'javaMM_ForStatement' is a specialization of 'Statement'.
+The class 'javaMM_IfStatement' is a specialization of 'Statement'.
+The class 'javaMM_ImportDeclaration' is a specialization of 'ASTNode'.
+The class 'javaMM_InfixExpression' is a specialization of 'Expression'.
+The class 'javaMM_Initializer' is a specialization of 'BodyDeclaration'.
+The class 'javaMM_InstanceofExpression' is a specialization of 'Expression'.
+The class 'javaMM_InterfaceDeclaration' is a specialization of 'TypeDeclaration'.
+The class 'javaMM_Javadoc' is a specialization of 'Comment'.
+The class 'javaMM_LabeledStatement' is a specialization of 'NamedElement'.
+The class 'javaMM_LabeledStatement' is a specialization of 'Statement'.
+The class 'javaMM_LineComment' is a specialization of 'Comment'.
+The class 'javaMM_MemberRef' is a specialization of 'ASTNode'.
+The class 'javaMM_MethodDeclaration' is a specialization of 'AbstractMethodDeclaration'.
+The class 'javaMM_MethodInvocation' is a specialization of 'Expression'.
+The class 'javaMM_MethodInvocation' is a specialization of 'AbstractMethodInvocation'.
+The class 'javaMM_MethodRef' is a specialization of 'ASTNode'.
+The class 'javaMM_MethodRefParameter' is a specialization of 'ASTNode'.
+The class 'javaMM_Modifier' is a specialization of 'ASTNode'.
+The class 'javaMM_NamedElement' is a specialization of 'ASTNode'.
+The class 'javaMM_NamespaceAccess' is a specialization of 'ASTNode'.
+The class 'javaMM_NumberLiteral' is a specialization of 'Expression'.
+The class 'javaMM_NullLiteral' is a specialization of 'Expression'.
+The class 'javaMM_Package' is a specialization of 'NamedElement'.
+The class 'javaMM_PackageAccess' is a specialization of 'NamespaceAccess'.
+The class 'javaMM_ParameterizedType' is a specialization of 'Type'.
+The class 'javaMM_ParenthesizedExpression' is a specialization of 'Expression'.
+The class 'javaMM_PostfixExpression' is a specialization of 'Expression'.
+The class 'javaMM_PrefixExpression' is a specialization of 'Expression'.
+The class 'javaMM_PrimitiveType' is a specialization of 'Type'.
+The class 'javaMM_PrimitiveTypeBoolean' is a specialization of 'PrimitiveType'.
+The class 'javaMM_PrimitiveTypeByte' is a specialization of 'PrimitiveType'.
+The class 'javaMM_PrimitiveTypeChar' is a specialization of 'PrimitiveType'.
+The class 'javaMM_PrimitiveTypeDouble' is a specialization of 'PrimitiveType'.
+The class 'javaMM_PrimitiveTypeShort' is a specialization of 'PrimitiveType'.
+The class 'javaMM_PrimitiveTypeFloat' is a specialization of 'PrimitiveType'.
+The class 'javaMM_PrimitiveTypeInt' is a specialization of 'PrimitiveType'.
+The class 'javaMM_PrimitiveTypeLong' is a specialization of 'PrimitiveType'.
+The class 'javaMM_PrimitiveTypeVoid' is a specialization of 'PrimitiveType'.
+The class 'javaMM_ReturnStatement' is a specialization of 'Statement'.
+The class 'javaMM_SingleVariableAccess' is a specialization of 'Expression'.
+The class 'javaMM_SingleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+The class 'javaMM_Statement' is a specialization of 'ASTNode'.
+The class 'javaMM_StringLiteral' is a specialization of 'Expression'.
+The class 'javaMM_SuperConstructorInvocation' is a specialization of 'Statement'.
+The class 'javaMM_SuperConstructorInvocation' is a specialization of 'AbstractMethodInvocation'.
+The class 'javaMM_SuperFieldAccess' is a specialization of 'AbstractTypeQualifiedExpression'.
+The class 'javaMM_SuperMethodInvocation' is a specialization of 'AbstractTypeQualifiedExpression'.
+The class 'javaMM_SuperMethodInvocation' is a specialization of 'AbstractMethodInvocation'.
+The class 'javaMM_SwitchCase' is a specialization of 'Statement'.
+The class 'javaMM_SwitchStatement' is a specialization of 'Statement'.
+The class 'javaMM_SynchronizedStatement' is a specialization of 'Statement'.
+The class 'javaMM_TagElement' is a specialization of 'ASTNode'.
+The class 'javaMM_TextElement' is a specialization of 'ASTNode'.
+The class 'javaMM_ThisExpression' is a specialization of 'AbstractTypeQualifiedExpression'.
+The class 'javaMM_ThrowStatement' is a specialization of 'Statement'.
+The class 'javaMM_TryStatement' is a specialization of 'Statement'.
+The class 'javaMM_Type' is a specialization of 'NamedElement'.
+The class 'javaMM_TypeAccess' is a specialization of 'Expression'.
+The class 'javaMM_TypeAccess' is a specialization of 'NamespaceAccess'.
+The class 'javaMM_TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'javaMM_TypeDeclarationStatement' is a specialization of 'Statement'.
+The class 'javaMM_TypeLiteral' is a specialization of 'Expression'.
+The class 'javaMM_TypeParameter' is a specialization of 'Type'.
+The class 'javaMM_UnresolvedItem' is a specialization of 'NamedElement'.
+The class 'javaMM_UnresolvedItemAccess' is a specialization of 'Expression'.
+The class 'javaMM_UnresolvedItemAccess' is a specialization of 'NamespaceAccess'.
+The class 'javaMM_UnresolvedAnnotationDeclaration' is a specialization of 'AnnotationTypeDeclaration'.
+The class 'javaMM_UnresolvedAnnotationDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'javaMM_UnresolvedAnnotationTypeMemberDeclaration' is a specialization of 'AnnotationTypeMemberDeclaration'.
+The class 'javaMM_UnresolvedAnnotationTypeMemberDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'javaMM_UnresolvedClassDeclaration' is a specialization of 'ClassDeclaration'.
+The class 'javaMM_UnresolvedClassDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'javaMM_UnresolvedEnumDeclaration' is a specialization of 'EnumDeclaration'.
+The class 'javaMM_UnresolvedEnumDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'javaMM_UnresolvedInterfaceDeclaration' is a specialization of 'InterfaceDeclaration'.
+The class 'javaMM_UnresolvedInterfaceDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'javaMM_UnresolvedLabeledStatement' is a specialization of 'LabeledStatement'.
+The class 'javaMM_UnresolvedLabeledStatement' is a specialization of 'UnresolvedItem'.
+The class 'javaMM_UnresolvedMethodDeclaration' is a specialization of 'MethodDeclaration'.
+The class 'javaMM_UnresolvedMethodDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'javaMM_UnresolvedSingleVariableDeclaration' is a specialization of 'SingleVariableDeclaration'.
+The class 'javaMM_UnresolvedSingleVariableDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'javaMM_UnresolvedType' is a specialization of 'Type'.
+The class 'javaMM_UnresolvedType' is a specialization of 'UnresolvedItem'.
+The class 'javaMM_UnresolvedTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'javaMM_UnresolvedTypeDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'javaMM_UnresolvedVariableDeclarationFragment' is a specialization of 'VariableDeclarationFragment'.
+The class 'javaMM_UnresolvedVariableDeclarationFragment' is a specialization of 'UnresolvedItem'.
+The class 'javaMM_VariableDeclaration' is a specialization of 'NamedElement'.
+The class 'javaMM_VariableDeclarationExpression' is a specialization of 'Expression'.
+The class 'javaMM_VariableDeclarationExpression' is a specialization of 'AbstractVariablesContainer'.
+The class 'javaMM_VariableDeclarationFragment' is a specialization of 'VariableDeclaration'.
+The class 'javaMM_VariableDeclarationStatement' is a specialization of 'Statement'.
+The class 'javaMM_VariableDeclarationStatement' is a specialization of 'AbstractVariablesContainer'.
+The class 'javaMM_WildCardType' is a specialization of 'Type'.
+The class 'javaMM_WhileStatement' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'javaMM_Block' and 'javaMM_AbstractMethodDeclaration'. From 'javaMM_Block', the role 'javaMM_Block' has cardinality 0..*, and from 'javaMM_AbstractMethodDeclaration', the role 'javaMM_AbstractMethodDeclaration' has cardinality 0..*.
+An association connects 'javaMM_SingleVariableDeclaration' and 'javaMM_AbstractMethodDeclaration'. From 'javaMM_SingleVariableDeclaration', the role 'SingleVariableDeclaration' has cardinality 0..*, and from 'javaMM_AbstractMethodDeclaration', the role 'methodDeclaration' has cardinality 0..*.
+An association connects 'javaMM_TypeAccess' and 'javaMM_AbstractMethodDeclaration'. From 'javaMM_TypeAccess', the role 'javaMM_TypeAccess' has cardinality 0..*, and from 'javaMM_AbstractMethodDeclaration', the role 'javaMM_AbstractMethodDeclaration3' has cardinality 0..*.
+An association connects 'javaMM_TypeParameter' and 'javaMM_AbstractMethodDeclaration'. From 'javaMM_TypeParameter', the role 'javaMM_TypeParameter' has cardinality 0..*, and from 'javaMM_AbstractMethodDeclaration', the role 'javaMM_AbstractMethodDeclaration5' has cardinality 0..*.
+An association connects 'javaMM_MethodRef' and 'javaMM_AbstractMethodDeclaration'. From 'javaMM_MethodRef', the role 'MethodRef' has cardinality 0..*, and from 'javaMM_AbstractMethodDeclaration', the role 'method' has cardinality 0..*.
+An association connects 'javaMM_AbstractMethodDeclaration' and 'javaMM_AbstractMethodInvocation'. From 'javaMM_AbstractMethodDeclaration', the role 'method8' has cardinality 0..*, and from 'javaMM_AbstractMethodInvocation', the role 'AbstractMethodInvocation' has cardinality 0..*.
+An association connects 'javaMM_AbstractMethodInvocation' and 'javaMM_AbstractMethodDeclaration'. From 'javaMM_AbstractMethodInvocation', the role 'usages' has cardinality 0..*, and from 'javaMM_AbstractMethodDeclaration', the role 'AbstractMethodDeclaration' has cardinality 0..*.
+An association connects 'javaMM_Expression' and 'javaMM_AbstractMethodInvocation'. From 'javaMM_Expression', the role 'javaMM_Expression' has cardinality 0..*, and from 'javaMM_AbstractMethodInvocation', the role 'javaMM_AbstractMethodInvocation' has cardinality 0..*.
+An association connects 'javaMM_TypeAccess' and 'javaMM_AbstractMethodInvocation'. From 'javaMM_TypeAccess', the role 'javaMM_TypeAccess13' has cardinality 0..*, and from 'javaMM_AbstractMethodInvocation', the role 'javaMM_AbstractMethodInvocation12' has cardinality 0..*.
+An association connects 'javaMM_AbstractTypeDeclaration' and 'javaMM_BodyDeclaration'. From 'javaMM_AbstractTypeDeclaration', the role 'abstractTypeDeclaration' has cardinality 0..*, and from 'javaMM_BodyDeclaration', the role 'BodyDeclaration' has cardinality 0..*.
+An association connects 'javaMM_Comment' and 'javaMM_AbstractTypeDeclaration'. From 'javaMM_Comment', the role 'javaMM_Comment' has cardinality 0..*, and from 'javaMM_AbstractTypeDeclaration', the role 'javaMM_AbstractTypeDeclaration' has cardinality 0..*.
+An association connects 'javaMM_Comment' and 'javaMM_AbstractTypeDeclaration'. From 'javaMM_Comment', the role 'javaMM_Comment18' has cardinality 0..*, and from 'javaMM_AbstractTypeDeclaration', the role 'javaMM_AbstractTypeDeclaration17' has cardinality 0..*.
+An association connects 'javaMM_Package' and 'javaMM_AbstractTypeDeclaration'. From 'javaMM_Package', the role 'Package' has cardinality 0..*, and from 'javaMM_AbstractTypeDeclaration', the role 'ownedElements' has cardinality 0..*.
+An association connects 'javaMM_AbstractTypeDeclaration' and 'javaMM_TypeAccess'. From 'javaMM_AbstractTypeDeclaration', the role 'javaMM_AbstractTypeDeclaration21' has cardinality 0..*, and from 'javaMM_TypeAccess', the role 'javaMM_TypeAccess22' has cardinality 0..*.
+An association connects 'javaMM_AbstractTypeQualifiedExpression' and 'javaMM_TypeAccess'. From 'javaMM_AbstractTypeQualifiedExpression', the role 'javaMM_AbstractTypeQualifiedExpression' has cardinality 0..*, and from 'javaMM_TypeAccess', the role 'javaMM_TypeAccess24' has cardinality 0..*.
+An association connects 'javaMM_TypeAccess' and 'javaMM_AbstractVariablesContainer'. From 'javaMM_TypeAccess', the role 'javaMM_TypeAccess26' has cardinality 0..*, and from 'javaMM_AbstractVariablesContainer', the role 'javaMM_AbstractVariablesContainer' has cardinality 0..*.
+An association connects 'javaMM_AbstractVariablesContainer' and 'javaMM_VariableDeclarationFragment'. From 'javaMM_AbstractVariablesContainer', the role 'variablesContainer' has cardinality 0..*, and from 'javaMM_VariableDeclarationFragment', the role 'VariableDeclarationFragment' has cardinality 0..*.
+An association connects 'javaMM_Annotation' and 'javaMM_TypeAccess'. From 'javaMM_Annotation', the role 'javaMM_Annotation' has cardinality 0..*, and from 'javaMM_TypeAccess', the role 'javaMM_TypeAccess29' has cardinality 0..*.
+An association connects 'javaMM_Annotation' and 'javaMM_AnnotationMemberValuePair'. From 'javaMM_Annotation', the role 'javaMM_Annotation31' has cardinality 0..*, and from 'javaMM_AnnotationMemberValuePair', the role 'javaMM_AnnotationMemberValuePair' has cardinality 0..*.
+An association connects 'javaMM_Archive' and 'javaMM_ClassFile'. From 'javaMM_Archive', the role 'javaMM_Archive' has cardinality 0..*, and from 'javaMM_ClassFile', the role 'javaMM_ClassFile' has cardinality 0..*.
+An association connects 'javaMM_Archive' and 'javaMM_Manifest'. From 'javaMM_Archive', the role 'javaMM_Archive34' has cardinality 0..*, and from 'javaMM_Manifest', the role 'javaMM_Manifest' has cardinality 0..*.
+An association connects 'javaMM_Expression' and 'javaMM_AssertStatement'. From 'javaMM_Expression', the role 'javaMM_Expression36' has cardinality 0..*, and from 'javaMM_AssertStatement', the role 'javaMM_AssertStatement' has cardinality 0..*.
+An association connects 'javaMM_AssertStatement' and 'javaMM_Expression'. From 'javaMM_AssertStatement', the role 'javaMM_AssertStatement38' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression39' has cardinality 0..*.
+An association connects 'javaMM_Comment' and 'javaMM_ASTNode'. From 'javaMM_Comment', the role 'javaMM_Comment41' has cardinality 0..*, and from 'javaMM_ASTNode', the role 'javaMM_ASTNode' has cardinality 0..*.
+An association connects 'javaMM_ASTNode' and 'javaMM_CompilationUnit'. From 'javaMM_ASTNode', the role 'javaMM_ASTNode43' has cardinality 0..*, and from 'javaMM_CompilationUnit', the role 'javaMM_CompilationUnit' has cardinality 0..*.
+An association connects 'javaMM_ASTNode' and 'javaMM_ClassFile'. From 'javaMM_ASTNode', the role 'javaMM_ASTNode45' has cardinality 0..*, and from 'javaMM_ClassFile', the role 'javaMM_ClassFile46' has cardinality 0..*.
+An association connects 'javaMM_AnnotationTypeMemberDeclaration' and 'javaMM_AnnotationMemberValuePair'. From 'javaMM_AnnotationTypeMemberDeclaration', the role 'AnnotationTypeMemberDeclaration' has cardinality 0..*, and from 'javaMM_AnnotationMemberValuePair', the role 'usages48' has cardinality 0..*.
+An association connects 'javaMM_AnnotationMemberValuePair' and 'javaMM_Expression'. From 'javaMM_AnnotationMemberValuePair', the role 'javaMM_AnnotationMemberValuePair50' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression51' has cardinality 0..*.
+An association connects 'javaMM_AnnotationTypeMemberDeclaration' and 'javaMM_Expression'. From 'javaMM_AnnotationTypeMemberDeclaration', the role 'javaMM_AnnotationTypeMemberDeclaration' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression53' has cardinality 0..*.
+An association connects 'javaMM_AnnotationTypeMemberDeclaration' and 'javaMM_TypeAccess'. From 'javaMM_AnnotationTypeMemberDeclaration', the role 'javaMM_AnnotationTypeMemberDeclaration55' has cardinality 0..*, and from 'javaMM_TypeAccess', the role 'javaMM_TypeAccess56' has cardinality 0..*.
+An association connects 'javaMM_AnnotationMemberValuePair' and 'javaMM_AnnotationTypeMemberDeclaration'. From 'javaMM_AnnotationMemberValuePair', the role 'AnnotationMemberValuePair' has cardinality 0..*, and from 'javaMM_AnnotationTypeMemberDeclaration', the role 'member' has cardinality 0..*.
+An association connects 'javaMM_BodyDeclaration' and 'javaMM_AnonymousClassDeclaration'. From 'javaMM_BodyDeclaration', the role 'BodyDeclaration59' has cardinality 0..*, and from 'javaMM_AnonymousClassDeclaration', the role 'anonymousClassDeclarationOwner' has cardinality 0..*.
+An association connects 'javaMM_AnonymousClassDeclaration' and 'javaMM_ClassInstanceCreation'. From 'javaMM_AnonymousClassDeclaration', the role 'anonymousClassDeclaration' has cardinality 0..*, and from 'javaMM_ClassInstanceCreation', the role 'ClassInstanceCreation' has cardinality 0..*.
+An association connects 'javaMM_ArrayAccess' and 'javaMM_Expression'. From 'javaMM_ArrayAccess', the role 'javaMM_ArrayAccess' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression62' has cardinality 0..*.
+An association connects 'javaMM_ArrayAccess' and 'javaMM_Expression'. From 'javaMM_ArrayAccess', the role 'javaMM_ArrayAccess64' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression65' has cardinality 0..*.
+An association connects 'javaMM_ArrayCreation' and 'javaMM_Expression'. From 'javaMM_ArrayCreation', the role 'javaMM_ArrayCreation' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression67' has cardinality 0..*.
+An association connects 'javaMM_ArrayInitializer' and 'javaMM_ArrayCreation'. From 'javaMM_ArrayInitializer', the role 'javaMM_ArrayInitializer' has cardinality 0..*, and from 'javaMM_ArrayCreation', the role 'javaMM_ArrayCreation69' has cardinality 0..*.
+An association connects 'javaMM_TypeAccess' and 'javaMM_ArrayCreation'. From 'javaMM_TypeAccess', the role 'javaMM_TypeAccess72' has cardinality 0..*, and from 'javaMM_ArrayCreation', the role 'javaMM_ArrayCreation71' has cardinality 0..*.
+An association connects 'javaMM_Expression' and 'javaMM_ArrayInitializer'. From 'javaMM_Expression', the role 'javaMM_Expression75' has cardinality 0..*, and from 'javaMM_ArrayInitializer', the role 'javaMM_ArrayInitializer74' has cardinality 0..*.
+An association connects 'javaMM_Expression' and 'javaMM_ArrayLengthAccess'. From 'javaMM_Expression', the role 'javaMM_Expression77' has cardinality 0..*, and from 'javaMM_ArrayLengthAccess', the role 'javaMM_ArrayLengthAccess' has cardinality 0..*.
+An association connects 'javaMM_TypeAccess' and 'javaMM_ArrayType'. From 'javaMM_TypeAccess', the role 'javaMM_TypeAccess79' has cardinality 0..*, and from 'javaMM_ArrayType', the role 'javaMM_ArrayType' has cardinality 0..*.
+An association connects 'javaMM_Assignment' and 'javaMM_Expression'. From 'javaMM_Assignment', the role 'javaMM_Assignment' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression81' has cardinality 0..*.
+An association connects 'javaMM_Assignment' and 'javaMM_Expression'. From 'javaMM_Assignment', the role 'javaMM_Assignment83' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression84' has cardinality 0..*.
+An association connects 'javaMM_AbstractTypeDeclaration' and 'javaMM_BodyDeclaration'. From 'javaMM_AbstractTypeDeclaration', the role 'AbstractTypeDeclaration' has cardinality 0..*, and from 'javaMM_BodyDeclaration', the role 'bodyDeclarations' has cardinality 0..*.
+An association connects 'javaMM_BodyDeclaration' and 'javaMM_Annotation'. From 'javaMM_BodyDeclaration', the role 'javaMM_BodyDeclaration' has cardinality 0..*, and from 'javaMM_Annotation', the role 'javaMM_Annotation87' has cardinality 0..*.
+An association connects 'javaMM_BodyDeclaration' and 'javaMM_AnonymousClassDeclaration'. From 'javaMM_BodyDeclaration', the role 'bodyDeclarations89' has cardinality 0..*, and from 'javaMM_AnonymousClassDeclaration', the role 'AnonymousClassDeclaration' has cardinality 0..*.
+An association connects 'javaMM_BodyDeclaration' and 'javaMM_Modifier'. From 'javaMM_BodyDeclaration', the role 'bodyDeclaration' has cardinality 0..*, and from 'javaMM_Modifier', the role 'Modifier' has cardinality 0..*.
+An association connects 'javaMM_Block' and 'javaMM_Statement'. From 'javaMM_Block', the role 'javaMM_Block92' has cardinality 0..*, and from 'javaMM_Statement', the role 'javaMM_Statement' has cardinality 0..*.
+An association connects 'javaMM_LabeledStatement' and 'javaMM_BreakStatement'. From 'javaMM_LabeledStatement', the role 'LabeledStatement' has cardinality 0..*, and from 'javaMM_BreakStatement', the role 'usagesInBreakStatements' has cardinality 0..*.
+An association connects 'javaMM_Expression' and 'javaMM_CastExpression'. From 'javaMM_Expression', the role 'javaMM_Expression95' has cardinality 0..*, and from 'javaMM_CastExpression', the role 'javaMM_CastExpression' has cardinality 0..*.
+An association connects 'javaMM_CastExpression' and 'javaMM_TypeAccess'. From 'javaMM_CastExpression', the role 'javaMM_CastExpression97' has cardinality 0..*, and from 'javaMM_TypeAccess', the role 'javaMM_TypeAccess98' has cardinality 0..*.
+An association connects 'javaMM_SingleVariableDeclaration' and 'javaMM_CatchClause'. From 'javaMM_SingleVariableDeclaration', the role 'SingleVariableDeclaration100' has cardinality 0..*, and from 'javaMM_CatchClause', the role 'catchClause' has cardinality 0..*.
+An association connects 'javaMM_CatchClause' and 'javaMM_Block'. From 'javaMM_CatchClause', the role 'javaMM_CatchClause' has cardinality 0..*, and from 'javaMM_Block', the role 'javaMM_Block102' has cardinality 0..*.
+An association connects 'javaMM_ClassFile' and 'javaMM_AbstractTypeDeclaration'. From 'javaMM_ClassFile', the role 'javaMM_ClassFile104' has cardinality 0..*, and from 'javaMM_AbstractTypeDeclaration', the role 'javaMM_AbstractTypeDeclaration105' has cardinality 0..*.
+An association connects 'javaMM_ClassFile' and 'javaMM_CompilationUnit'. From 'javaMM_ClassFile', the role 'javaMM_ClassFile107' has cardinality 0..*, and from 'javaMM_CompilationUnit', the role 'javaMM_CompilationUnit108' has cardinality 0..*.
+An association connects 'javaMM_Package' and 'javaMM_ClassFile'. From 'javaMM_Package', the role 'javaMM_Package' has cardinality 0..*, and from 'javaMM_ClassFile', the role 'javaMM_ClassFile110' has cardinality 0..*.
+An association connects 'javaMM_ClassInstanceCreation' and 'javaMM_AnonymousClassDeclaration'. From 'javaMM_ClassInstanceCreation', the role 'classInstanceCreation' has cardinality 0..*, and from 'javaMM_AnonymousClassDeclaration', the role 'AnonymousClassDeclaration112' has cardinality 0..*.
+An association connects 'javaMM_ClassInstanceCreation' and 'javaMM_Expression'. From 'javaMM_ClassInstanceCreation', the role 'javaMM_ClassInstanceCreation' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression114' has cardinality 0..*.
+An association connects 'javaMM_ClassInstanceCreation' and 'javaMM_TypeAccess'. From 'javaMM_ClassInstanceCreation', the role 'javaMM_ClassInstanceCreation116' has cardinality 0..*, and from 'javaMM_TypeAccess', the role 'javaMM_TypeAccess117' has cardinality 0..*.
+An association connects 'javaMM_Expression' and 'javaMM_ConditionalExpression'. From 'javaMM_Expression', the role 'javaMM_Expression119' has cardinality 0..*, and from 'javaMM_ConditionalExpression', the role 'javaMM_ConditionalExpression' has cardinality 0..*.
+An association connects 'javaMM_Expression' and 'javaMM_ConditionalExpression'. From 'javaMM_Expression', the role 'javaMM_Expression122' has cardinality 0..*, and from 'javaMM_ConditionalExpression', the role 'javaMM_ConditionalExpression121' has cardinality 0..*.
+An association connects 'javaMM_ConditionalExpression' and 'javaMM_Expression'. From 'javaMM_ConditionalExpression', the role 'javaMM_ConditionalExpression124' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression125' has cardinality 0..*.
+An association connects 'javaMM_ClassDeclaration' and 'javaMM_TypeAccess'. From 'javaMM_ClassDeclaration', the role 'javaMM_ClassDeclaration' has cardinality 0..*, and from 'javaMM_TypeAccess', the role 'javaMM_TypeAccess127' has cardinality 0..*.
+An association connects 'javaMM_CompilationUnit' and 'javaMM_Comment'. From 'javaMM_CompilationUnit', the role 'javaMM_CompilationUnit129' has cardinality 0..*, and from 'javaMM_Comment', the role 'javaMM_Comment130' has cardinality 0..*.
+An association connects 'javaMM_ImportDeclaration' and 'javaMM_CompilationUnit'. From 'javaMM_ImportDeclaration', the role 'javaMM_ImportDeclaration' has cardinality 0..*, and from 'javaMM_CompilationUnit', the role 'javaMM_CompilationUnit132' has cardinality 0..*.
+An association connects 'javaMM_Package' and 'javaMM_CompilationUnit'. From 'javaMM_Package', the role 'javaMM_Package135' has cardinality 0..*, and from 'javaMM_CompilationUnit', the role 'javaMM_CompilationUnit134' has cardinality 0..*.
+An association connects 'javaMM_CompilationUnit' and 'javaMM_AbstractTypeDeclaration'. From 'javaMM_CompilationUnit', the role 'javaMM_CompilationUnit137' has cardinality 0..*, and from 'javaMM_AbstractTypeDeclaration', the role 'javaMM_AbstractTypeDeclaration138' has cardinality 0..*.
+An association connects 'javaMM_ContinueStatement' and 'javaMM_LabeledStatement'. From 'javaMM_ContinueStatement', the role 'usagesInContinueStatements' has cardinality 0..*, and from 'javaMM_LabeledStatement', the role 'LabeledStatement140' has cardinality 0..*.
+An association connects 'javaMM_Expression' and 'javaMM_DoStatement'. From 'javaMM_Expression', the role 'javaMM_Expression142' has cardinality 0..*, and from 'javaMM_DoStatement', the role 'javaMM_DoStatement' has cardinality 0..*.
+An association connects 'javaMM_DoStatement' and 'javaMM_Statement'. From 'javaMM_DoStatement', the role 'javaMM_DoStatement144' has cardinality 0..*, and from 'javaMM_Statement', the role 'javaMM_Statement145' has cardinality 0..*.
+An association connects 'javaMM_EnhancedForStatement' and 'javaMM_Statement'. From 'javaMM_EnhancedForStatement', the role 'javaMM_EnhancedForStatement' has cardinality 0..*, and from 'javaMM_Statement', the role 'javaMM_Statement147' has cardinality 0..*.
+An association connects 'javaMM_EnhancedForStatement' and 'javaMM_Expression'. From 'javaMM_EnhancedForStatement', the role 'javaMM_EnhancedForStatement149' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression150' has cardinality 0..*.
+An association connects 'javaMM_EnhancedForStatement' and 'javaMM_SingleVariableDeclaration'. From 'javaMM_EnhancedForStatement', the role 'enhancedForStatement' has cardinality 0..*, and from 'javaMM_SingleVariableDeclaration', the role 'SingleVariableDeclaration152' has cardinality 0..*.
+An association connects 'javaMM_EnumConstantDeclaration' and 'javaMM_AnonymousClassDeclaration'. From 'javaMM_EnumConstantDeclaration', the role 'javaMM_EnumConstantDeclaration' has cardinality 0..*, and from 'javaMM_AnonymousClassDeclaration', the role 'javaMM_AnonymousClassDeclaration' has cardinality 0..*.
+An association connects 'javaMM_EnumConstantDeclaration' and 'javaMM_Expression'. From 'javaMM_EnumConstantDeclaration', the role 'javaMM_EnumConstantDeclaration155' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression156' has cardinality 0..*.
+An association connects 'javaMM_EnumDeclaration' and 'javaMM_EnumConstantDeclaration'. From 'javaMM_EnumDeclaration', the role 'javaMM_EnumDeclaration' has cardinality 0..*, and from 'javaMM_EnumConstantDeclaration', the role 'javaMM_EnumConstantDeclaration158' has cardinality 0..*.
+An association connects 'javaMM_ExpressionStatement' and 'javaMM_Expression'. From 'javaMM_ExpressionStatement', the role 'javaMM_ExpressionStatement' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression160' has cardinality 0..*.
+An association connects 'javaMM_SingleVariableAccess' and 'javaMM_FieldAccess'. From 'javaMM_SingleVariableAccess', the role 'javaMM_SingleVariableAccess' has cardinality 0..*, and from 'javaMM_FieldAccess', the role 'javaMM_FieldAccess' has cardinality 0..*.
+An association connects 'javaMM_FieldAccess' and 'javaMM_Expression'. From 'javaMM_FieldAccess', the role 'javaMM_FieldAccess163' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression164' has cardinality 0..*.
+An association connects 'javaMM_Expression' and 'javaMM_ForStatement'. From 'javaMM_Expression', the role 'javaMM_Expression166' has cardinality 0..*, and from 'javaMM_ForStatement', the role 'javaMM_ForStatement' has cardinality 0..*.
+An association connects 'javaMM_ForStatement' and 'javaMM_Expression'. From 'javaMM_ForStatement', the role 'javaMM_ForStatement168' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression169' has cardinality 0..*.
+An association connects 'javaMM_ForStatement' and 'javaMM_Expression'. From 'javaMM_ForStatement', the role 'javaMM_ForStatement171' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression172' has cardinality 0..*.
+An association connects 'javaMM_ForStatement' and 'javaMM_Statement'. From 'javaMM_ForStatement', the role 'javaMM_ForStatement174' has cardinality 0..*, and from 'javaMM_Statement', the role 'javaMM_Statement175' has cardinality 0..*.
+An association connects 'javaMM_IfStatement' and 'javaMM_Expression'. From 'javaMM_IfStatement', the role 'javaMM_IfStatement' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression177' has cardinality 0..*.
+An association connects 'javaMM_IfStatement' and 'javaMM_Statement'. From 'javaMM_IfStatement', the role 'javaMM_IfStatement179' has cardinality 0..*, and from 'javaMM_Statement', the role 'javaMM_Statement180' has cardinality 0..*.
+An association connects 'javaMM_IfStatement' and 'javaMM_Statement'. From 'javaMM_IfStatement', the role 'javaMM_IfStatement182' has cardinality 0..*, and from 'javaMM_Statement', the role 'javaMM_Statement183' has cardinality 0..*.
+An association connects 'javaMM_ImportDeclaration' and 'javaMM_NamedElement'. From 'javaMM_ImportDeclaration', the role 'usagesInImports' has cardinality 0..*, and from 'javaMM_NamedElement', the role 'NamedElement' has cardinality 0..*.
+An association connects 'javaMM_InfixExpression' and 'javaMM_Expression'. From 'javaMM_InfixExpression', the role 'javaMM_InfixExpression' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression186' has cardinality 0..*.
+An association connects 'javaMM_Expression' and 'javaMM_InfixExpression'. From 'javaMM_Expression', the role 'javaMM_Expression189' has cardinality 0..*, and from 'javaMM_InfixExpression', the role 'javaMM_InfixExpression188' has cardinality 0..*.
+An association connects 'javaMM_InfixExpression' and 'javaMM_Expression'. From 'javaMM_InfixExpression', the role 'javaMM_InfixExpression191' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression192' has cardinality 0..*.
+An association connects 'javaMM_Block' and 'javaMM_Initializer'. From 'javaMM_Block', the role 'javaMM_Block194' has cardinality 0..*, and from 'javaMM_Initializer', the role 'javaMM_Initializer' has cardinality 0..*.
+An association connects 'javaMM_InstanceofExpression' and 'javaMM_TypeAccess'. From 'javaMM_InstanceofExpression', the role 'javaMM_InstanceofExpression' has cardinality 0..*, and from 'javaMM_TypeAccess', the role 'javaMM_TypeAccess196' has cardinality 0..*.
+An association connects 'javaMM_InstanceofExpression' and 'javaMM_Expression'. From 'javaMM_InstanceofExpression', the role 'javaMM_InstanceofExpression198' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression199' has cardinality 0..*.
+An association connects 'javaMM_Javadoc' and 'javaMM_TagElement'. From 'javaMM_Javadoc', the role 'javaMM_Javadoc' has cardinality 0..*, and from 'javaMM_TagElement', the role 'javaMM_TagElement' has cardinality 0..*.
+An association connects 'javaMM_LabeledStatement' and 'javaMM_Statement'. From 'javaMM_LabeledStatement', the role 'javaMM_LabeledStatement' has cardinality 0..*, and from 'javaMM_Statement', the role 'javaMM_Statement202' has cardinality 0..*.
+An association connects 'javaMM_BreakStatement' and 'javaMM_LabeledStatement'. From 'javaMM_BreakStatement', the role 'BreakStatement' has cardinality 0..*, and from 'javaMM_LabeledStatement', the role 'label' has cardinality 0..*.
+An association connects 'javaMM_LabeledStatement' and 'javaMM_ContinueStatement'. From 'javaMM_LabeledStatement', the role 'label205' has cardinality 0..*, and from 'javaMM_ContinueStatement', the role 'ContinueStatement' has cardinality 0..*.
+An association connects 'javaMM_Manifest' and 'javaMM_ManifestAttribute'. From 'javaMM_Manifest', the role 'javaMM_Manifest207' has cardinality 0..*, and from 'javaMM_ManifestAttribute', the role 'javaMM_ManifestAttribute' has cardinality 0..*.
+An association connects 'javaMM_ManifestEntry' and 'javaMM_Manifest'. From 'javaMM_ManifestEntry', the role 'javaMM_ManifestEntry' has cardinality 0..*, and from 'javaMM_Manifest', the role 'javaMM_Manifest209' has cardinality 0..*.
+An association connects 'javaMM_ManifestEntry' and 'javaMM_ManifestAttribute'. From 'javaMM_ManifestEntry', the role 'javaMM_ManifestEntry211' has cardinality 0..*, and from 'javaMM_ManifestAttribute', the role 'javaMM_ManifestAttribute212' has cardinality 0..*.
+An association connects 'javaMM_MemberRef' and 'javaMM_NamedElement'. From 'javaMM_MemberRef', the role 'javaMM_MemberRef' has cardinality 0..*, and from 'javaMM_NamedElement', the role 'javaMM_NamedElement' has cardinality 0..*.
+An association connects 'javaMM_MemberRef' and 'javaMM_TypeAccess'. From 'javaMM_MemberRef', the role 'javaMM_MemberRef215' has cardinality 0..*, and from 'javaMM_TypeAccess', the role 'javaMM_TypeAccess216' has cardinality 0..*.
+An association connects 'javaMM_MethodDeclaration' and 'javaMM_TypeAccess'. From 'javaMM_MethodDeclaration', the role 'javaMM_MethodDeclaration' has cardinality 0..*, and from 'javaMM_TypeAccess', the role 'javaMM_TypeAccess218' has cardinality 0..*.
+An association connects 'javaMM_MethodDeclaration' and 'javaMM_MethodDeclaration'. From 'javaMM_MethodDeclaration', the role 'redefinitions' has cardinality 0..*, and from 'javaMM_MethodDeclaration', the role 'MethodDeclaration' has cardinality 0..*.
+An association connects 'javaMM_MethodDeclaration' and 'javaMM_MethodDeclaration'. From 'javaMM_MethodDeclaration', the role 'MethodDeclaration223' has cardinality 0..*, and from 'javaMM_MethodDeclaration', the role 'redefinedMethodDeclaration' has cardinality 0..*.
+An association connects 'javaMM_MethodInvocation' and 'javaMM_Expression'. From 'javaMM_MethodInvocation', the role 'javaMM_MethodInvocation' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression225' has cardinality 0..*.
+An association connects 'javaMM_MethodRef' and 'javaMM_AbstractMethodDeclaration'. From 'javaMM_MethodRef', the role 'usagesInDocComments' has cardinality 0..*, and from 'javaMM_AbstractMethodDeclaration', the role 'AbstractMethodDeclaration227' has cardinality 0..*.
+An association connects 'javaMM_MethodRef' and 'javaMM_TypeAccess'. From 'javaMM_MethodRef', the role 'javaMM_MethodRef' has cardinality 0..*, and from 'javaMM_TypeAccess', the role 'javaMM_TypeAccess229' has cardinality 0..*.
+An association connects 'javaMM_MethodRef' and 'javaMM_MethodRefParameter'. From 'javaMM_MethodRef', the role 'javaMM_MethodRef231' has cardinality 0..*, and from 'javaMM_MethodRefParameter', the role 'javaMM_MethodRefParameter' has cardinality 0..*.
+An association connects 'javaMM_TypeAccess' and 'javaMM_MethodRefParameter'. From 'javaMM_TypeAccess', the role 'javaMM_TypeAccess234' has cardinality 0..*, and from 'javaMM_MethodRefParameter', the role 'javaMM_MethodRefParameter233' has cardinality 0..*.
+An association connects 'javaMM_Package' and 'javaMM_Model'. From 'javaMM_Package', the role 'Package236' has cardinality 0..*, and from 'javaMM_Model', the role 'model' has cardinality 0..*.
+An association connects 'javaMM_Type' and 'javaMM_Model'. From 'javaMM_Type', the role 'javaMM_Type' has cardinality 0..*, and from 'javaMM_Model', the role 'javaMM_Model' has cardinality 0..*.
+An association connects 'javaMM_UnresolvedItem' and 'javaMM_Model'. From 'javaMM_UnresolvedItem', the role 'javaMM_UnresolvedItem' has cardinality 0..*, and from 'javaMM_Model', the role 'javaMM_Model239' has cardinality 0..*.
+An association connects 'javaMM_CompilationUnit' and 'javaMM_Model'. From 'javaMM_CompilationUnit', the role 'javaMM_CompilationUnit242' has cardinality 0..*, and from 'javaMM_Model', the role 'javaMM_Model241' has cardinality 0..*.
+An association connects 'javaMM_ClassFile' and 'javaMM_Model'. From 'javaMM_ClassFile', the role 'javaMM_ClassFile245' has cardinality 0..*, and from 'javaMM_Model', the role 'javaMM_Model244' has cardinality 0..*.
+An association connects 'javaMM_Archive' and 'javaMM_Model'. From 'javaMM_Archive', the role 'javaMM_Archive248' has cardinality 0..*, and from 'javaMM_Model', the role 'javaMM_Model247' has cardinality 0..*.
+An association connects 'javaMM_Modifier' and 'javaMM_BodyDeclaration'. From 'javaMM_Modifier', the role 'modifier' has cardinality 0..*, and from 'javaMM_BodyDeclaration', the role 'BodyDeclaration250' has cardinality 0..*.
+An association connects 'javaMM_Modifier' and 'javaMM_SingleVariableDeclaration'. From 'javaMM_Modifier', the role 'modifier252' has cardinality 0..*, and from 'javaMM_SingleVariableDeclaration', the role 'SingleVariableDeclaration253' has cardinality 0..*.
+An association connects 'javaMM_Modifier' and 'javaMM_VariableDeclarationStatement'. From 'javaMM_Modifier', the role 'modifier255' has cardinality 0..*, and from 'javaMM_VariableDeclarationStatement', the role 'VariableDeclarationStatement' has cardinality 0..*.
+An association connects 'javaMM_VariableDeclarationExpression' and 'javaMM_Modifier'. From 'javaMM_VariableDeclarationExpression', the role 'VariableDeclarationExpression' has cardinality 0..*, and from 'javaMM_Modifier', the role 'modifier257' has cardinality 0..*.
+An association connects 'javaMM_ImportDeclaration' and 'javaMM_NamedElement'. From 'javaMM_ImportDeclaration', the role 'ImportDeclaration' has cardinality 0..*, and from 'javaMM_NamedElement', the role 'importedElement' has cardinality 0..*.
+An association connects 'javaMM_AbstractTypeDeclaration' and 'javaMM_Package'. From 'javaMM_AbstractTypeDeclaration', the role 'AbstractTypeDeclaration260' has cardinality 0..*, and from 'javaMM_Package', the role 'package' has cardinality 0..*.
+An association connects 'javaMM_Model' and 'javaMM_Package'. From 'javaMM_Model', the role 'Model' has cardinality 0..*, and from 'javaMM_Package', the role 'ownedElements262' has cardinality 0..*.
+An association connects 'javaMM_Package' and 'javaMM_Package'. From 'javaMM_Package', the role 'package265' has cardinality 0..*, and from 'javaMM_Package', the role 'Package266' has cardinality 0..*.
+An association connects 'javaMM_Package' and 'javaMM_Package'. From 'javaMM_Package', the role 'Package269' has cardinality 0..*, and from 'javaMM_Package', the role 'ownedPackages' has cardinality 0..*.
+An association connects 'javaMM_Package' and 'javaMM_PackageAccess'. From 'javaMM_Package', the role 'package271' has cardinality 0..*, and from 'javaMM_PackageAccess', the role 'PackageAccess' has cardinality 0..*.
+An association connects 'javaMM_PackageAccess' and 'javaMM_Package'. From 'javaMM_PackageAccess', the role 'usagesInPackageAccess' has cardinality 0..*, and from 'javaMM_Package', the role 'Package273' has cardinality 0..*.
+An association connects 'javaMM_PackageAccess' and 'javaMM_PackageAccess'. From 'javaMM_PackageAccess', the role 'javaMM_PackageAccess274' has cardinality 0..*, and from 'javaMM_PackageAccess', the role 'javaMM_PackageAccess' has cardinality 0..*.
+An association connects 'javaMM_ParameterizedType' and 'javaMM_TypeAccess'. From 'javaMM_ParameterizedType', the role 'javaMM_ParameterizedType' has cardinality 0..*, and from 'javaMM_TypeAccess', the role 'javaMM_TypeAccess277' has cardinality 0..*.
+An association connects 'javaMM_TypeAccess' and 'javaMM_ParameterizedType'. From 'javaMM_TypeAccess', the role 'javaMM_TypeAccess280' has cardinality 0..*, and from 'javaMM_ParameterizedType', the role 'javaMM_ParameterizedType279' has cardinality 0..*.
+An association connects 'javaMM_ParenthesizedExpression' and 'javaMM_Expression'. From 'javaMM_ParenthesizedExpression', the role 'javaMM_ParenthesizedExpression' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression282' has cardinality 0..*.
+An association connects 'javaMM_PostfixExpression' and 'javaMM_Expression'. From 'javaMM_PostfixExpression', the role 'javaMM_PostfixExpression' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression284' has cardinality 0..*.
+An association connects 'javaMM_PrefixExpression' and 'javaMM_Expression'. From 'javaMM_PrefixExpression', the role 'javaMM_PrefixExpression' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression286' has cardinality 0..*.
+An association connects 'javaMM_ReturnStatement' and 'javaMM_Expression'. From 'javaMM_ReturnStatement', the role 'javaMM_ReturnStatement' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression288' has cardinality 0..*.
+An association connects 'javaMM_VariableDeclaration' and 'javaMM_SingleVariableAccess'. From 'javaMM_VariableDeclaration', the role 'VariableDeclaration' has cardinality 0..*, and from 'javaMM_SingleVariableAccess', the role 'usageInVariableAccess' has cardinality 0..*.
+An association connects 'javaMM_Expression' and 'javaMM_SingleVariableAccess'. From 'javaMM_Expression', the role 'javaMM_Expression292' has cardinality 0..*, and from 'javaMM_SingleVariableAccess', the role 'javaMM_SingleVariableAccess291' has cardinality 0..*.
+An association connects 'javaMM_Modifier' and 'javaMM_SingleVariableDeclaration'. From 'javaMM_Modifier', the role 'Modifier294' has cardinality 0..*, and from 'javaMM_SingleVariableDeclaration', the role 'singleVariableDeclaration' has cardinality 0..*.
+An association connects 'javaMM_TypeAccess' and 'javaMM_SingleVariableDeclaration'. From 'javaMM_TypeAccess', the role 'javaMM_TypeAccess296' has cardinality 0..*, and from 'javaMM_SingleVariableDeclaration', the role 'javaMM_SingleVariableDeclaration' has cardinality 0..*.
+An association connects 'javaMM_Annotation' and 'javaMM_SingleVariableDeclaration'. From 'javaMM_Annotation', the role 'javaMM_Annotation299' has cardinality 0..*, and from 'javaMM_SingleVariableDeclaration', the role 'javaMM_SingleVariableDeclaration298' has cardinality 0..*.
+An association connects 'javaMM_SingleVariableDeclaration' and 'javaMM_AbstractMethodDeclaration'. From 'javaMM_SingleVariableDeclaration', the role 'parameters' has cardinality 0..*, and from 'javaMM_AbstractMethodDeclaration', the role 'AbstractMethodDeclaration301' has cardinality 0..*.
+An association connects 'javaMM_SingleVariableDeclaration' and 'javaMM_CatchClause'. From 'javaMM_SingleVariableDeclaration', the role 'exception' has cardinality 0..*, and from 'javaMM_CatchClause', the role 'CatchClause' has cardinality 0..*.
+An association connects 'javaMM_SingleVariableDeclaration' and 'javaMM_EnhancedForStatement'. From 'javaMM_SingleVariableDeclaration', the role 'parameter' has cardinality 0..*, and from 'javaMM_EnhancedForStatement', the role 'EnhancedForStatement' has cardinality 0..*.
+An association connects 'javaMM_SuperConstructorInvocation' and 'javaMM_Expression'. From 'javaMM_SuperConstructorInvocation', the role 'javaMM_SuperConstructorInvocation' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression305' has cardinality 0..*.
+An association connects 'javaMM_SuperFieldAccess' and 'javaMM_SingleVariableAccess'. From 'javaMM_SuperFieldAccess', the role 'javaMM_SuperFieldAccess' has cardinality 0..*, and from 'javaMM_SingleVariableAccess', the role 'javaMM_SingleVariableAccess307' has cardinality 0..*.
+An association connects 'javaMM_Expression' and 'javaMM_SwitchCase'. From 'javaMM_Expression', the role 'javaMM_Expression309' has cardinality 0..*, and from 'javaMM_SwitchCase', the role 'javaMM_SwitchCase' has cardinality 0..*.
+An association connects 'javaMM_Expression' and 'javaMM_SwitchStatement'. From 'javaMM_Expression', the role 'javaMM_Expression311' has cardinality 0..*, and from 'javaMM_SwitchStatement', the role 'javaMM_SwitchStatement' has cardinality 0..*.
+An association connects 'javaMM_Statement' and 'javaMM_SwitchStatement'. From 'javaMM_Statement', the role 'javaMM_Statement314' has cardinality 0..*, and from 'javaMM_SwitchStatement', the role 'javaMM_SwitchStatement313' has cardinality 0..*.
+An association connects 'javaMM_Block' and 'javaMM_SynchronizedStatement'. From 'javaMM_Block', the role 'javaMM_Block316' has cardinality 0..*, and from 'javaMM_SynchronizedStatement', the role 'javaMM_SynchronizedStatement' has cardinality 0..*.
+An association connects 'javaMM_SynchronizedStatement' and 'javaMM_Expression'. From 'javaMM_SynchronizedStatement', the role 'javaMM_SynchronizedStatement318' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression319' has cardinality 0..*.
+An association connects 'javaMM_ASTNode' and 'javaMM_TagElement'. From 'javaMM_ASTNode', the role 'javaMM_ASTNode322' has cardinality 0..*, and from 'javaMM_TagElement', the role 'javaMM_TagElement321' has cardinality 0..*.
+An association connects 'javaMM_ThrowStatement' and 'javaMM_Expression'. From 'javaMM_ThrowStatement', the role 'javaMM_ThrowStatement' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression324' has cardinality 0..*.
+An association connects 'javaMM_Block' and 'javaMM_TryStatement'. From 'javaMM_Block', the role 'javaMM_Block326' has cardinality 0..*, and from 'javaMM_TryStatement', the role 'javaMM_TryStatement' has cardinality 0..*.
+An association connects 'javaMM_Block' and 'javaMM_TryStatement'. From 'javaMM_Block', the role 'javaMM_Block329' has cardinality 0..*, and from 'javaMM_TryStatement', the role 'javaMM_TryStatement328' has cardinality 0..*.
+An association connects 'javaMM_TryStatement' and 'javaMM_CatchClause'. From 'javaMM_TryStatement', the role 'javaMM_TryStatement331' has cardinality 0..*, and from 'javaMM_CatchClause', the role 'javaMM_CatchClause332' has cardinality 0..*.
+An association connects 'javaMM_Type' and 'javaMM_TypeAccess'. From 'javaMM_Type', the role 'type' has cardinality 0..*, and from 'javaMM_TypeAccess', the role 'TypeAccess' has cardinality 0..*.
+An association connects 'javaMM_TypeAccess' and 'javaMM_Type'. From 'javaMM_TypeAccess', the role 'usagesInTypeAccess' has cardinality 0..*, and from 'javaMM_Type', the role 'Type' has cardinality 0..*.
+An association connects 'javaMM_TypeAccess' and 'javaMM_NamespaceAccess'. From 'javaMM_TypeAccess', the role 'javaMM_TypeAccess336' has cardinality 0..*, and from 'javaMM_NamespaceAccess', the role 'javaMM_NamespaceAccess' has cardinality 0..*.
+An association connects 'javaMM_TypeParameter' and 'javaMM_TypeDeclaration'. From 'javaMM_TypeParameter', the role 'javaMM_TypeParameter338' has cardinality 0..*, and from 'javaMM_TypeDeclaration', the role 'javaMM_TypeDeclaration' has cardinality 0..*.
+An association connects 'javaMM_TypeDeclarationStatement' and 'javaMM_AbstractTypeDeclaration'. From 'javaMM_TypeDeclarationStatement', the role 'javaMM_TypeDeclarationStatement' has cardinality 0..*, and from 'javaMM_AbstractTypeDeclaration', the role 'javaMM_AbstractTypeDeclaration340' has cardinality 0..*.
+An association connects 'javaMM_TypeLiteral' and 'javaMM_TypeAccess'. From 'javaMM_TypeLiteral', the role 'javaMM_TypeLiteral' has cardinality 0..*, and from 'javaMM_TypeAccess', the role 'javaMM_TypeAccess342' has cardinality 0..*.
+An association connects 'javaMM_TypeParameter' and 'javaMM_TypeAccess'. From 'javaMM_TypeParameter', the role 'javaMM_TypeParameter344' has cardinality 0..*, and from 'javaMM_TypeAccess', the role 'javaMM_TypeAccess345' has cardinality 0..*.
+An association connects 'javaMM_UnresolvedItem' and 'javaMM_UnresolvedItemAccess'. From 'javaMM_UnresolvedItem', the role 'javaMM_UnresolvedItem347' has cardinality 0..*, and from 'javaMM_UnresolvedItemAccess', the role 'javaMM_UnresolvedItemAccess' has cardinality 0..*.
+An association connects 'javaMM_UnresolvedItemAccess' and 'javaMM_ASTNode'. From 'javaMM_UnresolvedItemAccess', the role 'javaMM_UnresolvedItemAccess349' has cardinality 0..*, and from 'javaMM_ASTNode', the role 'javaMM_ASTNode350' has cardinality 0..*.
+An association connects 'javaMM_VariableDeclaration' and 'javaMM_Expression'. From 'javaMM_VariableDeclaration', the role 'javaMM_VariableDeclaration' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression352' has cardinality 0..*.
+An association connects 'javaMM_SingleVariableAccess' and 'javaMM_VariableDeclaration'. From 'javaMM_SingleVariableAccess', the role 'SingleVariableAccess' has cardinality 0..*, and from 'javaMM_VariableDeclaration', the role 'variable' has cardinality 0..*.
+An association connects 'javaMM_Modifier' and 'javaMM_VariableDeclarationExpression'. From 'javaMM_Modifier', the role 'Modifier355' has cardinality 0..*, and from 'javaMM_VariableDeclarationExpression', the role 'variableDeclarationExpression' has cardinality 0..*.
+An association connects 'javaMM_VariableDeclarationExpression' and 'javaMM_Annotation'. From 'javaMM_VariableDeclarationExpression', the role 'javaMM_VariableDeclarationExpression' has cardinality 0..*, and from 'javaMM_Annotation', the role 'javaMM_Annotation357' has cardinality 0..*.
+An association connects 'javaMM_AbstractVariablesContainer' and 'javaMM_VariableDeclarationFragment'. From 'javaMM_AbstractVariablesContainer', the role 'AbstractVariablesContainer' has cardinality 0..*, and from 'javaMM_VariableDeclarationFragment', the role 'fragments' has cardinality 0..*.
+An association connects 'javaMM_Modifier' and 'javaMM_VariableDeclarationStatement'. From 'javaMM_Modifier', the role 'Modifier360' has cardinality 0..*, and from 'javaMM_VariableDeclarationStatement', the role 'variableDeclarationStatement' has cardinality 0..*.
+An association connects 'javaMM_VariableDeclarationStatement' and 'javaMM_Annotation'. From 'javaMM_VariableDeclarationStatement', the role 'javaMM_VariableDeclarationStatement' has cardinality 0..*, and from 'javaMM_Annotation', the role 'javaMM_Annotation362' has cardinality 0..*.
+An association connects 'javaMM_WildCardType' and 'javaMM_TypeAccess'. From 'javaMM_WildCardType', the role 'javaMM_WildCardType' has cardinality 0..*, and from 'javaMM_TypeAccess', the role 'javaMM_TypeAccess364' has cardinality 0..*.
+An association connects 'javaMM_WhileStatement' and 'javaMM_Expression'. From 'javaMM_WhileStatement', the role 'javaMM_WhileStatement' has cardinality 0..*, and from 'javaMM_Expression', the role 'javaMM_Expression366' has cardinality 0..*.
+An association connects 'javaMM_WhileStatement' and 'javaMM_Statement'. From 'javaMM_WhileStatement', the role 'javaMM_WhileStatement368' has cardinality 0..*, and from 'javaMM_Statement', the role 'javaMM_Statement369' has cardinality 0..*.

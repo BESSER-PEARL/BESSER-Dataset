@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gemoc/concurrency/moccml/mapping/examples/TFSM/fr.inria.aoste.gemoc.example.tfsm.model/model/tfsm.ecore

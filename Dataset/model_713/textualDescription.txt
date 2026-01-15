@@ -1,0 +1,780 @@
+The domain model 'pivot' describes the core structural elements and their relationships within the system.
+
+The model defines 153 main class(es).
+
+'pivot_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_ParameterableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_UnlimitedNaturalLiteralExp' represents an important domain concept.
+It has one attribute: 'unlimitedNaturalSymbol', which is of type str.
+
+'pivot_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_UnspecifiedValueExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Variable' represents an important domain concept.
+It has one attribute: 'implicit', which is of type str.
+
+'pivot_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_ConnectionPointReference' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_TypedElement' represents an important domain concept.
+It has one attribute: 'isRequired', which is of type str.
+
+'pivot_StringLiteralExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'pivot_LambdaType' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_SendSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_TypeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_CollectionItem' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_CollectionRange' represents an important domain concept.
+It does not declare any attributes.
+
+'Visitable' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_EnumLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_TemplateBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_State' represents an important domain concept.
+It has the following attributes: 'isSubmachineState', which is of type str; 'isSimple', which is of type str; 'isOrthogonal', which is of type str; 'isComposite', which is of type str.
+
+'pivot_PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_ProfileApplication' represents an important domain concept.
+It has one attribute: 'isStrict', which is of type str.
+
+'TypedMultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_CallOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_DynamicElement' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Type' represents an important domain concept.
+It has one attribute: 'instanceClassName', which is of type str.
+
+'ReferringElement' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_VariableExp' represents an important domain concept.
+It has one attribute: 'implicit', which is of type str.
+
+'pivot_DataType' represents an important domain concept.
+It has one attribute: 'isSerializable', which is of type str.
+
+'pivot_Precedence' represents an important domain concept.
+It has the following attributes: 'order', which is of type int; 'associativity', which is of type str.
+
+'pivot_DynamicType' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_MorePivotable' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_ConstructorExp' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'pivot_AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_FeatureCallExp' represents an important domain concept.
+It has one attribute: 'isPre', which is of type str.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Detail' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'pivot_ExpressionInOCL' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_EnumerationLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'pivot_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_TemplateableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Root' represents an important domain concept.
+It has one attribute: 'externalURI', which is of type str.
+
+'pivot_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Import' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_TypeExtension' represents an important domain concept.
+It has one attribute: 'isRequired', which is of type str.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_OpaqueExpression' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'language', which is of type str.
+
+'pivot_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Transition' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'pivot_Pivotable' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Nameable' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_NamedElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isStatic', which is of type str.
+
+'pivot_ConstructorPart' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_InvalidType' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_InvalidLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_TemplateParameterType' represents an important domain concept.
+It has one attribute: 'specification', which is of type str.
+
+'pivot_Property' represents an important domain concept.
+It has the following attributes: 'isComposite', which is of type str; 'isDerived', which is of type str; 'isTransient', which is of type str; 'isReadOnly', which is of type str; 'implicit', which is of type str; 'isID', which is of type str; 'default', which is of type str; 'isVolatile', which is of type str; 'isResolveProxies', which is of type str; 'isUnsettable', which is of type str.
+
+'pivot_NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_TemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Operation' represents an important domain concept.
+It has the following attributes: 'isInvalidating', which is of type str; 'isValidating', which is of type str.
+
+'pivot_CollectionType' represents an important domain concept.
+It has the following attributes: 'upper', which is of type str; 'lower', which is of type str.
+
+'pivot_StateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_ReferringElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'Nameable' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Metaclass' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Feature' represents an important domain concept.
+It has the following attributes: 'implementationClass', which is of type str; 'implementation', which is of type str.
+
+'pivot_NavigationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Class' represents an important domain concept.
+It has the following attributes: 'isAbstract', which is of type str; 'isActive', which is of type str; 'isInterface', which is of type str.
+
+'pivot_TypeTemplateParameter' represents an important domain concept.
+It has one attribute: 'allowSubstitutable', which is of type str.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_TemplateParameterSubstitution' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Profile' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Visitable' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Stereotype' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_CollectionLiteralExp' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'pivot_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_OppositePropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_NullLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_TemplateSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_CallExp' represents an important domain concept.
+It has one attribute: 'implicit', which is of type str.
+
+'pivot_Iteration' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Visitor' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_OCLExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_UnspecifiedType' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_RealLiteralExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type str.
+
+'pivot_Pseudostate' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'pivot_AssociationClassCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_IteratorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_IntegerLiteralExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'pivot_OperationTemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'DynamicElement' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_SelfType' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Comment' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'pivot_TypedMultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_MessageType' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_ElementExtension' represents an important domain concept.
+It has the following attributes: 'isApplied', which is of type str; 'isRequired', which is of type str.
+
+'pivot_OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_MessageExp' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_DynamicProperty' represents an important domain concept.
+It has one attribute: 'default', which is of type str.
+
+'pivot_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'pivot_Package' represents an important domain concept.
+It has the following attributes: 'nsPrefix', which is of type str; 'nsURI', which is of type str.
+
+'pivot_Constraint' represents an important domain concept.
+It has one attribute: 'isCallable', which is of type str.
+
+'pivot_BooleanLiteralExp' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type str.
+
+'pivot_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CollectionKind' defines the following possible values: 'Collection', 'Sequence', 'Bag', 'OrderedSet', 'Set'.
+The enumeration 'AssociativityKind' defines the following possible values: 'Right', 'Left'.
+The enumeration 'TransitionKind' defines the following possible values: 'internal', 'external', 'local'.
+The enumeration 'PseudostateKind' defines the following possible values: 'exitPoint', 'entryPoint', 'choice', 'shallowHistory', 'join', 'terminate', 'initial', 'deepHistory', 'junction', 'fork'.
+
+The model also captures inheritance relationships between classes.
+The class 'pivot_Annotation' is a specialization of 'NamedElement'.
+The class 'pivot_AnyType' is a specialization of 'Class'.
+The class 'pivot_AssociationClass' is a specialization of 'Class'.
+The class 'pivot_AssociationClassCallExp' is a specialization of 'NavigationCallExp'.
+The class 'pivot_BagType' is a specialization of 'CollectionType'.
+The class 'pivot_Behavior' is a specialization of 'Class'.
+The class 'pivot_BooleanLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'pivot_CallExp' is a specialization of 'OCLExpression'.
+The class 'pivot_CallOperationAction' is a specialization of 'NamedElement'.
+The class 'pivot_Class' is a specialization of 'Type'.
+The class 'pivot_Class' is a specialization of 'Namespace'.
+The class 'pivot_CollectionItem' is a specialization of 'CollectionLiteralPart'.
+The class 'pivot_CollectionLiteralExp' is a specialization of 'LiteralExp'.
+The class 'pivot_CollectionLiteralPart' is a specialization of 'TypedElement'.
+The class 'pivot_CollectionRange' is a specialization of 'CollectionLiteralPart'.
+The class 'pivot_CollectionType' is a specialization of 'DataType'.
+The class 'pivot_Comment' is a specialization of 'Element'.
+The class 'pivot_ConnectionPointReference' is a specialization of 'Vertex'.
+The class 'pivot_Constraint' is a specialization of 'NamedElement'.
+The class 'pivot_ConstructorExp' is a specialization of 'OCLExpression'.
+The class 'pivot_ConstructorPart' is a specialization of 'TypedElement'.
+The class 'pivot_DataType' is a specialization of 'Class'.
+The class 'pivot_Detail' is a specialization of 'NamedElement'.
+The class 'pivot_DynamicElement' is a specialization of 'Element'.
+The class 'pivot_DynamicProperty' is a specialization of 'Element'.
+The class 'pivot_DynamicType' is a specialization of 'Type'.
+The class 'pivot_DynamicType' is a specialization of 'DynamicElement'.
+The class 'pivot_Element' is a specialization of 'Visitable'.
+The class 'pivot_ElementExtension' is a specialization of 'Type'.
+The class 'pivot_EnumLiteralExp' is a specialization of 'LiteralExp'.
+The class 'pivot_Enumeration' is a specialization of 'DataType'.
+The class 'pivot_EnumerationLiteral' is a specialization of 'NamedElement'.
+The class 'pivot_ExpressionInOCL' is a specialization of 'OpaqueExpression'.
+The class 'pivot_Feature' is a specialization of 'TypedMultiplicityElement'.
+The class 'pivot_FeatureCallExp' is a specialization of 'CallExp'.
+The class 'pivot_FinalState' is a specialization of 'State'.
+The class 'pivot_IfExp' is a specialization of 'OCLExpression'.
+The class 'pivot_Import' is a specialization of 'NamedElement'.
+The class 'pivot_IntegerLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'pivot_InvalidLiteralExp' is a specialization of 'LiteralExp'.
+The class 'pivot_InvalidType' is a specialization of 'Class'.
+The class 'pivot_IterateExp' is a specialization of 'LoopExp'.
+The class 'pivot_IterateExp' is a specialization of 'ReferringElement'.
+The class 'pivot_Iteration' is a specialization of 'Operation'.
+The class 'pivot_IteratorExp' is a specialization of 'LoopExp'.
+The class 'pivot_IteratorExp' is a specialization of 'ReferringElement'.
+The class 'pivot_LambdaType' is a specialization of 'DataType'.
+The class 'pivot_LetExp' is a specialization of 'OCLExpression'.
+The class 'pivot_Library' is a specialization of 'Package'.
+The class 'pivot_LiteralExp' is a specialization of 'OCLExpression'.
+The class 'pivot_LoopExp' is a specialization of 'CallExp'.
+The class 'pivot_MessageExp' is a specialization of 'OCLExpression'.
+The class 'pivot_MessageType' is a specialization of 'Type'.
+The class 'pivot_Metaclass' is a specialization of 'Class'.
+The class 'pivot_NamedElement' is a specialization of 'Element'.
+The class 'pivot_NamedElement' is a specialization of 'Nameable'.
+The class 'pivot_Namespace' is a specialization of 'NamedElement'.
+The class 'pivot_NavigationCallExp' is a specialization of 'FeatureCallExp'.
+The class 'pivot_NullLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'pivot_NumericLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'pivot_OCLExpression' is a specialization of 'TypedElement'.
+The class 'pivot_OpaqueExpression' is a specialization of 'ValueSpecification'.
+The class 'pivot_Operation' is a specialization of 'Feature'.
+The class 'pivot_Operation' is a specialization of 'Namespace'.
+The class 'pivot_Operation' is a specialization of 'TemplateableElement'.
+The class 'pivot_Operation' is a specialization of 'ParameterableElement'.
+The class 'pivot_OperationCallExp' is a specialization of 'FeatureCallExp'.
+The class 'pivot_OperationCallExp' is a specialization of 'ReferringElement'.
+The class 'pivot_OperationTemplateParameter' is a specialization of 'TemplateParameter'.
+The class 'pivot_OppositePropertyCallExp' is a specialization of 'NavigationCallExp'.
+The class 'pivot_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'pivot_Package' is a specialization of 'Namespace'.
+The class 'pivot_Package' is a specialization of 'TemplateableElement'.
+The class 'pivot_PackageableElement' is a specialization of 'ParameterableElement'.
+The class 'pivot_Parameter' is a specialization of 'TypedMultiplicityElement'.
+The class 'pivot_Parameter' is a specialization of 'VariableDeclaration'.
+The class 'pivot_ParameterableElement' is a specialization of 'Element'.
+The class 'pivot_Precedence' is a specialization of 'NamedElement'.
+The class 'pivot_PrimitiveLiteralExp' is a specialization of 'LiteralExp'.
+The class 'pivot_PrimitiveType' is a specialization of 'DataType'.
+The class 'pivot_Profile' is a specialization of 'Package'.
+The class 'pivot_ProfileApplication' is a specialization of 'Element'.
+The class 'pivot_Property' is a specialization of 'Feature'.
+The class 'pivot_Property' is a specialization of 'ParameterableElement'.
+The class 'pivot_PropertyCallExp' is a specialization of 'NavigationCallExp'.
+The class 'pivot_PropertyCallExp' is a specialization of 'ReferringElement'.
+The class 'pivot_Pseudostate' is a specialization of 'Vertex'.
+The class 'pivot_RealLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'pivot_Region' is a specialization of 'Namespace'.
+The class 'pivot_Root' is a specialization of 'Namespace'.
+The class 'pivot_SelfType' is a specialization of 'Class'.
+The class 'pivot_SendSignalAction' is a specialization of 'NamedElement'.
+The class 'pivot_SequenceType' is a specialization of 'CollectionType'.
+The class 'pivot_SetType' is a specialization of 'CollectionType'.
+The class 'pivot_Signal' is a specialization of 'NamedElement'.
+The class 'pivot_State' is a specialization of 'Vertex'.
+The class 'pivot_State' is a specialization of 'Namespace'.
+The class 'pivot_StateExp' is a specialization of 'OCLExpression'.
+The class 'pivot_StateMachine' is a specialization of 'Behavior'.
+The class 'pivot_Stereotype' is a specialization of 'Class'.
+The class 'pivot_StringLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'pivot_TemplateBinding' is a specialization of 'Element'.
+The class 'pivot_TemplateParameter' is a specialization of 'Element'.
+The class 'pivot_TemplateParameterSubstitution' is a specialization of 'Element'.
+The class 'pivot_TemplateParameterType' is a specialization of 'Type'.
+The class 'pivot_TemplateSignature' is a specialization of 'Element'.
+The class 'pivot_TemplateableElement' is a specialization of 'Element'.
+The class 'pivot_Transition' is a specialization of 'Namespace'.
+The class 'pivot_Trigger' is a specialization of 'NamedElement'.
+The class 'pivot_TupleLiteralExp' is a specialization of 'LiteralExp'.
+The class 'pivot_TupleLiteralPart' is a specialization of 'VariableDeclaration'.
+The class 'pivot_TupleType' is a specialization of 'DataType'.
+The class 'pivot_Type' is a specialization of 'NamedElement'.
+The class 'pivot_Type' is a specialization of 'TemplateableElement'.
+The class 'pivot_Type' is a specialization of 'ParameterableElement'.
+The class 'pivot_TypeExp' is a specialization of 'OCLExpression'.
+The class 'pivot_TypeExp' is a specialization of 'ReferringElement'.
+The class 'pivot_TypeExtension' is a specialization of 'Element'.
+The class 'pivot_TypeTemplateParameter' is a specialization of 'TemplateParameter'.
+The class 'pivot_TypedElement' is a specialization of 'NamedElement'.
+The class 'pivot_TypedMultiplicityElement' is a specialization of 'TypedElement'.
+The class 'pivot_UnlimitedNaturalLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'pivot_UnspecifiedType' is a specialization of 'Class'.
+The class 'pivot_UnspecifiedValueExp' is a specialization of 'OCLExpression'.
+The class 'pivot_ValueSpecification' is a specialization of 'TypedElement'.
+The class 'pivot_ValueSpecification' is a specialization of 'ParameterableElement'.
+The class 'pivot_Variable' is a specialization of 'VariableDeclaration'.
+The class 'pivot_VariableDeclaration' is a specialization of 'TypedElement'.
+The class 'pivot_VariableExp' is a specialization of 'OCLExpression'.
+The class 'pivot_VariableExp' is a specialization of 'ReferringElement'.
+The class 'pivot_Vertex' is a specialization of 'NamedElement'.
+The class 'pivot_VoidType' is a specialization of 'Class'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pivot_Annotation' and 'pivot_Element'. From 'pivot_Annotation', the role 'pivot_Annotation' has cardinality 0..*, and from 'pivot_Element', the role 'pivot_Element' has cardinality 0..*.
+An association connects 'pivot_Annotation' and 'pivot_Detail'. From 'pivot_Annotation', the role 'pivot_Annotation2' has cardinality 0..*, and from 'pivot_Detail', the role 'pivot_Detail' has cardinality 0..*.
+An association connects 'pivot_Annotation' and 'pivot_Element'. From 'pivot_Annotation', the role 'pivot_Annotation4' has cardinality 0..*, and from 'pivot_Element', the role 'pivot_Element5' has cardinality 0..*.
+An association connects 'pivot_Property' and 'pivot_AssociationClass'. From 'pivot_Property', the role 'Property' has cardinality 0..*, and from 'pivot_AssociationClass', the role 'associationClass' has cardinality 0..*.
+An association connects 'pivot_AssociationClass' and 'pivot_AssociationClassCallExp'. From 'pivot_AssociationClass', the role 'pivot_AssociationClass' has cardinality 0..*, and from 'pivot_AssociationClassCallExp', the role 'pivot_AssociationClassCallExp' has cardinality 0..*.
+An association connects 'pivot_Transition' and 'pivot_Behavior'. From 'pivot_Transition', the role 'Transition' has cardinality 0..*, and from 'pivot_Behavior', the role 'effect' has cardinality 0..*.
+An association connects 'pivot_OCLExpression' and 'pivot_CallExp'. From 'pivot_OCLExpression', the role 'pivot_OCLExpression' has cardinality 0..*, and from 'pivot_CallExp', the role 'pivot_CallExp' has cardinality 0..*.
+An association connects 'pivot_CallOperationAction' and 'pivot_Operation'. From 'pivot_CallOperationAction', the role 'pivot_CallOperationAction' has cardinality 0..*, and from 'pivot_Operation', the role 'pivot_Operation' has cardinality 0..*.
+An association connects 'pivot_Class' and 'pivot_Class'. From 'pivot_Class', the role 'pivot_Class11' has cardinality 0..*, and from 'pivot_Class', the role 'pivot_Class' has cardinality 0..*.
+An association connects 'pivot_Behavior' and 'pivot_Class'. From 'pivot_Behavior', the role 'pivot_Behavior' has cardinality 0..*, and from 'pivot_Class', the role 'pivot_Class14' has cardinality 0..*.
+An association connects 'pivot_CollectionItem' and 'pivot_OCLExpression'. From 'pivot_CollectionItem', the role 'pivot_CollectionItem' has cardinality 0..*, and from 'pivot_OCLExpression', the role 'pivot_OCLExpression16' has cardinality 0..*.
+An association connects 'pivot_CollectionLiteralExp' and 'pivot_CollectionLiteralPart'. From 'pivot_CollectionLiteralExp', the role 'pivot_CollectionLiteralExp' has cardinality 0..*, and from 'pivot_CollectionLiteralPart', the role 'pivot_CollectionLiteralPart' has cardinality 0..*.
+An association connects 'pivot_CollectionRange' and 'pivot_OCLExpression'. From 'pivot_CollectionRange', the role 'pivot_CollectionRange' has cardinality 0..*, and from 'pivot_OCLExpression', the role 'pivot_OCLExpression19' has cardinality 0..*.
+An association connects 'pivot_CollectionRange' and 'pivot_OCLExpression'. From 'pivot_CollectionRange', the role 'pivot_CollectionRange21' has cardinality 0..*, and from 'pivot_OCLExpression', the role 'pivot_OCLExpression22' has cardinality 0..*.
+An association connects 'pivot_CollectionType' and 'pivot_Type'. From 'pivot_CollectionType', the role 'pivot_CollectionType' has cardinality 0..*, and from 'pivot_Type', the role 'pivot_Type' has cardinality 0..*.
+An association connects 'pivot_Element' and 'pivot_Comment'. From 'pivot_Element', the role 'pivot_Element25' has cardinality 0..*, and from 'pivot_Comment', the role 'pivot_Comment' has cardinality 0..*.
+An association connects 'pivot_Pseudostate' and 'pivot_ConnectionPointReference'. From 'pivot_Pseudostate', the role 'pivot_Pseudostate' has cardinality 0..*, and from 'pivot_ConnectionPointReference', the role 'pivot_ConnectionPointReference' has cardinality 0..*.
+An association connects 'pivot_ConnectionPointReference' and 'pivot_Pseudostate'. From 'pivot_ConnectionPointReference', the role 'pivot_ConnectionPointReference28' has cardinality 0..*, and from 'pivot_Pseudostate', the role 'pivot_Pseudostate29' has cardinality 0..*.
+An association connects 'pivot_State' and 'pivot_ConnectionPointReference'. From 'pivot_State', the role 'State' has cardinality 0..*, and from 'pivot_ConnectionPointReference', the role 'connection' has cardinality 0..*.
+An association connects 'pivot_Element' and 'pivot_Constraint'. From 'pivot_Element', the role 'pivot_Element32' has cardinality 0..*, and from 'pivot_Constraint', the role 'pivot_Constraint' has cardinality 0..*.
+An association connects 'pivot_Constraint' and 'pivot_Namespace'. From 'pivot_Constraint', the role 'pivot_Constraint34' has cardinality 0..*, and from 'pivot_Namespace', the role 'pivot_Namespace' has cardinality 0..*.
+An association connects 'pivot_State' and 'pivot_Constraint'. From 'pivot_State', the role 'State36' has cardinality 0..*, and from 'pivot_Constraint', the role 'stateInvariant' has cardinality 0..*.
+An association connects 'pivot_Constraint' and 'pivot_Constraint'. From 'pivot_Constraint', the role 'pivot_Constraint39' has cardinality 0..*, and from 'pivot_Constraint', the role 'pivot_Constraint37' has cardinality 0..*.
+An association connects 'pivot_OpaqueExpression' and 'pivot_Constraint'. From 'pivot_OpaqueExpression', the role 'pivot_OpaqueExpression' has cardinality 0..*, and from 'pivot_Constraint', the role 'pivot_Constraint41' has cardinality 0..*.
+An association connects 'pivot_Constraint' and 'pivot_Transition'. From 'pivot_Constraint', the role 'guard' has cardinality 0..*, and from 'pivot_Transition', the role 'Transition43' has cardinality 0..*.
+An association connects 'pivot_ConstructorExp' and 'pivot_ConstructorPart'. From 'pivot_ConstructorExp', the role 'pivot_ConstructorExp' has cardinality 0..*, and from 'pivot_ConstructorPart', the role 'pivot_ConstructorPart' has cardinality 0..*.
+An association connects 'pivot_ConstructorPart' and 'pivot_OCLExpression'. From 'pivot_ConstructorPart', the role 'pivot_ConstructorPart46' has cardinality 0..*, and from 'pivot_OCLExpression', the role 'pivot_OCLExpression47' has cardinality 0..*.
+An association connects 'pivot_Property' and 'pivot_ConstructorPart'. From 'pivot_Property', the role 'pivot_Property' has cardinality 0..*, and from 'pivot_ConstructorPart', the role 'pivot_ConstructorPart49' has cardinality 0..*.
+An association connects 'pivot_Type' and 'pivot_DataType'. From 'pivot_Type', the role 'pivot_Type51' has cardinality 0..*, and from 'pivot_DataType', the role 'pivot_DataType' has cardinality 0..*.
+An association connects 'pivot_DynamicElement' and 'pivot_Type'. From 'pivot_DynamicElement', the role 'pivot_DynamicElement' has cardinality 0..*, and from 'pivot_Type', the role 'pivot_Type53' has cardinality 0..*.
+An association connects 'pivot_DynamicProperty' and 'pivot_Property'. From 'pivot_DynamicProperty', the role 'pivot_DynamicProperty' has cardinality 0..*, and from 'pivot_Property', the role 'pivot_Property55' has cardinality 0..*.
+An association connects 'pivot_DynamicType' and 'pivot_DynamicProperty'. From 'pivot_DynamicType', the role 'pivot_DynamicType' has cardinality 0..*, and from 'pivot_DynamicProperty', the role 'pivot_DynamicProperty57' has cardinality 0..*.
+An association connects 'pivot_ElementExtension' and 'pivot_Element'. From 'pivot_ElementExtension', the role 'ElementExtension' has cardinality 0..*, and from 'pivot_Element', the role 'base' has cardinality 0..*.
+An association connects 'pivot_Element' and 'pivot_Element'. From 'pivot_Element', the role 'pivot_Element59' has cardinality 0..*, and from 'pivot_Element', the role 'pivot_Element61' has cardinality 0..*.
+An association connects 'pivot_Comment' and 'pivot_Element'. From 'pivot_Comment', the role 'pivot_Comment64' has cardinality 0..*, and from 'pivot_Element', the role 'pivot_Element63' has cardinality 0..*.
+An association connects 'pivot_Element' and 'pivot_ElementExtension'. From 'pivot_Element', the role 'Element' has cardinality 0..*, and from 'pivot_ElementExtension', the role 'extension' has cardinality 0..*.
+An association connects 'pivot_ElementExtension' and 'pivot_Stereotype'. From 'pivot_ElementExtension', the role 'pivot_ElementExtension' has cardinality 0..*, and from 'pivot_Stereotype', the role 'pivot_Stereotype' has cardinality 0..*.
+An association connects 'pivot_EnumLiteralExp' and 'pivot_EnumerationLiteral'. From 'pivot_EnumLiteralExp', the role 'pivot_EnumLiteralExp' has cardinality 0..*, and from 'pivot_EnumerationLiteral', the role 'pivot_EnumerationLiteral' has cardinality 0..*.
+An association connects 'pivot_EnumerationLiteral' and 'pivot_Enumeration'. From 'pivot_EnumerationLiteral', the role 'EnumerationLiteral' has cardinality 0..*, and from 'pivot_Enumeration', the role 'enumeration' has cardinality 0..*.
+An association connects 'pivot_Enumeration' and 'pivot_EnumerationLiteral'. From 'pivot_Enumeration', the role 'Enumeration' has cardinality 0..*, and from 'pivot_EnumerationLiteral', the role 'ownedLiteral' has cardinality 0..*.
+An association connects 'pivot_ExpressionInOCL' and 'pivot_OCLExpression'. From 'pivot_ExpressionInOCL', the role 'pivot_ExpressionInOCL' has cardinality 0..*, and from 'pivot_OCLExpression', the role 'pivot_OCLExpression71' has cardinality 0..*.
+An association connects 'pivot_ExpressionInOCL' and 'pivot_Variable'. From 'pivot_ExpressionInOCL', the role 'pivot_ExpressionInOCL73' has cardinality 0..*, and from 'pivot_Variable', the role 'pivot_Variable' has cardinality 0..*.
+An association connects 'pivot_Variable' and 'pivot_ExpressionInOCL'. From 'pivot_Variable', the role 'pivot_Variable76' has cardinality 0..*, and from 'pivot_ExpressionInOCL', the role 'pivot_ExpressionInOCL75' has cardinality 0..*.
+An association connects 'pivot_ExpressionInOCL' and 'pivot_Variable'. From 'pivot_ExpressionInOCL', the role 'pivot_ExpressionInOCL78' has cardinality 0..*, and from 'pivot_Variable', the role 'pivot_Variable79' has cardinality 0..*.
+An association connects 'pivot_IfExp' and 'pivot_OCLExpression'. From 'pivot_IfExp', the role 'pivot_IfExp' has cardinality 0..*, and from 'pivot_OCLExpression', the role 'pivot_OCLExpression81' has cardinality 0..*.
+An association connects 'pivot_IfExp' and 'pivot_OCLExpression'. From 'pivot_IfExp', the role 'pivot_IfExp83' has cardinality 0..*, and from 'pivot_OCLExpression', the role 'pivot_OCLExpression84' has cardinality 0..*.
+An association connects 'pivot_OCLExpression' and 'pivot_IfExp'. From 'pivot_OCLExpression', the role 'pivot_OCLExpression87' has cardinality 0..*, and from 'pivot_IfExp', the role 'pivot_IfExp86' has cardinality 0..*.
+An association connects 'pivot_Namespace' and 'pivot_Import'. From 'pivot_Namespace', the role 'pivot_Namespace89' has cardinality 0..*, and from 'pivot_Import', the role 'pivot_Import' has cardinality 0..*.
+An association connects 'pivot_IterateExp' and 'pivot_Variable'. From 'pivot_IterateExp', the role 'pivot_IterateExp' has cardinality 0..*, and from 'pivot_Variable', the role 'pivot_Variable91' has cardinality 0..*.
+An association connects 'pivot_Iteration' and 'pivot_Parameter'. From 'pivot_Iteration', the role 'pivot_Iteration' has cardinality 0..*, and from 'pivot_Parameter', the role 'pivot_Parameter' has cardinality 0..*.
+An association connects 'pivot_Iteration' and 'pivot_Parameter'. From 'pivot_Iteration', the role 'pivot_Iteration94' has cardinality 0..*, and from 'pivot_Parameter', the role 'pivot_Parameter95' has cardinality 0..*.
+An association connects 'pivot_Type' and 'pivot_LambdaType'. From 'pivot_Type', the role 'pivot_Type97' has cardinality 0..*, and from 'pivot_LambdaType', the role 'pivot_LambdaType' has cardinality 0..*.
+An association connects 'pivot_Type' and 'pivot_LambdaType'. From 'pivot_Type', the role 'pivot_Type100' has cardinality 0..*, and from 'pivot_LambdaType', the role 'pivot_LambdaType99' has cardinality 0..*.
+An association connects 'pivot_Type' and 'pivot_LambdaType'. From 'pivot_Type', the role 'pivot_Type103' has cardinality 0..*, and from 'pivot_LambdaType', the role 'pivot_LambdaType102' has cardinality 0..*.
+An association connects 'pivot_OCLExpression' and 'pivot_LetExp'. From 'pivot_OCLExpression', the role 'pivot_OCLExpression105' has cardinality 0..*, and from 'pivot_LetExp', the role 'pivot_LetExp' has cardinality 0..*.
+An association connects 'pivot_LetExp' and 'pivot_Variable'. From 'pivot_LetExp', the role 'pivot_LetExp107' has cardinality 0..*, and from 'pivot_Variable', the role 'pivot_Variable108' has cardinality 0..*.
+An association connects 'pivot_Precedence' and 'pivot_Library'. From 'pivot_Precedence', the role 'pivot_Precedence' has cardinality 0..*, and from 'pivot_Library', the role 'pivot_Library' has cardinality 0..*.
+An association connects 'pivot_LoopExp' and 'pivot_OCLExpression'. From 'pivot_LoopExp', the role 'pivot_LoopExp' has cardinality 0..*, and from 'pivot_OCLExpression', the role 'pivot_OCLExpression111' has cardinality 0..*.
+An association connects 'pivot_LoopExp' and 'pivot_Variable'. From 'pivot_LoopExp', the role 'pivot_LoopExp113' has cardinality 0..*, and from 'pivot_Variable', the role 'pivot_Variable114' has cardinality 0..*.
+An association connects 'pivot_Iteration' and 'pivot_LoopExp'. From 'pivot_Iteration', the role 'pivot_Iteration117' has cardinality 0..*, and from 'pivot_LoopExp', the role 'pivot_LoopExp116' has cardinality 0..*.
+An association connects 'pivot_OCLExpression' and 'pivot_MessageExp'. From 'pivot_OCLExpression', the role 'pivot_OCLExpression119' has cardinality 0..*, and from 'pivot_MessageExp', the role 'pivot_MessageExp' has cardinality 0..*.
+An association connects 'pivot_CallOperationAction' and 'pivot_MessageExp'. From 'pivot_CallOperationAction', the role 'pivot_CallOperationAction122' has cardinality 0..*, and from 'pivot_MessageExp', the role 'pivot_MessageExp121' has cardinality 0..*.
+An association connects 'pivot_SendSignalAction' and 'pivot_MessageExp'. From 'pivot_SendSignalAction', the role 'pivot_SendSignalAction' has cardinality 0..*, and from 'pivot_MessageExp', the role 'pivot_MessageExp124' has cardinality 0..*.
+An association connects 'pivot_OCLExpression' and 'pivot_MessageExp'. From 'pivot_OCLExpression', the role 'pivot_OCLExpression127' has cardinality 0..*, and from 'pivot_MessageExp', the role 'pivot_MessageExp126' has cardinality 0..*.
+An association connects 'pivot_MessageType' and 'pivot_Operation'. From 'pivot_MessageType', the role 'pivot_MessageType' has cardinality 0..*, and from 'pivot_Operation', the role 'pivot_Operation129' has cardinality 0..*.
+An association connects 'pivot_MessageType' and 'pivot_Signal'. From 'pivot_MessageType', the role 'pivot_MessageType131' has cardinality 0..*, and from 'pivot_Signal', the role 'pivot_Signal' has cardinality 0..*.
+An association connects 'pivot_Metaclass' and 'pivot_Type'. From 'pivot_Metaclass', the role 'pivot_Metaclass' has cardinality 0..*, and from 'pivot_Type', the role 'pivot_Type133' has cardinality 0..*.
+An association connects 'pivot_Constraint' and 'pivot_Namespace'. From 'pivot_Constraint', the role 'pivot_Constraint136' has cardinality 0..*, and from 'pivot_Namespace', the role 'pivot_Namespace135' has cardinality 0..*.
+An association connects 'pivot_NavigationCallExp' and 'pivot_Property'. From 'pivot_NavigationCallExp', the role 'pivot_NavigationCallExp' has cardinality 0..*, and from 'pivot_Property', the role 'pivot_Property138' has cardinality 0..*.
+An association connects 'pivot_NavigationCallExp' and 'pivot_OCLExpression'. From 'pivot_NavigationCallExp', the role 'pivot_NavigationCallExp140' has cardinality 0..*, and from 'pivot_OCLExpression', the role 'pivot_OCLExpression141' has cardinality 0..*.
+An association connects 'pivot_OpaqueExpression' and 'pivot_ExpressionInOCL'. From 'pivot_OpaqueExpression', the role 'pivot_OpaqueExpression143' has cardinality 0..*, and from 'pivot_ExpressionInOCL', the role 'pivot_ExpressionInOCL144' has cardinality 0..*.
+An association connects 'pivot_OpaqueExpression' and 'pivot_Operation'. From 'pivot_OpaqueExpression', the role 'pivot_OpaqueExpression147' has cardinality 0..*, and from 'pivot_Operation', the role 'pivot_Operation146' has cardinality 0..*.
+An association connects 'pivot_Class' and 'pivot_Operation'. From 'pivot_Class', the role 'pivot_Class150' has cardinality 0..*, and from 'pivot_Operation', the role 'pivot_Operation149' has cardinality 0..*.
+An association connects 'pivot_Operation' and 'pivot_Parameter'. From 'pivot_Operation', the role 'operation' has cardinality 0..*, and from 'pivot_Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'pivot_Operation' and 'pivot_Type'. From 'pivot_Operation', the role 'ownedOperation' has cardinality 0..*, and from 'pivot_Type', the role 'Type' has cardinality 0..*.
+An association connects 'pivot_Operation' and 'pivot_Constraint'. From 'pivot_Operation', the role 'pivot_Operation154' has cardinality 0..*, and from 'pivot_Constraint', the role 'pivot_Constraint155' has cardinality 0..*.
+An association connects 'pivot_Precedence' and 'pivot_Operation'. From 'pivot_Precedence', the role 'pivot_Precedence158' has cardinality 0..*, and from 'pivot_Operation', the role 'pivot_Operation157' has cardinality 0..*.
+An association connects 'pivot_Constraint' and 'pivot_Operation'. From 'pivot_Constraint', the role 'pivot_Constraint161' has cardinality 0..*, and from 'pivot_Operation', the role 'pivot_Operation160' has cardinality 0..*.
+An association connects 'pivot_Type' and 'pivot_Operation'. From 'pivot_Type', the role 'pivot_Type164' has cardinality 0..*, and from 'pivot_Operation', the role 'pivot_Operation163' has cardinality 0..*.
+An association connects 'pivot_Operation' and 'pivot_Operation'. From 'pivot_Operation', the role 'pivot_Operation167' has cardinality 0..*, and from 'pivot_Operation', the role 'pivot_Operation165' has cardinality 0..*.
+An association connects 'pivot_OCLExpression' and 'pivot_OperationCallExp'. From 'pivot_OCLExpression', the role 'pivot_OCLExpression169' has cardinality 0..*, and from 'pivot_OperationCallExp', the role 'pivot_OperationCallExp' has cardinality 0..*.
+An association connects 'pivot_OperationCallExp' and 'pivot_Operation'. From 'pivot_OperationCallExp', the role 'pivot_OperationCallExp171' has cardinality 0..*, and from 'pivot_Operation', the role 'pivot_Operation172' has cardinality 0..*.
+An association connects 'pivot_Property' and 'pivot_OppositePropertyCallExp'. From 'pivot_Property', the role 'pivot_Property174' has cardinality 0..*, and from 'pivot_OppositePropertyCallExp', the role 'pivot_OppositePropertyCallExp' has cardinality 0..*.
+An association connects 'pivot_Package' and 'pivot_Package'. From 'pivot_Package', the role 'pivot_Package' has cardinality 0..*, and from 'pivot_Package', the role 'pivot_Package175' has cardinality 0..*.
+An association connects 'pivot_Package' and 'pivot_Package'. From 'pivot_Package', the role 'Package' has cardinality 0..*, and from 'pivot_Package', the role 'nestingPackage' has cardinality 0..*.
+An association connects 'pivot_Package' and 'pivot_Package'. From 'pivot_Package', the role 'Package181' has cardinality 0..*, and from 'pivot_Package', the role 'nestedPackage' has cardinality 0..*.
+An association connects 'pivot_Type' and 'pivot_Package'. From 'pivot_Type', the role 'Type183' has cardinality 0..*, and from 'pivot_Package', the role 'package' has cardinality 0..*.
+An association connects 'pivot_Package' and 'pivot_ProfileApplication'. From 'pivot_Package', the role 'applyingPackage' has cardinality 0..*, and from 'pivot_ProfileApplication', the role 'ProfileApplication' has cardinality 0..*.
+An association connects 'pivot_Operation' and 'pivot_Parameter'. From 'pivot_Operation', the role 'Operation' has cardinality 0..*, and from 'pivot_Parameter', the role 'ownedParameter' has cardinality 0..*.
+An association connects 'pivot_ParameterableElement' and 'pivot_TemplateParameter'. From 'pivot_ParameterableElement', the role 'ownedParameteredElement' has cardinality 0..*, and from 'pivot_TemplateParameter', the role 'TemplateParameter' has cardinality 0..*.
+An association connects 'pivot_ParameterableElement' and 'pivot_TemplateParameter'. From 'pivot_ParameterableElement', the role 'parameteredElement' has cardinality 0..*, and from 'pivot_TemplateParameter', the role 'TemplateParameter188' has cardinality 0..*.
+An association connects 'pivot_Profile' and 'pivot_ProfileApplication'. From 'pivot_Profile', the role 'appliedProfile' has cardinality 0..*, and from 'pivot_ProfileApplication', the role 'ProfileApplication190' has cardinality 0..*.
+An association connects 'pivot_ProfileApplication' and 'pivot_Profile'. From 'pivot_ProfileApplication', the role 'application' has cardinality 0..*, and from 'pivot_Profile', the role 'Profile' has cardinality 0..*.
+An association connects 'pivot_ProfileApplication' and 'pivot_Package'. From 'pivot_ProfileApplication', the role 'profileApplication' has cardinality 0..*, and from 'pivot_Package', the role 'Package193' has cardinality 0..*.
+An association connects 'pivot_Property' and 'pivot_AssociationClass'. From 'pivot_Property', the role 'unownedAttribute' has cardinality 0..*, and from 'pivot_AssociationClass', the role 'AssociationClass' has cardinality 0..*.
+An association connects 'pivot_Property' and 'pivot_Class'. From 'pivot_Property', the role 'pivot_Property196' has cardinality 0..*, and from 'pivot_Class', the role 'pivot_Class197' has cardinality 0..*.
+An association connects 'pivot_OpaqueExpression' and 'pivot_Property'. From 'pivot_OpaqueExpression', the role 'pivot_OpaqueExpression200' has cardinality 0..*, and from 'pivot_Property', the role 'pivot_Property199' has cardinality 0..*.
+An association connects 'pivot_Property' and 'pivot_Property'. From 'pivot_Property', the role 'pivot_Property203' has cardinality 0..*, and from 'pivot_Property', the role 'pivot_Property201' has cardinality 0..*.
+An association connects 'pivot_Property' and 'pivot_Property'. From 'pivot_Property', the role 'pivot_Property206' has cardinality 0..*, and from 'pivot_Property', the role 'pivot_Property204' has cardinality 0..*.
+An association connects 'pivot_Type' and 'pivot_Property'. From 'pivot_Type', the role 'Type208' has cardinality 0..*, and from 'pivot_Property', the role 'ownedAttribute' has cardinality 0..*.
+An association connects 'pivot_Property' and 'pivot_Property'. From 'pivot_Property', the role 'pivot_Property209' has cardinality 0..*, and from 'pivot_Property', the role 'pivot_Property211' has cardinality 0..*.
+An association connects 'pivot_Property' and 'pivot_Property'. From 'pivot_Property', the role 'pivot_Property212' has cardinality 0..*, and from 'pivot_Property', the role 'pivot_Property214' has cardinality 0..*.
+An association connects 'pivot_Property' and 'pivot_Property'. From 'pivot_Property', the role 'pivot_Property215' has cardinality 0..*, and from 'pivot_Property', the role 'pivot_Property217' has cardinality 0..*.
+An association connects 'pivot_Property' and 'pivot_PropertyCallExp'. From 'pivot_Property', the role 'pivot_Property219' has cardinality 0..*, and from 'pivot_PropertyCallExp', the role 'pivot_PropertyCallExp' has cardinality 0..*.
+An association connects 'pivot_State' and 'pivot_Pseudostate'. From 'pivot_State', the role 'State221' has cardinality 0..*, and from 'pivot_Pseudostate', the role 'connectionPoint' has cardinality 0..*.
+An association connects 'pivot_Pseudostate' and 'pivot_StateMachine'. From 'pivot_Pseudostate', the role 'pivot_Pseudostate223' has cardinality 0..*, and from 'pivot_StateMachine', the role 'pivot_StateMachine' has cardinality 0..*.
+An association connects 'pivot_Region' and 'pivot_Region'. From 'pivot_Region', the role 'pivot_Region' has cardinality 0..*, and from 'pivot_Region', the role 'pivot_Region224' has cardinality 0..*.
+An association connects 'pivot_Region' and 'pivot_State'. From 'pivot_Region', the role 'region' has cardinality 0..*, and from 'pivot_State', the role 'State227' has cardinality 0..*.
+An association connects 'pivot_Region' and 'pivot_StateMachine'. From 'pivot_Region', the role 'region229' has cardinality 0..*, and from 'pivot_StateMachine', the role 'StateMachine' has cardinality 0..*.
+An association connects 'pivot_Vertex' and 'pivot_Region'. From 'pivot_Vertex', the role 'Vertex' has cardinality 0..*, and from 'pivot_Region', the role 'container' has cardinality 0..*.
+An association connects 'pivot_Transition' and 'pivot_Region'. From 'pivot_Transition', the role 'Transition233' has cardinality 0..*, and from 'pivot_Region', the role 'container232' has cardinality 0..*.
+An association connects 'pivot_Root' and 'pivot_Import'. From 'pivot_Root', the role 'pivot_Root' has cardinality 0..*, and from 'pivot_Import', the role 'pivot_Import235' has cardinality 0..*.
+An association connects 'pivot_Package' and 'pivot_Root'. From 'pivot_Package', the role 'pivot_Package238' has cardinality 0..*, and from 'pivot_Root', the role 'pivot_Root237' has cardinality 0..*.
+An association connects 'pivot_Signal' and 'pivot_SendSignalAction'. From 'pivot_Signal', the role 'pivot_Signal241' has cardinality 0..*, and from 'pivot_SendSignalAction', the role 'pivot_SendSignalAction240' has cardinality 0..*.
+An association connects 'pivot_ConnectionPointReference' and 'pivot_State'. From 'pivot_ConnectionPointReference', the role 'ConnectionPointReference' has cardinality 0..*, and from 'pivot_State', the role 'state' has cardinality 0..*.
+An association connects 'pivot_State' and 'pivot_Pseudostate'. From 'pivot_State', the role 'state244' has cardinality 0..*, and from 'pivot_Pseudostate', the role 'Pseudostate' has cardinality 0..*.
+An association connects 'pivot_State' and 'pivot_Trigger'. From 'pivot_State', the role 'state246' has cardinality 0..*, and from 'pivot_Trigger', the role 'Trigger' has cardinality 0..*.
+An association connects 'pivot_Behavior' and 'pivot_State'. From 'pivot_Behavior', the role 'pivot_Behavior248' has cardinality 0..*, and from 'pivot_State', the role 'pivot_State' has cardinality 0..*.
+An association connects 'pivot_State' and 'pivot_Behavior'. From 'pivot_State', the role 'pivot_State250' has cardinality 0..*, and from 'pivot_Behavior', the role 'pivot_Behavior251' has cardinality 0..*.
+An association connects 'pivot_Behavior' and 'pivot_State'. From 'pivot_Behavior', the role 'pivot_Behavior254' has cardinality 0..*, and from 'pivot_State', the role 'pivot_State253' has cardinality 0..*.
+An association connects 'pivot_State' and 'pivot_State'. From 'pivot_State', the role 'pivot_State255' has cardinality 0..*, and from 'pivot_State', the role 'pivot_State257' has cardinality 0..*.
+An association connects 'pivot_State' and 'pivot_Region'. From 'pivot_State', the role 'state259' has cardinality 0..*, and from 'pivot_Region', the role 'Region' has cardinality 0..*.
+An association connects 'pivot_Constraint' and 'pivot_State'. From 'pivot_Constraint', the role 'Constraint' has cardinality 0..*, and from 'pivot_State', the role 'owningState' has cardinality 0..*.
+An association connects 'pivot_StateMachine' and 'pivot_State'. From 'pivot_StateMachine', the role 'StateMachine262' has cardinality 0..*, and from 'pivot_State', the role 'submachineState' has cardinality 0..*.
+An association connects 'pivot_State' and 'pivot_StateExp'. From 'pivot_State', the role 'pivot_State264' has cardinality 0..*, and from 'pivot_StateExp', the role 'pivot_StateExp' has cardinality 0..*.
+An association connects 'pivot_Pseudostate' and 'pivot_StateMachine'. From 'pivot_Pseudostate', the role 'pivot_Pseudostate267' has cardinality 0..*, and from 'pivot_StateMachine', the role 'pivot_StateMachine266' has cardinality 0..*.
+An association connects 'pivot_StateMachine' and 'pivot_StateMachine'. From 'pivot_StateMachine', the role 'pivot_StateMachine268' has cardinality 0..*, and from 'pivot_StateMachine', the role 'pivot_StateMachine270' has cardinality 0..*.
+An association connects 'pivot_Region' and 'pivot_StateMachine'. From 'pivot_Region', the role 'Region272' has cardinality 0..*, and from 'pivot_StateMachine', the role 'stateMachine' has cardinality 0..*.
+An association connects 'pivot_State' and 'pivot_StateMachine'. From 'pivot_State', the role 'State274' has cardinality 0..*, and from 'pivot_StateMachine', the role 'submachine' has cardinality 0..*.
+An association connects 'pivot_TypeExtension' and 'pivot_Stereotype'. From 'pivot_TypeExtension', the role 'TypeExtension' has cardinality 0..*, and from 'pivot_Stereotype', the role 'stereotype' has cardinality 0..*.
+An association connects 'pivot_TemplateableElement' and 'pivot_TemplateBinding'. From 'pivot_TemplateableElement', the role 'TemplateableElement' has cardinality 0..*, and from 'pivot_TemplateBinding', the role 'templateBinding' has cardinality 0..*.
+An association connects 'pivot_TemplateParameterSubstitution' and 'pivot_TemplateBinding'. From 'pivot_TemplateParameterSubstitution', the role 'TemplateParameterSubstitution' has cardinality 0..*, and from 'pivot_TemplateBinding', the role 'templateBinding278' has cardinality 0..*.
+An association connects 'pivot_TemplateBinding' and 'pivot_TemplateSignature'. From 'pivot_TemplateBinding', the role 'pivot_TemplateBinding' has cardinality 0..*, and from 'pivot_TemplateSignature', the role 'pivot_TemplateSignature' has cardinality 0..*.
+An association connects 'pivot_ParameterableElement' and 'pivot_TemplateParameter'. From 'pivot_ParameterableElement', the role 'pivot_ParameterableElement' has cardinality 0..*, and from 'pivot_TemplateParameter', the role 'pivot_TemplateParameter' has cardinality 0..*.
+An association connects 'pivot_TemplateParameter' and 'pivot_ParameterableElement'. From 'pivot_TemplateParameter', the role 'pivot_TemplateParameter282' has cardinality 0..*, and from 'pivot_ParameterableElement', the role 'pivot_ParameterableElement283' has cardinality 0..*.
+An association connects 'pivot_TemplateParameter' and 'pivot_ParameterableElement'. From 'pivot_TemplateParameter', the role 'owningTemplateParameter' has cardinality 0..*, and from 'pivot_ParameterableElement', the role 'ParameterableElement' has cardinality 0..*.
+An association connects 'pivot_TemplateParameter' and 'pivot_ParameterableElement'. From 'pivot_TemplateParameter', the role 'templateParameter' has cardinality 0..*, and from 'pivot_ParameterableElement', the role 'ParameterableElement286' has cardinality 0..*.
+An association connects 'pivot_TemplateSignature' and 'pivot_TemplateParameter'. From 'pivot_TemplateSignature', the role 'TemplateSignature' has cardinality 0..*, and from 'pivot_TemplateParameter', the role 'ownedParameter288' has cardinality 0..*.
+An association connects 'pivot_ParameterableElement' and 'pivot_TemplateParameterSubstitution'. From 'pivot_ParameterableElement', the role 'pivot_ParameterableElement290' has cardinality 0..*, and from 'pivot_TemplateParameterSubstitution', the role 'pivot_TemplateParameterSubstitution' has cardinality 0..*.
+An association connects 'pivot_TemplateParameter' and 'pivot_TemplateParameterSubstitution'. From 'pivot_TemplateParameter', the role 'pivot_TemplateParameter293' has cardinality 0..*, and from 'pivot_TemplateParameterSubstitution', the role 'pivot_TemplateParameterSubstitution292' has cardinality 0..*.
+An association connects 'pivot_ParameterableElement' and 'pivot_TemplateParameterSubstitution'. From 'pivot_ParameterableElement', the role 'pivot_ParameterableElement296' has cardinality 0..*, and from 'pivot_TemplateParameterSubstitution', the role 'pivot_TemplateParameterSubstitution295' has cardinality 0..*.
+An association connects 'pivot_TemplateParameterSubstitution' and 'pivot_TemplateBinding'. From 'pivot_TemplateParameterSubstitution', the role 'parameterSubstitution' has cardinality 0..*, and from 'pivot_TemplateBinding', the role 'TemplateBinding' has cardinality 0..*.
+An association connects 'pivot_TemplateSignature' and 'pivot_TemplateParameter'. From 'pivot_TemplateSignature', the role 'signature' has cardinality 0..*, and from 'pivot_TemplateParameter', the role 'TemplateParameter299' has cardinality 0..*.
+An association connects 'pivot_TemplateableElement' and 'pivot_TemplateSignature'. From 'pivot_TemplateableElement', the role 'TemplateableElement301' has cardinality 0..*, and from 'pivot_TemplateSignature', the role 'ownedTemplateSignature' has cardinality 0..*.
+An association connects 'pivot_TemplateSignature' and 'pivot_TemplateableElement'. From 'pivot_TemplateSignature', the role 'TemplateSignature303' has cardinality 0..*, and from 'pivot_TemplateableElement', the role 'template' has cardinality 0..*.
+An association connects 'pivot_TemplateableElement' and 'pivot_TemplateBinding'. From 'pivot_TemplateableElement', the role 'boundElement' has cardinality 0..*, and from 'pivot_TemplateBinding', the role 'TemplateBinding305' has cardinality 0..*.
+An association connects 'pivot_TemplateableElement' and 'pivot_TemplateableElement'. From 'pivot_TemplateableElement', the role 'pivot_TemplateableElement306' has cardinality 0..*, and from 'pivot_TemplateableElement', the role 'pivot_TemplateableElement' has cardinality 0..*.
+An association connects 'pivot_Region' and 'pivot_Transition'. From 'pivot_Region', the role 'Region309' has cardinality 0..*, and from 'pivot_Transition', the role 'transition' has cardinality 0..*.
+An association connects 'pivot_Transition' and 'pivot_Behavior'. From 'pivot_Transition', the role 'transition311' has cardinality 0..*, and from 'pivot_Behavior', the role 'Behavior' has cardinality 0..*.
+An association connects 'pivot_Transition' and 'pivot_Constraint'. From 'pivot_Transition', the role 'transition313' has cardinality 0..*, and from 'pivot_Constraint', the role 'Constraint314' has cardinality 0..*.
+An association connects 'pivot_Vertex' and 'pivot_Transition'. From 'pivot_Vertex', the role 'Vertex316' has cardinality 0..*, and from 'pivot_Transition', the role 'outgoing' has cardinality 0..*.
+An association connects 'pivot_Transition' and 'pivot_Vertex'. From 'pivot_Transition', the role 'incoming' has cardinality 0..*, and from 'pivot_Vertex', the role 'Vertex318' has cardinality 0..*.
+An association connects 'pivot_Transition' and 'pivot_Trigger'. From 'pivot_Transition', the role 'transition320' has cardinality 0..*, and from 'pivot_Trigger', the role 'Trigger321' has cardinality 0..*.
+An association connects 'pivot_State' and 'pivot_Trigger'. From 'pivot_State', the role 'State323' has cardinality 0..*, and from 'pivot_Trigger', the role 'deferrableTrigger' has cardinality 0..*.
+An association connects 'pivot_Trigger' and 'pivot_Transition'. From 'pivot_Trigger', the role 'trigger' has cardinality 0..*, and from 'pivot_Transition', the role 'Transition325' has cardinality 0..*.
+An association connects 'pivot_TupleLiteralPart' and 'pivot_TupleLiteralExp'. From 'pivot_TupleLiteralPart', the role 'pivot_TupleLiteralPart' has cardinality 0..*, and from 'pivot_TupleLiteralExp', the role 'pivot_TupleLiteralExp' has cardinality 0..*.
+An association connects 'pivot_OCLExpression' and 'pivot_TupleLiteralPart'. From 'pivot_OCLExpression', the role 'pivot_OCLExpression329' has cardinality 0..*, and from 'pivot_TupleLiteralPart', the role 'pivot_TupleLiteralPart328' has cardinality 0..*.
+An association connects 'pivot_TypeExtension' and 'pivot_Type'. From 'pivot_TypeExtension', the role 'TypeExtension331' has cardinality 0..*, and from 'pivot_Type', the role 'type' has cardinality 0..*.
+An association connects 'pivot_Type' and 'pivot_Property'. From 'pivot_Type', the role 'owningType' has cardinality 0..*, and from 'pivot_Property', the role 'Property333' has cardinality 0..*.
+An association connects 'pivot_Type' and 'pivot_Constraint'. From 'pivot_Type', the role 'pivot_Type335' has cardinality 0..*, and from 'pivot_Constraint', the role 'pivot_Constraint336' has cardinality 0..*.
+An association connects 'pivot_Type' and 'pivot_Operation'. From 'pivot_Type', the role 'owningType338' has cardinality 0..*, and from 'pivot_Operation', the role 'Operation339' has cardinality 0..*.
+An association connects 'pivot_Type' and 'pivot_Package'. From 'pivot_Type', the role 'ownedType' has cardinality 0..*, and from 'pivot_Package', the role 'Package341' has cardinality 0..*.
+An association connects 'pivot_Type' and 'pivot_Type'. From 'pivot_Type', the role 'pivot_Type344' has cardinality 0..*, and from 'pivot_Type', the role 'pivot_Type342' has cardinality 0..*.
+An association connects 'pivot_TypeExp' and 'pivot_Type'. From 'pivot_TypeExp', the role 'pivot_TypeExp' has cardinality 0..*, and from 'pivot_Type', the role 'pivot_Type346' has cardinality 0..*.
+An association connects 'pivot_Stereotype' and 'pivot_TypeExtension'. From 'pivot_Stereotype', the role 'Stereotype' has cardinality 0..*, and from 'pivot_TypeExtension', the role 'extensionOfs' has cardinality 0..*.
+An association connects 'pivot_Type' and 'pivot_TypeExtension'. From 'pivot_Type', the role 'Type349' has cardinality 0..*, and from 'pivot_TypeExtension', the role 'extendedBys' has cardinality 0..*.
+An association connects 'pivot_Type' and 'pivot_TypeTemplateParameter'. From 'pivot_Type', the role 'pivot_Type351' has cardinality 0..*, and from 'pivot_TypeTemplateParameter', the role 'pivot_TypeTemplateParameter' has cardinality 0..*.
+An association connects 'pivot_Type' and 'pivot_TypedElement'. From 'pivot_Type', the role 'pivot_Type353' has cardinality 0..*, and from 'pivot_TypedElement', the role 'pivot_TypedElement' has cardinality 0..*.
+An association connects 'pivot_Type' and 'pivot_UnspecifiedType'. From 'pivot_Type', the role 'pivot_Type355' has cardinality 0..*, and from 'pivot_UnspecifiedType', the role 'pivot_UnspecifiedType' has cardinality 0..*.
+An association connects 'pivot_Type' and 'pivot_UnspecifiedType'. From 'pivot_Type', the role 'pivot_Type358' has cardinality 0..*, and from 'pivot_UnspecifiedType', the role 'pivot_UnspecifiedType357' has cardinality 0..*.
+An association connects 'pivot_Variable' and 'pivot_OCLExpression'. From 'pivot_Variable', the role 'pivot_Variable360' has cardinality 0..*, and from 'pivot_OCLExpression', the role 'pivot_OCLExpression361' has cardinality 0..*.
+An association connects 'pivot_Parameter' and 'pivot_Variable'. From 'pivot_Parameter', the role 'pivot_Parameter364' has cardinality 0..*, and from 'pivot_Variable', the role 'pivot_Variable363' has cardinality 0..*.
+An association connects 'pivot_VariableDeclaration' and 'pivot_VariableExp'. From 'pivot_VariableDeclaration', the role 'pivot_VariableDeclaration' has cardinality 0..*, and from 'pivot_VariableExp', the role 'pivot_VariableExp' has cardinality 0..*.
+An association connects 'pivot_Vertex' and 'pivot_Region'. From 'pivot_Vertex', the role 'subvertex' has cardinality 0..*, and from 'pivot_Region', the role 'Region367' has cardinality 0..*.
+An association connects 'pivot_Vertex' and 'pivot_Transition'. From 'pivot_Vertex', the role 'target' has cardinality 0..*, and from 'pivot_Transition', the role 'Transition369' has cardinality 0..*.
+An association connects 'pivot_Vertex' and 'pivot_Transition'. From 'pivot_Vertex', the role 'source' has cardinality 0..*, and from 'pivot_Transition', the role 'Transition371' has cardinality 0..*.

@@ -1,0 +1,291 @@
+The domain model 'MARTE_Library' describes the core structural elements and their relationships within the system.
+
+The model defines 65 main class(es).
+
+'BurstPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'NFP_Integer' represents an important domain concept.
+It does not declare any attributes.
+
+'PeriodicServerParameters' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_BasicNFP_Types_NFP_Price' represents an important domain concept.
+It has one attribute: 'unit', which is of type str.
+
+'MARTE_Library_MARTE_DataTypes_Realnterval' represents an important domain concept.
+It has one attribute: 'bound', which is of type str.
+
+'MARTE_Library_MARTE_DataTypes_IntegerInterval' represents an important domain concept.
+It has one attribute: 'bound', which is of type str.
+
+'MARTE_Library_GRM_BasicTypes_PeriodicServerParameters' represents an important domain concept.
+It has the following attributes: 'backgroundPriority', which is of type str; 'kind', which is of type str.
+
+'MARTE_Library_BasicNFP_Types_OpenPattern' represents an important domain concept.
+It has one attribute: 'arrivalProcess', which is of type str.
+
+'FixedPriorityParameters' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_BasicNFP_Types_SporadicPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'NFP_Duration' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_MARTE_DataTypes_NFP_NaturalInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_BasicNFP_Types_NFP_Real' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'NFP_Real' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_GRM_BasicTypes_FixedPriorityParameters' represents an important domain concept.
+It does not declare any attributes.
+
+'NFP_CommonType' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_BasicNFP_Types_NFP_Weight' represents an important domain concept.
+It has the following attributes: 'precision', which is of type str; 'unit', which is of type str.
+
+'MARTE_Library_BasicNFP_Types_NFP_Percentage' represents an important domain concept.
+It has one attribute: 'unit', which is of type str.
+
+'MARTE_Library_MARTE_DataTypes_Interval' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_TimeLibrary_IdealClock' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_RS_Library_TilerSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_BasicNFP_Types_NFP_String' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'MARTE_Library_MARTE_DataTypes_RealMatrix' represents an important domain concept.
+It has one attribute: 'matrixElem', which is of type str.
+
+'MARTE_Library_BasicNFP_Types_PeriodicPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_BasicNFP_Types_NFP_CommonType' represents an important domain concept.
+It has the following attributes: 'dir', which is of type str; 'source', which is of type str; 'statQ', which is of type str; 'expr', which is of type str; 'mode', which is of type str.
+
+'MARTE_Library_BasicNFP_Types_IrregularPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'NFP_Natural' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_MARTE_DataTypes_RealVector' represents an important domain concept.
+It has one attribute: 'vectorElem', which is of type str.
+
+'MARTE_Library_BasicNFP_Types_NFP_Power' represents an important domain concept.
+It has the following attributes: 'precision', which is of type str; 'unit', which is of type str.
+
+'NFP_Frequency' represents an important domain concept.
+It does not declare any attributes.
+
+'EDF_Parameters' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_BasicNFP_Types_NFP_DataTxRate' represents an important domain concept.
+It has the following attributes: 'unit', which is of type str; 'precision', which is of type str.
+
+'MARTE_Library_GRM_BasicTypes_EDF_Parameters' represents an important domain concept.
+It does not declare any attributes.
+
+'OpenPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'AperiodicPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'SporadicPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_BasicNFP_Types_NFP_Boolean' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'MARTE_Library_BasicNFP_Types_NFP_Area' represents an important domain concept.
+It has the following attributes: 'precision', which is of type str; 'unit', which is of type str.
+
+'MARTE_Library_GRM_BasicTypes_SchedParameters' represents an important domain concept.
+It has one attribute: 'tableEntry', which is of type str.
+
+'MARTE_Library_BasicNFP_Types_ClosedPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_BasicNFP_Types_NFP_DataSize' represents an important domain concept.
+It has the following attributes: 'precision', which is of type str; 'unit', which is of type str.
+
+'MARTE_Library_BasicNFP_Types_NFP_Energy' represents an important domain concept.
+It has the following attributes: 'precision', which is of type str; 'unit', which is of type str.
+
+'IrregularPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_MARTE_DataTypes_NFP_FrequencyInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'ClosedPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerMatrix' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerVector' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_BasicNFP_Types_NFP_Integer' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'MARTE_Library_BasicNFP_Types_NFP_Length' represents an important domain concept.
+It has the following attributes: 'unit', which is of type str; 'precision', which is of type str.
+
+'MARTE_Library_GRM_BasicTypes_PoolingParameters' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_BasicNFP_Types_NFP_DateTime' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'MARTE_Library_BasicNFP_Types_ArrivalPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'PeriodicPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_MARTE_DataTypes_UtilityType' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_RS_Library_ShapeSpecification' represents an important domain concept.
+It has one attribute: 'size', which is of type str.
+
+'MARTE_Library_BasicNFP_Types_AperiodicPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_TimeLibrary_TimedValueType' represents an important domain concept.
+It has the following attributes: 'unit', which is of type str; 'expr', which is of type str; 'onClock', which is of type str; 'value', which is of type str.
+
+'MARTE_Library_BasicNFP_Types_NFP_Frequency' represents an important domain concept.
+It has the following attributes: 'unit', which is of type str; 'precision', which is of type str.
+
+'MARTE_Library_MARTE_DataTypes_IntegerVector' represents an important domain concept.
+It has one attribute: 'vectorElem', which is of type str.
+
+'MARTE_Library_BasicNFP_Types_NFP_Natural' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'PoolingParameters' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_BasicNFP_Types_BurstPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_MARTE_DataTypes_Array' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Library_BasicNFP_Types_NFP_Duration' represents an important domain concept.
+It has the following attributes: 'clock', which is of type str; 'worst', which is of type str; 'unit', which is of type str; 'best', which is of type str; 'precision', which is of type str.
+
+'MARTE_Library_MARTE_DataTypes_IntegerMatrix' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SourceKind' defines the following possible values: 'meas', 'calc', 'req', 'est'.
+The enumeration 'PowerUnitKind' defines the following possible values: 'KW', 'W', 'mW'.
+The enumeration 'FrequencyUnitKind' defines the following possible values: 'MHz', 'KHz', 'Hz', 'GHz', 'rpm'.
+The enumeration 'LengthUnitKind' defines the following possible values: 'mm', 'm', 'cm'.
+The enumeration 'TUK' is defined but does not specify any literals.
+The enumeration 'EnergyUnitKind' defines the following possible values: 'KJ', 'Wh', 'mWh', 'KWh', 'J'.
+The enumeration 'StatisticalQualifierKind' defines the following possible values: 'max', 'percent', 'mean', 'min', 'other', 'variance', 'range', 'determ', 'distrib'.
+The enumeration 'TimeNatureKind' defines the following possible values: 'dense', 'discrete'.
+The enumeration 'LogicalTimeUnit' defines a single possible value: 'tick'.
+The enumeration 'AreaUnitKind' defines the following possible values: 'um2', 'mm2'.
+The enumeration 'TransmModeKind' defines the following possible values: 'fullDuplex', 'halfDuplex', 'simplex'.
+The enumeration 'ProtectProtocolKind' defines the following possible values: 'PriorityCeiling', 'StackBased', 'PriorityInheritance', 'NoPreemption', 'FIFO', 'Other', 'Undef'.
+The enumeration 'WeightUnitKind' defines the following possible values: 'kg', 'g', 'mg'.
+The enumeration 'DataSizeUnitKind' defines the following possible values: 'Byte', 'MB', 'GB', 'KB', 'bit'.
+The enumeration 'TimeStandardKind' defines the following possible values: 'UT1', 'TCB', 'TAI', 'TBD', 'GPS', 'TCG', 'UT0', 'TT', 'Local', 'Sidereal', 'UTC'.
+The enumeration 'TimeUnitKind' defines the following possible values: 'ms', 'min', 'day', 'us', 'ns', 'hrs', 's'.
+The enumeration 'TimeInterpretationKind' defines the following possible values: 'duration', 'instant'.
+The enumeration 'EventKind' defines the following possible values: 'consume', 'send', 'receive', 'start', 'finish'.
+The enumeration 'DataTxRateUnitKind' defines the following possible values: 'b_per_s', 'Kb_per_s', 'Mb_per_s'.
+The enumeration 'DirectionKind' defines the following possible values: 'incr', 'decr'.
+The enumeration 'SchedPolicyKind' defines the following possible values: 'FIFO', 'Other', 'TimeTableDriven', 'EarliestDeadlineFirst', 'RoundRobin', 'LeastLaxityFirst', 'Undef', 'FixedPriority'.
+The enumeration 'PeriodicServerKind' defines the following possible values: 'Other', 'Undef', 'Deferrable', 'Sporadic'.
+
+The model also captures inheritance relationships between classes.
+The class 'MARTE_Library_GRM_BasicTypes_PoolingParameters' is a specialization of 'FixedPriorityParameters'.
+The class 'MARTE_Library_GRM_BasicTypes_PeriodicServerParameters' is a specialization of 'FixedPriorityParameters'.
+The class 'MARTE_Library_BasicNFP_Types_NFP_Frequency' is a specialization of 'NFP_Real'.
+The class 'MARTE_Library_BasicNFP_Types_NFP_Real' is a specialization of 'NFP_CommonType'.
+The class 'MARTE_Library_BasicNFP_Types_NFP_Natural' is a specialization of 'NFP_CommonType'.
+The class 'MARTE_Library_BasicNFP_Types_NFP_Boolean' is a specialization of 'NFP_CommonType'.
+The class 'MARTE_Library_BasicNFP_Types_NFP_String' is a specialization of 'NFP_CommonType'.
+The class 'MARTE_Library_BasicNFP_Types_NFP_Integer' is a specialization of 'NFP_CommonType'.
+The class 'MARTE_Library_BasicNFP_Types_NFP_DateTime' is a specialization of 'NFP_CommonType'.
+The class 'MARTE_Library_BasicNFP_Types_NFP_DataTxRate' is a specialization of 'NFP_Real'.
+The class 'MARTE_Library_BasicNFP_Types_NFP_Power' is a specialization of 'NFP_Real'.
+The class 'MARTE_Library_BasicNFP_Types_NFP_DataSize' is a specialization of 'NFP_Real'.
+The class 'MARTE_Library_BasicNFP_Types_NFP_Energy' is a specialization of 'NFP_Real'.
+The class 'MARTE_Library_BasicNFP_Types_NFP_Length' is a specialization of 'NFP_Real'.
+The class 'MARTE_Library_BasicNFP_Types_NFP_Area' is a specialization of 'NFP_Real'.
+The class 'MARTE_Library_BasicNFP_Types_BurstPattern' is a specialization of 'AperiodicPattern'.
+The class 'MARTE_Library_BasicNFP_Types_IrregularPattern' is a specialization of 'AperiodicPattern'.
+The class 'MARTE_Library_BasicNFP_Types_SporadicPattern' is a specialization of 'AperiodicPattern'.
+The class 'MARTE_Library_BasicNFP_Types_NFP_Percentage' is a specialization of 'NFP_Real'.
+The class 'MARTE_Library_BasicNFP_Types_NFP_Price' is a specialization of 'NFP_Real'.
+The class 'MARTE_Library_BasicNFP_Types_NFP_Weight' is a specialization of 'NFP_Real'.
+The class 'MARTE_Library_BasicNFP_Types_NFP_Duration' is a specialization of 'NFP_Real'.
+
+Relationships between classes are modeled using associations.
+An association connects 'NFP_Duration' and 'MARTE_Library_GRM_BasicTypes_EDF_Parameters'. From 'NFP_Duration', the role 'NFP_Duration' has cardinality 0..*, and from 'MARTE_Library_GRM_BasicTypes_EDF_Parameters', the role 'MARTE_Library_GRM_BasicTypes_EDF_Parameters' has cardinality 0..*.
+An association connects 'EDF_Parameters' and 'MARTE_Library_GRM_BasicTypes_SchedParameters'. From 'EDF_Parameters', the role 'EDF_Parameters' has cardinality 0..*, and from 'MARTE_Library_GRM_BasicTypes_SchedParameters', the role 'MARTE_Library_GRM_BasicTypes_SchedParameters' has cardinality 0..*.
+An association connects 'FixedPriorityParameters' and 'MARTE_Library_GRM_BasicTypes_SchedParameters'. From 'FixedPriorityParameters', the role 'FixedPriorityParameters' has cardinality 0..*, and from 'MARTE_Library_GRM_BasicTypes_SchedParameters', the role 'MARTE_Library_GRM_BasicTypes_SchedParameters3' has cardinality 0..*.
+An association connects 'PoolingParameters' and 'MARTE_Library_GRM_BasicTypes_SchedParameters'. From 'PoolingParameters', the role 'PoolingParameters' has cardinality 0..*, and from 'MARTE_Library_GRM_BasicTypes_SchedParameters', the role 'MARTE_Library_GRM_BasicTypes_SchedParameters5' has cardinality 0..*.
+An association connects 'MARTE_Library_GRM_BasicTypes_SchedParameters' and 'PeriodicServerParameters'. From 'MARTE_Library_GRM_BasicTypes_SchedParameters', the role 'MARTE_Library_GRM_BasicTypes_SchedParameters7' has cardinality 0..*, and from 'PeriodicServerParameters', the role 'PeriodicServerParameters' has cardinality 0..*.
+An association connects 'MARTE_Library_GRM_BasicTypes_FixedPriorityParameters' and 'NFP_Integer'. From 'MARTE_Library_GRM_BasicTypes_FixedPriorityParameters', the role 'MARTE_Library_GRM_BasicTypes_FixedPriorityParameters' has cardinality 0..*, and from 'NFP_Integer', the role 'NFP_Integer' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_Library_GRM_BasicTypes_PoolingParameters'. From 'NFP_Duration', the role 'NFP_Duration10' has cardinality 0..*, and from 'MARTE_Library_GRM_BasicTypes_PoolingParameters', the role 'MARTE_Library_GRM_BasicTypes_PoolingParameters' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_Library_GRM_BasicTypes_PoolingParameters'. From 'NFP_Duration', the role 'NFP_Duration13' has cardinality 0..*, and from 'MARTE_Library_GRM_BasicTypes_PoolingParameters', the role 'MARTE_Library_GRM_BasicTypes_PoolingParameters12' has cardinality 0..*.
+An association connects 'MARTE_Library_GRM_BasicTypes_PeriodicServerParameters' and 'NFP_Duration'. From 'MARTE_Library_GRM_BasicTypes_PeriodicServerParameters', the role 'MARTE_Library_GRM_BasicTypes_PeriodicServerParameters' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration15' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_Library_GRM_BasicTypes_PeriodicServerParameters'. From 'NFP_Duration', the role 'NFP_Duration18' has cardinality 0..*, and from 'MARTE_Library_GRM_BasicTypes_PeriodicServerParameters', the role 'MARTE_Library_GRM_BasicTypes_PeriodicServerParameters17' has cardinality 0..*.
+An association connects 'MARTE_Library_GRM_BasicTypes_PeriodicServerParameters' and 'NFP_Integer'. From 'MARTE_Library_GRM_BasicTypes_PeriodicServerParameters', the role 'MARTE_Library_GRM_BasicTypes_PeriodicServerParameters20' has cardinality 0..*, and from 'NFP_Integer', the role 'NFP_Integer21' has cardinality 0..*.
+An association connects 'MARTE_Library_BasicNFP_Types_ArrivalPattern' and 'PeriodicPattern'. From 'MARTE_Library_BasicNFP_Types_ArrivalPattern', the role 'MARTE_Library_BasicNFP_Types_ArrivalPattern' has cardinality 0..*, and from 'PeriodicPattern', the role 'PeriodicPattern' has cardinality 0..*.
+An association connects 'MARTE_Library_BasicNFP_Types_ArrivalPattern' and 'AperiodicPattern'. From 'MARTE_Library_BasicNFP_Types_ArrivalPattern', the role 'MARTE_Library_BasicNFP_Types_ArrivalPattern24' has cardinality 0..*, and from 'AperiodicPattern', the role 'AperiodicPattern' has cardinality 0..*.
+An association connects 'MARTE_Library_BasicNFP_Types_ArrivalPattern' and 'BurstPattern'. From 'MARTE_Library_BasicNFP_Types_ArrivalPattern', the role 'MARTE_Library_BasicNFP_Types_ArrivalPattern26' has cardinality 0..*, and from 'BurstPattern', the role 'BurstPattern' has cardinality 0..*.
+An association connects 'MARTE_Library_BasicNFP_Types_ArrivalPattern' and 'IrregularPattern'. From 'MARTE_Library_BasicNFP_Types_ArrivalPattern', the role 'MARTE_Library_BasicNFP_Types_ArrivalPattern28' has cardinality 0..*, and from 'IrregularPattern', the role 'IrregularPattern' has cardinality 0..*.
+An association connects 'MARTE_Library_BasicNFP_Types_ArrivalPattern' and 'ClosedPattern'. From 'MARTE_Library_BasicNFP_Types_ArrivalPattern', the role 'MARTE_Library_BasicNFP_Types_ArrivalPattern30' has cardinality 0..*, and from 'ClosedPattern', the role 'ClosedPattern' has cardinality 0..*.
+An association connects 'MARTE_Library_BasicNFP_Types_ArrivalPattern' and 'SporadicPattern'. From 'MARTE_Library_BasicNFP_Types_ArrivalPattern', the role 'MARTE_Library_BasicNFP_Types_ArrivalPattern32' has cardinality 0..*, and from 'SporadicPattern', the role 'SporadicPattern' has cardinality 0..*.
+An association connects 'OpenPattern' and 'MARTE_Library_BasicNFP_Types_ArrivalPattern'. From 'OpenPattern', the role 'OpenPattern' has cardinality 0..*, and from 'MARTE_Library_BasicNFP_Types_ArrivalPattern', the role 'MARTE_Library_BasicNFP_Types_ArrivalPattern34' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_Library_BasicNFP_Types_PeriodicPattern'. From 'NFP_Duration', the role 'NFP_Duration36' has cardinality 0..*, and from 'MARTE_Library_BasicNFP_Types_PeriodicPattern', the role 'MARTE_Library_BasicNFP_Types_PeriodicPattern' has cardinality 0..*.
+An association connects 'MARTE_Library_BasicNFP_Types_PeriodicPattern' and 'NFP_Duration'. From 'MARTE_Library_BasicNFP_Types_PeriodicPattern', the role 'MARTE_Library_BasicNFP_Types_PeriodicPattern38' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration39' has cardinality 0..*.
+An association connects 'MARTE_Library_BasicNFP_Types_PeriodicPattern' and 'NFP_Duration'. From 'MARTE_Library_BasicNFP_Types_PeriodicPattern', the role 'MARTE_Library_BasicNFP_Types_PeriodicPattern41' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration42' has cardinality 0..*.
+An association connects 'NFP_Integer' and 'MARTE_Library_BasicNFP_Types_PeriodicPattern'. From 'NFP_Integer', the role 'NFP_Integer45' has cardinality 0..*, and from 'MARTE_Library_BasicNFP_Types_PeriodicPattern', the role 'MARTE_Library_BasicNFP_Types_PeriodicPattern44' has cardinality 0..*.
+An association connects 'MARTE_Library_BasicNFP_Types_AperiodicPattern' and 'NFP_CommonType'. From 'MARTE_Library_BasicNFP_Types_AperiodicPattern', the role 'MARTE_Library_BasicNFP_Types_AperiodicPattern' has cardinality 0..*, and from 'NFP_CommonType', the role 'NFP_CommonType' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_Library_BasicNFP_Types_BurstPattern'. From 'NFP_Duration', the role 'NFP_Duration48' has cardinality 0..*, and from 'MARTE_Library_BasicNFP_Types_BurstPattern', the role 'MARTE_Library_BasicNFP_Types_BurstPattern' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_Library_BasicNFP_Types_BurstPattern'. From 'NFP_Duration', the role 'NFP_Duration51' has cardinality 0..*, and from 'MARTE_Library_BasicNFP_Types_BurstPattern', the role 'MARTE_Library_BasicNFP_Types_BurstPattern50' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_Library_BasicNFP_Types_BurstPattern'. From 'NFP_Duration', the role 'NFP_Duration54' has cardinality 0..*, and from 'MARTE_Library_BasicNFP_Types_BurstPattern', the role 'MARTE_Library_BasicNFP_Types_BurstPattern53' has cardinality 0..*.
+An association connects 'MARTE_Library_BasicNFP_Types_BurstPattern' and 'NFP_Duration'. From 'MARTE_Library_BasicNFP_Types_BurstPattern', the role 'MARTE_Library_BasicNFP_Types_BurstPattern56' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration57' has cardinality 0..*.
+An association connects 'NFP_Integer' and 'MARTE_Library_BasicNFP_Types_BurstPattern'. From 'NFP_Integer', the role 'NFP_Integer60' has cardinality 0..*, and from 'MARTE_Library_BasicNFP_Types_BurstPattern', the role 'MARTE_Library_BasicNFP_Types_BurstPattern59' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_Library_BasicNFP_Types_IrregularPattern'. From 'NFP_Duration', the role 'NFP_Duration62' has cardinality 0..*, and from 'MARTE_Library_BasicNFP_Types_IrregularPattern', the role 'MARTE_Library_BasicNFP_Types_IrregularPattern' has cardinality 0..*.
+An association connects 'MARTE_Library_BasicNFP_Types_IrregularPattern' and 'NFP_Duration'. From 'MARTE_Library_BasicNFP_Types_IrregularPattern', the role 'MARTE_Library_BasicNFP_Types_IrregularPattern64' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration65' has cardinality 0..*.
+An association connects 'NFP_Integer' and 'MARTE_Library_BasicNFP_Types_ClosedPattern'. From 'NFP_Integer', the role 'NFP_Integer67' has cardinality 0..*, and from 'MARTE_Library_BasicNFP_Types_ClosedPattern', the role 'MARTE_Library_BasicNFP_Types_ClosedPattern' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_Library_BasicNFP_Types_ClosedPattern'. From 'NFP_Duration', the role 'NFP_Duration70' has cardinality 0..*, and from 'MARTE_Library_BasicNFP_Types_ClosedPattern', the role 'MARTE_Library_BasicNFP_Types_ClosedPattern69' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_Library_BasicNFP_Types_SporadicPattern'. From 'NFP_Duration', the role 'NFP_Duration72' has cardinality 0..*, and from 'MARTE_Library_BasicNFP_Types_SporadicPattern', the role 'MARTE_Library_BasicNFP_Types_SporadicPattern' has cardinality 0..*.
+An association connects 'MARTE_Library_BasicNFP_Types_SporadicPattern' and 'NFP_Duration'. From 'MARTE_Library_BasicNFP_Types_SporadicPattern', the role 'MARTE_Library_BasicNFP_Types_SporadicPattern74' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration75' has cardinality 0..*.
+An association connects 'MARTE_Library_BasicNFP_Types_SporadicPattern' and 'NFP_Duration'. From 'MARTE_Library_BasicNFP_Types_SporadicPattern', the role 'MARTE_Library_BasicNFP_Types_SporadicPattern77' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration78' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_Library_BasicNFP_Types_OpenPattern'. From 'NFP_Duration', the role 'NFP_Duration80' has cardinality 0..*, and from 'MARTE_Library_BasicNFP_Types_OpenPattern', the role 'MARTE_Library_BasicNFP_Types_OpenPattern' has cardinality 0..*.
+An association connects 'MARTE_Library_BasicNFP_Types_OpenPattern' and 'NFP_Frequency'. From 'MARTE_Library_BasicNFP_Types_OpenPattern', the role 'MARTE_Library_BasicNFP_Types_OpenPattern82' has cardinality 0..*, and from 'NFP_Frequency', the role 'NFP_Frequency' has cardinality 0..*.
+An association connects 'IntegerVector' and 'MARTE_Library_MARTE_DataTypes_IntegerMatrix'. From 'IntegerVector', the role 'IntegerVector' has cardinality 0..*, and from 'MARTE_Library_MARTE_DataTypes_IntegerMatrix', the role 'MARTE_Library_MARTE_DataTypes_IntegerMatrix' has cardinality 0..*.
+An association connects 'NFP_Frequency' and 'MARTE_Library_MARTE_DataTypes_NFP_FrequencyInterval'. From 'NFP_Frequency', the role 'NFP_Frequency85' has cardinality 0..*, and from 'MARTE_Library_MARTE_DataTypes_NFP_FrequencyInterval', the role 'MARTE_Library_MARTE_DataTypes_NFP_FrequencyInterval' has cardinality 0..*.
+An association connects 'MARTE_Library_MARTE_DataTypes_NFP_NaturalInterval' and 'NFP_Natural'. From 'MARTE_Library_MARTE_DataTypes_NFP_NaturalInterval', the role 'MARTE_Library_MARTE_DataTypes_NFP_NaturalInterval' has cardinality 0..*, and from 'NFP_Natural', the role 'NFP_Natural' has cardinality 0..*.
+An association connects 'MARTE_Library_RS_Library_TilerSpecification' and 'IntegerVector'. From 'MARTE_Library_RS_Library_TilerSpecification', the role 'MARTE_Library_RS_Library_TilerSpecification' has cardinality 0..*, and from 'IntegerVector', the role 'IntegerVector88' has cardinality 0..*.
+An association connects 'IntegerMatrix' and 'MARTE_Library_RS_Library_TilerSpecification'. From 'IntegerMatrix', the role 'IntegerMatrix' has cardinality 0..*, and from 'MARTE_Library_RS_Library_TilerSpecification', the role 'MARTE_Library_RS_Library_TilerSpecification90' has cardinality 0..*.
+An association connects 'IntegerVector' and 'MARTE_Library_RS_Library_TilerSpecification'. From 'IntegerVector', the role 'IntegerVector93' has cardinality 0..*, and from 'MARTE_Library_RS_Library_TilerSpecification', the role 'MARTE_Library_RS_Library_TilerSpecification92' has cardinality 0..*.

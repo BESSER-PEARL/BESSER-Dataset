@@ -1,0 +1,30 @@
+The domain model 'simplegraph' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'simplegraph_Graph' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'simplegraph_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'simplegraph_Node' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'simplegraph_Element' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simplegraph_Node' is a specialization of 'Element'.
+The class 'simplegraph_Edge' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simplegraph_Node' and 'simplegraph_Edge'. From 'simplegraph_Node', the role 'target' has cardinality 0..*, and from 'simplegraph_Edge', the role 'Edge' has cardinality 0..*.
+An association connects 'simplegraph_Edge' and 'simplegraph_Node'. From 'simplegraph_Edge', the role 'Edge2' has cardinality 0..*, and from 'simplegraph_Node', the role 'source' has cardinality 0..*.
+An association connects 'simplegraph_Node' and 'simplegraph_Edge'. From 'simplegraph_Node', the role 'Node' has cardinality 0..*, and from 'simplegraph_Edge', the role 'incoming' has cardinality 0..*.
+An association connects 'simplegraph_Node' and 'simplegraph_Edge'. From 'simplegraph_Node', the role 'Node5' has cardinality 0..*, and from 'simplegraph_Edge', the role 'outgoing' has cardinality 0..*.
+An association connects 'simplegraph_Graph' and 'simplegraph_Element'. From 'simplegraph_Graph', the role 'Graph' has cardinality 0..*, and from 'simplegraph_Element', the role 'element' has cardinality 0..*.
+An association connects 'simplegraph_Graph' and 'simplegraph_Element'. From 'simplegraph_Graph', the role 'graph' has cardinality 0..*, and from 'simplegraph_Element', the role 'Element' has cardinality 0..*.

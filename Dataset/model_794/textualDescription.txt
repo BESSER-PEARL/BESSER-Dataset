@@ -1,0 +1,36 @@
+The domain model 'ecore' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'ecore_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ecore_Transition' represents an important domain concept.
+It has the following attributes: 'output', which is of type str; 'input', which is of type str.
+
+'ecore_ENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'FSM' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_FSM' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ecore_EClass' is a specialization of 'FSM'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ecore_State' and 'ecore_FSM'. From 'ecore_State', the role 'State' has cardinality 0..*, and from 'ecore_FSM', the role 'owningFSM' has cardinality 0..*.
+An association connects 'ecore_FSM' and 'ecore_State'. From 'ecore_FSM', the role 'ecore_FSM' has cardinality 0..*, and from 'ecore_State', the role 'ecore_State' has cardinality 0..*.
+An association connects 'ecore_FSM' and 'ecore_State'. From 'ecore_FSM', the role 'ecore_FSM3' has cardinality 0..*, and from 'ecore_State', the role 'ecore_State4' has cardinality 0..*.
+An association connects 'ecore_State' and 'ecore_FSM'. From 'ecore_State', the role 'ownedState' has cardinality 0..*, and from 'ecore_FSM', the role 'FSM' has cardinality 0..*.
+An association connects 'ecore_Transition' and 'ecore_State'. From 'ecore_Transition', the role 'Transition' has cardinality 0..*, and from 'ecore_State', the role 'source' has cardinality 0..*.
+An association connects 'ecore_State' and 'ecore_Transition'. From 'ecore_State', the role 'target' has cardinality 0..*, and from 'ecore_Transition', the role 'Transition8' has cardinality 0..*.
+An association connects 'ecore_State' and 'ecore_EClass'. From 'ecore_State', the role 'ecore_State10' has cardinality 0..*, and from 'ecore_EClass', the role 'ecore_EClass' has cardinality 0..*.
+An association connects 'ecore_Transition' and 'ecore_State'. From 'ecore_Transition', the role 'outgoingTransition' has cardinality 0..*, and from 'ecore_State', the role 'State12' has cardinality 0..*.
+An association connects 'ecore_Transition' and 'ecore_State'. From 'ecore_Transition', the role 'incomingTransition' has cardinality 0..*, and from 'ecore_State', the role 'State14' has cardinality 0..*.
+An association connects 'ecore_FSM' and 'ecore_ENamedElement'. From 'ecore_FSM', the role 'ecore_FSM16' has cardinality 0..*, and from 'ecore_ENamedElement', the role 'ecore_ENamedElement' has cardinality 0..*.

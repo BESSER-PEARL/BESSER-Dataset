@@ -1,0 +1,3 @@
+The domain model 'primitivetypes' describes the core structural elements and their relationships within the system.
+
+The model does not define any classes.

@@ -1,0 +1,181 @@
+The domain model 'occi' describes the core structural elements and their relationships within the system.
+
+The model defines 37 main class(es).
+
+'BasicType' represents an important domain concept.
+It does not declare any attributes.
+
+'occi_Category' represents an important domain concept.
+It has the following attributes: 'scheme', which is of type str; 'description', which is of type str; 'name', which is of type str; 'title', which is of type str; 'term', which is of type str.
+
+'occi_AnnotatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'occi_StringType' represents an important domain concept.
+It has the following attributes: 'maxLength', which is of type str; 'minLength', which is of type str; 'length', which is of type str; 'pattern', which is of type str.
+
+'occi_EnumerationLiteral' represents an important domain concept.
+It has the following attributes: 'documentation', which is of type str; 'name', which is of type str.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'occi_EObjectType' represents an important domain concept.
+It has one attribute: 'instanceClassName', which is of type str.
+
+'occi_EnumerationType' represents an important domain concept.
+It does not declare any attributes.
+
+'occi_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'occi_FSM' represents an important domain concept.
+It does not declare any attributes.
+
+'occi_Annotation' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'occi_Configuration' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'location', which is of type str.
+
+'occi_RecordField' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'occi_DataType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'documentation', which is of type str.
+
+'occi_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'occi_ArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'occi_MixinBase' represents an important domain concept.
+It does not declare any attributes.
+
+'occi_State' represents an important domain concept.
+It has the following attributes: 'final', which is of type str; 'initial', which is of type str.
+
+'occi_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'occi_Mixin' represents an important domain concept.
+It does not declare any attributes.
+
+'occi_Constraint' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'description', which is of type str; 'name', which is of type str.
+
+'occi_Extension' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str; 'scheme', which is of type str; 'specification', which is of type str.
+
+'occi_NumericType' represents an important domain concept.
+It has the following attributes: 'maxExclusive', which is of type str; 'minExclusive', which is of type str; 'maxInclusive', which is of type str; 'totalDigits', which is of type str; 'minInclusive', which is of type str; 'type', which is of type str.
+
+'occi_Resource' represents an important domain concept.
+It has one attribute: 'summary', which is of type str.
+
+'occi_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'occi_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'occi_Attribute' represents an important domain concept.
+It has the following attributes: 'required', which is of type str; 'mutable', which is of type str; 'default', which is of type str; 'name', which is of type str; 'description', which is of type str.
+
+'occi_Kind' represents an important domain concept.
+It does not declare any attributes.
+
+'Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'Category' represents an important domain concept.
+It does not declare any attributes.
+
+'occi_BasicType' represents an important domain concept.
+It does not declare any attributes.
+
+'occi_Entity' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'title', which is of type str; 'location', which is of type str.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'occi_RecordType' represents an important domain concept.
+It does not declare any attributes.
+
+'occi_AttributeState' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'AnnotatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'NumericTypeEnum' defines the following possible values: 'Integer', 'Short', 'Double', 'Float', 'BigDecimal', 'Long', 'Byte'.
+
+The model also captures inheritance relationships between classes.
+The class 'occi_Category' is a specialization of 'AnnotatedElement'.
+The class 'occi_Type' is a specialization of 'Category'.
+The class 'occi_Attribute' is a specialization of 'AnnotatedElement'.
+The class 'occi_Kind' is a specialization of 'Type'.
+The class 'occi_Action' is a specialization of 'Category'.
+The class 'occi_Mixin' is a specialization of 'Type'.
+The class 'occi_Resource' is a specialization of 'Entity'.
+The class 'occi_Link' is a specialization of 'Entity'.
+The class 'occi_BasicType' is a specialization of 'DataType'.
+The class 'occi_StringType' is a specialization of 'BasicType'.
+The class 'occi_EObjectType' is a specialization of 'BasicType'.
+The class 'occi_BooleanType' is a specialization of 'BasicType'.
+The class 'occi_NumericType' is a specialization of 'BasicType'.
+The class 'occi_EnumerationType' is a specialization of 'DataType'.
+The class 'occi_RecordType' is a specialization of 'DataType'.
+The class 'occi_RecordField' is a specialization of 'Attribute'.
+The class 'occi_ArrayType' is a specialization of 'DataType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'occi_Annotation' and 'occi_AnnotatedElement'. From 'occi_Annotation', the role 'occi_Annotation' has cardinality 0..*, and from 'occi_AnnotatedElement', the role 'occi_AnnotatedElement' has cardinality 0..*.
+An association connects 'occi_Attribute' and 'occi_Category'. From 'occi_Attribute', the role 'occi_Attribute' has cardinality 0..*, and from 'occi_Category', the role 'occi_Category' has cardinality 0..*.
+An association connects 'occi_Action' and 'occi_Type'. From 'occi_Action', the role 'occi_Action' has cardinality 0..*, and from 'occi_Type', the role 'occi_Type' has cardinality 0..*.
+An association connects 'occi_Type' and 'occi_Constraint'. From 'occi_Type', the role 'occi_Type4' has cardinality 0..*, and from 'occi_Constraint', the role 'occi_Constraint' has cardinality 0..*.
+An association connects 'occi_Type' and 'occi_FSM'. From 'occi_Type', the role 'occi_Type6' has cardinality 0..*, and from 'occi_FSM', the role 'occi_FSM' has cardinality 0..*.
+An association connects 'occi_State' and 'occi_FSM'. From 'occi_State', the role 'State' has cardinality 0..*, and from 'occi_FSM', the role 'owningFSM' has cardinality 0..*.
+An association connects 'occi_Attribute' and 'occi_FSM'. From 'occi_Attribute', the role 'occi_Attribute10' has cardinality 0..*, and from 'occi_FSM', the role 'occi_FSM9' has cardinality 0..*.
+An association connects 'occi_State' and 'occi_EnumerationLiteral'. From 'occi_State', the role 'occi_State' has cardinality 0..*, and from 'occi_EnumerationLiteral', the role 'occi_EnumerationLiteral' has cardinality 0..*.
+An association connects 'occi_FSM' and 'occi_State'. From 'occi_FSM', the role 'FSM' has cardinality 0..*, and from 'occi_State', the role 'ownedState' has cardinality 0..*.
+An association connects 'occi_Transition' and 'occi_State'. From 'occi_Transition', the role 'Transition' has cardinality 0..*, and from 'occi_State', the role 'source' has cardinality 0..*.
+An association connects 'occi_State' and 'occi_Transition'. From 'occi_State', the role 'State15' has cardinality 0..*, and from 'occi_Transition', the role 'outgoingTransition' has cardinality 0..*.
+An association connects 'occi_Transition' and 'occi_State'. From 'occi_Transition', the role 'occi_Transition' has cardinality 0..*, and from 'occi_State', the role 'occi_State17' has cardinality 0..*.
+An association connects 'occi_Action' and 'occi_Transition'. From 'occi_Action', the role 'occi_Action20' has cardinality 0..*, and from 'occi_Transition', the role 'occi_Transition19' has cardinality 0..*.
+An association connects 'occi_DataType' and 'occi_Attribute'. From 'occi_DataType', the role 'occi_DataType' has cardinality 0..*, and from 'occi_Attribute', the role 'occi_Attribute22' has cardinality 0..*.
+An association connects 'occi_Kind' and 'occi_Kind'. From 'occi_Kind', the role 'occi_Kind23' has cardinality 0..*, and from 'occi_Kind', the role 'occi_Kind' has cardinality 0..*.
+An association connects 'occi_Entity' and 'occi_Kind'. From 'occi_Entity', the role 'occi_Entity' has cardinality 0..*, and from 'occi_Kind', the role 'occi_Kind26' has cardinality 0..*.
+An association connects 'occi_Kind' and 'occi_Kind'. From 'occi_Kind', the role 'occi_Kind27' has cardinality 0..*, and from 'occi_Kind', the role 'occi_Kind29' has cardinality 0..*.
+An association connects 'occi_Kind' and 'occi_Kind'. From 'occi_Kind', the role 'occi_Kind30' has cardinality 0..*, and from 'occi_Kind', the role 'occi_Kind32' has cardinality 0..*.
+An association connects 'occi_Mixin' and 'occi_Mixin'. From 'occi_Mixin', the role 'occi_Mixin33' has cardinality 0..*, and from 'occi_Mixin', the role 'occi_Mixin' has cardinality 0..*.
+An association connects 'occi_Kind' and 'occi_Mixin'. From 'occi_Kind', the role 'occi_Kind37' has cardinality 0..*, and from 'occi_Mixin', the role 'occi_Mixin36' has cardinality 0..*.
+An association connects 'occi_Mixin' and 'occi_Entity'. From 'occi_Mixin', the role 'occi_Mixin39' has cardinality 0..*, and from 'occi_Entity', the role 'occi_Entity40' has cardinality 0..*.
+An association connects 'occi_Entity' and 'occi_Kind'. From 'occi_Entity', the role 'occi_Entity42' has cardinality 0..*, and from 'occi_Kind', the role 'occi_Kind43' has cardinality 0..*.
+An association connects 'occi_AttributeState' and 'occi_Entity'. From 'occi_AttributeState', the role 'occi_AttributeState' has cardinality 0..*, and from 'occi_Entity', the role 'occi_Entity45' has cardinality 0..*.
+An association connects 'occi_Entity' and 'occi_Mixin'. From 'occi_Entity', the role 'occi_Entity47' has cardinality 0..*, and from 'occi_Mixin', the role 'occi_Mixin48' has cardinality 0..*.
+An association connects 'occi_Entity' and 'occi_MixinBase'. From 'occi_Entity', the role 'entity' has cardinality 0..*, and from 'occi_MixinBase', the role 'MixinBase' has cardinality 0..*.
+An association connects 'occi_Mixin' and 'occi_MixinBase'. From 'occi_Mixin', the role 'occi_Mixin51' has cardinality 0..*, and from 'occi_MixinBase', the role 'occi_MixinBase' has cardinality 0..*.
+An association connects 'occi_Entity' and 'occi_MixinBase'. From 'occi_Entity', the role 'Entity' has cardinality 0..*, and from 'occi_MixinBase', the role 'parts' has cardinality 0..*.
+An association connects 'occi_MixinBase' and 'occi_AttributeState'. From 'occi_MixinBase', the role 'occi_MixinBase54' has cardinality 0..*, and from 'occi_AttributeState', the role 'occi_AttributeState55' has cardinality 0..*.
+An association connects 'occi_Resource' and 'occi_Link'. From 'occi_Resource', the role 'source57' has cardinality 0..*, and from 'occi_Link', the role 'Link' has cardinality 0..*.
+An association connects 'occi_Resource' and 'occi_Link'. From 'occi_Resource', the role 'target' has cardinality 0..*, and from 'occi_Link', the role 'Link59' has cardinality 0..*.
+An association connects 'occi_Link' and 'occi_Resource'. From 'occi_Link', the role 'links' has cardinality 0..*, and from 'occi_Resource', the role 'Resource' has cardinality 0..*.
+An association connects 'occi_Link' and 'occi_Resource'. From 'occi_Link', the role 'rlinks' has cardinality 0..*, and from 'occi_Resource', the role 'Resource62' has cardinality 0..*.
+An association connects 'occi_Extension' and 'occi_Extension'. From 'occi_Extension', the role 'occi_Extension63' has cardinality 0..*, and from 'occi_Extension', the role 'occi_Extension' has cardinality 0..*.
+An association connects 'occi_Kind' and 'occi_Extension'. From 'occi_Kind', the role 'occi_Kind67' has cardinality 0..*, and from 'occi_Extension', the role 'occi_Extension66' has cardinality 0..*.
+An association connects 'occi_Extension' and 'occi_Mixin'. From 'occi_Extension', the role 'occi_Extension69' has cardinality 0..*, and from 'occi_Mixin', the role 'occi_Mixin70' has cardinality 0..*.
+An association connects 'occi_Extension' and 'occi_DataType'. From 'occi_Extension', the role 'occi_Extension72' has cardinality 0..*, and from 'occi_DataType', the role 'occi_DataType73' has cardinality 0..*.
+An association connects 'occi_Configuration' and 'occi_Extension'. From 'occi_Configuration', the role 'occi_Configuration' has cardinality 0..*, and from 'occi_Extension', the role 'occi_Extension75' has cardinality 0..*.
+An association connects 'occi_Resource' and 'occi_Configuration'. From 'occi_Resource', the role 'occi_Resource' has cardinality 0..*, and from 'occi_Configuration', the role 'occi_Configuration77' has cardinality 0..*.
+An association connects 'occi_Configuration' and 'occi_Mixin'. From 'occi_Configuration', the role 'occi_Configuration79' has cardinality 0..*, and from 'occi_Mixin', the role 'occi_Mixin80' has cardinality 0..*.
+An association connects 'occi_EnumerationLiteral' and 'occi_EnumerationType'. From 'occi_EnumerationLiteral', the role 'EnumerationLiteral' has cardinality 0..*, and from 'occi_EnumerationType', the role 'enumerationType' has cardinality 0..*.
+An association connects 'occi_EnumerationLiteral' and 'occi_EnumerationType'. From 'occi_EnumerationLiteral', the role 'literals' has cardinality 0..*, and from 'occi_EnumerationType', the role 'EnumerationType' has cardinality 0..*.
+An association connects 'occi_RecordType' and 'occi_RecordField'. From 'occi_RecordType', the role 'occi_RecordType' has cardinality 0..*, and from 'occi_RecordField', the role 'occi_RecordField' has cardinality 0..*.
+An association connects 'occi_ArrayType' and 'occi_DataType'. From 'occi_ArrayType', the role 'occi_ArrayType' has cardinality 0..*, and from 'occi_DataType', the role 'occi_DataType85' has cardinality 0..*.

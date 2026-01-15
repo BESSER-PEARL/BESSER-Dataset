@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/rewriting/tom/examples/transformation/simplepdltopetrinet/metamodels/PetriNetSemantics_updated.ecore

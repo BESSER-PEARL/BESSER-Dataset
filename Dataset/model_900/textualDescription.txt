@@ -1,0 +1,23 @@
+The domain model 'simplepdl' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'simplepdl_Process' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simplepdl_WorkDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simplepdl_WorkSequence' represents an important domain concept.
+It has one attribute: 'linkType', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'WorkSequenceType' defines the following possible values: 'finishToFinish', 'finishToStart', 'startToStart', 'startToFinish'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simplepdl_WorkDefinition' and 'simplepdl_Process'. From 'simplepdl_WorkDefinition', the role 'simplepdl_WorkDefinition' has cardinality 0..*, and from 'simplepdl_Process', the role 'simplepdl_Process' has cardinality 0..*.
+An association connects 'simplepdl_Process' and 'simplepdl_WorkSequence'. From 'simplepdl_Process', the role 'simplepdl_Process2' has cardinality 0..*, and from 'simplepdl_WorkSequence', the role 'simplepdl_WorkSequence' has cardinality 0..*.
+An association connects 'simplepdl_WorkDefinition' and 'simplepdl_WorkSequence'. From 'simplepdl_WorkDefinition', the role 'successor' has cardinality 0..*, and from 'simplepdl_WorkSequence', the role 'WorkSequence' has cardinality 0..*.
+An association connects 'simplepdl_WorkSequence' and 'simplepdl_WorkDefinition'. From 'simplepdl_WorkSequence', the role 'WorkSequence5' has cardinality 0..*, and from 'simplepdl_WorkDefinition', the role 'predecessor' has cardinality 0..*.
+An association connects 'simplepdl_WorkSequence' and 'simplepdl_WorkDefinition'. From 'simplepdl_WorkSequence', the role 'linksToSuccessors' has cardinality 0..*, and from 'simplepdl_WorkDefinition', the role 'WorkDefinition' has cardinality 0..*.
+An association connects 'simplepdl_WorkDefinition' and 'simplepdl_WorkSequence'. From 'simplepdl_WorkDefinition', the role 'WorkDefinition8' has cardinality 0..*, and from 'simplepdl_WorkSequence', the role 'linksToPredecessors' has cardinality 0..*.

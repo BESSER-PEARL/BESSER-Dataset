@@ -1,0 +1,287 @@
+The domain model 'appBuilderDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 66 main class(es).
+
+'appBuilderDSL_SimpleConditionExpression' represents an important domain concept.
+It has one attribute: 'variableName', which is of type str.
+
+'appBuilderDSL_Main' represents an important domain concept.
+It has the following attributes: 'generalStyle', which is of type str; 'devices', which is of type str; 'appVersion', which is of type str; 'appName', which is of type str.
+
+'appBuilderDSL_NamespaceDeclation' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_Validator' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_InitAction' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_RowLayout' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_DataBinding' represents an important domain concept.
+It has one attribute: 'controlAccess', which is of type str.
+
+'appBuilderDSL_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_ValidationBinding' represents an important domain concept.
+It has one attribute: 'controlAccess', which is of type str.
+
+'appBuilderDSL_EntryParameters' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_SimpleDataBinding' represents an important domain concept.
+It has one attribute: 'modelAccess', which is of type str.
+
+'appBuilderDSL_Expression' represents an important domain concept.
+It has one attribute: 'terms', which is of type str.
+
+'appBuilderDSL_CompositeConditionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_CompositeScreen' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'Service' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'appBuilderDSL_InstanceService' represents an important domain concept.
+It has one attribute: 'instanceName', which is of type str.
+
+'appBuilderDSL_System' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_Business' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_Layout' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'appBuilderDSL_Controller' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_ConditionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_Ui' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_UiListenerBinding' represents an important domain concept.
+It has one attribute: 'controlAccess', which is of type str.
+
+'appBuilderDSL_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_SetInstruction' represents an important domain concept.
+It has one attribute: 'modelAccess', which is of type str.
+
+'appBuilderDSL_Condition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'appBuilderDSL_AppBuilder' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'DataBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_Screen' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Control' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_UiAction' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'appBuilderDSL_ScreenLayout' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_Navigate' represents an important domain concept.
+It has one attribute: 'params', which is of type str.
+
+'appBuilderDSL_Control' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SetInstructionAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_ControlValue' represents an important domain concept.
+It has one attribute: 'controlAccess', which is of type str.
+
+'appBuilderDSL_AbstractElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'appBuilderDSL_List' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'appBuilderDSL_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_RestCall' represents an important domain concept.
+It has one attribute: 'url', which is of type str.
+
+'appBuilderDSL_EnumDataBinding' represents an important domain concept.
+It has one attribute: 'enumClassName', which is of type str.
+
+'appBuilderDSL_SetInstructionAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_Feature' represents an important domain concept.
+It has the following attributes: 'many', which is of type bool; 'name', which is of type str.
+
+'Screen' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_SimpleScreen' represents an important domain concept.
+It does not declare any attributes.
+
+'Layout' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'appBuilderDSL_View' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_DynamicValue' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'variableName', which is of type str.
+
+'appBuilderDSL_ExecuteAction' represents an important domain concept.
+It does not declare any attributes.
+
+'appBuilderDSL_Label' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'appBuilderDSL_GridLayout' represents an important domain concept.
+It has one attribute: 'columns', which is of type int.
+
+'appBuilderDSL_Button' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'appBuilderDSL_Text' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Device' defines the following possible values: 'android2', 'iphone', 'android4', 'ipad'.
+
+The model also captures inheritance relationships between classes.
+The class 'appBuilderDSL_NamespaceDeclation' is a specialization of 'AbstractElement'.
+The class 'appBuilderDSL_System' is a specialization of 'AbstractElement'.
+The class 'appBuilderDSL_InstanceService' is a specialization of 'Service'.
+The class 'appBuilderDSL_SimpleScreen' is a specialization of 'Screen'.
+The class 'appBuilderDSL_SimpleDataBinding' is a specialization of 'DataBinding'.
+The class 'appBuilderDSL_EnumDataBinding' is a specialization of 'DataBinding'.
+The class 'appBuilderDSL_SimpleConditionExpression' is a specialization of 'ConditionExpression'.
+The class 'appBuilderDSL_CompositeConditionExpression' is a specialization of 'ConditionExpression'.
+The class 'appBuilderDSL_UiAction' is a specialization of 'Action'.
+The class 'appBuilderDSL_SetInstruction' is a specialization of 'Instruction'.
+The class 'appBuilderDSL_Navigate' is a specialization of 'Instruction'.
+The class 'appBuilderDSL_ExecuteAction' is a specialization of 'Instruction'.
+The class 'appBuilderDSL_RestCall' is a specialization of 'SetInstructionAssignment'.
+The class 'appBuilderDSL_ControlValue' is a specialization of 'SetInstructionAssignment'.
+The class 'appBuilderDSL_Layout' is a specialization of 'Control'.
+The class 'appBuilderDSL_GridLayout' is a specialization of 'Layout'.
+The class 'appBuilderDSL_RowLayout' is a specialization of 'Layout'.
+The class 'appBuilderDSL_ScreenLayout' is a specialization of 'Control'.
+The class 'appBuilderDSL_List' is a specialization of 'Control'.
+The class 'appBuilderDSL_DynamicValue' is a specialization of 'SetInstructionAssignment'.
+The class 'appBuilderDSL_DynamicValue' is a specialization of 'Value'.
+The class 'appBuilderDSL_Text' is a specialization of 'Control'.
+The class 'appBuilderDSL_Button' is a specialization of 'Control'.
+The class 'appBuilderDSL_Label' is a specialization of 'Control'.
+The class 'appBuilderDSL_CompositeScreen' is a specialization of 'Screen'.
+The class 'appBuilderDSL_DataType' is a specialization of 'Type'.
+The class 'appBuilderDSL_Entity' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'appBuilderDSL_AppBuilder' and 'appBuilderDSL_AbstractElement'. From 'appBuilderDSL_AppBuilder', the role 'appBuilderDSL_AppBuilder' has cardinality 0..*, and from 'appBuilderDSL_AbstractElement', the role 'appBuilderDSL_AbstractElement' has cardinality 0..*.
+An association connects 'appBuilderDSL_System' and 'appBuilderDSL_Business'. From 'appBuilderDSL_System', the role 'appBuilderDSL_System' has cardinality 0..*, and from 'appBuilderDSL_Business', the role 'appBuilderDSL_Business' has cardinality 0..*.
+An association connects 'appBuilderDSL_Ui' and 'appBuilderDSL_System'. From 'appBuilderDSL_Ui', the role 'appBuilderDSL_Ui' has cardinality 0..*, and from 'appBuilderDSL_System', the role 'appBuilderDSL_System3' has cardinality 0..*.
+An association connects 'appBuilderDSL_Service' and 'appBuilderDSL_Business'. From 'appBuilderDSL_Service', the role 'appBuilderDSL_Service' has cardinality 0..*, and from 'appBuilderDSL_Business', the role 'appBuilderDSL_Business5' has cardinality 0..*.
+An association connects 'appBuilderDSL_Ui' and 'appBuilderDSL_Main'. From 'appBuilderDSL_Ui', the role 'appBuilderDSL_Ui7' has cardinality 0..*, and from 'appBuilderDSL_Main', the role 'appBuilderDSL_Main' has cardinality 0..*.
+An association connects 'appBuilderDSL_Service' and 'appBuilderDSL_Ui'. From 'appBuilderDSL_Service', the role 'appBuilderDSL_Service10' has cardinality 0..*, and from 'appBuilderDSL_Ui', the role 'appBuilderDSL_Ui9' has cardinality 0..*.
+An association connects 'appBuilderDSL_Ui' and 'appBuilderDSL_Screen'. From 'appBuilderDSL_Ui', the role 'appBuilderDSL_Ui12' has cardinality 0..*, and from 'appBuilderDSL_Screen', the role 'appBuilderDSL_Screen' has cardinality 0..*.
+An association connects 'appBuilderDSL_Screen' and 'appBuilderDSL_Main'. From 'appBuilderDSL_Screen', the role 'appBuilderDSL_Screen15' has cardinality 0..*, and from 'appBuilderDSL_Main', the role 'appBuilderDSL_Main14' has cardinality 0..*.
+An association connects 'appBuilderDSL_SimpleScreen' and 'appBuilderDSL_EntryParameters'. From 'appBuilderDSL_SimpleScreen', the role 'appBuilderDSL_SimpleScreen' has cardinality 0..*, and from 'appBuilderDSL_EntryParameters', the role 'appBuilderDSL_EntryParameters' has cardinality 0..*.
+An association connects 'appBuilderDSL_Model' and 'appBuilderDSL_SimpleScreen'. From 'appBuilderDSL_Model', the role 'appBuilderDSL_Model' has cardinality 0..*, and from 'appBuilderDSL_SimpleScreen', the role 'appBuilderDSL_SimpleScreen18' has cardinality 0..*.
+An association connects 'appBuilderDSL_View' and 'appBuilderDSL_SimpleScreen'. From 'appBuilderDSL_View', the role 'appBuilderDSL_View' has cardinality 0..*, and from 'appBuilderDSL_SimpleScreen', the role 'appBuilderDSL_SimpleScreen20' has cardinality 0..*.
+An association connects 'appBuilderDSL_SimpleScreen' and 'appBuilderDSL_Controller'. From 'appBuilderDSL_SimpleScreen', the role 'appBuilderDSL_SimpleScreen22' has cardinality 0..*, and from 'appBuilderDSL_Controller', the role 'appBuilderDSL_Controller' has cardinality 0..*.
+An association connects 'appBuilderDSL_EntryParameters' and 'appBuilderDSL_Attribute'. From 'appBuilderDSL_EntryParameters', the role 'appBuilderDSL_EntryParameters24' has cardinality 0..*, and from 'appBuilderDSL_Attribute', the role 'appBuilderDSL_Attribute' has cardinality 0..*.
+An association connects 'appBuilderDSL_InitAction' and 'appBuilderDSL_Controller'. From 'appBuilderDSL_InitAction', the role 'appBuilderDSL_InitAction' has cardinality 0..*, and from 'appBuilderDSL_Controller', the role 'appBuilderDSL_Controller26' has cardinality 0..*.
+An association connects 'appBuilderDSL_Controller' and 'appBuilderDSL_Validator'. From 'appBuilderDSL_Controller', the role 'appBuilderDSL_Controller28' has cardinality 0..*, and from 'appBuilderDSL_Validator', the role 'appBuilderDSL_Validator' has cardinality 0..*.
+An association connects 'appBuilderDSL_Action' and 'appBuilderDSL_Controller'. From 'appBuilderDSL_Action', the role 'appBuilderDSL_Action' has cardinality 0..*, and from 'appBuilderDSL_Controller', the role 'appBuilderDSL_Controller30' has cardinality 0..*.
+An association connects 'appBuilderDSL_DataBinding' and 'appBuilderDSL_InitAction'. From 'appBuilderDSL_DataBinding', the role 'appBuilderDSL_DataBinding' has cardinality 0..*, and from 'appBuilderDSL_InitAction', the role 'appBuilderDSL_InitAction32' has cardinality 0..*.
+An association connects 'appBuilderDSL_InitAction' and 'appBuilderDSL_UiListenerBinding'. From 'appBuilderDSL_InitAction', the role 'appBuilderDSL_InitAction34' has cardinality 0..*, and from 'appBuilderDSL_UiListenerBinding', the role 'appBuilderDSL_UiListenerBinding' has cardinality 0..*.
+An association connects 'appBuilderDSL_InitAction' and 'appBuilderDSL_ValidationBinding'. From 'appBuilderDSL_InitAction', the role 'appBuilderDSL_InitAction36' has cardinality 0..*, and from 'appBuilderDSL_ValidationBinding', the role 'appBuilderDSL_ValidationBinding' has cardinality 0..*.
+An association connects 'appBuilderDSL_Instruction' and 'appBuilderDSL_InitAction'. From 'appBuilderDSL_Instruction', the role 'appBuilderDSL_Instruction' has cardinality 0..*, and from 'appBuilderDSL_InitAction', the role 'appBuilderDSL_InitAction38' has cardinality 0..*.
+An association connects 'appBuilderDSL_Condition' and 'appBuilderDSL_ValidationBinding'. From 'appBuilderDSL_Condition', the role 'appBuilderDSL_Condition' has cardinality 0..*, and from 'appBuilderDSL_ValidationBinding', the role 'appBuilderDSL_ValidationBinding40' has cardinality 0..*.
+An association connects 'appBuilderDSL_ValidationBinding' and 'appBuilderDSL_Control'. From 'appBuilderDSL_ValidationBinding', the role 'appBuilderDSL_ValidationBinding42' has cardinality 0..*, and from 'appBuilderDSL_Control', the role 'appBuilderDSL_Control' has cardinality 0..*.
+An association connects 'appBuilderDSL_UiListenerBinding' and 'appBuilderDSL_Action'. From 'appBuilderDSL_UiListenerBinding', the role 'appBuilderDSL_UiListenerBinding44' has cardinality 0..*, and from 'appBuilderDSL_Action', the role 'appBuilderDSL_Action45' has cardinality 0..*.
+An association connects 'appBuilderDSL_Control' and 'appBuilderDSL_UiListenerBinding'. From 'appBuilderDSL_Control', the role 'appBuilderDSL_Control48' has cardinality 0..*, and from 'appBuilderDSL_UiListenerBinding', the role 'appBuilderDSL_UiListenerBinding47' has cardinality 0..*.
+An association connects 'appBuilderDSL_Control' and 'appBuilderDSL_DataBinding'. From 'appBuilderDSL_Control', the role 'appBuilderDSL_Control51' has cardinality 0..*, and from 'appBuilderDSL_DataBinding', the role 'appBuilderDSL_DataBinding50' has cardinality 0..*.
+An association connects 'appBuilderDSL_SimpleDataBinding' and 'appBuilderDSL_Attribute'. From 'appBuilderDSL_SimpleDataBinding', the role 'appBuilderDSL_SimpleDataBinding' has cardinality 0..*, and from 'appBuilderDSL_Attribute', the role 'appBuilderDSL_Attribute53' has cardinality 0..*.
+An association connects 'appBuilderDSL_Condition' and 'appBuilderDSL_Validator'. From 'appBuilderDSL_Condition', the role 'appBuilderDSL_Condition56' has cardinality 0..*, and from 'appBuilderDSL_Validator', the role 'appBuilderDSL_Validator55' has cardinality 0..*.
+An association connects 'appBuilderDSL_ConditionExpression' and 'appBuilderDSL_Condition'. From 'appBuilderDSL_ConditionExpression', the role 'appBuilderDSL_ConditionExpression' has cardinality 0..*, and from 'appBuilderDSL_Condition', the role 'appBuilderDSL_Condition58' has cardinality 0..*.
+An association connects 'appBuilderDSL_CompositeConditionExpression' and 'appBuilderDSL_Condition'. From 'appBuilderDSL_CompositeConditionExpression', the role 'appBuilderDSL_CompositeConditionExpression' has cardinality 0..*, and from 'appBuilderDSL_Condition', the role 'appBuilderDSL_Condition60' has cardinality 0..*.
+An association connects 'appBuilderDSL_UiAction' and 'appBuilderDSL_Instruction'. From 'appBuilderDSL_UiAction', the role 'appBuilderDSL_UiAction' has cardinality 0..*, and from 'appBuilderDSL_Instruction', the role 'appBuilderDSL_Instruction62' has cardinality 0..*.
+An association connects 'appBuilderDSL_Attribute' and 'appBuilderDSL_SetInstruction'. From 'appBuilderDSL_Attribute', the role 'appBuilderDSL_Attribute64' has cardinality 0..*, and from 'appBuilderDSL_SetInstruction', the role 'appBuilderDSL_SetInstruction' has cardinality 0..*.
+An association connects 'appBuilderDSL_SetInstructionAssignment' and 'appBuilderDSL_SetInstruction'. From 'appBuilderDSL_SetInstructionAssignment', the role 'appBuilderDSL_SetInstructionAssignment' has cardinality 0..*, and from 'appBuilderDSL_SetInstruction', the role 'appBuilderDSL_SetInstruction66' has cardinality 0..*.
+An association connects 'appBuilderDSL_Navigate' and 'appBuilderDSL_Screen'. From 'appBuilderDSL_Navigate', the role 'appBuilderDSL_Navigate' has cardinality 0..*, and from 'appBuilderDSL_Screen', the role 'appBuilderDSL_Screen68' has cardinality 0..*.
+An association connects 'appBuilderDSL_ExecuteAction' and 'appBuilderDSL_Action'. From 'appBuilderDSL_ExecuteAction', the role 'appBuilderDSL_ExecuteAction' has cardinality 0..*, and from 'appBuilderDSL_Action', the role 'appBuilderDSL_Action70' has cardinality 0..*.
+An association connects 'appBuilderDSL_Control' and 'appBuilderDSL_ControlValue'. From 'appBuilderDSL_Control', the role 'appBuilderDSL_Control72' has cardinality 0..*, and from 'appBuilderDSL_ControlValue', the role 'appBuilderDSL_ControlValue' has cardinality 0..*.
+An association connects 'appBuilderDSL_Attribute' and 'appBuilderDSL_Model'. From 'appBuilderDSL_Attribute', the role 'appBuilderDSL_Attribute75' has cardinality 0..*, and from 'appBuilderDSL_Model', the role 'appBuilderDSL_Model74' has cardinality 0..*.
+An association connects 'appBuilderDSL_Layout' and 'appBuilderDSL_View'. From 'appBuilderDSL_Layout', the role 'appBuilderDSL_Layout' has cardinality 0..*, and from 'appBuilderDSL_View', the role 'appBuilderDSL_View77' has cardinality 0..*.
+An association connects 'appBuilderDSL_Layout' and 'appBuilderDSL_Control'. From 'appBuilderDSL_Layout', the role 'appBuilderDSL_Layout79' has cardinality 0..*, and from 'appBuilderDSL_Control', the role 'appBuilderDSL_Control80' has cardinality 0..*.
+An association connects 'appBuilderDSL_ScreenLayout' and 'appBuilderDSL_Screen'. From 'appBuilderDSL_ScreenLayout', the role 'appBuilderDSL_ScreenLayout' has cardinality 0..*, and from 'appBuilderDSL_Screen', the role 'appBuilderDSL_Screen82' has cardinality 0..*.
+An association connects 'appBuilderDSL_List' and 'appBuilderDSL_Value'. From 'appBuilderDSL_List', the role 'appBuilderDSL_List' has cardinality 0..*, and from 'appBuilderDSL_Value', the role 'appBuilderDSL_Value' has cardinality 0..*.
+An association connects 'appBuilderDSL_Value' and 'appBuilderDSL_List'. From 'appBuilderDSL_Value', the role 'appBuilderDSL_Value86' has cardinality 0..*, and from 'appBuilderDSL_List', the role 'appBuilderDSL_List85' has cardinality 0..*.
+An association connects 'appBuilderDSL_List' and 'appBuilderDSL_Value'. From 'appBuilderDSL_List', the role 'appBuilderDSL_List88' has cardinality 0..*, and from 'appBuilderDSL_Value', the role 'appBuilderDSL_Value89' has cardinality 0..*.
+An association connects 'appBuilderDSL_Expression' and 'appBuilderDSL_DynamicValue'. From 'appBuilderDSL_Expression', the role 'appBuilderDSL_Expression' has cardinality 0..*, and from 'appBuilderDSL_DynamicValue', the role 'appBuilderDSL_DynamicValue' has cardinality 0..*.
+An association connects 'appBuilderDSL_Text' and 'appBuilderDSL_Value'. From 'appBuilderDSL_Text', the role 'appBuilderDSL_Text' has cardinality 0..*, and from 'appBuilderDSL_Value', the role 'appBuilderDSL_Value92' has cardinality 0..*.
+An association connects 'appBuilderDSL_Value' and 'appBuilderDSL_Text'. From 'appBuilderDSL_Value', the role 'appBuilderDSL_Value95' has cardinality 0..*, and from 'appBuilderDSL_Text', the role 'appBuilderDSL_Text94' has cardinality 0..*.
+An association connects 'appBuilderDSL_Button' and 'appBuilderDSL_Value'. From 'appBuilderDSL_Button', the role 'appBuilderDSL_Button' has cardinality 0..*, and from 'appBuilderDSL_Value', the role 'appBuilderDSL_Value97' has cardinality 0..*.
+An association connects 'appBuilderDSL_Button' and 'appBuilderDSL_Value'. From 'appBuilderDSL_Button', the role 'appBuilderDSL_Button99' has cardinality 0..*, and from 'appBuilderDSL_Value', the role 'appBuilderDSL_Value100' has cardinality 0..*.
+An association connects 'appBuilderDSL_Value' and 'appBuilderDSL_Label'. From 'appBuilderDSL_Value', the role 'appBuilderDSL_Value102' has cardinality 0..*, and from 'appBuilderDSL_Label', the role 'appBuilderDSL_Label' has cardinality 0..*.
+An association connects 'appBuilderDSL_CompositeScreen' and 'appBuilderDSL_Layout'. From 'appBuilderDSL_CompositeScreen', the role 'appBuilderDSL_CompositeScreen' has cardinality 0..*, and from 'appBuilderDSL_Layout', the role 'appBuilderDSL_Layout104' has cardinality 0..*.
+An association connects 'appBuilderDSL_Entity' and 'appBuilderDSL_Entity'. From 'appBuilderDSL_Entity', the role 'appBuilderDSL_Entity105' has cardinality 0..*, and from 'appBuilderDSL_Entity', the role 'appBuilderDSL_Entity' has cardinality 0..*.
+An association connects 'appBuilderDSL_Entity' and 'appBuilderDSL_Feature'. From 'appBuilderDSL_Entity', the role 'appBuilderDSL_Entity108' has cardinality 0..*, and from 'appBuilderDSL_Feature', the role 'appBuilderDSL_Feature' has cardinality 0..*.
+An association connects 'appBuilderDSL_Type' and 'appBuilderDSL_Feature'. From 'appBuilderDSL_Type', the role 'appBuilderDSL_Type' has cardinality 0..*, and from 'appBuilderDSL_Feature', the role 'appBuilderDSL_Feature110' has cardinality 0..*.

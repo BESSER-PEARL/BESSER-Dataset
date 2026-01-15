@@ -1,0 +1,202 @@
+The domain model 'PagosPim' describes the core structural elements and their relationships within the system.
+
+The model defines 40 main class(es).
+
+'PagosPim_Application' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PagosPim_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_Control' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'PagosPim_IfCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_Add' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'PagosPim_ViewComponent' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'PagosPim_ProgramIfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_DataLayerComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PagosPim_Mult' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_TerminalValue' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'method', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_Attribute' represents an important domain concept.
+It has one attribute: 'isIndex', which is of type str.
+
+'PagosPim_Field' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_SubComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_GenericComponent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PagosPim_Body' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_ParameterList' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_IfBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'GenericComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_Return' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'PagosPim_ServerService' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_NewEClass21' represents an important domain concept.
+It does not declare any attributes.
+
+'Control' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_LogicalExpression' represents an important domain concept.
+It has the following attributes: 'conOper', which is of type str; 'literal', which is of type str; 'logicalOperator', which is of type str.
+
+'PagosPim_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_ElseSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_DaoComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_FrontService' represents an important domain concept.
+It has one attribute: 'fullName', which is of type str.
+
+'PagosPim_LogicComponent' represents an important domain concept.
+It has one attribute: 'persistible', which is of type bool.
+
+'PagosPim_Relation' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str; 'cardinality', which is of type str.
+
+'PagosPim_Input' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_Output' represents an important domain concept.
+It does not declare any attributes.
+
+'PagosPim_AttributeDefinition' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'RelationType' defines the following possible values: 'REFERENCE', 'COMPOSITION'.
+The enumeration 'AddOper' defines the following possible values: 'ADD', 'MINUS'.
+The enumeration 'MultOper' defines the following possible values: 'MULT', 'DIV'.
+The enumeration 'LogicalCononnector' defines the following possible values: 'OR', 'AND'.
+The enumeration 'LogicalOperator' defines the following possible values: 'EQUALTO', 'DIFFERENT', 'LESSTHAN'.
+The enumeration 'DataTypes' defines the following possible values: 'number', 'Date', 'double', 'int', 'long', 'String'.
+The enumeration 'Cardinality' defines the following possible values: 'CEROTOMANY', 'CEROTOONE'.
+
+The model also captures inheritance relationships between classes.
+The class 'PagosPim_Input' is a specialization of 'Control'.
+The class 'PagosPim_Input' is a specialization of 'Attribute'.
+The class 'PagosPim_Output' is a specialization of 'Control'.
+The class 'PagosPim_Output' is a specialization of 'Attribute'.
+The class 'PagosPim_FrontService' is a specialization of 'Operation'.
+The class 'PagosPim_ViewComponent' is a specialization of 'GenericComponent'.
+The class 'PagosPim_Attribute' is a specialization of 'AttributeDefinition'.
+The class 'PagosPim_TerminalValue' is a specialization of 'Expression'.
+The class 'PagosPim_Add' is a specialization of 'Expression'.
+The class 'PagosPim_Mult' is a specialization of 'Expression'.
+The class 'PagosPim_Parameter' is a specialization of 'AttributeDefinition'.
+The class 'PagosPim_ServerService' is a specialization of 'GenericComponent'.
+The class 'PagosPim_LogicComponent' is a specialization of 'GenericComponent'.
+The class 'PagosPim_DataLayerComponent' is a specialization of 'GenericComponent'.
+The class 'PagosPim_DaoComponent' is a specialization of 'GenericComponent'.
+The class 'PagosPim_SubComponent' is a specialization of 'Relation'.
+The class 'PagosPim_Action' is a specialization of 'Control'.
+The class 'PagosPim_Action' is a specialization of 'Operation'.
+The class 'PagosPim_Field' is a specialization of 'Attribute'.
+
+Relationships between classes are modeled using associations.
+An association connects 'PagosPim_LogicComponent' and 'PagosPim_Application'. From 'PagosPim_LogicComponent', the role 'PagosPim_LogicComponent' has cardinality 0..*, and from 'PagosPim_Application', the role 'PagosPim_Application' has cardinality 0..*.
+An association connects 'PagosPim_ServerService' and 'PagosPim_Application'. From 'PagosPim_ServerService', the role 'PagosPim_ServerService' has cardinality 0..*, and from 'PagosPim_Application', the role 'PagosPim_Application2' has cardinality 0..*.
+An association connects 'PagosPim_DataLayerComponent' and 'PagosPim_Application'. From 'PagosPim_DataLayerComponent', the role 'PagosPim_DataLayerComponent' has cardinality 0..*, and from 'PagosPim_Application', the role 'PagosPim_Application4' has cardinality 0..*.
+An association connects 'PagosPim_DaoComponent' and 'PagosPim_Application'. From 'PagosPim_DaoComponent', the role 'PagosPim_DaoComponent' has cardinality 0..*, and from 'PagosPim_Application', the role 'PagosPim_Application6' has cardinality 0..*.
+An association connects 'PagosPim_ViewComponent' and 'PagosPim_Application'. From 'PagosPim_ViewComponent', the role 'PagosPim_ViewComponent' has cardinality 0..*, and from 'PagosPim_Application', the role 'PagosPim_Application8' has cardinality 0..*.
+An association connects 'PagosPim_Input' and 'PagosPim_FrontService'. From 'PagosPim_Input', the role 'PagosPim_Input' has cardinality 0..*, and from 'PagosPim_FrontService', the role 'PagosPim_FrontService' has cardinality 0..*.
+An association connects 'PagosPim_FrontService' and 'PagosPim_FrontService'. From 'PagosPim_FrontService', the role 'PagosPim_FrontService12' has cardinality 0..*, and from 'PagosPim_FrontService', the role 'PagosPim_FrontService10' has cardinality 0..*.
+An association connects 'PagosPim_ServerService' and 'PagosPim_FrontService'. From 'PagosPim_ServerService', the role 'PagosPim_ServerService15' has cardinality 0..*, and from 'PagosPim_FrontService', the role 'PagosPim_FrontService14' has cardinality 0..*.
+An association connects 'PagosPim_ViewComponent' and 'PagosPim_SubComponent'. From 'PagosPim_ViewComponent', the role 'PagosPim_ViewComponent17' has cardinality 0..*, and from 'PagosPim_SubComponent', the role 'PagosPim_SubComponent' has cardinality 0..*.
+An association connects 'PagosPim_Control' and 'PagosPim_ViewComponent'. From 'PagosPim_Control', the role 'PagosPim_Control' has cardinality 0..*, and from 'PagosPim_ViewComponent', the role 'PagosPim_ViewComponent19' has cardinality 0..*.
+An association connects 'PagosPim_ViewComponent' and 'PagosPim_FrontService'. From 'PagosPim_ViewComponent', the role 'PagosPim_ViewComponent21' has cardinality 0..*, and from 'PagosPim_FrontService', the role 'PagosPim_FrontService22' has cardinality 0..*.
+An association connects 'PagosPim_Attribute' and 'PagosPim_GenericComponent'. From 'PagosPim_Attribute', the role 'PagosPim_Attribute' has cardinality 0..*, and from 'PagosPim_GenericComponent', the role 'PagosPim_GenericComponent' has cardinality 0..*.
+An association connects 'PagosPim_Relation' and 'PagosPim_GenericComponent'. From 'PagosPim_Relation', the role 'PagosPim_Relation' has cardinality 0..*, and from 'PagosPim_GenericComponent', the role 'PagosPim_GenericComponent25' has cardinality 0..*.
+An association connects 'PagosPim_Operation' and 'PagosPim_GenericComponent'. From 'PagosPim_Operation', the role 'PagosPim_Operation' has cardinality 0..*, and from 'PagosPim_GenericComponent', the role 'PagosPim_GenericComponent27' has cardinality 0..*.
+An association connects 'PagosPim_Attribute' and 'PagosPim_Expression'. From 'PagosPim_Attribute', the role 'PagosPim_Attribute29' has cardinality 0..*, and from 'PagosPim_Expression', the role 'PagosPim_Expression' has cardinality 0..*.
+An association connects 'PagosPim_Operation' and 'PagosPim_ParameterList'. From 'PagosPim_Operation', the role 'PagosPim_Operation31' has cardinality 0..*, and from 'PagosPim_ParameterList', the role 'PagosPim_ParameterList' has cardinality 0..*.
+An association connects 'PagosPim_Operation' and 'PagosPim_Body'. From 'PagosPim_Operation', the role 'PagosPim_Operation33' has cardinality 0..*, and from 'PagosPim_Body', the role 'PagosPim_Body' has cardinality 0..*.
+An association connects 'PagosPim_Operation' and 'PagosPim_Attribute'. From 'PagosPim_Operation', the role 'PagosPim_Operation35' has cardinality 0..*, and from 'PagosPim_Attribute', the role 'PagosPim_Attribute36' has cardinality 0..*.
+An association connects 'PagosPim_Parameter' and 'PagosPim_ParameterList'. From 'PagosPim_Parameter', the role 'PagosPim_Parameter' has cardinality 0..*, and from 'PagosPim_ParameterList', the role 'PagosPim_ParameterList38' has cardinality 0..*.
+An association connects 'PagosPim_GenericComponent' and 'PagosPim_Relation'. From 'PagosPim_GenericComponent', the role 'PagosPim_GenericComponent41' has cardinality 0..*, and from 'PagosPim_Relation', the role 'PagosPim_Relation40' has cardinality 0..*.
+An association connects 'PagosPim_AttributeDefinition' and 'PagosPim_EObject'. From 'PagosPim_AttributeDefinition', the role 'PagosPim_AttributeDefinition' has cardinality 0..*, and from 'PagosPim_EObject', the role 'PagosPim_EObject' has cardinality 0..*.
+An association connects 'PagosPim_Expression' and 'PagosPim_Return'. From 'PagosPim_Expression', the role 'PagosPim_Expression44' has cardinality 0..*, and from 'PagosPim_Return', the role 'PagosPim_Return' has cardinality 0..*.
+An association connects 'PagosPim_Body' and 'PagosPim_IfBlock'. From 'PagosPim_Body', the role 'PagosPim_Body46' has cardinality 0..*, and from 'PagosPim_IfBlock', the role 'PagosPim_IfBlock' has cardinality 0..*.
+An association connects 'PagosPim_Return' and 'PagosPim_Body'. From 'PagosPim_Return', the role 'PagosPim_Return49' has cardinality 0..*, and from 'PagosPim_Body', the role 'PagosPim_Body48' has cardinality 0..*.
+An association connects 'PagosPim_IfCondition' and 'PagosPim_IfBlock'. From 'PagosPim_IfCondition', the role 'PagosPim_IfCondition' has cardinality 0..*, and from 'PagosPim_IfBlock', the role 'PagosPim_IfBlock51' has cardinality 0..*.
+An association connects 'PagosPim_ElseSegment' and 'PagosPim_IfBlock'. From 'PagosPim_ElseSegment', the role 'PagosPim_ElseSegment' has cardinality 0..*, and from 'PagosPim_IfBlock', the role 'PagosPim_IfBlock53' has cardinality 0..*.
+An association connects 'PagosPim_IfBlock' and 'PagosPim_ProgramIfExpression'. From 'PagosPim_IfBlock', the role 'PagosPim_IfBlock55' has cardinality 0..*, and from 'PagosPim_ProgramIfExpression', the role 'PagosPim_ProgramIfExpression' has cardinality 0..*.
+An association connects 'PagosPim_IfCondition' and 'PagosPim_LogicalExpression'. From 'PagosPim_IfCondition', the role 'PagosPim_IfCondition57' has cardinality 0..*, and from 'PagosPim_LogicalExpression', the role 'PagosPim_LogicalExpression' has cardinality 0..*.
+An association connects 'PagosPim_Return' and 'PagosPim_IfCondition'. From 'PagosPim_Return', the role 'PagosPim_Return60' has cardinality 0..*, and from 'PagosPim_IfCondition', the role 'PagosPim_IfCondition59' has cardinality 0..*.
+An association connects 'PagosPim_IfCondition' and 'PagosPim_IfBlock'. From 'PagosPim_IfCondition', the role 'PagosPim_IfCondition62' has cardinality 0..*, and from 'PagosPim_IfBlock', the role 'PagosPim_IfBlock63' has cardinality 0..*.
+An association connects 'PagosPim_ElseSegment' and 'PagosPim_Body'. From 'PagosPim_ElseSegment', the role 'PagosPim_ElseSegment65' has cardinality 0..*, and from 'PagosPim_Body', the role 'PagosPim_Body66' has cardinality 0..*.
+An association connects 'PagosPim_Return' and 'PagosPim_ElseSegment'. From 'PagosPim_Return', the role 'PagosPim_Return69' has cardinality 0..*, and from 'PagosPim_ElseSegment', the role 'PagosPim_ElseSegment68' has cardinality 0..*.
+An association connects 'PagosPim_TerminalValue' and 'PagosPim_LogicalExpression'. From 'PagosPim_TerminalValue', the role 'PagosPim_TerminalValue' has cardinality 0..*, and from 'PagosPim_LogicalExpression', the role 'PagosPim_LogicalExpression71' has cardinality 0..*.
+An association connects 'PagosPim_TerminalValue' and 'PagosPim_LogicalExpression'. From 'PagosPim_TerminalValue', the role 'PagosPim_TerminalValue74' has cardinality 0..*, and from 'PagosPim_LogicalExpression', the role 'PagosPim_LogicalExpression73' has cardinality 0..*.
+An association connects 'PagosPim_LogicalExpression' and 'PagosPim_LogicalExpression'. From 'PagosPim_LogicalExpression', the role 'PagosPim_LogicalExpression75' has cardinality 0..*, and from 'PagosPim_LogicalExpression', the role 'PagosPim_LogicalExpression77' has cardinality 0..*.
+An association connects 'PagosPim_Expression' and 'PagosPim_ProgramIfExpression'. From 'PagosPim_Expression', the role 'PagosPim_Expression80' has cardinality 0..*, and from 'PagosPim_ProgramIfExpression', the role 'PagosPim_ProgramIfExpression79' has cardinality 0..*.
+An association connects 'PagosPim_EObject' and 'PagosPim_TerminalValue'. From 'PagosPim_EObject', the role 'PagosPim_EObject83' has cardinality 0..*, and from 'PagosPim_TerminalValue', the role 'PagosPim_TerminalValue82' has cardinality 0..*.
+An association connects 'PagosPim_TerminalValue' and 'PagosPim_Attribute'. From 'PagosPim_TerminalValue', the role 'PagosPim_TerminalValue85' has cardinality 0..*, and from 'PagosPim_Attribute', the role 'PagosPim_Attribute86' has cardinality 0..*.
+An association connects 'PagosPim_Add' and 'PagosPim_Expression'. From 'PagosPim_Add', the role 'PagosPim_Add' has cardinality 0..*, and from 'PagosPim_Expression', the role 'PagosPim_Expression88' has cardinality 0..*.
+An association connects 'PagosPim_Add' and 'PagosPim_Expression'. From 'PagosPim_Add', the role 'PagosPim_Add90' has cardinality 0..*, and from 'PagosPim_Expression', the role 'PagosPim_Expression91' has cardinality 0..*.
+An association connects 'PagosPim_Mult' and 'PagosPim_Expression'. From 'PagosPim_Mult', the role 'PagosPim_Mult' has cardinality 0..*, and from 'PagosPim_Expression', the role 'PagosPim_Expression93' has cardinality 0..*.
+An association connects 'PagosPim_Mult' and 'PagosPim_Expression'. From 'PagosPim_Mult', the role 'PagosPim_Mult95' has cardinality 0..*, and from 'PagosPim_Expression', the role 'PagosPim_Expression96' has cardinality 0..*.
+An association connects 'PagosPim_ServerService' and 'PagosPim_LogicComponent'. From 'PagosPim_ServerService', the role 'PagosPim_ServerService98' has cardinality 0..*, and from 'PagosPim_LogicComponent', the role 'PagosPim_LogicComponent99' has cardinality 0..*.
+An association connects 'PagosPim_DataLayerComponent' and 'PagosPim_LogicComponent'. From 'PagosPim_DataLayerComponent', the role 'PagosPim_DataLayerComponent102' has cardinality 0..*, and from 'PagosPim_LogicComponent', the role 'PagosPim_LogicComponent101' has cardinality 0..*.
+An association connects 'PagosPim_DataLayerComponent' and 'PagosPim_DaoComponent'. From 'PagosPim_DataLayerComponent', the role 'PagosPim_DataLayerComponent104' has cardinality 0..*, and from 'PagosPim_DaoComponent', the role 'PagosPim_DaoComponent105' has cardinality 0..*.
+An association connects 'PagosPim_Field' and 'PagosPim_DataLayerComponent'. From 'PagosPim_Field', the role 'PagosPim_Field' has cardinality 0..*, and from 'PagosPim_DataLayerComponent', the role 'PagosPim_DataLayerComponent107' has cardinality 0..*.
+An association connects 'PagosPim_Action' and 'PagosPim_FrontService'. From 'PagosPim_Action', the role 'PagosPim_Action' has cardinality 0..*, and from 'PagosPim_FrontService', the role 'PagosPim_FrontService109' has cardinality 0..*.

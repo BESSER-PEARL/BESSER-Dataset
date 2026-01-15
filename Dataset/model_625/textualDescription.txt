@@ -1,0 +1,30 @@
+The domain model 'ocldriven' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'ocldriven_Loans' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'ocldriven_Dependancy' represents an important domain concept.
+It does not declare any attributes.
+
+'ocldriven_Member' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ocldriven_Media' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'copies', which is of type str.
+
+'ocldriven_Library' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'ocldriven_Media' and 'ocldriven_Library'. From 'ocldriven_Media', the role 'Media' has cardinality 0..*, and from 'ocldriven_Library', the role 'library' has cardinality 0..*.
+An association connects 'ocldriven_Library' and 'ocldriven_Member'. From 'ocldriven_Library', the role 'library2' has cardinality 0..*, and from 'ocldriven_Member', the role 'Member' has cardinality 0..*.
+An association connects 'ocldriven_Loans' and 'ocldriven_Library'. From 'ocldriven_Loans', the role 'ocldriven_Loans' has cardinality 0..*, and from 'ocldriven_Library', the role 'ocldriven_Library' has cardinality 0..*.
+An association connects 'ocldriven_Library' and 'ocldriven_Dependancy'. From 'ocldriven_Library', the role 'ocldriven_Library5' has cardinality 0..*, and from 'ocldriven_Dependancy', the role 'ocldriven_Dependancy' has cardinality 0..*.
+An association connects 'ocldriven_Media' and 'ocldriven_Library'. From 'ocldriven_Media', the role 'medias' has cardinality 0..*, and from 'ocldriven_Library', the role 'Library' has cardinality 0..*.
+An association connects 'ocldriven_Loans' and 'ocldriven_Member'. From 'ocldriven_Loans', the role 'ocldriven_Loans8' has cardinality 0..*, and from 'ocldriven_Member', the role 'ocldriven_Member' has cardinality 0..*.
+An association connects 'ocldriven_Media' and 'ocldriven_Loans'. From 'ocldriven_Media', the role 'ocldriven_Media' has cardinality 0..*, and from 'ocldriven_Loans', the role 'ocldriven_Loans10' has cardinality 0..*.
+An association connects 'ocldriven_Library' and 'ocldriven_Member'. From 'ocldriven_Library', the role 'Library12' has cardinality 0..*, and from 'ocldriven_Member', the role 'members' has cardinality 0..*.
+An association connects 'ocldriven_Media' and 'ocldriven_Dependancy'. From 'ocldriven_Media', the role 'ocldriven_Media15' has cardinality 0..*, and from 'ocldriven_Dependancy', the role 'ocldriven_Dependancy14' has cardinality 0..*.
+An association connects 'ocldriven_Dependancy' and 'ocldriven_Media'. From 'ocldriven_Dependancy', the role 'ocldriven_Dependancy17' has cardinality 0..*, and from 'ocldriven_Media', the role 'ocldriven_Media18' has cardinality 0..*.

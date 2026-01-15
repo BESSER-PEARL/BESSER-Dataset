@@ -1,0 +1,83 @@
+The domain model 'Arch' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'Arch_Service' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Arch_Application' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Arch_Parameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'Arch_GraphicControl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Arch_Controller' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Arch_View' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Arch_FrontEnd' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Arch_BackEnd' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'GraphicControl' represents an important domain concept.
+It does not declare any attributes.
+
+'Arch_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Arch_Logic' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Arch_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Arch_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'Arch_Label' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'Arch_DropDownList' represents an important domain concept.
+It has one attribute: 'items', which is of type str.
+
+'Arch_Method' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'returntype', which is of type str.
+
+'Arch_TextBox' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Arch_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'Arch_Label' is a specialization of 'GraphicControl'.
+The class 'Arch_TextBox' is a specialization of 'GraphicControl'.
+The class 'Arch_Div' is a specialization of 'GraphicControl'.
+The class 'Arch_DropDownList' is a specialization of 'GraphicControl'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Arch_FrontEnd' and 'Arch_Application'. From 'Arch_FrontEnd', the role 'Arch_FrontEnd' has cardinality 0..*, and from 'Arch_Application', the role 'Arch_Application' has cardinality 0..*.
+An association connects 'Arch_Application' and 'Arch_BackEnd'. From 'Arch_Application', the role 'Arch_Application2' has cardinality 0..*, and from 'Arch_BackEnd', the role 'Arch_BackEnd' has cardinality 0..*.
+An association connects 'Arch_FrontEnd' and 'Arch_View'. From 'Arch_FrontEnd', the role 'Arch_FrontEnd4' has cardinality 0..*, and from 'Arch_View', the role 'Arch_View' has cardinality 0..*.
+An association connects 'Arch_Controller' and 'Arch_FrontEnd'. From 'Arch_Controller', the role 'Arch_Controller' has cardinality 0..*, and from 'Arch_FrontEnd', the role 'Arch_FrontEnd6' has cardinality 0..*.
+An association connects 'Arch_Service' and 'Arch_BackEnd'. From 'Arch_Service', the role 'Arch_Service' has cardinality 0..*, and from 'Arch_BackEnd', the role 'Arch_BackEnd8' has cardinality 0..*.
+An association connects 'Arch_Logic' and 'Arch_BackEnd'. From 'Arch_Logic', the role 'Arch_Logic' has cardinality 0..*, and from 'Arch_BackEnd', the role 'Arch_BackEnd10' has cardinality 0..*.
+An association connects 'Arch_BackEnd' and 'Arch_Entity'. From 'Arch_BackEnd', the role 'Arch_BackEnd12' has cardinality 0..*, and from 'Arch_Entity', the role 'Arch_Entity' has cardinality 0..*.
+An association connects 'Arch_GraphicControl' and 'Arch_View'. From 'Arch_GraphicControl', the role 'Arch_GraphicControl' has cardinality 0..*, and from 'Arch_View', the role 'Arch_View14' has cardinality 0..*.
+An association connects 'Arch_View' and 'Arch_Controller'. From 'Arch_View', the role 'Arch_View16' has cardinality 0..*, and from 'Arch_Controller', the role 'Arch_Controller17' has cardinality 0..*.
+An association connects 'Arch_Controller' and 'Arch_View'. From 'Arch_Controller', the role 'Arch_Controller19' has cardinality 0..*, and from 'Arch_View', the role 'Arch_View20' has cardinality 0..*.
+An association connects 'Arch_Controller' and 'Arch_Event'. From 'Arch_Controller', the role 'Arch_Controller22' has cardinality 0..*, and from 'Arch_Event', the role 'Arch_Event' has cardinality 0..*.
+An association connects 'Arch_Method' and 'Arch_Service'. From 'Arch_Method', the role 'Arch_Method' has cardinality 0..*, and from 'Arch_Service', the role 'Arch_Service24' has cardinality 0..*.
+An association connects 'Arch_Logic' and 'Arch_Method'. From 'Arch_Logic', the role 'Arch_Logic26' has cardinality 0..*, and from 'Arch_Method', the role 'Arch_Method27' has cardinality 0..*.
+An association connects 'Arch_Entity' and 'Arch_Attribute'. From 'Arch_Entity', the role 'Arch_Entity29' has cardinality 0..*, and from 'Arch_Attribute', the role 'Arch_Attribute' has cardinality 0..*.
+An association connects 'Arch_Entity' and 'Arch_Method'. From 'Arch_Entity', the role 'Arch_Entity31' has cardinality 0..*, and from 'Arch_Method', the role 'Arch_Method32' has cardinality 0..*.
+An association connects 'Arch_Parameter' and 'Arch_Method'. From 'Arch_Parameter', the role 'Arch_Parameter' has cardinality 0..*, and from 'Arch_Method', the role 'Arch_Method34' has cardinality 0..*.
+An association connects 'Arch_GraphicControl' and 'Arch_Event'. From 'Arch_GraphicControl', the role 'Arch_GraphicControl36' has cardinality 0..*, and from 'Arch_Event', the role 'Arch_Event37' has cardinality 0..*.
+An association connects 'Arch_Div' and 'Arch_GraphicControl'. From 'Arch_Div', the role 'Arch_Div' has cardinality 0..*, and from 'Arch_GraphicControl', the role 'Arch_GraphicControl39' has cardinality 0..*.

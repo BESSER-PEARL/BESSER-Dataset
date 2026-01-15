@@ -1,0 +1,28 @@
+The domain model 'multicontainment_b' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'multicontainment_b_RootB' represents an important domain concept.
+It does not declare any attributes.
+
+'multicontainment_b_ChildB1' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Identified' represents an important domain concept.
+It does not declare any attributes.
+
+'multicontainment_b_Identified' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'multicontainment_b_ChildB2' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'multicontainment_b_RootB' is a specialization of 'Identified'.
+The class 'multicontainment_b_ChildB1' is a specialization of 'Identified'.
+The class 'multicontainment_b_ChildB2' is a specialization of 'Identified'.
+
+Relationships between classes are modeled using associations.
+An association connects 'multicontainment_b_RootB' and 'multicontainment_b_ChildB1'. From 'multicontainment_b_RootB', the role 'multicontainment_b_RootB' has cardinality 0..*, and from 'multicontainment_b_ChildB1', the role 'multicontainment_b_ChildB1' has cardinality 0..*.
+An association connects 'multicontainment_b_RootB' and 'multicontainment_b_ChildB1'. From 'multicontainment_b_RootB', the role 'multicontainment_b_RootB2' has cardinality 0..*, and from 'multicontainment_b_ChildB1', the role 'multicontainment_b_ChildB13' has cardinality 0..*.
+An association connects 'multicontainment_b_RootB' and 'multicontainment_b_ChildB2'. From 'multicontainment_b_RootB', the role 'multicontainment_b_RootB5' has cardinality 0..*, and from 'multicontainment_b_ChildB2', the role 'multicontainment_b_ChildB2' has cardinality 0..*.

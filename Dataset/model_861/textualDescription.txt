@@ -1,0 +1,17 @@
+The domain model 'fsm' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'fsm_Transition' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'input', which is of type str; 'output', which is of type str.
+
+'fsm_FiniteStateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fsm_State' represents an important domain concept.
+It has the following attributes: 'isInitialState', which is of type bool; 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'fsm_FiniteStateMachine' and 'fsm_State'. From 'fsm_FiniteStateMachine', the role 'fsm_FiniteStateMachine' has cardinality 0..*, and from 'fsm_State', the role 'fsm_State' has cardinality 0..*.
+An association connects 'fsm_State' and 'fsm_Transition'. From 'fsm_State', the role 'fsm_State2' has cardinality 0..*, and from 'fsm_Transition', the role 'fsm_Transition' has cardinality 0..*.
+An association connects 'fsm_State' and 'fsm_Transition'. From 'fsm_State', the role 'fsm_State5' has cardinality 0..*, and from 'fsm_Transition', the role 'fsm_Transition4' has cardinality 0..*.

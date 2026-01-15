@@ -1,0 +1,75 @@
+The domain model 'families' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'families_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'families_District' represents an important domain concept.
+It does not declare any attributes.
+
+'families_Person' represents an important domain concept.
+It does not declare any attributes.
+
+'District' represents an important domain concept.
+It does not declare any attributes.
+
+'families_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'families_Bike' represents an important domain concept.
+It does not declare any attributes.
+
+'Pet' represents an important domain concept.
+It does not declare any attributes.
+
+'families_Suburb' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'families_Family' represents an important domain concept.
+It has the following attributes: 'averageAge', which is of type float; 'numberOfChildren', which is of type int; 'lotteryNumbers', which is of type int; 'id', which is of type str; 'address', which is of type str; 'nuclear', which is of type bool; 'averageAgePrecise', which is of type float.
+
+'families_Pet' represents an important domain concept.
+It has one attribute: 'male', which is of type bool.
+
+'families_Band' represents an important domain concept.
+It does not declare any attributes.
+
+'families_Dog' represents an important domain concept.
+It has the following attributes: 'loud', which is of type bool; 'breed', which is of type str.
+
+'families_Account' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DogBreed' defines the following possible values: 'labrador', 'poodle'.
+
+The model also captures inheritance relationships between classes.
+The class 'families_Family' is a specialization of 'NamedElement'.
+The class 'families_Pet' is a specialization of 'NamedElement'.
+The class 'families_Person' is a specialization of 'NamedElement'.
+The class 'families_Dog' is a specialization of 'Pet'.
+The class 'families_Suburb' is a specialization of 'District'.
+The class 'families_Model' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'families_Pet' and 'families_Family'. From 'families_Pet', the role 'families_Pet' has cardinality 0..*, and from 'families_Family', the role 'families_Family' has cardinality 0..*.
+An association connects 'families_Family' and 'families_Person'. From 'families_Family', the role 'families_Family2' has cardinality 0..*, and from 'families_Person', the role 'families_Person' has cardinality 0..*.
+An association connects 'families_Dog' and 'families_Family'. From 'families_Dog', the role 'families_Dog' has cardinality 0..*, and from 'families_Family', the role 'families_Family4' has cardinality 0..*.
+An association connects 'families_District' and 'families_Family'. From 'families_District', the role 'District' has cardinality 0..*, and from 'families_Family', the role 'families' has cardinality 0..*.
+An association connects 'families_Account' and 'families_Person'. From 'families_Account', the role 'families_Account' has cardinality 0..*, and from 'families_Person', the role 'families_Person7' has cardinality 0..*.
+An association connects 'families_Person' and 'families_Account'. From 'families_Person', the role 'families_Person9' has cardinality 0..*, and from 'families_Account', the role 'families_Account10' has cardinality 0..*.
+An association connects 'families_Person' and 'families_Person'. From 'families_Person', the role 'families_Person11' has cardinality 0..*, and from 'families_Person', the role 'families_Person13' has cardinality 0..*.
+An association connects 'families_Person' and 'families_Person'. From 'families_Person', the role 'families_Person16' has cardinality 0..*, and from 'families_Person', the role 'families_Person14' has cardinality 0..*.
+An association connects 'families_Person' and 'families_Person'. From 'families_Person', the role 'families_Person19' has cardinality 0..*, and from 'families_Person', the role 'families_Person17' has cardinality 0..*.
+An association connects 'families_District' and 'families_Dog'. From 'families_District', the role 'District21' has cardinality 0..*, and from 'families_Dog', the role 'dogs' has cardinality 0..*.
+An association connects 'families_District' and 'families_Family'. From 'families_District', the role 'district' has cardinality 0..*, and from 'families_Family', the role 'Family' has cardinality 0..*.
+An association connects 'families_Dog' and 'families_District'. From 'families_Dog', the role 'Dog' has cardinality 0..*, and from 'families_District', the role 'district24' has cardinality 0..*.
+An association connects 'families_NamedElement' and 'families_Model'. From 'families_NamedElement', the role 'families_NamedElement' has cardinality 0..*, and from 'families_Model', the role 'families_Model' has cardinality 0..*.
+An association connects 'families_NamedElement' and 'families_Model'. From 'families_NamedElement', the role 'families_NamedElement28' has cardinality 0..*, and from 'families_Model', the role 'families_Model27' has cardinality 0..*.
+An association connects 'families_Bike' and 'families_Person'. From 'families_Bike', the role 'families_Bike' has cardinality 0..*, and from 'families_Person', the role 'families_Person30' has cardinality 0..*.
+An association connects 'families_Bike' and 'families_Family'. From 'families_Bike', the role 'families_Bike32' has cardinality 0..*, and from 'families_Family', the role 'families_Family33' has cardinality 0..*.
+An association connects 'families_Band' and 'families_Person'. From 'families_Band', the role 'families_Band' has cardinality 0..*, and from 'families_Person', the role 'families_Person35' has cardinality 0..*.

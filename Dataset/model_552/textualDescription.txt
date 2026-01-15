@@ -1,0 +1,27 @@
+The domain model 'family' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'family_Family' represents an important domain concept.
+It has the following attributes: 'familyIncome', which is of type float; 'numberOfComponents', which is of type int.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'family_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'family_Person' represents an important domain concept.
+It has the following attributes: 'age', which is of type int; 'surname', which is of type str; 'gender', which is of type str.
+
+'family_Members' represents an important domain concept.
+It has one attribute: 'hasChild', which is of type bool.
+
+The model also captures inheritance relationships between classes.
+The class 'family_Members' is a specialization of 'NamedElement'.
+The class 'family_Person' is a specialization of 'NamedElement'.
+The class 'family_Family' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'family_Members' and 'family_Person'. From 'family_Members', the role 'family_Members' has cardinality 0..*, and from 'family_Person', the role 'family_Person' has cardinality 0..*.
+An association connects 'family_Family' and 'family_Members'. From 'family_Family', the role 'family_Family' has cardinality 0..*, and from 'family_Members', the role 'family_Members2' has cardinality 0..*.

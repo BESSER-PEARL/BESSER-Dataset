@@ -1,0 +1,22 @@
+The domain model 'timedfsm' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'timedfsm_FSM' represents an important domain concept.
+It does not declare any attributes.
+
+'timedfsm_Transition' represents an important domain concept.
+It has the following attributes: 'input', which is of type str; 'waitingTime', which is of type int; 'output', which is of type str.
+
+'timedfsm_State' represents an important domain concept.
+It has the following attributes: 'waitingTime', which is of type int; 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'timedfsm_State' and 'timedfsm_FSM'. From 'timedfsm_State', the role '1' has cardinality 0..*, and from 'timedfsm_FSM', the role 'unnamed role' has cardinality 0..*.
+An association connects 'timedfsm_FSM' and 'timedfsm_State'. From 'timedfsm_FSM', the role 'timedfsm_FSM' has cardinality 0..*, and from 'timedfsm_State', the role 'timedfsm_State' has cardinality 0..*.
+An association connects 'timedfsm_State' and 'timedfsm_FSM'. From 'timedfsm_State', the role 'timedfsm_State5' has cardinality 0..*, and from 'timedfsm_FSM', the role 'timedfsm_FSM4' has cardinality 0..*.
+An association connects 'timedfsm_State' and 'timedfsm_FSM'. From 'timedfsm_State', the role '7' has cardinality 0..*, and from 'timedfsm_FSM', the role '8' has cardinality 0..*.
+An association connects 'timedfsm_Transition' and 'timedfsm_State'. From 'timedfsm_Transition', the role '11' has cardinality 0..*, and from 'timedfsm_State', the role '10' has cardinality 0..*.
+An association connects 'timedfsm_Transition' and 'timedfsm_State'. From 'timedfsm_Transition', the role '14' has cardinality 0..*, and from 'timedfsm_State', the role '13' has cardinality 0..*.
+An association connects 'timedfsm_Transition' and 'timedfsm_State'. From 'timedfsm_Transition', the role '16' has cardinality 0..*, and from 'timedfsm_State', the role '17' has cardinality 0..*.
+An association connects 'timedfsm_State' and 'timedfsm_Transition'. From 'timedfsm_State', the role '20' has cardinality 0..*, and from 'timedfsm_Transition', the role '19' has cardinality 0..*.

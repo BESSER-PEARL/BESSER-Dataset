@@ -1,0 +1,154 @@
+The domain model 'emof' describes the core structural elements and their relationships within the system.
+
+The model defines 36 main class(es).
+
+'emof_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Extent' represents an important domain concept.
+It does not declare any attributes.
+
+'Object' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Property' represents an important domain concept.
+It has the following attributes: 'default', which is of type str; 'isComposite', which is of type str; 'isReadOnly', which is of type str; 'isDerived', which is of type str; 'isId', which is of type str.
+
+'emof_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'Tag' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_URIExtent' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'emof_MultiplicityElement' represents an important domain concept.
+It has the following attributes: 'lower', which is of type str; 'isUnique', which is of type str; 'isOrdered', which is of type str; 'upper', which is of type str.
+
+'Extent' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Package' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'emof_Tag' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'emof_Class' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type str.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'emof_Class' is a specialization of 'Type'.
+The class 'emof_Comment' is a specialization of 'Element'.
+The class 'emof_DataType' is a specialization of 'Type'.
+The class 'emof_Element' is a specialization of 'Object'.
+The class 'emof_Enumeration' is a specialization of 'DataType'.
+The class 'emof_EnumerationLiteral' is a specialization of 'NamedElement'.
+The class 'emof_Extent' is a specialization of 'Object'.
+The class 'emof_NamedElement' is a specialization of 'Element'.
+The class 'emof_Operation' is a specialization of 'TypedElement'.
+The class 'emof_Operation' is a specialization of 'MultiplicityElement'.
+The class 'emof_Package' is a specialization of 'NamedElement'.
+The class 'emof_Parameter' is a specialization of 'TypedElement'.
+The class 'emof_Parameter' is a specialization of 'MultiplicityElement'.
+The class 'emof_PrimitiveType' is a specialization of 'DataType'.
+The class 'emof_Property' is a specialization of 'TypedElement'.
+The class 'emof_Property' is a specialization of 'MultiplicityElement'.
+The class 'emof_Tag' is a specialization of 'Element'.
+The class 'emof_Type' is a specialization of 'NamedElement'.
+The class 'emof_TypedElement' is a specialization of 'NamedElement'.
+The class 'emof_URIExtent' is a specialization of 'Extent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Property' and 'emof_Class'. From 'Property', the role 'Property' has cardinality 0..*, and from 'emof_Class', the role 'emof_Class' has cardinality 0..*.
+An association connects 'Operation' and 'emof_Class'. From 'Operation', the role 'Operation' has cardinality 0..*, and from 'emof_Class', the role 'emof_Class2' has cardinality 0..*.
+An association connects 'Class' and 'emof_Class'. From 'Class', the role 'Class' has cardinality 0..*, and from 'emof_Class', the role 'emof_Class4' has cardinality 0..*.
+An association connects 'NamedElement' and 'emof_Comment'. From 'NamedElement', the role 'NamedElement' has cardinality 0..*, and from 'emof_Comment', the role 'emof_Comment' has cardinality 0..*.
+An association connects 'Comment' and 'emof_Element'. From 'Comment', the role 'Comment' has cardinality 0..*, and from 'emof_Element', the role 'emof_Element' has cardinality 0..*.
+An association connects 'Tag' and 'emof_Element'. From 'Tag', the role 'Tag' has cardinality 0..*, and from 'emof_Element', the role 'emof_Element8' has cardinality 0..*.
+An association connects 'EnumerationLiteral' and 'emof_Enumeration'. From 'EnumerationLiteral', the role 'EnumerationLiteral' has cardinality 0..*, and from 'emof_Enumeration', the role 'emof_Enumeration' has cardinality 0..*.
+An association connects 'emof_EnumerationLiteral' and 'Enumeration'. From 'emof_EnumerationLiteral', the role 'emof_EnumerationLiteral' has cardinality 0..*, and from 'Enumeration', the role 'Enumeration' has cardinality 0..*.
+An association connects 'Class' and 'emof_Operation'. From 'Class', the role 'Class12' has cardinality 0..*, and from 'emof_Operation', the role 'emof_Operation' has cardinality 0..*.
+An association connects 'emof_Operation' and 'Parameter'. From 'emof_Operation', the role 'emof_Operation14' has cardinality 0..*, and from 'Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'Type' and 'emof_Operation'. From 'Type', the role 'Type' has cardinality 0..*, and from 'emof_Operation', the role 'emof_Operation16' has cardinality 0..*.
+An association connects 'emof_Package' and 'Package'. From 'emof_Package', the role 'emof_Package' has cardinality 0..*, and from 'Package', the role 'Package' has cardinality 0..*.
+An association connects 'emof_Package' and 'Type'. From 'emof_Package', the role 'emof_Package19' has cardinality 0..*, and from 'Type', the role 'Type20' has cardinality 0..*.
+An association connects 'emof_Parameter' and 'Operation'. From 'emof_Parameter', the role 'emof_Parameter' has cardinality 0..*, and from 'Operation', the role 'Operation22' has cardinality 0..*.
+An association connects 'emof_Property' and 'Class'. From 'emof_Property', the role 'emof_Property' has cardinality 0..*, and from 'Class', the role 'Class24' has cardinality 0..*.
+An association connects 'Property' and 'emof_Property'. From 'Property', the role 'Property27' has cardinality 0..*, and from 'emof_Property', the role 'emof_Property26' has cardinality 0..*.
+An association connects 'Element' and 'emof_Tag'. From 'Element', the role 'Element' has cardinality 0..*, and from 'emof_Tag', the role 'emof_Tag' has cardinality 0..*.
+An association connects 'emof_Type' and 'Package'. From 'emof_Type', the role 'emof_Type' has cardinality 0..*, and from 'Package', the role 'Package30' has cardinality 0..*.
+An association connects 'Type' and 'emof_TypedElement'. From 'Type', the role 'Type32' has cardinality 0..*, and from 'emof_TypedElement', the role 'emof_TypedElement' has cardinality 0..*.

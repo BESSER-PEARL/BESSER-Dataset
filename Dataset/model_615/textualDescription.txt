@@ -1,0 +1,27 @@
+The domain model 'tutorial' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'tutorial_Book' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'copies', which is of type str.
+
+'tutorial_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tutorial_Loan' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'tutorial_Member' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'tutorial_Book' and 'tutorial_Library'. From 'tutorial_Book', the role 'Book' has cardinality 0..*, and from 'tutorial_Library', the role 'library' has cardinality 0..*.
+An association connects 'tutorial_Library' and 'tutorial_Loan'. From 'tutorial_Library', the role 'tutorial_Library' has cardinality 0..*, and from 'tutorial_Loan', the role 'tutorial_Loan' has cardinality 0..*.
+An association connects 'tutorial_Library' and 'tutorial_Member'. From 'tutorial_Library', the role 'library3' has cardinality 0..*, and from 'tutorial_Member', the role 'Member' has cardinality 0..*.
+An association connects 'tutorial_Book' and 'tutorial_Library'. From 'tutorial_Book', the role 'books' has cardinality 0..*, and from 'tutorial_Library', the role 'Library' has cardinality 0..*.
+An association connects 'tutorial_Book' and 'tutorial_Loan'. From 'tutorial_Book', the role 'tutorial_Book' has cardinality 0..*, and from 'tutorial_Loan', the role 'tutorial_Loan6' has cardinality 0..*.
+An association connects 'tutorial_Library' and 'tutorial_Member'. From 'tutorial_Library', the role 'Library8' has cardinality 0..*, and from 'tutorial_Member', the role 'members' has cardinality 0..*.
+An association connects 'tutorial_Loan' and 'tutorial_Member'. From 'tutorial_Loan', the role 'tutorial_Loan10' has cardinality 0..*, and from 'tutorial_Member', the role 'tutorial_Member' has cardinality 0..*.
+An association connects 'tutorial_Member' and 'tutorial_Book'. From 'tutorial_Member', the role 'tutorial_Member12' has cardinality 0..*, and from 'tutorial_Book', the role 'tutorial_Book13' has cardinality 0..*.
+An association connects 'tutorial_Loan' and 'tutorial_Book'. From 'tutorial_Loan', the role 'tutorial_Loan15' has cardinality 0..*, and from 'tutorial_Book', the role 'tutorial_Book16' has cardinality 0..*.
+An association connects 'tutorial_Member' and 'tutorial_Loan'. From 'tutorial_Member', the role 'tutorial_Member19' has cardinality 0..*, and from 'tutorial_Loan', the role 'tutorial_Loan18' has cardinality 0..*.

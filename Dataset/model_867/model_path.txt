@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tetrabox/examples-behavioral-interface/languages/statemachines/org.tetrabox.examples.statemachines.interpretedstatemachines/model/InterpretedStateMachines.ecore

@@ -1,0 +1,169 @@
+The domain model 'vml' describes the core structural elements and their relationships within the system.
+
+The model defines 35 main class(es).
+
+'vml_Table' represents an important domain concept.
+It has one attribute: 'tableTitle', which is of type str.
+
+'vml_EdgeStyle' represents an important domain concept.
+It has the following attributes: 'lineStyle', which is of type str; 'lineWidth', which is of type int; 'weight', which is of type float; 'directed', which is of type bool.
+
+'vml_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'vml_Column' represents an important domain concept.
+It has one attribute: 'columnTitle', which is of type str.
+
+'vml_LineChart' represents an important domain concept.
+It does not declare any attributes.
+
+'vml_Scatter' represents an important domain concept.
+It does not declare any attributes.
+
+'vml_Graph' represents an important domain concept.
+It has the following attributes: 'ID', which is of type str; 'title', which is of type str.
+
+'vml_Pie' represents an important domain concept.
+It has the following attributes: 'identifier', which is of type str; 'title', which is of type str.
+
+'DiagramElement' represents an important domain concept.
+It does not declare any attributes.
+
+'vml_Node' represents an important domain concept.
+It has the following attributes: 'icone', which is of type str; 'title', which is of type str.
+
+'vml_StackBarChart' represents an important domain concept.
+It does not declare any attributes.
+
+'vml_GraphStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'Chart' represents an important domain concept.
+It does not declare any attributes.
+
+'vml_Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+'Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+'vml_Cell' represents an important domain concept.
+It has one attribute: 'textValue', which is of type str.
+
+'vml_BarChart' represents an important domain concept.
+It does not declare any attributes.
+
+'vml_Color' represents an important domain concept.
+It has the following attributes: 'red', which is of type int; 'blue', which is of type int; 'green', which is of type int; 'name', which is of type str.
+
+'Style' represents an important domain concept.
+It does not declare any attributes.
+
+'vml_ChartWithoutAxisStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'vml_Slice' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'title', which is of type str.
+
+'vml_Bar' represents an important domain concept.
+It does not declare any attributes.
+
+'vml_ChartElement' represents an important domain concept.
+It has the following attributes: 'xValue', which is of type str; 'ID', which is of type str; 'yValue', which is of type str.
+
+'ChartElement' represents an important domain concept.
+It does not declare any attributes.
+
+'vml_ChartWithAxisStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'vml_DiagramElement' represents an important domain concept.
+It does not declare any attributes.
+
+'vml_StackBars' represents an important domain concept.
+It does not declare any attributes.
+
+'vml_Chart' represents an important domain concept.
+It has the following attributes: 'ID', which is of type str; 'xTitle', which is of type str; 'yTitle', which is of type str; 'title', which is of type str.
+
+'vml_Point' represents an important domain concept.
+It does not declare any attributes.
+
+'vml_Row' represents an important domain concept.
+It does not declare any attributes.
+
+'vml_Style' represents an important domain concept.
+It does not declare any attributes.
+
+'vml_Edge' represents an important domain concept.
+It has one attribute: 'relation', which is of type str.
+
+'vml_NodeStyle' represents an important domain concept.
+It has the following attributes: 'borderWidth', which is of type int; 'padding', which is of type int.
+
+'vml_Category' represents an important domain concept.
+It has one attribute: 'category', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'LineStyle' defines the following possible values: 'Dash', 'Dot', 'Solid'.
+
+The model also captures inheritance relationships between classes.
+The class 'vml_GraphStyle' is a specialization of 'Style'.
+The class 'vml_NodeStyle' is a specialization of 'GraphStyle'.
+The class 'vml_EdgeStyle' is a specialization of 'GraphStyle'.
+The class 'vml_ChartWithAxisStyle' is a specialization of 'Style'.
+The class 'vml_ChartWithoutAxisStyle' is a specialization of 'Style'.
+The class 'vml_Pie' is a specialization of 'Diagram'.
+The class 'vml_Slice' is a specialization of 'DiagramElement'.
+The class 'vml_Graph' is a specialization of 'Diagram'.
+The class 'vml_Node' is a specialization of 'DiagramElement'.
+The class 'vml_Edge' is a specialization of 'DiagramElement'.
+The class 'vml_Chart' is a specialization of 'Diagram'.
+The class 'vml_ChartElement' is a specialization of 'DiagramElement'.
+The class 'vml_BarChart' is a specialization of 'Chart'.
+The class 'vml_Bar' is a specialization of 'ChartElement'.
+The class 'vml_StackBarChart' is a specialization of 'Chart'.
+The class 'vml_StackBars' is a specialization of 'ChartElement'.
+The class 'vml_LineChart' is a specialization of 'Chart'.
+The class 'vml_Point' is a specialization of 'ChartElement'.
+The class 'vml_Scatter' is a specialization of 'Chart'.
+
+Relationships between classes are modeled using associations.
+An association connects 'vml_Model' and 'vml_Diagram'. From 'vml_Model', the role 'vml_Model' has cardinality 0..*, and from 'vml_Diagram', the role 'vml_Diagram' has cardinality 0..*.
+An association connects 'vml_Table' and 'vml_Model'. From 'vml_Table', the role 'vml_Table' has cardinality 0..*, and from 'vml_Model', the role 'vml_Model2' has cardinality 0..*.
+An association connects 'vml_Column' and 'vml_Table'. From 'vml_Column', the role 'vml_Column' has cardinality 0..*, and from 'vml_Table', the role 'vml_Table4' has cardinality 0..*.
+An association connects 'vml_Table' and 'vml_Row'. From 'vml_Table', the role 'vml_Table6' has cardinality 0..*, and from 'vml_Row', the role 'vml_Row' has cardinality 0..*.
+An association connects 'vml_Row' and 'vml_Cell'. From 'vml_Row', the role 'vml_Row8' has cardinality 0..*, and from 'vml_Cell', the role 'vml_Cell' has cardinality 0..*.
+An association connects 'vml_Column' and 'vml_Cell'. From 'vml_Column', the role 'vml_Column11' has cardinality 0..*, and from 'vml_Cell', the role 'vml_Cell10' has cardinality 0..*.
+An association connects 'vml_Diagram' and 'vml_Diagram'. From 'vml_Diagram', the role 'vml_Diagram12' has cardinality 0..*, and from 'vml_Diagram', the role 'vml_Diagram14' has cardinality 0..*.
+An association connects 'vml_Color' and 'vml_NodeStyle'. From 'vml_Color', the role 'vml_Color' has cardinality 0..*, and from 'vml_NodeStyle', the role 'vml_NodeStyle' has cardinality 0..*.
+An association connects 'vml_Color' and 'vml_NodeStyle'. From 'vml_Color', the role 'vml_Color18' has cardinality 0..*, and from 'vml_NodeStyle', the role 'vml_NodeStyle17' has cardinality 0..*.
+An association connects 'vml_NodeStyle' and 'vml_Color'. From 'vml_NodeStyle', the role 'vml_NodeStyle20' has cardinality 0..*, and from 'vml_Color', the role 'vml_Color21' has cardinality 0..*.
+An association connects 'vml_NodeStyle' and 'vml_Color'. From 'vml_NodeStyle', the role 'vml_NodeStyle23' has cardinality 0..*, and from 'vml_Color', the role 'vml_Color24' has cardinality 0..*.
+An association connects 'vml_NodeStyle' and 'vml_Color'. From 'vml_NodeStyle', the role 'vml_NodeStyle26' has cardinality 0..*, and from 'vml_Color', the role 'vml_Color27' has cardinality 0..*.
+An association connects 'vml_EdgeStyle' and 'vml_Node'. From 'vml_EdgeStyle', the role 'vml_EdgeStyle' has cardinality 0..*, and from 'vml_Node', the role 'vml_Node' has cardinality 0..*.
+An association connects 'vml_EdgeStyle' and 'vml_Node'. From 'vml_EdgeStyle', the role 'vml_EdgeStyle30' has cardinality 0..*, and from 'vml_Node', the role 'vml_Node31' has cardinality 0..*.
+An association connects 'vml_Color' and 'vml_EdgeStyle'. From 'vml_Color', the role 'vml_Color34' has cardinality 0..*, and from 'vml_EdgeStyle', the role 'vml_EdgeStyle33' has cardinality 0..*.
+An association connects 'vml_EdgeStyle' and 'vml_Color'. From 'vml_EdgeStyle', the role 'vml_EdgeStyle36' has cardinality 0..*, and from 'vml_Color', the role 'vml_Color37' has cardinality 0..*.
+An association connects 'vml_Diagram' and 'vml_DiagramElement'. From 'vml_Diagram', the role 'vml_Diagram39' has cardinality 0..*, and from 'vml_DiagramElement', the role 'vml_DiagramElement' has cardinality 0..*.
+An association connects 'vml_Table' and 'vml_DiagramElement'. From 'vml_Table', the role 'vml_Table42' has cardinality 0..*, and from 'vml_DiagramElement', the role 'vml_DiagramElement41' has cardinality 0..*.
+An association connects 'vml_Slice' and 'vml_Pie'. From 'vml_Slice', the role 'vml_Slice' has cardinality 0..*, and from 'vml_Pie', the role 'vml_Pie' has cardinality 0..*.
+An association connects 'vml_ChartWithoutAxisStyle' and 'vml_Pie'. From 'vml_ChartWithoutAxisStyle', the role 'vml_ChartWithoutAxisStyle' has cardinality 0..*, and from 'vml_Pie', the role 'vml_Pie45' has cardinality 0..*.
+An association connects 'vml_Node' and 'vml_Graph'. From 'vml_Node', the role 'vml_Node47' has cardinality 0..*, and from 'vml_Graph', the role 'vml_Graph' has cardinality 0..*.
+An association connects 'vml_Graph' and 'vml_Edge'. From 'vml_Graph', the role 'vml_Graph49' has cardinality 0..*, and from 'vml_Edge', the role 'vml_Edge' has cardinality 0..*.
+An association connects 'vml_GraphStyle' and 'vml_Graph'. From 'vml_GraphStyle', the role 'vml_GraphStyle' has cardinality 0..*, and from 'vml_Graph', the role 'vml_Graph51' has cardinality 0..*.
+An association connects 'vml_Edge' and 'vml_Node'. From 'vml_Edge', the role 'Edge' has cardinality 0..*, and from 'vml_Node', the role 'source' has cardinality 0..*.
+An association connects 'vml_Edge' and 'vml_Node'. From 'vml_Edge', the role 'Edge54' has cardinality 0..*, and from 'vml_Node', the role 'target' has cardinality 0..*.
+An association connects 'vml_Node' and 'vml_Edge'. From 'vml_Node', the role 'Node' has cardinality 0..*, and from 'vml_Edge', the role 'outgoing' has cardinality 0..*.
+An association connects 'vml_Edge' and 'vml_Node'. From 'vml_Edge', the role 'incoming' has cardinality 0..*, and from 'vml_Node', the role 'Node57' has cardinality 0..*.
+An association connects 'vml_ChartWithAxisStyle' and 'vml_Chart'. From 'vml_ChartWithAxisStyle', the role 'vml_ChartWithAxisStyle' has cardinality 0..*, and from 'vml_Chart', the role 'vml_Chart' has cardinality 0..*.
+An association connects 'vml_BarChart' and 'vml_Bar'. From 'vml_BarChart', the role 'vml_BarChart' has cardinality 0..*, and from 'vml_Bar', the role 'vml_Bar' has cardinality 0..*.
+An association connects 'vml_StackBars' and 'vml_StackBarChart'. From 'vml_StackBars', the role 'vml_StackBars' has cardinality 0..*, and from 'vml_StackBarChart', the role 'vml_StackBarChart' has cardinality 0..*.
+An association connects 'vml_StackBarChart' and 'vml_Category'. From 'vml_StackBarChart', the role 'vml_StackBarChart62' has cardinality 0..*, and from 'vml_Category', the role 'vml_Category' has cardinality 0..*.
+An association connects 'vml_StackBars' and 'vml_Category'. From 'vml_StackBars', the role 'vml_StackBars64' has cardinality 0..*, and from 'vml_Category', the role 'vml_Category65' has cardinality 0..*.
+An association connects 'vml_Bar' and 'vml_StackBars'. From 'vml_Bar', the role 'vml_Bar68' has cardinality 0..*, and from 'vml_StackBars', the role 'vml_StackBars67' has cardinality 0..*.
+An association connects 'vml_LineChart' and 'vml_Point'. From 'vml_LineChart', the role 'vml_LineChart' has cardinality 0..*, and from 'vml_Point', the role 'vml_Point' has cardinality 0..*.
+An association connects 'vml_Scatter' and 'vml_Point'. From 'vml_Scatter', the role 'vml_Scatter' has cardinality 0..*, and from 'vml_Point', the role 'vml_Point71' has cardinality 0..*.

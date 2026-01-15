@@ -1,0 +1,28 @@
+The domain model 'family' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'family_Daughter' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'Age', which is of type int.
+
+'family_Son' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'Age', which is of type int.
+
+'family_Father' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'Age', which is of type int.
+
+'family_FatherInLove' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'Age', which is of type int.
+
+'family_Mother' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'Age', which is of type int.
+
+'family_Family' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'family_Father' and 'family_Mother'. From 'family_Father', the role 'family_Father' has cardinality 0..*, and from 'family_Mother', the role 'family_Mother' has cardinality 0..*.
+An association connects 'family_Son' and 'family_Father'. From 'family_Son', the role 'family_Son' has cardinality 0..*, and from 'family_Father', the role 'family_Father2' has cardinality 0..*.
+An association connects 'family_Father' and 'family_Daughter'. From 'family_Father', the role 'family_Father4' has cardinality 0..*, and from 'family_Daughter', the role 'family_Daughter' has cardinality 0..*.
+An association connects 'family_FatherInLove' and 'family_Mother'. From 'family_FatherInLove', the role 'family_FatherInLove' has cardinality 0..*, and from 'family_Mother', the role 'family_Mother6' has cardinality 0..*.
+An association connects 'family_Father' and 'family_Family'. From 'family_Father', the role 'family_Father8' has cardinality 0..*, and from 'family_Family', the role 'family_Family' has cardinality 0..*.

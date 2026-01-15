@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/nsalleron/DroneChoregraphie/eclipse_project/fr.idmteam1.idmproject.dronedsl/model/generated/DroneDSL.ecore

@@ -1,0 +1,28 @@
+The domain model 'ExtendedFamilies' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'ExtendedFamilies_Female' represents an important domain concept.
+It does not declare any attributes.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtendedFamilies_Family' represents an important domain concept.
+It has the following attributes: 'singleParent', which is of type bool; 'noOfChildren', which is of type int; 'lastName', which is of type str.
+
+'ExtendedFamilies_Person' represents an important domain concept.
+It has one attribute: 'firstName', which is of type str.
+
+'ExtendedFamilies_Male' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ExtendedFamilies_Male' is a specialization of 'Person'.
+The class 'ExtendedFamilies_Female' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ExtendedFamilies_Person' and 'ExtendedFamilies_Family'. From 'ExtendedFamilies_Person', the role 'Person' has cardinality 0..*, and from 'ExtendedFamilies_Family', the role 'family' has cardinality 0..*.
+An association connects 'ExtendedFamilies_Family' and 'ExtendedFamilies_Person'. From 'ExtendedFamilies_Family', the role 'Family' has cardinality 0..*, and from 'ExtendedFamilies_Person', the role 'members' has cardinality 0..*.
+An association connects 'ExtendedFamilies_Person' and 'ExtendedFamilies_Person'. From 'ExtendedFamilies_Person', the role 'parents' has cardinality 0..*, and from 'ExtendedFamilies_Person', the role 'Person4' has cardinality 0..*.
+An association connects 'ExtendedFamilies_Person' and 'ExtendedFamilies_Person'. From 'ExtendedFamilies_Person', the role 'children' has cardinality 0..*, and from 'ExtendedFamilies_Person', the role 'Person7' has cardinality 0..*.

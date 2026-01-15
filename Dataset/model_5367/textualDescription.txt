@@ -1,0 +1,70 @@
+The domain model 'wxyz' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'X' represents an important domain concept.
+It does not declare any attributes.
+
+'wxyz_Other' represents an important domain concept.
+It does not declare any attributes.
+
+'wxyz_Y2' represents an important domain concept.
+It does not declare any attributes.
+
+'wxyz_Z1' represents an important domain concept.
+It does not declare any attributes.
+
+'wxyz_NamedElt' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'wxyz_Y1' represents an important domain concept.
+It does not declare any attributes.
+
+'wxyz_Z2' represents an important domain concept.
+It does not declare any attributes.
+
+'wxyz_Y' represents an important domain concept.
+It has one attribute: 'propOfY', which is of type str.
+
+'wxyz_Z3' represents an important domain concept.
+It does not declare any attributes.
+
+'wxyz_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'wxyz_X' represents an important domain concept.
+It has one attribute: 'propOfX', which is of type str.
+
+'W' represents an important domain concept.
+It does not declare any attributes.
+
+'wxyz_Z' represents an important domain concept.
+It has one attribute: 'propOfZ', which is of type str.
+
+'Y' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElt' represents an important domain concept.
+It does not declare any attributes.
+
+'wxyz_W' represents an important domain concept.
+It has one attribute: 'propOfW', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'wxyz_Model' is a specialization of 'NamedElt'.
+The class 'wxyz_W' is a specialization of 'NamedElt'.
+The class 'wxyz_X' is a specialization of 'W'.
+The class 'wxyz_Y' is a specialization of 'X'.
+The class 'wxyz_Y1' is a specialization of 'X'.
+The class 'wxyz_Y2' is a specialization of 'X'.
+The class 'wxyz_Z' is a specialization of 'Y'.
+The class 'wxyz_Z1' is a specialization of 'Y'.
+The class 'wxyz_Z2' is a specialization of 'Y'.
+The class 'wxyz_Z3' is a specialization of 'Y'.
+The class 'wxyz_Other' is a specialization of 'NamedElt'.
+
+Relationships between classes are modeled using associations.
+An association connects 'wxyz_W' and 'wxyz_Model'. From 'wxyz_W', the role 'wxyz_W' has cardinality 0..*, and from 'wxyz_Model', the role 'wxyz_Model' has cardinality 0..*.
+An association connects 'wxyz_Model' and 'wxyz_Other'. From 'wxyz_Model', the role 'wxyz_Model2' has cardinality 0..*, and from 'wxyz_Other', the role 'wxyz_Other' has cardinality 0..*.
+An association connects 'wxyz_X' and 'wxyz_Model'. From 'wxyz_X', the role 'wxyz_X' has cardinality 0..*, and from 'wxyz_Model', the role 'wxyz_Model4' has cardinality 0..*.
+An association connects 'wxyz_W' and 'wxyz_W'. From 'wxyz_W', the role 'wxyz_W7' has cardinality 0..*, and from 'wxyz_W', the role 'wxyz_W5' has cardinality 0..*.

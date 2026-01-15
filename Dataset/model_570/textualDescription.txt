@@ -1,0 +1,63 @@
+The domain model 'tutorial' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'tutorial_Loan' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'tutorial_SubOrg2_sb2C' represents an important domain concept.
+It does not declare any attributes.
+
+'tutorial_Organization_Librarian' represents an important domain concept.
+It does not declare any attributes.
+
+'SubOrg1_sb1C' represents an important domain concept.
+It does not declare any attributes.
+
+'tutorial_SubOrg1_sb1C' represents an important domain concept.
+It does not declare any attributes.
+
+'Employee' represents an important domain concept.
+It does not declare any attributes.
+
+'tutorial_Member' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tutorial_Organization_Ref' represents an important domain concept.
+It does not declare any attributes.
+
+'Organization_tutorial_Item' represents an important domain concept.
+It does not declare any attributes.
+
+'tutorial_Book' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'copies', which is of type str.
+
+'SubOrg2_sb2C' represents an important domain concept.
+It does not declare any attributes.
+
+'tutorial_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Library' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Type' defines a single possible value: 'asd'.
+
+The model also captures inheritance relationships between classes.
+The class 'tutorial_Organization_Librarian' is a specialization of 'Employee'.
+The class 'tutorial_Organization_Ref' is a specialization of 'Library'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tutorial_Library' and 'tutorial_Book'. From 'tutorial_Library', the role 'library' has cardinality 0..*, and from 'tutorial_Book', the role 'Book' has cardinality 0..*.
+An association connects 'tutorial_Library' and 'tutorial_Loan'. From 'tutorial_Library', the role 'tutorial_Library' has cardinality 0..*, and from 'tutorial_Loan', the role 'tutorial_Loan' has cardinality 0..*.
+An association connects 'tutorial_Member' and 'tutorial_Library'. From 'tutorial_Member', the role 'Member' has cardinality 0..*, and from 'tutorial_Library', the role 'library3' has cardinality 0..*.
+An association connects 'tutorial_Book' and 'tutorial_Library'. From 'tutorial_Book', the role 'books' has cardinality 0..*, and from 'tutorial_Library', the role 'Library' has cardinality 0..*.
+An association connects 'tutorial_Loan' and 'tutorial_Book'. From 'tutorial_Loan', the role 'tutorial_Loan6' has cardinality 0..*, and from 'tutorial_Book', the role 'tutorial_Book' has cardinality 0..*.
+An association connects 'tutorial_Library' and 'tutorial_Member'. From 'tutorial_Library', the role 'Library8' has cardinality 0..*, and from 'tutorial_Member', the role 'members' has cardinality 0..*.
+An association connects 'tutorial_Loan' and 'tutorial_Member'. From 'tutorial_Loan', the role 'tutorial_Loan10' has cardinality 0..*, and from 'tutorial_Member', the role 'tutorial_Member' has cardinality 0..*.
+An association connects 'tutorial_Member' and 'tutorial_Book'. From 'tutorial_Member', the role 'tutorial_Member12' has cardinality 0..*, and from 'tutorial_Book', the role 'tutorial_Book13' has cardinality 0..*.
+An association connects 'tutorial_Loan' and 'SubOrg1_sb1C'. From 'tutorial_Loan', the role 'tutorial_Loan15' has cardinality 0..*, and from 'SubOrg1_sb1C', the role 'SubOrg1_sb1C' has cardinality 0..*.
+An association connects 'tutorial_Loan' and 'tutorial_Member'. From 'tutorial_Loan', the role 'tutorial_Loan17' has cardinality 0..*, and from 'tutorial_Member', the role 'tutorial_Member18' has cardinality 0..*.
+An association connects 'SubOrg2_sb2C' and 'tutorial_Organization_Librarian'. From 'SubOrg2_sb2C', the role 'SubOrg2_sb2C' has cardinality 0..*, and from 'tutorial_Organization_Librarian', the role 'tutorial_Organization_Librarian' has cardinality 0..*.
+An association connects 'Organization_tutorial_Item' and 'tutorial_Organization_Ref'. From 'Organization_tutorial_Item', the role 'Organization_tutorial_Item' has cardinality 0..*, and from 'tutorial_Organization_Ref', the role 'tutorial_Organization_Ref' has cardinality 0..*.

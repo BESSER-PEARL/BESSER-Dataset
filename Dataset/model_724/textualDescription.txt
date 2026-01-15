@@ -1,0 +1,330 @@
+The domain model 'RefUML' describes the core structural elements and their relationships within the system.
+
+The model defines 63 main class(es).
+
+'RefUML_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_Association' represents an important domain concept.
+It has one attribute: 'isDerived', which is of type str.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_MultiplicityElement' represents an important domain concept.
+It has the following attributes: 'upper', which is of type str; 'isUnique', which is of type str; 'isOrdered', which is of type str; 'lower', which is of type str.
+
+'RefUML_Comment' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'RefUML_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_NamedElement' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'name', which is of type str; 'qualifiedName', which is of type str.
+
+'RefUML_Model' represents an important domain concept.
+It has one attribute: 'viewpoint', which is of type str.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_OpaqueExpression' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'body', which is of type str.
+
+'RefUML_LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_GeneralizationSet' represents an important domain concept.
+It has the following attributes: 'isDisjoint', which is of type str; 'isCovering', which is of type str.
+
+'RefUML_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_Generalization' represents an important domain concept.
+It has one attribute: 'isSubstitutable', which is of type str.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_Feature' represents an important domain concept.
+It has one attribute: 'isStatic', which is of type str.
+
+'RefUML_InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_PackageMerge' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_StringExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_Property' represents an important domain concept.
+It has the following attributes: 'aggregation', which is of type str; 'isComposite', which is of type str; 'default', which is of type str; 'isDerivedUnion', which is of type str; 'isDerived', which is of type str.
+
+'RefUML_Slot' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_Constraintx' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_Class' represents an important domain concept.
+It has one attribute: 'isActive', which is of type str.
+
+'RefUML_LiteralBoolean' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'RefUML_LiteralUnlimitedNatural' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'RefUML_LiteralString' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_Classifier' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type str.
+
+'RefUML_Expression' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_LiteralInteger' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'RefUML_ElementImport' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'alias', which is of type str.
+
+'RefUML_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_StructuralFeature' represents an important domain concept.
+It has one attribute: 'isReadOnly', which is of type str.
+
+'RefUML_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_RedefinableElement' represents an important domain concept.
+It has one attribute: 'isLeaf', which is of type str.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_PackageImport' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'RefUML_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_LiteralNull' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_InstanceValue' represents an important domain concept.
+It does not declare any attributes.
+
+'RefUML_DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AggregationKind' defines the following possible values: 'shared', 'composite', 'none'.
+The enumeration 'VisibilityKind' defines the following possible values: 'protected', 'public', 'package', 'private'.
+
+The model also captures inheritance relationships between classes.
+The class 'RefUML_Comment' is a specialization of 'Element'.
+The class 'RefUML_Element' is a specialization of 'EModelElement'.
+The class 'RefUML_Package' is a specialization of 'Namespace'.
+The class 'RefUML_Package' is a specialization of 'PackageableElement'.
+The class 'RefUML_PackageableElement' is a specialization of 'NamedElement'.
+The class 'RefUML_NamedElement' is a specialization of 'Element'.
+The class 'RefUML_Dependency' is a specialization of 'PackageableElement'.
+The class 'RefUML_Dependency' is a specialization of 'DirectedRelationship'.
+The class 'RefUML_DirectedRelationship' is a specialization of 'Relationship'.
+The class 'RefUML_Relationship' is a specialization of 'Element'.
+The class 'RefUML_Namespace' is a specialization of 'NamedElement'.
+The class 'RefUML_ElementImport' is a specialization of 'DirectedRelationship'.
+The class 'RefUML_PackageImport' is a specialization of 'DirectedRelationship'.
+The class 'RefUML_Constraintx' is a specialization of 'PackageableElement'.
+The class 'RefUML_ValueSpecification' is a specialization of 'PackageableElement'.
+The class 'RefUML_ValueSpecification' is a specialization of 'TypedElement'.
+The class 'RefUML_TypedElement' is a specialization of 'NamedElement'.
+The class 'RefUML_Type' is a specialization of 'PackageableElement'.
+The class 'RefUML_Association' is a specialization of 'Classifier'.
+The class 'RefUML_Association' is a specialization of 'Relationship'.
+The class 'RefUML_Classifier' is a specialization of 'Namespace'.
+The class 'RefUML_Classifier' is a specialization of 'RedefinableElement'.
+The class 'RefUML_Classifier' is a specialization of 'Type'.
+The class 'RefUML_RedefinableElement' is a specialization of 'NamedElement'.
+The class 'RefUML_Generalization' is a specialization of 'DirectedRelationship'.
+The class 'RefUML_GeneralizationSet' is a specialization of 'PackageableElement'.
+The class 'RefUML_Feature' is a specialization of 'RedefinableElement'.
+The class 'RefUML_OpaqueExpression' is a specialization of 'ValueSpecification'.
+The class 'RefUML_MultiplicityElement' is a specialization of 'Element'.
+The class 'RefUML_Property' is a specialization of 'StructuralFeature'.
+The class 'RefUML_Class' is a specialization of 'Classifier'.
+The class 'RefUML_Model' is a specialization of 'Package'.
+The class 'RefUML_DataType' is a specialization of 'Classifier'.
+The class 'RefUML_StructuralFeature' is a specialization of 'Feature'.
+The class 'RefUML_StructuralFeature' is a specialization of 'TypedElement'.
+The class 'RefUML_StructuralFeature' is a specialization of 'MultiplicityElement'.
+The class 'RefUML_StringExpression' is a specialization of 'Expression'.
+The class 'RefUML_Expression' is a specialization of 'ValueSpecification'.
+The class 'RefUML_PackageMerge' is a specialization of 'DirectedRelationship'.
+The class 'RefUML_Enumeration' is a specialization of 'DataType'.
+The class 'RefUML_EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+The class 'RefUML_InstanceSpecification' is a specialization of 'PackageableElement'.
+The class 'RefUML_Slot' is a specialization of 'Element'.
+The class 'RefUML_PrimitiveType' is a specialization of 'DataType'.
+The class 'RefUML_LiteralSpecification' is a specialization of 'ValueSpecification'.
+The class 'RefUML_LiteralInteger' is a specialization of 'LiteralSpecification'.
+The class 'RefUML_LiteralString' is a specialization of 'LiteralSpecification'.
+The class 'RefUML_LiteralBoolean' is a specialization of 'LiteralSpecification'.
+The class 'RefUML_LiteralNull' is a specialization of 'LiteralSpecification'.
+The class 'RefUML_InstanceValue' is a specialization of 'ValueSpecification'.
+The class 'RefUML_LiteralUnlimitedNatural' is a specialization of 'LiteralSpecification'.
+
+Relationships between classes are modeled using associations.
+An association connects 'RefUML_Element' and 'RefUML_Comment'. From 'RefUML_Element', the role 'RefUML_Element' has cardinality 0..*, and from 'RefUML_Comment', the role 'RefUML_Comment' has cardinality 0..*.
+An association connects 'RefUML_Element' and 'RefUML_Element'. From 'RefUML_Element', the role 'owner' has cardinality 0..*, and from 'RefUML_Element', the role 'Element' has cardinality 0..*.
+An association connects 'RefUML_Element' and 'RefUML_Element'. From 'RefUML_Element', the role 'ownedElement' has cardinality 0..*, and from 'RefUML_Element', the role 'Element5' has cardinality 0..*.
+An association connects 'RefUML_Comment' and 'RefUML_Element'. From 'RefUML_Comment', the role 'RefUML_Comment8' has cardinality 0..*, and from 'RefUML_Element', the role 'RefUML_Element7' has cardinality 0..*.
+An association connects 'RefUML_Type' and 'RefUML_Package'. From 'RefUML_Type', the role 'Type' has cardinality 0..*, and from 'RefUML_Package', the role 'package' has cardinality 0..*.
+An association connects 'RefUML_PackageMerge' and 'RefUML_Package'. From 'RefUML_PackageMerge', the role 'PackageMerge' has cardinality 0..*, and from 'RefUML_Package', the role 'receivingPackage' has cardinality 0..*.
+An association connects 'RefUML_Package' and 'RefUML_PackageableElement'. From 'RefUML_Package', the role 'RefUML_Package' has cardinality 0..*, and from 'RefUML_PackageableElement', the role 'RefUML_PackageableElement' has cardinality 0..*.
+An association connects 'RefUML_Package' and 'RefUML_Package'. From 'RefUML_Package', the role 'Package' has cardinality 0..*, and from 'RefUML_Package', the role 'nestingPackage' has cardinality 0..*.
+An association connects 'RefUML_Package' and 'RefUML_Package'. From 'RefUML_Package', the role 'Package16' has cardinality 0..*, and from 'RefUML_Package', the role 'nestedPackage' has cardinality 0..*.
+An association connects 'RefUML_NamedElement' and 'RefUML_Dependency'. From 'RefUML_NamedElement', the role 'client' has cardinality 0..*, and from 'RefUML_Dependency', the role 'Dependency' has cardinality 0..*.
+An association connects 'RefUML_Namespace' and 'RefUML_NamedElement'. From 'RefUML_Namespace', the role 'Namespace' has cardinality 0..*, and from 'RefUML_NamedElement', the role 'ownedMember' has cardinality 0..*.
+An association connects 'RefUML_StringExpression' and 'RefUML_NamedElement'. From 'RefUML_StringExpression', the role 'RefUML_StringExpression' has cardinality 0..*, and from 'RefUML_NamedElement', the role 'RefUML_NamedElement' has cardinality 0..*.
+An association connects 'RefUML_Dependency' and 'RefUML_NamedElement'. From 'RefUML_Dependency', the role 'RefUML_Dependency' has cardinality 0..*, and from 'RefUML_NamedElement', the role 'RefUML_NamedElement21' has cardinality 0..*.
+An association connects 'RefUML_Dependency' and 'RefUML_NamedElement'. From 'RefUML_Dependency', the role 'clientDependency' has cardinality 0..*, and from 'RefUML_NamedElement', the role 'NamedElement' has cardinality 0..*.
+An association connects 'RefUML_Element' and 'RefUML_DirectedRelationship'. From 'RefUML_Element', the role 'RefUML_Element24' has cardinality 0..*, and from 'RefUML_DirectedRelationship', the role 'RefUML_DirectedRelationship' has cardinality 0..*.
+An association connects 'RefUML_Element' and 'RefUML_DirectedRelationship'. From 'RefUML_Element', the role 'RefUML_Element27' has cardinality 0..*, and from 'RefUML_DirectedRelationship', the role 'RefUML_DirectedRelationship26' has cardinality 0..*.
+An association connects 'RefUML_Relationship' and 'RefUML_Element'. From 'RefUML_Relationship', the role 'RefUML_Relationship' has cardinality 0..*, and from 'RefUML_Element', the role 'RefUML_Element29' has cardinality 0..*.
+An association connects 'RefUML_Namespace' and 'RefUML_ElementImport'. From 'RefUML_Namespace', the role 'importingNamespace' has cardinality 0..*, and from 'RefUML_ElementImport', the role 'ElementImport' has cardinality 0..*.
+An association connects 'RefUML_PackageImport' and 'RefUML_Namespace'. From 'RefUML_PackageImport', the role 'PackageImport' has cardinality 0..*, and from 'RefUML_Namespace', the role 'importingNamespace32' has cardinality 0..*.
+An association connects 'RefUML_Constraintx' and 'RefUML_Namespace'. From 'RefUML_Constraintx', the role 'Constraintx' has cardinality 0..*, and from 'RefUML_Namespace', the role 'context' has cardinality 0..*.
+An association connects 'RefUML_Namespace' and 'RefUML_NamedElement'. From 'RefUML_Namespace', the role 'RefUML_Namespace' has cardinality 0..*, and from 'RefUML_NamedElement', the role 'RefUML_NamedElement35' has cardinality 0..*.
+An association connects 'RefUML_PackageableElement' and 'RefUML_Namespace'. From 'RefUML_PackageableElement', the role 'RefUML_PackageableElement38' has cardinality 0..*, and from 'RefUML_Namespace', the role 'RefUML_Namespace37' has cardinality 0..*.
+An association connects 'RefUML_Namespace' and 'RefUML_NamedElement'. From 'RefUML_Namespace', the role 'namespace' has cardinality 0..*, and from 'RefUML_NamedElement', the role 'NamedElement40' has cardinality 0..*.
+An association connects 'RefUML_ElementImport' and 'RefUML_PackageableElement'. From 'RefUML_ElementImport', the role 'RefUML_ElementImport' has cardinality 0..*, and from 'RefUML_PackageableElement', the role 'RefUML_PackageableElement42' has cardinality 0..*.
+An association connects 'RefUML_ElementImport' and 'RefUML_Namespace'. From 'RefUML_ElementImport', the role 'elementImport' has cardinality 0..*, and from 'RefUML_Namespace', the role 'Namespace44' has cardinality 0..*.
+An association connects 'RefUML_PackageImport' and 'RefUML_Package'. From 'RefUML_PackageImport', the role 'RefUML_PackageImport' has cardinality 0..*, and from 'RefUML_Package', the role 'RefUML_Package46' has cardinality 0..*.
+An association connects 'RefUML_Namespace' and 'RefUML_PackageImport'. From 'RefUML_Namespace', the role 'Namespace48' has cardinality 0..*, and from 'RefUML_PackageImport', the role 'packageImport' has cardinality 0..*.
+An association connects 'RefUML_Element' and 'RefUML_Constraintx'. From 'RefUML_Element', the role 'RefUML_Element50' has cardinality 0..*, and from 'RefUML_Constraintx', the role 'RefUML_Constraintx' has cardinality 0..*.
+An association connects 'RefUML_ValueSpecification' and 'RefUML_Constraintx'. From 'RefUML_ValueSpecification', the role 'RefUML_ValueSpecification' has cardinality 0..*, and from 'RefUML_Constraintx', the role 'RefUML_Constraintx52' has cardinality 0..*.
+An association connects 'RefUML_Namespace' and 'RefUML_Constraintx'. From 'RefUML_Namespace', the role 'Namespace54' has cardinality 0..*, and from 'RefUML_Constraintx', the role 'ownedRule' has cardinality 0..*.
+An association connects 'RefUML_TypedElement' and 'RefUML_Type'. From 'RefUML_TypedElement', the role 'RefUML_TypedElement' has cardinality 0..*, and from 'RefUML_Type', the role 'RefUML_Type' has cardinality 0..*.
+An association connects 'RefUML_Package' and 'RefUML_Type'. From 'RefUML_Package', the role 'Package57' has cardinality 0..*, and from 'RefUML_Type', the role 'ownedType' has cardinality 0..*.
+An association connects 'RefUML_Association' and 'RefUML_Property'. From 'RefUML_Association', the role 'owningAssociation' has cardinality 0..*, and from 'RefUML_Property', the role 'Property' has cardinality 0..*.
+An association connects 'RefUML_Association' and 'RefUML_Property'. From 'RefUML_Association', the role 'association' has cardinality 0..*, and from 'RefUML_Property', the role 'Property60' has cardinality 0..*.
+An association connects 'RefUML_Type' and 'RefUML_Association'. From 'RefUML_Type', the role 'RefUML_Type62' has cardinality 0..*, and from 'RefUML_Association', the role 'RefUML_Association' has cardinality 0..*.
+An association connects 'RefUML_Association' and 'RefUML_Property'. From 'RefUML_Association', the role 'RefUML_Association64' has cardinality 0..*, and from 'RefUML_Property', the role 'RefUML_Property' has cardinality 0..*.
+An association connects 'RefUML_Classifier' and 'RefUML_Generalization'. From 'RefUML_Classifier', the role 'specific' has cardinality 0..*, and from 'RefUML_Generalization', the role 'Generalization' has cardinality 0..*.
+An association connects 'RefUML_Classifier' and 'RefUML_GeneralizationSet'. From 'RefUML_Classifier', the role 'powertype' has cardinality 0..*, and from 'RefUML_GeneralizationSet', the role 'GeneralizationSet' has cardinality 0..*.
+An association connects 'RefUML_Feature' and 'RefUML_Classifier'. From 'RefUML_Feature', the role 'Feature' has cardinality 0..*, and from 'RefUML_Classifier', the role 'featuringClassifier' has cardinality 0..*.
+An association connects 'RefUML_Classifier' and 'RefUML_NamedElement'. From 'RefUML_Classifier', the role 'RefUML_Classifier' has cardinality 0..*, and from 'RefUML_NamedElement', the role 'RefUML_NamedElement69' has cardinality 0..*.
+An association connects 'RefUML_Classifier' and 'RefUML_Classifier'. From 'RefUML_Classifier', the role 'RefUML_Classifier72' has cardinality 0..*, and from 'RefUML_Classifier', the role 'RefUML_Classifier70' has cardinality 0..*.
+An association connects 'RefUML_Classifier' and 'RefUML_Classifier'. From 'RefUML_Classifier', the role 'RefUML_Classifier75' has cardinality 0..*, and from 'RefUML_Classifier', the role 'RefUML_Classifier73' has cardinality 0..*.
+An association connects 'RefUML_Property' and 'RefUML_Classifier'. From 'RefUML_Property', the role 'RefUML_Property78' has cardinality 0..*, and from 'RefUML_Classifier', the role 'RefUML_Classifier77' has cardinality 0..*.
+An association connects 'RefUML_RedefinableElement' and 'RefUML_RedefinableElement'. From 'RefUML_RedefinableElement', the role 'RefUML_RedefinableElement79' has cardinality 0..*, and from 'RefUML_RedefinableElement', the role 'RefUML_RedefinableElement' has cardinality 0..*.
+An association connects 'RefUML_RedefinableElement' and 'RefUML_Classifier'. From 'RefUML_RedefinableElement', the role 'RefUML_RedefinableElement82' has cardinality 0..*, and from 'RefUML_Classifier', the role 'RefUML_Classifier83' has cardinality 0..*.
+An association connects 'RefUML_Classifier' and 'RefUML_Generalization'. From 'RefUML_Classifier', the role 'RefUML_Classifier85' has cardinality 0..*, and from 'RefUML_Generalization', the role 'RefUML_Generalization' has cardinality 0..*.
+An association connects 'RefUML_GeneralizationSet' and 'RefUML_Generalization'. From 'RefUML_GeneralizationSet', the role 'GeneralizationSet87' has cardinality 0..*, and from 'RefUML_Generalization', the role 'generalization' has cardinality 0..*.
+An association connects 'RefUML_Generalization' and 'RefUML_Classifier'. From 'RefUML_Generalization', the role 'generalization89' has cardinality 0..*, and from 'RefUML_Classifier', the role 'Classifier' has cardinality 0..*.
+An association connects 'RefUML_GeneralizationSet' and 'RefUML_Classifier'. From 'RefUML_GeneralizationSet', the role 'powertypeExtent' has cardinality 0..*, and from 'RefUML_Classifier', the role 'Classifier91' has cardinality 0..*.
+An association connects 'RefUML_GeneralizationSet' and 'RefUML_Generalization'. From 'RefUML_GeneralizationSet', the role 'generalizationSet' has cardinality 0..*, and from 'RefUML_Generalization', the role 'Generalization93' has cardinality 0..*.
+An association connects 'RefUML_Classifier' and 'RefUML_Feature'. From 'RefUML_Classifier', the role 'Classifier95' has cardinality 0..*, and from 'RefUML_Feature', the role 'feature' has cardinality 0..*.
+An association connects 'RefUML_MultiplicityElement' and 'RefUML_ValueSpecification'. From 'RefUML_MultiplicityElement', the role 'RefUML_MultiplicityElement' has cardinality 0..*, and from 'RefUML_ValueSpecification', the role 'RefUML_ValueSpecification97' has cardinality 0..*.
+An association connects 'RefUML_ValueSpecification' and 'RefUML_MultiplicityElement'. From 'RefUML_ValueSpecification', the role 'RefUML_ValueSpecification100' has cardinality 0..*, and from 'RefUML_MultiplicityElement', the role 'RefUML_MultiplicityElement99' has cardinality 0..*.
+An association connects 'RefUML_Class' and 'RefUML_Property'. From 'RefUML_Class', the role 'Class' has cardinality 0..*, and from 'RefUML_Property', the role 'ownedAttribute' has cardinality 0..*.
+An association connects 'RefUML_Property' and 'RefUML_DataType'. From 'RefUML_Property', the role 'ownedAttribute103' has cardinality 0..*, and from 'RefUML_DataType', the role 'DataType' has cardinality 0..*.
+An association connects 'RefUML_Property' and 'RefUML_Property'. From 'RefUML_Property', the role 'RefUML_Property104' has cardinality 0..*, and from 'RefUML_Property', the role 'RefUML_Property106' has cardinality 0..*.
+An association connects 'RefUML_Association' and 'RefUML_Property'. From 'RefUML_Association', the role 'Association' has cardinality 0..*, and from 'RefUML_Property', the role 'ownedEnd' has cardinality 0..*.
+An association connects 'RefUML_Property' and 'RefUML_ValueSpecification'. From 'RefUML_Property', the role 'RefUML_Property109' has cardinality 0..*, and from 'RefUML_ValueSpecification', the role 'RefUML_ValueSpecification110' has cardinality 0..*.
+An association connects 'RefUML_Property' and 'RefUML_Property'. From 'RefUML_Property', the role 'RefUML_Property113' has cardinality 0..*, and from 'RefUML_Property', the role 'RefUML_Property111' has cardinality 0..*.
+An association connects 'RefUML_Property' and 'RefUML_Property'. From 'RefUML_Property', the role 'RefUML_Property116' has cardinality 0..*, and from 'RefUML_Property', the role 'RefUML_Property114' has cardinality 0..*.
+An association connects 'RefUML_Association' and 'RefUML_Property'. From 'RefUML_Association', the role 'Association118' has cardinality 0..*, and from 'RefUML_Property', the role 'memberEnd' has cardinality 0..*.
+An association connects 'RefUML_Classifier' and 'RefUML_Class'. From 'RefUML_Classifier', the role 'RefUML_Classifier120' has cardinality 0..*, and from 'RefUML_Class', the role 'RefUML_Class' has cardinality 0..*.
+An association connects 'RefUML_Class' and 'RefUML_Class'. From 'RefUML_Class', the role 'RefUML_Class121' has cardinality 0..*, and from 'RefUML_Class', the role 'RefUML_Class123' has cardinality 0..*.
+An association connects 'RefUML_Class' and 'RefUML_Property'. From 'RefUML_Class', the role 'class' has cardinality 0..*, and from 'RefUML_Property', the role 'Property125' has cardinality 0..*.
+An association connects 'RefUML_DataType' and 'RefUML_Property'. From 'RefUML_DataType', the role 'datatype' has cardinality 0..*, and from 'RefUML_Property', the role 'Property127' has cardinality 0..*.
+An association connects 'RefUML_StringExpression' and 'RefUML_StringExpression'. From 'RefUML_StringExpression', the role 'StringExpression' has cardinality 0..*, and from 'RefUML_StringExpression', the role 'owningExpression' has cardinality 0..*.
+An association connects 'RefUML_StringExpression' and 'RefUML_StringExpression'. From 'RefUML_StringExpression', the role 'StringExpression132' has cardinality 0..*, and from 'RefUML_StringExpression', the role 'subExpression' has cardinality 0..*.
+An association connects 'RefUML_ValueSpecification' and 'RefUML_Expression'. From 'RefUML_ValueSpecification', the role 'RefUML_ValueSpecification134' has cardinality 0..*, and from 'RefUML_Expression', the role 'RefUML_Expression' has cardinality 0..*.
+An association connects 'RefUML_PackageMerge' and 'RefUML_Package'. From 'RefUML_PackageMerge', the role 'RefUML_PackageMerge' has cardinality 0..*, and from 'RefUML_Package', the role 'RefUML_Package136' has cardinality 0..*.
+An association connects 'RefUML_PackageMerge' and 'RefUML_Package'. From 'RefUML_PackageMerge', the role 'packageMerge' has cardinality 0..*, and from 'RefUML_Package', the role 'Package138' has cardinality 0..*.
+An association connects 'RefUML_Enumeration' and 'RefUML_EnumerationLiteral'. From 'RefUML_Enumeration', the role 'enumeration' has cardinality 0..*, and from 'RefUML_EnumerationLiteral', the role 'EnumerationLiteral' has cardinality 0..*.
+An association connects 'RefUML_EnumerationLiteral' and 'RefUML_Enumeration'. From 'RefUML_EnumerationLiteral', the role 'ownedLiteral' has cardinality 0..*, and from 'RefUML_Enumeration', the role 'Enumeration' has cardinality 0..*.
+An association connects 'RefUML_InstanceSpecification' and 'RefUML_Classifier'. From 'RefUML_InstanceSpecification', the role 'RefUML_InstanceSpecification' has cardinality 0..*, and from 'RefUML_Classifier', the role 'RefUML_Classifier142' has cardinality 0..*.
+An association connects 'RefUML_Slot' and 'RefUML_InstanceSpecification'. From 'RefUML_Slot', the role 'Slot' has cardinality 0..*, and from 'RefUML_InstanceSpecification', the role 'owningInstance' has cardinality 0..*.
+An association connects 'RefUML_InstanceSpecification' and 'RefUML_ValueSpecification'. From 'RefUML_InstanceSpecification', the role 'RefUML_InstanceSpecification145' has cardinality 0..*, and from 'RefUML_ValueSpecification', the role 'RefUML_ValueSpecification146' has cardinality 0..*.
+An association connects 'RefUML_Slot' and 'RefUML_StructuralFeature'. From 'RefUML_Slot', the role 'RefUML_Slot' has cardinality 0..*, and from 'RefUML_StructuralFeature', the role 'RefUML_StructuralFeature' has cardinality 0..*.
+An association connects 'RefUML_ValueSpecification' and 'RefUML_Slot'. From 'RefUML_ValueSpecification', the role 'RefUML_ValueSpecification150' has cardinality 0..*, and from 'RefUML_Slot', the role 'RefUML_Slot149' has cardinality 0..*.
+An association connects 'RefUML_InstanceSpecification' and 'RefUML_Slot'. From 'RefUML_InstanceSpecification', the role 'InstanceSpecification' has cardinality 0..*, and from 'RefUML_Slot', the role 'slot' has cardinality 0..*.
+An association connects 'RefUML_InstanceValue' and 'RefUML_InstanceSpecification'. From 'RefUML_InstanceValue', the role 'RefUML_InstanceValue' has cardinality 0..*, and from 'RefUML_InstanceSpecification', the role 'RefUML_InstanceSpecification153' has cardinality 0..*.

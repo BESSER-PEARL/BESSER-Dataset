@@ -1,0 +1,23 @@
+The domain model 'lts' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'lts_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'lts_Transition' represents an important domain concept.
+It has the following attributes: 'output', which is of type str; 'input', which is of type str.
+
+'lts_LTS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'lts_LTS' and 'lts_State'. From 'lts_LTS', the role 'owningLTS' has cardinality 0..*, and from 'lts_State', the role 'State' has cardinality 0..*.
+An association connects 'lts_LTS' and 'lts_State'. From 'lts_LTS', the role 'lts_LTS' has cardinality 0..*, and from 'lts_State', the role 'lts_State' has cardinality 0..*.
+An association connects 'lts_LTS' and 'lts_State'. From 'lts_LTS', the role 'lts_LTS3' has cardinality 0..*, and from 'lts_State', the role 'lts_State4' has cardinality 0..*.
+An association connects 'lts_State' and 'lts_LTS'. From 'lts_State', the role 'lts_State7' has cardinality 0..*, and from 'lts_LTS', the role 'lts_LTS6' has cardinality 0..*.
+An association connects 'lts_State' and 'lts_LTS'. From 'lts_State', the role 'ownedState' has cardinality 0..*, and from 'lts_LTS', the role 'LTS' has cardinality 0..*.
+An association connects 'lts_State' and 'lts_Transition'. From 'lts_State', the role 'source' has cardinality 0..*, and from 'lts_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'lts_Transition' and 'lts_State'. From 'lts_Transition', the role 'Transition11' has cardinality 0..*, and from 'lts_State', the role 'target' has cardinality 0..*.
+An association connects 'lts_Transition' and 'lts_State'. From 'lts_Transition', the role 'outgoingTransition' has cardinality 0..*, and from 'lts_State', the role 'State13' has cardinality 0..*.
+An association connects 'lts_Transition' and 'lts_State'. From 'lts_Transition', the role 'incomingTransition' has cardinality 0..*, and from 'lts_State', the role 'State15' has cardinality 0..*.

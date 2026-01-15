@@ -1,0 +1,30 @@
+The domain model 'digraph' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'digraph_Edge' represents an important domain concept.
+It has one attribute: 'weight', which is of type str.
+
+'GraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+'digraph_GraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+'digraph_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'digraph_Node' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'digraph_Node' is a specialization of 'GraphElement'.
+The class 'digraph_Edge' is a specialization of 'GraphElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'digraph_GraphElement' and 'digraph_Graph'. From 'digraph_GraphElement', the role 'GraphElement' has cardinality 0..*, and from 'digraph_Graph', the role 'graph' has cardinality 0..*.
+An association connects 'digraph_GraphElement' and 'digraph_Graph'. From 'digraph_GraphElement', the role 'contents' has cardinality 0..*, and from 'digraph_Graph', the role 'Graph' has cardinality 0..*.
+An association connects 'digraph_Node' and 'digraph_Edge'. From 'digraph_Node', the role 'source' has cardinality 0..*, and from 'digraph_Edge', the role 'Edge' has cardinality 0..*.
+An association connects 'digraph_Edge' and 'digraph_Node'. From 'digraph_Edge', the role 'Edge4' has cardinality 0..*, and from 'digraph_Node', the role 'target' has cardinality 0..*.
+An association connects 'digraph_Node' and 'digraph_Edge'. From 'digraph_Node', the role 'Node' has cardinality 0..*, and from 'digraph_Edge', the role 'outgoing' has cardinality 0..*.
+An association connects 'digraph_Edge' and 'digraph_Node'. From 'digraph_Edge', the role 'incoming' has cardinality 0..*, and from 'digraph_Node', the role 'Node7' has cardinality 0..*.

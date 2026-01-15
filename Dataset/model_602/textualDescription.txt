@@ -1,0 +1,83 @@
+The domain model 'webapp' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'webapp_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Data' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Template' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'structure', which is of type str.
+
+'webapp_Attribute' represents an important domain concept.
+It has the following attributes: 'customType', which is of type str; 'baseType', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Controller' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_WebApp' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_ServiceController' represents an important domain concept.
+It has one attribute: 'endpoint', which is of type str.
+
+'webapp_Collection' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_PageController' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_RouterBinding' represents an important domain concept.
+It has one attribute: 'url', which is of type str.
+
+'webapp_Router' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_View' represents an important domain concept.
+It does not declare any attributes.
+
+'Controller' represents an important domain concept.
+It does not declare any attributes.
+
+'webapp_Data' represents an important domain concept.
+It has one attribute: 'endpoint', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DataType' defines the following possible values: 'array', 'object', 'number', 'date', 'any', 'boolean', 'string'.
+
+The model also captures inheritance relationships between classes.
+The class 'webapp_WebApp' is a specialization of 'NamedElement'.
+The class 'webapp_Model' is a specialization of 'Data'.
+The class 'webapp_Collection' is a specialization of 'Data'.
+The class 'webapp_Data' is a specialization of 'NamedElement'.
+The class 'webapp_View' is a specialization of 'NamedElement'.
+The class 'webapp_Template' is a specialization of 'NamedElement'.
+The class 'webapp_Controller' is a specialization of 'NamedElement'.
+The class 'webapp_PageController' is a specialization of 'Controller'.
+The class 'webapp_ServiceController' is a specialization of 'Controller'.
+The class 'webapp_Attribute' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'webapp_WebApp' and 'webapp_Collection'. From 'webapp_WebApp', the role 'webapp_WebApp' has cardinality 0..*, and from 'webapp_Collection', the role 'webapp_Collection' has cardinality 0..*.
+An association connects 'webapp_WebApp' and 'webapp_Router'. From 'webapp_WebApp', the role 'webapp_WebApp2' has cardinality 0..*, and from 'webapp_Router', the role 'webapp_Router' has cardinality 0..*.
+An association connects 'webapp_WebApp' and 'webapp_Model'. From 'webapp_WebApp', the role 'webapp_WebApp4' has cardinality 0..*, and from 'webapp_Model', the role 'webapp_Model' has cardinality 0..*.
+An association connects 'webapp_Controller' and 'webapp_WebApp'. From 'webapp_Controller', the role 'webapp_Controller' has cardinality 0..*, and from 'webapp_WebApp', the role 'webapp_WebApp6' has cardinality 0..*.
+An association connects 'webapp_WebApp' and 'webapp_Template'. From 'webapp_WebApp', the role 'webapp_WebApp8' has cardinality 0..*, and from 'webapp_Template', the role 'webapp_Template' has cardinality 0..*.
+An association connects 'webapp_WebApp' and 'webapp_View'. From 'webapp_WebApp', the role 'webapp_WebApp10' has cardinality 0..*, and from 'webapp_View', the role 'webapp_View' has cardinality 0..*.
+An association connects 'webapp_Model' and 'webapp_Attribute'. From 'webapp_Model', the role 'webapp_Model12' has cardinality 0..*, and from 'webapp_Attribute', the role 'webapp_Attribute' has cardinality 0..*.
+An association connects 'webapp_Collection' and 'webapp_Model'. From 'webapp_Collection', the role 'webapp_Collection14' has cardinality 0..*, and from 'webapp_Model', the role 'webapp_Model15' has cardinality 0..*.
+An association connects 'webapp_View' and 'webapp_View'. From 'webapp_View', the role 'webapp_View16' has cardinality 0..*, and from 'webapp_View', the role 'webapp_View18' has cardinality 0..*.
+An association connects 'webapp_View' and 'webapp_Template'. From 'webapp_View', the role 'webapp_View20' has cardinality 0..*, and from 'webapp_Template', the role 'webapp_Template21' has cardinality 0..*.
+An association connects 'webapp_Data' and 'webapp_View'. From 'webapp_Data', the role 'webapp_Data' has cardinality 0..*, and from 'webapp_View', the role 'webapp_View23' has cardinality 0..*.
+An association connects 'webapp_RouterBinding' and 'webapp_Router'. From 'webapp_RouterBinding', the role 'webapp_RouterBinding' has cardinality 0..*, and from 'webapp_Router', the role 'webapp_Router25' has cardinality 0..*.
+An association connects 'webapp_RouterBinding' and 'webapp_Controller'. From 'webapp_RouterBinding', the role 'webapp_RouterBinding27' has cardinality 0..*, and from 'webapp_Controller', the role 'webapp_Controller28' has cardinality 0..*.
+An association connects 'webapp_Controller' and 'webapp_Attribute'. From 'webapp_Controller', the role 'webapp_Controller30' has cardinality 0..*, and from 'webapp_Attribute', the role 'webapp_Attribute31' has cardinality 0..*.
+An association connects 'webapp_View' and 'webapp_PageController'. From 'webapp_View', the role 'webapp_View33' has cardinality 0..*, and from 'webapp_PageController', the role 'webapp_PageController' has cardinality 0..*.

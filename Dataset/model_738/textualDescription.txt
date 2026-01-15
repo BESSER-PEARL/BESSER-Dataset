@@ -1,0 +1,316 @@
+The domain model 'art_relaxed' describes the core structural elements and their relationships within the system.
+
+The model defines 74 main class(es).
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_instance_relaxed_ComponentInstance' represents an important domain concept.
+It has one attribute: 'state', which is of type str.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_System' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_implem_relaxed_OSGiType' represents an important domain concept.
+It has one attribute: 'generateInstanceBundle', which is of type str.
+
+'art_relaxed_group_relaxed_TypeGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'Dictionary' represents an important domain concept.
+It does not declare any attributes.
+
+'TransmissionBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_implem_relaxed_FractalComponent' represents an important domain concept.
+It has the following attributes: 'controllerDesc', which is of type str; 'contentDesc', which is of type str.
+
+'art_relaxed_type_relaxed_ControlService' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_instance_relaxed_Entry' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'art_relaxed_implem_relaxed_ComponentImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_implem_relaxed_OSGiComponent' represents an important domain concept.
+It has one attribute: 'implementingClass', which is of type str.
+
+'art_relaxed_implem_relaxed_TypeImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_instance_relaxed_ValuedAttribute' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'art_relaxed_type_relaxed_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_type_relaxed_ComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractPort' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_instance_relaxed_DictionaryValuedAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_group_relaxed_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_instance_relaxed_OtherEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'art_relaxed_type_relaxed_DictionaryDefaultValue' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'DelegationBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_instance_relaxed_AttributeInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'PortId' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_CardinalityElement' represents an important domain concept.
+It has the following attributes: 'upper', which is of type str; 'lower', which is of type str.
+
+'art_relaxed_instance_relaxed_DefaultEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_instance_relaxed_PrimitiveInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_type_relaxed_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'type_relaxed_AbstractPort' represents an important domain concept.
+It does not declare any attributes.
+
+'type_relaxed_art_relaxed_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_type_relaxed_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'DictionaryDefaultValue' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'Entry' represents an important domain concept.
+It does not declare any attributes.
+
+'Service' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_type_relaxed_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'art_relaxed_AspectModelElement' represents an important domain concept.
+It has one attribute: 'pid', which is of type str.
+
+'CardinalityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_group_relaxed_InstanceGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_type_relaxed_AbstractPort' represents an important domain concept.
+It has the following attributes: 'uri', which is of type str; 'protocol', which is of type str; 'role', which is of type str.
+
+'BasicAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_type_relaxed_PortId' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_instance_relaxed_DelegationBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_instance_relaxed_CompositeInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_instance_relaxed_TransmissionBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'Group' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_instance_relaxed_Binding' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'art_relaxed_distrib_relaxed_Node' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'art_relaxed_type_relaxed_CompositeType' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_type_relaxed_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_type_relaxed_PortCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_type_relaxed_BasicAttribute' represents an important domain concept.
+It has one attribute: 'defaultValue', which is of type str.
+
+'Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_type_relaxed_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_type_relaxed_Dictionary' represents an important domain concept.
+It does not declare any attributes.
+
+'art_relaxed_type_relaxed_FunctionalService' represents an important domain concept.
+It does not declare any attributes.
+
+'AspectModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'InstanceGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeGroup' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'InstanceState' defines the following possible values: 'OFF', 'ON'.
+The enumeration 'PortRole' defines the following possible values: 'client', 'server'.
+
+The model also captures inheritance relationships between classes.
+The class 'art_relaxed_NamedElement' is a specialization of 'AspectModelElement'.
+The class 'art_relaxed_ModelElement' is a specialization of 'NamedElement'.
+The class 'art_relaxed_System' is a specialization of 'ModelElement'.
+The class 'art_relaxed_DataType' is a specialization of 'ModelElement'.
+The class 'art_relaxed_TypedElement' is a specialization of 'ModelElement'.
+The class 'art_relaxed_CardinalityElement' is a specialization of 'ModelElement'.
+The class 'art_relaxed_instance_relaxed_ComponentInstance' is a specialization of 'ModelElement'.
+The class 'art_relaxed_instance_relaxed_PrimitiveInstance' is a specialization of 'ComponentInstance'.
+The class 'art_relaxed_instance_relaxed_CompositeInstance' is a specialization of 'ComponentInstance'.
+The class 'art_relaxed_instance_relaxed_Binding' is a specialization of 'AspectModelElement'.
+The class 'art_relaxed_instance_relaxed_TransmissionBinding' is a specialization of 'Binding'.
+The class 'art_relaxed_instance_relaxed_DelegationBinding' is a specialization of 'Binding'.
+The class 'art_relaxed_instance_relaxed_AttributeInstance' is a specialization of 'AspectModelElement'.
+The class 'art_relaxed_instance_relaxed_ValuedAttribute' is a specialization of 'AttributeInstance'.
+The class 'art_relaxed_instance_relaxed_DictionaryValuedAttribute' is a specialization of 'AttributeInstance'.
+The class 'art_relaxed_instance_relaxed_Entry' is a specialization of 'AspectModelElement'.
+The class 'art_relaxed_instance_relaxed_DefaultEntry' is a specialization of 'Entry'.
+The class 'art_relaxed_instance_relaxed_OtherEntry' is a specialization of 'Entry'.
+The class 'art_relaxed_type_relaxed_ComponentType' is a specialization of 'ModelElement'.
+The class 'art_relaxed_type_relaxed_PrimitiveType' is a specialization of 'ComponentType'.
+The class 'art_relaxed_type_relaxed_CompositeType' is a specialization of 'ComponentType'.
+The class 'art_relaxed_type_relaxed_Service' is a specialization of 'ModelElement'.
+The class 'art_relaxed_type_relaxed_Operation' is a specialization of 'ModelElement'.
+The class 'art_relaxed_type_relaxed_Parameter' is a specialization of 'TypedElement'.
+The class 'art_relaxed_type_relaxed_FunctionalService' is a specialization of 'Service'.
+The class 'art_relaxed_type_relaxed_ControlService' is a specialization of 'Service'.
+The class 'art_relaxed_type_relaxed_AbstractPort' is a specialization of 'NamedElement'.
+The class 'art_relaxed_type_relaxed_Port' is a specialization of 'CardinalityElement'.
+The class 'art_relaxed_type_relaxed_Port' is a specialization of 'type_relaxed_AbstractPort'.
+The class 'art_relaxed_type_relaxed_PortCollection' is a specialization of 'AbstractPort'.
+The class 'art_relaxed_type_relaxed_PortId' is a specialization of 'NamedElement'.
+The class 'art_relaxed_type_relaxed_Attribute' is a specialization of 'TypedElement'.
+The class 'art_relaxed_type_relaxed_BasicAttribute' is a specialization of 'Attribute'.
+The class 'art_relaxed_type_relaxed_Dictionary' is a specialization of 'Attribute'.
+The class 'art_relaxed_type_relaxed_DictionaryDefaultValue' is a specialization of 'AspectModelElement'.
+The class 'art_relaxed_implem_relaxed_ComponentImplementation' is a specialization of 'AspectModelElement'.
+The class 'art_relaxed_implem_relaxed_FractalComponent' is a specialization of 'ComponentImplementation'.
+The class 'art_relaxed_implem_relaxed_OSGiComponent' is a specialization of 'ComponentImplementation'.
+The class 'art_relaxed_implem_relaxed_TypeImplementation' is a specialization of 'AspectModelElement'.
+The class 'art_relaxed_implem_relaxed_OSGiType' is a specialization of 'TypeImplementation'.
+The class 'art_relaxed_group_relaxed_Group' is a specialization of 'NamedElement'.
+The class 'art_relaxed_group_relaxed_TypeGroup' is a specialization of 'Group'.
+The class 'art_relaxed_group_relaxed_InstanceGroup' is a specialization of 'Group'.
+The class 'art_relaxed_distrib_relaxed_Node' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'art_relaxed_System' and 'Node'. From 'art_relaxed_System', the role 'art_relaxed_System' has cardinality 0..*, and from 'Node', the role 'Node' has cardinality 0..*.
+An association connects 'Service' and 'art_relaxed_System'. From 'Service', the role 'Service' has cardinality 0..*, and from 'art_relaxed_System', the role 'art_relaxed_System2' has cardinality 0..*.
+An association connects 'art_relaxed_System' and 'ComponentType'. From 'art_relaxed_System', the role 'art_relaxed_System4' has cardinality 0..*, and from 'ComponentType', the role 'ComponentType' has cardinality 0..*.
+An association connects 'art_relaxed_System' and 'art_relaxed_DataType'. From 'art_relaxed_System', the role 'art_relaxed_System6' has cardinality 0..*, and from 'art_relaxed_DataType', the role 'art_relaxed_DataType' has cardinality 0..*.
+An association connects 'art_relaxed_System' and 'Group'. From 'art_relaxed_System', the role 'art_relaxed_System8' has cardinality 0..*, and from 'Group', the role 'Group' has cardinality 0..*.
+An association connects 'art_relaxed_DataType' and 'art_relaxed_TypedElement'. From 'art_relaxed_DataType', the role 'art_relaxed_DataType10' has cardinality 0..*, and from 'art_relaxed_TypedElement', the role 'art_relaxed_TypedElement' has cardinality 0..*.
+An association connects 'ComponentType' and 'art_relaxed_instance_relaxed_ComponentInstance'. From 'ComponentType', the role 'ComponentType12' has cardinality 0..*, and from 'art_relaxed_instance_relaxed_ComponentInstance', the role 'art_relaxed_instance_relaxed_ComponentInstance' has cardinality 0..*.
+An association connects 'CompositeInstance' and 'art_relaxed_instance_relaxed_ComponentInstance'. From 'CompositeInstance', the role 'instance_relaxed' has cardinality 0..*, and from 'art_relaxed_instance_relaxed_ComponentInstance', the role 'CompositeInstance' has cardinality 0..*.
+An association connects 'AttributeInstance' and 'art_relaxed_instance_relaxed_ComponentInstance'. From 'AttributeInstance', the role 'AttributeInstance' has cardinality 0..*, and from 'art_relaxed_instance_relaxed_ComponentInstance', the role 'art_relaxed_instance_relaxed_ComponentInstance15' has cardinality 0..*.
+An association connects 'TransmissionBinding' and 'art_relaxed_instance_relaxed_ComponentInstance'. From 'TransmissionBinding', the role 'TransmissionBinding' has cardinality 0..*, and from 'art_relaxed_instance_relaxed_ComponentInstance', the role 'art_relaxed_instance_relaxed_ComponentInstance17' has cardinality 0..*.
+An association connects 'ComponentImplementation' and 'art_relaxed_instance_relaxed_ComponentInstance'. From 'ComponentImplementation', the role 'ComponentImplementation' has cardinality 0..*, and from 'art_relaxed_instance_relaxed_ComponentInstance', the role 'art_relaxed_instance_relaxed_ComponentInstance19' has cardinality 0..*.
+An association connects 'art_relaxed_instance_relaxed_ComponentInstance' and 'InstanceGroup'. From 'art_relaxed_instance_relaxed_ComponentInstance', the role 'InstanceGroup' has cardinality 0..*, and from 'InstanceGroup', the role 'group_relaxed' has cardinality 0..*.
+An association connects 'art_relaxed_instance_relaxed_CompositeInstance' and 'ComponentInstance'. From 'art_relaxed_instance_relaxed_CompositeInstance', the role 'ComponentInstance' has cardinality 0..*, and from 'ComponentInstance', the role 'instance_relaxed22' has cardinality 0..*.
+An association connects 'art_relaxed_instance_relaxed_CompositeInstance' and 'DelegationBinding'. From 'art_relaxed_instance_relaxed_CompositeInstance', the role 'art_relaxed_instance_relaxed_CompositeInstance' has cardinality 0..*, and from 'DelegationBinding', the role 'DelegationBinding' has cardinality 0..*.
+An association connects 'ComponentInstance' and 'art_relaxed_instance_relaxed_Binding'. From 'ComponentInstance', the role 'ComponentInstance25' has cardinality 0..*, and from 'art_relaxed_instance_relaxed_Binding', the role 'art_relaxed_instance_relaxed_Binding' has cardinality 0..*.
+An association connects 'AbstractPort' and 'art_relaxed_instance_relaxed_TransmissionBinding'. From 'AbstractPort', the role 'AbstractPort' has cardinality 0..*, and from 'art_relaxed_instance_relaxed_TransmissionBinding', the role 'art_relaxed_instance_relaxed_TransmissionBinding' has cardinality 0..*.
+An association connects 'AbstractPort' and 'art_relaxed_instance_relaxed_TransmissionBinding'. From 'AbstractPort', the role 'AbstractPort29' has cardinality 0..*, and from 'art_relaxed_instance_relaxed_TransmissionBinding', the role 'art_relaxed_instance_relaxed_TransmissionBinding28' has cardinality 0..*.
+An association connects 'AbstractPort' and 'art_relaxed_instance_relaxed_DelegationBinding'. From 'AbstractPort', the role 'AbstractPort31' has cardinality 0..*, and from 'art_relaxed_instance_relaxed_DelegationBinding', the role 'art_relaxed_instance_relaxed_DelegationBinding' has cardinality 0..*.
+An association connects 'art_relaxed_instance_relaxed_DelegationBinding' and 'AbstractPort'. From 'art_relaxed_instance_relaxed_DelegationBinding', the role 'art_relaxed_instance_relaxed_DelegationBinding33' has cardinality 0..*, and from 'AbstractPort', the role 'AbstractPort34' has cardinality 0..*.
+An association connects 'art_relaxed_instance_relaxed_ValuedAttribute' and 'BasicAttribute'. From 'art_relaxed_instance_relaxed_ValuedAttribute', the role 'art_relaxed_instance_relaxed_ValuedAttribute' has cardinality 0..*, and from 'BasicAttribute', the role 'BasicAttribute' has cardinality 0..*.
+An association connects 'art_relaxed_instance_relaxed_DictionaryValuedAttribute' and 'Entry'. From 'art_relaxed_instance_relaxed_DictionaryValuedAttribute', the role 'art_relaxed_instance_relaxed_DictionaryValuedAttribute' has cardinality 0..*, and from 'Entry', the role 'Entry' has cardinality 0..*.
+An association connects 'Dictionary' and 'art_relaxed_instance_relaxed_DictionaryValuedAttribute'. From 'Dictionary', the role 'Dictionary' has cardinality 0..*, and from 'art_relaxed_instance_relaxed_DictionaryValuedAttribute', the role 'art_relaxed_instance_relaxed_DictionaryValuedAttribute38' has cardinality 0..*.
+An association connects 'DictionaryDefaultValue' and 'art_relaxed_instance_relaxed_DefaultEntry'. From 'DictionaryDefaultValue', the role 'DictionaryDefaultValue' has cardinality 0..*, and from 'art_relaxed_instance_relaxed_DefaultEntry', the role 'art_relaxed_instance_relaxed_DefaultEntry' has cardinality 0..*.
+An association connects 'AbstractPort' and 'art_relaxed_type_relaxed_ComponentType'. From 'AbstractPort', the role 'AbstractPort41' has cardinality 0..*, and from 'art_relaxed_type_relaxed_ComponentType', the role 'art_relaxed_type_relaxed_ComponentType' has cardinality 0..*.
+An association connects 'art_relaxed_type_relaxed_ComponentType' and 'Attribute'. From 'art_relaxed_type_relaxed_ComponentType', the role 'art_relaxed_type_relaxed_ComponentType43' has cardinality 0..*, and from 'Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'art_relaxed_type_relaxed_ComponentType' and 'TypeGroup'. From 'art_relaxed_type_relaxed_ComponentType', the role 'TypeGroup' has cardinality 0..*, and from 'TypeGroup', the role 'group_relaxed45' has cardinality 0..*.
+An association connects 'TypeImplementation' and 'art_relaxed_type_relaxed_ComponentType'. From 'TypeImplementation', the role 'TypeImplementation' has cardinality 0..*, and from 'art_relaxed_type_relaxed_ComponentType', the role 'art_relaxed_type_relaxed_ComponentType47' has cardinality 0..*.
+An association connects 'art_relaxed_type_relaxed_Service' and 'Operation'. From 'art_relaxed_type_relaxed_Service', the role 'art_relaxed_type_relaxed_Service' has cardinality 0..*, and from 'Operation', the role 'Operation' has cardinality 0..*.
+An association connects 'Parameter' and 'art_relaxed_type_relaxed_Operation'. From 'Parameter', the role 'Parameter' has cardinality 0..*, and from 'art_relaxed_type_relaxed_Operation', the role 'art_relaxed_type_relaxed_Operation' has cardinality 0..*.
+An association connects 'art_relaxed_type_relaxed_Operation' and 'Parameter'. From 'art_relaxed_type_relaxed_Operation', the role 'art_relaxed_type_relaxed_Operation51' has cardinality 0..*, and from 'Parameter', the role 'Parameter52' has cardinality 0..*.
+An association connects 'art_relaxed_type_relaxed_AbstractPort' and 'Service'. From 'art_relaxed_type_relaxed_AbstractPort', the role 'art_relaxed_type_relaxed_AbstractPort' has cardinality 0..*, and from 'Service', the role 'Service54' has cardinality 0..*.
+An association connects 'art_relaxed_type_relaxed_PortCollection' and 'PortId'. From 'art_relaxed_type_relaxed_PortCollection', the role 'art_relaxed_type_relaxed_PortCollection' has cardinality 0..*, and from 'PortId', the role 'PortId' has cardinality 0..*.
+An association connects 'type_relaxed_art_relaxed_DataType' and 'art_relaxed_type_relaxed_Dictionary'. From 'type_relaxed_art_relaxed_DataType', the role 'type_relaxed_art_relaxed_DataType' has cardinality 0..*, and from 'art_relaxed_type_relaxed_Dictionary', the role 'art_relaxed_type_relaxed_Dictionary' has cardinality 0..*.
+An association connects 'DictionaryDefaultValue' and 'art_relaxed_type_relaxed_Dictionary'. From 'DictionaryDefaultValue', the role 'DictionaryDefaultValue59' has cardinality 0..*, and from 'art_relaxed_type_relaxed_Dictionary', the role 'art_relaxed_type_relaxed_Dictionary58' has cardinality 0..*.
+An association connects 'ComponentType' and 'art_relaxed_group_relaxed_TypeGroup'. From 'ComponentType', the role 'type_relaxed' has cardinality 0..*, and from 'art_relaxed_group_relaxed_TypeGroup', the role 'ComponentType61' has cardinality 0..*.
+An association connects 'TypeGroup' and 'art_relaxed_group_relaxed_TypeGroup'. From 'TypeGroup', the role 'TypeGroup63' has cardinality 0..*, and from 'art_relaxed_group_relaxed_TypeGroup', the role 'art_relaxed_group_relaxed_TypeGroup' has cardinality 0..*.
+An association connects 'ComponentInstance' and 'art_relaxed_group_relaxed_InstanceGroup'. From 'ComponentInstance', the role 'instance_relaxed66' has cardinality 0..*, and from 'art_relaxed_group_relaxed_InstanceGroup', the role 'ComponentInstance65' has cardinality 0..*.
+An association connects 'InstanceGroup' and 'art_relaxed_group_relaxed_InstanceGroup'. From 'InstanceGroup', the role 'InstanceGroup68' has cardinality 0..*, and from 'art_relaxed_group_relaxed_InstanceGroup', the role 'art_relaxed_group_relaxed_InstanceGroup' has cardinality 0..*.
+An association connects 'art_relaxed_distrib_relaxed_Node' and 'ComponentInstance'. From 'art_relaxed_distrib_relaxed_Node', the role 'art_relaxed_distrib_relaxed_Node' has cardinality 0..*, and from 'ComponentInstance', the role 'ComponentInstance70' has cardinality 0..*.

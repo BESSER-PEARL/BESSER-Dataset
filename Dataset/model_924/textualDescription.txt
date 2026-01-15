@@ -1,0 +1,100 @@
+The domain model 'petrinetsemantics' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinetsemantics_TM3PetriNet_PNTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinetsemantics_EDMMPetriNet_FireTransitionEvent' represents an important domain concept.
+It has one attribute: 'time', which is of type float.
+
+'petrinetsemantics_SDMMPetriNet_Node_dynamic' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'PNTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinetsemantics_SDMMPetriNet_Place_dynamic' represents an important domain concept.
+It has one attribute: 'marking', which is of type int.
+
+'petrinetsemantics_DDMMPetriNet_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petrinetsemantics_DDMMPetriNet_PetriNet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Place' represents an important domain concept.
+It does not declare any attributes.
+
+'PNSimEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinetsemantics_DDMMPetriNet_Place' represents an important domain concept.
+It has one attribute: 'initialMarking', which is of type int.
+
+'petrinetsemantics_SDMMPetriNet_PetriNet_dynamic' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinetsemantics_DDMMPetriNet_Transition' represents an important domain concept.
+It has the following attributes: 'min_time', which is of type int; 'max_time', which is of type int.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinetsemantics_DDMMPetriNet_Arc' represents an important domain concept.
+It has the following attributes: 'weight', which is of type int; 'kind', which is of type str.
+
+'PetriNetEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinetsemantics_TM3PetriNet_PNSimEvent' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'date', which is of type int; 'internal', which is of type bool.
+
+'Node_dynamic' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinetsemantics_TM3PetriNet_PNScenario' represents an important domain concept.
+It does not declare any attributes.
+
+'PNScenario' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinetsemantics_EDMMPetriNet_PetriNetEvent' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ArcKind' defines the following possible values: 'normal', 'read_arc'.
+
+The model also captures inheritance relationships between classes.
+The class 'petrinetsemantics_DDMMPetriNet_Transition' is a specialization of 'Node'.
+The class 'petrinetsemantics_DDMMPetriNet_Place' is a specialization of 'Node'.
+The class 'petrinetsemantics_SDMMPetriNet_Place_dynamic' is a specialization of 'Node_dynamic'.
+The class 'petrinetsemantics_EDMMPetriNet_PetriNetEvent' is a specialization of 'PNSimEvent'.
+The class 'petrinetsemantics_EDMMPetriNet_FireTransitionEvent' is a specialization of 'PetriNetEvent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Node' and 'petrinetsemantics_DDMMPetriNet_PetriNet'. From 'Node', the role 'DDMMPetriNet' has cardinality 0..*, and from 'petrinetsemantics_DDMMPetriNet_PetriNet', the role 'Node' has cardinality 0..*.
+An association connects 'Arc' and 'petrinetsemantics_DDMMPetriNet_PetriNet'. From 'Arc', the role 'DDMMPetriNet2' has cardinality 0..*, and from 'petrinetsemantics_DDMMPetriNet_PetriNet', the role 'Arc' has cardinality 0..*.
+An association connects 'petrinetsemantics_DDMMPetriNet_Node' and 'PetriNet'. From 'petrinetsemantics_DDMMPetriNet_Node', the role 'PetriNet' has cardinality 0..*, and from 'PetriNet', the role 'DDMMPetriNet4' has cardinality 0..*.
+An association connects 'petrinetsemantics_DDMMPetriNet_Node' and 'Arc'. From 'petrinetsemantics_DDMMPetriNet_Node', the role 'Arc6' has cardinality 0..*, and from 'Arc', the role 'DDMMPetriNet7' has cardinality 0..*.
+An association connects 'petrinetsemantics_DDMMPetriNet_Node' and 'Arc'. From 'petrinetsemantics_DDMMPetriNet_Node', the role 'Arc9' has cardinality 0..*, and from 'Arc', the role 'DDMMPetriNet10' has cardinality 0..*.
+An association connects 'Node' and 'petrinetsemantics_DDMMPetriNet_Arc'. From 'Node', the role 'DDMMPetriNet13' has cardinality 0..*, and from 'petrinetsemantics_DDMMPetriNet_Arc', the role 'Node12' has cardinality 0..*.
+An association connects 'Node' and 'petrinetsemantics_DDMMPetriNet_Arc'. From 'Node', the role 'DDMMPetriNet16' has cardinality 0..*, and from 'petrinetsemantics_DDMMPetriNet_Arc', the role 'Node15' has cardinality 0..*.
+An association connects 'petrinetsemantics_DDMMPetriNet_Arc' and 'PetriNet'. From 'petrinetsemantics_DDMMPetriNet_Arc', the role 'PetriNet18' has cardinality 0..*, and from 'PetriNet', the role 'DDMMPetriNet19' has cardinality 0..*.
+An association connects 'Node' and 'petrinetsemantics_SDMMPetriNet_Node_dynamic'. From 'Node', the role 'Node21' has cardinality 0..*, and from 'petrinetsemantics_SDMMPetriNet_Node_dynamic', the role 'petrinetsemantics_SDMMPetriNet_Node_dynamic' has cardinality 0..*.
+An association connects 'petrinetsemantics_SDMMPetriNet_Place_dynamic' and 'Place'. From 'petrinetsemantics_SDMMPetriNet_Place_dynamic', the role 'petrinetsemantics_SDMMPetriNet_Place_dynamic' has cardinality 0..*, and from 'Place', the role 'Place' has cardinality 0..*.
+An association connects 'Node_dynamic' and 'petrinetsemantics_SDMMPetriNet_PetriNet_dynamic'. From 'Node_dynamic', the role 'Node_dynamic' has cardinality 0..*, and from 'petrinetsemantics_SDMMPetriNet_PetriNet_dynamic', the role 'petrinetsemantics_SDMMPetriNet_PetriNet_dynamic' has cardinality 0..*.
+An association connects 'petrinetsemantics_SDMMPetriNet_PetriNet_dynamic' and 'PetriNet'. From 'petrinetsemantics_SDMMPetriNet_PetriNet_dynamic', the role 'petrinetsemantics_SDMMPetriNet_PetriNet_dynamic25' has cardinality 0..*, and from 'PetriNet', the role 'PetriNet26' has cardinality 0..*.
+An association connects 'petrinetsemantics_EDMMPetriNet_FireTransitionEvent' and 'Transition'. From 'petrinetsemantics_EDMMPetriNet_FireTransitionEvent', the role 'petrinetsemantics_EDMMPetriNet_FireTransitionEvent' has cardinality 0..*, and from 'Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'petrinetsemantics_TM3PetriNet_PNScenario' and 'PNTrace'. From 'petrinetsemantics_TM3PetriNet_PNScenario', the role 'PNTrace' has cardinality 0..*, and from 'PNTrace', the role 'TM3PetriNet' has cardinality 0..*.
+An association connects 'petrinetsemantics_TM3PetriNet_PNScenario' and 'PNSimEvent'. From 'petrinetsemantics_TM3PetriNet_PNScenario', the role 'petrinetsemantics_TM3PetriNet_PNScenario' has cardinality 0..*, and from 'PNSimEvent', the role 'PNSimEvent' has cardinality 0..*.
+An association connects 'petrinetsemantics_TM3PetriNet_PNTrace' and 'PNScenario'. From 'petrinetsemantics_TM3PetriNet_PNTrace', the role 'PNScenario' has cardinality 0..*, and from 'PNScenario', the role 'TM3PetriNet31' has cardinality 0..*.

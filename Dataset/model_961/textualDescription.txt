@@ -1,0 +1,30 @@
+The domain model 'DirectedGraph' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'DirectedGraph_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DirectedGraph_Node' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'DirectedGraph_Edge' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'weight', which is of type str.
+
+'DirectedGraph_GraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'DirectedGraph_Node' is a specialization of 'GraphElement'.
+The class 'DirectedGraph_Edge' is a specialization of 'GraphElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'DirectedGraph_GraphElement' and 'DirectedGraph_Graph'. From 'DirectedGraph_GraphElement', the role 'GraphElement' has cardinality 0..*, and from 'DirectedGraph_Graph', the role 'graph' has cardinality 0..*.
+An association connects 'DirectedGraph_GraphElement' and 'DirectedGraph_Graph'. From 'DirectedGraph_GraphElement', the role 'contents' has cardinality 0..*, and from 'DirectedGraph_Graph', the role 'Graph' has cardinality 0..*.
+An association connects 'DirectedGraph_Node' and 'DirectedGraph_Edge'. From 'DirectedGraph_Node', the role 'source' has cardinality 0..*, and from 'DirectedGraph_Edge', the role 'Edge' has cardinality 0..*.
+An association connects 'DirectedGraph_Edge' and 'DirectedGraph_Node'. From 'DirectedGraph_Edge', the role 'Edge4' has cardinality 0..*, and from 'DirectedGraph_Node', the role 'target' has cardinality 0..*.
+An association connects 'DirectedGraph_Edge' and 'DirectedGraph_Node'. From 'DirectedGraph_Edge', the role 'outgoing' has cardinality 0..*, and from 'DirectedGraph_Node', the role 'Node' has cardinality 0..*.
+An association connects 'DirectedGraph_Node' and 'DirectedGraph_Edge'. From 'DirectedGraph_Node', the role 'Node7' has cardinality 0..*, and from 'DirectedGraph_Edge', the role 'incoming' has cardinality 0..*.

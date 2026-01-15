@@ -1,0 +1,17 @@
+The domain model 'mm1' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'mm1_Member' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mm1_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mm1_Book' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'mm1_Member' and 'mm1_Library'. From 'mm1_Member', the role 'mm1_Member' has cardinality 0..*, and from 'mm1_Library', the role 'mm1_Library' has cardinality 0..*.
+An association connects 'mm1_Library' and 'mm1_Book'. From 'mm1_Library', the role 'mm1_Library2' has cardinality 0..*, and from 'mm1_Book', the role 'mm1_Book' has cardinality 0..*.
+An association connects 'mm1_Book' and 'mm1_Member'. From 'mm1_Book', the role 'mm1_Book5' has cardinality 0..*, and from 'mm1_Member', the role 'mm1_Member4' has cardinality 0..*.

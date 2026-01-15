@@ -1,0 +1,24 @@
+The domain model 'mm2' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'mm2_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mm2_Book' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mm2_Member' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mm2_Loan' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'mm2_Member' and 'mm2_Library'. From 'mm2_Member', the role 'mm2_Member' has cardinality 0..*, and from 'mm2_Library', the role 'mm2_Library' has cardinality 0..*.
+An association connects 'mm2_Book' and 'mm2_Library'. From 'mm2_Book', the role 'mm2_Book' has cardinality 0..*, and from 'mm2_Library', the role 'mm2_Library2' has cardinality 0..*.
+An association connects 'mm2_Loan' and 'mm2_Library'. From 'mm2_Loan', the role 'mm2_Loan' has cardinality 0..*, and from 'mm2_Library', the role 'mm2_Library4' has cardinality 0..*.
+An association connects 'mm2_Loan' and 'mm2_Book'. From 'mm2_Loan', the role 'loans' has cardinality 0..*, and from 'mm2_Book', the role 'Book' has cardinality 0..*.
+An association connects 'mm2_Member' and 'mm2_Loan'. From 'mm2_Member', the role 'Member' has cardinality 0..*, and from 'mm2_Loan', the role 'loans7' has cardinality 0..*.
+An association connects 'mm2_Loan' and 'mm2_Member'. From 'mm2_Loan', the role 'Loan' has cardinality 0..*, and from 'mm2_Member', the role 'member' has cardinality 0..*.
+An association connects 'mm2_Book' and 'mm2_Loan'. From 'mm2_Book', the role 'book' has cardinality 0..*, and from 'mm2_Loan', the role 'Loan10' has cardinality 0..*.

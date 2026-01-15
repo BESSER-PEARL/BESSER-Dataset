@@ -1,0 +1,125 @@
+The domain model 'revision' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'revision_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'revision_Counted' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'revision_PlaceHolderRn' represents an important domain concept.
+It does not declare any attributes.
+
+'revision_Paragraph' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'Labelled' represents an important domain concept.
+It does not declare any attributes.
+
+'revision_Labelled' represents an important domain concept.
+It has one attribute: 'lname', which is of type str.
+
+'revision_PlaceHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'revision_Researcher' represents an important domain concept.
+It has the following attributes: 'forName', which is of type str; 'position', which is of type str; 'name', which is of type str.
+
+'revision_PlaceHolderRule' represents an important domain concept.
+It does not declare any attributes.
+
+'revision_Sequence' represents an important domain concept.
+It has one attribute: 'sequenceType', which is of type str.
+
+'revision_ReviewNote' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'revision_Progress' represents an important domain concept.
+It has one attribute: 'percent', which is of type int.
+
+'revision_PlaceHolderPP' represents an important domain concept.
+It does not declare any attributes.
+
+'revision_PublicationPhase' represents an important domain concept.
+It has the following attributes: 'minTime', which is of type int; 'maxTime', which is of type int; 'name', which is of type str.
+
+'Counted' represents an important domain concept.
+It does not declare any attributes.
+
+'PlaceHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'revision_Rule' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'text', which is of type str.
+
+'revision_Review' represents an important domain concept.
+It does not declare any attributes.
+
+'revision_PublicationProcess' represents an important domain concept.
+It has the following attributes: 'minTime', which is of type int; 'maxTime', which is of type int.
+
+'revision_Paper' represents an important domain concept.
+It does not declare any attributes.
+
+'revision_PublicationStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'revision_PublicationSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'revision_Write' represents an important domain concept.
+It does not declare any attributes.
+
+'revision_PlaceHolderRs' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SequenceType' defines the following possible values: 'startToFinish', 'finishToStart', 'finishToFinish', 'startToStart'.
+
+The model also captures inheritance relationships between classes.
+The class 'revision_PublicationProcess' is a specialization of 'Named'.
+The class 'revision_Paper' is a specialization of 'Named'.
+The class 'revision_Paragraph' is a specialization of 'Counted'.
+The class 'revision_Paragraph' is a specialization of 'Named'.
+The class 'revision_ReviewNote' is a specialization of 'Named'.
+The class 'revision_Progress' is a specialization of 'Labelled'.
+The class 'revision_Write' is a specialization of 'Labelled'.
+The class 'revision_Review' is a specialization of 'Labelled'.
+The class 'revision_PublicationStructure' is a specialization of 'Named'.
+The class 'revision_PlaceHolderRs' is a specialization of 'PlaceHolder'.
+The class 'revision_PlaceHolderRule' is a specialization of 'PlaceHolder'.
+The class 'revision_PlaceHolderRn' is a specialization of 'PlaceHolder'.
+The class 'revision_PlaceHolderPP' is a specialization of 'PlaceHolder'.
+
+Relationships between classes are modeled using associations.
+An association connects 'revision_PublicationProcess' and 'revision_PublicationPhase'. From 'revision_PublicationProcess', the role 'revision_PublicationProcess' has cardinality 0..*, and from 'revision_PublicationPhase', the role 'revision_PublicationPhase' has cardinality 0..*.
+An association connects 'revision_PublicationProcess' and 'revision_Rule'. From 'revision_PublicationProcess', the role 'revision_PublicationProcess2' has cardinality 0..*, and from 'revision_Rule', the role 'revision_Rule' has cardinality 0..*.
+An association connects 'revision_Sequence' and 'revision_PublicationPhase'. From 'revision_Sequence', the role 'revision_Sequence' has cardinality 0..*, and from 'revision_PublicationPhase', the role 'revision_PublicationPhase4' has cardinality 0..*.
+An association connects 'revision_Researcher' and 'revision_PublicationPhase'. From 'revision_Researcher', the role 'Researcher' has cardinality 0..*, and from 'revision_PublicationPhase', the role 'phaseParticipation' has cardinality 0..*.
+An association connects 'revision_Rule' and 'revision_PublicationPhase'. From 'revision_Rule', the role 'revision_Rule8' has cardinality 0..*, and from 'revision_PublicationPhase', the role 'revision_PublicationPhase7' has cardinality 0..*.
+An association connects 'revision_PlaceHolderPP' and 'revision_PublicationPhase'. From 'revision_PlaceHolderPP', the role 'revision_PlaceHolderPP' has cardinality 0..*, and from 'revision_PublicationPhase', the role 'revision_PublicationPhase10' has cardinality 0..*.
+An association connects 'revision_PublicationPhase' and 'revision_Sequence'. From 'revision_PublicationPhase', the role 'revision_PublicationPhase13' has cardinality 0..*, and from 'revision_Sequence', the role 'revision_Sequence12' has cardinality 0..*.
+An association connects 'revision_PublicationPhase' and 'revision_Sequence'. From 'revision_PublicationPhase', the role 'revision_PublicationPhase16' has cardinality 0..*, and from 'revision_Sequence', the role 'revision_Sequence15' has cardinality 0..*.
+An association connects 'revision_Rule' and 'revision_PlaceHolderRule'. From 'revision_Rule', the role 'revision_Rule18' has cardinality 0..*, and from 'revision_PlaceHolderRule', the role 'revision_PlaceHolderRule' has cardinality 0..*.
+An association connects 'revision_PublicationPhase' and 'revision_Researcher'. From 'revision_PublicationPhase', the role 'PublicationPhase' has cardinality 0..*, and from 'revision_Researcher', the role 'neededPerson' has cardinality 0..*.
+An association connects 'revision_Write' and 'revision_Researcher'. From 'revision_Write', the role 'revision_Write' has cardinality 0..*, and from 'revision_Researcher', the role 'revision_Researcher' has cardinality 0..*.
+An association connects 'revision_Researcher' and 'revision_Review'. From 'revision_Researcher', the role 'revision_Researcher22' has cardinality 0..*, and from 'revision_Review', the role 'revision_Review' has cardinality 0..*.
+An association connects 'revision_Researcher' and 'revision_Paper'. From 'revision_Researcher', the role 'authors' has cardinality 0..*, and from 'revision_Paper', the role 'Paper' has cardinality 0..*.
+An association connects 'revision_Researcher' and 'revision_PlaceHolderRs'. From 'revision_Researcher', the role 'revision_Researcher25' has cardinality 0..*, and from 'revision_PlaceHolderRs', the role 'revision_PlaceHolderRs' has cardinality 0..*.
+An association connects 'revision_Paper' and 'revision_Paragraph'. From 'revision_Paper', the role 'revision_Paper' has cardinality 0..*, and from 'revision_Paragraph', the role 'revision_Paragraph' has cardinality 0..*.
+An association connects 'revision_Progress' and 'revision_Paper'. From 'revision_Progress', the role 'Progress' has cardinality 0..*, and from 'revision_Paper', the role 'paper' has cardinality 0..*.
+An association connects 'revision_Researcher' and 'revision_Paper'. From 'revision_Researcher', the role 'Researcher29' has cardinality 0..*, and from 'revision_Paper', the role 'papers' has cardinality 0..*.
+An association connects 'revision_ReviewNote' and 'revision_Paragraph'. From 'revision_ReviewNote', the role 'revision_ReviewNote' has cardinality 0..*, and from 'revision_Paragraph', the role 'revision_Paragraph31' has cardinality 0..*.
+An association connects 'revision_PlaceHolderRn' and 'revision_ReviewNote'. From 'revision_PlaceHolderRn', the role 'revision_PlaceHolderRn' has cardinality 0..*, and from 'revision_ReviewNote', the role 'revision_ReviewNote33' has cardinality 0..*.
+An association connects 'revision_PublicationProcess' and 'revision_Progress'. From 'revision_PublicationProcess', the role 'revision_PublicationProcess35' has cardinality 0..*, and from 'revision_Progress', the role 'revision_Progress' has cardinality 0..*.
+An association connects 'revision_Progress' and 'revision_Paper'. From 'revision_Progress', the role 'progress' has cardinality 0..*, and from 'revision_Paper', the role 'Paper37' has cardinality 0..*.
+An association connects 'revision_Write' and 'revision_Paragraph'. From 'revision_Write', the role 'revision_Write39' has cardinality 0..*, and from 'revision_Paragraph', the role 'revision_Paragraph40' has cardinality 0..*.
+An association connects 'revision_Review' and 'revision_ReviewNote'. From 'revision_Review', the role 'revision_Review42' has cardinality 0..*, and from 'revision_ReviewNote', the role 'revision_ReviewNote43' has cardinality 0..*.
+An association connects 'revision_Researcher' and 'revision_PublicationStructure'. From 'revision_Researcher', the role 'revision_Researcher45' has cardinality 0..*, and from 'revision_PublicationStructure', the role 'revision_PublicationStructure' has cardinality 0..*.
+An association connects 'revision_PublicationStructure' and 'revision_Paper'. From 'revision_PublicationStructure', the role 'revision_PublicationStructure47' has cardinality 0..*, and from 'revision_Paper', the role 'revision_Paper48' has cardinality 0..*.
+An association connects 'revision_PublicationSystem' and 'revision_PublicationProcess'. From 'revision_PublicationSystem', the role 'revision_PublicationSystem' has cardinality 0..*, and from 'revision_PublicationProcess', the role 'revision_PublicationProcess50' has cardinality 0..*.
+An association connects 'revision_PublicationStructure' and 'revision_PublicationSystem'. From 'revision_PublicationStructure', the role 'revision_PublicationStructure53' has cardinality 0..*, and from 'revision_PublicationSystem', the role 'revision_PublicationSystem52' has cardinality 0..*.

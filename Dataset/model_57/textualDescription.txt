@@ -1,0 +1,789 @@
+The domain model 'java_' describes the core structural elements and their relationships within the system.
+
+The model defines 152 main class(es).
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'java__PrimitiveTypeByte' represents an important domain concept.
+It does not declare any attributes.
+
+'java__VariableDeclaration' represents an important domain concept.
+It has one attribute: 'extraArrayDimensions', which is of type int.
+
+'java__VariableDeclarationStatement' represents an important domain concept.
+It has one attribute: 'extraArrayDimensions', which is of type int.
+
+'java__ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ThisExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java__Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__TypeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'java__Type' represents an important domain concept.
+It does not declare any attributes.
+
+'java__TypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__Initializer' represents an important domain concept.
+It does not declare any attributes.
+
+'java__TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractVariablesContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java__Block' represents an important domain concept.
+It does not declare any attributes.
+
+'java__Modifier' represents an important domain concept.
+It has the following attributes: 'static', which is of type bool; 'native', which is of type bool; 'strictfp', which is of type bool; 'visibility', which is of type str; 'synchronized', which is of type bool; 'volatile', which is of type bool; 'inheritance', which is of type str; 'transient', which is of type bool.
+
+'java__TypeDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'java__LabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ArrayLengthAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ConstructorDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ArrayAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'java__IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'java__SuperMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'java__VariableDeclarationFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'java__Javadoc' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTypeQualifiedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'java__Assignment' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'java__CompilationUnit' represents an important domain concept.
+It has one attribute: 'originalFilePath', which is of type str.
+
+'java__UnresolvedEnumDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__PrimitiveTypeShort' represents an important domain concept.
+It does not declare any attributes.
+
+'java__UnresolvedClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__UnresolvedType' represents an important domain concept.
+It does not declare any attributes.
+
+'java__PrimitiveTypeBoolean' represents an important domain concept.
+It does not declare any attributes.
+
+'java__UnresolvedAnnotationTypeMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__UnresolvedAnnotationDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ClassFile' represents an important domain concept.
+It has one attribute: 'originalFilePath', which is of type str.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'java__UnresolvedItem' represents an important domain concept.
+It does not declare any attributes.
+
+'java__AnonymousClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ParenthesizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java__Package' represents an important domain concept.
+It does not declare any attributes.
+
+'java__SingleVariableDeclaration' represents an important domain concept.
+It has one attribute: 'varargs', which is of type bool.
+
+'java__InfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'UnresolvedItem' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'java__SynchronizedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'java__AbstractVariablesContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'java__PrimitiveTypeDouble' represents an important domain concept.
+It does not declare any attributes.
+
+'java__AbstractTypeQualifiedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java__AbstractMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ClassInstanceCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'java__Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'java__VariableDeclarationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java__PrimitiveTypeInt' represents an important domain concept.
+It does not declare any attributes.
+
+'java__Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'java__FieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'java__SwitchCase' represents an important domain concept.
+It has one attribute: 'default', which is of type bool.
+
+'java__EmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'java__EnhancedForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfaceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__NumberLiteral' represents an important domain concept.
+It has one attribute: 'tokenValue', which is of type str.
+
+'java__MethodRefParameter' represents an important domain concept.
+It has the following attributes: 'varargs', which is of type bool; 'name', which is of type str.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'java__PostfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'java__EnumDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ManifestAttribute' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'java__PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'java__UnresolvedMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__UnresolvedTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__UnresolvedItemAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'java__SingleVariableAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'java__AbstractMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'java__LineComment' represents an important domain concept.
+It does not declare any attributes.
+
+'java__EnumConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'java__PrimitiveTypeVoid' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'java__CatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ImportDeclaration' represents an important domain concept.
+It has one attribute: 'static', which is of type bool.
+
+'java__Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__NamedElement' represents an important domain concept.
+It has the following attributes: 'proxy', which is of type bool; 'name', which is of type str.
+
+'java__UnresolvedVariableDeclarationFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'java__UnresolvedInterfaceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__TypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'java__PackageAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ParameterizedType' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationTypeMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__SuperConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'java__DoStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'java__NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'java__Manifest' represents an important domain concept.
+It does not declare any attributes.
+
+'java__Archive' represents an important domain concept.
+It has one attribute: 'originalFilePath', which is of type str.
+
+'java__MethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'java__InterfaceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'SingleVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__PrefixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'java__StringLiteral' represents an important domain concept.
+It has one attribute: 'escapedValue', which is of type str.
+
+'VariableDeclarationFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'java__MethodDeclaration' represents an important domain concept.
+It has one attribute: 'extraArrayDimensions', which is of type int.
+
+'java__ArrayCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'java__SuperFieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'NamespaceAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__AnnotationMemberValuePair' represents an important domain concept.
+It does not declare any attributes.
+
+'java__PrimitiveTypeFloat' represents an important domain concept.
+It does not declare any attributes.
+
+'java__PrimitiveTypeLong' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__PrimitiveTypeChar' represents an important domain concept.
+It does not declare any attributes.
+
+'BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__AssertStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ThrowStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'java__InstanceofExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'java__NamespaceAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'java__WildCardType' represents an important domain concept.
+It has one attribute: 'upperBound', which is of type bool.
+
+'java__WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'java__CastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'java__BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'java__AbstractTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__ArrayType' represents an important domain concept.
+It has one attribute: 'dimensions', which is of type int.
+
+'java__ManifestEntry' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'LabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'java__CharacterLiteral' represents an important domain concept.
+It has one attribute: 'escapedValue', which is of type str.
+
+'java__BlockComment' represents an important domain concept.
+It does not declare any attributes.
+
+'java__TagElement' represents an important domain concept.
+It has one attribute: 'tagName', which is of type str.
+
+'java__MethodRef' represents an important domain concept.
+It does not declare any attributes.
+
+'java__AnnotationTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__UnresolvedSingleVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__MemberRef' represents an important domain concept.
+It does not declare any attributes.
+
+'java__AnnotationTypeMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__UnresolvedLabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'java__FieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'java__TryStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'java__TextElement' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'java__Comment' represents an important domain concept.
+It has the following attributes: 'content', which is of type str; 'enclosedByParent', which is of type bool; 'prefixOfParent', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PostfixExpressionKind' defines the following possible values: 'DECREMENT', 'INCREMENT'.
+The enumeration 'AssignmentKind' defines the following possible values: 'BIT_OR_ASSIGN', 'PLUS_ASSIGN', 'DIVIDE_ASSIGN', 'MINUS_ASSIGN', 'TIMES_ASSIGN', 'LEFT_SHIFT_ASSIGN', 'BIT_XOR_ASSIGN', 'RIGHT_SHIFT_SIGNED_ASSIGN', 'RIGHT_SHIFT_UNSIGNED_ASSIGN', 'REMAINDER_ASSIGN', 'BIT_AND_ASSIGN', 'ASSIGN'.
+The enumeration 'InfixExpressionKind' defines the following possible values: 'XOR', 'MINUS', 'RIGHT_SHIFT_UNSIGNED', 'LESS', 'REMAINDER', 'OR', 'GREATER_EQUALS', 'CONDITIONAL_AND', 'LESS_EQUALS', 'AND', 'EQUALS', 'GREATER', 'PLUS', 'LEFT_SHIFT', 'DIVIDE', 'NOT_EQUALS', 'CONDITIONAL_OR', 'TIMES', 'RIGHT_SHIFT_SIGNED'.
+The enumeration 'PrefixExpressionKind' defines the following possible values: 'MINUS', 'COMPLEMENT', 'PLUS', 'DECREMENT', 'INCREMENT', 'NOT'.
+The enumeration 'VisibilityKind' defines the following possible values: 'private', 'protected', 'public', 'none'.
+The enumeration 'InheritanceKind' defines the following possible values: 'abstract', 'final', 'none'.
+
+The model also captures inheritance relationships between classes.
+The class 'java__AbstractMethodDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'java__AbstractMethodInvocation' is a specialization of 'ASTNode'.
+The class 'java__AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'java__AbstractTypeDeclaration' is a specialization of 'Type'.
+The class 'java__AbstractTypeQualifiedExpression' is a specialization of 'Expression'.
+The class 'java__AbstractVariablesContainer' is a specialization of 'ASTNode'.
+The class 'java__Annotation' is a specialization of 'Expression'.
+The class 'java__Archive' is a specialization of 'NamedElement'.
+The class 'java__AssertStatement' is a specialization of 'Statement'.
+The class 'java__AnnotationMemberValuePair' is a specialization of 'NamedElement'.
+The class 'java__AnnotationTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'java__AnnotationTypeMemberDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'java__AnonymousClassDeclaration' is a specialization of 'ASTNode'.
+The class 'java__ArrayAccess' is a specialization of 'Expression'.
+The class 'java__ArrayCreation' is a specialization of 'Expression'.
+The class 'java__ArrayInitializer' is a specialization of 'Expression'.
+The class 'java__ArrayLengthAccess' is a specialization of 'Expression'.
+The class 'java__ArrayType' is a specialization of 'Type'.
+The class 'java__Assignment' is a specialization of 'Expression'.
+The class 'java__BodyDeclaration' is a specialization of 'NamedElement'.
+The class 'java__BooleanLiteral' is a specialization of 'Expression'.
+The class 'java__BlockComment' is a specialization of 'Comment'.
+The class 'java__Block' is a specialization of 'Statement'.
+The class 'java__BreakStatement' is a specialization of 'Statement'.
+The class 'java__CastExpression' is a specialization of 'Expression'.
+The class 'java__CatchClause' is a specialization of 'Statement'.
+The class 'java__CharacterLiteral' is a specialization of 'Expression'.
+The class 'java__ClassFile' is a specialization of 'NamedElement'.
+The class 'java__ClassInstanceCreation' is a specialization of 'Expression'.
+The class 'java__ClassInstanceCreation' is a specialization of 'AbstractMethodInvocation'.
+The class 'java__ConstructorDeclaration' is a specialization of 'AbstractMethodDeclaration'.
+The class 'java__ConditionalExpression' is a specialization of 'Expression'.
+The class 'java__ConstructorInvocation' is a specialization of 'Statement'.
+The class 'java__ConstructorInvocation' is a specialization of 'AbstractMethodInvocation'.
+The class 'java__ClassDeclaration' is a specialization of 'TypeDeclaration'.
+The class 'java__Comment' is a specialization of 'ASTNode'.
+The class 'java__CompilationUnit' is a specialization of 'NamedElement'.
+The class 'java__ContinueStatement' is a specialization of 'Statement'.
+The class 'java__DoStatement' is a specialization of 'Statement'.
+The class 'java__EmptyStatement' is a specialization of 'Statement'.
+The class 'java__EnhancedForStatement' is a specialization of 'Statement'.
+The class 'java__EnumConstantDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'java__EnumConstantDeclaration' is a specialization of 'VariableDeclaration'.
+The class 'java__EnumDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'java__Expression' is a specialization of 'ASTNode'.
+The class 'java__ExpressionStatement' is a specialization of 'Statement'.
+The class 'java__FieldAccess' is a specialization of 'Expression'.
+The class 'java__FieldDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'java__FieldDeclaration' is a specialization of 'AbstractVariablesContainer'.
+The class 'java__ForStatement' is a specialization of 'Statement'.
+The class 'java__IfStatement' is a specialization of 'Statement'.
+The class 'java__ImportDeclaration' is a specialization of 'ASTNode'.
+The class 'java__InfixExpression' is a specialization of 'Expression'.
+The class 'java__Initializer' is a specialization of 'BodyDeclaration'.
+The class 'java__InstanceofExpression' is a specialization of 'Expression'.
+The class 'java__InterfaceDeclaration' is a specialization of 'TypeDeclaration'.
+The class 'java__Javadoc' is a specialization of 'Comment'.
+The class 'java__LabeledStatement' is a specialization of 'NamedElement'.
+The class 'java__LabeledStatement' is a specialization of 'Statement'.
+The class 'java__LineComment' is a specialization of 'Comment'.
+The class 'java__MemberRef' is a specialization of 'ASTNode'.
+The class 'java__MethodDeclaration' is a specialization of 'AbstractMethodDeclaration'.
+The class 'java__MethodInvocation' is a specialization of 'Expression'.
+The class 'java__MethodInvocation' is a specialization of 'AbstractMethodInvocation'.
+The class 'java__MethodRef' is a specialization of 'ASTNode'.
+The class 'java__MethodRefParameter' is a specialization of 'ASTNode'.
+The class 'java__Modifier' is a specialization of 'ASTNode'.
+The class 'java__NamedElement' is a specialization of 'ASTNode'.
+The class 'java__NamespaceAccess' is a specialization of 'ASTNode'.
+The class 'java__NumberLiteral' is a specialization of 'Expression'.
+The class 'java__NullLiteral' is a specialization of 'Expression'.
+The class 'java__Package' is a specialization of 'NamedElement'.
+The class 'java__PackageAccess' is a specialization of 'NamespaceAccess'.
+The class 'java__ParameterizedType' is a specialization of 'Type'.
+The class 'java__ParenthesizedExpression' is a specialization of 'Expression'.
+The class 'java__PostfixExpression' is a specialization of 'Expression'.
+The class 'java__PrefixExpression' is a specialization of 'Expression'.
+The class 'java__PrimitiveType' is a specialization of 'Type'.
+The class 'java__PrimitiveTypeBoolean' is a specialization of 'PrimitiveType'.
+The class 'java__PrimitiveTypeByte' is a specialization of 'PrimitiveType'.
+The class 'java__PrimitiveTypeChar' is a specialization of 'PrimitiveType'.
+The class 'java__PrimitiveTypeDouble' is a specialization of 'PrimitiveType'.
+The class 'java__PrimitiveTypeShort' is a specialization of 'PrimitiveType'.
+The class 'java__PrimitiveTypeFloat' is a specialization of 'PrimitiveType'.
+The class 'java__PrimitiveTypeInt' is a specialization of 'PrimitiveType'.
+The class 'java__PrimitiveTypeLong' is a specialization of 'PrimitiveType'.
+The class 'java__PrimitiveTypeVoid' is a specialization of 'PrimitiveType'.
+The class 'java__ReturnStatement' is a specialization of 'Statement'.
+The class 'java__SingleVariableAccess' is a specialization of 'Expression'.
+The class 'java__SingleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+The class 'java__Statement' is a specialization of 'ASTNode'.
+The class 'java__StringLiteral' is a specialization of 'Expression'.
+The class 'java__SuperConstructorInvocation' is a specialization of 'Statement'.
+The class 'java__SuperConstructorInvocation' is a specialization of 'AbstractMethodInvocation'.
+The class 'java__SuperFieldAccess' is a specialization of 'AbstractTypeQualifiedExpression'.
+The class 'java__SuperMethodInvocation' is a specialization of 'AbstractTypeQualifiedExpression'.
+The class 'java__SuperMethodInvocation' is a specialization of 'AbstractMethodInvocation'.
+The class 'java__SwitchCase' is a specialization of 'Statement'.
+The class 'java__SwitchStatement' is a specialization of 'Statement'.
+The class 'java__SynchronizedStatement' is a specialization of 'Statement'.
+The class 'java__TagElement' is a specialization of 'ASTNode'.
+The class 'java__TextElement' is a specialization of 'ASTNode'.
+The class 'java__ThisExpression' is a specialization of 'AbstractTypeQualifiedExpression'.
+The class 'java__ThrowStatement' is a specialization of 'Statement'.
+The class 'java__TryStatement' is a specialization of 'Statement'.
+The class 'java__Type' is a specialization of 'NamedElement'.
+The class 'java__TypeAccess' is a specialization of 'Expression'.
+The class 'java__TypeAccess' is a specialization of 'NamespaceAccess'.
+The class 'java__TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'java__TypeDeclarationStatement' is a specialization of 'Statement'.
+The class 'java__TypeLiteral' is a specialization of 'Expression'.
+The class 'java__TypeParameter' is a specialization of 'Type'.
+The class 'java__UnresolvedItem' is a specialization of 'NamedElement'.
+The class 'java__UnresolvedItemAccess' is a specialization of 'Expression'.
+The class 'java__UnresolvedItemAccess' is a specialization of 'NamespaceAccess'.
+The class 'java__UnresolvedAnnotationDeclaration' is a specialization of 'AnnotationTypeDeclaration'.
+The class 'java__UnresolvedAnnotationDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'java__UnresolvedAnnotationTypeMemberDeclaration' is a specialization of 'AnnotationTypeMemberDeclaration'.
+The class 'java__UnresolvedAnnotationTypeMemberDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'java__UnresolvedClassDeclaration' is a specialization of 'ClassDeclaration'.
+The class 'java__UnresolvedClassDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'java__UnresolvedEnumDeclaration' is a specialization of 'EnumDeclaration'.
+The class 'java__UnresolvedEnumDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'java__UnresolvedInterfaceDeclaration' is a specialization of 'InterfaceDeclaration'.
+The class 'java__UnresolvedInterfaceDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'java__UnresolvedLabeledStatement' is a specialization of 'LabeledStatement'.
+The class 'java__UnresolvedLabeledStatement' is a specialization of 'UnresolvedItem'.
+The class 'java__UnresolvedMethodDeclaration' is a specialization of 'MethodDeclaration'.
+The class 'java__UnresolvedMethodDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'java__UnresolvedSingleVariableDeclaration' is a specialization of 'SingleVariableDeclaration'.
+The class 'java__UnresolvedSingleVariableDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'java__UnresolvedType' is a specialization of 'Type'.
+The class 'java__UnresolvedType' is a specialization of 'UnresolvedItem'.
+The class 'java__UnresolvedTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'java__UnresolvedTypeDeclaration' is a specialization of 'UnresolvedItem'.
+The class 'java__UnresolvedVariableDeclarationFragment' is a specialization of 'VariableDeclarationFragment'.
+The class 'java__UnresolvedVariableDeclarationFragment' is a specialization of 'UnresolvedItem'.
+The class 'java__VariableDeclaration' is a specialization of 'NamedElement'.
+The class 'java__VariableDeclarationExpression' is a specialization of 'Expression'.
+The class 'java__VariableDeclarationExpression' is a specialization of 'AbstractVariablesContainer'.
+The class 'java__VariableDeclarationFragment' is a specialization of 'VariableDeclaration'.
+The class 'java__VariableDeclarationStatement' is a specialization of 'Statement'.
+The class 'java__VariableDeclarationStatement' is a specialization of 'AbstractVariablesContainer'.
+The class 'java__WildCardType' is a specialization of 'Type'.
+The class 'java__WhileStatement' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'java__Block' and 'java__AbstractMethodDeclaration'. From 'java__Block', the role 'java__Block' has cardinality 0..*, and from 'java__AbstractMethodDeclaration', the role 'java__AbstractMethodDeclaration' has cardinality 0..*.
+An association connects 'java__SingleVariableDeclaration' and 'java__AbstractMethodDeclaration'. From 'java__SingleVariableDeclaration', the role 'SingleVariableDeclaration' has cardinality 0..*, and from 'java__AbstractMethodDeclaration', the role 'methodDeclaration' has cardinality 0..*.
+An association connects 'java__AbstractMethodDeclaration' and 'java__TypeAccess'. From 'java__AbstractMethodDeclaration', the role 'java__AbstractMethodDeclaration3' has cardinality 0..*, and from 'java__TypeAccess', the role 'java__TypeAccess' has cardinality 0..*.
+An association connects 'java__TypeParameter' and 'java__AbstractMethodDeclaration'. From 'java__TypeParameter', the role 'java__TypeParameter' has cardinality 0..*, and from 'java__AbstractMethodDeclaration', the role 'java__AbstractMethodDeclaration5' has cardinality 0..*.
+An association connects 'java__AbstractMethodDeclaration' and 'java__MethodRef'. From 'java__AbstractMethodDeclaration', the role 'method' has cardinality 0..*, and from 'java__MethodRef', the role 'MethodRef' has cardinality 0..*.
+An association connects 'java__AbstractMethodDeclaration' and 'java__AbstractMethodInvocation'. From 'java__AbstractMethodDeclaration', the role 'method8' has cardinality 0..*, and from 'java__AbstractMethodInvocation', the role 'AbstractMethodInvocation' has cardinality 0..*.
+An association connects 'java__AbstractMethodInvocation' and 'java__AbstractMethodDeclaration'. From 'java__AbstractMethodInvocation', the role 'usages' has cardinality 0..*, and from 'java__AbstractMethodDeclaration', the role 'AbstractMethodDeclaration' has cardinality 0..*.
+An association connects 'java__AbstractMethodInvocation' and 'java__Expression'. From 'java__AbstractMethodInvocation', the role 'java__AbstractMethodInvocation' has cardinality 0..*, and from 'java__Expression', the role 'java__Expression' has cardinality 0..*.
+An association connects 'java__TypeAccess' and 'java__AbstractMethodInvocation'. From 'java__TypeAccess', the role 'java__TypeAccess13' has cardinality 0..*, and from 'java__AbstractMethodInvocation', the role 'java__AbstractMethodInvocation12' has cardinality 0..*.
+An association connects 'java__BodyDeclaration' and 'java__AbstractTypeDeclaration'. From 'java__BodyDeclaration', the role 'BodyDeclaration' has cardinality 0..*, and from 'java__AbstractTypeDeclaration', the role 'abstractTypeDeclaration' has cardinality 0..*.
+An association connects 'java__AbstractTypeDeclaration' and 'java__Comment'. From 'java__AbstractTypeDeclaration', the role 'java__AbstractTypeDeclaration' has cardinality 0..*, and from 'java__Comment', the role 'java__Comment' has cardinality 0..*.
+An association connects 'java__Comment' and 'java__AbstractTypeDeclaration'. From 'java__Comment', the role 'java__Comment18' has cardinality 0..*, and from 'java__AbstractTypeDeclaration', the role 'java__AbstractTypeDeclaration17' has cardinality 0..*.
+An association connects 'java__Package' and 'java__AbstractTypeDeclaration'. From 'java__Package', the role 'Package' has cardinality 0..*, and from 'java__AbstractTypeDeclaration', the role 'ownedElements' has cardinality 0..*.
+An association connects 'java__TypeAccess' and 'java__AbstractTypeDeclaration'. From 'java__TypeAccess', the role 'java__TypeAccess22' has cardinality 0..*, and from 'java__AbstractTypeDeclaration', the role 'java__AbstractTypeDeclaration21' has cardinality 0..*.
+An association connects 'java__TypeAccess' and 'java__AbstractTypeQualifiedExpression'. From 'java__TypeAccess', the role 'java__TypeAccess24' has cardinality 0..*, and from 'java__AbstractTypeQualifiedExpression', the role 'java__AbstractTypeQualifiedExpression' has cardinality 0..*.
+An association connects 'java__AbstractVariablesContainer' and 'java__TypeAccess'. From 'java__AbstractVariablesContainer', the role 'java__AbstractVariablesContainer' has cardinality 0..*, and from 'java__TypeAccess', the role 'java__TypeAccess26' has cardinality 0..*.
+An association connects 'java__AbstractVariablesContainer' and 'java__VariableDeclarationFragment'. From 'java__AbstractVariablesContainer', the role 'variablesContainer' has cardinality 0..*, and from 'java__VariableDeclarationFragment', the role 'VariableDeclarationFragment' has cardinality 0..*.
+An association connects 'java__Annotation' and 'java__TypeAccess'. From 'java__Annotation', the role 'java__Annotation' has cardinality 0..*, and from 'java__TypeAccess', the role 'java__TypeAccess29' has cardinality 0..*.
+An association connects 'java__Annotation' and 'java__AnnotationMemberValuePair'. From 'java__Annotation', the role 'java__Annotation31' has cardinality 0..*, and from 'java__AnnotationMemberValuePair', the role 'java__AnnotationMemberValuePair' has cardinality 0..*.
+An association connects 'java__Archive' and 'java__ClassFile'. From 'java__Archive', the role 'java__Archive' has cardinality 0..*, and from 'java__ClassFile', the role 'java__ClassFile' has cardinality 0..*.
+An association connects 'java__Archive' and 'java__Manifest'. From 'java__Archive', the role 'java__Archive34' has cardinality 0..*, and from 'java__Manifest', the role 'java__Manifest' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__AssertStatement'. From 'java__Expression', the role 'java__Expression36' has cardinality 0..*, and from 'java__AssertStatement', the role 'java__AssertStatement' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__AssertStatement'. From 'java__Expression', the role 'java__Expression39' has cardinality 0..*, and from 'java__AssertStatement', the role 'java__AssertStatement38' has cardinality 0..*.
+An association connects 'java__ASTNode' and 'java__Comment'. From 'java__ASTNode', the role 'java__ASTNode' has cardinality 0..*, and from 'java__Comment', the role 'java__Comment41' has cardinality 0..*.
+An association connects 'java__ASTNode' and 'java__CompilationUnit'. From 'java__ASTNode', the role 'java__ASTNode43' has cardinality 0..*, and from 'java__CompilationUnit', the role 'java__CompilationUnit' has cardinality 0..*.
+An association connects 'java__ASTNode' and 'java__ClassFile'. From 'java__ASTNode', the role 'java__ASTNode45' has cardinality 0..*, and from 'java__ClassFile', the role 'java__ClassFile46' has cardinality 0..*.
+An association connects 'java__AnnotationTypeMemberDeclaration' and 'java__AnnotationMemberValuePair'. From 'java__AnnotationTypeMemberDeclaration', the role 'AnnotationTypeMemberDeclaration' has cardinality 0..*, and from 'java__AnnotationMemberValuePair', the role 'usages48' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__AnnotationMemberValuePair'. From 'java__Expression', the role 'java__Expression51' has cardinality 0..*, and from 'java__AnnotationMemberValuePair', the role 'java__AnnotationMemberValuePair50' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__AnnotationTypeMemberDeclaration'. From 'java__Expression', the role 'java__Expression53' has cardinality 0..*, and from 'java__AnnotationTypeMemberDeclaration', the role 'java__AnnotationTypeMemberDeclaration' has cardinality 0..*.
+An association connects 'java__AnnotationTypeMemberDeclaration' and 'java__TypeAccess'. From 'java__AnnotationTypeMemberDeclaration', the role 'java__AnnotationTypeMemberDeclaration55' has cardinality 0..*, and from 'java__TypeAccess', the role 'java__TypeAccess56' has cardinality 0..*.
+An association connects 'java__AnnotationMemberValuePair' and 'java__AnnotationTypeMemberDeclaration'. From 'java__AnnotationMemberValuePair', the role 'AnnotationMemberValuePair' has cardinality 0..*, and from 'java__AnnotationTypeMemberDeclaration', the role 'member' has cardinality 0..*.
+An association connects 'java__AnonymousClassDeclaration' and 'java__BodyDeclaration'. From 'java__AnonymousClassDeclaration', the role 'anonymousClassDeclarationOwner' has cardinality 0..*, and from 'java__BodyDeclaration', the role 'BodyDeclaration59' has cardinality 0..*.
+An association connects 'java__AnonymousClassDeclaration' and 'java__ClassInstanceCreation'. From 'java__AnonymousClassDeclaration', the role 'anonymousClassDeclaration' has cardinality 0..*, and from 'java__ClassInstanceCreation', the role 'ClassInstanceCreation' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__ArrayAccess'. From 'java__Expression', the role 'java__Expression62' has cardinality 0..*, and from 'java__ArrayAccess', the role 'java__ArrayAccess' has cardinality 0..*.
+An association connects 'java__ArrayAccess' and 'java__Expression'. From 'java__ArrayAccess', the role 'java__ArrayAccess64' has cardinality 0..*, and from 'java__Expression', the role 'java__Expression65' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__ArrayCreation'. From 'java__Expression', the role 'java__Expression67' has cardinality 0..*, and from 'java__ArrayCreation', the role 'java__ArrayCreation' has cardinality 0..*.
+An association connects 'java__ArrayInitializer' and 'java__ArrayCreation'. From 'java__ArrayInitializer', the role 'java__ArrayInitializer' has cardinality 0..*, and from 'java__ArrayCreation', the role 'java__ArrayCreation69' has cardinality 0..*.
+An association connects 'java__TypeAccess' and 'java__ArrayCreation'. From 'java__TypeAccess', the role 'java__TypeAccess72' has cardinality 0..*, and from 'java__ArrayCreation', the role 'java__ArrayCreation71' has cardinality 0..*.
+An association connects 'java__ArrayInitializer' and 'java__Expression'. From 'java__ArrayInitializer', the role 'java__ArrayInitializer74' has cardinality 0..*, and from 'java__Expression', the role 'java__Expression75' has cardinality 0..*.
+An association connects 'java__ArrayLengthAccess' and 'java__Expression'. From 'java__ArrayLengthAccess', the role 'java__ArrayLengthAccess' has cardinality 0..*, and from 'java__Expression', the role 'java__Expression77' has cardinality 0..*.
+An association connects 'java__TypeAccess' and 'java__ArrayType'. From 'java__TypeAccess', the role 'java__TypeAccess79' has cardinality 0..*, and from 'java__ArrayType', the role 'java__ArrayType' has cardinality 0..*.
+An association connects 'java__Assignment' and 'java__Expression'. From 'java__Assignment', the role 'java__Assignment' has cardinality 0..*, and from 'java__Expression', the role 'java__Expression81' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__Assignment'. From 'java__Expression', the role 'java__Expression84' has cardinality 0..*, and from 'java__Assignment', the role 'java__Assignment83' has cardinality 0..*.
+An association connects 'java__AbstractTypeDeclaration' and 'java__BodyDeclaration'. From 'java__AbstractTypeDeclaration', the role 'AbstractTypeDeclaration' has cardinality 0..*, and from 'java__BodyDeclaration', the role 'bodyDeclarations' has cardinality 0..*.
+An association connects 'java__Annotation' and 'java__BodyDeclaration'. From 'java__Annotation', the role 'java__Annotation87' has cardinality 0..*, and from 'java__BodyDeclaration', the role 'java__BodyDeclaration' has cardinality 0..*.
+An association connects 'java__BodyDeclaration' and 'java__AnonymousClassDeclaration'. From 'java__BodyDeclaration', the role 'bodyDeclarations89' has cardinality 0..*, and from 'java__AnonymousClassDeclaration', the role 'AnonymousClassDeclaration' has cardinality 0..*.
+An association connects 'java__BodyDeclaration' and 'java__Modifier'. From 'java__BodyDeclaration', the role 'bodyDeclaration' has cardinality 0..*, and from 'java__Modifier', the role 'Modifier' has cardinality 0..*.
+An association connects 'java__Block' and 'java__Statement'. From 'java__Block', the role 'java__Block92' has cardinality 0..*, and from 'java__Statement', the role 'java__Statement' has cardinality 0..*.
+An association connects 'java__BreakStatement' and 'java__LabeledStatement'. From 'java__BreakStatement', the role 'usagesInBreakStatements' has cardinality 0..*, and from 'java__LabeledStatement', the role 'LabeledStatement' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__CastExpression'. From 'java__Expression', the role 'java__Expression95' has cardinality 0..*, and from 'java__CastExpression', the role 'java__CastExpression' has cardinality 0..*.
+An association connects 'java__CastExpression' and 'java__TypeAccess'. From 'java__CastExpression', the role 'java__CastExpression97' has cardinality 0..*, and from 'java__TypeAccess', the role 'java__TypeAccess98' has cardinality 0..*.
+An association connects 'java__SingleVariableDeclaration' and 'java__CatchClause'. From 'java__SingleVariableDeclaration', the role 'SingleVariableDeclaration100' has cardinality 0..*, and from 'java__CatchClause', the role 'catchClause' has cardinality 0..*.
+An association connects 'java__CatchClause' and 'java__Block'. From 'java__CatchClause', the role 'java__CatchClause' has cardinality 0..*, and from 'java__Block', the role 'java__Block102' has cardinality 0..*.
+An association connects 'java__ClassFile' and 'java__AbstractTypeDeclaration'. From 'java__ClassFile', the role 'java__ClassFile104' has cardinality 0..*, and from 'java__AbstractTypeDeclaration', the role 'java__AbstractTypeDeclaration105' has cardinality 0..*.
+An association connects 'java__ClassFile' and 'java__CompilationUnit'. From 'java__ClassFile', the role 'java__ClassFile107' has cardinality 0..*, and from 'java__CompilationUnit', the role 'java__CompilationUnit108' has cardinality 0..*.
+An association connects 'java__Package' and 'java__ClassFile'. From 'java__Package', the role 'java__Package' has cardinality 0..*, and from 'java__ClassFile', the role 'java__ClassFile110' has cardinality 0..*.
+An association connects 'java__AnonymousClassDeclaration' and 'java__ClassInstanceCreation'. From 'java__AnonymousClassDeclaration', the role 'AnonymousClassDeclaration112' has cardinality 0..*, and from 'java__ClassInstanceCreation', the role 'classInstanceCreation' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__ClassInstanceCreation'. From 'java__Expression', the role 'java__Expression114' has cardinality 0..*, and from 'java__ClassInstanceCreation', the role 'java__ClassInstanceCreation' has cardinality 0..*.
+An association connects 'java__TypeAccess' and 'java__ClassInstanceCreation'. From 'java__TypeAccess', the role 'java__TypeAccess117' has cardinality 0..*, and from 'java__ClassInstanceCreation', the role 'java__ClassInstanceCreation116' has cardinality 0..*.
+An association connects 'java__ConditionalExpression' and 'java__Expression'. From 'java__ConditionalExpression', the role 'java__ConditionalExpression' has cardinality 0..*, and from 'java__Expression', the role 'java__Expression119' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__ConditionalExpression'. From 'java__Expression', the role 'java__Expression122' has cardinality 0..*, and from 'java__ConditionalExpression', the role 'java__ConditionalExpression121' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__ConditionalExpression'. From 'java__Expression', the role 'java__Expression125' has cardinality 0..*, and from 'java__ConditionalExpression', the role 'java__ConditionalExpression124' has cardinality 0..*.
+An association connects 'java__ClassDeclaration' and 'java__TypeAccess'. From 'java__ClassDeclaration', the role 'java__ClassDeclaration' has cardinality 0..*, and from 'java__TypeAccess', the role 'java__TypeAccess127' has cardinality 0..*.
+An association connects 'java__CompilationUnit' and 'java__Comment'. From 'java__CompilationUnit', the role 'java__CompilationUnit129' has cardinality 0..*, and from 'java__Comment', the role 'java__Comment130' has cardinality 0..*.
+An association connects 'java__ImportDeclaration' and 'java__CompilationUnit'. From 'java__ImportDeclaration', the role 'java__ImportDeclaration' has cardinality 0..*, and from 'java__CompilationUnit', the role 'java__CompilationUnit132' has cardinality 0..*.
+An association connects 'java__Package' and 'java__CompilationUnit'. From 'java__Package', the role 'java__Package135' has cardinality 0..*, and from 'java__CompilationUnit', the role 'java__CompilationUnit134' has cardinality 0..*.
+An association connects 'java__CompilationUnit' and 'java__AbstractTypeDeclaration'. From 'java__CompilationUnit', the role 'java__CompilationUnit137' has cardinality 0..*, and from 'java__AbstractTypeDeclaration', the role 'java__AbstractTypeDeclaration138' has cardinality 0..*.
+An association connects 'java__ContinueStatement' and 'java__LabeledStatement'. From 'java__ContinueStatement', the role 'usagesInContinueStatements' has cardinality 0..*, and from 'java__LabeledStatement', the role 'LabeledStatement140' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__DoStatement'. From 'java__Expression', the role 'java__Expression142' has cardinality 0..*, and from 'java__DoStatement', the role 'java__DoStatement' has cardinality 0..*.
+An association connects 'java__Statement' and 'java__DoStatement'. From 'java__Statement', the role 'java__Statement145' has cardinality 0..*, and from 'java__DoStatement', the role 'java__DoStatement144' has cardinality 0..*.
+An association connects 'java__Statement' and 'java__EnhancedForStatement'. From 'java__Statement', the role 'java__Statement147' has cardinality 0..*, and from 'java__EnhancedForStatement', the role 'java__EnhancedForStatement' has cardinality 0..*.
+An association connects 'java__EnhancedForStatement' and 'java__Expression'. From 'java__EnhancedForStatement', the role 'java__EnhancedForStatement149' has cardinality 0..*, and from 'java__Expression', the role 'java__Expression150' has cardinality 0..*.
+An association connects 'java__EnhancedForStatement' and 'java__SingleVariableDeclaration'. From 'java__EnhancedForStatement', the role 'enhancedForStatement' has cardinality 0..*, and from 'java__SingleVariableDeclaration', the role 'SingleVariableDeclaration152' has cardinality 0..*.
+An association connects 'java__AnonymousClassDeclaration' and 'java__EnumConstantDeclaration'. From 'java__AnonymousClassDeclaration', the role 'java__AnonymousClassDeclaration' has cardinality 0..*, and from 'java__EnumConstantDeclaration', the role 'java__EnumConstantDeclaration' has cardinality 0..*.
+An association connects 'java__EnumConstantDeclaration' and 'java__Expression'. From 'java__EnumConstantDeclaration', the role 'java__EnumConstantDeclaration155' has cardinality 0..*, and from 'java__Expression', the role 'java__Expression156' has cardinality 0..*.
+An association connects 'java__EnumDeclaration' and 'java__EnumConstantDeclaration'. From 'java__EnumDeclaration', the role 'java__EnumDeclaration' has cardinality 0..*, and from 'java__EnumConstantDeclaration', the role 'java__EnumConstantDeclaration158' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__ExpressionStatement'. From 'java__Expression', the role 'java__Expression160' has cardinality 0..*, and from 'java__ExpressionStatement', the role 'java__ExpressionStatement' has cardinality 0..*.
+An association connects 'java__FieldAccess' and 'java__SingleVariableAccess'. From 'java__FieldAccess', the role 'java__FieldAccess' has cardinality 0..*, and from 'java__SingleVariableAccess', the role 'java__SingleVariableAccess' has cardinality 0..*.
+An association connects 'java__FieldAccess' and 'java__Expression'. From 'java__FieldAccess', the role 'java__FieldAccess163' has cardinality 0..*, and from 'java__Expression', the role 'java__Expression164' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__ForStatement'. From 'java__Expression', the role 'java__Expression166' has cardinality 0..*, and from 'java__ForStatement', the role 'java__ForStatement' has cardinality 0..*.
+An association connects 'java__ForStatement' and 'java__Expression'. From 'java__ForStatement', the role 'java__ForStatement168' has cardinality 0..*, and from 'java__Expression', the role 'java__Expression169' has cardinality 0..*.
+An association connects 'java__ForStatement' and 'java__Expression'. From 'java__ForStatement', the role 'java__ForStatement171' has cardinality 0..*, and from 'java__Expression', the role 'java__Expression172' has cardinality 0..*.
+An association connects 'java__Statement' and 'java__ForStatement'. From 'java__Statement', the role 'java__Statement175' has cardinality 0..*, and from 'java__ForStatement', the role 'java__ForStatement174' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__IfStatement'. From 'java__Expression', the role 'java__Expression177' has cardinality 0..*, and from 'java__IfStatement', the role 'java__IfStatement' has cardinality 0..*.
+An association connects 'java__Statement' and 'java__IfStatement'. From 'java__Statement', the role 'java__Statement180' has cardinality 0..*, and from 'java__IfStatement', the role 'java__IfStatement179' has cardinality 0..*.
+An association connects 'java__IfStatement' and 'java__Statement'. From 'java__IfStatement', the role 'java__IfStatement182' has cardinality 0..*, and from 'java__Statement', the role 'java__Statement183' has cardinality 0..*.
+An association connects 'java__ImportDeclaration' and 'java__NamedElement'. From 'java__ImportDeclaration', the role 'usagesInImports' has cardinality 0..*, and from 'java__NamedElement', the role 'NamedElement' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__InfixExpression'. From 'java__Expression', the role 'java__Expression186' has cardinality 0..*, and from 'java__InfixExpression', the role 'java__InfixExpression' has cardinality 0..*.
+An association connects 'java__InfixExpression' and 'java__Expression'. From 'java__InfixExpression', the role 'java__InfixExpression188' has cardinality 0..*, and from 'java__Expression', the role 'java__Expression189' has cardinality 0..*.
+An association connects 'java__InfixExpression' and 'java__Expression'. From 'java__InfixExpression', the role 'java__InfixExpression191' has cardinality 0..*, and from 'java__Expression', the role 'java__Expression192' has cardinality 0..*.
+An association connects 'java__Initializer' and 'java__Block'. From 'java__Initializer', the role 'java__Initializer' has cardinality 0..*, and from 'java__Block', the role 'java__Block194' has cardinality 0..*.
+An association connects 'java__TypeAccess' and 'java__InstanceofExpression'. From 'java__TypeAccess', the role 'java__TypeAccess196' has cardinality 0..*, and from 'java__InstanceofExpression', the role 'java__InstanceofExpression' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__InstanceofExpression'. From 'java__Expression', the role 'java__Expression199' has cardinality 0..*, and from 'java__InstanceofExpression', the role 'java__InstanceofExpression198' has cardinality 0..*.
+An association connects 'java__TagElement' and 'java__Javadoc'. From 'java__TagElement', the role 'java__TagElement' has cardinality 0..*, and from 'java__Javadoc', the role 'java__Javadoc' has cardinality 0..*.
+An association connects 'java__LabeledStatement' and 'java__Statement'. From 'java__LabeledStatement', the role 'java__LabeledStatement' has cardinality 0..*, and from 'java__Statement', the role 'java__Statement202' has cardinality 0..*.
+An association connects 'java__BreakStatement' and 'java__LabeledStatement'. From 'java__BreakStatement', the role 'BreakStatement' has cardinality 0..*, and from 'java__LabeledStatement', the role 'label' has cardinality 0..*.
+An association connects 'java__ContinueStatement' and 'java__LabeledStatement'. From 'java__ContinueStatement', the role 'ContinueStatement' has cardinality 0..*, and from 'java__LabeledStatement', the role 'label205' has cardinality 0..*.
+An association connects 'java__Manifest' and 'java__ManifestAttribute'. From 'java__Manifest', the role 'java__Manifest207' has cardinality 0..*, and from 'java__ManifestAttribute', the role 'java__ManifestAttribute' has cardinality 0..*.
+An association connects 'java__ManifestEntry' and 'java__Manifest'. From 'java__ManifestEntry', the role 'java__ManifestEntry' has cardinality 0..*, and from 'java__Manifest', the role 'java__Manifest209' has cardinality 0..*.
+An association connects 'java__ManifestAttribute' and 'java__ManifestEntry'. From 'java__ManifestAttribute', the role 'java__ManifestAttribute212' has cardinality 0..*, and from 'java__ManifestEntry', the role 'java__ManifestEntry211' has cardinality 0..*.
+An association connects 'java__NamedElement' and 'java__MemberRef'. From 'java__NamedElement', the role 'java__NamedElement' has cardinality 0..*, and from 'java__MemberRef', the role 'java__MemberRef' has cardinality 0..*.
+An association connects 'java__MemberRef' and 'java__TypeAccess'. From 'java__MemberRef', the role 'java__MemberRef215' has cardinality 0..*, and from 'java__TypeAccess', the role 'java__TypeAccess216' has cardinality 0..*.
+An association connects 'java__MethodDeclaration' and 'java__TypeAccess'. From 'java__MethodDeclaration', the role 'java__MethodDeclaration' has cardinality 0..*, and from 'java__TypeAccess', the role 'java__TypeAccess218' has cardinality 0..*.
+An association connects 'java__MethodDeclaration' and 'java__MethodDeclaration'. From 'java__MethodDeclaration', the role 'MethodDeclaration' has cardinality 0..*, and from 'java__MethodDeclaration', the role 'redefinitions' has cardinality 0..*.
+An association connects 'java__MethodDeclaration' and 'java__MethodDeclaration'. From 'java__MethodDeclaration', the role 'MethodDeclaration223' has cardinality 0..*, and from 'java__MethodDeclaration', the role 'redefinedMethodDeclaration' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__MethodInvocation'. From 'java__Expression', the role 'java__Expression225' has cardinality 0..*, and from 'java__MethodInvocation', the role 'java__MethodInvocation' has cardinality 0..*.
+An association connects 'java__MethodRef' and 'java__AbstractMethodDeclaration'. From 'java__MethodRef', the role 'usagesInDocComments' has cardinality 0..*, and from 'java__AbstractMethodDeclaration', the role 'AbstractMethodDeclaration227' has cardinality 0..*.
+An association connects 'java__MethodRef' and 'java__TypeAccess'. From 'java__MethodRef', the role 'java__MethodRef' has cardinality 0..*, and from 'java__TypeAccess', the role 'java__TypeAccess229' has cardinality 0..*.
+An association connects 'java__MethodRefParameter' and 'java__MethodRef'. From 'java__MethodRefParameter', the role 'java__MethodRefParameter' has cardinality 0..*, and from 'java__MethodRef', the role 'java__MethodRef231' has cardinality 0..*.
+An association connects 'java__MethodRefParameter' and 'java__TypeAccess'. From 'java__MethodRefParameter', the role 'java__MethodRefParameter233' has cardinality 0..*, and from 'java__TypeAccess', the role 'java__TypeAccess234' has cardinality 0..*.
+An association connects 'java__Model' and 'java__Package'. From 'java__Model', the role 'model' has cardinality 0..*, and from 'java__Package', the role 'Package236' has cardinality 0..*.
+An association connects 'java__Type' and 'java__Model'. From 'java__Type', the role 'java__Type' has cardinality 0..*, and from 'java__Model', the role 'java__Model' has cardinality 0..*.
+An association connects 'java__Model' and 'java__UnresolvedItem'. From 'java__Model', the role 'java__Model239' has cardinality 0..*, and from 'java__UnresolvedItem', the role 'java__UnresolvedItem' has cardinality 0..*.
+An association connects 'java__Model' and 'java__CompilationUnit'. From 'java__Model', the role 'java__Model241' has cardinality 0..*, and from 'java__CompilationUnit', the role 'java__CompilationUnit242' has cardinality 0..*.
+An association connects 'java__ClassFile' and 'java__Model'. From 'java__ClassFile', the role 'java__ClassFile245' has cardinality 0..*, and from 'java__Model', the role 'java__Model244' has cardinality 0..*.
+An association connects 'java__Model' and 'java__Archive'. From 'java__Model', the role 'java__Model247' has cardinality 0..*, and from 'java__Archive', the role 'java__Archive248' has cardinality 0..*.
+An association connects 'java__Modifier' and 'java__BodyDeclaration'. From 'java__Modifier', the role 'modifier' has cardinality 0..*, and from 'java__BodyDeclaration', the role 'BodyDeclaration250' has cardinality 0..*.
+An association connects 'java__SingleVariableDeclaration' and 'java__Modifier'. From 'java__SingleVariableDeclaration', the role 'SingleVariableDeclaration253' has cardinality 0..*, and from 'java__Modifier', the role 'modifier252' has cardinality 0..*.
+An association connects 'java__Modifier' and 'java__VariableDeclarationStatement'. From 'java__Modifier', the role 'modifier255' has cardinality 0..*, and from 'java__VariableDeclarationStatement', the role 'VariableDeclarationStatement' has cardinality 0..*.
+An association connects 'java__Modifier' and 'java__VariableDeclarationExpression'. From 'java__Modifier', the role 'modifier257' has cardinality 0..*, and from 'java__VariableDeclarationExpression', the role 'VariableDeclarationExpression' has cardinality 0..*.
+An association connects 'java__ImportDeclaration' and 'java__NamedElement'. From 'java__ImportDeclaration', the role 'ImportDeclaration' has cardinality 0..*, and from 'java__NamedElement', the role 'importedElement' has cardinality 0..*.
+An association connects 'java__Package' and 'java__AbstractTypeDeclaration'. From 'java__Package', the role 'package' has cardinality 0..*, and from 'java__AbstractTypeDeclaration', the role 'AbstractTypeDeclaration260' has cardinality 0..*.
+An association connects 'java__Model' and 'java__Package'. From 'java__Model', the role 'Model' has cardinality 0..*, and from 'java__Package', the role 'ownedElements262' has cardinality 0..*.
+An association connects 'java__Package' and 'java__Package'. From 'java__Package', the role 'package265' has cardinality 0..*, and from 'java__Package', the role 'Package266' has cardinality 0..*.
+An association connects 'java__Package' and 'java__Package'. From 'java__Package', the role 'ownedPackages' has cardinality 0..*, and from 'java__Package', the role 'Package269' has cardinality 0..*.
+An association connects 'java__Package' and 'java__PackageAccess'. From 'java__Package', the role 'package271' has cardinality 0..*, and from 'java__PackageAccess', the role 'PackageAccess' has cardinality 0..*.
+An association connects 'java__PackageAccess' and 'java__Package'. From 'java__PackageAccess', the role 'usagesInPackageAccess' has cardinality 0..*, and from 'java__Package', the role 'Package273' has cardinality 0..*.
+An association connects 'java__PackageAccess' and 'java__PackageAccess'. From 'java__PackageAccess', the role 'java__PackageAccess' has cardinality 0..*, and from 'java__PackageAccess', the role 'java__PackageAccess274' has cardinality 0..*.
+An association connects 'java__ParameterizedType' and 'java__TypeAccess'. From 'java__ParameterizedType', the role 'java__ParameterizedType' has cardinality 0..*, and from 'java__TypeAccess', the role 'java__TypeAccess277' has cardinality 0..*.
+An association connects 'java__TypeAccess' and 'java__ParameterizedType'. From 'java__TypeAccess', the role 'java__TypeAccess280' has cardinality 0..*, and from 'java__ParameterizedType', the role 'java__ParameterizedType279' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__ParenthesizedExpression'. From 'java__Expression', the role 'java__Expression282' has cardinality 0..*, and from 'java__ParenthesizedExpression', the role 'java__ParenthesizedExpression' has cardinality 0..*.
+An association connects 'java__PostfixExpression' and 'java__Expression'. From 'java__PostfixExpression', the role 'java__PostfixExpression' has cardinality 0..*, and from 'java__Expression', the role 'java__Expression284' has cardinality 0..*.
+An association connects 'java__PrefixExpression' and 'java__Expression'. From 'java__PrefixExpression', the role 'java__PrefixExpression' has cardinality 0..*, and from 'java__Expression', the role 'java__Expression286' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__ReturnStatement'. From 'java__Expression', the role 'java__Expression288' has cardinality 0..*, and from 'java__ReturnStatement', the role 'java__ReturnStatement' has cardinality 0..*.
+An association connects 'java__VariableDeclaration' and 'java__SingleVariableAccess'. From 'java__VariableDeclaration', the role 'VariableDeclaration' has cardinality 0..*, and from 'java__SingleVariableAccess', the role 'usageInVariableAccess' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__SingleVariableAccess'. From 'java__Expression', the role 'java__Expression292' has cardinality 0..*, and from 'java__SingleVariableAccess', the role 'java__SingleVariableAccess291' has cardinality 0..*.
+An association connects 'java__Modifier' and 'java__SingleVariableDeclaration'. From 'java__Modifier', the role 'Modifier294' has cardinality 0..*, and from 'java__SingleVariableDeclaration', the role 'singleVariableDeclaration' has cardinality 0..*.
+An association connects 'java__TypeAccess' and 'java__SingleVariableDeclaration'. From 'java__TypeAccess', the role 'java__TypeAccess296' has cardinality 0..*, and from 'java__SingleVariableDeclaration', the role 'java__SingleVariableDeclaration' has cardinality 0..*.
+An association connects 'java__Annotation' and 'java__SingleVariableDeclaration'. From 'java__Annotation', the role 'java__Annotation299' has cardinality 0..*, and from 'java__SingleVariableDeclaration', the role 'java__SingleVariableDeclaration298' has cardinality 0..*.
+An association connects 'java__SingleVariableDeclaration' and 'java__AbstractMethodDeclaration'. From 'java__SingleVariableDeclaration', the role 'parameters' has cardinality 0..*, and from 'java__AbstractMethodDeclaration', the role 'AbstractMethodDeclaration301' has cardinality 0..*.
+An association connects 'java__CatchClause' and 'java__SingleVariableDeclaration'. From 'java__CatchClause', the role 'CatchClause' has cardinality 0..*, and from 'java__SingleVariableDeclaration', the role 'exception' has cardinality 0..*.
+An association connects 'java__SingleVariableDeclaration' and 'java__EnhancedForStatement'. From 'java__SingleVariableDeclaration', the role 'parameter' has cardinality 0..*, and from 'java__EnhancedForStatement', the role 'EnhancedForStatement' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__SuperConstructorInvocation'. From 'java__Expression', the role 'java__Expression305' has cardinality 0..*, and from 'java__SuperConstructorInvocation', the role 'java__SuperConstructorInvocation' has cardinality 0..*.
+An association connects 'java__SingleVariableAccess' and 'java__SuperFieldAccess'. From 'java__SingleVariableAccess', the role 'java__SingleVariableAccess307' has cardinality 0..*, and from 'java__SuperFieldAccess', the role 'java__SuperFieldAccess' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__SwitchCase'. From 'java__Expression', the role 'java__Expression309' has cardinality 0..*, and from 'java__SwitchCase', the role 'java__SwitchCase' has cardinality 0..*.
+An association connects 'java__SwitchStatement' and 'java__Expression'. From 'java__SwitchStatement', the role 'java__SwitchStatement' has cardinality 0..*, and from 'java__Expression', the role 'java__Expression311' has cardinality 0..*.
+An association connects 'java__Statement' and 'java__SwitchStatement'. From 'java__Statement', the role 'java__Statement314' has cardinality 0..*, and from 'java__SwitchStatement', the role 'java__SwitchStatement313' has cardinality 0..*.
+An association connects 'java__SynchronizedStatement' and 'java__Block'. From 'java__SynchronizedStatement', the role 'java__SynchronizedStatement' has cardinality 0..*, and from 'java__Block', the role 'java__Block316' has cardinality 0..*.
+An association connects 'java__Expression' and 'java__SynchronizedStatement'. From 'java__Expression', the role 'java__Expression319' has cardinality 0..*, and from 'java__SynchronizedStatement', the role 'java__SynchronizedStatement318' has cardinality 0..*.
+An association connects 'java__TagElement' and 'java__ASTNode'. From 'java__TagElement', the role 'java__TagElement321' has cardinality 0..*, and from 'java__ASTNode', the role 'java__ASTNode322' has cardinality 0..*.
+An association connects 'java__ThrowStatement' and 'java__Expression'. From 'java__ThrowStatement', the role 'java__ThrowStatement' has cardinality 0..*, and from 'java__Expression', the role 'java__Expression324' has cardinality 0..*.
+An association connects 'java__TryStatement' and 'java__Block'. From 'java__TryStatement', the role 'java__TryStatement' has cardinality 0..*, and from 'java__Block', the role 'java__Block326' has cardinality 0..*.
+An association connects 'java__Block' and 'java__TryStatement'. From 'java__Block', the role 'java__Block329' has cardinality 0..*, and from 'java__TryStatement', the role 'java__TryStatement328' has cardinality 0..*.
+An association connects 'java__TryStatement' and 'java__CatchClause'. From 'java__TryStatement', the role 'java__TryStatement331' has cardinality 0..*, and from 'java__CatchClause', the role 'java__CatchClause332' has cardinality 0..*.
+An association connects 'java__TypeAccess' and 'java__Type'. From 'java__TypeAccess', the role 'TypeAccess' has cardinality 0..*, and from 'java__Type', the role 'type' has cardinality 0..*.
+An association connects 'java__TypeAccess' and 'java__Type'. From 'java__TypeAccess', the role 'usagesInTypeAccess' has cardinality 0..*, and from 'java__Type', the role 'Type' has cardinality 0..*.
+An association connects 'java__TypeAccess' and 'java__NamespaceAccess'. From 'java__TypeAccess', the role 'java__TypeAccess336' has cardinality 0..*, and from 'java__NamespaceAccess', the role 'java__NamespaceAccess' has cardinality 0..*.
+An association connects 'java__TypeDeclaration' and 'java__TypeParameter'. From 'java__TypeDeclaration', the role 'java__TypeDeclaration' has cardinality 0..*, and from 'java__TypeParameter', the role 'java__TypeParameter338' has cardinality 0..*.
+An association connects 'java__AbstractTypeDeclaration' and 'java__TypeDeclarationStatement'. From 'java__AbstractTypeDeclaration', the role 'java__AbstractTypeDeclaration340' has cardinality 0..*, and from 'java__TypeDeclarationStatement', the role 'java__TypeDeclarationStatement' has cardinality 0..*.
+An association connects 'java__TypeLiteral' and 'java__TypeAccess'. From 'java__TypeLiteral', the role 'java__TypeLiteral' has cardinality 0..*, and from 'java__TypeAccess', the role 'java__TypeAccess342' has cardinality 0..*.
+An association connects 'java__TypeParameter' and 'java__TypeAccess'. From 'java__TypeParameter', the role 'java__TypeParameter344' has cardinality 0..*, and from 'java__TypeAccess', the role 'java__TypeAccess345' has cardinality 0..*.
+An association connects 'java__UnresolvedItemAccess' and 'java__UnresolvedItem'. From 'java__UnresolvedItemAccess', the role 'java__UnresolvedItemAccess' has cardinality 0..*, and from 'java__UnresolvedItem', the role 'java__UnresolvedItem347' has cardinality 0..*.
+An association connects 'java__UnresolvedItemAccess' and 'java__ASTNode'. From 'java__UnresolvedItemAccess', the role 'java__UnresolvedItemAccess349' has cardinality 0..*, and from 'java__ASTNode', the role 'java__ASTNode350' has cardinality 0..*.
+An association connects 'java__VariableDeclaration' and 'java__Expression'. From 'java__VariableDeclaration', the role 'java__VariableDeclaration' has cardinality 0..*, and from 'java__Expression', the role 'java__Expression352' has cardinality 0..*.
+An association connects 'java__VariableDeclaration' and 'java__SingleVariableAccess'. From 'java__VariableDeclaration', the role 'variable' has cardinality 0..*, and from 'java__SingleVariableAccess', the role 'SingleVariableAccess' has cardinality 0..*.
+An association connects 'java__Modifier' and 'java__VariableDeclarationExpression'. From 'java__Modifier', the role 'Modifier355' has cardinality 0..*, and from 'java__VariableDeclarationExpression', the role 'variableDeclarationExpression' has cardinality 0..*.
+An association connects 'java__Annotation' and 'java__VariableDeclarationExpression'. From 'java__Annotation', the role 'java__Annotation357' has cardinality 0..*, and from 'java__VariableDeclarationExpression', the role 'java__VariableDeclarationExpression' has cardinality 0..*.
+An association connects 'java__VariableDeclarationFragment' and 'java__AbstractVariablesContainer'. From 'java__VariableDeclarationFragment', the role 'fragments' has cardinality 0..*, and from 'java__AbstractVariablesContainer', the role 'AbstractVariablesContainer' has cardinality 0..*.
+An association connects 'java__Modifier' and 'java__VariableDeclarationStatement'. From 'java__Modifier', the role 'Modifier360' has cardinality 0..*, and from 'java__VariableDeclarationStatement', the role 'variableDeclarationStatement' has cardinality 0..*.
+An association connects 'java__Annotation' and 'java__VariableDeclarationStatement'. From 'java__Annotation', the role 'java__Annotation362' has cardinality 0..*, and from 'java__VariableDeclarationStatement', the role 'java__VariableDeclarationStatement' has cardinality 0..*.
+An association connects 'java__WildCardType' and 'java__TypeAccess'. From 'java__WildCardType', the role 'java__WildCardType' has cardinality 0..*, and from 'java__TypeAccess', the role 'java__TypeAccess364' has cardinality 0..*.
+An association connects 'java__WhileStatement' and 'java__Expression'. From 'java__WhileStatement', the role 'java__WhileStatement' has cardinality 0..*, and from 'java__Expression', the role 'java__Expression366' has cardinality 0..*.
+An association connects 'java__Statement' and 'java__WhileStatement'. From 'java__Statement', the role 'java__Statement369' has cardinality 0..*, and from 'java__WhileStatement', the role 'java__WhileStatement368' has cardinality 0..*.

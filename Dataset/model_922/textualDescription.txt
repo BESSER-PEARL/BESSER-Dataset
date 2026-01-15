@@ -1,0 +1,25 @@
+The domain model 'spem' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'spem_Activity' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'durationmin', which is of type int; 'durationmax', which is of type int.
+
+'spem_WorkSequence' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'spem_Process' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'WorkSequenceKind' defines the following possible values: 'finishToFinish', 'startToStart', 'finishToStart', 'startToFinish'.
+
+Relationships between classes are modeled using associations.
+An association connects 'spem_Process' and 'spem_Activity'. From 'spem_Process', the role 'process' has cardinality 0..*, and from 'spem_Activity', the role 'Activity' has cardinality 0..*.
+An association connects 'spem_WorkSequence' and 'spem_Process'. From 'spem_WorkSequence', the role 'WorkSequence' has cardinality 0..*, and from 'spem_Process', the role 'process2' has cardinality 0..*.
+An association connects 'spem_Activity' and 'spem_WorkSequence'. From 'spem_Activity', the role 'predecessor' has cardinality 0..*, and from 'spem_WorkSequence', the role 'WorkSequence4' has cardinality 0..*.
+An association connects 'spem_Activity' and 'spem_WorkSequence'. From 'spem_Activity', the role 'successor' has cardinality 0..*, and from 'spem_WorkSequence', the role 'WorkSequence6' has cardinality 0..*.
+An association connects 'spem_Process' and 'spem_Activity'. From 'spem_Process', the role 'Process' has cardinality 0..*, and from 'spem_Activity', the role 'activities' has cardinality 0..*.
+An association connects 'spem_Activity' and 'spem_WorkSequence'. From 'spem_Activity', the role 'Activity9' has cardinality 0..*, and from 'spem_WorkSequence', the role 'linkToPredecessor' has cardinality 0..*.
+An association connects 'spem_WorkSequence' and 'spem_Activity'. From 'spem_WorkSequence', the role 'linkToSuccessor' has cardinality 0..*, and from 'spem_Activity', the role 'Activity11' has cardinality 0..*.
+An association connects 'spem_Process' and 'spem_WorkSequence'. From 'spem_Process', the role 'Process13' has cardinality 0..*, and from 'spem_WorkSequence', the role 'workSquences' has cardinality 0..*.

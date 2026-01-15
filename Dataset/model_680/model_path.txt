@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/arcanefoam/qvtMustus/archive/org.eclipse.qvt.declarative.test.emof/src/org/eclipse/qvt/declarative/test/emof/rose/EMOF.ecore

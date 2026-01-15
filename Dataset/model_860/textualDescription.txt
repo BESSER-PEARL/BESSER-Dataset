@@ -1,0 +1,70 @@
+The domain model 'fsm' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'fsm_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_State' represents an important domain concept.
+It has the following attributes: 'finalTime', which is of type int; 'initialTime', which is of type int.
+
+'fsm_Pseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_TimedTransition' represents an important domain concept.
+It has one attribute: 'duration', which is of type int.
+
+'fsm_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'Pseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Trigger' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'fsm_Fork' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Join' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Transition' represents an important domain concept.
+It has the following attributes: 'finalTime', which is of type int; 'initialTime', which is of type int; 'time', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'fsm_StateMachine' is a specialization of 'NamedElement'.
+The class 'fsm_State' is a specialization of 'NamedElement'.
+The class 'fsm_FinalState' is a specialization of 'State'.
+The class 'fsm_InitialState' is a specialization of 'State'.
+The class 'fsm_Transition' is a specialization of 'NamedElement'.
+The class 'fsm_TimedTransition' is a specialization of 'Transition'.
+The class 'fsm_Pseudostate' is a specialization of 'State'.
+The class 'fsm_Fork' is a specialization of 'Pseudostate'.
+The class 'fsm_Join' is a specialization of 'Pseudostate'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fsm_State' and 'fsm_StateMachine'. From 'fsm_State', the role '1' has cardinality 0..*, and from 'fsm_StateMachine', the role 'unnamed role' has cardinality 0..*.
+An association connects 'fsm_StateMachine' and 'fsm_Transition'. From 'fsm_StateMachine', the role '3' has cardinality 0..*, and from 'fsm_Transition', the role '4' has cardinality 0..*.
+An association connects 'fsm_State' and 'fsm_Transition'. From 'fsm_State', the role '6' has cardinality 0..*, and from 'fsm_Transition', the role '7' has cardinality 0..*.
+An association connects 'fsm_State' and 'fsm_Transition'. From 'fsm_State', the role '9' has cardinality 0..*, and from 'fsm_Transition', the role '10' has cardinality 0..*.
+An association connects 'fsm_StateMachine' and 'fsm_State'. From 'fsm_StateMachine', the role '13' has cardinality 0..*, and from 'fsm_State', the role '12' has cardinality 0..*.
+An association connects 'fsm_State' and 'fsm_Transition'. From 'fsm_State', the role '16' has cardinality 0..*, and from 'fsm_Transition', the role '15' has cardinality 0..*.
+An association connects 'fsm_State' and 'fsm_Transition'. From 'fsm_State', the role '19' has cardinality 0..*, and from 'fsm_Transition', the role '18' has cardinality 0..*.
+An association connects 'fsm_Trigger' and 'fsm_Transition'. From 'fsm_Trigger', the role 'fsm_Trigger' has cardinality 0..*, and from 'fsm_Transition', the role 'fsm_Transition' has cardinality 0..*.
+An association connects 'fsm_StateMachine' and 'fsm_Transition'. From 'fsm_StateMachine', the role '23' has cardinality 0..*, and from 'fsm_Transition', the role '22' has cardinality 0..*.

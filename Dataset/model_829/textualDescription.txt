@@ -1,0 +1,38 @@
+The domain model 'lts_av' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'lts_av_GlobalScope' represents an important domain concept.
+It does not declare any attributes.
+
+'lts_av_Transition' represents an important domain concept.
+It has the following attributes: 'input', which is of type str; 'output', which is of type str.
+
+'lts_av_Advice' represents an important domain concept.
+It does not declare any attributes.
+
+'lts_av_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'lts_av_PerJoinPointScope' represents an important domain concept.
+It does not declare any attributes.
+
+'lts_av_LTS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'lts_av_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'lts_av_LTS' and 'lts_av_State'. From 'lts_av_LTS', the role 'owningLTS' has cardinality 0..*, and from 'lts_av_State', the role 'State' has cardinality 0..*.
+An association connects 'lts_av_State' and 'lts_av_LTS'. From 'lts_av_State', the role 'lts_av_State' has cardinality 0..*, and from 'lts_av_LTS', the role 'lts_av_LTS' has cardinality 0..*.
+An association connects 'lts_av_LTS' and 'lts_av_State'. From 'lts_av_LTS', the role 'lts_av_LTS3' has cardinality 0..*, and from 'lts_av_State', the role 'lts_av_State4' has cardinality 0..*.
+An association connects 'lts_av_LTS' and 'lts_av_State'. From 'lts_av_LTS', the role 'lts_av_LTS6' has cardinality 0..*, and from 'lts_av_State', the role 'lts_av_State7' has cardinality 0..*.
+An association connects 'lts_av_LTS' and 'lts_av_State'. From 'lts_av_LTS', the role 'LTS' has cardinality 0..*, and from 'lts_av_State', the role 'ownedState' has cardinality 0..*.
+An association connects 'lts_av_Transition' and 'lts_av_State'. From 'lts_av_Transition', the role 'Transition' has cardinality 0..*, and from 'lts_av_State', the role 'source' has cardinality 0..*.
+An association connects 'lts_av_Transition' and 'lts_av_State'. From 'lts_av_Transition', the role 'Transition11' has cardinality 0..*, and from 'lts_av_State', the role 'target' has cardinality 0..*.
+An association connects 'lts_av_Transition' and 'lts_av_State'. From 'lts_av_Transition', the role 'outgoingTransition' has cardinality 0..*, and from 'lts_av_State', the role 'State13' has cardinality 0..*.
+An association connects 'lts_av_Transition' and 'lts_av_State'. From 'lts_av_Transition', the role 'incomingTransition' has cardinality 0..*, and from 'lts_av_State', the role 'State15' has cardinality 0..*.
+An association connects 'lts_av_Advice' and 'lts_av_EObject'. From 'lts_av_Advice', the role 'lts_av_Advice' has cardinality 0..*, and from 'lts_av_EObject', the role 'lts_av_EObject' has cardinality 0..*.
+An association connects 'lts_av_GlobalScope' and 'lts_av_EObject'. From 'lts_av_GlobalScope', the role 'lts_av_GlobalScope' has cardinality 0..*, and from 'lts_av_EObject', the role 'lts_av_EObject18' has cardinality 0..*.
+An association connects 'lts_av_EObject' and 'lts_av_PerJoinPointScope'. From 'lts_av_EObject', the role 'lts_av_EObject20' has cardinality 0..*, and from 'lts_av_PerJoinPointScope', the role 'lts_av_PerJoinPointScope' has cardinality 0..*.

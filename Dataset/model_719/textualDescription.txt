@@ -1,0 +1,496 @@
+The domain model 'kermeta' describes the core structural elements and their relationships within the system.
+
+The model defines 109 main class(es).
+
+'TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_ClassDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_FunctionType' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_behavior_LambdaExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_GenericTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_behavior_EmptyExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_behavior_Assignment' represents an important domain concept.
+It has one attribute: 'isCast', which is of type str.
+
+'kermeta_behavior_SelfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_behavior_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'kermeta_structure_TypeDefinition' represents an important domain concept.
+It has one attribute: 'isAspect', which is of type str.
+
+'structure_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_VirtualType' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_VirtualType' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_TypeDefinitionContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_ProductType' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_behavior_VariableDecl' represents an important domain concept.
+It has one attribute: 'identifier', which is of type str.
+
+'kermeta_behavior_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'kermeta_behavior_CallSuperOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_TypeVariableBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_LambdaParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_TypeContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_ClassDefinition' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type str.
+
+'kermeta_behavior_TypeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_Using' represents an important domain concept.
+It has one attribute: 'qualifiedName', which is of type str.
+
+'kermeta_behavior_CallValue' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_Constraint' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'stereotype', which is of type str.
+
+'structure_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_behavior_CallExpression' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'structure_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_ModelingUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_Property' represents an important domain concept.
+It has the following attributes: 'isComposite', which is of type str; 'isID', which is of type str; 'default', which is of type str; 'isDerived', which is of type str; 'isSetterAbstract', which is of type str; 'isGetterAbstract', which is of type str; 'isReadOnly', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_behavior_Raise' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_DummyClass' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_CallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_behavior_LambdaParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'structure_GenericTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_ModelTypeVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'CallVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_ModelingUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_behavior_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_Using' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_behavior_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_TypeVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_behavior_CallResult' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_Operation' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type str.
+
+'kermeta_behavior_VoidLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_Class' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isAbstract', which is of type str.
+
+'kermeta_structure_ObjectTypeVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_ModelTypeVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_TypeVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_MultiplicityElement' represents an important domain concept.
+It has the following attributes: 'isOrdered', which is of type str; 'upper', which is of type str; 'lower', which is of type str; 'isUnique', which is of type str.
+
+'structure_TypeVariableBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_Rescue' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_Require' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'kermeta_behavior_JavaStaticCall' represents an important domain concept.
+It has the following attributes: 'jmethod', which is of type str; 'jclass', which is of type str.
+
+'ObjectTypeVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_behavior_CallFeature' represents an important domain concept.
+It has one attribute: 'isAtpre', which is of type str.
+
+'kermeta_behavior_Rescue' represents an important domain concept.
+It has one attribute: 'exceptionName', which is of type str.
+
+'kermeta_structure_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'kermeta_structure_Tag' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'structure_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'CallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_behavior_CallVariable' represents an important domain concept.
+It has one attribute: 'isAtpre', which is of type str.
+
+'structure_Tag' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_Filter' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_behavior_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'kermeta_behavior_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_behavior_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_Require' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_TypeDefinitionContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_Filter' represents an important domain concept.
+It has one attribute: 'qualifiedName', which is of type str.
+
+'structure_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_Package' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'ParameterizedType' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_ParameterizedType' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_behavior_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_behavior_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_TypeContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_ModelType' represents an important domain concept.
+It does not declare any attributes.
+
+'structure_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_structure_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Object' represents an important domain concept.
+It does not declare any attributes.
+
+'kermeta_language_DummyClass' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ConstraintLanguage' defines the following possible values: 'ocl', 'kermeta'.
+The enumeration 'ConstraintType' defines the following possible values: 'pre', 'inv', 'post'.
+
+The model also captures inheritance relationships between classes.
+The class 'kermeta_behavior_Assignment' is a specialization of 'Expression'.
+The class 'kermeta_behavior_Expression' is a specialization of 'structure_Object'.
+The class 'kermeta_behavior_Expression' is a specialization of 'structure_TypeContainer'.
+The class 'kermeta_behavior_CallExpression' is a specialization of 'Expression'.
+The class 'kermeta_behavior_Block' is a specialization of 'Expression'.
+The class 'kermeta_behavior_CallVariable' is a specialization of 'CallExpression'.
+The class 'kermeta_behavior_CallFeature' is a specialization of 'CallExpression'.
+The class 'kermeta_behavior_CallSuperOperation' is a specialization of 'CallExpression'.
+The class 'kermeta_behavior_CallResult' is a specialization of 'CallVariable'.
+The class 'kermeta_behavior_CallValue' is a specialization of 'CallExpression'.
+The class 'kermeta_behavior_Conditional' is a specialization of 'Expression'.
+The class 'kermeta_behavior_Raise' is a specialization of 'Expression'.
+The class 'kermeta_behavior_Rescue' is a specialization of 'Object'.
+The class 'kermeta_behavior_TypeReference' is a specialization of 'MultiplicityElement'.
+The class 'kermeta_behavior_Literal' is a specialization of 'Expression'.
+The class 'kermeta_behavior_EmptyExpression' is a specialization of 'Expression'.
+The class 'kermeta_behavior_JavaStaticCall' is a specialization of 'Expression'.
+The class 'kermeta_behavior_LambdaExpression' is a specialization of 'Expression'.
+The class 'kermeta_behavior_LambdaParameter' is a specialization of 'Object'.
+The class 'kermeta_behavior_IntegerLiteral' is a specialization of 'Literal'.
+The class 'kermeta_behavior_StringLiteral' is a specialization of 'Literal'.
+The class 'kermeta_behavior_BooleanLiteral' is a specialization of 'Literal'.
+The class 'kermeta_behavior_TypeLiteral' is a specialization of 'Literal'.
+The class 'kermeta_behavior_VoidLiteral' is a specialization of 'Literal'.
+The class 'kermeta_behavior_Loop' is a specialization of 'Expression'.
+The class 'kermeta_behavior_SelfExpression' is a specialization of 'Expression'.
+The class 'kermeta_behavior_VariableDecl' is a specialization of 'Expression'.
+The class 'kermeta_structure_Class' is a specialization of 'ParameterizedType'.
+The class 'kermeta_structure_Model' is a specialization of 'Object'.
+The class 'kermeta_structure_ModelType' is a specialization of 'structure_Type'.
+The class 'kermeta_structure_ModelType' is a specialization of 'structure_TypeDefinition'.
+The class 'kermeta_structure_Operation' is a specialization of 'MultiplicityElement'.
+The class 'kermeta_structure_Property' is a specialization of 'MultiplicityElement'.
+The class 'kermeta_structure_Type' is a specialization of 'Object'.
+The class 'kermeta_structure_TypeContainer' is a specialization of 'Object'.
+The class 'kermeta_structure_EnumerationLiteral' is a specialization of 'NamedElement'.
+The class 'kermeta_structure_TypeVariableBinding' is a specialization of 'structure_TypeContainer'.
+The class 'kermeta_structure_TypeVariableBinding' is a specialization of 'structure_Object'.
+The class 'kermeta_structure_MultiplicityElement' is a specialization of 'TypedElement'.
+The class 'kermeta_structure_TypeDefinition' is a specialization of 'NamedElement'.
+The class 'kermeta_structure_DataType' is a specialization of 'structure_Type'.
+The class 'kermeta_structure_DataType' is a specialization of 'structure_TypeDefinition'.
+The class 'kermeta_structure_Enumeration' is a specialization of 'DataType'.
+The class 'kermeta_structure_NamedElement' is a specialization of 'Object'.
+The class 'kermeta_structure_Package' is a specialization of 'structure_NamedElement'.
+The class 'kermeta_structure_Package' is a specialization of 'structure_TypeDefinitionContainer'.
+The class 'kermeta_structure_Parameter' is a specialization of 'MultiplicityElement'.
+The class 'kermeta_structure_PrimitiveType' is a specialization of 'structure_DataType'.
+The class 'kermeta_structure_PrimitiveType' is a specialization of 'structure_TypeContainer'.
+The class 'kermeta_structure_TypedElement' is a specialization of 'structure_TypeContainer'.
+The class 'kermeta_structure_TypedElement' is a specialization of 'structure_NamedElement'.
+The class 'kermeta_structure_Tag' is a specialization of 'Object'.
+The class 'kermeta_structure_Constraint' is a specialization of 'NamedElement'.
+The class 'kermeta_structure_ClassDefinition' is a specialization of 'structure_GenericTypeDefinition'.
+The class 'kermeta_structure_ClassDefinition' is a specialization of 'structure_TypeContainer'.
+The class 'kermeta_structure_ModelingUnit' is a specialization of 'Object'.
+The class 'kermeta_structure_Require' is a specialization of 'Object'.
+The class 'kermeta_structure_Using' is a specialization of 'Object'.
+The class 'kermeta_structure_Filter' is a specialization of 'Object'.
+The class 'kermeta_structure_GenericTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'kermeta_structure_ParameterizedType' is a specialization of 'Type'.
+The class 'kermeta_structure_TypeVariable' is a specialization of 'structure_TypeContainer'.
+The class 'kermeta_structure_TypeVariable' is a specialization of 'structure_Type'.
+The class 'kermeta_structure_TypeVariable' is a specialization of 'structure_NamedElement'.
+The class 'kermeta_structure_ObjectTypeVariable' is a specialization of 'TypeVariable'.
+The class 'kermeta_structure_ModelTypeVariable' is a specialization of 'TypeVariable'.
+The class 'kermeta_structure_VirtualType' is a specialization of 'ObjectTypeVariable'.
+The class 'kermeta_structure_ProductType' is a specialization of 'structure_TypeContainer'.
+The class 'kermeta_structure_ProductType' is a specialization of 'structure_Type'.
+The class 'kermeta_structure_FunctionType' is a specialization of 'structure_TypeContainer'.
+The class 'kermeta_structure_FunctionType' is a specialization of 'structure_Type'.
+The class 'kermeta_structure_VoidType' is a specialization of 'Type'.
+The class 'kermeta_structure_TypeDefinitionContainer' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'behavior_CallExpression' and 'kermeta_behavior_Assignment'. From 'behavior_CallExpression', the role 'behavior_CallExpression' has cardinality 0..*, and from 'kermeta_behavior_Assignment', the role 'kermeta_behavior_Assignment' has cardinality 0..*.
+An association connects 'behavior_Expression' and 'kermeta_behavior_Assignment'. From 'behavior_Expression', the role 'behavior_Expression' has cardinality 0..*, and from 'kermeta_behavior_Assignment', the role 'kermeta_behavior_Assignment2' has cardinality 0..*.
+An association connects 'structure_Type' and 'kermeta_behavior_Expression'. From 'structure_Type', the role 'structure_Type' has cardinality 0..*, and from 'kermeta_behavior_Expression', the role 'kermeta_behavior_Expression' has cardinality 0..*.
+An association connects 'kermeta_behavior_CallExpression' and 'behavior_Expression'. From 'kermeta_behavior_CallExpression', the role 'kermeta_behavior_CallExpression' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression5' has cardinality 0..*.
+An association connects 'kermeta_behavior_CallExpression' and 'structure_Type'. From 'kermeta_behavior_CallExpression', the role 'kermeta_behavior_CallExpression7' has cardinality 0..*, and from 'structure_Type', the role 'structure_Type8' has cardinality 0..*.
+An association connects 'behavior_Expression' and 'kermeta_behavior_Block'. From 'behavior_Expression', the role 'behavior_Expression10' has cardinality 0..*, and from 'kermeta_behavior_Block', the role 'kermeta_behavior_Block' has cardinality 0..*.
+An association connects 'behavior_Rescue' and 'kermeta_behavior_Block'. From 'behavior_Rescue', the role 'behavior_Rescue' has cardinality 0..*, and from 'kermeta_behavior_Block', the role 'kermeta_behavior_Block12' has cardinality 0..*.
+An association connects 'kermeta_behavior_CallFeature' and 'behavior_Expression'. From 'kermeta_behavior_CallFeature', the role 'kermeta_behavior_CallFeature' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression14' has cardinality 0..*.
+An association connects 'kermeta_behavior_CallFeature' and 'structure_Property'. From 'kermeta_behavior_CallFeature', the role 'kermeta_behavior_CallFeature16' has cardinality 0..*, and from 'structure_Property', the role 'structure_Property' has cardinality 0..*.
+An association connects 'kermeta_behavior_CallFeature' and 'structure_Operation'. From 'kermeta_behavior_CallFeature', the role 'kermeta_behavior_CallFeature18' has cardinality 0..*, and from 'structure_Operation', the role 'structure_Operation' has cardinality 0..*.
+An association connects 'structure_EnumerationLiteral' and 'kermeta_behavior_CallFeature'. From 'structure_EnumerationLiteral', the role 'structure_EnumerationLiteral' has cardinality 0..*, and from 'kermeta_behavior_CallFeature', the role 'kermeta_behavior_CallFeature20' has cardinality 0..*.
+An association connects 'behavior_Expression' and 'kermeta_behavior_Conditional'. From 'behavior_Expression', the role 'behavior_Expression22' has cardinality 0..*, and from 'kermeta_behavior_Conditional', the role 'kermeta_behavior_Conditional' has cardinality 0..*.
+An association connects 'behavior_Expression' and 'kermeta_behavior_Conditional'. From 'behavior_Expression', the role 'behavior_Expression25' has cardinality 0..*, and from 'kermeta_behavior_Conditional', the role 'kermeta_behavior_Conditional24' has cardinality 0..*.
+An association connects 'kermeta_behavior_Conditional' and 'behavior_Expression'. From 'kermeta_behavior_Conditional', the role 'kermeta_behavior_Conditional27' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression28' has cardinality 0..*.
+An association connects 'kermeta_behavior_Raise' and 'behavior_Expression'. From 'kermeta_behavior_Raise', the role 'kermeta_behavior_Raise' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression30' has cardinality 0..*.
+An association connects 'kermeta_behavior_Rescue' and 'behavior_Expression'. From 'kermeta_behavior_Rescue', the role 'kermeta_behavior_Rescue' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression32' has cardinality 0..*.
+An association connects 'kermeta_behavior_Rescue' and 'behavior_TypeReference'. From 'kermeta_behavior_Rescue', the role 'kermeta_behavior_Rescue34' has cardinality 0..*, and from 'behavior_TypeReference', the role 'behavior_TypeReference' has cardinality 0..*.
+An association connects 'kermeta_behavior_JavaStaticCall' and 'behavior_Expression'. From 'kermeta_behavior_JavaStaticCall', the role 'kermeta_behavior_JavaStaticCall' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression36' has cardinality 0..*.
+An association connects 'kermeta_behavior_LambdaExpression' and 'behavior_LambdaParameter'. From 'kermeta_behavior_LambdaExpression', the role 'kermeta_behavior_LambdaExpression' has cardinality 0..*, and from 'behavior_LambdaParameter', the role 'behavior_LambdaParameter' has cardinality 0..*.
+An association connects 'behavior_Expression' and 'kermeta_behavior_LambdaExpression'. From 'behavior_Expression', the role 'behavior_Expression40' has cardinality 0..*, and from 'kermeta_behavior_LambdaExpression', the role 'kermeta_behavior_LambdaExpression39' has cardinality 0..*.
+An association connects 'behavior_TypeReference' and 'kermeta_behavior_LambdaParameter'. From 'behavior_TypeReference', the role 'behavior_TypeReference42' has cardinality 0..*, and from 'kermeta_behavior_LambdaParameter', the role 'kermeta_behavior_LambdaParameter' has cardinality 0..*.
+An association connects 'kermeta_behavior_TypeLiteral' and 'behavior_TypeReference'. From 'kermeta_behavior_TypeLiteral', the role 'kermeta_behavior_TypeLiteral' has cardinality 0..*, and from 'behavior_TypeReference', the role 'behavior_TypeReference44' has cardinality 0..*.
+An association connects 'kermeta_behavior_Loop' and 'behavior_Expression'. From 'kermeta_behavior_Loop', the role 'kermeta_behavior_Loop' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression46' has cardinality 0..*.
+An association connects 'kermeta_behavior_Loop' and 'behavior_Expression'. From 'kermeta_behavior_Loop', the role 'kermeta_behavior_Loop48' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression49' has cardinality 0..*.
+An association connects 'kermeta_behavior_Loop' and 'behavior_Expression'. From 'kermeta_behavior_Loop', the role 'kermeta_behavior_Loop51' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression52' has cardinality 0..*.
+An association connects 'kermeta_behavior_VariableDecl' and 'behavior_Expression'. From 'kermeta_behavior_VariableDecl', the role 'kermeta_behavior_VariableDecl' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression54' has cardinality 0..*.
+An association connects 'kermeta_behavior_VariableDecl' and 'behavior_TypeReference'. From 'kermeta_behavior_VariableDecl', the role 'kermeta_behavior_VariableDecl56' has cardinality 0..*, and from 'behavior_TypeReference', the role 'behavior_TypeReference57' has cardinality 0..*.
+An association connects 'structure_Property' and 'kermeta_structure_Class'. From 'structure_Property', the role 'structure_Property59' has cardinality 0..*, and from 'kermeta_structure_Class', the role 'kermeta_structure_Class' has cardinality 0..*.
+An association connects 'structure_Operation' and 'kermeta_structure_Class'. From 'structure_Operation', the role 'structure_Operation62' has cardinality 0..*, and from 'kermeta_structure_Class', the role 'kermeta_structure_Class61' has cardinality 0..*.
+An association connects 'kermeta_structure_Class' and 'structure_Class'. From 'kermeta_structure_Class', the role 'kermeta_structure_Class64' has cardinality 0..*, and from 'structure_Class', the role 'structure_Class' has cardinality 0..*.
+An association connects 'kermeta_structure_Object' and 'structure_Tag'. From 'kermeta_structure_Object', the role 'structure' has cardinality 0..*, and from 'structure_Tag', the role 'language' has cardinality 0..*.
+An association connects 'kermeta_structure_Object' and 'structure_Tag'. From 'kermeta_structure_Object', the role 'kermeta_structure_Object' has cardinality 0..*, and from 'structure_Tag', the role 'structure_Tag' has cardinality 0..*.
+An association connects 'structure_Object' and 'kermeta_structure_Model'. From 'structure_Object', the role 'structure_Object' has cardinality 0..*, and from 'kermeta_structure_Model', the role 'kermeta_structure_Model' has cardinality 0..*.
+An association connects 'structure_TypeDefinition' and 'kermeta_structure_ModelType'. From 'structure_TypeDefinition', the role 'structure_TypeDefinition' has cardinality 0..*, and from 'kermeta_structure_ModelType', the role 'kermeta_structure_ModelType' has cardinality 0..*.
+An association connects 'kermeta_structure_Operation' and 'structure_Type'. From 'kermeta_structure_Operation', the role 'kermeta_structure_Operation' has cardinality 0..*, and from 'structure_Type', the role 'structure_Type70' has cardinality 0..*.
+An association connects 'kermeta_structure_Operation' and 'structure_Parameter'. From 'kermeta_structure_Operation', the role 'structure72' has cardinality 0..*, and from 'structure_Parameter', the role 'language73' has cardinality 0..*.
+An association connects 'kermeta_structure_Operation' and 'structure_Constraint'. From 'kermeta_structure_Operation', the role 'structure75' has cardinality 0..*, and from 'structure_Constraint', the role 'language76' has cardinality 0..*.
+An association connects 'structure_Constraint' and 'kermeta_structure_Operation'. From 'structure_Constraint', the role 'language79' has cardinality 0..*, and from 'kermeta_structure_Operation', the role 'structure78' has cardinality 0..*.
+An association connects 'kermeta_structure_Operation' and 'behavior_Expression'. From 'kermeta_structure_Operation', the role 'kermeta_structure_Operation81' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression82' has cardinality 0..*.
+An association connects 'kermeta_structure_Operation' and 'structure_Operation'. From 'kermeta_structure_Operation', the role 'kermeta_structure_Operation84' has cardinality 0..*, and from 'structure_Operation', the role 'structure_Operation85' has cardinality 0..*.
+An association connects 'kermeta_structure_Operation' and 'structure_ClassDefinition'. From 'kermeta_structure_Operation', the role 'structure87' has cardinality 0..*, and from 'structure_ClassDefinition', the role 'language88' has cardinality 0..*.
+An association connects 'structure_TypeVariable' and 'kermeta_structure_Operation'. From 'structure_TypeVariable', the role 'structure_TypeVariable' has cardinality 0..*, and from 'kermeta_structure_Operation', the role 'kermeta_structure_Operation90' has cardinality 0..*.
+An association connects 'kermeta_structure_Property' and 'structure_Property'. From 'kermeta_structure_Property', the role 'kermeta_structure_Property' has cardinality 0..*, and from 'structure_Property', the role 'structure_Property92' has cardinality 0..*.
+An association connects 'kermeta_structure_Property' and 'behavior_Expression'. From 'kermeta_structure_Property', the role 'kermeta_structure_Property94' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression95' has cardinality 0..*.
+An association connects 'kermeta_structure_Property' and 'behavior_Expression'. From 'kermeta_structure_Property', the role 'kermeta_structure_Property97' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression98' has cardinality 0..*.
+An association connects 'structure_ClassDefinition' and 'kermeta_structure_Property'. From 'structure_ClassDefinition', the role 'language101' has cardinality 0..*, and from 'kermeta_structure_Property', the role 'structure100' has cardinality 0..*.
+An association connects 'kermeta_structure_Type' and 'structure_TypeContainer'. From 'kermeta_structure_Type', the role 'structure103' has cardinality 0..*, and from 'structure_TypeContainer', the role 'language104' has cardinality 0..*.
+An association connects 'structure_Type' and 'kermeta_structure_TypeContainer'. From 'structure_Type', the role 'language107' has cardinality 0..*, and from 'kermeta_structure_TypeContainer', the role 'structure106' has cardinality 0..*.
+An association connects 'structure_Enumeration' and 'kermeta_structure_EnumerationLiteral'. From 'structure_Enumeration', the role 'language110' has cardinality 0..*, and from 'kermeta_structure_EnumerationLiteral', the role 'structure109' has cardinality 0..*.
+An association connects 'structure_TypeVariable' and 'kermeta_structure_TypeVariableBinding'. From 'structure_TypeVariable', the role 'structure_TypeVariable112' has cardinality 0..*, and from 'kermeta_structure_TypeVariableBinding', the role 'kermeta_structure_TypeVariableBinding' has cardinality 0..*.
+An association connects 'structure_Type' and 'kermeta_structure_TypeVariableBinding'. From 'structure_Type', the role 'structure_Type115' has cardinality 0..*, and from 'kermeta_structure_TypeVariableBinding', the role 'kermeta_structure_TypeVariableBinding114' has cardinality 0..*.
+An association connects 'kermeta_structure_Enumeration' and 'structure_EnumerationLiteral'. From 'kermeta_structure_Enumeration', the role 'structure117' has cardinality 0..*, and from 'structure_EnumerationLiteral', the role 'language118' has cardinality 0..*.
+An association connects 'structure_Package' and 'kermeta_structure_Package'. From 'structure_Package', the role 'language121' has cardinality 0..*, and from 'kermeta_structure_Package', the role 'structure120' has cardinality 0..*.
+An association connects 'structure_Package' and 'kermeta_structure_Package'. From 'structure_Package', the role 'language124' has cardinality 0..*, and from 'kermeta_structure_Package', the role 'structure123' has cardinality 0..*.
+An association connects 'structure_Operation' and 'kermeta_structure_Parameter'. From 'structure_Operation', the role 'language127' has cardinality 0..*, and from 'kermeta_structure_Parameter', the role 'structure126' has cardinality 0..*.
+An association connects 'kermeta_structure_PrimitiveType' and 'structure_Type'. From 'kermeta_structure_PrimitiveType', the role 'kermeta_structure_PrimitiveType' has cardinality 0..*, and from 'structure_Type', the role 'structure_Type129' has cardinality 0..*.
+An association connects 'structure_Type' and 'kermeta_structure_TypedElement'. From 'structure_Type', the role 'structure_Type131' has cardinality 0..*, and from 'kermeta_structure_TypedElement', the role 'kermeta_structure_TypedElement' has cardinality 0..*.
+An association connects 'structure_Object' and 'kermeta_structure_Tag'. From 'structure_Object', the role 'language134' has cardinality 0..*, and from 'kermeta_structure_Tag', the role 'structure133' has cardinality 0..*.
+An association connects 'kermeta_structure_Constraint' and 'behavior_Expression'. From 'kermeta_structure_Constraint', the role 'kermeta_structure_Constraint' has cardinality 0..*, and from 'behavior_Expression', the role 'behavior_Expression136' has cardinality 0..*.
+An association connects 'structure_ClassDefinition' and 'kermeta_structure_Constraint'. From 'structure_ClassDefinition', the role 'language139' has cardinality 0..*, and from 'kermeta_structure_Constraint', the role 'structure138' has cardinality 0..*.
+An association connects 'structure_Operation' and 'kermeta_structure_Constraint'. From 'structure_Operation', the role 'language142' has cardinality 0..*, and from 'kermeta_structure_Constraint', the role 'structure141' has cardinality 0..*.
+An association connects 'kermeta_structure_Constraint' and 'structure_Operation'. From 'kermeta_structure_Constraint', the role 'structure144' has cardinality 0..*, and from 'structure_Operation', the role 'language145' has cardinality 0..*.
+An association connects 'kermeta_structure_ClassDefinition' and 'structure_Constraint'. From 'kermeta_structure_ClassDefinition', the role 'structure147' has cardinality 0..*, and from 'structure_Constraint', the role 'language148' has cardinality 0..*.
+An association connects 'structure_Property' and 'kermeta_structure_ClassDefinition'. From 'structure_Property', the role 'language151' has cardinality 0..*, and from 'kermeta_structure_ClassDefinition', the role 'structure150' has cardinality 0..*.
+An association connects 'structure_Operation' and 'kermeta_structure_ClassDefinition'. From 'structure_Operation', the role 'language154' has cardinality 0..*, and from 'kermeta_structure_ClassDefinition', the role 'structure153' has cardinality 0..*.
+An association connects 'kermeta_structure_ClassDefinition' and 'structure_Type'. From 'kermeta_structure_ClassDefinition', the role 'kermeta_structure_ClassDefinition' has cardinality 0..*, and from 'structure_Type', the role 'structure_Type156' has cardinality 0..*.
+An association connects 'structure_Package' and 'kermeta_structure_ModelingUnit'. From 'structure_Package', the role 'structure_Package' has cardinality 0..*, and from 'kermeta_structure_ModelingUnit', the role 'kermeta_structure_ModelingUnit' has cardinality 0..*.
+An association connects 'kermeta_structure_ModelingUnit' and 'structure_Require'. From 'kermeta_structure_ModelingUnit', the role 'kermeta_structure_ModelingUnit159' has cardinality 0..*, and from 'structure_Require', the role 'structure_Require' has cardinality 0..*.
+An association connects 'kermeta_structure_ModelingUnit' and 'structure_Using'. From 'kermeta_structure_ModelingUnit', the role 'kermeta_structure_ModelingUnit161' has cardinality 0..*, and from 'structure_Using', the role 'structure_Using' has cardinality 0..*.
+An association connects 'kermeta_structure_ModelingUnit' and 'structure_ModelingUnit'. From 'kermeta_structure_ModelingUnit', the role 'kermeta_structure_ModelingUnit163' has cardinality 0..*, and from 'structure_ModelingUnit', the role 'structure_ModelingUnit' has cardinality 0..*.
+An association connects 'structure_Filter' and 'kermeta_structure_ModelingUnit'. From 'structure_Filter', the role 'structure_Filter' has cardinality 0..*, and from 'kermeta_structure_ModelingUnit', the role 'kermeta_structure_ModelingUnit165' has cardinality 0..*.
+An association connects 'kermeta_structure_ModelingUnit' and 'structure_Filter'. From 'kermeta_structure_ModelingUnit', the role 'kermeta_structure_ModelingUnit167' has cardinality 0..*, and from 'structure_Filter', the role 'structure_Filter168' has cardinality 0..*.
+An association connects 'structure_TypeVariable' and 'kermeta_structure_GenericTypeDefinition'. From 'structure_TypeVariable', the role 'structure_TypeVariable170' has cardinality 0..*, and from 'kermeta_structure_GenericTypeDefinition', the role 'kermeta_structure_GenericTypeDefinition' has cardinality 0..*.
+An association connects 'kermeta_structure_ParameterizedType' and 'structure_TypeVariableBinding'. From 'kermeta_structure_ParameterizedType', the role 'kermeta_structure_ParameterizedType' has cardinality 0..*, and from 'structure_TypeVariableBinding', the role 'structure_TypeVariableBinding' has cardinality 0..*.
+An association connects 'kermeta_structure_ParameterizedType' and 'structure_TypeVariableBinding'. From 'kermeta_structure_ParameterizedType', the role 'kermeta_structure_ParameterizedType173' has cardinality 0..*, and from 'structure_TypeVariableBinding', the role 'structure_TypeVariableBinding174' has cardinality 0..*.
+An association connects 'structure_GenericTypeDefinition' and 'kermeta_structure_ParameterizedType'. From 'structure_GenericTypeDefinition', the role 'structure_GenericTypeDefinition' has cardinality 0..*, and from 'kermeta_structure_ParameterizedType', the role 'kermeta_structure_ParameterizedType176' has cardinality 0..*.
+An association connects 'kermeta_structure_TypeVariable' and 'structure_Type'. From 'kermeta_structure_TypeVariable', the role 'kermeta_structure_TypeVariable' has cardinality 0..*, and from 'structure_Type', the role 'structure_Type178' has cardinality 0..*.
+An association connects 'kermeta_structure_ModelTypeVariable' and 'structure_VirtualType'. From 'kermeta_structure_ModelTypeVariable', the role 'structure180' has cardinality 0..*, and from 'structure_VirtualType', the role 'language181' has cardinality 0..*.
+An association connects 'structure_ClassDefinition' and 'kermeta_structure_VirtualType'. From 'structure_ClassDefinition', the role 'structure_ClassDefinition' has cardinality 0..*, and from 'kermeta_structure_VirtualType', the role 'kermeta_structure_VirtualType' has cardinality 0..*.
+An association connects 'kermeta_structure_VirtualType' and 'structure_ModelTypeVariable'. From 'kermeta_structure_VirtualType', the role 'structure184' has cardinality 0..*, and from 'structure_ModelTypeVariable', the role 'language185' has cardinality 0..*.
+An association connects 'structure_TypeVariableBinding' and 'kermeta_structure_VirtualType'. From 'structure_TypeVariableBinding', the role 'structure_TypeVariableBinding188' has cardinality 0..*, and from 'kermeta_structure_VirtualType', the role 'kermeta_structure_VirtualType187' has cardinality 0..*.
+An association connects 'structure_Type' and 'kermeta_structure_ProductType'. From 'structure_Type', the role 'structure_Type190' has cardinality 0..*, and from 'kermeta_structure_ProductType', the role 'kermeta_structure_ProductType' has cardinality 0..*.
+An association connects 'structure_Type' and 'kermeta_structure_FunctionType'. From 'structure_Type', the role 'structure_Type192' has cardinality 0..*, and from 'kermeta_structure_FunctionType', the role 'kermeta_structure_FunctionType' has cardinality 0..*.
+An association connects 'structure_Type' and 'kermeta_structure_FunctionType'. From 'structure_Type', the role 'structure_Type195' has cardinality 0..*, and from 'kermeta_structure_FunctionType', the role 'kermeta_structure_FunctionType194' has cardinality 0..*.
+An association connects 'structure_TypeDefinition' and 'kermeta_structure_TypeDefinitionContainer'. From 'structure_TypeDefinition', the role 'structure_TypeDefinition197' has cardinality 0..*, and from 'kermeta_structure_TypeDefinitionContainer', the role 'kermeta_structure_TypeDefinitionContainer' has cardinality 0..*.

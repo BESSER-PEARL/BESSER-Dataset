@@ -1,0 +1,303 @@
+####################
+# STRUCTURAL MODEL #
+####################
+
+from besser.BUML.metamodel.structural import (
+    Class, Property, Method, Parameter,
+    BinaryAssociation, Generalization, DomainModel,
+    Enumeration, EnumerationLiteral, Multiplicity,
+    StringType, IntegerType, FloatType, BooleanType,
+    TimeType, DateType, DateTimeType, TimeDeltaType,
+    AnyType, Constraint, AssociationClass, Metadata
+)
+
+# Enumerations
+SequenceType: Enumeration = Enumeration(
+    name="SequenceType",
+    literals={
+            EnumerationLiteral(name="startToStart"),
+			EnumerationLiteral(name="finishToStart"),
+			EnumerationLiteral(name="startToFinish"),
+			EnumerationLiteral(name="finishToFinish")
+    }
+)
+
+# Classes
+publication2014a_Sequence = Class(name="publication2014a::Sequence")
+publication2014a_PublicationProcess = Class(name="publication2014a::PublicationProcess")
+Named = Class(name="Named")
+publication2014a_PublicationPhase = Class(name="publication2014a::PublicationPhase")
+publication2014a_Rule = Class(name="publication2014a::Rule")
+publication2014a_Write = Class(name="publication2014a::Write")
+publication2014a_Review = Class(name="publication2014a::Review")
+publication2014a_Paper = Class(name="publication2014a::Paper")
+publication2014a_Researcher = Class(name="publication2014a::Researcher")
+publication2014a_Paragraph = Class(name="publication2014a::Paragraph")
+publication2014a_Progress = Class(name="publication2014a::Progress")
+Counted = Class(name="Counted")
+publication2014a_ReviewNote = Class(name="publication2014a::ReviewNote")
+Labelled = Class(name="Labelled")
+publication2014a_PublicationStructure = Class(name="publication2014a::PublicationStructure")
+publication2014a_PublicationSystem = Class(name="publication2014a::PublicationSystem")
+publication2014a_Named = Class(name="publication2014a::Named", is_abstract=True)
+publication2014a_Counted = Class(name="publication2014a::Counted", is_abstract=True)
+publication2014a_Labelled = Class(name="publication2014a::Labelled", is_abstract=True)
+
+# publication2014a_Sequence class attributes and methods
+publication2014a_Sequence_sequenceType: Property = Property(name="sequenceType", type=StringType)
+publication2014a_Sequence.attributes={publication2014a_Sequence_sequenceType}
+
+# publication2014a_PublicationProcess class attributes and methods
+publication2014a_PublicationProcess_minTime: Property = Property(name="minTime", type=IntegerType)
+publication2014a_PublicationProcess_maxTime: Property = Property(name="maxTime", type=IntegerType)
+publication2014a_PublicationProcess.attributes={publication2014a_PublicationProcess_maxTime, publication2014a_PublicationProcess_minTime}
+
+# Named class attributes and methods
+
+# publication2014a_PublicationPhase class attributes and methods
+publication2014a_PublicationPhase_name: Property = Property(name="name", type=StringType)
+publication2014a_PublicationPhase_minTime: Property = Property(name="minTime", type=IntegerType)
+publication2014a_PublicationPhase_maxTime: Property = Property(name="maxTime", type=IntegerType)
+publication2014a_PublicationPhase.attributes={publication2014a_PublicationPhase_minTime, publication2014a_PublicationPhase_maxTime, publication2014a_PublicationPhase_name}
+
+# publication2014a_Rule class attributes and methods
+publication2014a_Rule_text: Property = Property(name="text", type=StringType)
+publication2014a_Rule_key: Property = Property(name="key", type=StringType)
+publication2014a_Rule.attributes={publication2014a_Rule_text, publication2014a_Rule_key}
+
+# publication2014a_Write class attributes and methods
+
+# publication2014a_Review class attributes and methods
+
+# publication2014a_Paper class attributes and methods
+
+# publication2014a_Researcher class attributes and methods
+publication2014a_Researcher_forName: Property = Property(name="forName", type=StringType)
+publication2014a_Researcher_position: Property = Property(name="position", type=StringType)
+publication2014a_Researcher_name: Property = Property(name="name", type=StringType)
+publication2014a_Researcher.attributes={publication2014a_Researcher_forName, publication2014a_Researcher_position, publication2014a_Researcher_name}
+
+# publication2014a_Paragraph class attributes and methods
+publication2014a_Paragraph_content: Property = Property(name="content", type=StringType)
+publication2014a_Paragraph.attributes={publication2014a_Paragraph_content}
+
+# publication2014a_Progress class attributes and methods
+publication2014a_Progress_percent: Property = Property(name="percent", type=IntegerType)
+publication2014a_Progress_time: Property = Property(name="time", type=IntegerType)
+publication2014a_Progress.attributes={publication2014a_Progress_percent, publication2014a_Progress_time}
+
+# Counted class attributes and methods
+
+# publication2014a_ReviewNote class attributes and methods
+publication2014a_ReviewNote_content: Property = Property(name="content", type=StringType)
+publication2014a_ReviewNote.attributes={publication2014a_ReviewNote_content}
+
+# Labelled class attributes and methods
+
+# publication2014a_PublicationStructure class attributes and methods
+
+# publication2014a_PublicationSystem class attributes and methods
+
+# publication2014a_Named class attributes and methods
+publication2014a_Named_name: Property = Property(name="name", type=StringType)
+publication2014a_Named.attributes={publication2014a_Named_name}
+
+# publication2014a_Counted class attributes and methods
+publication2014a_Counted_id: Property = Property(name="id", type=IntegerType)
+publication2014a_Counted.attributes={publication2014a_Counted_id}
+
+# publication2014a_Labelled class attributes and methods
+publication2014a_Labelled_lname: Property = Property(name="lname", type=StringType)
+publication2014a_Labelled.attributes={publication2014a_Labelled_lname}
+
+# Relationships
+linksToSuccessors3: BinaryAssociation = BinaryAssociation(
+    name="linksToSuccessors3",
+    ends={
+        Property(name="publication2014a_Sequence", type=publication2014a_PublicationPhase, multiplicity=Multiplicity(1, 1)),
+        Property(name="publication2014a_PublicationPhase4", type=publication2014a_Sequence, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+phases0: BinaryAssociation = BinaryAssociation(
+    name="phases0",
+    ends={
+        Property(name="publication2014a_PublicationPhase", type=publication2014a_PublicationProcess, multiplicity=Multiplicity(1, 1)),
+        Property(name="publication2014a_PublicationProcess", type=publication2014a_PublicationPhase, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+publicationRules1: BinaryAssociation = BinaryAssociation(
+    name="publicationRules1",
+    ends={
+        Property(name="publication2014a_Rule", type=publication2014a_PublicationProcess, multiplicity=Multiplicity(1, 1)),
+        Property(name="publication2014a_PublicationProcess2", type=publication2014a_Rule, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+writes16: BinaryAssociation = BinaryAssociation(
+    name="writes16",
+    ends={
+        Property(name="publication2014a_Write", type=publication2014a_Researcher, multiplicity=Multiplicity(1, 1)),
+        Property(name="publication2014a_Researcher", type=publication2014a_Write, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+reviews17: BinaryAssociation = BinaryAssociation(
+    name="reviews17",
+    ends={
+        Property(name="publication2014a_Review", type=publication2014a_Researcher, multiplicity=Multiplicity(1, 1)),
+        Property(name="publication2014a_Researcher18", type=publication2014a_Review, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+neededPerson5: BinaryAssociation = BinaryAssociation(
+    name="neededPerson5",
+    ends={
+        Property(name="Researcher", type=publication2014a_PublicationPhase, multiplicity=Multiplicity(1, 1)),
+        Property(name="phaseParticipation", type=publication2014a_Researcher, multiplicity=Multiplicity(0, 9999))
+    }
+)
+rules6: BinaryAssociation = BinaryAssociation(
+    name="rules6",
+    ends={
+        Property(name="publication2014a_Rule8", type=publication2014a_PublicationPhase, multiplicity=Multiplicity(1, 1)),
+        Property(name="publication2014a_PublicationPhase7", type=publication2014a_Rule, multiplicity=Multiplicity(0, 9999))
+    }
+)
+successor9: BinaryAssociation = BinaryAssociation(
+    name="successor9",
+    ends={
+        Property(name="publication2014a_PublicationPhase11", type=publication2014a_Sequence, multiplicity=Multiplicity(1, 1)),
+        Property(name="publication2014a_Sequence10", type=publication2014a_PublicationPhase, multiplicity=Multiplicity(1, 1))
+    }
+)
+predecessor12: BinaryAssociation = BinaryAssociation(
+    name="predecessor12",
+    ends={
+        Property(name="publication2014a_PublicationPhase14", type=publication2014a_Sequence, multiplicity=Multiplicity(1, 1)),
+        Property(name="publication2014a_Sequence13", type=publication2014a_PublicationPhase, multiplicity=Multiplicity(1, 1))
+    }
+)
+phaseParticipation15: BinaryAssociation = BinaryAssociation(
+    name="phaseParticipation15",
+    ends={
+        Property(name="PublicationPhase", type=publication2014a_Researcher, multiplicity=Multiplicity(1, 1)),
+        Property(name="neededPerson", type=publication2014a_PublicationPhase, multiplicity=Multiplicity(0, 9999))
+    }
+)
+paper28: BinaryAssociation = BinaryAssociation(
+    name="paper28",
+    ends={
+        Property(name="Paper29", type=publication2014a_Progress, multiplicity=Multiplicity(1, 1)),
+        Property(name="progress", type=publication2014a_Paper, multiplicity=Multiplicity(0, 1))
+    }
+)
+paragraph30: BinaryAssociation = BinaryAssociation(
+    name="paragraph30",
+    ends={
+        Property(name="publication2014a_Paragraph32", type=publication2014a_Write, multiplicity=Multiplicity(1, 1)),
+        Property(name="publication2014a_Write31", type=publication2014a_Paragraph, multiplicity=Multiplicity(0, 1))
+    }
+)
+papers19: BinaryAssociation = BinaryAssociation(
+    name="papers19",
+    ends={
+        Property(name="Paper", type=publication2014a_Researcher, multiplicity=Multiplicity(1, 1)),
+        Property(name="authors", type=publication2014a_Paper, multiplicity=Multiplicity(0, 9999))
+    }
+)
+reviewNote33: BinaryAssociation = BinaryAssociation(
+    name="reviewNote33",
+    ends={
+        Property(name="publication2014a_ReviewNote35", type=publication2014a_Review, multiplicity=Multiplicity(1, 1)),
+        Property(name="publication2014a_Review34", type=publication2014a_ReviewNote, multiplicity=Multiplicity(0, 1))
+    }
+)
+paragraphs20: BinaryAssociation = BinaryAssociation(
+    name="paragraphs20",
+    ends={
+        Property(name="publication2014a_Paragraph", type=publication2014a_Paper, multiplicity=Multiplicity(1, 1)),
+        Property(name="publication2014a_Paper", type=publication2014a_Paragraph, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+progress21: BinaryAssociation = BinaryAssociation(
+    name="progress21",
+    ends={
+        Property(name="Progress", type=publication2014a_Paper, multiplicity=Multiplicity(1, 1)),
+        Property(name="paper", type=publication2014a_Progress, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+authors22: BinaryAssociation = BinaryAssociation(
+    name="authors22",
+    ends={
+        Property(name="Researcher23", type=publication2014a_Paper, multiplicity=Multiplicity(1, 1)),
+        Property(name="papers", type=publication2014a_Researcher, multiplicity=Multiplicity(0, 9999))
+    }
+)
+reviews24: BinaryAssociation = BinaryAssociation(
+    name="reviews24",
+    ends={
+        Property(name="publication2014a_ReviewNote", type=publication2014a_Paragraph, multiplicity=Multiplicity(1, 1)),
+        Property(name="publication2014a_Paragraph25", type=publication2014a_ReviewNote, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+process26: BinaryAssociation = BinaryAssociation(
+    name="process26",
+    ends={
+        Property(name="publication2014a_PublicationProcess27", type=publication2014a_Progress, multiplicity=Multiplicity(1, 1)),
+        Property(name="publication2014a_Progress", type=publication2014a_PublicationProcess, multiplicity=Multiplicity(0, 1))
+    }
+)
+researchers36: BinaryAssociation = BinaryAssociation(
+    name="researchers36",
+    ends={
+        Property(name="publication2014a_Researcher37", type=publication2014a_PublicationStructure, multiplicity=Multiplicity(1, 1)),
+        Property(name="publication2014a_PublicationStructure", type=publication2014a_Researcher, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+papers38: BinaryAssociation = BinaryAssociation(
+    name="papers38",
+    ends={
+        Property(name="publication2014a_Paper40", type=publication2014a_PublicationStructure, multiplicity=Multiplicity(1, 1)),
+        Property(name="publication2014a_PublicationStructure39", type=publication2014a_Paper, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+processView41: BinaryAssociation = BinaryAssociation(
+    name="processView41",
+    ends={
+        Property(name="publication2014a_PublicationProcess42", type=publication2014a_PublicationSystem, multiplicity=Multiplicity(1, 1)),
+        Property(name="publication2014a_PublicationSystem", type=publication2014a_PublicationProcess, multiplicity=Multiplicity(0, 1), is_composite=True)
+    }
+)
+structuralView43: BinaryAssociation = BinaryAssociation(
+    name="structuralView43",
+    ends={
+        Property(name="publication2014a_PublicationStructure45", type=publication2014a_PublicationSystem, multiplicity=Multiplicity(1, 1)),
+        Property(name="publication2014a_PublicationSystem44", type=publication2014a_PublicationStructure, multiplicity=Multiplicity(0, 1), is_composite=True)
+    }
+)
+
+# Generalizations
+gen_publication2014a_PublicationProcess_Named = Generalization(general=Named, specific=publication2014a_PublicationProcess)
+gen_publication2014a_Write_Labelled = Generalization(general=Labelled, specific=publication2014a_Write)
+gen_publication2014a_Review_Labelled = Generalization(general=Labelled, specific=publication2014a_Review)
+gen_publication2014a_Paper_Named = Generalization(general=Named, specific=publication2014a_Paper)
+gen_publication2014a_Paragraph_Counted = Generalization(general=Counted, specific=publication2014a_Paragraph)
+gen_publication2014a_Paragraph_Named = Generalization(general=Named, specific=publication2014a_Paragraph)
+gen_publication2014a_ReviewNote_Named = Generalization(general=Named, specific=publication2014a_ReviewNote)
+gen_publication2014a_Progress_Labelled = Generalization(general=Labelled, specific=publication2014a_Progress)
+gen_publication2014a_PublicationStructure_Named = Generalization(general=Named, specific=publication2014a_PublicationStructure)
+
+# Domain Model
+domain_model = DomainModel(
+    name="publication2014a",
+    types={publication2014a_Sequence, publication2014a_PublicationProcess, Named, publication2014a_PublicationPhase, publication2014a_Rule, publication2014a_Write, publication2014a_Review, publication2014a_Paper, publication2014a_Researcher, publication2014a_Paragraph, publication2014a_Progress, Counted, publication2014a_ReviewNote, Labelled, publication2014a_PublicationStructure, publication2014a_PublicationSystem, publication2014a_Named, publication2014a_Counted, publication2014a_Labelled, SequenceType},
+    associations={linksToSuccessors3, phases0, publicationRules1, writes16, reviews17, neededPerson5, rules6, successor9, predecessor12, phaseParticipation15, paper28, paragraph30, papers19, reviewNote33, paragraphs20, progress21, authors22, reviews24, process26, researchers36, papers38, processView41, structuralView43},
+    generalizations={gen_publication2014a_PublicationProcess_Named, gen_publication2014a_Write_Labelled, gen_publication2014a_Review_Labelled, gen_publication2014a_Paper_Named, gen_publication2014a_Paragraph_Counted, gen_publication2014a_Paragraph_Named, gen_publication2014a_ReviewNote_Named, gen_publication2014a_Progress_Labelled, gen_publication2014a_PublicationStructure_Named},
+    metadata=None
+)
+
+
+###################### 
+ # PROJECT DEFINITION # 
+ ###################### 
+from besser.BUML.metamodel.project import Project 
+from besser.BUML.metamodel.structural.structural import Metadata
+metadata = Metadata(description="New project")
+project = Project(name="sampleModel",models=[domain_model],owner="User",metadata=metadata)

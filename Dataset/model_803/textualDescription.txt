@@ -1,0 +1,45 @@
+The domain model 'fsmkerm' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'fsmkerm_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'FSMException' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmkerm_NoInitialStateException' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmkerm_NonDeterminism' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmkerm_FSMException' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmkerm_NoTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmkerm_FSM' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmkerm_Transition' represents an important domain concept.
+It has the following attributes: 'input', which is of type str; 'output', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'fsmkerm_NonDeterminism' is a specialization of 'FSMException'.
+The class 'fsmkerm_NoTransition' is a specialization of 'FSMException'.
+The class 'fsmkerm_NoInitialStateException' is a specialization of 'FSMException'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fsmkerm_State' and 'fsmkerm_FSM'. From 'fsmkerm_State', the role 'State' has cardinality 0..*, and from 'fsmkerm_FSM', the role 'owningFSM' has cardinality 0..*.
+An association connects 'fsmkerm_State' and 'fsmkerm_FSM'. From 'fsmkerm_State', the role 'fsmkerm_State' has cardinality 0..*, and from 'fsmkerm_FSM', the role 'fsmkerm_FSM' has cardinality 0..*.
+An association connects 'fsmkerm_State' and 'fsmkerm_FSM'. From 'fsmkerm_State', the role 'fsmkerm_State4' has cardinality 0..*, and from 'fsmkerm_FSM', the role 'fsmkerm_FSM3' has cardinality 0..*.
+An association connects 'fsmkerm_FSM' and 'fsmkerm_State'. From 'fsmkerm_FSM', the role 'fsmkerm_FSM6' has cardinality 0..*, and from 'fsmkerm_State', the role 'fsmkerm_State7' has cardinality 0..*.
+An association connects 'fsmkerm_FSM' and 'fsmkerm_Transition'. From 'fsmkerm_FSM', the role 'fsmkerm_FSM9' has cardinality 0..*, and from 'fsmkerm_Transition', the role 'fsmkerm_Transition' has cardinality 0..*.
+An association connects 'fsmkerm_FSM' and 'fsmkerm_FSMException'. From 'fsmkerm_FSM', the role 'fsmkerm_FSM11' has cardinality 0..*, and from 'fsmkerm_FSMException', the role 'fsmkerm_FSMException' has cardinality 0..*.
+An association connects 'fsmkerm_FSM' and 'fsmkerm_State'. From 'fsmkerm_FSM', the role 'FSM' has cardinality 0..*, and from 'fsmkerm_State', the role 'ownedState' has cardinality 0..*.
+An association connects 'fsmkerm_Transition' and 'fsmkerm_State'. From 'fsmkerm_Transition', the role 'Transition' has cardinality 0..*, and from 'fsmkerm_State', the role 'source' has cardinality 0..*.
+An association connects 'fsmkerm_Transition' and 'fsmkerm_State'. From 'fsmkerm_Transition', the role 'Transition15' has cardinality 0..*, and from 'fsmkerm_State', the role 'target' has cardinality 0..*.
+An association connects 'fsmkerm_Transition' and 'fsmkerm_State'. From 'fsmkerm_Transition', the role 'outgoingTransition' has cardinality 0..*, and from 'fsmkerm_State', the role 'State17' has cardinality 0..*.
+An association connects 'fsmkerm_State' and 'fsmkerm_Transition'. From 'fsmkerm_State', the role 'State19' has cardinality 0..*, and from 'fsmkerm_Transition', the role 'incomingTransition' has cardinality 0..*.

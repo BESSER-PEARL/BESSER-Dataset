@@ -1,0 +1,736 @@
+The domain model 'QVTOperational' describes the core structural elements and their relationships within the system.
+
+The model defines 189 main class(es).
+
+'QVTRelation_DomainPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_ImperativeOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_BreakExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_ReflectiveCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTTemplate_CollectionTemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTCore_GuardPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_AltExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_Extent' represents an important domain concept.
+It does not declare any attributes.
+
+'Transformation' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ReturnExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ImperativeLoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_LogExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTCore_RealizedVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_ResolveInExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_NullLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_RealLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_IteratorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_AssignExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_VariableInitExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_InvalidType' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_Typedef' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_Tag' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_Factory' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTCore_Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTBase_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_CatchExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTCore_EnforcementOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'Area' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_DictLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_OperationalTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTBase_Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ImperativeIterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTRelation_Key' represents an important domain concept.
+It does not declare any attributes.
+
+'CorePattern' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationBody' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTRelation_RelationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'ReflectiveCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ListType' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ContinueExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_NavigationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTRelation_RelationDomainAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ForExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_CollectionItem' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTCore_VariableAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTRelation_Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_TemplateParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTCore_Area' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ImperativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTRelation_OppositePropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_WhileExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_TypeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_InvalidLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_Constructor' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_UnlimitedNaturalExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTCore_CoreDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_ResolveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_BooleanLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_URIExtent' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTBase_TypedModel' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_MappingCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ComputeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTCore_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_ReflectiveSequence' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_ModelParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_OperationBody' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTBase_Transformation' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTBase_Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ListLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_ImperativeCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_ContextualProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_ExpressionInOcl' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_AssertExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_RaiseExp' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTTemplate_TemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_UnlinkExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_ObjectExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_Helper' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_ModelType' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTCore_PropertyAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_InstantiationExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_MappingOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_EntryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'Module' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_IntegerLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Extent' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_EnumLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTCore_CorePattern' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTTemplate_ObjectTemplateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTTemplate_PropertyTemplateItem' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_DictLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_SwitchExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_FeatureCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Object' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_MappingBody' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTRelation_RelationDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_ConstructorBody' represents an important domain concept.
+It does not declare any attributes.
+
+'EMOF_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_StringLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTBase_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_VarParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTBase_FunctionParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTBase_Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_TryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTCore_BottomPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_BlockExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_CollectionLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'InstantiationExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ResolveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_MappingParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTRelation_RelationImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'VarParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_DictionaryType' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeLoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_CollectionRange' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTOperational_ModuleImport' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'EssentialOCL_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'QVTRelation_RelationalTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DirectionKind' defines the following possible values: 'in', 'inout', 'out'.
+The enumeration 'EnforcementMode' defines the following possible values: 'Creation', 'Deletion'.
+The enumeration 'ImportKind' defines the following possible values: 'extension', 'access'.
+The enumeration 'SeverityKind' defines the following possible values: 'fatal', 'error', 'warning'.
+The enumeration 'CollectionKind' defines the following possible values: 'Sequence', 'Collection', 'Set', 'OrderedSet', 'Bag'.
+
+The model also captures inheritance relationships between classes.
+The class 'EMOF_Class' is a specialization of 'Type'.
+The class 'EMOF_Comment' is a specialization of 'Element'.
+The class 'EMOF_DataType' is a specialization of 'Type'.
+The class 'EMOF_Element' is a specialization of 'Object'.
+The class 'EMOF_Enumeration' is a specialization of 'DataType'.
+The class 'EMOF_EnumerationLiteral' is a specialization of 'NamedElement'.
+The class 'EMOF_Extent' is a specialization of 'Object'.
+The class 'EMOF_Factory' is a specialization of 'Element'.
+The class 'EMOF_NamedElement' is a specialization of 'Element'.
+The class 'EMOF_Operation' is a specialization of 'TypedElement'.
+The class 'EMOF_Operation' is a specialization of 'MultiplicityElement'.
+The class 'EMOF_Package' is a specialization of 'NamedElement'.
+The class 'EMOF_Parameter' is a specialization of 'TypedElement'.
+The class 'EMOF_Parameter' is a specialization of 'MultiplicityElement'.
+The class 'EMOF_PrimitiveType' is a specialization of 'DataType'.
+The class 'EMOF_Property' is a specialization of 'TypedElement'.
+The class 'EMOF_Property' is a specialization of 'MultiplicityElement'.
+The class 'EMOF_ReflectiveCollection' is a specialization of 'Object'.
+The class 'EMOF_ReflectiveSequence' is a specialization of 'ReflectiveCollection'.
+The class 'EMOF_Tag' is a specialization of 'Element'.
+The class 'EMOF_Type' is a specialization of 'NamedElement'.
+The class 'EMOF_TypedElement' is a specialization of 'NamedElement'.
+The class 'EMOF_URIExtent' is a specialization of 'Extent'.
+The class 'EssentialOCL_AnyType' is a specialization of 'Type'.
+The class 'EssentialOCL_BagType' is a specialization of 'CollectionType'.
+The class 'EssentialOCL_BooleanLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'EssentialOCL_CallExp' is a specialization of 'OclExpression'.
+The class 'EssentialOCL_CollectionItem' is a specialization of 'CollectionLiteralPart'.
+The class 'EssentialOCL_CollectionLiteralExp' is a specialization of 'LiteralExp'.
+The class 'EssentialOCL_CollectionLiteralPart' is a specialization of 'TypedElement'.
+The class 'EssentialOCL_CollectionRange' is a specialization of 'CollectionLiteralPart'.
+The class 'EssentialOCL_CollectionType' is a specialization of 'DataType'.
+The class 'EssentialOCL_EnumLiteralExp' is a specialization of 'LiteralExp'.
+The class 'EssentialOCL_ExpressionInOcl' is a specialization of 'TypedElement'.
+The class 'EssentialOCL_FeatureCallExp' is a specialization of 'CallExp'.
+The class 'EssentialOCL_IfExp' is a specialization of 'OclExpression'.
+The class 'EssentialOCL_IntegerLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'EssentialOCL_InvalidLiteralExp' is a specialization of 'LiteralExp'.
+The class 'EssentialOCL_InvalidType' is a specialization of 'Type'.
+The class 'EssentialOCL_IterateExp' is a specialization of 'LoopExp'.
+The class 'EssentialOCL_IteratorExp' is a specialization of 'LoopExp'.
+The class 'EssentialOCL_LetExp' is a specialization of 'OclExpression'.
+The class 'EssentialOCL_LiteralExp' is a specialization of 'OclExpression'.
+The class 'EssentialOCL_LoopExp' is a specialization of 'CallExp'.
+The class 'EssentialOCL_LoopExp' is a specialization of 'OclExpression'.
+The class 'EssentialOCL_NavigationCallExp' is a specialization of 'FeatureCallExp'.
+The class 'EssentialOCL_NullLiteralExp' is a specialization of 'LiteralExp'.
+The class 'EssentialOCL_NumericLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'EssentialOCL_OclExpression' is a specialization of 'TypedElement'.
+The class 'EssentialOCL_OperationCallExp' is a specialization of 'FeatureCallExp'.
+The class 'EssentialOCL_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'EssentialOCL_PrimitiveLiteralExp' is a specialization of 'LiteralExp'.
+The class 'EssentialOCL_PropertyCallExp' is a specialization of 'NavigationCallExp'.
+The class 'EssentialOCL_RealLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'EssentialOCL_SequenceType' is a specialization of 'CollectionType'.
+The class 'EssentialOCL_SetType' is a specialization of 'CollectionType'.
+The class 'EssentialOCL_StringLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'EssentialOCL_TemplateParameterType' is a specialization of 'Type'.
+The class 'EssentialOCL_TupleLiteralExp' is a specialization of 'LiteralExp'.
+The class 'EssentialOCL_TupleLiteralPart' is a specialization of 'TypedElement'.
+The class 'EssentialOCL_TupleType' is a specialization of 'Class'.
+The class 'EssentialOCL_TupleType' is a specialization of 'DataType'.
+The class 'EssentialOCL_TypeExp' is a specialization of 'OclExpression'.
+The class 'EssentialOCL_UnlimitedNaturalExp' is a specialization of 'NumericLiteralExp'.
+The class 'EssentialOCL_Variable' is a specialization of 'TypedElement'.
+The class 'EssentialOCL_VariableExp' is a specialization of 'OclExpression'.
+The class 'EssentialOCL_VoidType' is a specialization of 'Type'.
+The class 'QVTBase_Domain' is a specialization of 'NamedElement'.
+The class 'QVTBase_Function' is a specialization of 'Operation'.
+The class 'QVTBase_FunctionParameter' is a specialization of 'Variable'.
+The class 'QVTBase_FunctionParameter' is a specialization of 'Parameter'.
+The class 'QVTBase_Pattern' is a specialization of 'Element'.
+The class 'QVTBase_Predicate' is a specialization of 'Element'.
+The class 'QVTBase_Rule' is a specialization of 'NamedElement'.
+The class 'QVTBase_Transformation' is a specialization of 'Class'.
+The class 'QVTBase_Transformation' is a specialization of 'Package'.
+The class 'QVTBase_TypedModel' is a specialization of 'NamedElement'.
+The class 'QVTCore_Assignment' is a specialization of 'Element'.
+The class 'QVTCore_BottomPattern' is a specialization of 'CorePattern'.
+The class 'QVTCore_CoreDomain' is a specialization of 'Domain'.
+The class 'QVTCore_CoreDomain' is a specialization of 'Area'.
+The class 'QVTCore_CorePattern' is a specialization of 'Pattern'.
+The class 'QVTCore_EnforcementOperation' is a specialization of 'Element'.
+The class 'QVTCore_GuardPattern' is a specialization of 'CorePattern'.
+The class 'QVTCore_Mapping' is a specialization of 'Rule'.
+The class 'QVTCore_Mapping' is a specialization of 'Area'.
+The class 'QVTCore_PropertyAssignment' is a specialization of 'Assignment'.
+The class 'QVTCore_RealizedVariable' is a specialization of 'Variable'.
+The class 'QVTCore_VariableAssignment' is a specialization of 'Assignment'.
+The class 'QVTTemplate_CollectionTemplateExp' is a specialization of 'TemplateExp'.
+The class 'QVTTemplate_ObjectTemplateExp' is a specialization of 'TemplateExp'.
+The class 'QVTTemplate_PropertyTemplateItem' is a specialization of 'Element'.
+The class 'QVTTemplate_TemplateExp' is a specialization of 'LiteralExp'.
+The class 'QVTRelation_DomainPattern' is a specialization of 'Pattern'.
+The class 'QVTRelation_Key' is a specialization of 'Element'.
+The class 'QVTRelation_OppositePropertyCallExp' is a specialization of 'PropertyCallExp'.
+The class 'QVTRelation_Relation' is a specialization of 'Rule'.
+The class 'QVTRelation_RelationCallExp' is a specialization of 'OclExpression'.
+The class 'QVTRelation_RelationDomain' is a specialization of 'Domain'.
+The class 'QVTRelation_RelationDomainAssignment' is a specialization of 'Element'.
+The class 'QVTRelation_RelationImplementation' is a specialization of 'Element'.
+The class 'QVTRelation_RelationalTransformation' is a specialization of 'Transformation'.
+The class 'ImperativeOCL_AltExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_AssertExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_AssignExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_BlockExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_BreakExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_CatchExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_ComputeExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_ContinueExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_DictLiteralExp' is a specialization of 'LiteralExp'.
+The class 'ImperativeOCL_DictLiteralPart' is a specialization of 'Element'.
+The class 'ImperativeOCL_DictionaryType' is a specialization of 'CollectionType'.
+The class 'ImperativeOCL_ForExp' is a specialization of 'ImperativeLoopExp'.
+The class 'ImperativeOCL_ImperativeExpression' is a specialization of 'OclExpression'.
+The class 'ImperativeOCL_ImperativeIterateExp' is a specialization of 'ImperativeLoopExp'.
+The class 'ImperativeOCL_ImperativeLoopExp' is a specialization of 'LoopExp'.
+The class 'ImperativeOCL_ImperativeLoopExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_InstantiationExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_ListLiteralExp' is a specialization of 'LiteralExp'.
+The class 'ImperativeOCL_ListType' is a specialization of 'CollectionType'.
+The class 'ImperativeOCL_LogExp' is a specialization of 'OperationCallExp'.
+The class 'ImperativeOCL_LogExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_RaiseExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_ReturnExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_SwitchExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_TryExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_Typedef' is a specialization of 'Class'.
+The class 'ImperativeOCL_UnlinkExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_VariableInitExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_WhileExp' is a specialization of 'ImperativeExpression'.
+The class 'QVTOperational_Constructor' is a specialization of 'ImperativeOperation'.
+The class 'QVTOperational_ConstructorBody' is a specialization of 'OperationBody'.
+The class 'QVTOperational_ContextualProperty' is a specialization of 'Property'.
+The class 'QVTOperational_EntryOperation' is a specialization of 'ImperativeOperation'.
+The class 'QVTOperational_Helper' is a specialization of 'ImperativeOperation'.
+The class 'QVTOperational_ImperativeCallExp' is a specialization of 'OperationCallExp'.
+The class 'QVTOperational_ImperativeCallExp' is a specialization of 'ImperativeExpression'.
+The class 'QVTOperational_ImperativeOperation' is a specialization of 'Operation'.
+The class 'QVTOperational_Library' is a specialization of 'Module'.
+The class 'QVTOperational_MappingBody' is a specialization of 'OperationBody'.
+The class 'QVTOperational_MappingCallExp' is a specialization of 'ImperativeCallExp'.
+The class 'QVTOperational_MappingOperation' is a specialization of 'ImperativeOperation'.
+The class 'QVTOperational_MappingParameter' is a specialization of 'VarParameter'.
+The class 'QVTOperational_ModelParameter' is a specialization of 'VarParameter'.
+The class 'QVTOperational_ModelType' is a specialization of 'Class'.
+The class 'QVTOperational_Module' is a specialization of 'Class'.
+The class 'QVTOperational_Module' is a specialization of 'Package'.
+The class 'QVTOperational_ModuleImport' is a specialization of 'Element'.
+The class 'QVTOperational_ObjectExp' is a specialization of 'InstantiationExp'.
+The class 'QVTOperational_OperationBody' is a specialization of 'Element'.
+The class 'QVTOperational_OperationalTransformation' is a specialization of 'Module'.
+The class 'QVTOperational_ResolveExp' is a specialization of 'CallExp'.
+The class 'QVTOperational_ResolveExp' is a specialization of 'ImperativeExpression'.
+The class 'QVTOperational_ResolveInExp' is a specialization of 'ResolveExp'.
+The class 'QVTOperational_VarParameter' is a specialization of 'Variable'.
+The class 'QVTOperational_VarParameter' is a specialization of 'Parameter'.

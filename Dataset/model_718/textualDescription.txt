@@ -1,0 +1,476 @@
+The domain model 'foundation' describes the core structural elements and their relationships within the system.
+
+The model defines 107 main class(es).
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'GeneralizableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'PresentationElement' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_BehavioralFeature' represents an important domain concept.
+It has one attribute: 'isQuery', which is of type str.
+
+'Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_AssociationEnd' represents an important domain concept.
+It has the following attributes: 'isNavigable', which is of type str; 'targetScope', which is of type str; 'aggregation', which is of type str; 'ordering', which is of type str; 'changeability', which is of type str.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'TagDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_data_types_MappingExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Feature' represents an important domain concept.
+It has one attribute: 'ownerScope', which is of type str.
+
+'TemplateArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_data_types_TypeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'core_GeneralizableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'AssociationEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'CallEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementResidence' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_StructuralFeature' represents an important domain concept.
+It has the following attributes: 'changeability', which is of type str; 'ordering', which is of type str; 'targetScope', which is of type str.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_PresentationElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Method' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_data_types_IterationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Stereotype' represents an important domain concept.
+It has the following attributes: 'icon', which is of type str; 'baseClass', which is of type str.
+
+'foundation_core_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_data_types_ObjectSetExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TaggedValue' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'AssociationEndRole' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_data_types_ArgListsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Permission' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_TagDefinition' represents an important domain concept.
+It has one attribute: 'tagType', which is of type str.
+
+'foundation_core_Class' represents an important domain concept.
+It has one attribute: 'isActive', which is of type str.
+
+'EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_TemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_ModelElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'visibility', which is of type str; 'isSpecification', which is of type str.
+
+'foundation_data_types_BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityRange' represents an important domain concept.
+It does not declare any attributes.
+
+'Generalization' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Comment' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_ProgrammingLanguageDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Stereotype' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_data_types_ActionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_TemplateArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_GeneralizableElement' represents an important domain concept.
+It has the following attributes: 'isRoot', which is of type str; 'isAbstract', which is of type str; 'isLeaf', which is of type str.
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'Collaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_data_types_ProcedureExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'CallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcedureExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_data_types_Multiplicity' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Usage' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Multiplicity' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Operation' represents an important domain concept.
+It has the following attributes: 'isRoot', which is of type str; 'isLeaf', which is of type str; 'specification', which is of type str; 'isAbstract', which is of type str; 'concurrency', which is of type str.
+
+'foundation_core_Parameter' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'foundation_core_ElementResidence' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_data_types_Expression' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'body', which is of type str.
+
+'MappingExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_TaggedValue' represents an important domain concept.
+It has one attribute: 'dataValue', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'CreateAction' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_data_types_TimeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_data_types_MultiplicityRange' represents an important domain concept.
+It has the following attributes: 'lower', which is of type str; 'upper', which is of type str.
+
+'foundation_core_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'foundation_core_Generalization' represents an important domain concept.
+It has one attribute: 'discriminator', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AggregationKind' defines the following possible values: 'aggregate', 'none', 'composite'.
+The enumeration 'ParameterDirectionKind' defines the following possible values: 'inout', 'out', 'return', 'in'.
+The enumeration 'CallConcurrencyKind' defines the following possible values: 'guarded', 'sequential', 'concurrent'.
+The enumeration 'PseudostateKind' defines the following possible values: 'deepHistory', 'initial', 'junction', 'choice', 'fork', 'join', 'shallowHistory'.
+The enumeration 'VisibilityKind' defines the following possible values: 'private', 'public', 'package', 'protected'.
+The enumeration 'ScopeKind' defines the following possible values: 'instance', 'classifier'.
+The enumeration 'OrderingKind' defines the following possible values: 'unordered', 'ordered'.
+The enumeration 'ChangeableKind' defines the following possible values: 'changeable', 'addOnly', 'frozen'.
+
+The model also captures inheritance relationships between classes.
+The class 'foundation_data_types_BooleanExpression' is a specialization of 'Expression'.
+The class 'foundation_data_types_TypeExpression' is a specialization of 'Expression'.
+The class 'foundation_data_types_MappingExpression' is a specialization of 'Expression'.
+The class 'foundation_data_types_ProcedureExpression' is a specialization of 'Expression'.
+The class 'foundation_data_types_ObjectSetExpression' is a specialization of 'Expression'.
+The class 'foundation_data_types_ActionExpression' is a specialization of 'Expression'.
+The class 'foundation_data_types_IterationExpression' is a specialization of 'Expression'.
+The class 'foundation_data_types_TimeExpression' is a specialization of 'Expression'.
+The class 'foundation_data_types_ArgListsExpression' is a specialization of 'Expression'.
+The class 'foundation_core_ModelElement' is a specialization of 'Element'.
+The class 'foundation_core_GeneralizableElement' is a specialization of 'ModelElement'.
+The class 'foundation_core_Namespace' is a specialization of 'ModelElement'.
+The class 'foundation_core_Classifier' is a specialization of 'core_GeneralizableElement'.
+The class 'foundation_core_Classifier' is a specialization of 'core_Namespace'.
+The class 'foundation_core_Class' is a specialization of 'Classifier'.
+The class 'foundation_core_DataType' is a specialization of 'Classifier'.
+The class 'foundation_core_Feature' is a specialization of 'ModelElement'.
+The class 'foundation_core_StructuralFeature' is a specialization of 'Feature'.
+The class 'foundation_core_AssociationEnd' is a specialization of 'ModelElement'.
+The class 'foundation_core_Interface' is a specialization of 'Classifier'.
+The class 'foundation_core_Constraint' is a specialization of 'ModelElement'.
+The class 'foundation_core_Relationship' is a specialization of 'ModelElement'.
+The class 'foundation_core_Association' is a specialization of 'core_GeneralizableElement'.
+The class 'foundation_core_Association' is a specialization of 'core_Relationship'.
+The class 'foundation_core_Attribute' is a specialization of 'StructuralFeature'.
+The class 'foundation_core_BehavioralFeature' is a specialization of 'Feature'.
+The class 'foundation_core_Operation' is a specialization of 'BehavioralFeature'.
+The class 'foundation_core_Parameter' is a specialization of 'ModelElement'.
+The class 'foundation_core_Method' is a specialization of 'BehavioralFeature'.
+The class 'foundation_core_Generalization' is a specialization of 'Relationship'.
+The class 'foundation_core_AssociationClass' is a specialization of 'core_Class'.
+The class 'foundation_core_AssociationClass' is a specialization of 'core_Association'.
+The class 'foundation_core_Dependency' is a specialization of 'Relationship'.
+The class 'foundation_core_Abstraction' is a specialization of 'Dependency'.
+The class 'foundation_core_PresentationElement' is a specialization of 'Element'.
+The class 'foundation_core_Usage' is a specialization of 'Dependency'.
+The class 'foundation_core_Binding' is a specialization of 'Dependency'.
+The class 'foundation_core_Component' is a specialization of 'Classifier'.
+The class 'foundation_core_Node' is a specialization of 'Classifier'.
+The class 'foundation_core_Permission' is a specialization of 'Dependency'.
+The class 'foundation_core_Comment' is a specialization of 'ModelElement'.
+The class 'foundation_core_Flow' is a specialization of 'Relationship'.
+The class 'foundation_core_Primitive' is a specialization of 'DataType'.
+The class 'foundation_core_Enumeration' is a specialization of 'DataType'.
+The class 'foundation_core_EnumerationLiteral' is a specialization of 'ModelElement'.
+The class 'foundation_core_Stereotype' is a specialization of 'GeneralizableElement'.
+The class 'foundation_core_TagDefinition' is a specialization of 'ModelElement'.
+The class 'foundation_core_TaggedValue' is a specialization of 'ModelElement'.
+The class 'foundation_core_ProgrammingLanguageDataType' is a specialization of 'DataType'.
+The class 'foundation_core_Artifact' is a specialization of 'Classifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'foundation_data_types_Multiplicity' and 'MultiplicityRange'. From 'foundation_data_types_Multiplicity', the role 'MultiplicityRange' has cardinality 0..*, and from 'MultiplicityRange', the role 'data_types' has cardinality 0..*.
+An association connects 'foundation_data_types_MultiplicityRange' and 'Multiplicity'. From 'foundation_data_types_MultiplicityRange', the role 'Multiplicity' has cardinality 0..*, and from 'Multiplicity', the role 'data_types2' has cardinality 0..*.
+An association connects 'foundation_core_ModelElement' and 'Namespace'. From 'foundation_core_ModelElement', the role 'Namespace' has cardinality 0..*, and from 'Namespace', the role 'core' has cardinality 0..*.
+An association connects 'Dependency' and 'foundation_core_ModelElement'. From 'Dependency', the role 'core5' has cardinality 0..*, and from 'foundation_core_ModelElement', the role 'Dependency' has cardinality 0..*.
+An association connects 'Constraint' and 'foundation_core_ModelElement'. From 'Constraint', the role 'core7' has cardinality 0..*, and from 'foundation_core_ModelElement', the role 'Constraint' has cardinality 0..*.
+An association connects 'Dependency' and 'foundation_core_ModelElement'. From 'Dependency', the role 'core10' has cardinality 0..*, and from 'foundation_core_ModelElement', the role 'Dependency9' has cardinality 0..*.
+An association connects 'PresentationElement' and 'foundation_core_ModelElement'. From 'PresentationElement', the role 'core12' has cardinality 0..*, and from 'foundation_core_ModelElement', the role 'PresentationElement' has cardinality 0..*.
+An association connects 'Flow' and 'foundation_core_ModelElement'. From 'Flow', the role 'core14' has cardinality 0..*, and from 'foundation_core_ModelElement', the role 'Flow' has cardinality 0..*.
+An association connects 'foundation_core_ModelElement' and 'Flow'. From 'foundation_core_ModelElement', the role 'Flow16' has cardinality 0..*, and from 'Flow', the role 'core17' has cardinality 0..*.
+An association connects 'Comment' and 'foundation_core_ModelElement'. From 'Comment', the role 'core19' has cardinality 0..*, and from 'foundation_core_ModelElement', the role 'Comment' has cardinality 0..*.
+An association connects 'ElementResidence' and 'foundation_core_ModelElement'. From 'ElementResidence', the role 'core21' has cardinality 0..*, and from 'foundation_core_ModelElement', the role 'ElementResidence' has cardinality 0..*.
+An association connects 'foundation_core_ModelElement' and 'TemplateParameter'. From 'foundation_core_ModelElement', the role 'TemplateParameter' has cardinality 0..*, and from 'TemplateParameter', the role 'core23' has cardinality 0..*.
+An association connects 'foundation_core_ModelElement' and 'Stereotype'. From 'foundation_core_ModelElement', the role 'Stereotype' has cardinality 0..*, and from 'Stereotype', the role 'core25' has cardinality 0..*.
+An association connects 'foundation_core_ModelElement' and 'TaggedValue'. From 'foundation_core_ModelElement', the role 'TaggedValue' has cardinality 0..*, and from 'TaggedValue', the role 'core27' has cardinality 0..*.
+An association connects 'TaggedValue' and 'foundation_core_ModelElement'. From 'TaggedValue', the role 'core30' has cardinality 0..*, and from 'foundation_core_ModelElement', the role 'TaggedValue29' has cardinality 0..*.
+An association connects 'StateMachine' and 'foundation_core_ModelElement'. From 'StateMachine', the role 'behavioral_elements.ecorestate_machines' has cardinality 0..*, and from 'foundation_core_ModelElement', the role 'StateMachine' has cardinality 0..*.
+An association connects 'foundation_core_GeneralizableElement' and 'Generalization'. From 'foundation_core_GeneralizableElement', the role 'Generalization' has cardinality 0..*, and from 'Generalization', the role 'core33' has cardinality 0..*.
+An association connects 'foundation_core_GeneralizableElement' and 'Generalization'. From 'foundation_core_GeneralizableElement', the role 'Generalization35' has cardinality 0..*, and from 'Generalization', the role 'core36' has cardinality 0..*.
+An association connects 'ModelElement' and 'foundation_core_Namespace'. From 'ModelElement', the role 'core38' has cardinality 0..*, and from 'foundation_core_Namespace', the role 'ModelElement' has cardinality 0..*.
+An association connects 'foundation_core_Classifier' and 'Feature'. From 'foundation_core_Classifier', the role 'Feature' has cardinality 0..*, and from 'Feature', the role 'core40' has cardinality 0..*.
+An association connects 'StructuralFeature' and 'foundation_core_Classifier'. From 'StructuralFeature', the role 'core42' has cardinality 0..*, and from 'foundation_core_Classifier', the role 'StructuralFeature' has cardinality 0..*.
+An association connects 'Parameter' and 'foundation_core_Classifier'. From 'Parameter', the role 'core44' has cardinality 0..*, and from 'foundation_core_Classifier', the role 'Parameter' has cardinality 0..*.
+An association connects 'foundation_core_Classifier' and 'AssociationEnd'. From 'foundation_core_Classifier', the role 'AssociationEnd' has cardinality 0..*, and from 'AssociationEnd', the role 'core46' has cardinality 0..*.
+An association connects 'foundation_core_Classifier' and 'AssociationEnd'. From 'foundation_core_Classifier', the role 'AssociationEnd48' has cardinality 0..*, and from 'AssociationEnd', the role 'core49' has cardinality 0..*.
+An association connects 'Generalization' and 'foundation_core_Classifier'. From 'Generalization', the role 'core52' has cardinality 0..*, and from 'foundation_core_Classifier', the role 'Generalization51' has cardinality 0..*.
+An association connects 'CreateAction' and 'foundation_core_Classifier'. From 'CreateAction', the role 'behavioral_elements.ecorecommon_behavior' has cardinality 0..*, and from 'foundation_core_Classifier', the role 'CreateAction' has cardinality 0..*.
+An association connects 'foundation_core_Classifier' and 'Collaboration'. From 'foundation_core_Classifier', the role 'Collaboration' has cardinality 0..*, and from 'Collaboration', the role 'behavioral_elements.ecorecollaborations' has cardinality 0..*.
+An association connects 'Classifier' and 'foundation_core_Feature'. From 'Classifier', the role 'core56' has cardinality 0..*, and from 'foundation_core_Feature', the role 'Classifier' has cardinality 0..*.
+An association connects 'foundation_core_StructuralFeature' and 'Multiplicity'. From 'foundation_core_StructuralFeature', the role 'foundation_core_StructuralFeature' has cardinality 0..*, and from 'Multiplicity', the role 'Multiplicity58' has cardinality 0..*.
+An association connects 'foundation_core_StructuralFeature' and 'Classifier'. From 'foundation_core_StructuralFeature', the role 'Classifier60' has cardinality 0..*, and from 'Classifier', the role 'core61' has cardinality 0..*.
+An association connects 'Multiplicity' and 'foundation_core_AssociationEnd'. From 'Multiplicity', the role 'Multiplicity63' has cardinality 0..*, and from 'foundation_core_AssociationEnd', the role 'foundation_core_AssociationEnd' has cardinality 0..*.
+An association connects 'foundation_core_AssociationEnd' and 'Association'. From 'foundation_core_AssociationEnd', the role 'Association' has cardinality 0..*, and from 'Association', the role 'core65' has cardinality 0..*.
+An association connects 'Attribute' and 'foundation_core_AssociationEnd'. From 'Attribute', the role 'core67' has cardinality 0..*, and from 'foundation_core_AssociationEnd', the role 'Attribute' has cardinality 0..*.
+An association connects 'Classifier' and 'foundation_core_AssociationEnd'. From 'Classifier', the role 'core70' has cardinality 0..*, and from 'foundation_core_AssociationEnd', the role 'Classifier69' has cardinality 0..*.
+An association connects 'Classifier' and 'foundation_core_AssociationEnd'. From 'Classifier', the role 'core73' has cardinality 0..*, and from 'foundation_core_AssociationEnd', the role 'Classifier72' has cardinality 0..*.
+An association connects 'BooleanExpression' and 'foundation_core_Constraint'. From 'BooleanExpression', the role 'BooleanExpression' has cardinality 0..*, and from 'foundation_core_Constraint', the role 'foundation_core_Constraint' has cardinality 0..*.
+An association connects 'ModelElement' and 'foundation_core_Constraint'. From 'ModelElement', the role 'core77' has cardinality 0..*, and from 'foundation_core_Constraint', the role 'ModelElement76' has cardinality 0..*.
+An association connects 'foundation_core_Constraint' and 'Stereotype'. From 'foundation_core_Constraint', the role 'Stereotype79' has cardinality 0..*, and from 'Stereotype', the role 'core80' has cardinality 0..*.
+An association connects 'foundation_core_Association' and 'AssociationEnd'. From 'foundation_core_Association', the role 'AssociationEnd82' has cardinality 0..*, and from 'AssociationEnd', the role 'core83' has cardinality 0..*.
+An association connects 'Expression' and 'foundation_core_Attribute'. From 'Expression', the role 'Expression' has cardinality 0..*, and from 'foundation_core_Attribute', the role 'foundation_core_Attribute' has cardinality 0..*.
+An association connects 'AssociationEnd' and 'foundation_core_Attribute'. From 'AssociationEnd', the role 'core87' has cardinality 0..*, and from 'foundation_core_Attribute', the role 'AssociationEnd86' has cardinality 0..*.
+An association connects 'foundation_core_Attribute' and 'AssociationEndRole'. From 'foundation_core_Attribute', the role 'AssociationEndRole' has cardinality 0..*, and from 'AssociationEndRole', the role 'behavioral_elements.ecorecollaborations89' has cardinality 0..*.
+An association connects 'Parameter' and 'foundation_core_BehavioralFeature'. From 'Parameter', the role 'core92' has cardinality 0..*, and from 'foundation_core_BehavioralFeature', the role 'Parameter91' has cardinality 0..*.
+An association connects 'foundation_core_BehavioralFeature' and 'Signal'. From 'foundation_core_BehavioralFeature', the role 'Signal' has cardinality 0..*, and from 'Signal', the role 'behavioral_elements.ecorecommon_behavior94' has cardinality 0..*.
+An association connects 'foundation_core_Operation' and 'Method'. From 'foundation_core_Operation', the role 'Method' has cardinality 0..*, and from 'Method', the role 'core96' has cardinality 0..*.
+An association connects 'foundation_core_Operation' and 'CallAction'. From 'foundation_core_Operation', the role 'CallAction' has cardinality 0..*, and from 'CallAction', the role 'behavioral_elements.ecorecommon_behavior98' has cardinality 0..*.
+An association connects 'foundation_core_Operation' and 'CallEvent'. From 'foundation_core_Operation', the role 'CallEvent' has cardinality 0..*, and from 'CallEvent', the role 'behavioral_elements.ecorestate_machines100' has cardinality 0..*.
+An association connects 'Collaboration' and 'foundation_core_Operation'. From 'Collaboration', the role 'behavioral_elements.ecorecollaborations103' has cardinality 0..*, and from 'foundation_core_Operation', the role 'Collaboration102' has cardinality 0..*.
+An association connects 'foundation_core_Parameter' and 'Expression'. From 'foundation_core_Parameter', the role 'foundation_core_Parameter' has cardinality 0..*, and from 'Expression', the role 'Expression105' has cardinality 0..*.
+An association connects 'BehavioralFeature' and 'foundation_core_Parameter'. From 'BehavioralFeature', the role 'core107' has cardinality 0..*, and from 'foundation_core_Parameter', the role 'BehavioralFeature' has cardinality 0..*.
+An association connects 'Classifier' and 'foundation_core_Parameter'. From 'Classifier', the role 'core110' has cardinality 0..*, and from 'foundation_core_Parameter', the role 'Classifier109' has cardinality 0..*.
+An association connects 'foundation_core_Method' and 'ProcedureExpression'. From 'foundation_core_Method', the role 'foundation_core_Method' has cardinality 0..*, and from 'ProcedureExpression', the role 'ProcedureExpression' has cardinality 0..*.
+An association connects 'foundation_core_Method' and 'Operation'. From 'foundation_core_Method', the role 'Operation' has cardinality 0..*, and from 'Operation', the role 'core113' has cardinality 0..*.
+An association connects 'foundation_core_Generalization' and 'GeneralizableElement'. From 'foundation_core_Generalization', the role 'GeneralizableElement' has cardinality 0..*, and from 'GeneralizableElement', the role 'core115' has cardinality 0..*.
+An association connects 'foundation_core_Generalization' and 'GeneralizableElement'. From 'foundation_core_Generalization', the role 'GeneralizableElement117' has cardinality 0..*, and from 'GeneralizableElement', the role 'core118' has cardinality 0..*.
+An association connects 'foundation_core_Generalization' and 'Classifier'. From 'foundation_core_Generalization', the role 'Classifier120' has cardinality 0..*, and from 'Classifier', the role 'core121' has cardinality 0..*.
+An association connects 'ModelElement' and 'foundation_core_Dependency'. From 'ModelElement', the role 'core124' has cardinality 0..*, and from 'foundation_core_Dependency', the role 'ModelElement123' has cardinality 0..*.
+An association connects 'ModelElement' and 'foundation_core_Dependency'. From 'ModelElement', the role 'core127' has cardinality 0..*, and from 'foundation_core_Dependency', the role 'ModelElement126' has cardinality 0..*.
+An association connects 'MappingExpression' and 'foundation_core_Abstraction'. From 'MappingExpression', the role 'MappingExpression' has cardinality 0..*, and from 'foundation_core_Abstraction', the role 'foundation_core_Abstraction' has cardinality 0..*.
+An association connects 'ModelElement' and 'foundation_core_PresentationElement'. From 'ModelElement', the role 'core131' has cardinality 0..*, and from 'foundation_core_PresentationElement', the role 'ModelElement130' has cardinality 0..*.
+An association connects 'foundation_core_Binding' and 'TemplateArgument'. From 'foundation_core_Binding', the role 'TemplateArgument' has cardinality 0..*, and from 'TemplateArgument', the role 'core133' has cardinality 0..*.
+An association connects 'foundation_core_Component' and 'Node'. From 'foundation_core_Component', the role 'Node' has cardinality 0..*, and from 'Node', the role 'core135' has cardinality 0..*.
+An association connects 'ElementResidence' and 'foundation_core_Component'. From 'ElementResidence', the role 'core138' has cardinality 0..*, and from 'foundation_core_Component', the role 'ElementResidence137' has cardinality 0..*.
+An association connects 'foundation_core_Component' and 'Artifact'. From 'foundation_core_Component', the role 'Artifact' has cardinality 0..*, and from 'Artifact', the role 'core140' has cardinality 0..*.
+An association connects 'foundation_core_Node' and 'Component'. From 'foundation_core_Node', the role 'Component' has cardinality 0..*, and from 'Component', the role 'core142' has cardinality 0..*.
+An association connects 'foundation_core_Comment' and 'ModelElement'. From 'foundation_core_Comment', the role 'ModelElement144' has cardinality 0..*, and from 'ModelElement', the role 'core145' has cardinality 0..*.
+An association connects 'foundation_core_Flow' and 'ModelElement'. From 'foundation_core_Flow', the role 'ModelElement147' has cardinality 0..*, and from 'ModelElement', the role 'core148' has cardinality 0..*.
+An association connects 'ModelElement' and 'foundation_core_Flow'. From 'ModelElement', the role 'core151' has cardinality 0..*, and from 'foundation_core_Flow', the role 'ModelElement150' has cardinality 0..*.
+An association connects 'foundation_core_ElementResidence' and 'ModelElement'. From 'foundation_core_ElementResidence', the role 'ModelElement153' has cardinality 0..*, and from 'ModelElement', the role 'core154' has cardinality 0..*.
+An association connects 'foundation_core_ElementResidence' and 'Component'. From 'foundation_core_ElementResidence', the role 'Component156' has cardinality 0..*, and from 'Component', the role 'core157' has cardinality 0..*.
+An association connects 'ModelElement' and 'foundation_core_TemplateParameter'. From 'ModelElement', the role 'ModelElement159' has cardinality 0..*, and from 'foundation_core_TemplateParameter', the role 'foundation_core_TemplateParameter' has cardinality 0..*.
+An association connects 'ModelElement' and 'foundation_core_TemplateParameter'. From 'ModelElement', the role 'core162' has cardinality 0..*, and from 'foundation_core_TemplateParameter', the role 'ModelElement161' has cardinality 0..*.
+An association connects 'foundation_core_TemplateParameter' and 'ModelElement'. From 'foundation_core_TemplateParameter', the role 'foundation_core_TemplateParameter164' has cardinality 0..*, and from 'ModelElement', the role 'ModelElement165' has cardinality 0..*.
+An association connects 'EnumerationLiteral' and 'foundation_core_Enumeration'. From 'EnumerationLiteral', the role 'core167' has cardinality 0..*, and from 'foundation_core_Enumeration', the role 'EnumerationLiteral' has cardinality 0..*.
+An association connects 'foundation_core_EnumerationLiteral' and 'Enumeration'. From 'foundation_core_EnumerationLiteral', the role 'Enumeration' has cardinality 0..*, and from 'Enumeration', the role 'core169' has cardinality 0..*.
+An association connects 'foundation_core_Stereotype' and 'TagDefinition'. From 'foundation_core_Stereotype', the role 'TagDefinition' has cardinality 0..*, and from 'TagDefinition', the role 'core171' has cardinality 0..*.
+An association connects 'ModelElement' and 'foundation_core_Stereotype'. From 'ModelElement', the role 'core174' has cardinality 0..*, and from 'foundation_core_Stereotype', the role 'ModelElement173' has cardinality 0..*.
+An association connects 'foundation_core_Stereotype' and 'Constraint'. From 'foundation_core_Stereotype', the role 'Constraint176' has cardinality 0..*, and from 'Constraint', the role 'core177' has cardinality 0..*.
+An association connects 'Multiplicity' and 'foundation_core_TagDefinition'. From 'Multiplicity', the role 'Multiplicity179' has cardinality 0..*, and from 'foundation_core_TagDefinition', the role 'foundation_core_TagDefinition' has cardinality 0..*.
+An association connects 'foundation_core_TagDefinition' and 'Stereotype'. From 'foundation_core_TagDefinition', the role 'Stereotype181' has cardinality 0..*, and from 'Stereotype', the role 'core182' has cardinality 0..*.
+An association connects 'TaggedValue' and 'foundation_core_TagDefinition'. From 'TaggedValue', the role 'core185' has cardinality 0..*, and from 'foundation_core_TagDefinition', the role 'TaggedValue184' has cardinality 0..*.
+An association connects 'ModelElement' and 'foundation_core_TaggedValue'. From 'ModelElement', the role 'core188' has cardinality 0..*, and from 'foundation_core_TaggedValue', the role 'ModelElement187' has cardinality 0..*.
+An association connects 'TagDefinition' and 'foundation_core_TaggedValue'. From 'TagDefinition', the role 'core191' has cardinality 0..*, and from 'foundation_core_TaggedValue', the role 'TagDefinition190' has cardinality 0..*.
+An association connects 'foundation_core_TaggedValue' and 'ModelElement'. From 'foundation_core_TaggedValue', the role 'ModelElement193' has cardinality 0..*, and from 'ModelElement', the role 'core194' has cardinality 0..*.
+An association connects 'foundation_core_ProgrammingLanguageDataType' and 'TypeExpression'. From 'foundation_core_ProgrammingLanguageDataType', the role 'foundation_core_ProgrammingLanguageDataType' has cardinality 0..*, and from 'TypeExpression', the role 'TypeExpression' has cardinality 0..*.
+An association connects 'foundation_core_Artifact' and 'Component'. From 'foundation_core_Artifact', the role 'Component197' has cardinality 0..*, and from 'Component', the role 'core198' has cardinality 0..*.
+An association connects 'Binding' and 'foundation_core_TemplateArgument'. From 'Binding', the role 'core200' has cardinality 0..*, and from 'foundation_core_TemplateArgument', the role 'Binding' has cardinality 0..*.
+An association connects 'ModelElement' and 'foundation_core_TemplateArgument'. From 'ModelElement', the role 'ModelElement202' has cardinality 0..*, and from 'foundation_core_TemplateArgument', the role 'foundation_core_TemplateArgument' has cardinality 0..*.

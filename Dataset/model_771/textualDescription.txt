@@ -1,0 +1,206 @@
+The domain model 'UML2WithID' describes the core structural elements and their relationships within the system.
+
+The model defines 45 main class(es).
+
+'UML2WithID_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Extension' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Interaction' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_TemplateableClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_InformationItem' represents an important domain concept.
+It does not declare any attributes.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Stereotype' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_CommunicationPath' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_DeploymentSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Collaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ExecutionEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'EncapsulatedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_StructuredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ParameterableClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ProtocolStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_EncapsulatedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_UseCase' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Device' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Classifier' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'UML2WithID_Element' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'UML2WithID_Enumeration' is a specialization of 'DataType'.
+The class 'UML2WithID_Enumeration' is a specialization of 'Element'.
+The class 'UML2WithID_Actor' is a specialization of 'Classifier'.
+The class 'UML2WithID_Actor' is a specialization of 'Element'.
+The class 'UML2WithID_Collaboration' is a specialization of 'BehavioredClassifier'.
+The class 'UML2WithID_Collaboration' is a specialization of 'StructuredClassifier'.
+The class 'UML2WithID_Collaboration' is a specialization of 'Element'.
+The class 'UML2WithID_PrimitiveType' is a specialization of 'DataType'.
+The class 'UML2WithID_PrimitiveType' is a specialization of 'Element'.
+The class 'UML2WithID_UseCase' is a specialization of 'BehavioredClassifier'.
+The class 'UML2WithID_UseCase' is a specialization of 'Element'.
+The class 'UML2WithID_ProtocolStateMachine' is a specialization of 'StateMachine'.
+The class 'UML2WithID_ProtocolStateMachine' is a specialization of 'Element'.
+The class 'UML2WithID_CommunicationPath' is a specialization of 'Association'.
+The class 'UML2WithID_CommunicationPath' is a specialization of 'Element'.
+The class 'UML2WithID_BehavioredClassifier' is a specialization of 'Classifier'.
+The class 'UML2WithID_BehavioredClassifier' is a specialization of 'Element'.
+The class 'UML2WithID_TemplateableClassifier' is a specialization of 'Classifier'.
+The class 'UML2WithID_TemplateableClassifier' is a specialization of 'Element'.
+The class 'UML2WithID_Component' is a specialization of 'Class'.
+The class 'UML2WithID_Component' is a specialization of 'Element'.
+The class 'UML2WithID_Interface' is a specialization of 'Classifier'.
+The class 'UML2WithID_Interface' is a specialization of 'Element'.
+The class 'UML2WithID_Extension' is a specialization of 'Association'.
+The class 'UML2WithID_Extension' is a specialization of 'Element'.
+The class 'UML2WithID_Artifact' is a specialization of 'Classifier'.
+The class 'UML2WithID_Artifact' is a specialization of 'Element'.
+The class 'UML2WithID_Association' is a specialization of 'Classifier'.
+The class 'UML2WithID_Association' is a specialization of 'Element'.
+The class 'UML2WithID_Device' is a specialization of 'Node'.
+The class 'UML2WithID_Device' is a specialization of 'Element'.
+The class 'UML2WithID_DeploymentSpecification' is a specialization of 'Artifact'.
+The class 'UML2WithID_DeploymentSpecification' is a specialization of 'Element'.
+The class 'UML2WithID_Signal' is a specialization of 'Classifier'.
+The class 'UML2WithID_Signal' is a specialization of 'Element'.
+The class 'UML2WithID_Node' is a specialization of 'Class'.
+The class 'UML2WithID_Node' is a specialization of 'Element'.
+The class 'UML2WithID_EncapsulatedClassifier' is a specialization of 'StructuredClassifier'.
+The class 'UML2WithID_EncapsulatedClassifier' is a specialization of 'Element'.
+The class 'UML2WithID_StateMachine' is a specialization of 'Behavior'.
+The class 'UML2WithID_StateMachine' is a specialization of 'Element'.
+The class 'UML2WithID_Behavior' is a specialization of 'Class'.
+The class 'UML2WithID_Behavior' is a specialization of 'Element'.
+The class 'UML2WithID_Class' is a specialization of 'BehavioredClassifier'.
+The class 'UML2WithID_Class' is a specialization of 'EncapsulatedClassifier'.
+The class 'UML2WithID_Class' is a specialization of 'Element'.
+The class 'UML2WithID_Stereotype' is a specialization of 'Class'.
+The class 'UML2WithID_Stereotype' is a specialization of 'Element'.
+The class 'UML2WithID_Activity' is a specialization of 'Behavior'.
+The class 'UML2WithID_Activity' is a specialization of 'Element'.
+The class 'UML2WithID_Classifier' is a specialization of 'Element'.
+The class 'UML2WithID_DataType' is a specialization of 'Classifier'.
+The class 'UML2WithID_DataType' is a specialization of 'Element'.
+The class 'UML2WithID_InformationItem' is a specialization of 'Classifier'.
+The class 'UML2WithID_InformationItem' is a specialization of 'Element'.
+The class 'UML2WithID_StructuredClassifier' is a specialization of 'Classifier'.
+The class 'UML2WithID_StructuredClassifier' is a specialization of 'Element'.
+The class 'UML2WithID_Interaction' is a specialization of 'Behavior'.
+The class 'UML2WithID_Interaction' is a specialization of 'Element'.
+The class 'UML2WithID_AssociationClass' is a specialization of 'Class'.
+The class 'UML2WithID_AssociationClass' is a specialization of 'Association'.
+The class 'UML2WithID_AssociationClass' is a specialization of 'Element'.
+The class 'UML2WithID_ParameterableClassifier' is a specialization of 'Classifier'.
+The class 'UML2WithID_ParameterableClassifier' is a specialization of 'Element'.
+The class 'UML2WithID_ExecutionEnvironment' is a specialization of 'Node'.
+The class 'UML2WithID_ExecutionEnvironment' is a specialization of 'Element'.

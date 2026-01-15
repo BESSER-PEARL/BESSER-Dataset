@@ -1,0 +1,35 @@
+The domain model 'cfg' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'cfg_startnode' represents an important domain concept.
+It does not declare any attributes.
+
+'cfg_edge' represents an important domain concept.
+It does not declare any attributes.
+
+'cfg_node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'node' represents an important domain concept.
+It does not declare any attributes.
+
+'cfg_endnode' represents an important domain concept.
+It does not declare any attributes.
+
+'cfg_cfg' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'cfg_startnode' is a specialization of 'node'.
+The class 'cfg_endnode' is a specialization of 'node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cfg_cfg' and 'cfg_node'. From 'cfg_cfg', the role 'cfg_cfg' has cardinality 0..*, and from 'cfg_node', the role 'cfg_node' has cardinality 0..*.
+An association connects 'cfg_cfg' and 'cfg_edge'. From 'cfg_cfg', the role 'cfg_cfg2' has cardinality 0..*, and from 'cfg_edge', the role 'cfg_edge' has cardinality 0..*.
+An association connects 'cfg_node' and 'cfg_edge'. From 'cfg_node', the role 'cfg_node4' has cardinality 0..*, and from 'cfg_edge', the role 'cfg_edge5' has cardinality 0..*.
+An association connects 'cfg_node' and 'cfg_edge'. From 'cfg_node', the role 'target' has cardinality 0..*, and from 'cfg_edge', the role 'edge' has cardinality 0..*.
+An association connects 'cfg_node' and 'cfg_edge'. From 'cfg_node', the role 'source' has cardinality 0..*, and from 'cfg_edge', the role 'edge8' has cardinality 0..*.
+An association connects 'cfg_edge' and 'cfg_node'. From 'cfg_edge', the role 'incoming' has cardinality 0..*, and from 'cfg_node', the role 'node' has cardinality 0..*.
+An association connects 'cfg_edge' and 'cfg_node'. From 'cfg_edge', the role 'cfg_edge11' has cardinality 0..*, and from 'cfg_node', the role 'cfg_node12' has cardinality 0..*.
+An association connects 'cfg_edge' and 'cfg_node'. From 'cfg_edge', the role 'outgoing' has cardinality 0..*, and from 'cfg_node', the role 'node14' has cardinality 0..*.
